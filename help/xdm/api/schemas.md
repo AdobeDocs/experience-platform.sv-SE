@@ -6,16 +6,16 @@ description: Med slutpunkten /schemas i API:t för schemaregister kan du program
 topic-legacy: developer guide
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1431'
 ht-degree: 0%
 
 ---
 
 # Schemas slutpunkt
 
-Man kan tänka sig ett schema som en plan för de data man vill importera till Adobe Experience Platform. Varje schema består av en klass och noll eller flera mixiner. Med slutpunkten `/schemas` i API:t [!DNL Schema Registry] kan du programmässigt hantera scheman i ditt upplevelseprogram.
+Man kan tänka sig ett schema som en plan för de data man vill importera till Adobe Experience Platform. Varje schema består av en klass och noll eller flera schemafältgrupper. Med slutpunkten `/schemas` i API:t [!DNL Schema Registry] kan du programmässigt hantera scheman i ditt upplevelseprogram.
 
 ## Komma igång
 
@@ -154,7 +154,7 @@ Ett lyckat svar returnerar information om schemat. Vilka fält som returneras be
           "meta:xdmType": "object"
       },
       {
-          "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
+          "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
           "type": "object",
           "meta:xdmType": "object"
       }
@@ -163,7 +163,7 @@ Ett lyckat svar returnerar information om schemat. Vilka fält som returneras be
   "meta:extensible": false,
   "meta:abstract": false,
   "meta:extends": [
-      "https://ns.adobe.com/{TENANT_ID}/mixins/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
+      "https://ns.adobe.com/{TENANT_ID}/fieldgroups/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
       "https://ns.adobe.com/xdm/common/auditable",
       "https://ns.adobe.com/xdm/data/record",
       "https://ns.adobe.com/xdm/context/profile"
@@ -193,7 +193,7 @@ Schemadispositionsprocessen börjar med att tilldela en klass. Klassen definiera
 
 >[!NOTE]
 >
->Exempelanropet nedan är bara ett grundläggande exempel på hur du skapar ett schema i API:t, med de minimala dispositionskraven för en klass och inga mixins. Fullständiga steg för hur du skapar ett schema i API:t, inklusive hur du tilldelar fält med blandningar och datatyper, finns i [självstudiekursen för att skapa schema](../tutorials/create-schema-api.md).
+>Exempelanropet nedan är bara ett grundläggande exempel på hur du skapar ett schema i API:t, med de minimala dispositionskraven för en klass och utan fältgrupper. Fullständiga steg för hur du skapar ett schema i API:t, inklusive hur du tilldelar fält med fältgrupper och datatyper, finns i [självstudiekursen för att skapa schema](../tutorials/create-schema-api.md).
 
 **API-format**
 
@@ -227,7 +227,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `allOf` | En array med objekt, där varje objekt refererar till en klass eller blandning vars fält schemat implementerar. Varje objekt innehåller en enda egenskap (`$ref`) vars värde representerar `$id` för klassen eller blandningen i det nya schemat kommer att implementeras. En klass måste anges, med noll eller flera ytterligare blandningar. I ovanstående exempel är det enda objektet i `allOf`-arrayen schemaklassen. |
+| `allOf` | En array med objekt, där varje objekt refererar till en klass eller fältgrupp vars fält schemat implementerar. Varje objekt innehåller en enda egenskap (`$ref`) vars värde representerar `$id` för den klass eller fältgrupp som det nya schemat ska implementera. En klass måste anges, med noll eller flera ytterligare fältgrupper. I ovanstående exempel är det enda objektet i `allOf`-arrayen schemaklassen. |
 
 **Svar**
 
@@ -268,7 +268,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 
 Om en begäran om GET utförs på [listas alla scheman](#list) i innehavarbehållaren kommer nu det nya schemat att inkluderas. Du kan utföra en [GET-begäran](#lookup) med URL-kodad `$id`-URI för att visa det nya schemat direkt.
 
-Om du vill lägga till fler fält i ett schema kan du utföra en [PATCH-åtgärd](#patch) för att lägga till blandningar i schemats `allOf`- och `meta:extends`-matriser.
+Om du vill lägga till fler fält i ett schema kan du utföra en [PATCH-åtgärd](#patch) för att lägga till fältgrupper i schemats `allOf`- och `meta:extends`-matriser.
 
 ## Uppdatera ett schema {#put}
 
@@ -357,7 +357,7 @@ Du kan uppdatera en del av ett schema genom att använda en PATCH-begäran. [!DN
 >
 >Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet [ersätta ett schema med en PUT-åtgärd](#put).
 
-En av de vanligaste PATCH-åtgärderna är att lägga till tidigare definierade blandningar i ett schema, vilket visas i exemplet nedan.
+En av de vanligaste PATCH-åtgärderna är att lägga till tidigare definierade fältgrupper i ett schema, vilket visas i exemplet nedan.
 
 **API-format**
 
@@ -371,7 +371,7 @@ PATCH /tenant/schema/{SCHEMA_ID}
 
 **Begäran**
 
-I exempelbegäran nedan läggs en ny blandning till i ett schema genom att den mixins `$id`-värde läggs till i både `meta:extends`- och `allOf`-arrayerna.
+I exempelbegäran nedan läggs en ny fältgrupp till i ett schema genom att fältgruppens `$id`-värde läggs till i både `meta:extends`- och `allOf`-arrayerna.
 
 Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
@@ -387,13 +387,13 @@ curl -X PATCH\
         { 
           "op": "add",
           "path": "/meta:extends/-",
-          "value":  "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+          "value":  "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
         },
         {
           "op": "add",
           "path": "/allOf/-",
           "value":  {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
           }
         }
       ]'
@@ -401,7 +401,7 @@ curl -X PATCH\
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. Blandningen `$id` har lagts till i `meta:extends`-arrayen och en referens (`$ref`) till blandningen `$id` visas nu i `allOf`-arrayen.
+Svaret visar att båda åtgärderna har utförts. Fältgruppen `$id` har lagts till i `meta:extends`-arrayen och en referens (`$ref`) till fältgruppen `$id` visas nu i `allOf`-arrayen.
 
 ```JSON
 {
@@ -413,7 +413,7 @@ Svaret visar att båda åtgärderna har utförts. Blandningen `$id` har lagts ti
             "$ref": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
         }
     ],
     "meta:class": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
@@ -422,7 +422,7 @@ Svaret visar att båda åtgärderna har utförts. Blandningen `$id` har lagts ti
     "meta:extends": [
         "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
         "https://ns.adobe.com/xdm/data/record",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -493,7 +493,7 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, vilket visa
             "$ref": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
         }
     ],
     "meta:class": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
@@ -502,7 +502,7 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, vilket visa
     "meta:extends": [
         "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
         "https://ns.adobe.com/xdm/data/record",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
