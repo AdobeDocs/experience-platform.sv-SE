@@ -7,9 +7,9 @@ topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1337'
+source-wordcount: '1354'
 ht-degree: 0%
 
 ---
@@ -111,35 +111,35 @@ Registrera `$id`-värdena för de två scheman som du vill definiera en relation
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry] fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type`-värdet [!DNL string].
+I [!DNL Schema Registry] fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha `type`-värdet [!DNL string].
 
 >[!IMPORTANT]
 >
 >Till skillnad från målschemat kan källschemat inte använda sin primära identitet som referensfält.
 
-I den här självstudiekursen innehåller målschemat [!DNL Hotels] ett `hotelId`-fält som fungerar som schemats primära identitet och fungerar därför även som referensfält. Källschemat [!DNL Loyalty Members] har emellertid inget dedikerat fält som ska användas som referens, och måste ges en ny blandning som lägger till ett nytt fält i schemat: `favoriteHotel`.
+I den här självstudiekursen innehåller målschemat [!DNL Hotels] ett `hotelId`-fält som fungerar som schemats primära identitet och fungerar därför även som referensfält. Källschemat [!DNL Loyalty Members] har emellertid inget dedikerat fält som ska användas som referens, och måste ges en ny fältgrupp som lägger till ett nytt fält i schemat: `favoriteHotel`.
 
 >[!NOTE]
 >
 >Om källschemat redan har ett dedikerat fält som du tänker använda som referensfält kan du hoppa fram till steget när du [skapar en referensbeskrivare](#reference-identity).
 
-### Skapa en ny blandning
+### Skapa en ny fältgrupp
 
-Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en mixin. Du kan skapa en ny blandning genom att göra en POST-förfrågan till `/tenant/mixins`-slutpunkten.
+Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en fältgrupp. Du kan skapa en ny fältgrupp genom att göra en POST-förfrågan till `/tenant/fieldgroups`-slutpunkten.
 
 **API-format**
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
 **Begäran**
 
-Följande begäran skapar en ny blandning som lägger till ett `favoriteHotel`-fält under `_{TENANT_ID}`-namnområdet för alla scheman som det läggs till i.
+Följande begäran skapar en ny fältgrupp som lägger till ett `favoriteHotel`-fält under namnområdet `_{TENANT_ID}` för alla scheman som det läggs till i.
 
 ```shell
 curl -X POST\
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -149,7 +149,7 @@ curl -X POST\
         "type": "object",
         "title": "Favorite Hotel",
         "meta:intendedToExtend": ["https://ns.adobe.com/xdm/context/profile"],
-        "description": "Favorite hotel mixin for the Loyalty Members schema.",
+        "description": "Favorite hotel field group for the Loyalty Members schema.",
         "definitions": {
             "favoriteHotel": {
               "properties": {
@@ -176,20 +176,20 @@ curl -X POST\
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nyligen skapade mixen.
+Ett godkänt svar returnerar information om den nyligen skapade fältgruppen.
 
 ```json
 {
-    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220",
-    "meta:altId": "_{TENANT_ID}.mixins.3387945212ad76ee59b6d2b964afb220",
-    "meta:resourceType": "mixins",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220",
+    "meta:altId": "_{TENANT_ID}.fieldgroups.3387945212ad76ee59b6d2b964afb220",
+    "meta:resourceType": "fieldgroups",
     "version": "1.0",
     "type": "object",
     "title": "Favorite Hotel",
     "meta:intendedToExtend": [
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "description": "Favorite hotel mixin for the Loyalty Members schema.",
+    "description": "Favorite hotel field group for the Loyalty Members schema.",
     "definitions": {
         "favoriteHotel": {
             "properties": {
@@ -229,13 +229,13 @@ Ett godkänt svar returnerar information om den nyligen skapade mixen.
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `$id` | Den skrivskyddade, systemgenererade unika identifieraren för den nya mixen. Tar formen av en URI. |
+| `$id` | Den skrivskyddade, systemgenererade unika identifieraren för den nya fältgruppen. Tar formen av en URI. |
 
-Registrera URI:n `$id` för mixinen, som ska användas i nästa steg när du lägger till mixinen i källschemat.
+Registrera URI:n `$id` för fältgruppen, som ska användas i nästa steg när fältgruppen läggs till i källschemat.
 
-### Lägg till blandningen i källschemat
+### Lägg till fältgruppen i källschemat
 
-När du har skapat en blandning kan du lägga till den i källschemat genom att göra en PATCH-begäran till `/tenant/schemas/{SCHEMA_ID}`-slutpunkten.
+När du har skapat en fältgrupp kan du lägga till den i källschemat genom att göra en PATCH-begäran till `/tenant/schemas/{SCHEMA_ID}`-slutpunkten.
 
 **API-format**
 
@@ -249,7 +249,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **Begäran**
 
-Följande begäran lägger till blandningen [!DNL Favorite Hotel] i schemat [!DNL Loyalty Members].
+Följande begäran lägger till fältgruppen [!DNL Favorite Hotel] i schemat [!DNL Loyalty Members].
 
 ```shell
 curl -X PATCH \
@@ -264,7 +264,7 @@ curl -X PATCH \
       "op": "add", 
       "path": "/allOf/-", 
       "value":  {
-        "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220"
+        "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220"
       }
     }
   ]'
@@ -273,12 +273,12 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `op` | Den PATCH-åtgärd som ska utföras. Denna begäran använder åtgärden `add`. |
-| `path` | Sökvägen till schemafältet där den nya resursen ska läggas till. När du lägger till blandningar i scheman måste värdet vara /allOf/-. |
-| `value.$ref` | `$id` för den blandning som ska läggas till. |
+| `path` | Sökvägen till schemafältet där den nya resursen ska läggas till. När du lägger till fältgrupper i scheman måste värdet vara /allOf/-. |
+| `value.$ref` | `$id` för fältgruppen som ska läggas till. |
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu innehåller `$ref`-värdet för den tillagda mixin under dess `allOf`-array.
+Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu innehåller `$ref`-värdet för den tillagda fältgruppen under dess `allOf`-matris.
 
 ```json
 {
@@ -300,13 +300,13 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu inne
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/ec16dfa484358f80478b75cde8c430d3"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/ec16dfa484358f80478b75cde8c430d3"
         },
         {
             "$ref": "https://ns.adobe.com/xdm/context/identitymap"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220"
         }
     ],
     "meta:containerId": "tenant",
@@ -323,8 +323,8 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu inne
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/ec16dfa484358f80478b75cde8c430d3",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/61969bc646b66a6230a7e8840f4a4d33"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/ec16dfa484358f80478b75cde8c430d3",
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/61969bc646b66a6230a7e8840f4a4d33"
     ],
     "meta:xdmType": "object",
     "meta:registryMetadata": {
