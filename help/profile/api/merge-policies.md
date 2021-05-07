@@ -6,9 +6,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2560'
+source-wordcount: '2569'
 ht-degree: 0%
 
 ---
@@ -752,19 +752,19 @@ När poster hämtas till Experience Platform hämtas en systemtidsstämpel vid t
 
 Ibland kan det finnas användningsfall, t.ex. för att fylla i data baklänges eller för att säkerställa rätt ordning på händelser om posterna är inlästa i fel ordning, där det är nödvändigt att ange en anpassad tidsstämpel och att sammanfogningsprincipen följer den anpassade tidsstämpeln i stället för systemtidsstämpeln.
 
-Om du vill använda en anpassad tidsstämpel måste [[!DNL External Source System Audit Details Mixin]](#mixin-details) läggas till i ditt profilschema. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med fältet `xdm:lastUpdatedDate`. När en post hämtas med fältet `xdm:lastUpdatedDate` ifyllt, använder Experience Platform det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, kommer plattformen att fortsätta använda systemets tidsstämpel.
+Om du vill använda en anpassad tidsstämpel måste schemafältgruppen [[!DNL External Source System Audit Details] ](#field-group-details) läggas till i profilschemat. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med fältet `xdm:lastUpdatedDate`. När en post hämtas med fältet `xdm:lastUpdatedDate` ifyllt, använder Experience Platform det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, kommer plattformen att fortsätta använda systemets tidsstämpel.
 
 >[!NOTE]
 >
 >Du måste se till att tidsstämpeln `xdm:lastUpdatedDate` fylls i när du skickar PATCH på samma post.
 
-Stegvisa anvisningar om hur du arbetar med scheman med API:t för schematabeller, inklusive hur du lägger till mixiner i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
+Stegvisa anvisningar om hur du arbetar med scheman med API:t för schemaregister, inklusive hur du lägger till fältgrupper i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
 
 Om du vill arbeta med egna tidsstämplar med hjälp av användargränssnittet läser du avsnittet [Använda egna tidsstämplar](../ui/merge-policies.md#custom-timestamps) i [användarhandboken för sammanfogningsprinciper](../ui/merge-policies.md).
 
-#### [!DNL External Source System Audit Details Mixin] information  {#mixin-details}
+#### [!DNL External Source System Audit Details] fältgruppsinformation  {#field-group-details}
 
-I följande exempel visas korrekt ifyllda fält i [!DNL External Source System Audit Details Mixin]. Den fullständiga JSON-blandningen kan också visas i [XDM-repo (public Experience Data Model)](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json) på GitHub.
+I följande exempel visas korrekt ifyllda fält i fältgruppen [!DNL External Source System Audit Details]. Hela fältgruppen JSON kan också visas i [XDM-repo (public Experience Data Model)](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json) på GitHub.
 
 ```json
 {
