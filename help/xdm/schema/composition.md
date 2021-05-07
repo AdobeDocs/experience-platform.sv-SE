@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;enum;mixin;mixin;mixins;mixins;datatyp;datatyp;datatyper;datatyp;datatyp;primär identitet;enskild XDM-profil;XDM-fält;enum datatype;Experience event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;schema;klass;klass;klasser;klasser;datatyp;datatyp;datatyp;datatyp;datatyp;scheman;scheman;identityMap;identity map;identity map;schema design;map;union schema;union
+keywords: Experience Platform;hem;populära ämnen;schema;schema;schema;enum;mixin;fältgrupp;fältgrupper;mixins;datatyp;datatyp;datatyp;datatyp;primär identitet;primär identitet;XDM-individuell profil;XDM-fält;enum datatyp;Experience event;XDM ExperienceEvent;experienceEvent;XDM ExperienceEvent;schema;design;klass;klass;klasser;klasser;datatyp;datatyp;datatyp;datatyp;datatyp;scheman;scheman;identityMap;identity map;identity map;schema design;map;union schema;union
 solution: Experience Platform
 title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '3460'
+source-wordcount: '3497'
 ht-degree: 0%
 
 ---
@@ -123,49 +123,49 @@ Om du vill importera data till [!DNL Experience Platform] måste du först skapa
 
 Scheman består av följande formel:
 
-**Klass + &amp;blandning; = XDM-schema**
+**Klass + schemafältgrupp&amp;ast; = XDM-schema**
 
-&amp;ast;Ett schema består av en klass och noll eller flera blandningar. Det innebär att du kan komponera ett datamängdsschema utan att använda blandningar alls.
+&amp;ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
 
 ### Klass {#class}
 
 Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat ska innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
 
-En schemaklass avgör vilka mixar som är berättigade att användas i schemat. Detta beskrivs mer ingående i [nästa avsnitt](#mixin).
+En schemaklass avgör vilka fältgrupper som kan användas i schemat. Detta beskrivs mer ingående i [nästa avsnitt](#field-group).
 
 Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för XDM. Två av dessa klasser, [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent], krävs för nästan alla plattformsprocesser längre fram i kedjan. Dessutom kan du skapa egna klasser som beskriver mer specifika användningsfall för organisationen. Anpassade klasser definieras av en organisation när det inte finns några Adobe-definierade huvudklasser tillgängliga som beskriver ett unikt användningsfall.
 
-I följande skärmbild visas hur klasser visas i användargränssnittet för plattformen. Eftersom exempelschemat som visas inte innehåller några mixins, kommer alla fält som visas att anges av schemaklassen ([!UICONTROL XDM Individual Profile]).
+I följande skärmbild visas hur klasser visas i användargränssnittet för plattformen. Eftersom exempelschemat som visas inte innehåller några fältgrupper, kommer alla fält som visas att anges av schemaklassen ([!UICONTROL XDM Individual Profile]).
 
 ![](../images/schema-composition/class.png)
 
 Den senaste listan över tillgängliga standard-XDM-klasser finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/tree/master/components/classes). Du kan också läsa guiden [utforska XDM-komponenter](../ui/explore.md) om du hellre vill se resurser i användargränssnittet.
 
-### Blanda {#mixin}
+### Fältgrupp {#field-group}
 
-En mixin är en återanvändbar komponent som definierar ett eller flera fält som implementerar vissa funktioner, som personlig information, hotellinställningar eller adress. Mixer är avsedda att ingå i ett schema som implementerar en kompatibel klass.
+En fältgrupp är en återanvändbar komponent som definierar ett eller flera fält som implementerar vissa funktioner, som personlig information, hotellinställningar eller adress. Fältgrupper är avsedda att ingå i ett schema som implementerar en kompatibel klass.
 
-Blandningar definierar vilka klasser de är kompatibla med utifrån beteendet hos de data de representerar (post- eller tidsserier). Det innebär att inte alla blandningar finns tillgängliga för användning med alla klasser.
+Fältgrupper definierar vilka klasser de är kompatibla med baserat på beteendet hos de data de representerar (post- eller tidsserie). Det innebär att inte alla fältgrupper är tillgängliga för användning med alla klasser.
 
-[!DNL Experience Platform] innehåller många standardblandningar för Adobe, samtidigt som leverantörer kan definiera blandningar för sina användare, och enskilda användare kan definiera blandningar för sina egna specifika koncept.
+[!DNL Experience Platform] innehåller många standardfältgrupper för Adobe, samtidigt som leverantörer kan definiera fältgrupper för sina användare, och enskilda användare kan definiera fältgrupper för sina egna specifika koncept.
 
-Om du till exempel vill hämta information som [!UICONTROL First Name] och [!UICONTROL Home Address] för ditt [!UICONTROL Loyalty Members]-schema, kan du använda standardblandningar som definierar de vanliga begreppen. Begrepp som är specifika för mindre vanliga användningsområden (till exempel &quot;[!UICONTROL Loyalty Program Level]&quot;) har ofta ingen fördefinierad blandning. I så fall måste du definiera en egen blandning för att kunna hämta in den här informationen.
+Om du till exempel vill hämta information som [!UICONTROL First Name] och [!UICONTROL Home Address] för ditt [!UICONTROL Loyalty Members]-schema, kan du använda standardfältgrupper som definierar de vanliga begreppen. Begrepp som är specifika för mindre vanliga användningsområden (till exempel &quot;[!UICONTROL Loyalty Program Level]&quot;) har ofta ingen fördefinierad fältgrupp. I det här fallet måste du definiera en egen fältgrupp för att kunna hämta informationen.
 
-Kom ihåg att scheman består av &quot;noll eller flera&quot;-blandningar, vilket innebär att du kan skapa ett giltigt schema utan att använda några mixiner alls.
+Kom ihåg att scheman består av fältgrupper som är &quot;noll eller fler&quot;, vilket innebär att du kan skapa ett giltigt schema utan att använda några fältgrupper alls.
 
-I följande skärmbild visas hur mixar visas i användargränssnittet för plattformen. En enskild blandning ([!UICONTROL Demographic Details]) läggs till i ett schema i det här exemplet, som ger en gruppering av fält till schemats struktur.
+I följande skärmbild visas hur fältgrupper representeras i användargränssnittet för plattformen. En enda fältgrupp ([!UICONTROL Demographic Details]) läggs till i ett schema i det här exemplet, som innehåller en gruppering av fält till schemats struktur.
 
-![](../images/schema-composition/mixin.png)
+![](../images/schema-composition/field-group.png)
 
-Den senaste listan över tillgängliga XDM-standardblandningar finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/tree/master/components/mixins). Du kan också läsa guiden [utforska XDM-komponenter](../ui/explore.md) om du hellre vill se resurser i användargränssnittet.
+Den senaste listan över tillgängliga standardfältgrupper i XDM finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/tree/master/components/mixins). Du kan också läsa guiden [utforska XDM-komponenter](../ui/explore.md) om du hellre vill se resurser i användargränssnittet.
 
 ### Datatyp {#data-type}
 
-Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera underfält. En datatyp liknar en blandning, men har större flexibilitet än en blandning eftersom en datatyp kan inkluderas var som helst i ett schema genom att lägga till den som&quot;datatyp&quot; för ett fält.
+Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera underfält. En datatyp liknar en fältgrupp och möjliggör konsekvent användning av en flerfältsstruktur, men har större flexibilitet än en fältgrupp eftersom en datatyp kan inkluderas var som helst i ett schema genom att lägga till den som&quot;datatyp&quot; för ett fält.
 
 [!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av programmet  [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [!DNL Schema Registry]-självstudiekurserna, där det blir tydligare när du går igenom stegen för att definiera datatyper.
 
-I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. I ett av fälten som anges av blandningen [!UICONTROL Demographic Details] används datatypen [!UICONTROL Person name], vilket anges av texten efter lodtecknet (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
+I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. Ett av fälten som anges av fältgruppen [!UICONTROL Demographic Details] använder datatypen [!UICONTROL Person name], vilket anges av texten efter lodtecknet (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
 
 ![](../images/schema-composition/data-type.png)
 
@@ -220,13 +220,13 @@ En fullständig lista över tillgängliga XDM-fält finns i [XDM-fältordlistan]
 
 ## Kompositionsexempel
 
-Scheman representerar format och struktur för data som ska importeras till [!DNL Platform], och som byggs med en kompositionsmodell. Som tidigare nämnts består dessa scheman av en klass och noll eller flera blandningar som är kompatibla med den klassen.
+Scheman representerar format och struktur för data som ska importeras till [!DNL Platform], och som byggs med en kompositionsmodell. Som tidigare nämnts består dessa scheman av en klass och noll eller flera fältgrupper som är kompatibla med den klassen.
 
-Ett schema som beskriver inköp som görs i en butik kan till exempel kallas &quot;[!UICONTROL Store Transactions]&quot;. Schemat implementerar klassen [!DNL XDM ExperienceEvent] kombinerat med standardblandningen [!UICONTROL Commerce] och en användardefinierad [!UICONTROL Product Info]-blandning.
+Ett schema som beskriver inköp som görs i en butik kan till exempel kallas &quot;[!UICONTROL Store Transactions]&quot;. Schemat implementerar klassen [!DNL XDM ExperienceEvent] kombinerat med standardfältgruppen [!UICONTROL Commerce] och en användardefinierad fältgrupp [!UICONTROL Product Info].
 
-Ett annat schema som spårar webbplatstrafiken kan kallas [!UICONTROL Web Visits]. Den implementerar även klassen [!DNL XDM ExperienceEvent], men den här gången kombineras standardblandningen [!UICONTROL Web].
+Ett annat schema som spårar webbplatstrafiken kan kallas [!UICONTROL Web Visits]. Den implementerar även klassen [!DNL XDM ExperienceEvent], men den här gången kombineras standardfältgruppen [!UICONTROL Web].
 
-Diagrammet nedan visar dessa scheman och fälten från varje blandning. Den innehåller också två scheman baserade på klassen [!DNL XDM Individual Profile], inklusive schemat [!UICONTROL Loyalty Members] som nämndes tidigare i den här guiden.
+Diagrammet nedan visar dessa scheman och fälten från varje fältgrupp. Den innehåller också två scheman baserade på klassen [!DNL XDM Individual Profile], inklusive schemat [!UICONTROL Loyalty Members] som nämndes tidigare i den här guiden.
 
 ![](../images/schema-composition/composition.png)
 
@@ -249,18 +249,18 @@ Alla datafiler som är inkapslade i [!DNL Experience Platform] måste överensst
 Om du överför segment från externa system till plattformen måste du använda följande komponenter för att hämta dem i dina scheman:
 
 * [[!UICONTROL Segment definition] klass](../classes/segment-definition.md): Använd den här standardklassen för att hämta nyckelattribut för en extern segmentdefinition.
-* [[!UICONTROL Segment Membership Details] blanda](../mixins/profile/segmentation.md): Lägg till den här mixinen i ditt  [!UICONTROL XDM Individual Profile] schema för att associera kundprofiler med specifika segment.
+* [[!UICONTROL Segment Membership Details] fältgrupp](../field-groups/profile/segmentation.md): Lägg till den här fältgruppen i ditt  [!UICONTROL XDM Individual Profile] schema för att associera kundprofiler med specifika segment.
 
 ## Nästa steg
 
 Nu när du förstår grunderna i schemakomposition kan du börja utforska och skapa scheman med [!DNL Schema Registry].
 
-Om du vill granska strukturen för de två grundläggande XDM-klasserna och deras vanligaste kompatibla mixiner läser du följande referensdokumentation:
+Om du vill granska strukturen för de två grundläggande XDM-klasserna och deras vanliga kompatibla fältgrupper, se följande referensdokumentation:
 
 * [[!DNL XDM Individual Profile]](../classes/individual-profile.md)
 * [[!DNL XDM ExperienceEvent]](../classes/experienceevent.md)
 
-[!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och innehåller ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från. [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners och klasser, mixins, datatyper och scheman som har skapats av medlemmar i din organisation.
+[!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och innehåller ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från. [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners och klasser, fältgrupper, datatyper och scheman som har disponerats av medlemmar i din organisation.
 
 Om du vill börja skapa schemat med hjälp av användargränssnittet följer du med självstudiekursen [Schemaredigeraren](../tutorials/create-schema-ui.md) för att skapa schemat &quot;Loyalty Members&quot; som nämns i hela dokumentet.
 
