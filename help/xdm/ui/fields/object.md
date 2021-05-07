@@ -6,16 +6,16 @@ description: Lär dig hur du definierar ett objekttypsfält i användargränssni
 topic-legacy: user guide
 exl-id: 5b7b3cf0-7f11-4e15-af87-09127f4423a5
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
 
 # Definiera objektfält i användargränssnittet
 
-Med Adobe Experience Platform kan ni helt anpassa strukturen för era anpassade Experience Data Model-klasser (XDM), mixins och datatyper. För att kunna ordna och kapsla relaterade fält i anpassade XDM-resurser kan du definiera objekttypsfält som kan innehålla ytterligare underfält.
+Med Adobe Experience Platform kan ni helt anpassa strukturen för era anpassade Experience Data Model-klasser (XDM), schemafältgrupper och datatyper. För att kunna ordna och kapsla relaterade fält i anpassade XDM-resurser kan du definiera objekttypsfält som kan innehålla ytterligare underfält.
 
 När [du definierar ett nytt fält](./overview.md#define) i Adobe Experience Platform användargränssnitt använder du listrutan **[!UICONTROL Type]** och väljer [!UICONTROL Object] i listan.
 
@@ -33,7 +33,7 @@ När du har konfigurerat underfältet och valt **[!UICONTROL Apply]** kan du for
 
 ![](../../images/ui/fields/special/object-nested.png)
 
-När du är klar med att skapa objektet kanske du vill återanvända dess struktur i olika klasser och blandningar. I det här fallet kan du välja att konvertera objektet till en datatyp. Mer information finns i avsnittet [konvertera objekt till datatyper](../resources/data-types.md#convert) i användargränssnittsguiden för datatyper.
+När du är klar med att skapa objektet kanske du vill återanvända dess struktur i olika klasser och fältgrupper. I det här fallet kan du välja att konvertera objektet till en datatyp. Mer information finns i avsnittet [konvertera objekt till datatyper](../resources/data-types.md#convert) i användargränssnittsguiden för datatyper.
 
 ## Nästa steg
 
