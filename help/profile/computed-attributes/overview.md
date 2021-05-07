@@ -6,9 +6,9 @@ type: Documentation
 description: Beräknade attribut är funktioner för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '725'
 ht-degree: 0%
 
 ---
@@ -55,4 +55,4 @@ Schemaattribut som redan har använts i ett segmentdefinitionsuttryck men senare
 
 Eftersom inget beroende har identifierats utvärderas inte det associerade beräknade attributet automatiskt av Experience Platform varje gång segmentdefinitionen utvärderas.
 
-Alternativt kan du skapa beräknade attribut med hjälp av en specifik blandning som lägger till nya beräknade attribut som inte står i konflikt med befintliga attribut. Ett annat alternativ är att återskapa segmentet med rätt beroendespårning för de nya beräknade attributen.
+Alternativt kan skapandet av beräknade attribut hanteras med en specifik schemafältgrupp som lägger till nya beräknade attribut som inte står i konflikt med befintliga attribut. Ett annat alternativ är att återskapa segmentet med rätt beroendespårning för de nya beräknade attributen.
