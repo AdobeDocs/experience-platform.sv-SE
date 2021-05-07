@@ -6,9 +6,9 @@ topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2865'
+source-wordcount: '2878'
 ht-degree: 0%
 
 ---
@@ -36,10 +36,10 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 | Term | Definition |
 | --- | --- |
 | [Experience Data Model (XDM)](../../xdm/home.md) | XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Adobe Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster. |
-| XDM-schema | Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en XDM-basklass och noll eller flera blandningar. |
+| XDM-schema | Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en XDM-basklass och noll eller flera schemafältgrupper. |
 | XDM, klass | Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende. |
-| [Blandningar](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Blandningar styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Blandningar är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut. |
-| [Datatyp](../../xdm/schema/composition.md) | En komponent som också kan tillhandahålla ett eller flera fält för ett schema. Till skillnad från blandningar begränsas datatyperna inte till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser. Datatyperna som beskrivs i det här dokumentet stöds av både CEE- och Adobe Analytics-scheman. |
+| [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut. |
+| [Datatyp](../../xdm/schema/composition.md) | En komponent som också kan tillhandahålla ett eller flera fält för ett schema. Till skillnad från fältgrupper är datatyperna dock inte begränsade till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser. Datatyperna som beskrivs i det här dokumentet stöds av både CEE- och Adobe Analytics-scheman. |
 | Churn | Ett mått på procentandelen konton som avbryter eller väljer att inte förnya sina prenumerationer. Ett högt bortfall kan ha en negativ inverkan på den månatliga återkommande intäkten och kan också visa på missnöje med en produkt eller tjänst. |
 | [Kundprofil i realtid](../../profile/home.md) | Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform. |
 
@@ -49,7 +49,7 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 >
 > Kundens AI avgör automatiskt vilka händelser som är användbara för prognoser och visar en varning om tillgängliga data inte räcker för att generera kvalitetsprognoser.
 
-Kund-AI stöder datauppsättningarna CEE, Adobe Analytics och Adobe Audience Manager. CEE-schemat kräver att du lägger till blandningar när schemat skapas. Om du använder datauppsättningar från Adobe Analytics eller Adobe Audience Manager mappar källkopplingen direkt standardhändelserna (Commerce, webbsidesinformation, Application och Search) som listas nedan under anslutningsprocessen.
+Kund-AI stöder datauppsättningarna CEE, Adobe Analytics och Adobe Audience Manager. CEE-schemat kräver att du lägger till fältgrupper när schemat skapas. Om du använder datauppsättningar från Adobe Analytics eller Adobe Audience Manager mappar källkopplingen direkt standardhändelserna (Commerce, webbsidesinformation, Application och Search) som listas nedan under anslutningsprocessen.
 
 Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i handboken [Analysfältmappningar](../../sources/connectors/adobe-applications/analytics.md) eller [Audience Manager fältmappningar](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
 
@@ -57,18 +57,17 @@ Mer information om mappning av Adobe Analytics-data eller Audience Manager-data 
 
 XDM Experience Events används för att fastställa olika kundbeteenden. Beroende på hur era data är strukturerade kanske händelsetyperna som listas nedan inte omfattar alla kundens beteenden. Det är upp till er att avgöra vilka fält som har de nödvändiga data som behövs för att tydligt och entydigt identifiera webbanvändaraktivitet. Beroende på ditt förutsägelsemål kan de obligatoriska fälten som behövs ändras.
 
-Kundens AI använder olika händelsetyper för att bygga modellfunktioner. Dessa händelsetyper läggs automatiskt till i schemat med hjälp av flera XDM-mixiner.
+Kundens AI använder olika händelsetyper för att bygga modellfunktioner. Dessa händelsetyper läggs automatiskt till i schemat med hjälp av flera XDM-fältgrupper.
 
 >[!NOTE]
 >
->Om du använder data från Adobe Analytics eller Adobe Audience Manager skapas schemat automatiskt med de standardhändelser som behövs för att hämta in data. Om du skapar ett eget anpassat CEE-schema för att hämta in data måste du tänka på vilka mixiner som behövs för att hämta in data.
+>Om du använder data från Adobe Analytics eller Adobe Audience Manager skapas schemat automatiskt med de standardhändelser som behövs för att hämta in data. Om du skapar ett eget anpassat CEE-schema för att hämta in data måste du tänka på vilka fältgrupper som behövs för att hämta in data.
 
 Det är inte nödvändigt att ha data för var och en av de standardhändelser som listas nedan, men vissa händelser krävs för vissa scenarier. Om du har tillgång till någon av standardhändelsedatan rekommenderar vi att du inkluderar den i ditt schema. Om du till exempel vill skapa ett kundens AI-program för att förutsäga inköpshändelser kan det vara bra att ha data från datatyperna `Commerce` och `Web page details`.
 
-Om du vill visa en blandning i plattformsgränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och väljer sedan fliken **[!UICONTROL Mixins]**.
+Om du vill visa en fältgrupp i plattformsgränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och sedan klickar du på fliken **[!UICONTROL Field groups]**.
 
-
-| Mixa | Händelsetyp | Sökväg till XDM-fält |
+| Fältgrupp | Händelsetyp | Sökväg till XDM-fält |
 | --- | --- | --- |
 | [!UICONTROL Commerce Details] | order | <li> commerce.order.purchaseID </li> <li> productListItems.SKU </li> |
 |  | productListViews | <li> commerce.productListViews.value </li> <li> productListItems.SKU </li> |
@@ -118,7 +117,7 @@ Förutom de minsta data som krävs fungerar kundens AI också bäst med aktuella
 
 ### Exempel på scenarier
 
-I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obligatoriska och rekommenderade händelsetyper. Mer information om blandningen och dess fältsökväg finns i [standardhändelsetabellen](#standard-events) ovan.
+I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obligatoriska och rekommenderade händelsetyper. Mer information om fältgruppen och dess fältsökväg finns i [standardhändelsetabellen](#standard-events) ovan.
 
 >[!NOTE]
 >
@@ -249,7 +248,7 @@ Alla återstående [händelsetyper](#standard-events) kan behövas baserat på h
 
 **Nödvändiga standardhändelsetyper:**
 
-För att kunna använda egenskaper från Adobe Audience Manager måste du skapa en källanslutning med [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). Källkopplingen skapar automatiskt schemat med rätt blandning. Du behöver inte lägga till ytterligare händelsetyper manuellt för att schemat ska fungera med kundens AI.
+För att kunna använda egenskaper från Adobe Audience Manager måste du skapa en källanslutning med [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). Källkopplingen skapar automatiskt schemat med rätt fältgrupp(er). Du behöver inte lägga till ytterligare händelsetyper manuellt för att schemat ska fungera med kundens AI.
 
 När du konfigurerar en ny kund-AI-instans kan `audienceName` och `audienceID` användas för att välja ett visst värde för poängsättningen när du definierar ditt mål.
 
