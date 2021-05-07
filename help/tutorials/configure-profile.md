@@ -7,9 +7,9 @@ type: Tutorial
 description: I det här dokumentet beskrivs de olika stegen och det finns länkar till självstudiekurser för att slutföra varje enskilt arbetsflöde.
 exl-id: cda6e7a7-9498-454c-94df-c6271a5a4fd4
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '795'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Innan data kan importeras till Adobe Experience Platform och användas när [!DN
 **Den här guiden hjälper dig att:**
 - Bläddra bland befintliga scheman.
 - Skapa och namnge ett schema.
-- Lägg till och definiera XDM-mixiner.
+- Lägg till och definiera XDM-schemafältgrupper.
 - Ange dina schemafält som identitetsfält.
 - Aktivera profil för ditt schema.
 
