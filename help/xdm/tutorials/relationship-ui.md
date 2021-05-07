@@ -7,9 +7,9 @@ topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '921'
 ht-degree: 0%
 
 ---
@@ -54,23 +54,23 @@ Målschemat [!DNL Hotels] är baserat på en anpassad [!DNL Hotels]-klass och in
 
 ![](../images/tutorials/relationship/hotels.png)
 
-## Skapa en relationsblandning
+## Skapa en fältgrupp för relationsschema
 
 >[!NOTE]
 >
 >Det här steget krävs bara om källschemat inte har ett dedikerat strängtypsfält som ska användas som referens till målschemat. Om det här fältet redan är definierat i källschemat går du vidare till nästa steg i [som definierar ett relationsfält](#relationship-field).
 
-För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som ska användas som referens till målschemat. Du kan lägga till det här fältet i källschemat genom att skapa en ny blandning.
+För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som ska användas som referens till målschemat. Du kan lägga till det här fältet i källschemat genom att skapa en ny schemafältgrupp.
 
-Börja med att välja **[!UICONTROL Add]** i avsnittet **[!UICONTROL Mixins]**.
+Börja med att välja **[!UICONTROL Add]** i avsnittet **[!UICONTROL Field groups]**.
 
-![](../images/tutorials/relationship/loyalty-add-mixin.png)
+![](../images/tutorials/relationship/loyalty-add-field-group.png)
 
-Dialogrutan [!UICONTROL Add Mixin] visas. Välj **[!UICONTROL Create new mixin]** härifrån. I textfälten som visas anger du ett visningsnamn och en beskrivning för den nya blandningen. Välj **[!UICONTROL Add mixin]** när du är klar.
+Dialogrutan [!UICONTROL Add field group] visas. Välj **[!UICONTROL Create new field group]** härifrån. I textfälten som visas anger du ett visningsnamn och en beskrivning för den nya fältgruppen. Välj **[!UICONTROL Add field groups]** när du är klar.
 
-<img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
+![](../images/tutorials/relationship/create-field-group.png)
 
-Arbetsytan visas igen med &quot;[!DNL Favorite Hotel]&quot; i **[!UICONTROL Mixins]**-avsnittet. Markera namnet på mixen och välj sedan **[!UICONTROL Add field]** bredvid fältet `Loyalty Members` på rotnivå.
+Arbetsytan visas igen med &quot;[!DNL Favorite Hotel]&quot; i **[!UICONTROL Field groups]**-avsnittet. Markera fältgruppsnamnet och välj sedan **[!UICONTROL Add field]** bredvid fältet `Loyalty Members` på rotnivå.
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
