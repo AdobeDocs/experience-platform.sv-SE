@@ -6,9 +6,9 @@ topic-legacy: privacy events
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2459'
+source-wordcount: '2466'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,7 @@ Data om kundsamtycke måste skickas till datauppsättningar vars scheman innehå
 
 När du har skapat en [!DNL Profile]-aktiverad datauppsättning för insamling av medgivandedata måste du se till att dina sammanfogningsprinciper har konfigurerats så att de alltid inkluderar TCF-medgivandefält i kundprofilerna. Detta innebär att ange datauppsättningens prioritet så att din sambandsuppsättning prioriteras framför andra datauppsättningar som kan vara i konflikt.
 
-Mer information om hur du arbetar med sammanfogningsprinciper finns i [användarhandboken för sammanfogningsprinciper](../../../../profile/ui/merge-policies.md). När du konfigurerar sammanfogningsprinciperna måste du se till att dina segment innehåller alla nödvändiga medgivandeattribut som finns i [XDM-integritetsmixinen](./dataset.md#privacy-mixin), enligt riktlinjerna för datauppsättningsförberedelse.
+Mer information om hur du arbetar med sammanfogningsprinciper finns i [användarhandboken för sammanfogningsprinciper](../../../../profile/ui/merge-policies.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina segment innehåller alla nödvändiga medgivandeattribut som finns i [XDM sekretesschemafältgruppen](./dataset.md#privacy-field-group), enligt riktlinjerna för datauppsättningsförberedelse.
 
 ## Integrera Experience Platform Web SDK för att samla in data om kundens samtycke {#sdk}
 
@@ -196,7 +196,7 @@ Du kan också samla in TCF 2.0-medgivandedata för varje händelse som utlöses 
 
 >[!NOTE]
 >
->För att du ska kunna använda den här metoden måste du ha lagt till [!DNL Experience Event Privacy mixin] i det [!DNL Profile]-aktiverade [!DNL XDM ExperienceEvent]-schemat. I avsnittet [Uppdatera ExperienceEvent-schemat](./dataset.md#event-schema) i guiden för datauppsättningsförberedelse finns anvisningar om hur du konfigurerar det här.
+>För att du ska kunna använda den här metoden måste du ha lagt till fältgruppen Experience Event Privacy i ditt [!DNL Profile]-aktiverade [!DNL XDM ExperienceEvent]-schema. I avsnittet [Uppdatera ExperienceEvent-schemat](./dataset.md#event-schema) i guiden för datauppsättningsförberedelse finns anvisningar om hur du konfigurerar det här.
 
 Kommandot `sendEvent` bör användas som återanrop i lämpliga händelseavlyssnare på webbplatsen. Kommandot förväntar sig två argument: (1) en sträng som anger kommandotypen (i det här fallet `sendEvent`) och (2) en nyttolast som innehåller ett `xdm`-objekt som tillhandahåller obligatoriska medgivandefält som JSON:
 
