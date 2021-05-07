@@ -6,9 +6,9 @@ description: Lär dig hur du definierar ett identitetsfält i användargränssni
 topic-legacy: user guide
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringen
 
 ![](../../images/ui/fields/special/identity-config.png)
 
-Arbetsytan uppdateras för att återspegla ändringarna, och det valda fältet får en fingeravtryckssymbol (![](../../images/ui/fields/special/identity-symbol.png)) för att ange den som en identitet. I den vänstra listen visas nu identitetsfältet under namnet på den klass eller blandning som innehåller fältet till schemat.
+Arbetsytan uppdateras för att återspegla ändringarna, och det valda fältet får en fingeravtryckssymbol (![](../../images/ui/fields/special/identity-symbol.png)) för att ange den som en identitet. I den vänstra listen visas nu identitetsfältet under namnet på den klass eller schemafältgrupp som tillhandahåller fältet till schemat.
 
 Eftersom alla identitetsfält är obligatoriska som standard visas fältet nu under **[!UICONTROL Required fields]** i den vänstra listen. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
 
