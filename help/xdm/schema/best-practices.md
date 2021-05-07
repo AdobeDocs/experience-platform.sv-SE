@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2502'
+source-wordcount: '2511'
 ht-degree: 1%
 
 ---
@@ -75,7 +75,7 @@ Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det 
 | --- | --- | --- | --- | --- |
 | 1234567 | Lägg till | 275098 | 2 | 1 okt 10:32 |
 | 1234567 | Ta bort | 275098 | 1 | 1 okt 10:33 |
-| 1234567 | Lägg till | 486502 | 1 | 1 okt 10:41 |
+| 1234567 | Lägg till | 486502 | 3 | 1 okt 10:41 |
 | 1234567 | Lägg till | 910482 | 5 | 3 okt 2:15 PM |
 
 #### Användningsexempel för segmentering
@@ -193,26 +193,26 @@ I Experience Platform används XDM-fält som markerats som identiteter för att 
 
 När du utformar dina scheman kommer eventuella primärnycklar i relationsdatabastabeller troligtvis att vara lämpliga för primära identiteter. Andra exempel på tillämpliga identitetsfält är kundens e-postadresser, telefonnummer, konto-ID:n och [ECID](../../identity-service/ecid.md).
 
-### programblandningar från Adobe
+### Schemafältgrupper för Adobe
 
-Experience Platform har flera färdiga XDM-mixiner för datainhämtning i samband med följande Adobe-program:
+Experience Platform tillhandahåller flera färdiga XDM-schemafältgrupper för datainhämtning som är relaterade till följande Adobe-program:
 
 * Adobe Analytics
 * Adobe Audience Manager
 * Adobe Campaign
 * Adobe Target
 
-Med [[!UICONTROL Adobe Analytics ExperienceEvent Template Mixin]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) kan du till exempel mappa [!DNL Analytics]-specifika fält till XDM-scheman. Beroende på vilka Adobe-program du arbetar med bör du använda dessa Adobe-anpassade mixiner i dina scheman.
+Med fältgruppen [[!UICONTROL Adobe Analytics ExperienceEvent Template]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json) kan du mappa [!DNL Analytics]-specifika fält till XDM-scheman. Beroende på vilka Adobe-program du arbetar med bör du använda dessa fältgrupper som tillhandahålls av Adobe i dina scheman.
 
-<img src="../images/best-practices/analytics-mixin.png" width="700"><br>
+<img src="../images/best-practices/analytics-field-group.png" width="700"><br>
 
-Adobe-programblandningar tilldelar automatiskt en primär standardidentitet genom att använda fältet `identityMap`, som är ett systemgenererat, skrivskyddat objekt som mappar standardvärden för identiteter för en enskild kund.
+Programfältgrupper i Adobe tilldelar automatiskt en primär standardidentitet genom att använda fältet `identityMap`, som är ett systemgenererat, skrivskyddat objekt som mappar standardvärden för identiteter för en enskild kund.
 
 För Adobe Analytics är ECID standardidentitet. Om ett ECID-värde inte anges av en kund blir den primära identiteten i stället AAID som standard.
 
 >[!IMPORTANT]
 >
->När du använder programblandningar från Adobe ska inga andra fält markeras som primär identitet. Om det finns ytterligare egenskaper som måste markeras som identiteter måste de här fälten tilldelas som sekundära identiteter i stället.
+>När du använder programfältgrupper i Adobe ska inga andra fält markeras som primär identitet. Om det finns ytterligare egenskaper som måste markeras som identiteter måste de här fälten tilldelas som sekundära identiteter i stället.
 
 ## Nästa steg
 
