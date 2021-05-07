@@ -6,16 +6,16 @@ description: Med slutpunkten /classes i API:t för schemaregister kan du program
 topic-legacy: developer guide
 exl-id: 7beddb37-0bf2-4893-baaf-5b292830f368
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '1495'
+source-wordcount: '1505'
 ht-degree: 0%
 
 ---
 
 # Klassslutpunkt
 
-Alla XDM-scheman (Experience Data Model) måste baseras på en klass. En klass avgör den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, samt vilka mixiner som kan användas i dessa scheman. Dessutom avgör en schemaklass vilka beteendeaspekter av data som ett schema innehåller, varav det finns två typer:
+Alla XDM-scheman (Experience Data Model) måste baseras på en klass. En klass avgör den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, samt vilka schemafältgrupper som kan användas i dessa scheman. Dessutom avgör en schemaklass vilka beteendeaspekter av data som ett schema innehåller, varav det finns två typer:
 
 * **[!UICONTROL Record]**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **[!UICONTROL Time-series]**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
@@ -246,7 +246,7 @@ Du kan definiera en anpassad klass under `tenant`-behållaren genom att göra en
 
 >[!IMPORTANT]
 >
->När du komponerar ett schema baserat på en anpassad klass som du definierar, kan du inte använda standardblandningar. Varje mixin definierar de klasser som de är kompatibla med i sina `meta:intendedToExtend`-attribut. När du börjar definiera blandningar som är kompatibla med den nya klassen (genom att använda `$id` för den nya klassen i fältet `meta:intendedToExtend` för blandningen), kan du återanvända dessa blandningar varje gång du definierar ett schema som implementerar den klass du definierade. Mer information finns i avsnitten [skapa mixins](./mixins.md#create) och [skapa scheman](./schemas.md#create) i respektive slutpunktsguider.
+>När du komponerar ett schema baserat på en anpassad klass som du definierar, kan du inte använda standardfältgrupper. Varje fältgrupp definierar de klasser som de är kompatibla med i sina `meta:intendedToExtend`-attribut. När du börjar definiera fältgrupper som är kompatibla med den nya klassen (genom att använda `$id` för den nya klassen i fältet `meta:intendedToExtend` i fältgruppen), kan du återanvända dessa fältgrupper varje gång du definierar ett schema som implementerar den klass du definierade. Mer information finns i avsnitten [skapa fältgrupper](./field-groups.md#create) och [skapa scheman](./schemas.md#create) i respektive slutpunktsguider.
 >
 >Om du planerar att använda scheman som baseras på anpassade klasser i kundprofilen i realtid är det också viktigt att komma ihåg att fackscheman bara är konstruerade baserat på scheman som delar samma klass. Om du vill inkludera ett schema av anpassad klass i unionen för en annan klass som [!UICONTROL XDM Individual Profile] eller [!UICONTROL XDM ExperienceEvent] måste du skapa en relation med ett annat schema som använder den klassen. Mer information finns i självstudiekursen om att [etablera en relation mellan två scheman i API](../tutorials/relationship-api.md).
 
@@ -260,7 +260,7 @@ POST /tenant/classes
 
 Begäran om att skapa (POST) en klass måste innehålla ett `allOf`-attribut som innehåller `$ref` till ett av två värden: `https://ns.adobe.com/xdm/data/record` eller `https://ns.adobe.com/xdm/data/time-series`. Dessa värden representerar det beteende som klassen baseras på (post- respektive tidsserierna). Mer information om skillnaderna mellan postdata och tidsseriedata finns i avsnittet om beteendetyper i [grunderna för schemakomposition](../schema/composition.md).
 
-När du definierar en klass kan du även inkludera mixins eller anpassade fält i klassdefinitionen. Detta gör att de tillagda blandningarna och fälten inkluderas i alla scheman som implementerar klassen. I följande exempelbegäran definieras klassen&quot;Property&quot; som innehåller information om olika egenskaper som ägs och drivs av ett företag. Den innehåller ett `propertyId`-fält som ska inkluderas varje gång klassen används.
+När du definierar en klass kan du även inkludera fältgrupper eller anpassade fält i klassdefinitionen. Detta gör att de tillagda fältgrupperna och fälten inkluderas i alla scheman som implementerar klassen. I följande exempelbegäran definieras klassen&quot;Property&quot; som innehåller information om olika egenskaper som ägs och drivs av ett företag. Den innehåller ett `propertyId`-fält som ska inkluderas varje gång klassen används.
 
 ```SHELL
 curl -X POST \
