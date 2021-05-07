@@ -6,14 +6,21 @@ description: Med slutpunkten /mixins i API:t för schemaregister kan du programm
 topic-legacy: developer guide
 exl-id: 93ba2fe3-0277-4c06-acf6-f236cd33252e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a19a89d347b9197ab2766bd8a57018f5ac4f058d
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1193'
 ht-degree: 0%
 
 ---
 
-# Blandar slutpunkt
+
+# Mixins endpoint (utgått)
+
+>[!IMPORTANT]
+>
+>Mixer har bytt namn till schemafältgrupper och därför har slutpunkten `/mixins` ersatts med slutpunkten `/fieldgroups`.
+>
+>Även om `/mixins` fortsätter att vara en äldre slutpunkt rekommenderar vi att du använder `/fieldgroups` för nya implementeringar av API:t för schemaregister i dina upplevelseprogram. Mer information finns i [stödlinjen för fältgrupper](./field-groups.md).
 
 Blandningar är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Blandningar är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet hos de data de representerar (post- eller tidsserie). Med `/mixins`-slutpunkten i [!DNL Schema Registry]-API:t kan du programmässigt hantera blandningar i ditt upplevelseprogram.
 
@@ -154,7 +161,7 @@ Ett lyckat svar returnerar detaljerna för mixen. Vilka fält som returneras ber
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "mixins",
+  "meta:resourceType": "fieldgroups",
   "version": "1.2",
   "title": "Favorite Hotel",
   "type": "object",
@@ -300,7 +307,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "mixins",
+  "meta:resourceType": "fieldgroups",
   "version": "1.2",
   "title": "Property Details",
   "type": "object",
@@ -480,7 +487,7 @@ Ett lyckat svar returnerar information om den uppdaterade mixinen.
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "mixins",
+  "meta:resourceType": "fieldgroups",
   "version": "1.2",
   "title": "Property Details",
   "type": "object",
@@ -621,7 +628,7 @@ Svaret visar att båda åtgärderna har utförts. `description` har uppdaterats 
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "mixins",
+  "meta:resourceType": "fieldgroups",
   "version": "1.2",
   "title": "Property Details",
   "type": "object",
