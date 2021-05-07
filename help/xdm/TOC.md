@@ -2,13 +2,13 @@
 audience: user
 user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
-user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
+user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Scheman
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a19a89d347b9197ab2766bd8a57018f5ac4f058d
 workflow-type: tm+mt
-source-wordcount: '279'
-ht-degree: 6%
+source-wordcount: '291'
+ht-degree: 8%
 
 ---
 
@@ -30,18 +30,18 @@ ht-degree: 6%
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [Segmentdefinition](./classes/segment-definition.md)
-* Blandningar {#mixins}
-   * Profilblandningar {#profile}
-      * [IdentityMap](./mixins/profile/identitymap.md)
-      * [Demografiska detaljer](./mixins/profile/person-details.md)
-      * [Kontaktinformation, privat](./mixins/profile/personal-details.md)
-      * [Sekretess/personalisering/marknadsföringsinställningar (samtycke)](./mixins/profile/consents.md)
-      * [Information om segmentmedlemskap](./mixins/profile/segmentation.md)
-      * [Kontaktinformation, arbete](./mixins/profile/work-details.md)
-   * Händelseblandningar {#event}
-      * [Information om slutanvändar-ID](./mixins/event/enduserids.md)
-      * [Miljöinformation](./mixins/event/environment-details.md)
-   * [Uppdateringar av blandade namn](./mixins/name-updates.md)
+* Schemafältgrupper {#field-groups}
+   * Profilfältgrupper {#profile}
+      * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
+      * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
+      * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
+      * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
+      * [Sekretess/personalisering/marknadsföringsinställningar (samtycke)](./field-groups/profile/consents.md)
+   * Händelsefältgrupper {#event}
+      * [Information om slutanvändar-ID](./field-groups/event/enduserids.md)
+      * [Miljöinformation](./field-groups/event/environment-details.md)
+   * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
    * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
@@ -81,7 +81,7 @@ ht-degree: 6%
    * Skapa och redigera resurser {#resources}
       * [Scheman](./ui/resources/schemas.md)
       * [Klasser](./ui/resources/classes.md)
-      * [Blandningar](./ui/resources/mixins.md)
+      * [Fältgrupper](./ui/resources/field-groups.md)
       * [Datatyper](./ui/resources/data-types.md)
    * Definiera fält {#fields}
       * [Översikt](./ui/fields/overview.md)
@@ -99,7 +99,7 @@ ht-degree: 6%
    * [Scheman](api/schemas.md)
    * [Beteenden](api/behaviors.md)
    * [Klasser](api/classes.md)
-   * [Blandningar](api/mixins.md)
+   * [Fältgrupper för schema](api/field-groups.md)
    * [Datatyper](api/data-types.md)
    * [Beskrivningar](api/descriptors.md)
    * [Unions](api/unions.md)
@@ -107,6 +107,7 @@ ht-degree: 6%
    * [Exempeldata](api/sample-data.md)
    * [Granskningslogg](api/audit-log.md)
    * [Ad hoc-scheman](api/ad-hoc.md)
+   * [Blandningar (borttagna)](api/mixins.md)
    * [Bilaga](api/appendix.md)
 * Självstudiekurser {#tutorials}
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
