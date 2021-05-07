@@ -1,15 +1,15 @@
 ---
 title: Supporting Customer Consent Preferences Using the Adobe Experience Platform Web SDK
 description: Lär dig hur du stöder medgivandeinställningar med Adobe Experience Platform Web SDK.
-keywords: medgivande;defaultConsent;default medgivande;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
+keywords: medgivande;defaultConsent;standard medgivande;setConsent;Profile Privacy field group;Experience Event Privacy field group;Privacy field group;
+exl-id: 647e4a84-4a66-45d6-8b05-d78786bca63a
 translation-type: tm+mt
-source-git-commit: dd9101079a1093c109f43b268a78c07770221156
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '986'
 ht-degree: 0%
 
 ---
-
 
 # Stöd för kundernas samtycke
 
@@ -54,7 +54,7 @@ SDK stöder version 1.0 och 2.0 av Adobe Experience Platform medgivandestandard.
 
 ### Använda Adobe standardversion 2.0
 
-Om du använder Adobe Experience Platform måste du inkludera en integritetsblandning i ditt profilschema. Mer information om Adobe standardversion 2.0 finns i [Styrning, sekretess och säkerhet i Adobe Experience Platform](../../landing/governance-privacy-security/overview.md). Du kan lägga till data i värdeobjektet nedan som motsvarar schemat för fältet `consents` i profilmixen för Innehåll och inställningar.
+Om du använder Adobe Experience Platform måste du inkludera en fältgrupp för sekretessschema i ditt profilschema. Mer information om Adobe standardversion 2.0 finns i [Styrning, sekretess och säkerhet i Adobe Experience Platform](../../landing/governance-privacy-security/overview.md). Du kan lägga till data i värdeobjektet nedan som motsvarar schemat för fältet `consents` i profilfältgruppen för Innehåll och inställningar.
 
 Om användaren väljer att gå in kör du kommandot `setConsent` med inställningen `y` enligt följande:
 
@@ -147,7 +147,7 @@ alloy("setConsent", {
 });
 ```
 
-När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla [mixen för profilsekretess](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka medgivandeinformationen i händelser måste [Experience Event Privacy Mixin](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) läggas till i Experience Event-schemat.
+När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla schemafältgruppen [Profilsekretess](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka information om samtycke i händelser måste fältgruppen [Experience Event Privacy](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) läggas till i Experience Event-schemat.
 
 ## Skicka flera standarder i en begäran
 
@@ -184,4 +184,3 @@ Du måste lagra användarinställningarna oberoende av varandra för att kunna v
 ## Synkronisera identiteter när du ställer in samtycke
 
 När standardmedgivandet väntar eller går ut kan `setConsent` vara den första begäran som skickas ut och fastställer identitet. På grund av detta kan det vara viktigt att synkronisera identiteter på den första begäran. Identitetskartan kan läggas till i kommandot `setConsent` precis som i kommandot `sendEvent`. Se [Hämta Experience Cloud ID](../identity/overview.md)
-
