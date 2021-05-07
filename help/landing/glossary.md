@@ -6,9 +6,9 @@ topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '7131'
+source-wordcount: '7147'
 ht-degree: 0%
 
 ---
@@ -225,7 +225,7 @@ ht-degree: 0%
 
 **Experimentera**: Ett experiment är processen att skapa en utbildad modell genom att utbilda instansen med en exempeldel av data om produktion. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från konceptet med ett experiment i vissa maskininlärningsmiljöer där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
-**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som inträffat och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
+**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som hänt och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
 
 **Tillägg**: I  [!DNL Platform Launch]är ett tillägg ett paket med funktioner som lagts till i en  [!DNL Platform Launch] egenskap. Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
 
@@ -238,6 +238,8 @@ ht-degree: 0%
 **Funktionsmappning**: Funktionsmappning avser processen att mappa funktioner från data till indata- och målfunktioner som krävs av en maskininlärningsmodell.
 
 **Fält**: Ett fält är det lägsta nivåelementet i en datauppsättning, enligt definitionen i datauppsättningens XDM-schema. Varje fält har ett namn för referensändamål och en typ som anger vilken typ av data det innehåller. Fälttyper kan innehålla (men är inte begränsade till) heltal, tal, sträng, booleskt värde och objekt.
+
+**Fältgrupp**: Se&quot;Fältgrupp för schema&quot;.
 
 **Fältetiketter**: Fältetiketter är datastyrningsetiketter som antingen ärvs från en datamängd eller tillämpas direkt på ett fält.
 
@@ -323,7 +325,7 @@ ht-degree: 0%
 
 **Kopplingsprincip**: Sammanslagningsprinciper är regler som Experience Platform använder för att avgöra hur kunddatafragment från flera källor kombineras för att skapa en enskild profil. När en datakonflikt inträffar avgör sammanfogningsprincipen vilka data som ska prioriteras för att inkluderas i profilen.
 
-**Blandning**: I Experience Data Model (XDM) ger en blandning användare möjlighet att utöka återanvändbara fält för att definiera ett eller flera attribut som ska ingå i ett schema.
+**Blandning**: Se&quot;Fältgrupp för schema&quot;.
 
 **Modul**: I  [!DNL Platform Launch]är en modul ett fragment av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att behöva skapa en regel.
 
@@ -437,7 +439,9 @@ ht-degree: 0%
 
 **Poäng**: Poängberäkning är processen att generera insikter från data med hjälp av en tränad modell.
 
-**Schema**: Ett schema är en uppsättning regler som representerar och validerar datastrukturen och dataformatet. Ett schema består av en klass och valfria mixiner och används för att skapa datauppsättningar och datastreams. Ett schema kan innehålla beteendeattribut, tidsstämplar, identiteter, attributdefinitioner, relationer med mera.
+**Schema**: Ett schema är en uppsättning regler som representerar och validerar datastrukturen och dataformatet. Ett schema består av en klass och valfria fältgrupper och används för att skapa datauppsättningar och datastreams. Ett schema kan innehålla beteendeattribut, tidsstämplar, identiteter, attributdefinitioner, relationer med mera.
+
+**Fältgrupp** för schema: I Experience Data Model (XDM) ger en schemafältgrupp användare möjlighet att utöka återanvändbara fält för att definiera ett eller flera attribut som ska ingå i ett schema.
 
 **Schemabibliotek**: Schemabiblioteket innehåller XDM-resurser som är branschstandard och som Adobe tillhandahåller, samt anpassade resurser som definierats av din organisation.
 
