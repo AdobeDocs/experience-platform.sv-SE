@@ -1,15 +1,15 @@
 ---
 title: Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
 description: Lär dig hur du kan använda IAB TCF 2.0-medgivandeinställningar med Adobe Experience Platform Web SDK
-keywords: samtycke;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;IAB TCF 2.0;Real-time CDP;Real-time Customer Data Profile
+keywords: samtycke;setConsent;Profile Privacy Field group;Experience Event Privacy Field group;Privacy Field group;IAB TCF 2.0;Real-time CDP;Real-time Customer Data Profile
+exl-id: 78e728f4-1604-40bf-9e21-a056024bbc98
 translation-type: tm+mt
-source-git-commit: 1c6238a0cf72230e019fd10d9a72f30444bd9fb9
+source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
 workflow-type: tm+mt
-source-wordcount: '878'
+source-wordcount: '883'
 ht-degree: 0%
 
 ---
-
 
 # Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
 
@@ -49,7 +49,7 @@ Medan CDP och Audience Manager-målgrupperna i realtid håller reda på en kunds
 
 Följande krävs för att samla in information om samtycke vid händelser:
 
-- En datauppsättning som baseras på klassen [!DNL XDM Experience Event] med [!DNL Experience Event]-integritetsmixin.
+- En datauppsättning som baseras på klassen [!DNL XDM Experience Event], med fältgruppen [!DNL Experience Event] för sekretesschema.
 - En edge-konfiguration konfigurerad med [!DNL XDM Experience Event]-datauppsättningen ovan.
 
 Mer information om hur du konverterar en XDM Experience Event till en Analytics-träff får du om du börjar med att läsa dokumentationen till [Analytics overview](../../data-collection/adobe-analytics/analytics-overview.md).
