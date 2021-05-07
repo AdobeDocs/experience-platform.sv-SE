@@ -6,16 +6,16 @@ description: Den här översikten beskriver de viktigaste funktionerna i arbetsy
 topic-legacy: user guide
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '287'
+source-wordcount: '291'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL Schemas] Översikt över användargränssnittet
 
-Med arbetsytan [!UICONTROL Schemas] i Adobe Experience Platform användargränssnitt kan du hantera Experience Data Model-resurser (XDM), inklusive scheman, klasser, mixins och datatyper. Du kan visa och utforska kärnresurser från Adobe och skapa anpassade resurser och scheman för din organisation.
+Med arbetsytan [!UICONTROL Schemas] i Adobe Experience Platform användargränssnitt kan du hantera Experience Data Model-resurser (XDM), inklusive scheman, klasser, schemafältgrupper och datatyper. Du kan visa och utforska kärnresurser från Adobe och skapa anpassade resurser och scheman för din organisation.
 
 Om du vill komma åt arbetsytan i plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra listen.
 
@@ -33,12 +33,12 @@ Arbetsytan [!UICONTROL Schemas] innehåller kraftfulla verktyg för att skapa oc
 
 * [Scheman](./resources/schemas.md)
 * [Klasser](./resources/classes.md)
-* [Blandningar](./resources/mixins.md)
+* [Fältgrupper](./resources/field-groups.md)
 * [Datatyper](./resources/data-types.md)
 
 ## Definiera XDM-fält
 
-Klasser, blandningar och datatyper bidrar alla till ett schema med fält. Du kan välja från en lista med standardfälttyper när du lägger till fält till dessa resurser, och du kan även definiera specialiserade fält för vissa användningsområden. Mer information finns i guiden [definiera XDM-fält i användargränssnittet](./fields/overview.md).
+Klasser, fältgrupper och datatyper bidrar alla till ett schema med fält. Du kan välja från en lista med standardfälttyper när du lägger till fält till dessa resurser, och du kan även definiera specialiserade fält för vissa användningsområden. Mer information finns i guiden [definiera XDM-fält i användargränssnittet](./fields/overview.md).
 
 ## Nästa steg
 
