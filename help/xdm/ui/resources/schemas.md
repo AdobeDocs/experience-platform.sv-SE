@@ -6,9 +6,9 @@ description: Lär dig grunderna i hur du skapar och redigerar scheman i använda
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1340'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Den här guiden ger en översikt över hur du skapar, redigerar och hanterar XDM
 
 >[!IMPORTANT]
 >
->XDM-scheman är extremt anpassningsbara och därför kan stegen som krävs för att skapa ett schema variera beroende på vilken typ av data som ska hämtas. Det innebär att det här dokumentet endast omfattar de grundläggande interaktioner du kan göra med scheman i användargränssnittet, och att relaterade steg som att anpassa klasser, blandningar, datatyper och fält inte tas med.
+>XDM-scheman är extremt anpassningsbara och därför kan stegen som krävs för att skapa ett schema variera beroende på vilken typ av data som ska hämtas. Det innebär att det här dokumentet endast omfattar de grundläggande interaktioner du kan göra med scheman i användargränssnittet, och att relaterade steg som att anpassa klasser, schemafältgrupper, datatyper och fält inte tas med.
 >
 >Om du vill få en genomgång av hur du skapar scheman kan du följa med i [självstudiekursen](../../tutorials/create-schema-ui.md) för att skapa ett fullständigt exempelschema och bekanta dig med de många funktionerna i [!DNL Schema Editor].
 
@@ -37,7 +37,7 @@ När du har valt en klass visas [!DNL Schema Editor] och schemats grundstruktur 
 
 ![](../../images/ui/resources/schemas/schema-details.png)
 
-Nu kan du börja skapa schemastrukturen genom att [lägga till mixins](#add-mixins).
+Nu kan du börja skapa schemastrukturen genom att [lägga till schemafältgrupper](#add-field-groups).
 
 ## Redigera ett befintligt schema {#edit}
 
@@ -53,23 +53,23 @@ Om du vill redigera ett befintligt schema väljer du fliken **[!UICONTROL Browse
 >
 >Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Mer information finns i guiden [utforska XDM-resurser](../explore.md).
 
-När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till mixar](#add-mixins) i schemat, [redigera fältvisningsnamn](#display-names) eller [redigera befintliga anpassade mixar](./mixins.md#edit) om schemat använder några.
+När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till fältgrupper](#add-field-groups) i schemat, [redigera fältvisningsnamn](#display-names) eller [redigera befintliga anpassade fältgrupper](./field-groups.md#edit) om schemat använder någon.
 
-## Lägg till blandningar i ett schema {#add-mixins}
+## Lägg till fältgrupper i ett schema {#add-field-groups}
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du lägger till befintliga blandningar i ett schema. Om du vill skapa en ny anpassad blandning läser du i guiden [skapa och redigera mixiner](./mixins.md#create) i stället.
+>I det här avsnittet beskrivs hur du lägger till befintliga fältgrupper i ett schema. Om du vill skapa en ny anpassad fältgrupp läser du i guiden om att [skapa och redigera fältgrupper](./field-groups.md#create) i stället.
 
-När du har öppnat ett schema i [!DNL Schema Editor] kan du lägga till fält i schemat med hjälp av mixins. Starta genom att välja **[!UICONTROL Add]** bredvid **[!UICONTROL Mixins]** i den vänstra listen.
+När du har öppnat ett schema i [!DNL Schema Editor] kan du lägga till fält i schemat med hjälp av fältgrupper. Starta genom att välja **[!UICONTROL Add]** bredvid **[!UICONTROL Field groups]** i den vänstra listen.
 
-![](../../images/ui/resources/schemas/add-mixin-button.png)
+![](../../images/ui/resources/schemas/add-field-group-button.png)
 
-En dialogruta visas med en lista över mixar som du kan välja för schemat. Eftersom mixiner bara är kompatibla med en klass visas bara de mixar som är associerade med schemats valda klass. Som standard sorteras listade blandningar baserat på hur populära de är i din organisation.
+En dialogruta visas med en lista över fältgrupper som du kan välja för schemat. Eftersom fältgrupper endast är kompatibla med en klass, visas endast de fältgrupper som är associerade med schemats valda klass. Som standard sorteras listade fältgrupper baserat på hur populära de är i din organisation.
 
-![](../../images/ui/resources/schemas/mixin-popularity.png)
+![](../../images/ui/resources/schemas/field-group-popularity.png)
 
-Om du känner till den allmänna aktiviteten eller affärsområdet för de blandningsfält som du vill lägga till, väljer du en eller flera av de vertikala kategorierna i den vänstra listen för att filtrera den visade listan med mixar.
+Om du känner till den allmänna aktiviteten eller affärsområdet för de fält som du vill lägga till, väljer du en eller flera av de vertikala kategorierna i den vänstra listen för att filtrera den visade listan med fältgrupper.
 
 ![](../../images/ui/resources/schemas/industry-filter.png)
 
@@ -77,25 +77,25 @@ Om du känner till den allmänna aktiviteten eller affärsområdet för de bland
 >
 >Mer information om de bästa metoderna för branschspecifik datamodellering i XDM finns i dokumentationen om [branschdatamodeller](../../schema/industries/overview.md).
 
-Du kan också använda sökfältet för att hitta den blandning du vill använda. Blandningar vars namn matchar frågan visas högst upp i listan. Under **[!UICONTROL Standard Fields]** visas blandningar som innehåller fält som beskriver önskade dataattribut.
+Du kan också använda sökfältet för att hitta den fältgrupp du vill använda. Fältgrupper vars namn matchar frågan visas högst upp i listan. Under **[!UICONTROL Standard Fields]** visas fältgrupper som innehåller fält som beskriver önskade dataattribut.
 
-![](../../images/ui/resources/schemas/mixin-search.png)
+![](../../images/ui/resources/schemas/field-group-search.png)
 
-Markera kryssrutan bredvid namnet på den blandning som du vill lägga till i schemat. Du kan välja flera blandningar i listan, där varje vald blandning visas i den högra listen.
+Markera kryssrutan bredvid namnet på den fältgrupp som du vill lägga till i schemat. Du kan markera flera fältgrupper i listan, där varje markerad fältgrupp visas i den högra listen.
 
-![](../../images/ui/resources/schemas/add-mixin.png)
+![](../../images/ui/resources/schemas/add-field-group.png)
 
 >[!TIP]
 >
->För alla listade blandningar kan du hovra eller fokusera på informationsikonen (![](../../images/ui/resources/schemas/info-icon.png)) för att visa en kort beskrivning av den typ av data som blandningen hämtar. Du kan också markera förhandsvisningsikonen (![](../../images/ui/resources/schemas/preview-icon.png)) för att visa strukturen för de fält som blandningen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
+>För alla fältgrupper i listan kan du hovra eller fokusera på informationsikonen (![](../../images/ui/resources/schemas/info-icon.png)) för att visa en kort beskrivning av den typ av data som fältgruppen hämtar. Du kan också markera förhandsvisningsikonen (![](../../images/ui/resources/schemas/preview-icon.png)) för att visa strukturen för fälten som fältgruppen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
 
-När du har valt dina mixiner väljer du **[!UICONTROL Add mixin]** för att lägga till dem i schemat.
+När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för att lägga till dem i schemat.
 
-![](../../images/ui/resources/schemas/add-mixin-finish.png)
+![](../../images/ui/resources/schemas/add-field-group-finish.png)
 
-[!DNL Schema Editor] visas igen med de blandade fälten som visas på arbetsytan.
+[!DNL Schema Editor] visas igen med fälten som tillhandahålls av fältgruppen och som visas på arbetsytan.
 
-![](../../images/ui/resources/schemas/mixins-added.png)
+![](../../images/ui/resources/schemas/field-groups-added.png)
 
 ## Aktivera ett schema för kundprofil i realtid {#profile}
 
@@ -127,11 +127,11 @@ Schemat är nu aktiverat för användning i kundprofilen i realtid. När Platfor
 
 ## Redigera visningsnamn för schemafält {#display-names}
 
-När du har tilldelat en klass och lagt till mixar i ett schema kan du redigera visningsnamnen för alla fält i schemat, oavsett om dessa fält har tillhandahållits av standard eller anpassade XDM-resurser.
+När du har tilldelat en klass och lagt till fältgrupper till ett schema kan du redigera visningsnamnen för alla fält i schemat, oavsett om dessa fält har tillhandahållits av standard eller anpassade XDM-resurser.
 
 >[!NOTE]
 >
->Tänk på att visningsnamnen för fält som tillhör standardklasser eller mixiner bara kan redigeras i ett specifikt schema. Om du ändrar visningsnamnet för ett standardfält i ett schema påverkas alltså inte andra scheman som använder samma associerade klass eller blandning.
+>Tänk på att visningsnamnen för fält som tillhör standardklasser eller fältgrupper bara kan redigeras i ett specifikt schema. Om du ändrar visningsnamnet för ett standardfält i ett schema påverkas alltså inte andra scheman som använder samma associerade klass eller fältgrupp.
 
 Om du vill redigera visningsnamnet för ett schemafält markerar du fältet på arbetsytan. Ange det nya namnet under **[!UICONTROL Display name]** i den högra listen.
 
@@ -147,7 +147,7 @@ Du kan ändra schemaklassen när som helst under den inledande dispositionsproce
 
 >[!WARNING]
 >
->Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Blandningar är bara kompatibla med vissa klasser, och om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
+>Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
 Om du vill tilldela om en klass väljer du **[!UICONTROL Assign]** till vänster på arbetsytan.
 
@@ -167,7 +167,7 @@ När du har bekräftat klassändringen återställs arbetsytan och alla disposit
 
 ## Nästa steg
 
-Det här dokumentet innehåller grunderna för att skapa och redigera scheman i plattformsgränssnittet. Vi rekommenderar att du går igenom självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade mixiner och datatyper för unika användningsfall.
+Det här dokumentet innehåller grunderna för att skapa och redigera scheman i plattformsgränssnittet. Vi rekommenderar att du går igenom självstudiekursen [för att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett fullständigt schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper för unika användningsfall.
 
 Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas]](../overview.md).
 
