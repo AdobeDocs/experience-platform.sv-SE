@@ -6,7 +6,7 @@ topic-legacy: Getting started
 description: Följande handledningar kräver förståelse för de olika Adobe Experience Platform-tjänster som används för att använda Attribution AI. Innan du börjar med självstudiekurserna bör du läsa följande dokument.
 exl-id: ab269c24-97ac-4da9-9b6c-7d2dde61f0dc
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Följande guider kräver förståelse för de olika [!DNL Adobe Experience Platf
 - [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i  [!DNL Adobe Experience Platform].
 - [Byggscheman](../../xdm/tutorials/create-schema-ui.md): I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 
-Attribution AI kräver att datauppsättningar överensstämmer med CEE-schemat (Consumer Experience Events), som är en blandning i [Experience Data Model](../../xdm/home.md) (XDM). Kontakta Adobe support på attributionai-support@adobe.com för att implementera eller göra ändringar i dessa data. Om det finns uppgifter om medieleveranser kan du göra ytterligare analyser, till exempel inkrementella intäkter och avkastning. Om det finns tillgängliga kundprofildata kan du attribuera krediter till kundprofilnivån ytterligare.
+Attribution AI kräver att datauppsättningar överensstämmer med CEE-schemat (Consumer Experience Events), som är en [XDM-schemafältgrupp (Experience Data Model)](../../xdm/home.md). Kontakta Adobe support på attributionai-support@adobe.com för att implementera eller göra ändringar i dessa data. Om det finns uppgifter om medieleveranser kan du göra ytterligare analyser, till exempel inkrementella intäkter och avkastning. Om det finns tillgängliga kundprofildata kan du attribuera krediter till kundprofilnivån ytterligare.
 
 ## Terminologi
 
