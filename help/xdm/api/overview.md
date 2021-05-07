@@ -6,9 +6,9 @@ description: Med API:t för schemaregister kan utvecklare programmässigt hanter
 topic-legacy: developer guide
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '973'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
@@ -29,9 +29,9 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 ## Scheman
 
-XDM-scheman representerar och validerar strukturen och formatet för data som hämtas till Platform. Ett schema består av en klass och noll eller flera mixiner. Du kan skapa, visa, redigera och ta bort scheman med `/schemas`-slutpunkten. Mer information om hur du använder den här slutpunkten finns i [schemas slutpunktshandbok](./schemas.md).
+XDM-scheman representerar och validerar strukturen och formatet för data som hämtas till Platform. Ett schema består av en klass och noll eller flera schemafältgrupper. Du kan skapa, visa, redigera och ta bort scheman med `/schemas`-slutpunkten. Mer information om hur du använder den här slutpunkten finns i [schemas slutpunktshandbok](./schemas.md).
 
-En steg-för-steg-guide om hur du skapar ett fullständigt schema i API:t för schemaregister, inklusive hur du skapar och lägger till mixiner och datatyper, finns i [självstudiekursen för att skapa API-schema](../tutorials/create-schema-api.md).
+En steg-för-steg-guide om hur du skapar ett fullständigt schema i API:t för schemaregister, inklusive hur du skapar och lägger till fältgrupper och datatyper, finns i [självstudiekursen för att skapa API-schema](../tutorials/create-schema-api.md).
 
 ## Beteenden
 
@@ -39,15 +39,15 @@ Beteenden definierar den typ av data som ett schema beskriver. Varje XDM-klass m
 
 ## Klasser
 
-En klass definierar den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, och avgör vilka mixar som kan användas i dessa scheman. Alla klasser måste kopplas till ett befintligt beteende. Mer information om hur du arbetar med klasser i API finns i [klassernas slutpunktshandbok](./classes.md).
+En klass definierar den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, och fastställer vilka fältgrupper som kan användas i dessa scheman. Alla klasser måste kopplas till ett befintligt beteende. Mer information om hur du arbetar med klasser i API finns i [klassernas slutpunktshandbok](./classes.md).
 
-## Blandningar
+## Fältgrupper
 
-Blandningar är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Blandningar är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet hos de data de representerar (post- eller tidsserie). Se [slutpunktshandboken för mixins](./mixins.md) för att lära dig hur du arbetar med mixiner i API:t.
+Fältgrupper är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Fältgrupper är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet för de data de representerar (post- eller tidsserie). Läs [slutpunktshandboken för fältgrupper](./field-groups.md) om du vill lära dig hur du arbetar med fältgrupper i API:t.
 
 ## Datatyper
 
-Datatyper används som referenstypfält i klasser eller blandningar på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om de liknar blandningar i genom att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan mixar bara kan läggas till på rotnivån. Mer information om hur du arbetar med datatyper i API finns i [slutpunktshandboken för datatyper](./data-types.md).
+Datatyper används som referenstypfält i klasser eller fältgrupper på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om datatyperna liknar fältgrupper på så sätt att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån. Mer information om hur du arbetar med datatyper i API finns i [slutpunktshandboken för datatyper](./data-types.md).
 
 ## Beskrivningar
 
@@ -61,7 +61,7 @@ Mer information om hur du visar fackföreningar i API:t för schemaregister finn
 
 ## Exportera/importera
 
-Med API:t för schemaregister kan du överföra och dela XDM-resurser mellan sandlådor och IMS-organisationer. För alla scheman, mixin och datatyper kan du generera en exportnyttolast som innehåller resursstrukturen och alla beroende resurser. Denna nyttolast kan sedan användas för att importera resursen till en målsandlåda och IMS-organisation.
+Med API:t för schemaregister kan du överföra och dela XDM-resurser mellan sandlådor och IMS-organisationer. För alla scheman, fältgrupper och datatyper kan du generera en exportnyttolast som innehåller resursstrukturen och eventuella beroende resurser. Denna nyttolast kan sedan användas för att importera resursen till en målsandlåda och IMS-organisation.
 
 Mer information om hur du använder dessa slutpunkter finns i guiden [för export/import av slutpunkter](./export-import.md).
 
@@ -73,7 +73,7 @@ Mer information om hur du använder den här slutpunkten finns i [exempeldatagui
 
 ## Granskningslogg
 
-Schemaregistret innehåller en logg över alla ändringar som har gjorts för en resurs (klass, mixin, datatyp eller schema) mellan olika uppdateringar. Du kan hämta loggen för en viss resurs genom att ange dess `$id` eller `meta:altId` i sökvägen för en GET-begäran till den här slutpunkten.
+Schemaregistret innehåller en logg över alla ändringar som har gjorts för en resurs (klass, fältgrupp, datatyp eller schema) mellan olika uppdateringar. Du kan hämta loggen för en viss resurs genom att ange dess `$id` eller `meta:altId` i sökvägen för en GET-begäran till den här slutpunkten.
 
 Mer information om hur du använder den här slutpunkten finns i [slutpunktshandboken för granskningsloggen](./audit-log.md).
 
