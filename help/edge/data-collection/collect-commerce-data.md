@@ -2,20 +2,20 @@
 title: Samla in handels- och produktinformation med Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till produktrelaterade data eller en kundvagn med Adobe Experience Platform Web SDK.
 keywords: produkter;handel;mått;mått;order;cartAbandons;checkouts;productListAdds;productListOpen;productListRemovals;productListReopens;productListViews;productViews;purchasing;saveForLaters;currencyCode;payments;paymentAmount;paymentType;transactionID;priceTotal;purchaseID;purchaseNumber;
+exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
 workflow-type: tm+mt
-source-wordcount: '1321'
+source-wordcount: '1324'
 ht-degree: 1%
 
 ---
-
 
 # Samla in information om handel och produkter
 
 Om du har produkter på din webbplats är detta en standarduppsättning med saker som du kanske vill skicka för att få ut så mycket som möjligt av Adobe. Även om detta är ett förslag ger det en mycket stark uppsättning data redan från början.
 
-Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md)-mixen. `commerce`-blandningen delas upp i två delar: `commerce`-objektet och `productListItems`-arrayen. Med `commerce`-objektet kan du ange vilka åtgärder som ska utföras för `productListItems`-arrayen.
+Det här dokumentet använder schemafältgruppen [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md). Fältgruppen `commerce` är uppdelad i två delar: `commerce`-objektet och `productListItems`-arrayen. Med `commerce`-objektet kan du ange vilka åtgärder som ska utföras för `productListItems`-arrayen.
 
 >[!TIP]
 >
