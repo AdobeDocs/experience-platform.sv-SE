@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
 translation-type: tm+mt
-source-git-commit: 9b63b38e664e5776ca638f8ed407896f185bcab0
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '867'
 ht-degree: 0%
 
 ---
@@ -31,16 +31,16 @@ Själva [!DNL XDM ExperienceEvent]-klassen tillhandahåller flera tidsserierelat
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill använda det här fältet för [Kundprofil för realtid](../../profile/home.md) ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i  [grunderna för ](../schema/composition.md#identityMap) schemakompositioner. |
 | `timestamp` | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339 Section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).<br><br>Den här tidsstämpeln kan  **** bara representera observationen av själva händelsen och måste inträffa i det förflutna. Om dina användningsfall för segmentering kräver användning av tidsstämplar som kan inträffa i framtiden (till exempel ett avgångsdatum), måste dessa värden begränsas någon annanstans i Experience Event-schemat. |
 
-## Kompatibla blandningar {#mixins}
+## Kompatibla schemafältgrupper {#field-groups}
 
 >[!NOTE]
 >
->Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om [uppdateringar av blandnamn](../mixins/name-updates.md).
+>Namnen på flera fältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../field-groups/name-updates.md).
 
-Adobe innehåller flera standardblandningar som kan användas med klassen [!DNL XDM ExperienceEvent]. Nedan följer en lista över några vanliga blandningar för klassen:
+Adobe innehåller flera standardfältgrupper som kan användas med klassen [!DNL XDM ExperienceEvent]. Nedan följer en lista över några vanliga fältgrupper för klassen:
 
-* [[!UICONTROL End User ID Details]](../mixins/event/enduserids.md)
-* [[!UICONTROL Environment Details]](../mixins/event/environment-details.md)
+* [[!UICONTROL End User ID Details]](../field-groups/event/enduserids.md)
+* [[!UICONTROL Environment Details]](../field-groups/event/environment-details.md)
 
 ## Bilaga
 
