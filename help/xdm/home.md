@@ -1,19 +1,23 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;XDM;XDM system;XDM individuell profil;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event event;mixins;mixin;mixin;mixin;experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experience event;XDM ExperienceEvent;experience data model;Experience data model;Experience data model;datamodell;datamodell;schemaregister;schemaregister;schemabibliotek;schema;postdata;tidsserie;tidsserie
+keywords: Experience Platform;startsida;populära ämnen;XDM;XDM system;XDM individuell profil;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Field groups;field group;field group;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;experience data model;Experience data model;Experience data model;datamodell;datamodell;schemaregister;schemaregister;schemabibliotek;schema;postdata;tidsserie;tidsserie
 solution: Experience Platform
 title: XDM - systemöversikt
 topic-legacy: overview
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 58f6c5e3ac77070807f7486bf429493d14fdda9e
 workflow-type: tm+mt
-source-wordcount: '1642'
+source-wordcount: '1694'
 ht-degree: 0%
 
 ---
 
 # XDM - systemöversikt
+
+>[!NOTE]
+>
+>Termen&quot;mixin&quot; har uppdaterats till&quot;schemafältgrupp&quot; för att främja förståelsen. Fältgrupper är en återanvändbar uppsättning fält som stöder affärssituationer. Den här ändringen återspeglas nu i API:t för schemaregister, Adobe Experience Platform-gränssnittet och i all plattformsdokumentation.
 
 Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
@@ -27,7 +31,7 @@ Det här dokumentet innehåller en översikt över XDM-systemets roll i [!DNL Ex
 
 [!DNL Experience Platform] använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data.
 
-Innan data kan hämtas in till [!DNL Platform] måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera blandningar.
+Innan data kan hämtas in till [!DNL Platform] måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
 
 Mer information om schemakompositionsmodellen, inklusive designprinciper och bästa praxis, finns i [grunderna för schemakomposition](schema/composition.md).
 
