@@ -6,20 +6,20 @@ description: Lär dig hur du definierar XDM-fält i användargränssnittet för 
 topic-legacy: user guide
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1250'
 ht-degree: 3%
 
 ---
 
 # Definiera XDM-fält i användargränssnittet
 
-Med [!DNL Schema Editor] i Adobe Experience Platform användargränssnitt kan du definiera egna fält i anpassade Experience Data Model-klasser (XDM) och -blandningar. Den här guiden beskriver stegen för att definiera XDM-fält i användargränssnittet, inklusive tillgängliga konfigurationsalternativ för varje fälttyp.
+Med [!DNL Schema Editor] i Adobe Experience Platform användargränssnitt kan du definiera egna fält i anpassade XDM-klasser (Experience Data Model) och schemafältgrupper. Den här guiden beskriver stegen för att definiera XDM-fält i användargränssnittet, inklusive tillgängliga konfigurationsalternativ för varje fälttyp.
 
 ## Förutsättningar
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser och blandningar bidrar till fält i XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser och fältgrupper bidrar till fält i XDM-scheman.
 
 Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om [disposition av ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 
@@ -27,13 +27,13 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 
 Om du vill definiera nya XDM-fält i användargränssnittet måste du först öppna ett schema i [!DNL Schema Editor]. Beroende på vilka scheman som är tillgängliga i [!DNL Schema Library] kan du välja att [skapa ett nytt schema](../resources/schemas.md#create) eller [välja ett befintligt schema att redigera](../resources/schemas.md#edit).
 
-När du har [!DNL Schema Editor] öppet använder du den vänstra listen för att välja den klass eller blandning som du vill definiera fält för. Om resursen är en anpassad resurs som definieras av din organisation visas kontroller för att lägga till eller redigera fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller mixin.
+När du har [!DNL Schema Editor] öppet använder du den vänstra listen för att välja den klass eller fältgrupp som du vill definiera fält för. Om resursen är en anpassad resurs som definieras av din organisation visas kontroller för att lägga till eller redigera fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
 >[!NOTE]
 >
->Om den klass eller mixin du väljer är en huvudresurs som tillhandahålls av Adobe kan den inte redigeras och därför visas inte kontrollerna ovan. Om schemat som du vill lägga till fält i baseras på en XDM-huvudklass och inte innehåller några anpassade mixiner, kan du [skapa en ny mixin](../resources/mixins.md#create) som du i stället kan lägga till i schemat.
+>Om den klass eller fältgrupp du väljer är en huvudresurs som tillhandahålls av Adobe kan den inte redigeras och därför visas inte kontrollerna ovan. Om schemat som du vill lägga till fält i baseras på en XDM-huvudklass och inte innehåller några anpassade fältgrupper, kan du [skapa en ny fältgrupp](../resources/field-groups.md#create) som du i stället kan lägga till i schemat.
 
 Om du vill lägga till ett nytt fält i resursen väljer du ikonen **plus (+)** bredvid schemats namn på arbetsytan, eller bredvid det objekttypsfält som du vill definiera fältet under.
 
@@ -41,7 +41,7 @@ Om du vill lägga till ett nytt fält i resursen väljer du ikonen **plus (+)** 
 
 ## Definiera ett fält för en resurs {#define}
 
-När du har valt ikonen **plus (+)** visas ett **[!UICONTROL New field]** på arbetsytan, som finns i ett rotnivåobjekt som har ett namn som är kopplat till ditt unika klient-ID (visas som `_tenantId` i exemplet nedan). Alla fält som läggs till i ett schema via anpassade klasser och blandningar placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och blandningar som tillhandahålls av Adobe.
+När du har valt ikonen **plus (+)** visas ett **[!UICONTROL New field]** på arbetsytan, som finns i ett rotnivåobjekt som har ett namn som är kopplat till ditt unika klient-ID (visas som `_tenantId` i exemplet nedan). Alla fält som läggs till i ett schema via anpassade klasser och fältgrupper placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och fältgrupper som tillhandahålls av Adobe.
 
 ![](../../images/ui/fields/overview/new-field.png)
 
@@ -69,11 +69,11 @@ Arbetsytan uppdateras för att visa fältets namn och typ, och den högra listen
 
 ![](../../images/ui/fields/overview/field-added.png)
 
-Du kan fortsätta följa stegen ovan för att lägga till fler fält i schemat. När schemat har sparats sparas även dess basklass och mixins om några ändringar har gjorts i dem.
+Du kan fortsätta följa stegen ovan för att lägga till fler fält i schemat. När schemat har sparats sparas även dess basklass och fältgrupper om några ändringar har gjorts i dem.
 
 >[!NOTE]
 >
->Alla ändringar du gör i mixins eller klassen för ett schema kommer att återspeglas i alla andra scheman som använder dem.
+>Alla ändringar du gör i fältgrupperna eller klassen för ett schema kommer att återspeglas i alla andra scheman som använder dem.
 
 ## Typspecifika fältegenskaper {#type-specific-properties}
 
@@ -107,6 +107,6 @@ Mer information om dessa specialtyper finns i följande dokumentation:
 
 ## Nästa steg
 
-Den här guiden ger en översikt över hur du definierar XDM-fält i användargränssnittet. Kom ihåg att fält bara kan läggas till i scheman med hjälp av klasser och blandningar. Mer information om hur du hanterar de här resurserna i användargränssnittet finns i guiderna för att skapa och redigera [klasser](../resources/classes.md) och [mixiner](../resources/mixins.md).
+Den här guiden ger en översikt över hur du definierar XDM-fält i användargränssnittet. Kom ihåg att fält bara kan läggas till i scheman med hjälp av klasser och fältgrupper. Mer information om hur du hanterar de här resurserna i användargränssnittet finns i guiderna för att skapa och redigera [klasser](../resources/classes.md) och [fältgrupper](../resources/field-groups.md).
 
 Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas]](../overview.md).
