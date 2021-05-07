@@ -6,9 +6,9 @@ description: Det här dokumentet innehåller en introduktion till de centrala ko
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1363'
+source-wordcount: '1367'
 ht-degree: 0%
 
 ---
@@ -85,16 +85,16 @@ Ett svar returnerar information om hur din organisation använder [!DNL Schema R
   "tenantId":"{TENANT_ID}",
   "counts": {
     "schemas": 4,
-    "mixins": 3,
+    "fieldgroups": 3,
     "datatypes": 1,
     "classes": 2,
     "unions": 0,
   },
   "recentlyCreatedResources": [ 
     {
-      "title": "Sample Mixin",
-      "description": "New Sample Mixin.",
-      "meta:resourceType": "mixins",
+      "title": "Sample Field Group",
+      "description": "New Sample Field Group.",
+      "meta:resourceType": "fieldgroups",
       "meta:created": "Sat Feb 02 2019 00:24:30 GMT+0000 (UTC)",
       "version": "1.1"
     },
@@ -109,9 +109,9 @@ Ett svar returnerar information om hur din organisation använder [!DNL Schema R
   ],
   "recentlyUpdatedResources": [
     {
-      "title": "Sample Mixin",
-      "description": "New Sample Mixin.",
-      "meta:resourceType": "mixins",
+      "title": "Sample Field Group",
+      "description": "New Sample Field Group.",
+      "meta:resourceType": "fieldgroups",
       "meta:updated": "Sat Feb 02 2019 00:34:06 GMT+0000 (UTC)",
       "version": "1.1"
     },
@@ -160,7 +160,7 @@ Anrop till API:t [!DNL Schema Registry] kräver att du använder en `CONTAINER_I
 
 ### Global behållare
 
-Behållaren `global` innehåller alla standardklasser, mixiner, datatyper och scheman som partnern tillhandahåller för Adobe och [!DNL Experience Platform]. Du får bara utföra list- och uppslagsbegäranden (GET) mot `global`-behållaren.
+Behållaren `global` innehåller alla standardklasser som tillhandahålls av Adobe och [!DNL Experience Platform] partner, schemafältgrupper, datatyper och scheman. Du får bara utföra list- och uppslagsbegäranden (GET) mot `global`-behållaren.
 
 Ett exempel på ett anrop som använder behållaren `global` skulle se ut så här:
 
@@ -170,15 +170,15 @@ GET /global/classes
 
 ### Klientbehållaren
 
-För att inte blandas ihop med din unika `TENANT_ID` innehåller `tenant`-behållaren alla klasser, mixins, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i `tenant`-behållaren.
+För att inte blandas ihop med din unika `TENANT_ID` innehåller `tenant`-behållaren alla klasser, fältgrupper, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i `tenant`-behållaren.
 
 Ett exempel på ett anrop som använder behållaren `tenant` skulle se ut så här:
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
-När du skapar en klass, mixin, schema eller datatyp i `tenant`-behållaren sparas den i [!DNL Schema Registry] och tilldelas en `$id`-URI som innehåller din `TENANT_ID`. Denna `$id` används i hela API för att referera till specifika resurser. Exempel på `$id`-värden finns i nästa avsnitt.
+När du skapar en klass, fältgrupp, schema eller datatyp i `tenant`-behållaren sparas den i [!DNL Schema Registry] och tilldelas en `$id`-URI som innehåller din `TENANT_ID`. Denna `$id` används i hela API för att referera till specifika resurser. Exempel på `$id`-värden finns i nästa avsnitt.
 
 ## Resursidentifiering {#resource-identification}
 
