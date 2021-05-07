@@ -6,9 +6,9 @@ topic-legacy: Intelligent Services
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2385'
+source-wordcount: '2397'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Om dina data lagras utanför [!DNL Experience Platform] följer du stegen nedan:
 
 Kundens AI och Attribution AI stöder Adobe Analytics data. Om du vill använda Adobe Analytics-data följer du stegen som beskrivs i dokumentationen för att konfigurera en [Analyskälla](../sources/tutorials/ui/create/adobe-applications/analytics.md).
 
-När källkopplingen direktuppspelar data i Experience Platform kan du välja Adobe Analytics som datakälla följt av en datauppsättning under instanskonfigurationen. Alla obligatoriska schemafält och mixiner skapas automatiskt när anslutningen konfigureras. Du behöver inte ETL (Extract, Transform, Load) för datauppsättningarna till CEE-formatet.
+När källkopplingen direktuppspelar data i Experience Platform kan du välja Adobe Analytics som datakälla följt av en datauppsättning under instanskonfigurationen. Alla nödvändiga schemafältgrupper och enskilda fält skapas automatiskt när anslutningen skapas. Du behöver inte ETL (Extract, Transform, Load) för datauppsättningarna till CEE-formatet.
 
 >[!IMPORTANT]
 >
@@ -45,7 +45,7 @@ När källkopplingen direktuppspelar data i Experience Platform kan du välja Ad
 
 Kunden AI har inbyggt stöd för Adobe Audience Manager data. Om du vill använda Audience Manager data följer du stegen som beskrivs i dokumentationen för att konfigurera en [Audience Manager-källkoppling](../sources/tutorials/ui/create/adobe-applications/audience-manager.md).
 
-När källkopplingen direktuppspelar data i Experience Platform kan du välja Adobe Audience Manager som datakälla följt av en datauppsättning under din AI-konfiguration. Alla obligatoriska schemafält och mixiner skapas automatiskt när anslutningen konfigureras. Du behöver inte ETL (Extract, Transform, Load) för datauppsättningarna till CEE-formatet.
+När källkopplingen direktuppspelar data i Experience Platform kan du välja Adobe Audience Manager som datakälla följt av en datauppsättning under din AI-konfiguration. Alla schemafältgrupper och enskilda fält skapas automatiskt när anslutningen skapas. Du behöver inte ETL (Extract, Transform, Load) för datauppsättningarna till CEE-formatet.
 
 >[!IMPORTANT]
 >
@@ -68,13 +68,13 @@ CEE-schemat, liksom alla XDM ExperienceEvent-scheman, hämtar systemets tidsseri
 
 ![](./images/data-preparation/schema-expansion.gif)
 
-Precis som alla XDM-scheman är CEE-blandningen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-mixen, och olika variationer kan vid behov inkluderas i flera scheman.
+Precis som alla XDM-scheman är CEE-schemafältgruppen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-fältgruppen, och olika variationer kan vid behov inkluderas i flera scheman.
 
-Ett fullständigt exempel på blandningen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md). Dessutom kan du visa och kopiera följande [JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att få ett exempel på hur data kan struktureras så att de överensstämmer med CEE-schemat. Läs båda dessa exempel när du lär dig mer om de nyckelfält som beskrivs i avsnittet nedan för att avgöra hur du kan mappa dina egna data till schemat.
+Ett fullständigt exempel på fältgruppen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md). Dessutom kan du visa och kopiera följande [JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att få ett exempel på hur data kan struktureras så att de överensstämmer med CEE-schemat. Läs båda dessa exempel när du lär dig mer om de nyckelfält som beskrivs i avsnittet nedan för att avgöra hur du kan mappa dina egna data till schemat.
 
 ## Nyckelfält
 
-Det finns flera nyckelfält i CEE-mixen som bör användas för att [!DNL Intelligent Services] ska generera användbara insikter. I det här avsnittet beskrivs användningsfallet och förväntade data för dessa fält, och det finns länkar till referensdokumentation för ytterligare exempel.
+Det finns flera nyckelfält i CEE-fältgruppen som bör användas för att [!DNL Intelligent Services] ska generera användbara insikter. I det här avsnittet beskrivs användningsfallet och förväntade data för dessa fält, och det finns länkar till referensdokumentation för ytterligare exempel.
 
 ### Obligatoriska fält
 
@@ -297,16 +297,16 @@ I det här avsnittet beskrivs arbetsflödet för mappning och inmatning av data 
 
 #### Skapa ett CEE-schema och en datauppsättning
 
-När du är redo att börja förbereda dina data för konsumtion är det första steget att skapa ett nytt XDM-schema som använder CEE-mixen. I följande självstudiekurser får du hjälp med att skapa ett nytt schema i gränssnittet eller API:
+När du är redo att börja förbereda dina data för konsumtion är det första steget att skapa ett nytt XDM-schema som använder CEE-fältgruppen. I följande självstudiekurser får du hjälp med att skapa ett nytt schema i gränssnittet eller API:
 
 * [Skapa ett schema i användargränssnittet](../xdm/tutorials/create-schema-ui.md)
 * [Skapa ett schema i API:t](../xdm/tutorials/create-schema-api.md)
 
 >[!IMPORTANT]
 >
->Självstudiekurserna ovan följer ett allmänt arbetsflöde för att skapa ett schema. När du väljer en klass för schemat måste du använda klassen **XDM ExperienceEvent**. När den här klassen har valts kan du lägga till CEE-mixinen i schemat.
+>Självstudiekurserna ovan följer ett allmänt arbetsflöde för att skapa ett schema. När du väljer en klass för schemat måste du använda klassen **XDM ExperienceEvent**. När den här klassen har valts kan du lägga till CEE-fältgruppen i schemat.
 
-När du har lagt till CEE-mixen i schemat kan du lägga till andra mixiner efter behov för ytterligare fält i dina data.
+När du har lagt till CEE-fältgruppen i schemat kan du lägga till andra fältgrupper efter behov för ytterligare fält i dina data.
 
 När du har skapat och sparat schemat kan du skapa en ny datauppsättning som baseras på det schemat. I följande självstudiekurser får du hjälp med att skapa en ny datauppsättning i gränssnittet eller API:
 
