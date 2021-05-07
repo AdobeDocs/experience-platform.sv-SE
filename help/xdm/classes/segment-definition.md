@@ -5,9 +5,9 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över segmentdefinitionsklassen i XDM (Experience Data Model).
 exl-id: c0f7b04c-2266-4d08-89a1-67ba758a51a7
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. För att kunna samla in information om segmentmedlemskap i dina profildata bör du använda blandningen [Segmentmedlemsinformation](../mixins/profile/segmentation.md) i ditt [!UICONTROL XDM Individual Profile]-schema.
+>Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. För att kunna samla in information om segmentmedlemskap i dina profildata bör du använda fältgruppen [Information om segmentmedlemskap](../field-groups/profile/segmentation.md) i ditt [!UICONTROL XDM Individual Profile]-schema.
 
 ![](../images/classes/segment-definition.png)
 
