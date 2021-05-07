@@ -6,9 +6,9 @@ description: Det här dokumentet innehåller svar på vanliga frågor om Experie
 topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '1869'
+source-wordcount: '1888'
 ht-degree: 0%
 
 ---
@@ -25,19 +25,19 @@ Nedan följer en lista med svar på vanliga frågor om XDM-systemet och användn
 
 ### Hur lägger jag till fält i ett schema?
 
-Du kan lägga till fält i ett schema med hjälp av en mixin. Varje blandning är kompatibel med en eller flera klasser, vilket gör att mixin kan användas i alla scheman som implementerar en av dessa kompatibla klasser. Adobe Experience Platform erbjuder flera branschblandningar med sina egna fördefinierade fält, men du kan lägga till egna fält i ett schema genom att skapa nya mixiner med API:t eller användargränssnittet.
+Du kan lägga till fält i ett schema med hjälp av en schemafältgrupp. Varje fältgrupp är kompatibel med en eller flera klasser, vilket gör att fältgruppen kan användas i alla scheman som implementerar en av dessa kompatibla klasser. Adobe Experience Platform tillhandahåller flera branschfältgrupper med sina egna fördefinierade fält, men du kan lägga till egna fält i ett schema genom att skapa nya fältgrupper med API:t eller användargränssnittet.
 
-Mer information om hur du skapar nya mixiner i [!DNL Schema Registry] API:t finns i [mixin endpoint guide](api/mixins.md#create). Om du använder gränssnittet läser du i självstudiekursen [Schemaredigeraren](./tutorials/create-schema-ui.md).
+Mer information om hur du skapar nya fältgrupper i [!DNL Schema Registry] API:t finns i [guiden för fältgruppsslutpunkter](api/field-groups.md#create). Om du använder gränssnittet läser du i självstudiekursen [Schemaredigeraren](./tutorials/create-schema-ui.md).
 
-### Vilket är det bästa användningsområdet för blandningar och datatyper?
+### Vilket är det bästa användningsområdet för fältgrupper jämfört med datatyper?
 
-[Komponenter ](./schema/composition.md#mixin) med blandningsfunktioner som definierar ett eller flera fält i ett schema. Blandningar styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Blandningar är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut.
+[Fältgrupper är ](./schema/composition.md#field-group) komponenter som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut.
 
-[Datatyper ](./schema/composition.md#data-type) kan även innehålla ett eller flera fält för ett schema. Till skillnad från blandningar begränsas datatyperna inte till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser.
+[Datatyper ](./schema/composition.md#data-type) kan även innehålla ett eller flera fält för ett schema. Till skillnad från fältgrupper är datatyperna dock inte begränsade till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser.
 
 ### Vilket unikt ID har ett schema?
 
-Alla [!DNL Schema Registry]-resurser (scheman, mixins, datatyper, klasser) har en URI som fungerar som ett unikt ID för referens- och sökningsändamål. När du visar ett schema i API:t finns det i attributen `$id` och `meta:altId` på den översta nivån.
+Alla [!DNL Schema Registry]-resurser (scheman, fältgrupper, datatyper, klasser) har en URI som fungerar som ett unikt ID för referens- och sökningsändamål. När du visar ett schema i API:t finns det i attributen `$id` och `meta:altId` på den översta nivån.
 
 Mer information finns i avsnittet [resursidentifiering](api/getting-started.md#resource-identification) i utvecklarhandboken för [!DNL Schema Registry] API.
 
@@ -135,7 +135,7 @@ Mer information om hur du skapar sökvägar i API:t finns i avsnitten [container
 }
 ```
 
-Det här felmeddelandet visas när du försöker skapa en resurs med en titel som redan används av en annan resurs. Titlar måste vara unika för alla resurstyper. Om du till exempel försöker skapa en blandning med en titel som redan används av ett schema, visas det här felet.
+Det här felmeddelandet visas när du försöker skapa en resurs med en titel som redan används av en annan resurs. Titlar måste vara unika för alla resurstyper. Om du till exempel försöker skapa en fältgrupp med en titel som redan används av ett schema, visas det här felet.
 
 ### Anpassade fält måste använda ett fält på den översta nivån
 
@@ -149,7 +149,7 @@ Det här felmeddelandet visas när du försöker skapa en resurs med en titel so
 }
 ```
 
-Det här felmeddelandet visas när du försöker skapa en ny blandning med felnamngivna fält. Blandningar som definieras av din IMS-organisation måste namnge sina fält med en `TENANT_ID` för att undvika konflikter med andra bransch- och leverantörsresurser. Detaljerade exempel på korrekta datastrukturer för blandningar finns i [slutpunktshandboken för mixins](./api/mixins.md#create).
+Det här felmeddelandet visas när du försöker skapa en ny fältgrupp med felaktigt namngivna fält. Fältgrupper som definieras av din IMS-organisation måste namnge sina fält med en `TENANT_ID` för att undvika konflikter med andra bransch- och leverantörsresurser. Detaljerade exempel på korrekta datastrukturer för fältgrupper finns i [handboken för fältgrupper](./api/field-groups.md#create).
 
 
 ### [!DNL Real-time Customer Profile] fel
