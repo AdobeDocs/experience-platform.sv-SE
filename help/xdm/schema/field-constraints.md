@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;schema;mixin;mixin;mixins;mixins;data type;data type;data types;data type;schema design;datatyp;datatyp;datatyp;datatyp;scheman;scheman;schema design;map;map;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;schema;fältgrupp;fältgrupp;fältgrupper;fältgrupper;datatyp;datatyp;datatyp;schemadesign;datatyp;datatyp;datatyp;datatyp;scheman;scheman;schemadesign;karta;karta;schema;
 solution: Experience Platform
 title: Begränsningar för XDM-fälttyp
 topic-legacy: overview
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1063'
 ht-degree: 1%
 
 ---
@@ -19,9 +19,9 @@ I XDM-scheman (Experience Data Model) begränsar fälttypen vilken typ av data s
 
 ## Komma igång
 
-Innan du använder den här guiden bör du läsa igenom [grunderna för schemakomposition](./composition.md) för att få en introduktion till XDM-scheman, klasser och mixiner.
+Innan du använder den här guiden bör du granska [grunderna för schemakomposition](./composition.md) för att få en introduktion till XDM-scheman, klasser och schemafältgrupper.
 
-Om du planerar att definiera egna fälttyper i API:t rekommenderar vi att du börjar med [Utvecklarhandbok för schemaregister](../api/getting-started.md) för att lära dig hur du skapar blandningar och datatyper som du vill inkludera anpassade fält i. Om du använder användargränssnittet för Experience Platform för att skapa dina scheman kan du läsa guiden [definiera fält i användargränssnittet](../ui/fields/overview.md) för att lära dig hur du implementerar begränsningar för fält som du definierar i anpassade blandningar och datatyper.
+Om du planerar att definiera dina egna fälttyper i API rekommenderar vi att du börjar med [Utvecklarhandbok för schemaregister](../api/getting-started.md) för att lära dig hur du skapar fältgrupper och datatyper som du vill inkludera anpassade fält i. Om du använder användargränssnittet för Experience Platform för att skapa dina scheman kan du läsa guiden [definiera fält i användargränssnittet](../ui/fields/overview.md) för att lära dig hur du implementerar begränsningar för fält som du definierar i anpassade fältgrupper och datatyper.
 
 ## Grundstruktur och exempel
 
@@ -214,7 +214,7 @@ Alla XDM-fält definieras med standardbegränsningarna [JSON Schema](https://jso
 
 Följande tabell visar lämplig formatering för att definiera olika fälttyper, inklusive de med valfria egenskaper. Mer information om valfria egenskaper och typspecifika nyckelord finns i [JSON Schema-dokumentationen](https://json-schema.org/understanding-json-schema/reference/type.html).
 
-Börja med att hitta önskad fälttyp och använd exempelkoden som finns för att skapa din API-begäran för [skapa en mixin](../api/mixins.md#create) eller [skapa en datatyp](../api/data-types.md#create).
+Börja med att hitta önskad fälttyp och använd exempelkoden som finns för att skapa din API-begäran för [skapa en fältgrupp](../api/field-groups.md#create) eller [skapa en datatyp](../api/data-types.md#create).
 
 <table style="table-layout:auto">
   <tr>
