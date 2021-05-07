@@ -6,9 +6,9 @@ topic-legacy: overviews
 description: Experience Data Model (XDM) definierar en uppsättning standardfält som kan användas när Adobe Experience Platform-scheman disponeras. Användning av dessa fält resulterar i ett konsekvent beteende för alla plattformstjänster, eftersom alla tjänster som använder XDM uttryckligen kommer att förstå de specifika definitioner som finns i dessa fält.
 exl-id: 9e183305-cd6c-444d-bd0b-f0cba3bcbe4d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '25238'
+source-wordcount: '25240'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 Se [grunderna för schemakomposition](composition.md) för mer information om byggstenarna i scheman, inklusive principer och bästa praxis när du definierar scheman för [!DNL Experience Platform].
 
-Tabellen nedan innehåller fältnamnet (alla XDM-fält namnges inte med &quot;xdm&quot;) tillsammans med titel och beskrivning, typ och format där det behövs, samt motsvarande XDM-typ och de resurser (mixins, datatyper och scheman) där fältet kan hittas.
+Tabellen nedan innehåller fältnamnet (inte alla XDM-fält namnges med &quot;xdm&quot;) tillsammans med titeln och beskrivningen, typen och formatet där det behövs, samt motsvarande XDM-typ och de resurser (scheman, schemafältgrupper och datatyper) där fältet kan hittas.
 
 Du kan använda sökfunktionen i [!DNL Schema Editor] för att visa information om de här resurserna, vilket visas i självstudiekursen [Schemaredigeraren](../tutorials/create-schema-ui.md#browse).
 
