@@ -6,9 +6,9 @@ description: Lär dig hur du skapar och redigerar klasser i användargränssnitt
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '871'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ När du är klar väljer du **[!UICONTROL Assign class]**.
 
 >[!IMPORTANT]
 >
->När du skapar ett schema som implementerar en klass som definierats av din organisation, måste du komma ihåg att mixar bara är tillgängliga för användning med kompatibla klasser. Eftersom klassen som du definierade är ny finns det inga kompatibla blandningar i listan i dialogrutan **[!UICONTROL Add mixin]**. Du måste i stället [skapa nya mixins](./mixins.md#create) som kan användas med den klassen. Nästa gång du skapar ett schema som implementerar den nya klassen kommer de mixar som du har definierat att listas och vara tillgängliga för användning.
+>När du skapar ett schema som implementerar en klass som definierats av din organisation, måste du komma ihåg att schemafältgrupper endast är tillgängliga för användning med kompatibla klasser. Eftersom klassen som du definierade är ny finns det inga kompatibla fältgrupper i listan i dialogrutan **[!UICONTROL Add field group]**. Du måste i stället [skapa nya fältgrupper](./field-groups.md#create) som kan användas med den klassen. Nästa gång du skapar ett schema som implementerar den nya klassen visas de fältgrupper som du har definierat och är tillgängliga för användning.
 
 Nu kan du börja [lägga till fält i klassen](#add-fields), som delas av alla scheman som använder klassen.
 
@@ -77,7 +77,7 @@ När du har ett schema med en anpassad klass öppen i [!UICONTROL Schema Editor]
 
 >[!IMPORTANT]
 >
->Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan visa användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en blandning](./mixins.md#create) i stället.
+>Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan visa användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
 
 En **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen.
 
