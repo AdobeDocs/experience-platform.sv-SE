@@ -6,7 +6,7 @@ topic-legacy: overview
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 translation-type: tm+mt
-source-git-commit: 58f6c5e3ac77070807f7486bf429493d14fdda9e
+source-git-commit: b70e693b4ffeda561de4d4c8dd8fd1adeec489f7
 workflow-type: tm+mt
 source-wordcount: '1694'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Termen&quot;mixin&quot; har uppdaterats till&quot;schemafältgrupp&quot; för att främja förståelsen. Fältgrupper är en återanvändbar uppsättning fält som stöder affärssituationer. Den här ändringen återspeglas nu i API:t för schemaregister, Adobe Experience Platform-gränssnittet och i all plattformsdokumentation.
+>Termen&quot;mixin&quot; har uppdaterats till schemat&quot;fältgrupp&quot; för att främja förståelsen. Fältgrupper är en återanvändbar uppsättning fält som stöder affärssituationer. Den här ändringen återspeglas nu i API:t för schemaregister, Adobe Experience Platform-gränssnittet och i all plattformsdokumentation.
 
 Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
