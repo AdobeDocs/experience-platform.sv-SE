@@ -4,14 +4,14 @@ description: Versionsinformation för Experience Platform för 24 februari 2021.
 doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
+exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
 translation-type: tm+mt
-source-git-commit: 398e55f442a2c8ecab0c3d9315fbdd5c02946e45
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1138'
 ht-degree: 2%
 
 ---
-
 
 # Versionsinformation för Adobe Experience Platform
 
@@ -89,7 +89,7 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu på fliken [!UICONTROL Browse] på arbetsytan [!UICONTROL Schemas] och i dialogrutan för mixin-val i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Mer information finns i dokumenten om  [att utforska XDM-resurser ](../../xdm/ui/explore.md) och  [hantera ](../../xdm/ui/resources/schemas.md) scheman i användargränssnittet. |
+| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu på fliken [!UICONTROL Browse] på arbetsytan [!UICONTROL Schemas] och i dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Mer information finns i dokumenten om  [att utforska XDM-resurser ](../../xdm/ui/explore.md) och  [hantera ](../../xdm/ui/resources/schemas.md) scheman i användargränssnittet. |
 
 Mer allmän information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
 
