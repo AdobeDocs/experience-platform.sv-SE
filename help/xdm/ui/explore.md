@@ -1,28 +1,28 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;explore;class;mixin;data type;schema;
+keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;data model;explore;class;field group;data type;schema;
 solution: Experience Platform
 title: Utforska XDM-resurser i användargränssnittet
-description: Lär dig hur du utforskar befintliga scheman, klasser, blandningar och datatyper i användargränssnittet i Experience Platform.
+description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 topic-legacy: tutorial
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '919'
 ht-degree: 0%
 
 ---
 
 # Utforska XDM-resurser i användargränssnittet
 
-I Adobe Experience Platform lagras alla XDM-resurser (Experience Data Model) i [!DNL Schema Library], inklusive standardresurser från Adobe och anpassade resurser som definierats av din organisation. I användargränssnittet för Experience Platform kan du visa strukturen och fälten för befintliga scheman, klasser, mixin och datatyper i [!DNL Schema Library]. Detta är särskilt användbart när du planerar och förbereder för dataöverföring, eftersom användargränssnittet ger information om de förväntade datatyperna och användningsexemplen för varje fält som tillhandahålls av dessa XDM-resurser.
+I Adobe Experience Platform lagras alla XDM-resurser (Experience Data Model) i [!DNL Schema Library], inklusive standardresurser från Adobe och anpassade resurser som definierats av din organisation. I användargränssnittet i Experience Platform kan du visa strukturen och fälten för befintliga scheman, klasser, schemafältgrupper eller datatyper i [!DNL Schema Library]. Detta är särskilt användbart när du planerar och förbereder för dataöverföring, eftersom användargränssnittet ger information om de förväntade datatyperna och användningsexemplen för varje fält som tillhandahålls av dessa XDM-resurser.
 
-Den här självstudiekursen beskriver stegen för att utforska befintliga scheman, klasser, blandningar och datatyper i användargränssnittet för Experience Platform.
+Den här självstudiekursen beskriver stegen för att utforska befintliga scheman, klasser, fältgrupper och datatyper i användargränssnittet för Experience Platform.
 
 ## Söka efter en XDM-resurs {#lookup}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik där du kan utforska alla befintliga XDM-resurser i organisationen, tillsammans med ytterligare dedikerade flikar där du specifikt kan utforska **[!UICONTROL Classes]**, **[!UICONTROL Mixins]** och **[!UICONTROL Data types]**.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. På arbetsytan [!UICONTROL Schemas] finns en **[!UICONTROL Browse]**-flik där du kan utforska alla befintliga XDM-resurser i organisationen, tillsammans med ytterligare dedikerade flikar där du specifikt kan utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]**.
 
 ![](../images/ui/explore/tabs.png)
 
@@ -80,7 +80,7 @@ Om fältet som du inspekterar är ett uppräkningsfält, visar den högra listen
 
 ### Identitetsfält {#identity}
 
-När du inspekterar scheman som innehåller identitetsfält visas dessa fält i den vänstra listen under den klass eller blandning som tillhandahåller dem till schemat. Markera namnet på identitetsfältet i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
+När du inspekterar scheman som innehåller identitetsfält visas dessa fält i den vänstra listen under den klass eller fältgrupp som tillhandahåller dem till schemat. Markera namnet på identitetsfältet i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
 
 Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](../images/ui/explore/identity-symbol.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information, till exempel [identitetsnamnrymden](../../identity-service/namespaces.md) och huruvida fältet är den primära identiteten för schemat eller inte.
 
