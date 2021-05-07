@@ -7,9 +7,9 @@ type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '3532'
+source-wordcount: '3588'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Om du hellre vill skapa ett schema med API:t [!DNL Schema Registry] börjar du m
 Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används för att skapa scheman. Innan du börjar med den här självstudiekursen bör du läsa om följande koncept i dokumentationen:
 
 * [[!DNL Experience Data Model (XDM)]](../home.md): Det standardiserade ramverket som  [!DNL Platform] organiserar kundupplevelsedata.
-   * [Grundläggande om schemakomposition](../schema/composition.md): En översikt över XDM-scheman och deras byggstenar, inklusive klasser, mixins, datatyper och fält.
+   * [Grundläggande om schemakomposition](../schema/composition.md): En översikt över XDM-scheman och deras byggstenar, inklusive klasser, schemafältgrupper, datatyper och enskilda fält.
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Öppna arbetsytan [!UICONTROL Schemas] {#browse}
@@ -48,9 +48,9 @@ I den här självstudiekursen väljer du **[!UICONTROL XDM Individual Profile]**
 
 ![](../images/tutorials/create-schema/create_schema_button.png)
 
-Eftersom du har valt en standard-XDM-klass som schemat ska baseras på visas dialogrutan **[!UICONTROL Add mixin]** så att du kan börja lägga till fält direkt i schemat. För tillfället väljer du **[!UICONTROL Cancel]** för att stänga dialogrutan.
+Eftersom du har valt en standard-XDM-klass som schemat ska baseras på visas dialogrutan **[!UICONTROL Add field group]** så att du kan börja lägga till fält direkt i schemat. För tillfället väljer du **[!UICONTROL Cancel]** för att stänga dialogrutan.
 
-![](../images/tutorials/create-schema/cancel-mixin.png)
+![](../images/tutorials/create-schema/cancel-field-group.png)
 
 [!DNL Schema Editor] visas. Det här är arbetsytan som du kommer att komponera ditt schema på. Ett namnlöst schema skapas automatiskt i **[!UICONTROL Structure]**-delen av arbetsytan när du kommer till redigeraren, tillsammans med standardfälten som ingår i alla scheman baserade på den klassen. Den tilldelade klassen för schemat listas också under **[!UICONTROL Class]** i **[!UICONTROL Composition]**-avsnittet.
 
@@ -58,7 +58,7 @@ Eftersom du har valt en standard-XDM-klass som schemat ska baseras på visas dia
 
 >[!NOTE]
 >
->Du kan [ändra klassen för ett schema](#change-class) när som helst under den inledande dispositionsprocessen innan schemat har sparats, men detta bör göras med yttersta försiktighet. Blandningar är bara kompatibla med vissa klasser, och om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
+>Du kan [ändra klassen för ett schema](#change-class) när som helst under den inledande dispositionsprocessen innan schemat har sparats, men detta bör göras med yttersta försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
 Använd fälten till höger om redigeraren för att ange ett visningsnamn och en valfri beskrivning av schemat. När ett namn har angetts uppdateras arbetsytan med det nya namnet på schemat.
 
@@ -72,35 +72,35 @@ Det finns flera viktiga saker att tänka på när du ska bestämma ett namn för
 
 I den här självstudiekursen skapas ett schema för att importera data som är relaterade till medlemmarna i ett lojalitetsprogram, och därför heter schemat&quot;Förmånsmedlemmar&quot;.
 
-## Lägg till en blandning {#mixin}
+## Lägg till en fältgrupp {#field-group}
 
-Nu kan du börja lägga till fält i ditt schema genom att lägga till mixar. En blandning är en grupp med ett eller flera fält som ofta används tillsammans för att beskriva ett visst koncept. I den här självstudiekursen används mixins för att beskriva medlemmarna i bonusprogrammet och samla in viktig information som namn, födelsedag, telefonnummer, adress med mera.
+Nu kan du börja lägga till fält i schemat genom att lägga till fältgrupper. En fältgrupp är en grupp med ett eller flera fält som ofta används tillsammans för att beskriva ett visst koncept. I den här självstudiekursen används fältgrupper för att beskriva medlemmarna i bonusprogrammet och samla in viktig information som namn, födelsedag, telefonnummer, adress med mera.
 
-Om du vill lägga till en blandning väljer du **[!UICONTROL Add]** i underavsnittet **[!UICONTROL Mixins]**.
+Om du vill lägga till en fältgrupp väljer du **[!UICONTROL Add]** i underavsnittet **[!UICONTROL Field groups]**.
 
-![](../images/tutorials/create-schema/add_mixin_button.png)
+![](../images/tutorials/create-schema/add-field-group-button.png)
 
-En ny dialogruta visas med en lista över tillgängliga mixar. Varje blandning är bara avsedd att användas med en viss klass, och därför visas endast de blandningar som är kompatibla med den klass du valde (i det här fallet klassen [!DNL XDM Individual Profile]). Om du använder en standard-XDM-klass sorteras listan med mixar på ett intelligent sätt baserat på användningens popularitet.
+En ny dialogruta visas med en lista över tillgängliga fältgrupper. Varje fältgrupp är endast avsedd att användas med en viss klass, och därför visas bara fältgrupper som är kompatibla med den klass du valde (i det här fallet klassen [!DNL XDM Individual Profile]). Om du använder en standard-XDM-klass sorteras listan med fältgrupper på ett intelligent sätt baserat på användningens popularitet.
 
-![](../images/tutorials/create-schema/mixin-popularity.png)
+![](../images/tutorials/create-schema/field-group-popularity.png)
 
-Om du väljer en blandning i listan visas den i den högra listen. Du kan markera flera blandningar om du vill, och lägga till dem i listan i den högra listen innan du bekräftar. Dessutom visas en ikon till höger om den markerade mixen, som du kan använda för att förhandsgranska strukturen för de fält som den innehåller.
+Om du väljer en fältgrupp i listan visas den i den högra listen. Om du vill kan du markera flera fältgrupper och lägga till var och en i listan i den högra listen innan du bekräftar. Dessutom visas en ikon till höger om den markerade fältgruppen där du kan förhandsgranska strukturen för de fält som den innehåller.
 
-![](../images/tutorials/create-schema/preview-mixin-button.png)
+![](../images/tutorials/create-schema/preview-field-group-button.png)
 
-När du förhandsgranskar en blandning visas en detaljerad beskrivning av den mixins schema i den högra listen. Du kan även navigera genom blandningens fält på den angivna arbetsytan. När du väljer olika fält uppdateras den högra listen så att information om fältet i fråga visas. Välj **[!UICONTROL Back]** när du är klar med förhandsgranskningen för att återgå till dialogrutan för mixmarkering.
+När du förhandsgranskar en fältgrupp visas en detaljerad beskrivning av fältgruppens schema i den högra listen. Du kan även navigera genom fältgruppens fält på den angivna arbetsytan. När du väljer olika fält uppdateras den högra listen så att information om fältet i fråga visas. Välj **[!UICONTROL Back]** när du är klar med förhandsgranskningen för att återgå till dialogrutan för fältgruppsval.
 
-![](../images/tutorials/create-schema/preview-mixin.png)
+![](../images/tutorials/create-schema/preview-field-group.png)
 
-I den här självstudiekursen väljer du **[!UICONTROL Demographic Details]**-mixinen och sedan **[!UICONTROL Add mixin]**.
+För den här självstudiekursen väljer du fältgruppen **[!UICONTROL Demographic Details]** och sedan **[!UICONTROL Add field group]**.
 
-![](../images/tutorials/create-schema/add_mixin_person_details.png)
+![](../images/tutorials/create-schema/demographic-details.png)
 
-Arbetsytan för schemat visas igen. Avsnittet **[!UICONTROL Mixins]** innehåller nu en lista över [!UICONTROL Demographic Details] och avsnittet **[!UICONTROL Structure]** innehåller fälten som har bidragit med blandningen. Du kan markera namnet på mixen under **[!UICONTROL Mixins]**-avsnittet för att markera de specifika fält som finns på arbetsytan.
+Arbetsytan för schemat visas igen. Avsnittet **[!UICONTROL Field groups]** innehåller nu en lista över &quot;[!UICONTROL Demographic Details]&quot; och avsnittet **[!UICONTROL Structure]** innehåller fälten från fältgruppen. Du kan markera fältgruppens namn under avsnittet **[!UICONTROL Field groups]** för att markera de specifika fält som finns på arbetsytan.
 
-![](../images/tutorials/create-schema/person_details_structure.png)
+![](../images/tutorials/create-schema/demographic-details-structure.png)
 
-Den här blandningen bidrar med flera fält under namnet `person` på den översta nivån med datatypen [!UICONTROL Person]. Den här gruppen med fält beskriver information om en individ, inklusive namn, födelsedatum och kön.
+Den här fältgruppen bidrar med flera fält under namnet `person` på den översta nivån med datatypen [!UICONTROL Person]. Den här gruppen med fält beskriver information om en individ, inklusive namn, födelsedatum och kön.
 
 >[!NOTE]
 >
@@ -110,49 +110,49 @@ Observera att fältet `name` har datatypen [!UICONTROL Person name], vilket inne
 
 Markera de olika fälten på arbetsytan för att visa eventuella ytterligare fält som de bidrar till schemastrukturen.
 
-## Lägg till en annan blandning {#mixin-2}
+## Lägg till en annan fältgrupp {#field-group-2}
 
-Nu kan du upprepa samma steg för att lägga till en annan blandning. När du visar dialogrutan **[!UICONTROL Add mixin]** den här gången kan du inte markera kryssrutan bredvid blandningen [!UICONTROL Demographic Details]. Detta förhindrar att du av misstag duplicerar blandningar som du redan har inkluderat i det aktuella schemat.
+Nu kan du upprepa samma steg för att lägga till en annan fältgrupp. När du visar dialogrutan **[!UICONTROL Add field group]** den här gången kan du inte markera kryssrutan bredvid fältgruppen [!UICONTROL Demographic Details] som är nedtonad. Detta förhindrar att du av misstag duplicerar fältgrupper som du redan har inkluderat i det aktuella schemat.
 
-I den här självstudiekursen väljer du&quot;[!DNL Personal Contact Details]&quot;-mixinen i dialogrutan och sedan **[!UICONTROL Add mixin]** för att lägga till den i schemat.
+I den här självstudiekursen väljer du fältgruppen &quot;[!DNL Personal Contact Details]&quot; i dialogrutan och sedan **[!UICONTROL Add field group]** för att lägga till den i schemat.
 
-![](../images/tutorials/create-schema/add_mixin_personal_details.png)
+![](../images/tutorials/create-schema/personal-contact-details.png)
 
-När arbetsytan har lagts till visas den igen. &quot;[!UICONTROL Personal Contact Details]&quot; visas nu under **[!UICONTROL Mixins]** i **[!UICONTROL Composition]**-avsnittet och fält för hemadress, mobiltelefon med mera har lagts till under **[!UICONTROL Structure]**.
+När arbetsytan har lagts till visas den igen. &quot;[!UICONTROL Personal Contact Details]&quot; visas nu under **[!UICONTROL Field groups]** i **[!UICONTROL Composition]**-avsnittet och fält för hemadress, mobiltelefon med mera har lagts till under **[!UICONTROL Structure]**.
 
 Ungefär som i fältet `name` representerar de fält du just lade till koncept för flera fält. Till exempel har `homeAddress` datatypen [!UICONTROL Postal address] och `mobilePhone` datatypen [!UICONTROL Phone number]. Du kan markera vart och ett av dessa fält för att expandera dem och visa de ytterligare fält som ingår i datatypen.
 
-![](../images/tutorials/create-schema/personal_details_structure.png)
+![](../images/tutorials/create-schema/personal-contact-details-structure.png)
 
-## Definiera en anpassad blandning {#define-mixin}
+## Definiera en anpassad fältgrupp {#define-field-group}
 
 Schemat [!UICONTROL Loyalty Members] är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kräver vissa specifika lojalitetsrelaterade fält.
 
-Det finns en [!UICONTROL Loyalty Details]-standardblandning som du kan lägga till i schemat för att fånga vanliga fält som är relaterade till ett lojalitetsprogram. Vi rekommenderar starkt att du använder standardblandningar för att representera koncept som har hämtats in av dina scheman, men strukturen för standardlojalitetsmixinen kanske inte kan samla in alla relevanta data för ditt specifika lojalitetsprogram. I det här scenariot kan du välja att definiera en ny anpassad blandning för att hämta fälten i stället.
+Det finns en standardfältgrupp för [!UICONTROL Loyalty Details] som du kan lägga till i schemat för att hämta vanliga fält som är relaterade till ett bonusprogram. Vi rekommenderar att du använder standardfältgrupper för att representera koncept som hämtats in av dina scheman, men strukturen i standardfältgruppen för lojalitet kanske inte kan samla in alla relevanta data för ditt specifika lojalitetsprogram. I det här scenariot kan du välja att definiera en ny anpassad fältgrupp för att hämta fälten i stället.
 
-Öppna dialogrutan **[!UICONTROL Add Mixin]** igen, men den här gången väljer du **[!UICONTROL Create New Mixin]** nära överkanten. Du ombeds sedan ange ett visningsnamn och en beskrivning för din blandning.
+Öppna dialogrutan **[!UICONTROL Add Field group]** igen, men den här gången väljer du **[!UICONTROL Create New Field group]** nära överkanten. Du ombeds sedan ange ett visningsnamn och en beskrivning för fältgruppen.
 
-![](../images/tutorials/create-schema/mixin_create_new.png)
+![](../images/tutorials/create-schema/create-new-field-group.png)
 
-Precis som med klassnamn ska mixnamnet vara kort och enkelt och innehålla en beskrivning av vad mixinen kommer att bidra till schemat. Även dessa är unika, så du kan inte återanvända namnet och måste därför se till att det är tillräckligt specifikt.
+Precis som med klassnamn ska fältgruppsnamnet vara kort och enkelt och beskriva vad fältgruppen kommer att bidra till schemat. Även dessa är unika, så du kan inte återanvända namnet och måste därför se till att det är tillräckligt specifikt.
 
-I den här självstudiekursen anger du den nya mixen&quot;Loyalty Details&quot; (Förmånsinformation).
+I den här självstudiekursen ger du den nya fältgruppen namnet&quot;Lojalitetsinformation&quot;.
 
-Välj **[!UICONTROL Add mixin]** om du vill återgå till [!DNL Schema Editor]. &quot;[!UICONTROL Loyalty Details]&quot; ska nu visas under **[!UICONTROL Mixins]** till vänster på arbetsytan, men det finns inga fält kopplade till den än och därför visas inga nya fält under **[!UICONTROL Structure]**.
+Välj **[!UICONTROL Add field group]** om du vill återgå till [!DNL Schema Editor]. &quot;[!UICONTROL Loyalty Details]&quot; ska nu visas under **[!UICONTROL Field groups]** till vänster på arbetsytan, men det finns inga fält kopplade till den än och därför visas inga nya fält under **[!UICONTROL Structure]**.
 
-## Lägg till fält i blandningen {#mixin-fields}
+## Lägg till fält i fältgruppen {#field-group-fields}
 
-Nu när du har skapat blandningen &quot;Loyalty Details&quot; är det dags att definiera de fält som blandningen ska bidra till schemat.
+Nu när du har skapat fältgruppen&quot;Förmånsinformation&quot; är det dags att definiera fälten som fältgruppen ska bidra till schemat.
 
-Börja med att markera blandningsnamnet i **[!UICONTROL Mixins]**-avsnittet. När du har gjort det visas blandningens egenskaper till höger om redigeraren och en **plus- (+)**-ikon visas bredvid schemats namn under **[!UICONTROL Structure]**.
+Börja med att markera fältgruppsnamnet i avsnittet **[!UICONTROL Field groups]**. När du gör detta visas fältgruppens egenskaper till höger om redigeraren och en **plus- (+)**-ikon visas bredvid schemats namn under **[!UICONTROL Structure]**.
 
 ![](../images/tutorials/create-schema/loyalty_details_structure.png)
 
 Välj ikonen **plus (+)** bredvid [!DNL Loyalty Members] för att skapa en ny nod i strukturen. Den här noden (kallas `_tenantId` i det här exemplet) representerar din IMS-organisations klient-ID, föregånget av ett understreck. Närvaron av innehavar-ID anger att fälten som du lägger till finns i organisationens namnutrymme.
 
-Fälten som du lägger till är alltså unika för din organisation och kommer att sparas i [!DNL Schema Registry] i ett specifikt område som bara är tillgängligt för din organisation. Fält som du definierar måste alltid läggas till i klientnamnutrymmet för att förhindra kollisioner med namn från andra standardklasser, mixins, datatyper och fält.
+Fälten som du lägger till är alltså unika för din organisation och kommer att sparas i [!DNL Schema Registry] i ett specifikt område som bara är tillgängligt för din organisation. Fält som du definierar måste alltid läggas till i klientnamnutrymmet för att förhindra konflikter med namn från andra standardklasser, fältgrupper, datatyper och fält.
 
-I den namngivna noden finns en [!UICONTROL New Field]. Detta är början på blandningen [!UICONTROL Loyalty Details].
+I den namngivna noden finns en [!UICONTROL New Field]. Detta är början på fältgruppen [!UICONTROL Loyalty Details].
 
 ![](../images/tutorials/create-schema/new_field_loyalty.png)
 
@@ -179,7 +179,7 @@ Olika begränsningsalternativ är tillgängliga beroende på vilken datatyp som 
 
 ![](../images/tutorials/create-schema/loyaltyId_field.png)
 
-## Lägg till fler fält i blandningen {#mixin-fields-2}
+## Lägg till fler fält i fältgruppen {#field-group-fields-2}
 
 Nu när du har lagt till fältet `loyaltyId` kan du lägga till ytterligare fält för att hämta lojalitetsrelaterad information som:
 
@@ -192,7 +192,7 @@ När det är klart innehåller Loyalty-objektet fält för lojalitets-ID, poäng
 
 ![](../images/tutorials/create-schema/loyalty_object_fields.png)
 
-## Lägg till ett uppräkningsfält i blandningen {#enum}
+## Lägg till ett uppräkningsfält i fältgruppen {#enum}
 
 När du definierar fält i [!DNL Schema Editor] finns det ytterligare alternativ som du kan använda för grundläggande fälttyper för att tillhandahålla ytterligare begränsningar för de data som fältet kan innehålla. Användningsexempel för dessa begränsningar förklaras i följande tabell:
 
@@ -226,7 +226,7 @@ När du har slutfört alla fältegenskaper väljer du **[!UICONTROL Apply]** fö
 
 Objektet `loyalty` innehåller nu flera lojalitetsspecifika fält och representerar en gemensam datastruktur som kan vara användbar i andra scheman. Med [!DNL Schema Editor] kan du enkelt tillämpa återanvändbara flerfältsobjekt genom att konvertera strukturen för dessa objekt till datatyper.
 
-Datatyper möjliggör konsekvent användning av flerfältsstrukturer och ger större flexibilitet än en blandning eftersom de kan användas var som helst inom ett schema. Detta görs genom att ställa in fältets **[!UICONTROL Type]**-värde på den datatyp som definieras i [!DNL Schema Registry].
+Datatyper möjliggör konsekvent användning av flerfältsstrukturer och ger större flexibilitet än en fältgrupp eftersom de kan användas var som helst inom ett schema. Detta görs genom att ställa in fältets **[!UICONTROL Type]**-värde på den datatyp som definieras i [!DNL Schema Registry].
 
 Om du vill konvertera `loyalty`-objektet till en datatyp väljer du fältet `loyalty` under **[!UICONTROL Structure]** och väljer sedan **[!UICONTROL Convert to new data type]** till höger om redigeraren under **[!UICONTROL Field properties]**. En grön pover visas som bekräftar att objektet har konverterats.
 
@@ -244,17 +244,17 @@ I ett framtida schema kan du nu tilldela ett fält som typen [!DNL Loyalty] och 
 
 ## Söka efter och filtrera schemafält
 
-Schemat innehåller nu flera blandningar utöver de fält som anges i basklassen. När du arbetar med större scheman kan du markera kryssrutorna intill namnen i den vänstra listen för att filtrera de visade fälten så att de bara innehåller de som finns i de mixar du är intresserad av.
+Schemat innehåller nu flera fältgrupper förutom de fält som anges i basklassen. När du arbetar med större scheman kan du markera kryssrutorna intill fältgruppsnamnen i den vänstra listen för att filtrera de visade fälten så att de bara visas för de fältgrupper du är intresserad av.
 
-![](../images/tutorials/create-schema/filter-by-mixin.png)
+![](../images/tutorials/create-schema/filter-by-field-group.png)
 
-Om du letar efter ett visst fält i ditt schema kan du även använda sökfältet för att filtrera visade fält efter namn, oavsett vilken blandning de anges under.
+Om du letar efter ett specifikt fält i ditt schema kan du även använda sökfältet för att filtrera visade fält efter namn, oavsett vilken fältgrupp de ingår i.
 
 ![](../images/tutorials/create-schema/search.png)
 
 >[!IMPORTANT]
 >
->Sökfunktionen tar hänsyn till alla valda blandningsfilter när matchande fält visas. Om sökfrågan inte visar de förväntade resultaten kan du behöva dubbelkontrollera att du inte filtrerar bort relevanta blandningar.
+>Sökfunktionen tar hänsyn till alla valda fältgruppsfilter när matchande fält visas. Om sökfrågan inte visar de förväntade resultaten kan du behöva dubbelkontrollera att du inte filtrerar ut relevanta fältgrupper.
 
 ## Ange ett schemafält som identitetsfält {#identity-field}
 
@@ -334,7 +334,7 @@ I följande video visas hur du skapar ett enkelt schema i användargränssnittet
 
 >[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
 
-Följande video är tänkt att förstärka din förståelse för att arbeta med mixiner och klasser.
+Följande video är tänkt att förstärka din förståelse för att arbeta med fältgrupper och klasser.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27013?quality=12&learn=on)
 
@@ -352,6 +352,6 @@ Du kan ändra schemaklassen när som helst under den inledande dispositionsproce
 
 >[!WARNING]
 >
->Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Blandningar är bara kompatibla med vissa klasser, och om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
+>Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
 Mer information om hur du ändrar klassen för ett schema finns i guiden om att hantera scheman i användargränssnittet](../ui/resources/schemas.md).[
