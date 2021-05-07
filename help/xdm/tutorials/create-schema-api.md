@@ -7,9 +7,9 @@ type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2373'
+source-wordcount: '2426'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Den här självstudiekursen går igenom stegen för att skapa ett bonusmedlemssc
 
 ## Skapa ett schema med en standardklass
 
-Ett schema kan ses som en plan för de data som du vill importera till [!DNL Experience Platform]. Varje schema består av en klass och noll eller flera mixiner. Du behöver alltså inte lägga till en blandning för att definiera ett schema, men i de flesta fall används minst en blandning.
+Ett schema kan ses som en plan för de data som du vill importera till [!DNL Experience Platform]. Varje schema består av en klass och noll eller flera schemafältgrupper. Du behöver alltså inte lägga till en fältgrupp för att definiera ett schema, men i de flesta fall används minst en fältgrupp.
 
 ### Tilldela en klass
 
@@ -177,13 +177,13 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas tillsammans med begä
 }
 ```
 
-### Lägg till en blandning {#add-a-mixin}
+### Lägg till en fältgrupp {#add-a-field-group}
 
-Nu när schemat för lojalitetsmedlemmar har skapats och bekräftats kan mixins läggas till i det.
+Nu när schemat för bonusmedlemmar har skapats och bekräftats kan fältgrupper läggas till i det.
 
-Det finns olika standardblandningar som kan användas, beroende på vilken schemaklass som har valts. Varje blandning innehåller ett `intendedToExtend`-fält som definierar den eller de klasser som blandningen är kompatibel med.
+Det finns olika standardfältgrupper som kan användas, beroende på vilken schemaklass som har valts. Varje fältgrupp innehåller ett `intendedToExtend`-fält som definierar de klasser som fältgruppen är kompatibel med.
 
-Blandningar definierar begrepp, till exempel&quot;namn&quot; eller&quot;adress&quot;, som kan återanvändas i alla scheman som behöver hämta samma information.
+Fältgrupper definierar begrepp, till exempel&quot;namn&quot; eller&quot;adress&quot;, som kan återanvändas i alla scheman som behöver hämta samma information.
 
 **API-format**
 
@@ -193,9 +193,9 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **Begäran**
 
-Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i mixen &quot;profile-person-details&quot; inkluderas.
+Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i fältgruppen &quot;profile-person-details&quot; inkluderas.
 
-Genom att lägga till blandningen &quot;profile-person-details&quot; hämtar schemat för lojalitetsmedlemmar nu information om medlemmar i bonusprogrammet, till exempel förnamn, efternamn och födelsedag.
+Genom att lägga till fältgruppen &quot;profile-person-details&quot;, samlar schemat över lojalitetsmedlemmar nu in information om medlemmar i bonusprogrammet, som förnamn, efternamn och födelsedag.
 
 ```SHELL
 curl -X PATCH \
@@ -212,7 +212,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar den nyligen tillagda blandningen i `meta:extends`-arrayen och innehåller `$ref` till blandningen i `allOf`-attributet.
+Svaret visar den nyligen tillagda fältgruppen i `meta:extends`-arrayen och innehåller en `$ref` till fältgruppen i attributet `allOf`.
 
 ```JSON
 {
@@ -254,17 +254,17 @@ Svaret visar den nyligen tillagda blandningen i `meta:extends`-arrayen och inneh
 }
 ```
 
-### Lägg till ytterligare en blandning
+### Lägg till en annan fältgrupp
 
-Nu kan du lägga till ytterligare en standardblandning genom att upprepa stegen med en annan blandning.
+Nu kan du lägga till en annan standardfältgrupp genom att upprepa stegen med en annan fältgrupp.
 
 >[!TIP]
 >
->Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla mixar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de mixar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. I det här fallet är det klassen [!DNL XDM Individual Profile], så [!DNL XDM Individual Profile] `$id` används:
+>Det är värt att granska alla tillgängliga fältgrupper för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla fältgrupper som är tillgängliga för användning med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de fältgrupper där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. I det här fallet är det klassen [!DNL XDM Individual Profile], så [!DNL XDM Individual Profile] `$id` används:
 
 ```http
-GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
-GET /tenant/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
+GET /global/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
+GET /tenant/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
 ```
 
 **API-format**
@@ -275,7 +275,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **Begäran**
 
-Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att de innehåller fälten i mixen &quot;profile-personal-details&quot;, där fälten &quot;home address&quot;, &quot;email address&quot; och &quot;home phone&quot; läggs till i schemat.
+Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att de innehåller fälten i fältgruppen &quot;profile-personal-details&quot;, där fälten &quot;home address&quot;, &quot;email address&quot; och &quot;home phone&quot; läggs till i schemat.
 
 ```SHELL
 curl -X PATCH \
@@ -292,7 +292,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar den nyligen tillagda blandningen i `meta:extends`-arrayen och innehåller `$ref` till blandningen i `allOf`-attributet.
+Svaret visar den nyligen tillagda fältgruppen i `meta:extends`-arrayen och innehåller en `$ref` till fältgruppen i attributet `allOf`.
 
 Schemat för lojalitetsmedlemmar ska nu innehålla tre `$ref`-värden i `allOf`-arrayen: &quot;profile&quot;, &quot;profile-person-details&quot; och &quot;profile-personal-details&quot;, enligt nedan.
 
@@ -340,29 +340,29 @@ Schemat för lojalitetsmedlemmar ska nu innehålla tre `$ref`-värden i `allOf`-
 }
 ```
 
-### Definiera en ny blandning
+### Definiera en ny fältgrupp
 
-Lojalitetsmedlemmens schema behöver hämta information som är unik för bonusprogrammet. Denna information ingår inte i någon standardblandning.
+Lojalitetsmedlemmens schema behöver hämta information som är unik för bonusprogrammet. Den här informationen ingår inte i någon standardfältgrupp.
 
-[!DNL Schema Registry]-kontona för detta genom att du kan definiera dina egna mixar i innehavarbehållaren. Dessa mixar är unika för din organisation och kan inte visas eller redigeras av någon utanför din IMS-organisation.
+[!DNL Schema Registry]-kontona för detta genom att du kan definiera dina egna fältgrupper i innehavarbehållaren. Dessa fältgrupper är unika för din organisation och är inte synliga eller redigerbara av någon utanför din IMS-organisation.
 
-För att kunna skapa (POST) en ny blandning måste din begäran innehålla ett `meta:intendedToExtend`-fält som innehåller `$id` för basklassen/basklasserna som blandningen är kompatibel med, tillsammans med de egenskaper som blandningen kommer att innehålla.
+För att kunna skapa (POST) en ny fältgrupp måste din begäran innehålla ett `meta:intendedToExtend`-fält som innehåller `$id` för basklassen/basklasserna som fältgruppen är kompatibel med, tillsammans med de egenskaper som fältgruppen kommer att innehålla.
 
-Alla anpassade egenskaper måste kapslas under `TENANT_ID` för att undvika kollisioner med andra mixiner eller fält.
+Alla anpassade egenskaper måste kapslas under `TENANT_ID` för att undvika kollisioner med andra fältgrupper eller fält.
 
 **API-format**
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
 **Begäran**
 
-Den här begäran skapar en ny blandning som har ett&quot;lojalitetsobjekt&quot; som innehåller fyra programspecifika fält för lojalitet: &quot;loyaltyId&quot;, &quot;loyaltyLevel&quot;, &quot;loyaltyPoints&quot; och &quot;memberSince&quot;.
+Denna begäran skapar en ny fältgrupp som har ett&quot;lojalitetsobjekt&quot; som innehåller fyra lojalitetsprogramspecifika fält: &quot;loyaltyId&quot;, &quot;loyaltyLevel&quot;, &quot;loyaltyPoints&quot; och &quot;memberSince&quot;.
 
 ```SHELL
 curl -X POST\
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins\
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups\
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -372,7 +372,7 @@ curl -X POST\
         "type": "object",
         "title": "Loyalty Member Details",
         "meta:intendedToExtend": ["https://ns.adobe.com/xdm/context/profile"],
-        "description": "Loyalty Program Mixin.",
+        "description": "Loyalty Program Field Group.",
         "definitions": {
             "loyalty": {
               "properties": {
@@ -419,7 +419,7 @@ curl -X POST\
 
 **Svar**
 
-En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade fältgruppen, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -428,7 +428,7 @@ En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som
     "meta:intendedToExtend": [
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "description": "Loyalty Program Mixin.",
+    "description": "Loyalty Program Field Group.",
     "definitions": {
         "loyalty": {
             "properties": {
@@ -482,11 +482,11 @@ En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som
     "meta:extensible": true,
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
-    "meta:altId": "_{TENANT_ID}.mixins.bb118e507bb848fd85df68fedea70c62",
+    "meta:altId": "_{TENANT_ID}.fieldgroups.bb118e507bb848fd85df68fedea70c62",
     "meta:xdmType": "object",
-    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62",
     "version": "1.1",
-    "meta:resourceType": "mixins",
+    "meta:resourceType": "fieldgroups",
     "meta:registryMetadata": {
         "repo:createDate": 1551838135803,
         "repo:lastModifiedDate": 1552078296885,
@@ -496,9 +496,9 @@ En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som
 }
 ```
 
-### Lägg till anpassad blandning till schema
+### Lägg till anpassad fältgrupp till schema
 
-Nu kan du följa samma steg för att [lägga till en standardblandning](#add-a-mixin) och lägga till den här nya mixen i ditt schema.
+Nu kan du följa samma steg för att [lägga till en standardfältgrupp](#add-a-field-group) och lägga till den här nyligen skapade fältgruppen i schemat.
 
 **API-format**
 
@@ -508,7 +508,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **Begäran**
 
-Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i den nya mixen&quot;Information om lojalitetsmedlem&quot; inkluderas.
+Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att det inkluderar fälten i den nya fältgruppen &quot;Information om lojalitetsmedlem&quot;.
 
 ```SHELL
 curl -X PATCH \
@@ -519,13 +519,13 @@ curl -X PATCH \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "add", "path": "/allOf/-", "value":  {"$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"}}
+        { "op": "add", "path": "/allOf/-", "value":  {"$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"}}
       ]'
 ```
 
 **Svar**
 
-Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillagda mixen i `meta:extends`-arrayen och innehåller en `$ref`-blandning i `allOf`-attributet.
+Du kan se att fältgruppen har lagts till eftersom svaret nu visar den nyligen tillagda fältgruppen i `meta:extends`-arrayen och innehåller en `$ref` till fältgruppen i attributet `allOf`.
 
 ```JSON
 {
@@ -543,7 +543,7 @@ Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillag
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
         }
     ],
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
@@ -557,7 +557,7 @@ Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillag
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -577,7 +577,7 @@ Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillag
 
 ### Visa aktuellt schema
 
-Nu kan du utföra en GET-begäran för att visa det aktuella schemat och se hur de tillagda mixarna har bidragit till schemats övergripande struktur.
+Nu kan du utföra en GET-begäran för att visa det aktuella schemat och se hur de tillagda fältgrupperna har bidragit till schemats övergripande struktur.
 
 **API-format**
 
@@ -599,9 +599,9 @@ curl -X GET \
 
 **Svar**
 
-Genom att använda rubriken `application/vnd.adobe.xed-full+json; version=1` Acceptera kan du se hela schemat med alla egenskaper. Dessa egenskaper är de fält som klassen och de blandningar som har använts för att komponera schemat har bidragit med. I det här exemplet har enskilda egenskapsattribut minimerats för utrymme. Du kan visa hela schemat, inklusive alla egenskaper och deras attribut, i [bilagan](#appendix) i slutet av det här dokumentet.
+Genom att använda rubriken `application/vnd.adobe.xed-full+json; version=1` Acceptera kan du se hela schemat med alla egenskaper. Dessa egenskaper är de fält som tillhandahålls av den klass och de fältgrupper som har använts för att komponera schemat. I det här exemplet har enskilda egenskapsattribut minimerats för utrymme. Du kan visa hela schemat, inklusive alla egenskaper och deras attribut, i [bilagan](#appendix) i slutet av det här dokumentet.
 
-Under `"properties"` kan du se namnutrymmet `_{TENANT_ID}` som skapades när du lade till den anpassade mixen. I det namnutrymmet är objektet&quot;loyalty&quot; och fälten som definierades när mixen skapades.
+Under `"properties"` kan du se namnutrymmet `_{TENANT_ID}` som skapades när du lade till den anpassade fältgruppen. I det namnutrymmet är objektet &quot;loyalty&quot; och fälten som definierades när fältgruppen skapades.
 
 ```JSON
 {
@@ -619,7 +619,7 @@ Under `"properties"` kan du se namnutrymmet `_{TENANT_ID}` som skapades när du 
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -691,11 +691,11 @@ Under `"properties"` kan du se namnutrymmet `_{TENANT_ID}` som skapades när du 
 
 ### Skapa en datatyp
 
-Den lojalitetsblandning som du skapade innehåller specifika lojalitetsegenskaper som kan vara användbar i andra scheman. Data kan till exempel importeras som en del av en upplevelsehändelse eller användas av ett schema som implementerar en annan klass. I det här fallet är det bra att spara objekthierarkin som en datatyp så att det blir enklare att återanvända definitionen någon annanstans.
+Fältgruppen Lojalitet som du skapade innehåller specifika förmånsegenskaper som kan vara användbara i andra scheman. Data kan till exempel importeras som en del av en upplevelsehändelse eller användas av ett schema som implementerar en annan klass. I det här fallet är det bra att spara objekthierarkin som en datatyp så att det blir enklare att återanvända definitionen någon annanstans.
 
 Med datatyper kan du definiera en objekthierarki en gång och referera till den i ett fält på ungefär samma sätt som för andra skalära typer.
 
-Med andra ord möjliggör datatyper konsekvent användning av flerfältsstrukturer, med större flexibilitet än blandningar, eftersom de kan inkluderas var som helst i ett schema genom att lägga till dem som&quot;typ&quot; av ett fält.
+Med andra ord möjliggör datatyper konsekvent användning av flerfältsstrukturer, med större flexibilitet än fältgrupper, eftersom de kan inkluderas var som helst i ett schema genom att lägga till dem som&quot;typ&quot; av ett fält.
 
 **API-format**
 
@@ -822,19 +822,19 @@ Du kan utföra en sökning (GET)-begäran med URL-kodad `$id` URI för att visa 
 
 ### Använd datatyp i schema
 
-Nu när datatypen Loyalty Details har skapats kan du uppdatera (PATCH) fältet&quot;loyalty&quot; i den mixin som du skapade för att referera till datatypen i stället för de fält som tidigare fanns där.
+Nu när datatypen Loyalty Details har skapats kan du uppdatera (PATCH) fältet&quot;loyalty&quot; i fältgruppen som du skapade för att referera till datatypen i stället för de fält som tidigare fanns där.
 
 **API-format**
 
 ```http
-PATCH /tenant/mixins/{mixin meta:altId or URL encoded $id URI}
+PATCH /tenant/fieldgroups/{field group meta:altId or URL encoded $id URI}
 ```
 
 **Begäran**
 
 ```SHELL
 curl -X PATCH \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins/_{TENANT_ID}.mixins.bb118e507bb848fd85df68fedea70c62 \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_{TENANT_ID}.fieldgroups.bb118e507bb848fd85df68fedea70c62 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
@@ -867,7 +867,7 @@ Svaret innehåller nu en referens (`$ref`) till datatypen i &quot;loyalty&quot;-
     "meta:intendedToExtend": [
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "description": "Loyalty Program Mixin.",
+    "description": "Loyalty Program Field Group.",
     "definitions": {
         "loyalty": {
             "properties": {
@@ -896,11 +896,11 @@ Svaret innehåller nu en referens (`$ref`) till datatypen i &quot;loyalty&quot;-
     "meta:extensible": true,
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
-    "meta:altId": "_{TENANT_ID}.mixins.bb118e507bb848fd85df68fedea70c62",
+    "meta:altId": "_{TENANT_ID}.fieldgroups.bb118e507bb848fd85df68fedea70c62",
     "meta:xdmType": "object",
-    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62",
     "version": "1.2",
-    "meta:resourceType": "mixins",
+    "meta:resourceType": "fieldgroups",
     "meta:registryMetadata": {
         "repo:createDate": 1551838135803,
         "repo:lastModifiedDate": 1552080570051,
@@ -1068,7 +1068,7 @@ Svaret visar att åtgärden utfördes utan fel och schemat innehåller nu ett at
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
         }
     ],
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
@@ -1082,7 +1082,7 @@ Svaret visar att åtgärden utfördes utan fel och schemat innehåller nu ett at
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -1171,9 +1171,9 @@ Svaret är en filtrerad lista med scheman som endast innehåller de som uppfylle
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du komponerat ett schema med både standardblandningar och en blandning som du har definierat. Du kan nu använda det här schemat för att skapa en datauppsättning och importera postdata till Adobe Experience Platform.
+Genom att följa den här självstudiekursen har du komponerat ett schema med både standardfältgrupper och en fältgrupp som du har definierat. Du kan nu använda det här schemat för att skapa en datauppsättning och importera postdata till Adobe Experience Platform.
 
-Schemat för fullständiga lojalitetsmedlemmar, som det har skapats genom den här självstudiekursen, finns i följande bilaga. När du tittar på schemat kan du se hur blandningarna bidrar till den övergripande strukturen och vilka fält som är tillgängliga för dataöverföring.
+Schemat för fullständiga lojalitetsmedlemmar, som det har skapats genom den här självstudiekursen, finns i följande bilaga. När du tittar på schemat kan du se hur fältgrupperna bidrar till den övergripande strukturen och vilka fält som är tillgängliga för datainmatning.
 
 När du har skapat mer än ett schema kan du definiera relationer mellan dem med hjälp av relationsbeskrivare. Se självstudiekursen för [definiera en relation mellan två scheman](relationship-api.md) för mer information. Detaljerade exempel på hur du utför alla åtgärder (GET, POST, PUT, PATCH och DELETE) i registret finns i [Utvecklarhandbok för schemaregister](../api/getting-started.md) när du arbetar med API:t.
 
@@ -1185,7 +1185,7 @@ Följande information kompletterar API-självstudiekursen.
 
 Under den här självstudiekursen består ett schema som beskriver medlemmarna i ett lojalitetsprogram för detaljhandeln.
 
-Schemat implementerar klassen [!DNL XDM Individual Profile] och kombinerar flera blandningar; att lägga in information om lojalitetsmedlemmar med hjälp av standardblandningarna &quot;Personinformation&quot; och &quot;Personuppgifter&quot; samt via en &quot;Förmånsinformation&quot; som definieras under kursen.
+Schemat implementerar klassen [!DNL XDM Individual Profile] och kombinerar flera fältgrupper, för att lägga in information om lojalitetsmedlemmar med standardfältgrupperna &quot;Personuppgifter&quot; och &quot;Personuppgifter&quot; samt med en fältgrupp &quot;Förmånsinformation&quot; som definieras under kursen.
 
 I följande exempel visas det slutförda schemat för lojalitetsmedlemmar i JSON-format:
 
@@ -1205,7 +1205,7 @@ I följande exempel visas det slutförda schemat för lojalitetsmedlemmar i JSON
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
