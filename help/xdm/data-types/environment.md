@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Environment XDM.
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '462'
 ht-degree: 3%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 3%
 | `viewportHeight` | Heltal | Den lodräta storleken i pixlar på fönstret som upplevelsen visades inuti. För en webbvyhändelse är detta höjden på webbläsarens visningsruta. |
 | `viewPortWidth` | Heltal | Den vågräta storleken i pixlar på fönstret som upplevelsen visades inuti. För en webbvyhändelse är detta bredden på webbläsarens visningsruta. |
 
-Mer information om blandningen finns i den offentliga XDM-databasen:
+Mer information om datatypen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.schema.json)
