@@ -6,16 +6,16 @@ description: Med slutpunkten /audilog i API:t för schemaregister kan du hämta 
 topic-legacy: developer guide
 exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '400'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för granskningslogg
 
-För varje Experience Data Model-resurs (XDM) sparar [!DNL Schema Registry] en logg över alla ändringar som har gjorts mellan olika uppdateringar. Med slutpunkten `/auditlog` i API:t [!DNL Schema Registry] kan du hämta en granskningslogg för alla klasser, mixin, datatyper eller scheman som anges av ID.
+För varje Experience Data Model-resurs (XDM) sparar [!DNL Schema Registry] en logg över alla ändringar som har gjorts mellan olika uppdateringar. Med slutpunkten `/auditlog` i API:t [!DNL Schema Registry] kan du hämta en granskningslogg för alla klasser, schemafältgrupper, datatyper eller scheman som anges av ID.
 
 ## Komma igång
 
@@ -25,7 +25,7 @@ Slutpunkten `/auditlog` är en del av RPC-anropen (Remote Procedure Call) som st
 
 ## Hämta en granskningslogg för en resurs
 
-Du kan hämta en granskningslogg för alla klasser, blandningar, datatyper eller scheman i schemabiblioteket genom att ange resursens ID i sökvägen till slutpunkten för en GET-begäran.`/auditlog`
+Du kan hämta en granskningslogg för alla klasser, fältgrupper, datatyper eller scheman i schemabiblioteket genom att ange resursens ID i sökvägen till slutpunkten för en GET-begäran.`/auditlog`
 
 **API-format**
 
@@ -39,11 +39,11 @@ GET /rpc/auditlog/{RESOURCE_ID}
 
 **Begäran**
 
-Följande begäran hämtar granskningsloggen för en `Restaurant`-blandning.
+Följande begäran hämtar granskningsloggen för en `Restaurant`-fältgrupp.
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
+  https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -57,11 +57,11 @@ Ett lyckat svar returnerar en kronologisk lista över ändringar som gjorts i re
 ```json
 [
   {
-    "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+    "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
     "auditTrails": [
       {
-        "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "xdmType": "mixins",
+        "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "xdmType": "fieldgroups",
         "action": "add",
         "path": "/definitions/customFields/properties/_{TENANT_ID}/properties/brand",
         "value": {
@@ -73,8 +73,8 @@ Ett lyckat svar returnerar en kronologisk lista över ändringar som gjorts i re
         }
       },
       {
-        "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "xdmType": "mixins",
+        "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "xdmType": "fieldgroups",
         "action": "add",
         "path": "/meta:usageCount",
         "value": 0
