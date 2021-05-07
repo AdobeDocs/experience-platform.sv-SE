@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Dokumentet innehåller en översikt över XDM-datatypen Browser Details.
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '258'
+source-wordcount: '259'
 ht-degree: 5%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 5%
 | `viewportHeight` | Heltal | Den lodräta storleken i pixlar i fönstret som händelsen visades inuti. För en webbvyhändelse är detta höjden på webbläsarens visningsruta. |
 | `viewportWidth` | Heltal | Den vågräta storleken i pixlar på fönstret där händelsen visades. För en webbvyhändelse är detta bredden på webbläsarens visningsruta. |
 
-Mer information om blandningen finns i den offentliga XDM-databasen:
+Mer information om datatypen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/browserdetails.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/browserdetails.schema.json)
