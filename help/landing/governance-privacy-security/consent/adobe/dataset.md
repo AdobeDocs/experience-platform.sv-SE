@@ -6,9 +6,9 @@ topic-legacy: getting started
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 30a2ddb875b035b4509b4be3692b95d0d3ef50b3
 workflow-type: tm+mt
-source-wordcount: '1403'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättnin
 >
 >I exemplen i den här handboken används en standardiserad uppsättning fält för att representera kundens medgivandevärden, enligt definitionen i datatypen [Consents &amp; Preferences XDM](../../../../xdm/data-types/consents.md). Strukturen på dessa fält är avsedd att tillhandahålla en effektiv datamodell som omfattar många vanliga fall av insamling av samtycke.
 >
->Men du kan också definiera egna blandningar för att representera samtycke enligt dina egna datamodeller. Kontakta ditt juridiska team för att få ett godkännande av en datamodell för samtycke som passar era affärsbehov, baserat på följande alternativ:
+>Du kan dock även definiera egna fältgrupper för att representera samtycke enligt dina egna datamodeller. Kontakta ditt juridiska team för att få ett godkännande av en datamodell för samtycke som passar era affärsbehov, baserat på följande alternativ:
 >
->* Standardblandningen av samtycke
->* En anpassad medgivandeblandning som skapats av din organisation
->* En kombination av den standardiserade medgivandemixen och ytterligare fält som tillhandahålls av en anpassad medgivandeblandning
+>* Den standardiserade fältgruppen för samtycke
+>* En anpassad fältgrupp för samtycke som skapats av din organisation
+>* En kombination av den standardiserade fältgruppen för samtycke och ytterligare fält som tillhandahålls av en anpassad fältgrupp för samtycke
 
 
 ## Förutsättningar
@@ -42,11 +42,11 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >
 >I den här självstudien antas att du känner till det [!DNL Profile]-schema i plattformen som du vill använda för att hämta kundattributsinformation. Oavsett vilken metod du använder för att samla in medgivandedata måste schemat vara [aktiverat för kundprofil för realtid](../../../../xdm/ui/resources/schemas.md#profile). Dessutom kan schemats primära identitet inte vara ett direkt identifierbart fält som inte får användas i intressebaserad annonsering, till exempel en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 
-## Innehåll och inställningar blandar struktur {#structure}
+## Fältgruppsstrukturen Innehåll och inställningar {#structure}
 
-[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]-blandningen (kallas nedan &quot;Innehåll och inställningar-mixin&quot;) ger standardiserade medgivandefält till ett schema. Den här mixinen är för närvarande bara kompatibel med scheman baserade på klassen [!DNL XDM Individual Profile].
+Fältgruppen [!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] (nedan kallad fältgruppen &quot;Innehåll och inställningar&quot;) tillhandahåller standardiserade medgivandefält till ett schema. För närvarande är den här fältgruppen bara kompatibel med scheman som baseras på klassen [!DNL XDM Individual Profile].
 
-Mixin innehåller ett enda fält av objekttyp, `consents`, vars underegenskaper hämtar en uppsättning standardiserade medgivandefält. Följande JSON är ett exempel på den typ av data som `consents` förväntar sig vid datainmatning:
+Fältgruppen innehåller ett enda fält av objekttyp, `consents`, vars underegenskaper samlar in en uppsättning standardiserade medgivandefält. Följande JSON är ett exempel på den typ av data som `consents` förväntar sig vid datainmatning:
 
 ```json
 {
@@ -95,7 +95,7 @@ Mixin innehåller ett enda fält av objekttyp, `consents`, vars underegenskaper 
 >
 >Mer information om underegenskapernas struktur och innebörd i `consents` finns i översikten på datatypen [Consents &amp; Preferences](../../../../xdm/data-types/consents.md).
 
-## Lägg till innehållet och inställningarna i ditt [!DNL Profile]-schema {#add-mixin}
+## Lägg till fältgruppen Innehåll och inställningar i ditt [!DNL Profile]-schema {#add-field-group}
 
 Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet och välj sedan fliken **[!UICONTROL Browse]** för att visa en lista över befintliga scheman. Här markerar du namnet på det [!DNL Profile]-aktiverade schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Loyalty Members&quot; som är inbyggt i självstudiekursen [för att skapa schema](../../../../xdm/tutorials/create-schema-ui.md) som exempel.
 
@@ -105,15 +105,15 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssni
 >
 >Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta ditt schema. Mer information finns i guiden [utforska XDM-resurser](../../../../xdm/ui/explore.md).
 
-[!DNL Schema Editor] visas och visar schemats struktur på arbetsytan. Till vänster på arbetsytan väljer du **[!UICONTROL Add]** under avsnittet **[!UICONTROL Mixins]**.
+[!DNL Schema Editor] visas och visar schemats struktur på arbetsytan. Till vänster på arbetsytan väljer du **[!UICONTROL Add]** under avsnittet **[!UICONTROL Field groups]**.
 
-![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-mixin.png)
+![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-field-group.png)
 
-Dialogrutan **[!UICONTROL Add mixin]** visas. Här väljer du **[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]** i listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. Välj **[!UICONTROL Add mixin]** när du har valt mixen.
+Dialogrutan **[!UICONTROL Add field group]** visas. Här väljer du **[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]** i listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen. När fältgruppen är markerad väljer du **[!UICONTROL Add field group]**.
 
-![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/mixin-dialog.png)
+![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-group-dialog.png)
 
-Arbetsytan visas igen och visar att `consents`-objektet har lagts till i schemastrukturen. Om du behöver ytterligare fält för samtycke och inställningar som inte fångas in av standardblandningen läser du avsnittet i bilagan [om hur du lägger till egna fält för samtycke och inställningar i schemat](#custom-consent). Annars väljer du **[!UICONTROL Save]** för att slutföra ändringarna av schemat.
+Arbetsytan visas igen och visar att `consents`-objektet har lagts till i schemastrukturen. Om du behöver ytterligare fält för samtycke och inställningar som inte fångats in av standardfältgruppen kan du läsa avsnittet i bilagan [om hur du lägger till egna fält för samtycke och inställningar i schemat](#custom-consent). Annars väljer du **[!UICONTROL Save]** för att slutföra ändringarna av schemat.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/save-schema.png)
 
@@ -165,17 +165,17 @@ Följande avsnitt innehåller ytterligare information om hur du skapar en dataup
 
 ### Lägg till anpassade medgivandefält och inställningsfält i schemat {#custom-consent}
 
-Om du behöver hämta ytterligare medgivandesignaler utanför de som representeras av standardmixinen [!DNL Consents & Preferences] kan du använda anpassade XDM-komponenter för att förbättra ditt medgivandeschema så att det passar just dina affärsbehov. I det här avsnittet beskrivs de grundläggande principerna för hur du anpassar ditt medgivandeschema på ett sätt som är kompatibelt med de medgivandeändringskommandon som görs av Adobe Experience Platform Mobile och Web SDK:er.
+Om du behöver hämta ytterligare medgivandesignaler utanför de som representeras av fältgruppen [!DNL Consents & Preferences] kan du använda anpassade XDM-komponenter för att förbättra ditt medgivandeschema så att det passar just dina affärsbehov. I det här avsnittet beskrivs de grundläggande principerna för hur du anpassar ditt medgivandeschema på ett sätt som är kompatibelt med de medgivandeändringskommandon som görs av Adobe Experience Platform Mobile och Web SDK:er.
 
 >[!IMPORTANT]
 >
->Du måste använda blandningen [!DNL Consents & Preferences] som baslinje för strukturen för dina medgivandedata och lägga till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
+>Du måste använda fältgruppen [!DNL Consents & Preferences] som en baslinje för strukturen för dina medgivandedata och lägga till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
 
-Om du vill lägga till anpassade fält i strukturen för en standardblandning måste du först skapa en anpassad blandning. När du har lagt till [!DNL Consents & Preferences]-blandningen i schemat väljer du ikonen **plus (+)** i avsnittet **[!UICONTROL Mixins]** och väljer sedan **[!UICONTROL Create new mixin]**. Ange ett namn och en valfri beskrivning för blandningen och välj sedan **[!UICONTROL Add mixin]**.
+Om du vill lägga till anpassade fält i strukturen för en standardfältgrupp måste du först skapa en anpassad fältgrupp. När du har lagt till fältgruppen [!DNL Consents & Preferences] i schemat väljer du ikonen **plus (+)** i avsnittet **[!UICONTROL Field groups]** och väljer sedan **[!UICONTROL Create new field group]**. Ange ett namn och en valfri beskrivning för fältgruppen och välj sedan **[!UICONTROL Add field group]**.
 
-![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-mixin.png)
+![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-field-group.png)
 
-[!DNL Schema Editor] visas igen med den nya anpassade blandningen markerad i den vänstra listen. På arbetsytan visas kontroller som gör att du kan lägga till anpassade fält i schemastrukturen. Om du vill lägga till ett nytt medgivandefält eller inställningsfält väljer du ikonen **plus (+)** bredvid `consents`-objektet.
+[!DNL Schema Editor] visas igen med den nya anpassade fältgruppen markerad i den vänstra listen. På arbetsytan visas kontroller som gör att du kan lägga till anpassade fält i schemastrukturen. Om du vill lägga till ett nytt medgivandefält eller inställningsfält väljer du ikonen **plus (+)** bredvid `consents`-objektet.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-field.png)
 
