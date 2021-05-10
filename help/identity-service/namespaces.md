@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ca092af61ac26fcfb6839b7ba0887178c899f89f
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Två profilfragment kan t.ex. innehålla olika primära ID:n, men de delar samma
 
 ### Identitetstyper
 
-Data kan identifieras av flera olika identitetstyper. Identitetstypen anges när identitetsnamnutrymmet skapas och kontrollerar om data bevaras i identitetsdiagrammet och eventuella specialinstruktioner för hur data ska hanteras.
+Data kan identifieras av flera olika identitetstyper. Identitetstypen anges när identitetsnamnutrymmet skapas och kontrollerar om data bevaras i identitetsdiagrammet och eventuella specialinstruktioner för hur data ska hanteras. Alla identitetstyper utom **Identifierare för icke-personer** följer samma beteende som när du sammanfogar ett namnutrymme och dess motsvarande ID-värde till ett identitetsdiagramkluster. Data sammanfogas inte när du använder **Identifierare för icke-personer**.
 
 Följande identitetstyper är tillgängliga i [!DNL Platform]:
 
@@ -92,7 +92,9 @@ Om du vill skapa ett anpassat namnutrymme med hjälp av användargränssnittet g
 
 ![](./images/create.png)
 
-Dialogrutan **[!UICONTROL Create identity namespace]** visas. Ange en unik **[!UICONTROL Display name]** och **[!UICONTROL Identity symbol]** och välj sedan den identitetstyp som du vill skapa. Du kan också lägga till en valfri beskrivning för mer information om namnutrymmet. När du är klar väljer du **[!UICONTROL Create]**.
+Dialogrutan **[!UICONTROL Create identity namespace]** visas. Ange en unik **[!UICONTROL Display name]** och **[!UICONTROL Identity symbol]** och välj sedan den identitetstyp som du vill skapa. Du kan också lägga till en valfri beskrivning för mer information om namnutrymmet. Alla identitetstyper utom **Identifierare för icke-personer** följer samma beteende som när de sammanfogas. Om du väljer **Identifierare för icke-personer** som identitetstyp när du skapar ett namnutrymme görs ingen sammanfogning. Mer information om respektive identitetstyp finns i tabellen [identitetstyper](#identity-types).
+
+När du är klar väljer du **[!UICONTROL Create]**.
 
 >[!IMPORTANT]
 >
