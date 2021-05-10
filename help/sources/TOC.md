@@ -5,9 +5,9 @@ breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
 translation-type: tm+mt
-source-git-commit: 121e2f410acdcd6de3953c6063a15901c853dd07
+source-git-commit: 32a6d0311169486b1273129c0ee87c242bee1e47
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '612'
 ht-degree: 5%
 
 ---
@@ -18,10 +18,10 @@ ht-degree: 5%
 - [Översikt över källkopplingar](home.md)
 - Tillgängliga källanslutningar {#connectors}
    - Adobe-program {#adobe-applications}
-      - [Dataanslutning för analysklassificeringar](connectors/adobe-applications/classifications.md)
-      - [Analytics-dataanslutning](connectors/adobe-applications/analytics.md)
-      - [Audience Manager-kontakt](connectors/adobe-applications/audience-manager.md)
-      - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
+      - [Källanslutning för analysklassificeringar](connectors/adobe-applications/classifications.md)
+      - [Källanslutning för analyser](connectors/adobe-applications/analytics.md)
+      - [Audience Manager-källanslutning](connectors/adobe-applications/audience-manager.md)
+      - [Källkoppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - Mappningar av programfält i Adobe {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
