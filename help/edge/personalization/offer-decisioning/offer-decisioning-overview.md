@@ -2,14 +2,14 @@
 title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
+exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 2113eb265020b1d1c2e73dba95554c8bf97acf13
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 4%
 
 ---
-
 
 # Använda Offer decisioning med Platform Web SDK
 
@@ -78,6 +78,7 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
           ]
       })
       ```
+
    * platform launch installerad SDK
       1. [Skapa en Platform launch-egenskap](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html)
       2. [Lägg till Platforma launchens inbäddningskod](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
@@ -93,6 +94,7 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
          * Lägg till en SDK-sändningshändelse för en plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
             ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
       6. [Skapa och publicera ett ](https://docs.adobe.com/content/help/en/launch/using/reference/publish/libraries.html) bibliotek som innehåller alla relevanta regler, dataelement och tillägg som du har konfigurerat
+
 
 
 ## Exempelbegäranden och svar
