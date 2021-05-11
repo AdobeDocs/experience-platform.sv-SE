@@ -7,9 +7,9 @@ topic-legacy: tutorial
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
 translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: ddf66ab277e5882afe7ffbdd87ee5df958c3e7b0
 workflow-type: tm+mt
-source-wordcount: '919'
+source-wordcount: '992'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,12 @@ Med växlingsknappen **[!UICONTROL Included in Profile]** kan du filtrera result
 Du kan även använda sökfältet för att begränsa resultaten ytterligare. När du söker efter en term representerar de översta objekten resurser vars namn matchar sökfrågan. Under **[!UICONTROL Standard Fields]** listas alla resurser som innehåller fält som matchar frågan. På så sätt kan du söka efter XDM-resurser baserat på vilken typ av data de innehåller, utan att först behöva veta namnet på resursen.
 
 ![](../images/ui/explore/search.png)
+
+Resurserna som visas i sökresultaten ordnas först efter matchningar av titel och sedan efter matchningar av beskrivning. Ju fler ord som matchar i någon av dessa kategorier, desto högre visas resursen i listan.
+
+>[!NOTE]
+>
+>För standard-XDM-resurser returnerar sökfunktionen endast enskilda fält som innehåller namnutrymmet `xdm`. Fält som finns under ett annat namnutrymme (till exempel ditt klientorganisations-ID) returneras bara om de finns i en anpassad resurs.
 
 När du har hittat resursen som du vill utforska väljer du resursens namn i listan för att visa dess struktur på arbetsytan.
 
@@ -100,7 +106,7 @@ Relationsfält markeras också unikt på arbetsytan och visar namnet på målsch
 
 >[!NOTE]
 >
->Mer information om hur du använder relationer i XDM-scheman finns i självstudiekursen [skapa en relation i användargränssnittet](../tutorials/create-schema-ui.md).
+>Mer information om hur du använder relationer i XDM-scheman finns i självstudiekursen [skapa en relation i användargränssnittet](../tutorials/relationship-ui.md).
 
 ## Nästa steg
 
