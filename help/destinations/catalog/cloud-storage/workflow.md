@@ -5,10 +5,9 @@ type: Tutorial
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c
-translation-type: tm+mt
-source-git-commit: ecda1f1c4a2829124aedaae2395a74e54929c7ad
+source-git-commit: 4dff8a95af79d14cf0c79fa1468df36f040ab1ad
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -63,7 +62,7 @@ För [!DNL Azure Event Hubs]-mål anger du namnet på din befintliga dataström 
 
 Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. Läs avsnittet [Aktivera segment](#activate-segments) för resten av arbetsflödet för att exportera data.
 
-## Använd makron för att skapa en mapp på din lagringsplats{#use-macros}
+## Använd makron för att skapa en mapp på lagringsplatsen {#use-macros}
 
 >[!NOTE]
 >
