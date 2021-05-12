@@ -3,10 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-translation-type: tm+mt
-source-git-commit: e12b1337c44095ee8731f99c5829ab83bba14889
+source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '658'
 ht-degree: 2%
 
 ---
@@ -29,7 +28,7 @@ Följande funktioner har testats och stöds för närvarande i Target:
 
 Så här aktiverar du [!DNL Target]:
 
-1. Aktivera målet i din [edge-konfiguration](../../fundamentals/edge-configuration.md) med lämplig klientkod.
+1. Aktivera Target i din [datastream](../../fundamentals/datastreams.md) med rätt klientkod.
 1. Lägg till alternativet `renderDecisions` i dina händelser.
 
 Du kan sedan även lägga till följande alternativ:
