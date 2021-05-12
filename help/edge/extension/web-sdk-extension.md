@@ -1,14 +1,13 @@
 ---
 title: Adobe Experience Platform Web SDK Extension - översikt
 description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
-translation-type: tm+mt
-source-git-commit: b9fb71ac7eca95c65165d6780b681ada3f16325b
+exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
+source-git-commit: b70fe5f3a4de2501730cc799125a7181b61186c0
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Experience Platform Web SDK-tillägg - översikt
 
@@ -48,11 +47,12 @@ Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra i
 
 [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en annan leverantör finns [här](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html).
 
-## [!UICONTROL Edge Configurations]
+## [!UICONTROL Datastreams]
 
-När en begäran skickas till Adobe Experience Platform Edge Network används ett edge-konfigurations-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+När en begäran skickas till Adobe Experience Platform Edge Network används ett dataStream ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Mer information finns i guiden om [kantkonfigurationer](../fundamentals/edge-configuration.md).
+Mer information finns i guiden [datastreams](../fundamentals/datastreams.md).
+
 
 ## [!UICONTROL Privacy]
 
