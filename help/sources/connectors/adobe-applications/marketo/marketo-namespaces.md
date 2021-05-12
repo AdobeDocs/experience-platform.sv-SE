@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en Marketo Engage-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
 translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 8dd7b1724f3de12bf6a3a1b77ee8050fd1a9eaf3
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1602'
 ht-degree: 1%
 
 ---
@@ -21,22 +21,39 @@ ht-degree: 1%
 
 Det här dokumentet innehåller information om den underliggande inställningen för B2B-namnutrymmen och scheman som används med [!DNL Marketo Engage] (kallas nedan &quot;[!DNL Marketo]&quot;). Det här dokumentet innehåller även information om hur du konfigurerar Postman-automatiseringsverktyget som krävs för att generera [!DNL Marketo] B2B-namnutrymmen och scheman.
 
-## Förutsättningar
+## Konfigurera namnutrymmet [!DNL Marketo] och verktyget för automatisk schemagenerering
 
-Innan du kan skapa dina B2B-namnutrymmen och scheman måste du först konfigurera plattformsutvecklarkonsolen och [!DNL Postman]-miljön. Mer information finns i självstudiekursen om hur du konfigurerar utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md).[
+Det första steget i att använda namnutrymmet [!DNL Marketo] och verktyget för automatisk schemagenerering är att konfigurera plattformsutvecklarkonsolen och [!DNL Postman]-miljön.
 
-Använd följande variabler i din [!DNL Marketo]-miljö med en plattformsutvecklarkonsol och en [!DNL Postman]-konfiguration:
+- Du kan hämta samlingen och miljön för den automatiska genereringen av namnutrymmet och schemat från den här [GitHub-databasen](https://git.corp.adobe.com/marketo-engineering/namespace_schema_utility).
+- Information om hur du använder plattforms-API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser exempel-API-anrop, finns i guiden [komma igång med plattforms-API:er](../../../../landing/api-guide.md).
+- Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md).
+- Mer information om hur du konfigurerar [!DNL Postman] för plattforms-API:er finns i självstudiekursen [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md).
 
-| Miljövariabel | Exempelvärde | Anteckningar |
+Med en plattformsutvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman]-miljö.
+
+Följande tabell innehåller exempelvärden samt ytterligare information om hur du fyller i din [!DNL Postman]-miljö:
+
+| Variabel | Beskrivning | Exempel |
 | --- | --- | --- |
-| `PRIVATE_KEY` | `{PRIVATE_KEY}` |
-| `SANDBOX_NAME` | `prod` |
-| `TENANT_ID` | `b2bcdpproductiontest` |
-| `munchkinId` | `123-ABC-456 ` | Mer information finns i självstudiekursen om [autentisering av din [!DNL Marketo] instans](./marketo-auth.md). |
-| `sfdc_org_id` | `00D4W000000FgYJUA0` | Se följande [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1) för mer information om hur du skaffar ditt organisations-ID. |
-| `msd_org_id` | `f6438fab-67e8-4814-a6b5-8c8dcdf7a98f` | Se följande [[!DNL Microsoft Dynamics] guide](https://docs.microsoft.com/en-us/power-platform/admin/determine-org-id-name) för mer information om hur du skaffar ditt organisations-ID. |
-| `has_abm` | `false` | Värdet är `true` om du prenumererar på kontobaserad marknadsföring. |
-| `has_msi` | `false` | Värdet är `true` om du prenumererar på [!DNL Marketo Sales Insight]. |
+| `CLIENT_SECRET` | En unik identifierare som används för att generera din `{ACCESS_TOKEN}`. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{CLIENT_SECRET}`. | `{CLIENT_SECRET}` |
+| `JWT_TOKEN` | JSON Web Token (JWT) är en autentiseringsuppgift som används för att generera {ACCESS_TOKEN}. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du skapar din `{JWT_TOKEN}`. | `{JWT_TOKEN}` |
+| `API_KEY` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `ACCESS_TOKEN` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
+| `META_SCOPE` | Med avseende på [!DNL Marketo] är det här värdet fast och är alltid inställt på: `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
+| `CONTAINER_ID` | Behållaren `global` innehåller alla standardklasser som tillhandahålls av Adobe och Experience Platform partner, schemafältgrupper, datatyper och scheman. Med avseende på [!DNL Marketo] är det här värdet fast och ställs alltid in på `global`. | `global` |
+| `PRIVATE_KEY` | En autentiseringsuppgift som används för att autentisera din [!DNL Postman]-instans till Experience Platform API:er. Se självstudiekursen om hur du konfigurerar utvecklarkonsolen och [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md) för instruktioner om hur du hämtar {PRIVATE_KEY}. | `{PRIVATE_KEY}` |
+| `TECHNICAL_ACCOUNT_ID` | En autentiseringsuppgift som används för att integrera med Adobe I/O. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
+| `IMS` | Identity Management System (IMS) utgör ramverket för autentisering till Adobe-tjänster. Med avseende på [!DNL Marketo] är det här värdet fast och ställs alltid in på: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
+| `IMS_ORG` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md) för instruktioner om hur du hämtar din `{IMS_ORG}`-information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `SANDBOX_NAME` | Namnet på den virtuella sandlådepartition som du använder. | `prod` |
+| `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i IMS-organisationen. | `b2bcdpproductiontest` |
+| `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Detta värde är fast och ställs alltid in på: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
+| `munchkinId` | Det unika ID:t för ditt [!DNL Marketo]-konto. I självstudiekursen om [autentisering av din [!DNL Marketo] instans](./marketo-auth.md) finns mer information om hur du hämtar din `munchkinId`. | `123-ABC-456` |
+| `sfdc_org_id` | Organisations-ID för ditt [!DNL Salesforce]-konto. Se följande [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1) för mer information om hur du skaffar ditt [!DNL Salesforce] organisations-ID. | `00D4W000000FgYJUA0` |
+| `msd_org_id` | Organisations-ID för ditt [!DNL Dynamics]-konto. Se följande [[!DNL Microsoft Dynamics] guide](https://docs.microsoft.com/en-us/power-platform/admin/determine-org-id-name) för mer information om hur du skaffar ditt [!DNL Dynamics] organisations-ID. | `f6438fab-67e8-4814-a6b5-8c8dcdf7a98f` |
+| `has_abm` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Account-Based Marketing]. | `false` |
+| `has_msi` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Sales Insight]. | `false` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -99,7 +116,7 @@ Följande tabell innehåller information om den underliggande uppsättningen fö
 >
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Visningsnamn | Identitetssymbol | Identitetstyp | Utfärdartyp | Typ av utfärdarentitet | [!DNL Salesforce] Exempel på prenumerationsorganisations-ID |
+| Visningsnamn | Identitetssymbol | Identitetstyp | Utfärdartyp | Typ av utfärdarentitet | [!DNL Dynamics] Exempel på prenumerationsorganisations-ID |
 | --- | --- | --- | --- | --- | --- |
 | `microsoft_person_{DYNAMICS_ID}` | autogenererad | `CROSS_DEVICE` | [!DNL Microsoft] | `person` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
 | `microsoft_account_{DYNAMICS_ID}` | autogenererad | `B2B_ACCOUNT` | [!DNL Microsoft] | `account` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
