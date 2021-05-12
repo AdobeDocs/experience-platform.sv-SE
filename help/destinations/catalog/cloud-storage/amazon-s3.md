@@ -3,10 +3,9 @@ keywords: Amazon S3;S3-mål;s3;amazon s3
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-translation-type: tm+mt
-source-git-commit: 7780a2b3b518ab976ec14531892e0734a6342e4c
+source-git-commit: 49a59e5b081243679f5d94b03a63d30df22cdc6a
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
@@ -31,9 +30,13 @@ För [!DNL Amazon S3]-mål anger du följande information i arbetsflödet för a
 
 * **[!DNL Amazon S3]åtkomstnyckel och  [!DNL Amazon S3] hemlig nyckel**: Generera  [!DNL Amazon S3]ett  `access key - secret access key` par som ger plattformsåtkomst till ditt  [!DNL Amazon S3] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
+>[!TIP]
+>
+>I arbetsflödet för anslutningsmål kan du skapa en anpassad mapp i din Amazon S3-lagring per exporterad segmentfil. Läs [Använd makron för att skapa en mapp på din lagringsplats](./workflow.md#use-macros) för instruktioner.
+
 ## Nödvändiga [!DNL Amazon S3]-behörigheter {#required-s3-permission}
 
-Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats skapar du en IAM-användare för [!DNL Platform] i [!DNL Amazon S3] och tilldelar behörigheter för följande åtgärder:
+Om du vill ansluta och exportera data till din [!DNL Amazon S3]-lagringsplats skapar du en IAM-användare (Identity and Access Management) för [!DNL Platform] i [!DNL Amazon S3] och tilldelar behörigheter för följande åtgärder:
 
 * `s3:DeleteObject`
 * `s3:GetBucketLocation`
