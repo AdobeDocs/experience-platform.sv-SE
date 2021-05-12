@@ -5,10 +5,9 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 feature: Datahantering
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 4ed738b2b71332db1602d5571797ed61214afc2d
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '149'
 ht-degree: 14%
 
 ---
@@ -19,7 +18,7 @@ ht-degree: 14%
 * [SDK för plattform](home.md)
 * Grundläggande {#fundamentals}
    * [Förutsättningar](fundamentals/prerequisite.md)
-   * [Skapa en kantkonfiguration](fundamentals/edge-configuration.md)
+   * [Konfigurera ett datastream](fundamentals/datastreams.md)
    * [Installera SDK](fundamentals/installing-the-sdk.md)
    * [Konfigurera SDK](fundamentals/configuring-the-sdk.md)
    * [Kör kommandon](fundamentals/executing-commands.md)
@@ -57,6 +56,7 @@ ht-degree: 14%
    * [Web SDK-tillägg](extension/web-sdk-extension.md)
    * [Åtgärdstyper](extension/action-types.md)
    * [Dataelementtyper](extension/data-element-types.md)
+   * [Åtkomst till ECID](extension/accessing-the-ecid.md)
    * [Versionsinformation för Web SDK-tillägg](extension/web-sdk-ext-release-notes.md)
 * [Versionsinformation](release-notes.md)
 * [Vanliga frågor](web-sdk-faq.md)
