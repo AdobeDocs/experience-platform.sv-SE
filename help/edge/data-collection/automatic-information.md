@@ -2,14 +2,13 @@
 title: Automatiskt insamlad information i Adobe Experience Platform Web SDK
 description: En översikt över all information som Adobe Experience Platform SDK samlar in automatiskt.
 keywords: samla in information;kontext;konfigurera;enhet;screenHeight;screen Height;screenOrientation;screen Orientation;screenWidth;screen Width;environment;viewportHeight;viewport Height;viewportWidth;viewport Width;populserDetails;browser details;implementationDetails;implementation Details;name;version;placeContext;local Time;local Time zoneOffset;local Timezone Offset;timestamp;web;url;webPageDetails;web page Details;webReferrer;web Referrer;landscape;portrait;
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 901df786-df36-4986-9c74-a32d29c11b71
+source-git-commit: 0f671a967a67761e0cfef6fa0d022e3c3790c2d8
 workflow-type: tm+mt
-source-wordcount: '422'
-ht-degree: 6%
+source-wordcount: '515'
+ht-degree: 5%
 
 ---
-
 
 # Automatiskt insamlad information
 
@@ -25,7 +24,7 @@ Information om enheten. Detta inkluderar inte data som kan slås upp på servers
 | ---------------------------------- | ------------ |
 | `events[].xdm.device.screenHeight` | `900` |
 
-Skärmens höjd i pixlar.
+Skärmens höjd (i pixlar).
 
 ### Skärmorientering
 
@@ -83,7 +82,7 @@ Information om SDK som används för att samla in händelsen.
 | ----------------------------------------- | --------------------------------------- |
 | `events[].xdm.implementationDetails.name` | `https://ns.adobe.com/experience/alloy` |
 
-SDK-identifierare (Software Development Kit).  I det här fältet används en URI för att förbättra unika identifierare som tillhandahålls av olika programbibliotek.
+SDK-identifierare (Software Development Kit).  I det här fältet används en URI för att förbättra unika identifierare som tillhandahålls av olika programbibliotek. När det fristående biblioteket används är värdet `https://ns.adobe.com/experience/alloy`. När biblioteket används som en del av Platforma launchen är värdet `https://ns.adobe.com/experience/alloy+reactor`.
 
 ### Version
 
@@ -91,12 +90,15 @@ SDK-identifierare (Software Development Kit).  I det här fältet används en UR
 | -------------------------------------------- | ------------ |
 | `events[].xdm.implementationDetails.version` | `0.11.0` |
 
+När det fristående biblioteket används är värdet helt enkelt biblioteksversionen. När biblioteket används som en del av bibliotekstillägget är det här biblioteksversionen och Platforma launchens tilläggsversion som är kopplad till ett plustecken (+). Om biblioteksversionen till exempel var 2.1.0 och Platforma launchens tilläggsversion var 2.1.3, skulle värdet vara `2.1.0+2.1.3`.
+
 ### Miljö
 
 | **Sökväg i nyttolast:** | **Exempel:** |
 | ------------------------------------------------ | ------------ |
 | `events[].xdm.implementationDetails.environment` | `browser` |
 
+Den miljö där data samlades in. Det här är alltid inställt på `browser`.
 
 ## Montera kontext (`placeContext`)
 
