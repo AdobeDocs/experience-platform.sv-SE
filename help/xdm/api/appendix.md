@@ -5,8 +5,7 @@ title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: dcfdc9c479e8a77296f7cb0bf9f5bb36e9261b75
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 0%
@@ -54,7 +53,7 @@ Du kan filtrera resultat med parametern `property`, som används för att tillä
 >
 >Du kan använda parametern `property` för att filtrera schemafältgrupper efter deras kompatibla klass. `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` returnerar till exempel bara fältgrupper som är kompatibla med klassen [!DNL XDM Individual Profile].
 
-## Kompatibilitetsläge
+## Kompatibilitetsläge {#compatibility}
 
 [!DNL Experience Data Model] (XDM) är en öppet dokumenterad specifikation som drivs av Adobe för att förbättra interoperabiliteten, uttrycksfullheten och styrkan i digitala upplevelser. Adobe underhåller källkoden och de formella XDM-definitionerna i ett [öppen källkodsprojekt på GitHub](https://github.com/adobe/xdm/). Dessa definitioner är skrivna i XDM Standard Notation, med JSON-LD (JavaScript Object Notation for Linked Data) och JSON Schema som grammatik för att definiera XDM-scheman.
 
