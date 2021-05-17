@@ -2,14 +2,13 @@
 title: Felsökning i Adobe Experience Platform Web SDK
 description: Lär dig hur du växlar felsökningsfunktioner i Experience Platform Web SDK.
 keywords: felsöka webb-sdk;felsöka;konfigurera;konfigurera kommando;felsökningskommando;edgeConfigId;setDebug;debugEnabled;debug;
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
+source-git-commit: 0f671a967a67761e0cfef6fa0d022e3c3790c2d8
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
-
 
 # Felsökning
 
@@ -79,4 +78,4 @@ alloy("getLibraryInfo").then(function(result) {
 
 För närvarande innehåller det angivna `libraryInfo`-objektet följande egenskaper:
 
-* `version` Det här är versionen av det inlästa biblioteket. Om t.ex. versionen av biblioteket som läses in var 1.0.0 är värdet `1.0.0`.
+* `version` Det här är versionen av det inlästa biblioteket. Om t.ex. versionen av biblioteket som läses in var 1.0.0 är värdet `1.0.0`. När biblioteket körs i Adobe Experience Platform Launch-tillägget (med namnet&quot;AEP Web SDK&quot;) är Platforma launchen biblioteksversionen och den version av tillägget som är kopplad till ett plustecken (+). Om biblioteksversionen till exempel är 1.0.0 och Platforma launchen är 1.2.0, blir värdet `1.0.0+1.2.0`.
