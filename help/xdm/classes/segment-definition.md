@@ -4,10 +4,9 @@ title: Segmentdefinitionsklass
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över segmentdefinitionsklassen i XDM (Experience Data Model).
 exl-id: c0f7b04c-2266-4d08-89a1-67ba758a51a7
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 632ea4e2a94bfcad098a5fc5a5ed8985c0f41e0e
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '366'
 ht-degree: 0%
 
 ---
@@ -28,7 +27,7 @@ ht-degree: 0%
 | `_id` | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill.<br><br>Det är viktigt att särskilja att detta fält inte  **ger** en identitet som är relaterad till en enskild person, utan snarare själva registreringen av uppgifter. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity). |
 | `createdByBatchID` | ID:t för den inkapslade batchen som gjorde att posten skapades. |
 | `description` | En beskrivning av segmentdefinitionen. |
-| `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för de personer som segmentet gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i  [grunderna för ](../schema/composition.md#identityMap) schemakompositioner. |
+| `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för de personer som segmentet gäller för. Mer information om hur de används finns i avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap). |
 | `modifiedByBatchID` | ID:t för den senaste inkapslade batchen som gjorde att posten uppdaterades. |
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
