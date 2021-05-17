@@ -5,17 +5,16 @@ title: XDM-klass för enskild profil
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-translation-type: tm+mt
-source-git-commit: 612917b23d1841556a71f6378497e1d033bc3b62
+source-git-commit: 9fbb40a401250496761dcce63a3f033a8746ae7e
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
 
 # [!DNL XDM Individual Profile] class
 
-[!DNL XDM Individual Profile] är en XDM-standardklass som bildar en enda representation (eller&quot;profil&quot;) av både identifierade och delvis identifierade individers attribut och intressen.
+[!DNL XDM Individual Profile] är en XDM-klass (Experience Data Model) som utgör en enda representation (eller&quot;profil&quot;) av en enskild person. Klassen (och dess kompatibla blandningar) fångar in attributen och intressena hos både identifierade och delvis identifierade individer som interagerar med ert varumärke.
 
 Profilerna kan omfatta allt från anonyma beteendesignaler (t.ex. cookies i webbläsare) till välidentifierade profiler med detaljerad information som namn, födelsedatum, plats och e-postadress. När en profil växer blir den ett robust arkiv med personuppgifter, identiteter, kontaktuppgifter och kommunikationsinställningar för en individ. Mer högnivåinformation om användning av den här klassen i plattformens ekosystem finns i [XDM-översikten](../home.md#data-behaviors).
 
