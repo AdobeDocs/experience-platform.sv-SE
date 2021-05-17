@@ -5,10 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 632ea4e2a94bfcad098a5fc5a5ed8985c0f41e0e
 workflow-type: tm+mt
-source-wordcount: '3497'
+source-wordcount: '3580'
 ht-degree: 0%
 
 ---
@@ -60,9 +59,13 @@ Fält som vanligen markeras som &quot;[!UICONTROL Identity]&quot; är: e-postadr
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Se översikten på [Adobe Experience Platform Identity Service](../../identity-service/home.md) om du vill veta mer om hur identitetsinformation kan hjälpa dig att leverera digitala upplevelser till dina kunder.
 
-#### `xdm:identityMap` {#identityMap}
+#### `identityMap` {#identityMap}
 
-`xdm:identityMap` är ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Det här fältet kan användas för att ange identitetsinformation för dina scheman, i stället för att definiera identitetsvärden inom strukturen för själva schemat.
+`identityMap` är ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Det här fältet kan användas för att ange identitetsinformation för dina scheman, i stället för att definiera identitetsvärden inom strukturen för själva schemat.
+
+Den största nackdelen med att använda `identityMap` är att identiteter bäddas in i data och blir mindre synliga som ett resultat av detta. Om du importerar rådata bör du definiera enskilda identitetsfält i den faktiska schemastrukturen i stället.
+
+Identitetskartor kan dock vara särskilt användbara om du samlar in data från källor som lagrar identiteter tillsammans, till exempel [!DNL Airship] eller Adobe Audience Manager. Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 
 Ett exempel på en enkel identitetskarta skulle se ut så här:
 
@@ -99,7 +102,7 @@ Som exemplet ovan visar representerar varje nyckel i `identityMap`-objektet ett 
 >
 >Ett booleskt värde för om värdet är en primär identitet (`primary`) kan också anges för varje identitetsvärde. Primära identiteter behöver bara anges för scheman som är avsedda att användas i [!DNL Real-time Customer Profile]. Mer information finns i avsnittet om [unionsscheman](#union).
 
-### Schemaförändringsprinciper {#evolution}
+### Principer för schemautveckling {#evolution}
 
 I takt med att de digitala upplevelserna utvecklas måste även de scheman som används för att representera dem finnas kvar. Ett väldesignat schema kan därför anpassas och utvecklas efter behov, utan att det medför destruktiva ändringar i tidigare versioner av schemat.
 
