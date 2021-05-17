@@ -2,14 +2,13 @@
 title: Installera Adobe Experience Platform Web SDK
 description: Lär dig hur du installerar Experience Platform Web SDK.
 keywords: web sdk-installation;installera web sdk;Internet Explorer;promise;npm-paket
-translation-type: tm+mt
-source-git-commit: 63c0c5cae5ca2800b1f049b2b33e2a6f36ee7255
+exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
+source-git-commit: 07f598a9fd7c0e5af7802fe979a44bbafa7afae4
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '939'
 ht-degree: 0%
 
 ---
-
 
 # Installera SDK {#installing-the-sdk}
 
@@ -130,6 +129,10 @@ const alloy = createInstance({ name: "alloy" });
 alloy("config", { ... });
 alloy("sendEvent", { ... });
 ```
+
+>[!NOTE]
+>
+>NPM-paketet bygger på CommonJS-moduler. När du använder ett paket måste du därför se till att paketet har stöd för CommonJS-moduler. Vissa paketerare, till exempel [Rollup](https://rollupjs.org), kräver ett [plugin](https://www.npmjs.com/package/@rollup/plugin-commonjs) som har stöd för CommonJS.
 
 ### Använda paketet som en ECMAScript 5-modul
 
