@@ -5,10 +5,9 @@ title: Marketo namnutrymmen
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en Marketo Engage-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-translation-type: tm+mt
-source-git-commit: 8dd7b1724f3de12bf6a3a1b77ee8050fd1a9eaf3
+source-git-commit: af728fb508c514db3d5871114f9a406c1ed428f2
 workflow-type: tm+mt
-source-wordcount: '1602'
+source-wordcount: '1670'
 ht-degree: 1%
 
 ---
@@ -56,6 +55,20 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 | `has_msi` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Sales Insight]. | `false` |
 
 {style=&quot;table-layout:auto&quot;}
+
+### Köra skript
+
+När du har konfigurerat din [!DNL Postman]-samling och -miljö kan du nu köra skriptet via gränssnittet [!DNL Postman].
+
+I gränssnittet [!DNL Postman] väljer du rotmappen för verktyget för autogenerering och sedan **[!DNL Run]** i det övre huvudet.
+
+![root-folder](../images/marketo/root-folder.png)
+
+Gränssnittet [!DNL Runner] visas. Se till att alla kryssrutor är markerade och välj sedan **[!DNL Run Adobe I/O Access Token Generation + Automate Namespace creation]**.
+
+![run-generator](../images/marketo/run-generator.png)
+
+En lyckad begäran skapar B2B-namnutrymmen och scheman enligt betaspecifikationerna.
 
 ## [!DNL Marketo] namnutrymmen
 
