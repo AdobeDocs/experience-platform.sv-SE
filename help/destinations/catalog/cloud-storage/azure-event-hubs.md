@@ -3,8 +3,7 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) !DNL Azure Event Hubs] anslutning
 description: Skapa en utgående anslutning i realtid till ditt !DNL Azure Event Hubs]-lagringsutrymme för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-translation-type: tm+mt
-source-git-commit: ce5001d0a1c95901089915ae9836fdd436f12297
+source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
 workflow-type: tm+mt
 source-wordcount: '534'
 ht-degree: 0%
@@ -45,21 +44,21 @@ Se [Arbetsflöde för molnlagringsmål ](./workflow.md)för instruktioner om hur
 
 För [!DNL Azure Event Hubs]-mål anger du följande information i arbetsflödet för att skapa mål:
 
-## Autentiseringssteg {#authentication-step}
+## Kontosteg {#account-step}
 
 * **[!UICONTROL SAS Key Name]** och  **[!UICONTROL SAS Key]**: Fyll i SAS-nyckelns namn och nyckel. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL Namespace]**: Fyll i  [!DNL Azure Event Hubs] namnutrymmet. Läs mer om [!DNL Azure Event Hubs]-namnutrymmen i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
 
-![Indata krävs i autentiseringssteget](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
+![Indata krävs i kontosteget](../../assets/catalog/cloud-storage/event-hubs/account.png)
 
-## Installationssteg {#setup-step}
+## Autentiseringssteg {#authentication-step}
 
 * **[!UICONTROL Name]**: Ange ett namn för anslutningen till  [!DNL Azure Event Hubs].
 * **[!UICONTROL Description]**: Ange en beskrivning av anslutningen.  Exempel: &quot;Premium tier customers&quot;, &quot;Males interest of kitsnapfing&quot;.
 * **[!UICONTROL eventHubName]**: Ange ett namn för strömmen till ditt  [!DNL Azure Event Hubs] mål.
 * **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
-![Data som krävs i konfigurationssteget](../../assets/catalog/cloud-storage/event-hubs/setup.png)
+![Data som krävs i autentiseringssteget](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
 
 ## Aktivera segment {#activate-segments}
 
@@ -111,6 +110,6 @@ Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Azure Event Hubs]
 >[!MORELIKETHIS]
 >
 >* [Anslut till Azure Event Hubs och aktivera data med API:t för Flow Service](../../api/streaming-destinations.md)
->* [AWS Kinesis-mål](./amazon-kinesis.md)
->* [Måltyper och -kategorier](../../destination-types.md)
+* [AWS Kinesis-mål](./amazon-kinesis.md)
+* [Måltyper och -kategorier](../../destination-types.md)
 
