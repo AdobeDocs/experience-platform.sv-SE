@@ -5,9 +5,9 @@ title: Marketo namnutrymmen
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en Marketo Engage-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: af728fb508c514db3d5871114f9a406c1ed428f2
+source-git-commit: 609b951cbde880a9f354b343adb1796def0a812c
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1677'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Det här dokumentet innehåller information om den underliggande inställningen 
 
 Det första steget i att använda namnutrymmet [!DNL Marketo] och verktyget för automatisk schemagenerering är att konfigurera plattformsutvecklarkonsolen och [!DNL Postman]-miljön.
 
-- Du kan hämta samlingen och miljön för den automatiska genereringen av namnutrymmet och schemat från den här [GitHub-databasen](https://git.corp.adobe.com/marketo-engineering/namespace_schema_utility).
+- Du kan hämta samlingen och miljön för den automatiska genereringen av namnutrymmet och schemat från den här [GitHub-databasen](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility).
 - Information om hur du använder plattforms-API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser exempel-API-anrop, finns i guiden [komma igång med plattforms-API:er](../../../../landing/api-guide.md).
 - Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md).
 - Mer information om hur du konfigurerar [!DNL Postman] för plattforms-API:er finns i självstudiekursen [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md).
