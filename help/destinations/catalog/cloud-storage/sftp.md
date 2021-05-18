@@ -2,14 +2,13 @@
 keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+exl-id: 27abfc38-ec19-4321-b743-169370d585a0
+source-git-commit: a21abb44bb9cbe6fefa0ff70a1ff19e31cc0c7de
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
-
 
 # SFTP-anslutning
 
@@ -39,7 +38,7 @@ För SFTP-mål anger du följande information i arbetsflödet för att skapa må
 
 ## Exporterade data {#exported-data}
 
-För SFTP-mål skapar Platform en tabbavgränsad `.txt`- eller `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i [E-postmarknadsföringsmål och molnlagringsmål](../../ui/activate-destinations.md#esp-and-cloud-storage) i självstudiekursen om segmentaktivering.
+För [!DNL SFTP]-mål skapar Plattform en tabbavgränsad `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i [E-postmarknadsföringsmål och molnlagringsmål](../../ui/activate-destinations.md#esp-and-cloud-storage) i självstudiekursen om segmentaktivering.
 
 ## IP-adress tillåtelselista
 
