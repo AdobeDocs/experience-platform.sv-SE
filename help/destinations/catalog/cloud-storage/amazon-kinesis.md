@@ -2,14 +2,13 @@
 keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
+source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL Amazon Kinesis]-anslutning
 
@@ -45,21 +44,21 @@ Mer information om hur du ansluter till molnlagringsmål, inklusive de som stöd
 
 För [!DNL Amazon Kinesis]-mål anger du följande information i arbetsflödet för att skapa mål:
 
-## Autentiseringssteg {#authentication-step}
+## Kontosteg {#account-step}
 
 * **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera  [!DNL Amazon Web Services]ett  `access key - secret access key` par som ger plattformsåtkomst till ditt  [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken  [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](../../assets/catalog/cloud-storage/amazon-kinesis/account.png)
 
-## Installationssteg {#setup-step}
+## Autentiseringssteg {#authentication-step}
 
 * **Namn**: Ange ett namn för anslutningen till  [!DNL Amazon Kinesis]
 * **Beskrivning**: Ange en beskrivning för anslutningen till  [!DNL Amazon Kinesis].
 * **ström**: Ange namnet på en befintlig dataström i ditt  [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
 * **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
-![Inmatningsfält i autentiseringssteget](../../assets/catalog/cloud-storage/amazon-kinesis/setup.png)
+![Inmatningsfält i autentiseringssteget](../../assets/catalog/cloud-storage/amazon-kinesis/authentication.png)
 
 <!--
 
@@ -120,6 +119,6 @@ Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Amazon Kinesis] i
 >[!MORELIKETHIS]
 >
 >* [Anslut till Amazon Kinesis och aktivera data med API:t för Flow Service](../../api/streaming-destinations.md)
->* [Azure Event Hubs-mål](./azure-event-hubs.md)
->* [Måltyper och -kategorier](../../destination-types.md)
+* [Azure Event Hubs-mål](./azure-event-hubs.md)
+* [Måltyper och -kategorier](../../destination-types.md)
 
