@@ -5,10 +5,9 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 91f586746c8d1db4e9219b261d7be36e572f1b50
 workflow-type: tm+mt
-source-wordcount: '2175'
+source-wordcount: '2223'
 ht-degree: 0%
 
 ---
@@ -48,7 +47,11 @@ Alla kolumner i [!DNL Consumer Experience Event]-schemat (CEE) är inte obligato
 | Marketing.campaigngroup | Pekpunkt |
 | Handel | Konvertering |
 
-Attributen körs vanligtvis på konverteringskolumner som order, inköp och utcheckningar under&quot;handel&quot;. Kolumnerna&quot;channel&quot; och&quot;marketing&quot; rekommenderas i hög grad för att definiera kontaktytor för goda insikter. Du kan dock inkludera ytterligare kolumner tillsammans med kolumnerna ovan om du vill konfigurera dem som en konvertering eller kontaktytpunktsdefinition.
+Attributen körs vanligtvis på konverteringskolumner som order, inköp och utcheckningar under&quot;handel&quot;. Kolumnerna för&quot;channel&quot; och&quot;marketing&quot; används för att definiera kontaktytor för Attribution AI (till exempel `channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`). För optimala resultat och insikter rekommenderar vi att du inkluderar så många konverterings- och kontaktpunktskolumner som möjligt. Dessutom är du inte begränsad till bara de ovanstående kolumnerna. Du kan inkludera andra rekommenderade eller anpassade kolumner som en konvertering eller kontaktytpunktsdefinition.
+
+>[!TIP]
+>
+>Om du använder Adobe Analytics-data i ditt CEE-schema lagras kontaktpunktsinformationen för Analytics vanligtvis i `channel.typeAtSource` (till exempel `channel.typeAtSource = 'email'`).
 
 Kolumnerna nedan är inte obligatoriska, men vi rekommenderar att du inkluderar dem i ditt CEE-schema om du har tillgång till informationen.
 
@@ -58,7 +61,7 @@ Kolumnerna nedan är inte obligatoriska, men vi rekommenderar att du inkluderar 
 - web.webPageDetails
 - xdm:productListItems
 
-### Historiska data {#data-requirements}
+## Historiska data {#data-requirements}
 
 >[!IMPORTANT]
 >
