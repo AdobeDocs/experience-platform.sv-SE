@@ -3,14 +3,13 @@ keywords: e-post;E-post;e-post;e-postadresser
 title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
-translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
+source-git-commit: a21abb44bb9cbe6fefa0ff70a1ff19e31cc0c7de
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '764'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över mål för e-postmarknadsföring {#email-marketing-destinations}
 
@@ -20,7 +19,7 @@ För att kunna skicka segment till e-postmarknadsföringsmål för era kampanjer
 
 Att ansluta till e-postmarknadsföringsmål är en trestegsprocess ([konfigurera mål](#connect-destination), [aktivera segment](#select-segments), [importera data från lagringsplatsen till målet](#import-data-into-destination)). Varje steg beskrivs längre ned på den här sidan.
 
-Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskrivs i avsnittet nedan. Plattformen exporterar dina segment som `.csv` eller `.txt`-filer och levererar dem till den plats du föredrar. Schemalägg dataimporten på din e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i Platform. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
+Anslut till antingen [!DNL Amazon S3] eller [!DNL SFTP] i det anslutande målflödet som beskrivs i avsnittet nedan. Plattformen exporterar dina segment som `.csv`-filer och levererar dem till den plats du föredrar. Schemalägg dataimporten i din e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i [!DNL Platform]. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
 
 ## Konfigurera mål {#connect-destination}
 
