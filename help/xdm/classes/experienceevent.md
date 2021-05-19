@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individuell profil;fält;scheman;scheman;identityMap;identity map;identity map;Schema design;map;union schema;union schema
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;identityMap;identity map;Identity map;Schema design;Map;event modeling;event modeling;best practices;event;events;
 solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent.
+description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 9fbb40a401250496761dcce63a3f033a8746ae7e
+source-git-commit: 4f1fe7ca5f09bb1e8e1b913d1dee1cff347d6a24
 workflow-type: tm+mt
-source-wordcount: '1458'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
