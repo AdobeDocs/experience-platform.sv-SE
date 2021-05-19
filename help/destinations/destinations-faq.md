@@ -4,9 +4,9 @@ title: Vanliga frågor om destinationer
 seo-title: Vanliga frågor om destinationer
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 seo-description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
-source-git-commit: 117f0f82adb764cedaa048e718cd72fa033845a0
+source-git-commit: 61678c5a62980cdb81714420016b7c4b2093f5c6
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '594'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # Vanliga frågor om destinationer {#faq}
 
-## [!DNL Facebook Custom Audiences] (#facebook-faq)
+## [!DNL Facebook Custom Audiences] {#facebook-faq}
 
 **Vad behöver jag göra innan jag kan aktivera målgrupper i  [!DNL Facebook Custom Audiences]?**
 
