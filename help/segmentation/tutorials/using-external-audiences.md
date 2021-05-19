@@ -5,10 +5,9 @@ title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 82aa38c7bce05faeea5a9f42d0d86776737e04be
 workflow-type: tm+mt
-source-wordcount: '629'
+source-wordcount: '763'
 ht-degree: 0%
 
 ---
@@ -19,11 +18,25 @@ Adobe Experience Platform har stöd för import av externa målgrupper, som seda
 
 ## Komma igång
 
+Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform]-tjänsterna som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+
 - [Segmenteringstjänst](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
 - [Kundprofil](../../profile/home.md) i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 - [Datauppsättningar](../../catalog/datasets/overview.md): Konstruktionen för lagring och hantering av databeständighet i Experience Platform.
 - [Direktinmatning](../../ingestion/streaming-ingestion/overview.md): Hur Experience Platform importerar och lagrar data från klient- och serverenheter i realtid.
+
+### Segmentdata kontra segmentmetadata
+
+Innan du börjar importera och använda externa målgrupper är det viktigt att förstå skillnaden mellan segmentdata och segmentmetadata.
+
+Segmentdata avser de profiler som uppfyller kriterierna för att kvalificera segment, och är därför en del av målgruppen.
+
+Metadata för segment är information om själva segmentet, som innehåller namn, beskrivning, uttryck (om tillämpligt), datum då segmentet skapades, datum för senaste ändring och ett ID. ID:t länkar segmentmetadata till de enskilda profiler som uppfyller segmentkvalificeringen och är en del av den slutliga målgruppen.
+
+| Segmentdata | Segmentmetadata |
+| ------------ | ---------------- |
+| Profiler som uppfyller kraven för segment | Information om själva segmentet |
 
 ## Skapa ett identitetsnamnutrymme för den externa målgruppen
 
@@ -49,7 +62,7 @@ Nu när schemat har skapats måste du ange vilket fält som ska innehålla segme
 
 ![](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-När du har markerat `_id`-fältet som primär identitet väljer du schemats titel, följt av växlingsknappen **[!UICONTROL Profile]**. Välj **[!UICONTROL Enable]** om du vill aktivera schemat för [!DNL Real-time Customer Profile].
+När du har markerat `_id`-fältet som primär identitet, markerar du schemats titel, följt av växlingsknappen **[!UICONTROL Profile]**. Välj **[!UICONTROL Enable]** om du vill aktivera schemat för [!DNL Real-time Customer Profile].
 
 ![](../images/tutorials/external-audiences/schema-profile.png)
 
