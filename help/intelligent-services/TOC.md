@@ -4,11 +4,10 @@ audience: user
 user-guide-title: Hjälp om intelligenta tjänster
 breadcrumb-title: Guide för intelligenta tjänster
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, hitta insikter och skapa segment utifrån era marknadsföringshändelsedata.
-feature: Data Science Workspace
-translation-type: tm+mt
-source-git-commit: a26b07302a47ceb0ba2af5267e7995118b70683f
+feature: Datavetenskapens arbetsyta
+source-git-commit: 31b584d3e28a6f15254cf60fa673cd0c5c16ea73
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '124'
 ht-degree: 4%
 
 ---
@@ -44,4 +43,5 @@ ht-degree: 4%
       - [Upptäck insikter](customer-ai/user-guide/discover-insights.md)
       - [Skapa segment med hjälp av AI-poäng för kunder](customer-ai/user-guide/create-segment.md)
       - [Hämta bakgrundsmusik](customer-ai/user-guide/download-scores.md)
+   - [Fel vid felsökning](customer-ai/troubleshooting.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
