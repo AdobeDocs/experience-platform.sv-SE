@@ -1,27 +1,20 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förhandsvisning;exempel
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
-description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste lyckade exemplet av dina profildata samt lista profildistribution per datauppsättning och per identitetsnamnområde i Adobe Experience Platform.
-topic-legacy: guide
+description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och per identitet och generera en överlappningsrapport för datauppsättningar.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 459eb626101b7382b8fe497835cc19f7d7adc6b2
 workflow-type: tm+mt
-source-wordcount: '1652'
+source-wordcount: '2063'
 ht-degree: 0%
 
 ---
 
 # Förhandsgranska exempelstatusslutpunkt (förhandsgranskning av profil)
 
-Med Adobe Experience Platform kan ni importera kunddata från flera olika källor och skapa stabila, enhetliga profiler för enskilda kunder. När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Platform] lagras de i profildatalagret.
+Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra profilrelaterade mått.
 
-När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
-
-* För **arbetsflöden för strömmande data** görs en timkontroll för att avgöra om tröskelvärdet på 5 % ökning eller minskning har uppnåtts. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
-* Om tröskelvärdet på 5 % ökning eller minskning uppnås körs ett jobb för att uppdatera antalet för **batchimport** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
-
-Dessa mått är också tillgängliga i [!UICONTROL Profiles]-avsnittet i användargränssnittet för Experience Platform. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] användarhandboken](../ui/user-guide.md).
+Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus` för kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnområdet, samt för att generera en överlappande rapport för datauppsättningar för att få synlighet i kompositionen för organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa dessa mått med API-slutpunkten `/previewsamplestatus`.
 
 >[!NOTE]
 >
@@ -35,11 +28,26 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Real-time Custome
 
 Den här guiden refererar till både profilfragment och sammanfogade profiler. Det är viktigt att förstå skillnaden mellan dessa villkor innan du fortsätter.
 
-Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de (baserat på sammanfogningspolicyn) för att skapa en enda profil för kunden. Det totala antalet profilfragment är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil består av flera fragment.
+Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med varumärket i flera kanaler har organisationen troligen flera profilfragment som är kopplade till den enskilda kunden i flera datauppsättningar.
+
+När profilfragment hämtas till Platform sammanfogas de (baserat på en sammanfogningspolicy) för att skapa en enda profil för den kunden. Det totala antalet profilfragment är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil består av flera fragment.
+
+Om du vill veta mer om profiler och deras roll i Experience Platform börjar du med att läsa [Kundprofilöversikt i realtid](../home.md).
+
+## Hur exempeljobbet utlöses
+
+När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Platform] lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+
+* För **arbetsflöden för strömmande data** görs en timkontroll för att avgöra om tröskelvärdet på 5 % ökning eller minskning har uppnåtts. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
+* Om tröskelvärdet på 5 % ökning eller minskning uppnås körs ett jobb för att uppdatera antalet för **batchimport** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+
+Profilantalet och profilerna efter namnutrymmesmått är också tillgängliga i [!UICONTROL Profiles]-avsnittet i användargränssnittet för Experience Platform. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] användargränssnittsguiden](../ui/user-guide.md).
 
 ## Visa senaste exempelstatus {#view-last-sample-status}
 
-Du kan utföra en GET-förfrågan till `/previewsamplestatus`-slutpunkten för att visa information om det senaste slutförda samplingsjobbet som kördes för din IMS-organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler eller det totala antalet profiler som din organisation har i Experience Platform. Profilantalet genereras efter sammanfogning av profilfragment till en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
+Du kan utföra en GET-förfrågan till `/previewsamplestatus`-slutpunkten för att visa information om det senaste slutförda samplingsjobbet som kördes för din IMS-organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler eller det totala antalet profiler som din organisation har i Experience Platform.
+
+Profilantalet genereras efter sammanfogning av profilfragment till en enda profil för varje enskild kund. När profilfragment sammanfogas returnerar de med andra ord antalet &quot;1&quot;-profiler eftersom de alla är relaterade till samma individ.
 
 Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Exempeljobbet uppdateras regelbundet när profildata importeras för att ge ett aktuellt totalt antal profiler inom plattformen.
 
@@ -62,7 +70,7 @@ curl -X GET \
 
 **Svar**
 
-Svaret innehåller information om det senaste exempeljobbet som kördes för IMS-organisationen.
+Svaret innehåller information om det senaste slutförda exempeljobbet som kördes för organisationen.
 
 >[!NOTE]
 >
@@ -105,7 +113,7 @@ Svaret innehåller information om det senaste exempeljobbet som kördes för IMS
 
 ## Visa profildistribution efter datauppsättning
 
-Om du vill visa profildistributionen efter datauppsättning kan du utföra en GET-begäran till `/previewsamplestatus/report/dataset`-slutpunkten.
+Om du vill visa profildistributionen per datauppsättning kan du utföra en GET-begäran till `/previewsamplestatus/report/dataset`-slutpunkten.
 
 **API-format**
 
@@ -137,7 +145,7 @@ Svaret innehåller en `data`-array som innehåller en lista med datauppsättning
 
 >[!NOTE]
 >
->Om det fanns flera rapporter för datumet returneras bara det senaste. Om det inte finns någon datauppsättningsrapport för det angivna datumet returneras HTTP-status 404 (Hittades inte).
+>Om det finns flera rapporter för datumet returneras bara den senaste rapporten. Om det inte finns någon datauppsättningsrapport för det angivna datumet returneras HTTP-status 404 (Hittades inte).
 
 ```json
 {
@@ -198,7 +206,9 @@ Svaret innehåller en `data`-array som innehåller en lista med datauppsättning
 
 ## Visa profildistribution efter namnområde
 
-Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet. Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Mer information finns i [översikten över identitetsnamnet](../../identity-service/namespaces.md).
+Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet.
+
+Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Börja med att läsa [översikten över identitetsnamnrymden](../../identity-service/namespaces.md) om du vill veta mer.
 
 >[!NOTE]
 >
@@ -291,6 +301,72 @@ Svaret innehåller en `data`-array, med enskilda objekt som innehåller informat
 | `code` | Namnutrymmets `code`. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av API:t [Adobe Experience Platform Identity Service](../../identity-service/api/list-namespaces.md) och kallas även [!UICONTROL Identity symbol] i användargränssnittet för Experience Platform. Mer information finns i [översikten över identitetsnamnet](../../identity-service/namespaces.md). |
 | `value` | Värdet `id` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med hjälp av [ID-tjänstens API](../../identity-service/api/list-namespaces.md). |
 
+## Generera överlappningsrapport för datauppsättning
+
+Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, till exempel att ställa in en TTL för vissa datauppsättningar.
+
+Du kan generera överlappningsrapporten för datauppsättningen genom att utföra en GET-begäran till `/previewsamplestatus/report/dataset/overlap`-slutpunkten.
+
+Stegvisa instruktioner om hur du genererar överlappningsrapporten för datauppsättningar med kommandoraden eller Postman-gränssnittet finns i [självstudiekursen om att generera överlappningsrapporten för datauppsättningar](../tutorials/dataset-overlap-report.md).
+
+**API-format**
+
+```http
+GET /previewsamplestatus/report/dataset/overlap
+GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
+```
+
+| Parameter | Beskrivning |
+|---|---|
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+
+**Begäran**
+
+Följande begäran använder parametern `date` för att returnera den senaste rapporten för det angivna datumet.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset/overlap?date=2021-12-29 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+```
+
+**Svar**
+
+En lyckad begäran returnerar HTTP-status 200 (OK) och datasetet överlappar rapporten.
+
+```json
+{
+    "data": {
+        "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
+        "5d92921872831c163452edc8,5eb2cdc6fa3f9a18a7592a98": 454412,
+        "5eeda0032af7bb19162172a7": 107
+    },
+    "reportTimestamp": "2021-12-29T19:55:31.147"
+}
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| `data` | Objektet `data` innehåller kommaavgränsade listor med datauppsättningar och deras respektive profilantal. |
+| `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran, returneras rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
+
+Resultatet av rapporten kan tolkas utifrån datauppsättningar och antal profiler i svaret. Titta på följande exempelrapportobjekt:`data`
+
+```json
+  "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
+  "5d92921872831c163452edc8,5eb2cdc6fa3f9a18a7592a98": 454412,
+  "5eeda0032af7bb19162172a7": 107
+```
+
+Den här rapporten innehåller följande information:
+* Det finns 123 profiler med data från följande datauppsättningar: `5d92921872831c163452edc8`, `5da7292579975918a851db57`, `5eb2cdc6fa3f9a18a7592a98`.
+* Det finns 454 412 profiler som består av data från dessa två datauppsättningar: `5d92921872831c163452edc8` och `5eb2cdc6fa3f9a18a7592a98`.
+* Det finns 107 profiler som endast består av data från datauppsättningen `5eeda0032af7bb19162172a7`.
+* Det finns totalt 454 642 profiler i organisationen.
+
 ## Nästa steg
 
-Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa information på sammanfattningsnivå om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
+Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör överlappningsrapporten för datauppsättningar kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
+
