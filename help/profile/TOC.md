@@ -3,11 +3,10 @@ audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiler
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 167407a8103acecb9846a6e0f8e38c66f3f3292d
 workflow-type: tm+mt
-source-wordcount: '123'
-ht-degree: 5%
+source-wordcount: '128'
+ht-degree: 6%
 
 ---
 
@@ -24,7 +23,7 @@ ht-degree: 5%
    * [Enheter ([!DNL Profile] åtkomst)](api/entities.md)
    * [Exportera jobb ([!DNL Profile] export)](api/export-jobs.md)
    * [Sammanfoga profiler](api/merge-policies.md)
-   * [Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning)](api/preview-sample-status.md)
+   * [Förhandsgranska exempelstatus ([!DNL Profile] preview)](api/preview-sample-status.md)
    * [[!DNL Profile] systemjobb (Delete-begäranden)](api/profile-system-jobs.md)
 * Användargränssnittsguider för profil {#ui}
    * [[!DNL Profile] Användargränssnittsguide](ui/user-guide.md)
@@ -41,7 +40,8 @@ ht-degree: 5%
    * [Exempeluttryck](computed-attributes/expressions.md)
 * Självstudiekurser {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
-   * [Konfigurera en datauppsättning  [!DNL Profile] & [!DNL Identity] för tjänsten](tutorials/dataset-configuration.md)
+   * [Konfigurera en datauppsättning för  [!DNL Profile] & [!DNL Identity] tjänst](tutorials/dataset-configuration.md)
+   * [Generera överlappningsrapport för datauppsättning](tutorials/dataset-overlap-report.md)
    * [Fler självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [Behandling av sekretessförfrågningar](privacy.md)
 * [[!DNL Profile] felsökningsguide](troubleshooting.md)
