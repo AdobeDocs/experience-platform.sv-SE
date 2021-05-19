@@ -5,19 +5,14 @@ title: Adobe Experience Platform - översikt
 topic-legacy: getting started
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5fae56fcfc395984d29c74e90cb56b3964d99767
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '437'
 ht-degree: 1%
 
 ---
 
 # Adobe Experience Platform - översikt
-
->[!NOTE]
->
->Adobe Experience Platform-dokumentationen har nyligen flyttats. Titta närmare på den nya navigeringen och uppdatera eventuella bokmärken.
 
 Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. [!DNL Experience Platform] gör det möjligt för organisationer att centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 
