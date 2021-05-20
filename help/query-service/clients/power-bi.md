@@ -5,10 +5,9 @@ title: Anslut Power BI till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 2109abd02b9c6c321c21a8fe3826509d22b1c2e2
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
@@ -19,7 +18,7 @@ Det här dokumentet beskriver hur du ansluter Power BI till Adobe Experience Pla
 
 >[!NOTE]
 >
-> Den här handboken förutsätter att du redan har tillgång till [!DNL Power BI] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Power BI] finns i [officiell [!DNL Power BI] dokumentation](https://docs.looker.com/).
+> Den här handboken förutsätter att du redan har tillgång till [!DNL Power BI] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Power BI] finns i [officiell [!DNL Power BI] dokumentation](https://docs.microsoft.com/en-us/power-bi/).
 >
 > Dessutom är Power BI **endast** tillgängligt på Windows-enheter.
 
