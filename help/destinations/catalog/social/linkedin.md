@@ -3,8 +3,7 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-translation-type: tm+mt
-source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
+source-git-commit: 8ec6f1eb38f4865daaa4fe4cd749a9014742dce6
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 1%
@@ -72,7 +71,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
 > Attributkälldata hashas inte automatiskt.
 > 
-> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-destinations.md#identity-mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
 > 
 > Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
