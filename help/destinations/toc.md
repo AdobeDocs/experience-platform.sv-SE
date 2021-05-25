@@ -4,10 +4,10 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
-source-git-commit: d62b2df54357449f35894f9c8ab45f87d97363d2
+source-git-commit: 47b3ef28281e3480e8b194486845f4fb4326b7d4
 workflow-type: tm+mt
-source-wordcount: '476'
-ht-degree: 0%
+source-wordcount: '477'
+ht-degree: 1%
 
 ---
 
@@ -16,7 +16,6 @@ ht-degree: 0%
 
 * [Översikt över mål](./home.md)
 * [Måltyper och -kategorier](./destination-types.md)
-* [Vanliga frågor om destinationer](./destinations-faq.md)
 * API-självstudiekurser {#api}
    * [Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Anslut till e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/email-marketing.md)
@@ -135,4 +134,5 @@ ht-degree: 0%
       * [Anropa taggtillägg](./catalog/voice/invoca.md)
       * [Medietillägg](./catalog/voice/medallia.md)
       * [Tillägg för URL-inkorg](./catalog/voice/talkurl.md)
+* [Frågor och svar](./destinations-faq.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
