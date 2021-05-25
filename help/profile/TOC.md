@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiler
-source-git-commit: 167407a8103acecb9846a6e0f8e38c66f3f3292d
+source-git-commit: 1c2e4cd2b4070f3844a9848b5574e9d5b1688926
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '135'
 ht-degree: 6%
 
 ---
@@ -15,29 +15,32 @@ ht-degree: 6%
 
 * [[!DNL Profile] översikt](home.md)
 * [Profilöversikt (video)](video/profile-overview.md)
-* [[!DNL Profile] skyddsräcken](guardrails.md)
+* [[!DNL Profile] och segmenteringsskydd](guardrails.md)
+* [[!DNL Profile] kontrollpanel](ui/profile-dashboard.md)
 * [!DNL Profile] API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Kantprojektioner](api/edge-projections.md)
    * [Enheter ([!DNL Profile] åtkomst)](api/entities.md)
    * [Exportera jobb ([!DNL Profile] export)](api/export-jobs.md)
-   * [Sammanfoga profiler](api/merge-policies.md)
    * [Förhandsgranska exempelstatus ([!DNL Profile] preview)](api/preview-sample-status.md)
    * [[!DNL Profile] systemjobb (Delete-begäranden)](api/profile-system-jobs.md)
-* Användargränssnittsguider för profil {#ui}
+* Profilgränssnitt {#ui}
    * [[!DNL Profile] Användargränssnittsguide](ui/user-guide.md)
-   * [[!DNL Profile] kontrollpanel](ui/profile-dashboard.md)
    * [[!DNL Profile] anpassning av detaljer](ui/profile-customization.md)
-   * [Användargränssnittshandbok för sammanslagningsprinciper](ui/merge-policies.md)
-   * [Skapa sammanfogningsprinciper (video)](video/create-merge-policies.md)
-   * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
-   * [Översikt över unionens schema (video)](video/union-schemas-overview.md)
 * (Alfa) Beräknade attribut {#computed-attributes}
    * [Översikt](computed-attributes/overview.md)
    * [API för beräknade attribut](computed-attributes/ca-api.md)
    * [Konfigurera ett beräknat attributfält](computed-attributes/configure-api.md)
    * [Exempeluttryck](computed-attributes/expressions.md)
+* Sammanfoga profiler {#merge-policies}
+   * [Översikt](merge-policies/overview.md)
+   * [API för sammanslagningsprinciper](api/merge-policies.md)
+   * [Användargränssnittshandbok för sammanslagningsprinciper](merge-policies/ui-guide.md)
+   * [Skapa sammanfogningsprinciper (video)](video/create-merge-policies.md)
+* Unionens scheman {#union-schemas}
+   * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
+   * [Översikt över unionens schema (video)](video/union-schemas-overview.md)
 * Självstudiekurser {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
    * [Konfigurera en datauppsättning för  [!DNL Profile] & [!DNL Identity] tjänst](tutorials/dataset-configuration.md)
