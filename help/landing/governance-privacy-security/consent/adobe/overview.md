@@ -5,8 +5,7 @@ title: Samtyckesbearbetning i Adobe Experience Platform
 topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
 workflow-type: tm+mt
 source-wordcount: '1565'
 ht-degree: 0%
@@ -77,7 +76,7 @@ När du har skapat en [!DNL Profile]-aktiverad datauppsättning för bearbetning
 >
 >Om du inte har några datauppsättningar som är i konflikt bör du ange tidsstämpelprioritet för din sammanfogningsprincip i stället. Detta bidrar till att säkerställa att det senaste samtycke som anges av en kund är den inställning för samtycke som används.
 
-Mer information om hur du arbetar med sammanfogningsprinciper finns i [användarhandboken för sammanfogningsprinciper](../../../../profile/ui/merge-policies.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina profiler innehåller alla obligatoriska medgivandeattribut som finns i schemafältgruppen för innehåll och inställningar, enligt anvisningarna i guiden för [datamängdsförberedelse](./dataset.md).
+Mer information om hur du arbetar med sammanfogningsprinciper finns i [översikten över sammanfogningsprinciper](../../../../profile/merge-policies/overview.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina profiler innehåller alla obligatoriska medgivandeattribut som finns i schemafältgruppen för innehåll och inställningar, enligt anvisningarna i guiden för [datamängdsförberedelse](./dataset.md).
 
 ## Använd data om samtycke i plattformen
 
