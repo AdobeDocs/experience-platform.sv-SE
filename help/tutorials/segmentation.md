@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån kundprofildata i realtid. Dessa segment är centralt konfigurerade och underhållna på Platform och är tillgängliga för alla Adobe-lösningar.
 exl-id: e45de6b5-ff71-4908-ad79-898084763704
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 36f64b3a1e75c9badaee29e28408504eabac64fe
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -32,7 +31,7 @@ För att kunna exportera segment som innehåller [!DNL Profile]-data måste du f
 
 ## Konfigurera sammanslagningsprinciper
 
-Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Om du vill arbeta med sammanfogningsprinciper i användargränssnittet för [!DNL Platform] går du till [användarhandboken för sammanfogningsprinciper](../profile/ui/merge-policies.md). Mer information om hur du arbetar med sammanfogningsprinciper med hjälp av API:t [!DNL Real-time Customer Profile] finns i [utvecklarhandboken för sammanfogningsprinciper](../profile/api/merge-policies.md).
+Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Om du vill veta mer om sammanfogningsprinciper och vilken roll de spelar i Experience Platform börjar du med att läsa översikten [för sammanfogningsprinciper](../profile/merge-policies/overview.md).
 
 ## Stärk regelefterlevnaden för datasegment
 
