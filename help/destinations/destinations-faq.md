@@ -1,18 +1,22 @@
 ---
 keywords: Destinationer. frågor, Frågor och svar. faq, mål faq
-title: Vanliga frågor om destinationer
-seo-title: Vanliga frågor om destinationer
+title: Frågor och svar
+seo-title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 seo-description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
-source-git-commit: 61678c5a62980cdb81714420016b7c4b2093f5c6
+source-git-commit: 47b3ef28281e3480e8b194486845f4fb4326b7d4
 workflow-type: tm+mt
-source-wordcount: '594'
-ht-degree: 5%
+source-wordcount: '633'
+ht-degree: 6%
 
 ---
 
 
-# Vanliga frågor om destinationer {#faq}
+# Frågor och svar {#faq}
+
+## Översikt {#overview}
+
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform destinationer. För frågor och felsökning som rör andra [!DNL Platform]-tjänster, inklusive de som har påträffats i alla [!DNL Platform] API:er, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
 
 ## [!DNL Facebook Custom Audiences] {#facebook-faq}
 
