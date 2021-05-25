@@ -5,9 +5,9 @@ title: Stöd för IAB TCF 2.0 i Experience Platform
 topic-legacy: privacy events
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
+source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
 workflow-type: tm+mt
-source-wordcount: '2466'
+source-wordcount: '2465'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Data om kundsamtycke måste skickas till datauppsättningar vars scheman innehå
 
 När du har skapat en [!DNL Profile]-aktiverad datauppsättning för insamling av medgivandedata måste du se till att dina sammanfogningsprinciper har konfigurerats så att de alltid inkluderar TCF-medgivandefält i kundprofilerna. Detta innebär att ange datauppsättningens prioritet så att din sambandsuppsättning prioriteras framför andra datauppsättningar som kan vara i konflikt.
 
-Mer information om hur du arbetar med sammanfogningsprinciper finns i [användarhandboken för sammanfogningsprinciper](../../../../profile/ui/merge-policies.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina segment innehåller alla nödvändiga medgivandeattribut som finns i [XDM sekretesschemafältgruppen](./dataset.md#privacy-field-group), enligt riktlinjerna för datauppsättningsförberedelse.
+Mer information om hur du arbetar med sammanfogningsprinciper finns i [översikten över sammanfogningsprinciper](../../../../profile/merge-policies/overview.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina segment innehåller alla nödvändiga medgivandeattribut som finns i [XDM sekretesschemafältgruppen](./dataset.md#privacy-field-group), enligt riktlinjerna för datauppsättningsförberedelse.
 
 ## Integrera Experience Platform Web SDK för att samla in data om kundernas samtycke {#sdk}
 
