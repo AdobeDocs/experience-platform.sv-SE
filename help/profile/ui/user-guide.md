@@ -4,10 +4,9 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 2696dab922d9c1992b61ffefe50a4e3155793282
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1290'
 ht-degree: 0%
 
 ---
@@ -50,7 +49,7 @@ Välj fliken **[!UICONTROL Browse]** om du vill bläddra bland profiler efter id
 
 Till höger på fliken **[!UICONTROL Browse]** finns flera viktiga mätvärden som relaterar till dina profildata, inklusive det totala [profilantalet](#profile-count) och en lista över [profiler efter namnområde](#profiles-by-namespace).
 
-Dessa profilvärden utvärderas med organisationens standardpolicy för sammanfogning. Mer information om hur du arbetar med sammanfogningsprinciper, inklusive hur du definierar en standardsammanfogningsprincip, finns i [användarhandboken för sammanfogningsprinciper](merge-policies.md).
+Dessa profilvärden utvärderas med organisationens standardpolicy för sammanfogning. Mer information om hur du arbetar med sammanfogningsprinciper, inklusive hur du definierar en standardsammanfogningsprincip, finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
 Förutom dessa mått innehåller profilmätningsavsnittet även ett senast uppdaterat datum och en uppdaterad tid, som visar när mätvärdena senast utvärderades.
 
@@ -74,7 +73,7 @@ Ungefär som [profilantalet](#profile-count), när inmatningen av poster i [!DNL
 
 Väljaren **[!UICONTROL Merge policy]** väljer automatiskt standardprincip för sammanslagning för din organisation. Om du inte vill använda den sammanfogningsprincipen kan du välja `X` bredvid standardsammanfogningsprincipen för att öppna dialogrutan **[!UICONTROL Select merge policy]** där du kan välja en annan sammanfogningsprincip.
 
-Mer information om kopplingsprofiler och deras roll inom plattformen finns i [användargränssnittshandboken för kopplingsprofiler](merge-policies.md).
+Mer information om sammanfogningsprinciper och deras roll inom plattformen finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
 ![](../images/user-guide/profiles-search-merge-policy.png)
 
@@ -112,9 +111,7 @@ Du kan visa ytterligare information om den enskilda profilen genom att välja en
 
 På huvudmenyn **[!UICONTROL Profiles]** väljer du fliken **[!UICONTROL Merge Policies]** för att visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och schemaklassen som den gäller för.
 
-Mer information om sammanfogningsprinciper finns i [användargränssnittshandboken för sammanfogningsprinciper](merge-policies.md).
-
-Mer information om hur du arbetar med sammanfogningspolicyer med API:t för kundprofil i realtid finns i [slutpunktshandboken för sammanfogningspolicyer](../api/merge-policies.md).
+Mer information om sammanfogningsprinciper finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
 ![](../images/user-guide/profiles-merge-policies.png)
 
