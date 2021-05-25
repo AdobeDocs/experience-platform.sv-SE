@@ -3,10 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-translation-type: tm+mt
-source-git-commit: 1e9e5831b19738285affeb0337985c7cb0d45ebf
+source-git-commit: d82eb1a839518dbd9831808485d9d5029e3dcaf5
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1147'
 ht-degree: 2%
 
 ---
@@ -132,3 +131,15 @@ För [!DNL Facebook] innebär en lyckad aktivering att en [!DNL Facebook] anpass
 >[!TIP]
 >
 >Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
+
+## Felsökning {#troubleshooting}
+
+### 400 Felmeddelande för felaktig begäran {#bad-request}
+
+När du aktiverar segment till [!DNL Facebook] kan du få följande fel:
+
+`{"message":"Facebook Error: Permission error","code":"400 BAD_REQUEST"}`
+
+Det här felet inträffar när kunder använder nyligen skapade konton och [!DNL Facebook]-behörigheterna inte är aktiva ännu.
+
+Om du får felmeddelandet `400 Bad Request` efter att du har följt stegen i [Facebook-kontoförutsättningarna](#facebook-account-prerequisites), tillåt några dagar innan behörigheterna [!DNL Facebook] börjar gälla.
