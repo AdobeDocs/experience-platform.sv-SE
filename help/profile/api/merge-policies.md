@@ -5,10 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 6864e4518b17dc843b3e74c0f9b03ab756d9c581
 workflow-type: tm+mt
-source-wordcount: '2569'
+source-wordcount: '2590'
 ht-degree: 0%
 
 ---
@@ -21,7 +20,7 @@ Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer or
 
 Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Den här handboken innehåller steg för hur du arbetar med sammanfogningsprinciper med API:t.
 
-Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användargränssnittshandboken för sammanfogningsprinciper](../ui/merge-policies.md).
+Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användargränssnittshandboken för sammanfogningsprinciper](../merge-policies/ui-guide.md). Om du vill veta mer om sammanfogningsprinciper i allmänhet och deras roll i Experience Platform kan du börja med att läsa översikten [för sammanfogningspolicyer](../merge-policies/overview.md).
 
 ## Komma igång
 
@@ -760,7 +759,7 @@ Om du vill använda en anpassad tidsstämpel måste schemafältgruppen [[!DNL Ex
 
 Stegvisa anvisningar om hur du arbetar med scheman med API:t för schemaregister, inklusive hur du lägger till fältgrupper i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
 
-Om du vill arbeta med egna tidsstämplar med hjälp av användargränssnittet läser du avsnittet [Använda egna tidsstämplar](../ui/merge-policies.md#custom-timestamps) i [användarhandboken för sammanfogningsprinciper](../ui/merge-policies.md).
+Om du vill arbeta med egna tidsstämplar med hjälp av användargränssnittet läser du avsnittet [använda egna tidsstämplar](../merge-policies/overview.md#custom-timestamps) i översikten [sammanfogningsprinciper](../merge-policies/overview.md).
 
 #### [!DNL External Source System Audit Details] fältgruppsinformation  {#field-group-details}
 
