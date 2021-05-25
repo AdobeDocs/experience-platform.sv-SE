@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: API-guide för kundprofil i realtid
 description: Med kundprofils-API:t i realtid kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 77bf6f4634987900bea1280290e8049120bb8856
+source-git-commit: 1c2e4cd2b4070f3844a9848b5574e9d5b1688926
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '891'
 ht-degree: 0%
 
 ---
@@ -46,9 +46,9 @@ Via Adobe Experience Platform kan du komma åt [!DNL Real-time Customer Profile]
 
 ## Sammanfoga profiler {#merge-policies}
 
-När data från flera källor samlas i [!DNL Experience Platform] är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Med API:t [!DNL Real-time Customer Profile] kan du skapa nya sammanfogningsprinciper, hantera befintliga profiler och ange en standardsammanfogningsprincip för organisationen. Mer information om hur du arbetar med sammanfogningsprinciper med API:t finns i [slutpunktshandboken för sammanfogningsprinciper](merge-policies.md).
+När data från flera källor samlas i [!DNL Experience Platform] är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Med API:t [!DNL Real-time Customer Profile] kan du skapa nya sammanfogningsprinciper, hantera befintliga profiler och ange en standardsammanfogningsprincip för organisationen. Om du vill arbeta med sammanfogningsprinciper med API:t går du till [slutpunktshandboken för sammanfogningsprinciper](merge-policies.md).
 
-En guide till hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet i [!DNL Platform] finns i [användarhandboken för sammanfogningsprinciper](../ui/merge-policies.md).
+Om du vill veta mer om sammanfogningsprinciper och deras roll inom plattformen kan du börja med att läsa översikten [för sammanfogningsprinciper](../merge-policies/overview.md).
 
 ## Förhandsgranska exempelstatus ([!DNL Profile] preview) {#profile-preview}
 
