@@ -5,10 +5,9 @@ title: Användargränssnittshandbok för Segment Builder
 topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-translation-type: tm+mt
-source-git-commit: 875d3838e16a3b79fa9ab3ec61e4ffb15ea1cf20
+source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1936'
 ht-degree: 0%
 
 ---
@@ -53,7 +52,7 @@ Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluder
 
 ![](../images/ui/segment-builder/show-populated.png)
 
-### Publiker
+### Målgrupper
 
 På fliken **[!UICONTROL Audiences]** visas alla målgrupper som importerats från externa källor, till exempel Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
 
@@ -159,7 +158,7 @@ När du har valt **[!UICONTROL Unwrap container]** tas den underordnade behålla
 
 [!DNL Experience Platform] gör att ni kan samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en profil.
 
-Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte för den här målgruppen eller använda den standardsammanfogningsprincip som finns i [!DNL Platform]. Du kan skapa flera sammanfogningsprinciper som är unika för din organisation, inklusive skapa en egen standardsammanfogningsprincip. Stegvisa instruktioner om hur du skapar sammanfogningsprinciper för din organisation finns i självstudiekursen [Arbeta med sammanfogningsprinciper med användargränssnittet](../../profile/ui/merge-policies.md).
+Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte för den här målgruppen eller använda den standardsammanfogningsprincip som finns i [!DNL Platform]. Du kan skapa flera sammanfogningsprinciper som är unika för din organisation, inklusive skapa en egen standardsammanfogningsprincip. Stegvisa instruktioner om hur du skapar sammanfogningsprinciper för din organisation finns i [översikten över sammanfogningsprinciper](../../profile/merge-policies/overview.md).
 
 Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du kugghjulsikonen på fliken **[!UICONTROL Fields]** och använder sedan listrutan **[!UICONTROL Merge Policy]** för att välja den sammanfogningsprincip som du vill använda.
 
