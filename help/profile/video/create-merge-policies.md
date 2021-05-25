@@ -9,23 +9,20 @@ audience: all
 doc-type: video
 activity: understand
 thumbnail: null
-translation-type: tm+mt
-source-git-commit: cab7ba65cc62d8cab402bc23ea38c17d77841363
+exl-id: 4bb804f5-1ad7-47b0-bc38-ba22877490d4
+source-git-commit: 7283fcb2edde4598b1ef8e0ee1f1b002434ba492
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '111'
 ht-degree: 0%
 
 ---
 
-
 # Skapa en kopplingsprofil i användargränssnittet för Experience Platform
 
-I den här videon får du en grundläggande förståelse för sammanfogningsprinciper i Adobe Experience Platform och en översikt över hur du definierar sammanfogningsprinciper med hjälp av användargränssnittet för plattformen. Mer information om kopplingsprofiler och hur du skapar dem med hjälp av användargränssnittet för plattformen finns i användargränssnittshandboken [för kopplingsprofiler](../ui/merge-policies.md).
-
-Om du är intresserad av att arbeta med sammanslagningsprinciper med hjälp av kundprofils-API:t i realtid, gå till [slutpunktshandboken för sammanslagningsprinciper](../api/merge-policies.md).
+I den här videon får du en grundläggande förståelse för sammanfogningsprinciper i Adobe Experience Platform och en översikt över hur du definierar sammanfogningsprinciper med hjälp av användargränssnittet för plattformen. Om du vill veta mer om kopplingsprofiler börjar du med att läsa översikten [för kopplingsprofiler](../merge-policies/overview.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [användargränssnittshandboken för sammanslagningsprinciper](../ui/merge-policies.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [användargränssnittshandboken för sammanslagningsprinciper](../merge-policies/ui-guide.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/330433?quality=12&learn=on&captions=eng)
