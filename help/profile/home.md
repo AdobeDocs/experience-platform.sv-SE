@@ -4,10 +4,9 @@ title: Kundprofilöversikt i realtid
 topic-legacy: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 598f86188bcd9bde22333ccafb85f3f566aaae44
 workflow-type: tm+mt
-source-wordcount: '1826'
+source-wordcount: '1813'
 ht-degree: 0%
 
 ---
@@ -64,9 +63,11 @@ Alla företag vill kommunicera med sina kunder på ett sätt som känns personli
 
 ### Sammanfoga profiler
 
-När du sammanför datafragment från flera olika källor och kombinerar dem för att få en fullständig bild av varje enskild kund, är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska användas för att skapa kundprofilen. När det finns data som är i konflikt med varandra från flera datauppsättningar avgör kopplingsregeln hur dessa data ska behandlas och vilket värde som ska användas. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen.
+När du sammanför datafragment från flera olika källor och kombinerar dem för att få en fullständig bild av varje enskild kund, är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska användas för att skapa kundprofilen.
 
-Mer information om hur du arbetar med sammanfogningsprinciper med API:t [!DNL Real-time Customer Profile] finns i [slutpunktshandboken för sammanfogningsprinciper](api/merge-policies.md). Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet för [!DNL Experience Platform] läser du i användargränssnittshandboken för [sammanfogningsprinciper](ui/merge-policies.md).
+När det finns data som är i konflikt med varandra från flera datauppsättningar avgör kopplingsregeln hur data ska behandlas och vilket värde som ska användas. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen.
+
+Om du vill veta mer om kopplingsprofiler och deras roll i Experience Platform börjar du med att läsa översikten [över kopplingsprofiler](merge-policies/overview.md).
 
 ### Unionens scheman {#profile-fragments-and-union-schemas}
 
