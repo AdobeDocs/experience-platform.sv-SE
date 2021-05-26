@@ -2,22 +2,16 @@
 keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassning;kontrollpanel för licensanvändning;kontrollpanel;licensanvändning;berättigande;förbrukning
 title: Kontrollpanel för licensanvändning
 description: 'Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning. '
-topic-legacy: guide
 type: Documentation
 exl-id: 8cf34653-acf6-4af3-af7b-6c07e68bbc03
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5b5acd22f2dbdeef704b3e790ca603901ebc882a
 workflow-type: tm+mt
-source-wordcount: '146'
+source-wordcount: '123'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!UICONTROL License usage] instrumentpanel {#license-usage-dashboard}
-
->[!IMPORTANT]
->
->Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# [!UICONTROL License usage] kontrollpanel  {#license-usage-dashboard}
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den fångats in under en daglig ögonblicksbild.
 
@@ -25,4 +19,4 @@ Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontr
 
 Om du vill ha en översikt över alla instrumentpanelsfunktioner i Experience Platform börjar du med att läsa översikten [dashboards](../dashboards/home.md).
 
-![](images/license-usage-dashboard/dashboard-overview.png)
+![](../dashboards/images/license-usage/dashboard-overview.png)
