@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Utforska och bearbeta rådatauppsättningar på Experience Platform-paneler
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som används på kontrollpaneler för profiler, segment och mål i Experience Platform.
-source-git-commit: 743367431144e9714a967b0340c755bf2120559c
+source-git-commit: 1facf7079213918c2ef966b704319827eaa4a53d
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
@@ -29,27 +29,27 @@ Du kan använda frågetjänsten för att fråga efter rådatauppsättningar för
 
 För varje aktiv sammanfogningsprincip i kundprofilen i realtid finns det en profilattributsdatauppsättning tillgänglig i datasjön.
 
-Namnkonventionen för den här datauppsättningen är **Profilattribut** följt av ett alfanumeriskt värde. Exempel: `Profile Attribute 14adf268-2a20-4dee-bee6-a6b0e34616a9`
+Namnkonventionen för dessa datauppsättningar är **Profilattribut** följt av ett alfanumeriskt värde. Exempel: `Profile Attribute 14adf268-2a20-4dee-bee6-a6b0e34616a9`
 
-Om du vill förstå datasetens fullständiga schema kan du förhandsgranska och utforska schemat med hjälp av datamängdsvisningsprogrammet i användargränssnittet i Experience Platform.
+Om du vill förstå det fullständiga schemat för varje datauppsättning kan du förhandsgranska och utforska datauppsättningarna med hjälp av datamängdsvisningsprogrammet i användargränssnittet i Experience Platform.
 
 ### Datamängd för segmentmetadata
 
-Det finns en datauppsättning för segmentmetadata tillgänglig i datasjön för varje segment i din organisation.
+Data för segmentmetadata finns tillgängliga i datasjön med metadata för varje segment i organisationen.
 
 Namnkonventionen för den här datauppsättningen är **Profilsegmentsdefinition** följt av ett alfanumeriskt värde. Exempel: `Profile Segment Definition 6591ba8f-1422-499d-822a-543b2f7613a3`
 
-Följande bild visar schemat för segmentets metadatatauppsättning.
+Om du vill förstå datasetens fullständiga schema kan du förhandsgranska och utforska schemat med hjälp av datamängdsvisningsprogrammet i användargränssnittet i Experience Platform.
 
 ![](images/query/segment-metadata.png)
 
 ### Metadatadatamängd för mål
 
-Metadata för dina aktiverade destinationer är tillgängliga som en Raw-datauppsättning i datarjön.
+Metadata för alla era aktiverade destinationer är tillgängliga som en rådatamängd i datasjön.
 
 Namnkonventionen för den här datauppsättningen är **DIM_Destination**.
 
-Följande bild visar schemat för målmetadatadatauppsättningen.
+Om du vill förstå datasetens fullständiga schema kan du förhandsgranska och utforska schemat med hjälp av datamängdsvisningsprogrammet i användargränssnittet i Experience Platform.
 
 ![](images/query/destinations-metadata.png)
 
@@ -102,8 +102,6 @@ Select
       group by
       segment_id
 ```
-
-### Antal aktiverade segment per mål för alla mål
 
 ## Nästa steg
 
