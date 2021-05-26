@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 2696dab922d9c1992b61ffefe50a4e3155793282
+source-git-commit: db094aac82b1d0a6671c213f3e98824f828771ab
 workflow-type: tm+mt
-source-wordcount: '1290'
+source-wordcount: '1266'
 ht-degree: 0%
 
 ---
@@ -29,11 +29,7 @@ I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profi
 
 ![](../images/user-guide/profiles-overview.png)
 
-### (Alfa) Kontrollpanel för profil
-
->[!IMPORTANT]
->
->Instrumentpanelsfunktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+### Kontrollpanel för profil
 
 För vissa användare kan du välja **[!UICONTROL Profiles]** i den vänstra navigeringen och öppna fliken **[!UICONTROL Overview]** och visa en instrumentpanel med nyckelvärden relaterade till dina profildata.
 
