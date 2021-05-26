@@ -5,10 +5,9 @@ title: Översikt över namnområde för identitet
 topic-legacy: overview
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-translation-type: tm+mt
-source-git-commit: ca092af61ac26fcfb6839b7ba0887178c899f89f
+source-git-commit: c2db929a96883607ea99f08bffc92a5a9bafd01a
 workflow-type: tm+mt
-source-wordcount: '1526'
+source-wordcount: '1606'
 ht-degree: 0%
 
 ---
@@ -74,15 +73,21 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 | TNTID | Ett namnutrymme som representerar Adobe Target. Mer information finns i följande dokument på [Mål](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en). |
 | Windows AID | Ett namnutrymme som representerar ett Windows Advertising ID. Mer information finns i följande dokument om [Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041). |
 
-Om du vill visa standardnamnutrymmen i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och väljer sedan fliken **[!UICONTROL Browse]** för att visa en lista med standardnamnutrymmen för identiteter som är tillgängliga för din organisation. Du kan sortera namnutrymmena i bokstavsordning efter deras **[!UICONTROL Display name]**, **[!UICONTROL Identity symbol]** eller **[!UICONTROL Owner]**. Du kan också sortera namnutrymmen kronologiskt efter deras senaste uppdateringsdatum.
+Om du vill visa identitetsnamnutrymmen i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Browse]**.
 
-Välj ett namnutrymme om du vill visa mer specifik information på den högra listen.
+![bläddra](./images/browse.png)
 
->[!NOTE]
->
->Plattformen har även namnutrymmen för integration. Dessa namnutrymmen döljs som standard eftersom de används för att ansluta till andra system och inte för att fästa identiteter. Om du vill visa integreringsnamnutrymmen väljer du **[!UICONTROL View integration identities]**.
+En lista med identitetsnamnutrymmen visas i sidans huvudgränssnitt med information om namn, identitetssymboler, senaste uppdateringsdatum och om de är en standard eller ett anpassat namnutrymme. Den högra listen innehåller information om [!UICONTROL Unique identities] och [!UICONTROL Identity graph strength]. [!UICONTROL Unique identities] refererar till antalet identiteter som finns i den specifika sandlåda som du använder, medan  [!UICONTROL Identity graph strength] styrkan visar information om antalet cookie-ID och icke-cookie-ID:n i din sandlåda.
 
-![](./images/browse-namespaces.png)
+![identiteter](./images/identities.png)
+
+Plattformen har även namnutrymmen för integration. Dessa namnutrymmen döljs som standard eftersom de används för att ansluta till andra system och inte för att fästa identiteter. Om du vill visa integreringsnamnutrymmen väljer du **[!UICONTROL View integration identities]**.
+
+![view-integration-identities](./images/view-integration-identities.png)
+
+Välj ett identitetsnamnutrymme i listan om du vill visa information om ett specifikt namnutrymme. Om du väljer ett identitetsnamnutrymme uppdateras visningen till höger så att metadata om det identitetsnamnutrymme som du har valt visas, inklusive antalet identiteter som har importerats och antalet poster som har misslyckats och hoppats över.
+
+![select-namespace](./images/select-namespace.png)
 
 ## Hantera anpassade namnutrymmen {#manage-namespaces}
 
@@ -90,9 +95,9 @@ Beroende på dina organisationsdata och användningsfall kan du behöva anpassad
 
 Om du vill skapa ett anpassat namnutrymme med hjälp av användargränssnittet går du till arbetsytan **[!UICONTROL Identities]**, väljer **[!UICONTROL Browse]** och väljer sedan **[!UICONTROL Create identity namespace]**.
 
-![](./images/create.png)
+![select-create](./images/select-create.png)
 
-Dialogrutan **[!UICONTROL Create identity namespace]** visas. Ange en unik **[!UICONTROL Display name]** och **[!UICONTROL Identity symbol]** och välj sedan den identitetstyp som du vill skapa. Du kan också lägga till en valfri beskrivning för mer information om namnutrymmet. Alla identitetstyper utom **Identifierare för icke-personer** följer samma beteende som när de sammanfogas. Om du väljer **Identifierare för icke-personer** som identitetstyp när du skapar ett namnutrymme görs ingen sammanfogning. Mer information om respektive identitetstyp finns i tabellen [identitetstyper](#identity-types).
+Dialogrutan **[!UICONTROL Create identity namespace]** visas. Ange en unik **[!UICONTROL Display name]** och **[!UICONTROL Identity symbol]** och välj sedan den identitetstyp som du vill skapa. Du kan också lägga till en valfri beskrivning för att lägga till ytterligare information om namnutrymmet. Alla identitetstyper utom **Identifierare för icke-personer** följer samma beteende som när de sammanfogas. Om du väljer **Identifierare för icke-personer** som identitetstyp när du skapar ett namnutrymme görs ingen sammanfogning. Mer information om respektive identitetstyp finns i tabellen [identitetstyper](#identity-types).
 
 När du är klar väljer du **[!UICONTROL Create]**.
 
@@ -100,7 +105,7 @@ När du är klar väljer du **[!UICONTROL Create]**.
 >
 >Namnutrymmen som du definierar är privata för din organisation och kräver en unik identitetssymbol för att de ska kunna skapas.
 
-![](./images/create-namespace.png)
+![create-identity-namespace](./images/create-identity-namespace.png)
 
 På samma sätt som vanliga namnutrymmen kan du välja ett anpassat namnutrymme på fliken **[!UICONTROL Browse]** för att visa information om det. Men med ett anpassat namnutrymme kan du även redigera dess visningsnamn och beskrivning från informationsfältet.
 
