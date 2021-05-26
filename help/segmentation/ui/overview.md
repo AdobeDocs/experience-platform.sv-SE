@@ -5,10 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-translation-type: tm+mt
-source-git-commit: fa2f4e046c6210137aa3e98d9f18010c1058275a
+source-git-commit: 998332007465c1f8457b5d8cf0e153d513505d39
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1512'
 ht-degree: 0%
 
 ---
@@ -35,6 +34,12 @@ Det är också viktigt att känna till två nyckeltermer som används i det här
 I [[!DNL Experience Platform] användargränssnittet](https://platform.adobe.com/) väljer du **[!UICONTROL Segments]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]**. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med segment.
 
 ![](../images/ui/overview/segment-overview.png)
+
+### Kontrollpanel för segment
+
+För vissa användare kan du välja **[!UICONTROL Segments]** i den vänstra navigeringen och öppna fliken **[!UICONTROL Overview]** och visa en instrumentpanel med nyckelvärden som relaterar till dina segmentdata.
+
+Mer information finns i [segmentkontrollpanelguiden](segment-dashboard.md).
 
 ## Bläddra
 
