@@ -2,22 +2,16 @@
 keywords: Experience Platform;profil;segment;segment;segmentering;användargränssnitt;gränssnitt;anpassning;segmentpanel;instrumentpanel
 title: Kontrollpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
-topic-legacy: guide
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 36aaccddeb207e22a22d5124ec8592ac8dddf8bc
 workflow-type: tm+mt
-source-wordcount: '727'
+source-wordcount: '862'
 ht-degree: 0%
 
 ---
 
-# (Beta) Kontrollpanel för segment {#segment-dashboard}
-
->[!IMPORTANT]
->
->Instrumentpanelsfunktionerna som beskrivs i det här dokumentet är för närvarande i betaversion och är inte tillgängliga för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Kontrollpanel för segment {#segment-dashboard}
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina segment, som de tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med segmentkontrollpanelen i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
@@ -39,19 +33,27 @@ Om du vill navigera till segmentkontrollpanelen i plattformsgränssnittet välje
 
 ![](../images/segments/dashboard-overview.png)
 
-### Markera ett segment
+### Ändra kontrollpanelen [!UICONTROL Segments]
 
-Kontrollpanelen väljer automatiskt ett segment som ska visas, men du kan ändra segmentet som visas med den nedrullningsbara menyn. Om du vill välja ett annat segment markerar du listrutan bredvid segmentnamnet och markerar sedan det segment som du vill visa.
+Du kan ändra utseendet på kontrollpanelen [!UICONTROL Segments] genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt komma åt [!UICONTROL Widget library] för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
->[!NOTE]
->
->I listrutan visas alla segment som din organisation har skapat hittills. Det kan innebära att du måste rulla för att kunna se hela listan med tillgängliga segment.
+Mer information finns i [dokumentationen för att ändra kontrollpanelerna](../modify.md) och [widgetbiblioteket](../widget-library.md).
+
+## Markera ett segment
+
+Kontrollpanelen markerar automatiskt ett segment som ska visas, men du kan ändra segmentet med hjälp av den nedrullningsbara menyn eller segmentväljaren.
+
+Om du vill välja ett annat segment markerar du listrutan bredvid segmentnamnet eller använder segmentväljaren för att öppna segmentmarkeringsdialogrutan.
 
 ![](../images/segments/change-segment.png)
 
-### Widgetar och mätvärden
+![](../images/segments/select-segment-dialog.png)
 
-Kontrollpanelen för segment består av widgetar, som är skrivskyddade mått som ger viktig information om det valda segmentet. Datum och tid för den senaste uppdateringen av widgeten visas när den senaste ögonblicksbilden av data togs.
+## Widgetar och mätvärden
+
+Kontrollpanelen för segment består av widgetar, som är skrivskyddade mått som ger viktig information om det valda segmentet.
+
+Datum och tid för den senaste uppdateringen av en widget visar när den senaste ögonblicksbilden av data togs. Datum och tid för ögonblicksbilden anges i UTC. den inte finns i den enskilda användarens eller IMS-organisationens tidszon.
 
 ![](../images/segments/widget-timestamp.png)
 
@@ -59,33 +61,46 @@ Kontrollpanelen för segment består av widgetar, som är skrivskyddade mått so
 
 Experience Platform tillhandahåller flera widgetar som du kan använda för att visualisera olika mätvärden för ditt segment. Välj namnet på en widget nedan om du vill veta mer:
 
-* [[!UICONTROL Segment size]](#segment-size)
-* [[!UICONTROL Profiles added over time]](#profiles-added-over-time)
-* [[!UICONTROL Profiles by namespace]](#profiles-by-namespace)
+* [[!UICONTROL Audience size]](#audience-size)
+* [[!UICONTROL Audience size trend]](#audience-size-trend)
+* [[!UICONTROL Identity overlap]](#identity-overlap)
+* [[!UICONTROL Profiles by identity]](#profiles-by-identity)
 
-### [!UICONTROL Segment size] {#segment-size}
+### [!UICONTROL Audience size] {#audience-size}
 
-Widgeten **[!UICONTROL Segment size]** visar det totala antalet sammanslagna profiler i det valda segmentet när ögonblicksbilden togs. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
+Widgeten **[!UICONTROL Audience size]** visar det totala antalet sammanslagna profiler i det valda segmentet när ögonblicksbilden togs. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
 
 Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Kundprofilöversikt i realtid](../../profile/home.md).
 
-![](../images/segments/segment-size.png)
+![](../images/segments/audience-size.png)
 
-### [!UICONTROL Profiles added over time] {#profiles-added-over-time}
+### [!UICONTROL Audience size trend] {#audience-size-trend}
 
-Widgeten **[!UICONTROL Profiles added over time]** ger information om det totala antalet profiler i segmentet som tagits under den dagliga ögonblicksbilden under de senaste 30 dagarna. Den här widgeten visar hur segmentstorleken kan ha ändrats under en 30-dagarsperiod när nya profiler kvalificerar sig för eller avslutar segmentet.
+Widgeten **[!UICONTROL Audience size trend]** ger information om det totala antalet profiler i segmentet som tagits under den dagliga ögonblicksbilden under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Den här widgeten visar hur segmentstorleken kan ha ändrats över tiden när nya profiler kvalificerar sig för eller avslutar segmentet.
 
 Mer information om segmentutvärdering och hur profiler kvalificerar sig och avslutar segment finns i [dokumentationen för segmenteringstjänsten](../../segmentation/home.md).
 
-![](../images/segments/profiles-added-over-time.png)
+![](../images/segments/audience-size-trend.png)
 
-### [!UICONTROL Profiles by namespace] {#profiles-by-namespace}
+### [!UICONTROL Identity overlap] {#identity-overlap}
 
-Widgeten **[!UICONTROL Profiles by namespace]** visar uppdelningen av namnutrymmen i alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler per ID-namnområde ([!UICONTROL ID namespace] i widgeten) kan vara högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera namnutrymmen kopplade till sig. Med andra ord kan de värden som visas för varje namnutrymme tillsammans vara större än de totala profilerna i segmentet, eftersom om en kund interagerar med varumärket i mer än en kanal kan flera namnutrymmen kopplas till den enskilda kunden.
+Widgeten **[!UICONTROL Identity overlap]** visar ett Venndiagram, eller ett uppsättningsdiagram, som visar överlappningen av profiler i segmentet som innehåller flera identiteter.
 
-Mer information om identitetsnamnutrymmen finns i [dokumentationen för Adobe Experience Platform Identity Service](../../identity-service/home.md).
+När du har använt listrutemenyerna i widgeten för att markera de identiteter som du vill jämföra, visas cirklar med den relativa storleken för varje identitet. Antalet profiler som innehåller båda namnutrymmena representeras av storleken på överlappningen mellan cirklarna.
 
-![](../images/segments/profiles-by-namespace.png)
+Om en kund interagerar med ert varumärke i mer än en kanal kopplas flera identiteter till den enskilda kunden, och därför är det troligt att organisationen har flera profiler som innehåller fragment från mer än en identitet.
+
+Mer information om identiteter finns i [Adobe Experience Platform Identity Service-dokumentationen](../../identity-service/home.md).
+
+![](../images/segments/identity-overlap.png)
+
+### [!UICONTROL Profiles by identity] {#profiles-by-identity}
+
+Widgeten **[!UICONTROL Profiles by identity]** visar uppdelningen av identiteter för alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler efter identitet kan vara högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera associerade identiteter. Med andra ord kan de värden som visas för varje identitet tillsammans bli större än den totala målgruppsstorleken i segmentet, eftersom om en kund interagerar med varumärket i mer än en kanal kan flera identiteter kopplas till den enskilda kunden.
+
+Mer information om identiteter finns i [Adobe Experience Platform Identity Service-dokumentationen](../../identity-service/home.md).
+
+![](../images/segments/profiles-by-identity.png)
 
 ## Nästa steg
 
