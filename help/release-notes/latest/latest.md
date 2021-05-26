@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: d78f2d0fc8d1117614b0d8add0cada21619d8357
+source-git-commit: 91f75f5b6a8e5adb251455f65bc2b693934ef8e2
 workflow-type: tm+mt
-source-wordcount: '978'
+source-wordcount: '1070'
 ht-degree: 1%
 
 ---
@@ -62,6 +62,8 @@ Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Förbättrad övervakning (beta) | Förbättrade funktioner för övervakning av destinationer, inklusive information för både batch- och direktuppspelningsdestinationer |
+| [Snabbare stegvis filexport (beta)](../../destinations/ui/activate-destinations.md#export-incremental-files) | Lagt till möjlighet att exportera inkrementella filer till destinationer var 3, 6, 8 eller 12:e timme. <br> <br>Den här funktionen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Kunder som inte är beta kan exportera inkrementella filer en gång om dagen. |
+| [Stöd för dedupliceringsnyckel (beta)](../../destinations/ui/activate-destinations.md#deduplication-keys) | Lagt till möjligheten att ange ID-namnutrymmen eller profilattribut som dedupliceringsnycklar. Avdupliceringsnycklar eliminerar möjligheten att ha flera poster med samma profil i en exportfil. <br> <br>Den här funktionen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. |
 
 Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
