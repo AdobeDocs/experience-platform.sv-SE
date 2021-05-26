@@ -2,22 +2,16 @@
 keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassning;kontrollpanel för licensanvändning;kontrollpanel;licensanvändning;berättigande;förbrukning
 title: Kontrollpanel för destinationer
 description: 'Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer. '
-topic-legacy: guide
 type: Documentation
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 998332007465c1f8457b5d8cf0e153d513505d39
 workflow-type: tm+mt
-source-wordcount: '143'
+source-wordcount: '120'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!UICONTROL Destinations] instrumentpanel {#destinations-dashboard}
-
->[!IMPORTANT]
->
->Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# [!UICONTROL Destinations] kontrollpanel  {#destinations-dashboard}
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den fångats in under en daglig ögonblicksbild.
 
