@@ -2,26 +2,20 @@
 keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;anpassning;profilpanel;instrumentpanel
 title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
-topic-legacy: guide
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8312d1523ab68dd0a4ba437dd826adde544838fe
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!UICONTROL Destinations] kontrollpanel
-
->[!IMPORTANT]
->
->Instrumentpanelsfunktionerna som beskrivs i det här dokumentet är för närvarande i betaversion och är inte tillgängliga för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# [!UICONTROL Destinations] kontrollpanel
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för mål i användargränssnittet, och den innehåller mer information om mätvärdena som visas på kontrollpanelen.
 
-En översikt över destinationer samt en katalog över alla tillgängliga destinationer i Experience Platform finns på [målöversikten](../../destinations/home.md).
+En översikt över destinationer samt en katalog över alla tillgängliga destinationer i Experience Platform finns i [måldokumentationen](../../destinations/home.md).
 
 ## [!UICONTROL Destinations] instrumentpanelsdata  {#destinations-dashboard-data}
 
