@@ -5,10 +5,9 @@ title: Mappningsfunktioner för dataförinställningar
 topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8193045079bbd8a61c4bc2aee0bf9412e4e2ae31
 workflow-type: tm+mt
-source-wordcount: '3797'
+source-wordcount: '3934'
 ht-degree: 2%
 
 ---
@@ -144,10 +143,12 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | str_to_object | Skapar ett objekt från indatasträngen. | <ul><li>STRING: **Obligatorisk** Strängen som tolkas för att skapa ett objekt.</li><li>VALUE_DELIMITER: *Valfritt* Avgränsaren som skiljer ett fält från värdet. Standardavgränsaren är `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fältvärdepar. Standardavgränsaren är `,`.</li></ul> | str_to_object &#x200B;(STRING, VALUE_DELIMITER, FIELD_DELIMITER) | str_to_object(&quot;firstName - John | lastName - | telefon - 123 456 7890&quot;, &quot;-&quot;, &quot; | &quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
 | is_set | Kontrollerar om objektet finns i källdata. | <ul><li>INMATNING: **Obligatorisk** Sökvägen som ska kontrolleras om den finns i källdata.</li></ul> | is_set(INPUT) | is_set &#x200B;(&quot;evars.evar.field1&quot;) | sant |
 | null | Anger värdet för attributet till `null`. Detta bör användas när du inte vill kopiera fältet till målschemat. |  | nullify() | nullify() | `null` |
+| get_keys | Tolkar nyckel/värde-paren och returnerar alla nycklar. | <ul><li>OBJEKT: **Obligatoriskt** Det objekt som nycklarna ska extraheras från.</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;: &quot;Pride and Prekurce&quot;, &quot;book2&quot;: &quot;1984&quot;}) | `["book1", "book2"]` |
+| get_values | Tolkar nyckel/värde-paren och returnerar värdet för strängen baserat på den angivna nyckeln. | <ul><li>STRING: **Obligatorisk** Strängen som du vill tolka.</li><li>NYCKEL: **Obligatorisk** Nyckeln som värdet ska extraheras för.</li><li>VALUE_DELIMITER: **Obligatorisk** Avgränsaren som avgränsar fältet och värdet. Om antingen en `null` eller en tom sträng anges är det här värdet `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fält- och värdepar. Om antingen en `null` eller en tom sträng anges är det här värdet `,`.</li></ul> | get_values(STRING, KEY, VALUE_DELIMITER, FIELD_DELIMITER) | get_values(\&quot;firstName - John, lastName - Cena, phone - 555 420 8692\&quot;, \&quot;firstName\&quot;, \&quot;-\&quot;, \&quot;,\&quot;) | John |
 
 {style=&quot;table-layout:auto&quot;}
 
-### Hierarkier - arrayer {#arrays}
+### Hierarkier - matriser {#arrays}
 
 >[!NOTE]
 >
