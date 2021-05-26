@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 8508d213834bb21951df4fe118732b60465b6d73
+source-git-commit: d78f2d0fc8d1117614b0d8add0cada21619d8357
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '978'
 ht-degree: 1%
 
 ---
@@ -27,6 +27,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Destinations]](#destinations)
 - [[!DNL Experience Data Model (XDM)]](#xdm)
 - [Kundprofil i realtid](#profile)
+- [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
 
@@ -82,3 +83,15 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | Överlappningsrapport för datauppsättning | Den överlappande rapporten för datauppsättningen ger synlighet i profilarkivets sammansättning genom att de datauppsättningar som bidrar mest till den adresserbara målgruppen exponeras. Förutom att ge insikter i profildata hjälper den här rapporten användarna att vidta åtgärder för att optimera användningen av licenser, som att sätta en gräns för vissa data. Om du vill veta mer kan du följa självstudiekursen om att [generera överlappningsrapporten](../../profile/tutorials/dataset-overlap-report.md). |
 
 Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, får du om du börjar med att läsa översikten över kundprofilen i realtid](../../profile/home.md).[
+
+## [!DNL Sources] {#sources}
+
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+
+Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Användargränssnittsstöd för komprimerad filinmatning | Du kan nu förhandsgranska och importera komprimerade JSON-filer eller avgränsade filer med hjälp av molnlagringskällor i användargränssnittet. Mer information finns i självstudiekursen om hur du konfigurerar ett dataflöde för en molnlagringskällanslutning i gränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md).[ |
+
+Mer information om källor finns i [Källor - översikt](../../sources/home.md).
