@@ -6,10 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5478143e681257c6885d99d83380a35de263ed3d
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1923'
 ht-degree: 0%
 
 ---
@@ -36,6 +35,7 @@ Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagrin
 * Avgränsaravgränsade värden (DSV): Alla värden med ett tecken kan användas som avgränsare för DSV-formaterade datafiler.
 * [!DNL JavaScript Object Notation] (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
 * [!DNL Apache Parquet]: Parquet-formaterade datafiler måste vara XDM-kompatibla.
+* Komprimerade filer: JSON och avgränsade filer kan komprimeras som: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip` och `tar`.
 
 ## Markera data
 
@@ -87,6 +87,16 @@ Du kan ange en egen avgränsare när du importerar avgränsade filer. Välj alte
 När du har valt dataformat och angett avgränsare väljer du **[!UICONTROL Next]**.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/delimiter.png)
+
+### Infoga komprimerade filer
+
+Du kan importera komprimerade JSON-filer eller avgränsade filer genom att ange deras komprimeringstyp.
+
+I steget [!UICONTROL Select data] väljer du en komprimerad fil för inhämtning och sedan lämplig filtyp och om den är XDM-kompatibel eller inte. Välj sedan **[!UICONTROL Compression type]** och välj lämplig komprimerad filtyp för källdata.
+
+Välj **[!UICONTROL Next]** när en komprimerad filtyp har identifierats för att fortsätta.
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/compressed-files.png)
 
 ## Mappa datafält till ett XDM-schema
 
