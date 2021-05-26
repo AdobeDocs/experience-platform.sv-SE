@@ -1,23 +1,18 @@
 ---
 solution: Experience Platform
 title: Introduktion till Experience Platform Dashboards
-topic-legacy: overview
 type: Documentation
 description: Utforska flera instrumentpaneler i Adobe Experience Platform för att visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e927dbef8a3028155e907e0ca05c17c29fb74cf1
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
 
-# (Beta) Översikt över instrumentpaneler {#dashboards}
 
->[!IMPORTANT]
->
->Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Översikt över instrumentpaneler {#dashboards}
 
 Adobe Experience Platform tillhandahåller flera kontrollpaneler där du kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
@@ -39,4 +34,4 @@ Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunk
 
 Det finns för närvarande flera kontrollpaneler i Experience Platform, där var och en ger transparens i organisationens kunddata.
 
-Om du vill veta mer om dessa instrumentpaneler och deras tillgängliga mätvärden väljer du dem i listan över tillgängliga instrumentpaneler i dokumentationsnavigeringen.
+Om du vill veta mer om dessa instrumentpaneler och deras mätvärden väljer du en instrumentpanel i listan över tillgängliga instrumentpaneler i dokumentationsnavigeringen.
