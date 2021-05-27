@@ -5,10 +5,9 @@ title: Bästa praxis för datamodellering
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '2511'
+source-wordcount: '2520'
 ht-degree: 1%
 
 ---
@@ -55,6 +54,8 @@ När du har skapat en ERD för att identifiera de enheter som du vill hämta til
 | Sök enheter | Sökentiteter representerar begrepp som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som tillhör den här kategorin ska representeras av scheman baserade på **anpassade klasser**. |
 | Händelseentiteter | Händelseenheter representerar koncept som relaterar till åtgärder som en kund kan vidta, systemhändelser eller andra koncept där du kan vilja spåra ändringar över tid. Enheter som tillhör den här kategorin ska representeras av scheman baserade på klassen **[!DNL XDM ExperienceEvent]**. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### Överväganden för entitetssortering
 
 Avsnitten nedan ger ytterligare vägledning om hur du sorterar dina enheter i ovanstående kategorier.
@@ -75,8 +76,10 @@ Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det 
 | --- | --- | --- | --- | --- |
 | 1234567 | Lägg till | 275098 | 2 | 1 okt 10:32 |
 | 1234567 | Ta bort | 275098 | 1 | 1 okt 10:33 |
-| 1234567 | Lägg till | 486502 | 3 | 1 okt 10:41 |
+| 1234567 | Lägg till | 486502 | 1 | 1 okt 10:41 |
 | 1234567 | Lägg till | 910482 | 5 | 3 okt 2:15 PM |
+
+{style=&quot;table-layout:auto&quot;}
 
 #### Användningsexempel för segmentering
 
@@ -118,6 +121,8 @@ I följande tabell visas några vanliga entitetsrelationer och de kategorier som
 | Kunder- och kundvagnscheckout | En till många | En enskild kund kan ha många kassor, vilket är händelser som kan spåras över tiden. Kunderna skulle därför vara en profilenhet, medan kundvagnsutcheckningar skulle vara en händelseenhet. |
 | Kunder- och förmånskonton | En till en | En enskild kund kan bara ha ett förmånskonto, och vice versa. Eftersom relationen är en-till-en representerar både kunder och lojalitetskonton profilentiteter. |
 | Kunder och prenumerationer | En till många | En enskild kund kan ha många prenumerationer. Eftersom företaget bara är berört med en kunds aktuella prenumerationer är kunderna en profilenhet, medan prenumerationer är en sökenhet. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Fördelar och koner för olika enhetsklasser {#pros-and-cons}
 
