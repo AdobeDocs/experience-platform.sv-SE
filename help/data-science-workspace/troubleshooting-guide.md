@@ -5,10 +5,9 @@ title: Felsökningsguide för arbetsytan Data Science
 topic-legacy: Troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 exl-id: fbc5efdc-f166-4000-bde2-4aa4b0318b38
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c2c2b1684e2c2c3c76dc23ad1df720abd6c4356c
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -116,6 +115,28 @@ Mer information om klusterresurskonfigurationen [!DNL Spark], inklusive en fulls
 ## Varför får jag ett fel när jag försöker köra vissa uppgifter för större datamängder?
 
 Om du får ett fel av en anledning som `Reason: Remote RPC client disassociated. Likely due to containers exceeding thresholds, or network issues.` innebär det vanligtvis att drivrutinen eller en körare har slut på minne. Mer information om databegränsningar och hur du kör uppgifter på stora datauppsättningar finns i dokumentationen för JupyterLab-anteckningsböcker [dataåtkomst](./jupyterlab/access-notebook-data.md). Vanligtvis kan det här felet lösas genom att ändra `mode` från `interactive` till `batch`.
+
+När du skriver stora Spark-/PySpark-datauppsättningar kan du dessutom förbättra prestandan avsevärt genom att cacha dina data (`df.cache()`) innan du kör skrivkoden.
+
+<!-- remove this paragraph at a later date once the sdk is updated -->
+
+Om du får problem med att läsa data och använder omformningar på data kan du försöka med att cachelagra data före omformningarna. Cachelagring av data förhindrar flera läsningar i nätverket. Börja med att läsa data. Sedan cachelagrar du data (`df.cache()`). Till sist kan du göra dina omformningar.
+
+## Varför tar mina bärbara Spark/PySpark-datorer så lång tid att läsa och skriva data?
+
+Om du utför dataomvandlingar, till exempel använder `fit()`, kan det hända att omvandlingarna körs flera gånger. Om du vill öka prestandan cachelagrar du data med `df.cache()` innan du utför `fit()`. Detta garanterar att omvandlingarna endast utförs en gång och förhindrar flera läsningar i nätverket.
+
+**Rekommenderad ordning:** Börja med att läsa data. Utför sedan omformningar följt av cachelagring (`df.cache()`) av data. Utför slutligen en `fit()`.
+
+## Varför fungerar inte mina Spark/PySpark-bärbara datorer?
+
+Om du får något av följande fel:
+
+- Jobbet avbröts på grund av ett scenfel ... Det går bara att zippa RDD-enheter med samma antal element i varje partition.
+- Fjärransluten RPC-klient har kopplats från och andra minnesfel.
+- Dåliga prestanda vid läsning och skrivning av datauppsättningar.
+
+Kontrollera att du cachelagrar data (`df.cache()`) innan du skriver data. När du kör kod i anteckningsböcker kan du förbättra prestanda för bärbara datorer avsevärt genom att använda `df.cache()` före en åtgärd som `fit()`. Om du använder `df.cache()` innan du skriver en datauppsättning säkerställs att omformningarna bara utförs en gång i stället för flera gånger.
 
 ## [!DNL Docker Hub] begränsa begränsningar i arbetsytan för datavetenskap
 
