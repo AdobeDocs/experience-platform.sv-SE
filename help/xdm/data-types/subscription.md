@@ -5,10 +5,9 @@ title: Typ av prenumerationsdata
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Subscription Experience Data Model).
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '414'
 ht-degree: 8%
 
 ---
@@ -45,6 +44,8 @@ ht-degree: 8%
 | `termUnitOfTime` | Sträng | Tidsenhet för löptiden. |
 | `topUp` | Sträng | Beskriver de överenskomna villkoren för hur konsumerbara delar av en prenumeration återköps under en faktureringsperiod. |
 | `type` | Sträng | Rättighetens omfattning i förhållande till hur många personer som omfattas av prenumerationen. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
