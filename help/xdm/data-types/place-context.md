@@ -5,10 +5,9 @@ title: Montera kontextdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Place Context XDM.
 exl-id: d7cf7366-0136-49ee-84d2-ec663db66eb4
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '173'
 ht-degree: 2%
 
 ---
@@ -26,6 +25,8 @@ ht-degree: 2%
 | `geo` | [[!UICONTROL Geo]](./geo.md) | Beskriver den geografiska plats där upplevelsen levererades. |
 | `localTime` | DateTime | En tidsstämpel i formatet [RFC 3339](https://tools.ietf.org/html/rfc3339) som anger lokal tid med en angiven tidszonsförskjutning. Formateringsmönstret är `yyyy-MM-dd'T'HH:mm:ssXXX` (till exempel `2001-07-04T12:08:56-07:00`). |
 | `localTimezoneOffset` | Heltal | Den aktuella lokala tidszonsförskjutningen i minuter från UTC för `localTime`-värdet. Detta bör inkludera aktuell DST-förskjutning om tillämpligt. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
