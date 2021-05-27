@@ -4,10 +4,9 @@ title: Datatypen Allmänt fält för samtycke
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för det allmänna innehållsfältet.
 exl-id: f1f14eb7-21dd-45ca-8fb4-68f397cfa697
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '469'
 ht-degree: 1%
 
 ---
@@ -26,6 +25,8 @@ ht-degree: 1%
 | --- | --- | --- |
 | `val` | Sträng | Kunden har gett sitt medgivande för det här användningsärendet. I tabellen nedan finns godkända värden och definitioner. |
 
+{style=&quot;table-layout:auto&quot;}
+
 I följande tabell visas godkända värden för `val`:
 
 | Värde | Titel | Beskrivning |
@@ -39,6 +40,8 @@ I följande tabell visas godkända värden för `val`:
 | `CP` | Efterlevnad av en juridisk skyldighet | Insamlingen av uppgifter för det angivna ändamålet krävs för att uppfylla företagets rättsliga skyldigheter. |
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
