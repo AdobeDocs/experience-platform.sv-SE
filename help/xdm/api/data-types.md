@@ -4,10 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för datatyper
 description: Med slutpunkten /datatypes i API:t för schemaregister kan du programmässigt hantera XDM-datatyper i ditt upplevelseprogram.
 exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
-translation-type: tm+mt
-source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1172'
 ht-degree: 0%
 
 ---
@@ -39,6 +38,8 @@ GET /{CONTAINER_ID}/datatypes?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som du vill hämta datatyper från: `global` för datatyper som skapats av Adobe eller `tenant` för datatyper som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en lista med datatyper från `tenant`-behållaren, med en `orderby`-frågeparameter för att sortera datatyperna efter deras `title`-attribut.
@@ -59,6 +60,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-datatypen för varje resurs, inklusive ursprunglig `$ref` och `allOf`. (Gräns: 300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -94,7 +97,7 @@ I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` `Accept`,
 }
 ```
 
-## Slå upp en datatyp {#lookup}
+## Söka efter en datatyp {#lookup}
 
 Du kan söka efter en viss datatyp genom att ta med datatypens ID i sökvägen för en GET-begäran.
 
@@ -108,6 +111,8 @@ GET /{CONTAINER_ID}/datatypes/{DATA_TYPE_ID}
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som innehåller den datatyp som du vill hämta: `global` för en datatyp som skapats av Adobe eller `tenant` för en datatyp som ägs av din organisation. |
 | `{DATA_TYPE_ID}` | `meta:altId` eller URL-kodad `$id` för den datatyp som du vill söka efter. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -132,6 +137,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -344,6 +351,8 @@ PUT /tenant/datatypes/{DATA_TYPE_ID}
 | --- | --- |
 | `{DATA_TYPE_ID}` | `meta:altId` eller URL-kodad `$id` för den datatyp som du vill skriva om. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran skriver om en befintlig datatyp och lägger till ett nytt `floorSize`-fält.
@@ -472,6 +481,8 @@ PATCH /tenant/data type/{DATA_TYPE_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` för den datatyp som du vill uppdatera. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -609,6 +620,8 @@ DELETE /tenant/datatypes/{DATA_TYPE_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` för den datatyp som du vill ta bort. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
