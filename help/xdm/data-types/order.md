@@ -5,10 +5,9 @@ title: Orderdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Order Experience Data Model).
 exl-id: abfc6d53-ffe6-4692-ad65-03d556831fa0
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '185'
 ht-degree: 2%
 
 ---
@@ -26,6 +25,8 @@ ht-degree: 2%
 | `priceTotal` | Dubbel | Det totala priset för den här ordern efter att alla rabatter och skatter har tillämpats. |
 | `purchaseID` | Sträng | En unik identifierare som säljaren har tilldelat detta inköp eller kontrakt. Eftersom detta definieras av säljaren finns det ingen garanti för att ID:t är unikt. |
 | `purchaseOrderNumber` | Sträng | Den unika identifierare som tilldelats av köparen för detta inköp eller kontrakt. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
