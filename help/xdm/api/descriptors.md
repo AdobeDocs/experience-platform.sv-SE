@@ -5,10 +5,9 @@ title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1611'
+source-wordcount: '1632'
 ht-degree: 0%
 
 ---
@@ -62,6 +61,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Observera att
 | `application/vnd.adobe.xdm+json` | Returnerar en array med expanderade beskrivningsobjekt |
 | `application/vnd.adobe.xdm-v2+json` | Det här `Accept`-huvudet måste användas för att växlingsfunktionerna ska kunna användas. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Svaret innehåller en array för varje beskrivningstyp som har definierade beskrivningar. Om det inte finns några beskrivningar av en viss `@type` definierad returnerar registret alltså ingen tom array för den beskrivningstypen.
@@ -84,7 +85,7 @@ När du använder rubriken `link` `Accept` visas varje beskrivning som ett matri
 }
 ```
 
-## Slå upp en beskrivning {#lookup}
+## Söka efter en beskrivning {#lookup}
 
 Om du vill visa information om en viss beskrivning kan du söka efter (GET) en enskild beskrivning med hjälp av dess `@id`.
 
@@ -97,6 +98,8 @@ GET /tenant/descriptors/{DESCRIPTOR_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{DESCRIPTOR_ID}` | `@id` för beskrivningen som du vill söka efter. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -205,6 +208,8 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | `@id` för beskrivningen som du vill uppdatera. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Denna begäran skriver i princip om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Nyttolasten för begäran om att uppdatera (PUT) en beskrivning är alltså densamma som nyttolasten för att [skapa (POST) en beskrivning](#create) av samma typ.
@@ -260,6 +265,8 @@ DELETE /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | `@id` för beskrivningen som du vill ta bort. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 ```SHELL
@@ -312,6 +319,8 @@ En identitetsbeskrivning signalerar att [!UICONTROL sourceProperty] för [!UICON
 | `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på vilken `xdm:namespace` som används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 
+{style=&quot;table-layout:auto&quot;}
+
 #### Egen namnbeskrivning
 
 Med egna namnbeskrivningar kan användaren ändra värdena `title`, `description` och `meta:enum` för huvudbibliotekets schemafält. Detta är särskilt användbart när du arbetar med&quot;eVars&quot; och andra&quot;generiska&quot; fält som du vill märka som innehåller information som är specifik för din organisation. Gränssnittet kan använda dessa för att visa ett mer användarvänligt namn eller för att endast visa fält som har ett eget namn.
@@ -346,6 +355,8 @@ Med egna namnbeskrivningar kan användaren ändra värdena `title`, `description
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
 | `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält fastställer `meta:enum` listan med föreslagna värden för fältet i användargränssnittet för [!DNL Experience Platform]. Observera att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om källegenskapen är ett anpassat fält som definieras av din organisation, bör du i stället redigera fältets `meta:enum`-egenskap direkt via en PATCH-begäran till fältets överordnade resurs. |
 
+{style=&quot;table-layout:auto&quot;}
+
 #### Relationsbeskrivning
 
 Relationsbeskrivare beskriver en relation mellan två olika scheman, som är aktiverade för egenskaperna som beskrivs i `sourceProperty` och `destinationProperty`. Mer information finns i självstudiekursen om [hur du definierar en relation mellan två scheman](../tutorials/relationship-api.md).
@@ -373,6 +384,8 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, som är akt
 | `xdm:destinationSchema` | URI:n `$id` för målschemat som den här beskrivningen definierar en relation med. |
 | `xdm:destinationVersion` | Huvudversionen av målschemat. |
 | `xdm:destinationProperty` | Valfri sökväg till ett målfält i målschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
+
+{style=&quot;table-layout:auto&quot;}
 
 
 #### Referens för identitetsbeskrivning
