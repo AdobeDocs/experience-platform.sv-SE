@@ -5,9 +5,9 @@ title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: dcfdc9c479e8a77296f7cb0bf9f5bb36e9261b75
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,8 @@ De vanligaste frågeparametrarna för sidindelning är:
 | `limit` | Begränsa antalet returnerade resurser. Exempel: `limit=5` returnerar en lista med fem resurser. |
 | `orderby` | Sortera resultaten efter en specifik egenskap. Exempel: `orderby=title` sorterar resultaten efter titel i stigande ordning (A-Z). Om du lägger till `-` före parametervärdet (`orderby=-title`) sorteras objekten efter rubrik i fallande ordning (Z-A). |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### Filtrering {#filtering}
 
 Du kan filtrera resultat med parametern `property`, som används för att tillämpa en viss operator på en viss JSON-egenskap i de hämtade resurserna. Operatorer som stöds är:
@@ -48,6 +50,8 @@ Du kan filtrera resultat med parametern `property`, som används för att tillä
 | `>=` | Filtrerar efter om egenskapen är större än eller lika med det angivna värdet. | `property=version>=5` |
 | `~` | Filtrerar efter om egenskapen matchar ett angivet reguljärt uttryck. | `property=title~test$` |
 | (Ingen) | Om du bara anger egenskapsnamnet returneras bara poster där egenskapen finns. | `property=title` |
+
+{style=&quot;table-layout:auto&quot;}
 
 >[!TIP]
 >
@@ -67,7 +71,7 @@ Den största skillnaden mellan standard-XDM och kompatibilitetsläge är borttag
 
 Följande är en jämförelse sida vid sida som visar födelsedagsrelaterade fält (med&quot;description&quot;-attribut borttagna) i både standard-XDM och kompatibilitetsläge. Observera att fälten för kompatibilitetsläge innehåller en referens till XDM-fältet och dess datatyp i attributen &quot;meta:xdmField&quot; och &quot;meta:xdmType&quot;.
 
-<table>
+<table style="table-layout:auto">
   <th>Standard XDM</th>
   <th>Kompatibilitetsläge</th>
   <tr>
