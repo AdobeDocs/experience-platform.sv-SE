@@ -5,10 +5,9 @@ title: API-slutpunkt för beteenden
 description: Med slutpunkten /behaviors i API:t för schemaregister kan du hämta alla tillgängliga beteenden i den globala behållaren.
 topic-legacy: developer guide
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '423'
+source-wordcount: '426'
 ht-degree: 1%
 
 ---
@@ -102,6 +101,8 @@ GET /global/behaviors/{BEHAVIOR_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{BEHAVIOR_ID}` | `meta:altId` eller URL-kodad `$id` för beteendet som du vill söka efter. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
