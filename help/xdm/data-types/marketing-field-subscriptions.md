@@ -4,10 +4,9 @@ title: Allmänt fält för marknadsföringsinställningar med prenumerationsdata
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över det allmänna inställningsfältet för marknadsföring med datatypen Subscriptions XDM.
 exl-id: 170ea6ca-77fc-4b0a-87f9-6d4b6f32d953
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '721'
 ht-degree: 1%
 
 ---
@@ -31,6 +30,8 @@ ht-degree: 1%
 | `time` | DateTime | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. |
 | `val` | Sträng | Kundens val av preferens för detta marknadsföringsärende. I [nästa avsnitt](#val) finns godkända värden och definitioner. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## `val` {#val}
 
 I följande tabell visas godkända värden för `val`:
@@ -46,6 +47,8 @@ I följande tabell visas godkända värden för `val`:
 | `CP` | Efterlevnad av en juridisk skyldighet | Insamlingen av uppgifter för det angivna ändamålet krävs för att uppfylla företagets rättsliga skyldigheter. |
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## `subscriptions` {#subscriptions}
 
@@ -90,6 +93,8 @@ Följande JSON representerar ett exempel på ett marknadsföringsfält för en m
 | --- | --- |
 | `type` | Prenumerationstypen. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken. |
 | `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel som anger när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Ytterligare resurser
 
