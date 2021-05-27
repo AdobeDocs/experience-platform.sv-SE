@@ -5,10 +5,9 @@ title: Definiera matrisfält i användargränssnittet
 description: Lär dig hur du definierar ett arrayfält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 9ac55554-c29b-40b2-9987-c8c17cc2c00c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '350'
 ht-degree: 0%
 
 ---
@@ -32,6 +31,8 @@ Ytterligare konfigurationskontroller för arrayer är följande:
 | [!UICONTROL Minimum length] | Det minsta antalet objekt som matrisen måste innehålla för att importen ska lyckas. |
 | [!UICONTROL Maximum length] | Det maximala antalet objekt som matrisen måste innehålla för att importen ska lyckas. |
 | [!UICONTROL Unique items only] | Om den anges till [!UICONTROL True] måste varje objekt i arrayen vara unikt för att importen ska lyckas. |
+
+{style=&quot;table-layout:auto&quot;}
 
 När du har konfigurerat fältet väljer du **[!UICONTROL Apply]** för att tillämpa ändringen i schemat.
 
