@@ -5,10 +5,9 @@ title: Datatyp för webbsidesinformation
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över webbsidans information om datatypen Experience Data Model (XDM).
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '401'
+source-wordcount: '404'
 ht-degree: 2%
 
 ---
@@ -31,6 +30,8 @@ Datatypen är avsedd för fullständig sidinformation och inledande sidinläsnin
 | `server` | Sträng | Den normativa eller vanliga server som är värd för webbsidan. Detta kan vara den värd eller server som faktiskt betjänade sidinteraktionen. |
 | `siteSection` | Sträng | Det normativa namnet på det webbplatsavsnitt där den här webbsidan finns. Detta kan användas för att klassificera eller kategorisera interaktionen. |
 | `viewName` | Sträng | Vyns namn på en sida. Den här egenskapen används vanligtvis för enkelsidiga program eller sidor med tabbar eller kontroller som ändrar större delen av sidlayouten. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
