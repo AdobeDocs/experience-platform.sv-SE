@@ -4,10 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för fältgrupper
 description: Med slutpunkten /fieldGroups i API:t för schemaregister kan du programmässigt hantera XDM-schemafältgrupper i ditt upplevelseprogram.
 topic: utvecklarhandbok
-translation-type: tm+mt
-source-git-commit: b25c545e86c8ffd6b5832893152aef597feaf71f
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1217'
 ht-degree: 0%
 
 ---
@@ -40,6 +39,8 @@ GET /{CONTAINER_ID}/fieldgroups?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som du vill hämta fältgrupper från: `global` för fältgrupper som skapats av Adobe eller `tenant` för fältgrupper som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en lista med fältgrupper från `tenant`-behållaren, med en `orderby`-frågeparameter för att sortera fältgrupperna efter deras `title`-attribut.
@@ -60,6 +61,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-fältgruppen för varje resurs, med det ursprungliga `$ref` och `allOf` inkluderat. (Gräns: 300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -122,6 +125,8 @@ GET /{CONTAINER_ID}/fieldgroups/{FIELD_GROUP_ID}
 | `{CONTAINER_ID}` | Behållaren som innehåller den fältgrupp som du vill hämta: `global` för en fältgrupp som skapats av Adobe eller `tenant` för en fältgrupp som ägs av din organisation. |
 | `{FIELD_GROUP_ID}` | `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill söka efter. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en fältgrupp med det `meta:altId`-värde som anges i sökvägen.
@@ -145,6 +150,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 | `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -398,6 +405,8 @@ PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 | --- | --- |
 | `{FIELD_GROUP_ID}` | `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill skriva om. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran skriver om en befintlig fältgrupp och lägger till ett nytt `propertyCountry`-fält.
@@ -581,6 +590,8 @@ PATCH /tenant/fieldgroups/{FIELD_GROUP_ID}
 | --- | --- |
 | `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för fältgruppen som du vill uppdatera. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Exempelbegäran nedan uppdaterar `description` för en befintlig fältgrupp och lägger till ett nytt `propertyCity`-fält.
@@ -717,6 +728,8 @@ DELETE /tenant/fieldgroups/{FIELD_GROUP_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för fältgruppen som du vill ta bort. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
