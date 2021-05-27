@@ -5,10 +5,9 @@ title: Datatyp för personnamn
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för personnamn.
 exl-id: 5cf55fb1-b6b0-4d1c-93c3-7e2b7766599e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '250'
 ht-degree: 0%
 
 ---
@@ -29,6 +28,8 @@ Dessutom innehåller datatypen ett antal valfria egenskaper som kan användas i 
 | `lastName` | Det sista segmentet i namnet i den skrivordning som oftast används på namnet. |
 | `middleName` | Mellannamn, alternativa namn eller ytterligare namn som anges mellan förnamnet och efternamnet. |
 | `suffix` | En grupp bokstäver som anges efter en persons namn för att tillhandahålla ytterligare information (till exempel `Jr.`, `Sr.`, `M.D.`, `PhD`, `I`, `II`, `III` och så vidare). |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om personnamnets datatyp finns i den offentliga XDM-databasen:
 
