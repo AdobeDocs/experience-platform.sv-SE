@@ -5,10 +5,9 @@ title: Datatyp för intressepunktsinformation
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen Point of Interest Details.
 exl-id: cab5463b-97a0-400d-a00c-0cd8bf9301a5
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '192'
 ht-degree: 3%
 
 ---
@@ -29,6 +28,8 @@ ht-degree: 3%
 | `name` | Sträng | Ett namn som POI får. |
 | `poiID` | Sträng | En unik identifierare för POI. |
 | `type` | Sträng | Den allmänna typen av POI med ett typningsschema som valts av administratören för POI-definitionerna. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
