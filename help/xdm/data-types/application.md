@@ -5,10 +5,9 @@ title: Programdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Application Experience Data Model).
 exl-id: ac7d6761-7b58-4e0d-85e7-6f157fb2eea5
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '432'
 ht-degree: 1%
 
 ---
@@ -32,6 +31,8 @@ ht-degree: 1%
 | `name` | Sträng | Programmets namn. |
 | `userPerspective` | Sträng | Perspektivet eller det fysiska förhållandet mellan användaren och appen eller varumärket när en händelse inträffade. Om du förstår användarens perspektiv i förhållande till programmet blir det lättare att generera sessioner korrekt, eftersom större delen av tiden du inte vill ta med `background`- och `detached`-händelser som en del av en&quot;aktiv&quot; session. Värdet för den här egenskapen måste vara lika med ett av de uppräkningsvärden som anges nedan. <li> `foreground`: Användaren och appen interagerar direkt med varandra. </li> <li> `background`: Programmet och användaren interagerar indirekt med varandra. Programmet kan till exempel mäta ett värde och uppdatera medan skärmen är låst eller när ett annat program används i förgrunden.  </li> <li> `detached`: Frånkopplad innebär att händelsen var relaterad till appen men inte kom direkt från appen, till exempel genom att ett e-postmeddelande eller ett push-meddelande skickades från ett externt system. |
 | `version` | Sträng | Versionen av programmet. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
