@@ -5,9 +5,9 @@ title: XDM-klass för enskild profil
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: 9fbb40a401250496761dcce63a3f033a8746ae7e
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,8 @@ Själva klassen [!DNL XDM Individual Profile] innehåller flera systemgenererade
 | `personID` | En unik identifierare för den person som den här posten är relaterad till. Det här fältet representerar inte nödvändigtvis en identitet som relateras till personen, såvida det inte också är angivet som ett [identitetsfält](../schema/composition.md#identity). |
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Kompatibla fältgrupper {#field-groups}
 
