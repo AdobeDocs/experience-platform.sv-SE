@@ -5,11 +5,10 @@ title: API-slutpunkt för granskningslogg
 description: Med slutpunkten /audilog i API:t för schemaregister kan du hämta en kronologisk lista över ändringar som har gjorts i en befintlig XDM-resurs.
 topic-legacy: developer guide
 exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '400'
-ht-degree: 1%
+source-wordcount: '406'
+ht-degree: 0%
 
 ---
 
@@ -36,6 +35,8 @@ GET /rpc/auditlog/{RESOURCE_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{RESOURCE_ID}` | `meta:altId` eller URL-kodad `$id` för resursen vars granskningslogg du vill hämta. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -96,3 +97,5 @@ Ett lyckat svar returnerar en kronologisk lista över ändringar som gjorts i re
 | `action` | Den typ av ändring som gjordes. |
 | `path` | En [JSON-pekare](../../landing/api-fundamentals.md#json-pointer)-sträng som anger sökvägen till det specifika fält som har ändrats eller lagts till. |
 | `value` | Värdet som tilldelats det nya eller uppdaterade fältet. |
+
+{style=&quot;table-layout:auto&quot;}
