@@ -4,10 +4,9 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1837'
+source-wordcount: '1861'
 ht-degree: 1%
 
 ---
@@ -90,7 +89,7 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 >Du kan generera JSON-exempeldata för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
 >
 >* [Generera exempeldata i användargränssnittet](../ui/sample.md)
->* [Generera exempeldata i API](../api/sample-data.md)
+* [Generera exempeldata i API](../api/sample-data.md)
 
 
 ## `consents` {#choices}
@@ -141,6 +140,8 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### `adID`
 
 `adID` representerar kundens samtycke för om ett annonser-ID (IDFA eller GAID) kan användas för att länka kunden mellan appar på den här enheten.
@@ -154,6 +155,8 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | Egenskap | Beskrivning |
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### `share`
 
@@ -169,15 +172,15 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### `personalize` {#personalize}
 
 `personalize` Hämtar kundpreferenser för hur deras data kan användas för personalisering. Kunder kan välja bort specifika användningsfall för personalisering eller välja bort helt från personalisering.
 
 >[!IMPORTANT]
->
->`personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
->
->Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
+`personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
+Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
 
 ```json
 "personalize": {
@@ -191,6 +194,8 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | --- | --- |
 | `content` | Representerar kundens önskemål om personaliserat innehåll på er webbplats eller i er tillämpning. |
 | `val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### `marketing` {#marketing}
 
@@ -226,6 +231,8 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | `time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `metadata`, så behöver det här fältet inte anges för den inställningen. |
 | `reason` | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### `metadata`
 
 `metadata` samlar in allmänna metadata om kundens samtycke och inställningar när de senast uppdaterades.
@@ -240,17 +247,17 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | --- | --- |
 | `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Om du anger ett `time`-värde under en enskild inställning åsidosätts tidsstämpeln `metadata` för den aktuella inställningen. |
 
-## Inmatning av data med datatypen {#ingest}
+{style=&quot;table-layout:auto&quot;}
+
+## Inhämta data med datatypen {#ingest}
 
 Om du vill använda datatypen [!DNL Consents & Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning baserad på ett schema som innehåller den datatypen.
 
 I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med datatypen [!DNL Consents & Preferences] kan du läsa avsnittet [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
->
->Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller datatypen [!DNL Consents & Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
->
->Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../rtcdp/profile/merge-policies.md).
+Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller datatypen [!DNL Consents & Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
+Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../rtcdp/profile/merge-policies.md).
 
 ## Hantera samtycke och ändringar av inställningar
 
@@ -276,6 +283,8 @@ I följande tabell visas godkända värden för `val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### Godkända värden för `preferred` {#preferred-values}
 
 I följande tabell visas godkända värden för `preferred`:
@@ -295,6 +304,8 @@ I följande tabell visas godkända värden för `preferred`:
 | `other` | En kanal som inte passar in i en standardkategori. |
 | `none` | Ingen föredragen kanal. |
 | `unknown` | Den önskade kanalen är okänd. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Fullständigt [!DNL Consents & Preferences]-schema {#full-schema}
 
