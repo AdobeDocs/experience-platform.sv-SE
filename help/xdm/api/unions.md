@@ -5,10 +5,9 @@ title: Unisions API-slutpunkt
 description: Med slutpunkten /union i API:t för schemaregister kan du programmässigt hantera XDM-föreningsscheman i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
@@ -66,6 +65,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-klassen för varje resurs, med ursprunglig `$ref` och `allOf` inkluderad. (Gräns: 300) |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 (OK) och en `results`-array i svarstexten. Om facken har definierats, anges informationen för varje union som objekt i arrayen. Om inga fackföreningar har definierats returneras HTTP-status 200 (OK), men `results`-arrayen är tom.
@@ -89,7 +90,7 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en `results`-array i svarste
 }
 ```
 
-## Söka efter en union {#lookup}
+## Slå upp en union {#lookup}
 
 Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller `$id` och, beroende på accepteringshuvudet, en del eller all information om unionen.
 
@@ -107,6 +108,8 @@ GET /tenant/schemas/{UNION_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{UNION_ID}` | URL-kodad `$id` URI för den union som du vill söka efter. URI:er för föreningsscheman läggs till med &quot;__union&quot;. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -128,6 +131,8 @@ Följande accepterande huvuden är tillgängliga för fackschemasökningar:
 | -------|------------ |
 | `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf`. Innehåller rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-full+json; version=1` | `$ref` attribut och  `allOf` lösta. Innehåller rubriker och beskrivningar. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -174,7 +179,7 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Experimen
 }
 ```
 
-## Aktivera ett schema för unionsmedlemskap {#enable}
+## Aktivera ett schema för fackmedlemskap {#enable}
 
 För att ett schema ska kunna inkluderas i unionen för sin klass måste en `union`-tagg läggas till i schemats `meta:immutableTags`-attribut. Du kan uppnå detta genom att göra en PATCH-begäran om att lägga till en `meta:immutableTags`-matris med ett strängvärde på `union` i det aktuella schemat. Ett detaljerat exempel finns i [schemas slutpunktshandbok](./schemas.md#union).
 
@@ -191,6 +196,8 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CLASS_ID}` | `$id` för den klass vars unionsaktiverade scheman du vill visa. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -212,6 +219,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, med det ursprungliga `$ref` och `allOf` inkluderat. (Gräns: 300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
