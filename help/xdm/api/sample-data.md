@@ -5,10 +5,9 @@ title: Exempel på API-slutpunkt för data
 description: Med slutpunkten /sampledata i API:t för schemaregister kan du generera exempeldata mappade till strukturen för ett befintligt XDM-schema.
 topic-legacy: developer guide
 exl-id: 424d33ca-0624-4891-bf83-044ac2861579
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '322'
 ht-degree: 0%
 
 ---
@@ -38,6 +37,8 @@ GET /rpc/sampledata/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill generera exempeldata för. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
