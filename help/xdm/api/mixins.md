@@ -5,10 +5,9 @@ title: Blandar API-slutpunkt
 description: Med slutpunkten /mixins i API:t för schemaregister kan du programmässigt hantera XDM-blandningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: 93ba2fe3-0277-4c06-acf6-f236cd33252e
-translation-type: tm+mt
-source-git-commit: a19a89d347b9197ab2766bd8a57018f5ac4f058d
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1214'
 ht-degree: 0%
 
 ---
@@ -28,7 +27,7 @@ Blandningar är återanvändbara komponenter som definierar ett eller flera fäl
 
 Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
-## Hämta en lista med blandningar {#list}
+## Hämta en lista med mixar {#list}
 
 Du kan lista alla blandningar under `global`- eller `tenant`-behållaren genom att göra en GET-begäran till `/global/mixins` respektive `/tenant/mixins`.
 
@@ -46,6 +45,8 @@ GET /{CONTAINER_ID}/mixins?{QUERY_PARAMS}
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som du vill hämta blandningar från: `global` för blandningar som skapats av Adobe eller `tenant` för blandningar som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -67,6 +68,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar fullständig JSON-blandning för varje resurs, med ursprunglig `$ref` och `allOf` inkluderad. (Gräns: 300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -129,6 +132,8 @@ GET /{CONTAINER_ID}/mixins/{MIXIN_ID}
 | `{CONTAINER_ID}` | Den behållare som innehåller den blandning som du vill hämta: `global` för en blandning som skapats av Adobe eller `tenant` för en blandning som ägs av din organisation. |
 | `{MIXIN_ID}` | `meta:altId` eller URL-kodad `$id` för den blandning som du vill söka efter. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en blandning med `meta:altId`-värdet som anges i sökvägen.
@@ -152,6 +157,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -405,6 +412,8 @@ PUT /tenant/mixins/{MIXIN_ID}
 | --- | --- |
 | `{MIXIN_ID}` | `meta:altId` eller URL-kodad `$id` för den blandning som du vill skriva om. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran skriver om en befintlig blandning och lägger till ett nytt `propertyCountry`-fält.
@@ -588,6 +597,8 @@ PATCH /tenant/mixin/{MIXIN_ID}
 | --- | --- |
 | `{MIXIN_ID}` | Den URL-kodade URI:n eller `meta:altId` för den blandning som du vill uppdatera.`$id` |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Exemplbegäran nedan uppdaterar `description` för en befintlig blandning och lägger till ett nytt `propertyCity`-fält.
@@ -724,6 +735,8 @@ DELETE /tenant/mixins/{MIXIN_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{MIXIN_ID}` | Den URL-kodade URI:n eller `meta:altId` för den blandning som du vill ta bort.`$id` |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
