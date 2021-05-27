@@ -5,10 +5,9 @@ title: Enhetsdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Device XDM.
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '326'
 ht-degree: 3%
 
 ---
@@ -31,6 +30,8 @@ ht-degree: 3%
 | `type` | Sträng | Den typ av enhet som spåras. Godkända värden är: <ul><li>`mobile`</li><li>`tablet`</li><li>`desktop`</li><li>`ereader`</li><li>`gaming`</li><li>`television`</li><li>`settop`</li><li>`mediaplayer`</li><li>`computers`</li><li>`tv screens`</li></ul> |
 | `typeID` | Sträng | En identifierare för enheten. Detta kan vara en identifierare från DeviceAtlas eller en annan tjänst som identifierar den maskinvara som används. |
 | `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Mer information om godkända värden finns i [bilagan](#typeIDService). |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
