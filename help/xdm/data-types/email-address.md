@@ -5,10 +5,9 @@ title: Datatyp för e-postadress
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för e-postadress.
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '183'
+source-wordcount: '186'
 ht-degree: 0%
 
 ---
@@ -27,6 +26,8 @@ ht-degree: 0%
 | `status` | Anger om e-postadressen kan användas |
 | `statusReason` | En beskrivning av aktuell `status`. |
 | `type` | Det sätt som kontot relaterar till personen (till exempel `work` eller `personal`). |
+
+{style=&quot;table-layout:auto&quot;}
 
 
 Mer information om datatypen för e-postadresser finns i den offentliga XDM-databasen:
