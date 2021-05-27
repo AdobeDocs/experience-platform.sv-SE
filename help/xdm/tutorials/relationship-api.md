@@ -6,10 +6,9 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1354'
+source-wordcount: '1369'
 ht-degree: 0%
 
 ---
@@ -231,6 +230,8 @@ Ett godkänt svar returnerar information om den nyligen skapade fältgruppen.
 | --- | --- |
 | `$id` | Den skrivskyddade, systemgenererade unika identifieraren för den nya fältgruppen. Tar formen av en URI. |
 
+{style=&quot;table-layout:auto&quot;}
+
 Registrera URI:n `$id` för fältgruppen, som ska användas i nästa steg när fältgruppen läggs till i källschemat.
 
 ### Lägg till fältgruppen i källschemat
@@ -246,6 +247,8 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för källschemat. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -275,6 +278,8 @@ curl -X PATCH \
 | `op` | Den PATCH-åtgärd som ska utföras. Denna begäran använder åtgärden `add`. |
 | `path` | Sökvägen till schemafältet där den nya resursen ska läggas till. När du lägger till fältgrupper i scheman måste värdet vara /allOf/-. |
 | `value.$ref` | `$id` för fältgruppen som ska läggas till. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -378,6 +383,8 @@ curl -X POST \
 | `sourceProperty` | Sökvägen till målschemats primära identitetsfält. |
 | `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnutrymme som används när fältet definieras som schemats primära identitet. Mer information finns i [översikten över identitetsnamnrymden](../../identity-service/home.md). |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar information om den nya referensbeskrivningen för målschemat.
@@ -436,6 +443,8 @@ curl -X POST \
 | `xdm:destinationSchema` | Målschemats `$id`-URL. |
 | `xdm:destinationVersion` | Målschemats versionsnummer. |
 | `xdm:destinationProperty` | Sökvägen till referensfältet i målschemat. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Svar
 
