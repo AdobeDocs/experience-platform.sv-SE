@@ -5,10 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-translation-type: tm+mt
-source-git-commit: 8d16a3030c663d40daed6c5105af07b2d2d5c7bf
+source-git-commit: e94482532e0c5698cfe5e51ba260f89c67fa64f0
 workflow-type: tm+mt
-source-wordcount: '1091'
+source-wordcount: '1162'
 ht-degree: 0%
 
 ---
@@ -17,7 +16,13 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av deras personuppgifter enligt sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och [!DNL California Consumer Privacy Act] (CCPA).
 
-Det här dokumentet innehåller viktiga begrepp som rör bearbetning av sekretessförfrågningar för [!DNL Real-time Customer Profile].
+Det här dokumentet innehåller viktiga koncept för behandling av sekretessförfrågningar för [!DNL Real-time Customer Profile] inom Adobe Experience Platform.
+
+>[!NOTE]
+>
+>Den här handboken beskriver bara hur du gör sekretessförfrågningar för datalagret Profil i Experience Platform. Om du även planerar att göra sekretessförfrågningar för Platform Data Lake, se guiden [bearbetning av sekretessförfrågningar i Data Lake](../catalog/privacy.md) förutom den här självstudiekursen.
+>
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [dokumentationen till Privacy Servicen](../privacy-service/experience-cloud-apps.md).
 
 ## Komma igång
 
@@ -35,7 +40,7 @@ Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) oc
 
 Mer information om identitetsnamnutrymmen i [!DNL Experience Platform] finns i [översikten över identitetsnamnrymden](../identity-service/namespaces.md).
 
-## Skickar förfrågningar {#submit}
+## Skicka begäranden {#submit}
 
 Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-time Customer Profile] med hjälp av API:t [!DNL Privacy Service] eller gränssnittet. Innan du läser de här avsnitten rekommenderar vi att du läser igenom dokumentationen till [Privacy Service-API](../privacy-service/api/getting-started.md) eller [Privacy Service-användargränssnittet](../privacy-service/ui/overview.md) för att få instruktioner om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
@@ -95,7 +100,6 @@ curl -X POST \
     "include": ["ProfileService"],
     "expandIds": false,
     "priority": "normal",
-    "analyticsDeleteMethod": "anonymize",
     "regulation": "ccpa"
 }'
 ```
