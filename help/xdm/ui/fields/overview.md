@@ -5,10 +5,9 @@ title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1256'
 ht-degree: 3%
 
 ---
@@ -53,6 +52,8 @@ I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera i
 | [!UICONTROL Display name] | Ett användarvänligt fältnamn. |
 | [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja en av de [standardskalära typerna](../../schema/field-constraints.md) som stöds av XDM, eller en av de flerfälttyper [som har definierats i [!DNL Schema Registry].](../resources/data-types.md)<br><br>Du kan också välja  **[!UICONTROL Advanced type search]** att söka efter och filtrera befintliga datatyper och enklare hitta den önskade typen. |
 
+{style=&quot;table-layout:auto&quot;}
+
 Du kan även ange ett valfritt, läsbart **[!UICONTROL Description]** till fältet för att ge mer kontext till fältets avsedda användningsfall.
 
 >[!NOTE]
@@ -90,6 +91,8 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 | [!UICONTROL Maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När den här begränsningen används måste villkoret [!UICONTROL Exclusive maximum value] lämnas tomt. |
 | [!UICONTROL Exclusive minimum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen måste villkoret [!UICONTROL Minimum value] (icke-exklusiv) lämnas tomt. |
 | [!UICONTROL Exclusive maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen måste villkoret [!UICONTROL Maximum value] (icke-exklusiv) lämnas tomt. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Speciella fälttyper {#special}
 
