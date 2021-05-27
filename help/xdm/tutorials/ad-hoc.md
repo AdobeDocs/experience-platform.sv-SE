@@ -6,10 +6,9 @@ description: Under särskilda omständigheter kan det vara nödvändigt att skap
 topic-legacy: tutorial
 type: Tutorial
 exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '832'
 ht-degree: 1%
 
 ---
@@ -87,6 +86,8 @@ curl -X POST \
 | `$ref` | Databeteendet för den nya klassen. För ad hoc-klasser måste det här värdet anges till `https://ns.adobe.com/xdm/data/adhoc`. |
 | `properties._adhoc` | Ett objekt som innehåller anpassade fält för klassen, uttryckt som nyckelvärdepar med fältnamn och datatyper. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar informationen om den nya klassen och ersätter `properties._adhoc`-objektets namn med ett GUID som är en systemgenererad, skrivskyddad unik identifierare för klassen. Attributet `meta:datasetNamespace` genereras också automatiskt och inkluderas i svaret.
@@ -147,6 +148,8 @@ Ett lyckat svar returnerar informationen om den nya klassen och ersätter `prope
 | Egenskap | Beskrivning |
 | --- | --- |
 | `$id` | En URI som fungerar som en skrivskyddad, systemgenererad unik identifierare för den nya ad hoc-klassen. Det här värdet används i nästa steg när du skapar ett ad hoc-schema. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Skapa ett ad hoc-schema
 
@@ -238,6 +241,8 @@ GET /tenant/schemas/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det ad hoc-schema som du vill komma åt. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
