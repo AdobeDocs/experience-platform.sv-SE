@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 632ea4e2a94bfcad098a5fc5a5ed8985c0f41e0e
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '3580'
+source-wordcount: '3583'
 ht-degree: 0%
 
 ---
@@ -293,6 +293,8 @@ Det finns några viktiga faktorer att tänka på när du väljer objekt framför
 | --- | --- |
 | Ökar kapsling | Mindre eller ingen kapsling |
 | Skapar logiska fältgrupperingar | Fält placeras på ad hoc-platser |
+
+{style=&quot;table-layout:auto&quot;}
 
 #### Objekt
 
