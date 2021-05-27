@@ -6,20 +6,17 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-translation-type: tm+mt
-source-git-commit: d6f1521470b8dc630060584189690545c724de6b
+source-git-commit: 091f6751f4377a25844328ce924f3c33899b3344
 workflow-type: tm+mt
-source-wordcount: '550'
-ht-degree: 1%
+source-wordcount: '723'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en [!DNL Azure Event Hubs]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
-
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till ett [!DNL Azure Event Hubs]-konto.
+I den här självstudiekursen får du hjälp med att ansluta [!DNL Azure Event Hubs] (nedan kallat &quot;[!DNL Event Hubs]&quot;) till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -28,44 +25,30 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 - [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
 - [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett [!DNL Azure Event Hubs]-konto med API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta [!DNL Event Hubs] till plattformen med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Azure Event Hubs]-konto måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Event Hubs]-konto måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `sasKey` | Den genererade signaturen för delad åtkomst. |
-| `namespace` | Namnområdet för de händelsehubbar som du försöker komma åt. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Azure Event Hubs]: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `namespace` | Namnområdet för [!DNL Event Hubs] som du försöker komma åt. Ett [!DNL Event Hubs]-namnutrymme ger en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
 
 Mer information om dessa värden finns i [det här händelsehubbsdokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+Det första steget i att skapa en källanslutning är att autentisera källan för [!DNL Event Hubs] och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-- `Authorization: Bearer {ACCESS_TOKEN}`
-- `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-- `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-- `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Azure Event Hubs]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Event Hubs] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -105,20 +88,74 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `auth.params.sasKey` | Den genererade signaturen för delad åtkomst. |
-| `namespace` | Namnområdet för [!DNL Event Hubs] som du försöker komma åt. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Azure Event Hubs]: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `auth.params.namespace` | Namnområdet för [!DNL Event Hubs] som du försöker komma åt. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
+Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusive dess unika identifierare (`id`). Detta anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
 
 ```json
 {
-    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
+    "id": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
     "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
 }
 ```
 
+## Skapa en källanslutning
+
+En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
+
+Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för API:t [!DNL Flow Service].
+
+**API-format**
+
+```http
+POST /sourceConnections
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+    -H 'authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'content-type: application/json' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_Org}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -d '{
+        "name": "Azure Event Hubs source connection",
+        "description": "A source connection for Azure Event Hubs",
+        "baseConnectionId": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+        "connectionSpec": {
+            "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+            "version": "1.0"
+        },
+        "data": {
+            "format": "json"
+        },
+        "params": {
+            "eventHubName": "{EVENTHUB_NAME}",
+            "dataType": "raw",
+            "reset": "latest",
+            "consumerGroup": "{CONSUMER_GROUP}"
+        }
+    }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
+| `description` | Ett valfritt värde som du kan ange för att inkludera mer information om din källanslutning. |
+| `baseConnectionId` | Anslutnings-ID för din [!DNL Event Hubs]-källa som genererades i föregående steg. |
+| `connectionSpec.id` | Det fasta anslutningsspecifikations-ID:t för [!DNL Event Hubs]. Detta ID är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+| `data.format` | Formatet på de [!DNL Event Hubs]-data som du vill importera. För närvarande är det enda dataformat som stöds `json`. |
+| `params.eventHubName` | Namnet på din [!DNL Event Hubs]-källa. |
+| `params.dataType` | Den här parametern definierar vilken typ av data som importeras. Datatyper som stöds är: `raw` och `xdm`. |
+| `params.reset` | Den här parametern definierar hur data läses. Använd `latest` för att börja läsa från de senaste data och använd `earliest` för att börja läsa från de första tillgängliga data i strömmen. Den här parametern är valfri och standardvärdet är `earliest` om den inte anges. |
+| `params.consumerGroup` | Publicerings- eller prenumerationsmekanismen som ska användas för [!DNL Event Hubs]. Den här parametern är valfri och standardvärdet är `$Default` om den inte anges. Mer information finns i den här [[!DNL Event Hubs] handboken om händelsekonsumenter](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers). |
+
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Azure Event Hubs]-anslutning med API:er och ett unikt ID hämtades som en del av svarstexten. Du kan använda detta anslutnings-ID för att [samla in strömmande data med API:t för flödestjänst](../../collect/streaming.md).
+I den här självstudiekursen har du skapat en [!DNL Event Hubs]-källanslutning med hjälp av API:t [!DNL Flow Service]. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med hjälp av [!DNL Flow Service] API](../../collect/streaming.md).
