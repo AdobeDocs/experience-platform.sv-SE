@@ -5,10 +5,9 @@ title: Schemafältgrupp för information om segmentmedlemskap
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -31,6 +30,8 @@ ht-degree: 0%
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `segmentMembership` | Mappa | Ett kartobjekt som beskriver personens segmentmedlemskap. Objektets struktur beskrivs närmare nedan. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Följande är ett exempel på en `segmentMembership`-karta som systemet har fyllt i för en viss profil. Segmentmedlemskap sorteras efter namnutrymme, vilket anges av objektets rotnivånycklar. De enskilda nycklarna under varje namnutrymme representerar i sin tur ID:n för de segment som profilen är medlem i. Varje segmentobjekt innehåller flera underfält med mer information om medlemskapet:
 
@@ -78,6 +79,8 @@ Följande är ett exempel på en `segmentMembership`-karta som systemet har fyll
 | `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. |
 | `xdm:status` | Anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
 | `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger nyttolastens typ (`boolean`,  `number`,  `propensity` eller  `string`), medan dess jämställda egenskap anger värdet för nyttolasttypen. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
