@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för sandlådan
 topic-legacy: user guide
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 8c1c7b6b01b55bd15c492b0f62d280c1e9a98070
+source-git-commit: ba03ec805d29a95ee7d0d1a23a756feaadcea407
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '814'
 ht-degree: 0%
 
 ---
@@ -84,6 +84,28 @@ I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan o
 
 ![reset-confirm](../images/ui/reset-confirm.png)
 
+Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar att återställningen lyckades.
+
+![framgång](../images/ui/success.png)
+
+### Felmeddelanden
+
+En standardproduktionssandlåda som innehåller CDA-data kan inte återställas och returnerar följande fel.
+
+![cda](../images/ui/cda.png)
+
+En standardproduktionssandlåda som innehåller PBD-data kan inte heller återställas och returnerar följande fel.
+
+![pbd](../images/ui/pbd.png)
+
+En standardproduktionssandlåda som innehåller data för både CDA och PBD kan inte heller återställas och returnerar följande fel.
+
+![båda](../images/ui/both.png)
+
+En produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan inte heller återställas och returnerar följande fel.
+
+![seg](../images/ui/seg.png)
+
 ## Ta bort en sandlåda
 
 >[!IMPORTANT]
@@ -103,6 +125,10 @@ En dialogruta visas med en uppmaning om att bekräfta ditt val. Välj **[!UICONT
 I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan och väljer **[!UICONTROL Continue]**
 
 ![delete-confirm](../images/ui/delete-confirm.png)
+
+En produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan inte tas bort och returnerar följande fel.
+
+![seg](../images/ui/seg.png)
 
 ## Nästa steg
 
