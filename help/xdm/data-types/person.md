@@ -5,10 +5,9 @@ title: Persondatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Person Experience Data Model).
 exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '337'
 ht-degree: 3%
 
 ---
@@ -29,6 +28,8 @@ ht-degree: 3%
 | `maritalStatus` | Sträng | Beskriver en persons relation med en viktig annan person. Värdet för den här egenskapen måste vara lika med ett av följande uppräkningsvärden. <li> `married` </li> <li> `single` </li> <li> `divorced` </li> <li> `widowed` </li> <li> `not_specified` </li> Standardvärdet för det här värdet är `not_specified`. |
 | `nationality` | Sträng | Det rättsliga förhållandet mellan en person och deras stat representerat med ISO 3166-1 Alpha-2-koden. Egenskapens format måste överensstämma med det här reguljära uttrycket `^[A-Z]{2}$`. |
 | `taxId` | Sträng | Personens skatte- eller skatte-ID, t.ex. TIN (Taxpayer Identification Number) i USA eller Certificado de Identificación Fiscal (CIF/NIF) i Spanien. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
