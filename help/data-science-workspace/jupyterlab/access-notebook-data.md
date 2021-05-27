@@ -5,11 +5,10 @@ title: Dataåtkomst i Jupyterlab-anteckningsböcker
 topic-legacy: Developer Guide
 description: Den här guiden fokuserar på hur du använder Jupyter-anteckningsböcker, som är byggda i Data Science Workspace, för att få tillgång till dina data.
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c2c2b1684e2c2c3c76dc23ad1df720abd6c4356c
 workflow-type: tm+mt
-source-wordcount: '3031'
-ht-degree: 9%
+source-wordcount: '3220'
+ht-degree: 8%
 
 ---
 
@@ -386,6 +385,18 @@ Ett anpassat kommando för [!DNL Data Science Workspace]-magi för att läsa ell
 - **Läs exempel**:  `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0`
 - **Exempel** på skrivning:  `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0`
 
+>[!IMPORTANT]
+>
+> Cachelagring av data med `df.cache()` innan data skrivs kan förbättra prestandan för bärbara datorer avsevärt. Detta kan vara till hjälp om du får något av följande fel:
+> 
+> - Jobbet avbröts på grund av ett scenfel ... Det går bara att zippa RDD-enheter med samma antal element i varje partition.
+> - Fjärransluten RPC-klient har kopplats från och andra minnesfel.
+> - Dåliga prestanda vid läsning och skrivning av datauppsättningar.
+
+> 
+> 
+Mer information finns i [felsökningsguiden](../troubleshooting-guide.md).
+
 Du kan generera exemplen ovan automatiskt i JupyterLab-köp med följande metod:
 
 Välj fliken Data icon (markerad nedan) i den vänstra navigeringen i JupyterLab. Katalogerna **[!UICONTROL Datasets]** och **[!UICONTROL Schemas]** visas. Välj **[!UICONTROL Datasets]** och högerklicka och välj sedan alternativet **[!UICONTROL Write Data in Notebook]** i listrutan för den datauppsättning som du vill använda. En körbar kodpost visas längst ned i anteckningsboken.
@@ -476,6 +487,18 @@ val spark = SparkSession
 
 I Scala kan du importera `clientContext` för att hämta och returnera plattformsvärden, vilket eliminerar behovet av att definiera variabler som `var userToken`. I exemplet Scala nedan används `clientContext` för att hämta och returnera alla värden som behövs för att läsa en datauppsättning.
 
+>[!IMPORTANT]
+>
+> Cachelagring av data med `df.cache()` innan data skrivs kan förbättra prestandan för bärbara datorer avsevärt. Detta kan vara till hjälp om du får något av följande fel:
+> 
+> - Jobbet avbröts på grund av ett scenfel ... Det går bara att zippa RDD-enheter med samma antal element i varje partition.
+> - Fjärransluten RPC-klient har kopplats från och andra minnesfel.
+> - Dåliga prestanda vid läsning och skrivning av datauppsättningar.
+
+> 
+> 
+Mer information finns i [felsökningsguiden](../troubleshooting-guide.md).
+
 ```scala
 import org.apache.spark.sql.{Dataset, SparkSession}
 import com.adobe.platform.token.ClientContext
@@ -520,6 +543,18 @@ Och
 ### Skriv till en datauppsättning {#scala-write-dataset}
 
 I Scala kan du importera `clientContext` för att hämta och returnera plattformsvärden, vilket eliminerar behovet av att definiera variabler som `var userToken`. I exemplet Scala nedan används `clientContext` för att definiera och returnera alla värden som behövs för att skriva till en datauppsättning.
+
+>[!IMPORTANT]
+>
+> Cachelagring av data med `df.cache()` innan data skrivs kan förbättra prestandan för bärbara datorer avsevärt. Detta kan vara till hjälp om du får något av följande fel:
+> 
+> - Jobbet avbröts på grund av ett scenfel ... Det går bara att zippa RDD-enheter med samma antal element i varje partition.
+> - Fjärransluten RPC-klient har kopplats från och andra minnesfel.
+> - Dåliga prestanda vid läsning och skrivning av datauppsättningar.
+
+> 
+> 
+Mer information finns i [felsökningsguiden](../troubleshooting-guide.md).
 
 ```scala
 import org.apache.spark.sql.{Dataset, SparkSession}
