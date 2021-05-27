@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-translation-type: tm+mt
-source-git-commit: 96f400466366d8a79babc194bc2ba8bf19ede6bb
+source-git-commit: b672eab481a8286f92741a971991c7f83102acf7
 workflow-type: tm+mt
-source-wordcount: '1090'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -416,3 +415,59 @@ Om rubriken `Authorization` inte finns, eller om en åtkomsttoken som är ogilti
     }
 }
 ```
+
+### Bokför rådata som ska importeras till plattformen {#ingest-data}
+
+Nu när du har skapat ditt flöde kan du skicka ditt JSON-meddelande till direktuppspelningsslutpunkten som du skapade tidigare.
+
+**API-format**
+
+```http
+POST /collection/{CONNECTION_ID}
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{CONNECTION_ID}` | Värdet `id` för den nyligen skapade direktuppspelningsanslutningen. |
+
+**Begäran**
+
+Exemplet begär att rådata importeras till strömningsslutpunkten som skapades tidigare.
+
+```shell
+curl -X POST https://dcs.adobedc.net/collection/2301a1f761f6d7bf62c5312c535e1076bbc7f14d728e63cdfd37ecbb4344425b \
+  -H 'Content-Type: application/json' \
+  -H 'x-adobe-flow-id: 1f086c23-2ea8-4d06-886c-232ea8bd061d' \
+  -d '{
+      "name": "Johnson Smith",
+      "location": {
+          "city": "Seattle",
+          "country": "United State of America",
+          "address": "3692 Main Street"
+      },
+      "gender": "Male"
+      "birthday": {
+          "year": 1984
+          "month": 6
+          "day": 9
+      }
+  }'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med information om den nya informationen.
+
+```json
+{
+    "inletId": "{CONNECTION_ID}",
+    "xactionId": "1584479347507:2153:240",
+    "receivedTimeMs": 1584479347507
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `{CONNECTION_ID}` | ID:t för den tidigare skapade direktuppspelningsanslutningen. |
+| `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
+| `receivedTimeMs` | En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
