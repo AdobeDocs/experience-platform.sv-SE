@@ -5,10 +5,9 @@ title: Fältgrupp för arbetskontaktinformation
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Arbetskontaktinformation.
 exl-id: 0133622c-e95f-4833-b2f8-3694d41751b4
-translation-type: tm+mt
-source-git-commit: 4755f9b7666efd8354a5f15aeed40a7da4a06efe
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '187'
 ht-degree: 1%
 
 ---
@@ -30,6 +29,8 @@ ht-degree: 1%
 | `workEmail` | [E-postadress](../../data-types/email-address.md) | Beskriver personens e-postadress till arbetet. |
 | `workPhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens telefonnummer till arbetet. |
 | `organizations` | String (Array) | En array med friformssträngar som representerar de organisationer som personen är medlem i. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
