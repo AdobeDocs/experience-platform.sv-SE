@@ -5,10 +5,9 @@ title: Exportera/importera API-slutpunkter
 description: Med slutpunkterna /export och /import i API:t för schemaregister kan du dela XDM-resurser mellan IMS-organisationer och sandlådor.
 topic-legacy: developer guide
 exl-id: 33b62f75-2670-42f4-9aac-fa1540cd7d4a
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -36,6 +35,8 @@ GET /rpc/export/{RESOURCE_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{RESOURCE_ID}` | `meta:altId` eller URL-kodad `$id` för XDM-resursen som du vill exportera. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
