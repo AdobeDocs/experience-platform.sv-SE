@@ -6,10 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f13afbd70db18e5faa1a101300f3dc7ec944baa3
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
@@ -20,7 +19,7 @@ ht-degree: 0%
 >
 >[!DNL Google PubSub]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att vägleda dig genom stegen för att ansluta [!DNL Google PubSub] (kallas nedan &quot;[!DNL PubSub]&quot;) till Adobe Experience Platform.
+I den här självstudiekursen får du hjälp med att ansluta [!DNL Google PubSub] (nedan kallat &quot;[!DNL PubSub]&quot;) till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -29,7 +28,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL PubSub]-källanslutning med hjälp av API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta [!DNL PubSub] till plattformen med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -39,36 +38,23 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL PubSub] måste du ange
 | ---------- | ----------- |
 | `projectId` | Det projekt-ID som krävs för att autentisera [!DNL PubSub]. |
 | `credentials` | Autentiseringsuppgiften eller nyckeln som krävs för att autentisera [!DNL PubSub]. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som är kopplade till att skapa bas- och källmålanslutningarna. Anslutningsspecifikations-ID för [!DNL PubSub] är: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
-Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication)-dokument. Om du använder kontobaserad autentisering för tjänster kan du läsa följande [PubSub-guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar autentiseringsuppgifter.
+Mer information om dessa värden finns i det här [[!DNL PubSub] autentiseringsdokumentet](https://cloud.google.com/pubsub/docs/authentication). Om du vill använda tjänstkontobaserad autentisering läser du den här [[!DNL PubSub] guiden om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
 >[!TIP]
 >
 >Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+Det första steget i att skapa en källanslutning är att autentisera källan för [!DNL PubSub] och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL PubSub]-konto eftersom den kan användas för att skapa flera dataflöden för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL PubSub] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -77,14 +63,6 @@ POST /connections
 ```
 
 **Begäran**
-
-För att kunna skapa en [!DNL PubSub]-anslutning måste leverantörs-ID och anslutningsspecifikations-ID anges som en del av POSTEN. Leverantörs-ID är `521eee4d-8cbe-4906-bb48-fb6bd4450033` och anslutningsspecifikations-ID är `70116022-a743-464a-bbfe-e226a7f8210c`.
-
-**API-format**
-
-```http
-POST /connections
-```
 
 ```shell
 curl -X POST \
@@ -97,7 +75,6 @@ curl -X POST \
     -d '{
         "name": "Google PubSub connection",
         "description": "Google PubSub connection",
-        "providerId": "521eee4d-8cbe-4906-bb48-fb6bd4450033",
         "auth": {
             "specName": "Google PubSub authentication credentials",
             "params": {
@@ -120,7 +97,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar anslutnings-ID:t för den nyligen skapade [!DNL PubSub]-anslutningen. Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
+Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta grundläggande anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
 
 ```json
 {
@@ -129,6 +106,69 @@ Ett lyckat svar returnerar anslutnings-ID:t för den nyligen skapade [!DNL PubSu
 }
 ```
 
+## Skapa en källanslutning {#source}
+
+En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
+
+Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för API:t [!DNL Flow Service].
+
+**API-format**
+
+```http
+POST /sourceConnections
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+    -H 'authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'content-type: application/json' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_Org}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -d '{
+        "name": "Google PubSub source connection",
+        "description": "A source connection for Google PubSub",
+        "baseConnectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
+        "connectionSpec": {
+            "id": "70116022-a743-464a-bbfe-e226a7f8210c",
+            "version": "1.0"
+        },
+        "data": {
+            "format": "json"
+        },
+        "params": {
+            "topicId": "{TOPIC_ID}",
+            "subscriptionId": "{SUBSCRIPTION_ID}",
+            "dataType": "raw"
+        }
+    }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
+| `description` | Ett valfritt värde som du kan ange för att inkludera mer information om din källanslutning. |
+| `baseConnectionId` | Det grundläggande anslutnings-ID för din [!DNL PubSub]-källa som genererades i föregående steg. |
+| `connectionSpec.id` | Det fasta anslutningsspecifikations-ID:t för [!DNL PubSub]. Detta ID är: `70116022-a743-464a-bbfe-e226a7f8210c` |
+| `data.format` | Formatet på de [!DNL PubSub]-data som du vill importera. För närvarande är det enda dataformat som stöds `json`. |
+| `params.topicId` | Ämne-ID definierar den specifika namngivna resursen som meddelanden skickas av utgivare |
+| `params.subscriptionId` | Prenumerations-ID:t definierar den specifika namngivna resursen som representerar flödet av meddelanden från ett specifikt ämne som ska levereras till prenumerationsprogrammet. |
+| `params.dataType` | Den här parametern definierar vilken typ av data som importeras. Datatyper som stöds är: `raw` och `xdm`. |
+
+**Svar**
+
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudiekurs för att skapa ett dataflöde.
+
+```json
+{
+    "id": "e96d6135-4b50-446e-922c-6dd66672b6b2",
+    "etag": "\"66013508-0000-0200-0000-5f6e2ae70000\""
+}
+```
+
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en [!DNL PubSub]-anslutning med hjälp av API:t [!DNL Flow Service] och skaffat dess unika anslutnings-ID. Du kan använda detta anslutnings-ID för att [samla in strömmande data med API:t för flödestjänst](../../collect/streaming.md).
+I den här självstudiekursen har du skapat en [!DNL PubSub]-källanslutning med hjälp av API:t [!DNL Flow Service]. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med hjälp av [!DNL Flow Service] API](../../collect/streaming.md).
