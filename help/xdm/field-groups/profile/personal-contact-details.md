@@ -5,10 +5,9 @@ title: Schemafältgrupp för personlig kontaktinformation
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Personlig kontaktinformation.
 exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
-translation-type: tm+mt
-source-git-commit: 4755f9b7666efd8354a5f15aeed40a7da4a06efe
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '160'
+source-wordcount: '163'
 ht-degree: 1%
 
 ---
@@ -31,6 +30,8 @@ ht-degree: 1%
 | `homePhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens telefonnummer hemma. |
 | `mobilePhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens mobiltelefonnummer. |
 | `personalEmail` | [E-postadress](../../data-types/email-address.md) | Beskriver personens e-postadress. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
