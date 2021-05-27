@@ -5,10 +5,9 @@ title: API-slutpunkt för scheman
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1431'
+source-wordcount: '1458'
 ht-degree: 0%
 
 ---
@@ -40,6 +39,8 @@ GET /{CONTAINER_ID}/schemas?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som innehåller de scheman som du vill hämta: `global` för scheman som skapats av Adobe eller `tenant` för scheman som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en lista med scheman från `tenant`-behållaren och använder en `orderby`-frågeparameter för att sortera resultaten efter deras `title`-attribut.
@@ -60,6 +61,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, med det ursprungliga `$ref` och `allOf` inkluderat. (Gräns: 300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -110,6 +113,8 @@ GET /{CONTAINER_ID}/schemas/{SCHEMA_ID}
 | `{CONTAINER_ID}` | Behållaren som innehåller det schema som du vill hämta: `global` för ett schema som skapats av Adobe eller `tenant` för ett schema som ägs av din organisation. |
 | `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill söka efter. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar ett schema som anges av dess `meta:altId`-värde i sökvägen.
@@ -133,6 +138,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -229,6 +236,8 @@ curl -X POST \
 | --- | --- |
 | `allOf` | En array med objekt, där varje objekt refererar till en klass eller fältgrupp vars fält schemat implementerar. Varje objekt innehåller en enda egenskap (`$ref`) vars värde representerar `$id` för den klass eller fältgrupp som det nya schemat ska implementera. En klass måste anges, med noll eller flera ytterligare fältgrupper. I ovanstående exempel är det enda objektet i `allOf`-arrayen schemaklassen. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altId` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
@@ -287,6 +296,8 @@ PUT /tenant/schemas/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill skriva om. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -369,6 +380,8 @@ PATCH /tenant/schema/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för schemat som du vill uppdatera. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 I exempelbegäran nedan läggs en ny fältgrupp till i ett schema genom att fältgruppens `$id`-värde läggs till i både `meta:extends`- och `allOf`-arrayerna.
@@ -440,7 +453,7 @@ Svaret visar att båda åtgärderna har utförts. Fältgruppen `$id` har lagts t
 }
 ```
 
-## Aktivera ett schema för användning i kundprofilen {#union} i realtid
+## Aktivera ett schema för användning i kundprofilen i realtid {#union}
 
 För att ett schema ska kunna ingå i [kundprofil för realtid](../../profile/home.md) måste du lägga till en `union`-tagg i schemats `meta:immutableTags`-matris. Du kan uppnå detta genom att göra en PATCH-begäran för det aktuella schemat.
 
@@ -457,6 +470,8 @@ PATCH /tenant/schema/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för schemat som du vill aktivera. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -538,6 +553,8 @@ DELETE /tenant/schemas/{SCHEMA_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för schemat som du vill ta bort. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
