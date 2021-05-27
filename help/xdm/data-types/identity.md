@@ -5,10 +5,9 @@ title: Identitetsdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Identity XDM.
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '284'
 ht-degree: 2%
 
 ---
@@ -26,6 +25,8 @@ ht-degree: 2%
 | `id` | Sträng | Identiteten för konsumenten i det relaterade namnutrymmet. |
 | `primary` | Boolean | Anger om detta är den primära identiteten för den enskilda personen. Varje enskild person kan bara ha en primär identitet. |
 | `xid` | Sträng | Om det finns en sådan representerar det här värdet en identifierare för korsnamnutrymme som är unik för alla identifierare som omfattar alla namnutrymmen i alla namnutrymmen. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
