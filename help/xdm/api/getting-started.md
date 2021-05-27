@@ -5,10 +5,9 @@ title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
@@ -212,6 +211,8 @@ I följande tabell visas kompatibla `Accept`-huvudvärden, inklusive de med vers
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw XDM med `$ref` och `allOf`. Inga rubriker eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` attribut och  `allOf` lösta. Inga rubriker eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` attribut och  `allOf` lösta. Beskrivningar ingår. |
+
+{style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
