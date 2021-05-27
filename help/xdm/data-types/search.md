@@ -5,10 +5,9 @@ title: Sökdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Search Experience Data Model).
 exl-id: 9893cb67-b0c7-4f91-a0d4-96f7b87d9510
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '182'
 ht-degree: 2%
 
 ---
@@ -28,6 +27,8 @@ ht-degree: 2%
 | `searchEngine` | Sträng | Sökmotorn som används av sökningen. |
 | `searchEngineID` | Sträng | Programspecifik identifierare som används för att identifiera sökmotorn. |
 | `slot` | Sträng | Det namngivna avsnittet på sidan där sökresultatet visades. Värdet för den här egenskapen måste vara lika med ett av de kända enum-värden som du definierar, till exempel `top`, `side` eller `bottom`. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
