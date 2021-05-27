@@ -5,9 +5,9 @@ title: Klassen XDM ExperienceEvent
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 4f1fe7ca5f09bb1e8e1b913d1dee1cff347d6a24
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1474'
 ht-degree: 0%
 
 ---
@@ -30,6 +30,8 @@ Själva [!DNL XDM ExperienceEvent]-klassen tillhandahåller flera tidsserierelat
 | `producedBy` | Ett strängvärde som beskriver producenten eller händelsens ursprung. Detta fält kan användas för att filtrera bort vissa händelseproducenter om det behövs för segmenteringsändamål.<br><br>Vissa föreslagna värden för den här egenskapen finns i  [bilageavsnittet](#producedBy). Det här fältet är en utökningsbar uppräkning, vilket innebär att du kan använda dina egna strängar för att representera olika händelseproducenter. |
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill använda det här fältet för [Kundprofil för realtid](../../profile/home.md) ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i  [grunderna för ](../schema/composition.md#identityMap) schemakompositioner. |
 | `timestamp` | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339 Section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Den här tidsstämpeln måste finnas tidigare. Mer information om hur du använder det här fältet finns i avsnittet nedan om [tidsstämplar](#timestamps). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Bästa tillvägagångssätt för händelsemodellering
 
@@ -100,6 +102,8 @@ I följande tabell visas de godkända värdena för `eventType`, tillsammans med
 | `delivery.feedback` | Feedback-händelser för en leverans, till exempel en e-postleverans. |
 | `message.feedback` | Feedback-händelser som skickade/studsade/fel för meddelanden som skickats till en kund. |
 | `message.tracking` | Spåra händelser som öppna/klicka/anpassade åtgärder för meddelanden som skickas till en kund. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Föreslagna värden för `producedBy` {#producedBy}
 
