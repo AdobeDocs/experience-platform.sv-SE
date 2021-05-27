@@ -5,9 +5,9 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 feature: Datahantering
-source-git-commit: 4ed738b2b71332db1602d5571797ed61214afc2d
+source-git-commit: bcb80d7d27ab88e56450ddd99102871db23fbca8
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '152'
 ht-degree: 14%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 14%
    * [Sammanfoga händelsedata](fundamentals/merging-event-data.md)
    * [Konfigurera en CSP](fundamentals/configuring-a-csp.md)
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)
+   * [Användningsexempel som stöds](fundamentals/supported-use-cases.md)
 * Identitet {#identity}
    * [Översikt](identity/overview.md)
 * Datainsamling {#data-collection}
