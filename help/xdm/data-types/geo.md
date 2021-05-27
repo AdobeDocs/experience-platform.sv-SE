@@ -5,10 +5,9 @@ title: Geo-datatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Geo XDM.
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '193'
+source-wordcount: '196'
 ht-degree: 3%
 
 ---
@@ -29,6 +28,8 @@ ht-degree: 3%
 | `msaID` | Heltal | Det statistiska storstadsområdet i Förenta staterna där observationen gjordes. |
 | `postalCode` | Sträng | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
 | `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer standarden [ISO 3166-2 (land och delområde)](http://www.unece.org/cefact/locode/subdivisions.html). |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
