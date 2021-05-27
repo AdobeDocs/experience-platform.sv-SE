@@ -5,10 +5,9 @@ title: Begränsningar för XDM-fälttyp
 topic-legacy: overview
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-translation-type: tm+mt
-source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
+source-git-commit: 61025ada3a900a5bd7682e3bb7d4f6cd23347231
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1066'
 ht-degree: 1%
 
 ---
@@ -169,6 +168,8 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL DateTime] | Typ: `INT64`<br>Anteckning: `TIMESTAMP_MILLIS` | `TimestampType` | `java.util.Date` |
 | [!UICONTROL Boolean] | Typ: `BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
 | [!UICONTROL Map] | `MAP`-annotated group<br><br>(`<key-type>` must be  `STRING`) | `MapType`<br><br>(`keyType` måste vara  `StringType`) | `java.util.Map` |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Scala, .NET och CosmosDB {#scala}
 
