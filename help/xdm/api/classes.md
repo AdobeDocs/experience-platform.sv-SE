@@ -5,10 +5,9 @@ title: API-slutpunkt för klasser
 description: Med slutpunkten /classes i API:t för schemaregister kan du programmässigt hantera XDM-klasser i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: 7beddb37-0bf2-4893-baaf-5b292830f368
-translation-type: tm+mt
-source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1529'
 ht-degree: 0%
 
 ---
@@ -49,6 +48,8 @@ GET /{CONTAINER_ID}/classes?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som du vill hämta klasser från: `global` för klasser som skapats av Adobe eller `tenant` för klasser som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en lista med klasser från `tenant`-behållaren med en `orderby`-frågeparameter för att sortera klasserna efter deras `title`-attribut.
@@ -69,6 +70,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Ac
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-klassen för varje resurs, med ursprunglig `$ref` och `allOf` inkluderad. (Gräns: 300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -125,6 +128,8 @@ GET /{CONTAINER_ID}/classes/{CLASS_ID}
 | `{CONTAINER_ID}` | Den behållare som innehåller den klass som du vill hämta: `global` för en klass som skapats av Adobe eller `tenant` för en klass som ägs av din organisation. |
 | `{CLASS_ID}` | `meta:altId` eller URL-kodad `$id` för den klass som du vill söka efter. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Följande begäran hämtar en klass med det `meta:altId`-värde som anges i sökvägen.
@@ -148,6 +153,8 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -314,6 +321,8 @@ curl -X POST \
 | `_{TENANT_ID}` | Namnutrymmet `TENANT_ID` för din organisation. Alla resurser som skapas av organisationen måste inkludera den här egenskapen för att undvika kollisioner med andra resurser i [!DNL Schema Registry]. |
 | `allOf` | En lista med resurser vars egenskaper ska ärvas av den nya klassen. Ett av `$ref`-objekten i arrayen definierar klassens beteende. I det här exemplet ärver klassen&quot;record&quot;-beteendet. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade klassen, inklusive `$id`, `meta:altId` och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
@@ -399,6 +408,8 @@ PUT /tenant/classes/{CLASS_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CLASS_ID}` | `meta:altId` eller URL-kodad `$id` för den klass som du vill skriva om. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -535,6 +546,8 @@ PATCH /tenant/class/{CLASS_ID}
 | --- | --- |
 | `{CLASS_ID}` | URL-kodad `$id` URI eller `meta:altId` för den klass som du vill uppdatera. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Begäran**
 
 Exemplbegäran nedan uppdaterar `description` för en befintlig klass och `title` för ett av dess fält.
@@ -634,6 +647,8 @@ DELETE /tenant/classes/{CLASS_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CLASS_ID}` | URL-kodad `$id` URI eller `meta:altId` för den klass som du vill ta bort. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
