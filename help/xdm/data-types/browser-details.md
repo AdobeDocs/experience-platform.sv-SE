@@ -5,11 +5,10 @@ title: Datatypen Webbläsarinformation
 topic-legacy: overview
 description: Dokumentet innehåller en översikt över XDM-datatypen Browser Details.
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '259'
-ht-degree: 5%
+source-wordcount: '262'
+ht-degree: 4%
 
 ---
 
@@ -35,6 +34,8 @@ ht-degree: 5%
 | `version` | Sträng | Program- eller webbläsarversionen. |
 | `viewportHeight` | Heltal | Den lodräta storleken i pixlar i fönstret som händelsen visades inuti. För en webbvyhändelse är detta höjden på webbläsarens visningsruta. |
 | `viewportWidth` | Heltal | Den vågräta storleken i pixlar på fönstret där händelsen visades. För en webbvyhändelse är detta bredden på webbläsarens visningsruta. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
