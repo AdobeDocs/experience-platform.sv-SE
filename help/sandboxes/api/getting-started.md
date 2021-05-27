@@ -5,10 +5,9 @@ title: API-guide för sandlådor
 topic-legacy: developer guide
 description: Med sandbox API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '375'
 ht-degree: 0%
 
 ---
@@ -21,7 +20,7 @@ Den här utvecklarhandboken innehåller steg som hjälper dig att använda sandb
 
 ## Komma igång med sandbox-API
 
-För att kunna hantera sandlådor för din IMS-organisation måste du ha administratörsbehörighet för sandlådan. Användare utan åtkomstbehörighet kan bara använda slutpunkten för [att visa aktiva sandlådor för den aktuella användaren](./list-active-sandboxes.md). Mer information om hur du tilldelar sandlådebehörigheter för Experience Platform finns i [översikten över åtkomstkontroll](../../access-control/home.md).
+För att kunna hantera sandlådor för din IMS-organisation måste du ha administratörsbehörighet för sandlådan. Användare utan åtkomstbehörighet kan bara använda [tillgängliga sandlådeslutpunkter](./available.md) för att lista aktiva sandlådor för den aktuella användaren. Mer information om hur du tilldelar sandlådebehörigheter för Experience Platform finns i [översikten över åtkomstkontroll](../../access-control/home.md).
 
 ### Läser exempel-API-anrop
 
