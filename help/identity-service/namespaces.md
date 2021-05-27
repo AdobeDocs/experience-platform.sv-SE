@@ -5,9 +5,9 @@ title: Översikt över namnområde för identitet
 topic-legacy: overview
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: c2db929a96883607ea99f08bffc92a5a9bafd01a
+source-git-commit: 700012988fd46e835dcbc441c39f08e4c172ef0f
 workflow-type: tm+mt
-source-wordcount: '1606'
+source-wordcount: '1609'
 ht-degree: 0%
 
 ---
@@ -72,6 +72,8 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 | Telefon (SHA256_E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
 | TNTID | Ett namnutrymme som representerar Adobe Target. Mer information finns i följande dokument på [Mål](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en). |
 | Windows AID | Ett namnutrymme som representerar ett Windows Advertising ID. Mer information finns i följande dokument om [Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041). |
+
+### Visa ID-namnutrymmen
 
 Om du vill visa identitetsnamnutrymmen i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Browse]**.
 
