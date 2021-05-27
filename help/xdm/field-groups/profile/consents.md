@@ -4,10 +4,9 @@ title: Fältgrupp för sekretess-/personaliserings-/marknadsföringsinställning
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Sekretess/personalisering/marknadsföring (samtycke).
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '2263'
+source-wordcount: '2287'
 ht-degree: 0%
 
 ---
@@ -108,7 +107,7 @@ I följande JSON visas ett exempel på den datatyp som fältgruppen [!DNL Consen
 >Du kan generera JSON-exempeldata för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
 >
 >* [Generera exempeldata i användargränssnittet](../../ui/sample.md)
->* [Generera exempeldata i API](../../api/sample-data.md)
+* [Generera exempeldata i API](../../api/sample-data.md)
 
 
 ## Fältanvändningsfall
@@ -129,6 +128,8 @@ De avsedda användningsområdena för vart och ett av dessa fält anges i avsnit
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### `share`
 
 `share` representerar kundens samtycke för huruvida deras data kan delas med (eller säljas till) andra eller tredje part.
@@ -143,15 +144,15 @@ De avsedda användningsområdena för vart och ett av dessa fält anges i avsnit
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### `personalize` {#personalize}
 
 `personalize` Hämtar kundpreferenser för hur deras data kan användas för personalisering. Kunder kan välja bort specifika användningsfall för personalisering eller välja bort helt från personalisering.
 
 >[!IMPORTANT]
->
->`personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
->
->Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
+`personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
+Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
 
 ```json
 "personalize": {
@@ -165,6 +166,8 @@ De avsedda användningsområdena för vart och ett av dessa fält anges i avsnit
 | --- | --- |
 | `content` | Representerar kundens önskemål om personaliserat innehåll på er webbplats eller i er tillämpning. |
 | `val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### `marketing` {#marketing}
 
@@ -199,6 +202,8 @@ De avsedda användningsområdena för vart och ett av dessa fält anges i avsnit
 | `val` | Inställningen som tillhandahålls av kunden för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke ska värdet i detta fält ange grunden för användningen av marknadsföringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 | `time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `metadata`, så behöver det här fältet inte anges för den inställningen. |
 | `reason` | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
+
+{style=&quot;table-layout:auto&quot;}
 
 #### `subscriptions` {#subscriptions}
 
@@ -243,6 +248,8 @@ Egenskaperna `email`, `push` och `sms` för `marketing`-objektet kan representer
 | `type` | Prenumerationstypen. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken. |
 | `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel som anger när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |
 
+{style=&quot;table-layout:auto&quot;}
+
 
 ### `metadata`
 
@@ -258,16 +265,16 @@ Egenskaperna `email`, `push` och `sms` för `marketing`-objektet kan representer
 | --- | --- |
 | `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Om du anger ett `time`-värde under en enskild inställning åsidosätts tidsstämpeln `metadata` för den aktuella inställningen. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### `idSpecific`
 
 `idSpecific` kan användas när ett visst samtycke eller en viss preferens inte gäller för en kund, utan är begränsad till en enda enhet eller ett enda ID. En kund kan till exempel välja att inte ta emot e-post till en adress, samtidigt som e-post kan tillåtas på en annan adress.
 
 >[!IMPORTANT]
->
->Medgivande och inställningar på kanalnivå (dvs. de som anges under `consents` utanför `idSpecific`) gäller för ID:n inom den kanalen. Därför påverkar allt innehåll och alla inställningar på kanalnivå direkt om motsvarande ID- eller enhetsspecifika inställningar uppfylls:
->
->* Om kunden har valt att inte göra det på kanalnivå, ignoreras alla motsvarande samtycke eller inställningar i `idSpecific`.
->* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, respekteras motsvarande samtycke eller inställningar i `idSpecific`.
+Medgivande och inställningar på kanalnivå (dvs. de som anges under `consents` utanför `idSpecific`) gäller för ID:n inom den kanalen. Därför påverkar allt innehåll och alla inställningar på kanalnivå direkt om motsvarande ID- eller enhetsspecifika inställningar uppfylls:
+* Om kunden har valt att inte göra det på kanalnivå, ignoreras alla motsvarande samtycke eller inställningar i `idSpecific`.
+* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, respekteras motsvarande samtycke eller inställningar i `idSpecific`.
 
 
 Varje nyckel i `idSpecific`-objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om identitetsnamnutrymmen finns i [översikten över identitetsnamnrymden](../../../identity-service/namespaces.md) i dokumentationen för identitetstjänsten.
@@ -332,8 +339,7 @@ Det finns också ett samtycke som bara kan ges i `idSpecific`-avsnittet: `adID`.
 ```
 
 >[!NOTE]
->
->Du förväntas inte ange det här värdet direkt eftersom Adobe Experience Platform Mobile SDK automatiskt anger det när det är lämpligt.
+Du förväntas inte ange det här värdet direkt eftersom Adobe Experience Platform Mobile SDK automatiskt anger det när det är lämpligt.
 
 ## Inmatning av data med fältgruppen {#ingest}
 
@@ -342,10 +348,8 @@ Om du vill använda fältgruppen [!DNL Consents & Preferences] för att importer
 I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med fältgruppen [!DNL Consents & Preferences], gå till avsnittet [skapa en datauppsättning](../../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följ stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
->
->Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller fältgruppen [!DNL Consents & Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
->
->Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../../rtcdp/profile/merge-policies.md).
+Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller fältgruppen [!DNL Consents & Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
+Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../../rtcdp/profile/merge-policies.md).
 
 ## Hantera samtycke och ändringar av inställningar
 
@@ -371,6 +375,8 @@ I följande tabell visas godkända värden för `val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### Godkända värden för `preferred` {#preferred-values}
 
 I följande tabell visas godkända värden för `preferred`:
@@ -390,6 +396,8 @@ I följande tabell visas godkända värden för `preferred`:
 | `other` | En kanal som inte passar in i en standardkategori. |
 | `none` | Ingen föredragen kanal. |
 | `unknown` | Den önskade kanalen är okänd. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Fullständigt [!DNL Consents & Preferences]-schema {#full-schema}
 
