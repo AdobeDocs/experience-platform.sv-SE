@@ -5,10 +5,9 @@ title: Schemafältgrupp för detaljer för slutanvändar-ID
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för information om slutanvändar-ID.
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -34,6 +33,8 @@ ht-degree: 0%
 | `mcid` | [Identitet](../../data-types/identity.md) | Adobe Marketing Cloud ID. |
 | `phonenumberid` | [Identitet](../../data-types/identity.md) | Telefonnummer-ID. |
 | `tntid` | [Identitet](../../data-types/identity.md) | Slutanvändar-ID för Adobe Target. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
