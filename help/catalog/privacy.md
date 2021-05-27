@@ -5,11 +5,10 @@ title: Behandling av sekretessförfrågningar i datasjön
 topic-legacy: overview
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e94482532e0c5698cfe5e51ba260f89c67fa64f0
 workflow-type: tm+mt
-source-wordcount: '1279'
-ht-degree: 0%
+source-wordcount: '1345'
+ht-degree: 1%
 
 ---
 
@@ -18,6 +17,12 @@ ht-degree: 0%
 Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
 
 Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i [!DNL Data Lake].
+
+>[!NOTE]
+>
+>Den här guiden beskriver bara hur du gör sekretessförfrågningar för Data Lake i Experience Platform. Om du även planerar att göra sekretessförfrågningar för kundprofildataarkivet i realtid, kan du läsa guiden [sekretesförfrågningsbehandling för profilen](../profile/privacy.md) förutom den här självstudiekursen.
+>
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [dokumentationen till Privacy Servicen](../privacy-service/experience-cloud-apps.md).
 
 ## Komma igång
 
@@ -53,7 +58,7 @@ I det här avsnittet går vi igenom stegen för att lägga till en identitetsbes
 Det finns två metoder för att lägga till en identitetsbeskrivning i ett dataset-schema:
 
 * [Använda gränssnittet](#identity-ui)
-* [Använda API](#identity-api)
+* [Använda API:et](#identity-api)
 
 ### Använda gränssnittet {#identity-ui}
 
@@ -61,7 +66,7 @@ I [!DNL Experience Platform ]användargränssnittet kan du redigera befintliga X
 
 När du har angett rätt fält i schemat som identitetsfält kan du gå vidare till nästa avsnitt om [skicka sekretessförfrågningar](#submit).
 
-### Använda API {#identity-api}
+### Använda API:et {#identity-api}
 
 >[!NOTE]
 >
@@ -129,7 +134,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 }
 ```
 
-## Skickar förfrågningar {#submit}
+## Skicka begäranden {#submit}
 
 >[!NOTE]
 >
@@ -147,7 +152,7 @@ När du skapar jobbbegäranden i användargränssnittet måste du välja **[!UIC
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
-### Använda API
+### Använda API:et
 
 När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för [!DNL Data Lake] måste använda &quot;unregistered&quot; för sitt `type`-värde och ett `namespace`-värde som matchar en [sekretessetikett](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
 
