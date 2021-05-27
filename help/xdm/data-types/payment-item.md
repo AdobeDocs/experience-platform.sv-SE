@@ -5,10 +5,9 @@ title: Betalningsobjektets datatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Payment Item Experience Data Model).
 exl-id: d25a358b-73c1-468b-a9c5-808385689932
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '157'
+source-wordcount: '160'
 ht-degree: 2%
 
 ---
@@ -25,6 +24,8 @@ ht-degree: 2%
 | `paymentAmount` | Dubbel | Betalningens värde. |
 | `paymentType` | Sträng | Betalningsmetoden för den här ordern. Godkända uppräkningsvärden är: <li> `cash` </li> <li> `credit_card` </li> <li> `debit_card` </li> <li> `gift_card` </li> <li> `check` </li> <li> `paypal` </li> <li> `wire_transfer` </li> <li> `credit_card_reference` </li> <li> `other` </li> |
 | `transactionID` | Sträng | Den unika transaktionsidentifieraren för den här betalningsartikeln. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
