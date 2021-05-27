@@ -5,10 +5,9 @@ title: Fältgrupp för schema för demografiska detaljer
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för demografiska detaljer.
 exl-id: 588c044c-b80d-4cb9-9f97-92f040d54bb4
-translation-type: tm+mt
-source-git-commit: f5beb57acf4cc1827bf08b549cd2b3a02fd82b18
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '278'
 ht-degree: 2%
 
 ---
@@ -34,6 +33,8 @@ ht-degree: 2%
 | `person.martialStatus` | Sträng | Beskriver en persons relation med en viktig annan person. |
 | `person.nationality` | Sträng | Det rättsliga förhållandet mellan en person och deras stat representerat med ISO 3166-1 Alpha-2-koden. |
 | `person.taxId` | Sträng | Personens skatte-/skatte-ID, t.ex. TIN i USA eller CIF/NIF i Spanien. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
