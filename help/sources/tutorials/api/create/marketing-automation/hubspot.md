@@ -6,19 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till HubSpot med API:t för Flow Service.
 exl-id: a3e64215-a82d-4aa7-8e6a-48c84c056201
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL HubSpot]-källanslutning med hjälp av API:t [!DNL Flow Service]
-
->[!NOTE]
->
->[!DNL HubSpot]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
