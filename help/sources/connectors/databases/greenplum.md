@@ -5,19 +5,14 @@ title: Översikt över källkopplingen för GreenPlum
 topic-legacy: overview
 description: Lär dig hur du ansluter GreenPlum till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 41757062-9ac8-42d3-91f6-a00866195882
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '190'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL GreenPlum]-koppling
-
->[!NOTE]
->
->[!DNL GreenPlum]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# [!DNL GreenPlum] koppling
 
 Adobe Experience Platform erbjuder systemspecifik anslutning för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
