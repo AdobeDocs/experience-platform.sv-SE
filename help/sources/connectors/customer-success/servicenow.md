@@ -5,19 +5,14 @@ title: ServiceNow Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter ServiceNow till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: f491b367-ec6d-4fb8-8eeb-3178673c0085
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '216'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL ServiceNow]-koppling
-
->[!NOTE]
->
->[!DNL ServiceNow]-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [källöversikten](../../home.md#terms-and-conditions).
+# [!DNL ServiceNow] koppling
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
