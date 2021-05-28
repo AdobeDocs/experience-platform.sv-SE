@@ -5,19 +5,14 @@ title: HubSpot Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter HubSpot till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4bc279ac-9388-4bac-bfae-98878625a554
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL HubSpot]-koppling
-
->[!NOTE]
->
->[!DNL HubSpot]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# [!DNL HubSpot] koppling
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
