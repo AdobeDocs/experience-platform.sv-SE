@@ -6,19 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en HubSpot-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 452b7290-b9e8-4728-8b58-0e0c76bd9449
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '468'
+source-wordcount: '452'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL HubSpot]-källanslutning i användargränssnittet
-
->[!NOTE]
->
-> [!DNL HubSpot]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en [!DNL HubSpot]-källkoppling med användargränssnittet i [!DNL Platform].
 
