@@ -6,19 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning för Azure synapse Analytics (nedan kallad Synapse) med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 1f1ce317-eaaf-4ad2-a5fb-236983220bd7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '443'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Azure Synapse Analytics]-källanslutning i användargränssnittet
-
->[!NOTE]
->
-> [!DNL Azure Synapse Analytics]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en [!DNL Azure Synapse Analytics]-källkoppling (kallas nedan &quot;[!DNL Synapse]&quot;) med hjälp av användargränssnittet i [!DNL Platform].
 
