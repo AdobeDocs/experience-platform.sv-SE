@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: c608ee8360fd07d6f98b31eed3b4691dc7124e12
+source-git-commit: fb5d5e7ecb36d1caa70d5c2d2a4f467e3067de4a
 workflow-type: tm+mt
-source-wordcount: '1340'
+source-wordcount: '1355'
 ht-degree: 1%
 
 ---
@@ -112,5 +112,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Användargränssnittsstöd för komprimerad filinmatning | Du kan nu förhandsgranska och importera komprimerade JSON-filer eller avgränsade filer med hjälp av molnlagringskällor i användargränssnittet. Mer information finns i självstudiekursen om hur du konfigurerar ett dataflöde för en molnlagringskällanslutning i gränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md).[ |
+| Beta-källor som går över till GA | Följande källor har befordrats från beta till GA: <ul><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Azure Synapse Analytics]](../../sources/connectors/databases/synapse-analytics.md)</li><li>[[!DNL Greenplum]](../../sources/connectors/databases/greenplum.md)</li><li>[[!DNL HubSpot]](../../sources/connectors/marketing-automation/hubspot.md)</li><li>[[!DNL ServiceNow]](../../sources/connectors/customer-success/servicenow.md)</li></ul> |
 
 Mer information om källor finns i [Källor - översikt](../../sources/home.md).
