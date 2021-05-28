@@ -6,19 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en ServiceNow-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 66c12f4d-8b0c-4bb2-910d-9e09fa364c94
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '441'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL ServiceNow]-källanslutning i användargränssnittet
-
->[!NOTE]
->
->[!DNL ServiceNow]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en [!DNL ServiceNow]-källkoppling med användargränssnittet i [!DNL Platform].
 
