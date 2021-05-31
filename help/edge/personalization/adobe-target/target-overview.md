@@ -3,16 +3,16 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '658'
-ht-degree: 2%
+source-wordcount: '652'
+ht-degree: 1%
 
 ---
 
 # Använda Adobe Target med Platform Web SDK
 
-Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i Adobe Target i webbkanalen. Du kan använda en WYSIWYG-redigerare som kallas [Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/vec/visual-experience-composer.html) (VEC) eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
+Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i Adobe Target i webbkanalen. Du kan använda en WYSIWYG-redigerare som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC) eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
 
 Följande funktioner har testats och stöds för närvarande i Target:
 
@@ -116,7 +116,7 @@ alloy("sendEvent", {
 
 ## Målgrupper i XDM
 
-När du definierar målgrupper för målaktiviteter som levereras via Adobe Experience Platform Web SDK måste [XDM](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html) definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en målgruppsregel som definieras av XDM-data för målgruppsanpassning. I Target visas XDM-data i Audience Builder som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
+När du definierar målgrupper för målaktiviteter som levereras via Adobe Experience Platform Web SDK måste [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en målgruppsregel som definieras av XDM-data för målgruppsanpassning. I Target visas XDM-data i Audience Builder som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
 
 Om du har Target-aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil levereras de inte korrekt via SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via Adobe Experience Platform Web SDK och som inte kräver XDM. Dessa fält är tillgängliga i målgränssnittet som inte kräver XDM:
 
