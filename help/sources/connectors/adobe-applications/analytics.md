@@ -5,11 +5,10 @@ title: Adobe Analytics Source Connector for Report-Suite Data
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-translation-type: tm+mt
-source-git-commit: af5ad975bbfd6a67fe66c90e33da1365d49c8899
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '513'
-ht-degree: 1%
+source-wordcount: '511'
+ht-degree: 0%
 
 ---
 
@@ -27,7 +26,7 @@ Det här dokumentet ger en översikt över [!DNL Analytics] och beskriver använ
 
 På en hög nivå samlar [!DNL Analytics] in data från olika digitala kanaler och från flera datacenter runt om i världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de vara klara att användas senast [!DNL Real-time Customer Profile]. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion av [!DNL Data Science Workspace], [!DNL Query Service] och andra program för dataidentifiering.
 
-Mer information om bearbetningsregler finns i [översikten över bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html).
+Mer information om bearbetningsregler finns i [översikten över bearbetningsregler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html).
 
 ## Experience Data Model (XDM)
 
