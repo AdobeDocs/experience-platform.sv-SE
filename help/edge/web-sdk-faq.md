@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 5ead9dc72b8b9fe89e0a1bc8365ceff8affd3c85
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1843'
 ht-degree: 1%
 
 ---
@@ -103,7 +103,7 @@ Adobe Experience Platform Web SDK har utvecklats för följande personer:
 
 ## Hur får jag tillgång till Adobe Experience Platform Web SDK?
 
-Web SDK är för närvarande tillgängligt för allmänheten och kan användas för att skicka data till Adobe Experience Cloud-produkter. Möjligheten att skicka data till tredjepartslösningar kommer inom den närmaste framtiden. SDK är kostnadsfritt, hanteras av Adobe utan kostnad och kan laddas ned så att du kan ha det på dina egna servrar, om du vill, utan kostnad. För att Adobe-servrar ska kunna hantera inkommande data som kommer från SDK måste du ha tillgång till konfigurationer för dataström och Adobe Experience Platform XDM-schemaverktyget. Om du vill få åtkomst kontaktar du din Customer Success Manager (CSM) för att starta förfrågningsprocessen.
+Web SDK är för närvarande tillgängligt för allmänheten och kan användas för att skicka data till Adobe Experience Cloud-produkter. Möjligheten att skicka data till tredjepartslösningar kommer inom den närmaste framtiden. SDK är kostnadsfritt, hanteras av Adobe utan kostnad och kan laddas ned så att du kan lägga det på dina egna servrar, om du vill, utan kostnad. För att Adobe-servrar ska kunna hantera inkommande data som kommer från SDK måste du ha tillgång till konfigurationer för dataström och Adobe Experience Platform XDM-schemaverktyget. Om du vill få åtkomst kontaktar du din Customer Success Manager (CSM) för att starta förfrågningsprocessen.
 
 ## Vilka användningsfall stöds för närvarande av Web SDK?
 
@@ -149,7 +149,7 @@ Senare under 2020 kommer Experience Platform Launch att släppa vidarebefordring
 
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
-Mer information om en CNAME finns i [Adobe-dokumentationen](https://docs.adobe.com/content/help/en/id-service/using/reference/analytics-reference/cname.html)
+Mer information om en CNAME finns i [Adobe-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html)
 
 ## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
 
@@ -169,5 +169,5 @@ Adobe Experience Platform Web SDK är utformat för att fungera optimalt i de se
 
 ## Var kan jag få mer information om Adobe Experience Platform Web SDK?
 
-* [Dokumentation](https://docs.adobe.com/content/help/sv-SE/experience-platform/edge/home.html)
+* [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html)
 * [Källkod](https://github.com/adobe/alloy)
