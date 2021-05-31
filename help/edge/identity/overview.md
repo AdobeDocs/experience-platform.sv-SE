@@ -3,14 +3,13 @@ title: Hämta Experience Cloud-ID:n med Adobe Experience Platform Web SDK
 description: Lär dig hur du hämtar Adobe Experience Cloud-ID:n (ECID) med Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
-translation-type: tm+mt
-source-git-commit: 882bcd2f9aa7a104270865783eed82089862dea3
+exl-id: 03060cdb-becc-430a-b527-60c055c2a906
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '962'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
-
 
 # Hämta Adobe Experience Cloud ID:n
 
@@ -34,7 +33,7 @@ När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cook
 
 ## Uppdaterar egenskaper för migrering
 
-När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler när de migreras. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://docs.adobe.com/content/help/en/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) som Audience Manager har skapat.
+När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler när de migreras. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) som Audience Manager har skapat.
 
 ## Vidarebefordran på serversidan
 
