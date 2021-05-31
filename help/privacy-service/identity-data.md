@@ -5,11 +5,10 @@ title: Identitetsdata för sekretessförfrågningar
 topic-legacy: overview
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
 exl-id: 43b0292a-ea4d-4858-b584-ba71029724f6
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d316c199c7e2d87d175015c1828af6fd0d57f32a
 workflow-type: tm+mt
-source-wordcount: '650'
-ht-degree: 1%
+source-wordcount: '646'
+ht-degree: 0%
 
 ---
 
@@ -31,9 +30,9 @@ Adobe Experience Platform identitetstjänst lagrar globalt definierade och anvä
 
 ## ECID och anmälningstjänst
 
-Adobe Experience Cloud [!DNL Identity Service] fungerar som ett gemensamt identifieringsramverk för [!DNL Experience Cloud] och tilldelar varje besökare ett unikt, beständigt ID. Med [!DNL Experience Cloud]-ID:t (ECID) spåras en kunds aktivitet med hjälp av en cookie från en annan leverantör, det går att unikt identifiera en enhet i flera program och det går att identifiera samma besökare och deras data i olika [!DNL Experience Cloud]-program. Mer information finns i översikten över identitetstjänsten [Experience Cloud](https://docs.adobe.com/content/help/en/id-service/using/intro/overview.html).
+Adobe Experience Cloud [!DNL Identity Service] fungerar som ett gemensamt identifieringsramverk för [!DNL Experience Cloud] och tilldelar varje besökare ett unikt, beständigt ID. Med [!DNL Experience Cloud]-ID:t (ECID) spåras en kunds aktivitet med hjälp av en cookie från en annan leverantör, det går att unikt identifiera en enhet i flera program och det går att identifiera samma besökare och deras data i olika [!DNL Experience Cloud]-program. Mer information finns i översikten över identitetstjänsten [Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html).
 
-Med Opt-in Service, ett tillägg på [!DNL Experience Cloud Identity Service], kan du ställa in protokoll för programmet så att besökarna kan avgöra om du kan ställa in en cookie på besökarens enhet eller webbläsare. Mer detaljerad information om Opt-in-tjänsten, inklusive hur du konfigurerar tjänsten för ditt program, finns i [dokumentationen för Opt-in-tjänsten](https://docs.adobe.com/content/help/sv-SE/id-service/using/implementation/opt-in-service/optin-overview.html).
+Med Opt-in Service, ett tillägg på [!DNL Experience Cloud Identity Service], kan du ställa in protokoll för programmet så att besökarna kan avgöra om du kan ställa in en cookie på besökarens enhet eller webbläsare. Mer detaljerad information om Opt-in-tjänsten, inklusive hur du konfigurerar tjänsten för ditt program, finns i [dokumentationen för Opt-in-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html).
 
 När webbplatsbesökarna har tilldelats ECID:n kan du använda Adobe [!DNL Privacy JavaScript Library] för att hämta dessa ID:n för användning i sekretessförfrågningar, vilket beskrivs i nästa avsnitt.
 
