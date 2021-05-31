@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK Extension - översikt
 description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: b70fe5f3a4de2501730cc799125a7181b61186c0
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra i
 
 ### **[!UICONTROL Edge Domain]**
 
-[!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en annan leverantör finns [här](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html).
+[!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en annan leverantör finns [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
 
 ## [!UICONTROL Datastreams]
 
