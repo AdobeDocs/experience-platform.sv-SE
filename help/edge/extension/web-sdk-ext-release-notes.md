@@ -2,18 +2,17 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 seo-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
-translation-type: tm+mt
-source-git-commit: 14cf62084c88956906cd9454176619ed08081a0e
+exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1130'
 ht-degree: 1%
 
 ---
 
-
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
-Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://docs.adobe.com/content/help/en/experience-platform/edge/release-notes.html).
+Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
 ## 9 mars 2020
 
@@ -70,7 +69,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
 #### Funktioner
 
 * Brytningsändring: Ta bort åtgärden `syncIdentity` och stöd för att skicka dessa ID:n i åtgärden `sendEvent` i stället. Inaktivera alla befintliga regler med den här åtgärden innan du uppgraderar tillägget.
-* Uppdatera till allokera v. 2.1.0 ([Versionsinformation](https://docs.adobe.com/content/help/en/experience-platform/edge/release-notes.html))
+* Uppdatera till allokera v. 2.1.0 ([Versionsinformation](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html))
 * Stöd för IAB 2.0 Consent Standard i åtgärden `setConsent`.
 * Stöd för åsidosättande av datauppsättnings-ID:t i `sendEvent`-åtgärden.
 * Lägg till ett nytt dataelement av typen `IdentityMap` som kan användas för att fylla i `identityMap`-posten i XDM-objektdataelementet som nu är aktiverat och i `setConsent`-åtgärden.
