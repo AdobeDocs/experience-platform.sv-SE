@@ -3,10 +3,10 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '842'
-ht-degree: 4%
+source-wordcount: '828'
+ht-degree: 1%
 
 ---
 
@@ -63,7 +63,7 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
 
 1. Aktivera Adobe Experience Platform i [datastream](../../fundamentals/datastreams.md) och markera kryssrutan Offer decisioning
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
-2. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via [Adobe Experience Platform Launch](http://launch.adobe.com/). Här är en [snabbstartguide till Platform launch](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/quick-start.html)).
+2. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via [Adobe Experience Platform Launch](http://launch.adobe.com/). Här är en [snabbstartguide till Platform launch](https://experienceleague.adobe.com/docs/launch/using/intro/get-started/quick-start.html)).
 3. [Konfigurera ](../../fundamentals/configuring-the-sdk.md) SDK för Offer decisioning. Ytterligare Offer decisioning-specifika steg finns nedan.
    * Fristående installerat SDK
       1. Konfigurera åtgärden &quot;sendEvent&quot; med din `decisionScopes`
@@ -79,20 +79,20 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
       ```
 
    * platform launch installerad SDK
-      1. [Skapa en Platform launch-egenskap](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html)
-      2. [Lägg till Platforma launchens inbäddningskod](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. Installera och konfigurera Platform Web SDK-tillägget med den dataström du just skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html).
+      1. [Skapa en Platform launch-egenskap](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html)
+      2. [Lägg till Platforma launchens inbäddningskod](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      3. Installera och konfigurera Platform Web SDK-tillägget med den dataström du just skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html).
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
-      4. Skapa nödvändiga [dataelement](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html). Minimikravet är att du måste skapa en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
+      4. Skapa nödvändiga [dataelement](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/data-elements.html). Minimikravet är att du måste skapa en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm-object-data-element](./assets/xdm-object-data-element.png)
-      5. Skapa dina [regler](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
+      5. Skapa dina [regler](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html).
          * Lägg till en SDK-sändningshändelse för en plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
             ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
-      6. [Skapa och publicera ett ](https://docs.adobe.com/content/help/en/launch/using/reference/publish/libraries.html) bibliotek som innehåller alla relevanta regler, dataelement och tillägg som du har konfigurerat
+      6. [Skapa och publicera ett ](https://experienceleague.adobe.com/docs/launch/using/reference/publish/libraries.html) bibliotek som innehåller alla relevanta regler, dataelement och tillägg som du har konfigurerat
 
 
 
