@@ -5,11 +5,10 @@ title: Privacy Service och Experience Cloud
 topic-legacy: overview
 description: Det här dokumentet innehåller en referens för hur du konfigurerar olika Experience Cloud-program för sekretessrelaterade åtgärder.
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-translation-type: tm+mt
-source-git-commit: e226990fc84926587308077b32b128bfe334e812
+source-git-commit: d316c199c7e2d87d175015c1828af6fd0d57f32a
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '542'
+ht-degree: 7%
 
 ---
 
@@ -31,13 +30,13 @@ Nedan följer en lista över [!DNL Experience Cloud]-program som är integrerade
 | Program | Åtkomst/borttagning | Avanmäl dig från försäljningen | Dokumentation och överväganden |
 | --- | :---: | :---: | --- |
 | Adobe Advertising Cloud | ✓ | ✓ | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[Dokumentation för avanmälan av försäljning för CCPA](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
-| Adobe Analytics | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>[!DNL Analytics] hanterar avanmälningsbegäranden med hjälp av variabler för  [sekretessrapportering](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/consent-variables.html)</li></ul> |
-| Adobe Audience Manager | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.adobe.com/content/help/en/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[Dokumentation om avanmälan](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
+| Adobe Analytics | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>[!DNL Analytics] hanterar avanmälningsbegäranden med hjälp av variabler för  [sekretessrapportering](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/consent-variables.html)</li></ul> |
+| Adobe Audience Manager | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[Dokumentation om avanmälan](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
 | Adobe Campaign Standard | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=sv)</li><li>[Dokumentation om avanmälan](../segmentation/honoring-opt-outs.md)</li></ul> |
-| Adobe kundattribut (CRS) | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://docs.adobe.com/content/help/sv-SE/core-services/interface/customer-attributes/gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://docs.adobe.com/content/help/sv-SE/core-services/interface/customer-attributes/ccpa.html)</li><li>Kundattribut har inte möjlighet att överföra data, och därför kan du inte avanmäla dig från försäljning.</li></ul> |
+| Adobe kundattribut (CRS) | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>Kundattribut har inte möjlighet att överföra data, och därför kan du inte avanmäla dig från försäljning.</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | <ul><li>[Åtkomst/borttagningsdokumentation för datasjön](../catalog/privacy.md)</li><li>[Åtkomst/radering av dokumentation för kundprofil i realtid](../profile/privacy.md)</li><li>[!DNL Experience Platform] uppfyller  [avanmälningsbegäranden för målgruppssegment](../segmentation/honoring-opt-outs.md).</li></ul> |
 | Adobe Primetime-autentisering | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/borttagning av dokumentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
-| Adobe Target | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.adobe.com/content/help/en/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
+| Adobe Target | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -48,9 +47,8 @@ Nedan följer en lista över [!DNL Experience Cloud]-program som inte är integr
 | Program | Dokumentationsbeskrivning |
 | ------- | ----------- |
 | [Adobe Campaign Classic](https://docs.campaign.adobe.com/doc/AC/getting_started/EN/ACC_GDPR.html) | Översikt över GDPR-funktioner för Adobe Campaign Classic. |
-| [Dynamisk tagghanterare för Adobe](https://docs.adobe.com/content/help/sv-SE/dtm/using/tools/opt-in.html) | Steg för att förhindra att Adobe-taggar avfyras tills samtycke inhämtas. |
 | [Adobe Experience Manager](https://helpx.adobe.com/experience-manager/6-4/managing/using/gdpr-compliance.html) | En översikt över hur en administratör eller AEM kan hantera GDPR-begäranden. |
-| [Adobe Experience Manager Livefyre](https://docs.adobe.com/content/help/en/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | Steg för att göra GDPR-åtkomst och ta bort begäranden med Livefyre. |
+| [Adobe Experience Manager Livefyre](https://experienceleague.adobe.com/docs/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | Steg för att göra GDPR-åtkomst och ta bort begäranden med Livefyre. |
 | [Adobe Experience Platform Launch](https://docs.adobelaunch.com/client-side-information/deploy-javascript-tags-to-opt-in-to-launch) | Hur utvecklare kan använda tillägg och regelbyggaren för att definiera lösningar för anmälan och avanmälan. |
 
 {style=&quot;table-layout:auto&quot;}
