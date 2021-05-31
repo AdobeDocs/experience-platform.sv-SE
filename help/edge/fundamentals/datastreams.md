@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar dataströmmar. '
 keywords: konfiguration;datastreams;datastreamId;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 5642fa155d487982f01d25fa765bb36ad5c3bb21
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '838'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Datastreams kan skapas i Adobe [!DNL Experience Platform Launch] med hjälp av k
 
 >[!NOTE]
 >
->Konfigurationsverktyget för datastreams är tillgängligt för kunder på tillåtelselista oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Experience Platform Launch]-dokumentationen.
+>Konfigurationsverktyget för datastreams är tillgängligt för kunder på tillåtelselista oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](https://experienceleague.adobe.com/docs/launch/using/reference/admin/user-permissions.html) i [!DNL Experience Platform Launch]-dokumentationen.
 
 Skapa en datastream genom att klicka på **[!UICONTROL New Datastream]** i skärmens övre högra del. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö. Tillgängliga inställningar anges nedan.
 
@@ -83,13 +83,13 @@ Unikt ID för ett målkonto. Du hittar detta genom att navigera till [!UICONTROL
 
 ### [!UICONTROL Property Token]
 
-[!DNL Target] låter kunderna styra behörigheter genom att använda egenskaper. Mer information finns i avsnittet [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) i [!DNL Target]-dokumentationen.
+[!DNL Target] låter kunderna styra behörigheter genom att använda egenskaper. Mer information finns i avsnittet [Enterprise Permissions](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html) i [!DNL Target]-dokumentationen.
 
 Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONTROL Properties]
 
 ### [!UICONTROL Target Environment ID]
 
-[Med ](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) Adobe Target kan du hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
+[Med ](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) Adobe Target kan du hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
 
 Adobe rekommenderar att du anger detta på olika sätt för var och en av datastream-miljöerna `dev`, `stage` och `prod` för att hålla saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du använda dessa.
 
@@ -101,11 +101,11 @@ Allt som behövs för att skicka data till Adobe Audience Manager är att aktive
 
 ### [!UICONTROL Cookie Destinations Enabled]
 
-Tillåter SDK att dela segmentinformation via [Cookie-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager].
+Tillåter SDK att dela segmentinformation via [Cookie-mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager].
 
 ### [!UICONTROL URL Destinations Enabled]
 
-Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html). Dessa konfigureras i [!DNL Audience Manager].
+Tillåter SDK att dela segmentinformation via [URL-mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html). Dessa konfigureras i [!DNL Audience Manager].
 
 ## Adobe Analytics-inställningar
 
