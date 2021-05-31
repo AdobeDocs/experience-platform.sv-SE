@@ -5,10 +5,9 @@ title: Komma igång med innehåll och handel med AI
 topic-legacy: Getting started
 description: Innehålls- och handels-API:er använder Adobe I/O-API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
 exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -73,6 +72,6 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 När du har alla dina autentiseringsuppgifter kan du konfigurera en anpassad arbetare för [!DNL Content and Commerce AI]. Följande dokument hjälper till att förstå Extensibility Framework och miljöinställningar.
 
-Om du vill veta mer om Extensibility Framework börjar du med att läsa [introduktionen till dokumentet extensibility](https://docs.adobe.com/content/help/en/asset-compute/using/extend/understand-extensibility.html). I det här dokumentet beskrivs förutsättningarna och etableringskraven.
+Om du vill veta mer om Extensibility Framework börjar du med att läsa [introduktionen till dokumentet extensibility](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html). I det här dokumentet beskrivs förutsättningarna och etableringskraven.
 
-Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content and Commerce AI] börjar du med att läsa guiden för [konfigurera en utvecklarmiljö](https://docs.adobe.com/content/help/en/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.
+Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content and Commerce AI] börjar du med att läsa guiden för [konfigurera en utvecklarmiljö](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.
