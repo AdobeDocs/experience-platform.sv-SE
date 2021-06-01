@@ -3,15 +3,21 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: fccad34ad4ad028c7b34356dec7bb34892396317
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '562'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.5.0, juni 2021
+
+* Stöd för omdirigeringserbjudanden om personalisering har lagts till.
+* Automatiskt insamlade visningsrutebredder och -höjder som är negativa värden skickas inte längre till servern.
+* När en händelse avbryts genom att `false` returneras från ett `onBeforeEventSend`-återanrop loggas nu ett meddelande.
+* Korrigerade ett problem där specifika XDM-data avsedda för en enda händelse inkluderades för flera händelser.
 
 ## Version 2.4.0, mars 2021
 
