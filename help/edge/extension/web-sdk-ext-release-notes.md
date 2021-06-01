@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 seo-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: ec841a028d2a6acbdb1c1406026bbd4574cbc2ee
 workflow-type: tm+mt
-source-wordcount: '1130'
+source-wordcount: '1232'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,17 @@ ht-degree: 1%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
-## 9 mars 2020
+## 1 juni 2021
+
+### Adobe Experience Platform Web SDK 2.5.0
+
+Innehåller version 2.5.0 av Adobe Experience Platform Web SDK-biblioteket.
+
+* Ett `data`-fält har lagts till i åtgärden Skicka händelse. I kommande dokumentation beskrivs hur detta kan användas i vissa scenarier.
+* I datavyn för XDM-objektet har ett problem korrigerats där ett fel uppstod om användaren hade åtkomst till Adobe Experience Platform-sandlådor men inte till den sandlåda som konfigurerats som standard för organisationen.
+* I XDM-objektets dataelementvy har ett problem korrigerats där ett obligatoriskt schemafält skulle betraktas som ogiltigt även om det överordnade objektet inte innehöll några värden.
+
+## 9 mars 2021
 
 ### Adobe Experience Platform Web SDK 2.4.0
 
