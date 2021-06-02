@@ -4,10 +4,10 @@ title: Frågor och svar
 seo-title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 seo-description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
-source-git-commit: 47b3ef28281e3480e8b194486845f4fb4326b7d4
+source-git-commit: a01b53758f4ad42272c39f71a08021d30900e7af
 workflow-type: tm+mt
-source-wordcount: '633'
-ht-degree: 6%
+source-wordcount: '730'
+ht-degree: 5%
 
 ---
 
@@ -17,6 +17,18 @@ ht-degree: 6%
 ## Översikt {#overview}
 
 Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform destinationer. För frågor och felsökning som rör andra [!DNL Platform]-tjänster, inklusive de som har påträffats i alla [!DNL Platform] API:er, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+
+## Vanliga frågor om destinationer {#general}
+
+**Varför visas olika antal profiler i användargränssnittet i Experience Platform och i de exporterade CSV-filerna?**
+
+Detta är ett normalt beteende på grund av hur Experience Platform utför segmentering.
+
+Direktuppspelningssegmentering uppdaterar profilantalet för direktuppspelningssegment under hela dagen, medan batchsegmentering uppdaterar profilantalet för batchsegment en gång var 24:e timme.
+
+När segmentets exportschema skiljer sig från segmenteringsschemat kommer antalet profiler mellan användargränssnittet och den exporterade [!DNL CSV]-filen att vara olika, särskilt när det gäller direktuppspelningssegment.
+
+Mer information finns i [dokumentationen för segmenteringstjänsten](../segmentation/home.md).
 
 ## [!DNL Facebook Custom Audiences] {#facebook-faq}
 
