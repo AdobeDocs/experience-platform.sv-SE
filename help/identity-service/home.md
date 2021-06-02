@@ -5,10 +5,9 @@ title: Översikt över identitetstjänsten
 topic-legacy: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 288f24351788ed4b8a0c68cffe5eb5c91ed01691
 workflow-type: tm+mt
-source-wordcount: '1717'
+source-wordcount: '1734'
 ht-degree: 0%
 
 ---
@@ -114,6 +113,10 @@ Både schema för inspelnings- och tidsserier ger möjlighet att inkludera ident
 ### Markera XDM-fält som identitet
 
 Alla fält av typen `string` i scheman som implementerar antingen post- eller tidsseriens XDM-klasser kan märkas som ett identitetsfält. Därför betraktas alla data som hämtas in till det fältet som identitetsdata.
+
+>[!NOTE]
+>
+>Array- och mappningstypsfält stöds inte och kan inte markeras och märkas som identitetsfält.
 
 I identitetsfält går det också att länka identiteter om de delar gemensamma PII-data.
 Genom att exempelvis etikettera telefonnummerfält som identitetsfält, så skapar [!DNL Identity Service] automatiskt relationer med andra personer som använder samma telefonnummer.
