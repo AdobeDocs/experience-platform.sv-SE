@@ -3,9 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 32bc4fc3c8a33c5ba91f6edb0d859691046bccaf
+source-git-commit: 835fbee335c1b125f22a33f1806680514dfd9a6f
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '812'
 ht-degree: 1%
 
 ---
@@ -138,6 +138,10 @@ Mer information finns i [Kategorier för målgrupper](https://experienceleague.a
 Med [!DNL Platform Web SDK] kan du uppdatera profilen till [!DNL Target]-profilen och till [!DNL Platform Web SDK] som en upplevelsehändelse.
 
 Om du vill uppdatera en [!DNL Target]-profil kontrollerar du att profildata skickas med följande:
+
+* Under `“data {“`
+* Under `“__adobe”`
+* Prefix `“profile.”`, t.ex. enligt nedan
 
 | Nyckel | Typ | Beskrivning |
 | --- | --- | --- |
