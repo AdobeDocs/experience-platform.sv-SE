@@ -1,23 +1,22 @@
 ---
-keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;Google Ad Manager;Google ad manager
+keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;Google Ad Manager;Google ad manager; DFP
 title: Google Ad Manager-anslutning
-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.  '
-translation-type: tm+mt
-source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
+description: Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
+exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
+source-git-commit: 4df2e7ce9c7e94da4ea0be50ba21232c639e2587
 workflow-type: tm+mt
 source-wordcount: '738'
 ht-degree: 0%
 
 ---
 
-
 # [!DNL Google Ad Manager] anslutning
 
 ## Översikt {#overview}
 
-[!DNL Google Ad Manager], tidigare kallat  [!DNL DoubleClick] för utgivaren eller  [!DNL DoubleClick AdX], är en annonseringsplattform från  [!DNL Google] vilken förläggarna kan hantera annonser på sina webbplatser, via video och i mobilappar.
+[!DNL Google Ad Manager], f.d. DFP  [!DNL DoubleClick for Publishers] ( [!DNL DoubleClick AdX]DFP) eller  [!DNL Google] , är en annonseringsplattform frånvilken förläggarna kan hantera annonser på sina webbplatser, via video och i mobilappar.
 
-## Målspecificeringar {#specifics}
+## Destinationsspecifikationer {#specifics}
 
 Observera följande information som är specifik för [!DNL Google Ad Manager]-mål:
 
