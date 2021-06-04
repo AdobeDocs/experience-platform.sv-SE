@@ -5,10 +5,9 @@ title: Översikt över användargränssnittet i Privacy Service
 topic-legacy: UI guide
 description: Kom igång med användargränssnittet för Privacy Service för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b87861b7482976e6eda1dea22cfe954af9f6aecc
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '166'
 ht-degree: 1%
 
 ---
@@ -19,7 +18,9 @@ Adobe Experience Platform [!DNL Privacy Service] har ett RESTful-API och använd
 
 ## Logga in i användargränssnittet för [!DNL Privacy Service]
 
-Du måste ha en Adobe ID för att kunna autentisera med användargränssnittet för [!DNL Privacy Service]. Dessutom måste du ha behörighet som systemadministratör i den organisation som din Adobe ID är kopplad till.
+>[!IMPORTANT]
+>
+>Du måste ha en Adobe ID för att kunna autentisera med användargränssnittet för [!DNL Privacy Service]. Dessutom måste du ha systemadministratörsbehörighet inom IMS-organisationen.
 
 Välj **[!UICONTROL Sign In with an Adobe ID]** och ange dina Adobe ID-inloggningsuppgifter när du uppmanas till det.
 
