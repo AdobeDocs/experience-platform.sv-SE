@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 9786b810d7b203300db49637039dc034a70f95a7
 workflow-type: tm+mt
-source-wordcount: '3583'
+source-wordcount: '3616'
 ht-degree: 0%
 
 ---
@@ -108,13 +108,15 @@ I takt med att de digitala upplevelserna utvecklas måste även de scheman som a
 
 Eftersom bakåtkompatibilitet är avgörande för schemautvecklingen, tillämpar [!DNL Experience Platform] en rent additiv versionsprincip för att säkerställa att eventuella ändringar av schemat endast resulterar i icke-förstörande uppdateringar och ändringar. Det går alltså inte att använda **brytningsändringar.**
 
-| Ändringar som stöds | Brytande ändringar (stöds inte) |
-|------------------------------------|---------------------------------|
-| <ul><li>Lägga till nya fält i ett befintligt schema</li><li>Göra ett obligatoriskt fält valfritt</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Nya obligatoriska fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta attribut till en annan plats i trädet</li></ul> |
-
 >[!NOTE]
 >
->Om ett schema ännu inte har använts för att importera data till [!DNL Experience Platform] kan du införa en brytningsändring i det schemat. När schemat har använts i [!DNL Platform] måste det dock följa den additiva versionsprincipen.
+>Om ett schema ännu inte har använts för att importera data till [!DNL Experience Platform] och inte har aktiverats för användning i kundprofilen i realtid, kan du införa en brytningsändring i det schemat. När schemat har använts i [!DNL Platform] måste det dock följa den additiva versionsprincipen.
+
+I följande tabell visas vilka ändringar som stöds vid redigering av scheman, fältgrupper och datatyper:
+
+| Ändringar som stöds | Brytande ändringar (stöds inte) |
+| --- | --- |
+| <ul><li>Lägga till nya fält i resursen</li><li>Göra ett obligatoriskt fält valfritt</li><li>Ändra resursens visningsnamn och beskrivning</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Nya obligatoriska fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta attribut till en annan plats i trädet</li></ul> |
 
 ### Scheman och datainhämtning
 
