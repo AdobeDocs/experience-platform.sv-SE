@@ -5,10 +5,9 @@ title: Ordlista för dataanvändningsetiketter
 topic-legacy: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1ae0ce47381585b48020990a71493bbfc1504ec2
 workflow-type: tm+mt
-source-wordcount: '1904'
+source-wordcount: '1982'
 ht-degree: 1%
 
 ---
@@ -24,7 +23,7 @@ Det här dokumentet innehåller en översikt över de etiketter för användning
 Kontraktets&quot;C&quot;-etiketter används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till organisationens policyer för datastyrning.
 
 | Etikett | Definition |
-|---|---|
+| --- | --- |
 | **C1** | Data kan bara exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. [Mer information...](#c1) |
 | **C2** | Data kan inte exporteras till tredje part. [Mer information...](#c2) |
 | **C3** | Data kan inte kombineras eller på annat sätt användas med direkt identifierbar information. [Mer information...](#c3) |
@@ -35,13 +34,14 @@ Kontraktets&quot;C&quot;-etiketter används för att kategorisera data som har a
 | **C8** | Data kan inte användas för att mäta organisationens webbplatser eller appar. [Mer information...](#c8) |
 | **C9** | Data kan inte användas i arbetsflöden för datavetenskap. [Mer information...](#c9) |
 | **C10** | Data kan inte användas för aktivering av sammanfogad identitet. [Mer information...](#c10) |
+| **C11** | Data kan inte delas med segmentmatchningspartners. [Mer information...](#c11) |
 
 ## Identitetsetiketter
 
 Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person.
 
 | Etikett | Definition |
-|---|---|
+| --- | --- |
 | **I1** | Direkt identifierbara data som kan identifiera eller kontakta en viss person, i stället för en enhet. |
 | **I2** | Indirekt identifierbara data som kan användas i kombination med andra data för att identifiera eller kontakta en viss person. |
 
@@ -52,7 +52,7 @@ Känsliga S-etiketter används för att kategorisera data som du, och din organi
 En typ av data som du anser vara känsliga kan vara olika typer av geografiska data; Denna kategori är dock inte begränsad till geografiska data.
 
 | Etikett | Definition |
-|---|---|
+| --- | --- |
 | **S1** | Data som anger latitud och longitud som kan användas för att fastställa en enhets exakta placering. |
 | **S2** | Data som kan användas för att fastställa ett brett definierat geofence-område. |
 
@@ -127,3 +127,7 @@ I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap.
 #### C10 {#c10}
 
 Vissa dataanvändningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
+
+#### C11 {#c11}
+
+Med Adobe Experience Platform Segment Match kan ni matcha förstahandssegment med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
