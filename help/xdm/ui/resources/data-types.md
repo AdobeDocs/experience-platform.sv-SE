@@ -6,17 +6,16 @@ topic-legacy: tutorial
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: bcacf2ebe99c3e397cfd5ceaf418a51bec74e659
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1130'
 ht-degree: 0%
 
 ---
 
 # Skapa och redigera datatyper med användargränssnittet
 
-I Experience Data Model (XDM) används datatyper som referenstypfält i klasser eller schemafältgrupper på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera delfält. Även om datatyperna liknar fältgrupper på så sätt att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån.
+I Experience Data Model (XDM) kan du återanvända datatyper som innehåller flera underfält. Även om datatyperna liknar schemafältgrupper på så sätt att de medger konsekvent användning av en flerfältsstruktur, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån.
 
 Adobe Experience Platform har många standarddatatyper som kan användas för ett stort antal vanliga användningsfall för upplevelsehantering. Men du kan också definiera egna anpassade datatyper för att tillgodose dina unika affärsbehov.
 
@@ -30,7 +29,7 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikte
 
 ## Öppna [!DNL Schema Editor] för en datatyp
 
-I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan [!UICONTROL Schemas] och väljer sedan fliken **[!UICONTROL Data types]**. En lista över tillgängliga datatyper visas, inklusive de som definieras av Adobe samt de som skapats av din organisation.
+I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan [!UICONTROL Schemas] och väljer sedan fliken **[!UICONTROL Data types]**. En lista över tillgängliga datatyper visas, inklusive de som definieras av Adobe och de som skapats av din organisation.
 
 ![](../../images/ui/resources/data-types/data-types-tab.png)
 
@@ -54,6 +53,10 @@ I den här självstudien skapas en datatyp som beskriver en restaurangegenskap, 
 Härifrån kan du hoppa fram till [nästa avsnitt](#add-fields) för att börja lägga till fält till den nya datatypen.
 
 ### Redigera en befintlig datatyp
+
+>[!NOTE]
+>
+>När en befintlig datatyp används i ett schema som har aktiverats för användning i kundprofilen i realtid, kan endast icke-förstörande ändringar göras i den datatypen därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
 Endast anpassade datatyper som definieras av din organisation kan redigeras. Om du vill begränsa den visade listan väljer du filterikonen (![Filterikon](../../images/ui/resources/data-types/filter.png)) för att visa kontroller för filtrering baserat på [!UICONTROL Owner]. Välj **[!UICONTROL Customer]** om du bara vill visa anpassade datatyper som ägs av din organisation.
 
