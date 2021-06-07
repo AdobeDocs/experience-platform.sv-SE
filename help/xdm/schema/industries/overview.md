@@ -4,10 +4,9 @@ title: Översikt över branschdatamodeller
 topic-legacy: overview
 description: Lär dig mer om standardiserade datamodeller för olika vertikala branscher som kan konstrueras med XDM-komponenter (Standard Experience Data Model).
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 4ff97408659559174110a2234b24e9433007c9dc
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---
@@ -33,19 +32,7 @@ För att kunna läsa de referensdokument för elektroniska avhandlingar som det 
 
 Vi rekommenderar även att du läser [handboken om bästa praxis för datamodellering](../../schema/best-practices.md) för allmänna riktlinjer om hur du mappar data till XDM.
 
-## Branschdatamodell:er {#erds}
-
-De vertikala modeller i branschen som representeras av de elektroniska avhandlingar som beskrivs nedan skapas avsiktligt på ett avnormaliserat sätt och med hänsyn till hur data lagras i Platform.
-
-För en given ERD baseras varje enhet som visas i på en underliggande XDM-klass. För en given entitet representerar varje rad som är markerad med **fet** en fältgrupp eller en datatyp, med de relevanta fält som anges nedan i oförändrad text. De viktigaste fälten för en viss enhet markeras med rött.
-
->[!NOTE]
->
->Vissa entiteter kan innehålla ett &quot;_ID&quot;-fält. Detta representerar den unika identifierare (`_id`) som plattformen automatiskt tilldelar till händelse- eller profilobjekt när de hämtas. Du kan dock välja att använda dina egna unika ID-värden för det här fältet om du vill.
-
-Alla egenskaper som kan användas för att identifiera enskilda kunder markeras som&quot;identitet&quot;, med en av dessa egenskaper markerad som&quot;primär identitet&quot;.
-
-Enhetsrelationer markeras som icke-beroende eftersom cookie-baserade händelser ofta inte kan avgöra vem eller vilka personer som gjorde transaktionen.
+## ERD för branschdatamodell {#erds}
 
 ERD tillhandahålls för följande vertikala branscher:
 
