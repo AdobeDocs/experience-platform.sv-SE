@@ -2,14 +2,13 @@
 keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
-translation-type: tm+mt
-source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
+exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
+source-git-commit: 66c3e81dfdbf6f6c3ff9a127fbca8943c0e32279
 workflow-type: tm+mt
 source-wordcount: '901'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL Braze]-anslutning
 
@@ -25,7 +24,7 @@ Med [!DNL Braze]-målet kan du skicka profildata till [!DNL Braze].
 
 Om du vill skicka profildata till [!DNL Braze] måste du först ansluta till målet.
 
-## Målspecificeringar {#specifics}
+## Destinationsspecifikationer {#specifics}
 
 Observera följande information som är specifik för [!DNL Braze]-målet:
 
@@ -41,7 +40,7 @@ Som marknadsförare vill jag rikta in mig på användare i ett mål för mobilen
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Google Ad Manager] stöder aktivering av identiteter som beskrivs i tabellen nedan.
+[!DNL Braze] stöder aktivering av identiteter som beskrivs i tabellen nedan.
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
@@ -149,4 +148,3 @@ Kontrollera ditt [!DNL Braze]-konto för att kontrollera om data har exporterats
 ## Dataanvändning och styrning {#data-usage-governance}
 
 Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] verkställer datastyrning finns i [Datastyrningsöversikt](../../../data-governance/home.md).
-
