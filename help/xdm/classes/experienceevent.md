@@ -5,7 +5,7 @@ title: Klassen XDM ExperienceEvent
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: c5b15cf23801457c3846499185d7dfd61cfa5291
+source-git-commit: ecb9c9a4158f3d2981ab60ee3bf419464ac7b8f1
 workflow-type: tm+mt
 source-wordcount: '1559'
 ht-degree: 0%
@@ -65,8 +65,12 @@ Om du direktuppspelar data till plattformen med en källanslutning kan du konfig
 
 Adobe innehåller flera standardfältgrupper som kan användas med klassen [!DNL XDM ExperienceEvent]. Nedan följer en lista över några vanliga fältgrupper för klassen:
 
+* [[!UICONTROL Campaign Marketing Details]](../field-groups/event/campaign-marketing-details.md)
+* [[!UICONTROL Channel Details]](../field-groups/event/channel-details.md)
+* [[!UICONTROL Commerce Details]](../field-groups/event/commerce-details.md)
 * [[!UICONTROL End User ID Details]](../field-groups/event/enduserids.md)
 * [[!UICONTROL Environment Details]](../field-groups/event/environment-details.md)
+* [[!UICONTROL Web Details]](../field-groups/event/web-details.md)
 
 ## Bilaga
 
