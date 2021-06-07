@@ -5,7 +5,7 @@ title: Fältgrupp för miljöinformationsschema
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen ExperienceEvent Environment Details.
 exl-id: 1d25b98f-66ac-443f-9b1c-dfd20a168c59
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
 workflow-type: tm+mt
 source-wordcount: '211'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 >Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Environment Details] är en standardgrupp för schemafält för den  [[!DNL XDM ExperienceEvent] ](../../classes/individual-profile.md) klass som används för att samla in information om miljödetaljer som rör en upplevelsehändelse, t.ex. enhetsinformation, webbläsarinformation, lokal tid och annan geografisk information.
+[!UICONTROL Environment Details] är en standardgrupp för schemafält för den  [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) klass som används för att samla in information om miljödetaljer som rör en upplevelsehändelse, t.ex. enhetsinformation, webbläsarinformation, lokal tid och annan geografisk information.
 
 <img src="../../images/field-groups/environment-details.png" width="500" /><br />
 
