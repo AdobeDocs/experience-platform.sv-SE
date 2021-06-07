@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Scheman
-source-git-commit: dcfdc9c479e8a77296f7cb0bf9f5bb36e9261b75
+source-git-commit: 9b6352eec56cf32e58d49be4d72b2fb4cf933b89
 workflow-type: tm+mt
-source-wordcount: '294'
-ht-degree: 8%
+source-wordcount: '304'
+ht-degree: 7%
 
 ---
 
@@ -23,24 +23,29 @@ ht-degree: 8%
    * [XDM-fältordlista](schema/field-dictionary.md)
    * Branschdatamodeller {#industries}
       * [Översikt](./schema/industries/overview.md)
-      * [Detaljhandelsdatamodell - ERD](./schema/industries/retail.md)
-      * [Datamodell för finansiella tjänster - ERD](./schema/industries/financial.md)
-      * [Datamodell för rese- och turismdata ERD](./schema/industries/travel-hospitality.md)
+      * [Detaljhandel](./schema/industries/retail.md)
+      * [Finansiella tjänster](./schema/industries/financial.md)
+      * [Resor och turism](./schema/industries/travel-hospitality.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [Segmentdefinition](./classes/segment-definition.md)
 * Schemafältgrupper {#field-groups}
    * Profilfältgrupper {#profile}
-      * [IdentityMap](./field-groups/profile/identitymap.md)
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
+      * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [Förmånsinformation](./field-groups/profile/loyalty-details.md)
       * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
+      * [Sekretess/personalisering/marknadsföringsinställningar (samtycke)](./field-groups/profile/consents.md)
       * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
-      * [Sekretess/personalisering/marknadsföringsinställningar (samtycke)](./field-groups/profile/consents.md)
    * Händelsefältgrupper {#event}
+      * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
+      * [Kanalinformation](./field-groups/event/channel-details.md)
+      * [Handelsinformation](./field-groups/event/commerce-details.md)
       * [Information om slutanvändar-ID](./field-groups/event/enduserids.md)
       * [Miljöinformation](./field-groups/event/environment-details.md)
+      * [Webbinformation](./field-groups/event/web-details.md)
    * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
    * [Program](./data-types/application.md)
@@ -51,6 +56,7 @@ ht-degree: 8%
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
    * [Miljö](./data-types/environment.md)
+   * [Experience channel](./data-types/experience-channel.md)
    * [Allmänt fält för samtycke](./data-types/consent-field.md)
    * [Allmänt inställningsfält för marknadsföring](./data-types/marketing-field.md)
    * [Allmänt fält för marknadsföringsinställningar med prenumerationer](./data-types/marketing-field-subscriptions.md)
@@ -61,6 +67,7 @@ ht-degree: 8%
    * [Info om geo-interaktion](./data-types/geo-interaction-details.md)
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
+   * [Marknadsföring](./data-types/marketing.md)
    * [Mät](./data-types/measure.md)
    * [Order](./data-types/order.md)
    * [Betalningsartikel](./data-types/payment-item.md)
@@ -71,9 +78,11 @@ ht-degree: 8%
    * [POI-information](./data-types/poi-details.md)
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
+   * [Produktlisteartikel](./data-types/product-list-item.md)
    * [Sökning](./data-types/search.md)
    * [Prenumeration](./data-types/subscription.md)
-   * [Interaktion via webben](./data-types/web-interactions.md)
+   * [Webbinformation](./data-types/web-information.md)
+   * [Interaktion via webben](./data-types/web-interaction.md)
    * [Information om webbsidor](./data-types/webpage-details.md)
 * [!UICONTROL Schemas] UI {#ui}
    * [Översikt](./ui/overview.md)
