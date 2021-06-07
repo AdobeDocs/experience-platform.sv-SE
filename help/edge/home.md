@@ -2,14 +2,13 @@
 title: Adobe Experience Platform Web SDK - översikt
 description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
+source-git-commit: 7607f01109de1f6207f2e910a8620698c60b89d4
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Experience Platform Web SDK - översikt
 
@@ -61,7 +60,7 @@ I följande video visas Adobe Experience Platform [!DNL Web SDK] och Adobe Exper
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
 
-Produkten utvecklas ständigt och växer för att klara fler och fler användningsfall. Se vår [fallpanel](https://github.com/adobe/alloy/projects/5) om du vill hålla dig à jour med det senaste. Vi håller detta uppdaterat med de användningsfall som vi för närvarande stöder och de som vi arbetar med för att du ska kunna fatta bästa möjliga beslut.
+Produkten utvecklas ständigt och växer för att klara fler och fler användningsfall. Se sidan [Användningsexempel som stöds](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/supported-use-cases.html) om du vill hålla dig uppdaterad. På den här sidan listas de användningsfall som vi för närvarande stöder, med länkar till mer information om sådana finns.
 
 * **Använd ärenden som ännu inte stöds:** Det här är exempel som finns på vår färdplan och som ska stödjas i framtiden.
 * **Pågående användningsfall:** Detta är de användningsfall som teamet arbetar med att slutföra för lansering.
