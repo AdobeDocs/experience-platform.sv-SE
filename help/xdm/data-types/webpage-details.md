@@ -5,7 +5,7 @@ title: Datatyp för webbsidesinformation
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över webbsidans information om datatypen Experience Data Model (XDM).
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
 workflow-type: tm+mt
 source-wordcount: '404'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 [!UICONTROL Web page details] är en XDM-datatyp (Standard Experience Data Model) som beskriver information om en webbsida som just har lästs in och visats, vilket registreras av en ExperienceEvent.
 
-Datatypen är avsedd för fullständig sidinformation och inledande sidinläsning av webbprogram med en sida (SPA). Information om interaktioner som sker på en inläst sida som inte utlöser en ny sidinläsning finns i datatypen [webbinteraktion](./web-interactions.md).
+Datatypen är avsedd för fullständig sidinformation och inledande sidinläsning av webbprogram med en sida (SPA). Information om interaktioner som sker på en inläst sida som inte utlöser en ny sidinläsning finns i datatypen [webbinteraktion](./web-interaction.md).
 
 <img src="../images/data-types/web-page-details.PNG" width="500" /><br />
 
