@@ -3,10 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-translation-type: tm+mt
-source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
+source-git-commit: 6c4e68e2f347cadaf3bf36de73c74e1240ed975b
 workflow-type: tm+mt
-source-wordcount: '1574'
+source-wordcount: '1478'
 ht-degree: 0%
 
 ---
@@ -59,13 +58,9 @@ Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platfor
 
 ### Tillåtelselista {#allowlist}
 
->[!NOTE]
->
->Det är obligatoriskt att lägga till i Googles tillåtelselista innan du ställer in ditt första [!DNL Google Customer Match]-mål i Experience Platform. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+Innan du skapar [!DNL Google Customer Match]-målet i Experience Platform måste du kontrollera att ditt [!DNL Google Ads]-konto är kompatibelt med [Google Customer Match Policy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
-Innan du skapar [!DNL Google Customer Match]-målet i Experience Platform måste du kontakta Google och följa instruktionerna i [Använd kundmatchningspartners för att överföra dina data](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507) i Googles dokumentation.
-
-Det finns också en andra Google tillåtelselista som du måste lägga till ditt konto i om du planerar att överföra data med Googles [användar-ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id). Om du vill lägga till ditt konto i tillåtelselista kontaktar du din kontohanterare för Google.
+Kunder med kompatibla konton tillåts automatiskt listade av Google.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
