@@ -3,10 +3,10 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 202a77e4f9e8c7d5515ea0a5004b1c339f1d58ba
+source-git-commit: e7f5074ef776fc6ccd4f9951722861d771a371de
 workflow-type: tm+mt
-source-wordcount: '812'
-ht-degree: 1%
+source-wordcount: '908'
+ht-degree: 3%
 
 ---
 
@@ -21,6 +21,7 @@ Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 * [Automated Personalization-verksamhet](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [Experience Targeting-aktiviteter](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
+* [Recommendations-verksamhet](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
 * [Inställnings- och konverteringsrapportering för Native Target](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC-stöd](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
 
@@ -176,13 +177,42 @@ alloy("sendEvent", {
     __adobe: {
       target: {
         "profile.gender": "female",
-        "profile.age": 30
+        "profile.age": 30,
+	"entity.id" : "123",
+	"entity.genre" : "Drama"
       }
     }
   }
 }) 
 .then(console.log);
 ```
+
+## Begär rekommendationer
+
+I följande tabell visas [!DNL Recommendations]-attribut och om vart och ett stöds via [!DNL Platform Web SDK]:
+
+| Kategori | Attribut | Supportstatus |
+| --- | --- | --- |
+| Recommendations - Standardenhetsattribut | entity.id | Stöds |
+|  | entity.name | Stöds |
+|  | entity.categoryId | Stöds |
+|  | entity.pageUrl | Stöds |
+|  | entity.thumbnailUrl | Stöds |
+|  | entity.message | Stöds |
+|  | entity.value | Stöds |
+|  | entity.inventory | Stöds |
+|  | entity.brand | Stöds |
+|  | entity.margin | Stöds |
+|  | entity.event.detailsOnly | Stöds |
+| Recommendations - Anpassade entitetsattribut | entity.yourCustomAttributeName | Stöds |
+| Recommendations - Reserverade mbox-/page-parametrar | excludeIds | Stöds |
+|  | cartIds | Stöds |
+|  | productPurchasedId | Stöds |
+| Sida eller artikelkategori för kategoritillhörighet | user.categoryId | Stöds |
+
+## Felsökning
+
+mboxTrace och mboxDebug har tagits bort. Använd [[!DNL Platform Web SDK] felsökning](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/debugging.html).
 
 ## Terminologi
 
