@@ -5,10 +5,9 @@ title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 topic-legacy: developer guide
 description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a5cc688357e4750dee73baf3fc9af02a9f2e49e3
 workflow-type: tm+mt
-source-wordcount: '949'
+source-wordcount: '978'
 ht-degree: 1%
 
 ---
@@ -75,7 +74,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
     {
         "predicateExpression": "xEvent.metrics.commerce.abandons.value > 0",
         "predicateType": "pql/text",
-        "predicateModel": "_xdm.context.profile"
+        "predicateModel": "_xdm.context.profile",
+        "graphType": "none"
     }'
 ```
 
@@ -84,6 +84,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | `predicateExpression` | PQL-uttrycket som data ska frågas efter. |
 | `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda tillåtna värdet för den här egenskapen `pql/text`. |
 | `predicateModel` | Namnet på schemaklassen [!DNL Experience Data Model] (XDM) som profildata baseras på. |
+| `graphType` | Den diagramtyp som du vill hämta klustret från. Värdena som stöds är `none` (utför ingen identitetssammanfogning) och `pdg` (utför identitetssammanfogning baserat på ditt privata identitetsdiagram). |
 
 **Svar**
 
