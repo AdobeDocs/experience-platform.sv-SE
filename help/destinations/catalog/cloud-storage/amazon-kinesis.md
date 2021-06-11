@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
+source-git-commit: 4febcef82c6da4534051cbe68820984814786224
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '622'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,45 @@ En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar 
 ## Exporttyp {#export-type}
 
 **Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-destinations.md#select-attributes)målaktivering.
+
+## Nödvändiga [!DNL Amazon Kinesis]-behörigheter {#required-kinesis-permission}
+
+För att kunna ansluta och exportera data till dina [!DNL Amazon Kinesis]-strömmar behöver Experience Platform behörighet för följande åtgärder:
+
+* `kinesis:ListStreams`
+* `kinesis:PutRecord`
+* `kinesis:PutRecords`
+
+Dessa behörigheter ordnas via [!DNL Kinesis]-konsolen och kontrolleras av Platform när du har konfigurerat ditt Kinesis-mål i användargränssnittet för plattformen.
+
+I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att exportera data till ett [!DNL Kinesis]-mål.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:ListStreams",
+                "kinesis:PutRecord",
+                "kinesis:PutRecords"
+            ],
+            "Resource": [
+                "arn:aws:kinesis:us-east-2:901341027596:stream/*"
+            ]
+        }
+    ]
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `kinesis:ListStreams` | En åtgärd som listar dataströmmarna i Amazon Kinesis. |
+| `kinesis:PutRecord` | En åtgärd som skriver en enskild datapost till en dataström från Kinesis. |
+| `kinesis:PutRecords` | En åtgärd som skriver flera dataposter till en dataström från Kinesis i ett enda anrop. |
+
+Mer information om hur du styr åtkomst för [!DNL Kinesis]-dataströmmar finns i följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ## Anslutningsmål {#connect-destination}
 
