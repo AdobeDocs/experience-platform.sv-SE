@@ -5,9 +5,9 @@ title: Automatisk policytillämpning
 topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
+source-git-commit: 59edc19267913e5156caaa49d01a687d04cf1c6f
 workflow-type: tm+mt
-source-wordcount: '1121'
+source-wordcount: '1223'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här handboken kräver en fungerande förståelse av de plattformstjänster 
 * [Adobe Experience Platform datastyrning](../home.md): Det ramverk som Platform använder för att genomdriva efterlevnad av dataanvändning genom användning av etiketter och policyer.
 * [Kundprofil](../../profile/home.md) i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Segmenteringsmotorn som  [!DNL Platform] används för att skapa målgruppssegment utifrån kundprofiler baserat på kundbeteenden och attribut.
-* [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga applikationer som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad annonsering och mycket mer.
+* [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga applikationer som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad reklam med mera.
 
 ## Tvingande flöde {#flow}
 
@@ -65,6 +65,12 @@ Varje steg i ovanstående tidslinje representerar en enhet som kan bidra till at
 | Kopplingsprincip | Sammanslagningsprinciper är de regler som används i Platform för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Mer information finns i [översikten över sammanfogningsprinciper](../../profile/merge-policies/overview.md). |
 | Segment | Segmentregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver segmentet användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du aktiverar ett segment vars ärvda etiketter begränsas av måldestinationens tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
 | Destination | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en dataanvändningspolicy. Med andra ord avgör vilket marknadsföringsfall du definierar för ett mål vilka dataanvändningsprinciper som gäller för det målet. Policyöverträdelser inträffar om du aktiverar ett segment vars användningsetiketter begränsas av målmålets tillämpliga profiler. |
+
+>[!IMPORTANT]
+>
+>En del dataanvändningsprinciper kan ange två eller flera etiketter med en AND-relation. En princip kan till exempel begränsa en marknadsföringsåtgärd om både etiketterna `C1` OCH `C2` finns, men begränsar inte samma åtgärd om bara en av etiketterna finns.
+>
+>När det gäller automatisk verkställighet anser datastyrningsramverket inte att aktivering av separata segment till en destination är en kombination av data. Exempelprincipen `C1 AND C2` är därför **NOT** framtvingad om dessa etiketter ingår i separata segment. I stället tillämpas den här principen bara när båda etiketterna finns i samma segment vid aktivering.
 
 När policyöverträdelser inträffar ger de resulterande meddelandena som visas i användargränssnittet användbara verktyg för att utforska det datalinje som bidrar till att lösa problemet. Mer information finns i nästa avsnitt.
 
