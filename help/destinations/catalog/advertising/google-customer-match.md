@@ -3,7 +3,7 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 6c4e68e2f347cadaf3bf36de73c74e1240ed975b
+source-git-commit: da069c6c931bfd2af38b40fc061d5eb633aba9ea
 workflow-type: tm+mt
 source-wordcount: '1478'
 ht-degree: 0%
@@ -34,7 +34,7 @@ För att befordra releasen överför de e-postadresser från sin CRM-databas til
 
 ## Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
 
-Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../..//data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
+Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../../data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
 
 ## Identiteter som stöds {#supported-identities}
 
