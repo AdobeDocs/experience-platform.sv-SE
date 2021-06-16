@@ -5,11 +5,10 @@ title: Användargränssnittshandbok för frågeredigeraren
 topic-legacy: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-translation-type: tm+mt
-source-git-commit: d2f19cc97082f75e66cf38e54b5bdb89482930ed
+source-git-commit: 483bcea231ed5f25c76771d0acba7e0c62dfed16
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1055'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Query Editor] är ett interaktivt verktyg från Adobe Experience Platform  [!DNL Query Service]som gör att du kan skriva, validera och köra frågor om kundupplevelsedata i  [!DNL Experience Platform] användargränssnittet. [!DNL Query Editor] har stöd för utveckling av frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i  [!DNL Experience Platform].
 
-Mer information om begrepp och funktioner i [!DNL Query Service] finns i [Query Service overview][query-service-overview]. Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Platform] finns i översikten [Användargränssnitt för frågetjänst][query-service-ui].
+Mer information om begrepp och funktioner i [!DNL Query Service] finns i [Query Service overview](../home.md). Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Platform] finns i översikten [Användargränssnitt för frågetjänst](./overview.md).
 
 ## Komma igång
 
@@ -91,7 +90,7 @@ På den här panelen kan du generera en utdatauppsättning direkt från använda
 
 Alla frågor som körs från [!DNL Query Editor] hämtas i loggtabellen. Du kan använda sökfunktionen på fliken **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor visas på fliken **[!UICONTROL Browse]**.
 
-Mer information finns i översikten [Användargränssnitt för frågetjänst][query-service-ui].
+Mer information finns i översikten [Användargränssnitt för frågetjänst](./overview.md).
 
 >[!NOTE]
 >
@@ -113,7 +112,7 @@ Konsolen ger information om status och funktion för [!DNL Query Service]. Konso
 
 ### Frågeresultat
 
-När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]** bredvid fliken **[!UICONTROL Console]**. I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med din fråga tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. I självstudiekursen [om att generera datauppsättningar][query-service-create-datasets] finns instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
+När en fråga har slutförts visas resultaten på fliken **[!UICONTROL Results]** bredvid fliken **[!UICONTROL Console]**. I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med din fråga tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. I självstudiekursen [om att generera datauppsättningar](./create-datasets.md) finns instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
 
 ![Bild](../images/ui/query-editor/query-results.png)
 
@@ -125,9 +124,4 @@ I följande video visas hur du kör frågor i Adobe Experience Platform-gränssn
 
 ## Nästa steg
 
-Nu när du vet vilka funktioner som är tillgängliga i [!DNL Query Editor] och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake] finns i guiden [kör frågor][query-service-running-queries].
-
-[query-service-overview]: ../home.md
-[query-service-ui]: overview.md
-[query-service-running-queries]: ../best-practices/writing-queries.md
-[query-service-create-datasets]: ./create-datasets.md
+Nu när du vet vilka funktioner som är tillgängliga i [!DNL Query Editor] och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake] finns i guiden [kör frågor](../best-practices/writing-queries.md).
