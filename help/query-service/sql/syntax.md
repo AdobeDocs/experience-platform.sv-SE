@@ -5,10 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 26bd2abc998320245091b0917fb6f236ed09b95c
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '2066'
 ht-degree: 1%
 
 ---
@@ -230,6 +229,34 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 
 - `IF EXISTS`: Om detta anges genereras inget undantag om tabellen inte  **** innehåller någon text.
 
+## DROP DATABASE
+
+Kommandot `DROP DATABASE` släpper en befintlig databas.
+
+```sql
+DROP DATABASE [IF EXISTS] db_name
+```
+
+**Parametrar**
+
+- `IF EXISTS`: Om detta anges genereras inget undantag om databasen inte  **** innehåller någon textinformation.
+
+## DROP SCHEMA
+
+Kommandot `DROP SCHEMA` släpper ett befintligt schema.
+
+```sql
+DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
+```
+
+**Parametrar**
+
+- `IF EXISTS`: Om detta anges genereras inget undantag om schemat  **** inte innehåller någon text.
+
+- `RESTRICT`: Standardvärde för läget. Om detta anges kommer schemat endast att tas bort om det **inte** innehåller några tabeller.
+
+- `CASCADE`: Om detta anges kommer schemat att tas bort tillsammans med alla tabeller som finns i schemat.
+
 ## SKAPA VY
 
 Följande syntax definierar en `CREATE VIEW`-fråga:
@@ -407,7 +434,7 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 - `num_of_rows`: Antalet rader som ska hämtas.
 - `cursor_name`: Namnet på den markör som du hämtar information från.
 
-### FÖRBERED {#prepare}
+### FÖRBEREDA {#prepare}
 
 Med kommandot `PREPARE` kan du skapa en förberedd programsats. En förberedd programsats är ett objekt på serversidan som kan användas för att mallatisera liknande SQL-programsatser.
 
