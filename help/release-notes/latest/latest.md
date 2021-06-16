@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: fb5d5e7ecb36d1caa70d5c2d2a4f467e3067de4a
+source-git-commit: 487d6dbef21459a7ce78cdc70215ad46e06ba892
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1306'
 ht-degree: 1%
 
 ---
@@ -82,7 +82,6 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Uppdateringar av arbetsflöde för sammanslagningsprinciper | När användare skapar och uppdaterar sammanfogningsprinciper i användargränssnittet kan de nu förhandsgranska 20 exempelprofiler baserat på unionsschemat. Detta gör att användarna kan förhandsgranska hur kundprofiler kommer att se ut innan de sparar sammanfogningspolicykonfigurationer. Mer information finns i [användargränssnittshandboken för sammanfogningsprinciper](../../profile/merge-policies/ui-guide.md). |
 | Överlappningsrapport för datauppsättning | Den överlappande rapporten för datauppsättningen ger synlighet i profilarkivets sammansättning genom att de datauppsättningar som bidrar mest till den adresserbara målgruppen exponeras. Förutom att ge insikter i profildata hjälper den här rapporten användarna att vidta åtgärder för att optimera användningen av licenser, som att sätta en gräns för vissa data. Om du vill veta mer kan du följa självstudiekursen om att [generera överlappningsrapporten](../../profile/tutorials/dataset-overlap-report.md). |
 
 Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, får du om du börjar med att läsa översikten över kundprofilen i realtid](../../profile/home.md).[
