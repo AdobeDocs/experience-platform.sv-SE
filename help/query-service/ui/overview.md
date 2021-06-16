@@ -5,17 +5,16 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-translation-type: tm+mt
-source-git-commit: d2f19cc97082f75e66cf38e54b5bdb89482930ed
+source-git-commit: 483bcea231ed5f25c76771d0acba7e0c62dfed16
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '605'
+ht-degree: 1%
 
 ---
 
 # [!DNL Query Service] guide
 
-Adobe Experience Platform [!DNL Query Service] har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och komma åt frågor som sparats av användare i din IMS-organisation. Om du vill komma åt användargränssnittet i [Adobe Experience Platform][platform-ui] väljer du **[!UICONTROL Queries]** i den vänstra navigeringen.
+Adobe Experience Platform [!DNL Query Service] har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och komma åt frågor som sparats av användare i din IMS-organisation. Om du vill komma åt användargränssnittet i [Adobe Experience Platform](https://platform.adobe.com) väljer du **[!UICONTROL Queries]** i den vänstra navigeringen.
 
 ## [!DNL Query Editor]
 
@@ -23,7 +22,7 @@ Med [!DNL Query Editor] kan du skriva och köra frågor utan att använda en ext
 
 ![Bild](../images/ui/overview/overview.png)
 
-[!DNL Query Editor] innehåller redigeringsutrymme där du kan börja skriva en fråga. När du skriver slutför redigeraren automatiskt reserverade ord, tabeller och fältnamn från SQL i tabeller. När du är klar med frågan väljer du knappen **Spela upp** för att köra frågan. På fliken **[!UICONTROL Console]** nedanför redigeraren visas vad [!DNL Query Service] gör just nu, vilket anger när en fråga har returnerats. Fliken **[!UICONTROL Result]**, bredvid konsolen, visar frågeresultat. Mer information om hur du använder [!DNL Query Editor] finns i [Frågeredigeringsguiden][query-editor].
+[!DNL Query Editor] innehåller redigeringsutrymme där du kan börja skriva en fråga. När du skriver slutför redigeraren automatiskt reserverade ord, tabeller och fältnamn från SQL i tabeller. När du är klar med frågan väljer du knappen **Spela upp** för att köra frågan. På fliken **[!UICONTROL Console]** nedanför redigeraren visas vad [!DNL Query Service] gör just nu, vilket anger när en fråga har returnerats. Fliken **[!UICONTROL Result]**, bredvid konsolen, visar frågeresultat. Mer information om hur du använder [!DNL Query Editor] finns i [Frågeredigeringsguiden](./user-guide.md).
 
 ![Bild](../images/ui/overview/query-editor.png)
 
@@ -58,14 +57,10 @@ Fliken **[!UICONTROL Log]** innehåller en lista med frågor som tidigare har k�
 
 ## Autentiseringsuppgifter
 
-På fliken **[!UICONTROL Credentials]** visas dina [!DNL Postgres]-autentiseringsuppgifter. Markera ikonen **[!UICONTROL Copy]** bredvid ett fält för att lagra dess innehåll i tangentbordsbufferten. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [handboken för att ansluta till klienter][connect-clients].
+På fliken **[!UICONTROL Credentials]** visas dina [!DNL Postgres]-autentiseringsuppgifter. Markera ikonen **[!UICONTROL Copy]** bredvid ett fält för att lagra dess innehåll i tangentbordsbufferten. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [handboken för att ansluta till klienter](../clients/overview.md).
 
 ![Bild](../images/ui/overview/credentials.png)
 
 ## Nästa steg
 
-Nu när du är bekant med [!DNL Query Service]-användargränssnittet på [!DNL Platform] kan du komma åt [!DNL Query Editor] och börja skapa egna frågeprojekt att dela med andra användare i organisationen. Mer information om hur du redigerar och kör frågor i [!DNL Query Editor] finns i [användarhandboken för Frågeredigeraren][query-editor].
-
-[platform-ui]: https://platform.adobe.com
-[query-editor]: user-guide.md
-[connect-clients]: ../clients/overview.md
+Nu när du är bekant med [!DNL Query Service]-användargränssnittet på [!DNL Platform] kan du komma åt [!DNL Query Editor] och börja skapa egna frågeprojekt att dela med andra användare i organisationen. Mer information om hur du redigerar och kör frågor i [!DNL Query Editor] finns i [användarhandboken för Frågeredigeraren](./user-guide.md).
