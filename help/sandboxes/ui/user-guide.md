@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för sandlådan
 topic-legacy: user guide
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: ba03ec805d29a95ee7d0d1a23a756feaadcea407
+source-git-commit: 3b0f156d3d6a13fbad45a153749b81a0d6244283
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '759'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas p
 
 >[!IMPORTANT]
 >
->Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html), eller om identitetsdiagrammet som finns i den också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html). Det går inte heller att återställa produktionssandlådor som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service.
+>Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html), eller om identitetsdiagrammet som finns i den också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).
 
 Om du återställer en produktions- eller utvecklingssandlåda tas alla resurser som är kopplade till den sandlådan (scheman, datauppsättningar o.s.v.) bort, samtidigt som sandlådans namn och associerade behörigheter behålls. Den här&quot;rena&quot; sandlådan är fortfarande tillgänglig under samma namn för användare som har åtkomst till den.
 
@@ -88,29 +88,29 @@ Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar
 
 ![framgång](../images/ui/success.png)
 
-### Felmeddelanden
+### Varningar
 
-En standardproduktionssandlåda som innehåller CDA-data kan inte återställas och returnerar följande fel.
+En standardproduktionssandlåda som innehåller CDA-data kan inte återställas och returnerar följande varning.
 
 ![cda](../images/ui/cda.png)
 
-En standardproduktionssandlåda som innehåller PBD-data kan inte heller återställas och returnerar följande fel.
+En standardproduktionssandlåda som innehåller PBD-data kan inte heller återställas och returnerar följande varning.
 
 ![pbd](../images/ui/pbd.png)
 
-En standardproduktionssandlåda som innehåller data för både CDA och PBD kan inte heller återställas och returnerar följande fel.
+En standardproduktionssandlåda som innehåller data för både CDA och PBD kan inte heller återställas och returnerar följande varning.
 
 ![båda](../images/ui/both.png)
 
-En produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan inte heller återställas och returnerar följande fel.
+Du kan återställa en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Välj [!UICONTROL Continue] om du vill fortsätta med återställningen.
 
-![seg](../images/ui/seg.png)
+![båda](../images/ui/seg.png)
 
 ## Ta bort en sandlåda
 
 >[!IMPORTANT]
 >
->Standardproduktionssandlådan kan inte tas bort och produktionssandlådor som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan inte heller tas bort.
+>Standardproduktionssandlådan kan inte tas bort.
 
 Om du tar bort en produktions- eller utvecklingssandlåda permanent tas alla resurser som är associerade med den sandlådan bort, inklusive behörigheter.
 
@@ -126,9 +126,9 @@ I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan o
 
 ![delete-confirm](../images/ui/delete-confirm.png)
 
-En produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan inte tas bort och returnerar följande fel.
+En användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service] kan fortfarande tas bort efter följande varning.
 
-![seg](../images/ui/seg.png)
+![seg](../images/ui/delete-seg.png)
 
 ## Nästa steg
 
