@@ -5,9 +5,9 @@ title: Dataåtkomst i Jupyterlab-anteckningsböcker
 topic-legacy: Developer Guide
 description: Den här guiden fokuserar på hur du använder Jupyter-anteckningsböcker, som är byggda i Data Science Workspace, för att få tillgång till dina data.
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: c2c2b1684e2c2c3c76dc23ad1df720abd6c4356c
+source-git-commit: 9e41db60580146fa90542ed00ceedd4eecb88b47
 workflow-type: tm+mt
-source-wordcount: '3220'
+source-wordcount: '3224'
 ht-degree: 8%
 
 ---
@@ -362,7 +362,7 @@ I och med introduktionen av [!DNL Spark] 2.4 tillhandahålls `%dataset` anpassad
 **Användning**
 
 ```scala
-%dataset {action} --datasetId {id} --dataFrame {df}`
+%dataset {action} --datasetId {id} --dataFrame {df} --mode batch
 ```
 
 **Beskrivning**
@@ -373,8 +373,8 @@ Ett anpassat kommando för [!DNL Data Science Workspace]-magi för att läsa ell
 | --- | --- | --- |
 | `{action}` | Den typ av åtgärd som ska utföras på datauppsättningen. Två åtgärder är tillgängliga,&quot;read&quot; eller&quot;write&quot;. | Ja |
 | `--datasetId {id}` | Används för att ange ID för datauppsättningen som ska läsas eller skrivas. | Ja |
-| `--dataFrame {df}` | Pandornas dataram. <ul><li> När åtgärden är &quot;read&quot; är {df} variabeln där resultaten av datauppläsningsåtgärden är tillgängliga. </li><li> När åtgärden är&quot;write&quot;, skrivs den här dataramen {df} till datauppsättningen. </li></ul> | Ja |
-| `--mode` | En extra parameter som ändrar hur data läses. Tillåtna parametrar är&quot;batch&quot; och&quot;interactive&quot;. Som standard är läget inställt på &quot;interaktiv&quot;. Vi rekommenderar att du använder gruppläge när du läser stora mängder data. | Nej |
+| `--dataFrame {df}` | Pandornas dataram. <ul><li> När åtgärden är&quot;läst&quot; är {df} variabeln där resultaten av datauppsättningens läsåtgärd är tillgängliga (till exempel en dataram). </li><li> När åtgärden är&quot;write&quot;, skrivs den här dataramen {df} till datauppsättningen. </li></ul> | Ja |
+| `--mode` | En extra parameter som ändrar hur data läses. Tillåtna parametrar är&quot;batch&quot; och&quot;interactive&quot;. Som standard är läget inställt på&quot;batch&quot;.<br> Vi rekommenderar att du använder&quot;interaktivt&quot; läge för att få bättre frågeprestanda på mindre datauppsättningar. | Ja |
 
 >[!TIP]
 >
@@ -382,8 +382,8 @@ Ett anpassat kommando för [!DNL Data Science Workspace]-magi för att läsa ell
 
 **Exempel**
 
-- **Läs exempel**:  `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0`
-- **Exempel** på skrivning:  `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0`
+- **Läs exempel**:  `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0 --mode batch`
+- **Exempel** på skrivning:  `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0 --mode batch`
 
 >[!IMPORTANT]
 >
@@ -449,7 +449,7 @@ Följande celler filtrerar en [!DNL ExperienceEvent]-datauppsättning till data 
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 
-%dataset read --datasetId {DATASET_ID} --dataFrame df
+%dataset read --datasetId {DATASET_ID} --dataFrame df --mode batch
 
 df.createOrReplaceTempView("event")
 timepd = spark.sql("""
@@ -511,7 +511,7 @@ val df1 = spark.read.format("com.adobe.platform.query")
   .option("api-key", clientContext.getApiKey())
   .option("service-token", clientContext.getServiceToken())
   .option("sandbox-name", clientContext.getSandboxName())
-  .option("mode", "interactive")
+  .option("mode", "batch")
   .option("dataset-id", "5e68141134492718af974844")
   .load()
 
@@ -568,7 +568,7 @@ df1.write.format("com.adobe.platform.query")
   .option("ims-org", clientContext.getOrgId())
   .option("api-key", clientContext.getApiKey())
   .option("sandbox-name", clientContext.getSandboxName())
-  .option("mode", "interactive")
+  .option("mode", "batch")
   .option("dataset-id", "5e68141134492718af974844")
   .save()
 ```
