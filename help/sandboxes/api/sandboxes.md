@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för sandlådehantering
 topic-legacy: developer guide
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
-source-git-commit: f84898a87a8a86783220af7f74e17f464a780918
+source-git-commit: 1ec141fa5a13bb4ca6a4ec57f597f38802a92b3f
 workflow-type: tm+mt
-source-wordcount: '1323'
+source-wordcount: '1440'
 ht-degree: 0%
 
 ---
@@ -348,11 +348,7 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) med information om den nyligen u
 
 ## Återställ en sandlåda {#reset}
 
->[!IMPORTANT]
->
->Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html), eller om identitetsdiagrammet som finns i den också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).
-
-Utvecklingssandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen för begäran.
+Sandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 **API-format**
 
@@ -363,6 +359,7 @@ PUT /sandboxes/{SANDBOX_NAME}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill återställa. |
+| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeåterställningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` för att kontrollera om sandlådan som du ska återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
 
 **Begäran**
 
@@ -370,7 +367,7 @@ Följande begäran återställer en sandlåda med namnet&quot;acme-dev&quot;.
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme-dev \
+  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme-dev?validationOnly=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -386,6 +383,10 @@ curl -X PUT \
 
 **Svar**
 
+>[!NOTE]
+>
+>När en sandlåda har återställts tar det cirka 30 sekunder att etablera den av systemet.
+
 Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställa&quot;.
 
 ```json
@@ -399,18 +400,76 @@ Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket v
 }
 ```
 
->[!NOTE]
->
->När en sandlåda har återställts tar det cirka 30 sekunder att etablera den av systemet. När sandlådan har etablerats blir den `state`&quot;aktiv&quot; eller&quot;misslyckades&quot;.
+Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html), eller om identitetsdiagrammet som finns i den också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).
 
-Följande tabell innehåller möjliga undantag som kan förhindra att en sandlåda återställs:
+Nedan följer en lista över möjliga undantag som kan förhindra att en sandlåda återställs:
 
-| Felkod | Beskrivning |
+```json
+{
+    "status": 400,
+    "title": "Sandbox `{SANDBOX_NAME}` cannot be reset. The identity graph hosted in this sandbox is also being used by Adobe Analytics for the Cross Device Analytics (CDA) feature.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2074-400"
+},
+{
+    "status": 400,
+    "title": "Sandbox `{SANDBOX_NAME}` cannot be reset. The identity graph hosted in this sandbox is also being used by Adobe Audience Manager for the People Based Destinations (PBD) feature.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2075-400"
+},
+{
+    "status": 400,
+    "title": "Sandbox `{SANDBOX_NAME}` cannot be reset. The identity graph hosted in this sandbox is also being used by Adobe Audience Manager for the People Based Destinations (PBD) feature, as well by Adobe Analytics for the Cross Device Analytics (CDA) feature.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2076-400"
+},
+{
+    "status": 400,
+    "title": "Warning: Sandbox `{SANDBOX_NAME}` is used for bi-directional segment sharing with Adobe Audience Manager or Audience Core Service.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2077-400"
+}
+```
+
+Du kan återställa en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service] genom att lägga till parametern `ignoreWarnings` i din begäran.
+
+**API-format**
+
+```http
+PUT /sandboxes/{SANDBOX_NAME}?ignoreWarnings=true
+```
+
+| Parameter | Beskrivning |
 | --- | --- |
-| `2074-400` | Det går inte att återställa den här sandlådan eftersom identitetsdiagrammet som finns i den här sandlådan även används av Adobe Analytics för funktionen Cross Device Analytics (CDA). |
-| `2075-400` | Det går inte att återställa den här sandlådan eftersom identitetsdiagrammet som finns i den här sandlådan också används av Adobe Audience Manager för PBD-funktionen (People Based Destinations). |
-| `2076-400` | Det går inte att återställa den här sandlådan eftersom identitetsdiagrammet som finns i den här sandlådan även används av Adobe Audience Manager för PBD-funktionen (People Based Destinations) och av Adobe Analytics för funktionen Cross Device Analytics (CDA). |
-| `2077-400` | Varning: Sandbox `{SANDBOX_NAME}` används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service. |
+| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill återställa. |
+| `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och tvinga fram återställningen av en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
+
+**Begäran**
+
+Följande begäran återställer en produktionssandlåda med namnet &quot;acme&quot;.
+
+```shell
+curl -X PUT \
+  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme?ignoreWarnings=true \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'Content-Type: application/json'
+  -d '{
+    "action": "reset"
+  }'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställa&quot;.
+
+```json
+{
+    "id": "d8184350-dbf5-11e9-875f-6bf1873fec16",
+    "name": "acme",
+    "title": "Acme Business Group prod",
+    "state": "resetting",
+    "type": "production",
+    "region": "VA7"
+}
+```
 
 ## Ta bort en sandlåda {#delete}
 
@@ -433,14 +492,16 @@ DELETE /sandboxes/{SANDBOX_NAME}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{SANDBOX_NAME}` | `name` för den sandlåda som du vill ta bort. |
+| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeborttagningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` för att kontrollera om sandlådan som du ska återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
+| `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och framtvinga borttagning av en användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
 
 **Begäran**
 
-Följande begäran tar bort en sandlåda med namnet&quot;acme-dev&quot;.
+Följande begäran tar bort en produktionssandlåda med namnet &quot;acme&quot;.
 
 ```shell
 curl -X DELETE \
-  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/dev-2 \
+  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme?ignoreWarnings=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
@@ -452,8 +513,8 @@ Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att
 
 ```json
 {
-    "name": "acme-dev",
-    "title": "Acme Business Group dev",
+    "name": "acme",
+    "title": "Acme Business Group prod",
     "state": "deleted",
     "type": "development",
     "region": "VA7"
