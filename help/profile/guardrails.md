@@ -3,21 +3,19 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;skyddsför
 title: Guardrails for Real-time Customer Profile Data
 solution: Experience Platform
 product: experience platform
-topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att undvika att skapa datamodeller som kundprofilen i realtid inte stöder. I det här dokumentet beskrivs de bästa metoderna och begränsningarna som du bör tänka på när du modellerar profildata.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441c2978b90a4703874787b3ed8b94c4a7779aa8
 workflow-type: tm+mt
-source-wordcount: '1456'
+source-wordcount: '1666'
 ht-degree: 1%
 
 ---
 
 # Skyddsritningar för [!DNL Real-time Customer Profile]-data
 
-[!DNL Real-time Customer Profile] innehåller individuella profiler som gör att ni kan leverera personaliserade upplevelser över flera kanaler baserat på beteendeinsikter och kundattribut. För att uppnå detta använder [!DNL Profile] och segmenteringsmotorn i Adobe Experience Platform en högdenormaliserad hybriddatamodell som erbjuder ett nytt sätt att utveckla kundprofiler. Användning av denna hybriddatamodell gör det oerhört viktigt att de data som samlas in är korrekt utformade. Trots att datalagret [!DNL Profile] som bevarar profildata inte är ett relationsarkiv, tillåter [!DNL Profile] integrering med små dimensionsenheter för att skapa segment på ett förenklat och intuitivt sätt. Denna integrering kallas segmentering för flera enheter.
+[!DNL Real-time Customer Profile] innehåller individuella profiler som gör att ni kan leverera personaliserade upplevelser över flera kanaler baserat på beteendeinsikter och kundattribut. För att uppnå denna målgruppsanpassning använder [!DNL Profile] och segmenteringsmotorn i Adobe Experience Platform en högdenormaliserad hybriddatamodell som erbjuder ett nytt sätt att utveckla kundprofiler. Användning av denna hybriddatamodell gör det viktigt att de data som samlas in är korrekt utformade. Trots att datalagret [!DNL Profile] som bevarar profildata inte är ett relationsarkiv, tillåter [!DNL Profile] integrering med små dimensionsenheter för att skapa segment på ett förenklat och intuitivt sätt. Denna integrering kallas segmentering för flera enheter.
 
 Adobe Experience Platform tillhandahåller en serie skyddsutkast som hjälper dig att undvika att skapa datamodeller som [!DNL Real-time Customer Profile] inte stöder. I det här dokumentet beskrivs dessa skyddsutkast samt bästa praxis och begränsningar när profildata används för segmentering.
 
@@ -50,9 +48,15 @@ Lagringsdatamodellen [!DNL Profile] består av två huvudentitetstyper:
 
    ![](images/guardrails/profile-and-dimension-entities.png)
 
+## Profilfragment
+
+Det finns flera skyddsutkast i det här dokumentet som refererar till&quot;profilfragment&quot;. Kundprofilen i realtid består av flera profilfragment. Varje fragment representerar data för identiteten från en datauppsättning där den är den primära identiteten. Detta innebär att ett fragment kan innehålla ett primärt ID och händelsedata (tidsserier) i en XDM ExperienceEvent-datamängd, eller så kan det bestå av ett primärt ID och registrera data (tidsoberoende attribut) i en XDM-datauppsättning för enskild profil.
+
 ## Begränsningstyper
 
-När du definierar din datamodell bör du hålla dig inom de angivna säkerhetsrutorna för att säkerställa korrekt prestanda och undvika systemfel. Skyddsritningarna i det här dokumentet innehåller två begränsningstyper:
+När du definierar din datamodell bör du hålla dig inom de angivna säkerhetsrutorna för att säkerställa korrekt prestanda och undvika systemfel.
+
+Skyddsritningarna i det här dokumentet innehåller två begränsningstyper:
 
 * **Mjuk gräns:** En mjuk gräns ger ett rekommenderat maximum för optimal systemprestanda. Det går att gå längre än en mjuk gräns utan att systemet bryts eller felmeddelanden tas emot, men om du går längre än en mjuk gräns försämras prestandan. Vi rekommenderar att du håller dig inom den mjuka gränsen för att undvika försämrade prestanda.
 
@@ -82,7 +86,7 @@ Du bör följa följande skyddsutkast när du skapar en datamodell som ska anvä
 
 ## Skyddsutkast för datastorlek
 
-Följande skyddsutkast refererar till datastorleken och rekommenderas för att säkerställa att data kan importeras, lagras och frågas på rätt sätt.
+Följande skyddsutkast hänvisar till datastorlek och rekommenderas för att säkerställa att data kan importeras, lagras och frågas på rätt sätt.
 
 >[!NOTE]
 >
@@ -92,8 +96,11 @@ Följande skyddsutkast refererar till datastorleken och rekommenderas för att s
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximal storlek per profilfragment | 10 kB | Mjuk | **Den rekommenderade maximala storleken för ett profilfragment är 10 kB.** Om du samlar in större profilfragment påverkas systemets prestanda. Om du till exempel läser in en stor CRM-datauppsättning där vissa profilfragment är 50 kB så försämras systemets prestanda. |
-| Absolut maxstorlek per profilfragment | 1 MB | Hård | **Den absoluta största storleken för ett profilfragment är 1 MB.** Inmatningen misslyckas när du försöker överföra ett profilfragment som är större än 1 MB. |
+| Maximal ExperienceEvent-storlek | 10 kB | Hård | **Den största tillåtna storleken för en händelse är 10 kB.** Intag fortsätter, men alla händelser som är större än 10 kB kommer att släppas. |
+| Största profilpoststorlek | 100 kB | Hård | **Den maximala storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
+| Största profilfragmentstorlek | 50 MB | Hård | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla  [profilfragmenteringar ](#profile-fragments) som är större än 50 MB. |
+| Maximal storlek för fillagring | 50 MB | Mjuk | **Den maximala storleken för en lagrad profil är 50 MB.** Om du lägger till ny  [profilfragmentering ](#profile-fragments) i en profil som är större än 50 MB påverkas systemets prestanda. |
+| Antal inkapslade Profile- eller ExperienceEvent-batchar per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om du samlar in ytterligare batchar påverkas systemets prestanda. |
 
 ### Dimensionens skyddsräcken
 
@@ -101,6 +108,7 @@ Följande skyddsutkast refererar till datastorleken och rekommenderas för att s
 | --- | --- | --- | --- |
 | Maximal total storlek för alla dimensionsenheter | 5 GB | Mjuk | **Den maximala rekommenderade totala storleken för alla dimensionella enheter är 5 GB.** Inhämtning av enheter med stora dimensioner resulterar i försämrade systemprestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
 | Datamängder per dimensionellt entitetsschema | 5 | Mjuk | **Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas.** Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
+| Antal inkapslade dimensionsenhetsbatchar per dag | 4 per enhet | Mjuk | **Det maximala antalet inkapslade dimensionsentitetsbatchar per dag är 4 per entitet.** Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges påverkas systemets prestanda. |
 
 ## Skyddsritningar för segmentering
 
