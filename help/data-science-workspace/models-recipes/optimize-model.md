@@ -6,8 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment.
 exl-id: f989a3f1-6322-47c6-b7d6-6a828766053f
-translation-type: tm+mt
-source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
+source-git-commit: d3e1bc9bc075117dcc96c85b8b9c81d6ee617d29
 workflow-type: tm+mt
 source-wordcount: '1265'
 ht-degree: 0%
@@ -44,7 +43,7 @@ Det finns två sätt att hämta in mätvärden till recepten. Den ena är att an
 Standardutvärderingar beräknas som en del av klassificeringsalgoritmerna. Här är några standardvärden för utvärderare som för närvarande är implementerade:
 
 | Utvärderarklass | `evaluation.class` |
---- | ---
+|--- | ---|
 | DefaultBinaryClassificationEvaluator | `com.adobe.platform.ml.impl.DefaultBinaryClassificationEvaluator` |
 | DefaultMultiClassificationEvaluator | `com.adobe.platform.ml.impl.DefaultMultiClassificationEvaluator` |
 | RecommendationsEvaluator | `com.adobe.platform.ml.impl.RecommendationsEvaluator` |
