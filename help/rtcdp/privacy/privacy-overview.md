@@ -4,14 +4,13 @@ title: Sekretess i kunddataplattformen i realtid
 seo-title: Sekretess i kunddataplattformen i realtid
 description: Med kunddataplattformen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 seo-description: Med kunddataplattformen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
-translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
+source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%
 
 ---
-
 
 # Sekretess i kunddataplattformen i realtid
 
@@ -27,7 +26,7 @@ Lagliga sekretessbestämmelser som [!DNL General Data Protection Regulation] (GD
 
 [!DNL Real-time CDP] ger kunderna möjlighet att välja bort att deras personuppgifter ska ingå i användningsfall för segmentering. Kundernas avanmälningsinställningar hämtas och lagras av [!DNL Real-time Customer Profile] och kan tillämpas genom att utesluta användare som har avanmält sig från ett segment med hjälp av boolesk logik (&quot;AND NOT&quot;) i segmentpredikatet.
 
-Mer information finns i dokumentet om [ifråga om avanmälan](../../segmentation/honoring-opt-outs.md) i dokumentationen för Adobe Experience Platform Segmentation Service.
+Mer information finns i dokumentet om [ifråga om avanmälan](../../segmentation/consents.md) i dokumentationen för Adobe Experience Platform Segmentation Service.
 
 ## Stöd för IAB TCF 2.0
 
