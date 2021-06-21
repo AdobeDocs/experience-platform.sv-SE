@@ -4,7 +4,7 @@ title: Kundprofilöversikt i realtid
 topic-legacy: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 598f86188bcd9bde22333ccafb85f3f566aaae44
+source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
 workflow-type: tm+mt
 source-wordcount: '1813'
 ht-degree: 0%
@@ -120,7 +120,7 @@ När det gäller åtkomst av data spelar datastyrning en viktig roll inom [!DNL 
 
 ### Hantera avanmälan och förfrågningar om datasekretess
 
-[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsförfrågningar som rör användningen och lagringen av deras data inom  [!DNL Real-time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden](../segmentation/honoring-opt-outs.md) respekteras.
+[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsförfrågningar som rör användningen och lagringen av deras data inom  [!DNL Real-time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden](../segmentation/consents.md) respekteras.
 
 ## Nästa steg och ytterligare resurser
 
