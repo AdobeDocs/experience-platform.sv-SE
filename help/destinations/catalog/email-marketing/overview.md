@@ -4,7 +4,7 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: a21abb44bb9cbe6fefa0ff70a1ff19e31cc0c7de
+source-git-commit: d3e1bc9bc075117dcc96c85b8b9c81d6ee617d29
 workflow-type: tm+mt
 source-wordcount: '764'
 ht-degree: 0%
@@ -63,7 +63,7 @@ Mer information om det här steget finns i [Select attributes](../../ui/activate
 Adobe rekommenderar att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användaridentiteter är avaktiverade i. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
 
 | Unik identifierare | XDM-fält i Unified Schema |
------------------ | ---------------------------
+|----------------- | ---------------------------|
 | E-postadress | `personalEmail.address` |
 | Telefon | `mobilePhone.number` |
 | Förmånsprogram-ID | `Customer-defined XDM field` |
@@ -73,7 +73,7 @@ Adobe rekommenderar att du väljer en unik identifierare i ditt [unionsschema](.
 Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. Några rekommenderade alternativ är:
 
 | Schema | XDM-fält |
------- | ---------
+|------ | ---------|
 | Förnamn | `person.name.firstName` |
 | Efternamn | `person.name.lastName` |
 | Telefon | `mobilePhone.number` |
