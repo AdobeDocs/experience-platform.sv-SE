@@ -2,9 +2,9 @@
 title: Användningsexempel som stöds av Adobe Experience Platform Web SDK
 description: Lär dig vilka användningsområden som stöds i Adobe Experience Platform Web SDK.
 keywords: web sdk;användningsfall
-source-git-commit: b630a00f3985769243bd42ecd3c49f0d0ce60b07
+source-git-commit: da305a65a7d5fc3d8214f1d046181b463d324ee0
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '574'
 ht-degree: 7%
 
 ---
@@ -40,7 +40,7 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | --- | --- |
 | Skicka upplevelsehändelser |  |
 | offer decisioning | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/offer-decisioning/offer-decisioning-overview.html?lang=en#personalization) |
-| Skicka data till kunddataprofil i realtid med låg latens |
+| Om datauppsättningen är aktiverad för profilen kan du skicka data till kunddataprofilen i realtid |  |
 | Skicka data till Customer Journey Analytics i realtid |  |
 | Skriv samtycke till profil | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/consent/adobe/sdk.html?lang=en) |
 | Vidarebefordra data på serversidan i realtid till tredje part | [Dokumentation](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en) |
@@ -87,6 +87,10 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Stöd för besökarattribut |  |
 | Profilskript |  |
 | XDM blir mbox-parametrar |  |
+| Omdirigeringserbjudanden stöds i A4T-rapporter | [Dokumentation](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=en) |
+| Uppdaterar målprofilen | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/target-overview.html?lang=en#single-profile-update) |
+| Rekommendationer |  |
+| mBox Tredje parts-ID |  |
 
 {style=&quot;table-layout:auto&quot;}
 
