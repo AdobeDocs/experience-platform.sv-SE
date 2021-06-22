@@ -5,7 +5,7 @@ title: Blandar API-slutpunkt
 description: Med slutpunkten /mixins i API:t för schemaregister kan du programmässigt hantera XDM-blandningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: 93ba2fe3-0277-4c06-acf6-f236cd33252e
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '1214'
 ht-degree: 0%
@@ -168,7 +168,7 @@ Ett lyckat svar returnerar detaljerna för mixen. Vilka fält som returneras ber
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "fieldgroups",
+  "meta:resourceType": "mixins",
   "version": "1.2",
   "title": "Favorite Hotel",
   "type": "object",
@@ -314,7 +314,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "fieldgroups",
+  "meta:resourceType": "mixins",
   "version": "1.2",
   "title": "Property Details",
   "type": "object",
@@ -496,7 +496,7 @@ Ett lyckat svar returnerar information om den uppdaterade mixinen.
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "fieldgroups",
+  "meta:resourceType": "mixins",
   "version": "1.2",
   "title": "Property Details",
   "type": "object",
@@ -639,7 +639,7 @@ Svaret visar att båda åtgärderna har utförts. `description` har uppdaterats 
 {
   "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
   "meta:altId": "_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
-  "meta:resourceType": "fieldgroups",
+  "meta:resourceType": "mixins",
   "version": "1.2",
   "title": "Property Details",
   "type": "object",
