@@ -4,16 +4,16 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 36aaccddeb207e22a22d5124ec8592ac8dddf8bc
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '1100'
+source-wordcount: '1140'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL Profiles] kontrollpanel
 
-I Adobe Experience Platform användargränssnitt (UI) finns en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet och den innehåller information om de mått som visas på kontrollpanelen.
+Adobe Experience Platform användargränssnitt (UI) tillhandahåller en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de har tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet och den innehåller information om de mått som visas på kontrollpanelen.
 
 En översikt över alla profilfunktioner i användargränssnittet i Experience Platform finns i [Användargränssnittshandboken för kundprofiler i realtid](../../profile/ui/user-guide.md).
 
@@ -30,6 +30,10 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 ## Utforska kontrollpanelen [!UICONTROL Profiles]
 
 Om du vill navigera till kontrollpanelen [!UICONTROL Profiles] i plattformsgränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
+
+>[!NOTE]
+>
+>Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte kontrollpanelen [!UICONTROL Profiles]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
 
 ![](../images/profiles/dashboard-overview.png)
 
