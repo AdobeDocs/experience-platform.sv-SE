@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: db094aac82b1d0a6671c213f3e98824f828771ab
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '1266'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
@@ -25,15 +25,19 @@ Användargränssnittshandboken kräver förståelse för de olika [!DNL Experien
 
 ## Översikt
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]**. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
+I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]** med kontrollpanelen [!UICONTROL Profiles].
 
-![](../images/user-guide/profiles-overview.png)
+>[!NOTE]
+>
+>Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte kontrollpanelen [!UICONTROL Profiles]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
 
-### Kontrollpanel för profil
+### [!UICONTROL Profiles] kontrollpanel  {#profile-dashboard}
 
-För vissa användare kan du välja **[!UICONTROL Profiles]** i den vänstra navigeringen och öppna fliken **[!UICONTROL Overview]** och visa en instrumentpanel med nyckelvärden relaterade till dina profildata.
+Kontrollpanelen **[!UICONTROL Profiles]** visar viktiga mått för din organisations profildata.
 
-Mer information finns i [guiden för profilkontrollpanelen](profile-dashboard.md).
+Mer information finns i [guiden för profilkontrollpanelen](../../dashboards/guides/profiles.md).
+
+![](../../dashboards/images/profiles/dashboard-overview.png)
 
 ## Bläddra
 
