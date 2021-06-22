@@ -4,7 +4,7 @@ description: Läs mer om de olika åtgärdstyperna i Adobe Experience Platform W
 solution: Experience Platform
 feature: Web SDK
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 7e87f5b29d388b34681217e392c3f1ae8f2b67ee
+source-git-commit: 27b26605cd03ff6d83a9a5bd308e55fcdc955da6
 workflow-type: tm+mt
 source-wordcount: '534'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Åtgärdstyper
 
-När du har konfigurerat [Adobe Experience Platform Web SDK-tillägget](web-sdk-extension.md) för [Adobe Experience Platform Launch](https://experienceleague.adobe.com/docs/launch.html) konfigurerar du åtgärdstyperna.
+När du har konfigurerat [Adobe Experience Platform Web SDK-tillägget](web-sdk-extension-configuration.md) för [Adobe Experience Platform Launch](https://experienceleague.adobe.com/docs/launch.html) konfigurerar du åtgärdstyperna.
 
 Den här sidan beskriver de tillgängliga åtgärdstyperna.
 
