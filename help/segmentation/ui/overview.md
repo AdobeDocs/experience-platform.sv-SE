@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 998332007465c1f8457b5d8cf0e153d513505d39
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '1512'
+source-wordcount: '1523'
 ht-degree: 0%
 
 ---
@@ -31,15 +31,19 @@ Det är också viktigt att känna till två nyckeltermer som används i det här
 
 ## Översikt
 
-I [[!DNL Experience Platform] användargränssnittet](https://platform.adobe.com/) väljer du **[!UICONTROL Segments]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]**. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med segment.
+I användargränssnittet för Experience Platform väljer du **[!UICONTROL Segments]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]** med kontrollpanelen [!UICONTROL Segments].
 
-![](../images/ui/overview/segment-overview.png)
+>[!NOTE]
+>
+>Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte kontrollpanelen [!UICONTROL Segments]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med segment.
 
-### Kontrollpanel för segment
+### [!UICONTROL Segments] kontrollpanel  {#segments-dashboard}
 
-För vissa användare kan du välja **[!UICONTROL Segments]** i den vänstra navigeringen och öppna fliken **[!UICONTROL Overview]** och visa en instrumentpanel med nyckelvärden som relaterar till dina segmentdata.
+Kontrollpanelen **[!UICONTROL Segments]** visar viktiga värden som relaterar till organisationens segmentdata.
 
-Mer information finns i [segmentkontrollpanelguiden](segment-dashboard.md).
+Mer information finns i [segmentkontrollpanelguiden](../../dashboards/guides/segments.md).
+
+![](../../dashboards/images/segments/dashboard-overview.png)
 
 ## Bläddra
 
