@@ -4,23 +4,30 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-translation-type: tm+mt
-source-git-commit: eaa4a7efc248104d823267eca574f2eca16edc3f
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '742'
-ht-degree: 1%
+source-wordcount: '792'
+ht-degree: 0%
 
 ---
 
 # Arbetsytan Destinationer {#destinations-workspace}
 
-## Översikt {#overview}
-
 I Adobe Experience Platform väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt arbetsytan [!UICONTROL Destinations].
 
-Arbetsytan [!UICONTROL Destinations] består av fyra avsnitt, [!UICONTROL Catalog], [!UICONTROL Browse], [!UICONTROL Accounts] och [!UICONTROL System View], som beskrivs i avsnitten nedan.
+Arbetsytan [!UICONTROL Destinations] består av fem avsnitt, [!UICONTROL Overview], [!UICONTROL Catalog], [!UICONTROL Browse], [!UICONTROL Accounts] och [!UICONTROL System View], som beskrivs i avsnitten nedan.
 
-![Destinationer - översikt](../assets/ui/workspace/destinations-workspace.png)
+![Destinationer - översikt](../assets/ui/workspace/destinations-overview.png)
+
+## [!UICONTROL Overview] {#overview}
+
+På fliken **[!UICONTROL Overview]** visas kontrollpanelen [!UICONTROL Destinations] med viktiga mått för organisationens måldata. Mer information finns i handboken [[!UICONTROL Destinations] för kontrollpanelen](../../dashboards/guides/destinations.md).
+
+>[!NOTE]
+>
+>Om din organisation är ny för Experience Platform och ännu inte har några aktiva mål visas inte kontrollpanelen [!UICONTROL Destinations] och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [[!UICONTROL Catalog]](#catalog).
+
+![](../../dashboards/images/destinations/dashboard-overview.png)
 
 ## [!UICONTROL Catalog] {#catalog}
 
