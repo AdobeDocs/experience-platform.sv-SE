@@ -2,14 +2,13 @@
 keywords: 'Reklam. Vedning. '
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet för Microsoft Bing kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
-translation-type: tm+mt
-source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
+exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
+source-git-commit: 2931efa6f67a042255fb1d31c0683f73d817b55b
 workflow-type: tm+mt
 source-wordcount: '513'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Microsoft Bing] anslutning  {#bing-destination}
 
@@ -25,7 +24,7 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Mic
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL The Trade Desk] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+[!DNL Microsoft Bing] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
 
 | Målidentitet | Beskrivning |
 |---|---|
