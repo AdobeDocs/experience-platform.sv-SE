@@ -3,18 +3,18 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förha
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och per identitet och generera en överlappningsrapport för datauppsättningar.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 459eb626101b7382b8fe497835cc19f7d7adc6b2
+source-git-commit: 0c7dc02ed0bacf7e0405b836f566149a872fc31a
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2445'
 ht-degree: 0%
 
 ---
 
 # Förhandsgranska exempelstatusslutpunkt (förhandsgranskning av profil)
 
-Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra profilrelaterade mått.
+Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid.
 
-Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus` för kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnområdet, samt för att generera en överlappande rapport för datauppsättningar för att få synlighet i kompositionen för organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa dessa mått med API-slutpunkten `/previewsamplestatus`.
+Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnutrymmet, samt för att generera en överlappande rapport för datauppsättningen och en rapport om identitetsöverlappning för att få synlighet i sammansättningen av organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa dessa mått med API-slutpunkten `/previewsamplestatus`.
 
 >[!NOTE]
 >
@@ -124,7 +124,7 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel. Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
 
 **Begäran**
 
@@ -204,15 +204,15 @@ Svaret innehåller en `data`-array som innehåller en lista med datauppsättning
 | `createdUser` | Användar-ID för den användare som skapade datauppsättningen. |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran, returneras rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
 
-## Visa profildistribution efter namnområde
+## Visa profildistribution efter ID-namnområde
 
-Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet.
+Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet. Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
 
 Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Börja med att läsa [översikten över identitetsnamnrymden](../../identity-service/namespaces.md) om du vill veta mer.
 
 >[!NOTE]
 >
->Det totala antalet profiler per namnutrymme (genom att lägga ihop värdena som visas för varje namnutrymme) kommer alltid att vara högre än antalet profiler eftersom en profil kan kopplas till flera namnutrymmen. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
+>Det totala antalet profiler per namnutrymme (genom att lägga ihop värdena som visas för varje namnutrymme) kan vara högre än antalet profiler eftersom en profil kan kopplas till flera namnutrymmen. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
 
 **API-format**
 
@@ -223,7 +223,7 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel. Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
 
 **Begäran**
 
@@ -303,7 +303,7 @@ Svaret innehåller en `data`-array, med enskilda objekt som innehåller informat
 
 ## Generera överlappningsrapport för datauppsättning
 
-Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, till exempel att ställa in en TTL för vissa datauppsättningar.
+Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, till exempel att ställa in en TTL för vissa datauppsättningar.
 
 Du kan generera överlappningsrapporten för datauppsättningen genom att utföra en GET-begäran till `/previewsamplestatus/report/dataset/overlap`-slutpunkten.
 
@@ -352,6 +352,8 @@ En lyckad begäran returnerar HTTP-status 200 (OK) och datasetet överlappar rap
 | `data` | Objektet `data` innehåller kommaavgränsade listor med datauppsättningar och deras respektive profilantal. |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran, returneras rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
 
+### Tolka överlappningsrapporten för datauppsättningen
+
 Resultatet av rapporten kan tolkas utifrån datauppsättningar och antal profiler i svaret. Titta på följande exempelrapportobjekt:`data`
 
 ```json
@@ -366,7 +368,102 @@ Den här rapporten innehåller följande information:
 * Det finns 107 profiler som endast består av data från datauppsättningen `5eeda0032af7bb19162172a7`.
 * Det finns totalt 454 642 profiler i organisationen.
 
+## Generera rapport över identitetsöverlappning
+
+Rapporten om identitetsöverlappning ger synlighet i kompositionen för din organisations profilbutik genom att visa de identiteter som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
+
+Du kan generera rapporten om identitetsöverlappning genom att utföra en GET-begäran till `/previewsamplestatus/report/identity/overlap`-slutpunkten.
+
+**API-format**
+
+```http
+GET /previewsamplestatus/report/identity/overlap
+GET /previewsamplestatus/report/identity/overlap?{QUERY_PARAMETERS}
+```
+
+| Parameter | Beskrivning |
+|---|---|
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+
+**Begäran**
+
+Följande begäran använder parametern `date` för att returnera den senaste rapporten för det angivna datumet.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/identity/overlap?date=2021-12-29 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+```
+
+**Svar**
+
+En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsöverlappningsrapporten.
+
+```json
+{
+    "data": {
+        "Email,crmid,loyal": 2,
+        "ECID,Email,crmid": 7,
+        "ECID,Email,mobilenr": 12,
+        "AAID,ECID,loyal": 1,
+        "mobilenr": 25,
+        "AAID,ECID": 1508,
+        "ECID,crmid": 1,
+        "AAID,ECID,crmid": 2,
+        "Email,crmid": 328,
+        "CORE": 49,
+        "AAID": 446,
+        "crmid,loyal": 20988,
+        "Email": 10904,
+        "crmid": 249,
+        "ECID,Email": 74,
+        "Phone": 40,
+        "Email,Phone,loyal": 48,
+        "AAID,AVID,ECID": 85,
+        "Email,loyal": 1002,
+        "AAID,ECID,Email,Phone,crmid": 5,
+        "AAID,ECID,Email,crmid,loyal": 23,
+        "AAID,AVID,ECID,Email,crmid": 2,
+        "AVID": 3,
+        "AAID,ECID,Phone": 1,
+        "loyal": 43,
+        "ECID,Email,crmid,loyal": 6,
+        "AAID,ECID,Email,Phone,crmid,loyal": 1,
+        "AAID,ECID,Email": 2,
+        "AAID,ECID,Email,crmid": 142,
+        "AVID,ECID": 24,
+        "ECID": 6565
+    },
+    "reportTimestamp": "2021-12-29T16:55:03.624"
+}
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| `data` | Objektet `data` innehåller kommaavgränsade listor med unika kombinationer av ID-namnområdeskoder och deras respektive profilantal. |
+| Namnområdeskoder | `code` är ett kort formulär för varje namn på identitetsnamn. Det går att hitta en mappning av varje `code` till `name` med hjälp av API:t [Adobe Experience Platform Identity Service](../../identity-service/api/list-namespaces.md). `code` kallas också [!UICONTROL Identity symbol] i användargränssnittet för Experience Platform. Mer information finns i [översikten över identitetsnamnet](../../identity-service/namespaces.md). |
+| `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran, returneras rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
+
+### Tolka rapporten om identitetsöverlappning
+
+Resultatet av rapporten kan tolkas utifrån identiteten och antalet profiler i svaret. Det numeriska värdet för varje rad visar hur många profiler som består av den exakta kombinationen av standard- och anpassade identitetsnamnutrymmen.
+
+Ta följande utdrag från objektet `data`:
+
+```json
+  "AAID,ECID,Email,crmid": 142,
+  "AVID,ECID": 24,
+  "ECID": 6565
+```
+
+Den här rapporten innehåller följande information:
+* Det finns 142 profiler som består av `AAID`, `ECID` och `Email` standardidentiteter samt av ett anpassat `crmid`-identitetsnamnutrymme.
+* Det finns 24 profiler som består av `AAID` och `ECID` identitetsnamnutrymmen.
+* Det finns 6 565 profiler som bara innehåller en `ECID`-identitet.
+
 ## Nästa steg
 
-Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör överlappningsrapporten för datauppsättningar kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
+Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör flera överlappningsrapporter kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
 
