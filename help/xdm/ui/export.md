@@ -5,8 +5,7 @@ description: Lär dig hur du exporterar ett befintligt schema till en annan sand
 topic-legacy: user guide
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 0%
@@ -44,9 +43,9 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
 ```json
 [
   {
-    "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
-    "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.fieldgroups.9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
-    "meta:resourceType": "fieldgroups",
+    "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+    "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+    "meta:resourceType": "mixins",
     "version": "1.0",
     "title": "Loyalty details",
     "type": "object",
@@ -171,12 +170,12 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
         "meta:xdmType": "object"
       },
       {
-        "$ref": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+        "$ref": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
         "type": "object",
         "meta:xdmType": "object"
       },
       {
-        "$ref": "https://ns.adobe.com/xdm/fieldgroups/profile-consents",
+        "$ref": "https://ns.adobe.com/xdm/mixins/profile-consents",
         "type": "object",
         "meta:xdmType": "object"
       }
@@ -189,8 +188,8 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
       "https://ns.adobe.com/xdm/common/auditable",
       "https://ns.adobe.com/xdm/data/record",
       "https://ns.adobe.com/xdm/context/profile",
-      "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
-      "https://ns.adobe.com/xdm/fieldgroups/profile-consents"
+      "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+      "https://ns.adobe.com/xdm/mixins/profile-consents"
     ],
     "meta:xdmType": "object",
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
