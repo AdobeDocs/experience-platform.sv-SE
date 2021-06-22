@@ -4,11 +4,10 @@ description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-translation-type: tm+mt
-source-git-commit: 2895975b9c103e6afba7db221223b4ef2116caf3
+source-git-commit: 4b04f02a7a8843e667ea05b000bc93ebb065babd
 workflow-type: tm+mt
-source-wordcount: '803'
-ht-degree: 4%
+source-wordcount: '839'
+ht-degree: 3%
 
 ---
 
@@ -94,7 +93,7 @@ Ditt [!DNL Experience Cloud]-organisations-ID. När du konfigurerar flera instan
 
 {style=&quot;table-layout:auto&quot;}
 
-Anger om data som är associerade med länkklick samlas in automatiskt. Mer information finns i [Automatisk länkspårning](../data-collection/track-links.md#automaticLinkTracking).
+Anger om data som är associerade med länkklick samlas in automatiskt. Mer information finns i [Automatisk länkspårning](../data-collection/track-links.md#automaticLinkTracking). Länkarna kallas också för nedladdningslänkar om de innehåller ett nedladdningsattribut eller om länken avslutas med ett filtillägg. Hämtningslänkkvalificerare kan konfigureras med ett reguljärt uttryck. Standardvärdet är `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
 
 ### `onBeforeEventSend`
 
