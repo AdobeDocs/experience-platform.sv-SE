@@ -4,9 +4,9 @@ title: Kontrollpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 36aaccddeb207e22a22d5124ec8592ac8dddf8bc
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '862'
+source-wordcount: '899'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,11 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 
 ## Utforska segmentkontrollpanelen
 
-Om du vill navigera till segmentkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
+Om du vill navigera till kontrollpanelen [!UICONTROL Segments] i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
+
+>[!NOTE]
+>
+>Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte kontrollpanelen [!UICONTROL Segments]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med segmentering.
 
 ![](../images/segments/dashboard-overview.png)
 
