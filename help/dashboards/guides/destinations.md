@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 8312d1523ab68dd0a4ba437dd826adde544838fe
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,10 @@ Kontrollpanelen [!UICONTROL Destinations] visar en ögonblicksbild av de mål so
 ## Utforska kontrollpanelen för destinationer
 
 Om du vill navigera till målkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Destinations]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
+
+>[!NOTE]
+>
+>Om din organisation är ny för Experience Platform och ännu inte har några aktiva mål visas inte kontrollpanelen [!UICONTROL Destinations] och fliken [!UICONTROL Overview]. Om du i stället väljer [!UICONTROL Destinations] i den vänstra navigeringen visas fliken [!UICONTROL Catalog]. Mer information om fliken [!UICONTROL Catalog] finns i [[!UICONTROL Destinations]-handboken för arbetsytan](../../destinations/ui/destinations-workspace.md).
 
 ![](../images/destinations/dashboard-overview.png)
 
