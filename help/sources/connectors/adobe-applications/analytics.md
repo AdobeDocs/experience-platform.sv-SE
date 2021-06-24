@@ -5,9 +5,9 @@ title: Adobe Analytics Source Connector for Report-Suite Data
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 9defe1c3087c2f1284ceedede9d274a51cf97b96
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '542'
 ht-degree: 0%
 
 ---
@@ -44,6 +44,8 @@ Mer information om fältmappning mellan [!DNL Analytics] och Experience Platform
 
 ## Vilken fördröjning förväntas för Analytics Data on Platform?
 
+Den förväntade fördröjningen för Analytics Data on Platform beskrivs i tabellen nedan. Svarstiden varierar beroende på kundens konfiguration, datavolymer och konsumentprogram. Om till exempel Analytics-implementeringen är konfigurerad med `A4T` kommer fördröjningen till Pipeline att öka till 5-10 minuter.
+
 | Analysdata | Förväntad svarstid |
 | -------------- | ---------------- |
 | Nya data till [!DNL Real-time Customer Profile] (A4T **är inte** aktiverat) | &lt; 2=&quot;&quot; minutes=&quot;&quot;> |
@@ -53,7 +55,7 @@ Mer information om fältmappning mellan [!DNL Analytics] och Experience Platform
 
 >[!NOTE]
 >
->Svarstiden varierar beroende på kundens konfiguration, datavolymer och konsumentprogram. Om till exempel implementeringen av [!DNL Analytics] är konfigurerad med `A4T` kommer fördröjningen till pipeline att öka till 5-10 minuter.
+>Data för analysunderifyllnad importeras inte till [!DNL Profile] och tas därför inte med i licensprofiler.
 
 ## Primära identifierare i [!DNL Analytics]-data
 
