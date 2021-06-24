@@ -5,10 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-translation-type: tm+mt
-source-git-commit: 8edcb3697337edd0043f26553b92c31e52d3c87c
+source-git-commit: 9c8f19e8b5259bcef526273addbd7711ef6082fb
 workflow-type: tm+mt
-source-wordcount: '945'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -31,13 +30,13 @@ Experience Platform tillåter att data hämtas från andra Adobe-program, inklus
 
 - [Adobe Audience Manager Connector - översikt](connectors/adobe-applications/audience-manager.md)
 - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Adobe Analytics Classifications Data Connector - översikt](connectors/adobe-applications/classifications.md)
+- [Översikt över anslutningen till datakällan i Adobe Analytics Classics](connectors/adobe-applications/classifications.md)
 - [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
-- [Adobe Analytics dataanslutning - översikt](connectors/adobe-applications/analytics.md)
+- [Adobe Analytics Report Suite - anslutningsöversikt för datakälla](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
 - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] anslutningsöversikt](connectors/adobe-applications/marketo/marketo.md)
-- [Skapa  [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
+- [Skapa en  [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
 
 ### Reklam
 
