@@ -2,11 +2,11 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;enhetlig profil;enhetlig;profil;rtcp;XDM-diagram
 title: Kundprofilöversikt i realtid
 topic-legacy: guide
-description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
+description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
+source-git-commit: 7ebd84f31161b45c2904545a2310c8b1f7831593
 workflow-type: tm+mt
-source-wordcount: '1813'
+source-wordcount: '1779'
 ht-degree: 0%
 
 ---
@@ -35,11 +35,7 @@ Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Platform 
 
 Experience Platform tillhandahåller en rad skyddsutkast som hjälper dig att undvika att skapa [XDM-scheman (Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda, samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsfall, finns i [dokumentationen för profilskyddsprofiler](guardrails.md).
 
-### (Beta) Kontrollpanel för profil {#profile-dashboard}
-
->[!IMPORTANT]
->
->Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+### Kontrollpanel för profil {#profile-dashboard}
 
 Användargränssnittet i Experience Platform innehåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid, som du har tagit med en daglig ögonblicksbild. Om du vill lära dig hur du får åtkomst till och arbetar med kontrollpanelen [!DNL Profile] i användargränssnittet, och detaljerad information om mätvärden som visas på kontrollpanelen, läser du i handboken [Profilkontrollpanelen](ui/profile-dashboard.md).
 
@@ -69,7 +65,7 @@ När det finns data som är i konflikt med varandra från flera datauppsättning
 
 Om du vill veta mer om kopplingsprofiler och deras roll i Experience Platform börjar du med att läsa översikten [över kopplingsprofiler](merge-policies/overview.md).
 
-### Unionens scheman {#profile-fragments-and-union-schemas}
+### Unionens system {#profile-fragments-and-union-schemas}
 
 En av de viktigaste funktionerna i [!DNL Real-time Customer Profile] är möjligheten att sammanställa flerkanalsdata. När [!DNL Real-time Customer Profile] används för att få åtkomst till en entitet kan den ge dig en sammanfogad vy över alla profilfragment för den entiteten över datauppsättningar, som kallas&quot;unionsvy&quot; och som görs möjlig genom ett så kallat unionsschema.
 
