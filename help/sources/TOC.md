@@ -4,16 +4,15 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
-translation-type: tm+mt
-source-git-commit: 32a6d0311169486b1273129c0ee87c242bee1e47
+source-git-commit: 6c78549860e54748f43cf0b41540ee441a09331e
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '616'
 ht-degree: 5%
 
 ---
 
 
-# Källanslutningar {#sources}
+# Källkopplingar {#sources}
 
 - [Översikt över källkopplingar](home.md)
 - Tillgängliga källanslutningar {#connectors}
@@ -230,12 +229,13 @@ ht-degree: 5%
       - [Dataflöde för betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Dataflöde för protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
-   - [Övervaka dataflöden](tutorials/ui/monitor.md)
+   - [Övervaka batchdataflöden](tutorials/ui/monitor.md)
+   - [Övervaka strömmande dataflöden](tutorials/ui/monitor-streaming.md)
    - [Uppdatera konton](tutorials/ui/update.md)
    - [Uppdatera dataflöden](tutorials/ui/update-dataflows.md)
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
-- [Vanliga frågor](./troubleshooting.md)
+- [Frågor och svar](./troubleshooting.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
