@@ -5,10 +5,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen visas hur du aktiverar en datauppsättning för användning med kundprofil och identitetstjänst i realtid med Adobe Experience Platform API:er.
 exl-id: 142cb7df-072a-4f3a-8a9c-9a78afb35312
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: bcca4d6212ee3f0d661549eca359ab8c8aaf905c
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1061'
 ht-degree: 0%
 
 ---
@@ -43,17 +42,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
-- Behörighet: Bearer `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- `Authorization: Bearer {ACCESS_TOKEN}`
+- `x-api-key: {API_KEY}`
+- `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare ett `Content-Type`-huvud. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
 
-- Innehållstyp: application/json
-
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
-
-- x-sandbox-name: `{SANDBOX_NAME}`
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver ett `x-sandbox-name`-huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 ## Skapa en datauppsättning som är aktiverad för [!DNL Profile] och [!DNL Identity] {#create-a-dataset-enabled-for-profile-and-identity}
 
@@ -213,23 +208,21 @@ PATCH /dataSets/{DATASET_ID}
 ```shell
 curl -X PATCH \
   https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type:application/json-patch+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -d '{
-    "tags" : {
-        "unifiedProfile": ["enabled:true"],
-        "unifiedIdentity": ["enabled:true"]
-    }
-  }'
+  -d '[
+        { "op": "add", "path": "/tags/unifiedProfile", "value": ["enabled:true"] },
+        { "op": "add", "path": "/tags/unifiedIdentity", "value": ["enabled:true"] }	
+      ]'
 ```
 
-Begärandetexten innehåller en `tags`-egenskap som innehåller två underegenskaper: `"unifiedProfile"` och `"unifiedIdentity"`. Värdena för dessa underegenskaper är arrayer som innehåller strängen `"enabled:true"`.
+Begärandetexten innehåller en `path` till två typer av taggar, `unifiedProfile` och `unifiedIdentity`. `value` för var och en är matriser som innehåller strängen `enabled:true`.
 
 **Svar:**
-En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. Taggarna `"unifiedProfile"` och `"unifiedIdentity"` har nu lagts till och datauppsättningen är aktiverad för användning av profil- och identitetstjänster.
+En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. Taggarna `unifiedProfile` och `unifiedIdentity` har nu lagts till och datauppsättningen är aktiverad för användning av profil- och identitetstjänster.
 
 ```json
 [
