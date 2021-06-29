@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
-source-git-commit: 6c78549860e54748f43cf0b41540ee441a09331e
+source-git-commit: 2b2dcf51098f8263044d56bf65a00d1d48ceddd8
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '623'
 ht-degree: 5%
 
 ---
@@ -49,6 +49,7 @@ ht-degree: 5%
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
+      - [Veeva CRM-koppling](connectors/crm/veeva.md)
    - Nöjda kunder {#customer-success}
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
@@ -100,6 +101,7 @@ ht-degree: 5%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
+         - [Veeva CRM](tutorials/api/create/crm/veeva.md)
       - Nöjda kunder {#customer-success}
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
@@ -186,6 +188,7 @@ ht-degree: 5%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
+         - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
       - Nöjda kunder {#customer-success}
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
