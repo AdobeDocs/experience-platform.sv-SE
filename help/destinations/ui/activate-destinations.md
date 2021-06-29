@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 694a647b9f268b84d55a960b360ce28527c6c652
+source-git-commit: 0f0a71d8c1c3f36d6966ab37bd9749a59bc4aecf
 workflow-type: tm+mt
-source-wordcount: '2738'
+source-wordcount: '2586'
 ht-degree: 0%
 
 ---
@@ -149,9 +149,9 @@ Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna s
    >
    >Alternativet att exportera filer vid en viss tidpunkt finns för närvarande i betaversion och är bara tillgängligt för ett visst antal kunder.
 
-   >[!IMPORTANT]
-   >
-   >Beroende på när profilexportjobbet avslutas och när måltjänsten startar segmentaktiveringsjobbet kanske den första inkrementella eller fullständiga filexporten inte innehåller alla nödvändiga backfill-data. För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar vi att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   <!-- >[!IMPORTANT]
+      >
+      >Depending on when the profile export job finishes running and when the destination service starts the segment activation job, the first incremental or full file export may not contain all the necessary backfill data. To ensure a complete and most up-to-date backfill data export for both full and incremental files, we recommend setting the first file export time after 12 PM GMT of the following day. This is a limitation that will be addressed in future releases. -->
 
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
@@ -180,9 +180,9 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
    >
    >Alternativet att välja tid på dagen för exporten är bara tillgängligt för ett visst antal kunder.
 
-   >[!IMPORTANT]
-   >
-   >Beroende på när profilexportjobbet avslutas och när måltjänsten startar segmentaktiveringsjobbet kanske den första inkrementella eller fullständiga filexporten inte innehåller alla nödvändiga backfill-data. För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar vi att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   <!-- >[!IMPORTANT]
+     >
+     >Depending on when the profile export job finishes running and when the destination service starts the segment activation job, the first incremental or full file export may not contain all the necessary backfill data. To ensure a complete and most up-to-date backfill data export for both full and incremental files, we recommend setting the first file export time after 12 PM GMT of the following day. This is a limitation that will be addressed in future releases. -->
 
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
