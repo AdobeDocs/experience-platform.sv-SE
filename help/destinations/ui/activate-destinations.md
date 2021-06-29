@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: a8822d66443cc4cda761e1f0963b0e0251427911
+source-git-commit: 694a647b9f268b84d55a960b360ce28527c6c652
 workflow-type: tm+mt
-source-wordcount: '2600'
+source-wordcount: '2738'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ I Adobe Experience Platform-användargränssnittet går du till **[!UICONTROL De
 
 Följ stegen i nästa avsnitt för att markera de segment som du vill aktivera.
 
-## [!UICONTROL Select Segments] steg  {#select-segments}
+## [!UICONTROL Select Segments] steg {#select-segments}
 
 Gäller för: Alla destinationer
 
@@ -149,8 +149,13 @@ Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna s
    >
    >Alternativet att exportera filer vid en viss tidpunkt finns för närvarande i betaversion och är bara tillgängligt för ett visst antal kunder.
 
+   >[!IMPORTANT]
+   >
+   >Beroende på när profilexportjobbet avslutas och när måltjänsten startar segmentaktiveringsjobbet kanske den första inkrementella eller fullständiga filexporten inte innehåller alla nödvändiga backfill-data. För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar vi att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
+
 
 ### Exportera inkrementella filer {#export-incremental-files}
 
@@ -173,7 +178,11 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
 
    >[!IMPORTANT]
    >
-   >Alternativet att välja tid på dagen för exporten är bara tillgängligt för ett visst antal kunder. Kunder som inte är beta kan exportera inkrementella filer en gång om dagen, kl. 23:00 UTC (kl. 7:00 EST).
+   >Alternativet att välja tid på dagen för exporten är bara tillgängligt för ett visst antal kunder.
+
+   >[!IMPORTANT]
+   >
+   >Beroende på när profilexportjobbet avslutas och när måltjänsten startar segmentaktiveringsjobbet kanske den första inkrementella eller fullständiga filexporten inte innehåller alla nödvändiga backfill-data. För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar vi att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
 
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
@@ -204,7 +213,7 @@ Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
 När du har konfigurerat alla segment väljer du **[!UICONTROL Next]** för att fortsätta.
 
-## **[!UICONTROL Segment schedule]** steg  {#segment-schedule}
+## **[!UICONTROL Segment schedule]** steg {#segment-schedule}
 
 Gäller för: reklamdestinationer, sociala destinationer
 
@@ -224,7 +233,7 @@ På sidan **[!UICONTROL Segment schedule]** kan du ange startdatum för att skic
 
 ![ange program-ID](../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-## **[!UICONTROL Select attributes]** steg  {#select-attributes}
+## **[!UICONTROL Select attributes]** steg {#select-attributes}
 
 Gäller för: mål för e-postmarknadsföring och molnlagring
 
@@ -427,7 +436,7 @@ Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finis
 
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
 
-### Destinationer för e-postmarknadsföring och molnlagringsmål {#esp-and-cloud-storage}
+### Destinationer för e-postmarknadsföring och molnlagring {#esp-and-cloud-storage}
 
 För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Experience Platform en tabbavgränsad `.csv`-fil på den lagringsplats som du angav. Förvänta dig att en ny fil ska skapas på din lagringsplats varje dag. Standardfilformatet är:
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
