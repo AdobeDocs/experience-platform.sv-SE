@@ -1,28 +1,27 @@
 ---
 keywords: Experience Platform;hemmabas;populära ämnen;kuchbase;Kuchbase
 solution: Experience Platform
-title: Skapa en källanslutning till Couchbase med API:t för Flow Service
+title: Skapa en kuchbase-anslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 625e3acf-fc27-44cf-b4e6-becf1d107ff2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '527'
+source-wordcount: '451'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Couchbase]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Couchbase]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
 >[!DNL Couchbase]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor och föra in dem i Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-Lär dig hur du ansluter [!DNL Couchbase] till [!DNL Experience Platform].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Couchbase] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -38,41 +37,27 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL Couchbase]-instans. Anslutningssträngsmönstret för [!DNL Couchbase] är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i [detta Couchbase-dokument](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
-| `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för [!DNL Couchbase] är `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL Couchbase] är `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per [!DNL Couchbase]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Couchbase] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-Följande begäran skapar en ny [!DNL Couchbase]-anslutning, konfigurerad med egenskaperna i nyttolasten:.
+Följande begäran skapar en basanslutning för [!DNL Couchbase]:
 
 ```shell
 curl -X POST \
