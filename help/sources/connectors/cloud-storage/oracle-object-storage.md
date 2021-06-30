@@ -5,10 +5,9 @@ title: Översikt över Oracle Object Storage-källanslutning
 topic-legacy: overview
 description: Lär dig hur du ansluter Oracle Object Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 5e8b85c8-9f01-49a6-9556-7b9c7518fb4b
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '425'
 ht-degree: 0%
 
 ---
@@ -40,11 +39,11 @@ Dokumentationen nedan innehåller information om hur du ansluter Oracle Object S
 
 ### Använda API:er
 
-- [Skapa en källanslutning för Oracle Object Storage med hjälp av API:t för Flow Service](../../tutorials/api/create/cloud-storage/oracle-object-storage.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en Oraclena objektlagringsbasanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/oracle-object-storage.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en källanslutning för Oraclena objektlagring i användargränssnittet](../../tutorials/ui/create/cloud-storage/oracle-object-storage.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
