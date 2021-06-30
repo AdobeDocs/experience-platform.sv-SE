@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;grönplum;Greenplum
 solution: Experience Platform
-title: Skapa en GreenPlum-källanslutning med API:t för Flow Service
+title: Skapa en anslutning till en grönPlum-bas med API:t för flödestjänsten
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter GreenPlum till Adobe Experience Platform med API:t för Flow Service.
 exl-id: c4ce452a-b4c5-46ab-83ab-61b296c271d0
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '439'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL GreenPlum]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL GreenPlum]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL GreenPlum] till [!DNL Experience Platform].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL GreenPlum] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -31,43 +31,29 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL GreenPlum]-instans. Anslutningssträngsmönstret för [!DNL GreenPlum] är `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
-| `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för [!DNL GreenPlum] är `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL GreenPlum] är `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
 
 Mer information om hur du hämtar en anslutningssträng finns i [det här GreenPlum-dokumentet](https://gpdb.docs.pivotal.io/580/security-guide/topics/Authenticate.html#topic_fzv_wb2_jr__config_ssl_client_conn).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per [!DNL GreenPlum]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL GreenPlum] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-För att kunna skapa en [!DNL GreenPlum]-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för [!DNL GreenPlum] är `37b6bf40-d318-4655-90be-5cd6f65d334b`.
+Följande begäran skapar en basanslutning för [!DNL GreenPlum]:
 
 ```shell
 curl -X POST \
