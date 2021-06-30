@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;PostgreSQL;postgresql;PSQL;psql
 solution: Experience Platform
-title: Skapa en PostSQL-källanslutning med API:t för Flow Service
+title: Skapa en PostSQL-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till PostgreSQL med API:t för Flow Service.
 exl-id: 5225368a-08c1-421d-aec2-d50ad09ae454
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '445'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL PostgreSQL]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL PostgreSQL]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till [!DNL PostgreSQL] (nedan kallat PSQL).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL PostgreSQL] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+
 
 ## Komma igång
 
@@ -27,52 +27,38 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till PSQL med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL PostgreSQL] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till PSQL måste du ange följande anslutningsegenskap:
+För att [!DNL Flow Service] ska kunna ansluta till [!DNL PostgreSQL] måste du ange följande anslutningsegenskap:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. PSQL-anslutningssträngsmönstret är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
-| `connectionSpec.id` | Det ID som används för att skapa en anslutning. Det fasta anslutningens spec-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
+| `connectionString` | Anslutningssträngen som är associerad med ditt [!DNL PostgreSQL]-konto. Anslutningssträngsmönstret [!DNL PostgreSQL] är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL PostgreSQL] är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
-Mer information om hur du hämtar en anslutningssträng finns i [det här PSQL-dokumentet](https://www.postgresql.org/docs/9.2/app-psql.html).
+Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL PostgreSQL] dokumentet](https://www.postgresql.org/docs/9.2/app-psql.html).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Det krävs bara en anslutning per PSQL-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL PostgreSQL] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-För att en PSQL-anslutning ska kunna skapas måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`.
+Följande begäran skapar en basanslutning för [!DNL PostgreSQL]:
 
 ```shell
 curl -X POST \
@@ -100,12 +86,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | ------------- | --------------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. PSQL-anslutningssträngsmönstret är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
-| `connectionSpec.id` | Anslutningens spec-ID för PSQL är: `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
+| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt [!DNL PostgreSQL]-konto. Anslutningssträngsmönstret [!DNL PostgreSQL] är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL PostgreSQL]: `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyskapade basanslutningen. Detta ID krävs för att utforska din PSQL-databas i nästa självstudiekurs.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyskapade basanslutningen. Detta ID krävs för att utforska din [!DNL PostgreSQL]-databas i nästa självstudiekurs.
 
 ```json
 {
@@ -116,4 +102,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyskapade ba
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en PSQL-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig att [utforska databaser eller NoSQL-system med API:t för Flow Service](../../explore/database-nosql.md).
+I den här självstudiekursen har du skapat en [!DNL PostgreSQL]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig att [utforska databaser eller NoSQL-system med API:t för Flow Service](../../explore/database-nosql.md).
