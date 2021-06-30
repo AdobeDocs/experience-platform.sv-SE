@@ -5,10 +5,9 @@ title: Översikt över Salesforce Service Cloud Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce Service Cloud till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 9bebbc00-55b3-4aec-9357-4127c05844e2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 4aed960fb3873e604efb36268887ac36a7331064
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -27,11 +26,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforc
 
 ## Anslut [!DNL Salesforce Service Cloud ]till [!DNL Platform] med API:er
 
-- [Skapa en Salesforce Service Cloud-källanslutning med hjälp av API:t för Flow Service](../../tutorials/api/create/customer-success/salesforce-service-cloud.md)
-- [Utforska ett lyckat kundsystem med API:t för Flow Service](../../tutorials/api/explore/customer-success.md)
-- [Samla in data från ett lyckat kundsystem med API:t för Flow Service](../../tutorials/api/collect/customer-success.md)
+- [Skapa en Salesforce Service Cloud-basanslutning med API:t för Flow Service](../../tutorials/api/create/customer-success/salesforce-service-cloud.md)
+- [Utforska datastrukturen och innehållet i en Customer Success Source med API:t för Flow Service](../../tutorials/api/explore/customer-success.md)
+- [Skapa ett dataflöde för en Customer Success Source med API:t för Flow Service](../../tutorials/api/collect/customer-success.md)
 
 ## Anslut [!DNL Salesforce Service Cloud] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Salesforce Service Cloud-källanslutning i användargränssnittet](../../tutorials/ui/create/customer-success/salesforce-service-cloud.md)
-- [Konfigurera dataflöde för en lyckad kundanslutning i användargränssnittet](../../tutorials/ui/dataflow/customer-success.md)
+- [Skapa dataflöde för en källanslutning till en lyckad kund i användargränssnittet](../../tutorials/ui/dataflow/customer-success.md)
