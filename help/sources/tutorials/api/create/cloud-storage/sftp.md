@@ -1,22 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;SFTP;sftp;Secure File Transfer Protocol;secure file transfer protocol
 solution: Experience Platform
-title: Skapa en SFTP-källanslutning med API:t för Flow Service
+title: Skapa en SFTP-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59a8e2aa86508e53f181ac796f7c03f9fcd76158
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '798'
 ht-degree: 0%
 
 ---
 
-# Skapa en SFTP-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en SFTP-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol).
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
+
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL SFTP] (Secure File Transfer Protocol) med [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -27,49 +28,36 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 >[!IMPORTANT]
 >
->Du bör undvika radmatningar och radmatningar när du importerar JSON-objekt med en SFTP-källanslutning. Du kan undvika begränsningarna genom att använda ett enda JSON-objekt per rad och flera rader för att skapa filer.
+>Du bör undvika radmatningar och vagnreturer när du importerar JSON-objekt med en [!DNL SFTP]-källanslutning. Du kan undvika begränsningarna genom att använda ett enda JSON-objekt per rad och flera rader för att skapa filer.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en SFTP-server med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en [!DNL SFTP]-server med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till SFTP måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till [!DNL SFTP] måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | Namnet eller IP-adressen som är associerad med SFTP-servern. |
-| `username` | Användarnamnet som ger åtkomst till din SFTP-server. |
-| `password` | Lösenordet för SFTP-servern. |
+| `host` | Namnet eller IP-adressen som är associerad med din [!DNL SFTP]-server. |
+| `username` | Användarnamnet som ger åtkomst till din [!DNL SFTP]-server. |
+| `password` | Lösenordet för din [!DNL SFTP]-server. |
 | `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
-| `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
+| `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om `privateKeyContent` är lösenordsskyddad måste den här parametern användas med den privata nyckelinnehållets lösenfras som värde. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL SFTP] är: `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL SFTP] som en del av parametrarna för begäran.
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+### Skapa en [!DNL SFTP]-anslutning med grundläggande autentisering
 
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs eftersom den kan användas för att skapa flera dataflöden för att hämta olika data.
-
-### Skapa en SFTP-anslutning med grundläggande autentisering
-
-Om du vill skapa en SFTP-anslutning med grundläggande autentisering skickar du en POST till [!DNL Flow Service]-API:t och anger värden för din anslutnings `host`, `userName` och `password`.
+Om du vill skapa en [!DNL SFTP]-basanslutning med grundläggande autentisering skickar du en POST till API:t [!DNL Flow Service] och anger värden för anslutningsens `host`, `userName` och `password`.
 
 **API-format**
 
@@ -79,7 +67,7 @@ POST /connections
 
 **Begäran**
 
-För att en SFTP-anslutning ska kunna skapas måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för SFTP är `b7bf2577-4520-42c9-bae9-cad01560f7bc`.
+Följande begäran skapar en basanslutning för [!DNL SFTP] med grundläggande autentisering:
 
 ```shell
 curl -X POST \
@@ -125,13 +113,13 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 }
 ```
 
-### Skapa en SFTP-anslutning med autentisering med SSH-offentlig nyckel
+### Skapa en [!DNL SFTP]-anslutning med autentisering med SSH-offentlig nyckel
 
-Om du vill skapa en SFTP-anslutning med SSH-autentisering med offentlig nyckel gör du en POST-förfrågan till [!DNL Flow Service]-API:t och anger värden för anslutningsens `host`, `userName`, `privateKeyContent` och `passPhrase`.
+Om du vill skapa en [!DNL SFTP]-basanslutning med autentisering med den offentliga nyckeln för SSH ska du göra en POST-förfrågan till API:t [!DNL Flow Service] och ange värden för anslutningsens `host`, `userName`, `privateKeyContent` och `passPhrase`.
 
 >[!IMPORTANT]
 >
->SFTP-kopplingen stöder en RSA- eller DSA-typ av OpenSSH-nyckel. Kontrollera att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
+>[!DNL SFTP]-kopplingen stöder en RSA- eller DSA-typ av OpenSSH-nyckel. Kontrollera att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
 
 **API-format**
 
@@ -140,6 +128,8 @@ POST /connections
 ```
 
 **Begäran**
+
+Följande begäran skapar en basanslutning för [!DNL SFTP] med autentisering av offentlig nyckel för SSH:
 
 ```shell
 curl -X POST \
@@ -170,15 +160,15 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.host` | Värdnamnet för SFTP-servern. |
-| `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
+| `auth.params.host` | Värdnamnet för din [!DNL SFTP]-server. |
+| `auth.params.username` | Användarnamnet som är associerat med din [!DNL SFTP]-server. |
 | `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
-| `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+| `connectionSpec.id` | ID för serveranslutningsspecifikationen för [!DNL SFTP]: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska din SFTP-server i nästa självstudiekurs.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska din [!DNL SFTP]-server i nästa självstudiekurs.
 
 ```json
 {
@@ -189,4 +179,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en SFTP-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för flödestjänst](../../explore/cloud-storage.md) eller [import av Parquet-data med API:t för flödestjänst](../../cloud-storage-parquet.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL SFTP]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för flödestjänst](../../explore/cloud-storage.md) eller [import av Parquet-data med API:t för flödestjänst](../../cloud-storage-parquet.md).
