@@ -5,10 +5,9 @@ title: SQL Server Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Microsoft SQL Server till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 8a77f108-7e82-4e14-a470-a4ea97def89d
-translation-type: tm+mt
-source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -31,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Microsoft
 
 ## Anslut [!DNL Microsoft] SQL Server till [!DNL Platform] med API:er
 
-- [Skapa en Microsoft SQL Server-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/sql-server.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Microsoft SQL Server-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/sql-server.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Microsoft] SQL Server till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Microsoft SQL Server-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/sql-server.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
