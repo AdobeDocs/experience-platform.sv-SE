@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
-source-git-commit: 2b2dcf51098f8263044d56bf65a00d1d48ceddd8
+source-git-commit: e04df6e2ffabac6e70164dfccbad8440976b2755
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '619'
 ht-degree: 5%
 
 ---
@@ -82,7 +82,7 @@ ht-degree: 5%
    - Direktuppspelning {#streaming}
       - [HTTP API-anslutning](connectors/streaming/http.md)
 - API-självstudiekurser {#api-tutorials}
-   - Skapa en källanslutning {#create}
+   - Skapa en basanslutning {#create}
       - Reklam {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
       - Molnlagring {#cloud-storage}
@@ -138,7 +138,7 @@ ht-degree: 5%
       - [Utforska molnlagringsdata](tutorials/api/explore/cloud-storage.md)
       - [Utforska CRM-data](tutorials/api/explore/crm.md)
       - [Utforska data om kundframgångar](tutorials/api/explore/customer-success.md)
-      - [Utforska databas eller NoSQL-data](tutorials/api/explore/database-nosql.md)
+      - [Utforska databasdata](tutorials/api/explore/database-nosql.md)
       - [Utforska e-handelsdata](tutorials/api/explore/ecommerce.md)
       - [Utforska automatiserade marknadsföringsdata](tutorials/api/explore/marketing-automation.md)
       - [Utforska betalningsdata](tutorials/api/explore/payments.md)
@@ -148,7 +148,7 @@ ht-degree: 5%
       - [Samla in molnlagringsdata](tutorials/api/collect/cloud-storage.md)
       - [Samla in CRM-data](tutorials/api/collect/crm.md)
       - [Samla in kunddata](tutorials/api/collect/customer-success.md)
-      - [Samla in databas- eller NoSQL-data](tutorials/api/collect/database-nosql.md)
+      - [Samla in databasdata](tutorials/api/collect/database-nosql.md)
       - [Samla in e-handelsdata](tutorials/api/collect/ecommerce.md)
       - [Samla in automatiserade marknadsföringsdata](tutorials/api/collect/marketing-automation.md)
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
