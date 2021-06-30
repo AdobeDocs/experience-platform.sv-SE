@@ -5,10 +5,9 @@ title: Apache Hive på Azure HDInsights Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Apache Hive på Azure HDInsights till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: f55f9e9a-779e-426a-bca6-7567ea843698
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '282'
 ht-degree: 0%
 
 ---
@@ -31,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache Hi
 
 ## Anslut [!DNL Apache Hive] på [!DNL Azure HDInsights] till [!DNL Platform] med API:er
 
-- [Skapa en Apache Hive på Azure HDInsights-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/hive.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Apache Hive på Azure HDInsights-basanslutningen med API:t för Flow Service](../../tutorials/api/create/databases/hive.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Apache Hive] på [!DNL Azure HDInsights] till [!DNL Platform] med användargränssnittet
 
-- [Skapa en Apache Hive på Azure HDInsights-källanslutningen i gränssnittet](../../tutorials/ui/create/databases/hive.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa en Apache Hive på Azure HDInsights-källanslutning i gränssnittet](../../tutorials/ui/create/databases/hive.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
