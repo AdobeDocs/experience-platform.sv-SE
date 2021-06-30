@@ -1,27 +1,27 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Vertica;vertica
 solution: Experience Platform
-title: Skapa en HP Vertica Source Connection med API:t för Flow Service
+title: Skapa en HP Vertica Base-anslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter HP Vertica till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 37f831c1-7c82-462a-8338-a0bcaaf08cd1
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '484'
 ht-degree: 1%
 
 ---
 
-# Skapa en HP [!DNL Vertica]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL HP Vertica]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
->HP-kopplingen [!DNL Vertica] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>[!DNL HP Vertica]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta HP [!DNL Vertica] till [!DNL Experience Platform].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL HP Vertica] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -30,52 +30,39 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](https://experienceleague.adobe.com/docs/experience-platform/source-connectors/home.html):  [!DNL Experience Platform] gör att data kan importeras från olika källor samtidigt som du kan strukturera, mappa och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
 * [Sandlådor](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till HP [!DNL Vertica] med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL HP Vertica] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till HP [!DNL Vertica] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till [!DNL HP Vertica] måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till HP-instansen [!DNL Vertica]. Anslutningssträngsmönstret för HP [!DNL Vertica] är `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
-| `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för HP [!DNL Vertica] är: `a8b6a1a4-5735-42b4-952c-85dce0ac38b5` |
+| `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL HP Vertica]-instans. Anslutningssträngsmönstret för [!DNL HP Vertica] är `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL HP Vertica] är: `a8b6a1a4-5735-42b4-952c-85dce0ac38b5` |
 
 Mer information om hur du hämtar en anslutningssträng finns i [det här HP Vertica-dokumentet](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/ConnectingToVertica/ClientJDBC/CreatingAndConfiguringAConnection.htm).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per HP [!DNL Vertica]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL HP Vertica] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-Om du vill skapa en HP [!DNL Vertica]-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för HP [!DNL Vertica] är `a8b6a1a4-5735-42b4-952c-85dce0ac38b5`.
+Följande begäran skapar en basanslutning för [!DNL HP Vertica]:
+
 
 ```shell
 curl -X POST \
@@ -103,8 +90,8 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt HP [!DNL Vertica]-konto. Anslutningssträngsmönstret för HP [!DNL Vertica] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | HP [!DNL Vertica]-anslutningsspecifikations-ID: `a8b6a1a4-5735-42b4-952c-85dce0ac38b5`. |
+| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt [!DNL HP Vertica]-konto. Anslutningssträngsmönstret för [!DNL HP Vertica] är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL HP Vertica]: `a8b6a1a4-5735-42b4-952c-85dce0ac38b5`. |
 
 **Svar**
 
@@ -119,4 +106,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en HP [!DNL Vertica]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL HP Vertica]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
