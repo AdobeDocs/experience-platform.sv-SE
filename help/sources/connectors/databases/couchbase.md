@@ -5,10 +5,9 @@ title: Översikt över källkoppling för Couchbase
 topic-legacy: overview
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '216'
 ht-degree: 0%
 
 ---
@@ -29,11 +28,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Couchbase
 
 ## Anslut [!DNL Couchbase] till [!DNL Platform] med API:er
 
-- [Skapa en källanslutning till Couchbase med API:t för Flow Service](../../tutorials/api/create/databases/couchbase.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Couchbase-anslutning med API:t för Flow Service](../../tutorials/api/create/databases/couchbase.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Couchbase] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en källanslutning till Couchbase i användargränssnittet](../../tutorials/ui/create/databases/couchbase.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
