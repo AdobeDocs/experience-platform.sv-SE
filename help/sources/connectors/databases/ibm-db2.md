@@ -5,10 +5,9 @@ title: Översikt över IBM DB2 Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter IBM DB2 till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 939e0151-fc07-4963-8ea2-0432dee713eb
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -31,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter IBM DB2 till [!
 
 ## Anslut IBM DB2 till [!DNL Platform] med API:er
 
-- [Skapa en IBM DB2-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/ibm-db2.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en IBM DB2-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/ibm-db2.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut IBM DB2 till [!DNL Platform] med användargränssnittet
 
 - [Skapa en IBM DB2-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/ibm-db2.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
