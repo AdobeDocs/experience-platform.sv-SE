@@ -5,9 +5,9 @@ title: ServiceNow Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter ServiceNow till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: f491b367-ec6d-4fb8-8eeb-3178673c0085
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 4aed960fb3873e604efb36268887ac36a7331064
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL ServiceNo
 
 ## Anslut [!DNL ServiceNow] till [!DNL Platform] med API:er
 
-- [Skapa en ServiceNow-källanslutning med API:t för Flow Service](../../tutorials/api/create/customer-success/servicenow.md)
-- [Utforska ett lyckat kundsystem med API:t för Flow Service](../../tutorials/api/explore/customer-success.md)
-- [Samla in data från ett lyckat kundsystem med API:t för Flow Service](../../tutorials/api/collect/customer-success.md)
+- [Skapa en ServiceNow-basanslutning med API:t för Flow Service](../../tutorials/api/create/customer-success/servicenow.md)
+- [Utforska datastrukturen och innehållet i en Customer Success Source med API:t för Flow Service](../../tutorials/api/explore/customer-success.md)
+- [Skapa ett dataflöde för en Customer Success Source med API:t för Flow Service](../../tutorials/api/collect/customer-success.md)
 
 ## Anslut [!DNL ServiceNow] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en ServiceNow-källanslutning i användargränssnittet](../../tutorials/ui/create/customer-success/servicenow.md)
-- [Konfigurera dataflöde för en lyckad kundanslutning i användargränssnittet](../../tutorials/ui/dataflow/customer-success.md)
+- [Skapa dataflöde för en källanslutning till en lyckad kund i användargränssnittet](../../tutorials/ui/dataflow/customer-success.md)
