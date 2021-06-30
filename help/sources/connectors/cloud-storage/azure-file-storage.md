@@ -5,9 +5,9 @@ title: Översikt över Azure File Storage Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure File Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 0a5e9df6-9760-4eeb-86d5-d92d77df3d2b
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '459'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Fil
 
 ### Använda API:er
 
-- [Skapa en Azure File Storage-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/azure-file-storage.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en Azure File Storage-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/azure-file-storage.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en Azure File Storage-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/azure-file-storage.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
