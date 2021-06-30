@@ -1,22 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Oraclena objektlagring;oraclena objektlagring
 solution: Experience Platform
-title: Skapa en källanslutning för Oracle Object Storage med API:t för Flow Service
+title: Skapa en Oracle Object Storage-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Object Storage med API:t för Flow Service.
 exl-id: a85faa44-7d5a-42a2-9052-af01744e13c9
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59a8e2aa86508e53f181ac796f7c03f9fcd76158
 workflow-type: tm+mt
-source-wordcount: '623'
-ht-degree: 0%
+source-wordcount: '559'
+ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Oracle Object Storage]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Oracle Object Storage]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att vägleda dig genom stegen för att ansluta Adobe Experience Platform till [!DNL Oracle Object Storage].
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
+
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Oracle Object Storage] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -38,32 +39,19 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Oracle Object Storage]
 | `secretKey` | Lösenordet [!DNL Oracle Object Storage] krävs för autentisering. |
 | `bucketName` | Det tillåtna bucket-namn som krävs om användaren har begränsad åtkomst. Bucketnamnet måste innehålla mellan tre och 63 tecken, det måste börja och sluta med en bokstav eller en siffra och får bara innehålla gemena bokstäver, siffror eller bindestreck (`-`). Det går inte att formatera bucket-namnet som en IP-adress. |
 | `folderPath` | Den tillåtna mappsökväg som krävs om användaren har begränsad åtkomst. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Oracle Object Storage] är: `c85f9425-fb21-426c-ad0b-405e9bd8a46c`. |
 
 Mer information om hur du hämtar dessa värden finns i [autentiseringsguiden för Oraclena objektlagring](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Oracle Object Storage]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Oracle Object Storage] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -73,7 +61,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Oracle Object Storage]-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för [!DNL Oracle Object Storage] är `c85f9425-fb21-426c-ad0b-405e9bd8a46c`.
+Följande begäran skapar en basanslutning för [!DNL Oracle Object Storage]:
 
 ```shell
 curl -X POST \
