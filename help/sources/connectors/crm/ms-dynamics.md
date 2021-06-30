@@ -5,10 +5,9 @@ title: Översikt över Microsoft Dynamics Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Microsoft Dynamics till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 6ca162ce-2016-4270-b741-301cf4230233
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '279'
 ht-degree: 1%
 
 ---
@@ -31,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Microsoft
 
 ## Anslut [!DNL Microsoft Dynamics] till [!DNL Platform] med API:er
 
-- [Skapa en Microsoft Dynamics-källanslutning med API:t för Flow Service](../../tutorials/api/create/crm/ms-dynamics.md)
-- [Utforska ett CRM-system med API:t för Flow Service](../../tutorials/api/explore/crm.md)
-- [Samla in CRM-data med API:t för Flow Service](../../tutorials/api/collect/crm.md)
+- [Skapa en Microsoft Dynamics-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/ms-dynamics.md)
+- [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
+- [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
 ## Anslut [!DNL Microsoft Dynamics] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Microsoft Dynamics-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/dynamics.md)
-- [Konfigurera ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
+- [Skapa ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
