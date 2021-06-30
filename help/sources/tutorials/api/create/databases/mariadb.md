@@ -1,24 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;MariaDB;mariadb
 solution: Experience Platform
-title: Skapa en MariaDB-källanslutning med API:t för Flow Service
+title: Skapa en MariaDB-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MariaDB med API:t för Flow Service.
-translation-type: tm+mt
-source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
+exl-id: 9b7ff394-ca55-4ab4-99ef-85c80b04a6df
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '447'
 ht-degree: 1%
 
 ---
 
+# Skapa en [!DNL MariaDB]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-# Skapa en [!DNL MariaDB]-källanslutning med hjälp av API:t [!DNL Flow Service]
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
-
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till [!DNL MariaDB].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL MariaDB] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -36,43 +35,29 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL MariaDB] måste du ang
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `connectionString` | Anslutningssträngen som är associerad med din [!DNL MariaDB]-autentisering. Anslutningssträngsmönstret [!DNL MariaDB] är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | Det ID som används för att skapa en anslutning. Det fasta anslutningens spec-ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`. |
 
-Mer information om hur du hämtar en anslutningssträng finns i [det här MariaDB-dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
+Mer information om hur du hämtar en anslutningssträng finns i det här [[!DNL MariaDB] dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL MariaDB]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL MariaDB] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-För att kunna skapa en [!DNL MariaDB]-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`.
+Följande begäran skapar en basanslutning för [!DNL MariaDB]:
 
 ```shell
 curl -X POST \
@@ -101,7 +86,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.connectionString` | Anslutningssträngen som är associerad med din [!DNL MariaDB]-autentisering. Anslutningssträngsmönstret [!DNL MariaDB] är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
-| `connectionSpec.id` | [!DNL MariaDB]-anslutningsspecifikationens ID är: `3000eb99-cd47-43f3-827c-43caf170f015`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL MariaDB] är: `3000eb99-cd47-43f3-827c-43caf170f015`. |
 
 **Svar**
 
