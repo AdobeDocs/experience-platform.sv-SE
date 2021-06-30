@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;enhetlig profil;enhetlig;profil;rtcp;XDM-diagram
 title: Allmänna tillgänglighetsfunktioner i plattformen
-topic: guide
+topic-legacy: guide
 type: Documentation
 description: Läs mer om de allmänna tillgänglighetsfunktionerna i Adobe Experience Platform, inklusive tangentbordsnavigering, färgpaletter och kontrast samt stöd för hjälpmedelstekniker.
-source-git-commit: 81db01c3e8d332e1fc8127d779c3a584bb498858
+source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '484'
 ht-degree: 1%
 
 ---
