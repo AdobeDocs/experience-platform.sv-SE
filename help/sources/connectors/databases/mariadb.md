@@ -4,14 +4,13 @@ solution: Experience Platform
 title: MariaDB Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter MariaDB till Adobe Experience Platform med API:er eller användargränssnittet.
-translation-type: tm+mt
-source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
+exl-id: 37b8f991-dca9-4f85-9bdd-4927a015e4c0
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '239'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL MariaDB] koppling
 
@@ -27,11 +26,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL MariaDB] 
 
 ## Anslut [!DNL MariaDB] till [!DNL Platform] med API:er
 
-- [Skapa en MariaDB-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/mariadb.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en MariaDB-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/mariadb.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL MariaDB] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en MariaDB-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/mariadb.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
