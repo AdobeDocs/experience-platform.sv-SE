@@ -1,22 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure;azure blob;blob;blob
 solution: Experience Platform
-title: Skapa en Azure Blob Source-anslutning med API:t för Flow Service
+title: Skapa en Azure Blob Base-anslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Blob med API:t för Flow Service.
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59a8e2aa86508e53f181ac796f7c03f9fcd76158
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '705'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Azure Blob]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Azure Blob]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att vägleda dig genom stegen för att ansluta [!DNL Azure Blob] (kallas nedan&quot;Blob&quot;) till Adobe Experience Platform.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
+
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Azure Blob] (kallas nedan &quot;[!DNL Blob]&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -35,35 +36,21 @@ För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Blob]-lagringsutr
 | ---------- | ----------- |
 | `connectionString` | En sträng som innehåller den auktoriseringsinformation som krävs för att autentisera [!DNL Blob] till Experience Platform. Anslutningssträngsmönstret [!DNL Blob] är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. Mer information om anslutningssträngar finns i det här [!DNL Blob]-dokumentet om [konfigurering av anslutningssträngar](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
 | `sasUri` | Den URI för signatur för delad åtkomst som du kan använda som en alternativ autentiseringstyp för att ansluta ditt [!DNL Blob]-konto. SAS-URI-mönstret [!DNL Blob] är: `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>` Mer information finns i det här [!DNL Blob]-dokumentet på [URI:er för delad åtkomst](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication). |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Blob] är: `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Blob] är: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Blob] som en del av parametrarna för begäran.
 
-Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+### Skapa en [!DNL Blob]-basanslutning med anslutningssträngsbaserad autentisering
 
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Blob]-konto eftersom den kan användas för att skapa flera dataflöden för att hämta olika data.
-
-### Skapa en [!DNL Blob]-anslutning med anslutningssträngsbaserad autentisering
-
-Om du vill skapa en [!DNL Blob]-anslutning med hjälp av anslutningssträngsbaserad autentisering kan du göra en POST-förfrågan till API:t [!DNL Flow Service] samtidigt som du anger [!DNL Blob] `connectionString`.
+Om du vill skapa en [!DNL Blob]-basanslutning med hjälp av anslutningssträngsbaserad autentisering kan du göra en POST-förfrågan till API:t [!DNL Flow Service] samtidigt som du anger [!DNL Blob] `connectionString`.
 
 **API-format**
 
@@ -73,7 +60,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Blob]-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Blob] är `4c10e202-c428-4796-9208-5f1f5732b1cf`.
+Följande begäran skapar en basanslutning för [!DNL Blob] med anslutningssträngsbaserad autentisering:
 
 ```shell
 curl -X POST \
@@ -106,7 +93,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
+Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
 
 ```json
 {
@@ -115,11 +102,11 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 }
 ```
 
-### Skapa en [!DNL Blob]-anslutning med signatur-URI för delad åtkomst
+### Skapa en [!DNL Blob]-basanslutning med hjälp av URI för signatur med delad åtkomst
 
 En SAS-URI (Shared Access Signature) möjliggör säker delegerad auktorisering till ditt [!DNL Blob]-konto. Du kan använda SAS för att skapa autentiseringsuppgifter med olika grad av åtkomst, eftersom en SAS-baserad autentisering gör att du kan ange behörigheter, start- och förfallodatum samt villkor för specifika resurser.
 
-Om du vill skapa en [!DNL Blob]-anslutning med hjälp av en URI för signatur för delad åtkomst gör du en POST-förfrågan till API:t [!DNL Flow Service] samtidigt som du anger värden för [!DNL Blob] `sasUri`.
+Om du vill skapa en [!DNL Blob]-blobbanslutning med en URI för signatur för delad åtkomst, gör du en POST-förfrågan till API:t [!DNL Flow Service] samtidigt som du anger värden för [!DNL Blob] `sasUri`.
 
 **API-format**
 
@@ -128,6 +115,8 @@ POST /connections
 ```
 
 **Begäran**
+
+Följande begäran skapar en basanslutning för [!DNL Blob] med signatur-URI för delad åtkomst:
 
 ```shell
 curl -X POST \
@@ -160,7 +149,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
+Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
 
 ```json
 {
