@@ -3,11 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
-topic: användarhandbok
-translation-type: tm+mt
-source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
+topic-legacy: user guide
+source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '734'
 ht-degree: 0%
 
 ---
@@ -53,7 +52,7 @@ Om du vill redigera en befintlig fältgrupp måste du först öppna ett schema s
 
 När du har öppnat schemat i redigeraren kan du börja [lägga till fält i fältgruppen](#add-fields).
 
-## Lägg till fält i en fältgrupp {#add-fields}
+## Lägga till fält i en fältgrupp {#add-fields}
 
 Om du vill lägga till fält i en fältgrupp i [!DNL Schema Editor] börjar du med att markera fältgruppens namn i den vänstra listen och sedan väljer du ikonen **plus (+)** bredvid schemats namn på arbetsytan.
 
