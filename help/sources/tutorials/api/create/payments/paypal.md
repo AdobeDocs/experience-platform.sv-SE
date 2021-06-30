@@ -1,28 +1,27 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;PayPal-kontakt;Paypal;Paypal
 solution: Experience Platform
-title: Skapa en PayPal-källanslutning med API:t för Flow Service
+title: Skapa en PayPal-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter PayPal till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 5e6ca7b4-5e2f-4706-a339-ac159e2e0938
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5cb853da21e41b38c88f25a4989a602dbcfceabc
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '478'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL PayPal]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL PayPal]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
 >[!DNL PayPal]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL PayPal] till Experience Platform.
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL PayPal] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -42,33 +41,19 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL PayPal] måste du ange
 | `host` | URL:en för [!DNL PayPal]-instansen. (standard: api.sandbox.paypal.com). |
 | `clientId` | Klient-ID som är associerat med ditt [!DNL PayPal]-program. |
 | `clientSecret` | Klienthemligheten som är associerad med ditt [!DNL PayPal]-program. |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL PayPal] är: `221c7626-58f6-4eec-8ee2-042b0226f03b` |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL PayPal] är: `221c7626-58f6-4eec-8ee2-042b0226f03b` |
 
 Mer information om hur du kommer igång finns i [det här PayPal-dokumentet](https://developer.paypal.com/docs/api/overview/#get-credentials).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL PayPal]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL PayPal] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -78,7 +63,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL PayPal]-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL PayPal] är `221c7626-58f6-4eec-8ee2-042b0226f03b`.
+Följande begäran skapar en basanslutning för [!DNL PayPal]:
 
 ```shell
 curl -X POST \
