@@ -5,10 +5,9 @@ title: Google AdWords Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Google AdWords till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 1f6257e0-213c-4723-a240-511c11c5833c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: fa3b83372db557d7f0aed16303cef4124c7dd897
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -27,17 +26,17 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
-## Anslut [!DNL Google AdWords] till [!DNL Platform]
+## Anslut [!DNL Google AdWords] till plattformen
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google AdWords] till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google AdWords] till plattformen med API:er eller användargränssnittet:
 
 ### Använda API:er
 
-- [Skapa en Google AdWords-källanslutning med API:t för Flow Service](../../tutorials/api/create/advertising/ads.md)
-- [Utforska ett annonssystem med API:t för Flow Service](../../tutorials/api/explore/advertising.md)
-- [Samla in annonsdata med API:t för Flow Service](../../tutorials/api/collect/advertising.md)
+- [Skapa en Google AdWords-basanslutning med API:t för Flow Service](../../tutorials/api/create/advertising/ads.md)
+- [Utforska datastrukturen och innehållet i en annonskälla med API:t för Flow Service](../../tutorials/api/explore/advertising.md)
+- [Skapa ett dataflöde för en annonskälla med API:t för Flow Service](../../tutorials/api/collect/advertising.md)
 
 ### Använda gränssnittet
 
 - [Skapa en Google AdWords-källanslutning i användargränssnittet](../../tutorials/ui/create/advertising/ads.md)
-- [Konfigurera ett dataflöde för en annonsanslutning i användargränssnittet](../../tutorials/ui/dataflow/advertising.md)
+- [Skapa ett dataflöde för en anslutning till en annonskälla i användargränssnittet](../../tutorials/ui/dataflow/advertising.md)
