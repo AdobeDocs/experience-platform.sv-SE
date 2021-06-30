@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;enhetlig profil;enhetlig;profil;rtcp;XDM-diagram
 title: Custom Accessibility Solutions for Experience Platform
-topic: guide
+topic-legacy: guide
 type: Documentation
 description: Läs mer om de anpassade tillgänglighetslösningarna i Adobe Experience Platform användargränssnitt.
-source-git-commit: 81db01c3e8d332e1fc8127d779c3a584bb498858
+source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1517'
 ht-degree: 0%
 
 ---
