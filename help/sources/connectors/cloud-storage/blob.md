@@ -5,10 +5,9 @@ title: Översikt över Azure Blob Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Blob till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 62adc74f-3570-42c7-9ae6-3ddbc09eccc7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '459'
 ht-degree: 0%
 
 ---
@@ -44,11 +43,11 @@ Dokumentationen nedan innehåller information om hur du ansluter Azure Blob till
 
 ### Använda API:er
 
-- [Skapa en Azure Blob-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/blob.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en Azure Blob-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/blob.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en Azure Blob-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/blob.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
