@@ -5,10 +5,9 @@ title: Översikt över Phoenix Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Phoenix till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 45e6ef18-a0b7-4bb2-b099-b2a878e96637
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
@@ -31,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Phoenix] 
 
 ## Anslut [!DNL Phoenix] till [!DNL Platform] med API:er
 
-- [Skapa en Phoenix-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/phoenix.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Phoenix-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/phoenix.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Phoenix] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Phoenix-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/phoenix.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
