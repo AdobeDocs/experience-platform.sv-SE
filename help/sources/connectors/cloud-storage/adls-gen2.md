@@ -5,10 +5,9 @@ title: Översikt över Azure Data Lake Storage Gen2 Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Data Lake Storage Gen2 till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 424d7278-44d9-4653-82c0-eb21cbb9b623
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
@@ -44,11 +43,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Dat
 
 ### Använda API:er
 
-- [Skapa en ADLS-Gen2-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/adls-gen2.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en ADLS-Gen2-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/adls-gen2.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en ADLS-Gen2-källanslutning i gränssnittet](../../tutorials/ui/create/cloud-storage/adls-gen2.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
