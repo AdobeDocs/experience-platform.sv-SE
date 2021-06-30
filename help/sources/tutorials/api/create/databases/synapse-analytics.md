@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Synkronisera;synapse;Azure synapse Analytics
 solution: Experience Platform
-title: Skapa en Azure synapse Analytics-källanslutning med API:t för Flow Service
+title: Skapa en Azure synapse Analytics-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Azure synapse Analytics till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 8944ac3f-366d-49c8-882f-11cd0ea766e4
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '470'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Azure Synapse Analytics]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Azure Synapse Analytics]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-Lär dig hur du ansluter [!DNL Azure Synapse Analytics] (kallas nedan [!DNL Synapse]) till [!DNL Experience Platform].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Azure Synapse Analytics] (kallas nedan &quot;[!DNL Synapse]&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -35,43 +35,29 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Synapse] måste du ang
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Synapse]. Anslutningssträngsmönstret [!DNL Synapse] är `Server=tcp:{SERVER_NAME}.database.windows.net,1433;Database={DATABASE};User ID={USERNAME}@{SERVER_NAME};Password={PASSWORD};Trusted_Connection=False;Encrypt=True;Connection Timeout=30`. |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Synapse] är: `a49bcc7d-8038-43af-b1e4-5a7a089a7d79` |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Synapse] är: `a49bcc7d-8038-43af-b1e4-5a7a089a7d79` |
 
 Mer information om hur du hämtar en anslutningssträng finns i [det här synkroniseringsdokumentet](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure?toc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Ftoc.json&amp;bc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Fbreadcrumb%2Ftoc.json&amp;tabs=azure-powershell).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Synapse]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Synapse] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-För att kunna skapa en [!DNL Synapse]-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Synapse] är `a49bcc7d-8038-43af-b1e4-5a7a089a7d79`.
+Följande begäran skapar en basanslutning för [!DNL Synapse]:
 
 ```shell
 curl -X POST \
