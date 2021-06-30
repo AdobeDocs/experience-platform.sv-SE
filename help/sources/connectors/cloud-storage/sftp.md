@@ -5,10 +5,9 @@ title: Översikt över SFTP-källkoppling
 topic-legacy: overview
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '461'
 ht-degree: 0%
 
 ---
@@ -44,11 +43,11 @@ Dokumentationen nedan innehåller information om hur du ansluter en SFTP-server 
 
 ### Använda API:er
 
-- [Skapa en SFTP-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/sftp.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en SFTP-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/sftp.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en SFTP-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/sftp.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
