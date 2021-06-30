@@ -2,12 +2,11 @@
 keywords: Experience Platform;hem;mappare;mappningsuppsättning;mappning;
 solution: Experience Platform
 title: Översikt över mappningsuppsättningar
-topic: översikt
+topic-legacy: overview
 description: Lär dig hur du använder mappningsuppsättningar med Adobe Experience Platform Data Prep.
-translation-type: tm+mt
-source-git-commit: 4c06f621eb6fba8daa6501d56255cddbbcfdbda2
+source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '959'
 ht-degree: 0%
 
 ---
