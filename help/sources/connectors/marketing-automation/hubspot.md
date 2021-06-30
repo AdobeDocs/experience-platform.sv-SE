@@ -5,9 +5,9 @@ title: HubSpot Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter HubSpot till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4bc279ac-9388-4bac-bfae-98878625a554
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 9d21d83204941db2db69f6be0f20d4e8627fc2ff
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL HubSpot] 
 
 ## Anslut [!DNL HubSpot] till [!DNL Platform] med API:er
 
-- [Skapa en HubSpot-källanslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/hubspot.md)
-- [Utforska ett automatiserat marknadsföringssystem med API:t för Flow Service](../../tutorials/api/explore/marketing-automation.md)
-- [Samla in data för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/collect/marketing-automation.md)
+- [Skapa en HubSpot-basanslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/hubspot.md)
+- [Utforska datastrukturen och innehållet i en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/explore/marketing-automation.md)
+- [Skapa ett dataflöde för en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/collect/marketing-automation.md)
 
 ## Anslut [!DNL HubSpot] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en HubSpot-källanslutning i användargränssnittet](../../tutorials/ui/create/marketing-automation/hubspot.md)
-- [Konfigurera ett dataflöde för en anslutning för automatiserad marknadsföring i användargränssnittet](../../tutorials/ui/dataflow/marketing-automation.md)
+- [Skapa ett dataflöde för en källanslutning för automatiserad marknadsföring i användargränssnittet](../../tutorials/ui/dataflow/marketing-automation.md)
