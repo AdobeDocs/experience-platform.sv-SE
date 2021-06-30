@@ -5,9 +5,9 @@ title: Google BigQuery Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Google BigQuery till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 9d68e54baa894ebeff4603c7df01a1fe42aa217f
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '395'
 ht-degree: 0%
 
 ---
@@ -49,11 +49,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google Bi
 
 ### Använda API:er
 
-- [Skapa en Google BigQuery-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/bigquery.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Google BigQuery-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/bigquery.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ### Använda gränssnittet
 
 - [Skapa en Google BigQuery-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/bigquery.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
