@@ -5,10 +5,9 @@ title: Salesforce Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -27,11 +26,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforc
 
 ## Anslut [!DNL Salesforce] till [!DNL Platform] med API:er
 
-- [Skapa en Salesforce-källanslutning med API:t för Flow Service](../../tutorials/api/create/crm/salesforce.md)
-- [Utforska ett CRM-system med API:t för Flow Service](../../tutorials/api/explore/crm.md)
-- [Samla in CRM-data med API:t för Flow Service](../../tutorials/api/collect/crm.md)
+- [Skapa en Salesforce-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/salesforce.md)
+- [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
+- [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
 ## Anslut [!DNL Salesforce] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Salesforce-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/salesforce.md)
-- [Konfigurera ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
+- [Skapa ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
