@@ -5,10 +5,9 @@ title: Översikt över Azure Table Storage Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Table Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 096e01b1-7e95-4e30-87de-d0976f8b438a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -35,11 +34,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Tab
 
 ## Anslut [!DNL Azure Table Storage] till [!DNL Platform] med API:er
 
-- [Skapa en Azure Table Storage-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/ats.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Azure Table Storage-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/ats.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Azure Table Storage] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Azure Table Storage-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/ats.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
