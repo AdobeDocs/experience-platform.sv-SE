@@ -1,20 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Phoenix;phoenix
 solution: Experience Platform
-title: Skapa en Phoenix-källanslutning med API:t för Flow Service
+title: Skapa en Phoenix-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter en Phoenix-databas till Adobe Experience Platform med API:t för Flow Service.
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '648'
-ht-degree: 0%
+source-wordcount: '561'
+ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Phoenix]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Phoenix]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
@@ -45,43 +44,29 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Phoenix] måste du ang
 | `port` | Den TCP-port som [!DNL Phoenix]-servern använder för att avlyssna klientanslutningar. Om du ansluter till [!DNL Azure] HDInsights anger du port som 443. |
 | `httpPath` | Den partiella URL som motsvarar [!DNL Phoenix]-servern. Ange /hbasephoenix0 om du använder [!DNL Azure] HDInsights-kluster. |
 | `enableSsl` | Ett booleskt värde. Anger om anslutningar till servern krypteras med SSL. |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Phoenix] är: `102706fb-a5cd-42ee-afe0-bc42f017ff43` |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Phoenix] är: `102706fb-a5cd-42ee-afe0-bc42f017ff43` |
 
 Mer information om hur du kommer igång finns i [det här Phoenix-dokumentet](https://python-phoenixdb.readthedocs.io/en/latest/api.html).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Phoenix]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Phoenix] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-För att kunna skapa en [!DNL Phoenix]-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Phoenix] är `102706fb-a5cd-42ee-afe0-bc42f017ff43`.
+Följande begäran skapar en basanslutning för [!DNL Phoenix]:
 
 ```shell
 curl -X POST \
