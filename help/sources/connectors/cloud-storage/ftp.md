@@ -5,10 +5,9 @@ title: Översikt över FTP-källkoppling
 topic-legacy: overview
 description: Lär dig hur du ansluter en FTP-server till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: a6186fad-8a7b-4103-80c7-a522ff69fe9e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
@@ -48,11 +47,11 @@ Dokumentationen nedan innehåller information om hur du ansluter en FTP-server t
 
 ### Använda API:er
 
-- [Skapa en FTP-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/ftp.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en FTP-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/ftp.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en FTP-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/ftp.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
