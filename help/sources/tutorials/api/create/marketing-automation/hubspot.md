@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;hubspot;Hubspot
 solution: Experience Platform
-title: Skapa en HubSpot-källanslutning med API:t för Flow-tjänsten
+title: Skapa en HubSpot Base-anslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till HubSpot med API:t för Flow Service.
 exl-id: a3e64215-a82d-4aa7-8e6a-48c84c056201
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 143f3b4a113c6f36cb1bb0c3624c8503f158a16d
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '486'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL HubSpot]-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL HubSpot]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till [!DNL HubSpot].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL HubSpot] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -38,33 +38,19 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL HubSpot] måste du ang
 | `clientSecret` | Klienthemligheten som är associerad med ditt [!DNL HubSpot]-program. |
 | `accessToken` | Åtkomsttoken som fås när din OAuth-integration autentiseras initialt. |
 | `refreshToken` | Den uppdateringstoken som erhölls när OAuth-integreringen autentiserades initialt. |
-| `connectionSpec` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL HubSpot] är: `cc6a4487-9e91-433e-a3a3-9cf6626c1806` |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL HubSpot] är: `cc6a4487-9e91-433e-a3a3-9cf6626c1806`. |
 
 Mer information om hur du kommer igång finns i det här [HubSpot-dokumentet](https://developers.hubspot.com/docs/methods/oauth2/oauth2-overview).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL HubSpot]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL HubSpot] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -74,7 +60,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL HubSpot]-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL HubSpot] är `cc6a4487-9e91-433e-a3a3-9cf6626c1806`.
+Följande begäran skapar en basanslutning för [!DNL HubSpot]:
 
 ```shell
 curl -X POST \
@@ -85,8 +71,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "connection for hubspot",
-        "description": "connection for hubspot",
+        "name": "connection for HubSpot",
+        "description": "connection for HubSpot",
         "auth": {
             "specName": "Basic Authentication",
             "params": {
@@ -109,6 +95,7 @@ curl -X POST \
 | `auth.params.clientSecret` | Klienthemligheten som är associerad med ditt [!DNL HubSpot]-program. |
 | `auth.params.accessToken` | Åtkomsttoken som fås när din OAuth-integration autentiseras initialt. |
 | `auth.params.refreshToken` | Den uppdateringstoken som erhölls när OAuth-integreringen autentiserades initialt. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL HubSpot]: `cc6a4487-9e91-433e-a3a3-9cf6626c1806`. |
 
 **Svar**
 
