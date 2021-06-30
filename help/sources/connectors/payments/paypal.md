@@ -3,14 +3,13 @@ keywords: Experience Platform;hem;populära ämnen;PayPal;PayPal
 solution: Experience Platform
 title: Översikt över PayPal Source Connector
 description: Lär dig hur du ansluter PayPal till Adobe Experience Platform med API:er eller användargränssnittet.
-translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+exl-id: c70a9b91-b883-4e58-9ec5-6fc9b2163efd
+source-git-commit: 9d21d83204941db2db69f6be0f20d4e8627fc2ff
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '238'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL PayPal]-koppling
 
@@ -30,11 +29,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL PayPal] t
 
 ## Anslut [!DNL PayPal] till [!DNL Platform] med API:er
 
-- [Skapa en PayPal-källanslutning med API:t för Flow Service](../../tutorials/api/create/payments/paypal.md)
-- [Utforska ett betalningsprogram med API:t för Flow Service](../../tutorials/api/explore/payments.md)
-- [Samla in data från ett betalningsprogram med API:t för Flow Service](../../tutorials/api/collect/payments.md)
+- [Skapa en PayPal-basanslutning med API:t för Flow Service](../../tutorials/api/create/payments/paypal.md)
+- [Utforska datastrukturen och innehållet i en betalningskälla med API:t för Flow Service](../../tutorials/api/explore/payments.md)
+- [Skapa ett dataflöde för en betalningskälla med API:t för Flow Service](../../tutorials/api/collect/payments.md)
 
 ## Anslut [!DNL PayPal] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en PayPal-källanslutning i användargränssnittet](../../tutorials/ui/create/payments/paypal.md)
-- [Konfigurera ett dataflöde för en betalningsanslutning i användargränssnittet](../../tutorials/ui/dataflow/payments.md)
+- [Skapa ett dataflöde för en anslutning till en betalningskälla i användargränssnittet](../../tutorials/ui/dataflow/payments.md)
