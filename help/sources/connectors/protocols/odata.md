@@ -5,10 +5,9 @@ title: Allmän översikt över OData Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter generiska OData till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: ff50f883-d4fd-4f32-a9d6-fe4624a32e24
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 9d21d83204941db2db69f6be0f20d4e8627fc2ff
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '246'
 ht-degree: 0%
 
 ---
@@ -31,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Generic O
 
 ## Anslut [!DNL Generic OData] till [!DNL Platform] med API:er
 
-- [Skapa en allmän OData-källanslutning med API:t för Flow Service](../../tutorials/api/create/protocols/odata.md)
-- [Utforska ett protokollprogram med API:t för Flow Service](../../tutorials/api/explore/protocols.md)
-- [Samla in data från ett protokollprogram med API:t för Flow Service](../../tutorials/api/collect/protocols.md)
+- [Skapa en allmän OData-basanslutning med API:t för Flow Service](../../tutorials/api/create/protocols/odata.md)
+- [Utforska datastrukturen och innehållet i en protokollkälla med API:t för Flow Service](../../tutorials/api/explore/protocols.md)
+- [Skapa ett dataflöde för en protokollkälla med API:t för Flow Service](../../tutorials/api/collect/protocols.md)
 
 ## Anslut [!DNL Generic OData] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en allmän OData-källanslutning i användargränssnittet](../../tutorials/ui/create/protocols/odata.md)
-- [Konfigurera ett dataflöde för en protokollanslutning i användargränssnittet](../../tutorials/ui/dataflow/protocols.md)
+- [Skapa ett dataflöde för en protokollkällanslutning i användargränssnittet](../../tutorials/ui/dataflow/protocols.md)
