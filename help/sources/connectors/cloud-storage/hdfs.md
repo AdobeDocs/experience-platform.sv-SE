@@ -5,10 +5,9 @@ title: Översikt över källanslutning för Apache HDFS
 topic-legacy: overview
 description: Lär dig hur du ansluter Apache HDFS till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 1f156f7b-a19d-4dcf-a51d-ab6cb396d8f7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '391'
 ht-degree: 0%
 
 ---
@@ -42,11 +41,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache] H
 
 ### Använda API:er
 
-- [Skapa en HDFS-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/hdfs.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Skapa en HDFS-basanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/hdfs.md)
+- [Utforska datastrukturen och innehållet i en molnlagringskälla med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringskälla med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
 - [Skapa en Apache HDFS-källanslutning i gränssnittet](../../tutorials/ui/create/cloud-storage/hdfs.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
