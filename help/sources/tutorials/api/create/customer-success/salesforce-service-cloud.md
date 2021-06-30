@@ -1,24 +1,23 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;ssc;SSC;Salesforce Service Cloud;salesforce service cloud
+keywords: Experience Platform;hem;populära ämnen;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-källanslutning med API:t för flödestjänst
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Service Cloud med API:t för flödestjänst.
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ff0f6bc6b8a57b678b329fe2b47c53919e0e2d64
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '472'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Salesforce Service Cloud]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till [!DNL Salesforce Service Cloud] (kallas nedan SSC).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Salesforce Service Cloud] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -27,43 +26,30 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till SSC med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Salesforce Service Cloud] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till SSC måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till [!DNL Salesforce Service Cloud] måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `username` | Användarnamnet för användarkontot. |
-| `password` | Lösenordet för användarkontot. |
-| `securityToken` | Säkerhetstoken för användarkontot. |
+| `username` | Användarnamnet för ditt [!DNL Salesforce Service Cloud]-användarkonto. |
+| `password` | Lösenordet för ditt [!DNL Salesforce Service Cloud]-konto. |
+| `securityToken` | Säkerhetstoken för ditt [!DNL Salesforce Service Cloud]-konto. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce Service Cloud] är: `b66ab34-8619-49cb-96d1-39b37ede86ea`. |
 
 Mer information om hur du kommer igång finns i [det här Salesforce Service Cloud-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_iot.meta/api_iot/qs_auth_access_token.htm).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per SSC-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Salesforce Service Cloud] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -73,7 +59,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en SSC-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för SSC är `b66ab34-8619-49cb-96d1-39b37ede86ea`.
+Följande begäran skapar en basanslutning för [!DNL Salesforce Service Cloud]:
 
 ```shell
 curl -X POST \
@@ -103,10 +89,10 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.username` | Användarnamnet som är associerat med ditt SSC-konto. |
-| `auth.params.password` | Lösenordet som är kopplat till ditt SSC-konto. |
-| `auth.params.securityToken` | Säkerhetstoken som är kopplad till ditt SSC-konto. |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt SSC-konto som hämtades i föregående steg. |
+| `auth.params.username` | Användarnamnet som är associerat med ditt [!DNL Salesforce Service Cloud]-konto. |
+| `auth.params.password` | Lösenordet som är kopplat till ditt [!DNL Salesforce Service Cloud]-konto. |
+| `auth.params.securityToken` | Säkerhetstoken som är associerad med ditt [!DNL Salesforce Service Cloud]-konto. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Salesforce Service Cloud]: `b66ab34-8619-49cb-96d1-39b37ede86ea` |
 
 **Svar**
 
@@ -121,4 +107,4 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en SSC-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar lyckade kundsystem med API:t för Flow Service](../../explore/customer-success.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Salesforce Service Cloud]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar lyckade kundsystem med API:t för Flow Service](../../explore/customer-success.md).
