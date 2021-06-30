@@ -1,81 +1,66 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;IBM DB2;IBM;ibm db2;db2;DB2
+keywords: Experience Platform;hem;populära ämnen;IBM [!DNL IBM DB2];IBM;ibm [!DNL IBM DB2];[!DNL IBM DB2];[!DNL IBM DB2]
 solution: Experience Platform
-title: Skapa en IBM DB2-källanslutning med API:t för Flow Service
+title: Skapa en IBM [!DNL IBM DB2] basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
-description: Lär dig hur du ansluter IBM DB2 till Adobe Experience Platform med API:t för Flow Service.
+description: Lär dig hur du ansluter IBM [!DNL IBM DB2] till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 83c1dbe6-975f-4e3b-a7bf-166eb5106dd2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '466'
 ht-degree: 1%
 
 ---
 
-# Skapa en IBM DB2-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en IBM [!DNL IBM DB2]-basanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
->IBM DB2-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>IBM-kopplingen [!DNL IBM DB2] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta IBM DB2 (nedan kallat &quot;DB2&quot;) till [!DNL Experience Platform].
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL IBM DB2] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till DB2 med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL IBM DB2] med API:t [!DNL Flow Service].
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `server` | Namnet på DB2-servern. Du kan ange portnumret efter servernamnet som avgränsas av ett kolon. Till exempel: server:port. |
-| `database` | Namnet på DB2-databasen. |
-| `username` | Användarnamnet som används för att ansluta till DB2-databasen. |
+| `server` | Namnet på [!DNL IBM DB2]-servern. Du kan ange portnumret efter servernamnet som avgränsas av ett kolon. Till exempel: server:port. |
+| `database` | Namnet på [!DNL IBM DB2]-databasen. |
+| `username` | Användarnamnet som används för att ansluta till [!DNL IBM DB2]-databasen. |
 | `password` | Lösenordet för användarkontot som du angav som användarnamn. |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för DB2 är `09182899-b429-40c9-a15a-bf3ddbc8ced7`. |
+| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikationens ID för [!DNL IBM DB2] är `09182899-b429-40c9-a15a-bf3ddbc8ced7`. |
 
-Mer information om hur du kommer igång finns i [det här DB2-dokumentet](https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.doc/connecting/connect_credentials.html).
+Mer information om hur du kommer igång finns i [det här [!DNL IBM DB2] dokumentet](https://www.ibm.com/support/knowledgecenter/SSFMBX/com.ibm.swg.im.dashdb.doc/connecting/connect_credentials.html).
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per DB2-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL IBM DB2] som en del av parametrarna för begäran.
 
 **API-format**
 
-```http
+```https
 POST /connections
 ```
 
 **Begäran**
 
-För att kunna skapa en DB2-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för DB2 är `09182899-b429-40c9-a15a-bf3ddbc8ced7`.
+Följande begäran skapar en basanslutning för [!DNL IBM DB2]:
 
 ```shell
 curl -X POST \
@@ -86,8 +71,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "DB2 connection",
-        "description": "DB2 test connection",
+        "name": "[!DNL IBM DB2] connection",
+        "description": "[!DNL IBM DB2] test connection",
         "auth": {
             "specName": "Basic Authentication",
             "params": {
@@ -107,8 +92,8 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt DB2-konto. |
-| `connectionSpec.id` | ID för DB2-anslutningsspecifikation: `09182899-b429-40c9-a15a-bf3ddbc8ced7`. |
+| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt [!DNL IBM DB2]-konto. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL IBM DB2]: `09182899-b429-40c9-a15a-bf3ddbc8ced7`. |
 
 **Svar**
 
@@ -123,4 +108,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en IBM DB2-anslutning med [!DNL Flow Service]-API:t och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en IBM [!DNL IBM DB2]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
