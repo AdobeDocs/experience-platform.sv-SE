@@ -5,9 +5,9 @@ title: Konfigurera en datauppsättning för att samla in samtycke- och inställn
 topic-legacy: getting started
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
+source-git-commit: 3f6191bb3ddfdd24b1c2ed19ba4293402f56d2e5
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1405'
 ht-degree: 0%
 
 ---
@@ -164,11 +164,13 @@ Följande avsnitt innehåller ytterligare information om hur du skapar en dataup
 
 ### Lägg till anpassade medgivandefält och inställningsfält i schemat {#custom-consent}
 
-Om du behöver hämta ytterligare medgivandesignaler utanför de som representeras av fältgruppen [!DNL Consents & Preferences] kan du använda anpassade XDM-komponenter för att förbättra ditt medgivandeschema så att det passar just dina affärsbehov. I det här avsnittet beskrivs de grundläggande principerna för hur du anpassar ditt medgivandeschema på ett sätt som är kompatibelt med de medgivandeändringskommandon som görs av Adobe Experience Platform Mobile och Web SDK:er.
+Om du behöver hämta ytterligare medgivandesignaler utanför de som representeras av fältgruppen [!DNL Consents & Preferences] kan du använda anpassade XDM-komponenter för att förbättra ditt medgivandeschema så att det passar just dina affärsbehov. I det här avsnittet beskrivs de grundläggande principerna för hur du anpassar ditt medgivandeschema för att kunna importera dessa signaler till profilen.
 
 >[!IMPORTANT]
 >
->Du måste använda fältgruppen [!DNL Consents & Preferences] som en baslinje för strukturen för dina medgivandedata och lägga till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
+>SDK:n för plattformswebben och mobiler stöder inte anpassade fält i sina kommandon för ändring av samtycke. Det enda sättet att importera egna medgivandefält till profilen är för närvarande genom [batchimport](../../../../ingestion/batch-ingestion/overview.md) eller en [källanslutning](../../../../sources/home.md).
+
+Vi rekommenderar att du använder fältgruppen [!DNL Consents & Preferences] som en baslinje för strukturen för dina medgivandedata och lägger till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
 
 Om du vill lägga till anpassade fält i strukturen för en standardfältgrupp måste du först skapa en anpassad fältgrupp. När du har lagt till fältgruppen [!DNL Consents & Preferences] i schemat väljer du ikonen **plus (+)** i avsnittet **[!UICONTROL Field groups]** och väljer sedan **[!UICONTROL Create new field group]**. Ange ett namn och en valfri beskrivning för fältgruppen och välj sedan **[!UICONTROL Add field group]**.
 
@@ -198,7 +200,5 @@ Medgivande- eller inställningsfältet läggs till i schemastrukturen. Observera
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-added.png)
 
 Följ stegen ovan för att fortsätta lägga till de medgivandefält och inställningsfält som du behöver. När du är klar väljer du **[!UICONTROL Save]** för att bekräfta ändringarna.
-
-Om schemat som du redigerade används av [!UICONTROL Profile Dataset] som anges i kantkonfigurationen för Platform Web SDK, kommer den datauppsättningen nu att innehålla de nya medgivandefälten. Du kan nu gå tillbaka till [handboken för behandling av samtycke](./overview.md#merge-policies) för att fortsätta konfigurera Experience Platform för att bearbeta data om samtycke.
 
 Om du inte har skapat någon datauppsättning för det här schemat fortsätter du till avsnittet [skapa en datauppsättning](#dataset).
