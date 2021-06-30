@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Veeva CRM;veeva crm;veeva;crm
 solution: Experience Platform
-title: Översikt över källkoppling
+title: Veeva CRM Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Veeva CRM till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
-source-git-commit: 5b8c6ae7c45048e026b018b6c91478648fdbea85
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -29,11 +29,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Veeva CRM
 
 ## Anslut [!DNL Veeva CRM] till [!DNL Platform] med API:er
 
-- [Skapa en Veeva CRM-källanslutning med API:t för Flow Service](../../tutorials/api/create/crm/veeva.md)
-- [Utforska ett CRM-system med API:t för Flow Service](../../tutorials/api/explore/crm.md)
-- [Samla in CRM-data med API:t för Flow Service](../../tutorials/api/collect/crm.md)
+- [Skapa en Veeva CRM-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/veeva.md)
+- [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
+- [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
 ## Anslut [!DNL Veeva CRM] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Microsoft Dynamics-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/veeva.md)
-- [Konfigurera ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
+- [Skapa ett dataflöde för en CRM-källanslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
