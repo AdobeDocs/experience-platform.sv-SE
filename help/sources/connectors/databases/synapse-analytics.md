@@ -5,9 +5,9 @@ title: azure synapse Analytics Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure synapse Analytics till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 5b94ae74-e5a7-40e9-a952-41eddf06dcde
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '297'
 ht-degree: 0%
 
 ---
@@ -30,11 +30,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Syn
 
 ## Anslut [!DNL Azure Synapse Analytics] till [!DNL Platform] med API:er
 
-- [Skapa en Azure synapse Analytics-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/synapse-analytics.md)
-- [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
-- [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
+- [Skapa en Azure synapse Analytics-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/synapse-analytics.md)
+- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Azure Synapse Analytics] till [!DNL Platform] med användargränssnittet
 
 - [Skapa en Azure synapse Analytics-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/synapse-analytics.md)
-- [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
+- [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
