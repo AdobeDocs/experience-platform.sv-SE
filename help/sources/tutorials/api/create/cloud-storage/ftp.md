@@ -1,26 +1,27 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen; Filöverföringsprotokoll; filöverföringsprotokoll
 solution: Experience Platform
-title: Skapa en FTP-källanslutning med API:t för Flow Service
+title: Skapa en FTP-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en FTP-server (File Transfer Protocol) med API:t för Flow Service.
 exl-id: a7bef346-b357-49bc-ac54-ac8b42adac50
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59a8e2aa86508e53f181ac796f7c03f9fcd76158
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '489'
 ht-degree: 1%
 
 ---
 
-# Skapa en FTP-källanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en FTP-basanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
 >FTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till en FTP-server (File Transfer Protocol).
+En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
+
+I den här självstudien får du hjälp med att skapa en basanslutning för [!DNL FTP] (File Transfer Protocol) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
@@ -29,45 +30,28 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en FTP-server med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en [!DNL FTP]-server med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till FTP måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till [!DNL FTP] måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | Namnet eller IP-adressen som är associerad med FTP-servern. |
-| `username` | Användarnamnet med åtkomst till FTP-servern. |
-| `password` | Lösenordet för FTP-servern. |
+| `host` | Namnet eller IP-adressen som är associerad med din [!DNL FTP]-server. |
+| `username` | Användarnamnet som ger åtkomst till din [!DNL FTP]-server. |
+| `password` | Lösenordet för din [!DNL FTP]-server. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL FTP] är: `fb2e94c9-c031-467d-8103-6bd6e0a432f2`. |
 
-### Läser exempel-API-anrop
+### Använda plattforms-API:er
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
 
-### Samla in värden för obligatoriska rubriker
+## Skapa en basanslutning
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
-
-* `Content-Type: application/json`
-
-## Skapa en anslutning
-
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per FTP-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
-
-### Skapa en FTP-anslutning med grundläggande autentisering
-
-Om du vill skapa en FTP-anslutning med grundläggande autentisering skickar du en POST till [!DNL Flow Service]-API:t och anger värden för anslutningens `host`, `userName` och `password`.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL FTP] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -77,7 +61,7 @@ POST /connections
 
 **Begäran**
 
-För att en FTP-anslutning ska kunna skapas måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för FTP är `fb2e94c9-c031-467d-8103-6bd6e0a432f2`.
+Följande begäran skapar en basanslutning för [!DNL FTP]:
 
 ```shell
 curl -X POST \
