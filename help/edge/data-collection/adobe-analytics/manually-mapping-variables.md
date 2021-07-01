@@ -4,9 +4,9 @@ description: Lär dig hur du manuellt mappar variabler till Adobe Analytics med 
 seo-description: Mappa variabler manuellt till Adobe Analytics med bearbetningsregler med Web SDK
 keywords: adobe analytics;analytics;variables;mapping variables;map variables;contextData;context Data;Processing rules;xdm;schema;
 exl-id: 395050c1-8d39-4da8-acea-6e618ed662dd
-source-git-commit: d67c8c0ada6dc4bf07b73547f9e571a8a7386b75
+source-git-commit: 9392a90b70699b79949095e178ea77dd34d313a3
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '403'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Du kan också använda en standarduppsättning med åtgärder och produktlistor 
 
 ## Kontextdata
 
-XDM-data som ska användas av [!DNL Analytics] förenklas med punktnotation och görs tillgängliga som `contextData`. I följande lista över värdepar visas ett exempel på `context data`:
+XDM-data som ska användas av [!DNL Analytics] förenklas med punktnotation och görs tillgängliga som `contextData`. I följande lista över värdepar visas ett exempel på hur `context data` ser ut när det förenklas:
 
 ```json
 {
