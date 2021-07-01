@@ -6,10 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar e-postmarknadsförings
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0bc85d79bab690d433dc29d558a4d9caf086586d
 workflow-type: tm+mt
-source-wordcount: '1700'
+source-wordcount: '1699'
 ht-degree: 0%
 
 ---
@@ -183,7 +182,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för Unified Profile Service -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för profiltjänst -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
@@ -217,7 +216,7 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d  '{
-  "name": "Connecting to Unified Profile Service",
+  "name": "Connecting to Profile Service",
   "description": "Optional",
   "baseConnectionId": "{BASE_CONNECTION_ID}",
   "connectionSpec": {
@@ -241,7 +240,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-            "name": "Connecting to Unified Profile Service",
+            "name": "Connecting to Profile Service",
             "description": "Optional",
             "connectionSpec": {
                 "id": "{CONNECTION_SPEC_ID}",
@@ -257,11 +256,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det ID du fick i föregående steg.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för  [!DNL Unified Profile Service] -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för  [!DNL Profile Service] -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Unified Profile Service]. Detta bekräftar att du har anslutit till dina [!DNL Experience Platform]-data. Lagra det här värdet som det behövs i ett senare steg.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Profile Service]. Detta bekräftar att du har anslutit till dina [!DNL Experience Platform]-data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -270,7 +269,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 ```
 
 
-## Anslut till e-postmarknadsföringsmålet {#connect-to-email-marketing-destination}
+## Anslut till mål för e-postmarknadsföring {#connect-to-email-marketing-destination}
 
 ![Översikt över destinationssteg 3](../assets/api/email-marketing/step3.png)
 
