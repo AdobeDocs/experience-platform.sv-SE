@@ -5,10 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3e92494351e487468e6292c34763e5b2281fd6c5
 workflow-type: tm+mt
-source-wordcount: '1580'
+source-wordcount: '1616'
 ht-degree: 0%
 
 ---
@@ -44,6 +43,8 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 >[!NOTE]
 >
 >Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM) finns i självstudiekursen [Schemaredigeraren](../xdm/tutorials/create-schema-ui.md).
+>
+>Om TTL (time-to-live) är aktiverat för datauppsättningen kan det dessutom påverka medlemskapet i det skapade segmentet. Mer information om TTL och hur det kan påverka segmenteringen finns i [TTL-guiden för profiltjänst](../profile/apply-ttl.md).
 
 ## Utvärdera segment
 
@@ -145,7 +146,7 @@ Till följd av de olika segmentkombinationer som oundvikligen uppstår när du s
 
 Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska segment att&quot;hitta ett köp där köpets status inte är densamma som kundens hemläge&quot;. Om du gör det kan du sedan konsolidera 50 statiska segment till ett enda dynamiskt segment.
 
-## Segmentering av flera enheter {#multi-entity}
+## Segmentering för flera enheter {#multi-entity}
 
 Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile]-data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Därför kan [!DNL Segmentation Service] få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i [!DNL Profile]-datalagret. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringsguiden för flera enheter](multi-entity-segmentation.md).
 
