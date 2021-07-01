@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiler
-source-git-commit: 1c2e4cd2b4070f3844a9848b5574e9d5b1688926
+source-git-commit: e56898542bc9cd305173fc2d7f3b6dd53dca7eb2
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '139'
 ht-degree: 6%
 
 ---
@@ -17,6 +17,7 @@ ht-degree: 6%
 * [Profilöversikt (video)](video/profile-overview.md)
 * [[!DNL Profile] och segmenteringsskydd](guardrails.md)
 * [[!DNL Profile] kontrollpanel](ui/profile-dashboard.md)
+* [TTL (Time-to-live) för datauppsättningar](apply-ttl.md)
 * [!DNL Profile] API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
