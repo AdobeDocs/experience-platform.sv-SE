@@ -2,21 +2,20 @@
 title: Krav för att använda Adobe Experience Platform Web SDK
 description: Läs om förutsättningarna för Adobe Experience Platform Web SDK.
 keywords: 1st-party domain;CNAME;schema;skapa schema;starta;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 98ae69db-bc87-4ea3-b101-664ac53e7ae0
+source-git-commit: 5f3b82edbc52d96cad13932be1d201e275780f3c
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '318'
 ht-degree: 0%
 
 ---
-
 
 # Krav för att använda Adobe Experience Platform Web SDK
 
 Om du vill använda Platform Web SDK måste du först:
 
 - Låt din organisation tillhandahålla den här funktionen. (Det är kostnadsfritt att få tillgång till Platform Web SDK. Om du vill ha åtkomst kontaktar du din Customer Success Manager (CSM).)
-- Ha en första partsdomän (CNAME) aktiverad. Om du redan har en CNAME för Adobe Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion.
+- Vi rekommenderar att CNAME (1st-party domain) är aktiverat. Om du redan har en CNAME för Adobe Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men Adobe rekommenderar att du gör det innan du går till produktion. Även om en CNAME-implementering inte ger några fördelar när det gäller cookie-livstid kan den förhindra att vissa annonsblockerare och mindre vanliga webbläsare blockerar SDK-begäranden. I sådana fall kan användning av CNAME förhindra att datainsamlingen avbryts för användare som använder dessa verktyg.
 
 >[!IMPORTANT]
 >
