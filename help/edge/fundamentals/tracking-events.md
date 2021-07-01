@@ -3,9 +3,9 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 3f5f17275e28ba35a302a42d66b151c4234bc79c
+source-git-commit: a6fca344e6b307e503e29ca7dda3534cdea62f53
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1460'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Om du vill skicka händelsedata till Adobe Experience Cloud använder du kommand
 Data som skickas till Adobe Experience Cloud kan delas in i två kategorier:
 
 * XDM-data
-* Data som inte är XDM (stöds inte för närvarande)
+* Ej XDM-data
 
 ## Skicka XDM-data
 
@@ -75,7 +75,7 @@ I det här exemplet klonas datalagret genom att serialisera det till JSON och se
 >Det finns en gräns på 32 kB för de data som kan skickas i varje händelse i XDM-fältet.
 
 
-### Skicka data som inte är XDM
+## Skicka data som inte är XDM
 
 Data som inte matchar ett XDM-schema ska skickas med alternativet `data` för kommandot `sendEvent`. Den här funktionen stöds i version 2.5.0 och senare av Web SDK.
 
@@ -85,7 +85,7 @@ I framtiden kommer du att kunna skicka hela datalagret under alternativet `data`
 
 **Så här skickar du attribut för profil och Recommendations till Adobe Target:**
 
-```
+```javascript
 alloy("sendEvent", {
   data: {
     __adobe: {
