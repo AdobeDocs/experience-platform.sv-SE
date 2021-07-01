@@ -6,10 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0bc85d79bab690d433dc29d558a4d9caf086586d
 workflow-type: tm+mt
-source-wordcount: '2022'
+source-wordcount: '2019'
 ht-degree: 0%
 
 ---
@@ -69,7 +68,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-### Swagger-dokumentation {#swagger-docs}
+### Dokumentation för Swagger {#swagger-docs}
 
 Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
@@ -117,7 +116,7 @@ Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras
 }
 ```
 
-## Anslut till dina Experience Platform-data {#connect-to-your-experience-platform-data}
+## Ansluta till dina Experience Platform-data {#connect-to-your-experience-platform-data}
 
 ![Översiktssteg för målsteg 2](../assets/api/streaming-destination/step2.png)
 
@@ -155,7 +154,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för Unified Profile Service -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för profiltjänst -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
@@ -167,7 +166,7 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 }
 ```
 
-### Anslut till dina Experience Platform-data {#connect-to-platform-data}
+### Ansluta till dina Experience Platform-data {#connect-to-platform-data}
 
 **API-format**
 
@@ -185,7 +184,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-            "name": "Connecting to Unified Profile Service",
+            "name": "Connecting to Profile Service",
             "description": "Optional",
             "connectionSpec": {
                 "id": "{CONNECTION_SPEC_ID}",
@@ -200,11 +199,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det ID du fick i föregående steg.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för Unified Profile Service -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för profiltjänst -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till tjänsten för enhetlig profil. Detta bekräftar att du har anslutit till dina Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till profiltjänsten. Detta bekräftar att du har anslutit till dina Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -594,7 +593,7 @@ Det returnerade svaret ska i parametern `transformations` inkludera de segment o
 }
 ```
 
-## Använda Postman-samlingar för att ansluta till direktuppspelningsmål {#collections}
+## Använda Postman-samlingar för att ansluta till direktuppspelningsmål  {#collections}
 
 Om du vill ansluta till de direktuppspelningsmål som beskrivs i den här självstudiekursen på ett effektivare sätt kan du använda [[!DNL Postman]](https://www.postman.com/).
 
