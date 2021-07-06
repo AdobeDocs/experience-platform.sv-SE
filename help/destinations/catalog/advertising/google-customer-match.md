@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: da069c6c931bfd2af38b40fc061d5eb633aba9ea
+source-git-commit: 4fed44edb3e201422f765493c9019be1cddffccc
 workflow-type: tm+mt
-source-wordcount: '1478'
+source-wordcount: '1505'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Ett framstående teknikföretag lanserade en ny telefon. För att marknadsföra 
 
 För att befordra releasen överför de e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Segment skapas baserat på kunder som äger äldre telefonmodeller. Sedan skickas segment till [!DNL Google Customer Match] så att företaget kan inrikta sig på befintliga kunder, kunder som äger äldre telefonmodeller och liknande kunder på [!DNL YouTube].
 
-## Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
+## Datastyrning för [!DNL Google Customer Match]-mål {#data-governance}
 
 Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../../data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
 
@@ -52,9 +52,11 @@ Vissa destinationer i Experience Platform har vissa regler och skyldigheter för
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer och andra) som används i  [!DNL Google Customer Match] målet.
 
-## [!DNL Google Customer Match] kontokrav  {#google-account-prerequisites}
+## [!DNL Google Customer Match] kontokrav {#google-account-prerequisites}
 
 Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
+
+Kontrollera sedan att ditt [!DNL Google]-konto är konfigurerat för en [!DNL Standard]-åtkomstnivå eller högre. Mer information finns i [Google Ads-dokumentationen](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
 
 ### Tillåtelselista {#allowlist}
 
@@ -68,7 +70,7 @@ Kunder med kompatibla konton tillåts automatiskt listade av Google.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-## Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
+## Krav för telefonnummerhashning {#phone-number-hashing-requirements}
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Google Customer Match]:
 
@@ -110,7 +112,7 @@ I videon nedan visas stegen för att konfigurera ett [!DNL Google Customer Match
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
-## Anslut till målet {#connect-destination}
+## Anslut till mål {#connect-destination}
 
 Bläddra till kategorin **[!UICONTROL Advertising]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj [!DNL Google Customer Match] och sedan **[!UICONTROL Configure]**.
 
