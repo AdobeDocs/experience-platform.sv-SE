@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Fältgrupp för förmånsdetaljschema
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för bonusdetaljer.
-source-git-commit: fe49560a69c4c02835f00e4ebc0a5b9dc88eae90
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '301'
 ht-degree: 1%
@@ -38,5 +38,5 @@ ht-degree: 1%
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-loyalty-details.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-loyalty-details.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-loyalty-details.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-loyalty-details.schema.json)
