@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;personuppgifter;Schema design;fältgrupp;Fältgrupp;
 solution: Experience Platform
-title: Schemafältgrupp för personlig kontaktinformation
+title: Personal Contact Details Schema Field Group
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Personlig kontaktinformation.
+description: This document provides an overview of the Personal Contact Details schema field group.
 exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 1%
@@ -13,27 +13,27 @@ ht-degree: 1%
 ---
 
 
-# [!UICONTROL Personal Contact Details] schemafältgrupp
+# [!UICONTROL Personal Contact Details] schema field group
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>The names of several schema field groups have changed. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
 [!UICONTROL Personal Contact Details] är en standardgrupp för schemafält för  [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) klassen som beskriver kontaktinformationen för en enskild person.
 
 ![](../../images/field-groups/personal-contact-details.png)
 
-| Egenskap | Datatyp | Beskrivning |
+| Egenskap | Data type | Beskrivning |
 | --- | --- | --- |
-| `faxPhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens faxnummer. |
+| `faxPhone` | [Telefonnummer](../../data-types/phone-number.md) | Describes the person&#39;s fax number. |
 | `homeAddress` | [Postadress](../../data-types/postal-address.md) | Beskriver personens bostadsadress. |
 | `homePhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens telefonnummer hemma. |
-| `mobilePhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens mobiltelefonnummer. |
+| `mobilePhone` | [Phone number](../../data-types/phone-number.md) | Describes the person&#39;s mobile phone number. |
 | `personalEmail` | [E-postadress](../../data-types/email-address.md) | Beskriver personens e-postadress. |
 
 {style=&quot;table-layout:auto&quot;}
 
-Mer information om fältgruppen finns i den offentliga XDM-databasen:
+For more details on the field group, refer to the public XDM repository:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.schema.json)
+* [Populated example](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
