@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;scheman;segment;segment;Membership;segment membership;Schema design;map;Map;
+keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;segment;segmentMembership;segment membership;Schema design;map;Map;
 solution: Experience Platform
-title: Schemafältgrupp för information om segmentmedlemskap
+title: Segment Membership Details Schema Field Group
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '420'
 ht-degree: 0%
@@ -84,5 +84,5 @@ Följande är ett exempel på en `segmentMembership`-karta som systemet har fyll
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [Full schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
