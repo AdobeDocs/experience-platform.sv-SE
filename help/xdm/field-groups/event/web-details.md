@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Fältgrupp för webbinformationsschema
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Webbinformation.
-source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -30,5 +30,5 @@ ht-degree: 0%
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-web.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-web.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-web.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-web.schema.json)
