@@ -3,8 +3,8 @@ keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceE
 solution: Experience Platform
 title: Fältgrupp för kanalinformationsschema
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Kanalinformation.
-source-git-commit: b9168052174c250810e59e403cb77419d510df3b
+description: This document provides an overview of the Channel Details schema field group.
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
@@ -16,19 +16,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>The names of several schema field groups have changed. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
 
-[!UICONTROL Channel Details] är en standardgrupp för schemafält för  [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md), som används för att beskriva kanalinformation som ID, kanaltyp, medietyp och platstyp.
+[!UICONTROL Channel Details] is a standard schema field group for the [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), used to describe channel information such as ID, channel type, media type, and location type.
 
 ![](../../images/field-groups/channel-details.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `channel` | [Experience channel](../../data-types/experience-channel.md) | Ett objekt som beskriver produktreturer, garantiregistrering och kundvagns-/orderprocesser. |
+| `channel` | [Experience channel](../../data-types/experience-channel.md) | An object that describes product returns, warranty registration, and shopping cart/order processes. |
 
 {style=&quot;table-layout:auto&quot;}
 
-Mer information om fältgruppen finns i den offentliga XDM-databasen:
+For more details on the field group, refer to the public XDM repository:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-channel.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-channel.schema.json)
+* [Populated example](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-channel.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-channel.schema.json)
