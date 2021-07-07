@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 7158ae97d0260111b76edddbd447e6b302ddeb77
+source-git-commit: 2781825bf48940d0aa0a38485006263bfc8ac474
 workflow-type: tm+mt
-source-wordcount: '3667'
+source-wordcount: '3685'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Standardisering är ett nyckelbegrepp bakom [!DNL Experience Platform]. XDM, som
 
 Infrastrukturen som [!DNL Experience Platform] byggs på, kallas [!DNL XDM System], underlättar schemabaserade arbetsflöden och innehåller mönstren [!DNL Schema Registry], [!DNL Schema Editor], schema-metadata och tjänstförbrukning. Mer information finns i [XDM System overview](../home.md).
 
-Det finns flera viktiga fördelar med att skapa och använda scheman i [!DNL Experience Platform]. För det första möjliggör scheman bättre datastyrning och minimering av data, vilket är särskilt viktigt med sekretessbestämmelser. För det andra gör det möjligt att bygga scheman med Adobe standardkomponenter för körklara insikter och använda AI/ML-tjänster med minimala anpassningar. Slutligen tillhandahåller scheman infrastruktur för datautbytesinsikter och effektiv samordning.
+Det finns flera fördelar med att utnyttja scheman i [!DNL Experience Platform]. För det första möjliggör scheman bättre datastyrning och minimering av data, vilket är särskilt viktigt med sekretessbestämmelser. För det andra gör det möjligt att bygga scheman med Adobe standardkomponenter för körklara insikter och använda AI/ML-tjänster med minimala anpassningar. Slutligen tillhandahåller scheman infrastruktur för datautbytesinsikter och effektiv samordning.
 
 ## Planera ditt schema
 
@@ -111,7 +111,7 @@ Som exemplet ovan visar representerar varje nyckel i `identityMap`-objektet ett 
 
 I takt med att de digitala upplevelserna utvecklas måste även de scheman som används för att representera dem finnas kvar. Ett väldesignat schema kan därför anpassas och utvecklas efter behov, utan att det medför destruktiva ändringar i tidigare versioner av schemat.
 
-Eftersom bakåtkompatibilitet är avgörande för schemautvecklingen, tillämpar [!DNL Experience Platform] en rent additiv versionsprincip för att säkerställa att eventuella ändringar av schemat endast resulterar i icke-förstörande uppdateringar och ändringar. Det går alltså inte att använda **brytningsändringar.**
+Eftersom det är viktigt att bibehålla bakåtkompatibiliteten för schemautvecklingen, tillämpar [!DNL Experience Platform] en rent additiv versionsprincip. Denna princip säkerställer att alla ändringar av schemat endast resulterar i icke-förstörande uppdateringar och ändringar. Det går alltså inte att använda **brytningsändringar.**
 
 >[!NOTE]
 >
@@ -121,7 +121,7 @@ I följande tabell visas vilka ändringar som stöds vid redigering av scheman, 
 
 | Ändringar som stöds | Brytande ändringar (stöds inte) |
 | --- | --- |
-| <ul><li>Lägga till nya fält i resursen</li><li>Göra ett obligatoriskt fält valfritt</li><li>Ändra resursens visningsnamn och beskrivning</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Nya obligatoriska fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta attribut till en annan plats i trädet</li></ul> |
+| <ul><li>Lägga till nya fält i resursen</li><li>Göra ett obligatoriskt fält valfritt</li><li>Ändra resursens visningsnamn och beskrivning</li><li>Aktiverar schemats deltagande i profilen</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Nya obligatoriska fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta befintliga fält till en annan plats i trädet</li><li>Tar bort schemat</li><li>Inaktivera schemat från att delta i profilen</li></ul> |
 
 ### Scheman och datainhämtning
 
