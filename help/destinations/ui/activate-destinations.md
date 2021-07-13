@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 73a8d65255359de6cff6a9410310554ca419fe1c
+source-git-commit: a451e462ac38d157335568310e26cf6375699c6b
 workflow-type: tm+mt
-source-wordcount: '2718'
+source-wordcount: '2836'
 ht-degree: 0%
 
 ---
@@ -152,6 +152,9 @@ Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna s
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
+>[!IMPORTANT]
+>
+>Om du ändrar filexportschemat, från schemakonfigurationer till fullständig filexport, med **[!UICONTROL Frequency]** inställt på **[!UICONTROL Once]**, för segment som redan har exporterats, exporteras inte en ny fil för bakåtfyllning. Om du vill exportera en ny bakgrundsfyllningsfil med ett annat schema måste du skapa en ny målinstans. Detta är en begränsning som kommer att tas upp i framtida versioner.
 
 ### Exportera inkrementella filer {#export-incremental-files}
 
@@ -178,6 +181,10 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
 
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
+
+>[!IMPORTANT]
+>
+>Om du ändrar filexportschemat, från schemakonfigurationer till fullständig filexport, med **[!UICONTROL Frequency]** inställt på **[!UICONTROL Once]**, för segment som redan har exporterats, exporteras inte en ny fil för bakåtfyllning. Om du vill exportera en ny bakgrundsfyllningsfil med ett annat schema måste du skapa en ny målinstans. Detta är en begränsning som kommer att tas upp i framtida versioner.
 
 ### Konfigurera filnamn {#file-names}
 
