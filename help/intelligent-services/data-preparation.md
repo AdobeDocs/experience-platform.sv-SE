@@ -5,10 +5,9 @@ title: Förbered data för användning i intelligenta tjänster
 topic-legacy: Intelligent Services
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: aa73f8f4175793e82d6324b7c59bdd44bf8d20f9
 workflow-type: tm+mt
-source-wordcount: '2397'
+source-wordcount: '2753'
 ht-degree: 0%
 
 ---
@@ -19,17 +18,29 @@ För att [!DNL Intelligent Services] ska kunna identifiera insikter från markna
 
 Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till CEE-schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur. Om du planerar att använda Adobe Analytics-data läser du avsnittet om [Adobe Analytics datapresentation](#analytics-data). Om du tänker använda Adobe Audience Manager-data (endast kund-AI) kan du läsa avsnittet för [Adobe Audience Manager-dataförberedelse](#AAM-data).
 
+## Datakrav
+
+[!DNL Intelligent Services] kräver olika mängder historiska data beroende på vilket mål du skapar. Oavsett vilket måste de data du förbereder för **alla** [!DNL Intelligent Services] innehålla både positiva och negativa kundresor/händelser. Både negativa och positiva händelser förbättrar modellens precision och precision.
+
+Om du t.ex. använder AI för att förutsäga sannolikheten för att köpa en produkt behöver modellen för AI för kunden både exempel på lyckade köpvägar och exempel på misslyckade sökvägar. Detta beror på att kundens AI under modellutbildning ser ut att förstå vilka händelser och resor som leder till ett köp. Detta omfattar även de åtgärder som vidtas av kunder som inte har köpt något, t.ex. en person som avbrutit sin resa genom att lägga en artikel i kundvagnen. Dessa kunder kan uppvisa liknande beteenden, men kundens AI kan ge insikter och fördjupa de viktigaste skillnaderna och faktorerna som leder till en högre benägenhetspoäng. På samma sätt kräver Attribution AI både typer av händelser och resor för att visa mått som kontaktytans effektivitet, toppkonverteringsvägar och uppdelning efter kontaktytpunktsposition.
+
+Mer information om krav på historiska data finns i avsnittet [Kundens AI](./customer-ai/input-output.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements) krav på historiska data i dokumentationen för in-/utdata.
+
+### Riktlinjer för att fästa data
+
+Vi rekommenderar att du knyter ihop en användares händelser med ett gemensamt ID när det är möjligt. Du kan till exempel ha användardata med ID1 för 10 händelser. Senare tog samma användare bort cookie-ID:t och registreras som&quot;id2&quot; under de kommande 20 händelserna. Om du vet att id1 och id2 motsvarar samma användare är det bästa sättet att sammanfoga alla 30 händelser med ett gemensamt ID.
+
+Om detta inte är möjligt bör du behandla varje händelseuppsättning som en annan användare när du skapar modellindata. Detta ger bästa resultat under modellutbildning och poängsättning.
+
 ## Sammanfattning av arbetsflöde
 
 Förberedelseprocessen varierar beroende på om dina data lagras i Adobe Experience Platform eller externt. I det här avsnittet sammanfattas de steg som du behöver utföra med tanke på båda scenarierna.
 
 ### Förberedelse av externa data
 
-Om dina data lagras utanför [!DNL Experience Platform] följer du stegen nedan:
+Om dina data lagras utanför Experience Platform måste du mappa dina data till obligatoriska och relevanta fält i ett [Consumer ExperienceEvent-schema](#cee-schema). Schemat kan utökas med anpassade fältgrupper för att bättre kunna samla in kunddata. När de har mappats kan du skapa en datauppsättning med hjälp av ditt Consumer ExperienceEvent-schema och [importera dina data till plattformen](../ingestion/home.md). CEE-datauppsättningen kan sedan väljas när en [!DNL Intelligent Service] konfigureras.
 
-1. Kontakta Adobe Consulting Services för att begära åtkomstautentiseringsuppgifter för en dedikerad Azure Blob Storage-behållare.
-1. Ladda upp dina data till blobbehållaren med dina inloggningsuppgifter.
-1. Arbeta med Adobe Consulting Services för att mappa dina data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem i [!DNL Intelligent Services].
+Beroende på vilken [!DNL Intelligent Service] du vill använda kan olika fält vara obligatoriska. Observera att det är bäst att lägga till data i ett fält om du har tillgängliga data. Mer information om obligatoriska fält finns i [Attribution AI](./attribution-ai/input-output.md) eller [Customer AI](./customer-ai/input-output.md) input/output guide.
 
 ### Adobe Analytics datagenerering {#analytics-data}
 
@@ -41,7 +52,7 @@ När källkopplingen direktuppspelar data i Experience Platform kan du välja Ad
 >
 >Adobe Analytics Connector tar upp till fyra veckor på sig att fylla i data baklänges. Om du nyligen har upprättat en anslutning bör du kontrollera att datauppsättningen har den minsta datalängd som krävs för kunden eller Attribution AI. Granska historikdatasektionerna i [Kundens AI](./customer-ai/input-output.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements) och kontrollera att du har tillräckligt med data för förutsägelsemålet.
 
-### Adobe Audience Manager datagenerering (endast kundens AI) {#AAM-data}
+### Adobe Audience Manager dataförberedelse (endast kundens AI) {#AAM-data}
 
 Kunden AI har inbyggt stöd för Adobe Audience Manager data. Om du vill använda Audience Manager data följer du stegen som beskrivs i dokumentationen för att konfigurera en [Audience Manager-källkoppling](../sources/tutorials/ui/create/adobe-applications/audience-manager.md).
 
@@ -53,7 +64,7 @@ När källkopplingen direktuppspelar data i Experience Platform kan du välja Ad
 
 ### [!DNL Experience Platform] dataförberedelse
 
-Om dina data redan lagras i [!DNL Platform] och inte direktuppspelas via källanslutningarna för Adobe Analytics eller Adobe Audience Manager (endast kund-AI) följer du stegen nedan. Du bör fortfarande förstå CEE-schemat om du tänker arbeta med kundens AI.
+Om dina data redan lagras i [!DNL Platform] och inte direktuppspelas via källanslutningarna för Adobe Analytics eller Adobe Audience Manager (endast kund-AI) följer du stegen nedan. Du bör fortfarande förstå CEE-schemat.
 
 1. Granska strukturen för [Consumer ExperienceEvent-schemat](#cee-schema) och kontrollera om dina data kan mappas till dess fält.
 2. Kontakta Adobe Consulting Services för att mappa dina data till schemat och importera dem till [!DNL Intelligent Services], eller [följ stegen i den här guiden](#mapping) om du vill mappa data själv.
@@ -279,7 +290,7 @@ Detta fält innehåller information om marknadsföringsaktiviteter som är aktiv
 
 Fullständig information om vart och ett av de obligatoriska underfälten för `xdm:productListItems` finns i [specifikationen för marknadsföringssekretet](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md).
 
-## Mappa och importera data {#mapping}
+## Mappning och inhämtning av data {#mapping}
 
 När du har fastställt om dina data för marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data du ska hämta till [!DNL Intelligent Services]. Alla historiska data som används i [!DNL Intelligent Services] måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som är avsett som en uppslagsperiod.
 
