@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1552'
 ht-degree: 0%
 
 ---
@@ -191,9 +190,6 @@ curl -X POST \
     "schemaRef": {
         "id": "https://ns.adobe.com/xdm/context/profile__union",
         "contentType": "application/vnd.adobe.xed+json;version=1"
-    },
-    "fileDescription": {
-        "persisted": true
     }
 }'
 ```
@@ -202,7 +198,6 @@ curl -X POST \
 | -------- | ----------- |
 | `name` | Ett beskrivande namn för datauppsättningen. |
 | `schemaRef.id` | ID för den unionsvy (schema) som datauppsättningen ska kopplas till. |
-| `fileDescription.persisted` | Ett booleskt värde som när det anges som `true` gör att datauppsättningen kan finnas kvar i unionsvyn. |
 
 **Svar**
 
