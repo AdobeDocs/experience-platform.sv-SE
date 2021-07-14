@@ -5,10 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -66,9 +65,6 @@ curl -X POST \
         "schemaRef": {
           "id": "https://ns.adobe.com/xdm/context/profile__union",
           "contentType": "application/vnd.adobe.xed+json;version=1"
-        },
-        "fileDescription": {
-          "persisted": true
         }
       }'
 ```
@@ -77,7 +73,6 @@ curl -X POST \
 | -------- | ----------- |
 | `name` | Ett beskrivande namn för datauppsättningen. |
 | `schemaRef.id` | ID för den unionsvy (schema) som datauppsättningen ska kopplas till. |
-| `fileDescription.persisted` | Ett booleskt värde som när det anges som `true` gör att datauppsättningen kan finnas kvar i unionsvyn. |
 
 **Svar**
 
