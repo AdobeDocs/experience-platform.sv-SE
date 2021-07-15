@@ -4,7 +4,7 @@ title: Datatypen Allmänt fält för samtycke
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för det allmänna innehållsfältet.
 exl-id: f1f14eb7-21dd-45ca-8fb4-68f397cfa697
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Den här datatypen är avsedd att användas för att anpassa strukturen för din organisations medgivandescheman med fältgruppen [[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]](../field-groups/profile/consents.md) som baslinje.
+>Den här datatypen är avsedd att användas för att anpassa strukturen för din organisations medgivandescheman med fältgruppen [[!UICONTROL Consents and Preferences]](../field-groups/profile/consents.md) som baslinje.
 
 ![](../images/data-types/consent-field.png)
 
