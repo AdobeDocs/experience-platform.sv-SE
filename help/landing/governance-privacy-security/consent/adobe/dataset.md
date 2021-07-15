@@ -5,9 +5,9 @@ title: Konfigurera en datauppsättning för att samla in samtycke- och inställn
 topic-legacy: getting started
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: 3f6191bb3ddfdd24b1c2ed19ba4293402f56d2e5
+source-git-commit: ff793c207a181ca6d2486e7fd6ef5c4f57744fba
 workflow-type: tm+mt
-source-wordcount: '1405'
+source-wordcount: '1388'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättnin
 
 >[!IMPORTANT]
 >
->I exemplen i den här handboken används en standardiserad uppsättning fält för att representera kundens medgivandevärden, enligt definitionen i datatypen [Consents &amp; Preferences XDM](../../../../xdm/data-types/consents.md). Strukturen på dessa fält är avsedd att tillhandahålla en effektiv datamodell som omfattar många vanliga fall av insamling av samtycke.
+>Exemplen i den här handboken använder en standardiserad uppsättning fält för att representera värden för kundgodkännande, enligt definitionen i schemafältgruppen [[!UICONTROL Consents and Preferences]](../../../../xdm/field-groups/profile/consents.md). Strukturen på dessa fält är avsedd att tillhandahålla en effektiv datamodell som omfattar många vanliga fall av insamling av samtycke.
 >
 >Du kan dock även definiera egna fältgrupper för att representera samtycke enligt dina egna datamodeller. Kontakta ditt juridiska team för att få ett godkännande av en datamodell för samtycke som passar era affärsbehov, baserat på följande alternativ:
 >
@@ -41,9 +41,9 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >
 >I den här självstudien antas att du känner till det [!DNL Profile]-schema i plattformen som du vill använda för att hämta kundattributsinformation. Oavsett vilken metod du använder för att samla in medgivandedata måste schemat vara [aktiverat för kundprofil för realtid](../../../../xdm/ui/resources/schemas.md#profile). Dessutom kan schemats primära identitet inte vara ett direkt identifierbart fält som inte får användas i intressebaserad annonsering, till exempel en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 
-## Struktur för fältgruppen Innehåll och inställningar {#structure}
+## [!UICONTROL Consents and Preferences] fältgruppstruktur {#structure}
 
-Fältgruppen [!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] (nedan kallad fältgruppen &quot;Innehåll och inställningar&quot;) tillhandahåller standardiserade medgivandefält till ett schema. För närvarande är den här fältgruppen bara kompatibel med scheman som baseras på klassen [!DNL XDM Individual Profile].
+Fältgruppen [!UICONTROL Consents and Preferences] ger standardiserade medgivandefält till ett schema. För närvarande är den här fältgruppen bara kompatibel med scheman som baseras på klassen [!DNL XDM Individual Profile].
 
 Fältgruppen innehåller ett enda fält av objekttyp, `consents`, vars underegenskaper samlar in en uppsättning standardiserade medgivandefält. Följande JSON är ett exempel på den typ av data som `consents` förväntar sig vid datainmatning:
 
@@ -92,9 +92,9 @@ Fältgruppen innehåller ett enda fält av objekttyp, `consents`, vars underegen
 
 >[!NOTE]
 >
->Mer information om underegenskapernas struktur och innebörd i `consents` finns i översikten på datatypen [Consents &amp; Preferences](../../../../xdm/data-types/consents.md).
+>Mer information om underegenskapernas struktur och innebörd i `consents` finns i översikten i fältgruppen [[!UICONTROL Consents and Preferences]](../../../../xdm/field-groups/profile/consents.md).
 
-## Lägg till fältgruppen Innehåll och inställningar i ditt [!DNL Profile]-schema {#add-field-group}
+## Lägg till fältgruppen [!UICONTROL Consents and Preferences] i ditt [!DNL Profile]-schema {#add-field-group}
 
 Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet och välj sedan fliken **[!UICONTROL Browse]** för att visa en lista över befintliga scheman. Här markerar du namnet på det [!DNL Profile]-aktiverade schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Loyalty Members&quot; som är inbyggt i självstudiekursen [för att skapa schema](../../../../xdm/tutorials/create-schema-ui.md) som exempel.
 
@@ -108,7 +108,7 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssni
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-field-group.png)
 
-Dialogrutan **[!UICONTROL Add field group]** visas. Här väljer du **[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]** i listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen. När fältgruppen är markerad väljer du **[!UICONTROL Add field group]**.
+Dialogrutan **[!UICONTROL Add field group]** visas. Här väljer du **[!UICONTROL Consents and Preferences]** i listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen. När fältgruppen är markerad väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-group-dialog.png)
 
@@ -164,15 +164,15 @@ Följande avsnitt innehåller ytterligare information om hur du skapar en dataup
 
 ### Lägg till anpassade medgivandefält och inställningsfält i schemat {#custom-consent}
 
-Om du behöver hämta ytterligare medgivandesignaler utanför de som representeras av fältgruppen [!DNL Consents & Preferences] kan du använda anpassade XDM-komponenter för att förbättra ditt medgivandeschema så att det passar just dina affärsbehov. I det här avsnittet beskrivs de grundläggande principerna för hur du anpassar ditt medgivandeschema för att kunna importera dessa signaler till profilen.
+Om du behöver hämta ytterligare medgivandesignaler utanför de som representeras av fältgruppen [!UICONTROL Consents and Preferences] kan du använda anpassade XDM-komponenter för att förbättra ditt medgivandeschema så att det passar just dina affärsbehov. I det här avsnittet beskrivs de grundläggande principerna för hur du anpassar ditt medgivandeschema för att kunna importera dessa signaler till profilen.
 
 >[!IMPORTANT]
 >
 >SDK:n för plattformswebben och mobiler stöder inte anpassade fält i sina kommandon för ändring av samtycke. Det enda sättet att importera egna medgivandefält till profilen är för närvarande genom [batchimport](../../../../ingestion/batch-ingestion/overview.md) eller en [källanslutning](../../../../sources/home.md).
 
-Vi rekommenderar att du använder fältgruppen [!DNL Consents & Preferences] som en baslinje för strukturen för dina medgivandedata och lägger till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
+Vi rekommenderar att du använder fältgruppen [!UICONTROL Consents and Preferences] som en baslinje för strukturen för dina medgivandedata och lägger till ytterligare fält efter behov, i stället för att försöka skapa hela strukturen från grunden.
 
-Om du vill lägga till anpassade fält i strukturen för en standardfältgrupp måste du först skapa en anpassad fältgrupp. När du har lagt till fältgruppen [!DNL Consents & Preferences] i schemat väljer du ikonen **plus (+)** i avsnittet **[!UICONTROL Field groups]** och väljer sedan **[!UICONTROL Create new field group]**. Ange ett namn och en valfri beskrivning för fältgruppen och välj sedan **[!UICONTROL Add field group]**.
+Om du vill lägga till anpassade fält i strukturen för en standardfältgrupp måste du först skapa en anpassad fältgrupp. När du har lagt till fältgruppen [!UICONTROL Consents and Preferences] i schemat väljer du ikonen **plus (+)** i avsnittet **[!UICONTROL Field groups]** och väljer sedan **[!UICONTROL Create new field group]**. Ange ett namn och en valfri beskrivning för fältgruppen och välj sedan **[!UICONTROL Add field group]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-field-group.png)
 
