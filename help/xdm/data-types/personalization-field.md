@@ -4,7 +4,7 @@ title: Allmän datatyp för inställningsfält för personalisering
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för det allmänna inställningsfältet för personalisering.
 exl-id: 3f6a3c31-19f3-4bad-921e-9ad33c6b9ac9
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Den här datatypen är avsedd att användas för att anpassa strukturen för din organisations medgivandescheman med fältgruppen [[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]](../field-groups/profile/consents.md) som baslinje.
+>Den här datatypen är avsedd att användas för att anpassa strukturen för din organisations medgivandescheman med fältgruppen [[!UICONTROL Consents and Preferences]](../field-groups/profile/consents.md) som baslinje.
 
 ![](../images/data-types/personalization-field.png)
 
