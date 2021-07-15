@@ -4,7 +4,7 @@ title: Datatyp för standardfält för allmän marknadsföring
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för det allmänna inställningsfältet för marknadsföring.
 exl-id: d4c53885-f34f-4721-aa34-1fe02dc7006f
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
 source-wordcount: '528'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Den här datatypen är avsedd att användas för att anpassa strukturen för din organisations medgivandescheman med fältgruppen [[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]](../field-groups/profile/consents.md) som baslinje.
+>Den här datatypen är avsedd att användas för att anpassa strukturen för din organisations medgivandescheman med fältgruppen [[!UICONTROL Consents and Preferences]](../field-groups/profile/consents.md) som baslinje.
 >
 >Om du behöver en `subscriptions`-karta för ett visst marknadsföringsinställningsfält måste du använda [marknadsföringsfältet med prenumerationsdatatypen](./marketing-field-subscriptions.md) i stället.
 
