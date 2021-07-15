@@ -1,19 +1,19 @@
 ---
 solution: Experience Platform
-title: Fältgrupp för sekretess-/personaliserings-/marknadsföringsinställningar (samtycke)
+title: Fältgrupp för innehåll och inställningar
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Sekretess/personalisering/marknadsföring (samtycke).
+description: Det här dokumentet innehåller en översikt över schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '2287'
+source-wordcount: '2276'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] fältgrupp
+# [!UICONTROL Consents and Preferences] fältgrupp
 
-[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] (nedan kallad  [!DNL Privacy & Consents] fältgruppen) är en standardfältgrupp för  [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md), som används för att samla in kundens samtycke och inställningsinformation.
+[!UICONTROL Consents and Preferences]är en standardfältgrupp för  [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md), som används för att samla in kundens samtycke och inställningsinformation.
 
 >[!NOTE]
 >
@@ -23,9 +23,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Fältgruppen [!DNL Consents & Preferences] är utformad för att omfatta en rad olika användningsfall för samtycke och preferenshantering. Det innebär att det här dokumentet beskriver hur fälten i fältgruppen används i allmänna termer och bara ger förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa fältgruppens struktur till hur organisationen tolkar och presenterar dessa samtycke och preferenser för dina kunder.
+>Fältgruppen [!UICONTROL Consents and Preferences] är utformad för att omfatta en rad olika användningsfall för samtycke och preferenshantering. Det innebär att det här dokumentet beskriver hur fälten i fältgruppen används i allmänna termer och bara ger förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa fältgruppens struktur till hur organisationen tolkar och presenterar dessa samtycke och preferenser för dina kunder.
 
-Fältgruppen [!DNL Consents & Preferences] innehåller flera fält som används för att hämta **information om samtycke** och **inställning**.
+Fältgruppen [!UICONTROL Consents and Preferences] innehåller flera fält som används för att hämta **information om samtycke** och **inställning**.
 
 Ett samtycke är ett alternativ som gör att kunden kan ange hur deras data får användas. De flesta samtycke har en juridisk aspekt, eftersom vissa jurisdiktioner kräver tillstånd innan data kan användas på ett visst sätt, eller kräver att kunden har möjlighet att stoppa användningen (avanmäl dig) om det inte krävs ett ja-medgivande.
 
@@ -42,7 +42,7 @@ I följande skärmbild visas hur fältgruppens struktur visas i användargränss
 >
 >Se guiden [utforska XDM-resurser](../../ui/explore.md) för steg om hur du söker efter en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
 
-I följande JSON visas ett exempel på den datatyp som fältgruppen [!DNL Consents & Preferences] kan bearbeta. Information om hur dessa fält används finns i de avsnitt som följer.
+I följande JSON visas ett exempel på den datatyp som fältgruppen [!UICONTROL Consents and Preferences] kan bearbeta. Information om hur dessa fält används finns i de avsnitt som följer.
 
 ```json
 {
@@ -343,12 +343,12 @@ Du förväntas inte ange det här värdet direkt eftersom Adobe Experience Platf
 
 ## Inmatning av data med fältgruppen {#ingest}
 
-Om du vill använda fältgruppen [!DNL Consents & Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning baserad på ett schema som innehåller den fältgruppen.
+Om du vill använda fältgruppen [!UICONTROL Consents and Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning baserad på ett schema som innehåller den fältgruppen.
 
-I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med fältgruppen [!DNL Consents & Preferences], gå till avsnittet [skapa en datauppsättning](../../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följ stegen för att skapa en datauppsättning med ett befintligt schema.
+I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med fältgruppen [!UICONTROL Consents and Preferences], gå till avsnittet [skapa en datauppsättning](../../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följ stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
-Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller fältgruppen [!DNL Consents & Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
+Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller fältgruppen [!UICONTROL Consents and Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
 Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../../rtcdp/profile/merge-policies.md).
 
 ## Hantera samtycke och ändringar av inställningar
@@ -357,7 +357,7 @@ När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bö
 
 ## Bilaga {#appendix}
 
-Avsnitten nedan innehåller ytterligare referensinformation om fältgruppen [!DNL Consents & Preferences].
+Avsnitten nedan innehåller ytterligare referensinformation om fältgruppen [!UICONTROL Consents and Preferences].
 
 ### Godkända värden för `val` {#choice-values}
 
@@ -399,6 +399,6 @@ I följande tabell visas godkända värden för `preferred`:
 
 {style=&quot;table-layout:auto&quot;}
 
-### Fullständigt [!DNL Consents & Preferences]-schema {#full-schema}
+### Fullständigt [!UICONTROL Consents and Preferences]-schema {#full-schema}
 
-Om du vill visa det fullständiga schemat för fältgruppen [!DNL Consents & Preferences], se [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
+Om du vill visa det fullständiga schemat för fältgruppen [!UICONTROL Consents and Preferences], se [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
