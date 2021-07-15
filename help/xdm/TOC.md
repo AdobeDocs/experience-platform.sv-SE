@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Scheman
-source-git-commit: 9b6352eec56cf32e58d49be4d72b2fb4cf933b89
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '304'
+source-wordcount: '310'
 ht-degree: 7%
 
 ---
@@ -33,10 +33,11 @@ ht-degree: 7%
 * Schemafältgrupper {#field-groups}
    * Profilfältgrupper {#profile}
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
+      * [IAB TCF 2.0-samtycke](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
       * [Förmånsinformation](./field-groups/profile/loyalty-details.md)
       * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
-      * [Sekretess/personalisering/marknadsföringsinställningar (samtycke)](./field-groups/profile/consents.md)
+      * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
    * Händelsefältgrupper {#event}
@@ -45,6 +46,7 @@ ht-degree: 7%
       * [Handelsinformation](./field-groups/event/commerce-details.md)
       * [Information om slutanvändar-ID](./field-groups/event/enduserids.md)
       * [Miljöinformation](./field-groups/event/environment-details.md)
+      * [IAB TCF 2.0-samtycke](./field-groups/event/iab.md)
       * [Webbinformation](./field-groups/event/web-details.md)
    * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
@@ -52,6 +54,7 @@ ht-degree: 7%
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
    * [Handel](./data-types/commerce.md)
+   * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
