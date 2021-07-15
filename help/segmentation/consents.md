@@ -5,7 +5,7 @@ title: Hedra samtycke i segment
 topic-legacy: overview
 description: Lär dig hur du respekterar kundernas önskemål om samtycke vid insamling och delning av personuppgifter i segmentåtgärder.
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
-source-git-commit: 6d11a94d45b4a089ca6960aaf1ce78ae654ebc3f
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 0%
@@ -28,7 +28,7 @@ För att uppfylla kundens medgivandevärden krävs en förståelse för de olika
 
 ## Schemafält för samtycke
 
-För att uppfylla kundens samtycke och önskemål måste ett av scheman som är en del av ditt [!UICONTROL XDM Individual Profile]-unionsschema innehålla standardfältgruppen **[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]**.
+För att uppfylla kundens samtycke och önskemål måste ett av scheman som är en del av ditt [!UICONTROL XDM Individual Profile]-unionsschema innehålla standardfältgruppen **[!UICONTROL Consents and Preferences]**.
 
 Mer information om strukturen och användningsfallet för vart och ett av attributen i fältgruppen finns i [referenshandboken för ](../xdm/field-groups/profile/consents.md) för godkännande och inställningar. Stegvisa instruktioner om hur du lägger till en fältgrupp i ett schema finns i [XDM-gränssnittshandboken](../xdm/ui/resources/schemas.md#add-field-groups).
 
