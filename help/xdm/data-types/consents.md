@@ -4,18 +4,18 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
 source-wordcount: '1861'
 ht-degree: 1%
 
 ---
 
-# [!DNL Consents & Preferences] datatyp
+# [!UICONTROL Consents and Preferences] datatyp
 
-Datatypen [!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] (kallas nedan datatypen [!DNL Consents & Preferences]) är en [!DNL Experience Data Model]-datatyp (XDM) som är avsedd att stödja samlingen av kundbehörigheter och inställningar som genereras av CMP (Consent Management Platforms) och andra källor från dina dataåtgärder.
+Datatypen [!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] (kallas nedan datatypen [!UICONTROL Consents and Preferences]) är en [!DNL Experience Data Model]-datatyp (XDM) som är avsedd att stödja samlingen av kundbehörigheter och inställningar som genereras av CMP (Consent Management Platforms) och andra källor från dina dataåtgärder.
 
-Det här dokumentet beskriver strukturen och den avsedda användningen av fälten som anges av datatypen [!DNL Consents & Preferences].
+Det här dokumentet beskriver strukturen och den avsedda användningen av fälten som anges av datatypen [!UICONTROL Consents and Preferences].
 
 ## Förutsättningar {#prerequisites}
 
@@ -28,9 +28,9 @@ Det här dokumentet kräver en fungerande förståelse av XDM och användning av
 
 >[!IMPORTANT]
 >
->Datatypen [!DNL Consents & Preferences] är utformad för att omfatta en rad olika användningsfall för samtycke och preferenshantering. Därför beskriver det här dokumentet användningen av datatypens fält i allmänna termer och ger bara förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa datatypens struktur till hur din organisation tolkar och presenterar dessa samtycke och preferenser för dina kunder.
+>Datatypen [!UICONTROL Consents and Preferences] är utformad för att omfatta en rad olika användningsfall för samtycke och preferenshantering. Därför beskriver det här dokumentet användningen av datatypens fält i allmänna termer och ger bara förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa datatypens struktur till hur din organisation tolkar och presenterar dessa samtycke och preferenser för dina kunder.
 
-Datatypen [!DNL Consents & Preferences] innehåller flera fält som används för att hämta **information om samtycke** och **inställning**.
+Datatypen [!UICONTROL Consents and Preferences] innehåller flera fält som används för att hämta **information om samtycke** och **inställning**.
 
 Ett samtycke är ett alternativ som gör att kunden kan ange hur deras data får användas. De flesta samtycke har en juridisk aspekt, eftersom vissa jurisdiktioner kräver tillstånd innan data kan användas på ett visst sätt, eller kräver att kunden har möjlighet att stoppa användningen (avanmäl dig) om det inte krävs ett ja-medgivande.
 
@@ -47,7 +47,7 @@ I följande skärmbild visas hur strukturen för datatypen visas i användargrä
 >
 >Se guiden [utforska XDM-resurser](../ui/explore.md) för steg om hur du söker efter en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
 
-I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatypen [!DNL Consents & Preferences]. Information om hur dessa fält används finns i de avsnitt som följer.
+I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatypen [!UICONTROL Consents and Preferences]. Information om hur dessa fält används finns i de avsnitt som följer.
 
 ```json
 {
@@ -251,12 +251,12 @@ Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`
 
 ## Inhämta data med datatypen {#ingest}
 
-Om du vill använda datatypen [!DNL Consents & Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning baserad på ett schema som innehåller den datatypen.
+Om du vill använda datatypen [!UICONTROL Consents and Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning baserad på ett schema som innehåller den datatypen.
 
-I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med datatypen [!DNL Consents & Preferences] kan du läsa avsnittet [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
+I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med datatypen [!UICONTROL Consents and Preferences] kan du läsa avsnittet [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
-Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller datatypen [!DNL Consents & Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
+Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller datatypen [!UICONTROL Consents and Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
 Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../rtcdp/profile/merge-policies.md).
 
 ## Hantera samtycke och ändringar av inställningar
@@ -265,7 +265,7 @@ När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bö
 
 ## Bilaga {#appendix}
 
-Avsnitten nedan innehåller ytterligare referensinformation om datatypen [!DNL Consents & Preferences].
+Avsnitten nedan innehåller ytterligare referensinformation om datatypen [!UICONTROL Consents and Preferences].
 
 ### Godkända värden för `val` {#choice-values}
 
@@ -307,6 +307,6 @@ I följande tabell visas godkända värden för `preferred`:
 
 {style=&quot;table-layout:auto&quot;}
 
-### Fullständigt [!DNL Consents & Preferences]-schema {#full-schema}
+### Fullständigt [!UICONTROL Consents and Preferences]-schema {#full-schema}
 
-Mer information om det fullständiga schemat för datatypen [!DNL Consents & Preferences] finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
+Mer information om det fullständiga schemat för datatypen [!UICONTROL Consents and Preferences] finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
