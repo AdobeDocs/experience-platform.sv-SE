@@ -5,9 +5,9 @@ title: Stöd för IAB TCF 2.0 i Experience Platform
 topic-legacy: privacy events
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
+source-git-commit: a3468d55d95b89c075abf91391bd7dfaa974742c
 workflow-type: tm+mt
-source-wordcount: '2465'
+source-wordcount: '2550'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ När TCF-medgivandedata har importerats, utförs följande processer i efterföl
 
 Övriga avsnitt i det här dokumentet innehåller riktlinjer för hur du konfigurerar plattformen och dina dataåtgärder så att de uppfyller de krav på insamling och verkställighet som beskrivs ovan.
 
-## Bestäm hur ni ska generera data för kundgodkännande i er CMP {#consent-data}
+## Bestäm hur ni genererar data om kundsamtycke i er CMP {#consent-data}
 
 Eftersom varje CMP-system är unikt måste ni fastställa det bästa sättet för kunderna att ge sitt samtycke när de interagerar med tjänsten. Ett vanligt sätt att uppnå detta är genom att använda en dialogruta för godkännande av cookies, som liknar följande exempel:
 
@@ -97,7 +97,7 @@ Samtyckessträngar kan bara skapas av en CMP som är registrerad med IAB TCF. Me
 
 ## Skapa datauppsättningar med TCF-medgivandefält {#datasets}
 
-Data om kundsamtycke måste skickas till datauppsättningar vars scheman innehåller TCF-medgivandefält. Se självstudiekursen [Skapa datauppsättningar för att hämta TCF 2.0-samtycke](./dataset.md) för hur du skapar de två nödvändiga datauppsättningarna innan du fortsätter med den här guiden.
+Data om kundsamtycke måste skickas till datauppsättningar vars scheman innehåller TCF-medgivandefält. Se självstudiekursen [Skapa datauppsättningar för att hämta TCF 2.0-samtycke](./dataset.md) för hur du skapar den profildatauppsättning som krävs (och en valfri Experience Event-datauppsättning) innan du fortsätter med den här guiden.
 
 ## Uppdatera [!DNL Profile]-sammanfogningsprinciper så att de innehåller medgivandedata {#merge-policies}
 
@@ -127,8 +127,8 @@ När du har angett ett unikt namn för konfigurationen väljer du växlingsknapp
 | --- | --- |
 | [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../../sandboxes/home.md) som innehåller den nödvändiga direktuppspelningsanslutningen och de datauppsättningar som krävs för att konfigurera edge-konfigurationen. |
 | [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om att [skapa en direktuppspelningsanslutning](../../../../ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt direktuppspelningsinlopp. |
-| [!UICONTROL Event Dataset] | Markera den [!DNL XDM ExperienceEvent] datauppsättning som skapades i [föregående steg](#datasets). |
-| [!UICONTROL Profile Dataset] | Markera den [!DNL XDM Individual Profile] datauppsättning som skapades i [föregående steg](#datasets). |
+| [!UICONTROL Event Dataset] | Markera den [!DNL XDM ExperienceEvent] datauppsättning som skapades i [föregående steg](#datasets). Om du har inkluderat fältgruppen [[!UICONTROL IAB TCF 2.0 Consent]](../../../../xdm/field-groups/event/iab.md) i datasetens schema kan du spåra händelser för ändring av medgivande över tiden med kommandot [`sendEvent`](#sendEvent) och lagra dessa data i den här datauppsättningen. Kom ihåg att de medgivandevärden som lagras i den här datauppsättningen **inte** används i automatiska arbetsflöden för verkställighet. |
+| [!UICONTROL Profile Dataset] | Markera den [!DNL XDM Individual Profile] datauppsättning som skapades i [föregående steg](#datasets). När du svarar på CMP-kopplingar för ändring av samtycke med kommandot [`setConsent`](#setConsent), kommer insamlade data att lagras i den här datauppsättningen. Eftersom den här datauppsättningen är profilaktiverad respekteras de medgivandevärden som lagras i den här datauppsättningen under automatiska arbetsflöden för verkställighet. |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
 
@@ -142,7 +142,7 @@ När du har skapat kantkonfigurationen som beskrivs i föregående avsnitt kan d
 >
 >En introduktion till den vanliga syntaxen för alla SDK-kommandon för plattformar finns i dokumentet om [utförande av kommandon](../../../../edge/fundamentals/executing-commands.md).
 
-#### Använda CMP-krokar för ändring av samtycke
+#### Använda CMP-krokar för ändring av samtycke {#setConsent}
 
 Många CMP-modeller har färdiga kopplingar som lyssnar på händelser om samtycke. När dessa händelser inträffar kan du använda kommandot `setConsent` för att uppdatera kundens medgivandedata.
 
@@ -189,7 +189,7 @@ OneTrust.OnConsentChanged(function () {
 });
 ```
 
-#### Använda händelser
+#### Använda händelser {#sendEvent}
 
 Du kan också samla in TCF 2.0-medgivandedata för varje händelse som utlöses i Platform med kommandot `sendEvent`.
 
