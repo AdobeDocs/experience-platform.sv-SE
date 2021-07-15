@@ -5,9 +5,9 @@ title: Samtyckesbearbetning i Adobe Experience Platform
 topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1561'
 ht-degree: 0%
 
 ---
@@ -50,11 +50,11 @@ I den aktuella versionen av stöd för tillståndsbearbetning i Platform använd
 
 >[!NOTE]
 >
->Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [Constents &amp; Preferences](../../../../xdm/data-types/consents.md).
+>Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences]](../../../../xdm/data-types/consents.md).
 
 När systemet har konfigurerats tolkar Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, släppas från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
 
-## Bestäm hur ni ska generera data för kundgodkännande i er CMP {#consent-data}
+## Bestäm hur ni genererar data om kundsamtycke i er CMP {#consent-data}
 
 Eftersom varje CMP-system är unikt måste ni fastställa det bästa sättet för kunderna att ge sitt samtycke när de interagerar med tjänsten. Ett vanligt sätt att uppnå detta är att använda en dialogruta för cookie-samtycke, som i följande exempel:
 
@@ -76,7 +76,7 @@ När du har skapat en [!DNL Profile]-aktiverad datauppsättning för bearbetning
 >
 >Om du inte har några datauppsättningar som är i konflikt bör du ange tidsstämpelprioritet för din sammanfogningsprincip i stället. Detta bidrar till att säkerställa att det senaste samtycke som anges av en kund är den inställning för samtycke som används.
 
-Mer information om hur du arbetar med sammanfogningsprinciper finns i [översikten över sammanfogningsprinciper](../../../../profile/merge-policies/overview.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina profiler innehåller alla obligatoriska medgivandeattribut som finns i schemafältgruppen för innehåll och inställningar, enligt anvisningarna i guiden för [datamängdsförberedelse](./dataset.md).
+Mer information om hur du arbetar med sammanfogningsprinciper finns i [översikten över sammanfogningsprinciper](../../../../profile/merge-policies/overview.md). När du konfigurerar dina sammanfogningsprinciper måste du se till att dina profiler innehåller alla obligatoriska medgivandeattribut som finns i schemafältgruppen [!UICONTROL Consents and Preferences], enligt riktlinjerna för [förberedelse av datamängd](./dataset.md).
 
 ## Använd data om samtycke i plattformen
 
