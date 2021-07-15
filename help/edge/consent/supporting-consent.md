@@ -3,10 +3,9 @@ title: Supporting Customer Consent Preferences Using the Adobe Experience Platfo
 description: Lär dig hur du stöder medgivandeinställningar med Adobe Experience Platform Web SDK.
 keywords: medgivande;defaultConsent;standard medgivande;setConsent;Profile Privacy field group;Experience Event Privacy field group;Privacy field group;
 exl-id: 647e4a84-4a66-45d6-8b05-d78786bca63a
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '986'
+source-wordcount: '984'
 ht-degree: 0%
 
 ---
@@ -54,7 +53,7 @@ SDK stöder version 1.0 och 2.0 av Adobe Experience Platform medgivandestandard.
 
 ### Använda Adobe standardversion 2.0
 
-Om du använder Adobe Experience Platform måste du inkludera en fältgrupp för sekretessschema i ditt profilschema. Mer information om Adobe standardversion 2.0 finns i [Styrning, sekretess och säkerhet i Adobe Experience Platform](../../landing/governance-privacy-security/overview.md). Du kan lägga till data i värdeobjektet nedan som motsvarar schemat för fältet `consents` i profilfältgruppen för Innehåll och inställningar.
+Om du använder Adobe Experience Platform måste du inkludera en fältgrupp för sekretessschema i ditt profilschema. Mer information om Adobe standardversion 2.0 finns i [Styrning, sekretess och säkerhet i Adobe Experience Platform](../../landing/governance-privacy-security/overview.md). Du kan lägga till data i värdeobjektet nedan som motsvarar schemat för fältet `consents` i profilfältgruppen [!UICONTROL Consents and Preferences].
 
 Om användaren väljer att gå in kör du kommandot `setConsent` med inställningen `y` enligt följande:
 
