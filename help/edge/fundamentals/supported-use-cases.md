@@ -2,9 +2,9 @@
 title: Användningsexempel som stöds av Adobe Experience Platform Web SDK
 description: Lär dig vilka användningsområden som stöds i Adobe Experience Platform Web SDK.
 keywords: web sdk;användningsfall
-source-git-commit: da305a65a7d5fc3d8214f1d046181b463d324ee0
+source-git-commit: 7a6bec77895458cf1735bc7a00d16b78df9776a5
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '565'
 ht-degree: 7%
 
 ---
@@ -43,7 +43,7 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Om datauppsättningen är aktiverad för profilen kan du skicka data till kunddataprofilen i realtid |  |
 | Skicka data till Customer Journey Analytics i realtid |  |
 | Skriv samtycke till profil | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/consent/adobe/sdk.html?lang=en) |
-| Vidarebefordra data på serversidan i realtid till tredje part | [Dokumentation](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en) |
+| Vidarebefordra data på serversidan i realtid till tredje part | [Dokumentation](../../tags/ui/event-forwarding/overview.md) |
 | Stöd för identitetsnamnutrymmen |  |
 
 {style=&quot;table-layout:auto&quot;}
