@@ -5,9 +5,9 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: a150c23dffde9431953a019509e9554159052d21
+source-git-commit: 7a6bec77895458cf1735bc7a00d16b78df9776a5
 workflow-type: tm+mt
-source-wordcount: '320'
+source-wordcount: '313'
 ht-degree: 2%
 
 ---
@@ -43,6 +43,6 @@ Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av se
 
 ## Omvandla, berika och skicka data snabbt och säkert
 
-[Adobe Experience Platform Launch Server ](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html) Sidecan utnyttja alla plattformsdataströmmar. Du kan omvandla, berika och skicka data till andra mål än Adobe med extremt låg latens utan att lägga till någon kod från tredje part till klientenheten, vilket ger snabbare och säkrare datainsamling och distribution.
+[Vidarebefordran av händelser i Adobe Experience ](../tags/ui/event-forwarding/overview.md) Platform kan utnyttja alla plattformsdataströmmar. Du kan omvandla, berika och skicka data till andra mål än Adobe med extremt låg latens utan att lägga till någon kod från tredje part till klientenheten, vilket ger snabbare och säkrare datainsamling och distribution.
 
 ![](./images/launch.png)
