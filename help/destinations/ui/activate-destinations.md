@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 4ad261c4ca5878f7ef5abb2c2957b5714cf3101a
+source-git-commit: 7a1cd379eb002f92c19fbe0e569d5fac90ab5334
 workflow-type: tm+mt
-source-wordcount: '2800'
+source-wordcount: '2801'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ På sidan **[!UICONTROL Activate destination]** i arbetsflödet väljer du ett e
 
 ![segment-till-mål](../assets/ui/activate-destinations/email-select-segments.png)
 
-## [!UICONTROL Mapping] steg {#mapping}
+## Mappningssteg {#mapping}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
