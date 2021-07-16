@@ -2,16 +2,15 @@
 keywords: Analystillägg;analystillägg;målanalys
 title: Adobe Analytics-tillägg
 description: Adobe Analytics-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+exl-id: 95b6e079-09a6-4262-bd01-11f155286aa9
+source-git-commit: 8dfb7bdc16d0654ee1d76dc5f5af50938b122d33
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 0%
 
 ---
 
-
-# Adobe Analytics-tillägg {#adobe-analytics-extension}
+# Adobe Analytics-tillägg
 
 ## Översikt {#overview}
 
@@ -47,7 +46,7 @@ Mer information om alternativen för tilläggskonfigurationen finns på sidan [A
 
 Du kan också installera tillägget direkt i [Adobe Experience Platform Launch-gränssnittet](https://launch.adobe.com/). Se [Lägg till ett nytt tillägg](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html?lang=en#add-a-new-extension) i [!DNL Platform Launch]-dokumentationen.
 
-## Använda tillägget {#how-to-use}
+## Så här använder du tillägget {#how-to-use}
 
 När du har installerat tillägget kan du börja konfigurera regler för det direkt i [!DNL Platform Launch].
 
@@ -62,6 +61,3 @@ Du kan konfigurera, uppgradera och ta bort tillägg i gränssnittet [!DNL Platfo
 >Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Starta installationsarbetsflödet enligt beskrivningen i [Installera tillägget](#install-extension) för att komma till [!DNL Platform Launch] och konfigurera eller ta bort tillägget.
 
 Mer information om hur du uppgraderar ditt tillägg finns i [Tilläggsuppgradering](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html) i [!DNL Platform Launch]-dokumentationen.
-
-
-
