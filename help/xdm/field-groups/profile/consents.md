@@ -4,9 +4,9 @@ title: Fältgrupp för innehåll och inställningar
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '2276'
+source-wordcount: '2277'
 ht-degree: 0%
 
 ---
@@ -401,4 +401,4 @@ I följande tabell visas godkända värden för `preferred`:
 
 ### Fullständigt [!UICONTROL Consents and Preferences]-schema {#full-schema}
 
-Om du vill visa det fullständiga schemat för fältgruppen [!UICONTROL Consents and Preferences], se [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
+Om du vill visa det fullständiga schemat för fältgruppen [!UICONTROL Consents and Preferences], se [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json).
