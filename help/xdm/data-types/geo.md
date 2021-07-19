@@ -5,9 +5,9 @@ title: Geo-datatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Geo XDM.
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '196'
+source-wordcount: '198'
 ht-degree: 3%
 
 ---
@@ -33,5 +33,5 @@ ht-degree: 3%
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/geo.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/geo.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/geo.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/geo.schema.json)
