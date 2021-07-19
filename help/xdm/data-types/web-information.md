@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Webbinformationsdatatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Experience Data Model (XDM) för webbinformation.
-source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '180'
 ht-degree: 0%
 
 ---
@@ -27,5 +27,5 @@ ht-degree: 0%
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/web/webinfo.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/web/webinfo.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/webinfo.schema.json)
