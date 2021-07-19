@@ -1,9 +1,9 @@
 ---
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1530'
 ht-degree: 0%
 
 ---
@@ -134,8 +134,6 @@ Mer information om olika lägen och alternativ som är tillgängliga under publi
 ## Ytterligare resurser
 
 Mer information om taggar finns i följande resurser:
-
-[https://forums.adobe.com/community/experience-cloud/platform/](https://forums.adobe.com/community/experience-cloud/platform/launchAsk) startaSvara på frågor, lämna idéer, rösta på andras idéer. Logga in med din Adobe ID.
 
 * **[Samlingsforum för](https://forums.adobe.com/community/experience-cloud/platform/launch)** datainsamling: Ställ och besvara frågor, lämna idéer, rösta på andras idéer. Logga in med din Adobe ID.
 * **[Developer Docs](https://developer.adobelaunch.com/)**: Delta i tagghanterarens community för att bygga tillägg eller använda tagg-API:er
