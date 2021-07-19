@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1211'
 ht-degree: 1%
 
 ---
@@ -103,7 +103,7 @@ v1.6.2
 
 v1.6.1
 
-* **Stöd för CSP Nonce**  - Core-tillägget har nu en valfri konfigurationsparameter. Du kan lägga till ett dataelement som refererar till en gång. Om den är konfigurerad används det nonce som du har konfigurerat för alla infogade skript som läggs till på sidan. Den här ändringen stöder användning av en skyddsprofil för innehåll med en enda gång, så att skript för Platform launch fortfarande kan läsas in i en CSP-miljö.  Du kan läsa mer om att använda Platform launch med en CSP [här](https://experienceleague.adobe.com/docs/launch/using/reference/client-side-info/content-security-policy.html).
+* **Stöd för CSP Nonce**  - Core-tillägget har nu en valfri konfigurationsparameter. Du kan lägga till ett dataelement som refererar till en gång. Om den är konfigurerad används det nonce som du har konfigurerat för alla infogade skript som läggs till på sidan. Den här ändringen stöder användning av en skyddsprofil för innehåll med en enda gång, så att skript för Platform launch fortfarande kan läsas in i en CSP-miljö.  Du kan läsa mer om att använda Platform launch med en CSP [här](../../../ui/client-side/content-security-policy.md).
 
 ## 18 juni 2019
 
