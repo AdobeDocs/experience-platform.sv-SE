@@ -2,14 +2,13 @@
 keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, målgruppschef, adobe target destination, Mål. målgruppshanterarens destination,
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
-translation-type: tm+mt
-source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
+exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
+source-git-commit: d42756bcfaa4c420362e60672b097ae667a8782b
 workflow-type: tm+mt
-source-wordcount: '220'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över destinationer i Adobe {#adobe-destinations}
 
@@ -20,6 +19,7 @@ Hantera er kundupplevelse genom att koppla era data i Adobe Experience Platform 
 Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
 - [Adobe Campaign-anslutning](../email-marketing/adobe-campaign.md)
+- [Marketo Engage](/help/destinations/catalog/adobe/marketo-engage.md)
 
 ## Tillägg
 
@@ -35,7 +35,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Tillägg
 - [Experience Cloud ID-tjänsttillägg](../personalization/adobe-ecid.md)
 - [Marketo-tillägg](../email/marketo.md)
 - [Marketo Munchkin-tillägg](../email/marketo-munchkin.md)
-- [Marketo Web Personalization extension](../personalization/marketo-web-personalization.md)
+- [Marketo Web Personalization-tillägg](../personalization/marketo-web-personalization.md)
 
 ## Experience Platform segmentdelning
 
