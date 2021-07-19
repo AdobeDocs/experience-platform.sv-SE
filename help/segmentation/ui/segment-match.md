@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 topic-legacy: overview
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
-source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1824'
+source-wordcount: '1825'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ Kontrollen av godkännande av anmälan och avanmälan avgör om du kan arbeta me
 
 Standardkonfigurationen för medgivande för [!DNL Segment Match] är `opt-out`. Om du vill tillämpa en anmälningsmodell för dina data skickar du en e-postförfrågan till kontohanteraren för Adobe.
 
-Mer information om `share`-attributet som används för att ange medgivandevärde för datadelning finns i följande dokumentation för [fältgruppen ](../../xdm/field-groups/profile/consents.md) sekretess och innehåll. Mer information om den specifika fältgrupp som används för att samla in och använda konsumentens samtycke till insamling och användning av data som rör sekretess, personalisering och marknadsföring finns i följande [GitHub-exempel på godkännande för sekretess, personalisering och marknadsföring](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent-preferences.schema.md).
+Mer information om `share`-attributet som används för att ange medgivandevärde för datadelning finns i följande dokumentation för [fältgruppen ](../../xdm/field-groups/profile/consents.md) sekretess och innehåll. Mer information om den specifika fältgrupp som används för att samla in och använda konsumentens samtycke till insamling och användning av data som rör sekretess, personalisering och marknadsföring finns i följande [GitHub-exempel på godkännande för sekretess, personalisering och marknadsföring](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent/consent-preferences.schema.md).
 
 ### Konfigurera etiketter för dataanvändning
 
