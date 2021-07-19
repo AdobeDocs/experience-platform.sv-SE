@@ -1,9 +1,9 @@
 ---
 title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
-source-git-commit: 1d3415146335d3011963c969d5b6aeea1f1a51d0
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '882'
+source-wordcount: '873'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ När du har skickat data till Edge-nätverket kan du aktivera Adobe-lösningar f
 
 ## Förutsättningar
 
-* Adobe Experience Platform Collection Enterprise (kontakta er kontoansvarige för prisuppgifter)
+* Adobe Experience Platform Collection Enterprise (kontakta er kontoansvarige för att få prisuppgifter)
 * Vidarebefordran av händelser i Adobe Experience Platform
 * Adobe Experience Platform Web eller Mobile SDK, konfigurerad att skicka data till Edge Network
 * Mappa data till Experience Data Model (XDM) (Den här mappningen kan göras med taggar)
@@ -110,7 +110,7 @@ Skapa din egenskap i användargränssnittet för datainsamling och använd sedan
 
 1. Välj Edge Domain.
 
-Mer konfigurationsalternativ finns i [dokumentationen för Web SDK-tillägget](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html).
+Mer konfigurationsalternativ finns i [dokumentationen för Web SDK-tillägget](../../extensions/web/sdk/overview.md).
 
 ## Skapa en taggregel för att skicka data till Platform Web SDK
 
