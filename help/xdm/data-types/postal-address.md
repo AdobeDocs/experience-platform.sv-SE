@@ -5,9 +5,9 @@ title: Datatyp för postadress
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för postadress.
 exl-id: 94457fe5-80bc-4822-9f6c-48f77d56c89b
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '337'
 ht-degree: 0%
 
 ---
@@ -44,5 +44,5 @@ ht-degree: 0%
 
 Mer information om datatypen för postadresser finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/address.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/address.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/address.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/address.schema.json)
