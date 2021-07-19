@@ -4,9 +4,9 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1861'
+source-wordcount: '1862'
 ht-degree: 1%
 
 ---
@@ -309,4 +309,4 @@ I följande tabell visas godkända värden för `preferred`:
 
 ### Fullständigt [!UICONTROL Consents and Preferences]-schema {#full-schema}
 
-Mer information om det fullständiga schemat för datatypen [!UICONTROL Consents and Preferences] finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
+Mer information om det fullständiga schemat för datatypen [!UICONTROL Consents and Preferences] finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json).
