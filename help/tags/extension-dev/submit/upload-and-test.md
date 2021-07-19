@@ -1,7 +1,7 @@
 ---
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
 source-wordcount: '2390'
 ht-degree: 0%
@@ -228,9 +228,3 @@ När du upptäcker ändringar som behöver göras i tilläggspaketet liknar iter
 1. Ändra resurser - om konfigurationen för någon av dina tilläggskomponenter har ändrats måste du uppdatera de resurserna i användargränssnittet för datainsamling.
 1. Lägg till de senaste ändringarna i biblioteket och bygg igen.
 1. Komplettera ytterligare en testomgång.
-
-<!--
-## Document {#document}
-
-Your [exchange listing](./create-listing.md) is a great place for marketing and support information for your extension, but our tags [Help Docs](https://experienceleague.adobe.com/docs/launch/using/overview.html) are used every day by our customers. We encourage you to submit a pull request to [add your extension documentation](https://github.com/AdobeDocs/launch.en/blob/master/help/extension-reference/3rd-party-extensions.md) into the tags user docs. Open source docs for the win! 🚀
--->
