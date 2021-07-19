@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
-source-git-commit: 573c13f5136a4efc3accf2838783a91ea914e949
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '438'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 ### Adobe Target v2-tillägg 0.14
 
-- Lagt till en ny åtgärd, Load Target med [On-Device Decisioning](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/targetv2-extension/adobe-target-extension-v2.html?lang=en#load-target-with-on-device-decisioning), som läses in på .js 2.5 med On-Device Decisioning-funktioner
+- Lagt till en ny åtgärd, Load Target med [On-Device Decisioning](./overview.md#load-target-with-on-device-decisioning), som läses in på .js 2.5 med On-Device Decisioning-funktioner
 - Uppdaterat at.js till 2.5
 
 
