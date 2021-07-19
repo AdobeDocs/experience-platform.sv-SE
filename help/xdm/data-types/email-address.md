@@ -5,9 +5,9 @@ title: Datatyp för e-postadress
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för e-postadress.
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '188'
 ht-degree: 0%
 
 ---
@@ -32,5 +32,5 @@ ht-degree: 0%
 
 Mer information om datatypen för e-postadresser finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/emailaddress.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/emailaddress.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/emailaddress.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/emailaddress.schema.json)
