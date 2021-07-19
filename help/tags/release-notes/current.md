@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation
 description: Den senaste versionsinformationen för taggar i Adobe Experience Platform.
-source-git-commit: 7a6bec77895458cf1735bc7a00d16b78df9776a5
+source-git-commit: f1e6741de9aa00652e9af290a89f73788e0f1d83
 workflow-type: tm+mt
-source-wordcount: '400'
-ht-degree: 1%
+source-wordcount: '498'
+ht-degree: 0%
 
 ---
 
@@ -13,6 +13,14 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 19 juli 2021
+
+**Justeringar av rättigheten**  Hantera egenskaper - rättigheten Hantera egenskaper stötte på ett problem där en användare hade behörighet att skapa en ny egenskap, men inte kunde se den efter att den skapades (vilket beskrivs i communitytråden  [här](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/technical-advisory-adjustments-to-the-manage-properties/ba-p/399176)). En korrigering är nu aktiv med behörigheter som framtvingas enligt beskrivningen i artikeln.
+
+>[!NOTE]
+>
+>Om du tilldelar den nya behörigheten Redigera egenskap till en användargrupp uppdateras inte gränssnittet för att aktivera fälten på egenskapskonfigurationsskärmen. En korrigering av problemet kommer att implementeras i en kommande version.
 
 ## 17 maj 2021
 
