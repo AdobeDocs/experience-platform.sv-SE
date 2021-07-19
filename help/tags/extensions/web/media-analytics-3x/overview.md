@@ -1,9 +1,9 @@
 ---
 title: Adobe Media Analytics (3.x SDK) for Audio and Video Extension Overview
 description: Läs mer om taggtillägget Adobe Media Analytics (3.x SDK) för ljud och video i Adobe Experience Platform.
-source-git-commit: 573c13f5136a4efc3accf2838783a91ea914e949
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ När du har inkluderat alla tre av de tillägg som nämns ovan i det tagghantera
 | Exportera API:er till Window-objekt | Aktivera eller inaktivera export av Media Analytics-API:er till globalt omfång |
 | Variabelnamn | En variabel som du använder för att exportera Media Analytics-API:er under `window`-objektet |
 
-**Påminnelse:** För MA-tillägget krävs  [](../analytics/overview.md) Analytics och  [Experience Cloud ](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) IDextensions. Du måste också lägga till dessa tillägg i tilläggsegenskapen och konfigurera dem.
+**Påminnelse:** För MA-tillägget krävs  [](../analytics/overview.md) Analytics och  [Experience Cloud ](../id-service/overview.md) IDextensions. Du måste också lägga till dessa tillägg i tilläggsegenskapen och konfigurera dem.
 
 ## Använda MA-tillägget
 
@@ -109,4 +109,4 @@ MA-tillägget visar `media` som en delad modul för andra tillägg. (Mer informa
 
 >[!NOTE]
 >
->**Testa:** För den här versionen måste du överföra tillägget till  [Platform](https://github.com/Adobe-Marketing-Cloud/reactor-user-docs/tree/73a73bd5ff53162339ce5ded3f4bba4712146d20/extension-reference/launch.adobe.com), där du har tillgång till alla beroende tillägg, för att testa tillägget.
+>**Testa:** För den här versionen måste du överföra tillägget till  [Platform](../../../extension-dev/submit/upload-and-test.md), där du har tillgång till alla beroende tillägg, för att testa tillägget.
