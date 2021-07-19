@@ -1,14 +1,22 @@
 ---
 title: Versionsinformation för tillägget Common Analytics-plugin-program
 description: Den senaste versionsinformationen om taggtillägget Common Analytics Plugins i Adobe Experience Platform.
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: cce218d984bae92428c7d48aefcd0f57dab837ea
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 6%
+source-wordcount: '314'
+ht-degree: 5%
 
 ---
 
 # Versionsinformation om Common Analytics-plugin-program
+
+## 23 juni 2021
+
+### Common Analytics Plugins Extension 3.0.6
+
+#### Felkorrigeringar
+
+* Ett problem där getPercentPageViewed skulle krascha när specialtecken användes har åtgärdats
 
 ## 20 maj 2021
 
