@@ -5,7 +5,7 @@ title: Datatyp för webbsidesinformation
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över webbsidans information om datatypen Experience Data Model (XDM).
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
 source-wordcount: '404'
 ht-degree: 2%
@@ -35,5 +35,5 @@ Datatypen är avsedd för fullständig sidinformation och inledande sidinläsnin
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/web/webpagedetails.example.2.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/web/webpagedetails.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.example.2.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.schema.json)
