@@ -1,9 +1,9 @@
 ---
 title: Stöd för CSP (Content Security Policy)
 description: Lär dig hur du hanterar begränsningar för CSP (Content Security Policy) när du integrerar webbplatsen med taggar i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1087'
+source-wordcount: '1079'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 **HTML- `<meta>` tagg**
 
 
-Det finns en mycket viktig förutsättning: Du måste läsa in taggbiblioteket [asynkront](https://experienceleague.adobe.com/docs/launch/using/reference/client-side-info/asynchronous-deployment.html). Detta fungerar inte med synkron inläsning av taggbiblioteket (vilket resulterar i konsolfel och att reglerna inte körs som de ska).
+Det finns en mycket viktig förutsättning: Du måste läsa in taggbiblioteket [asynkront](./asynchronous-deployment.md). Detta fungerar inte med synkron inläsning av taggbiblioteket (vilket resulterar i konsolfel och att reglerna inte körs som de ska).
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com">
