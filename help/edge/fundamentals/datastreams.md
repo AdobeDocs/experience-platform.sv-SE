@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar dataströmmar. '
 keywords: konfiguration;datastreams;datastreamId;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '830'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Datastreams kan skapas i Adobe [!DNL Experience Platform Launch] med hjälp av k
 
 >[!NOTE]
 >
->Konfigurationsverktyget för datastreams är tillgängligt för kunder på tillåtelselista oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](https://experienceleague.adobe.com/docs/launch/using/reference/admin/user-permissions.html) i [!DNL Experience Platform Launch]-dokumentationen.
+>Konfigurationsverktyget för datastreams är tillgängligt för kunder på tillåtelselista oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](../../tags/ui/administration/user-permissions.md) i [!DNL Experience Platform Launch]-dokumentationen.
 
 Skapa en datastream genom att klicka på **[!UICONTROL New Datastream]** i skärmens övre högra del. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö. Tillgängliga inställningar anges nedan.
 
