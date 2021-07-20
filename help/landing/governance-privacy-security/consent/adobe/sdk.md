@@ -3,10 +3,9 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform med hjälp av standarden Adobe 2.0.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
 workflow-type: tm+mt
-source-wordcount: '1211'
+source-wordcount: '1205'
 ht-degree: 0%
 
 ---
@@ -27,19 +26,19 @@ Handboken kräver dessutom en fungerande förståelse för Adobe Experience Plat
 * [Snabbstartguide](https://experienceleague.adobe.com/docs/launch/using/get-started/quick-start.html)
 * [Översikt över publicering](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html)
 
-## Konfigurera en kantkonfiguration
+## Konfigurera en datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du ha en befintlig edge-konfiguration för plattformen som konfigurerats i Adobe Experience Platform Launch. Dessutom måste de [!UICONTROL Profile Dataset] som du väljer för konfigurationen innehålla standardiserade medgivandefält.
+För att SDK ska kunna skicka data till Experience Platform måste du ha en befintlig datastream för Platform konfigurerad i Adobe Experience Platform Launch. Dessutom måste de [!UICONTROL Profile Dataset] som du väljer för konfigurationen innehålla standardiserade medgivandefält.
 
 När du har skapat en ny konfiguration eller valt en befintlig som du vill redigera, väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan värdena nedan för att fylla i formuläret.
 
 ![](../../../images/governance-privacy-security/consent/adobe/sdk/edge-config.png)
 
-| Konfiguration av Edge-fält | Värde |
+| Datastream-fält | Värde |
 | --- | --- |
-| [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../../sandboxes/home.md) som innehåller den nödvändiga direktuppspelningsanslutningen och de datauppsättningar som krävs för att konfigurera edge-konfigurationen. |
+| [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
 | [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om att [skapa en direktuppspelningsanslutning](../../../../ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt direktuppspelningsinlopp. |
-| [!UICONTROL Event Dataset] | En [!DNL XDM ExperienceEvent]-datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa en plattformskantkonfiguration, men tänk på att det för närvarande inte finns stöd för att skicka data direkt via händelser. |
+| [!UICONTROL Event Dataset] | En [!DNL XDM ExperienceEvent]-datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa en plattformsdatastam, men tänk på att det för närvarande inte finns stöd för att skicka data direkt via händelser. |
 | [!UICONTROL Profile Dataset] | Den [!DNL Profile]-aktiverade datauppsättningen med medgivandefält som du skapade tidigare. |
 
 När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och fortsätter att följa eventuella ytterligare uppmaningar för att slutföra konfigurationen.
@@ -47,11 +46,11 @@ När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och f
 
 ## Installera och konfigurera Platform Web SDK-tillägget
 
-När du har skapat en edge-konfiguration enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på din Platform launch-egenskap väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
+När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på din Platform launch-egenskap väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
 
 ![](../../../images/governance-privacy-security/consent/adobe/sdk/install.png)
 
-När du konfigurerar SDK väljer du den konfiguration du skapade i föregående steg under **[!UICONTROL Edge Configurations]**.
+När du konfigurerar SDK, under **[!UICONTROL Edge Configurations]**, väljer du datastream som du skapade i föregående steg.
 
 ![](../../../images/governance-privacy-security/consent/adobe/sdk/config-sdk.png)
 
