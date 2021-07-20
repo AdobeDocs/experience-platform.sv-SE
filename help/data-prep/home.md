@@ -5,10 +5,9 @@ title: Dataförhandsgranskning
 topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-translation-type: tm+mt
-source-git-commit: daefd977cd09bd9cd7f8d6101b45be98f30d24ae
+source-git-commit: 764b8e8a120ab53e7d39202b47d7c6f0195193a2
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -25,6 +24,10 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 - Förhandsgranska data när de ändras i datapresentationen
 
 Data Prep använder också flera inbyggda datavalideringar för att säkerställa att dataintegriteten bevaras när den importeras. När det är möjligt mappar Data Prep automatiskt inkommande datamodeller till XDM. Datatekniker kan ändra, korrigera och ta bort de föreslagna mappningarna och ersätta dem med mappningarna efter behov.
+
+>[!NOTE]
+>
+>Om inte det resulterande meddelandet blir ogiltig XDM, kommer eventuella transformeringsfel i Data Prep att resultera i att dessa attribut ställs in på `null`, medan resten av raden kommer att kapslas. Om raden leder till ogiltig XDM kommer raden **inte** att kapslas. I båda dessa fall dokumenteras felet.
 
 ## Mappning
 
