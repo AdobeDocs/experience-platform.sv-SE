@@ -5,9 +5,9 @@ title: Konfigurera en datauppsättning för att samla in samtycke- och inställn
 topic-legacy: getting started
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: ff793c207a181ca6d2486e7fd6ef5c4f57744fba
+source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1386'
 ht-degree: 0%
 
 ---
@@ -116,7 +116,7 @@ Arbetsytan visas igen och visar att `consents`-objektet har lagts till i schemas
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/save-schema.png)
 
-Om schemat som du redigerade används av [!UICONTROL Profile Dataset] som anges i kantkonfigurationen för Platform Web SDK, kommer den datauppsättningen nu att innehålla de nya medgivandefälten. Du kan nu gå tillbaka till [handboken för behandling av samtycke](./overview.md#merge-policies) för att fortsätta konfigurera Experience Platform för att bearbeta data om samtycke.
+Om schemat som du redigerade används av det [!UICONTROL Profile Dataset] som anges i ditt Platform Web SDK-datastam, kommer den datauppsättningen nu att innehålla de nya medgivandefälten. Du kan nu gå tillbaka till [handboken för behandling av samtycke](./overview.md#merge-policies) för att fortsätta konfigurera Experience Platform för att bearbeta data om samtycke.
 
 Om du inte har skapat någon datauppsättning för det här schemat följer du stegen i nästa avsnitt.
 
@@ -150,7 +150,7 @@ Slutligen väljer du **[!UICONTROL Enable]** i bekräftelseporten för att aktiv
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-Datauppsättningen har nu sparats och aktiverats för användning i [!DNL Profile]. Om du planerar att använda Platform Web SDK för att skicka data om samtycke till profil måste du välja den här datauppsättningen som [!UICONTROL Profile Dataset] när du konfigurerar din [edge-konfiguration](../../../../edge/fundamentals/datastreams.md).
+Datauppsättningen har nu sparats och aktiverats för användning i [!DNL Profile]. Om du planerar att använda Platform Web SDK för att skicka data om samtycke till profil måste du välja den här datauppsättningen som [!UICONTROL Profile Dataset] när du konfigurerar [datastream](../../../../edge/fundamentals/datastreams.md).
 
 ## Nästa steg
 
