@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 7a1cd379eb002f92c19fbe0e569d5fac90ab5334
+source-git-commit: 0162ec101c820c4870dea0f2c2bc09523eca862a
 workflow-type: tm+mt
-source-wordcount: '2801'
+source-wordcount: '2951'
 ht-degree: 0%
 
 ---
@@ -143,6 +143,21 @@ Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna s
 ![Exportera fullständiga filer](../assets/ui/activate-destinations/export-full-files.png)
 
 1. Använd **[!UICONTROL Frequency]**-väljaren för att välja mellan engångsexporter (**[!UICONTROL Once]**) eller **[!UICONTROL Daily]**. Vid export av en fullständig fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet kl. 12:00 UTC (7:00 EST).
+
+   >[!IMPORTANT]
+   >
+   >När du ställer in start- och slutdatumet anger **[!UICONTROL Start Date]** när filexporten schemalagts att starta och **[!UICONTROL End Date]** anger när filexporten schemalagts att stoppas. Filen exporteras från **[!UICONTROL Start Date]**, men innehåller inte **[!UICONTROL End Date]**.
+   >
+   >Om du till exempel anger följande schema:
+   >
+   >* Exportera: Inkrementell var 3: e timme
+   >* Startdatum: 7/19
+   >* Slutdatum: 7/21
+
+   >
+   >Filerna börjar exporteras den 19/7 och slutar exporteras den 7/20 vid 23:59:59 UTC. Inga filer levereras den 21 juli.
+
+
 2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske. När du exporterar en fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet vid den tidpunkt du väljer.
 
    >[!IMPORTANT]
@@ -167,11 +182,27 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
 ![Exportera inkrementella filer](../assets/ui/activate-destinations/export-incremental-files.png)
 
 1. Använd **[!UICONTROL Frequency]**-väljaren för att välja mellan **[!UICONTROL Daily]** eller **[!UICONTROL Hourly]**-exporter. Vid export av en inkrementell fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet kl. 12:00 UTC (07:00 EST).
+
+
+   >[!IMPORTANT]
+   >
+   >När du ställer in start- och slutdatumet anger **[!UICONTROL Start Date]** när filexporten schemalagts att starta och **[!UICONTROL End Date]** anger när filexporten schemalagts att stoppas. Filen exporteras från **[!UICONTROL Start Date]**, men innehåller inte **[!UICONTROL End Date]**.
+   >
+   >Om du till exempel anger följande schema:
+   >
+   >* Exportera: Inkrementell var 3: e timme
+   >* Startdatum: 7/19
+   >* Slutdatum: 7/21
+
+   >
+   >Filerna börjar exporteras den 19/7 och slutar exporteras den 7/20 vid 23:59:59 UTC. Inga filer levereras den 21 juli.
+
    * När du väljer **[!UICONTROL Hourly]** använder du **[!UICONTROL Every]**-väljaren för att välja mellan alternativen **[!UICONTROL 3]**, **[!UICONTROL 6]**, **[!UICONTROL 8]** och **[!UICONTROL 12]** timme.
 
       >[!IMPORTANT]
       >
       >Alternativet att exportera inkrementella filer var 3, 6, 8 eller 12:e timme finns för närvarande i betaversionen och är bara tillgängligt för ett visst antal kunder. Kunder som inte är beta kan exportera inkrementella filer en gång om dagen.
+
 
 2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
 
