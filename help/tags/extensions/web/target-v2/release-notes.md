@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: ae6b69ecea54942c1bbf8a2765768bac50a8b930
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '572'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,30 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 20 juli 2021
+
+### Adobe Target v2-tillägg 0.15.1
+
+- Korrigerade ett problem med ett `stringify`-funktionsnamnstreck, vilket ledde till att felaktiga UUID-värden genererades för `sessionId`, `requestId` och så vidare.
+
+## 16 juli 2021
+
+### Adobe Target v2-tillägg 0.15.0
+
+- Lägg till ett säkert attribut i cookies när secureOnly för at.js-inställningarna är true
+- Svarstoken är nu tillgängliga när du använder `triggerView()`
+- Ett fel som är relaterat till händelsen `CONTENT_RENDERING_NO_OFFERS` har korrigerats. Nu aktiveras det korrekt när inget innehåll returneras från Target
+- A4T-klickmätningsdetaljer returneras korrekt när förhämtningsbegäranden används
+- UUID-generering använder inte längre `Math.random()`, men är beroende av `window.crypto`
+- `sessionId` Utgångsdatum för cookie-filen har utökats korrekt för varje nätverksanrop
+- Initieringen av SPA-vycachen hanteras nu korrekt och följer `viewsEnable`-inställningarna
+
+## 2 juni 2021
+
+### Adobe Target v2-tillägg 0.14.2
+
+- Åtgärda ett fel där det slutliga startpaketet innehåller två at.js-versioner, en med On-Device Decision och en utan.
 
 ## 19 maj 2021
 
