@@ -5,10 +5,9 @@ title: Övervaka datainmatning
 topic-legacy: overview
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
-translation-type: tm+mt
-source-git-commit: 6bedd5ec0865e858a337155deb80309a54e30892
+source-git-commit: 3fadf7006c8ea058e469067b61950ed2d2d12e3f
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
@@ -55,6 +54,10 @@ Information om en misslyckad direktuppspelningspost visar samma information som 
 
 Misslyckade poster innehåller dessutom information om de fel som uppstod när gruppen bearbetades. I exemplet nedan uppstod ett tolkningsfel vid konvertering eller validering av data.
 
+>[!NOTE]
+>
+>Om det finns fel i inkapslade rader kommer dessa rader att **inte** att tas bort såvida inte det resulterande meddelandet resulterar i ogiltig XDM.
+
 ![](../images/quality/monitor-data-flows/failed-batch-error.png)
 
 ## Övervaka dataöverföring från slutpunkt till slutpunkt
@@ -76,5 +79,9 @@ Detaljer för en misslyckad batch visar samma information som en slutförd batch
 ![](../images/quality/monitor-data-flows/failed-batch.png)
 
 Dessutom innehåller misslyckade batchar detaljerad information om de fel som uppstod när batchen bearbetades. I exemplet nedan uppstod ett fel med den inkapslade batchen eftersom den har det högsta antalet identiteter för personen.
+
+>[!NOTE]
+>
+>Om det finns fel i inkapslade rader kommer dessa rader att **inte** att tas bort såvida inte det resulterande meddelandet resulterar i ogiltig XDM.
 
 ![](../images/quality/monitor-data-flows/failed-streaming-error.png)
