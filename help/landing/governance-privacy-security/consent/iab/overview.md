@@ -5,9 +5,9 @@ title: Stöd för IAB TCF 2.0 i Experience Platform
 topic-legacy: privacy events
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: a3468d55d95b89c075abf91391bd7dfaa974742c
+source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
 workflow-type: tm+mt
-source-wordcount: '2550'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -117,15 +117,15 @@ När du har konfigurerat din CMP för att generera medgivandesträngar måste du
 
 **SDK:n samverkar inte med några CMP:er som finns i kartongen**. Det är upp till dig att bestämma hur du ska integrera SDK i din webbplats, lyssna efter medgivandeändringar i CMP och anropa lämpligt kommando.
 
-### Skapa en ny kantkonfiguration
+### Skapa ett nytt datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du först skapa en ny edge-konfiguration för plattformen i [!DNL Adobe Experience Platform Launch]. Specifika steg för hur du skapar en ny konfiguration finns i [SDK-dokumentationen](../../../../edge/fundamentals/datastreams.md).
+För att SDK ska kunna skicka data till Experience Platform måste du först skapa ett nytt datastream för Platform i [!DNL Adobe Experience Platform Launch]. Specifika steg för hur du skapar en ny konfiguration finns i [SDK-dokumentationen](../../../../edge/fundamentals/datastreams.md).
 
 När du har angett ett unikt namn för konfigurationen väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan följande värden för att fylla i resten av formuläret:
 
-| Konfiguration av Edge-fält | Värde |
+| Datastream-fält | Värde |
 | --- | --- |
-| [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../../sandboxes/home.md) som innehåller den nödvändiga direktuppspelningsanslutningen och de datauppsättningar som krävs för att konfigurera edge-konfigurationen. |
+| [!UICONTROL Sandbox] | Namnet på plattformen [sandlådan](../../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
 | [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om att [skapa en direktuppspelningsanslutning](../../../../ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt direktuppspelningsinlopp. |
 | [!UICONTROL Event Dataset] | Markera den [!DNL XDM ExperienceEvent] datauppsättning som skapades i [föregående steg](#datasets). Om du har inkluderat fältgruppen [[!UICONTROL IAB TCF 2.0 Consent]](../../../../xdm/field-groups/event/iab.md) i datasetens schema kan du spåra händelser för ändring av medgivande över tiden med kommandot [`sendEvent`](#sendEvent) och lagra dessa data i den här datauppsättningen. Kom ihåg att de medgivandevärden som lagras i den här datauppsättningen **inte** används i automatiska arbetsflöden för verkställighet. |
 | [!UICONTROL Profile Dataset] | Markera den [!DNL XDM Individual Profile] datauppsättning som skapades i [föregående steg](#datasets). När du svarar på CMP-kopplingar för ändring av samtycke med kommandot [`setConsent`](#setConsent), kommer insamlade data att lagras i den här datauppsättningen. Eftersom den här datauppsättningen är profilaktiverad respekteras de medgivandevärden som lagras i den här datauppsättningen under automatiska arbetsflöden för verkställighet. |
@@ -136,7 +136,7 @@ När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och f
 
 ### Kommandon för att ändra samtycke
 
-När du har skapat kantkonfigurationen som beskrivs i föregående avsnitt kan du börja använda SDK-kommandon för att skicka data om samtycke till plattformen. Avsnitten nedan innehåller exempel på hur varje SDK-kommando kan användas i olika scenarier.
+När du har skapat dataströmmen som beskrivs i föregående avsnitt kan du börja använda SDK-kommandon för att skicka data om samtycke till plattformen. Avsnitten nedan innehåller exempel på hur varje SDK-kommando kan användas i olika scenarier.
 
 >[!NOTE]
 >
