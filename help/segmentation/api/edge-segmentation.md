@@ -5,10 +5,9 @@ title: 'Kantsegmentering med API '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3de00fb9ae5348b129a499cfd81d8db6dbac2d46
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -168,7 +167,7 @@ Ett lyckat svar returnerar en array med segment i IMS-organisationen som är akt
 
 ## Skapa ett segment som är aktiverat för kantsegmentering
 
-Du kan skapa ett segment som är aktiverat för kantsegmentering genom att göra en POST-förfrågan till `/segment/definitions`-slutpunkten. Förutom att matcha en av [frågetyperna för kantsegmentering som listas ovan](#query-types), måste du ange flaggan `evaluationInfo.synchronous.enabled` i nyttolasten till true.
+Du kan skapa ett segment som är aktiverat för kantsegmentering genom att göra en POST-förfrågan till `/segment/definitions`-slutpunkten som matchar någon av [frågorna för kantsegmentering som listas ovan](#query-types).
 
 **API-format**
 
@@ -201,18 +200,9 @@ curl -X POST \
         "type": "PQL",
         "format": "pql/text",
         "value": "select var1 from xEvent where var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = true"
-    },
-    "evaluationInfo": {
-        "synchronous": {
-            "enabled": true
-        }
     }
 }'
 ```
-
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `evaluationInfo.synchronous.enabled` | Objektet `evaluationInfo` avgör vilken typ av utvärdering som segmentdefinitionen ska genomgå. Om du vill använda kantsegmentering anger du `evaluationInfo.synchronous.enabled` med värdet `true`. |
 
 **Svar**
 
