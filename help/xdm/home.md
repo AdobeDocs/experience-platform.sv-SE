@@ -5,10 +5,9 @@ title: XDM - systemöversikt
 topic-legacy: overview
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-translation-type: tm+mt
-source-git-commit: b70e693b4ffeda561de4d4c8dd8fd1adeec489f7
+source-git-commit: 9fda5dad7b7e29c88598ff299c26277a015277a6
 workflow-type: tm+mt
-source-wordcount: '1694'
+source-wordcount: '1956'
 ht-degree: 0%
 
 ---
@@ -21,48 +20,63 @@ ht-degree: 0%
 
 Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
-XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner för alla program som används för att kommunicera med [!DNL Platform]-tjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
+XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner som gör att alla program kan kommunicera med plattformstjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
-XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av [!DNL Experience Platform], kan leverera rätt budskap till rätt person i rätt kanal vid exakt rätt tidpunkt. Metoden som [!DNL Experience Platform] byggs på, XDM System, opererar [!DNL Experience Data Model] scheman för användning av [!DNL Platform]-tjänster.
+XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som Experience Platform bygger på, XDM System, använder [!DNL Experience Data Model]-scheman för användning av plattformstjänster.
 
-Det här dokumentet innehåller en översikt över XDM-systemets roll i [!DNL Experience Platform].
+Detta dokument ger en översikt över XDM-systemets roll i Experience Platform.
 
 ## XDM-scheman
 
-[!DNL Experience Platform] använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data.
+Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data.
 
-Innan data kan hämtas in till [!DNL Platform] måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
+Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en basklass och noll eller flera schemafältgrupper.
 
 Mer information om schemakompositionsmodellen, inklusive designprinciper och bästa praxis, finns i [grunderna för schemakomposition](schema/composition.md).
 
-### [!DNL Schema Registry] och [!DNL Schema Library]
+### Standard-XDM-komponenter
 
-**[!DNL Schema Registry]** innehåller ett användargränssnitt och RESTful API från vilket du kan visa och hantera alla schemarelaterade resurser i Adobe Experience Platform **[!DNL Schema Library]**. [!DNL Schema Library] innehåller resurser som är branschstandard och som gjorts tillgängliga av Adobe, samt resurser från [!DNL Experience Platform] partners och leverantörer vars program du använder. Användargränssnittet och API:t för schemaregister kan också användas för att skapa och hantera nya scheman och resurser som är unika för din organisation.
+XDM erbjuder en robust samling av standardfältgrupper och datatyper, som är avsedda att fånga upp vanliga koncept och användningsfall i olika branscher. Med Experience Platform kan ni filtrera komponenterna efter bransch, så att ni snabbt och säkert kan skapa scheman som passar just era affärsbehov.
 
-En utförlig guide till de viktigaste åtgärderna i [!DNL Schema Registry] finns i [Utvecklarhandbok för schemaregister](api/getting-started.md).
+När du skapar scheman i användargränssnittet i Experience Platform visas listade fältgrupper med ett popularitetsmått. Detta mått bestäms av hur ofta andra plattformsanvändare använder fältgruppen i sina scheman. Ju högre tal, desto populärare fältgrupp. Som standard visas resultaten från de mest populära till de minst populära och håller dig informerad om trender för datamodellering i din bransch.
 
-## Databeteenden i XDM-systemet {#data-behaviors}
+![Fältgrupppopularitet](./images/overview/popularity.png)
 
-Data som är avsedda att användas i [!DNL Experience Platform] är grupperade i två beteendetyper:
+### [!DNL Schema Library]
+
+Experience Platform har ett användargränssnitt och RESTful API från vilket du kan visa och hantera alla schemarelaterade resurser i Experience Platform **[!DNL Schema Library]**. [!DNL Schema Library] innehåller XDM-standardkomponenter som Adobe har gjort tillgängliga, samt resurser från partners och leverantörer i Experience Platform vars program du använder.
+
+Med arbetsytan [!DNL Schema Registry API] eller [!UICONTROL Schemas] i plattformsgränssnittet kan du även skapa och hantera nya scheman och resurser som är unika för din organisation.
+
+Mer information om hur du hanterar och interagerar med scheman i Platform finns i följande dokumentation:
+
+* [Användargränssnittshandbok för XDM](./ui/overview.md)
+* [API-guide för schemaregister](./api/overview.md)
+
+## Databeteenden i XDM-system {#data-behaviors}
+
+Data som är avsedda att användas i Experience Platform är grupperade i två beteendetyper:
 
 * **Postdata**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **Tidsseriedata**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
 
 Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende.
 
-Även om du kan definiera egna klasser i [!DNL Schema Registry] rekommenderar vi att du använder de klasser **[!DNL XDM Individual Profile]** och **[!DNL XDM ExperienceEvent]** som du föredrar för post- respektive tidsseriedata. Dessa klasser beskrivs mer ingående nedan.
+Även om du kan definiera egna klasser i [!DNL Schema Registry] rekommenderar vi att du använder de klasser **[!UICONTROL XDM Individual Profile]** och **[!UICONTROL XDM ExperienceEvent]** som du föredrar för post- respektive tidsseriedata. Dessa klasser beskrivs mer ingående nedan.
 
-### [!DNL XDM Individual Profile] {#xdm-individual-profile}
+### [!UICONTROL XDM Individual Profile] {#xdm-individual-profile}
 
-[!DNL XDM Individual Profile] är en postbaserad klass som bildar en enda representation av attributen hos både identifierade och delvis identifierade ämnen. Profiler som är välidentifierade kan användas för personlig kommunikation eller målinriktade åtaganden och kan innehålla detaljerad personlig information som namn, kön, födelsedatum, plats och kontaktinformation, inklusive telefonnummer och e-postadresser.
+[!UICONTROL XDM Individual Profile] är en postbaserad klass som bildar en enda representation av attributen hos både identifierade och delvis identifierade ämnen. Profiler som är välidentifierade kan användas för personlig kommunikation eller målinriktade åtaganden och kan innehålla detaljerad personlig information som namn, kön, födelsedatum, plats och kontaktinformation, inklusive telefonnummer och e-postadresser.
 
 Mindre identifierade profiler kan bara bestå av anonyma beteendesignaler, som webbläsarcookies. I det här fallet används data för den gles profil för att bygga upp en informationsbas i vilken den anonyma profilens intressen och preferenser samlas in och lagras. Dessa identifierare kan bli mer detaljerade över tid när ämnet registrerar sig för meddelanden, prenumerationer, inköp och så vidare. Ökningen av profilattribut kan så småningom leda till ett identifierat ämne och möjliggöra en högre grad av målinriktat engagemang.
 
-I takt med att kundprofilen växer blir den ett robust arkiv för en persons personuppgifter, identifieringsinformation, kontaktuppgifter och kommunikationsinställningar.
+I takt med att profilen växer blir den ett robust arkiv för en persons personuppgifter, identifieringsinformation, kontaktuppgifter och kommunikationsinställningar.
 
-### [!DNL XDM ExperienceEvent] {#xdm-experience-event}
+Se [[!UICONTROL XDM Individual Profile]-referenshandboken](./classes/individual-profile.md) för mer information om strukturen och användningsfallet för fälten som klassen tillhandahåller.
 
-XDM ExperienceEvent är en tidsseriebaserad klass som används för att fånga systemets tillstånd när en händelse (eller uppsättning händelser) inträffar, inklusive tidpunkten och identiteten för det berörda ämnet. Experience Events är fakta om vad som har hänt, och de är därför oföränderliga och representerar det som hände utan aggregering eller tolkning. De är viktiga för tidsdomänanalys eftersom de kan användas för att analysera ändringar som inträffar under ett visst tidsfönster och för att jämföra olika tidsfönster för att spåra trender.
+### [!UICONTROL XDM ExperienceEvent] {#xdm-experience-event}
+
+XDM ExperienceEvent är en tidsseriebaserad klass som används för att fånga systemets tillstånd när en händelse (eller uppsättning händelser) inträffar, inklusive tidpunkten och identiteten för det berörda ämnet. Experience Events är oföränderliga, faktauppgifter om vad som inträffade vid den tidpunkten, som representerar det som hände utan aggregering eller tolkning. De är viktiga för tidsdomänanalys eftersom de kan användas för att analysera ändringar som inträffar under ett visst tidsfönster och för att jämföra olika tidsfönster för att spåra trender.
 
 Experience Events kan vara antingen explicita eller implicita. Explicit händelser är direkt observerbara mänskliga handlingar som äger rum under en viss resa. Implicita händelser är händelser som inträffar utan någon direkt mänsklig åtgärd, men som fortfarande gäller en individ. Exempel på implicita händelser kan vara schemalagd sändning av e-postnyhetsbrev eller batteriladdning som når en viss tröskel.
 
@@ -70,56 +84,58 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 ![ExperienceEvent - kundresa](images/overview/experience-event-journey.png)
 
-## XDM-scheman och [!DNL Experience Platform]-tjänster
+Se [[!UICONTROL XDM ExperienceEvent]-referenshandboken](./classes/experienceevent.md) för mer information om strukturen och användningsfallet för fälten som klassen tillhandahåller.
 
-[!DNL Experience Platform] är schemagnostiska, vilket innebär att alla scheman som följer XDM-standarden är tillgängliga för användning av  [!DNL Platform] tjänster. De sätt som olika [!DNL Platform]-tjänster använder scheman beskrivs närmare nedan.
+## XDM-scheman och Experience Platform-tjänster
 
-### [!DNL Catalog Service], [!DNL Data Ingestion] &amp; [!DNL Data Lake]
+Experience Platform är schemagnostiskt, vilket innebär att alla scheman som uppfyller XDM-standarden görs tillgängliga för plattformstjänster. Hur olika plattformstjänster använder scheman beskrivs närmare nedan.
 
-[!DNL Catalog Service] är registersystemet för  [!DNL Experience Platform] tillgångar och tillhörande scheman. [!DNL Catalog] är inte de faktiska filerna eller katalogerna som innehåller data, utan innehåller i stället metadata och beskrivningar för dessa filer och kataloger.
+### Katalogtjänst, datainmatning och datasjön
 
-[!DNL Catalog] data lagras i  [!DNL Data Lake]ett mycket detaljerat datalager som innehåller alla data som hanteras av,  [!DNL Platform]oavsett ursprung eller filformat.
+Katalogtjänsten är registersystemet för tillgångar i Experience Platform och tillhörande scheman. Katalogen innehåller inte de faktiska datafilerna eller katalogerna, utan innehåller i stället metadata och beskrivningar för dessa filer och kataloger.
 
-För att börja inhämta data till [!DNL Experience Platform] skapas en datauppsättning med [!DNL Catalog Service]. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datauppsättning skapas utan ett schema, kommer [!DNL Experience Platform] att härleda ett &quot;observerat schema&quot; genom att undersöka typen och innehållet i inkapslade datafält. Datauppsättningar spåras sedan i [!DNL Catalog] och lagras i [!DNL Data Lake] tillsammans med de scheman och observerade scheman som de baseras på.
+Katalogdata lagras i Data Lake, ett mycket detaljerat datalager som innehåller alla data som hanteras av Platform, oavsett ursprung eller filformat.
 
-Mer information om [!DNL Catalog] finns i [Katalogtjänstöversikt](../catalog/home.md). Mer information om Adobe Experience Platform datainmatning finns i [Översikt över datainmatning](../ingestion/home.md).
+Om du vill börja inhämta data till Experience Platform kan du använda katalogtjänsten för att skapa en datauppsättning. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datauppsättning skapas utan ett schema, härleds ett &quot;observerat schema&quot; från Experience Platform genom att typen och innehållet i inkapslade datafält kontrolleras. Datauppsättningar spåras sedan i Catalog och lagras i Data Lake tillsammans med de scheman och observerade scheman som de baseras på.
 
-### [!DNL Query Service]
+Mer information om katalog finns i [Katalogtjänstöversikt](../catalog/home.md). Mer information om Adobe Experience Platform datainmatning finns i [Översikt över datainmatning](../ingestion/home.md).
 
-Med Adobe Experience Platform [!DNL Query Service] kan du använda standard-SQL för att fråga efter [!DNL Experience Platform]-data som stöder många olika användningsfall.
+### Frågetjänst
 
-När ett schema har skapats och en datauppsättning har skapats som refererar till det schemat, hämtas data och lagras i [!DNL Data Lake]. Med [!DNL Query Service] kan du koppla alla datauppsättningar i [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i [!DNL Real-time Customer Profile].
+Med Adobe Experience Platform Query Service kan du använda standard-SQL för att fråga efter Experience Platform-data som stöder många olika användningsfall.
 
-Mer information om [!DNL Query Service] finns i [introduktionen av frågetjänsten](../query-service/home.md).
+När ett schema har disponerats och en datauppsättning har skapats som refererar till det schemat, hämtas data och lagras i datasjön. Med hjälp av frågetjänsten kan du ansluta till alla datauppsättningar i datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i kundprofilen i realtid.
 
-### [!DNL Real-time Customer Profile]
+Mer information om tjänsten finns i [Query Service overview](../query-service/home.md).
 
-Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras i alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med [!DNL Experience Platform].
+### Kundprofil i realtid
 
-[!DNL Real-time Customer Profile] använder schemaformaterade data baserat på  [!DNL XDM Individual Profile] eller  [!DNL XDM ExperienceEvent] klasser och svarar på frågor som baseras på dessa data. [!DNL Profile] stöder inte användning av scheman baserade på andra klasser.
+Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform.
 
-[!DNL Profile] har en instans av varje kundprofil och sammanfogar data för att skapa en&quot;enda källa till sanning&quot; för individen. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda schema.  När du komponerar ett schema med användargränssnittet eller API:t kan du aktivera schemat för användning med [!DNL Real-time Customer Profile] och tagga det för inkludering i unionsvyn. Det taggade schemat deltar sedan i den schemadefinition som matas till [!DNL Profile].
+Kundprofilen i realtid förbrukar schemaformaterade data baserat på klasserna [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] och svarar på frågor baserade på dessa data. Profilen stöder inte användning av scheman baserade på andra klasser.
 
-Eftersom [!DNL XDM Individual Profile]- och [!DNL XDM ExperienceEvent]-data importeras och hanteras av [!DNL Catalog], utlöses [!DNL Real-time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
+Systemet upprätthåller en instans av varje kundprofil och sammanfogar data till en&quot;enda källa till sanning&quot; för den enskilda personen. Dessa enhetliga data representeras med hjälp av ett så kallat fackschema (kallas ibland för en fackvy). Ett unionsschema samlar fälten för alla scheman som implementerar samma klass i ett enda schema.  När du komponerar ett schema med användargränssnittet eller API kan du aktivera schemat för användning med kundprofilen i realtid och tagga det för inkludering i unionen. Det taggade schemat kommer sedan att ingå i den schemadefinition som matas in i profilen.
 
-[!DNL XDM Individual Profile] data hjälper till att informera och underlätta åtgärder över alla kanaler och Adobe-lösningar, och när de kombineras med en lång historik med beteendedata och interaktionsdata används dessa data som stöd för maskininlärning. API:t [!DNL Real-time Customer Profile] kan även användas för att utöka funktionaliteten hos tredjepartslösningar, CRM-system och företagslösningar.
+Eftersom [!UICONTROL XDM Individual Profile]- och [!UICONTROL XDM ExperienceEvent]-data hämtas till datasjön, kan kundprofilen i realtid samla in data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
+
+[!UICONTROL XDM Individual Profile] data hjälper till att informera och underlätta åtgärder över alla kanaler och Adobe-produktintegreringar. När dessa data kombineras med en lång historik med beteendedata och interaktionsdata kan de användas för att underlätta maskininlärning. Real-time Customer Profile API kan också användas för att berika funktionaliteten hos tredjepartslösningar, CRM och företagslösningar.
 
 Mer information finns i [Kundprofilöversikt](../profile/home.md) i realtid.
 
-### [!DNL Data Science Workspace]
+### Datavetenskapens arbetsyta
 
-Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i [!DNL Experience Platform]. [!DNL Data Science Workspace] gör det möjligt för datavetare att bygga recept som bygger på XDM Individual  [!DNL Profile] och  [!DNL XDM ExperienceEvent] data om kunder och deras aktiviteter, vilket underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder.
+Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Med Data Science Workspace kan datavetare skapa recept baserat på [!UICONTROL XDM Individual Profile]- och [!UICONTROL XDM ExperienceEvent]-data om kunder och deras aktiviteter, vilket underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder.
 
-Med [!DNL Data Science Workspace] kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
+Med Data Science Workspace kan datavetare enkelt skapa intelligenta tjänst-API:er som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
 
-Mer information om hur du använder [!DNL Experience Platform]-data för att ge bättre insikter finns i översikten över arbetsytan för datavetenskap](../data-science-workspace/home.md).[
+Mer information om hur du använder data från Experience Platform för att få bättre insikter finns i [Översikt över arbetsytan Datavetenskap](../data-science-workspace/home.md).
 
 ## Nästa steg och ytterligare resurser
 
-Nu när du är bättre på att förstå schemats roll i [!DNL Experience Platform] är du redo att börja skapa din egen. Om du vill fortsätta att komplettera din inlärning börjar du med att läsa den föreslagna dokumentationen och tittar på videon nedan.
+Nu när du är bättre på att förstå schemats roll i hela Experience Platform är du redo att börja komponera ditt eget.
 
-Om du vill lära dig designprinciper och bästa metoder för att komponera scheman som ska användas med [!DNL Experience Platform] börjar du med att läsa [grunderna för schemakomposition](schema/composition.md). Stegvisa instruktioner om hur du skapar ett schema finns i självstudiekurserna om hur du skapar ett schema [med API](tutorials/create-schema-api.md) eller [med användargränssnittet](tutorials/create-schema-ui.md).
+Om du vill lära dig designprinciper och bästa praxis för dispositionsscheman som ska användas med Experience Platform börjar du med att läsa [grunderna för schemakomposition](schema/composition.md). Stegvisa instruktioner om hur du skapar ett schema finns i självstudiekurserna om hur du skapar ett schema [med API](tutorials/create-schema-api.md) eller [med användargränssnittet](tutorials/create-schema-ui.md).
 
-Titta på följande video för att få en bättre förståelse för [!DNL XDM System] i [!DNL Experience Platform]:
+Titta på följande video för att få en bättre förståelse för [!DNL XDM System] i Experience Platform:
 
 >[!VIDEO](https://video.tv.adobe.com/v/27105?quality=12&learn=on)
