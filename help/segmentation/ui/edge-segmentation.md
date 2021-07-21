@@ -5,10 +5,9 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-translation-type: tm+mt
-source-git-commit: 5256c2a13fc75f7d46911f2ad368188d9e818921
+source-git-commit: 8375d5a35ef652335c60b4b8b4571bf42ec1924a
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '345'
 ht-degree: 0%
 
 ---
@@ -32,9 +31,7 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av följa
 | Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger. |  |
 | Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger och har ett eller flera profilattribut. |  |
 
-Om frågan matchar någon av ovanstående frågetyper kan du aktivera den för kantsegmentering genom att aktivera alternativet **[!UICONTROL Evaluate as streaming segment on the edge]**.
-
-![](../images/ui/edge-segmentation/mark-on-edge.png)
+Om frågan matchar någon av ovanstående frågetyper utvärderas den automatiskt med kantsegmentering.
 
 Följande frågetyper är **inte** som stöds för kantsegmentering:
 
