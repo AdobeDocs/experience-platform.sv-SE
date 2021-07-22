@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
 workflow-type: tm+mt
-source-wordcount: '744'
+source-wordcount: '841'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du
 
 En översikt över destinationer samt en katalog över alla tillgängliga destinationer i Experience Platform finns i [måldokumentationen](../../destinations/home.md).
 
-## [!UICONTROL Destinations] instrumentpanelsdata  {#destinations-dashboard-data}
+## [!UICONTROL Destinations] instrumentpanelsdata {#destinations-dashboard-data}
 
 Kontrollpanelen [!UICONTROL Destinations] visar en ögonblicksbild av de mål som din organisation har aktiverat i Experience Profile. Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för destinationer uppdateras inte i realtid.
 
@@ -35,9 +35,17 @@ Om du vill navigera till målkontrollpanelen i plattformsgränssnittet väljer d
 
 ![](../images/destinations/dashboard-overview.png)
 
-## Tillgängliga widgetar
+### Ändra kontrollpanelen för destinationer
 
-Experience Platform tillhandahåller flera widgetar som du kan använda för att visualisera olika mått som relaterar till dina mål. Välj namnet på en widget nedan om du vill veta mer:
+Du kan ändra utseendet på kontrollpanelen för mål genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt komma åt **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
+
+Mer information finns i [ändringsdokumentationen för kontrollpanelerna](../customize/modify.md) och [översikten över widgetbiblioteket](../customize/widget-library.md).
+
+## Standardwidgetar
+
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden för dina destinationer. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten över [widgetbiblioteket](../customize/widget-library.md).
+
+Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Most used destinations]](#most-used-destinations)
 * [[!UICONTROL Recently created destinations]](#recently-created-destinations)
