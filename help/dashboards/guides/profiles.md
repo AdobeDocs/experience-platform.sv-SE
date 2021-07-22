@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1180'
 ht-degree: 0%
 
 ---
@@ -39,9 +39,9 @@ Om du vill navigera till kontrollpanelen [!UICONTROL Profiles] i plattformsgrän
 
 ### Ändra kontrollpanelen [!UICONTROL Profiles]
 
-Du kan ändra utseendet på kontrollpanelen [!UICONTROL Profiles] genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt komma åt [!UICONTROL Widget library] för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
+Du kan ändra utseendet på kontrollpanelen [!UICONTROL Profiles] genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt komma åt **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Mer information finns i [dokumentationen för att ändra kontrollpanelerna](../modify.md) och [widgetbiblioteket](../widget-library.md).
+Mer information finns i [ändringsdokumentationen för kontrollpanelerna](../customize/modify.md) och [översikten över widgetbiblioteket](../customize/widget-library.md).
 
 ## Sammanfoga profiler
 
@@ -63,9 +63,11 @@ Kontrollpanelen består av widgetar, som är skrivskyddade mått som ger viktig 
 
 Datum och tid för den senaste uppdateringen av en widget visar när den senaste ögonblicksbilden av data togs. Datum och tid för ögonblicksbilden anges i UTC. den inte finns i den enskilda användarens eller IMS-organisationens tidszon.
 
-## Tillgängliga widgetar
+## Standardwidgetar
 
-Experience Platform tillhandahåller flera widgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Välj namnet på en widget nedan om du vill veta mer:
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten över [widgetbiblioteket](../customize/widget-library.md).
+
+Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Profile count]](#profile-count)
 * [[!UICONTROL Profiles added]](#profiles-added)
