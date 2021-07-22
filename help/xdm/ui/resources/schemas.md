@@ -5,10 +5,9 @@ title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 6402499535b71f43c158fcec7e2b0065437bed51
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '1394'
 ht-degree: 0%
 
 ---
@@ -55,7 +54,7 @@ Om du vill redigera ett befintligt schema väljer du fliken **[!UICONTROL Browse
 
 När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till fältgrupper](#add-field-groups) i schemat, [redigera fältvisningsnamn](#display-names) eller [redigera befintliga anpassade fältgrupper](./field-groups.md#edit) om schemat använder någon.
 
-## Lägg till fältgrupper i ett schema {#add-field-groups}
+## Lägga till fältgrupper i ett schema {#add-field-groups}
 
 >[!NOTE]
 >
@@ -132,6 +131,8 @@ När du har tilldelat en klass och lagt till fältgrupper till ett schema kan du
 >[!NOTE]
 >
 >Tänk på att visningsnamnen för fält som tillhör standardklasser eller fältgrupper bara kan redigeras i ett specifikt schema. Om du ändrar visningsnamnet för ett standardfält i ett schema påverkas alltså inte andra scheman som använder samma associerade klass eller fältgrupp.
+>
+>När du ändrar visningsnamnen för ett schemas fält återspeglas dessa ändringar omedelbart i befintliga datauppsättningar som baseras på det schemat.
 
 Om du vill redigera visningsnamnet för ett schemafält markerar du fältet på arbetsytan. Ange det nya namnet under **[!UICONTROL Display name]** i den högra listen.
 
@@ -141,7 +142,7 @@ Välj **[!UICONTROL Apply]** i den högra listen så uppdateras arbetsytan till 
 
 ![](../../images/ui/resources/schemas/display-name-changed.png)
 
-## Ändra ett schemas klass {#change-class}
+## Ändra en schemaklass {#change-class}
 
 Du kan ändra schemaklassen när som helst under den inledande dispositionsprocessen innan schemat har sparats.
 
