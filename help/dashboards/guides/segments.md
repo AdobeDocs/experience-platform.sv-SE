@@ -4,9 +4,9 @@ title: Kontrollpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '939'
 ht-degree: 0%
 
 ---
@@ -39,9 +39,9 @@ Om du vill navigera till kontrollpanelen [!UICONTROL Segments] i plattformsgrän
 
 ### Ändra kontrollpanelen [!UICONTROL Segments]
 
-Du kan ändra utseendet på kontrollpanelen [!UICONTROL Segments] genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt komma åt [!UICONTROL Widget library] för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
+Du kan ändra utseendet på kontrollpanelen [!UICONTROL Segments] genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt komma åt **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Mer information finns i [dokumentationen för att ändra kontrollpanelerna](../modify.md) och [widgetbiblioteket](../widget-library.md).
+Mer information finns i [ändringsdokumentationen för kontrollpanelerna](../customize/modify.md) och [översikten över widgetbiblioteket](../customize/widget-library.md).
 
 ## Markera ett segment
 
@@ -61,9 +61,11 @@ Datum och tid för den senaste uppdateringen av en widget visar när den senaste
 
 ![](../images/segments/widget-timestamp.png)
 
-## Tillgängliga widgetar
+## Standardwidgetar
 
-Experience Platform tillhandahåller flera widgetar som du kan använda för att visualisera olika mätvärden för ditt segment. Välj namnet på en widget nedan om du vill veta mer:
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden för dina segment. Du kan också skapa anpassade widgetar som ska delas med din organisation med [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa översikten över [widgetbiblioteket](../customize/widget-library.md).
+
+Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Audience size]](#audience-size)
 * [[!UICONTROL Audience size trend]](#audience-size-trend)
