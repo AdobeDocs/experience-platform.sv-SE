@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 topic-legacy: overview
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: d6eefc8c10a44fd31eaed00f22d09ee8a300db83
 workflow-type: tm+mt
 source-wordcount: '1825'
 ht-degree: 0%
@@ -12,11 +12,11 @@ ht-degree: 0%
 ---
 
 
-# (Alfa) [!DNL Segment Match] - översikt
+# (Beta) [!DNL Segment Match] - översikt
 
 >[!IMPORTANT]
 >
->[!DNL Segment Match] är alfavärdet. Dokumentationen och funktionaliteten kan komma att ändras.
+>[!DNL Segment Match] är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Adobe Experience Platform Segment Match är en segmentdelningstjänst som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt. [!DNL Segment Match] använder sekretessstandarder för plattformer och personliga identifierare som hash-kodade e-postmeddelanden, hashade telefonnummer och enhetsidentifierare som IDFA och GAID.
 
