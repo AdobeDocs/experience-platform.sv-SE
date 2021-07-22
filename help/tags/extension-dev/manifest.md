@@ -1,9 +1,9 @@
 ---
 title: Extension Manifest
 description: Lär dig hur du konfigurerar en JSON-manifestfil som informerar Adobe Experience Platform om hur du använder tillägget på rätt sätt.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 421d1d0660c4c9c7280974f8a812a8f0e4f7cbea
 workflow-type: tm+mt
-source-wordcount: '2647'
+source-wordcount: '2646'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Ett tilläggsmanifest måste bestå av följande:
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på tillägget. Den måste vara unik från alla andra Reaktortillägg och måste uppfylla [namngivningsreglerna](#naming-rules). **Detta används av taggar som identifierare och bör inte ändras efter att du har publicerat tillägget.** |
+| `name` | Namnet på tillägget. Det måste vara unikt från alla andra tillägg och måste uppfylla [namnreglerna](#naming-rules). **Detta används av taggar som identifierare och bör inte ändras efter att du har publicerat tillägget.** |
 | `platform` | Plattformen för tillägget. Det enda värde som accepteras för tillfället är `web`. |
 | `version` | Versionen av tillägget. Det måste följa versionshanteringsformatet [semester](http://semver.org/). Detta stämmer överens med [npm-versionsfältet](https://docs.npmjs.com/files/package.json#version). |
 | `displayName` | Tilläggets läsbara namn. Detta visas för plattformsanvändare. &quot;taggar&quot; eller &quot;filtillägg&quot; behöver inte anges. användarna kommer redan att veta att de tittar på ett taggtillägg. |
