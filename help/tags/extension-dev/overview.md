@@ -1,7 +1,7 @@
 ---
 title: Översikt över tilläggsutveckling
 description: Lär dig mer om de primära komponenterna för olika taggtilläggstyper och tilläggsutvecklingsprocessen i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 421d1d0660c4c9c7280974f8a812a8f0e4f7cbea
 workflow-type: tm+mt
 source-wordcount: '1888'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
-Ett av de främsta målen med Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför kärnteamet kan visa upp ytterligare funktionalitet med hjälp av taggar. Detta görs genom Reaktortillägg. När ett tillägg har installerats på en taggegenskap av en användare, blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
+Ett av de främsta målen med Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför kärnteamet kan visa upp ytterligare funktionalitet med hjälp av taggar. Detta görs via taggtillägg. När ett tillägg har installerats på en taggegenskap av en användare, blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
 
 I det här dokumentet beskrivs de primära komponenterna för olika tilläggstyper och det finns länkar till ytterligare dokumentation som kan hjälpa dig med tilläggsutvecklingsprocessen.
 
