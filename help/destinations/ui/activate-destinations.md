@@ -6,7 +6,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 0162ec101c820c4870dea0f2c2bc09523eca862a
+source-git-commit: a28dc64cfe7f352a023aa2a5bd1156307bbad39f
 workflow-type: tm+mt
 source-wordcount: '2951'
 ht-degree: 0%
@@ -169,7 +169,7 @@ Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna s
 
 >[!IMPORTANT]
 >
->Det finns för närvarande inget stöd för att ändra filexportschemat för segment som redan har exporterats. Om du vill återexportera segment med ett annat schema måste du skapa en ny destinationsinstans. Detta är en begränsning som kommer att tas upp i framtida versioner.
+>Det finns för närvarande inget stöd för att ändra filexportschemat för segment som redan har sparats. Om du vill återexportera segment med ett annat schema måste du skapa en ny destinationsinstans. Detta är en begränsning som kommer att tas upp i framtida versioner.
 
 ### Exportera inkrementella filer {#export-incremental-files}
 
@@ -215,7 +215,7 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
 
 >[!IMPORTANT]
 >
->Det finns för närvarande inget stöd för att ändra filexportschemat för segment som redan har exporterats. Om du vill återexportera segment med ett annat schema måste du skapa en ny destinationsinstans. Detta är en begränsning som kommer att tas upp i framtida versioner.
+>Det finns för närvarande inget stöd för att ändra filexportschemat för segment som redan har sparats. Om du vill återexportera segment med ett annat schema måste du skapa en ny destinationsinstans. Detta är en begränsning som kommer att tas upp i framtida versioner.
 
 ### Konfigurera filnamn {#file-names}
 
