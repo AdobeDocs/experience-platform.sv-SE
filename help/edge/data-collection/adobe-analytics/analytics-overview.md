@@ -2,14 +2,13 @@
 title: Skicka data till Adobe Analytics med Adobe Experience Platform Web SDK
 description: Lär dig hur du skickar data till Adobe Analytics med Adobe Experience Platform Web SDK.
 keywords: adobe analytics;analytics;mapped data;mapped vars;
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
+source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%
 
 ---
-
 
 # Skicka data till Adobe Analytics
 
@@ -67,4 +66,4 @@ a.x.arrayofobjects.1.obj2key //objval1
 
 Här är ett exempel på en bearbetningsregel som skulle använda dessa data.
 
-![Gränssnitt för bearbetningsregler](../../../assets/edge_analytics_processing_rules.png)
+![Gränssnitt för bearbetningsregler](./assets/edge_analytics_processing_rules.png)
