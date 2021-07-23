@@ -3,7 +3,7 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar dataströmmar. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
 workflow-type: tm+mt
 source-wordcount: '829'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Din organisation måste etableras för den här funktionen. Kontakta din Custome
 
 Datastreams kan skapas i Adobe [!DNL Experience Platform Launch] med hjälp av konfigurationsverktyget Datastream.
 
-![navigering för datastreams-verktyg](../../assets/datastreams_config.png)
+![navigering för datastreams-verktyg](../images/datastreams/config.png)
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ Nedan visas de tillgängliga inställningarna för varje konfigurationsmiljö. D
 
 Avsnittet med tredje parts-ID är det enda avsnitt som alltid är aktivt. Det finns två tillgängliga inställningar: &quot;[!UICONTROL Third Party ID Sync Enabled]&quot; och &quot;[!UICONTROL Third Party ID Sync Container ID]&quot;.
 
-![Identitetsavsnittet i konfigurationsgränssnittet](../../assets/edge_configuration_identity.png)
+![Identitetsavsnittet i konfigurationsgränssnittet](../images/datastreams/edge_configuration_identity.png)
 
 ### [!UICONTROL Third Party ID Sync Enabled]
 
@@ -53,7 +53,7 @@ ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar
 
 Med inställningarna som anges här kan du skicka data till Adobe Experience Platform. Du bör bara aktivera det här avsnittet om du har köpt Adobe Experience Platform.
 
-![Adobe Experience Platform inställningsblock](../../assets/edge_configuration_aep.png)
+![Adobe Experience Platform inställningsblock](../images/datastreams/edge_configuration_aep.png)
 
 ### [!UICONTROL Sandbox]
 
@@ -71,7 +71,7 @@ Datastreams har stöd för att skicka data till datauppsättningar som har ett s
 
 Om du vill konfigurera Adobe Target måste du ange en klientkod. De andra fälten är valfria.
 
-![Adobe Target inställningsblock](../../assets/edge_configuration_target.png)
+![Adobe Target inställningsblock](../images/datastreams/edge_configuration_target.png)
 
 >[!NOTE]
 >
@@ -97,7 +97,7 @@ Adobe rekommenderar att du anger detta på olika sätt för var och en av datast
 
 Allt som behövs för att skicka data till Adobe Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
 
-![Inställningsblock för hantering av målgruppshantering i Adobe](../../assets/edge_configuration_aam.png)
+![Inställningsblock för hantering av målgruppshantering i Adobe](../images/datastreams/edge_configuration_aam.png)
 
 ### [!UICONTROL Cookie Destinations Enabled]
 
@@ -111,7 +111,7 @@ Tillåter SDK att dela segmentinformation via [URL-mål](https://experienceleagu
 
 Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analysöversikt](../data-collection/adobe-analytics/analytics-overview.md).
 
-![Adobe Analytics Settings Block](../../assets/edge_configuration_aa.png)
+![Adobe Analytics Settings Block](../images/datastreams/edge_configuration_aa.png)
 
 ### [!UICONTROL Report Suite ID]
 
