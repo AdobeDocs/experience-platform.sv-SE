@@ -1,9 +1,9 @@
 ---
 title: Adobe Media Analytics for Audio and Video Extension - översikt
 description: Läs mer om taggtillägget Adobe Media Analytics for Audio och Video i Adobe Experience Platform.
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
 workflow-type: tm+mt
-source-wordcount: '978'
+source-wordcount: '973'
 ht-degree: 1%
 
 ---
@@ -108,7 +108,7 @@ MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet ge
 
 ### Använda från andra tillägg
 
-MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` för andra tillägg. (Mer information om delade moduler finns i [Dokumentation för delade moduler](https://developer.adobelaunch.com/extensions/shared_modules/).)
+MA-tillägget visar de delade modulerna `get-instance` och `media-heartbeat` för andra tillägg. (Mer information om delade moduler finns i [Dokumentation för delade moduler](../../../extension-dev/web/shared.md).)
 
 >[!IMPORTANT]
 >
