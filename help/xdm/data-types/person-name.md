@@ -5,9 +5,9 @@ title: Datatyp för personnamn
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för personnamn.
 exl-id: 5cf55fb1-b6b0-4d1c-93c3-7e2b7766599e
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '252'
 ht-degree: 0%
 
 ---
@@ -33,5 +33,5 @@ Dessutom innehåller datatypen ett antal valfria egenskaper som kan användas i 
 
 Mer information om personnamnets datatyp finns i den offentliga XDM-databasen:
 
-* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/person-name.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/person-name.schema.json)
+* [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/datatypes/person/person-name.example.1.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/datatypes/person/person-name.schema.json)
