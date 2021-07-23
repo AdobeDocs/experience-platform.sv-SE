@@ -4,7 +4,7 @@ title: Översikt över branschdatamodeller
 topic-legacy: overview
 description: Lär dig mer om standardiserade datamodeller för olika vertikala branscher som kan konstrueras med XDM-komponenter (Standard Experience Data Model).
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
-source-git-commit: 4ff97408659559174110a2234b24e9433007c9dc
+source-git-commit: e44da39dcdd4af4ab883b3ff8f61ca2fd44adb0b
 workflow-type: tm+mt
 source-wordcount: '347'
 ht-degree: 0%
@@ -38,6 +38,7 @@ ERD tillhandahålls för följande vertikala branscher:
 
 * [[!UICONTROL Retail]](./retail.md)
 * [[!UICONTROL Financial services]](./financial.md)
+* [[!UICONTROL Telecommunications]](./telecom.md)
 * [[!UICONTROL Travel and hospitality]](./travel-hospitality.md)
 
 ## Nästa steg
