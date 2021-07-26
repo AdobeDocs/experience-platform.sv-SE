@@ -6,19 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Azure Table Storage-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 045cb954-e3e1-439d-a3cd-170d688dfbc8
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 7af79b9e0d6ed29b796ac7c98b4df1dda09f3513
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '461'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Azure Table Storage]-källanslutning i användargränssnittet
-
->[!NOTE]
->
->[!DNL Azure Table Storage]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Table Storage]-källkoppling (kallas nedan ATS) med användargränssnittet i [!DNL Platform].
 
