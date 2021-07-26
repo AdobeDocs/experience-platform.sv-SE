@@ -6,21 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en PayPal-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: bbd3f634-cb28-45d8-9b7b-ed3873101882
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6b6bd67e70267e81c144c37549b0dcba20534eb6
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '438'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL PayPal]-källanslutning i användargränssnittet
 
->[!NOTE]
->
-> [!DNL PayPal]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
-
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en [!DNL PayPal]-källkoppling med användargränssnittet i [!DNL Platform].
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL PayPal]-källkoppling med hjälp av användargränssnittet för plattformen.
 
 ## Komma igång
 
@@ -35,7 +30,7 @@ Om du redan har en giltig [!DNL PayPal]-anslutning kan du hoppa över resten av 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL PayPal]-konto [!DNL Platform] måste du ange följande värden:
+För att få åtkomst till din [!DNL PayPal]-kontoplattform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -47,7 +42,7 @@ Mer information om hur du kommer igång finns i det här [[!DNL PayPal] dokument
 
 ## Anslut ditt [!DNL PayPal]-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PayPal]-konto till [!DNL Platform].
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PayPal]-konto till Platform.
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan **[!UICONTROL Sources]**. Skärmen **[!UICONTROL Catalog]** visar en mängd olika källor som du kan skapa ett konto för.
 
@@ -73,4 +68,4 @@ Om du vill ansluta ett befintligt konto väljer du det [!DNL PayPal]-konto du vi
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL PayPal]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta betalningsdata till [!DNL Platform]](../../dataflow/payments.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL PayPal]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta betalningsdata till plattformen](../../dataflow/payments.md).
