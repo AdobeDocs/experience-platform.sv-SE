@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
-source-git-commit: e04df6e2ffabac6e70164dfccbad8440976b2755
+source-git-commit: 031849fcc351794e7eb1da691bd4015368a043b6
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '628'
 ht-degree: 5%
 
 ---
@@ -75,6 +75,7 @@ ht-degree: 5%
       - [Förminska koppling](connectors/ecommerce/shopify.md)
    - Automatiserad marknadsföring {#marketing-automation}
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
+      - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
    - Protokoll {#protocols}
@@ -127,6 +128,7 @@ ht-degree: 5%
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
       - Automatiserad marknadsföring {#marketing-automation}
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
+         - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
       - Protokoll {#protocols}
@@ -214,6 +216,7 @@ ht-degree: 5%
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
       - Automatiserad marknadsföring {#marketing-automation}
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
+         - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - Protokoll {#protocols}
