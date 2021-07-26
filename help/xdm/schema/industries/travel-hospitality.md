@@ -4,9 +4,9 @@ title: Resor och turism - branschdatamodell ERD
 topic-legacy: overview
 description: Visa en datamodell (ERD) som beskriver en standardiserad datamodell för rese- och turismbranschen som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 4d454160-9066-4702-815b-9509942f709e
-source-git-commit: 88c17992a391b24a76c3e387d3033df4c75a6aa6
+source-git-commit: 38fa2345cb87e50bd4c8788996f03939fb199cf9
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 # [!UICONTROL Travel and hospitality] ERD för branschdatamodell
 
 Följande enhetsrelationsdiagram representerar en standardiserad datamodell för rese- och turismbranschen. Den europeiska referensdosen presenteras avsiktligt på ett avnormaliserat sätt och med hänsyn till hur data lagras i Adobe Experience Platform.
+
+>[!NOTE]
+>
+>Den rekommenderade referensmetoden är en rekommendation för hur du ska modellera dina data för det här användningsexemplet. Om du vill använda den här datamodellen i Platform måste du själv skapa de rekommenderade scheman och deras relationer. Mer information finns i guiderna för att hantera [scheman](../../ui/resources/schemas.md) och [relationer](../../tutorials/relationship-ui.md) i användargränssnittet.
 
 Använd följande förklaring för att tolka denna ERD:
 
