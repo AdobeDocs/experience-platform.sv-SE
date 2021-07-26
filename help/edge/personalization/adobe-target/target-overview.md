@@ -3,9 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: ed6f0891958670c3c5896c4c9cbefef2a245bc15
+source-git-commit: c83b6ea336cfe5d6d340a2dbbfb663b6bec84312
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '1205'
 ht-degree: 3%
 
 ---
@@ -24,6 +24,22 @@ Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 * [Recommendations-verksamhet](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
 * [Inställnings- och konverteringsrapportering för Native Target](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC-stöd](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
+
+## [!DNL Platform Web SDK] systemdiagram
+
+Följande diagram hjälper dig att förstå arbetsflödet för kantbeslut i [!DNL Target] och [!DNL Platform Web SDK].
+
+![Diagram över Adobe Target edge-beslut med Platform Web SDK](./assets/target-platform-web-sdk.png)
+
+| Utlysning | Detaljer |
+| --- | --- |
+| 1 | Enheten läser in [!DNL Platform Web SDK]. [!DNL Platform Web SDK] skickar en begäran till gränsnätverket med XDM-data, ID:t för datastreams Environment, parametrar för skickade data samt Kund-ID:t (valfritt). Sidan (eller behållarna) är fördold. |
+| 2 | edge-nätverket skickar begäran till edge-tjänsterna för att berika den med besökar-ID, samtycke och annan kontextinformation för besökare, som geopositionering och enhetsvänliga namn. |
+| 3 | Kantnätverket skickar den berikade personaliseringsbegäran till kanten [!DNL Target] med besökar-ID och skickade parametrar. |
+| 4 | Profilskript körs och matas sedan in i [!DNL Target] profillagring. Profillagring hämtar segment från [!UICONTROL Audience Library] (till exempel segment som delas från [!DNL Adobe Analytics], [!DNL Adobe Audience Manager], [!DNL Adobe Experience Platform]). |
+| 5 | Baserat på parametrar för URL-begäran och profildata avgör [!DNL Target] vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till gränsnätverket. |
+| 6 | a. Kantnätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. &#x200B;<br>c. Edge-nätverket skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll, personalisering och så vidare. |
+| 7 | Edge-nätverket vidarebefordrar information om [!UICONTROL Analytics for Target] (A4T) (aktivitet, upplevelse och konverteringsmetadata) till [!DNL Analytics]-&#x200B;. |
 
 ## Aktivera [!DNL Adobe Target]
 
