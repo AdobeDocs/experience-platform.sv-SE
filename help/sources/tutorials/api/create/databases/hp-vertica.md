@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter HP Vertica till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 37f831c1-7c82-462a-8338-a0bcaaf08cd1
-source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
+source-git-commit: 3506e8307d5f6dbdb11a04911ddbd6dc81b8278f
 workflow-type: tm+mt
-source-wordcount: '484'
+source-wordcount: '476'
 ht-degree: 1%
 
 ---
@@ -27,8 +27,8 @@ I den här självstudiekursen får du hjälp med att skapa en basanslutning för
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](https://experienceleague.adobe.com/docs/experience-platform/source-connectors/home.html):  [!DNL Experience Platform] gör att data kan importeras från olika källor samtidigt som du kan strukturera, mappa och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL HP Vertica] med API:t [!DNL Flow Service].
 
