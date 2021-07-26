@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Scheman
-source-git-commit: e44da39dcdd4af4ab883b3ff8f61ca2fd44adb0b
+source-git-commit: 2592d4f494d4d3dcfba63eb539498416fbdf6707
 workflow-type: tm+mt
-source-wordcount: '311'
+source-wordcount: '319'
 ht-degree: 7%
 
 ---
@@ -40,11 +40,13 @@ ht-degree: 7%
       * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
       * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
+      * [Telecom Subscription](./field-groups/profile/telecom-subscription.md)
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
    * Händelsefältgrupper {#event}
       * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
       * [Kanalinformation](./field-groups/event/channel-details.md)
       * [Handelsinformation](./field-groups/event/commerce-details.md)
+      * [Information om enhetshandel](./field-groups/event/device-trade-in-details.md)
       * [Information om slutanvändar-ID](./field-groups/event/enduserids.md)
       * [Miljöinformation](./field-groups/event/environment-details.md)
       * [IAB TCF 2.0-samtycke](./field-groups/event/iab.md)
@@ -57,6 +59,7 @@ ht-degree: 7%
    * [Handel](./data-types/commerce.md)
    * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
+   * [Valuta](./data-types/currency.md)
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
    * [Miljö](./data-types/environment.md)
@@ -85,6 +88,7 @@ ht-degree: 7%
    * [Produktlisteartikel](./data-types/product-list-item.md)
    * [Sökning](./data-types/search.md)
    * [Prenumeration](./data-types/subscription.md)
+   * [Telecom Subscription](./data-types/telecom-subscription.md)
    * [Webbinformation](./data-types/web-information.md)
    * [Interaktion via webben](./data-types/web-interaction.md)
    * [Information om webbsidor](./data-types/webpage-details.md)
