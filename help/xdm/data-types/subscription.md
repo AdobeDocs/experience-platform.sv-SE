@@ -5,9 +5,9 @@ title: Typ av prenumerationsdata
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Subscription Experience Data Model).
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: d99ddc65849a88350bf61977b399b07989554426
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '415'
 ht-degree: 8%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 8%
 | `billingPeriod` | Sträng | Varaktigheten mellan faktureringar. |
 | `billingStartDate` | Datum | Datumet då den första fakturan förfaller. Datumformatet (utan tid) ska följa standarden [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). |
 | `category` | Sträng | Huvudkategorisering på högsta nivå av den här typen av prenumeration. |
-| `chargeMethod` | Sträng | Hur faktureringen ställs in för att debitera kunden. |
+| `chargeMethod` | Sträng | Hur faktureringen är konfigurerad för att debitera kunden. |
 | `contractID` | Sträng | Unikt ID för det kontrakt som styr den här prenumerationen. |
 | `country` | Sträng | Landet som prenumerationsvillkoren och avtalsvillkoren är rotade i. |
 | `endDate` | Datum | Det datum som den aktuella prenumerationsperioden upphör. Datumformatet (utan tid) ska följa standarden [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). |
