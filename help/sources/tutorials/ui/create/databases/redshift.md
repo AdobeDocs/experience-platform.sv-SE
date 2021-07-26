@@ -6,19 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Amazon Redshift-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 4faf3200-673b-4a20-8f94-d049e800444b
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 600b216932a7d19440534c4b190fb2f3766c8785
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '445'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Amazon Redshift]-källanslutning i användargränssnittet
-
->[!NOTE]
->
->[!DNL Amazon Redshift]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en [!DNL Amazon Redshift]-källkoppling (kallas nedan &quot;[!DNL Redshift]&quot;) med hjälp av användargränssnittet i [!DNL Platform].
 
