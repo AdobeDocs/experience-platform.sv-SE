@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Azure Table Storage till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 8ebd5d77-ed1f-47e1-8212-efb6c5e84ec1
-source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
+source-git-commit: 7af79b9e0d6ed29b796ac7c98b4df1dda09f3513
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 1%
@@ -39,7 +39,7 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Azure Table Storage] m
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `connectionString` | Anslutningssträngen som används för att ansluta till en [!DNL Azure Table Storage]-instans. Anslutningssträngsmönstret för [!DNL Azure Table Storage] är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
-| Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL Azure Table Storage] är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL Azure Table Storage] är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
 
 Mer information om hur du hämtar en anslutningssträng finns i [det här [!DNL Azure Table Storage] dokumentet](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction).
 
