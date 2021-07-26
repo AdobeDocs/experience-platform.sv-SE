@@ -5,22 +5,18 @@ title: Översikt över Azure Table Storage Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Table Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 096e01b1-7e95-4e30-87de-d0976f8b438a
-source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
+source-git-commit: 7af79b9e0d6ed29b796ac7c98b4df1dda09f3513
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Azure Table Storage]-koppling
+# [!DNL Azure Table Storage] koppling
 
->[!NOTE]
->
->[!DNL Azure Table Storage]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
-
-[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. [!DNL Platform] kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasproviders är [!DNL Azure Table Storage].
+Experience Platform har stöd för att importera data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasproviders är [!DNL Azure Table Storage].
 
 ## IP-adress tillåtelselista
 
@@ -30,15 +26,15 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 >
 >[!DNL Azure Table Storage]-källkopplingen stöder för närvarande inte anslutning mellan flera regioner och plattformar. Det innebär att om din Azure-instans använder samma nätverksregion som plattformen går det inte att upprätta någon anslutning till plattformskällor. För närvarande stöds bara anslutning mellan regioner. Kontakta din kontoansvarige på Adobe för mer information.
 
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Table Storage] till [!DNL Platform] med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Table Storage] till plattformen med API:er eller användargränssnittet:
 
-## Anslut [!DNL Azure Table Storage] till [!DNL Platform] med API:er
+## Anslut [!DNL Azure Table Storage] till plattformen med API:er
 
 - [Skapa en Azure Table Storage-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/ats.md)
 - [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
-## Anslut [!DNL Azure Table Storage] till [!DNL Platform] med användargränssnittet
+## Anslut [!DNL Azure Table Storage] till plattformen med användargränssnittet
 
 - [Skapa en Azure Table Storage-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/ats.md)
 - [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
