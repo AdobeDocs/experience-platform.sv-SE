@@ -1,9 +1,9 @@
 ---
 title: Dataelementtyper för Edge-tillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen data-element för ett taggtillägg i en edge-egenskap.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
 workflow-type: tm+mt
-source-wordcount: '293'
+source-wordcount: '434'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,22 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
-En biblioteksmodul av typen data-element hämtar en datadel. Modulförfattaren bestämmer hur data hämtas. Du kan t.ex. använda en dataelementtyp för att tillåta Adobe Experience Platform-användare att hämta data från XDM-lagret eller deras anpassade datalager.
+I taggar är dataelement alias för datadelar på en webb- eller mobilsida, oavsett var dessa data finns i händelsen som servern tar emot. Ett dataelement kan refereras av regler och fungerar som en abstraktion för att komma åt dessa datadelar. När platsen för data ändras i framtiden (till exempel när händelsenyckeln som innehåller värdet ändras) kan ett enskilt dataelement konfigureras om medan alla regler som refererar till det dataelementet kan förbli oförändrade.
+
+Dataelementtyperna tillhandahålls av tillägg och tilläggsförfattaren bestämmer hur informationen hämtas. Du kan t.ex. använda en dataelementtyp för att tillåta Adobe Experience Platform-användare att hämta data från XDM-lagret eller deras anpassade datalager.
+
+Det här dokumentet beskriver hur du definierar dataelementtyper för ett kanttillägg i Adobe Experience Platform.
 
 >[!IMPORTANT]
 >
->Det här dokumentet innehåller dataelementtyper för kanttillägg. Om du utvecklar ett webbtillägg läser du i guiden om [dataelementtyper för webbtillägg](../web/data-element-types.md) i stället.
+>Om du utvecklar ett webbtillägg läser du i guiden om [dataelementtyper för webbtillägg](../web/data-element-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i taggtillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
+>I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
+
+Dataelementtyper består vanligtvis av följande:
+
+1. En vy som visas i användargränssnittet för datainsamling där användare kan ändra inställningar för dataelementet.
+2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och hämta data.
 
 Om du vill att användarna ska kunna hämta data från det anpassade datalagret kan modulen se ut som i det här exemplet.
 
