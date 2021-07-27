@@ -5,10 +5,9 @@ title: API-slutpunkt för schemalagda frågor
 topic-legacy: scheduled queries
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e99b57706bb5bdb0abaf4209a259b478d9406783
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '1010'
 ht-degree: 0%
 
 ---
@@ -125,7 +124,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över schemalagda frågo
 
 ### Skapa en ny schemalagd fråga
 
-Du kan skapa en ny schemalagd fråga genom att göra en POST-förfrågan till `/schedules`-slutpunkten.
+Du kan skapa en ny schemalagd fråga genom att göra en POST-förfrågan till `/schedules`-slutpunkten. När du skapar en schemalagd fråga i API:t kan du även se den i Frågeredigeraren. Mer information om schemalagda frågor i användargränssnittet finns i [dokumentationen för Frågeredigeraren](../ui/user-guide.md#scheduled-queries).
 
 **API-format**
 
