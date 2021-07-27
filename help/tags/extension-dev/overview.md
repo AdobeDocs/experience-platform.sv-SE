@@ -1,9 +1,9 @@
 ---
 title: Översikt över tilläggsutveckling
 description: Lär dig mer om de primära komponenterna för olika taggtilläggstyper och tilläggsutvecklingsprocessen i Adobe Experience Platform.
-source-git-commit: 421d1d0660c4c9c7280974f8a812a8f0e4f7cbea
+source-git-commit: a165f0c254885b17db734ab09bf6523175a11dfb
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '947'
 ht-degree: 0%
 
 ---
@@ -14,143 +14,82 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
-Ett av de främsta målen med Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför kärnteamet kan visa upp ytterligare funktionalitet med hjälp av taggar. Detta görs via taggtillägg. När ett tillägg har installerats på en taggegenskap av en användare, blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
+Ett av de främsta målen med taggar i Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför Adobe kan visa ytterligare funktioner på sina webbplatser och i mobilapplikationer. Detta uppnås genom taggtillägg. När ett tillägg har installerats på en taggegenskap blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
 
-I det här dokumentet beskrivs de primära komponenterna för olika tilläggstyper och det finns länkar till ytterligare dokumentation som kan hjälpa dig med tilläggsutvecklingsprocessen.
+I det här dokumentet beskrivs de primära komponenterna i ett tillägg och det finns länkar till ytterligare dokumentation som kan hjälpa dig i utvecklingsprocessen för tillägget.
 
-## Biblioteksmoduler
+## Tilläggsstruktur
 
-Biblioteksmoduler är delar av återanvändbar kod som tillhandahålls av ett tillägg som släpps ut i taggens körningsbibliotek. Beroende på om du utvecklar ett webbtillägg eller ett kanttillägg, skiljer sig de tillgängliga modultyperna och deras användningsfall åt. I följande underavsnitt finns en översikt över modulerna för varje tilläggstyp:
+Ett tillägg består av en katalog med filer. Ett tillägg består av en manifestfil, biblioteksmoduler och vyer.
 
-* [Moduler för webbtillägg](#web-modules)
-* [Moduler för kanttillägg](#edge-modules)
+### Manifest-fil
 
-### Moduler för webbtillägg {#web-modules}
+En manifestfil ([`extension.json`](./manifest.md)) måste finnas i katalogens rot. Den här filen beskriver hur tillägget ser ut och var vissa filer finns i katalogen. Manifestet fungerar på liknande sätt som en [`package.json`](https://docs.npmjs.com/files/package.json)-fil i ett [npm](https://www.npmjs.com/)-projekt.
+
+### Biblioteksmoduler
+
+Biblioteksmoduler är de filer som beskriver de olika [komponenterna](#components) som ett tillägg innehåller (d.v.s. den logik som ska genereras i taggens körningsbibliotek). Innehållet i varje biblioteksmodulfil måste följa standarden [CommonJS module](http://wiki.commonjs.org/wiki/Modules/1.1.1).
+
+Om du till exempel skapar en åtgärdstyp med namnet&quot;skicka fyr&quot; måste du ha en fil som innehåller logiken som skickar fyndet. Om du använder JavaScript kan filen kallas `sendBeacon.js`. Innehållet i den här filen kommer att skickas från taggens körningsbibliotek.
+
+Du kan placera biblioteksmodulfiler var du vill i tilläggskatalogen, förutsatt att du beskriver deras platser i `extension.json`.
+
+### Vyer
+
+En vy är en HTML-fil som kan läsas in i ett [`iframe`-element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
+
+Den viktigaste visningsfilen för alla tillägg är dess konfiguration. Mer information finns i avsnittet [tilläggskonfigurationer](#configuration).
+
+Det finns inga begränsningar för vilka bibliotek som används i vyerna. Du kan med andra ord använda jQuery, Understreck, React, Angular, Bootstrap eller andra. Vi rekommenderar dock att du gör så att tillägget ser likadant ut som användargränssnittet i datainsamlingen.
+
+Vi rekommenderar att du placerar alla vyrelaterade filer (HTML, CSS, JavaScript) i en enda underkatalog som är isolerad från biblioteksmodulfilerna. I `extension.json` kan du beskriva var den här underkatalogen för vyn finns. Plattformen hanterar sedan den här underkatalogen (och endast den här underkatalogen) från sina webbservrar.
+
+## Bibliotekskomponenter {#components}
+
+Varje tillägg definierar en uppsättning funktioner. Dessa funktioner implementeras genom att inkluderas i ett [bibliotek](../ui/publishing/libraries.md) som distribueras till din webbplats eller app. Bibliotek är en samling enskilda komponenter, inklusive villkor, åtgärder, dataelement med mera. Varje bibliotekskomponent är en del återanvändbar kod (som tillhandahålls av ett tillägg) som skickas inuti tagghjulet.
+
+Beroende på om du utvecklar ett webbtillägg eller ett kanttillägg, skiljer sig de tillgängliga typerna av komponenter och deras användningsfall åt. I underavsnitten nedan finns en översikt över vilka komponenter som är tillgängliga för varje tilläggstyp.
+
+### Komponenter för webbtillägg {#web}
 
 I webbtillägg aktiveras regler via händelser, som sedan kan köra specifika åtgärder om en viss uppsättning villkor uppfylls. Mer information finns i översikten om [modulflöde i webbtillägg](./web/flow.md).
 
-Förutom [kärnmodulerna](./web/core.md) från Adobe kan du definiera följande biblioteksmodultyper i dina webbtillägg:
+Förutom [kärnmodulerna](./web/core.md) från Adobe kan du definiera följande bibliotekskomponenter i dina webbtillägg:
 
-* [Händelsetyper](#web-event)
-* [Villkorstyper](#web-condition)
-* [Åtgärdstyper](#web-action)
-* [Dataelementtyper](#web-data-element)
-* [Delade moduler](#shared)
+* [Händelser](./web/event-types.md)
+* [Villkor](./web/condition-types.md)
+* [Instruktioner](./web/action-types.md)
+* [Dataelement](./web/data-element-types.md)
+* [Delade moduler](./web/shared.md)
 
 >[!NOTE]
 >
->Mer information om vilket format som krävs för att implementera biblioteksmoduler i webbtillägg finns i [modulformatöversikt](./web/format.md).
+>Mer information om vilket format som krävs för att implementera bibliotekskomponenter i webbtillägg finns i [modulformatöversikt](./web/format.md).
 
-#### Händelsetyper {#web-event}
+### Komponenter för kanttillägg {#edge}
 
-En regelhändelse är en aktivitet som måste inträffa innan en regel aktiveras.
+I edge-tillägg aktiveras regler via villkorskontroller, som sedan utför specifika åtgärder om dessa kontroller godkänns. Mer information finns i översikten på [edge extension flow](./edge/flow.md).
 
-Ett tillägg kan till exempel innehålla en händelsetyp av typen &quot;gest&quot; som letar efter en viss mus- eller pekgest. När gesten är klar utlöses regeln av händelselogiken.
+Du kan definiera följande bibliotekskomponenter i dina edge-tillägg:
 
-Händelsetyper består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, där användarna kan ändra inställningarna för händelsen och (2) en biblioteksmodul som skickas i biblioteket för tagghantering för att tolka inställningarna och för att se efter att en viss aktivitet inträffar.
-
-[Läs mer](./web/event-types.md)
-
-#### Villkorstyper {#web-condition}
-
-Ett regelvillkor utvärderas efter att en regelhändelse har inträffat. Alla villkor måste returnera true för att regeln ska kunna fortsätta bearbetningen. Undantaget är när användare uttryckligen placerar villkor i en &quot;undantagsbucket&quot;, i vilket fall alla villkor i bucket måste returnera false för att regeln ska fortsätta bearbetningen.
-
-Ett tillägg kan till exempel innehålla villkorstypen &quot;viewport contains&quot;, där användaren kan ange en CSS-väljare. När villkoret utvärderas på klientens webbplats kan tillägget hitta element som matchar CSS-väljaren och returnera om något av dem finns i användarens visningsruta.
-
-Villkorstyperna består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, där användarna kan ändra inställningarna för villkoret, och (2) en biblioteksmodul som skickas från biblioteket för tagghantering för att tolka inställningarna och utvärdera ett villkor.
-
-[Läs mer](./web/condition-types.md)
-
-#### Åtgärdstyper {#web-action}
-
-En regelåtgärd är en åtgärd som utförs efter att regelhändelsen har inträffat och villkoren har godkänts i utvärderingen.
-
-Ett tillägg kan till exempel innehålla en&quot;show support chat&quot;-åtgärdstyp som kan visa en supportchattdialogruta för att hjälpa användare som kan ha problem med utcheckningen.
-
-Åtgärdstyperna består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, som gör att användare kan ändra inställningar för åtgärden och (2) en biblioteksmodul som skickas i biblioteket för tagghantering för att tolka inställningarna och utföra en åtgärd.
-
-[Läs mer](./web/action-types.md)
-
-#### Dataelementtyper {#web-data-element}
-
-Dataelement är i princip alias för datadelar på en sida, oavsett om dessa data hittas i frågesträngsparametrar, cookies, DOM-element eller någon annan plats. Ett dataelement kan refereras av regler och fungerar som en abstraktion för att komma åt dessa datadelar. När platsen för data ändras i framtiden (till exempel från ett DOM-elements `innerHTML` till en JavaScript-variabels värde), kan ett enskilt dataelement konfigureras om medan alla regler som refererar till det dataelementet kan förbli oförändrade.
-
-Med en dataelementtyp kan användarna konfigurera dataelement så att de får tillgång till en datadel på ett visst sätt. Ett tillägg kan t.ex. innehålla ett dataelement av typen&quot;lokal lagringspost&quot;, där användaren kan ange ett lokalt lagringsobjektnamn. När en regel refererar till dataelementet kan tillägget söka efter det lokala lagringsobjektets värde med hjälp av det lokala lagringsobjektets namn som användaren angav när dataelementet konfigurerades.
-
-Dataelementtyper består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, där användarna kan ändra inställningarna för dataelementet, och (2) en biblioteksmodul som skickas i biblioteket för tagghantering för att tolka inställningarna och hämta datadelar.
-
-[Läs mer](./web/data-element-types.md)
-
-#### Delade moduler {#shared}
-
-En delad modul är en modul som visas av ett tillägg och som ska användas av ett annat. Detta kan vara en mycket användbar mekanism för kommunikation mellan tillägg. Tillägg A kan till exempel läsa in en datadel asynkront och göra den tillgänglig för tillägg B via ett [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
-
-Delade moduler inkluderas i biblioteket även när de aldrig anropas inifrån andra tillägg. Om du inte vill öka biblioteksstorleken i onödan bör du vara försiktig med vad du visar som en delad modul.
-
-Delade moduler har ingen vykomponent.
-
-[Läs mer](./web/shared.md)
-
-### Moduler för kanttillägg {#edge-modules}
-
-I edge-tillägg aktiveras regler via villkorskontroller, som sedan utför specifika åtgärder om dessa kontroller godkänns. Mer information finns i översikten om [modulflöde i kanttillägg](./edge/flow.md).
-
-Du kan definiera egna biblioteksmoduler i dina edge-tillägg. Dessa kan kategoriseras i följande typer:
-
-* [Villkorstyper](#condition)
-* [Åtgärdstyper](#action)
-* [Dataelementtyper](#data-element)
+* [Villkor](./edge/condition-types.md)
+* [Instruktioner](./edge/action-types.md)
+* [Dataelement](./edge/data-element-types.md)
 
 >[!NOTE]
 >
 >Mer information om vilket format som krävs för implementering av biblioteksmoduler i edge-tillägg finns i [modulformatöversikt](./edge/format.md).
 
-#### Villkorstyper {#condition}
+## Tilläggskonfiguration {#configuration}
 
-Ett regelvillkor utvärderas efter att en regelhändelse har inträffat. Alla villkor måste returnera true för att regeln ska kunna fortsätta bearbetningen. Undantaget är när användare uttryckligen placerar villkor i en &quot;undantagsbucket&quot;, i vilket fall alla villkor i bucket måste returnera false för att regeln ska fortsätta bearbetningen.
+Ett tilläggs konfiguration syftar på det sätt som de samlar in globala inställningar från en användare. Konfigurationen består av en visningskomponent som exporterar och genererar inställningar i taggens körningsbibliotek som ett enkelt objekt.
 
-Ett tillägg kan till exempel innehålla villkorstypen &quot;viewport contains&quot;, där användaren kan ange en CSS-väljare. När villkoret utvärderas på klientens webbplats kan tillägget hitta element som matchar CSS-väljaren och returnera om något av dem finns i användarens visningsruta.
+Ta till exempel ett tillägg som gör att användaren kan skicka en fyr med en&quot;Skicka fyr&quot;-åtgärd, och fyren måste alltid innehålla ett konto-ID. I stället för att fråga användarna om ett konto-ID varje gång de konfigurerar en&quot;Skicka signal&quot;-åtgärd, bör tillägget be om konto-ID en gång från tilläggskonfigurationsvyn. Varje gång en beacon ska skickas kan åtgärden&quot;Skicka beacon&quot; hämta konto-ID:t från tilläggskonfigurationen och lägga till det i beacon.
 
-Villkorstyperna består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, där användarna kan ändra inställningarna för villkoret, och (2) en biblioteksmodul som skickas från biblioteket för tagghantering för att tolka inställningarna och utvärdera ett villkor.
+När användare installerar ett tillägg för en egenskap i användargränssnittet visas tilläggskonfigurationsvyn, som de måste slutföra för att slutföra installationen.
 
-[Läs mer](./web/condition-types.md)
+Mer information finns i guiden om [tilläggskonfigurationer](./configuration.md).
 
-#### Åtgärdstyper {#action}
+## Skicka tillägg
 
-En regelåtgärd är något som utförs efter att regelvillkoren har godkänts i utvärderingen.
-
-Ett tillägg kan till exempel innehålla en&quot;show support chat&quot;-åtgärdstyp som kan visa en supportchattdialogruta för att hjälpa användare som kan ha problem med utcheckningen.
-
-Åtgärdstyperna består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, som gör att användare kan ändra inställningar för åtgärden och (2) en biblioteksmodul som skickas i biblioteket för tagghantering för att tolka inställningarna och utföra en åtgärd.
-
-[Läs mer](./web/action-types.md)
-
-#### Dataelementtyper {#data-element}
-
-Dataelement är i stort sett alias för datadelar på en sida, oavsett var dessa data finns i händelsen som servern tar emot. Ett dataelement kan refereras av regler och fungerar som en abstraktion för att komma åt dessa datadelar. När platsen för data ändras i framtiden (till exempel den händelsenyckel som innehåller värdet ändras) kan ett enskilt dataelement konfigureras om medan alla regler som refererar till det dataelementet kan förbli oförändrade.
-
-Dataelementtyper består vanligtvis av (1) en vy som visas i användargränssnittet för datainsamling, där användarna kan ändra inställningarna för dataelementet, och (2) en biblioteksmodul som skickas i biblioteket för tagghantering för att tolka inställningarna och hämta datadelar.
-
-[Läs mer](./web/data-element-types.md)
-
-## Tilläggskonfiguration
-
-Ett tilläggs konfiguration syftar på det sätt som de samlar in globala inställningar från en användare. Ta till exempel ett tillägg som gör att användaren kan skicka en fyr med en Skicka fyr-åtgärd och fyren alltid måste innehålla ett konto-ID. Vi vill inte besvära användare genom att fråga dem om konto-ID varje gång de konfigurerar en Skicka Beacon-åtgärd. Tillägget ska i stället be om konto-ID en gång från tilläggskonfigurationsvyn. Varje gång en beacon ska skickas kan åtgärdsbiblioteksmodulen Skicka beacon hämta konto-ID:t från tilläggskonfigurationen och lägga till det i beacon.
-
-När användare installerar ett tillägg till en taggegenskap visas tilläggskonfigurationsvyn. De kan inte slutföra installationen av tillägget utan att slutföra tilläggskonfigurationen.
-
-Tilläggskonfigurationen består av en visningskomponent som exporterar inställningar som sedan skickas i taggens körningsbibliotek som ett enkelt objekt.
-
-[Läs mer](./configuration.md)
-
-## Tilläggsstruktur
-
-Ett tillägg består av en katalog med filer. Här följer en översikt över hur dessa filer ska struktureras. Information om filinnehåll finns i andra avsnitt.
-
-En [`extension.json`](./manifest.md)-fil måste finnas i katalogens rot. Den här filen beskriver bland annat hur tillägget ser ut och var vissa filer finns i katalogen. Detta liknar en [`package.json`](https://docs.npmjs.com/files/package.json)-fil i [npm](https://www.npmjs.com/).
-
-Varje biblioteksmodul (den logik som ska skickas i taggens körningsbibliotek) måste vara en egen fil vars innehåll följer [CommonJS-modulstandarden](http://wiki.commonjs.org/wiki/Modules/1.1.1). Om vi till exempel skapar en&quot;skicka fyr&quot;-åtgärdstyp måste vi ha en fil som innehåller den logik som skickar fyren. Innehållet i den här filen kommer att skickas från taggens körningsbibliotek. Du kan kalla det `sendBeacon.js`. Platsen för filen i katalogen är inte viktig eftersom `extension.json` beskriver var den finns.
-
-Varje vy måste vara en HTML-fil som kan läsas in i en iframe i taggprogrammet. Vyn måste innehålla ett skript från taggar och följa ett litet API för att kunna kommunicera med programmet. Det finns inga begränsningar för vilka bibliotek som används i vyerna. Du kan med andra ord använda jQuery, Understreck, React, Angular, Bootstrap eller andra bibliotek. Vi hoppas dock att du kommer att få tillägget att se likadant ut som programmet.
-
-Vi rekommenderar att du placerar alla vyrelaterade filer (HTML, CSS, JavaScript) i en enda underkatalog som är isolerad från biblioteksmodulfilerna. I `extension.json` beskriver du var den här underkatalogen för vyn finns. Plattformen hanterar sedan den här underkatalogen (och endast den här underkatalogen) från sina webbservrar.
+När du är klar med att skapa tillägget kan du skicka in det så att det visas i tilläggskatalogen i Platform. Mer information finns i översikten över överföringsprocessen för [tillägg](./submit/overview.md).
