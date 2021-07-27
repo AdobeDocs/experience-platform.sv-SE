@@ -1,9 +1,9 @@
 ---
 title: Villkorstyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen condition för ett taggtillägg i en webbegenskap.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,24 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
-En biblioteksmodul för en villkorstyp har ett mål: utvärdera om något är sant eller falskt. Det som utvärderas är upp till dig.
+I en regel utvärderas ett villkor efter att en händelse har inträffat. Alla villkor måste returnera true för att regeln ska kunna fortsätta bearbetningen. Undantaget är när användare uttryckligen placerar villkor i en&quot;undantagsbucket&quot;, vilket innebär att alla villkor i bucket måste returnera false för att regeln ska fortsätta bearbetningen.
+
+Ett tillägg kan till exempel innehålla villkorstypen &quot;viewport contains&quot;, där användaren kan ange en CSS-väljare. När villkoret utvärderas på klientens webbplats kan tillägget hitta element som matchar CSS-väljaren och returnera om något av dem finns i användarens visningsruta.
+
+I det här dokumentet beskrivs hur du definierar villkorstyper för ett webbtillägg i Adobe Experience Platform.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller villkorstyper för webbtillägg. Om du utvecklar ett kanttillägg läser du i guiden för [villkorstyper för kanttillägg](../edge/condition-types.md) i stället.
+>Om du utvecklar ett kanttillägg läser du i guiden för [villkorstyper för kanttillägg](../edge/condition-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i taggtillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
+>I det här dokumentet förutsätts det att du känner till biblioteksmoduler och hur de är integrerade i webbtillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
+
+Villkorstyperna består vanligtvis av följande:
+
+1. En [vy](./views.md) i användargränssnittet för datainsamling som gör att användare kan ändra inställningarna för villkoret.
+2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och utvärdera ett villkor.
+
+En biblioteksmodul av typen condition har ett mål: utvärdera om något är sant eller falskt. Det som utvärderas är upp till dig.
 
 Om du till exempel vill utvärdera om användaren finns på värden `example.com` kan din modul se ut så här:
 
