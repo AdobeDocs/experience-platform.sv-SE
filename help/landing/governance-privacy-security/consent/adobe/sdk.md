@@ -3,9 +3,9 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform med hjälp av standarden Adobe 2.0.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 8b58bb60ae40f224433f3513060f4ae7ddc7d5b3
 workflow-type: tm+mt
-source-wordcount: '1205'
+source-wordcount: '1253'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,15 @@ ht-degree: 0%
 Med Adobe Experience Platform Web SDK kan du hämta kundens medgivandesignaler som genererats av CMP (Consent Management Platforms) och skicka dem till Adobe Experience Platform när en händelse om ändring av samtycke inträffar.
 
 **SDK:n samverkar inte med några CMP:er som finns i kartongen**. Det är upp till dig att bestämma hur du ska integrera SDK i din webbplats, lyssna efter medgivandeändringar i CMP och anropa lämpligt kommando. Det här dokumentet innehåller allmän vägledning om hur du integrerar din CMP med Platform Web SDK.
+
+>[!NOTE]
+>
+>Den här guiden går igenom stegen för att integrera SDK via ett taggtillägg i användargränssnittet för datainsamling. Om du vill använda den fristående versionen av SDK i stället, se följande dokument:
+>
+>* [Konfigurera ett datastream](../../../../edge/fundamentals/datastreams.md)
+* [Installera SDK](../../../../edge/fundamentals/installing-the-sdk.md)
+* [Konfigurera SDK för medgivandekommandon](../../../../edge/consent/supporting-consent.md)
+
 
 ## Förutsättningar
 
@@ -44,7 +53,7 @@ När du har skapat en ny konfiguration eller valt en befintlig som du vill redig
 När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och fortsätter att följa eventuella ytterligare uppmaningar för att slutföra konfigurationen.
 
 
-## Installera och konfigurera Platform Web SDK-tillägget
+## Installera och konfigurera Platform Web SDK
 
 När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på din Platform launch-egenskap väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
 
@@ -86,7 +95,7 @@ När dataelementet har skapats går du tillbaka till konfigurationssidan för We
 
 När du har konfigurerat tillägget kan det integreras med webbplatsen. Se [publiceringsguiden](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html) i Platforma launchens dokumentation för mer information om hur du distribuerar din uppdaterade biblioteksversion.
 
-## Kommandon för att ändra samtycke
+## Kommandon för att ändra samtycke {#commands}
 
 När du har integrerat SDK-tillägget på webbplatsen kan du börja använda kommandot Platform Web SDK `setConsent` för att skicka data om samtycke till plattformen.
 
@@ -96,8 +105,7 @@ Det finns två scenarier där `setConsent` ska anropas på din plats:
 1. Som en del av en CMP-krok eller händelseavlyssnare som upptäcker ändringar i medgivandeinställningarna
 
 >[!NOTE]
->
->En introduktion till den vanliga syntaxen för Platform SDK-kommandon finns i dokumentet om [utförande av kommandon](../../../../edge/fundamentals/executing-commands.md).
+En introduktion till den vanliga syntaxen för Platform SDK-kommandon finns i dokumentet om [utförande av kommandon](../../../../edge/fundamentals/executing-commands.md).
 
 Kommandot `setConsent` förväntar sig två argument:
 
@@ -138,8 +146,7 @@ alloy("setConsent", {
 | `value` | Kundens uppdaterade medgivandeinformation, som tillhandahålls som ett XDM-objekt som följer strukturen i den profilaktiverade datauppsättningens medgivandefält. |
 
 >[!NOTE]
->
->Om du använder andra medgivandestandarder i kombination med `Adobe` (till exempel `IAB TCF`) kan du lägga till ytterligare objekt i `consent`-arrayen för varje standard. Varje objekt måste innehålla lämpliga värden för `standard`, `version` och `value` för den standard de representerar.
+Om du använder andra medgivandestandarder i kombination med `Adobe` (till exempel `IAB TCF`) kan du lägga till ytterligare objekt i `consent`-arrayen för varje standard. Varje objekt måste innehålla lämpliga värden för `standard`, `version` och `value` för den standard de representerar.
 
 Följande JavaScript innehåller ett exempel på en funktion som hanterar ändringar av medgivandeinställningar på en webbplats, som kan användas som återanrop i en händelseavlyssnare eller en CMP-krok:
 
