@@ -3,9 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: c99bc94226b296463e92340723d1318e0775f6a7
+source-git-commit: 1d2f1651dc9d9ab41507e65fd4b2bb84e9660187
 workflow-type: tm+mt
-source-wordcount: '1208'
+source-wordcount: '1241'
 ht-degree: 3%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 3%
 # Använda [!DNL Adobe Target] med [!DNL Platform Web SDK]
 
 [!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras  [!DNL Adobe Target] i webbkanalen. Du kan använda en WYSIWYG-redigerare som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC) eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
+
+>[!IMPORTANT]
+>
+>[Adobe Target-dokumentationen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/aep-implementation/aep-web-sdk.html?lang=en) innehåller ämnen som innehåller information som är specifik för Platform Web SDK vad gäller Target-funktioner.
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
