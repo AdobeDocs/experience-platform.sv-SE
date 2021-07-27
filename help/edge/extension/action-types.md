@@ -4,9 +4,9 @@ description: Läs mer om de olika åtgärdstyperna i Adobe Experience Platform W
 solution: Experience Platform
 feature: Web SDK
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 17ebf50965136f2c075f21eb3ecdcb1ce6da0b7d
+source-git-commit: 53864097af7d3278f56a3f23186de4eb405bcb51
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '572'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Det finns några andra fält i åtgärdstypen Skicka händelse som också kan va
 
 - **Typ:** I det här fältet kan du ange en händelsetyp som ska registreras i ditt XDM-schema. Mer information om standardhändelsetyperna finns i [dokumentationen](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api).
 - **Data:** Data som inte matchar ett XDM-schema kan skickas med det här fältet. Det här fältet är användbart om du försöker uppdatera en Adobe Target-profil eller skicka Target Recommendations-attribut. Se till exempel vår [dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en).
-- **Sammanfognings-ID:** Om du vill ange ett  [sammanfognings-ID ](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/merging-event-data.html?lang=en#fundamentals) för händelsen kan du göra det i det här fältet. Observera att lösningarna längre fram i kedjan inte kan sammanfoga dina händelsedata just nu.
+- **Sammanfognings-ID:** Om du vill ange ett sammanfognings-ID för händelsen kan du göra det i det här fältet. Observera att lösningarna längre fram i kedjan inte kan sammanfoga dina händelsedata just nu.
 - **Datauppsättnings-ID:** Om du behöver skicka data till en annan datauppsättning än den som du angav i din datastream kan du ange detta datauppsättnings-ID här.
 - **Dokumentet tas bort:** Markera  **[!UICONTROL Document will unload]** kryssrutan om du vill kontrollera att händelserna når servern även om användaren navigerar bort från sidan. Detta gör att händelser kan nå servern, men svaren ignoreras.
 - **Återge beslut om visuell personalisering:** Markera  **[!UICONTROL Render visual personalization decisions]** kryssrutan om du vill återge anpassat innehåll på sidan. Du kan också ange beslutsomfattningar om det behövs. Mer information om återgivning av anpassat innehåll finns i [personaliseringsdokumentationen](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/rendering-personalization-content.html?lang=en#automatically-rendering-content).
