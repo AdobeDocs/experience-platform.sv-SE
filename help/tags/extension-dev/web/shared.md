@@ -1,9 +1,9 @@
 ---
 title: Delade moduler i webbtillägg
 description: Lär dig hur du definierar delade biblioteksmoduler för webbtillägg i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '271'
 ht-degree: 0%
 
 ---
@@ -14,12 +14,18 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
-En delad modul är en mekanism som du kan använda för att kommunicera med andra tillägg. I JavaScript-implementeringar instansieras alla delade moduler med metoden [`getSharedModule`](../turbine.md#shared) som finns i den kostnadsfria variabeln `turbine`.
+En delad modul är en mekanism som du kan använda för att kommunicera med andra tillägg. Tillägg A kan till exempel läsa in en datadel asynkront och göra den tillgänglig för tillägg B via ett [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-När du utvecklar ett eget taggtillägg kan du definiera de delade moduler som du vill att det ska innehålla. Du kan till exempel skapa en modul som läser in ett användar-ID asynkront och sedan delar användar-ID med andra tillägg via ett [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise):
+I JavaScript-implementeringar instansieras alla delade moduler med metoden [`getSharedModule`](../turbine.md#shared) som finns i den kostnadsfria variabeln `turbine`.
+
+Delade moduler inkluderas i taggbibliotek även när de aldrig anropas inifrån andra tillägg. Om du inte vill öka biblioteksstorleken i onödan bör du vara försiktig med vad du visar som en delad modul.
+
+Delade moduler har ingen vykomponent.
+
+När du utvecklar ett eget taggtillägg kan du definiera de delade moduler som du vill att det ska innehålla. Du kan till exempel skapa en modul som läser in ett användar-ID asynkront och sedan delar användar-ID med andra tillägg via ett löfte:
 
 ```javascript
-var userIdPromise = new Promise(/* load user id, then resolve promise */);
+var userIdPromise = new Promise(/* load user ID, then resolve promise */);
 module.exports = userIdPromise;
 ```
 
