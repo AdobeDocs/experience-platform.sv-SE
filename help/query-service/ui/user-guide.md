@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågeredigeraren
 topic-legacy: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 483bcea231ed5f25c76771d0acba7e0c62dfed16
+source-git-commit: 7eaa808ecc644fdb9bc6b3fe1347c7651d54a33b
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1533'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,57 @@ När du visar en fråga i [!DNL Query Editor] innehåller panelen **[!UICONTROL 
 
 ![Bild](../images/ui/query-editor/query-details.png)
 
-På den här panelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan och visa SQL-koden i ett format som är enkelt att kopiera på fliken **[!UICONTROL SQL Query]**. På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Om du vill generera en datauppsättning väljer du **[!UICONTROL Output Dataset]**. Dialogrutan **[!UICONTROL Output Dataset]** visas. Ange ett namn och en beskrivning och välj sedan **[!UICONTROL Run Query]**. Den nya datauppsättningen visas på fliken **[!UICONTROL Datasets]** i [!DNL Query Service]-användargränssnittet på [!DNL Platform].
+På den här panelen kan du generera en utdatamängd direkt från användargränssnittet, ta bort eller namnge den visade frågan och lägga till ett schema i frågan.
+
+På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Om du vill generera en datauppsättning väljer du **[!UICONTROL Output Dataset]**. Dialogrutan **[!UICONTROL Output Dataset]** visas. Ange ett namn och en beskrivning och välj sedan **[!UICONTROL Run Query]**. Den nya datauppsättningen visas på fliken **[!UICONTROL Datasets]** i [!DNL Query Service]-användargränssnittet på [!DNL Platform].
+
+### Schemalagda frågor {#scheduled-queries}
+
+>[!NOTE]
+>
+> Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Dessutom kan du **inte** lägga till ett schema i en parametriserad fråga.
+
+Om du vill lägga till ett schema i en fråga väljer du **[!UICONTROL Add schedule]**.
+
+![Bild](../images/ui/query-editor/add-schedule.png)
+
+Sidan **[!UICONTROL Schedule details]** visas. På den här sidan kan du välja frekvens för den schemalagda frågan, datum som den schemalagda frågan ska köras samt vilken datamängd som frågan ska exporteras till.
+
+![Bild](../images/ui/query-editor/schedule-details.png)
+
+Du kan välja följande alternativ för **[!UICONTROL Frequency]**:
+
+- **[!UICONTROL Hourly]**: Den schemalagda frågan kommer att köras varje timme för den datumperiod du har valt.
+- **[!UICONTROL Daily]**: Den schemalagda frågan kommer att köras var X:e dag vid den tidpunkt och den datumperiod du har valt. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+- **[!UICONTROL Weekly]**: Den valda frågan körs på de veckodagar, tidpunkter och datumperioder som du har valt. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+- **[!UICONTROL Monthly]**: Den valda frågan kommer att köras varje månad på den dag, tid och den datumperiod du har valt. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+- **[!UICONTROL Yearly]**: Den valda frågan kommer att köras varje år på den dag, månad, tid och den datumperiod du har valt. Observera att den valda tiden är i **UTC** och inte i din lokala tidszon.
+
+För datauppsättningen kan du välja att antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
+
+>[!IMPORTANT]
+>
+> Eftersom du använder en befintlig eller skapar en ny datauppsättning måste du **inte** inkludera antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av frågan, eftersom datauppsättningarna redan är angivna. Om du tar med antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av dina schemalagda frågor uppstår ett fel.
+
+När du har bekräftat alla dessa uppgifter väljer du **[!UICONTROL Save]** för att skapa ett schema.
+
+Sidan med frågeinformation visas igen och visar nu information om det nyligen skapade schemat, inklusive schema-ID, själva schemat och schemats utdatamängd. Du kan använda schema-ID för att söka efter mer information om körningarna av själva den schemalagda frågan. Mer information finns i [guiden Slutpunkter för schemalagd frågekörning](../api/runs-scheduled-queries.md).
+
+>[!NOTE]
+>
+> Du kan bara schemalägga en **frågemall** med användargränssnittet. Om du vill lägga till fler scheman i en frågemall måste du använda API:t. Om ett schema redan har lagts till med API:t kommer du att **inte** lägga till ytterligare scheman med hjälp av gränssnittet. Om flera scheman redan är kopplade till en frågemall visas endast det äldsta schemat. Läs [slutpunktshandboken för schemalagda frågor](../api/scheduled-queries.md) om du vill lära dig hur du lägger till scheman med API:t.
+>
+> Du bör dessutom uppdatera sidan om du vill vara säker på att du har det senaste läget för det schema som du visar.
+
+#### Ta bort ett schema
+
+Du kan ta bort ett schema genom att välja **[!UICONTROL Delete a schedule]**.
+
+![Bild](../images/ui/query-editor/delete-schedule.png)
+
+>[!IMPORTANT]
+>
+> Om du vill ta bort ett schema för en fråga måste du först inaktivera schemat.
 
 ### Sparar frågor
 
