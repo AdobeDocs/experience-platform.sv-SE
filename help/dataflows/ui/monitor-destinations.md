@@ -6,7 +6,7 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 029e990f5b30713ceea5da80ace8002368ac5652
+source-git-commit: 96855ec4e42e7adb17dc36a734561f63f926693b
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 0%
@@ -117,7 +117,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 ![](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
-## Kontrollpanel för målplatser
+## Kontrollpanel för målplatser {#monitoring-destinations-dashboard}
 
 Om du vill komma åt kontrollpanelen [!UICONTROL Monitoring] väljer du **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)
 ) i den vänstra navigeringen. Välj [!UICONTROL Destinations] på sidan [!UICONTROL Monitoring]. Kontrollpanelen [!UICONTROL Monitoring] innehåller mått och information om målkörningsjobben.
