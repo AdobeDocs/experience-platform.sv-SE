@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: a28dc64cfe7f352a023aa2a5bd1156307bbad39f
+source-git-commit: 1b750f0dc51983251d39515de15cd0286f5b51c1
 workflow-type: tm+mt
-source-wordcount: '2951'
+source-wordcount: '2854'
 ht-degree: 0%
 
 ---
@@ -162,7 +162,7 @@ Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna s
 
    >[!IMPORTANT]
    >
-   >Alternativet att exportera filer vid en viss tidpunkt finns för närvarande i betaversion och är endast tillgängligt för ett visst antal kunder.<br> <br> På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad.  <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
 
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
@@ -199,19 +199,15 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
 
    * När du väljer **[!UICONTROL Hourly]** använder du **[!UICONTROL Every]**-väljaren för att välja mellan alternativen **[!UICONTROL 3]**, **[!UICONTROL 6]**, **[!UICONTROL 8]** och **[!UICONTROL 12]** timme.
 
-      >[!IMPORTANT]
-      >
-      >Alternativet att exportera inkrementella filer var 3, 6, 8 eller 12:e timme finns för närvarande i betaversionen och är bara tillgängligt för ett visst antal kunder. Kunder som inte är beta kan exportera inkrementella filer en gång om dagen.
 
-
-2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
+1. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
 
    >[!IMPORTANT]
    >
-   >Alternativet att välja tid på dagen för exporten är bara tillgängligt för ett visst antal kunder. <br> <br> På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad.  <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
 
-3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
-4. Välj **[!UICONTROL Create]** om du vill spara schemat.
+1. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
+1. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
 >[!IMPORTANT]
 >
@@ -302,10 +298,6 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](../../destina
 >title="Om dedupliceringsnycklar"
 >abstract="Eliminera flera poster med samma profil i exportfilerna genom att välja en dedupliceringsnyckel. Välj ett namnutrymme eller upp till två XDM-schemaattribut som en dedupliceringsnyckel. Om du inte väljer en dedupliceringsnyckel kan det leda till dubblettprofilposter i exportfilerna."
 >additional-url="http://www.adobe.com/go/destinations-deduplication-keys-en" text="Läs mer i dokumentationen"
-
->[!IMPORTANT]
->
->Alternativet att använda dedupliceringsnycklar finns för närvarande i betaversion och är bara tillgängligt för ett visst antal kunder.
 
 Avdupliceringsnycklar eliminerar möjligheten att ha flera poster med samma profil i en exportfil.
 
