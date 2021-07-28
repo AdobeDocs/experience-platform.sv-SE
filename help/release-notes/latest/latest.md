@@ -1,46 +1,51 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform för 30 juni 2021.
+description: Versionsinformation för Experience Platform för 28 juli 2021.
 doc-type: release notes
-last-update: June 30, 2021
+last-update: July 28, 2021
 author: ens60013
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: fc916f87bf07e5eabf7d1681059406e2fea362e0
+source-git-commit: dc01e03975fdda375b31f44edc8459fa32b5a61b
 workflow-type: tm+mt
-source-wordcount: '530'
-ht-degree: 2%
+source-wordcount: '387'
+ht-degree: 3%
 
 ---
 
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 30 juni 2021**
+**Releasedatum: 28 juli 2021**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Kundprofil i realtid](#profile)
-- [Sandlådor](#sandboxes)
+- [Datavetenskapens arbetsyta](#dsw)
+- [Experience Data Model (XDM)](#xdm)
 - [Källor](#sources)
 
-## Kundprofil i realtid {#profile}
+## Datavetenskapens arbetsyta {#dsw}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] gör att ni kan sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar.
 
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Uppdateringar av arbetsflöde för sammanslagningsprinciper | När användare skapar och uppdaterar sammanfogningsprinciper i användargränssnittet kan de nu förhandsgranska 20 exempelprofiler baserat på unionsschemat. Detta gör att användarna kan förhandsgranska hur kundprofiler kommer att se ut innan de sparar sammanfogningspolicykonfigurationer. Mer information finns i [användargränssnittshandboken för sammanfogningsprinciper](../../profile/merge-policies/ui-guide.md). |
-| Rapport om identitetsöverlappning | Rapporten om identitetsöverlappning ingår i kundprofils-API:t i realtid och ger synlighet i profilbutikens komposition. Med slutpunkten `/previewsamplestatus` visar rapporten om identitetsöverlappning de identiteter som bidrar mest till adresserbara målgrupper. Mer information finns i [API-slutpunktshandboken för förhandsgranskning av exempelstatus](../../profile/api/preview-sample-status.md). |
-
-Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, får du om du börjar med att läsa översikten över kundprofilen i realtid](../../profile/home.md).[
-
-## Sandlådor {#sandboxes}
-
-Adobe Experience Platform är utvecklat för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+**Nya funktioner**
 
 | Funktion | Beskrivning |
-| ------- | ----------- |
-| Förbättringar av återställning av produktionssandlåda | Du kan nu återställa produktionssandlådor som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service. Detta kan göras antingen via gränssnittet eller med de nya parametrarna `validationOnly` och `ignoreWarnings` i API:t. Se självstudiekurserna för [återställning av en sandlåda i gränssnittet](../../sandboxes/ui/user-guide.md) och [återställning av en sandlåda i API](../../sandboxes/api/sandboxes.md) för mer information. |
+| --- | --- |
+| Uppdateringar för bibliotek och operativsystem | Data Science Workspace har gjort betydande biblioteks- och operativsystemsuppdateringar för att förbättra funktionaliteten och användbarheten. Detta inkluderar JupyterLab 1.2.20, Python 3.7, Pandor 1.2.4, Tensorflow 2.4.1 med stöd för CUDA 11 och CUDNN 8 med mera. Om du vill lära dig hur du visar tillgängliga bibliotek i JupyterLab går du till avsnittet [bibliotek som stöds](../../data-science-workspace/jupyterlab/overview.md#supported-libraries) i översiktsdokumentationen för JupyterLab-anteckningsböcker. |
+
+Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för data i form av scheman, som gör att alla program kan kommunicera med plattformstjänster.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Telekommunikationsfilter | När du lägger till fältgrupper i ett schema i användargränssnittet kan du nu filtrera efter telekombranschen. Se [Egenrelationsdiagram (ERD)](../../xdm/schema/industries/telecom.md) för telekombranschen för att se en rekommenderad datamodell för användning inom telekom. |
+
+Mer allmän information om XDM i Platform finns i [XDM-systemöversikt](../../xdm/home.md).
 
 ## Källor {#sources}
 
@@ -50,7 +55,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| [!DNL Veeva CRM] (Beta) | Nu kan du ansluta [!DNL Veeva CRM] till Experience Platform med hjälp av API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Veeva CRM] anslutningsöversikten](../../sources/connectors/crm/veeva.md). |
-| Stöd för övervakning av strömmande dataflöden | Nu kan du använda källgränssnittets arbetsyta för att övervaka datainmatningsaktiviteter från direktuppspelningskällor med motsvarande mått och status. Mer information finns i självstudiekursen om [övervakning av dataflöden för direktuppspelning](../../sources/tutorials/ui/monitor-streaming.md). |
+| Beta-källor som går över till GA | Följande källor har befordrats från beta till GA: <ul><li>[[!DNL Amazon Redshift]](../../sources/connectors/databases/redshift.md)</li><li>[[!DNL Azure Table Storage]](../../sources/connectors/databases/ats.md)</li><li>[[!DNL PayPal]](../../sources/connectors/payments/paypal.md)</li></ul> |
+| [!DNL Salesforce Marketing Cloud] (Beta) | Nu kan du ansluta [!DNL Salesforce Marketing Cloud] till Experience Platform med hjälp av API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Salesforce Marketing Cloud] anslutningsöversikten](../../sources/connectors/marketing-automation/salesforce-marketing-cloud.md). |
 
 Mer information om källor finns i [Källor - översikt](../../sources/home.md).
