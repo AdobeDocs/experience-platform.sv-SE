@@ -1,24 +1,33 @@
 ---
 title: Händelsetyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av händelsetyp för ett webbtillägg i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 5a6549577c61817f6fe239e1e9e47ab06d2bc807
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
 
-# Händelsetyper
+# Händelsetyper för webbtillägg
 
 >[!NOTE]
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
-En biblioteksmodul för en händelsetyp är utformad för att identifiera när en aktivitet inträffar och sedan anropa en funktion för att utlösa en associerad regel. Händelsen som identifieras kan anpassas. Kan det se när en användare gör en viss gest, rullar snabbt eller interagerar med något?
+I en taggregel är en händelse en aktivitet som måste inträffa för att en regel ska kunna utlösas. Ett webbtillägg kan till exempel innehålla en händelsetyp av typen&quot;gest&quot; som letar efter en viss mus- eller pekgest. När gesten är klar utlöses regeln av händelselogiken.
+
+En biblioteksmodul för en händelsetyp är utformad för att identifiera när en aktivitet inträffar och sedan anropa en funktion för att utlösa en associerad regel. Händelsen som identifieras kan anpassas. Kan till exempel identifiera när en användare gör en viss gest, rullar snabbt eller interagerar med något.
+
+Det här dokumentet beskriver hur du definierar händelsetyper för ett webbtillägg i Adobe Experience Platform.
 
 >[!NOTE]
 >
->I det här dokumentet förutsätts det att du känner till biblioteksmoduler och hur de är integrerade i taggtillägg. I översikten [biblioteksmodulens formatering](./format.md) finns en introduktion till implementeringen innan du återgår till den här guiden.
+>I det här dokumentet förutsätts det att du känner till biblioteksmoduler och hur de är integrerade i webbtillägg. I översikten [biblioteksmodulens formatering](./format.md) finns en introduktion till implementeringen innan du återgår till den här guiden.
+
+Händelsetyper definieras av tillägg och består vanligtvis av följande:
+
+1. En [vy](./views.md) i användargränssnittet för datainsamling som gör att användare kan ändra inställningar för händelsen.
+2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och för att bevaka att en viss aktivitet inträffar.
 
 `module.exports` acceptera både  `settings` och  `trigger` parametrar. Detta gör att händelsetypen kan anpassas.
 
@@ -95,9 +104,9 @@ trigger({
 
 ## Regelordningen följs
 
-Taggar i Adobe Experience Platform gör det möjligt att beställa regler. En användare kan till exempel skapa två regler som både använder händelsetypen orientation-change och för att anpassa den ordning i vilken reglerna ska köras. Anta att Adobe Experience Platform-användaren anger ordningsvärdet `2` för orienteringsändringshändelsen i regel A och ordningsvärdet `1` för orienteringsändringshändelsen i regel B. Detta anger att när orienteringen ändras på en mobil enhet ska regel B utlösas före regel A (regler med lägre ordningsvärden utlöses först).
+Taggar gör att användarna kan beställa regler. En användare kan till exempel skapa två regler som både använder händelsetypen orientation-change och för att anpassa den ordning i vilken reglerna ska köras. Anta att Adobe Experience Platform-användaren anger ordningsvärdet `2` för orienteringsändringshändelsen i regel A och ordningsvärdet `1` för orienteringsändringshändelsen i regel B. Detta anger att när orienteringen ändras på en mobil enhet ska regel B utlösas före regel A (regler med lägre ordningsvärden utlöses först).
 
-Som vi nämnt tidigare anropas den exporterade funktionen i vår händelsemodul en gång för varje regel som har konfigurerats att använda vår händelsetyp. Varje gång den exporterade funktionen anropas skickas en unik `trigger`-funktion som är kopplad till en viss regel. I det scenario som beskrivs ovan anropas den exporterade funktionen en gång med en `trigger`-funktion som är kopplad till regel B och sedan en gång till med en `trigger`-funktion som är kopplad till regel A. Regel B kommer först eftersom användaren har gett den ett lägre ordervärde än regel A. När vår biblioteksmodul upptäcker en orienteringsändring är det viktigt att vi anropar `trigger`-funktionerna i samma ordning som de angavs i biblioteksmodulen.
+Som vi nämnt tidigare anropas den exporterade funktionen i vår händelsemodul en gång för varje regel som har konfigurerats att använda vår händelsetyp. Varje gång den exporterade funktionen anropas skickas en unik `trigger`-funktion som är kopplad till en viss regel. I det scenario som beskrivs ovan anropas den exporterade funktionen en gång med en `trigger`-funktion som är kopplad till regel B och sedan en gång till med en `trigger`-funktion som är kopplad till regel A. Regel B kommer först eftersom användaren har gett den ett lägre ordningsvärde än regel A. När vår biblioteksmodul upptäcker en orienteringsändring är det viktigt att vi anropar `trigger`-funktionerna i samma ordning som de angavs i biblioteksmodulen.
 
 Observera, i exempelkoden nedan, att när en orienteringsändring identifieras anropas utlösarfunktioner i samma ordning som de angavs för den exporterade funktionen:
 
