@@ -1,9 +1,9 @@
 ---
 title: Publiceringsflöde
 description: Lär dig hur du skapar bibliotek, testar byggen och godkänner dem för produktion i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1396'
+source-wordcount: '1397'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Taggpubliceringsflödet i Adobe Experience Platform avser processen att skapa bibliotek, testa byggen och godkänna dem för produktion.
 
@@ -63,7 +63,7 @@ I följande tabell visas de tillgängliga åtgärderna för ett bibliotek i [!UI
 | [!UICONTROL Submit & Build to Staging] | Detta kan bara utföras av en användare med både utvecklings- och godkännanderättigheter. Den här åtgärden tar bort tilldelningen av biblioteket från utvecklingsmiljön, flyttar biblioteket till läget [!UICONTROL Submitted] och skapar biblioteket till mellanlagringsmiljön. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
 | [!UICONTROL Approve for Publishing] | Detta kan bara utföras av en användare med både utvecklings- och godkännanderättigheter. Den här åtgärden tar bort tilldelningen av biblioteket från utvecklingsmiljön och flyttar det till läget [!UICONTROL Approved] - hoppar över mellanlagringsmiljön och läget [!UICONTROL Submitted] helt. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
 | [!UICONTROL Approve & Publish to Production] | Detta kan bara utföras av en användare med behörigheterna Framkalla, Godkänn och Publicera. Den här åtgärden tar bort tilldelningen av biblioteket från utvecklingsmiljön, flyttar det till läget [!UICONTROL Approved] och publicerar det i produktion. När produktionsbygget är klart flyttas biblioteket till tillståndet [!UICONTROL Published]. Den senaste versionen av biblioteket måste slutföras för att det här alternativet ska kunna aktiveras. |
-| [!UICONTROL Delete] | Ta bort biblioteket från Platforma launchen. Detta tar inte bort bygget från miljön. |
+| [!UICONTROL Delete] | Ta bort biblioteket från systemet. Detta tar inte bort bygget från miljön. |
 
 ### [!UICONTROL Submitted] {#submitted}
 
