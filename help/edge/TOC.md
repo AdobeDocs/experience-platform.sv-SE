@@ -5,10 +5,10 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 feature: Datahantering
-source-git-commit: a1fcea17432954e2b81ff1657d18a1f865270adc
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 16%
+source-wordcount: '139'
+ht-degree: 17%
 
 ---
 
@@ -50,9 +50,9 @@ ht-degree: 16%
    * [Godkännande](consent/supporting-consent.md)
    * IAB Transparency och Consent Framework 2.0 {#iab-tcf}
       * [Översikt](consent/iab-tcf/overview.md)
-      * [Integrera med Adobe Experience Platform Launch](consent/iab-tcf/with-launch.md)
-      * [Integrera utan Adobe Experience Platform Launch](consent/iab-tcf/without-launch.md)
-* Web SDK-tillägg för Adobe Experience Platform Launch {#extension}
+      * [Integrera med taggar](consent/iab-tcf/with-launch.md)
+      * [Integrera utan taggar](consent/iab-tcf/without-launch.md)
+* SDK-taggtillägg för webben {#extension}
    * [Web SDK-tillägg](extension/web-sdk-extension-configuration.md)
    * [Åtgärdstyper](extension/action-types.md)
    * [Dataelementtyper](extension/data-element-types.md)
