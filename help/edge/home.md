@@ -3,22 +3,22 @@ title: Adobe Experience Platform Web SDK - översikt
 description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '664'
 ht-degree: 0%
 
 ---
 
 # Adobe Experience Platform Web SDK - översikt
 
-Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] via Adobe Experience Platform Edge Network. Förutom JavaScript-biblioteket finns det ett [Experience Platform Launch-tillägg](../tags/extensions/web/sdk/overview.md) som kan hjälpa dig med dina Web SDK-konfigurationer.
+Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] via Adobe Experience Platform Edge Network. Förutom JavaScript-biblioteket finns det ett [taggtillägg](../tags/extensions/web/sdk/overview.md) som kan hjälpa dig med dina Web SDK-konfigurationer.
 
 ## Experience Edge
 
 [!DNL Adobe Experience Platform Web SDK] är en del av den samling som utgör Experience Edge. Experience Edge består av tre tekniker:
 
-* **[!DNL Adobe Experience Platform Web SDK]:** Ett JavaScript SDK och  [!DNL Experience Platform Launch] tillägg som dramatiskt förenklar driftsättningen av  [!DNL Adobe] tekniker
+* **[!DNL Adobe Experience Platform Web SDK]:** Ett JavaScript SDK och taggtillägg som dramatiskt förenklar driftsättningen av  [!DNL Adobe] tekniker
 * **Adobe Experience Platform Mobile SDK:** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
 * **[!DNL Adobe Experience Platform Edge Network]:** Ett globalt distribuerat nätverk med servrar som möjliggör en ny metod för att distribuera  [!DNL Adobe] produkter
 
