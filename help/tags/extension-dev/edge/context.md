@@ -1,9 +1,9 @@
 ---
 title: Kontext i Edge Extension Modules
 description: Lär dig mer om kontextobjektet och den roll det spelar när det gäller att interagera med biblioteksmoduler i taggtillägg för kantegenskaper.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+> Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Alla biblioteksmoduler i edge-tillägg får ett `context`-objekt när de körs. Det här dokumentet innehåller egenskaperna som anges av `context`-objektet och rollen som de spelar i biblioteksmoduler.
 
