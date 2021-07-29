@@ -5,10 +5,9 @@ title: ECID - översikt
 topic-legacy: overview
 description: ECID (Experience Cloud Identifier) är en modul på klientsidan som ger tillgång till identitetshantering och som tillhandahåller tre primära funktioner.
 exl-id: da7717d2-da2e-414b-978d-2eab8ff2c5a0
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -33,6 +32,6 @@ Följande dokumentation ger ytterligare resurser för att förstå ECID mellan o
 
 * Information om hur du använder ECID med webbplatsimplementering finns i dokumentationen för [Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 * Om du vill se hur ECID används med program och mobilt webbinnehåll läser du dokumentationen för [besöksspårning mellan en app och en mobilwebb](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html?lang=en#sdk-reference-ios).
-* Det kan vara enkelt och enkelt att distribuera dessa verktyg om du använder [Adobe Experience Platform Launch](https://experienceleague.adobe.com/docs/launch/using/home.html?lang=en).
+* Det kan vara enkelt och enkelt att distribuera dessa verktyg om du använder [taggar](../tags/home.md).
 * Se [Privacy Servicens dokumentation](../privacy-service/identity-data.md) för information om hur du använder ECID för att underlätta efterlevnad av sekretessbestämmelser som GDPR.
 * Mer information om ECID med plattformskontext finns i [Översikt över identitetstjänsten](./home.md) och översikten över [identitetsnamnutrymmen](./namespaces.md).
