@@ -1,9 +1,9 @@
 ---
 title: Villkorstyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen condition för ett taggtillägg i en webbegenskap.
-source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 I en regel utvärderas ett villkor efter att en händelse har inträffat. Alla villkor måste returnera true för att regeln ska kunna fortsätta bearbetningen. Undantaget är när användare uttryckligen placerar villkor i en&quot;undantagsbucket&quot;, vilket innebär att alla villkor i bucket måste returnera false för att regeln ska fortsätta bearbetningen.
 
