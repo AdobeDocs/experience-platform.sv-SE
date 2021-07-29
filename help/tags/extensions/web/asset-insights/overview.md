@@ -1,9 +1,9 @@
 ---
 title: AEM Asset Insights Extension - översikt
 description: Läs om tillägget AEM Asset Insights i Adobe Experience Platform.
-source-git-commit: 1d3415146335d3011963c969d5b6aeea1f1a51d0
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1100'
+source-wordcount: '1101'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Det här tillägget är avsett att användas tillsammans med [AEM tillgångsinsikter](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html). Mer specifikt ersätter den processen&quot;pageTracker&quot; och bäddar in kod. När det är konfigurerat skickar det här tillägget mått *Impression* och *Klicka på* till Adobe Analytics, varefter de importeras till AEM Asset Insights-rapporter. Måtten på tillgångarna kan sedan rapporteras med hjälp av AEM eller Adobe Analytics Project Workspaces.
 
