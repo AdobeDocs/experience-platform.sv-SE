@@ -1,18 +1,17 @@
 ---
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
-seo-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
+description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: dfcfdf90ae857e6a6ff0ddc7810cb6a6939c9758
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1096'
+source-wordcount: '1071'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
-Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
 ## Version 2.6.0 - 27 juli 2021
 
@@ -103,14 +102,14 @@ Dessa beslut returneras endast från kommandot `sendEvent` om `renderDecisions` 
 * Begäran som görs under ID-migrering skickas till demdex-slutpunkten för att förbättra identifieringen över domäner när ingen demdex-cookie har angetts
 * Begäran som görs under ID-migrering förväntar alltid ett svar som ser till att identitets-cookie ställs in
 * När ett ogiltigt kommando körs loggas en lista med giltiga kommandonamn i konsolen
-* En kryssruta har lagts till för att växla stöd för cookies från tredje part till Adobe Experience Platform Launch-tillägget. Detta inaktiverar anrop till demdex.net
+* En kryssruta har lagts till för att växla stöd för cookies från tredje part till taggtillägget. Detta inaktiverar anrop till demdex.net
 
 ## Version 0.0.5 - 20 december 2019
 
-* Lägg till konfigurationer för aktivitetsspåraren i Platform launch Extension
+* Lägg till konfigurationer för aktivitetsspåraren i taggtillägg
 * Visa EventType och EventMergeId vid händelsekommando
-* Lägg till konfigurationstillägget onBeforeEventSend i Platform launch
-* Lägg till edgeBasePath-konfiguration i Platform launch-tillägg
+* Lägg till taggtillägget onBeforeEventSend-konfiguration till
+* Lägg till edgeBasePath-konfiguration i taggtillägg
 
 ## Version 0.0.3 - 25 november 2019
 
