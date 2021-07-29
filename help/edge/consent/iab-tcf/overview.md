@@ -3,9 +3,9 @@ title: Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
 description: Lär dig hur du kan använda IAB TCF 2.0-medgivandeinställningar med Adobe Experience Platform Web SDK
 keywords: samtycke;setConsent;Profile Privacy Field group;Experience Event Privacy Field group;Privacy Field group;IAB TCF 2.0;Real-time CDP;Real-time Customer Data Profile
 exl-id: 78e728f4-1604-40bf-9e21-a056024bbc98
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -14,10 +14,10 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK har stöd för Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). Den här guiden visar kraven för stöd av IAB TCF 2.0 via Adobe Experience Platform Web SDK som är integrerat med kunddataplattformen, Audience Manager, Experience Events, Adobe Analytics och Experience Edge i realtid.
 
-Dessutom finns följande handledningar som kan användas för att lära sig hur man integrerar IAB TCF 2.0 med och utan Adobe Experience Platform Launch.
+Följande handböcker är dessutom tillgängliga för att lära dig hur du integrerar IAB TCF 2.0 med och utan taggar.
 
-- [Med Adobe Experience Platform Launch](./with-launch.md)
-- [Utan Adobe Experience Platform Launch](./without-launch.md)
+- [Med taggar](./with-launch.md)
+- [Utan taggar](./without-launch.md)
 
 ## Komma igång
 
@@ -90,4 +90,4 @@ Mer information om kommandot `sendEvent` finns i dokumentationen om [spårningsh
 
 ## Nästa steg
 
-Nu när du har en grundläggande förståelse för IAB Transparency &amp; Consent Framework 2.0 kan du läsa någon av guiderna för användning av IAB TCF 2.0 [med Adobe Experience Platform Launch](./with-launch.md) eller [utan Adobe Experience Platform Launch](./without-launch.md).
+Nu när du har en grundläggande förståelse för IAB Transparency &amp; Consent Framework 2.0 kan du läsa någon av guiderna för användning av IAB TCF 2.0 [med taggar](./with-launch.md) eller [utan taggar](./without-launch.md).
