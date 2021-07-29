@@ -1,7 +1,7 @@
 ---
 title: Användarbehörigheter
 description: Lär dig mer om de olika taggbehörigheterna för Adobe Experience Platform-användare.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '2378'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 ## Behörighetstyper
 
@@ -76,7 +76,7 @@ Företagsrättigheter gäller för behörigheter som sträcker sig över flera e
 
 * **Hantera egenskaper:** Detta gör att du kan skapa nya egenskaper i användargränssnittet för datainsamling och ändra metadata och inställningar på egenskapsnivå. Du kan också ta bort egenskaper. Mer information finns i [egenskapsdokumentationen](companies-and-properties.md). Administratörer utför vanligtvis den här rollen.
 * 
-* Ger möjlighet att skapa nya egenskaper i [!DNL Platform Launch] och att ändra metadata och inställningar på egenskapsnivå. Du kan också ta bort egenskaper.  Läs mer om egenskaper [här](companies-and-properties.md). Administratörer utför vanligtvis den här rollen.
+* Ger möjlighet att skapa nya egenskaper och ändra metadata och inställningar på egenskapsnivå. Du kan också ta bort egenskaper.  Läs mer om egenskaper [här](companies-and-properties.md). Administratörer utför vanligtvis den här rollen.
 * **Utveckla tillägg:** Ger möjlighet att skapa och ändra tilläggspaket som ägs av företaget, inklusive privata releaser och förfrågningar om allmän spridning.
 * **Hantera appkonfigurationer:** Detta är endast tillgängligt för kunder som har licensierat Adobe Journey Optimizer eller någon annan lösning som ger dem tillgång till mobilmeddelanden i appen och push-meddelanden.  På så sätt kan du hantera de appar som Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification Service.
 
