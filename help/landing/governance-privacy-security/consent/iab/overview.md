@@ -5,9 +5,9 @@ title: Stöd för IAB TCF 2.0 i Experience Platform
 topic-legacy: privacy events
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2549'
 ht-degree: 0%
 
 ---
@@ -119,9 +119,9 @@ När du har konfigurerat din CMP för att generera medgivandesträngar måste du
 
 ### Skapa ett nytt datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du först skapa ett nytt datastream för Platform i [!DNL Adobe Experience Platform Launch]. Specifika steg för hur du skapar en ny konfiguration finns i [SDK-dokumentationen](../../../../edge/fundamentals/datastreams.md).
+För att SDK ska kunna skicka data till Experience Platform måste du först skapa ett nytt datastream för Platform i användargränssnittet för datainsamling. Specifika steg för hur du skapar ett nytt datastream finns i [SDK-dokumentationen](../../../../edge/fundamentals/datastreams.md).
 
-När du har angett ett unikt namn för konfigurationen väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan följande värden för att fylla i resten av formuläret:
+När du har angett ett unikt namn för datastream väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan följande värden för att fylla i resten av formuläret:
 
 | Datastream-fält | Värde |
 | --- | --- |
