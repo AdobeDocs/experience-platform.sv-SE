@@ -1,9 +1,9 @@
 ---
 title: Bevilja användaråtkomst
 description: Konfigurera teammedlemmens tagga användarkonton och behörigheter i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '716'
+source-wordcount: '717'
 ht-degree: 2%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Innan du börjar med ditt extension_package måste du konfigurera dina teammedlemmar med användarkonton och behörigheter.  Detta uppnås i [Adobe Admin Console](https://adminconsole.adobe.com/).
 
@@ -39,7 +39,7 @@ Vissa av er har kanske tillgång till fler än en organisation (Org). Om du vill
 
 En produktprofil är en grupp. Enskilda rättigheter tilldelas till produktprofiler och alla användare i profilen ärver dessa rättigheter.
 
-Välj länken **[!UICONTROL Products]** längst upp och **[!UICONTROL Experience Cloud]** till vänster. Om du inte har Adobe Experience Platform Launch i listan bör kunderna kontakta sitt kontoteam och partners bör skicka ett e-postmeddelande till <ExchangeTechEC@adobe.com>.
+Välj länken **[!UICONTROL Products]** längst upp och **[!UICONTROL Experience Cloud]** till vänster. Om du inte har användargränssnittet för datainsamling i listan bör kunderna kontakta sin kontogrupp och partners bör skicka ett e-postmeddelande till <ExchangeTechEC@adobe.com>.
 
 ![Fliken Produkter i Admin Console](../images/getting-started/admin-console-products-launch.png)
 
