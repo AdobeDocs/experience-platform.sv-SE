@@ -5,15 +5,14 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '7147'
+source-wordcount: '7219'
 ht-degree: 0%
 
 ---
 
-# Adobe Experience Platform-ordlista {#adobe-experience-platform-glossary}
+# Adobe Experience Platform ordlista {#adobe-experience-platform-glossary}
 
 ## A
 
@@ -21,7 +20,7 @@ ht-degree: 0%
 
 **Åtkomstnyckel-ID**: Ett åtkomstnyckel-ID är en unik identifierare som är kopplad till en  [!DNL Amazon] S3-hemlig åtkomstnyckel. Åtkomstnyckel-ID och hemlig åtkomstnyckel används tillsammans för att signera [!DNL Amazon Web Services]-begäranden (AWS).
 
-**Åtgärd**: I  [!DNL Platform Launch]är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
+**Åtgärd**: När det gäller taggar är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
 
 **Aktivera**: Aktivera är den åtgärd som en användare utför för att mappa ett segment eller profiler till ett mål som  [!DNL Oracle Eloqua],  [!DNL Google]eller  [!DNL Salesforce Marketing Cloud].
 
@@ -32,8 +31,6 @@ ht-degree: 0%
 **Adobe Admin Console**: Adobe Admin Console är en central plats för hantering av Adobe produktberättiganden och åtkomst för din organisation. Via konsolen kan administratörer ge grupper av användare åtkomstbehörigheter för olika plattformsfunktioner, som Hantera datauppsättningar, Visa datauppsättningar eller Hantera profiler.
 
 **Adobe Experience Platform**: Adobe Experience Platform standardiserar data och innehåll i hela företaget, vilket driver konsumentprofiler i realtid, möjliggör datavetenskap och snabbar upp innehållets hastighet för att driva upplevelsepersonalisering över hela kundresan.
-
-**Adobe Experience Platform Launch**:  [!DNL Platform Launch] är ett tagg- och SDK-hanteringssystem som är integrerat med Experience Platform och  [!DNL Experience Cloud] program. [!DNL Platform Launch] innehåller verktyg för att driftsätta, sammanställa och hantera analyser, marknadsföring och annonser som är nödvändiga för att driva relevanta kundupplevelser på alla kundenheter.
 
 **Adobe Experience Platform Query Service**: Gör det möjligt för dataanalytiker att fråga efter händelser och profiler för användning i analyser och maskininlärning. Med Query Service kan datavetare och analytiker hämta alla sina datauppsättningar som lagras i Experience Platform (inklusive beteendedata och POS (Point-of-Sale), CRM (customer relationship management) med mera) och fråga dessa datauppsättningar för att få svar på specifika frågor om data.
 
@@ -81,7 +78,7 @@ ht-degree: 0%
 
 **Gruppsegmentering**: Gruppsegmentering är ett alternativ till en pågående dataurvalsprocess och flyttar alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att det kan exporteras för användning.
 
-**Bygg**: I  [!DNL Platform Launch]är en bygge en fil eller en uppsättning filer som innehåller alla konfigurationer och all kod som behövs för att köra affärslogiken i ett bibliotek, så att du kan distribuera biblioteket på din webbplats eller i din mobilapp.
+**Bygg**: När det gäller taggar är ett bygge en fil eller uppsättning filer som innehåller alla konfigurationer och all kod som behövs för att köra affärslogiken som finns i ett bibliotek, så att du kan distribuera biblioteket på din webbplats eller i din mobilapp.
 
 **Business Intelligence-verktyg**: Business Intelligence-verktyg (BI) är i första hand integrerade med  [!DNL Experience Platform Query Service]. BI-verktyg är typer av programprogramvara som samlar in och bearbetar stora mängder ostrukturerade data från interna och externa system.
 
@@ -105,7 +102,7 @@ ht-degree: 0%
 
 **Disposition**: En komposition är en gruppering av komponenter som bildar tillsammans för att bilda schemat.
 
-**Villkor**: I  [!DNL Platform Launch]är ett villkor en regelkomponent som utvärderar en logisk programsats som måste returneras  `true` eller  `false`. Alla villkor måste utvärderas till `true` och alla undantagsvillkor måste utvärderas till `false` innan några åtgärder i regeln körs.
+**Villkor**: I taggarnas sammanhang är ett villkor en regelkomponent som utvärderar en logisk programsats som måste returnera  `true` eller  `false`. Alla villkor måste utvärderas till `true` och alla undantagsvillkor måste utvärderas till `false` innan några åtgärder i regeln körs.
 
 **Konsol**: I  [!DNL Query Service]konsolen finns information om status och funktion för en fråga. Konsolen visar anslutningsstatusen till [!DNL Query Service], frågeåtgärder som körs och eventuella felmeddelanden som kommer från dessa frågor.
 
@@ -147,13 +144,13 @@ ht-degree: 0%
 
 ## D
 
-**Dataordlista**: I  [!DNL Platform Launch]är ett datalexikon (kallas även datamappning) en uppsättning dataelement som definieras i en egenskap.
+**Dataordlista**: När det gäller taggar är ett datalexikon (kallas även datamappning) en uppsättning dataelement som definieras i en egenskap.
 
-**Dataelement**: Ett dataelement  [!DNL Platform Launch]är en pekare som används i regler och tillägg för att peka på en viss datadel som finns på klientenheten.
+**Dataelement**: När det gäller taggar är ett dataelement en pekare som används inom regler och tillägg för att peka på en viss datadel som finns på klientenheten.
 
 **Intag** av data: Intag av data är processen att lägga till data från en källa till Experience Platform. Data kan hämtas in till plattformen på flera olika sätt, inklusive strömning, batchar eller läggas till via källanslutningar.
 
-**Datalager**: I  [!DNL Platform Launch]det här fallet är ett datalager en datastruktur som finns på klientenheten och som innehåller metadata om i vilket sammanhang en sida eller skärm visas.
+**Datalager**: När det gäller taggar är ett datalager en datastruktur som finns på klientenheten och som innehåller metadata om det sammanhang i vilket en sida eller skärm visas.
 
 **Datastyrning**: Datastyrning omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och organisationsstrategier när det gäller dataanvändning.
 
@@ -195,7 +192,7 @@ ht-degree: 0%
 
 **Målkatalog**: En destinationskatalog är en lista över tillgängliga destinationer i Experience Platform.
 
-**Regler** för direktsamtal: I  [!DNL Platform Launch]det här fallet är en regel för direktanrop en regel som körs när den anropas direkt från sidan, utan att händelsidentifierings- och uppslagssystemen åsidosätts.
+**Regler** för direktsamtal: När det gäller taggar är en regel för direktanrop en regel som körs när den anropas direkt från sidan, utan att händelsidentifierings- och söksystemen åsidosätts.
 
 **Visningsnamn**: I Experience Data Model (XDM) är ett visningsnamn ett användarvänligt namn för ett fält som visas i användargränssnittet.
 
@@ -207,15 +204,15 @@ ht-degree: 0%
 
 **Marknadsföringsåtgärd** för e-postmarknadsföring: En marknadsföringsåtgärd som använder data i e-postriktade kampanjer.
 
-**Bädda in kod**: I  [!DNL Platform Launch]är inbäddningskoden en script-tagg som placeras i HTML-koden på en plats eller i en miljö. Inbäddningskoden instruerar webbläsaren var bygget ska hämtas.
+**Bädda in kod**: När det gäller taggar är inbäddningskoden en script-tagg som placeras i HTML-koden på en plats eller i en miljö. Inbäddningskoden instruerar webbläsaren var bygget ska hämtas.
 
 **Uppräkning**: En uppräkning (uppräkning) är ett XDM-fält som begränsas till en uppsättning fördefinierade värden.
 
-**Miljö**: I  [!DNL Platform Launch]är en miljö en uppsättning distributionsinstruktioner som anger värdleveransen och filformatet för ett bygge. Ett bibliotek måste kombineras med en miljö innan det kan byggas.
+**Miljö**: När det gäller taggar är en miljö en uppsättning distributionsinstruktioner som anger värdleveransen och filformatet för ett bygge. Ett bibliotek måste kombineras med en miljö innan det kan byggas.
 
 **Feldiagnostik**: Feldiagnostik möjliggör generering av detaljerade felmeddelanden för kapslade batchar. Med feltröskeln kan du konfigurera procentandelen godtagbara fel innan en batch misslyckas.
 
-**Händelse**: I  [!DNL Platform Launch]är en händelse en specifik typ av regelkomponent, som är en utlösare som inträffar på en klientenhet för att börja köra en regel.
+**Händelse**: När det gäller taggar är en händelse en specifik typ av regelkomponent, vilket är en utlösare som inträffar på en klientenhet för att börja köra en regel.
 
 **Händelseentiteter**: När det gäller datamodellering representerar händelseenheter koncept som relaterar till åtgärder som en kund kan vidta, systemhändelser eller andra koncept där du kan vilja spåra ändringar över tid. Enheter som tillhör den här kategorin ska representeras av scheman baserade på klassen [!DNL XDM ExperienceEvent].
 
@@ -225,11 +222,11 @@ ht-degree: 0%
 
 **Experimentera**: Ett experiment är processen att skapa en utbildad modell genom att utbilda instansen med en exempeldel av data om produktion. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från konceptet med ett experiment i vissa maskininlärningsmiljöer där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
-**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som hänt och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
+**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som inträffat och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
 
-**Tillägg**: I  [!DNL Platform Launch]är ett tillägg ett paket med funktioner som lagts till i en  [!DNL Platform Launch] egenskap. Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
+**Tillägg**: När det gäller taggar är ett tillägg ett paket med funktioner som läggs till i en taggegenskap. Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
 
-**Tilläggspaket**: I  [!DNL Platform Launch]är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare och som innehåller allt som  [!DNL Platform Launch] användarna behöver för att installera tillägget i sin egenskap. Ett tilläggspaket innehåller ett manifest som anger information om tillägget, den HTML/JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för tillägget [!DNL Platform Launch] och den körbara JavaScript som levereras till klientmiljön (om det behövs).
+**Tilläggspaket**: När det gäller taggar är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare och som innehåller allt som behövs för att taggar användare ska kunna installera tillägget i sin egenskap. Ett tilläggspaket innehåller ett manifest som anger information om tillägget, den HTML/JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för taggtillägget och den körbara JavaScript-kod som levereras till klientmiljön (om det behövs).
 
 ## F
 
@@ -255,7 +252,7 @@ ht-degree: 0%
 
 ## H
 
-**Värd**: I  [!DNL Platform Launch]anger en värd den plats, domän och de användarautentiseringsuppgifter som krävs för  [!DNL Platform Launch] att leverera ett bygge.
+**Värd**: När det gäller taggar anger en värd den plats, domän och de inloggningsuppgifter som krävs för att systemet ska kunna leverera ett bygge.
 
 ## I
 
@@ -307,7 +304,7 @@ ht-degree: 0%
 
 ## L
 
-**Bibliotek**: I  [!DNL Platform Launch]är ett bibliotek en uppsättning affärslogik som innehåller instruktioner för hur  [!DNL Platform Launch] biblioteket ska fungera på klientenheten.
+**Bibliotek**: När det gäller taggar är ett bibliotek en uppsättning affärslogik som innehåller instruktioner för hur taggbiblioteket ska fungera på klientenheten.
 
 **Sökentiteter**: I samband med datamodellering representerar sökenheter koncept som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som tillhör den här kategorin ska representeras av scheman som baseras på anpassade XDM-klasser (Experience Data Model).
 
@@ -327,7 +324,7 @@ ht-degree: 0%
 
 **Blandning**: Se&quot;Fältgrupp för schema&quot;.
 
-**Modul**: I  [!DNL Platform Launch]är en modul ett fragment av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att behöva skapa en regel.
+**Modul**: När det gäller taggar är en modul ett fragment av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att behöva skapa en regel.
 
 ## N
 
@@ -391,7 +388,7 @@ ht-degree: 0%
 
 **Profil-ID**: Ett profil-ID är en automatiskt genererad identifierare som är associerad med en identitetstyp och representerar en profil.
 
-**Egenskap**: I  [!DNL Platform Launch]är en egenskap en behållare för allt som behövs för att distribuera en uppsättning taggar.
+**Egenskap**: När det gäller taggar är en egenskap en behållare för allt som behövs för att distribuera en uppsättning taggar.
 
 ## Q
 
@@ -415,13 +412,13 @@ ht-degree: 0%
 
 **Representation**: I  [!DNL Offer Decisioning]detta exempel är en representation information som används av en kanal för att visa ett erbjudande, till exempel plats eller språk.
 
-**Resurs**: I  [!DNL Platform Launch]det här fallet är en resurs en allmän term som refererar till alternativ som  [!DNL Platform Launch] användaren kan konfigurera i klientmiljön, inklusive tillägg, dataelement och regler.
+**Resurs**: När det gäller taggar är en resurs en allmän term som refererar till alternativ som användaren kan konfigurera i klientmiljön, inklusive tillägg, dataelement och regler.
 
 **Rollbaserad åtkomstkontroll**: Med rollbaserad åtkomstkontroll kan administratörer tilldela åtkomst och behörigheter till användare i Experience Platform. Behörigheter omfattar möjligheten att visa och/eller använda Experience Platform-funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar.
 
-**Regel**: I  [!DNL Platform Launch]är en regel en samling komponenter som definierar en specifik uppsättning händelser, villkor och åtgärder som ska grupperas logiskt.
+**Regel**: När det gäller taggar är en regel en samling komponenter som definierar en specifik uppsättning händelser, villkor och åtgärder som ska grupperas logiskt.
 
-**Regelkomponent**: Regelkomponenter är i  [!DNL Platform Launch]sin tur händelser, villkor och åtgärder som utgör en regel.
+**Regelkomponent**: När det gäller taggar är regelkomponenter händelser, villkor och åtgärder som utgör en regel.
 
 **Körtid**: Körningsmiljön anger en körningsmiljö för ett maskininlärningsrecept. [!DNL Python]Med körningsmiljöerna , R,  [!DNL Spark]PySpark och Tensorflow kan du ange en URL till en Docker-bild för en receptkälla.
 
@@ -500,6 +497,8 @@ ht-degree: 0%
 **Systemvy**: Systemvyn är en visuell representation av källdatauppsättningar som flödar igenom  [!DNL Real-time Customer Profile] till mål.
 
 ## T
+
+**Taggar**: I Adobe Experience Platform innehåller taggar verktyg för att driftsätta, sammanställa och hantera analyser-, marknadsförings- och annonsintegreringar som är nödvändiga för relevanta kundupplevelser på alla kundenheter.
 
 **Målfunktioner**: Vid funktionsmappning är en målfunktion den funktion som förutses av en modell.
 
