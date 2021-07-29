@@ -1,9 +1,9 @@
 ---
 title: Bibliotek
 description: Lär dig mer om taggbibliotek och hur de fungerar i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '756'
 ht-degree: 1%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Ett bibliotek är en uppsättning instruktioner för hur tillägg, dataelement och regler interagerar med varandra när de har distribuerats. När du skapar ett bibliotek anger du vilka ändringar du vill göra i biblioteket. Vid byggtillfället kombineras dessa ändringar med allt som har skickats, godkänts eller publicerats i tidigare bibliotek.
 
