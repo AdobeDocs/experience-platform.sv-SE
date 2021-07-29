@@ -5,10 +5,10 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '312'
-ht-degree: 2%
+source-wordcount: '304'
+ht-degree: 1%
 
 ---
 
@@ -25,7 +25,8 @@ Datainsamling stöds för följande källor på klientsidan:
 De datainsamlingstekniker som tillhandahålls av Experience Platform fokuserar på identifierbarheten och tillgängligheten för kapslade datamängder. Dessa tekniker omfattar följande:
 
 * [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
-* [Adobe Experience Platform Launch](https://adobe.com/go/launch_help_en)
+* [Taggar](../tags/home.md)
+* [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
 * [Webb-SDK för Adobe Experience Platform](../edge/home.md)
 * [Experience Data Model (XDM)](../xdm/home.md)
 
@@ -37,7 +38,7 @@ Adobe Experience Platform SDK för webb och mobiler komprimerar och komprimerar 
 
 ## Växlingsprocess för att driftsätta Adobe-teknik
 
-Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med Platform launch kan du ställa in [datastreams](../edge/fundamentals/datastreams.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du ställa in [datastreams](../edge/fundamentals/datastreams.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
 
 ![](./images/deploy.png)
 
