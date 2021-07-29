@@ -1,9 +1,9 @@
 ---
 title: Översikt över publicering
 description: Lär dig hur du publicerar ändringar i kodbibliotek för tagghantering i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Med Adobe Experience Platform kan du kapsla in ändringar i tagghanteringskoden i enskilda bibliotek. Eftersom flera bibliotek nu kan utvecklas parallellt av olika team måste dessa bibliotek följa en avsiktlig, tillåten process för att sammanfoga ändringar innan de överförs till produktionsmiljön.
 
