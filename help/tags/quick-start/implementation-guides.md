@@ -1,9 +1,9 @@
 ---
 title: Implementeringsguider
 description: Lär dig implementera Adobe Experience Cloud lösningar med taggar.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '114'
+source-wordcount: '115'
 ht-degree: 2%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Vi har två implementeringsguider. Dessa är utformade för gränssnittsutvecklare och teknikmarknadsförare som vill lära sig att implementera [!DNL Adobe Experience Cloud]-lösningarna på sina webbplatser och i sina mobilappar.
 
