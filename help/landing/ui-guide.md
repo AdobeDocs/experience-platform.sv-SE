@@ -5,8 +5,7 @@ title: Experience Platform - översikt
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '1695'
 ht-degree: 1%
@@ -47,7 +46,7 @@ Den senaste datapanelen innehåller information om nyligen skapade datauppsättn
 
 I **[!UICONTROL Recent datasets]**-avsnittet visas de fem senast skapade datauppsättningarna i din IMS-organisation. Den här listan uppdateras varje gång en ny datauppsättning skapas. Du kan välja en datauppsättning i listan om du vill visa mer information om den angivna datauppsättningen eller välja **[!UICONTROL View all]** om du vill visa en lista över alla skapade datauppsättningar. Mer information om datauppsättningar finns i översikten [över datauppsättningar](../catalog/datasets/overview.md).
 
-I **[!UICONTROL Recent sources]**-avsnittet visas de fem senast skapade källanslutningarna i IMS-organisationen. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade källanslutningar. Mer information om källor finns i [Källöversikt](../sources/home.md).
+I **[!UICONTROL Recent sources]**-avsnittet visas de fem senast skapade källanslutningarna i IMS-organisationen. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade källanslutningar. Mer information om källor finns i resursöversikten [](../sources/home.md).
 
 I **[!UICONTROL Recent segments]**-avsnittet visas de fem senast skapade segmentdefinitionerna i din IMS-organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade segmentdefinitioner. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
@@ -79,9 +78,9 @@ Om du väljer väljaren öppnas en listruta med IMS-organisationer som du har ti
 
 ### Byt program
 
-Nästa objekt till höger om den översta navigeringen är **programväxlaren**, som representeras av ikonen ![programväljaren](./images/user-guide/app-switcher-icon.png). När du väljer den här ikonen kan du växla mellan de Adobe-program som din IMS-organisation har åtkomst till, till exempel Experience Platform, Analytics, Assets och Launch.
+Nästa objekt till höger om den översta navigeringen är **programväxlaren**, som representeras av ikonen ![programväljaren](./images/user-guide/app-switcher-icon.png). När du väljer den här ikonen kan du växla mellan Adobe-program som din IMS-organisation har tillgång till, till exempel Experience Platform, Analytics (Analyser), Assets (Resurser) och andra.
 
-### Hjälp
+### Hjälp om 
 
 Till höger om programväljaren finns **hjälp- och supportmenyn**, som representeras av ikonen ![frågetecken/hjälp](./images/user-guide/help-icon.png). När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. På fliken **[!UICONTROL Help]** visas en lista med relevant dokumentation för sidan som du är på. På fliken **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. På fliken **[!UICONTROL Feedback]** kan du skicka feedback om Platform till Adobe.
 
@@ -115,7 +114,7 @@ Avsnittet **[!UICONTROL Workflows]** innehåller en lista med arbetsflöden i fl
 
 ### [!UICONTROL Connections]
 
-I **[!UICONTROL Sources]**-avsnittet kan du skapa, uppdatera och ta bort källanslutningar, så att du kan importera data från externa källor till plattformen. Mer information om källor finns i [Källöversikt](../sources/home.md).
+I **[!UICONTROL Sources]**-avsnittet kan du skapa, uppdatera och ta bort källanslutningar, så att du kan importera data från externa källor till plattformen. Mer information om källor finns i resursöversikten [](../sources/home.md).
 
 Med **[!UICONTROL Destinations]**-avsnittet kan du skapa, uppdatera och ta bort mål, så att du kan exportera data från plattformen till många externa mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
 
