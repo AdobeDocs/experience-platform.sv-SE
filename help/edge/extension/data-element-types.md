@@ -1,17 +1,17 @@
 ---
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
-description: Lär dig mer om de olika dataelementtyperna i Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
+description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 5a295a1f6e64c33ac4a48e1d74253d0527f495f9
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
 
 # Dataelementtyper
 
-När du har angett [åtgärdstyper](action-types.md) i [Adobe Experience Platform Web SDK-tillägget](web-sdk-extension-configuration.md) för [Adobe Experience Platform Launch](https://experienceleague.adobe.com/docs/launch.html) konfigurerar du dina dataelementtyper.
+När du har angett [åtgärdstyper](action-types.md) i [taggtillägget Adobe Experience Platform Web SDK](web-sdk-extension-configuration.md) konfigurerar du dina dataelementtyper.
 
 Den här sidan beskriver de tillgängliga elementtyperna.
 
