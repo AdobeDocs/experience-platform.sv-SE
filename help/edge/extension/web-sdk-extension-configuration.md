@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Web SDK-konfiguration
-description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
+description: Läs mer om taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: e5b43a65bb9907f333f1ffedfbeed00f02f8ef39
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '978'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK-tillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
 
-I det här dokumentet beskrivs hur du konfigurerar tillägget i Adobe Experience Platform Launch användargränssnitt.
+Det här dokumentet beskriver hur du konfigurerar tillägget i användargränssnittet för datainsamling.
 
 ## Konfigurera tillägget
 
-Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i Platforma launchens användargränssnitt och väljer fliken **[!UICONTROL Extensions]**. Välj **[!UICONTROL Configure]** under Platform Web SDK.
+Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i användargränssnittet för datainsamling och väljer fliken **[!UICONTROL Extensions]**. Välj **[!UICONTROL Configure]** under Platform Web SDK.
 
 ![](../images/extension/overview/configure.png)
 
@@ -35,7 +35,7 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 ### [!UICONTROL Name]
 
-Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en enda konfiguration för Platform launch.
+Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en taggkonfiguration.
 
 Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
 
