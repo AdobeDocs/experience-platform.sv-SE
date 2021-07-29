@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
-source-git-commit: ae6b69ecea54942c1bbf8a2765768bac50a8b930
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 1%
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 ## 20 juli 2021
 
@@ -36,7 +36,7 @@ ht-degree: 1%
 
 ### Adobe Target v2-tillägg 0.14.2
 
-- Åtgärda ett fel där det slutliga startpaketet innehåller två at.js-versioner, en med On-Device Decision och en utan.
+- Åtgärda ett fel där det slutliga paketet innehåller två at.js-versioner, en med On-Device Decision och en utan.
 
 ## 19 maj 2021
 
