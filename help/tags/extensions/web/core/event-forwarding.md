@@ -1,9 +1,9 @@
 ---
 title: Översikt över tillägget för vidarebefordring av kärnhändelser
 description: Läs mer om Core-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1717'
+source-wordcount: '1716'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Tillägget Core Event-Forwarding innehåller standardhändelser, standardvillkor och datatyper för händelsevidarebefordran i Adobe Experience Platform.
 
@@ -165,7 +165,7 @@ Använd metoden `getDataElementValue` om du vill komma åt värdet för ett data
 getDataElementValue('productName') 
 ```
 
-Åtgärder på serversidan för platform launch utförs sekventiellt. Det går också att returnera ett värde som kan användas i en efterföljande åtgärd för anpassad kod i en åtgärd. Det returnerade värdet kan komma från kod i den åtgärden eller från svarstexten för ett anrop till en extern källa. Om du vill referera till data från en tidigare utförd åtgärd i en enskild regel där Core-tillägget används, skapar du ett dataelement av typen `Path` och använder följande sökväg för att referera till värdet för variabeln `productCategory` som definierats i anpassad kod i Core-tillägget:
+Vidarebefordrande åtgärder utförs sekventiellt. Det går också att returnera ett värde som kan användas i en efterföljande åtgärd för anpassad kod i en åtgärd. Det returnerade värdet kan komma från kod i den åtgärden eller från svarstexten för ett anrop till en extern källa. Om du vill referera till data från en tidigare utförd åtgärd i en enskild regel där Core-tillägget används, skapar du ett dataelement av typen `Path` och använder följande sökväg för att referera till värdet för variabeln `productCategory` som definierats i anpassad kod i Core-tillägget:
 
 ```javascript
 arc.ruleStash.[Extension-Name].[key-as-defined-by-action] 
