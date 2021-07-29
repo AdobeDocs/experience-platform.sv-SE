@@ -1,7 +1,7 @@
 ---
 title: Skapa en Exchange-lista för ett tillägg
 description: Lär dig hur du lägger till tillägget i den offentliga katalogen i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Adobe Experience Platform har en enda enhetlig katalog där användarna kan visa taggtillägg som är tillgängliga för installation. Katalogen är tillgänglig i produkten och innehåller tillägg av tre typer:
 
@@ -44,7 +44,6 @@ Om du redan har ett företagskonto, eller om du inte planerar att slutföra din 
    >[!NOTE]
    >
    >Detta är ett annat filformat än det som används i tilläggskoden. Tillägget i sig innehåller en svg-fil som [ikon](../manifest.md).
-   
    - **Bild**  - Få uppmärksamhet genom att använda en bild som kan vara fristående och visa ert varumärke och framhäva er applikation. Den bild som visas när någon delar en länk till din Exchange-lista eller publicerar om den på sociala medier. Det måste därför vara en modellbeteckning för ert varumärke.
    - **App Publisher-logotyp**  - Det här är företagets logotyp, kontrollera att ikonen har rätt dimensioner på 1 280 x 720 eller 2 560 x 1 440 (16:9) i png- eller jpg-format.
    - **Konfigurationsanvisningar**  - Informera kunder om hur du konfigurerar ditt Adobe Experience Platform-tillägg. Kontrollera att de förstår alla nödvändiga inställningar och nästa steg när din [konfigurationsvy](../configuration.md) visas omedelbart efter att du har installerat tillägget i en egenskap. 
@@ -69,4 +68,4 @@ När du uppdaterar tillägget, eller bara behöver uppdatera din Exchange-lista,
 
 ## Länka tilläggspaketet till din lista
 
-När din lista har godkänts och är allmänt tillgänglig rekommenderar vi att du tillhandahåller en länk till den offentliga listan i fältet `exchange_url` för filen `extension.json` i tilläggspaketet.  Då skapas länken &quot;Mer info&quot; i produkttilläggskatalogen så att användare i Platforma launchen kan hitta din lista och den är extra information.
+När din lista har godkänts och är allmänt tillgänglig rekommenderar vi att du tillhandahåller en länk till den offentliga listan i fältet `exchange_url` för filen `extension.json` i tilläggspaketet.  Då skapas länken &quot;Mer information&quot; i taggtilläggskatalogen så att användare i produkten kan hitta din lista och den extra informationen.
