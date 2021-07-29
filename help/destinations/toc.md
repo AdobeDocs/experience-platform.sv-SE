@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
-source-git-commit: 3ab15ceaf33a33f8bbda80cbf09228d16ce5a374
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '476'
 ht-degree: 1%
 
 ---
@@ -100,8 +100,8 @@ ht-degree: 1%
       * [Oracle Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua.md)
       * [Oraclena svarssystemanslutning](./catalog/email-marketing/oracle-responsys.md)
       * [Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud.md)
-   * Experience Platform Launch-tillägg {#launch-extensions}
-      * [Översikt över Adobe Experience Platform Launch-tillägg](./catalog/launch-extensions/overview.md)
+   * Taggtillägg {#launch-extensions}
+      * [Översikt över taggtillägg](./catalog/launch-extensions/overview.md)
    * Destinationer för mobilengagemang {#mobile-engagement}
       * [Översikt över mål för mobilengagemang](./catalog/mobile-engagement/overview.md)
       * [(Beta) Koppling mellan attribut för luftskepp](./catalog/mobile-engagement/airship-attributes.md)
