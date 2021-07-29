@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c6feab3c9cda479c7dabdbf0533145fdcaa36ab1
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1093'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,13 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
+## Version 2.6.1 - 29 juli 2021
+
+Innehåller version 2.6.1 av Adobe Experience Platform Web SDK-biblioteket.
+
 ## Version 2.6.0 - 27 juli 2021
+
+Innehåller version 2.6.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 * Etiketter, beskrivningar och felmeddelanden som använder termen &quot;edge configuration&quot; har ändrats till att använda termen &quot;datastream&quot; för att passa in i den senaste Adobe Experience Platform-terminologin.
 * I tilläggskonfigurationsvyn lades stöd till för hantering av ett stort antal datastreams- och datastream-miljöer.
