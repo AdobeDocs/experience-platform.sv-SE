@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation för Adobe Experience Cloud Identity Service Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Experience Cloud Identity Service i Adobe Experience Platform.
-source-git-commit: 1d3415146335d3011963c969d5b6aeea1f1a51d0
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '520'
-ht-degree: 5%
+source-wordcount: '521'
+ht-degree: 4%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Versionsinformation om själva identitetstjänsten för Experience Cloud och inte bara Adobe Experience Platform-taggtillägget finns här: [https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)
 
