@@ -1,9 +1,9 @@
 ---
 title: Egenskaper
 description: Läs om hur tillägg, miljöer och bibliotek är organiserade och grupperade för din organisation i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 ## Webbegenskaper
 
@@ -21,8 +21,6 @@ En webbegenskap är en samling regler, dataelement, konfigurerade tillägg, milj
 ## Mobilegenskaper
 
 En mobil egenskapstyp kan innehålla flera program. I en mobil egenskap kan du till exempel hantera samma uppsättning regler och tillägg för flera iOS- och Android-program.
-
-En självstudiekurs (video) finns i [Skapa din första egenskap](../../quick-start/videos.md).
 
 ## Bästa tillvägagångssätt för att planera egenskaper {#best-practices-for-planning-properties}
 
