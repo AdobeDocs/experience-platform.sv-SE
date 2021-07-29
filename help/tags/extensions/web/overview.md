@@ -1,9 +1,9 @@
 ---
 title: Referens för Adobe-tillägg
 description: Dokumentation om taggtillägg för Adobe-produkter i Adobe Experience Platform finns.
-source-git-commit: 5da1fd18e0032c5e3d6695639f98a7ee683819f1
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '143'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Här följer en lista med dokumentation för taggtilläggen som tillhandahålls av Adobe-lösningar:
 
