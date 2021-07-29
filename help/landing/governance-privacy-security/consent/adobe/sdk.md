@@ -3,9 +3,9 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform med hjälp av standarden Adobe 2.0.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 8b58bb60ae40f224433f3513060f4ae7ddc7d5b3
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1253'
+source-wordcount: '1222'
 ht-degree: 0%
 
 ---
@@ -29,15 +29,15 @@ Med Adobe Experience Platform Web SDK kan du hämta kundens medgivandesignaler s
 
 I den här självstudien förutsätts att du redan har bestämt hur du ska generera medgivandedata i din CMP och har skapat en datauppsättning som innehåller medgivandefält som har aktiverats för kundprofil i realtid. Mer information om de här stegen finns i översikten om [godkännandebearbetning i Experience Platform](./overview.md) innan du återgår till den här handboken.
 
-Handboken kräver dessutom en fungerande förståelse för Adobe Experience Platform Launch-tillägg och hur de installeras i webbprogram. Mer information finns i följande dokumentation:
+Den här handboken kräver dessutom en fungerande förståelse för taggtillägg och hur de installeras i webbprogram. Mer information finns i följande dokumentation:
 
-* [Översikt över platforma launchen](https://experienceleague.adobe.com/docs/launch/using/home.html)
-* [Snabbstartguide](https://experienceleague.adobe.com/docs/launch/using/get-started/quick-start.html)
-* [Översikt över publicering](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html)
+* [Översikt över taggar](../../../../tags/home.md)
+* [Snabbstartguide](../../../../tags/quick-start/quick-start.md)
+* [Översikt över publicering](../../../../tags/ui/publishing/overview.md)
 
 ## Konfigurera en datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du ha en befintlig datastream för Platform konfigurerad i Adobe Experience Platform Launch. Dessutom måste de [!UICONTROL Profile Dataset] som du väljer för konfigurationen innehålla standardiserade medgivandefält.
+För att SDK ska kunna skicka data till Experience Platform måste du ha en befintlig datastream för Platform inställd i användargränssnittet för datainsamling. Dessutom måste de [!UICONTROL Profile Dataset] som du väljer för konfigurationen innehålla standardiserade medgivandefält.
 
 När du har skapat en ny konfiguration eller valt en befintlig som du vill redigera, väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan värdena nedan för att fylla i formuläret.
 
@@ -55,7 +55,7 @@ När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och f
 
 ## Installera och konfigurera Platform Web SDK
 
-När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på din Platform launch-egenskap väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
+När du har skapat ett datastream enligt beskrivningen i föregående avsnitt måste du konfigurera det Platform Web SDK-tillägg som du slutligen distribuerar på din plats. Om du inte har SDK-tillägget installerat på taggegenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av fliken **[!UICONTROL Catalog]**. Välj sedan **[!UICONTROL Install]** under plattforms-SDK-tillägget i listan över tillgängliga tillägg.
 
 ![](../../../images/governance-privacy-security/consent/adobe/sdk/install.png)
 
@@ -72,16 +72,16 @@ Med SDK-tillägget installerat kan du skapa ett dataelement som representerar st
 I det här fallet kan du implementera följande för att ange standardsamtycke baserat på användarens region:
 
 1. Ange användarens region på webbservern.
-1. Före Platforma launchens skripttagg (inbäddningskod) på webbsidan återger du en separat skripttagg som anger variabeln `adobeDefaultConsent` baserat på användarens region.
+1. Före taggen `script` (inbäddningskod) på webbsidan ska du återge en separat `script`-tagg som anger en `adobeDefaultConsent`-variabel baserat på användarens region.
 1. Konfigurera ett dataelement som använder JavaScript-variabeln `adobeDefaultConsent` och använd det här dataelementet som standardvärde för samtycke för användaren.
 
 Om användarens region bestäms av en CMP kan du använda följande steg i stället:
 
 1. Hantera händelsen &quot;CMP loaded&quot; på sidan.
-1. I händelsehanteraren anger du en `adobeDefaultConsent`-variabel baserat på användarens region och läser sedan in Platforma launchens biblioteksskript med JavaScript.
+1. I händelsehanteraren anger du en `adobeDefaultConsent`-variabel baserat på användarens region och läser sedan in taggbiblioteksskriptet med JavaScript.
 1. Konfigurera ett dataelement som använder JavaScript-variabeln `adobeDefaultConsent` och använd det här dataelementet som standardvärde för samtycke för användaren.
 
-Om du vill skapa ett dataelement i användargränssnittet för Platforma launcher väljer du **[!UICONTROL Data Elements]** i den vänstra navigeringen och sedan **[!UICONTROL Add Data Element]** för att navigera till dialogrutan för att skapa dataelement.
+Om du vill skapa ett dataelement i användargränssnittet för datainsamling väljer du **[!UICONTROL Data Elements]** i den vänstra navigeringen och väljer sedan **[!UICONTROL Add Data Element]** för att navigera till dialogrutan för att skapa dataelement.
 
 härifrån måste du skapa ett [!UICONTROL JavaScript Variable]-dataelement baserat på `adobeDefaultConsent`. Välj **[!UICONTROL Save]** när du är klar.
 
@@ -93,7 +93,7 @@ När dataelementet har skapats går du tillbaka till konfigurationssidan för We
 
 ### Distribuera tillägget på webbplatsen
 
-När du har konfigurerat tillägget kan det integreras med webbplatsen. Se [publiceringsguiden](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html) i Platforma launchens dokumentation för mer information om hur du distribuerar din uppdaterade biblioteksversion.
+När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer information om hur du distribuerar din uppdaterade biblioteksbygge finns i [publiceringsguiden](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html) i taggdokumentationen.
 
 ## Kommandon för att ändra samtycke {#commands}
 
