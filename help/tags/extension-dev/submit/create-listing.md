@@ -44,6 +44,7 @@ Om du redan har ett företagskonto, eller om du inte planerar att slutföra din 
    >[!NOTE]
    >
    >Detta är ett annat filformat än det som används i tilläggskoden. Tillägget i sig innehåller en svg-fil som [ikon](../manifest.md).
+
    - **Bild**  - Få uppmärksamhet genom att använda en bild som kan vara fristående och visa ert varumärke och framhäva er applikation. Den bild som visas när någon delar en länk till din Exchange-lista eller publicerar om den på sociala medier. Det måste därför vara en modellbeteckning för ert varumärke.
    - **App Publisher-logotyp**  - Det här är företagets logotyp, kontrollera att ikonen har rätt dimensioner på 1 280 x 720 eller 2 560 x 1 440 (16:9) i png- eller jpg-format.
    - **Konfigurationsanvisningar**  - Informera kunder om hur du konfigurerar ditt Adobe Experience Platform-tillägg. Kontrollera att de förstår alla nödvändiga inställningar och nästa steg när din [konfigurationsvy](../configuration.md) visas omedelbart efter att du har installerat tillägget i en egenskap. 
