@@ -2,9 +2,9 @@
 title: Användningsexempel som stöds av Adobe Experience Platform Web SDK
 description: Lär dig vilka användningsområden som stöds i Adobe Experience Platform Web SDK.
 keywords: web sdk;användningsfall
-source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '552'
 ht-degree: 8%
 
 ---
@@ -29,7 +29,7 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Skicka data till flera organ på sidan | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/interacting-with-multiple-properties.html?lang=en#fundamentals) |
 | Detaljerad felrapportering och loggar |  |
 | Spåra begäranden på klientsidan och serversidan |  |
-| Adobe Experience Platform Launch-tillägg | [Tilläggsdokument för Web SDK](../../tags/extensions/web/sdk/overview.md) |
+| taggtillägg | [Tilläggsdokument för Web SDK](../../tags/extensions/web/sdk/overview.md) |
 | Tillgängliga felsökningsverktyg | [Felsökningstillägg ](https://experienceleague.adobe.com/docs/debugger-learn/tutorials/experience-platform-debugger/introduction-to-the-experience-platform-debugger.html?lang=en) och  [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon) |
 
 {style=&quot;table-layout:auto&quot;}
