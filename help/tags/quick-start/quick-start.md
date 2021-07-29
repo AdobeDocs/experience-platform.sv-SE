@@ -1,9 +1,9 @@
 ---
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '1530'
+source-wordcount: '1532'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Taggar är Adobe Experience Platform nästa generation av tagghanteringsteknik. Den är uppbyggd från grunden för att stödja ett öppet och hållbart ekosystem där alla kan bygga egna integreringar som Adobe-kunder kan driftsätta på sina webbplatser. Det är ett API-program först, så allt du kan göra via användargränssnittet kan du också göra programmatiskt via ett API.
 
@@ -26,8 +26,6 @@ Grundläggande arbetsflöde för taggar:
 6. Testa i utvecklingsmiljön.
 7. Marknadsför till produktion.
 
-En introduktionsvideo finns i [introduktionsvideon](videos.md)-dokumentationen.
-
 ## 1. Konfigurera grupper och användare
 
 Taggar är helt integrerade med din Adobe ID. Användarbehörigheter hanteras via Admin Console med andra Adobe-produkter och lösningar från [!DNL Creative Cloud], [!DNL Document Cloud] och Experience Cloud.
@@ -38,7 +36,7 @@ Detaljerade instruktioner om hur du skapar grupper och lägger till användare f
 
 ## 2. Logga in
 
-När taggrättigheter har lagts till i din Adobe ID måste du logga in i användargränssnittet för datainsamling. Du kan göra detta genom att gå direkt till [inloggningsskärmen för Experience Cloud](https://experiencecloud.adobe.com) och välja **[!UICONTROL Launch / Data Collection]** på snabbåtkomstfliken.
+När taggrättigheter har lagts till i din Adobe ID måste du logga in i användargränssnittet för datainsamling. Du kan göra detta genom att gå direkt till inloggningsskärmen [Experience Cloud](https://experiencecloud.adobe.com) och välja användargränssnittet för datainsamling på snabbåtkomstfliken.
 
 >[!NOTE]
 >
@@ -56,7 +54,7 @@ Ett tillägg är en integrering som byggts av Adobe eller en Adobe-partner som l
 
 Alla nya egenskaper levereras med [Core-tillägget](../extensions/web/core/overview.md) installerat. Mobila egenskaper har ytterligare tillägg. Core-tillägget har byggts av Adobe för att ge en robust standarduppsättning med dataelementtyper för datalagret och händelsetyperna för dina regler. De flesta åtgärder som du vill utföra (hämta ett ECID, skicka [!DNL Adobe Analytics]-beacons, läsa in den globala mbox-filen [!DNL Target]) kommer från tillägg som du installerar från katalogen.
 
-Det som gör taggar i Platform verkligt unika är att dessa tillägg kan byggas av vem som helst. Behöver ni släppa en Facebook-pixel för återmarknadsföring på er webbplats? Ta en titt på det tillägg som Facebook har byggt. Vill du ha samma sak för Twitter eller Linked In? Använd dessa tillägg. Behöver du göra en undersökning? Titta på Query Pro eller Foresee. Behöver du hantera sekretess och samtycke från dina slutanvändare för att få hjälp med [!DNL GDPR]? Ta en titt på Evidon och Trust Arc. Vill du se detaljerad information om hur enskilda användare på din webbplats beter sig? Ta en titt på Clicktale. Mer information finns i [Lägga till ett nytt tillägg](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
+Det som gör taggar i Platform verkligt unika är att dessa tillägg kan byggas av vem som helst. Behöver ni släppa en Facebook-pixel för återmarknadsföring på er webbplats? Ta en titt på det tillägg som Facebook har byggt. Vill du ha samma sak för Twitter eller Linked In? Använd dessa tillägg. Behöver du göra en undersökning? Titta på Query Pro eller Foresee. Behöver du hantera sekretess och samtycke från dina slutanvändare för att få hjälp med [!DNL GDPR]? Ta en titt på Evidon och Trust Arc. Vill du se detaljerad information om hur enskilda användare på din webbplats beter sig? Ta en titt på Clicktale. Mer information finns i avsnittet [lägga till ett nytt tillägg](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
 
 ## 5. Skapa dataelement och regler
 
