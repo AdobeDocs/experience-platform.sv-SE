@@ -1,9 +1,9 @@
 ---
 title: Implementera tredjepartsbibliotek
 description: Lär dig mer om de olika metoderna för att lagra bibliotek från tredje part i dina Adobe Experience Platform-taggtillägg.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1329'
+source-wordcount: '1330'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Ett av de främsta syftena med taggtillägg i Adobe Experience Platform är att göra det möjligt att enkelt implementera befintlig marknadsföringsteknologi (bibliotek) på er webbplats. Genom att använda tillägg kan du implementera bibliotek från tredjepartsnätverk för innehållsleverans (CDN) utan att behöva redigera webbplatsens HTML manuellt.
 
