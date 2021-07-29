@@ -1,9 +1,9 @@
 ---
 title: Översikt över tilläggsutveckling
 description: Lär dig mer om de primära komponenterna för olika taggtilläggstyper och tilläggsutvecklingsprocessen i Adobe Experience Platform.
-source-git-commit: a165f0c254885b17db734ab09bf6523175a11dfb
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '947'
+source-wordcount: '948'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Ett av de främsta målen med taggar i Adobe Experience Platform är att skapa ett öppet ekosystem där ingenjörer utanför Adobe kan visa ytterligare funktioner på sina webbplatser och i mobilapplikationer. Detta uppnås genom taggtillägg. När ett tillägg har installerats på en taggegenskap blir det tilläggets funktioner tillgängliga för alla användare av egenskapen.
 
