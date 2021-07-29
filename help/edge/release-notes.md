@@ -3,14 +3,18 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: e158b8129fe5afe71af48b7c64ca34b00e79965c
+source-git-commit: c6feab3c9cda479c7dabdbf0533145fdcaa36ab1
 workflow-type: tm+mt
-source-wordcount: '637'
+source-wordcount: '670'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.6.1 - 29 juli 2021
+
+* Ett problem har korrigerats där återgivningspersonalisering för en enkelsidig appvy utan något personaliseringsinnehåll skulle orsaka ett fel och få löftet som returnerades från kommandot `sendEvent` att avvisas.
 
 ## Version 2.6.0 - 27 juli 2021
 
