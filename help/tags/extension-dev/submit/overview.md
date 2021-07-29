@@ -1,9 +1,9 @@
 ---
 title: Översikt över överföringsprocessen för tillägg
 description: Lär dig hur du skickar in ditt tillägg i Adobe Experience Platform från utveckling till release.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Att skicka ett tillägg till datainsamlingskatalogen i Adobe Experience Platform kan verka vara en svår uppgift. I det här dokumentet finns en stegvis guide för hur du skickar in tillägget med hjälp av individuella stödlinjer. För att skicka in ditt tillägg måste du utföra följande steg:
 
