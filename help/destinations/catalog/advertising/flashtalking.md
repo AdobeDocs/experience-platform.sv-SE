@@ -3,9 +3,9 @@ keywords: Flashtalk OneTag extensions;Flashtalk OneTag extension;Flashtalk OneTa
 title: Flashtalk OneTag-tillägg
 description: Tillägget Flashtalk OneTag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: e0dcbe9d-6fed-4b86-839e-661b7df8580e
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
 workflow-type: tm+mt
-source-wordcount: '475'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med taggtillägget [!DNL Flashtalking OneTag] är det enkelt att attribuera webbplatsåtgärder för visning, video och mobilannonsering. Distribuera [!DNL Flashtalking OneTag] till webbegenskaperna med Launch.
+Med taggtillägget [!DNL Flashtalking OneTag] är det enkelt att attribuera webbplatsåtgärder för visning, video och mobilannonsering. Distribuera [!DNL Flashtalking OneTag] till webbegenskaperna med hjälp av taggar.
 
 [!DNL Flashtalking OneTag] är ett reklamtillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101392.flashtalking-onetag.html).
 
@@ -26,7 +26,7 @@ Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Plat
 
 Det här tillägget är tillgängligt i [!DNL Destinations]-katalogen för alla kunder som har köpt Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Taggar som erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg. och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg. och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
