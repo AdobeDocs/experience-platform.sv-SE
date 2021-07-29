@@ -1,9 +1,9 @@
 ---
 title: Tillägg
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
-source-git-commit: 5b8ef30b1d0e6d682c94453117677c806eba1e02
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Ett tillägg är en paketerad koduppsättning som utökar funktionerna som anges i taggar eller vidarebefordran av händelser.
 
@@ -26,15 +26,13 @@ Tillägg avgör vilka element som är tillgängliga när du skapar egenskaper, r
 
 Använd länkarna högst upp i listan Tillägg om du vill visa installerade tillägg, katalogen för tillägg eller uppdateringar.
 
-Välj ett tillägg och välj sedan [!UICONTROL Configure] för att visa och ändra tilläggets inställningar. Mer information om tilläggsalternativ finns i [Lägg till ett nytt tillägg](#add-a-new-extension).
+Välj ett tillägg och välj sedan [!UICONTROL Configure] för att visa och ändra tilläggets inställningar. Mer information om tilläggsalternativ finns i avsnittet [lägga till ett nytt tillägg](#add-a-new-extension).
 
 >[!IMPORTANT]
 >
 >Ändringarna börjar inte gälla förrän de [publiceras](../../publishing/overview.md).
 
 Som standard har Adobe tillägg som stöder vanliga integreringar. Tillägg kan ändras med anpassade konfigurationer. Konfigurationer tillhandahålls via tilläggen. Om du vill skapa en konfiguration väljer du tilläggskortet och sedan **[!UICONTROL Add New Configuration]**.
-
-En videointroduktion finns i [Tillägg](../../../quick-start/videos.md).
 
 ## Tilläggskatalog
 
