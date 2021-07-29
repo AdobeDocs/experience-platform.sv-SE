@@ -3,9 +3,9 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: a6fca344e6b307e503e29ca7dda3534cdea62f53
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1460'
+source-wordcount: '1451'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ alloy("sendEvent", {
 dataLayer.commerce = null;
 ```
 
-I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Sedan skickas det klonade resultatet till kommandot `sendEvent`. Om du gör det ser du till att kommandot `sendEvent` har en ögonblicksbild av datalagret som det var när kommandot `sendEvent` kördes så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki), ger metoden `getState()` en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
+I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Sedan skickas det klonade resultatet till kommandot `sendEvent`. Om du gör det ser du till att kommandot `sendEvent` har en ögonblicksbild av datalagret som det var när kommandot `sendEvent` kördes så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki), ger metoden `getState()` en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder taggtillägget Adobe Experience Platform Web SDK.
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ I en XDM-upplevelsehändelse finns det ett valfritt `eventType`-fält. Detta inn
 | delivery.feedback | Feedback-händelser för leverans. Exempel på feedback-händelser för e-postleverans |
 
 
-De här händelsetyperna visas i en listruta om du använder Adobe Experience Platform Launch-tillägget eller så kan du alltid skicka dem utan Experience Platform Launch. De kan skickas som en del av `xdm`-alternativet.
+De här händelsetyperna visas i en listruta om du använder taggtillägget eller så kan du alltid skicka dem utan taggar. De kan skickas som en del av `xdm`-alternativet.
 
 
 ```javascript
