@@ -1,24 +1,23 @@
 ---
-title: Integrera stödet för IAB TCF 2.0 med Platform launch och Platform Web SDK Extension
-description: Lär dig hur du ställer in godkännande för IAB TCF 2.0 med Adobe Experience Platform Launch och tillägget Adobe Experience Platform Web SDK.
+title: Integrera stödet för IAB TCF 2.0 med hjälp av taggar och Platform Web SDK Extension
+description: Lär dig hur du ställer in IAB TCF 2.0-godkännande med taggar och Adobe Experience Platform Web SDK-tillägget.
 exl-id: dc0e6b68-8257-4862-9fc4-50b370ef204f
-translation-type: tm+mt
-source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '831'
 ht-degree: 0%
 
 ---
 
-# Integrera stödet för IAB TCF 2.0 med Platform launch och Platform Web SDK-tillägget
+# Integrera stödet för IAB TCF 2.0 med hjälp av taggar och Platform Web SDK-tillägget
 
-Adobe Experience Platform Web SDK stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). Den här guiden visar hur du ställer in en Adobe Experience Platform Launch-egenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med Adobe Experience Platform Web SDK-tillägget för Experience Platform Launch.
+Adobe Experience Platform Web SDK stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). I den här handboken visas hur du ställer in en taggegenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med hjälp av taggtillägget Adobe Experience Platform Web SDK.
 
-Om du inte vill använda Experience Platform Launch, se guiden [med IAB TCF 2.0 utan Experience Platform Launch](./without-launch.md).
+Om du inte vill använda taggar, se guiden [med IAB TCF 2.0 utan taggar](./without-launch.md).
 
 ## Komma igång
 
-Om du vill använda IAB TCF 2.0 med Experience Platform Launch och Platform Web SDK-tillägget måste du ha ett XDM-schema och en XDM-datauppsättning tillgänglig.
+Om du vill använda IAB TCF 2.0 med taggar och Platform Web SDK-tillägget måste du ha ett XDM-schema och en XDM-datauppsättning tillgänglig.
 
 Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs översikten [Adobe Experience Platform Web SDK](../../home.md) och dokumentationen [Vanliga frågor](../../web-sdk-faq.md) om du vill få en snabb uppdatering.
 
@@ -28,9 +27,9 @@ I tilläggskonfigurationen finns en inställning för standardsamtycke. Detta st
 
 Mer information om hur du konfigurerar standardsamtycke finns i [standardsektionen för samtycke](../../fundamentals/configuring-the-sdk.md#default-consent) i SDK-konfigurationsguiden.
 
-## Uppdaterar profil med medgivandeinformation {#consent-code-1}
+## Uppdatera profil med medgivandeinformation {#consent-code-1}
 
-Om du vill anropa åtgärden `setConsent` när dina kunders medgivandeinställningar har ändrats måste du skapa en ny Experience Platform Launch-regel. Börja med att lägga till en ny händelse och välj händelsetypen för Core-tillägget&quot;Custom Code&quot;.
+Om du vill anropa åtgärden `setConsent` när dina kunders medgivandeinställningar har ändrats måste du skapa en ny taggregel. Börja med att lägga till en ny händelse och välj händelsetypen för Core-tillägget&quot;Custom Code&quot;.
 
 Använd följande kodexempel för den nya händelsen:
 
