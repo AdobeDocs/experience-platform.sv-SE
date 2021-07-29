@@ -1,9 +1,9 @@
 ---
 title: Dataelementtyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen data-element för ett taggtillägg i en webbegenskap.
-source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 I datainsamlingstaggar är dataelement i princip alias för datadelar på en sida. Dessa data finns i frågesträngsparametrar, cookies, DOM-element eller andra platser. Ett dataelement kan refereras av regler och fungerar som en abstraktion för att komma åt dessa datadelar.
 
