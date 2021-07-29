@@ -1,9 +1,9 @@
 ---
 title: Adobe-hanterade värdar - översikt
 description: Läs mer om standardvärdalternativet för distribution av kodbiblioteksbyggen i Adobe Experience Platform.
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Värdar som hanteras av Adobe är standardvärdinställningen för att distribuera taggbiblioteksbyggen i Adobe Experience Platform. När du skapar en ny egenskap via användargränssnittet i datainsamlingen skapas en Adobe-hanterad standardvärd.
 
@@ -89,7 +89,7 @@ Cachekontrollhuvuden används bara för huvudbiblioteksbygget. Alla underresurse
 
 ## Använda värdtjänster som hanteras av Adobe i användargränssnittet för datainsamling
 
-När du först skapar en egenskap i [användargränssnittet för datainsamling](http://launch.adobe.com/) skapas en värddator som hanteras av Adobe automatiskt. Alla tillgängliga miljöer som har omedelbart användbara egenskaper tilldelas som standard till värddatorn som hanteras av Adobe.
+När du först skapar en egenskap i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/) skapas en värddator som hanteras av Adobe automatiskt. Alla tillgängliga miljöer som har omedelbart användbara egenskaper tilldelas som standard till värddatorn som hanteras av Adobe.
 
 >[!NOTE]
 >
