@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar dataströmmar. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '835'
 ht-degree: 0%
 
 ---
@@ -19,17 +19,17 @@ Din organisation måste etableras för den här funktionen. Kontakta din Custome
 
 ## Skapa en datastream-konfiguration
 
-Datastreams kan skapas i Adobe [!DNL Experience Platform Launch] med hjälp av konfigurationsverktyget Datastream.
+Datastreams kan skapas i användargränssnittet för datainsamling med hjälp av konfigurationsverktyget Datastream.
 
 ![navigering för datastreams-verktyg](../images/datastreams/config.png)
 
 >[!NOTE]
 >
->Konfigurationsverktyget för datastreams är tillgängligt för kunder på tillåtelselista oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](../../tags/ui/administration/user-permissions.md) i [!DNL Experience Platform Launch]-dokumentationen.
+>Konfigurationsverktyget för datastreams är tillgängligt för kunder på tillåtelselista oavsett om de använder Platform som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter. Mer information finns i artikeln [användarbehörigheter](../../tags/ui/administration/user-permissions.md) i taggdokumentationen.
 
 Skapa en datastream genom att klicka på **[!UICONTROL New Datastream]** i skärmens övre högra del. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö. Tillgängliga inställningar anges nedan.
 
-När du skapar en datastam skapas tre miljöer automatiskt med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna i [!DNL Experience Platform Launch]. När du skapar ett [!DNL Experience Platform Launch]-bibliotek i en dev-miljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
+När du skapar en datastam skapas tre miljöer automatiskt med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna för taggar. När du skapar ett taggbibliotek i en utvecklingsmiljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
 
 Det ID som används i SDK som `edgeConfigId` är ett sammansatt ID som anger konfigurationen och miljön (till exempel `1c86778b-cdba-4684-9903-750e52912ad1:stage`). Om det inte finns någon miljö i det sammansatta ID:t (till exempel `stage` i föregående exempel) används produktionsmiljön.
 
