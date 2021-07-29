@@ -1,9 +1,9 @@
 ---
 title: 'Åtkomst till ECID '
-description: Adobe Experience Platform Web SDK Extension Leveraging ECID in Adobe Experience Platform Launch
-source-git-commit: 3002036d7366e2f7310aa62e53c7c391d9ff7a07
+description: Adobe Experience Platform Web SDK Extension Leveraging ECID in taggar
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '130'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 [!DNL Experience Cloud Identity (ECID)] är en beständig identifierare för en besökare på webbplatsen. Under vissa omständigheter kanske du föredrar att få tillgång till ECID (till exempel för att skicka det till en tredje part).
 
-För att få tillgång till ECID i Adobe Experience Platform Launch rekommenderar Adobe följande:
+Adobe rekommenderar följande för att få åtkomst till ECID inom taggar:
 
 1. Kontrollera att din egenskap är konfigurerad med [sekvensering av regelkomponenter](https://experienceleague.adobe.com/docs/launch/using/ui/rules.html?lang=en#rule-component-sequencing) aktiverad.
 1. Skapa en ny regel.
