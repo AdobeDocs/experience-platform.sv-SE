@@ -1,9 +1,9 @@
 ---
 title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '874'
 ht-degree: 1%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
 
 Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste data skickas till Adobe Experience Platform Edge Network med ett eller flera av följande tre alternativ:
 
