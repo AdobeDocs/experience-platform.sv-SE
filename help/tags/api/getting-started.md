@@ -1,9 +1,9 @@
 ---
 title: Komma igång med Reactor API
 description: Lär dig hur du kommer igång med Reaktors-API, inklusive steg för att generera nödvändiga inloggningsuppgifter.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1064'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ På nästa skärm får du en uppmaning om att välja en eller flera produktprofi
 
 >[!NOTE]
 >
->Produktprofiler hanteras av din organisation via Adobe Admin Console och innehåller specifika behörighetsgrupper för detaljfunktioner i Adobe Experience Platform Launch. Produktprofiler och deras behörigheter kan bara hanteras av användare med administratörsbehörighet inom organisationen. Om du är osäker på vilka produktprofiler du ska välja för API kontaktar du administratören.
+>Produktprofiler hanteras av er organisation via Adobe Admin Console och innehåller specifika behörighetsgrupper för detaljfunktioner. Produktprofiler och deras behörigheter kan bara hanteras av användare med administratörsbehörighet inom organisationen. Om du är osäker på vilka produktprofiler du ska välja för API kontaktar du administratören.
 
 Välj önskade produktprofiler i listan och välj sedan **Spara konfigurerad API** för att slutföra API-registreringen.
 
@@ -98,7 +98,7 @@ En ny åtkomsttoken genereras och en knapp för att kopiera token till Urklipp t
 
 #### Generera åtkomsttoken programmatiskt {#program}
 
-Om du använder Launch-integreringen för ett program kan du programmässigt generera åtkomsttoken via API-begäranden. För att uppnå detta måste du få följande värden:
+Om du använder integreringen för ett program kan du programmässigt generera åtkomsttoken via API-begäranden. För att uppnå detta måste du få följande värden:
 
 * Klient-ID (`{API_KEY}`)
 * Klienthemlighet (`{SECRET}`)
