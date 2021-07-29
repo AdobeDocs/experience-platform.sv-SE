@@ -3,14 +3,13 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 seo-title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
-translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
-
 
 # Måltyper och -kategorier
 
@@ -42,15 +41,15 @@ I videon nedan beskrivs de två typerna av destinationer:
 
 ## Tillägg {#extensions}
 
-Platform utnyttjar kraften och flexibiliteten i Adobe Experience Platform Launch för att inkludera tillägg av Platform launch i plattformsgränssnittet.
+Plattformen utnyttjar tagghanteringens kraft och flexibilitet, vilket gör att du kan konfigurera taggtillägg i användargränssnittet för datainsamling.
 
 >[!TIP]
 >
->Mer information om Adobe Experience Platform Launch-tillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Adobe Experience Platform Launch-tilläggsöversikten](./catalog/launch-extensions/overview.md).
+>Detaljerad information om taggtillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [översikten över taggtillägg](./catalog/launch-extensions/overview.md).
 
-platform launch-tillägg vidarebefordrar råa händelsedata till flera typer av destinationer. Tänk på tillägg som en **typ av händelsespårning**-typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [tillägget för Gainsight-anpassning](./catalog/personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
+Med taggtillägg vidarebefordras råa händelsedata till flera typer av mål. Tänk på tillägg som en **typ av händelsespårning**-typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [tillägget för Gainsight-anpassning](./catalog/personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
 
-![Experience Platform Launch-tillägg jämfört med andra destinationer](./assets/common/launch-and-other-destinations.png)
+![Märkordstillägg jämfört med andra mål](./assets/common/launch-and-other-destinations.png)
 
 ## När anslutningar och tillägg ska användas
 
@@ -65,4 +64,3 @@ Tillägg är användbara när händelsedata används för att utlösa en åtgär
 Anslutningarna och tilläggen i [målkatalogen](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Advertising**, **Cloud storage**, **Survey platforms**, **Email marketing**, osv.), beroende på vilken marknadsföringsåtgärd de hjälper dig att utföra. Mer information om var och en av kategorierna, samt vilka mål som ingår i varje kategori, finns i dokumentationen till [målkatalogen](./catalog/overview.md).
 
 ![Målkategorier](./assets/destination-types/destination-categories-menu.png)
-
