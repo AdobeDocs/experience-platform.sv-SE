@@ -3,7 +3,7 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '779'
 ht-degree: 1%
@@ -65,10 +65,10 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
-1. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via [Adobe Experience Platform Launch](http://launch.adobe.com/). Här är en [snabbstartguide till Platform launch](../../../tags/quick-start/quick-start.md)).
+1. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via gränssnittet [för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i [snabbstartsguiden för taggar](../../../tags/quick-start/quick-start.md).
 1. [Konfigurera ](../../fundamentals/configuring-the-sdk.md) SDK för Offer decisioning. Ytterligare Offer decisioning-specifika steg finns nedan.
 
-   * Fristående installerat SDK
+   * Installera den fristående SDK:n
 
       1. Konfigurera åtgärden &quot;sendEvent&quot; med din `decisionScopes`
 
@@ -81,10 +81,10 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
              ]
           })
          ```
-   * platform launch installerad SDK
+   * Installera SDK via taggar
 
-      1. [Skapa en Platform launch-egenskap](../../../tags/ui/administration/companies-and-properties.md)
-      1. [Lägg till Platforma launchens inbäddningskod](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      1. [Skapa en taggegenskap](../../../tags/ui/administration/companies-and-properties.md)
+      1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
       1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du just skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](../../../tags/ui/managing-resources/extensions/overview.md).
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
