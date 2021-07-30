@@ -3,9 +3,9 @@ keywords: PebblePost;peblepost;PebblePost Programmatic Direct Mail;pebblepost pr
 title: PebblePost-tillägg
 description: PebblePost-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 2d0308db-9d75-4cd1-97de-70ce3837369d
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL PebblePost's Programmatic Direct Mail®] som hjälper digitala marknadsförare att koppla samman online-intressen och avsikter med online-offlinematerial som konverterar. Marknadsförarna kan utnyttja de anpassade datasegment som de har skapat i Adobe för att nu rikta sig till konsumenterna med ett relevant, långvarigt mediefunktioner i hemmet. Analysera prestanda i realtid baserat på responssökvägsaktivitet och konverteringar på plats.
 
-[!DNL PebblePost] är ett e-posttillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html).
+[!DNL PebblePost] är ett e-posttillägg i Adobe Experience Platform. Mer information om PebblePost finns i [integreringsblogginlägget](https://blog.adobe.com/en/publish/2017/11/16/pebblepost-builds-integration-launch-adobe.html#gs.7lejiq).
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
@@ -41,8 +41,6 @@ Klicka på målet för att markera det och välj sedan **[!UICONTROL Configure]*
 Välj den egenskap i vilken du vill installera tillägget. Du kan också skapa en ny egenskap. En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. Lär dig mer om egenskaper i avsnittet [Egenskaper](../../../tags/ui/administration/companies-and-properties.md#properties-page) i taggdokumentationen.
 
 Arbetsflödet vägleder dig genom stegen för att slutföra installationen.
-
-Information om alternativ för tilläggskonfiguration och installationsstöd finns på sidan [PebblePost på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) i taggdokumentationen.
 
