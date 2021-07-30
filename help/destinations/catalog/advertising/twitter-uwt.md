@@ -3,9 +3,9 @@ keywords: twitter;Twitter;twitter universella webbplatstagg;Twitter universell w
 title: Tillägget twitter Universal Web Site Tag
 description: Tillägget Twitter Universal Website Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 51ee94f7-e44a-4192-b684-3d7838af4359
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Twitter Universal Website Tag] innehåller åtgärder för att skicka beacons till Twitter UWT-tagg.
 
-[!DNL Twitter Universal Website Tag] är ett reklamtillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns i [Avancerad konverteringsspårning](https://business.twitter.com/en/solutions/twitter-ads/website-clicks/advanced-conversion-tracking.html).
+[!DNL Twitter Universal Website Tag] är ett reklamtillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns i [Konverteringsspårning](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html) i Twitter-dokumentationen.
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
