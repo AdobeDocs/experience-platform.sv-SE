@@ -3,9 +3,9 @@ keywords: livefyre;livefyre extension
 title: Adobe Livefyre-tillägg
 description: Adobe Livefyre är en social destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: a134c144-e7b8-4d48-8c90-5999e5ceb8a0
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Med Adobe Livefyre kan ni identifiera, ordna och publicera ett konstant flöde av användargenererat innehåll på er webbplats för att skapa autentiska och personaliserade upplevelser.
 
-Adobe Livefyre är en social utbyggnad i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100464.html).
+Adobe Livefyre är en social utbyggnad i Adobe Experience Platform. Mer information om Adobe Livefyre finns i [Handboken för Livefyre-implementering](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html?lang=en).
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
@@ -42,10 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns på sidan [Adobe Livefyre på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100464.html).
-
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i guiden om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension).
-
 
 ## Så här använder du tillägget {#how-to-use}
 
