@@ -3,9 +3,9 @@ keywords: Marketo Munchkin;marketo munchkin;Marketo Munchkin extension;marketo m
 title: Marketo Munchkin-tillägg
 description: Tillägget Marketo Munchkin är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 0639ff74-5450-456e-b030-8118814ed705
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [!DNL Marketo’s Munchkin] JavaScript gör det möjligt att följa upp besök och klickningar på slutanvändarens  [!DNL Marketo] landningssidor och externa webbsidor.
 
-[!DNL Marketo Munchkin] är ett e-posttillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101054.marketo-munchkin.html).
+[!DNL Marketo Munchkin] är ett e-posttillägg i Adobe Experience Platform. Mer information om Marketo Munchkin finns i [Leadspårning](https://developers.marketo.com/javascript-api/lead-tracking/) i Marketo-dokumentationen.
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
@@ -43,8 +43,6 @@ Klicka på målet för att markera det och välj sedan **[!UICONTROL Configure]*
 Välj den egenskap i vilken du vill installera tillägget. Du kan också skapa en ny egenskap. En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. Lär dig mer om egenskaper i avsnittet [Egenskaper](../../../tags/ui/administration/companies-and-properties.md#properties-page) i taggdokumentationen.
 
 Arbetsflödet vägleder dig genom stegen för att slutföra installationen.
-
-Information om alternativ för tilläggskonfiguration och installationsstöd finns på [Marketo Munchkin-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101054.marketo-munchkin.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) i taggdokumentationen.
 
