@@ -3,7 +3,7 @@ keywords: Marketo;marketo;Marketo extension;marketo extension
 title: Marketo-tillägg
 description: Marketo-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 3841eb19-a17e-4c28-a101-7332d178af34
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
 source-wordcount: '460'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Marketo]Med sitt kraftfulla program för automatiserad marknadsföring kan marknadsförarna överordnad konsten och vetenskapen inom digital marknadsföring för att engagera kunder och potentiella kunder.
 
-[!DNL Marketo] är ett e-posttillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på [tilläggssidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html).
+[!DNL Marketo] är ett e-posttillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på [tilläggssidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html).
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
@@ -38,7 +38,7 @@ Så här installerar du tillägget [!DNL Marketo]:
 4. Välj den egenskap i vilken du vill installera tillägget. Du kan också skapa en ny egenskap. En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. Lär dig mer om egenskaper i avsnittet [Egenskaper](../../../tags/ui/administration/companies-and-properties.md#properties-page) i taggdokumentationen.
 5. Arbetsflödet vägleder dig genom stegen för att slutföra installationen.
 
-Information om alternativ för tilläggskonfiguration och installationsstöd finns på [Marketo-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html).
+Information om alternativ för tilläggskonfiguration och installationsstöd finns på [Marketo-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) i taggdokumentationen.
 
