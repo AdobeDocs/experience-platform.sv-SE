@@ -3,9 +3,9 @@ keywords: Marketo Web Personalization;marketo web personalization;Marketo Web Pe
 title: Marketo Web Personalization-tillägg
 description: Marketo Web Personalization Extension är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 2f194a5e-13b7-460a-a968-29131771efca
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '505'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Det här tillägget distribuerar skriptet för [!DNL Marketo’s] Web Personalization- och ContentAI-program. [!DNL Marketo] Webbpersonalisering identifierar och personaliserar unikt innehåll för webbbesökares egenskaper, t.ex. inbyggd grafik för anonyma besökare och ett stort antal beteendeattribut i  [!DNL Marketo] Engagement Platform för kända besökare. [!DNL Marketo] ContentAI innehåller funktioner för AI-baserade rekommendationer och personalisering för webb- och e-postkampanjer som är unika för B2B-kunder.
 
-[!DNL Marketo Web Personalization] är ett personaliseringstillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101232.marketo-web-personalization.html).
+[!DNL Marketo Web Personalization] är ett personaliseringstillägg i Adobe Experience Platform. Mer information om webbpersonalisering och ContentAI i Marketo finns i [Webbpersonalisering - översikt](https://experienceleague.adobe.com/docs/marketo/using/product-docs/web-personalization/understanding-web-personalization/web-personalization-overview.html?lang=en).
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
@@ -41,8 +41,6 @@ Klicka på målet för att markera det och välj sedan **[!UICONTROL Configure]*
 Välj den egenskap i vilken du vill installera tillägget. Du kan också skapa en ny egenskap. En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. Lär dig mer om egenskaper i avsnittet [Egenskaper](../../../tags/ui/administration/companies-and-properties.md#properties-page) i taggdokumentationen.
 
 Arbetsflödet vägleder dig genom stegen för att slutföra installationen.
-
-Mer information om alternativ för tilläggskonfiguration och installationsstöd finns på [Marketo Web Personalization-sidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101232.marketo-web-personalization.html).
 
 Du kan också installera tillägget direkt i [användargränssnittet för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i avsnittet om att [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) i taggdokumentationen.
 
