@@ -1,7 +1,7 @@
 ---
 title: Användarbehörigheter
 description: Lär dig mer om de olika taggbehörigheterna för Adobe Experience Platform-användare.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: e93cb075dc8c8d01fcda3edf0014f86a47b5b710
 workflow-type: tm+mt
 source-wordcount: '2378'
 ht-degree: 0%
@@ -75,7 +75,6 @@ Behörigheterna i den här gruppen är:
 Företagsrättigheter gäller för behörigheter som sträcker sig över flera egenskaper.  Det finns för närvarande tre:
 
 * **Hantera egenskaper:** Detta gör att du kan skapa nya egenskaper i användargränssnittet för datainsamling och ändra metadata och inställningar på egenskapsnivå. Du kan också ta bort egenskaper. Mer information finns i [egenskapsdokumentationen](companies-and-properties.md). Administratörer utför vanligtvis den här rollen.
-* 
 * Ger möjlighet att skapa nya egenskaper och ändra metadata och inställningar på egenskapsnivå. Du kan också ta bort egenskaper.  Läs mer om egenskaper [här](companies-and-properties.md). Administratörer utför vanligtvis den här rollen.
 * **Utveckla tillägg:** Ger möjlighet att skapa och ändra tilläggspaket som ägs av företaget, inklusive privata releaser och förfrågningar om allmän spridning.
 * **Hantera appkonfigurationer:** Detta är endast tillgängligt för kunder som har licensierat Adobe Journey Optimizer eller någon annan lösning som ger dem tillgång till mobilmeddelanden i appen och push-meddelanden.  På så sätt kan du hantera de appar som Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification Service.
