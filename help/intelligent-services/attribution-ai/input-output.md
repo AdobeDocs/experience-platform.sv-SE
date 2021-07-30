@@ -5,7 +5,7 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 91f586746c8d1db4e9219b261d7be36e572f1b50
+source-git-commit: a49218103669758404a4ddf3f9833b8b2d9b7fc6
 workflow-type: tm+mt
 source-wordcount: '2223'
 ht-degree: 0%
@@ -99,7 +99,7 @@ Attribution AI ger följande utdata:
 
 ![](./images/input-output/schema_output.gif)
 
-### Rågranulerade resultat {#raw-granular-scores}
+### Rågranulat {#raw-granular-scores}
 
 Attribution AI ger attribueringspoäng på så detaljnivå som möjligt så att du kan segmentera och minska poängen med valfri spalt. Om du vill visa bakgrundsmusiken i användargränssnittet läser du avsnittet [visa sökvägar för råpoäng](#raw-score-path). Om du vill hämta bakgrundsmusik med API går du till [nedladdningen av bakgrundsmusik i Attribution AI](./download-scores.md)-dokumentet.
 
@@ -141,7 +141,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | identity (Object) | Falskt | Innehåller information om användaren som används för att skapa modellen, till exempel `id` och `namespace`. |
 | id (String) | True | Identitets-ID för användaren, t.ex. cookie-ID, AAID eller MCID. <br> **Exempel:** 17348762725408656344688320891369597404 |
 | namespace (String) | True | Identitetsnamnutrymme som används för att skapa sökvägarna och därmed modellen. <br> **Exempel:** aaid |
-| touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras efter kontaktytpunktsförekomst eller tidsstämpel. |
+| touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras av | förekomst av kontaktyta eller tidsstämpel. |
 | touchpointName (String) | True | Namnet på den kontaktyta som konfigurerades under installationen. <br> **Exempel:** PAID_SEARCH_CLICK |
 | bakgrundsmusik (Object) | True | Pekpunktsbidrag till den här konverteringen som poäng. Mer information om poängen som skapas i det här objektet finns i avsnittet [aggregerade attribueringspoäng](#aggregated-attribution-scores). |
 | touchPoint (Object) | True | Kontaktpunktsmetadata. Mer information om bakgrundsmusik i det här objektet finns i avsnittet [aggregerade poäng](#aggregated-scores). |
@@ -195,7 +195,7 @@ Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du 
 | U-formad | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.uShape |
 | Tidsminskning | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.decayUnits |
 
-### Aggregerade bakgrundsmusik {#aggregated-scores}
+### Sammanlagda bakgrundsmusik {#aggregated-scores}
 
 Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumintervallet är mindre än 30 dagar. Se tabellen nedan för mer information om var och en av dessa aggregerade kolumner.
 
