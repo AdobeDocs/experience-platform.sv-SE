@@ -5,10 +5,10 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 feature: Datahantering
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 2f9ff95529c907cfc28bc98198eca9fcfc21e9b9
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 17%
+source-wordcount: '144'
+ht-degree: 16%
 
 ---
 
@@ -44,6 +44,7 @@ ht-degree: 17%
    * Adobe Target {#adobe-target}
       * [Översikt](personalization/adobe-target/target-overview.md)
       * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
+      * [Åtkomst till svarstoken](personalization/adobe-target/accessing-response-tokens.md)
    * offer decisioning {#offer-decisioning}
       * [Översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
 * Samtycke {#consent}
@@ -54,6 +55,7 @@ ht-degree: 17%
       * [Integrera utan taggar](consent/iab-tcf/without-launch.md)
 * SDK-taggtillägg för webben {#extension}
    * [Web SDK-tillägg](extension/web-sdk-extension-configuration.md)
+   * [Händelsetyper](extension/event-types.md)
    * [Åtgärdstyper](extension/action-types.md)
    * [Dataelementtyper](extension/data-element-types.md)
    * [Åtkomst till ECID](extension/accessing-the-ecid.md)
