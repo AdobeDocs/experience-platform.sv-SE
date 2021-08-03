@@ -5,10 +5,9 @@ title: Översikt över användargränssnittet i JupyterLab
 topic-legacy: Overview
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 91003bf142008bcb1277269b45d8a55234ea6564
 workflow-type: tm+mt
-source-wordcount: '1813'
+source-wordcount: '1825'
 ht-degree: 0%
 
 ---
@@ -68,7 +67,7 @@ I [Adobe Experience Platform](https://platform.adobe.com) väljer du **[!UICONTR
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
-### [!DNL JupyterLab] gränssnitt  {#jupyterlab-interface}
+### [!DNL JupyterLab] gränssnitt {#jupyterlab-interface}
 
 Gränssnittet [!DNL JupyterLab] består av en menyrad, ett fällbart sidofält och huvudarbetsytan som innehåller flikar med dokument och aktiviteter.
 
@@ -255,6 +254,11 @@ Om du vill veta mer om de bärbara datorer som stöds och hur du använder dem k
 
 ## Bibliotek som stöds {#supported-libraries}
 
-Om du vill visa en lista över paket som stöds i Python, R och PySpark kopierar och klistrar du in `!pip list --format=columns` i en ny cell och kör sedan cellen. En lista över paket som stöds visas i alfabetisk ordning.
+Om du vill visa en lista över paket som stöds i Python, R och PySpark kopierar och klistrar du in `!conda list` i en ny cell och kör sedan cellen. En lista över paket som stöds visas i alfabetisk ordning.
 
 ![exempel](../images/jupyterlab/user-guide/libraries.PNG)
+
+Dessutom används följande beroenden, som inte finns med i listan:
+* CUDA 11.2
+* CUDNN 8.1
+
