@@ -3,14 +3,18 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: c6feab3c9cda479c7dabdbf0533145fdcaa36ab1
+source-git-commit: 165c9bce5dabce9704202ebab6b97a4a30e4ca00
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.6.2 - 4 augusti 2021
+
+* Ett problem har korrigerats där en varning om borttagning av `result.decisions` (tillhandahålls av kommandot `sendEvent`) skulle loggas på konsolen även när det inte gick att komma åt egenskapen `result.decisions`. Ingen varning loggas vid åtkomst till egenskapen `result.decisions`, men egenskapen är fortfarande föråldrad.
 
 ## Version 2.6.1 - 29 juli 2021
 
