@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 2f9ff95529c907cfc28bc98198eca9fcfc21e9b9
 workflow-type: tm+mt
-source-wordcount: '293'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,7 @@ ht-degree: 0%
 När du har angett [åtgärdstyper](action-types.md) i [taggtillägget Adobe Experience Platform Web SDK](web-sdk-extension-configuration.md) konfigurerar du dina dataelementtyper.
 
 Den här sidan beskriver de tillgängliga elementtyperna.
+
 
 ## Händelsemarkerings-ID
 
@@ -31,7 +32,7 @@ Använd XDM-format för att skicka data till Adobe Experience Platform Web SDK. 
 
 ![](./assets/XDM-object.png)
 
-Observera att när du öppnar vissa fält i schemat, som `web.webPageDetails.URL`, samlas vissa objekt in automatiskt. Även om flera objekt samlas in automatiskt kan du skriva över dem om det behövs. Alla värden kan fyllas i manuellt eller med andra dataelement.
+Observera att när du öppnar vissa fält i schemat, till exempel `web.webPageDetails.URL`, samlas vissa objekt in automatiskt. Även om flera objekt samlas in automatiskt kan du skriva över dem om det behövs. Alla värden kan fyllas i manuellt eller med andra dataelement.
 
 >[!NOTE]
 >
