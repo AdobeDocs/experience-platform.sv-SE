@@ -3,9 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 1d2f1651dc9d9ab41507e65fd4b2bb84e9660187
+source-git-commit: 930756b4e10c42edf2d58be16c51d71df207d1af
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1266'
 ht-degree: 3%
 
 ---
@@ -42,8 +42,8 @@ Följande diagram hjälper dig att förstå arbetsflödet för kantbeslut i [!DN
 | 3 | Kantnätverket skickar den berikade personaliseringsbegäran till kanten [!DNL Target] med besökar-ID och skickade parametrar. |
 | 4 | Profilskript körs och matas sedan in i [!DNL Target] profillagring. Profillagring hämtar segment från [!UICONTROL Audience Library] (till exempel segment som delas från [!DNL Adobe Analytics], [!DNL Adobe Audience Manager], [!DNL Adobe Experience Platform]). |
 | 5 | Baserat på parametrar för URL-begäran och profildata avgör [!DNL Target] vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till gränsnätverket. |
-| 6 | a. Kantnätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. &#x200B;<br>c. Edge-nätverket skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll, personalisering och så vidare. |
-| 7 | Edge-nätverket vidarebefordrar information om [!UICONTROL Analytics for Target] (A4T) (aktivitet, upplevelse och konverteringsmetadata) till [!DNL Analytics]-&#x200B;. |
+| 6 | a. Kantnätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. <br>c. Edge-nätverket skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll, personalisering och så vidare. |
+| 7 | Edge-nätverket vidarebefordrar information om [!UICONTROL Analytics for Target] (A4T) (aktivitet, upplevelse och konverteringsmetadata) till [!DNL Analytics]-kanten. |
 
 ## Aktivera [!DNL Adobe Target]
 
@@ -63,79 +63,9 @@ Om du vill använda VEC med en [!DNL Platform Web SDK]-implementering installera
 
 Mer information finns i [hjälptillägget för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) i *Adobe Target-handboken*.
 
-## Återge VEC-aktiviteter automatiskt
+## Återge personaliserat innehåll
 
-[!DNL Adobe Experience Platform Web SDK] kan automatiskt återge dina upplevelser som definieras via [!DNL Adobe Target] VEC på webben för dina användare. Om du vill ange till [!DNL Experience Platform Web SDK] för att automatiskt återge VEC-aktiviteter skickar du en händelse med `renderDecisions = true`:
-
-```javascript
-alloy
-("sendEvent", 
-  { 
-  "renderDecisions": true, 
-  "xdm": {
-    "commerce": { 
-      "order": {
-        "purchaseID": "a8g784hjq1mnp3", 
-         "purchaseOrderNumber": "VAU3123", 
-         "currencyCode": "USD", 
-         "priceTotal": 999.98 
-         } 
-      } 
-    }
-  }
-);
-```
-
-## Använda den formulärbaserade dispositionen
-
-[Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) är ett icke-visuellt gränssnitt som är användbart för att konfigurera [!UICONTROL A/B Tests]-, [!UICONTROL Experience Targeting]-, [!UICONTROL Automated Personalization]- och [!UICONTROL Recommendations]-aktiviteter med olika svarstyper, som JSON, HTML, Image osv. Beroende på vilken svarstyp eller vilket beslut som har returnerats av [!DNL Target] kan din affärslogik köras. Om du vill hämta beslut för dina formulärbaserade dispositionsaktiviteter skickar du en händelse med alla&quot;beslutScopes&quot; som du vill ta emot ett beslut för.
-
-```javascript
-alloy
-  ("sendEvent", { 
-    decisionScopes: [
-      "foo", "bar"], 
-      "xdm": {
-        "commerce": { 
-          "order": { 
-            "purchaseID": "a8g784hjq1mnp3", 
-            "purchaseOrderNumber": "VAU3123", 
-            "currencyCode": "USD", 
-            "priceTotal": 999.98 
-          } 
-        } 
-      } 
-    }
-  );
-```
-
-## Beslutsomfattningar
-
-`decisionScopes` definiera avsnitt, platser eller delar av sidorna där du vill återge en personaliserad upplevelse. Dessa `decisionScopes` är anpassningsbara och användardefinierade. För nuvarande [!DNL Target]-kunder kallas `decisionScopes` även&quot;mboxes&quot;. I gränssnittet [!DNL Target] visas `decisionScopes` som &quot;locations&quot;.
-
-## Omfånget `__view__`
-
-[!DNL Experience Platform Web SDK] innehåller funktioner för att hämta VEC-åtgärder utan att förlita dig på SDK för att återge VEC-åtgärder åt dig. Skicka en händelse med `__view__` definierad som `decisionScopes`.
-
-```javascript
-alloy("sendEvent", {
-      "decisionScopes": ["__view__", "foo", "bar"], 
-      "xdm": { 
-        "web": { 
-          "webPageDetails": { 
-            "name": "Home Page"
-          }
-        } 
-      }
-    }
-  ).then(function(results) {
-    for (decision of results.decisions) {
-      if (decision.decisionScope === "__view__") {
-        console.log(decision.content)
-      }
-    }
-  });
-```
+Mer information finns i [Återge innehåll för personalisering](../rendering-personalization-content.md).
 
 ## Målgrupper i XDM
 
@@ -153,6 +83,86 @@ Om du har [!DNL Target]-aktiviteter med fördefinierade målgrupper som använde
 * Tidsram
 
 Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en) i *Adobe Target guide*.
+
+### Svarstoken
+
+Svarstoken används främst för att skicka metadata till tredje part som Google, Facebook osv. Svarstoken returneras
+i fältet `meta` i `propositions` -> `items`. Här följer ett exempel:
+
+```
+{
+  "id": "AT:eyJhY3Rpdml0eUlkIjoiMTI2NzM2IiwiZXhwZXJpZW5jZUlkIjoiMCJ9",
+  "scope": "__view__",
+  "scopeDetails": ...,
+  "renderAttempted": true,
+  "items": [
+    {
+      "id": "0",
+      "schema": "https://ns.adobe.com/personalization/dom-action",
+      "meta": {
+        "experience.id": "0",
+        "activity.id": "126736",
+        "offer.name": "Default Content",
+        "offer.id": "0"
+      }
+    }
+  ]
+}
+```
+
+Om du vill samla in svarstoken måste du prenumerera på `alloy.sendEvent`, iterera genom `propositions`
+och extrahera informationen från `items` -> `meta`. Varje `proposition` har ett `renderAttempted` booleskt fält
+som anger om `proposition` återgavs eller inte. Se exemplet nedan:
+
+```
+alloy("sendEvent",
+  {
+    renderDecisions: true,
+    decisionScopes: [
+      "hero-container"
+    ]
+  }).then(result => {
+    const { propositions } = result;
+
+    // filter rendered propositions
+    const renderedPropositions = propositions.filter(proposition => proposition.renderAttempted === true);
+
+    // collect the item metadata that represents the response tokens
+    const collectMetaData = (items) => {
+      return items.filter(item => item.meta !== undefined).map(item => item.meta);
+    }
+
+    const pageLoadResponseTokens = renderedPropositions
+      .map(proposition => collectMetaData(proposition.items))
+      .filter(e => e.length > 0)
+      .flatMap(e => e);
+  });
+  
+```
+
+När automatisk återgivning är aktiverat innehåller propositionsarrayen:
+
+#### Vid sidinläsning:
+
+* Formulärbaserad disposition baserad `propositions` med flaggan `renderAttempted` inställd på `false`
+* Visual Experience Composer-baserade förslag med flaggan `renderAttempted` inställd på `true`
+* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `true`
+
+#### I vyn - ändra (för cachelagrade vyer):
+
+* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `true`
+
+När automatisk återgivning är inaktiverat innehåller propositionsarrayen:
+
+#### Vid sidinläsning:
+
+* Formulärbaserad dispositionsbaserad `propositions` med flaggan `renderAttempted` inställd på `false`
+* Visual Experience Composer-baserade förslag med flaggan `renderAttempted` inställd på `false`
+* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `false`
+
+#### I vyn - ändra (för cachelagrade vyer):
+
+* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `false`
 
 ### Uppdatering av en profil
 
@@ -244,7 +254,7 @@ mboxTrace och mboxDebug har tagits bort. Använd [[!DNL Platform Web SDK] felsö
 
 ## Terminologi
 
-__Beslut:__ I  [!DNL Target]det här fallet korrelerar beslut till den erfarenhet som valts i en aktivitet.
+__Förslag:__ I  [!DNL Target]korrelerar förslag till upplevelsen som väljs från en aktivitet.
 
 __Schema:__ Schemat för ett beslut är den typ av erbjudande som finns i  [!DNL Target].
 
