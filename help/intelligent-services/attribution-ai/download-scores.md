@@ -5,10 +5,9 @@ title: Hämta bakgrundsmusik i Attribution AI
 topic-legacy: Downloading scores
 description: Det här dokumentet är en guide för nedladdning av bakgrundsmusik för Attribution AI.
 exl-id: 8821e3fb-c520-4933-8eb7-0b0aa10db916
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 7219c44e1d8812506ee97367f27076b55a40203b
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1051'
 ht-degree: 0%
 
 ---
@@ -166,7 +165,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links`-objekt. I
 }
 ```
 
-## Hämta dina filer {#retrieving-your-files}
+## Hämta filer {#retrieving-your-files}
 
 Använd det `href`-värde som du fick i det föregående steget som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
 
@@ -261,7 +260,7 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 ![Terminal](./images/download-scores/terminal-output.png)
 
-Poängen som hämtas kommer att vara i Parquet-format och måste ha en [!DNL Spark]-shell- eller Parquet-läsare för att visa poängen. För visning av råa poäng kan du använda [Apache Parquet-verktygen](https://github.com/apache/parquet-mr/tree/master/parquet-tools). Parquet-verktygen kan analysera data med [!DNL Spark].
+Poängen som hämtas kommer att vara i Parquet-format och måste ha en [!DNL Spark]-shell- eller Parquet-läsare för att visa poängen. För visning av råa poäng kan du använda [Apache Parquet-verktygen](https://parquet.apache.org/documentation/latest/). Parquet-verktygen kan analysera data med [!DNL Spark].
 
 ## Nästa steg
 
