@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 165c9bce5dabce9704202ebab6b97a4a30e4ca00
+source-git-commit: f3821176b0cbc4ad07fbd2e0e20caa1205324a44
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '717'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## Version 2.6.0 - 27 juli 2021
 
-* Tillhandahåller mer personaliseringsinnehåll i det lösta löftet `sendEvent`, inklusive Adobe Target svarstoken. När kommandot `sendEvent` körs returneras ett löfte som slutligen löses med ett `result`-objekt som innehåller information som tagits emot från servern. Det här resultatobjektet innehåller egenskapen `decisions`. Den här `decisions`-egenskapen har tagits bort. En ny egenskap, `propositions`, har lagts till. Den nya egenskapen ger kunderna tillgång till mer personaliserat innehåll, inklusive svarstokens. Mer dokumentation kommer snart.
+* Tillhandahåller mer personaliseringsinnehåll i det lösta löftet `sendEvent`, inklusive Adobe Target svarstoken. När kommandot `sendEvent` körs returneras ett löfte som slutligen löses med ett `result`-objekt som innehåller information som tagits emot från servern. Tidigare innehöll det här resultatobjektet en egenskap med namnet `decisions`. Den här `decisions`-egenskapen har tagits bort. En ny egenskap, `propositions`, har lagts till. Den nya egenskapen ger kunderna tillgång till mer personaliserat innehåll, inklusive [svarstoken](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/accessing-response-tokens.html).
 
 ## Version 2.5.0 - juni 2021
 
