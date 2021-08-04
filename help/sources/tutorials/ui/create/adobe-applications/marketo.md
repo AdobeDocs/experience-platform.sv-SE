@@ -6,8 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-translation-type: tm+mt
-source-git-commit: 5322adb4b3a244de92300e7ce9d942ad4b968454
+source-git-commit: b90428845412613d59f3c5091ad7c1398ead9f6a
 workflow-type: tm+mt
 source-wordcount: '1324'
 ht-degree: 0%
@@ -30,7 +29,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
 * [Identitetsnamnutrymmen](../../../../../identity-service/namespaces.md): Identitetsnamnutrymmen är en komponent i  [!DNL Identity Service] som fungerar som indikatorer för det sammanhang som en identitet relateras till. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](/help/profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Samla in nödvändiga inloggningsuppgifter
@@ -183,5 +182,5 @@ Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapa
 
 Genom att följa den här självstudiekursen har du skapat ett dataflöde som hämtar in [!DNL Marketo]-data. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](../../../../profile/home.md)
-* [[!DNL Data Science Workspace] översikt](../../../../data-science-workspace/home.md)
+* [[!DNL Real-time Customer Profile] översikt](/help/profile/home.md)
+* [[!DNL Data Science Workspace] översikt](/help/data-science-workspace/home.md)
