@@ -3,9 +3,9 @@ keywords: TMMData;tmm data;tmmdata;TMM-data
 title: TMMData-tillägg
 description: TMMData-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 9f4ad50e-d964-41b0-b58e-71611bff3ead
-source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
+source-git-commit: b90428845412613d59f3c5091ad7c1398ead9f6a
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '489'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL TMMData's] Foundation platform for Adobe Marketing Cloud förser marknadsföringsteamen med verktyg för att få tillgång till och blanda alla viktiga datakällor - inklusive interna/externa och online-/offlinedata - för säker, omfattande flerkanalsanalys, med automatiserad kampanjkonfiguration och direktimport till Adobe och andra analys- och BI-verktyg.
 
-[!DNL TMMData] är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](hhttps://exchange.adobe.com/experiencecloud.details.100148.tmmdata-foundation-platform.html).
+[!DNL TMMData] är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100148.tmmdata-foundation-platform.html).
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [översikten över taggtillägg](../launch-extensions/overview.md).
 
