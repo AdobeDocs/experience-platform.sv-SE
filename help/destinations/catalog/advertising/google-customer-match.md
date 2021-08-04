@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 4fed44edb3e201422f765493c9019be1cddffccc
+source-git-commit: 8a521b2b846c953b74b8e48fb76b94966a652318
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1525'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 ## Konfigurera mål - videogenomgång {#video}
 
-I videon nedan visas stegen för att konfigurera ett [!DNL Google Customer Match]-mål och aktivera segment. Stegen beskrivs också sekventiellt i de följande avsnitten.
+I videon nedan visas stegen för att konfigurera ett socialt mål och aktivera segment. I videon används LinkedIn som exempel, men stegen är desamma för alla sociala mål, inklusive [!DNL Google Customer Match]. Stegen i videon visas också sekventiellt i nästa avsnitt.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
