@@ -6,10 +6,9 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 497a515a872efdeeda270d0aa90b1fc99898ad4d
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '965'
 ht-degree: 0%
 
 ---
@@ -50,9 +49,21 @@ Källschemat [!DNL Loyalty Members] baseras på klassen [!DNL XDM Individual Pro
 
 ### [!DNL Hotels] schema
 
-Målschemat [!DNL Hotels] är baserat på en anpassad [!DNL Hotels]-klass och innehåller fält som beskriver ett hotell. Fältet `hotelId` fungerar som primär identitet för schemat under ett anpassat `hotelId`-namnutrymme. Precis som [!DNL Loyalty Members]-schemat har schemat även aktiverats för [!DNL Real-time Customer Profile].
+Målschemat [!DNL Hotels] är baserat på en anpassad [!DNL Hotels]-klass och innehåller fält som beskriver ett hotell.
 
 ![](../images/tutorials/relationship/hotels.png)
+
+För att kunna delta i en relation måste målschemat ha en primär identitet. I det här exemplet används fältet `hotelId` som primär identitet med ett anpassat ID-namnområde för Hotel.
+
+![Primär identitet för hotell](../images/tutorials/relationship/hotel-identity.png)
+
+>[!NOTE]
+>
+>Mer information om hur du skapar anpassade identitetsnamnutrymmen finns i [dokumentationen för identitetstjänsten](../../identity-service/namespaces.md#manage-namespaces).
+
+När den primära identiteten har angetts måste målschemat aktiveras för [!DNL Real-time Customer Profile].
+
+![Aktivera för profil](../images/tutorials/relationship/hotel-profile.png)
 
 ## Skapa en fältgrupp för relationsschema
 
