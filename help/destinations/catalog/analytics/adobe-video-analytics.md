@@ -3,7 +3,7 @@ keywords: mediaanalystillägg;mediaanalys;ljud- och videotillägg
 title: Adobe Media Analytics för ljud- och videotillägg
 description: Tillägget Adobe Media Analytics för ljud och video är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: bf33e3e8-a95b-47e3-a1dc-c8f68f80b080
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget Adobe Analytics for Video:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](http://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
