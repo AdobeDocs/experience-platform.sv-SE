@@ -3,7 +3,7 @@ keywords: Advertising Cloud;advertising cloud cloud extension; annonsmolnmål
 title: Adobe Advertising Cloud-tillägg
 description: Adobe Advertising Cloud-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Pla
 
 Så här installerar du Adobe Advertising Cloud-tillägget:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](http://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
