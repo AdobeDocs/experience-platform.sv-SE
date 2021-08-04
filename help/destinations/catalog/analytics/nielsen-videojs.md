@@ -3,7 +3,7 @@ keywords: Nielsen VideoJS Player Handler;nielsen video js player;nielsen videojs
 title: Nielsen VideoJS Player Handler Extension
 description: Tillägget Nielsen VideoJS Player Handler är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: d640bf40-c6af-4aff-8303-933fe71f4a7e
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '555'
 ht-degree: 0%
@@ -36,7 +36,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget [!DNL Nielsen VideoJS Player Handler]:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](http://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
