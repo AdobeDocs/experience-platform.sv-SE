@@ -5,10 +5,10 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: e3557fe75680153f051b8a864ad8f6aca5f743ee
+source-git-commit: 2b118228473a5f07ab7e2c744b799f33a4c44c98
 workflow-type: tm+mt
-source-wordcount: '418'
-ht-degree: 1%
+source-wordcount: '525'
+ht-degree: 5%
 
 ---
 
@@ -51,8 +51,8 @@ SELECT a._company AS _company,
 a._id AS _id,
 a.timestamp AS timestamp
 FROM actual_dataset a
-WHERE timestamp >= To_timestamp('2021-01-21 12:00:00')
-AND timestamp < To_timestamp('2021-01-21 13:00:00')
+WHERE timestamp >= TO_TIMESTAMP('2021-01-21 12:00:00')
+AND timestamp < TO_TIMESTAMP('2021-01-21 13:00:00')
 LIMIT 100;
 ```
 
@@ -85,15 +85,20 @@ Du kan inte använda jokertecken för att hämta alla data från raderna, efters
 
 ## PostgreSQL API-fel
 
-| Felkod och anslutningsstatus | Beskrivning | Möjlig orsak |
-| ------------------------------- | ----------- | -------------- |
-| **28P01** Start - autentisering | Ogiltigt lösenord | Ogiltig autentiseringstoken |
-| **28000** Start - autentisering | Ogiltig auktoriseringstyp | Ogiltig auktoriseringstyp. Måste vara `AuthenticationCleartextPassword`. |
-| **42P12** Start - autentisering | Inga tabeller hittades | Inga tabeller hittades för användning |
-| **42601** Fråga | Syntaxfel | Ogiltigt kommando eller syntaxfel |
-| **58000** Fråga | Systemfel | Internt systemfel |
-| **42P01** Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
-| **42P07** Query | Tabellen finns | Tabellen finns redan med samma namn (CREATE TABLE) |
-| **53400** Fråga | LIMIT överskrider maxvärdet | Användaren angav en LIMIT-sats som är högre än 100 000 |
-| **53400** Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
-| **08P01** Ej tillämpligt | Meddelandetypen stöds inte | Meddelandetypen stöds inte |
+| Felkod | Anslutningstillstånd | Beskrivning | Möjlig orsak |
+| ---------- | ---------------- | ----------- | -------------- |
+| **08P01** | Ej tillämpligt | Meddelandetypen stöds inte | Meddelandetypen stöds inte |
+| **28P01** | Start - autentisering | Ogiltigt lösenord | Ogiltig autentiseringstoken |
+| **28000** | Start - autentisering | Ogiltig auktoriseringstyp | Ogiltig auktoriseringstyp. Måste vara `AuthenticationCleartextPassword`. |
+| **42P12** | Start - autentisering | Inga tabeller hittades | Inga tabeller hittades för användning |
+| **42601** | Fråga | Syntaxfel | Ogiltigt kommando eller syntaxfel |
+| **42P01** | Fråga | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
+| **42P07** | Fråga | Tabellen finns | Det finns redan en tabell med samma namn (CREATE TABLE) |
+| **53400** | Fråga | LIMIT överskrider maxvärdet | Användaren angav en LIMIT-sats som är högre än 100 000 |
+| **53400** | Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
+| **58000** | Fråga | Systemfel | Internt systemfel |
+| **0A000** | Fråga/kommando | Stöds inte | Funktionen/funktionen i frågan/kommandot stöds inte |
+| **42501** | DROP TABLE Query | Släpptabellen har inte skapats av frågetjänsten | Tabellen som tas bort skapades inte av frågetjänsten med `CREATE TABLE`-satsen |
+| **42501** | DROP TABLE Query | Tabellen har inte skapats av den autentiserade användaren | Tabellen som tas bort skapades inte av den inloggade användaren |
+| **42P01** | DROP TABLE Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
+| **42P12** | DROP TABLE Query | Ingen tabell hittades för `dbName`: kontrollera `dbName` | Inga tabeller hittades i den aktuella databasen |
