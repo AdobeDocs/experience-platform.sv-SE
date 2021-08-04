@@ -2,7 +2,7 @@
 title: Åtkomst till svarstoken med Adobe Experience Platform Web SDK
 description: Lär dig hur du får åtkomst till svarstoken med Adobe Experience Platform Web SDK.
 keywords: personalisering;mål;adobe target;renderDecision;sendEvent;DecisionScopes;result.Decision,response tokens;
-source-git-commit: 5ae7488e715ff97d2b667c40505b79433eb74f49
+source-git-commit: 4bddd9f23ae885468148d1592af219290d6fafd9
 workflow-type: tm+mt
 source-wordcount: '271'
 ht-degree: 0%
@@ -55,7 +55,7 @@ alloy("sendEvent", {
             var activityName = item.meta["activity.name"];
             // Ignore duplicates
             if (activityNames.indexOf(activityName) === -1) {
-              activityNames.push(item.meta);
+              activityNames.push(activityName);
             }
           }
         });
