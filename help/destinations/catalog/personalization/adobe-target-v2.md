@@ -3,7 +3,7 @@ keywords: måltillägg;mål;mål v2;mål v2-tillägg
 title: Adobe Target v2-tillägg
 description: Tillägget Adobe Target v2 är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: d1d5ebbc-9093-42b0-8d88-58779df3ec89
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '483'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Ado
 
 Så här installerar du tillägget Adobe Target v2:
 
-Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](http://platform.adobe.com/).
+Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](https://platform.adobe.com/).
 
 Välj tillägget i katalogen eller använd sökfältet.
 
