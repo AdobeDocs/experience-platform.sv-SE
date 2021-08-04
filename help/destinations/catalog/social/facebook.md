@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 41cfa5b30d8816baf55b8b4e1609ca724e9efe24
+source-git-commit: 32da733eda61049738e87bce48978196a1fea96d
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1163'
 ht-degree: 2%
 
 ---
@@ -52,7 +52,7 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-destinationen.
 
-## Krav för facebook-konto {#facebook-account-prerequisites}
+## Krav för facebook-konton {#facebook-account-prerequisites}
 
 Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
@@ -69,7 +69,7 @@ Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-## Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
+## Krav för telefonnummerhashning {#phone-number-hashing-requirements}
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 
@@ -108,11 +108,11 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [Facebook officiella dokumentation](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
-## Anslut till målet {#connect-destination}
+## Anslut till mål {#connect-destination}
 
 Mer information om hur du ansluter till [!DNL Facebook]-målet finns i [Arbetsflöde för autentisering av sociala mål](./workflow.md).
 
-I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera segment.
+I videon nedan visas också stegen för att konfigurera ett socialt mål och aktivera segment. I videon används LinkedIn som exempel, men stegen är desamma för alla sociala mål.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
