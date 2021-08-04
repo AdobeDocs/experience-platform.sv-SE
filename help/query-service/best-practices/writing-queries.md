@@ -6,8 +6,7 @@ topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c720b9e6f81ed4ad8bd3360a9b1a19bfcd21a0ef
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 2%
@@ -32,7 +31,7 @@ Interaktiv frågekörning har följande begränsningar:
 
 | Parameter | Begränsning |
 | --------- | ---------- |
-| Timeout för fråga | 10 minuter |
+| Timeout för fråga | 30 minuter |
 | Maximalt antal rader har returnerats | 50 000 |
 | Maximalt antal samtidiga frågor | 5 |
 
@@ -272,7 +271,7 @@ SELECT
 FROM your_analytics_table a 
      JOIN custom_operating_system_lookup b 
       ON a._experience.analytics.environment.operatingsystemID = b.operatingsystemid 
-WHERE TIMESTAMP >= ('2018-01-01') AND TIMESTAMP <= ('2018-12-31')
+WHERE TIMESTAMP >= TO_TIMESTAMP('2018-01-01') AND TIMESTAMP <= TO_TIMESTAMP('2018-12-31')
 GROUP BY OperatingSystem 
 ORDER BY PageViews DESC
 LIMIT 50;
