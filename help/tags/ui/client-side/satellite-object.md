@@ -1,9 +1,9 @@
 ---
 title: Taggar Satellitobjektreferens
 description: Lär dig mer om det _satellitobjekt som finns på klientsidan och de olika funktioner du kan utföra med det i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 309a2f4de25eeb174f6ac50996bd735ccdc2393d
 workflow-type: tm+mt
-source-wordcount: '1124'
+source-wordcount: '1258'
 ht-degree: 1%
 
 ---
@@ -130,7 +130,13 @@ _satellite.logger.deprecation('This method is no longer supported, please use [n
 
 Detta loggar en varning till webbläsarkonsolen. Meddelandet visas oavsett om taggfelsfunktionen är aktiverad av användaren eller inte.
 
-## `cookie`
+## `cookie` {#cookie}
+
+`_satellite.cookie` innehåller funktioner för att läsa och skriva cookies. Det är en exponerad kopia av tredjepartsbiblioteket js-cookie. Mer information om mer avancerad användning av det här biblioteket finns i [js-cookie-dokumentationen](https://www.npmjs.com/package/js-cookie#basic-usage).
+
+### Ange en cookie {#cookie-set}
+
+Om du vill ange en cookie använder du `_satellite.cookie.set()`.
 
 **Code**
 
@@ -138,9 +144,41 @@ Detta loggar en varning till webbläsarkonsolen. Meddelandet visas oavsett om ta
 _satellite.cookie.set(name: string, value: string[, attributes: Object])
 ```
 
+>[!NOTE]
+>
+>I den gamla [`setCookie`](#setCookie)-metoden för att ställa in cookies var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade att cookien har TTL-värde (time-to-live) i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument i stället. Om du vill ange en TTL för en cookie med den nya metoden måste du ange en `expires`-egenskap i attributobjektet och ställa in den på önskat värde. Detta visas i exemplet nedan.
+
+**Exempel**
+
+Följande funktionsanrop skriver en cookie som upphör att gälla om en vecka.
+
+```javascript
+_satellite.cookie.set('product', 'Circuit Pro', { expires: 7 });
+```
+
+### Hämta en cookie {#cookie-get}
+
+Om du vill hämta en cookie använder du `_satellite.cookie.get()`.
+
+**Code**
+
 ```javascript
 _satellite.cookie.get(name: string) => string
 ```
+
+**Exempel**
+
+Följande funktionsanrop läser en tidigare angiven cookie.
+
+```javascript
+var product = _satellite.cookie.get('product');
+```
+
+### Ta bort en cookie {#cookie-remove}
+
+Om du vill ta bort en cookie använder du `_satellite.cookie.remove()`.
+
+**Code**
 
 ```javascript
 _satellite.cookie.remove(name: string)
@@ -148,22 +186,11 @@ _satellite.cookie.remove(name: string)
 
 **Exempel**
 
-```javascript
-// Writing a cookie that expires in one week.
-_satellite.cookie.set('product', 'Circuit Pro', { expires: 7 });
-```
+Följande funktionsanrop tar bort en tidigare angiven cookie.
 
 ```javascript
-// Reading a previously set cookie.
-var product = _satellite.cookie.get('product');
-```
-
-```javascript
-// Removing a previously set cookie.
 _satellite.cookie.remove('product');
 ```
-
-Det här är ett verktyg för att läsa och skriva cookies. Det är en exponerad kopia av tredjepartsbiblioteket js-cookie. Mer avancerad användning finns i [js-cookie-användningsdokumentationen](https://www.npmjs.com/package/js-cookie#basic-usage) (extern länk).
 
 ## `buildInfo`
 
@@ -236,11 +263,11 @@ Du kan skicka en loggningsnivå som kan påverka formatering och filtrering av m
 
 Om du inte anger någon loggningsnivå eller skickar något annat nivåvärde loggas meddelandet som ett vanligt meddelande.
 
-## `setCookie`
+## `setCookie` {#setCookie}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här metoden har tagits bort. Använd `_satellite.cookie.set()` i stället.
+>Den här metoden har tagits bort. Använd [`_satellite.cookie.set()`](#cookie-set) i stället.
 
 **Code**
 
@@ -258,9 +285,9 @@ Detta ställer in en cookie i användarens webbläsare. Cookien kvarstår i det 
 
 ## `readCookie`
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här metoden har tagits bort. Använd `_satellite.cookie.get()` i stället.
+>Den här metoden har tagits bort. Använd [`_satellite.cookie.get()`](#cookie-get) i stället.
 
 **Code**
 
@@ -280,7 +307,7 @@ Detta läser en cookie från användarens webbläsare.
 
 >[!NOTE]
 >
->Den här metoden har tagits bort. Använd `_satellite.cookie.remove()` i stället.
+>Den här metoden har tagits bort. Använd [`_satellite.cookie.remove()`](#cookie-remove) i stället.
 
 **Code**
 
