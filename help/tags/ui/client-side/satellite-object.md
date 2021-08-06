@@ -1,14 +1,14 @@
 ---
-title: Taggar Satellitobjektreferens
-description: Lär dig mer om det _satellitobjekt som finns på klientsidan och de olika funktioner du kan utföra med det i Adobe Experience Platform.
-source-git-commit: 309a2f4de25eeb174f6ac50996bd735ccdc2393d
+title: Satellitobjektreferens
+description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
+source-git-commit: 5adb3ed403bddd3b985d0a790eca117fb2f39288
 workflow-type: tm+mt
-source-wordcount: '1258'
+source-wordcount: '1251'
 ht-degree: 1%
 
 ---
 
-# Adobe Experience Platform taggar Satellitobjektreferens
+# Satellitobjektreferens
 
 >[!NOTE]
 >
