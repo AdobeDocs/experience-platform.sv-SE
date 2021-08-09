@@ -5,10 +5,9 @@ title: API-slutpunkt för segmentdefinitioner
 topic-legacy: developer guide
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 265607b3b21fda48a92899ec3d750058ca48868a
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1188'
 ht-degree: 1%
 
 ---
@@ -473,6 +472,10 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 ## Ta bort en specifik segmentdefinition {#delete}
 
 Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELETE-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill ta bort i sökvägen till begäran.
+
+>[!NOTE]
+>
+> Du kan **inte** ta bort ett segment som används i en målaktivering.
 
 **API-format**
 
