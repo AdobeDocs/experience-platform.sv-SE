@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;användargränssnitt;gränssn
 title: Skapa anpassade widgetar för instrumentpaneler
 description: 'Den här guiden innehåller stegvisa instruktioner för hur du skapar anpassade widgetar som kan användas i Adobe Experience Platform-kontrollpaneler. '
 exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
-source-git-commit: a07eb2baec48ad514ff0afc0548f53baf34da561
+source-git-commit: 4a578721cfc5e6e35179bec82886808fd6e18b53
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
@@ -41,11 +41,11 @@ Välj fliken **[!UICONTROL Custom]** för att börja skapa anpassade widgetar el
 
 ## Skapa en anpassad widget
 
-Om du vill skapa en anpassad widget väljer du **[!UICONTROL Create]** från mitten av widgetbiblioteket, eller om anpassade widgetar redan har skapats, väljer du **[!UICONTROL Create widget]** i det övre högra hörnet av widgetbiblioteket.
+Om du vill skapa en anpassad widget väljer du **[!UICONTROL Create widget]** i det övre högra hörnet av widgetbiblioteket eller, om det är din organisations första anpassade widget, väljer du **[!UICONTROL Create]** mitt i widgetbiblioteket.
 
 ![](../images/customization/create-widget.png)
 
-I dialogrutan **[!UICONTROL Create widget]** kan du ange en titel och en beskrivning för den nya widgeten och välja det attribut som du vill att widgeten ska visa.
+I dialogrutan **[!UICONTROL Create widget]** anger du en rubrik och beskrivning för den nya widgeten och väljer det attribut som du vill att widgeten ska visa.
 
 >[!NOTE]
 >
@@ -59,23 +59,59 @@ Om du vill välja ett attribut markerar du alternativknappen bredvid attributet 
 
 ![](../images/customization/create-widget-dialog.png)
 
-## Förhandsgranska anpassad widget
+## Välj en visualisering
 
-En förhandsvisning av den nya widgeten visas i dialogrutan med ett vågrätt stolpdiagram med modelldata.
+När du har valt ett attribut visas en förhandsvisning av den nya widgeten i dialogrutan. Artificiell intelligens används för att automatiskt välja ut en visualisering som bäst passar in i attributdata och för att tillhandahålla ytterligare visualiseringsalternativ som du kan välja manuellt.
+
+Beroende på attributet rekommenderar AI olika visualiseringsalternativ. Den fullständiga listan med visualiseringar innehåller:
+
+* Vågrätt stapeldiagram: Vågräta linjer används för att representera värden.
+* Lodrätt stapeldiagram: Lodräta linjer används för att representera värden.
+* Diagram: På samma sätt som ett cirkeldiagram visas värdena som delar eller delar av en helhet.
+* Scatterplot: En vågrät och lodrät axel används för att ange värden.
+* Linjediagram: Värden visas med en rad för att visa ändringar över en tidsperiod.
+* Nummerkort: Visar ett sammanfattningsnummer som representerar ett nyckelvärde.
+* Datatabell: Värden visas som rader i en tabell.
 
 >[!NOTE]
 >
->Det enda mätvärde som för närvarande stöds för alla attribut är profilantal och den enda visualisering som för närvarande stöds för anpassade widgetar är ett diagram med vågräta staplar.
+>Det enda mätvärde som för närvarande stöds för alla attribut är antalet profiler.
 >
 >Data som visas i exempelwidgeten är endast avsedda som illustrationer. Förhandsgranskningen visar inte faktiska data från din organisation.
 
+Om du vill spara din nya widget och gå tillbaka till fliken [!UICONTROL Custom] väljer du **[!UICONTROL Create]**.
+
 ![](../images/customization/create-widget-select-attribute.png)
 
-Om du vill spara din nya widget och gå tillbaka till fliken [!UICONTROL Custom] väljer du **[!UICONTROL Create]**. Din nya widget är nu tillgänglig för att läggas till på en instrumentpanel genom att välja widgeten i biblioteket och välja **[!UICONTROL Add widget]**.
+Din nya widget är nu tillgänglig för att läggas till på en instrumentpanel genom att välja widgeten i biblioteket och välja **[!UICONTROL Add widget]**.
 
-## Arkivera en anpassad widget
+![](../images/customization/custom-widgets-new.png)
 
-När en widget har lagts till i biblioteket kan den arkiveras med knappen **[!UICONTROL Archive]**. Du kan också redigera widgeten för att uppdatera titel- eller beskrivningsfälten.
+## Dölja en anpassad widget
+
+När en widget har lagts till i biblioteket kan du dölja den genom att markera ellipserna (`...`) på widgetkortet och sedan välja **[!UICONTROL Hide widget]**. Du kan också förhandsgranska och redigera widgeten från samma listruta.
+
+Om du vill visa dolda widgetar väljer du **[!UICONTROL Show hidden widgets]** längst upp till höger i widgetbiblioteket.
+
+>[!WARNING]
+>
+>När du döljer en widget i biblioteket tas inte widgeten bort från enskilda användares instrumentpaneler. Om en widget inte längre ska användas i din organisation måste du informera alla plattformsanvändare om detta eftersom de måste ta bort widgeten från sina instrumentpaneler.
+
+![](../images/customization/hide-widget.png)
+
+## Redigera en anpassad widget
+
+Du kan redigera anpassade widgetar i widgetbiblioteket genom att markera ellipserna (`...`) på widgetkortet och sedan välja **[!UICONTROL Edit]** i listrutan.
+
+![](../images/customization/custom-widget-edit.png)
+
+I dialogrutan **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivningen för widgeten samt förhandsgranska och välja olika visualiseringar. När du har redigerat väljer du **[!UICONTROL Save]** för att spara ändringarna och återgå till fliken för anpassade widgetar.
+
+>[!WARNING]
+>
+>När du redigerar en widget i biblioteket uppdateras inte widgeten för enskilda användare. Om en widget har uppdaterats ser du till att du kommunicerar detta direkt till alla plattformsanvändare eftersom de måste ta bort den inaktuella widgeten från sina instrumentpaneler och sedan välja och lägga till den uppdaterade widgeten från widgetbiblioteket.
+
+![](../images/customization/edit-widget.png)
 
 ## Nästa steg
 
