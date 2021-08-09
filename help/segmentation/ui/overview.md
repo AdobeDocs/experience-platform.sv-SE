@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 265607b3b21fda48a92899ec3d750058ca48868a
 workflow-type: tm+mt
-source-wordcount: '1523'
+source-wordcount: '1539'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ I användargränssnittet för Experience Platform väljer du **[!UICONTROL Segme
 >
 >Om din organisation är ny på Platform och ännu inte har aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte kontrollpanelen [!UICONTROL Segments]. Istället visar fliken [!UICONTROL Overview] länkar och dokumentation som hjälper dig att komma igång med segment.
 
-### [!UICONTROL Segments] kontrollpanel  {#segments-dashboard}
+### [!UICONTROL Segments] kontrollpanel {#segments-dashboard}
 
 Kontrollpanelen **[!UICONTROL Segments]** visar viktiga värden som relaterar till organisationens segmentdata.
 
@@ -82,6 +82,10 @@ Den högra sidopanelen innehåller information om alla segment i IMS-organisatio
 ![](../images/ui/overview/segment-browse-segment-info.png)
 
 Om du väljer segmentdefinitionens rad får du en sammanfattning av segmentdefinitionen, inklusive alternativ för att antingen redigera eller ta bort segmentet, kvalificerad publik för segmentet, total målgruppsstorlek, utöver segmentets namn, beskrivning, utvärderingsmetod, skapad den och senaste ändringsdatum.
+
+>[!NOTE]
+>
+> Du kan **inte** ta bort ett segment som används i en målaktivering.
 
 ![](../images/ui/overview/segment-browse-details.png)
 
