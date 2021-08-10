@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;G
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 4df2e7ce9c7e94da4ea0be50ba21232c639e2587
+source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
 workflow-type: tm+mt
-source-wordcount: '738'
+source-wordcount: '716'
 ht-degree: 0%
 
 ---
@@ -53,8 +53,8 @@ Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har akt
 
 Innan du skapar [!DNL Google Ad Manager]-målet i Platform måste du kontakta [!DNL Google] för att Adobe ska tas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
 
-* **Konto-ID** : det här är Adobe konto ID med  [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
-* **Kund-ID** : det här är Adobe kundkonto-ID med  [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
+* **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
 * **Nätverks-ID** : det här är ditt konto med  [!DNL Google Ad Manager]
 * **Audience Link ID** : det här är ditt konto med  [!DNL Google Ad Manager]
 * Din kontotyp. DFP av Google eller AdX-köpare.
