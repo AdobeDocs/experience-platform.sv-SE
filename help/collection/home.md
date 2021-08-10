@@ -5,9 +5,9 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: f61a845b915df3d803085fbf528e014c8acd9dbd
 workflow-type: tm+mt
-source-wordcount: '304'
+source-wordcount: '332'
 ht-degree: 1%
 
 ---
@@ -36,11 +36,15 @@ De datainsamlingstekniker som tillhandahålls av Experience Platform fokuserar p
 
 Adobe Experience Platform SDK för webb och mobiler komprimerar och komprimerar alla produktbibliotek i Adobe till ett enda utvecklingsverktyg för webb- och mobilplattformar. Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar operationer till en enda ström från klientenheter till Adobe Experience Platform Edge Network.
 
-## Växlingsprocess för att driftsätta Adobe-teknik
+## Växlingsprocess för att driftsätta Adobe-teknik {#edge}
 
 Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du ställa in [datastreams](../edge/fundamentals/datastreams.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
 
 ![](./images/deploy.png)
+
+>[!NOTE]
+>
+>En introduktion på hög nivå till Platform Edge Network finns i följande [interaktiv produktdemo](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1).
 
 ## Omvandla, berika och skicka data snabbt och säkert
 
