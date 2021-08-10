@@ -2,14 +2,13 @@
 keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Display & Video 360;display 360;video 360;Video 360;Display 360;display and video
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
-translation-type: tm+mt
-source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
+exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
+source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '748'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Google Display & Video 360] anslutning
 
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Display & Video 360], tidigare kallat  [!DNL DoubleClick Bid Manager], är ett verktyg som används för att genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display-, Video- och Mobile-material.
 
-## Målspecificeringar {#specifics}
+## Destinationsspecifikationer {#specifics}
 
 Observera följande information som är specifik för [!DNL Google Display & Video 360]-mål:
 
@@ -56,8 +55,8 @@ Observera följande information som är specifik för [!DNL Google Display & Vid
 
 Innan du skapar målet [!DNL Google Display & Video 360] i Platform måste du kontakta Google och be om att Adobe finns med i listan över tillåtna dataleverantörer och att ditt konto läggs till i tillåtelselista. Kontakta Google och lämna följande information:
 
-* **Konto-ID** : detta är Adobe-ID med Google. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
-* **Kund-ID** : det här är Adobe kundkonto-ID med Google. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
+* **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
 * **Kontotyp**: kan användas  **[!DNL Invite advertiser]** för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto eller  **[!DNL Invite partner]** för att tillåta att målgrupper delas med alla varumärken i ditt Display &amp; Video 360-konto.
 
 ## Konfigurera mål
