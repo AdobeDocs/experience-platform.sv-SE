@@ -4,9 +4,9 @@ user-guide-title: Hjälp om taggar
 breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Datainsamling
-source-git-commit: bddad4476d6943c7549028e93c84c8ca29059dc0
+source-git-commit: 3658384ec39226f457fd9cea86d1838613a9508c
 workflow-type: tm+mt
-source-wordcount: '385'
+source-wordcount: '378'
 ht-degree: 25%
 
 ---
@@ -88,9 +88,6 @@ ht-degree: 25%
       * Adobe Experience Manager Asset Insights {#asset-insights}
          * [Översikt](./extensions/web/asset-insights/overview.md)
          * [Versionsinformation](./extensions/web/asset-insights/release-notes.md)
-      * Adobe Experience Manager Forms {#forms}
-         * [Översikt](./extensions/web/forms/overview.md)
-         * [Versionsinformation](./extensions/web/forms/release-notes.md)
       * Adobe Media Analytics för ljud och video {#media-analytics}
          * [Översikt](./extensions/web/media-analytics/overview.md)
          * [Versionsinformation](./extensions/web/media-analytics/release-notes.md)
