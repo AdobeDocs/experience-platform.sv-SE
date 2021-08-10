@@ -1,15 +1,14 @@
 ---
 keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
-translation-type: tm+mt
-source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
+description: Google Ads, tidigare Google AdWords, är en webbannonseringstjänst som gör att företag kan betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
+exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
+source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
 workflow-type: tm+mt
-source-wordcount: '722'
-ht-degree: 0%
+source-wordcount: '700'
+ht-degree: 1%
 
 ---
-
 
 # [!DNL Google Ads] anslutning
 
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Google Ads], som tidigare kallades  [!DNL Google AdWords], är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering över textbaserade sökningar, grafiska skärmar,  [!DNL YouTube] videor och mobilskärmar i appen.
 
-## Målspecificeringar {#specifics}
+## Destinationsspecifikationer {#specifics}
 
 Observera följande information som är specifik för [!DNL Google Ads]-mål:
 
@@ -62,10 +61,10 @@ Observera följande information som är specifik för [!DNL Google Ads]-mål:
 
 Innan du skapar [!DNL Google Ads]-målet i Platform måste du kontakta [!DNL Google] för att Adobe ska tas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
 
-* **Konto-ID** : det här är Adobe konto ID med  [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
-* **Kund-ID** : det här är Adobe kundkonto-ID med  [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
+* **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
 * Kontotyp: **AdWords**
-* **Google AdWords-ID** : Detta är ditt ID med  [!DNL Google]. ID-formatet är vanligtvis 123-456-7890.
+* **Google AdWords-ID**: Detta är ditt ID med  [!DNL Google]. ID-formatet är vanligtvis 123-456-7890.
 
 ## Konfigurera mål
 
