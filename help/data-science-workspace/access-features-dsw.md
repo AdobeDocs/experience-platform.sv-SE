@@ -5,10 +5,9 @@ title: Data Science Workspace Access and Features
 topic-legacy: Access and features for data science workspace
 description: I följande dokument beskrivs behörigheter och åtkomst till funktioner i arbetsytan Data Science.
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 319cdb13c965010062aa9179b197d6f5b6a20287
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '685'
 ht-degree: 2%
 
 ---
@@ -21,26 +20,28 @@ I följande dokument beskrivs behörigheter och åtkomst till funktioner i arbet
 
 - **bärbara datorer:** Innehåller en interaktiv utvecklingsmiljö ([JupyterLab](./jupyterlab/overview.md)) för att utforska, analysera och modellera data på Experience Platform.
 - **Modeller:** innehåller verktyg för att skapa, publicera och lagra avancerade maskininlärningsrecept och modeller. Mer information finns i [skapa och publicera en maskininlärningsmodell](./models-recipes/create-publish-model.md) självstudiekurs.
-- **Tjänster:** Innehåller både tjänster som tillhandahålls av Adobe, t.ex.  [intelligenta ](../intelligent-services/home.md) tjänster, och anpassade tjänster som du har skapat med Data Science Workspace.
+- **Tjänster:** Innehåller både tjänster som tillhandahålls av Adobe, t.ex.  [AI/ML-](../intelligent-services/home.md) tjänster och anpassade tjänster som du har skapat med Data Science Workspace.
 
 Varför visas bara fliken Tjänster?
 
-- Din organisation kan endast ha rätt till RTCDP (Real-time Customer Data Platform) som innehåller AI för Intelligent Service.
+- Din organisation kan endast vara berättigad till kunddataplattform i realtid (RTCDP) som innehåller kundens AI/ML-tjänst.
 
 Om du inte kan se någon av flikarna **Datavetenskap** och vill använda funktioner i Datavetenskapen, kontaktar du företagets administratör för att kontrollera om du har en Adobe Experience Platform Intelligence-licens.
 
-## Adobe Experience Platform Intelligence-pakettillägg
+## Data Science Workspace-paketering
 
-I följande tabell beskrivs några viktiga skillnader för Data Science Workspace med och utan tillägget Adobe Experience Platform Intelligence:
+Data Science Workspace-funktionerna finns i Adobe Experience Platform Intelligence-paketet och Advanced Intelligence Pack-tillägget
+
+I följande tabell beskrivs några av de viktigaste skillnaderna för Data Science Workspace-berättiganden med och utan tillägget Advanced Intelligence Pack:
 
 >[!NOTE]
 >
->Du kan licensiera mer än ett Intelligence-paket och den utökade kapaciteten läggs till i det övergripande berättigandet. Om du till exempel har licensierat 2 Adobe Experience Platform Intelligence-paket får du fler än 20 användare samtidigt.
+>Du kan licensiera mer än ett tillägg till Advanced Intelligence Pack och den utökade kapaciteten läggs till i det totala berättigandet. Om du t.ex. har licensierat 2 Adobe Experience Platform Advanced Intelligence Pack-tillägg har du rätt till totalt 20 samtidiga användare av bärbara datorer.
 
-|  | [!DNL Data Science Workspace] | [!DNL Data Science Workspace] med Intelligence package addon |
+| Tillstånd för datavetenskap | Endast Adobe Experience Platform Intelligence Package | Adobe Experience Platform Intelligence plus Advanced Intelligence Pack Add-on |
 | --- | :---: | :---: |
 | Antal anteckningsboksanvändare som stöds. | 5 samtidiga användare | Första paketet innehåller 5 samtidiga användare och ytterligare köp ger 10 samtidiga användare per paket. |
-| Tillåter integrerade Jupyter-anteckningsböcker för analys av data och modellutveckling (R, Python, Scala, PySpark) | X | X |
+| Tillåter integrerade Jupyter-anteckningsböcker för utforskande dataanalys och modellutveckling. | X (Stöder R R-, Python- och Scala-bibliotek) | X (Lägger till PySpark- och Spark ML-bibliotek) |
 | Inbyggd integrering med Query Service. Möjlighet att utforska och forma datauppsättningar med SQL i bärbara datorer. | X | X |
 | Tillgång till fördefinierade mallar för bärbara datorer för prediktiv analys. | X | X |
 | Utbilda och poängsätta modeller manuellt med Jupyter Notebooks. | X | X |
@@ -62,11 +63,11 @@ För att kunna använda arbetsytan Datavetenskap måste behörigheten Hantera da
 
 ## Stöd för sandlådor
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje plattformsinstans har stöd för en produktionssandlåda och flera icke-produktionssandlådor, där var och en har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje Plattformsinstans har stöd för flera produktionssandlådor och icke-produktionssandlådor, där var och en har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
 
 För närvarande har Data Science Workspace följande sandlådebegränsning:
 
-- Beräkningsresurser delas mellan sandlådan för produktion och icke-produktionssandlådor.
+- Beräkningsresurser delas mellan sandlådor för produktion och icke-produktion.
 
 ## Nästa steg
 
