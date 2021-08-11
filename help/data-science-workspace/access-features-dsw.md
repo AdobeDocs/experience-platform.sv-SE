@@ -5,9 +5,9 @@ title: Data Science Workspace Access and Features
 topic-legacy: Access and features for data science workspace
 description: I följande dokument beskrivs behörigheter och åtkomst till funktioner i arbetsytan Data Science.
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-source-git-commit: 319cdb13c965010062aa9179b197d6f5b6a20287
+source-git-commit: 2ff2721f5420483ddc5caffd1eb0532df729e01b
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '684'
 ht-degree: 2%
 
 ---
@@ -63,7 +63,7 @@ För att kunna använda arbetsytan Datavetenskap måste behörigheten Hantera da
 
 ## Stöd för sandlådor
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje Plattformsinstans har stöd för flera produktionssandlådor och icke-produktionssandlådor, där var och en har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje Plattformsinstans har stöd för flera produktions- och icke-produktionssandlådor, och varje instans har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
 
 För närvarande har Data Science Workspace följande sandlådebegränsning:
 
