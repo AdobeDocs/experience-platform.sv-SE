@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-translation-type: tm+mt
-source-git-commit: 544eeb3a27d0b218885e3000deb214f21c8e9fcd
+source-git-commit: beb5d615da6d825678f446eec609a2bb356bb310
 workflow-type: tm+mt
-source-wordcount: '1349'
+source-wordcount: '1371'
 ht-degree: 0%
 
 ---
@@ -304,13 +303,13 @@ När datauppsättningen, direktuppspelningsanslutningen och dataflödet har skap
 **API-format**
 
 ```http
-POST /collection/{CONNECTION_ID}?synchronousValidation=true
+POST /collection/{CONNECTION_ID}?syncValidation=true
 ```
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{CONNECTION_ID}` | Värdet `id` för den nyligen skapade direktuppspelningsanslutningen. |
-| `synchronousValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om den anges till `true` kan den användas för direkt feedback för att avgöra om begäran kunde skickas. Som standard är det här värdet `false`. |
+| `syncValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om den anges till `true` kan den användas för direkt feedback för att avgöra om begäran kunde skickas. Som standard är det här värdet `false`. Observera att om du anger den här frågeparametern till `true` så begränsas förfrågningen till 60 gånger per minut per `CONNECTION_ID`. |
 
 **Begäran**
 
@@ -325,7 +324,7 @@ Exemplet nedan anger att tidsseriedata med ett saknat källnamn ska importeras t
 >Både `xdmEntity._id` och `xdmEntity.timestamp` är de enda obligatoriska fälten för tidsseriedata. Dessutom kräver följande API-anrop **inte** några autentiseringshuvuden.
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
+curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
   -H "Content-Type: application/json" \
   -d '{
     "header": {
@@ -412,7 +411,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen direkt
     "inletId": "{CONNECTION_ID}",
     "xactionId": "1584479347507:2153:240",
     "receivedTimeMs": 1584479347507,
-    "synchronousValidation": {
+    "syncValidation": {
         "status": "pass"
     }
 }
@@ -423,7 +422,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen direkt
 | `{CONNECTION_ID}` | `inletId` för den tidigare skapade direktuppspelningsanslutningen. |
 | `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
 | `receivedTimeMs`: En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
-| `synchronousValidation.status` | Eftersom frågeparametern `synchronousValidation=true` lades till visas det här värdet. Om valideringen har slutförts är statusen `pass`. |
+| `syncValidation.status` | Eftersom frågeparametern `syncValidation=true` lades till visas det här värdet. Om valideringen har slutförts är statusen `pass`. |
 
 ## Hämta data för den nyligen inmatade tidsserien
 
