@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
-translation-type: tm+mt
-source-git-commit: 544eeb3a27d0b218885e3000deb214f21c8e9fcd
+source-git-commit: beb5d615da6d825678f446eec609a2bb356bb310
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1190'
 ht-degree: 0%
 
 ---
@@ -276,13 +275,13 @@ När datauppsättningen och direktuppspelningsanslutningen är på plats kan du 
 **API-format**
 
 ```http
-POST /collection/{CONNECTION_ID}?synchronousValidation=true
+POST /collection/{CONNECTION_ID}?syncValidation=true
 ```
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{CONNECTION_ID}` | Värdet `inletId` för den direktuppspelningsanslutning som skapades tidigare. |
-| `synchronousValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om den anges till `true` kan den användas för direkt feedback för att avgöra om begäran kunde skickas. Som standard är det här värdet `false`. |
+| `syncValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om den anges till `true` kan den användas för direkt feedback för att avgöra om begäran kunde skickas. Som standard är det här värdet `false`. Observera att om du anger den här frågeparametern till `true` så begränsas förfrågningen till 60 gånger per minut per `CONNECTION_ID`. |
 
 **Begäran**
 
@@ -295,7 +294,7 @@ Exempelbegäran nedan importerar en post med ett saknat källnamn till plattform
 >Följande API-anrop kräver **inte** några autentiseringshuvuden.
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
+curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
   -H "Cache-Control: no-cache" \
   -H "Content-Type: application/json" \
   -d '{
@@ -360,7 +359,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
     "inletId": "{CONNECTION_ID}",
     "xactionId": "1584479347507:2153:240",
     "receivedTimeMs": 1584479347507,
-    "synchronousValidation": {
+    "syncValidation": {
         "status": "pass"
     }
 }
@@ -371,7 +370,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 | `{CONNECTION_ID}` | ID:t för den tidigare skapade direktuppspelningsanslutningen. |
 | `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
 | `receivedTimeMs` | En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
-| `synchronousValidation.status` | Eftersom frågeparametern `synchronousValidation=true` lades till visas det här värdet. Om valideringen har slutförts är statusen `pass`. |
+| `syncValidation.status` | Eftersom frågeparametern `syncValidation=true` lades till visas det här värdet. Om valideringen har slutförts är statusen `pass`. |
 
 ## Hämta nyligen inmatade postdata
 
