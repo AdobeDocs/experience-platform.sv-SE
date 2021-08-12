@@ -6,8 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: beb5d615da6d825678f446eec609a2bb356bb310
 workflow-type: tm+mt
 source-wordcount: '898'
 ht-degree: 2%
@@ -63,7 +62,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Synkron validering är en valideringsmetod som ger omedelbar feedback om varför ett intag misslyckades. Vid fel tas dock de poster som inte godkänns vid valideringen bort och kan inte skickas längre fram i kedjan. Därför bör synkron validering endast användas under utvecklingsprocessen. När synkron validering utförs informeras anroparna om både resultatet av XDM-valideringen och, om det misslyckas, orsaken till felet.
 
-Synkron validering är inte aktiverat som standard. Om du vill aktivera den måste du ange den valfria frågeparametern `synchronousValidation=true` när du gör API-anrop. Dessutom är synkron validering för närvarande bara tillgängligt om strömslutpunkten finns i datacentret VA7.
+Synkron validering är inte aktiverat som standard. Om du vill aktivera den måste du ange den valfria frågeparametern `syncValidation=true` när du gör API-anrop. Dessutom är synkron validering för närvarande bara tillgängligt om strömslutpunkten finns i datacentret VA7.
 
 Om ett meddelande misslyckas under synkron validering kommer meddelandet inte att skrivas till utdatakön, vilket ger omedelbar feedback till användarna.
 
@@ -74,7 +73,7 @@ Om ett meddelande misslyckas under synkron validering kommer meddelandet inte at
 **API-format**
 
 ```http
-POST /collection/{CONNECTION_ID}?synchronousValidation=true
+POST /collection/{CONNECTION_ID}?syncValidation=true
 ```
 
 | Parameter | Beskrivning |
@@ -86,7 +85,7 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 Skicka följande begäran om att importera data till datainmatningen med synkron validering:
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
+curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
   -H "Content-Type: application/json" \
   -d '{JSON_PAYLOAD}'
 ```
@@ -185,7 +184,7 @@ När asynkron validering är aktiverat returnerar ett lyckat svar följande:
     "inletId": "f6ca9706d61de3b78be69e2673ad68ab9fb2cece0c1e1afc071718a0033e6877",
     "xactionId": "1555445493896:8600:8",
     "receivedTimeMs": 1555445493932,
-    "synchronousValidation": {
+    "syncValidation": {
         "skipped": true
     }
 }
