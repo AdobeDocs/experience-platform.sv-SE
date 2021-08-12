@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: bbb33287b82d348811852f4ad17a9c7b24a33b44
+source-git-commit: dd9e822fd485d26d5101e12e241465c354db5ad3
 workflow-type: tm+mt
-source-wordcount: '2857'
+source-wordcount: '2854'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ På sidan **[!UICONTROL Activate destination]** i arbetsflödet väljer du ett e
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
 >title="Använd omformning"
->abstract="Markera det här alternativet när du använder ohashade källfält (som *personalEmail.address* **personalEmail.address** `personalEmail.address`) för att Adobe Experience Platform ska hash-koda dem automatiskt vid aktiveringen."
+>abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
 
 Gäller för: sociala mål och Google Customer Match-annonsmål
 
