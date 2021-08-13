@@ -5,9 +5,9 @@ title: API-slutpunkt för schemalagda frågor
 topic-legacy: scheduled queries
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: e99b57706bb5bdb0abaf4209a259b478d9406783
+source-git-commit: 0b1afcb23e070209006383d27eb68edcf92d02cd
 workflow-type: tm+mt
-source-wordcount: '1010'
+source-wordcount: '1113'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 | `query.dbName` | Namnet på databasen som du skapar en schemalagd fråga för. |
 | `query.sql` | Den SQL-fråga som du vill skapa. |
 | `query.name` | Namnet på den schemalagda frågan. |
-| `schedule.schedule` | Kronschemat för frågan. Mer information om cron-scheman finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering. |
+| `schedule.schedule` | Kronschemat för frågan. Mer information om cron-scheman finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `1 0 0 1 1 *`. |
 | `schedule.startDate` | Startdatumet för den schemalagda frågan, skrivet som en UTC-tidsstämpel. |
 
 **Svar**
