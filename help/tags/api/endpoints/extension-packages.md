@@ -1,10 +1,10 @@
 ---
 title: Slutpunkt för tilläggspaket
 description: Lär dig hur du anropar slutpunkten /extension_packages i Reactor API.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 53612919dc040a8a3ad35a3c5c0991554ffbea7c
 workflow-type: tm+mt
-source-wordcount: '741'
-ht-degree: 0%
+source-wordcount: '955'
+ht-degree: 1%
 
 ---
 
@@ -23,6 +23,32 @@ Ett tilläggspaket tillhör [företaget](./companies.md) för den utvecklare som
 ## Komma igång
 
 Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+
+Förutom att förstå hur du anropar Reactor API är det också viktigt att du förstår hur attributen `status` och `availability` för ett tilläggspaket påverkar vilka åtgärder du kan utföra på det. Dessa förklaras i avsnitten nedan.
+
+### Status
+
+Tilläggspaket har tre möjliga statusvärden: `pending`, `succeeded` och `failed`.
+
+| Status | Beskrivning |
+| --- | --- |
+| `pending` | När ett tilläggspaket skapas ställs `status` in på `pending`. Detta anger att systemet har tagit emot informationen för tilläggspaketet och kommer att påbörja bearbetningen. Tilläggspaket med statusen `pending` är inte tillgängliga för användning. |
+| `succeeded` | Status för ett tilläggspaket uppdateras till `succeeded` om bearbetningen slutförs. |
+| `failed` | Status för ett tilläggspaket uppdateras till `failed` om bearbetningen inte slutförs. Ett tilläggspaket med statusen `failed` kan uppdateras tills bearbetningen är klar. Tilläggspaket med statusen `failed` är inte tillgängliga för användning. |
+
+### Tillgänglighet
+
+Det finns tillgänglighetsnivåer för ett tilläggspaket: `development`, `private` och `public`.
+
+| Tillgänglighet | Beskrivning |
+| --- | --- |
+| `development` | Ett tilläggspaket i `development` är bara synligt för och tillgängligt i det företag som äger det. Dessutom kan den bara användas på egenskaper som är konfigurerade för tilläggsutveckling. |
+| `private` | Ett `private`-tilläggspaket är bara synligt för det företag som äger det och kan bara installeras på egenskaper som företaget äger. |
+| `public` | Ett `public`-tilläggspaket är synligt och tillgängligt för alla företag och egenskaper. |
+
+>[!NOTE]
+>
+>När ett tilläggspaket skapas ställs `availability` in på `development`. När testningen är klar kan du överföra tilläggspaketet till antingen `private` eller `public`.
 
 ## Hämta en lista med tilläggspaket {#list}
 
@@ -46,6 +72,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
@@ -231,6 +258,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
@@ -441,11 +469,11 @@ Ett lyckat svar returnerar information om tilläggspaketet, inklusive dess deleg
 }
 ```
 
-## Skapa eller uppdatera ett tilläggspaket {#create}
+## Skapa ett tilläggspaket {#create}
 
 Tilläggspaket skapas med ett Node.js-byggnadsverktyg och sparas på den lokala datorn innan de skickas till Reactor API. Mer information om hur du konfigurerar ett tilläggspaket finns i guiden [komma igång med tilläggsutveckling](../../extension-dev/getting-started.md).
 
-När du har skapat tilläggspaketfilen kan du skicka den till Reactor API via en POST-begäran. Om tilläggspaketet redan finns i API:t uppdaterar det här anropet paketet till en ny version.
+När du har skapat tilläggspaketfilen kan du skicka den till Reactor API via en POST-begäran.
 
 **API-format**
 
@@ -676,12 +704,12 @@ Ett godkänt svar returnerar information om det nya tilläggspaketet.
 
 ## Uppdatera ett tilläggspaket {#update}
 
-Du kan uppdatera ett tilläggspaket genom att ta med dess ID i sökvägen för en begäran om POST.
+Du kan uppdatera ett tilläggspaket genom att ta med dess ID i sökvägen för en PATCH-begäran.
 
 **API-format**
 
 ```http
-POST /extension_packages/{EXTENSION_PACKAGE_ID}
+PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 ```
 
 | Parameter | Beskrivning |
@@ -695,7 +723,7 @@ POST /extension_packages/{EXTENSION_PACKAGE_ID}
 Precis som med [när du skapar ett tilläggspaket](#create) måste en lokal version av det uppdaterade paketet överföras via formulärdata.
 
 ```shell
-curl -X POST \
+curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -934,7 +962,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 En privat release uppnås genom att en `action` anges med värdet `release_private` i `meta` för begärandedata.
 
 ```shell
-curl -X POST \
+curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -1179,7 +1207,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 En privat release uppnås genom att en `action` anges med värdet `release_private` i `meta` för begärandedata.
 
 ```shell
-curl -X POST \
+curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -1275,6 +1303,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
