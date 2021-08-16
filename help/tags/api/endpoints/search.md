@@ -1,9 +1,9 @@
 ---
 title: Sökslutpunkt
 description: Lär dig hur du anropar slutpunkten /search i Reactor API.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+source-git-commit: 53612919dc040a8a3ad35a3c5c0991554ffbea7c
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '662'
 ht-degree: 0%
 
 ---
@@ -43,25 +43,15 @@ Mer ingående information om hur du använder den här funktionen finns i [sökg
 
 Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
-## Hämta en lista med regler {#list}
+## Gör en sökning {#perform}
 
-Du kan hämta en lista över regler som tillhör en egenskap genom att göra en GET-begäran.
+Du kan göra en sökning genom att göra en POST.
 
 **API-format**
 
 ```http
-GET /properties/{PROPERTY_ID}/rules
+POST /search
 ```
-
-| Parameter | Beskrivning |
-| --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen vars komponenter du vill visa. |
-
-{style=&quot;table-layout:auto&quot;}
-
->[!NOTE]
->
->Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
 
 **Begäran**
 
@@ -71,6 +61,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
         "data" : {
