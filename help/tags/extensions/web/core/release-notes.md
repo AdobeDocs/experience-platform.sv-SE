@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: cef9f9e403328418d26935bf3ee45e9068b7177e
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1293'
 ht-degree: 1%
 
 ---
@@ -13,6 +13,16 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 11 augusti 2021
+
+v3.0.0
+
+* PDCL-6153: Lägger till stöd för att på ett tillförlitligt sätt hämta den fullständiga URL:en för cachelagrade anpassade kodåtgärder.
+
+v3.0.0 av Core-tillägget är kopplat till ändringar i [v27.2.0 i turbinwebbmiljön](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0), som gör att användare kan läsa in sitt bibliotek bland många värdregioner som hanteras av Adobe om användarens företag stöder Premium CDN.
+
+Den här uppgraderingen är valfri och bakåtkompatibel för användare utan Premium CDN, och obligatorisk för kunder som har Premium CDN aktiverat på företaget.
 
 ## 20 maj 2021
 
