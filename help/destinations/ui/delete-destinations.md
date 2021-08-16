@@ -4,10 +4,9 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-translation-type: tm+mt
-source-git-commit: 5b72433fcf2318f98538278c6d2650b366e391a2
+source-git-commit: 84deb9d1eecee8ec4369915a0b3c1eb810fd7c9b
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '417'
 ht-degree: 0%
 
 ---
@@ -22,8 +21,12 @@ Om du tar bort ett mål tas alla befintliga dataflöden till det målet bort. Al
 
 Det finns två sätt att ta bort mål från [!DNL Platform] [!DNL UI]. Ni kan:
 
-* [Ta bort mål från  [!UICONTROL Browse] fliken](#delete-browse-tab)
+* [Ta bort mål från fliken [!UICONTROL Browse]](#delete-browse-tab)
 * [Ta bort mål från sidan med målinformation](#delete-destination-details-page)
+
+>[!IMPORTANT]
+>
+>Du kan ta bort befintliga *anslutningar till mål*, vilket beskrivs i den här artikeln, men för närvarande kan du inte ta bort befintliga *[målkonton](/help/destinations/ui/destinations-workspace.md#accounts)* med Platform.
 
 ## Ta bort mål från fliken Bläddra{#delete-browse-tab}
 
@@ -45,7 +48,7 @@ Följ stegen nedan för att ta bort ett mål från fliken [!UICONTROL Browse].
    ![Bekräfta borttagning av mål](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
 
-## Ta bort mål från målinformationssidan{#delete-destination-details-page}
+## Ta bort mål från sidan med målinformation{#delete-destination-details-page}
 
 Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
