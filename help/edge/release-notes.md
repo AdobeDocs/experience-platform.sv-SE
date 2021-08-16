@@ -3,14 +3,18 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: f3821176b0cbc4ad07fbd2e0e20caa1205324a44
+source-git-commit: 2be9d262a699861c01011c59358751e6406f3770
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.6.3 - 16 augusti 2021
+
+* Korrigerade ett problem där objekt som inte är avsedda för allmän användning exponerades via det lösta löftet från kommandot `configure`.
 
 ## Version 2.6.2 - 4 augusti 2021
 
