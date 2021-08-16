@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7c30df7ea126ec7c7c794b8daaf3d2b813873b98
+source-git-commit: 40d280eb1d9810d679428ffd42c88035459f2b7d
 workflow-type: tm+mt
-source-wordcount: '1105'
+source-wordcount: '1173'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,17 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
+## Version 2.7.0 - 16 augusti 2021
+
+Innehåller version 2.6.3 av Adobe Experience Platform Web SDK-biblioteket.
+
+* När du använder dataelementtypen för identitetskarta tas nu identifierare vars ID:n matchar värden som inte är ifyllda strängar automatiskt bort från identitetskartan.
+* Ett fel som uppstod när ett dataelement skulle sparas med datatypen XDM Object har korrigerats och inget schema har valts.
+* Förbättrad typografi i användargränssnittet.
+
 ## Version 2.6.2 - 4 augusti 2021
 
-Innehåller version 2.6.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.2 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.6.1 - 29 juli 2021
 
