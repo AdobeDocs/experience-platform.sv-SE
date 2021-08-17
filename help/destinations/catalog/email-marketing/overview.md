@@ -4,61 +4,37 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: d3e1bc9bc075117dcc96c85b8b9c81d6ee617d29
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '764'
-ht-degree: 0%
+source-wordcount: '382'
+ht-degree: 2%
 
 ---
 
-# Översikt över mål för e-postmarknadsföring {#email-marketing-destinations}
+# Översikt över destinationer för e-postmarknadsföring {#email-marketing-destinations}
+
+## Översikt {#overview}
 
 Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföring.
 
-För att kunna skicka segment till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen.
+Plattformen exporterar dina segment som `.csv`-filer och levererar dem till den plats du föredrar. Schemalägg dataimporten i din e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i [!DNL Platform]. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
 
-Att ansluta till e-postmarknadsföringsmål är en trestegsprocess ([konfigurera mål](#connect-destination), [aktivera segment](#select-segments), [importera data från lagringsplatsen till målet](#import-data-into-destination)). Varje steg beskrivs längre ned på den här sidan.
+## E-postmarknadsföringsmål som stöds {#supported-destinations}
 
-Anslut till antingen [!DNL Amazon S3] eller [!DNL SFTP] i det anslutande målflödet som beskrivs i avsnittet nedan. Plattformen exporterar dina segment som `.csv`-filer och levererar dem till den plats du föredrar. Schemalägg dataimporten i din e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i [!DNL Platform]. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
+Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
 
-## Konfigurera mål {#connect-destination}
+* [Adobe Campaign](adobe-campaign.md)
+* [Oracle Eloqua](oracle-eloqua.md)
+* [Oraclets svar](oracle-responsys.md)
+* [Salesforce Marketing Cloud](salesforce-marketing-cloud.md)
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du det e-postmarknadsföringsmål som du vill ansluta till och sedan **[!UICONTROL Configure]**.
+## Anslut till ett nytt mål för e-postmarknadsföring {#connect-destination}
 
-![Anslut till mål](../../assets/catalog/email-marketing/overview/connect-email-marketing.png)
+För att kunna skicka segment till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [när du skapar mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
 
-Om du tidigare har konfigurerat en anslutning till ditt mål för e-postmarknadsföring väljer du **[!UICONTROL Existing Account]** i **[!UICONTROL Account]**-steget och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till ditt mål för e-postmarknadsföring. I **[!UICONTROL Connection type]**-väljaren kan du välja mellan [!UICONTROL Amazon S3], [!UICONTROL Azure Blob], [!UICONTROL SFTP with Password] eller [!UICONTROL SFTP with SSH Key]. Fyll i informationen nedan, beroende på din anslutningstyp, och välj sedan **[!UICONTROL Connect]**.
+## Bästa tillvägagångssätt när ni aktiverar målgrupper för e-postmarknadsföring {#best-practices}
 
-- För **S3-anslutningar** måste du ange ditt Amazon Access Key ID och Secret Access Key.
-- För **SFTP med Lösenord**-anslutningar måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
-- För **SFTP med SSH-nyckel**-anslutningar måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
-
-Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
-
-I steget **[!UICONTROL Authentication]** anger du ett namn och en beskrivning för det nya målet samt filformatet för de exporterade filerna.
-
-Om du valde Amazon S3 som lagringsalternativ i föregående steg anger du namnet på hakparentesen och mappsökvägen i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den mappsökväg där filerna ska levereras.
-
-I det här steget kan du även välja alla marknadsföringsåtgärder som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
-
-![Steget för e-postkonfiguration](../../assets/catalog/email-marketing/overview/email-setup-step.png)
-
-## Välj vilka segmentmedlemmar som ska inkluderas i målexporter {#select-segments}
-
-På sidan **[!UICONTROL Select Segments]** väljer du vilka segment som ska skickas till målet. Mer information om fälten finns i avsnitten nedan.
-
-![Markera segment](../../assets/common/email-select-segments.png)
-
-## Konfigurera filnamn
-
-Mer information om redigeringsalternativen för segmentschema och filnamn finns i [Konfigurera](../../ui/activate-destinations.md#configure)-steget i självstudiekursen om aktiveringsmål.
-
-## Välj attribut - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
-
-I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsföringsmål och markerar vilka fält som är obligatoriska.
-Mer information om det här steget finns i [Select attributes](../../ui/activate-destinations.md#select-attributes)-steget i självstudiekursen om aktivering av mål.
-
-## Identitet {#identity}
+### Identitetsurval {#identity}
 
 Adobe rekommenderar att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användaridentiteter är avaktiverade i. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
 
@@ -68,7 +44,7 @@ Adobe rekommenderar att du väljer en unik identifierare i ditt [unionsschema](.
 | Telefon | `mobilePhone.number` |
 | Förmånsprogram-ID | `Customer-defined XDM field` |
 
-## Andra målattribut
+### Andra målattribut
 
 Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. Några rekommenderade alternativ är:
 
@@ -87,16 +63,16 @@ Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. N�
 
 Läs de enskilda målartiklarna för e-postmarknadsföring och lär dig hur du importerar data från din lagringsplats till destinationer:
 
-- [Adobe Campaign](./adobe-campaign.md#import-data-into-campaign)
-- [Oracle Eloqua](./oracle-eloqua.md#import-data-into-eloqua)
-- [Oraclets svar](./oracle-responsys.md#import-data-into-responsys)
-- [Salesforce Marketing Cloud](./salesforce-marketing-cloud.md#import-data-into-salesforce)
+* [Adobe Campaign](adobe-campaign.md)
+* [Oracle Eloqua](oracle-eloqua.md)
+* [Oraclets svar](oracle-responsys.md)
+* [Salesforce Marketing Cloud](salesforce-marketing-cloud.md)
 
-## Aktivera segment för e-postmarknadsföringsmål
+## Aktivera segment för e-postmarknadsföringsmål {#activate}
 
 Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera profiler och segment till en destination](../../ui/activate-destinations.md).
 
 ## Ytterligare resurser
 
-- [Aktivera data till mål](../../ui/activate-destinations.md)
-- [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](../../api/email-marketing.md)
+* [Aktivera data till mål](../../ui/activate-destinations.md)
+* [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](../../api/email-marketing.md)
