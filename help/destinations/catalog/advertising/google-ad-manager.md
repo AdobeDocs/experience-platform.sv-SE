@@ -3,10 +3,10 @@ keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;G
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '716'
-ht-degree: 0%
+source-wordcount: '645'
+ht-degree: 1%
 
 ---
 
@@ -59,19 +59,13 @@ Innan du skapar [!DNL Google Ad Manager]-målet i Platform måste du kontakta [!
 * **Audience Link ID** : det här är ditt konto med  [!DNL Google Ad Manager]
 * Din kontotyp. DFP av Google eller AdX-köpare.
 
-## Konfigurera mål
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du **[!DNL Google Ad Manager]** och väljer **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-![Anslut Google Ad Manager-mål](../../assets/catalog/advertising/google-ad-manager/catalog.png)
+### Anslutningsparametrar {#parameters}
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-
-I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICONTROL Basic Information] för målet.
-
-![Grundläggande information Google Ad Manager](../../assets/catalog/advertising/google-ad-manager/setup.png)
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
@@ -79,15 +73,14 @@ I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICON
    * Använd `DFP by Google` för [!DNL DoubleClick] för utgivare
    * Använd `AdX buyer` för [!DNL Google AdX]
 * **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med  [!DNL Google]. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
-* **[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 >[!NOTE]
 >
 >När du konfigurerar ett [!DNL Google Ad Manager]-mål ska du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att förstå vilken kontotyp du har.
 
-## Aktivera segment till [!DNL Google Ad Manager]
+## Aktivera segment till den här destinationen {#activate}
 
-Instruktioner om hur du aktiverar segment till [!DNL Google Ad Manager] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Exporterade data
 
