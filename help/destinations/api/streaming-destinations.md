@@ -6,9 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 0bc85d79bab690d433dc29d558a4d9caf086586d
+source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
 workflow-type: tm+mt
-source-wordcount: '2019'
+source-wordcount: '2020'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ I den här självstudien används målet [!DNL Amazon Kinesis] i alla exempel, m
 
 ![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera segment](../assets/api/streaming-destination/overview.png)
 
-Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data, se [Anslut ett mål](../ui/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../ui/activate-destinations.md).
+Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns i [Ansluta ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata till exportmål för direktuppspelade segment](../ui/activate-segment-streaming-destinations.md) självstudier.
 
-## Kom igång
+## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
