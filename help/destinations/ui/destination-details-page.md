@@ -4,10 +4,9 @@ title: Visa målinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-translation-type: tm+mt
-source-git-commit: cc432f7c07f0f82deec653864154016638ec8138
+source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
@@ -52,7 +51,7 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 
 | Höger rälsartikel | Beskrivning |
 | --- | --- |
-| [!UICONTROL Activate] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet. Mer information finns i guiden [aktivera segment till ett mål](./activate-destinations.md). |
+| [!UICONTROL Activate] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet. Mer information finns i guiderna om [aktivering av målgruppsdata till segmentdirektuppspelningsmål](./activate-segment-streaming-destinations.md), [aktivering av målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md) och [aktivering av målgruppsdata till direktuppspelningsprofilbaserade mål](./activate-streaming-profile-destinations.md). |
 | [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappningar för segment som tidigare har aktiverats, om det finns några. |
 | [!UICONTROL Destination name] | Det här fältet kan redigeras för att uppdatera målets namn. |
 | [!UICONTROL Description] | Det här fältet kan redigeras för att uppdatera eller lägga till en valfri beskrivning till målet. |
