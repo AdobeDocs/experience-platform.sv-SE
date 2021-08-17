@@ -5,10 +5,10 @@ seo-title: Översikt över mål
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: f73598224d527535aaf9ecb2aa1c26786cae2d82
+source-git-commit: b7392596c7ed96032dc8ad6bb8e423640f562394
 workflow-type: tm+mt
-source-wordcount: '488'
-ht-degree: 1%
+source-wordcount: '507'
+ht-degree: 0%
 
 ---
 
@@ -25,7 +25,7 @@ En av de viktigaste funktionerna i Platform är att inhämta era egna data och a
 ## Destinationssteg {#steps}
 
 * Välj från en [självbetjäningskatalog](./catalog/overview.md) av alla mål som är tillgängliga i Platform.
-* Använd destinationer för att [aktivera](./ui/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
+* Använd destinationer för att skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
 ## Kontroller {#controls}
@@ -66,4 +66,8 @@ Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet fö
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
 * [Sociala destinationer](./catalog/social/overview.md)
 
-Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i granskningssteget i [Aktivera profiler och segment till ett mål](./ui/activate-destinations.md#review).
+Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i steget Granska i följande handböcker:
+
+* [Aktivera målgruppsdata för att direktuppspela segmentexportmål](./ui/activate-segment-streaming-destinations.md#review)
+* [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md#review)
+* [Aktivera målgruppsdata för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md#review)
