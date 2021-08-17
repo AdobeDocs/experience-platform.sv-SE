@@ -6,10 +6,9 @@ seo-title: Redigera aktiveringsflöden
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsflöde i Adobe Experience Platform.
 seo-description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-translation-type: tm+mt
-source-git-commit: 5b72433fcf2318f98538278c6d2650b366e391a2
+source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
 workflow-type: tm+mt
-source-wordcount: '193'
+source-wordcount: '188'
 ht-degree: 0%
 
 ---
@@ -34,4 +33,4 @@ Följ stegen nedan för att redigera de befintliga aktiveringsflödena i Adobe E
 
    ![Destinationsinformation](../assets/ui/edit-activation/destination-details.png)
 
-5. Mer information om hur du aktiverar nya segment finns i [Aktivera profiler och segment till ett mål](activate-destinations.md).
+5. Mer information om hur du aktiverar nya segment finns i [Aktiveringsöversikt](activation-overview.md).
