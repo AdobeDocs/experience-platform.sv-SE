@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 >Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
 > Attributkälldata hashas inte automatiskt.
 > 
-> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
 > 
 > Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
@@ -99,7 +99,7 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
+Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
 
 ## Exporterade data {#exported-data}
 
