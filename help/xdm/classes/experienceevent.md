@@ -5,9 +5,9 @@ title: Klassen XDM ExperienceEvent
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: ecb9c9a4158f3d2981ab60ee3bf419464ac7b8f1
+source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Vissa interaktioner i dina upplevelseprogram kan leda till flera relaterade hän
 
 [Med Adobe Experience Platform Data ](../../data-prep/home.md) Prepallows du mappa, omvandla och validera data till och från XDM. Med de tillgängliga [mappningsfunktionerna](../../data-prep/functions.md) som tillhandahålls av tjänsten kan du anropa logiska operatorer för att prioritera, omvandla och/eller konsolidera data från poster med flera händelser när de hämtas till Experience Platform. I exemplet ovan kan du ange `eventType` som ett beräkningsfält som prioriterar en&quot;produktvy&quot; framför en&quot;sidvy&quot; när båda förekommer.
 
-Om du hämtar data manuellt till plattformen via användargränssnittet kan du läsa guiden [mappa en CSV-fil till XDM](../../ingestion/tutorials/map-a-csv-file.md) om du vill ha mer information om hur du skapar beräkningsfält.
+Om du hämtar data manuellt till plattformen via användargränssnittet kan du läsa guiden om [beräkningsfält](../../data-prep/calculated-fields.md) om du vill ha mer information om hur du skapar beräkningsfält.
 
 Om du direktuppspelar data till plattformen med en källanslutning kan du konfigurera källan så att beräkningsfält används i stället. I [dokumentationen för den aktuella källan](../../sources/home.md) finns anvisningar om hur du implementerar beräknade fält när du konfigurerar anslutningen.
 
