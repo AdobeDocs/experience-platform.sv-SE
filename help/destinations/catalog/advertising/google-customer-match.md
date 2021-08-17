@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 8a521b2b846c953b74b8e48fb76b94966a652318
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '1525'
+source-wordcount: '1233'
 ht-degree: 0%
 
 ---
@@ -106,54 +106,32 @@ Innan du kan använda namnutrymmet `User_ID` för att skicka data till Google m�
 Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
 
-## Konfigurera mål - videogenomgång {#video}
+<!-- ## Configure destination - video walkthrough {#video}
 
-I videon nedan visas stegen för att konfigurera ett socialt mål och aktivera segment. I videon används LinkedIn som exempel, men stegen är desamma för alla sociala mål, inklusive [!DNL Google Customer Match]. Stegen i videon visas också sekventiellt i nästa avsnitt.
+The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate segments. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
-## Anslut till mål {#connect-destination}
+## Anslut till målet {#connect}
 
-Bläddra till kategorin **[!UICONTROL Advertising]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj [!DNL Google Customer Match] och sedan **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-![Anslut till Googles kundmatchningsmål](../../assets/catalog/advertising/google-customer-match/connect.png)
+### Anslutningsparametrar {#parameters}
 
->[!NOTE]
->
->Om det finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
-Om du tidigare har konfigurerat en anslutning till ditt [!DNL Google Customer Match]-mål väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning i steget **Konto**. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till [!DNL Google Customer Match]. Om du vill logga in och ansluta Adobe Experience Cloud till ditt [!DNL Google Ad]-konto väljer du **[!UICONTROL Connect to destination]**.
-
->[!NOTE]
->
->Experience Platform stöder validering av autentiseringsuppgifter i autentiseringsprocessen. Ett felmeddelande visas om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad]-konto, så att du inte slutför arbetsflödet med felaktiga autentiseringsuppgifter.
-
-![Anslut till Google Customer Match-målet - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/connection.png)
-
-När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt Google-konto kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Authentication]**-steget.
-
-![Autentiseringsuppgifterna har bekräftats](../../assets/catalog/advertising/google-customer-match/connection-success.png)
-
-I steget **[!UICONTROL Authentication]** anger du **[!UICONTROL Name]** och **[!UICONTROL Description]** för ditt aktiveringsflöde och fyller i din Google **[!UICONTROL Account ID]**.
-
-I det här steget kan du även välja alla **[!UICONTROL Marketing actions]** som gäller för det här målet. Marknadsföringsåtgärder anger för vilken metod data exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
-
-Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
+* **[!UICONTROL Name]**: ange ett namn för den här målanslutningen
+* **[!UICONTROL Description]**: ange en beskrivning för den här målanslutningen
+* **[!UICONTROL Account ID]**: ditt Google-kundklient-ID. Formatet på ID:t är xxx-xxx-xxxx.
 
 >[!IMPORTANT]
 >
 > * Marknadsföringsåtgärden **[!UICONTROL Combine with PII]** är markerad som standard för målet [!DNL Google Customer Match] och kan inte tas bort.
-> * För [!DNL Google Customer Match]-mål. **[!UICONTROL Account ID]** är ditt kund-ID hos Google. Formatet på ID:t är xxx-xxx-xxxx.
 
 
-![Koppla ihop Google-kunder - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/authentication.png)
+## Aktivera segment till den här destinationen {#activate}
 
-Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment till [!DNL Google Customer Match]](#activate-segments), för resten av arbetsflödet.
-
-## Aktivera segment till [!DNL Google Customer Match] {#activate-segments}
-
-Instruktioner om hur du aktiverar segment till [!DNL Google Customer Match] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
-
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] när du skickar segmenten [!DNL IDFA] eller [!DNL GAID] till [!DNL Google Customer Match].
 
