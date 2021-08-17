@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;G
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '647'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,7 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
+Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
 
 ## Exporterade data
 
