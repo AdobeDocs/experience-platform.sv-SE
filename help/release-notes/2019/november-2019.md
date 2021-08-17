@@ -5,8 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
 workflow-type: tm+mt
 source-wordcount: '1883'
 ht-degree: 1%
@@ -78,7 +77,7 @@ Se [målkatalogen](../../destinations/catalog/overview.md) om du vill ha informa
 
 **Kända begränsningar**
 
-* Kontrollen som tillåter anpassade aktiveringsscheman i [aktiveringsflödet](../../destinations/ui/activate-destinations.md#activate-data) (schemasteget) är inte tillgänglig i den första versionen.
+* Kontrollen som tillåter anpassade aktiveringsscheman i aktiveringsflödet (schemasteget) är inte tillgänglig i den första versionen.
 * Det finns för närvarande inget sätt att redigera eller ta bort en målkonfiguration. Om du vill kringgå den här begränsningen kan du aktivera eller inaktivera målet i det övre högra hörnet på [sidan med målinformation](../../destinations/ui/destination-details-page.md).
 * Det finns för närvarande ingen validering för kontoinformation, sökväg eller autentiseringsuppgifter vid anslutning till ditt mål eller lagringskonto. Se till att du anger rätt autentiseringsuppgifter och dubbelkontrollera om det finns stavfel eller stavfel.
 * Inga autentiseringsuppgifter har förnyats i den första versionen. När ett konto har gått ut eller behöver uppdateras, måste du skapa en ny målanslutning och mappa om de segment som du tidigare har mappat.
@@ -116,7 +115,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] gör det möjligt för d
 
 Mer information finns i [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md).
 
-## [!DNL Experience Data Model] (XDM) System  {#xdm}
+## [!DNL Experience Data Model] (XDM) System {#xdm}
 
 Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
