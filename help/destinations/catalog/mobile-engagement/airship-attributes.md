@@ -3,9 +3,9 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut
 description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '703'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
 
 ### Anslutningsparametrar {#parameters}
 
@@ -82,7 +82,7 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
+Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
 
 ## Mappningsöverväganden {#mapping-considerations}
 
