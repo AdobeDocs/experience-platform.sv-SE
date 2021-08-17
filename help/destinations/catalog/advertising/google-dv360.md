@@ -3,10 +3,10 @@ keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Displ
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '748'
-ht-degree: 0%
+source-wordcount: '665'
+ht-degree: 1%
 
 ---
 
@@ -59,19 +59,13 @@ Innan du skapar målet [!DNL Google Display & Video 360] i Platform måste du ko
 * **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
 * **Kontotyp**: kan användas  **[!DNL Invite advertiser]** för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto eller  **[!DNL Invite partner]** för att tillåta att målgrupper delas med alla varumärken i ditt Display &amp; Video 360-konto.
 
-## Konfigurera mål
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Google Display & Video 360] och väljer **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-![Connect Google Display &amp; Video 360 destination](../../assets/catalog/advertising/google-dv360/catalog.png)
+### Anslutningsparametrar {#parameters}
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan [!UICONTROL Activate] och [!UICONTROL Configure] finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-
-I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICONTROL Basic Information] för målet samt de marknadsföringsåtgärder som ska gälla för det här målet.
-
-![Grundläggande information, Google Display och Video 360](../../assets/catalog/advertising/google-dv360/setup.png)
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
@@ -79,15 +73,14 @@ I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICON
    * Använd `Invite Advertiser` för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto.
    * Använd `Invite Partner` för att tillåta att målgrupper delas med alla varumärken i ditt Display &amp; Video 360-konto.
 * **[!UICONTROL Account ID]**: Fyll i ditt  **[!DNL Invite partner]** eller ditt  **[!DNL Invite advertiser]** konto-ID med Google. Vanligtvis är detta ett ID med sex eller sju siffror.
-* **[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 >[!NOTE]
 >
 >När du konfigurerar ett [!DNL Google Display & Video 360]-mål ska du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att förstå vilken kontotyp du har.
 
-## Aktivera segment till [!DNL Google Display & Video 360]
+## Aktivera segment till den här destinationen {#activate}
 
-Instruktioner om hur du aktiverar segment till [!DNL Google Display & Video 360] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Exporterade data
 
