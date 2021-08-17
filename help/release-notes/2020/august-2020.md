@@ -4,14 +4,13 @@ description: Versionsinformation för Experience Platform 10 augusti 2020
 doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
-translation-type: tm+mt
-source-git-commit: 49c984a60fd699706eec508ec1d786340df40b57
+exl-id: 9347147f-e830-4487-aa12-f56723abb3c8
+source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
 workflow-type: tm+mt
 source-wordcount: '568'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
-
 
 # Versionsinformation för Adobe Experience Platform
 
@@ -36,7 +35,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Mer information om [!DNL JupyterLab] finns i [[!DNL JupyterLab] användarhandboken](../../data-science-workspace/jupyterlab/overview.md).
 
-## Mål {#destinations}
+## Mål  {#destinations}
 
 I [Kunddataplattform för realtid](../../rtcdp/overview.md) är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
@@ -52,8 +51,8 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 | Funktion | Beskrivning |
 |------- | -----------|
-| Anpassad filnamnsredigerare | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål där du kan redigera namnet på de exporterade filerna. Mer information finns i [ Konfigurera steg](../../destinations/ui/activate-destinations.md#configure) i aktiveringsarbetsflödet. |
-| Rekommenderade attribut | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål som visar rekommenderade attribut som du kan lägga till i de exporterade filerna. Mer information finns i [Välj attribut-steget](../../destinations/ui/activate-destinations.md#select-attributes) i aktiveringsarbetsflödet. |
+| Anpassad filnamnsredigerare | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål där du kan redigera namnet på de exporterade filerna. Mer information finns i [ Konfigurera steg](../../destinations/ui/activate-batch-profile-destinations.md) i aktiveringsarbetsflödet. |
+| Rekommenderade attribut | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål som visar rekommenderade attribut som du kan lägga till i de exporterade filerna. Mer information finns i [Välj attribut-steget](../../destinations/ui/activate-batch-profile-destinations.md) i aktiveringsarbetsflödet. |
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
