@@ -5,7 +5,7 @@ title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 178c0c4079d620b9a8380fcfcdd90cb74eb24bbb
+source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
 workflow-type: tm+mt
 source-wordcount: '330'
 ht-degree: 1%
@@ -310,7 +310,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 >[!NOTE]
 >
->Källfältet `to_object('ECID',arrays_to_objects('id',explode(ecids)))` är ett beräkningsfält som måste läggas till med alternativet [!UICONTROL Add calculated field] i plattformsgränssnittet. Mer information finns i självstudiekursen om att [lägga till beräknade fält](../../../../ingestion/tutorials/map-a-csv-file.md).
+>Källfältet `to_object('ECID',arrays_to_objects('id',explode(ecids)))` är ett beräkningsfält som måste läggas till med alternativet [!UICONTROL Add calculated field] i plattformsgränssnittet. Mer information finns i självstudiekursen om att [lägga till beräknade fält](../../../../data-prep/calculated-fields.md).
 
 ## Nästa steg
 
