@@ -1,7 +1,7 @@
 ---
 title: Regler
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
 source-wordcount: '1956'
 ht-degree: 0%
@@ -168,7 +168,7 @@ Adobe kan inte garantera att andra regler verkligen kommer att aktiveras och att
 * **JavaScript:** JavaScript läses in från servern som vanlig text, omsluts av en script-tagg och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade JavaScript-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerades i regeln.
 * **HTML:** HTML-koden läses in från servern och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade HTML-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerats i regeln.
 
-## Regelkomponentsekvenser
+## Regelkomponentsekvenser {#sequencing}
 
 Taggens körningsmiljös beteende beror på om **[!UICONTROL Run rule components in sequence]** är aktiverat eller inte för egenskapen.
 
