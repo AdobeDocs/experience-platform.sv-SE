@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) !DNL Azure Event Hubs] anslutning
 description: Skapa en utgående anslutning i realtid till ditt !DNL Azure Event Hubs]-lagringsutrymme för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs]
 
 ![AWS Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/event-hubs/catalog.png)
 
-## Använd fall {#use-cases}
+## Användningsexempel {#use-cases}
 
 Genom att använda direktuppspelningsmål som [!DNL Azure Event Hubs] kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
 
@@ -38,31 +38,23 @@ En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar 
 
 **Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-destinations.md#select-attributes)målaktivering.
 
-## Anslutningsmål {#connect-destination}
+## Anslut till målet {#connect}
 
-Se [Arbetsflöde för molnlagringsmål ](./workflow.md)för instruktioner om hur du ansluter till molnlagringsmålen, inklusive [!DNL Azure Event Hubs].
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-För [!DNL Azure Event Hubs]-mål anger du följande information i arbetsflödet för att skapa mål:
+### Anslutningsparametrar {#parameters}
 
-## Kontosteg {#account-step}
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **[!UICONTROL SAS Key Name]** och  **[!UICONTROL SAS Key]**: Fyll i SAS-nyckelns namn och nyckel. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL Namespace]**: Fyll i  [!DNL Azure Event Hubs] namnutrymmet. Läs mer om [!DNL Azure Event Hubs]-namnutrymmen i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
-
-![Indata krävs i kontosteget](../../assets/catalog/cloud-storage/event-hubs/account.png)
-
-## Autentiseringssteg {#authentication-step}
-
 * **[!UICONTROL Name]**: Ange ett namn för anslutningen till  [!DNL Azure Event Hubs].
 * **[!UICONTROL Description]**: Ange en beskrivning av anslutningen.  Exempel: &quot;Premium tier customers&quot;, &quot;Males interest of kitsnapfing&quot;.
 * **[!UICONTROL eventHubName]**: Ange ett namn för strömmen till ditt  [!DNL Azure Event Hubs] mål.
-* **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
-![Data som krävs i autentiseringssteget](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
+## Aktivera segment till den här destinationen {#activate}
 
-## Aktivera segment {#activate-segments}
-
-Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Exporterade data {#exported-data}
 
