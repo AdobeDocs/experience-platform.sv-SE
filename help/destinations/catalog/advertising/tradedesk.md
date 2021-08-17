@@ -3,9 +3,9 @@ keywords: Reklam. skrivbordet, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '465'
 ht-degree: 1%
 
 ---
@@ -63,9 +63,9 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
+Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
 
-I steget [Segmentschema](../../ui/activate-destinations.md#segment-schedule) måste du manuellt mappa dina segment till deras motsvarande ID eller egna namn på målplattformen.
+I steget [Segmentschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa dina segment till deras motsvarande ID eller egna namn på målplattformen.
 
 När du mappar segment rekommenderar vi att du använder namnet på plattformssegmentet eller en kortare form av det för att underlätta användningen. Segment-ID:t eller namnet i målet behöver dock inte matcha det i ditt plattformskonto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
 
