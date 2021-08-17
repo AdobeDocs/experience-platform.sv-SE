@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-postadresser;oraclets svarsmål
 title: Oraclena svarssystemanslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: 70be44e919070df910d618af4507b600ad51123c
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '454'
 ht-degree: 0%
 
 ---
@@ -28,31 +28,34 @@ När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar A
 
 Se [IP-adressen tillåtelselista för molnlagringsdestinationer](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 
-## Anslutningsmål {#connect-destination}
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Oracle Responsys] och sedan **[!UICONTROL Connect destination]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-![Anslut till svar](../../assets/catalog/email-marketing/oracle-responsys/catalog.png)
+Detta mål stöder följande anslutningstyper:
 
-I steget **[!UICONTROL Account]** väljer du **[!UICONTROL Existing Account]** och en av dina befintliga anslutningar om du tidigare har konfigurerat en anslutning till molnlagringsmålet. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. För [!DNL Oracle Responsys] kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**.
+* **[!UICONTROL SFTP with Password]**
+* **[!UICONTROL SFTP with SSH Key]**
 
-![Connect Responsys-konto](../../assets/catalog/email-marketing/oracle-responsys/connection-type.png)
+### Anslutningsparametrar {#parameters}
 
-Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Configure]**.
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
-- För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL Password].
-- För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL SSH Key].
-
-Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
-
-![Fyll i svarsinformation](../../assets/catalog/email-marketing/oracle-responsys/account-info.png)
-
-I steget **[!UICONTROL Authentication]** ska du fylla i relevant information för destinationen enligt nedan:
-- **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
-- **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
-- **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Plattform ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-- **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
-- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+* För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange:
+   * [!UICONTROL Domain]
+   * [!UICONTROL Port]
+   * [!UICONTROL Username]
+   * [!UICONTROL Password]
+* För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange:
+   * [!UICONTROL Domain]
+   * [!UICONTROL Port]
+   * [!UICONTROL Username]
+   * [!UICONTROL SSH Key]
+* Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
+* **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
+* **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
+* **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Plattform ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
+* **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
 
 <!--
 
@@ -62,17 +65,13 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 -->
 
-![Grundläggande information om svar](../../assets/catalog/email-marketing/oracle-responsys/basic-information.png)
+## Aktivera segment till den här destinationen {#activate}
 
-Klicka på **[!UICONTROL Create destination]** när du har fyllt i fälten ovan. Målet är nu anslutet och du kan [aktivera segment](../../ui/activate-destinations.md) till målet.
-
-## Aktivera segment {#activate-segments}
-
-Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Målattribut {#destination-attributes}
 
-När du [aktiverar segment](../../ui/activate-destinations.md) till målet [!DNL Oracle Responsys] rekommenderar Adobe att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
+När du [aktiverar segment](../../ui/activate-destinations.md) till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
 
 ## Exporterade data {#exported-data}
 
