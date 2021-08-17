@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 4febcef82c6da4534051cbe68820984814786224
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '550'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis]-l
 
 ![Amazon Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
 
-## Använd fall {#use-cases}
+## Användningsfall {#use-cases}
 
 Genom att använda direktuppspelningsmål som [!DNL Amazon Kinesis] kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
 
@@ -77,27 +77,19 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att expor
 
 Mer information om hur du styr åtkomst för [!DNL Kinesis]-dataströmmar finns i följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
-## Anslutningsmål {#connect-destination}
+## Anslut till målet {#connect}
 
-Mer information om hur du ansluter till molnlagringsmål, inklusive de som stöds av [!DNL Amazon], finns i [arbetsflödet för molnlagringsmål ](./workflow.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-För [!DNL Amazon Kinesis]-mål anger du följande information i arbetsflödet för att skapa mål:
+### Anslutningsparametrar {#parameters}
 
-## Kontosteg {#account-step}
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera  [!DNL Amazon Web Services]ett  `access key - secret access key` par som ger plattformsåtkomst till ditt  [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken  [!DNL Amazon Web Services] region data ska strömmas till.
-
-![Inmatningsfält i kontosteget](../../assets/catalog/cloud-storage/amazon-kinesis/account.png)
-
-## Autentiseringssteg {#authentication-step}
-
 * **Namn**: Ange ett namn för anslutningen till  [!DNL Amazon Kinesis]
 * **Beskrivning**: Ange en beskrivning för anslutningen till  [!DNL Amazon Kinesis].
 * **ström**: Ange namnet på en befintlig dataström i ditt  [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
-* **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
-
-![Inmatningsfält i autentiseringssteget](../../assets/catalog/cloud-storage/amazon-kinesis/authentication.png)
 
 <!--
 
@@ -107,9 +99,9 @@ För [!DNL Amazon Kinesis]-mål anger du följande information i arbetsflödet f
 
 -->
 
-## Aktivera segment {#activate-segments}
+## Aktivera segment till den här destinationen {#activate}
 
-Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Exporterade data {#exported-data}
 
