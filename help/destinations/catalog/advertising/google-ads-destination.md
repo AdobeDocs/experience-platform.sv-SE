@@ -3,9 +3,9 @@ keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
 description: Google Ads, tidigare Google AdWords, är en webbannonseringstjänst som gör att företag kan betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
+source-git-commit: ca388912d6634f72cab15a6bfb3e9f92264e52db
 workflow-type: tm+mt
-source-wordcount: '700'
+source-wordcount: '631'
 ht-degree: 1%
 
 ---
@@ -66,29 +66,22 @@ Innan du skapar [!DNL Google Ads]-målet i Platform måste du kontakta [!DNL Goo
 * Kontotyp: **AdWords**
 * **Google AdWords-ID**: Detta är ditt ID med  [!DNL Google]. ID-formatet är vanligtvis 123-456-7890.
 
-## Konfigurera mål
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Google Ads] och väljer **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-![Anslut Google Ads-mål](../../assets/catalog/advertising/google-ads-destination/catalog.png)
+### Anslutningsparametrar {#parameters}
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-
-I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICONTROL Basic Information] för målet.
-
-![Grundläggande information för Google Ads](../../assets/catalog/advertising/google-ads-destination/setup.png)
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Account Type]**: AdWords är det enda tillgängliga alternativet.
 * **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med  [!DNL Google Ads]. ID-formatet är vanligtvis 123-456-7890.
-* **[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
-## Aktivera segment till [!DNL Google Ads]
+## Aktivera segment till den här destinationen {#activate}
 
-Instruktioner om hur du aktiverar segment till [!DNL Google Ads] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Exporterade data
 
