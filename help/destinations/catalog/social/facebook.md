@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 32da733eda61049738e87bce48978196a1fea96d
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1240'
 ht-degree: 2%
 
 ---
@@ -56,12 +56,12 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 
 Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
-- Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för det annonskonto som du tänker använda.
-- Företagskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
+* Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för det annonskonto som du tänker använda.
+* Företagskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
    >[!IMPORTANT]
    >
    > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för [!DNL Adobe Experience Platform]-integreringen.
-- Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
+* Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -73,8 +73,8 @@ Beroende på vilken typ av ID som du importerar till Adobe Experience Platform m
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 
-- **Hämtar råtelefonnummer**: du kan importera råa telefonnummer i  [!DNL E.164] formatet till  [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina raw-telefonnummer till namnutrymmet `Phone_E.164`.
-- **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i  [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `Phone_SHA256`.
+* **Hämtar råtelefonnummer**: du kan importera råa telefonnummer i  [!DNL E.164] formatet till  [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina raw-telefonnummer till namnutrymmet `Phone_E.164`.
+* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i  [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `Phone_SHA256`.
 
 >[!NOTE]
 >
@@ -89,12 +89,12 @@ Om du vill veta mer om att importera e-postadresser i Experience Platform kan du
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
-- Trimma alla inledande och avslutande blanksteg från e-poststrängen. exempel: `johndoe@example.com`, inte `<space>johndoe@example.com<space>`;
-- När du hash-kodar e-poststrängarna ska du se till att hash-koda den gemena strängen.
-   - Exempel: `example@email.com`, inte `EXAMPLE@EMAIL.COM`;
-- Kontrollera att den hash-kodade strängen är i gemener
-   - Exempel: `55e79200c1635b37ad31a378c39feb12f120f116625093a19bc32fff15041149`, inte `55E79200C1635B37AD31A378C39FEB12F120F116625093A19bC32FFF15041149`;
-- Salt inte strängen.
+* Trimma alla inledande och avslutande blanksteg från e-poststrängen. exempel: `johndoe@example.com`, inte `<space>johndoe@example.com<space>`;
+* När du hash-kodar e-poststrängarna ska du se till att hash-koda den gemena strängen.
+   * Exempel: `example@email.com`, inte `EXAMPLE@EMAIL.COM`;
+* Kontrollera att den hash-kodade strängen är i gemener
+   * Exempel: `55e79200c1635b37ad31a378c39feb12f120f116625093a19bc32fff15041149`, inte `55E79200C1635B37AD31A378C39FEB12F120F116625093A19bC32FFF15041149`;
+* Salt inte strängen.
 
 >[!NOTE]
 >
@@ -108,17 +108,29 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [Facebook officiella dokumentation](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
-## Anslut till mål {#connect-destination}
+## Anslut till målet {#connect}
 
-Mer information om hur du ansluter till [!DNL Facebook]-målet finns i [Arbetsflöde för autentisering av sociala mål](./workflow.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-I videon nedan visas också stegen för att konfigurera ett socialt mål och aktivera segment. I videon används LinkedIn som exempel, men stegen är desamma för alla sociala mål.
+I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera segment.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
-## Aktivera segment till [!DNL Facebook] {#activate-segments}
+>[!NOTE]
+>
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
 
-Instruktioner om hur du aktiverar segment till [!DNL Facebook] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+### Anslutningsparametrar {#parameters}
+
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+
+* **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
+* **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
+* **[!UICONTROL Account ID]**: din  [!DNL Facebook Ad Account ID]. Du hittar detta ID i ditt [!DNL Facebook Ads Manager]-konto. När du anger detta ID ska du alltid prefix med `act_`.
+
+## Aktivera segment till den här destinationen {#activate}
+
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när du skickar segment till [!DNL Facebook Custom Audiences].
 
