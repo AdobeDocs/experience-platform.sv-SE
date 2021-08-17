@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 265607b3b21fda48a92899ec3d750058ca48868a
+source-git-commit: b7392596c7ed96032dc8ad6bb8e423640f562394
 workflow-type: tm+mt
-source-wordcount: '1539'
+source-wordcount: '1532'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ Avsnittet **[!UICONTROL Activated destinations]** visar de mål som det här seg
 
 >[!NOTE]
 >
-> Destinationer är en funktion som är tillgänglig med [!DNL Real-time Customer Data Platform] och som gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [målöversikten](../../destinations/home.md). Läs [guiden om hur du aktiverar segment till ett mål](../../destinations/ui/activate-destinations.md) om du vill lära dig hur du aktiverar segment till ett mål.
+> Destinationer är en funktion som är tillgänglig med [!DNL Real-time Customer Data Platform] och som gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [målöversikten](../../destinations/home.md). Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
 
 ### Profilexempel
 
