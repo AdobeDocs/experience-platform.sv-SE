@@ -3,9 +3,9 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform med hjälp av standarden Adobe 2.0.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
-source-wordcount: '1222'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ När dataelementet har skapats går du tillbaka till konfigurationssidan för We
 
 ### Distribuera tillägget på webbplatsen
 
-När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer information om hur du distribuerar din uppdaterade biblioteksbygge finns i [publiceringsguiden](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html) i taggdokumentationen.
+När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer information om hur du distribuerar din uppdaterade biblioteksbygge finns i [publiceringsguiden](../../../../tags/ui/publishing/overview.md) i taggdokumentationen.
 
 ## Kommandon för att ändra samtycke {#commands}
 
