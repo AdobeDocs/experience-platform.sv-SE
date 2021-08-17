@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här gränssnittshandboken hjälper dig att skapa en direktuppspelningsanslutning med Adobe Experience Platform.
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: df6ddf52f5cab7e5faae591594f060d641977783
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -91,7 +90,7 @@ Om du vill använda en befintlig datauppsättning väljer du **[!UICONTROL Exist
 
 ### Mappa standardfält
 
-Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om [mappning av CSV-data till XDM-schemafält](../../../../../ingestion/tutorials/map-a-csv-file.md).
+Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om mappningsfunktioner och beräkningsfält finns i handboken för [dataförberedelser](../../../../../data-prep/functions.md) eller i handboken för [beräknade fält](../../../../../data-prep/calculated-fields.md).
 
 Om du vill lägga till ett nytt källfält väljer du **[!UICONTROL Add new mapping]**.
 
