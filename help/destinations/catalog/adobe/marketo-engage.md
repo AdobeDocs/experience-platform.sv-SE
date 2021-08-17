@@ -1,15 +1,15 @@
 ---
 title: Marketo Engage destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
-source-git-commit: 9b1c805f0717d0ed2c5759420d20abf5dcdeaabc
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '286'
-ht-degree: 1%
+source-wordcount: '325'
+ht-degree: 0%
 
 ---
 
 
-# (Beta) Marketo Engage Destination {#beta-marketo-engage-destination}
+# (Beta) Marketo Engage {#beta-marketo-engage-destination}
 
 >[!IMPORTANT]
 >
@@ -36,6 +36,14 @@ Segmentexport - du exporterar alla medlemmar i ett segment (publik) med de ident
 
 Instruktioner om hur du ställer in målet [finns här](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=en).
 
+## Anslut till målet {#connect}
+
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+
 ## Dataanvändning och -styrning {#data-usage-governance}
 
 Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] framtvingar datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+
+## Aktivera segment till den här destinationen {#activate}
+
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
