@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;oracle eloqua;oracle
 title: Oracle Eloqua-anslutning
 description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oraclet och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: 70be44e919070df910d618af4507b600ad51123c
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -26,35 +26,35 @@ När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar A
 
 Se [IP-adressen tillåtelselista för molnlagringsdestinationer](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 
-## Anslut till målet {#connect-destination}
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Oracle Eloqua] och sedan **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan [!UICONTROL Activate] och [!UICONTROL Configure] finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+Detta mål stöder följande anslutningstyper:
 
-![Anslut till Eloqua](../../assets/catalog/email-marketing/oracle-eloqua/catalog.png)
+* **[!UICONTROL SFTP with Password]**
+* **[!UICONTROL SFTP with SSH Key]**
 
-I steget **[!UICONTROL Account]** väljer du **[!UICONTROL Existing Account]** och en av dina befintliga anslutningar om du tidigare har konfigurerat en anslutning till molnlagringsmålet. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. För [!DNL Oracle Eloqua] kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**.
+### Anslutningsparametrar {#parameters}
 
-![Connect Eloqua-konto](../../assets/catalog/email-marketing/oracle-eloqua/connection-type.png)
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
-Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
+* För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange:
+   * [!UICONTROL Domain]
+   * [!UICONTROL Port]
+   * [!UICONTROL Username]
+   * [!UICONTROL Password]
+* För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange:
+   * [!UICONTROL Domain]
+   * [!UICONTROL Port]
+   * [!UICONTROL Username]
+   * [!UICONTROL SSH Key]
 
-- För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL Password].
-- För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL SSH Key].
-
-Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
-
-![Eloqua-anslutning till mål](../../assets/catalog/email-marketing/oracle-eloqua/account-info.png)
-
-I steget **[!UICONTROL Authentication]** ska du fylla i relevant information för destinationen enligt nedan:
-- **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
-- **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
-- **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Plattform ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-- **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
-- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+* Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
+* **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
+* **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
+* **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Plattform ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
+* **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
 
 <!--
 
@@ -64,17 +64,13 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 -->
 
-![Eloqua grundläggande information](../../assets/catalog/email-marketing/oracle-eloqua/basic-information.png)
+## Aktivera segment till den här destinationen {#activate}
 
-Klicka på **[!UICONTROL Create destination]** när du har fyllt i fälten ovan. Målet har skapats och du kan [aktivera segment](../../ui/activate-destinations.md) till målet.
-
-## Aktivera segment {#activate-segments}
-
-Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md).
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
 ## Målattribut {#destination-attributes}
 
-När du [aktiverar segment](../../ui/activate-destinations.md) till målet [!DNL Oracle Eloqua] rekommenderar Adobe att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
+När du [aktiverar segment](../../ui/activate-destinations.md) till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
 
 ## Exporterade data {#exported-data}
 
