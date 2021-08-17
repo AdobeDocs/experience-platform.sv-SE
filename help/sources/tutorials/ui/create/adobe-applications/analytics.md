@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 952b2caa6983b331c046618aff255131a6480e67
+source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1346'
 ht-degree: 0%
 
 ---
@@ -134,7 +134,7 @@ I följande dokumentation finns mer information om dataprep, beräkningsfält oc
 
 * [Översikt över datapreflight](../../../../../data-prep/home.md)
 * [Funktioner för datapersonmappning](../../../../../data-prep/functions.md)
-* [Mappa en CSV-fil till ett XDM-schema och lägg till beräknade fält](../../../../../ingestion/tutorials/map-a-csv-file.md#add-calculated-field)
+* [Lägg till beräknade fält](../../../../../data-prep/calculated-fields.md)
 
 ### Ange information om dataflöde
 
