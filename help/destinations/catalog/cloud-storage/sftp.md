@@ -3,9 +3,9 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: a21abb44bb9cbe6fefa0ff70a1ff19e31cc0c7de
+source-git-commit: 8d1594aeb1d6671eec187643245d940ed3ff74cd
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
@@ -26,15 +26,22 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 
 ![Profilbaserad SFTP-exporttyp](../../assets/catalog/cloud-storage/sftp/catalog.png)
 
-## Anslutningsmål {#connect-destination}
+## Anslut till målet {#connect}
 
-Mer information om hur du ansluter till molnlagringsmål, inklusive SFTP, finns i arbetsflödet [för molnlagringsmål ](./workflow.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-För SFTP-mål anger du följande information i arbetsflödet för att skapa mål i steget **Autentisering**:
+### Anslutningsparametrar {#parameters}
+
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
 * **Värd**: Adress till din SFTP-lagringsplats
 * **Användarnamn**: Användarnamnet som loggas in på din SFTP-lagringsplats
 * **Lösenord**: Lösenordet för att logga in på din SFTP-lagringsplats
+* **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera det här målet.
+* **[!UICONTROL Description]**: Ange en beskrivning av destinationen.
+* **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
+
+Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 
 ## Exporterade data {#exported-data}
 
@@ -42,4 +49,4 @@ För [!DNL SFTP]-mål skapar Plattform en tabbavgränsad `.csv`-fil på den angi
 
 ## IP-adress tillåtelselista
 
-Se [IP-adressen tillåtelselista för molnlagringsdestinationer](./ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i ett tillåtelselista.
+Se [IP-adressen tillåtelselista för molnlagringsdestinationer](ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i ett tillåtelselista.
