@@ -6,10 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt databaskonto.
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 46fb08a10bc05dc758bdcb025693f819b980b41a
 workflow-type: tm+mt
-source-wordcount: '1387'
+source-wordcount: '1389'
 ht-degree: 0%
 
 ---
@@ -79,7 +78,7 @@ Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill a
 
 ![](../../../images/tutorials/dataflow/databases/select-existing-schema.png)
 
-Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om [mappning av CSV-data till XDM-schemafält](../../../../ingestion/tutorials/map-a-csv-file.md).
+Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om mappningsfunktioner och beräkningsfält finns i handboken för [dataförberedelser](../../../../data-prep/functions.md) eller i handboken för [beräknade fält](../../../../data-prep/calculated-fields.md).
 
 >[!TIP]
 >
