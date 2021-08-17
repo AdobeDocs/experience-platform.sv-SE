@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: July 28, 2021
 author: ens60013
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: c06e7b5c70613dc560fb5c0dcc28590206fc1734
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
 source-wordcount: '802'
 ht-degree: 3%
@@ -60,8 +60,8 @@ Destinationer är färdiga integrationer med målplattformar som möjliggör smi
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Snabbare export av inkrementella filer](../../destinations/ui/activate-destinations.md#export-incremental-files) | Du kan nu schemalägga inkrementell filexport för filbaserade mål var 3, 6, 8 och 12:e timme. Det finns för närvarande inget stöd för att ändra filexportschemat för segment som redan har sparats. Om du vill återexportera segment med ett annat schema måste du skapa en ny destinationsinstans. Detta är en begränsning som kommer att tas upp i framtida versioner. |
-| [Stöd för dedupliceringsnycklar](../../destinations/ui/activate-destinations.md#deduplication-keys) | Eliminera flera poster med samma profil i exportfilerna genom att välja en dedupliceringsnyckel. Du kan välja ett enstaka namnutrymme eller upp till två XDM-schemaattribut som en dedupliceringsnyckel. |
+| [Snabbare export av inkrementella filer](../../destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) | Du kan nu schemalägga inkrementell filexport för filbaserade mål var 3, 6, 8 och 12:e timme. Det finns för närvarande inget stöd för att ändra filexportschemat för segment som redan har sparats. Om du vill återexportera segment med ett annat schema måste du skapa en ny destinationsinstans. Detta är en begränsning som kommer att tas upp i framtida versioner. |
+| [Stöd för dedupliceringsnycklar](../../destinations/ui/activate-batch-profile-destinations.md#deduplication-keys) | Eliminera flera poster med samma profil i exportfilerna genom att välja en dedupliceringsnyckel. Du kan välja ett enstaka namnutrymme eller upp till två XDM-schemaattribut som en dedupliceringsnyckel. |
 
 ## Experience Data Model (XDM) {#xdm}
 
