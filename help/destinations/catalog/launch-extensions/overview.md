@@ -3,9 +3,9 @@ keywords: taggtillägg;taggtillägg;startmål; plattformstaggtillägg;plattforms
 title: Taggtillägg i Adobe Experience Platform
 description: Adobe Experience Platform erbjuder nästa generation tagghanteringsfunktioner från Adobe. Med Platform får ni ett enkelt sätt att driftsätta och hantera alla de analyser, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser.
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '504'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Adobe Experience Platform erbjuder nästa generation tagghanteringsfunktioner fr
 
 En introduktion till taggar finns i resurserna nedan:
 
-- [Översikt över taggar](https://experienceleague.adobe.com/docs/launch/using/home.html)
+- [Översikt över taggar](../../../tags/home.md)
 - [Snabbstartsguide](../../../tags/quick-start/quick-start.md)
 
 ## Hitta taggtillägg i plattformsgränssnittet {#how-to-find-extensions-in-interface}
