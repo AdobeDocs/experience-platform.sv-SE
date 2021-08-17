@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Aktivera målgruppsdata för att direktuppspela segmentexportmål
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
 seo-description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: 65e74041aeb285cb80c67e47ccdaca18de9889fa
 workflow-type: tm+mt
-source-wordcount: '1093'
+source-wordcount: '1113'
 ht-degree: 0%
 
 ---
@@ -42,6 +42,11 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 ![Markera segment](../assets/ui/activate-segment-streaming-destinations/select-segments.png)
 
 ## Mappa attribut och identiteter {#mapping}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_applytransformation"
+>title="Använd omformning"
+>abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
 
 >[!IMPORTANT]
 >
