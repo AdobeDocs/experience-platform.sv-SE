@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: f73598224d527535aaf9ecb2aa1c26786cae2d82
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '467'
 ht-degree: 1%
 
 ---
@@ -79,7 +79,6 @@ ht-degree: 1%
       * [Yext Conversion Tracking-tillägg](./catalog/analytics/yext.md)
    * Lagringsmål för molnet {#cloud-storage}
       * [Översikt över destinationer för molnlagring](./catalog/cloud-storage/overview.md)
-      * [Skapa ett molnlagringsmål](./catalog/cloud-storage/workflow.md)
       * [(Beta) Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-anslutning](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob-anslutning](./catalog/cloud-storage/azure-blob.md)
@@ -119,7 +118,6 @@ ht-degree: 1%
       * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
    * Sociala mål{#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
-      * [Skapa ett socialt mål](./catalog/social/workflow.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
       * [linkedIn Matched Auditions connection](./catalog/social/linkedin.md)
