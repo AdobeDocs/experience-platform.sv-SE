@@ -3,9 +3,9 @@ keywords: strömning,
 title: HTTP-anslutning
 description: Med HTTP-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '344'
 ht-degree: 0%
 
 ---
@@ -56,11 +56,11 @@ När du [konfigurerar](../ui/connect-destination.md) det här målet måste du a
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera profiler och segment till ett mål](../ui/activate-destinations.md#select-attributes) för instruktioner om hur du aktiverar målgruppssegment till mål.
+Se [Aktivera målgruppsdata för att direktuppspela profilexportdestinationer](../ui/activate-streaming-profile-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
-## Målattribut {#attributes}
+### Målattribut {#attributes}
 
-När [aktivera segment](../ui/activate-destinations.md) till ett [!DNL HTTP]-mål i [[!UICONTROL Select attributes]](../ui/activate-destinations.md#select-attributes)-steget rekommenderar Adobe att du väljer en unik identifierare i ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet.
+I steget [[!UICONTROL Select attributes]](../ui/activate-streaming-profile-destinations.md#select-attributes) rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet.
 
 ## Exporterade data {#exported-data}
 
