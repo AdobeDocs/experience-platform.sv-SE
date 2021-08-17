@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
-source-git-commit: f73598224d527535aaf9ecb2aa1c26786cae2d82
+source-git-commit: 0fef443c1979fec0c0d239a0b630cb3a0a134402
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '492'
 ht-degree: 1%
 
 ---
@@ -21,9 +21,13 @@ ht-degree: 1%
    * [Anslut till e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/email-marketing.md)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
-   * [Ansluta till ett mål](./ui/connect-destination.md)
+   * [Skapa en ny målanslutning](./ui/connect-destination.md)
+   * Aktivera målgruppsdata till mål{#activate}
+      * [Aktiveringsöversikt](./ui/activation-overview.md)
+      * [Aktivera målgruppsdata för att direktuppspela segmentexportmål](./ui/activate-segment-streaming-destinations.md)
+      * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md)
+      * [Aktivera målgruppsdata för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md)
    * [Visa målinformation](./ui/destination-details-page.md)
-   * [Aktivera profiler och segment till ett mål](./ui/activate-destinations.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Redigera aktiveringsflöden](./ui/edit-activation.md)
    * [Ta bort mål](./ui/delete-destinations.md)
