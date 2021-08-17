@@ -4,7 +4,7 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ansluta till ett mål i Adobe Experience Platform
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 1c67d9eb1b7762ecfcad5b0b7db5c317621f144e
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
 source-wordcount: '403'
 ht-degree: 0%
@@ -65,4 +65,4 @@ Ange anslutningsinformation för målplattformen och välj sedan **[!UICONTROL C
 
    ![Anslut till mål](../assets/ui/connect-destinations/connect-destination.png)
 
-1. Välj **[!UICONTROL Save & Exit]** om du vill spara målkonfigurationen eller välj **[!UICONTROL Next]** om du vill fortsätta till målgruppsdata [aktiveringsflödet](activate-destinations.md).
+1. Välj **[!UICONTROL Save & Exit]** om du vill spara målkonfigurationen eller välj **[!UICONTROL Next]** om du vill fortsätta till målgruppsdata [aktiveringsflödet](activation-overview.md).
