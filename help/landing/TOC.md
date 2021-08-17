@@ -3,16 +3,15 @@ audience: user
 user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: abd09eb26e7487442e4ded5b7aa4258df6b6c5fe
 workflow-type: tm+mt
-source-wordcount: '193'
-ht-degree: 5%
+source-wordcount: '197'
+ht-degree: 6%
 
 ---
 
 
-# Adobe Experience Platform översikt {#landing}
+# Adobe Experience Platform - översikt {#landing}
 
 * [Plattformsöversikt](home.md)
 * [Plattformsöversikt (video)](video/platform-overview.md)
@@ -51,6 +50,8 @@ ht-degree: 5%
       * IAB TCF 2.0 {#iab}
          * [Översikt](./governance-privacy-security/consent/iab/overview.md)
          * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/iab/dataset.md)
+   * Granskningsloggar (beta) {#audit-logs}
+      * [Översikt](./governance-privacy-security/audit-logs/overview.md)
 * [Kontrollpanel för licensanvändning](license-usage-dashboard.md)
 * [Felsökningsguide](troubleshooting.md)
 * [Migrering av data från Gen2](adls2-gen2-migration.md)
