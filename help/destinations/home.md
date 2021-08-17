@@ -5,15 +5,14 @@ seo-title: Översikt över mål
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-translation-type: tm+mt
-source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
+source-git-commit: f73598224d527535aaf9ecb2aa1c26786cae2d82
 workflow-type: tm+mt
 source-wordcount: '488'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# [!DNL Destinations] översikt  {#overview}
+# [!DNL Destinations] översikt {#overview}
 
 ![Översiktsbanderoll för destinationer](./assets/overview/destinations-overview-banner.png)
 
@@ -49,7 +48,7 @@ Målfunktionerna i Platform fungerar med Adobe Experience Platform åtkomstkontr
 
 Mer information om åtkomstkontroller finns i [Användarhandboken för åtkomstkontroll](../access-control/ui/overview.md).
 
-## [!DNL Data Governance] begränsningar för att aktivera data till destinationer  {#data-governance}
+## [!DNL Data Governance] begränsningar för att aktivera data till destinationer {#data-governance}
 
 Datastyrningen används för plattformsdestinationer genom:
 
@@ -60,11 +59,11 @@ Mer information om [marknadsföringsåtgärder](../data-governance/policies/over
 
 Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i Platform:
 
-* [Annonsmål - Google Ad Manager  ](./catalog/advertising/google-ad-manager.md)
+* [Annonsmål - Google Ad Manager ](./catalog/advertising/google-ad-manager.md)
 * [Annonsmål - Google Ads](./catalog/advertising/google-ads-destination.md)
-* [Annonsmål - Google Display och Video 360  ](./catalog/advertising/google-dv360.md)
-* [Lagringsmål i molnet](./catalog/cloud-storage/workflow.md)
+* [Annonsmål - Google Display och Video 360 ](./catalog/advertising/google-dv360.md)
+* [Lagringsmål i molnet](./catalog/cloud-storage/overview.md)
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
-* [Sociala destinationer](./catalog/social/workflow.md)
+* [Sociala destinationer](./catalog/social/overview.md)
 
 Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i granskningssteget i [Aktivera profiler och segment till ett mål](./ui/activate-destinations.md#review).
