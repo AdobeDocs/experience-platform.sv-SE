@@ -2,14 +2,13 @@
 keywords: strömning,
 title: HTTP-anslutning
 description: Med HTTP-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '348'
 ht-degree: 0%
 
 ---
-
 
 # (Alfa) [!DNL HTTP]-anslutning
 
@@ -23,60 +22,45 @@ Målet [!DNL HTTP] är ett [!DNL Adobe Experience Platform]-mål för direktupps
 
 Om du vill skicka profildata till [!DNL HTTP]-slutpunkter måste du först ansluta till målet i [[!DNL Adobe Experience Platform]](#connect-destination).
 
-## Använd fall {#use-cases}
+## Användningsfall {#use-cases}
 
 Målet [!DNL HTTP] riktar sig till kunder som behöver exportera XDM-profildata och målgruppssegment till generiska [!DNL HTTP] slutpunkter.
 
 [!DNL HTTP] slutpunkterna kan antingen vara kundernas egna system eller tredjepartslösningar.
 
-## Anslut till mål {#connect-destination}
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL HTTP API] och väljer **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../ui/connect-destination.md).
 
-![Aktivera HTTP-mål](../assets/catalog/http/activate.png)
+### Anslutningsparametrar {#parameters}
 
-Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+När du [konfigurerar](../ui/connect-destination.md) det här målet måste du ange följande information:
 
-![Aktivera HTTP-mål](../assets/catalog/http/connect.png)
+* **[!UICONTROL httpEndpoint]**: den  [!DNL URL] av HTTP-slutpunkterna som du vill skicka profildata till.
+   * Du kan också lägga till frågeparametrar i [!UICONTROL httpEndpoint] [!DNL URL].
+* **[!UICONTROL authEndpoint]**: den  [!DNL URL] av HTTP-slutpunkten som används för  [!DNL OAuth2] autentisering.
+* **[!UICONTROL Client ID]**: den  [!DNL clientID] parameter som används i  [!DNL OAuth2] klientens autentiseringsuppgifter.
+* **[!UICONTROL Client Secret]**: den  [!DNL clientSecret] parameter som används i  [!DNL OAuth2] klientens autentiseringsuppgifter.
 
-I steget [!UICONTROL Account] måste du definiera anslutningsinformationen för HTTP-slutpunkten. Välj **[!UICONTROL New account]** och ange anslutningsinformationen för den HTTP-slutpunkt som du vill ansluta till.
-- **[!UICONTROL httpEndpoint]**: den fullständiga HTTP-slutpunkten  [!DNL URL] som du vill skicka profildata till.
-   - Du kan också lägga till frågeparametrar i [!UICONTROL httpEndpoint] [!DNL URL].
-- **[!UICONTROL authEndpoint]**: Den fullständiga HTTP-slutpunkten  [!DNL URL] som används för  [!DNL OAuth2] autentisering.
-- **[!UICONTROL Client ID]**: den  [!DNL clientID] parameter som används i  [!DNL OAuth2] klientens autentiseringsuppgifter.
-- **[!UICONTROL Client Secret]**: den  [!DNL clientSecret] parameter som används i  [!DNL OAuth2] klientens autentiseringsuppgifter.
+   >[!NOTE]
+   >
+   >Endast [!DNL OAuth2] klientautentiseringsuppgifter stöds för närvarande.
 
->[!NOTE]
->
->Endast [!DNL OAuth2] klientautentiseringsuppgifter stöds för närvarande.
+* **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
+* **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
+* **[!UICONTROL Custom Headers]**: Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format:  `header1:value1,header2:value2,...headerN:valueN`.
 
-![HTTP-slutpunktsanslutning](../assets/catalog/http/connect.png)
+   >[!IMPORTANT]
+   >
+   >Den aktuella implementeringen kräver minst en anpassad rubrik. Den här begränsningen kommer att åtgärdas i en framtida uppdatering.
 
-Klicka på **[!UICONTROL Connect to destination]**. När anslutningen är klar klickar du på **[!UICONTROL Next]**.
+## Aktivera segment till den här destinationen {#activate}
 
-I steget [!UICONTROL Authentication] anger du autentiseringsuppgifterna för kontot:
-- **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
-- **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
-- **[!UICONTROL Custom Headers]**: Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format:  `header1:value1,header2:value2,...headerN:valueN`.
-- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](/help/data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](/help/data-governance/policies/overview.md).
+Se [Aktivera profiler och segment till ett mål](../ui/activate-destinations.md#select-attributes) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
->[!IMPORTANT]
->
->Den aktuella implementeringen kräver minst en anpassad rubrik. Den här begränsningen kommer att åtgärdas i en framtida uppdatering.
+## Målattribut {#attributes}
 
-![HTTP-autentisering](../assets/catalog/http/authenticate.png)
-
-**[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../data-governance/policies/overview.md).
-
-Klicka på **[!UICONTROL Create destination]**.
-
-## Aktivera segment
-
-Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profiler och segment till ett mål](../ui/activate-destinations.md#select-attributes).
-
-## Målattribut
-
-När [segment](../ui/activate-destinations.md) aktiveras till ett [!DNL HTTP]-mål rekommenderar vi att du väljer en unik identifierare i ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas) under steget [[!UICONTROL Select attributes]](../ui/activate-destinations.md#select-attributes). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet.
+När [aktivera segment](../ui/activate-destinations.md) till ett [!DNL HTTP]-mål i [[!UICONTROL Select attributes]](../ui/activate-destinations.md#select-attributes)-steget rekommenderar Adobe att du väljer en unik identifierare i ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet.
 
 ## Exporterade data {#exported-data}
 
