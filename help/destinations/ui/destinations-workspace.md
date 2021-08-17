@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '784'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 
 >[!TIP]
 >
-> * Använd knappen ![Lägg till segment](../assets/ui/workspace/add-data-symbol.png) i **[!UICONTROL Name]**-kolumnen för att [aktivera](activate-destinations.md) fler segment till det målet.
+> * Använd knappen ![Lägg till segment](../assets/ui/workspace/add-data-symbol.png) i kolumnen **[!UICONTROL Name]** för att skicka segment till det målet.
 > * Använd knappen ![Ta bort mål](../assets/ui/workspace/delete-destination-symbol.png) i kolumnen **[!UICONTROL Name]** för att [ta bort en befintlig anslutning till ett mål.](delete-destinations.md)
 
 
@@ -88,7 +88,7 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
 | [!UICONTROL Activation Data] | Anger antalet segment som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade segmenten. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation för mer information om de aktiverade segmenten. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. |
-| [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data aktiveras till det här målet. Mer information om hur du redigerar status finns i [Inaktivera aktivering](./activate-destinations.md#disable-activation). |
+| [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data aktiveras till det här målet. |
 
 Klicka på en målrad för att visa mer information om målet i den högra listen.
 
