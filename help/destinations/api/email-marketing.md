@@ -6,9 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar e-postmarknadsförings
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 0bc85d79bab690d433dc29d558a4d9caf086586d
+source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
 workflow-type: tm+mt
-source-wordcount: '1699'
+source-wordcount: '1700'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ I den här självstudien används Adobe Campaign-destinationen i alla exempel, m
 
 ![Översikt - stegen för att skapa ett mål och aktivera segment](../assets/api/email-marketing/overview.png)
 
-Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data, se [Anslut ett mål](../ui/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../ui/activate-destinations.md).
+Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns i [Ansluta ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata till exportmål för batchprofiler](../ui/activate-batch-profile-destinations.md) självstudier.
 
-## Kom igång
+## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
