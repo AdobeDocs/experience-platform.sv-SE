@@ -4,48 +4,53 @@ title: Översikt över reklamdestinationer
 seo-title: Översikt över reklamdestinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
-translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '248'
 ht-degree: 0%
 
 ---
 
+# Översikt över reklamdestinationer {#advertising-destinations}
 
-# Översikt över reklammål {#advertising-destinations}
+## Översikt {#overview}
 
-Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+Koppla Adobe Experience Platform till annonsplattformar från tredje part, t.ex. DSP (Demand-Side Plattforms) (DSP), DSP (Supply-Side Plattformar) och annonsnätverk, och dela pseudonyma målgrupper med dessa plattformar.
 
 När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till målplattformen, där de mappas till ett ID som är känt av målplattformen.
 
-För närvarande stöder Platform de reklamdestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+## Annonsdestinationer som stöds {#supported-destinations}
 
-## Anslutningar
+För närvarande stöder Experience Platform de reklamdestinationer som anges nedan.
 
 Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
-- [Google Display &amp; Video 360-anslutning](./google-dv360.md)
-- [Google Ads-anslutning](./google-ads-destination.md)
-- [Google Ad Manager-anslutning](./google-ad-manager.md)
-- [Google Customer Match Connection](./google-customer-match.md)
-- [Microsoft Bing-anslutning](./bing.md)
-- [The Trade Desk connection](./tradedesk.md)
+### Anslutningar
 
-## Tillägg
+* [Google Display &amp; Video 360-anslutning](google-dv360.md)
+* [Google Ads-anslutning](google-ads-destination.md)
+* [Google Ad Manager-anslutning](google-ad-manager.md)
+* [Google Customer Match Connection](google-customer-match.md)
+* [Microsoft Bing-anslutning](bing.md)
+* [The Trade Desk connection](tradedesk.md)
 
-Mer information om skillnaden mellan anslutningar och tillägg finns i [Tillägg](../../destination-types.md#extensions) på sidan Måltyper och kategorier.
+### Tillägg
 
-- [Adobe Advertising Cloud-tillägg](./adobe-advertising-cloud.md)
-- [Tillägget Awin Advertising Conversion Tag](./awin-conversiontag.md)
-- [Awin Advertising Mastertag-tillägg](./awin-mastertag.md)
-- [Bing Ads Universal Event Tracking-tillägg](./bing-ads.md)
-- [Filialtillägg](./branch.md)
-- [Dubbelklicka på FlowLight-tillägg](./doubleclick-floodlight.md)
-- [Pixeltillägg för Facebook](./facebook-pixel.md)
-- [Flashtalk OneTag-tillägg](./flashtalking.md)
-- [Google Ads-tillägg](./google-ads-extension.md)
-- [Google-taggtillägg](./gtag-advertising.md)
-- [Tillägget LinkedIn Insight-tagg](./linkedin.md)
-- [Tillägg för Pinterest Conversion Tracking](./pinterest.md)
-- [Twitter Universal Website Tag-tillägg](./twitter-uwt.md)
+* [Adobe Advertising Cloud-tillägg](adobe-advertising-cloud.md)
+* [Tillägget Awin Advertising Conversion Tag](awin-conversiontag.md)
+* [Awin Advertising Mastertag-tillägg](awin-mastertag.md)
+* [Bing Ads Universal Event Tracking-tillägg](bing-ads.md)
+* [Filialtillägg](branch.md)
+* [Dubbelklicka på FlowLight-tillägg](doubleclick-floodlight.md)
+* [Facebook Pixel-tillägg](facebook-pixel.md)
+* [Flashtalk OneTag-tillägg](flashtalking.md)
+* [Google Ads-tillägg](google-ads-extension.md)
+* [Google-taggtillägg](gtag-advertising.md)
+* [linkedIn Insight Tag Extension](linkedin.md)
+* [Pinterest Conversion Tracking-tillägg](pinterest.md)
+* [Tillägget twitter Universal Web Site Tag](twitter-uwt.md)
+
+## Anslut till ett nytt annonsmål {#connect-destination}
+
+Om du vill skicka segment till reklamdestinationer för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [när du skapar mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
