@@ -3,10 +3,9 @@ audience: user
 user-guide-title: Handbok för dataförberedelse
 user-guide-description: Förbered data för konsumtion i Adobe Experience Platform.
 feature: Datahantering, datainmatning
-translation-type: tm+mt
-source-git-commit: daefd977cd09bd9cd7f8d6101b45be98f30d24ae
+source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
 workflow-type: tm+mt
-source-wordcount: '45'
+source-wordcount: '48'
 ht-degree: 8%
 
 ---
@@ -21,6 +20,7 @@ ht-degree: 8%
    - [Komma igång](./api/getting-started.md)
    - [Funktioner](./api/functions.md)
    - [Mappningsuppsättning](./api/mapping-set.md)
+- [Lägga till beräknade fält](./calculated-fields.md)
 - [Hantera dataformat](./data-handling.md)
 - [Mappningsuppsättningar](mapping-set.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
