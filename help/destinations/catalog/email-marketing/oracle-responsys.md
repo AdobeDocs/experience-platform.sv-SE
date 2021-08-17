@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-postadresser;oraclets svarsmål
 title: Oraclena svarssystemanslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '448'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Om du vill skicka segmentdata till [!DNL Oracle Responsys] måste du först [ans
 
 ## Exporttyp {#export-type}
 
-**Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-destinations.md#select-attributes)målaktivering.
+**Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-batch-profile-destinations.md#select-attributes)målgruppsaktivering.
 
 ## IP-adress tillåtelselista {#allow-list}
 
@@ -67,15 +67,15 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
+Se [Aktivera målgruppsdata för att batchprofilens exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
-## Målattribut {#destination-attributes}
+### Målattribut {#destination-attributes}
 
-När du [aktiverar segment](../../ui/activate-destinations.md) till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
+När du aktiverar segment till det här målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [metodtips när du aktiverar målgrupper för e-postmarknadsföringsmål](overview.md#best-practices).
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Oracle Responsys]-mål skapar Plattform en tabbavgränsad `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i [E-postmarknadsföringsmål och molnlagringsmål](../../ui/activate-destinations.md#esp-and-cloud-storage) i självstudiekursen om segmentaktivering.
+För [!DNL Oracle Responsys]-mål skapar Plattform en tabbavgränsad `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i [verifiera segmentaktivering](../../ui/activate-batch-profile-destinations.md#verify) i segmentaktiveringsjälvstudiekursen.
 
 ## Konfigurera dataimport till [!DNL Oracle Responsys] {#import-data-into-responsys}
 
