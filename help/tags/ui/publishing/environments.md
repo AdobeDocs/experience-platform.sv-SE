@@ -1,9 +1,9 @@
 ---
 title: Miljöer
 description: Lär dig mer om taggmiljöerna och hur de fungerar i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
-source-wordcount: '1471'
+source-wordcount: '1456'
 ht-degree: 0%
 
 ---
@@ -128,7 +128,7 @@ Mer information om den här inställningen finns i guiden om [asynkron distribut
 
 #### Synkron distribution
 
-När webbläsaren läser en inbäddningskod med synkron distribution, hämtas taggbiblioteket och körs innan sidan läses in. Det är också så här [Dynamic Tag Management (DTM)](https://experienceleague.adobe.com/docs/dtm/using/dtm-home.html) fungerar.
+När webbläsaren läser en inbäddningskod med synkron distribution, hämtas taggbiblioteket och körs innan sidan läses in.
 
 Synkrona inbäddningskoder består av två `<script>`-taggar som måste placeras i webbplatsens HTML-kod. En `<script>`-tagg måste placeras i dokumentet `<head>`, medan den andra måste placeras precis före den avslutande `</body>`-taggen.
 
