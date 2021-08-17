@@ -3,9 +3,9 @@ keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 66c3e81dfdbf6f6c3ff9a127fbca8943c0e32279
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -51,37 +51,24 @@ Som marknadsförare vill jag rikta in mig på användare i ett mål för mobilen
 **[!DNL Profile-based]** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.
 [!DNL Adobe Experience Platform] segment exporteras till  [!DNL Braze] under  `AdobeExperiencePlatformSegments` attributet.
 
-## Anslut till målet {#connect-destination}
+## Anslut till målet {#connect}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Braze] och väljer **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
-![Konfigurera Braze Destination](../../assets/catalog/mobile-engagement/braze/configure.png)
+### Anslutningsparametrar {#parameters}
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
->
->![Aktivera Braze Destination](../../assets/catalog/mobile-engagement/braze/activate.png)
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
-I steget [!UICONTROL Account] måste du ange din [!DNL Braze]-kontotoken. Det här är din [!DNL Braze] [!DNL API]-nyckel. Här finns detaljerade anvisningar om hur du får tag i din [!DNL API]-nyckel: [REST API Key Overview](https://www.braze.com/docs/api/api_key/). Ange token och klicka på **[!UICONTROL Connect to destination]**.
-
-![Steg för Braze Destination Account](../../assets/catalog/mobile-engagement/braze/account.png)
-
-Klicka på **[!UICONTROL Next]**. I [!UICONTROL Authentication]-steget måste du ange [!DNL Braze]-anslutningsinformationen:
+* **[!UICONTROL Braze account token]**: Det här är din  [!DNL Braze] [!DNL API] nyckel. Här finns detaljerade anvisningar om hur du får tag i din [!DNL API]-nyckel: [REST API Key Overview](https://www.braze.com/docs/api/api_key/).
 * **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Endpoint Instance]**: fråga din  [!DNL Braze] representant vilken slutpunktsinstans du ska använda.
-* **[!UICONTROL Marketing action]**: marknadsföringsåtgärder anger för vilken avsikt data ska exporteras till destinationen. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
-![Braze Authentication Step](../../assets/catalog/mobile-engagement/braze/authentication.png)
+## Aktivera segment till den här destinationen {#activate}
 
-Klicka på **[!UICONTROL Create destination]**. Målet har skapats. Du kan klicka på **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment](#activate-segments), för resten av arbetsflödet.
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
-## Aktivera segment {#activate-segments}
-
-Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md#select-attributes).
-
-## Fältmappning {#field-mapping}
+## Mappningsöverväganden {#mapping-considerations}
 
 För att kunna skicka målgruppsdata från [!DNL Adobe Experience Platform] till [!DNL Braze]-målet måste du gå igenom fältmappningssteget.
 
