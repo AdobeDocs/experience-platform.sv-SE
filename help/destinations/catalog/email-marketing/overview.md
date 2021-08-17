@@ -4,9 +4,9 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '387'
 ht-degree: 2%
 
 ---
@@ -70,9 +70,9 @@ Läs de enskilda målartiklarna för e-postmarknadsföring och lär dig hur du i
 
 ## Aktivera segment för e-postmarknadsföringsmål {#activate}
 
-Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera profiler och segment till en destination](../../ui/activate-destinations.md).
+Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera målgruppsdata till exportmål för gruppprofiler](../../ui/activate-batch-profile-destinations.md).
 
 ## Ytterligare resurser
 
-* [Aktivera data till mål](../../ui/activate-destinations.md)
+* [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md)
 * [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](../../api/email-marketing.md)
