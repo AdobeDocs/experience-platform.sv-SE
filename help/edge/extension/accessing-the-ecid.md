@@ -1,9 +1,9 @@
 ---
 title: 'Åtkomst till ECID '
 description: Adobe Experience Platform Web SDK Extension Leveraging ECID in taggar
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: befe1efa884706165b8d65803d06f6370a8a60f2
 workflow-type: tm+mt
-source-wordcount: '130'
+source-wordcount: '120'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe rekommenderar följande för att få åtkomst till ECID inom taggar:
 
-1. Kontrollera att din egenskap är konfigurerad med [sekvensering av regelkomponenter](https://experienceleague.adobe.com/docs/launch/using/ui/rules.html?lang=en#rule-component-sequencing) aktiverad.
+1. Kontrollera att din egenskap är konfigurerad med [sekvensering av regelkomponenter](../../tags/ui/managing-resources/rules.md#sequencing) aktiverad.
 1. Skapa en ny regel.
 1. Lägg till en [!UICONTROL Library Loaded]-händelse till regeln.
 1. Lägg till en [!UICONTROL Custom Condition]-åtgärd i regeln med följande kod (förutsatt att namnet som du har konfigurerat för SDK-instansen är `alloy`):
