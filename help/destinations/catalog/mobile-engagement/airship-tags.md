@@ -3,15 +3,14 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '1123'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Airship Tags] anslutning {#airship-tags-destination}
+# (Beta) [!DNL Airship Tags]-anslutning {#airship-tags-destination}
 
 >[!IMPORTANT]
 >
@@ -77,57 +76,25 @@ Utlös personliga meddelanden i realtid när användare faller in i eller ut ur 
 
 En återförsäljare skapar till exempel ett jeans-specifikt segment i Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sina jeans-preferenser för ett visst varumärke.
 
-## Anslut till [!DNL Airship Tags] {#connect-airship-tags}
+## Anslut till målet {#connect}
 
-Bläddra till kategorin **[!UICONTROL Mobile Engagement]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj **[!DNL Airship Tags]** och sedan **[!UICONTROL Configure]**.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+### Anslutningsparametrar {#parameters}
 
-![Anslut till luftfartygets taggar](../../assets/catalog/mobile-engagement/airship-tags/catalog.png)
+När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
 
-Om du tidigare har konfigurerat en anslutning till ditt [!DNL Airship Tags]-mål väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning i steget **Konto**. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till [!DNL Airship Tags]. Välj **[!UICONTROL Connect to destination]** om du vill ansluta Adobe Experience Platform till ditt [!DNL Airship]-projekt med bearer-token som du skapade från kontrollpanelen [!DNL Airship].
+* **[!UICONTROL Bearer token]**: Bearer-token som du skapade från  [!DNL Airship] instrumentpanelen.
+* **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera det här målet.
+* **[!UICONTROL Description]**: Ange en beskrivning för det här målet.
+* **[!UICONTROL Domain]**: Välj antingen ett datacenter för USA eller EU, beroende på vilket  [!DNL Airship] datacenter som gäller för detta mål.
 
->[!NOTE]
->
->Adobe Experience Platform stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Airship]-konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
 
-![Anslut till luftfartygets taggar](../../assets/catalog/mobile-engagement/airship-tags/connect-account.png)
+## Aktivera segment till den här destinationen {#activate}
 
-När dina inloggningsuppgifter har bekräftats och Adobe Experience Platform är anslutet till ditt [!DNL Airship]-projekt kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Setup]**-steget.
+Se [Aktivera profiler och segment till ett mål](../../ui/activate-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till mål.
 
-I steget **[!UICONTROL Authentication]** anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för aktiveringsflödet.
-
-I det här steget kan du även välja ett datacenter i USA eller EU, beroende på vilket [!DNL Airship] datacenter som gäller för det här målet. Välj sedan en eller flera **[!UICONTROL Marketing Actions]** som data ska exporteras till målet för. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa egna. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
-
-Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
-
-![Anslut till luftfartygets taggar](../../assets/catalog/mobile-engagement/airship-tags/select-domain.png)
-
-Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment](#activate-segments), för resten av arbetsflödet.
-
-## Aktivera segment {#activate-segments}
-
-Så här aktiverar du segment till [!DNL Airship Tags]:
-
-I **[!UICONTROL Destinations > Browse]** väljer du det [!DNL Airship Tags]-mål där du vill aktivera dina segment.
-
-![activate-flow](../../assets/catalog/mobile-engagement/airship-tags/browse.png)
-
-Klicka på målets namn. Då kommer du till aktiveringsflödet.
-
-Observera att om det redan finns ett aktiveringsflöde för ett mål kan du se de segment som för närvarande skickas till målet. Välj **[!UICONTROL Edit activation]** till höger och följ stegen nedan för att ändra aktiveringsinformationen.
-
-![activate-flow](../../assets/catalog/mobile-engagement/airship-tags/activate.png)
-
-Välj **[!UICONTROL Activate]**. På sidan **[!UICONTROL Activate destination]** i arbetsflödet väljer du vilka segment som ska skickas till [!DNL Airship Tags].**[!UICONTROL Select Segments]**
-
-![segment-till-mål](../../assets/catalog/mobile-engagement/airship-tags/select-segments.png)
-
-I steget **[!UICONTROL Mapping]** väljer du vilka attribut och identiteter från schemat [XDM](../../../xdm/home.md) som ska mappas till målschemat. Välj **[!UICONTROL Add new mapping]** om du vill bläddra i schemat och mappa dem till motsvarande målidentitet.
-
-![inledande skärm för identitetsmappning](../../assets/catalog/mobile-engagement/airship-tags/identity-mapping.png)
+## Mappningsöverväganden {#mapping-considerations}
 
 [!DNL Airship] -taggar kan anges antingen på en kanal, som representerar enhetsinstans, t.ex. iPhone, eller en namngiven användare, som mappar alla användarens enheter till en gemensam identifierare, t.ex. ett kund-ID. Om du har oformaterad e-postadress som primär identitet i ditt schema väljer du e-postfältet i **[!UICONTROL Source Attributes]** och mappar till den [!DNL Airship] namngivna användaren i den högra kolumnen under **[!UICONTROL Target Identities]**, som visas nedan.
 
@@ -138,21 +105,6 @@ För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till
 ![Anslut till ](../../assets/catalog/mobile-engagement/airship-tags/select-source-identity.png)
 ![Airship-taggarAnslut till Airship-](../../assets/catalog/mobile-engagement/airship-tags/select-target-identity.png)
 ![taggarKanalmappning](../../assets/catalog/mobile-engagement/airship-tags/mapping-option.png)
-
-Schemaläggning är för närvarande inaktiverat på sidan **[!UICONTROL Segment schedule]**. Klicka på **[!UICONTROL Next]** för att fortsätta till granskningssteget.
-
-På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta valet och börja skicka data till målet.
-
->[!IMPORTANT]
->
->I det här steget söker Adobe Experience Platform efter brott mot dataanvändningspolicyn. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [Politiska åtgärder](../../../data-governance/enforcement/auto-enforcement.md) i dokumentationsavsnittet för datastyrning.
-
-![bekräfta-val](../../assets/common/data-policy-violation.png)
-
-Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
-
-![bekräfta-val](../../assets/catalog/mobile-engagement/airship-tags/review.png)
-
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
