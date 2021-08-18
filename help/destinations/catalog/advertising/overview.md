@@ -5,7 +5,7 @@ seo-title: Översikt över reklamdestinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 9c9ea0d9e8247dbc4a1a4078dbdba2ae80ed70ef
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Google Ads-tillägg](google-ads-extension.md)
 * [Google-taggtillägg](gtag-advertising.md)
 * [linkedIn Insight Tag Extension](linkedin.md)
-* [Pinterest Conversion Tracking-tillägg](pinterest.md)
+* [Pinterest Conversion Tracking-tillägg](pinterest-extension.md)
 * [Tillägget twitter Universal Web Site Tag](twitter-uwt.md)
 
 ## Anslut till ett nytt annonsmål {#connect-destination}
