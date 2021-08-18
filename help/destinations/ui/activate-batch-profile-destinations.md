@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Aktivera målgruppsdata för att batchprofilera exportmål
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: f814f11db0a258d1c5265206d6ec61c27ad2ee7d
 workflow-type: tm+mt
-source-wordcount: '1943'
+source-wordcount: '1940'
 ht-degree: 0%
 
 ---
@@ -270,7 +270,7 @@ Låt oss titta på följande två profiler.
 }
 ```
 
-### Användning av borttagning av dubbletter, fall 1: ingen deduplicering
+### Användning av borttagning av dubbletter, fall 1: ingen deduplicering {#deduplication-use-case-1}
 
 Om du inte använder borttagning av dubbletter innehåller exportfilen följande poster.
 
@@ -280,7 +280,7 @@ Om du inte använder borttagning av dubbletter innehåller exportfilen följande
 | johndoe@example.com | John | D |
 
 
-### Användning vid borttagning av dubbletter, fall 2: deduplicering baserad på ID-namnutrymme
+### Användning vid borttagning av dubbletter, fall 2: deduplicering baserad på ID-namnutrymme {#deduplication-use-case-2}
 
 Om du utgår från borttagning av dubbletter av namnutrymmet [!DNL Email] innehåller exportfilen följande poster. Profil B är den senaste som kvalificerar sig för segmentet, så det är den enda som exporteras.
 
@@ -289,7 +289,7 @@ Om du utgår från borttagning av dubbletter av namnutrymmet [!DNL Email] inneh�
 | johndoe_1@example.com | johndoe@example.com | John | D |
 | johndoe_2@example.com | johndoe@example.com | John | D |
 
-### Användning av borttagning av dubbletter, exempel 3: deduplicering baserad på ett enda profilattribut
+### Användning av borttagning av dubbletter, exempel 3: deduplicering baserad på ett enda profilattribut {#deduplication-use-case-3}
 
 Om attributet `personal Email` tar bort dubbletter innehåller exportfilen följande post. Profil B är den senaste som kvalificerar sig för segmentet, så det är den enda som exporteras.
 
@@ -298,7 +298,7 @@ Om attributet `personal Email` tar bort dubbletter innehåller exportfilen följ
 | johndoe@example.com | John | D |
 
 
-### Användning vid borttagning av dubbletter - fall 4: deduplicering baserad på två profilattribut (sammansatt dedupliceringsnyckel)
+### Användning vid borttagning av dubbletter - fall 4: deduplicering baserad på två profilattribut {#deduplication-use-case-4}
 
 Om den sammansatta nyckeln `personalEmail + lastName` tar bort dubbletter innehåller exportfilen följande poster.
 
