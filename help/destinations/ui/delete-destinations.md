@@ -4,9 +4,9 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: 84deb9d1eecee8ec4369915a0b3c1eb810fd7c9b
+source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '425'
 ht-degree: 0%
 
 ---
@@ -40,10 +40,10 @@ Följ stegen nedan för att ta bort ett mål från fliken [!UICONTROL Browse].
 
    ![Filtermål](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. Markera knappen ![Ta bort](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL Delete]** i kolumnen **[!UICONTROL Platform]** om du vill ta bort ett befintligt mål.
+3. Markera knappen ![Mer](../assets/ui/delete-destinations/more-icon.png) i kolumnen Namn och välj sedan ![Ta bort](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL Delete]** för att ta bort en befintlig målanslutning.
    ![Ta bort mål](../assets/ui/delete-destinations/delete-destinations.png)
 
-4. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av målet.
+4. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av målanslutningen.
 
    ![Bekräfta borttagning av mål](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
