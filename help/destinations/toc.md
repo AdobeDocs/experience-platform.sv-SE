@@ -4,7 +4,7 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
-source-git-commit: 0fef443c1979fec0c0d239a0b630cb3a0a134402
+source-git-commit: 9c9ea0d9e8247dbc4a1a4078dbdba2ae80ed70ef
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 1%
@@ -57,7 +57,7 @@ ht-degree: 1%
       * [Google-taggtillägg](./catalog/advertising/gtag-advertising.md)
       * [linkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
-      * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest.md)
+      * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
       * [Tillägget twitter Universal Web Site Tag](./catalog/advertising/twitter-uwt.md)
    * Analysmål {#analytics}
