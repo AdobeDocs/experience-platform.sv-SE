@@ -1,7 +1,7 @@
 ---
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 41a394974153883dc300bdd8a00fc3106c4f0ac6
 workflow-type: tm+mt
 source-wordcount: '2391'
 ht-degree: 0%
