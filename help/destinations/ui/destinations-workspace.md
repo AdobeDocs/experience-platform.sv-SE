@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
+source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '794'
 ht-degree: 0%
 
 ---
@@ -72,8 +72,8 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 
 >[!TIP]
 >
-> * Använd knappen ![Lägg till segment](../assets/ui/workspace/add-data-symbol.png) i kolumnen **[!UICONTROL Name]** för att skicka segment till det målet.
-> * Använd knappen ![Ta bort mål](../assets/ui/workspace/delete-destination-symbol.png) i kolumnen **[!UICONTROL Name]** för att [ta bort en befintlig anslutning till ett mål.](delete-destinations.md)
+> * Markera de tre punkterna i kolumnen [!UICONTROL Name] och använd knappen ![Lägg till segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**för att skicka segment till det målet.
+> * Markera de tre punkterna i kolumnen [!UICONTROL Name] och använd knappen ![Ta bort mål ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**för att [ta bort en befintlig anslutning till ett mål.](delete-destinations.md)
 
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
@@ -102,6 +102,6 @@ På fliken **[!UICONTROL System View]** visas en grafisk representation av de ak
 
 ![Data-flows1](../assets/ui/workspace/data-flows1.png)
 
-Välj något av de mål som visas på sidan och klicka på **[!UICONTROL View flows]** för att se information om alla anslutningar som du har konfigurerat för varje mål.
+Välj något av de mål som visas på sidan och klicka på **[!UICONTROL View dataflows]** för att se information om alla anslutningar som du har konfigurerat för varje mål.
 
 ![Dataflöden2](../assets/ui/workspace/data-flows2.png)
