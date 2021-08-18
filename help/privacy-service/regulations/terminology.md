@@ -5,8 +5,7 @@ title: Sekretessregler - terminologi
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47b5ad7fa9300772e0d2742c94021cf18d13313b
 workflow-type: tm+mt
 source-wordcount: '1512'
 ht-degree: 9%
