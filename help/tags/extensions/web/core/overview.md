@@ -1,7 +1,7 @@
 ---
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 41a394974153883dc300bdd8a00fc3106c4f0ac6
 workflow-type: tm+mt
 source-wordcount: '4895'
 ht-degree: 0%
