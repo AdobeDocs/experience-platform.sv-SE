@@ -3,10 +3,10 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
 workflow-type: tm+mt
-source-wordcount: '1242'
-ht-degree: 2%
+source-wordcount: '1479'
+ht-degree: 1%
 
 ---
 
@@ -135,6 +135,35 @@ Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../..
 I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när du skickar segment till [!DNL Facebook Custom Audiences].
 
 ![Facebook Origin of Audience](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+
+### Mappningsexempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
+
+Nedan visas ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Facebook Custom Audience].
+
+Välja källfält:
+
+* Välj namnutrymmet `Email` som källidentitet om de e-postadresser du använder inte hashas.
+* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashade kundens e-postadresser vid dataöverföring i [!DNL Platform], enligt [!DNL Facebook] [e-posthashkrav](#email-hashing-requirements).
+* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av icke-hash-kodade telefonnummer. [!DNL Platform] kommer att hash-koda telefonnumren så att de uppfyller  [!DNL Facebook] kraven.
+* Välj namnutrymmet `Phone_SHA256` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Platform], enligt [!DNL Facebook] [krav på telefonnummer som hash-kodar](#phone-number-hashing-requirements).
+* Välj namnutrymmet `IDFA` som källidentitet om dina data består av [!DNL Apple] enhets-ID:n.
+* Välj namnutrymmet `GAID` som källidentitet om dina data består av [!DNL Android] enhets-ID:n.
+* Välj namnutrymmet `Custom` som källidentitet om dina data består av andra typer av identifierare.
+
+Markera målfält:
+
+* Välj namnutrymmet `Email_LC_SHA256` som målidentitet när källnamnutrymmena är antingen `Email` eller `Email_LC_SHA256`.
+* Välj namnutrymmet `Phone_SHA256` som målidentitet när källnamnutrymmena är antingen `PHONE_E.164` eller `Phone_SHA256`.
+* Välj namnutrymmena `IDFA` eller `GAID` som mål-ID när källnamnutrymmena är `IDFA` eller `GAID`.
+* Välj namnutrymmet `Extern_ID` som målidentitet när källnamnutrymmet är ett anpassat namnutrymme.
+
+>[!IMPORTANT]
+>
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+> 
+>Attributkälldata hashas inte automatiskt. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+
+![Identitetsmappning](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## Exporterade data {#exported-data}
 
