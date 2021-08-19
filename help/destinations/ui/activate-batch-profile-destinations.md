@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Aktivera målgruppsdata för att batchprofilera exportmål
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
-source-git-commit: f814f11db0a258d1c5265206d6ec61c27ad2ee7d
+source-git-commit: b1d9b03af1d5266a03d0f16c6a9803a08f19b7bd
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1926'
 ht-degree: 0%
 
 ---
@@ -58,24 +58,28 @@ Välj knappen **[!UICONTROL Create schedule]** för det segment som du vill skic
 
 ### Exportera fullständiga filer {#export-full-files}
 
-Välj **[!UICONTROL Export full files]** om du vill att de exporterade filerna ska innehålla en fullständig ögonblicksbild av alla profiler som är kvalificerade för det segmentet.
+Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
 
 ![Exportera fullständiga filer](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
-1. Använd **[!UICONTROL Frequency]**-väljaren för att välja mellan engångsexporter (**[!UICONTROL Once]**) eller **[!UICONTROL Daily]**. Vid export av en fullständig fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet kl. 12:00 UTC (7:00 EST).
-2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske. När du exporterar en fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet vid den tidpunkt du väljer.
+1. Använd **[!UICONTROL Frequency]**-väljaren för att välja exportfrekvens:
+
+   * **[!UICONTROL Once]**: schemalägga en filexport på begäran.
+   * **[!UICONTROL Daily]**: schemalägg fullständig filexport en gång om dagen, varje dag, från startdatumet till slutdatumet kl. 23:00 UTC (kl. 7:00 EST).
+
+1. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske. När du exporterar en fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet vid den tidpunkt du väljer.
 
    >[!IMPORTANT]
    >
-   >Alternativet att exportera filer vid en viss tidpunkt finns för närvarande i betaversion och är endast tillgängligt för ett visst antal kunder.<br> <br> På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad.  <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
 
-3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
-4. Välj **[!UICONTROL Create]** om du vill spara schemat.
+1. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
+1. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
 
 ### Exportera inkrementella filer {#export-incremental-files}
 
-Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade filerna bara ska innehålla de profiler som är kvalificerade för det segmentet sedan den senaste exporten.
+Välj **[!UICONTROL Export incremental files]** om du vill utlösa en export där den första filen är en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet, och efterföljande filer är stegvisa profilkvalifikationer sedan den föregående exporten.
 
 >[!IMPORTANT]
 >
@@ -83,12 +87,10 @@ Välj **[!UICONTROL Export incremental files]** om du vill att de exporterade fi
 
 ![Exportera inkrementella filer](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
-1. Använd **[!UICONTROL Frequency]**-väljaren för att välja mellan **[!UICONTROL Daily]** eller **[!UICONTROL Hourly]**-exporter. Vid export av en inkrementell fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet kl. 12:00 UTC (07:00 EST).
-   * När du väljer **[!UICONTROL Hourly]** använder du **[!UICONTROL Every]**-väljaren för att välja mellan alternativen **[!UICONTROL 3]**, **[!UICONTROL 6]**, **[!UICONTROL 8]** och **[!UICONTROL 12]** timme.
+1. Använd **[!UICONTROL Frequency]**-väljaren för att välja exportfrekvens:
 
-      >[!IMPORTANT]
-      >
-      >Alternativet att exportera inkrementella filer var 3, 6, 8 eller 12:e timme finns för närvarande i betaversionen och är bara tillgängligt för ett visst antal kunder. Kunder som inte är beta kan exportera inkrementella filer en gång om dagen.
+   * **[!UICONTROL Daily]**: schemalägg stegvis filexport en gång om dagen, varje dag, från startdatumet till slutdatumet kl. 23:00 UTC (kl. 7:00 EST).
+   * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 7 eller 12:e timme.
 
 2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
 
@@ -164,6 +166,8 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 >abstract="Välj de XDM-schemaattribut som alla exporterade profiler ska inkludera. Profiler utan den obligatoriska nyckeln exporteras inte till målet. Om du inte väljer en obligatorisk nyckel exporteras alla kvalificerade profiler oavsett deras attribut."
 >additional-url="http://www.adobe.com/go/destinations-mandatory-attributes-en" text="Läs mer i dokumentationen"
 
+Ett obligatoriskt attribut är en användaraktiverad kryssruta som ser till att alla profilposter innehåller det valda attributet. Till exempel: alla exporterade profiler innehåller en e-postadress. &#x200B;
+
 Du kan markera attribut som obligatoriska för att vara säker på att [!DNL Platform] bara exporterar de profiler som innehåller det specifika attributet. Det innebär att den kan användas som en extra form av filtrering. Det är **inte** obligatoriskt att markera ett attribut som obligatoriskt.
 
 Om du inte väljer ett obligatoriskt attribut exporteras alla kvalificerade profiler oavsett deras attribut.
@@ -178,9 +182,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](../../destina
 >abstract="Eliminera flera poster med samma profil i exportfilerna genom att välja en dedupliceringsnyckel. Välj ett namnutrymme eller upp till två XDM-schemaattribut som en dedupliceringsnyckel. Om du inte väljer en dedupliceringsnyckel kan det leda till dubblettprofilposter i exportfilerna."
 >additional-url="http://www.adobe.com/go/destinations-deduplication-keys-en" text="Läs mer i dokumentationen"
 
->[!IMPORTANT]
->
->Alternativet att använda dedupliceringsnycklar finns för närvarande i betaversion och är bara tillgängligt för ett visst antal kunder.
+En dedupliceringsnyckel är en användardefinierad primärnyckel som avgör identiteten som användarna vill att deras profiler ska dedupliceras med. &#x200B;
 
 Avdupliceringsnycklar eliminerar möjligheten att ha flera poster med samma profil i en exportfil.
 
