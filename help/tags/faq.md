@@ -1,9 +1,9 @@
 ---
-title: 'Vanliga frågor och svar '
+title: Felsökningsguide för taggar
 description: Få svar på vanliga frågor om taggar i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: dc957372e5e8c6f034f2e0cd0283e0e997501ba8
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '1055'
 ht-degree: 0%
 
 ---
@@ -92,6 +92,16 @@ De flesta Adobe-kunder använder moderna webbplattformsfunktioner i sina webblä
 ## Fungerar taggar i inbyggda mobilappar?
 
 Ja! Taggar har nu stöd för mobila egenskaper och konfigurationer för nya Adobe Experience Platform [SDK:er för mobiler](https://sdkdocs.com) för att implementera datainsamling och leverans i en intern mobilappsmiljö. Mer information finns i [dokumentationen](https://sdkdocs.com).
+
+## Varför står det att det uppstod ett fel när mitt konto lästes in?
+
+Om du får ett meddelande om att det uppstod ett fel när ditt konto lästes in innebär det att ditt konto inte tillhör någon produktprofil för taggar. Läs guiden [Hantera behörigheter](./ui/administration/manage-permissions.md) om du vill veta mer om hur du konfigurerar en produktprofil i Adobe Admin Console för att ge åtkomst till användargränssnittet i datainsamlingen.
+
+## Varför kan jag inte lägga till några egenskaper i gränssnittet?
+
+Om du inte kan skapa några nya egenskaper när du är inloggad i användargränssnittet för datainsamling innebär det att ditt konto inte tillhör en produktprofil som har behörigheten Hantera egenskaper.
+
+Se guiden [Hantera behörigheter](./ui/administration/manage-permissions.md) för att lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge rättigheten Hantera egenskaper. Mer information om de olika rättigheterna för taggar finns i översikten över [användarbehörigheter för taggar](./ui/administration/user-permissions.md).
 
 ## Vad händer om jag har andra frågor?
 
