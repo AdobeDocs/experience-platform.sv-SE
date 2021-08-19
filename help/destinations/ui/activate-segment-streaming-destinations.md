@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Aktivera målgruppsdata för att direktuppspela segmentexportmål
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
 seo-description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
-source-git-commit: 0d5e0d57d209e4cf9a832531676e836add4256d0
+source-git-commit: c3e273c66ffe0542258e5418104e0bcf154f5235
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '692'
 ht-degree: 0%
 
 ---
@@ -43,14 +43,9 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 
 ## Mappa attribut och identiteter {#mapping}
 
->[!CONTEXTUALHELP]
->id="platform_destinations_activate_applytransformation"
->title="Använd omformning"
->abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
-
 >[!IMPORTANT]
 >
->Det här steget gäller endast vissa mål för segmentdirektuppspelning. Om destinationerna inte har ett **[!UICONTROL Mapping]**-steg går du vidare till [Schemalägg segmentexport](#scheduling).
+>Det här steget gäller endast vissa mål för segmentdirektuppspelning. Om målet inte har ett **[!UICONTROL Mapping]**-steg går du till [Schemalägg segmentexport](#scheduling).
 
 Vissa mål för segmentdirektuppspelning kräver att du väljer källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
 
@@ -76,8 +71,17 @@ Vissa mål för segmentdirektuppspelning kräver att du väljer källattribut el
 
 1. Om du vill lägga till fler mappningar upprepar du steg 1 till 5.
 
+### Använd omformning {#apply-transformation}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_applytransformation"
+>title="Använd omformning"
+>abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#apply-transformation" text="Läs mer i dokumentationen"
 
+När du mappar ohashade källattribut till målattribut som målet förväntar sig ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), markera alternativet **Använd omformning** om du vill att Adobe Experience Platform automatiskt ska hash-koda källattributen vid aktiveringen.
+
+![Identitetsmappning](/help/destinations/assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 
 ## Schemalägg segmentexport {#scheduling}
