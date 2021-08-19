@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Aktivera målgruppsdata för att batchprofilera exportmål
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
-source-git-commit: b1d9b03af1d5266a03d0f16c6a9803a08f19b7bd
+source-git-commit: eebebcdc5e5f94d90eceb291dfe487fcd0f8c254
 workflow-type: tm+mt
-source-wordcount: '1926'
+source-wordcount: '1870'
 ht-degree: 0%
 
 ---
@@ -64,10 +64,10 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 
 1. Använd **[!UICONTROL Frequency]**-väljaren för att välja exportfrekvens:
 
-   * **[!UICONTROL Once]**: schemalägga en filexport på begäran.
-   * **[!UICONTROL Daily]**: schemalägg fullständig filexport en gång om dagen, varje dag, från startdatumet till slutdatumet kl. 23:00 UTC (kl. 7:00 EST).
+   * **[!UICONTROL Once]**: schemalägg en enda gång vid behov av fullständig filexport.
+   * **[!UICONTROL Daily]**: schemalägga fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
 
-1. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske. När du exporterar en fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet vid den tidpunkt du väljer.
+1. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
 
    >[!IMPORTANT]
    >
@@ -89,14 +89,14 @@ Välj **[!UICONTROL Export incremental files]** om du vill utlösa en export dä
 
 1. Använd **[!UICONTROL Frequency]**-väljaren för att välja exportfrekvens:
 
-   * **[!UICONTROL Daily]**: schemalägg stegvis filexport en gång om dagen, varje dag, från startdatumet till slutdatumet kl. 23:00 UTC (kl. 7:00 EST).
+   * **[!UICONTROL Daily]**: schemalägg inkrementell filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 7 eller 12:e timme.
 
 2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
 
    >[!IMPORTANT]
    >
-   >Alternativet att välja tid på dagen för exporten är bara tillgängligt för ett visst antal kunder. <br> <br> På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad.  <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
 
 3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
 4. Välj **[!UICONTROL Create]** om du vill spara schemat.
