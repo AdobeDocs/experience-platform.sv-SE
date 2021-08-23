@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
-source-git-commit: 031849fcc351794e7eb1da691bd4015368a043b6
+source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '639'
 ht-degree: 5%
 
 ---
@@ -73,6 +73,8 @@ ht-degree: 5%
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
    - e-handel {#ecommerce}
       - [Förminska koppling](connectors/ecommerce/shopify.md)
+   - Lokalt system {#local-system}
+      - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
    - Automatiserad marknadsföring {#marketing-automation}
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
@@ -214,6 +216,8 @@ ht-degree: 5%
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
       - e-handel {#ecommerce}
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
+      - Lokalt system {#local-system}
+         - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Automatiserad marknadsföring {#marketing-automation}
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
