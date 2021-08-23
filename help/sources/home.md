@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
 workflow-type: tm+mt
-source-wordcount: '949'
+source-wordcount: '977'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,12 @@ Experience Platform stöder inmatning av data från ett e-handelssystem från tr
 
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
+### Lokalt system
+
+Experience Platform har stöd för inmatning av data från ditt lokala system. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+
+- [Lokal filöverföring](connectors/local-system/local-file-upload.md)
+
 ### Marknadsföringsautomatisering
 
 Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
@@ -122,7 +128,6 @@ Experience Platform stöder inmatning av data från tredje parts betalningssyste
 Experience Platform stöder inmatning av data från strömningskällor. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL HTTP API]](connectors/streaming/http.md)
-
 
 ### Protokoll
 
