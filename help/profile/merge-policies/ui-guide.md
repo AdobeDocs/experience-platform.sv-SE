@@ -4,7 +4,7 @@ title: Användargränssnittshandbok för kopplingsprofiler
 type: Documentation
 description: När data från flera källor samlas i Experience Platform är sammanslagningsprinciper de regler som används i plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. I den här handboken finns stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i Adobe Experience Platform användargränssnitt.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: 2696dab922d9c1992b61ffefe50a4e3155793282
+source-git-commit: a6a49b4cf9c89b5c6b4679f36daede93590ffb3c
 workflow-type: tm+mt
 source-wordcount: '2070'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Om du vill välja vilken information som ska visas, eller om du vill lägga till
 
 ![](../images/merge-policies/adjust-view.png)
 
-## Skapa en sammanfogningsprincip {#create-a-merge-policy}
+## Skapa en kopplingsprofil {#create-a-merge-policy}
 
 Om du vill skapa en ny sammanfogningsprincip väljer du **[!UICONTROL Create merge policy]** på fliken för sammanfogningsprinciper för att ange det nya arbetsflödet för sammanfogningsprincipen.
 
@@ -84,7 +84,7 @@ Beroende på vilken sammanfogningsmetod du väljer sammanfogas alla profildataup
 
 Mer information om kopplingsmetoder finns i [översikten över sammanfogningsprinciper](overview.md).
 
-### Tidsstämpeln har ordnats {#timestamp-ordered-profile}
+### Tidsstämpel beställd {#timestamp-ordered-profile}
 
 Om du väljer **[!UICONTROL Timestamp ordered]** som sammanfogningsmetod får attribut från de senast uppdaterade datauppsättningarna företräde. Detta gäller för alla profildatauppsättningar.
 
@@ -94,7 +94,7 @@ Om du väljer **[!UICONTROL Timestamp ordered]** som sammanfogningsmetod får at
 
 ![](../images/merge-policies/timestamp-ordered.png)
 
-### Datauppsättningens prioritet {#dataset-precedence-profile}
+### Datauppsättningsprioritet {#dataset-precedence-profile}
 
 Om du väljer **[!UICONTROL Dataset precedence]** som sammanfogningsmetod måste du välja Profildatauppsättningar och manuellt prioritera dem. Varje datamängd som visas innehåller också status för den senaste batchimporten eller visar ett meddelande om att inga batchar har importerats till den datauppsättningen.
 
@@ -114,7 +114,7 @@ Om du väljer en datauppsättning uppdateras även avsnittet **[!UICONTROL Union
 
 Nästa steg i arbetsflödet kräver att du väljer ExperienceEvent-datamängder. Skärmen påverkas av den sammanslagningsmetod som du valde på skärmen [[!UICONTROL Select Profile datasets]](#select-profile-datasets).
 
-### Tidsstämpeln har ordnats {#timestamp-ordered-experienceevent}
+### Tidsstämpel beställd {#timestamp-ordered-experienceevent}
 
 Om du valde **[!UICONTROL Timestamp ordered]** som sammanfogningsmetod för profildatauppsättningar prioriteras även attributen från de senast uppdaterade ExperienceEvent-datauppsättningarna här.
 
@@ -124,7 +124,7 @@ Om du valde **[!UICONTROL Timestamp ordered]** som sammanfogningsmetod för prof
 
 ![](../images/merge-policies/timestamp-experienceevent.png)
 
-### Datauppsättningens prioritet {#dataset-precedence-experienceevent}
+### Datauppsättningsprioritet {#dataset-precedence-experienceevent}
 
 Om du valde **[!UICONTROL Dataset precedence]** som sammanfogningsmetod för profildatamängder måste du välja ExperienceEvent-datamängder som ska inkluderas. Du kan välja upp till 50 ExperienceEvent-datamängder i datauppsättningslistan.
 
@@ -148,7 +148,7 @@ Den **[!UICONTROL Preview data]**-tabell som visar exempelprofilposter med hjäl
 
 Kontrollera att du granskar konfigurationen av sammanfogningsprincipen och förhandsgranskar data noggrant innan du väljer **[!UICONTROL Finish]** för att slutföra arbetsflödet.
 
-### Tidsstämpeln har ordnats {#timestamp-ordered-review}
+### Tidsstämpel beställd {#timestamp-ordered-review}
 
 Om du valde **[!UICONTROL Timestamp ordered]** som sammanfogningsmetod för din sammanfogningsprincip innehåller listan med profildatauppsättningar alla datauppsättningar som har skapats av din organisation relaterade till schemaklassen, i tidsstämpelordning. Listan med ExperienceEvent-datamängder innehåller alla datauppsättningar som din organisation har skapat för den valda schemaklassen och som kommer att läggas till i profildatamängderna.
 
@@ -156,7 +156,7 @@ Tabellen **[!UICONTROL Preview data]** visar exempelprofilposter baserat på en 
 
 ![](../images/merge-policies/timestamp-review.png)
 
-### Datauppsättningens prioritet {#dataset-precedence-review}
+### Datauppsättningsprioritet {#dataset-precedence-review}
 
 Om du valde **[!UICONTROL Dataset precedence]** som sammanfogningsmetod för din sammanfogningsprincip innehåller listorna med datauppsättningarna Profile och ExperienceEvent endast de data för profil och ExperienceEvent som du valde när du skapade arbetsflödet. Ordningen på profildatauppsättningarna ska matcha den prioritet som du angav när du skapade dem. Om så inte är fallet använder du knappen [!UICONTROL Back] för att återgå till föregående arbetsflödessteg och justera prioriteten.
 
