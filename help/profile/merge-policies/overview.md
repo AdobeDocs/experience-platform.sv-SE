@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;sammanfogningsprincipe
 title: Översikt över kopplingsprofiler
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en helhetsbild av era enskilda kunder. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
-source-git-commit: c2cc1428e3a70cf987adab583e9f9fb5d5140c74
+source-git-commit: a6a49b4cf9c89b5c6b4679f36daede93590ffb3c
 workflow-type: tm+mt
-source-wordcount: '1467'
+source-wordcount: '1237'
 ht-degree: 0%
 
 ---
@@ -45,33 +45,16 @@ Det finns två möjliga sammanfogningsmetoder för sammanfogningsprinciper. Var 
 
 * **[!UICONTROL Dataset precedence]:** I händelse av en konflikt ska du prioritera profilfragment baserat på den datauppsättning som de kommer från. När du väljer det här alternativet måste du välja relaterade datauppsättningar och deras prioritetsordning. Läs mer om [datauppsättningens prioritet](#dataset-precedence) sammanfogningsmetod.
 * **[!UICONTROL Timestamp ordered]:** I händelse av en konflikt prioriteras profilfragmentet som uppdaterades senast. Läs mer om [tidsstämpeln ordnad](#timestamp-ordered) sammanfogningsmetod.
-   * **Anpassade tidsstämplar:** Tidsstämpelns ordningsföljd sammanfogningsmetod har även stöd för anpassade tidsstämplar som har högre prioritet än systemtidsstämplar när data sammanfogas inom samma datauppsättning (flera identiteter) eller mellan datauppsättningar. Mer information finns i avsnittet [Använda anpassade tidsstämplar](#custom-timestamps).
 
-### Datauppsättningens prioritet {#dataset-precedence}
+### Datauppsättningsprioritet {#dataset-precedence}
 
 När **[!UICONTROL Dataset precedence]** har valts som sammanfogningsmetod för en sammanfogningsprincip kan du prioritera profilfragment baserat på den datauppsättning som de kommer från. Ett exempel är om din organisation har information i en datauppsättning som är att föredra eller lita på framför data i en annan datauppsättning.
 
 Om du vill skapa en sammanfogningsprincip med **[!UICONTROL Dataset precedence]** måste du markera de profil- och ExperienceEvent-datauppsättningar som ingår och sedan manuellt beställa profildatamängderna. När datauppsättningarna har valts och beställts får den översta datauppsättningen högsta prioritet, den andra datauppsättningen den näst högsta och så vidare.
 
-### Tidsstämpeln har ordnats {#timestamp-ordered}
+### Tidsstämpel beställd {#timestamp-ordered}
 
 När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När **[!UICONTROL Timestamp ordered]** har valts som sammanfogningsmetod för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
-
-#### Använda anpassade tidsstämplar {#custom-timestamps}
-
-Ibland kan det finnas situationer där det är nödvändigt att ange en anpassad tidsstämpel och låta sammanfogningsprincipen använda den anpassade tidsstämpeln i stället för systemtidsstämpeln. Exempel på detta är att fylla i data baklänges eller att säkerställa rätt ordning för händelser om posterna är inlästa i fel ordning.
-
-Om du vill använda en anpassad tidsstämpel måste schemafältgruppen **[!UICONTROL External Source System Audit Details]** läggas till i profilschemat. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med fältet `lastUpdatedDate`. När en post hämtas med fältet `lastUpdatedDate` ifyllt, använder Experience Platform det fältet för att sammanfoga poster mellan datauppsättningar. Om `lastUpdatedDate` inte finns, eller inte är ifylld, kommer plattformen att fortsätta använda systemets tidsstämpel.
-
->[!NOTE]
->
->Du måste se till att tidsstämpeln `lastUpdatedDate` fylls i när du importerar en uppdatering för samma post.
-
-På följande skärmbild visas fälten i fältgruppen [!UICONTROL External Source System Audit Details]. Stegvisa anvisningar om hur du arbetar med scheman med hjälp av plattformsgränssnittet, inklusive hur du lägger till fältgrupper i scheman, finns i [självstudiekursen för att skapa ett schema med användargränssnittet](../../xdm/tutorials/create-schema-ui.md).
-
-![](../images/merge-policies/custom-timestamp-field-group.png)
-
-Om du vill arbeta med anpassade tidsstämplar med API:t läser du avsnittet [slutpunktshandbok för sammanfogningsprinciper om hur du använder anpassade tidsstämplar](../api/merge-policies.md#custom-timestamps).
 
 ## Identitetssammanfogning {#id-stitching}
 
