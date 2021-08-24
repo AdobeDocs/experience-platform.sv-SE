@@ -5,11 +5,10 @@ title: Meddelanden om dataöverföring
 topic-legacy: overview
 description: För att underlätta övervakningen av intagsprocessen kan Adobe Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
 workflow-type: tm+mt
 source-wordcount: '672'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -25,7 +24,7 @@ Data som läses in till [!DNL Platform] måste gå igenom flera steg för att n�
 
 För att kunna ta emot meddelanden om dataintrång måste du använda [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) för att registrera en webkrok för integreringen med Experience Platform.
 
-Följ självstudiekursen om [att prenumerera på [!DNL Adobe I/O Event] meddelanden](../../observability/notifications/subscribe.md) för detaljerade steg om hur du gör detta.
+Följ självstudiekursen om [att prenumerera på [!DNL Adobe I/O Event] meddelanden](../../observability/alerts/subscribe.md) för detaljerade steg om hur du gör detta.
 
 >[!IMPORTANT]
 >
@@ -85,7 +84,7 @@ Följande tabell visar vilka statusmeddelanden för dataöverföring som du kan 
 
 | Händelsekod | Plattformstjänst | Status | Händelsebeskrivning |
 | --- | ---------------- | ------ | ----------------- |
-| `ing_load_success` | [!DNL Data Ingestion] | framgång | En batch har importerats till en datauppsättning i [!DNL Data Lake]. |
+| `ing_load_success` | [!DNL Data Ingestion] | success | En batch har importerats till en datauppsättning i [!DNL Data Lake]. |
 | `ing_load_failure` | [!DNL Data Ingestion] | fel | Det gick inte att importera en batch till en datauppsättning i [!DNL Data Lake]. |
 | `ps_load_success` | [!DNL Real-time Customer Profile] | framgång | En batch har importerats till datalagret [!DNL Profile]. |
 | `ps_load_failure` | [!DNL Real-time Customer Profile] | fel | Det gick inte att importera en batch till datalagret [!DNL Profile]. |
