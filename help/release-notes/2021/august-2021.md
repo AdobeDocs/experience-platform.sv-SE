@@ -4,9 +4,9 @@ description: Versionsinformation för Experience Platform för 25 augusti 2021.
 doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
-source-git-commit: 17d4e91aeeca988f5b047007f87062872f36365c
+source-git-commit: bd3d60e1960b1f4c32ade8c4070d7c1b01e5ba07
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '457'
 ht-degree: 3%
 
 ---
@@ -20,6 +20,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Insikter om observerbarhet](#observability)
 - [Kundprofil i realtid](#profile)
+- [Källor](#sources)
 
 ## Insikter om observerbarhet {#observability}
 
@@ -42,3 +43,15 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i handboken [Kundprofil i realtid](../../profile/ui/user-guide.md). |
 
 Om du vill veta mer om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för arbete med profildata, kan du börja med att läsa [Kundprofilöversikt i realtid](../../profile/home.md).
+
+## Källor {#sources}
+
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+
+Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, vilket gör att du kan överföra lokala filer direkt till plattformen med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Mer information finns i översikten över den lokala filöverföringskällan](../../sources/connectors/local-system/local-file-upload.md).[ |
+
+Mer information om källor finns i [Källor - översikt](../../sources/home.md).
