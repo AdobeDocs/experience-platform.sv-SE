@@ -5,10 +5,9 @@ title: Insikter om observerbarhet - översikt
 topic-legacy: overview
 description: Adobe Experience Platform observability Insights är ett RESTful API som gör att du kan visa viktig information om plattformsaktiviteter. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner.
 exl-id: ad9fcd1b-b649-47d8-93f3-4a3752480129
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0a64737c805f5e1a4856aa49084a61e64e401ed6
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '290'
 ht-degree: 1%
 
 ---
@@ -23,11 +22,17 @@ API:t [!DNL Observability Insights] är ett RESTful-API som gör att du kan visa
 
 Mer information om hur du arbetar med API:t finns i [[!DNL Observability Insights] API-utvecklarhandboken](./api/overview.md).
 
-## Händelsemeddelanden
+## Varningar (beta)
 
-[!DNL Observability Insights] gör att du kan prenumerera på händelsemeddelanden om Adobe Experience Platform-aktiviteter. Genom att prenumerera på händelser kan du skapa egna underordnade protokoll för när ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel uppstod under processen.
+>[!IMPORTANT]
+>
+>Aviseringar i Adobe Experience Platform är inte tillgängliga för alla användare ännu. Den här funktionen är i betaversion och testas fortfarande. Reservation för ändringar.
 
-Mer information finns i översikten på [händelsemeddelanden](./notifications/overview.md).
+Med Experience Platform kan ni prenumerera på aviseringar baserade på specifika observationsmått när en viss uppsättning villkor i era plattformsåtgärder nås. En varning kan ha formen av en engångsavisering eller upprepas under ett fördefinierat tidsintervall tills de villkor som utlöste varningen har åtgärdats.
+
+Genom att prenumerera på varningar kan du skapa egna underordnade protokoll för när ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om fel uppstod under processen.
+
+Mer information finns i översikten för [varningar](./alerts/overview.md).
 
 ## Nästa steg
 
