@@ -4,9 +4,9 @@ title: Måltyper och -kategorier
 seo-title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 5a6f14ba65584a6bd61d62c4fb0b46e8f9e8e96d
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '529'
 ht-degree: 0%
 
 ---
@@ -23,17 +23,28 @@ I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och 
 
 ## Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]** och  **[!UICONTROL Segment Export]** destinationer i Adobe Experience Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [ i ](../profile/home.md)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]** och  **[!UICONTROL Streaming Segment Export]** destinationer i Adobe Experience Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [ i ](../profile/home.md)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
 
 ## Profilexportdestinationer
 
-Profilexportdestinationer genererar en fil som innehåller profiler och/eller attribut. Dessa mål använder rådata, ofta med e-postadress som primärnyckel. [Amazon S3-molnlagringsmålet](./catalog/cloud-storage/amazon-s3.md) är ett exempel på destinationen där du kan sätta in filer som innehåller profilexporter.
+Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyckel. Experience Platform har för närvarande stöd för två typer av profilexportdestinationer:
 
-## Segmentexportdestinationer
+* [Exportmål för direktuppspelningsprofil](#streaming-profile-export)
+* [Filbaserade mål](#file-based)
 
-Destinationer för segmentexport skickar profilerna och de segment de är kvalificerade för till målplattformarna. Dessa mål använder segment-ID eller användar-ID. Annonsmål som [[!DNL Google Display & Video 360]](./catalog/advertising/google-dv360.md) eller [[!DNL Google Ads]](./catalog/advertising/google-ads-destination.md) är exempel på dessa typer av destinationer.
+### Exportmål för direktuppspelningsprofil {#streaming-profile-export}
 
-## Destinationer för profilexport och segmentexport - videoöversikt
+Exportdestinationer för direktuppspelningsprofiler tar emot segment- och profildata som dataströmmar i Experience Platform. [Amazon ](catalog/cloud-storage/amazon-kinesis.md) Kinesioch  [Azure Event ](catalog/cloud-storage/azure-event-hubs.md) Hubsare exempel på sådana destinationer.
+
+### Filbaserade mål {#file-based}
+
+Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på destinationen där du kan placera filer som innehåller profilexporter.
+
+## Målgrupper för direktuppspelad segmentexport
+
+Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md) och  [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md) är exempel på sådana destinationer.
+
+## Profilexport och segmentexportdestinationer - videoöversikt
 
 I videon nedan beskrivs de två typerna av destinationer:
 
