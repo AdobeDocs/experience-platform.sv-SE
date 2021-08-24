@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 topic-legacy: overview
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
-source-git-commit: d6eefc8c10a44fd31eaed00f22d09ee8a300db83
+source-git-commit: ee59da6c075573af366403e1059b5318fb924d21
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1903'
 ht-degree: 0%
 
 ---
@@ -74,6 +74,17 @@ Med etiketter för dataanvändning kan du kategorisera datauppsättningar och f�
 [!DNL Segment Match] använder etiketten C11, en kontraktsetikett som är specifik för  [!DNL Segment Match] att du manuellt kan lägga till i en datauppsättning eller attribut för att vara säker på att de utesluts från  [!DNL Segment Match] partnerdelningsprocessen. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har fastställt vilka datauppsättningar och/eller fält du vill utesluta från [!DNL Segment Match] och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt i arbetsflödet [!DNL Segment Match]. [!DNL Segment Match] aktiverar automatiskt  [!UICONTROL Restrict data sharing] huvudprincipen. Specifika anvisningar om hur du använder dataanvändningsetiketter på datauppsättningar finns i självstudiekursen om att [hantera dataanvändningsetiketter i användargränssnittet](../../data-governance/labels/user-guide.md).
 
 En lista över dataanvändningsetiketter och definitioner finns i [ordlistan för dataanvändningsetiketter](../../data-governance/labels/reference.md). Mer information om dataanvändningsprinciper finns i översikten över [dataanvändningsprinciper](../../data-governance/policies/overview.md).
+
+### Om [!DNL Segment Match]-behörigheter
+
+Det finns två behörigheter associerade med [!DNL Segment Match]:
+
+| Behörighet | Beskrivning |
+| --- | --- |
+| Hantera anslutningar för målgruppsdelning | Med den här behörigheten kan du slutföra partnerhandskakningsprocessen, som ansluter två IMS-organisationer för att aktivera [!DNL Segment Match]-flöden. |
+| Hantera målgruppsresurser | Med den här behörigheten kan du skapa, redigera och publicera feeds (det datapaket som används för [!DNL Segment Match]) med aktiva partner (partners som har anslutits av administratören med åtkomsten **[!UICONTROL Audience Share Connections]**). |
+
+Mer information om åtkomstkontroll och behörigheter finns i [översikten över åtkomstkontroll](../../access-control/home.md).
 
 ## [!DNL Segment Match] från början till slut
 
