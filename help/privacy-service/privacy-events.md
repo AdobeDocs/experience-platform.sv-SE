@@ -5,8 +5,7 @@ title: Prenumerera på Privacy Service Events
 topic-legacy: privacy events
 description: Lär dig hur du prenumererar på Privacy Service-händelser med en förkonfigurerad webkrok.
 exl-id: 9bd34313-3042-46e7-b670-7a330654b178
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 1%
@@ -39,7 +38,7 @@ Läs igenom följande Privacy Service-dokumentation innan du startar den här sj
 
 För att kunna ta emot [!DNL Privacy Service Events] måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Privacy Service]-integrering.
 
-Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/notifications/subscribe.md) för detaljerade steg om hur du gör detta. Se till att du väljer **[!UICONTROL Privacy Service Events]** som händelseleverantör för att komma åt händelserna ovan.
+Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du gör detta. Se till att du väljer **[!UICONTROL Privacy Service Events]** som händelseleverantör för att komma åt händelserna ovan.
 
 ## Ta emot [!DNL Privacy Service Event] meddelanden
 
