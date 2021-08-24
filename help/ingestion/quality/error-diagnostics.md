@@ -5,10 +5,9 @@ title: Diagnostik för dataöverföringsfel hämtas
 topic-legacy: overview
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 104e6eb258136caa2192b61c793697baf95b55eb
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '979'
 ht-degree: 1%
 
 ---
@@ -107,7 +106,7 @@ Ett lyckat svar returnerar JSON-objekt som anger var diagnostikerna sparades.
 }
 ```
 
-### Hämta diagnostik för indatafil {#retrieve-diagnostics}
+### Hämta diagnostik för indatafiler {#retrieve-diagnostics}
 
 När du har hämtat en lista över alla olika indatafiler kan du hämta diagnostiken för den enskilda filen med följande begäran.
 
@@ -147,17 +146,19 @@ Om batchar innehåller fel bör du hämta felinformation om dessa fel så att du
 
 ### Kontrollera status {#check-status}
 
-Om du vill kontrollera status för den inkapslade batchen måste du ange batchens ID i sökvägen till en GET-förfrågan.
+Om du vill kontrollera status för den inkapslade batchen måste du ange batchens ID i sökvägen till en GET-förfrågan. Läs [katalogslutpunktshandboken](../../catalog/api/list-objects.md) om du vill veta mer om hur du använder det här API-anropet.
 
 **API-format**
 
 ```http
 GET /catalog/batches/{BATCH_ID}
+GET /catalog/batches/{BATCH_ID}?{FILTER}
 ```
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{BATCH_ID}` | `id`-värdet för gruppen som du vill kontrollera statusen för. |
+| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden [filtrera katalogdata](../../catalog/api/filter-data.md). |
 
 **Begäran**
 
