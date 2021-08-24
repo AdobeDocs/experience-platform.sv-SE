@@ -5,9 +5,9 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 83efc9f3c203cf4743514dc4b7a480715dadb19a
 workflow-type: tm+mt
-source-wordcount: '7219'
+source-wordcount: '7380'
 ht-degree: 0%
 
 ---
@@ -144,6 +144,8 @@ ht-degree: 0%
 
 ## D
 
+**Dagligen**: Vid schemalagd filexport schemaläggs fullständig eller stegvis filexport en gång om dagen, varje dag, från startdatumet till slutdatumet vid den tidpunkt som anges av användaren.
+
 **Dataordlista**: När det gäller taggar är ett datalexikon (kallas även datamappning) en uppsättning dataelement som definieras i en egenskap.
 
 **Dataelement**: När det gäller taggar är ett dataelement en pekare som används inom regler och tillägg för att peka på en viss datadel som finns på klientenheten.
@@ -179,6 +181,8 @@ ht-degree: 0%
 **Datauppsättnings-ID**: En Adobe-genererad identifierare för en inkapslad datauppsättning.
 
 **Datauppsättningsutdata**: Datauppsättningsutdata är en mekanism för att avgöra vad alternativet Skapa tabell som markerad ska användas för en viss  [!DNL Query Service] körning.
+
+**Dedupliceringsnyckel**: En användardefinierad primärnyckel som avgör identiteten som användarna vill att deras profiler ska dedupliceras med. &#x200B;
 
 **Delta-kolumn**: Med en delta-kolumn kan du välja ett källdatafält som representerar en tidsstämpel för inkrementellt intag.
 
@@ -224,6 +228,10 @@ ht-degree: 0%
 
 **Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som inträffat och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
 
+**Exportera fullständig fil**: En exportfil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
+
+**Exportera inkrementella filer**: En serie exporterade filer där den första filen är en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet och efterföljande filer är stegvisa profilkvalifikationer sedan den föregående exporten.
+
 **Tillägg**: När det gäller taggar är ett tillägg ett paket med funktioner som läggs till i en taggegenskap. Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
 
 **Tilläggspaket**: När det gäller taggar är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare och som innehåller allt som behövs för att taggar användare ska kunna installera tillägget i sin egenskap. Ett tilläggspaket innehåller ett manifest som anger information om tillägget, den HTML/JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för taggtillägget och den körbara JavaScript-kod som levereras till klientmiljön (om det behövs).
@@ -253,6 +261,8 @@ ht-degree: 0%
 ## H
 
 **Värd**: När det gäller taggar anger en värd den plats, domän och de inloggningsuppgifter som krävs för att systemet ska kunna leverera ett bygge.
+
+**Timme**: Vid schemalagd filexport schemaläggs den inkrementella filexporten var 3, 6, 7 eller 12:e timme.
 
 ## I
 
@@ -314,6 +324,8 @@ ht-degree: 0%
 
 **Maskininlärningsmodell**: En maskininlärningsmodell är en instans av ett maskininlärningsrecept som har utbildats med hjälp av historiska data och konfigurationer för att lösa ett affärsärende. I Adobe Experience Platform Data Science Workspace kallas maskininlärningsmodeller recept.
 
+**Obligatoriskt attribut**: En användaraktiverad kryssruta som ser till att alla profilposter innehåller det valda attributet. Till exempel: alla exporterade profiler innehåller en e-postadress.
+
 **Mappning**: Datamappning är processen att mappa källdatafält till relaterade målfält i ett mål.
 
 **Marknadsföringsåtgärd**: I datastyrningsramverket är en marknadsföringsåtgärd (även kallat marknadsföringsfall) en åtgärd som en datakonsument utför på Experience Platform, och där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer.
@@ -343,6 +355,8 @@ ht-degree: 0%
 **Marknadsföringsåtgärd** för personalisering på plats: En marknadsföringsåtgärd som använder data för innehållspersonalisering på plats. Webbplatspersonalisering är alla data som används för att dra slutsatser om användarnas intressen och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
 **Marknadsföringsåtgärder** för riktad marknadsföring på plats: En marknadsföringsåtgärd som använder data för annonser på plats, inklusive urval och leverans av annonser på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådana annonser.
+
+**En gång**: I samband med schemalagd filexport schemaläggs en enda, behovsstyrd, fullständig filexport.
 
 **Skriv över sparstrategi**: Spara-strategin&quot;Skriv över&quot; är ett alternativ för att hämta tredjepartsdata via en anslutning, där du kan ange om inmatade data ska skrivas över enligt ett angivet schema.
 
