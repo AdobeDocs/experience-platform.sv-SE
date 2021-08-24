@@ -5,9 +5,9 @@ topic-legacy: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: f340ecfb850ef50504938a5db136e70b8bede61a
+source-git-commit: 4425f7d61aa5ff357c7ba25cf986201fefeacd67
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1237'
 ht-degree: 0%
 
 ---
@@ -105,6 +105,8 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 | [!DNL Destinations] | [!UICONTROL Activate Destinations] | Möjlighet att aktivera data till aktiva destinationer som har skapats. Den här behörigheten kräver att antingen Visa mål eller Hantera [!UICONTROL Destinations”] beviljas den användare som ska aktivera mål. |
 | [!DNL Data Ingestion] | [!UICONTROL Manage Sources] | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
 | [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**. |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | Åtkomst att skapa, acceptera och avvisa partnerhandskakningar för att ansluta två IMS-organisationer och aktivera [!DNL Segment Match]-flöden. |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | Tillgång att läsa, skapa, redigera och publicera [!DNL Segment Match]-flöden med aktiva partners. |
 | [!DNL Data Science Workspace] | [!UICONTROL Manage Data Science Workspace] | Åtkomst för att läsa, skapa, redigera och ta bort i [!DNL Data Science Workspace]. |
 | [!DNL Data Governance] | [!UICONTROL Apply Data Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |
 | [!DNL Data Governance] | [!UICONTROL Manage Data Usage Policies] | Åtkomst att läsa, skapa, redigera och ta bort dataanvändningsprinciper. |
