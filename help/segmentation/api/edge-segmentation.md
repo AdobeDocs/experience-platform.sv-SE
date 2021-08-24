@@ -5,9 +5,9 @@ title: 'Kantsegmentering med API '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 3de00fb9ae5348b129a499cfd81d8db6dbac2d46
+source-git-commit: af1eee8787d7fa2ae2d56e541823100d2620dd2d
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -38,8 +38,8 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 | ---------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
-| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger. |
-| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger och har ett eller flera profilattribut. |
+| Inkommande träff med ett tidsfönster på 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar |
+| Inkommande träde som refererar till en profil med ett tidsfönster på 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar och ett eller flera profilattribut |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -47,9 +47,9 @@ Följande frågetyper är **inte** som för närvarande stöds av kantsegmenteri
 
 | Frågetyp | Detaljer |
 | ---------- | ------- |
-| Fönster för relativ tid | Om en fråga refererar till ett tidsfönster kan den inte utvärderas med kantsegmentering. |
-| Negation | Om en fråga innehåller en negation, eller en `not`-händelse, kan den inte utvärderas med kantsegmentering. |
 | Flera händelser | Om en fråga innehåller mer än en händelse kan den inte utvärderas med kantsegmentering. |
+| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger. |
+| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger och har ett eller flera profilattribut. |
 
 {style=&quot;table-layout:auto&quot;}
 
