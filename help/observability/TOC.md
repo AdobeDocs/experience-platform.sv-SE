@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Insikter - guide
 user-guide-description: Övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
 feature: Datahantering
-source-git-commit: 39fc8712cdaf64ee15a4e1bf65b74846d77f5477
+source-git-commit: 905d364796911f35111d42c46c91744bc18304f2
 workflow-type: tm+mt
-source-wordcount: '57'
-ht-degree: 14%
+source-wordcount: '60'
+ht-degree: 13%
 
 ---
 
@@ -20,7 +20,8 @@ ht-degree: 14%
    * [Mätvärden](./api/metrics.md)
 * Larm {#alerts}
    * [Översikt](./alerts/overview.md)
-   * [Prenumerera på I/O-händelsemeddelanden](./alerts/subscribe.md)
+   * [Standardvarningsregler](./alerts/rules.md)
    * [Användargränssnittsguide](./alerts/ui.md)
+   * [Prenumerera på I/O-händelsemeddelanden](./alerts/subscribe.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
