@@ -5,8 +5,7 @@ solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic-legacy: overview
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
 workflow-type: tm+mt
 source-wordcount: '771'
 ht-degree: 1%
@@ -33,7 +32,7 @@ Det här dokumentet kräver också en fungerande förståelse för webbhooks och
 
 För att kunna ta emot meddelanden om flödeskörning måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Experience Platform]-integrering.
 
-Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/notifications/subscribe.md) för detaljerade steg om hur du gör detta.
+Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du gör detta.
 
 >[!IMPORTANT]
 >
