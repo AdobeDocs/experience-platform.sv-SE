@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: b7392596c7ed96032dc8ad6bb8e423640f562394
+source-git-commit: fc59ad026a746bc75192fc6b314989894f8f6c45
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1572'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ Den högra sidopanelen innehåller information om alla segment i IMS-organisatio
 
 ![](../images/ui/overview/segment-browse-segment-info.png)
 
-Om du väljer segmentdefinitionens rad får du en sammanfattning av segmentdefinitionen, inklusive alternativ för att antingen redigera eller ta bort segmentet, kvalificerad publik för segmentet, total målgruppsstorlek, utöver segmentets namn, beskrivning, utvärderingsmetod, skapad den och senaste ändringsdatum.
+Om du markerar segmentdefinitionens rad får du en sammanfattning av segmentdefinitionen, inklusive alternativ för att antingen redigera eller ta bort segmentet, aktivera segmentet till ett mål, kvalificerad målgrupp för segmentet, total målgruppsstorlek, utöver segmentets namn, beskrivning, bedömningsmetod, skapad den och senaste ändringsdatum.
 
 >[!NOTE]
 >
@@ -101,7 +101,13 @@ Sidan med segmentinformation visas. Överst finns en sammanfattning av segmentde
 
 Avsnittet **[!UICONTROL Segment summary]** innehåller information om attributens ID, namn, beskrivning och detaljer.
 
-Dessutom kan du redigera segmentet. Om du väljer **[!UICONTROL Edit segment]** kommer du till [!DNL Segment Builder]. Mer information om hur du använder arbetsytan [!DNL Segment Builder] finns i [[!DNL Segment Builder] användarhandboken](./segment-builder.md).
+Dessutom kan du antingen aktivera segmentet till ett mål eller redigera segmentet. Om du väljer **[!UICONTROL Activate to destination]** kan du aktivera segmentet till ett mål. Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikten](../../destinations/ui/activation-overview.md).
+
+![](../images/ui/overview/segment-details-activate.png)
+
+Om du väljer **[!UICONTROL Edit segment]** kommer du till [!DNL Segment Builder]. Mer information om hur du använder arbetsytan [!DNL Segment Builder] finns i [[!DNL Segment Builder] användarhandboken](./segment-builder.md).
+
+![](../images/ui/overview/segment-details-edit-segment.png)
 
 ### Total publik i segmentet
 
