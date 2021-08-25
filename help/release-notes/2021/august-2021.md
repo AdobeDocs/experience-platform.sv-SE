@@ -4,9 +4,9 @@ description: Versionsinformation för Experience Platform för 25 augusti 2021.
 doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
-source-git-commit: bd3d60e1960b1f4c32ade8c4070d7c1b01e5ba07
+source-git-commit: b1dca51264582788ccbde005b063c57e2f3edc8f
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '534'
 ht-degree: 3%
 
 ---
@@ -18,9 +18,22 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Mål ](#destinations)
 - [Insikter om observerbarhet](#observability)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
+
+## Mål  {#destinations}
+
+Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [Användbarhetsförbättringar för destinationer](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
+
+Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
 ## Insikter om observerbarhet {#observability}
 
