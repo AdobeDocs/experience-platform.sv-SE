@@ -2,11 +2,11 @@
 keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;destinationskatalog;
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
-seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
+seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
+source-git-commit: f4721d3f114357b25517e4e66f1f626f82621c34
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '774'
 ht-degree: 0%
 
 ---
@@ -40,14 +40,14 @@ På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgä
 * Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När du väljer **[!UICONTROL All destinations]** visas alla tillgängliga [!DNL Platform]-mål. När du väljer **[!UICONTROL My destinations]** kan du bara se de mål som du har upprättat en anslutning till.
 * Välj om du vill visa **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]**. Mer information om skillnaden mellan de två kategorierna finns i [Måltyper och kategorier](../destination-types.md).
 
-![målgruppsfiltrering och sökdemo](../assets/ui/workspace/destinations-search-and-filter.gif)
+![Katalog](../assets/ui/workspace/catalog.png)
 
-Målkorten innehåller antingen en **[!UICONTROL Configure]**- eller en **[!UICONTROL Activate]**-kontroll och en sekundär kontroll som visar fler alternativ. Dessa kontroller beskrivs nedan:
+Målkorten innehåller antingen en **[!UICONTROL Set up]**- eller en **[!UICONTROL Activate segments]**-kontroll och en sekundär kontroll som visar fler alternativ. Dessa kontroller beskrivs nedan:
 
 | Kontroll | Beskrivning |
 |---------|----------|
-| [!UICONTROL Configure] | Gör att du kan skapa en anslutning till målet. |
-| [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera segment. |
+| [!UICONTROL Set up] | Gör att du kan skapa en anslutning till målet. |
+| [!UICONTROL Activate segments] | När du har upprättat en anslutning till målet kan du aktivera segment. |
 | [!UICONTROL View account] | Visa konton som du har anslutit för ett mål. |
 | [!UICONTROL View dataflows] | Visa dataaktiveringsflödena som finns för ett mål. |
 | [!UICONTROL View documentation] | Öppnar en länk till dokumentationssidan för det specifika målet, för mer information och för att hjälpa dig att konfigurera det. |
@@ -72,7 +72,7 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 
 >[!TIP]
 >
-> * Markera de tre punkterna i kolumnen [!UICONTROL Name] och använd knappen ![Lägg till segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**för att skicka segment till det målet.
+> * Markera de tre punkterna i kolumnen [!UICONTROL Name] och använd knappen ![Lägg till segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate segments]**för att skicka segment till det målet.
 > * Markera de tre punkterna i kolumnen [!UICONTROL Name] och använd knappen ![Ta bort mål ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**för att [ta bort en befintlig anslutning till ett mål.](delete-destinations.md)
 
 
