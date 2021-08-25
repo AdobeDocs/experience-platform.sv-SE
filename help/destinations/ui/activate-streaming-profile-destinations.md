@@ -2,12 +2,12 @@
 keywords: aktivera profildestinationer;aktivera destinationer;aktivera data; aktivera e-postmarknadsföringsmål, aktivera molnlagringsmål
 title: Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
 type: Tutorial
-seo-title: Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
+seo-title: Activate audience data to streaming profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till direktuppspelade profilbaserade mål.
-seo-description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till direktuppspelade profilbaserade mål.
-source-git-commit: f0c854e1b6b89d499c720328fa5054611147772f
+seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to streaming profile-based destinations.
+source-git-commit: d13920250fafd2ba4ff37dd5d4a45d417ed3ecc7
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,17 @@ Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./conne
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Browse]**.
+1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
-   ![Fliken Målsökning](../assets/ui/activate-streaming-profile-destinations/browse-tab.png)
+   ![Fliken Målkatalog](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. Markera **[!UICONTROL Add segments]**-knappen som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
 
-   ![Aktivera knappar](../assets/ui/activate-streaming-profile-destinations/activate-buttons-browse.png)
+   ![Knappen Aktivera segment](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+
+1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
+
+   ![Välj mål](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt för att [markera dina segment](#select-segments).
 
