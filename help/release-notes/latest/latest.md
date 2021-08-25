@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 3d6402a35e1813b94af866d7aaea975d4f103906
+source-git-commit: b1dca51264582788ccbde005b063c57e2f3edc8f
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '536'
 ht-degree: 3%
 
 ---
@@ -16,9 +16,22 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Mål ](#destinations)
 - [Insikter om observerbarhet](#observability)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
+
+## Mål  {#destinations}
+
+Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [Användbarhetsförbättringar för destinationer](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
+
+Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
 ## Insikter om observerbarhet {#observability}
 
