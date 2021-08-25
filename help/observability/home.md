@@ -5,9 +5,9 @@ title: Insikter om observerbarhet - översikt
 topic-legacy: overview
 description: Adobe Experience Platform observability Insights är ett RESTful API som gör att du kan visa viktig information om plattformsaktiviteter. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner.
 exl-id: ad9fcd1b-b649-47d8-93f3-4a3752480129
-source-git-commit: 0a64737c805f5e1a4856aa49084a61e64e401ed6
+source-git-commit: 444f63054c1e4e429498c95c7bba8c4ddd612799
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '262'
 ht-degree: 1%
 
 ---
@@ -22,11 +22,7 @@ API:t [!DNL Observability Insights] är ett RESTful-API som gör att du kan visa
 
 Mer information om hur du arbetar med API:t finns i [[!DNL Observability Insights] API-utvecklarhandboken](./api/overview.md).
 
-## Varningar (beta)
-
->[!IMPORTANT]
->
->Aviseringar i Adobe Experience Platform är inte tillgängliga för alla användare ännu. Den här funktionen är i betaversion och testas fortfarande. Reservation för ändringar.
+## Larm
 
 Med Experience Platform kan ni prenumerera på aviseringar baserade på specifika observationsmått när en viss uppsättning villkor i era plattformsåtgärder nås. En varning kan ha formen av en engångsavisering eller upprepas under ett fördefinierat tidsintervall tills de villkor som utlöste varningen har åtgärdats.
 
