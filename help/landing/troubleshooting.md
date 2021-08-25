@@ -7,8 +7,7 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-translation-type: tm+mt
-source-git-commit: a03d851f3e0037b8241ca1f1de890903b08feac4
+source-git-commit: a0f4e49192a54075ce7c48620c9729e61ecdfdac
 workflow-type: tm+mt
 source-wordcount: '1768'
 ht-degree: 1%
@@ -19,13 +18,13 @@ ht-degree: 1%
 
 Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform samt en felsökningsguide på hög nivå för vanliga fel som kan uppstå i ett [!DNL Experience Platform] API. Felsökningsguider för enskilda [!DNL Platform]-tjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
 
-## Vanliga frågor och svar {#faq}
+## Vanliga frågor och svar  {#faq}
 
 Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform.
 
 ## Vad är [!DNL Experience Platform] API:er? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt  [!DNL Platform] resurser. Dessa tjänst-API:er visar flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API Reference documentation](http://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
+[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt  [!DNL Platform] resurser. Dessa tjänst-API:er visar flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API Reference documentation](https://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
 
 ## Hur formaterar jag en API-begäran? {#how-do-i-format-an-api-request}
 
@@ -95,9 +94,9 @@ Följande statuskoder kan påträffas i alla [!DNL Experience Platform]-API:er. 
 | 404 | Hittades inte | Det gick inte att hitta den begärda resursen på servern. Resursen kan ha tagits bort eller så har den begärda sökvägen angetts felaktigt. |
 | 500 | Internt serverfel | Det här är ett serverfel. Om du gör många samtidiga anrop kanske du når API-gränsen och behöver filtrera resultaten. (Se underhandboken för [!DNL Catalog Service] API-utvecklare om [filtrering av data](../catalog/api/filter-data.md) om du vill veta mer.) Vänta en stund innan du försöker utföra din begäran igen och kontakta administratören om problemet kvarstår. |
 
-## Begär rubrikfel {#request-header-errors}
+## Fel i begärandehuvud {#request-header-errors}
 
-Alla API-anrop i [!DNL Platform] kräver specifika begäranderubriker. Om du vill se vilka huvuden som krävs för enskilda tjänster kan du läsa [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en). Om du vill hitta värden för de nödvändiga autentiseringshuvudena kan du läsa [Självstudiekursen om autentisering](https://www.adobe.com/go/platform-api-authentication-en). Om någon av dessa rubriker saknas eller är ogiltig när ett API-anrop görs kan följande fel uppstå.
+Alla API-anrop i [!DNL Platform] kräver specifika begäranderubriker. Om du vill se vilka huvuden som krävs för enskilda tjänster kan du läsa [API-referensdokumentationen](https://www.adobe.com/go/platform-api-reference-en). Om du vill hitta värden för de nödvändiga autentiseringshuvudena kan du läsa [Självstudiekursen om autentisering](https://www.adobe.com/go/platform-api-authentication-en). Om någon av dessa rubriker saknas eller är ogiltig när ett API-anrop görs kan följande fel uppstå.
 
 ### OAuth-token saknas {#oauth-token-is-missing}
 
@@ -190,7 +189,7 @@ Det här felmeddelandet visas när en POST-, PUT eller PATCH-begäran har ett og
 
 Det här felmeddelandet visas när ditt konto (som representeras av de angivna autentiseringsuppgifterna) inte är associerat med en produktprofil för Experience Platform. Följ stegen på [skapa inloggningsuppgifter](./api-authentication.md#authentication-for-each-session) i självstudiekursen för autentisering av plattforms-API för att lägga till plattform i ditt konto och uppdatera autentiseringsuppgifterna i enlighet med detta.
 
-## Tjänstens felsökningskatalog {#service-troubleshooting-directory}
+## Felsökningskatalog för tjänst {#service-troubleshooting-directory}
 
 Nedan följer en lista över felsökningsguider och API-referensdokumentation för [!DNL Experience Platform] API:er. Varje felsökningsguide ger svar på vanliga frågor och lösningar på problem som är specifika för enskilda [!DNL Platform]-tjänster. API-referensdokumenten innehåller en omfattande guide till alla tillgängliga slutpunkter för varje tjänst och visar exempel på begärandetexter, svar och felkoder som du kan få.
 
