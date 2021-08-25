@@ -1,12 +1,12 @@
 ---
 title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
-seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
+seo-description: Learn how to configure the Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: 549203c8ddc94e00cf4e4ba432f367ddc371cb27
+source-git-commit: c0e2d01bd21405f07f4857e1ccf45dd0e4d0f414
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '826'
 ht-degree: 3%
 
 ---
@@ -66,7 +66,6 @@ Anger om felsökning är aktiverat. Om du ställer in den här konfigurationen p
 
 | **Funktion** | ** -funktion** |
 | ---------------------- | ------------------ |
-| Synkron validering | Validerar data som samlas in mot schemat och returnerar ett fel i svaret under följande etikett: `collect:error OR success` |
 | Konsolloggning | Gör att felsökningsmeddelanden kan visas i webbläsarens JavaScript-konsol |
 
 {style=&quot;table-layout:auto&quot;}
