@@ -1,12 +1,12 @@
 ---
 title: Mappade Adobe Analytics-variabler automatiskt i Adobe Experience Platform Web SDK
 description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Experience Platform Web SDK
-seo-description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Adobe Experience Platform Web SDK
+seo-description: Learn which variables are automatically mapped in Adobe Analytics with the Adobe Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
-source-git-commit: 2e004fdd87c8a74eb161ef7af93c7102953ea85c
+source-git-commit: 09c6986fcd3682377725ded389496d5076e9e1e2
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '698'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,8 @@ Nedan finns en lista med variabler som Adobe Experience Platform Edge Network au
 | `placeContext.geo.postalCode` | `zip` | ZIP-mappning för parametern för AppMeasurement-fråga. |
 | `placeContext.geo.stateProvince` | `state` | Parametern STATE-mappning för AppMeasurement-fråga. |
 | `productlistitems.[N]._[NAME_SPACE].*` | `products` | AppMeasurement-frågeparametern Products Merchandise Events/Evars-mappning. |
-| `productlistitems.[N].name` | `products` | AppMeasurement-frågeparameter Produktnamnsmappning. |
+| `productListItems[N].lineItemId` | `products` | AppMeasurement-frågeparameter Produktnamnsmappning. |
+| `productlistitems.[N].name` | `products` | AppMeasurement-frågeparameter Produktkategorimappning. |
 | `productlistitems.[N].priceTotal` | `products` | AppMeasurement-frågeparametern Produkt, prismappning. |
 | `productlistitems.[N].quantity` | `products` | AppMeasurement-frågeparametern Produkt Kvantitetsmappning. |
 | `web.webInteraction.URL` | `pev1` | AppMeasurement-frågeparametern PAGE_EVENT_VAR1-mappning. |
