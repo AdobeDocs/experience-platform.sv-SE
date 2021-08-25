@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
-source-git-commit: bd93c21ae439a8802218b8d664b7109467f8a013
+source-git-commit: 7c10f39e7452481a00fb4269925c80aab34a7319
 workflow-type: tm+mt
-source-wordcount: '1842'
+source-wordcount: '1861'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,17 @@ Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./conne
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Browse]**.
+1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
-   ![Fliken Målsökning](../assets/ui/activate-batch-profile-destinations/browse-tab.png)
+   ![Fliken Målkatalog](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
-1. Markera **[!UICONTROL Add segments]**-knappen som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
 
-   ![Aktivera knappar](../assets/ui/activate-batch-profile-destinations/activate-buttons-browse.png)
+   ![Knappen Aktivera segment](../assets/ui/activate-batch-profile-destinations/activate-segments-button.png)
+
+1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
+
+   ![Välj mål](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt för att [markera dina segment](#select-segments).
 
@@ -144,9 +148,7 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
    ![Välj källfältssida](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
 
-
 1. Om du vill lägga till fler mappningar upprepar du steg 1 till 3.
-
 
 >[!NOTE]
 >
