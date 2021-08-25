@@ -5,7 +5,7 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 83efc9f3c203cf4743514dc4b7a480715dadb19a
+source-git-commit: bd93c21ae439a8802218b8d664b7109467f8a013
 workflow-type: tm+mt
 source-wordcount: '7380'
 ht-degree: 0%
@@ -226,7 +226,7 @@ ht-degree: 0%
 
 **Experimentera**: Ett experiment är processen att skapa en utbildad modell genom att utbilda instansen med en exempeldel av data om produktion. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från konceptet med ett experiment i vissa maskininlärningsmiljöer där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
-**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som inträffat och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
+**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som hänt och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
 
 **Exportera fullständig fil**: En exportfil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
 
@@ -262,7 +262,7 @@ ht-degree: 0%
 
 **Värd**: När det gäller taggar anger en värd den plats, domän och de inloggningsuppgifter som krävs för att systemet ska kunna leverera ett bygge.
 
-**Timme**: Vid schemalagd filexport schemaläggs den inkrementella filexporten var 3, 6, 7 eller 12:e timme.
+**Timme**: I samband med schemalagd filexport schemaläggs den inkrementella filexporten var 3, 6, 8 eller 12 timme.
 
 ## I
 
