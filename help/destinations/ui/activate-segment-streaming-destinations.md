@@ -2,12 +2,12 @@
 keywords: aktivera mål för segmentströmning;aktivera mål för segmentströmning;aktivera data
 title: Aktivera målgruppsdata för att direktuppspela segmentexportmål
 type: Tutorial
-seo-title: Aktivera målgruppsdata för att direktuppspela segmentexportmål
+seo-title: Activate audience data to streaming segment export destinations
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
-seo-description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
-source-git-commit: c3e273c66ffe0542258e5418104e0bcf154f5235
+seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to segment streaming destinations.
+source-git-commit: f4721d3f114357b25517e4e66f1f626f82621c34
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '726'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,17 @@ Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./conne
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Browse]**.
+1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
 
-   ![Fliken Målsökning](../assets/ui/activate-segment-streaming-destinations/browse-tab.png)
+   ![Fliken Målkatalog](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. Markera **[!UICONTROL Add segments]**-knappen som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
 
-   ![Aktivera knappar](../assets/ui/activate-segment-streaming-destinations/activate-buttons-browse.png)
+   ![Aktivera knappar](../assets/ui/activate-segment-streaming-destinations/activate-segments-button.png)
+
+1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
+
+   ![Välj mål](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt för att [markera dina segment](#select-segments).
 
@@ -81,10 +85,17 @@ Vissa mål för segmentdirektuppspelning kräver att du väljer källattribut el
 
 När du mappar ohashade källattribut till målattribut som målet förväntar sig ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), markera alternativet **Använd omformning** om du vill att Adobe Experience Platform automatiskt ska hash-koda källattributen vid aktiveringen.
 
-![Identitetsmappning](/help/destinations/assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
-
+![Identitetsmappning](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## Schemalägg segmentexport {#scheduling}
+
+Som standard visar sidan [!UICONTROL Segment schedule] bara de segment som du nyligen har valt i det aktuella aktiveringsflödet.
+
+![Nya segment](../assets/ui/activate-segment-streaming-destinations/new-segments.png)
+
+Om du vill se alla segment som aktiveras till målet använder du filteralternativet och inaktiverar filtret **[!UICONTROL Show new segments only]**.
+
+![Alla segment](../assets/ui/activate-segment-streaming-destinations/all-segments.png)
 
 1. På sidan **[!UICONTROL Segment schedule]** markerar du varje segment och använder sedan väljarna **[!UICONTROL Start date]** och **[!UICONTROL End date]** för att konfigurera tidsintervallet för att skicka data till målet.
 
@@ -120,7 +131,7 @@ Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finis
 
 ## Verifiera segmentaktivering {#verify}
 
-Kontrollera destinationskontot. Om aktiveringen lyckades fylls målgrupperna i på målplattformen.
+Läs [dokumentationen för målövervakning](../../dataflows/ui/monitor-destinations.md) om du vill ha mer information om hur du övervakar dataflödet till dina mål.
 
 <!-- 
 For [!DNL Facebook Custom Audience], a successful activation means that a [!DNL Facebook] custom audience would be created programmatically in [[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segment membership in the audience would be added and removed as users are qualified or disqualified for the activated segments.
