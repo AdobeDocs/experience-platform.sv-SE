@@ -1,7 +1,7 @@
 ---
 title: Skapa en Exchange-lista för ett tillägg
 description: Lär dig hur du lägger till tillägget i den offentliga katalogen i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8705cfa65cb1d3a738610821ece827c2af33615
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 0%
@@ -41,9 +41,9 @@ Om du redan har ett företagskonto, eller om du inte planerar att slutföra din 
 1. Ange din listinformation. Mer information om App Manager finns i den fullständiga [artikeln](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024197931). Listinformation bör vara mycket tydlig med vad tillägget gör och varför det är användbart. Listan fungerar som ett marknadsföringsutrymme för din app. Befordra tillägget här med tydliga beskrivningar, länkar till landningssidor på webbplatsen, länkar till hjälpdokument eller e-postadresser till support osv. Även om utrymmet i tilläggsvyn är begränsat, ger Exchange-listan möjlighet att marknadsföra både ditt tillägg och ditt företag. Nedan följer förslag på hur du kan förbättra erbjudandet om tillägg:
    - **Appikon**  - Kontrollera att ikonen för Exchange-listan har rätt dimensioner, 512 x 512 för png eller 1:1-proportioner för jpg.
 
-   >[!NOTE]
-   >
-   >Detta är ett annat filformat än det som används i tilläggskoden. Tillägget i sig innehåller en svg-fil som [ikon](../manifest.md).
+      >[!NOTE]
+      >
+      >Detta är ett annat filformat än det som används i tilläggskoden. Tillägget i sig innehåller en svg-fil som [ikon](../manifest.md).
 
    - **Bild**  - Få uppmärksamhet genom att använda en bild som kan vara fristående och visa ert varumärke och framhäva er applikation. Den bild som visas när någon delar en länk till din Exchange-lista eller publicerar om den på sociala medier. Det måste därför vara en modellbeteckning för ert varumärke.
    - **App Publisher-logotyp**  - Det här är företagets logotyp, kontrollera att ikonen har rätt dimensioner på 1 280 x 720 eller 2 560 x 1 440 (16:9) i png- eller jpg-format.
