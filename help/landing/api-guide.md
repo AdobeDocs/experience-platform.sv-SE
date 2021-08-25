@@ -5,8 +5,7 @@ title: Komma igång med Adobe Experience Platform API:er
 topic-legacy: api guide
 description: Adobe Experience Platform tillhandahåller API-tjänster som är nära kopplade till varandra. Den här handboken innehåller information om tillgängliga tjänster, nödvändiga huvuden för CRUD-åtgärder, felmeddelanden, Postman-samlingar och exempel på API-anrop.
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a0f4e49192a54075ce7c48620c9729e61ecdfdac
 workflow-type: tm+mt
 source-wordcount: '1425'
 ht-degree: 0%
@@ -138,7 +137,7 @@ Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligato
 | [[!DNL Segmentation Service] API-guide](.././segmentation/api/overview.md) | Med API:t [!DNL Segmentation Service] kan utvecklare hantera segmenteringsåtgärder i Adobe Experience Platform programmatiskt. Detta inkluderar att bygga segment och generera målgrupper från kundprofildata i realtid. |
 | [[!DNL Sensei Machine Learning] API-guide](.././data-science-workspace/api/getting-started.md) <br>  (Data Science Workspace) | API:t [!DNL Sensei Machine Learning] innehåller en mekanism för datavetare som organiserar och hanterar ML-tjänster (maskininlärning) från algoritmintroduktion, experimenterande och driftsättning. |
 
-Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
+Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](https://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
 
 ## Nästa steg
 
