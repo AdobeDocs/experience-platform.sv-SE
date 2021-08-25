@@ -5,8 +5,7 @@ title: Postman i Adobe Experience Platform
 topic-legacy: api guide
 description: Det här dokumentet innehåller steg som beskriver hur du konfigurerar en Postman-miljö, importerar Postman-samlingar och en lista över tillgängliga samlingar för varje plattformstjänst.
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a0f4e49192a54075ce7c48620c9729e61ecdfdac
 workflow-type: tm+mt
 source-wordcount: '550'
 ht-degree: 0%
@@ -25,7 +24,7 @@ Följande videoguide visar hur du skapar och konfigurerar Postman-miljön. En Po
 
 ## Postman-samlingar {#collections}
 
-En mapp som innehåller alla tillgängliga Postman-samlingar finns på [Experience Platform Postman samples GitHub-databasen](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform). En Postman-samlingslänk kan också hittas i varje enskild swagger-fil i [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
+En mapp som innehåller alla tillgängliga Postman-samlingar finns på [Experience Platform Postman samples GitHub-databasen](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform). En Postman-samlingslänk kan också hittas i varje enskild swagger-fil i [API-referensdokumentationen](https://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
 
 Om du vill hämta en Postman-samling väljer du **[!DNL Raw]** på GitHub-sidan för att läsa in raw-JSON-filen på en ny flik. Högerklicka sedan och välj **[!DNL Save as]** för att spara filen på ett lokalt mål som du väljer.
 
