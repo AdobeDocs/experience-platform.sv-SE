@@ -2,10 +2,10 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 2f9ff95529c907cfc28bc98198eca9fcfc21e9b9
+source-git-commit: 4caab19e1f58fc5cec5a3c56c43e47786d49c3dc
 workflow-type: tm+mt
-source-wordcount: '292'
-ht-degree: 0%
+source-wordcount: '497'
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,19 @@ Det här dataelementet tillhandahåller ett ID för händelsesammanfogning när 
 
 ## Identitetskarta
 
-Med data från identitetskartan kan du skapa identiteter från andra dataelement eller andra värden som du anger. Alla identiteter som du skapar måste vara knutna till ett motsvarande namnutrymme. Det här dataelementet innehåller en listruta som visar alla standardnamnutrymmen och alla som du har skapat.
+Med en identitetskarta kan du skapa identiteter för besökaren på din webbsida. En identitetskarta består av namnutrymmen, som _telefon_ eller _e-post_, där varje namnutrymme innehåller en eller flera identifierare. Om personen på webbplatsen till exempel har angett två telefonnummer bör telefonens namnutrymme innehålla två identifierare.
+
+I [!UICONTROL Identity map]-dataelementet anger du följande information för varje identifierare:
+
+* **[!UICONTROL ID]**: Värdet som identifierar besökaren. Om identifieraren till exempel tillhör namnutrymmet _phone_ kan [!UICONTROL ID] vara _555-555-5555_. Det här värdet härleds vanligtvis från en JavaScript-variabel eller någon annan datadel på sidan, så det är bäst att skapa ett dataelement som refererar till siddata och sedan referera till dataelementet i [!UICONTROL ID]-fältet i [!UICONTROL Identity map]-dataelementet. Om ID-värdet är allt utom en ifylld sträng när du kör på sidan, tas identifieraren automatiskt bort från identitetskartan.
+* **[!UICONTROL Authenticated state]**: En markering som anger om besökaren är autentiserad.
+* **[!UICONTROL Primary]**: En markering som anger om identifieraren ska användas som primär identifierare för den enskilda personen. Om ingen identifierare är markerad som primär kommer ECID att användas som primär identifierare.
+
+Du bör inte ange ett ECID när du skapar en identitetskarta. När du använder SDK genereras ett ECID automatiskt på servern och inkluderas i identitetskartan.
+
+Identitetsmappningens dataelement används ofta tillsammans med datamolementtypen [[!UICONTROL XDM object]](#xdm-object) och åtgärdstypen [[!UICONTROL Set consent]](action-types.md#set-consent).
+
+Läs mer om [Adobe Experience Platform identitetstjänst](https://experienceleague.adobe.com/docs/experience-platform/identity/home.html?lang=sv).
 
 ![](./assets/identity-map-data-element.png)
 
