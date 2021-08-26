@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 26bd2abc998320245091b0917fb6f236ed09b95c
+source-git-commit: 8dceab8cdba1ac6b4a649f0e01b2bbda5f025bef
 workflow-type: tm+mt
-source-wordcount: '2066'
+source-wordcount: '2154'
 ht-degree: 1%
 
 ---
@@ -117,6 +117,15 @@ SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Cus
 Observera att en `SNAPSHOT`-sats fungerar med en tabell eller ett tabellalias men inte ovanpå en underfråga eller vy. En `SNAPSHOT`-sats fungerar var som helst där en `SELECT`-fråga för en tabell kan tillämpas.
 
 Dessutom kan du använda `HEAD` och `TAIL` som särskilda förskjutningsvärden för ögonblicksbildssatser. Om du använder `HEAD` refereras en förskjutning före den första ögonblicksbilden, medan `TAIL` refererar till en förskjutning efter den sista ögonblicksbilden.
+
+>[!NOTE]
+>
+>Om du frågar mellan två ögonblicksbild-ID:n och startögonblicksbilden har gått ut kan följande två scenarier inträffa, beroende på om den valfria reservbeteendeflaggan (`resolve_fallback_snapshot_on_failure`) har ställts in:
+>
+>- Om den valfria reservbeteendeflaggan är inställd väljer frågetjänsten den tidigaste tillgängliga ögonblicksbilden, anger den som startögonblicksbild och returnerar data mellan den tidigaste tillgängliga ögonblicksbilden och den angivna slutögonblicksbilden. Dessa data är **inklusiv** av den tidigaste tillgängliga ögonblicksbilden.
+>
+>- Om den valfria reservbeteendeflaggan inte är inställd returneras ett fel.
+
 
 ### WHERE-sats
 
