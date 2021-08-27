@@ -5,7 +5,7 @@ title: 'Kantsegmentering med API '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: af1eee8787d7fa2ae2d56e541823100d2620dd2d
+source-git-commit: f92b12d343584f33870dd42288977e7b6e446b0f
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 0%
@@ -227,7 +227,7 @@ Ett lyckat svar returnerar detaljerna om den nyligen skapade segmentdefinitionen
     "expression": {
         "type": "PQL",
         "format": "pql/text",
-        "value": "select var1 from xEvent where var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = true"
+        "value": "chain(xEvent, timestamp, [X: WHAT(var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = "true")])"
     },
     "evaluationInfo": {
         "batch": {
