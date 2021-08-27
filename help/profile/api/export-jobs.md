@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
+source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
 workflow-type: tm+mt
-source-wordcount: '1526'
+source-wordcount: '1521'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Real-time Customer Profile] Med kan ni skapa en enda vy över enskilda kunder genom att sammanföra data från flera källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning. Till exempel kan målgruppssegment från [!DNL Profile]-data exporteras för aktivering och profilattribut kan exporteras för rapportering.
 
-Det här dokumentet innehåller stegvisa instruktioner för att skapa och hantera exportjobb med [profil-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml).
+Det här dokumentet innehåller stegvisa instruktioner för att skapa och hantera exportjobb med [profil-API](https://www.adobe.com/go/profile-apis-en).
 
 >[!NOTE]
 >

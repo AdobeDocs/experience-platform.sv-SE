@@ -2,10 +2,10 @@
 audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
-feature: Profiler
-source-git-commit: e56898542bc9cd305173fc2d7f3b6dd53dca7eb2
+feature: Profiles
+source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '133'
 ht-degree: 6%
 
 ---
@@ -49,5 +49,5 @@ ht-degree: 6%
    * [Fler självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [Behandling av sekretessförfrågningar](privacy.md)
 * [[!DNL Profile] felsökningsguide](troubleshooting.md)
-* [API-referens för profil](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)
+* [API-referens för profil](https://www.adobe.com/go/profile-apis-en)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

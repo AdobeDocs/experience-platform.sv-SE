@@ -5,10 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden visar hur du skapar, visar, uppdaterar och tar bort beräknade attribut med kundprofils-API:t i realtid.
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
 workflow-type: tm+mt
-source-wordcount: '2277'
+source-wordcount: '2272'
 ht-degree: 0%
 
 ---
@@ -25,7 +24,7 @@ Om du vill veta mer om beräknade attribut börjar du med att läsa översikten 
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [Kundprofils-API:t för realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml).
+API-slutpunkten som används i den här guiden ingår i [Kundprofils-API:t för realtid](https://www.adobe.com/go/profile-apis-en).
 
 Innan du fortsätter bör du läsa [guiden Komma igång med profil-API](../api/getting-started.md) för att få länkar till rekommenderad dokumentation, en guide till hur du läser de exempel på API-anrop som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa något Experience Platform-API.
 

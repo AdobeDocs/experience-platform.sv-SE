@@ -5,10 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
 workflow-type: tm+mt
-source-wordcount: '1737'
+source-wordcount: '1732'
 ht-degree: 0%
 
 ---
@@ -19,7 +18,7 @@ Med Adobe Experience Platform kan du komma åt [!DNL Real-time Customer Profile]
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Åtkomst till profildata via identitet
 
@@ -771,7 +770,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 
 I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns fler resultatsidor för den här profilen. I följande avsnitt om [hur du får tillgång till ytterligare resultat](#access-additional-results) finns mer information om hur du får tillgång till dessa ytterligare resultat.
 
-### Åtkomst till ytterligare resultat {#access-additional-results}
+### Få tillgång till ytterligare resultat {#access-additional-results}
 
 När tidsseriehändelser hämtas kan det finnas många resultat som returneras, och därför sidnumreras ofta resultaten. Om det finns efterföljande resultatsidor för en viss profil innehåller `_links.next.payload`-värdet för den profilen ett nyttolastobjekt.
 
@@ -889,7 +888,7 @@ Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterfölj
 
 ## Nästa steg
 
-Genom att följa den här vägledningen har du fått åtkomst till [!DNL Real-time Customer Profile] datafält, profiler och tidsseriedata. Mer information om hur du får åtkomst till andra dataresurser som lagras i [!DNL Platform] finns i [Dataåtkomstöversikten](../../data-access/home.md).
+Genom att följa den här guiden har du fått åtkomst till [!DNL Real-time Customer Profile] datafält, profiler och tidsseriedata. Mer information om hur du får åtkomst till andra dataresurser som lagras i [!DNL Platform] finns i [Dataåtkomstöversikten](../../data-access/home.md).
 
 ## Bilaga {#appendix}
 
