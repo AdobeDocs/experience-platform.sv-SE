@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Tillägg till API-handbok för sandlådor
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med sandbox-API:t.
 topic-legacy: developer guide
-source-git-commit: e4067f79e9da106fe2d2a86fa0024c2e5fe5d0ba
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '124'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller ytterligare information om hur du arbetar med AP
 
 ## Använda frågeparametrar {#query}
 
-[[!DNL Sandbox] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) har stöd för användning av frågeparametrar för att sidvisa och filtrera resultat när sandlådor listas.
+[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) har stöd för användning av frågeparametrar för att sidvisa och filtrera resultat när sandlådor listas.
 
 >[!NOTE]
 >

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för sandlådor
 topic-legacy: developer guide
 description: Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön.
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '330'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 API:t [!DNL Sandbox] innehåller flera slutpunkter som gör att du kan hantera alla sandlådor som är tillgängliga för dig i din IMS-organisation programmatiskt. Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunktshandböckerna och i [komma igång-guiden](./getting-started.md) finns viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [[!DNL Sandbox] API-referensen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [[!DNL Sandbox] API-referensen](https://www.adobe.io/experience-platform-apis/references/sandbox).
 
 ## Tillgängliga sandlådor
 

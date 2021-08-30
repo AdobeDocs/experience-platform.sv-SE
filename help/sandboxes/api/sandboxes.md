@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för sandlådehantering
 topic-legacy: developer guide
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
-source-git-commit: 1ec141fa5a13bb4ca6a4ec57f597f38802a92b3f
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '1440'
+source-wordcount: '1436'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [[!DNL Sandbox] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Hämta en lista med sandlådor {#list}
 

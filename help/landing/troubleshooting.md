@@ -7,9 +7,9 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '1735'
+source-wordcount: '1731'
 ht-degree: 1%
 
 ---
@@ -206,4 +206,4 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] Vanliga frågor och felsökningsguide](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] och  [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) |  |
 | [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
-| Sandlådor | [Sandbox-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |
+| Sandlådor | [Sandbox-API](https://www.adobe.io/experience-platform-apis/references/sandbox) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |

@@ -3,11 +3,11 @@ audience: user
 user-guide-title: Sandlådor i hjälpen för Adobe Experience Platform
 breadcrumb-title: Handbok för sandlådor
 user-guide-description: Partitionera en plattformsinstans i virtuella miljöer för utveckling, testning och programdistribution.
-feature: Datahantering
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+feature: Data Management
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '66'
-ht-degree: 4%
+source-wordcount: '60'
+ht-degree: 5%
 
 ---
 
@@ -26,5 +26,5 @@ ht-degree: 4%
    * [Sandlådetyper](api/types.md)
    * [Bilaga](api/appendix.md)
 * [Felsökningsguide](troubleshooting-guide.md)
-* [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)
+* [API-referens](https://www.adobe.io/experience-platform-apis/references/sandbox)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
