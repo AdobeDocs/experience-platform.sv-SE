@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
-source-git-commit: 7c10f39e7452481a00fb4269925c80aab34a7319
+source-git-commit: 99835d0b3d8ab64422be7f878cf556ac8890b123
 workflow-type: tm+mt
-source-wordcount: '1861'
+source-wordcount: '1895'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,12 @@ Välj **[!UICONTROL Export full files]** om du vill utlösa exporten av en fil s
 
    >[!IMPORTANT]
    >
-   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Denna begränsning kommer att åtgärdas i framtida versioner.
 
 1. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
+   >[!TIP]
+   >
+   > För daglig export ställer du in start- och slutdatumet så att det motsvarar kampanjernas längd i era nedströmsplattformar.
 1. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
 
@@ -96,14 +99,17 @@ Välj **[!UICONTROL Export incremental files]** om du vill utlösa en export dä
    * **[!UICONTROL Daily]**: schemalägg inkrementell filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 8 eller 12:e timme.
 
-2. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
+1. Använd **[!UICONTROL Time]**-väljaren för att välja tidpunkten på dagen, i [!DNL UTC]-format, när exporten ska ske.
 
    >[!IMPORTANT]
    >
-   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Detta är en begränsning som kommer att åtgärdas i framtida versioner.
+   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Denna begränsning kommer att åtgärdas i framtida versioner.
 
-3. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
-4. Välj **[!UICONTROL Create]** om du vill spara schemat.
+1. Använd **[!UICONTROL Date]**-väljaren för att välja dag eller intervall när exporten ska ske.
+   >[!TIP]
+   >
+   >Ställ in start- och slutdatum så att det passar kampanjernas längd i era efterföljande plattformar.
+1. Välj **[!UICONTROL Create]** om du vill spara schemat.
 
 ### Konfigurera filnamn {#file-names}
 
