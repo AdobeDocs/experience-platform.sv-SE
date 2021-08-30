@@ -5,44 +5,57 @@ title: Översikt över identitetstjänsten
 topic-legacy: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 288f24351788ed4b8a0c68cffe5eb5c91ed01691
+source-git-commit: 947d8803416cee584b35a8d480929e2684d0057f
 workflow-type: tm+mt
-source-wordcount: '1734'
+source-wordcount: '1807'
 ht-degree: 0%
 
 ---
 
 # [!DNL Identity Service] översikt
 
-För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;. Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
 
-## Förstå [!DNL Identity Service]
+Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+Med [!DNL Identity Service] kan du:
+
+- Se till att era kunder får en enhetlig, personaliserad och relevant upplevelse genom varje interaktion.
+- Sammanfoga flera olika identiteter från olika källor och skapa en heltäckande bild av era kunder.
+- Använd ett identitetsdiagram för att mappa olika identitetsnamnutrymmen, vilket ger en visuell representation av hur kunderna interagerar med ert varumärke i olika kanaler.
+
+## Komma igång
+
+Innan du börjar gå in på detaljerna i [!DNL Identity Service] är det här en kort sammanfattning av nyckeltermerna:
+
+| Term | Definition |
+| --- | --- |
+| Identitet | En identitet är data som är unika för en enhet, vanligtvis en enskild person. En identitet, t.ex. ett inloggnings-ID, ECID eller lojalitets-ID, kallas också för en&quot;känd identitet&quot;. |
+| ECID | Experience Cloud ID (ECID) är ett delat ID-namnutrymme som används i Experience Platform- och Adobe Experience Cloud-program. ECID utgör grunden för kundidentiteten och används som primärt ID för enheter och som basnod för identitetsdiagram. Mer information finns i [ECID-översikt](./ecid.md). |
+| Namnutrymme för identitet | Ett identitetsnamnutrymme används för att skilja på kontexten eller typen för en identitet. En identitet särskiljer till exempel&quot;name<span>@email.com&quot; som en e-postadress eller&quot;443522&quot; som ett numeriskt CRM-ID. Identitetsnamnutrymmen används för att leta upp enskilda identiteter och ange kontext för identitetsvärden. På så sätt kan du bestämma att två [!DNL Profile]-fragment som innehåller olika primära ID:n, men delar samma värde för `email`-identitetens namnutrymme, faktiskt är samma individ. Mer information finns i [översikten över identitetsnamnrymden](./namespaces.md). |
+| Identitetsdiagram | Ett identitetsdiagram är en karta över relationer mellan olika identiteter, som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Mer information finns i självstudiekursen om [användning av identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md). |
+| Personligt identifierbar information (PII) | PII är information som direkt kan identifiera en kund, till exempel en e-postadress eller ett telefonnummer. PII-värden används ofta för att matcha. en kunds olika identiteter i olika system. |
+| Unik identitet | En unik identitet är en identitet som bara finns i en viss sandlåda. |
+| Okända eller anonyma identiteter | Okända eller anonyma identiteter är indikatorer som isolerar enheter utan att identifiera den person som använder enheten. Okända och anonyma identiteter innehåller information som besökarens IP-adress och cookie-ID. Även om okända och anonyma identiteter kan tillhandahålla beteendedata, begränsas de tills en kund levererar sina PII-filer. |
+
+## Vad är [!DNL Identity Service]?
 
 Varje dag interagerar kunderna med ert företag och skapar en ständigt växande relation med ert varumärke. En typisk kund kan vara aktiv i valfritt antal system i organisationens datainfrastruktur, t.ex. e-handel, lojalitet och helpdesk-system. Samma kund kan även engagera anonymt på valfritt antal enheter. [!DNL Identity Service] gör att ni kan sammanställa en komplett bild av kunden och sammanställa relaterade data som annars skulle kunna isoleras mellan olika system.
 
 Ett exempel på hur en konsument kan kommunicera med ert varumärke varje dag:
 
-Mary har ett konto på din e-handelsplats där hon har gjort några beställningar tidigare. Hon använder vanligtvis sin egen bärbara dator för att handla, där hon loggar in varje gång. Men under ett av hennes besök använder hon sin surfplatta för att handla sandaler, men lägger ingen order och loggar inte in.
-
-Nu visas Marys aktivitet som två separata profiler: hennes e-handelsinloggning och hennes surfplatteenhet, kanske identifierad med enhets-ID.
-
-Mary återupptar sin surfplattesession och anger sin e-postadress när han/hon prenumererar på ditt nyhetsbrev. När du gör det läggs en ny identitet till som postdata i profilen. Därför relaterar [!DNL Identity Service] nu Marys aktivitet för surfplattor till hennes historik för e-handelskonton.
-
-Nästa gång du klickar på hennes surfplatta kan målinnehållet återspegla Marys fullständiga profil och historia, i stället för bara en surfplatta som används av en okänd köpare.
-
-Identitetsrelationerna som definieras och upprätthålls av [!DNL Identity Service] utnyttjas av [!DNL Real-time Customer Profile] för att skapa en fullständig bild av en kund och deras interaktioner med ert varumärke. Mer information finns i [Översikt över kundprofilen i realtid](../profile/home.md).
-
-### Identiteter
-
-En identitet är data som är unika för en enhet, vanligtvis en enskild person. En identitet som ett inloggnings-ID, ECID eller lojalitets-ID kallas en känd identitet.
-
-PII, som e-postadress och telefonnummer, används för att identifiera en kund direkt. Resultatet blir att PII-kod används för att matcha en kunds olika identiteter i olika system.
-
-Okända eller anonyma identiteter singlar ut en enhet utan att identifiera den person som använder den. Den här kategorin innehåller information som en besökares IP-adress och cookie-ID. Beteendedata kan samlas in från en enhet med hjälp av okända identiteter, men att koppla dessa identiteter till olika enheter eller medier är begränsat tills kunden tillhandahåller PII under resan.
-
-Som framgår av bilden nedan är både kända och anonyma identiteter viktiga komponenter i [identitetsdiagram](#identity-graphs), som beskrivs senare i det här dokumentet.
+- Mary har ett konto på din e-handelsplats där hon har gjort några beställningar tidigare. Hon använder vanligtvis sin egen bärbara dator för att handla, där hon loggar in varje gång. Men under ett av hennes besök använder hon sin surfplatta för att handla sandaler, men lägger ingen order och loggar inte in.
+- Nu visas Marys aktivitet som två separata profiler:
+   - Hennes e-handelsinloggning
+   - Hennes surfplatta kanske identifieras med enhets-ID
+- Mary återupptar sin surfplattesession och anger sin e-postadress när han/hon prenumererar på ditt nyhetsbrev. När du gör det läggs en ny identitet till som postdata i profilen. Därför relaterar [!DNL Identity Service] nu Marys aktivitet för surfplattor till hennes historik för e-handelskonton.
+- Nästa gång du klickar på hennes surfplatta kan målinnehållet återspegla Marys fullständiga profil och historia, i stället för bara en surfplatta som används av en okänd köpare.
 
 ![Identitetssammanfogning på plattform](./images/identity-service-stitching.png)
+
+Med [!DNL Identity Service] kan ni sammanfoga en fullständig bild av kunden och samla ihop relaterade data som annars skulle kunna vara spridda över olika system. De identitetsrelationer som definieras och upprätthålls av kundprofilen i realtid för att skapa en komplett bild av kunden och deras interaktioner med ert varumärke. [!DNL Identity Service] Mer information finns i [Översikt över kundprofilen i realtid](../profile/home.md).
+
+### Användningsfall
 
 Exempel på [!DNL Identity Service]-implementeringar är:
 
@@ -51,38 +64,22 @@ Exempel på [!DNL Identity Service]-implementeringar är:
 - En bank kan föredra&quot;kontonummer&quot; i offlinedatauppsättningar, t.ex. filialtransaktioner. De kan vara beroende av&quot;inloggnings-ID&quot; i onlinedatauppsättningar, eftersom de flesta besökare autentiseras under besöket.
 - Dina kunder kan också ha unika egna ID:n, som GUID eller andra universellt unika ID:n.
 
-### Identitetsdata
+## Identitetsnamnutrymmen
 
 Om du frågade en person&quot;Vad är ditt ID?&quot; utan vidare sammanhang skulle det vara svårt för dem att ge ett användbart svar. Med samma logik är ett strängvärde som representerar ett identitetsvärde, oavsett om det är ett systemgenererat ID eller en e-postadress, endast fullständigt när det levereras med en kvalificerare som ger strängvärdeskontexten: identitetsnamnutrymmet.
 
-## Identitetsnamnutrymmen och identitetsdiagram
 
-Era kunder kan interagera med ert varumärke genom en kombination av online- och offlinekanaler, vilket kan leda till en utmaning i att förena dessa fragmenterade interaktioner med en enda kundidentitet.
+Era kunder kan interagera med ert varumärke genom en kombination av online- och offlinekanaler, vilket kan vara en utmaning när det gäller att kombinera dessa fragmenterade interaktioner med en enda kundidentitet.
 
-[!DNL Experience Platform] löser detta problem på två sätt:  [identitetsnamnutrymmen ](#identity-namespaces) och  [identitetsdiagram](#identity-graphs).
+Förståelse för kunden i flera olika enheter och kanaler börjar med att känna igen dem i varje kanal. Plattformen uppnår detta genom att använda ID-namnutrymmen. Ett identitetsnamnutrymme är en identifierare, till exempel E-post eller Telefon, som används för att skapa ytterligare kontext för kundidentiteter. Identitetsnamnutrymmen används för att söka efter eller länka enskilda identiteter och ange kontext för identitetsvärden. Mer information finns i [översikten över identitetsnamnrymden](./namespaces.md).
 
-Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram. I följande video visas de tre funktionerna i Identity Collection, Identity Graphs och API:erna. Här beskrivs också hur deterministiska och sannolikhetsalgoritmer används för att konstruera privata identitetsdiagram och beskriver rollen för privata identitetsdiagram, Adobe Experience Platform Identity Service Co-Op Graph och tredjepartsdiagram.
+## Identitetsdiagram
+
+Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Mer information finns i självstudiekursen om [användning av identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md).
+
+Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram. Det täcker de tre funktionerna för identitetssamling, identitetsdiagram och API. Här beskrivs också hur deterministiska och sannolikhetsalgoritmer används för att skapa privata identitetsdiagram, och deras roll behandlas tillsammans med tredjepartsdiagram och Adobe Experience Platform Identity Service Co-Op Graph.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
-
-### Identitetsnamnutrymmen
-
-När kunden interagerar med ert varumärke i flera kanaler, inklusive webben, mobilappar, callcenter eller en butik, kan det vara svårt att förstå och serva dem om ni inte kan observera och spåra deras aktivitet i alla kanaler.
-
-Förståelse för kunden i flera olika enheter och kanaler börjar med att känna igen dem i varje kanal. Adobe Experience Platform uppnår detta genom att använda ID-namnutrymmen.
-Ett identitetsnamnutrymme är en identifierare, t.ex. enhets-ID eller e-post-ID, som används för att ange från vilket sammanhang data kommer. Identitetsnamnutrymmen används för att söka efter eller länka enskilda identiteter och för att tillhandahålla kontext för identitetsvärden för att förhindra datakonflikter. ID:t&quot;123456&quot; kan till exempel avse en person i ditt eCommerce-system och en annan person i ditt helpdesk-system. Mer information finns i [översikten över identitetsnamnrymden](./namespaces.md).
-
-### Identitetsdiagram
-
-Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen, som ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
-
-Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av [!DNL Identity Service] i nära realtid som svar på kundaktivitet.
-
-[!DNL Identity Service] hanterar ett identitetsdiagram som bara är synligt för din organisation och som bygger på dina data, kallas för det privata diagrammet. [!DNL Identity Service] förbättrar det privata diagrammet när en inkapslad datapost innehåller mer än en identitet, vilket lägger till en relation mellan de identifierade identiteterna.
-
-Som ett exempel på möjliga typer av faktorer som du bör tänka på när du anger och etiketterar identitetsdata, kan användning av telefonnummer som &quot;arbetstelefon&quot; resultera i fler relationer än du tänkt dig i identitetsdiagrammet. Det kan finnas många anställda som hänvisar till samma nummer för arbetet, och att&quot;hem&quot; och&quot;mobil&quot; fungerar bättre för att hålla relationerna så exakta som möjligt.
-
-Mer information finns i självstudiekursen om [åtkomst till identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md)
 
 ## Identitetsdata skickas till [!DNL Identity Service]
 
@@ -98,7 +95,7 @@ Beroende på er strategi för insamling av företagsdata avgör de datafält som
 
 ### Skapa ytterligare identitetsnamnutrymmen
 
-[!DNL Experience Platform] har en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter korrekt. Mer information finns i avsnittet [visa och skapa namnutrymmen för din organisation](./namespaces.md) i översikten över namnutrymmet identity.
+Experience Platform har en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter ordentligt. Mer information finns i avsnittet [visa och skapa namnutrymmen för din organisation](./namespaces.md) i översikten över namnutrymmet identity.
 
 >[!NOTE]
 >
@@ -106,7 +103,7 @@ Beroende på er strategi för insamling av företagsdata avgör de datafält som
 
 ### Inkludera identitetsdata i [!DNL Experience Data Model] (XDM)
 
-Som det standardiserade ramverket som [!DNL Platform] organiserar kunddata med, tillåter [!DNL Experience Data Model] (XDM) att data delas och tolkas över [!DNL Experience Platform] och andra tjänster som interagerar med [!DNL Platform]. Mer information finns i [XDM-systemöversikt](../xdm/home.md).
+Som det standardiserade ramverket som [!DNL Platform] organiserar kunddata med, tillåter [!DNL Experience Data Model] (XDM) att data delas och tolkas mellan Experience Platform och andra tjänster som interagerar med [!DNL Platform]. Mer information finns i [XDM-systemöversikt](../xdm/home.md).
 
 Både schema för inspelnings- och tidsserier ger möjlighet att inkludera identitetsdata. När data importeras skapar identitetsdiagrammet nya relationer mellan datafragment från olika namnutrymmen om de visar sig dela gemensamma identitetsdata.
 
@@ -131,7 +128,7 @@ Under direktuppspelningsprocessen hämtar [!DNL Identity Service ]automatiskt id
 
 ### Infoga data till [!DNL Identity Service]
 
-[!DNL Identity Service] förbrukar XDM-kompatibla data som skickas till  [!DNL Experience Platform] antingen via  [batchinmatning ](../ingestion/batch-ingestion/overview.md) eller  [direktuppspelning](../ingestion/streaming-ingestion/overview.md).
+[!DNL Identity Service] förbrukar XDM-kompatibla data som skickas till Experience Platform antingen via  [batchinmatning ](../ingestion/batch-ingestion/overview.md) eller  [direktuppspelning](../ingestion/streaming-ingestion/overview.md).
 
 Följande video är avsedd att ge stöd för din förståelse av identitetstjänsten. I den här videon visas hur du kan märka datafält som identiteter, importera identitetsdata och sedan verifiera att data har skickats till Adobe Experience Platform Identity Service Private Graph.
 
@@ -147,4 +144,4 @@ Adobe Experience Platform har byggts med sekretess i åtanke och innehåller ett
 
 ## Nästa steg
 
-Nu när du förstår de viktigaste begreppen i [!DNL Identity Service] och dess roll i [!DNL Experience Platform] kan du börja lära dig hur du arbetar med identitetsdiagrammet med [[!DNL Identity Service API]](./api/getting-started.md).
+Nu när du förstår de viktigaste begreppen för [!DNL Identity Service] och dess roll i Experience Platform kan du börja lära dig hur du arbetar med identitetsdiagrammet med [[!DNL Identity Service API]](./api/getting-started.md).
