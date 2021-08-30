@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1582'
 ht-degree: 0%
 
 ---
@@ -145,7 +145,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns. Detta mål-XDM-schema utökar även klassen XDM [!DNL Individual Profile].
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API:t för schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API:t för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 **API-format**
 

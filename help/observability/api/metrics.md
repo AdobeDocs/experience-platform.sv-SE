@@ -5,10 +5,9 @@ title: API-slutpunkt för mått
 topic-legacy: developer guide
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2050'
 ht-degree: 1%
 
 ---
@@ -19,7 +18,7 @@ Mätvärden för observerbarhet ger insikt i användningsstatistik, historiska t
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [[!DNL Observability Insights] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Observability Insights] API](https://www.adobe.io/experience-platform-apis/references/observability-insights/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Hämta mätvärden för observerbarhet
 

@@ -6,17 +6,16 @@ topic-legacy: policies
 type: Tutorial
 description: Med API:t för principtjänsten kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter. Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en profil med hjälp av API:t för principtjänsten.
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
 
 # Skapa en dataanvändningsprincip i API:t
 
-Med [API:t för principtjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
+Med [API:t för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
 
 I det här dokumentet finns en stegvis självstudiekurs för att skapa en profil med hjälp av API:t [!DNL Policy Service]. En mer utförlig guide till de olika åtgärder som är tillgängliga i API:t finns i [Utvecklarhandbok för principtjänst](../api/getting-started.md).
 
@@ -420,6 +419,6 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och information om den uppdatera
 
 Genom att följa den här självstudiekursen har du skapat en dataanvändningspolicy för en marknadsföringsåtgärd. Nu kan du fortsätta med självstudiekursen om [hur du tillämpar dataanvändningsprinciper](../enforcement/api-enforcement.md) för att lära dig hur du söker efter policyöverträdelser och hanterar dem i ditt upplevelseprogram.
 
-Mer information om olika tillgängliga åtgärder i API:t [!DNL Policy Service] finns i [Utvecklarhandboken för principtjänsten](../api/getting-started.md). Mer information om hur du tillämpar principer för [!DNL Real-time Customer Profile]-data finns i självstudiekursen [framtvingar efterlevnad av dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).
+Mer information om de olika tillgängliga åtgärderna i [!DNL Policy Service] API:t finns i [Utvecklarhandboken för principtjänsten](../api/getting-started.md). Mer information om hur du tillämpar principer för [!DNL Real-time Customer Profile]-data finns i självstudiekursen [framtvingar efterlevnad av dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).
 
 Mer information om hur du hanterar användarprofiler i [!DNL Experience Platform]-användargränssnittet finns i [användarhandboken för profilen](user-guide.md).

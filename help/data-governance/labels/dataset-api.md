@@ -5,17 +5,16 @@ title: 'Hantera dataanvändningsetiketter för datauppsättningar med API:er '
 topic-legacy: developer guide
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 937225ff08e2e02c5840f86d6ed50644e05bdfe5
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '957'
 ht-degree: 0%
 
 ---
 
 # Hantera dataanvändningsetiketter för datauppsättningar med API:er
 
-Med [[!DNL Dataset Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) kan du använda och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men skiljer sig från [!DNL Catalog Service]-API:t som hanterar datauppsättningsmetadata.
+Med [[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/) kan du använda och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men skiljer sig från [!DNL Catalog Service]-API:t som hanterar datauppsättningsmetadata.
 
 Det här dokumentet beskriver hur du hanterar etiketter för datauppsättningar och fält med [!DNL Dataset Service API]. Anvisningar om hur du hanterar etiketter för dataanvändning i sig med API-anrop finns i [etikettens slutpunktshandbok](../api/labels.md) för [!DNL Policy Service API].
 
@@ -200,7 +199,7 @@ Mer information om hur du hanterar datauppsättningar i [!DNL Experience Platfor
 
 Följande avsnitt innehåller ytterligare information om hur du arbetar med etiketter med hjälp av API:t för datauppsättningstjänsten.
 
-### [!DNL If-Match] header  {#if-match}
+### [!DNL If-Match] header {#if-match}
 
 När du gör API-anrop som uppdaterar de befintliga etiketterna för en datauppsättning (PUT och DELETE) måste ett `If-Match`-huvud som anger den aktuella versionen av datauppsättningsetiketten i datauppsättningstjänsten inkluderas. För att förhindra datakonflikter uppdaterar tjänsten bara datauppsättningsentiteten om den inkluderade `If-Match`-strängen matchar den senaste versionstaggen som genererats av systemet för den datauppsättningen.
 

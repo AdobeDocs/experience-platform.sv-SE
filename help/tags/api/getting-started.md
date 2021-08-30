@@ -1,16 +1,16 @@
 ---
 title: Komma igång med Reactor API
 description: Lär dig hur du kommer igång med Reaktors-API, inklusive steg för att generera nödvändiga inloggningsuppgifter.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1064'
+source-wordcount: '1060'
 ht-degree: 0%
 
 ---
 
 # Komma igång med Reactor API
 
-För att kunna använda [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml) måste varje begäran innehålla följande autentiseringsrubriker:
+För att kunna använda [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/) måste varje begäran innehålla följande autentiseringsrubriker:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`

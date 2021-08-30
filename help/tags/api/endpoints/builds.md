@@ -1,9 +1,9 @@
 ---
 title: Skapar slutpunkt
 description: Lär dig hur du anropar slutpunkten /builds i Reactor API.
-source-git-commit: 59592154eeb8592fa171b5488ecb0385e0e59f39
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '833'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Mer allmän information om byggen och hur de passar in i publiceringsflödet fö
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 ## Hämta en lista med byggen {#list}
 

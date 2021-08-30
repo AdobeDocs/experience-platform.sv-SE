@@ -5,10 +5,9 @@ title: Översikt över Privacy Service
 topic-legacy: overview
 description: Med Privacy Service kan ni underlätta automatiserad efterlevnad av juridiska sekretessbestämmelser i dataåtgärder från Experience Cloud.
 exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1386'
 ht-degree: 0%
 
 ---
@@ -38,7 +37,7 @@ Dessa beslut kan sammanfattas i följande frågor:
 
 Avsnitten nedan innehåller allmän vägledning om dessa viktiga nödvändiga steg och länkar till ytterligare [!DNL Privacy Service]-dokumentation för mer information.
 
-### Bestäm din organisations sekretesskrav {#requirements}
+### Ange organisationens sekretesskrav {#requirements}
 
 Beroende på vilken typ av verksamhet ni bedriver och vilka jurisdiktioner ni bedriver under, kan det bero på att era uppgifter omfattas av lagenliga sekretessbestämmelser. Dessa bestämmelser ger ofta kunderna rätt att begära åtkomst till de uppgifter ni samlar in från dem och rätt att begära att lagrade uppgifter tas bort. Dessa kundförfrågningar om deras personuppgifter kallas för&quot;sekretessförfrågningar&quot; i hela dokumentationen.
 
@@ -72,9 +71,9 @@ När du har fastställt ditt företags sekretessbehov och bestämt vilka identit
 >
 >Det är också viktigt att notera att sekretessförfrågningar behandlas asynkront mellan olika Experience Cloud-program. När en begäran har tagits emot av Privacy Servicen kan det ta en stund mellan minuter och veckor innan den kan slutföras. Den tid det tar att slutföra varje begäran är specifik för programmet du arbetar med och den mängd data som behöver behandlas.
 
-#### Använda API
+#### Använda API:et
 
-[[!DNL Privacy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) ger flera slutpunkter för att skapa och hantera sekretessjobb med RESTful API-anrop, vilket gör att du kan programmässigt hantera kompatibiliteten för dina [!DNL Experience Cloud]-program. Detaljerade anvisningar om hur du använder API:t finns i [utvecklarhandboken för Privacy Service-API](api/getting-started.md).
+[[!DNL Privacy Service API]](https://www.adobe.io/experience-platform-apis/references/privacy-service/) ger flera slutpunkter för att skapa och hantera sekretessjobb med RESTful API-anrop, vilket gör att du kan programmässigt hantera kompatibiliteten för dina [!DNL Experience Cloud]-program. Detaljerade anvisningar om hur du använder API:t finns i [utvecklarhandboken för Privacy Service-API](api/getting-started.md).
 
 #### Använda gränssnittet
 

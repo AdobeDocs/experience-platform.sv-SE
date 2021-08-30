@@ -5,10 +5,9 @@ title: API-slutpunkt för principer
 topic-legacy: developer guide
 description: Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1813'
 ht-degree: 0%
 
 ---
@@ -19,9 +18,9 @@ Dataanvändningsprinciper är regler som beskriver den typ av marknadsföringså
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [[!DNL Policy Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
-## Hämta en lista med principer {#list}
+## Hämta en lista med profiler {#list}
 
 Du kan lista alla `core`- eller `custom`-principer genom att göra en GET-begäran till `/policies/core` respektive `/policies/custom`.
 
@@ -147,7 +146,7 @@ Ett lyckat svar innehåller en `children`-matris som listar informationen för v
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
 | `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som en princips associerade marknadsföringsåtgärd är begränsad från att utföras på. Mer information om den här egenskapen finns i avsnittet [skapa en princip](#create-policy). |
 
-## Slå upp en princip {#look-up}
+## Söka efter en princip {#look-up}
 
 Du kan söka efter en specifik princip genom att ta med den principens `id`-egenskap i sökvägen till en GET-begäran.
 
@@ -228,7 +227,7 @@ Ett lyckat svar returnerar information om principen.
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
 | `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Mer information om den här egenskapen finns i avsnittet [skapa en princip](#create-policy). |
 
-## Skapa en anpassad princip {#create-policy}
+## Skapa en anpassad profil {#create-policy}
 
 I API:t [!DNL Policy Service] definieras en princip av följande:
 
@@ -658,7 +657,7 @@ Ett lyckat svar returnerar listan med aktiverade kärnprinciper under en `policy
 }
 ```
 
-## Uppdatera listan med aktiverade kärnprinciper {#update-enabled-core}
+## Uppdatera listan över aktiverade kärnprinciper {#update-enabled-core}
 
 Som standard deltar endast aktiverade dataanvändningsprinciper i utvärderingen. Genom att göra en PUT-begäran till `/enabledCorePolicies`-slutpunkten kan du uppdatera listan över aktiverade kärnprinciper för din organisation med ett enda anrop.
 

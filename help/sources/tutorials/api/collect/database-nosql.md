@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en databas och hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1645'
+source-wordcount: '1641'
 ht-degree: 0%
 
 ---
@@ -147,7 +147,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att källdata ska kunna användas i Platform måste ett mål-XDM-schema skapas för att strukturera källdata efter dina behov. Mål-XDM-schemat används sedan för att skapa en plattformsdatauppsättning där källdata finns. Detta mål-XDM-schema utökar även klassen [!DNL XDM Individual Profile].
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API:t för schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API:t för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 **API-format**
 

@@ -6,9 +6,9 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1369'
+source-wordcount: '1365'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Möjligheten att förstå relationen mellan era kunder och deras interaktioner m
 
 Schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile], men detta gäller endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
-Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med [[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 ## Komma igång
 
@@ -342,7 +342,7 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu inne
 }
 ```
 
-## Skapa en referensidentitetsbeskrivning {#reference-identity}
+## Skapa en beskrivning av en referensidentitet {#reference-identity}
 
 Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel`-fältet i [!DNL Loyalty Members] refererar till `hotelId`-fältet i [!DNL Hotels] måste `hotelId` ges en referensidentitetsbeskrivning.
 

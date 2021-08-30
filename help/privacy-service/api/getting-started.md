@@ -5,10 +5,9 @@ title: API-handbok för Privacy Service
 description: Med Privacy Services-API:t kan utvecklare skapa och hantera kundförfrågningar för att få tillgång till eller ta bort sina personuppgifter mellan Experience Cloud-program, i enlighet med juridiska sekretessbestämmelser. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 topic-legacy: developer guide
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-translation-type: tm+mt
-source-git-commit: e226990fc84926587308077b32b128bfe334e812
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Privacy Service] har ett RESTful API och användargränssnitt som gör att du kan hantera (komma åt och ta bort) personuppgifter för dina registrerade (kunder) i alla Adobe Experience Cloud-program. [!DNL Privacy Service] har också en central mekanism för granskning och loggning som gör att du kan komma åt status och resultat för jobb som innefattar  [!DNL Experience Cloud] program.
 
-Den här guiden beskriver hur du använder API:t [!DNL Privacy Service]. Mer information om hur du använder användargränssnittet finns i översikten [Privacy Servicens användargränssnitt](../ui/overview.md). En fullständig lista över alla tillgängliga slutpunkter i [!DNL Privacy Service] API finns i [API-referensen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml).
+Den här guiden beskriver hur du använder API:t [!DNL Privacy Service]. Mer information om hur du använder användargränssnittet finns i översikten [Privacy Servicens användargränssnitt](../ui/overview.md). En fullständig lista över alla tillgängliga slutpunkter i [!DNL Privacy Service] API finns i [API-referensen](https://www.adobe.io/experience-platform-apis/references/privacy-service/).
 
 ## Komma igång {#getting-started}
 

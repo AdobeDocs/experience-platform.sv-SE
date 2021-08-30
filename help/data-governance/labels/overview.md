@@ -5,10 +5,9 @@ title: Översikt över dataanvändningsetiketter
 topic-legacy: labels
 description: Med Adobe Experience Platform Data Governance kan ni använda dataanvändningsetiketter på datauppsättningar och fält och kategorisera varje dataanvändning enligt relaterade policyer för dataanvändning. Det här dokumentet innehåller en översikt över dataanvändningsetiketter i Experience Platform.
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 937225ff08e2e02c5840f86d6ed50644e05bdfe5
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
@@ -53,9 +52,9 @@ Med arbetsytan **[!UICONTROL Policies]** i gränssnittet för [!DNL Experience P
 
 ### Använda API:er
 
-Med `/labels`-slutpunkten i [API:t för principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du programmässigt hantera dataanvändningsetiketter, inklusive att skapa anpassade etiketter. Mer information finns i [etikettens slutpunktshandbok](../api/labels.md).
+Med `/labels`-slutpunkten i [API:t för principtjänsten](https://www.adobe.io/experience-platform-apis/references/policy-service/) kan du programmässigt hantera dataanvändningsetiketter, inklusive att skapa anpassade etiketter. Mer information finns i [etikettens slutpunktshandbok](../api/labels.md).
 
-[API:t för datauppsättningstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) används för att hantera etiketter för datauppsättningar och fält. Mer information finns i guiden [Hantera datauppsättningsrubriker](./dataset-api.md).
+[API:t för datauppsättningstjänsten](https://www.adobe.io/experience-platform-apis/references/dataset-service/) används för att hantera etiketter för datauppsättningar och fält. Mer information finns i guiden [Hantera datauppsättningsrubriker](./dataset-api.md).
 
 ## Nästa steg
 

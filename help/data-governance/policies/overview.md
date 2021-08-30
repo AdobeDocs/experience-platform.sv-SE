@@ -5,9 +5,9 @@ title: Översikt över dataanvändningsprinciper
 topic-legacy: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 4aeb12aec026ab2dc29133dd44e54b453fb71fe3
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1077'
+source-wordcount: '1073'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en
 >
 >Marknadsföringsåtgärder begränsar inte användningen av data. De måste inkluderas i aktiverade dataanvändningspolicyer för att dessa åtgärder ska kunna utvärderas för policyöverträdelser.
 
-När dataanvändningen sker i er organisations tjänst bör relevanta marknadsföringsåtgärder anges så att eventuella policyöverträdelser kan identifieras. Du kan sedan använda [API:t för principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att kontrollera om integreringen har brutit mot principer.
+När dataanvändningen sker i er organisations tjänst bör relevanta marknadsföringsåtgärder anges så att eventuella policyöverträdelser kan identifieras. Du kan sedan använda [API:t för principtjänsten](https://www.adobe.io/experience-platform-apis/references/policy-service/) för att kontrollera om integreringen har brutit mot principer.
 
 >[!NOTE]
 >

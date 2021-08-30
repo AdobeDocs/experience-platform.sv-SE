@@ -1,9 +1,9 @@
 ---
 title: Bibliotekets slutpunkt
 description: Lär dig hur du anropar slutpunkten /libraries i Reactor API.
-source-git-commit: 53612919dc040a8a3ad35a3c5c0991554ffbea7c
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1588'
+source-wordcount: '1584'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ Ett bibliotek tillhör exakt en egenskap. En egenskap kan ha många bibliotek.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 Innan du arbetar med bibliotek i Reaktors-API:t är det viktigt att du förstår vilka roller bibliotekstillstånd och -miljöer spelar när du ska avgöra vilka åtgärder du kan utföra i ett visst bibliotek. Mer information finns i guiden om [bibliotekets publiceringsflöde](../../ui/publishing/publishing-flow.md).
 

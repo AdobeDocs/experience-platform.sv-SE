@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1358'
 ht-degree: 0%
 
 ---
@@ -189,7 +188,7 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 >
 > I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa principer](../../data-governance/policies/create.md) innan du fortsätter med det här steget.
 
-När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [API:t för principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns brott mot dataanvändningspolicyn.
+När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [API:t för principtjänsten](https://www.adobe.io/experience-platform-apis/references/policy-service/) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns brott mot dataanvändningspolicyn.
 
 Om du vill utvärdera datauppsättningarna måste du ange namnet på marknadsföringsåtgärden i sökvägen till en begäran om POST, samtidigt som du anger datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
 

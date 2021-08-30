@@ -5,9 +5,9 @@ title: Utveckla ETL-integreringar för Adobe Experience Platform
 topic-legacy: overview
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '4083'
+source-wordcount: '4075'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Integreringsguiden för ETL visar allmänna steg för att skapa säkra anslutnin
 - [[!DNL Data Access]](https://www.adobe.io/experience-platform-apis/references/data-access/)
 - [[!DNL Data Ingestion]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
 - [Autentisering och auktorisering för Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en)
-- [[!DNL Schema Registry]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
+- [[!DNL Schema Registry]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 
 Den här handboken innehåller även exempel på API-anrop som ska användas när du utformar en ETL-koppling, med länkar till dokumentation som beskriver varje [!DNL Experience Platform]-tjänst och användningen av dess API, i detalj.
 
@@ -257,7 +257,7 @@ Ungefär som i stegen för att [visa datauppsättningsschema](#view-dataset-sche
 
 >[!NOTE]
 >
->När schemafältet är tomt eller helt frånvarande bör kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [Schema Registry](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) som i föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
+>När schemafältet är tomt eller helt frånvarande bör kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [Schema Registry](https://www.adobe.io/experience-platform-apis/references/schema-registry/) som i föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
 
 ### Egenskapen &quot;observerableSchema&quot;
 

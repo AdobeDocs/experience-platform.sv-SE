@@ -5,10 +5,9 @@ title: API-slutpunkter för principutvärdering
 topic-legacy: developer guide
 description: När marknadsföringsåtgärder har skapats och principer har definierats kan du använda API:t för principtjänsten för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1544'
+source-wordcount: '1540'
 ht-degree: 0%
 
 ---
@@ -27,9 +26,9 @@ Begäran om utvärdering kan göras på ett av tre sätt:
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden är en del av [[!DNL Policy Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkterna som används i den här guiden är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
-## Utvärdera principfel med hjälp av dataanvändningsetiketter {#labels}
+## Utvärdera för policyöverträdelser med hjälp av dataanvändningsetiketter {#labels}
 
 Du kan utvärdera om det finns principfel baserat på om det finns en viss uppsättning dataanvändningsetiketter genom att använda frågeparametern `duleLabels` i en GET-begäran.
 
@@ -122,7 +121,7 @@ Ett lyckat svar innehåller en `violatedPolicies`-array, som innehåller informa
 }
 ```
 
-## Utvärdera för principfel med hjälp av datauppsättningar {#datasets}
+## Utvärdera för policyöverträdelser med datauppsättningar {#datasets}
 
 Du kan utvärdera om det finns principfel baserat på en uppsättning med en eller flera datauppsättningar från vilka dataanvändningsetiketter kan samlas in. Detta görs genom att utföra en begäran om POST till `/constraints`-slutpunkten för en viss marknadsföringsåtgärd och tillhandahålla en lista med datauppsättnings-ID:n i begärandetexten.
 
@@ -348,7 +347,7 @@ Ett lyckat svar innehåller en `violatedPolicies`-array, som innehåller informa
 | `duleLabels` | Svarsobjektet innehåller en `duleLabels`-array som innehåller en konsoliderad lista över alla etiketter som hittats i de angivna datauppsättningarna. Den här listan innehåller datauppsättnings- och fältnivåetiketter för alla fält i datauppsättningen. |
 | `discoveredLabels` | Svaret innehåller också en `discoveredLabels`-array som innehåller objekt för varje datamängd, och som visar `datasetLabels` uppdelat i etiketter på datamängd- och fältnivå. Varje etikett på fältnivå visar sökvägen till det specifika fältet med den etiketten. |
 
-## Utvärdera principfel med hjälp av specifika datamängdsfält {#fields}
+## Utvärdera för policyöverträdelser med hjälp av specifika datauppsättningsfält {#fields}
 
 Du kan utvärdera om det finns principfel som baseras på en delmängd av fält i en eller flera datauppsättningar, så att endast de dataanvändningsetiketter som används för dessa fält utvärderas.
 
@@ -523,7 +522,7 @@ Om du jämför exempelsvaret nedan med [svaret som endast omfattar datamängder]
 }
 ```
 
-## Utvärdera principer i grupp {#bulk}
+## Utvärdera policyer i grupp {#bulk}
 
 Med slutpunkten `/bulk-eval` kan du köra flera utvärderingsjobb i ett enda API-anrop.
 

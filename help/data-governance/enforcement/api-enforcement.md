@@ -6,17 +6,16 @@ topic-legacy: guide
 type: Tutorial
 description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 exl-id: 093db807-c49d-4086-a676-1426426b43fd
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1002'
 ht-degree: 0%
 
 ---
 
 # Använd dataanvändningsprinciper med hjälp av API:t [!DNL Policy Service]
 
-När du har skapat dataanvändningsetiketter för dina data och har skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
+När du har skapat dataanvändningsetiketter för dina data och har skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 
 >[!NOTE]
 >

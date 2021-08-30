@@ -6,9 +6,9 @@ description: Under särskilda omständigheter kan det vara nödvändigt att skap
 topic-legacy: tutorial
 type: Tutorial
 exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '828'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Under särskilda omständigheter kan det vara nödvändigt att skapa ett [!DNL Experience Data Model]-schema (XDM) med fält som bara namnges av en enda datauppsättning. Detta kallas för ett ad hoc-schema. Ad hoc-scheman används i olika arbetsflöden för dataöverföring för [!DNL Experience Platform], inklusive inhämtning av CSV-filer och skapande av vissa typer av källanslutningar.
 
-Det här dokumentet innehåller allmänna steg för att skapa ett ad hoc-schema med hjälp av [API för schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Den är avsedd att användas tillsammans med andra [!DNL Experience Platform]-självstudiekurser som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Var och en av dessa dokument innehåller detaljerad information om hur man konfigurerar ett ad hoc-schema för sitt specifika användningsfall.
+Det här dokumentet innehåller allmänna steg för att skapa ett ad hoc-schema med hjälp av [API för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Den är avsedd att användas tillsammans med andra [!DNL Experience Platform]-självstudiekurser som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Var och en av dessa dokument innehåller detaljerad information om hur man konfigurerar ett ad hoc-schema för sitt specifika användningsfall.
 
 ## Komma igång
 

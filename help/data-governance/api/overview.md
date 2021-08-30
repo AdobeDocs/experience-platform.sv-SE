@@ -5,10 +5,9 @@ title: API-guide för principtjänst
 topic-legacy: developer guide
 description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -19,7 +18,7 @@ Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och
 
 API:t [!DNL Policy Service] innehåller flera slutpunkter som gör att du kan hantera etiketter och policyer för dataanvändning programmatiskt samt utvärdera marknadsföringsåtgärder för policyöverträdelser. Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunktshandböckerna och i [komma igång-guiden](./getting-started.md) finns viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [[!DNL Policy Service] API-växlaren](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [[!DNL Policy Service] API-växlaren](https://www.adobe.io/experience-platform-apis/references/policy-service/).
 
 ## Etiketter
 

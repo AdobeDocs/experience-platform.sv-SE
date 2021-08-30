@@ -1,9 +1,9 @@
 ---
 title: Slutpunkt för tilläggspaket
 description: Lär dig hur du anropar slutpunkten /extension_packages i Reactor API.
-source-git-commit: 53612919dc040a8a3ad35a3c5c0991554ffbea7c
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '951'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Ett tilläggspaket tillhör [företaget](./companies.md) för den utvecklare som
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
 
 Förutom att förstå hur du anropar Reactor API är det också viktigt att du förstår hur attributen `status` och `availability` för ett tilläggspaket påverkar vilka åtgärder du kan utföra på det. Dessa förklaras i avsnitten nedan.
 

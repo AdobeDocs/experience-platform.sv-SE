@@ -5,10 +5,9 @@ title: API-slutpunkt för etiketter
 topic-legacy: developer guide
 description: Lär dig hur du hanterar dataanvändningsetiketter i Experience Platform med hjälp av API:t för principtjänsten.
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '506'
 ht-degree: 1%
 
 ---
@@ -23,7 +22,7 @@ Med etiketter för dataanvändning kan du kategorisera data enligt de användarp
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Hämta en lista med etiketter {#list}
 

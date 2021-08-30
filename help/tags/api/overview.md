@@ -1,9 +1,9 @@
 ---
 title: API-guide för reaktor
 description: Med Reactor API kan utvecklare programmässigt hantera alla resurser för taggar i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1039'
+source-wordcount: '1035'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ Reaktors-API:t innehåller flera slutpunkter som gör att du kan hantera alla re
 
 Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunktshandböckerna och i [komma igång-guiden](./getting-started.md) finns viktig information om hur du autentiserar till API:t.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [API-referens för reaktorn](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [API-referens för reaktorn](https://www.adobe.io/experience-platform-apis/references/reactor/).
 
 ## Företag
 
