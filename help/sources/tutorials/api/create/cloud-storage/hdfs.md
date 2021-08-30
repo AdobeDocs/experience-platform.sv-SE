@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter ett Apache Hadoop Distributed File System till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 04fa65db-073c-48e1-b981-425185ae08aa
-source-git-commit: 59a8e2aa86508e53f181ac796f7c03f9fcd76158
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '461'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Apache Hadoop Distributed File System] (kallas nedan &quot;[!DNL HDFS]&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Apache Hadoop Distributed File System] (kallas nedan &quot;[!DNL HDFS]&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

@@ -6,10 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för ett konto med API:t för Flow Service.
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '683'
 ht-degree: 1%
 
 ---
@@ -18,7 +17,7 @@ ht-degree: 1%
 
 Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
-I den här självstudiekursen beskrivs stegen för att uppdatera information och autentiseringsuppgifter för en anslutning med [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för att uppdatera information och autentiseringsuppgifter för en anslutning med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

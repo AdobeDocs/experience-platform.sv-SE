@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en ServiceNow-server med API:t för Flow Service.
 exl-id: 39d0e628-5c07-4371-a5af-ac06385db891
-source-git-commit: ff0f6bc6b8a57b678b329fe2b47c53919e0e2d64
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '474'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Google ServiceNow] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Google ServiceNow] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

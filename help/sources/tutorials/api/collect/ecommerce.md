@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1507'
 ht-degree: 0%
 
 ---
 
 # Samla in e-handelsdata med hjälp av källkopplingar och API:er
 
-I den här självstudiekursen beskrivs stegen för att hämta data från ett **[!UICONTROL eCommerce]**-system från en tredje part och hämta dem till [!DNL Platform] via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för att hämta data från ett **[!UICONTROL eCommerce]**-system från en tredje part och hämta dem till [!DNL Platform] via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

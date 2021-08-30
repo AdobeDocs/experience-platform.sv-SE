@@ -5,9 +5,9 @@ title: Skapa en Salesforce Marketing Cloud Base-anslutning med API:t för flöde
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Marketing Cloud med API:t för Flow Service.
-source-git-commit: 56458ed6e74a76e2787ab3b9f1409b11556bdee2
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Salesforce Marketing Cloud] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Salesforce Marketing Cloud] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

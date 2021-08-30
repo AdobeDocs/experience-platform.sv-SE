@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en databas och hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1641'
+source-wordcount: '1619'
 ht-degree: 0%
 
 ---
 
 # Samla in data från en databas med hjälp av källanslutningar och API:er
 
-Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till plattformen via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till plattformen via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
@@ -30,7 +30,7 @@ Den här självstudiekursen kräver även att du har en fungerande förståelse 
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
 * [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en tredjepartsdatabas med hjälp av API:t [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en tredjepartsdatabas med hjälp av API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop
 
@@ -431,7 +431,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Hämta dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. Om du vill skapa ett dataflöde måste du först hämta dataflödesspecifikationerna genom att utföra en GET-begäran till [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)-API:t. Dataflödesspecifikationer används för att samla in data från en extern databas eller ett NoSQL-system.
+Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. Om du vill skapa ett dataflöde måste du först hämta dataflödesspecifikationerna genom att utföra en GET-begäran till API:t [!DNL Flow Service]. Dataflödesspecifikationer används för att samla in data från en extern databas eller ett NoSQL-system.
 
 **API-format**
 

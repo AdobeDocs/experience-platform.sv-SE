@@ -7,9 +7,9 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
+source-git-commit: f83e4150210af8d3e9e67285d1f9665b6e243f54
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1727'
 ht-degree: 1%
 
 ---
@@ -204,6 +204,6 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 | Adobe Experience Platform Segmentering | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] Vanliga frågor och felsökningsguide](../xdm/troubleshooting-guide.md) |
-| [!DNL Flow Service] ([!DNL Sources] och  [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) |  |
+| [!DNL Flow Service] ([!DNL Sources] och  [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/) |  |
 | [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
 | Sandlådor | [Sandbox-API](https://www.adobe.io/experience-platform-apis/references/sandbox) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |

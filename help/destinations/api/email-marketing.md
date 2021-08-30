@@ -6,9 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar e-postmarknadsförings
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1700'
+source-wordcount: '1696'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Dokumentation för Swagger
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål {#get-the-list-of-available-destinations}
 

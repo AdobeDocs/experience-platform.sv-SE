@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 091f6751f4377a25844328ce924f3c33899b3344
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '719'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # Skapa en [!DNL Azure Event Hubs]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
-I den här självstudiekursen får du hjälp med att ansluta [!DNL Azure Event Hubs] (nedan kallat &quot;[!DNL Event Hubs]&quot;) till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen får du hjälp med att ansluta [!DNL Azure Event Hubs] (nedan kallat &quot;[!DNL Event Hubs]&quot;) till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

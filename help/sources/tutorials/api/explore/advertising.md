@@ -5,9 +5,9 @@ title: Utforska ett annonssystem med API:t för Flow Service
 topic-legacy: overview
 description: Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från. I den här självstudien används API:t för Flow Service för att utforska annonssystem.
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
-source-git-commit: 8aa8dfcc4f8a36d0898a9cc079bd98b89e3589a1
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '502'
 ht-degree: 1%
 
 ---
@@ -16,12 +16,11 @@ ht-degree: 1%
 
 När du har skapat en basanslutning kan du nu använda det unika basanslutnings-ID:t för att navigera och utforska källans datastruktur och innehåll. På så sätt kan du identifiera specifika objekt och deras respektive datatyper och format innan du skapar ett dataflöde och överför dem till Adobe Experience Platform.
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). att utforska annonssystem.
+I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) för att utforska annonssystem.
 
 ## Komma igång
 
 >[!IMPORTANT]
-
 Den här självstudiekursen kräver att du har det unika ID:t för din annonskälla. Om du inte har det här ID:t kan du titta i självstudiekursen [Koppla en annonskälla till Platform](../../api/create/advertising/ads.md).
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:

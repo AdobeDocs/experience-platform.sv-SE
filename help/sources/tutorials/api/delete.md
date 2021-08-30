@@ -6,10 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du tar bort ett konto med API:t för Flow Service.
 exl-id: 3d07ab7d-c012-472e-8db4-b19e3936dcba
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '589'
 ht-degree: 1%
 
 ---
@@ -20,7 +19,7 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen beskrivs hur du tar bort med [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs hur du tar bort med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 

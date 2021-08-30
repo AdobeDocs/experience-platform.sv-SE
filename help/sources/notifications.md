@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic-legacy: overview
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
-source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '768'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) används för att samla in och centralisera kunddata från olika källor inom  [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[[!DNL Flow Service] API ](https://www.adobe.io/experience-platform-apis/references/flow-service/) används för att samla in och centralisera kunddata från olika källor inom  [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
 Med Adobe I/O Events kan du prenumerera på händelser och använda webbhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 

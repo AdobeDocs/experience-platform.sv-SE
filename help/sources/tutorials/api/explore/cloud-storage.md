@@ -5,17 +5,16 @@ title: Utforska ett högt lagringssystem med API:t för Flow Service
 topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
 exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
 
 # Utforska ett molnlagringssystem med API:t [!DNL Flow Service]
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att utforska ett molnlagringssystem från tredje part.
+I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) för att utforska ett molnlagringssystem från tredje part.
 
 ## Komma igång
 
@@ -187,7 +186,7 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
 
 ## Använda frågeparametrar {#query}
 
-[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) stöder användning av frågeparametrar för att förhandsgranska och inspektera olika filtyper.
+[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) stöder användning av frågeparametrar för att förhandsgranska och inspektera olika filtyper.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
