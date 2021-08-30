@@ -6,10 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett protokollprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
-translation-type: tm+mt
-source-git-commit: c7cbf6812e2c600aa1e831b91f15982d7bf82cdb
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1547'
+source-wordcount: '1543'
 ht-degree: 0%
 
 ---
@@ -270,7 +269,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
 
 **API-format**
 

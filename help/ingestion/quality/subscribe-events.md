@@ -5,16 +5,16 @@ title: Meddelanden om dataöverföring
 topic-legacy: overview
 description: För att underlätta övervakningen av intagsprocessen kan Adobe Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '672'
+source-wordcount: '668'
 ht-degree: 1%
 
 ---
 
 # Meddelanden om dataöverföring
 
-Processen att samla in data till Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till [!DNL Platform], påbörjas intagsprocessen och varje steg sker i följd tills data antingen har importerats eller misslyckats. Inledningsprocessen kan initieras med hjälp av [Adobe Experience Platform Data Ingmit API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) eller med användargränssnittet [!DNL Experience Platform].
+Processen att samla in data till Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till [!DNL Platform], påbörjas intagsprocessen och varje steg sker i följd tills data antingen har importerats eller misslyckats. Inledningsprocessen kan initieras med hjälp av [Adobe Experience Platform Data Ingmit API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) eller med användargränssnittet [!DNL Experience Platform].
 
 Data som läses in till [!DNL Platform] måste gå igenom flera steg för att nå sitt mål, [!DNL Data Lake] eller [!DNL Real-time Customer Profile]-datalagret. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
 

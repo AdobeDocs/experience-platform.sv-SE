@@ -3,12 +3,11 @@ audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
-feature: Frågor
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Queries
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '136'
-ht-degree: 2%
+source-wordcount: '131'
+ht-degree: 3%
 
 ---
 
@@ -51,5 +50,5 @@ ht-degree: 2%
    - [RStudio](clients/rstudio.md)
    - [Tableau](clients/tableau.md)
 - [Felsökningsguide](troubleshooting-guide.md)
-- [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml)
+- [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

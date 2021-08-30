@@ -2,11 +2,10 @@
 audience: user
 user-guide-title: Dataflows Guide
 user-guide-description: Dataflöden är en representation av datajobb som flyttar data mellan plattformar.
-feature: Datahantering, datainmatning
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Data Management, Data Ingestion
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '47'
+source-wordcount: '39'
 ht-degree: 0%
 
 ---
@@ -20,4 +19,4 @@ ht-degree: 0%
 - Användargränssnittsguider {#ui}
    - [Övervaka dataflöden i mål](./ui/monitor-destinations.md)
    - [Övervaka dataflöden i källor](./ui/monitor-sources.md)
-- [API för flödestjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)
+- [API för flödestjänst](https://www.adobe.io/experience-platform-apis/references/flow-service/)

@@ -5,10 +5,9 @@ title: API-guide för katalogtjänst
 topic-legacy: developer guide
 description: Med Catalog Service API kan utvecklare hantera datauppsättningsmetadata i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 812fcdae-ed0e-4f2b-84d7-26f2f79e71b9
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -65,6 +64,6 @@ Eftersom vissa frågor kan innebära en stor belastning på API:t har globala be
 
 Det här dokumentet innehöll den nödvändiga kunskapen som krävs för att anropa API:t [!DNL Catalog]. Du kan nu gå vidare till exempelsamtalen i den här utvecklarhandboken och följa med i instruktionerna för dessa.
 
-De flesta av exemplen i den här handboken använder slutpunkten `/dataSets`, men principerna kan tillämpas på andra slutpunkter inom [!DNL Catalog] (till exempel `/batches` och `/accounts`). Se [API-referens för katalogtjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) för en fullständig lista över alla anrop och åtgärder som är tillgängliga för varje slutpunkt.
+De flesta av exemplen i den här handboken använder slutpunkten `/dataSets`, men principerna kan tillämpas på andra slutpunkter inom [!DNL Catalog] (till exempel `/batches` och `/accounts`). Se [API-referens för katalogtjänst](https://www.adobe.io/experience-platform-apis/references/catalog/) för en fullständig lista över alla anrop och åtgärder som är tillgängliga för varje slutpunkt.
 
 Ett steg-för-steg-arbetsflöde som demonstrerar hur API:t [!DNL Catalog] är involverat i datainmatning finns i självstudiekursen om att [skapa en datauppsättning](../datasets/create.md).

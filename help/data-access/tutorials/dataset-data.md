@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1390'
 ht-degree: 0%
 
 ---
@@ -62,7 +61,7 @@ Innan du kan börja använda API:t [!DNL Data Access] måste du identifiera plat
 - `GET /batches`: Returnerar en lista över batchar i din organisation
 - `GET /dataSetFiles`: Returnerar en lista med filer under din organisation
 
-En fullständig lista över slutpunkter i [!DNL Catalog] API finns i [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
+En fullständig lista över slutpunkter i [!DNL Catalog] API finns i [API-referens](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
 ## Hämta en lista över batchar under IMS-organisationen
 
@@ -193,7 +192,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?createdAf
 }
 ```
 
-En fullständig lista över parametrar och filter finns i [Catalog API-referensen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
+En fullständig lista över parametrar och filter finns i [Catalog API-referensen](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
 ## Hämta en lista med alla filer som tillhör en viss grupp
 

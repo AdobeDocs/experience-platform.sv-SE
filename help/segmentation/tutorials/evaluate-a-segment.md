@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1548'
 ht-degree: 0%
 
 ---
@@ -223,7 +223,7 @@ Mer detaljerad information om hur du använder den här slutpunkten finns i [slu
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i [!DNL Data Lake] i [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) för att komma åt data med `batchId` som är associerad med exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i [!DNL Data Lake] i [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) för att komma åt data med `batchId` som är associerad med exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ självstudiekursen ](../../data-access/tutorials/dataset-data.md) om du vill ha stegvisa instruktioner om hur du använder API:t [!DNL Data Access] för att komma åt och hämta gruppfiler.[
 

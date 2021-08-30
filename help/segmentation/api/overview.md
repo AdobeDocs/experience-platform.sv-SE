@@ -4,10 +4,9 @@ title: API-guide för segmenteringstjänst
 topic-legacy: guide
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -18,7 +17,7 @@ ht-degree: 0%
 
 API:t [!DNL Segmentation Service] innehåller flera slutpunkter som gör att du kan hantera dina segmenteringsåtgärder i [!DNL Experience Platform] programmatiskt. I det här översiktsdokumentet finns introduktioner på hög nivå för var och en av dessa slutpunkter samt länkar till tillhörande slutpunktsguider för mer information. Innan du läser de enskilda slutpunktsguiderna bör du läsa [komma igång-guiden](./getting-started.md) för att få viktig information om nödvändiga huvuden, läsning av exempel-API-anrop med mera.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder, se [API-referens för segmenteringstjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder, se [API-referens för segmenteringstjänst](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
 ## Exportera jobb
 

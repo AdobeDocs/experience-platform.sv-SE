@@ -5,11 +5,10 @@ title: Översikt över batchförbrukning
 topic-legacy: overview
 description: Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1222'
-ht-degree: 0%
+source-wordcount: '1218'
+ht-degree: 1%
 
 ---
 
@@ -17,13 +16,13 @@ ht-degree: 0%
 
 Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt schema i [!DNL Experience Data Model]-registret (XDM).
 
-[API-referensen för datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) innehåller ytterligare information om dessa API-anrop.
+[API-referensen för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) innehåller ytterligare information om dessa API-anrop.
 
 I följande diagram visas batchintagsprocessen:
 
 ![](../images/batch-ingestion/overview/batch_ingestion.png)
 
-## Använda API
+## Använda API:et
 
 Med API:t [!DNL Data Ingestion] kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] i tre grundläggande steg:
 

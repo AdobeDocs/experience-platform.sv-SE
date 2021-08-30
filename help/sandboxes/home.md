@@ -5,9 +5,9 @@ title: Översikt över sandlådor
 topic-legacy: overview
 description: Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser.
 exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '1004'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ I [Experience Platform-användargränssnittet](https://platform.adobe.com) kan a
 
 ## Sandlådor i Experience Platform API:er
 
-När du anropar API:er för Experience Platform måste du ange ett sandlådenamn under rubriken `x-sandbox-name`. När du till exempel anropar [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) för att visa alla datauppsättningar i produktionssandlådan, anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
+När du anropar API:er för Experience Platform måste du ange ett sandlådenamn under rubriken `x-sandbox-name`. När du till exempel anropar [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) för att visa alla datauppsättningar i produktionssandlådan, anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
 
 ```shell
 curl -X GET \

@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera Apache Parquet-data från ett molnlagringssystem från en annan leverantör.
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: d3e1bc9bc075117dcc96c85b8b9c81d6ee617d29
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1095'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ Hämta och lagra den unika identifieraren (`$id`) för anslutningen och fortsät
 
 För att källdata ska kunna användas i [!DNL Platform] måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform]-datauppsättning där källdata finns.
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [självstudiekursen för Schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i Schemaredigeraren.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [självstudiekursen för Schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i Schemaredigeraren.
 
 **API-format**
 
@@ -266,7 +266,7 @@ Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapa
 
 ## Skapa en måldatauppsättning
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
 
 **API-format**
 

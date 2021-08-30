@@ -5,9 +5,9 @@ title: Unisions API-slutpunkt
 description: Med slutpunkten /union i API:t för schemaregister kan du programmässigt hantera XDM-föreningsscheman i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '911'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Arrayen `timeSeriesEvents` är en lista med händelser för tidsserier som relat
 
 ### Segmentmedlemskapskarta
 
-Mappningen `segmentMembership` lagrar resultaten av segmentutvärderingar. När segmentjobben körs med [Segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml) uppdateras kartan. `segmentMembership` lagrar också alla förutvärderade målgruppssegment som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager. Mer information finns i självstudiekursen om att [skapa segment med API:er](../../segmentation/tutorials/create-a-segment.md).
+Mappningen `segmentMembership` lagrar resultaten av segmentutvärderingar. När segmentjobben körs med [Segmenterings-API](https://www.adobe.io/experience-platform-apis/references/segmentation/) uppdateras kartan. `segmentMembership` lagrar också alla förutvärderade målgruppssegment som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager. Mer information finns i självstudiekursen om att [skapa segment med API:er](../../segmentation/tutorials/create-a-segment.md).
 
 ## Hämta en lista över föreningar {#list}
 

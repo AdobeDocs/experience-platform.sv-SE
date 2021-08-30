@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: b672eab481a8286f92741a971991c7f83102acf7
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1111'
+source-wordcount: '1107'
 ht-degree: 0%
 
 ---
@@ -152,7 +152,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatauppsättning gör du en POST till `dataSets`-slutpunkten för [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), och anger ID:t för målschemat i nyttolasten.
+När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatauppsättning gör du en POST till `dataSets`-slutpunkten för [katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), och anger ID:t för målschemat i nyttolasten.
 
 **API-format**
 

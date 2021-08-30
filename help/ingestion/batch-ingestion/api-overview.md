@@ -5,17 +5,16 @@ title: API-guide för gruppinmatning
 topic-legacy: developer guide
 description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '2556'
+source-wordcount: '2552'
 ht-degree: 3%
 
 ---
 
 # API-guide för gruppinmatning
 
-Det här dokumentet innehåller en omfattande översikt över hur du använder [API:er för batchimport](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).
+Det här dokumentet innehåller en omfattande översikt över hur du använder [API:er för batchimport](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).
 
 I bilagan till det här dokumentet finns information om [formateringsdata som ska användas för att fylla i](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 

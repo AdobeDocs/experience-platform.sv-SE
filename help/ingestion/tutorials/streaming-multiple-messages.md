@@ -6,10 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1488'
 ht-degree: 1%
 
 ---
@@ -510,7 +509,7 @@ Det andra meddelandet misslyckades eftersom det saknade meddelandetext. Samlings
     },
 ```
 
-Det tredje meddelandet misslyckades på grund av att ett ogiltigt IMS-organisations-ID användes i huvudet. IMS-organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. För att avgöra vilket IMS-organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet`-begäran med [[!DNL Data Ingestion API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Se [hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
+Det tredje meddelandet misslyckades på grund av att ett ogiltigt IMS-organisations-ID användes i huvudet. IMS-organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. För att avgöra vilket IMS-organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet`-begäran med [[!DNL Data Ingestion API]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Se [hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
 
 Det fjärde meddelandet misslyckades eftersom det inte följde det förväntade XDM-schemat. `xdmSchema` som ingår i huvudet och texten i begäran matchar inte XDM-schemat i `{DATASET_ID}`. Om du korrigerar schemat i meddelandehuvudet och meddelandetexten kan det godkänna DCCS-validering och skickas till [!DNL Platform]. Meddelandetexten måste också uppdateras för att matcha XDM-schemat i `{DATASET_ID}` för att den ska godkännas för direktuppspelningsvalidering på [!DNL Platform]. Mer information om vad som händer med meddelanden som kan direktuppspelas på plattformen finns i avsnittet [bekräfta meddelanden som importerats](#confirm-messages-ingested) i den här självstudiekursen.
 

@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: b47a52920f82a962ff044a0dacf9777b6eeae447
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1517'
 ht-degree: 0%
 
 ---
@@ -433,7 +433,7 @@ En borttagningsbegäran returnerar HTTP-status 204 (inget innehåll) och en tom 
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i Data Lake i Experience Platform. Du kan sedan använda [API:t för dataåtkomst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) för att få åtkomst till data med `batchId` som är associerad med exporten. Beroende på exportens storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i Data Lake i Experience Platform. Du kan sedan använda [API:t för dataåtkomst](https://www.adobe.io/experience-platform-apis/references/data-access/) för att få åtkomst till data med `batchId` som är associerad med exporten. Beroende på exportens storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ självstudiekursen [Dataåtkomst](../../data-access/tutorials/dataset-data.md) om du vill ha stegvisa anvisningar om hur du använder API:t för dataåtkomst för att få åtkomst till och hämta gruppfiler.
 

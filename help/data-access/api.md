@@ -5,10 +5,9 @@ title: API-guide för dataåtkomst
 topic-legacy: developer guide
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '524'
 ht-degree: 1%
 
 ---
@@ -21,7 +20,7 @@ API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användar
 
 ## API-specifikationsreferens
 
-Referenshandboken för Swagger API finns [här](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).
+Referenshandboken för Swagger API finns [här](https://www.adobe.io/experience-platform-apis/references/data-access/).
 
 ## Terminologi
 
