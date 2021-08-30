@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 483bcea231ed5f25c76771d0acba7e0c62dfed16
+source-git-commit: 30c3ca4aa3e8f42140566c8fdf9fbc855ec72e1b
 workflow-type: tm+mt
-source-wordcount: '605'
+source-wordcount: '592'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ Fliken **[!UICONTROL Log]** innehåller en lista med frågor som tidigare har k�
 
 ## Autentiseringsuppgifter
 
-På fliken **[!UICONTROL Credentials]** visas dina [!DNL Postgres]-autentiseringsuppgifter. Markera ikonen **[!UICONTROL Copy]** bredvid ett fält för att lagra dess innehåll i tangentbordsbufferten. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [handboken för att ansluta till klienter](../clients/overview.md).
+Fliken **[!UICONTROL Credentials]** visar både dina utgångsdatum och ej förfallande inloggningsuppgifter. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [referenshandboken](../clients/overview.md).
 
 ![Bild](../images/ui/overview/credentials.png)
 

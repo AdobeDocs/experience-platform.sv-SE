@@ -5,10 +5,9 @@ title: Anslut position till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet innehåller länken för installation av klienten Postico för Adobe Experience Platform Query Service.
 exl-id: a19abfc8-b431-4e57-b44d-c6130041af4a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
 workflow-type: tm+mt
-source-wordcount: '251'
+source-wordcount: '246'
 ht-degree: 0%
 
 ---
@@ -29,7 +28,7 @@ Om du vill ansluta [!DNL Postico] till frågetjänsten öppnar du [!DNL Postico]
 
 Nu kan du ange värden som ska kopplas till Adobe Experience Platform.
 
-Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguiden](../ui/credentials.md). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
 
 När du har infogat dina inloggningsuppgifter väljer du **[!DNL Connect]** för att ansluta till frågetjänsten.
 

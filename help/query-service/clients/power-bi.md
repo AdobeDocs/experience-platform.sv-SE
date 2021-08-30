@@ -5,9 +5,9 @@ title: Anslut Power BI till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 2109abd02b9c6c321c21a8fe3826509d22b1c2e2
+source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '461'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Välj **[!DNL PostgreSQL database]** följt av **[!DNL Connect]**.
 
 ![](../images/clients/power-bi/get-data.png)
 
-Nu kan du ange värden för servern och databasen. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+Nu kan du ange värden för servern och databasen. Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguiden](../ui/credentials.md). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
 
 **[!DNL Server]** är värddatorn som finns under anslutningsinformationen. För produktion lägger du till porten `:80` i slutet av värdsträngen. **[!DNL Database]** kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn.
 

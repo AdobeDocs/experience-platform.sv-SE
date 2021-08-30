@@ -5,10 +5,9 @@ title: Anslut tabell till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
 workflow-type: tm+mt
-source-wordcount: '209'
+source-wordcount: '204'
 ht-degree: 0%
 
 ---
@@ -25,7 +24,7 @@ Om du vill ansluta [!DNL Tableau] till [!DNL Query Service] öppnar du [!DNL Tab
 
 ![](../images/clients/tableau/open-connection.png)
 
-Nu kan du ange värden som ska kopplas till Adobe Experience Platform. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+Nu kan du ange värden som ska kopplas till Adobe Experience Platform. Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguiden](../ui/credentials.md). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
 
 Kontrollera att du har markerat rutan **[!UICONTROL SSL Required]** innan du försöker ansluta.
 

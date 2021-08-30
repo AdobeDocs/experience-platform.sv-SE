@@ -5,10 +5,9 @@ title: Anslut PSQL till frågetjänst
 topic-legacy: connect
 description: PSQL är ett kommandoradsgränssnitt som medföljer när du installerar PostgreSQL på datorn. Du kan installera det genom att följa dessa anvisningar.
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '271'
 ht-degree: 1%
 
 ---
@@ -29,7 +28,7 @@ Markera ikonen om du vill kopiera avsnittet **[!UICONTROL PSQL Command]** och kl
 
 >[!IMPORTANT]
 >
->Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen. Om du använder version 12.0 eller senare måste du lägga till `PGGSSENCMODE=disable` i anslutningssträngen.
+>Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen. Om du använder version 12.0 eller senare måste du lägga till `PGGSSENCMODE=disable` i anslutningssträngen. Om du använder inloggningsuppgifter som inte förfaller måste du dessutom ersätta lösenordsfältet med det inloggningslösenord som inte förfaller. Läs [referenshandboken](../ui/credentials.md) om du vill veta mer om autentiseringsuppgifter som inte upphör att gälla.
 
 Du bör se följande resultat:
 

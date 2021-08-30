@@ -5,10 +5,9 @@ title: Anslut sökare till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Looker till Adobe Experience Platform Query Service.
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
@@ -41,7 +40,7 @@ Här kan du fylla i information om anslutningsinställningarna.
 
 >[!NOTE]
 >
->Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+>Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns i [handboken ](../ui/credentials.md). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
 
 När du har angett anslutningsinformationen väljer du **[!DNL Test These Settings]** för att se till att dina autentiseringsuppgifter fungerar som de ska. Om de gör det visas ett meddelande om att du kan ansluta nedan. Om anslutningen lyckas väljer du **[!DNL Add Connection]** för att skapa anslutningen.
 
