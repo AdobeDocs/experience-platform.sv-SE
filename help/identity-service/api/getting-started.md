@@ -5,10 +5,9 @@ title: API-guide för identitetstjänst
 topic-legacy: API guide
 description: Med Identity Service API kan utvecklare hantera identifieringen av era kunder i realtid över olika enheter, kanaler och nära nog alla kanaler med hjälp av identitetsdiagram i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: d612af38-4648-4c3e-8cfd-3f306c9370e1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
@@ -80,7 +79,7 @@ När en identitet bevaras genererar och tilldelar [!DNL Identity Service] ett ID
 
 För att begränsa nyttolasten i svaren anpassar API:erna sina svar till den typ av identitetskonstruktion som används. Det vill säga, om du skickar XID:n kommer svaren att ha XID:n, och om du skickar sammansatta identiteter kommer svaret att följa den struktur som används i begäran.
 
-Exemplen i det här dokumentet täcker inte den fullständiga funktionen för API:t [!DNL Identity Service]. Fullständigt API finns i [API-referens för Swagger](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml).
+Exemplen i det här dokumentet täcker inte den fullständiga funktionen för API:t [!DNL Identity Service]. Fullständigt API finns i [API-referens för Swagger](https://www.adobe.io/experience-platform-apis/references/identity-service).
 
 >[!NOTE]
 >

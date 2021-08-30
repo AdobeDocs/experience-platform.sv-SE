@@ -5,9 +5,9 @@ title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '1632'
+source-wordcount: '1628'
 ht-degree: 0%
 
 ---
@@ -315,7 +315,7 @@ En identitetsbeskrivning signalerar att [!UICONTROL sourceProperty] för [!UICON
 | `xdm:sourceSchema` | URI:n `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
-| `xdm:namespace` | Värdet `id` eller `code` för identitetsnamnutrymmet. En lista med namnutrymmen finns med [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). |
+| `xdm:namespace` | Värdet `id` eller `code` för identitetsnamnutrymmet. En lista med namnutrymmen finns med [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). |
 | `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på vilken `xdm:namespace` som används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 

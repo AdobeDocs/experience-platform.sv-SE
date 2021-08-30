@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '2426'
+source-wordcount: '2422'
 ht-degree: 0%
 
 ---
@@ -996,7 +996,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
+>Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
 
 **Svar**
 
@@ -1180,7 +1180,7 @@ När du har skapat mer än ett schema kan du definiera relationer mellan dem med
 
 Följande information kompletterar API-självstudiekursen.
 
-## Schema för fullständiga lojalitetsmedlemmar {#complete-schema}
+## Fullständigt medlemsschema {#complete-schema}
 
 Under den här självstudiekursen består ett schema som beskriver medlemmarna i ett lojalitetsprogram för detaljhandeln.
 

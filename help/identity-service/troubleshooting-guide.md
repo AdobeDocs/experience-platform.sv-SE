@@ -5,9 +5,9 @@ title: Felsökningsguide för identitetstjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '2185'
+source-wordcount: '2177'
 ht-degree: 0%
 
 ---
@@ -78,11 +78,11 @@ Standardnamnutrymmen för identiteter är namnutrymmen som är tillgängliga fö
 
 ## Var hittar jag en lista över de identitetsnamnutrymmen som är tillgängliga för min organisation?
 
-Med hjälp av [API:t för identitetstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) kan du visa alla tillgängliga identitetsnamnutrymmen för din organisation genom att göra en GET-begäran till `/idnamespace/identities`-slutpunkten. Mer information finns i avsnittet [med en lista över tillgängliga namnutrymmen](./api/list-namespaces.md) i API-översikten för identitetstjänsten.
+Med hjälp av [API:t för identitetstjänsten](https://www.adobe.io/experience-platform-apis/references/identity-service) kan du visa alla tillgängliga identitetsnamnutrymmen för din organisation genom att göra en GET-begäran till `/idnamespace/identities`-slutpunkten. Mer information finns i avsnittet [med en lista över tillgängliga namnutrymmen](./api/list-namespaces.md) i API-översikten för identitetstjänsten.
 
 ## Hur skapar jag ett anpassat namnutrymme för min organisation?
 
-Med hjälp av [API:t för identitetstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) kan du skapa ett anpassat ID-namnutrymme för din organisation genom att göra en POST-förfrågan till `/idnamespace/identities`-slutpunkten. Mer information finns i avsnittet [skapa ett anpassat namnutrymme](./api/create-custom-namespace.md) i API-översikten för identitetstjänsten.
+Med hjälp av [API:t för identitetstjänsten](https://www.adobe.io/experience-platform-apis/references/identity-service) kan du skapa ett anpassat ID-namnutrymme för din organisation genom att göra en POST-förfrågan till `/idnamespace/identities`-slutpunkten. Mer information finns i avsnittet [skapa ett anpassat namnutrymme](./api/create-custom-namespace.md) i API-översikten för identitetstjänsten.
 
 ## Vad är sammansatta identiteter och XID:n?
 
