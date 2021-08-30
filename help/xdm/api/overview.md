@@ -5,8 +5,7 @@ title: API-guide för schemaregister
 description: Med API:t för schemaregister kan utvecklare programmässigt hantera alla scheman och relaterade XDM-resurser (Experience Data Model) inom Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 topic-legacy: developer guide
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-translation-type: tm+mt
-source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
+source-git-commit: c2ca679e046f59d05e2d12ca83bc1b2496b2288f
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%

@@ -1,7 +1,7 @@
 ---
 title: Adobe Analytics Extension - översikt
 description: Läs om Adobe Analytics-taggtillägget i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 90dece1054cf54d40a62093990a034ee5f3bccaf
 workflow-type: tm+mt
 source-wordcount: '2180'
 ht-degree: 2%
@@ -367,7 +367,7 @@ Använd redigeraren för att ange din egen sidkod.
 
 Välj det här alternativet om du vill stega upp en sidvy.
 
-#### Öka inte en sidvy - s.t()
+#### Öka inte en sidvy - s.tl()
 
 Välj det här alternativet om du inte vill stega upp en sidvy.
 
