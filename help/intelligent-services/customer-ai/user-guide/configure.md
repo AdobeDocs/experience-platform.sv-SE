@@ -5,10 +5,9 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b6fff24d6298bad968e16516f2e555927c3a4a12
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1474'
 ht-degree: 0%
 
 ---
@@ -98,6 +97,26 @@ Du kanske vill förutsäga om en kund besöker en viss URL-adress eller en webbs
 
 ![Alla exempel](../images/user-guide/any-of.png)
 
+### Anpassade händelser (*valfri*) {#custom-events}
+
+Om du har ytterligare information utöver de [standardhändelsefält](../input-output.md#standard-events) som används av kundens AI för att generera benägenhetspoäng, finns det ett anpassat händelsealternativ. Om den datamängd du har valt innehåller anpassade händelser som har definierats i ditt schema, kan du lägga till dem i din instans.
+
+![händelsefunktion](../images/user-guide/event-feature.png)
+
+Välj **[!UICONTROL Add custom event]** om du vill lägga till en anpassad händelse. Därefter anger du ett anpassat händelsenamn och mappar det till händelsefältet i schemat. Anpassade händelsenamn visas i stället för fältvärdet när du tittar på inflytelserika faktorer och andra insikter. Detta innebär användar-ID:n, reservations-ID:n, enhetsinformation och andra anpassade värden listas med det anpassade händelsenamnet i stället för händelsens ID/värde. Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
+
+![Eget händelsefält](../images/user-guide/custom-event.png)
+
+Välj sedan den operator som du vill använda i listrutan med tillgängliga operatorer. Endast operatorer som är kompatibla med händelsen visas.
+
+![Anpassad händelseoperator](../images/user-guide/custom-operator.png)
+
+Ange fältvärdena om den markerade operatorn kräver ett. I det här exemplet behöver vi bara se om det finns ett hotell- eller restaurangbokningar. Men om vi vill vara mer exakta kan vi använda likhetsoperatorn och ange ett exakt värde i värdeprompten.
+
+![Fältvärde för anpassad händelse](../images/user-guide/custom-value.png)
+
+När du är klar väljer du **[!UICONTROL Next]** i det övre högra hörnet för att fortsätta.
+
 ### Konfigurera ett schema *(valfritt)* {#configure-a-schedule}
 
 **[!UICONTROL Advanced]**-steget visas. Med det här valfria steget kan du konfigurera ett schema för att automatisera prediktionskörningar, definiera undantag för förutsägelser för att filtrera vissa händelser eller välja **[!UICONTROL Finish]** om inget behövs.
@@ -106,9 +125,11 @@ Konfigurera ett poängschema genom att konfigurera **[!UICONTROL Scoring Frequen
 
 ![](../images/user-guide/schedule.png)
 
-Under schemakonfigurationen kan du definiera undantag för förutsägelse för att förhindra händelser som uppfyller vissa villkor från att utvärderas när du genererar poäng. Den här funktionen kan användas för att filtrera bort irrelevanta dataindata.
+### Undantag för förutsägelse
 
-Om du vill exkludera vissa händelser väljer du **[!UICONTROL Add exclusion]** och definierar händelsen på samma sätt som hur målet definieras. Om du vill ta bort ett undantag markerar du ellipserna (**[!UICONTROL ...]**) längst upp till höger i händelsebehållaren och väljer **[!UICONTROL Remove Container]**.
+Om datauppsättningen innehåller kolumner som lagts till som testdata kan du lägga till den kolumnen eller händelsen i en exkluderingslista genom att välja **Lägg till undantag** och sedan ange det fält som du vill utesluta. Detta förhindrar att händelser som uppfyller vissa villkor utvärderas när bakgrundsmusik genereras. Den här funktionen kan användas för att filtrera bort irrelevanta dataindata eller vissa kampanjer.
+
+Om du vill exkludera en händelse väljer du **[!UICONTROL Add exclusion]** och definierar händelsen. Om du vill ta bort ett undantag markerar du ellipserna (**[!UICONTROL ...]**) längst upp till höger i händelsebehållaren och väljer **[!UICONTROL Remove Container]**.
 
 ![](../images/user-guide/exclusion.png)
 

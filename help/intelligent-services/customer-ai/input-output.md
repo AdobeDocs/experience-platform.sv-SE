@@ -5,10 +5,9 @@ title: Indata och utdata i kundens AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: c534b66d7617023df8dbac57115036146c2cab01
 workflow-type: tm+mt
-source-wordcount: '2878'
+source-wordcount: '2959'
 ht-degree: 0%
 
 ---
@@ -53,7 +52,7 @@ Kund-AI stöder datauppsättningarna CEE, Adobe Analytics och Adobe Audience Man
 
 Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i handboken [Analysfältmappningar](../../sources/connectors/adobe-applications/analytics.md) eller [Audience Manager fältmappningar](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
 
-### Standardhändelser som används av kundens AI {#standard-events}
+### Standardhändelser som används av kund-AI {#standard-events}
 
 XDM Experience Events används för att fastställa olika kundbeteenden. Beroende på hur era data är strukturerade kanske händelsetyperna som listas nedan inte omfattar alla kundens beteenden. Det är upp till er att avgöra vilka fält som har de nödvändiga data som behövs för att tydligt och entydigt identifiera webbanvändaraktivitet. Beroende på ditt förutsägelsemål kan de obligatoriska fälten som behövs ändras.
 
@@ -88,6 +87,12 @@ Om du vill visa en fältgrupp i plattformsgränssnittet väljer du fliken **[!UI
 | [!UICONTROL Search Details] | sök | search.keywords |
 
 Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundmodeller. Prenumerationsdata krävs för varje profil som använder datatypen [[!UICONTROL Subscription]](../../xdm/data-types/subscription.md). De flesta fälten är valfria för en optimal omsättningsmodell, men vi rekommenderar att du anger data för så många fält som möjligt, till exempel `startDate`, `endDate` och annan relevant information.
+
+### Lägga till anpassade fältgrupper
+
+Om du har ytterligare information vill du inkludera förutom de [standardhändelsefält](#standard-events) som används av kundens AI. Ett alternativ för anpassade händelser anges under din [instanskonfiguration](./user-guide/configure.md#custom-events).
+
+Om den datamängd du har valt innehåller anpassade händelser som ett hotell eller en restaurang som har definierats i ditt schema, kan du lägga till dem i din instans. Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
 
 ### Historiska data {#data-requirements}
 
@@ -266,7 +271,7 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 | ----- | ----------- |
 | Poäng | Den relativa sannolikheten för att en kund ska uppnå det förväntade målet inom den definierade tidsramen. Detta värde ska inte behandlas som sannolikhetsprocent utan snarare som sannolikheten för en individ jämfört med den totala populationen. Poängen varierar mellan 0 och 100. |
 | Sannolikhet | Det här attributet är den verkliga sannolikheten för att en profil ska uppnå det förväntade målet inom den definierade tidsramen. När du jämför utdata för olika mål bör du överväga sannolikhet över percentil eller poäng. Sannolikhet bör alltid användas vid bestämning av den genomsnittliga sannolikheten i hela den stödberättigade populationen, eftersom sannolikheten tenderar att vara på den nedre sidan för händelser som inte inträffar ofta. Värden för sannolikhetsintervallet mellan 0 och 1. |
-| Procent | Det här värdet ger information om en profils prestanda i förhållande till andra profiler med liknande resultat. En profil med till exempel en percentilrankning på 99 för kurn visar att den har en större risk att kurva jämfört med 99 % av alla andra profiler som bedömdes. Percentiler varierar mellan 1 och 100. |
+| Procent | Det här värdet ger information om en profils prestanda i förhållande till andra profiler med liknande resultat. En profil med en percentilrankning på 99 för kurn visar till exempel att den har en större risk att kurva jämfört med 99 % av alla andra profiler som bedömdes. Percentiler varierar mellan 1 och 100. |
 | Typ av benägenhet | Den valda benägenhetstypen. |
 | Resultatdatum | Det datum som poängsättningen inträffade. |
 | Influensafaktorer | Förväntade orsaker till varför en profil kan konverteras eller försvinna. Faktorer består av följande attribut:<ul><li>Kod: Profilen eller beteendeattributet som positivt påverkar en profils förväntade poäng. </li><li>Värde: Värdet på profilen eller beteendeattributet.</li><li>Prioritet: Anger hur viktig profilen eller beteendeattributet är för det förväntade poängvärdet (låg, medel, hög)</li></ul> |
