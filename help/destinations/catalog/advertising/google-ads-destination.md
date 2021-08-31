@@ -3,9 +3,9 @@ keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
 description: Google Ads, tidigare Google AdWords, är en webbannonseringstjänst som gör att företag kan betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
+source-git-commit: f04ea9aed586c8582286de82bfeee3f6f04cc360
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '702'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,7 @@ Observera följande information som är specifik för [!DNL Google Ads]-mål:
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 ### Befintligt [!DNL Google Ads]-konto
 
@@ -95,7 +95,7 @@ När du konfigurerar det här målet kan du få följande fel:
 
 `{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
 
-Det här felet inträffar antingen när kunder försöker konfigurera målet utan ett befintligt [!DNL Google Ads]-konto.
+Det här felet inträffar antingen när kundkonton inte uppfyller [villkoren](#prerequisites) eller när kunder försöker konfigurera målet utan ett befintligt [!DNL Google Ads]-konto.
 
 [!DNL Google] har ersatt nya  [!DNL Google Ads] cookie-integreringar med tredjepartsleverantörer. Om du vill utföra [allow-list](#allow-listing)-stegen måste du ha en befintlig integrering med [!DNL Google Ads].
 
