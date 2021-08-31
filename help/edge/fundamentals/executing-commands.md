@@ -2,14 +2,13 @@
 title: Kör Adobe Experience Platform Web SDK-kommandon
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 keywords: Kör kommandon;commandName;Promises;getLibraryInfo;response objects;medgivande;
-translation-type: tm+mt
-source-git-commit: 308c10eb0d1f78dad2b8b6158f28d0384a65c78c
+exl-id: dda98b3e-3e37-48ac-afd7-d8852b785b83
+source-git-commit: ca3ee230d510dfb9de400b6f573a612ec33c8f7a
 workflow-type: tm+mt
 source-wordcount: '416'
 ht-degree: 0%
 
 ---
-
 
 # Kör kommandon
 
@@ -28,7 +27,7 @@ alloy("commandName", options);
 
 [SDK ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) ger löften om hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Om du vill veta mer om löften kan du läsa [den här självstudiekursen](https://javascript.info/promise-basics) eller någon av de andra resurserna på webben.
 
-## Hanteringen av lyckade eller misslyckade {#handling-success-or-failure}
+## Hantera lyckade eller misslyckade {#handling-success-or-failure}
 
 Varje gång ett kommando körs returneras ett löfte. Löftet representerar det slutliga slutförandet av kommandot. I exemplet nedan kan du använda metoderna `then` och `catch` för att avgöra när kommandot har slutförts eller misslyckats.
 
@@ -71,7 +70,7 @@ Alla löften som returneras från kommandon löses med ett `result`-objekt. Resu
 ```js
 alloy("getLibraryInfo")
   .then(function(result) {
-    console.log(results.libraryInfo.version);
+    console.log(result.libraryInfo.version);
   });
 ```
 
