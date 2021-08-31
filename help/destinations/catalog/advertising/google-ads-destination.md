@@ -3,9 +3,9 @@ keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
 description: Google Ads, tidigare Google AdWords, är en webbannonseringstjänst som gör att företag kan betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '692'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ Observera följande information som är specifik för [!DNL Google Ads]-mål:
 >
 > [!DNL Google] har ersatt nya  [!DNL Google Ads] cookie-integreringar med tredjepartsleverantörer. För att kunna utföra tillåtelselista-stegen i nästa avsnitt måste du ha en befintlig integrering med [!DNL Google Ads]. Därför rekommenderar vi att du använder [!DNL Google Ads] för att konfigurera en [!DNL Google Customer Match]-integrering. Mer information om hur du skapar en [!DNL Google Customer Match]-integration finns i självstudiekursen om hur du skapar en [[!DNL Google Customer Match]](./google-customer-match.md)-anslutning.
 
-### Tillåtelselista
+### Tillåt listning {#allow-listing}
 
 >[!NOTE]
 >
@@ -83,7 +83,20 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
 
-
 ## Exporterade data
 
 Kontrollera ditt [!DNL Google Ads]-konto för att kontrollera om data har exporterats till [!DNL Google Ads]-målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+
+## Felsökning {#troubleshooting}
+
+### 400 Felmeddelande för felaktig begäran {#bad-request}
+
+När du konfigurerar det här målet kan du få följande fel:
+
+`{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
+
+Det här felet inträffar antingen när kunder försöker konfigurera målet utan ett befintligt [!DNL Google Ads]-konto.
+
+[!DNL Google] har ersatt nya  [!DNL Google Ads] cookie-integreringar med tredjepartsleverantörer. Om du vill utföra [allow-list](#allow-listing)-stegen måste du ha en befintlig integrering med [!DNL Google Ads].
+
+Det rekommenderade sättet att använda [!DNL Google Ads] är att konfigurera en [[!DNL Google Customer Match]](google-customer-match.md)-integrering.

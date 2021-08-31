@@ -3,7 +3,7 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
 source-wordcount: '1479'
 ht-degree: 1%
@@ -177,7 +177,7 @@ För [!DNL Facebook] innebär en lyckad aktivering att en [!DNL Facebook] anpass
 
 ### 400 Felmeddelande för felaktig begäran {#bad-request}
 
-När du aktiverar segment till [!DNL Facebook] kan du få följande fel:
+När du konfigurerar det här målet kan du få följande fel:
 
 `{"message":"Facebook Error: Permission error","code":"400 BAD_REQUEST"}`
 

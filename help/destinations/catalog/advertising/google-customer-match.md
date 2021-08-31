@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
-source-wordcount: '1475'
+source-wordcount: '1538'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Vissa destinationer i Experience Platform har vissa regler och skyldigheter för
 
 Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
 
-Kontrollera sedan att ditt [!DNL Google]-konto är konfigurerat för en [!DNL Standard]-åtkomstnivå eller högre. Mer information finns i [Google Ads-dokumentationen](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Kontrollera sedan att ditt [!DNL Google]-konto är konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [Google Ads-dokumentationen](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
 
 ### Tillåtelselista {#allowlist}
 
@@ -174,6 +174,17 @@ När aktiveringsflödet är klart växlar du till ditt **[!UICONTROL Google Ads]
 
 När du mappar ett segment till både [!DNL IDFA] och [!DNL GAID] mobila ID:n skapar [!DNL Google Customer Match] ett separat segment för varje ID-mappning. Ditt [!DNL Google Ads]-konto visar två olika segment, ett för [!DNL IDFA] och ett för [!DNL GAID]-mappningen.
 
+## Felsökning {#troubleshooting}
+
+### 400 Felmeddelande för felaktig begäran {#bad-request}
+
+När du konfigurerar det här målet kan du få följande fel:
+
+`{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
+
+Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Kontakta Google för att åtgärda problemet och kontrollera att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [Google Ads-dokumentationen](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+
 ## Extra resurser {#additional-resources}
 
 * [Integrera Google Customer Match - videosjälvstudiekurs](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
+

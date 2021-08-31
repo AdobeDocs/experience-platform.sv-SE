@@ -3,9 +3,9 @@ keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Displ
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '703'
 ht-degree: 1%
 
 ---
@@ -45,13 +45,13 @@ Observera följande information som är specifik för [!DNL Google Display & Vid
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
-### Tillåtelselista
+### Tillåt listning
 
 >[!NOTE]
 >
->Tillåtelselista är obligatoriskt innan du konfigurerar ditt första [!DNL Google Display & Video 360]-mål i Platform. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>Tillåt-listning är obligatoriskt innan du konfigurerar ditt första [!DNL Google Display & Video 360]-mål i Platform. Kontrollera att processen för att tillåta listning som beskrivs nedan har slutförts av Google innan du skapar ett mål.
 
 Innan du skapar målet [!DNL Google Display & Video 360] i Platform måste du kontakta Google och be om att Adobe finns med i listan över tillåtna dataleverantörer och att ditt konto läggs till i tillåtelselista. Kontakta Google och lämna följande information:
 
@@ -85,3 +85,13 @@ Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../..
 ## Exporterade data
 
 Kontrollera ditt [!DNL Google Display & Video 360]-konto för att kontrollera om data har exporterats till [!DNL Google Display & Video 360]-målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+
+## Felsökning {#troubleshooting}
+
+### 400 Felmeddelande för felaktig begäran {#bad-request}
+
+När du konfigurerar det här målet kan du få följande fel:
+
+`{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
+
+Det här felet inträffar när kundkonton inte uppfyller [kraven](#prerequisites). Kontakta Google och kontrollera att ditt konto är tillåtet för att åtgärda problemet.
