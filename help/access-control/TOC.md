@@ -3,11 +3,10 @@ audience: user
 user-guide-title: Åtkomstkontroll i hjälpen för Adobe Experience Platform
 breadcrumb-title: Handbok för åtkomstkontroll
 user-guide-description: Använd produktprofiler i Adobe Admin Console för att länka användare med behörigheter och sandlådor.
-feature: Åtkomstkontroll
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Access Control
+source-git-commit: 2a73571d806f1653dad29d2c0b0067c5ce63e0e7
 workflow-type: tm+mt
-source-wordcount: '100'
+source-wordcount: '94'
 ht-degree: 3%
 
 ---
@@ -28,5 +27,5 @@ ht-degree: 3%
    * [Listnamn på behörigheter och resurstyper](api/permissions-and-resource-types.md)
    * [Visa gällande policyer](api/effective-policies.md)
 * [Felsökningsguide](troubleshooting-guide.md)
-* [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)
+* [API-referens](https://www.adobe.io/experience-platform-apis/references/access-control/)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

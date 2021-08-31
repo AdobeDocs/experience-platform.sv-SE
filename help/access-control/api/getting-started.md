@@ -5,10 +5,9 @@ title: API-guide för åtkomstkontroll
 topic-legacy: developer guide
 description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. I följande avsnitt finns ytterligare information som utvecklare behöver känna till för att kunna anropa API:t för schemaregister.
 exl-id: 6fd956fb-ade4-48d3-843f-4c9a605945c9
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 2a73571d806f1653dad29d2c0b0067c5ce63e0e7
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '385'
 ht-degree: 1%
 
 ---
@@ -17,7 +16,7 @@ ht-degree: 1%
 
 [!DNL Access control] administreras  [!DNL Experience Platform] via  [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor. Mer information finns i [översikten över åtkomstkontroll](../home.md).
 
-Den här utvecklarhandboken innehåller information om hur du formaterar dina begäranden till [[!DNL Access Control API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml) och omfattar följande åtgärder:
+Den här utvecklarhandboken innehåller information om hur du formaterar dina begäranden till [[!DNL Access Control API]](https://www.adobe.io/experience-platform-apis/references/access-control/) och omfattar följande åtgärder:
 
 - [Listnamn på behörigheter och resurstyper](./permissions-and-resource-types.md)
 - [Visa gällande principer för den aktuella användaren](./effective-policies.md)

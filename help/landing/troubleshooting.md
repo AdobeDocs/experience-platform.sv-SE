@@ -7,9 +7,9 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: f83e4150210af8d3e9e67285d1f9665b6e243f54
+source-git-commit: 2a73571d806f1653dad29d2c0b0067c5ce63e0e7
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1723'
 ht-degree: 1%
 
 ---
@@ -195,7 +195,7 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 
 | Tjänst | API-referens | Felsökning |
 | --- | --- | --- |
-| Åtkomstkontroll | [API för åtkomstkontroll](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml) | [Felsökningsguide för åtkomstkontroll](../access-control/troubleshooting-guide.md) |
+| Åtkomstkontroll | [API för åtkomstkontroll](https://www.adobe.io/experience-platform-apis/references/access-control/) | [Felsökningsguide för åtkomstkontroll](../access-control/troubleshooting-guide.md) |
 | Adobe Experience Platform datainmatning | [[!DNL Data Ingestion API]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) | [Felsökningsguide ](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[för gruppinmatningFelsökningsguide för direktuppspelning](../ingestion/streaming-ingestion/troubleshooting.md) |
 | Adobe Experience Platform Data Science Workspace | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] felsökningsguide](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform datastyrning | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |

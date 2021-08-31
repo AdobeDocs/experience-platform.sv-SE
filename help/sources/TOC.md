@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
-feature: Dataintag, källor
-source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
+feature: Data Ingestion, Sources
+source-git-commit: ebe620b078096349c514420746902ce406a910d1
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '643'
 ht-degree: 5%
 
 ---
@@ -248,4 +248,5 @@ ht-degree: 5%
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)
+- [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
