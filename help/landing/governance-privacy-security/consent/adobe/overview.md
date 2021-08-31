@@ -5,7 +5,7 @@ title: Samtyckesbearbetning i Adobe Experience Platform
 topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
+source-git-commit: 1c398cdac45141b4886d984db32fbac7ca60265c
 workflow-type: tm+mt
 source-wordcount: '1561'
 ht-degree: 0%
@@ -88,7 +88,7 @@ Närmare information om dessa metoder finns i underavsnitten nedan.
 
 ### Konfigurera Experience Platform Web SDK för att bearbeta medgivandedata {#web-sdk}
 
-När du har konfigurerat din CMP för att lyssna efter medgivandeändringshändelser på din webbplats kan du integrera Experience Platform Web SDK för att ta emot de uppdaterade medgivandeinställningarna och skicka dem till Platform på varje sida som läses in och närhelst en förändring av medgivandet inträffar. Mer information finns i guiden [konfigurera Web SDK för att bearbeta kundens medgivandedata](./sdk.md).
+När du har konfigurerat din CMP för att lyssna efter medgivandeändringshändelser på din webbplats kan du integrera Experience Platform Web SDK för att ta emot de uppdaterade medgivandeinställningarna och skicka dem till Platform på varje sida som läses in och närhelst en förändring av medgivandet inträffar. Mer information finns i guiden [konfigurera Web SDK för att bearbeta kundens medgivandedata](../sdk.md).
 
 ### Konfigurera Experience Platform Mobile SDK för att bearbeta medgivandedata {#mobile-sdk}
 
