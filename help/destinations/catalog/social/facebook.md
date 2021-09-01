@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
+source-git-commit: 2faf27495c3785a27613db917c7416e1d7b08c4d
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1502'
 ht-degree: 1%
 
 ---
@@ -62,6 +62,9 @@ Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera
    >
    > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för [!DNL Adobe Experience Platform]-integreringen.
 * Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
+   >[!IMPORTANT]
+   >
+   >När du signerar [!DNL Facebook Custom Audiences] användarvillkoren måste du använda samma användarkonto som du använde för att autentisera i Facebook API.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
