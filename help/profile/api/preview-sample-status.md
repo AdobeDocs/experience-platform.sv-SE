@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förhandsvisning;exempel
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
-description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och per identitet och generera en överlappningsrapport för datauppsättningar.
+description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar datasetsöverlappning, identitetsöverlappning och okända profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 0c7dc02ed0bacf7e0405b836f566149a872fc31a
+source-git-commit: 8b1ba51f1f59b88a85d103cc40c18ac15d8648f6
 workflow-type: tm+mt
-source-wordcount: '2445'
+source-wordcount: '2877'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid.
 
-Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnutrymmet, samt för att generera en överlappande rapport för datauppsättningen och en rapport om identitetsöverlappning för att få synlighet i sammansättningen av organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa dessa mått med API-slutpunkten `/previewsamplestatus`.
+Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättning och identitetsnamnområde, samt för att generera flera rapporter för att få synlighet i sammansättningen av organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa dessa mått med API-slutpunkten `/previewsamplestatus`.
 
 >[!NOTE]
 >
@@ -36,10 +36,10 @@ Om du vill veta mer om profiler och deras roll i Experience Platform börjar du 
 
 ## Hur exempeljobbet utlöses
 
-När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Platform] lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Platform] lagras de i profildatalagret. När intaget av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
 
 * För **arbetsflöden för strömmande data** görs en timkontroll för att avgöra om tröskelvärdet på 5 % ökning eller minskning har uppnåtts. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
-* Om tröskelvärdet på 5 % ökning eller minskning uppnås körs ett jobb för att uppdatera antalet för **batchimport** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+* Om tröskelvärdet på 5 % ökning eller minskning uppnås körs ett jobb för att uppdatera antalet för **batchimport** inom 15 minuter efter att en batch har importerats till profilarkivet. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 
 Profilantalet och profilerna efter namnutrymmesmått är också tillgängliga i [!UICONTROL Profiles]-avsnittet i användargränssnittet för Experience Platform. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] användargränssnittsguiden](../ui/user-guide.md).
 
@@ -206,7 +206,7 @@ Svaret innehåller en `data`-array som innehåller en lista med datauppsättning
 
 ## Visa profildistribution efter ID-namnområde
 
-Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet. Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
+Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i din profilbutik. Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
 
 Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Börja med att läsa [översikten över identitetsnamnrymden](../../identity-service/namespaces.md) om du vill veta mer.
 
@@ -303,7 +303,7 @@ Svaret innehåller en `data`-array, med enskilda objekt som innehåller informat
 
 ## Generera överlappningsrapport för datauppsättning
 
-Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, till exempel att ställa in en TTL för vissa datauppsättningar.
+Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, till exempel att ställa in en TTL för vissa datauppsättningar.
 
 Du kan generera överlappningsrapporten för datauppsättningen genom att utföra en GET-begäran till `/previewsamplestatus/report/dataset/overlap`-slutpunkten.
 
@@ -363,22 +363,23 @@ Resultatet av rapporten kan tolkas utifrån datauppsättningar och antal profile
 ```
 
 Den här rapporten innehåller följande information:
+
 * Det finns 123 profiler med data från följande datauppsättningar: `5d92921872831c163452edc8`, `5da7292579975918a851db57`, `5eb2cdc6fa3f9a18a7592a98`.
 * Det finns 454 412 profiler som består av data från dessa två datauppsättningar: `5d92921872831c163452edc8` och `5eb2cdc6fa3f9a18a7592a98`.
 * Det finns 107 profiler som endast består av data från datauppsättningen `5eeda0032af7bb19162172a7`.
 * Det finns totalt 454 642 profiler i organisationen.
 
-## Generera rapport över identitetsöverlappning
+## Generera rapport över namnutrymmesöverlappning
 
-Rapporten om identitetsöverlappning ger synlighet i kompositionen för din organisations profilbutik genom att visa de identiteter som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
+Rapporten om överlappning av identitetsnamn ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de identitetsnamnutrymmen som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både de vanliga identitetsnamnutrymmena från Adobe och de anpassade identitetsnamnutrymmen som definieras av din organisation.
 
-Du kan generera rapporten om identitetsöverlappning genom att utföra en GET-begäran till `/previewsamplestatus/report/identity/overlap`-slutpunkten.
+Du kan generera överlappningsrapporten för identitetsnamnutrymmet genom att utföra en GET-begäran till `/previewsamplestatus/report/namespace/overlap`-slutpunkten.
 
 **API-format**
 
 ```http
-GET /previewsamplestatus/report/identity/overlap
-GET /previewsamplestatus/report/identity/overlap?{QUERY_PARAMETERS}
+GET /previewsamplestatus/report/namespace/overlap
+GET /previewsamplestatus/report/namespace/overlap?{QUERY_PARAMETERS}
 ```
 
 | Parameter | Beskrivning |
@@ -391,7 +392,7 @@ Följande begäran använder parametern `date` för att returnera den senaste ra
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/identity/overlap?date=2021-12-29 \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/namespace/overlap?date=2021-12-29 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -399,7 +400,7 @@ curl -X GET \
 
 **Svar**
 
-En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsöverlappningsrapporten.
+En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsnamnutrymmets överlappningsrapport.
 
 ```json
 {
@@ -446,7 +447,7 @@ En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsöverlappningsr
 | Namnområdeskoder | `code` är ett kort formulär för varje namn på identitetsnamn. Det går att hitta en mappning av varje `code` till `name` med hjälp av API:t [Adobe Experience Platform Identity Service](../../identity-service/api/list-namespaces.md). `code` kallas också [!UICONTROL Identity symbol] i användargränssnittet för Experience Platform. Mer information finns i [översikten över identitetsnamnet](../../identity-service/namespaces.md). |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran, returneras rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
 
-### Tolka rapporten om identitetsöverlappning
+### Tolka rapporten om namnutrymmesöverlappning
 
 Resultatet av rapporten kan tolkas utifrån identiteten och antalet profiler i svaret. Det numeriska värdet för varje rad visar hur många profiler som består av den exakta kombinationen av standard- och anpassade identitetsnamnutrymmen.
 
@@ -459,11 +460,137 @@ Ta följande utdrag från objektet `data`:
 ```
 
 Den här rapporten innehåller följande information:
+
 * Det finns 142 profiler som består av `AAID`, `ECID` och `Email` standardidentiteter samt av ett anpassat `crmid`-identitetsnamnutrymme.
 * Det finns 24 profiler som består av `AAID` och `ECID` identitetsnamnutrymmen.
 * Det finns 6 565 profiler som bara innehåller en `ECID`-identitet.
 
+## Generera rapport över okända profiler
+
+Du kan få mer insyn i hur din organisations profilarkiv är uppbyggd genom den okända profilrapporten. En&quot;okänd profil&quot; avser en profil som är både osydd och inaktiv under en given tidsperiod. En icke sammansatt profil är en profil som bara innehåller ett profilfragment, medan en inaktiv profil är en profil som inte har lagt till nya händelser under den angivna tidsperioden. I rapporten med okända profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
+
+Du kan generera rapporten med okända profiler genom att utföra en GET-begäran till `/previewsamplestatus/report/unknownProfiles`-slutpunkten.
+
+**API-format**
+
+```http
+GET /previewsamplestatus/report/unknownProfiles
+```
+
+**Begäran**
+
+Följande begäran returnerar rapporten med okända profiler.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/unknownProfiles \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+```
+
+**Svar**
+
+En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten med okända profiler.
+
+>[!NOTE]
+>
+>I den här handboken har rapporten trunkerats så att den endast innehåller tidsperioderna `"120days"` och `7days`. Den fullständiga rapporten med okända profiler innehåller en uppdelning av profiler för en period på 7, 30, 60, 90 och 120 dagar.
+
+```json
+{
+  "data": {
+      "totalNumberOfProfiles": 63606,
+      "totalNumberOfEvents": 130977,
+      "unknownProfiles": {
+          "120days": {
+              "countOfProfiles": 1644,
+              "eventsAssociated": 26824,
+              "nsDistribution": {
+                  "Email": {
+                      "countOfProfiles": 18,
+                      "eventsAssociated": 95
+                  },
+                  "loyal": {
+                      "countOfProfiles": 26,
+                      "eventsAssociated": 71
+                  },
+                  "ECID": {
+                      "countOfProfiles": 1600,
+                      "eventsAssociated": 26658
+                  }
+              }
+          },
+          "7days": {
+              "countOfProfiles": 1782,
+              "eventsAssociated": 29151,
+              "nsDistribution": {
+                  "Email": {
+                      "countOfProfiles": 19,
+                      "eventsAssociated": 97
+                  },
+                  "ECID": {
+                      "countOfProfiles": 1734,
+                      "eventsAssociated": 28591
+                  },
+                  "loyal": {
+                      "countOfProfiles": 29,
+                      "eventsAssociated": 463
+                  }
+              }
+          }
+      }
+  },
+  "reportTimestamp": "2025-08-25T22:14:55.186"
+}
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| `data` | Objektet `data` innehåller den information som returnerats för rapporten med okända profiler. |
+| `totalNumberOfProfiles` | Det totala antalet unika profiler i profilarkivet. Detta motsvarar antalet adresserbara målgrupper. Den innehåller både kända och okända profiler. |
+| `totalNumberOfEvents` | Det totala antalet ExperienceEvents i profilarkivet. |
+| `unknownProfiles` | Ett objekt som innehåller en uppdelning av okända profiler (osydda och inaktiva) efter tidsperiod. I rapporten med okända profiler finns en beskrivning av profiler för tidsperioderna 7, 30, 60, 90 och 120 dagar. |
+| `countOfProfiles` | Antalet okända profiler för tidsperioden eller antalet okända profiler för namnutrymmet. |
+| `eventsAssociated` | Antalet ExperienceEvents för tidsintervallet eller antalet händelser för namnutrymmet. |
+| `nsDistribution` | Ett objekt som innehåller enskilda identitetsnamnutrymmen med distributionen av okända profiler och händelser för varje namnutrymme. Obs! Om du lägger ihop summan `countOfProfiles` för varje identitetsnamnutrymme i `nsDistribution`-objektet är lika med `countOfProfiles` för tidsperioden. Samma sak gäller för `eventsAssociated` per namnutrymme och det totala antalet `eventsAssociated` per tidsperiod. |
+| `reportTimestamp` | Rapportens tidsstämpel. |
+
+### Tolka rapporten med okända profiler
+
+Resultaten av rapporten ger insikt i hur många icke-sammansatta och inaktiva profiler din organisation har i sin Profile Store.
+
+Ta följande utdrag från objektet `data`:
+
+```json
+  "7days": {
+    "countOfProfiles": 1782,
+    "eventsAssociated": 29151,
+    "nsDistribution": {
+      "Email": {
+        "countOfProfiles": 19,
+        "eventsAssociated": 97
+      },
+      "ECID": {
+        "countOfProfiles": 1734,
+        "eventsAssociated": 28591
+      },
+      "loyal": {
+        "countOfProfiles": 29,
+        "eventsAssociated": 463
+      }
+    }
+  }
+```
+
+Den här rapporten innehåller följande information:
+
+* Det finns 1 782 profiler som bara innehåller ett profilfragment och som inte har några nya händelser de senaste sju dagarna.
+* Det finns 29 151 ExperienceEvents associerade med de 1 782 okända profilerna.
+* Det finns 1 734 okända profiler som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
+* Det finns 28 591 händelser associerade med de 1 734 okända profilerna som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
+
 ## Nästa steg
 
-Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör flera överlappningsrapporter kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
+Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör flera rapporter på data kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
 

@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: API-guide för kundprofil i realtid
 description: Med kundprofils-API:t i realtid kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: b2ae2b4ca2efe606aa148e06ca988a6285bedfee
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Om du vill veta mer om sammanfogningsprinciper och deras roll inom plattformen k
 
 ## Förhandsgranska exempelstatus ([!DNL Profile] preview) {#profile-preview}
 
-När data som är aktiverade för profilen hämtas till Experience Platform lagras de i datalagret Profil. När antalet poster i profilarkivet ökar eller minskar körs ett exempeljobb som innehåller information om hur många profilfragment och sammanfogade profiler som finns i datalagret. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exemplet samt lista profildistributionen per datauppsättning och per identitetsnamnområde. Om du vill komma igång med att använda slutpunkten `/profilepreviewstatus` kan du läsa [guiden för att förhandsgranska exempelstatus](preview-sample-status.md).
+När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid. Resultaten av det här exempeljobbet kan visas med slutpunkten `/previewsamplestatus`, som ingår i kundprofils-API:t i realtid. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättning och identitetsnamnområde, samt för att generera flera rapporter för att få synlighet i sammansättningen av organisationens profilarkiv.  Om du vill komma igång med att använda slutpunkten `/profilepreviewstatus` kan du läsa [guiden för att förhandsgranska exempelstatus](preview-sample-status.md).
 
 ## Profilsystemjobb {#profile-system-jobs}
 
