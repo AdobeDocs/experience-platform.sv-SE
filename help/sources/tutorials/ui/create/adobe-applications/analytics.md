@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
+source-git-commit: e28158bbd4e89e5fcf19f4dc89f266d737b34e65
 workflow-type: tm+mt
-source-wordcount: '1346'
+source-wordcount: '1398'
 ht-degree: 0%
 
 ---
 
 # Skapa en Adobe Analytics-källanslutning i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att hämta [!DNL Analytics]-rapportsvitsdata till Adobe Experience Platform.
+I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att hämta [!DNL Analytics] Report Suite-data till Adobe Experience Platform.
 
 ## Komma igång
 
@@ -30,7 +30,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De innehåller samma innebörd för alla kunder och är tillgängliga i källdata för [!DNL Analytics] och schemafältgrupper för [!DNL Analytics].
-* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade dimensionshierarkin i  [!DNL Analytics]. De finns också bland de scheman som definieras av Adobe, men kan tolkas olika av olika kunder. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en).
+* **Anpassat attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i  [!DNL Analytics]. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en Report Suite, och de kan skilja sig åt när det gäller användningen från Report Suite till Report Suite. Anpassade attribut är eVars, props och lists. Mer information om eVars finns i följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en).
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är alla användardefinierade och betraktas varken som standardattribut eller anpassade attribut.
 * **Eget namn**: Eget namn är etiketter som tillhandahålls av människor för anpassade variabler i en  [!DNL Analytics] implementering. Mer information om egna namn finns i följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en).
 
@@ -46,15 +46,15 @@ Under kategorin **[!UICONTROL Adobe applications]** väljer du **[!UICONTROL Ado
 
 ### Markera data
 
-**[!UICONTROL Analytics source add data]**-steget visas. Välj **[!UICONTROL Report suite]** om du vill börja skapa en källanslutning för data i Analytics-rapportsviten och välj sedan den rapportsvit som du vill importera. Välj **[!UICONTROL Next]** för att fortsätta.
+**[!UICONTROL Analytics source add data]**-steget visas. Välj **[!UICONTROL Report Suite]** om du vill börja skapa en källanslutning för analysrapportsvitdata och välj sedan den rapportsvit som du vill importera. Rapportsviter som inte kan markeras har redan importerats, antingen i den här sandlådan eller i en annan sandlåda. Välj **[!UICONTROL Next]** för att fortsätta.
 
 >[!NOTE]
 >
->Flera in-bound-anslutningar till en källa kan göras för att hämta olika data.
+>Flera ingående anslutningar kan göras för att ta in flera rapportsviter, men endast en Report Suite kan användas med kunddataplattformen i realtid.
 
 ![](../../../../images/tutorials/create/analytics/add-data.png)
 
-<!---Analytics report suites can be configured for one sandbox at a time. To import the same report suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
+<!---Analytics Report Suites can be configured for one sandbox at a time. To import the same Report Suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
 
 ### Mappning
 
@@ -66,7 +66,7 @@ Sidan [!UICONTROL Mapping] innehåller ett gränssnitt för att mappa källfält
 
 >[!TIP]
 >
->Endast scheman som har mallfältsgruppen [!DNL Analytics] visas på schemamarkeringsmenyn. Andra scheman utelämnas. Om det inte finns några lämpliga scheman tillgängliga för rapportsvitens data måste du skapa ett nytt schema. Detaljerade steg för hur du skapar scheman finns i guiden [skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md).
+>Endast scheman som har mallfältsgruppen [!DNL Analytics] visas på schemamarkeringsmenyn. Andra scheman utelämnas. Om det inte finns några lämpliga scheman tillgängliga för dina Report Suite-data måste du skapa ett nytt schema. Detaljerade steg för hur du skapar scheman finns i guiden [skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md).
 
 ![select-schema](../../../../images/tutorials/create/analytics/select-schema.png)
 
@@ -74,9 +74,9 @@ Avsnittet [!UICONTROL Map standard fields] visar paneler för [!UICONTROL Standa
 
 | Mappa standardfält | Beskrivning |
 | --- | --- |
-| [!UICONTROL Standard mappings applied] | På panelen [!UICONTROL Standard mappings applied] visas det totala antalet mappade standardattribut. Standardmappningar refererar till mappningsuppsättningar mellan standardattribut i källan [!DNL Analytics]-data och standardattribut i fältgruppen [!DNL Analytics]. Dessa är förmappade och kan inte redigeras. |
-| [!UICONTROL Non matching standard mappings] | Panelen [!UICONTROL Non matching standard mappings] refererar till antalet mappade standardattribut som innehåller egna namnkonflikter. Dessa konflikter visas när du återanvänder ett schema som redan har en ifylld uppsättning fältbeskrivningar. Du kan fortsätta med ditt [!DNL Analytics]-dataflöde även med egna namnkonflikter. |
-| [!UICONTROL Custom mappings] | På panelen [!UICONTROL Custom mappings] visas antalet mappade anpassade attribut, inklusive eVars, props och listor. Anpassade mappningar refererar till mappningsuppsättningar mellan anpassade attribut i källan [!DNL Analytics]-data och anpassade attribut i fältgruppen [!DNL Analytics]. Anpassade attribut kan kopplas till andra anpassade attribut samt standardattribut. |
+| [!UICONTROL Standard mappings applied] | På panelen [!UICONTROL Standard mappings applied] visas det totala antalet mappade attribut. Standardmappningar refererar till mappningsuppsättningar mellan alla attribut i källan [!DNL Analytics]-data och motsvarande attribut i fältgruppen [!DNL Analytics]. Dessa är förmappade och kan inte redigeras. |
+| [!UICONTROL Non matching standard mappings] | Panelen [!UICONTROL Non matching standard mappings] refererar till antalet mappade attribut som innehåller egna namnkonflikter. Dessa konflikter visas när du återanvänder ett schema som redan har en ifylld uppsättning fältbeskrivningar från en annan rapportserie. Du kan fortsätta med ditt [!DNL Analytics]-dataflöde även med egna namnkonflikter. |
+| [!UICONTROL Custom mappings] | På panelen [!UICONTROL Custom mappings] visas antalet mappade anpassade attribut, inklusive eVars, props och listor. Anpassade mappningar refererar till mappningsuppsättningar mellan anpassade attribut i källan [!DNL Analytics]-data och attribut i anpassade fältgrupper som ingår i det valda schemat. |
 
 ![map-standard-fields](../../../../images/tutorials/create/analytics/map-standard-fields.png)
 
@@ -92,7 +92,7 @@ Plattformen identifierar automatiskt dina mappningsuppsättningar för eventuell
 
 ![mappning](../../../../images/tutorials/create/analytics/mapping.png)
 
-Om det finns egna namnkonflikter i mappningsuppsättningarna kan du fortfarande fortsätta med ditt [!DNL Analytics]-dataflöde och bekräfta att fältbeskrivningarna kommer att vara desamma. Du kan också välja att skapa ett nytt schema med en tom uppsättning beskrivningar.
+Om det finns egna namnkonflikter mellan din käll-Report Suite och ditt valda schema kan du fortfarande fortsätta med ditt [!DNL Analytics]-dataflöde och bekräfta att fältbeskrivningarna inte kommer att ändras. Du kan också välja att skapa ett nytt schema med en tom uppsättning beskrivningar.
 
 Välj **[!UICONTROL Next]** för att fortsätta.
 
@@ -147,7 +147,7 @@ Steget **[!UICONTROL Dataflow detail]** visas där du måste ange ett namn och e
 [!UICONTROL Review]-steget visas så att du kan granska det nya Analytics-dataflödet innan det skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
 
 * [!UICONTROL Connection]: Visar anslutningens källplattform.
-* [!UICONTROL Data type]: Visar den markerade rapportsviten och dess motsvarande rapportsvits-ID.
+* [!UICONTROL Data type]: Visar den markerade rapportsviten och dess motsvarande Report Suite-ID.
 
 ![recension](../../../../images/tutorials/create/analytics/review.png)
 
@@ -181,7 +181,7 @@ Om du vill ta bort ett dataflöde går du till sidan [!UICONTROL Dataflows] och 
 
 ## Nästa steg och ytterligare resurser
 
-När anslutningen har skapats skapas automatiskt ett målschema och ett dataflöde som innehåller inkommande data. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det inledande intaget är klart ska [!DNL Analytics]-data användas av plattformstjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile] och segmenteringstjänsten. Mer information finns i följande dokument:
+När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det inledande intaget är klart ska [!DNL Analytics]-data användas av plattformstjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile] och segmenteringstjänsten. Mer information finns i följande dokument:
 
 * [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)
