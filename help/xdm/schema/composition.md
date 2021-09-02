@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 7d05b5d57ec4597b168be0261e75da5f243cb660
+source-git-commit: 2bd7c12209a1944aa954ba4490bb0c57f2a5ea61
 workflow-type: tm+mt
-source-wordcount: '3588'
+source-wordcount: '3643'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,11 @@ Det finns två sätt att skicka identitetsdata till plattformen:
 
 `identityMap` är ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Det här fältet kan användas för att ange identitetsinformation för dina scheman, i stället för att definiera identitetsvärden inom strukturen för själva schemat.
 
-Den största nackdelen med att använda `identityMap` är att identiteter bäddas in i data och blir mindre synliga som ett resultat av detta. Om du importerar rådata bör du definiera enskilda identitetsfält i den faktiska schemastrukturen i stället. Scheman som använder `identityMap` kan inte heller delta i relationer.
+Den största nackdelen med att använda `identityMap` är att identiteter bäddas in i data och blir mindre synliga som ett resultat av detta. Om du importerar rådata bör du definiera enskilda identitetsfält i den faktiska schemastrukturen i stället.
+
+>[!NOTE]
+>
+>Ett schema som använder `identityMap` kan användas som ett källschema i en relation, men kan inte användas som ett målschema. Detta beror på att alla målscheman måste ha en synlig identitet som kan mappas i ett referensfält i källschemat. Mer information om kraven för käll- och målscheman finns i användargränssnittsguiden för [relationer](../tutorials/relationship-ui.md).
 
 Identitetskartor kan dock vara särskilt användbara om du samlar in data från källor som lagrar identiteter tillsammans (till exempel [!DNL Airship] eller Adobe Audience Manager) eller om det finns ett varierande antal identiteter för ett schema. Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 
