@@ -5,9 +5,9 @@ title: Klassen XDM ExperienceEvent
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
+source-git-commit: ff446e2b9a2573889bcd1a5ab0933f60e871c353
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1728'
 ht-degree: 0%
 
 ---
@@ -82,18 +82,18 @@ I följande tabell visas de godkända värdena för `eventType`, tillsammans med
 
 | Värde | Definition |
 | --- | --- |
-| `advertising.completes` | En mediefil med en tidsgräns har bevakats tills den är klar. Det behöver inte innebära att tittaren tittade på hela videon, eftersom tittaren kunde ha hoppat över i förväg. |
-| `advertising.timePlayed` | Beskriver hur mycket tid en användare har lagt på en viss medieresurs med tidsangivelser. |
-| `advertising.federated` | Anger om en Experience Event skapades via datafederation (datadelning mellan kunder). |
 | `advertising.clicks` | Klicka på åtgärd(er) i en annons. |
+| `advertising.completes` | En mediefil med en tidsgräns har bevakats tills den är klar. Det behöver inte innebära att tittaren tittade på hela videon, eftersom tittaren kunde ha hoppat över i förväg. |
 | `advertising.conversions` | Fördefinierade åtgärder som utförs av en kund och som utlöser en händelse för prestandautvärdering. |
+| `advertising.federated` | Anger om en Experience Event skapades via datafederation (datadelning mellan kunder). |
 | `advertising.firstQuartiles` | En digital videoannons har spelat upp 25 % av sin längd med normal hastighet. |
 | `advertising.impressions` | Imponering(ar) av en annons till en kund som kan visas. |
 | `advertising.midpoints` | En digital videoannons har spelat upp 50 % av sin längd med normal hastighet. |
 | `advertising.starts` | En digital videoannons har börjat spelas upp. |
 | `advertising.thirdQuartiles` | En digital videoannons har spelat upp 75 % av sin längd med normal hastighet. |
-| `web.webpagedetails.pageViews` | En webbsida har fått en eller flera vyer. |
-| `web.webinteraction.linkClicks` | En länk har markerats en eller flera gånger. |
+| `advertising.timePlayed` | Beskriver hur mycket tid en användare har lagt på en viss medieresurs med tidsangivelser. |
+| `application.close` | Ett program stängdes eller skickades till bakgrunden. |
+| `application.launch` | En ansökan startades eller togs in i förgrunden. |
 | `commerce.checkouts` | En utcheckningshändelse har inträffat för en produktlista. Det kan finnas mer än en utcheckningshändelse om det finns flera steg i en utcheckningsprocess. Om det finns flera steg används tidsstämpeln och sidan/upplevelsen som refereras för varje händelse för att identifiera varje enskild händelse (steg), som representeras i ordning. |
 | `commerce.productListAdds` | En produkt har lagts till i produktlistan eller i kundvagnen. |
 | `commerce.productListOpens` | En ny produktlista (kundvagn) har initierats eller skapats. |
@@ -103,9 +103,32 @@ I följande tabell visas de godkända värdena för `eventType`, tillsammans med
 | `commerce.productViews` | En produkt har fått en eller flera vyer. |
 | `commerce.purchases` | En beställning har godkänts. Detta är den enda nödvändiga åtgärden i en handelskonvertering. En köphändelse måste ha en produktlista som refereras. |
 | `commerce.saveForLaters` | En produktlista har sparats för framtida bruk, till exempel en produktönskelista. |
+| `decisioning.propositionDisplay` | Ett beslutsförslag visades för en person. |
+| `decisioning.propositionInteract` | En person interagerade med ett beslutsförslag. |
 | `delivery.feedback` | Feedback-händelser för en leverans, till exempel en e-postleverans. |
+| `directMarketing.emailBounced` | Ett e-postmeddelande till en person studsade. |
+| `directMarketing.emailBouncedSoft` | Ett e-postmeddelande till en person med mjuka studsar. |
+| `directMarketing.emailClicked` | En person klickade på en länk i ett marknadsföringsmejl. |
+| `directMarketing.emailDelivered` | Ett e-postmeddelande har levererats till personens e-posttjänst |
+| `directMarketing.emailOpened` | En person öppnade ett marknadsföringsmejl. |
+| `directMarketing.emailUnsubscribed` | En person som avbrutit prenumerationen på ett marknadsföringsmejl. |
+| `leadOperation.convertLead` | Ett lead konverterades. |
+| `leadOperation.interestingMoment` | Ett intressant ögonblick spelades in för en person. |
+| `leadOperation.newLead` | Ett lead skapades. |
+| `leadOperation.scoreChanged` | Värdet för leadets poängattribut ändrades. |
+| `leadOperation.statusInCampaignProgressionChanged` | Status för en lead i en kampanj har ändrats. |
+| `listOperation.addToList` | En person har lagts till i en marknadsföringslista. |
+| `listOperation.removeFromList` | En person har tagits bort från en marknadsföringslista. |
 | `message.feedback` | Feedback-händelser som skickade/studsade/fel för meddelanden som skickats till en kund. |
 | `message.tracking` | Spåra händelser som öppna/klicka/anpassade åtgärder för meddelanden som skickas till en kund. |
+| `opportunityEvent.addToOpportunity` | En person har lagts till i en affärsmöjlighet. |
+| `opportunityEvent.opportunityUpdated` | En affärsmöjlighet har uppdaterats. |
+| `opportunityEvent.removeFromOpportunity` | En person har tagits bort från en affärsmöjlighet. |
+| `pushTracking.applicationOpened` | En person öppnade ett program från ett push-meddelande. |
+| `pushTracking.customAction` | En person klickade på en anpassad åtgärd i ett push-meddelande. |
+| `web.formFilledOut` | En person fyllde i ett formulär på en webbsida. |
+| `web.webinteraction.linkClicks` | En länk har markerats en eller flera gånger. |
+| `web.webpagedetails.pageViews` | En webbsida har fått en eller flera vyer. |
 
 {style=&quot;table-layout:auto&quot;}
 

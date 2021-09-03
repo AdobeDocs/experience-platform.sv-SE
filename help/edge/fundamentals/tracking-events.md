@@ -3,9 +3,9 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 53a14b2b7d7ca8bdd278f2aeec2c2e8a30fdac7b
 workflow-type: tm+mt
-source-wordcount: '1451'
+source-wordcount: '1082'
 ht-degree: 0%
 
 ---
@@ -103,34 +103,7 @@ alloy("sendEvent", {
 
 ### Inställning `eventType` {#event-types}
 
-I en XDM-upplevelsehändelse finns det ett valfritt `eventType`-fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i XDM:s offentliga rapport](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values).
-
-
-| **Händelsetyp:** | **Definition:** |
-| ---------------------------------- | ------------ |
-| advertising.completes | Anger om en mediefil som visas i tid har bevakats tills den är klar - det behöver inte innebära att användaren har tittat på hela videon. visningsprogrammet kunde ha hoppat över i förväg |
-| advertising.timePlayed | Beskriver hur mycket tid en användare har lagt på en viss medieresurs med tidsangivelser |
-| advertising.federated | Anger om en upplevelsehändelse har skapats via datafederation (datadelning mellan kunder) |
-| advertising.clicks | Klicka på åtgärder i en annons |
-| advertising.conversions | En fördefinierad åtgärd som utlöser en händelse för prestandautvärdering av en kund |
-| advertising.firstQuartiles | En digital videoannons har spelat upp 25 % av sin längd med normal hastighet |
-| advertising.impressions | Imponering(ar) av en annons till en slutanvändare som kan visas |
-| advertising.midpoints | En digital videoannons har spelat upp 50 % av sin längd med normal hastighet |
-| advertising.starts | En digital videoannons har börjat spela upp |
-| advertising.thirdQuartiles | En digital videoannons har spelat upp 75 % av sin längd med normal hastighet |
-| web.webpagedetails.pageViews | En webbsidas vy(er) har inträffat |
-| web.webinteraction.linkClicks | Klicka på en webblänk har inträffat |
-| commerce.checkouts | En åtgärd under en utcheckningsprocess för en produktlista kan vara mer än en utcheckningshändelse om det finns flera steg i en utcheckningsprocess. Om det finns flera steg används händelsetidsinformationen och sidan eller upplevelsen som refereras till för att identifiera det steg som enskilda händelser representerar i ordningen |
-| commerce.productListAdds | En produkt läggs till i produktlistan. Exempel på en produkt som läggs till i en kundvagn |
-| commerce.productListOpens | Initieringar av en ny produktlista. Exempel på en kundvagn skapas |
-| commerce.productListRemovals | Borttagning av en produktpost från en produktlista. Exempel på en produkt som tas bort från en kundvagn |
-| commerce.productListReopens | En produktlista som inte längre var tillgänglig (övergiven) har återaktiverats av användaren. Exempel via en ommarknadsföringsaktivitet |
-| commerce.productListViews | En produktlistas vy(er) har inträffat |
-| commerce.productViews | En eller flera produktvyer har skapats |
-| commerce.purchases | En beställning har godkänts. Inköp är den enda nödvändiga åtgärden i en handelskonvertering. Köpet måste ha en produktlista som refereras |
-| commerce.saveForLaters | Produktlistan sparas för framtida bruk. Exempel på en önskelista för en produkt |
-| delivery.feedback | Feedback-händelser för leverans. Exempel på feedback-händelser för e-postleverans |
-
+I XDM ExperienceEvent-scheman finns det ett valfritt `eventType`-fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. I XDM-dokumentationen finns en [lista över alla fördefinierade händelsetyper](../../xdm/classes/experienceevent.md#eventType).
 
 De här händelsetyperna visas i en listruta om du använder taggtillägget eller så kan du alltid skicka dem utan taggar. De kan skickas som en del av `xdm`-alternativet.
 
