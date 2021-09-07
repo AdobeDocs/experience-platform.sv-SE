@@ -1,9 +1,10 @@
 ---
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
-source-git-commit: 5adb3ed403bddd3b985d0a790eca117fb2f39288
+exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
+source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
 workflow-type: tm+mt
-source-wordcount: '1251'
+source-wordcount: '1285'
 ht-degree: 1%
 
 ---
@@ -214,7 +215,31 @@ ISO 8601-datumet när den version av [turbin](https://www.npmjs.com/package/@ado
 
 ISO 8601-datumet när det aktuella biblioteket skapades.
 
-### `environment`
+I det här exemplet visas objektvärdena:
+
+```javascript
+{
+  turbineVersion: "14.0.0",
+  turbineBuildDate: "2016-07-01T18:10:34Z",
+  buildDate: "2016-03-30T16:27:10Z"
+}
+```
+
+## `environment`
+
+**Code**
+
+```javascript
+_satellite.environment
+```
+
+Det här objektet innehåller information om den miljö som det aktuella taggredigeringsbiblioteket är distribuerat till. Objektet innehåller följande egenskaper:
+
+### `id`
+
+ID för miljön.
+
+### `stage`
 
 Den miljö som det här biblioteket skapades för. Möjliga värden är:
 
@@ -226,10 +251,8 @@ I det här exemplet visas objektvärdena:
 
 ```javascript
 {
-  turbineVersion: "14.0.0",
-  turbineBuildDate: "2016-07-01T18:10:34Z",
-  buildDate: "2016-03-30T16:27:10Z",
-  environment: "development"
+  id: "EN123456...",
+  stage: "development"
 }
 ```
 

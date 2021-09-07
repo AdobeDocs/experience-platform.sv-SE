@@ -1,9 +1,10 @@
 ---
 title: Turbinfri variabel
 description: Lär dig mer om turbinobjektet, en kostnadsfri variabel som ger information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
+source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '598'
 ht-degree: 0%
 
 ---
@@ -28,8 +29,7 @@ console.log(turbine.buildInfo.turbineBuildDate);
 {
     turbineVersion: "14.0.0",
     turbineBuildDate: "2016-07-01T18:10:34Z",
-    buildDate: "2016-03-30T16:27:10Z",
-    environment: "development"
+    buildDate: "2016-03-30T16:27:10Z"
 }
 ```
 
@@ -38,7 +38,27 @@ console.log(turbine.buildInfo.turbineBuildDate);
 | `turbineVersion` | Den [turbinversion](https://www.npmjs.com/package/@adobe/reactor-turbine) som används i det aktuella biblioteket. |
 | `turbineBuildDate` | ISO 8601-datumet när den version av [turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) som används inuti behållaren skapades. |
 | `buildDate` | ISO 8601-datumet när det aktuella biblioteket skapades. |
-| `environment` | Den miljö som det här biblioteket skapades för. Godkända värden är `development`, `staging` och `production`. |
+
+
+## [!DNL environment]
+
+```js
+console.log(turbine.environment.stage);
+```
+
+`turbine.environment` är ett objekt som innehåller information om miljön som biblioteket distribueras på.
+
+```js
+{
+    id: "EN123456...",
+    stage: "development"
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `id` | ID för miljön. |
+| `stage` | Den miljö som det här biblioteket skapades för. Godkända värden är `development`, `staging` och `production`. |
 
 
 ## [!DNL debugEnabled]
