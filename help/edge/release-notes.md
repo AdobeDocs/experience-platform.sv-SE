@@ -3,14 +3,18 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 2be9d262a699861c01011c59358751e6406f3770
+source-git-commit: f5d3c5911357d4b76e4d38564bf637e2549469d6
 workflow-type: tm+mt
-source-wordcount: '738'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.6.4 - 7 september 2021
+
+* Ett problem har korrigerats där de angivna HTML Adobe Target-åtgärderna för `head`-elementet ersatte hela `head`-innehållet. Ange nu HTML-åtgärder som tillämpas på `head`-elementet som läggs till i HTML.
 
 ## Version 2.6.3 - 16 augusti 2021
 
