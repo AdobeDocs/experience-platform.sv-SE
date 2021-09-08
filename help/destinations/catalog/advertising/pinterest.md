@@ -1,7 +1,7 @@
 ---
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
-source-git-commit: dc7e43a16923cb17a39a8ddb4ba114c0e9c0cc39
+source-git-commit: 9bd309ae9d9edf56de855422abd109af1a10cffc
 workflow-type: tm+mt
 source-wordcount: '528'
 ht-degree: 1%
@@ -21,8 +21,8 @@ Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats ell
 
 ## Förutsättningar {#prerequisites}
 
-* Användaren måste autentisera med ett Pinterest-konto som har åtkomst till annonskontot som han/hon vill lägga till en målgrupp i. Information om delning av annonseringskonton finns [här](https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts). Användaren skulle behöva åtkomstnivåerna &quot;målgrupp&quot;.
-* Information om identitetsformat för kundlista finns [här](https://help.pinterest.com/en/business/article/audience-targeting).
+* Användaren måste autentisera med ett Pinterest-konto som har åtkomst till annonskontot som han/hon vill lägga till en målgrupp i. Information om delning av annonsörer finns här: https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts. Användaren skulle behöva åtkomstnivåerna &quot;målgrupp&quot;.
+* Mer information om identitetsformat för kundlistor finns här: https://help.pinterest.com/en/business/article/audience-targeting.
 
 
 ## Identiteter som stöds {#supported-identities}
@@ -76,4 +76,4 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 ## Ytterligare resurser {#additional-resources}
 
-Mer information finns på [Pinterest Help Center-sidan](https://help.pinterest.com/en/business/article/audience-targeting).
+Mer information finns på Pinterest Help Center (https://help.pinterest.com/en/business/article/audience-targeting).

@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 09bae0d24eead5f0b6533ba5b89e1fc87c8c71b5
+source-git-commit: 6b688b88dc111cfb638ae71d9b43276e93eff28b
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '496'
 ht-degree: 1%
 
 ---
@@ -58,6 +58,7 @@ ht-degree: 1%
       * [linkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
+      * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
       * [Tillägget twitter Universal Web Site Tag](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX-anslutning](./catalog/advertising/datax.md)
@@ -108,9 +109,9 @@ ht-degree: 1%
       * [Översikt över taggtillägg](./catalog/launch-extensions/overview.md)
    * Destinationer för mobilengagemang {#mobile-engagement}
       * [Översikt över mål för mobilengagemang](./catalog/mobile-engagement/overview.md)
-      * [(Beta) Koppling mellan attribut för luftskepp](./catalog/mobile-engagement/airship-attributes.md)
-      * [(Beta) Koppling mellan luftfartygets taggar](./catalog/mobile-engagement/airship-tags.md)
-      * [(Beta) Braze connection](./catalog/mobile-engagement/braze.md)
+      * [Luftfartygsattribut](./catalog/mobile-engagement/airship-attributes.md)
+      * [Ansluta till luftfartygets taggar](./catalog/mobile-engagement/airship-tags.md)
+      * [Braze connection](./catalog/mobile-engagement/braze.md)
    * Destinationer för personalisering {#personalization}
       * [Översikt över destinationer för personalisering](./catalog/personalization/overview.md)
       * [Adobe Target-tillägg](./catalog/personalization/adobe-target.md)
