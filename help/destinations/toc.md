@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 6b688b88dc111cfb638ae71d9b43276e93eff28b
+source-git-commit: 834814cc2929c618b9f41c0fcf3ef79a831a969d
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '627'
 ht-degree: 1%
 
 ---
@@ -139,5 +139,38 @@ ht-degree: 1%
       * [Anropa taggtillägg](./catalog/voice/invoca.md)
       * [Medietillägg](./catalog/voice/medallia.md)
       * [Tillägg för URL-inkorg](./catalog/voice/talkurl.md)
+* Mål-SDK {#destination-sdk}
+   * [Översikt](./destination-sdk/overview.md)
+   * [Krav för integrering](./destination-sdk/integration-prerequisites.md)
+   * [Komma igång](./destination-sdk/getting-started.md)
+   * SDK-målfunktionalitet {#functionality}
+      * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
+      * [Målkonfiguration](./destination-sdk/destination-configuration.md)
+      * [Server- och mallspecifikationer](./destination-sdk/server-and-template-configuration.md)
+      * [Meddelandeformat](./destination-sdk/message-format.md)
+      * [Hantering av målgruppsmetadata](./destination-sdk/audience-metadata-management.md)
+      * [Autentiseringskonfiguration](./destination-sdk/credentials-configuration.md)
+      * [OAuth 2-autentisering](./destination-sdk/oauth2-authentication.md)
+      * Utvecklarverktyg {#developer-tools}
+         * [Skapa och testa en meddelandeomformningsmall](./destination-sdk/create-template.md)
+         * [Testa målkonfigurationen](./destination-sdk/test-destination.md)
+   * API-referens {#api-reference}
+      * [API-åtgärder för destinationsslutpunkt](./destination-sdk/destination-configuration-api.md)
+      * [API-åtgärder för målserverns slutpunkt](./destination-sdk/destination-server-api.md)
+      * [API-åtgärder för målgruppsmetadata](./destination-sdk/audience-metadata-api.md)
+      * [API-åtgärder för slutpunkt för autentiseringsuppgifter](./destination-sdk/credentials-configuration-api.md)
+      * [Publicera API-åtgärder för slutpunkt](./destination-sdk/destination-publish-api.md)
+      * Referens för utvecklarverktyg {#developer-tools-reference}
+         * [Hämta API-åtgärder för exempelmallar](./destination-sdk/sample-template-api.md)
+         * [API-åtgärder för återgivningsmall](./destination-sdk/render-template-api.md)
+         * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
+         * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
+   * Stödlinjer {#guides}
+      * [Använd mål-SDK för att konfigurera ditt mål](./destination-sdk/configure-destination-instructions.md)
+   * Dokumentera ditt mål {#document-destination}
+      * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
+      * [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
+      * [Skapa en måldokumentationssida med en textredigerare i den lokala miljön](./destination-sdk/docs-framework/work-in-local-environment.md)
+      * [Självbetjäningsmall för dokumentation](./destination-sdk/docs-framework/self-service-template.md)
 * [Frågor och svar](./destinations-faq.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

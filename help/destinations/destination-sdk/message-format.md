@@ -1,0 +1,801 @@
+---
+description: Använd innehållet på den här sidan tillsammans med resten av konfigurationsalternativen för partnermål. Den här sidan behandlar meddelandeformatet för data som exporteras från Adobe Experience Platform till destinationer, medan den andra sidan behandlar information om hur du ansluter och autentiserar till destinationen.
+seo-description: Use the content on this page together with the rest of the configuration options for partner destinations. This page addresses the messaging format of data exported from Adobe Experience Platform to destinations, while the other page addresses specifics about connecting and authenticating to your destination.
+seo-title: Message format
+title: Meddelandeformat
+source-git-commit: d60933d2083b7befcfa8beba4b1630f372c08cfa
+workflow-type: tm+mt
+source-wordcount: '1505'
+ht-degree: 1%
+
+---
+
+# Meddelandeformat
+
+## Förutsättningar - Adobe Experience Platform-koncept {#prerequisites}
+
+Om du vill veta mer om Adobe kan du bekanta dig med följande koncept från Experience Platform:
+
+* **Experience Data Model (XDM)**. [XDM-](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) översikt och   [hur du skapar ett XDM-schema i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
+* **Klass**. [Skapa och redigera klasser i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
+* **Fältgrupp**. [Fältgruppsdefinition ](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#field-group) och  [mer information om fältgrupper](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
+* **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
+* **SegmentMembership**. XDM-attributet [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) anger vilka segment en profil tillhör. För de tre olika värdena i fältet `status`, läs dokumentationen om schemafältgruppen [Information om segmentmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
+
+## Översikt {#overview}
+
+Använd innehållet på den här sidan tillsammans med resten av [konfigurationsalternativen för partnermål](./configuration-options.md). Den här sidan behandlar meddelandeformatet för data som exporteras från Adobe Experience Platform till destinationer, medan den andra sidan behandlar information om hur du ansluter och autentiserar till destinationen.
+
+Adobe Experience Platform exporterar data till ett stort antal destinationer, i olika dataformat. Några exempel på destinationstyper är annonsplattformar (Google), sociala nätverk (Facebook), molnlagringsplatser (Amazon S3, Azure Event Hubs).
+
+Experience Platform kan justera det exporterade meddelandeformatet så att det matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
+* Källa (1) och mål (2) XDM-schema i Adobe Experience Platform
+* meddelandeformatet på partnersidan (3), och
+* Omformningslagret mellan de två, som du kan definiera genom att skapa en [meddelandeomformningsmall](./message-format.md#using-templating).
+
+![Schema till JSON-omvandling](./assets/transformations-3-steps.png)
+
+Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt.
+
+Användare som vill aktivera data till målet måste mappa fälten som de använder för sina datauppsättningar i Experience Platform till ett schema som översätts till målets förväntade format. Adobe skapar en anpassad fältgrupp som ditt företag kan lägga till i målschemat. Fälten i fältgruppen beror på vilka profilattributfält som du kan ta emot.
+
+**XDM-källschema (1)**: Detta avser det schema som en kund använder i Experience Platform. I Experience Platform, i [mappningssteget](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) för aktiveringsmålarbetsflödet, mappade kunder fält från sina källscheman till målschemat (2).
+
+**Mål-XDM-schema (2)**: Baserat på det JSON-standardschema (3) som du delar med Adobe skapar teamet på Adobe ett anpassat schema för ditt mål. Observera att i en [framtida fas av projektet](./overview.md#phased-approach) kan du skapa det anpassade schemat för ditt mål på egen hand.
+
+**JSON-standardschema för målprofilens attribut (3)**: Dela med oss en  [JSON-](https://json-schema.org/learn/miscellaneous-examples.html) översikt över alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för kan vara `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName` och så vidare.
+
+Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur strukturen för ett meddelande ändras mellan käll-XDM-schemat och exempelschemat på partnersidan:
+
+![Exempel på omformningsmeddelande](./assets/transformations-with-examples.png)
+
+<br> 
+
+
+## Komma igång - omforma tre grundläggande attribut {#getting-started}
+
+För att demonstrera omvandlingsprocessen används i exemplet nedan tre vanliga profilattribut i Adobe Experience Platform: **förnamn**, **efternamn** och **e-postadress**.
+
+>[!NOTE]
+>
+>Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i Adobe Experience Platform-användargränssnittet i **mappningssteget** i [aktivera målarbetsflödet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#mapping).
+
+Anta att din plattform kan ta emot ett meddelandeformat som:
+
+```curl
+POST https://YOUR_REST_API_URL/users/
+Content-Type: application/json
+Authorization: Bearer YOUR_REST_API_KEY
+
+{
+  "attributes":
+    {
+      "first_name": "Yours",
+      "last_name": "Truly",
+      "external_id": "yourstruly@adobe.com"
+    }
+}
+```
+
+Med tanke på meddelandeformatet är motsvarande omformningar följande:
+
+| Attribut i partner-XDM-schema på Adobe | Omformning | Attribut i HTTP-meddelande på din sida |
+|---------|----------|---------|
+| `_your_custom_schema.firstName` | ` attributes.first_name` | `first_name` |
+| `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
+| `personalEmail.address` | `attributes.external_id` | `external_id` |
+
+## Använda ett mallspråk för identitet, attribut och segmentmedlemskapsomvandlingar {#using-templating}
+
+Adobe använder ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) för att omforma fälten från XDM-schemat till ett format som stöds av ditt mål.
+
+I det här avsnittet finns flera exempel på hur dessa omformningar görs, från XDM-indataschemat via mallen och från utdata i nyttolastformat som accepteras av målet. Exemplen nedan sorteras efter ökad komplexitet, enligt följande:
+
+1. Exempel på enkla omformningar. Lär dig hur mallar fungerar med enkla omformningar för fälten [Profilattribut](./message-format.md#attributes), [Segmentmedlemskap](./message-format.md#segment-membership) och [Identitet](./message-format.md#identities).
+2. Exempel på mallar som kombinerar fälten ovan blir mer komplicerade: [Skapa en mall som skickar segment och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](./message-format.md#segments-identities-attributes).
+3. Djupdykning, som visar två exempel på mallar från branschpartners.
+
+### Profilattribut {#attributes}
+
+Information om hur du omformar profilattributen som exporteras till ditt mål finns i JSON- och kodexemplen nedan.
+
+
+>[!IMPORTANT]
+>
+>En lista över alla tillgängliga profilattribut i Adobe Experience Platform finns i [XDM-fältordlistan](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
+
+
+
+**Indata**
+
+Profil 1:
+
+```json
+{
+    "attributes": {
+        "firstName": {
+            "value": "Hermione"
+    },
+    "birthDate": {}
+  }
+}
+```
+
+Profil 2:
+
+```json
+{
+  "attributes": {
+    "firstName": {
+      "value": "Harry"
+    },
+    "birthDate": {
+        "value": "1980/07/31"
+    }
+  }
+}
+```
+
+**Mall**
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            {% for attribute in profile.attributes %}
+            "{{ attribute.key }}":
+                {% if attribute.value is empty %}
+                    null
+                {% else %}
+                    "{{ attribute.value.value }}"
+                {% endif %}
+            {% if not loop.last %},{% endif %}
+            {% endfor %}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+```
+
+**Resultat**
+
+
+```json
+{
+    "profiles": [
+        {
+            "firstName": "Hermione",
+            "birthDate": null
+        },
+        {
+            "firstName": "Harry",
+            "birthDate": "1980/07/31"
+        }
+    ]
+}
+```
+
+### Segmentmedlemskap {#segment-membership}
+
+XDM-attributet [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) anger vilka segment en profil tillhör.
+För de tre olika värdena i fältet `status`, läs dokumentationen om schemafältgruppen [Information om segmentmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
+
+**Indata**
+
+Profil 1:
+
+```json
+{
+  "segmentMembership": {
+    "ups": {
+      "36a51c13-9dd6-4d2c-8aa3-07d785ea5075": {
+        "lastQualificationTime": "2019-11-20T13:15:49Z",
+        "status": "realized"
+      },
+      "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
+        "lastQualificationTime": "2019-11-20T13:15:49Z",
+        "status": "existing"
+      },
+      "8f812592-3f06-416b-bd50-e7831848a31a": {
+        "lastQualificationTime": "2019-11-20T13:15:49Z",
+        "status": "exited"
+      }
+    }
+  }
+}
+```
+
+Profil 2:
+
+```json
+{
+  "segmentMembership": {
+    "ups": {
+      "32396e4b-16f6-4033-9702-fc69b5e24e7c": {
+        "lastQualificationTime": "2021-08-20T17:23:04Z",
+        "status": "realized"
+      },
+      "af854278-894a-4192-a96b-320fbf2623fd": {
+        "lastQualificationTime": "2021-08-20T16:44:37Z",
+        "status": "existing"
+      },
+      "66505bf9-bc08-4bac-afbc-8b6706650ea4": {
+        "lastQualificationTime": "2019-08-20T17:23:04Z",
+        "status": "realized"
+      }
+    }
+  }
+}
+```
+
+**Mall**
+
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                {% for segment in profile.segmentMembership.ups | added %}
+                "{{ segment.key }}"{% if not loop.last %},{% endif %}
+                {% endfor %}
+                ],
+                "remove": [
+                {# Alternative syntax for filtering segments by status: #}
+                {% for segment in removedSegments(profile.segmentMembership.ups) %}
+                "{{ segment.key }}"{% if not loop.last %},{% endif %}
+                {% endfor %}
+                ]
+            }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+```
+
+**Resultat**
+
+```json
+{
+    "profiles": [
+        {
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    "36a51c13-9dd6-4d2c-8aa3-07d785ea5075",
+                    "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+                ],
+                "remove": [
+                    "8f812592-3f06-416b-bd50-e7831848a31a"
+                ]
+            }
+        },
+        {
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    "32396e4b-16f6-4033-9702-fc69b5e24e7c",
+                    "af854278-894a-4192-a96b-320fbf2623fd",
+                    "66505bf9-bc08-4bac-afbc-8b6706650ea4"
+                ],
+                "remove": [
+                ]
+            }
+        }
+    ]
+}
+```
+
+### Identiteter {#identities}
+
+Mer information om identiteter i Experience Platform finns i [Översikt över identitetsnamnrymden](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv).
+
+**Indata**
+
+Profil 1:
+
+```json
+{
+    "identityMap": {
+        "email": [
+            {
+                "id": "johndoe@example.com"
+            },
+            {
+                "id": "jd@example.com"
+            }
+        ],
+        "external_id": [
+            {
+                "id": "123456"
+            }
+        ]
+    }
+}
+```
+
+Profil 2:
+
+```json
+{
+    "identityMap": {
+        "email": [
+            {
+                "id": "jane.doe@example.com"
+            }
+        ]
+    }
+}
+```
+
+**Mall**
+
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            "identities": [
+                {% for email in profile.identityMap.email %}
+                {
+                    "type": "email",
+                    "id": "{{ email.id }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+
+                {# Add a comma only if you have both emails and external_ids. #}
+                {% if profile.identityMap.email is not empty and profile.identityMap.external_id is not empty %}
+                    ,
+                {% endif %}
+
+                {% for external in profile.identityMap.external_id %}
+                {
+                    "type": "external_id",
+                    "id": "{{ external.id }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+```
+
+**Resultat**
+
+```json
+{
+    "profiles": [
+        {
+            "identities": [
+                {
+                    "type": "email",
+                    "id": "johndoe@example.com"
+                },
+                {
+                    "type": "email",
+                    "id": "jd@example.com"
+                },
+                {
+                    "type": "external_id",
+                    "id": "123456"
+                }
+            ]
+        },
+        {
+            "identities": [
+                {
+                    "type": "email",
+                    "id": "jane.doe@example.com"
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+### Skapa en mall som skickar segment och identiteter {#segments-and-identities}
+
+I det här avsnittet finns ett exempel på en vanlig omvandling mellan Adobe XDM-schemat och partnermålschemat.
+I exemplet nedan visas hur du omformar segmentmedlemskapet och identiteterna och skickar dem till ditt mål.
+
+**Indata**
+
+Profil 1:
+
+```json
+{
+    "identityMap": {
+        "email": [
+            {
+                "id": "johndoe@example.com"
+            },
+            {
+                "id": "jd@example.com"
+            }
+        ],
+        "external_id": [
+            {
+                "id": "123456"
+            }
+        ]
+    },
+    "segmentMembership": {
+        "ups": {
+            "36a51c13-9dd6-4d2c-8aa3-07d785ea5075": {
+                "lastQualificationTime": "2019-11-20T13:15:49Z",
+                "status": "realized"
+            },
+            "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
+              "lastQualificationTime": "2019-11-20T13:15:49Z",
+              "status": "existing"
+            },
+            "8f812592-3f06-416b-bd50-e7831848a31a": {
+                "lastQualificationTime": "2019-11-20T13:15:49Z",
+                "status": "exited"
+            }
+        }
+    }
+}
+```
+
+Profil 2:
+
+```json
+{
+    "identityMap": {
+        "email": [
+            {
+                "id": "jane.doe@example.com"
+            }
+        ]
+    },
+    "segmentMembership": {
+        "ups": {
+            "36a51c13-9dd6-4d2c-8aa3-07d785ea5075": {
+                "lastQualificationTime": "2021-08-31T10:01:42Z",
+                "status": "realized"
+            }
+        }
+    }
+}
+```
+
+**Mall**
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            "identities": [
+                {% for email in profile.identityMap.email %}
+                {
+                    "type": "email",
+                    "id": "{{ email.id }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+                
+                {# Add a comma only if you have both emails and external_ids. #}
+                {% if profile.identityMap.email is not empty and profile.identityMap.external_id is not empty %}
+                    ,
+                {% endif %}
+                
+                {% for external in profile.identityMap.external_id %}
+                {
+                    "type": "external_id",
+                    "id": "{{ external.id }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ],
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    {% for segment in profile.segmentMembership.ups | added %}
+                    "{{ segment.key }}"{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ],
+                "remove": [
+                    {# Alternative syntax for filtering segments by status: #}
+                    {% for segment in removedSegments(profile.segmentMembership.ups) %}
+                    "{{ segment.key }}"{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+```
+
+**Resultat**
+
+`json` nedan representerar data som exporteras från Adobe Experience Platform.
+
+```json
+{
+    "profiles": [
+        {
+            "identities": [
+                {
+                    "type": "email",
+                    "id": "johndoe@example.com"
+                },
+                {
+                    "type": "email",
+                    "id": "jd@example.com"
+                },
+                {
+                    "type": "external_id",
+                    "id": "123456"
+                }
+            ],
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    "36a51c13-9dd6-4d2c-8aa3-07d785ea5075",
+                    "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+                ],
+                "remove": [
+                    "8f812592-3f06-416b-bd50-e7831848a31a"
+                ]
+            }
+        },
+        {
+            "identities": [
+                {
+                    "type": "email",
+                    "id": "jane.doe@example.com"
+                }
+            ],
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    "36a51c13-9dd6-4d2c-8aa3-07d785ea5075"
+                ],
+                "remove": []
+            }
+        }
+    ]
+}
+```
+
+### Skapa en mall som skickar segment, identiteter och profilattribut {#segments-identities-attributes}
+
+I det här avsnittet finns ett exempel på en vanlig omvandling mellan Adobe XDM-schemat och partnermålschemat.
+
+Ett annat vanligt användningsexempel är export av data som innehåller segmentmedlemskap, identiteter (till exempel: e-postadress, telefonnummer, reklam-ID) och profilattribut. Se exemplet nedan om du vill exportera data på det här sättet:
+
+**Indata**
+
+Profil 1:
+
+```json
+{
+    "attributes": {
+        "firstName": {
+            "value": "Hermione"
+        },
+        "birthDate": {}
+    },
+    "identityMap": {
+        "email": [
+            {
+                "id": "johndoe@example.com"
+            },
+            {
+                "id": "jd@example.com"
+            }
+        ],
+        "external_id": [
+            {
+                "id": "123456"
+            }
+        ]
+    },
+    "segmentMembership": {
+        "ups": {
+            "36a51c13-9dd6-4d2c-8aa3-07d785ea5075": {
+                "lastQualificationTime": "2019-11-20T13:15:49Z",
+                "status": "realized"
+            },
+            "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
+              "lastQualificationTime": "2019-11-20T13:15:49Z",
+              "status": "existing"
+            },
+            "8f812592-3f06-416b-bd50-e7831848a31a": {
+                "lastQualificationTime": "2019-11-20T13:15:49Z",
+                "status": "exited"
+            }
+        }
+    }
+}
+```
+
+Profil 2:
+
+```json
+{
+    "attributes": {
+        "firstName": {
+            "value": "Harry"
+        },
+        "birthDate": {
+            "value": "1980/07/31"
+        }
+    },
+    "identityMap": {
+        "email": [
+            {
+                "id": "harry.p@example.com"
+            }
+        ]
+    },
+    "segmentMembership": {
+        "ups": {
+            "36a51c13-9dd6-4d2c-8aa3-07d785ea5075": {
+                "lastQualificationTime": "2019-11-20T13:15:49Z",
+                "status": "realized"
+            }
+        }
+    }
+}
+```
+
+**Mall**
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            "attributes": {
+            {% for attribute in profile.attributes %}
+                "{{ attribute.key }}":
+                    {% if attribute.value is empty %}
+                        null
+                    {% else %}
+                        "{{ attribute.value.value }}"
+                    {% endif %}
+                {% if not loop.last %},{% endif %}
+            {% endfor %}
+            },
+            "identities": [
+                {% for email in profile.identityMap.email %}
+                {
+                    "type": "email",
+                    "id": "{{ email.id }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+
+                {# Add a comma only if we have both emails and external_ids. #}
+                {% if profile.identityMap.email is not empty and profile.identityMap.external_id is not empty %}
+                    ,
+                {% endif %}
+
+                {% for external in profile.identityMap.external_id %}
+                {
+                    "type": "external_id",
+                    "id": "{{ external.id }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ],
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                {% for segment in profile.segmentMembership.ups | added %}
+                    "{{ segment.key }}"{% if not loop.last %},{% endif %}
+                {% endfor %}
+                ],
+                "remove": [
+                {# Alternative syntax for filtering segments by status: #}
+                {% for segment in removedSegments(profile.segmentMembership.ups) %}
+                    "{{ segment.key }}"{% if not loop.last %},{% endif %}
+                {% endfor %}
+                ]
+            }
+        }
+    ]
+}
+```
+
+**Resultat**
+
+`json` nedan representerar data som exporteras från Adobe Experience Platform.
+
+```json
+{
+    "profiles": [
+        {
+            "attributes": {
+                "firstName": "Hermione",
+                "birthDate": null
+            },
+            "identities": [
+                {
+                    "type": "email",
+                    "id": "johndoe@example.com"
+                },
+                {
+                    "type": "email",
+                    "id": "jd@example.com"
+                },
+                {
+                    "type": "external_id",
+                    "id": "123456"
+                }
+            ],
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    "36a51c13-9dd6-4d2c-8aa3-07d785ea5075",
+                    "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+                ],
+                "remove": [
+                    "8f812592-3f06-416b-bd50-e7831848a31a"
+                ]
+            }
+        },
+        {
+            "attributes": {
+                "firstName": "Harry",
+                "birthDate": "1980/07/21"
+            },
+            "identities": [
+                {
+                    "type": "email",
+                    "id": "harry.p@example.com"
+                }
+            ],
+            "AdobeExperiencePlatformSegments": {
+                "add": [
+                    "36a51c13-9dd6-4d2c-8aa3-07d785ea5075"
+                ],
+                "remove": []
+            }
+        }
+    ]
+}
+```
+
+### Referens: Kontext och funktioner som används i omformningsmallar
+
+Kontexten som anges för mallen innehåller `input` (profilerna/data som exporteras i det här anropet) och `destination` (data om målet som Adobe skickar data till, giltiga för alla profiler).
+
+Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
+
+|  -funktion | Beskrivning |
+|---------|----------|
+| `input.profile` | Profilen, representerad som en [JsonNode](http://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |
+| `destination.segmentAliases` | Mappa från segment-ID:n i Adobe Experience Platform-namnutrymmet till segmentalias i partnersystemet. |
+| `destination.segmentNames` | Mappa från segmentnamn i Adobe Experience Platform-namnutrymmet till segmentnamn i partnersystemet. |
+| `addedSegments(listOfSegments)` | Returnerar endast de segment som har status `realized` eller `existing`. |
+| `removedSegments(listOfSegments)` | Returnerar endast de segment som har status `exited`. |
+
+<!--
+
+## What Adobe needs from you to set up your destination {#what-adobe-needs}
+
+Based on the transformations outlined in the sections above, Adobe needs the following information to set up your destination:
+
+* Considering *all* the fields that your platform can receive, Adobe needs the standard JSON schema that corresponds to your expected message format. Having the template allows Adobe to define transformations and to create a custom XDM schema for your company, which customers would use to export data to your destination.
+
+-->

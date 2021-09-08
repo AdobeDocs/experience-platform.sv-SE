@@ -1,0 +1,75 @@
+---
+description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
+title: Komma igång med mål-SDK
+source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+workflow-type: tm+mt
+source-wordcount: '523'
+ht-degree: 2%
+
+---
+
+# Komma igång
+
+## Översikt {#overview}
+
+På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
+
+## Terminologi {#terminology}
+
+I den här handboken används plattformsspecifika begrepp, som IMS-organisation och sandlådor. I [Experience Platform-ordlistan](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) finns definitioner av dessa och andra termer.
+
+## Hämta nödvändiga autentiseringsuppgifter {#obtain-authentication-credentials}
+
+SDK för mål använder [Adobe I/O](https://www.adobe.io/)-gatewayen för autentisering. Om du vill göra API-anrop till SDK-målslutpunkter måste du ange vissa huvuden i dina API-anrop. Arbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](http://console.adobe.io/).
+
+Följ självstudiekursen [Experience Platform authentication tutorial](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html) för att anropa programmeringsgränssnittets målslutpunkter för SDK. Starta självstudiekursen från steget &quot;[Generera en API-nyckel, IMS-org-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot;. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i programmeringsgränssnittsanropen för SDK enligt nedan:
+
+* `x-api-key: {API_KEY}`, även kallat klient-ID
+* `x-gw-ims-org-id: {IMS_ORG}`, även kallat organisations-ID
+* `Authorization: Bearer {ACCESS_TOKEN}`. Åtkomsttoken har en förfallotid på 24 timmar, uttryckt i millisekunder, så du måste uppdatera den. Uppdatera åtkomsttoken genom att upprepa stegen som beskrivs i självstudiekursen för autentisering.
+
+<!--
+
+### Obtain `Authorization: Bearer {ACCESS_TOKEN}`
+
+To obtain the `{ACCESS_TOKEN}`, you must generate a JWT token and exchange it for the access token. Follow the steps below:
+
+1. Follow the instructions in the [Generate JWT section](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) in the credentials guide.
+2. Follow the instructions in [Step 3: try it](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/ServiceAccountIntegration.md) in the Service account connection guide.
+
+You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-ims-org-id: {IMS_ORG}`, and `Authorization: Bearer {ACCESS_TOKEN}`.
+
+>[!NOTE]
+>
+>The access token has an expiration time of 24 hours, expressed in milliseconds, so you will have to refresh it. To refresh the access token, repeat the steps outlined in this section.
+
+-->
+
+## Ägarskap och sandlådor för mål {#destination-ownership}
+
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Begäranden till mål-SDK kräver rubriker som anger namnet på sandlådan som åtgärden utförs i:
+
+* `x-sandbox-name: {SANDBOX_NAME}`
+
+Adobe Exchange-teamet ger dig ditt sandlådenamn, som du måste använda i anrop till programmeringsgränssnittets slutpunkter för mål-SDK.
+
+## Rollbaserad åtkomstkontroll (RBAC) {#rbac}
+
+Om du vill använda målets SDK API-slutpunkter som beskrivs i [referensdokumentationen](./configuration-options.md) måste du ha behörigheten **[!UICONTROL Destination Authoring]** för åtkomstkontroll. Arbeta med Adobe Exchange-teamet för att få den här behörigheten tilldelad dig i [Adobe Admin Console](https://adminconsole.adobe.com/).
+
+![Behörighet för målredigering](./assets/destination-authoring-permission.png)
+
+Mer information finns i följande dokument för Experience Platform Access Control:
+
+* [Hantera behörigheter för en produktprofil](/help/access-control/ui/permissions.md)
+* [Tillgängliga behörigheter för Experience Platform](/help/access-control/home.md#permissions)
+* [Adobe Admin Console-dokumentation](https://helpx.adobe.com/se/enterprise/using/admin-console.html)
+
+## Ytterligare överväganden {#additional-considerations}
+
+* Alla ändringar du gör i målkonfigurationer, oavsett om du skapar eller redigerar en destinationskonfiguration, måste granskas och godkännas av Adobe. Ändringarna återspeglas i destinationerna först när granskningen är klar.
+* Endast användare som tillhör samma organisation och har åtkomst till sandlådan kan redigera målkonfigurationen.
+
+## Nästa steg {#next-steps}
+
+Genom att följa stegen i den här artikeln fick du inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering. Sedan kan du konfigurera ett mål med SDK för mål. Läs [Använd mål-SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för nästa steg.
