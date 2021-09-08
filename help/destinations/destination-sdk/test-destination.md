@@ -1,9 +1,10 @@
 ---
-description: 'Som en del av mål-SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa målet. På den här sidan beskrivs hur du testar målkonfigurationen. '
+description: Som en del av mål-SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa målet. På den här sidan beskrivs hur du testar målkonfigurationen.
 title: Testa målkonfigurationen
-source-git-commit: cf6c6adf128ec867cd67af609a40b04d2c632bf9
+exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
-source-wordcount: '482'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
@@ -228,4 +229,4 @@ Beskrivningar av parametrarna för begäran och svar finns i [API-åtgärder fö
 
 ## Nästa steg
 
-När du har bekräftat att målet är korrekt konfigurerat kan du skapa en dokumentationssida för målet med hjälp av Adobe [självbetjäningsdokumentationsprocessen](./docs-framework/documentation-instructions.md).
+När du har testat destinationen och bekräftat att den är korrekt konfigurerad kan du skicka konfigurationen till Adobe för granskning med API:t [målpublicering](./destination-publish-api.md).

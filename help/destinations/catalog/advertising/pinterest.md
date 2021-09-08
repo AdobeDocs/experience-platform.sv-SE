@@ -1,15 +1,15 @@
 ---
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
-source-git-commit: 9bd309ae9d9edf56de855422abd109af1a10cffc
+exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '512'
 ht-degree: 1%
 
 ---
 
-
-# Pinterest Customer List Connection
+# [!DNL Pinterest Customer List] anslutning
 
 ## Översikt {#overview}
 
@@ -21,20 +21,20 @@ Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats ell
 
 ## Förutsättningar {#prerequisites}
 
-* Användaren måste autentisera med ett Pinterest-konto som har åtkomst till annonskontot som han/hon vill lägga till en målgrupp i. Information om delning av annonsörer finns här: https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts. Användaren skulle behöva åtkomstnivåerna &quot;målgrupp&quot;.
-* Mer information om identitetsformat för kundlistor finns här: https://help.pinterest.com/en/business/article/audience-targeting.
+* Användaren måste autentisera med ett Pinterest-konto som har åtkomst till annonskontot som han/hon vill lägga till en målgrupp i. Information om delning av annonseringskonton finns [här](https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts). Användaren skulle behöva åtkomstnivåerna &quot;målgrupp&quot;.
+* Information om identitetsformat för kundlista finns [här](https://help.pinterest.com/en/business/article/audience-targeting).
 
 
 ## Identiteter som stöds {#supported-identities}
 
-Pinterest kundlista har stöd för aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+Målet [!DNL Pinterest Customer List] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
 
 I [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) för arbetsflödet för målaktivering mappar du önskade identiteter till målfältet *pinterest_publik*. Identiteter särskiljs och löses vid datainhämtning till Pinterest.
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| GAID | Google Advertising ID | Mappa *GAID*-källidentitetens namnområde till målidentitetsfältet *pinterest_audiens*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
-| IDFA | Apple ID för annonsörer | Mappa *IDFA*-källidentitetsnamnutrymmet till målidentitetsfältet *pinterest_audiens*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
+| GAID | [!DNL Google Advertising ID] | Mappa *GAID*-källidentitetens namnområde till målidentitetsfältet *pinterest_audiens*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
+| IDFA | [!DNL Apple ID for Advertisers] | Mappa *IDFA*-källidentitetsnamnutrymmet till målidentitetsfältet *pinterest_audiens*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
 | E-POST | E-postadresser (klartext eller hashas med SHA256-algoritmen) | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. <br> Mappa  ** källidentitetsfältet  *Email_LC_SHA256* till målidentitetsfältet  *pinterest_audience*. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -45,7 +45,7 @@ I [mappningssteget](/help/destinations/ui/activate-segment-streaming-destination
 
 ## Användningsexempel {#use-cases}
 
-För att ni bättre ska förstå hur och när ni ska använda Pinterest kundlista är det här några exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda målet [!DNL Pinterest Customer List] finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
 
 ### Användningsfall 1
@@ -76,4 +76,4 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 ## Ytterligare resurser {#additional-resources}
 
-Mer information finns på Pinterest Help Center (https://help.pinterest.com/en/business/article/audience-targeting).
+Mer information finns på [Pinterest Help Center-sidan](https://help.pinterest.com/en/business/article/audience-targeting).

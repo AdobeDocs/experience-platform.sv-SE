@@ -3,18 +3,14 @@ keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '723'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Braze]-anslutning
-
->[!IMPORTANT]
->
->Braze-målet i Adobe Experience Platform är för närvarande i Beta. Dokumentationen och funktionaliteten kan komma att ändras.
+# [!DNL Braze] anslutning
 
 ## Översikt {#overview}
 
@@ -99,11 +95,9 @@ Klicka på mappningsikonen till höger om fältet i [!UICONTROL Target Field]-av
 
 ![Målmappning för Braze](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
-I fönstret [!UICONTROL Select target field] kan du välja mellan tre kategorier av målfält:
-* [!UICONTROL Select attributes]: Använd det här alternativet om du vill mappa dina XDM-attribut till  [!DNL Braze] standardattribut.
+I fönstret [!UICONTROL Select target field] kan du välja mellan två kategorier av målfält:
 * [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa  [!DNL Platform] identitetsnamnutrymmen till  [!DNL Braze] identitetsnamnutrymmen.
-* [!UICONTROL Select custom attributes]: Använd det här alternativet om du vill mappa XDM-attribut till anpassade  [!DNL Braze] attribut som du har definierat i ditt  [!DNL Braze] konto.
-* Du kan också använda det här alternativet om du vill ändra namn på befintliga XDM-attribut till [!DNL Braze]. Om du till exempel mappar ett `lastName` XDM-attribut till ett anpassat `Last_Name`-attribut i [!DNL Braze], skapas attributet `Last_Name` i [!DNL Braze], om det inte redan finns, och mappas XDM-attributet till det.`lastName`
+* [!UICONTROL Select custom attributes]: Använd det här alternativet om du vill mappa XDM-attribut till anpassade  [!DNL Braze] attribut som du har definierat i ditt  [!DNL Braze] konto. <br> Du kan också använda det här alternativet för att byta namn på befintliga XDM-attribut till  [!DNL Braze]. Om du till exempel mappar ett `lastName` XDM-attribut till ett anpassat `Last_Name`-attribut i [!DNL Braze], skapas attributet `Last_Name` i [!DNL Braze], om det inte redan finns, och mappas XDM-attributet till det.`lastName`
 
 ![Mappningsfält för mål för Braze](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
 
