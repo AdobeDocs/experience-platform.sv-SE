@@ -2,13 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;datumintervall
 title: Varningar - översikt
 description: Läs mer om varningar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras.
-source-git-commit: 5fabf5fa12f0a117a50bf694dea5118e5ea03500
+feature: Alerts
+exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
+source-git-commit: d82487f34c0879ed27ac55e42d70346f45806131
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '735'
 ht-degree: 1%
 
 ---
-
 
 # Översikt över aviseringar
 
@@ -56,6 +57,10 @@ Varningar kan tas emot och hanteras via två kanaler:
 Varningar kan skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning. För att kunna ta emot aviseringar via webkrok måste du registrera din webkrok för plattformsaviseringar i Adobe Developer Console. Mer information finns i guiden [prenumerera på Adobe I/O-händelsemeddelanden](./subscribe.md).
 
 ### Plattformsgränssnitt {#ui}
+
+Med plattformsgränssnittet kan du visa mottagna aviseringar och hantera varningsregler. I följande video ges en introduktion till dessa funktioner.
+
+>[!VIDEO](https://video.tv.adobe.com/v/336218?quality=12&learn=on)
 
 Om du vill arbeta med aviseringar i plattformsgränssnittet måste du ha följande åtkomstkontrollbehörighet aktiverat via Adobe Admin Console:
 
