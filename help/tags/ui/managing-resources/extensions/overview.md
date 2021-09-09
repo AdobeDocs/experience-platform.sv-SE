@@ -1,7 +1,8 @@
 ---
 title: Tillägg
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+exl-id: e911bedd-6c67-4339-91d7-839c8b00c153
+source-git-commit: f7edfa05e25c17f9ace34287c8a2d8426d0f36d4
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 0%
@@ -61,7 +62,7 @@ Taggar är mycket utökningsbara. Tillägg lägger till kärnfunktioner i taggar
 1. Öppna fliken **[!UICONTROL Extensions]** från en egenskaps översiktssida.
 1. Välj ett tillägg.
 
-   ![]()../../../images/extensions.png)
+   ![Kärntillägg](../../../images/extensions.png)
 
    * Om tillägget finns väljer du det i tilläggskatalogen.
    * För musen över ett tillägg i listan för att konfigurera eller inaktivera det.
