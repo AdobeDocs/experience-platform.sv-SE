@@ -2,9 +2,9 @@
 title: Turbinfri variabel
 description: Lär dig mer om turbinobjektet, en kostnadsfri variabel som ger information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform.
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
-source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
+source-git-commit: 86a009fd5c633ff45943d86b16c34a779d4141be
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -117,6 +117,7 @@ Loggningsverktyget används för att logga meddelanden till konsolen. Meddelande
 * `logger.warn(message: string)`: Loggar ett varningsmeddelande till konsolen.
 * `logger.error(message: string)`: Loggar ett felmeddelande till konsolen.
 * `logger.debug(message: string)`: Loggar ett felsökningsmeddelande till konsolen. (Synligt bara när `verbose`-loggning är aktiverad i webbläsarkonsolen.)
+* `logger.deprecation(message: string)`: Loggar ett varningsmeddelande till konsolen oavsett om taggfelsfunktionen är aktiverad av användaren eller inte.
 
 ### `onDebugChanged`
 
