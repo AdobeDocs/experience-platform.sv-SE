@@ -4,10 +4,11 @@ solution: Experience Platform
 title: Datatyp för valuta
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Currency XDM.
-source-git-commit: 2592d4f494d4d3dcfba63eb539498416fbdf6707
+exl-id: eaf4812e-32ec-4b07-82ef-60777f03623d
+source-git-commit: 5e92b288bb8c996cfcf343d8ac1ab1665b0d3ad0
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -19,9 +20,9 @@ ht-degree: 1%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `amount` | Dubbel | Det antal färger som visningen kan representera. |
-| `conversionDate` | DateTime | Det antal färger som visningen kan representera. |
-| `currencyCode` | Sträng | Det antal färger som visningen kan representera. |
+| `amount` | Dubbel | Valutabeloppet som definieras av `currencyCode`. |
+| `conversionDate` | DateTime | En tidsstämpel som anger när valutakonverteringen gjordes. |
+| `currencyCode` | Sträng | En ISO 4217-kod som anger vilken typ av valuta som `amount` representerar. |
 
 {style=&quot;table-layout:auto&quot;}
 
