@@ -29,7 +29,7 @@ Innehåller version 2.6.3 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.6.2 - 4 augusti 2021
 
-Innehåller version 2.6.2 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.6.1 - 29 juli 2021
 
