@@ -5,10 +5,9 @@ title: Felsökning av källor
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform källor.
 exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5f42c6ade63244c5c0bca2d6f879e43014474a83
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '749'
 ht-degree: 0%
 
 ---
@@ -74,3 +73,7 @@ Delvis intag bör användas om du inte har **begränsningar för**, som att hela
 ### Vilket är det typiska feltröskelvärdet för partiellt intag?
 
 Det finns inget &quot;typiskt feltröskelvärde&quot; för partiellt intag. I stället kan det här värdet variera från fall till fall. Som standard är feltröskelvärdet 5 %.
+
+### Hur lång tid tar det att uppdatera flödeskörningsstatus efter att ett nytt dataflöde har skapats?
+
+Flödeskörningar genereras inte omedelbart och kan ta mellan två och tre minuter att uppdatera efter `startTime`. Om du kontrollerar status för en flödeskörning returneras ingen information om flödeskörningens `lastRunDetails` omedelbart efter att ett nytt dataflöde har skapats, eftersom detta ännu inte har inträffat. Vi rekommenderar att du tillåter att dataflödet genereras några minuter innan du kontrollerar status för flödeskörningen.
