@@ -4,11 +4,10 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-translation-type: tm+mt
-source-git-commit: 1305d789c68ac8f84d5a5f82d8f17035e56ef712
+source-git-commit: 7dedc679ac4173ab3f782bc57517b2e66bc20844
 workflow-type: tm+mt
 source-wordcount: '103'
-ht-degree: 13%
+ht-degree: 14%
 
 ---
 
