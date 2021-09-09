@@ -1,16 +1,16 @@
 ---
-title: Adobe Experience Platform datainsamling - från början till slut - översikt
-description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform Data Collection.
-source-git-commit: b14d592c8beb5fc545ae0682000e4e05b6dac3a0
+title: Översikt över datainsamling från början till slut
+description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med hjälp av de datainsamlingstekniker som tillhandahålls av Adobe Experience Platform.
+source-git-commit: 2bcb42b83020a9ce620cb8162b7fc072b72ff23e
 workflow-type: tm+mt
-source-wordcount: '2487'
+source-wordcount: '2486'
 ht-degree: 0%
 
 ---
 
-# Adobe Experience Platform Data Collection - från början till slut - översikt
+# Översikt över datainsamling från början till slut
 
-Adobe Experience Platform Data Collection innehåller flera tekniker som samverkar för att samla in data som skickas till andra Adobe-produkter eller tredjepartsdestinationer. För att kunna skicka händelsedata från programmet till Adobe Experience Platform Edge Network är det viktigt att förstå dessa kärntekniker och hur de konfigureras för att leverera data till de mål du behöver, när du behöver det.
+I Adobe Experience Platform avser datainsamling flera tekniker som arbetar tillsammans för att samla in data som ska överföras till andra Adobe-produkter eller mål från tredje part. För att kunna skicka händelsedata från programmet till Adobe Experience Platform Edge Network är det viktigt att förstå dessa kärntekniker och hur de konfigureras för att leverera data till de mål du behöver, när du behöver det.
 
 Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med datainsamlingstekniker. Självstudiekursen går igenom stegen för att installera och konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling.
 
@@ -50,7 +50,7 @@ När du kan skicka data till Edge Network kan du även [konfigurera händelsevid
 
 [Experience Data Model (XDM)](../xdm/home.md) är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner för data i form av scheman. Med andra ord är XDM ett sätt att strukturera och formatera data på ett sätt som kan hanteras av Edge Network och andra Adobe Experience Cloud-program.
 
-Det första steget i att konfigurera datainsamlingsåtgärder är att skapa ett XDM-schema som representerar dina data. I ett senare steg i den här självstudiekursen mappas de data som du vill skicka till strukturen för det här schemat.
+Det första steget i att konfigurera datainsamlingsåtgärderna är att skapa ett XDM-schema som representerar dina data. I ett senare steg i den här självstudiekursen mappas de data som du vill skicka till strukturen för det här schemat.
 
 >[!NOTE]
 >
