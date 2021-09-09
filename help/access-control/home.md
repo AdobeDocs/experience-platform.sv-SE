@@ -5,7 +5,7 @@ topic-legacy: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 13055c9b569a67b5b44a90ac2b40776e271db008
+source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
 workflow-type: tm+mt
 source-wordcount: '1259'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Användare kan beviljas åtkomst till en eller flera sandlådor i en produktprof
 
 Med behörigheten&quot;Sandlådehantering&quot; kan användare hantera, visa och återställa sandlådor.
 
-### Behörigheter
+### Behörigheter {#permissions}
 
 På fliken Behörigheter i en produktprofil visas de sandlådor och behörigheter som är aktiva för den profilen:
 

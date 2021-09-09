@@ -1,7 +1,8 @@
 ---
 title: Användarbehörigheter för taggar
 description: Lär dig mer om de olika typerna av behörigheter som är tillgängliga för taggar och några grundläggande implementeringsstrategier för olika affärsanvändningsfall.
-source-git-commit: acef25fe46f0ac0c45c18d4590be4af95ad5e0ab
+exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
+source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
 workflow-type: tm+mt
 source-wordcount: '1307'
 ht-degree: 1%
@@ -39,7 +40,7 @@ Varje taggegenskap har en plattform. Det finns för närvarande två plattformar
 
 Som standard ger produktprofiler åtkomst till alla egenskaper som finns på företaget, både nu och i framtiden. Med den här behörighetstypen kan du begränsa eller bevilja åtkomst till specifika befintliga egenskaper efter namn.
 
-### Egendomsrättigheter
+### Egendomsrättigheter {#property-rights}
 
 Alla egenskaper som du skapar i användargränssnittet för datainsamling blir tillgängliga i Admin Console, vilket gör att du kan gruppera egenskapen med specifika egenskapsbehörigheter i samma produktprofil.
 
