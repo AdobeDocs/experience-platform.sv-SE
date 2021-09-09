@@ -1,9 +1,10 @@
 ---
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
-source-git-commit: 937225ff08e2e02c5840f86d6ed50644e05bdfe5
+exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
+source-git-commit: df269a30251cb17e337ec25787d6a1eed41e9c0b
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '468'
 ht-degree: 1%
 
 ---
@@ -36,7 +37,7 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
-För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrollbehörighet för Visa granskningsloggar. Mer information om hur du hanterar individuella behörigheter för plattformsfunktioner finns i [åtkomstkontrollsdokumentationen](../../../access-control/home.md).
+För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrollsbehörigheten Visa granskningsloggar (finns under kategorin Datastyrning). Mer information om hur du hanterar individuella behörigheter för plattformsfunktioner finns i [åtkomstkontrollsdokumentationen](../../../access-control/home.md).
 
 ## Hantera granskningsloggar i användargränssnittet
 
