@@ -4,9 +4,9 @@ title: Resor och turism - branschdatamodell ERD
 topic-legacy: overview
 description: Visa en datamodell (ERD) som beskriver en standardiserad datamodell för rese- och turismbranschen som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 4d454160-9066-4702-815b-9509942f709e
-source-git-commit: 38fa2345cb87e50bd4c8788996f03939fb199cf9
+source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
@@ -32,3 +32,16 @@ Använd följande förklaring för att tolka denna ERD:
 >[!NOTE]
 >
 >Experience Event-entiteten innehåller ett fält av typen &quot;_ID&quot;, som representerar det unika identifierarattributet (`_id`) som tillhandahålls av klassen XDM ExperienceEvent. Mer information om vad som förväntas för det här värdet finns i referensdokumentet på [XDM ExperienceEvent](../../classes/experienceevent.md).
+
+## [!UICONTROL Travel and hospitality] användningsfall
+
+Följande tabell visar de rekommenderade klasserna och schemafältgrupperna för flera vanliga användningsområden för rese- och turismbranschen.
+
+| Användningsfall | Rekommenderade klasser och fältgrupper |
+| --- | --- |
+| Merförsäljning av matsalar och andra bofasta attraktioner till marknadsgäster och gäster med kommande hotellbokningar. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Reservationsinformation](../../field-groups/event/reservation-details.md)</li><li>[Bostadsreservation](../../field-groups/event/lodging-reservation.md)</li><li>[Gruvreservation](../../field-groups/event/dining-reservation.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Kontaktinformation, privat](../../field-groups/profile/personal-contact-details.md)</li><li>[Kontaktinformation, arbete](../../field-groups/profile/work-contact-details.md)</li></ul></li></ul> |
+| Merförsäljning av matsalar och andra bofasta attraktioner till marknadsgäster och gäster med kommande hotellbokningar. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Reservationsinformation](../../field-groups/event/reservation-details.md)</li><li>[Gruvreservation](../../field-groups/event/dining-reservation.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Kontaktinformation, privat](../../field-groups/profile/personal-contact-details.md)</li><li>[Kontaktinformation, arbete](../../field-groups/profile/work-contact-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li></ul> |
+| Merförsäljning av hotell och andra bofasta attraktioner till marknadsgäster och gäster med kommande hotellbokningar. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Reservationsinformation](../../field-groups/event/reservation-details.md)</li><li>[Bostadsreservation](../../field-groups/event/lodging-reservation.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Kontaktinformation, privat](../../field-groups/profile/personal-contact-details.md)</li><li>[Kontaktinformation, arbete](../../field-groups/profile/work-contact-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li></ul> |
+| Merförsäljning av flyg och andra boendeattraktioner till marknadsgäster och gäster med kommande hotellbokningar. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Reservationsinformation](../../field-groups/event/reservation-details.md)</li><li>[Flygreservation](../../field-groups/event/flight-reservation.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Kontaktinformation, privat](../../field-groups/profile/personal-contact-details.md)</li><li>[Kontaktinformation, arbete](../../field-groups/profile/work-contact-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li></ul> |
+
+{style=&quot;table-layout:auto&quot;}

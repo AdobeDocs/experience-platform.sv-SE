@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 6b3a1cc4cfba5475aba781a1d0511a59e399135f
+source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '323'
 ht-degree: 7%
 
 ---
@@ -47,9 +47,13 @@ ht-degree: 7%
       * [Kanalinformation](./field-groups/event/channel-details.md)
       * [Handelsinformation](./field-groups/event/commerce-details.md)
       * [Information om enhetshandel](./field-groups/event/device-trade-in-details.md)
+      * [Gruvreservation](./field-groups/event/dining-reservation.md)
       * [Information om slutanvändar-ID](./field-groups/event/enduserids.md)
       * [Miljöinformation](./field-groups/event/environment-details.md)
+      * [Flygreservation](./field-groups/event/flight-reservation.md)
       * [IAB TCF 2.0-samtycke](./field-groups/event/iab.md)
+      * [Bostadsreservation](./field-groups/event/lodging-reservation.md)
+      * [Reservationsinformation](./field-groups/event/reservation-details.md)
       * [Webbinformation](./field-groups/event/web-details.md)
    * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
@@ -89,6 +93,7 @@ ht-degree: 7%
    * [Sökning](./data-types/search.md)
    * [Prenumeration](./data-types/subscription.md)
    * [Telecom Subscription](./data-types/telecom-subscription.md)
+   * [Transaktion](./data-types/transaction.md)
    * [Webbinformation](./data-types/web-information.md)
    * [Interaktion via webben](./data-types/web-interaction.md)
    * [Information om webbsidor](./data-types/webpage-details.md)
