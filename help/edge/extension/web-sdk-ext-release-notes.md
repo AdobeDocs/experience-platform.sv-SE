@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: a4a41a91429104b302e223034bf15f9839ddb5ad
+source-git-commit: 07a280f906c5bcc69a0bffc529e1d1c8280f771a
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1192'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
-## Version 2.7.1 - 7 september 2021
+## Version 2.7.3 - 7 september 2021
 
 Innehåller version 2.6.4 av Adobe Experience Platform Web SDK-biblioteket.
+
+* Det finns inte längre någon varning för borttagning av dubbletter för `container.buildInfo.environment.`
 
 ## Version 2.7.0 - 16 augusti 2021
 
@@ -27,7 +29,7 @@ Innehåller version 2.6.3 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.6.2 - 4 augusti 2021
 
-Innehåller version 2.6.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.2 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.6.1 - 29 juli 2021
 
