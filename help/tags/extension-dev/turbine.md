@@ -2,9 +2,9 @@
 title: Turbinfri variabel
 description: Lär dig mer om turbinobjektet, en kostnadsfri variabel som ger information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform.
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
-source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
+source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '602'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Objektet `turbine` är en &quot;fri variabel&quot; inom omfånget för tilläggets biblioteksmoduler. Den innehåller information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform och är alltid tillgänglig för biblioteksmoduler utan att använda `require()`.
 
-## [!DNL buildInfo]
+## `buildInfo`
 
 ```js
 console.log(turbine.buildInfo.turbineBuildDate);
@@ -40,7 +40,7 @@ console.log(turbine.buildInfo.turbineBuildDate);
 | `buildDate` | ISO 8601-datumet när det aktuella biblioteket skapades. |
 
 
-## [!DNL environment]
+## `environment`
 
 ```js
 console.log(turbine.environment.stage);
@@ -50,24 +50,24 @@ console.log(turbine.environment.stage);
 
 ```js
 {
-    id: "EN123456...",
+    id: "ENbe322acb4fc64dfdb603254ffe98b5d3",
     stage: "development"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | ID för miljön. |
-| `stage` | Den miljö som det här biblioteket skapades för. Godkända värden är `development`, `staging` och `production`. |
+| `id` | Miljöns ID. |
+| `stage` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging` och `production`. |
 
 
-## [!DNL debugEnabled]
+## `debugEnabled`
 
-Om taggfelsökning är aktiverat.
+Ett booleskt värde som anger om taggfelsökning är aktiverat.
 
 Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` för att vara säker på att dina meddelanden bara skrivs ut till konsolen när taggfelsökning är aktiverat.
 
-### [!DNL getDataElementValue]
+### `getDataElementValue`
 
 ```js
 console.log(turbine.getDataElementValue(dataElementName));
@@ -75,7 +75,7 @@ console.log(turbine.getDataElementValue(dataElementName));
 
 Returnerar värdet för ett dataelement.
 
-### [!DNL getExtensionSettings] {#get-extension-settings}
+### `getExtensionSettings` {#get-extension-settings}
 
 ```js
 var extensionSettings = turbine.getExtensionSettings();
@@ -85,7 +85,7 @@ Returnerar inställningsobjektet som senast sparades från vyn [tilläggskonfigu
 
 Observera att värden inom de returnerade inställningsobjekten kan komma från dataelement. Därför kan anrop till `getExtensionSettings()` vid olika tidpunkter ge olika resultat om dataelementens värden har ändrats. Om du vill få de senaste värdena väntar du så länge som möjligt innan du ringer `getExtensionSettings()`.
 
-### [!DNL getHostedLibFileUrl] {#get-hosted-lib-file}
+### `getHostedLibFileUrl` {#get-hosted-lib-file}
 
 ```js
 var loadScript = require('@adobe/reactor-load-script');
@@ -96,7 +96,7 @@ loadScript(turbine.getHostedLibFileUrl('AppMeasurement.js')).then(function() {
 
 Egenskapen [hostedLibFiles](./manifest.md) kan definieras inuti tilläggsmanifestet för att kunna vara värd för olika filer tillsammans med taggens körningsbibliotek. Den här modulen returnerar den URL där den angivna biblioteksfilen finns.
 
-### [!DNL getSharedModule] {#shared}
+### `getSharedModule` {#shared}
 
 ```js
 var mcidInstance = turbine.getSharedModule('adobe-mcid', 'mcid-instance');
@@ -104,7 +104,7 @@ var mcidInstance = turbine.getSharedModule('adobe-mcid', 'mcid-instance');
 
 Hämtar en modul som har delats från ett annat tillägg. Om ingen matchande modul hittas returneras `undefined`. Mer information om delade moduler finns i [Implementera delade moduler](./web/shared.md).
 
-### [!DNL logger]
+### `logger`
 
 ```js
 turbine.logger.error('Error!');
@@ -118,13 +118,13 @@ Loggningsverktyget används för att logga meddelanden till konsolen. Meddelande
 * `logger.error(message: string)`: Loggar ett felmeddelande till konsolen.
 * `logger.debug(message: string)`: Loggar ett felsökningsmeddelande till konsolen. (Synligt bara när `verbose`-loggning är aktiverad i webbläsarkonsolen.)
 
-### [!DNL onDebugChanged]
+### `onDebugChanged`
 
 Genom att skicka en återanropsfunktion till `turbine.onDebugChanged`, kommer taggarna att anropa återanropet när felsökningen är aktiverad. Taggar skickar ett booleskt värde till återanropsfunktionen som är true om felsökning var aktiverat eller false om felsökning var inaktiverad.
 
 Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` och -taggar så att dina meddelanden bara skrivs ut till konsolen när taggfelsökning är aktiverat.
 
-### [!DNL propertySettings] {#property-settings}
+### `propertySettings` {#property-settings}
 
 ```js
 console.log(turbine.propertySettings.domains);

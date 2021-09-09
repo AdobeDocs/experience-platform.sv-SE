@@ -3,18 +3,14 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: e413933920028e3239f6044111d9cf215c865eba
+source-git-commit: a765f6829f08f36010e0e12a7186bf5552dfe843
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Airship Tags]-anslutning {#airship-tags-destination}
-
->[!IMPORTANT]
->
->Målet [!DNL Airship Tags] i Adobe Experience Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+# [!DNL Airship Tags] anslutning {#airship-tags-destination}
 
 ## Översikt
 

@@ -2,9 +2,9 @@
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
+source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
 workflow-type: tm+mt
-source-wordcount: '1285'
+source-wordcount: '1279'
 ht-degree: 1%
 
 ---
@@ -227,34 +227,27 @@ I det här exemplet visas objektvärdena:
 
 ## `environment`
 
+Det här objektet innehåller information om den miljö som det aktuella taggredigeringsbiblioteket är distribuerat till.
+
 **Code**
 
 ```javascript
 _satellite.environment
 ```
 
-Det här objektet innehåller information om den miljö som det aktuella taggredigeringsbiblioteket är distribuerat till. Objektet innehåller följande egenskaper:
-
-### `id`
-
-ID för miljön.
-
-### `stage`
-
-Den miljö som det här biblioteket skapades för. Möjliga värden är:
-
-* utveckling
-* mellanlagring
-* produktion
-
-I det här exemplet visas objektvärdena:
+Objektet innehåller följande egenskaper:
 
 ```javascript
 {
-  id: "EN123456...",
+  id: "ENbe322acb4fc64dfdb603254ffe98b5d3",
   stage: "development"
 }
 ```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `id` | ID för miljön. |
+| `stage` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging` och `production`. |
 
 ## `notify`
 
