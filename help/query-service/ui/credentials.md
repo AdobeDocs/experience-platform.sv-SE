@@ -4,8 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
-exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: aabe89f236bc68a51f14ee1909687982f4fe5973
+source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
 workflow-type: tm+mt
 source-wordcount: '791'
 ht-degree: 0%

@@ -1,8 +1,7 @@
 ---
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
-exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
+source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 1%
