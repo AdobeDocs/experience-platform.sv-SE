@@ -1,9 +1,10 @@
 ---
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med hjälp av de datainsamlingstekniker som tillhandahålls av Adobe Experience Platform.
-source-git-commit: 2bcb42b83020a9ce620cb8162b7fc072b72ff23e
+exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
+source-git-commit: 1b2c0c2e5b05e30b6cf0e284f15f28989c580efe
 workflow-type: tm+mt
-source-wordcount: '2486'
+source-wordcount: '2537'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform avser datainsamling flera tekniker som arbetar tillsammans för att samla in data som ska överföras till andra Adobe-produkter eller mål från tredje part. För att kunna skicka händelsedata från programmet till Adobe Experience Platform Edge Network är det viktigt att förstå dessa kärntekniker och hur de konfigureras för att leverera data till de mål du behöver, när du behöver det.
 
-Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med datainsamlingstekniker. Självstudiekursen går igenom stegen för att installera och konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling.
+Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med datainsamlingstekniker. Självstudiekursen går igenom stegen för att installera och konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling (tidigare Adobe Experience Platform Launch).
 
 >[!NOTE]
 >
@@ -96,7 +97,7 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 >
 >Om du vill använda [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md) (förutsatt att din organisation har licens för funktionen) måste du aktivera den för ett datastream på samma sätt som du aktiverar Adobe-produkter. Information om den här processen beskrivs i ett [senare avsnitt](#event-forwarding).
 
-Välj **[!UICONTROL Datastreams]** i användargränssnittet för datainsamling. Härifrån kan du välja ett befintligt datastam från listan som ska redigeras, eller så kan du skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
+Välj **[!UICONTROL Datastreams]** i användargränssnittet för datainsamling. Här kan du välja ett befintligt datastam från listan som ska redigeras eller skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
 
 ![Datastreams](./images/e2e/datastreams.png)
 
@@ -179,9 +180,26 @@ När du är klar med mappningen av dina data till schemat anger du ett namn för
 
 När du har sparat dataelementet är nästa steg att skapa en regel som skickar det till Edge Network när en viss händelse inträffar på webbplatsen (till exempel när en kund lägger till en produkt i en kundvagn).
 
-I det här avsnittet visas hur du skapar en regel som utlöses när en kund lägger till en artikel i en kundvagn. Du kan dock konfigurera regler för i stort sett alla händelser som kan inträffa på webbplatsen.
+Du kan ange regler för praktiskt taget alla händelser som kan inträffa på webbplatsen. I det här avsnittet visas hur du skapar en regel som utlöses när en kund skickar in ett formulär. Följande HTML representerar en enkel webbsida med formuläret &quot;Lägg till i kundvagnen&quot;, som kommer att vara regelns ämne:
 
-Välj **[!UICONTROL Rules]** i den vänstra navigeringen och välj sedan **[!UICONTROL Create New Rule]**.
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+  <form id="add-to-cart-form">
+    <label for="item">Product:</label><br>
+    <input type="text" id="item" name="item"><br>
+    <label for="amount">Amount:</label><br>
+    <input type="number" id="amount" name="amount" value="1"><br><br>
+    <input type="submit" value="Add to Cart">
+  </form> 
+
+</body>
+</html>
+```
+
+I användargränssnittet för datainsamling väljer du **[!UICONTROL Rules]** i den vänstra navigeringen och sedan **[!UICONTROL Create New Rule]**.
 
 ![Regler](./images/e2e/rules.png)
 
@@ -189,13 +207,13 @@ Ange ett namn för regeln på nästa skärm. Härifrån är nästa steg att best
 
 ![Namnregel](./images/e2e/name-rule.png)
 
-Händelsekonfigurationssidan visas. Om du vill konfigurera en händelse måste du först välja händelsetyp. Händelsetyper tillhandahålls av tillägg. Om du vill konfigurera en formulärskicka-händelse, till exempel, väljer du tillägget **[!UICONTROL Core]** och väljer sedan händelsetypen **[!UICONTROL Submit]** under kategorin **[!UICONTROL Form]**. I konfigurationsdialogrutan som visas kan du ange CSS-väljaren för det formulär som du vill att den här regeln ska aktiveras för.
+Händelsekonfigurationssidan visas. Om du vill konfigurera en händelse måste du först välja händelsetyp. Händelsetyper tillhandahålls av tillägg. Om du vill konfigurera en formulärskicka-händelse, till exempel, väljer du tillägget **[!UICONTROL Core]** och väljer sedan händelsetypen **[!UICONTROL Submit]** under kategorin **[!UICONTROL Form]**.
 
 >[!NOTE]
 >
 >Mer information om de olika händelsetyperna i webbtilläggen för Adobe, inklusive hur du konfigurerar dem, finns i [Adobe extensions reference](../tags/extensions/web/overview.md) i taggdokumentationen.
 
-Välj **[!UICONTROL Keep Changes]** om du vill lägga till händelsen i regeln.
+Med formulärsändningshändelsen kan du använda en [CSS-väljare](https://www.w3schools.com/css/css_selectors.asp) som referens för ett specifikt element som regeln ska starta på. I exemplet nedan används ID `add-to-cart-form` så att den här regeln bara aktiveras för formuläret&quot;Lägg till i kundvagn&quot;. Välj **[!UICONTROL Keep Changes]** om du vill lägga till händelsen i regeln.
 
 ![Händelsekonfiguration](./images/e2e/event-config.png)
 
