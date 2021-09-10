@@ -2,9 +2,9 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med hjälp av de datainsamlingstekniker som tillhandahålls av Adobe Experience Platform.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 1b2c0c2e5b05e30b6cf0e284f15f28989c580efe
+source-git-commit: 3f5a05068a24432237a5241dd20680d2f8ed0b55
 workflow-type: tm+mt
-source-wordcount: '2537'
+source-wordcount: '2536'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Se översikten [över användargränssnittet för åtkomstkontroll](../access-co
 
 ## Processsammanfattning
 
-Processen med att konfigurera Edge Network för din webbplats kan sammanfattas på följande sätt:
+Processen med att konfigurera datainsamling för webbplatsen kan sammanfattas på följande sätt:
 
 1. [Skapa ett ](#schema) schema som bestämmer hur data ska struktureras när de skickas till Edge Network.
 1. [Skapa en ](#datastream) datastreamodell för att konfigurera vilka mål du vill att dina data ska skickas till.
