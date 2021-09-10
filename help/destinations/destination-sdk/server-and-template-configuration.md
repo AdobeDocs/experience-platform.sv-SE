@@ -1,7 +1,8 @@
 ---
 description: Server- och mallspecifikationerna kan konfigureras i Adobe Experience Platform mål-SDK via den gemensamma slutpunkten `/authoring/destination-servers`.
 title: Konfigurationsalternativ för server- och mallspecifikationer i mål-SDK
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: cf493ed5-0bdb-4b90-b84d-73926a566a2a
+source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 5%
@@ -23,7 +24,7 @@ Server- och mallspecifikationerna kan konfigureras i Adobe Experience Platform m
    "urlBasedDestination":{
       "url":{
          "templatingStrategy":"PEBBLE_V1",
-         "value":"https://api.moviestar.com/data/{{endpoint.region}}/items"
+         "value":"https://api.moviestar.com/data/{{customerData.region}}/items"
       }
    },
    "httpTemplate":{
@@ -49,7 +50,7 @@ Den här processen levererar användardata som en serie HTTP-meddelanden till m�
 |---|---|---|
 | `name` | Sträng | Representerar ett eget namn på servern som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
 | `destinationServerType` | Sträng | `URL_BASED` är för närvarande det enda tillgängliga alternativet. |
-| `templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om Adobe behöver omforma URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Använd `NONE` om ingen omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
+| `templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om Adobe behöver omforma URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items` </li><li> Använd `NONE` om ingen omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
 | `value` | Sträng | Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
 
 {style=&quot;table-layout:auto&quot;}

@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på valfritt data och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 2841adc0ce212a945c35ba38209d4c00c519ad7b
+source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '702'
 ht-degree: 1%
 
 ---
@@ -63,8 +63,8 @@ SDK-målåtkomsten varierar beroende på din status som partner eller Experience
 ---------|----------|
 | Independent Software Vendor (ISV) | Gå med i [Adobe Exchange-programmet](https://partners.adobe.com/exchangeprogram/experiencecloud.html) och begär att få en Experience Platform-sandlåda för åtkomst till mål-SDK. |
 | Systemintegratör | Du måste vara på antingen Guld- eller Platina-nivå i [Adobe Solution Partner Program](https://solutionpartners.adobe.com/home.html), och du får en Experience Platform-sandlåda och tillgång till mål-SDK. |
-| Experience Platform kund i aktiveringspaketet | Som standard får du åtkomst till sandlådor i Experience Platform och mål-SDK. |
-| Experience Platform kund i CDP-paketet i realtid | Du har inte åtkomst till mål-SDK, men du har tillgång till alla produktioner som konfigurerats av andra företag med SDK för mål och som publicerats i olika Experience Platform-organisationer. |
+| Experience Platform-kund i [aktiveringspaketet](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | Som standard får du åtkomst till sandlådor i Experience Platform och mål-SDK. |
+| Experience Platform-kund i [CDP-realtidspaketet](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Du har inte åtkomst till mål-SDK, men du har tillgång till alla produktioner som konfigurerats av andra företag med SDK för mål och som publicerats i olika Experience Platform-organisationer. |
 
 {style=&quot;table-layout:auto&quot;}
 
