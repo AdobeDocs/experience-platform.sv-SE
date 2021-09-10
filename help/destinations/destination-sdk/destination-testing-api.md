@@ -1,9 +1,10 @@
 ---
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/destinationInstance/` för att testa om målet är korrekt konfigurerat och för att verifiera integriteten hos dataflöden till det konfigurerade målet.
 title: API-åtgärder för måltestning
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '657'
 ht-degree: 0%
 
 ---
@@ -158,6 +159,7 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med API-svaret från mål
 | `results.httpCalls.response` | Inkluderar det svar som togs emot av Adobe från ditt mål. |
 | `inputProfiles` | Inkluderar de profiler som exporterades i samtalet till målet. Profilerna matchar ditt källschema. |
 
+{style=&quot;table-layout:auto&quot;}
 
 ## Testa målkonfigurationen med profiler som lagts till i samtalet {#test-with-added-profiles}
 

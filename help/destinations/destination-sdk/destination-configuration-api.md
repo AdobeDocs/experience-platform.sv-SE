@@ -1,9 +1,10 @@
 ---
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 96755e9d-be62-432f-b985-91330575b395
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '2360'
+source-wordcount: '2381'
 ht-degree: 2%
 
 ---
@@ -383,7 +384,7 @@ Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer
 | `uiAttributes.connectionType` | Sträng | `Server-to-server` är för närvarande det enda tillgängliga alternativet. |
 | `uiAttributes.frequency` | Sträng | `Streaming` är för närvarande det enda tillgängliga alternativet. |
 | `identityNamespaces.externalId.acceptsAttributes` | Boolean | Anger om målet accepterar standardprofilattribut. Normalt framhävs dessa attribut i våra partners dokumentation. |
-| `identityNamespaces.externalId.acceptsCustomNamespaces` | Boolean | Anger om kunderna kan ställa in anpassade namnutrymmen i målet. |
+| `identityNamespaces.externalId.acceptsCustomNamespaces` | Boolean | Anger om kunderna kan ställa in anpassade namnutrymmen i målet. Läs mer om [anpassade namnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#manage-namespaces) i Adobe Experience Platform. |
 | `identityNamespaces.externalId.allowedAttributesTransformation` | Sträng | _Visas inte i exempelkonfigurationen_. Används till exempel när [!DNL Platform]-kunden har oformaterade e-postadresser som attribut och din plattform bara accepterar hash-kodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
 | `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | _Visas inte i exempelkonfigurationen_. Används för fall där plattformen accepterar [standardnamnutrymmen för identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa plattformsanvändare till att endast välja dessa ID-namnutrymmen. |
 | `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform]-kunder ansluter till ditt mål. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du skulle till exempel välja det här alternativet om du även valde `authType: OAUTH2` eller `authType:BEARER` i `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av konfigurationen [Credentials](./credentials-configuration.md). </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
@@ -396,6 +397,7 @@ Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform-segmentnamnet. |
 | `segmentMappingConfig.audienceTemplateId` | Boolean | `instanceId` för [målgruppens metadatamall](./audience-metadata-management.md) som används för det här målet. Läs [API-referensen för målgruppsmetadata](./audience-metadata-api.md) om du vill konfigurera en metadatamall för målgrupper. |
 
+{style=&quot;table-layout:auto&quot;}
 
 ## Uppdatera en befintlig målkonfiguration {#update}
 

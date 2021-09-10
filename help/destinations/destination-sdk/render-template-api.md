@@ -1,9 +1,10 @@
 ---
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/render` för att återge exporterade data för ditt mål, baserat på din meddelandeomvandlingsmall.
 title: API-åtgärder för återgivningsmall
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
@@ -42,6 +43,8 @@ POST authoring/testing/template/render
 | `destinationId` | ID:t för målkonfigurationen som du återger exporterade data för. |
 | `template` | Den teckenescape-version av mallen som du återger exporterade data utifrån. |
 | `profiles` | Om du vill lägga till profiler i brödtexten av samtalet kan du generera några med hjälp av [API:t för generering av exempelprofiler](./sample-profile-generation-api.md). |
+
+{style=&quot;table-layout:auto&quot;}
 
 
 Du kan återge exporterade data enligt exemplen nedan:

@@ -1,9 +1,10 @@
 ---
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/Destations/publish`.
 title: API-slutpunktsåtgärder för publiceringsmål
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 0564a132-42f4-478c-9197-9b051acf093c
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '775'
 ht-degree: 2%
 
 ---
@@ -123,6 +124,8 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
 | `publishDetailsList.allowedOrgs` | Sträng | Returnerar de Experience Platform-organisationer som målet ska vara tillgängligt för. |
 | `publishDetailsList.status` | Sträng | Status för målpubliceringsbegäran. Möjliga värden är `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. |
 | `publishDetailsList.publishedDate` | Sträng | Det datum då målet skickades för publicering, i epoktid. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Uppdatera en befintlig målpubliceringsbegäran {#update}
 

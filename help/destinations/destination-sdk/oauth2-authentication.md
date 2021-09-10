@@ -1,7 +1,8 @@
 ---
 description: Den här sidan beskriver de olika OAuth 2-autentiseringsflöden som stöds av mål-SDK och innehåller anvisningar om hur du ställer in OAuth 2-autentisering för ditt mål.
 title: OAuth 2-autentisering
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 3%
