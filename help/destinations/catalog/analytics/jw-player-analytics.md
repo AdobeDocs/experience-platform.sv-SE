@@ -3,9 +3,9 @@ keywords: JW player;jw player;JW Player;jw extension;JW extension
 title: JW Player Analytics-tillägg (beta)
 description: Tillägget JW Player Analytics (Beta) är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 32bdb2db-5c1b-4184-b6d3-b07dc4d0b324
-source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
+source-git-commit: b4e869f9bc29122db4fc66ccda752a50c7db729f
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '473'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Plat
 
 Det här tillägget är tillgängligt i [!DNL Destinations]-katalogen för alla kunder som har köpt Platform.
 
-Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg. och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
+Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig behörigheten **[!UICONTROL manage_properties]** så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
