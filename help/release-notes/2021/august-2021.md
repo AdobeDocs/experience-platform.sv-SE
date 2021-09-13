@@ -4,13 +4,13 @@ description: Versionsinformation för Experience Platform för 25 augusti 2021.
 doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
-source-git-commit: b1dca51264582788ccbde005b063c57e2f3edc8f
+exl-id: 0513b9dc-b16c-43b3-8e17-4be4499308d4
+source-git-commit: e9d5f24bec8cd2793ce30245b46c1d912bf17cc7
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '709'
 ht-degree: 3%
 
 ---
-
 
 # Versionsinformation för Adobe Experience Platform
 
@@ -27,10 +27,22 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
+**Nya destinationer**
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md) | Målet för Airship Attributes, som tidigare fanns i betaversion, är nu allmänt tillgängligt. |
+| [[!DNL Airship Tags]](../../destinations/catalog/mobile-engagement/airship-tags.md) | Målet för Airship Tags, som tidigare fanns i betaversion, är nu allmänt tillgängligt. |
+| [[!DNL Braze]](../../destinations/catalog/mobile-engagement/braze.md) | Braze-målet, som tidigare fanns i betaversionen, är nu allmänt tillgängligt. |
+| [[!DNL Pinterest Customer List]](../../destinations/catalog/advertising/pinterest.md) | Med Pinterest kundlistdestination kan ni skapa målgrupper utifrån era kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest. |
+| [[!DNL Twitter Custom Audiences]](../../destinations/catalog/social/twitter.md) | Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform. |
+| [[!DNL Verizon Media/Yahoo DataX]](../../destinations/catalog/advertising/datax.md) | DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är värd för olika komponenter som gör att Verizon Media/Yahoo kan utbyta data med sina externa partner på ett säkert, automatiserat och skalbart sätt. |
+
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
+| [[!DNL Destination SDK]](../../destinations/destination-sdk/overview.md) | Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar. |
 | [Användbarhetsförbättringar för destinationer](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
 
 Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
