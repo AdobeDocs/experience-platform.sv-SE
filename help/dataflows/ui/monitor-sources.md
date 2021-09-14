@@ -6,15 +6,18 @@ title: Övervaka dataflöden för källor i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a5b52d7cc2a39ce15b5a9568df14c86624ae069a
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
 
 # Övervaka dataflöden för källor i användargränssnittet
+
+>[!IMPORTANT]
+>
+>Direktuppspelningskällor, som [HTTP API-källan](../../sources/connectors/streaming/http.md) stöds för närvarande inte av kontrollpanelen. För tillfället kan du bara använda kontrollpanelen för att övervaka batchkällor.
 
 I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
