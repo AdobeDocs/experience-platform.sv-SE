@@ -4,9 +4,9 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 91228b5f2008e55b681053296e8b3ff4448c92db
+source-git-commit: add6c7c4f3a60bd9ee2c2b77a8a242c4df03377b
 workflow-type: tm+mt
-source-wordcount: '1972'
+source-wordcount: '2056'
 ht-degree: 1%
 
 ---
@@ -775,17 +775,22 @@ Profil 2:
 }
 ```
 
-### Inkludera aggregeringsnyckeln i mallen för att gruppera exporterade profiler efter olika villkor {#template-aggregation-key}
+### Inkludera aggregeringsnyckel i mallen för att få åtkomst till exporterade profiler grupperade efter olika villkor {#template-aggregation-key}
 
-När du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen kan du redigera meddelandeomformningsmallen för att gruppera de profiler som exporterats till ditt mål baserat på villkor som segment-ID, segmentalias, segmentmedlemskap eller ID-namnutrymmen, vilket visas i exemplen nedan.
+När du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till ditt mål baserat på villkor som segment-ID, segmentalias, segmentmedlemskap eller identitetsnamnutrymmen.
+
+I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Detta hjälper dig att formatera HTTP-meddelandet som exporteras från Experience Platform för att matcha det format som förväntas av destinationen.
 
 #### Använd aggregeringsnyckeln för segment-ID i mallen {#aggregation-key-segment-id}
 
-Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du använda `segmentId` i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till ditt mål:
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true grupperas profilerna i HTTP-meddelandena som exporteras till ditt mål efter segment-ID. Se nedan hur du kan komma åt segment-ID:t i mallen.
 
 **Indata**
 
-Tänk på de fyra profilerna nedan, där de två första är en del av segmentet med segment-ID `788d8874-8007-4253-92b7-ee6b6c20c6f3` och de andra två är en del av segmentet med segment-ID `8f812592-3f06-416b-bd50-e7831848a31a`.
+Tänk på de fyra profilerna nedan, där:
+* de första två är en del av segmentet med segment-ID `788d8874-8007-4253-92b7-ee6b6c20c6f3`
+* den tredje profilen är en del av segmentet med segment-ID `8f812592-3f06-416b-bd50-e7831848a31a`
+* den fjärde profilen är en del av båda segmenten ovan.
 
 Profil 1:
 
@@ -873,6 +878,10 @@ Profil 4:
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
             "status":"existing"
+         },
+         "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
+            "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"existing"
          }
       }
    }
@@ -885,24 +894,18 @@ Profil 4:
 >
 >För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
+Observera nedan hur `audienceId` används i mallen för att komma åt segment-ID:n. Detta förutsätter att du använder `audienceId` för segmentmedlemskap i måltaxonomin. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
+
 ```python
 {
+    "audienceId": "{{ input.aggregationKey.segmentId }}",
     "profiles": [
         {% for profile in input.profiles %}
         {
-            {% for attribute in profile.attributes %}
-            "{{ attribute.key }}":
-                {% if attribute.value is empty %}
-                    null
-                {% else %}
-                    "{{ attribute.value.value }}"
-                {% endif %}
-            {% if not loop.last %},{% endif %}
-            {% endfor %}
+            "first_name": "{{ profile.attributes.firstName.value }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
-    "audienceId": "{{input.aggregationKey.segmentId}}"
 }
 ```
 
@@ -912,49 +915,53 @@ När profilerna exporteras till ditt mål delas de upp i två grupper utifrån d
 
 ```json
 {
-    "profiles": [
-        {
-            "firstName": "Hermione",
-            "birthDate": null
-        },
-        {
-            "firstName": "Harry",
-            "birthDate": "1980/07/31"
-        }
-    ],
-    "audienceId": "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+   "audienceId":"788d8874-8007-4253-92b7-ee6b6c20c6f3",
+   "profiles":[
+      {
+         "firstName":"Hermione",
+         "birthDate":null
+      },
+      {
+         "firstName":"Harry",
+         "birthDate":"1980/07/31"
+      },
+      {
+         "firstName":"Jerry",
+         "birthDate":"1940/01/01"
+      }
+   ]
 }
 ```
 
 ```json
 {
-    "profiles": [
-        {
-            "firstName": "Tom",
-            "birthDate": null
-        },
-        {
-            "firstName": "Jerry",
-            "birthDate": "1940/01/01"
-        }
-    ],
-    "audienceId": "8f812592-3f06-416b-bd50-e7831848a31a"
+   "audienceId":"8f812592-3f06-416b-bd50-e7831848a31a",
+   "profiles":[
+      {
+         "firstName":"Tom",
+         "birthDate":null
+      },
+      {
+         "firstName":"Jerry",
+         "birthDate":"1940/01/01"
+      }
+   ]
 }
 ```
 
 #### Använd aggregeringsnyckeln för segmentalias i mallen {#aggregation-key-segment-alias}
 
-Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du använda segmentalias i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till målet.
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du även komma åt segmentalias i mallen.
 
-Lägg till raden nedan i mallen för att gruppera exporterade profiler baserat på segmentaliaset.
+Lägg till raden nedan i mallen för att komma åt de exporterade profilerna grupperade efter segmentalias.
 
 ```python
-"customerList={{input.aggregationKey.segmentAlias}}"
+customerList={{input.aggregationKey.segmentAlias}}
 ```
 
 #### Använd segmentets statusaggregeringsnyckel i mallen {#aggregation-key-segment-status}
 
-Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true kan du använda segmentstatusen i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till målet baserat på om profilerna ska läggas till eller tas bort från segment.
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true, kan du komma åt segmentstatusen i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
 
 Möjliga värden är:
 
@@ -962,10 +969,10 @@ Möjliga värden är:
 * befintlig
 * avslutad
 
-Lägg till raden nedan i mallen för att lägga till eller ta bort profiler från segment baserat på värdena ovan.:
+Lägg till raden nedan i mallen för att lägga till eller ta bort profiler från segment baserat på värdena ovan:
 
 ```python
-"action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}"
+action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}
 ```
 
 #### Använd aggregering för identitetsnamnrymd i mallen {#aggregation-key-identity}
@@ -1024,6 +1031,8 @@ Profil 2:
 >
 >För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
+Observera att `input.aggregationKey.identityNamespaces` används i mallen nedan
+
 ```python
 {
             "profiles": [
@@ -1071,7 +1080,7 @@ Profil 2:
 }
 ```
 
-#### Använda aggregeringsnyckeln i en URL-mall
+#### Använda aggregeringsnyckeln i en URL-mall {#aggregation-key-url-template}
 
 Observera, att beroende på ditt användningssätt, kan du även använda de aggregeringsnycklar som beskrivs här i en URL-adress, vilket visas nedan:
 
