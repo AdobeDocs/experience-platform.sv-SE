@@ -2,13 +2,13 @@
 title: Användningsexempel som stöds av Adobe Experience Platform Web SDK
 description: Lär dig vilka användningsområden som stöds i Adobe Experience Platform Web SDK.
 keywords: web sdk;användningsfall
-source-git-commit: e012e12a8cadb8c13781b0380d84652c23567180
+exl-id: e0643c2c-ceb3-4ea2-aafa-1e18e0c66453
+source-git-commit: ed092b85d74eaa0fdc29f3a8d28f84fe81ccca17
 workflow-type: tm+mt
-source-wordcount: '565'
-ht-degree: 8%
+source-wordcount: '445'
+ht-degree: 10%
 
 ---
-
 
 # Användningsexempel som stöds
 
@@ -21,12 +21,11 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Enkelt strömlinjeformat SDK |  |
 | Nätverk för global datainsamling |  |
 | Givet samtycke |  |
-| IAB 2.0 medgivandesträngar | [Stöd för IAB TCF 2.0](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/iab-tcf/overview.html?lang=en#consent) |
-| Samla in detaljerat samtycke | [Integrera Web SDK med Adobe 2.0-medgivande](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/consent/adobe/sdk.html#prerequisites) |
+| Samla in kundens samtycke enligt olika standarder | <ul><li>[Stöd för Adobe Container 2.0](../../landing/governance-privacy-security/consent/adobe/overview.md)</li><li>[Stöd för IAB TCF 2.0](../../landing/governance-privacy-security/consent/iab/overview.md)</li><li>[Integrera SDK för att skicka medgivandesignaler till Edge Network](../../landing/governance-privacy-security/consent/sdk.md)</li></ul> |
 | ECID-stöd | Mer information om hur du hämtar ECID finns i vår dokumentation [här](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en#first-party-identity) och [här](https://experienceleague.adobe.com/docs/experience-platform/edge/extension/accessing-the-ecid.html?lang=en#extension) |
 | Samla in flera enheter |  |
 | Stöd för Device Graph (offentlig/privat) | [Dokumentation](https://experienceleague.adobe.com/docs/analytics/components/cda/device-graph.html?lang=en) |
-| Skicka data till flera organ på sidan | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/interacting-with-multiple-properties.html?lang=en#fundamentals) |
+| Skicka data till flera organ på sidan | [Dokumentation](./interacting-with-multiple-properties.md) |
 | Detaljerad felrapportering och loggar |  |
 | Spåra begäranden på klientsidan och serversidan |  |
 | taggtillägg | [Tilläggsdokument för Web SDK](../../tags/extensions/web/sdk/overview.md) |
@@ -39,10 +38,10 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Användningsfall | Mer information |
 | --- | --- |
 | Skicka upplevelsehändelser |  |
-| offer decisioning | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/offer-decisioning/offer-decisioning-overview.html?lang=en#personalization) |
+| offer decisioning | [Dokumentation](../personalization/offer-decisioning/offer-decisioning-overview.md) |
 | Om datauppsättningen är aktiverad för profilen kan du skicka data till kunddataprofilen i realtid |  |
 | Skicka data till Customer Journey Analytics i realtid |  |
-| Skriv samtycke till profil | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/consent/adobe/sdk.html?lang=en) |
+| Skriv samtycke till profil | [Dokumentation](../../landing/governance-privacy-security/consent/sdk.md) |
 | Vidarebefordra data på serversidan i realtid till tredje part | [Dokumentation](../../tags/ui/event-forwarding/overview.md) |
 | Stöd för identitetsnamnutrymmen |  |
 
@@ -59,14 +58,14 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Props, eVars och events |  |
 | ListVar-stöd för Adobe Analytics |  |
 | OS- och webbläsarversion |  |
-| Körklara variabler | [Automatiskt mappade variabler](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/adobe-analytics/automatically-mapped-vars.html?lang=en#data-collection) |
+| Körklara variabler | [Automatiskt mappade variabler](../data-collection/adobe-analytics/automatically-mapped-vars.md) |
 | VISTA-regler/bearbetningsregler |  |
 | Stöd för besökarattribut |  |
 | Stöd för att avsluta länkar |  |
 | Anpassade länkar/hämtningslänkar |  |
 | Tillstånd och åtgärdsspårning |  |
 | Händelseserialisering för standardhändelser |  |
-| Variabeln Produkter | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html?lang=en#actions-related-to-products) |
+| Variabeln Produkter | [Dokumentation](../data-collection/collect-commerce-data.md#actions-related-to-products) |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -75,10 +74,10 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Användningsfall | Mer information |
 | --- | --- |
 | Alla aktivitetstyper |  |
-| Inbyggt och SPA stöd för Visual Experience Composer | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/spa-implementation.html?lang=en#personalization) |
+| Inbyggt och SPA stöd för Visual Experience Composer | [Dokumentation](../personalization/adobe-target/spa-implementation.md) |
 | Formulärbaserad disposition |  |
-| Stöd för global mbox | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/rendering-personalization-content.html?lang=en#automatically-rendering-content) |
-| Anpassade mbox | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/rendering-personalization-content.html?lang=en#manually-rendering-content) |
+| Stöd för global mbox | [Dokumentation](../personalization/rendering-personalization-content.md#automatically-rendering-content) |
+| Anpassade mbox | [Dokumentation](../personalization/rendering-personalization-content.md#manually-rendering-content) |
 | Analyser för mål (A4T) |  |
 | Miljö |  |
 | Stöd för arbetsytor |  |
@@ -88,10 +87,10 @@ På den här sidan visas de användningsfall som stöds för Web SDK, med länka
 | Profilskript |  |
 | XDM blir mbox-parametrar |  |
 | Omdirigeringserbjudanden stöds i A4T-rapporter | [Dokumentation](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=en) |
-| Uppdaterar målprofilen | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/target-overview.html?lang=en#single-profile-update) |
+| Uppdaterar målprofilen | [Dokumentation](../personalization/adobe-target/target-overview.md#single-profile-update) |
 | Rekommendationer |  |
 | mBox Tredje parts-ID |  |
-| Svarstoken | [Dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/accessing-response-tokens.html?lang=en) |
+| Svarstoken | [Dokumentation](../personalization/adobe-target/accessing-response-tokens.md) |
 
 {style=&quot;table-layout:auto&quot;}
 
