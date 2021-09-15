@@ -4,9 +4,9 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
+source-git-commit: 91228b5f2008e55b681053296e8b3ff4448c92db
 workflow-type: tm+mt
-source-wordcount: '1982'
+source-wordcount: '1972'
 ht-degree: 1%
 
 ---
@@ -779,7 +779,7 @@ Profil 2:
 
 När du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen kan du redigera meddelandeomformningsmallen för att gruppera de profiler som exporterats till ditt mål baserat på villkor som segment-ID, segmentalias, segmentmedlemskap eller ID-namnutrymmen, vilket visas i exemplen nedan.
 
-#### Exempel på hur du använder aggregeringsnyckeln för segment-ID i mallen {#aggregation-key-segment-id}
+#### Använd aggregeringsnyckeln för segment-ID i mallen {#aggregation-key-segment-id}
 
 Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du använda `segmentId` i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till ditt mål:
 
@@ -942,7 +942,7 @@ När profilerna exporteras till ditt mål delas de upp i två grupper utifrån d
 }
 ```
 
-#### Exempel på hur du använder aggregeringsnyckeln för segmentalias i mallen {#aggregation-key-segment-alias}
+#### Använd aggregeringsnyckeln för segmentalias i mallen {#aggregation-key-segment-alias}
 
 Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du använda segmentalias i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till målet.
 
@@ -952,7 +952,7 @@ Lägg till raden nedan i mallen för att gruppera exporterade profiler baserat p
 "customerList={{input.aggregationKey.segmentAlias}}"
 ```
 
-#### Exempel på hur du använder sammanställningsnyckeln för segmentstatus i mallen {#aggregation-key-segment-status}
+#### Använd segmentets statusaggregeringsnyckel i mallen {#aggregation-key-segment-status}
 
 Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true kan du använda segmentstatusen i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till målet baserat på om profilerna ska läggas till eller tas bort från segment.
 
@@ -968,7 +968,7 @@ Lägg till raden nedan i mallen för att lägga till eller ta bort profiler frå
 "action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}"
 ```
 
-#### Exempel på hur du använder aggregering av identitetsnamnutrymme i mallen {#aggregation-key-identity}
+#### Använd aggregering för identitetsnamnrymd i mallen {#aggregation-key-identity}
 
 Nedan visas ett exempel där [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen är inställd på att aggregera exporterade profiler efter identitetsnamnutrymmen, i formatet `"identityNamespaces": ["email", "phone"]`
 
@@ -1071,7 +1071,7 @@ Profil 2:
 }
 ```
 
-#### Exempel på hur du använder aggregeringsnyckeln i en URL-mall
+#### Använda aggregeringsnyckeln i en URL-mall
 
 Observera, att beroende på ditt användningssätt, kan du även använda de aggregeringsnycklar som beskrivs här i en URL-adress, vilket visas nedan:
 
