@@ -3,9 +3,10 @@ description: Använd innehållet på den här sidan tillsammans med resten av ko
 seo-description: Use the content on this page together with the rest of the configuration options for partner destinations. This page addresses the messaging format of data exported from Adobe Experience Platform to destinations, while the other page addresses specifics about connecting and authenticating to your destination.
 seo-title: Message format
 title: Meddelandeformat
-source-git-commit: d60933d2083b7befcfa8beba4b1630f372c08cfa
+exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
+source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1982'
 ht-degree: 1%
 
 ---
@@ -93,17 +94,15 @@ I det här avsnittet finns flera exempel på hur dessa omformningar görs, från
 
 1. Exempel på enkla omformningar. Lär dig hur mallar fungerar med enkla omformningar för fälten [Profilattribut](./message-format.md#attributes), [Segmentmedlemskap](./message-format.md#segment-membership) och [Identitet](./message-format.md#identities).
 2. Exempel på mallar som kombinerar fälten ovan blir mer komplicerade: [Skapa en mall som skickar segment och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](./message-format.md#segments-identities-attributes).
-3. Djupdykning, som visar två exempel på mallar från branschpartners.
+3. Mallar som innehåller aggregeringsnyckeln. När du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen grupperar Experience Platform de profiler som exporteras till ditt mål baserat på villkor som segment-ID, segmentstatus eller identitetsnamnutrymmen.
 
 ### Profilattribut {#attributes}
 
 Information om hur du omformar profilattributen som exporteras till ditt mål finns i JSON- och kodexemplen nedan.
 
-
 >[!IMPORTANT]
 >
 >En lista över alla tillgängliga profilattribut i Adobe Experience Platform finns i [XDM-fältordlistan](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
-
 
 
 **Indata**
@@ -776,7 +775,311 @@ Profil 2:
 }
 ```
 
-### Referens: Kontext och funktioner som används i omformningsmallar
+### Inkludera aggregeringsnyckeln i mallen för att gruppera exporterade profiler efter olika villkor {#template-aggregation-key}
+
+När du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen kan du redigera meddelandeomformningsmallen för att gruppera de profiler som exporterats till ditt mål baserat på villkor som segment-ID, segmentalias, segmentmedlemskap eller ID-namnutrymmen, vilket visas i exemplen nedan.
+
+#### Exempel på hur du använder aggregeringsnyckeln för segment-ID i mallen {#aggregation-key-segment-id}
+
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du använda `segmentId` i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till ditt mål:
+
+**Indata**
+
+Tänk på de fyra profilerna nedan, där de två första är en del av segmentet med segment-ID `788d8874-8007-4253-92b7-ee6b6c20c6f3` och de andra två är en del av segmentet med segment-ID `8f812592-3f06-416b-bd50-e7831848a31a`.
+
+Profil 1:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Hermione"
+      },
+      "birthDate":{
+         
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
+            "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+Profil 2:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Harry"
+      },
+      "birthDate":{
+         "value":"1980/07/31"
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
+            "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+Profil 3:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Tom"
+      },
+      "birthDate":{
+         
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "8f812592-3f06-416b-bd50-e7831848a31a":{
+            "lastQualificationTime":"2021-02-20T12:00:00Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+Profil 4:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Jerry"
+      },
+      "birthDate":{
+         "value":"1940/01/01"
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "8f812592-3f06-416b-bd50-e7831848a31a":{
+            "lastQualificationTime":"2021-02-20T12:00:00Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+**Mall**
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            {% for attribute in profile.attributes %}
+            "{{ attribute.key }}":
+                {% if attribute.value is empty %}
+                    null
+                {% else %}
+                    "{{ attribute.value.value }}"
+                {% endif %}
+            {% if not loop.last %},{% endif %}
+            {% endfor %}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+    "audienceId": "{{input.aggregationKey.segmentId}}"
+}
+```
+
+**Resultat**
+
+När profilerna exporteras till ditt mål delas de upp i två grupper utifrån deras segment-ID.
+
+```json
+{
+    "profiles": [
+        {
+            "firstName": "Hermione",
+            "birthDate": null
+        },
+        {
+            "firstName": "Harry",
+            "birthDate": "1980/07/31"
+        }
+    ],
+    "audienceId": "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+}
+```
+
+```json
+{
+    "profiles": [
+        {
+            "firstName": "Tom",
+            "birthDate": null
+        },
+        {
+            "firstName": "Jerry",
+            "birthDate": "1940/01/01"
+        }
+    ],
+    "audienceId": "8f812592-3f06-416b-bd50-e7831848a31a"
+}
+```
+
+#### Exempel på hur du använder aggregeringsnyckeln för segmentalias i mallen {#aggregation-key-segment-alias}
+
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` till true kan du använda segmentalias i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till målet.
+
+Lägg till raden nedan i mallen för att gruppera exporterade profiler baserat på segmentaliaset.
+
+```python
+"customerList={{input.aggregationKey.segmentAlias}}"
+```
+
+#### Exempel på hur du använder sammanställningsnyckeln för segmentstatus i mallen {#aggregation-key-segment-status}
+
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true kan du använda segmentstatusen i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till målet baserat på om profilerna ska läggas till eller tas bort från segment.
+
+Möjliga värden är:
+
+* realiserad
+* befintlig
+* avslutad
+
+Lägg till raden nedan i mallen för att lägga till eller ta bort profiler från segment baserat på värdena ovan.:
+
+```python
+"action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}"
+```
+
+#### Exempel på hur du använder aggregering av identitetsnamnutrymme i mallen {#aggregation-key-identity}
+
+Nedan visas ett exempel där [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen är inställd på att aggregera exporterade profiler efter identitetsnamnutrymmen, i formatet `"identityNamespaces": ["email", "phone"]`
+
+**Indata**
+
+Profil 1:
+
+```json
+{
+   "identityMap":{
+      "email":[
+         {
+            "id":"e1@example.com"
+         },
+         {
+            "id":"e2@example.com"
+         }
+      ],
+      "phone":[
+         {
+            "id":"+40744111222"
+         }
+      ]
+   }
+}
+```
+
+Profil 2:
+
+```json
+{
+   "identityMap":{
+      "email":[
+         {
+            "id":"e3@example.com"
+         }
+      ],
+      "phone":[
+         {
+            "id":"+40744333444"
+         },
+         {
+            "id":"+40744555666"
+         }
+      ]
+   }
+}
+```
+
+**Mall**
+
+>[!IMPORTANT]
+>
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+```python
+{
+            "profiles": [
+            {% for profile in input.profiles %}
+            {
+                {% for ns in input.aggregationKey.identityNamespaces %}
+                "{{ns}}": [
+                    {% for id in profile.identityMap[ns] %}
+                    "{{id.id}}"{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ]{% if not loop.last %},{% endif %}
+                {% endfor %}
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+}
+```
+
+**Resultat**
+
+`json` nedan representerar data som exporteras från Adobe Experience Platform.
+
+```json
+{
+   "profiles":[
+      {
+         "email":[
+            "e1@example.com",
+            "e2@example.com"
+         ],
+         "phone":[
+            "+40744111222"
+         ]
+      },
+      {
+         "email":[
+            "e3@example.com"
+         ],
+         "phone":[
+            "+40744333444",
+            "+40744555666"
+         ]
+      }
+   ]
+}
+```
+
+#### Exempel på hur du använder aggregeringsnyckeln i en URL-mall
+
+Observera, att beroende på ditt användningssätt, kan du även använda de aggregeringsnycklar som beskrivs här i en URL-adress, vilket visas nedan:
+
+```python
+https://api.example.com/audience/{{input.aggregationKey.segmentId}}
+```
+
+### Referens: Kontext och funktioner som används i omformningsmallar {#reference}
 
 Kontexten som anges för mallen innehåller `input` (profilerna/data som exporteras i det här anropet) och `destination` (data om målet som Adobe skickar data till, giltiga för alla profiler).
 

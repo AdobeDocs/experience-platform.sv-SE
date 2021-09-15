@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Alternativ för destinationskonfiguration för mål-SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1554'
 ht-degree: 2%
 
 ---
@@ -247,6 +247,8 @@ I det här avsnittet kan du ange de sammanställningsprofiler som Experience Pla
 En sammanställningsprofil avgör hur de exporterade profilerna kombineras i dataexporten. Tillgängliga alternativ är:
 * Bästa ansträngningsaggregering
 * Konfigurerbar aggregering (visas i konfigurationen ovan)
+
+Läs avsnittet om [att använda mallar](./message-format.md#using-templating) och [exempel på aggregeringsnycklar](./message-format.md#template-aggregation-key) för att förstå hur du inkluderar aggregeringsregeln i mallen för meddelandetransformering baserat på den valda aggregeringsregeln.
 
 ### Bästa ansträngningsaggregering {#best-effort-aggregation}
 
