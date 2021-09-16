@@ -1,9 +1,10 @@
 ---
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
-source-git-commit: 41a394974153883dc300bdd8a00fc3106c4f0ac6
+exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
+source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
 workflow-type: tm+mt
-source-wordcount: '4895'
+source-wordcount: '5120'
 ht-degree: 0%
 
 ---
@@ -774,3 +775,36 @@ Några vanliga användningsområden:
 * Om det här är landningssidan för besöket fyller du i en analysmätning
 * Visa ett nytt erbjudande till besökaren efter X antal sessioner
 * Visa ett nyhetsbrev om detta är en första besökare
+
+### Villkorligt värde
+
+En wrapper för villkoret [Värdejämförelse](#value-comparison-value-comparison). Baserat på resultatet av jämförelsen returnerar ett av de två tillgängliga värdena i formuläret. Kan på så sätt hantera &quot;If... Sedan.. Annars..&quot; utan extra regler.
+
+### Körningsmiljö
+
+Gör att du kan välja en av följande variabler:
+
+* Miljöstadium - Returnerar `_satellite.environment.stage` för att skilja mellan utvecklings-/staging-/produktionsmiljöer.
+* Datum för biblioteksbygge - Returnerar `turbine.buildInfo.buildDate` som innehåller samma värde som `_satellite.buildInfo.buildDate`.
+* Egenskapsnamn - Returnerar `_satellite.property.name` för att hämta namnet på Launch-egenskapen.
+* Egenskaps-ID - Returnerar `_satellite.property.id` för att hämta ID:t för egenskapen Launch
+* Regelnamn - Returnerar `event.$rule.name` som innehåller namnet på den körda regeln.
+* Regel-ID - Returnerar `event.$rule.id` som innehåller ID:t för den körda regeln.
+* Händelsetyp - Returnerar `event.$type` som innehåller den typ av händelse som utlöste regeln.
+* Nyttolast för händelseinformation - Returnerar `event.detail` som innehåller nyttolasten för en anpassad händelse eller regel för direktanrop.
+* Identifierare för direktanrop - Returnerar `event.identifier` som innehåller identifieraren för en regel för direktanrop.
+
+### Enhetsattribut
+
+Returnerar ett av följande attribut för besökarenhet:
+
+* Storlek på webbläsarfönster
+* Skärmstorlek
+
+### JavaScript-verktyg
+
+Det är en wrapper för vanliga JavaScript-åtgärder. Den tar emot ett dataelement som indata. Den returnerar resultatet av en av följande omformningar av dataelementvärdet:
+
+* Grundläggande strängändring (ersätt, delsträng, regex-matchning, första och sista indexvärdet, dela, segment)
+* Grundläggande matrisåtgärder (segment, join, pop, shift)
+* Grundläggande universella åtgärder (segment, längd)

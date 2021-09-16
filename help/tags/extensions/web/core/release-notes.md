@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
-source-git-commit: cef9f9e403328418d26935bf3ee45e9068b7177e
+exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
+source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
 workflow-type: tm+mt
-source-wordcount: '1293'
+source-wordcount: '1417'
 ht-degree: 1%
 
 ---
@@ -13,6 +14,18 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 16 september 2021
+
+v3.1.0
+
+Nya dataelement lades till:
+
+* Sammanfogat objekt - Markera flera dataelement som vart och ett ska innehålla ett objekt. Objekten sammanfogas i hög grad (rekursivt) för att skapa ett nytt objekt.
+* Villkorsvärde - Returnera ett av två värden (conditionalValue eller fallbackValue) baserat på resultatet av jämförelsen.
+* Runtime Environment - Returnera en av följande Launch-miljövariabler: miljöfas, bibliotekets byggdatum, egenskapsnamn, egenskaps-ID, regelnamn, regel-ID, händelsetyp, händelseinformationslast, direktanropsidentifierare.
+* JavaScript-verktyg - wrapper för vanliga JavaScript-åtgärder: grundläggande strängredigering (ersätt, delsträng, regex-matchning, första och sista index, delning, segment), grundläggande arrayåtgärder (segment, join, pop, shift) och grundläggande universella åtgärder (segment, längd).
+* Enhetsattribut - Returnera enhetsattribut som fönsterstorlek eller skärmstorlek.
 
 ## 11 augusti 2021
 
