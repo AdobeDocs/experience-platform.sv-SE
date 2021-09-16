@@ -2,10 +2,10 @@
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: df269a30251cb17e337ec25787d6a1eed41e9c0b
+source-git-commit: 4dc49c7219ebb613c74e5960f1f8d477dc1b7605
 workflow-type: tm+mt
-source-wordcount: '468'
-ht-degree: 1%
+source-wordcount: '587'
+ht-degree: 2%
 
 ---
 
@@ -21,16 +21,18 @@ I grundläggande bemärkelse anger en granskningslogg **vem** som utförde **vad
 
 Det här dokumentet innehåller granskningsloggar i Platform, inklusive hur du visar och hanterar dem i användargränssnittet eller API.
 
-## Händelsetyper som hämtats av granskningsloggar
+## Händelsetyper som hämtats av granskningsloggar {#category}
 
 Följande tabell visar vilka åtgärder som resurser registreras av granskningsloggar för:
 
 | Resurs | Instruktioner |
 | --- | --- |
-| [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Återställ</li><li>Ta bort</li></ul> |
 | [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [Kundprofil i realtid](../../../profile/home.md)</li></ul> |
 | [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Klass](../../../xdm/schema/composition.md#class) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Datatyp](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Återställ</li><li>Ta bort</li></ul> |
 | [Destination](../../../destinations/home.md) | <ul><li>Aktivera</li></ul> |
 
 ## Åtkomst till granskningsloggar
@@ -50,6 +52,23 @@ Systemet visar endast granskningsloggar från det senaste året. Loggar som öve
 Välj en händelse i listan om du vill visa information om händelsen i den högra listen.
 
 ![Händelseinformation](../../images/audit-logs/select-event.png)
+
+Markera trattsymbolen (![Filterikon](../../images/audit-logs/icon.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
+
+![Filter](../../images/audit-logs/filters.png)
+
+Följande filter är tillgängliga för granskningshändelser i användargränssnittet:
+
+| Filter | Beskrivning |
+| --- | --- |
+| [!UICONTROL Category] | Använd listrutan för att filtrera resultat som visas av [kategori](#category). |
+| [!UICONTROL Action] | Filtrera efter åtgärd. För närvarande kan endast [!UICONTROL Create]- och [!UICONTROL Delete]-åtgärder filtreras. |
+| [!UICONTROL Access Control Status] | Filtrera efter om åtgärden tilläts (slutförd) eller nekades på grund av att [åtkomstkontrollen](../../../access-control/home.md) inte hade behörighet. |
+| [!UICONTROL Date] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. |
+
+Om du vill ta bort ett filter väljer du X på ikonen för piller för filtret i fråga eller väljer **[!UICONTROL Clear all]** för att ta bort alla filter.
+
+![Rensa filter](../../images/audit-logs/clear-filters.png)
 
 <!-- (Planned for post-beta release)
 ### Export an audit log
