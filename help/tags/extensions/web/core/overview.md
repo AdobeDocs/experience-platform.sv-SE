@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
+source-git-commit: 3b023dde8189d3ca6f8525d1e3366874e4ea2c67
 workflow-type: tm+mt
-source-wordcount: '5120'
+source-wordcount: '5247'
 ht-degree: 0%
 
 ---
@@ -708,6 +708,61 @@ Ange namnet på det lokala lagringsobjektet i fältet Namn på lokal lagringsobj
 Med lokal lagring kan webbläsare lagra information från sida till sida ([https://www.w3schools.com/html/html5\_webstorage.asp](https://www.w3schools.com/html/html5_webstorage.asp)). Lokal lagring fungerar ungefär som cookies, men är mycket större och mer flexibel.
 
 Använd det angivna fältet för att ange värdet som du skapade för ett lokalt lagringsobjekt, till exempel `lastProductViewed.`
+
+### Sammanfogade objekt
+
+Markera flera dataelement som vart och ett ska ge ett objekt. Objekten sammanfogas i hög grad (rekursivt) för att skapa ett nytt objekt. Källobjekten ändras inte. Om en egenskap hittas på samma plats på flera källobjekt används värdet från det senare objektet. Om ett källegenskapsvärde är `undefined` åsidosätter det inte ett värde från ett tidigare källobjekt. Om arrayer finns på samma plats på flera källobjekt sammanfogas arrayerna.
+
+Anta till exempel att du väljer ett dataelement som innehåller följande objekt:
+
+```
+{
+  "sport": {
+    "name": "tennis"
+  },
+  "dessert": "ice cream",
+  "fruits": [
+    "apple",
+    "banana"
+  ]
+}
+```
+
+Anta också att du väljer ett annat dataelement som innehåller följande objekt:
+
+```
+{
+  "sport": {
+    "name": "volleyball"
+  },
+  "dessert": undefined,
+  "pet": "dog",
+  "instrument": undefined,
+  "fruits": [
+    "cherry",
+    "duku"
+  ]
+}
+```
+
+Resultatet av dataelementet för sammanfogade objekt blir följande objekt:
+
+```
+{
+  "sport": {
+    "name": "volleyball"
+  },
+  "dessert": "ice cream",
+  "pet": "dog",
+  "instrument": undefined,
+  "fruits": [
+    "apple",
+    "banana",
+    "cherry",
+    "duku"
+  ]
+}
+```
 
 ### Sidinformation
 
