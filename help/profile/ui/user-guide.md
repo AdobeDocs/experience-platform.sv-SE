@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: ad5690997b079dbc064775ef1c4fdbe3770ff424
+source-git-commit: b5e6376b54fe8b53fbabf85a2909293cebd93ccc
 workflow-type: tm+mt
-source-wordcount: '1482'
+source-wordcount: '1502'
 ht-degree: 0%
 
 ---
@@ -75,15 +75,21 @@ Ungefär som [profilantalet](#profile-count), när inmatningen av poster i [!DNL
 
 På fliken **[!UICONTROL Browse]** kan du visa exempelprofiler med hjälp av en sammanfogningsprincip eller leta upp specifika profiler med hjälp av ett ID-namnutrymme och värde.
 
-![](../images/user-guide/browse-by-dropdown.png)
+![](../images/user-guide/browse-by-none-selected.png)
 
 ### Bläddra efter [!UICONTROL Merge policy]
 
-Väljaren **[!UICONTROL Browse by]** är inställd på [!UICONTROL Merge policy] som standard och **[!UICONTROL Merge policy]** som är vald är standardprincip för sammanslagning för din organisation.
+Fliken **[!UICONTROL Browse]** är som standard inställd på den sammanfogningsprincip som används i din organisation. Om du vill välja en annan sammanfogningsprincip markerar du `X` bredvid sammanfogningsprincipnamnet och använder sedan väljaren för att öppna dialogrutan **[!UICONTROL Select merge policy]**.
 
-Mer information om sammanfogningsprinciper och deras roll inom plattformen finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
+>[!NOTE]
+>
+>Om ingen sammanfogningsprincip är markerad använder du väljarknappen bredvid fältet **[!UICONTROL Merge policy]** för att öppna markeringsdialogrutan.
 
 ![](../images/user-guide/browse-by-merge-policy.png)
+
+Om du vill välja en sammanfogningsprincip i dialogrutan **[!UICONTROL Select merge policy]** markerar du alternativknappen bredvid principnamnet och använder sedan **[!UICONTROL Select]** för att gå tillbaka till fliken [!UICONTROL Browse]. Du kan sedan välja **[!UICONTROL View]** om du vill uppdatera exempelprofilerna och se ett exempel på profiler med den nya sammanfogningsprincipen.
+
+![](../images/user-guide/select-merge-policy-dialog.png)
 
 Profilerna som visas representerar ett urval på upp till 20 profiler från din organisations profilbutik efter att den valda sammanfogningsprincipen har tillämpats. Exempelprofilerna för den valda sammanfogningsprincipen uppdateras när nya data läggs till i din organisations profilarkiv.
 
@@ -91,21 +97,16 @@ Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL 
 
 ![](../images/user-guide/sample-profiles.png)
 
-Om du vill välja en annan sammanfogningsprincip markerar du `X` bredvid sammanfogningsprincipnamnet och använder sedan väljaren för att öppna dialogrutan **[!UICONTROL Select merge policy]**.
+Mer information om sammanfogningsprinciper och deras roll inom plattformen finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
-![](../images/user-guide/merge-policy-select.png)
-
-Om du vill välja en sammanfogningsprincip i dialogrutan **[!UICONTROL Select merge policy]** markerar du alternativknappen bredvid principnamnet och använder sedan **[!UICONTROL Select]** för att gå tillbaka till fliken [!UICONTROL Browse]. Du kan sedan välja **[!UICONTROL View]** om du vill uppdatera exempelprofilerna och se ett exempel på profiler med den nya sammanfogningsprincipen.
-
-![](../images/user-guide/select-merge-policy-dialog.png)
 
 ### Bläddra efter [!UICONTROL Identity]
 
-Med **[!UICONTROL Browse by]**-väljaren kan du välja [!UICONTROL Identity] om du vill söka efter en viss profil med ett identitetsvärde. Om du bläddrar efter en identitet måste du också ange en sammanfogningsprincip, ett identitetsnamnutrymme och ett identitetsvärde.
+På fliken **[!UICONTROL Browse]** kan du använda ett identitetsnamnutrymme för att leta upp en viss profil med hjälp av ett identitetsvärde. Om du bläddrar efter en identitet måste du ange en sammanfogningsprincip, ett identitetsnamnutrymme och ett identitetsvärde.
 
 ![](../images/user-guide/browse-by-identity.png)
 
-Använd **[!UICONTROL Merge policy]**-väljaren för att öppna dialogrutan **[!UICONTROL Select merge policy]** och välj den sammanfogningsprincip som du vill använda.
+Använd vid behov **[!UICONTROL Merge policy]**-väljaren för att öppna dialogrutan **[!UICONTROL Select merge policy]** och välj den sammanfogningsprincip som du vill använda.
 
 ![](../images/user-guide/select-merge-policy-dialog.png)
 
