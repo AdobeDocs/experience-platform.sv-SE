@@ -2,9 +2,9 @@
 description: Den här sidan beskriver de olika OAuth 2-autentiseringsflöden som stöds av mål-SDK och innehåller anvisningar om hur du ställer in OAuth 2-autentisering för ditt mål.
 title: OAuth 2-autentisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: e8625d6de7707b3a159f95d4471a73cbbed25d21
 workflow-type: tm+mt
-source-wordcount: '2119'
+source-wordcount: '2110'
 ht-degree: 3%
 
 ---
@@ -21,18 +21,15 @@ Den här sidan beskriver de olika OAuth 2-autentiseringsflöden som stöds av m�
 
 ### Förutsättningar i systemet {#prerequisites}
 
-Som ett första steg måste du skapa en app i ditt system för Adobe Experience Platform, eller på annat sätt registrera Experience Platform i ditt system. Målet är att generera ett klient-ID och en klienthemlighet som behövs för att autentisera Experience Platform mot målet. Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/återanrops-URL:en för Adobe Experience Platform OAuth 2, som du kan hämta från tabellen nedan.
+Som ett första steg måste du skapa en app i ditt system för Adobe Experience Platform, eller på annat sätt registrera Experience Platform i ditt system. Målet är att generera ett klient-ID och en klienthemlighet som behövs för att autentisera Experience Platform mot målet. Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/återanrops-URL:erna för Adobe Experience Platform OAuth 2, som du kan hämta från listan nedan.
+
+* `https://platform-va7.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-nld2.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-aus5.adobe.io/data/core/activation/oauth/api/v1/callback`
 
 >[!IMPORTANT]
 >
 >Stegen för att registrera en omdirigerings-/återanrops-URL för Adobe Experience Platform i ditt system krävs bara för [OAuth 2 med behörighetstypen Authorization Code](./oauth2-authentication.md#authorization-code). För de andra två anslagstyper som stöds (lösenord och klientuppgifter) kan du hoppa över det här steget.
-
-| URL för omdirigering/återanrop | Miljö |
-|---------|----------|
-| `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback` | Produktion |
-| `https://platform-stage.adobe.io/data/core/activation/oauth/api/v1/callback` | Mellanlagring |
-
-{style=&quot;table-layout:auto&quot;}
 
 I slutet av det här steget bör du ha:
 * Ett klient-ID.
@@ -466,7 +463,7 @@ Beroende på hur din autentisering anpassas kan du behöva komma åt datafält i
 | response.body | HTTP-svarsbrödtext | ``{{ response.body.access_token }}`` |
 | response.status | HTTP-svarsstatus | ``{{ response.status }}`` |
 | response.headers | HTTP-svarshuvuden | ``{{ response.headers.server[0] }}`` |
-| authContext | Åtkomstinformation om det aktuella autentiseringsförsöket | <ul><li>`{{ authContext.sandboxName }} `</li><li>`{{ authContext.sandboxId }} `</li><li>`{{ authContext.imsOrgId }} `</li><li>`{{ authContext.client }} // the client executing the authentication attempt `</li></ul> |
+| userContext | Åtkomstinformation om det aktuella autentiseringsförsöket | <ul><li>`{{ userContext.sandboxName }} `</li><li>`{{ userContext.sandboxId }} `</li><li>`{{ userContext.imsOrgId }} `</li><li>`{{ userContext.client }} // the client executing the authentication attempt `</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
