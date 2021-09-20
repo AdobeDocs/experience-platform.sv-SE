@@ -1,13 +1,13 @@
 ---
 title: Marketo Engage destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
+source-git-commit: 1f18e07af7ef0d90f882fa668c5659330bce5960
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Marketo Engage {#beta-marketo-engage-destination}
 
@@ -32,18 +32,26 @@ Segmentkopplingen gör det möjligt för marknadsförare att skicka segment som 
 
 Segmentexport - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Marketo Engage-målet.
 
-## Konfigurera {#set-up}
+## Ställ in mål och aktivera segment {#set-up}
 
-Instruktioner om hur du ställer in målet [finns här](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=en).
+Detaljerade instruktioner om hur du ställer in målet och aktiverar segment finns i [Överför ett Adobe Experience Platform-segment till en Marketo Statisk lista](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=en) i Marketo-dokumentationen.
 
-## Anslut till målet {#connect}
+<!--
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+## Connect to the destination {#connect}
 
-## Dataanvändning och -styrning {#data-usage-governance}
+To connect to this destination, follow the steps described in the [destination configuration tutorial](../../ui/connect-destination.md).
+
+-->
+
+## Dataanvändning och styrning {#data-usage-governance}
 
 Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] framtvingar datastyrning finns i [översikten över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
-## Aktivera segment till den här destinationen {#activate}
+<!--
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
+## Activate segments to this destination {#activate}
+
+See [Activate audience data to streaming segment export destinations](../../ui/activate-segment-streaming-destinations.md) for instructions on activating audience segments to this destination.
+
+-->
