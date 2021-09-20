@@ -2,10 +2,10 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+source-git-commit: 396b9a9ec1509abedba96797f68ad3e5aa2e5988
 workflow-type: tm+mt
 source-wordcount: '896'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -55,18 +55,17 @@ ht-degree: 0%
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i  ** YOURDESTINATIONdestination.
 
-## Användningsexempel
+## Användningsfall
 
 För att du bättre ska kunna förstå hur och när du ska använda målet *YOURDESTINATION* finns det några exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
 
-
-### Användningsfall 1
+### Använd skiftläge 1
 
 *För plattformar för mobilmeddelanden:*
 
 *En hemuthyrnings- och försäljningsplattform vill skicka mobilmeddelanden till kundernas Android- och iOS-enheter för att meddela dem att det finns 100 uppdaterade listor i det område där de tidigare sökte efter en uthyrning.*
 
-### Användningsfall nr 2
+### Använd skiftläge 2
 
 *För plattformar för sociala nätverk:*
 
