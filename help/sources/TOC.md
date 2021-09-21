@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Data Ingestion, Sources
-source-git-commit: ebe620b078096349c514420746902ce406a910d1
+source-git-commit: e85980565889dd66f7dbd93749e013f77e434b74
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '647'
 ht-degree: 5%
 
 ---
@@ -71,6 +71,7 @@ ht-degree: 5%
       - [Oraclena koppling](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
+      - [Snowflake-kontakt](connectors/databases/snowflake.md)
    - e-handel {#ecommerce}
       - [Förminska koppling](connectors/ecommerce/shopify.md)
    - Lokalt system {#local-system}
@@ -125,6 +126,7 @@ ht-degree: 5%
          - [Oracle](tutorials/api/create/databases/oracle.md)
          - [Phoenix](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
+         - [Snowflake](tutorials/api/create/databases/snowflake.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - e-handel {#ecommerce}
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
@@ -214,6 +216,7 @@ ht-degree: 5%
          - [Oracle](tutorials/ui/create/databases/oracle.md)
          - [Phoenix](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
+         - [Snowflake](tutorials/ui/create/databases/snowflake.md)
       - e-handel {#ecommerce}
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
       - Lokalt system {#local-system}

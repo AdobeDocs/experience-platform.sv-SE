@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
+source-git-commit: 048b3bbbe170a892eedc9f8ee0e130fcbfad6b86
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '978'
 ht-degree: 0%
 
 ---
@@ -97,6 +97,7 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 - [[!DNL Oracle] koppling](connectors/databases/oracle.md)
 - [[!DNL Phoenix] koppling](connectors/databases/phoenix.md)
 - [[!DNL PostgreSQL] koppling](connectors/databases/postgres.md)
+- [[!DNL Snowflake] koppling](connectors/databases/snowflake.md)
 
 ### eCommerce
 

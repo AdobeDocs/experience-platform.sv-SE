@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt databaskonto.
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-source-git-commit: 46fb08a10bc05dc758bdcb025693f819b980b41a
+source-git-commit: b0b993842b1015f5503fe2ae5a23d9188eeaad48
 workflow-type: tm+mt
-source-wordcount: '1389'
+source-wordcount: '1390'
 ht-degree: 0%
 
 ---
@@ -28,11 +28,11 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 Den här självstudiekursen kräver dessutom att du redan har skapat ett databaskonto. En lista med självstudiekurser för att skapa olika databasanslutningar i användargränssnittet finns i [översikten över källanslutningar](../../../home.md).
 
-## Markera data
+## Lägg till data
 
-När du har skapat ditt databaskonto visas **[!UICONTROL Select data]**-steget, som ger ett interaktivt gränssnitt där du kan utforska databashierarkin.
+När du har skapat ditt databaskonto visas **[!UICONTROL Add data]**-steget, som ger ett interaktivt gränssnitt där du kan utforska databashierarkin.
 
-- Den vänstra halvan av gränssnittet är en webbläsare som visar kontots lista över databaser.
+- Den vänstra halvan av gränssnittet är en webbläsare som visar kontots lista över datatabeller.
 - I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader med data.
 
 Du kan använda alternativet **[!UICONTROL Search]** högst upp på sidan för att snabbt identifiera de källdata som du tänker använda.
@@ -41,7 +41,7 @@ Du kan använda alternativet **[!UICONTROL Search]** högst upp på sidan för a
 >
 >Sökkällans dataalternativ är tillgängligt för alla tabellbaserade källanslutningar, med undantag för Analytics-, Classifications-, Event Hubs- och Kinesis-anslutningar.
 
-När du har hittat källdata markerar du katalogen och klickar sedan på **[!UICONTROL Next]**.
+När du har hittat källdata markerar du tabellen och väljer sedan **[!UICONTROL Next]**.
 
 ![select-data](../../../images/tutorials/dataflow/databases/select-data.png)
 
