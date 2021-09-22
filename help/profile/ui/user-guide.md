@@ -4,7 +4,7 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: b5e6376b54fe8b53fbabf85a2909293cebd93ccc
+source-git-commit: 69e510c9a0f477ad7cab530128c6728f68dfdab1
 workflow-type: tm+mt
 source-wordcount: '1502'
 ht-degree: 0%
@@ -100,7 +100,7 @@ Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL 
 Mer information om sammanfogningsprinciper och deras roll inom plattformen finns i [översikten över sammanfogningsprinciper](../merge-policies/overview.md).
 
 
-### Bläddra efter [!UICONTROL Identity]
+### Bläddra efter [!UICONTROL Identity] {#browse-identity}
 
 På fliken **[!UICONTROL Browse]** kan du använda ett identitetsnamnutrymme för att leta upp en viss profil med hjälp av ett identitetsvärde. Om du bläddrar efter en identitet måste du ange en sammanfogningsprincip, ett identitetsnamnutrymme och ett identitetsvärde.
 

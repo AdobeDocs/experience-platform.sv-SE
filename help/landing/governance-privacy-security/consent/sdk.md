@@ -3,9 +3,9 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 1780e08a9e45fd87891bbb1727c464aadb0e9b31
+source-git-commit: 69e510c9a0f477ad7cab530128c6728f68dfdab1
 workflow-type: tm+mt
-source-wordcount: '1239'
+source-wordcount: '1299'
 ht-degree: 0%
 
 ---
@@ -97,6 +97,10 @@ När du har konfigurerat tillägget kan det integreras med webbplatsen. Mer info
 ## Kommandon för att ändra samtycke {#commands}
 
 När du har integrerat SDK-tillägget på webbplatsen kan du börja använda kommandot Platform Web SDK `setConsent` för att skicka data om samtycke till plattformen.
+
+>[!IMPORTANT]
+>
+>Kommandot `setConsent` uppdaterar bara data direkt i profilarkivet och skickar inga data till datasjön.
 
 Det finns två scenarier där `setConsent` ska anropas på din plats:
 
@@ -194,6 +198,8 @@ var setConsent = function () {
 ## Hantera SDK-svar
 
 Alla [!DNL Platform SDK]-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se avsnittet [Hantera om ](../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) lyckades eller misslyckades i guiden om hur SDK-kommandon körs för specifika exempel.
+
+När du har gjort `setConsent`-anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att verifiera om data landar i profilarkivet. Mer information finns i [bläddringsprofiler efter identitet](../../../profile/ui/user-guide.md#browse-identity).
 
 ## Nästa steg
 
