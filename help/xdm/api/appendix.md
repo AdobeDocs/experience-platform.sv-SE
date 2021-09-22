@@ -5,9 +5,9 @@ title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: d70f297130ec04dd799d60c70b95777ee79bbfef
+source-git-commit: 403dcb75e43b5c7aa462495086e5a9e403ef6f5b
 workflow-type: tm+mt
-source-wordcount: '781'
+source-wordcount: '984'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ De vanligaste frågeparametrarna för sidindelning är:
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `start` | Ange var de listade resultaten ska börja. Det här värdet kan hämtas från attributet `_page.next` för ett listsvar och användas för att komma åt nästa resultatsida. Om `_page.next`-värdet är null finns det ingen ytterligare sida tillgänglig. |
-| `limit` | Begränsa antalet returnerade resurser. Exempel: `limit=5` returnerar en lista med fem resurser. |
 | `orderby` | Sortera resultaten efter en specifik egenskap. Exempel: `orderby=title` sorterar resultaten efter titel i stigande ordning (A-Z). Om du lägger till `-` före parametervärdet (`orderby=-title`) sorteras objekten efter rubrik i fallande ordning (Z-A). |
+| `limit` | När `limit` används tillsammans med en `orderby`-parameter begränsar  det maximala antalet objekt som ska returneras för en given begäran. Den här parametern kan inte användas utan en `orderby`-parameter.<br><br>Parametern  `limit` anger ett positivt heltal (mellan  `0` och  `500`) som ett  ** tips på det maximala antalet objekt som ska returneras. `limit=5` returnerar till exempel bara fem resurser i listan. Detta värde respekteras dock inte. Den faktiska svarsstorleken kan vara mindre eller större, vilket begränsas av behovet att tillhandahålla en tillförlitlig funktion för parametern `start`, om en sådan finns. |
+| `start` | När `start` används tillsammans med en `orderby`-parameter anger  var den underuppsatta listan med objekt ska börja. Den här parametern kan inte användas utan en `orderby`-parameter. Det här värdet kan hämtas från attributet `_page.next` för ett listsvar och användas för att komma åt nästa resultatsida. Om `_page.next`-värdet är null finns det ingen ytterligare sida tillgänglig.<br><br>Normalt utelämnas den här parametern för att få fram den första resultatsidan. Därefter ska `start` anges till det maximala värdet för den primära sorteringsegenskapen för fältet `orderby` som togs emot på föregående sida. API-svaret returnerar sedan poster som börjar med de som har en primär sorteringsegenskap från `orderby` som är strikt större än (för stigande) eller strikt mindre än (för fallande) det angivna värdet.<br><br>Om  `orderby` parametern till exempel är inställd på  `orderby=name,firstname`, innehåller  `start` parametern ett värde för  `name` egenskapen. Om du i det här fallet vill visa de nästa 20 posterna för en resurs direkt efter namnet &quot;Miller&quot;, använder du: `?orderby=name,firstname&start=Miller&limit=20`. |
 
 {style=&quot;table-layout:auto&quot;}
 
