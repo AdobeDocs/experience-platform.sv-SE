@@ -2,9 +2,9 @@
 description: Server- och mallspecifikationerna kan konfigureras i Adobe Experience Platform mål-SDK via den gemensamma slutpunkten `/authoring/destination-servers`.
 title: Konfigurationsalternativ för server- och mallspecifikationer i mål-SDK
 exl-id: cf493ed5-0bdb-4b90-b84d-73926a566a2a
-source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '419'
 ht-degree: 5%
 
 ---
@@ -48,10 +48,10 @@ Den här processen levererar användardata som en serie HTTP-meddelanden till m�
 
 | Parameter | Typ | Beskrivning |
 |---|---|---|
-| `name` | Sträng | Representerar ett eget namn på servern som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
-| `destinationServerType` | Sträng | `URL_BASED` är för närvarande det enda tillgängliga alternativet. |
-| `templatingStrategy` | Sträng | <ul><li>Använd `PEBBLE_V1` om Adobe behöver omforma URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items` </li><li> Använd `NONE` om ingen omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
-| `value` | Sträng | Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
+| `name` | Sträng | *Obligatoriskt.* Representerar ett eget namn på servern som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel `Moviestar destination server`. |
+| `destinationServerType` | Sträng | *Obligatoriskt.* `URL_BASED` är för närvarande det enda tillgängliga alternativet. |
+| `templatingStrategy` | Sträng | *Obligatoriskt.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omforma URL:en i fältet `value` nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items` </li><li> Använd `NONE` om ingen omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
+| `value` | Sträng | *Obligatoriskt.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -83,10 +83,10 @@ I mallspecifikationen kan du konfigurera hur det exporterade meddelandet ska for
 
 | Parameter | Typ | Beskrivning |
 |---|---|---|
-| `httpMethod` | Sträng | Den metod som Adobe ska använda i anrop till servern. Alternativen är `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
-| `templatingStrategy` | Sträng | Använd `PEBBLE_V1`. |
-| `value` | Sträng | Strängen är den teckenescape-konverterade version som transformerar plattformskundernas data till det format som tjänsten förväntar sig. <br> Mer information om hur du skriver mallen finns i avsnittet [ ](./message-format.md#using-templating)Använda mall. <br> Mer information om teckenigenkänning finns i  [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). <br> Ett exempel på en enkel omformning finns i  [Profile ](./message-format.md#attributes) Attributomformning. |
-| `contentType` | Sträng | Den innehållstyp som servern accepterar. Detta värde är troligen `application/json`. |
+| `httpMethod` | Sträng | *Obligatoriskt.* Den metod som Adobe ska använda i anrop till servern. Alternativen är `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
+| `templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `value` | Sträng | *Obligatoriskt.* Strängen är den teckenescape-konverterade version som transformerar plattformskundernas data till det format som tjänsten förväntar sig. <br> Mer information om hur du skriver mallen finns i avsnittet [ ](./message-format.md#using-templating)Använda mall. <br> Mer information om teckenigenkänning finns i  [RFC JSON-standarden, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). <br> Ett exempel på en enkel omformning finns i  [Profile ](./message-format.md#attributes) Attributomformning. |
+| `contentType` | Sträng | *Obligatoriskt.* Den innehållstyp som servern accepterar. Detta värde är troligen `application/json`. |
 
 {style=&quot;table-layout:auto&quot;}
 

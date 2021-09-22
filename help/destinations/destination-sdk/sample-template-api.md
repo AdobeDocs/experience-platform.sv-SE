@@ -1,9 +1,10 @@
 ---
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/sample` för att få en testmeddelandetransformeringsmall för ditt mål.
 title: Hämta API-åtgärder för exempelmallar
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -58,7 +59,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 Ett lyckat svar returnerar HTTP-status 200 med en exempelmall som du kan redigera för att matcha det förväntade dataformatet.
 
-Om det mål-ID som du anger motsvarar en målservermall med `maxUsersPerRequest=1` returnerar begäran en exempelmall som liknar den här:
+Om det mål-ID som du anger motsvarar en målkonfiguration med [bästa möjliga ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) och `maxUsersPerRequest=1` i aggregeringsprincipen, returnerar begäran en exempelmall som liknar denna:
 
 ```python
 {#- THIS is an example template for a single profile -#}
@@ -91,7 +92,7 @@ Om det mål-ID som du anger motsvarar en målservermall med `maxUsersPerRequest=
 }
 ```
 
-Om det mål-ID som du anger motsvarar en målservermall med `maxUsersPerRequest` större än en, returnerar begäran en exempelmall som liknar den här:
+Om det mål-ID som du anger motsvarar en målservermall med [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) eller [bästa möjliga ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) med `maxUsersPerRequest` större än en, returnerar begäran en exempelmall som liknar denna:
 
 ```python
 {#- THIS is an example template for multiple profiles -#}

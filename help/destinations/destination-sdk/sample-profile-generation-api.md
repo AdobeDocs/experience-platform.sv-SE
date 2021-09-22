@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/sample-profiles` för att generera exempelprofiler som ska användas vid måltestning.
 title: API-åtgärder för generering av exempelprofiler
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,10 @@ Du kan generera exempelprofiler baserat på Adobe XDM-källschemat eller målsch
 Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
 
 ## Generera exempelprofiler baserat på källschemat {#generate-sample-profiles-source-schema}
+
+>[!IMPORTANT]
+>
+>Lägg till exempelprofilerna som genereras här för HTTP-anrop när [du testar ditt mål](./test-destination.md).
 
 Du kan generera exempelprofiler baserat på källschemat genom att göra en GET-förfrågan till `authoring/sample-profiles/`-slutpunkten och ange ID:t för en målinstans som du har skapat baserat på målkonfigurationen som du vill testa.
 
@@ -176,6 +180,10 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 {style=&quot;table-layout:auto&quot;}
 
 ## Generera exempelprofiler baserat på målschemat {#generate-sample-profiles-target-schema}
+
+>[!IMPORTANT]
+>
+>Använd exempelprofilerna som genereras här när du skapar mallen i [återgivningsmallsteget](./render-template-api.md#multiple-profiles-with-body).
 
 Du kan generera exempelprofiler baserat på målschemat och göra en GET-förfrågan till `authoring/sample-profiles/`-slutpunkten och ange mål-ID:t för målkonfigurationen baserat på vilken du skapar mallen.
 
