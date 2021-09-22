@@ -4,7 +4,7 @@ description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics m
 seo-description: Learn which variables are automatically mapped in Adobe Analytics with the Adobe Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
-source-git-commit: f5cd00c9639bde3b36b8ef9825148725ff9f89c1
+source-git-commit: 7809e64abab80f72af979e685f268c0799e74eca
 workflow-type: tm+mt
 source-wordcount: '907'
 ht-degree: 4%
@@ -46,7 +46,7 @@ Nedan finns en lista med variabler som Adobe Experience Platform Edge Network au
 | environment.browserDetails.viewportWidth | bw | AppMeasurement-frågeparametern BROWSER_WIDTH-mappning. |
 | environment.connectionType | ct | AppMeasurement-frågeparametern CT_CONNECT_TYPE-mappning. |
 | environment.ipV4 | X-Forwarded-For | Det här är en HTTP-huvudmappning, X-FORWARDED-FOR. |
-| identityMap.ECID.[0].id | mitten | Mappning av parameter-MID för AppMeasurement-fråga. |
+| identityMap.ECID[0].id | mitten | Mappning av parameter-MID för AppMeasurement-fråga. |
 | marketing.trackingCode | v0 | AppMeasurement-frågeparametern CAMPAIGN-mappning. |
 | media.mediaTimed.completes.value | c.a.media.complete | Kontextdata för AppMeasurement. |
 | media.mediaTimed.dropBeforeStart.value | c.a.media.view, c.a.media.timePlayed, c.a.media.play | Kontextdata för AppMeasurement. |
@@ -58,10 +58,10 @@ Nedan finns en lista med variabler som Adobe Experience Platform Edge Network au
 | media.mediaTimed.pauses.value | c.a.media.pauseCount | Mappning av AppMeasurement-kontextdata `c.a.media.pauseCount`. |
 | media.mediaTimed.primaryAssetReference.@id | c.a.media.asset | Kontextdata för AppMeasurement. |
 | media.mediaTimed.primaryAssetReference.dc:title | c.a.media.friendlyName | Mappning av AppMeasurement-kontextdata `c.a.media.friendlyName`. |
-| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Creator.[N].iptc4xmpExt:Name | c.a.media.originator | Kontextdata för AppMeasurement. |
+| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Creator[N].iptc4xmpExt:Name | c.a.media.originator | Kontextdata för AppMeasurement. |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Episode.iptc4xmpExt:Number | c.a.media.episode | Mappning av AppMeasurement-kontextdata `c.a.media.episode`. |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Genre | c.a.media.genre | Kontextdata för AppMeasurement. |
-| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Rating.[N].iptc4xmpExt:RatingValue | c.a.media.rating | Kontextdata för AppMeasurement. |
+| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Rating[N].iptc4xmpExt:RatingValue | c.a.media.rating | Kontextdata för AppMeasurement. |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Season.iptc4xmpExt:Number | c.a.media.season | Mappning av AppMeasurement-kontextdata `c.a.media.season`. |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Identifier | a.media.name | Mappning av AppMeasurement-kontextdata `a.media.name`. |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Name | c.a.media.show | Mappning av AppMeasurement-kontextdata `c.a.media.show`. |
@@ -89,9 +89,9 @@ Nedan finns en lista med variabler som Adobe Experience Platform Edge Network au
 | placeContext.geo.postalCode | zip | ZIP-mappning för parametern för AppMeasurement-fråga. |
 | placeContext.geo.stateProvince | tillstånd | Parametern STATE-mappning för AppMeasurement-fråga. |
 | productListItems[N].lineItemId | produkter | AppMeasurement-frågeparameter Produktkategorimappning. |
-| productlistitems.[N].name | produkter | AppMeasurement-frågeparameter Produktnamnsmappning. |
-| productlistitems.[N].priceTotal | produkter | AppMeasurement-frågeparametern Produkt, prismappning. |
-| productlistitems.[N].kvantitet | produkter | AppMeasurement-frågeparametern Produkt Kvantitetsmappning. |
+| productlistitems[N].name | produkter | AppMeasurement-frågeparameter Produktnamnsmappning. |
+| productlistitems[N].priceTotal | produkter | AppMeasurement-frågeparametern Produkt, prismappning. |
+| productlistitems[N].quantity | produkter | AppMeasurement-frågeparametern Produkt Kvantitetsmappning. |
 | web.webInteraction.URL | pev1 | AppMeasurement-frågeparametern PAGE_EVENT_VAR1-mappning. |
 | web.webInteraction.name | pev2 | AppMeasurement-frågeparametern PAGE_EVENT_VAR2-mappning. |
 | web.webInteraction.type | pe | `web.webInteraction.type=other` till  `pe=lnk_o`;  `web.webInteraction.type=download` till  `pe=lnk_d`;  `web.webInteraction.type=exit` till  `pe=lnk_e` |
