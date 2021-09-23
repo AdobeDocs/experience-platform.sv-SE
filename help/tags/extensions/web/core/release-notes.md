@@ -2,9 +2,9 @@
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 29a238c517b6bd5a95284b4d6954fd14a1668f0e
+source-git-commit: 693da9aa012baa26dcff93f085dd6e763816e247
 workflow-type: tm+mt
-source-wordcount: '1434'
+source-wordcount: '1522'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,22 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 23 september 2021
+
+v3.2.1
+
+* Korrigerade ett fel där initieringen av vyn med villkorsstyrda dataelement inte fungerade korrekt när fältvärdena var 0.
+
+## 23 september 2021
+
+v3.2.0
+
+Följande ändringar infördes i dataelementet Villkorsvärde:
+
+* Lägg till en kryssruta för villkorliga värden och reservvärden som gör att användaren kan välja om odefinierade värden ska vara det returnerade värdet.
+* Nummervärden visas som tal i inställningsobjektet.
+* Villkorsvärde krävs inte längre så att det kan fungera på samma sätt som reservvärdet.
 
 ## 17 september 2021
 
