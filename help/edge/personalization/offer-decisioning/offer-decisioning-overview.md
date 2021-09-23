@@ -3,9 +3,9 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 5a688fed26a8f641347ed1c625bfe448004f75b0
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '826'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Offer decisioning i Adobe Experience Platform Web SDK är för närvarande tillgänglig i förtid för vissa användare. Den här funktionen är inte tillgänglig för alla IMS-organisationer.
+>Offer decisioning i Adobe Experience Platform Web SDK är tillgänglig i ett tidigt skede för vissa användare. Den här funktionen är inte tillgänglig för alla IMS-organisationer.
 
 Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av användargränssnittet (UI) eller API:erna för Offera decisioningen.
 
@@ -30,7 +30,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
 * **Behållare:** En behållare är en isoleringsmekanism som håller olika bekymmer isär. Behållar-ID är det första sökvägselementet för alla databas-API:er. Alla beslutsobjekt finns i en behållare.
 
-* **Beslutsfattaromfång:** För Offer decisioning är dessa Base64-kodade strängar för JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
+* **Beslutsomfattningar:** För Offer decisioning är beslutsomfattningar Base64-kodade strängar för JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
 
    *Beslutsomfattelse JSON:*
 
@@ -55,11 +55,11 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
 * **Datastreams:** Mer information finns i  [](../../fundamentals/datastreams.md) datastreamsdokumentationen.
 
-* **Identitet**: Mer information finns i den här dokumentationen om hur  [Platform Web SDK utnyttjar identitetstjänsten](../../identity/overview.md).
+* **Identitet**: Mer information finns i den här dokumentationen om hur  [Platform Web SDK använder identitetstjänsten](../../identity/overview.md).
 
 ## Aktivera Offer decisioning
 
-Om du vill aktivera Offer decisioning måste du utföra följande steg:
+Så här aktiverar du Offer decisioning:
 
 1. Aktivera Adobe Experience Platform i [datastream](../../fundamentals/datastreams.md) och markera kryssrutan Offer decisioning
 
@@ -85,7 +85,7 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
 
       1. [Skapa en taggegenskap](../../../tags/ui/administration/companies-and-properties.md)
       1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du just skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](../../../tags/ui/managing-resources/extensions/overview.md).
+      1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](../../../tags/ui/managing-resources/extensions/overview.md).
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
@@ -329,3 +329,7 @@ Om du vill aktivera Offer decisioning måste du utföra följande steg:
 | `content` | Innehåll som är associerat med det föreslagna erbjudandet i form av en sträng. | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
 | `deliveryUrl` | Bildinnehåll som är associerat med det föreslagna erbjudandet i formatet för en URL. | `"deliveryURL": "https://image.jpeg"` |
 | `characteristics` | Egenskaper som är kopplade till det föreslagna erbjudandet i formatet JSON-objekt. | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
+
+## Begränsningar
+
+Vissa begränsningar för erbjudanden stöds för närvarande inte i mobila Experience Edge-arbetsflöden, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Dokumentation om regler och begränsningar för erbjudanden](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
