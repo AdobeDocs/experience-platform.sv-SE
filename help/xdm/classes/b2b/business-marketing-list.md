@@ -1,18 +1,18 @@
 ---
 title: XDM Business Marketing List-klass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Marketing List i Experience Data Model (XDM).
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
 workflow-type: tm+mt
-source-wordcount: '148'
-ht-degree: 3%
+source-wordcount: '194'
+ht-degree: 2%
 
 ---
 
-# [!UICONTROL XDM Business Marketing List] class
+# [!UICONTROL XDM Business Marketing List] klass (Beta)
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här klassen är bara tillgänglig för organisationer som har tillgång till B2B-utgåvan av kunddataplattformen i realtid.
+>Den här klassen finns som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 [!UICONTROL XDM Business Marketing List] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en marknadsföringslista. Med marknadsföringslistor kan ni prioritera kunder som är mest benägna att köpa er produkt.
 
@@ -26,3 +26,5 @@ ht-degree: 3%
 | `marketingListDescription` | Sträng | En beskrivning av marknadsföringslistan. |
 | `marketingListID` | Sträng | Ett unikt ID för marknadsföringslistentiteten. |
 | `marketingListName` | Sträng | Marknadsföringslistans namn. |
+
+Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.

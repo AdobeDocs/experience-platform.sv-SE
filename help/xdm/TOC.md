@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: cf0f0a46cc337d21c47a9b3a2fc12f8a7a6cb828
+source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
 workflow-type: tm+mt
-source-wordcount: '374'
+source-wordcount: '390'
 ht-degree: 6%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 6%
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [Segmentdefinition](./classes/segment-definition.md)
-   * B2B-klasser {#b2b}
+   * B2B-klasser (beta) {#b2b}
       * [XDM Business Account](./classes/b2b/business-account.md)
       * [XDM Business Account Person Relation](./classes/b2b/business-account-person-relation.md)
       * [XDM Business Campaign](./classes/b2b/business-campaign.md)
@@ -145,10 +145,11 @@ ht-degree: 6%
    * [Blandningar (borttagna)](api/mixins.md)
    * [Bilaga](api/appendix.md)
 * Självstudiekurser {#tutorials}
-   * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
-   * [Skapa ett schema (API)](tutorials/create-schema-api.md)
-   * [Definiera en relation mellan två scheman (UI)](tutorials/relationship-ui.md)
-   * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
+   * [Skapa ett schema i användargränssnittet](tutorials/create-schema-ui.md)
+   * [Skapa ett schema i API:t](tutorials/create-schema-api.md)
+   * [Definiera en schemarelation i användargränssnittet](tutorials/relationship-ui.md)
+   * [Definiera en schemarelation i API:t](tutorials/relationship-api.md)
+   * [Definiera en schemarelation i realtid med CDP B2B Edition (beta)](tutorials/relationship-b2b.md)
    * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)

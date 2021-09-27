@@ -1,18 +1,18 @@
 ---
 title: XDM Business Account Person Relationsklass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Account Person Relation i Experience Data Model (XDM).
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '310'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL XDM Business Account Person Relation] class
+# [!UICONTROL XDM Business Account Person Relation] klass (Beta)
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här klassen är bara tillgänglig för organisationer som har tillgång till B2B-utgåvan av kunddataplattformen i realtid.
+>Den här klassen finns som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 [!UICONTROL XDM Business Account Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en person som är kopplad till ett företagskonto.
 
@@ -35,3 +35,5 @@ ht-degree: 2%
 | `personRole` | Sträng | Personens roll i relationen konto-person. |
 | `relationEndDate` | DateTime | Datumet då relationen mellan kontot och personen avslutades. |
 | `relationStartDate` | DateTime | Det datum då relationen mellan kontot och personen startades. |
+
+Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.
