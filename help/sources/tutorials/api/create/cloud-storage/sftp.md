@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 9ad09fba3119b631576f22574a2151c74f91e07b
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
@@ -39,6 +39,7 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL SFTP] måste du ange v
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `host` | Namnet eller IP-adressen som är associerad med din [!DNL SFTP]-server. |
+| `port` | Den SFTP-serverport som du ansluter till. Om det inte anges är standardvärdet `22`. |
 | `username` | Användarnamnet som ger åtkomst till din [!DNL SFTP]-server. |
 | `password` | Lösenordet för din [!DNL SFTP]-server. |
 | `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
@@ -55,7 +56,7 @@ En basanslutning bevarar information mellan källan och plattformen, inklusive k
 
 Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL SFTP] som en del av parametrarna för begäran.
 
-### Skapa en [!DNL SFTP]-anslutning med grundläggande autentisering
+### Skapa en [!DNL SFTP]-basanslutning med grundläggande autentisering
 
 Om du vill skapa en [!DNL SFTP]-basanslutning med grundläggande autentisering skickar du en POST till API:t [!DNL Flow Service] och anger värden för anslutningsens `host`, `userName` och `password`.
 
@@ -113,7 +114,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 }
 ```
 
-### Skapa en [!DNL SFTP]-anslutning med autentisering med SSH-offentlig nyckel
+### Skapa en [!DNL SFTP]-basanslutning med autentisering av SSH-offentlig nyckel
 
 Om du vill skapa en [!DNL SFTP]-basanslutning med autentisering med den offentliga nyckeln för SSH ska du göra en POST-förfrågan till API:t [!DNL Flow Service] och ange värden för anslutningsens `host`, `userName`, `privateKeyContent` och `passPhrase`.
 
