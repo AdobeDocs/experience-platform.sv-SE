@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
+source-git-commit: cf0f0a46cc337d21c47a9b3a2fc12f8a7a6cb828
 workflow-type: tm+mt
-source-wordcount: '323'
-ht-degree: 7%
+source-wordcount: '374'
+ht-degree: 6%
 
 ---
 
@@ -31,6 +31,15 @@ ht-degree: 7%
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [Segmentdefinition](./classes/segment-definition.md)
+   * B2B-klasser {#b2b}
+      * [XDM Business Account](./classes/b2b/business-account.md)
+      * [XDM Business Account Person Relation](./classes/b2b/business-account-person-relation.md)
+      * [XDM Business Campaign](./classes/b2b/business-campaign.md)
+      * [XDM Business Campaign-medlemmar](./classes/b2b/business-campaign-members.md)
+      * [XDM - affärsmöjlighet](./classes/b2b/business-opportunity.md)
+      * [XDM - affärsmöjlighet, personrelation](./classes/b2b/business-opportunity-person-relation.md)
+      * [XDM Business Marketing List](./classes/b2b/business-marketing-list.md)
+      * [XDM Business Marketing List-medlemmar](./classes/b2b/business-marketing-list-members.md)
 * Schemafältgrupper {#field-groups}
    * Profilfältgrupper {#profile}
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
@@ -42,6 +51,8 @@ ht-degree: 7%
       * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
       * [Telecom Subscription](./field-groups/profile/telecom-subscription.md)
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
+      * [XDM Business Person Components](./field-groups/profile/business-person-components.md)
+      * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
    * Händelsefältgrupper {#event}
       * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
       * [Kanalinformation](./field-groups/event/channel-details.md)
@@ -60,6 +71,7 @@ ht-degree: 7%
    * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
+   * [B2B-källa](./data-types/b2b-source.md)
    * [Handel](./data-types/commerce.md)
    * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
@@ -68,6 +80,7 @@ ht-degree: 7%
    * [E-postadress](./data-types/email-address.md)
    * [Miljö](./data-types/environment.md)
    * [Experience channel](./data-types/experience-channel.md)
+   * [Granskningsattribut för externt källsystem](./data-types/external-source-system-audit-attributes.md)
    * [Allmänt fält för samtycke](./data-types/consent-field.md)
    * [Allmänt inställningsfält för marknadsföring](./data-types/marketing-field.md)
    * [Allmänt fält för marknadsföringsinställningar med prenumerationer](./data-types/marketing-field-subscriptions.md)
