@@ -1,7 +1,8 @@
 ---
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
+source-git-commit: 397c49284c30c648695a7a186d3f3e76a2675807
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -54,7 +55,7 @@ Du kan använda den generiska mallen för att [skapa en ny målgruppsmall](./aud
 
 Teknikteamet på Adobe kan samarbeta med dig för att utöka den generiska mallen med anpassade fält om det behövs för dina användningsfall.
 
-## Exempel på mallar {#template-examples}
+## Konfigurationsexempel {#configuration-examples}
 
 Det här avsnittet innehåller tre exempel på allmänna konfigurationer av målgruppsmetadata, tillsammans med beskrivningar av huvudavsnitten i konfigurationen. Lägg märke till hur brödtexten för URL, rubriker, begäran och svar skiljer sig mellan de tre exempelkonfigurationerna. Detta beror på de olika specifikationerna för de tre exempelplattformarnas marknadsförings-API.
 
