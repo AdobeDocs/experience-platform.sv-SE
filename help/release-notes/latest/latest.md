@@ -2,10 +2,10 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: b616a0c0d49d980644f82bc3af5995b3b17b4c80
+source-git-commit: 4959b5227f777a2c8cab1317d67795678d1a6eea
 workflow-type: tm+mt
-source-wordcount: '290'
-ht-degree: 2%
+source-wordcount: '381'
+ht-degree: 3%
 
 ---
 
@@ -15,8 +15,21 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Dataintag](#ingestion)
 - [[!DNL Data Prep]](#data-prep)
 - [Källor](#sources)
+
+## Dataintag {#ingestion}
+
+Adobe Experience Platform datainmatning representerar de olika metoder som används för att importera data från olika källor och hur data lagras i datasjön för användning av plattformstjänster längre fram i kedjan.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+|------- | -----------|
+| Uppgradera eller korrigera profilposter med hjälp av gruppinmatning | Realtidskundprofil tillåter nu uppdateringar av profilattribut i enskilda profilpostdata via batchinmatning. Mer information finns i [Utvecklarhandboken för gruppfrågor](../../ingestion/batch-ingestion/api-overview.md). |
+
+Mer information om hur du hämtar data till Platform finns i [dokumentationen för datainmatning](../../ingestion/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
