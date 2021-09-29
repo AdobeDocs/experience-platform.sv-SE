@@ -2,9 +2,9 @@
 title: Marketo Engage destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 1f18e07af7ef0d90f882fa668c5659330bce5960
+source-git-commit: 6ea82e0589843f15b1486e1242aa68ef8e2fe9d3
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Destination Marketo Engage i Adobe Experience Platform är för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+>Marketo Engage i Adobe Experience Platform är för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 ## Översikt {#overview}
 
 Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 
-Segmentkopplingen gör det möjligt för marknadsförare att skicka segment som skapats i Adobe Experience Platform till Marketo där de visas som statiska listor.
+På så sätt kan marknadsförarna skicka segment som skapats i Adobe Experience Platform till Marketo där de visas som statiska listor.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -30,7 +30,7 @@ Segmentkopplingen gör det möjligt för marknadsförare att skicka segment som 
 
 ## Exporttyp {#export-type}
 
-Segmentexport - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Marketo Engage-målet.
+Segmentexport - du exporterar alla medlemmar i ett segment (publik) med de identifierare (e-post, ECID) som används i Marketo Engage-målet.
 
 ## Ställ in mål och aktivera segment {#set-up}
 
