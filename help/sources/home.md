@@ -5,7 +5,7 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 048b3bbbe170a892eedc9f8ee0e130fcbfad6b86
+source-git-commit: bc94d85ecd2ae33d8ef18dd1dfa7fca39ccaefea
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 0%
@@ -55,6 +55,7 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 - [[!DNL Apache HDFS] koppling](connectors/cloud-storage/hdfs.md)
 - [[!DNL Azure Event Hubs] koppling](connectors/cloud-storage/eventhub.md)
 - [[!DNL Azure File Storage] koppling](connectors/cloud-storage/azure-file-storage.md)
+- [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md)
 - [[!DNL FTP] koppling](connectors/cloud-storage/ftp.md)
 - [[!DNL Google Cloud Storage] koppling](connectors/cloud-storage/google-cloud-storage.md)
 - [[!DNL Google PubSub] koppling](connectors/cloud-storage/google-pubsub.md)

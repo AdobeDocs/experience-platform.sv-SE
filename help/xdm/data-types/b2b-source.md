@@ -1,18 +1,19 @@
 ---
 title: Datatyp för B2B-källa
 description: Det här dokumentet innehåller en översikt över datatypen B2B Source Experience Data Model (XDM).
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '285'
+source-wordcount: '293'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL B2B Source] datatyp
+# [!UICONTROL B2B Source] datatyp (beta)
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här datatypen är endast tillgänglig för organisationer som har tillgång till B2B-utgåvan av kunddataplattformen i realtid.
+>Den här datatypen är tillgänglig som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 [!UICONTROL B2B Source] är en XDM-datatyp (Standard Experience Data Model) som representerar en sammansatt identifierare för en B2B-enhet (till exempel ett  [konto](../classes/b2b/business-account.md), en  [affärsmöjlighet](../classes/b2b/business-opportunity.md) eller en  [kampanj](../classes/b2b/business-campaign.md)).
 

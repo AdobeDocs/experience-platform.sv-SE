@@ -1,9 +1,10 @@
 ---
 title: XDM Business Marketing List-klass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Marketing List i Experience Data Model (XDM).
-source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
+exl-id: 510c5608-054d-4bed-91eb-22d84b5dc625
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '194'
+source-wordcount: '197'
 ht-degree: 2%
 
 ---
@@ -26,5 +27,7 @@ ht-degree: 2%
 | `marketingListDescription` | Sträng | En beskrivning av marknadsföringslistan. |
 | `marketingListID` | Sträng | Ett unikt ID för marknadsföringslistentiteten. |
 | `marketingListName` | Sträng | Marknadsföringslistans namn. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.

@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att undvika att skapa datamodeller som kundprofilen i realtid inte stöder. I det här dokumentet beskrivs de bästa metoderna och begränsningarna som du bör tänka på när du modellerar profildata.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 441c2978b90a4703874787b3ed8b94c4a7779aa8
+source-git-commit: c351ee91367082cc5fbfc89da50aa2db5e415ea8
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1962'
 ht-degree: 1%
 
 ---
@@ -48,10 +48,6 @@ Lagringsdatamodellen [!DNL Profile] består av två huvudentitetstyper:
 
    ![](images/guardrails/profile-and-dimension-entities.png)
 
-## Profilfragment
-
-Det finns flera skyddsutkast i det här dokumentet som refererar till&quot;profilfragment&quot;. Kundprofilen i realtid består av flera profilfragment. Varje fragment representerar data för identiteten från en datauppsättning där den är den primära identiteten. Detta innebär att ett fragment kan innehålla ett primärt ID och händelsedata (tidsserier) i en XDM ExperienceEvent-datamängd, eller så kan det bestå av ett primärt ID och registrera data (tidsoberoende attribut) i en XDM-datauppsättning för enskild profil.
-
 ## Begränsningstyper
 
 När du definierar din datamodell bör du hålla dig inom de angivna säkerhetsrutorna för att säkerställa korrekt prestanda och undvika systemfel.
@@ -62,6 +58,10 @@ Skyddsritningarna i det här dokumentet innehåller två begränsningstyper:
 
 * **Hård gräns:** En hård gräns ger ett absolut maximum för systemet. Om du går längre än en hård gräns kommer det att leda till fel och att systemet inte fungerar som det ska.
 
+## Profilfragment
+
+I det här dokumentet finns det flera skyddsutkast som refererar till&quot;profilfragment&quot;. I Experience Platform sammanfogas flera profilfragment till kundprofilen i realtid. Varje fragment representerar en unik primär identitet och motsvarande post- eller händelsedata för det ID:t inom en given datauppsättning. Mer information om profilfragment finns i [Profilöversikt](home.md#profile-fragments-vs-merged-profiles).
+
 ## Skyddsutkast för datamodell
 
 Du bör följa följande skyddsutkast när du skapar en datamodell som ska användas med [!DNL Real-time Customer Profile].
@@ -70,11 +70,13 @@ Du bör följa följande skyddsutkast när du skapar en datamodell som ska anvä
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Antal datauppsättningar som rekommenderas för att bidra till unionsschemat [!DNL Profile] | 20 | Mjuk | **Högst 20  [!DNL Profile]aktiverade datauppsättningar rekommenderas.** Om du vill aktivera en annan datauppsättning för  [!DNL Profile]måste du först ta bort eller inaktivera en befintlig datauppsättning. |
+| Antal profilaktiverade datauppsättningar | 20 | Mjuk | **Högst 20 datauppsättningar kan bidra till  [!DNL Profile] unionsschemat.** Om du vill aktivera en annan datauppsättning för  [!DNL Profile]måste du först ta bort eller inaktivera en befintlig datauppsättning. Gränsen på 20 datauppsättningar omfattar datauppsättningar från andra Adobe-lösningar (till exempel Adobe Analytics). |
+| Antal datauppsättningar aktiverade för Adobe Analytics rapportserie för profil | 1 | Mjuk | **Högst en (1) datauppsättning för analysrapportsviten ska aktiveras för profilen.** Om du försöker aktivera flera datauppsättningar i Analytics-rapportsviten för profilen kan det få oönskade konsekvenser för datakvaliteten. Mer information finns i avsnittet [Adobe Analytics datasets](#aa-datasets) i bilagan till det här dokumentet. |
 | Antal multientitetsrelationer som rekommenderas | 5 | Mjuk | **Högst fem multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas.** Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
 | Högsta JSON-djup för ID-fält som används i relationer med flera enheter | 4 | Mjuk | **Rekommenderat maximalt JSON-djup för ett ID-fält som används i relationer med flera enheter är 4.** Detta innebär att i ett mycket kapslat schema ska fält som är kapslade mer än fyra nivåer djupa inte användas som ID-fält i en relation. |
 | Matriskardinalitet i ett profilfragment | &lt;> | Mjuk | **Den optimala arraykardinaliteten i ett profilfragment (tidsoberoende data) är  &lt;>** |
 | Array-kardinalitet i ExperienceEvent | &lt;> | Mjuk | **Den optimala arraykardinaliteten i en ExperienceEvent (tidsseriedata) är  &lt;>** |
+| Gräns för antal identiteter för enskilda profiler Identitetsdiagram | 50 | Hård | **Det högsta antalet identiteter i ett identitetsdiagram för en enskild profil är 50.** Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. |
 
 ### Dimensionens skyddsräcken
 
@@ -99,7 +101,7 @@ Följande skyddsutkast hänvisar till datastorlek och rekommenderas för att sä
 | Maximal ExperienceEvent-storlek | 10 kB | Hård | **Den största tillåtna storleken för en händelse är 10 kB.** Intag fortsätter, men alla händelser som är större än 10 kB kommer att släppas. |
 | Största profilpoststorlek | 100 kB | Hård | **Den maximala storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
 | Största profilfragmentstorlek | 50 MB | Hård | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla  [profilfragmenteringar ](#profile-fragments) som är större än 50 MB. |
-| Maximal storlek för fillagring | 50 MB | Mjuk | **Den maximala storleken för en lagrad profil är 50 MB.** Om du lägger till ny  [profilfragmentering ](#profile-fragments) i en profil som är större än 50 MB påverkas systemets prestanda. |
+| Maximal storlek för fillagring | 50 MB | Mjuk | **Den maximala storleken för en lagrad profil är 50 MB.** Om du lägger till ny  [profilfragmentering ](#profile-fragments) i en profil som är större än 50 MB påverkas systemets prestanda. En profil kan till exempel innehålla ett enskilt fragment som är 50 MB eller innehålla flera fragment över flera datauppsättningar med en sammanlagd storlek på 50 MB. Om du försöker lagra en profil med ett enskilt fragment som är större än 50 MB, eller med flera fragment som är större än 50 MB i kombination, påverkas systemets prestanda. |
 | Antal inkapslade Profile- eller ExperienceEvent-batchar per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om du samlar in ytterligare batchar påverkas systemets prestanda. |
 
 ### Dimensionens skyddsräcken
@@ -119,3 +121,13 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 | Maximalt antal segment per sandlåda | 10 000 | Mjuk | **Det högsta antalet segment som en organisation kan skapa är 10 000 per sandlåda.** En organisation kan ha fler än 10 000 segment totalt, förutsatt att det finns färre än 10 000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment försämras systemets prestanda. |
 | Maximalt antal direktuppspelningssegment per sandlåda | 500 | Mjuk | **Det maximala antalet direktuppspelningssegment som en organisation kan skapa är 500 per sandlåda.** En organisation kan ha fler än 500 direktuppspelningssegment totalt, förutsatt att det finns färre än 500 direktuppspelningssegment i varje enskild sandlåda. Om du försöker skapa ytterligare strömningssegment försämras systemets prestanda. |
 | Maximalt antal gruppsegment per sandlåda | 10 000 | Mjuk | **Det maximala antalet gruppsegment som en organisation kan skapa är 10 000 per sandlåda.** En organisation kan ha fler än 10 000 gruppsegment totalt, förutsatt att det finns färre än 10 000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment försämras systemets prestanda. |
+
+## Bilaga
+
+I det här avsnittet finns mer information om enskilda skyddsutkast.
+
+### Adobe Analytics rapportuppsättningar av datauppsättningar i plattformen {#aa-datasets}
+
+Högst en (1) datauppsättning för Adobe Analytics-rapportsviten ska aktiveras för profilen. Detta är en mjuk gräns, vilket innebär att du kan aktivera mer än en Analytics-datauppsättning för profilen, men det rekommenderas inte eftersom det kan få oönskade konsekvenser för dina data. Detta beror på skillnaderna mellan XDM-scheman (Experience Data Model), som ger den semantiska datastrukturen i Experience Platform och gör det möjligt att tolka data på ett konsekvent sätt, och den anpassningsbara typen av eVars och konverteringsvariabler i Adobe Analytics.
+
+I Adobe Analytics kan till exempel en enda organisation ha flera rapportsviter. Om rapportsviten A anger eVar 4 som&quot;internt sökord&quot; och rapportsviten B anger eVar 4 som&quot;hänvisande domän&quot;, kommer båda värdena att infogas i samma fält i profilen, vilket ger upphov till förvirring och försämrad datakvalitet.

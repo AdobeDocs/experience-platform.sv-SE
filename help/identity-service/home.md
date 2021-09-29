@@ -5,9 +5,9 @@ title: Översikt över identitetstjänsten
 topic-legacy: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 947d8803416cee584b35a8d480929e2684d0057f
+source-git-commit: 5373b8fcd84cee749a85bdb755a23eb7292cf352
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1792'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,6 @@ Innan du börjar gå in på detaljerna i [!DNL Identity Service] är det här en
 | Namnutrymme för identitet | Ett identitetsnamnutrymme används för att skilja på kontexten eller typen för en identitet. En identitet särskiljer till exempel&quot;name<span>@email.com&quot; som en e-postadress eller&quot;443522&quot; som ett numeriskt CRM-ID. Identitetsnamnutrymmen används för att leta upp enskilda identiteter och ange kontext för identitetsvärden. På så sätt kan du bestämma att två [!DNL Profile]-fragment som innehåller olika primära ID:n, men delar samma värde för `email`-identitetens namnutrymme, faktiskt är samma individ. Mer information finns i [översikten över identitetsnamnrymden](./namespaces.md). |
 | Identitetsdiagram | Ett identitetsdiagram är en karta över relationer mellan olika identiteter, som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Mer information finns i självstudiekursen om [användning av identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md). |
 | Personligt identifierbar information (PII) | PII är information som direkt kan identifiera en kund, till exempel en e-postadress eller ett telefonnummer. PII-värden används ofta för att matcha. en kunds olika identiteter i olika system. |
-| Unik identitet | En unik identitet är en identitet som bara finns i en viss sandlåda. |
 | Okända eller anonyma identiteter | Okända eller anonyma identiteter är indikatorer som isolerar enheter utan att identifiera den person som använder enheten. Okända och anonyma identiteter innehåller information som besökarens IP-adress och cookie-ID. Även om okända och anonyma identiteter kan tillhandahålla beteendedata, begränsas de tills en kund levererar sina PII-filer. |
 
 ## Vad är [!DNL Identity Service]?

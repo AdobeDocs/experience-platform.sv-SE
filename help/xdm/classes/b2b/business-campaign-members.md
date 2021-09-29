@@ -1,9 +1,10 @@
 ---
 title: Klassen XDM Business Campaign-medlemmar
 description: Det här dokumentet innehåller en översikt över XDM Business Campaign-medlemsklassen i Experience Data Model (XDM).
-source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
+exl-id: a39eac7d-46ee-4e9c-a1c0-4dbb63f2c813
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '211'
 ht-degree: 2%
 
 ---
@@ -28,5 +29,7 @@ ht-degree: 2%
 | `campaignID` | Sträng | Ett unikt ID för den associerade kampanjen. |
 | `campaignMemberID` | Sträng | Ett unikt ID för kampanjmedlemsenheten. |
 | `personId` | Sträng | Ett unikt ID för den person som är medlem i den associerade kampanjen. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.

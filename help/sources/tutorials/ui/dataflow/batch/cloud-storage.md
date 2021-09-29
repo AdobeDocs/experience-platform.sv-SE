@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: df6ddf52f5cab7e5faae591594f060d641977783
+source-git-commit: e980ca69517d6e51ce00f102492829aabaa52976
 workflow-type: tm+mt
-source-wordcount: '1925'
+source-wordcount: '1926'
 ht-degree: 0%
 
 ---
@@ -142,7 +142,7 @@ Observera att du inte kan mappa mellan olika typer. Du kan till exempel inte map
 
 >[!TIP]
 >
->[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
+>Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
 Välj **[!UICONTROL Preview data]** om du vill visa mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
 

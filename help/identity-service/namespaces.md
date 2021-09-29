@@ -5,9 +5,9 @@ title: Översikt över namnområde för identitet
 topic-legacy: overview
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 700012988fd46e835dcbc441c39f08e4c172ef0f
+source-git-commit: 5373b8fcd84cee749a85bdb755a23eb7292cf352
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1576'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Om du vill visa identitetsnamnutrymmen i användargränssnittet väljer du **[!U
 
 ![bläddra](./images/browse.png)
 
-En lista med identitetsnamnutrymmen visas i sidans huvudgränssnitt med information om namn, identitetssymboler, senaste uppdateringsdatum och om de är en standard eller ett anpassat namnutrymme. Den högra listen innehåller information om [!UICONTROL Unique identities] och [!UICONTROL Identity graph strength]. [!UICONTROL Unique identities] refererar till antalet identiteter som finns i den specifika sandlåda som du använder, medan  [!UICONTROL Identity graph strength] styrkan visar information om antalet cookie-ID och icke-cookie-ID:n i din sandlåda.
+En lista med identitetsnamnutrymmen visas i sidans huvudgränssnitt med information om namn, identitetssymboler, senaste uppdateringsdatum och om de är en standard eller ett anpassat namnutrymme. Den högra listen innehåller information om [!UICONTROL Identity graph strength].
 
 ![identiteter](./images/identities.png)
 

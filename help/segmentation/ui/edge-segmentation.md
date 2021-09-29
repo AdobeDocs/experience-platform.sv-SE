@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 8f2540902cdcff99627393429424dbfe1de2d3da
+source-git-commit: c1dc75d94774eff8ad9a7374b1fa158f737dd5a4
 workflow-type: tm+mt
 source-wordcount: '362'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Kantsegmentering är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Kantsegmentering är möjligheten att utvärdera segment i Adobe Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
+Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Experience Platform [på kanten](../../edge/home.md), vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
 ## Frågetyper för kantsegmentering
 

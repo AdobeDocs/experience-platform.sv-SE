@@ -1,19 +1,19 @@
 ---
 title: Schemafältgrupp för XDM-affärspersonsinformation
 description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Person Details.
-source-git-commit: 319d508925d22e76a3d75ae473f6ea000b5c655b
+exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
+source-git-commit: 57370e4ed0807bcebf30c73af629671b5390d90d
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '545'
 ht-degree: 3%
 
 ---
 
+# [!UICONTROL XDM Business Person Details] schemafältgrupp (beta)
 
-# [!UICONTROL XDM Business Person Details] schemafältgrupp
-
->[!NOTE]
+>[!IMPORTANT]
 >
->Den här fältgruppen är bara tillgänglig för organisationer som har tillgång till B2B-utgåvan av kunddataplattformen i realtid.
+>Den här fältgruppen är tillgänglig som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 [!UICONTROL XDM Business Person Details] är en standardgrupp för schemafält för den  [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) klass som samlar in information om en enskild person i ett B2B-företag (business-to-business).
 

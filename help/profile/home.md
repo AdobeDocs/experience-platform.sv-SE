@@ -4,9 +4,9 @@ title: Kundprofilöversikt i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 7ebd84f31161b45c2904545a2310c8b1f7831593
+source-git-commit: 93a4cd5c86a715cd04cd2a553866bbb4e19f951a
 workflow-type: tm+mt
-source-wordcount: '1779'
+source-wordcount: '1810'
 ht-degree: 0%
 
 ---
@@ -43,13 +43,15 @@ Användargränssnittet i Experience Platform innehåller en kontrollpanel där d
 
 Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden.
 
-När data från flera källor står i konflikt (t.ex. ett fragment listar kunden som&quot;enkel&quot; medan det andra listar kunden som&quot;gift&quot;) avgör [sammanfogningsprincipen](#merge-policies) vilken information som ska prioriteras och inkluderas i profilen för den enskilda personen. Det totala antalet profilfragment inom Platform är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil består av flera fragment.
+Profilfragment representerar med andra ord en unik primär identitet och motsvarande [post](#record-data) eller [händelsedata](#time-series-events) för det ID:t i en given datauppsättning.
 
-### Registrera data
+När data från flera datauppsättningar står i konflikt (t.ex. ett fragment listar kunden som&quot;enkel&quot; medan de andra listar kunden som&quot;gift&quot;) avgör [sammanfogningsprincipen](#merge-policies) vilken information som ska prioriteras och inkluderas i profilen för den enskilda personen. Det totala antalet profilfragment inom Platform är därför sannolikt alltid högre än det totala antalet sammanfogade profiler, eftersom varje profil vanligtvis består av flera fragment från flera datauppsättningar.
+
+### Registrera data {#record-data}
 
 En profil är en representation av ett ämne, en organisation eller en individ, som består av många attribut (kallas även postdata). Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. Med [!DNL Experience Platform] kan du anpassa profiler så att de använder specifika data som är relevanta för ditt företag. Standardklassen [!DNL Experience Data Model] (XDM), [!DNL XDM Individual Profile], är den klass som ska användas för att skapa ett schema när kundpostdata beskrivs, och tillhandahåller data som är integrerade i många interaktioner mellan plattformstjänster. Mer information om hur du arbetar med scheman i [!DNL Experience Platform] får du genom att läsa [systemöversikten för XDM](../xdm/home.md).
 
-### Tidsseriehändelser
+### Tidsseriehändelser {#time-series-events}
 
 Med tidsseriedata får du en ögonblicksbild av systemet när en åtgärd vidtas antingen direkt eller indirekt av ett ämne, samt data som detaljerar själva händelsen. Tidsseriedata representeras av standardschemaklassen XDM ExperienceEvent och kan beskriva händelser som objekt som läggs till i en kundvagn, länkar som klickas och videofilmer som visas. Tidsseriedata kan användas för att basera segmenteringsregler på, och händelser kan nås individuellt i en profils kontext.
 
@@ -108,6 +110,7 @@ Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform
 [!DNL Data governance] är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning.
 
 När det gäller åtkomst av data spelar datastyrning en viktig roll inom [!DNL Experience Platform] på olika nivåer:
+
 * Dataanvändningsetikett
 * Dataåtkomstprinciper
 * Åtkomstkontroll över data för marknadsföringsåtgärder
@@ -120,4 +123,4 @@ När det gäller åtkomst av data spelar datastyrning en viktig roll inom [!DNL 
 
 ## Nästa steg och ytterligare resurser
 
-Om du vill veta mer om hur du arbetar med [!DNL Real-time Customer Profile]-data med hjälp av användargränssnittet i Experience Platform eller profil-API:t börjar du med att läsa [gränssnittshandboken för profiler](ui/user-guide.md) respektive [API-utvecklarhandboken](api/overview.md).
+Om du vill veta mer om hur du arbetar med kundprofildata i realtid med Experience Platform-gränssnittet eller profil-API:t börjar du med att läsa [gränssnittshandboken för profiler](ui/user-guide.md) respektive [API-utvecklarhandboken](api/overview.md).

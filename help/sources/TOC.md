@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Data Ingestion, Sources
-source-git-commit: e85980565889dd66f7dbd93749e013f77e434b74
+source-git-commit: bc94d85ecd2ae33d8ef18dd1dfa7fca39ccaefea
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '656'
 ht-degree: 5%
 
 ---
@@ -40,6 +40,7 @@ ht-degree: 5%
       - [Azure Blob-koppling](connectors/cloud-storage/blob.md)
       - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
+      - [Datallandningszon](connectors/cloud-storage/data-landing-zone.md)
       - [FTP-anslutning](connectors/cloud-storage/ftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
       - [Google PubSub](connectors/cloud-storage/google-pubsub.md)
@@ -97,6 +98,7 @@ ht-degree: 5%
          - [Azure Data Lake Storage Gen2](tutorials/api/create/cloud-storage/adls-gen2.md)
          - [Azure Event Hubs](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure-fillagring](tutorials/api/create/cloud-storage/azure-file-storage.md)
+         - [Datallandningszon](tutorials/api/create/cloud-storage/data-landing-zone.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud-lagring](tutorials/api/create/cloud-storage/google.md)
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
@@ -185,6 +187,7 @@ ht-degree: 5%
          - [Azure Blob](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure Event Hubs](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure-fillagring](tutorials/ui/create/cloud-storage/azure-file-storage.md)
+         - [Datallandningszon](tutorials/ui/create/cloud-storage/data-landing-zone.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud-lagring](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
          - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
