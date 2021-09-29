@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;dataöverföring;batch;batchvis;aktivera datauppsättning;batchöverföring översikt;översikt;batchöverföring översikt;
 solution: Experience Platform
-title: Översikt över batchförbrukning
+title: Översikt över API för gruppinmatning
 topic-legacy: overview
 description: Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 3eea0a1ecbe7db202f56f326e7b9b1300b37d236
 workflow-type: tm+mt
-source-wordcount: '1218'
-ht-degree: 1%
+source-wordcount: '1388'
+ht-degree: 4%
 
 ---
 
-# Översikt över batchöverföring
+# API-översikt för gruppinmatning
 
-Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt schema i [!DNL Experience Data Model]-registret (XDM).
+Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil (till exempel en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model]-registret (XDM).
 
 [API-referensen för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) innehåller ytterligare information om dessa API-anrop.
 
@@ -22,14 +22,9 @@ I följande diagram visas batchintagsprocessen:
 
 ![](../images/batch-ingestion/overview/batch_ingestion.png)
 
-## Använda API:et
+## Komma igång
 
-Med API:t [!DNL Data Ingestion] kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] i tre grundläggande steg:
-
-1. Skapa en ny batch.
-2. Överför filer till en angiven datauppsättning som matchar datans XDM-schema.
-3. Signalera slutet av gruppen.
-
+API-slutpunkterna som används i den här guiden ingår i [API:t för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ### [!DNL Data Ingestion] krav
 
@@ -43,33 +38,55 @@ Med API:t [!DNL Data Ingestion] kan du importera data som grupper (en dataenhet 
 - Den rekommenderade batchstorleken är mellan 256 MB och 100 GB.
 - Varje grupp bör innehålla högst 1 500 filer.
 
-Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för att överföra en stor fil finns [här](#large-file-upload---create-file).
+### Begränsningar för batchförbrukning
 
-### Läser exempel-API-anrop
+Batchdatainmatning har vissa begränsningar:
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
-
-### Samla in värden för obligatoriska rubriker
-
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
-
-- Behörighet: Bearer `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-- x-sandbox-name: `{SANDBOX_NAME}`
+- Maximalt antal filer per grupp: 1500
+- Maximal batchstorlek: 100 GB
+- Maximalt antal egenskaper eller fält per rad: 10000
+- Maximalt antal batchar per minut, per användare: 138
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för att överföra en stor fil finns i avsnittet [stor filöverföring i det här dokumentet](#large-file-upload---create-file).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+### Typer
 
-- Innehållstyp: application/json
+När du importerar data är det viktigt att du förstår hur [!DNL Experience Data Model]-scheman (XDM) fungerar. Mer information om hur XDM-fälttyper mappar till olika format finns i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md).
 
-### Skapa en batch
+Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas batchen med `TypeCompatibilityException`.
+
+Till exempel har varken JSON eller CSV typen `date` eller `date-time`. Därför uttrycks dessa värden med [ISO 8061-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126) (3959000) och konverteras vid intag till mål-XDM-typen.
+
+Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
+
+| Inkommande (rad) kontra mål (kol) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Mappa |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Sträng | X | X | X | X | X | X | X | X |  |  |
+| Byte | X | X | X | X | X | X |  |  |  |  |
+| Kort | X | X | X | X | X | X |  |  |  |  |
+| Heltal | X | X | X | X | X | X |  |  |  |  |
+| Lång | X | X | X | X | X | X | X | X |  |  |
+| Dubbel | X | X | X | X | X | X |  |  |  |  |
+| Datum |  |  |  |  |  |  | X |  |  |  |
+| Datum-tid |  |  |  |  |  |  |  | X |  |  |
+| Objekt |  |  |  |  |  |  |  |  | X | X |
+| Mappa |  |  |  |  |  |  |  |  | X | X |
+
+>[!NOTE]
+>
+>Booleaner och arrayer kan inte konverteras till andra typer.
+
+## Använda API:et
+
+Med API:t [!DNL Data Ingestion] kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] i tre grundläggande steg:
+
+1. Skapa en ny batch.
+2. Överför filer till en angiven datauppsättning som matchar datans XDM-schema.
+3. Signalera slutet av gruppen.
+
+## Skapa en batch
 
 Innan data kan läggas till i en datauppsättning måste de länkas till en batch, som senare överförs till en angiven datauppsättning.
 
@@ -130,7 +147,11 @@ Du kan överföra filer med hjälp av API:t för liten filöverföring. Om filer
 
 >[!NOTE]
 >
->I exemplen nedan används filformatet [Apache Parquet](https://parquet.apache.org/documentation/latest/). Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för gruppfrågor](./api-overview.md).
+>Batchmatning kan användas för att stegvis uppdatera data i profilarkivet. Mer information finns i avsnittet om att [uppdatera en batch](#patch-a-batch) i [Utvecklarhandbok för batchimport](api-overview.md).
+
+>[!INFO]
+>
+>I exemplen nedan används filformatet [Apache Parquet](https://parquet.apache.org/documentation/latest/). Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för gruppfrågor](api-overview.md).
 
 ### Liten filöverföring
 

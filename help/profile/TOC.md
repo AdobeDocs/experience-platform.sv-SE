@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiles
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 3eea0a1ecbe7db202f56f326e7b9b1300b37d236
 workflow-type: tm+mt
-source-wordcount: '133'
-ht-degree: 6%
+source-wordcount: '136'
+ht-degree: 5%
 
 ---
 
@@ -43,8 +43,8 @@ ht-degree: 6%
    * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
    * [Översikt över unionens schema (video)](video/union-schemas-overview.md)
 * Självstudiekurser {#tutorials}
-   * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
-   * [Konfigurera en datauppsättning för  [!DNL Profile] & [!DNL Identity] tjänst](tutorials/dataset-configuration.md)
+   * [Lägg till data i kundprofilen i realtid](tutorials/add-profile-data.md)
+   * [Konfigurera en datauppsättning för profil](tutorials/dataset-configuration.md)
    * [Generera överlappningsrapport för datauppsättning](tutorials/dataset-overlap-report.md)
    * [Fler självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [Behandling av sekretessförfrågningar](privacy.md)

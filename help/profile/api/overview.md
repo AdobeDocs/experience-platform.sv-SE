@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: API-guide för kundprofil i realtid
 description: Med kundprofils-API:t i realtid kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: b2ae2b4ca2efe606aa148e06ca988a6285bedfee
+source-git-commit: 3b34cf37182ae98545651a7b54f586df7d811f34
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '963'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,10 @@ När data hämtas till Platform körs ett exempeljobb för att uppdatera profila
 ## Profilsystemjobb {#profile-system-jobs}
 
 Profilaktiverade data som är inkapslade i [!DNL Platform] lagras i både [!DNL Data Lake] och [!DNL Real-time Customer Profile]-datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från [!DNL Profile]-butiken för att ta bort data som du inte längre behöver eller som har lagts till av misstag. Detta kräver att API används för att skapa en [!DNL Profile System Job], även kallad [!DNL delete request], som kan ändras, övervakas eller tas bort om det behövs. Om du vill lära dig hur du arbetar med borttagningsbegäranden med hjälp av `/system/jobs`-slutpunkten i [!DNL Real-time Customer Profile] API:t följer du stegen som beskrivs i [slutpunktshandboken för profilsystemjobb](profile-system-jobs.md).
+
+## Uppdatera profilattribut {#update-profile}
+
+Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batch- eller direktuppspelningsuppläsning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivering av en datauppsättning för profil och upsert](../../catalog/datasets/enable-upsert.md).
 
 ## Nästa steg {#next-steps}
 

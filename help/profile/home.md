@@ -4,9 +4,9 @@ title: Kundprofilöversikt i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 93a4cd5c86a715cd04cd2a553866bbb4e19f951a
+source-git-commit: 2eac45cd4b053753f954bbaae999fc321c75bd9b
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1884'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,10 @@ För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för 
 ### Profilätvärden
 
 Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Experience Platform]-användningsstatistik och prestandaindikatorer för olika [!DNL Platform]-funktioner finns det specifika profilrelaterade mått som gör att du kan få insikt i inkommande begärandefrekvenser, lyckade intag, intagna poststorlekar och mycket annat. Om du vill veta mer kan du börja med att läsa översikten [API:t för observabilitet](../observability/api/overview.md), och en fullständig lista över kundprofilsmått i realtid finns i dokumentationen om [tillgängliga mätvärden](../observability/api/metrics.md#available-metrics).
+
+## Uppdatera profilarkivdata
+
+Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batch- eller direktuppspelningsuppläsning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivering av en datauppsättning för profil och upsert](../catalog/datasets/enable-upsert.md).
 
 ## [!DNL Data governance] och [!DNL Privacy]
 

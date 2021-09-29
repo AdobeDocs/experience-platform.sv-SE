@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform datainmatning
 breadcrumb-title: Handbok för dataöverföring
 user-guide-description: Använd era data på plattformen genom batchvis eller direktuppspelande ingrepp.
 feature: Data Ingestion
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 19837e820ab3abdaa0bc8569ad78ce51dec1d21e
 workflow-type: tm+mt
-source-wordcount: '117'
-ht-degree: 5%
+source-wordcount: '124'
+ht-degree: 4%
 
 ---
 
@@ -20,8 +20,9 @@ ht-degree: 5%
    - [Kafka-kontakt](streaming-ingestion/kafka.md)
    - [Felsökning](streaming-ingestion/troubleshooting.md)
 - Batchförtäring{#batch}
-   - [Översikt](batch-ingestion/overview.md)
-   - [API för gruppinmatning](batch-ingestion/api-overview.md)
+   - [Komma igång med API:er för gruppinmatning](batch-ingestion/getting-started.md)
+   - [API-översikt](batch-ingestion/overview.md)
+   - [Utvecklarhandbok för API](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
 - Självstudiekurser {#tutorials}

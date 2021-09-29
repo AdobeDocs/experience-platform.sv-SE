@@ -3,13 +3,13 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;rappor
 title: Generera överlappningsrapport för datauppsättning
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att generera överlappningsrapporten för datauppsättningen med hjälp av kundprofils-API:t i realtid.
-source-git-commit: f30f87527f5e903c851a140e7cbaad1964a48803
+exl-id: 90894ed3-b09e-435d-a9e3-18fd6dc8e907
+source-git-commit: 3b34cf37182ae98545651a7b54f586df7d811f34
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 1%
 
 ---
-
 
 # Generera överlappningsrapport för datauppsättning
 
@@ -99,7 +99,7 @@ En lyckad begäran returnerar HTTP-status 200 (OK) och datasetet överlappar rap
 
 ![](../images/dataset-overlap-report/postman-response.png)
 
-## Tolka dataset som överlappar rapportdata {#interpret-the-report}
+## Tolka rapportdata som överlappar datamängden {#interpret-the-report}
 
 Den genererade överlappningsrapporten för datauppsättningar innehåller en tidsstämpel som visar rapportens datum och tid och ett dataobjekt som innehåller unika kombinationer av datauppsättnings-ID:n som kommaseparerade listor. I följande avsnitt finns ytterligare information om rapportens komponenter.
 
@@ -124,6 +124,7 @@ Ta följande exempel för att tolka rapportens resultat:
 ```
 
 Den här rapporten innehåller följande information:
+
 * Det finns 123 profiler med data från följande datauppsättningar: `5d92921872831c163452edc8`, `5da7292579975918a851db57`, `5eb2cdc6fa3f9a18a7592a98`.
 * Det finns 454 412 profiler som består av data från dessa två datauppsättningar: `5d92921872831c163452edc8` och `5eb2cdc6fa3f9a18a7592a98`.
 * Det finns 107 profiler som endast består av data från datauppsättningen `5eeda0032af7bb19162172a7`.

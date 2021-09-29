@@ -2,90 +2,26 @@
 keywords: Experience Platform;hem;populära ämnen;batchingång;batchingösning;ingift;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
 solution: Experience Platform
 title: API-guide för gruppinmatning
-topic-legacy: developer guide
-description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
+description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 087a714c579c4c3b95feac3d587ed13589b6a752
 workflow-type: tm+mt
-source-wordcount: '2552'
-ht-degree: 3%
+source-wordcount: '2373'
+ht-degree: 1%
 
 ---
 
-# API-guide för gruppinmatning
+# Utvecklarhandbok för batchintag
 
-Det här dokumentet innehåller en omfattande översikt över hur du använder [API:er för batchimport](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).
+Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för batchimport](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du om du börjar med att läsa översikten för API:t för gruppinmatning](overview.md).[
 
 I bilagan till det här dokumentet finns information om [formateringsdata som ska användas för att fylla i](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 
 ## Komma igång
 
-Inläsning av data ger en RESTful API genom vilken du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
+API-slutpunkterna som används i den här guiden ingår i [API:t för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Inläsning av data ger en RESTful API genom vilken du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
 
-I följande avsnitt finns ytterligare information som du behöver känna till eller ha till hands för att kunna anropa API:t för gruppinmatning.
-
-Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
-
-- [Batchförtäring](./overview.md): Gör att du kan importera data till Adobe Experience Platform som gruppfiler.
-- [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Sandboxes]](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
-
-### Läser exempel-API-anrop
-
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
-
-### Samla in värden för obligatoriska rubriker
-
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
-
-- `Authorization: Bearer {ACCESS_TOKEN}`
-- `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
-
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
-
-- `x-sandbox-name: {SANDBOX_NAME}`
-
->[!NOTE]
->
->Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
-
-Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterligare ett `Content-Type`-huvud. Godkända värden som är specifika för varje anrop anges i anropsparametrarna.
-
-## Typer
-
-När du importerar data är det viktigt att du förstår hur [!DNL Experience Data Model]-scheman (XDM) fungerar. Mer information om hur XDM-fälttyper mappar till olika format finns i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md).
-
-Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas batchen med `TypeCompatibilityException`.
-
-Varken JSON eller CSV har till exempel typen datum eller tid. Därför uttrycks dessa värden med [ISO 8061-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126) (3959000) och konverteras vid intag till mål-XDM-typen.
-
-Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
-
-| Inkommande (rad) kontra mål (kol) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Mappa |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Sträng | X | X | X | X | X | X | X | X |  |  |
-| Byte | X | X | X | X | X | X |  |  |  |  |
-| Kort | X | X | X | X | X | X |  |  |  |  |
-| Heltal | X | X | X | X | X | X |  |  |  |  |
-| Lång | X | X | X | X | X | X | X | X |  |  |
-| Dubbel | X | X | X | X | X | X |  |  |  |  |
-| Datum |  |  |  |  |  |  | X |  |  |  |
-| Datum-tid |  |  |  |  |  |  |  | X |  |  |
-| Objekt |  |  |  |  |  |  |  |  | X | X |
-| Mappa |  |  |  |  |  |  |  |  | X | X |
-
->[!NOTE]
->
->Booleaner och arrayer kan inte konverteras till andra typer.
-
-## Begränsningar för intag
-
-Batchdatainmatning har vissa begränsningar:
-- Maximalt antal filer per grupp: 1500
-- Maximal batchstorlek: 100 GB
-- Maximalt antal egenskaper eller fält per rad: 10000
-- Maximalt antal batchar per minut, per användare: 138
+Granska översikten [för API:t för batchimport](overview.md) och [guiden för att komma igång](getting-started.md) innan du fortsätter.
 
 ## Importera JSON-filer
 
@@ -157,7 +93,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en batch kan du använda batch-ID:t från svaret när gruppen skapades för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 >[!NOTE]
 >
@@ -231,7 +167,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 200 OK
 ```
 
-## Ingest Parquet-filer
+## Ingest Parquet-filer {#ingest-parquet-files}
 
 >[!NOTE]
 >
@@ -812,6 +748,21 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
+## Laga en batch
+
+Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Adobe Experience Platform stöder uppdatering eller korrigering av data i Profile Store genom en upsert-åtgärd eller&quot;patching a batch&quot;.
+
+>[!NOTE]
+>
+>Dessa uppdateringar tillåts bara för profilposter, inte för att uppleva händelser.
+
+Följande krävs för att korrigera en sats:
+
+- **En datauppsättning aktiverad för profiluppdateringar och attributuppdateringar.** Detta görs med datauppsättningstaggar och kräver att en specifik  `isUpsert:true` tagg läggs till i  `unifiedProfile` arrayen. Följ självstudiekursen för [att aktivera en datauppsättning för profiluppdateringar](../../catalog/datasets/enable-upsert.md) för mer information om hur du skapar en datauppsättning eller konfigurerar en befintlig datauppsättning för uppdatering.
+- **En Parquet-fil som innehåller de fält som ska korrigeras och identitetsfält för profilen.** Dataformatet för att patchera en batch liknar den vanliga batchöverföringsprocessen. De indata som krävs är en Parquet-fil, och utöver de fält som ska uppdateras måste de överförda data innehålla identitetsfälten för att matcha data i profilarkivet.
+
+När du har aktiverat en datauppsättning för profil och upsert, och en Parquet-fil som innehåller de fält du vill korrigera samt de nödvändiga identitetsfälten, kan du följa stegen för [att importera Parquet-filer](#ingest-parquet-files) för att slutföra korrigeringen via batchförtäring.
+
 ## Spela upp en batch
 
 Om du vill ersätta en redan skickad batch kan du göra det med&quot;batchrepriser&quot; - den här åtgärden motsvarar att ta bort den gamla gruppen och i stället hämta en ny.
@@ -963,6 +914,8 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 ```
 
 ## Bilaga
+
+Följande avsnitt innehåller ytterligare information om hur man får in data i Experience Platform med hjälp av batchintag.
 
 ### Datatransformering för batchinmatning
 

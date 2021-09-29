@@ -5,13 +5,13 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3b34cf37182ae98545651a7b54f586df7d811f34
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '454'
 ht-degree: 0%
 
 ---
+
 
 # Lägg till data i [!DNL Real-time Customer Profile]
 
@@ -40,3 +40,7 @@ När du överför data till en ny datauppsättning för första gången, eller s
 Med åtkomst-API:t [!DNL Real-time Customer Profile] kan du hämta batchdata när de läses in till en datauppsättning. Om du inte kan hämta någon av de enheter du förväntar dig, kanske din datauppsättning inte är aktiverad för [!DNL Profile]. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar.
 
 Detaljerade instruktioner om hur du får åtkomst till enheter med API:t [!DNL Real-time Customer Profile] finns i [entitetens slutpunktshandbok](../api/entities.md), som också kallas API:t [!DNL Profile Access].
+
+## Uppdatera profilarkivdata
+
+Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batch- eller direktuppspelningsuppläsning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivering av en datauppsättning för profil och upsert](../../catalog/datasets/enable-upsert.md).
