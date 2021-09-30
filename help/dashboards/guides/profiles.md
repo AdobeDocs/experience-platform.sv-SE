@@ -4,16 +4,16 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a63969075215a8f9884d2f41485194bd732694f1
+source-git-commit: d5c69972426008809c3fd0ac03be995efcc2f541
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1442'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL Profiles] kontrollpanel
 
-I Adobe Experience Platform användargränssnitt (UI) finns en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet och den innehåller information om de mått som visas på kontrollpanelen.
+Adobe Experience Platform användargränssnitt (UI) tillhandahåller en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de har tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet och den innehåller information om de mått som visas på kontrollpanelen.
 
 En översikt över alla profilfunktioner i användargränssnittet i Experience Platform finns i [Användargränssnittshandboken för kundprofiler i realtid](../../profile/ui/user-guide.md).
 
@@ -95,7 +95,9 @@ Widgeten **[!UICONTROL Profiles added]** visar det totala antalet sammanfogade p
 
 >[!NOTE]
 >
->Widgeten [!UICONTROL Profiles added] visar antalet profiler som lagts till i systemet efter din organisations ursprungliga konfiguration. Om till exempel fyra miljoner profiler lades till under konfigurationen och du lade till ytterligare en miljon profiler under de senaste 30 dagarna, skulle widgeten [!UICONTROL Profiles added] visa &quot;1 000 000&quot; medan widgeten [!UICONTROL Profile count] skulle visa &quot;5 000 000&quot;.
+>Widgeten [!UICONTROL Profiles added] visar antalet profiler som lagts till i systemet efter din organisations ursprungliga konfiguration. Mer information om hur du lägger till profiler i profilarkivet finns i [dokumentationen för kundprofilen i realtid](../../profile/home.md).
+>
+>Om till exempel fyra miljoner profiler lades till under konfigurationen och du lade till ytterligare en miljon profiler under de senaste 30 dagarna, skulle widgeten [!UICONTROL Profiles added] visa &quot;1 000 000&quot; medan widgeten [!UICONTROL Profile count] skulle visa &quot;5 000 000&quot;.
 
 ![](../images/profiles/profiles-added.png)
 
