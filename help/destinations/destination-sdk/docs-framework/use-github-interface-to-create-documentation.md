@@ -1,12 +1,10 @@
 ---
 title: 'Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida '
-seo-title: Use the GitHub web interface to create a destination documentation page
-description: Instruktionerna på den här sidan visar hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran.
-seo-description: The instructions on this page show you how to use the GitHub web interface to author documentation and submit a pull request.
+description: Instruktionerna på den här sidan visar hur du använder GitHub-webbgränssnittet för att skapa en dokumentationssida för ditt Experience Platform-mål och skicka den för granskning.
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
 workflow-type: tm+mt
-source-wordcount: '694'
+source-wordcount: '768'
 ht-degree: 0%
 
 ---
@@ -28,7 +26,7 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren.
 2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** enligt bilden nedan.
 
-   ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repo.png)
+   ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repository.gif)
 
 3. Skapa en ny gren för ditt projekt i databasens gaffel, så som visas nedan. Använd den här nya grenen för ditt arbete.
 
@@ -44,6 +42,10 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 
 1. Du skapar innehållet på målsidan baserat på självbetjäningsmallen [för dokumentationen](./self-service-template.md). **[Ladda](assets/yourdestination-template.zip)** ned mallen och zippa upp den för att extrahera  `.md` filmallen.
 2. Klistra in och redigera innehållet i mallen med relevant information om målet i en markeringsredigerare online, till exempel [dillinger.io](https://dillinger.io/). Följ instruktionerna i mallen för mer information om vad du ska fylla i och vilka stycken som kan tas bort.
+
+   >[!TIP]
+   >
+   >Du kan när som helst stänga webbläsarfönstret och öppna det igen senare. Ditt arbete sparas automatiskt och väntar på dig när du öppnar webbläsaren igen.
 3. Kopiera innehållet från markeringsredigeraren till den nya filen i GitHub.
 4. För skärmbilder eller bilder som du tänker använda använder du GitHub-gränssnittet för att överföra filerna till `experience-platform.en/help/destinations/assets/catalog/[...]`, där `[...]` är den önskade kategorin för målet. Om du till exempel lägger till ett anpassningsmål i Experience Platform väljer du kategorin `personalization`. Du måste länka till bilderna från sidan som du redigerar. Se [instruktioner om hur du länkar till bilder](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en#link-to-images).
 
@@ -55,9 +57,13 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 
 ## Skicka in din dokumentation för granskning {#submit-review}
 
-1. När du har sparat filen och överfört de önskade bilderna kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att grenen du arbetade med är markerad och välj **Pull request**.
+>[!TIP]
+>
+>Observera att det inte finns något du kan bryta här. Genom att följa instruktionerna i det här avsnittet föreslår du bara en uppdatering av dokumentationen. Den föreslagna uppdateringen kommer att godkännas eller redigeras av Adobe Experience Platform dokumentationsteam.
 
-![Skapa pull-begäran](./assets/ssd-create-pull-request-1.png)
+1. När du har sparat filen och överfört de önskade bilderna kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Se till att den gren du arbetade med är markerad och välj **Contribute > Pull request**.
+
+![Skapa pull-begäran](./assets/ssd-create-pull-request-1.gif)
 
 1. Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR:en som beskriver uppdateringen och välj **Skapa pull-begäran**. Då öppnas en PR som sammanfogar arbetsgrenen i din gaffel till den överordnad grenen i Adobe-databasen.
 

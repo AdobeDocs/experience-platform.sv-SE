@@ -1,12 +1,10 @@
 ---
 title: Skapa en måldokumentationssida med en textredigerare i den lokala miljön
-seo-title: Use a text editor in your local environment to create a destination documentation page
-description: Instruktionerna på den här sidan visar hur du använder en textredigerare för att arbeta i din lokala miljö med att skapa dokumentation och skicka in en pull-begäran.
-seo-description: The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
+description: Instruktionerna på den här sidan visar hur du använder en textredigerare för att arbeta i din lokala miljö för att skapa en dokumentationssida för ditt Experience Platform-mål och skicka den för granskning.
 exl-id: 125f2d10-0190-4255-909c-5bd5bb59fcba
-source-git-commit: e1e7d2f70c032d02f96b3999e4fca736070c6ca9
+source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '871'
 ht-degree: 0%
 
 ---
@@ -28,7 +26,7 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren
 2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** så som visas på skärmbilden.
 
-   ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repo.png)
+   ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repository.gif)
 
 3. Klona databasen till din lokala dator. Välj **Kod > HTTPS > Öppna med GitHub Desktop**, så som visas nedan. Kontrollera att du har [GitHub Desktop](https://desktop.github.com/) installerat. Mer information finns i [Skapa en lokal klon av databasen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#create-a-local-clone-of-the-repository) i handboken för medverkande på Adobe.
 
@@ -47,6 +45,10 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 
 ## Skicka in din dokumentation för granskning {#submit-review}
 
+>[!TIP]
+>
+>Observera att det inte finns något du kan bryta här. Genom att följa instruktionerna i det här avsnittet föreslår du bara en uppdatering av dokumentationen. Den föreslagna uppdateringen kommer att godkännas eller redigeras av Adobe Experience Platform dokumentationsteam.
+
 1. I GitHub Desktop skapar du en arbetsgren för dina uppdateringar och väljer **Publiceringsgren** för att publicera grenen på GitHub.
 
 ![Ny lokal gren](./assets/new-branch-local.gif)
@@ -61,7 +63,7 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 
 1. Öppna en pull-begäran (PR) i GitHub-webbgränssnittet för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att grenen du arbetade med är markerad och välj **Pull request**.
 
-   ![Skapa pull-begäran](./assets/ssd-create-pull-request-1.png)
+   ![Skapa pull-begäran](./assets/ssd-create-pull-request-1.gif)
 
 1. Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR:en som beskriver uppdateringen och välj **Skapa pull-begäran**. Då öppnas en PR som sammanfogar arbetsgrenen i din gaffel till den överordnad grenen i Adobe-databasen.
    >[!TIP]
