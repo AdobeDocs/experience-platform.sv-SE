@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 9ec7bd591af6c76a794f83d5a984017330328238
+source-git-commit: 6c21398a3f2fb26cc925ca1f5dcbe92b306a8325
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '644'
 ht-degree: 1%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 1%
       * [Aktivera målgruppsdata för att direktuppspela segmentexportmål](./ui/activate-segment-streaming-destinations.md)
       * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md)
       * [Aktivera målgruppsdata för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md)
+      * [Aktivera målgruppsdata för att profilera mål för begäran (beta)](./ui/activate-profile-request-destinations.md)
    * [Visa målinformation](./ui/destination-details-page.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Redigera aktiveringsflöden](./ui/edit-activation.md)
@@ -114,9 +115,11 @@ ht-degree: 1%
       * [Braze connection](./catalog/mobile-engagement/braze.md)
    * Destinationer för personalisering {#personalization}
       * [Översikt över destinationer för personalisering](./catalog/personalization/overview.md)
+      * [Adobe Target-anslutning (beta)](./catalog/personalization/adobe-target-connection.md)
       * [Adobe Target-tillägg](./catalog/personalization/adobe-target.md)
       * [Adobe Target v2-tillägg](./catalog/personalization/adobe-target-v2.md)
       * [Beemray-tillägg](./catalog/personalization/beemray.md)
+      * [Anpassad personaliseringsanslutning (beta)](./catalog/personalization/custom-personalization.md)
       * [D&amp;B Visitor Intelligence-tillägg](./catalog/personalization/dnb.md)
       * [Experience Cloud ID-tjänsttillägg](./catalog/personalization/adobe-ecid.md)
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
