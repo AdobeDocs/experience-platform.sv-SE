@@ -5,29 +5,34 @@ title: Skapa en ny produktprofil i Adobe Admin Console
 topic-legacy: user guide
 description: Det här dokumentet innehåller de steg som krävs för att skapa en ny produktprofil i Adobe Admin Console. Om du vill börja skapa en ny profil går du till fliken Produktprofiler och klickar på Ny profil.
 exl-id: 47558f03-c3f7-4ead-affb-fcbfd7f1e918
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6228f499a42e61583abd1f7ff1e1af1fb90640c6
 workflow-type: tm+mt
-source-wordcount: '246'
-ht-degree: 3%
+source-wordcount: '295'
+ht-degree: 1%
 
 ---
 
 # Skapa en ny produktprofil i Adobe Admin Console
 
-Om du vill börja skapa en ny profil går du till fliken **[!UICONTROL Product Profiles]** och klickar på **[!UICONTROL New Profile]**.
+Om du vill börja skapa en ny profil går du till fliken **[!UICONTROL Product Profiles]** och väljer **[!UICONTROL New Profile]**.
 
-![new-profile-button](../images/new-profile-button.png)
+![new-profile](../images/new-profile.png)
 
-Dialogrutan **[!UICONTROL Create New Profile]** visas där du uppmanas att ange ett profilnamn och en beskrivning för den nya profilen. Om du vill att profilens visningsnamn ska vara ett annat avmarkerar du **[!UICONTROL Same as Profile Name]** och anger visningsnamnet i textrutan som visas. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
+Dialogrutan **[!UICONTROL Create a new product profile]** visas där du uppmanas att ange en profil, ett valfritt visningsnamn och en valfri beskrivning. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
 
-Klicka på **[!UICONTROL Next]** när du är klar.
+När du är klar väljer du **[!UICONTROL Next]**.
 
-![new-profile-details](../images/new-profile-details.png)
+![create-new-product-profile](../images/create-new-product-profile.png)
 
-Nästa skärm uppmanar dig att välja vilka [!DNL Platform]-tjänster som ska ingå i profilen. Klicka på växlingsknappen bredvid en tjänst för att inaktivera den. Om en tjänst är inaktiverad är inte alla funktioner som är kopplade till den tjänsten tillgängliga för användare som är tilldelade den här produktprofilen. Klicka på **[!UICONTROL Done]** när du är klar.
+Nästa skärm uppmanar dig att välja vilka plattformstjänster som ska ingå i profilen. Markera växlingsknappen bredvid en tjänst för att inaktivera den. Om en tjänst är inaktiverad är inte alla funktioner som är kopplade till den tjänsten tillgängliga för användare som är tilldelade den här produktprofilen. När du är klar väljer du **[!UICONTROL Save]**.
 
-![new-profile-services](../images/new-profile-services.png)
+![enable-services](../images/enable-services.png)
+
+Kunder som är berättigade till B2B- eller B2P-versionen har tillgång till B2B-gränssnittet. B2B-gränssnittet kan etableras för användare via [!UICONTROL Enable services menu]. Markera växlingsknappen bredvid [!UICONTROL B2B UI] för att aktivera tjänsten för en viss produktprofil och välj sedan **[!UICONTROL Save]**.
+
+Med användargränssnittet för B2B kan användare visa B2B-arbetsflöden för att hantera konton och affärsmöjligheter samt skapa B2B-relaterade segment.
+
+![enable-b2b](../images/enable-b2b.png)
 
 Den nya produktprofilen har skapats och du omdirigeras till profilens [sida Redigera behörigheter](#edit-permissions). Mer information om hur du hanterar produktprofiler när de har skapats finns i avsnitten [hantera behörigheter](#manage-permissions-for-a-product-profile) och [hantera användare](#manage-users-for-a-product-profile).
 
