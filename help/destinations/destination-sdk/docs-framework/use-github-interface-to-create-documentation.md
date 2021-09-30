@@ -2,9 +2,9 @@
 title: 'Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida '
 description: Instruktionerna på den här sidan visar hur du använder GitHub-webbgränssnittet för att skapa en dokumentationssida för ditt Experience Platform-mål och skicka den för granskning.
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
-source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
+source-git-commit: 1bbff0fa54f1b7ef1ee70efd2a85cd43b34b2f5a
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '780'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 ## Konfigurera din GitHub-redigeringsmiljö {#set-up-environment}
 
 1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren.
-2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** enligt bilden nedan.
+2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** enligt nedan. Detta skapar en kopia av databasen Experience Platform i ditt eget GitHub-konto.
 
    ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repository.gif)
 
@@ -61,7 +61,7 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 >
 >Observera att det inte finns något du kan bryta här. Genom att följa instruktionerna i det här avsnittet föreslår du bara en uppdatering av dokumentationen. Den föreslagna uppdateringen kommer att godkännas eller redigeras av Adobe Experience Platform dokumentationsteam.
 
-1. När du har sparat filen och överfört de önskade bilderna kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Se till att den gren du arbetade med är markerad och välj **Contribute > Pull request**.
+1. När du har sparat filen och överfört de önskade bilderna kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att den gren du arbetade med är markerad och välj **Contribute > Öppna pull-begäran**.
 
 ![Skapa pull-begäran](./assets/ssd-create-pull-request-1.gif)
 

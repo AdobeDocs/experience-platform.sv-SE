@@ -2,9 +2,9 @@
 title: Skapa en måldokumentationssida med en textredigerare i den lokala miljön
 description: Instruktionerna på den här sidan visar hur du använder en textredigerare för att arbeta i din lokala miljö för att skapa en dokumentationssida för ditt Experience Platform-mål och skicka den för granskning.
 exl-id: 125f2d10-0190-4255-909c-5bd5bb59fcba
-source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
+source-git-commit: 1bbff0fa54f1b7ef1ee70efd2a85cd43b34b2f5a
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '885'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 ## Anslut till GitHub och konfigurera din lokala redigeringsmiljö {#set-up-environment}
 
 1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren
-2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** så som visas på skärmbilden.
+2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** enligt nedan. Detta skapar en kopia av databasen Experience Platform i ditt eget GitHub-konto.
 
    ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repository.gif)
 
@@ -61,7 +61,7 @@ Instruktionerna på den här sidan visar hur du använder en textredigerare för
 
    ![Gör din implementering](./assets/push-local-to-remote.png)
 
-1. Öppna en pull-begäran (PR) i GitHub-webbgränssnittet för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att grenen du arbetade med är markerad och välj **Pull request**.
+1. Öppna en pull-begäran (PR) i GitHub-webbgränssnittet för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att den gren du arbetade med är markerad och välj **Contribute > Öppna pull-begäran**.
 
    ![Skapa pull-begäran](./assets/ssd-create-pull-request-1.gif)
 
