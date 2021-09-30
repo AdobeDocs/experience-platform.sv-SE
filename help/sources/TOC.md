@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Data Ingestion, Sources
-source-git-commit: bc94d85ecd2ae33d8ef18dd1dfa7fca39ccaefea
+source-git-commit: 8a2cca1fa10b145757c582237a5f9ab64105b6b5
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '654'
 ht-degree: 5%
 
 ---
@@ -21,15 +21,15 @@ ht-degree: 5%
       - [Källanslutning för analyser](connectors/adobe-applications/analytics.md)
       - [Audience Manager-källanslutning](connectors/adobe-applications/audience-manager.md)
       - [Källkoppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
-      - Mappningar av programfält i Adobe {#mapping}
+      - Fältmappningar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
          - [Fältkopplingar i Marketo Engage](connectors/adobe-applications/mapping/marketo.md)
-      - Marketo Engage {#marketo}
+      - B2B {#b2b}
          - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
-         - [Marketo Engage namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
+         - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - Reklam {#advertising}
       - [Google AdWords-koppling](connectors/advertising/ads.md)
    - Molnlagring {#cloud-storage}

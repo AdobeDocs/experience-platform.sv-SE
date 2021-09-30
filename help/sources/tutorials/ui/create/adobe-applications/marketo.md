@@ -6,20 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: b90428845412613d59f3c5091ad7c1398ead9f6a
+source-git-commit: 9c8b63bf577a4258a7ef87c11bc8f87c1a01cc20
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1272'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa en [!DNL Marketo Engage]-källkoppling i användargränssnittet
+# Skapa en [!DNL Marketo Engage]-källkoppling i användargränssnittet
 
->[!IMPORTANT]
->
->Källan [!DNL Marketo Engage] är för närvarande i betaversion. Funktionen och dokumentationen ändras. Dessutom måste du se till att du använder en icke-produktionssandlåda när du använder kontakten under betaprogrammet. Mer information om sandlådor finns i [dokumentationen för sandlådor](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en#understanding-sandboxes).
-
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Marketo Engage]-källkoppling (kallas nedan &quot;[!DNL Marketo]&quot;) i användargränssnittet för att hämta konsumentdata till Adobe Experience Platform.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Marketo Engage]-källkoppling (kallas nedan &quot;[!DNL Marketo]&quot;) i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 
 ## Komma igång
 

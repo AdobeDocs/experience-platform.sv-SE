@@ -4,20 +4,15 @@ solution: Experience Platform
 title: Autentisera din Marketo-källanslutning
 topic-legacy: overview
 description: Det här dokumentet innehåller information om hur du genererar autentiseringsuppgifter för Marketo.
-translation-type: tm+mt
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+exl-id: 594dc8b6-cd6e-49ec-9084-b88b1fe8167a
+source-git-commit: 50e92ac8c1eccc9ccfb6b078ad8b996817a6d693
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
 
-
-# (Beta) Autentisera din [!DNL Marketo Engage]-källanslutning
-
->[!IMPORTANT]
->
->Källan [!DNL Marketo Engage] är för närvarande i betaversion. Dess funktioner och dokumentation kan komma att ändras.
+# Autentisera din [!DNL Marketo Engage]-källkoppling
 
 Innan du kan skapa en [!DNL Marketo Engage]-källkoppling (kallas nedan &quot;[!DNL Marketo]&quot;) måste du först konfigurera en anpassad tjänst via gränssnittet [!DNL Marketo], samt hämta värden för ditt Munchkin-ID, klient-ID och klienthemlighet.
 

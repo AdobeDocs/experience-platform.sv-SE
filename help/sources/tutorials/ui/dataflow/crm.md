@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt CRM-konto.
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: 46fb08a10bc05dc758bdcb025693f819b980b41a
+source-git-commit: cd9b28c66f6cc841e46e797b39db838a83e727e3
 workflow-type: tm+mt
-source-wordcount: '1460'
+source-wordcount: '1323'
 ht-degree: 0%
 
 ---
 
 # Konfigurera ett dataflöde för en CRM-anslutning i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform]-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt CRM-konto.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt CRM-konto.
 
 ## Komma igång
 
@@ -30,9 +30,9 @@ Den här självstudiekursen kräver dessutom att du redan har skapat ett CRM-kon
 
 ## Markera data
 
-När du har skapat ditt CRM-konto visas steget *Välj data*, som ger ett interaktivt gränssnitt där du kan utforska filhierarkin.
+När du har skapat ditt CRM-konto visas [!UICONTROL Select data]-steget, som ger dig ett gränssnitt där du kan utforska din filhierarki.
 
-* Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
+* Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar filer och kataloger i CRM.
 * I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
 Du kan använda alternativet **[!UICONTROL Search]** högst upp på sidan för att snabbt identifiera de källdata som du tänker använda.
@@ -41,29 +41,29 @@ Du kan använda alternativet **[!UICONTROL Search]** högst upp på sidan för a
 >
 >Sökkällans dataalternativ är tillgängligt för alla tabellbaserade källanslutningar, med undantag för Analytics-, Classifications-, Event Hubs- och Kinesis-anslutningar.
 
-När du har hittat källdata markerar du katalogen och klickar sedan på **[!UICONTROL Next]**.
+När du har hittat källdata markerar du katalogen och väljer sedan **[!UICONTROL Next]**.
 
 ![select-data](../../../images/tutorials/dataflow/all-tabular/select-data.png)
 
 ## Mappa datafält till ett XDM-schema
 
-Steget **[!UICONTROL Mapping]** visas med ett interaktivt gränssnitt för att mappa källdata till en [!DNL Platform]-datauppsättning.
+Steget **[!UICONTROL Mapping]** visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
 ### Använd en befintlig datauppsättning
 
-Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Use existing dataset]** och klickar sedan på datauppsättningsikonen.
+Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och sedan dataikonen ![data](../../../images/tutorials/dataflow/crm/data.png) bredvid inmatningsfältet.
 
-![use-existing-dataset](../../../images/tutorials/dataflow/crm/use-existing-dataset.png)
+![befintlig datamängd](../../../images/tutorials/dataflow/crm/existing-dataset.png)
 
 Dialogrutan **[!UICONTROL Select dataset]** visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
-![select-existing-dataset](../../../images/tutorials/dataflow/crm/select-existing-dataset.png)
+![select-dataset](../../../images/tutorials/dataflow/crm/select-dataset.png)
 
 ### Använd en ny datauppsättning
 
-Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
+Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
 Du kan bifoga ett schemafält genom att ange ett schemanamn i sökfältet **[!UICONTROL Select schema]**. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** för att få åtkomst till skärmen med befintliga scheman, inklusive deras respektive information.
 
@@ -79,19 +79,27 @@ Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill a
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om mappningsfunktioner och beräkningsfält finns i handboken för [dataförberedelser](../../../../data-prep/functions.md) eller i handboken för [beräknade fält](../../../../data-prep/calculated-fields.md).
 
+<!--
 >[!TIP]
 >
->[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
+>If you are using the [!DNL Salesforce] source as part of B2B CDP, refer to the [[!DNL Salesforce] field mapping tables](../../../connectors/adobe-applications/mapping/salesforce.md) for a guide on the appropriate mapping sets between [!DNL Salesforce] source fields and XDM target fields.
+-->
 
-![](../../../images/tutorials/dataflow/all-tabular/mapping.png)
+Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
 Välj **[!UICONTROL Preview data]** om du vill visa mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
 
+![](../../../images/tutorials/dataflow/crm/preview-data.png)
+
 Under förhandsgranskningen prioriteras identitetskolumnen som det första fältet, eftersom det är den nyckelinformation som krävs vid validering av mappningsresultat.
 
-![](../../../images/tutorials/dataflow/all-tabular/mapping-preview.png)
-
 När källdata har mappats väljer du **[!UICONTROL Close]**.
+
+![](../../../images/tutorials/dataflow/crm/preview.png)
+
+På skärmen [!UICONTROL Mapping] väljer du **[!UICONTROL Next]** för att fortsätta.
+
+![](../../../images/tutorials/dataflow/crm/mapping.png)
 
 ## Schemalägg körning av inmatning
 
@@ -111,7 +119,7 @@ Om du vill ange starttid för intaget justerar du datumet och tiden som visas i 
 
 Välj **[!UICONTROL Load incremental data by]** för att tilldela deltakolumnen. I det här fältet görs en skillnad mellan nya och befintliga data.
 
-![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+![](../../../images/tutorials/dataflow/crm/scheduling.png)
 
 ### Konfigurera ett dataflöde för engångsbruk
 
@@ -123,7 +131,7 @@ Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för f
 
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
-![schedule-once](../../../images/tutorials/dataflow/databases/schedule-once.png)
+![schedule-once](../../../images/tutorials/dataflow/crm/one-time-ingestion.png)
 
 ## Ange information om dataflöde
 
@@ -133,15 +141,15 @@ Under den här processen kan du även aktivera **[!UICONTROL Partial ingestion]*
 
 Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
-![dataflödesinformation](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
+![dataflödesinformation](../../../images/tutorials/dataflow/crm/dataflow-detail.png)
 
 ## Granska ditt dataflöde
 
 *Granskningssteget* visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection details]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-* **[!UICONTROL Mapping details]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
-* **[!UICONTROL Schedule details]**: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
+* **[!UICONTROL Connection]**: Visar källkontonamnet, källplattformen, den relevanta sökvägen för den valda källfilen och antalet kolumner i källfilen.
+* **[!UICONTROL Assign dataset and map fields]**: Visar måldatauppsättningen som källdata hämtas till, inklusive schemat som datauppsättningen följer.
+* **[!UICONTROL Scheduling]**: Visar starttid och frekvens för dataflödet.
 
 När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** och ger dig tid att skapa dataflödet.
 
@@ -157,33 +165,13 @@ Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapa
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en CRM och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Inkommande data kan nu användas av underordnade [!DNL Platform]-tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+I den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en CRM och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Dessutom kan inkommande data nu användas av plattformstjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >
-> Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
-
+> Det plattformsgränssnitt som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+>
 >[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)
-
-## Bilaga
-
-I följande avsnitt finns ytterligare information om hur du arbetar med källkopplingar.
-
-### Inaktivera ett dataflöde
-
-När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
-
-På skärmen **[!UICONTROL authenticaton]** markerar du namnet på anslutningen som är kopplad till det dataflöde som du vill inaktivera.
-
-![](../../../images/tutorials/dataflow/crm/monitor.png)
-
-Sidan **Källaktivitet** visas. Markera det aktiva dataflödet i listan för att öppna kolumnen **[!UICONTROL Properties]** till höger på skärmen, som innehåller en alternativknapp för **[!UICONTROL Enabled]**. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
-
-![disable](../../../images/tutorials/dataflow/crm/disable.png)
-
-### Aktivera inkommande data för [!DNL Profile]-populationen
-
-Inkommande data från din källanslutning kan användas för att berika och fylla i dina [!DNL Real-time Customer Profile]-data. Mer information om hur du fyller i dina [!DNL Real-time Customer Profile]-data finns i självstudiekursen om [profilpopulationen](../profile.md).
