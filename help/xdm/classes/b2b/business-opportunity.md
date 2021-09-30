@@ -1,19 +1,18 @@
 ---
 title: XDM Business Opportunity Class
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Opportunity i Experience Data Model (XDM).
-exl-id: d816b0f9-fd37-45da-aa55-247f7f662da0
-source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
+source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
 workflow-type: tm+mt
-source-wordcount: '208'
-ht-degree: 3%
+source-wordcount: '195'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL XDM Business Opportunity] klass (Beta)
+# [!UICONTROL XDM Business Opportunity] class
 
->[!IMPORTANT]
+>[!NOTE]
 >
->Den här klassen finns som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
+>Den här klassen är endast tillgänglig för organisationer som har åtkomst till kunddataplattformen B2B Edition i realtid.
 
 [!UICONTROL XDM Business Opportunity] är en XDM-klass (Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en affärsmöjlighet.
 
@@ -31,7 +30,5 @@ ht-degree: 3%
 | `opportunityName` | Sträng | Namnet på affärsmöjligheten. |
 | `opportunityStage` | Sträng | Affärsmöjlighetens försäljningsstadium. |
 | `opportunityType` | Sträng | Typ av affärsmöjlighet. |
-
-{style=&quot;table-layout:auto&quot;}
 
 Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.

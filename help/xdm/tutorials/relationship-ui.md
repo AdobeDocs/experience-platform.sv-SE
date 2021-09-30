@@ -6,14 +6,18 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 497a515a872efdeeda270d0aa90b1fc99898ad4d
+source-git-commit: 2118dc175b421e856c6b0a33a83a7238f01b7ee3
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '985'
 ht-degree: 0%
 
 ---
 
 # Definiera en relation mellan två scheman med [!DNL Schema Editor]
+
+>[!NOTE]
+>
+>Om du använder Real-time Customer Data Platform B2B Edition läser du i guiden [skapa B2B-relationer](./relationship-b2b.md) istället.
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer inom strukturen för dina [!DNL Experience Data Model] (XDM)-scheman kan du få komplexa insikter i dina kunddata.
 

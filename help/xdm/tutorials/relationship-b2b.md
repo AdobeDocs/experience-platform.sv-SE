@@ -1,18 +1,14 @@
 ---
 title: Definiera en relation mellan två scheman i kunddataplattformen B2B Edition i realtid
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Real-time Customer Data Platform B2B Edition.
-source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
+source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
 
 # Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 >[!NOTE]
 >
