@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: af122e5064fc5618266948d46c438d1776cdd0cf
+source-git-commit: 696db8081ab8225d79cd468b7435770d407d3e3d
 workflow-type: tm+mt
-source-wordcount: '1259'
+source-wordcount: '1102'
 ht-degree: 0%
 
 ---
@@ -36,77 +36,32 @@ Avsnittet **[!UICONTROL Expiring credentials]** innehåller följande informatio
 
 Du kan använda autentiseringsuppgifter som inte upphör att gälla för att konfigurera en mer permanent anslutning till en extern klient.
 
-Innan du kan skapa autentiseringsuppgifter som inte förfaller måste du konfigurera både **sandlådorna** och **Hantera frågetjänstintegrering** för din organisation i Adobe Admin Console.
+### Förutsättningar
 
-Logga in på [Adobe Admin Console](https://adminconsole.adobe.com/) och välj relevant organisation i det övre navigeringsfältet.
+Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utföra följande steg i Adobe Admin Console:
 
-I avsnittet [!UICONTROL Products and services] i [!UICONTROL Overview] väljer du **Adobe Experience Platform**.
+1. Logga in på [Adobe Admin Console](https://adminconsole.adobe.com/) och välj relevant organisation i det övre navigeringsfältet.
+2. [Välj en produktprofil.](../../access-control/ui/browse.md)
+3. [Konfigurera både  **** sandlådor och  **Hantera** ](../../access-control/ui/permissions.md) frågetjänstintegreringsbehörigheter för produktprofilen.
+4. [Lägg till en ny användare i en ](../../access-control/ui/users.md) produktprofil så att de får sina konfigurerade behörigheter.
+5. [Lägg till användaren som ](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) administratör för en produktprofil så att ett konto kan skapas för en aktiv produktprofil.
+6. [Lägg till användaren som ](https://helpx.adobe.com/enterprise/using/manage-developers.html) utvecklare av produktprofiler för att skapa en integrering.
 
-![Adobe Admin Console Dashboard](../images/ui/credentials/adobe-admin-console-dashboard.png)
+Läs dokumentationen om [åtkomstkontroll](../../access-control/home.md) om du vill veta mer om hur du tilldelar behörigheter.
 
-Sidan Information om Adobe Experience Platform visas. Skapa sedan en ny profil. Välj [!UICONTROL **Ny profil**].
+Alla nödvändiga behörigheter har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfallodatum för inloggningsuppgifter.
 
-![Adobe Experience Platform Details page](../images/ui/credentials/aep-details.png)
+### Generera autentiseringsuppgifter
 
-Dialogrutan där du skapar en profil visas. Ange ett beskrivande namn för den nya profilen och välj [!UICONTROL **Spara**]. Sidan [!UICONTROL Settings] för din nya profil visas. Välj fliken [!UICONTROL **Behörigheter**] bland de tillgängliga alternativen.
-
-### Aktivera behörigheterna för frågetjänsten
-
-Kontrollera att rätt behörighetsinställningar för frågetjänsten har aktiverats för din organisation genom att söka efter och välja kategorin [!UICONTROL **frågetjänst**] i listan.
-
-![Frågetjänstkategorin Behörigheter är markerad](../images/ui/credentials/permissions-tab-query-service-category.png)
-
-Arbetsytan [!UICONTROL Edit Permissions] för frågetjänsten visas. Välj plusikonen (**+**) för [!UICONTROL **Hantera frågor**] och [!UICONTROL **Hantera frågetjänstintegrering**] för att lägga till dem i kolumnen [!UICONTROL Included Permission Items]. Välj sedan [!UICONTROL **Spara**] för att bekräfta ändringarna.
-
-![Spara inkluderade behörighetsobjekt](../images/ui/credentials/edit-permissions-for-query-service-profile.png)
-
-Du kommer nu tillbaka till fliken Inställningar > Behörigheter.
-
-### Aktivera sandlådebehörigheter
-
-Om du vill vara säker på att rätt sandlåda är markerad för din organisation söker du efter och väljer kategorin [!UICONTROL **Sandlådor**] i listan.
-
-![Fliken Behörigheter, kategorin Sandlådor är markerad](../images/ui/credentials/permissions-tab-sandboxes-category.png)
-
-Arbetsytan Sandlådor visas. I [!UICONTROL Available Permission Items] hittar du den relevanta sandlådan, i den här bilden är det sandlådan Prod. Markera plusikonen (**+**) om du vill lägga till den i [!UICONTROL Included Permission Items]. Välj sedan [!UICONTROL **Spara**] för att bekräfta ändringarna.
-
-![Lägg till tillstånd för Prod Sandbox](../images/ui/credentials/prod-sandbox.png)
-
-Du kommer nu tillbaka till fliken Inställningar > Behörigheter.
-
-Det krävs ytterligare tre steg för att ge en användare åtkomst till kontofunktionen som inte förfaller.
-
-- Lägg till en ny användare som du vill ge de nya behörigheterna till. Välj fliken [!UICONTROL **Användare**] följt av [!UICONTROL **Lägg till användare**].
-
-![Fliken Användare Lägg till användare markerad](../images/ui/credentials/users-tab-new-user.png)
-
-Dialogrutan Skapa användare visas. Ange ett namn och en e-postadress för den nya användaren och välj [!UICONTROL **Spara**].
-
-- Användaren måste sedan läggas till som administratör för att kunna skapa ett konto för en aktiv produktprofil. Lägga till den nyskapade användaren som administratör. Välj fliken [!UICONTROL **Administratörer**] följt av [!UICONTROL **Lägg till administratörer**].
-
-![Fliken Administratör Lägg till administratör markerad](../images/ui/credentials/admins-tab-add-admin.png)
-
-Dialogrutan Lägg till administratör visas. Ange den nya administratörens information i textfälten och välj [!UICONTROL **Spara**].
-
-- Användaren måste sedan läggas till som utvecklare för att en integrering ska kunna skapas. Välj fliken **Utvecklare**, följt av **Lägg till utvecklare**.
-
-![Fliken Utvecklare, knappen Lägg till utvecklare markerad](../images/ui/credentials/developers-tab-add-developer.png)
-
-Dialogrutan Lägg till utvecklare visas. Ange information om den nya utvecklaren i textfälten och välj **Spara**.
-
-Läs dokumentationen om [Åtkomstkontroll](../../access-control/home.md) om du vill veta mer om hur du tilldelar behörigheter.
-
-Alla behörigheter som krävs har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfallodatum för inloggningsuppgifter.
-
-Om du vill skapa en uppsättning med autentiseringsuppgifter som inte förfaller väljer du **[!UICONTROL Generate credentials]** på arbetsytan Frågor och autentiseringsuppgifter.
+Om du vill skapa en uppsättning inloggningsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet för plattformen och väljer **[!UICONTROL Queries]** i den vänstra navigeringen för att komma åt arbetsytan [!UICONTROL Queries]. Välj sedan fliken **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
 
 ![](../images/ui/credentials/generate-credentials.png)
 
-Genereringen av autentiseringsuppgifter modal visas. Om du vill skapa inloggningsuppgifter som inte förfaller måste du ange följande information:
+En dialogruta visas där du kan generera autentiseringsuppgifter. Om du vill skapa inloggningsuppgifter som inte förfaller måste du ange följande information:
 
 - **[!UICONTROL Name]**: Namnet på de autentiseringsuppgifter som du genererar.
 - **[!UICONTROL Description]**: (Valfritt) En beskrivning av de autentiseringsuppgifter som du genererar.
-- **[!UICONTROL Assigned to]**: Användaren som autentiseringsuppgifterna ska tilldelas. Värdet ska vara e-postadressen till den användare som skapar inloggningsuppgifterna.
+- **[!UICONTROL Assigned to]**: Användaren som autentiseringsuppgifterna ska tilldelas till. Värdet ska vara e-postadressen till den användare som skapar inloggningsuppgifterna.
 - **[!UICONTROL Password]** (Valfritt) Ett valfritt lösenord för dina inloggningsuppgifter. Om lösenordet inte är inställt genererar Adobe automatiskt ett lösenord åt dig.
 
 När du har angett all nödvändig information väljer du **[!UICONTROL Generate credentials]** för att generera dina autentiseringsuppgifter.
@@ -115,9 +70,9 @@ När du har angett all nödvändig information väljer du **[!UICONTROL Generate
 
 >[!IMPORTANT]
 >
->När du har valt knappen **[!UICONTROL Generate credentials]** hämtas en JSON-konfigurationsfil till den lokala datorn. Eftersom Adobe **inte** spelar in de genererade autentiseringsuppgifterna måste du **lagra den hämtade filen säkert och spara en inloggningsuppgift.**
+>När du har valt knappen **[!UICONTROL Generate credentials]** hämtas en JSON-konfigurationsfil till den lokala datorn. Eftersom Adobe **inte** spelar in de genererade inloggningsuppgifterna, måste du lagra den hämtade filen på ett säkert sätt och spara en inloggningsuppgift.
 >
->Om inloggningsuppgifterna inte används på 90 dagar rensas de också.
+>Om inloggningsuppgifterna inte används på 90 dagar kommer de dessutom att tas bort.
 
 JSON-konfigurationsfilen innehåller information som namn på tekniskt konto, ID för tekniskt konto och autentiseringsuppgifter. Den tillhandahålls i följande format.
 
@@ -125,7 +80,7 @@ JSON-konfigurationsfilen innehåller information som namn på tekniskt konto, ID
 {"technicalAccountName":"9F0A21EE-B8F3-4165-9871-846D3C8BC49E@TECHACCT.ADOBE.COM","credential":"3d184fa9e0b94f33a7781905c05203ee","technicalAccountId":"4F2611B8613AA3670A495E55"}
 ```
 
-Nu när du har sparat dina genererade autentiseringsuppgifter väljer du **[!UICONTROL Close]**. Nu kan du se en lista över alla dina ej förfallna autentiseringsuppgifter.
+När du har sparat dina genererade inloggningsuppgifter väljer du **[!UICONTROL Close]**. Nu kan du se en lista över alla dina ej förfallna autentiseringsuppgifter.
 
 ![](../images/ui/credentials/list-credentials.png)
 
@@ -135,7 +90,7 @@ När du redigerar en referens som inte förfaller visas ett modalt värde. Du ka
 
 - **[!UICONTROL Name]**: Namnet på de autentiseringsuppgifter som du genererar.
 - **[!UICONTROL Description]**: (Valfritt) En beskrivning av de autentiseringsuppgifter som du genererar.
-- **[!UICONTROL Assigned to]**: Användaren som autentiseringsuppgifterna ska tilldelas. Värdet ska vara e-postadressen till den användare som skapar inloggningsuppgifterna.
+- **[!UICONTROL Assigned to]**: Användaren som autentiseringsuppgifterna ska tilldelas till. Värdet ska vara e-postadressen till den användare som skapar inloggningsuppgifterna.
 
 ![](../images/ui/credentials/update-credentials.png)
 
@@ -143,21 +98,25 @@ När du har angett all nödvändig information väljer du **[!UICONTROL Update a
 
 ## Använda autentiseringsuppgifter för att ansluta till externa klienter
 
-Du kan använda autentiseringsuppgifterna som förfaller eller inte förfaller för att ansluta till externa klienter, som Aqua Data Studio, Looker eller Power BI.
+Du kan använda autentiseringsuppgifterna som förfaller eller inte förfaller för att ansluta till externa klienter, som Aqua Data Studio, Looker eller Power BI. Indatametoden för dessa autentiseringsuppgifter varierar beroende på den externa klienten. Mer information om hur du använder dessa autentiseringsuppgifter finns i den externa klientens dokumentation.
 
-Tabellen nedan innehåller en lista med parametrar och deras beskrivning, som vanligtvis krävs för att ansluta till externa klienter.
+Bilden anger platsen för varje parameter som hittas i användargränssnittet, med undantag för lösenordet för de autentiseringsuppgifter som inte förfaller. Även om inloggningsuppgifter som inte förfaller anges av JSON-konfigurationsfilerna kan du visa dina förgående inloggningsuppgifter på fliken **Autentiseringsuppgifter** i användargränssnittet.
+
+![](../images/ui/credentials/expiring-credentials.png)
+
+Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till externa klienter.
 
 >[!NOTE]
 >
->När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som listas i [!UICONTROL EXPIRING CREDENTIALS]-avsnittet förutom lösenordet.
+>När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i [!UICONTROL EXPIRING CREDENTIALS]-avsnittet, förutom lösenordet och användarnamnet.
 
 | Parameter | Beskrivning |
 |---|---|
-| **Server/värd** | Namnet på den server/värd som du ansluter till. Värdet har formen `server.adobe.io` och finns under **[!UICONTROL Host]**. |
-| **Port** | Porten för den server/värd som du ansluter till. Det här värdet finns under **[!UICONTROL Port]**. Ett exempelvärde för porten skulle vara `80`. |
-| **Databas** | Databasen som du ansluter till. Det här värdet finns under **[!UICONTROL Database]**. Ett exempelvärde för databasen skulle vara `prod:all`. |
-| **Användarnamn** | Användarnamnet för användaren som ansluter till den externa klienten. Detta tar formen av en alfanumerisk sträng före `@AdobeOrg`. Det här värdet finns under **[!UICONTROL Username]**. |
-| **Lösenord** | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** i avsnittet med inloggningsuppgifter som förfaller.</li><li>Om du använder autentiseringsuppgifter som inte upphör att gälla, består det här värdet av argumenten från technicalAccountID och de autentiseringsuppgifter som hämtas från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> |
+| Server/värd | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för förfallodatum och icke-förfallande autentiseringsuppgifter och har formatet `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS].</ul></li> |
+| Port | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för förfallodatum och icke-förfallande autentiseringsuppgifter och finns under **[!UICONTROL Port]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS]. Ett exempelvärde för porten skulle vara `80`.</ul></li> |
+| Databas | Databasen som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och finns under **[!UICONTROL Database]** i avsnittet [!UICONTROL EXPIRING CREDENTIALS]. Ett exempelvärde för databasen skulle vara `prod:all`.</ul></li> |
+| Användarnamn | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Om du använder utgångna autentiseringsuppgifter anges detta som en alfanumerisk sträng före `@AdobeOrg`. Det här värdet finns under **[!UICONTROL Username]**.</li><li>Om du använder inloggningsuppgifter som inte förfaller är detta en valfri sträng, men **kan inte** vara samma som `technicalAccountID`-värdet som finns i JSON-konfigurationsfilen.</li></ul> |
+| Lösenord | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** i [!UICONTROL EXPIRING CREDENTIALS]-avsnittet.</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> |
 
 ## Nästa steg
 
