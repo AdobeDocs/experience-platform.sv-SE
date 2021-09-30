@@ -1,13 +1,13 @@
 ---
 keywords: aktivera mål för profilbegäran;aktivera data;mål för profilbegäran
-title: Aktivera målgruppsdata för att profilera mål för begäran
+title: Aktivera målgruppsdata för att profilera mål för begäran (beta)
 type: Tutorial
 seo-title: Activate audience data to profile request destinations
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
-source-git-commit: caccd096c9165139d9b966bbfcb311456276192a
+source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '448'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./conne
 
 ### Sammanslagningsprincip för segment {#merge-policy}
 
-Målen för profilbegäran stöder för närvarande endast aktivering av segment som använder standardprincipen för sammanfogning. Om du försöker aktivera segment med en annan sammanfogningsprincip uppstår ett fel på [[!UICONTROL Review]](#review)-sidan.
+Målen för profilbegäran stöder för närvarande endast aktivering av segment som använder [standardprincipen för sammanslagning](../../segmentation/ui/segment-builder.md#merge-policies).
 
 ## Välj mål {#select-destination}
 

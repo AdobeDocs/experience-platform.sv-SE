@@ -1,10 +1,10 @@
 ---
 keywords: målinriktad personalisering, destination, mål för upplevelseplattform;adobe target destination;
-title: Adobe Target-anslutning
+title: Adobe Target-anslutning (beta)
 description: Adobe Target är en applikation som innehåller personalisering och experimenterande i realtid, 1:1, och AI-driven i alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
-source-git-commit: caccd096c9165139d9b966bbfcb311456276192a
+source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 1%
 
 ---

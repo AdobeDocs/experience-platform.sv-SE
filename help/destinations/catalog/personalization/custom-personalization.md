@@ -1,10 +1,10 @@
 ---
 keywords: personalisering, destination, upplevelseplattform anpassad destination,
-title: Anpassat anpassningsmål
+title: Anpassad personaliseringsanslutning (beta)
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats som ett sätt att hämta segmentinformation från Adobe Experience Platform. Detta mål ger 1:1 i realtid och personalisering baserat på en användarprofils segmentmedlemskap.
-source-git-commit: 6c21398a3f2fb26cc925ca1f5dcbe92b306a8325
+source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '572'
 ht-degree: 0%
 
 ---
@@ -25,11 +25,11 @@ Integrationen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md
 
 ## Exporttyp {#export-type}
 
-**Profilbegäran**  - du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade personaliseringsmål kan ställas in för olika datamängder i Adobe Data Collection.
+**Profilbegäran**  - du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan ställas in för olika [datainsamlingsdatastreams](../../../edge/fundamentals/datastreams.md) i Adobe.
 
 ## Användningsfall {#use-cases}
 
-Den här målgruppen delar målgrupper med en annonsserver och andra program än Adobe för personalisering, som ska användas i realtid för att avgöra vilken annons som användare ska se på en webbplats.
+Den här målgruppen delar målgrupper med annonsservrar och icke-Adobe-personaliseringsapplikationer, som ska användas i realtid för att avgöra vilken annonsanvändare som ska se på en webbplats.
 
 ### Användningsfall 1
 
@@ -62,7 +62,7 @@ Läs [Aktivera profiler och segment för att profilera mål för begäran](../..
 
 Om du använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [send event complete](../../../edge/extension/event-types.md) och din anpassade kodsåtgärd har en `event.destinations`-variabel som du kan använda för att visa exporterade data.
 
-Om du inte använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [hantering av svar från händelser](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events).
+Om du inte använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [hantering av svar från händelser](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) för att se exporterade data.
 
 JSON-svaret från Adobe Experience Platform kan analyseras för att hitta motsvarande integreringsalias för det program du integrerar med Adobe Experience Platform. Segment-ID:n kan skickas till programmets kod som målparametrar. Nedan visas ett exempel på hur detta skulle se ut när det gäller målsvaret.
 
