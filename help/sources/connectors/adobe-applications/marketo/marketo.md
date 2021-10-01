@@ -5,9 +5,9 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 50e92ac8c1eccc9ccfb6b078ad8b996817a6d693
+source-git-commit: 2844ffd7270ffcc2fba4da08dda1aea238cf6c9f
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -70,3 +70,4 @@ I följande dokumentation finns mer information om hur du skapar en [!DNL Market
 * Information om den underliggande inställningen för B2B-namnutrymmen och scheman som används med [!DNL Marketo] finns i dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
 * Information om hur du hittar ditt [!DNL Marketo] munchkin-ID och genererar dina inloggningsuppgifter finns i [[!DNL Marketo] autentiseringsguiden](./marketo-auth.md).
 * Mer information om de specifika mappningsregler som gäller för [!DNL Marketo]-datamängder finns i dokumentationen om [[!DNL Marketo] fältmappningar](../mapping/marketo.md).
+* Allmän information om [!DNL Real-time Customer Data Platform B2B Edition] och dess funktioner finns i dokumentationen om [[!DNL Real-time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
