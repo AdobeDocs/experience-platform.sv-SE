@@ -1,16 +1,20 @@
 ---
-title: Fältbaserade arbetsflöden i Schemaredigeraren
-description: Lär dig hur du lägger till standardfält från Adobe-definierade fältgrupper i XDM-scheman (Experience Data Model) separat.
+title: Fältbaserade arbetsflöden i Schemaredigeraren (beta)
+description: Lär dig hur du lägger till fält från befintliga fältgrupper individuellt i XDM-scheman (Experience Data Model).
 hide: true
 hidefromtoc: true
-source-git-commit: 8947fbb815f3eda97fb218be6791cb67e6e66719
+source-git-commit: 139d453c3758f4f137cd1b31307b61dc777fc1c1
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '848'
 ht-degree: 0%
 
 ---
 
-# Fältbaserade arbetsflöden i Schemaredigeraren
+# Fältbaserade arbetsflöden i Schemaredigeraren (beta)
+
+>[!IMPORTANT]
+>
+>De arbetsflöden som beskrivs i det här dokumentet är för närvarande betaversioner. Funktionen och dokumentationen kan komma att ändras.
 
 Adobe Experience Platform tillhandahåller en robust uppsättning standardiserade [fältgrupper](../schema/composition.md#field-group) som kan användas i XDM-scheman (Experience Data Model). Strukturen och semantiken bakom dessa fältgrupper är noga anpassade för att uppfylla ett stort antal användningsfall för segmentering och andra applikationer längre fram i kedjan av plattformar. Du kan också definiera egna fältgrupper för att tillgodose unika affärsbehov.
 
