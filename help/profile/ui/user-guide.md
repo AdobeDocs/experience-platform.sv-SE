@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 69e510c9a0f477ad7cab530128c6728f68dfdab1
+source-git-commit: 771be1f5939066295c01eb573a13dbb740e8c776
 workflow-type: tm+mt
-source-wordcount: '1502'
+source-wordcount: '1698'
 ht-degree: 0%
 
 ---
@@ -136,9 +136,33 @@ Standardfälten som visas kan också ändras på organisationsnivå för att vis
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-Du kan visa ytterligare information om den enskilda profilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för segmentmedlemskap som visar de segment som profilen är kvalificerad för just nu.
+Du kan visa ytterligare information om den enskilda kundprofilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för segmentmedlemskap som visar de segment som profilen är kvalificerad för just nu.
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
+
+### Fliken Attribut
+
+På fliken **[!UICONTROL Attributes]** finns en listvy som sammanfattar alla attribut som är kopplade till en enskild profil, efter att den angivna sammanfogningsprincipen har tillämpats.
+
+Dessa attribut kan också visas som ett JSON-objekt genom att välja **[!UICONTROL View JSON]**. Detta är praktiskt för alla användare som bättre vill förstå hur profilattributen hämtas till Platform.
+
+![](../images/user-guide/profiles-attributes.png)
+
+### Fliken Händelser
+
+Fliken **[!UICONTROL Events]** innehåller data relaterade till ExperienceEvents som är associerade med kunden. Det kan vara e-postöppningar, kundvagnsaktiviteter, sidvisningar med mera. Om du väljer **[!UICONTROL View all]** för en enskild händelse hämtas ytterligare fält och värden som en del av händelsen.
+
+Händelser kan också visas som ett JSON-objekt genom att välja **[!UICONTROL View JSON]**. Detta är praktiskt när du vill veta hur händelser hämtas i Platform.
+
+![](../images/user-guide/profiles-events.png)
+
+### Fliken Segmentmedlemskap
+
+På fliken **[!UICONTROL Segment membership]** visas en lista med namn och beskrivning av segment som den enskilda kundprofilen för närvarande tillhör. Listan uppdateras automatiskt när profilen kvalificerar sig eller utgår från segment. Det totala antalet segment som profilen är kvalificerad för visas till höger på fliken.
+
+Mer information om segmentering i Experience Platform finns i [dokumentationen för segmenteringstjänsten för Adobe Experience Platform](../../segmentation/home.md).
+
+![](../images/user-guide/profiles-segment-membership.png)
 
 ## Sammanfoga profiler
 
