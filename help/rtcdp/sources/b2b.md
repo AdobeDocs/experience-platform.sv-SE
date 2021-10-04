@@ -2,14 +2,18 @@
 title: Källor i Real-time Customer Data Platform B2B Edition
 description: En översikt över källornas roll i realtidsversionen av Customer Data Platform B2B Edition.
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: b8c14fc2e32a6a8f92309f4956cc5415d833a73f
+source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
 workflow-type: tm+mt
-source-wordcount: '160'
+source-wordcount: '179'
 ht-degree: 0%
 
 ---
 
 # Källor i Real-time Customer Data Platform B2B Edition
+
+>[!IMPORTANT]
+>
+>Real-time Customer Data Platform B2B Edition är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 Med kunddataplattformen B2B Edition i realtid kan ni överföra B2B-data via [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md)-källkontakten samtidigt som ni får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av tjänster.
 

@@ -5,14 +5,18 @@ title: B2B-namnutrymmen och scheman
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: a67e411c7d07bc5d94876b6bafbbea5056b7a9bc
+source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1588'
 ht-degree: 1%
 
 ---
 
-# B2B-namnutrymmen och scheman
+# (Beta) B2B-namnutrymmen och scheman
+
+>[!IMPORTANT]
+>
+>Den här funktionen är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
 
 Det här dokumentet innehåller information om den underliggande inställningen för de namnutrymmen och scheman som ska användas med B2B-källor. Det här dokumentet innehåller även information om hur du konfigurerar Postman-automatiseringsverktyget som krävs för att generera B2B-namnutrymmen och scheman.
 
