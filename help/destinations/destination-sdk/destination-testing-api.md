@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/destinationInstance/` för att testa om målet är korrekt konfigurerat och för att verifiera integriteten hos dataflöden till det konfigurerade målet.
 title: API-åtgärder för måltestning
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 45cff6f0c4d4fd63a17108087edec0184cbf9703
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '664'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,8 @@ På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med
 Du gör förfrågningar till testslutpunkten med eller utan att lägga till profiler till anropet. Om du inte skickar några profiler på begäran, genererar Adobe dessa internt åt dig och lägger till dem i begäran.
 
 Du kan använda [API:t för generering av exempelprofiler](./sample-profile-generation-api.md) för att skapa profiler som ska användas i begäranden till API:t för måltestning.
+
+## Hämta målinstans-ID {#get-destination-instance-id}
 
 >[!IMPORTANT]
 >
