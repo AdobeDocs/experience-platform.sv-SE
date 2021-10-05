@@ -1,0 +1,163 @@
+---
+title: API för datahygien (alfa)
+description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
+hide: true
+hidefromtoc: true
+source-git-commit: dfe9c1ef826bc769a82938223029cd41c066c221
+workflow-type: tm+mt
+source-wordcount: '522'
+ht-degree: 0%
+
+---
+
+# API för datahygien (alfa)
+
+>[!IMPORTANT]
+>
+>API:t för datahygien är för närvarande alfa och din organisation har kanske inte åtkomst till det än. Funktionen som beskrivs i det här dokumentet kan komma att ändras.
+
+Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform. Till skillnad från Privacy Services-API:t behöver dessa åtgärder inte kopplas till juridiska sekretessbestämmelser och kan användas enbart för att hålla dina data rena och korrekta.
+
+## Komma igång
+
+I det här avsnittet ges en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för datahygien.
+
+### Samla in värden för obligatoriska rubriker
+
+För att kunna anropa API:t för datahygien måste du först samla in dina autentiseringsuppgifter. Detta är samma autentiseringsuppgifter som används för att komma åt Privacy Service-API:t. Följ [guiden ](./api/getting-started.md) för att komma igång för Privacy Service-API:t för att generera värden för var och en av de rubriker som krävs för API:t för datahygien, som visas nedan:
+
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
+
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
+
+* `Content-Type: application/json`
+
+### Läser exempel-API-anrop
+
+Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform-API:er.
+
+## Skapa ett borttagningsjobb
+
+Du kan skapa ett borttagningsjobb genom att göra en POST.
+
+**API-format**
+
+```http
+POST /jobs
+```
+
+**Begäran**
+
+Nyttolasten för begäran är strukturerad på ungefär samma sätt som en [borttagningsbegäran i Privacy Service-API](./api/privacy-jobs.md#access-delete). Den innehåller en `users`-array vars objekt representerar de användare vars data ska tas bort.
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/hygiene/jobs \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "companyContexts": [
+          {
+            "namespace": "imsOrgID",
+            "value": "{IMS_ORG}"
+          }
+        ],
+        "users": [
+          {
+            "key": "John Doe",
+            "action": [
+              "delete"
+            ],
+            "userIDs": [
+              {
+                "namespace": "email",
+                "value": "johnd@example.com",
+                "type": "standard",
+              },
+              {
+                "namespace": "ECID",
+                "value": "9cbefef1-dd44-4411-87db-2d387bf882bc",
+                "type": "standard"
+              }
+            ]
+          },
+          {
+            "key": "Jane Doe",
+            "action": [
+              "delete"
+            ],
+            "userIDs": [
+              {
+                "namespace": "Loyalty ID",
+                "value": "30583967185734",
+                "type": "custom"
+              }
+            ]
+          }
+        ]
+      }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `companyContexts` | En array som innehåller autentiseringsinformation för din organisation. Den måste innehålla ett enda objekt med följande egenskaper: <ul><li>`namespace`: Måste anges till  `imsOrgID`.</li><li>`value`: Ditt IMS-organisations-ID. Detta är samma värde som anges i `x-gw-ims-org-id`-huvudet.</li></ul> |
+| `users` | En array som innehåller en samling med minst en användare vars information du vill ta bort. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det kan refereras till eller slås upp senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Måste innehålla ett strängvärde: `delete`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet innehåller följande egenskaper: <ul><li>`namespace`: Det  [ID-](../identity-service/namespaces.md) namnutrymme som är associerat med ID:t. Detta kan vara ett [standardnamnutrymme](./api/appendix.md#standard-namespaces) som identifieras av Platform, eller ett anpassat namnutrymme som definieras av din organisation. Den typ av namnutrymme som används måste återspeglas i egenskapen `type`.</li><li>`value`: Identitetsvärdet.</li><li>`type`: Måste anges till  `standard` om ett globalt identifierat namnutrymme används, eller  `custom` om du använder ett namnutrymme som definieras av din organisation.</li></ul></li></ul> |
+
+**Svar**
+
+Ett lyckat svar returnerar information om de skapade jobben.
+
+```json
+{
+  "requestId": "16318094870430026RX-334",
+  "totalRecords": 2,
+  "jobs": [
+    {
+      "jobId": "c9b5fd82-db14-4c27-8bec-64a06e1fbda4",
+      "customer": {
+        "user": {
+          "key": "John Doe",
+          "action": ["delete"],
+          "userIDs": [
+            {
+              "namespace": "email",
+              "value": "johnd@example.com",
+              "type": "standard",
+              "namespaceId": 6,
+              "isDeletedClientSide": false
+            },
+            {
+              "namespace": "ECID",
+              "value": "9cbefef1-dd44-4411-87db-2d387bf882bc",
+              "type": "standard",
+              "namespaceId": 4,
+              "isDeletedClientSide": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "jobId": "8ddc8e73-cecc-4be3-ae44-cdba127f7c70",
+      "customer": {
+        "user": {
+          "key": "Jane Doe",
+          "action": ["delete"],
+          "userIDs": [
+            {
+              "namespace": "Loyalty ID",
+              "value": "30583967185734",
+              "type": "custom",
+              "isDeletedClientSide": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+```
