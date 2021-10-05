@@ -2,10 +2,10 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 32b61276f3fe81ffa82fec1debf335ea51020ccd
+source-git-commit: c334a11ff6a03b38883a5319bc41cbe3f93c0289
 workflow-type: tm+mt
-source-wordcount: '2340'
-ht-degree: 2%
+source-wordcount: '2407'
+ht-degree: 1%
 
 ---
 
@@ -125,33 +125,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
          "splitUserById":false
       }
    },
-   "aggregation":{
-      "aggregationType":"CONFIGURABLE_AGGREGATION",
-      "configurableAggregation":{
-         "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
-         "aggregationKey":{
-            "includeSegmentId":true,
-            "includeSegmentStatus":true,
-            "includeIdentity":true,
-            "oneIdentityPerGroup":false,
-            "groups":[
-               {
-                  "namespaces":[
-                     "IDFA",
-                     "GAID"
-                  ]
-               },
-               {
-                  "namespaces":[
-                     "EMAIL"
-                  ]
-               }
-            ]
-         }
-      }
-   },
    "destinationDelivery":[
       {
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
@@ -195,18 +168,18 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `schemaConfig.profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `schemaConfig.segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
 | `schemaConfig.identityRequired` | Boolean | Använd `true` om du vill att användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
-| `aggregation.aggregationType` | – | Välj antingen `BEST_EFFORT` eller `CONFIGURABLE_AGGREGATION`. Exempelkonfigurationen ovan innehåller båda aggregeringstyperna, men du behöver bara välja en av dem för ditt mål. |
+| `aggregation.aggregationType` | – | Välj antingen `BEST_EFFORT` eller `CONFIGURABLE_AGGREGATION`. I exempelkonfigurationen ovan ingår `BEST_EFFORT`-aggregering. Ett exempel på `CONFIGURABLE_AGGREGATION` finns i exempelkonfigurationen i dokumentet [målkonfiguration](./destination-configuration.md#example-configuration). Observera att de parametrar som är relevanta för konfigurerbar aggregering beskrivs nedan i denna tabell. |
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. Ange maximalt antal profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br> Om servern inte accepterar flera användare per begäran anger du värdet 1. |
 | `aggregation.bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |
-| `aggregation.configurableAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |
-| `aggregation.configurableAggregation.maxBatchAgeInSecs` | Heltal | *Högsta värde: 3600*. Tillsammans med `maxNumEventsInBatch` avgör detta hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <br> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
-| `aggregation.configurableAggregation.maxNumEventsInBatch` | Heltal | *Högsta värde: 10000*. Se `maxBatchAgeInSecs` ovan. |
-| `aggregation.configurableAggregation.aggregationKey` | Boolean | Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna nedan: <br> <ul><li>segment-ID</li><li> segmentstatus </li><li> identity namespace </li></ul> |
-| `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ange `true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID. |
-| `aggregation.configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Du måste ange både `includeSegmentId:true` och `includeSegmentStatus:true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID OCH segmentstatus. |
-| `aggregation.configurableAggregation.aggregationKey.includeIdentity` | Boolean | Ange `true` om du vill gruppera profiler som exporterats till ditt mål efter identitetsnamnområde. |
-| `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Använd den här parametern för att ange om du vill att de exporterade profilerna ska samlas i grupper av en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
-| `aggregation.configurableAggregation.aggregationKey.groups` | Sträng | Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål av grupper med identitetsnamnutrymme. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett samtal till din destination och e-postmeddelanden i ett annat genom att använda konfigurationen i exemplet. |
+| `aggregation.configurableAggregation.splitUserById` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |
+| `aggregation.configurableAggregation.maxBatchAgeInSecs` | Heltal | *Högsta värde: 3600*. Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Tillsammans med `maxNumEventsInBatch` avgör detta hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <br> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
+| `aggregation.configurableAggregation.maxNumEventsInBatch` | Heltal | *Högsta värde: 10000*. Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Se `maxBatchAgeInSecs` ovan. |
+| `aggregation.configurableAggregation.aggregationKey` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna nedan: <br> <ul><li>segment-ID</li><li> segmentstatus </li><li> identity namespace </li></ul> |
+| `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Ange `true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID. |
+| `aggregation.configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Du måste ange både `includeSegmentId:true` och `includeSegmentStatus:true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID OCH segmentstatus. |
+| `aggregation.configurableAggregation.aggregationKey.includeIdentity` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Ange `true` om du vill gruppera profiler som exporterats till ditt mål efter identitetsnamnområde. |
+| `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Använd den här parametern för att ange om du vill att de exporterade profilerna ska samlas i grupper av en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
+| `aggregation.configurableAggregation.aggregationKey.groups` | Sträng | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål av grupper med identitetsnamnutrymme. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett samtal till din destination och e-postmeddelanden i ett annat genom att använda konfigurationen i exemplet. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -330,33 +303,6 @@ Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer
             "bestEffortAggregation":{
                "maxUsersPerRequest":10,
                "splitUserById":false
-            }
-         },
-         "aggregation":{
-            "aggregationType":"CONFIGURABLE_AGGREGATION",
-            "configurableAggregation":{
-               "splitUserById":true,
-               "maxBatchAgeInSecs":0,
-               "maxNumEventsInBatch":0,
-               "aggregationKey":{
-                  "includeSegmentId":true,
-                  "includeSegmentStatus":true,
-                  "includeIdentity":true,
-                  "oneIdentityPerGroup":false,
-                  "groups":[
-                     {
-                        "namespaces":[
-                           "IDFA",
-                           "GAID"
-                        ]
-                     },
-                     {
-                        "namespaces":[
-                           "EMAIL"
-                        ]
-                     }
-                  ]
-               }
             }
          },
          "destinationDelivery":[
@@ -551,33 +497,6 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
          "splitUserById":false
       }
    },
-   "aggregation":{
-      "aggregationType":"CONFIGURABLE_AGGREGATION",
-      "configurableAggregation":{
-         "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
-         "aggregationKey":{
-            "includeSegmentId":true,
-            "includeSegmentStatus":true,
-            "includeIdentity":true,
-            "oneIdentityPerGroup":false,
-            "groups":[
-               {
-                  "namespaces":[
-                     "IDFA",
-                     "GAID"
-                  ]
-               },
-               {
-                  "namespaces":[
-                     "EMAIL"
-                  ]
-               }
-            ]
-         }
-      }
-   },
    "destinationDelivery":[
       {
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
@@ -735,33 +654,6 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
       "bestEffortAggregation":{
          "maxUsersPerRequest":10,
          "splitUserById":false
-      }
-   },
-   "aggregation":{
-      "aggregationType":"CONFIGURABLE_AGGREGATION",
-      "configurableAggregation":{
-         "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
-         "aggregationKey":{
-            "includeSegmentId":true,
-            "includeSegmentStatus":true,
-            "includeIdentity":true,
-            "oneIdentityPerGroup":false,
-            "groups":[
-               {
-                  "namespaces":[
-                     "IDFA",
-                     "GAID"
-                  ]
-               },
-               {
-                  "namespaces":[
-                     "EMAIL"
-                  ]
-               }
-            ]
-         }
       }
    },
    "destinationDelivery":[
