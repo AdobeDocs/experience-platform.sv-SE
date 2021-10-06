@@ -5,10 +5,9 @@ title: Spark SQL-funktioner i frågetjänsten
 topic-legacy: spark sql functions
 description: Den här dokumentationen innehåller information om Spark SQL-funktioner som utökar SQL-funktioner.
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 07b3483a3e8c666e769a0d00d08fa4784d10813d
 workflow-type: tm+mt
-source-wordcount: '3893'
+source-wordcount: '3909'
 ht-degree: 0%
 
 ---
@@ -154,8 +153,8 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`next_day`](https://spark.apache.org/docs/latest/api/sql/index.html#next_day) | Returnerar den första dagen senare än indata |
 | [`quarter`](https://spark.apache.org/docs/latest/api/sql/index.html#quarter) | Returnerar inmatningens fjärdedel |
 | [`second`](https://spark.apache.org/docs/latest/api/sql/index.html#second) | Returnerar den andra delen av strängen |
-| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | Konverterar strängen till ett datum |
-| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | Konverterar strängen till en tidsstämpel |
+| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | Konverterar strängen till ett datum. **Obs!** Strängen  **** måste ha formatet  `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | Konverterar strängen till en tidsstämpel. **Obs!** Strängen  **** måste ha formatet  `yyyy-mm-ddTHH24:MM:SS`. |
 | [`to_unix_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_unix_timestamp) | Konverterar strängen till en Unix-tidsstämpel |
 | [`to_utc_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_utc_timestamp) | Konverterar strängen till en UTC-tidsstämpel |
 | [`trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#trunc) | Trunkerar datumet |
@@ -164,7 +163,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`weekofyear`](https://spark.apache.org/docs/latest/api/sql/index.html#weekofyear) | Returnerar veckan på året för ett givet datum |
 | [`year`](https://spark.apache.org/docs/latest/api/sql/index.html#year) | Returnerar året för strängen |
 
-### Matriser {#arrays}
+### Arrayer {#arrays}
 
 |  -funktion | Beskrivning |
 | -------- | ----------- |
@@ -198,7 +197,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`sort_array`](https://spark.apache.org/docs/latest/api/sql/index.html#sort_array) | Sortera en array, ange en ordning |
 | [`zip_with`](https://spark.apache.org/docs/latest/api/sql/index.html#zip_with) | Sammanfogar de två arrayerna till en enda array innan en funktion används |
 
-### Datatypsdatatypsbytesfunktioner {#datatype-casting}
+### Datatypsdatatypsbytefunktioner {#datatype-casting}
 
 |  -funktion | Beskrivning |
 | -------- | ----------- |
@@ -255,7 +254,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`unhex`](https://spark.apache.org/docs/latest/api/sql/index.html#unhex) | Konvertera det hexadecimala till binära |
 | [`uuid`](https://spark.apache.org/docs/latest/api/sql/index.html#uuid) | Returnera ett UUID |
 
-### Datautvärdering {#data-evaluation}
+### Utvärdering av data {#data-evaluation}
 
 |  -funktion | Beskrivning |
 | -------- | ----------- |
