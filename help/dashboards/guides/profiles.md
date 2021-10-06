@@ -4,16 +4,16 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: d5c69972426008809c3fd0ac03be995efcc2f541
+source-git-commit: 05f2ba2e8e7abadeef18a908ba8b0e9a02d4c3f8
 workflow-type: tm+mt
-source-wordcount: '1442'
+source-wordcount: '1475'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL Profiles] kontrollpanel
 
-Adobe Experience Platform användargränssnitt (UI) tillhandahåller en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de har tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet och den innehåller information om de mått som visas på kontrollpanelen.
+I Adobe Experience Platform användargränssnitt (UI) finns en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet och den innehåller information om de mått som visas på kontrollpanelen.
 
 En översikt över alla profilfunktioner i användargränssnittet i Experience Platform finns i [Användargränssnittshandboken för kundprofiler i realtid](../../profile/ui/user-guide.md).
 
@@ -77,7 +77,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 
 ### [!UICONTROL Profile count] {#profile-count}
 
-Widgeten **[!UICONTROL Profile count]** visar det totala antalet sammanfogade profiler i profildatalagret när ögonblicksbilden togs. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
+Widgeten **[!UICONTROL Profile count]** visar det totala antalet sammanfogade profiler i profilarkivet när ögonblicksbilden togs. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
 Mer information finns i [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies).
 
@@ -91,19 +91,17 @@ Mer information finns i [avsnittet om sammanfogningsprinciper tidigare i det hä
 
 ### [!UICONTROL Profiles added] {#profiles-added}
 
-Widgeten **[!UICONTROL Profiles added]** visar det totala antalet sammanfogade profiler som har lagts till i datalagret Profil vid den senaste ögonblicksbilden som togs. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person. Du kan använda listruteväljaren för att visa de profiler som lagts till under de senaste 30 dagarna, 90 dagarna eller 12 månaderna.
+Widgeten **[!UICONTROL Profiles added]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet vid den senaste ögonblicksbilden som togs. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person. Du kan använda listruteväljaren för att visa de profiler som lagts till under de senaste 30 dagarna, 90 dagarna eller 12 månaderna.
 
 >[!NOTE]
 >
->Widgeten [!UICONTROL Profiles added] visar antalet profiler som lagts till i systemet efter din organisations ursprungliga konfiguration. Mer information om hur du lägger till profiler i profilarkivet finns i [dokumentationen för kundprofilen i realtid](../../profile/home.md).
->
->Om till exempel fyra miljoner profiler lades till under konfigurationen och du lade till ytterligare en miljon profiler under de senaste 30 dagarna, skulle widgeten [!UICONTROL Profiles added] visa &quot;1 000 000&quot; medan widgeten [!UICONTROL Profile count] skulle visa &quot;5 000 000&quot;.
+>Widgeten [!UICONTROL Profiles added] visar antalet profiler som har lagts till efter att profilarkivet har konfigurerats och profiler har importerats. Med andra ord, om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1, är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profiles added]-widgeten är inställd på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild har tagits visar widgeten [!UICONTROL Profiles added] totalt 1 000 000 profiler tillagda, medan widgeten [!UICONTROL Profile count] visar totalt 5 000 000 profiler.
 
 ![](../images/profiles/profiles-added.png)
 
 ### [!UICONTROL Profiles count trend] {#profiles-count-trend}
 
-Widgeten **[!UICONTROL Profiles count trend]** visar det totala antalet sammanfogade profiler som har lagts till i datalagret Profil dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
+Widgeten **[!UICONTROL Profiles count trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
 Mer information finns i [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies).
 
