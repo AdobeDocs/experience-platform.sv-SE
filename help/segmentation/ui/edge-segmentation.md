@@ -5,16 +5,16 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: c1dc75d94774eff8ad9a7374b1fa158f737dd5a4
+source-git-commit: 6bb1f417b5856f153adebe4deaac4fab264ef3a8
 workflow-type: tm+mt
-source-wordcount: '362'
+source-wordcount: '417'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittsguide för kantsegmentering (beta)
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >Kantsegmentering är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
@@ -22,7 +22,15 @@ Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Expe
 
 ## Frågetyper för kantsegmentering
 
-En fråga kan utvärderas med kantsegmentering om den uppfyller något av följande kriterier:
+För närvarande kan endast utvalda frågetyper utvärderas med kantsegmentering. I följande avsnitt finns en lista med frågetyper som kan utvärderas med kantsegmentering och de som för närvarande inte stöds.
+
+### Frågetyper som stöds
+
+En fråga kan utvärderas med kantsegmentering om den uppfyller något av villkoren i följande tabell.
+
+>[!NOTE]
+>
+>Om frågan matchar någon av frågetyperna i följande tabell utvärderas den automatiskt med kantsegmentering. Den här funktionen bestäms automatiskt av systemet baserat på frågeuttrycket.
 
 | Frågetyp | Detaljer | Exempel |
 | ---------- | ------- | ------- |
@@ -31,7 +39,7 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av följa
 | Inkommande träff med ett tidsfönster på 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar |  |
 | Inkommande träde som refererar till en profil med ett tidsfönster på 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar och ett eller flera profilattribut |  |
 
-Om frågan matchar någon av ovanstående frågetyper utvärderas den automatiskt med kantsegmentering.
+### Frågetyper stöds inte för närvarande
 
 Följande frågetyper är **inte** som stöds för kantsegmentering:
 
@@ -43,6 +51,4 @@ Följande frågetyper är **inte** som stöds för kantsegmentering:
 
 ## Nästa steg
 
-Den här användarhandboken förklarar hur du utvärderar segment med kantsegmentering på Adobe Experience Platform.
-
-Läs [användarhandboken för segmentering](./overview.md) om du vill veta mer om hur du använder Adobe Experience Platform användargränssnitt. Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du läsa [API-guiden för kantsegmentering](../api/edge-segmentation.md).
+Den här guiden förklarar hur du utvärderar segment med kantsegmentering på Adobe Experience Platform. Mer information om hur du använder användargränssnittet i Experience Platform finns i [användarhandboken för segmentering](./overview.md). Om du vill lära dig att utföra liknande åtgärder och arbeta med segment med hjälp av API:er för Experience Platform går du till [API-guiden för kantsegmentering](../api/edge-segmentation.md).
