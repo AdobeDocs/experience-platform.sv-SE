@@ -1,17 +1,16 @@
 ---
 keywords: identiteter rtcdp;rtcdp identiteter;cdp-identiteter i realtid
-title: Identiteter i kunddataplattformen i realtid
+title: Identiteter i Real-time Customer Data Platform
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system.
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
+source-git-commit: 5611a5abc7d1ed7781108b6f263e7550092b715d
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
 
-
-# Identiteter i kunddataplattformen i realtid
+# Översikt över identiteter
 
 Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system. Normalt interagerar era kunder med ert varumärke i flera kanaler, vilket kan innebära att ni surfar på er webbplats online, gör ett köp i butiken, går med i ert lojalitetsprogram eller ringer en supportavdelning för att nämna några. I de olika systemen skapas en identitet för kunden, och med [!DNL Identity Service] blir det möjligt att sammanföra dessa identiteter för att se hela bilden.
 
@@ -19,7 +18,7 @@ I stället för att nu ha fem separata kunder som interagerar med ert varumärke
 
 ## Identitetsnamnutrymmen
 
-Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] och fungerar som indikatorer som ger ytterligare kontext till kundidentiteter. Ett exempel på ett vanligt ID-namnutrymme är&quot;E-post&quot;, där användningen av samma e-postadress på flera webbplatser gör att du kan sammanfoga flera olika identiteter, var och en med ett unikt kund-ID, som i själva verket tillhör samma kund. [!DNL Experience Platform] I kan du använda ID-namnutrymmen för att söka efter enskilda profiler i användargränssnittet. Mer information om visningsprofiler finns i [profilvisningsöversikten](/help/rtcdp/profile/profile-viewer.md). Mer information om namnutrymmen för identiteter finns i [översikten över namnutrymmen för identiteter](../../identity-service/namespaces.md).
+Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] och fungerar som indikatorer som ger ytterligare kontext till kundidentiteter. Ett exempel på ett vanligt ID-namnutrymme är&quot;E-post&quot;, där användningen av samma e-postadress på flera webbplatser gör att du kan sammanfoga flera olika identiteter, var och en med ett unikt kund-ID, som i själva verket tillhör samma kund. [!DNL Experience Platform] I kan du använda ID-namnutrymmen för att söka efter enskilda profiler i användargränssnittet. Mer information om att visa profiler finns i [översikten över profilbläddringen](profile-browse.md). Mer information om namnutrymmen för identiteter finns i [översikten över namnutrymmen för identiteter](../../identity-service/namespaces.md).
 
 ## Identitetsdiagram
 

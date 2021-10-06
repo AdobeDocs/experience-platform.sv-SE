@@ -2,17 +2,17 @@
 product: adobe experience platform
 solution: Experience Platform, Real-time Customer Data Platform
 audience: user
-user-guide-title: Handbok för kunddataplattform i realtid
+user-guide-title: Real-time Customer Data Platform Guide
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 30a4d2b27092f4706bb4f3f986a190502b184034
+source-git-commit: 8e7ceaa5f62ee7647b5a53c494c9b3acb43c14c7
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '160'
 ht-degree: 8%
 
 ---
 
 
-# Hjälp om kunddataplattform i realtid {#rtcdp}
+# Hjälp om Real-time Customer Data Platform {#rtcdp}
 
 * [CDP-översikt i realtid](overview.md)
 * [Översikt över CDP B2B Edition i realtid](b2b-overview.md)
@@ -24,19 +24,24 @@ ht-degree: 8%
       * [Kom igång med CDP B2B Edition i realtid](./b2b-use-case.md)
 * Administrering {#admin}
    * [Administration - översikt](administration/admin-overview.md)
+* Kontoprofiler {#account}
+   * [Kontoprofilöversikt](accounts/account-profile-overview.md)
+   * [Användargränssnittshandbok för kontoprofil](accounts/account-profile-ui-guide.md)
 * Datauppsättningar {#datasets}
    * [Datauppsättningar](datasets/dataset.md)
    * [Datakvalitet på plattform](datasets/data-quality.md)
 * Mål {#destinations}
    * [Översikt över mål](destinations/overview.md)
+* Identiteter {#identity}
+   * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Integritet och datahantering {#privacy}
    * [Sekretessöversikt](privacy/privacy-overview.md)
    * [Datastyrning - översikt](privacy/data-governance-overview.md)
+* Sammanfoga profiler {#merge-policies}
+   * [Översikt över kopplingsprofiler](profile/merge-policies.md)
 * Profiler {#profile}
    * [Profilöversikt](profile/profile-overview.md)
-   * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
-   * [Sammanfoga profiler](profile/merge-policies.md)
-   * [Profilvisningsprogram](profile/profile-viewer.md)
+   * [Bläddra i profil](profile/profile-browse.md)
 * Segment {#segmentation}
    * [Översikt över segmentering](segmentation/segmentation-overview.md)
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
