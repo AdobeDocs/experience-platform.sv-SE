@@ -3,9 +3,10 @@ title: API för datahygien (alfa)
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: dd8978566730975f0bde36f3af490cd33362b3ba
+exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
+source-git-commit: f956a8191614cc8e0eeaadaa55277abfbc5be106
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
@@ -17,6 +18,8 @@ ht-degree: 0%
 >API:t för datahygien är för närvarande alfa och din organisation har kanske inte åtkomst till det än. Funktionen som beskrivs i det här dokumentet kan komma att ändras.
 
 Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform. Till skillnad från Privacy Services-API:t behöver dessa åtgärder inte kopplas till juridiska sekretessbestämmelser och kan användas enbart för att hålla dina data rena och korrekta.
+
+Du kommer åt API:t via följande rotsökväg: `https://platform.adobe.io/data/core/hygiene/`
 
 ## Komma igång
 
