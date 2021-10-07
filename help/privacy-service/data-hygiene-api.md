@@ -3,9 +3,9 @@ title: API för datahygien (alfa)
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: dfe9c1ef826bc769a82938223029cd41c066c221
+source-git-commit: dd8978566730975f0bde36f3af490cd33362b3ba
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
@@ -106,6 +106,8 @@ curl -X POST \
 | --- | --- |
 | `companyContexts` | En array som innehåller autentiseringsinformation för din organisation. Den måste innehålla ett enda objekt med följande egenskaper: <ul><li>`namespace`: Måste anges till  `imsOrgID`.</li><li>`value`: Ditt IMS-organisations-ID. Detta är samma värde som anges i `x-gw-ims-org-id`-huvudet.</li></ul> |
 | `users` | En array som innehåller en samling med minst en användare vars information du vill ta bort. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det kan refereras till eller slås upp senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Måste innehålla ett strängvärde: `delete`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet innehåller följande egenskaper: <ul><li>`namespace`: Det  [ID-](../identity-service/namespaces.md) namnutrymme som är associerat med ID:t. Detta kan vara ett [standardnamnutrymme](./api/appendix.md#standard-namespaces) som identifieras av Platform, eller ett anpassat namnutrymme som definieras av din organisation. Den typ av namnutrymme som används måste återspeglas i egenskapen `type`.</li><li>`value`: Identitetsvärdet.</li><li>`type`: Måste anges till  `standard` om ett globalt identifierat namnutrymme används, eller  `custom` om du använder ett namnutrymme som definieras av din organisation.</li></ul></li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
