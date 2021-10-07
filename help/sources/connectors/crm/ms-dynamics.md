@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Microsoft Dynamics;microsoft dynamics;dynamics;Dynamics
 solution: Experience Platform
-title: Översikt över Microsoft Dynamics Source Connector
+title: Microsoft Dynamics Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Microsoft Dynamics till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 6ca162ce-2016-4270-b741-301cf4230233
-source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
+source-git-commit: 446436346e3368d98eb990dba1000ac0974b84dc
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '229'
 ht-degree: 1%
 
 ---
@@ -21,10 +21,6 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 ## IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
-
->[!IMPORTANT]
->
->[!DNL Microsoft Dynamics]-källkopplingen stöder för närvarande inte anslutning mellan flera regioner och plattformar. Det innebär att om din Azure-instans använder samma nätverksregion som plattformen går det inte att upprätta någon anslutning till plattformskällor. För närvarande stöds bara anslutning mellan regioner. Kontakta din kontoansvarige på Adobe för mer information.
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Microsoft Dynamics] till [!DNL Platform] med API:er eller användargränssnittet:
 

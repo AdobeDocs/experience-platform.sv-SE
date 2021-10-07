@@ -5,9 +5,9 @@ title: SQL Server Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Microsoft SQL Server till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 8a77f108-7e82-4e14-a470-a4ea97def89d
-source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
+source-git-commit: 446436346e3368d98eb990dba1000ac0974b84dc
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,6 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 ## IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
-
->[!IMPORTANT]
->
->SQL Server-källkopplingen [!DNL Microsoft] stöder för närvarande inte anslutning mellan flera regioner och plattformar. Det innebär att om din Azure-instans använder samma nätverksregion som plattformen går det inte att upprätta någon anslutning till plattformskällor. För närvarande stöds bara anslutning mellan regioner. Kontakta din kontoansvarige på Adobe för mer information.
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Microsoft] SQL Server till [!DNL Platform] med API:er eller användargränssnittet:
 

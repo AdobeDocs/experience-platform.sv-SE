@@ -5,9 +5,9 @@ title: Översikt över Azure File Storage Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure File Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 0a5e9df6-9760-4eeb-86d5-d92d77df3d2b
-source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
+source-git-commit: 446436346e3368d98eb990dba1000ac0974b84dc
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,6 @@ Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att
 ## IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
-
->[!IMPORTANT]
->
->[!DNL Azure File Storage]-källkopplingen stöder för närvarande inte anslutning mellan flera regioner och plattformar. Det innebär att om din Azure-instans använder samma nätverksregion som plattformen går det inte att upprätta någon anslutning till plattformskällor. För närvarande stöds bara anslutning mellan regioner. Kontakta din kontoansvarige på Adobe för mer information.
 
 ## Namnbegränsningar för filer och kataloger
 
