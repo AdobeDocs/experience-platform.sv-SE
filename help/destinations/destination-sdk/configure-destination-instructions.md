@@ -4,9 +4,9 @@ seo-description: This page describes how to use the reference information in Con
 seo-title: How to use Destination SDK to configure your destination
 title: Så här använder du mål-SDK för att konfigurera ditt mål
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 32b61276f3fe81ffa82fec1debf335ea51020ccd
+source-git-commit: 15626393bd69173195dd924c8817073b75df5a1e
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,8 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 ## Steg 2: Skapa målkonfiguration {#create-destination-configuration}
 
 Nedan visas ett exempel på en konfiguration för en målmall som skapats med API-slutpunkten `/destinations`. Mer information om den här mallen finns i [Målkonfiguration](./destination-configuration.md).
+
+Om du vill ansluta server- och mallkonfigurationen i steg 1 till den här målkonfigurationen lägger du till instans-ID:t för servern och mallkonfigurationen som `destinationServerId` här.
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destinations
@@ -109,6 +111,12 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
          "acceptsCustomNamespaces":true
       }
    },
+   "segmentMappingConfig":{
+      "mapExperiencePlatformSegmentName":false,
+      "mapExperiencePlatformSegmentId":false,
+      "mapUserInput":false,
+      "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
+   },   
    "aggregation":{
       "aggregationType":"CONFIGURABLE_AGGREGATION",
       "configurableAggregation":{
@@ -138,20 +146,24 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 Beroende på vilka nyttolaster målet har stöd för måste du skapa en mall som omformar formatet för exporterade data från Adobe XDM-formatet till ett format som stöds av målet. Se mallexempel i avsnittet [Använda ett mallspråk för identitets-, attribut- och segmentmedlemsomvandlingar](./message-format.md#using-templating) och använd [mallutvecklingsverktyget](./create-template.md) som tillhandahålls av Adobe.
 
+När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du till den i server- och mallkonfigurationen som du skapade i steg 1.
+
 ## Steg 4: Skapa konfiguration för målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver mål-SDK att du konfigurerar en målgruppsmetadatamall för att skapa, uppdatera eller ta bort målgrupper i ditt mål programmatiskt. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](./audience-metadata-management.md).
+För vissa destinationer kräver mål-SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i ditt mål programmatiskt. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](./audience-metadata-management.md).
+
+Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID:t för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
 ## Steg 5: Skapa konfiguration av autentiseringsuppgifter/Konfigurera autentisering {#set-up-authentication}
 
 Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller `"authenticationRule": "PLATFORM_AUTHENTICATION"` i målkonfigurationen ovan, kan du ställa in autentisering för ditt mål med hjälp av slutpunkten `/destination` eller `/credentials`.
 
-* **Mest vanliga fall**: Om du valde  `"authenticationRule": "CUSTOMER_AUTHENTICATION"` och målet har stöd för autentiseringsmetoden OAuth 2 läser du  [OAuth 2-autentisering](./oauth2-authentication.md).
+* **Mest vanliga fall**: Om du valde  `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2 läser du  [OAuth 2-autentisering](./oauth2-authentication.md).
 * Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"`, se [Konfiguration av autentiseringsuppgifter](./credentials-configuration.md) i referensdokumentationen.
 
 ## Steg 6: Testa destinationen {#test-destination}
 
-När du har konfigurerat målet med hjälp av mallarna i föregående steg kan du använda [måltestningsverktyget](./create-template.md) för att testa integrationen mellan Adobe Experience Platform och målet.
+När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i de föregående stegen kan du använda [måltestningsverktyget](./create-template.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
 

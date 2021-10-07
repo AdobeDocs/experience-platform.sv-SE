@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: c334a11ff6a03b38883a5319bc41cbe3f93c0289
+source-git-commit: 76a596166edcdbf141b5ce5dc01557d2a0b4caf3
 workflow-type: tm+mt
-source-wordcount: '2407'
+source-wordcount: '2405'
 ht-degree: 1%
 
 ---
@@ -168,7 +168,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `schemaConfig.profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `schemaConfig.segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
 | `schemaConfig.identityRequired` | Boolean | Använd `true` om du vill att användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
-| `aggregation.aggregationType` | – | Välj antingen `BEST_EFFORT` eller `CONFIGURABLE_AGGREGATION`. I exempelkonfigurationen ovan ingår `BEST_EFFORT`-aggregering. Ett exempel på `CONFIGURABLE_AGGREGATION` finns i exempelkonfigurationen i dokumentet [målkonfiguration](./destination-configuration.md#example-configuration). Observera att de parametrar som är relevanta för konfigurerbar aggregering beskrivs nedan i denna tabell. |
+| `aggregation.aggregationType` | – | Välj antingen `BEST_EFFORT` eller `CONFIGURABLE_AGGREGATION`. I exempelkonfigurationen ovan ingår `BEST_EFFORT`-aggregering. Ett exempel på `CONFIGURABLE_AGGREGATION` finns i exempelkonfigurationen i dokumentet [målkonfiguration](./destination-configuration.md#example-configuration). De parametrar som är relevanta för konfigurerbar aggregering beskrivs nedan i denna tabell. |
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. Ange maximalt antal profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br> Om servern inte accepterar flera användare per begäran anger du värdet 1. |
 | `aggregation.bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |
 | `aggregation.configurableAggregation.splitUserById` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |

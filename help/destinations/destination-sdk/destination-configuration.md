@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Alternativ för destinationskonfiguration för mål-SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 32b61276f3fe81ffa82fec1debf335ea51020ccd
+source-git-commit: 76a596166edcdbf141b5ce5dc01557d2a0b4caf3
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1724'
 ht-degree: 2%
 
 ---
@@ -13,13 +13,15 @@ ht-degree: 2%
 
 ## Översikt {#overview}
 
-Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
+Med den här konfigurationen kan du ange viktig information, t.ex. målnamn, kategori, beskrivning, logotyp med mera. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
+
+Den här konfigurationen kopplar även de andra konfigurationer som krävs för att målet ska fungera - målserver och målgruppsmetadata - till den här konfigurationen. Läs om hur du kan referera till de två konfigurationerna i ett [avsnitt längre ned nedan](./destination-configuration.md#connecting-all-configurations).
 
 Du kan konfigurera de funktioner som beskrivs i det här dokumentet med API-slutpunkten `/authoring/destinations`. Läs [Slutpunktsåtgärder för mål-API](./destination-configuration-api.md) för en fullständig lista över åtgärder som du kan utföra på slutpunkten.
 
 ## Exempelkonfiguration {#example-configuration}
 
-Nedan visas ett exempel på konfiguration för en fiktiv destination, Moviestar, som har slutpunkter på fyra platser i världen. Målet tillhör kategorin för mobila destinationer. Avsnitten nedan beskriver hur konfigurationen är konstruerad.
+Nedan finns ett exempel på konfiguration av en fiktiv destination, Moviestar, som har slutpunkter på fyra platser i världen. Målet tillhör kategorin för mobila destinationer. Avsnitten nedan beskriver hur konfigurationen är konstruerad.
 
 ```json
 {
@@ -118,14 +120,15 @@ Nedan visas ett exempel på konfiguration för en fiktiv destination, Moviestar,
             ]
          }
       }
-   }
+   },
+   "backfillHistoricalProfileData":true
 }
 ```
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `name` | Sträng | Anger målets namn i Experience Platform-katalogen. |
-| `description` | Sträng | Ange en beskrivning som Adobe ska använda i Experience Platform-destinationskatalogen för ditt destinationskort. Rikta dig för högst 4-5 meningar. |
+| `description` | Sträng | Ange en beskrivning för destinationskortet i Experience Platform-katalogen. Rikta dig för högst 4-5 meningar. |
 | `status` | Sträng | Anger målkortets livscykelstatus. Godkända värden är `TEST`, `PUBLISHED` och `DELETED`. Använd `TEST` när du först konfigurerar målet. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -193,7 +196,7 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `profileFields` | Array | *Visas inte i exempelkonfigurationen ovan.* När du lägger till fördefinierade  `profileFields`kan användare mappa Experience Platform-attribut till de fördefinierade attributen på målsidan. |
+| `profileFields` | Array | *Visas inte i exempelkonfigurationen ovan.* När du lägger till fördefinierade  `profileFields`kan Experience Platform-användare mappa plattformsattribut till de fördefinierade attributen på målsidan. |
 | `profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
 | `identityRequired` | Boolean | Använd `true` om användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
@@ -204,7 +207,7 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
 
 Parametrarna i det här avsnittet avgör hur målidentiteterna och -attributen fylls i mappningssteget i användargränssnittet i Experience Platform, där användare mappar sina XDM-scheman till schemat i målplatsen.
 
-Adobe måste veta vilka [!DNL Platform]-identiteter som kunder kan exportera till ditt mål. Några exempel är [!DNL Experience Cloud ID], hash-kodad e-post, enhets-ID ([!DNL IDFA], [!DNL GAID]). Dessa värden är [!DNL Platform] identitetsnamnutrymmen som kunder kan mappa till identitetsnamnutrymmen från målet.
+Du måste ange vilka [!DNL Platform] identiteter som kunder kan exportera till ditt mål. Några exempel är [!DNL Experience Cloud ID], hash-kodad e-post, enhets-ID ([!DNL IDFA], [!DNL GAID]). Dessa värden är [!DNL Platform] identitetsnamnutrymmen som kunder kan mappa till identitetsnamnutrymmen från målet.
 
 Identitetsnamnutrymmen kräver ingen 1-till-1-korrespondens mellan [!DNL Platform] och ditt mål.
 Kunder kan till exempel mappa ett [!DNL Platform] [!DNL IDFA]-namnutrymme till ett [!DNL IDFA]-namnutrymme från målet, eller mappa samma [!DNL Platform] [!DNL IDFA]-namnutrymme till ett [!DNL Customer ID]-namnutrymme i målet.
@@ -215,9 +218,9 @@ Läs mer i översikten [Identity Namespace](https://experienceleague.adobe.com/d
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `acceptsAttributes` | Boolean | Anger om målet accepterar standardprofilattribut. Normalt framhävs dessa attribut i våra partners dokumentation. |
+| `acceptsAttributes` | Boolean | Anger om målet accepterar standardprofilattribut. Normalt markeras dessa attribut i partners dokumentation. |
 | `acceptsCustomNamespaces` | Boolean | Anger om kunderna kan ställa in anpassade namnutrymmen i målet. |
-| `allowedAttributesTransformation` | Sträng | *Visas inte i exempelkonfigurationen*. Används till exempel när [!DNL Platform]-kunden har oformaterade e-postadresser som attribut och din plattform bara accepterar hash-kodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
+| `allowedAttributesTransformation` | Sträng | *Visas inte i exempelkonfigurationen*. Används till exempel när [!DNL Platform]-kunden har oformaterade e-postadresser som attribut och din plattform bara accepterar hash-kodade e-postmeddelanden. I det här objektet kan du använda den omformning som ska användas (till exempel omvandla e-postmeddelandet till gemener och sedan hash). Se till exempel `requiredTransformation` i [API-referens för målkonfiguration](./destination-configuration-api.md#update). |
 | `acceptedGlobalNamespaces` | – | Används för fall där plattformen accepterar [standardnamnutrymmen för identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa plattformsanvändare till att endast välja dessa ID-namnutrymmen. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -242,6 +245,14 @@ Genom `audienceTemplateId` knyter det här avsnittet även samman den här konfi
 
 Parametrarna som visas i konfigurationen ovan beskrivs i [API-referens för målslutpunkt](./destination-configuration-api.md).
 
+## Så här ansluter den här konfigurationen all nödvändig information för ditt mål {#connecting-all-configurations}
+
+Vissa inställningar för destinationen kan konfigureras via målservern eller slutpunkten för målmetadata. Slutpunkten för målkonfigurationen ansluter alla dessa inställningar genom att referera till konfigurationerna enligt följande:
+
+* Använd `destinationServerId` för att referera till målservern och mallkonfigurationen som har konfigurerats för ditt mål.
+* Använd `audienceMetadataId` för att referera till målgruppens metadatakonfiguration.
+
+
 ## Samlingsprincip {#aggregation}
 
 ![Samlingsprincip i konfigurationsmallen](./assets/aggregation-configuration.png)
@@ -260,7 +271,7 @@ Läs avsnittet om [att använda mallar](./message-format.md#using-templating) oc
 >
 >Använd det här alternativet om API-slutpunkten accepterar färre än 100 profiler per API-anrop.
 
-Det här alternativet fungerar bäst för destinationer som föredrar färre profiler per begäran och som hellre vill ta fler förfrågningar med mindre data än mindre förfrågningar med mer data.
+Det här alternativet fungerar bäst för mål som föredrar färre profiler per begäran och som hellre vill ta fler förfrågningar med färre data än färre förfrågningar med fler data.
 
 Använd parametern `maxUsersPerRequest` för att ange det maximala antalet profiler som ditt mål kan ta i en begäran.
 
@@ -277,10 +288,10 @@ Med det här alternativet kan du:
 
 Detaljerade förklaringar av aggregeringsparametrarna finns på [API-målets slutpunktsåtgärder](./destination-configuration-api.md) referenssida, där varje parameter beskrivs.
 
-<!--
+## Krav på historisk profil
 
-commenting out the `backfillHistoricalProfileData` parameter, which will only be used after an April release
+Du kan använda parametern `backfillHistoricalProfileData` i målkonfigurationen för att avgöra om historiska profilkvalifikationer ska exporteras till ditt mål.
 
-|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the segment before the segment is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the segment after the segment is activated. </li></ul> |
-
--->
+| Parameter | Typ | Beskrivning |
+|---------|----------|------|
+| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`:  [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`:  [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
