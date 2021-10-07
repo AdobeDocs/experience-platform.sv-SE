@@ -5,10 +5,9 @@ title: Översikt över Azure Event Hubs Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-translation-type: tm+mt
-source-git-commit: 6dac267be93241bffb4eb5092a6e8da5093c63a6
+source-git-commit: 481f72c5c630f6dbcbbfd3eee11c91787e780f3f
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
@@ -19,10 +18,6 @@ ht-degree: 0%
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
 Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] gör att ni kan hämta in data  [!DNL Azure Event Hubs] i realtid.
-
-## IP-adress tillåtelselista
-
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 ## Anslut [!DNL Azure Event Hubs] till [!DNL Platform]
 

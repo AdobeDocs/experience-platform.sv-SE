@@ -5,10 +5,9 @@ title: Amazon Kinesis Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Amazon Kinesis till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
-translation-type: tm+mt
-source-git-commit: af11bc966889be54fc27e02f3eee321519cef88f
+source-git-commit: 481f72c5c630f6dbcbbfd3eee11c91787e780f3f
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
@@ -18,10 +17,6 @@ ht-degree: 0%
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
 Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] gör att ni kan hämta in data  [!DNL Amazon Kinesis] i realtid.
-
-## IP-adress tillåtelselista
-
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 ## Förutsättningar
 
@@ -67,7 +62,7 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att skapa
 | `kinesis:DescribeStream` | En åtgärd som returnerar information om strömmen, inklusive skuggkartan, som behövs för att generera ett kort-ID. |
 | `kinesis:ListStreams` | En åtgärd som krävs för att visa en lista över tillgängliga strömmar som du kan välja i användargränssnittet. |
 
-Mer information om hur du styr åtkomst för [!DNL Kinesis]-dataströmmar finns i följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
+For more information on controlling access for [!DNL Kinesis] data streams, see the following [[!DNL Kinesis] document](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ### Konfigurera iteratortyp
 

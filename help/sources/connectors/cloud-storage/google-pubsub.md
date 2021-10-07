@@ -5,10 +5,9 @@ title: Google PubSub Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Google PubSub till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 481f72c5c630f6dbcbbfd3eee11c91787e780f3f
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '191'
 ht-degree: 0%
 
 ---
@@ -22,10 +21,6 @@ ht-degree: 0%
 Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för molnleverantörer som [!DNL AWS], [!DNL Google Cloud Platform] och [!DNL Azure], vilket gör att du kan överföra data från dessa system till plattformen för användning i underordnade tjänster och mål.
 
 Lagringskällor i molnet kan hämta dina data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i källarbetsflödet. Med hjälp av plattformen kan du hämta data från [!DNL Azure Event Hubs] i realtid.
-
-## IP-adress tillåtelselista
-
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 ## Anslut [!DNL Google PubSub] till plattformen
 
