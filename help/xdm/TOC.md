@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 05d5a599b3ed101fab7ab96e4f218592f7e923ef
+source-git-commit: 4a74faad811d9b13f93799686df44f04a8d1b784
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '397'
 ht-degree: 6%
 
 ---
@@ -65,6 +65,8 @@ ht-degree: 6%
       * [IAB TCF 2.0-samtycke](./field-groups/event/iab.md)
       * [Bostadsreservation](./field-groups/event/lodging-reservation.md)
       * [Reservationsinformation](./field-groups/event/reservation-details.md)
+      * [Uppgraderingsinformation](./field-groups/event/upgrade-details.md)
+      * [Merförsäljning](./field-groups/event/upsell-details.md)
       * [Webbinformation](./field-groups/event/web-details.md)
    * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
@@ -91,6 +93,7 @@ ht-degree: 6%
    * [Info om geo-interaktion](./data-types/geo-interaction-details.md)
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
+   * [Impressions](./data-types/impressions.md)
    * [Marknadsföring](./data-types/marketing.md)
    * [Mät](./data-types/measure.md)
    * [Order](./data-types/order.md)
