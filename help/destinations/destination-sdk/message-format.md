@@ -4,9 +4,9 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: a1e77520ba5555db42578eac261e01e77130aea2
+source-git-commit: c328293cf710ad8a2ddd2e52cb01c86d29c0b569
 workflow-type: tm+mt
-source-wordcount: '2090'
+source-wordcount: '1995'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,6 @@ Om du vill veta mer om Adobe kan du bekanta dig med följande koncept från Expe
 
 * **Experience Data Model (XDM)**. [XDM-](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) översikt och   [hur du skapar ett XDM-schema i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
-* **Fältgrupp**. [Fältgruppsdefinition ](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#field-group) och  [mer information om fältgrupper](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
 * **IdentityMap**. Identitetskartan representerar en karta över alla slutanvändaridentiteter i Adobe Experience Platform. Se `xdm:identityMap` i [XDM-fältordlistan](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
 * **SegmentMembership**. XDM-attributet [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) anger vilka segment en profil tillhör. För de tre olika värdena i fältet `status`, läs dokumentationen om schemafältgruppen [Information om segmentmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
 
@@ -31,22 +30,26 @@ Adobe Experience Platform exporterar data till ett stort antal destinationer, i 
 
 Experience Platform kan justera det exporterade meddelandeformatet så att det matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
 * Källa (1) och mål (2) XDM-schema i Adobe Experience Platform
-* meddelandeformatet på partnersidan (3), och
-* Omformningslagret mellan de två, som du kan definiera genom att skapa en [meddelandeomformningsmall](./message-format.md#using-templating).
+* Det förväntade meddelandeformatet på partnersidan (3), och
+* Omformningslagret mellan XDM-schemat och det förväntade meddelandeformatet, som du kan definiera genom att skapa en [meddelandeomformningsmall](./message-format.md#using-templating).
 
 ![Schema till JSON-omvandling](./assets/transformations-3-steps.png)
 
-Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt.
+Experience Platform använder XDM-scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt.
 
-Användare som vill aktivera data till målet måste mappa fälten som de använder för sina datauppsättningar i Experience Platform till ett schema som översätts till målets förväntade format. Adobe skapar en anpassad fältgrupp som ditt företag kan lägga till i målschemat. Fälten i fältgruppen beror på vilka profilattributfält som du kan ta emot.
+<!--
 
-**XDM-källschema (1)**: Detta avser det schema som en kund använder i Experience Platform. I Experience Platform, i [mappningssteget](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) för aktiveringsmålarbetsflödet, mappade kunder fält från sina källscheman till målschemat (2).
+Users who want to activate data to your destination need to map the fields in their Experience Platform datasets to a schema that translates to your destination's expected format. Adobe will create a custom field group for your company to add to the target schema. The fields in the field group depend on the profile attribute fields that you can receive.
 
-**Mål-XDM-schema (2)**: Baserat på det JSON-standardschema (3) som du delar med Adobe skapar teamet på Adobe ett anpassat schema för ditt mål. Observera att i en [framtida fas av projektet](./overview.md#phased-approach) kan du skapa det anpassade schemat för ditt mål på egen hand.
+-->
 
-**JSON-standardschema för målprofilens attribut (3)**: Dela med oss en  [JSON-](https://json-schema.org/learn/miscellaneous-examples.html) översikt över alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för kan vara `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName` och så vidare.
+**XDM-källschema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, i [mappningssteget](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) för aktiveringsmålarbetsflödet, mappade kunder fält från sina källscheman till målschemat (2).
 
-Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur strukturen för ett meddelande ändras mellan käll-XDM-schemat och exempelschemat på partnersidan:
+**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format kan du definiera profilattribut och identiteter i ditt mål-XDM-schema. Detta kan du göra i målkonfigurationen, i objekten [schemaConfig](./destination-configuration.md#schema-configuration) och [identityNamespaces](./destination-configuration.md#identities-and-attributes).
+
+**JSON-standardschema för målprofilens attribut (3)**: Det här objektet representerar en  [JSON-](https://json-schema.org/learn/miscellaneous-examples.html) schema med alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för kan vara `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName` och så vidare. Du behöver en [meddelandeomformningsmall](./message-format.md#using-templating) för att anpassa data som exporteras från Experience Platform till det förväntade formatet.
+
+Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur strukturen för ett meddelande ändras mellan XDM-källschemat och ett exempelschema på partnersidan:
 
 ![Exempel på omformningsmeddelande](./assets/transformations-with-examples.png)
 
@@ -59,7 +62,7 @@ För att demonstrera omvandlingsprocessen används i exemplet nedan tre vanliga 
 
 >[!NOTE]
 >
->Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i Adobe Experience Platform-användargränssnittet i **mappningssteget** i [aktivera målarbetsflödet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#mapping).
+>Kunden mappar attributen från XDM-källschemat till XDM-partnerschemat i Adobe Experience Platform-användargränssnittet i **mappningssteget** i [aktivera målarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping).
 
 Anta att din plattform kan ta emot ett meddelandeformat som:
 
@@ -139,7 +142,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -237,7 +240,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -341,7 +344,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -479,7 +482,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -661,7 +664,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 ```python
 {
@@ -779,7 +782,7 @@ Profil 2:
 
 När du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen kan du gruppera de profiler som exporteras till ditt mål baserat på villkor som segment-ID, segmentalias, segmentmedlemskap eller identitetsnamnutrymmen.
 
-I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Detta hjälper dig att formatera HTTP-meddelandet som exporteras från Experience Platform för att matcha det format som förväntas av destinationen.
+I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns ovan, vilket visas i exemplen i följande avsnitt. Använd aggregeringsnycklar för att strukturera HTTP-meddelandet som exporterats utanför Experience Platform så att det matchar de format- och hastighetsbegränsningar som förväntas av ditt mål.
 
 #### Använd aggregeringsnyckeln för segment-ID i mallen {#aggregation-key-segment-id}
 
@@ -880,9 +883,9 @@ Profil 4:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
-Observera nedan hur `audienceId` används i mallen för att komma åt segment-ID:n. Detta förutsätter att du använder `audienceId` för segmentmedlemskap i måltaxonomin. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
+Observera nedan hur `audienceId` används i mallen för att komma åt segment-ID:n. I det här exemplet antas att du använder `audienceId` för segmentmedlemskap i måltaxonomin. Du kan använda vilket annat fältnamn som helst, beroende på din egen taxonomi.
 
 ```python
 {
@@ -944,7 +947,7 @@ customerList={{input.aggregationKey.segmentAlias}}
 
 #### Använd segmentets statusaggregeringsnyckel i mallen {#aggregation-key-segment-status}
 
-Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true, kan du komma åt segmentstatusen i mallen för att gruppera profiler i HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
+Om du använder [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) och anger `includeSegmentId` och `includeSegmentStatus` till true kan du komma åt segmentstatusen i mallen. På så sätt kan du gruppera profiler i de HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
 
 Möjliga värden är:
 
@@ -960,7 +963,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### Använd aggregering för identitetsnamnrymd i mallen {#aggregation-key-identity}
 
-Nedan visas ett exempel där [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen är inställd på att aggregera exporterade profiler efter identitetsnamnutrymmen, i formatet `"namespaces": ["email", "phone"]` och `"namespaces": ["GAID", "IDFA"]`. Se parametern `groups` i [API-referensen för målkonfigurationen](./destination-configuration-api.md) för att se hur detta görs.
+Nedan visas ett exempel där [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) i målkonfigurationen är inställd på att aggregera exporterade profiler efter identitetsnamnutrymmen, i formatet `"namespaces": ["email", "phone"]` och `"namespaces": ["GAID", "IDFA"]`. Mer information om den här grupperingen finns i `groups`-parametern i [API-referensen för målkonfigurationen](./destination-configuration-api.md).
 
 **Indata**
 
@@ -1032,7 +1035,7 @@ Profil 2:
 
 >[!IMPORTANT]
 >
->För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>För alla mallar som du använder måste du undvika ogiltiga tecken, till exempel dubbla citattecken `""` innan du infogar mallen i [målserverkonfigurationen](./server-and-template-configuration.md#template-specs). Mer information om att undvika dubbla citattecken finns i kapitel 9 i [JSON-standarden](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 
 Observera att `input.aggregationKey.identityNamespaces` används i mallen nedan
 
@@ -1056,7 +1059,7 @@ Observera att `input.aggregationKey.identityNamespaces` används i mallen nedan
 
 **Resultat**
 
-När profilerna exporteras till ditt mål delas de upp i två grupper baserat på deras identitetsnamnutrymmen (e-post och telefon i en grupp, GAID och IDFA i en annan).
+När profilerna exporteras till ditt mål delas de upp i två grupper utifrån deras ID-namnutrymmen. E-post och telefon finns i en grupp, medan GAID och IDFA är i en annan.
 
 ```json
 {
@@ -1108,7 +1111,7 @@ När profilerna exporteras till ditt mål delas de upp i två grupper baserat p�
 
 #### Använda aggregeringsnyckeln i en URL-mall {#aggregation-key-url-template}
 
-Observera, att beroende på ditt användningssätt, kan du även använda de aggregeringsnycklar som beskrivs här i en URL-adress, vilket visas nedan:
+Beroende på ditt användningssätt kan du även använda de aggregeringsnycklar som beskrivs här i en URL, som visas nedan:
 
 ```python
 https://api.example.com/audience/{{input.aggregationKey.segmentId}}
