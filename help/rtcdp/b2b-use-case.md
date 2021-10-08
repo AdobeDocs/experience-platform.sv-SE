@@ -1,15 +1,16 @@
 ---
-keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
-title: Exempel på användningsfall för kunddataplattform B2B Edition i realtid
-description: Detta exempel ger ett exempel på hur du konfigurerar din implementering av kunddataplattformen B2B Edition i realtid.
-source-git-commit: 30a4d2b27092f4706bb4f3f986a190502b184034
+keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;realtids-cdp;cdp;rtcdp
+title: Exempel på användningsfall för Real-time Customer Data Platform B2B Edition
+description: Det här exempelscenariot är ett exempel på hur du konfigurerar din implementering av Real-time Customer Data Platform B2B Edition.
+exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
+source-git-commit: 4ebc3ef813c3c44aa2b8a7aab5ccabbcc3c332b2
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
 
-# Exempel på användningsfall för kunddataplattform B2B Edition i realtid
+# Exempel på användningsfall för Real-time Customer Data Platform B2B Edition
 
 >[!IMPORTANT]
 >
@@ -18,8 +19,7 @@ ht-degree: 0%
 Real-time Customer Data Platform B2B Edition utökar de befintliga CDP- och Adobe Experience Platform-erbjudandena i realtid för att stödja B2B-data och arbetsflöden. Det här dokumentet innehåller ett exempel på hur man kan använda B2B-versionen för att demonstrera de ytterligare fördelarna. De omfattar följande:
 
 - Kombinera person- och kontodata från olika externa datakällor för att skapa en heltäckande bild som ger en bättre förståelse för kunderna och mer korrekt segmentering. Mer information finns i dokumentationen om [att skapa XDM-schemarelationer](./schemas/b2b.md) för användning med olika B2B-källor.
-- Segmentera en målgrupp baserat på attribut för relaterade enheter. Detta inkluderar konton, säljprojekt, kampanjer och marknadsföringslistor. Segment begränsas inte längre till bara personattribut och upplevelsehändelser. Se dokumentationen för B2B-segmentering för fler exempel på hur man skapar B2B-specifika målgrupper.
-   <!-- PLACEHOLDER [B2B segmentation documentation]()  -->
+- Segmentera en målgrupp baserat på attribut för relaterade enheter. Detta inkluderar konton, säljprojekt, kampanjer och marknadsföringslistor. Segment begränsas inte längre till bara personattribut och upplevelsehändelser. Se [B2B-segmenteringsdokumentationen](./segmentation/b2b.md) för fler exempel på hur du skapar B2B-specifika målgrupper.
 - Inbyggt stöd för användning av en person som är relaterad till flera konton.
 
 ## Användningsfall
@@ -97,12 +97,10 @@ Genom att läsa det här dokumentet har du nu introducerats till de typer av må
 
 Följande dokumentation rekommenderas för att förbättra din förståelse av B2B-specifika funktioner:
 
-<!-- - [Marketo connector]() -->
+<!-- PLACEHOLDER Link to B2B tutorial required  -->
+- [Källor i Real-time Customer Data Platform B2B Edition](./sources/b2b.md)
 - [Scheman i Real-time Customer Data Platform B2B Edition](./schemas/b2b.md)
-- [Marketo Engage måldokumentation](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html)
-- [Konfigurera ett mål för LinkedIn Matched Auditions](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/social/linkedin.html#connect)
-
-<!-- PLACEHOLDER -->
-<!-- - [Account Profiles]() -->
-<!-- - [B2B Segmentation examples]() -->
-<!-- PLACEHOLDERS to tutorial / account profiles / B2B connectors / segmentation examples -->
+- [Exempel på B2B-segmentering](./segmentation/b2b.md)
+- [Kontoprofiler - översikt](./accounts/account-profile-overview.md)
+- [Destinationer i Real-time Customer Data Platform B2B Edition](./destinations/b2b.md)
+- [Konfigurera ett mål för LinkedIn Matched Auditions](../destinations/catalog/social/linkedin.md)

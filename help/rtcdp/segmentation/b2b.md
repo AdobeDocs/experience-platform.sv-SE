@@ -1,14 +1,15 @@
 ---
 title: Översikt över användningsexempel för segmentering för CDP B2B Edition i realtid.
-description: Översikt över de olika användningsområdena för CDP B2B Edition i realtid som finns.
-source-git-commit: e85d4b108e2d4a6a88772c071d9281603b695ada
+description: En översikt över de olika användningsområdena för CDP B2B Edition i realtid.
+exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
+source-git-commit: cc4bd6f3b70a90b53aaaf6a4c31d23fddd8a3f44
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
 
-# Översikt över användningen av segmentering för kunddataplattformen B2B Edition (betaversion) i realtid
+# Översikt över användningen av segmentering för Real-time Customer Data Platform B2B Edition (beta)
 
 <!-- This document relates to this [ticket](https://jira.corp.adobe.com/browse/PLAT-100468) -->
 
@@ -20,7 +21,7 @@ Det här dokumentet innehåller exempel på den segmentering som är tillgängli
 
 >[!NOTE]
 >
->De attribut som krävs för denna segmenteringsanvändning är endast tillgängliga för kunder som har Real-time Customer Data Platform B2B Edition. Om du vill veta mer om CDP i realtid, inklusive de funktioner och funktioner som är tillgängliga för varje licenstyp, kan du börja med att läsa [CDP-översikt i realtid](../overview.md).
+>Attributen som krävs för denna segmenteringsanvändning är endast tillgängliga för Real-time Customer Data Platform B2B Edition-kunder. Om du vill veta mer om CDP i realtid, inklusive de funktioner och funktioner som är tillgängliga för varje licenstyp, kan du börja med att läsa [CDP-översikt i realtid](../overview.md).
 
 ## Förutsättningar
 
@@ -37,7 +38,7 @@ När dessa krav är uppfyllda kan du kombinera dessa attribut för vanliga B2B-s
 
 När föreningsscheman för B2B-klasserna har upprättat relationer och har använts för att importera data, blir deras attribut tillgängliga i den vänstra listen i Segment Builder.
 
-B2B-klasser och deras attribut läggs till med en `B2B`-etikett i arbetsytan Segmentering för att skilja dem från dem som finns som standard i kunddataplattformen i realtid.
+B2B-klasser och deras attribut läggs till med en `B2B`-etikett i arbetsytan Segmentering för att skilja dem från dem som finns som standard i Real-time Customer Data Platform.
 
 För att effektivt kunna skapa segment för B2B-användning är det viktigt att ha en god kunskap om schemat och förstå hur datamodellen ser ut. Det är också praktiskt att vara medveten om den sökväg som data tar från ett dataobjekt till ett annat.
 
@@ -55,7 +56,7 @@ Relationen återspeglas i segmentbyggaren genom att använda mapparna `Key`, vil
 
 ![källnyckelsexempel med segmentbyggaren i segmenteringsarbetsytan](../assets/segmentation/source-key-segmentation-example.png)
 
-Mer information om tillgängliga B2B-klasser finns i [scheman i dokumentationen för kunddataplattformen B2B Edition i realtid](../schemas/b2b.md).
+Mer information om tillgängliga B2B-klasser finns i [scheman i dokumentationen för Real-time Customer Data Platform B2B Edition](../schemas/b2b.md).
 
 Användningsexemplen nedan ger information om vilka klasser som används för att upprätta relationer mellan olika scheman för att uppnå dessa resultat. De här exemplen kan användas för att skapa egna segment.
 

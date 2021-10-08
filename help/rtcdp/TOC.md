@@ -4,10 +4,10 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: Real-time Customer Data Platform Guide
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 8e7ceaa5f62ee7647b5a53c494c9b3acb43c14c7
+source-git-commit: 2d9b1df064f0e2a5aa981d0144fefecc9d0a4146
 workflow-type: tm+mt
-source-wordcount: '160'
-ht-degree: 8%
+source-wordcount: '171'
+ht-degree: 7%
 
 ---
 
@@ -32,6 +32,7 @@ ht-degree: 8%
    * [Datakvalitet på plattform](datasets/data-quality.md)
 * Mål {#destinations}
    * [Översikt över mål](destinations/overview.md)
+   * [Destinationer i realtid CDP B2B Edition](destinations/b2b.md)
 * Identiteter {#identity}
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Integritet och datahantering {#privacy}
@@ -45,7 +46,7 @@ ht-degree: 8%
 * Segment {#segmentation}
    * [Översikt över segmentering](segmentation/segmentation-overview.md)
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
-   * [B2B-segmentering](segmentation/b2b.md)
+   * [Segmentering i realtid med CDP B2B Edition](segmentation/b2b.md)
    * [Kund-AI](segmentation/customer-ai.md)
 * Scheman {#schemas}
    * [Översikt över scheman](schemas/overview.md)
