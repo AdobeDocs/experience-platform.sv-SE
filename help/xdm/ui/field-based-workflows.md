@@ -4,9 +4,9 @@ description: Lär dig hur du lägger till fält från befintliga fältgrupper in
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: b7c6f37d3e6d824465713647b624473cff188378
+source-git-commit: 0bac76ce754468bd7e5396b6f68fbcfc3d6e4aed
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->De arbetsflöden som beskrivs i det här dokumentet är för närvarande betaversioner. Funktionen och dokumentationen kan komma att ändras.
+>De arbetsflöden som beskrivs i det här dokumentet är för närvarande betaversioner och din organisation har kanske inte åtkomst till dem än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
 
 Adobe Experience Platform tillhandahåller en robust uppsättning standardiserade [fältgrupper](../schema/composition.md#field-group) som kan användas i XDM-scheman (Experience Data Model). Strukturen och semantiken bakom dessa fältgrupper är noga anpassade för att uppfylla ett stort antal användningsfall för segmentering och andra applikationer längre fram i kedjan av plattformar. Du kan också definiera egna fältgrupper för att tillgodose unika affärsbehov.
 
@@ -43,7 +43,7 @@ Om det finns flera fält som du vill ta bort kan du hantera fältgruppen som hel
 
 ![Hantera relaterade fält](../images/ui/field-based-workflows/manage-related-fields.png)
 
-En dialogruta visas med strukturen för fältgruppen i fråga. Härifrån kan du använda de angivna kryssrutorna för att markera eller avmarkera de fält som du behöver. När du är nöjd väljer du **[!UICONTROL Add fields]**.
+En dialogruta visas med strukturen för fältgruppen i fråga. Härifrån kan du använda de angivna kryssrutorna för att markera eller avmarkera de fält som du behöver. När du är nöjd väljer du **[!UICONTROL Confirm]**.
 
 ![Välj fält från fältgrupp](../images/ui/field-based-workflows/select-fields.png)
 
@@ -73,23 +73,23 @@ Arbetsytan uppdateras för att visa det standardfält som lagts till i schemat, 
 
 ## Lägga till anpassade fält direkt i ett schema
 
-Om du tidigare har [skapat anpassade fältgrupper](./resources/field-groups.md#create) kan du lägga till anpassade fält direkt i schemat utan att behöva lägga till dem separat i en anpassad fältgrupp i förväg.
-
->[!WARNING]
->
->När du lägger till ett anpassat fält i ett schema måste du fortfarande markera en befintlig anpassad fältgrupp som det ska kopplas till. Det innebär att om du vill lägga till anpassade fält direkt i ett schema måste du ha minst en anpassad fältgrupp som har definierats tidigare i sandlådan som du arbetar i. Alla andra scheman som använder den anpassade fältgruppen ärver dessutom det nya fältet när du har sparat ändringarna.
+På samma sätt som arbetsflödet för standardfält kan du även lägga till egna anpassade fält direkt i ett schema.
 
 Om du vill lägga till fält på rotnivån för ett schema, markerar du plusikonen (**+**) bredvid schemats namn på arbetsytan. En **[!UICONTROL Untitled Field]**-platshållare visas i schemastrukturen och den högra uppdateringen av rälen för att visa kontroller för att konfigurera fältet.
 
 ![Anpassat rotfält](../images/ui/field-based-workflows/root-custom-field.png)
 
-Börja skriva in namnet på det anpassade fält som du vill lägga till så börjar systemet automatiskt att söka efter matchande standardfält. Om du vill skapa ett nytt anpassat fält i stället, markerar du det översta alternativet som lagts till med **([!UICONTROL New Field])**.
+Börja skriva in namnet på det fält som du vill lägga till så börjar systemet automatiskt att söka efter matchande standardfält. Om du vill skapa ett nytt anpassat fält i stället, markerar du det översta alternativet som lagts till med **([!UICONTROL New Field])**.
 
 ![Nytt fält](../images/ui/field-based-workflows/custom-field-search.png)
 
-Här anger du ett visningsnamn och en datatyp för fältet. Under **[!UICONTROL Assign field group]** väljer du den anpassade fältgrupp som du vill att det nya fältet ska associeras med.
+Här anger du ett visningsnamn och en datatyp för fältet. Under **[!UICONTROL Assign field group]** måste du välja en fältgrupp för det nya fältet som ska associeras med. Börja skriva in namnet på fältgruppen. Om du tidigare har [skapat anpassade fältgrupper](./resources/field-groups.md#create) visas de i listrutan. Du kan också skriva ett unikt namn i fältet för att skapa en ny fältgrupp i stället.
 
 ![Välj fältgrupp](../images/ui/field-based-workflows/select-field-group.png)
+
+>[!WARNING]
+>
+>Om du väljer en befintlig anpassad fältgrupp kommer alla andra scheman som använder den fältgruppen också att ärva det nya fältet när du har sparat ändringarna. Därför bör du bara markera en befintlig fältgrupp om du vill använda den här typen av spridning. Annars bör du välja att skapa en ny anpassad fältgrupp i stället.
 
 När du är klar väljer du **[!UICONTROL Apply]**.
 
@@ -110,6 +110,8 @@ Om schemat du arbetar med har ett objekttypsfält från en standardfältgrupp, k
 ![Lägg till fält i standardobjekt](../images/ui/field-based-workflows/add-field-to-standard-object.png)
 
 När du har gjort ändringarna visas det nya fältet under ditt innehavar-ID-namnutrymme i standardobjektet. Det här kapslade namnutrymmet förhindrar konflikter mellan fält och namn inom själva fältgruppen för att undvika att bryta ändringar i andra scheman som använder samma fältgrupp.
+
+![Fält tillagt i standardobjekt](../images/ui/field-based-workflows/added-to-standard-object.png)
 
 ## Nästa steg
 
