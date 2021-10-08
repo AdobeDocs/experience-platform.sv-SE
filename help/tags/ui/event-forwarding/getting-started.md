@@ -1,7 +1,8 @@
 ---
 title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: f82bfac9-dc2d-44de-a308-651300f107df
+source-git-commit: 406c7e90c315c1807f5f3dd2b32462868b312197
 workflow-type: tm+mt
 source-wordcount: '874'
 ht-degree: 1%
@@ -98,7 +99,7 @@ Konfigurera sedan Edge Network för att skicka data till händelsevidarebefordra
 
 Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
-## Konfigurera taggen Web SDK-tillägget för att skicka data till den tidigare skapade dataströmmen
+## Konfigurera Platform Web SDK-tillägget för att skicka data till dataströmmen som skapats tidigare
 
 Skapa din egenskap i användargränssnittet för datainsamling och använd sedan tillägget Adobe Experience Platform Web SDK för att konfigurera den.
 
