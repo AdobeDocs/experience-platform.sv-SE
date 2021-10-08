@@ -5,7 +5,7 @@ title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: 403dcb75e43b5c7aa462495086e5a9e403ef6f5b
+source-git-commit: 2871108b67d3d84f1578e80e9c087444ff407820
 workflow-type: tm+mt
 source-wordcount: '984'
 ht-degree: 0%
@@ -77,50 +77,52 @@ Följande är en jämförelse sida vid sida som visar födelsedagsrelaterade fä
   <tr>
   <td>
   <pre class=" language-json">
-        {
-          "xdm:bornDate": {
-              "title": "Födelsedatum",
-              "type": "string",
-              "format": "date",
-          },
-          "xdm:bornDayAndMonth": {
-              "title": "Födelsedatum",
-              "type": "string",
-              "pattern": "[0-1][0-9]-[0-9][0-9]",
-          },
-          "xdm:bornYear": {
-              "title": "Födelseår",
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 32767
-        }
+{
+  "xdm:bornDate": {
+    "title": "Födelsedatum",
+    "type": "string",
+    "format": "date"
+  },
+  "xdm:bornDayAndMonth": {
+    "title": "Födelsedatum",
+    "type": "string",
+    "pattern": "[0-1][0-9]-[0-9][0-9]"
+  },
+  "xdm:bornYear": {
+    "title": "Födelseår",
+    "type": "integer",
+    "minimum": 1,
+    "maximum": 32767
+  }
+}
   </pre>
   </td>
   <td>
   <pre class=" language-json">
-        {
-          "bornDate": {
-              "title": "Födelsedatum",
-              "type": "string",
-              "format": "date",
-              "meta:xdmField": "xdm:bornDate",
-              "meta:xdmType": "date"
-          },
-          "bornDayAndMonth": {
-              "title": "Födelsedatum",
-              "type": "string",
-              "pattern": "[0-1][0-9]-[0-9][0-9]",
-              "meta:xdmField": "xdm:bornDayAndMonth",
-              "meta:xdmType": "string"
-          },
-          "bornYear": {
-              "title": "Födelseår",
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 32767,
-              "meta:xdmField": "xdm:bornYear",
-              "meta:xdmType": "short"
-        }
+{
+  "bornDate": {
+    "title": "Födelsedatum",
+    "type": "string",
+    "format": "date",
+    "meta:xdmField": "xdm:bornDate",
+    "meta:xdmType": "date"
+  },
+  "bornDayAndMonth": {
+    "title": "Födelsedatum",
+    "type": "string",
+    "pattern": "[0-1][0-9]-[0-9][0-9]",
+    "meta:xdmField": "xdm:bornDayAndMonth",
+    "meta:xdmType": "string"
+  },
+  "bornYear": {
+    "title": "Födelseår",
+    "type": "integer",
+    "minimum": 1,
+    "maximum": 32767,
+    "meta:xdmField": "xdm:bornYear",
+    "meta:xdmType": "short"
+  }
+}
       </pre>
   </td>
   </tr>
