@@ -6,7 +6,7 @@ topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: b8306317bbbed58ab947753058129a75dfe64f19
+source-git-commit: 3f3a8d100a38d60dc8e15a8c3589e5566492885f
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 2%
@@ -158,7 +158,6 @@ FROM
     'column1' as no_space_column,
     'column2' as "space column"
 )
-WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 ```
 
 >[!NOTE]
