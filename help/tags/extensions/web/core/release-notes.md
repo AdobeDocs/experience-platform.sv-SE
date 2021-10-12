@@ -2,10 +2,10 @@
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 693da9aa012baa26dcff93f085dd6e763816e247
+source-git-commit: 317f134420666de23f0ee9c14938fffeda09d3de
 workflow-type: tm+mt
-source-wordcount: '1522'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -14,6 +14,13 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 8 oktober 2021
+
+v3.2.2
+
+* Åtgärda JSON-schemat för villkorsstyrda värdedataelement för alla tillgängliga operatorer.
+* Korrigera https://github.com/adobe/reactor-extension-core/issues/64.
 
 ## 23 september 2021
 
@@ -114,7 +121,7 @@ v1.8.2
 
 v1.8.1
 
-* Korrigerade ett fel där anpassade HTML-entiteter i attribut för `script` och `style`-taggar inte avkodades korrekt innan de skrevs till sidan.&quot;
+* Korrigerade ett fel där anpassade HTML-entiteter i attribut för `script`- och `style`-taggar inte avkodades korrekt innan de skrevs till sidan.&quot;
 * Korrigerade ett fel där ett fel inträffar när en extern anpassad kodsåtgärd saknar innehåll. Extern anpassad kodsåtgärd är den åtgärd som läses in från en annan fil än biblioteket (detta inträffar när händelsen som utlöser regeln inte är libraryLoaded eller pageBottom)
 
 ## 6 juli 2020
@@ -122,7 +129,7 @@ v1.8.1
 v1.8.0
 
 * **Löften i Anpassad kod**  - Anpassade kodvillkor och JavaScript-åtgärder som inte körs i det globala omfånget kan nu returnera löften.  Du kan använda dem om du vill att efterföljande villkor och åtgärder ska vänta på att en asynkron process i din anpassade kod slutförs innan du går vidare till nästa objekt.
-* **Återanrop i HTML-anpassade kodåtgärder**  - Du kan göra samma sak med HTML-anpassade kodåtgärder med hjälp av  `onCustomCodeSuccess()` och  `onCustomCodeFailure()` återanrop.
+* **Återanrop i anpassade kodåtgärder**  för HTML - Du kan göra samma sak i anpassade kodåtgärder för HTML med hjälp av  `onCustomCodeSuccess()` och  `onCustomCodeFailure()` återanrop.
 
 Mer information finns i [Core Extension reference](./overview.md) i Conditions > Custom Code and Actions > Custom Code.
 
