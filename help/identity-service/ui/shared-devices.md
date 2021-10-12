@@ -6,9 +6,9 @@ topic-legacy: tutorial
 description: Delad enhetsidentifiering identifierar olika autentiserade användare av samma enhet, vilket ger en mer korrekt återgivning av kunddata i identitetsdiagram
 hide: true
 hidefromtoc: true
-source-git-commit: 205d9a8d0d5759e978604bef2b05664b1376d835
+source-git-commit: 9c0d360b39bf69a44ac6298724dbab0f8456dc90
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '612'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
-[!DNL Shared Device Detection] avser enheter som används av mer än en individ. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer. Genom [!DNL Shared Device Detection] kan olika användare av samma enhet förhindras från att sammanfogas till en enda identitet, vilket ger en mer korrekt representation.
+[!DNL Shared Device] avser enheter som används av mer än en individ. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer. Genom funktionen [!DNL Shared Device Detection] kan olika användare av samma enhet förhindras från att sammanfogas till en enda identitet, vilket ger en mer korrekt representation.
 
 Med [!DNL Shared Device Detection] kan du:
 
@@ -31,7 +31,7 @@ Med [!DNL Shared Device Detection] kan du:
 
 >[!TIP]
 >
->Konfigurationer för [!DNL Shared Device Detection] måste slutföras innan du aktiverar [!DNL Profile] för datauppsättningen eftersom du inte längre kan ändra inställningarna, när data börjar flöda in i [!DNL Identity Service].
+>Konfigurationer för [!DNL Shared Device Detection] måste slutföras innan du aktiverar [!DNL Profile] för datauppsättningen eftersom du inte längre kan ändra inställningarna när diagram har genererats i [!DNL Identity Service].
 
 ## Komma igång
 
