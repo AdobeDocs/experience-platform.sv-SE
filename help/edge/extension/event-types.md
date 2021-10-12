@@ -3,16 +3,17 @@ title: Händelsetyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig hur du använder händelsetyper från Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 solution: Experience Platform
 feature: Web SDK
-source-git-commit: 4bddd9f23ae885468148d1592af219290d6fafd9
+exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
+source-git-commit: 8f714933e23e281772cd8633d27096021de14c56
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '972'
 ht-degree: 0%
 
 ---
 
 # Händelsetyper
 
-Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/launch-learn/tutorials/fundamentals/building-rules-in-launch.html) och ska inte blandas ihop med fältet [`eventType` i XDM](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html).
+Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. Dessa används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) och ska inte blandas ihop med fältet [`eventType` i XDM](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html).
 
 ## [!UICONTROL Send event complete]
 
@@ -169,12 +170,12 @@ I det här exemplet returneras och inkluderas i `propositions`-arrayen om det fi
 ]
 ```
 
-Nu kan du återge offertinnehåll när du vill. I det här exemplet är det förslag som matchar `discount`-omfånget ett HTML-förslag som skapats med Adobe Target Form-based Experience Composer. Anta att du har ett element på sidan med ID:t `daily-special` och vill återge innehållet från `discount`-utkastet till `daily-special`-elementet. Gör följande:
+Nu kan du återge offertinnehåll när du vill. I det här exemplet är det förslag som matchar `discount`-omfånget ett HTML-förslag som skapats med Adobe Target formulärbaserade Experience Composer. Anta att du har ett element på sidan med ID:t `daily-special` och vill återge innehållet från `discount`-utkastet till `daily-special`-elementet. Gör följande:
 
 1. Extrahera utdrag från `event`-objektet.
 1. Slinga igenom varje förslag och leta efter förslaget med omfånget `discount`.
-1. Om du hittar ett förslag kan du slinga igenom varje objekt i utkastet och leta efter det objekt som är HTML-innehåll. (Det är bättre att kontrollera än att anta.)
-1. Om du hittar ett objekt som innehåller HTML-innehåll söker du efter elementet `daily-special` på sidan och ersätter dess HTML-kod med det anpassade innehållet.
+1. Om du hittar ett förslag går du igenom varje objekt i utkastet och letar efter det objekt som innehåller HTML. (Det är bättre att kontrollera än att anta.)
+1. Om du hittar ett objekt som innehåller innehåll från HTML söker du efter elementet `daily-special` på sidan och ersätter elementets HTML med det anpassade innehållet.
 
 Din egen kod i [!UICONTROL Custom code]-åtgärden kan se ut så här:
 
@@ -260,8 +261,3 @@ if (propositions) {
   // them in some other way.
 }
 ```
-
-
-
-
-
