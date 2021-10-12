@@ -2,13 +2,13 @@
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
-source-git-commit: 5301cf870052f537a34913beb0b814212bdaadaa
+exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
+source-git-commit: 5bd2afcc594d96878ee51af2e9e99d74b764009e
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
-
 
 # Användargränssnittshandbok för kontoprofil
 
@@ -24,7 +24,7 @@ Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna
 
 ## Bläddra bland kontoprofiler
 
-Om du vill bläddra bland kontoprofiler börjar du med att välja **[!UICONTROL Profiles]** under Konton i den vänstra navigeringen.
+Om du vill bläddra bland kontoprofiler börjar du med att välja **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen.
 
 ![](images/b2b-account-browse.png)
 
@@ -34,7 +34,7 @@ På fliken **[!UICONTROL Browse]** kan du utforska kontoprofiler med ett konto-I
 
 ### Bläddra efter [!UICONTROL Connected enterprise source]
 
-Om du vill bläddra bland kontoprofiler via en ansluten företagskälla måste du först välja en ansluten källa med hjälp av väljarknappen bredvid fältet **[!UICONTROL Source]**.
+Om du vill bläddra bland kontoprofiler utifrån en ansluten företagskälla väljer du **[!UICONTROL Connected enterprise source]** i listrutan **[!UICONTROL Browse by]** och väljer sedan en ansluten källa med väljarknappen bredvid fältet **[!UICONTROL Source]**.
 
 ![](images/b2b-account-browse.png)
 
@@ -50,7 +50,7 @@ Mer information om hur du ansluter företagskällor finns i [Källor - översikt
 
 Du kan välja en källa genom att markera alternativknappen bredvid anslutningsnamnet och sedan använda **[!UICONTROL Select]** för att gå tillbaka till fliken [!UICONTROL Browse].
 
-När en källa är markerad måste du nu ange ett **[!UICONTROL Account id]** relaterat till källan. Om du till exempel väljer en Salesforce-källa måste du ange ett konto-ID från Salesforce-instansen för att kunna visa den kontoprofil som är kopplad till det ID:t.
+När en källa är markerad måste du nu ange ett **[!UICONTROL Account ID]** relaterat till källan. Om du till exempel väljer en Salesforce-källa måste du ange ett konto-ID från Salesforce-instansen för att kunna visa den kontoprofil som är kopplad till det ID:t.
 
 >[!NOTE]
 >
@@ -60,13 +60,15 @@ När en källa är markerad måste du nu ange ett **[!UICONTROL Account id]** re
 
 ![](images/b2b-account-browse-id.png)
 
-### Bläddra efter [!UICONTROL Other]
+### Bläddra efter [!UICONTROL Others]
 
-I realtid stöder CDP, B2B Edition möjligheten att utföra en direkt sökning genom att tillåta dig att ange ett **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account id]** för ett konto som du vill visa. Genom att ange källnamnet och instansen direkt anger du det sammanhang som krävs för att Experience Platform ska kunna söka efter och visa korrekta kontoprofildata.
+I realtid stöder CDP, B2B Edition möjligheten att utföra en direkt sökning genom att tillåta dig att ange ett **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för ett konto som du vill visa. Genom att ange källnamnet och instansen direkt anger du det sammanhang som krävs för att Experience Platform ska kunna söka efter och visa korrekta kontoprofildata.
 
 Möjligheten att utföra en direktsökning är användbar under omständigheter då det inte går att ansluta direkt till data från en källa. Om din organisation till exempel har befintliga datastyrningsprinciper som förhindrar direktanslutning till CRM kan du exportera dessa data till ett molnlagringssystem och sedan importera dem till Experience Platform.
 
 Ett annat exempel kan vara att du utför en omvandling av data mellan den tidpunkt då de lämnar ett system och går in på plattformen. Du kan använda direktsökningsfunktionen för att skapa kontext för data (till exempel ange att det är Marketo-data, trots att det kommer från en Amazon S3-bucket) så att systemet vet var de ska sökas och hur de ska återges korrekt.
+
+Om du vill starta en direktsökning väljer du **[!UICONTROL Others]** i listrutan **[!UICONTROL Browse by]** och anger sedan **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för kontot som du vill visa.
 
 ![](images/b2b-account-browse-adhoc.png)
 
