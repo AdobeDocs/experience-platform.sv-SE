@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: cf0f8022e0a9ea115b1312d9988b3abb804d9b80
+source-git-commit: 83e9ebf65e904c6343fe44932a2b7b1a72039187
 workflow-type: tm+mt
-source-wordcount: '1249'
+source-wordcount: '1262'
 ht-degree: 3%
 
 ---
@@ -14,6 +14,15 @@ ht-degree: 3%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+
+## 16 september 2021
+
+### Adobe Analytics Extension 1.8.7
+
+#### Felkorrigeringar
+
+* Uppgraderade AppMeasurement till v2.2.2.
+* Borttagen föråldrad buildInfo.environment
 
 ## 24 augusti 2021
 
