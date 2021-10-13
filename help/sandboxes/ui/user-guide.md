@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för sandlådan
 topic-legacy: user guide
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 3b0f156d3d6a13fbad45a153749b81a0d6244283
+source-git-commit: a43dd851a5c7ec722e792a0f43d1bb42777f0c15
 workflow-type: tm+mt
-source-wordcount: '759'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,10 @@ Du kan navigera i listan med tillgängliga sandlådor med hjälp av sökfunktion
 ![](../images/ui/sandbox-search.png)
 
 ## Skapa en ny sandlåda
+
+>[!NOTE]
+>
+>När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Mer information om hur du distribuerar en sandlåda till en produktprofil finns i dokumentationen om [hantering av behörigheter för en produktprofil](../../access-control/ui/permissions.md).
 
 Använd följande video för en snabb översikt över hur du använder sandlådor i Experience Platform.
 
@@ -86,7 +90,7 @@ I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan o
 
 Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar att återställningen lyckades.
 
-![framgång](../images/ui/success.png)
+![success](../images/ui/success.png)
 
 ### Varningar
 

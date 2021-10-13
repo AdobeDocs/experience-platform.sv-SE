@@ -4,10 +4,11 @@ solution: Experience Platform
 title: API-slutpunkt för sandlådehantering
 topic-legacy: developer guide
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
-source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
+exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
+source-git-commit: a43dd851a5c7ec722e792a0f43d1bb42777f0c15
 workflow-type: tm+mt
-source-wordcount: '1436'
-ht-degree: 0%
+source-wordcount: '1489'
+ht-degree: 1%
 
 ---
 
@@ -190,6 +191,10 @@ Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `
 | `eTag` | En identifierare för en specifik version av sandlådan. Detta värde används för versionskontroll och cachelagring av effektivitet och uppdateras varje gång en ändring görs i sandlådan. |
 
 ## Skapa en sandlåda {#create}
+
+>[!NOTE]
+>
+>När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Mer information om hur du distribuerar en sandlåda till en produktprofil finns i dokumentationen om [hantering av behörigheter för en produktprofil](../../access-control/ui/permissions.md).
 
 Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till `/sandboxes`-slutpunkten.
 
