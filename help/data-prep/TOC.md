@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Handbok för dataförberedelse
 user-guide-description: Förbered data för konsumtion i Adobe Experience Platform.
-feature: Datahantering, datainmatning
-source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
+feature: Data Prep
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
-source-wordcount: '48'
-ht-degree: 8%
+source-wordcount: '44'
+ht-degree: 9%
 
 ---
 

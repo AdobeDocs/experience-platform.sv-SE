@@ -3,11 +3,11 @@ audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Dashboards
 breadcrumb-title: Handbok för instrumentpaneler
 user-guide-description: Visualisera Experience Platform-data på anpassningsbara instrumentpaneler.
-feature: Datahantering
-source-git-commit: 168960692605b96324533ca295544c2f855481b1
+feature: Dashboards
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
-source-wordcount: '60'
-ht-degree: 11%
+source-wordcount: '58'
+ht-degree: 8%
 
 ---
 

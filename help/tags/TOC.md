@@ -3,8 +3,8 @@ audience: user
 user-guide-title: Hjälp om taggar
 breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
-feature: Data Collection
-source-git-commit: 549124c4c10677cc3691706c804894956c7ef592
+feature: Tags
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
 source-wordcount: '378'
 ht-degree: 25%

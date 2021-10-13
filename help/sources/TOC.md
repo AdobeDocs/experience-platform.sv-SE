@@ -3,8 +3,8 @@ audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
-feature: Data Ingestion, Sources
-source-git-commit: fe024675e6337ebf9a401f65db939440f435053f
+feature: Sources
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
 source-wordcount: '653'
 ht-degree: 5%
@@ -31,7 +31,7 @@ ht-degree: 5%
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - Reklam {#advertising}
-      - [Google AdWords-koppling](connectors/advertising/ads.md)
+      - [Google AdWords Connector](connectors/advertising/ads.md)
    - Molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
