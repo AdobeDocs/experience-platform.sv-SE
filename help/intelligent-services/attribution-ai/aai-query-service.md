@@ -1,12 +1,11 @@
 ---
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
-solution: Intelligent Services, Experience Platform
+feature: Attribution AI
 title: Analyserar attribueringsresultat med hjälp av frågetjänsten
 topic-legacy: Attribution AI queries
 description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera Attribution AI.
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 0%

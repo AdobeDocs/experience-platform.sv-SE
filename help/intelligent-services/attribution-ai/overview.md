@@ -1,13 +1,12 @@
 ---
 keywords: Experience Platform;attribuering - översikt;populära ämnen;attribuering ai;Attribution ai
-solution: Experience Platform, Intelligent Services
+feature: Attribution AI
 title: Översikt över Attribution AI
 topic-legacy: Attribution AI
 description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
 landing-page-description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '499'
 ht-degree: 0%

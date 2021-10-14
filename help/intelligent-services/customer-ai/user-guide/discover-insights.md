@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundinsikter
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+feature: Customer AI
 title: Identifiera insikter med kundens AI
 topic-legacy: Discovering insights
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '1570'
 ht-degree: 0%
@@ -95,7 +95,7 @@ Knappen **[!UICONTROL More actions]** finns i den övre högra navigeringen bred
 
 ![fler åtgärder](../images/insights/more-actions.png)
 
-## Bedömningssammanfattning {#scoring-summary}
+## Sammanfattning av poäng {#scoring-summary}
 
 Bedömningssammanfattning visar det totala antalet profiler som poängsatts och kategoriserar dem i grupper som innehåller hög, medelhög och låg benägenhet. Propensitetsbucketerna baseras på poängintervall, låg är mindre än 24, medel är 25 till 74 och hög är över 74. Varje hink har en färg som motsvarar teckenförklaringen.
 

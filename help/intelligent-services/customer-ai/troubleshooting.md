@@ -1,17 +1,18 @@
 ---
 keywords: Experience Platform;komma igång;kundinformation;populära ämnen;kundinformation;kunddata;kundmeddelanden, felsökning;kundmeddelanden, fel
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+feature: Customer AI
 title: Felsökning av kund-AI
 topic-legacy: Getting started
 description: Hitta svar på vanliga fel i kundens AI.
 type: Documentation
-source-git-commit: ceb203899cda83aa79b994d45798d6147c3ff3b8
+exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 0%
 
 ---
-
 
 # Felsökning av kund-AI
 
@@ -44,4 +45,3 @@ Om dina data inte verkar vara problemet kan du pröva att ändra villkoren för 
 Om det inte gick att begränsa behörighetspopulationen eller om det inte går, ändrar du förutsägelsefönstret.
 
 - Försök att ändra förutsägelsefönstret till 7 dagar och se om felet kvarstår. Om felet inte längre inträffar indikerar det att du kanske inte har tillräckligt med data för det definierade förutsägelsefönstret.
-

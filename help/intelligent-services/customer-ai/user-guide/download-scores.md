@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;ladda ned poäng;kundnummer;populära ämnen;Exportera;exportera;kundnummer;kundpoäng
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+feature: Customer AI
 title: Ladda ned bakgrundsmusik i kundens AI
 topic-legacy: Downloading scores
 description: Med Customer AI kan du hämta bakgrundsmusik i filformatet Parquet.
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 0%
@@ -167,7 +167,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links`-objekt. I
 }
 ```
 
-## Hämta dina filer {#retrieving-your-files}
+## Hämta filer {#retrieving-your-files}
 
 Använd det `href`-värde som du fick i det föregående steget som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
 
@@ -193,7 +193,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 **Svar**
 
-Svaret innehåller en datamatris som kan ha en enda post eller en lista med filer som tillhör den katalogen. Exemplet nedan innehåller en lista med filer och har komprimerats för läsbarhet. I det här fallet måste du följa URL:en för varje fil för att kunna komma åt filen.
+Svaret innehåller en datamatris som kan ha en enda post, eller en lista med filer som tillhör den katalogen. Exemplet nedan innehåller en lista med filer och har komprimerats för läsbarhet. I det här fallet måste du följa URL:en för varje fil för att kunna komma åt filen.
 
 ```json
 {
