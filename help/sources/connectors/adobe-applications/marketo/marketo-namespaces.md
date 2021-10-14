@@ -5,9 +5,9 @@ title: B2B-namnutrymmen och scheman
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
+source-git-commit: 15fd870565d50bd4e320a1acf61413f45c1f537c
 workflow-type: tm+mt
-source-wordcount: '1588'
+source-wordcount: '1679'
 ht-degree: 1%
 
 ---
@@ -87,6 +87,7 @@ Följande tabell innehåller information om den underliggande inställningen fö
 | B2B-kampanjmedlem | `b2b_campaign_member` | `B2B_CAMPAIGN_MEMBER` |
 | B2B-marknadsföringslista | `b2b_marketing_list` | `B2B_MARKETING_LIST` |
 | B2B Marketing List-medlem | `b2b_marketing_list_member` | `B2B_MARKETING_LIST_MEMBER` |
+| B2B-konto, personrelation | `b2b_account_person_relation` | `B2B_ACCOUNT_PERSON` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -115,6 +116,7 @@ Följande tabell innehåller information om de underliggande inställningarna f�
 | B2B-marknadsföringslista | XDM Business Marketing List | Ingen | Aktiverad | `marketingListKey.sourceKey` i basklassen | B2B-marknadsföringslista | Ingen | Ingen | Ingen | Statisk lista synkroniseras inte från [!DNL Salesforce] och har därför ingen sekundär identitet. |
 | B2B Marketing List-medlem | XDM Business Marketing List-medlemmar | Ingen | Aktiverad | `marketingListMemberKey.sourceKey` i basklassen | B2B Marketing List-medlem | Ingen | Ingen | **Första relationen**<ul><li>`PersonKey.sourceKey` i basklassen</li><li>Typ: Många-till-ett</li><li>Referensschema: B2B-person</li><li>Namnutrymme: B2B-person</li><li>Destinationsegenskap: `b2b.personKey.sourceKey`</li><li>Relationsnamn från aktuellt schema: Person</li><li>Relationsnamn från referensschema: Marknadsföringslistor</li></ul>**Andra relationen**<ul><li>`marketingListKey.sourceKey` i basklassen</li><li>Typ: Många-till-ett</li><li>Referensschema: B2B-marknadsföringslista</li><li>Namnutrymme: B2B-marknadsföringslista</li><li>Destinationsegenskap: `marketingListKey.sourceKey`</li><li>Relationsnamn från aktuellt schema: Marknadsföringslista</li><li>Relationsnamn från referensschema: Folk</li></ul> | Den statiska listmedlemmen synkroniseras inte från [!DNL Salesforce] och har därför ingen sekundär identitet. |
 | B2B-verksamhet | XDM ExperienceEvent | <ul><li>Besök WebPage</li><li>Nytt lead</li><li>Konvertera lead</li><li>Lägg till i lista</li><li>Ta bort från lista</li><li>Lägg till i affärsmöjlighet</li><li>Ta bort från affärsmöjlighet</li><li>Formuläret har fyllts i</li><li>Länkklickningar</li><li>E-post levererad</li><li>E-post öppnad</li><li>E-post klickad</li><li>E-post studsade</li><li>Mjuk e-poststudsning</li><li>Avbeställ e-post</li><li>Poängen har ändrats</li><li>Affärsmöjligheten har uppdaterats</li><li>Status i kampanjförloppet har ändrats</li><li>Personidentifierare</li><li>Marketo Web URL</li><li>Intressant stund</li></ul> | Aktiverad | `personKey.sourceKey` fältgrupp för personidentifierare | B2B-person | Ingen | Ingen | **Första relationen**<ul><li>`listOperations.listKey.sourceKey` fält</li><li>Typ: en-till-en</li><li>Referensschema: B2B-marknadsföringslista</li><li>Namnutrymme: B2B-marknadsföringslista</li></ul>**Andra relationen**<ul><li>`opportunityEvent.opportunityKey.sourceKey` fält</li><li>Typ: en-till-en</li><li>Referensschema: B2B-säljprojekt</li><li>Namnutrymme: B2B-säljprojekt</li></ul>**Tredje relationen**<ul><li>`leadOperation.campaignProgression.campaignKey.sourceKey` fält</li><li>Typ: en-till-en</li><li>Referensschema: B2B-kampanj</li><li>Namnutrymme: B2B-kampanj</li></ul> | `ExperienceEvent` skiljer sig från entiteter. Identiteten för upplevelsehändelsen är den person som utförde aktiviteten. |
+| B2B-konto, personrelation | XDM Business Account Person Relation | Identitetskarta | Aktiverad | `accountPersonKey.sourceKey` i basklassen | B2B-konto, personrelation | Ingen | Ingen | **Första relationen**<ul><li>`personKey.sourceKey` i basklassen</li><li>Typ: Många-till-ett</li><li>Referensschema: B2B-person</li><li>Namnutrymme: B2B-person</li><li>Destinationsegenskap: `b2b.personKey.SourceKey`</li><li>Relationsnamn från aktuellt schema: Folk</li><li>Relationsnamn från referensschema: Konto</li></ul>**Andra relationen**<ul><li>`accountKey.sourceKey` i basklassen</li><li>Typ: Många-till-ett</li><li>Referensschema: B2B-konto</li><li>Namnutrymme: B2B-konto</li><li>Destinationsegenskap: `accountKey.sourceKey`</li><li>Relationsnamn från aktuellt schema: Konto</li><li>Relationsnamn från referensschema: Folk</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
