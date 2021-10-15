@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Alternativ för destinationskonfiguration för mål-SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 76a596166edcdbf141b5ce5dc01557d2a0b4caf3
+source-git-commit: fd025932b9210d61e986b252e8d977ce4b83f6ff
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1754'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 ## Översikt {#overview}
 
-Med den här konfigurationen kan du ange viktig information, t.ex. målnamn, kategori, beskrivning, logotyp med mera. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
+Med den här konfigurationen kan du ange viktig information, som målnamn, kategori, beskrivning med mera. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 
 Den här konfigurationen kopplar även de andra konfigurationer som krävs för att målet ska fungera - målserver och målgruppsmetadata - till den här konfigurationen. Läs om hur du kan referera till de två konfigurationerna i ett [avsnitt längre ned nedan](./destination-configuration.md#connecting-all-configurations).
 
@@ -135,17 +135,17 @@ Nedan finns ett exempel på konfiguration av en fiktiv destination, Moviestar, s
 
 ## Konfigurationer för kundautentisering {#customer-authentication-configurations}
 
-I det här avsnittet genereras kontosidan i användargränssnittet i Experience Platform, där användare ansluter Experience Platform till konton som de har med ditt mål. Beroende på vilket autentiseringsalternativ du anger i fältet `authType`, genereras Experience Platform-sidan för användarna enligt följande:
+Det här avsnittet i målkonfigurationen genererar sidan [Konfigurera nytt mål](/help/destinations/ui/connect-destination.md) i användargränssnittet i Experience Platform, där användare ansluter Experience Platform till de konton de har med målet. Beroende på vilket autentiseringsalternativ du anger i fältet `authType`, genereras Experience Platform-sidan för användarna enligt följande:
 
 **Bärarautentisering**
 
-Användarna måste ange den innehavartoken som de får från ditt mål.
+När du konfigurerar typen för innehavarautentisering måste användarna ange den innehavartoken som de får från ditt mål.
 
 ![Gränssnittsåtergivning med innehavarautentisering](./assets/bearer-authentication-ui.png)
 
 **OAuth 2-autentisering**
 
-Användare väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål.
+Användare väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för målplatsen för Twitter-anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns på den dedikerade [autentiseringssidan för mål-SDK OAuth 2](./oauth2-authentication.md).
 
 ![Gränssnittsåtergivning med OAuth 2-autentisering](./assets/oauth2-authentication-ui.png)
 
@@ -153,7 +153,7 @@ Användare väljer **[!UICONTROL Connect to destination]** för att utlösa OAut
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `customerAuthenticationConfigurations` | Sträng | Anger den konfiguration som används för att autentisera Experience Platform-kunder mot servern. Se `authType` nedan för godkända värden. |
-| `authType` | Sträng | Godkända värden är `OAUTH2, BEARER`. <br><ul><li> Om målet har stöd för OAuth 2-autentisering väljer du `OAUTH2`-värdet och lägger till de obligatoriska fälten för OAuth 2, vilket visas på autentiseringssidan för mål-SDK OAuth 2. Du bör dessutom välja `authenticationRule=CUSTOMER_AUTHENTICATION` i [målleveransavsnittet](./destination-configuration.md). </li><li>För innehavarautentisering väljer du `BEARER` och väljer `authenticationRule=CUSTOMER_AUTHENTICATION` i [målleveransavsnittet](./destination-configuration.md).</li></ul> |
+| `authType` | Sträng | Godkända värden är `OAUTH2, BEARER`. <br><ul><li> Om målet har stöd för OAuth 2-autentisering väljer du `OAUTH2`-värdet och lägger till de obligatoriska fälten för OAuth 2, vilket visas på [autentiseringssidan för mål-SDK OAuth 2](./oauth2-authentication.md). Du bör dessutom välja `authenticationRule=CUSTOMER_AUTHENTICATION` i [målleveransavsnittet](./destination-configuration.md). </li><li>För innehavarautentisering väljer du `BEARER` och väljer `authenticationRule=CUSTOMER_AUTHENTICATION` i [målleveransavsnittet](./destination-configuration.md).</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -205,9 +205,9 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
 
 ## Identiteter och attribut {#identities-and-attributes}
 
-Parametrarna i det här avsnittet avgör hur målidentiteterna och -attributen fylls i mappningssteget i användargränssnittet i Experience Platform, där användare mappar sina XDM-scheman till schemat i målplatsen.
+Parametrarna i det här avsnittet avgör vilka identiteter som ditt mål accepterar. Den här konfigurationen fyller även i målidentiteter och -attribut i [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) i användargränssnittet i Experience Platform, där användare mappar identiteter och attribut från sina XDM-scheman till schemat i målet.
 
-Du måste ange vilka [!DNL Platform] identiteter som kunder kan exportera till ditt mål. Några exempel är [!DNL Experience Cloud ID], hash-kodad e-post, enhets-ID ([!DNL IDFA], [!DNL GAID]). Dessa värden är [!DNL Platform] identitetsnamnutrymmen som kunder kan mappa till identitetsnamnutrymmen från målet.
+Du måste ange vilka [!DNL Platform] identiteter som kunder kan exportera till ditt mål. Några exempel är [!DNL Experience Cloud ID], hash-kodad e-post, enhets-ID ([!DNL IDFA], [!DNL GAID]). Dessa värden är [!DNL Platform] identitetsnamnutrymmen som kunder kan mappa till identitetsnamnutrymmen från målet. Du kan även ange om kunderna kan mappa anpassade namnutrymmen till identiteter som stöds av ditt mål.
 
 Identitetsnamnutrymmen kräver ingen 1-till-1-korrespondens mellan [!DNL Platform] och ditt mål.
 Kunder kan till exempel mappa ett [!DNL Platform] [!DNL IDFA]-namnutrymme till ett [!DNL IDFA]-namnutrymme från målet, eller mappa samma [!DNL Platform] [!DNL IDFA]-namnutrymme till ett [!DNL Customer ID]-namnutrymme i målet.
@@ -231,7 +231,6 @@ Läs mer i översikten [Identity Namespace](https://experienceleague.adobe.com/d
 |---------|----------|------|
 | `authenticationRule` | Sträng | Anger hur [!DNL Platform]-kunder ansluter till ditt mål. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du skulle till exempel välja det här alternativet om du även valde `authType: OAUTH2` eller `authType:BEARER` i `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av konfigurationen [Credentials](./credentials-configuration.md). </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `destinationServerId` | Sträng | `instanceId` för [målserverkonfigurationen](./destination-server-api.md) som används för det här målet. |
-| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`:  [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`:  [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -244,14 +243,6 @@ Det här avsnittet av målkonfigurationen gäller hur segmentmetadata, som segme
 Genom `audienceTemplateId` knyter det här avsnittet även samman den här konfigurationen med [konfigurationen av målgruppsmetadata](./audience-metadata-management.md).
 
 Parametrarna som visas i konfigurationen ovan beskrivs i [API-referens för målslutpunkt](./destination-configuration-api.md).
-
-## Så här ansluter den här konfigurationen all nödvändig information för ditt mål {#connecting-all-configurations}
-
-Vissa inställningar för destinationen kan konfigureras via målservern eller slutpunkten för målmetadata. Slutpunkten för målkonfigurationen ansluter alla dessa inställningar genom att referera till konfigurationerna enligt följande:
-
-* Använd `destinationServerId` för att referera till målservern och mallkonfigurationen som har konfigurerats för ditt mål.
-* Använd `audienceMetadataId` för att referera till målgruppens metadatakonfiguration.
-
 
 ## Samlingsprincip {#aggregation}
 
@@ -282,16 +273,23 @@ Det här alternativet fungerar bäst om du hellre vill ta stora grupper med tuse
 Med det här alternativet kan du:
 * Ange maximal tid och maximalt antal profiler som ska samlas innan ett API-anrop görs till målet.
 * Sammanställ de exporterade profilerna som är mappade till målet baserat på:
-   * segment-ID
-   * segmentstatus
-   * identitet eller grupper av identiteter
+   * Segment-ID;
+   * Segmentstatus;
+   * Identitet eller grupper av identiteter.
 
 Detaljerade förklaringar av aggregeringsparametrarna finns på [API-målets slutpunktsåtgärder](./destination-configuration-api.md) referenssida, där varje parameter beskrivs.
 
-## Krav på historisk profil
+## Krav på historisk profil {#profile-backfill}
 
 Du kan använda parametern `backfillHistoricalProfileData` i målkonfigurationen för att avgöra om historiska profilkvalifikationer ska exporteras till ditt mål.
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`:  [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`:  [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
+
+## Så här ansluter den här konfigurationen all nödvändig information för ditt mål {#connecting-all-configurations}
+
+Vissa av målinställningarna måste konfigureras via [målservern](./server-and-template-configuration.md) eller [konfigurationen av målmetadata](./audience-metadata-management.md). Målkonfigurationen som beskrivs här kopplar samman alla dessa inställningar genom att referera till de två andra konfigurationerna enligt följande:
+
+* Använd `destinationServerId` för att referera till målservern och mallkonfigurationen som har konfigurerats för ditt mål.
+* Använd `audienceMetadataId` för att referera till målgruppens metadatakonfiguration.

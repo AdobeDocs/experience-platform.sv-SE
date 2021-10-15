@@ -1,9 +1,10 @@
 ---
-description: Den här konfigurationen avgör hur Adobe Experience Platform-användare autentiserar till målslutpunkten för att aktivera data.
-title: Konfigurationsalternativ för autentiseringsuppgifter i mål-SDK
-source-git-commit: 11f6421665acc2041aa9483b1e0efb6fe48b6dfb
+description: Använd autentiseringskonfigurationerna som stöds i Adobe Experience Platform Destination SDK för att autentisera användare och aktivera data till målslutpunkten.
+title: Autentiseringskonfiguration
+exl-id: 33eaab24-f867-4744-b424-4ba71727373c
+source-git-commit: 485c1359f8ef5fef0c5aa324cd08de00b0b4bb2f
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 ## Autentiseringstyper som stöds {#supported-authentication-types}
 
-Adobe Experience Platform stöder flera autentiseringstyper:
+Adobe Experience Platform mål-SDK har stöd för flera autentiseringstyper:
 
 * Bärarautentisering
 * OAuth 2 med auktoriseringskod

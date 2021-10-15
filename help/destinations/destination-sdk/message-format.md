@@ -1,12 +1,10 @@
 ---
-description: Använd innehållet på den här sidan tillsammans med resten av konfigurationsalternativen för partnermål. Den här sidan behandlar meddelandeformatet för data som exporteras från Adobe Experience Platform till destinationer, medan den andra sidan behandlar information om hur du ansluter och autentiserar till destinationen.
-seo-description: Use the content on this page together with the rest of the configuration options for partner destinations. This page addresses the messaging format of data exported from Adobe Experience Platform to destinations, while the other page addresses specifics about connecting and authenticating to your destination.
-seo-title: Message format
+description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: c328293cf710ad8a2ddd2e52cb01c86d29c0b569
+source-git-commit: 485c1359f8ef5fef0c5aa324cd08de00b0b4bb2f
 workflow-type: tm+mt
-source-wordcount: '1995'
+source-wordcount: '1981'
 ht-degree: 1%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 1%
 
 ## Förutsättningar - Adobe Experience Platform-koncept {#prerequisites}
 
-Om du vill veta mer om Adobe kan du bekanta dig med följande koncept från Experience Platform:
+Om du vill veta mer om meddelandeformat, profilkonfiguration och transformeringsprocess på Adobe kan du bekanta dig med följande koncept för Experience Platform:
 
 * **Experience Data Model (XDM)**. [XDM-](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) översikt och   [hur du skapar ett XDM-schema i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
 * **Klass**. [Skapa och redigera klasser i användargränssnittet](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
@@ -24,11 +22,11 @@ Om du vill veta mer om Adobe kan du bekanta dig med följande koncept från Expe
 
 ## Översikt {#overview}
 
-Använd innehållet på den här sidan tillsammans med resten av [konfigurationsalternativen för partnermål](./configuration-options.md). Den här sidan behandlar meddelandeformatet för data som exporteras från Adobe Experience Platform till destinationer, medan den andra sidan behandlar information om hur du ansluter och autentiserar till destinationen.
+Använd innehållet på den här sidan tillsammans med resten av [konfigurationsalternativen för partnermål](./configuration-options.md). På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål. Den andra sidan behandlar information om anslutning och autentisering till ditt mål.
 
-Adobe Experience Platform exporterar data till ett stort antal destinationer, i olika dataformat. Några exempel på destinationstyper är annonsplattformar (Google), sociala nätverk (Facebook), molnlagringsplatser (Amazon S3, Azure Event Hubs).
+Adobe Experience Platform exporterar data till ett stort antal destinationer, i olika dataformat. Några exempel på destinationstyper är annonsplattformar (Google), sociala nätverk (Facebook) och molnlagringsplatser (Amazon S3, Azure Event Hubs).
 
-Experience Platform kan justera det exporterade meddelandeformatet så att det matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
+Experience Platform kan justera meddelandeformatet för exporterade profiler så att de matchar det förväntade formatet på din sida. För att förstå den här anpassningen är följande koncept viktiga:
 * Källa (1) och mål (2) XDM-schema i Adobe Experience Platform
 * Det förväntade meddelandeformatet på partnersidan (3), och
 * Omformningslagret mellan XDM-schemat och det förväntade meddelandeformatet, som du kan definiera genom att skapa en [meddelandeomformningsmall](./message-format.md#using-templating).
@@ -49,7 +47,7 @@ Users who want to activate data to your destination need to map the fields in th
 
 **JSON-standardschema för målprofilens attribut (3)**: Det här objektet representerar en  [JSON-](https://json-schema.org/learn/miscellaneous-examples.html) schema med alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för kan vara `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName` och så vidare. Du behöver en [meddelandeomformningsmall](./message-format.md#using-templating) för att anpassa data som exporteras från Experience Platform till det förväntade formatet.
 
-Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur strukturen för ett meddelande ändras mellan XDM-källschemat och ett exempelschema på partnersidan:
+Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur en profilkonfiguration ändras mellan käll-XDM-schemat och ett exempelschema på partnersidan:
 
 ![Exempel på omformningsmeddelande](./assets/transformations-with-examples.png)
 
@@ -58,7 +56,7 @@ Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur strukturen 
 
 ## Komma igång - omforma tre grundläggande attribut {#getting-started}
 
-För att demonstrera omvandlingsprocessen används i exemplet nedan tre vanliga profilattribut i Adobe Experience Platform: **förnamn**, **efternamn** och **e-postadress**.
+I exemplet nedan används tre vanliga profilattribut i Adobe Experience Platform för att demonstrera profilomvandlingsprocessen: **förnamn**, **efternamn** och **e-postadress**.
 
 >[!NOTE]
 >
@@ -93,7 +91,7 @@ Med tanke på meddelandeformatet är motsvarande omformningar följande:
 
 Adobe använder ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) för att omforma fälten från XDM-schemat till ett format som stöds av ditt mål.
 
-I det här avsnittet finns flera exempel på hur dessa omformningar görs, från XDM-indataschemat via mallen och från utdata i nyttolastformat som accepteras av målet. Exemplen nedan sorteras efter ökad komplexitet, enligt följande:
+Det här avsnittet innehåller flera exempel på hur dessa omformningar görs - från XDM-indataschemat, via mallen och från utdata i nyttolastformat som accepteras av ditt mål. Exemplen nedan presenteras av ökad komplexitet, enligt följande:
 
 1. Exempel på enkla omformningar. Lär dig hur mallar fungerar med enkla omformningar för fälten [Profilattribut](./message-format.md#attributes), [Segmentmedlemskap](./message-format.md#segment-membership) och [Identitet](./message-format.md#identities).
 2. Exempel på mallar som kombinerar fälten ovan blir mer komplicerade: [Skapa en mall som skickar segment och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](./message-format.md#segments-identities-attributes).
