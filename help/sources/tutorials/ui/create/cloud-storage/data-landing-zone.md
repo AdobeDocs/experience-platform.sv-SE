@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning för en Data Landing Zone med hjälp av användargränssnittet för plattformen.
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: ca7197036283ee15dbf60c113d361a5ea34d65c1
+source-git-commit: 57089cc9aa9c586f5fae70e2a7154d48ebd62447
 workflow-type: tm+mt
-source-wordcount: '412'
-ht-degree: 0%
+source-wordcount: '396'
+ht-degree: 1%
 
 ---
 
 # Anslut [!DNL Data Landing Zone] till plattformen med användargränssnittet
 
-[!DNL Data Landing Zone] är en molnbaserad datalagringsfunktion för tillfällig fillagring som tillhandahålls med Adobe Experience Platform. [!DNL Data Landing Zone] används endast för att lägga in och ta bort data i och från plattformen. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
+[!DNL Data Landing Zone] är en molnbaserad datalagringsfunktion för tillfällig fillagring som tillhandahålls med Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
 I den här självstudiekursen beskrivs hur du skapar en [!DNL Data Landing Zone]-källanslutning med hjälp av användargränssnittet för plattformen.
 
