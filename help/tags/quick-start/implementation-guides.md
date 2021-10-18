@@ -1,20 +1,24 @@
 ---
-title: Implementeringsguider
-description: Lär dig implementera Adobe Experience Cloud lösningar med taggar.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+title: Implementeringsguider för taggar och händelsevidarebefordran
+description: Lär dig hur du använder taggar och vidarebefordran av händelser för att implementera Adobe Experience Cloud-produkter på dina webbplatser och i dina mobilappar.
+exl-id: fe39cff2-2b0a-405b-aa89-0a3330f40ca1
+source-git-commit: 885a8d4fb0bcc82d23b040cf5c44d0ecd4887686
 workflow-type: tm+mt
-source-wordcount: '115'
-ht-degree: 2%
+source-wordcount: '186'
+ht-degree: 0%
 
 ---
 
-# Implementeringsguider
+# Implementeringsguider för taggar och vidarebefordran av händelser
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Vi har två implementeringsguider. Dessa är utformade för gränssnittsutvecklare och teknikmarknadsförare som vill lära sig att implementera [!DNL Adobe Experience Cloud]-lösningarna på sina webbplatser och i sina mobilappar.
+Nedan följer en lista över kompletta implementeringsguider för taggar och vidarebefordran av händelser. Dessa handledningar är utformade för gränssnittsutvecklare och teknikmarknadsförare som vill lära sig hur man implementerar Adobe Experience Cloud-produkter på sina webbplatser och i sina mobilappar.
 
-* [Implementeringsguide för JavaScript i en webbläsare](https://experienceleague.adobe.com/docs/experience-cloud/implementing-in-websites-with-launch/index.html)
-* [Implementering med Adobe Experience Platform Mobile SDKs i en inbyggd app](https://aep-sdks.gitbook.io/docs/)
+* [Implementera taggar för en webbplats](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/overview.html)
+* [Implementera taggar för ett Android-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-android-apps/overview.html)
+* [Implementeringstaggar för iOS Objective-C-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-objective-c-apps/overview.html)
+* [Implementera taggar för ett iOS Swift-program](https://experienceleague.adobe.com/docs/platform-learn/implement-in-mobile-ios-swift-apps/overview.html)
+* [Vidarebefordra händelser (tidigare Adobe Experience Platform Launch Server Side)](https://experienceleague.adobe.com/docs/platform-learn/data-collection/event-forwarding/overview.html)
