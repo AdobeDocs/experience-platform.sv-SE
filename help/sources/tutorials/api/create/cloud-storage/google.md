@@ -1,53 +1,53 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google cloud-lagring;Google;Google;Google
+keywords: Experience Platform;hem;populära ämnen;Google Cloud Storage;Google cloud storage;google;Google
 solution: Experience Platform
-title: Skapa en Google Cloud-lagringsbasanslutning med API:t för flödestjänst
+title: Skapa en Google Cloud-lagringsbasanslutning med API:t för flödestjänsten
 topic-legacy: overview
 type: Tutorial
-description: Lär dig hur du ansluter Adobe Experience Platform till ett Google Cloud-lagringskonto med API:t för Flow Service.
+description: Lär dig hur du ansluter Adobe Experience Platform till ett Google Cloud-lagringskonto med API:t för flödestjänst.
 exl-id: 321d15eb-82c0-45a7-b257-1096c6db6b18
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 13bd1254dfe89004465174a7532b4f6aaef54c09
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '470'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Google Cloud Storage]-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Google Cloud Storage] basanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Google Cloud Storage] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Google Cloud Storage] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett Google Cloud Storage-konto med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett Google Cloud Storage-konto med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Google Cloud Storage]-konto måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] för att få kontakt med [!DNL Google Cloud Storage] måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `accessKeyId` | En 61 tecken lång alfanumerisk sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Platform. |
-| `secretAccessKey` | En 40-siffrig, base-64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen. |
+| `accessKeyId` | En 61-siffrig alfanumerisk sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. |
+| `secretAccessKey` | En 40-siffrig, base-64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. |
 
-Mer information om dessa värden finns i guiden [HMAC-nycklar för Google Cloud-lagring](https://cloud.google.com/storage/docs/authentication/hmackeys#overview). Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] översikten](../../../../connectors/cloud-storage/google-cloud-storage.md).
+Mer information om dessa värden finns i [Google Cloud Storage HMAC-nycklar](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) guide. Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] översikt](../../../../connectors/cloud-storage/google-cloud-storage.md).
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Google Cloud Storage] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Google Cloud Storage] autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -86,13 +86,13 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.accessKeyId` | Det ID för åtkomstnyckel som är kopplat till ditt [!DNL Google Cloud Storage]-konto. |
-| `auth.params.secretAccessKey` | Den hemliga åtkomstnyckel som är kopplad till ditt [!DNL Google Cloud Storage]-konto. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Google Cloud Storage]: `32e8f412-cdf7-464c-9885-78184cb113fd` |
+| `auth.params.accessKeyId` | Det ID för åtkomstnyckel som är kopplat till din [!DNL Google Cloud Storage] konto. |
+| `auth.params.secretAccessKey` | Den hemliga åtkomstnyckel som är kopplad till din [!DNL Google Cloud Storage] konto. |
+| `connectionSpec.id` | The [!DNL Google Cloud Storage] anslutningsspecifikation-ID: `32e8f412-cdf7-464c-9885-78184cb113fd` |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
 
 ```json
 {
@@ -103,4 +103,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en [!DNL Google Cloud Storage]-anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för flödestjänst](../../explore/cloud-storage.md) eller [import av Parquet-data med API:t för flödestjänst](../../cloud-storage-parquet.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Google Cloud Storage] anslutning med API:er och ett unikt ID erhölls som en del av svarstexten. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för Flow Service](../../explore/cloud-storage.md).

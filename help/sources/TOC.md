@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 333cca4ac451745ac457c8d66fa8b5fe14531c9e
+source-git-commit: 21a536d80f854a9e98452c78a8014df4cc43e125
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '644'
 ht-degree: 5%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 5%
       - [Källanslutning för analyser](connectors/adobe-applications/analytics.md)
       - [Audience Manager-källanslutning](connectors/adobe-applications/audience-manager.md)
       - [Källkoppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
-      - Fältmappningar {#mapping}
+      - Fältkopplingar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
@@ -32,7 +32,7 @@ ht-degree: 5%
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - Reklam {#advertising}
       - [Google AdWords Connector](connectors/advertising/ads.md)
-   - Molnlagring {#cloud-storage}
+   - molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
@@ -73,11 +73,11 @@ ht-degree: 5%
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
       - [Snowflake-kontakt](connectors/databases/snowflake.md)
-   - e-handel {#ecommerce}
+   - eCommerce {#ecommerce}
       - [Förminska koppling](connectors/ecommerce/shopify.md)
    - Lokalt system {#local-system}
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
-   - Automatiserad marknadsföring {#marketing-automation}
+   - Automatisering av marknadsföring {#marketing-automation}
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
@@ -90,7 +90,7 @@ ht-degree: 5%
    - Skapa en basanslutning {#create}
       - Reklam {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
-      - Molnlagring {#cloud-storage}
+      - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
@@ -130,9 +130,9 @@ ht-degree: 5%
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
-      - e-handel {#ecommerce}
+      - eCommerce {#ecommerce}
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
-      - Automatiserad marknadsföring {#marketing-automation}
+      - Automatisering av marknadsföring {#marketing-automation}
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
          - [MailChimp-kampanj](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp-medlemmar](tutorials/api/create/marketing-automation/mailchimp-members.md)
@@ -164,8 +164,6 @@ ht-degree: 5%
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
       - [Samla in strömmande data](tutorials/api/collect/streaming.md)
-   - [Infoga Parquet-data från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
-   - [Skapa en datauppsättningsanslutning](tutorials/api/create-dataset-base-connection.md)
    - [Övervaka dataflöden](tutorials/api/monitor.md)
    - [Uppdatera konton](tutorials/api/update.md)
    - [Uppdatera dataflöden](tutorials/api/update-dataflows.md)
@@ -181,7 +179,7 @@ ht-degree: 5%
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - Reklam {#create}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
-      - Molnlagring {#cloud-storage}
+      - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
@@ -222,11 +220,11 @@ ht-degree: 5%
          - [Phoenix](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
-      - e-handel {#ecommerce}
+      - eCommerce {#ecommerce}
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
       - Lokalt system {#local-system}
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
-      - Automatiserad marknadsföring {#marketing-automation}
+      - Automatisering av marknadsföring {#marketing-automation}
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}

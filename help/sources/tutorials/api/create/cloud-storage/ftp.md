@@ -6,52 +6,52 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en FTP-server (File Transfer Protocol) med API:t för Flow Service.
 exl-id: a7bef346-b357-49bc-ac54-ac8b42adac50
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 13bd1254dfe89004465174a7532b4f6aaef54c09
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '476'
 ht-degree: 1%
 
 ---
 
-# Skapa en FTP-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en FTP-basanslutning med [!DNL Flow Service] API
 
 >[!NOTE]
 >
->FTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>FTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudien får du hjälp med att skapa en basanslutning för [!DNL FTP] (File Transfer Protocol) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL FTP] (File Transfer Protocol) med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en [!DNL FTP]-server med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en [!DNL FTP] servern som använder [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL FTP] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] för att ansluta till [!DNL FTP]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | Namnet eller IP-adressen som är associerad med din [!DNL FTP]-server. |
-| `username` | Användarnamnet som ger åtkomst till din [!DNL FTP]-server. |
-| `password` | Lösenordet för din [!DNL FTP]-server. |
+| `host` | Namnet eller IP-adressen som är kopplad till din [!DNL FTP] server. |
+| `username` | Användarnamnet med åtkomst till [!DNL FTP] server. |
+| `password` | Lösenordet för [!DNL FTP] server. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL FTP] är: `fb2e94c9-c031-467d-8103-6bd6e0a432f2`. |
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL FTP] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL FTP] autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -98,7 +98,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska FTP-servern i nästa självstudiekurs.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska FTP-servern i nästa självstudiekurs.
 
 ```json
 {
@@ -109,4 +109,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en FTP-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för flödestjänst](../../explore/cloud-storage.md) eller [import av Parquet-data med API:t för flödestjänst](../../cloud-storage-parquet.md).
+I den här självstudiekursen har du skapat en FTP-anslutning med [!DNL Flow Service] API, och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för Flow Service](../../explore/cloud-storage.md).

@@ -6,31 +6,31 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Data Lake Storage Gen2 med API:t för Flow Service.
 exl-id: cad5e2a0-e27c-4130-9ad8-888352c92f04
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 13bd1254dfe89004465174a7532b4f6aaef54c09
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '511'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Azure Data Lake Storage Gen2]-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Azure Data Lake Storage Gen2] basanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Azure Data Lake Storage Gen2] (kallas nedan &quot;ADLS Gen2&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Azure Data Lake Storage Gen2] (nedan kallat ADLS Gen2) med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en ADLS Gen2-källanslutning med hjälp av API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna skapa en ADLS Gen2-källanslutning med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till ADLS Gen2 måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] Om du vill ansluta till ADLS Gen2 måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -44,13 +44,13 @@ Mer information om dessa värden finns i [det här ADLS Gen2-dokumentet](https:/
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina ADLS Gen2-autentiseringsuppgifter som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkten när du anger dina ADLS Gen2-autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -99,7 +99,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
 
 ```json
 {
@@ -110,4 +110,4 @@ Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusi
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en ADLS Gen2-anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för flödestjänst](../../explore/cloud-storage.md) eller [import av Parquet-data med API:t för flödestjänst](../../cloud-storage-parquet.md).
+I den här självstudiekursen har du skapat en ADLS Gen2-anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t för Flow Service](../../explore/cloud-storage.md).
