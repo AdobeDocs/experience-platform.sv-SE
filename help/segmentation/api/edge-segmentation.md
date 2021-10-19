@@ -5,9 +5,9 @@ title: 'Kantsegmentering med API '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: c1dc75d94774eff8ad9a7374b1fa158f737dd5a4
+source-git-commit: c89971668839555347e9b84c7c0a4ff54a394c1a
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '917'
 ht-degree: 0%
 
 ---
@@ -16,50 +16,47 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med användargränssnittet finns i [användargränssnittsguiden för kantsegmentering](../ui/edge-segmentation.md). Kantsegmentering är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med användargränssnittet finns i [gränssnittsguide för kantsegmentering](../ui/edge-segmentation.md). Kantsegmentering är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Kantsegmentering är möjligheten att utvärdera segment i Adobe Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
 ## Komma igång
 
-Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform]-tjänster som är involverade i kantsegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör kantsegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån era  [!DNL Real-time Customer Profile] data.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
-Om du vill kunna anropa alla Experience Platform API-slutpunkter läser du guiden [komma igång med plattforms-API:er](../../landing/api-guide.md) för att lära dig mer om obligatoriska rubriker och hur du läser exempel-API-anrop.
+Om du vill kunna anropa någon Experience Platform API-slutpunkt läser du i guiden [komma igång med plattforms-API:er](../../landing/api-guide.md) om du vill veta mer om obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Frågetyper för kantsegmentering {#query-types}
 
 För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste frågan följa följande riktlinjer:
 
-| Frågetyp | Detaljer |
-| ---------- | ------- |
-| Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
-| Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
-| Inkommande träff med ett tidsfönster på 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar |
-| Inkommande träde som refererar till en profil med ett tidsfönster på 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar och ett eller flera profilattribut |
-
-{style=&quot;table-layout:auto&quot;}
-
-Följande frågetyper är **inte** som för närvarande stöds av kantsegmentering:
-
-| Frågetyp | Detaljer |
-| ---------- | ------- |
-| Flera händelser | Om en fråga innehåller mer än en händelse kan den inte utvärderas med kantsegmentering. |
-| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger. |
-| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger och har ett eller flera profilattribut. |
+| Frågetyp | Detaljer | Exempel |
+| ---------- | ------- | ------- |
+| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | Personer som har lagt till ett objekt i kundvagnen. |
+| En händelse som refererar till en profil | En segmentdefinition som refererar till ett eller flera profilattribut och en enda inkommande händelse utan tidsbegränsning. | Folk som bor i USA som besökte hemsidan. |
+| Negerad enkel händelse med ett profilattribut | En segmentdefinition som refererar till en negerad enkel inkommande händelse och ett eller flera profilattribut | Personer som bor i USA och har **not** besökte hemsidan. |
+| En händelse inom ett 24-timmarsfönster | En segmentdefinition som refererar till en enda inkommande händelse inom 24 timmar. | Personer som besökt hemsidan de senaste 24 timmarna. |
+| En händelse med ett profilattribut i ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en negerad enkel inkommande händelse inom 24 timmar. | Personer som bor i USA och som har besökt hemsidan de senaste 24 timmarna. |
+| Negerad enkel händelse med ett profilattribut inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en negerad enkel inkommande händelse inom 24 timmar. | Personer som bor i USA och har **not** besökte hemsidan de senaste 24 timmarna. |
+| Frekvenshändelse inom ett 24-timmarsfönster | En segmentdefinition som refererar till en händelse som inträffar ett visst antal gånger inom ett tidsfönster på 24 timmar. | Personer som besökte hemsidan **minst** fem gånger de senaste 24 timmarna. |
+| Frekvenshändelse med ett profilattribut inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en händelse som inträffar ett visst antal gånger inom ett tidsfönster på 24 timmar. | Personer från USA som besökte hemsidan **minst** fem gånger de senaste 24 timmarna. |
+| Negerad frekvenshändelse med en profil inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en negerad händelse som inträffar ett visst antal gånger inom ett tidsfönster på 24 timmar. | Personer som inte har besökt hemsidan **mer** än fem gånger de senaste 24 timmarna. |
+| Flera inkommande träffar inom en tidsprofil på 24 timmar | En segmentdefinition som refererar till flera händelser som inträffar inom ett tidsfönster på 24 timmar. | Personer som besökte hemsidan **eller** har besökt utcheckningssidan inom de senaste 24 timmarna. |
+| Flera händelser med en profil inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och flera händelser som inträffar inom ett tidsfönster på 24 timmar. | Personer från USA som besökte hemsidan **och** har besökt utcheckningssidan inom de senaste 24 timmarna. |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## Hämta alla segment som är aktiverade för kantsegmentering
 
-Du kan hämta en lista över alla segment som är aktiverade för kantsegmentering inom IMS-organisationen genom att göra en GET-begäran till `/segment/definitions`-slutpunkten.
+Du kan hämta en lista över alla segment som är aktiverade för kantsegmentering inom IMS-organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
-Om du vill hämta segment som är aktiverade för kantsegmentering måste du ta med frågeparametern `evaluationInfo.synchronous.enabled=true` i sökvägen för begäran.
+Om du vill hämta segment som är aktiverade för kantsegmentering måste du ta med frågeparametern `evaluationInfo.synchronous.enabled=true` i sökvägen till begäran.
 
 ```http
 GET /segment/definitions?evaluationInfo.synchronous.enabled=true
@@ -78,7 +75,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med segment i IMS-organisationen som är aktiverade för kantsegmentering. Mer detaljerad information om den returnerade segmentdefinitionen finns i [slutpunktshandboken för segmentdefinitioner](./segment-definitions.md).
+Ett lyckat svar returnerar en array med segment i IMS-organisationen som är aktiverade för kantsegmentering. Mer detaljerad information om den returnerade segmentdefinitionen finns i [slutpunktsguide för segmentdefinitioner](./segment-definitions.md).
 
 ```json
 {
@@ -167,7 +164,7 @@ Ett lyckat svar returnerar en array med segment i IMS-organisationen som är akt
 
 ## Skapa ett segment som är aktiverat för kantsegmentering
 
-Du kan skapa ett segment som är aktiverat för kantsegmentering genom att göra en POST-förfrågan till `/segment/definitions`-slutpunkten som matchar någon av [frågorna för kantsegmentering som listas ovan](#query-types).
+Du kan skapa ett segment som är aktiverat för kantsegmentering genom att göra en begäran om POST till `/segment/definitions` slutpunkt som matchar en av [frågetyper för kantsegmentering som listas ovan](#query-types).
 
 **API-format**
 
@@ -179,7 +176,7 @@ POST /segment/definitions
 
 >[!NOTE]
 >
->Exemplet nedan är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om att [skapa ett segment](../tutorials/create-a-segment.md).
+>Exemplet nedan är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om [skapa ett segment](../tutorials/create-a-segment.md).
 
 ```shell
 curl -X POST \
@@ -250,4 +247,4 @@ Ett lyckat svar returnerar detaljerna om den nyligen skapade segmentdefinitionen
 
 Nu när ni vet hur ni skapar segment med stöd för kantsegmentering kan ni använda dem för att skapa personalisering på samma sida och nästa sida.
 
-Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du läsa [användarhandboken för Segment Builder](../ui/segment-builder.md).
+Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du gå till [Användarhandbok för Segment Builder](../ui/segment-builder.md).
