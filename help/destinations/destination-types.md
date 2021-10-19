@@ -1,12 +1,12 @@
 ---
 keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
-seo-title: Måltyper och -kategorier
+seo-title: Destination types and categories
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 5a6f14ba65584a6bd61d62c4fb0b46e8f9e8e96d
+source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och 
 
 ## Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]** och  **[!UICONTROL Streaming Segment Export]** destinationer i Adobe Experience Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [ i ](../profile/home.md)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]** och **[!UICONTROL Streaming Segment Export]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
 
 ## Profilexportdestinationer
 
@@ -34,17 +34,17 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 ### Exportmål för direktuppspelningsprofil {#streaming-profile-export}
 
-Exportdestinationer för direktuppspelningsprofiler tar emot segment- och profildata som dataströmmar i Experience Platform. [Amazon ](catalog/cloud-storage/amazon-kinesis.md) Kinesioch  [Azure Event ](catalog/cloud-storage/azure-event-hubs.md) Hubsare exempel på sådana destinationer.
+Exportdestinationer för direktuppspelningsprofiler tar emot segment- och profildata som dataströmmar i Experience Platform. [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](catalog/cloud-storage/azure-event-hubs.md) är exempel på sådana destinationer.
 
 ### Filbaserade mål {#file-based}
 
-Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på destinationen där du kan placera filer som innehåller profilexporter.
+Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på destinationen där du kan sätta in filer som innehåller profilexporter.
 
-## Målgrupper för direktuppspelad segmentexport
+## Målgrupper för direktuppspelad segmentexport {#streaming-destinations}
 
-Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md) och  [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md) är exempel på sådana destinationer.
+Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)och är exempel på sådana destinationer.
 
-## Profilexport och segmentexportdestinationer - videoöversikt
+## Profilexport och segmentexportdestinationer - videoöversikt {#video}
 
 I videon nedan beskrivs de två typerna av destinationer:
 
@@ -56,13 +56,13 @@ Plattformen utnyttjar tagghanteringens kraft och flexibilitet, vilket gör att d
 
 >[!TIP]
 >
->Detaljerad information om taggtillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [översikten över taggtillägg](./catalog/launch-extensions/overview.md).
+>Detaljerad information om taggtillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet finns i [taggtillägg - översikt](./catalog/launch-extensions/overview.md).
 
-Med taggtillägg vidarebefordras råa händelsedata till flera typer av mål. Tänk på tillägg som en **typ av händelsespårning**-typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [tillägget för Gainsight-anpassning](./catalog/personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
+Med taggtillägg vidarebefordras råa händelsedata till flera typer av mål. Tänk på tillägg som **Vidarebefordran av händelser** typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [Tillägg för personalisering med Gainsight](./catalog/personalization/gainsight.md) eller [Bekräfta rösten för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
 
 ![Märkordstillägg jämfört med andra mål](./assets/common/launch-and-other-destinations.png)
 
-## När anslutningar och tillägg ska användas
+## När anslutningar och tillägg ska användas {#when-to-use}
 
 Som marknadsförare kan du använda en kombination av anslutningar och tillägg för att hantera dina användningsfall.
 
@@ -70,8 +70,8 @@ Anslutningar är användbara när det är nödvändigt att utnyttja en fullstän
 
 Tillägg är användbara när händelsedata används för att utlösa en åtgärd eller för att utföra segmentering i en extern miljö. Om beteendedata till exempel behöver vidarebefordras till ett externt system utan att kopplas till andra datakällor i filen för en viss användare.
 
-## Målkategorier
+## Målkategorier {#categories}
 
-Anslutningarna och tilläggen i [målkatalogen](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Advertising**, **Cloud storage**, **Survey platforms**, **Email marketing**, osv.), beroende på vilken marknadsföringsåtgärd de hjälper dig att utföra. Mer information om var och en av kategorierna, samt vilka mål som ingår i varje kategori, finns i dokumentationen till [målkatalogen](./catalog/overview.md).
+Anslutningarna och tilläggen i [målkatalog](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Reklam**, **molnlagring**, **Undersökningsplattformar**, **E-postmarknadsföring**, osv.), beroende på vilka marknadsföringsåtgärder de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka destinationer som ingår i varje kategori, finns i [Dokumentation för målkatalog](./catalog/overview.md).
 
 ![Målkategorier](./assets/destination-types/destination-categories-menu.png)

@@ -1,25 +1,27 @@
 ---
-description: På den här sidan beskrivs hur du använder referensinformationen i konfigurationsalternativen för SDK för destinationer för att konfigurera destinationen med SDK för destinationer.
-seo-description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
-seo-title: How to use Destination SDK to configure your destination
-title: Så här använder du mål-SDK för att konfigurera ditt mål
+description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med SDK för mål.
+title: Så här använder du mål-SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 15626393bd69173195dd924c8817073b75df5a1e
+source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '670'
 ht-degree: 0%
 
 ---
 
-# Så här använder du mål-SDK för att konfigurera ditt mål
+# Så här använder du mål-SDK för att konfigurera ett mål för direktuppspelning
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du använder referensinformationen i [Konfigurationsalternativ i Destinations SDK](./configuration-options.md) för att konfigurera målet. Stegen beskrivs i sekventiell ordning nedan.
+Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativ i mål-SDK](./configuration-options.md) och i andra mål-SDK-funktioner och API-referensdokument för att konfigurera en [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
+
+>[!NOTE]
+>
+>Det går för närvarande inte att konfigurera ett gruppmål via mål-SDK.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som visas nedan bör du läsa [sidan Komma igång för mål-SDK](./getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med mål-SDK API:er.
+Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med mål-SDK](./getting-started.md) sida med information om hur du får de autentiseringsuppgifter för Adobe I/O som krävs och andra krav som krävs för att arbeta med programmeringsgränssnitten för mål-SDK.
 
 ## Steg för att använda konfigurationsalternativen i mål-SDK för att konfigurera destinationen {#steps}
 
@@ -27,9 +29,9 @@ Innan du går vidare till stegen som visas nedan bör du läsa [sidan Komma igå
 
 ## Steg 1: Skapa en server- och mallkonfiguration {#create-server-template-configuration}
 
-Börja med att skapa en server- och mallkonfiguration med `/destinations-server`-slutpunkten (läs [API-referens](./destination-server-api.md)). Mer information om server- och mallkonfigurationen finns i [Server- och mallspecifikationerna](./configuration-options.md#server-and-template) i referensavsnittet.
+Börja med att skapa en server- och mallkonfiguration med `/destinations-server` slutpunkt (läs [API-referens](./destination-server-api.md)). Mer information om server- och mallkonfigurationen finns i [Server- och mallspecifikationer](./configuration-options.md#server-and-template) i referensavsnittet.
 
-Nedan visas ett exempel på en konfiguration. Observera att meddelandetransformeringsmallen i parametern `requestBody.value` hanteras i steg 3, [Skapa omformningsmall](./configure-destination-instructions.md#create-transformation-template).
+Nedan visas ett exempel på en konfiguration. Observera att mallen för meddelandeomformning i `requestBody.value` parametern behandlas i steg 3, [Skapa omformningsmall](./configure-destination-instructions.md#create-transformation-template).
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destination-servers
@@ -56,7 +58,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 ## Steg 2: Skapa målkonfiguration {#create-destination-configuration}
 
-Nedan visas ett exempel på en konfiguration för en målmall som skapats med API-slutpunkten `/destinations`. Mer information om den här mallen finns i [Målkonfiguration](./destination-configuration.md).
+Nedan visas ett exempel på en konfiguration för en målmall som skapats med `/destinations` API-slutpunkt. Mer information om den här mallen finns i [Målkonfiguration](./destination-configuration.md).
 
 Om du vill ansluta server- och mallkonfigurationen i steg 1 till den här målkonfigurationen lägger du till instans-ID:t för servern och mallkonfigurationen som `destinationServerId` här.
 
@@ -144,37 +146,36 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## Steg 3: Skapa meddelandeomvandlingsmall - använd mallspråk för att ange meddelandets utdataformat {#create-transformation-template}
 
-Beroende på vilka nyttolaster målet har stöd för måste du skapa en mall som omformar formatet för exporterade data från Adobe XDM-formatet till ett format som stöds av målet. Se mallexempel i avsnittet [Använda ett mallspråk för identitets-, attribut- och segmentmedlemsomvandlingar](./message-format.md#using-templating) och använd [mallutvecklingsverktyget](./create-template.md) som tillhandahålls av Adobe.
+Beroende på vilka nyttolaster målet har stöd för måste du skapa en mall som omformar formatet för exporterade data från Adobe XDM-formatet till ett format som stöds av målet. Se mallexempel i avsnittet [Använda ett mallspråk för identitet, attribut och segmentmedlemskapsomvandlingar](./message-format.md#using-templating) och använder [mallutvecklingsverktyg](./create-template.md) tillhandahålls av Adobe.
 
 När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du till den i server- och mallkonfigurationen som du skapade i steg 1.
 
 ## Steg 4: Skapa konfiguration för målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver mål-SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i ditt mål programmatiskt. Mer information om när du behöver konfigurera konfigurationen och hur du gör den finns i [Hantering av målgruppsmetadata](./audience-metadata-management.md).
+För vissa destinationer kräver mål-SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i ditt mål programmatiskt. Se [Hantering av målgruppsmetadata](./audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID:t för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
 ## Steg 5: Skapa konfiguration av autentiseringsuppgifter/Konfigurera autentisering {#set-up-authentication}
 
-Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller `"authenticationRule": "PLATFORM_AUTHENTICATION"` i målkonfigurationen ovan, kan du ställa in autentisering för ditt mål med hjälp av slutpunkten `/destination` eller `/credentials`.
+Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller `"authenticationRule": "PLATFORM_AUTHENTICATION"` i målkonfigurationen ovan kan du konfigurera autentisering för målet med hjälp av `/destination` eller `/credentials` slutpunkt.
 
-* **Mest vanliga fall**: Om du valde  `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2 läser du  [OAuth 2-autentisering](./oauth2-authentication.md).
+* **Det vanligaste fallet**: Om du valde `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2, läs [OAuth 2-autentisering](./oauth2-authentication.md).
 * Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"`, se [Konfiguration av autentiseringsuppgifter](./credentials-configuration.md) i referensdokumentationen.
 
 ## Steg 6: Testa destinationen {#test-destination}
 
-När du har konfigurerat ditt mål med hjälp av konfigurationsslutpunkterna i de föregående stegen kan du använda [måltestningsverktyget](./create-template.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
+När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](./create-template.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
 
 * [Skapa en dokumentationssida för segment](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=en#create-segment)
 * [Skapa en segmentvideogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
-
 ## Steg 7: Publicera destinationen {#publish-destination}
 
-När du har konfigurerat och testat målet kan du skicka konfigurationen till Adobe för granskning med API:t [målpublicering](./destination-publish-api.md).
+När du har konfigurerat och testat destinationen använder du [målpublicerings-API](./destination-publish-api.md) för att skicka in din konfiguration till Adobe för granskning.
 
 ## Steg 8: Dokumentera destinationen {#document-destination}
 
-Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktiserad integrering](./overview.md#productized-custom-integrations) använder du [självbetjäningsdokumentationsprocessen](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience League målkatalogen](/help/destinations/catalog/overview.md).
+Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience League destinationskatalog](/help/destinations/catalog/overview.md).

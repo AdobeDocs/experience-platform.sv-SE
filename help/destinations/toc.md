@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 6c21398a3f2fb26cc925ca1f5dcbe92b306a8325
+source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '645'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 1%
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
    * [Skapa en ny målanslutning](./ui/connect-destination.md)
-   * Aktivera målgruppsdata till mål{#activate}
+   * Aktivera målgruppsdata för destinationer{#activate}
       * [Aktiveringsöversikt](./ui/activation-overview.md)
       * [Aktivera målgruppsdata för att direktuppspela segmentexportmål](./ui/activate-segment-streaming-destinations.md)
       * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md)
@@ -36,7 +36,7 @@ ht-degree: 1%
 * Målkatalog {#catalog}
    * [Översikt över destinationskatalogen](./catalog/overview.md)
    * [ (Alfa) HTTP-anslutning](./catalog/http-destination.md)
-   * Adobe mål{#adobe}
+   * Adobe destinationer{#adobe}
       * [Översikt över destinationer i Adobe](./catalog/adobe/overview.md)
       * [(Beta) Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [Experience Platform segmentdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
@@ -55,7 +55,7 @@ ht-degree: 1%
       * [Google Ad Manager-anslutning](./catalog/advertising/google-ad-manager.md)
       * [Google Customer Match Connection](./catalog/advertising/google-customer-match.md)
       * [Google Display &amp; Video 360-anslutning](./catalog/advertising/google-dv360.md)
-      * [Google-taggtillägg](./catalog/advertising/gtag-advertising.md)
+      * [Google Gtag-tillägg](./catalog/advertising/gtag-advertising.md)
       * [linkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
@@ -84,7 +84,7 @@ ht-degree: 1%
       * [SessionCam-tillägg](./catalog/analytics/sessioncam.md)
       * [TMMData-tillägg](./catalog/analytics/tmmdata.md)
       * [Yext Conversion Tracking-tillägg](./catalog/analytics/yext.md)
-   * Lagringsmål för molnet {#cloud-storage}
+   * Lagringsmål i molnet {#cloud-storage}
       * [Översikt över destinationer för molnlagring](./catalog/cloud-storage/overview.md)
       * [(Beta) Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-anslutning](./catalog/cloud-storage/amazon-s3.md)
@@ -106,7 +106,7 @@ ht-degree: 1%
       * [Oracle Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua.md)
       * [Oraclena svarssystemanslutning](./catalog/email-marketing/oracle-responsys.md)
       * [Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud.md)
-   * Taggtillägg {#launch-extensions}
+   * Märkordstillägg {#launch-extensions}
       * [Översikt över taggtillägg](./catalog/launch-extensions/overview.md)
    * Destinationer för mobilengagemang {#mobile-engagement}
       * [Översikt över mål för mobilengagemang](./catalog/mobile-engagement/overview.md)
@@ -125,7 +125,7 @@ ht-degree: 1%
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
       * [KickFire-tillägg](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
-   * Sociala mål{#social}
+   * Sociala destinationer{#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
@@ -147,7 +147,7 @@ ht-degree: 1%
    * [Översikt](./destination-sdk/overview.md)
    * [Krav för integrering](./destination-sdk/integration-prerequisites.md)
    * [Komma igång](./destination-sdk/getting-started.md)
-   * SDK-målfunktionalitet {#functionality}
+   * SDK-målfunktion {#functionality}
       * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
       * [Målkonfiguration](./destination-sdk/destination-configuration.md)
       * [Server- och mallspecifikationer](./destination-sdk/server-and-template-configuration.md)
@@ -164,14 +164,14 @@ ht-degree: 1%
       * [API-åtgärder för målgruppsmetadata](./destination-sdk/audience-metadata-api.md)
       * [API-åtgärder för slutpunkt för autentiseringsuppgifter](./destination-sdk/credentials-configuration-api.md)
       * [Publicera API-åtgärder för slutpunkt](./destination-sdk/destination-publish-api.md)
-      * Referens för utvecklarverktyg {#developer-tools-reference}
+      * Referens för utvecklingsverktyg {#developer-tools-reference}
          * [Hämta API-åtgärder för exempelmallar](./destination-sdk/sample-template-api.md)
          * [API-åtgärder för återgivningsmall](./destination-sdk/render-template-api.md)
          * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
          * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
    * Stödlinjer {#guides}
-      * [Använd mål-SDK för att konfigurera ditt mål](./destination-sdk/configure-destination-instructions.md)
-   * Dokumentera ditt mål {#document-destination}
+      * [Använd mål-SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/configure-destination-instructions.md)
+   * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
       * [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
       * [Skapa en måldokumentationssida med en textredigerare i den lokala miljön](./destination-sdk/docs-framework/work-in-local-environment.md)
