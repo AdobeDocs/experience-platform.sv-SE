@@ -5,53 +5,54 @@ title: Skapa en Snowflake-basanslutning med API:t för flödestjänsten
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake med API:t för Flow Service.
-source-git-commit: 5e2301a409f04bd4e23888648f244918b871f0ad
+exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
+source-git-commit: 76b3e3e9bcb27eb2bd6981ae6eb109410ae16336
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 0%
+source-wordcount: '526'
+ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Snowflake]-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Snowflake] basanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Snowflake] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Snowflake] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Snowflake] med hjälp av API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Snowflake] med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL Snowflake] måste du ange följande anslutningsegenskaper:
+För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `account` | Det [!DNL Snowflake]-konto som du vill ansluta till plattformen. |
-| `warehouse` | Lagret [!DNL Snowflake] hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerställe är oberoende av varandra och måste nås individuellt när data skickas till plattformen. |
-| `database` | [!DNL Snowflake] innehåller de data som du vill ta med plattformen. |
-| `username` | Användarnamnet för [!DNL Snowflake]-kontot. |
-| `password` | Lösenordet för användarkontot [!DNL Snowflake]. |
-| `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL Snowflake]-instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikationens ID för [!DNL Snowflake] är `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
+| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, din region och din molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html). |
+| `warehouse` | The [!DNL Snowflake] dist.lager hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerstället är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
+| `database` | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
+| `username` | Användarnamnet för [!DNL Snowflake] konto. |
+| `password` | Lösenordet för [!DNL Snowflake] användarkonto. |
+| `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Snowflake] är `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
-Mer information om hur du kommer igång finns i det här [[!DNL Snowflake] dokumentet](https://docs.snowflake.com/en/user-guide/oauth-custom.html).
+Mer information om hur du kommer igång finns i [[!DNL Snowflake] dokument](https://docs.snowflake.com/en/user-guide/oauth-custom.html).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Snowflake] som en del av begärandetexten.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Snowflake] autentiseringsuppgifter som en del av begärandetexten.
 
 **API-format**
 
@@ -89,8 +90,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL Snowflake]-instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Snowflake]: `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
+| `connectionSpec.id` | The [!DNL Snowflake] anslutningsspecifikation-ID: `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
 **Svar**
 
@@ -103,4 +104,4 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
 }
 ```
 
-I den här självstudiekursen har du skapat en [!DNL Snowflake]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Snowflake] anslutning med [!DNL Flow Service] API, och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
