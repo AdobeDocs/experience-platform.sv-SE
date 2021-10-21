@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation
 description: Den senaste versionsinformationen för taggar i Adobe Experience Platform.
-source-git-commit: f1e6741de9aa00652e9af290a89f73788e0f1d83
+exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
+source-git-commit: cda34c08a53d084a92a07caa9a2b166e27d9e28c
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '574'
 ht-degree: 0%
 
 ---
@@ -12,11 +13,21 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## 21 oktober 2021
+
+**Skicka data till autentiserade slutpunkter vid händelsevidarebefordran** - Med hjälp av hemligheter kan du skicka data till slutpunkter som kräver följande autentiseringsprotokoll:
+
+* **[!UICONTROL Token]**: En enda teckensträng som representerar ett autentiseringstokenvärde.
+* **[!UICONTROL Simple HTTP]**: Innehåller två strängattribut för ett användarnamn och lösenord.
+* **[!UICONTROL OAuth2]**: Innehåller flera attribut som stöder [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) spec.
+
+Mer information finns i stödlinjerna på [hantera hemligheter i användargränssnittet för datainsamling](../ui/event-forwarding/secrets.md) eller [hantera hemligheter i Reactor API](../api/guides/secrets.md).
 
 ## 19 juli 2021
 
-**Justeringar av rättigheten**  Hantera egenskaper - rättigheten Hantera egenskaper stötte på ett problem där en användare hade behörighet att skapa en ny egenskap, men inte kunde se den efter att den skapades (vilket beskrivs i communitytråden  [här](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/technical-advisory-adjustments-to-the-manage-properties/ba-p/399176)). En korrigering är nu aktiv med behörigheter som framtvingas enligt beskrivningen i artikeln.
+**Justeringar till höger&quot;Hantera egenskaper&quot;** - rättigheten Hantera egenskaper stötte på ett problem där en användare hade behörighet att skapa en ny egenskap, men inte kunde se den efter att den skapades (vilket beskrivs i communitytråden [här](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/technical-advisory-adjustments-to-the-manage-properties/ba-p/399176)). En korrigering är nu aktiv med behörigheter som framtvingas enligt beskrivningen i artikeln.
 
 >[!NOTE]
 >
@@ -24,15 +35,15 @@ ht-degree: 0%
 
 ## 17 maj 2021
 
-**Bättre hantering av osparade ändringar**  - Det brukade vara så att du tillfrågades om du ville ignorera ändringarna när du navigerade bort från en inställningsvy (tillägg, dataelement och regelkomponenter). Men logiken för att fastställa det var inte särskilt bra, så större delen av tiden du fick en uppmaning att spara ändringar trots att det inte fanns några.  Det har rättats till.  Från och med nu bör du bara se den uppmaningen när du har gjort ändringar.
+**Bättre hantering av osparade ändringar** - Det brukade vara så att när du navigerade bort från en inställningsvy (tillägg, dataelement och regelkomponenter) skulle du få en fråga om du ville ignorera ändringarna. Men logiken för att fastställa det var inte särskilt bra, så större delen av tiden du fick en uppmaning att spara ändringar trots att det inte fanns några.  Det har rättats till.  Från och med nu bör du bara se den uppmaningen när du har gjort ändringar.
 
 ## 10 maj 2021
 
-**Förenklad publicering**  - Det behövs inte längre någon byggnad i testmiljön.  Om du har rätt behörighet kan du hoppa över tillståndet Skickat helt och publicera direkt från Development så länge som du har skapat något och det inte finns några andra bibliotek i uppströmmen.
+**Förenklad publicering** - Att bygga till mellanlagringsmiljön behövs inte längre.  Om du har rätt behörighet kan du hoppa över tillståndet Skickat helt och publicera direkt från Development så länge som du har skapat något och det inte finns några andra bibliotek i uppströmmen.
 
 ## 22 april 2021
 
-**Datainsamling i Adobe Experience Platform**  - Att skicka data till Adobe handlar inte bara om att distribuera taggar till din webbplats eller konfiguration till din app.  Användning av Experience Platform SDK och Edge Network kräver åtkomst till andra plattformsfunktioner.  Tidigare krävdes det att man loggade in i några olika verktyg, men nu är de tillsammans på ett ställe.
+**Datainsamling i Adobe Experience Platform** - Att skicka data till Adobe handlar inte bara om att distribuera taggar till din webbplats eller konfiguration till din app.  Användning av Experience Platform SDK och Edge Network kräver åtkomst till andra plattformsfunktioner.  Tidigare krävdes det att man loggade in i några olika verktyg, men nu är de tillsammans på ett ställe.
 
 Datainsamling i Platform består av sex funktioner, och din nya smidiga navigering innehåller bara de objekt som ditt företag och ditt användarkonto har tillgång till.  Vissa funktionsnamn har också uppdaterats för att matcha Experience Platform namngivningsmönster.
 
@@ -53,6 +64,6 @@ Se fram emot fler uppdateringar i takt med att Experience Platform och datainsam
 
 ## 13 januari 2021
 
-**Allmän tillgänglighet: HändelsevidarebefordringSkicka data på händelsenivå till Adobe Experience Platform Edge Network använder sedan händelsevidarebefordran för att omvandla, förbättra och skicka data till en slutpunkt som inte är Adobe med hjälp av Adobe, inte klienten, med låg latens.** 
+**Allmän tillgänglighet: Vidarebefordran av händelser** Skicka data på händelsenivå till Adobe Experience Platform Edge Network och använd sedan händelsevidarebefordran för att omvandla, berika och skicka data till en slutpunkt som inte är Adobe med hjälp av Adobe, inte klienten, med låg latens.
 
-Mer information finns i [översikten över vidarebefordran av händelser](../ui/event-forwarding/overview.md) och [guiden](../ui/event-forwarding/getting-started.md) Komma igång.
+Se [händelsevidarebefordring - översikt](../ui/event-forwarding/overview.md) och [komma igång-guide](../ui/event-forwarding/getting-started.md) för mer information.
