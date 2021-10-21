@@ -4,9 +4,9 @@ user-guide-title: Hjälp om taggar
 breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
-source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
+source-git-commit: 7368b6e69522cce9343df78c31a712bfdbfedfe3
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '381'
 ht-degree: 25%
 
 ---
@@ -54,6 +54,7 @@ ht-degree: 25%
 * Vidarebefordran av händelser {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
+   * [Hemligheter](./ui/event-forwarding/secrets.md)
 * Administrering {#admin}
    * [Översikt](./ui/administration/overview.md)
    * [Företag och fastigheter](./ui/administration/companies-and-properties.md)
