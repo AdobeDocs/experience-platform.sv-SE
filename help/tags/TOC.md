@@ -4,9 +4,9 @@ user-guide-title: Hjälp om taggar
 breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '380'
 ht-degree: 25%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 25%
    * [Jämför resursrevisioner](./ui/managing-resources/compare-resource-revisions.md)
    * [Ta bort resurser](./ui/managing-resources/delete-resources.md)
    * [Ta bort resurser från ett bibliotek](./ui/managing-resources/remove-resources-from-library.md)
-* Publicerar {#publish}
+* Publicering {#publish}
    * [Översikt](./ui/publishing/overview.md)
    * [Publiceringsflöde](./ui/publishing/publishing-flow.md)
    * Värdar {#hosts}
@@ -51,7 +51,7 @@ ht-degree: 25%
    * [Distribuera JavaScript-taggar för att hantera kundernas samtycke](./ui/client-side/consent.md)
    * [Stöd för CSP (Content Security Policy)](./ui/client-side/content-security-policy.md)
    * [Stöd för SRI (Subresource Integrity)](./ui/client-side/sri.md)
-* Vidarebefordra händelse {#event-forwarding}
+* Vidarebefordran av händelser {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
 * Administrering {#admin}
@@ -72,7 +72,7 @@ ht-degree: 25%
          * [Versionsinformation](./extensions/web/product-string/release-notes.md)
       * Adobe Audience Manager {#audience-manager}
          * [Översikt](./extensions/web/audience-manager/overview.md)
-      * Adobe-klientdatalagret {#client-data-layer}
+      * Adobe-klientdatalager {#client-data-layer}
          * [Översikt](./extensions/web/client-data-layer/overview.md)
          * [Versionsinformation](./extensions/web/client-data-layer/release-notes.md)
       * Adobe ContextHub {#contexthub}
@@ -86,7 +86,7 @@ ht-degree: 25%
          * [Översikt](./extensions/web/sdk/overview.md)
       * Adobe Experience Platform Cloud Connector {#cloud-connector}
          * [Översikt](./extensions/web/cloud-connector/overview.md)
-      * Adobe Experience Manager Asset Insights {#asset-insights}
+      * Adobe Experience Manager resursinsikter {#asset-insights}
          * [Översikt](./extensions/web/asset-insights/overview.md)
          * [Versionsinformation](./extensions/web/asset-insights/release-notes.md)
       * Adobe Media Analytics för ljud och video {#media-analytics}
@@ -95,7 +95,7 @@ ht-degree: 25%
       * Adobe Media Analytics (3.x SDK) {#media-analytics-3x}
          * [Översikt](./extensions/web/media-analytics-3x/overview.md)
          * [Versionsinformation](./extensions/web/media-analytics-3x/release-notes.md)
-      * Sekretess för Adobe {#privacy}
+      * Adobe sekretess {#privacy}
          * [Översikt](./extensions/web/privacy/overview.md)
       * Adobe Target {#target}
          * [Översikt](./extensions/web/target/overview.md)
@@ -106,17 +106,17 @@ ht-degree: 25%
       * Plugin-program för vanlig analys {#plugins}
          * [Översikt](./extensions/web/plugins/overview.md)
          * [Versionsinformation](./extensions/web/plugins/release-notes.md)
-      * Kärna {#core}
+      * Core {#core}
          * [Översikt](./extensions/web/core/overview.md)
          * [Vidarebefordran av händelser](./extensions/web/core/event-forwarding.md)
          * [Versionsinformation](./extensions/web/core/release-notes.md)
       * [!DNL Marketo Munchkin] {#marketo}
          * [Översikt](./extensions/web/marketo/overview.md)
          * [Versionsinformation](./extensions/web/marketo/release-notes.md)
-      * [!DNL BrightCove] videouppföljning  {#brightcove}
+      * [!DNL BrightCove] videouppföljning {#brightcove}
          * [Översikt](./extensions/web/brightcove/overview.md)
          * [Versionsinformation](./extensions/web/brightcove/release-notes.md)
-      * [!DNL YouTube] videospårningstillägg  {#youtube}
+      * [!DNL YouTube] videospårningstillägg {#youtube}
          * [Översikt](./extensions/web/youtube/overview.md)
          * [Versionsinformation](./extensions/web/youtube/release-notes.md)
    * [Tredjepartstillägg](./extensions/3rd-party-extensions.md)
@@ -154,7 +154,7 @@ ht-degree: 25%
    * [Värdar för bibliotek från tredje part](./extension-dev/third-party-libraries.md)
    * [Turbinfri variabel](./extension-dev/turbine.md)
    * [Bakåtkompatibilitetsstandard](./extension-dev/backwards-compatibility.md)
-* Reaktor-API {#api}
+* Reaktors-API {#api}
    * [Översikt](./api/overview.md)
    * [Komma igång](./api/getting-started.md)
    * Slutpunkter {#endpoints}
@@ -175,6 +175,7 @@ ht-degree: 25%
       * [Anteckningar](./api/endpoints/notes.md)
       * [Profil](./api/endpoints/profile.md)
       * [Sökning](./api/endpoints/search.md)
+      * [Hemligheter](./api/endpoints/secrets.md)
    * Stödlinjer {#guides}
       * [Delegera beskrivnings-ID](./api/guides/delegate-descriptor-ids.md)
       * [Krypteringsvärden](./api/guides/encrypting-values.md)
@@ -184,6 +185,7 @@ ht-degree: 25%
       * [Sortera svar](./api/guides/sorting.md)
       * [Relationer](./api/guides/relationships.md)
       * [Sökresurser](./api/guides/search.md)
+      * [Hemligheter](./api/guides/secrets.md)
 * [Vanliga frågor och svar ](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * Versionsinformation {#release-notes}

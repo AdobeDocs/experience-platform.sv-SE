@@ -1,10 +1,11 @@
 ---
 title: Relationer i reaktors-API
 description: Lär dig hur resursrelationer etableras i Reactor API, inklusive relationskraven för varje resurs.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: 23976978-a639-4eef-91b6-380a29ec1c14
+source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '798'
-ht-degree: 1%
+source-wordcount: '807'
+ht-degree: 0%
 
 ---
 
@@ -17,16 +18,16 @@ Beroende på vilken typ av resurs det gäller krävs vissa relationer. En obliga
 Oberoende av om de är obligatoriska eller valfria etableras relationer antingen automatiskt av systemet när relevanta resurser skapas, eller också måste de skapas manuellt. Om du skapar relationer manuellt finns det två möjliga metoder beroende på den aktuella resursen:
 
 * [Skapa med nyttolast](#payload)
-* [Skapa med URL](#url)  (endast för bibliotek)
+* [Skapa efter URL](#url) (endast för bibliotek)
 
-I avsnittet [relationskrav](#requirements) finns en lista över kompatibla relationer för varje resurstyp och de metoder som krävs för att upprätta dessa relationer där det är tillämpligt.
+Se avsnittet om [relationskrav](#requirements) en lista över kompatibla relationer för varje resurstyp och de metoder som krävs för att upprätta dessa relationer, där så är tillämpligt.
 
 ## Skapa en relation med nyttolast {#payload}
 
-Vissa relationer måste upprättas manuellt när du skapar en resurs. För att uppnå detta måste du ange ett `relationship`-objekt i nyttolasten för begäran när du först skapar den överordnade resursen. Exempel på sådana relationer är:
+Vissa relationer måste upprättas manuellt när du skapar en resurs. För att uppnå detta måste du ange en `relationship` -objektet i nyttolasten för begäran när du först skapar den överordnade resursen. Exempel på sådana relationer är:
 
-* [Skapa ett ](../endpoints/data-elements.md#create) dataelement med de tillägg som krävs
-* [Skapa en ](../endpoints/environments.md#create) miljö med den värdrelation som krävs
+* [Skapa ett dataelement](../endpoints/data-elements.md#create) med de tillägg som krävs
+* [Skapa en miljö](../endpoints/environments.md#create) med den värdrelation som krävs
 
 **API-format**
 
@@ -43,7 +44,7 @@ POST /properties/{PROPERTY_ID}/{RESOURCE_TYPE}
 
 **Begäran**
 
-Följande begäran skapar en ny `rule_component` som upprättar relationer med `rules` och en `extension`.
+Följande begäran skapar en ny `rule_component`, upprätta relationer med `rules` och `extension`.
 
 ```shell
 curl -X POST \
@@ -83,16 +84,16 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `relationships` | Ett objekt som måste anges när relationer skapas med nyttolast. Varje nyckel i det här objektet representerar en specifik relationstyp. I ovanstående exempel har `extension`- och `rules`-relationer upprättats, vilka är specifika för `rule_components`. Mer information om kompatibla relationstyper för olika resurser finns i avsnittet [relationskrav efter resurs](#relationship-requirements-by-resource). |
-| `data` | Varje relationstyp som anges under objektet `relationship` måste innehålla en `data`-egenskap som refererar till `id` och `type` för den resurs som en relation upprättas med. Du kan skapa en relation med flera resurser av samma typ genom att formatera egenskapen `data` som en array med objekt, där varje objekt innehåller `id` och `type` för en tillämplig resurs. |
-| `id` | Unikt ID för en resurs. Varje `id` måste åtföljas av en jämställd `type`-egenskap som anger resurstypen i fråga. |
-| `type` | Resurstypen som refereras av ett `id`-fält på samma nivå. Godkända värden är `data_elements`, `rules`, `extensions` och `environments`. |
+| `relationships` | Ett objekt som måste anges när relationer skapas med nyttolast. Varje nyckel i det här objektet representerar en specifik relationstyp. I exemplet ovan `extension` och `rules` det upprättas relationer som särskilt `rule_components`. Mer information om kompatibla relationstyper för olika resurser finns i avsnittet om [relationskrav per resurs](#relationship-requirements-by-resource). |
+| `data` | Varje relationstyp som tillhandahålls under `relationship` objektet måste innehålla `data` -egenskap, som refererar till `id` och `type` för den resurs som en relation upprättas med. Du kan skapa en relation med flera resurser av samma typ genom att formatera `data` som en array med objekt, där varje objekt innehåller `id` och `type` för en tillämplig resurs. |
+| `id` | Unikt ID för en resurs. Varje `id` måste åtföljas av ett syskon `type` egenskap, som anger resurstypen i fråga. |
+| `type` | Resurstypen som refereras av ett jämlikt objekt `id` fält. Godkända värden är `data_elements`, `rules`, `extensions`och `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## Skapa en relation utifrån URL {#url}
 
-Till skillnad från andra resurser upprättar bibliotek relationer via sina egna dedikerade `/relationship`-slutpunkter. Exempel:
+Till skillnad från andra resurser upprättar bibliotek relationer genom sina egna `/relationship` slutpunkter. Exempel:
 
 * [Lägga till tillägg, dataelement och regler i ett bibliotek](../endpoints/libraries.md#add-resources)
 * [Tilldela ett bibliotek till en miljö](../endpoints/libraries.md#environment)
@@ -107,11 +108,11 @@ POST /properties/{PROPERTY_ID}/libraries/{LIBRARY_ID}/relationships/{RESOURCE_TY
 | --- | --- |
 | `{PROPERTY_ID}` | ID för egenskapen som biblioteket tillhör. |
 | `{LIBRARY_ID}` | ID:t för det bibliotek som du vill skapa en relation för. |
-| `{RESOURCE_TYPE}` | Den typ av resurs som relationen har som mål. Tillgängliga värden är `environment`, `data_elements`, `extensions` och `rules`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som relationen har som mål. Tillgängliga värden inkluderar `environment`, `data_elements`, `extensions`och `rules`. |
 
 **Begäran**
 
-Följande begäran använder `/relationships/environment`-slutpunkten för ett bibliotek för att skapa en relation med en miljö.
+Följande begäran använder `/relationships/environment` slutpunkt för ett bibliotek för att skapa en relation med en miljö.
 
 ```shell
 curl -X POST \
@@ -131,9 +132,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `data` | Ett objekt som refererar till `id` och `type` för målresursen för relationen. Om du skapar en relation med flera resurser av samma typ (till exempel `extensions` och `rules`) måste egenskapen `data` formateras som en array med objekt, där varje objekt innehåller `id` och `type` för en lämplig resurs. |
-| `id` | Unikt ID för en resurs. Varje `id` måste åtföljas av en jämställd `type`-egenskap som anger resurstypen i fråga. |
-| `type` | Resurstypen som refereras av ett `id`-fält på samma nivå. Godkända värden är `data_elements`, `rules`, `extensions` och `environments`. |
+| `data` | Ett objekt som refererar till `id` och `type` av målresursen för relationen. Om du skapar en relation med flera resurser av samma typ (till exempel `extensions` och `rules`), `data` -egenskapen måste formateras som en array med objekt, där varje objekt innehåller `id` och `type` för en tillämplig resurs. |
+| `id` | Unikt ID för en resurs. Varje `id` måste åtföljas av ett syskon `type` egenskap, som anger resurstypen i fråga. |
+| `type` | Resurstypen som refereras av ett jämlikt objekt `id` fält. Godkända värden är `data_elements`, `rules`, `extensions`och `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -294,3 +295,11 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `property` | ✓ |  |  |
 | `origin` | ✓ |  |  |
 | `rule_components` |  |  |  |
+
+### Hemligheter
+
+| Relation | Obligatoriskt | Skapa med nyttolast | Skapa efter URL |
+| :--- | :---: | :---: | :---: |
+| `property` | ✓ |  | ✓ |
+| `environment` | ✓ | ✓ |  |
+
