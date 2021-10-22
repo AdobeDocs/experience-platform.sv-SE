@@ -5,10 +5,9 @@ title: Hantera dataformat med Data Prep
 topic-legacy: overview
 description: Det här dokumentet ger en översikt över hur olika datatyper hanteras i Data Prep.
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27c59904b1ebe98d65ff8d4001edc2a85cada294
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '568'
 ht-degree: 12%
 
 ---
@@ -21,9 +20,9 @@ Data Prep kan hantera olika dataformat som importerats till Adobe Experience Pla
 
 Om källtypen är en sträng och måltypen är en boolesk typ kan Data Prep automatiskt tolka värdet och konvertera källvärdet till ett booleskt värde.
 
-Värdena `y`, `yes`, `Y`, `YES`, `on`, `ON`, `true` och `TRUE` tolkas automatiskt till `true`.
+Värdena `y`, `yes`, `Y`, `YES`, `on`, `ON`, `true`och `TRUE` tolkas automatiskt för att `true`.
 
-Värdena `n`, `N`, `no`, `NO`, `off`, `OFF`, `false` och `FALSE` tolkas automatiskt till `false`.
+Värdena `n`, `N`, `no`, `NO`, `off`, `OFF`, `false`och `FALSE` tolkas automatiskt för att `false`.
 
 ## Datum {#dates}
 
@@ -42,10 +41,10 @@ date({DATE}, {FORMAT}, {DEFAULT_DATE})
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{DATE}` | Obligatoriskt. Strängen som representerar datumet. |
-| `{FORMAT}` | Valfritt. Strängen som representerar datumformatet. Mer information om strängformatering finns i avsnittet [datum-/tidsformatsträng](#format). |
+| `{FORMAT}` | Valfritt. Strängen som representerar formatet för källdatumet. Mer information om strängformatering finns i [strängavsnitt för datum-/tidsformat](#format). |
 | `{DEFAULT_DATE}` | Valfritt. Standarddatumet som ska returneras om det angivna datumet är null. |
 
-Uttrycket `date(orderDate, "yyyy-MM-dd")` konverterar till exempel värdet `orderDate` &quot;December 31st, 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
+Uttrycket `date(orderDate, "yyyy-MM-dd")` konverterar `orderDate` värdet &quot;December 31st, 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
 
 ### Konvertering av datumfunktion
 
