@@ -5,23 +5,22 @@ title: API-slutpunkt för samtycke
 topic-legacy: developer guide
 description: Lär dig hur du hanterar förfrågningar om kundsamtycke för Experience Cloud-program med Privacy Service-API:t.
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
-translation-type: tm+mt
-source-git-commit: e226990fc84926587308077b32b128bfe334e812
+source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för samtycke
 
-Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras personuppgifter kan samlas in. Med slutpunkten `/consent` i API:t [!DNL Privacy Service] kan du bearbeta förfrågningar om kundsamtycke och integrera dem i ditt sekretessarbetsflöde.
+Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras personuppgifter kan samlas in. The `/consent` slutpunkt i [!DNL Privacy Service] Med API kan ni behandla förfrågningar om kundsamtycke och integrera dem i ert sekretessarbetsflöde.
 
-Innan du använder den här guiden bör du läsa avsnittet [komma igång](./getting-started.md) för information om de autentiseringshuvuden som visas i exemplet på API-anrop nedan.
+Innan du använder den här handboken bör du läsa [komma igång](./getting-started.md) guide för information om nödvändiga autentiseringshuvuden som presenteras i exemplet på API-anrop nedan.
 
 ## Bearbeta en begäran om kundgodkännande
 
-Godkännandebegäranden bearbetas genom att en POST begärs till `/consent`-slutpunkten.
+Begäran om samtycke behandlas genom att en POST skickas till `/consent` slutpunkt.
 
 **API-format**
 
@@ -31,7 +30,7 @@ POST /consent
 
 **Begäran**
 
-Följande begäran skapar ett nytt medgivandejobb för de användar-ID som anges i `entities`-arrayen.
+Följande begäran skapar ett nytt medgivandejobb för användar-ID:n som anges i `entities` array.
 
 ```shell
 curl -X POST \
@@ -62,17 +61,17 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `optOutOfSale` | Om värdet är true anger det att de användare som anges i `entities` vill avanmäla sig från försäljning eller delning av sina personuppgifter. |
-| `entities` | En array med objekt som anger vilka användare som medgivandebegäran gäller för. Varje objekt innehåller en `namespace` och en array med `values` som matchar enskilda användare med det namnutrymmet. |
-| `nameSpace` | Varje objekt i `entities`-arrayen måste innehålla ett av de [standardidentitetsnamnutrymmen](./appendix.md#standard-namespaces) som känns igen av Privacy Service-API:t. |
+| `optOutOfSale` | Om värdet är true visar det att användarna som anges under `entities` vill avanmäla försäljning eller delning av personuppgifter. |
+| `entities` | En array med objekt som anger vilka användare som medgivandebegäran gäller för. Varje objekt innehåller en `namespace` och en array med `values` för att matcha enskilda användare med det namnutrymmet. |
+| `nameSpace` | Varje objekt i `entities` arrayen måste innehålla en av [standardidentitetsnamnutrymmen](./appendix.md#standard-namespaces) känns igen av Privacy Service-API:t. |
 | `values` | En array med värden för varje användare, som motsvarar den angivna `nameSpace`. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Mer information om hur du avgör vilka värden för kundidentitet som ska skickas till [!DNL Privacy Service] finns i guiden [som tillhandahåller identitetsdata](../identity-data.md).
+>Mer information om hur du avgör vilka ID-värden för kunder som ska skickas till [!DNL Privacy Service], se guiden på [tillhandahålla identitetsdata](../identity-data.md).
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (Accepterad) utan nyttolast, vilket anger att begäran accepterades av [!DNL Privacy Service] och håller på att bearbetas.
+Ett godkänt svar returnerar HTTP-status 202 (Accepterad) utan nyttolast, vilket anger att begäran accepterades av [!DNL Privacy Service] och genomgår bearbetning.

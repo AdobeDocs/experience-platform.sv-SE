@@ -5,48 +5,48 @@ title: Prenumerera på Privacy Service Events
 topic-legacy: privacy events
 description: Lär dig hur du prenumererar på Privacy Service-händelser med en förkonfigurerad webkrok.
 exl-id: 9bd34313-3042-46e7-b670-7a330654b178
-source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
+source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '431'
 ht-degree: 1%
 
 ---
 
 # Prenumerera på [!DNL Privacy Service Events]
 
-[!DNL Privacy Service Events] är meddelanden från Adobe Experience Platform  [!DNL Privacy Service]som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga API:t [!DNL Privacy Service] för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
+[!DNL Privacy Service Events] är meddelanden från Adobe Experience Platform [!DNL Privacy Service], som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
 
 Det finns för närvarande fyra typer av meddelanden som rör livscykeln för sekretessjobben:
 
 | Typ | Beskrivning |
 | --- | --- |
-| Jobbet har slutförts | Alla [!DNL Experience Cloud]-program har rapporterat tillbaka och jobbens övergripande eller globala status har markerats som slutförd. |
+| Jobbet har slutförts | Alla [!DNL Experience Cloud] har rapporterat tillbaka och jobbens övergripande eller globala status har markerats som slutförd. |
 | Jobbfel | Ett eller flera program rapporterade ett fel när begäran bearbetades. |
 | Produkten är klar | Ett av de program som är associerade med det här jobbet har slutfört sitt arbete. |
 | Produktfel | Ett av programmen rapporterade ett fel när begäran bearbetades. |
 
-Det här dokumentet innehåller steg för hur du konfigurerar en händelseregistrering för [!DNL Privacy Service]-meddelanden och hur du tolkar meddelandenyttolaster.
+Det här dokumentet innehåller steg för hur du konfigurerar en händelseregistrering för [!DNL Privacy Service] meddelanden och hur du tolkar meddelandenyttolaster.
 
 ## Komma igång
 
 Läs igenom följande Privacy Service-dokumentation innan du startar den här självstudiekursen:
 
 * [Översikt över Privacy Servicen](./home.md)
-* [Utvecklarhandbok för Privacy Service API](./api/getting-started.md)
+* [API-guide för Privacy Service](./api/overview.md)
 
 ## Registrera en webkrok på [!DNL Privacy Service Events]
 
-För att kunna ta emot [!DNL Privacy Service Events] måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Privacy Service]-integrering.
+För att kunna ta emot [!DNL Privacy Service Events]måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Privacy Service] integrering.
 
-Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du gör detta. Se till att du väljer **[!UICONTROL Privacy Service Events]** som händelseleverantör för att komma åt händelserna ovan.
+Följ självstudiekursen på [prenumerera på [!DNL I/O Event] meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du uppnår detta. Se till att du väljer **[!UICONTROL Privacy Service Events]** som din händelseleverantör för att få tillgång till de händelser som listas ovan.
 
 ## Ta emot [!DNL Privacy Service Event] meddelanden
 
-När du har registrerat webkrok- och sekretessjobben kan du börja få händelsemeddelanden. Du kan visa dessa händelser med hjälp av själva webbkroken eller genom att välja fliken **[!UICONTROL Debug Tracing]** i projektets översikt över händelseregistrering i Adobe Developer Console.
+När du har registrerat webkrok- och sekretessjobben kan du börja få händelsemeddelanden. Du kan visa dessa händelser med webbkroken eller genom att välja **[!UICONTROL Debug Tracing]** -fliken i ditt projekts översikt över händelseregistrering i Adobe Developer Console.
 
 ![](images/privacy-events/debug-tracing.png)
 
-Följande JSON är ett exempel på en [!DNL Privacy Service Event]-meddelandenyttolast som skickas till din webkrok när något av programmen som är kopplat till ett sekretessjobb har slutfört sitt arbete:
+Följande JSON är ett exempel på en [!DNL Privacy Service Event] meddelandenyttolast som skickas till din webkrok när något av programmen som är kopplade till ett sekretessjobb har slutfört sitt arbete:
 
 ```json
 {
@@ -69,10 +69,10 @@ Följande JSON är ett exempel på en [!DNL Privacy Service Event]-meddelandenyt
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | Ett unikt systemgenererat ID för meddelandet. |
-| `type` | Den typ av meddelande som skickas, vilket ger kontext till informationen som anges i `data`. Möjliga värden är: <ul><li>`com.adobe.platform.gdpr.jobcomplete`</li><li>`com.adobe.platform.gdpr.joberror`</li><li>`com.adobe.platform.gdpr.productcomplete`</li><li>`com.adobe.platform.gdpr.producterror`</li></ul> |
+| `type` | Den typ av meddelande som skickas, med kontext till den information som anges i `data`. Möjliga värden är: <ul><li>`com.adobe.platform.gdpr.jobcomplete`</li><li>`com.adobe.platform.gdpr.joberror`</li><li>`com.adobe.platform.gdpr.productcomplete`</li><li>`com.adobe.platform.gdpr.producterror`</li></ul> |
 | `time` | En tidsstämpel som anger när händelsen inträffade. |
-| `data.value` | Innehåller ytterligare information om vad som utlöste meddelandet: <ul><li>`jobId`: ID för det sekretessjobb som utlöste meddelandet.</li><li>`message`: Ett meddelande om jobbets specifika status. För `productcomplete`- eller `producterror`-meddelanden anger det här fältet Experience Cloud-programmet i fråga.</li></ul> |
+| `data.value` | Innehåller ytterligare information om vad som utlöste meddelandet: <ul><li>`jobId`: ID för det sekretessjobb som utlöste meddelandet.</li><li>`message`: Ett meddelande om jobbets specifika status. För `productcomplete` eller `producterror` -meddelanden, i det här fältet anges Experience Cloud-programmet i fråga.</li></ul> |
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du registrerar Privacy Service Events för en konfigurerad webkrok och hur du tolkar meddelandenyttolaster. Mer information om hur du spårar sekretessjobb med användargränssnittet finns i [Privacy Servicens användarhandbok](./ui/user-guide.md).
+I det här dokumentet beskrivs hur du registrerar Privacy Service Events för en konfigurerad webkrok och hur du tolkar meddelandenyttolaster. Mer information om hur du spårar sekretessjobb med användargränssnittet finns i [Användarhandbok för Privacy Service](./ui/user-guide.md).

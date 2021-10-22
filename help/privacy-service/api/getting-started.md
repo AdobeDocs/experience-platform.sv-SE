@@ -1,48 +1,38 @@
 ---
-keywords: Experience Platform;hem;populära ämnen
-solution: Experience Platform
-title: API-handbok för Privacy Service
-description: Med Privacy Services-API:t kan utvecklare skapa och hantera kundförfrågningar för att få tillgång till eller ta bort sina personuppgifter mellan Experience Cloud-program, i enlighet med juridiska sekretessbestämmelser. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+title: Komma igång med Privacy Services-API
+description: Lär dig hur du autentiserar till Privacy Service-API:t och hur du tolkar exempel-API-anrop i dokumentationen.
 topic-legacy: developer guide
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 6dcbf2df46ba35104abd9c4e6412799e77c9c49f
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '635'
 ht-degree: 0%
 
 ---
 
-# [!DNL Privacy Service] API-guide
+# Komma igång med Privacy Services-API
 
-Adobe Experience Platform [!DNL Privacy Service] har ett RESTful API och användargränssnitt som gör att du kan hantera (komma åt och ta bort) personuppgifter för dina registrerade (kunder) i alla Adobe Experience Cloud-program. [!DNL Privacy Service] har också en central mekanism för granskning och loggning som gör att du kan komma åt status och resultat för jobb som innefattar  [!DNL Experience Cloud] program.
+Den här guiden ger en introduktion till de centrala koncept du behöver känna till innan du försöker ringa anrop till Privacy Services-API:t.
 
-Den här guiden beskriver hur du använder API:t [!DNL Privacy Service]. Mer information om hur du använder användargränssnittet finns i översikten [Privacy Servicens användargränssnitt](../ui/overview.md). En fullständig lista över alla tillgängliga slutpunkter i [!DNL Privacy Service] API finns i [API-referensen](https://www.adobe.io/experience-platform-apis/references/privacy-service/).
+## Förutsättningar
 
-## Komma igång {#getting-started}
+Handboken kräver en fungerande förståelse av följande funktioner:
 
-Handboken kräver en fungerande förståelse för följande [!DNL Experience Platform]-funktioner:
-
-* [[!DNL Privacy Service]](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
-
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Privacy Service-API:t.
-
-### Läser exempel-API-anrop
-
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för [!DNL Experience Platform].
+* [Adobe Experience Platform Privacy Service](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna anropa API:t [!DNL Privacy Service] måste du först samla in dina autentiseringsuppgifter för att kunna användas i obligatoriska rubriker:
+För att kunna anropa Privacy Service-API:t måste du först samla in dina inloggningsuppgifter och använda dem i obligatoriska rubriker:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Detta innebär att du måste skaffa utvecklarbehörigheter för [!DNL Experience Platform] i Adobe Admin Console och sedan generera autentiseringsuppgifterna i Adobe Developer Console.
+Detta innebär att du måste skaffa utvecklarbehörigheter för Adobe Experience Platform i Adobe Admin Console och sedan generera autentiseringsuppgifterna i Adobe Developer Console.
 
-### Få utvecklaråtkomst till [!DNL Experience Platform]
+### Få utvecklare åtkomst till Experience Platform
 
-Följ de inledande stegen i [självstudiekursen för autentisering av Experience Platform](https://www.adobe.com/go/platform-api-authentication-en) för att få utvecklaråtkomst till [!DNL Platform]. När du kommer till steget&quot;Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera autentiseringsuppgifter som är specifika för [!DNL Privacy Service].
+Få utvecklare åtkomst till [!DNL Platform]följer du de inledande stegen i [Självstudiekurs om autentisering av Experience Platform](https://www.adobe.com/go/platform-api-authentication-en). När du kommer till steget&quot;Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera autentiseringsuppgifter för Privacy Servicen.
 
 ### Generera autentiseringsuppgifter för åtkomst
 
@@ -52,23 +42,23 @@ Med Adobe Developer Console måste du generera följande tre autentiseringsuppgi
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-Dina `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida API-anrop. Din `{ACCESS_TOKEN}` är temporär och måste genereras om var 24:e timme.
+Dina `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida API-anrop. Men `{ACCESS_TOKEN}` är tillfälligt och måste genereras om var 24:e timme.
 
 Stegen för att generera dessa värden beskrivs närmare nedan.
 
 #### Engångskonfiguration
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om att [skapa ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan instruktionerna i självstudiekursen på [skapa ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
-När du har skapat ett nytt projekt väljer du **[!UICONTROL Add API]** på skärmen **[!UICONTROL Project Overview]**.
+När du har skapat ett nytt projekt väljer du **[!UICONTROL Add API]** på **[!UICONTROL Project Overview]** skärm.
 
 ![](../images/api/getting-started/add-api-button.png)
 
-Skärmen **[!UICONTROL Add an API]** visas. Välj **[!UICONTROL Privacy Service API]** i listan med tillgängliga API:er innan du väljer **[!UICONTROL Next]**.
+The **[!UICONTROL Add an API]** visas. Välj **[!UICONTROL Privacy Service API]** i listan med tillgängliga API:er innan du väljer **[!UICONTROL Next]**.
 
 ![](../images/api/getting-started/add-privacy-service-api.png)
 
-Skärmen **[!UICONTROL Configure API]** visas. Välj alternativet **[!UICONTROL Generate a key pair]** och välj sedan **[!UICONTROL Generate keypair]** i det nedre högra hörnet.
+The **[!UICONTROL Configure API]** visas. Välj alternativet att **[!UICONTROL Generate a key pair]** väljer **[!UICONTROL Generate keypair]** i det nedre högra hörnet.
 
 ![](../images/api/getting-started/generate-key-pair.png)
 
@@ -76,25 +66,32 @@ Nyckelparet genereras automatiskt och en ZIP-fil som innehåller en privat nycke
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-När API:t har lagts till i projektet visas projektsidan igen på sidan **Privacy Service-API översikt**. Här rullar du ned till avsnittet **[!UICONTROL Service Account (JWT)]**, som innehåller följande åtkomstautentiseringsuppgifter som krävs i alla anrop till API:t [!DNL Privacy Service]:
+När API:t har lagts till i projektet visas projektsidan igen på sidan **Översikt över Privacy Service-API** sida. Här rullar du nedåt till **[!UICONTROL Service Account (JWT)]** som innehåller följande åtkomstautentiseringsuppgifter som krävs i alla anrop till Privacy Service-API:
 
-* **[!UICONTROL CLIENT ID]**: Klient-ID är det som krävs  `{API_KEY}` för det måste anges i huvudet med x-api-key.
-* **[!UICONTROL ORGANIZATION ID]**: Organisations-ID är det  `{IMS_ORG}` värde som måste användas i rubriken x-gw-ims-org-id.
+* **[!UICONTROL CLIENT ID]**: Klient-ID krävs `{API_KEY}` för det måste anges i rubriken x-api-key.
+* **[!UICONTROL ORGANIZATION ID]**: Organisations-ID är `{IMS_ORG}` värde som måste användas i huvudet x-gw-ims-org-id.
 
 ![](../images/api/getting-started/jwt-credentials.png)
 
 #### Autentisering för varje session
 
-Den sista obligatoriska autentiseringen som du måste samla in är din `{ACCESS_TOKEN}`, som används i auktoriseringshuvudet. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}` måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda [!DNL Platform] API:er.
+Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`, som används i auktoriseringshuvudet. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda [!DNL Platform] API:er.
 
-Om du vill skapa en ny `{ACCESS_TOKEN}`-nyckel öppnar du den tidigare hämtade privata nyckeln och klistrar in innehållet i textrutan bredvid **[!UICONTROL Generate access token]** innan du väljer **[!UICONTROL Generate Token]**.
+Så här skapar du en ny `{ACCESS_TOKEN}`öppnar du den tidigare hämtade privata nyckeln och klistrar in innehållet i textrutan bredvid **[!UICONTROL Generate access token]** före markering **[!UICONTROL Generate Token]**.
 
 ![](../images/api/getting-started/paste-private-key.png)
 
-En ny åtkomsttoken genereras och en knapp för att kopiera token till Urklipp tillhandahålls. Det här värdet används för det obligatoriska auktoriseringshuvudet och måste anges i formatet `Bearer {ACCESS_TOKEN}`.
+En ny åtkomsttoken genereras och en knapp för att kopiera token till Urklipp tillhandahålls. Det här värdet används för begärd auktoriseringshuvud och måste anges i formatet `Bearer {ACCESS_TOKEN}`.
 
 ![](../images/api/getting-started/generated-access-token.png)
 
+## Läser exempel-API-anrop
+
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/api-guide.md#sample-api) i komma igång-guiden för Platform API:er.
+
 ## Nästa steg
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Privacy Service]. Dokumentet på [sekretessjobb](privacy-jobs.md) går igenom de olika API-anrop du kan göra med API:t [!DNL Privacy Service]. Varje exempelanrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Nu när du förstår vilka rubriker du ska använda kan du börja ringa anrop till Privacy Service-API:t. Välj någon av slutpunktsguiderna för att komma igång:
+
+* [Sekretessjobb](./privacy-jobs.md)
+* [Godkännande](./consent.md)
