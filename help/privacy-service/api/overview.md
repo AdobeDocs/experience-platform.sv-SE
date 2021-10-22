@@ -1,7 +1,7 @@
 ---
 title: API-handbok för Privacy Service
 description: Lär dig hur du använder Privacy Service-API:t för att programmässigt hantera sekretessjobb för Adobe Experience Cloud-program som stöds.
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 196147e7691010707953561c110a3934fec8ba1b
 workflow-type: tm+mt
 source-wordcount: '265'
 ht-degree: 0%
@@ -30,4 +30,4 @@ Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras person
 
 ## Nästa steg
 
-Om du vill börja ringa anrop med API:t för schemaregister läser du [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter.
+Om du vill börja ringa anrop med Privacy Services-API:t läser du [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter.
