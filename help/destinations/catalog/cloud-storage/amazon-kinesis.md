@@ -3,52 +3,52 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
 workflow-type: tm+mt
 source-wordcount: '552'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Amazon Kinesis]-anslutning
+# (Beta) [!DNL Amazon Kinesis] anslutning
 
 ## Översikt {#overview}
 
 >[!IMPORTANT]
 >
->Målet [!DNL Amazon Kinesis] i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>The [!DNL Amazon Kinesis] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Med tjänsten [!DNL Kinesis Data Streams] från [!DNL Amazon Web Services] kan du samla in och bearbeta stora dataströmmar i realtid.
+The [!DNL Kinesis Data Streams] service av [!DNL Amazon Web Services] gör det möjligt att samla in och bearbeta stora dataströmmar i realtid.
 
-Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis]-lagringsutrymme för att strömma data från Adobe Experience Platform.
+Du kan skapa en utgående anslutning i realtid till din [!DNL Amazon Kinesis] lagring för att strömma data från Adobe Experience Platform.
 
-* Mer information om [!DNL Amazon Kinesis] finns i [Amazon-dokumentationen](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
-* Om du vill ansluta till [!DNL Amazon Kinesis] programmatiskt läser du självstudiekursen [API för direktuppspelningsmål](../../api/streaming-destinations.md).
-* Om du vill ansluta till [!DNL Amazon Kinesis] med användargränssnittet för plattformen läser du avsnitten nedan.
+* Mer information om [!DNL Amazon Kinesis], se [Amazon-dokumentation](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
+* Ansluta till [!DNL Amazon Kinesis] programmatiskt, se [API-självstudiekurs för direktuppspelningsmål](../../api/streaming-destinations.md).
+* Ansluta till [!DNL Amazon Kinesis] med hjälp av användargränssnittet för plattformen, se avsnitten nedan.
 
 ![Amazon Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
 
 ## Användningsfall {#use-cases}
 
-Genom att använda direktuppspelningsmål som [!DNL Amazon Kinesis] kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
+Genom att använda direktuppspelningsmål som [!DNL Amazon Kinesis]kan du enkelt mata in segmenteringshändelser med högt värde och tillhörande profilattribut i valfria system.
 
-En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden hamnar i till målet [!DNL Amazon Kinesis] får du den här händelsen i [!DNL Amazon Kinesis]. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
+En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden tillhör [!DNL Amazon Kinesis] mål får du den här händelsen i [!DNL Amazon Kinesis]. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
 
 ## Exporttyp {#export-type}
 
-**Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-streaming-profile-destinations.md#select-attributes)målgruppsaktivering.
+**Profilbaserad** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut på [målaktiveringsarbetsflöde](../../ui/activate-streaming-profile-destinations.md#select-attributes).
 
-## Nödvändiga [!DNL Amazon Kinesis]-behörigheter {#required-kinesis-permission}
+## Obligatoriskt [!DNL Amazon Kinesis] behörigheter {#required-kinesis-permission}
 
-För att kunna ansluta och exportera data till dina [!DNL Amazon Kinesis]-strömmar behöver Experience Platform behörighet för följande åtgärder:
+Ansluta och exportera data till [!DNL Amazon Kinesis] strömmar, Experience Platform behöver behörigheter för följande åtgärder:
 
 * `kinesis:ListStreams`
 * `kinesis:PutRecord`
 * `kinesis:PutRecords`
 
-Dessa behörigheter ordnas via [!DNL Kinesis]-konsolen och kontrolleras av Platform när du har konfigurerat ditt Kinesis-mål i användargränssnittet för plattformen.
+Dessa behörigheter är ordnade i [!DNL Kinesis] och kontrolleras av Platform när du har konfigurerat Kinesis-målet i användargränssnittet för plattformen.
 
-I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att exportera data till ett [!DNL Kinesis]-mål.
+I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att exportera data till en [!DNL Kinesis] mål.
 
 ```json
 {
@@ -75,21 +75,21 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att expor
 | `kinesis:PutRecord` | En åtgärd som skriver en enskild datapost till en dataström från Kinesis. |
 | `kinesis:PutRecords` | En åtgärd som skriver flera dataposter till en dataström från Kinesis i ett enda anrop. |
 
-Mer information om hur du styr åtkomst för [!DNL Kinesis]-dataströmmar finns i följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
+Mer information om hur du styr åtkomst för [!DNL Kinesis] dataströmmar, läs följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
 
-När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
-* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera  [!DNL Amazon Web Services]ett  `access key - secret access key` par som ger plattformsåtkomst till ditt  [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-* **region**: Ange vilken  [!DNL Amazon Web Services] region data ska strömmas till.
-* **Namn**: Ange ett namn för anslutningen till  [!DNL Amazon Kinesis]
-* **Beskrivning**: Ange en beskrivning för anslutningen till  [!DNL Amazon Kinesis].
-* **ström**: Ange namnet på en befintlig dataström i ditt  [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: I [!DNL Amazon Web Services], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **region**: Ange vilken [!DNL Amazon Web Services] region som data ska strömmas till.
+* **Namn**: Ange ett namn för anslutningen till [!DNL Amazon Kinesis]
+* **Beskrivning**: Ange en beskrivning för din anslutning till [!DNL Amazon Kinesis].
+* **stream**: Ange namnet på en befintlig dataström i din [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
 
 <!--
 
@@ -101,16 +101,16 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera målgruppsdata för att direktuppspela profilexportdestinationer](../../ui/activate-streaming-profile-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] datakörningar i [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
 ```json
 {
   "person": {
-    "email": "yourstruly@adobe.con"
+    "email": "yourstruly@adobe.com"
   },
   "segmentMembership": {
     "ups": {
@@ -150,6 +150,6 @@ Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Amazon Kinesis] i
 >[!MORELIKETHIS]
 >
 >* [Anslut till Amazon Kinesis och aktivera data med API:t för Flow Service](../../api/streaming-destinations.md)
-* [Azure Event Hubs-mål](./azure-event-hubs.md)
-* [Måltyper och -kategorier](../../destination-types.md)
+>* [Azure Event Hubs-mål](./azure-event-hubs.md)
+>* [Måltyper och -kategorier](../../destination-types.md)
 

@@ -5,13 +5,13 @@ type: Tutorial
 seo-title: Activate audience data to streaming profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till direktuppspelade profilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to streaming profile-based destinations.
-source-git-commit: d13920250fafd2ba4ff37dd5d4a45d417ed3ecc7
+exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
+source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
 
 ---
-
 
 # Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
 
@@ -21,15 +21,15 @@ I den här artikeln beskrivs det arbetsflöde som krävs för att aktivera målg
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
+Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
+1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
    ![Fliken Målkatalog](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
 
    ![Knappen Aktivera segment](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
 
@@ -37,11 +37,11 @@ Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./conne
 
    ![Välj mål](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
-1. Gå till nästa avsnitt för att [markera dina segment](#select-segments).
+1. Gå till nästa avsnitt till [markera segment](#select-segments).
 
 ## Välj segment {#select-segments}
 
-Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
+Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
 
 ![Markera segment](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
 
@@ -54,29 +54,29 @@ Markera de profilattribut som du vill skicka till målmålet.
 > Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om fältet `segmentMembership.status` är markerat innehåller exporterade filer **[!UICONTROL Active]**-medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]**- och **[!UICONTROL Expired]**-medlemmar i efterföljande stegvisa exporter.
-* Om fältet `segmentMembership.status` inte är markerat innehåller exporterade filer endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
+* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
 ![rekommenderade attribut](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
 
-1. Välj **[!UICONTROL Add new field]** på sidan **[!UICONTROL Select attributes]**.
+1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
 
    ![Lägg till ny mappning](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
 
-1. Markera pilen till höger om **[!UICONTROL Schema field]**-posten.
+1. Markera pilen till höger om **[!UICONTROL Schema field]** post.
 
    ![Välj källfält](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
-1. På sidan **[!UICONTROL Select field]** markerar du de XDM-attribut som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
+1. I **[!UICONTROL Select field]** väljer du de XDM-attribut som du vill skicka till målet och väljer **[!UICONTROL Select]**.
 
    ![Välj källfältssida](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
 
-1. Om du vill lägga till fler mappningar upprepar du steg 1 till 3 och väljer **[!UICONTROL Next]**.
+1. Om du vill lägga till fler mappningar upprepar du steg 1 till 3 och väljer sedan **[!UICONTROL Next]**.
 
 ## Granska {#review}
 
-På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta valet och börja skicka data till målet.
+På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 >[!IMPORTANT]
 >
@@ -84,18 +84,18 @@ På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[
 
 ![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
 
-Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 ![Granska](../assets/ui/activate-streaming-profile-destinations/review.png)
 
 ## Verifiera segmentaktivering {#verify}
 
-Dina exporterade [!DNL Experience Platform]-data har körts i måldestinationen i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] i måldestinationen i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
 ```json
 {
   "person": {
-    "email": "yourstruly@adobe.con"
+    "email": "yourstruly@adobe.com"
   },
   "segmentMembership": {
     "ups": {

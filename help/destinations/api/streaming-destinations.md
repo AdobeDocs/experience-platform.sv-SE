@@ -6,7 +6,7 @@ description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
 workflow-type: tm+mt
 source-wordcount: '2016'
 ht-degree: 0%
@@ -17,22 +17,22 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Målen [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>The [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] mål i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
-I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till ditt nya skapade mål.
+I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till det nya målet och aktivera data till det nya målet.
 
-I den här självstudien används målet [!DNL Amazon Kinesis] i alla exempel, men stegen är identiska för [!DNL Azure Event Hubs].
+I den här självstudiekursen används [!DNL Amazon Kinesis] mål i alla exempel, men stegen är identiska för [!DNL Azure Event Hubs].
 
 ![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera segment](../assets/api/streaming-destination/overview.png)
 
-Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns i [Ansluta ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata till exportmål för direktuppspelade segment](../ui/activate-segment-streaming-destinations.md) självstudier.
+Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../ui/activate-segment-streaming-destinations.md) självstudiekurser.
 
-## Komma igång
+## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [[!DNL Catalog Service]](../../catalog/home.md):  [!DNL Catalog] är registersystemet för dataplats och datalinje inom Experience Platform.
+* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är registersystemet för dataplats och datalinje inom Experience Platform.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för direktuppspelningsmål i Platform.
@@ -41,16 +41,16 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 Om du vill slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter tillgängliga, beroende på vilken typ av mål du ansluter och aktiverar segment till.
 
-* För [!DNL Amazon Kinesis]-anslutningar: `accessKeyId`, `secretKey`, `region` eller `connectionUrl`
-* För [!DNL Azure Event Hubs]-anslutningar: `sasKeyName`, `sasKey`, `namespace`
+* För [!DNL Amazon Kinesis] anslutningar: `accessKeyId`, `secretKey`, `region` eller `connectionUrl`
+* För [!DNL Azure Event Hubs] anslutningar: `sasKeyName`, `sasKey`, `namespace`
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values}
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -62,7 +62,7 @@ Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor.
 
 >[!NOTE]
 >
->Mer information om sandlådor i Experience Platform finns i [översiktsdokumentationen för sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i Experience Platform finns i [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
@@ -70,13 +70,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Dokumentation för Swagger {#swagger-docs}
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentation för Flow Service på Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål för direktuppspelning {#get-the-list-of-available-streaming-destinations}
 
 ![Översiktssteg för målsteg 1](../assets/api/streaming-destination/step1.png)
 
-Som ett första steg bör du bestämma vilket mål för direktuppspelning som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga mål som du kan ansluta och aktivera segment till. Utför följande GET-begäran till `connectionSpecs`-slutpunkten för att returnera en lista över tillgängliga mål:
+Som ett första steg bör du bestämma vilket mål för direktuppspelning som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga mål som du kan ansluta och aktivera segment till. Utför följande GET-förfrågan till `connectionSpecs` slutpunkt för att returnera en lista över tillgängliga destinationer:
 
 **API-format**
 
@@ -98,7 +98,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar**
 
-Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera segment till [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs] söker du efter följande kodutdrag i svaret:
+Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera segment till [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs]söker du efter följande utdrag i svaret:
 
 ```json
 {
@@ -154,11 +154,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för profiltjänst -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspec-ID för profiltjänsten - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
-Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa källanslutningen.
+Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa källanslutningen.
 
 ```json
 {
@@ -199,11 +199,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det ID du fick i föregående steg.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för profiltjänst -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspec-ID för profiltjänsten - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till profiltjänsten. Detta bekräftar att du har anslutit till dina Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till profiltjänsten. Detta bekräftar att du har anslutit till dina Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -233,7 +233,7 @@ POST /connections
 
 >[!IMPORTANT]
 >
->Exemplet nedan innehåller kodkommentarer med prefixet `//`. Dessa kommentarer visar var olika värden måste användas för olika direktuppspelningsmål. Ta bort kommentarerna innan du använder fragmentet.
+>Exemplet nedan innehåller kodkommentarer med prefix `//`. Dessa kommentarer visar var olika värden måste användas för olika direktuppspelningsmål. Ta bort kommentarerna innan du använder fragmentet.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -265,18 +265,18 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget  [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{AUTHENTICATION_CREDENTIALS}`: Fyll i namnet på strömningsmålet:  `Aws Kinesis authentication credentials` eller  `Azure EventHub authentication credentials`.
-* `{ACCESS_ID}`:  *För  [!DNL Amazon Kinesis] anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
-* `{SECRET_KEY}`:  *För  [!DNL Amazon Kinesis] anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
-* `{REGION}`:  *För  [!DNL Amazon Kinesis] anslutningar.* Regionen på ditt  [!DNL Amazon Kinesis] konto där Platform strömmar dina data.
-* `{SAS_KEY_NAME}`:  *För  [!DNL Azure Event Hubs] anslutningar.* Fyll i ditt SAS-nyckelnamn. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{SAS_KEY}`:  *För  [!DNL Azure Event Hubs] anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{EVENT_HUB_NAMESPACE}`:  *För  [!DNL Azure Event Hubs] anslutningar.* Fyll i  [!DNL Azure Event Hubs] namnutrymmet där Platform strömmar dina data. Mer information finns i [Skapa ett namnutrymme för händelsehubbar](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) i dokumentationen för [!DNL Microsoft].
+* `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations).
+* `{AUTHENTICATION_CREDENTIALS}`: Fyll i namnet på strömningsmålet: `Aws Kinesis authentication credentials` eller `Azure EventHub authentication credentials`.
+* `{ACCESS_ID}`: *För [!DNL Amazon Kinesis] anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
+* `{SECRET_KEY}`: *För [!DNL Amazon Kinesis] anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
+* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Regionen i ditt [!DNL Amazon Kinesis] konto där Platform kan strömma era data.
+* `{SAS_KEY_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i ditt SAS-nyckelnamn. Lär dig mer om autentisering av [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* `{SAS_KEY}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i SAS-nyckeln. Lär dig mer om autentisering av [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* `{EVENT_HUB_NAMESPACE}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i [!DNL Azure Event Hubs] namnutrymme där Platform direktuppspelar data. Mer information finns i [Skapa ett namnutrymme för händelsehubbar](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) i [!DNL Microsoft] dokumentation.
 
 **Svar**
 
-Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa en målanslutning.
+Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa en målanslutning.
 
 ```json
 {
@@ -296,7 +296,7 @@ POST /targetConnections
 
 >[!IMPORTANT]
 >
->Exemplet nedan innehåller kodkommentarer med prefixet `//`. Dessa kommentarer visar var olika värden måste användas för olika direktuppspelningsmål. Ta bort kommentarerna innan du använder fragmentet.
+>Exemplet nedan innehåller kodkommentarer med prefix `//`. Dessa kommentarer visar var olika värden måste användas för olika direktuppspelningsmål. Ta bort kommentarerna innan du använder fragmentet.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -326,14 +326,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget  [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{NAME_OF_DATA_STREAM}`:  *För  [!DNL Amazon Kinesis] anslutningar.* Ange namnet på din befintliga dataström i ditt  [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
-* `{REGION}`:  *För  [!DNL Amazon Kinesis] anslutningar.* Den region på ditt Amazon Kinesis-konto där Platform strömmar dina data.
-* `{EVENT_HUB_NAME}`:  *För  [!DNL Azure Event Hubs] anslutningar.* Fyll i  [!DNL Azure Event Hub] namnet där Platform ska strömma era data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i dokumentationen för [!DNL Microsoft].
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations).
+* `{NAME_OF_DATA_STREAM}`: *För [!DNL Amazon Kinesis] anslutningar.* Ange namnet på din befintliga dataström i din [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
+* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt Amazon Kinesis-konto där Platform strömmar dina data.
+* `{EVENT_HUB_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i [!DNL Azure Event Hub] namn där plattformen ska strömma dina data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft] dokumentation.
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade målanslutningen till ditt direktuppspelningsmål. Lagra det här värdet som det behövs i senare steg.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade målanslutningen till ditt mål för direktuppspelning. Lagra det här värdet som det behövs i senare steg.
 
 ```json
 {
@@ -400,13 +400,13 @@ curl -X POST \
 }
 ```
 
-* `{FLOW_SPEC_ID}`: Flödesspec-ID:t för profilbaserade mål är  `71471eba-b620-49e4-90fd-23f1fa0174d8`. Använd det här värdet i anropet.
-* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget  [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
-* `{TARGET_CONNECTION_ID}`: Använd det anslutnings-ID som du fick i steget  [Ansluta till direktuppspelningsmål](#connect-to-streaming-destination).
+* `{FLOW_SPEC_ID}`: Flödesspecifikation-ID för profilbaserade mål är `71471eba-b620-49e4-90fd-23f1fa0174d8`. Använd det här värdet i anropet.
+* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
+* `{TARGET_CONNECTION_ID}`: Använd det ID för målanslutning som du fick i steget [Anslut till direktuppspelningsmål](#connect-to-streaming-destination).
 
 **Svar**
 
-Ett lyckat svar returnerar ID (`id`) för det nyskapade dataflödet och ett `etag`. Notera båda värdena nedåt. som du kommer att göra i nästa steg, för att aktivera segment.
+Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Notera båda värdena nedåt. som du kommer att göra i nästa steg, för att aktivera segment.
 
 ```json
 {
@@ -422,7 +422,7 @@ Ett lyckat svar returnerar ID (`id`) för det nyskapade dataflödet och ett `eta
 
 När du har skapat alla anslutningar och dataflödet kan du nu aktivera dina profildata till direktuppspelningsplattformen. I det här steget väljer du vilka segment och vilka profilattribut du skickar till målet och du kan schemalägga och skicka data till målet.
 
-Om du vill aktivera segment till det nya målet måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera segment och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikationen](https://tools.ietf.org/html/rfc6902).
+Om du vill aktivera segment till det nya målet måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera segment och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikation](https://tools.ietf.org/html/rfc6902).
 
 **API-format**
 
@@ -469,8 +469,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`: Använd det dataflöde du fick i föregående steg.
 * `{ETAG}`: Använd taggen som du fick i föregående steg.
-* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till **https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**, väljer **[!UICONTROL Segmentation Service API]** i den vänstra navigeringsmenyn och letar efter åtgärden `GET /segment/definitions` i **[!UICONTROL Segment Definitions]**.
-* `{PROFILE_ATTRIBUTE}`: till exempel  `personalEmail.address` eller  `person.lastName`
+* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till **https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**, markera **[!UICONTROL Segmentation Service API]** i den vänstra navigeringsmenyn och leta efter `GET /segment/definitions` operation in **[!UICONTROL Segment Definitions]**.
+* `{PROFILE_ATTRIBUTE}`: Till exempel: `personalEmail.address` eller `person.lastName`
 
 **Svar**
 
@@ -507,7 +507,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **Svar**
 
-Det returnerade svaret ska i parametern `transformations` inkludera de segment och profilattribut som du skickade i föregående steg. Ett exempel på `transformations`-parametern i svaret kan se ut så här:
+Det returnerade svaret ska innehålla `transformations` parametern segmenten och profilattributen som du skickade i föregående steg. Ett exempel `transformations` parametern i svaret kan se ut så här:
 
 ```json
 "transformations": [
@@ -553,12 +553,12 @@ Det returnerade svaret ska i parametern `transformations` inkludera de segment o
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och segmenten i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar identiteterna för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och segmenten i steget [Aktivera data till ditt nya mål](#activate-data), exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] innehåller även information om identitetskartan. Detta representerar identiteten för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobilt ID, Google ID, e-postadress osv.). Se ett exempel nedan.
 
 ```json
 {
   "person": {
-    "email": "yourstruly@adobe.con"
+    "email": "yourstruly@adobe.com"
   },
   "segmentMembership": {
     "ups": {
@@ -599,24 +599,24 @@ Om du vill ansluta till de direktuppspelningsmål som beskrivs i den här själv
 
 [!DNL Postman] är ett verktyg som du kan använda för att göra API-anrop och hantera bibliotek med fördefinierade anrop och miljöer.
 
-För den här specifika självstudiekursen har följande [!DNL Postman]-samlingar bifogats:
+Följande gäller för den här självstudiekursen [!DNL Postman] samlingar har bifogats:
 
 * [!DNL AWS Kinesis] [!DNL Postman] samling
 * [!DNL Azure Event Hubs] [!DNL Postman] samling
 
 Klicka [här](../assets/api/streaming-destination/DestinationPostmanCollection.zip) för att hämta samlingsarkivet.
 
-Varje samling innehåller nödvändiga begäranden och miljövariabler för [!DNL AWS Kinesis] respektive [!DNL Azure Event Hub].
+Varje samling innehåller nödvändiga begäranden och miljövariabler för [!DNL AWS Kinesis]och [!DNL Azure Event Hub], respektive.
 
 ### Så här använder du Postman-samlingarna
 
-Följ de här stegen om du vill ansluta till målen med de bifogade [!DNL Postman]-samlingarna:
+För att ansluta till målen med hjälp av den bifogade [!DNL Postman] samlingar, följ dessa steg:
 
 * Hämta och installera [!DNL Postman];
-* [Ladda ](../assets/api/streaming-destination/DestinationPostmanCollection.zip) ned och zippa upp de bifogade samlingarna,
+* [Hämta](../assets/api/streaming-destination/DestinationPostmanCollection.zip) och packa upp de bifogade samlingarna,
 * Importera samlingarna från deras motsvarande mappar till Postman.
 * Fyll i miljövariablerna enligt instruktionerna i denna artikel.
-* Kör [!DNL API]-begäranden från Postman, baserat på instruktionerna i den här artikeln.
+* Kör [!DNL API] begäran från Postman, baserat på instruktionerna i den här artikeln.
 
 ## Nästa steg
 
