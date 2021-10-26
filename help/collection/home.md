@@ -5,10 +5,10 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: f61a845b915df3d803085fbf528e014c8acd9dbd
+source-git-commit: bbaf272313d5a8afe33178598063164792f4d8c0
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 1%
+source-wordcount: '357'
+ht-degree: 3%
 
 ---
 
@@ -28,9 +28,14 @@ De datainsamlingstekniker som tillhandahålls av Experience Platform fokuserar p
 * [Taggar](../tags/home.md)
 * [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
 * [Webb-SDK för Adobe Experience Platform](../edge/home.md)
+* [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
+* [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
 * [Experience Data Model (XDM)](../xdm/home.md)
+* [Adobe Experience Platform Identity Service](../identity-service/home.md)
 
+<!-- (Outdated terminology)
 ![](./images/Collection.png)
+-->
 
 ## Enklare implementeringar, snabbare prestanda på klientsidan
 
@@ -38,9 +43,11 @@ Adobe Experience Platform SDK för webb och mobiler komprimerar och komprimerar 
 
 ## Växlingsprocess för att driftsätta Adobe-teknik {#edge}
 
-Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du ställa in [datastreams](../edge/fundamentals/datastreams.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../edge/fundamentals/datastreams.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
 
+<!-- (Outdated terminology)
 ![](./images/deploy.png)
+-->
 
 >[!NOTE]
 >
@@ -48,6 +55,8 @@ Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av se
 
 ## Omvandla, berika och skicka data snabbt och säkert
 
-[Vidarebefordran av händelser i Adobe Experience ](../tags/ui/event-forwarding/overview.md) Platform kan utnyttja alla plattformsdataströmmar. Du kan omvandla, berika och skicka data till andra mål än Adobe med extremt låg latens utan att lägga till någon kod från tredje part till klientenheten, vilket ger snabbare och säkrare datainsamling och distribution.
+[Vidarebefordran av händelser i Adobe Experience Platform](../tags/ui/event-forwarding/overview.md) kan utnyttja alla plattformsdataströmmar. Du kan omvandla, berika och skicka data till andra mål än Adobe med extremt låg latens utan att lägga till någon kod från tredje part till klientenheten, vilket ger snabbare och säkrare datainsamling och distribution.
 
+<!-- (Outdated terminology)
 ![](./images/launch.png)
+-->

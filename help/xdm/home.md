@@ -5,9 +5,9 @@ title: XDM - systemöversikt
 topic-legacy: overview
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 196147e7691010707953561c110a3934fec8ba1b
+source-git-commit: 18d245574ba771aa42776d8755a2c6681c8c8532
 workflow-type: tm+mt
-source-wordcount: '1910'
+source-wordcount: '1978'
 ht-degree: 0%
 
 ---
@@ -51,14 +51,19 @@ Mer information om hur du hanterar och interagerar med scheman i Platform finns 
 
 ## Databeteenden i XDM-system {#data-behaviors}
 
-Data som är avsedda att användas i Experience Platform är grupperade i två beteendetyper:
+Data som är avsedda att användas i Experience Platform är indelade i tre beteendetyper:
 
-* **Registrera data**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
-* **Tidsseriedata**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
+* **Post**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
+* **Tidsserie**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
+* **Ad hoc**: Hämtar fält som namnges för användning endast av en enda datauppsättning. Ad-hoc-scheman används i olika arbetsflöden för dataöverföring för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av källanslutningar.
 
 Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende.
 
-Även om du kan definiera egna klasser i [!DNL Schema Registry]rekommenderar vi att du använder de klasser du föredrar **[!UICONTROL XDM Individual Profile]** och **[!UICONTROL XDM ExperienceEvent]** för post- respektive tidsseriedata. Dessa klasser beskrivs mer ingående nedan.
+Även om du kan definiera egna klasser i [!DNL Schema Registry]rekommenderar vi att du använder standardklasserna **[!UICONTROL XDM Individual Profile]** och **[!UICONTROL XDM ExperienceEvent]** för post- respektive tidsseriedata. Dessa klasser beskrivs mer ingående nedan.
+
+>[!NOTE]
+>
+>Det finns inga standardklasser baserade på ad hoc-beteendet. Ad hoc-scheman genereras automatiskt av de plattformsprocesser som använder dem, men de kan också [skapas manuellt med API:t för schemaregister](./tutorials/ad-hoc.md).
 
 ### [!UICONTROL XDM Individual Profile] {#xdm-individual-profile}
 
