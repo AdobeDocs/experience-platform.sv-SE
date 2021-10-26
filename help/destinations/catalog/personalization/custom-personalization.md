@@ -3,7 +3,7 @@ keywords: personalisering, destination, upplevelseplattform anpassad destination
 title: Anpassad personaliseringsanslutning (beta)
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats som ett sätt att hämta segmentinformation från Adobe Experience Platform. Detta mål ger 1:1 i realtid och personalisering baserat på en användarprofils segmentmedlemskap.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 398d591d66f4b579f75ef2b5eb0c10da9d7a83f3
+source-git-commit: 50ab34cb9147cf880e199afad88e718875fb591f
 workflow-type: tm+mt
 source-wordcount: '580'
 ht-degree: 0%
@@ -22,11 +22,11 @@ Det här målet är ett sätt att hämta segmentinformation från Adobe Experien
 
 ## Förutsättningar {#prerequisites}
 
-Integrationen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md). Du måste använda denna SDK för att kunna använda den här destinationen.
+Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md). Du måste använda denna SDK för att kunna använda den här destinationen.
 
 ## Exporttyp {#export-type}
 
-**Profilbegäran**  - du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan ställas in för olika [datainsamlingsdatastreams](../../../edge/fundamentals/datastreams.md) i Adobe.
+**Profilbegäran** - du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan konfigureras för olika [Datasamlingsdatamängder för Adobe](../../../edge/fundamentals/datastreams.md).
 
 ## Användningsfall {#use-cases}
 
@@ -44,26 +44,26 @@ Med ett separat anpassat anpassningsmål för sin annonsserver kan samma webbpla
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
 
-När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
 * **[!UICONTROL Integration alias]**: Värdet skickas till Experience Platform Web SDK som ett JSON-objektnamn.
-* **[!UICONTROL Datastream ID]**: Detta anger i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Mer information finns i [Konfigurera en datastream](../../../edge/fundamentals/datastreams.md).
+* **[!UICONTROL Datastream ID]**: Detta anger i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/fundamentals/datastreams.md) för mer information.
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-profile-request-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment för den här destinationen.
+Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-profile-request-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Exporterade data {#exported-data}
 
-Om du använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [send event complete](../../../edge/extension/event-types.md) och din anpassade kodsåtgärd har en `event.destinations`-variabel som du kan använda för att visa exporterade data.
+Om du använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du [skicka händelse slutförd](../../../edge/extension/event-types.md) -funktionalitet och din egen kodinsats har `event.destinations` variabel som du kan använda för att visa exporterade data.
 
-Här är ett exempelvärde för variabeln `event.destinations`:
+Här är ett exempelvärde för `event.destinations` variabel:
 
 ```
 [
@@ -85,7 +85,7 @@ Här är ett exempelvärde för variabeln `event.destinations`:
 ]
 ```
 
-Om du inte använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du funktionen [hantering av svar från händelser](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) för att se exporterade data.
+Om du inte använder [Adobe-taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du [hantera svar från händelser](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) för att se exporterade data.
 
 JSON-svaret från Adobe Experience Platform kan analyseras för att hitta motsvarande integreringsalias för det program du integrerar med Adobe Experience Platform. Segment-ID:n kan skickas till programmets kod som målparametrar. Nedan visas ett exempel på hur detta skulle se ut när det gäller målsvaret.
 
@@ -102,15 +102,15 @@ alloy("sendEvent", {
       }
     }
   }
-}).then(function(results) {
-    if(results.destinations) { // Looking to see if the destination results are there
+}).then(function(result) {
+    if(result.destinations) { // Looking to see if the destination results are there
  
         // Get the destination with a particular alias
-        var personalizationDestinations = results.destinations.filter(x => x.alias == “personalizationAlias”)
+        var personalizationDestinations = result.destinations.filter(x => x.alias == “personalizationAlias”)
         if(personalizationDestinations.length > 0) {
              // Code to pass the segment IDs into the system that corresponds to personalizationAlias
         }
-        var adServerDestinations = results.destinations.filter(x => x.alias == “adServerAlias”)
+        var adServerDestinations = result.destinations.filter(x => x.alias == “adServerAlias”)
         if(adServerDestinations.length > 0) {
             // Code to pass the segment ids into the system that corresponds to adServerAlias
         }
@@ -124,4 +124,4 @@ alloy("sendEvent", {
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] framtvingar datastyrning finns i [översikten över datastyrning](../../../data-governance/home.md).
+Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](../../../data-governance/home.md).
