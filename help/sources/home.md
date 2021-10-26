@@ -5,7 +5,7 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 333cca4ac451745ac457c8d66fa8b5fe14531c9e
+source-git-commit: f8cecdaaab3d98c7f6542b51dc764a019b04b0b1
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 0%
@@ -36,7 +36,7 @@ Experience Platform tillåter att data hämtas från andra Adobe-program, inklus
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
 - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] anslutningsöversikt](connectors/adobe-applications/marketo/marketo.md)
-- [Skapa en  [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
+- [Skapa en [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
 
 ### Reklam
 
@@ -69,6 +69,7 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 - [[!DNL Microsoft Dynamics] koppling](connectors/crm/ms-dynamics.md)
 - [[!DNL Salesforce] koppling](connectors/crm/salesforce.md)
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md)
+- [[!DNL Zoho CRM]](connectors/crm/zoho.md)
 
 ### Nöjda kunder
 
@@ -141,21 +142,21 @@ Experience Platform har stöd för inmatning av data från tredjepartsprotokolls
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
-Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken **[!UICONTROL Permissions]** i en viss produktprofil. Från panelen **[!UICONTROL Edit Permissions]** kan du komma åt de behörigheter som gäller för källor via menyposten **[!UICONTROL data ingestion]**. **[!UICONTROL View Sources]**-behörigheten ger skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**, medan behörigheten **[!UICONTROL Manage Sources]** ger fullständig åtkomst till att läsa, skapa, redigera och inaktivera källor.
+Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan komma åt behörigheter via **[!UICONTROL Permissions]** i en viss produktprofil. Från **[!UICONTROL Edit Permissions]** kan du komma åt källbehörigheterna via **[!UICONTROL data ingestion]** menyalternativ. The **[!UICONTROL View Sources]** behörighet ger skrivskyddad åtkomst till tillgängliga källor i **[!UICONTROL Catalog]** och autentiserade källor i **[!UICONTROL Browse]** -tabb, medan **[!UICONTROL Manage Sources]** ger fullständig åtkomst för att läsa, skapa, redigera och inaktivera källor.
 
 Följande tabell visar hur användargränssnittet beter sig baserat på olika kombinationer av dessa behörigheter:
 
 | Behörighetsnivå | Beskrivning |
 | ---- | ----|
 | **[!UICONTROL View Sources]** På | Ge skrivskyddad åtkomst till källor i varje källtyp på fliken Katalog samt på flikarna Bläddra, Konton och Dataflöde. |
-| **[!UICONTROL Manage Sources]** På | Förutom de funktioner som ingår i **[!UICONTROL View Sources]** ger åtkomst till alternativet **[!UICONTROL Connect Source]** i **[!UICONTROL Catalog]** och till alternativet **[!UICONTROL Select Data]** i **[!UICONTROL Browse]**. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera  **[!UICONTROL DataFlows]** och redigera deras scheman. |
-| **[!UICONTROL View Sources]** Av och  **[!UICONTROL Manage Sources]** Av | Återkalla all åtkomst till källor. |
+| **[!UICONTROL Manage Sources]** På | Förutom funktionerna i **[!UICONTROL View Sources]**, ger åtkomst till **[!UICONTROL Connect Source]** alternativ i **[!UICONTROL Catalog]** och till **[!UICONTROL Select Data]** alternativ i **[!UICONTROL Browse]**. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera **[!UICONTROL DataFlows]** och redigera sina scheman. |
+| **[!UICONTROL View Sources]** Av och **[!UICONTROL Manage Sources]** Av | Återkalla all åtkomst till källor. |
 
-Mer information om tillgängliga behörigheter som beviljats via Admin Console, inklusive dessa fyra källor, finns i [översikten över åtkomstkontroll](../access-control/home.md).
+Mer information om de behörigheter som beviljas via Admin Console, inklusive dessa fyra källor, finns i [åtkomstkontroll - översikt](../access-control/home.md).
 
 ## Villkor {#terms-and-conditions}
 
-Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***som den är utan någon garanti av något slag***.
+Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***&quot;i befintligt skick&quot; utan någon garanti av något slag***.
 
 Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, ändra eller på annat sätt stödja betaversionen. Du rekommenderas att vara försiktig och inte på något sätt förlita dig på att betaversionen och/eller det medföljande materialet fungerar som de ska. Beta betraktas som konfidentiell information om Adobe.
 
