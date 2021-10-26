@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: f8cecdaaab3d98c7f6542b51dc764a019b04b0b1
+source-git-commit: 030789af0a049b54d6e271410836c08456a83441
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '661'
 ht-degree: 5%
 
 ---
@@ -85,6 +85,7 @@ ht-degree: 5%
       - [PayPal-anslutning](connectors/payments/paypal.md)
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
+      - [Allmän REST API-koppling](connectors/protocols/generic-rest.md)
    - Direktuppspelning {#streaming}
       - [HTTP API-anslutning](connectors/streaming/http.md)
 - API-självstudiekurser {#api-tutorials}
@@ -143,6 +144,7 @@ ht-degree: 5%
          - [PayPal](tutorials/api/create/payments/paypal.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/api/create/protocols/odata.md)
+         - [Allmänt REST API](tutorials/api/create/protocols/generic-rest.md)
       - Direktuppspelning {#streaming}
          - [HTTP-API](tutorials/api/create/streaming/http.md)
    - Utforska data {#explore}
@@ -234,6 +236,7 @@ ht-degree: 5%
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/ui/create/protocols/odata.md)
+         - [Allmänt REST API](tutorials/ui/create/protocols/generic-rest.md)
       - Direktuppspelning {#streaming}
          - [HTTP-API](tutorials/ui/create/streaming/http.md)
    - Konfigurera ett dataflöde {#dataflow}

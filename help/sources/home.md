@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f8cecdaaab3d98c7f6542b51dc764a019b04b0b1
+source-git-commit: 030789af0a049b54d6e271410836c08456a83441
 workflow-type: tm+mt
-source-wordcount: '978'
+source-wordcount: '977'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,8 @@ Experience Platform stöder inmatning av data från strömningskällor. Mer info
 
 Experience Platform har stöd för inmatning av data från tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Generic OData] koppling](connectors/protocols/odata.md)
+- [[!DNL Generic OData]](connectors/protocols/odata.md)
+- [[!DNL Genereic REST API]](connectors/protocols/generic-rest.md)
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
