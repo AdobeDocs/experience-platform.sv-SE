@@ -5,10 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-translation-type: tm+mt
-source-git-commit: b4a04b52ff9a2b7a36fda58d70a2286fea600ff1
+source-git-commit: bb5a56557ce162395511ca9a3a2b98726ce6c190
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '832'
 ht-degree: 0%
 
 ---
@@ -17,9 +16,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Följande dokument visar hur du använder direktuppspelningssegmentering med användargränssnittet. Mer information om hur du använder direktuppspelningssegmentering med API:t finns i [API-handboken för direktuppspelningssegmentering](../api/streaming-segmentation.md).
+>Följande dokument visar hur du använder direktuppspelningssegmentering med användargränssnittet. Mer information om hur du använder direktuppspelningssegmentering med API:t finns i [API-guide för direktuppspelningssegmentering](../api/streaming-segmentation.md).
 
-Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kunderna segmentera i nära realtid samtidigt som de fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering när strömmande data når [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
+Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det möjligt för kunderna att segmentera i nära realtid samtidigt som de fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificeringen i takt med att data strömmas in i [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 
 >[!NOTE]
 >
@@ -31,22 +30,22 @@ Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kund
 
 >[!NOTE]
 >
->För att direktuppspelningssegmenteringen ska fungera måste du aktivera schemalagd segmentering för organisationen. Mer information om att aktivera schemalagd segmentering finns i [avsnittet om direktuppspelningssegmentering i användarhandboken för segmentering](./overview.md#scheduled-segmentation).
+>För att direktuppspelningssegmenteringen ska fungera måste du aktivera schemalagd segmentering för organisationen. Mer information om att aktivera schemalagd segmentering finns i [avsnittet för direktuppspelningssegmentering i användarhandboken för segmentering](./overview.md#scheduled-segmentation).
 
 En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppfyller något av följande kriterier:
 
 | Frågetyp | Detaljer | Exempel |
 | ---------- | ------- | ------- |
-| Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
-| Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
-| Inkommande träff med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. | ![](../images/ui/streaming-segmentation/historic-time-window.png) |
+| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
+| En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
+| En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. | ![](../images/ui/streaming-segmentation/historic-time-window.png) |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |  |
-| Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-hit.png) |
-| Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen  **var 24:e timme**. | ![](../images/ui/streaming-segmentation/two-batches.png) |
-| Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/event-history-success.png) |
+| En händelse med ett profilattribut | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. **Obs!** Frågan utvärderas omedelbart när händelsen kommer. Om en profilhändelse inträffar måste den dock vänta i 24 timmar för att införlivas. | ![](../images/ui/streaming-segmentation/profile-hit.png) |
+| En händelse med ett profilattribut i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen **var 24:e timme**. | ![](../images/ui/streaming-segmentation/two-batches.png) |
+| Flera händelser med ett profilattribut | En segmentdefinition som refererar till flera händelser **inom de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/event-history-success.png) |
 
-En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:
+En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i följande scenarier:
 
 - Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
@@ -56,7 +55,7 @@ Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
 | Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
-| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Det finns ett strikt tidsordningsvillkor **måste** mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan inte** vara en negation.</li></ul> |
+| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Ett strikt tidsordningsvillkor **måste** finns mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **inte** vara en negation.</li></ul> |
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
 
@@ -66,7 +65,7 @@ När du har skapat ett direktuppspelningsaktiverat segment kan du visa informati
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-Mer information om **[!UICONTROL total qualified audience size]** visas. **[!UICONTROL Total qualified audience size]** visar det totala antalet kvalificerade målgrupper från den senaste slutförda segmentjobbkörningen. Om ett segmentjobb inte slutfördes inom de senaste 24 timmarna hämtas antalet målgrupper från en uppskattning i stället.
+Mer om **[!UICONTROL total qualified audience size]** visas. The **[!UICONTROL Total qualified audience size]** visar det totala antalet kvalificerade målgrupper från den senaste slutförda körningen av segmentjobb. Om ett segmentjobb inte slutfördes inom de senaste 24 timmarna hämtas antalet målgrupper från en uppskattning i stället.
 
 Under är ett linjediagram som visar antalet segment som kvalificerats och diskvalificerats under de senaste 24 timmarna. Listrutan kan justeras så att den visar de senaste 24 timmarna, den senaste veckan eller de senaste 30 dagarna.
 
@@ -82,4 +81,4 @@ Mer information om segmentdefinitioner finns i föregående avsnitt om [segmentd
 
 Den här användarhandboken förklarar hur definitioner av direktuppspelningsaktiverade segment fungerar på Adobe Experience Platform och hur man övervakar direktuppspelningsaktiverade segment.
 
-Läs [användarhandboken för segmentering](./overview.md) om du vill veta mer om hur du använder Adobe Experience Platform användargränssnitt.
+Läs mer om Adobe Experience Platform användargränssnitt i [Användarhandbok för segmentering](./overview.md).

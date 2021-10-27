@@ -5,10 +5,9 @@ title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-translation-type: tm+mt
-source-git-commit: b4a04b52ff9a2b7a36fda58d70a2286fea600ff1
+source-git-commit: bb5a56557ce162395511ca9a3a2b98726ce6c190
 workflow-type: tm+mt
-source-wordcount: '1389'
+source-wordcount: '1411'
 ht-degree: 0%
 
 ---
@@ -17,9 +16,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i [gränssnittsguiden för direktuppspelningssegmentering](../ui/streaming-segmentation.md).
+>I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i [gränssnittsguide för direktuppspelningssegmentering](../ui/streaming-segmentation.md).
 
-Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kunderna segmentera i nära realtid samtidigt som de fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering när strömmande data når [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
+Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det möjligt för kunderna att segmentera i nära realtid samtidigt som de fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificeringen i takt med att data strömmas in i [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 
 ![](../images/api/streaming-segment-evaluation.png)
 
@@ -29,33 +28,33 @@ Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kund
 
 ## Komma igång
 
-Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform]-tjänster som är involverade i direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån era  [!DNL Real-time Customer Profile] data.
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:er för [!DNL Platform].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ringa [!DNL Platform] API:er.
 
 ### Läser exempel-API-anrop
 
-Utvecklarhandboken innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Utvecklarhandboken innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -63,26 +62,26 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Ytterligare rubriker kan behövas för att slutföra specifika begäranden. De rätta rubrikerna visas i vart och ett av exemplen i det här dokumentet. Var särskilt uppmärksam på exempelbegäranden för att se till att alla obligatoriska rubriker inkluderas.
 
-### Strömmande segmentering aktiverade frågetyper {#streaming-segmentation-query-types}
+### Strömmande segmenteringsaktiverade frågetyper {#streaming-segmentation-query-types}
 
 >[!NOTE]
 >
->Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om att aktivera schemalagd segmentering finns i [Aktivera schemalagd segmentering](#enable-scheduled-segmentation)
+>Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om att aktivera schemalagd segmentering finns i [aktivera avsnitt för schemalagd segmentering](#enable-scheduled-segmentation)
 
 För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegmentering måste frågan följa följande riktlinjer.
 
 | Frågetyp | Detaljer |
 | ---------- | ------- |
-| Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
-| Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. |
-| Inkommande träff med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. |
+| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
+| En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. |
+| En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
-| Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
-| Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen  **var 24:e timme**. |
-| Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
+| En händelse med ett profilattribut | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. **Obs!** Frågan utvärderas omedelbart när händelsen kommer. Om en profilhändelse inträffar måste den dock vänta i 24 timmar för att införlivas. |
+| En händelse med ett profilattribut i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen **var 24:e timme**. |
+| Flera händelser med ett profilattribut | En segmentdefinition som refererar till flera händelser **inom de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
-En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:
+En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i följande scenarier:
 
 - Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
@@ -92,15 +91,15 @@ Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
 | Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
-| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Det finns ett strikt tidsordningsvillkor **måste** mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan inte** vara en negation.</li></ul> |
+| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Ett strikt tidsordningsvillkor **måste** finns mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **inte** vara en negation.</li></ul> |
 
 ## Hämta alla segment som är aktiverade för direktuppspelningssegmentering
 
-Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom IMS-organisationen genom att göra en GET-begäran till `/segment/definitions`-slutpunkten.
+Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom IMS-organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
-Om du vill hämta direktuppspelningsaktiverade segment måste du ta med frågeparametern `evaluationInfo.continuous.enabled=true` i sökvägen för begäran.
+Om du vill hämta direktuppspelningsaktiverade segment måste du ta med frågeparametern `evaluationInfo.continuous.enabled=true` i sökvägen till begäran.
 
 ```http
 GET /segment/definitions?evaluationInfo.continuous.enabled=true
@@ -209,7 +208,7 @@ Ett lyckat svar returnerar en array med segment i IMS-organisationen som är akt
 
 ## Skapa ett direktuppspelningsaktiverat segment
 
-Ett segment aktiveras automatiskt för direktuppspelning om det matchar någon av de [typer av direktuppspelningssegmentering som listas ovan](#streaming-segmentation-query-types).
+Ett segment aktiveras automatiskt för direktuppspelning om det matchar ett av [segmenteringstyper för direktuppspelning som listas ovan](#streaming-segmentation-query-types).
 
 **API-format**
 
@@ -244,7 +243,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->Det här är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om att [skapa ett segment](../tutorials/create-a-segment.md).
+>Det här är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om [skapa ett segment](../tutorials/create-a-segment.md).
 
 **Svar**
 
@@ -294,11 +293,11 @@ När utvärdering av direktuppspelning har aktiverats måste en baslinje skapas 
 
 >[!NOTE]
 >
->Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kan du inte använda schemalagd utvärdering.
+>Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanfogningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem samkörningspolicyer för [!DNL XDM Individual Profile] i en enda sandlådemiljö kommer du inte att kunna använda schemalagd utvärdering.
 
 ### Skapa ett schema
 
-Genom att göra en begäran om POST till `/config/schedules`-slutpunkten kan du skapa ett schema och inkludera den tidpunkt då schemat ska utlösas.
+Genom att göra en POST-förfrågan till `/config/schedules` kan du skapa ett schema och inkludera den specifika tidpunkt då schemat ska utlösas.
 
 **API-format**
 
@@ -332,11 +331,11 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `name` | **(Obligatoriskt)** Schemats namn. Måste vara en sträng. |
-| `type` | **(Obligatoriskt)** Jobbtypen i strängformat. Typerna som stöds är `batch_segmentation` och `export`. |
+| `type` | **(Obligatoriskt)** Jobbtypen i strängformat. De typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | **(Obligatoriskt)** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | **(Krävs när  `type` lika med  `batch_segmentation`används)** Alla segment  `["*"]` ingår. |
-| `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Det exempel som visas (`0 0 1 * * ?`) betyder att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. |
-| `state` | *(Valfritt)* Sträng som innehåller schemaläge. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En IMS-organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
+| `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Använda `["*"]` säkerställer att alla segment ingår. |
+| `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i [cron, uttrycksformat](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) dokumentation. |
+| `state` | *(Valfritt)* Sträng som innehåller schemats tillstånd. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En IMS-organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
 
 **Svar**
 
@@ -368,7 +367,7 @@ Ett lyckat svar returnerar information om det nya schemat.
 
 ### Aktivera ett schema
 
-Som standard är ett schema inaktivt när det skapas såvida inte egenskapen `state` är inställd på `active` i texten för skapandebegäran (POST). Du kan aktivera ett schema (ange `state` till `active`) genom att göra en PATCH-begäran till `/config/schedules`-slutpunkten och inkludera ID:t för schemat i sökvägen.
+Som standard är ett schema inaktivt när det skapas såvida inte `state` egenskapen är inställd på `active` i texten för skapandebegäran (POST). Du kan aktivera ett schema (ange `state` till `active`) genom att göra en begäran från PATCH till `/config/schedules` slutpunkten och inklusive ID för schemat i sökvägen.
 
 **API-format**
 
@@ -378,7 +377,7 @@ POST /config/schedules/{SCHEDULE_ID}
 
 **Begäran**
 
-Följande begäran använder [JSON Patch-formatering](http://jsonpatch.com/) för att uppdatera `state` för schemat till `active`.
+Följande begäran använder [JSON Patch-formatering](http://jsonpatch.com/) för att uppdatera `state` av schemat till `active`.
 
 ```shell
 curl -X POST \
@@ -407,4 +406,4 @@ Samma åtgärd kan användas för att inaktivera ett schema genom att ersätta v
 
 Nu när du har aktiverat både nya och befintliga segment för direktuppspelningssegmentering och aktiverat schemalagd segmentering för att utveckla en baslinje och utföra återkommande utvärderingar, kan du börja skapa direktuppspelningsaktiverade segment för din organisation.
 
-Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du läsa [användarhandboken för Segment Builder](../ui/segment-builder.md).
+Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du gå till [Användarhandbok för Segment Builder](../ui/segment-builder.md).
