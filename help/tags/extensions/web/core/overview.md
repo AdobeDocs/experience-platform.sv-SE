@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 3b023dde8189d3ca6f8525d1e3366874e4ea2c67
+source-git-commit: 868239c84571ed4a274db6b2b49694489a17073e
 workflow-type: tm+mt
-source-wordcount: '5247'
+source-wordcount: '5282'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Core-taggtillägget är standardtillägget som släpps med Adobe Experience Platform.
 
@@ -21,7 +21,7 @@ Det här dokumentet innehåller information om de alternativ som är tillgängli
 
 ## Huvudtilläggshändelsetyper {#core-extension-event-types}
 
-I det här avsnittet beskrivs de händelsetyper som finns i Core-tillägget. Mer information om alternativen som kan anges för flera olika händelsetyper finns i avsnittet [Alternativ](#options).
+I det här avsnittet beskrivs de händelsetyper som finns i Core-tillägget. Mer information om alternativen som kan anges för flera olika händelsetyper finns i [Alternativ](#options) -avsnitt.
 
 ### Webbläsarbaserade händelser
 
@@ -37,52 +37,52 @@ Händelsen tab-focus utlöser åtgärden när en flik får fokus. Det finns inga
 
 #### Oskärpa
 
-Oskärpehändelsen utlöser åtgärden när ett formulär förlorar fokus. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Oskärpehändelsen utlöser åtgärden när ett formulär förlorar fokus. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Fokus
 
-Fokushändelsen utlöser åtgärden när ett formulär får fokus. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Fokushändelsen utlöser åtgärden när ett formulär får fokus. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Skicka
 
-Skicka-händelsen utlöser åtgärden när ett formulär skickas. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Skicka-händelsen utlöser åtgärden när ett formulär skickas. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 ### Tangentbordskontrollerade händelser
 
 #### Tryck på tangenten
 
-Händelsen utlöses när en tangent trycks ned. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses när en tangent trycks ned. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 ### Mediebaserade händelser
 
 #### Media avslutad
 
-Händelsen utlöses när mediet avslutas. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses när mediet avslutas. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Medieladdade data
 
-Händelsen utlöses när mediet läser in data. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses när mediet läser in data. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Pausa media
 
-Händelsen utlöses när mediet pausas. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses när mediet pausas. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Media Play
 
-Händelsen utlöses när mediet spelas upp. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses när mediet spelas upp. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Media är installerade
 
-Händelsen utlöses om mediet stannar. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses om mediet stannar. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Media-Time Play
 
-Händelsen utlöses om mediet spelas upp under en viss tid. Du måste ange hur länge mediet måste spelas upp för att händelsen ska kunna utlösas. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses om mediet spelas upp under en viss tid. Du måste ange hur länge mediet måste spelas upp för att händelsen ska kunna utlösas. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 
 #### Media-Volume har ändrats
 
-Händelsen utlöses om volymen höjs eller sänks. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses om volymen höjs eller sänks. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 ### Mobilorienterade händelser
 
@@ -100,29 +100,29 @@ Händelsen utlöses om användaren zoomar in eller ut. Det finns inga inställni
 
 Händelsen utlöses om det angivna elementet är markerat (klickat). Du kan också ange egenskapsvärden som måste vara true för elementet innan händelsen aktiveras.
 
-Om elementet är en ankartagg (`<a>`) för länkat innehåll kan du även ange om navigeringen ska fördröjas under en tidsperiod. Detta kan vara användbart om regeln kräver extra tid för att köras och vanligtvis inte skulle slutföras innan sidnavigeringen utförs.
+Om elementet är en ankartagg (`<a>`) för länkat innehåll kan du även ange om navigeringen ska fördröjas under en viss tidsperiod. Detta kan vara användbart om regeln kräver extra tid för att köras och vanligtvis inte skulle slutföras innan sidnavigeringen utförs.
 
 >[!WARNING]
 >
 >Detta alternativ bör användas med extrem försiktighet på grund av de potentiella negativa konsekvenser det kan få för användarupplevelsen om det används felaktigt.
 
-När du använder fördröjning av länkar förhindrar Platform faktiskt webbläsaren från att navigera utanför sidan. Sedan utförs en JavaScript-omdirigering till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>`-taggar där den avsedda funktionen egentligen inte navigerar användaren bort från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
+När du använder fördröjning av länkar förhindrar Platform faktiskt webbläsaren från att navigera utanför sidan. Sedan utförs en JavaScript-omdirigering till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>` -taggar där den tänkta funktionen egentligen inte navigerar användaren bort från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
 
 Standardvärdet för fördröjning av länkar är 100 millisekunder. Observera att taggar alltid väntar på den angivna tiden och inte är kopplade till körningen av regelns åtgärder på något sätt. Det är möjligt att fördröjningen tvingar användaren att vänta längre än vad som är nödvändigt och även att fördröjningen inte är tillräckligt lång för att alla regelåtgärder ska kunna slutföras. Längre fördröjningar ger mer tid för regelkörning men försämrar även användarupplevelsen.
 
 För att aktivera fördröjningen måste du ange både det valda elementet som utlöser händelsen och den specifika tiden innan händelsen utlöses.
 
-Avsnittet [Alternativ](#options) innehåller mer information om de avancerade alternativen.
+Avancerade alternativ finns i [Alternativ](#options) för mer information.
 
 #### Hovra
 
-Händelsen utlöses om användaren hovrar över ett angivet element. Du måste också konfigurera om regeln aktiveras omedelbart eller efter ett visst antal millisekunder. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses om användaren hovrar över ett angivet element. Du måste också konfigurera om regeln aktiveras omedelbart eller efter ett visst antal millisekunder. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 ### Andra händelser
 
 #### Egen händelse
 
-Händelsen utlöses om en anpassad händelsetyp inträffar. Namngivna JavaScript-funktioner som definieras någon annanstans i kodbasen kan användas som en anpassad händelsetyp. Du måste ange namnet på den anpassade händelsetypen och konfigurera eventuella andra inställningar enligt beskrivningen i [Alternativ](#options)-avsnittet nedan.
+Händelsen utlöses om en anpassad händelsetyp inträffar. Namngivna JavaScript-funktioner som definieras någon annanstans i kodbasen kan användas som en anpassad händelsetyp. Du måste ange namnet på den anpassade händelsetypen och konfigurera andra inställningar enligt beskrivningen i [Alternativ](#options) nedan.
 
 #### Dataelementet har ändrats
 
@@ -130,17 +130,17 @@ Händelsen utlöses om ett angivet dataelement ändras. Du måste ange ett namn 
 
 #### Direktsamtal
 
-Händelsen direct-call kringgår system för händelsidentifiering och sökning. Regler för direktanrop är idealiska för situationer där du vill tala om för plattformen exakt vad som händer. De är också idealiska när Platform inte kan identifiera en händelse i DOM, till exempel med Adobe Flash. Ange strängen `_satellite.track` i identifierartextfältet.
+Händelsen direct-call kringgår system för händelsidentifiering och sökning. Regler för direktanrop är idealiska för situationer där du vill tala om för plattformen exakt vad som händer. De är också idealiska när Platform inte kan identifiera en händelse i DOM, till exempel med Adobe Flash. Ange `_satellite.track` i identifierartextfältet.
 
 #### Elementet finns
 
-Händelsen utlöses om ett angivet element finns. Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Händelsen utlöses om ett angivet element finns. Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Enters Viewport
 
 Händelsen utlöses om användaren anger en angiven visningsruta. Du måste ange en CSS-väljare som ett villkor för att kunna ange matchande element som mål. Du måste också konfigurera om regeln ska aktiveras omedelbart eller efter ett visst antal millisekunder, och om händelsen ska utlösas varje gång händelsen inträffar eller endast första gången.
 
-Mer information om anpassningsbara händelseinställningar finns i avsnittet [Alternativ](#options).
+Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
 #### Historikändring
 
@@ -162,7 +162,7 @@ Händelsen utlöses så snart som taggbiblioteket har lästs in. Det finns inga 
 
 #### Sidan nederst {#page-bottom}
 
-Händelsen utlöses när `_satellite.pageBottom();` har anropats. När du läser in taggbiblioteket asynkront bör den här händelsetypen inte användas. Det finns inga inställningar för den här händelsetypen.
+Händelsen utlöses en gång `_satellite.pageBottom();` har anropats. När du läser in taggbiblioteket asynkront bör den här händelsetypen inte användas. Det finns inga inställningar för den här händelsetypen.
 
 #### Fönster inläst
 
@@ -175,7 +175,7 @@ Var och en av formulärhändelsetyperna använder följande inställningar:
 #### Specifika element \| Alla element
 
 * Om du väljer **[!UICONTROL Specific Elements]** visas alternativen för att välja element och egenskapsvärden.
-* Om du väljer **[!UICONTROL Any Element]** behöver du inte ange några fler alternativ för att begränsa elementen.
+* Om du väljer **[!UICONTROL Any Element]**, det finns inga fler alternativ som behöver göras för att begränsa elementen.
 
 #### Element som matchar CSS-väljaren
 
@@ -195,7 +195,7 @@ Om du väljer det här alternativet blir följande parametrar tillgängliga:
 
 * Lägg till
 
-   Lägg till ytterligare ett `property=value`-par.
+   Lägg till ytterligare `property=value` par.
 
 #### Avancerade alternativ (Bubbling)
 
@@ -219,13 +219,19 @@ Ange det cookie-namn och värde som måste finnas för att en händelse ska kunn
 
 #### Egen kod
 
-Ange eventuell anpassad kod som måste finnas som villkor för händelsen. Använd den inbyggda kodredigeraren för att ange den anpassade koden.
+Ange eventuell anpassad kod som måste finnas som villkor för händelsen.
+
+>[!NOTE]
+>
+>ES6+ JavaScript stöds nu i anpassad kod. Observera att vissa äldre webbläsare inte stöder ES6+. Om du vill förstå hur funktionerna i ES6+ påverkas testar du mot alla webbläsare som bör stödjas.
+
+Använd den inbyggda kodredigeraren för att ange egen kod:
 
 1. Välj **[!UICONTROL Open Editor]**.
 1. Skriv den anpassade koden.
 1. Välj **[!UICONTROL Save]**.
 
-En variabel med namnet `event` blir automatiskt tillgänglig, som du kan referera till inifrån din anpassade kod. Objektet `event` innehåller användbar information om händelsen som utlöste regeln. Det enklaste sättet att avgöra vilka händelsedata som är tillgängliga är att logga `event` till konsolen inifrån din anpassade kod:
+En variabel med namnet `event` kommer automatiskt att vara tillgängligt, vilket du kan referera till inifrån din anpassade kod. The `event` -objektet innehåller användbar information om händelsen som utlöste regeln. Det enklaste sättet att avgöra vilka händelsedata som är tillgängliga är att logga `event` till konsolen inifrån din egen kod:
 
 ```javascript
 console.log(event);
@@ -238,7 +244,7 @@ Kör regeln i en webbläsare och inspektera det loggade händelseobjektet i webb
 
 När alternativet Kör regelkomponenter i sekvens från egenskapsinställningarna är aktiverat kan efterföljande regelkomponenter vänta medan villkoret utför en asynkron åtgärd.
 
-När villkoret returnerar ett [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) kommer nästa villkor i regeln inte att köras förrän det returnerade löftet har lösts. Om löftet avvisas anser taggarna att villkoret är misslyckat och inga ytterligare villkor eller åtgärder från den regeln kommer att utföras.
+När villkoret returnerar [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)kommer nästa villkor i regeln inte att köras förrän det returnerade löftet är löst. Om löftet avvisas anser taggarna att villkoret är misslyckat och inga ytterligare villkor eller åtgärder från den regeln kommer att utföras.
 
 Ett exempel på ett villkor som returnerar ett löfte:
 
@@ -267,9 +273,9 @@ Om du har en regel med flera villkor är det möjligt att det här villkoret ret
 
 Följande värdejämförelseoperatorer är tillgängliga:
 
-**Lika:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript returnerar operatorn ==). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_ eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
+**Lika med:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript == -operatorn). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
-**Är inte lika:** Villkoret returnerar true om de två värdena inte är lika med en icke-strikt jämförelse (i JavaScript returneras != operator). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_ eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
+**Är inte lika med:** Villkoret returnerar true om de två värdena inte är lika med en icke-strikt jämförelse (i JavaScript är != operator). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
 **Innehåller:** Villkoret returnerar true om det första värdet innehåller det andra värdet. Tal konverteras till strängar. Alla värden utom ett tal eller en sträng resulterar i att villkoret returnerar false.
 
@@ -289,19 +295,19 @@ Följande värdejämförelseoperatorer är tillgängliga:
 
 **Är mindre än:** Villkoret returnerar true om det första värdet är mindre än det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
-**Är mindre än eller lika med:** Villkoret returnerar true om det första värdet är mindre än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
+**är mindre än eller lika med:** Villkoret returnerar true om det första värdet är mindre än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
 **Är större än:** Villkoret returnerar true om det första värdet är större än det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
-**Är större än eller lika med:** Villkoret returnerar true om det första värdet är större än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
+**är större än eller lika med:** Villkoret returnerar true om det första värdet är större än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
-**Är true:** Villkoret returnerar true om värdet är booleskt med värdet true. Värdet som du anger konverteras inte till ett booleskt värde om det är någon annan typ. Alla värden utom ett booleskt värde med värdet true returnerar villkoret false.
+**Är sant:** Villkoret returnerar true om värdet är booleskt med värdet true. Värdet som du anger konverteras inte till ett booleskt värde om det är någon annan typ. Alla värden utom ett booleskt värde med värdet true returnerar villkoret false.
 
 **Är sann:** Villkoret returnerar true om värdet är true efter att ha konverterats till ett booleskt värde. Se [MDN:s sanna dokumentation](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) för exempel på sanna värden.
 
 **Är falskt:** Villkoret returnerar true om värdet är ett booleskt värde med värdet false. Värdet som du anger konverteras inte till ett booleskt värde om det är någon annan typ. Alla värden utom ett booleskt värde med värdet false resulterar i att villkoret returnerar false.
 
-**Är falskt:** Villkoret returnerar true om värdet är false efter att ha konverterats till ett booleskt värde. Se [MDN:s Falsy-dokumentation](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) för exempel på felaktiga värden.
+**Är falskt:** Villkoret returnerar true om värdet är false efter att det har konverterats till ett booleskt värde. Se [MDN:s Falsy-dokumentation](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) för exempel på falska värden.
 
 #### Variabel
 
@@ -408,7 +414,7 @@ Välj ett eller flera av följande operativsystem:
 * Blackberry
 * iOS
 * Linux
-* MacOS
+* macOS
 * Maemo
 * Symbian OS
 * Unix
@@ -522,9 +528,9 @@ Ange det maximala antalet gånger som villkoret returnerar true. Du kan välja m
 * Veckor
 * Månader
 
-För villkorets maximala frekvens 1 per session jämförs dessa två `localStorage`-objekt. Om `visitorTracking.sessionCount` är större än `maxFrequency.session`-antalet är samplingsvillkoret sant. Om de är lika är villkoret false.
+För villkorets maximala frekvens 1 per session är dessa två `localStorage` objekten jämförs. Om `visitorTracking.sessionCount` är större än `maxFrequency.session` antal, samplingsvillkoret är sant. Om de är lika är villkoret false.
 
-`sessionCount` är ett  `visitorTracking` objekt, så du måste aktivera besökar-API:t för att samplingsvillkoret ska fungera.
+`sessionCount` är en `visitorTracking` så du måste aktivera besökar-API:t för att samplingsvillkoret ska fungera.
 
 #### Provtagning
 
@@ -544,15 +550,15 @@ Ange koden som körs efter att händelsen har utlösts och villkoren har utvärd
    * HTML
 1. Välj om åtgärdskoden ska köras globalt.
 1. Välj **[!UICONTROL Open Editor]**.
-1. Redigera koden och välj sedan **[!UICONTROL Save]**.
+1. Redigera koden och välj **[!UICONTROL Save]**.
 
-När du väljer JavaScript som språk blir variabeln `event` automatiskt tillgänglig, som du kan referera till inifrån din anpassade kod. Objektet `event` innehåller användbar information om händelsen som utlöste regeln. Det enklaste sättet att avgöra vilka händelsedata som är tillgängliga är att logga `event` till konsolen inifrån din anpassade kod:
+När JavaScript är valt som språk, en variabel med namnet `event` kommer automatiskt att vara tillgängligt, vilket du kan referera till inifrån din anpassade kod. The `event` -objektet innehåller användbar information om händelsen som utlöste regeln. Det enklaste sättet att avgöra vilka händelsedata som är tillgängliga är att logga `event` till konsolen inifrån din egen kod:
 
 ```javascript
 console.log(event);
 ```
 
-Kör regeln i en webbläsare och inspektera det loggade händelseobjektet i webbläsarens konsol. När du har förstått vilken information som är tillgänglig kan du använda den för programmatiskt beslutsfattande i din anpassade kod, skicka en del av `event`-objektet till en server och så vidare.
+Kör regeln i en webbläsare och inspektera det loggade händelseobjektet i webbläsarens konsol. När du har förstått vilken information som är tillgänglig kan du använda den för programmatiskt beslutsfattande i din anpassade kod och skicka en del av `event` till en server och så vidare.
 
 ### Bearbetning av anpassad kodåtgärd
 
@@ -574,11 +580,11 @@ Valideraren som används i kodredigeraren är utformad för att identifiera prob
 
 #### Åtgärdssekvenser
 
-När alternativet Kör regelkomponenter i sekvens från egenskapsinställningarna är aktiverat kan efterföljande regelkomponenter vänta medan åtgärden utför en asynkron åtgärd.  Detta fungerar annorlunda för JavaScript och anpassad HTML-kod.
+När alternativet Kör regelkomponenter i sekvens från egenskapsinställningarna är aktiverat kan efterföljande regelkomponenter vänta medan åtgärden utför en asynkron åtgärd.  Detta fungerar annorlunda för JavaScript och HTML.
 
 *JavaScript*
 
-När du skapar en anpassad JavaScript-kodsåtgärd kan du returnera ett [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) från åtgärden. Nästa åtgärd i regeln kommer endast att utföras när det returnerade löftet är löst. Om löftet avvisas kommer nästa åtgärd från regeln inte att utföras.
+När du skapar en anpassad JavaScript-kodsåtgärd kan du returnera en [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) från ditt agerande. Nästa åtgärd i regeln kommer endast att utföras när det returnerade löftet är löst. Om löftet avvisas kommer nästa åtgärd från regeln inte att utföras.
 
 >[!NOTE]
 >
@@ -600,9 +606,9 @@ return new Promise(function(resolve, reject) {
 
 *HTML*
 
-När du skapar en anpassad HTML-kodsåtgärd kommer en funktion med namnet `onCustomCodeSuccess()` att vara tillgänglig att använda i din anpassade kod. Du kan anropa den här funktionen för att ange att din egen kod har slutförts och att taggarna kan fortsätta att köra efterföljande åtgärder. Om din anpassade kod å andra sidan misslyckades på något sätt kan du anropa `onCustomCodeFailure()`. Detta informerar taggar om att inte köra efterföljande åtgärder från den regeln.
+När du skapar en anpassad kodsåtgärd för HTML, en funktion med namnet `onCustomCodeSuccess()` kan användas i din egen kod. Du kan anropa den här funktionen för att ange att din egen kod har slutförts och att taggarna kan fortsätta att köra efterföljande åtgärder. Å andra sidan kan du anropa `onCustomCodeFailure()`. Detta informerar taggar om att inte köra efterföljande åtgärder från den regeln.
 
-Ett exempel på en anpassad HTML-kodsåtgärd som använder de nya återanropen:
+Ett exempel på en anpassad kodåtgärd för HTML som använder de nya återanropen:
 
 ```html
 <script>
@@ -642,7 +648,7 @@ Alla konstanta strängvärden som sedan kan refereras i åtgärder eller villkor
 
 Du kan ange egen JavaScript i användargränssnittet genom att välja Öppna redigerare och infoga kod i redigeringsfönstret.
 
-En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska användas som dataelementvärde. Om en return-programsats inte ingår eller om värdet `null` eller `undefined` returneras, används dataelementets standardvärde som dataelementvärde.
+En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska användas som dataelementvärde. Om en retursats inte ingår eller om värdet `null` eller `undefined` returneras kommer dataelementets standardvärde att användas som dataelementvärde.
 
 **Exempel:**
 
@@ -655,14 +661,14 @@ if (window.location.pathname == '/') {
 }
 ```
 
-Om det anpassade kodelementet hämtas som en del av en regelkörning blir en variabel med namnet `event` automatiskt tillgänglig, som du kan referera till inifrån den anpassade koden. Objektet `event` innehåller användbar information om händelsen som utlöste regeln. Det enklaste sättet att avgöra vilka händelsedata som är tillgängliga är att logga `event` till konsolen inifrån din anpassade kod:
+Om det anpassade kodelementet hämtas som en del av en regelkörning, är det en variabel med namnet `event` blir automatiskt tillgängligt, som du kan referera till inifrån din anpassade kod. The `event` -objektet innehåller användbar information om händelsen som utlöste regeln. Det enklaste sättet att avgöra vilka händelsedata som är tillgängliga är att logga `event` till konsolen inifrån din egen kod:
 
 ```javascript
 console.log(event);
 return true;
 ```
 
-Kör regeln i en webbläsare och inspektera det loggade händelseobjektet i webbläsarens konsol. När du förstår vilken information som är tillgänglig under de olika regler som kan använda ditt dataelement, kan du använda den för programmatisk beslutsfattande i din anpassade kod eller returnera en del av `event`-objektet som dataelementets värde.
+Kör regeln i en webbläsare och inspektera det loggade händelseobjektet i webbläsarens konsol. När du förstår vilken information som är tillgänglig enligt de olika regler som kan använda ditt dataelement, kan du använda den för programmatisk beslutsfattande inom din anpassade kod eller returnera en del av `event` -objektet som dataelementets värde.
 
 ### DOM-attribut
 
@@ -684,7 +690,7 @@ Alla tillgängliga JavaScript-objekt eller -variabler kan refereras med sökväg
 
 Element i taggdata kan användas för att hämta JavaScript-variabler eller objektegenskaper för kod. Dessa värden kan sedan användas i tilläggen eller anpassade regler genom att referera till taggdataelementen. Om datakällan ändras är det bara nödvändigt att uppdatera referensen till källan i användargränssnittet för datainsamling.
 
-I exemplet nedan innehåller koden en JavaScript-variabel med namnet `Page_Name`.
+I exemplet nedan innehåller koden en JavaScript-variabel som kallas `Page_Name`.
 
 ```markup
 <script>
@@ -695,7 +701,7 @@ I exemplet nedan innehåller koden en JavaScript-variabel med namnet `Page_Name`
 
 När du skapar dataelementet i användargränssnittet för datainsamling anger du bara sökvägen till variabeln.
 
-Om du använder ett datainsamlarobjekt som en del av datalagret använder du punktnotation i sökvägen för att referera till det objekt och den egenskap som du vill hämta till dataelementet, till exempel `_myData.pageName` eller `digitalData.pageName`.
+Om du använder ett datainsamlarobjekt som en del av datalagret använder du punktnotation i sökvägen för att referera till det objekt och den egenskap som du vill hämta till dataelementet, som `_myData.pageName`, eller `digitalData.pageName`och så vidare.
 
 #### Exempel:
 
@@ -711,7 +717,7 @@ Använd det angivna fältet för att ange värdet som du skapade för ett lokalt
 
 ### Sammanfogade objekt
 
-Markera flera dataelement som vart och ett ska ge ett objekt. Objekten sammanfogas i hög grad (rekursivt) för att skapa ett nytt objekt. Källobjekten ändras inte. Om en egenskap hittas på samma plats på flera källobjekt används värdet från det senare objektet. Om ett källegenskapsvärde är `undefined` åsidosätter det inte ett värde från ett tidigare källobjekt. Om arrayer finns på samma plats på flera källobjekt sammanfogas arrayerna.
+Markera flera dataelement som vart och ett ska ge ett objekt. Objekten sammanfogas i hög grad (rekursivt) för att skapa ett nytt objekt. Källobjekten ändras inte. Om en egenskap hittas på samma plats på flera källobjekt används värdet från det senare objektet. Om ett källegenskapsvärde är `undefined`, åsidosätter det inte ett värde från ett tidigare källobjekt. Om arrayer finns på samma plats på flera källobjekt sammanfogas arrayerna.
 
 Anta till exempel att du väljer ett dataelement som innehåller följande objekt:
 
@@ -833,21 +839,21 @@ Några vanliga användningsområden:
 
 ### Villkorligt värde
 
-En wrapper för villkoret [Värdejämförelse](#value-comparison-value-comparison). Baserat på resultatet av jämförelsen returnerar ett av de två tillgängliga värdena i formuläret. Kan på så sätt hantera &quot;If... Sedan.. Annars..&quot; utan extra regler.
+En wrapper för [Värdejämförelse](#value-comparison-value-comparison) villkor. Baserat på resultatet av jämförelsen returnerar ett av de två tillgängliga värdena i formuläret. Kan på så sätt hantera &quot;If... Sedan.. Annars..&quot; utan extra regler.
 
 ### Körningsmiljö
 
 Gör att du kan välja en av följande variabler:
 
-* Miljöstadium - Returnerar `_satellite.environment.stage` för att skilja mellan utvecklings-/staging-/produktionsmiljöer.
-* Datum för biblioteksbygge - Returnerar `turbine.buildInfo.buildDate` som innehåller samma värde som `_satellite.buildInfo.buildDate`.
-* Egenskapsnamn - Returnerar `_satellite.property.name` för att hämta namnet på Launch-egenskapen.
-* Egenskaps-ID - Returnerar `_satellite.property.id` för att hämta ID:t för egenskapen Launch
-* Regelnamn - Returnerar `event.$rule.name` som innehåller namnet på den körda regeln.
-* Regel-ID - Returnerar `event.$rule.id` som innehåller ID:t för den körda regeln.
-* Händelsetyp - Returnerar `event.$type` som innehåller den typ av händelse som utlöste regeln.
-* Nyttolast för händelseinformation - Returnerar `event.detail` som innehåller nyttolasten för en anpassad händelse eller regel för direktanrop.
-* Identifierare för direktanrop - Returnerar `event.identifier` som innehåller identifieraren för en regel för direktanrop.
+* Miljöfas - Returer `_satellite.environment.stage` för att skilja mellan utvecklings-, staging- och produktionsmiljöer.
+* Bygge bibliotek - returnerar `turbine.buildInfo.buildDate` som innehåller samma värde som `_satellite.buildInfo.buildDate`.
+* Egenskapsnamn - returnerar `_satellite.property.name` för att hämta namnet på Launch-egenskapen.
+* Egenskaps-ID - Returnerar `_satellite.property.id` för att hämta ID:t för Launch-egenskapen
+* Regelnamn - returnerar `event.$rule.name` som innehåller namnet på den körda regeln.
+* Regel-ID - returnerar `event.$rule.id` som innehåller ID:t för den körda regeln.
+* Händelsetyp - Returer `event.$type` som innehåller den typ av händelse som utlöste regeln.
+* Nyttolast för händelseinformation - Returer `event.detail` som innehåller nyttolasten för en anpassad händelse eller regel för direktanrop.
+* Identifierare för direktanrop - Returer `event.identifier` som innehåller identifieraren för en regel för direktsamtal.
 
 ### Enhetsattribut
 
