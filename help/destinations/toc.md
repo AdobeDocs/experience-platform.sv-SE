@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
+source-git-commit: e6d922800c17312df8529061c56d8a2deac46662
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '657'
 ht-degree: 1%
 
 ---
@@ -153,12 +153,14 @@ ht-degree: 1%
       * [Server- och mallspecifikationer](./destination-sdk/server-and-template-configuration.md)
       * [Meddelandeformat](./destination-sdk/message-format.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/audience-metadata-management.md)
-      * [Autentiseringskonfiguration](./destination-sdk/credentials-configuration.md)
-      * [OAuth 2-autentisering](./destination-sdk/oauth2-authentication.md)
+      * Autentisering {#authentication}
+         * [Autentiseringskonfiguration](./destination-sdk/authentication-configuration.md)
+         * [OAuth 2-autentisering](./destination-sdk/oauth2-authentication.md)
       * Utvecklarverktyg {#developer-tools}
          * [Skapa och testa en meddelandeomformningsmall](./destination-sdk/create-template.md)
          * [Testa målkonfigurationen](./destination-sdk/test-destination.md)
-   * API-referens {#api-reference}
+   * API-åtgärder {#api}
+      * [API-referens för mål-SDK (Destination Authoring)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * [API-åtgärder för destinationsslutpunkt](./destination-sdk/destination-configuration-api.md)
       * [API-åtgärder för målserverns slutpunkt](./destination-sdk/destination-server-api.md)
       * [API-åtgärder för målgruppsmetadata](./destination-sdk/audience-metadata-api.md)

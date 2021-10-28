@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 76a596166edcdbf141b5ce5dc01557d2a0b4caf3
+source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
 workflow-type: tm+mt
 source-wordcount: '2405'
 ht-degree: 1%
@@ -13,17 +13,17 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->**API-slutpunkt**:  `platform.adobe.io/data/core/activation/authoring/destinations`
+>**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destinations`. En beskrivning av de funktioner som stöds av den här slutpunkten finns i [målkonfigurationen](./destination-configuration.md).
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/destinations` API-slutpunkt. En beskrivning av de funktioner som stöds av den här slutpunkten finns i [målkonfiguration](./destination-configuration.md).
 
 ## Komma igång med mål-API-åtgärder {#get-started}
 
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Skapa konfiguration för ett mål {#create}
 
-Du kan skapa en ny målkonfiguration genom att göra en POST-förfrågan till `/authoring/destinations`-slutpunkten.
+Du kan skapa en ny destinationskonfiguration genom att göra en POST-förfrågan till `/authoring/destinations` slutpunkt.
 
 **API-format**
 
@@ -34,7 +34,7 @@ POST /authoring/destinations
 
 **Begäran**
 
-Följande begäran skapar en ny destinationskonfiguration, konfigurerad med parametrarna i nyttolasten. Nyttolasten nedan innehåller alla parametrar som accepteras av slutpunkten `/authoring/destinations`. Observera att du inte behöver lägga till alla parametrar i anropet och att mallen kan anpassas enligt dina API-krav.
+Följande begäran skapar en ny destinationskonfiguration, konfigurerad med parametrarna i nyttolasten. Nedan finns alla parametrar som accepteras av `/authoring/destinations` slutpunkt. Observera att du inte behöver lägga till alla parametrar i anropet och att mallen kan anpassas enligt dina API-krav.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations \
@@ -139,7 +139,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 |---------|----------|------|
 | `name` | Sträng | Anger målets namn i Experience Platform-katalogen |
 | `description` | Sträng | Ange en beskrivning som Adobe ska använda i Experience Platform-destinationskatalogen för ditt destinationskort. Rikta dig för högst 4-5 meningar. |
-| `status` | Sträng | Anger målkortets livscykelstatus. Godkända värden är `TEST`, `PUBLISHED` och `DELETED`. Använd `TEST` när du först konfigurerar målet. |
+| `status` | Sträng | Anger målkortets livscykelstatus. Godkända värden är `TEST`, `PUBLISHED`och `DELETED`. Använd `TEST` när du först konfigurerar målet. |
 | `customerAuthenticationConfigurations` | Sträng | Anger den konfiguration som används för att autentisera Experience Platform-kunder mot servern. Se `authType` nedan för godkända värden. |
 | `customerAuthenticationConfigurations.authType` | Sträng | Godkända värden är `OAUTH2, BEARER`. |
 | `customerDataFields.name` | Sträng | Ange ett namn för det anpassade fält som du introducerar. |
@@ -148,38 +148,38 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `customerDataFields.description` | Sträng | Ange en beskrivning för det anpassade fältet. |
 | `customerDataFields.isRequired` | Boolean | Anger om det här fältet är obligatoriskt i arbetsflödet för målkonfiguration. |
 | `customerDataFields.enum` | Sträng | Återger det anpassade fältet som en listruta och visar de alternativ som är tillgängliga för användaren. |
-| `customerDataFields.pattern` | Sträng | Tvingar fram ett mönster för det anpassade fältet, om det behövs. Använd reguljära uttryck för att framtvinga ett mönster. Om dina kund-ID till exempel inte innehåller siffror eller understreck anger du `^[A-Za-z]+$` i det här fältet. |
-| `uiAttributes.documentationLink` | Sträng | Refererar till dokumentationssidan i [målkatalogen](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog). Använd `https://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på målet. För ett mål som heter Moviestar använder du `https://www.adobe.com/go/destinations-moviestar-en`. |
+| `customerDataFields.pattern` | Sträng | Tvingar fram ett mönster för det anpassade fältet, om det behövs. Använd reguljära uttryck för att framtvinga ett mönster. Om dina kund-ID:n inte innehåller siffror eller understreck anger du `^[A-Za-z]+$` i detta fält. |
+| `uiAttributes.documentationLink` | Sträng | Refererar till dokumentationssidan i [Målkatalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) till destinationen. Använd `https://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på destinationen. För ett mål som heter Moviestar använder du `https://www.adobe.com/go/destinations-moviestar-en`. |
 | `uiAttributes.category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). Använd något av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
 | `uiAttributes.connectionType` | Sträng | `Server-to-server` är för närvarande det enda tillgängliga alternativet. |
 | `uiAttributes.frequency` | Sträng | `Streaming` är för närvarande det enda tillgängliga alternativet. |
 | `identityNamespaces.externalId.acceptsAttributes` | Boolean | Anger om målet accepterar standardprofilattribut. Normalt framhävs dessa attribut i våra partners dokumentation. |
 | `identityNamespaces.externalId.acceptsCustomNamespaces` | Boolean | Anger om kunderna kan ställa in anpassade namnutrymmen i målet. |
-| `identityNamespaces.externalId.allowedAttributesTransformation` | Sträng | _Visas inte i exempelkonfigurationen_. Används till exempel när [!DNL Platform]-kunden har oformaterade e-postadresser som attribut och din plattform bara accepterar hash-kodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
-| `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Används för fall där plattformen accepterar [standardnamnutrymmen för identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa plattformsanvändare till att endast välja dessa ID-namnutrymmen. <br> När du använder  `acceptedGlobalNamespaces`kan du använda gemener  `"requiredTransformation":"sha256(lower($))"` och hash-adresser eller telefonnummer. |
-| `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform]-kunder ansluter till ditt mål. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du skulle till exempel välja det här alternativet om du även valde `authType: OAUTH2` eller `authType:BEARER` i `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av konfigurationen [Credentials](./credentials-configuration.md). </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
-| `destinationDelivery.destinationServerId` | Sträng | `instanceId` för [målservermallen](./destination-server-api.md) som används för det här målet. |
-| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`:  [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`:  [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
+| `identityNamespaces.externalId.allowedAttributesTransformation` | Sträng | _Visas inte i exempelkonfigurationen_. Används till exempel när [!DNL Platform] kunden har oformaterade e-postadresser som attribut och din plattform accepterar bara hashkodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
+| `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Används för fall där plattformen godkänner [standardidentitetsnamnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa Platform-användare till att endast välja dessa identitetsnamnutrymmen. <br> När du använder `acceptedGlobalNamespaces`kan du använda `"requiredTransformation":"sha256(lower($))"` till gemener och hash-adresser eller telefonnummer. |
+| `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in på ditt system via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du kan t.ex. markera det här alternativet om du också har markerat `authType: OAUTH2` eller `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [Autentiseringsuppgifter](./credentials-configuration-api.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `destinationDelivery.destinationServerId` | Sträng | The `instanceId` i [målservermall](./destination-server-api.md) används för detta mål. |
+| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`: [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`: [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
 | `segmentMappingConfig.mapUserInput` | Boolean | Kontrollerar om segmentmappnings-ID:t i målaktiveringsarbetsflödet anges av användaren. |
 | `segmentMappingConfig.mapExperiencePlatformSegmentId` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform segment-ID:t. |
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform-segmentnamnet. |
-| `segmentMappingConfig.audienceTemplateId` | Boolean | `instanceId` för [målgruppens metadatamall](./audience-metadata-api.md) som används för det här målet. |
-| `schemaConfig.profileFields` | Array | När du lägger till fördefinierade `profileFields` som visas i konfigurationen ovan, kan användare välja att mappa Experience Platform-attribut till de fördefinierade attributen på målsidan. |
+| `segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](./audience-metadata-api.md) används för detta mål. |
+| `schemaConfig.profileFields` | Array | När du lägger till fördefinierade `profileFields` som visas i konfigurationen ovan, kan användare mappa Experience Platform-attribut till de fördefinierade attributen på målsidan. |
 | `schemaConfig.profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `schemaConfig.segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
 | `schemaConfig.identityRequired` | Boolean | Använd `true` om du vill att användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
-| `aggregation.aggregationType` | – | Välj antingen `BEST_EFFORT` eller `CONFIGURABLE_AGGREGATION`. I exempelkonfigurationen ovan ingår `BEST_EFFORT`-aggregering. Ett exempel på `CONFIGURABLE_AGGREGATION` finns i exempelkonfigurationen i dokumentet [målkonfiguration](./destination-configuration.md#example-configuration). De parametrar som är relevanta för konfigurerbar aggregering beskrivs nedan i denna tabell. |
+| `aggregation.aggregationType` | – | Välj antingen `BEST_EFFORT` eller `CONFIGURABLE_AGGREGATION`. I exempelkonfigurationen ovan ingår `BEST_EFFORT` aggregering. Ett exempel på `CONFIGURABLE_AGGREGATION`, se exempelkonfigurationen i [målkonfiguration](./destination-configuration.md#example-configuration) -dokument. De parametrar som är relevanta för konfigurerbar aggregering beskrivs nedan i denna tabell. |
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. Ange maximalt antal profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br> Om servern inte accepterar flera användare per begäran anger du värdet 1. |
-| `aggregation.bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |
-| `aggregation.configurableAggregation.splitUserById` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop för ett givet namnområde. |
-| `aggregation.configurableAggregation.maxBatchAgeInSecs` | Heltal | *Högsta värde: 3600*. Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Tillsammans med `maxNumEventsInBatch` avgör detta hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <br> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
-| `aggregation.configurableAggregation.maxNumEventsInBatch` | Heltal | *Högsta värde: 10000*. Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Se `maxBatchAgeInSecs` ovan. |
-| `aggregation.configurableAggregation.aggregationKey` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna nedan: <br> <ul><li>segment-ID</li><li> segmentstatus </li><li> identity namespace </li></ul> |
-| `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Ange `true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID. |
-| `aggregation.configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Du måste ange både `includeSegmentId:true` och `includeSegmentStatus:true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID OCH segmentstatus. |
-| `aggregation.configurableAggregation.aggregationKey.includeIdentity` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Ange `true` om du vill gruppera profiler som exporterats till ditt mål efter identitetsnamnområde. |
-| `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Använd den här parametern för att ange om du vill att de exporterade profilerna ska samlas i grupper av en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
-| `aggregation.configurableAggregation.aggregationKey.groups` | Sträng | Se parametern i exempelkonfigurationen [här](./destination-configuration.md#example-configuration). Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål av grupper med identitetsnamnutrymme. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett samtal till din destination och e-postmeddelanden i ett annat genom att använda konfigurationen i exemplet. |
+| `aggregation.bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop, för ett givet namnutrymme. |
+| `aggregation.configurableAggregation.splitUserById` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop, för ett givet namnutrymme. |
+| `aggregation.configurableAggregation.maxBatchAgeInSecs` | Heltal | *Högsta värde: 3600*. Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Tillsammans med `maxNumEventsInBatch`avgör detta hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <br> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
+| `aggregation.configurableAggregation.maxNumEventsInBatch` | Heltal | *Högsta värde: 10000*. Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Se `maxBatchAgeInSecs` precis ovanför. |
+| `aggregation.configurableAggregation.aggregationKey` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna nedan: <br> <ul><li>segment-ID</li><li> segmentstatus </li><li> identity namespace </li></ul> |
+| `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Ange detta till `true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID. |
+| `aggregation.configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Du måste ange båda `includeSegmentId:true` och `includeSegmentStatus:true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID OCH segmentstatus. |
+| `aggregation.configurableAggregation.aggregationKey.includeIdentity` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Ange detta till `true` om du vill gruppera profiler som exporterats till ditt mål efter identitetsnamnutrymme. |
+| `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Använd den här parametern för att ange om du vill att de exporterade profilerna ska samlas i grupper av en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
+| `aggregation.configurableAggregation.aggregationKey.groups` | Sträng | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål av grupper med identitetsnamnutrymme. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett samtal till din destination och e-postmeddelanden i ett annat genom att använda konfigurationen i exemplet. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -189,7 +189,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målkonfig
 
 ## Visa målkonfigurationer {#retrieve-list}
 
-Du kan hämta en lista över alla målkonfigurationer för din IMS-organisation genom att göra en GET-begäran till `/authoring/destinations`-slutpunkten.
+Du kan hämta en lista över alla destinationskonfigurationer för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/destinations` slutpunkt.
 
 **API-format**
 
@@ -323,7 +323,7 @@ Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer
 |---------|----------|------|
 | `name` | Sträng | Anger målets namn i Experience Platform-katalogen. |
 | `description` | Sträng | Ange en beskrivning som Adobe ska använda i Experience Platform-destinationskatalogen för ditt destinationskort. Rikta dig för högst 4-5 meningar. |
-| `status` | Sträng | Anger målkortets livscykelstatus. Godkända värden är `TEST`, `PUBLISHED` och `DELETED`. Använd `TEST` när du först konfigurerar målet. |
+| `status` | Sträng | Anger målkortets livscykelstatus. Godkända värden är `TEST`, `PUBLISHED`och `DELETED`. Använd `TEST` när du först konfigurerar målet. |
 | `customerAuthenticationConfigurations` | Sträng | Anger den konfiguration som används för att autentisera Experience Platform-kunder mot servern. Se `authType` nedan för godkända värden. |
 | `customerAuthenticationConfigurations.authType` | Sträng | Godkända värden är `OAUTH2, BEARER`. |
 | `customerDataFields.name` | Sträng | Ange ett namn för det anpassade fält som du introducerar. |
@@ -332,29 +332,29 @@ Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer
 | `customerDataFields.description` | Sträng | Ange en beskrivning för det anpassade fältet. |
 | `customerDataFields.isRequired` | Boolean | Anger om det här fältet är obligatoriskt i arbetsflödet för målkonfiguration. |
 | `customerDataFields.enum` | Sträng | Återger det anpassade fältet som en listruta och visar de alternativ som är tillgängliga för användaren. |
-| `customerDataFields.pattern` | Sträng | Tvingar fram ett mönster för det anpassade fältet, om det behövs. Använd reguljära uttryck för att framtvinga ett mönster. Om dina kund-ID till exempel inte innehåller siffror eller understreck anger du `^[A-Za-z]+$` i det här fältet. |
-| `uiAttributes.documentationLink` | Sträng | Refererar till dokumentationssidan i [målkatalogen](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog). Använd `https://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på målet. För ett mål som heter Moviestar använder du `https://www.adobe.com/go/destinations-moviestar-en` |
+| `customerDataFields.pattern` | Sträng | Tvingar fram ett mönster för det anpassade fältet, om det behövs. Använd reguljära uttryck för att framtvinga ett mönster. Om dina kund-ID:n inte innehåller siffror eller understreck anger du `^[A-Za-z]+$` i detta fält. |
+| `uiAttributes.documentationLink` | Sträng | Refererar till dokumentationssidan i [Målkatalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) till destinationen. Använd `https://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på destinationen. För ett mål som heter Moviestar använder du `https://www.adobe.com/go/destinations-moviestar-en` |
 | `uiAttributes.category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). Använd något av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments` |
 | `uiAttributes.connectionType` | Sträng | `Server-to-server` är för närvarande det enda tillgängliga alternativet. |
 | `uiAttributes.frequency` | Sträng | `Streaming` är för närvarande det enda tillgängliga alternativet. |
 | `identityNamespaces.externalId.acceptsAttributes` | Boolean | Anger om målet accepterar standardprofilattribut. Normalt framhävs dessa attribut i våra partners dokumentation. |
 | `identityNamespaces.externalId.acceptsCustomNamespaces` | Boolean | Anger om kunderna kan ställa in anpassade namnutrymmen i målet. Läs mer om [anpassade namnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#manage-namespaces) i Adobe Experience Platform. |
-| `identityNamespaces.externalId.allowedAttributesTransformation` | Sträng | _Visas inte i exempelkonfigurationen_. Används till exempel när [!DNL Platform]-kunden har oformaterade e-postadresser som attribut och din plattform bara accepterar hash-kodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
-| `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Används för fall där plattformen accepterar [standardnamnutrymmen för identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa plattformsanvändare till att endast välja dessa ID-namnutrymmen. |
-| `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform]-kunder ansluter till ditt mål. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du skulle till exempel välja det här alternativet om du även valde `authType: OAUTH2` eller `authType:BEARER` i `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och ditt mål och [!DNL Platform]-kunden inte behöver ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med hjälp av konfigurationen [Credentials](./credentials-configuration.md). </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
-| `destinationDelivery.destinationServerId` | Sträng | `instanceId` för [målservermallen](./destination-server-api.md) som används för det här målet. |
+| `identityNamespaces.externalId.allowedAttributesTransformation` | Sträng | _Visas inte i exempelkonfigurationen_. Används till exempel när [!DNL Platform] kunden har oformaterade e-postadresser som attribut och din plattform accepterar bara hashkodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
+| `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Används för fall där plattformen godkänner [standardidentitetsnamnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa Platform-användare till att endast välja dessa identitetsnamnutrymmen. |
+| `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in på ditt system via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du kan t.ex. markera det här alternativet om du också har markerat `authType: OAUTH2` eller `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [Autentiseringsuppgifter](./authentication-configuration.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
+| `destinationDelivery.destinationServerId` | Sträng | The `instanceId` i [målservermall](./destination-server-api.md) används för detta mål. |
 | `destConfigId` | Sträng | Det här fältet genereras automatiskt och kräver inte dina indata. |
-| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`:  [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`:  [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
+| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`: [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`: [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
 | `segmentMappingConfig.mapUserInput` | Boolean | Kontrollerar om segmentmappnings-ID:t i målaktiveringsarbetsflödet anges av användaren. |
 | `segmentMappingConfig.mapExperiencePlatformSegmentId` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform segment-ID:t. |
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform-segmentnamnet. |
-| `segmentMappingConfig.audienceTemplateId` | Boolean | `instanceId` för [målgruppens metadatamall](./audience-metadata-management.md) som används för det här målet. Läs [API-referensen för målgruppsmetadata](./audience-metadata-api.md) om du vill konfigurera en metadatamall för målgrupper. |
+| `segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](./audience-metadata-management.md) används för detta mål. Om du vill konfigurera en metadatamall för målgrupper läser du [API-referens för målgruppsmetadata](./audience-metadata-api.md). |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## Uppdatera en befintlig målkonfiguration {#update}
 
-Du kan uppdatera en befintlig målkonfiguration genom att göra en PUT-begäran till `/authoring/destinations`-slutpunkten och ange instans-ID:t för den målkonfiguration som du vill uppdatera. Ange den uppdaterade målkonfigurationen i anropets brödtext.
+Du kan uppdatera en befintlig destinationskonfiguration genom att göra en PUT-begäran till `/authoring/destinations` slutpunkt och ange instans-ID för målkonfigurationen som du vill uppdatera. Ange den uppdaterade målkonfigurationen i anropets brödtext.
 
 **API-format**
 
@@ -369,7 +369,7 @@ PUT /authoring/destinations/{INSTANCE_ID}
 
 **Begäran**
 
-Följande begäran uppdaterar en befintlig destinationskonfiguration som konfigurerats med parametrarna i nyttolasten. I exempelanropet nedan uppdaterar vi konfigurationen [som skapades tidigare](./destination-configuration-api.md#create) för att nu acceptera GAID, IDFA och hash-kodade e-postidentifierare som identitetsnamnutrymmen.
+Följande begäran uppdaterar en befintlig destinationskonfiguration som konfigurerats med parametrarna i nyttolasten. I exempelsamtalet nedan uppdaterar vi konfigurationen [skapades tidigare](./destination-configuration-api.md#create) att nu godkänna GAID, IDFA och hash-kodade e-postidentifierare som identitetsnamnutrymmen.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destinations/b0780cb5-2bb7-4409-bf2c-c625ca818588 \
@@ -509,7 +509,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 ## Hämta en specifik målkonfiguration {#get}
 
-Du kan hämta detaljerad information om en viss målkonfiguration genom att göra en GET-begäran till `/authoring/destinations`-slutpunkten och ange instans-ID:t för den målkonfiguration som du vill hämta.
+Du kan hämta detaljerad information om en viss destinationskonfiguration genom att göra en GET-förfrågan till `/authoring/destinations` slutpunkt och ange instans-ID för målkonfigurationen som du vill hämta.
 
 **API-format**
 
@@ -669,7 +669,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ## Ta bort en specifik målkonfiguration {#delete}
 
-Du kan ta bort den angivna målkonfigurationen genom att göra en DELETE-begäran till `/authoring/destinations`-slutpunkten och ange ID:t för målkonfigurationen som du vill ta bort i sökvägen till begäran.
+Du kan ta bort den angivna målkonfigurationen genom att göra en DELETE-begäran till `/authoring/destinations` slutpunkt och ange ID:t för målkonfigurationen som du vill ta bort i sökvägen för begäran.
 
 **API-format**
 
@@ -679,7 +679,7 @@ DELETE /authoring/destinations/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{INSTANCE_ID}` | `id` för målkonfigurationen som du vill ta bort. |
+| `{INSTANCE_ID}` | The `id` för den målkonfiguration som du vill ta bort. |
 
 **Begäran**
 
@@ -697,8 +697,8 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 
 ## API-felhantering
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [begäranrubrikfel](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu hur du konfigurerar målet med API-slutpunkten `/authoring/destinations`. Läs [hur du använder mål-SDK för att konfigurera ditt mål](./configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.
+När du har läst det här dokumentet vet du nu hur du konfigurerar ditt mål med `/authoring/destinations` API-slutpunkt. Läs [Så här använder du mål-SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.

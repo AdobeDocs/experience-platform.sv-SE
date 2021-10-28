@@ -4,7 +4,7 @@ seo-description: The destinations service in Adobe Experience Platform uses conf
 seo-title: Configuration options in Destination SDK
 title: Konfigurationsalternativ i mål-SDK
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
 workflow-type: tm+mt
 source-wordcount: '345'
 ht-degree: 0%
@@ -20,9 +20,9 @@ Måltjänsten i Adobe Experience Platform använder konfigurationsmallar för fl
 * **Målkonfiguration**: Innehåller grundläggande information om målet. Den här konfigurationen innehåller de identitetstyper som ditt mål kan stödja och olika gränssnittsattribut för målkortet i Adobe Experience Platform-användargränssnittet.
 * **Server- och mallspecifikationer**: Sammanfogar information om serverspecifikationerna och den mall som används av Adobe för att leverera nyttolaster till destinationen.
    * **Serverspecifikationer**: En mall som lagrar din slutpunktsinformation.
-   * **Mallspecifikationer**: I den här mallen kan du definiera hur profilattributfält ska omformas mellan XDM-schemat och det format som din plattform stöder. Mer detaljerad information om vilka mallspråk, meddelandeformat och den information som Adobe behöver för att kunna konfigurera integrationen med din plattform finns i [Meddelandeformat](./message-format.md).
+   * **Mallspecifikationer**: I den här mallen kan du definiera hur profilattributfält ska omformas mellan XDM-schemat och det format som din plattform stöder. Mer ingående information om vilka mallspråk, meddelandeformat och den information som Adobe behöver för att kunna konfigurera integrationen med din plattform finns i [Meddelandeformat](./message-format.md).
 * **Autentiseringskonfiguration**: De här inställningarna definierar hur Adobe Experience Platform-användare ansluter till ditt mål.
-* **Konfiguration** av målgruppsmetadata: Med den här mallen kan du konfigurera hur målgrupper/segment skapas, uppdateras eller tas bort programmatiskt i målet.
+* **Konfiguration av målgruppsmetadata**: Med den här mallen kan du konfigurera hur målgrupper/segment skapas, uppdateras eller tas bort programmatiskt i målet.
 
 ![SDK-mallar och konfigurationer för mål](./assets/self-service-configuration.png)
 
@@ -34,9 +34,9 @@ På sidorna nedan finns mer information om de funktioner och konfigurationsalter
 |--- |--- |
 | [Målkonfiguration](./destination-configuration.md) | [Slutpunktsåtgärder för mål-API](./destination-configuration-api.md) |
 | [Server- och mallspecifikationer](./server-and-template-configuration.md) | [API-slutpunktsåtgärder för målservrar](./destination-server-api.md) |
-| [Autentiseringskonfiguration](./credentials-configuration.md) | [API-åtgärder för slutpunkt för autentiseringsuppgifter](./credentials-configuration-api.md) |
+| [Autentiseringskonfiguration](./authentication-configuration.md) | [API-åtgärder för slutpunkt för autentiseringsuppgifter](./credentials-configuration-api.md) |
 | [Hantering av målgruppsmetadata](./audience-metadata-management.md) | [API-åtgärder för målgruppsmetadata](./audience-metadata-api.md) |
-| [OAuth 2-konfiguration](./oauth2-authentication.md) | Konfigurera med parametern `customerAuthenticationConfigurations` i API-slutpunkten [/destination](./destination-configuration-api.md). |
+| [OAuth 2-konfiguration](./oauth2-authentication.md) | Konfigurera med `customerAuthenticationConfigurations` -parametern i [API-slutpunkt för mål](./destination-configuration-api.md). |
 | [Meddelandeformat](./message-format.md) | – |
 | [Destinationstestning](./test-destination.md) | [API-åtgärder för måltestning](./destination-testing-api.md) |
 | [Målpublicering](./configure-destination-instructions.md#publish-destination) | [API-åtgärder för målpublicering](./destination-publish-api.md) |

@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med SDK för mål.
 title: Så här använder du mål-SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
+source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,7 @@ Om du använder en konfiguration för målgruppsmetadata måste du ansluta den t
 Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller `"authenticationRule": "PLATFORM_AUTHENTICATION"` i målkonfigurationen ovan kan du konfigurera autentisering för målet med hjälp av `/destination` eller `/credentials` slutpunkt.
 
 * **Det vanligaste fallet**: Om du valde `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen och målet stöder autentiseringsmetoden OAuth 2, läs [OAuth 2-autentisering](./oauth2-authentication.md).
-* Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"`, se [Konfiguration av autentiseringsuppgifter](./credentials-configuration.md) i referensdokumentationen.
+* Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"`, se [Autentiseringskonfiguration](./authentication-configuration.md#when-to-use).
 
 ## Steg 6: Testa destinationen {#test-destination}
 
