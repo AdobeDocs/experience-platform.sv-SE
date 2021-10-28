@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: f4e9750685d641c83b4ceed79af739de43343aef
+source-git-commit: 45c4486dc9860da13daa6984b23ef80038ea2f8d
 workflow-type: tm+mt
-source-wordcount: '315'
+source-wordcount: '458'
 ht-degree: 2%
 
 ---
@@ -12,12 +12,30 @@ ht-degree: 2%
 
 **Releasedatum: 27 oktober 2021**
 
+## Uppdateringar till Experience Platform
+
+Uppdateringar till Experience Platform.
+
+### [Användargränssnitt] {#ui}
+
+Användargränssnittet har uppdaterats med följande ändringar:
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Mörkt tema | Använd den mörka temagränsen för att växla mellan ljusa och mörka teman i plattformsgränssnittet. Växeln finns i användarprofilen under användarnamn och e-postadress. |
+| Växla vänster navigering | Använd det förbättrade navigeringsreglaget högst upp i programhuvudet för att visa eller dölja menyn som visar Experience Platform-funktionerna. Systemet kommer ihåg ditt senaste val och visar bara de funktioner du har tillgång till. |
+| Åtkomstsynlighet | Det vänstra navigeringsfältet visar bara de funktioner som du har tillgång till. I tidigare versioner av Adobe Experience Platform var otillgängliga objekt synliga, även om du inte kunde komma åt dem. |
+
+Se [Användargränssnittshandbok för plattform](../../landing/ui-guide.md) om du vill veta mer.
+
+## Uppdateringar av befintliga funktioner
+
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
 - [Källor](#sources)
 
-## [!DNL Data Prep] {#data-prep}
+### [!DNL Data Prep] {#data-prep}
 
 [!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
@@ -30,7 +48,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Se [[!DNL Data Prep] översikt](../../data-prep/home.md) om du vill veta mer om den här tjänsten.
 
-## Källor {#sources}
+### Källor {#sources}
 
 Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
