@@ -1,0 +1,103 @@
+---
+keywords: Experience Platform;hem;populära ämnen
+title: Behandling av sekretessförfrågningar i identitetstjänsten
+description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
+source-git-commit: 49f5de6c4711120306bfc3e6759ed4e83e8a19c2
+workflow-type: tm+mt
+source-wordcount: '664'
+ht-degree: 1%
+
+---
+
+
+# Behandling av sekretessförfrågningar i [!DNL Identity Service]
+
+Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om tillgång, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom den allmänna dataskyddsförordningen (GDPR), och [!DNL California Consumer Privacy Act] (CCPA).
+
+Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för [!DNL Identity Service] inom Adobe Experience Platform.
+
+>[!NOTE]
+>
+>Den här handboken beskriver bara hur du gör sekretessförfrågningar för identitetsdatalagret i Experience Platform. Om du även tänker göra sekretessförfrågningar för Platform Data Lake eller [!DNL Real-time Customer Profile], se guiden på [behandling av sekretessförfrågningar i Data Lake](../catalog/privacy.md) och i guiden [sekretessförfrågningsbehandling för profil](../profile/privacy.md) förutom den här självstudiekursen.
+>
+>Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service](../privacy-service/experience-cloud-apps.md).
+
+## Komma igång
+
+Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform] innan du läser den här guiden:
+
+* [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
+* [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
+* [[!DNL Real-time Customer Profile]](home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+
+## Identitetsnamnutrymmen {#namespaces}
+
+Adobe Experience Platform [!DNL Identity Service] överbryggar kundidentitetsdata mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att tillhandahålla sammanhang till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
+
+Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
+
+Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Översikt över namnutrymmet identity](../identity-service/namespaces.md).
+
+## Skicka begäranden {#submit}
+
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Identity Service] med [!DNL Privacy Service] API eller gränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur du formaterar användardata korrekt i nyttolaster.
+
+### Använda API:et
+
+När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste använda en specifik `namespace` och `type`. Ett giltigt [identity namespace](#namespaces) känns igen av [!DNL Identity Service] måste anges för `namespace` värde, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
+
+Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. Vid förfrågningar till [!DNL Identity]måste arrayen innehålla värdet `Identity`.
+
+Följande begäran skapar ett nytt sekretessjobb under GDPR för en enskild kunds data i [!DNL Identity] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` identity namespace, and the other using an `ECID` namespace, It includes the product value for [!DNL Identity] (`Identity`) i `include` array:
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/privacy/jobs \
+  -H 'Authorization: Bearer <key>' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: acp_privacy_ui_gdpr' \
+  -H 'x-gw-ims-org-id: sample@AdobeOrg' \
+  -d '{
+    "companyContexts": [
+      {
+        "namespace": "imsOrgID",
+        "value": "sample@AdobeOrg"
+      }
+    ],
+    "users": [
+      {
+        "key": "bob",
+        "action": ["delete"],
+        "userIDs": [
+          {
+            "namespace": "email",
+            "value": "bob@adobe.com",
+            "type": "standard"
+          },
+          {
+            "namespace": "ECID",
+            "type": "standard",
+            "value":  "123451234512345123451234512345",
+            "isDeletedClientSide": false
+          }
+        ]
+      }
+    ],
+    "include": ["Identity"],
+    "regulation": "gdpr"
+}'
+```
+
+### Använda gränssnittet
+
+När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL Identity]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i [!DNL Identity Service].
+
+![identity-gdpr](./images/identity-gdpr.png)
+
+## Ta bort bearbetning av begäran
+
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är associerade med en viss IMS-organisation bort.
+
+## Nästa steg
+
+Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Identity Service]. För information om behandling av sekretessförfrågningar för andra [!DNL Experience Cloud] program, se dokumentet om [[!DNL Privacy Service] and [!DNL Experience Cloud] program](../privacy-service/experience-cloud-apps.md).
