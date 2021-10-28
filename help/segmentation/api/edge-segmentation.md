@@ -5,9 +5,9 @@ title: 'Kantsegmentering med API '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: bb5a56557ce162395511ca9a3a2b98726ce6c190
+source-git-commit: 4d2c6385decd5b789a975165a87bc80f9b008cd7
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '942'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 | Flera inkommande träffar inom en tidsprofil på 24 timmar | En segmentdefinition som refererar till flera händelser som inträffar inom ett tidsfönster på 24 timmar. | Personer som besökte hemsidan **eller** har besökt utcheckningssidan inom de senaste 24 timmarna. |
 | Flera händelser med en profil inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och flera händelser som inträffar inom ett tidsfönster på 24 timmar. | Personer från USA som besökte hemsidan **och** har besökt utcheckningssidan inom de senaste 24 timmarna. |
 
-{style=&quot;table-layout:auto&quot;}
+Dessutom kan segmentet **måste** vara knuten till en kopplingsregel som är aktiv vid sidan. Mer information om kopplingsprofiler finns i [guide för sammanslagningsprinciper](../../profile/api/merge-policies.md).
 
 ## Hämta alla segment som är aktiverade för kantsegmentering
 
