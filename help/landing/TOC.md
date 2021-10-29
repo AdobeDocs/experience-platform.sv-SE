@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
-source-git-commit: a0954c6134c532fbcecadd8b4b8775fdf28711da
+source-git-commit: 030d6761b36e5bc7e6e12b0524a810a13e060e55
 workflow-type: tm+mt
-source-wordcount: '205'
-ht-degree: 5%
+source-wordcount: '233'
+ht-degree: 7%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 5%
    * [Viktiga användningsfall (video)](video/platform-use-cases.md)
    * [Plattformsarkitektur (video)](video/platform-architecture.md)
    * [Roller och projektfaser (video)](video/roles-project-phases.md)
-* Experience Platform-gränssnitt {#platform-ui}
+* Experience Platform UI {#platform-ui}
    * [Användargränssnittshandbok för plattformen](ui-guide.md)
    * [Demo av användargränssnittet för plattformen (video)](video/platform-ui.md)
    * [Användargränssnittshandbok för arbetsflöden](workflows.md)
@@ -37,11 +37,15 @@ ht-degree: 5%
 * Plattformsdokumentation {#documentation}
    * [Översikt](documentation/overview.md)
    * [Språkstöd](documentation/language-support.md)
-* Plattform i Adobe-ekosystemet {#ecosystem}
-   * [Programtjänster](application-services.md)
+* Programtjänster som bygger på plattform {#ecosystem}
+   * [Översikt](application-services.md)
+   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
+   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
+   * [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning.html)
+   * [Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
    * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
-* Styrning, sekretess och säkerhet {#governance-privacy-security}
+* Styrning, integritet och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)
    * Medgivandehantering {#consent}
       * Adobe standard {#adobe}

@@ -1,18 +1,18 @@
 ---
 keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp;kundens AI
-title: Översikt över CDP B2B Edition i realtid
+title: Översikt över CDP B2B Edition i realtid (beta)
 seo-title: Real-time Customer Data Platform B2B Edition overview
 description: Översikt över Real-time Customer Data Platform B2B Edition-konto
 seo-description: Overview of Real-time Customer Data Platform B2B Edition Account
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: 4130528800a9219e0c9e12639f292a7f55f86d5e
+source-git-commit: fef18389f8e64bdf11fe93d4077eb0474abc4981
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1092'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B Edition - översikt
+# Real-time Customer Data Platform B2B Edition - översikt (beta)
 
 >[!IMPORTANT]
 >
@@ -83,4 +83,15 @@ För företag med mer än en CRM kan man i realtid med CDP B2B Edition konfigure
 
 Nu när ni bättre förstår fördelarna för marknadsförare som erbjuds av CDP B2B Edition i realtid och skillnaderna mellan den och CDP i realtid kan ni lära er hur ni använder dessa funktioner i er egen IMS-organisation.
 
-Om du vill veta hur CDP B2B Edition i realtid kan vara till nytta för er affärsmodell kan du läsa [exempel för CDP B2B Edition i realtid](./b2b-use-case.md). Du kan även referera till [scheman i Real-time Customer Data Platform B2B Edition](./schemas/b2b.md) dokumentation för mer specifik vägledning om hur du skapar scheman och definierar relationer för viktiga B2B-datatabeller.
+Om du vill veta hur CDP B2B Edition i realtid kan vara till nytta för din business-to-business-servicemodell kan du läsa följande dokumentation som hjälper dig att komma igång:
+
+* [Ett exempel på hur man använder CDP B2B Edition i realtid](./b2b-use-case.md)
+* [Så här importerar du data](./sources/b2b.md)
+* [Åtkomst till profiler](./profile/profile-overview.md)
+* [Scheman i Real-time Customer Data Platform B2B Edition](./schemas/b2b.md)
+* [Så här skapar du segment](./segmentation/b2b.md)
+* [Så här aktiverar du segment till mål](./destinations/b2b.md)
+* [Definiera och tillämpa policyer för datastyrning](./privacy/data-governance-overview.md)
+
+<!-- PLACEHOLDER - page under construction -->
+<!-- * [Privacy in Real-time Customer Data Platform B2B Edition](./privacy/b2b.md) -->

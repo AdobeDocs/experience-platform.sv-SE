@@ -5,7 +5,7 @@ title: Adobe Experience Platform - översikt
 topic-legacy: getting started
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
+source-git-commit: 0e58db465b9e978d66325c4600ed78e81c03ae44
 workflow-type: tm+mt
 source-wordcount: '437'
 ht-degree: 1%
@@ -16,13 +16,13 @@ ht-degree: 1%
 
 Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. [!DNL Experience Platform] gör det möjligt för organisationer att centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 
-[!DNL Experience Platform] bygger på RESTful-API:er och ger utvecklarna tillgång till systemets alla funktioner, vilket gör det enkelt att integrera företagslösningar med välbekanta verktyg. [!DNL Experience Platform] stöder också partners att bygga och integrera sina egna produkter och tekniker efter behov. Denna kraft och flexibilitet gör [!DNL Experience Platform] unik på marknaden. Det ger partners, kunder och en community med utvecklare en grund att bygga innovationer som driver Experience Business: överträffa kundernas förväntningar genom att leverera en ständigt förbättrad, helpersonaliserad upplevelse som bygger på en helhetsbild av kunden och deras individuella preferenser.
+Bygger på RESTful API:er, [!DNL Experience Platform] ger utvecklarna tillgång till systemets alla funktioner och stöder enkel integrering av företagslösningar med välbekanta verktyg. [!DNL Experience Platform] stöder också partners att bygga och integrera sina egna produkter och tekniker efter behov. Den här kraften och flexibiliteten gör [!DNL Experience Platform] unika på marknaden. Det ger partners, kunder och en community med utvecklare en grund att bygga innovationer som driver Experience Business: överträffa kundernas förväntningar genom att leverera en ständigt förbättrad, helpersonaliserad upplevelse som bygger på en helhetsbild av kunden och deras individuella preferenser.
 
 ## [!DNL Experience Platform] dokumentation
 
-[!DNL Experience Platform] finns i flera format för olika funktioner och tjänster. Mer information om vilka typer av dokumentation som är tillgängliga finns i [översikten över plattformsdokumentationen](documentation/overview.md).
+[!DNL Experience Platform] finns i flera format för olika funktioner och tjänster. Mer information om vilka typer av dokumentation som är tillgängliga finns på [Översikt över plattformsdokumentation](documentation/overview.md).
 
-Om du vill lära dig mer om en viss [!DNL Platform]-tjänst går du tillbaka till startsidan för [dokumentationen](https://experienceleague.adobe.com/docs/experience-platform.html) och väljer lämplig guide.
+Börja lära dig mer om en viss [!DNL Platform] service, återgå till [landningssida för dokumentation](https://experienceleague.adobe.com/docs/experience-platform.html) och välj lämplig guide.
 
 ### Dokumentation för programtjänster som bygger på [!DNL Experience Platform]
 
@@ -32,12 +32,13 @@ Adobe har byggt flera applikationstjänster ovanpå Experience Platform. Dokumen
 * [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
 * [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning.html)
 * [[!DNL Real-time Customer Data Platform (Real-time CDP)]](../rtcdp/overview.md)
+* [[!DNL Real-time Customer Data Platform (Real-time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
 
 ## Självstudiekurser om [!DNL Experience Platform]
 
-Du kan komma igång snabbt och enkelt med [!DNL Platform] genom att följa med stegvisa självstudiekurser som täcker allt från att förbereda data för konsumtion till avancerade algoritmer för maskininlärning. Dessa självstudiekurser har utformats för att komplettera informationen i [!DNL Experience Platform]-dokumentationen, så att du får bästa resultat om du sparar dokumentationen medan du slutför självstudiekurserna.
+Du kan komma igång med [!DNL Platform] snabbt och enkelt genom att följa med i de stegvisa självstudiekurserna som täcker allt från iordningställande av data för konsumtion till avancerade algoritmer för maskininlärning. Dessa självstudiekurser har utformats för att komplettera informationen i [!DNL Experience Platform] så att du får bästa möjliga resultat om du sparar dokumentationen medan du slutför självstudiekurserna.
 
-Gå till startsidan för [Experience Platform självstudiekurser](https://www.adobe.com/go/platform-tutorials-home-en) för att komma igång.
+Besök [Självstudiekurser för Experience Platform](https://www.adobe.com/go/platform-tutorials-home-en) startsida.
 
 ## Referensdokument och resurser
 
@@ -51,7 +52,7 @@ Gå till startsidan för [Experience Platform självstudiekurser](https://www.ad
    Se Adobe Experience Platform terminologi.
 
 * [**Versionsinformation**](https://www.adobe.com/go/platform-release-notes-en)\
-   Hitta information om den senaste [!DNL Experience Platform]-versionen och granska tidigare versioner.
+   Hitta information om den senaste [!DNL Experience Platform] publicera och granska tidigare versioner.
 
 * [**Felsökningsguide**](troubleshooting.md)\
    Hitta lösningar på vanliga fel och svar på vanliga frågor.
