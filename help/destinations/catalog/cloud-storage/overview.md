@@ -3,9 +3,9 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina segment som datafiler till dina Amazon S3-, AWS Kinesis-, Azure Event Hubs- eller SFTP-molnlagringsplatser.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Experience Platform kan leverera dina segment som datafiler till dina molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för [!DNL Amazon S3], [!DNL Azure Blob] och SFTP. För [!DNL Amazon Kinesis]- och [!DNL Azure Event Hubs]-mål direktuppspelas data från Experience Platform i [!DNL JSON]-format.
+Adobe Experience Platform kan leverera dina segment som datafiler till dina molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV-filer för [!DNL Amazon S3], [!DNL Azure Blob] och SFTP. För [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] mål, data direktuppspelas från Experience Platform in [!DNL JSON] format.
 
 ![Adobe molnlagringsdestinationer](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
@@ -30,14 +30,14 @@ Adobe Experience Platform stöder följande molnlagringsmål:
 
 ## Ansluta till ett nytt molnlagringsmål {#connect-destination}
 
-Om du vill skicka segment till molnlagringsmål för dina kampanjer måste plattformen först ansluta till målet. Se självstudiekursen [när du skapar mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+Om du vill skicka segment till molnlagringsmål för dina kampanjer måste plattformen först ansluta till målet. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
 
 
 ## Skapa en mapp på lagringsplatsen med hjälp av makron {#use-macros}
 
 >[!NOTE]
 >
-> Funktionen som beskrivs i det här avsnittet är för närvarande endast tillgänglig för [Amazon S3](amazon-s3.md)-mål.
+> Funktionerna som beskrivs i det här avsnittet är för närvarande tillgängliga för [Amazon S3](amazon-s3.md) endast destinationer.
 
 Om du vill skapa en anpassad mapp per segmentfil på lagringsplatsen kan du använda makron i mappsökvägsfältet. Infoga makrona i slutet av inmatningsfältet, vilket visas nedan.
 
@@ -62,4 +62,4 @@ Mappsökväg i lagringsplatsen: `acme/campaigns/2021/Luxury Audience/25768be6-eb
 
 ## Dataexporttyp {#export-type}
 
-Lagringsmål för molnet stöder **Profilbaserad export**. Det innebär att du exporterar information om personerna i målgruppen. Den här informationen behövs för personalisering och kan innehålla attribut, händelser, segmentmedlemskap med mera.
+Stöd för molnlagringsdestinationer **Profilbaserad export**. Det innebär att du exporterar information om personerna i målgruppen. Den här informationen behövs för personalisering och kan innehålla attribut, händelser, segmentmedlemskap med mera.
