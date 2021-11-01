@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign-anslutning
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '664'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 * **[!UICONTROL Bucket Name]**: *För S3-anslutningar*. Ange platsen för din S3-bucket där [!DNL Platform] sparar exportdata som CSV-filer.
 * **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där [!DNL Platform] sparar exportdata som CSV-filer.
 * **[!UICONTROL Container]**: *För blobanslutningar*. Behållaren som innehåller blobben som mappsökvägen finns i.
-* **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
+* **[!UICONTROL File Format]**: Välj **CSV** för att exportera CSV-filer till lagringsplatsen.
 
 ## Aktivera segment till den här destinationen {#activate}
 
