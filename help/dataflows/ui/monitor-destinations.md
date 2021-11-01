@@ -6,7 +6,7 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 96855ec4e42e7adb17dc36a734561f63f926693b
+source-git-commit: 9396f44aafc7d6e863d09b369440f507998dce2c
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 0%
@@ -23,14 +23,14 @@ Kontrollpanelen ger dig en visuell representation av resan för ett dataflöde, 
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] och till [!DNL Destinations].
-   - [Dataflödet körs](../../sources/notifications.md): Dataflödeskörningar är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
+- [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden konfigureras över olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar till [!DNL Identity] och [!DNL Profile]och till [!DNL Destinations].
+   - [Dataflödeskörningar](../../sources/notifications.md): Dataflödeskörningar är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
 - [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga applikationer som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
-- [Sandlådor](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 ## Övervaka dataflöden på arbetsytan Destinationer
 
-Gå till fliken **[!UICONTROL Browse]** i arbetsytan **[!UICONTROL Destinations]** i plattformsgränssnittet och välj namnet på ett mål som du vill visa.
+I **[!UICONTROL Destinations]** navigera till **[!UICONTROL Browse]** och välj namnet på ett mål som du vill visa.
 
 ![](../assets/ui/monitor-destinations/select-destination.png)
 
@@ -40,14 +40,14 @@ Se följande tabell för mer information om status:
 
 | Status | Beskrivning |
 | ------ | ----------- |
-| Aktiverad | Statusen `Enabled` anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls. |
-| Handikappade | Statusen `Disabled` indikerar att ett dataflöde är inaktivt och inte innehåller några data. |
-| Bearbetar | Statusen `Processing` anger att ett dataflöde ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats. |
-| Fel | Statusen `Error` anger att aktiveringsprocessen för ett dataflöde har avbrutits. |
+| Aktiverad | The `Enabled` status anger att ett dataflöde är aktivt och exporterar data enligt det schema som det angavs. |
+| Handikappade | The `Disabled` status anger att ett dataflöde är inaktivt och inte exporterar några data. |
+| Bearbetar | The `Processing` status anger att ett dataflöde ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats. |
+| Fel | The `Error` status anger att aktiveringsprocessen för ett dataflöde har avbrutits. |
 
 ### Dataflödeskörningar för direktuppspelningsmål
 
-På fliken [!UICONTROL Dataflow runs] för direktuppspelningsmål finns en timuppdatering för mätdata på dataflödets körningar. Den mest framträdande statistiken är för identiteter.
+För direktuppspelningsmål finns följande [!UICONTROL Dataflow runs] tillhandahåller en timuppdatering för mätdata på dina dataflöden. Den mest framträdande statistiken är för identiteter.
 
 Identiteter representerar olika aspekter av en profil. Om en profil till exempel innehåller både ett telefonnummer och en e-postadress har den profilen två identiteter.
 
@@ -69,7 +69,7 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Identities failed]** Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
 - **[!UICONTROL Activation rate]**: Procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Följande formel visar hur det här värdet beräknas:
    ![](../assets/ui/monitor-destinations/activation-rate-formula.png)
-- **[!UICONTROL Status]**: Representerar läget för dataflödet: antingen  [!UICONTROL Completed] eller  [!UICONTROL Processing]. [!UICONTROL Completed] betyder att alla identiteter för motsvarande dataflödeskörning har importerats inom en timma. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts ännu.
+- **[!UICONTROL Status]**: Representerar läget för dataflödet: antingen [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] betyder att alla identiteter för motsvarande dataflödeskörning exporterades inom en timma. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts ännu.
 
 Om du vill visa information om ett visst dataflöde väljer du körningens starttid i listan.
 
@@ -77,13 +77,13 @@ Informationssidan för ett dataflöde innehåller ytterligare information, t.ex.
 
 ![](../assets/ui/monitor-destinations/dataflow-details-stream.png)
 
-På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både misslyckade och utelämnade identiteter visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de misslyckade identiteterna i listan. Om du vill visa överhoppade identiteter väljer du alternativet **[!UICONTROL Identities excluded]**.
+På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både misslyckade och utelämnade identiteter visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de misslyckade identiteterna i listan. Om du vill visa överhoppade identiteter väljer du **[!UICONTROL Identities excluded]** växla.
 
 ![](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
 ### Dataflödeskörningar för batchmål
 
-För gruppmål innehåller fliken [!UICONTROL Dataflow runs] måttdata för dataflödets körningar. En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
+För batchdestinationer är [!UICONTROL Dataflow runs] -fliken innehåller mätdata för dina dataflödeskörningar. En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
 
 - **[!UICONTROL Identities activated]**: Antalet enskilda profilidentiteter har aktiverats för det valda målet.
 - **[!UICONTROL Identities excluded]**: Antalet enskilda profilidentiteter som har uteslutits för aktivering för den valda destinationen, baserat på saknade attribut och medgivande.
@@ -97,7 +97,7 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut.
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som har aktiverats för det valda målet.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har utelämnats för aktivering baserat på saknade attribut och brott mot medgivande.
-- **[!UICONTROL Status]**: Representerar det läge som dataflödet är i. Det kan vara ett av tre lägen: [!UICONTROL Success], [!UICONTROL Failed] och [!UICONTROL Processing]. [!UICONTROL Success] betyder att dataflödet är aktivt och att data hämtas enligt angivet schema. [!UICONTROL Failed] innebär att aktiveringen av uppgifter har avbrutits på grund av fel. [!UICONTROL Processing] betyder att dataflödet ännu inte är aktivt och vanligtvis uppstår när ett nytt dataflöde skapas.
+- **[!UICONTROL Status]**: Representerar det läge som dataflödet är i. Det kan vara ett av tre lägen: [!UICONTROL Success], [!UICONTROL Failed]och [!UICONTROL Processing]. [!UICONTROL Success] betyder att dataflödet är aktivt och exporterar data enligt angivet schema. [!UICONTROL Failed] innebär att aktiveringen av uppgifter har avbrutits på grund av fel. [!UICONTROL Processing] betyder att dataflödet ännu inte är aktivt och vanligtvis uppstår när ett nytt dataflöde skapas.
 
 Om du vill visa information om ett specifikt dataflöde väljer du körningens starttid i listan.
 
@@ -107,56 +107,55 @@ Om du vill visa information om ett specifikt dataflöde väljer du körningens s
 
 På informationssidan för ett dataflöde visas mer specifik information om dataflödet, förutom informationen som visas i dataflödeslistan:
 
-- **[!UICONTROL Size of data]**: Storleken på dataflödet som importeras.
-- **[!UICONTROL Total files]**: Det totala antalet filer som har importerats i dataflödet.
+- **[!UICONTROL Size of data]**: Storleken på dataflödet som exporteras.
+- **[!UICONTROL Total files]**: Det totala antalet filer som exporteras i dataflödet.
 - **[!UICONTROL Last updated]**: Den tidpunkt då dataflödeskörningen senast uppdaterades.
 
 ![](../assets/ui/monitor-destinations/dataflow-batch.png)
 
-På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både de misslyckade och exkluderade identiteterna visas, inklusive felkoden och beskrivningen. Som standard visas de misslyckade identiteterna i listan. Om du vill visa utelämnade identiteter väljer du alternativet **[!UICONTROL Identities excluded]**.
+På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både de misslyckade och exkluderade identiteterna visas, inklusive felkoden och beskrivningen. Som standard visas de misslyckade identiteterna i listan. Om du vill visa utelämnade identiteter väljer du **[!UICONTROL Identities excluded]** växla.
 
 ![](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
 ## Kontrollpanel för målplatser {#monitoring-destinations-dashboard}
 
-Om du vill komma åt kontrollpanelen [!UICONTROL Monitoring] väljer du **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)
-) i den vänstra navigeringen. Välj [!UICONTROL Destinations] på sidan [!UICONTROL Monitoring]. Kontrollpanelen [!UICONTROL Monitoring] innehåller mått och information om målkörningsjobben.
+Så här öppnar du [!UICONTROL Monitoring] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Destinations]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mått och information om målkörningsjobb.
 
 Mitten av kontrollpanelen är aktiveringspanelen, som innehåller mått och diagram som visar data om aktiveringshastigheten för de data som exporteras till destinationer.
 
 ![](../assets/ui/monitor-destinations/dashboard-graph.png)
 
 
-Som standard innehåller de data som visas aktiveringshastigheterna från de senaste 24 timmarna. Välj **[!UICONTROL Last 24 hours]** om du vill justera tidsramen för de poster som visas. Tillgängliga alternativ är **[!UICONTROL Last 24 hours]**, **[!UICONTROL Last 7 days]** och **[!UICONTROL Last 30 days]**. Du kan också välja datum i kalenderns popup-fönster som visas. När du har valt datum väljer du **[!UICONTROL Apply]** för att justera tidsramen för den information som visas.
+Som standard innehåller de data som visas aktiveringshastigheterna från de senaste 24 timmarna. Välj **[!UICONTROL Last 24 hours]** för att justera tidsramen för de poster som visas. Tillgängliga alternativ inkluderar **[!UICONTROL Last 24 hours]**, **[!UICONTROL Last 7 days]** och **[!UICONTROL Last 30 days]**. Du kan också välja datum i kalenderns popup-fönster som visas. När du har valt datum väljer du **[!UICONTROL Apply]** för att justera tidsramen för den information som visas.
 
 >[!NOTE]
 >
->På följande skärmbild visas aktiveringshastigheten de senaste 30 dagarna i stället för de senaste 24 timmarna. Du kan justera tidsramen genom att välja **[!UICONTROL Last 30 days]**.
+>På följande skärmbild visas aktiveringshastigheten de senaste 30 dagarna i stället för de senaste 24 timmarna. Du kan justera tidsramen genom att markera **[!UICONTROL Last 30 days]**.
 
 ![](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
 
-Diagrammet visas som standard och du kan inaktivera det om du vill utöka listan över mål nedan. Markera alternativet **[!UICONTROL Metrics and graphs]** om du vill inaktivera diagrammen.
+Diagrammet visas som standard och du kan inaktivera det om du vill utöka listan över mål nedan. Välj **[!UICONTROL Metrics and graphs]** om du vill inaktivera diagrammen.
 
-På panelen **[!UICONTROL Activation]** visas en lista med mål som innehåller minst ett befintligt konto. Den här listan innehåller även information om mottagna profiler, aktiverade profilposter, misslyckade profilposter, överhoppade profilposter, totalt antal misslyckade dataflöden samt det senaste uppdateringsdatumet för dessa mål.
+The **[!UICONTROL Activation]** På panelen visas en lista med mål som innehåller minst ett befintligt konto. Den här listan innehåller även information om mottagna profiler, aktiverade profilposter, misslyckade profilposter, överhoppade profilposter, totalt antal misslyckade dataflöden samt det senaste uppdateringsdatumet för dessa mål.
 
 ![](../assets/ui/monitor-destinations/dashboard-destinations.png)
 
-Du kan även filtrera listan över destinationer så att endast den valda destinationskategorin visas. Välj listrutan **[!UICONTROL My destinations]** och välj den måltyp som du vill filtrera till.
+Du kan även filtrera listan över destinationer så att endast den valda destinationskategorin visas. Välj **[!UICONTROL My destinations]** och välj den måltyp som du vill filtrera till.
 
 ![](../assets/ui/monitor-destinations/dashboard-destinations-filter-dropdown.png)
 
-Dessutom kan du ange ett mål i sökfältet för att isolera till ett enda mål. Om du vill visa målets dataflöden kan du markera filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid det och visa en lista över dess aktiva dataflöden.
+Dessutom kan du ange ett mål i sökfältet för att isolera till ett enda mål. Om du vill se målets dataflöden kan du välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid den och se en lista över de aktiva dataflödena.
 
 ![](../assets/ui/monitor-destinations/filtered-destinations.png)
 
 Om du vill visa alla befintliga dataflöden för alla mål väljer du **[!UICONTROL Dataflows]**.
 
-En lista över dataflöden visas, grupperade per mål. Du kan se ytterligare information om ett specifikt dataflöde genom att hitta det mål som du vill övervaka, markera filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid det och sedan välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid det dataflöde du vill ha mer information om.
+En lista över dataflöden visas, grupperade per mål. Du kan se ytterligare information för ett specifikt dataflöde genom att leta reda på målet som du vill övervaka och välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid den och därefter välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) Förutom dataflödet vill du ha mer information om.
 
 ![](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 
 
-På sidan för dataflöden visas information om dataflödets körningar, inklusive starttid för dataflöde, bearbetningstid, mottagna profiler, aktiverade identiteter, utelämnade identiteter, misslyckade identiteter, aktiveringsfrekvens och status. Om du vill visa mer information om ett specifikt dataflöde väljer du filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid starttiden för dataflödet.
+På sidan för dataflöden visas information om dataflödets körningar, inklusive starttid för dataflöde, bearbetningstid, mottagna profiler, aktiverade identiteter, utelämnade identiteter, misslyckade identiteter, aktiveringsfrekvens och status. Om du vill visa mer information om en viss dataflödeskörning väljer du filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid starttiden för dataflödet.
 
 ![](../assets/ui/monitor-destinations/dashboard-dataflows-filter.png)
 
@@ -166,10 +165,10 @@ På informationssidan visas mer specifik information om dataflödet, förutom in
 - **[!UICONTROL IMS org ID]**: Den IMS-organisation som dataflödet tillhör.
 - **[!UICONTROL Last updated]**: Den tidpunkt då dataflödeskörningen senast uppdaterades.
 
-På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både misslyckade och utelämnade identiteter visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de misslyckade identiteterna i listan. Om du vill visa överhoppade identiteter väljer du alternativet **[!UICONTROL Identities excluded]**.
+På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både misslyckade och utelämnade identiteter visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de misslyckade identiteterna i listan. Om du vill visa överhoppade identiteter väljer du **[!UICONTROL Identities excluded]** växla.
 
 ![](../assets/ui/monitor-destinations/identities-excluded.png)
 
 ## Nästa steg
 
-Genom att följa den här guiden kan du nu övervaka dataflöden för både batch- och direktuppspelningsmål, inklusive all relevant information som bearbetningstid, aktiveringsfrekvens och status. Mer information om dataflöden i plattformen finns i [översikten över dataflöden](../home.md). Mer information om destinationer finns i [målöversikten](../../destinations/home.md).
+Genom att följa den här guiden kan du nu övervaka dataflöden för både batch- och direktuppspelningsmål, inklusive all relevant information som bearbetningstid, aktiveringsfrekvens och status. Läs mer om dataflöden i plattformar i [dataflödesöversikt](../home.md). Läs mer om destinationer i [destinationer, översikt](../../destinations/home.md).
