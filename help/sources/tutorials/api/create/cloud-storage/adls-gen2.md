@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Azure Data Lake Storage Gen2 med API:t för Flow Service.
 exl-id: cad5e2a0-e27c-4130-9ad8-888352c92f04
-source-git-commit: 13bd1254dfe89004465174a7532b4f6aaef54c09
+source-git-commit: f0bb779961e9387eab6a424461e35eba9ab48fe2
 workflow-type: tm+mt
 source-wordcount: '511'
 ht-degree: 1%
@@ -38,7 +38,7 @@ För att [!DNL Flow Service] Om du vill ansluta till ADLS Gen2 måste du ange v�
 | `servicePrincipalId` | Programmets klient-ID. |
 | `servicePrincipalKey` | Programmets nyckel. |
 | `tenant` | Klientinformationen som innehåller ditt program. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för ADLS Gen2 är: `0ed90a81-07f4-4586-8190-b40eccef1c5a`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för ADLS Gen2 är: `b3ba5556-48be-44b7-8b85-ff2b69b46dc4`. |
 
 Mer information om dessa värden finns i [det här ADLS Gen2-dokumentet](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-data-lake-storage).
 
@@ -83,7 +83,7 @@ curl -X POST \
             }
         },
         "connectionSpec": {
-            "id": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
+            "id": "b3ba5556-48be-44b7-8b85-ff2b69b46dc4",
             "version": "1.0"
         }
     }'
@@ -95,7 +95,7 @@ curl -X POST \
 | `auth.params.servicePrincipalId` | Tjänstens huvud-ID för ditt ADLS Gen2-konto. |
 | `auth.params.servicePrincipalKey` | Tjänstens huvudnyckel för ADLS Gen2-kontot. |
 | `auth.params.tenant` | Klientinformation för ditt ADLS Gen2-konto. |
-| `connectionSpec.id` | ADLS Gen2-anslutningsspecifikations-ID: `0ed90a81-07f4-4586-8190-b40eccef1c5a1`. |
+| `connectionSpec.id` | ADLS Gen2-anslutningsspecifikations-ID: `b3ba5556-48be-44b7-8b85-ff2b69b46dc41`. |
 
 **Svar**
 
