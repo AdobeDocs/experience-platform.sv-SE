@@ -5,7 +5,7 @@ title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: bbd2b92d1ad1e8abf4a6b624c00132ffa96aa676
+source-git-commit: 40e70903cd1a67f5012f6e7c8f09b6e91b3ae0ef
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Marketo Engage] fältkopplingar
 
-Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]-datamängderna och deras motsvarande XDM-fält (Experience Data Model).
+Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo] datauppsättningar och deras motsvarande XDM-fält (Experience Data Model).
 
 ## Aktiviteter {#activities}
 
@@ -28,7 +28,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `eventType` | `eventType` |
 | `producedBy` | `producedBy` |
 | `timestamp` | `timestamp` |
-| `web.webPageDetails._marketo.URL` | `web.webPageDetails._marketo.URL` |
+| `web.webPageDetails.URL` | `web.webPageDetails.URL` |
 | `environment.browserDetails.userAgent` | `environment.browserDetails.userAgent` |
 | `environment.ipV4` | `environment.ipV4` |
 | `search.keywords` | `search.keywords` |
@@ -264,7 +264,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `isWon` | `isWon` |
 | `quantity` | `opportunityQuantity` |
 | `probability` | `probabilityPercentage` |
-| `iif(mktoCdpSourceCampaignId != null && mktoCdpSourceCampaignId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpSourceCampaignId, "sourceKey", concat(mktoCdpSourceCampaignId,"@${MUNCHKIN_ID}.Marketo")), null)` | `campaignKey` | Den här källdatauppsättningen är bara tillgänglig för användare med [!DNL Salesforce]-integrering. |
+| `iif(mktoCdpSourceCampaignId != null && mktoCdpSourceCampaignId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpSourceCampaignId, "sourceKey", concat(mktoCdpSourceCampaignId,"@${MUNCHKIN_ID}.Marketo")), null)` | `campaignKey` | Den här källdatauppsättningen är bara tillgänglig för användare med [!DNL Salesforce] integrering. |
 | `lastActivityDate` | `lastActivityDate` |
 | `leadSource` | `leadSource` |
 | `nextStep` | `nextStep` |
@@ -278,7 +278,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `"Marketo"` | `opportunityPersonKey.sourceType` |
 | `"${MUNCHKIN_ID}"` | `opportunityPersonKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `opportunityPersonKey.sourceID` |
-| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` kommer att ersättas som en del av Explore API. |
+| `concat(id,"@${MUNCHKIN_ID}.Marketo")` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts som en del av Utforska API. |
 | `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey.sourceKey` | Sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `iif(mktoCdpOpptyId != null && mktoCdpOpptyId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpOpptyId, "sourceKey", concat(mktoCdpOpptyId,"@${MUNCHKIN_ID}.Marketo")), null)` | `opportunityKey` | Relation |
 | `iif(leadId != null && leadId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", leadId, "sourceKey", concat(leadId,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | Relation |
@@ -297,7 +297,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `"${MUNCHKIN_ID}"` | `b2b.personKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `b2b.personKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `b2b.personKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | Om avbeställningen är `true` (till exempel value = `1`) anger du `consents.marketing.email.val` som (`n`). Om avbeställningen är `false` (till exempel value = `0`) anger du `consents.marketing.email.val` som `null`. |
+| `iif(unsubscribed == 'true', 'n', 'y' ))` | `consents.marketing.email.val` | Om du avbryter prenumerationen `true` (till exempel value = `1`), sedan ange `consents.marketing.email.val` as (`n`). Om du avbryter prenumerationen `false` (till exempel value = `0`), sedan ange `consents.marketing.email.val` as `null`. |
 | `unsubscribedReason` | `consents.marketing.email.reason` |
 | `iif(contactCompany != null && contactCompany != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(contactCompany, ".mkto_org"), "sourceKey", concat(contactCompany, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `b2b.accountKey` |
 | `marketingSuspended` | `b2b.isMarketingSuspended` |
@@ -309,7 +309,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `leadPartitionId` | `b2b.personGroupID` |
 | `mktoCdpIsConverted` | `b2b.isConverted` |
 | `mktoCdpConvertedDate` | `b2b.convertedDate` |
-| <ul><li>`iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null), "sourceKey", concat(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null), "sourceKey", concat(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey.sourceKey` | `extSourceSystemAudit.externalKey.sourceKey` är den sekundära identiteten. |
+| <ul><li>`iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null), "sourceKey", concat(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null), "sourceKey", concat(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey.sourceKey` | The `extSourceSystemAudit.externalKey.sourceKey` är den sekundära identiteten. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `title` | `extendedWorkDetails.jobTitle` |
@@ -343,8 +343,8 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 >[!NOTE]
 >
->Källfältet `to_object('ECID',arrays_to_objects('id',explode(ecids)))` är ett beräkningsfält som måste läggas till med alternativet [!UICONTROL Add calculated field] i plattformsgränssnittet. Mer information finns i självstudiekursen om att [lägga till beräknade fält](../../../../data-prep/calculated-fields.md).
+>The `to_object('ECID',arrays_to_objects('id',explode(ecids)))` källfält är ett beräkningsfält som måste läggas till med [!UICONTROL Add calculated field] i användargränssnittet för plattformen. Se självstudiekursen om [lägga till beräknade fält](../../../../data-prep/calculated-fields.md) för mer information.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du fått information om mappningsförhållandet mellan dina [!DNL Marketo]-datamängder och deras motsvarande XDM-fält. Se självstudiekursen om att [skapa en [!DNL Marketo] källanslutning](../../../tutorials/ui/create/adobe-applications/marketo.md) för att slutföra ditt [!DNL Marketo]-dataflöde.
+Genom att läsa det här dokumentet har du fått insikt i mappningsförhållandet mellan [!DNL Marketo] datauppsättningar och deras motsvarande XDM-fält. Se självstudiekursen om [skapa [!DNL Marketo] källanslutning](../../../tutorials/ui/create/adobe-applications/marketo.md) för att slutföra [!DNL Marketo] dataflöde.
