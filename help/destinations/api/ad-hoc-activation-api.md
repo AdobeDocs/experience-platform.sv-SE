@@ -5,7 +5,7 @@ title: (Beta) Aktivera målgruppssegment med hjälp av Experience Platform ad ho
 description: I den här artikeln beskrivs hela arbetsflödet för aktivering av segment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: d5b383ec4e9f6e2f05a0e5834e3998789a67ce32
+source-git-commit: 0c8fbaec9a592c9d5c20c077f31279f732ec2a0d
 workflow-type: tm+mt
 source-wordcount: '1054'
 ht-degree: 0%
@@ -124,9 +124,9 @@ Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda seg
 
 När segmentexportjobbet är klart kan du aktivera det.
 
->[!WARNING]
+>[!NOTE]
 >
->Du kan aktivera maximalt 50 segment per ad hoc-aktiveringsjobb. Om du försöker aktivera fler segment misslyckas jobbet.
+>Du kan aktivera högst 20 segment per ad hoc-aktiveringsjobb. Om du försöker aktivera fler segment misslyckas jobbet.
 
 ### Begäran
 
