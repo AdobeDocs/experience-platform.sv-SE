@@ -5,18 +5,14 @@ title: Kafka Connector
 topic-legacy: overview
 description: Strömkopplingen för Adobe Experience Platform baseras på Apache Kafka Connect. Det här biblioteket kan användas för att direktuppspela JSON-händelser från Kafka-avsnitt i ditt datacenter direkt till Experience Platform i realtid.
 exl-id: 062963e5-c727-4c2c-97db-8a9a5a7d903c
-source-git-commit: 5a3aa74ca7319235c10902422abc0e897ad823b8
+source-git-commit: 04a43df2da34c563b3c919115e271843a279ac56
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '188'
 ht-degree: 0%
 
 ---
 
-# [!DNL Kafka] koppling för Adobe Experience Platform (borttagen)
-
->[!IMPORTANT]
->
->Kafka-kopplingen är föråldrad. Om du vill skapa en direktuppspelningsanslutning och skicka data till Adobe Experience Platform kan du läsa självstudiekursen om [skapa en HTTP API-direktuppspelningsanslutning](../../sources/connectors/streaming/http.md)
+# [!DNL Kafka] anslutning för Adobe Experience Platform
 
 Strömkopplingen för Adobe Experience Platform baseras på [!DNL Apache Kafka Connect]. Det här biblioteket kan användas för att direktuppspela JSON-händelser från [!DNL Kafka] ämnen i ditt datacenter direkt till [!DNL Experience Platform] i realtid.
 
