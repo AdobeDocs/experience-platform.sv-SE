@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 45c4486dc9860da13daa6984b23ef80038ea2f8d
+source-git-commit: 0209d7ef1c82915bc11f07518194e3dd68c63de9
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 Uppdateringar till Experience Platform.
 
-### [Användargränssnitt] {#ui}
+### Användargränssnitt {#ui}
 
 Användargränssnittet har uppdaterats med följande ändringar:
 
