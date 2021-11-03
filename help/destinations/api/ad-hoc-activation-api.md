@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;mål-API;ad hoc-aktivering;aktivera segment ad hoc
 solution: Experience Platform
-title: (Beta) Aktivera målgruppssegment med hjälp av Experience Platform ad hoc-aktiverings-API
-description: I den här artikeln beskrivs hela arbetsflödet för aktivering av segment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
+title: (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API
+description: I den här artikeln beskrivs hela arbetsflödet för aktivering av målgruppssegment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: 0c8fbaec9a592c9d5c20c077f31279f732ec2a0d
+source-git-commit: 8cac961e1566c48bacc0ec2ab3414132f81232e2
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Aktivera målgruppssegment med hjälp av Experience Platform ad hoc-aktiverings-API
+# (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API
 
 >[!IMPORTANT]
 >
@@ -35,16 +35,16 @@ Bilden nedan visar det kompletta arbetsflödet för aktivering av segment via AP
 
 ### Försäljning eller kampanjer i Flash
 
-En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Via Experience Platform ad hoc-aktiverings-API:t kan marknadsföringsteamet exportera målgruppssegment on-demand och snabbt skicka e-postreklam till kundbasen.
+En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Via Experience Platform ad hoc-aktiverings-API kan marknadsföringsteamet exportera segment on-demand och snabbt skicka e-postreklam till kundbasen.
 
 
 ### Aktuella event eller senaste nytt
 
-Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill snabbt informera de ankommande gästerna så att de kan planera därefter. Marknadsföringsteamet kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgruppssegment on-demand och meddela gästerna.
+Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill snabbt informera de ankommande gästerna så att de kan planera därefter. Marknadsföringsteamet kan använda Experience Platform ad hoc-aktiverings-API för att exportera segment on-demand och meddela gästerna.
 
 ### Integrationstestning
 
-IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera målgruppssegment on-demand, så att de kan testa sin anpassade integrering med Adobe Experience Platform och se till att allt fungerar som det ska.
+IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera segment on-demand, så att de kan testa sin anpassade integrering med Adobe Experience Platform och se till att allt fungerar som det ska.
 
 
 ## Guardrails {#guardrails}
@@ -156,8 +156,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för målinstanserna som du vill aktivera målgruppssegment för. |
-| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgruppssegment som du vill aktivera till det valda målet. |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera segment för. |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de segment som du vill aktivera till det valda målet. |
 | <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [segmentexport](../../segmentation/api/export-jobs.md#retrieve-list) jobb. Se [Steg 4: Hämta det senaste segmentexportjobb-ID:t](#segment-export-id) för instruktioner om hur du hittar detta ID. |
 
 ### Svar
