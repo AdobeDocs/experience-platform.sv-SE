@@ -5,53 +5,67 @@ title: Felsökningsguide för sandlådor
 topic-legacy: troubleshooting guide
 description: Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform.
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 2a7b2040c221ff039f17f78d9ca712032d9fc02c
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '815'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för sandlådor
 
-Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. För frågor och felsökning som rör andra plattformstjänster, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. För frågor och felsökning som rör andra plattformstjänster, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
 
-Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Mer information finns i [översikten över sandlådor](home.md).
+Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Se [översikt över sandlådor](home.md) för mer information.
 
 ## Vad är en sandlåda?
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Mer information finns i [översikten över sandlådor](home.md).
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Se [översikt över sandlådor](home.md) för mer information.
 
 ## Vilka typer av sandlådor är tillgängliga och vilka är skillnaderna?
 
 Det finns två typer av sandlådor i Experience Platform:
 
-* Produktionssandlåda
-* Icke-produktionssandlåda
+* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till din licens [!DNL Profile] -engagemang (mäts kumulativt i alla dina godkända produktionssandlådor). Du har rätt att använda en licensierad genomsnittsprofil per auktoriserad [!DNL Profile] (uppmätt kumulativt i alla dina godkända produktionssandlådor).
+* **Utvecklingssandlåda**: En utvecklingssandlåda är en sandlåda som endast kan användas för utveckling och testning med icke-produktionsprofiler. Utvecklingssandlådor har stöd för en mängd icke-produktionsprofiler på upp till 10 % av de licensierade [!DNL Profile] -engagemang (mäts kumulativt i alla dina godkända utvecklingssandlådor). Du har rätt till upp till:
+   * En genomsnittlig icke-produktionsprofil på 75 kB per godkänd icke-produktionsprofil (uppmätt kumulativt i alla dina godkända utvecklingssandlådor).
+   * Ett batchsegmenteringsjobb per dag, per utvecklingssandlåda.
+   * Ett genomsnitt på 120 [!DNL Profile] API-anrop, per [!DNL Profile], per år (mäts kumulativt i alla dina godkända utvecklingssandlådor.
 
-Experience Platform har en enda produktionssandlåda som inte kan tas bort eller återställas. Det får bara finnas en produktionssandlåda för en enda plattformsinstans.
-
-Däremot kan flera icke-produktionssandlådor skapas av sandlådeadministratörer för en enda plattformsinstans. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Dessutom har icke-produktionssandlådor en återställningsfunktion som tar bort alla kundskapade resurser från sandlådan. Det går inte att konvertera icke-produktionssandlådor till produktionssandlådor. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
-
-Mer information finns i [översikten över sandlådor](./home.md).
+Se [översikt över sandlådor](./home.md) för mer information.
 
 ## Kan jag få åtkomst till en resurs från mer än en sandlåda?
 
 Sandlådor är isolerade partitioner av en enda plattformsinstans, där varje sandlåda underhåller ett eget oberoende resursbibliotek. En resurs som finns i en sandlåda kan inte nås från någon annan sandlåda, oavsett sandlådetyp (produktion eller icke-produktion).
 
+## Vilken är standardproduktionssandlådan?
+
+Standardproduktionssandlådan är den första produktionssandlådan som skapas när en IMS-organisation etableras första gången. Med standardproduktionssandlådan kan du importera eller använda data från plattformen, samt acceptera begäranden som inte innehåller värden för ett sandlådenamn eller ett sandbox-ID. Standardproduktionssandlådan kan återställas men inte tas bort.
+
 ## Hur många produktionssandlådor kan jag ha?
 
-Experience Platform har endast stöd för en produktionssandlåda per IMS-organisation, som medföljer. Även om det går att byta namn på produktionssandlådan kan den inte tas bort eller återställas. Användare med administratörsbehörighet för sandlådan kan bara skapa, återställa och ta bort icke-produktionssandlådor.
+En Experience Platform-instans har stöd för flera produktions- och utvecklingssandlådor, där varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datamängder och profiler).
 
-## Hur många icke-produktionssandlådor kan jag ha?
+En standardlicens för Experience Platform ger dig totalt fem sandlådor, som du kan klassificera som  eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor.
 
-Experience Platform tillåter för närvarande att upp till 15 icke-produktionssandlådor är aktiva inom en enda IMS-organisation.
+Produktionssandlådor kan återställas eller tas bort, förutom för produktionssandlådor som också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) -funktion.
+
+Du kan uppdatera titeln för en produktionssandlåda. Det går dock inte att byta namn på en produktionssandlåda.
+
+>[!NOTE]
+>
+>Sandlådans namn används för uppslagssyften i API-anrop, medan sandlådans titel används som visningsnamn.
+
+## Hur många utvecklingssandlådor kan jag ha?
+
+Experience Platform tillåter för närvarande att maximalt 75 sandlådor totalt (produktion och utveckling) är aktiva inom en enda IMS-organisation.
+
+Utvecklingssandlådor har stöd för både återställnings- och borttagningsfunktioner.
 
 ## Jag skapade just en sandlåda. Hur anger jag behörigheter för de användare som ska arbeta med den här sandlådan?
 
-Adobe Admin Console länkar användare till sandlådor och behörigheter genom att använda produktprofiler. När du har skapat en ny sandlåda går du till fliken **Behörigheter** för den produktprofil som du vill ge åtkomst till och klickar sedan på **Sandlådor**. Härifrån kan du lägga till eller ta bort åtkomst till den nya sandlådan på samma sätt som andra behörigheter.
+Adobe Admin Console länkar användare till sandlådor och behörigheter genom att använda produktprofiler. När du har skapat en ny sandlåda går du till **Behörigheter** fliken för den produktprofil som du vill ge åtkomst till och klicka sedan på **Sandlådor**. Härifrån kan du lägga till eller ta bort åtkomst till den nya sandlådan på samma sätt som andra behörigheter.
 
 Om du vill lägga till unika behörigheter för användare av en viss sandlåda kan du behöva skapa en ny produktprofil med rätt sandlådor och behörigheter tillämpade, och tilldela dessa användare till den profilen.
 
-Mer information om hur du hanterar sandlådor och behörigheter i Admin Console finns i [användarhandboken för åtkomstkontroll](../access-control/ui/overview.md).
+Se [användarhandbok för åtkomstkontroll](../access-control/ui/overview.md) för mer information om hur du hanterar sandlådor och behörigheter i Admin Console.
