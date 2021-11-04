@@ -5,19 +5,18 @@ title: Datastyrning - översikt
 topic-legacy: overview
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '1345'
+source-wordcount: '1371'
 ht-degree: 0%
 
 ---
 
 # Datastyrning - översikt
 
-En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dataåtgärderna i [!DNL Platform] är kompatibla med dataanvändningsprinciper.
+En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att era dataåtgärder inom [!DNL Platform] följer dataanvändningsprinciper.
 
-Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, bland annat för katalogisering, datalinje, etikettering av dataanvändning, dataanvändningsprinciper och kontroll av användningen av data för marknadsföringsåtgärder.
+Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 
 ## Datastyrningsroller
 
@@ -43,61 +42,61 @@ Marknadsförarna är slutpunkten för datastyrning. De begär data från den inf
 * Marknadsföringsspecialister och Experience Designers använder data för att utforma nya kundupplevelser.
 
 
-## [!DNL Data Governance] ramverk
+## Datastyrningsramverk
 
-[!DNL Data Governance]-ramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
+Datastyrningsramverket förenklar och effektiviserar processen att kategorisera data och skapa policyer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
 
-Det finns tre nyckelelement för [!DNL Data Governance]-ramverket: Etiketter, profiler och verkställighet.
+Ramverket för datastyrning består av tre nyckelelement: Etiketter, profiler och verkställighet.
 
-1. **Etiketter:** klassificera data som återspeglar integritetsrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och organisationsprofiler.
-1. **Profiler:** Beskriv vilka typer av marknadsföringsåtgärder som tillåts eller inte får vidtas för specifika data.
-1. **Tvingande:** Använder policyramverket för att ge råd och tillämpa principer för olika dataåtkomstmönster.
+1. **Etiketter:** Klassificera data som återspeglar integritetsrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och organisationsprofiler.
+1. **Profiler:** Beskriv vilka typer av marknadsföringsåtgärder som är tillåtna eller inte får vidtas på specifika data.
+1. **Tvingande:** Använder policyramverket för att ge råd och tillämpa policyer för olika dataåtkomstmönster.
 
 ## Dataanvändningsetiketter
 
-[!DNL Data Governance] gör det möjligt för dataserier att använda användningsetiketter på data- och fältnivå för att kategorisera data efter vilken typ av profiler som används.
+Med datastyrning kan datasegmentering tillämpa användningsetiketter på datauppsättnings- och fältnivå för att kategorisera data efter vilken typ av profiler som används.
 
-Ramverket [!DNL Data Governance] innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt:
+Ramverket för datastyrning innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt:
 
 ![Etikettkategorier för dataanvändning](./images/overview/label-categories.png)
 
 * **Kontraktets&quot;C&quot;-dataetiketter:** Märk och kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till policyer för styrning av kunddata.
-* **Identitet&quot;I&quot;-dataetiketter:** Etikettera och kategorisera data som kan identifiera eller kontakta en viss person.
-* **Känsliga&quot;S&quot;-dataetiketter:** Etikettera och kategorisera data som relaterar till känsliga data, till exempel geografiska data.
+* **Identitet&quot;I&quot;-dataetiketter:** Märk och kategorisera data som kan identifiera eller kontakta en viss person.
+* **Känsliga&quot;S&quot;-dataetiketter:** Märk och kategorisera data relaterade till känsliga data, t.ex. geografiska data.
 
 >[!NOTE]
 >
->I guiden [Etiketter för dataanvändning som stöds](labels/reference.md) finns en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
+>Se guiden [etiketter för dataanvändning som stöds](labels/reference.md) för en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
 
-Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de har importerats till [!DNL Experience Platform], eller så snart data blir tillgängliga i [!DNL Platform].
+Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de hämtas in till [!DNL Experience Platform]eller så snart data blir tillgängliga i [!DNL Platform].
 
-Mer information finns i översikten på [etiketter för dataanvändning](./labels/overview.md).
+Se översikten på [etiketter för dataanvändning](./labels/overview.md) för mer information.
 
 ## Dataanvändningspolicyer
 
-För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningsprinciper är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
+För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII (Personally Identiitable Information), inte kan exporteras och en I-etikett (Identity Data) har tillämpats på datauppsättningen, får du ett svar från [!DNL Policy Service] som säger att en dataanvändningspolicy har överträttts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII, inte kan exporteras och en I-etikett (Identity Data) har tillämpats på datauppsättningen, får du ett svar från [!DNL Policy Service] att en dataanvändningspolicy har överträtts.
 
-När dataanvändningsetiketterna har tillämpats kan datafördelare skapa principer med hjälp av [!DNL Policy Service]-API:t eller [!DNL Experience Platform]-användargränssnittet.
+När dataanvändningsetiketterna har tillämpats kan datafördelare skapa profiler med [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnitt.
 
 >[!IMPORTANT]
 >
 >Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
 
-Mer information om dataanvändningsprinciper och marknadsföringsåtgärder finns i [principöversikt](./policies/overview.md).
+Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [profiler, översikt](./policies/overview.md).
 
 ## Nästa steg
 
-Det här dokumentet innehåller en introduktion på hög nivå till [!DNL Data Governance] och[!DNL Data Governance]-ramverket. Du kan nu fortsätta med användarhandboken för [dataanvändningsetiketterna](labels/user-guide.md) och börja lägga till användningsetiketter till dina upplevelsedata.
+Detta dokument gav en introduktion på hög nivå till ramverket för datastyrning och datastyrning. Du kan nu fortsätta till [användarhandbok för dataanvändningsrubriker](labels/user-guide.md) och börja lägga till användningsetiketter i era upplevelsedata.
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om [!DNL Data Governance].
+Följande avsnitt innehåller ytterligare information om datastyrning.
 
-### [!DNL Data Governance] terminologi
+### Terminologi inom datastyrning
 
-Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och[!DNL Data Governance]-ramverket.
+I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för datastyrning.
 
 | Term | Definition |
 |---|---|
@@ -111,16 +110,16 @@ Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och[!
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
 | **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls: data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen) och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser. |
-| **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramverket, är en åtgärd som en [!DNL Experience Platform]-datakonsument vidtar, och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts |
+| **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramen, är en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
 | **Policy** | I ramverket för datastyrning är en regel som beskriver vilken typ av marknadsföringsåtgärder som tillåts eller inte tillåts att vidtas för specifika data. |
 | **Känsliga etiketter** | Känsliga S-etiketter används för att kategorisera data som du, och din organisation, anser vara känsliga. |
 
 ## Ytterligare resurser
 
-Följande video är avsedd att ge stöd för din förståelse av [!DNL Data Governance]-ramverket.
+Följande video är avsedd att ge stöd för din förståelse av ramverket för datastyrning.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
-I följande video visas en introduktion till olika [!DNL Data Governance]-funktioner i Experience Platform.
+I följande video visas en introduktion till olika datastyrningsfunktioner i Experience Platform.
 
 >[!VIDEO](https://video.tv.adobe.com/v/36653?quality=12&enable10seconds=on&speedcontrol=on)

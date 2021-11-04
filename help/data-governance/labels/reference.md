@@ -5,9 +5,9 @@ title: Ordlista för dataanvändningsetiketter
 topic-legacy: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 1ae0ce47381585b48020990a71493bbfc1504ec2
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '1982'
+source-wordcount: '1984'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance innehåller flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
-Det här dokumentet innehåller en översikt över de etiketter för användning av kärndata som för närvarande finns i [!DNL Experience Platform]. Mer information om [!DNL Data Governance] finns i [översikten över datastyrning](../home.md).
+I det här dokumentet finns en översikt över de etiketter för grundläggande dataanvändning som för närvarande finns i [!DNL Experience Platform]. Mer information om datastyrning finns i [Datastyrning - översikt](../home.md).
 
 ## Kontraktsetiketter
 
@@ -70,7 +70,7 @@ Vissa data kan bara exporteras från Adobe Experience Cloud i en aggregerad form
 
 #### C2 {#c2}
 
-Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2-etiketten är mer restriktiv än [C1](#c1), som bara kräver aggregering och anonyma data.
+Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2-etiketten är mer restriktiv än [C1](#c1), som endast kräver aggregation och anonyma uppgifter.
 
 #### C3 {#c3}
 
@@ -78,7 +78,7 @@ Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen
 
 #### C4 {#c4}
 
-C4 är den mest restriktiva etiketten - den omfattar etiketterna [C5](#c5), [C6](#c6) och [C7](#c7).
+C4 är den mest restriktiva etiketten - den omfattar etiketter [C5](#c5), [C6](#c6)och [C7](#c7).
 
 #### C5 {#c5}
 
@@ -130,4 +130,4 @@ Vissa dataanvändningsprinciper begränsar användningen av sammanfogade identit
 
 #### C11 {#c11}
 
-Med Adobe Experience Platform Segment Match kan ni matcha förstahandssegment med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match]-processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
+Med Adobe Experience Platform Segment Match kan ni matcha förstahandssegment med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match] -processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.

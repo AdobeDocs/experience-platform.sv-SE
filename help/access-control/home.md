@@ -5,20 +5,20 @@ topic-legacy: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 584461d3da5c5c39b9702b5d1dc1d1319568f695
+source-git-commit: 2effccfa9b1975292f350369201269099dc1b2a1
 workflow-type: tm+mt
-source-wordcount: '1259'
-ht-degree: 0%
+source-wordcount: '1267'
+ht-degree: 1%
 
 ---
 
 # Översikt över åtkomstkontroll
 
-Åtkomstkontroll för [!DNL Experience Platform] tillhandahålls via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], som länkar användare med behörigheter och sandlådor.
+Åtkomstkontroll för [!DNL Experience Platform] tillhandahålls via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console]som länkar användare med behörigheter och sandlådor.
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform]-produktintegrering. Den minsta rollen som beviljar eller återkallar behörigheter är en administratör för produktprofilen. Andra administratörsroller som kan hantera behörigheter är produktadministratörer (kan hantera alla profiler i en produkt) och systemadministratörer (utan begränsningar). Mer information finns i Adobe Help Center-artikeln [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
+För att konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform] produktintegrering. Den minsta rollen som beviljar eller återkallar behörigheter är en administratör för produktprofilen. Andra administratörsroller som kan hantera behörigheter är produktadministratörer (kan hantera alla profiler i en produkt) och systemadministratörer (utan begränsningar). Se Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) för mer information.
 
 >[!NOTE]
 >
@@ -27,23 +27,23 @@ Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] måste d
 Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörigheter kan sammanfattas på följande sätt:
 
 - När du har licensierat Adobe Experience Platform, eller en program-/apptjänst som använder Experience Platform, skickas ett e-postmeddelande till administratören som anges under licensieringen.
-- Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och väljer **Adobe Experience Platform** i produktlistan på översiktssidan.
-- Administratören kan visa [standardproduktprofilerna](#product-profiles) eller skapa nya kundproduktprofiler efter behov.
+- Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och markerar **Adobe Experience Platform** i produktlistan på översiktssidan.
+- Administratören kan visa standardinställningarna [produktprofiler](#product-profiles) eller skapa nya kundproduktprofiler efter behov.
 - Administratören kan redigera behörigheter och användare för befintliga produktprofiler.
-- När du skapar eller redigerar en produktprofil lägger administratören till användare i profilen med fliken **[!UICONTROL users]** och tilldelar behörigheter till dessa användare (till exempel [!UICONTROL Read Datasets] eller [!UICONTROL Manage Schemas]) med hjälp av fliken **[!UICONTROL permissions]**. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma behörighetsflik.
-- När användare loggar in på [!DNL Experience Platform]-användargränssnittet styrs deras åtkomst till [!DNL Platform]-funktioner av de behörigheter som de har fått från steg 2. Om en användare t.ex. inte har behörigheten [!UICONTROL View Datasets] kommer fliken **[!UICONTROL Datasets]** på sidomenyn inte att vara synlig för användaren.
+- När administratören skapar eller redigerar en produktprofil lägger administratören till användare i profilen med hjälp av **[!UICONTROL users]** och ger behörighet till dessa användare (till exempel &quot;[!UICONTROL Read Datasets]&quot; eller &quot;[!UICONTROL Manage Schemas]&quot;) genom att gå till **[!UICONTROL permissions]** -fliken. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma behörighetsflik.
+- När användare loggar in på [!DNL Experience Platform] användargränssnitt, deras åtkomst till [!DNL Platform] funktioner styrs av de behörigheter som har tilldelats dem från steg 2. Om en användare t.ex. inte har[!UICONTROL View Datasets]&quot; behörighet, **[!UICONTROL Datasets]** -fliken på sidomenyn visas inte för den användaren.
 
-Mer detaljerad information om hur du hanterar åtkomstkontroll i [!DNL Experience Platform] finns i [användarhandboken för åtkomstkontroll](./ui/overview.md).
+Detaljerade anvisningar om hur du hanterar åtkomstkontroll i [!DNL Experience Platform], se [användarhandbok för åtkomstkontroll](./ui/overview.md).
 
-Alla anrop till [!DNL Experience Platform] API:er valideras för behörigheter och returnerar fel om rätt behörighet(er) inte hittas i den aktuella användarkontexten. Elementen döljs eller ändras i användargränssnittet beroende på vilka behörigheter den aktuella användaren har.
+Alla samtal till [!DNL Experience Platform] API:er valideras för behörigheter och returnerar fel om lämpliga behörigheter inte hittas i den aktuella användarkontexten. Elementen döljs eller ändras i användargränssnittet beroende på vilka behörigheter den aktuella användaren har.
 
 ## Adobe Admin Console
 
-Adobe Admin Console är en central plats för hantering av Adobe produktberättiganden och åtkomst för din organisation. Via konsolen kan du ge användargrupper åtkomstbehörigheter för olika [!DNL Platform]-funktioner, till exempel &quot;[!UICONTROL Manage Datasets]&quot;, &quot;[!UICONTROL View Datasets]&quot; eller &quot;[!UICONTROL Manage Profiles]&quot;.
+Adobe Admin Console är en central plats för hantering av Adobe produktberättiganden och åtkomst för din organisation. Via konsolen kan du ge grupper av användare åtkomstbehörigheter för olika [!DNL Platform] funktioner, som[!UICONTROL Manage Datasets]&quot;, &quot;[!UICONTROL View Datasets]&quot;, eller &quot;[!UICONTROL Manage Profiles]&quot;.
 
 ### Produktprofiler
 
-I [!DNL Admin Console] tilldelas användare behörigheter genom användning av produktprofiler. Med produktprofiler kan du bevilja behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som de har tilldelats via produktprofiler. Användare kan tilldelas till en eller flera produktprofiler som tillhör din organisation.
+I [!DNL Admin Console], tilldelas användare behörigheter genom användning av produktprofiler. Med produktprofiler kan du bevilja behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som de har tilldelats via produktprofiler. Användare kan tilldelas till en eller flera produktprofiler som tillhör din organisation.
 
 ### Standardproduktprofiler
 
@@ -51,18 +51,18 @@ I [!DNL Admin Console] tilldelas användare behörigheter genom användning av p
 
 | Produktprofil | Sandlådeåtkomst | Behörigheter |
 | --- | --- | --- |
-| Standardproduktion, all åtkomst | Produktion | Alla behörigheter som gäller för [!DNL Experience Platform], förutom för administratörsbehörigheter för sandlådan. |
+| Standardproduktion, all åtkomst | Produktion | Alla behörigheter som gäller för [!DNL Experience Platform], förutom för sandlådeadministration. |
 | Sandlådeadministratörer | Ej tillämpligt | Ger endast åtkomst till sandlådeadministrationsbehörigheter. |
 
 ## Sandlådor och behörigheter
 
-Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils behörigheter ger profilens användare åtkomst till [!DNL Platform]-funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
+Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils behörigheter ger profilens användare åtkomst till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
 
-Mer information om sandlådor i [!DNL Experience Platform] finns i [översikten över sandlådor](../sandboxes/home.md).
+Mer information om sandlådor i [!DNL Experience Platform], se [översikt över sandlådor](../sandboxes/home.md).
 
 ### Åtkomst till sandlådor
 
-Åtkomst till sandlådor hanteras via produktprofiler. Detaljerade steg om hur du aktiverar åtkomst till en sandlåda för en produktprofil finns i [användarhandboken för åtkomstkontroll](./ui/overview.md).
+Åtkomst till sandlådor hanteras via produktprofiler. Detaljerade steg om hur du aktiverar åtkomst till en sandlåda för en produktprofil finns i [användarhandbok för åtkomstkontroll](./ui/overview.md).
 
 Användare kan beviljas åtkomst till en eller flera sandlådor i en produktprofil. Om en användare ingår i två eller flera produktprofiler får den användaren tillgång till alla sandlådor som ingår i de profilerna.
 
@@ -74,9 +74,9 @@ På fliken Behörigheter i en produktprofil visas de sandlådor och behörighete
 
 ![permissions-overview](./images/permissions.png)
 
-Behörigheter som beviljas via [!DNL Admin Console] sorteras efter kategori, med vissa behörigheter som ger åtkomst till flera lågnivåfunktioner.
+Behörigheter som ges via [!DNL Admin Console] sorteras efter kategori, med vissa behörigheter som ger åtkomst till flera lågnivåfunktioner.
 
-Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Platform] i [!DNL Admin Console], med beskrivningar av de specifika [!DNL Platform]-funktioner som de ger åtkomst till. Detaljerade anvisningar om hur du lägger till behörigheter i en produktprofil finns i [användarhandboken för åtkomstkontroll](./ui/overview.md).
+Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Platform] i [!DNL Admin Console], med beskrivningar av [!DNL Platform] funktioner som de ger åtkomst till. Detaljerade anvisningar om hur du lägger till behörigheter i en produktprofil finns i [användarhandbok för åtkomstkontroll](./ui/overview.md).
 
 | Kategori | Behörighet | Beskrivning |
 | --- | --- | --- |
@@ -101,18 +101,18 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 | [!DNL Sandbox Administration] | [!UICONTROL View Sandboxes] | Skrivskyddad åtkomst för sandlådor som tillhör din organisation. |
 | [!DNL Sandbox Administration] | [!UICONTROL Reset a Sandbox] | Möjlighet att återställa en sandlåda. |
 | [!DNL Destinations] | [!UICONTROL Manage Destinations] | Åtkomst för att läsa, skapa, redigera och inaktivera mål. |
-| [!DNL Destinations] | [!UICONTROL View Destinations] | Skrivskyddad åtkomst till tillgängliga mål på fliken **[!UICONTROL Catalog]** och autentiserade mål på fliken **[!UICONTROL Browse]**. |
-| [!DNL Destinations] | [!UICONTROL Activate Destinations] | Möjlighet att aktivera data till aktiva destinationer som har skapats. Den här behörigheten kräver att antingen Visa mål eller Hantera [!UICONTROL Destinations”] beviljas den användare som ska aktivera mål. |
-| [!DNL Destinations] | [!UICONTROL Destination Authoring] | Möjlighet att skapa mål med [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
+| [!DNL Destinations] | [!UICONTROL View Destinations] | Skrivskyddad åtkomst till tillgängliga destinationer i **[!UICONTROL Catalog]** och autentiserade mål på **[!UICONTROL Browse]** -fliken. |
+| [!DNL Destinations] | [!UICONTROL Activate Destinations] | Möjlighet att aktivera data till aktiva destinationer som har skapats. Den här behörigheten kräver antingen Visa mål eller Hantera [!UICONTROL Destinations”] beviljas den användare som ska aktivera destinationer. |
+| [!DNL Destinations] | [!UICONTROL Destination Authoring] | Möjlighet att skapa destinationer med [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL Manage Sources] | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
-| [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**. |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | Åtkomst att skapa, acceptera och avvisa partnerhandskakningar för att ansluta två IMS-organisationer och aktivera [!DNL Segment Match]-flöden. |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | Tillgång att läsa, skapa, redigera och publicera [!DNL Segment Match]-flöden med aktiva partners. |
-| [!DNL Data Science Workspace] | [!UICONTROL Manage Data Science Workspace] | Åtkomst för att läsa, skapa, redigera och ta bort i [!DNL Data Science Workspace]. |
-| [!DNL Data Governance] | [!UICONTROL Apply Data Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |
-| [!DNL Data Governance] | [!UICONTROL Manage Data Usage Policies] | Åtkomst att läsa, skapa, redigera och ta bort dataanvändningsprinciper. |
-| [!DNL Data Governance] | [!UICONTROL View Data Usage Policies] | Skrivskyddad åtkomst till dataanvändningsprinciper som tillhör din organisation. |
-| [!DNL Data Governance] | [!UICONTROL View Audit Log] | Skrivskyddad åtkomst för att visa registrerade [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) för plattformsaktiviteter. |
+| [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor i **[!UICONTROL Catalog]** och autentiserade källor i **[!UICONTROL Browse]** -fliken. |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | Åtkomst att skapa, acceptera och avvisa partnerhandskakningar för att ansluta två IMS-organisationer och aktivera [!DNL Segment Match] flöden. |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | Tillgång till att läsa, skapa, redigera och publicera [!DNL Segment Match] flöden med aktiva partners. |
+| [!DNL Data Science Workspace] | [!UICONTROL Manage Data Science Workspace] | Åtkomst att läsa, skapa, redigera och ta bort i [!DNL Data Science Workspace]. |
+| Datastyrning | [!UICONTROL Apply Data Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |
+| Datastyrning | [!UICONTROL Manage Data Usage Policies] | Åtkomst att läsa, skapa, redigera och ta bort dataanvändningsprinciper. |
+| Datastyrning | [!UICONTROL View Data Usage Policies] | Skrivskyddad åtkomst till dataanvändningsprinciper som tillhör din organisation. |
+| Datastyrning | [!UICONTROL View Audit Log] | Skrivskyddad åtkomst till inspelad vy [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) av plattformsaktiviteter. |
 | [!DNL Dashboards] | [!UICONTROL View License Usage Dashboard] | Skrivskyddad åtkomst för att visa kontrollpanelen för licensanvändning. |
 | [!DNL Dashboards] | [!UICONTROL Manage Standard Dashboards] | Lägg till anpassade attribut som ännu inte finns i data warehouse. |
 | [!DNL Query Service] | [!UICONTROL Manage Queries] | Åtkomst att läsa, skapa, redigera och ta bort strukturerade SQL-frågor för plattformsdata. |
@@ -120,4 +120,4 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta med användarhandboken för [åtkomstkontrollen](./ui/overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Platform].
+Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta till [användarhandbok för åtkomstkontroll](./ui/overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Platform].

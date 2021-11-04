@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kopplingsprofiler
 type: Documentation
 description: När data från flera källor samlas i Experience Platform är sammanslagningsprinciper de regler som används i plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. I den här handboken finns stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i Adobe Experience Platform användargränssnitt.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: e0a75a75e5dbb0318ec8785d887d7a156d28f5bd
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '2191'
+source-wordcount: '2193'
 ht-degree: 0%
 
 ---
@@ -193,7 +193,7 @@ När du har gjort de ändringar du behöver granskar du kopplingsprofilen och v�
 
 ## Policyöverträdelser för datastyrning
 
-När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningsprinciper ingår i Adobe Experience Platform [!DNL Data Governance] och är regler som beskriver vilken typ av marknadsföringsåtgärder du tillåts eller begränsas från att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverades för ett mål från en annan leverantör, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]** när du försöker spara sammanfogningsprincipen.
+När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform datastyrning och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverades för ett mål från en annan leverantör, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]** när du försöker spara sammanfogningsprincipen.
 
 Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du väljer en obehörig princip **[!UICONTROL Data lineage]** -fliken innehåller orsaken till överträdelsen och de aktiveringar som påverkas, där var och en ger mer information om hur dataanvändningsprincipen har överträtts.
 

@@ -4,15 +4,14 @@ description: Versionsinformation för Experience Platform 8 april 2020
 doc-type: release notes
 last-update: April 13, 2020
 author: ens71067
-keywords: release notes;
-translation-type: tm+mt
-source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
+keywords: Versionsinformation.
+exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '969'
-ht-degree: 2%
+source-wordcount: '979'
+ht-degree: 3%
 
 ---
-
 
 # Versionsinformation för Adobe Experience Platform
 
@@ -23,7 +22,7 @@ Nya funktioner i Adobe Experience Platform:
 
 Uppdateringar av befintliga funktioner:
 * [[!DNL Experience Data Model (XDM)]](#xdm)
-* [[!DNL Data Governance]](#governance)
+* [Datastyrning](#governance)
 * [[!DNL Destinations]](#destinations)
 * [[!DNL Privacy Service]](#privacy)
 * [[!DNL Sources]](#sources)
@@ -36,18 +35,18 @@ Uppdateringar av befintliga funktioner:
 
 | Funktion | Beskrivning |
 |---|---|
-| [!DNL Customer AI] | [!DNL Customer AI] ger marknadsförarna möjlighet att generera kundprognoser på individnivå med förklaringar. Med hjälp av inflytelserika faktorer kan [!DNL Customer AI] ni tala om för er vad en kund kan göra och varför. Dessutom kan marknadsförarna dra nytta av [!DNL Customer AI] prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen. |
+| [!DNL Customer AI] | [!DNL Customer AI] ger marknadsförarna möjlighet att generera kundprognoser på individnivå med förklaringar. Med hjälp av inflytelserika faktorer [!DNL Customer AI] kan tala om för er vad en kund sannolikt kommer att göra och varför. Dessutom kan marknadsförarna dra nytta av [!DNL Customer AI] prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen. |
 | [!DNL Attribution AI] | [!DNL Attribution AI] är en flerkanalig, algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner mot angivna resultat. Med [!DNL Attribution AI]kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan. |
 
 **Kända fel**
 
 * Inga kända problem.
 
-Mer information om [!DNL Intelligent Services] och vad det har att erbjuda finns i [Intelligent Services - översikt](../../intelligent-services/home.md).
+Mer information om [!DNL Intelligent Services] och vad den har att erbjuda finns i [Intelligent Services - översikt](../../intelligent-services/home.md).
 
 ## [!DNL Experience Data Model] (XDM) System {#xdm}
 
-Standardisering och interoperabilitet är viktiga koncept som ligger bakom [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
 XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
 
@@ -55,9 +54,9 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Automatisk alternativ visningsinformation | De anpassade titel- och beskrivningsvärdena som konfigurerats i [!DNL Schema Registry] `alternateDisplayInfo` beskrivningen används automatiskt. |
-| Begränsningar för skalbara fält | Det går [!DNL Schema Registry] inte att använda fler än 6 000 skalära fält i ett enda schema. |
-| Prestandaöversyn | Programmet [!DNL Schema Registry] har omarbetats för att kunna prestera och uppfylla kraven på [!DNL Experience Platform] bättre. |
+| Automatisk alternativ visningsinformation | The [!DNL Schema Registry] använder automatiskt de anpassade titel- och beskrivningsvärden som konfigurerats i `alternateDisplayInfo` beskrivning. |
+| Begränsningar för skalbara fält | The [!DNL Schema Registry] tillåter inte mer än 6000 skalära fält i ett enda schema. |
+| Prestandaöversyn | The [!DNL Schema Registry] har omarbetats för att kunna utföra och uppfylla kraven i [!DNL Experience Platform] bättre. |
 
 **Felkorrigeringar**
 
@@ -67,63 +66,63 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 * Känd
 
-## [!DNL Data Governance] {#governance}
+## Datastyrning {#governance}
 
-Adobe Experience Platform [!DNL Data Governance] är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och regler som gäller för dataanvändning följs. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
 
 För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
 
-Ramverket [!DNL Data Governance] förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via [!DNL Experience Platform] användargränssnittet och [!DNL Policy Service] API.
+Datastyrningsramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningspolicyer via [!DNL Experience Platform] användargränssnitt och [!DNL Policy Service] API.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | -----------| ---------- |
-| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras inom arbetsytan **Profiler** i [!DNL Experience Platform] gränssnittet. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
+| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras i **Profiler** arbetsytan i [!DNL Experience Platform] Gränssnitt. Se [principanvändarhandbok](../../data-governance/policies/user-guide.md) för mer information. |
 
 **Kända fel**
 
 * Ingen.
 
-Mer information finns i översikten över [datastyrning](../../data-governance/home.md).
+Mer information finns i [Datastyrning - översikt](../../data-governance/home.md).
 
 
-## Mål {#destinations}
+## Mål  {#destinations}
 
-I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
-CDP har nu stöd för dataaktivering i realtid i över femtio [!DNL Experience Cloud Launch] tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
+CDP har nu stöd för dataaktivering i realtid till över femtio [!DNL Experience Cloud Launch] tillägg som möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
 
 | Dokumentation | Beskrivning |
 |--- | ---|
 | [Måltyper och -kategorier](../../destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i CDP-gränssnittet i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](../../destinations/catalog/launch-extensions/overview.md) | På den här sidan förklaras vad [!DNL Launch] tillägg är, en lista över användningsfall för dem och länkar till dokumentation för varje [!DNL Launch] tillägg i CDP för realtid. |
+| [Experience Platform Launch-tillägg](../../destinations/catalog/launch-extensions/overview.md) | Den här sidan förklarar vad [!DNL Launch] är, visar användningsexempel för dem och länkar till dokumentation för [!DNL Launch] i realtid CDP. |
 
-Mer information finns i Översikt över [destinationer](../../destinations/home.md).
+Mer information finns i [Översikt över destinationer](../../destinations/home.md).
 
 ## [!DNL Privacy Service] {#privacy}
 
-Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Adobe Experience Platform [!DNL Privacy Service] tillhandahåller ett RESTful API och användargränssnitt som hjälper dig att hantera dessa dataförfrågningar från dina kunder. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
+Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful-API och användargränssnitt som hjälper dig att hantera dessa dataförfrågningar från dina kunder. Med [!DNL Privacy Service]kan du skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessregler.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för PDPA | Begäran om skydd av personuppgifter kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När du gör sekretessförfrågningar i API:t accepterar arrayen värdet &quot;pdpa_tha&quot;. `regulation` |
-| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnområdestyper i Request Builder i [!DNL Privacy Service] användargränssnittet. Mer information finns i [användarhandboken](../../privacy-service/ui/user-guide.md) . |
+| Stöd för PDPA | Begäran om skydd av personuppgifter kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När sekretessförfrågningar görs i API:t `regulation` arrayen accepterar värdet &quot;pdpa_tha&quot;. |
+| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnområdestyper i Request Builder i [!DNL Privacy Service] Gränssnitt. Se [användarhandbok](../../privacy-service/ui/user-guide.md) för mer information. |
 | Tidigare borttagning av slutpunkt | Den gamla API-slutpunkten (`data/privacy/gdpr`) har tagits bort. |
 
 Kända fel
 
 * Ingen
 
-Mer information [!DNL Privacy Service]finns i [Privacy Servicen](../../privacy-service/home.md).
+Mer information om [!DNL Privacy Service], kan du börja med att läsa [Översikt över Privacy Servicen](../../privacy-service/home.md).
 
-## Sources {#sources}
+## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
@@ -131,7 +130,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API- och gränssnittsstöd för databaser | Nya källkontakter för [!DNL Apache Spark] (HDInsights), [!DNL Azure Synapse Analytics], [!DNL Azure Table Storage][!DNL Hive] (HDInsights) och [!DNL Phoenix]. |
+| API- och gränssnittsstöd för databaser | Nya källkopplingar för [!DNL Apache Spark] (på HDInsights), [!DNL Azure Synapse Analytics], [!DNL Azure Table Storage], [!DNL Hive] (på HDInsights), och [!DNL Phoenix]. |
 | API- och gränssnittsstöd för betalningsbaserade program | Nya källkopplingar för [!DNL PayPal]. |
 | API- och gränssnittsstöd för protokollbaserade program | Nya källkopplingar för [!DNL Generic OData]. |
 
@@ -139,4 +138,4 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 * Ingen
 
-Mer information om källor finns i [Källöversikt](../../sources/home.md).
+Mer information om källor finns i [källöversikt](../../sources/home.md).

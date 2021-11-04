@@ -5,39 +5,39 @@ title: Översikt över dataanvändningsprinciper
 topic-legacy: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1075'
 ht-degree: 0%
 
 ---
 
 # Översikt över policyer för dataanvändning
 
-För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningsprinciper är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
+För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
 Det här dokumentet innehåller en översikt över dataanvändningsprinciper på hög nivå och länkar till ytterligare dokumentation om hur du arbetar med principer i gränssnittet eller API:t.
 
 ## Marknadsföringsåtgärder {#marketing-actions}
 
-Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramverket är åtgärder som en [!DNL Experience Platform]-datakonsument kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
+Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramen är åtgärder som [!DNL Experience Platform] dataanvändare kan använda, som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
 
 1. En specifik marknadsföringsåtgärd
 2. Etiketter för dataanvändning som åtgärden är begränsad från att utföras mot
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. PII) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), får du ett svar från [!DNL Policy Service] som säger att en dataanvändningspolicy har överträtts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. PII) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), får du ett svar från [!DNL Policy Service] att en dataanvändningspolicy har överträtts.
 
 >[!NOTE]
 >
 >Marknadsföringsåtgärder begränsar inte användningen av data. De måste inkluderas i aktiverade dataanvändningspolicyer för att dessa åtgärder ska kunna utvärderas för policyöverträdelser.
 
-När dataanvändningen sker i er organisations tjänst bör relevanta marknadsföringsåtgärder anges så att eventuella policyöverträdelser kan identifieras. Du kan sedan använda [API:t för principtjänsten](https://www.adobe.io/experience-platform-apis/references/policy-service/) för att kontrollera om integreringen har brutit mot principer.
+När dataanvändningen sker i er organisations tjänst bör relevanta marknadsföringsåtgärder anges så att eventuella policyöverträdelser kan identifieras. Du kan sedan använda [API för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) om du vill söka efter policyöverträdelser i integreringen.
 
 >[!NOTE]
 >
->Om du använder [!DNL Real-time Customer Data Platform] kan du konfigurera användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Mer information finns i dokumentet om [Datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md) i realtid.
+>Om du använder [!DNL Real-time Customer Data Platform]kan ni lägga upp användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Visa dokumentet på [Datastyrning i realtid CDP](../../rtcdp/privacy/data-governance-overview.md) för mer information.
 
-I bilagan till det här dokumentet finns en lista över [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna marknadsföringsåtgärder med hjälp av [!DNL Policy Service]-API:t eller [!DNL Experience Platform ]användargränssnittet. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
+I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna anpassade marknadsföringsåtgärder med [!DNL Policy Service] API eller [!DNL Experience Platform ]användargränssnitt. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
@@ -49,19 +49,19 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 ## Hantera dataanvändningspolicyer {#manage}
 
-När dataanvändningsetiketterna har tillämpats kan datafördelarna använda API:t [!DNL Policy Service] eller gränssnittet [!DNL Experience Platform] för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller dataanvändningsetiketter. Du kan skapa och uppdatera profiler, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
+När dataanvändningsetiketterna har tillämpats kan dataavdelningarna använda [!DNL Policy Service] API eller [!DNL Experience Platform] Gränssnitt för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller dataanvändningsetiketter. Du kan skapa och uppdatera profiler, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
 
 >[!IMPORTANT]
 >
 >Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningsprinciper i API:t finns i självstudiekursen [skapa och utvärdera dataanvändningsprinciper](create.md). Mer information om nyckelåtgärder som tillhandahålls av API:t [!DNL Policy Service] finns i [Utvecklarhandboken för principtjänsten](../api/getting-started.md).
+Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om [skapa och utvärdera dataanvändningsprinciper](create.md). Mer information finns i nyckelåtgärderna i [!DNL Policy Service] API, se [Utvecklarhandbok för principtjänst](../api/getting-started.md).
 
-Mer information om hur du arbetar med marknadsföringsåtgärder och -profiler i [!DNL Platform]-gränssnittet finns i [användarhandboken för dataanvändningsprincipen](./user-guide.md).
+Information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i [!DNL Platform] Gränssnitt, se [användarhandbok för dataanvändningsprincip](./user-guide.md).
 
 ## Nästa steg
 
-Det här dokumentet innehåller en introduktion till dataanvändningsprinciper i [!DNL Data Governance]-ramverket. Du kan nu fortsätta att läsa den processdokumentation som är länkad till i den här handboken för att lära dig mer om hur du arbetar med policyer i API:t och användargränssnittet.
+Detta dokument innehåller en introduktion till dataanvändningsprinciper inom ramverket för datastyrning. Du kan nu fortsätta att läsa den processdokumentation som är länkad till i den här handboken för att lära dig mer om hur du arbetar med policyer i API:t och användargränssnittet.
 
 ## Bilaga
 
@@ -85,5 +85,5 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 | Exportera till tredje part | En åtgärd som exporterar data till processorer och enheter som inte har direkta relationer med kunder. Många dataleverantörer har villkor i avtalen som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. |
 | Annonsering på plats | En åtgärd som använder data för annonser på plats, inklusive urval och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser. |
 | Personalisering på plats | En åtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser. |
-| Segmentmatchning | En åtgärd som använder data för Adobe Experience Platform Segment Match, som gör att två eller flera plattformsanvändare kan utbyta segmentdata. Genom att aktivera profiler som refererar till den här åtgärden kan du begränsa vilka data som används för segmentmatchning. Om huvudprincipen &quot;Begränsa datadelning&quot; till exempel är aktiverad kan data med etiketten [C11](../labels/reference.md#c11) inte användas för segmentmatchning. |
+| Segmentmatchning | En åtgärd som använder data för Adobe Experience Platform Segment Match, som gör att två eller flera plattformsanvändare kan utbyta segmentdata. Genom att aktivera profiler som refererar till den här åtgärden kan du begränsa vilka data som används för segmentmatchning. Om huvudprincipen &quot;Begränsa datadelning&quot; till exempel är aktiverad, kan alla data med en [C11-etikett](../labels/reference.md#c11) kan inte användas för segmentmatchning. |
 | Personalisering med en identitet | En åtgärd som kräver att en enda identitet används för personalisering i stället för att sammanfoga identiteter från flera källor. |

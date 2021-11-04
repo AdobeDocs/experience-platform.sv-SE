@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '1646'
+source-wordcount: '1648'
 ht-degree: 0%
 
 ---
@@ -199,7 +199,7 @@ Mer information om kantsegmentering finns i [gränssnittsguide för kantsegmente
 >
 >Policyöverträdelser gäller bara om du skapar ett segment som har tilldelats ett mål.
 
-När du är klar med segmentet analyseras segmentet av Adobe Experience Platform Data Governance för att säkerställa att det inte förekommer några överträdelser av policyer inom segmentet. Se [[!DNL Data Governance] översikt](../../data-governance/home.md) för mer information.
+När du är klar med segmentet analyseras segmentet av Adobe Experience Platform Data Governance för att säkerställa att det inte förekommer några överträdelser av policyer inom segmentet. Se [Datastyrning - översikt](../../data-governance/home.md) för mer information.
 
 ![](../images/ui/overview/segment-dule-policy-violations.png)
 
