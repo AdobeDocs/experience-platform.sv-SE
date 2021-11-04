@@ -6,41 +6,41 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflöde, inklusive namn, beskrivning och schema, med API:t för Flow Service.
 exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 152ad198918f9cf0bea9dabd67886f5d56763ef8
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
 
 # Uppdatera dataflöden med API:t för Flow Service
 
-I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflöde, inklusive namn, beskrivning och schema med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflöde, inklusive dess grundläggande information, schema och mappningsuppsättningar med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
-Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du inte har ett giltigt flödes-ID väljer du den önskade anslutningen i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
+Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du inte har ett giltigt flödes-ID väljer du den önskade anslutningen på menyn [källöversikt](../../home.md) och följ instruktionerna innan du provar den här självstudiekursen.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
 * [Källor](../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera ditt dataflöde med API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna uppdatera ditt dataflöde med [!DNL Flow Service] API.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform, inklusive sådana som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -50,7 +50,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter dataflödesdetaljer
 
-Det första steget i att uppdatera dataflödet är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till `/flows`-slutpunkten.
+Det första steget i att uppdatera dataflödet är att hämta dataflödesinformation med ditt flödes-ID. Du kan visa den aktuella informationen om ett befintligt dataflöde genom att göra en GET-förfrågan till `/flows` slutpunkt.
 
 **API-format**
 
@@ -60,7 +60,7 @@ GET /flows/{FLOW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FLOW_ID}` | Det unika `id`-värdet för det dataflöde som du vill hämta. |
+| `{FLOW_ID}` | Unika `id` värdet för det dataflöde som du vill hämta. |
 
 **Begäran**
 
@@ -191,11 +191,11 @@ Ett lyckat svar returnerar aktuell information om dataflödet, inklusive version
 
 ## Uppdatera dataflöde
 
-Om du vill uppdatera ditt dataflödes körningsschema, namn och beskrivning ska du utföra en PATCH-begäran till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID, version och det nya schema som du vill använda.
+Om du vill uppdatera ditt dataflödes körningsschema, namn och beskrivning utför du en PATCH-begäran till [!DNL Flow Service] API när du anger ditt flödes-ID, version och det nya schema som du vill använda.
 
 >[!IMPORTANT]
 >
->`If-Match`-huvudet krävs när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
+>The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde.
 
 **API-format**
 
@@ -234,15 +234,15 @@ curl -X PATCH \
         ]'
 ```
 
-| Parameter | Beskrivning |
+| Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace` och `remove`. |
-| `path` | Sökvägen till den parameter som ska uppdateras. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
 **Svar**
 
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till API:t [!DNL Flow Service] och samtidigt ange ditt flödes-ID.
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt flödes-ID.
 
 ```json
 {
@@ -251,6 +251,62 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
 }
 ```
 
+## Uppdatera mappning
+
+Du kan uppdatera mappningsuppsättningen för ett befintligt dataflöde genom att göra en PATCH-begäran till [!DNL Flow Service] API och uppdaterade värden för `mappingId` och `mappingVersion`.
+
+**API-format**
+
+```http
+PATCH /flows/{FLOW_ID}
+```
+
+**Begäran**
+
+Följande begäran uppdaterar mappningsuppsättningen för ditt dataflöde.
+
+```shell
+curl -X PATCH \
+    'https://platform.adobe.io/data/foundation/flowservice/flows/2edc08ac-4df5-4fe6-936f-81a19ce92f5c' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}'
+    -H 'If-Match: "50014cc8-0000-0200-0000-6036eb720000"' \
+    -d '[
+        {
+            "op": "replace",
+            "path": "/transformations/0",
+            "value": {
+                "name": "Mapping",
+                "params": {
+                    "mappingId": "c5f22f04e09f44498e528901546a83b1",
+                    "mappingVersion": 2
+                }
+            }
+        }
+    ]'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `path` | Definierar den del av flödet som ska uppdateras. I det här exemplet `transformations` uppdateras. |
+| `value.name` | Namnet på egenskapen som ska uppdateras. |
+| `value.params.mappingId` | Det nya mappnings-ID som ska användas för att uppdatera dataflödets mappningsuppsättning. |
+| `value.params.mappingVersion` | Den nya mappningsversionen som är associerad med det uppdaterade mappnings-ID:t. |
+
+**Svar**
+
+Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt flödes-ID.
+
+```json
+{
+    "id": "2edc08ac-4df5-4fe6-936f-81a19ce92f5c",
+    "etag": "\"2c000802-0000-0200-0000-613976440000\""
+}
+```
+
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du uppdaterat körningsschema, namn och beskrivning för dataflödet med hjälp av API:t [!DNL Flow Service]. Mer information om hur du använder källkopplingar finns i [Källöversikt](../../home.md).
+Genom att följa den här självstudiekursen har du uppdaterat grundläggande information, scheman och mappningsuppsättningar för ditt dataflöde med hjälp av [!DNL Flow Service] API. Mer information om hur du använder källkopplingar finns i [källöversikt](../../home.md).
