@@ -5,16 +5,16 @@ title: Användargränssnittshandbok för Segment Builder
 topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
+source-git-commit: 6f4d250750d36c516a9a5730b5ced91e47d3bf05
 workflow-type: tm+mt
-source-wordcount: '1936'
+source-wordcount: '2311'
 ht-degree: 0%
 
 ---
 
 # [!DNL Segment Builder] Användargränssnittsguide
 
-[!DNL Segment Builder] innehåller en omfattande arbetsyta som gör att du kan interagera med  [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
+[!DNL Segment Builder] innehåller en omfattande arbetsyta som du kan använda för att interagera med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 
 ![](../images/ui/segment-builder/segment-builder.png)
 
@@ -22,65 +22,103 @@ ht-degree: 0%
 
 De grundläggande byggstenarna för segmentdefinitioner är attribut och händelser. Dessutom kan attribut och händelser i befintliga målgrupper också användas som komponenter för nya definitioner.
 
-Dessa byggstenar visas i **[!UICONTROL Fields]**-avsnittet till vänster på arbetsytan [!DNL Segment Builder]. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: &quot;[!UICONTROL Attributes]&quot;, &quot;[!UICONTROL Events]&quot; och &quot;[!UICONTROL Audiences]&quot;.
+Du kan se dessa byggstenar i **[!UICONTROL Fields]** till vänster i [!DNL Segment Builder] arbetsyta. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: &quot;[!UICONTROL Attributes]&quot;, &quot;[!UICONTROL Events]&quot;, och &quot;[!UICONTROL Audiences]&quot;.
 
 ![](../images/ui/segment-builder/segment-fields.png)
 
 ### Attribut
 
-På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile]-attribut som tillhör klassen [!DNL XDM Individual Profile]. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. [Regelbyggaren canvas](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
+The **[!UICONTROL Attributes]** kan du bläddra [!DNL Profile] attribut som tillhör [!DNL XDM Individual Profile] klassen. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. The [arbetsyta för regelbyggaren](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
 
 ![](../images/ui/segment-builder/attributes.png)
 
 ### Händelser
 
-På fliken **[!UICONTROL Events]** kan du skapa en målgrupp baserat på händelser eller åtgärder som har utförts med [!DNL XDM ExperienceEvent]-dataelement. Du kan också hitta händelsetyper på fliken **[!UICONTROL Events]**, som är en samling vanliga händelser som gör att du kan skapa segment snabbare.
+The **[!UICONTROL Events]** kan du skapa en målgrupp baserat på händelser eller åtgärder som har utförts med [!DNL XDM ExperienceEvent] dataelement. Du kan även hitta händelsetyper på **[!UICONTROL Events]** -fliken, som är en samling vanliga händelser som gör att du kan skapa segment snabbare.
 
-Förutom att du kan bläddra efter [!DNL ExperienceEvent]-element kan du även söka efter händelsetyper. Händelsetyper använder samma kodningslogik som [!DNL ExperienceEvents], utan att du behöver söka igenom klassen [!DNL XDM ExperienceEvent] för att hitta rätt händelse. Om du till exempel använder sökfältet för att söka efter &quot;kundvagn&quot; returneras händelsetyperna &quot;[!UICONTROL AddCart]&quot; och &quot;[!UICONTROL RemoveCart]&quot;, som är två mycket vanliga kundvagnsåtgärder när du skapar segmentdefinitioner.
+Förutom att kunna bläddra bland [!DNL ExperienceEvent] kan du också söka efter händelsetyper. Händelsetyper använder samma kodningslogik som [!DNL ExperienceEvents]utan att du behöver söka i [!DNL XDM ExperienceEvent] klassen letar efter rätt händelse. Om du till exempel använder sökfältet för att söka efter &quot;kundvagn&quot; returneras händelsetyperna &quot;[!UICONTROL AddCart]&quot; och &quot;[!UICONTROL RemoveCart]&quot;, som är två mycket vanliga kundvagnsåtgärder när man bygger upp segmentdefinitioner.
 
-Du kan söka efter alla typer av komponenter genom att skriva komponentens namn i sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Sökresultaten fylls i när hela ord anges. Om du till exempel vill skapa en regel som baseras på XDM-fältet `ExperienceEvent.commerce.productViews` börjar du skriva &quot;produktvyer&quot; i sökfältet. När ordet &quot;product&quot; har skrivits in börjar sökresultaten visas. Varje resultat innehåller den objekthierarki som det hör till.
+Du kan söka efter alla typer av komponenter genom att skriva dess namn i sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Sökresultaten fylls i när hela ord anges. Du kan till exempel skapa en regel som baseras på XDM-fältet `ExperienceEvent.commerce.productViews`börjar du skriva &quot;produktvyer&quot; i sökfältet. När ordet &quot;product&quot; har skrivits in börjar sökresultaten visas. Varje resultat innehåller den objekthierarki som det hör till.
 
 >[!NOTE]
 >
 >Det kan ta upp till 24 timmar innan anpassade schemafält som definieras av organisationen visas och blir tillgängliga för användning i byggregler.
 
-Du kan sedan enkelt dra och släppa [!DNL ExperienceEvents] och [!UICONTROL Event Types] i segmentdefinitionen.
+Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och &quot;[!UICONTROL Event Types]&quot; i segmentdefinitionen.
 
 ![](../images/ui/segment-builder/events-eventTypes.png)
 
-Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om listan [!UICONTROL Event Types] inte visas, eller om du bara kan välja [!UICONTROL Any] som [!UICONTROL Event Type], väljer du **kugghjulsikonen** bredvid **[!UICONTROL Fields]** och sedan **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikonen** igen om du vill gå tillbaka till fliken **[!UICONTROL Fields]** och du bör nu kunna visa flera [!UICONTROL Event Types]- och schemafält, oavsett om de innehåller data eller inte.
+Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om[!UICONTROL Event Types]&quot; visas inte eller så kan du bara välja &quot;[!UICONTROL Any]&quot; som &quot;[!UICONTROL Event Type]&quot;, välj **kugghjulsikon** nästa **[!UICONTROL Fields]** väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikon** igen för att gå tillbaka till **[!UICONTROL Fields]** och du bör nu kunna visa flera[!UICONTROL Event Types]&quot; och schemafält, oavsett om de innehåller data eller inte.
 
 ![](../images/ui/segment-builder/show-populated.png)
 
+#### Adobe Analytics rapportuppsättningar
+
+Du kan använda data från en eller flera Adobe Analytics-rapportsviter som händelser inom segmentering.
+
+När du använder data från en enda analysrapportsserie lägger Platform automatiskt till beskrivningar och egna namn i eVars, vilket gör det enklare att hitta fälten i [!DNL Segment Builder].
+
+![En bild som visar hur generiska variabler (eVars) mappas med ett användarvänligt namn.](../images/ui/segment-builder/single-report-suite.png)
+
+När du använder data från flera olika rapportsviter i Analytics, Platform **inte** lägger automatiskt till beskrivningar eller egna namn i eVars. Därför måste du mappa till XDM-fält innan du använder data från rapportsviterna i Analytics. Mer information om mappning av Analytics-variabler till XDM finns i [Anslutningsguide för Adobe Analytics](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping).
+
+Tänk dig till exempel en situation där du har två rapportsviter med följande variabler:
+
+| Fält | Report Suite Schema A | Report Suite Schema B |
+| ----- | --------------------- | --------------------- |
+| eVar1 | Refererande domän | Inloggad J/N |
+| eVar2 | Sidnamn | Medlemmens lojalitets-ID |
+| eVar3 | URL | Sidnamn |
+| eVar4 | Sökvillkor | Produktnamn |
+| event1 | Klickningar | Sidvisningar |
+| event2 | Sidvisningar | Tillägg i kundvagn |
+| event3 | Tillägg i kundvagn | Utcheckningar |
+| event4 | Inköp | Inköp |
+
+I det här fallet kan du mappa de två rapportsviterna med följande schema:
+
+![En bild som visar hur två rapportsviter kan mappas till ett unionsschema.](../images/ui/segment-builder/union-schema.png)
+
+>[!NOTE]
+>
+>De generiska eVar fylls i men du bör **not** använda dem i segmentdefinitionerna (om det är möjligt) eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
+
+När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i dina profilrelaterade arbetsflöden och segmentering.
+
+| Scenario | Unionens schemaupplevelse | Generisk variabel för segmentering | Segmentmappad variabel |
+| -------- | ----------------------- | ----------------------------- | ---------------------------- |
+| Ett rapportpaket | En egen namnbeskrivning ingår i generiska variabler. <br><br>**Exempel:** Sidnamn (eVar2) | <ul><li>Egen namnbeskrivning ingår i generiska variabler</li><li>Frågor använder data från den specifika datauppsättningen, eftersom det är den enda</li></ul> | Frågor kan använda Adobe Analytics-data och eventuellt andra källor. |
+| Flera rapportsviter | Inga egna namnbeskrivningar ingår i generiska variabler. <br><br>**Exempel:** eVar2 | <ul><li>Alla fält med flera beskrivningar visas som generiska. Det innebär att inga egna namn visas i användargränssnittet.</li><li>Frågor kan använda data från alla datauppsättningar som innehåller eVar, vilket kan resultera i blandade eller felaktiga resultat.</li></ul> | Frågor använder korrekt kombinerade resultat från flera datauppsättningar. |
+
 ### Målgrupper
 
-På fliken **[!UICONTROL Audiences]** visas alla målgrupper som importerats från externa källor, till exempel Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
+The **[!UICONTROL Audiences]** På -fliken visas alla målgrupper som importerats från externa källor, t.ex. Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
 
-På fliken **[!UICONTROL Audiences]** kan du se alla tillgängliga källor som en grupp med mappar. När du markerar mapparna visas tillgängliga undermappar och målgrupper. Dessutom kan du välja mappikonen (som visas längst till höger) för att visa mappstrukturen (en bock anger den mapp du befinner dig i) och enkelt navigera tillbaka genom mapparna genom att välja namnet på en mapp i trädet.
+På **[!UICONTROL Audiences]** kan du se alla tillgängliga källor som en grupp mappar. När du markerar mapparna visas tillgängliga undermappar och målgrupper. Dessutom kan du välja mappikonen (som visas längst till höger) för att visa mappstrukturen (en bock anger den mapp du befinner dig i) och enkelt navigera tillbaka genom mapparna genom att välja namnet på en mapp i trädet.
 
 Du kan hovra över ⓘ bredvid en målgrupp för att visa information om målgruppen, inklusive dess ID, beskrivning och mapphierarkin för att hitta målgruppen.
 
 ![](../images/ui/segment-builder/audience-folder-structure.png)
 
-Du kan också söka efter målgrupper med hjälp av sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om du väljer en mapp på den översta nivån på fliken **[!UICONTROL Audiences]** visas sökfältet så att du kan söka i den mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill hitta en målgrupp med namnet `Online Shoppers` börjar du skriva &quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
+Du kan också söka efter målgrupper med hjälp av sökfältet som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). På **[!UICONTROL Audiences]** om du väljer en mapp på den översta nivån visas sökfältet så att du kan söka i den mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill hitta en publik med namnet `Online Shoppers`börjar du skriva &quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
 
 ## Regelbyggarens arbetsyta {#rule-builder-canvas}
 
-En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med regelbyggarens arbetsyta, som finns i mitten av [!DNL Segment Builder].
+En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med hjälp av regelbyggararbetsytan, som finns i mitten av [!DNL Segment Builder].
 
-Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från fliken **[!UICONTROL Fields]** och släpper den på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum, [!DNL ExperienceEvents], &quot;[!UICONTROL Event Types]&quot; och målgrupper.
+Om du vill lägga till en ny regel i segmentdefinitionen drar du en ruta från **[!UICONTROL Fields]** och släpp det på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum, [!DNL ExperienceEvents], &quot;[!UICONTROL Event Types]och målgrupper.
 
 ![](../images/ui/segment-builder/rule-builder-canvas.png)
 
 >[!IMPORTANT]
 >
->De senaste ändringarna av Adobe Experience Platform har uppdaterat användningen av de logiska operatorerna `OR` och `AND` mellan händelser. Dessa uppdateringar påverkar inte befintliga segment. Alla efterföljande uppdateringar av befintliga segment och nya segment kommer dock att påverkas av dessa ändringar. Läs [uppdateringen av tidskonstanter](./segment-refactoring.md) om du vill ha mer information.
+>De senaste ändringarna av Adobe Experience Platform har uppdaterat användningen av `OR` och `AND` logiska operatorer mellan händelser. Dessa uppdateringar påverkar inte befintliga segment. Alla efterföljande uppdateringar av befintliga segment och nya segment kommer dock att påverkas av dessa ändringar. Läs [uppdatering av tidskonstanter](./segment-refactoring.md) för mer information.
 
 ### Lägga till målgrupper
 
-Du kan dra och släppa en målgrupp från fliken **[!UICONTROL Audience]** till regelbyggararbetsytan för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i den nya segmentregeln.
+Du kan dra och släppa en målgrupp från **[!UICONTROL Audience]** på regelbyggarens arbetsyta för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i den nya segmentregeln.
 
-För [!DNL Platform]-målgrupper som skapats med [!DNL Segment Builder] kan du konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
+För [!DNL Platform] målgrupper skapade med [!DNL Segment Builder]kan du konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
 
 >[!NOTE]
 >
@@ -88,11 +126,11 @@ För [!DNL Platform]-målgrupper som skapats med [!DNL Segment Builder] kan du k
 
 ![](../images/ui/segment-builder/add-audience-to-segment.png)
 
-Om det uppstår några konflikter när målgrupper konverteras till regler försöker [!DNL Segment Builder] att bevara de befintliga alternativen så att de blir så bra som möjligt.
+Om det uppstår konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
 
 ### kodvyn
 
-Du kan också visa en kodbaserad version av en regel som skapats i [!DNL Segment Builder]. När du har skapat regeln på arbetsytan i regelbyggaren kan du välja **[!UICONTROL Code view]** för att se ditt segment som PQL.
+Du kan även visa en kodbaserad version av en regel som har skapats i [!DNL Segment Builder]. När du har skapat regeln på arbetsytan i regelbyggaren kan du välja **[!UICONTROL Code view]** för att se ditt segment som PQL.
 
 ![](../images/ui/segment-builder/code-view.png)
 
@@ -102,9 +140,9 @@ I kodvyn finns en knapp som du kan använda för att kopiera segmentets värde f
 
 ### Sammanställningsfunktioner
 
-En aggregering i [!DNL Segment Builder] är en beräkning för en grupp av XDM-attribut vars datatyp är ett tal (antingen en dubbel eller ett heltal). De fyra aggregeringsfunktionerna som stöds i Segment Builder är SUM, AVERAGE, MIN och MAX.
+En aggregering i [!DNL Segment Builder] är en beräkning för en grupp XDM-attribut vars datatyp är ett tal (antingen ett dubbelt tal eller ett heltal). De fyra aggregeringsfunktionerna som stöds i Segment Builder är SUM, AVERAGE, MIN och MAX.
 
-Om du vill skapa en aggregeringsfunktion väljer du en händelse från den vänstra listen och infogar den i [!UICONTROL Events]-behållaren.
+Om du vill skapa en aggregeringsfunktion väljer du en händelse från den vänstra listen och infogar den i [!UICONTROL Events] behållare.
 
 ![](../images/ui/segment-builder/select-event.png)
 
@@ -120,11 +158,11 @@ Aggregeringsvärdet har nu lagts till. Nu kan du välja sammanställningsfunktio
 
 Räkningsfunktioner i Segment Builder används för att söka efter angivna händelser och räkna antalet gånger de är klara. De räkningsfunktioner som stöds i Segment Builder är &quot;Minst&quot;, &quot;Högst&quot;, &quot;Exakt&quot;, &quot;Mellan&quot; och &quot;Alla&quot;.
 
-Om du vill skapa en räkningsfunktion markerar du en händelse från den vänstra listen och infogar den i [!UICONTROL Events]-behållaren.
+Om du vill skapa en räkningsfunktion väljer du en händelse från den vänstra listen och infogar den i dialogrutan [!UICONTROL Events] behållare.
 
 ![](../images/ui/segment-builder/add-event.png)
 
-När du har placerat händelsen i händelsebehållaren väljer du knappen [!UICONTROL At least 1].
+När du har placerat händelsen i händelsebehållaren markerar du [!UICONTROL At least 1] -knappen.
 
 ![](../images/ui/segment-builder/add-count.png)
 
@@ -140,13 +178,13 @@ När du har lagt till minst en platta på regelbyggararbetsytan kan du börja l�
 
 ![](../images/ui/segment-builder/add-container.png)
 
-En ny behållare visas som underordnad till den första behållaren, men du kan justera hierarkin genom att dra och flytta behållarna. Standardbeteendet för en behållare är att &quot;[!UICONTROL Include]&quot; är attributet, händelsen eller målgruppen som anges. Du kan ställa in regeln på profiler som matchar behållarvillkoren genom att välja **[!UICONTROL Include]** i rutans övre vänstra hörn och välja [!UICONTROL Exclude].[!UICONTROL Exclude]
+En ny behållare visas som underordnad till den första behållaren, men du kan justera hierarkin genom att dra och flytta behållarna. Standardbeteendet för en behållare är &quot;[!UICONTROL Include]&quot; attributet, händelsen eller publiken som anges. Du kan ställa in regeln på[!UICONTROL Exclude]&quot; profiler som matchar behållarvillkoren genom att välja **[!UICONTROL Include]** i rutans övre vänstra hörn och väljer &quot;[!UICONTROL Exclude]&quot;.
 
 En underordnad behållare kan också extraheras och läggas till i den överordnade behållaren genom att markera&quot;dela upp behållare&quot; i den underordnade behållaren. Markera ellipserna (..) i det övre högra hörnet av den underordnade behållaren för att komma åt det här alternativet.
 
 ![](../images/ui/segment-builder/include-exclude.png)
 
-När du har valt **[!UICONTROL Unwrap container]** tas den underordnade behållaren bort och villkoren visas textbundna.
+När du har valt **[!UICONTROL Unwrap container]** den underordnade behållaren tas bort och villkoren visas textbundna.
 
 >[!NOTE]
 >
@@ -156,31 +194,31 @@ När du har valt **[!UICONTROL Unwrap container]** tas den underordnade behålla
 
 ## Sammanfoga profiler
 
-[!DNL Experience Platform] gör att ni kan samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en profil.
+[!DNL Experience Platform] gör att ni kan samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. Sammanslagningsprinciper är reglerna som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en profil.
 
-Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte för den här målgruppen eller använda den standardsammanfogningsprincip som finns i [!DNL Platform]. Du kan skapa flera sammanfogningsprinciper som är unika för din organisation, inklusive skapa en egen standardsammanfogningsprincip. Stegvisa instruktioner om hur du skapar sammanfogningsprinciper för din organisation finns i [översikten över sammanfogningsprinciper](../../profile/merge-policies/overview.md).
+Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte för den här målgruppen eller använda standardprincipen för sammanfogning som tillhandahålls av [!DNL Platform]. Du kan skapa flera sammanfogningsprinciper som är unika för din organisation, inklusive skapa en egen standardsammanfogningsprincip. Om du vill ha stegvisa instruktioner om hur du skapar sammanfogningspolicyer för din organisation börjar du med att läsa [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md).
 
-Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du kugghjulsikonen på fliken **[!UICONTROL Fields]** och använder sedan listrutan **[!UICONTROL Merge Policy]** för att välja den sammanfogningsprincip som du vill använda.
+Välj en kopplingsprincip för segmentdefinitionen genom att klicka på kugghjulsikonen på sidan **[!UICONTROL Fields]** -fliken och sedan använder du **[!UICONTROL Merge Policy]** i listrutan för att välja den sammanfogningsprincip som du vill använda.
 
 ![](../images/ui/segment-builder/merge-policy-selector.png)
 
 ## Segmentegenskaper
 
-När du skapar en segmentdefinition visar avsnittet **[!UICONTROL Segment Properties]** till höger om arbetsytan en uppskattning av storleken på det resulterande segmentet, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
+När du skapar en segmentdefinition visas **[!UICONTROL Segment Properties]** -avsnittet till höger om arbetsytan visar en uppskattning av storleken på det resulterande segmentet, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
-I avsnittet **[!UICONTROL Segment Properties]** kan du även ange viktig information om segmentdefinitionen, inklusive namn och beskrivning. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
+The **[!UICONTROL Segment Properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn och beskrivning. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
-När du fortsätter att skapa segmentdefinitionen kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
+När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
 
 ![](../images/ui/segment-builder/segment-properties.png)
 
 >[!NOTE]
 >
->Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar segmentuppskattningar finns i [uppskattningsgenereringssektionen](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segment.
+>Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar segmentuppskattningar finns i [uppskattningsgenereringsavsnitt](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) av självstudiekursen för att skapa segment.
 
 ## Nästa steg {#next-steps}
 
-Segment Builder har ett omfattande arbetsflöde som gör att du kan isolera marknadsföringsbara målgrupper från [!DNL Real-time Customer Profile]-data. När du har läst den här guiden bör du nu kunna:
+Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isolera marknadsföringsbara målgrupper från [!DNL Real-time Customer Profile] data. När du har läst den här guiden bör du nu kunna:
 
 - Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
 - Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmentreglerna körs.
@@ -188,4 +226,4 @@ Segment Builder har ett omfattande arbetsflöde som gör att du kan isolera mark
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [[!DNL Segmentation Service] användarhandboken](./overview.md) om du vill veta mer om de andra delarna i användargränssnittet[!DNL Segmentation Service]
+Mer information om [!DNL Segmentation Service]kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Mer information om de andra delarna av [!DNL Segmentation Service] Gränssnittet, läs [[!DNL Segmentation Service] användarhandbok](./overview.md)
