@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: 6d1ece1e7920e8c182c84bf8b57bdb6c3f853a60
+source-git-commit: a41efa075d0fff5537eaf055635e346ac5ce677b
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '141'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 - [Översikt över frågetjänsten](home.md)
 - [Snabbstartguide](quickstart.md)
-- Frågetjänstens API {#api}
+- API för frågetjänst {#api}
    - [Komma igång](api/getting-started.md)
    - [Frågor](api/queries.md)
    - [Anslutningsparametrar](api/connection-parameters.md)
@@ -35,6 +35,7 @@ ht-degree: 2%
    - [Exempel på Adobe Analytics-frågor](best-practices/adobe-analytics.md)
    - [Exempel på Adobe Target-frågor](best-practices/adobe-target.md)
    - [Exempel på anonyma blockfrågor](best-practices/anonymous-block.md)
+   - [Inkrementell inläsning](best-practices/incremental-load.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)
