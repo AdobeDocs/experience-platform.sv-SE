@@ -5,9 +5,9 @@ title: (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-A
 description: I den här artikeln beskrivs hela arbetsflödet för aktivering av målgruppssegment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: 96b0a2445eb2fd64ac8291cea6879f88d9f690ec
+source-git-commit: 749fa5dc1e8291382408d9b1a0391c4c7f2b2a46
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1063'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att expor
 
 Tänk på följande skyddsutkast när du använder API:t för ad hoc-aktivering.
 
-* Varje ad hoc-aktiveringsjobb kan aktivera upp till 20 segment. Om du försöker aktivera fler än 20 segment per jobb misslyckas jobbet.
+* För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 20 segment. Om du försöker aktivera fler än 20 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
 * Ad hoc-aktiveringsjobb kan inte köras parallellt med schemalagda [segmentexportjobb](../../segmentation/api/export-jobs.md). Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda segmentexportjobbet har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet.
 * Kör inte mer än ett samtidiga ad hoc-aktiveringsjobb per segment.
 
@@ -126,7 +126,7 @@ När segmentexportjobbet är klart kan du aktivera det.
 
 >[!NOTE]
 >
->Du kan aktivera högst 20 segment per ad hoc-aktiveringsjobb. Om du försöker aktivera fler segment misslyckas jobbet.
+>För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 20 segment. Om du försöker aktivera fler än 20 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
 
 ### Begäran
 
@@ -166,20 +166,21 @@ Ett lyckat svar returnerar HTTP-status 200.
 
 ```shell
 {
-   "code":"DEST-ADH-200",
-   "message":"Adhoc run triggered successfully",
-   "statusURLs":[
-      "https://platform.adobe.io/data/core/activation/flowservice/runs?properties=providerRefId=ADH:segment-id-1",
-      "https://platform.adobe.io/data/core/activation/flowservice/runs?properties=providerRefId=ADH:segment-id-2"
+   "order":[
+      {
+         "segment":"db8961e9-d52f-45bc-b3fb-76d0382a6851",
+         "order":"ef2dcbd6-36fc-49a3-afed-d7b8e8f724eb",
+         "statusURL":"https://platform.adobe.io/data/foundation/flowservice/runs/88d6da63-dc97-460e-b781-fc795a7386d9"
+      }
    ]
 }
 ```
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `code` | API-svarskoden. Ett slutfört samtal returnerar `DEST-ADH-200` (statuskod 200), medan en felaktigt formaterad returnerar `DEST-ADH-400` (statuskod 400). |
-| `message` | Det meddelande om att åtgärden lyckades eller misslyckades som returnerades av API:t. |
-| `statusURLs` | Status-URL för aktiveringsflödet. Du kan följa flödets förlopp med [API för flödestjänst](../../sources/tutorials/api/monitor.md). |
+| `segment` | ID för det aktiverade segmentet. |
+| `order` | ID:t för det mål som segmentet aktiverades till. |
+| `statusURL` | Status-URL för aktiveringsflödet. Du kan följa flödets förlopp med [API för flödestjänst](../../sources/tutorials/api/monitor.md). |
 
 
 ## API-felhantering
