@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 47c4113d45b0101a761fa7d703013609e8729dbb
+source-git-commit: 87b6e12b33c49bdae49be45ce10f92b309a1e98e
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '815'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för licensanvändning i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-En allmän översikt över användargränssnittet för plattformen finns i [användargränssnittsguiden för Experience Platform](../../landing/ui-guide.md).
+En allmän översikt över användargränssnittet för plattformen finns på [Användargränssnittsguide för Experience Platform](../../landing/ui-guide.md).
 
 ## Kontrollpanelsdata för licensanvändning
 
@@ -27,19 +27,19 @@ På kontrollpanelen för licensanvändning visas en ögonblicksbild av din organ
 
 ## Utforska kontrollpanelen för licensanvändning
 
-Om du vill navigera till kontrollpanelen för licensanvändning i plattformsgränssnittet väljer du **[!UICONTROL License usage]** i den vänstra listen. Då öppnas fliken **[!UICONTROL Overview]** med kontrollpanelen.
+Om du vill navigera till kontrollpanelen för licensanvändning i användargränssnittet för plattformen väljer du **[!UICONTROL License usage]** till vänster. Då öppnas **[!UICONTROL Overview]** -fliken som visar kontrollpanelen.
 
 >[!NOTE]
 >
->Kontrollpanelen för licensanvändning är inte aktiverad som standard. Användarna måste beviljas behörigheten &quot;Visa kontrollpanel för licensanvändning&quot; för att kunna visa kontrollpanelen. Anvisningar om hur du beviljar åtkomstbehörigheter för att visa kontrollpanelen för licensanvändning finns i [behörighetsguiden för kontrollpanelen](../permissions.md).
+>Kontrollpanelen för licensanvändning är inte aktiverad som standard. Användarna måste beviljas behörigheten &quot;Visa kontrollpanel för licensanvändning&quot; för att kunna visa kontrollpanelen. Anvisningar om hur du beviljar åtkomstbehörigheter för att visa kontrollpanelen för licensanvändning finns i [behörighetsguide för instrumentpanel](../permissions.md).
 
 ![](../images/license-usage/dashboard-overview.png)
 
 ### Markera en sandlåda
 
-Välj antingen [!UICONTROL Production] eller [!UICONTROL Development] om du vill välja en sandlåda att visa på kontrollpanelen. Den markerade sandlådan indikeras av alternativknappen bredvid namnet på sandlådan.
+Om du vill välja en sandlåda att visa på kontrollpanelen väljer du antingen [!UICONTROL Production] eller [!UICONTROL Development]. Den markerade sandlådan indikeras av alternativknappen bredvid namnet på sandlådan.
 
-Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Om du väljer [!UICONTROL Production] eller [!UICONTROL Development] får du med andra ord förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
+Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. med andra ord, markera [!UICONTROL Production] eller [!UICONTROL Development] innehåller förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
 
 ![](../images/license-usage/select-sandbox.png)
 
@@ -64,7 +64,7 @@ Du kan också välja **[!UICONTROL Custom date]** för att välja den tidsperiod
 
 ## Widgetar
 
-Kontrollpanelen för licensanvändning består av widgetar som visar skrivskyddade mått med viktig information om organisationens licensanvändning. Vilka mätvärden som visas beror på organisationens specifika licensiering (mer information finns i avsnittet [tillgängliga mätvärden](#available-metrics)).
+Kontrollpanelen för licensanvändning består av widgetar som visar skrivskyddade mått med viktig information om organisationens licensanvändning. Vilka mätvärden som visas beror på organisationens specifika licensiering (se [tillgängliga mått](#available-metrics) för mer information).
 
 Varje widget visar en graf som jämför det faktiska antalet för din organisation med det totala antalet som är tillgängligt med din organisations licensiering och som anger en procentandel av den totala användningen.
 
@@ -72,20 +72,12 @@ Varje widget visar en graf som jämför det faktiska antalet för din organisati
 
 ## Tillgängliga mått
 
-Kontrollpanelen för licensanvändning rapporterar fyra viktiga mätvärden, med fler mätvärden som läggs till i efterföljande versioner. Tillgängliga värden visas nedan.
-
->[!NOTE]
->
->Tre av de tillgängliga mätvärdena finns för närvarande i betaversion.
+Kontrollpanelen för licensanvändning rapporterar fyra viktiga mätvärden, med fler mätvärden som läggs till i efterföljande versioner. Tillgängliga mätvärden är:
 
 * [!UICONTROL Addressable Audience]
-* [!UICONTROL Average profile richness] (Beta)
-* [!UICONTROL Data scanned per segmentation ratio] (Beta)
-* [!UICONTROL Total consumed storage] (Beta)
-
->[!WARNING]
->
->Känd begränsning för [!UICONTROL Total consumed storage]-måttet: När du tar bort batchdata placeras batchen i ett läge för mjuk borttagning under en period på 7 dagar för att ge stöd för användningsfall vid dataåterställning. Efter 7 dagar flyttas batchen till ett läge för borttagning. Rapportering om totalt förbrukat lagringsutrymme återspeglar inte någon förändring av trenddiagrammet förrän batchen är i läget för att ta bort papper. Problemet kommer att lösas i en framtida version.
+* [!UICONTROL Average profile richness]
+* [!UICONTROL Data scanned per segmentation ratio]
+* [!UICONTROL Total consumed storage]
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt. Detaljerade definitioner av mätvärdena finns i produktbeskrivningsdokumentationen:
 
@@ -93,7 +85,7 @@ Vilka mätvärden som är tillgängliga och vilken definition som finns för var
 |---|---|
 | <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD STANDARD</li><li>Adobe Experience Platform:OD HEAVY</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
 | <ul><li>Adobe Experience Platform:OD</li></ul> | [Experience Platform, App Services och Intelligent Services](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
-| <ul><li>RT KUNDDATAPLATTFORM:OD</li><li>RT KUNDDATAPLATTFORM:OD PRFL TILL 10 MB</li><li>RT KUNDDATAPLATTFORM:OD PRFL TO 50M</li></ul> | [Kunddataplattform i realtid](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
+| <ul><li>RT KUNDDATAPLATTFORM:OD</li><li>RT KUNDDATAPLATTFORM:OD PRFL TILL 10 MB</li><li>RT KUNDDATAPLATTFORM:OD PRFL TO 50M</li></ul> | [Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
 | <ul><li>AEP:OD-AKTIVERING</li><li>AEP:OD ACTIVATION PRFL TO 10M</li><li>AEP:OD ACTIVATION PRFL UPP TILL 50 MB</li></ul> | [Adobe Experience Platform Activation](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
 | <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 
@@ -105,4 +97,4 @@ Vilka mätvärden som är tillgängliga och vilken definition som finns för var
 
 När du har läst det här dokumentet kan du hitta kontrollpanelen för licensanvändning och välja en sandlåda att visa. Du kan även hitta mer information om tillgängliga mätvärden för din organisation, baserat på den licensiering din organisation har köpt.
 
-Mer information om andra funktioner i användargränssnittet för Experience Platform finns i [användargränssnittshandboken för plattformen](../../landing/ui-guide.md).
+Mer information om andra funktioner i användargränssnittet i Experience Platform finns i [Användargränssnittshandbok för plattformen](../../landing/ui-guide.md).
