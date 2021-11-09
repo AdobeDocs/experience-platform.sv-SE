@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
+source-git-commit: 44644d786842564c76234bacb1f19815741b92ae
 workflow-type: tm+mt
 source-wordcount: '1572'
 ht-degree: 0%
@@ -150,7 +150,7 @@ När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är 
 Följande steg krävs för att exportera målgruppen:
 
 - [Skapa en måldatauppsättning](#create-a-target-dataset) - Skapa datauppsättningen för målgruppsmedlemmar.
-- [Generera målgruppsprofiler i datauppsättningen](#generate-profiles-for-audience-members) - Fyll i datauppsättningen med enskilda XDM-profiler baserat på resultatet av ett segmentjobb.
+- [Generera målgruppsprofiler i datauppsättningen](#generate-profiles) - Fyll i datauppsättningen med enskilda XDM-profiler baserat på resultatet av ett segmentjobb.
 - [Övervaka exportförlopp](#monitor-export-progress) - Kontrollera exportförloppet.
 - [Läs målgruppsdata](#next-steps) - Hämta de resulterande enskilda XDM-profilerna som representerar medlemmarna i din publik.
 
@@ -163,9 +163,9 @@ Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras 
 Det finns två sätt att skapa den nödvändiga datauppsättningen:
 
 - **Använda API:er:** Stegen som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile Union Schema] med [!DNL Catalog] API.
-- **Använda gränssnittet:** Så här använder du [!DNL Adobe Experience Platform] om du vill skapa en datauppsättning som refererar till unionsschemat följer du stegen i [Självstudiekurs om användargränssnitt](../ui/overview.md) och sedan gå tillbaka till den här självstudiekursen för att fortsätta [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
+- **Använda gränssnittet:** Så här använder du [!DNL Adobe Experience Platform] om du vill skapa en datauppsättning som refererar till unionsschemat följer du stegen i [Självstudiekurs om användargränssnitt](../ui/overview.md) och sedan gå tillbaka till den här självstudiekursen för att fortsätta [generera målgruppsprofiler](#generate-profiles).
 
-Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
+Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för [generera målgruppsprofiler](#generate-profiles).
 
 **API-format**
 
