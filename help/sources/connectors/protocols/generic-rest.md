@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Allmän REST API Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter det allmänna REST API:t till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
-source-git-commit: 127c2764b8414ee9b59d49ec04cbbd28269ca496
+source-git-commit: 0c7bb3d6f0a1bc4154bff0e4d79cc4c3c0b0ab71
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '235'
 ht-degree: 0%
 
 ---
@@ -34,10 +34,3 @@ Dokumentationen nedan innehåller information om hur du ansluter en [!DNL Generi
 - [Skapa en allmän REST API-basanslutning med API:t för Flow Service](../../tutorials/api/create/protocols/generic-rest.md)
 - [Utforska datastrukturen och innehållet i en protokollkälla med API:t för Flow Service](../../tutorials/api/explore/protocols.md)
 - [Skapa ett dataflöde för en protokollkälla med API:t för Flow Service](../../tutorials/api/collect/protocols.md)
-
-## Anslut [!DNL Generic REST API] till [!DNL Platform] med användargränssnittet
-
-- [Skapa en allmän REST API-källanslutning i användargränssnittet](../../tutorials/ui/create/protocols/generic-rest.md)
-- [Skapa ett dataflöde för en protokollkällanslutning i användargränssnittet](../../tutorials/ui/dataflow/protocols.md)
-
-

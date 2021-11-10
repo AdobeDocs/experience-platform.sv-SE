@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 0209d7ef1c82915bc11f07518194e3dd68c63de9
+source-git-commit: b6f4c79df79ae20b8051b69ef34dd255df193454
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '454'
 ht-degree: 2%
 
 ---
@@ -57,7 +57,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | [!DNL Amazon S3] källförbättringar | Nu kan du använda `s3SessionToken` för att ansluta [!DNL Amazon S3] konto till plattformen med temporära säkerhetsuppgifter. Med den här variabeln kan du ge kortvarig, tillfällig åtkomst till din [!DNL Amazon S3] för användare i miljöer som inte är betrodda. Se [[!DNL Amazon S3] dokumentation](../../sources/connectors/cloud-storage/s3.md#prerequisites) för mer information. |
-| [!DNL Generic REST API] (Beta) | Nu kan du skapa en [!DNL Generic REST API] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/protocols/generic-rest.md) eller [användargränssnitt](../../sources/tutorials/ui/create/protocols/generic-rest.md) för att hämta data från en generisk REST-applikation till Platform. Se [[!DNL Generic REST API] översikt](../../sources/connectors/protocols/generic-rest.md) för mer information. |
+| [!DNL Generic REST API] (Beta) | Nu kan du skapa en [!DNL Generic REST API] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/protocols/generic-rest.md) för att hämta data från en generisk REST-applikation till Platform. Se [[!DNL Generic REST API] översikt](../../sources/connectors/protocols/generic-rest.md) för mer information. |
 | [!DNL Zoho CRM] (Beta) | Nu kan du skapa en [!DNL Zoho CRM] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/crm/zoho.md) eller [användargränssnitt](../../sources/tutorials/ui/create/crm/zoho.md) för att hämta data från [!DNL Zoho CRM] konto till plattform. Se [[!DNL Zoho CRM] översikt](../../sources/connectors/crm/zoho.md) för mer information. |
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).
