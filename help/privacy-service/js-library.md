@@ -5,9 +5,9 @@ title: Översikt över JavaScript-biblioteket Adobe Privacy
 topic-legacy: overview
 description: Med Adobe Privacy JavaScript Library kan du hämta registrerade identiteter för användning i Privacy Service.
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 7f3a0594147a8cea292263f60aa45dc5ebb8484e
 workflow-type: tm+mt
-source-wordcount: '944'
+source-wordcount: '1012'
 ht-degree: 4%
 
 ---
@@ -46,8 +46,9 @@ Eftersom alla tre funktionerna representerar asynkrona processer måste alla hä
 Börja använda [!DNL Privacy JS Library]måste du installera den på datorn på något av följande sätt:
 
 * Installera med npm genom att köra följande kommando: `npm install @adobe/adobe-privacy`
-* Installera [Tillägget Adobe Privacy Tag](../tags/extensions/web/privacy/overview.md) under namnet `AdobePrivacy`
 * Ladda ned från [Experience Cloud GitHub-databas](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
+
+Du kan också installera biblioteket via ett taggtillägg i användargränssnittet för datainsamling. Se översikten på [Tillägget Adobe Privacy Tag](../tags/extensions/web/privacy/overview.md) för mer information.
 
 ## Instansiera [!DNL Privacy JS Library]
 
@@ -64,7 +65,7 @@ var adobePrivacy = new AdobePrivacy({
 
 En fullständig lista över parametrar som stöds för olika Adobe-lösningar finns i bilagan om vilka som stöds [Konfigurationsparametrar för Adobe-lösningar](#adobe-solution-configuration-parameters).
 
-## Kodexempel
+## Kodexempel {#samples}
 
 I följande kodexempel visas hur du använder [!DNL Privacy JS Library] för flera vanliga scenarier, förutsatt att du inte använder taggar.
 
@@ -176,26 +177,26 @@ Genom att läsa det här dokumentet har du fått en introduktion till de viktiga
 
 Detta avsnitt innehåller ytterligare information om hur du använder [!DNL Privacy JS Library].
 
-### Konfigurationsparametrar för Adobe-lösningar
+### Konfigurationsparametrar för Adobe-lösningar {#config-params}
 
 Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösningar som stöds, som används när [instansiera ett AdobePrivacy-objekt](#instantiate-the-privacy-js-library).
+
+**Alla lösningar**
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `key` | Ett unikt ID som identifierar användaren eller den registrerade. Den här egenskapen är avsedd att användas för dina egna interna spårningssyften och används inte av Adobe. |
 
 **Adobe Analytics**
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `cookieDomainPeriods` | Antalet perioder i en domän för cookie-spårning (standard är 2). |
-| `dataCenter` | Datacenter för datainsamling i Adobe. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. Möjliga värden är: <ul><li>&quot;d1&quot;: San Jose datacenter.</li><li>&quot;d2&quot;: Dallas datacenter.</li></ul> |
-| `reportSuite` | Rapportera Suite-ID enligt inställningarna i JavaScript-webbfyren (till exempel &quot;s_code.js&quot; eller &quot;dtm&quot;). |
-| `trackingServer` | Domän för datainsamling (inte SSL). Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
-| `trackingServerSecure` | Domän för datainsamling (SSL). Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
-| `visitorNamespace` | Namnutrymme som används för att gruppera besökare. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
-
-**Adobe Target**
-
-| Parameter | Beskrivning |
-| --- | --- |
-| `clientCode` | Klientkod som identifierar en klient i Adobe Target System. |
+| `cookieDomainPeriods` | Antalet perioder i en domän som används för att spåra cookies (standardvärdet är `2`, t.ex. `.domain.com`). Definiera det inte här om du inte har angett det i JavaScript-webbfyren. |
+| `dataCenter` | Datacentret för datainsamling i Adobe. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. Möjliga värden är: <ul><li>`d1`: San Jose, datacenter</li><li>`d2`: Dallas datacenter</li></ul> |
+| `reportSuite` | Det Report Suite-ID som anges i JavaScript-webbfyren (till exempel: `s_code.js` eller `dtm`). |
+| `trackingServer` | En domän som inte är SSL-datainsamlingsdomän. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
+| `trackingServerSecure` | En SSL-datainsamlingsdomän. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
+| `visitorNamespace` | Det namnutrymme som används för att gruppera besökare. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
 
 **Adobe Audience Manager**
 
@@ -203,8 +204,14 @@ Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösn
 | --- | --- |
 | `aamUUIDCookieName` | Namnet på cookien som innehåller det unika användar-ID som returnerats från Adobe Audience Manager. |
 
-**Adobe ID Service (ECID)**
+**Adobe Experience Cloud Identity Service (ECID)**
 
 | Parameter | Beskrivning |
 | --- | --- |
 | `imsOrgID` | Ditt IMS-organisations-ID. |
+
+**Adobe Target**
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `clientCode` | Klientkod som identifierar en klient i Adobe Target System. |

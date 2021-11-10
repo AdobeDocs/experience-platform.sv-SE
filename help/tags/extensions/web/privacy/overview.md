@@ -1,10 +1,11 @@
 ---
 title: Översikt över sekretesstillägg för Adobe
 description: Läs mer om taggtillägget Adobe Privacy i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
+source-git-commit: 285e7ff1a1cd6c9790c526ca27ffafc60e94218d
 workflow-type: tm+mt
-source-wordcount: '523'
-ht-degree: 1%
+source-wordcount: '877'
+ht-degree: 0%
 
 ---
 
@@ -12,97 +13,102 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Tillägget för skydd av privatlivet i Adobe innehåller funktioner för att samla in och ta bort användar-ID:n som tilldelats slutanvändare av Adobe-lösningar.
+Med taggtillägget Adobe Privacy kan du samla in och ta bort användar-ID:n som tilldelats slutanvändare av Adobe-lösningar på klientenheter. Insamlade ID:n kan sedan skickas till [Adobe Experience Platform Privacy Service](../../../../privacy-service/home.md) för att få tillgång till eller ta bort den relaterade personens personuppgifter i de Adobe Experience Cloud-program som stöds.
 
-## Konfigurera lösningar under installation
+I den här guiden beskrivs hur du installerar och konfigurerar tillägget Sekretess för Adobe i användargränssnittet för datainsamling.
 
-När du installerar tillägget Sekretess för Adobe från tilläggskatalogen uppmanas du att välja vilka lösningar du vill uppdatera. För närvarande kan du uppdatera följande lösningar:
+>[!NOTE]
+>
+>Om du föredrar att installera de här funktionerna utan att använda taggar finns mer information i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) för steg om hur du implementerar med hjälp av raw-kod.
 
-* Analyser (AA)
-* Audience Manager (AAM)
-* Målgrupp
-* Besökningstjänst
-* AdCloud
-* Välj en eller flera lösningar och välj sedan Uppdatera.
-* När du har valt och konfigurerat dina lösningar väljer du Spara. Sekretesstillägget för Adobe läggs till i listan över installerade tillägg.
+## Installera och konfigurera tillägget
 
-   Alternativen för varje lösning beskrivs nedan.
+I användargränssnittet för datainsamling väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av **[!UICONTROL Catalog]** -fliken. Använd sökfältet för att begränsa listan över tillgängliga tillägg tills du hittar sekretessen för Adobe. Välj **[!UICONTROL Install]** för att fortsätta.
 
-### Analytics 
+![Installera tillägget](../../../images/extensions/privacy/install.png)
 
-![](../../../images/ext-privacy-aa.jpg)
+På nästa skärm kan du konfigurera vilka källor och lösningar du vill att tillägget ska samla in ID:n från. Följande lösningar stöds för tillägget:
 
-Som standard måste du ange en rapportserie genom att ange en sträng eller välja ett dataelement.
+* Adobe Analytics (AA)
+* Adobe Audience Manager (AAM)
+* Adobe Target
+* Adobe Experience Cloud Identity Service (Visitor eller ECID)
+* Adobe Advertising Cloud (AdCloud)
 
-Om du vill konfigurera andra objekt väljer du **[!UICONTROL Choose an Item]**, markerar det objekt som du vill konfigurera, väljer **[!UICONTROL Add]** och anger den begärda parametern eller ett dataelement.
+Välj en eller flera lösningar och välj sedan **[!UICONTROL Update]**.
 
-### Audience Manager
+![Välj lösningar](../../../images/extensions/privacy/select-solutions.png)
 
-![](../../../images/ext-privacy-aam.jpg)
+Skärmen uppdateras och visar indata för de konfigurationsparametrar som krävs baserat på de lösningar som du valt.
 
-Välj **[!UICONTROL Choose an Item]**, markera objektet som du vill konfigurera, markera **[!UICONTROL Add]** och ange den begärda parametern eller ett dataelement. För närvarande kan du bara konfigurera `aamUUIDCookieName`.
+![Obligatoriska egenskaper](../../../images/extensions/privacy/required-properties.png)
 
-### Målgrupp
+Med listrutan nedan kan du även lägga till ytterligare lösningsspecifika parametrar i konfigurationen.
 
-![](../../../images/ext-privacy-target.jpg)
+![Valfria egenskaper](../../../images/extensions/privacy/optional-properties.png)
 
-Ange målklientkoden.
+>[!NOTE]
+>
+>Se avsnittet om [konfigurationsparametrar](../../../../privacy-service/js-library.md#config-params) i översikten över JavaScript-bibliotek för sekretess om du vill ha mer information om vilka konfigurationsvärden som accepteras för varje lösning som stöds.
 
-### Besökningstjänst
+När du har lagt till parametrar för de valda lösningarna väljer du **[!UICONTROL Save]** för att spara konfigurationen.
 
-![](../../../images/ext-privacy-visitor.jpg)
+![Valfria egenskaper](../../../images/extensions/privacy/save-config.png)
 
-Ange ditt IMS-organisations-ID.
+## Använda tillägget {#using}
 
-### AdCloud
+Tillägget för sekretess i Adobe innehåller tre åtgärdstyper som kan användas i en [regel](../../../ui/managing-resources/rules.md) när en viss händelse inträffar och villkoren är uppfyllda:
 
-![](../../../images/ext-privacy-adcloud.jpg)
+* **[!UICONTROL Retrieve Identities]**: Användarens lagrade identitetsinformation hämtas.
+* **[!UICONTROL Remove Identities]**: Användarens lagrade identitetsinformation har tagits bort.
+* **[!UICONTROL Retrieve Then Remove Identities]**: Användarens lagrade identitetsinformation hämtas och tas sedan bort.
 
-Det finns inga specifika parametrar att konfigurera för AdCloud.
+För var och en av ovanstående åtgärder måste du tillhandahålla en återanrops-JavaScript-funktion som godkänner och hanterar de hämtade identitetsdata som en objektparameter. Härifrån kan du lagra dessa identiteter, visa dem eller skicka dem till [Privacy Services-API](../../../../privacy-service/api/overview.md) efter behov.
 
-## Konfigurera sekretesstillägget för Adobe
+När du använder taggtillägget Sekretess för Adobe måste du ange den återanropsfunktion som krävs i form av ett dataelement. Gå till nästa avsnitt för steg om hur du konfigurerar det här dataelementet.
+
+### Definiera ett dataelement som ska hantera identiteter
+
+I användargränssnittet för datainsamling börjar du med att skapa ett nytt dataelement genom att välja **[!UICONTROL Data Elements]** i den vänstra navigeringen, följt av **[!UICONTROL Add Data Element]**. När du är på konfigurationsskärmen väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Custom Code]** för elementtypen data. Här väljer du **[!UICONTROL Open Editor]** i den högra panelen.
+
+![Välj dataelementtyp](../../../images/extensions/privacy/data-element-type.png)
+
+I dialogrutan som visas definierar du en JavaScript-funktion som ska hantera de hämtade identiteterna. Återanropet måste acceptera ett enda argument av objekttyp (`ids` i exemplet nedan). Funktionen kan sedan hantera ID:n hur du vill och kan även anropa variabler och funktioner som är globalt tillgängliga på platsen för vidare bearbetning.
+
+>[!NOTE]
+>
+>Mer information om strukturen för `ids` objektet som callback-funktionen förväntas hantera, se [kodexempel](../../../../privacy-service/js-library.md#samples) finns i översikten för JavaScript-biblioteket för sekretess.
+
+När du är klar väljer du **[!UICONTROL Save]**.
+
+![Definiera återanropsfunktion](../../../images/extensions/privacy/define-custom-code.png)
+
+Du kan fortsätta att skapa andra anpassade kodelement med data om du behöver olika återanrop för olika händelser.
+
+### Skapa en regel med en sekretessåtgärd
+
+När du har konfigurerat ett dataelement för återanrop för att hantera hämtade ID:n, kan du skapa en regel som anropar tillägget för sekretess i Adobe när en viss händelse inträffar på webbplatsen tillsammans med andra villkor som du behöver.
+
+När du konfigurerar åtgärden för regeln väljer du **[!UICONTROL Adobe Privacy]** för tillägget. För åtgärdstypen väljer du ett av [tre funktioner](#using) tillhandahålls av tillägget.
+
+![Välj åtgärdstyp](../../../images/extensions/privacy/action-type.png)
+
+Den högra panelen uppmanar dig att välja ett dataelement som ska fungera som funktionsmakrots återanrop. Välj databasikonen (![Databasikon](../../../images/extensions/privacy/database.png)) och välj det dataelement du skapade tidigare i listan. Välj **[!UICONTROL Keep Changes]** för att fortsätta.
+
+![Markera dataelement](../../../images/extensions/privacy/add-data-element.png)
+
+Härifrån kan du fortsätta att konfigurera regeln så att sekretessåtgärden för Adobe aktiveras under de händelser och villkor som du kräver. När du är nöjd väljer du **[!UICONTROL Save]**.
+
+![Spara regeln](../../../images/extensions/privacy/save-rule.png)
+
+Nu kan du lägga till regeln i ett bibliotek som ska distribueras som en version på din webbplats för testning. Se översikten på [taggar publiceringsflöde](../../../ui/publishing/overview.md) för mer information.
+
+## Inaktivera eller avinstallera tillägget
 
 När du har installerat tillägget kan du inaktivera eller ta bort det. Välj **[!UICONTROL Configure]** på sekretesskortet för Adobe i de installerade tilläggen och välj sedan antingen **[!UICONTROL Disable]** eller **[!UICONTROL Uninstall]**.
 
-## Instruktioner
+## Nästa steg
 
-Följande åtgärder är tillgängliga när du konfigurerar en regel med tillägget Sekretess i Adobe.
-
-### Hämta identiteter
-
-När händelsen och villkoren är uppfyllda hämtar du identitetsinformation som lagras för besökaren.
-
-Ange namnet på den JavaScript-funktion som du vill skicka data till. Den här funktionen eller metoden hanterar de hämtade identiteterna. Oavsett om du lagrar, visar dem eller skickar dem till Adobe GDPR API:t finns det i din kontroll.
-
-### Ta bort identiteter
-
-När händelsen och villkoren är uppfyllda tar du bort identitetsinformation som är lagrad för besökaren.
-
-Ange namnet på den JavaScript-funktion som du vill skicka data till. Den här funktionen eller metoden hanterar de hämtade identiteterna. Oavsett om du lagrar, visar dem eller skickar dem till Adobe GDPR API:t finns det i din kontroll.
-
-### Hämta och ta bort indrag
-
-När händelsen och villkoren är uppfyllda hämtar du identitetsinformation som är lagrad för besökaren och tar sedan bort den.
-
-## Självstudiekurs: Konfigurera sekretesstillägget
-
-Nedan visas ett exempel på hur du ställer in ett dataelement och använder det med tillägget Sekretess.
-
-1. Skapa ett dataelement med namnet `privacyFunc`.
-
-   ```JavaScript
-   window.privacyFunc = function(a,b){
-       console.log(a,b);
-   }
-   return window.privacyFunc
-   ```
-
-1. Skapa en regel som ska köras vid biblioteksladdning (överst på sidan) med en åtgärd från tillägget Sekretess i Adobe.  Välj `privacyFunc` som dataelement.
-
-   * **tillägg:** Adobe sekretess
-   * **Åtgärdstyp:** Hämta identiteter Den här åtgärdstypen visar identiteter som har skapats, tagits bort eller inte tagits bort.
-   * **namn:** Hämta identiteter
-
-1. Uppdatera ditt utvecklingsbibliotek och publicera och testa det sedan.
+I den här handboken beskrivs hur du använder taggtillägget Sekretess i Adobe i användargränssnittet för datainsamling. Mer information om funktionerna i tillägget, inklusive exempel på hur du använder Raw-kod, finns i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) i Privacy Servicens dokumentation.
