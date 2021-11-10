@@ -6,9 +6,9 @@ title: Identifiera insikter med kundens AI
 topic-legacy: Discovering insights
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 63d6ec7d72b448e9d1bf1da96a1f148838d99cec
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1653'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ Det här dokumentet fungerar som en guide för interaktion med Service Instance 
 
 ## Komma igång
 
-För att kunna utnyttja insikter om kundens AI måste du ha en tjänstinstans med status lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Configuring a Customer AI instance](./configure.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+För att kunna utnyttja insikter om kundens AI måste du ha en tjänstinstans med status lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Konfigurera en AI-instans för kund](./configure.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 ## Översikt över tjänstinstans
 
-Klicka på **[!UICONTROL Services]** i det vänstra navigeringsfältet i gränssnittet för [!DNL Adobe Experience Platform]. Webbläsaren *Tjänster* visas och visar tillgängliga intelligenta tjänster. Klicka på **[!UICONTROL Open]** i behållaren för kundens AI.
+I [!DNL Adobe Experience Platform] Gränssnitt, välj **[!UICONTROL Services]** i den vänstra navigeringen. The *Tjänster* webbläsaren visas och visar tillgängliga intelligenta tjänster. Välj **[!UICONTROL Open]**.
 
 ![Åtkomst till din instans](../images/insights/navigate-to-service.png)
 
@@ -41,20 +41,22 @@ Välj ett tjänstinstansnamn som ska börja.
 
 ![Skapa instans](../images/insights/click-the-name.png)
 
-Därefter visas informationssidan för den tjänstinstansen med alternativet att välja **[!UICONTROL Latest scores]** eller **[!UICONTROL Performance summary]**. Standardfliken **[!UICONTROL Latest scores]** innehåller visualiseringar av dina data. Visualiseringarna och vad du kan göra med data beskrivs mer ingående i den här handboken.
+Därefter visas informationssidan för den aktuella tjänstinstansen med alternativet att välja **[!UICONTROL Latest scores]** eller **[!UICONTROL Performance summary]**. Standardfliken **[!UICONTROL Latest scores]** innehåller visualiseringar av dina data. Visualiseringarna och vad du kan göra med data beskrivs mer ingående i den här handboken.
 
-Fliken **[!UICONTROL Performance summary]** visar den faktiska bortfallet eller konverteringsgraden för varje prioritetsbucket. Mer information finns i avsnittet om [resultatsammanfattningsmått](#performance-metrics).
+The **[!UICONTROL Performance summary]** visas de faktiska bortfall- eller konverteringsfrekvenserna för varje prioritetsbucket. Mer information finns i avsnittet om [nyckeltal](#performance-metrics).
 
 ![konfigurationssida](../images/insights/landing_page_insights.png)
 
-### Information om tjänstinstans
+## Information om tjänstinstans
 
 Det finns två sätt att visa tjänstinstansinformation: från kontrollpanelen eller i tjänstinstansen.
 
+### Instrumentpanel för tjänstinstans
+
 Om du vill visa en översikt över tjänstinstansinformationen på kontrollpanelen väljer du en tjänstinstansbehållare och undviker hyperlänken som är kopplad till namnet. Då öppnas en högerrät som innehåller ytterligare information. Kontrollerna innehåller följande:
 
-- **[!UICONTROL Edit]**: Om du väljer  **[!UICONTROL Edit]** det här alternativet kan du ändra en befintlig tjänstinstans. Du kan redigera namn, beskrivning och bedömningsfrekvens för instansen.
-- **[!UICONTROL Clone]**: Om du väljer  **[!UICONTROL Clone]** det här alternativet kopieras den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
+- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive eventuella tidigare körningar.
 - **[!UICONTROL Data source]**: En länk till den datauppsättning som används av den här instansen.
 - **[!UICONTROL Run Frequency]**: Hur ofta en poängsättning äger rum och när.
@@ -64,33 +66,43 @@ Om du vill visa en översikt över tjänstinstansinformationen på kontrollpanel
 
 >[!NOTE]
 >
->Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under **Information om senaste körning** i den högra listen, som bara är synlig för misslyckade körningar.
+>Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under **Information om senaste körning** i den högra listen som bara är synlig för misslyckade körningar.
 
 ![meddelande om misslyckad körning](../images/insights/failed-run.png)
 
-Det andra sättet att visa ytterligare information för en tjänstinstans finns på sidan med insikter. Du kan klicka på **[!UICONTROL Show more]** i det övre högra hörnet för att fylla i en listruta. Detaljer visas, till exempel poängdefinitionen, när den skapades och benägenhetstypen. Mer information om de angivna egenskaperna finns på [Konfigurera en AI-instans](./configure.md).
+### Visa fler insikter i listrutan
+
+Det andra sättet att visa ytterligare information för en tjänstinstans finns på sidan med insikter. Välj **[!UICONTROL Show more]** i det övre högra hörnet för att fylla i en listruta. Detaljer visas, till exempel poängdefinitionen, när den skapades, typ av benägenhet och vilka datamängder som används. Mer information om egenskaperna finns på [Konfigurera en AI-instans för kund](./configure.md).
 
 ![visa mer](../images/insights/landing-show-more.png)
 
-![visa mer](../images/insights/show-more.png)
+### Förhandsgranskning av AI-datauppsättning för kund
+
+Om mer än en datauppsättning används av kundens AI, finns en hyperlänk med etiketten **[!UICONTROL Multiple ]** följt av antalet datauppsättningar inom hakparentes `()` anges.
+
+![flera datauppsättningar](../images/insights/insights-multi-datasets.png)
+
+Om du väljer länken för flera datauppsättningar öppnas förhandsvisningsprogrammet för kundens AI-datauppsättning. Varje färg i förhandsvisningen representerar en datauppsättning som visas av färgnyckeln till vänster om datauppsättningens kolumner. I det här exemplet kan du se att bara **Datauppsättning 1** innehåller `PROP1` kolumn.
+
+![visa mer](../images/insights/dataset-preview.png)
 
 ### Redigera en instans
 
-Om du vill redigera en instans klickar du på **[!UICONTROL Edit]** i navigeringen längst upp till höger.
+Om du vill redigera en instans markerar du **[!UICONTROL Edit]** i den övre högra navigeringen.
 
 ![klicka på redigeringsknappen](../images/insights/edit-button.png)
 
-Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Om du vill bekräfta ändringarna och stänga dialogrutan väljer du **[!UICONTROL Save]** i det nedre högra hörnet.
+Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Bekräfta ändringarna och stäng dialogrutan genom att välja **[!UICONTROL Save]** i det nedre högra hörnet.
 
 ![redigera poesi](../images/insights/edit-instance.png)
 
 ### Fler åtgärder
 
-Knappen **[!UICONTROL More actions]** finns i den övre högra navigeringen bredvid **[!UICONTROL Edit]**. När du klickar på **[!UICONTROL More actions]** öppnas en listruta där du kan välja någon av följande åtgärder:
+The **[!UICONTROL More actions]** knappen finns i den övre högra navigeringen bredvid **[!UICONTROL Edit]**. Markera **[!UICONTROL More actions]** öppnar en listruta där du kan välja någon av följande åtgärder:
 
-- **[!UICONTROL Clone]**: Om du väljer  **[!UICONTROL Clone]** det här alternativet kopieras tjänstinstansens inställning. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar tjänstinstansens konfiguration. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Tar bort instansen.
-- **[!UICONTROL Access scores]**: När du väljer  **[!UICONTROL Access scores]** det här alternativet öppnas en dialogruta med en länk till  [nedladdningspoängen för Customer ](./download-scores.md) AItutorial. Dialogrutan innehåller även det datauppsättnings-ID som krävs för att göra API-anrop.
+- **[!UICONTROL Access scores]**: Markera **[!UICONTROL Access scores]** öppnar en dialogruta med en länk till [ladda ned poäng för kundens AI](./download-scores.md) I självstudiekursen visas även det datauppsättnings-ID som krävs för att göra API-anrop.
 - **[!UICONTROL View run history]**: En dialogruta med en lista över alla poängserier som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](../images/insights/more-actions.png)
@@ -111,7 +123,7 @@ Du kan hovra över en färg i ringen om du vill visa ytterligare information, ti
 
 ## Distribution av bakgrundsmusik
 
-Kortet **[!UICONTROL Distribution of Scores]** ger en visuell sammanfattning av populationen baserat på poängen. Färgerna som visas på [!UICONTROL Distribution of Scores]-kortet representerar den typ av benägenhetspoäng som genereras. Genom att hovra över någon av poängfördelningarna får du det exakta antal som hör till den fördelningen.
+The **[!UICONTROL Distribution of Scores]** ger en synlig sammanfattning av populationen baserat på poängen. Färgerna som visas i [!UICONTROL Distribution of Scores] kort representerar den typ av benägenhetspoäng som genereras. Genom att hovra över någon av poängfördelningarna får du det exakta antal som hör till den fördelningen.
 
 ![fördelning av poäng](../images/insights/distribution-of-scores.png)
 
@@ -135,17 +147,17 @@ Du ser att det är mindre troligt att profiler med låg benägenhet att konverte
 
 ### Skapa ett segment
 
-Om du markerar knappen **[!UICONTROL Create Segment]** i någon av bucketerna för låg, medelhög och hög benägenhet dirigeras du om till segmentbyggaren.
+Markera **[!UICONTROL Create Segment]** i någon av bucketerna för låg, medelstor och hög benägenhet dirigerar om dig till segmentbyggaren.
 
 >[!NOTE]
 >
->Knappen **[!UICONTROL Create Segment]** är bara tillgänglig om kundprofilen i realtid är aktiverad för datauppsättningen. Mer information om hur du aktiverar kundprofilen i realtid finns i [Kundprofilöversikt i realtid](../../../rtcdp/overview.md).
+>The **[!UICONTROL Create Segment]** är bara tillgängligt om kundprofilen i realtid är aktiverad för datauppsättningen. Mer information om hur du aktiverar kundprofilen i realtid finns på [Översikt över kundprofiler i realtid](../../../rtcdp/overview.md).
 
 ![Klicka för att skapa segment](../images/insights/influential-factors-create-segment.png)
 
 ![Skapa ett segment](../images/insights/create-segment.png)
 
-Segmentverktyget används för att definiera ett segment. När du väljer **[!UICONTROL Create Segment]** på Insights-sidan lägger Kund-AI automatiskt till den valda bukettinformationen i segmentet. Slutför segmentskapandet genom att fylla i *Namn* och *Beskrivning*-behållare som finns till höger i segmentbyggarens användargränssnitt. När du har gett segmentet ett namn och en beskrivning klickar du på **[!UICONTROL Save]** i det övre högra hörnet.
+Segmentverktyget används för att definiera ett segment. Vid val **[!UICONTROL Create Segment]** från Insights-sidan lägger Kund-AI automatiskt till den valda bukettinformationen i segmentet. Fyll i **Namn** och **Beskrivning** behållare som finns i den högra listen i användargränssnittet för segmentbyggaren. När du har gett segmentet ett namn och en beskrivning väljer du **[!UICONTROL Save]** i det övre högra hörnet.
 
 >[!NOTE]
 >
@@ -153,13 +165,13 @@ Segmentverktyget används för att definiera ett segment. När du väljer **[!UI
 
 ![Segmentfyllning in](../images/insights/segment-saving.png)
 
-Om du vill visa det nya segmentet i plattformsgränssnittet klickar du på **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan **[!UICONTROL Browse]** visas och visar alla tillgängliga segment.
+Om du vill visa det nya segmentet i användargränssnittet för plattformen väljer du **[!UICONTROL Segments]** i den vänstra navigeringen. The **[!UICONTROL Browse]** visas och alla tillgängliga segment visas.
 
 ![Alla segment](../images/insights/Segments-dashboard.png)
 
 ## Resultatsammanfattningsmått {#performance-metrics}
 
-På fliken **[!UICONTROL Performance summary]** visas de faktiska bortfall- eller konverteringsfrekvenserna, indelade i de olika benägenhetsintervall som anges av kundens AI.
+The **[!UICONTROL Performance summary]** På fliken visas de faktiska bortfall- eller konverteringsfrekvenserna, som är indelade i de olika benägenhetsintervall som kunden har angett som AI.
 
 ![Fliken Prestandasammanfattning](../images/insights/summary_tab.png)
 
@@ -169,21 +181,21 @@ När du hovrar över raderna visas datumet och den faktiska/förväntade frekven
 
 ![Exempel på Bucket](../images/insights/churn_tab.png)
 
-Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikonen** ![ikonen](../images/insights/calendar_icon.png)och välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
+Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikon** ![icon](../images/insights/calendar_icon.png)välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
 
 ![Datumväljare](../images/insights/date_selector.png)
 
 ### Enskilda poängsättningsgrader
 
-I den nedre halvan av fliken **[!UICONTROL Performance summary]** visas resultatet för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
+Den nedre halvan av **[!UICONTROL Performance summary]** visar resultaten för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
 
-Beroende på om du förutser kurvor eller konverteringar visar [!UICONTROL Distribution of Scores]-diagrammet fördelningen av profiler som kurvformas/konverteras och inte kurvformas/inte konverteras i varje steg.
+Beroende på om du förutser bortfall eller konvertering kan [!UICONTROL Distribution of Scores] I diagrammet visas fördelningen av profiler som är kurvformade/konverterade och inte kurvformade/inte konverterade i varje steg.
 
 ![individuell poängsättning](../images/insights/scoring_tab.png)
 
 ## Nästa steg
 
-I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Du kan nu fortsätta med självstudiekursen om [nedladdning av bakgrundsmusik i Customer AI](./download-scores.md) eller gå till de andra [Adobe Intelligent Services](../../home.md)-guiderna som erbjuds.
+I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Nu kan du fortsätta med självstudiekursen på [ladda ned poäng i kundens AI](./download-scores.md) eller bläddra bland andra [Adobe Intelligent Services](../../home.md) stödlinjer som erbjuds.
 
 ## Ytterligare resurser
 

@@ -6,9 +6,9 @@ title: Indata och utdata i kundens AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 6da41552811a458fc6cf66b54fc2e9ed448a859d
 workflow-type: tm+mt
-source-wordcount: '2959'
+source-wordcount: '3042'
 ht-degree: 0%
 
 ---
@@ -21,15 +21,18 @@ I följande dokument beskrivs de olika händelser, indata och utdata som krävs 
 
 Kundens AI fungerar genom att analysera någon av följande datauppsättningar för att förutsäga bortfall eller konverteringsbenägenhetspoäng:
 
+- Adobe Analytics data med [Källanslutning för analyser](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
+- Adobe Audience Manager data med [Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
+- Experience Event-datauppsättning
 - CEE-datauppsättning (Consumer Experience Event)
-- Adobe Analytics-data med [Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
-- Adobe Audience Manager-data med hjälp av [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
+
+Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID. Mer information om hur du lägger till flera datauppsättningar finns på [Användarhandbok för AI](./user-guide/configure.md#select-data)
 
 >[!IMPORTANT]
 >
->Källkopplingar tar upp till fyra veckor att fylla i data baklänges. Om du nyligen har konfigurerat en anslutning bör du verifiera att datauppsättningen har den minsta datalängd som krävs för kundens AI. Granska avsnittet [historiska data](#data-requirements) för att verifiera att du har tillräckligt med data för ditt förutsägelsemål.
+>Källkopplingar tar upp till fyra veckor att fylla i data baklänges. Om du nyligen har konfigurerat en anslutning bör du verifiera att datauppsättningen har den minsta datalängd som krävs för kundens AI. Granska [historiska data](#data-requirements) för att bekräfta att du har tillräckligt med data för ditt förutsägelsemål.
 
-Det här dokumentet kräver en grundläggande förståelse för CEE-schemat. Läs igenom [dokumentationen för förberedelse av intelligenta tjänster](../data-preparation.md) innan du fortsätter.
+Det här dokumentet kräver en grundläggande förståelse för CEE-schemat. Granska [Förberedelse av data för Intelligent Services](../data-preparation.md) dokumentation innan du fortsätter.
 
 I följande tabell beskrivs några vanliga termer som används i det här dokumentet:
 
@@ -38,7 +41,7 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 | [Experience Data Model (XDM)](../../xdm/home.md) | XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av Adobe Experience Platform, kan leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster. |
 | XDM-schema | Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Innan data kan hämtas in till Platform måste ett schema sättas samman för att beskriva datastrukturen och tillhandahålla begränsningar för den typ av data som kan finnas i varje fält. Scheman består av en XDM-basklass och noll eller flera schemafältgrupper. |
 | XDM, klass | Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende. |
-| [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend`-attribut. |
+| [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend` -attribut. |
 | [Datatyp](../../xdm/schema/composition.md) | En komponent som också kan tillhandahålla ett eller flera fält för ett schema. Till skillnad från fältgrupper är datatyperna dock inte begränsade till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser. Datatyperna som beskrivs i det här dokumentet stöds av både CEE- och Adobe Analytics-scheman. |
 | Churn | Ett mått på procentandelen konton som avbryter eller väljer att inte förnya sina prenumerationer. Ett högt bortfall kan ha en negativ inverkan på den månatliga återkommande intäkten och kan också visa på missnöje med en produkt eller tjänst. |
 | [Kundprofil i realtid](../../profile/home.md) | Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform. |
@@ -49,9 +52,9 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 >
 > Kundens AI avgör automatiskt vilka händelser som är användbara för prognoser och visar en varning om tillgängliga data inte räcker för att generera kvalitetsprognoser.
 
-Kund-AI stöder datauppsättningarna CEE, Adobe Analytics och Adobe Audience Manager. CEE-schemat kräver att du lägger till fältgrupper när schemat skapas. Om du använder datauppsättningar från Adobe Analytics eller Adobe Audience Manager mappar källkopplingen direkt standardhändelserna (Commerce, webbsidesinformation, Application och Search) som listas nedan under anslutningsprocessen.
+Kunds-AI har stöd för datauppsättningar från Adobe Analytics, Adobe Audience Manager, Experience Event (EE) och Consumer Experience Event (CEE). CEE-schemat kräver att du lägger till fältgrupper när schemat skapas. Om du använder datauppsättningar från Adobe Analytics eller Adobe Audience Manager mappar källkopplingen direkt standardhändelserna (Commerce, webbsidesinformation, Application och Search) som listas nedan under anslutningsprocessen. Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID.
 
-Mer information om mappning av Adobe Analytics-data eller Audience Manager-data finns i handboken [Analysfältmappningar](../../sources/connectors/adobe-applications/analytics.md) eller [Audience Manager fältmappningar](../../sources/connectors/adobe-applications/mapping/audience-manager.md).
+Mer information om att mappa data från Adobe Analytics eller Audience Manager finns på [Mappningar av analysfält](../../sources/connectors/adobe-applications/analytics.md) eller [Fältkopplingar i Audience Manager](../../sources/connectors/adobe-applications/mapping/audience-manager.md) guide.
 
 ### Standardhändelser som används av kund-AI {#standard-events}
 
@@ -63,9 +66,9 @@ Kundens AI använder olika händelsetyper för att bygga modellfunktioner. Dessa
 >
 >Om du använder data från Adobe Analytics eller Adobe Audience Manager skapas schemat automatiskt med de standardhändelser som behövs för att hämta in data. Om du skapar ett eget anpassat CEE-schema för att hämta in data måste du tänka på vilka fältgrupper som behövs för att hämta in data.
 
-Det är inte nödvändigt att ha data för var och en av de standardhändelser som listas nedan, men vissa händelser krävs för vissa scenarier. Om du har tillgång till någon av standardhändelsedatan rekommenderar vi att du inkluderar den i ditt schema. Om du till exempel vill skapa ett kundens AI-program för att förutsäga inköpshändelser kan det vara bra att ha data från datatyperna `Commerce` och `Web page details`.
+Det är inte nödvändigt att ha data för var och en av de standardhändelser som listas nedan, men vissa händelser krävs för vissa scenarier. Om du har tillgång till någon av standardhändelsedatan rekommenderar vi att du inkluderar den i ditt schema. Om du till exempel vill skapa en AI-app för kunder för att förutsäga köphändelser, kan det vara bra att ha data från `Commerce` och `Web page details` datatyper.
 
-Om du vill visa en fältgrupp i plattformsgränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och sedan klickar du på fliken **[!UICONTROL Field groups]**.
+Om du vill visa en fältgrupp i plattformsgränssnittet väljer du **[!UICONTROL Schemas]** fliken till vänster, följt av att markera **[!UICONTROL Field groups]** -fliken.
 
 | Fältgrupp | Händelsetyp | Sökväg till XDM-fält |
 | --- | --- | --- |
@@ -87,13 +90,13 @@ Om du vill visa en fältgrupp i plattformsgränssnittet väljer du fliken **[!UI
 |  | applicationUpgrades | <li> application.upgrades.value </li> <li> application.name </li> |
 | [!UICONTROL Search Details] | sök | search.keywords |
 
-Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundmodeller. Prenumerationsdata krävs för varje profil som använder datatypen [[!UICONTROL Subscription]](../../xdm/data-types/subscription.md). De flesta fälten är valfria för en optimal omsättningsmodell, men vi rekommenderar att du anger data för så många fält som möjligt, till exempel `startDate`, `endDate` och annan relevant information.
+Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundmodeller. Prenumerationsdata krävs för varje profil som använder [[!UICONTROL Subscription]](../../xdm/data-types/subscription.md) datatypformat. De flesta fälten är valfria, men för en optimal omsättningsmodell rekommenderar vi att du anger data för så många fält som möjligt, till exempel `startDate`, `endDate`och annan relevant information.
 
-### Lägga till anpassade fältgrupper
+### Lägga till anpassade händelser och profilattribut
 
-Om du har ytterligare information vill du inkludera förutom de [standardhändelsefält](#standard-events) som används av kundens AI. Ett alternativ för anpassade händelser anges under din [instanskonfiguration](./user-guide/configure.md#custom-events).
+Om du har information som du vill inkludera förutom [standardhändelsefält](#standard-events) som används av kundens AI, tillhandahålls en anpassad händelse och ett anpassat profilattribut under din [instanskonfiguration](./user-guide/configure.md#custom-events).
 
-Om den datamängd du har valt innehåller anpassade händelser som ett hotell eller en restaurang som har definierats i ditt schema, kan du lägga till dem i din instans. Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
+Om den datamängd som du har valt innehåller anpassade händelser eller profilattribut, t.ex. &quot;hotellbokning&quot; eller &quot;anställd på X-företag&quot; som definieras i ditt schema, kan du lägga till dem i din instans. Dessa ytterligare anpassade händelser och profilattribut används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
 
 ### Historiska data {#data-requirements}
 
@@ -105,7 +108,7 @@ I följande exempel används en enkel formel som hjälper dig att fastställa de
 
 **Formel**:
 
-Minsta längd på de data som krävs = stödberättigande population + resultatfönster
+Minimilängd på data som krävs = stödberättigande population + resultatfönster
 
 >[!NOTE]
 >
@@ -123,7 +126,7 @@ Förutom de minsta data som krävs fungerar kundens AI också bäst med aktuella
 
 ### Exempel på scenarier
 
-I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obligatoriska och rekommenderade händelsetyper. Mer information om fältgruppen och dess fältsökväg finns i [standardhändelsetabellen](#standard-events) ovan.
+I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obligatoriska och rekommenderade händelsetyper. Se [standardhändelsetabell](#standard-events) ovan om du vill ha mer information om fältgruppen och dess fältsökväg.
 
 >[!NOTE]
 >
@@ -131,7 +134,7 @@ I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obl
 
 ### Scenario 1: Köpkonvertering på en e-handelsplats
 
-**Förutsägelsemål:** Förutspå konverteringsbenägenheten för de profiler som är berättigade att köpa en viss artikel med kläder på en webbplats.
+**Förutsägelsemål:** Förutspå konverteringsbenägenheten för de profiler som är berättigade att köpa en viss artikel på en webbplats.
 
 **Nödvändiga standardhändelsetyper:**
 
@@ -145,11 +148,11 @@ De händelsetyper som listas nedan krävs för optimala kunds-AI-utdata med just
 
 **Ytterligare rekommenderade standardhändelsetyper:**
 
-Alla återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål är och vilken population som är berättigad när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
+Någon av de återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål och den berättigade populationen är när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
 
 ### Scenario 2: Prenumerationskonvertering på en webbplats för direktuppspelande media
 
-**Förutsägelsemål:** Förutspå prenumerationskonverteringsbenägenheten för de berättigade profilerna att binda sig till en viss prenumerationsnivå, till exempel en standard- eller premieplan.
+**Förutsägelsemål:** Förutse prenumerationskonverteringsbenägenheten för de berättigade profilerna att binda sig till en viss prenumerationsnivå, till exempel en standard- eller premieplan.
 
 **Nödvändiga standardhändelsetyper:**
 
@@ -161,13 +164,13 @@ De händelsetyper som listas nedan krävs för optimala kunds-AI-utdata med just
 - webVisit
 - sök
 
-I det här exemplet används `order`, `checkouts` och `purchases` för att ange att en prenumeration har köpts och dess typ.
+I det här exemplet `order`, `checkouts`och `purchases` används för att ange att en prenumeration har köpts och dess typ.
 
-För en korrekt modell föreslås dessutom att du använder vissa av de tillgängliga egenskaperna i [prenumerationsdatatypen](../../xdm/data-types/subscription.md).
+För en korrekt modell bör du dessutom använda vissa av de tillgängliga egenskaperna i [prenumerationsdatatyp](../../xdm/data-types/subscription.md).
 
 **Ytterligare rekommenderade standardhändelsetyper:**
 
-Alla återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål är och vilken population som är berättigad när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
+Någon av de återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål och den berättigade populationen är när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
 
 ### Scenario 3: Churn på e-handelns webbplats
 
@@ -185,11 +188,11 @@ De händelsetyper som listas nedan krävs för optimala kunds-AI-utdata med just
 
 **Ytterligare rekommenderade standardhändelsetyper:**
 
-Alla återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål är och vilken population som är berättigad när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
+Någon av de återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål och den berättigade populationen är när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
 
 ### Scenario 4: Merförsäljning på en e-handelsplats
 
-**Förutsägelsemål:** Förutspå inköpsbenägenheten för den population som har köpt en viss produkt för att köpa en ny relaterad produkt.
+**Förutsägelsemål:** Förutse inköpsbenägenheten för den population som har köpt en specifik produkt för att köpa en ny relaterad produkt.
 
 **Nödvändiga standardhändelsetyper:**
 
@@ -203,7 +206,7 @@ De händelsetyper som listas nedan krävs för optimala kunds-AI-utdata med just
 
 **Ytterligare rekommenderade standardhändelsetyper:**
 
-Alla återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål är och vilken population som är berättigad när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
+Någon av de återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål och den berättigade populationen är när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
 
 ### Scenario 5: Avbeställ en onlineanmälan
 
@@ -216,15 +219,15 @@ De händelsetyper som listas nedan krävs för optimala kunds-AI-utdata med just
 - webVisit
 - sök
 
-För en korrekt modell föreslås dessutom att du använder vissa av de tillgängliga egenskaperna i [prenumerationsdatatypen](../../xdm/data-types/subscription.md).
+För en korrekt modell bör du dessutom använda vissa av de tillgängliga egenskaperna i [prenumerationsdatatyp](../../xdm/data-types/subscription.md).
 
 **Ytterligare rekommenderade standardhändelsetyper:**
 
-Alla återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål är och vilken population som är berättigad när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
+Någon av de återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål och den berättigade populationen är när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
 
 ### Scenario 6: Starta mobilprogram
 
-**Förutsägelsemål:** Förutspå benägenheten för berättigade profiler att starta ett betalt mobilprogram inom de kommande X dagarna. Detta liknar prediktion för KPI (Key Performance Indicator) för &quot;Monthly Active Users&quot;.
+**Förutsägelsemål:** Förutspå benägenheten för berättigade profiler att starta en betald mobilapplikation inom de kommande X dagarna. Detta liknar prediktion för KPI (Key Performance Indicator) för &quot;Monthly Active Users&quot;.
 
 **Nödvändiga standardhändelsetyper:**
 
@@ -242,25 +245,25 @@ De händelsetyper som listas nedan krävs för optimala kunds-AI-utdata med just
 - applicationLaunches
 - applicationUpgrades
 
-I det här exemplet används `order`, `checkouts` och `purchases` när ett mobilprogram behöver köpas.
+I det här exemplet `order`, `checkouts`och `purchases` används när ett mobilprogram behöver köpas.
 
 **Ytterligare rekommenderade standardhändelsetyper:**
 
-Alla återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål är och vilken population som är berättigad när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
+Någon av de återstående [händelsetyper](#standard-events) kan behövas baserat på hur komplext ditt mål och den berättigade populationen är när du konfigurerar din kundens AI-instans. Vi rekommenderar att dessa data inkluderas i ditt schema om data är tillgängliga för en viss datatyp.
 
 ### Scenario 7: Realiserade egenskaper (Adobe Audience Manager)
 
-**Mål för förutsägelse:** Förutspå benägenheten för vissa egenskaper som ska realiseras.
+**Förutsägelsemål:** Förutspå benägenheten för vissa egenskaper som ska realiseras.
 
 **Nödvändiga standardhändelsetyper:**
 
-För att kunna använda egenskaper från Adobe Audience Manager måste du skapa en källanslutning med [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). Källkopplingen skapar automatiskt schemat med rätt fältgrupp(er). Du behöver inte lägga till ytterligare händelsetyper manuellt för att schemat ska fungera med kundens AI.
+För att kunna använda egenskaper från Adobe Audience Manager måste du skapa en källanslutning med [Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). Källkopplingen skapar automatiskt schemat med rätt fältgrupp(er). Du behöver inte lägga till ytterligare händelsetyper manuellt för att schemat ska fungera med kundens AI.
 
-När du konfigurerar en ny kund-AI-instans kan `audienceName` och `audienceID` användas för att välja ett visst värde för poängsättningen när du definierar ditt mål.
+När du konfigurerar en ny kund-AI-instans `audienceName` och `audienceID` kan användas för att välja ett visst drag för poängsättningen när du definierar ditt mål.
 
 ## Kundens AI-utdata
 
-Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att använda poängen (utdata) baserat på vad du har etablerat. Om du har en kundprofilaktiverad datauppsättning i realtid kan du ta del av insikter från kundprofilen i realtid i [Segment Builder](../../segmentation/ui/segment-builder.md). Om du inte har någon profilaktiverad datauppsättning kan du [hämta kundens AI-utdata](./user-guide/download-scores.md)-datauppsättning som är tillgänglig i datasjön.
+Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att använda poängen (utdata) baserat på vad du har etablerat. Om du har en kundprofilaktiverad datauppsättning i realtid kan du ta del av insikter från kundprofilen i realtid i [Segment Builder](../../segmentation/ui/segment-builder.md). Om du inte har någon profilaktiverad datauppsättning kan du [ladda ned kundens AI-utdata](./user-guide/download-scores.md) Data som finns tillgängliga på datasjön.
 
 >[!NOTE]
 >
@@ -279,4 +282,4 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 
 ## Nästa steg {#next-steps}
 
-När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa guiden [Konfigurera en kundens AI-instans](./user-guide/configure.md). Den här guiden hjälper dig att skapa en instans för kundens AI.
+När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa följande [Konfigurera en AI-instans för kund](./user-guide/configure.md) guide. Den här guiden hjälper dig att skapa en instans för kundens AI.
