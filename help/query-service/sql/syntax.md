@@ -5,20 +5,20 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 6f697bb249c50e58f9e8a5821fa71f2d4c9a7aac
+source-git-commit: b0cd372589be1db3d7ae571edaac68df9a3c493f
 workflow-type: tm+mt
-source-wordcount: '2154'
+source-wordcount: '2207'
 ht-degree: 1%
 
 ---
 
 # SQL-syntax i Query Service
 
-Med Adobe Experience Platform Query Service kan du använda ANSI SQL av standardtyp för `SELECT`-satser och andra begränsade kommandon. Det här dokumentet innehåller den SQL-syntax som stöds av [!DNL Query Service].
+Adobe Experience Platform Query Service ger möjlighet att använda ANSI SQL av standardtyp för `SELECT` -programsatser och andra begränsade kommandon. Det här dokumentet innehåller SQL-syntaxen som stöds av [!DNL Query Service].
 
 ## SELECT-frågor {#select-queries}
 
-Följande syntax definierar en `SELECT`-fråga som stöds av [!DNL Query Service]:
+Följande syntax definierar en `SELECT` fråga som stöds av [!DNL Query Service]:
 
 ```sql
 [ WITH with_query [, ...] ]
@@ -36,7 +36,7 @@ SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ OFFSET start ]
 ```
 
-där `from_item` kan vara ett av följande alternativ:
+där `from_item` kan vara något av följande:
 
 ```sql
 table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -54,7 +54,7 @@ with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
 ```
 
-och `grouping_element` kan vara något av följande alternativ:
+och `grouping_element` kan vara något av följande:
 
 ```sql
 ( )
@@ -90,7 +90,7 @@ Följande underavsnitt innehåller information om ytterligare satser som du kan 
 
 ### SNAPSHOT-sats
 
-Den här satsen kan användas för att stegvis läsa data i en tabell baserat på ID:n för ögonblicksbilder. Ett ID för en ögonblicksbild är en kontrollpunktsmarkör som representeras av ett Long-typnummer som används på en datarintabell varje gång data skrivs till den. Satsen `SNAPSHOT` kopplar sig till den registerrelation som den används bredvid.
+Den här satsen kan användas för att stegvis läsa data i en tabell baserat på ID:n för ögonblicksbilder. Ett ID för en ögonblicksbild är en kontrollpunktsmarkör som representeras av ett Long-typnummer som används på en datarintabell varje gång data skrivs till den. The `SNAPSHOT` -satsen kopplar sig till den registerrelation som den används bredvid.
 
 ```sql
     [ SNAPSHOT { SINCE start_snapshot_id | AS OF end_snapshot_id | BETWEEN start_snapshot_id AND end_snapshot_id } ]
@@ -114,22 +114,22 @@ SELECT * FROM (SELECT id FROM CUSTOMERS BETWEEN 123 AND 345) C
 SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Customers.id = Inventory.id;
 ```
 
-Observera att en `SNAPSHOT`-sats fungerar med en tabell eller ett tabellalias men inte ovanpå en underfråga eller vy. En `SNAPSHOT`-sats fungerar var som helst där en `SELECT`-fråga för en tabell kan tillämpas.
+Observera att `SNAPSHOT` -satsen fungerar med en tabell eller ett tabellalias men inte ovanpå en underfråga eller vy. A `SNAPSHOT` -satsen fungerar var som helst `SELECT` fråga i en tabell kan tillämpas.
 
-Dessutom kan du använda `HEAD` och `TAIL` som särskilda förskjutningsvärden för ögonblicksbildssatser. Om du använder `HEAD` refereras en förskjutning före den första ögonblicksbilden, medan `TAIL` refererar till en förskjutning efter den sista ögonblicksbilden.
+Dessutom kan du använda `HEAD` och `TAIL` som särskilda förskjutningsvärden för ögonblicksbildssatser. Använda `HEAD` refererar till en förskjutning före den första ögonblicksbilden, medan `TAIL` refererar till en förskjutning efter den sista ögonblicksbilden.
 
 >[!NOTE]
 >
->Om du frågar mellan två ögonblicksbild-ID:n och startögonblicksbilden har gått ut kan följande två scenarier inträffa, beroende på om den valfria reservbeteendeflaggan (`resolve_fallback_snapshot_on_failure`) har ställts in:
+>Om du frågar mellan två ögonblicksbild-ID:n och startögonblicksbilden har gått ut kan följande två scenarier inträffa, beroende på om den valfria reservbeteendeflaggan (`resolve_fallback_snapshot_on_failure`) är inställt:
 >
->- Om den valfria reservbeteendeflaggan är inställd väljer frågetjänsten den tidigaste tillgängliga ögonblicksbilden, anger den som startögonblicksbild och returnerar data mellan den tidigaste tillgängliga ögonblicksbilden och den angivna slutögonblicksbilden. Dessa data är **inklusiv** av den tidigaste tillgängliga ögonblicksbilden.
+>- Om den valfria reservbeteendeflaggan är inställd väljer frågetjänsten den tidigaste tillgängliga ögonblicksbilden, anger den som startögonblicksbild och returnerar data mellan den tidigaste tillgängliga ögonblicksbilden och den angivna slutögonblicksbilden. Dessa data **inkluderande** av den tidigaste tillgängliga ögonblicksbilden.
 >
 >- Om den valfria reservbeteendeflaggan inte är inställd returneras ett fel.
 
 
 ### WHERE-sats
 
-Som standard är matchningar som skapats med en `WHERE`-sats i en `SELECT`-fråga skiftlägeskänsliga. Om du vill att matchningar ska vara skiftlägeskänsliga kan du använda nyckelordet `ILIKE` i stället för `LIKE`.
+Som standard används matchningar som skapats av en `WHERE` -sats på en `SELECT` -frågan är skiftlägeskänslig. Om du vill att matchningar ska vara skiftlägeskänsliga kan du använda nyckelordet `ILIKE` i stället för `LIKE`.
 
 ```sql
     [ WHERE condition { LIKE | ILIKE | NOT LIKE | NOT ILIKE } pattern ]
@@ -155,7 +155,7 @@ Den här frågan returnerar kunder med namn som börjar på A eller a.
 
 ### GÅ MED
 
-En `SELECT`-fråga som använder kopplingar har följande syntax:
+A `SELECT` fråga som använder kopplingar har följande syntax:
 
 ```sql
 SELECT statement
@@ -166,7 +166,7 @@ ON join condition
 
 ### UNION, INTERSECT, and EXCEPT
 
-Satserna `UNION`, `INTERSECT` och `EXCEPT` används för att kombinera eller exkludera liknande rader från två eller flera tabeller:
+The `UNION`, `INTERSECT`och `EXCEPT` -satser används för att kombinera eller exkludera liknande rader från två eller flera tabeller:
 
 ```sql
 SELECT statement 1
@@ -176,7 +176,7 @@ SELECT statement 2
 
 ### SKAPA TABELL SOM MARKERAD
 
-Följande syntax definierar en `CREATE TABLE AS SELECT`-fråga (CTAS):
+Följande syntax definierar en `CREATE TABLE AS SELECT` (CTAS) fråga:
 
 ```sql
 CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
@@ -186,7 +186,7 @@ CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='fal
 
 - `schema`: Titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan.
 - `rowvalidation`: (Valfritt) Anger om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datauppsättningen. Standardvärdet är `true`.
-- `select_query`: En  `SELECT` programsats. Syntaxen för `SELECT`-frågan finns i [SELECT-frågeavsnittet](#select-queries).
+- `select_query`: A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries).
 
 **Exempel**
 
@@ -200,11 +200,11 @@ CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
 
 >[!NOTE]
 >
->Programsatsen `SELECT` måste ha ett alias för de sammanställningsfunktioner som `COUNT`, `SUM`, `MIN` och så vidare. Dessutom kan `SELECT`-satsen anges med eller utan parenteser (). Du kan ange en `SNAPSHOT`-sats för att läsa inkrementella deltas i måltabellen.
+>The `SELECT` -programsats måste ha ett alias för sammanställningsfunktioner som `COUNT`, `SUM`, `MIN`och så vidare. Dessutom finns `SELECT` kan anges med eller utan parenteser (). Du kan ange en `SNAPSHOT` -sats för att läsa inkrementella deltas i måltabellen.
 
 ## INFOGA I
 
-Kommandot `INSERT INTO` definieras så här:
+The `INSERT INTO` kommandot definieras enligt följande:
 
 ```sql
 INSERT INTO table_name select_query
@@ -213,7 +213,7 @@ INSERT INTO table_name select_query
 **Parametrar**
 
 - `table_name`: Namnet på tabellen som du vill infoga frågan i.
-- `select_query`: En  `SELECT` programsats. Syntaxen för `SELECT`-frågan finns i [SELECT-frågeavsnittet](#select-queries).
+- `select_query`: A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries).
 
 **Exempel**
 
@@ -224,11 +224,11 @@ INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 ```
 
 >[!NOTE]
-> `SELECT`-satsen **får inte** omges av parenteser (). Schemat för resultatet av `SELECT`-satsen måste dessutom överensstämma med schemat för tabellen som definieras i `INSERT INTO`-satsen. Du kan ange en `SNAPSHOT`-sats för att läsa inkrementella deltas i måltabellen.
+> The `SELECT` programsats **får inte** omges av parenteser (). Dessutom är schemat för resultatet av `SELECT` -programsatsen måste överensstämma med den tabell som definieras i `INSERT INTO` -programsats. Du kan ange en `SNAPSHOT` -sats för att läsa inkrementella deltas i måltabellen.
 
 ## DROP TABLE
 
-Kommandot `DROP TABLE` släpper en befintlig tabell och tar bort katalogen som är associerad med tabellen från filsystemet om den inte är en extern tabell. Om tabellen inte finns inträffar ett undantag.
+The `DROP TABLE` kommandot släpper en befintlig tabell och tar bort katalogen som är associerad med tabellen från filsystemet om den inte är en extern tabell. Om tabellen inte finns inträffar ett undantag.
 
 ```sql
 DROP TABLE [IF EXISTS] [db_name.]table_name
@@ -236,11 +236,11 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 
 **Parametrar**
 
-- `IF EXISTS`: Om detta anges genereras inget undantag om tabellen inte  **** innehåller någon text.
+- `IF EXISTS`: Om detta anges genereras inget undantag om tabellen gör det **not** finns.
 
 ## DROP DATABASE
 
-Kommandot `DROP DATABASE` släpper en befintlig databas.
+The `DROP DATABASE` kommandot släpper en befintlig databas.
 
 ```sql
 DROP DATABASE [IF EXISTS] db_name
@@ -248,11 +248,11 @@ DROP DATABASE [IF EXISTS] db_name
 
 **Parametrar**
 
-- `IF EXISTS`: Om detta anges genereras inget undantag om databasen inte  **** innehåller någon textinformation.
+- `IF EXISTS`: Om detta anges genereras inget undantag om databasen gör det **not** finns.
 
 ## DROP SCHEMA
 
-Kommandot `DROP SCHEMA` släpper ett befintligt schema.
+The `DROP SCHEMA` kommandot släpper ett befintligt schema.
 
 ```sql
 DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
@@ -260,15 +260,15 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 
 **Parametrar**
 
-- `IF EXISTS`: Om detta anges genereras inget undantag om schemat  **** inte innehåller någon text.
+- `IF EXISTS`: Om detta anges genereras inget undantag om schemat gör det **not** finns.
 
-- `RESTRICT`: Standardvärde för läget. Om detta anges kommer schemat endast att tas bort om det **inte** innehåller några tabeller.
+- `RESTRICT`: Standardvärde för läget. Om detta anges kommer schemat endast att tas bort om det **inte** innehåller alla tabeller.
 
 - `CASCADE`: Om detta anges kommer schemat att tas bort tillsammans med alla tabeller som finns i schemat.
 
 ## SKAPA VY
 
-Följande syntax definierar en `CREATE VIEW`-fråga:
+Följande syntax definierar en `CREATE VIEW` fråga:
 
 ```sql
 CREATE VIEW view_name AS select_query
@@ -277,7 +277,7 @@ CREATE VIEW view_name AS select_query
 **Parametrar**
 
 - `view_name`: Namnet på den vy som ska skapas.
-- `select_query`: En  `SELECT` programsats. Syntaxen för `SELECT`-frågan finns i [SELECT-frågeavsnittet](#select-queries).
+- `select_query`: A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries).
 
 **Exempel**
 
@@ -289,7 +289,7 @@ CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 
 ## DROP VIEW
 
-Följande syntax definierar en `DROP VIEW`-fråga:
+Följande syntax definierar en `DROP VIEW` fråga:
 
 ```sql
 DROP VIEW [IF EXISTS] view_name
@@ -297,7 +297,7 @@ DROP VIEW [IF EXISTS] view_name
 
 **Parameter**
 
-- `IF EXISTS`: Om detta anges genereras inget undantag om vyn  **** inte innehåller någon text.
+- `IF EXISTS`: Om detta anges genereras inget undantag om vyn gör det **not** finns.
 - `view_name`: Namnet på den vy som ska tas bort.
 
 **Exempel**
@@ -307,13 +307,51 @@ DROP VIEW v1
 DROP VIEW IF EXISTS v1
 ```
 
+## Anonymt block
+
+Ett anonymt block består av två avsnitt: körbara avsnitt och avsnitt för undantagshantering. I ett anonymt block är det körbara avsnittet obligatoriskt. Avsnittet om undantagshantering är dock valfritt.
+
+I följande exempel visas hur du skapar ett block med en eller flera programsatser som ska köras tillsammans:
+
+```sql
+BEGIN
+  statementList
+[EXCEPTION exceptionHandler]
+END
+
+exceptionHandler:
+      WHEN OTHER
+      THEN statementList
+
+statementList:
+    : (statement (';')) +
+```
+
+Nedan visas ett exempel med anonym blockering.
+
+```sql
+$$
+BEGIN
+   SET @v_snapshot_from = select parent_id  from (select history_meta('email_tracking_experience_event_dataset') ) tab where is_current;
+   SET @v_snapshot_to = select snapshot_id from (select history_meta('email_tracking_experience_event_dataset') ) tab where is_current;
+   SET @v_log_id = select now();
+   CREATE TABLE tracking_email_id_incrementally
+     AS SELECT _id AS id FROM email_tracking_experience_event_dataset SNAPSHOT BETWEEN @v_snapshot_from AND @v_snapshot_to;
+
+EXCEPTION
+  WHEN OTHER THEN
+    DROP TABLE IF EXISTS tracking_email_id_incrementally;
+    SELECT 'ERROR';
+END$$;
+```
+
 ## [!DNL Spark] SQL-kommandon
 
 Underavsnittet nedan beskriver Spark SQL-kommandon som stöds av Query Service.
 
 ### ANGE
 
-Kommandot `SET` anger en egenskap och returnerar antingen värdet för en befintlig egenskap eller visar alla befintliga egenskaper. Om ett värde anges för en befintlig egenskapsnyckel åsidosätts det gamla värdet.
+The `SET` anger du en egenskap och returnerar värdet för en befintlig egenskap eller visar alla befintliga egenskaper. Om ett värde anges för en befintlig egenskapsnyckel åsidosätts det gamla värdet.
 
 ```sql
 SET property_key = property_value
@@ -332,7 +370,7 @@ Underavsnitten nedan täcker de PostgreSQL-kommandon som stöds av Query Service
 
 ### BÖRJA
 
-Kommandot `BEGIN`, eller alternativt kommandot `BEGIN WORK` eller `BEGIN TRANSACTION`, initierar ett transaktionsblock. Alla programsatser som infogas efter kommandot begin körs i en enda transaktion tills ett explicit COMMIT- eller ROLLBACK-kommando anges. Det här kommandot är samma som `START TRANSACTION`.
+The `BEGIN` eller `BEGIN WORK` eller `BEGIN TRANSACTION` , initierar ett transaktionsblock. Alla programsatser som infogas efter kommandot begin körs i en enda transaktion tills ett explicit COMMIT- eller ROLLBACK-kommando anges. Det här kommandot är detsamma som `START TRANSACTION`.
 
 ```sql
 BEGIN
@@ -342,29 +380,29 @@ BEGIN TRANSACTION
 
 ### STÄNG
 
-Kommandot `CLOSE` frigör resurser som är kopplade till en öppen markör. När markören har stängts tillåts inga efterföljande åtgärder på den. En markör bör stängas när den inte längre behövs.
+The `CLOSE` frigör resurser som är kopplade till en öppen markör. När markören har stängts tillåts inga efterföljande åtgärder på den. En markör bör stängas när den inte längre behövs.
 
 ```sql
 CLOSE name
 CLOSE ALL
 ```
 
-Om `CLOSE name` används representerar `name` namnet på en öppen markör som måste stängas. Om `CLOSE ALL` används stängs alla öppna markörer.
+If `CLOSE name` används, `name` representerar namnet på en öppen markör som måste stängas. If `CLOSE ALL` används stängs alla öppna markörer.
 
 ### DEALOCATE
 
-Med kommandot `DEALLOCATE` kan du frigöra en tidigare förberedd SQL-sats. Om du inte uttryckligen frigör en förberedd sats, frigörs den när sessionen avslutas. Mer information om förberedda satser finns i avsnittet [PREPARE command](#prepare).
+The `DEALLOCATE` kan du frigöra en tidigare förberedd SQL-sats. Om du inte uttryckligen frigör en förberedd sats, frigörs den när sessionen avslutas. Mer information om förberedda satser finns i [FÖRBERED, kommando](#prepare) -avsnitt.
 
 ```sql
 DEALLOCATE name
 DEALLOCATE ALL
 ```
 
-Om `DEALLOCATE name` används representerar `name` namnet på den förberedda satsen som behöver frigöras. Om `DEALLOCATE ALL` används kommer alla förberedda satser att frigöras.
+If `DEALLOCATE name` används, `name` representerar namnet på den förberedda sats som behöver frigöras. If `DEALLOCATE ALL` används kommer alla förberedda utdrag att frigöras.
 
 ### DEKLARERA
 
-Med kommandot `DECLARE` kan en användare skapa en markör som kan användas för att hämta ett litet antal rader från en större fråga. När markören har skapats hämtas rader från den med `FETCH`.
+The `DECLARE` kan användaren skapa en markör som kan användas för att hämta ett litet antal rader från en större fråga. När markören har skapats hämtas rader från den med `FETCH`.
 
 ```sql
 DECLARE name CURSOR FOR query
@@ -373,13 +411,13 @@ DECLARE name CURSOR FOR query
 **Parametrar**
 
 - `name`: Namnet på den markör som ska skapas.
-- `query`: Ett  `SELECT` eller  `VALUES` kommando som innehåller de rader som markören ska returnera.
+- `query`: A `SELECT` eller `VALUES` som anger de rader som markören ska returnera.
 
 ### KÖR
 
-Kommandot `EXECUTE` används för att köra en tidigare förberedd sats. Eftersom förberedda satser bara finns under en session måste den förberedda satsen ha skapats av en `PREPARE`-sats som kördes tidigare i den aktuella sessionen. Mer information om hur du använder förberedda satser finns i avsnittet [`PREPARE` command](#prepare).
+The `EXECUTE` -kommandot används för att köra en tidigare förberedd sats. Eftersom förberedda satser bara finns under en session måste den förberedda satsen ha skapats av en `PREPARE` -programsatsen utfördes tidigare i den aktuella sessionen. Mer information om hur du använder förberedda satser finns i [`PREPARE` kommando](#prepare) -avsnitt.
 
-Om `PREPARE`-satsen som skapade satsen angav vissa parametrar måste en kompatibel uppsättning parametrar skickas till `EXECUTE`-satsen. Om de här parametrarna inte skickas visas ett fel.
+Om `PREPARE` -programsats som skapade programsatsen specificerade vissa parametrar, måste en kompatibel uppsättning parametrar skickas till `EXECUTE` -programsats. Om de här parametrarna inte skickas visas ett fel.
 
 ```sql
 EXECUTE name [ ( parameter ) ]
@@ -392,13 +430,13 @@ EXECUTE name [ ( parameter ) ]
 
 ### FÖRKLARA
 
-Kommandot `EXPLAIN` visar körningsplanen för den angivna programsatsen. Körningsplanen visar hur tabellerna som programsatsen refererar till skannas.  Om flera tabeller refereras visas vilka kopplingsalgoritmer som används för att sammanfoga de rader som krävs från varje indatatabell.
+The `EXPLAIN` -kommandot visar körningsplanen för den angivna programsatsen. Körningsplanen visar hur tabellerna som programsatsen refererar till skannas.  Om flera tabeller refereras visas vilka kopplingsalgoritmer som används för att sammanfoga de rader som krävs från varje indatatabell.
 
 ```sql
 EXPLAIN option statement
 ```
 
-Där `option` kan vara något av:
+Plats `option` kan vara något av:
 
 ```sql
 ANALYZE
@@ -407,17 +445,17 @@ FORMAT { TEXT | JSON }
 
 **Parametrar**
 
-- `ANALYZE`: Om det  `option` finns  `ANALYZE`en lista visas körtider och annan statistik.
-- `FORMAT`: Om filen  `option` innehåller  `FORMAT`anger den utdataformatet, som kan vara  `TEXT` eller  `JSON`. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`.
-- `statement`: Alla  `SELECT`,  `INSERT`,  `UPDATE`,  `DELETE`,  `VALUES`,  `EXECUTE`,  `DECLARE`,  `CREATE TABLE AS` eller  `CREATE MATERIALIZED VIEW AS` programsatser vars körningsplan du vill se.
+- `ANALYZE`: Om `option` innehåller `ANALYZE`, körtider och annan statistik visas.
+- `FORMAT`: Om `option` innehåller `FORMAT`anger det utdataformatet som kan `TEXT` eller `JSON`. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`.
+- `statement`: Alla `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`, eller `CREATE MATERIALIZED VIEW AS` -programsats vars körningsplan du vill se.
 
 >[!IMPORTANT]
 >
->Kom ihåg att satsen faktiskt körs när alternativet `ANALYZE` används. Även om `EXPLAIN` ignorerar utdata som returneras av en `SELECT`, inträffar andra biverkningar av satsen som vanligt.
+>Kom ihåg att programsatsen faktiskt körs när `ANALYZE` används. Fast `EXPLAIN` tar bort alla utdata som `SELECT` andra biverkningar av satsen inträffar som vanligt.
 
 **Exempel**
 
-I följande exempel visas planen för en enkel fråga i en tabell med en enda `integer`-kolumn och 10 000 rader:
+I följande exempel visas planen för en enkel fråga i en tabell med en enda `integer` kolumn och 10000 rader:
 
 ```sql
 EXPLAIN SELECT * FROM foo;
@@ -432,7 +470,7 @@ EXPLAIN SELECT * FROM foo;
 
 ### FETCH
 
-Kommandot `FETCH` hämtar rader med en markör som skapats tidigare.
+The `FETCH` hämtar rader med hjälp av en markör som skapats tidigare.
 
 ```sql
 FETCH num_of_rows [ IN | FROM ] cursor_name
@@ -445,7 +483,7 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 
 ### FÖRBEREDA {#prepare}
 
-Med kommandot `PREPARE` kan du skapa en förberedd programsats. En förberedd programsats är ett objekt på serversidan som kan användas för att mallatisera liknande SQL-programsatser.
+The `PREPARE` kan du skapa en förberedd programsats. En förberedd programsats är ett objekt på serversidan som kan användas för att mallatisera liknande SQL-programsatser.
 
 Förberedda programsatser kan innehålla parametrar, som är värden som ersätts med programsatsen när den körs. Parametrar refereras efter position, med $1, $2 osv., när förberedda satser används.
 
@@ -462,7 +500,7 @@ PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 
 ### ROLLBACK
 
-Kommandot `ROLLBACK` ångrar den aktuella transaktionen och tar bort alla uppdateringar som gjorts av transaktionen.
+The `ROLLBACK` kommandot ångrar den aktuella transaktionen och tar bort alla uppdateringar som gjorts av transaktionen.
 
 ```sql
 ROLLBACK
@@ -471,7 +509,7 @@ ROLLBACK WORK
 
 ### MARKERA I
 
-Kommandot `SELECT INTO` skapar en ny tabell och fyller den med data som beräknas av en fråga. Data returneras inte till klienten, vilket är fallet med ett vanligt `SELECT`-kommando. Den nya tabellens kolumner har de namn och datatyper som är associerade med utdatakolumnerna för kommandot `SELECT`.
+The `SELECT INTO` skapar en ny tabell och fyller den med data som beräknas av en fråga. Data returneras inte till klienten, vilket är fallet med en normal `SELECT` -kommando. Den nya tabellens kolumner har de namn och datatyper som är associerade med utdatakolumnerna för `SELECT` -kommando.
 
 ```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -493,15 +531,15 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 **Parametrar**
 
-Mer information om SELECT-frågeparametrarna finns i [SELECT query section](#select-queries). I det här avsnittet visas endast parametrar som är exklusiva för kommandot `SELECT INTO`.
+Mer information om SELECT-standardfrågeparametrarna finns i [SELECT-frågesektion](#select-queries). I det här avsnittet listas endast parametrar som är exklusiva för `SELECT INTO` -kommando.
 
-- `TEMPORARY` eller  `TEMP`: En valfri parameter. Om det anges blir det register som skapas ett temporärt register.
-- `UNLOGGED`: En valfri parameter. Om det anges kommer tabellen som skapas att vara en ologgad tabell. Mer information om ologgade tabeller finns i [PostgreSQL-dokumentationen](https://www.postgresql.org/docs/current/sql-createtable.html).
+- `TEMPORARY` eller `TEMP`: En valfri parameter. Om det anges blir det register som skapas ett temporärt register.
+- `UNLOGGED`: En valfri parameter. Om det anges kommer tabellen som skapas att vara en ologgad tabell. Mer information om ologgade tabeller finns i [PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/sql-createtable.html).
 - `new_table`: Namnet på tabellen som ska skapas.
 
 **Exempel**
 
-Följande fråga skapar en ny tabell `films_recent` som endast består av de senaste posterna från tabellen `films`:
+Följande fråga skapar en ny tabell `films_recent` bestående av endast de senaste posterna från tabellen `films`:
 
 ```sql
 SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
@@ -509,7 +547,7 @@ SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 
 ### VISA
 
-Kommandot `SHOW` visar den aktuella inställningen för körningsparametrar. Dessa variabler kan ställas in med programsatsen `SET` genom att redigera konfigurationsfilen `postgresql.conf`, via miljövariabeln `PGOPTIONS` (när du använder libpq eller ett libpq-baserat program) eller via kommandoradsflaggor när Postgres-servern startas.
+The `SHOW` -kommandot visar den aktuella inställningen för körningsparametrar. Dessa variabler kan ställas in med `SET` genom att redigera `postgresql.conf` konfigurationsfil via `PGOPTIONS` miljövariabel (när libpq används eller ett libpq-baserat program) eller via kommandoradsflaggor när Postgres-servern startas.
 
 ```sql
 SHOW name
@@ -528,7 +566,7 @@ SHOW ALL
 
 **Exempel**
 
-Följande fråga visar den aktuella inställningen för parametern `DateStyle`.
+Följande fråga visar parameterns aktuella inställning `DateStyle`.
 
 ```sql
 SHOW DateStyle;
@@ -543,7 +581,7 @@ SHOW DateStyle;
 
 ### COPY
 
-Kommandot `COPY` dumpar utdata från en `SELECT`-fråga till en angiven plats. Användaren måste ha åtkomst till den här platsen för att det här kommandot ska lyckas.
+The `COPY` kommandot dumpar utdata från alla `SELECT` fråga till en angiven plats. Användaren måste ha åtkomst till den här platsen för att det här kommandot ska lyckas.
 
 ```sql
 COPY query
@@ -554,15 +592,15 @@ COPY query
 **Parametrar**
 
 - `query`: Frågan som du vill kopiera.
-- `format_name`: Det format som du vill kopiera frågan i. `format_name` kan vara en av `parquet`, `csv` eller `json`. Som standard är värdet `parquet`.
+- `format_name`: Det format som du vill kopiera frågan i. The `format_name` kan vara en av `parquet`, `csv`, eller `json`. Som standard är värdet `parquet`.
 
 >[!NOTE]
 >
->Den fullständiga utdatasökvägen är `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
+>Den fullständiga utdatasökvägen `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
 
 ### ALTER TABLE
 
-Med kommandot `ALTER TABLE` kan du lägga till eller ta bort primära eller externa nyckelbegränsningar samt lägga till kolumner i tabellen.
+The `ALTER TABLE` kan du lägga till eller ta bort begränsningar för primär eller extern nyckel samt lägga till kolumner i tabellen.
 
 #### LÄGG TILL ELLER SLÄPP BEGRÄNSNINGAR
 
@@ -610,7 +648,7 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 
 ### VISA PRIMÄRNYCKLAR
 
-Kommandot `SHOW PRIMARY KEYS` visar alla primärnyckelbegränsningar för den angivna databasen.
+The `SHOW PRIMARY KEYS` -kommandot listar alla primärnyckelbegränsningar för den angivna databasen.
 
 ```sql
 SHOW PRIMARY KEYS
@@ -625,7 +663,7 @@ SHOW PRIMARY KEYS
 
 ### VISA FRÄMSTA TANGENTER
 
-Kommandot `SHOW FOREIGN KEYS` visar alla begränsningar för främmande nycklar för den angivna databasen.
+The `SHOW FOREIGN KEYS` -kommandot listar alla begränsningar för främmande nycklar för den angivna databasen.
 
 ```sql
 SHOW FOREIGN KEYS
