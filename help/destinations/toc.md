@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 8cac961e1566c48bacc0ec2ab3414132f81232e2
+source-git-commit: 3e2382cf4b02ea4fd40e3638b52b4719938a2ea2
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '668'
 ht-degree: 1%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 1%
    * [ (Alfa) HTTP-anslutning](./catalog/http-destination.md)
    * Adobe destinationer{#adobe}
       * [Översikt över destinationer i Adobe](./catalog/adobe/overview.md)
-      * [(Beta) Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
+      * [Marketo Engage](./catalog/adobe/marketo-engage.md)
       * [Experience Platform segmentdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * Annonsmål{#advertising}
       * [Översikt över reklamdestinationer](./catalog/advertising/overview.md)
@@ -144,11 +144,11 @@ ht-degree: 1%
       * [Anropa taggtillägg](./catalog/voice/invoca.md)
       * [Medietillägg](./catalog/voice/medallia.md)
       * [Tillägg för URL-inkorg](./catalog/voice/talkurl.md)
-* Mål-SDK {#destination-sdk}
+* Destination SDK {#destination-sdk}
    * [Översikt](./destination-sdk/overview.md)
    * [Krav för integrering](./destination-sdk/integration-prerequisites.md)
    * [Komma igång](./destination-sdk/getting-started.md)
-   * SDK-målfunktion {#functionality}
+   * Destination SDK {#functionality}
       * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
       * [Målkonfiguration](./destination-sdk/destination-configuration.md)
       * [Server- och mallspecifikationer](./destination-sdk/server-and-template-configuration.md)
@@ -161,7 +161,7 @@ ht-degree: 1%
          * [Skapa och testa en meddelandeomformningsmall](./destination-sdk/create-template.md)
          * [Testa målkonfigurationen](./destination-sdk/test-destination.md)
    * API-åtgärder {#api}
-      * [API-referens för mål-SDK (Destination Authoring)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * [API-referens för Destination SDK (målredigering)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * [API-åtgärder för destinationsslutpunkt](./destination-sdk/destination-configuration-api.md)
       * [API-åtgärder för målserverns slutpunkt](./destination-sdk/destination-server-api.md)
       * [API-åtgärder för målgruppsmetadata](./destination-sdk/audience-metadata-api.md)
@@ -173,7 +173,7 @@ ht-degree: 1%
          * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
          * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
    * Stödlinjer {#guides}
-      * [Använd mål-SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/configure-destination-instructions.md)
+      * [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/configure-destination-instructions.md)
    * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
       * [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
