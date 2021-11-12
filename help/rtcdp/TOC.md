@@ -4,9 +4,9 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: Real-time Customer Data Platform Guide
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: d5c05d4ada15a9c6a2d8afbaa6cd5675a8271e25
+source-git-commit: dfdcfe8d9110195c7e88fbb5a644321c9c3dbee4
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '182'
 ht-degree: 7%
 
 ---
@@ -57,4 +57,5 @@ ht-degree: 7%
    * [Översikt över källor](sources/sources-overview.md)
    * [Källor i realtid CDP B2B Edition](sources/b2b.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation om CDP B2B Edition i realtid](./b2b-release-notes.md)
 * [Experience Platform - ordlista](https://www.adobe.com/go/platform-glossary-en)
