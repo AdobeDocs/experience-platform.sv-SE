@@ -5,9 +5,9 @@ title: Salesforce Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 759f38bac9b59fe32594dff771617ba8eaabae41
+source-git-commit: bd3d3a83c030baaecccba2b1793b49ad8a6caa08
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -16,88 +16,84 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-providers är [!DNL Salesforce].
+Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-leverantörer innefattar [!DNL Salesforce].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
 
-<!--
-## Field mapping from [!DNL Salesforce] to XDM
+## Fältmappning från [!DNL Salesforce] till XDM
 
-To establish a source connection between [!DNL Salesforce] and Platform, the [!DNL Salesforce] source data fields must be mapped to their appropriate target XDM fields prior to being ingested into Platform.
+Så här upprättar du en källanslutning mellan [!DNL Salesforce] och Platform [!DNL Salesforce] källdatafält måste mappas till rätt mål-XDM-fält innan de kan hämtas till Platform.
 
-See the following for detailed information on the field mapping rules between [!DNL Salesforce] datasets and Platform:
+Mer information om fältmappningsreglerna mellan [!DNL Salesforce] datauppsättningar och plattform:
 
-- [Contacts](../adobe-applications/mapping/salesforce.md#contact)
+- [Kontakter](../adobe-applications/mapping/salesforce.md#contact)
 - [Leads](../adobe-applications/mapping/salesforce.md#lead)
-- [Accounts](../adobe-applications/mapping/salesforce.md#account)
-- [Opportunities](../adobe-applications/mapping/salesforce.md#opportunity)
-- [Opportunity contact roles](../adobe-applications/mapping/salesforce.md#opportunity-contact-role)
-- [Campaigns](../adobe-applications/mapping/salesforce.md#campaign)
-- [Campaign members](../adobe-applications/mapping/salesforce.md#campaign-member)
+- [Konton](../adobe-applications/mapping/salesforce.md#account)
+- [Möjligheter](../adobe-applications/mapping/salesforce.md#opportunity)
+- [Kontaktroller för affärsmöjlighet](../adobe-applications/mapping/salesforce.md#opportunity-contact-role)
+- [Kampanjer](../adobe-applications/mapping/salesforce.md#campaign)
+- [Kampanjmedlemmar](../adobe-applications/mapping/salesforce.md#campaign-member)
 
-## Set up the [!DNL Salesforce] namespace and schema auto-generation utility
+## Konfigurera [!DNL Salesforce] program för automatisk generering av namnutrymme och schema
 
-To use the [!DNL Salesforce] source as part of [!DNL B2B-CDP], you must first set up a [!DNL Postman] utility to auto-generate your [!DNL Salesforce] namespaces and schemas. The following documentation provides additonal information on setting up the [!DNL Postman] utility:
+Så här använder du [!DNL Salesforce] källa som en del av [!DNL B2B-CDP]måste du först konfigurera en [!DNL Postman] för att automatiskt generera [!DNL Salesforce] namnutrymmen och scheman. Följande dokumentation innehåller ytterligare information om hur du konfigurerar [!DNL Postman] utility:
 
-- You can download the namespace and schema auto-generation utility collection and environment from this [GitHub repository](https://git.corp.adobe.com/marketo-engineering/namespace_schema_utility).
-- For information on using Platform APIs including details on how to gather values for required headers and read sample API calls, see the guide on [getting started with Platform APIs](../../../landing/api-guide.md).
-- For information on how to generate your credentials for Platform APIs, see the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md).
-- For information on how to set up [!DNL Postman] for Platform APIs, see the tutorial on [setting up developer console and [!DNL Postman]](../../../landing/postman.md).
+- Du kan hämta samlingen och miljön för automatisk generering av namnutrymme och scheman från den här [GitHub-databas](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility).
+- Mer information om hur du använder Platform API:er, inklusive information om hur du samlar in värden för obligatoriska huvuden och läser exempel-API-anrop, finns i handboken på [komma igång med plattforms-API:er](../../../landing/api-guide.md).
+- Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md).
+- Mer information om hur du konfigurerar [!DNL Postman] för plattforms-API:er, se självstudiekursen om [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md).
 
-With a Platform developer console and [!DNL Postman] set up, you can now start applying the appropriate environment values to your [!DNL Postman] environment.
+Med en plattformsutvecklarkonsol och [!DNL Postman] kan du nu börja använda rätt miljövärden i [!DNL Postman] miljö.
 
-The following table contains example values as well as additional information on populating your [!DNL Postman] environment:
+Följande tabell innehåller exempelvärden samt ytterligare information om hur du fyller i [!DNL Postman] miljö:
 
-| Variable | Description | Example |
+| Variabel | Beskrivning | Exempel |
 | --- | --- | --- |
-| `CLIENT_SECRET` | A unique identifier used to generate your `{ACCESS_TOKEN}`. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to retrieve your `{CLIENT_SECRET}`. | `{CLIENT_SECRET}` |
-| `JWT_TOKEN` | The JSON Web Token (JWT) is an authentication credential used to generate your {ACCESS_TOKEN}. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to generate your `{JWT_TOKEN}`. | `{JWT_TOKEN}` |
-| `API_KEY` | A unique identifier used to authenticate calls to Experience Platform APIs. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to retrieve your `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
-| `ACCESS_TOKEN` | The authorization token required to complete calls to Experience Platform APIs. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to retrieve your `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
-| `META_SCOPE` | With regards to [!DNL Marketo], this value is fixed and is alway set to: `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
-| `CONTAINER_ID` | The `global` container holds all standard Adobe and Experience Platform partner provided classes, schema field groups, data types, and schemas. With regards to [!DNL Marketo], this value is fixed and is always set to `global`. | `global` |
-| `PRIVATE_KEY` | A credential used to authenticate your [!DNL Postman] instance to Experience Platform APIs. See the tutorial on setting up developer console and [setting up developer console and [!DNL Postman]](../../../landing/postman.md) for instructions on how to retrieve your {PRIVATE_KEY}. | `{PRIVATE_KEY}` |
-| `TECHNICAL_ACCOUNT_ID` | A credential used to integrate to Adobe I/O. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
-| `IMS` | The Identity Management System (IMS) provides the framework for authentication to Adobe services. With regards to [!DNL Marketo], this value is fixed and is always set to: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
-| `IMS_ORG` | A corporate entity that can own or license products and services and allow access to its members. See the tutorial on [setting up developer console and [!DNL Postman]](../../../landing/postman.md) for instructions on how to retrieve your `{IMS_ORG}` information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
-| `SANDBOX_NAME` | The name of the virtual sandbox partition that you are using. | `prod` |
-| `TENANT_ID` | An ID used to ensure that the resources you create are namespaced properly and are contained within your IMS Organization. | `b2bcdpproductiontest` |
-| `PLATFORM_URL` | The URL endpoint that you are making API calls to. This value is fixed and is always set to: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
-| `munchkinId` | The unique ID for your [!DNL Marketo] account. See the tutorial on [authenticating your [!DNL Marketo] instance](../adobe-applications/marketo/marketo-auth.md) for information on how to retrieve your `munchkinId`. | `123-ABC-456` |
-| `sfdc_org_id` | The organization ID for your [!DNL Salesforce] account. See the following [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&type=1&mode=1) for more information on acquiring your [!DNL Salesforce] organization ID. | `00D4W000000FgYJUA0` |
-`f6438fab-67e8-4814-a6b5-8c8dcdf7a98f` |
-| `has_abm` | A boolean value that indicates if you are subscribed to [!DNL Marketo Account-Based Marketing]. | `false` |
-| `has_msi` | A boolean value that indicates if you are subcscribed to [!DNL Marketo Sales Insight]. | `false` |
+| `CLIENT_SECRET` | En unik identifierare som används för att generera `{ACCESS_TOKEN}`. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) om du vill ha information om hur du hämtar `{CLIENT_SECRET}`. | `{CLIENT_SECRET}` |
+| `JWT_TOKEN` | JSON Web Token (JWT) är en autentiseringsuppgift som används för att generera {ACCESS_TOKEN}. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) för information om hur du genererar `{JWT_TOKEN}`. | `{JWT_TOKEN}` |
+| `API_KEY` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) om du vill ha information om hur du hämtar `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `ACCESS_TOKEN` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) om du vill ha information om hur du hämtar `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
+| `META_SCOPE` | Med avseende på [!DNL Marketo]är det här värdet fast och alltid inställt på: `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
+| `CONTAINER_ID` | The `global` behållaren innehåller alla klasser som tillhandahålls av Adobe och Experience Platform partner, schemafältgrupper, datatyper och scheman. Med avseende på [!DNL Marketo], det här värdet är fast och alltid inställt på `global`. | `global` |
+| `PRIVATE_KEY` | En autentiseringsuppgift som används för att autentisera [!DNL Postman] -instans till Experience Platform API:er. Se självstudiekursen om hur du konfigurerar utvecklarkonsolen och [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md) för instruktioner om hur du hämtar din {PRIVATE_KEY}. | `{PRIVATE_KEY}` |
+| `TECHNICAL_ACCOUNT_ID` | En autentiseringsuppgift som används för att integrera med Adobe I/O. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
+| `IMS` | Identity Management System (IMS) utgör ramverket för autentisering till Adobes tjänster. Med avseende på [!DNL Marketo], är det här värdet fast och ställs alltid in på: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
+| `IMS_ORG` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen om [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md) för instruktioner om hur du hämtar `{IMS_ORG}` information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `SANDBOX_NAME` | Namnet på den virtuella sandlådepartition som du använder. | `prod` |
+| `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i IMS-organisationen. | `b2bcdpproductiontest` |
+| `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Detta värde är fast och ställs alltid in på: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
+| `munchkinId` | Unikt ID för din [!DNL Marketo] konto. Se självstudiekursen om [autentisera [!DNL Marketo] instance](../adobe-applications/marketo/marketo-auth.md) om du vill ha information om hur du hämtar `munchkinId`. | `123-ABC-456` |
+| `sfdc_org_id` | Organisations-ID för din [!DNL Salesforce] konto. Se följande [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1) om du vill ha mer information om hur du skaffar [!DNL Salesforce] organisations-ID. | `00D4W000000FgYJUA0` |
+| `has_abm` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Account-Based Marketing]. | `false` |
+| `has_msi` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Sales Insight]. | `false` |
 
-{style="table-layout:auto"}
+{style=&quot;table-layout:auto&quot;}
 
-### Running the scripts
+### Köra skript
 
-With your [!DNL Postman] collection and environment set up, you can now run the script through the [!DNL Postman] interface.
+Med [!DNL Postman] samling och miljö kan du nu köra skriptet via [!DNL Postman] gränssnitt.
 
-In the [!DNL Postman] interface, select the root folder of the auto-generator utility and then select **[!DNL Run]** from the top header.
+I [!DNL Postman] väljer du rotmappen för verktyget för autogenerering och sedan väljer du **[!DNL Run]** i det övre sidhuvudet.
 
 ![root-folder](../../images/tutorials/create/salesforce/root-folder.png)
 
-The [!DNL Runner] interface appears. From here, ensure that all the checkboxes are selected and then select **[!DNL Run Namespaces and Schemas Autogeneration Utility]**.
+The [!DNL Runner] -gränssnittet visas. Se till att alla kryssrutor är markerade och markera sedan **[!DNL Run Namespaces and Schemas Autogeneration Utility]**.
 
 ![run-generator](../../images/tutorials/create/salesforce/run-generator.png)
 
-A successful request creates the B2B namespaces and schemas according to beta specifications.
+En lyckad begäran skapar B2B-namnutrymmen och scheman enligt betaspecifikationerna.
 
--->
+## Anslut [!DNL Salesforce] till plattform med API:er
 
-## Anslut [!DNL Salesforce] till plattformen med API:er
-
-Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till Plattform med API:er eller användargränssnittet:
 
 - [Skapa en Salesforce-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/salesforce.md)
 - [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
-## Anslut [!DNL Salesforce] till plattformen med användargränssnittet
+## Anslut [!DNL Salesforce] till plattform med användargränssnittet
 
 - [Skapa en Salesforce-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/salesforce.md)
 - [Skapa ett dataflöde för en CRM-anslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)

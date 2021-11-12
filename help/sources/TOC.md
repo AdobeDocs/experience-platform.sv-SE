@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 0c7bb3d6f0a1bc4154bff0e4d79cc4c3c0b0ab71
+source-git-commit: 92b2dc869a659a030e1f13c83a0c5e3d707685c6
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '661'
 ht-degree: 5%
 
 ---
@@ -26,6 +26,7 @@ ht-degree: 5%
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
          - [Fältkopplingar i Marketo Engage](connectors/adobe-applications/mapping/marketo.md)
+         - [Salesforce-fältmappningar](connectors/adobe-applications/mapping/salesforce.md)
       - Marketo {#marketo}
          - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)

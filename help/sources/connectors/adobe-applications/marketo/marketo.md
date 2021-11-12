@@ -5,18 +5,14 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: a36a4775c14e97df51f218cea3a083d29c7b69dc
+source-git-commit: 21617c6ec364fc05d7b8b6d00daa68608d1ed318
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '529'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Marketo Engage] koppling
-
->[!IMPORTANT]
->
->The [!DNL Marketo Engage] i Adobe Experience Platform är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
+# [!DNL Marketo Engage] koppling
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
