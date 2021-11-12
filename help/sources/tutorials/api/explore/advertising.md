@@ -5,34 +5,35 @@ title: Utforska ett annonssystem med API:t för Flow Service
 topic-legacy: overview
 description: Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från. I den här självstudien används API:t för Flow Service för att utforska annonssystem.
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 9938b0bb939dc7bab9d8e02bd58735360fc883fa
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 1%
 
 ---
 
-# Utforska ett annonssystem med API:t [!DNL Flow Service]
+# Utforska ett annonssystem med [!DNL Flow Service] API
 
 När du har skapat en basanslutning kan du nu använda det unika basanslutnings-ID:t för att navigera och utforska källans datastruktur och innehåll. På så sätt kan du identifiera specifika objekt och deras respektive datatyper och format innan du skapar ett dataflöde och överför dem till Adobe Experience Platform.
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) för att utforska annonssystem.
+I den här självstudiekursen används [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) att utforska annonssystem.
 
 ## Komma igång
 
 >[!IMPORTANT]
-Den här självstudiekursen kräver att du har det unika ID:t för din annonskälla. Om du inte har det här ID:t kan du titta i självstudiekursen [Koppla en annonskälla till Platform](../../api/create/advertising/ads.md).
+>
+>Den här självstudiekursen kräver att du har det unika ID:t för din annonskälla. Om du inte har detta ID kan du se självstudiekursen om [koppla en annonskälla till plattformen](../../api/create/advertising/ads.md) självstudiekurs.
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett annonssystem med API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till ett annonssystem med [!DNL Flow Service] API.
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../landing/api-guide.md).
 
 ## Utforska era datatabeller
 
@@ -61,7 +62,7 @@ curl -X GET \
 
 **Svar**
 
-Ett framgångsrikt svar är en rad tabeller från ert annonssystem. Leta reda på tabellen som du vill hämta till [!DNL Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
+Ett framgångsrikt svar är en rad tabeller från ert annonssystem. Hitta den tabell du vill ta med [!DNL Platform] och notera `path` -egenskapen, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
 
 ```json
 [
@@ -124,7 +125,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens kolumner finns i elementen i `columns`-arrayen.
+Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens kolumner finns i element i `columns` array.
 
 ```json
 {
@@ -170,4 +171,4 @@ Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens k
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt annonssystem, hittat sökvägen till tabellen som du vill hämta till [!DNL Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt annonssystem och överföra den till Platform](../collect/advertising.md).
+Genom att följa den här självstudiekursen har du utforskat ditt annonssystem och hittat sökvägen till tabellen du vill ta med i [!DNL Platform]och fick information om sin struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ert annonssystem och ta in dem på plattformen](../collect/advertising.md).
