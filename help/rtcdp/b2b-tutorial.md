@@ -1,16 +1,16 @@
 ---
 keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp
 solution: Experience Platform
-title: Komma igång med Real-time Customer Data Platform B2B Edition (beta)
+title: Komma igång med Real-time Customer Data Platform B2B Edition
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Real-time Customer Data Platform B2B Edition.
-source-git-commit: 6d55139325cb32cf0e0aac659f6056b7c5e9157b
+source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
 
-# Komma igång med Real-time Customer Data Platform B2B Edition (beta)
+# Komma igång med Real-time Customer Data Platform B2B Edition
 
 Det här dokumentet innehåller ett avancerat arbetsflöde från början till slut för att komma igång med Real-time Customer Data Platform (CDP) B2B Edition, där man kan använda exempel för att illustrera viktiga koncept.
 

@@ -1,21 +1,15 @@
 ---
-title: Översikt över användningsexempel för segmentering för CDP B2B Edition (betaversion) i realtid
+title: Översikt över användningsexempel för segmentering för CDP B2B Edition i realtid
 description: En översikt över de olika användningsområdena för CDP B2B Edition i realtid.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: b77380b661f59363daeeefb186a94e3d62b47e27
+source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
 
-# Översikt över användningen av segmentering för Real-time Customer Data Platform B2B Edition (beta)
-
-<!-- This document relates to this [ticket](https://jira.corp.adobe.com/browse/PLAT-100468) -->
-
->[!IMPORTANT]
->
->CDP B2B Edition är i realtid i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+# Översikt över användningen av segmentering för Real-time Customer Data Platform B2B Edition
 
 Det här dokumentet innehåller exempel på den segmentering som är tillgänglig för CDP B2B Edition i realtid och hur de olika attributtyperna kan kombineras för vanliga B2B-användningsfall.
 

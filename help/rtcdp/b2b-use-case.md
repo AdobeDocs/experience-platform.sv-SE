@@ -1,20 +1,16 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;realtids-cdp;cdp;rtcdp
-title: Exempel på användningsfall för Real-time Customer Data Platform B2B Edition (beta)
+title: Exempel på användningsfall för Real-time Customer Data Platform B2B Edition
 description: Det här exempelscenariot är ett exempel på hur du konfigurerar din implementering av Real-time Customer Data Platform B2B Edition.
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
-source-git-commit: 6f421a8ae77318ca2598d640cf7e27ea485ec9db
+source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1134'
 ht-degree: 0%
 
 ---
 
-# Exempel på användningsfall för Real-time Customer Data Platform B2B Edition (beta)
-
->[!IMPORTANT]
->
->CDP Business to Business Edition är en betaversion i realtid. Dokumentationen och funktionaliteten kan komma att ändras.
+# Exempel på användningsfall för Real-time Customer Data Platform B2B Edition
 
 Real-time Customer Data Platform B2B Edition utökar de befintliga CDP- och Adobe Experience Platform-erbjudandena i realtid för att stödja B2B-data och arbetsflöden. Det här dokumentet innehåller ett exempel på hur man kan använda B2B-versionen för att demonstrera de ytterligare fördelarna. De omfattar följande:
 
@@ -29,8 +25,6 @@ Bodea, ett teknikföretag, har en ny produkt och vill samtidigt rikta sig till k
 Bodea har dock två olika verksamhetsområden. Bodeas första affärsområde &quot;Line 1&quot; skapar programvara för bilindustrin. Företagets andra verksamhetsområde,&quot;Line 2&quot;, säljer 3D-skrivare som skapar fordonsdelar. Till följd av Bodeas två verksamhetsområden är de intäktsdata som genereras från Bodeas kundkonton inte samlade i en enda vy.
 
 Varje affärsgren har ett eget försäljningssystem: CRM 1 och CRM 2. Båda dessa CRM-säljsystem är kopplade till sin egen automatiseringsplattform för marknadsföring,&quot;Marketo 1&quot; och&quot;Marketo 2&quot;. Data från CRM 1 synkroniseras endast till Marketo 1 och data från CRM2 synkroniseras endast till Marketo 2. Deras data lagras i olika informationsisoleringar.
-
-<!-- ![lines of business diagram](./assets/lines-of-business.png) -->
 
 ## Aktuell datasituation
 
@@ -50,7 +44,7 @@ Under den senaste månaden `p2@townsend.com` besökte den nya produktsidan och w
 
 Rad 1 har just släppt en ny programprodukt och vill sälja in den till Bodeas befintliga toppskiktskundbas. Bodea lanserar en marknadsföringskampanj med den specifika målgruppen i åtanke.
 
-Eftersom relevant Townsend-information registreras som Konto 1 i Marketo 1 och Konto 2 i Marketo 2 kan Bodeas marknadsföringsteam inte utnyttja den isolerade informationen på ett effektivt sätt.
+Eftersom relevant Townsend-information registreras som Konto 1 i Marketo 1 och Konto 2 i Marketo 2 kan Bodeas marknadsföringsteam inte utnyttja den isolerade informationen effektivt.
 
 Det förhindrar Bodeas marknadsföringsteam från att effektivt rikta in specifika affärskontakter på dessa företag med denna nya möjlighet.
 
@@ -97,7 +91,7 @@ Genom att läsa det här dokumentet har du nu introducerats till de typer av må
 
 Följande dokumentation rekommenderas för att förbättra din förståelse av B2B-specifika funktioner:
 
-<!-- PLACEHOLDER Link to B2B tutorial required  -->
+- [Real-time Customer Data Platform B2B Edition - komplett självstudiekurs](./b2b-tutorial.md)
 - [Källor i Real-time Customer Data Platform B2B Edition](./sources/b2b.md)
 - [Scheman i Real-time Customer Data Platform B2B Edition](./schemas/b2b.md)
 - [Exempel på B2B-segmentering](./segmentation/b2b.md)
