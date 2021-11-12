@@ -2,9 +2,9 @@
 title: Källor i Real-time Customer Data Platform B2B Edition
 description: En översikt över källornas roll i Real-time Customer Data Platform B2B Edition.
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: ef3b9bb742b44aafc838b84a0076e7c8445ac84f
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Om du inte använder Real-time Customer Data Platform B2B Edition läser du [källöversikt](./sources-overview.md) i stället.
 
-Med Real-time Customer Data Platform B2B Edition kan du få dina B2B-data via [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md) källanslutning samtidigt som du får möjlighet att strukturera, etikettera och förbättra inkommande data med hjälp av tjänster.
+Med Real-time Customer Data Platform B2B Edition kan ni hämta in B2B-data via olika källor, bland annat [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md) källanslutning, Salesforce, Amazon S3 och ADLS med flera. Med detta källintervall kan du strukturera, etikettera och förbättra inkommande data med hjälp av tjänster.
 
 >[!TIP]
 >
