@@ -3,16 +3,16 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Förstå kundprofil i realtid i CDP
 description: Läs om hur Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med hjälp av kundprofilen i realtid.
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: c15f59de49c60f55b432a39f30fb5f1865fd4671
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '456'
 ht-degree: 0%
 
 ---
 
 # Översikt över kundprofiler i realtid
 
-Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Varje enskild kundprofil gör det möjligt att sammanställa olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med varje enskild kundprofil kan ni sammanställa olika kunddata i en enhetlig vy som ger en användbar, tidsstämplad översikt över varje kundinteraktion.
 
 ## Profiler i [!DNL Real-time Customer Data Platform]
 
@@ -20,11 +20,7 @@ Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom
 
 CDP är byggt i realtid ovanpå Experience Platform och utnyttjar många av de viktigaste funktionerna i Experience Platform, bland annat skapandet av profiler. Dessa samlade vyer över en enskild kund sammanför data från olika marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kunddata.
 
-## Profilförbättringar för CDP, B2B Edition (betaversion) i realtid
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+## Profilförbättringar för CDP, B2B Edition i realtid
 
 Förutom profilfunktionerna som stöds av CDP i realtid kan du använda CDP, B2B Edition i realtid för att bläddra igenom viktig information som är kopplad till en individ, som ett konto och möjligheter. Läs mer om profilförbättringar för CDP, B2B Edition i realtid i [bläddringsguide för profiler](profile-browse.md).
 

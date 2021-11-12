@@ -1,18 +1,15 @@
 ---
 title: Klassen XDM Business Marketing List-medlemmar
 description: Det här dokumentet innehåller en översikt över XDM Business Marketing List-medlemsklassen i Experience Data Model (XDM).
-source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
+exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '187'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL XDM Business Marketing List Members] class
-
->[!NOTE]
->
->Den här klassen är endast tillgänglig för organisationer som har åtkomst till kunddataplattformen B2B Edition i realtid.
 
 [!UICONTROL XDM Business Marketing List Members] är en XDM-klass (Experience Data Model) som beskriver medlemmar, personer eller kontakter som är kopplade till en marknadsföringslista.
 
@@ -29,4 +26,6 @@ ht-degree: 2%
 | `marketingListMemberID` | Sträng | Ett unikt ID för medlemsenheten för marknadsföringslistan. |
 | `personId` | Sträng | Ett unikt ID för personen. |
 
-Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.
+{style=&quot;table-layout:auto&quot;}
+
+Se guiden [schemarelationer i realtid CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

@@ -1,19 +1,15 @@
 ---
-title: Destinationer i Real-time Customer Data Platform B2B Edition (beta)
+title: Destinationer i Real-time Customer Data Platform B2B Edition
 description: En översikt över destinationernas roll i Real-time Customer Data Platform B2B Edition.
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
-source-git-commit: fef18389f8e64bdf11fe93d4077eb0474abc4981
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
 
-# Destinationer i Real-time Customer Data Platform B2B Edition (beta)
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+# Destinationer i Real-time Customer Data Platform B2B Edition
 
 >[!NOTE]
 >

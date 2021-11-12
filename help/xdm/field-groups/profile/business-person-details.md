@@ -2,20 +2,16 @@
 title: Schemafältgrupp för XDM-affärspersonsinformation
 description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Person Details.
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: 57370e4ed0807bcebf30c73af629671b5390d90d
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '516'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL XDM Business Person Details] schemafältgrupp (beta)
+# [!UICONTROL XDM Business Person Details] schemafältgrupp
 
->[!IMPORTANT]
->
->Den här fältgruppen är tillgänglig som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
-
-[!UICONTROL XDM Business Person Details] är en standardgrupp för schemafält för den  [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) klass som samlar in information om en enskild person i ett B2B-företag (business-to-business).
+[!UICONTROL XDM Business Person Details] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md) som samlar in information om en enskild person i samband med ett B2B-företag.
 
 ![](../../images/field-groups/business-person-details.png)
 
@@ -40,7 +36,7 @@ ht-degree: 3%
 | `b2b.personType` | Sträng | Typ av B2B-person. |
 | `extSourceSystemAudit` | [Granskningsattribut för externt källsystem](../../data-types/external-source-system-audit-attributes.md) | Om affärspersonsrelationen kommer från ett externt källsystem hämtar det här objektet granskningsattribut för det systemet. |
 | `extendedWorkDetails` | Objekt | Hämtar ytterligare arbetsrelaterad information om personen. |
-| `extendedWorkDetails.assistantDetails` | Objekt | Hämtar följande attribut relaterade till personens assistent: <ul><li>`name`: ([personnamn](../../data-types/person-name.md)) Assistentens fullständiga namn.</li><li>`phone`: ([Telefonnummer](../../data-types/phone-number.md)) Assistentens telefonnummer.</li></ul> |
+| `extendedWorkDetails.assistantDetails` | Objekt | Hämtar följande attribut relaterade till personens assistent: <ul><li>`name`: ([Personnamn](../../data-types/person-name.md)) Assistentens fullständiga namn.</li><li>`phone`: ([Telefonnummer](../../data-types/phone-number.md)) Assistentens telefonnummer.</li></ul> |
 | `extendedWorkDetails.departments` | Array med strängar | En lista med avdelningsnamn där personen arbetar. |
 | `extendedWorkDetails.jobTitle` | Sträng | Personens befattning. |
 | `extendedWorkDetails.photoUrl` | Sträng | En URL till ett foto av personen. |
@@ -56,7 +52,7 @@ ht-degree: 3%
 | `workAddress` | [Postadress](../../data-types/postal-address.md) | Personens arbetsadress. |
 | `workEmail` | [E-postadress](../../data-types/email-address.md) | Personens e-postadress till arbetet. |
 | `workPhone` | [Telefonnummer](../../data-types/phone-number.md) | Personens telefonnummer till arbetet. |
-| `identityMap` | Mappa | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill använda det här fältet för [Kundprofil för realtid](../../../profile/home.md) ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i  [grunderna för ](../../schema/composition.md#identityMap) schemakompositioner. |
+| `identityMap` | Mappa | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas på rätt sätt [Kundprofil i realtid](../../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
 | `organizations` | Array med strängar | En lista med organisationsnamn där personen arbetar. |
 
 {style=&quot;table-layout:auto&quot;}

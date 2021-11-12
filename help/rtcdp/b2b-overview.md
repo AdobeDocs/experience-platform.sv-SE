@@ -1,22 +1,18 @@
 ---
 keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp;kundens AI
-title: Översikt över CDP B2B Edition i realtid (beta)
+title: Översikt över CDP B2B Edition i realtid
 seo-title: Real-time Customer Data Platform B2B Edition overview
 description: Översikt över Real-time Customer Data Platform B2B Edition-konto
 seo-description: Overview of Real-time Customer Data Platform B2B Edition Account
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: fef18389f8e64bdf11fe93d4077eb0474abc4981
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1072'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B Edition - översikt (beta)
-
->[!IMPORTANT]
->
->CDP B2B Edition är i realtid i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+# Real-time Customer Data Platform B2B Edition - översikt
 
 CDP B2B Edition i realtid bygger på Real-time Customer Data Platform (Real-time CDP) och är särskilt framtagen för marknadsförare som använder en modell för business-to-business-service. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 
@@ -28,7 +24,7 @@ Med CDP B2B Edition i realtid kan man
 * Förbättra, segmentera och exportera alla era data från olika källor från en central lagringsplats med enhetliga kontoprofiler.
 * Hantera era data med hjälp av datastyrningsverktyg som är tillgängliga i varje steg av centraliseringsprocessen för att säkerställa att era data följer juridiska regler och affärspolicyer.
 
-Mer omfattande information om förbättringarna för CDP B2B Edition i realtid finns i avsnitten nedan.
+Mer omfattande information om förbättringarna som gjorts för CDP B2B Edition i realtid finns i avsnitten nedan.
 
 ## XDM
 

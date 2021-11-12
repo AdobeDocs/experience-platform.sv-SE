@@ -1,18 +1,15 @@
 ---
 title: XDM Business Account-klass
 description: Det här dokumentet innehåller en översikt över XDM Business Account-klassen i Experience Data Model (XDM).
-source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
+exl-id: abe4c919-a680-4aad-918e-6e56cae8bd4d
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '133'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL XDM Business Account] class
-
->[!NOTE]
->
->Den här klassen är endast tillgänglig för organisationer som har åtkomst till kunddataplattformen B2B Edition i realtid.
 
 [!UICONTROL XDM Business Account] är en XDM-klass (Experience Data Model) som hämtar de minsta nödvändiga egenskaperna för ett företagskonto.
 
@@ -25,4 +22,6 @@ ht-degree: 2%
 | `_id` | Sträng | En unik identifierare för posten. Detta är ett systemgenererat värde som är skilt från `accountID`. |
 | `accountID` | Sträng | En unik identifierare för kontoentiteten. |
 
-Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.
+{style=&quot;table-layout:auto&quot;}
+
+Se guiden [schemarelationer i realtid CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

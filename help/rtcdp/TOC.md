@@ -4,10 +4,10 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: Real-time Customer Data Platform Guide
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 63d437db19c924bec05e7df99559b6bf2193ae5c
+source-git-commit: d0a1c6f198a8eb3e442168b6a2d2a2475fbf8fee
 workflow-type: tm+mt
-source-wordcount: '192'
-ht-degree: 6%
+source-wordcount: '184'
+ht-degree: 7%
 
 ---
 
@@ -15,16 +15,16 @@ ht-degree: 6%
 # Hjälp om Real-time Customer Data Platform {#rtcdp}
 
 * [CDP-översikt i realtid](overview.md)
-* [Översikt över CDP B2B Edition i realtid (beta)](b2b-overview.md)
+* [Översikt över CDP B2B Edition i realtid](b2b-overview.md)
 * Komma igång {#intro}
    * CDP i realtid {#rtcdp-intro}
       * [Kom igång med CDP i realtid](get-started.md)
       * [Översikt över mätvärden](home-page-dashboards.md)
    * CDP B2B Edition i realtid {#rtcdpb2b-intro}
-      * [Exempel på användning i realtid av CDP B2B Edition (beta)](./b2b-use-case.md)
-      * [CDP B2B Edition-självstudiekurs (beta) i realtid](./b2b-tutorial.md)
+      * [Exempel på CDP B2B Edition-användning i realtid](./b2b-use-case.md)
+      * [Självstudiekurs i realtid om CDP B2B Edition](./b2b-tutorial.md)
       * [Garantier för CDP B2B Edition i realtid](b2b-guardrails.md)
-* Kontoprofiler (beta) {#account}
+* Kontoprofiler {#account}
    * [Kontoprofilöversikt](accounts/account-profile-overview.md)
    * [Användargränssnittshandbok för kontoprofil](accounts/account-profile-ui-guide.md)
 * Administrering {#admin}
@@ -34,7 +34,7 @@ ht-degree: 6%
    * [Datakvalitet på plattform](datasets/data-quality.md)
 * Mål {#destinations}
    * [Översikt över mål](destinations/overview.md)
-   * [Destinationer i realtid CDP B2B Edition (beta)](destinations/b2b.md)
+   * [Destinationer i realtid CDP B2B Edition](destinations/b2b.md)
 * Identiteter {#identity}
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Sammanfoga profiler {#merge-policies}
@@ -47,14 +47,14 @@ ht-degree: 6%
    * [Bläddra i profil](profile/profile-browse.md)
 * Scheman {#schemas}
    * [Översikt över scheman](schemas/overview.md)
-   * [Scheman i realtid CDP B2B Edition (beta)](schemas/b2b.md)
+   * [Scheman i realtid CDP B2B Edition](schemas/b2b.md)
 * Segment {#segmentation}
    * [Översikt över segmentering](segmentation/segmentation-overview.md)
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
-   * [Segmentering i realtid med CDP B2B Edition (beta)](segmentation/b2b.md)
+   * [Segmentering i realtid med CDP B2B Edition](segmentation/b2b.md)
    * [Kund-AI](segmentation/customer-ai.md)
 * Källor {#sources}
    * [Översikt över källor](sources/sources-overview.md)
-   * [Källor i realtid CDP B2B Edition (beta)](sources/b2b.md)
+   * [Källor i realtid CDP B2B Edition](sources/b2b.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
 * [Experience Platform - ordlista](https://www.adobe.com/go/platform-glossary-en)

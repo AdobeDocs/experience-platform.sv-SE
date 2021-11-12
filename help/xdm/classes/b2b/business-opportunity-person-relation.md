@@ -1,18 +1,15 @@
 ---
 title: XDM - personrelationsklass för affärsmöjlighet
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Opportunity Person Relation i Experience Data Model (XDM).
-source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
+exl-id: 7be193d2-52eb-4b28-953b-5e0fc21d8f93
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '218'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL XDM Business Opportunity Person Relation] class
-
->[!NOTE]
->
->Den här klassen är endast tillgänglig för organisationer som har åtkomst till kunddataplattformen B2B Edition i realtid.
 
 [!UICONTROL XDM Business Opportunity Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en person som är kopplad till en affärsmöjlighet.
 
@@ -31,4 +28,6 @@ ht-degree: 2%
 | `personID` | Sträng | En unik identifierare för personen i affärsmöjlighetsrelationen. |
 | `personRole` | Sträng | Personens roll i relationen affärsmöjlighet-person. |
 
-Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.
+{style=&quot;table-layout:auto&quot;}
+
+Se guiden [schemarelationer i realtid CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

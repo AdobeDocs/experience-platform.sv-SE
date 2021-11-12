@@ -2,18 +2,14 @@
 title: XDM Business Campaign-klass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Campaign i Experience Data Model (XDM).
 exl-id: 4e3228a1-74be-43af-b355-45d84afb1611
-source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '152'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL XDM Business Campaign] klass (Beta)
-
->[!IMPORTANT]
->
->Den här klassen finns som en del av Real-time Customer Data Platform B2B Edition, som för närvarande är en betaversion. Dokumentationen och funktionerna kan komma att ändras.
+# [!UICONTROL XDM Business Campaign] class
 
 [!UICONTROL XDM Business Campaign] är en XDM-standardklass (Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en företagskampanj.
 
@@ -31,4 +27,4 @@ ht-degree: 3%
 
 {style=&quot;table-layout:auto&quot;}
 
-Läs guiden om [schemarelationer i CDP B2B Edition](../../tutorials/relationship-b2b.md) i realtid om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform användargränssnitt.
+Se guiden [schemarelationer i realtid CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

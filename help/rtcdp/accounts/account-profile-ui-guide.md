@@ -1,20 +1,16 @@
 ---
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
-title: Användargränssnittshandbok för kontoprofil (beta)
+title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 6f421a8ae77318ca2598d640cf7e27ea485ec9db
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1126'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för kontoprofil (beta)
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+# Användargränssnittshandbok för kontoprofil
 
 >[!NOTE]
 >
