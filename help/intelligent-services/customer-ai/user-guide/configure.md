@@ -6,7 +6,7 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 52ab1527d3021500d934afe56cfc751116f784a4
+source-git-commit: 899ea8502c80fa520df55ce63255e95cb5ad436d
 workflow-type: tm+mt
 source-wordcount: '2218'
 ht-degree: 0%
@@ -74,7 +74,7 @@ När du har valt de datauppsättningar du vill använda väljer du **[!UICONTROL
 
 Välja informationsikonen ![informationsikon](../images/user-guide/info-icon.png) bredvid datauppsättningen öppnar förhandsvisningsprogramdrivrutinen för datauppsättningen.
 
-![Välj och söka efter datauppsättning](../images/user-guide/dataset-info-2.png)
+![Välj och söka efter datauppsättning](../images/user-guide/dataset-info.png)
 
 Datauppsättningsförhandsvisningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
 
@@ -85,8 +85,8 @@ Det finns ett procentvärde för datauppsättningens fullständighet i dataupps�
 >[!NOTE]
 >
 >Datauppsättningens fullständighet beräknas med hjälp av det maximala utbildningsfönstret för kundens AI (ett år). Detta innebär att data som är mer än ett år gamla inte beaktas när datamängdens fullständighetsvärde visas.
-<!-- training dataset completness needs to change -->
-![Fullständighet för datauppsättning](../images/user-guide/dataset-info.png)
+
+![Fullständighet för datauppsättning](../images/user-guide/dataset-info-2.png)
 
 ### Välj en identitet {#identity}
 
