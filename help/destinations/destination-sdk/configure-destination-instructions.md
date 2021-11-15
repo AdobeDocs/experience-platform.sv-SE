@@ -1,31 +1,31 @@
 ---
-description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med SDK för mål.
-title: Så här använder du mål-SDK för att konfigurera ett mål för direktuppspelning
+description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
+title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: bc77614eee6cc50d2ce6b14c1b228ed87f88f340
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
 
-# Så här använder du mål-SDK för att konfigurera ett mål för direktuppspelning
+# Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 
 ## Översikt {#overview}
 
-Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativ i mål-SDK](./configuration-options.md) och i andra mål-SDK-funktioner och API-referensdokument för att konfigurera en [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
+Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativ i mål-SDK](./configuration-options.md) och i andra Destination SDK-funktioner och API-referensdokument för att konfigurera en [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
 
 >[!NOTE]
 >
->Det går för närvarande inte att konfigurera ett gruppmål via mål-SDK.
+>Det går för närvarande inte att konfigurera ett batchmål via Destination SDK.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med mål-SDK](./getting-started.md) sida med information om hur du får de autentiseringsuppgifter för Adobe I/O som krävs och andra krav som krävs för att arbeta med programmeringsgränssnitten för mål-SDK.
+Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med Destination SDK](./getting-started.md) sida med information om hur du får de autentiseringsuppgifter för Adobe I/O som krävs och andra krav för att arbeta med Destination SDK API:er.
 
-## Steg för att använda konfigurationsalternativen i mål-SDK för att konfigurera destinationen {#steps}
+## Steg för hur du använder konfigurationsalternativen i Destination SDK för att konfigurera destinationen {#steps}
 
-![Illustrerade steg för att använda SDK-målslutpunkter](./assets/destination-sdk-steps.png)
+![Illustrerade steg för att använda Destination SDK-slutpunkter](./assets/destination-sdk-steps.png)
 
 ## Steg 1: Skapa en server- och mallkonfiguration {#create-server-template-configuration}
 
@@ -152,7 +152,7 @@ När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du
 
 ## Steg 4: Skapa konfiguration för målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver mål-SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i ditt mål programmatiskt. Se [Hantering av målgruppsmetadata](./audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
+För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Se [Hantering av målgruppsmetadata](./audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID:t för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 

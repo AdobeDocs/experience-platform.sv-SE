@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 3e2382cf4b02ea4fd40e3638b52b4719938a2ea2
+source-git-commit: a01730fce4f7746389fc48e700c259567492d0ee
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '677'
 ht-degree: 1%
 
 ---
@@ -174,6 +174,7 @@ ht-degree: 1%
          * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
    * Stödlinjer {#guides}
       * [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/configure-destination-instructions.md)
+      * [Skicka för granskning till ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
    * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
       * [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
