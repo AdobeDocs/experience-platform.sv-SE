@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 868239c84571ed4a274db6b2b49694489a17073e
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '5282'
+source-wordcount: '5352'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Om elementet är en ankartagg (`<a>`) för länkat innehåll kan du även ange o
 
 När du använder fördröjning av länkar förhindrar Platform faktiskt webbläsaren från att navigera utanför sidan. Sedan utförs en JavaScript-omdirigering till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>` -taggar där den tänkta funktionen egentligen inte navigerar användaren bort från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
 
-Standardvärdet för fördröjning av länkar är 100 millisekunder. Observera att taggar alltid väntar på den angivna tiden och inte är kopplade till körningen av regelns åtgärder på något sätt. Det är möjligt att fördröjningen tvingar användaren att vänta längre än vad som är nödvändigt och även att fördröjningen inte är tillräckligt lång för att alla regelåtgärder ska kunna slutföras. Längre fördröjningar ger mer tid för regelkörning men försämrar även användarupplevelsen.
+Standardvärdet för fördröjning av länkar är 100 millisekunder. Observera att taggar alltid väntar på den angivna tiden och inte är kopplade till körningen av regelns åtgärder på något sätt. Det är möjligt att fördröjningen tvingar användaren att vänta längre än nödvändigt och även att fördröjningen inte är tillräckligt lång för att alla regelåtgärder ska kunna slutföras. Längre fördröjningar ger mer tid för regelkörning men försämrar även användarupplevelsen.
 
 För att aktivera fördröjningen måste du ange både det valda elementet som utlöser händelsen och den specifika tiden innan händelsen utlöses.
 
@@ -138,7 +138,7 @@ Händelsen utlöses om ett angivet element finns. Se [Alternativ](#options) för
 
 #### Enters Viewport
 
-Händelsen utlöses om användaren anger en angiven visningsruta. Du måste ange en CSS-väljare som ett villkor för att kunna ange matchande element som mål. Du måste också konfigurera om regeln ska aktiveras omedelbart eller efter ett visst antal millisekunder, och om händelsen ska utlösas varje gång händelsen inträffar eller endast första gången.
+Händelsen utlöses om användaren anger en angiven visningsruta. Du måste ange en CSS-väljare som ett villkor för att kunna ange matchande element som mål. Du måste också konfigurera om regeln aktiveras omedelbart eller efter ett visst antal millisekunder, och om händelsen ska utlösas varje gång händelsen inträffar eller endast första gången.
 
 Se [Alternativ](#options) för mer information om anpassningsbara händelseinställningar.
 
@@ -358,7 +358,7 @@ Utlös åtgärden om användarens antal sessioner uppfyller de angivna villkoren
 
 Konfigurera hur länge besökaren måste vara på platsen innan åtgärden aktiveras.
 
-1. Ange om antalet minuter som besökaren är på platsen måste vara större än, lika med eller mindre än det angivna värdet.
+1. Ange om antalet minuter som besökaren finns på platsen måste vara större än, lika med eller mindre än det angivna värdet.
 1. Ange antalet minuter som avgör om villkoret är uppfyllt.
 
 #### Trafikkälla
@@ -542,6 +542,10 @@ I det här avsnittet beskrivs de åtgärdstyper som finns i Core-tillägget.
 
 ### Egen kod
 
+>[!NOTE]
+>
+>ES6+ JavaScript stöds nu i anpassad kod. Observera att vissa äldre webbläsare inte stöder ES6+. Om du vill förstå hur funktionerna i ES6+ påverkas testar du mot alla webbläsare som bör stödjas.
+
 Ange koden som körs efter att händelsen har utlösts och villkoren har utvärderats.
 
 1. Namnge åtgärdskoden.
@@ -645,6 +649,10 @@ Alla konstanta strängvärden som sedan kan refereras i åtgärder eller villkor
 `string`
 
 ### Egen kod
+
+>[!NOTE]
+>
+>ES6+ JavaScript stöds nu i anpassad kod. Observera att vissa äldre webbläsare inte stöder ES6+. Om du vill förstå hur funktionerna i ES6+ påverkas testar du mot alla webbläsare som bör stödjas.
 
 Du kan ange egen JavaScript i användargränssnittet genom att välja Öppna redigerare och infoga kod i redigeringsfönstret.
 

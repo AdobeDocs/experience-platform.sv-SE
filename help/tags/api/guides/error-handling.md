@@ -1,9 +1,10 @@
 ---
 title: Felhantering
 description: Lär dig hur fel hanteras i Reactor API.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: 336c0ced-1067-4519-94e1-85aea700fce6
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1068'
 ht-degree: 0%
 
 ---
@@ -13,11 +14,11 @@ ht-degree: 0%
 När ett problem inträffar när ett anrop görs till Reactor API, kan ett fel returneras på något av följande sätt:
 
 * **Omedelbara fel**: När du utför en begäran som resulterar i ett omedelbart fel returneras ett felsvar av API:t, där HTTP-statusen återspeglar den allmänna feltypen som inträffade.
-* **Försenade fel**: När du utför en API-begäran som resulterar i ett fördröjt fel (till exempel en asynkron aktivitet) kan ett fel returneras av API:t i  `meta.status_details` en relaterad resurs.
+* **Försenade fel**: När du utför en API-begäran som resulterar i ett fördröjt fel (t.ex. en asynkron aktivitet) kan ett fel returneras av API:t i `meta.status_details` för en relaterad resurs.
 
 ## Felformat
 
-Felsvar syftar till att följa [JSON:API-felspecifikationen](http://jsonapi.org/format/#errors) och följer vanligtvis följande struktur:
+Felsvar syftar till att anpassa [JSON:API-felspecifikation](http://jsonapi.org/format/#errors)och i allmänhet följa följande struktur:
 
 ```json
 {
@@ -43,9 +44,9 @@ Felsvar syftar till att följa [JSON:API-felspecifikationen](http://jsonapi.org/
 | `id` | En unik identifierare för den aktuella förekomsten av problemet. |
 | `status` | HTTP-statuskoden som gäller det här problemet, uttryckt som ett strängvärde. |
 | `code` | En programspecifik felkod, uttryckt som ett strängvärde. |
-| `title` | En kort, läsbar sammanfattning av problemet som **inte ska ändras** från förekomst till förekomst, utom i lokaliseringssyfte. |
-| `detail` | En läsbar förklaring som är specifik för den här förekomsten av problemet. Precis som `title` kan fältets värde lokaliseras. |
-| `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: en  [JSON-pekarsträng (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901) som refererar till den associerade entiteten i begärandedokumentet (t.ex.  `/data` för ett primärt dataobjekt eller  `/data/attributes/title` för ett specifikt attribut).</li></ul> |
+| `title` | En kort, läsbar sammanfattning av problemet som **bör inte ändras** från förekomst till förekomst, utom för lokalisering. |
+| `detail` | En läsbar förklaring som är specifik för den här förekomsten av problemet. Gilla `title`kan fältets värde lokaliseras. |
+| `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: a [JSON-pekare (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901) sträng som refererar till den associerade entiteten i begärandedokumentet (som `/data` för ett primärt dataobjekt, eller `/data/attributes/title` för ett specifikt attribut).</li></ul> |
 | `meta` | Ett objekt som innehåller metadata om felet som inte är standard. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -85,13 +86,13 @@ I följande tabell visas de olika fel som API:t kan returnera.
 | `invalid-rule` | Det går inte att lägga till en ogiltig regel i ett bibliotek. |
 | `invalid-settings-syntax` | Ett syntaxfel påträffades när inställningarna för JSON parsades. |
 | `library-file-not-found` | Det gick inte att hitta en nödvändig fil som definierats i extension.json inuti zip-paketet. |
-| `minification-error` | Koden kunde inte kompileras på grund av ogiltig kod eller ES6-kod. |
+| `minification-error` | Koden kunde inte kompileras på grund av ogiltig kod. |
 | `multiple-revisions` | Endast en revision av varje resurs kan inkluderas i ett bibliotek. |
 | `no-available-orgs` | Det här användarkontot tillhör inte en produktprofil som har åtkomst till taggar. Använd Admin Console för att lägga till den här användaren i en produktprofil med taggrättigheter. |
 | `not-authorized` | Det här användarkontot har inte den behörighet som krävs för att utföra den här åtgärden. |
 | `not-found` | Posten kunde inte hittas. Verifiera ID:t för objektet som du försöker hämta. |
 | `not-unique` | Namnet som du försöker använda används redan. Egenskapen name måste vara unik för den här resursen. |
-| `public-release-not-authorized` | Den offentliga versionen av tillägg samordnas av `launch-ext-dev@adobe.com`. Mer information finns i dokumentet om [lansering av tillägg](../../extension-dev/submit/release.md). |
+| `public-release-not-authorized` | Den offentliga releasen av förlängningar samordnas av `launch-ext-dev@adobe.com`. Visa dokumentet på [frigöra tillägg](../../extension-dev/submit/release.md) för mer information. |
 | `read-only` | Den här resursen är skrivskyddad och kan inte ändras. |
 | `session-timeout` | Användarsessionen har gått ut. Logga ut och logga in igen. |
 | `sftp-authentication-failed` | Autentiseringen misslyckades för SFTP-anslutningen. |

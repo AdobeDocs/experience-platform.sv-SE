@@ -3,9 +3,9 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '533'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Vidarebefordran av händelser i Adobe Experience Platform minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser kan transformera och skicka data till nya destinationer utan att implementeringarna på klientsidan ändras.
 
@@ -41,13 +41,13 @@ Det är viktigt att tänka på följande skillnader mellan händelsevidarebeford
 
 * Tokenisering av dataelement
 
-   * Taggar: I en regel tokeniseras dataelement med `%` i början och slutet av dataelementnamnet. Exempel, `%viewportHeight%`.
+   * Taggar: I en regel tokeniseras dataelement med en `%` i början och slutet av dataelementnamnet. Exempel, `%viewportHeight%`.
 
    * Vidarebefordran: I en regel tokeniseras dataelement med `{{` i början och `}}` i slutet av dataelementnamnet. Exempel, `{{viewportHeight}}`.
 
 * Hur data refereras
 
-   Om du vill referera till data från Edge-nätverket måste dataelementets sökväg vara `arc.event._<element>_`.
+   Om du vill referera till data från Edge-nätverket måste sökvägen till dataelementet vara `arc.event._<element>_`.
 
    `arc` står för Adobe Response Context.
 
@@ -61,9 +61,5 @@ Det är viktigt att tänka på följande skillnader mellan händelsevidarebeford
 * Regelåtgärdssekvens
 
    I åtgärdsavsnittet för en regel körs alltid regler för vidarebefordran av händelser sekventiellt. Kontrollera att åtgärdsordningen är korrekt när du sparar en regel. Den här körningssekvensen kan inte väljas på samma sätt som med taggar.
-
-* Anpassad kod - JavaScript-versioner
-
-   Taggar använder JavaScript-versionen es5. Vid vidarebefordran av händelser används version es6.
 
 <!--doc Adobe Cloud Connector extension, get from Jon-->

@@ -1,9 +1,10 @@
 ---
 title: Regler
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
-source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
+exl-id: 2beca2c9-72b7-4ea0-a166-50a3b8edb9cd
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '1956'
+source-wordcount: '1948'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Taggar i Adobe Experience Platform följer ett regelbaserat system. De letar efter användarinteraktion och tillhörande data. När villkoren som beskrivs i reglerna är uppfyllda utlöser regeln det tillägg, skript eller den klientkod som du identifierade.
 
@@ -20,7 +21,7 @@ Bygg regler för att integrera data och funktionalitet i marknadsförings- och a
 
 ## Regelstruktur
 
-**Händelser (If):** Händelsen är den händelse som du vill att regeln ska söka efter. Detta definieras genom att välja en händelse, tillämpliga villkor och eventuella undantag.
+**Händelser (om):** Händelsen är vad du vill att regeln ska söka efter. Detta definieras genom att välja en händelse, tillämpliga villkor och eventuella undantag.
 
 **Åtgärder (sedan):** Utlösare inträffar efter att en regel har inträffat och alla villkor är uppfyllda. En taggregel kan utlösa så många diskreta åtgärder som du vill och du kan styra i vilken ordning åtgärderna utförs. En enskild regel för en e-handelssida - Tack! kan till exempel utlösa analysverktyg och tredjepartstaggar från en enda regel. Du behöver inte skapa separata regler för varje tillägg eller tagg.
 
@@ -28,11 +29,11 @@ Du kan lägga till fler händelsetyper. Flera händelser förenas med en OR, så
 
 >[!IMPORTANT]
 >
->Ändringarna börjar inte gälla förrän de [publiceras](../publishing/overview.md).
+>Ändringarna börjar inte gälla förrän de är [publicerad](../publishing/overview.md).
 
 ### Händelser och villkor (om)
 
-Händelser med villkor är *If*-delen av en regel.
+Händelser med alla villkor är *If* del av en regel.
 
 Om en angiven händelse inträffar utvärderas villkoren och de angivna åtgärderna utförs om det behövs.
 
@@ -40,22 +41,22 @@ Om en angiven händelse inträffar utvärderas villkoren och de angivna åtgärd
 
 * **Villkor**: Begränsa händelsen genom att konfigurera alla villkor som måste vara sanna för att en händelse ska aktivera regeln. Ett undantag definieras som ett NOT-villkor. Flera villkor förenas med en AND.
 
-Vilka händelser som är tillgängliga beror på vilka tillägg som är installerade. Mer information om händelserna i Core-tillägget finns i [Core extension-händelsetyper](../../extensions/web/core/overview.md#core-extension-event-types).
+Vilka händelser som är tillgängliga beror på vilka tillägg som är installerade. Mer information om händelserna i Core-tillägget finns i [Huvudtilläggshändelsetyper](../../extensions/web/core/overview.md#core-extension-event-types).
 
 ### Åtgärder (sedan)
 
-Åtgärder är *Sedan* delen av en regel. De definierar vad som ska hända när regeln körs. När en händelse aktiveras utförs åtgärderna om villkoren utvärderas till true och undantagen utvärderas till false. Du kan dra och släppa funktionsmakron för att ordna dem som du vill.
+Åtgärderna är *Sedan* del av en regel. De definierar vad som ska hända när regeln körs. När en händelse aktiveras utförs åtgärderna om villkoren utvärderas till true och undantagen utvärderas till false. Du kan dra och släppa funktionsmakron för att ordna dem som du vill.
 
 ## Skapa en regel
 
 Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor uppfylls.
 
-1. Öppna fliken [!UICONTROL Rules] och välj sedan **[!UICONTROL Create New Rule]**.
+1. Öppna [!UICONTROL Rules] tabbtangenten och sedan **[!UICONTROL Create New Rule]**.
 
    ![](../../images/launch-rule-builder.jpg)
 
 1. Namnge regeln.
-1. Välj ikonen Händelser **[!UICONTROL Add]**.
+1. Välj händelser **[!UICONTROL Add]** ikon.
 1. Välj ditt tillägg och en av de händelsetyper som är tillgängliga för tillägget och konfigurera sedan inställningarna för händelsen.
 
    ![](../../images/rule-event-config.png)
@@ -64,9 +65,9 @@ Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor u
 
    >[!IMPORTANT]
    >
-   >I en klientregel tokeniseras dataelement med `%` i början och slutet av dataelementnamnet. Exempel, `%viewportHeight%`. I en regel för vidarebefordran av händelser tokeniseras dataelement med `{{` i början och `}}` i slutet av dataelementnamnet. Exempel, `{{viewportHeight}}`.
+   >I en klientregel tokeniseras dataelement med en `%` i början och slutet av dataelementnamnet. Exempel, `%viewportHeight%`. I en regel för vidarebefordran av händelser tokeniseras dataelement med `{{` i början och `}}` i slutet av dataelementnamnet. Exempel, `{{viewportHeight}}`.
 
-   Om du vill referera till data från Edge-nätverket måste dataelementets sökväg vara `arc.event._<element>_`.
+   Om du vill referera till data från Edge-nätverket måste sökvägen till dataelementet vara `arc.event._<element>_`.
 
    `arc` står för Adobe Response Context.
 
@@ -86,7 +87,7 @@ Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor u
 
       Om du vill att den ska köras senare ger du den ett tal som är högre än 50. Mer information om beställning finns i [Regelordning](rules.md#rule-ordering).
 
-1. Välj ikonen Villkor **[!UICONTROL Add]**, välj sedan en logiktyp, ett tillägg, en villkorstyp och konfigurera inställningarna för villkoret. Välj sedan **[!UICONTROL Keep Changes]**.
+1. Välj villkor **[!UICONTROL Add]** väljer du sedan en logiktyp, ett tillägg, en villkorstyp och konfigurerar inställningarna för villkoret. Nästa, välj **[!UICONTROL Keep Changes]**.
 
    ![](../../images/condition-settings.png)
 
@@ -101,7 +102,7 @@ Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor u
 
    Du kan lägga till så många villkor du vill. Flera villkor i samma regel förenas med AND.
 
-1. Välj ikonen Åtgärder **[!UICONTROL Add]**, välj sedan tillägg och en av åtgärdstyperna som är tillgängliga för tillägget, konfigurera inställningarna för åtgärden och välj sedan **[!UICONTROL Keep Changes]**.
+1. Välj funktionsmakron **[!UICONTROL Add]** -ikonen, välj sedan ditt tillägg och en av de tillgängliga åtgärdstyperna för tillägget, konfigurera inställningarna för åtgärden och välj sedan **[!UICONTROL Keep Changes]**.
 
    ![](../../images/action-settings.png)
 
@@ -112,17 +113,17 @@ Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor u
    (Avancerat) Tidsgräns: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. Den definierar den maximala tiden som åtgärden kan slutföras. Om tidsgränsen nås misslyckas åtgärden och alla efterföljande åtgärder för den här regeln tas bort från arbetskön. Standardvärdet är 2 000 ms.
 
 
-1. Granska regeln och välj sedan **[!UICONTROL Save Rule]**.
+1. Granska din regel och välj sedan **[!UICONTROL Save Rule]**.
 
-   När du sedan [publicerar](../publishing/overview.md) lägger du till den här regeln i ett bibliotek och distribuerar den.
+   Senare när du [publicera](../publishing/overview.md)lägger du till den här regeln i ett bibliotek och distribuerar den.
 
-När du skapar eller redigerar regler kan du spara och skapa i ditt [aktiva bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas.
+När du skapar eller redigerar regler kan du spara och bygga enligt [aktivt bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas.
 
 ## Regelordning {#rule-ordering}
 
 Med regelordning kan du styra körningsordningen för regler som delar en händelse.
 
-Det är ofta viktigt att era regler brinner i en viss ordning. Exempel: (1) du har flera regler som villkorligt ställer in [!DNL Analytics]-variabler och du måste se till att regeln med Skicka Beacon kommer sist. (2) du har en regel som utlöser [!DNL Target] och en annan regel som utlöser [!DNL Analytics] och du vill att [!DNL Target]-regeln ska köras först.
+Det är ofta viktigt att era regler brinner i en viss ordning. Exempel: (1) du har flera regler som är villkorligt angivna [!DNL Analytics] och du måste se till att regeln med Skicka Beacon är sist. (2) du har en regel som utlöser [!DNL Target] och en annan regel som utlöses [!DNL Analytics] och du vill ha [!DNL Target] regel som ska köras först.
 
 I slutändan ligger ansvaret för att utföra åtgärder i ordningen hos den utökade utvecklaren av den händelsetyp som du använder. Adobe-utvecklare ser till att deras tillägg fungerar som de ska. För tillägg från tredje part ger Adobe vägledning till tilläggsutvecklare så att de kan implementera detta korrekt, men det är upp till dem att göra det.
 
@@ -141,7 +142,7 @@ Adobe rekommenderar att du beställer regler med positiva tal mellan 1 och 100 (
 
 Inläsningsordningen för regler beror på om regelåtgärden har konfigurerats med JavaScript, HTML eller annan kod på klientsidan, och om reglerna använder en sidhändelse längst ned eller längst upp, eller en annan typ av händelse.
 
-Du kan använda `document.write` i dina anpassade skript oavsett vilka händelser som har konfigurerats för regeln.
+Du kan använda `document.write` i dina egna skript, oavsett vilka händelser som har konfigurerats för regeln.
 
 Du kan beställa olika anpassade kodtyper tillsammans. Nu kan du till exempel ha en anpassad JavaScript-kodsåtgärd, sedan en anpassad HTML-kodsåtgärd och sedan en anpassad JavaScript-kodsåtgärd. Taggar säkerställer att de körs i den ordningen.
 
@@ -153,24 +154,20 @@ Regelhändelser och -villkor paketeras alltid i huvudtaggbiblioteket. Åtgärder
 
 Dessa händelser måste köras nästan alltid (om inte villkoren utvärderas till false), så för att vara effektiva paketeras de i huvudbiblioteket, den fil som din inbäddningskod refererar till.
 
-* **JavaScript:** JavaScript är inbäddat i huvudtaggbiblioteket. Det anpassade skriptet kapslas i en script-tagg och skrivs till dokumentet med `document.write`. Om regeln har flera anpassade skript skrivs de i ordning.
+* **Javascript:** JavaScript är inbäddat i huvudtaggbiblioteket. Det anpassade skriptet kapslas i en script-tagg och skrivs till dokumentet med `document.write`. Om regeln har flera anpassade skript skrivs de i ordning.
 
-   >[!NOTE]
-   >
-   >Taggar använder ES5 JavaScript. Vidarebefordran av händelser använder ES6.
-
-* **HTML:** HTML-koden är inbäddad i huvudtaggbiblioteket. `document.write` används för att skriva HTML-koden till dokumentet. Om regeln har flera anpassade skript skrivs de i ordning.
+* **HTML:** HTML är inbäddad i huvudtaggbiblioteket. `document.write` används för att skriva HTML till dokumentet. Om regeln har flera anpassade skript skrivs de i ordning.
 
 ### Regler för alla andra händelser
 
 Adobe kan inte garantera att andra regler verkligen kommer att aktiveras och att deras åtgärdskod kommer att behövas. Därför paketeras inte åtgärderna för alla händelsetyper som inte listas ovan i huvudbiblioteket. I stället lagras de som underresurser och refereras av huvudbiblioteket efter behov.
 
 * **JavaScript:** JavaScript läses in från servern som vanlig text, omsluts av en script-tagg och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade JavaScript-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerades i regeln.
-* **HTML:** HTML-koden läses in från servern och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade HTML-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerats i regeln.
+* **HTML:** HTML läses in från servern och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade HTML-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerades i regeln.
 
 ## Regelkomponentsekvenser {#sequencing}
 
-Taggens körningsmiljös beteende beror på om **[!UICONTROL Run rule components in sequence]** är aktiverat eller inte för egenskapen.
+Taggens körningsmiljös beteende beror på om **[!UICONTROL Run rule components in sequence]** är på eller av för din egendom.
 
 ### Aktiverad
 
