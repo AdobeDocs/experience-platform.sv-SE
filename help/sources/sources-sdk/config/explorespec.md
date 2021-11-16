@@ -5,7 +5,7 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda Sources SDK.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+source-git-commit: d98cf404fd1a4d150f202154aba87b0089418957
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 1%
@@ -87,4 +87,4 @@ Utforska specifikationerna och definiera de parametrar som krävs för att utfor
 
 ## Nästa steg
 
-När du har fyllt i dina specifikationer kan du fortsätta att skapa en fullständig anslutningsspecifikation med [!DNL Flow Service] API. Se [[!DNL Sources SDK] API-guide](../api/overview.md) för mer information.
+När du har fyllt i dina specifikationer kan du fortsätta att skapa en fullständig anslutningsspecifikation med [!DNL Flow Service] API. Se [[!DNL Sources SDK] API-guide](../api/api-overview.md) för mer information.

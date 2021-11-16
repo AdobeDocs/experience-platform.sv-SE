@@ -5,7 +5,7 @@ topic-legacy: developer guide
 description: I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med API:t för Flow Service för Sources SDK.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+source-git-commit: d98cf404fd1a4d150f202154aba87b0089418957
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 0%
@@ -616,4 +616,4 @@ Ett godkänt svar returnerar information om den efterfrågade flödesspecifikati
 
 ## Nästa steg
 
-När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden [testa och skicka en ny källa](./overview.md#submit) för mer information.
+När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden [testa och skicka en ny källa](./submit.md) för mer information.
