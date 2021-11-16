@@ -6,7 +6,7 @@ topic-legacy: overview
 description: Adobe Experience Platform Sources SDK är en uppsättning konfigurations-API:er som gör att du kan integrera en REST API-baserad källa med API:t för Flow Service för att överföra data till Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: 4ce9eac605fb7c801852cd0e109448d314092603
+source-git-commit: 3d510876cfdd8ac3045dae8df6fcf6045de2538b
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 0%
@@ -41,17 +41,17 @@ Mer information om källor och en lista över olika källor som för närvarande
 
 Via Sources SDK kan du integrera din egen REST API-baserade källa och överföra data till plattformen med [!DNL Flow Service]. Med Sources SDK kan du integrera en ny källa med Platform genom att skapa och skicka en ny anslutningsspecifikation via [!DNL Flow Service] API.
 
-Se guiden [skapa en ny anslutningsspecifikation](./api/overview.md) om du vill ha information om hur du integrerar en ny källa till plattform.
+Se guiden [skapa en ny anslutningsspecifikation](./api/api-overview.md) om du vill ha information om hur du integrerar en ny källa till plattform.
 
 ## Dokumentera källan
 
-När du har skapat källan kan du se [handbok](./documentation/overview.md) för instruktioner om hur du dokumenterar källan via [!DNL GitHub] webbgränssnitt eller via din egen textredigerare.
+När du har skapat källan kan du se [handbok](./documentation/doc-overview.md) för instruktioner om hur du dokumenterar källan via [!DNL GitHub] webbgränssnitt eller via din egen textredigerare.
 
 ## Högnivåprocess
 
 Hur du konfigurerar källan i Experience Platform beskrivs nedan:
 
-* Läs [Sources SDK API guide](./api/overview.md);
+* Läs [Sources SDK API guide](./api/api-overview.md);
    * Läs [komma igång-guide](./api/getting-started.md);
    * Följ självstudiekursen på [skapa en ny anslutningsspecifikation](./api/create.md);
    * Följ självstudiekursen på [uppdatera anslutningsspecifikationen](./api/update-connection-specs.md);
@@ -61,7 +61,7 @@ Hur du konfigurerar källan i Experience Platform beskrivs nedan:
    * Se guiden [konfigurera dina autentiseringsspecifikationer](./config/authspec.md);
    * Se guiden [konfigurera dina källspecifikationer](./config/sourcespec.md);
    * Se guiden [konfigurera dina specifikationer](./config/explorespec.md);
-* Information om hur du börjar dokumentera källan finns i [översikt över hur du skapar dokumentation för SDK för källor](./documentation/overview.md)
+* Information om hur du börjar dokumentera källan finns i [översikt över hur du skapar dokumentation för SDK för källor](./documentation/doc-overview.md)
    * Du kan använda den här [dokumentationsmall för källor](./documentation/template.md) för att strukturera dokumentationen,
    * Se guiden [med GitHub-webbgränssnittet](./documentation/github.md) för steg om hur du skapar dokumentation med GitHub,
    * Se guiden [använda en textredigerare](./documentation/text-editor.md) för steg om hur du skapar dokumentation med din lokala dator.
