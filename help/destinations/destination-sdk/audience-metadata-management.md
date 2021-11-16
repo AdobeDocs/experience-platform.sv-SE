@@ -2,7 +2,7 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 397c49284c30c648695a7a186d3f3e76a2675807
+source-git-commit: cb4e399798a9521e6f3da89cbd88d19476ab070d
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat konfigurationen används den av Adobe för att strukturera API-anropen till ditt mål.
 
-Du kan konfigurera de funktioner som beskrivs i det här dokumentet med API-slutpunkten `/authoring/audience-templates`. Läs [API-åtgärder för målets metadata-slutpunkt](./audience-metadata-api.md) om du vill se en fullständig lista över åtgärder som du kan utföra på slutpunkten.
+Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av `/authoring/audience-templates` API-slutpunkt. Läs [API-åtgärder för målgruppsmetadata](./audience-metadata-api.md) för en fullständig lista över åtgärder som du kan utföra på slutpunkten.
 
 ## Använda slutpunkten för hantering av målgruppsmetadata {#when-to-use}
 
@@ -25,11 +25,11 @@ Beroende på din API-konfiguration kan du behöva använda slutpunkten för hant
 
 ## Användningsfall som stöds av hantering av målgruppsmetadata {#use-cases}
 
-Med stöd för målgruppsmetadata i mål-SDK kan du, när du konfigurerar Experience Platform, ge plattformsanvändare ett av flera alternativ när de mappar och aktiverar segment till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i segmentmappningsavsnittet i [målkonfigurationen](./destination-configuration.md#segment-mapping).
+Med stöd för målgruppsmetadata i Destination SDK kan du, när du konfigurerar Experience Platform, ge plattformsanvändare ett av flera alternativ när de mappar och aktiverar segment till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i segmentmappningsavsnittet i [målkonfiguration](./destination-configuration.md#segment-mapping).
 
 ### Använd fall 1 - Du har ett API från tredje part och användarna behöver inte ange ID för indatamappning
 
-Om du har en API-slutpunkt för att skapa/uppdatera/ta bort segment eller målgrupper kan du använda målgruppsmetadatamallar för att konfigurera mål-SDK så att det matchar specifikationerna för segmentets skapa/uppdatera/ta bort-slutpunkt. Experience Platform kan programmatiskt skapa/uppdatera/ta bort segment och synkronisera metadata tillbaka till Experience Platform.
+Om du har en API-slutpunkt för att skapa/uppdatera/ta bort segment eller målgrupper, kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att det matchar specifikationerna för din segments skapa/uppdatera/ta bort-slutpunkt. Experience Platform kan programmatiskt skapa/uppdatera/ta bort segment och synkronisera metadata tillbaka till Experience Platform.
 
 När man aktiverar segment i användargränssnittet i Experience Platform behöver man inte fylla i ett ID-fält för segmentmappning manuellt i aktiveringsarbetsflödet.
 
@@ -59,14 +59,14 @@ Teknikteamet på Adobe kan samarbeta med dig för att utöka den generiska malle
 
 Det här avsnittet innehåller tre exempel på allmänna konfigurationer av målgruppsmetadata, tillsammans med beskrivningar av huvudavsnitten i konfigurationen. Lägg märke till hur brödtexten för URL, rubriker, begäran och svar skiljer sig mellan de tre exempelkonfigurationerna. Detta beror på de olika specifikationerna för de tre exempelplattformarnas marknadsförings-API.
 
-Observera att i vissa exempel används makrofält som `{{authData.accessToken}}` eller `{{segment.name}}` i URL:en, och i andra exempel används de i rubrikerna eller begärandetexten. Det beror på era specifikationer för marknadsförings-API.
+Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` eller `{{segment.name}}` används i URL:en och i andra exempel används de i rubrikerna eller i begärandetexten. Det beror på era specifikationer för marknadsförings-API.
 
 | Mallavsnitt | Beskrivning |
 |--- |--- |
 | `create` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att programmässigt skapa segment/målgrupper på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
 | `update` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att programmässigt uppdatera segment/målgrupper på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
 | `delete` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort segment/målgrupper på din plattform. |
-| `validations` | Kör valideringar för fält i mallkonfigurationen innan du anropar partner-API:t. Du kan till exempel validera att användarens konto-ID är korrekt angivet. |
+| `validate` | Kör valideringar för fält i mallkonfigurationen innan du anropar partner-API:t. Du kan till exempel validera att användarens konto-ID är korrekt angivet. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -79,7 +79,7 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
    "lastModifiedDate":"2021-07-27T21:25:42.763478Z",
    "metadataTemplate":{
       "create":{
-         "url":"https://api.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
          "httpMethod":"POST",
          "headers":[
             {
@@ -118,7 +118,7 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
          ]
       },
       "update":{
-         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
          "httpMethod":"PUT",
          "headers":[
             {
@@ -155,7 +155,7 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
          ]
       },
       "delete":{
-         "url":"https://adsapi.moviestar.com/v1/segments/{{segment.alias}}",
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
          "httpMethod":"DELETE",
          "headers":[
             {
@@ -375,7 +375,7 @@ Observera att i vissa exempel används makrofält som `{{authData.accessToken}}`
 }
 ```
 
-Hitta beskrivningar av alla parametrar i mallen i referensdokumentationen [API-åtgärder för målets metadata](./audience-metadata-api.md).
+Hitta beskrivningar av alla parametrar i mallen i referensdokumentationen [API-åtgärder för målgruppsmetadata](./audience-metadata-api.md).
 
 ## Makron som används i mallar för målgruppsmetadata
 
@@ -388,7 +388,7 @@ För att skicka information som segment-ID, åtkomsttoken, felmeddelanden med me
 | `{{segment.id}}` | Gör att du kan komma åt segment-ID:t i Experience Platform. |
 | `{{customerData.accountId}}` | Gör att du kan komma åt det konto-ID-fält som du har konfigurerat i målkonfigurationen. |
 | `{{oauth2ServiceAccessToken}}` | Gör att du dynamiskt kan generera en åtkomsttoken baserat på din OAuth 2-konfiguration. |
-| `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda token som inte upphör att gälla för att ansluta till ditt mål, annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
+| `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda variabler som inte förfaller för att ansluta till ditt mål, annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |
 | `{{body.segments[0].segment.id}}` | Returnerar den skapade målgruppens unika identifierare som värdet för nyckeln `externalAudienceId`. |
 | `{{error.message}}` | Returnerar ett felmeddelande som kommer att visas för användare i användargränssnittet i Experience Platform. |
 
