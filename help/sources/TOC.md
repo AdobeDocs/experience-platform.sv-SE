@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 92b2dc869a659a030e1f13c83a0c5e3d707685c6
+source-git-commit: c178bf54bfdda54293cb4e06d452f82111690895
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '741'
 ht-degree: 5%
 
 ---
@@ -257,6 +257,25 @@ ht-degree: 5%
    - [Uppdatera dataflöden](tutorials/ui/update-dataflows.md)
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
+- [Källor SDK] {#sources-sdk}
+   - [Översikt](sources-sdk/overview.md)
+   - [SDK-funktionalitet för källor] {#functionality}
+      - [Konfigurationsalternativ](sources-sdk/config/config.md)
+      - [Konfigurera autentiseringsspecifikation](sources-sdk/config/authspec.md)
+      - [Konfigurera källspecifikation](sources-sdk/config/sourcespec.md)
+      - [Konfigurera specifikation för utforskande](sources-sdk/config/explorespec.md)
+   - [Sources SDK API - självstudiekurser] {#sdk-tutorials}
+      - [Sources SDK API - översikt](sources-sdk/api/overview.md)
+      - [Komma igång](sources-sdk/api/getting-started.md)
+      - [Skapa en anslutningsspecifikation](sources-sdk/api/create.md)
+      - [Uppdatera en anslutningsspecifikation](sources-sdk/api/update-connection-specs.md)
+      - [Uppdatera en flödesspecifikation](sources-sdk/api/update-flow-specs.md)
+      - [Skicka din källa](sources-sdk/api/submit.md)
+   - [Dokumentera källan] {#document}
+      - [Dokumentera källan i Adobe Experience Platform](sources-sdk/documentation/overview.md)
+      - [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](sources-sdk/documentation/github.md)
+      - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
+      - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/template.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)

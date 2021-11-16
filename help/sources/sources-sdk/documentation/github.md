@@ -1,0 +1,80 @@
+---
+keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
+solution: Experience Platform
+title: Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida
+topic-legacy: tutorial
+description: Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
+hide: true
+hidefromtoc: true
+source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+workflow-type: tm+mt
+source-wordcount: '561'
+ht-degree: 0%
+
+---
+
+# Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida
+
+Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
+
+>[!TIP]
+>
+>Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown Authoring tools](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en)</li></ul>
+
+## Konfigurera GitHub-miljön
+
+Det första steget i att konfigurera GitHub-miljön är att navigera till [Adobe Experience Platform GitHub-databas](https://github.com/AdobeDocs/experience-platform.en).
+
+![platform-repo](../assets/platform-repo.png)
+
+Nästa, välj **Gaffel**.
+
+![gaffel](../assets/fork.png)
+
+När gaffeln är klar väljer du **överordnad** och ange ett namn för den nya grenen i listrutan som visas. Ange ett beskrivande namn för din gren eftersom den används för att innehålla ditt arbete och välj sedan **skapa gren**.
+
+![create-branch](../assets/create-branch.png)
+
+Navigera till GitHub-mappstrukturen för din förankrade databas `experience-platform.en/help/sources/tutorials/api/create/` och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny molnlagringskälla väljer du **molnlagring**.
+
+![molnlagring](../assets/cloud-storage.png)
+
+En mapp med befintliga molnlagringskällor visas. Om du vill lägga till dokumentation för en ny källa väljer du **Lägg till fil** och sedan markera **Skapa ny fil** i listrutan som visas.
+
+![create-new-file](../assets/create-new-file.png)
+
+Namnge källfilen `YOURSOURCE.md` där YOURSOURCE är namnet på källan i Platform. Om ditt företag till exempel är [!DNL Mailchimp]ska filnamnet vara `mailchimp.md`.
+
+![git-interface](../assets/git-interface.png)
+
+## Skriv dokumentationssidan för källan
+
+Om du vill börja dokumentera den nya källan klistrar du in innehållet i [dokumentationsmall för källor](./template.md) till GitHub-webbredigeraren. Du kan även hämta mallen [här](../assets/template.zip).
+
+När mallen har kopierats till GitHub-webbredigeringsgränssnittet följer du instruktionerna som beskrivs i mallen och redigerar värdena som innehåller relevant information för källan.
+
+![paste-template](../assets/paste-template.png)
+
+När du är klar implementerar du filen i din gren.
+
+![bekräfta](../assets/commit.png)
+
+## Skicka in din dokumentation för granskning
+
+När filen har implementerats kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att grenen du har arbetat med är markerad och välj sedan **Jämför &amp; dra-begäran**.
+
+![compare-pr](../assets/compare-pr.png)
+
+Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR-rapporten som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med den överordnad grenen i Adobe-databasen.
+
+>[!TIP]
+>
+>Lämna **Tillåt redigeringar av underhållare** kryssrutan markerad för att säkerställa att dokumentationsteamet på Adobe kan göra ändringar i PR.
+
+![create-pr](../assets/create-pr.png)
+
+Nu visas ett meddelande som uppmanar dig att signera Adobe Contributor License Agreement (CLA). Detta är ett obligatoriskt steg. När du har signerat CLA-avtalet uppdaterar du PR-sidan och skickar pull-begäran.
+
+Du kan bekräfta att pull-begäran har skickats genom att granska mottagarfliken i https://github.com/AdobeDocs/experience-platform.en.
+
+![confirm-pr](../assets/confirm-pr.png)
