@@ -5,11 +5,10 @@ title: Översikt över sekretessbestämmelser
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller en översikt över de olika sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 65ff39c99eee98654daee89c86d6047dc055c196
 workflow-type: tm+mt
-source-wordcount: '428'
-ht-degree: 6%
+source-wordcount: '457'
+ht-degree: 0%
 
 ---
 
@@ -21,11 +20,11 @@ Genom att använda Adobe Experience Platform Privacy Service stöder Experience 
 
 | Förordning | Beskrivning |
 | --- | --- |
-| CCPA (Kalifornien) | [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) förbättrar sekretessen och konsumentskyddet för personer bosatta i Kalifornien och USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part. |
-| GDPR (Europeiska unionen) | I [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) introducerades flera nya integritetsrättigheter för EU-medlemmar, inklusive rätten till åtkomst och rätten att bli glömd. Detta innebär att alla EU-medborgare vars personuppgifter har samlats in av ert företag när som helst kan begära att få tillgång till eller radera sina uppgifter. |
-| LGPD (Brasilien) | Syftet med [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part. |
-| Nya Zeeland [!DNL Privacy Act] | [Nya Zeeland [!DNL Privacy Act]](https://www.legislation.govt.nz/act/public/2020/0031/latest/LMS23223.html) styr hur myndigheter kan samla in, använda, avslöja, lagra och ge tillgång till nyzeeländska medborgare och organisationer personuppgifter. Under 2020 infördes i den senaste versionen av lagen avsevärda uppdateringar av dessa integritetslagar, bland annat nya brott, höjda böter, obligatoriska anmälningar om dataintrång och ökade befogenheter för sekretesschefen. |
-| PDPA (Thailand) | [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) introducerades för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter. |
+| CCPA (Kalifornien) | The [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) förbättrar sekretessen och konsumentskyddet för personer bosatta i Kalifornien, USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part. |
+| GDPR (Europeiska unionen) | The [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) har infört flera nya integritetsrättigheter för medlemmar i Europeiska ekonomiska samarbetsområdet (EES), bland annat rätten till tillgång och rätten att bli glömd. Detta innebär att alla som bor i EES och vars personuppgifter har samlats in av ert företag kan begära att få tillgång till eller radera sina uppgifter när som helst.<br><br>Förenade kungariket (efter Brexit) har sin egen version av förordningen, UK-GDPR, som ger sina medborgare samma rättigheter som EES-versionen. |
+| LGPD (Brasilien) | The [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) syftar till att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part. |
+| Nya Zeeland [!DNL Privacy Act] | The [Nya Zeeland [!DNL Privacy Act]](https://www.legislation.govt.nz/act/public/2020/0031/latest/LMS23223.html) kontrollerar hur myndigheter kan samla in, använda, offentliggöra, lagra och ge tillgång till nyzeeländska medborgares och organisationers personuppgifter. Under 2020 infördes i den senaste versionen av lagen avsevärda uppdateringar av dessa integritetslagar, bland annat nya brott, höjda böter, obligatoriska anmälningar om dataintrång och ökade befogenheter för sekretesschefen. |
+| PDPA (Thailand) | The [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter. |
 
 ## Nästa steg
 
@@ -34,4 +33,4 @@ Mer information om vilka regler som stöds finns i följande dokument:
 * [Frågor och svar om sekretesslagstiftning](./faq.md)
 * [Terminologi för sekretessbestämmelser](./terminology.md)
 
-Om du vill lära dig att ge stöd för kundåtkomst och ta bort begäranden om data som lagras i dina Experience Cloud-program kan du läsa guiden för [Privacy Service- och Experience Cloud-program](../experience-cloud-apps.md).
+Om du vill lära dig att ge stöd för kundåtkomst och ta bort förfrågningar om data som lagras i dina Experience Cloud-program kan du läsa guiden på [Privacy Service och Experience Cloud](../experience-cloud-apps.md).

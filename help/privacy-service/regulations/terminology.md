@@ -5,10 +5,10 @@ title: Sekretessregler - terminologi
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 47b5ad7fa9300772e0d2742c94021cf18d13313b
+source-git-commit: 65ff39c99eee98654daee89c86d6047dc055c196
 workflow-type: tm+mt
-source-wordcount: '1512'
-ht-degree: 9%
+source-wordcount: '1513'
+ht-degree: 7%
 
 ---
 
@@ -22,11 +22,11 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **BCR (Binding corporate rules)**: En uppsättning bindande regler införs för att göra det möjligt för multinationella företag och organisationer att överföra personuppgifter som de kontrollerar från EU till sina dotterbolag utanför EU (men inom organisationen).
 
-**Biometriska** dataPersonuppgifter som rör en individs fysiska, fysiologiska eller beteendemässiga egenskaper och som gör det möjligt att identifiera dem unikt.
+**Biometriska data** Personuppgifter som rör en individs fysiska, fysiologiska eller beteendemässiga egenskaper och som gör det möjligt att identifiera dem unikt.
 
 ## C
 
-**CCPA**: Med  [!DNL California Consumer Privacy Act] (CCPA) får invånare i Kalifornien bättre kontroll över den personliga information som företag samlar in från den tiden. Lagen ger flera nya rättigheter till konsumenterna, bland annat rätten till tillgång till och de personuppgifter som samlats in från dem samt rätten att avanmäla försäljningen av deras personuppgifter till tredje part.
+**CCPA**: The [!DNL California Consumer Privacy Act] (CCPA) ger invånare i Kalifornien bättre kontroll över de personuppgifter som företag samlar in från och med då. Lagen ger flera nya rättigheter till konsumenterna, bland annat rätten till tillgång till och de personuppgifter som samlats in från dem samt rätten att avanmäla försäljningen av deras personuppgifter till tredje part.
 
 **Godkännande**: Fritt givet, specifikt, informerat och uttryckligt samtycke genom uttalande eller åtgärd som innebär godkännande av behandlingen av deras personuppgifter.
 
@@ -36,7 +36,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **Datakontrollant**: Enheten som fastställer syften, villkor och medel för behandlingen av personuppgifter.
 
-**Radering** av data: Den är även känd som rättigheten att bli glömd, och ger den registrerade rätt att låta den registeransvarige radera sina personuppgifter, upphöra med vidare spridning av uppgifterna och potentiellt få tredje parter att sluta behandla uppgifterna.
+**Radering av data**: Den är även känd som rättigheten att bli glömd, och ger den registrerade rätt att låta den registeransvarige radera sina personuppgifter, upphöra med vidare spridning av uppgifterna och potentiellt få tredje parter att sluta behandla uppgifterna.
 
 **Dataportabilitet**: Kravet att personuppgiftsansvariga ska förse den registrerade med en kopia av sina uppgifter i ett format som gör det enkelt att använda dem tillsammans med en annan personuppgiftsansvarig.
 
@@ -46,7 +46,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **Dataskyddsansvarig**: En expert på datasekretess som arbetar självständigt för att säkerställa att ett företag följer de policyer och förfaranden som anges i den allmänna dataskyddsförordningen.
 
-**Registrerad**: En fysisk person vars personuppgifter behandlas av en personuppgiftsansvarig eller personuppgiftsbiträde.
+**Ämne**: En fysisk person vars personuppgifter behandlas av en personuppgiftsansvarig eller personuppgiftsbiträde.
 
 **Delegerade akter**: Icke-lagstiftningsakter som antas för att komplettera befintlig lagstiftning och ge kriterier eller tydlighet.
 
@@ -68,7 +68,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## G
 
-**GDPR**: Den  [!DNL General Data Protection Regulation] allmänna dataskyddsförordningen är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter, men ålägger även böter som kan vara inkomstbaserade. GDPR omfattar alla företag som hanterar uppgifter om EU-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag.
+**GDPR**: The [!DNL General Data Protection Regulation] (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom Europeiska ekonomiska samarbetsområdet (EES). Dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter, men ålägger även böter som kan vara inkomstbaserade. GDPR omfattar alla företag som hanterar uppgifter om EES-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag.
 
 **Genetiska data**: Uppgifter om en persons egenskaper som ärvs eller förvärvas och som ger unik information om den enskilda personens hälsa eller fysiologi.
 
@@ -78,7 +78,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## I
 
-**Identity Management Services (IMS)**: Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Användare kan logga in direkt med Renga (Adobe-identitetstjänstleverantören) eller logga in via en betrodd autentiseringsdomän från tredje part (till exempel [!DNL Google], [!DNL Facebook] eller en företags-LDAP).
+**Identity Management Services (IMS)**: Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Användare kan logga in direkt med Renga (Adobe identity services provider) eller logga in via en betrodd autentiseringsdomän från tredje part (till exempel [!DNL Google], [!DNL Facebook]eller ett LDAP (corporate/organization).
 
 **Implicit samtycke**: Detta kallas även entydigt samtycke och avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt till sin natur. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet räcker den positiva åtgärden att ange sin e-postadress för att betraktas som implicit samtycke.
 
@@ -90,7 +90,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## L
 
-**LGPD**: Syftet  [!DNL Lei Geral de Proteção de Dados] (LGPD) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.
+**LGPD**: The [!DNL Lei Geral de Proteção de Dados] (LGPD) avser att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.
 
 ## M
 
@@ -102,15 +102,15 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## P
 
-**PDPA**: Thailand ( [!DNL Personal Data Protection Act] PDPA) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
+**PDPA**: The [!DNL Personal Data Protection Act] Thailand (PDPA) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
 
 **Personuppgifter**: All information som rör en fysisk person eller den registrerade, som kan användas för att direkt eller indirekt identifiera personen.
 
-**Överträdelse** av personuppgifter: En säkerhetsöverträdelse som leder till oavsiktlig eller olaglig tillgång till, förstörelse, missbruk osv. av personuppgifter.
+**Överträdelse av personuppgifter**: En säkerhetsöverträdelse som leder till oavsiktlig eller olaglig tillgång till, förstörelse, missbruk osv. av personuppgifter.
 
 **Integritet efter design**: En princip som kräver att dataskydd tas med när systemen designas, i stället för som tillägg.
 
-**Konsekvensbedömning** av integritet: Ett verktyg som används för att identifiera och minska integritetsriskerna för enheter genom att analysera de personuppgifter som behandlas och gällande policyer för att skydda data.
+**Konsekvensbedömning av integritet**: Ett verktyg som används för att identifiera och minska integritetsriskerna för enheter genom att analysera de personuppgifter som behandlas och gällande policyer för att skydda data.
 
 **Bearbetar**: Alla åtgärder som utförs på personuppgifter, oavsett om dessa utförs på automatiserade sätt eller inte, inklusive insamling, användning, registrering osv.
 
@@ -124,19 +124,19 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **Mottagare**: Enhet till vilken personuppgifterna lämnas ut.
 
-**Regel**: En bindande lagstiftningsakt som måste tillämpas i sin helhet i hela unionen.
+**Förordning**: En bindande lagstiftningsakt som måste tillämpas i sin helhet i hela unionen.
 
-**Företrädare**: Varje person i unionen som uttryckligen har utsetts av den personuppgiftsansvarige och som ska riktas till tillsynsmyndigheterna.
+**Representant**: Varje person i unionen som uttryckligen har utsetts av den personuppgiftsansvarige och som ska riktas till tillsynsmyndigheterna.
 
-**Rätt att bli bortglömd**: Det kallas även radering av uppgifter och ger den registrerade rätt att låta den personuppgiftsansvarige radera sina personuppgifter, upphöra med vidare spridning av uppgifterna och potentiellt få tredje parter att sluta behandla uppgifterna.
+**Rätt att glömma**: Det kallas även radering av uppgifter och ger den registrerade rätt att låta den personuppgiftsansvarige radera sina personuppgifter, upphöra med vidare spridning av uppgifterna och potentiellt få tredje parter att sluta behandla uppgifterna.
 
-**Åtkomsträttigheter**: Den kallas även för åtkomsträttigheter till registrerade personer och ger den registrerade rätt att få tillgång till och information om de personuppgifter som en personuppgiftsansvarig har rörande dem.
+**Rätt till åtkomst**: Den kallas även för åtkomsträttigheter till registrerade personer och ger den registrerade rätt att få tillgång till och information om de personuppgifter som en personuppgiftsansvarig har rörande dem.
 
 ## S
 
 **Känsliga data**: Personuppgifter som rör ras eller etnisk tillhörighet, politiska åsikter, religioner eller filosofiska övertygelser, sexuellt beteende, kriminalregister, hälsouppgifter, funktionshinder, facklig information, genetiska uppgifter, biometriska uppgifter eller uppgifter som kan påverka den registrerade.
 
-**Åtkomstbehörighet**: Det kallas även åtkomsträttigheter och ger den registrerade rätt att få tillgång till och information om de personuppgifter som en personuppgiftsansvarig har rörande dem.
+**Åtkomst till motiv**: Det kallas även åtkomsträttigheter och ger den registrerade rätt att få tillgång till och information om de personuppgifter som en personuppgiftsansvarig har rörande dem.
 
 **Tillsynsmyndighet**: En offentlig myndighet som har inrättats av en medlemsstat i enlighet med artikel 46.
 
