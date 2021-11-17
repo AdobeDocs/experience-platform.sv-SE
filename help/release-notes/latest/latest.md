@@ -1,63 +1,44 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: b6f4c79df79ae20b8051b69ef34dd255df193454
+source-git-commit: d34b3480b182b4128bb1626326b0de7bf2809985
 workflow-type: tm+mt
-source-wordcount: '454'
-ht-degree: 2%
+source-wordcount: '325'
+ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 27 oktober 2021**
-
-## Uppdateringar till Experience Platform
-
-Uppdateringar till Experience Platform.
-
-### Användargränssnitt {#ui}
-
-Användargränssnittet har uppdaterats med följande ändringar:
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Mörkt tema | Använd den mörka temagränsen för att växla mellan ljusa och mörka teman i plattformsgränssnittet. Växeln finns i användarprofilen under användarnamn och e-postadress. |
-| Växla vänster navigering | Använd det förbättrade navigeringsreglaget högst upp i programhuvudet för att visa eller dölja menyn som visar Experience Platform-funktionerna. Systemet kommer ihåg ditt senaste val och visar bara de funktioner du har tillgång till. |
-| Åtkomstsynlighet | Det vänstra navigeringsfältet visar bara de funktioner som du har tillgång till. I tidigare versioner av Adobe Experience Platform var otillgängliga objekt synliga, även om du inte kunde komma åt dem. |
-
-Se [Användargränssnittshandbok för plattform](../../landing/ui-guide.md) om du vill veta mer.
+**Releasedatum: 17 november 2021**
 
 ## Uppdateringar av befintliga funktioner
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [[!DNL Data Prep]](#data-prep)
-- [Källor](#sources)
+- [Attribution AI](#attribution-ai)
+- [Kund-AI](#customer-ai)
 
-### [!DNL Data Prep] {#data-prep}
+### Attribution AI {#attribution-ai}
 
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för flera datauppsättningar | Attribution AI kan nu enkelt importera flera datauppsättningar direkt i användargränssnittet utan att behöva mappa och sätta ihop varje datauppsättning. Den nya tidsbesparingsfunktionen ger kraftfullare och exaktare resultat med mer omfattande data från flera datauppsättningar. |
+| Mappning av mediekanal och kampanjfält | Attribution AI har nu stöd för mappning av mediekanal- och kampanjfält. Mediekanalmappning mellan datauppsättningar förbättrar insikterna från Attribution AI och ger tydligare resultat som är enkla att tolka. |
+
+Mer information om Attribution AI finns i [Attribution AI](../../intelligent-services/attribution-ai/overview.md).
+
+### Kund-AI {#customer-ai}
+
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| `contains_key` funktion | The `contains_key` -funktionen har introducerats, vilket gör att du kan kontrollera om objektet finns i källan. Den här funktionen ersätter `is_set` som nu är föråldrad. |
-| Felmeddelanden | Felmeddelanden som returneras av `/mappingSets/preview` Slutpunkten i API:t för dataförberedelser är nu konsekvent med de felmeddelanden som genereras under körning. |
+| Stöd för flera datauppsättningar | Kunds-AI kan nu enkelt importera flera datauppsättningar direkt i användargränssnittet utan att behöva mappa och sätta ihop varje datauppsättning. Den nya tidsbesparingsfunktionen ger kraftfullare och exaktare resultat med mer omfattande data från flera datauppsättningar. |
+| Anpassade profilattribut | Kund-AI har nu stöd för att definiera anpassade profildatauppsättningsfält (med tidsstämplar) i dina data utöver vanliga händelsefält. Om du använder det här alternativet kan du lägga till ytterligare profilattribut som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och ge mer korrekta resultat |
 
-Se [[!DNL Data Prep] översikt](../../data-prep/home.md) om du vill veta mer om den här tjänsten.
-
-### Källor {#sources}
-
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
-
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| [!DNL Amazon S3] källförbättringar | Nu kan du använda `s3SessionToken` för att ansluta [!DNL Amazon S3] konto till plattformen med temporära säkerhetsuppgifter. Med den här variabeln kan du ge kortvarig, tillfällig åtkomst till din [!DNL Amazon S3] för användare i miljöer som inte är betrodda. Se [[!DNL Amazon S3] dokumentation](../../sources/connectors/cloud-storage/s3.md#prerequisites) för mer information. |
-| [!DNL Generic REST API] (Beta) | Nu kan du skapa en [!DNL Generic REST API] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/protocols/generic-rest.md) för att hämta data från en generisk REST-applikation till Platform. Se [[!DNL Generic REST API] översikt](../../sources/connectors/protocols/generic-rest.md) för mer information. |
-| [!DNL Zoho CRM] (Beta) | Nu kan du skapa en [!DNL Zoho CRM] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/crm/zoho.md) eller [användargränssnitt](../../sources/tutorials/ui/create/crm/zoho.md) för att hämta data från [!DNL Zoho CRM] konto till plattform. Se [[!DNL Zoho CRM] översikt](../../sources/connectors/crm/zoho.md) för mer information. |
-
-Mer information om källor finns i [källöversikt](../../sources/home.md).
+Mer information om kundens AI finns i [AI-dokumentation för kund](../../intelligent-services/customer-ai/overview.md).
