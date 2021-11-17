@@ -2,14 +2,18 @@
 title: XDM Business Account-klass
 description: Det här dokumentet innehåller en översikt över XDM Business Account-klassen i Experience Data Model (XDM).
 exl-id: abe4c919-a680-4aad-918e-6e56cae8bd4d
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '133'
-ht-degree: 2%
+source-wordcount: '173'
+ht-degree: 1%
 
 ---
 
 # [!UICONTROL XDM Business Account] class
+
+>[!IMPORTANT]
+>
+>Den här klassen är avsedd att användas av organisationer med åtkomst till [Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till CDP B2B Edition i realtid för att den här klassen ska kunna delta i [Kundprofil i realtid](../../../profile/home.md).
 
 [!UICONTROL XDM Business Account] är en XDM-klass (Experience Data Model) som hämtar de minsta nödvändiga egenskaperna för ett företagskonto.
 

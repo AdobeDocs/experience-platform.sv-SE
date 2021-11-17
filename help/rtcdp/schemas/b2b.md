@@ -2,9 +2,9 @@
 title: Scheman i Real-time Customer Data Platform B2B Edition
 description: En översikt över XDM-schemats (Experience Data Model) roll i Real-time Customer Data Platform B2B Edition.
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '198'
+source-wordcount: '220'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # Scheman i Real-time Customer Data Platform B2B Edition
 
 Real-time Customer Data Platform B2B Edition innehåller flera standardprogram [XDM-klasser (Experience Data Model)](../../xdm/schema/composition.md#class) som samlar in information om viktiga B2B-datatjänster, som konton, möjligheter, kampanjer med mera. Dessutom kan ni med CDP B2B Edition i realtid definiera många-till-ett-relationer mellan dessa scheman så att de kan delta i avancerad segmenteringsanvändning.
+
+>[!IMPORTANT]
+>
+>Du måste ha tillgång till CDP B2B Edition i realtid för att B2B-scheman ska kunna delta i [Kundprofil i realtid](../../profile/home.md).
 
 Följande standardklasser finns i CDP B2B Edition i realtid:
 

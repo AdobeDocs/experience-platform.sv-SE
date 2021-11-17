@@ -5,9 +5,9 @@ title: B2B-namnutrymmen och scheman
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 21617c6ec364fc05d7b8b6d00daa68608d1ed318
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '1664'
+source-wordcount: '1688'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 1%
 # B2B-namnutrymmen och scheman
 
 Det här dokumentet innehåller information om den underliggande inställningen för de namnutrymmen och scheman som ska användas med B2B-källor. Det här dokumentet innehåller även information om hur du konfigurerar Postman-automatiseringsverktyget som krävs för att generera B2B-namnutrymmen och scheman.
+
+>[!IMPORTANT]
+>
+>Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att B2B-scheman ska kunna delta i [Kundprofil i realtid](../../../../profile/home.md).
 
 ## Konfigurera B2B-namnutrymmen och automatisk schemagenerering
 

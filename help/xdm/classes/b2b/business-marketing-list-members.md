@@ -2,14 +2,18 @@
 title: Klassen XDM Business Marketing List-medlemmar
 description: Det här dokumentet innehåller en översikt över XDM Business Marketing List-medlemsklassen i Experience Data Model (XDM).
 exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '227'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL XDM Business Marketing List Members] class
+
+>[!IMPORTANT]
+>
+>Den här klassen är avsedd att användas av organisationer med åtkomst till [Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till CDP B2B Edition i realtid för att den här klassen ska kunna delta i [Kundprofil i realtid](../../../profile/home.md).
 
 [!UICONTROL XDM Business Marketing List Members] är en XDM-klass (Experience Data Model) som beskriver medlemmar, personer eller kontakter som är kopplade till en marknadsföringslista.
 

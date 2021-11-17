@@ -2,14 +2,18 @@
 title: XDM Business Account Person Relationsklass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Account Person Relation i Experience Data Model (XDM).
 exl-id: d51abe9b-d936-4c84-96e2-35a81ca6b67f
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '285'
+source-wordcount: '325'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL XDM Business Account Person Relation] class
+
+>[!IMPORTANT]
+>
+>Den här klassen är avsedd att användas av organisationer med åtkomst till [Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till CDP B2B Edition i realtid för att den här klassen ska kunna delta i [Kundprofil i realtid](../../../profile/home.md).
 
 [!UICONTROL XDM Business Account Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en person som är kopplad till ett företagskonto.
 

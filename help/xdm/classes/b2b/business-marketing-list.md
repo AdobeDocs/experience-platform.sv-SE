@@ -2,14 +2,18 @@
 title: XDM Business Marketing List-klass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Marketing List i Experience Data Model (XDM).
 exl-id: 510c5608-054d-4bed-91eb-22d84b5dc625
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '209'
 ht-degree: 2%
 
 ---
 
 # [!UICONTROL XDM Business Marketing List] class
+
+>[!IMPORTANT]
+>
+>Den här klassen är avsedd att användas av organisationer med åtkomst till [Real-time Customer Data Platform B2B Edition](../../../rtcdp/b2b-overview.md). Du måste ha tillgång till CDP B2B Edition i realtid för att den här klassen ska kunna delta i [Kundprofil i realtid](../../../profile/home.md).
 
 [!UICONTROL XDM Business Marketing List] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en marknadsföringslista. Med marknadsföringslistor kan ni prioritera kunder som är mest benägna att köpa er produkt.
 
