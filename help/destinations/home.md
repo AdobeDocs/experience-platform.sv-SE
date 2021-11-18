@@ -5,9 +5,9 @@ seo-title: Destinations overview
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinations are pre-built integrations with destination platforms that allow for the seamless activation of data from Adobe Experience Platform. You can use Destinations in the Adobe Experience Platform to activate your known and unknown data for cross-channel marketing campaigns, email campaigns, targeted advertising, and many other use cases.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: c93e23d334ffe3cbee049f120a7b6c5e7e69d0ea
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '460'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Mer information om åtkomstkontroller finns i [Användarhandbok för åtkomstkon
 Datastyrningen används för plattformsdestinationer genom:
 
 * *Marknadsföringsåtgärder* som du kan välja i arbetsflödet för att skapa destinationer,
-* *Dataanvändningspolicyer* som begränsar data som innehåller vissa användningsetiketter från att aktiveras till destinationer med vissa marknadsföringsåtgärder.
+* *Dataanvändningspolicyer* som förhindrar att data som innehåller vissa användningsetiketter aktiveras för destinationer med vissa marknadsföringsåtgärder.
 
 Mer information om datastyrning i plattformsdokumentationen finns i Datastyrning i plattformsdokumentation [marknadsföringsaktiviteter](../data-governance/policies/overview.md) och [lösa överträdelser av datapolicyer](../data-governance/enforcement/auto-enforcement.md).
 
