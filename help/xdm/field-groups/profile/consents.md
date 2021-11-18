@@ -4,9 +4,9 @@ title: Fältgrupp för innehåll och inställningar
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: d2c71423165776bf7c106a7503514c5acc284f8e
+source-git-commit: 6caece867afe3e6f3fd323843b753cce2319623c
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ The [!UICONTROL Consents and Preferences] fältgruppen innehåller ett enda fäl
 >
 >Se guiden [utforska XDM-resurser](../../ui/explore.md) om du vill ha steg om hur du söker upp en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
 
-I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and Preferences] fältgruppen kan bearbeta. Information om hur dessa fält används finns i de avsnitt som följer.
+I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and Preferences] fältgruppen kan bearbeta. Information om hur du använder de flesta fält som finns i fältgruppen finns i handboken på [Datatypen Innehåll och inställningar](../../data-types/consents.md). Underavsnitten nedan fokuserar på de unika attribut som fältgruppen lägger till i datatypen.
 
 ```json
 {
@@ -96,8 +96,6 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 >* [Generera exempeldata i användargränssnittet](../../ui/sample.md)
 >* [Generera exempeldata i API](../../api/sample-data.md)
 
-
-Information om hur du använder de flesta fält som finns i fältgruppen finns i handboken på [Datatypen Innehåll och inställningar](../../data-types/consents.md). Underavsnitten nedan fokuserar på de unika attribut som fältgruppen lägger till i datatypen.
 
 ### `idSpecific`
 
