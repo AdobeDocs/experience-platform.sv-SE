@@ -1,7 +1,8 @@
 ---
 title: Versionsinformation för Adobe Experience Cloud Identity Service Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Experience Cloud Identity Service i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: f9bfbed7-1eec-4916-9235-a75b5e2efcf8
+source-git-commit: 1d3abede47c97c9a4f3b18ae25c890c309e942fd
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 4%
@@ -12,17 +13,17 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Versionsinformation om själva identitetstjänsten för Experience Cloud och inte bara Adobe Experience Platform-taggtillägget finns här: [https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)
 
-## 3 nov 2020
+## 3 nov 2021
 
 ### Experience Cloud ID-tillägg 5.2.1
 
 #### **Funktioner**
 
-* Den här korrigeringen innehåller en korrigering för att skriva cookies från en iFrame med attributet `SameSite=None` i webbläsaren Google Chrome.
+* Den här korrigeringen innehåller en korrigering för att skriva cookies från en iFrame med attribut `SameSite=None` i webbläsaren Google Chrome.
 
 ## 12 jan 2021
 
@@ -38,8 +39,8 @@ Versionsinformation om själva identitetstjänsten för Experience Cloud och int
 
 #### **Funktioner**
 
-* Lägger till `sameSiteCookie`-konfig för att ange attributet `SameSite` för cookien `AMCV`.
-Denna config stöder följande värden för attributet `SameSite`:
+* Lägger till `sameSiteCookie` konfigurera för att ange `SameSite` attributet för `AMCV` cookie.
+Denna konfiguration stöder följande värden för `SameSite` attribute:
 
    * `Strict`
    * `Lax`
@@ -62,7 +63,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 #### **Funktioner**
 
-* Lägger till stöd för `IAB TCF` - Transparency &amp; Consent Framework - `Version 2.0`.
+* Stöd för `IAB TCF` - Genomskinlighet och samtycke - `Version 2.0`.
 
 ## 13 april 2020
 
@@ -70,7 +71,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 #### **Funktioner**
 
-* Skapade `loadSSL`-flagga som standard. Alla anrop till identitetstjänsten är som standard på `https`. Kunderna kan ställa in det på false om de vill anropa Identity Services på http från sina icke-ssl-sidor.
+* Gjord `loadSSL` flagga som standard. Alla anrop till identitetstjänsten är aktiverade `https` som standard. Kunderna kan ställa in det på false om de vill anropa Identity Services på http från sina icke-ssl-sidor.
 * Funktionen som används för att identifiera Internet-Explorer-versionen (IE) har uppdaterats för att åtgärda ett problem som rapporterats av ESLint.
 * Felkorrigering för prestandaproblem i Internet-Explorer (IE) 11 när ECID ges optIn-förhandsgodkännande och uppdateras senare.
 
@@ -82,7 +83,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 * Besökare.js har uppdaterats till 4.5.2
 * Besökaren 4.5.1 innehåller en felkorrigering för IAB-plugin för Option
-* Metoden `setCustomerIDs` har uppdaterats för att avvisa tomma ID:n som skickats.
+* Uppdaterat `setCustomerIDs` metod för att avvisa tomma ID:n som skickas.
 
 ## 7 januari 2020
 
@@ -91,7 +92,7 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 #### **Funktioner**
 
 * Besökare.js har uppdaterats till 4.4.2
-* Förbättringar av `getVisitorValues`-metoden för att hämta värden snabbare
+* Förbättringar för `getVisitorValues` metod för att hämta värden snabbare
 
 
 ## 19 september 2019
