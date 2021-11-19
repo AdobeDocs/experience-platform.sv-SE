@@ -5,13 +5,13 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda Sources SDK.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
+source-git-commit: a3bfd3b87343ca1dd2d122f4f82926082965578c
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 1%
 
 ---
-
 
 # Konfigurera autentiseringsspecifikationer för Sources SDK
 
@@ -180,7 +180,7 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
 | Egenskap | Beskrivning | Exempel |
 | --- | --- | --- |
 | `authSpec.name` | Visar namnet på autentiseringstypen som stöds. | `Basic Authentication` |
-| `authSpec.type` | Definierar den typ av autentisering som stöds av källan. | `oAuth2-refresh-code` |
+| `authSpec.type` | Definierar den typ av autentisering som stöds av källan. | `BasicAuthentication` |
 | `authSpec.spec` | Innehåller information om autentiseringens schema, datatyp och egenskaper. |
 | `authSpec.spec.$schema` | Definierar det schema som används för autentiseringen. | `http://json-schema.org/draft-07/schema#` |
 | `authSpec.spec.type` | Definierar schemats datatyp. | `object` |
