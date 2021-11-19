@@ -5,9 +5,9 @@ seo-title: Frequently asked questions
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 seo-description: Answers to the most frequently asked questions about Adobe Experience Platform destinations
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 8f9a601a833149c83d465f68d16ca362ed730b8a
+source-git-commit: 69fc8e8ec3211495056be73c2e49c6aecfc569ea
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '795'
 ht-degree: 4%
 
 ---
@@ -77,7 +77,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 
 **Kan jag skapa flera Facebook-mål i plattformsgränssnittet för separata Facebook-konton?**
 
-En Facebook-destination i Experience Platform är 1:1 till ett annonskonto i Facebook. Du kan skapa ett separat Facebook-mål för varje Facebook-annonskonto i ditt företag. Följ [självstudiekurs om målanslutning](/help/destinations/ui/connect-destination.md) och ansluta till ett separat Facebook-konto för varje nytt Facebook-mål i användargränssnittet för plattformen.
+Ja. En Facebook-destination i Experience Platform är 1:1 till ett annonskonto i Facebook. Du kan skapa ett separat Facebook-mål för varje Facebook-annonskonto i ditt företag. Följ [självstudiekurs om målanslutning](/help/destinations/ui/connect-destination.md) och ansluta till ett separat Facebook-konto för varje nytt Facebook-mål i användargränssnittet för plattformen. Det finns ingen gräns för hur många Facebook-annonskonton du kan ansluta till.
 
 ## linkedIn Matched Auditions {#linkedin}
 
