@@ -3,9 +3,9 @@ keywords: personalisering;personalisering
 title: Översikt över destinationer för personalisering
 description: Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 8f9a601a833149c83d465f68d16ca362ed730b8a
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '145'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,13 @@ Personaliseringsplattformar samlar in data och insikter från enskilda beteenden
 ## Destinationer för personalisering som stöds {#supported-destinations}
 
 För närvarande stöder Platform de personaliseringsmål som listas nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+
+**Anslutningar**
+
+* [(Beta) Adobe Target](adobe-target-connection.md)
+* [(Beta) Anpassad personaliseringsanslutning](custom-personalization.md)
+
+**Tillägg**
 
 * [Adobe Target-tillägg](adobe-target.md)
 * [Adobe Target v2-tillägg](adobe-target-v2.md)
