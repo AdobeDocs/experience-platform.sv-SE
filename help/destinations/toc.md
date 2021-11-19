@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: a01730fce4f7746389fc48e700c259567492d0ee
+source-git-commit: 320c95f894c75a7f52808730b0cac4bc1e4411e1
 workflow-type: tm+mt
-source-wordcount: '677'
+source-wordcount: '680'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,6 @@ ht-degree: 1%
    * [Övervaka dataflöden](./ui/monitor-dataflows.md)
 * Målkatalog {#catalog}
    * [Översikt över destinationskatalogen](./catalog/overview.md)
-   * [ (Alfa) HTTP-anslutning](./catalog/http-destination.md)
    * Adobe destinationer{#adobe}
       * [Översikt över destinationer i Adobe](./catalog/adobe/overview.md)
       * [Marketo Engage](./catalog/adobe/marketo-engage.md)
@@ -132,6 +131,8 @@ ht-degree: 1%
       * [Facebook-anslutning](./catalog/social/facebook.md)
       * [linkedIn Matched Auditions connection](./catalog/social/linkedin.md)
       * [[!DNL Twitter Custom Audiences] anslutning](./catalog/social/twitter.md)
+   * Målgrupper för direktuppspelning {#streaming}
+      * [ (Beta) HTTP API-anslutning](./catalog/streaming/http-destination.md)
    * Undersökningsmål {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
