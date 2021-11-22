@@ -6,7 +6,7 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
+source-git-commit: 055338228608685a65bc79d9d9d0c07e3ddddfb2
 workflow-type: tm+mt
 source-wordcount: '1687'
 ht-degree: 0%
@@ -48,13 +48,13 @@ Se följande tabell för mer information om status:
 ### Dataflödeskörningar för direktuppspelningsmål
 
 >[!CONTEXTUALHELP]
->id="platform_destinations_activate_identitiesactivated"
+>id="platform_destinations_dataflow_identitiesactivated"
 >title="Aktiverade identiteter"
 >abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
 >additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
 
 >[!CONTEXTUALHELP]
->id="platform_destinations_activate_identitiesexcluded"
+>id="platform_destinations_dataflow_identitiesexcluded"
 >title="Undantagna identiteter"
 >abstract="Antalet enskilda profilposter som har uteslutits från aktivering för den valda destinationen baserat på saknade attribut och godkännandefel."
 >additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
