@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: eea5cfe6111d25da4a7978d3924861250059cc7e
+source-git-commit: a7f95dd5b0b84a8ca5c7a69b5a30e5c3dba16007
 workflow-type: tm+mt
-source-wordcount: '395'
-ht-degree: 6%
+source-wordcount: '401'
+ht-degree: 5%
 
 ---
 
@@ -155,6 +155,7 @@ ht-degree: 6%
    * [Definiera en schemarelation i API:t](tutorials/relationship-api.md)
    * [Definiera en schemarelation i realtid med CDP B2B Edition](tutorials/relationship-b2b.md)
    * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
+   * [Utöka ett mjukt uppräkningsfält (API)](tutorials/extend-soft-enum.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
