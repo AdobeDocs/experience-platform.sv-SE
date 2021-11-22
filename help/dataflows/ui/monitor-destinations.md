@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 9396f44aafc7d6e863d09b369440f507998dce2c
+source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1687'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,18 @@ Se följande tabell för mer information om status:
 | Fel | The `Error` status anger att aktiveringsprocessen för ett dataflöde har avbrutits. |
 
 ### Dataflödeskörningar för direktuppspelningsmål
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_identitiesactivated"
+>title="Aktiverade identiteter"
+>abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
+>additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_identitiesexcluded"
+>title="Undantagna identiteter"
+>abstract="Antalet enskilda profilposter som har uteslutits från aktivering för den valda destinationen baserat på saknade attribut och godkännandefel."
+>additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
 
 För direktuppspelningsmål finns följande [!UICONTROL Dataflow runs] tillhandahåller en timuppdatering för mätdata på dina dataflöden. Den mest framträdande statistiken är för identiteter.
 
@@ -150,7 +162,7 @@ Dessutom kan du ange ett mål i sökfältet för att isolera till ett enda mål.
 
 Om du vill visa alla befintliga dataflöden för alla mål väljer du **[!UICONTROL Dataflows]**.
 
-En lista över dataflöden visas, grupperade per mål. Du kan se ytterligare information för ett specifikt dataflöde genom att leta reda på målet som du vill övervaka och välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid den och därefter välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) Förutom dataflödet vill du ha mer information om.
+En lista över dataflöden visas, grupperade per mål. Du kan se ytterligare information om ett specifikt dataflöde genom att leta reda på målet som du vill övervaka och välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) bredvid den och därefter välja filtret ![filter](../assets/ui/monitor-destinations/filter.png) Förutom dataflödet vill du ha mer information om.
 
 ![](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 

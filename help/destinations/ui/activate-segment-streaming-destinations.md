@@ -5,13 +5,13 @@ type: Tutorial
 seo-title: Activate audience data to streaming segment export destinations
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to segment streaming destinations.
-source-git-commit: f4721d3f114357b25517e4e66f1f626f82621c34
+exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
+source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
 workflow-type: tm+mt
-source-wordcount: '726'
+source-wordcount: '746'
 ht-degree: 0%
 
 ---
-
 
 # Aktivera målgruppsdata för att direktuppspela segmentexportmål
 
@@ -21,15 +21,15 @@ I den här artikeln förklaras det arbetsflöde som krävs för att aktivera må
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
+Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
+1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
    ![Fliken Målkatalog](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
 
    ![Aktivera knappar](../assets/ui/activate-segment-streaming-destinations/activate-segments-button.png)
 
@@ -37,11 +37,11 @@ Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./conne
 
    ![Välj mål](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
 
-1. Gå till nästa avsnitt för att [markera dina segment](#select-segments).
+1. Gå till nästa avsnitt till [markera segment](#select-segments).
 
 ## Välj segment {#select-segments}
 
-Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
+Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
 
 ![Markera segment](../assets/ui/activate-segment-streaming-destinations/select-segments.png)
 
@@ -49,27 +49,27 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 
 >[!IMPORTANT]
 >
->Det här steget gäller endast vissa mål för segmentdirektuppspelning. Om målet inte har ett **[!UICONTROL Mapping]**-steg går du till [Schemalägg segmentexport](#scheduling).
+>Det här steget gäller endast vissa mål för segmentdirektuppspelning. Om målet inte har en **[!UICONTROL Mapping]** steg, hoppa till [Schemalägg segmentexport](#scheduling).
 
 Vissa mål för segmentdirektuppspelning kräver att du väljer källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
 
-1. Välj **[!UICONTROL Add new mapping]** på sidan **[!UICONTROL Mapping]**.
+1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new mapping]**.
 
    ![Lägg till ny mappning](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
 
-1. Markera pilen till höger om **[!UICONTROL Source field]**-posten.
+1. Markera pilen till höger om **[!UICONTROL Source field]** post.
 
    ![Välj källfält](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
 
-1. På sidan **[!UICONTROL Select source field]** använder du alternativen **[!UICONTROL Select attributes]** eller **[!UICONTROL Select identity namespace]** för att växla mellan de två kategorierna med tillgängliga källfält. Välj de tillgängliga [!DNL XDM]-profilattributen och identitetsnamnutrymmena de som du vill mappa till målet och välj sedan **[!UICONTROL Select]**.
+1. I **[!UICONTROL Select source field]** sidan använder du **[!UICONTROL Select attributes]** eller **[!UICONTROL Select identity namespace]** för att växla mellan de två kategorierna med tillgängliga källfält. Från tillgängliga [!DNL XDM] profilattribut och identitetsnamnutrymmen, markera de som du vill mappa till målet och välj sedan **[!UICONTROL Select]**.
 
    ![Välj källfältssida](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
 
-1. Markera knappen till höger om **[!UICONTROL Target field]**-posten.
+1. Markera knappen till höger om **[!UICONTROL Target field]** post.
 
    ![Välj målfält](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
 
-1. På sidan **[!UICONTROL Select target field]** markerar du det målidentitetsnamnområde som du vill mappa källfältet till och väljer **[!UICONTROL Select]**.
+1. I **[!UICONTROL Select target field]** väljer du det målidentitetsnamnutrymme som du vill mappa källfältet till och väljer **[!UICONTROL Select]**.
 
    ![Välj målfältssida](../assets/ui/activate-segment-streaming-destinations/target-field-page.png)
 
@@ -83,41 +83,47 @@ Vissa mål för segmentdirektuppspelning kräver att du väljer källattribut el
 >abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#apply-transformation" text="Läs mer i dokumentationen"
 
-När du mappar ohashade källattribut till målattribut som målet förväntar sig ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), markera alternativet **Använd omformning** om du vill att Adobe Experience Platform automatiskt ska hash-koda källattributen vid aktiveringen.
+När du mappar ohashade källattribut till målattribut som målet förväntar sig ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), kontrollera **Använd omformning** att Adobe Experience Platform automatiskt ska hash-koda källattributen vid aktiveringen.
 
 ![Identitetsmappning](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## Schemalägg segmentexport {#scheduling}
 
-Som standard visar sidan [!UICONTROL Segment schedule] bara de segment som du nyligen har valt i det aktuella aktiveringsflödet.
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_enddate"
+>title="Slutdatum"
+>abstract="Det går inte att lägga till ett slutdatum för segmentschema."
+>additional-url="https://www.adobe.com/go/destinations-activate-segment-scheduling-en" text="Läs mer i dokumentationen"
+
+Som standard är [!UICONTROL Segment schedule] visas endast de nyligen valda segmenten som du valde i det aktuella aktiveringsflödet.
 
 ![Nya segment](../assets/ui/activate-segment-streaming-destinations/new-segments.png)
 
-Om du vill se alla segment som aktiveras till målet använder du filteralternativet och inaktiverar filtret **[!UICONTROL Show new segments only]**.
+Om du vill se alla segment som aktiveras till målet använder du filteralternativet och inaktiverar **[!UICONTROL Show new segments only]** filter.
 
 ![Alla segment](../assets/ui/activate-segment-streaming-destinations/all-segments.png)
 
-1. På sidan **[!UICONTROL Segment schedule]** markerar du varje segment och använder sedan väljarna **[!UICONTROL Start date]** och **[!UICONTROL End date]** för att konfigurera tidsintervallet för att skicka data till målet.
+1. På **[!UICONTROL Segment schedule]** markerar du varje segment och använder sedan **[!UICONTROL Start date]** och **[!UICONTROL End date]** väljare för att konfigurera tidsintervallet för att skicka data till målet.
 
    ![Segmentschema](../assets/ui/activate-segment-streaming-destinations/segment-schedule.png)
 
-   * Vissa mål kräver att du väljer **[!UICONTROL Origin of audience]** för varje segment med hjälp av den nedrullningsbara menyn under kalenderväljarna. Om målet inte innehåller den här väljaren hoppar du över det här steget.
+   * Vissa mål kräver att du väljer **[!UICONTROL Origin of audience]** för varje segment med hjälp av listrutan under kalenderväljarna. Om målet inte innehåller den här väljaren hoppar du över det här steget.
 
       ![Mappnings-ID](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
-   * Vissa mål kräver att du manuellt mappar [!DNL Platform]-segment till deras motsvarighet i måldestinationen. Det gör du genom att markera varje segment och sedan ange motsvarande segment-ID från målplattformen i fältet **[!UICONTROL Mapping ID]**. Om målet inte innehåller det här fältet hoppar du över det här steget.
+   * Vissa mål kräver att du mappar manuellt [!DNL Platform] segment till deras motsvarighet i måldestinationen. Om du vill göra det markerar du varje segment och anger sedan motsvarande segment-ID från målplattformen i dialogrutan **[!UICONTROL Mapping ID]** fält. Om målet inte innehåller det här fältet hoppar du över det här steget.
 
       ![Mappnings-ID](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
-   * Vissa mål kräver att du anger ett **[!UICONTROL App ID]** när du aktiverar [!DNL IDFA]- eller [!DNL GAID]-segment. Om målet inte innehåller det här fältet hoppar du över det här steget.
+   * Vissa mål kräver att du anger en **[!UICONTROL App ID]** vid aktivering [!DNL IDFA] eller [!DNL GAID] segment. Om målet inte innehåller det här fältet hoppar du över det här steget.
 
       ![Program-ID](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
 
-1. Välj **[!UICONTROL Next]** om du vill gå till sidan [!UICONTROL Review].
+1. Välj **[!UICONTROL Next]** för att gå till [!UICONTROL Review] sida.
 
 ## Granska {#review}
 
-På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta valet och börja skicka data till målet.
+På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 >[!IMPORTANT]
 >
@@ -125,13 +131,13 @@ På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[
 
 ![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
 
-Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 ![Granska](../assets/ui/activate-segment-streaming-destinations/review.png)
 
 ## Verifiera segmentaktivering {#verify}
 
-Läs [dokumentationen för målövervakning](../../dataflows/ui/monitor-destinations.md) om du vill ha mer information om hur du övervakar dataflödet till dina mål.
+Kontrollera [dokumentation för målövervakning](../../dataflows/ui/monitor-destinations.md) om du vill ha detaljerad information om hur du övervakar dataflödet till dina destinationer.
 
 <!-- 
 For [!DNL Facebook Custom Audience], a successful activation means that a [!DNL Facebook] custom audience would be created programmatically in [[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segment membership in the audience would be added and removed as users are qualified or disqualified for the activated segments.

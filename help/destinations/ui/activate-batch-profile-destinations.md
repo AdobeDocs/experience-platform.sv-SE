@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
 workflow-type: tm+mt
-source-wordcount: '1894'
+source-wordcount: '2050'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,12 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 
 ## Schemalägg segmentexport {#scheduling}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_schedule"
+>title="Schema"
+>abstract="Filexporttyp (fullständiga eller stegvisa filer) och schemaläggning kan inte ändras när segmentet har sparats."
+>additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="Läs mer i dokumentationen"
+
 [!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av [!DNL CSV] filer. I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
 
 >[!IMPORTANT]
@@ -61,6 +67,12 @@ Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill ski
 ![Knappen Skapa schema](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### Exportera fullständiga filer {#export-full-files}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_exportoptions"
+>title="Alternativ för filexport"
+>abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för segmentet. <br> Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för segmentet sedan den senaste exporten. Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för segmentet och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för segmentet sedan den första inkrementella filexporten."
+>additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="Läs mer i dokumentationen"
 
 Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
 
@@ -112,6 +124,12 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 1. Välj **[!UICONTROL Create]** för att spara schemat.
 
 ### Konfigurera filnamn {#file-names}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_filename"
+>title="Konfigurera filnamn"
+>abstract="För filbaserade mål genereras ett unikt filnamn per segment. Använd filnamnsredigeraren för att skapa och redigera ett unikt filnamn eller behåll standardnamnet."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#file-names" text="Läs mer i dokumentationen"
 
 Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
 
