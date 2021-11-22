@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: bc77614eee6cc50d2ce6b14c1b228ed87f88f340
+source-git-commit: 3b320f253516f2c169330e1eed6ad870a583891a
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
@@ -165,7 +165,7 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 
 ## Steg 6: Testa destinationen {#test-destination}
 
-När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](./create-template.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
+När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](./test-destination.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
 
