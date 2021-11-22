@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: aa8cafc9a40748eda3098b2af732a828d39204b2
+exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
+source-git-commit: 2c4b0d6dd0884fe81565356c31b18c0555bf973f
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '798'
 ht-degree: 1%
 
 ---
@@ -17,6 +18,7 @@ ht-degree: 1%
 Nya funktioner i Adobe Experience Platform:
 
 - [Real-time Customer Data Platform B2B Edition](#B2B)
+- [(Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API](#ad-hoc-activation)
 
 ## Uppdateringar av befintliga funktioner
 
@@ -62,6 +64,10 @@ Standardklasser, fältgrupper och datatyper i B2B XDM är tillgängliga för all
 
 Se [Scheman i Real-time Customer Data Platform B2B Edition](../../rtcdp/schemas/b2b.md) dokumentation för att lära dig mer om att hämta B2B-datatabeller.
 
+### (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API {#ad-hoc-activation}
+
+Med API:t för ad hoc-aktivering kan marknadsförare programmässigt aktivera målgruppssegment till destinationer på ett snabbt och effektivt sätt i situationer där omedelbar aktivering krävs. Ad hoc-målgruppsaktivering stöds endast av [gruppfilsbaserade mål](../../destinations/destination-types.md#file-based) och är för närvarande i betaversion. Mer information finns i [API-dokumentation för ad hoc-aktivering](../../destinations/api/ad-hoc-activation-api.md).
+
 ### Attribution AI {#attribution-ai}
 
 Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
@@ -85,3 +91,4 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 | Anpassade profilattribut | Kund-AI har nu stöd för att definiera anpassade profildatauppsättningsfält (med tidsstämplar) i dina data utöver vanliga händelsefält. Om du använder det här alternativet kan du lägga till ytterligare profilattribut som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och ge mer korrekta resultat. |
 
 Mer information om kundens AI finns i [AI-dokumentation för kund](../../intelligent-services/customer-ai/overview.md).
+

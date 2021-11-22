@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Versionsinformation november 2021 för Adobe Experience Platform.
-source-git-commit: aa8cafc9a40748eda3098b2af732a828d39204b2
+exl-id: f649b516-8ef8-49af-bb3e-0392337d0d86
+source-git-commit: 2c4b0d6dd0884fe81565356c31b18c0555bf973f
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '798'
 ht-degree: 1%
 
 ---
@@ -17,6 +18,7 @@ ht-degree: 1%
 Nya funktioner i Adobe Experience Platform:
 
 - [Real-time Customer Data Platform B2B Edition](#B2B)
+- [(Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API](#ad-hoc-activation)
 
 ## Uppdateringar av befintliga funktioner
 
@@ -61,6 +63,10 @@ Standardklasser, fältgrupper och datatyper i B2B XDM är tillgängliga för all
 | Standardklasser för B2B XDM | Real-time Customer Data Platform B2B Edition innehåller flera standard-XDM som samlar in information om viktiga B2B-datatabeller, som konton, möjligheter, kampanjer med mera. |
 
 Se [Scheman i Real-time Customer Data Platform B2B Edition](../../rtcdp/schemas/b2b.md) dokumentation för att lära dig mer om att hämta B2B-datatabeller.
+
+### (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API {#ad-hoc-activation}
+
+Med API:t för ad hoc-aktivering kan marknadsförare programmässigt aktivera målgruppssegment till destinationer på ett snabbt och effektivt sätt i situationer där omedelbar aktivering krävs. Ad hoc-målgruppsaktivering stöds endast av [gruppfilsbaserade mål](../../destinations/destination-types.md#file-based) och är för närvarande i betaversion. Mer information finns i [API-dokumentation för ad hoc-aktivering](../../destinations/api/ad-hoc-activation-api.md).
 
 ### Attribution AI {#attribution-ai}
 
