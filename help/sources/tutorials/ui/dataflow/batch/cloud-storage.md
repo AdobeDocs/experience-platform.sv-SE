@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;dataflow;Dataflow
+keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 solution: Experience Platform
-title: Configure a Dataflow for a Cloud Storage Batch Connector in the UI
+title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
 topic-legacy: overview
 type: Tutorial
-description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. This tutorial provides steps to configure a new dataflow using your cloud storage account.
+description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 10f04044e970158131677e0c630edf761d4577bd
+source-git-commit: aac052502ea9ac0d6fae5839d8af02a077c3d6db
 workflow-type: tm+mt
-source-wordcount: '1969'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -23,23 +23,23 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schema Editor tutorial](../../../../../xdm/tutorials/create-schema-ui.md): Learn how to create custom schemas using the Schema Editor UI.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Provides a unified, real-time consumer profile based on aggregated data from multiple sources.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagringskonto. En lista med självstudiekurser för att skapa olika molnlagringskonton i användargränssnittet finns i [översikt över källanslutningar](../../../../home.md).
 
 ### Filformat som stöds
 
-[!DNL Experience Platform] supports the following file formats to be ingested from external storages:
+[!DNL Experience Platform] har stöd för följande filformat som ska importeras från externa lagringsplatser:
 
 * Avgränsaravgränsade värden (DSV): Alla värden med ett tecken kan användas som avgränsare för DSV-formaterade datafiler.
-* [!DNL JavaScript Object Notation] (JSON): JSON-formatted data files must be XDM-compliant.
+* [!DNL JavaScript Object Notation] (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
 * [!DNL Apache Parquet]: Parquet-formaterade datafiler måste vara XDM-kompatibla.
 * Komprimerade filer: JSON och avgränsade filer kan komprimeras som: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip`och `tar`.
 
-## Select data
+## Markera data
 
-After creating your cloud storage account, the **[!UICONTROL Select data]** step appears, providing an interface for you to explore your cloud storage file hierarchy.
+När du har skapat ditt molnlagringskonto **[!UICONTROL Select data]** visas med ett gränssnitt där du kan utforska din molnlagringsfilshierarki.
 
 * Den vänstra delen av gränssnittet är en katalogwebbläsare som visar lagringsfiler och kataloger i molnet.
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
@@ -80,9 +80,9 @@ Om du föredrar att välja en viss fil markerar du den fil som du vill importera
 
 ![select-file](../../../../images/tutorials/dataflow/cloud-storage/batch/select-file.png)
 
-### Set a custom delimiter for delimited files
+### Ange en anpassad avgränsare för avgränsade filer
 
-You can set a custom delimiter when ingesting delimited files. Select the **[!UICONTROL Delimiter]** option and then select a delimiter from the dropdown menu. The menu displays the most frequently used options for delimiters, including a comma (`,`), a tab (`\t`), and a pipe (`|`). Om du föredrar att använda en egen avgränsare väljer du **[!UICONTROL Custom]** och ange en avgränsare med ett tecken i popup-indatafältet.
+Du kan ange en egen avgränsare när du importerar avgränsade filer. Välj **[!UICONTROL Delimiter]** och välj sedan en avgränsare i listrutan. Menyn innehåller de vanligaste alternativen för avgränsare, inklusive kommatecken (`,`), en tabb (`\t`) och ett rör (`|`). Om du föredrar att använda en egen avgränsare väljer du **[!UICONTROL Custom]** och ange en avgränsare med ett tecken i popup-indatafältet.
 
 När du har valt dataformat och angett avgränsare väljer du **[!UICONTROL Next]**.
 
@@ -110,13 +110,13 @@ Om du vill importera data till en befintlig datauppsättning väljer du **[!UICO
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-existing-data.png)
 
-The **[!UICONTROL Select dataset]** visas. Find the dataset you you wish to use, select it, then click **[!UICONTROL Continue]**.
+The **[!UICONTROL Select dataset]** visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-existing-dataset.png)
 
 **Använd en ny datauppsättning**
 
-To ingest data into a new dataset, select **[!UICONTROL New dataset]** and enter a name and description for the dataset in the fields provided. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i **[!UICONTROL Select schema]** -dialogrutan. Du kan också välja **[!UICONTROL Schema advanced search]** för att söka efter ett lämpligt schema.
+Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och ange ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i **[!UICONTROL Select schema]** -dialogrutan. Du kan också välja **[!UICONTROL Schema advanced search]** för att söka efter ett lämpligt schema.
 
 Under det här steget kan du aktivera datauppsättningen för [!DNL Real-time Customer Profile] och skapa en helhetsbild av ett företags attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
 
@@ -142,9 +142,9 @@ Observera att du inte kan mappa mellan olika typer. Du kan till exempel inte map
 
 >[!TIP]
 >
->Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. You can manually adjust mapping rules to suit your use cases.
+>Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
-Select **[!UICONTROL Preview data]** to see mapping results of up to 100 rows of sample data from the selected dataset.
+Välj **[!UICONTROL Preview data]** för att se mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
 
 Under förhandsgranskningen prioriteras identitetskolumnen som det första fältet, eftersom det är den nyckelinformation som krävs vid validering av mappningsresultat.
 
@@ -152,9 +152,9 @@ Under förhandsgranskningen prioriteras identitetskolumnen som det första fält
 
 När källdata har mappats väljer du **[!UICONTROL Close]**.
 
-## Schedule ingestion runs
+## Schemalägg körning av inmatning
 
-The **[!UICONTROL Scheduling]** step appears, allowing you to configure an ingestion schedule to automatically ingest the selected source data using the configured mappings. I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
+The **[!UICONTROL Scheduling]** visas så att du kan konfigurera ett matningsschema att automatiskt importera valda källdata med de konfigurerade mappningarna. I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
@@ -188,6 +188,12 @@ När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-once.png)
 
 ## Ange information om dataflöde
+
+>[!CONTEXTUALHELP]
+>id="platform_sources_alerts_subscribe"
+>title="Prenumerera på källvarningar"
+>abstract="Markera det här alternativet om du vill prenumerera på aviseringar om källans dataflöden."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html?lang=en#provide-dataflow-details" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Dataflow detail]** visas så att du kan namnge och ge en kort beskrivning av det nya dataflödet.
 
@@ -236,13 +242,13 @@ I följande avsnitt finns ytterligare information om hur du arbetar med källkop
 
 ### Inaktivera ett dataflöde
 
-When a dataflow is created, it immediately becomes active and ingests data according to the schedule it was given. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
+När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
 
-Within the **[!UICONTROL Sources]** workspace, click the **[!UICONTROL Browse]** tab. Klicka sedan på namnet på kontot som är associerat med det aktiva dataflödet som du vill inaktivera.
+I **[!UICONTROL Sources]** klickar du på **[!UICONTROL Browse]** -fliken. Klicka sedan på namnet på kontot som är associerat med det aktiva dataflödet som du vill inaktivera.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/browse.png)
 
-The **[!UICONTROL Source activity]** visas. Välj det aktiva dataflödet i listan för att öppna dess **[!UICONTROL Properties]** kolumn till höger på skärmen som innehåller en **[!UICONTROL Enabled]** växlingsknapp. Click the toggle to disable the dataflow. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
+The **[!UICONTROL Source activity]** visas. Välj det aktiva dataflödet i listan för att öppna dess **[!UICONTROL Properties]** kolumn till höger på skärmen som innehåller en **[!UICONTROL Enabled]** växlingsknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/disable-source.png)
 
