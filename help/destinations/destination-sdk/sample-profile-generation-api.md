@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/sample-profiles` för att generera exempelprofiler som ska användas vid måltestning.
 title: API-åtgärder för generering av exempelprofiler
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
+source-git-commit: 7f0dcc916b72145705ecd09b45aadd40eac99b23
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '989'
 ht-degree: 0%
 
 ---
@@ -13,27 +13,36 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**API-slutpunkt**:  `https://platform.adobe.io/data/core/activation/authoring/sample-profiles`
+>**API-slutpunkt**: `https://platform.adobe.io/data/core/activation/authoring/sample-profiles`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/sample-profiles`.
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/sample-profiles` API-slutpunkt.
 
-Med den här API-slutpunkten kan du generera exempelprofiler som ska användas:
-* När du testar en meddelandeomformningsmall. Läs mer i [Skapa och testa en meddelandeomformningsmall](./create-template.md).
-* När du testar om målet är korrekt konfigurerat. Läs mer i [Testa målkonfigurationen](./test-destination.md).
-
-Du kan generera exempelprofiler baserat på Adobe XDM-källschemat eller målschemat som stöds av ditt mål. Läs artikeln [Meddelandeformat](./message-format.md) om du vill veta skillnaden mellan källschemat och målschemat i Adobe XDM.
-
-## Komma igång med API-åtgärder för generering av exempelprofiler {#get-started}
-
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
-
-## Generera exempelprofiler baserat på källschemat {#generate-sample-profiles-source-schema}
+## Generera olika profiltyper för olika API:er {#different-profiles-different-apis}
 
 >[!IMPORTANT]
 >
->Lägg till exempelprofilerna som genereras här för HTTP-anrop när [du testar ditt mål](./test-destination.md).
+>Använd den här API-slutpunkten om du vill generera exempelprofiler för två olika användningsområden. Du kan antingen:
+>* generera profiler som ska användas när [skapa och testa en meddelandeomvandlingsmall](./create-template.md) - genom att använda *mål-ID* som en frågeparameter.
+>* generera profiler som ska användas vid anrop till [testa om målet är korrekt konfigurerat](./test-destination.md) - genom att använda *målinstans-ID* som en frågeparameter.
 
-Du kan generera exempelprofiler baserat på källschemat genom att göra en GET-förfrågan till `authoring/sample-profiles/`-slutpunkten och ange ID:t för en målinstans som du har skapat baserat på målkonfigurationen som du vill testa.
+
+Du kan generera exempelprofiler baserat på antingen Adobe XDM-källschemat (som används vid testning av ditt mål) eller målschemat som stöds av ditt mål (som används när du skapar mallen). Om du vill förstå skillnaden mellan källschemat och målschemat för Adobe XDM läser du översiktsavsnittet i [Meddelandeformat](./message-format.md) artikel.
+
+Observera att de syften för vilka exempelprofilerna kan användas inte är utbytbara. Profiler som genereras baserat på *mål-ID* kan bara användas för att skapa dina meddelandeomformningsmallar och profiler som genereras baserat på *målinstans-ID* kan bara användas för att testa målslutpunkten.
+
+## Komma igång med API-åtgärder för generering av exempelprofiler {#get-started}
+
+Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+
+## Generera exempelprofiler baserat på källschemat som ska användas vid testning av målet {#generate-sample-profiles-source-schema}
+
+>[!IMPORTANT]
+>
+>Lägg till exempelprofilerna som genereras här i HTTP-anrop när [testa destinationen](./test-destination.md).
+
+Du kan generera exempelprofiler baserat på källschemat genom att göra en GET-förfrågan till `authoring/sample-profiles/` slutpunkt och ange ID:t för en målinstans som du har skapat baserat på den målkonfiguration som du vill testa.
+
+Om du vill hämta ID:t för en målinstans måste du först skapa en anslutning i användargränssnittet i Experience Platform till målet innan du försöker testa målet. Läs [aktivera mål, självstudiekurs](/help/destinations/ui/activation-overview.md) och se tipset nedan för hur du får destinationsinstans-ID att använda för detta API.
 
 >[!TIP]
 >
@@ -51,14 +60,14 @@ GET authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&co
 | Frågeparameter | Beskrivning |
 | -------- | ----------- |
 | `{DESTINATION_INSTANCE_ID}` | ID:t för målinstansen som du genererar exempelprofiler utifrån. |
-| `{COUNT}` | *Valfritt*. Antalet exempelprofiler som du genererar. Parametern kan ha värden mellan `1 - 1000`. <br> Om parametern count inte anges bestäms standardantalet genererade profiler av  `maxUsersPerRequest` värdet i  [målserverkonfigurationen](./destination-server-api.md#create). Om den här egenskapen inte är definierad genereras en exempelprofil i Adobe. |
+| `{COUNT}` | *Valfritt*. Antalet exempelprofiler som du genererar. Parametern kan ha värden mellan `1 - 1000`. <br> Om parametern count inte anges bestäms standardantalet genererade profiler av `maxUsersPerRequest` värdet i [målserverkonfiguration](./destination-server-api.md#create). Om den här egenskapen inte är definierad genereras en exempelprofil i Adobe. |
 
 {style=&quot;table-layout:auto&quot;}
 
 
 **Begäran**
 
-Följande begäran genererar exempelprofiler, konfigurerade av frågeparametrarna `{DESTINATION_INSTANCE_ID}` och `{COUNT}`.
+Följande begäran genererar exempelprofiler som konfigurerats av `{DESTINATION_INSTANCE_ID}` och `{COUNT}` frågeparametrar.
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationInstanceId=49966037-32cd-4457-a105-2cbf9c01826a&count=3' \
@@ -172,24 +181,24 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `segmentMembership` | Ett kartobjekt som beskriver personens segmentmedlemskap. Mer information om `segmentMembership` finns i [Information om segmentmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
+| `segmentMembership` | Ett kartobjekt som beskriver personens segmentmedlemskap. Mer information om `segmentMembership`, läsa [Information om segmentmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
 | `xdm:status` | Anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
-| `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap` finns i [Grundläggande om schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
+| `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, läsa [Grund för schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
 
 {style=&quot;table-layout:auto&quot;}
 
-## Generera exempelprofiler baserat på målschemat {#generate-sample-profiles-target-schema}
+## Generera exempelprofiler baserade på målschemat som ska användas när en meddelandeomformningsmall skapas {#generate-sample-profiles-target-schema}
 
 >[!IMPORTANT]
 >
->Använd exempelprofilerna som genereras här när du skapar mallen i [återgivningsmallsteget](./render-template-api.md#multiple-profiles-with-body).
+>Använd exempelprofilerna som genereras här när du skapar mallen i [återge mallsteg](./render-template-api.md#multiple-profiles-with-body).
 
-Du kan generera exempelprofiler baserat på målschemat och göra en GET-förfrågan till `authoring/sample-profiles/`-slutpunkten och ange mål-ID:t för målkonfigurationen baserat på vilken du skapar mallen.
+Du kan generera exempelprofiler baserat på målschemat och göra en GET-förfrågan till `authoring/sample-profiles/` slutpunkt och ange mål-ID för den målkonfiguration som du skapar mallen utifrån.
 
 >[!TIP]
 >
->* Det mål-ID som du bör använda här är det `instanceId` som motsvarar en målkonfiguration, som skapas med slutpunkten `/destinations`. Se [API-referens för målkonfiguration](./destination-configuration-api.md#retrieve-list).
+>* Mål-ID som du ska använda här är `instanceId` som motsvarar en målkonfiguration, skapad med `/destinations` slutpunkt. Se [API-referens för destinationskonfiguration](./destination-configuration-api.md#retrieve-list).
 
 
 **API-format**
@@ -202,13 +211,13 @@ GET authoring/sample-profiles?destinationId={DESTINATION_ID}&count={COUNT}
 | Frågeparameter | Beskrivning |
 | -------- | ----------- |
 | `{DESTINATION_ID}` | ID:t för målkonfigurationen baserat på vilket du genererar exempelprofiler. |
-| `{COUNT}` | *Valfritt*. Antalet exempelprofiler som du genererar. Parametern kan ha värden mellan `1 - 1000`. <br> Om parametern count inte anges bestäms standardantalet genererade profiler av  `maxUsersPerRequest` värdet i  [målserverkonfigurationen](./destination-server-api.md#create). Om den här egenskapen inte är definierad genereras en exempelprofil i Adobe. |
+| `{COUNT}` | *Valfritt*. Antalet exempelprofiler som du genererar. Parametern kan ha värden mellan `1 - 1000`. <br> Om parametern count inte anges bestäms standardantalet genererade profiler av `maxUsersPerRequest` värdet i [målserverkonfiguration](./destination-server-api.md#create). Om den här egenskapen inte är definierad genereras en exempelprofil i Adobe. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran genererar exempelprofiler, konfigurerade av frågeparametrarna `{DESTINATION_ID}` och `{COUNT}`.
+Följande begäran genererar exempelprofiler som konfigurerats av `{DESTINATION_ID}` och `{COUNT}` frågeparametrar.
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationId=49966037-32cd-4457-a105-2cbf9c01826a&count=3' \
@@ -366,8 +375,8 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 ## API-felhantering {#api-error-handling}
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [begäranrubrikfel](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu hur du genererar exempelprofiler som ska användas när [du testar en meddelandeomformningsmall](./create-template.md) eller när [testar om målet har konfigurerats korrekt](./test-destination.md).
+När du har läst det här dokumentet vet du nu hur du genererar exempelprofiler som ska användas när [testa en meddelandeomvandlingsmall](./create-template.md) eller när [testar om målet är korrekt konfigurerat](./test-destination.md).
