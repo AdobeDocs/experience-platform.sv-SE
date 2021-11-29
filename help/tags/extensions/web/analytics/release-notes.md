@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: 83e9ebf65e904c6343fe44932a2b7b1a72039187
+source-git-commit: 73fe3c2e060dbdd7607ed3b54c5b8e9cca752d8f
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '1272'
 ht-degree: 3%
 
 ---
@@ -13,7 +13,15 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## 29 november 2021
+
+### Adobe Analytics Extension 1.8.8
+
+#### Felkorrigeringar
+
+* Uppgraderade AppMeasurement till v2.2.3.
 
 ## 16 september 2021
 
@@ -30,7 +38,7 @@ ht-degree: 3%
 
 #### Felkorrigeringar
 
-* Uppgraderade [AppMeasurement till v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* Uppgraderad [AppMeasurement to v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 * Uppdaterade reservlinkName för att spegla logiken i Activity Map i stället för att använda innerHTML.
 
 ## 6 augusti 2020
@@ -43,7 +51,7 @@ ht-degree: 3%
 
 #### Funktioner
 
-* Uppdaterat [AppMeasurement till 2.2.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
+* Uppdaterat [AppMeasurement to 2.22.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 * Det lilla användargränssnittet ändras så att de extra inställningarna nu visas komprimerade i ett dragspel i stället för i en kryssruta.
 
 ## 2 juni 2020
@@ -71,7 +79,7 @@ ht-degree: 3%
 
 #### Funktioner
 
-* Uppdaterat [AppMeasurement till 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* Uppdaterat [AppMeasurement to 2.20.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
 
 ## 2 mars 2020
 
@@ -83,7 +91,7 @@ ht-degree: 3%
 
 #### Funktioner
 
-* Uppdaterat [AppMeasurement till 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
+* Uppdaterat [AppMeasurement to 2.18.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html)
 * DIL-biblioteket i modulen Audience Manager har uppdaterats till 9.4
 * Ökade längden på indatafält i tillägget
 * eVars och props i tilläggs- och åtgärdskonfigurationerna visar nu det egna namnet från Analytics
@@ -144,7 +152,7 @@ ht-degree: 3%
 
 * Uppdaterat Adobe Analytics-tillägget med stöd för DIL 9.2 för Audience Manager
 
-* Tillägget med stöd för [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0) har uppdaterats
+* Uppdaterat tillägg till support [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0)
 * Följande kryssruta har tagits bort eftersom den inte längre stöds: &quot;Koppla inte målpubliceringen IFRAME till DOM- eller branddestinationerna&quot;
 
 ## 4 juni 2019
@@ -153,7 +161,7 @@ ht-degree: 3%
 
 #### Funktioner
 
-* Uppdaterade Adobe Analytics-tillägget till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=en#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
+* Adobe Analytics-tillägget har uppdaterats till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=en#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
 * En Exchange-länk har lagts till i tillägget. Du når Exchange-listan genom att markera listrutan och välja &quot;tilläggsinformation&quot;
 
 #### Felkorrigeringar
@@ -250,7 +258,7 @@ ht-degree: 3%
 #### **Funktioner**
 
 * Uppdaterat Adobe Analytics-tillägg som stöd för AppMeasurement 2.9.
-* En funktion för att göra spåraren globalt tillgänglig har lagts till i Adobe Analytics-tillägget, vilket gör att spåraren kan användas globalt under `windows.s`.
+* Tillagd funktion för att göra spåraren globalt tillgänglig i Adobe Analytics-tillägget, som gör att spåraren kan användas globalt under `windows.s`.
 
 #### **Felkorrigeringar**
 
