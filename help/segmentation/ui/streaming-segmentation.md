@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 58b546ea83774672dd36ca6cd952e229410aa645
+source-git-commit: 6db0aef66abe11b8ed9f4b8da56875aa296b1a10
 workflow-type: tm+mt
-source-wordcount: '1192'
+source-wordcount: '1182'
 ht-degree: 0%
 
 ---
@@ -85,8 +85,6 @@ Den här användarhandboken förklarar hur definitioner av direktuppspelningsakt
 Läs mer om Adobe Experience Platform användargränssnitt i [Användarhandbok för segmentering](./overview.md).
 
 ## Bilaga
-
-I följande avsnitt visas vanliga frågor om direktuppspelningssegmentering:
 
 I följande avsnitt visas vanliga frågor om direktuppspelningssegmentering:
 
