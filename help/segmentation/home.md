@@ -5,18 +5,18 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 3e92494351e487468e6292c34763e5b2281fd6c5
+source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
 workflow-type: tm+mt
-source-wordcount: '1616'
+source-wordcount: '1651'
 ht-degree: 0%
 
 ---
 
 # [!DNL Segmentation Service] översikt
 
-Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile]-data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform] och är tillgängliga för alla Adobe-lösningar.
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
 
-Det här dokumentet innehåller en översikt över [!DNL Segmentation Service] och vilken roll det spelar i Adobe Experience Platform.
+Dokumentet innehåller en översikt över [!DNL Segmentation Service] och den roll den spelar i Adobe Experience Platform.
 
 ## Komma igång med [!DNL Segmentation Service]
 
@@ -30,21 +30,21 @@ Det är viktigt att förstå följande nyckeltermer som används i hela det här
 
 Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp.
 
-När ett segment har definierats begreppsmässigt är det inbyggt i [!DNL Experience Platform]. Vanligtvis är segment byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att de skapas av deras marknadsföringsavdelning i samarbete med deras dataanalytiker. När data som skickas till [!DNL Platform] granskas disponerar dataanalytikern segmentdefinitionen genom att välja vilka fält och värden som ska användas för att skapa reglerna eller villkoren för segmentet. Detta görs med antingen användargränssnittet eller API:t.
+När ett segment har definierats konceptuellt är det inbyggt [!DNL Experience Platform]. Vanligtvis är segment byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att de skapas av deras marknadsföringsavdelning i samarbete med deras dataanalytiker. Vid granskning av data som skickas till [!DNL Platform]skapar dataanalytikern segmentdefinitionen genom att välja vilka fält och värden som ska användas för att skapa segmentets regler eller villkor. Detta görs med antingen användargränssnittet eller API:t.
 
 ## Skapa segment
 
-Oavsett om du skapar med API:t eller med [!DNL Segment Builder] definieras segment med [!DNL Profile Query Language] (PQL). Här beskrivs definitionen av konceptuellt segment i det språk som har byggts för att hämta profiler som uppfyller kriterierna. Mer information finns i översikten [PQL](./pql/overview.md).
+Om det skapas med API:t eller med [!DNL Segment Builder], definieras segment slutligen med [!DNL Profile Query Language] (PQL). Här beskrivs definitionen av konceptuellt segment i det språk som har byggts för att hämta profiler som uppfyller kriterierna. Mer information finns i [PQL - översikt](./pql/overview.md).
 
-Mer information om hur du skapar och använder segment i [!DNL Segment Builder] (gränssnittsimplementeringen av [!DNL Segmentation Service]) finns i [guiden Skapa segment](./ui/overview.md).
+Så här skapar och använder du segment i [!DNL Segment Builder] (användargränssnittets genomförande av [!DNL Segmentation Service]), se [Segment Builder Guide](./ui/overview.md).
 
-Mer information om hur du skapar segmentdefinitioner med API:t finns i självstudiekursen om att [skapa målgruppssegment med API](./tutorials/create-a-segment.md).
+Mer information om hur du skapar segmentdefinitioner med API:t finns i självstudiekursen om [skapa målgruppssegment med API](./tutorials/create-a-segment.md).
 
 >[!NOTE]
 >
->Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM) finns i självstudiekursen [Schemaredigeraren](../xdm/tutorials/create-schema-ui.md).
+>Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM), gå till [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-ui.md).
 >
->Om TTL (time-to-live) är aktiverat för datauppsättningen kan det dessutom påverka medlemskapet i det skapade segmentet. Mer information om TTL och hur det kan påverka segmenteringen finns i [TTL-guiden för profiltjänst](../profile/apply-ttl.md).
+>Om TTL (time-to-live) är aktiverat för datauppsättningen kan det dessutom påverka medlemskapet i det skapade segmentet. Mer information om TTL och hur det kan påverka segmenteringen finns i [TTL-guide för profiltjänst](../profile/apply-ttl.md).
 
 ## Utvärdera segment
 
@@ -52,13 +52,15 @@ Plattformen har för närvarande stöd för tre metoder för att utvärdera segm
 
 ### Direktuppspelningssegmentering
 
-Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data till [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
+Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
-Läs [dokumentationen för direktuppspelningssegmentering](./api/streaming-segmentation.md) om du vill veta mer om direktuppspelningssegmentering.
+Läs mer om direktuppspelningssegmentering i [dokumentation om direktuppspelningssegmentering](./api/streaming-segmentation.md).
 
 ### Gruppsegmentering
 
 Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning.
+
+Batchsegment utvärderas automatiskt var 24:e timme. Om du vill utvärdera ett batchsegment vid behov kan du använda ett segmentjobb. Läs mer om segmentjobb i [dokumentation för segmentjobb](./api/segment-jobs.md).
 
 **Stegvis segmentering (beta)**
 
@@ -70,27 +72,27 @@ Stegvis segmentering körs på nya data som kommer in i profilarkivet. Följande
 - Segmenten med flera enheter kommer att uppdateras i stegvis segmentering. Om det finns entitetsuppdateringar kommer profiler med nya data att börja använda dem i nästa stegvisa körning. Profiler utan ändringar kommer dock att ingå i nästa fullständiga gruppsegmenteringsjobb.
 - Händelser som faller bort från ett segments tidsfönster förenas i nästa fullständiga gruppsegmenteringsjobb.
 
-Mer information om hur du utvärderar segment finns i [självstudiekursen för segmentutvärdering](./tutorials/evaluate-a-segment.md).
+Mer information om hur du utvärderar segment finns i [självstudiekurs om segmentutvärdering](./tutorials/evaluate-a-segment.md).
 
 ### Kantsegmentering
 
-Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
+Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen på Experience Edge, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
-Läs antingen [API-dokumentationen](./api/edge-segmentation.md) eller [gränssnittsdokumentationen](./ui/edge-segmentation.md) om du vill veta mer om kantsegmentering.
+Läs antingen [API-dokumentation](./api/edge-segmentation.md) eller [Användargränssnittsdokumentation](./ui/edge-segmentation.md).
 
 ## Få tillgång till segmenteringsresultat
 
-Mer information om hur du får åtkomst till ett exporterat segment finns i [självstudiekursen för segmentutvärdering](./tutorials/evaluate-a-segment.md).
+Mer information om hur du kommer åt ett exporterat segment finns i [självstudiekurs om segmentutvärdering](./tutorials/evaluate-a-segment.md).
 
 ## Segmentmetadata
 
 Metadata för segment underlättar indexering om något av segmenten ska återanvändas och/eller kombineras.
 
-När du komponerar dina segment (antingen via API eller [!DNL Segment Builder]) måste du definiera ett segmentnamn och en sammanfogningsprincip.
+Skapa dina segment (antingen via API:t eller [!DNL Segment Builder]) kräver att du definierar ett segmentnamn och en sammanfogningsprincip.
 
 ### Segmentnamn
 
-När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet används för att identifiera ett visst segment i samlingen som skapats av [!DNL Segmentation Service]. Segmentnamn ska därför vara beskrivande, koncisa och unika.
+När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet används för att identifiera ett visst segment i den samling som skapas av [!DNL Segmentation Service]. Segmentnamn ska därför vara beskrivande, koncisa och unika.
 
 >[!NOTE]
 >
@@ -98,10 +100,10 @@ När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet an
 
 ### Sammanfoga profiler
 
-Sammanslagningsprinciper är regler som används av [!DNL Profile] för att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
-Om ingen sammanfogningsprincip har definierats används standardprincipen [!DNL Platform]. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
+Sammanfogningsprinciper är regler som används av [!DNL Profile] fastställa hur data ska prioriteras och kombineras i en enhetlig vy under vissa förhållanden.
+Om ingen sammanfogningsprincip är definierad är standardinställningen [!DNL Platform] sammanfogningsprincip används. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
 
-Mer information om sammanfogningsprinciper finns i [guiden](../profile/api/merge-policies.md) för sammanfogningsprinciper.
+Mer information om kopplingsprofiler finns i [guide för sammanslagningsprinciper](../profile/api/merge-policies.md).
 
 >[!NOTE]
 >
@@ -109,11 +111,11 @@ Mer information om sammanfogningsprinciper finns i [guiden](../profile/api/merge
 
 ### Andra segmentmetadata
 
-Förutom segmentnamn och sammanfogningsprincip innehåller [!DNL Segment Builder] ett extra metadatafält för&quot;segmentbeskrivning&quot; där du kan sammanfatta syftet med segmentdefinitionen.
+Förutom segmentnamn och sammanfogningsprincip [!DNL Segment Builder] I finns ytterligare ett metadatafält för&quot;segmentbeskrivning&quot; där du kan sammanfatta syftet med segmentdefinitionen.
 
 ## Avancerade segmenteringsfunktioner
 
-Segment kan konfigureras för att kontinuerligt generera en målgrupp genom att kombinera [dataöverföring](../ingestion/streaming-ingestion/overview.md) med någon av följande avancerade segmenteringsfunktioner:
+Segment kan konfigureras för att kontinuerligt generera en målgrupp genom att kombinera [inmatning av strömmande data](../ingestion/streaming-ingestion/overview.md) med någon av följande avancerade segmenteringsfunktioner:
 - [Sekventiell segmentering](#sequential)
 - [Dynamisk segmentering](#dynamic)
 - [Segmentering för flera enheter](#multi-entity)
@@ -122,7 +124,7 @@ Dessa avancerade funktioner beskrivs närmare i följande avsnitt.
 
 ## Sekventiell segmentering {#sequential}
 
-En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla resan och därmed fånga upp sekvenser av händelser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i [!DNL Segment Builder].
+En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla resan och därmed fånga upp sekvenser av händelser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i dialogrutan [!DNL Segment Builder].
 
 Ett exempel på en kundresa som skulle kräva sekventiell segmentering är produktvyn > produkttillägg > utcheckning > Inget inköp.
 
@@ -148,19 +150,19 @@ Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska 
 
 ## Segmentering för flera enheter {#multi-entity}
 
-Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile]-data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Därför kan [!DNL Segmentation Service] få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i [!DNL Profile]-datalagret. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringsguiden för flera enheter](multi-entity-segmentation.md).
+Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile] data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Som en följd av detta [!DNL Segmentation Service] kan få åtkomst till ytterligare fält under segmentdefinitionen som om de var inbyggda i [!DNL Profile] datalager. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringshandbok för flera enheter](multi-entity-segmentation.md).
 
 ## [!DNL Segmentation Service] datatyper
 
-[!DNL Segmentation Service] har stöd för flera olika primitiva och komplexa datatyper. Detaljerad information, inklusive en lista över datatyper som stöds, finns i [guiden för datatyper](./data-types.md) som stöds.
+[!DNL Segmentation Service] har stöd för flera olika primitiva och komplexa datatyper. Detaljerad information, inklusive en lista över datatyper som stöds, finns i [guide för datatyper som stöds](./data-types.md).
 
 ## Nästa steg
 
-[!DNL Segmentation Service] ger ett konsoliderat arbetsflöde för att skapa segment utifrån  [!DNL Real-time Customer Profile] data. Sammanfattning:
+[!DNL Segmentation Service] ger ett konsoliderat arbetsflöde för att skapa segment utifrån [!DNL Real-time Customer Profile] data. Sammanfattning:
 
 - [!DNL Segmentation] är processen att definiera en deluppsättning av profiler från din profilbutik, vilket gör att du kan karakterisera beteenden eller attribut för en önskad marknadsföringsbar grupp. [!DNL Segmentation Service] gör processen möjlig.
 - När du planerar ett segment bör du tänka på att det går att referera till ett segment från och kombinera det med andra segment.
 - Ett segment kan byggas utifrån regler baserade på profildata, relaterade tidsseriedata eller både och.
-- Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom det anges [!DNL Platform].
+- Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom de matas in [!DNL Platform].
 
-Mer information om hur du definierar segment i användargränssnittet finns i handboken [Segment Builder](./ui/overview.md). Mer information om hur du skapar segmentdefinitioner med API:t finns i självstudiekursen om att [skapa segment med API](./tutorials/create-a-segment.md).
+Mer information om hur du definierar segment i användargränssnittet finns i [Segment Builder Guide](./ui/overview.md). Mer information om hur du skapar segmentdefinitioner med API:t finns i självstudiekursen om [skapa segment med API](./tutorials/create-a-segment.md).

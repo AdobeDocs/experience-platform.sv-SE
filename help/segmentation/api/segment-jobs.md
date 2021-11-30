@@ -5,31 +5,30 @@ title: API-slutpunkt för segmentjobb
 topic-legacy: developer guide
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1169'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för segmentjobb
 
-Ett segmentjobb är en asynkron process som skapar ett nytt målgruppssegment. Den refererar till en [segmentdefinition](./segment-definitions.md), samt alla [sammanfogningsprinciper](../../profile/api/merge-policies.md) som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
+Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Den refererar till en [segmentdefinition](./segment-definitions.md), samt [sammanfogningsprinciper](../../profile/api/merge-policies.md) styra hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentjobben bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med segmentjobb {#retrieve-list}
 
-Du kan hämta en lista över alla segmentjobb för din IMS-organisation genom att göra en GET-begäran till `/segment/jobs`-slutpunkten.
+Du kan hämta en lista över alla segmentjobb för din IMS-organisation genom att göra en GET-förfrågan till `/segment/jobs` slutpunkt.
 
 **API-format**
 
-`/segment/jobs`-slutpunkten har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla exportjobb som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+The `/segment/jobs` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla exportjobb som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /segment/jobs
@@ -182,7 +181,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
 
 ## Skapa ett nytt segmentjobb {#create}
 
-Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs`-slutpunkten och i brödtexten inkludera ID:t för segmentdefinitionen som du vill skapa en ny målgrupp från.
+Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs` slutpunkt och inkludera ID:t för segmentdefinitionen som du vill skapa en ny målgrupp från i brödtexten.
 
 **API-format**
 
@@ -209,7 +208,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `segmentId` | ID:t för segmentdefinitionen som du vill skapa ett segmentjobb för. Dessa segmentdefinitioner kan tillhöra olika sammanfogningsprinciper. Mer information om segmentdefinitioner finns i [segmentdefinitionsslutpunktshandboken](./segment-definitions.md). |
+| `segmentId` | ID:t för segmentdefinitionen som du vill skapa ett segmentjobb för. Dessa segmentdefinitioner kan tillhöra olika sammanfogningsprinciper. Mer information om segmentdefinitioner finns i [slutpunktsguide för segmentdefinition](./segment-definitions.md). |
 
 **Svar**
 
@@ -276,7 +275,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt segmentjobb {#get}
 
-Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-förfrågan till `/segment/jobs`-slutpunkten och ange ID:t för segmentjobbet som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-förfrågan till `/segment/jobs` slutpunkt och ange ID:t för segmentjobbet som du vill hämta i sökvägen för begäran.
 
 **API-format**
 
@@ -286,7 +285,7 @@ GET /segment/jobs/{SEGMENT_JOB_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
-| `{SEGMENT_JOB_ID}` | Värdet `id` för segmentjobbet som du vill hämta. |
+| `{SEGMENT_JOB_ID}` | The `id` värdet för segmentjobbet som du vill hämta. |
 
 **Begäran**
 
@@ -373,7 +372,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 
 ## Masshämta segmentjobb {#bulk-get}
 
-Du kan hämta detaljerad information om flersegmentsjobb genom att göra en POST-förfrågan till `/segment/jobs/bulk-get`-slutpunkten och ange `id`-värdena för segmentjobben i begärandetexten.
+Du kan hämta detaljerad information om flera segmentjobb genom att göra en POST-förfrågan till `/segment/jobs/bulk-get` slutpunkt och tillhandahåller  `id` värden för segmentjobben i begärandetexten.
 
 **API-format**
 
@@ -479,7 +478,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben.
 
 ## Avbryt eller ta bort ett specifikt segmentjobb {#delete}
 
-Du kan ta bort ett specifikt segmentjobb genom att göra en DELETE-begäran till `/segment/jobs`-slutpunkten och ange ID:t för segmentjobbet som du vill ta bort i begärandesökvägen.
+Du kan ta bort ett specifikt segmentjobb genom att göra en DELETE-förfrågan till `/segment/jobs` slutpunkt och ange ID:t för segmentjobbet som du vill ta bort i sökvägen för begäran.
 
 >[!NOTE]
 >
@@ -493,7 +492,7 @@ DELETE /segment/jobs/{SEGMENT_JOB_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
-| `{SEGMENT_JOB_ID}` | Värdet `id` för segmentjobbet som du vill ta bort. |
+| `{SEGMENT_JOB_ID}` | The `id` värdet för segmentjobbet som du vill ta bort. |
 
 **Begäran**
 

@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 44644d786842564c76234bacb1f19815741b92ae
+source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
 workflow-type: tm+mt
-source-wordcount: '1572'
+source-wordcount: '1595'
 ht-degree: 0%
 
 ---
@@ -86,12 +86,11 @@ Med On-demand-utvärdering kan ni skapa ett segmentjobb för att generera ett m�
 
 ### Skapa ett segmentjobb
 
-Ett segmentjobb är en asynkron process som skapar ett nytt målgruppssegment. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
+Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek. Ett segmentjobb måste köras varje gång du vill uppdatera den målgrupp som för närvarande är kvalificerad för segmentdefinitionen.
 
 Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs` slutpunkt i [!DNL Real-time Customer Profile] API.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för segmentjobb](../api/segment-jobs.md#create)
-
 
 ### Sök efter jobbstatus för segment
 

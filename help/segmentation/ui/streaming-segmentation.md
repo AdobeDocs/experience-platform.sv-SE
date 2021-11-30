@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: bb5a56557ce162395511ca9a3a2b98726ce6c190
+source-git-commit: 58b546ea83774672dd36ca6cd952e229410aa645
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '1192'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,10 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 
 >[!NOTE]
 >
->Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som hämtas via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, utan kommer att utvärderas tillsammans med det nightly schedule segment job.
 >
->Dessutom kan segment som utvärderas med direktuppspelningssegmentering avvika från det idealiska och det faktiska medlemskapet om segmentet är baserat på ett annat segment som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
+>Segment som utvärderas med direktuppspelningssegmentering kan avvika mellan det ideala och det faktiska medlemskapet om segmentet är baserat på ett annat segment som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
 
-## Frågetyper för direktuppspelningssegmentering
+## Frågetyper för direktuppspelningssegmentering {#query-types}
 
 >[!NOTE]
 >
@@ -50,7 +49,7 @@ En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i fö
 - Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 
-Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
+Observera att följande riktlinjer gäller vid direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
@@ -58,6 +57,8 @@ Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 | Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Ett strikt tidsordningsvillkor **måste** finns mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **inte** vara en negation.</li></ul> |
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
+
+Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i realtid. Om en publik inte längre kvalificerar sig för ett segment blir det därför omedelbart okvalificerat. Om segmentdefinitionen till exempel frågar efter&quot;Alla användare som har köpt röda skor de senaste tre timmarna&quot;, efter tre timmar, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att vara okvalificerade.
 
 ## Segmentdetaljer för direktuppspelning
 
@@ -82,3 +83,33 @@ Mer information om segmentdefinitioner finns i föregående avsnitt om [segmentd
 Den här användarhandboken förklarar hur definitioner av direktuppspelningsaktiverade segment fungerar på Adobe Experience Platform och hur man övervakar direktuppspelningsaktiverade segment.
 
 Läs mer om Adobe Experience Platform användargränssnitt i [Användarhandbok för segmentering](./overview.md).
+
+## Bilaga
+
+I följande avsnitt visas vanliga frågor om direktuppspelningssegmentering:
+
+I följande avsnitt visas vanliga frågor om direktuppspelningssegmentering:
+
+### Händer direktuppspelningssegmentering&quot;utan kvalificering&quot; också i realtid?
+
+I de flesta fall sker icke-kvalificering av direktuppspelad segmentering i realtid. Det gör emellertid direktuppspelningssegment som använder segment av segment **not** diskvalificera i realtid, utan att kvalificera sig efter 24 timmar.
+
+### Vilka data fungerar direktuppspelningssegmentering på?
+
+Direktuppspelningssegmentering fungerar på alla data som har importerats från en direktuppspelningskälla. Segment som importerats med hjälp av en batchbaserad källa utvärderas nightly, även om det kvalificerar för direktuppspelningssegmentering.
+
+### Hur definieras segment som grupp- eller direktuppspelningssegmentering?
+
+Ett segment definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
+
+### Kan en användare definiera ett segment som gruppsegmentering eller direktuppspelningssegmentering?
+
+För närvarande kan användaren inte definiera om ett segment ska utvärderas med hjälp av batch- eller direktuppspelningsinmatning, eftersom systemet automatiskt avgör vilken metod segmentet ska utvärderas med.
+
+### Varför ökar antalet&quot;totala kvalificerade&quot; segment medan antalet under&quot;De senaste X dagarna&quot; är noll i segmentinformationsavsnittet?
+
+Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
+
+Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Detta värde är **endast** visas för direktuppspelningssegment. Detta resulterar i att detta värde **kan** visas som 0 för gruppsegment.
+
+Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för det segmentet.
