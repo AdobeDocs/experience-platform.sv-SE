@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 873a23d06696c98633f76e37a8b4a1d9b1d25c8b
+source-git-commit: 65007d1ee7934e2b3c98601b0a51542ce24bafd0
 workflow-type: tm+mt
-source-wordcount: '1985'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
@@ -192,8 +192,8 @@ När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]
 >[!CONTEXTUALHELP]
 >id="platform_sources_alerts_subscribe"
 >title="Prenumerera på källvarningar"
->abstract="Markera det här alternativet om du vill prenumerera på aviseringar om källans dataflöden."
->text="Learn more in documentation"
+>abstract="Välj det eller de alternativ du vill prenumerera på för att få aviseringar om källans dataflöden."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html?lang=en#provide-dataflow-details" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Dataflow detail]** visas så att du kan namnge och ge en kort beskrivning av det nya dataflödet.
 
