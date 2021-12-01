@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
+source-git-commit: 357916aa925c7b3ada4abe64a2bc6ad090d70cc0
 workflow-type: tm+mt
-source-wordcount: '1539'
+source-wordcount: '1570'
 ht-degree: 1%
 
 ---
@@ -138,6 +138,21 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 >title="Målgruppens ursprung"
 >abstract="Välj hur kunddata i segmentet ursprungligen samlades in. Data visas i Facebook när en användare anges av segmentet"
 >additional-url="http://www.adobe.com/go/destinations-facebook-activate-section-en" text="Läs mer i dokumentationen"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_facebook_originofaudience_customers"
+>title="Målgruppens ursprung"
+>abstract="Annonsörer samlade in data direkt från kunderna."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_facebook_originofaudience_partners"
+>title="Målgruppens ursprung"
+>abstract="Annonsörer samlade in data direkt från sina partners."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_facebook_originofaudience_customersandpartners"
+>title="Målgruppens ursprung"
+>abstract="Annonsörer samlade in data direkt från sina kunder och partners."
 
 Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
