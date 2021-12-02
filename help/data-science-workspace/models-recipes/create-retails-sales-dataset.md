@@ -6,30 +6,30 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b30700fde3ce75cc4f66343c8d37d3e731775627
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
 
 ---
 
+
 # Skapa försäljningsschema och datauppsättning för återförsäljning
 
-I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När du är klar är Retail Sales-schemat och datauppsättningarna tillgängliga för dig och medlemmar i din IMS-organisation den [!DNL Experience Platform].
+I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När allt är klart är Retail Sales-schemat och datauppsättningarna tillgängliga för dig och medlemmar i din IMS-organisation den [!DNL Experience Platform].
 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
-- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
-- Behörighet att göra [!DNL Experience Platform] API-anrop. Slutför självstudiekursen [Autentisera och få tillgång till Adobe Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en) för att få följande värden för att kunna slutföra den här självstudiekursen:
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+- Behörighet att skapa [!DNL Experience Platform] API-anrop. Slutför [Autentisera och få åtkomst till Adobe Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en) självstudiekurs för att få tillgång till följande värden för att slutföra den här självstudiekursen:
    - Behörighet: `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
    - x-gw-ims-org-id: `{IMS_ORG}`
    - Klienthemlighet: `{CLIENT_SECRET}`
    - Klientcertifikat: `{PRIVATE_KEY}`
-- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Hämta de resurser som krävs för den här och andra [!DNL Data Science Workspace]-självstudiekurser från den offentliga Git-databasen [Adobe](https://github.com/adobe/experience-platform-dsw-reference/).
-- [Python >= 2.7](https://www.python.org/downloads/) och följande  [!DNL Python] paket:
+- Exempeldata och källfiler för [Butiksförs.mottagare](../pre-built-recipes/retail-sales.md). Ladda ned resurser som krävs för detta och andra [!DNL Data Science Workspace] självstudiekurser från [Adobe offentlig Git-databas](https://github.com/adobe/experience-platform-dsw-reference/).
+- [Python >= 2.7](https://www.python.org/downloads/) och följande [!DNL Python] paket:
    - [pip](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
    - [diktor](https://pypi.org/project/dictor/)
@@ -44,8 +44,8 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
 
 ### Konfigurera filer
 
-1. I [!DNL Experience Platform]-resurspaketet för självstudier navigerar du till katalogen `bootstrap` och öppnar `config.yaml` med en lämplig textredigerare.
-2. Ange följande värden under avsnittet `Enterprise`:
+1. Innanför [!DNL Experience Platform] självstudiekursens resurspaket, navigera till katalogen `bootstrap`och öppna `config.yaml` med en lämplig textredigerare.
+2. Under `Enterprise` anger du följande värden:
 
    ```yaml
    Enterprise:
@@ -56,7 +56,7 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
        priv_key_filename: {PRIVATE_KEY}
    ```
 
-3. Redigera värdena som finns under `Platform`-avsnittet, exemplet nedan:
+3. Redigera värdena som finns under `Platform` -avsnittet, exempel som visas nedan:
 
    ```yaml
    Platform:
@@ -68,12 +68,12 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
    ```
 
    - `platform_gateway` : Bassökvägen för API-anrop. Ändra inte det här värdet.
-   - `ims_token` : Du  `{ACCESS_TOKEN}` går hit.
-   - `ingest_data` : I den här självstudiekursen ställer du in det här värdet  `"True"` så att du kan skapa försäljningsscheman och datauppsättningar för detaljhandeln. Värdet `"False"` skapar bara scheman.
-   - `build_recipe_artifacts` : I den här självstudiekursen anger du det här värdet  `"False"` för att förhindra att skriptet genererar en Recept-artefakt.
-   - `kernel_type` : Körningstypen för Recept-artefakten. Låt det här värdet vara `Python` om `build_recipe_artifacts` är `"False"`, annars anger du rätt körningstyp.
+   - `ims_token` : Dina `{ACCESS_TOKEN}` går hit.
+   - `ingest_data` : I den här självstudiekursen anger du det här värdet som `"True"` för att skapa försäljningsscheman och datauppsättningar för detaljhandeln. Värdet för `"False"` skapar endast scheman.
+   - `build_recipe_artifacts` : I den här självstudiekursen anger du det här värdet som `"False"` för att förhindra att skriptet genererar en Recept-artefakt.
+   - `kernel_type` : Körningstypen för Recept-artefakten. Lämna det här värdet som `Python` if `build_recipe_artifacts` anges som `"False"`, annars anger du rätt körningstyp.
 
-4. Under avsnittet `Titles` anger du följande information korrekt för exempeldata för försäljning, sparar och stänger filen när redigeringarna är på plats. Exempel som visas nedan:
+4. Under `Titles` ska du ange följande information för exempeldata för butiksförsäljning, spara och stänga filen när redigeringarna är på plats. Exempel som visas nedan:
 
    ```yaml
    Titles:
@@ -93,8 +93,8 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
 
 ### Kör bootstrap-skriptet
 
-1. Öppna terminalprogrammet och navigera till resurskatalogen för självstudiekursen för [!DNL Experience Platform].
-2. Ange katalogen `bootstrap` som aktuell arbetssökväg och kör skriptet `bootstrap.py` [!DNL Python] genom att ange följande kommando:
+1. Öppna terminalprogrammet och gå till [!DNL Experience Platform] självstudiekursens resurskatalog.
+2. Ange `bootstrap` som aktuell arbetsbana och kör `bootstrap.py` [!DNL Python] genom att ange följande kommando:
 
    ```bash
    python bootstrap.py
@@ -106,13 +106,13 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
 
 ## Nästa steg
 
-När bootstrap-skriptet har slutförts kan indata- och utdatamodeller och datamängder för butik visas på [!DNL Experience Platform]. Se självstudiekursen [för att förhandsgranska schemadata](./preview-schema-data.md)
+När bootstrap-skriptet har slutförts kan indata- och utdatamodeller och datamängder för butik visas på [!DNL Experience Platform]. Se [självstudiekurs om att förhandsgranska schemadata](./preview-schema-data.md)
 för mer information.
 
-Du har även importerat exempeldata för butiksförsäljning till [!DNL Experience Platform] med det angivna bootstrap-skriptet.
+Du har även importerat exempeldata för butiksförsäljning till [!DNL Experience Platform] med det medföljande bootstrap-skriptet.
 
 Så här fortsätter du att arbeta med inkapslade data:
 - [Analysera dina data med Jupyter Notebooks](../jupyterlab/analyze-your-data.md)
    - Använd Jupyter Notebooks i Data Science Workspace för att få tillgång till, utforska, visualisera och förstå era data.
 - [Paketera källfiler i en mottagare](./package-source-files-recipe.md)
-   - Följ den här självstudiekursen för att lära dig hur du kan ta med din egen modell till [!DNL Data Science Workspace] genom att paketera källfiler i en importerbar Recipe-fil.
+   - Följ den här självstudiekursen för att lära dig hur du kan använda din egen modell i [!DNL Data Science Workspace] genom att paketera källfiler i en importerbar Recipe-fil.

@@ -5,10 +5,9 @@ breadcrumb-title: Handbok för datavetenskap
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
 feature: Data Science Workspace
 solution: Experience Platform, Intelligent Services
-translation-type: tm+mt
-source-git-commit: a26b07302a47ceb0ba2af5267e7995118b70683f
+source-git-commit: fd0f6aa2ac73bdc0a5413c437d091df6bb5d38a6
 workflow-type: tm+mt
-source-wordcount: '240'
+source-wordcount: '248'
 ht-degree: 2%
 
 ---
@@ -25,9 +24,9 @@ ht-degree: 2%
    * [Analysera era data](jupyterlab/analyze-your-data.md)
    * [Frågetjänst](jupyterlab/query-service.md)
    * [Analys av experimentella data (EDA)](jupyterlab/eda-notebook.md)
-   * [Skapa ett recept](jupyterlab/create-a-recipe.md)
+   * [Skapa en modell med receptverktyget](jupyterlab/create-a-model.md)
    * [Samarbeta i JupyterLab med Git](jupyterlab/using-git-for-collaboration.md)
-* API för Sensei Machine Learning {#api}
+* Sensei Machine Learning API {#api}
    * [Komma igång](api/getting-started.md)
    * [Motorer](api/engines.md)
    * [MLInstances (recept)](api/mlinstances.md)
@@ -53,6 +52,7 @@ ht-degree: 2%
    * [Spark-dataåtkomst](authoring/spark.md)
 * Självstudiekurser för modell och recept {#models-recipes}
    * [Skapa och publicera en maskininlärningsmodell](models-recipes/create-publish-model.md)
+   * [Skapa demoscheman och datauppsättningar för luma](models-recipes/create-luma-data.md)
    * [Skapa schema och datauppsättning för butiksförsäljning](models-recipes/create-retails-sales-dataset.md)
    * [Förhandsgranska scheman och datauppsättningar](models-recipes/preview-schema-data.md)
    * [Paketera källfiler i ett recept](models-recipes/package-source-files-recipe.md)

@@ -6,8 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här guiden fokuserar på hur man använder EDA-anteckningsboken (Exploratory data analysis) för att upptäcka mönster i webbdata, samla in händelser med ett förutsägelsemål, rensa aggregerade data och förstå relationen mellan prediktorer och ett mål.
 exl-id: 48209326-0a07-4b5c-8b49-a2082a78fa47
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 38c493e6306e493f4ef5caf90509bda6f4d80023
 workflow-type: tm+mt
 source-wordcount: '2760'
 ht-degree: 0%
@@ -24,11 +23,11 @@ Del två börjar med att utföra en beskrivande analys av aggregerade data med P
 
 ## Komma igång
 
-Innan du läser den här guiden bör du läsa [[!DNL JupyterLab] användarhandboken](./overview.md) för att få en introduktion på hög nivå till [!DNL JupyterLab] och dess roll i Data Science Workspace. Om du dessutom använder egna data bör du läsa dokumentationen för [dataåtkomst i [!DNL Jupyterlab] anteckningsböcker](./access-notebook-data.md). Den här guiden innehåller viktig information om datagränser för bärbara datorer.
+Innan du läser den här guiden ska du läsa [[!DNL JupyterLab] användarhandbok](./overview.md) för en introduktion på hög nivå till [!DNL JupyterLab] och dess roll inom Data Science Workspace. Om du använder egna data kan du läsa dokumentationen för att [dataåtkomst i [!DNL Jupyterlab] anteckningsböcker](./access-notebook-data.md). Den här guiden innehåller viktig information om datagränser för bärbara datorer.
 
-Den här anteckningsboken använder en datamängd med mellanvärden i form av Adobe Analytics Experience Events-data som finns i Analytics Analysis Workspace. Om du vill använda EDA-anteckningsboken måste du definiera datatabellen med följande värden: `target_table` och `target_table_id`. Alla datamängder med mellanvärden kan användas.
+Den här anteckningsboken använder en datamängd med mellanvärden i form av Adobe Analytics Experience Events-data som finns i Analytics Analysis Workspace. För att kunna använda EDA-anteckningsboken måste du definiera datatabellen med följande värden `target_table` och `target_table_id`. Alla datamängder med mellanvärden kan användas.
 
-Följ stegen som beskrivs i avsnittet [skriv till en datauppsättning i avsnittet python](./access-notebook-data.md#write-python) i JupyterLab-dataåtkomstguiden för att hitta dessa värden. Datauppsättningsnamnet (`target_table`) finns i datauppsättningskatalogen. När du högerklickar på datauppsättningen för att utforska eller skriva data i en anteckningsbok, anges ett datauppsättnings-ID (`target_table_id`) i den körbara kodposten.
+Följ stegen som beskrivs i [skriva till en datauppsättning i python](./access-notebook-data.md#write-python) -delen i dataåtkomstguiden för JupyterLab. Datauppsättningsnamnet (`target_table`) finns i datauppsättningskatalogen. När du högerklickar på datauppsättningen för att utforska eller skriva data i en anteckningsbok, ett datauppsättnings-ID (`target_table_id`) anges i den körbara kodposten.
 
 ## Dataidentifiering
 
@@ -36,7 +35,7 @@ Det här avsnittet innehåller konfigurationssteg och exempelfrågor som använd
 
 ### Konfiguration av bibliotek
 
-JupyterLab har stöd för flera bibliotek. Följande kod kan klistras in och köras i en kodcell för att samla in och installera alla nödvändiga paket som används i det här exemplet. Du kan använda ytterligare eller alternativa paket utanför det här exemplet för din egen dataanalys. Om du vill visa en lista över de paket som stöds kopierar och klistrar du in `!pip list --format=columns` i en ny cell.
+JupyterLab har stöd för flera bibliotek. Följande kod kan klistras in och köras i en kodcell för att samla in och installera alla nödvändiga paket som används i det här exemplet. Du kan använda ytterligare eller alternativa paket utanför det här exemplet för din egen dataanalys. Kopiera och klistra in om du vill se en lista över de paket som stöds `!pip list --format=columns` i en ny cell.
 
 ```python
 !pip install colorama
@@ -66,9 +65,9 @@ pd.set_option('display.max_colwidth', -1)
 
 ### Anslut till Adobe Experience Platform [!DNL Query Service]
 
-[!DNL JupyterLab] På Platform kan du använda SQL i en  [!DNL Python] anteckningsbok för att få åtkomst till data via  [frågetjänsten](https://www.adobe.com/go/query-service-home-en). Att få åtkomst till data via [!DNL Query Service] kan vara användbart för hantering av stora datamängder på grund av dess överlägsna körtider. Observera att det går att skicka frågor med [!DNL Query Service] i tio minuter.
+[!DNL JupyterLab] På plattformen kan du använda SQL i en [!DNL Python] bärbar dator för att komma åt data via [Frågetjänst](https://www.adobe.com/go/query-service-home-en). Åtkomst av data via [!DNL Query Service] kan vara användbart för hantering av stora datamängder på grund av dess överlägsna körtider. Observera att skicka frågor via [!DNL Query Service] har en bearbetningstid på tio minuter.
 
-Innan du använder [!DNL Query Service] i [!DNL JupyterLab] måste du ha en fungerande förståelse för [[!DNL Query Service] SQL-syntaxen](https://www.adobe.com/go/query-service-sql-syntax-en).
+Innan du använder [!DNL Query Service] in [!DNL JupyterLab], se till att du har en fungerande förståelse för [[!DNL Query Service] SQL-syntax](https://www.adobe.com/go/query-service-sql-syntax-en).
 
 Om du vill använda frågetjänsten i JupyterLab måste du först skapa en anslutning mellan din fungerande Python-anteckningsbok och frågetjänsten. Detta kan du göra genom att köra följande cell.
 
@@ -78,7 +77,7 @@ qs_connect()
 
 ### Definiera datamängden med mellanvärden för utforskande
 
-För att kunna börja fråga och utforska data måste en datatabell med mellanvärden anges. Kopiera och ersätt värdena `table_name` och `table_id` med dina egna datatabellvärden.
+För att kunna börja fråga och utforska data måste en datatabell med mellanvärden anges. Kopiera och ersätt `table_name` och `table_id` värden med egna datatabellvärden.
 
 ```python
 target_table = "table_name"
@@ -120,7 +119,7 @@ target_day = "(01,02,03)" ## The target days
 
 ### Identifiering av datauppsättning
 
-När du har konfigurerat alla parametrar, startat [!DNL Query Service] och har ett datumintervall är du redo att börja läsa datarader. Du bör begränsa antalet rader som du läser.
+När du har konfigurerat alla parametrar börjar du [!DNL Query Service]och har ett datumintervall är du redo att börja läsa datarader. Du bör begränsa antalet rader som du läser.
 
 ```python
 from platform_sdk.dataset_reader import DatasetReader
@@ -285,7 +284,7 @@ iplot(fig)
 
 **De tio vanligaste visade produkterna**
 
-Den här frågan innehåller en lista över de tio mest visade produkterna. I exemplet nedan används funktionen `Explode()` för att returnera varje produkt i `productlistitems`-objektet till sin egen rad. På så sätt kan du göra en kapslad fråga för att sammanställa produktvyer för olika SKU:er.
+Den här frågan innehåller en lista över de tio mest visade produkterna. I exemplet nedan är `Explode()` -funktionen används för att returnera varje produkt i `productlistitems` till sin egen rad. På så sätt kan du göra en kapslad fråga för att sammanställa produktvyer för olika SKU:er.
 
 ```sql
 %%read_sql query_7_df -c QS_CONNECTION
@@ -517,7 +516,7 @@ I det här exemplet används interkvartilt intervall för att identifiera avvike
 
 >[!TIP]
 >
->För att korrigera avvikelser måste ni förstå vilken bransch ni arbetar i. Ibland kan man inte släppa en observation bara för att den är en outlier. Externa leverantörer kan vara berättigade observationer och är ofta de mest intressanta. Mer information om hur du släpper avvikelser finns i [valfritt datarensningssteg](#optional-data-clean).
+>För att korrigera avvikelser måste ni förstå vilken bransch ni arbetar i. Ibland kan man inte släppa en observation bara för att den är en outlier. Externa leverantörer kan vara berättigade observationer och är ofta de mest intressanta. Mer information om hur du släpper avvikelser finns på [valfritt datarensningssteg](#optional-data-clean).
 
 ```python
 TARGET = Data.TARGET
@@ -630,7 +629,7 @@ for col in Data.columns:
             Data.drop(col,inplace=True,axis=1)
 ```
 
-När du har tagit bort kolumner med ett värde kontrollerar du om det finns några fel i de återstående kolumnerna med kommandot `Data.columns` i en ny cell.
+När du har tagit bort kolumner med ett värde kontrollerar du om det finns fel i de återstående kolumnerna med hjälp av `Data.columns` i en ny cell.
 
 ### Korrigera saknade värden
 
@@ -679,7 +678,7 @@ Bivariata analyser används för att förstå relationen mellan två uppsättnin
 - **Korrelation**: En korrelationskoefficient är måttet på styrkan av ett förhållande mellan två egenskaper. Korrelationen har värden mellan -1 och 1, där: 1 anger ett starkt positivt förhållande, -1 anger ett starkt negativt förhållande och resultatet noll anger inget förhållande alls.
 - **Pair plot**: Pair-diagram är ett enkelt sätt att visualisera relationer mellan olika variabler. Den skapar en matris med relationer mellan varje variabel i data.
 - **Heatmap**: Heatmaps är korrelationskoefficienten för alla variabler i datauppsättningen.
-- **Rutor**: Kartongsområden är ett standardiserat sätt att visa datadistribution baserat på en femtalssammanfattning (minimum, first quartile (Q1), median, third quartile (Q3) och maximum).
+- **Kartongsområden**: Kartongsområden är ett standardiserat sätt att visa datadistribution baserat på en femtalssammanfattning (minimum, first quartile (Q1), median, third quartile (Q3) och maximum).
 - **Antal ritningar**: En antalsritning är som ett histogram eller ett stolpdiagram för vissa kategoriserade funktioner. Här visas antalet förekomster av ett objekt baserat på en viss typ av kategori.
 
 För att förstå relationen mellan variabeln &#39;target&#39; och prediktorerna/funktionerna används diagram baserat på datatyper. För numeriska funktioner bör du använda en rutyta om &#39;target&#39;-variabeln är kategorisisk, samt en pairplot och heatmap om &#39;target&#39;-variabeln är numerisk.
@@ -808,9 +807,9 @@ else:
 
 För att korrigera avvikelser måste ni förstå vilken bransch ni arbetar i. Ibland kan man inte släppa en observation bara för att den är en outlier. Externa leverantörer kan vara berättigade observationer och är ofta de mest intressanta.
 
-Mer information om avvikande värden och om de ska tas bort eller inte finns i den här posten från [analysfaktorn](https://www.theanalysisfactor.com/outliers-to-drop-or-not-to-drop/).
+Mer information om avvikande värden och om de ska släppas eller inte finns i den här informationen på [analysfaktor](https://www.theanalysisfactor.com/outliers-to-drop-or-not-to-drop/).
 
-I följande exempel används celländpunkter och flyttal för datapunkter som är avvikande med [interkvartilsintervall](https://www.thoughtco.com/what-is-the-interquartile-range-rule-3126244).
+I följande exempel används celländpunkter och flyttal för datapunkter som är avvikande med [interkvartilt intervall](https://www.thoughtco.com/what-is-the-interquartile-range-rule-3126244).
 
 ```python
 TARGET = Data.TARGET
@@ -832,4 +831,4 @@ Data = pd.concat([Data_categorical, Data_numerical, TARGET], axis = 1)
 
 När du är klar med den experimentella dataanalysen kan du börja skapa en modell. Du kan också använda de data och insikter du härlett för att skapa en instrumentpanel med verktyg som Power BI.
 
-Adobe Experience Platform delar upp processen för att skapa en modell i två skilda steg, Recept (en modellinstans) och Models. Gå till dokumentationen för [hur du skapar ett recept i JupyerLab-anteckningsböcker](./create-a-recipe.md) när du vill börja skapa recept. Det här dokumentet innehåller information och exempel för att skapa, utbilda och betygsätta ett recept i [!DNL JupyterLab] bärbara datorer.
+Adobe Experience Platform delar upp processen för att skapa en modell i två skilda steg, Recept (en modellinstans) och Models. Gå till dokumentationen för att börja skapa recept [skapa ett recept i JupyerLab-anteckningsböcker](./create-a-model.md). Det här dokumentet innehåller information och exempel för att skapa, utbilda och betygsätta ett recept i [!DNL JupyterLab] Bärbara datorer.

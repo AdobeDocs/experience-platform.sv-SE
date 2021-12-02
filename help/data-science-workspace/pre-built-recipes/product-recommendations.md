@@ -5,8 +5,7 @@ title: Produktrekommendationsmottagare
 topic-legacy: overview
 description: Med Product Recommendations recept kan ni tillhandahålla personaliserade produktrekommendationer som är skräddarsydda efter kundens behov och intressen. Med en korrekt prognosmodell kan en kunds inköpshistorik ge er insikt i vilka produkter de kan vara intresserade av.
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
-translation-type: tm+mt
-source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
+source-git-commit: 38c493e6306e493f4ef5caf90509bda6f4d80023
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%
@@ -27,14 +26,14 @@ Product Recommendations recept använder maskininlärning för att analysera kun
 
 ## Hur kommer jag igång?
 
-Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar Product Recommendations-receptet i en Jupyter-anteckningsbok genom att följa [anteckningsboken för att hämta](../jupyterlab/create-a-recipe.md)-arbetsflödet och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
+Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar recept för produkten Recommendations i en Jupyter-anteckningsbok genom att följa följande [anteckningsbok att hämta](../jupyterlab/create-a-model.md) arbetsflöde och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
 
 * [Lab: Förutse framtiden med datavetenskapen](https://expleague.azureedge.net/labs/L777/index.html)
 * [Lab-resurser](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
 
 ## Datamodell
 
-I det här receptet används anpassade [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera in- och utdata:
+Det här receptet använder anpassad [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera in- och utdata:
 
 ### Schema för indatadata
 
