@@ -5,7 +5,7 @@ title: Översikt över segmentmatchning
 topic-legacy: overview
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: ba215f20db3bfead8beba8f1dea98bfc37e4358c
+source-git-commit: 105ddf70aafe8c92b5a64959ba1c4cefa5eb6f12
 workflow-type: tm+mt
 source-wordcount: '1903'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Nedan följer en lista över namnutrymmen som stöds:
 
 Du måste ange en medgivandekonfiguration och ange standardvärdet till antingen `opt-in` eller `opt-out` för en godkännandekontroll.
 
-Kontrollen av godkännande av anmälan och avanmälan avgör om du kan arbeta med samtycke att dela användardata som standard. Om standardinställningen för medgivandekonfigurationen är inställd på `opt-in`kan användardata delas, såvida inte användaren uttryckligen avanmäler sig. Om standardvärdet är `opt-out`kan användardata inte delas, såvida inte användaren uttryckligen väljer att göra det.
+Kontrollen av godkännande av anmälan och avanmälan avgör om du kan arbeta med samtycke att dela användardata som standard. Om standardinställningen för medgivandekonfigurationen är inställd på `opt-out`kan användardata delas, såvida inte användaren uttryckligen avanmäler sig. Om standardvärdet är `opt-in`kan användardata inte delas, såvida inte användaren uttryckligen väljer att göra det.
 
 Standardkonfiguration för samtycke för [!DNL Segment Match] är inställd på `opt-out`. Om du vill tillämpa en anmälningsmodell för dina data skickar du en e-postförfrågan till kontohanteraren för Adobe.
 
