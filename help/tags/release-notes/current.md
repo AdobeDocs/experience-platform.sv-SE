@@ -2,9 +2,9 @@
 title: Versionsinformation
 description: Den senaste versionsinformationen för taggar i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: cda34c08a53d084a92a07caa9a2b166e27d9e28c
+source-git-commit: 2056f7f6e7372fa1dee2e975a75e7ba3b8dfe518
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## 15 november 2021
+
+**Acceptera ES6-kod i taggar** - Tillägg och anpassad kod som innehåller ES6-kod kan nu användas i taggar. I tilläggskatalogen visas en ES6+-etikett inuti kortet för varje tillägg som innehåller ES6-kod. IE10 och IE11 stöder inte ES6-kod. Innan du använder ES6-kod i taggbiblioteken bör du göra dina ändringar.
+
+**Använda Terser som JavaScript-komprimerare** - uglifier ersattes med Terser. Från och med den här versionen är alla taggbibliotek minifierade av Terser.
 
 ## 21 oktober 2021
 
@@ -35,7 +41,7 @@ Mer information finns i stödlinjerna på [hantera hemligheter i användargräns
 
 ## 17 maj 2021
 
-**Bättre hantering av osparade ändringar** - Det brukade vara så att när du navigerade bort från en inställningsvy (tillägg, dataelement och regelkomponenter) skulle du få en fråga om du ville ignorera ändringarna. Men logiken för att fastställa det var inte särskilt bra, så större delen av tiden du fick en uppmaning att spara ändringar trots att det inte fanns några.  Det har rättats till.  Från och med nu bör du bara se den uppmaningen när du har gjort ändringar.
+**Bättre hantering av osparade ändringar** - Det brukade vara så att när du navigerade bort från en inställningsvy (tillägg, dataelement och regelkomponenter) fick du en fråga om du ville ignorera ändringarna. Men logiken för att fastställa det var inte särskilt bra, så större delen av tiden du fick en uppmaning att spara ändringar trots att det inte fanns några.  Det har rättats till.  Från och med nu bör du bara se den uppmaningen när du har gjort ändringar.
 
 ## 10 maj 2021
 
