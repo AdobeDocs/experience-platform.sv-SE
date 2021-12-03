@@ -1,27 +1,27 @@
 ---
-title: Adobe Experience Platform Web SDK-konfiguration
-description: Läs mer om taggtillägget Adobe Experience Platform Web SDK.
+title: Konfigurera Adobe Experience Platform Web SDK-tillägget
+description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 92344ca9c2daf603d866c8a3cc4e92b72a382fb1
 workflow-type: tm+mt
-source-wordcount: '978'
+source-wordcount: '993'
 ht-degree: 0%
 
 ---
 
-# Översikt
+# Konfigurera Adobe Experience Platform Web SDK-tillägget
 
-Adobe Experience Platform Web SDK-tillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
+Adobe Experience Platform Web SDK-taggtillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
 
 Det här dokumentet beskriver hur du konfigurerar tillägget i användargränssnittet för datainsamling.
 
-## Konfigurera tillägget
+## Komma igång
 
-Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i användargränssnittet för datainsamling och väljer fliken **[!UICONTROL Extensions]**. Välj **[!UICONTROL Configure]** under Platform Web SDK.
+Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i användargränssnittet för datainsamling och väljer alternativet **[!UICONTROL Extensions]** -fliken. Under Platform Web SDK väljer du **[!UICONTROL Configure]**.
 
 ![](../images/extension/overview/configure.png)
 
-Om du inte har installerat tillägget än väljer du fliken **[!UICONTROL Catalog]**. Leta reda på plattformstillägget för Web SDK i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
+Om du inte har installerat tillägget än väljer du **[!UICONTROL Catalog]** -fliken. Leta reda på plattformstillägget för Web SDK i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
 
 ![](../images/extension/overview/install.png)
 
@@ -41,24 +41,24 @@ Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra i
 
 ### **[!UICONTROL IMS Organization ID]**
 
-[!UICONTROL IMS Organization ID] är den organisation som du vill att data skickas till på Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
+The [!UICONTROL IMS Organization ID] är den organisation som du vill att data skickas till i Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
 
 ### **[!UICONTROL Edge Domain]**
 
-[!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en annan leverantör finns [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
+The [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en förstahandsleverantör finns i listan [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
 
 ## [!UICONTROL Datastreams]
 
-När en begäran skickas till Adobe Experience Platform Edge Network används ett dataStream ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+När en begäran skickas till Adobe Experience Platform Edge Network, används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Mer information finns i guiden [datastreams](../fundamentals/datastreams.md).
+Se guiden [datastreams](../fundamentals/datastreams.md) för mer information.
 
 
 ## [!UICONTROL Privacy]
 
 ![](../images/extension/overview/privacy.png)
 
-I [!UICONTROL Privacy]-avsnittet kan du konfigurera hur SDK hanterar signaler om användargodkännande från din webbplats. Det gör i synnerhet att du kan välja den standardnivå för samtycke som antas av en användare om ingen annan explicit inställning har angetts. Standardnivån för samtycke sparas inte i användarens profil. I följande tabell visas vad varje alternativ innebär:
+The [!UICONTROL Privacy] I kan du konfigurera hur SDK hanterar användares medgivandesignaler från din webbplats. Det gör i synnerhet att du kan välja den standardnivå för samtycke som antas av en användare om ingen annan explicit inställning har angetts. Standardnivån för samtycke sparas inte i användarens profil. I följande tabell visas vad varje alternativ innebär:
 
 | [!UICONTROL Default Consent Level] | Beskrivning |
 | --- | --- |
@@ -85,7 +85,7 @@ Med det här alternativet kan SDK försöka lagra en användaridentifierare i en
 
 ![](../images/extension/overview/personalization.png)
 
-Om du vill dölja vissa delar av webbplatsen när anpassat innehåll läses in, kan du ange vilka element som ska döljas i den fördolda formatredigeraren. Du kan sedan kopiera det fördolda standardfragmentet som du fått och klistra in det inuti `<head>`elementet för HTML-platsen.
+Om du vill dölja vissa delar av webbplatsen när anpassat innehåll läses in, kan du ange vilka element som ska döljas i den fördolda formatredigeraren. Du kan sedan kopiera det fördolda standardfragmentet som du har fått och klistra in det inuti `<head>`-element på din HTML-webbplats.
 
 ## [!UICONTROL Data Collection]
 
@@ -93,15 +93,15 @@ Om du vill dölja vissa delar av webbplatsen när anpassat innehåll läses in, 
 
 ### [!UICONTROL Callback function]
 
-Callback-funktionen som finns i tillägget kallas även [`onBeforeEventSend`-funktionen](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Adobe Edge Network. Mer detaljerad information om hur du använder den här funktionen finns [här](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
+Callback-funktionen som finns i tillägget kallas också [`onBeforeEventSend` function](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Adobe Edge Network. Mer detaljerad information om hur funktionen används finns [här](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
 
 ### [!UICONTROL Click data collection]
 
-SDK kan automatiskt samla in länkklicksinformation åt dig. Som standard är den här funktionen aktiverad men kan inaktiveras med det här alternativet. Länkarna kallas också för nedladdningslänkar om de innehåller något av de nedladdningsuttryck som finns i textrutan [!UICONTROL Download Link Qualifier]. I Adobe finns vissa standardkvalificerare för nedladdningslänk, men dessa kan redigeras när som helst.
+SDK kan automatiskt samla in länkklicksinformation åt dig. Som standard är den här funktionen aktiverad men kan inaktiveras med det här alternativet. Länkarna är även märkta som nedladdningslänkar om de innehåller något av de nedladdningsuttryck som finns i [!UICONTROL Download Link Qualifier] textruta. I Adobe finns vissa standardkvalificerare för nedladdningslänk, men dessa kan redigeras när som helst.
 
 ### [!UICONTROL Automatically collected context data]
 
-Som standard samlar SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe finns den [här](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, kan du ändra de här alternativen.
+Som standard samlar SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe kan du hitta den [här](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, kan du ändra de här alternativen.
 
 ## [!UICONTROL Advanced Settings]
 
