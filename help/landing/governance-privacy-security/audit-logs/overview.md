@@ -2,10 +2,10 @@
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: d4beb7691c8fb38359425509a40572ea9b09fd26
+source-git-commit: d258ddef6a904fee5a4676a513fc426663342c91
 workflow-type: tm+mt
-source-wordcount: '597'
-ht-degree: 2%
+source-wordcount: '642'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem på plattformen och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
 
-I grundläggande bemärkelse anger en granskningslogg **vem** som utförde **vad**-åtgärden och **när**. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen.
+I grundläggande bemärkelse anger en granskningslogg **som** utförd **vad** och **när**. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen.
 
 Det här dokumentet innehåller granskningsloggar i Platform, inklusive hur du visar och hanterar dem i användargränssnittet eller API.
 
@@ -39,11 +39,11 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
-För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrollsbehörigheten Visa granskningsloggar (finns under kategorin Datastyrning). Mer information om hur du hanterar individuella behörigheter för plattformsfunktioner finns i [åtkomstkontrollsdokumentationen](../../../access-control/home.md).
+För att kunna visa och exportera granskningsloggar måste du ha åtkomstkontrollsbehörigheten Visa granskningsloggar (finns under kategorin Datastyrning). Läs mer om hur du hanterar individuella behörigheter för plattformsfunktioner i [dokumentation om åtkomstkontroll](../../../access-control/home.md).
 
 ## Hantera granskningsloggar i användargränssnittet
 
-Du kan visa granskningsloggar för olika Experience Platform-funktioner på arbetsytan **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
+Du kan visa granskningsloggar för olika Experience Platform-funktioner i **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
 
 ![Kontrollpanel för granskningsloggar](../../images/audit-logs/audits.png)
 
@@ -53,7 +53,9 @@ Välj en händelse i listan om du vill visa information om händelsen i den hög
 
 ![Händelseinformation](../../images/audit-logs/select-event.png)
 
-Markera trattsymbolen (![Filterikon](../../images/audit-logs/icon.png)) om du vill visa en lista med filterkontroller för att begränsa resultatet.
+### Filtrera granskningsloggar
+
+Markera trattecknet (![Filterikon](../../images/audit-logs/icon.png)) för att visa en lista med filterkontroller för att begränsa resultatet.
 
 ![Filter](../../images/audit-logs/filters.png)
 
@@ -61,24 +63,28 @@ Följande filter är tillgängliga för granskningshändelser i användargränss
 
 | Filter | Beskrivning |
 | --- | --- |
-| [!UICONTROL Category] | Använd listrutan för att filtrera resultat som visas av [kategori](#category). |
-| [!UICONTROL Action] | Filtrera efter åtgärd. För närvarande kan endast [!UICONTROL Create]- och [!UICONTROL Delete]-åtgärder filtreras. |
-| [!UICONTROL Access Control Status] | Filtrera efter om åtgärden tilläts (slutförd) eller nekades på grund av att [åtkomstkontrollen](../../../access-control/home.md) inte hade behörighet. |
+| [!UICONTROL Category] | Använd listrutan för att filtrera de resultat som visas med [kategori](#category). |
+| [!UICONTROL Action] | Filtrera efter åtgärd. Endast för närvarande [!UICONTROL Create] och [!UICONTROL Delete] kan filtreras. |
+| [!UICONTROL Access Control Status] | Filtrera efter om åtgärden tilläts (slutförd) eller nekades på grund av brist på [åtkomstkontroll](../../../access-control/home.md) behörigheter. |
 | [!UICONTROL Date] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. |
 
-Om du vill ta bort ett filter väljer du X på ikonen för piller för filtret i fråga eller väljer **[!UICONTROL Clear all]** för att ta bort alla filter.
+Om du vill ta bort ett filter väljer du &quot;X&quot; på ikonen för pilen för filtret i fråga eller väljer **[!UICONTROL Clear all]** om du vill ta bort alla filter.
 
 ![Rensa filter](../../images/audit-logs/clear-filters.png)
 
-<!-- (Planned for post-beta release)
-### Export an audit log
+### Exportera granskningsloggar
 
-Select **[!UICONTROL Download log]** to export an audit log.
--->
+Om du vill exportera den aktuella listan med granskningsloggar väljer du **[!UICONTROL Download log]**.
+
+![Hämtningslogg](../../images/audit-logs/download.png)
+
+Välj önskat format i dialogrutan som visas (antingen **[!UICONTROL CSV]** eller **[!UICONTROL JSON]**) och sedan väljer **[!UICONTROL Download]**. Webbläsaren hämtar den genererade filen och sparar den på datorn.
+
+![Välj hämtningsformat](../../images/audit-logs/select-download-format.png)
 
 ## Hantera granskningsloggar i API
 
-Alla åtgärder som du kan utföra i användargränssnittet kan också utföras med API-anrop. Mer information finns i [API-referensdokumentet](https://www.adobe.io/experience-platform-apis/references/audit-query/).
+Alla åtgärder som du kan utföra i användargränssnittet kan också utföras med API-anrop. Se [API-referensdokument](https://www.adobe.io/experience-platform-apis/references/audit-query/) för mer information.
 
 ## Hantera granskningsloggar för Adobe Admin Console
 
@@ -86,4 +92,4 @@ Mer information om hur du hanterar granskningsloggar för aktiviteter i Adobe Ad
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du hanterar granskningsloggar i Experience Platform. Mer information om hur du övervakar plattformsaktiviteter finns i dokumentationen om [observabilitetsinsikter](../../../observability/home.md) och [övervakning av datainhämtning](../../../ingestion/quality/monitor-data-ingestion.md).
+I den här guiden beskrivs hur du hanterar granskningsloggar i Experience Platform. Mer information om hur du övervakar plattformsaktiviteter finns i dokumentationen om [Insikter om observerbarhet](../../../observability/home.md) och [övervaka datainmatning](../../../ingestion/quality/monitor-data-ingestion.md).
