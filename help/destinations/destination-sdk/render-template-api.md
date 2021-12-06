@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/render` för att återge exporterade data för ditt mål, baserat på din meddelandeomvandlingsmall.
 title: API-åtgärder för återgivningsmall
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: 5ecfd6e7f2f783d31642b7d81cc34b51eb0d6307
+source-git-commit: aa5898369d41ba48a1416a0b4ea82f6345333d18
 workflow-type: tm+mt
-source-wordcount: '786'
+source-wordcount: '824'
 ht-degree: 0%
 
 ---
@@ -24,6 +24,8 @@ Läs igenom [komma igång-guide](./getting-started.md) för viktig information s
 ## Återge exporterade profiler baserat på mallen för meddelandeomformning {#render-exported-data}
 
 Du kan återge exporterade profiler genom att göra en POST-förfrågan till `authoring/testing/template/render` slutpunkten och ange mål-ID:t för målkonfigurationen och mallen som du skapade med [API-slutpunkt för exempelmall](./sample-template-api.md).
+
+Du kan börja med en enkel mall som exporterar dina Raw-profiler utan att använda några omformningar och sedan gå vidare till en mer komplex mall som tillämpar omformningar på profiler. Syntaxen för den enkla mallen är: <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
 >[!TIP]
 >
@@ -1065,7 +1067,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
 
 ## API-felhantering {#api-error-handling}
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
