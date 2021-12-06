@@ -1,10 +1,10 @@
 ---
-description: Som en del av mål-SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa målet. På den här sidan beskrivs hur du testar målkonfigurationen.
+description: Som en del av Destination SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. På den här sidan beskrivs hur du testar målkonfigurationen.
 title: Testa målkonfigurationen
 exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
-source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
+source-git-commit: 1d191b0ce8eb3de8b14dbdc0b3a513585c18d1ea
 workflow-type: tm+mt
-source-wordcount: '484'
+source-wordcount: '526'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,21 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Som en del av mål-SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa målet. På den här sidan beskrivs hur du testar målkonfigurationen. Mer information om hur du skapar en meddelandeomformningsmall finns i [Skapa och testa en meddelandeomformningsmall](./create-template.md).
+Som en del av Destination SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. På den här sidan beskrivs hur du testar målkonfigurationen. Mer information om hur du skapar en meddelandeomformningsmall finns i [Skapa och testa en meddelandeomformningsmall](./create-template.md).
 
-Om du vill **testa om målet är korrekt konfigurerat och verifiera dataflödenas integritet till det konfigurerade målet** använder du *måltestningsverktyget*. Med det här verktyget kan du testa målkonfigurationen genom att skicka meddelanden till REST API-slutpunkten.
+Till **testa om målet är korrekt konfigurerat och verifiera dataflödenas integritet till det konfigurerade målet**, använder du *Måltestningsverktyg*. Med det här verktyget kan du testa målkonfigurationen genom att skicka meddelanden till REST API-slutpunkten.
 
-Nedan visas hur testning av ditt mål passar in i [arbetsflödet för målkonfiguration](./configure-destination-instructions.md) i mål-SDK:
+Illustrated below is how testing your destination Passing into the [arbetsflöde för målkonfiguration](./configure-destination-instructions.md) i Destination SDK:
 
 ![Bild av var målteststeget passar in i arbetsflödet för målkonfiguration](./assets/test-destination-step.png)
 
-## Måltestningsverktyg {#destination-testing-tool}
+## Måltestningsverktyg - Syfte och krav {#destination-testing-tool}
 
-Använd det här verktyget för att testa målkonfigurationen genom att skicka meddelanden till partnerslutpunkten som du angav i [serverkonfigurationen](./server-and-template-configuration.md).
+Använd måttestningsverktyget för att testa målkonfigurationen genom att skicka meddelanden till partnerslutpunkten som du angav i [serverkonfiguration](./server-and-template-configuration.md).
+
+Innan du använder verktyget bör du kontrollera att:
+* Konfigurera destinationen genom att följa de steg som beskrivs i [arbetsflöde för målkonfiguration](./configure-destination-instructions.md) och
+* Upprätta en anslutning till ditt mål, enligt informationen i [Hämta målinstans-ID](./destination-testing-api.md#get-destination-instance-id).
 
 Med det här verktyget kan du göra följande när du har konfigurerat målet:
 * Testa om målet är korrekt konfigurerat;
@@ -37,16 +41,16 @@ Med det här verktyget kan du göra följande när du har konfigurerat målet:
 
 Du kan anropa API-slutpunkten för måltestning med eller utan att lägga till profiler på begäran.
 
-Om du inte lägger till några profiler i begäran, genererar Adobe dessa internt åt dig och lägger till dem i begäran. Om du vill generera profiler som ska användas i denna begäran, se [API-referens för generering av exempelprofiler](./sample-profile-generation-api.md). Du måste generera profiler baserade på XDM-källschemat, vilket visas i [API-referensen](./sample-profile-generation-api.md#generate-sample-profiles-source-schema). Observera att källschemat är [unionsschemat](https://experienceleague.adobe.com/docs/experience-platform/profile/union-schemas/union-schema.html?lang=en) för sandlådan som du använder.
+Om du inte lägger till några profiler i begäran, genererar Adobe dessa internt åt dig och lägger till dem i begäran. Om du vill generera profiler som ska användas i den här begäran kan du läsa [Exempel på API-referens för generering av profil](./sample-profile-generation-api.md). Du måste generera profiler baserade på XDM-källschemat, vilket visas i [API-referens](./sample-profile-generation-api.md#generate-sample-profiles-source-schema). Observera att källschemat är [union](https://experienceleague.adobe.com/docs/experience-platform/profile/union-schemas/union-schema.html?lang=en) för den sandlåda som du använder.
 
 Svaret innehåller resultatet av bearbetningen av målbegäran. Begäran innehåller tre huvudavsnitt:
 * Begäran som genererats av Adobe för destinationen.
 * Svaret som togs emot från ditt mål.
-* Listan med profiler som skickats i begäran, oavsett om profilerna [lades till av dig i begäran](./destination-testing-api.md/#test-with-added-profiles) eller genererades av Adobe om [innehållet i begäran om måltestning var tomt](./destination-testing-api.md#test-without-adding-profiles).
+* Listan över profiler som skickats i begäran, oavsett om profilerna var [som lagts till av dig i begäran](./destination-testing-api.md/#test-with-added-profiles)eller genereras av Adobe om [innehållet i testbegäran för destinationen var tomt](./destination-testing-api.md#test-without-adding-profiles).
 
 >[!NOTE]
 >
->Adobe kan generera flera par med begäran och svar. Om du till exempel skickar 10 profiler till ett mål som har `maxUsersPerRequest`-värdet 7, kommer det att finnas en begäran med 7 profiler och en annan begäran med 3 profiler.
+>Adobe kan generera flera par med begäran och svar. Om du till exempel skickar 10 profiler till ett mål som har en `maxUsersPerRequest` värdet 7 kommer det att finnas en begäran med 7 profiler och en annan begäran med 3 profiler.
 
 **Exempelbegäran med parametern profiles i brödtexten**
 
@@ -121,7 +125,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 **Exempelsvar**
 
-Observera att innehållet i parametern `results.httpCalls` är specifikt för ditt REST API.
+Observera att innehållet i `results.httpCalls` -parametern är specifik för ditt REST API.
 
 ```json
 {
@@ -229,4 +233,4 @@ Beskrivningar av parametrarna för begäran och svar finns i [API-åtgärder fö
 
 ## Nästa steg
 
-När du har testat destinationen och bekräftat att den är korrekt konfigurerad kan du skicka konfigurationen till Adobe för granskning med API:t [målpublicering](./destination-publish-api.md).
+När du har testat destinationen och bekräftat att den är korrekt konfigurerad använder du [målpublicerings-API](./destination-publish-api.md) för att skicka in din konfiguration till Adobe för granskning.
