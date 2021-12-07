@@ -3,9 +3,9 @@ title: Samla in handels- och produktinformation med Adobe Experience Platform We
 description: Lär dig hur du lägger till produktrelaterade data eller en kundvagn med Adobe Experience Platform Web SDK.
 keywords: produkter;handel;mått;mått;order;cartAbandons;checkouts;productListAdds;productListOpen;productListRemovals;productListReopens;productListViews;productViews;purchasing;saveForLaters;currencyCode;payments;paymentAmount;paymentType;transactionID;priceTotal;purchaseID;purchaseNumber;
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
-source-git-commit: 22d15dde62f3113167684c7a76a2265e6f0e7bab
+source-git-commit: 51a18ca3a9d0817eafeecea328900eb2f4d1d9a4
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1326'
 ht-degree: 1%
 
 ---
@@ -114,7 +114,7 @@ Produktlistan anger vilka produkter som är relaterade till motsvarande åtgärd
 | **Fält** | **Rekommendation** | **Beskrivning** |
 |---|---|---|
 | [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmcurrencycode) | Valfritt | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) för produkten. Detta är bara användbart när du kan ha produkter med olika valutakoder och när det gäller produkter. Exempel: när du köper eller lägger till i kundvagnen. |
-| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | Rekommenderas varmt | Ska endast anges när det är tillämpligt. Det är till exempel inte möjligt att ställa in `productView` eftersom olika variationer av produkten kan ha olika priser, men på en `productListAdds`. |
+| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | Rekommenderas varmt | Ska endast anges när det är tillämpligt. Det är till exempel inte möjligt att ställa in `productView` -händelse eftersom olika variationer av produkten kan ha olika priser, men på en `productListAdds` -händelse. |
 | [produkt](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproduct) | Rekommenderas varmt | Produktens XDM-ID. |
 | [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | Rekommenderas varmt | Den metod som användes för att lägga till en produktartikel i listan av besökaren. Använd `productListAdds` och bör endast användas när en produkt läggs till i förteckningen. Exempel `add to cart button`, `quick add`och `upsell`. |
 | [productName](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmname) | Rekommenderas varmt | Detta anges som produktens visningsnamn eller läsbara namn. |
