@@ -5,9 +5,9 @@ title: Mappningsfunktioner för dataförinställningar
 topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 16484a5cf9f8ae7e4d0802cb8957c8627466db5f
+source-git-commit: c01f8d9f785bec5be712c0a64a8347557db0577e
 workflow-type: tm+mt
-source-wordcount: '3983'
+source-wordcount: '3971'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ Dataprep-funktioner kan användas för att beräkna och beräkna värden baserat
 
 ## Fält
 
-Ett fältnamn kan vara vilken giltig identifierare som helst - en sekvens med obegränsad längd av Unicode-bokstäver och siffror, med början med en bokstav, dollartecknet (`$`) eller understrecket (`_`). Variabelnamn är också skiftlägeskänsliga.
+Ett fältnamn kan vara vilken giltig identifierare som helst - en sekvens med obegränsad längd av Unicode-bokstäver och -siffror, med början med en bokstav, dollartecknet (`$`) eller understrecket (`_`). Variabelnamn är också skiftlägeskänsliga.
 
 Om ett fältnamn inte följer den här regeln måste fältnamnet omslutas med `${}`. Om fältnamnet till exempel är &quot;Förnamn&quot; eller &quot;Förnamn&quot; måste namnet radbrytas på samma sätt `${First Name}` eller `${First.Name}` respektive.
 
@@ -114,8 +114,8 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | now | Hämtar aktuell tid. |  | now() | now() | `2021-10-26T10:10:24Z` |
 | tidsstämpel | Hämtar aktuell Unix-tid. |  | tidsstämpel() | tidsstämpel() | 1571850624571 |
-| date_to_string | Formaterar indatadatum enligt ett angivet format. | <ul><li>DATUM: **Obligatoriskt** Indatadatum, som ett ZonedDateTime-objekt, som du vill formatera.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att datumet ska ändras till.</li></ul> | date_to_string(DATE, FORMAT) | date_to_string(2019-10-23T11:24:00+00:00, &quot;yyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35 tum |
-| long_to_date | Konverterar en tidsstämpel till en datumsträng enligt ett angivet format. | <ul><li>TIDSSTÄMPEL: **Obligatoriskt** Tidsstämpeln som du vill formatera. Detta skrivs i millisekunder.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att tidsstämpeln ska bli.</li></ul> | long_to_date(TIMESTAMP, FORMAT) | long_to_date(1571829875000, &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX&quot;) | &quot;2019-10-23T11:24:35 000Z&quot; |
+| format | Formaterar indatadatum enligt ett angivet format. | <ul><li>DATUM: **Obligatoriskt** Indatadatum, som ett ZonedDateTime-objekt, som du vill formatera.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att datumet ska ändras till.</li></ul> | format(DATE, FORMAT) | format(2019-10-23T11):24:00+00:00, &quot;yyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35 tum |
+| dformat | Konverterar en tidsstämpel till en datumsträng enligt ett angivet format. | <ul><li>TIDSSTÄMPEL: **Obligatoriskt** Tidsstämpeln som du vill formatera. Detta skrivs i millisekunder.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att tidsstämpeln ska bli.</li></ul> | dformat(TIMESTAMP, FORMAT) | format(1571829875000, &quot;yyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX&quot;) | &quot;2019-10-23T11:24:35 000Z&quot; |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | <ul><li>DATUM: **Obligatoriskt** Strängen som representerar datumet.</li><li>FORMAT: **Obligatoriskt** Strängen som representerar formatet för källdatumet.**Obs!** Detta gör det **not** representerar det format som du vill konvertera datumsträngen till. </li><li>DEFAULT_DATE: **Obligatoriskt** Standarddatumet som returneras om det angivna datumet är null.</li></ul> | date(DATE, FORMAT, DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;, &quot;yyy-MM-dd HH:mm&quot;, now()) | &quot;2019-10-23T11:24:00Z&quot; |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | <ul><li>DATUM: **Obligatoriskt** Strängen som representerar datumet.</li><li>FORMAT: **Obligatoriskt** Strängen som representerar formatet för källdatumet.**Obs!** Detta gör det **not** representerar det format som du vill konvertera datumsträngen till. </li></ul> | date(DATE, FORMAT) | date(&quot;2019-10-23 11:24&quot;, &quot;yyy-MM-dd HH:mm&quot;) | &quot;2019-10-23T11:24:00Z&quot; |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | <ul><li>DATUM: **Obligatoriskt** Strängen som representerar datumet.</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | &quot;2019-10-23T11:24:00Z&quot; |
