@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/destinationInstance/` för att testa om målet är korrekt konfigurerat och för att verifiera integriteten hos dataflöden till det konfigurerade målet.
 title: API-åtgärder för måltestning
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 45cff6f0c4d4fd63a17108087edec0184cbf9703
+source-git-commit: 52ce788f6947300b607dfc2efa09d028f9c2ddd7
 workflow-type: tm+mt
 source-wordcount: '664'
 ht-degree: 0%
@@ -13,29 +13,29 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**API-slutpunkt**:  `https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/`
+>**API-slutpunkt**: `https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/destinationInstance/` för att testa om målet är korrekt konfigurerat och för att verifiera integriteten för dataflöden till det konfigurerade målet. En beskrivning av de funktioner som stöds av den här slutpunkten finns i [Testa målkonfigurationen](./test-destination.md).
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/testing/destinationInstance/` API-slutpunkt, för att testa om målet är korrekt konfigurerat och för att verifiera dataflödenas integritet till det konfigurerade målet. En beskrivning av de funktioner som stöds av den här slutpunkten finns i [Testa målkonfigurationen](./test-destination.md).
 
 Du gör förfrågningar till testslutpunkten med eller utan att lägga till profiler till anropet. Om du inte skickar några profiler på begäran, genererar Adobe dessa internt åt dig och lägger till dem i begäran.
 
-Du kan använda [API:t för generering av exempelprofiler](./sample-profile-generation-api.md) för att skapa profiler som ska användas i begäranden till API:t för måltestning.
+Du kan använda [API för generering av exempelprofiler](./sample-profile-generation-api.md) för att skapa profiler som ska användas i begäranden till API:t för måltestning.
 
 ## Hämta målinstans-ID {#get-destination-instance-id}
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [anslut till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) och [aktivera profiler och segment till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) om du vill ha mer information. När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten från URL:en när du bläddrar i en anslutning till målet](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).[
+>* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) och [aktivera profiler och segment till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) för mer information. När du har upprättat anslutningen till målet hämtar du det målinstans-ID som du bör använda i API-anrop till den här slutpunkten från URL:en när [bläddra genom en anslutning till destinationen](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
    >![Användargränssnittsbild för att hämta målinstans-ID](./assets/get-destination-instance-id.png)
 
 
 ## Komma igång med API-åtgärder för måltestning {#get-started}
 
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Testa målkonfigurationen utan att lägga till profiler till samtalet {#test-without-adding-profiles}
 
-Du kan testa målkonfigurationen genom att göra en POST-förfrågan till `authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}`-slutpunkten och ange destinationsinstansens ID för det mål som du testar.
+Du kan testa målkonfigurationen genom att göra en POST-förfrågan till `authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}` slutpunkt och ange målinstans-ID för målet som du testar.
 
 **API-format**
 
@@ -50,10 +50,10 @@ POST authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}
 
 **Begäran**
 
-Följande begäran anropar målets REST API-slutpunkt. Begäran konfigureras av frågeparametern `{DESTINATION_INSTANCE_ID}`.
+Följande begäran anropar målets REST API-slutpunkt. Begäran har konfigurerats av `{DESTINATION_INSTANCE_ID}` frågeparameter.
 
 ```shell
-curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/49966037-32cd-4457-a105-2cbf9c01826a' \
+curl --location --request POST 'https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/49966037-32cd-4457-a105-2cbf9c01826a' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
@@ -155,7 +155,7 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med API-svaret från mål
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `aggregationKey` | Innehåller information om den aggregeringsprincip som har konfigurerats för målet. Mer information finns i avsnittet [Aggregationsprincip](./destination-configuration.md#aggregation) i målkonfigurationsdokumentet. |
+| `aggregationKey` | Innehåller information om den aggregeringsprincip som har konfigurerats för målet. Mer information finns i [Samlingsprincip](./destination-configuration.md#aggregation) i målkonfigurationsdokumentet. |
 | `traceId` | En unik identifierare för åtgärden. När du får problem kan du dela detta ID med Adobe-teamet för felsökning. |
 | `results.httpCalls.request` | Inkluderar den begäran som skickades av Adobe till ditt mål. |
 | `results.httpCalls.response` | Inkluderar det svar som togs emot av Adobe från ditt mål. |
@@ -165,7 +165,7 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med API-svaret från mål
 
 ## Testa målkonfigurationen med profiler som lagts till i samtalet {#test-with-added-profiles}
 
-Du kan testa målkonfigurationen genom att göra en POST-förfrågan till `authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}`-slutpunkten och ange destinationsinstansens ID för det mål som du testar.
+Du kan testa målkonfigurationen genom att göra en POST-förfrågan till `authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}` slutpunkt och ange målinstans-ID för målet som du testar.
 
 **API-format**
 
@@ -179,10 +179,10 @@ POST authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}
 
 **Begäran**
 
-Följande begäran anropar målets REST API-slutpunkt. Begäran konfigureras av parametrarna som anges i nyttolasten och frågeparametern `{DESTINATION_INSTANCE_ID}`.
+Följande begäran anropar målets REST API-slutpunkt. Begäran konfigureras av parametrarna som anges i nyttolasten och `{DESTINATION_INSTANCE_ID}` frågeparameter.
 
 ```shell
-curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/49966037-32cd-4457-a105-2cbf9c01826a' \
+curl --location --request POST 'https://platform.adobe.io/data/core/activation/authoring/testing/destinationInstance/49966037-32cd-4457-a105-2cbf9c01826a' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
@@ -321,8 +321,8 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med API-svaret från mål
 
 ## API-felhantering {#api-error-handling}
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [begäranrubrikfel](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu hur du testar målet. Nu kan du använda självbetjäningsdokumentationsprocessen [för Adobe för att skapa en dokumentationssida för ditt mål.](./docs-framework/documentation-instructions.md)
+När du har läst det här dokumentet vet du nu hur du testar målet. Nu kan du använda Adobe [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en dokumentationssida för destinationen.
