@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 6db0aef66abe11b8ed9f4b8da56875aa296b1a10
+source-git-commit: 1fa7663cc8bebca98f284593e98163315acda478
 workflow-type: tm+mt
-source-wordcount: '1182'
+source-wordcount: '1237'
 ht-degree: 0%
 
 ---
@@ -69,6 +69,12 @@ När du har skapat ett direktuppspelningsaktiverat segment kan du visa informati
 Mer om **[!UICONTROL total qualified audience size]** visas. The **[!UICONTROL Total qualified audience size]** visar det totala antalet kvalificerade målgrupper från den senaste slutförda körningen av segmentjobb. Om ett segmentjobb inte slutfördes inom de senaste 24 timmarna hämtas antalet målgrupper från en uppskattning i stället.
 
 Under är ett linjediagram som visar antalet segment som kvalificerats och diskvalificerats under de senaste 24 timmarna. Listrutan kan justeras så att den visar de senaste 24 timmarna, den senaste veckan eller de senaste 30 dagarna.
+
+>[!NOTE]
+>
+>Ett segment anses vara kvalificerat om det går från att ha ingen status till att realisera eller om det går från att avslutas till att realiseras. Ett segment betraktas som icke-kvalificerat om det går från realiserad till avslutad eller från befintlig till avslutad.
+>
+>Mer information om de här statusvärdena finns i statustabellen i [segmenteringsöversikt](./overview.md#browse).
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 

@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: ce3d5e3db28d39b8d7d5a984700dd681c650ac94
 workflow-type: tm+mt
 source-wordcount: '1648'
 ht-degree: 0%
@@ -45,7 +45,7 @@ Mer information finns på [instrumentpanelsguide för segment](../../dashboards/
 
 ![](../../dashboards/images/segments/dashboard-overview.png)
 
-## Bläddra
+## Bläddra {#browse}
 
 Välj **[!UICONTROL Browse]** om du vill visa en lista över alla segmentdefinitioner för din IMS-organisation.
 
@@ -53,7 +53,7 @@ Välj **[!UICONTROL Browse]** om du vill visa en lista över alla segmentdefinit
 
 I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
 
-I uppdelningen visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
+Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
 
 ![](../images/ui/overview/segment-browse-breakdown.png)
 
