@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 3b320f253516f2c169330e1eed6ad870a583891a
+source-git-commit: b3d0f0c43b60895961cee2ee54518c0450e2e2f7
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,10 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 Nedan visas ett exempel på en konfiguration för en målmall som skapats med `/destinations` API-slutpunkt. Mer information om den här mallen finns i [Målkonfiguration](./destination-configuration.md).
 
 Om du vill ansluta server- och mallkonfigurationen i steg 1 till den här målkonfigurationen lägger du till instans-ID:t för servern och mallkonfigurationen som `destinationServerId` här.
+
+>[!IMPORTANT]
+>
+>Om du vill skapa ett korrekt konfigurerat mål *måste* lägg till minst en målidentitet i `identityNamespaces`, vilket visas nedan. Om ingen målidentitet har konfigurerats kan användarna inte fortsätta förbi [Mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) aktiveringsarbetsflödet.
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destinations
