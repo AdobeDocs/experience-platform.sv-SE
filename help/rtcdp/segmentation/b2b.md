@@ -1,17 +1,17 @@
 ---
-title: Översikt över användningsexempel för segmentering för CDP B2B Edition i realtid
+title: Exempel på segmenteringsanvändning för CDP B2B Edition i realtid
 description: En översikt över de olika användningsområdena för CDP B2B Edition i realtid.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
+source-git-commit: 9bd7434f2b224d76decac1e04d8491a6b3149a3a
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# Översikt över användningen av segmentering för Real-time Customer Data Platform B2B Edition
+# Exempel på segmenteringsanvändning för Real-time Customer Data Platform B2B Edition
 
-Det här dokumentet innehåller exempel på den segmentering som är tillgänglig för CDP B2B Edition i realtid och hur de olika attributtyperna kan kombineras för vanliga B2B-användningsfall.
+Det här dokumentet innehåller exempel på segmentdefinitioner i realtid CDP B2B Edition och hur olika typer av attribut kan kombineras för vanliga B2B-användningsfall. Mer information om hur destinationer passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
 
 >[!NOTE]
 >

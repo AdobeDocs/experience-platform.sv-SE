@@ -3,9 +3,10 @@ keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattfo
 solution: Experience Platform
 title: Komma igång med Real-time Customer Data Platform B2B Edition
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Real-time Customer Data Platform B2B Edition.
-source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
+exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
+source-git-commit: 9bd7434f2b224d76decac1e04d8491a6b3149a3a
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1195'
 ht-degree: 0%
 
 ---
@@ -29,6 +30,9 @@ Det här självstudiearbetsflödet bygger på flera Adobe Experience Platform-tj
 
 Som en del av den första konfigurationen måste Bodeas IT-avdelning skapa ett XDM-schema för att säkerställa att deras data följer ett standardformat när de hämtas till Platform och kan användas i olika plattformstjänster och Adobe Experience Cloud-produkter (som Adobe Analytics och Adobe Target).
 
+>!![WARNING]
+Du måste följa de intag-mönster som beskrivs i den relevanta källdokumentationen som är länkad till genom den här självstudiekursen. Andra fältmappningsmetoder fungerar inte med säkerhet.
+
 Med Adobe Experience Platform kan du automatiskt generera scheman och namnutrymmen som krävs för B2B-datakällor. Detta verktyg ser till att de scheman som skapas beskriver data på ett strukturerat återanvändbart sätt. Följ [Dokumentation för verktyg för automatisk generering av B2B-namnutrymmen och scheman](../sources/connectors/adobe-applications/marketo/marketo-namespaces.md) för en fullständig referens till konfigurationsprocessen.
 
 I Adobe Experience Platform-gränssnittet väljer Bodea-marknadsföraren **[!UICONTROL Schemas]** i den vänstra listen, följt av **[!UICONTROL Browse]** -fliken. Eftersom de använde autogenereringsverktyget för Marketo Engage visas de nya tomma scheman i listan med prefixet&quot;B2B&quot;.
@@ -38,24 +42,20 @@ I Adobe Experience Platform-gränssnittet väljer Bodea-marknadsföraren **[!UIC
 Verktyget för automatisk generering definierade datamodellstrukturen för scheman med hjälp av standardklasserna XDM B2B (till exempel [XDM Business Account](../xdm/classes/b2b/business-account.md) och [XDM - affärsmöjlighet](../xdm/classes/b2b/business-opportunity.md)) som samlar in grundläggande B2B-datatabeller. Dessutom har de automatiskt genererade B2B-scheman som bygger på dessa klasser redan etablerade relationer som möjliggör avancerad segmenteringsanvändning. Alla ytterligare fältgrupper som krävs för datastrukturen kan enkelt göras här via användargränssnittet. Se [Användargränssnittshandbok för XDM, lägga till fältgrupper i ett schemaavsnitt](../xdm/ui/resources/schemas.md#add-field-groups) för mer information.
 
 >[!NOTE]
-> 
->Om du inte använder verktyget för autogenerering eller om du behöver skapa en ny relation läser du självstudiekursen om [skapa relationer mellan B2B-scheman](../xdm/tutorials/relationship-b2b.md).
+Om du inte använder verktyget för autogenerering eller om du behöver skapa en ny relation läser du självstudiekursen om [skapa relationer mellan B2B-scheman](../xdm/tutorials/relationship-b2b.md).
 
 Kundprofilen i realtid sammanfogar data från olika källor för att skapa konsoliderade profiler för viktiga B2B-företag. Eftersom profiler genereras baserat på en enda klass skapar verktyget för automatisk generering relationer mellan scheman baserat på vanliga användningsfall. Därför är Bodea-teamet nu redo att importera data baserat på deras B2B-scheman.
 
 >[!NOTE]
-> 
->Standardnamnutrymmen för identiteter, primärnycklar och relationer som skapas för scheman av verktyget för automatisk generering kan enkelt upptäckas i arbetsytan Schema.
->
->![standardschema-identitet och relationsgränssnitt](./assets/b2b-tutorial/schema-identity-relationship.png)
+Standardnamnutrymmen för identiteter, primärnycklar och relationer som skapas för scheman av verktyget för automatisk generering kan enkelt upptäckas i arbetsytan Schema.
+![standardschema-identitet och relationsgränssnitt](./assets/b2b-tutorial/schema-identity-relationship.png)
 
 ## Infoga data i Experience Platform
 
 Sedan använder Bodea-marknadsföraren [Marketo Engage-kontakt](../sources/connectors/adobe-applications/marketo/marketo.md) att importera data till plattformen för användning i tjänster längre fram i kedjan. Du kan även importera data genom att använda någon av de godkända källorna för CDP B2B Edition i realtid.
 
 >[!NOTE]
-> 
->Om du vill veta vilka källanslutningar som är tillgängliga för din organisation kan du visa källkatalogen i användargränssnittet för plattformen. Om du vill komma åt katalogen väljer du **Källor** i den vänstra navigeringen väljer du **Katalog**.
+Om du vill veta vilka källanslutningar som är tillgängliga för din organisation kan du visa källkatalogen i användargränssnittet för plattformen. Om du vill komma åt katalogen väljer du **Källor** i den vänstra navigeringen väljer du **Katalog**.
 
 Om du vill skapa en anslutning mellan ett Marketo-konto och en plattform måste du hämta autentiseringsuppgifter. Se [guide om hur du får inloggningsuppgifter för Marketo-källanslutning](../sources/connectors/adobe-applications/marketo/marketo-auth.md) för detaljerade anvisningar.
 
@@ -64,8 +64,7 @@ När autentiseringsuppgifterna har inhämtats skapar Bodea-marknadsföraren en a
 Marketo Engage-källkopplingen har en automatisk mappningsfunktion som gör det enklare att mappa alla dina datafält till de nya scheman.
 
 >[!NOTE]
-> 
->Om du har skapat anpassade fältgrupper i XDM-scheman kan det finnas okopplade fält i det här skedet av processen. Kontrollera alla värden som fyller i dina anpassade fältgrupper.
+Om du har skapat anpassade fältgrupper i XDM-scheman kan det finnas okopplade fält i det här skedet av processen. Kontrollera alla värden som fyller i dina anpassade fältgrupper.
 
 Bodea-markören kontrollerar att alla fältgrupper är korrekt mappade och fortsätter källkonfigurationen genom att initiera ett dataflöde. Genom att skapa ett dataflöde för att hämta in Marketo-data kan inkommande data användas av plattformstjänster längre fram i kedjan. Under den inledande intagsprocessen förs data in i Experience Platform som en sats. Därefter direktuppspelas inkapslade data till profilen med nästan realtidsuppdateringar.
 
@@ -78,8 +77,7 @@ I det här exemplet hittar segmentet alla personer som arbetar på försäljning
 ![Använd skiftlägessegment](./assets/b2b-tutorial/use-case-segment.png)
 
 >[!NOTE]
-> 
->Instruktioner om hur du skapar segment för att utvärdera data finns i [Användargränssnittsguide för segmentbyggare](../segmentation/ui/segment-builder.md). Mer specifika användningsfall för B2B-segmentering finns i [segmenteringsöversikt för CDP B2B Edition i realtid](./segmentation/b2b.md).
+Instruktioner om hur du skapar segment för att utvärdera data finns i [Användargränssnittsguide för segmentbyggare](../segmentation/ui/segment-builder.md). Mer specifika användningsfall för B2B-segmentering finns i [segmenteringsöversikt för CDP B2B Edition i realtid](./segmentation/b2b.md).
 
 Med Segment Builder kan ni skapa en marknadsföringsbar publik utifrån kundprofildata i realtid och visa uppskattningar av er presumtiva målgrupp baserat på den kombination av attribut, händelser och befintliga målgrupper som ni har definierat.
 
@@ -92,8 +90,7 @@ I [!UICONTROL Segments] arbetsytan i plattformsgränssnittet, markeras av Bodea-
 ![Aktivera segmentet till ett mål](./assets/b2b-tutorial/activate-to-destination.png)
 
 >[!NOTE]
-> 
->Se självstudiekursen om [aktivera ett segment till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) om du vill ha mer information om hur du uppnår detta.
+Se självstudiekursen om [aktivera ett segment till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) om du vill ha mer information om hur du uppnår detta.
 
 Bodea-marknadsföraren aktiverar segmentet till Marketo-destinationen, vilket gör att de kan skicka segmentdata från Platform till Marketo Engage i form av en statisk lista. Se guiden på [Marketo](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) för mer information.
 

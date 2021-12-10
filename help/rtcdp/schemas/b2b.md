@@ -2,9 +2,9 @@
 title: Scheman i Real-time Customer Data Platform B2B Edition
 description: En översikt över XDM-schemats (Experience Data Model) roll i Real-time Customer Data Platform B2B Edition.
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 1a104d26b920082ee73178dd0ad7234ad43dec1a
 workflow-type: tm+mt
-source-wordcount: '220'
+source-wordcount: '235'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,8 @@ Följande standardklasser finns i CDP B2B Edition i realtid:
 * [XDM - affärsmöjlighet, personrelation](../../xdm/classes/b2b/business-opportunity-person-relation.md)
 * [XDM Business Marketing List](../../xdm/classes/b2b/business-marketing-list.md)
 * [XDM Business Marketing List-medlemmar](../../xdm/classes/b2b/business-marketing-list-members.md)
+
+Om du vill veta hur scheman passar in i ditt B2B-arbetsflöde kan du läsa [självstudiekurs från början till slut](../b2b-tutorial.md).
 
 Anvisningar om hur du skapar en många-till-ett-relation mellan två scheman finns i självstudiekursen om [definiera B2B-schemarelationer](../../xdm/tutorials/relationship-b2b.md).
 

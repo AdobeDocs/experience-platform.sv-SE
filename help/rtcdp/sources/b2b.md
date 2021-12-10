@@ -2,9 +2,9 @@
 title: Källor i Real-time Customer Data Platform B2B Edition
 description: En översikt över källornas roll i Real-time Customer Data Platform B2B Edition.
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: ef3b9bb742b44aafc838b84a0076e7c8445ac84f
+source-git-commit: 1a104d26b920082ee73178dd0ad7234ad43dec1a
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '290'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,8 @@ Med Real-time Customer Data Platform B2B Edition kan ni hämta in B2B-data via o
 >[!TIP]
 >
 >Även om Real-time Customer Data Platform B2B Edition erbjuder ett stort antal externa källor att importera data från har den inte så många som de som finns för Real-time Customer Data Platform. Om du vill veta vilka källanslutningar som är tillgängliga för din organisation kan du visa källkatalogen i användargränssnittet för plattformen. Om du vill komma åt katalogen väljer du **Källor** i den vänstra navigeringen väljer du **Katalog**.
+
+Information om hur källorna passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#ingest-your-data-into-experience-platform).
 
 Se [översikt över källanslutningar](../../sources/home.md) om du vill ha mer information om de olika källtyperna i Adobe Experience Platform.
 
