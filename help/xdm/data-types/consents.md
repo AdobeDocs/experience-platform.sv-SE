@@ -4,7 +4,7 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: da6131494d80dbd2bbd4496876f044f5026b0e12
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '1996'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # [!UICONTROL Consents and Preferences] datatyp
 
-Datatypen [!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] (kallas nedan datatypen [!UICONTROL Consents and Preferences]) är en [!DNL Experience Data Model]-datatyp (XDM) som är avsedd att stödja samlingen av kundbehörigheter och inställningar som genereras av CMP (Consent Management Platforms) och andra källor från dina dataåtgärder.
+The [!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] datatyp (nedan kallad[!UICONTROL Consents and Preferences] datatypen&quot;) är en [!DNL Experience Data Model] (XDM) datatyp som är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från dataåtgärderna.
 
-Det här dokumentet beskriver strukturen och den avsedda användningen av fälten som anges av datatypen [!UICONTROL Consents and Preferences].
+Detta dokument omfattar strukturen och den avsedda användningen av de fält som tillhandahålls av [!UICONTROL Consents and Preferences] datatyp.
 
 ## Förutsättningar {#prerequisites}
 
@@ -28,15 +28,15 @@ Det här dokumentet kräver en fungerande förståelse av XDM och användning av
 
 >[!IMPORTANT]
 >
->Datatypen [!UICONTROL Consents and Preferences] är utformad för att omfatta en rad olika användningsfall för samtycke och preferenshantering. Därför beskriver det här dokumentet användningen av datatypens fält i allmänna termer och ger bara förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa datatypens struktur till hur din organisation tolkar och presenterar dessa samtycke och preferenser för dina kunder.
+>The [!UICONTROL Consents and Preferences] datatypen är avsedd att omfatta en rad olika användningsområden för samtycke och preferenshantering. Därför beskriver det här dokumentet användningen av datatypens fält i allmänna termer och ger bara förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa datatypens struktur till hur din organisation tolkar och presenterar dessa samtycke och preferenser för dina kunder.
 
-Datatypen [!UICONTROL Consents and Preferences] innehåller flera fält som används för att hämta **information om samtycke** och **inställning**.
+The [!UICONTROL Consents and Preferences] datatypen innehåller flera fält som används för att hämta **samtycke** och **inställning** information.
 
 Ett samtycke är ett alternativ som gör att kunden kan ange hur deras data får användas. De flesta samtycke har en juridisk aspekt, eftersom vissa jurisdiktioner kräver tillstånd innan data kan användas på ett visst sätt, eller kräver att kunden har möjlighet att stoppa användningen (avanmäl dig) om det inte krävs ett ja-medgivande.
 
-En preferens är ett alternativ som gör det möjligt för kunden att specificera hur olika aspekter av upplevelsen av ett varumärke ska hanteras. Dessa infaller inom två kategorier:
+En preferens är ett alternativ som gör det möjligt för kunden att specificera hur olika aspekter av upplevelsen av ett varumärke ska hanteras. De kan delas in i två kategorier:
 
-* **Anpassningsinställningar**: Inställningar för hur varumärket ska personalisera upplevelser som levereras till en kund.
+* **Personaliseringsinställningar**: Inställningar för hur varumärket ska personalisera upplevelser som levereras till en kund.
 * **Marknadsföringsinställningar**: Inställningar för om ett varumärke får kontakta en kund via olika kanaler.
 
 I följande skärmbild visas hur strukturen för datatypen visas i användargränssnittet för plattformen:
@@ -45,9 +45,9 @@ I följande skärmbild visas hur strukturen för datatypen visas i användargrä
 
 >[!TIP]
 >
->Se guiden [utforska XDM-resurser](../ui/explore.md) för steg om hur du söker efter en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
+>Se guiden [utforska XDM-resurser](../ui/explore.md) om du vill ha steg om hur du söker upp en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
 
-I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatypen [!UICONTROL Consents and Preferences]. Information om hur dessa fält används finns i de avsnitt som följer.
+I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and Preferences] kan bearbeta datatypen. Information om hur dessa fält används finns i de avsnitt som följer.
 
 ```json
 {
@@ -131,14 +131,14 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 `collect` representerar kundens samtycke till att deras data samlas in.
 
 ```json
-"collect" : {
+"collect": {
   "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -147,14 +147,14 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 `adID` representerar kundens samtycke för om ett annonser-ID (IDFA eller GAID) kan användas för att länka kunden mellan appar på den här enheten.
 
 ```json
-"adID" : {
+"adID": {
   "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -163,14 +163,14 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 `share` representerar kundens samtycke för huruvida deras data kan delas med (eller säljas till) andra eller tredje part.
 
 ```json
-"share" : {
+"share": {
   "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -182,7 +182,7 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 >
 >`personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
 >
->Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
+>I samma exempel väljer en kund att inte använda direktmarknadsföring för alla kanaler (via `marketing`, som förklaras i [nästa avsnitt](#marketing)) ska kunden inte få något meddelande, även om personalisering är tillåten.
 
 ```json
 "personalize": {
@@ -195,7 +195,7 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | Egenskap | Beskrivning |
 | --- | --- |
 | `content` | Representerar kundens önskemål om personaliserat innehåll på er webbplats eller i er tillämpning. |
-| `val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -224,13 +224,13 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `preferred` | Anger kundens föredragna kanal för att ta emot kommunikation. Se [bilagan](#preferred-values) för godkända värden. |
-| `any` | Representerar kundens preferenser för direktmarknadsföring som helhet. Medgivandeinställningen i det här fältet anses vara standardinställning för alla marknadsföringskanaler, såvida den inte åsidosätts av ytterligare underfält som anges i `marketing`. Om du planerar att använda fler detaljerade alternativ för samtycke rekommenderar vi att du utelämnar det här fältet.<br><br>Om värdet är inställt på  `n`ska alla mer specifika personaliseringsinställningar ignoreras. Om värdet är `y` bör alla fininjektivkorniga anpassningsalternativ också behandlas som `y`, såvida de inte uttryckligen är inställda på `n`. Om värdet inte anges bör värdena för varje personaliseringsalternativ respekteras enligt vad som anges. |
+| `preferred` | Anger kundens föredragna kanal för att ta emot kommunikation. Se [appendix](#preferred-values) för godkända värden. |
+| `any` | Representerar kundens preferenser för direktmarknadsföring som helhet. Den medgivandeinställning som anges i detta fält anses vara standardinställning för alla marknadsföringskanaler, såvida den inte åsidosätts av ytterligare delfält som anges i `marketing`. Om du planerar att använda fler detaljerade alternativ för samtycke rekommenderar vi att du utelämnar det här fältet.<br><br>Om värdet är inställt på `n`ska alla mer specifika personaliseringsinställningar ignoreras. Om värdet är inställt på `y`så bör alla fininniga personaliseringsalternativ också behandlas som `y`, såvida inte explicit inställt på `n`. Om värdet inte anges bör värdena för varje personaliseringsalternativ respekteras enligt vad som anges. |
 | `email` | Anger om kunden går med på att ta emot e-postmeddelanden. |
 | `push` | Anger om kunden tillåter att push-meddelanden tas emot. |
 | `sms` | Anger om kunden accepterar att ta emot textmeddelanden. |
-| `val` | Inställningen som tillhandahålls av kunden för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke ska värdet i detta fält ange grunden för användningen av marknadsföringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
-| `time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `metadata`, så behöver det här fältet inte anges för den inställningen. |
+| `val` | Inställningen som tillhandahålls av kunden för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke ska värdet i detta fält ange grunden för användningen av marknadsföringen. Se [appendix](#choice-values) för godkända värden och definitioner. |
+| `time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `metadata`, ska det här fältet inte ställas in för den inställningen. |
 | `reason` | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -247,29 +247,29 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Om du anger ett `time`-värde under en enskild inställning åsidosätts tidsstämpeln `metadata` för den aktuella inställningen. |
+| `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Tillhandahåller en `time` värdet under en enskild inställning åsidosätter `metadata` tidsstämpel för den aktuella inställningen. |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## Inhämta data med datatypen {#ingest}
 
-Om du vill använda datatypen [!UICONTROL Consents and Preferences] för att importera medgivandedata från dina kunder måste du skapa en datauppsättning baserad på ett schema som innehåller den datatypen.
+För att kunna använda [!UICONTROL Consents and Preferences] datatyp för att kunna importera medgivandedata från dina kunder måste du skapa en datauppsättning som baseras på ett schema som innehåller den datatypen.
 
-I självstudiekursen om att [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med datatypen [!UICONTROL Consents and Preferences] kan du läsa avsnittet [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
+Se självstudiekursen om [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) för steg om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med [!UICONTROL Consents and Preferences] datatypen, se avsnittet om [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen följer du stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
 >
->Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile] måste du skapa ett [!DNL Profile]-aktiverat schema baserat på klassen [!DNL XDM Individual Profile] som innehåller datatypen [!UICONTROL Consents and Preferences]. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile]-krav för scheman och datauppsättningar.
+>Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile]måste du skapa en [!DNL Profile]-aktiverat schema baserat på [!DNL XDM Individual Profile] klassen som innehåller [!UICONTROL Consents and Preferences] datatyp. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile] krav för scheman och datauppsättningar.
 >
->Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Mer information finns i översikten om [sammanfogningsprinciper](../../rtcdp/profile/merge-policies.md).
+>Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Se översikten på [sammanfogningsprinciper](../../rtcdp/profile/merge-policies.md) för mer information.
 
 ## Hantera samtycke och ändringar av inställningar
 
-När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med [Adobe Experience Platform Web SDK](../../edge/consent/supporting-consent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
+När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med hjälp av [Adobe Experience Platform Web SDK](../../edge/consent/supporting-consent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
 
 ## Bilaga {#appendix}
 
-Avsnitten nedan innehåller ytterligare referensinformation om datatypen [!UICONTROL Consents and Preferences].
+Avsnitten nedan innehåller ytterligare referensinformation om [!UICONTROL Consents and Preferences] datatyp.
 
 ### Godkända värden för `val` {#choice-values}
 
@@ -277,9 +277,9 @@ I följande tabell visas godkända värden för `val`:
 
 | Värde | Titel | Beskrivning |
 | --- | --- | --- |
-| `y` | Ja (anmälan) | Kunden har valt att ge sitt medgivande eller önskemål. De **godkänner med andra ord att deras uppgifter används enligt det aktuella medgivandet eller den aktuella preferensen.** |
-| `n` | Nej (avanmäl dig) | Kunden har valt bort samtycke eller önskemål. De **godkänner med andra ord inte** att deras uppgifter används på det sätt som anges i det aktuella medgivandet eller den aktuella preferensen. |
-| `p` | Väntande verifiering | Systemet har ännu inte fått något slutligt godkännande eller inställningsvärde. Detta används oftast som en del av ett samtycke som kräver tvåstegsverifiering. Om en kund till exempel väljer att ta emot e-postmeddelanden anges det medgivandet till `p` tills de väljer en länk i ett e-postmeddelande för att verifiera att de har angett rätt e-postadress, och då uppdateras medgivandet till `y`.<br><br>Om detta samtycke eller denna inställning inte använder en tvåstegsverifieringsprocess kan  `p` valet i stället användas för att ange att kunden ännu inte har svarat på bekräftelseuppmaningen. Du kan till exempel automatiskt ange värdet `p` på den första sidan på en webbplats, innan kunden har svarat på frågan om samtycke. I jurisdiktioner som inte kräver uttryckligt medgivande kan ni också använda det för att ange att kunden inte uttryckligen har avanmält sig (med andra ord antas medgivande). |
+| `y` | Ja (anmälan) | Kunden har valt att ge sitt medgivande eller önskemål. Med andra ord: **do** samtycke till att deras uppgifter används i enlighet med det aktuella medgivandet eller den berörda förmånsbehandlingen. |
+| `n` | Nej (avanmäl dig) | Kunden har valt bort samtycke eller önskemål. Med andra ord: **inte** samtycke till att deras uppgifter används i enlighet med det aktuella medgivandet eller den berörda förmånsbehandlingen. |
+| `p` | Väntande verifiering | Systemet har ännu inte fått något slutligt godkännande eller inställningsvärde. Detta används oftast som en del av ett samtycke som kräver tvåstegsverifiering. Om en kund till exempel väljer att ta emot e-postmeddelanden ställs detta medgivande in på `p` tills de väljer en länk i ett e-postmeddelande för att verifiera att de har angett rätt e-postadress, och då uppdateras medgivandet till `y`.<br><br>Om detta samtycke eller denna inställning inte använder en tvåstegsverifieringsprocess ska `p` kan i stället användas för att ange att kunden ännu inte har svarat på frågan om samtycke. Du kan till exempel ställa in värdet automatiskt på `p` på första sidan av en webbplats, innan kunden har svarat på frågan om samtycke. I jurisdiktioner som inte kräver uttryckligt medgivande kan ni också använda det för att ange att kunden inte uttryckligen har avanmält sig (med andra ord antas medgivande). |
 | `u` | Okänd | Kundens samtycke eller inställningsinformation är okänd. |
 | `dy` | Standard för Ja (anmälan) | Kunden har inte lämnat in något medgivande i sig och behandlas som en anmälan (&quot;Ja&quot;) som standard. Med andra ord antas samtycke tills kunden anger något annat.<br><br>Observera att om lagar eller ändringar i företagets sekretesspolicy leder till ändringar av standardvärdena för vissa eller alla användare, måste du uppdatera alla profiler som innehåller standardvärden manuellt. |
 | `dn` | Standard för Nej (avanmälan) | Kunden har inte lämnat in något medgivande och behandlas som standard som avanmälan (&quot;Nej&quot;). Med andra ord antas kunden ha vägrat samtycke tills de anger något annat.<br><br>Observera att om lagar eller ändringar i företagets sekretesspolicy leder till ändringar av standardvärdena för vissa eller alla användare, måste du uppdatera alla profiler som innehåller standardvärden manuellt. |
@@ -313,6 +313,6 @@ I följande tabell visas godkända värden för `preferred`:
 
 {style=&quot;table-layout:auto&quot;}
 
-### Fullständigt [!UICONTROL Consents and Preferences]-schema {#full-schema}
+### Fullständig [!UICONTROL Consents and Preferences] schema {#full-schema}
 
-Mer information om det fullständiga schemat för datatypen [!UICONTROL Consents and Preferences] finns i [den officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json).
+Så här visar du det fullständiga schemat för [!UICONTROL Consents and Preferences] datatyp, se [officiell XDM-databas](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json).

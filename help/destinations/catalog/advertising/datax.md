@@ -1,13 +1,13 @@
 ---
 title: Verizon MediaYahoo DataX-anslutning
 description: DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är värd för olika komponenter som gör att Verizon Media/Yahoo kan utbyta data med sina externa partner på ett säkert, automatiserat och skalbart sätt.
-source-git-commit: 09bae0d24eead5f0b6533ba5b89e1fc87c8c71b5
+exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '580'
 ht-degree: 1%
 
 ---
-
 
 # Verizon Media/Yahoo DataX-anslutning
 
@@ -27,12 +27,12 @@ Detta är en unik identifierare i Yahoo DataX och det är ett obligatoriskt fäl
 
 **Hastighetsgräns**
 
-DataX är hastighetsbegränsat per kvotgränserna för taxonomi- och målgruppsposter som beskrivs i [DataX-dokumentationen](https://developer.verizonmedia.com/datax/guide/rate-limits/).
+DataX är avgiftsbegränsat för de kvotgränser för taxonomi- och målgruppsposter som anges i [DataX-dokumentation](https://developer.verizonmedia.com/datax/guide/rate-limits/).
 
 
 | Felkod | Felmeddelande | Beskrivning |
 |---------|----------|---------|
-| 429 För många begäranden | Hastighetsgränsen har överskridits per timme **(gräns: 100)** | Antal begäranden som tillåts i en timme per provider. |
+| 429 För många begäranden | Hastighetsgränsen har överskridits per timme **(Gräns: 100)** | Antal begäranden som tillåts i en timme per provider. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -45,13 +45,13 @@ Taxonomiresursen definierar ett tillägg över basdatax-metadatastrukturen
 
   >>(Base DataX Metadata)<<
 
-        "extensions" : { "action" :
-        {string}, "incrementalData" :
+        "extensions": { "action":
+        {string}, "incrementalData":
         {
                 "taxonomyId": {string}
                 },
-                "links" : [{
-                "rel"   : "https://datax.yahooapis.com/rels/fullTaxonomy", "title" : "Full
+                "links": [{
+                "rel": "https://datax.yahooapis.com/rels/fullTaxonomy", "title": "Full
                 Taxonomy post processing",
                 "href": {string}
                 ]
@@ -59,7 +59,7 @@ Taxonomiresursen definierar ett tillägg över basdatax-metadatastrukturen
 }
 ```
 
-Läs mer om [Taxonomimetadata](https://developer.verizonmedia.com/datax/guide/taxonomy/taxo-metadata/) i dokumentationen för DataX-utvecklaren.
+Läs mer om [Taxonomimetadata](https://developer.verizonmedia.com/datax/guide/taxonomy/taxo-metadata/) i DataX-utvecklardokumentationen.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -67,7 +67,7 @@ Verizon Media stöder aktivering av identiteter som beskrivs i tabellen nedan. L
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 
@@ -75,7 +75,7 @@ Verizon Media stöder aktivering av identiteter som beskrivs i tabellen nedan. L
 
 ## Exporttyp {#export-type}
 
-**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (e-post) som används i Verizon Media-målet.
+**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med de identifierare (e-post) som används i Verizon Media-målet.
 
 ## Användningsexempel {#use-cases}
 
@@ -85,11 +85,11 @@ DataX-API:er är tillgängliga för annonsörer som vill rikta sig till en viss 
 
 ![Yahoo DataX-målkort i plattformsgränssnitt](/help/destinations/assets/catalog/advertising/yahoo-datax/catalog.png)
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
 
-När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -97,12 +97,12 @@ När du [konfigurerar](../../ui/connect-destination.md) det här målet måste d
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Läs [Aktivera profiler och segment till en destination](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till mål.
+Läs [Aktivera profiler och segment till ett mål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur målgruppssegment aktiveras för destinationer.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] framtvingar datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser {#additional-resources}
 
-Mer information finns i Yahoo/Verizon Media [dokumentationen om DataX](https://developer.verizonmedia.com/datax/guide/).
+Mer information finns i Yahoo/Verizon Media [dokumentation om DataX](https://developer.verizonmedia.com/datax/guide/).

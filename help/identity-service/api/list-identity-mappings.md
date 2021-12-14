@@ -5,8 +5,7 @@ title: Lista identitetsmappningar
 topic-legacy: API guide
 description: En mappning är en samling med alla identiteter i ett kluster för ett angivet namnområde.
 exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -51,7 +50,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet i det här dokumentet som handlar om [att hämta XID för en identitet](./list-native-id.md).
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om det här dokumentet [hämta XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -64,7 +63,7 @@ curl -X GET \
 
 ### Hämta identitetsmappningar för flera identiteter
 
-Använd metoden `POST` som en batchmotsvarighet till metoden `GET` som beskrivs ovan för att hämta mappningar för flera identiteter.
+Använd `POST` som en batchmotsvarighet till `GET` den metod som beskrivs ovan för att hämta mappningar för flera identiteter.
 
 >[!NOTE]
 >
@@ -87,7 +86,7 @@ Alternativ 1: Ange en lista med XID:n som mappningar ska hämtas för.
 }
 ```
 
-Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje namn anger ID-värdet och namnutrymmet per namnområdes-ID. I det här exemplet visas hur du använder den här metoden när du skriver över standardvärdet `graph-type` för &quot;Privat diagram&quot;.
+Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje namn anger ID-värdet och namnutrymmet per namnområdes-ID. I det här exemplet visas hur du använder den här metoden när du skriver över standardmetoden `graph-type` av &quot;Private Graph&quot;.
 
 ```shell
 {
@@ -116,7 +115,7 @@ curl -X POST \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: 111111@AdobeOrg' \
   -d '{
-        "xids" : ["GesCQXX0CAESEE8wHpswUoLXXmrYy8KBTVgA"],
+        "xids": ["GesCQXX0CAESEE8wHpswUoLXXmrYy8KBTVgA"],
         "targetNs": "0",
         "graph-type": "Private Graph"
       }' | json_pp
@@ -146,7 +145,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-Om inga relaterade identiteter hittades med angivna indata returneras en `HTTP 204`-svarskod utan innehåll.
+Om inga relaterade identiteter hittades med angivna indata kan du `HTTP 204` svarskoden returneras utan innehåll.
 
 **Svar**
 
@@ -185,8 +184,8 @@ Om inga relaterade identiteter hittades med angivna indata returneras en `HTTP 2
 ```
 
 - `lastAssociationTime`: Tidsstämpeln när indataidentiteten senast associerades med den här identiteten.
-- `regions`: Anger  `regionId` och  `lastAssociationTime` för var identiteten sågs.
+- `regions`: Tillhandahåller `regionId` och `lastAssociationTime` för var identiteten sågs.
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [visa tillgängliga namnutrymmen](./list-namespaces.md).
+Gå till nästa självstudiekurs för att [lista över tillgängliga namnutrymmen](./list-namespaces.md).

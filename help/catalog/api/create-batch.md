@@ -5,8 +5,7 @@ title: Skapa en grupp i API:t
 topic-legacy: developer guide
 description: Du kan skapa en grupp genom att göra en POST-förfrågan till slutpunkten /batches i katalog-API:t.
 exl-id: 1d2cbca9-1cd6-4b89-9b77-3687268bd849
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en batch
 
-För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id`-värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en begäran om POST till `/batches`-slutpunkten i [!DNL Catalog]-API:t.
+För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Använda `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en begäran om POST till `/batches` slutpunkt i [!DNL Catalog] API.
 
 **API-format**
 
@@ -31,7 +30,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'content-type: application/json' \
   -d '{
         "datasetId":"5c8c3c555033b814b69f947f"
@@ -40,11 +39,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `datasetId` | `id` för datauppsättningen som gruppen ska kopplas till. |
+| `datasetId` | The `id` av den datauppsättning som gruppen ska kopplas till. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som innehåller information om den nyligen skapade gruppen, inklusive `id`, en skrivskyddad, systemgenererad sträng.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som innehåller information om den nyligen skapade gruppen, inklusive dess `id`, en skrivskyddad, systemgenererad sträng.
 
 ```JSON
 {

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 087a714c579c4c3b95feac3d587ed13589b6a752
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2373'
 ht-degree: 1%
@@ -13,15 +13,15 @@ ht-degree: 1%
 
 # Utvecklarhandbok för batchintag
 
-Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för batchimport](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du om du börjar med att läsa översikten för API:t för gruppinmatning](overview.md).[
+Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för batchimport](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du om du börjar med att läsa [API-översikt över batchimport](overview.md).
 
-I bilagan till det här dokumentet finns information om [formateringsdata som ska användas för att fylla i](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
+I bilagan till det här dokumentet finns information om [formatera data som ska användas för förtäring](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i [API:t för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Inläsning av data ger en RESTful API genom vilken du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
+API-slutpunkterna som används i den här handboken är en del av [API för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Inläsning av data ger en RESTful API genom vilken du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
 
-Granska översikten [för API:t för batchimport](overview.md) och [guiden för att komma igång](getting-started.md) innan du fortsätter.
+Läs igenom [API-översikt över batchimport](overview.md) och [komma igång-guide](getting-started.md).
 
 ## Importera JSON-filer
 
@@ -35,7 +35,7 @@ För det första måste du skapa en batch med JSON som indataformat. När du ska
 
 >[!NOTE]
 >
->Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON måste du ange flaggan `isMultiLineJson`. Mer information finns i [felsökningsguiden för batchimport](./troubleshooting.md).
+>Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON, `isMultiLineJson` flagga måste anges. Mer information finns i [felsökningsguide för batchöverföring](./troubleshooting.md).
 
 **API-format**
 
@@ -50,7 +50,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -97,7 +97,7 @@ Nu när du har skapat en batch kan du använda batch-ID:t från svaret när grup
 
 >[!NOTE]
 >
->I bilagan finns ett [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion).
+>I avsnittet Bilaga finns en [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion).
 
 **API-format**
 
@@ -122,7 +122,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.json"
 ```
@@ -157,7 +157,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE" \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -184,7 +184,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "Content-Type: application/json" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
-  -H "x-api-key : {API_KEY}" \
+  -H "x-api-key: {API_KEY}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" 
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -232,7 +232,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -257,7 +257,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.parquet"
 ```
@@ -292,7 +292,7 @@ POST /batches/{BATCH_ID}?action=complete
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -325,7 +325,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -450,7 +450,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### Fullständig stor fil
 
-Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -501,7 +501,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -513,7 +513,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Importera CSV-filer
 
-För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i självstudiekursen [skapa ad hoc-schema](../../xdm/api/ad-hoc.md).
+För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som krävs finns i [självstudiekurs om att skapa ad hoc-schema](../../xdm/api/ad-hoc.md).
 
 >[!NOTE]
 >
@@ -569,7 +569,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
             "datasetId": "{DATASET_ID}",
@@ -617,11 +617,11 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 >[!NOTE]
 >
->I bilagan finns ett [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion).
+>I avsnittet Bilaga finns en [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion).
 
 **API-format**
 
@@ -646,7 +646,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.csv"
 ```
@@ -678,7 +678,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -708,7 +708,7 @@ POST /batches/{BATCH_ID}?action=ABORT
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=ABORT \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -720,7 +720,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Ta bort en grupp {#delete-a-batch}
 
-En batch kan tas bort genom att utföra följande begäran om POST med frågeparametern `action=REVERT` till ID:t för gruppen som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
+En batch kan tas bort genom att utföra följande POST-begäran med `action=REVERT` frågeparameter till ID:t för den batch som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
 
 **API-format**
 
@@ -738,7 +738,7 @@ POST /batches/{BATCH_ID}?action=REVERT
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=REVERT \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -758,10 +758,10 @@ Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile 
 
 Följande krävs för att korrigera en sats:
 
-- **En datauppsättning aktiverad för profiluppdateringar och attributuppdateringar.** Detta görs med datauppsättningstaggar och kräver att en specifik  `isUpsert:true` tagg läggs till i  `unifiedProfile` arrayen. Följ självstudiekursen för [att aktivera en datauppsättning för profiluppdateringar](../../catalog/datasets/enable-upsert.md) för mer information om hur du skapar en datauppsättning eller konfigurerar en befintlig datauppsättning för uppdatering.
+- **En datauppsättning aktiverad för profiluppdateringar och attributuppdateringar.** Detta görs via datauppsättningstaggar och kräver en specifik `isUpsert:true` -taggen läggs till i `unifiedProfile` array. Följ självstudiekursen för mer information om hur du skapar en datauppsättning eller konfigurerar en befintlig datauppsättning för upsert [aktivera en datauppsättning för profiluppdateringar](../../catalog/datasets/enable-upsert.md).
 - **En Parquet-fil som innehåller de fält som ska korrigeras och identitetsfält för profilen.** Dataformatet för att patchera en batch liknar den vanliga batchöverföringsprocessen. De indata som krävs är en Parquet-fil, och utöver de fält som ska uppdateras måste de överförda data innehålla identitetsfälten för att matcha data i profilarkivet.
 
-När du har aktiverat en datauppsättning för profil och upsert, och en Parquet-fil som innehåller de fält du vill korrigera samt de nödvändiga identitetsfälten, kan du följa stegen för [att importera Parquet-filer](#ingest-parquet-files) för att slutföra korrigeringen via batchförtäring.
+När du har en datauppsättning aktiverad för Profil och upsert, och en Parquet-fil som innehåller de fält du vill korrigera samt de nödvändiga identitetsfälten, kan du följa stegen för [inhämtning av Parquet-filer](#ingest-parquet-files) för att färdigställa plåstret via batchintag.
 
 ## Spela upp en batch
 
@@ -784,7 +784,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -843,7 +843,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från innan för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -868,7 +868,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.json"
 ```
@@ -903,7 +903,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -919,9 +919,9 @@ Följande avsnitt innehåller ytterligare information om hur man får in data i 
 
 ### Datatransformering för batchinmatning
 
-För att kunna importera en datafil till [!DNL Experience Platform] måste filens hierarkiska struktur överensstämma med det [XDM-schema (Experience Data Model)](../../xdm/home.md) som är associerat med den datauppsättning som överförs till.
+För att kunna importera en datafil till [!DNL Experience Platform]måste filens hierarkiska struktur överensstämma med [Experience Data Model (XDM)](../../xdm/home.md) schema som är associerat med den datauppsättning som överförs till.
 
-Information om hur du mappar en CSV-fil så att den överensstämmer med ett XDM-schema finns i [exempelomformningarna](../../etl/transformations.md)-dokumentet tillsammans med ett exempel på en korrekt formaterad JSON-datafil. Exempelfiler som finns i dokumentet finns här:
+Information om hur du mappar en CSV-fil så att den överensstämmer med ett XDM-schema finns i [exempelomformningar](../../etl/transformations.md) -dokument tillsammans med ett exempel på en korrekt formaterad JSON-datafil. Exempelfiler som finns i dokumentet finns här:
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)

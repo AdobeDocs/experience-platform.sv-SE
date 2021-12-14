@@ -6,40 +6,40 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Apache Spark på Azure HDInsights till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 1f7ca86e-32f4-45f7-92c2-f87c5c0c4ea4
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Apache Spark]-anslutning på [!DNL Azure] HDInsights-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Apache Spark] på [!DNL Azure] HDInsights-basanslutning med [!DNL Flow Service] API
 
 >[!NOTE]
 >
->Anslutningen [!DNL Apache Spark] för [!DNL Azure HDInsights] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>The [!DNL Apache Spark] på [!DNL Azure HDInsights] anslutningen är i betaversion. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Apache Spark] på [!DNL Azure HDInsights] (kallas nedan &quot;[!DNL Spark]&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Apache Spark] på [!DNL Azure HDInsights] (nedan kallad[!DNL Spark]&quot;) med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Spark] med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Spark] med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL Spark] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] att ansluta till [!DNL Spark]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | IP-adressen eller värdnamnet för [!DNL Spark]-servern. |
-| `username` | Användarnamnet som du använder för att komma åt [!DNL Spark]-servern. |
+| `host` | IP-adressen eller värdnamnet för [!DNL Spark] server. |
+| `username` | Användarnamnet som du använder för att komma åt [!DNL Spark] Server. |
 | `password` | Lösenordet som motsvarar användaren. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Spark] är: `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
 
@@ -47,13 +47,13 @@ Mer information om hur du kommer igång finns i [det här Spark-dokumentet](http
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Spark] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Spark] autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -80,9 +80,9 @@ curl -X POST \
         "auth": {
             "specName": "HDInsights Basic Authentication",
         "params": {
-            "host" :  "{HOST}",
-            "username" : "{USERNAME}",
-            "password" :"{PASSWORD}"
+            "host":  "{HOST}",
+            "username": "{USERNAME}",
+            "password":"{PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -94,14 +94,14 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.host` | Värden för [!DNL Spark]-servern. |
-| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Spark]-anslutning. |
-| `auth.params.password` | Lösenordet som är kopplat till din [!DNL Spark]-anslutning. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Spark]: `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`. |
+| `auth.params.host` | Värden för [!DNL Spark] server. |
+| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Spark] anslutning. |
+| `auth.params.password` | Lösenordet som är kopplat till [!DNL Spark] anslutning. |
+| `connectionSpec.id` | The [!DNL Spark] anslutningsspecifikation-ID: `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
 
 ```json
 {
@@ -112,4 +112,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en [!DNL Spark]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Spark] anslutning med [!DNL Flow Service] API och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).

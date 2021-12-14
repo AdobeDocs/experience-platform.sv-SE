@@ -1,7 +1,8 @@
 ---
 title: Söka efter resurser i reaktors-API
 description: Lär dig hur du söker efter resurser i Reactor API.
-source-git-commit: 59592154eeb8592fa171b5488ecb0385e0e59f39
+exl-id: cb594e60-3e24-457e-bfb3-78ec84d3e39a
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '260'
 ht-degree: 0%
@@ -10,11 +11,11 @@ ht-degree: 0%
 
 # Söka efter resurser i Reactor API
 
-Med slutpunkten `/search` i Reaktors-API kan du skapa strukturerade frågor för lagrade resurser. Det här dokumentet innehåller exempel på olika sökfrågor för olika vanliga användningsområden.
+The `/search` -slutpunkten i Reaktors API gör att du kan skapa strukturerade frågor om lagrade resurser. Det här dokumentet innehåller exempel på olika sökfrågor för olika vanliga användningsområden.
 
 >[!NOTE]
 >
->Innan du läser den här guiden bör du läsa [sökslutpunktshandboken](../endpoints/search.md) för information om godkänd frågesyntax och andra riktlinjer för användning.
+>Innan du läser den här handboken bör du läsa [sökslutpunktsguide](../endpoints/search.md) för information om accepterad frågesyntax och andra riktlinjer för användning.
 
 ## Grundläggande frågestrategier
 
@@ -26,7 +27,7 @@ Du kan söka i flera fält med jokertecken i fältnamnet. Om du till exempel vil
 
 ```json
 {
-  "data" : {
+  "data": {
     "query": {
       "attributes.*": {
         "value": "evar7"
@@ -38,15 +39,15 @@ Du kan söka i flera fält med jokertecken i fältnamnet. Om du till exempel vil
 
 >[!IMPORTANT]
 >
->Vanligtvis måste sökvärdena matcha den typ av data som söks igenom. Ett frågevärde på `evar7` mot ett heltalsfält skulle till exempel misslyckas. När du söker i flera fält blir frågetypskravet mindre krävande för att undvika fel, men kan ge oönskade resultat.
+>Vanligtvis måste sökvärdena matcha den typ av data som söks igenom. Ett frågevärde på till exempel `evar7` mot ett heltalsfält. När du söker i flera fält blir frågetypskravet mindre krävande för att undvika fel, men kan ge oönskade resultat.
 
 ### Omfattningsfrågor till specifika resurstyper
 
-Du kan göra en sökning till en viss resurstyp genom att ange `resource_types` i begäran. Om du till exempel vill söka i `data_elements` och `rule_components`:
+Du kan göra en sökning till en viss resurstyp genom att ange `resource_types` i begäran. Om du till exempel vill söka igenom `data_elements`och `rule_components`:
 
 ```json
 {
-  "data" : {
+  "data": {
     "from": 0,
     "size": 25,
     "query": {
@@ -64,11 +65,11 @@ Du kan göra en sökning till en viss resurstyp genom att ange `resource_types` 
 
 ### Sortera svar
 
-Egenskapen `sort` kan användas för att sortera svar. Om du till exempel vill sortera efter `created_at` med det senaste först:
+The `sort` -egenskapen kan användas för att sortera svar. Till exempel sortera efter `created_at` med nyaste först:
 
 ```json
 {
-  "data" : {
+  "data": {
     "from": 0,
     "size": 25,
     "query": {
@@ -104,7 +105,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "attributes.name": {
               "value": "Adobe"
@@ -125,7 +126,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "attributes.*": {
               "value": "evar7"
@@ -146,7 +147,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "attributes.delegate_descriptor_id": {
               "value": "custom-code"
@@ -168,7 +169,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "attributes.settings": {
               "value": "myDataElement8"
@@ -190,7 +191,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "relationships.property.data.id": {
               "value": "PR3cab070a9eb3423894e4a3038ef0e7b7"
@@ -212,7 +213,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "id": {
               "value": "PR3cab070a9eb3423894e4a3038ef0e7b7"
@@ -233,7 +234,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "query": {
             "attributes.display_name": {
               "value": "My Rule Holiday Sale",

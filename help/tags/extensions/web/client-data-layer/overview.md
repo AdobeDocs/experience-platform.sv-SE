@@ -1,7 +1,8 @@
 ---
 title: Adobe Client Data Layer Extension
 description: Läs mer om taggtillägget Adobe Client Data Layer i Adobe Experience Platform.
-source-git-commit: 8dfb7bdc16d0654ee1d76dc5f5af50938b122d33
+exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 0%
@@ -34,7 +35,7 @@ ACDL-skriptet skapar som standard ett nytt datalager med variabelnamnet `adobeDa
 
 >[!NOTE]
 >
->När objektnamnet ändras skapas fortfarande det ursprungliga `adobeDataLayer`-objektet och dupliceras sedan till det nya variabelnamnet som du har valt.
+>När objektnamnet ändras är originalet `adobeDataLayer` objektet instansieras fortfarande och dupliceras sedan till det nya variabelnamnet som du har valt.
 
 ## Händelser
 
@@ -74,7 +75,7 @@ Följande exempel på push-händelse spåras inte av avlyssnaren:
 
 Om du anger en händelse spårar händelseavlyssnaren alla händelser som matchar en viss sträng.
 
-Om du till exempel anger `myEvent` när du använder den här konfigurationen spåras endast följande push-händelse:
+Ange till exempel `myEvent` när du använder den här konfigurationen spåras endast följande push-händelse i avlyssnaren:
 
 * `adobeDataLayer.push({"event":"myEvent"})`
 
@@ -94,7 +95,7 @@ Tillägget ger dig ett sätt att återställa datalagrets längd, vilket kan hj�
 
 Det finns dock för närvarande ingen möjlighet att helt ta bort information som tidigare ställts in under push-metoderna.
 
-Åtgärden **Återställ och ange beräknat läge** kopierar det senaste beräknade läget, tömmer datalagrets objekt och återställer det senaste läget.
+The **Återställ och ange beräknat läge** åtgärden kopierar det senaste beräknade läget, tömmer datalagret och återställer det senaste läget.
 
 ### Överför till datalager
 
@@ -118,7 +119,7 @@ Avsnitten nedan beskriver de unika dataelementtyperna som tillägget tillhandah�
 
 Datalagrets dataelement för beräknat läge kan returnera en av två saker, beroende på hur du konfigurerar det:
 
-* Det fullständiga datalagrets läge: Som standard returneras hela datalagrets beräknade läge.
+* Det fullständiga datalagrets tillstånd: Som standard returneras hela datalagrets beräknade tillstånd.
 * En specifik sökväg: Du kan ange den sökväg som du vill returnera i datalagret. Banor anges med punktnotation (till exempel `data.foo`).
 
 ### Datalagerstorlek

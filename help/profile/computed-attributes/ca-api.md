@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden visar hur du skapar, visar, uppdaterar och tar bort beräknade attribut med kundprofils-API:t i realtid.
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2272'
 ht-degree: 0%
@@ -18,21 +18,21 @@ ht-degree: 0%
 >
 >Den beräknade attributfunktionen som beskrivs i det här dokumentet är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med `/computedAttributes`-slutpunkten.
+Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med `/computedAttributes` slutpunkt.
 
-Om du vill veta mer om beräknade attribut börjar du med att läsa översikten [beräknade attribut](overview.md).
+Om du vill veta mer om beräknade attribut börjar du med att läsa [översikt över beräknade attribut](overview.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [Kundprofils-API:t för realtid](https://www.adobe.com/go/profile-apis-en).
+API-slutpunkten som används i den här guiden är en del av [Kundprofil-API i realtid](https://www.adobe.com/go/profile-apis-en).
 
-Innan du fortsätter bör du läsa [guiden Komma igång med profil-API](../api/getting-started.md) för att få länkar till rekommenderad dokumentation, en guide till hur du läser de exempel på API-anrop som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa något Experience Platform-API.
+Läs igenom [Starthandbok för att komma igång med profil-API](../api/getting-started.md) för länkar till rekommenderad dokumentation, en guide till hur du läser de exempel-API-anrop som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Konfigurera ett beräknat attributfält
 
 För att kunna skapa ett beräknat attribut måste du först identifiera fältet i ett schema som innehåller det beräknade attributvärdet.
 
-Se dokumentationen om [hur du konfigurerar ett beräknat attribut](configure-api.md) för en fullständig guide för att skapa ett beräknat attributfält i ett schema.
+Läs dokumentationen om [konfigurera ett beräknat attribut](configure-api.md) om du vill ha en komplett guide från början till slut för att skapa ett beräknat attributfält i ett schema.
 
 >[!WARNING]
 >
@@ -40,9 +40,9 @@ Se dokumentationen om [hur du konfigurerar ett beräknat attribut](configure-api
 
 ## Skapa ett beräknat attribut {#create-a-computed-attribute}
 
-Med ditt beräknade attributfält definierat i ditt profilaktiverade schema kan du nu konfigurera ett beräknat attribut. Om du inte redan har gjort det följer du arbetsflödet som beskrivs i [Konfigurera ett beräknat attribut](configure-api.md)-dokumentationen.
+Med ditt beräknade attributfält definierat i ditt profilaktiverade schema kan du nu konfigurera ett beräknat attribut. Om du inte redan har gjort detta, följ arbetsflödet som beskrivs i [konfigurera ett beräknat attribut](configure-api.md) dokumentation.
 
-Om du vill skapa ett beräknat attribut börjar du med att göra en begäran om POST till `/config/computedAttributes`-slutpunkten med en begärandetext som innehåller information om det beräknade attributet som du vill skapa.
+Om du vill skapa ett beräknat attribut börjar du med att göra en POST-förfrågan till `/config/computedAttributes` slutpunkt med en begärandebrödtext som innehåller information om det beräknade attributet som du vill skapa.
 
 **API-format**
 
@@ -61,13 +61,13 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-        "name" : "birthdayCurrentMonth",
-        "path" : "_{TENANT_ID}",
-        "description" : "Computed attribute to capture if the customer birthday is in the current month.",
-        "expression" : {
-            "type" : "PQL", 
-            "format" : "pql/text", 
-            "value":  "person.birthDate.getMonth() = currentMonth()"
+        "name": "birthdayCurrentMonth",
+        "path": "_{TENANT_ID}",
+        "description": "Computed attribute to capture if the customer birthday is in the current month.",
+        "expression": {
+            "type": "PQL", 
+            "format": "pql/text", 
+            "value": "person.birthDate.getMonth() = currentMonth()"
         },
         "schema": 
           {
@@ -80,15 +80,15 @@ curl -X POST \
 | Egenskap | Beskrivning |
 |---|---|
 | `name` | Namnet på det beräknade attributfältet, som en sträng. |
-| `path` | Sökvägen till fältet som innehåller det beräknade attributet. Sökvägen finns i attributet `properties` för schemat och ska INTE innehålla fältnamnet i sökvägen. När du skriver sökvägen utelämnar du de olika nivåerna för `properties`-attribut. |
-| `{TENANT_ID}` | Om du inte känner till ditt klient-ID läser du stegen för att hitta ditt klient-ID i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id). |
+| `path` | Sökvägen till fältet som innehåller det beräknade attributet. Den här sökvägen finns i `properties` schemats attribut och ska INTE innehålla fältnamnet i sökvägen. Utelämna de olika nivåerna i `properties` attribut. |
+| `{TENANT_ID}` | Om du inte känner till ditt klient-ID kan du följa stegen för att hitta ditt innehavar-ID i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id). |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom IMS-organisationen att fastställa rätt beräknat attribut att använda. |
-| `expression.value` | Ett giltigt [!DNL Profile Query Language]-uttryck (PQL). Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempeldokumentationen för PQL-uttryck](expressions.md). |
+| `expression.value` | Ett giltigt [!DNL Profile Query Language] (PQL). Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempel på PQL-uttryck](expressions.md) dokumentation. |
 | `schema.name` | Den klass som schemat som innehåller det beräknade attributfältet baseras på. Exempel: `_xdm.context.experienceevent` för ett schema baserat på klassen XDM ExperienceEvent. |
 
 **Svar**
 
-Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarstext som innehåller information om det nya beräknade attributet. Dessa uppgifter innehåller en unik, skrivskyddad, systemgenererad `id` som kan användas för att referera till det beräknade attributet under andra API-åtgärder.
+Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarstext som innehåller information om det nya beräknade attributet. Informationen innehåller en unik, skrivskyddad systemgenererad `id` som kan användas för att referera till det beräknade attributet under andra API-åtgärder.
 
 ```json
 {
@@ -138,8 +138,8 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 |---|---|
 | `id` | Ett unikt, skrivskyddat, systemgenererat ID som kan användas för att referera till det beräknade attributet under andra API-åtgärder. |
 | `imsOrgId` | IMS-organisationen som är relaterad till det beräknade attributet ska matcha värdet som skickades i begäran. |
-| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikten över sandlådor](../../sandboxes/home.md). |
-| `positionPath` | En array som innehåller det dekonstruerade `path` till fältet som skickades i begäran. |
+| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikt över sandlådor](../../sandboxes/home.md). |
+| `positionPath` | En array som innehåller den dekonstruerade `path` till fältet som skickades i begäran. |
 | `returnSchema.meta:xdmType` | Den typ av fält där det beräknade attributet ska lagras. |
 | `definedOn` | En array som visar de föreningsscheman som det beräknade attributet har definierats på. Innehåller ett objekt per union-schema, vilket innebär att det kan finnas flera objekt i arrayen om det beräknade attributet har lagts till i flera scheman baserade på olika klasser. |
 | `active` | Ett booleskt värde som visar om det beräknade attributet är aktivt eller inte. Som standard är värdet `true`. |
@@ -148,7 +148,7 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 
 ## Skapa ett beräknat attribut som refererar till befintliga beräknade attribut
 
-Det går också att skapa ett beräknat attribut som refererar till befintliga beräknade attribut. Börja med att göra en POST-förfrågan till `/config/computedAttributes`-slutpunkten. Begärandetexten innehåller referenser till de beräknade attributen i fältet `expression.value`, vilket visas i följande exempel.
+Det går också att skapa ett beräknat attribut som refererar till befintliga beräknade attribut. Om du vill göra det börjar du med att göra en POST till `/config/computedAttributes` slutpunkt. Begärandetexten innehåller referenser till de beräknade attributen i `expression.value` som visas i följande exempel.
 
 **API-format**
 
@@ -160,10 +160,10 @@ POST /config/computedAttributes
 
 I det här exemplet har två beräknade attribut redan skapats och kommer att användas för att definiera en tredje. De befintliga beräknade attributen är:
 
-* **`totalSpend`:** Fångar hela dollarbeloppet som en kund har spenderat.
+* **`totalSpend`:** Fångar det totala belopp som en kund har spenderat.
 * **`countPurchases`:** Räknar antalet inköp som en kund har gjort.
 
-Begäran nedan refererar till de två befintliga beräknade attributen och använder en giltig PQL för att dividera för att beräkna det nya `averageSpend` beräknade attributet.
+Nedan finns en referens till de två befintliga beräknade attributen som använder en giltig PQL för att dividera för att beräkna den nya `averageSpend` beräknat attribut.
 
 ```shell
 curl -X POST \
@@ -174,13 +174,13 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-        "name" : "averageSpend",
-        "path" : "_{TENANT_ID}.purchaseSummary",
-        "description" : "Computed attribute to capture the average dollar amount that a customer spends on each purchase.",
-        "expression" : {
-            "type" : "PQL", 
-            "format" : "pql/text", 
-            "value":  "_{TENANT_ID}.purchaseSummary.totalSpend/_{TENANT_ID}.purchaseSummary.countPurchases"
+        "name": "averageSpend",
+        "path": "_{TENANT_ID}.purchaseSummary",
+        "description": "Computed attribute to capture the average dollar amount that a customer spends on each purchase.",
+        "expression": {
+            "type": "PQL", 
+            "format": "pql/text", 
+            "value": "_{TENANT_ID}.purchaseSummary.totalSpend/_{TENANT_ID}.purchaseSummary.countPurchases"
         },
         "schema": 
           {
@@ -193,15 +193,15 @@ curl -X POST \
 | Egenskap | Beskrivning |
 |---|---|
 | `name` | Namnet på det beräknade attributfältet, som en sträng. |
-| `path` | Sökvägen till fältet som innehåller det beräknade attributet. Sökvägen finns i attributet `properties` för schemat och ska INTE innehålla fältnamnet i sökvägen. När du skriver sökvägen utelämnar du de olika nivåerna för `properties`-attribut. |
-| `{TENANT_ID}` | Om du inte känner till ditt klient-ID läser du stegen för att hitta ditt klient-ID i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id). |
+| `path` | Sökvägen till fältet som innehåller det beräknade attributet. Den här sökvägen finns i `properties` schemats attribut och ska INTE innehålla fältnamnet i sökvägen. Utelämna de olika nivåerna i `properties` attribut. |
+| `{TENANT_ID}` | Om du inte känner till ditt klient-ID kan du följa stegen för att hitta ditt innehavar-ID i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id). |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom IMS-organisationen att fastställa rätt beräknat attribut att använda. |
-| `expression.value` | Ett giltigt PQL-uttryck. Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempeldokumentationen för PQL-uttryck](expressions.md).<br/><br/>I det här exemplet refererar uttrycket till två befintliga beräknade attribut. Attributen refereras med `path` och `name` för det beräknade attributet så som de visas i det schema i vilket de beräknade attributen definierades. Till exempel är `path` för det första refererade beräknade attributet `_{TENANT_ID}.purchaseSummary` och `name` `totalSpend`. |
+| `expression.value` | Ett giltigt PQL-uttryck. Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempel på PQL-uttryck](expressions.md) dokumentation.<br/><br/>I det här exemplet refererar uttrycket till två befintliga beräknade attribut. Attributen refereras med `path` och `name` av det beräknade attributet så som de visas i det schema i vilket de beräknade attributen definierades. Till exempel `path` för det första refererade beräknade attributet är `_{TENANT_ID}.purchaseSummary` och `name` är `totalSpend`. |
 | `schema.name` | Den klass som schemat som innehåller det beräknade attributfältet baseras på. Exempel: `_xdm.context.experienceevent` för ett schema baserat på klassen XDM ExperienceEvent. |
 
 **Svar**
 
-Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarstext som innehåller information om det nya beräknade attributet. Dessa uppgifter innehåller en unik, skrivskyddad, systemgenererad `id` som kan användas för att referera till det beräknade attributet under andra API-åtgärder.
+Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarstext som innehåller information om det nya beräknade attributet. Informationen innehåller en unik, skrivskyddad systemgenererad `id` som kan användas för att referera till det beräknade attributet under andra API-åtgärder.
 
 ```json
 {
@@ -220,9 +220,9 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
         "purchaseSummary"
     ],
     "description": "Computed attribute to capture the average dollar amount that a customer spends on each purchase.",
-    "expression" : {
-            "type" : "PQL", 
-            "format" : "pql/text", 
+    "expression": {
+            "type": "PQL", 
+            "format": "pql/text", 
             "value":  "_{TENANT_ID}.purchaseSummary.totalSpend/_{TENANT_ID}.purchaseSummary.countPurchases"
     },
     "schema": {
@@ -266,8 +266,8 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 |---|---|
 | `id` | Ett unikt, skrivskyddat, systemgenererat ID som kan användas för att referera till det beräknade attributet under andra API-åtgärder. |
 | `imsOrgId` | IMS-organisationen som är relaterad till det beräknade attributet ska matcha värdet som skickades i begäran. |
-| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikten över sandlådor](../../sandboxes/home.md). |
-| `positionPath` | En array som innehåller det dekonstruerade `path` till fältet som skickades i begäran. |
+| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikt över sandlådor](../../sandboxes/home.md). |
+| `positionPath` | En array som innehåller den dekonstruerade `path` till fältet som skickades i begäran. |
 | `returnSchema.meta:xdmType` | Den typ av fält där det beräknade attributet ska lagras. |
 | `definedOn` | En array som visar de föreningsscheman som det beräknade attributet har definierats på. Innehåller ett objekt per union-schema, vilket innebär att det kan finnas flera objekt i arrayen om det beräknade attributet har lagts till i flera scheman baserade på olika klasser. |
 | `active` | Ett booleskt värde som visar om det beräknade attributet är aktivt eller inte. Som standard är värdet `true`. |
@@ -276,16 +276,16 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 
 ## Få åtkomst till beräknade attribut
 
-När du arbetar med beräknade attribut med API:t finns det två alternativ för att komma åt beräknade attribut som har definierats av din organisation. Det första är att lista alla beräknade attribut, det andra är att visa ett specifikt beräknat attribut med dess unika `id`.
+När du arbetar med beräknade attribut med API:t finns det två alternativ för att komma åt beräknade attribut som har definierats av din organisation. Det första är att lista alla beräknade attribut, det andra är att visa ett specifikt beräknat attribut utifrån dess unika `id`.
 
 Steg för båda åtkomstmönstren beskrivs i det här dokumentet. Välj något av följande för att börja:
 
-* **[Lista alla befintliga beräknade attribut](#list-all-computed-attributes):** Returnera en lista med alla befintliga beräknade attribut som din organisation har skapat.
-* **[Visa ett specifikt beräknat attribut](#view-a-computed-attribute):** Returnera information om ett enskilt beräknat attribut genom att ange dess ID under begäran.
+* **[Visa alla befintliga beräknade attribut](#list-all-computed-attributes):** Returnera en lista med alla befintliga beräknade attribut som din organisation har skapat.
+* **[Visa ett specifikt beräknat attribut](#view-a-computed-attribute):** Returnera informationen om ett enskilt beräknat attribut genom att ange dess ID under begäran.
 
 ### Visa alla beräknade attribut {#list-all-computed-attributes}
 
-IMS-organisationen kan skapa flera beräknade attribut, och om du utför en GET-begäran till `/config/computedAttributes`-slutpunkten kan du visa alla befintliga beräknade attribut för din organisation.
+IMS-organisationen kan skapa flera beräknade attribut och utföra en GET-förfrågan till `/config/computedAttributes` kan du visa alla befintliga beräknade attribut för din organisation.
 
 **API-format**
 
@@ -306,9 +306,9 @@ curl -X GET \
 
 **Svar**
 
-Ett svar innehåller ett `_page`-attribut som anger det totala antalet beräknade attribut (`totalCount`) och antalet beräknade attribut på sidan (`pageSize`).
+Ett lyckat svar innehåller `_page` attribut som anger det totala antalet beräknade attribut (`totalCount`) och antalet beräknade attribut på sidan (`pageSize`).
 
-Svaret innehåller också en `children`-array som består av ett eller flera objekt, där var och en innehåller information om ett beräknat attribut. Om din organisation inte har några beräknade attribut kommer `totalCount` och `pageSize` att vara 0 (noll) och `children`-arrayen att vara tom.
+Svaret innehåller även en `children` -array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett beräknat attribut. Om din organisation inte har några beräknade attribut kan du `totalCount` och `pageSize` blir 0 (noll) och `children` matrisen kommer att vara tom.
 
 ```json
 {
@@ -375,8 +375,8 @@ Svaret innehåller också en `children`-array som består av ett eller flera obj
             ],
             "description": "Calculate total product downloads.",
             "expression": {
-                "type" : "PQL", 
-                "format" : "pql/text", 
+                "type": "PQL", 
+                "format": "pql/text", 
                 "value":  "let Y = xEvent[_coresvc.event.subType = \"DOWNLOAD\"].groupBy(_coresvc.attributes[name = \"product\"].value).map({
                   \"downloaded\": this.head()._coresvc.attributes[name = \"product\"].head().value,
                   \"downloadsSum\": this.count(),
@@ -416,14 +416,14 @@ Svaret innehåller också en `children`-array som består av ett eller flera obj
 | Egenskap | Beskrivning |
 |---|---|
 | `_page.totalCount` | Det totala antalet beräknade attribut som definieras av IMS-organisationen. |
-| `_page.pageSize` | Antalet beräknade attribut som returneras på den här resultatsidan. Om `pageSize` är lika med `totalCount` betyder det att det bara finns en resultatsida och att alla beräknade attribut har returnerats. Om de inte är lika finns det ytterligare resultatsidor som du kan komma åt. Mer information finns i `_links.next`. |
-| `children` | En array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett enskilt beräknat attribut. Om inga beräknade attribut har definierats är `children`-arrayen tom. |
-| `id` | Ett unikt, skrivskyddat, systemgenererat värde som automatiskt tilldelas ett beräknat attribut när det skapas. Mer information om komponenterna i ett beräknat attributobjekt finns i avsnittet [skapa ett beräknat attribut](#create-a-computed-attribute) tidigare i den här självstudiekursen. |
-| `_links.next` | Om en enda sida med beräknade attribut returneras är `_links.next` ett tomt objekt, vilket visas i exempelsvaret ovan. Om din organisation har många beräknade attribut returneras de på flera sidor som du kan komma åt genom att göra en GET-begäran till `_links.next`-värdet. |
+| `_page.pageSize` | Antalet beräknade attribut som returneras på den här resultatsidan. If `pageSize` är lika med `totalCount`betyder det att det bara finns en resultatsida och att alla beräknade attribut har returnerats. Om de inte är lika finns det ytterligare resultatsidor som du kan komma åt. Se `_links.next` för mer information. |
+| `children` | En array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett enskilt beräknat attribut. Om inga beräknade attribut har definierats `children` matrisen är tom. |
+| `id` | Ett unikt, skrivskyddat, systemgenererat värde som automatiskt tilldelas ett beräknat attribut när det skapas. Mer information om komponenterna i ett beräknat attributobjekt finns i avsnittet om [skapa ett beräknat attribut](#create-a-computed-attribute) tidigare i den här självstudiekursen. |
+| `_links.next` | Om en enda sida med beräknade attribut returneras, `_links.next` är ett tomt objekt, vilket visas i exempelsvaret ovan. Om din organisation har många beräknade attribut returneras de på flera sidor som du kommer åt genom att göra en GET-förfrågan till `_links.next` värde. |
 
 ### Visa ett beräknat attribut {#view-a-computed-attribute}
 
-Du kan visa ett specifikt beräknat attribut genom att göra en GET-begäran till `/config/computedAttributes`-slutpunkten och inkludera det beräknade attribut-ID:t i begärandesökvägen.
+Du kan visa ett specifikt beräknat attribut genom att göra en GET-förfrågan till `/config/computedAttributes` slutpunkten och det beräknade attribut-ID:t inkluderas i sökvägen för begäran.
 
 **API-format**
 
@@ -494,7 +494,7 @@ curl -X GET \
 
 ## Uppdatera ett beräknat attribut
 
-Om du upptäcker att du behöver uppdatera ett befintligt beräknat attribut kan du göra det genom att göra en PATCH-begäran till `/config/computedAttributes`-slutpunkten och inkludera ID:t för det beräknade attribut som du vill uppdatera i sökvägen till begäran.
+Om du behöver uppdatera ett befintligt beräknat attribut kan du göra det genom att göra en PATCH-förfrågan till `/config/computedAttributes` slutpunkten och inklusive ID:t för det beräknade attribut som du vill uppdatera i sökvägen för begäran.
 
 **API-format**
 
@@ -508,7 +508,7 @@ PATCH /config/computedAttributes/{ATTRIBUTE_ID}
 
 **Begäran**
 
-I den här begäran används [JSON Patch-formatering](http://jsonpatch.com/) för att uppdatera värdet i uttrycksfältet.
+Denna begäran använder [JSON Patch-formatering](http://jsonpatch.com/) om du vill uppdatera värdet i uttrycksfältet.
 
 ```shell
 curl -X PATCH \
@@ -524,8 +524,8 @@ curl -X PATCH \
           "path": "/expression",
           "value": 
           {
-            "type" : "PQL", 
-            "format" : "pql/text", 
+            "type": "PQL", 
+            "format": "pql/text", 
             "value":  "{NEW_EXPRESSION_VALUE}"
           }
         }
@@ -534,7 +534,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `{NEW_EXPRESSION_VALUE}` | Ett giltigt [!DNL Profile Query Language]-uttryck (PQL). Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempeldokumentationen för PQL-uttryck](expressions.md). |
+| `{NEW_EXPRESSION_VALUE}` | Ett giltigt [!DNL Profile Query Language] (PQL). Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempel på PQL-uttryck](expressions.md) dokumentation. |
 
 **Svar**
 
@@ -542,7 +542,7 @@ En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom sv
 
 ## Ta bort ett beräknat attribut
 
-Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes`-slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i begärandesökvägen.
+Det går också att ta bort ett beräknat attribut med API:t. Detta görs genom att DELETE efterfrågar `/config/computedAttributes` slutpunkten och inklusive ID:t för det beräknade attributet som du vill ta bort i sökvägen för begäran.
 
 >[!NOTE]
 >
@@ -577,9 +577,9 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 Med Adobe Experience Platform kan du skapa segment som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition innehåller ett uttryck som kapslar in en fråga skriven i PQL. Dessa uttryck kan också referera till beräknade attribut.
 
-I följande exempel skapas en segmentdefinition som refererar till ett befintligt beräknat attribut. Mer information om segmentdefinitioner och hur du arbetar med dem i segmenteringstjänstens API finns i [API-slutpunktshandboken för segmentdefinitioner](../../segmentation/api/segment-definitions.md).
+I följande exempel skapas en segmentdefinition som refererar till ett befintligt beräknat attribut. Mer information om segmentdefinitioner och hur du arbetar med dem i segmenteringstjänstens API finns i [API-slutpunktsguide för segmentdefinitioner](../../segmentation/api/segment-definitions.md).
 
-Börja med att göra en begäran om POST till `/segment/definitions`-slutpunkten, som tillhandahåller det beräknade attributet i begärandetexten.
+Till att börja med skickar du en POST till `/segment/definitions` slutpunkt, som tillhandahåller det beräknade attributet i begärandetexten.
 
 **API-format**
 
@@ -619,17 +619,17 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | -------- | ----------- |
 | `name` | Ett unikt namn för segmentet, som en sträng. |
 | `description` | En läsbar beskrivning av definitionen. |
-| `schema.name` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
+| `schema.name` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | Ett objekt som innehåller fält med information om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. För närvarande stöds bara `pql/text`. |
+| `expression.format` | Anger strukturen för uttrycket i värdet. För närvarande, endast `pql/text` stöds. |
 | `expression.value` | Ett giltigt PQL-uttryck, i det här exemplet innehåller det en referens till ett befintligt beräknat attribut. |
 
-Mer information om schemadefinitionsattribut finns i exemplen i [API-slutpunktshandboken för segmentdefinitioner](../../segmentation/api/segment-definitions.md).
+Mer information om schemadefinitionsattribut finns i exemplen i [API-slutpunktsguide för segmentdefinitioner](../../segmentation/api/segment-definitions.md).
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinition du nyss skapade. Mer information om svarsåtgärder för segmentdefinitioner finns i [API-slutpunktshandboken för segmentdefinitioner](../../segmentation/api/segment-definitions.md).
+Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinition du nyss skapade. Om du vill veta mer om svarsobjekt för segmentdefinitioner kan du läsa [API-slutpunktsguide för segmentdefinitioner](../../segmentation/api/segment-definitions.md).
 
 ```json
 {

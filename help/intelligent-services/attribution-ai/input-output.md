@@ -5,7 +5,7 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 9023019ed8a781f9ae3965adab875cf2244f55a9
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2261'
 ht-degree: 0%
@@ -87,7 +87,7 @@ Minsta längd på data som krävs = utbildningsfönster + uppslagsfönster
 >
 > Den minsta datalängd som krävs för ett program med standardkonfigurationer är: 2 kvartal (180 dagar) + 56 dagar = 236 dagar.
 
-Exempel :
+Exempel:
 
 - Du vill attribuera konverteringshändelser som har inträffat under de senaste 90 dagarna (3 månader) och spåra alla kontaktytor som har inträffat inom 4 veckor före konverteringshändelsen. Varaktigheten för indata ska sträcka sig över de senaste 90 dagarna + 28 dagar (4 veckor). Utbildningsfönstret är 90 dagar och uppslagsfönstret är 28 dagar, totalt 118 dagar.
 
@@ -139,7 +139,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | skuId (String) | True | Lagerhållningsenhet (SKU), den unika identifieraren för en produkt som definieras av leverantören. <br> **Exempel:** MJ-03-XS-Black |
 | tidsstämpel (DateTime) | True | Tidsstämpel för konverteringen. <br> **Exempel:** 2020-06-09T00:01:51 000Z |
 | passThrough (Object) | True | Ytterligare kolumner för Score-datamängd som anges av användaren när modellen konfigureras. |
-| commerce_order_purchaseCity (String) | True | Kolumn med extra bakgrundsuppsättning. <br> **Exempel:** city: San Jose |
+| commerce_order_purchaseCity (String) | True | Kolumn med extra bakgrundsuppsättning. <br> **Exempel:** stad: San Jose |
 | customerProfile (Object) | Falskt | Identitetsinformation om användaren som användes för att skapa modellen. |
 | identity (Object) | Falskt | Innehåller information om användaren som används för att skapa modellen, t.ex. `id` och `namespace`. |
 | id (String) | True | Identitets-ID för användaren, t.ex. cookie-ID, AAID eller MCID. <br> **Exempel:** 17348762725408656344688320891369597404 |

@@ -6,7 +6,8 @@ topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till DIN KÄLLA med API:t för Flow Service.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: c6927a71-3721-461e-9752-8ebc0b7b1cca
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2300'
 ht-degree: 0%
@@ -54,7 +55,7 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en basanslutning för *DIN KÄLLA* :
+Följande begäran skapar en basanslutning för *DIN KÄLLA*:
 
 ```shell
 curl -X POST \
@@ -237,7 +238,7 @@ POST /sourceConnections
 
 **Begäran**
 
-Följande begäran skapar en källanslutning för *DIN KÄLLA* :
+Följande begäran skapar en källanslutning för *DIN KÄLLA*:
 
 ```shell
 curl -X POST \
@@ -312,7 +313,7 @@ POST /targetConnections
 
 **Begäran**
 
-Följande begäran skapar en målanslutning för *DIN KÄLLA* :
+Följande begäran skapar en målanslutning för *DIN KÄLLA*:
 
 ```shell
 curl -X POST \

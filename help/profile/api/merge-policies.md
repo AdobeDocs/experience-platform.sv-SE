@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 9af59d5a4fda693a2aef8e590a7754f0e1c1ac8d
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2469'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer or
 
 Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Den här handboken innehåller steg för hur du arbetar med sammanfogningsprinciper med API:t.
 
-Om du vill arbeta med sammanslagningsprinciper med hjälp av användargränssnittet, se [gränssnittshandbok för sammanslagningsprinciper](../merge-policies/ui-guide.md). Om du vill veta mer om policyer för sammanslagning i allmänhet och deras roll i Experience Platform börjar du med att läsa [sammanfogningsprinciper - översikt](../merge-policies/overview.md).
+Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet, se [gränssnittshandbok för sammanslagningsprinciper](../merge-policies/ui-guide.md). Om du vill veta mer om policyer för sammanslagning i allmänhet och deras roll i Experience Platform börjar du med att läsa [sammanfogningsprinciper - översikt](../merge-policies/overview.md).
 
 ## Komma igång
 
@@ -143,7 +143,7 @@ Ett profilfragment är profilinformationen för endast en identitet från listan
 Plats `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
 * **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast. Med den här sammanfogningstypen kan du `data` inget attribut krävs.
-* **`dataSetPrecedence`** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen `order` -attribut krävs eftersom datauppsättningarna anges i prioritetsordning.
+* **`dataSetPrecedence`**: Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen `order` -attribut krävs eftersom datauppsättningarna anges i prioritetsordning.
    * **`order`**: När &quot;dataSetPriedence&quot; används, `order` matrisen måste ha en lista med datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. The `order` arrayen listar ID:n för datauppsättningarna i prioritetsordning.
 
 #### Exempel `attributeMerge` objekt använda `dataSetPrecedence` type
@@ -151,7 +151,7 @@ Plats `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 ```json
     "attributeMerge": {
         "type": "dataSetPrecedence",
-        "order" : [
+        "order": [
             "dataSetId_2", 
             "dataSetId_3", 
             "dataSetId_1", 
@@ -483,12 +483,12 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "Loyalty members ordered by ID",
-    "identityGraph" : {
+    "identityGraph": {
         "type": "none"
     },
-    "attributeMerge" : {
+    "attributeMerge": {
         "type":"dataSetPrecedence",
-        "order" : [
+        "order": [
             "5b76f86b85d0e00000be5c8b",
             "5b76f8d787a6af01e2ceda18"
         ]

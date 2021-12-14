@@ -1,7 +1,8 @@
 ---
 title: Sökslutpunkt
 description: Lär dig hur du anropar slutpunkten /search i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '658'
 ht-degree: 0%
@@ -10,7 +11,7 @@ ht-degree: 0%
 
 # Sökslutpunkt
 
-Med slutpunkten `/search` i Reaktors-API:t kan du hitta resurser som matchar önskade villkor, uttryckta som en fråga.
+The `/search` -slutpunkten i Reaktors-API:t ger ett sätt att hitta resurser som matchar önskade villkor, uttryckta som en fråga.
 
 Följande API-resurstyper är sökbara och använder samma datastruktur som de resursbaserade dokument som returneras via API:
 
@@ -37,11 +38,11 @@ Alla frågor omfattar det aktuella företaget och tillgängliga egenskaper.
 >* Intervallfrågor har för närvarande bara stöd för heltal.
 
 
-Mer ingående information om hur du använder den här funktionen finns i [sökguiden](../guides/search.md).
+Mer ingående information om hur du använder den här funktionen finns i [sökguide](../guides/search.md).
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Gör en sökning {#perform}
 
@@ -64,7 +65,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "from": 0,
           "size": 25,
           "query": {
@@ -95,7 +96,7 @@ curl -X POST \
 | --- | --- |
 | `from` | Antalet resultat som svaret ska förskjutas med. |
 | `size` | Den maximala mängden resultat som ska returneras. Resultaten får inte överskrida 100 objekt. |
-| `query` | Ett objekt som representerar sökfrågan. För varje egenskap i det här objektet måste nyckeln representera en fältsökväg att fråga efter och värdet måste vara ett objekt vars underegenskaper bestämmer vad som ska sökas efter.<br><br>För varje fältsökväg kan du använda följande underegenskaper:<ul><li>`exists`: Returnerar true om fältet finns i resursen.</li><li>`value`: Returnerar true om fältets värde matchar värdet för den här egenskapen.</li><li>`value_operator`: Boolesk logik som används för att bestämma hur en  `value` fråga ska hanteras. Tillåtna värden är `AND` och `OR`. När `AND` utelämnas antas logiken . Mer information finns i avsnittet [värdeoperatorlogik](#value-operator).</li><li>`range` Returnerar true om fältets värde ligger inom ett visst numeriskt intervall. Omfånget bestäms av följande underegenskaper:<ul><li>`gt`: Större än det angivna värdet, ej inkluderande.</li><li>`gte`: Större än eller lika med det angivna värdet.</li><li>`lt`: Mindre än angivet värde, ej inkluderande.</li><li>`lte`: Mindre än eller lika med det angivna värdet.</li></ul></li></ul> |
+| `query` | Ett objekt som representerar sökfrågan. För varje egenskap i det här objektet måste nyckeln representera en fältsökväg att fråga efter och värdet måste vara ett objekt vars underegenskaper bestämmer vad som ska sökas efter.<br><br>För varje fältsökväg kan du använda följande underegenskaper:<ul><li>`exists`: Returnerar true om fältet finns i resursen.</li><li>`value`: Returnerar true om fältets värde matchar värdet för den här egenskapen.</li><li>`value_operator`: Boolean-logik som används för att avgöra hur en `value` frågan ska hanteras. Tillåtna värden är `AND` och `OR`. När det utesluts, `AND` logik antas. Se avsnittet om [värdeoperatorlogik](#value-operator) för mer information.</li><li>`range` Returnerar true om fältets värde ligger inom ett visst numeriskt intervall. Omfånget bestäms av följande underegenskaper:<ul><li>`gt`: Större än det angivna värdet, ej inkluderande.</li><li>`gte`: Större än eller lika med det angivna värdet.</li><li>`lt`: Mindre än angivet värde, ej inkluderande.</li><li>`lte`: Mindre än eller lika med det angivna värdet.</li></ul></li></ul> |
 | `sort` | En array med objekt som anger i vilken ordning resultaten ska sorteras. Varje objekt måste innehålla en enda egenskap: nyckeln representerar fältsökvägen som ska sorteras efter och värdet representerar sorteringsordningen (`asc` för stigande, `desc` för fallande). |
 | `resource_types` | En array med strängar som anger de specifika resurstyper som ska sökas igenom. |
 
@@ -103,7 +104,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med matchande resurser för frågan. Mer information om hur API:t avgör matchningar för specifika värden finns i avsnittet om tillägg i [matchande konventioner](#conventions).
+Ett godkänt svar returnerar en lista med matchande resurser för frågan. Mer information om hur API:t avgör matchningar för specifika värden finns i avsnittet om tillägg på [matchande konventioner](#conventions).
 
 ```json
 {
@@ -210,15 +211,15 @@ Ett godkänt svar returnerar en lista med matchande resurser för frågan. Mer i
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om hur du använder slutpunkten `/search`.
+Följande avsnitt innehåller ytterligare information om hur du använder `/search` slutpunkt.
 
 ### Värdeoperatorlogik {#value-operator}
 
-Sökfrågevärden är uppdelade i termer som matchar mot indexerade dokument. Mellan varje term antas en `AND`-relation.
+Sökfrågevärden är uppdelade i termer som matchar mot indexerade dokument. Mellan varje term, och `AND` relation antas.
 
-När du använder `AND` som `value_operator` tolkas ett frågevärde på `My Rule Holiday Sale` som dokument med ett fält som innehåller `My AND Rule AND Holiday AND Sale`.
+När du använder `AND` som `value_operator`, ett frågevärde för `My Rule Holiday Sale` tolkas som dokument med ett fält som innehåller `My AND Rule AND Holiday AND Sale`.
 
-När du använder `OR` som `value_operator` tolkas ett frågevärde på `My Rule Holiday Sale` som dokument med ett fält som innehåller `My OR Rule OR Holiday OR Sale`. Ju fler termer som matchar, desto högre är `match_score`. På grund av typen av partiell termmatchning kan du, när inget nära matchar det önskade värdet, få en resultatmängd där värdet bara matchas på en mycket grundläggande nivå, t.ex. ett par tecken med text.
+När du använder `OR` som `value_operator`, ett frågevärde för `My Rule Holiday Sale` tolkas som dokument med ett fält som innehåller `My OR Rule OR Holiday OR Sale`. Ju fler termer som matchar, desto högre `match_score`. På grund av typen av partiell termmatchning kan du, när inget nära matchar det önskade värdet, få en resultatmängd där värdet bara matchas på en mycket grundläggande nivå, t.ex. ett par tecken med text.
 
 ### Matchande konventioner {#conventions}
 

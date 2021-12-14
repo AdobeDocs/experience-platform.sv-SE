@@ -6,43 +6,43 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter en Phoenix-databas till Adobe Experience Platform med API:t för Flow Service.
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-source-git-commit: 5fb5f0ce8bd03ba037c6901305ba17f8939eb9ce
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Phoenix]-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Phoenix] basanslutning med [!DNL Flow Service] API
 
 >[!NOTE]
 >
->[!DNL Phoenix]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>The [!DNL Phoenix] anslutningen är i betaversion. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta en [!DNL Phoenix]-databas till [!DNL Experience Platform].
+I den här självstudiekursen används [!DNL Flow Service] API för att vägleda dig genom stegen för att ansluta en [!DNL Phoenix] databas till [!DNL Experience Platform].
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Phoenix] med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Phoenix] med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL Phoenix] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] att ansluta till [!DNL Phoenix]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | IP-adressen eller värdnamnet för [!DNL Phoenix]-servern. |
-| `username` | Användarnamnet som du använder för att komma åt [!DNL Phoenix]-servern. |
+| `host` | IP-adressen eller värdnamnet för [!DNL Phoenix] server. |
+| `username` | Användarnamnet som du använder för att komma åt [!DNL Phoenix] Server. |
 | `password` | Lösenordet som motsvarar användaren. |
-| `port` | Den TCP-port som [!DNL Phoenix]-servern använder för att avlyssna klientanslutningar. Om du ansluter till [!DNL Azure] HDInsights anger du port som 443. |
-| `httpPath` | Den partiella URL som motsvarar [!DNL Phoenix]-servern. Ange /hbasephoenix0 om du använder [!DNL Azure] HDInsights-kluster. |
+| `port` | TCP-porten som [!DNL Phoenix] servern använder för att avlyssna klientanslutningar. Om du ansluter till [!DNL Azure] HDInsights, ange port som 443. |
+| `httpPath` | Den del av URL:en som motsvarar [!DNL Phoenix] server. Ange /hbasephoenix0 om du använder [!DNL Azure] HDInsights-kluster. |
 | `enableSsl` | Ett booleskt värde. Anger om anslutningar till servern krypteras med SSL. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Phoenix] är: `102706fb-a5cd-42ee-afe0-bc42f017ff43` |
 
@@ -50,13 +50,13 @@ Mer information om hur du kommer igång finns i [det här Phoenix-dokumentet](ht
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Phoenix] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Phoenix] autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -82,12 +82,12 @@ curl -X POST \
         "auth": {
             "specName": "Basic Authentication",
         "params": {
-            "host" :  "{HOST}",
-            "username" : "{USERNAME}",
-            "password" :"{PASSWORD}",
-            "port" : {PORT},
-            "httpPath" : "{PATH}",
-            "enableSsl" : {SSL}
+            "host":  "{HOST}",
+            "username": "{USERNAME}",
+            "password":"{PASSWORD}",
+            "port": {PORT},
+            "httpPath": "{PATH}",
+            "enableSsl": {SSL}
             }
         },
         "connectionSpec": {
@@ -99,17 +99,17 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.host` | Värden för [!DNL Phoenix]-servern. |
-| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Phoenix]-anslutning. |
-| `auth.params.password` | Lösenordet som är kopplat till din [!DNL Phoenix]-anslutning. |
-| `auth.params.port` | TCP-porten för din [!DNL Phoenix]-anslutning. |
-| `auth.params.httpPath` | Den partiella http-sökvägen för din [!DNL Phoenix]-anslutning. |
+| `auth.params.host` | Värden för [!DNL Phoenix] server. |
+| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Phoenix] anslutning. |
+| `auth.params.password` | Lösenordet som är kopplat till [!DNL Phoenix] anslutning. |
+| `auth.params.port` | TCP-porten för din [!DNL Phoenix] anslutning. |
+| `auth.params.httpPath` | Den partiella http-sökvägen för [!DNL Phoenix] anslutning. |
 | `auth.params.enableSsl` | Det booleska värdet som anger om anslutningarna till servern är krypterade med SSL. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Phoenix]: `102706fb-a5cd-42ee-afe0-bc42f017ff43`. |
+| `connectionSpec.id` | The [!DNL Phoenix] anslutningsspecifikation-ID: `102706fb-a5cd-42ee-afe0-bc42f017ff43`. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
 
 ```json
 {
@@ -120,4 +120,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en [!DNL Phoenix]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Phoenix] anslutning med [!DNL Flow Service] API och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).

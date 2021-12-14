@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: b30700fde3ce75cc4f66343c8d37d3e731775627
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
@@ -67,11 +67,11 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
        kernel_type: Python
    ```
 
-   - `platform_gateway` : Bassökvägen för API-anrop. Ändra inte det här värdet.
-   - `ims_token` : Dina `{ACCESS_TOKEN}` går hit.
-   - `ingest_data` : I den här självstudiekursen anger du det här värdet som `"True"` för att skapa försäljningsscheman och datauppsättningar för detaljhandeln. Värdet för `"False"` skapar endast scheman.
-   - `build_recipe_artifacts` : I den här självstudiekursen anger du det här värdet som `"False"` för att förhindra att skriptet genererar en Recept-artefakt.
-   - `kernel_type` : Körningstypen för Recept-artefakten. Lämna det här värdet som `Python` if `build_recipe_artifacts` anges som `"False"`, annars anger du rätt körningstyp.
+   - `platform_gateway`: Bassökvägen för API-anrop. Ändra inte det här värdet.
+   - `ims_token`: Dina `{ACCESS_TOKEN}` går hit.
+   - `ingest_data`: I den här självstudiekursen anger du det här värdet som `"True"` för att skapa försäljningsscheman och datauppsättningar för detaljhandeln. Värdet för `"False"` skapar endast scheman.
+   - `build_recipe_artifacts`: I den här självstudiekursen anger du det här värdet som `"False"` för att förhindra att skriptet genererar en Recept-artefakt.
+   - `kernel_type`: Körningstypen för Recept-artefakten. Lämna det här värdet som `Python` if `build_recipe_artifacts` anges som `"False"`, annars anger du rätt körningstyp.
 
 4. Under `Titles` ska du ange följande information för exempeldata för butiksförsäljning, spara och stänga filen när redigeringarna är på plats. Exempel som visas nedan:
 

@@ -3,7 +3,7 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 930756b4e10c42edf2d58be16c51d71df207d1af
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '1266'
 ht-degree: 3%
@@ -12,11 +12,11 @@ ht-degree: 3%
 
 # Använda [!DNL Adobe Target] med [!DNL Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras  [!DNL Adobe Target] i webbkanalen. Du kan använda en WYSIWYG-redigerare som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC) eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Target] till webbkanalen. Du kan använda en WYSIWYG-redigerare som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC), eller ett icke-visuellt gränssnitt, [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera era aktiviteter och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
->[Adobe Target-dokumentationen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/aep-implementation/aep-web-sdk.html?lang=en) innehåller ämnen som innehåller information som är specifik för Platform Web SDK vad gäller Target-funktioner.
+>The [Adobe Target-dokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/aep-implementation/aep-web-sdk.html?lang=en) innehåller information som är specifik för Platform Web SDK när det gäller Target-funktioner.
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
@@ -31,26 +31,26 @@ Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
 ## [!DNL Platform Web SDK] systemdiagram
 
-Följande diagram hjälper dig att förstå arbetsflödet för kantbeslut i [!DNL Target] och [!DNL Platform Web SDK].
+Följande diagram hjälper dig att förstå arbetsflödet i [!DNL Target] och [!DNL Platform Web SDK] kantbeslut.
 
 ![Diagram över Adobe Target edge-beslut med Platform Web SDK](./assets/target-platform-web-sdk.png)
 
 | Utlysning | Detaljer |
 | --- | --- |
-| 1 | Enheten läser in [!DNL Platform Web SDK]. [!DNL Platform Web SDK] skickar en begäran till gränsnätverket med XDM-data, ID:t för datastreams Environment, parametrar för skickade data samt Kund-ID:t (valfritt). Sidan (eller behållarna) är fördold. |
+| 1 | Enheten läser in [!DNL Platform Web SDK]. The [!DNL Platform Web SDK] skickar en begäran till edge-nätverket med XDM-data, DataStreams Environment ID, inskickade parametrar och Customer ID (valfritt). Sidan (eller behållarna) är fördold. |
 | 2 | edge-nätverket skickar begäran till edge-tjänsterna för att berika den med besökar-ID, samtycke och annan kontextinformation för besökare, som geopositionering och enhetsvänliga namn. |
-| 3 | Kantnätverket skickar den berikade personaliseringsbegäran till kanten [!DNL Target] med besökar-ID och skickade parametrar. |
+| 3 | edge-nätverket skickar den berikade personaliseringsbegäran till [!DNL Target] kant med besökar-ID och inskickade parametrar. |
 | 4 | Profilskript körs och matas sedan in i [!DNL Target] profillagring. Profillagring hämtar segment från [!UICONTROL Audience Library] (till exempel segment som delas från [!DNL Adobe Analytics], [!DNL Adobe Audience Manager], [!DNL Adobe Experience Platform]). |
-| 5 | Baserat på parametrar för URL-begäran och profildata avgör [!DNL Target] vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till gränsnätverket. |
+| 5 | Baserat på parametrar för URL-begäran och profildata, [!DNL Target] avgör vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till gränsnätverket. |
 | 6 | a. Kantnätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. <br>c. Edge-nätverket skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll, personalisering och så vidare. |
-| 7 | Edge-nätverket vidarebefordrar information om [!UICONTROL Analytics for Target] (A4T) (aktivitet, upplevelse och konverteringsmetadata) till [!DNL Analytics]-kanten. |
+| 7 | Edge-nätverket framåt [!UICONTROL Analytics for Target] (A4T) information (aktivitets-, upplevelse- och konverteringsmetadata) till [!DNL Analytics] kant. |
 
-## Aktivera [!DNL Adobe Target]
+## Aktivering [!DNL Adobe Target]
 
-Så här aktiverar du [!DNL Target]:
+Aktivera [!DNL Target]gör du följande:
 
-1. Aktivera [!DNL Target] i din [datastream](../../fundamentals/datastreams.md) med rätt klientkod.
-1. Lägg till alternativet `renderDecisions` i dina händelser.
+1. Aktivera [!DNL Target] i [datastream](../../fundamentals/datastreams.md) med rätt klientkod.
+1. Lägg till `renderDecisions` till dina händelser.
 
 Du kan sedan även lägga till följande alternativ:
 
@@ -59,19 +59,19 @@ Du kan sedan även lägga till följande alternativ:
 
 ## Använda Adobe Target VEC
 
-Om du vill använda VEC med en [!DNL Platform Web SDK]-implementering installerar och aktiverar du antingen [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
+Så här använder du VEC med en [!DNL Platform Web SDK] implementera, installera och aktivera antingen [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Krom](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
 
-Mer information finns i [hjälptillägget för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) i *Adobe Target-handboken*.
+Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) i *Adobe Target Guide*.
 
 ## Återge personaliserat innehåll
 
-Mer information finns i [Återge innehåll för personalisering](../rendering-personalization-content.md).
+Se [Återger innehåll för personalisering](../rendering-personalization-content.md) för mer information.
 
 ## Målgrupper i XDM
 
-När du definierar målgrupper för dina [!DNL Target]-aktiviteter som levereras via [!DNL Platform Web SDK] måste [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en [!DNL Target]-målgruppsregel som definieras av XDM-data för målinriktning. I [!DNL Target] visas XDM-data i [!UICONTROL Audience Builder] som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
+När du definierar målgrupper för [!DNL Target] aktiviteter som levereras via [!DNL Platform Web SDK], [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) måste definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en [!DNL Target] målgruppsregel som definieras av XDM-data för målinriktning. Inom [!DNL Target], visas XDM-data i [!UICONTROL Audience Builder] som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
 
-Om du har [!DNL Target]-aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil levereras de inte korrekt via SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via [!DNL Platform Web SDK] och som inte kräver XDM. Dessa fält är tillgängliga i [!DNL Target]-gränssnittet som inte kräver XDM:
+Om du har [!DNL Target] aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil levereras de inte korrekt via SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via [!DNL Platform Web SDK] som inte kräver XDM. Dessa fält är tillgängliga i [!DNL Target] Gränssnitt som inte kräver XDM:
 
 * Målbibliotek
 * Geo
@@ -82,12 +82,11 @@ Om du har [!DNL Target]-aktiviteter med fördefinierade målgrupper som använde
 * Trafikkällor
 * Tidsram
 
-Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en) i *Adobe Target guide*.
+Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en) i *Adobe Target Guide*.
 
 ### Svarstoken
 
-Svarstoken används främst för att skicka metadata till tredje part som Google, Facebook osv. Svarstoken returneras
-i fältet `meta` i `propositions` -> `items`. Här följer ett exempel:
+Svarstoken används främst för att skicka metadata till tredje part som Google, Facebook, osv. Svarstoken returneras i `meta` fält inom `propositions` -> `items`. Här följer ett exempel:
 
 ```
 {
@@ -110,9 +109,8 @@ i fältet `meta` i `propositions` -> `items`. Här följer ett exempel:
 }
 ```
 
-Om du vill samla in svarstoken måste du prenumerera på `alloy.sendEvent`, iterera genom `propositions`
-och extrahera informationen från `items` -> `meta`. Varje `proposition` har ett `renderAttempted` booleskt fält
-som anger om `proposition` återgavs eller inte. Se exemplet nedan:
+Om du vill samla in svarstoken måste du prenumerera på `alloy.sendEvent` löfte, iterera genom `propositions`
+och extrahera detaljerna från `items` -> `meta`. Varje `proposition` har en `renderAttempted` booleskt fält som anger om `proposition` återgavs eller inte. Se exemplet nedan:
 
 ```
 alloy("sendEvent",
@@ -144,44 +142,44 @@ När automatisk återgivning är aktiverat innehåller propositionsarrayen:
 
 #### Vid sidinläsning:
 
-* Formulärbaserad disposition baserad `propositions` med flaggan `renderAttempted` inställd på `false`
-* Visual Experience Composer-baserade förslag med flaggan `renderAttempted` inställd på `true`
-* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `true`
+* Formulärbaserad dispositionsbaserad `propositions` med `renderAttempted` flaggan är inställd på `false`
+* Visual Experience Composer-baserade förslag med `renderAttempted` flaggan är inställd på `true`
+* Visual Experience Composer-baserade förslag för en enkelsidig programvy med `renderAttempted` flaggan är inställd på `true`
 
 #### I vyn - ändra (för cachelagrade vyer):
 
-* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `true`
+* Visual Experience Composer-baserade förslag för en enkelsidig programvy med `renderAttempted` flaggan är inställd på `true`
 
 När automatisk återgivning är inaktiverat innehåller propositionsarrayen:
 
 #### Vid sidinläsning:
 
-* Formulärbaserad dispositionsbaserad `propositions` med flaggan `renderAttempted` inställd på `false`
-* Visual Experience Composer-baserade förslag med flaggan `renderAttempted` inställd på `false`
-* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `false`
+* Formulärbaserad dispositionsbaserad `propositions` med `renderAttempted` flaggan är inställd på `false`
+* Visual Experience Composer-baserade förslag med `renderAttempted` flaggan är inställd på `false`
+* Visual Experience Composer-baserade förslag för en enkelsidig programvy med `renderAttempted` flaggan är inställd på `false`
 
 #### I vyn - ändra (för cachelagrade vyer):
 
-* Visuella Experience Composer-baserade förslag för en programvy med en enda sida med flaggan `renderAttempted` inställd på `false`
+* Visual Experience Composer-baserade förslag för en enkelsidig programvy med `renderAttempted` flaggan är inställd på `false`
 
 ### Uppdatering av en profil
 
-Med [!DNL Platform Web SDK] kan du uppdatera profilen till [!DNL Target]-profilen och till [!DNL Platform Web SDK] som en upplevelsehändelse.
+The [!DNL Platform Web SDK] gör att du kan uppdatera profilen till [!DNL Target] och [!DNL Platform Web SDK] som en upplevelsehändelse.
 
-Om du vill uppdatera en [!DNL Target]-profil kontrollerar du att profildata skickas med följande:
+Så här uppdaterar du en [!DNL Target] kontrollerar du att profildata skickas med följande:
 
 * Under `“data {“`
 * Under `“__adobe.target”`
-* Prefix `“profile.”`, t.ex. enligt nedan
+* Prefix `“profile.”` t.ex. enligt nedan
 
 | Nyckel | Typ | Beskrivning |
 | --- | --- | --- |
 | `renderDecisions` | Boolean | Anger om personaliseringskomponenten ska tolka DOM-åtgärder |
-| `decisionScopes` | Matris `<String>` | En lista över omfattningar som kan hämta beslut för |
+| `decisionScopes` | Array `<String>` | En lista över omfattningar som kan hämta beslut för |
 | `xdm` | Objekt | Data formaterade i XDM som landar i Platform Web SDK som en upplevelsehändelse |
-| `data` | Objekt | Godtyckliga nyckel/värde-par skickas till [!DNL Target]-lösningar under målklassen. |
+| `data` | Objekt | Godtyckliga nyckel-/värdepar skickade till [!DNL Target] lösningar under målklassen. |
 
-Vanlig [!DNL Platform Web SDK]-kod som använder det här kommandot ser ut så här:
+Normal [!DNL Platform Web SDK] koden som använder det här kommandot ser ut så här:
 
 **`sendEvent`med profildata**
 
@@ -211,7 +209,7 @@ alloy("sendEvent", {
 
 ## Begär rekommendationer
 
-I följande tabell visas [!DNL Recommendations]-attribut och om vart och ett stöds via [!DNL Platform Web SDK]:
+Följande tabell innehåller [!DNL Recommendations] och om vart och ett stöds via [!DNL Platform Web SDK]:
 
 | Kategori | Attribut | Supportstatus |
 | --- | --- | --- |
@@ -240,8 +238,8 @@ alloy("sendEvent", {
   data: {
     __adobe: {
       target: {
-        "entity.id" : "123",
-        "entity.genre" : "Drama"
+        "entity.id": "123",
+        "entity.genre": "Drama"
       }
     }
   }
@@ -254,10 +252,10 @@ mboxTrace och mboxDebug har tagits bort. Använd [[!DNL Platform Web SDK] felsö
 
 ## Terminologi
 
-__Förslag:__ I  [!DNL Target]korrelerar förslag till upplevelsen som väljs från en aktivitet.
+__Förslag:__ I [!DNL Target], korrelerar förslag till upplevelsen som väljs från en aktivitet.
 
-__Schema:__ Schemat för ett beslut är den typ av erbjudande som finns i  [!DNL Target].
+__Schema:__ Schemat för ett beslut är den typ av erbjudande som [!DNL Target].
 
-__Tillämpningsområde:__ Beslutets tillämpningsområde. I [!DNL Target] är omfattningen mBox. Den globala mBox är `__view__`-scopet.
+__Omfång:__ Beslutets omfattning. I [!DNL Target]är omfattningen mBox. Den globala mBox är `__view__` omfång.
 
-__XDM:__ XDM serialiseras till punktnotation och sätts sedan in  [!DNL Target] som mBox-parametrar.
+__XDM:__ XDM serialiseras till punktnotation och sätts sedan i [!DNL Target] som mBox-parametrar.

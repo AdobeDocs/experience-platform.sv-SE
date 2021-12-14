@@ -6,8 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '810'
 ht-degree: 1%
@@ -16,17 +15,17 @@ ht-degree: 1%
 
 # Frågetjänst i Jupyter-anteckningsbok
 
-[!DNL Adobe Experience Platform] I kan du använda SQL (Structured Query Language) i  [!DNL Data Science Workspace] genom att integrera  [!DNL Query Service] i  [!DNL JupyterLab] som standardfunktion.
+[!DNL Adobe Experience Platform] I kan du använda SQL (Structured Query Language) i [!DNL Data Science Workspace] genom integrering [!DNL Query Service] till [!DNL JupyterLab] som en standardfunktion.
 
-I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omforma och analysera [!DNL Adobe Analytics]-data.
+I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera [!DNL Adobe Analytics] data.
 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter
 
-- En [!DNL Adobe Analytics]-datamängd
+- An [!DNL Adobe Analytics] datauppsättning
 
 - En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
    - [[!DNL Experience Data Model (XDM) and XDM System]](../../xdm/home.md)
@@ -34,17 +33,17 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - [[!DNL Query Service SQL Syntax]](../../query-service/sql/overview.md)
    - Adobe Analytics
 
-## Åtkomst till [!DNL JupyterLab] och [!DNL Query Service] {#access-jupyterlab-and-query-service}
+## Åtkomst [!DNL JupyterLab] och [!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. I [[!DNL Experience Platform]](https://platform.adobe.com) navigerar du till **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
+1. I [[!DNL Experience Platform]](https://platform.adobe.com), navigera till **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
 
    ![](../images/jupyterlab/query/jupyterlab-launcher.png)
 
    >[!NOTE]
    >
-   >Om en ny startflik inte visas automatiskt öppnar du en ny startflik genom att klicka på **[!UICONTROL File]** och väljer sedan **[!UICONTROL New Launcher]**.
+   >Om en ny startflik inte visas automatiskt öppnar du en ny startflik genom att klicka på **[!UICONTROL File]** välj **[!UICONTROL New Launcher]**.
 
-2. På fliken Launcher klickar du på ikonen **[!UICONTROL Blank]** i en Python 3-miljö för att öppna en tom anteckningsbok.
+2. På fliken Launcher klickar du på **[!UICONTROL Blank]** i en Python 3-miljö för att öppna en tom anteckningsbok.
 
    ![](../images/jupyterlab/query/blank_notebook.png)
 
@@ -52,21 +51,21 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    >
    >Python 3 är för närvarande den enda miljö som stöds för frågetjänsten i bärbara datorer.
 
-3. Klicka på ikonen **[!UICONTROL Data]** till vänster om markeringslisten och dubbelklicka på katalogen **[!UICONTROL Datasets]** för att visa alla datauppsättningar.
+3. Klicka på **[!UICONTROL Data]** och dubbelklicka på **[!UICONTROL Datasets]** katalog för att lista alla datauppsättningar.
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. Hitta en [!DNL Adobe Analytics]-datauppsättning att utforska och högerklicka på listan, klicka på **[!UICONTROL Query Data in Notebook]** för att generera SQL-frågor i den tomma anteckningsboken.
+4. Hitta en [!DNL Adobe Analytics] datauppsättning att utforska och högerklicka på listan, klicka på **[!UICONTROL Query Data in Notebook]** för att generera SQL-frågor i den tomma anteckningsboken.
 
 5. Klicka på den första genererade cellen som innehåller funktionen `qs_connect()` och kör den genom att klicka på uppspelningsknappen. Den här funktionen skapar en anslutning mellan din anteckningsboksinstans och [!DNL Query Service].
 
    ![](../images/jupyterlab/query/execute.png)
 
-6. Kopiera ner datauppsättningsnamnet [!DNL Adobe Analytics] från den andra genererade SQL-frågan, det blir värdet efter `FROM`.
+6. Kopiera nedåt [!DNL Adobe Analytics] datauppsättningsnamn från den andra genererade SQL-frågan, det blir värdet efter `FROM`.
 
    ![](../images/jupyterlab/query/dataset_name.png)
 
-7. Infoga en ny anteckningsbokscell genom att klicka på knappen **+**.
+7. Infoga en ny anteckningsbokscell genom att klicka på **+** -knappen.
 
    ![](../images/jupyterlab/query/insert_cell.gif)
 
@@ -87,10 +86,10 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    target_day = "01"
    ```
 
-   - `target_table` : Namn på din  [!DNL Adobe Analytics] datauppsättning.
-   - `target_year` : Det specifika år som måldata kommer från.
-   - `target_month` : Den månad som målet kommer från.
-   - `target_day` : Den specifika dag som måldata kommer från.
+   - `target_table`: Ditt namn [!DNL Adobe Analytics] datauppsättning.
+   - `target_year`: Det specifika år som måldata kommer från.
+   - `target_month`: Den månad som målet kommer från.
+   - `target_day`: Den specifika dag som måldata kommer från.
 
    >[!NOTE]
    >
@@ -98,9 +97,9 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 ## Fråga dina data {#query-your-data}
 
-Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att markera den i cellen och sedan markera knappen **[!UICONTROL play]**. Slutförda frågeresultat eller felloggar visas under den körda cellen.
+Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att markera i cellen och sedan markera **[!UICONTROL play]** -knappen. Slutförda frågeresultat eller felloggar visas under den körda cellen.
 
-När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken och [!DNL Query Service] brytas. I sådana fall startar du om [!DNL JupyterLab] genom att välja knappen **Starta om** ![starta om](../images/jupyterlab/user-guide/restart_button.png) i det övre högra hörnet bredvid strömknappen.
+När en anteckningsbok är inaktiv under en längre tid är anslutningen mellan den bärbara datorn och [!DNL Query Service] kan gå sönder. I sådana fall startar du om [!DNL JupyterLab] genom att välja **Starta om** knapp ![knappen starta om](../images/jupyterlab/user-guide/restart_button.png) i det övre högra hörnet bredvid strömknappen.
 
 Anteckningsbokens kärna återställs men cellerna finns kvar. Kör om alla celler för att fortsätta där du slutade.
 
@@ -108,7 +107,7 @@ Anteckningsbokens kärna återställs men cellerna finns kvar. Kör om alla cell
 
 Följande fråga returnerar antalet besökare per timme för ett angivet datum:
 
-#### Förfrågan
+#### Fråga
 
 ```sql
 %%read_sql hourly_visitor -c QS_CONNECTION
@@ -122,9 +121,9 @@ GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-I frågan ovan anges tidsstämpeln i `WHERE`-satsen till värdet `target_year`. Inkludera variabler i SQL-frågor genom att innesluta dem i klammerparenteser (`{}`).
+I ovanstående fråga finns tidsstämpeln i `WHERE` -satsen är inställd på att vara värdet för `target_year`. Inkludera variabler i SQL-frågor genom att innesluta dem i klammerparenteser (`{}`).
 
-Den första raden i frågan innehåller den valfria variabeln `hourly_visitor`. Frågeresultat lagras i den här variabeln som en Pandas-dataram. Om du lagrar resultat i en dataram kan du senare visualisera frågeresultaten med ett önskat [!DNL Python]-paket. Kör följande [!DNL Python]-kod i en ny cell för att generera ett stolpdiagram:
+Den första raden i frågan innehåller den valfria variabeln `hourly_visitor`. Frågeresultat lagras i den här variabeln som en Pandas-dataram. Om du lagrar resultat i en dataram kan du senare visualisera frågeresultaten med ett önskat [!DNL Python] paket. Utför följande [!DNL Python] kod i en ny cell för att generera ett stapeldiagram:
 
 ```python
 trace = go.Bar(
@@ -162,13 +161,13 @@ GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-Om du kör frågan ovan kommer resultatet i `hourly_actions` att lagras som en dataram. Kör följande funktion i en ny cell för att förhandsgranska resultatet:
+Om du kör frågan ovan sparas resultaten i `hourly_actions` som en databildruta. Kör följande funktion i en ny cell för att förhandsgranska resultatet:
 
 ```python
 hourly_actions.head()
 ```
 
-Ovanstående fråga kan ändras för att returnera antalet timåtgärder för ett angivet datumintervall med hjälp av logiska operatorer i **WHERE**-satsen:
+Ovanstående fråga kan ändras för att returnera antalet timåtgärder för ett angivet datumintervall med hjälp av logiska operatorer i **VAR** -sats:
 
 #### Förfrågan <!-- omit in toc -->
 
@@ -186,7 +185,7 @@ GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-När du kör den ändrade frågan sparas resultaten i `hourly_actions_date_range` som en dataram. Kör följande funktion i en ny cell för att förhandsgranska resultatet:
+När den ändrade frågan körs sparas resultaten i `hourly_actions_date_range` som en databildruta. Kör följande funktion i en ny cell för att förhandsgranska resultatet:
 
 ```python
 hourly_actions_date_rage.head()
@@ -210,7 +209,7 @@ GROUP BY aaid_sess_key
 ORDER BY Count DESC;
 ```
 
-Kör följande [!DNL Python]-kod för att generera ett histogram för antalet händelser per besökssession:
+Utför följande [!DNL Python] kod som genererar ett histogram för antalet händelser per besökssession:
 
 ```python
 data = [go.Histogram(x = events_per_session['Count'])]
@@ -242,7 +241,7 @@ ORDER  BY page_views DESC
 LIMIT  10;
 ```
 
-### Aktiva användare för en given dag {#active-users-for-a-given-day}
+### Aktiva användare för en viss dag {#active-users-for-a-given-day}
 
 Följande fråga returnerar de tio mest aktiva användarna för ett angivet datum:
 
@@ -278,4 +277,4 @@ LIMIT  10;
 
 ## Nästa steg
 
-I den här självstudiekursen visades några exempel på hur [!DNL Query Service] används i [!DNL Jupyter] anteckningsböcker. Följ självstudiekursen [Analysera dina data med Jupyter Notebooks](./analyze-your-data.md) för att se hur liknande åtgärder utförs med hjälp av SDK för dataåtkomst.
+I den här självstudiekursen visas några exempel på hur man använder [!DNL Query Service] in [!DNL Jupyter] bärbara datorer. Följ [Analysera dina data med Jupyter Notebooks](./analyze-your-data.md) självstudiekurs för att se hur liknande åtgärder utförs med SDK för dataåtkomst.

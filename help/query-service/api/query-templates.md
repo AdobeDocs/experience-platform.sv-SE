@@ -5,8 +5,7 @@ title: Frågemallar för API-slutpunkt
 topic-legacy: query templates
 description: Följande dokumentation går igenom de olika API-anrop du kan göra med hjälp av frågemallar för API:t för frågetjänsten.
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '674'
 ht-degree: 1%
@@ -17,11 +16,11 @@ ht-degree: 1%
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Nu när du förstår vilka rubriker du ska använda kan du börja ringa till [!DNL Query Service] API. Följande avsnitt går igenom de olika API-anropen som du kan göra med [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista med frågemallar
 
-Du kan hämta en lista med alla frågemallar för din IMS-organisation genom att göra en GET-begäran till `/query-templates`-slutpunkten.
+Du kan hämta en lista med alla frågemallar för din IMS-organisation genom att göra en GET-förfrågan till `/query-templates` slutpunkt.
 
 **API-format**
 
@@ -32,7 +31,7 @@ GET /query-templates?{QUERY_PARAMETERS}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_PARAMETERS}` | (*Valfria*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
+| `{QUERY_PARAMETERS}` | (*Valfritt*) Parametrar har lagts till i den begärda sökvägen som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
 
 **Frågeparametrar**
 
@@ -40,10 +39,10 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågema
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultaten efter att de har skapats i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekten i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. `start=2` returnerar till exempel en lista som börjar med den tredje listade frågan. (*Standardvärde: 0*) |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `name` och `userId`. Den enda operatorn som stöds är `==` (lika med). `name==my_template` returnerar till exempel alla frågemallar med namnet `my_template`. |
+| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `name` och `userId`. Den enda operatorn som stöds är `==` (lika med). Till exempel: `name==my_template` returnerar alla frågemallar med namnet `my_template`. |
 
 **Begäran**
 
@@ -83,7 +82,7 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar fö
                 "update": {
                     "href": "https://platform.adobe.io/data/foundation/query/query-templates/f7cb5155-29da-4b95-8131-8c5deadfbe7f",
                     "method": "PUT",
-                    "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+                    "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
                 }
             }
         }
@@ -108,11 +107,11 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar fö
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.delete` för att [ta bort frågemallen](#delete-a-specified-query-template).
+>Du kan använda värdet för `_links.delete` till [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Skapa en frågemall
 
-Du kan skapa en frågemall genom att göra en POST-förfrågan till `/query-templates`-slutpunkten.
+Du kan skapa en frågemall genom att göra en POST-förfrågan till `/query-templates` slutpunkt.
 
 **API-format**
 
@@ -163,7 +162,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om den n
         "update": {
             "href": "https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f",
             "method": "PUT",
-            "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+            "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
         }
     }
 }
@@ -171,11 +170,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om den n
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.delete` för att [ta bort frågemallen](#delete-a-specified-query-template).
+>Du kan använda värdet för `_links.delete` till [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Hämta en angiven frågemall
 
-Du kan hämta en specifik frågemall genom att göra en GET-begäran till `/query-templates/{TEMPLATE_ID}`-slutpunkten och ange ID:t för frågemallen i sökvägen för begäran.
+Du kan hämta en viss frågemall genom att göra en GET-förfrågan till `/query-templates/{TEMPLATE_ID}` slutpunkt och ange ID för frågemallen i sökvägen för begäran.
 
 **API-format**
 
@@ -185,7 +184,7 @@ GET /query-templates/{TEMPLATE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
-| `{TEMPLATE_ID}` | `id`-värdet för den frågemall som du vill hämta. |
+| `{TEMPLATE_ID}` | The `id` värdet för den frågemall som du vill hämta. |
 
 **Begäran**
 
@@ -221,7 +220,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna fråge
         "update": {
             "href": "https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f",
             "method": "PUT",
-            "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+            "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
         }
     }
 }
@@ -229,11 +228,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna fråge
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.delete` för att [ta bort frågemallen](#delete-a-specified-query-template).
+>Du kan använda värdet för `_links.delete` till [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Uppdatera en angiven frågemall
 
-Du kan uppdatera en viss frågemall genom att göra en PUT-begäran till `/query-templates/{TEMPLATE_ID}`-slutpunkten och ange ID:t för frågemallen i sökvägen för begäran.
+Du kan uppdatera en viss frågemall genom att göra en PUT-förfrågan till `/query-templates/{TEMPLATE_ID}` slutpunkt och ange ID för frågemallen i sökvägen för begäran.
 
 **API-format**
 
@@ -243,13 +242,13 @@ PUT /query-templates/{TEMPLATE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{TEMPLATE_ID}` | `id`-värdet för den frågemall som du vill hämta. |
+| `{TEMPLATE_ID}` | The `id` värdet för den frågemall som du vill hämta. |
 
 **Begäran**
 
 >[!NOTE]
 >
->Begäran från PUT kräver att både sql- och namnfältet fylls i, och kommer att **skriva över** det aktuella innehållet i frågemallen.
+>Begäran från PUT kräver att både sql- och namnfältet fylls i och kommer att **skriv över** det aktuella innehållet i den frågemallen.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f
@@ -293,7 +292,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med den uppdaterade info
         "update": {
             "href": "https://platform.adobe.io/data/foundation/query/query_templates/0094d000-9062-4e6a-8fdb-05606805f08f",
             "method": "PUT",
-            "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+            "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
         }
     }
 }
@@ -301,11 +300,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med den uppdaterade info
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.delete` för att [ta bort frågemallen](#delete-a-specified-query-template).
+>Du kan använda värdet för `_links.delete` till [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Ta bort en angiven frågemall
 
-Du kan ta bort en viss frågemall genom att göra en DELETE-begäran till `/query-templates/{TEMPLATE_ID}` och ange ID:t för frågemallen i sökvägen till begäran.
+Du kan ta bort en viss frågemall genom att göra en DELETE-förfrågan till `/query-templates/{TEMPLATE_ID}` och tillhandahåller ID för frågemallen i sökvägen för begäran.
 
 **API-format**
 
@@ -315,7 +314,7 @@ DELETE /query-templates/{TEMPLATE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{TEMPLATE_ID}` | `id`-värdet för den frågemall som du vill hämta. |
+| `{TEMPLATE_ID}` | The `id` värdet för den frågemall som du vill hämta. |
 
 **Begäran**
 

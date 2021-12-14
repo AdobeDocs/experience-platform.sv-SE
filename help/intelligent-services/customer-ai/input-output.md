@@ -6,7 +6,7 @@ title: Indata och utdata i kundens AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 6da41552811a458fc6cf66b54fc2e9ed448a859d
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '3042'
 ht-degree: 0%
@@ -114,7 +114,7 @@ Minimilängd på data som krävs = stödberättigande population + resultatföns
 >
 > 30 är det minsta antal dagar som krävs för en stödberättigad population. Om detta inte anges är standardinställningen 120 dagar.
 
-Exempel :
+Exempel:
 
 - Ni vill förutsäga om kunden sannolikt kommer att köpa en klocka inom 30 dagar. Du vill även göra poäng för användare som har viss webbaktivitet de senaste 60 dagarna. I det här fallet är den minsta tillåtna längden på de data som krävs = 60 dagar + 30 dagar. Den stödberättigade populationen är 60 dagar och resultatfönstret är 30 dagar, totalt 90 dagar.
 
