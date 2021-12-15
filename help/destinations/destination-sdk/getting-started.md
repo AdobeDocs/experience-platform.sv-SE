@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 8356c63688fc57ece2f4e549a9ed0d1cc50f04db
+source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '595'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ I den här handboken används plattformsspecifika begrepp, som IMS-organisation 
 
 ## Hämta nödvändiga autentiseringsuppgifter {#obtain-authentication-credentials}
 
-Destination SDK använder [Adobe I/O](https://www.adobe.io/) gateway för autentisering. Om du vill göra API-anrop till Destination SDK-slutpunkter måste du ange vissa rubriker i dina API-anrop. Samarbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](http://console.adobe.io/).
+Destination SDK använder [Adobe I/O](https://www.adobe.io/) gateway för autentisering. Om du vill göra API-anrop till Destination SDK-slutpunkter måste du ange vissa rubriker i dina API-anrop. Samarbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](https://developer.adobe.com/console).
 
 Om du vill anropa Destination SDK API-slutpunkter följer du [Självstudiekurs om autentisering av Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Starta självstudiekursen från &quot;[Generera en API-nyckel, IMS-org-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot; steg. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK API-anrop, vilket visas nedan:
 

@@ -1,9 +1,10 @@
 ---
 description: På den här sidan finns all information du behöver för att kunna granska ett mål som skapats med Destination SDK.
 title: Skicka för granskning till ett mål som skapats i Destination SDK
-source-git-commit: bc77614eee6cc50d2ce6b14c1b228ed87f88f340
+exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
+source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '568'
 ht-degree: 0%
 
 ---
@@ -211,10 +212,6 @@ Ange ID:t för publiceringsbegäran för ditt mål. Mer information om hur du h�
 ## Måldokumentation PR (pull-begäran) för producerade integreringar
 
 Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen. Som en del av inlämningsprocessen anger du pull-begäran (PR) för destinationsdokumentationen.
-
-Exempel på PR från befintliga integrationspartners är:
-* [Yahoo-destinationsdokumentation PR](https://github.com/AdobeDocs/experience-platform.en/pull/110);
-* [Dokumentation för flygets destination PR](https://github.com/AdobeDocs/experience-platform.en/pull/54).
 
 ## Logotyp för ditt mål
 
