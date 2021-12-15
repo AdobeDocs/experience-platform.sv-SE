@@ -1,23 +1,24 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Skapa en ny anslutningsspecifikation med Flow Service API (Beta)
+title: Create a new connection specification using the Flow Service API (Beta)
 topic-legacy: tutorial
-description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med Sources SDK.
+description: The following document provides steps on how to create a connection specification using the Flow Service API and integrate a new source through Sources SDK.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
+source-git-commit: baa5f95fc8155c6a3f6c2faab99182046f33f49a
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 1%
 
 ---
 
-# Skapa en ny anslutningsspecifikation med [!DNL Flow Service] API (beta)
+# [!DNL Flow Service]
 
 >[!IMPORTANT]
 >
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+>Sources SDK is currently in beta and your organization may not have access to it yet. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
 
 En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. The `/connectionSpecs` slutpunkt i [!DNL Flow Service] Med API kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
 
@@ -31,16 +32,16 @@ Läs igenom [komma igång-guide](./getting-started.md) för länkar till relater
 
 Det första steget för att skapa en ny källa genom [!DNL Sources SDK] är att koordinera med Adobe och identifiera värden för källans motsvarande **icon**, **description**, **label** och **kategori**.
 
-| Artefakter | Beskrivning | Exempel |
+| Artifacts | Beskrivning | Exempel |
 | --- | --- | --- |
 | Etikett | Namnet på källan. | [!DNL MailChimp Members] |
 | Beskrivning | En kort beskrivning av källan. | Skapa en inkommande liveanslutning till din [!DNL Mailchimp Members] till exempel för att importera både historiska och schemalagda data till Experience Platform. |
-| Ikon | Bilden eller logotypen som representerar källan. Ikonen visas i plattformsgränssnittsåtergivningen i källan. | `mailchimp-members-icon.svg` |
-| Kategori | Källans kategori. | <ul><li>`advertising`</li><li>`cloud storage`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li><li>`streaming`</li></ul> |
+| Ikon | Bilden eller logotypen som representerar källan. The icon is displayed in the Platform UI rendering of your source. | `mailchimp-members-icon.svg` |
+| Kategori | The category of your source. | <ul><li>`advertising`</li><li>`cloud storage`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
-## Kopiera mall för anslutningsspecifikation
+## Copy connection specification template
 
 När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in mallen för anslutningsspecifikationen nedan i valfri textredigerare och uppdaterar sedan attributen inom hakparentes `{}` med information som är relevant för just er källa.
 
@@ -293,18 +294,18 @@ En anslutningsspecifikation kan delas in i tre olika delar: autentiseringsspecif
 I följande dokument finns instruktioner om hur du fyller i värdena för varje del av en anslutningsspecifikation:
 
 * [Konfigurera autentiseringsspecifikationen](../config/authspec.md)
-* [Konfigurera källspecifikationen](../config/sourcespec.md)
-* [Konfigurera din utforskarspecifikation](../config/explorespec.md)
+* [Configure your source specification](../config/sourcespec.md)
+* [Configure your explore specification](../config/explorespec.md)
 
-Med informationen om din specifikation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-förfrågan till `/connectionSpecs` slutpunkt för [!DNL Flow Service] API.
+`/connectionSpecs`[!DNL Flow Service]
 
-**API-format**
+****
 
 ```http
 POST /connectionSpecs
 ```
 
-**Begäran**
+****
 
 Följande begäran är ett exempel på en fullständigt skriven anslutningsspecifikation för en [!DNL MailChimp] källa:
 
