@@ -1,14 +1,15 @@
 ---
-title: Event Forwarding Secrets
+title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för datainsamling för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
-source-git-commit: 43d593cd8adf5a29c3283a328c24b0994009222b
+exl-id: eefd87d7-457f-422a-b159-5b428da54189
+source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
 workflow-type: tm+mt
-source-wordcount: '1372'
+source-wordcount: '1376'
 ht-degree: 0%
 
 ---
 
-# Sekretesser vid vidarebefordran av händelser
+# Konfigurera hemligheter i händelsevidarebefordran
 
 Vid vidarebefordran av händelser är en hemlighet en resurs som representerar autentiseringsuppgifter för ett annat system, vilket möjliggör säkert datautbyte. Det går bara att skapa hemligheter i egenskaper för vidarebefordran av händelser.
 
@@ -17,7 +18,7 @@ Det finns för närvarande tre hemliga typer som stöds:
 | Hemlig typ | Beskrivning |
 | --- | --- |
 | [!UICONTROL Token] | En enda teckensträng som representerar ett autentiseringstokenvärde som är känt och begripligt för båda systemen. |
-| [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn och ett lösenord. |
+| [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
 | [!UICONTROL OAuth2] | Innehåller flera attribut som stöder [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. För närvarande bara [Klientautentiseringsuppgifter](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) version av OAuth2 stöds. |
 
 {style=&quot;table-layout:auto&quot;}
