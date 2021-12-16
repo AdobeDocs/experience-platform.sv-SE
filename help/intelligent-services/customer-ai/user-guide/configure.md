@@ -6,9 +6,9 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 899ea8502c80fa520df55ce63255e95cb5ad436d
+source-git-commit: f7fde9ed299e6bdb6e63279be1126b91fc90d3f3
 workflow-type: tm+mt
-source-wordcount: '2218'
+source-wordcount: '2525'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Tack vare kundens AI, som ingår i Intelligent Services, kan ni generera anpassa
 
 Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 
-## Konfigurera din instans {#set-up-your-instance}
+## Skapa en instans {#set-up-your-instance}
 
 Välj **[!UICONTROL Services]** i den vänstra navigeringen. The **[!UICONTROL Services]** webbläsaren visas och alla tillgängliga tjänster visas. Välj **[!UICONTROL Open]**.
 
@@ -46,9 +46,9 @@ Om du vill skapa en ny instans väljer du **[!UICONTROL Create instance]**.
 
 ![](../images/user-guide/dashboard.png)
 
-## Inställningar
+## Konfigurera
 
-Arbetsflödet där instansen skapas visas med början på **[!UICONTROL Setup]** steg.
+Arbetsflödet där instansen skapas visas med början på **[!UICONTROL Set up]** steg.
 
 Nedan finns viktig information om värden som du måste ge instansen:
 
@@ -108,7 +108,7 @@ Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rä
 >
 > Om det inte finns någon giltig identitetstyp (namnutrymme) för en datauppsättning måste du ange en primär identitet och tilldela den till ett identitetsnamnutrymme med hjälp av [schemaredigerare](../../../xdm/schema/composition.md#identity). Mer information om namnutrymmen och identiteter finns på [Namnutrymmen för identitetstjänst](../../../identity-service/namespaces.md) dokumentation.
 
-## Definiera ett mål {#define-a-goal}
+## Definiera mål {#define-a-goal}
 
 <!-- https://www.adobe.com/go/cai-define-a-goal -->
 
@@ -156,9 +156,13 @@ Som standard genereras benägenhetspoäng för alla profiler såvida inte en st�
 
 Om du har ytterligare information förutom [standardhändelsefält](../input-output.md#standard-events) som används av kundens AI för att generera benägenhetspoäng, finns ett anpassat händelsealternativ. Om du använder det här alternativet kan du lägga till ytterligare händelser som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och bidra till mer korrekta resultat. Om den datamängd du har valt innehåller anpassade händelser som har definierats i ditt schema, kan du lägga till dem i din instans.
 
+>[!NOTE]
+>
+> En detaljerad förklaring om hur anpassade händelser påverkar kundens AI-poäng finns på [Exempel på anpassad händelse](#custom-event) -avsnitt.
+
 ![händelsefunktion](../images/user-guide/event-feature.png)
 
-Om du vill lägga till en anpassad händelse väljer du **[!UICONTROL Add custom event]**. Därefter anger du ett anpassat händelsenamn och mappar det till händelsefältet i schemat. Anpassade händelsenamn visas i stället för fältvärdet när du tittar på inflytelserika faktorer och andra insikter. Detta innebär användar-ID:n, reservations-ID:n, enhetsinformation och andra anpassade värden listas med det anpassade händelsenamnet i stället för händelsens ID/värde. Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
+Om du vill lägga till en anpassad händelse väljer du **[!UICONTROL Add custom event]**. Därefter anger du ett anpassat händelsenamn och mappar det till händelsefältet i schemat. Anpassade händelsenamn visas i stället för fältvärdet när du tittar på inflytelserika faktorer och andra insikter. Det innebär att det anpassade händelsenamnet används i stället för händelsens ID/värde. Mer information om hur anpassade händelser visas finns i [exempelavsnitt för anpassad händelse](#custom-event). Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
 
 ![Eget händelsefält](../images/user-guide/custom-event.png)
 
@@ -178,21 +182,31 @@ Du kan definiera viktiga profildatauppsättningsfält (med tidsstämplar) i dina
 
 >[!NOTE]
 >
->När du lägger till ett anpassat profilattribut följer du samma arbetsflöde som när du lägger till en anpassad händelse.
+>När du lägger till ett anpassat profilattribut följer du samma arbetsflöde som när du lägger till en anpassad händelse. Precis som för anpassade händelser påverkar anpassade profilattribut din modellbedömning på samma sätt. Mer information finns på [Exempel på anpassad händelse](#custom-event) -avsnitt.
 
 ![lägg till ett anpassat profilattribut](../images/user-guide/profile-attributes.png)
 
+### Lägga till ett eget händelseexempel {#custom-event}
+
+I följande exempel läggs ett anpassat händelse- och profilattribut till i en Kund AI-instans. Målet med kundens AI-instans är att förutsäga sannolikheten för att en kund köper en annan Luma-produkt inom de kommande 60 dagarna. Vanligtvis är produktdata länkade till en produkt-SKU. I det här fallet är SKU:n `prd1013`. När kundens AI-modell har tränats/bedömts kan denna SKU länkas till en händelse och visas som en inflytelserik faktor för en benägenhetspyts.
+
+Kundens AI tillämpar automatiskt generering av funktioner som&quot;Dagar sedan&quot; eller&quot;Antal&quot; mot anpassade händelser som **Se köpet**. Om den här händelsen ansågs vara en inflytelserik faktor för varför kunderna är höga, medelhöga eller låga, visar kundens AI det som `Days since prd1013 purchase` eller `Count of prd1013 purchase`. Genom att skapa detta som en anpassad händelse kan du ge händelsen ett nytt namn som gör resultatet mycket lättare att läsa. Exempel, `Days since Watch purchase`. Dessutom använder kundens AI den här händelsen i utbildningen och poängsättningen även om händelsen inte är en standardhändelse. Det innebär att du kan lägga till flera händelser som du tror kan vara inflytelserika och anpassa modellen ytterligare genom att inkludera data som reservationer, besöksloggar och andra händelser. Genom att lägga till dessa datapunkter ökar du noggrannheten och precisionen i kundens AI-modell ytterligare.
+
+![exempel på en anpassad händelse](../images/user-guide/custom-event-name.png)
+
+## Ange alternativ
+
+Stegen för inställningsalternativ gör att du kan konfigurera ett schema för att automatisera förutsägelsekörningar, definiera undantag för förutsägelser för att filtrera vissa händelser och växla **[!UICONTROL Profile]** på/av.
+
 ### Konfigurera ett schema *(valfritt)* {#configure-a-schedule}
 
-The **[!UICONTROL Advanced]** visas. Med det här valfria steget kan du konfigurera ett schema för att automatisera förutsägelsekörningar, definiera undantag för förutsägelser för att filtrera vissa händelser eller välja **[!UICONTROL Finish]** om inget behövs.
-
-Konfigurera ett poängschema genom att konfigurera **[!UICONTROL Scoring Frequency]**. Automatiserade prognoskörningar kan schemaläggas att köras antingen varje vecka eller varje månad.
+Om du vill konfigurera ett poängschema börjar du med att konfigurera **[!UICONTROL Scoring Frequency]**. Automatiserade prognoskörningar kan schemaläggas att köras antingen varje vecka eller varje månad.
 
 ![](../images/user-guide/schedule.png)
 
-### Undantag för förutsägelse
+### Undantag för förutsägelse *(valfritt)*
 
-Om datauppsättningen innehåller kolumner som lagts till som testdata kan du lägga till den kolumnen eller händelsen i en exkluderingslista genom att markera **Lägg till undantag** följt av att ange det fält som du vill utesluta. Detta förhindrar att händelser som uppfyller vissa villkor utvärderas när bakgrundsmusik genereras. Den här funktionen kan användas för att filtrera bort irrelevanta dataindata eller vissa kampanjer.
+Om datauppsättningen innehåller kolumner som lagts till som testdata kan du lägga till den kolumnen eller händelsen i en exkluderingslista genom att markera **[!UICONTROL Add Exclusion]** följt av att ange det fält som du vill utesluta. Detta förhindrar att händelser som uppfyller vissa villkor utvärderas när bakgrundsmusik genereras. Den här funktionen kan användas för att filtrera bort irrelevanta dataindata eller kampanjer.
 
 Om du vill exkludera en händelse väljer du **[!UICONTROL Add exclusion]** och definiera händelsen. Om du vill ta bort ett undantag markerar du ellipserna (**[!UICONTROL ...]**) till det övre högra hörnet i händelsebehållaren och välj sedan **[!UICONTROL Remove Container]**.
 
@@ -202,7 +216,7 @@ Om du vill exkludera en händelse väljer du **[!UICONTROL Add exclusion]** och 
 
 Tack vare växlingsknappen Profil kan kundens artificiell intelligens (AI) exportera poängresultaten till kundprofilen i realtid. Om du inaktiverar den här växeln kan du inte lägga till modellens poängresultat i profilen. Resultat av AI-bedömning för kunder är fortfarande tillgängliga med den här funktionen inaktiverad.
 
-När du använder AI för första gången bör du inaktivera den här funktionen tills du är nöjd med modellens utdataresultat. Detta förhindrar att du överför flera poängsättningsdatauppsättningar till kundprofilen i realtid samtidigt som du finjusterar modellen.
+När du använder AI för första gången kan du inaktivera den här funktionen tills du är nöjd med modellens utdataresultat. Detta förhindrar att du överför flera poängsättningsdatauppsättningar till dina kundprofiler samtidigt som du finjusterar modellen. När du har kalibrerat modellen kan du klona den med [klonalternativ](#set-up-your-instance) från **Tjänstinstanser** sida. På så sätt kan du skapa en kopia av modellen och aktivera profilen.
 
 ![Växla profil](../images/user-guide/advanced-workflow.png)
 
