@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
+source-git-commit: 3130d9731a53c01fb7bc15265e044191ceae47f6
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1507'
 ht-degree: 0%
 
 ---
@@ -61,18 +61,6 @@ Läs mer om direktuppspelningssegmentering i [dokumentation om direktuppspelning
 Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning.
 
 Batchsegment utvärderas automatiskt var 24:e timme. Om du vill utvärdera ett batchsegment vid behov kan du använda ett segmentjobb. Läs mer om segmentjobb i [dokumentation för segmentjobb](./api/segment-jobs.md).
-
-**Stegvis segmentering (beta)**
-
-Batchsegmenten utvärderas var 24:e timme. Men för befintliga segment håller inkrementell segmentering segment uppdaterade i upp till en timme.
-
-Stegvis segmentering körs på nya data som kommer in i profilarkivet. Följande kavattyper gäller dock för inkrementell segmentering:
-
-- För nya eller nyligen ändrade segment börjar profiler med nya data kvalificeras i nästa stegvisa körning. Profiler utan ändringar kommer dock att ingå i nästa fullständiga gruppsegmenteringsjobb.
-- Segmenten med flera enheter kommer att uppdateras i stegvis segmentering. Om det finns entitetsuppdateringar kommer profiler med nya data att börja använda dem i nästa stegvisa körning. Profiler utan ändringar kommer dock att ingå i nästa fullständiga gruppsegmenteringsjobb.
-- Händelser som faller bort från ett segments tidsfönster förenas i nästa fullständiga gruppsegmenteringsjobb.
-
-Mer information om hur du utvärderar segment finns i [självstudiekurs om segmentutvärdering](./tutorials/evaluate-a-segment.md).
 
 ### Kantsegmentering
 
