@@ -4,7 +4,7 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
 workflow-type: tm+mt
 source-wordcount: '1996'
 ht-degree: 0%
@@ -21,8 +21,8 @@ Detta dokument omfattar strukturen och den avsedda användningen av de fält som
 
 Det här dokumentet kräver en fungerande förståelse av XDM och användning av scheman i [!DNL Experience Platform]. Läs följande dokumentation innan du fortsätter:
 
-* [XDM - systemöversikt](http://www.adobe.com/go/xdm-home-en)
-* [Grunderna för schemakomposition](http://www.adobe.com/go/xdm-schema-best-practices-en)
+* [XDM - systemöversikt](https://www.adobe.com/go/xdm-home-en)
+* [Grunderna för schemakomposition](https://www.adobe.com/go/xdm-schema-best-practices-en)
 
 ## Datatypstruktur {#structure}
 
@@ -255,7 +255,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 
 För att kunna använda [!UICONTROL Consents and Preferences] datatyp för att kunna importera medgivandedata från dina kunder måste du skapa en datauppsättning som baseras på ett schema som innehåller den datatypen.
 
-Se självstudiekursen om [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) för steg om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med [!UICONTROL Consents and Preferences] datatypen, se avsnittet om [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen följer du stegen för att skapa en datauppsättning med ett befintligt schema.
+Se självstudiekursen om [skapa ett schema i användargränssnittet](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) för steg om hur du tilldelar datatyper till fält. När du har skapat ett schema som innehåller ett fält med [!UICONTROL Consents and Preferences] datatypen, se avsnittet om [skapa en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen följer du stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
 >

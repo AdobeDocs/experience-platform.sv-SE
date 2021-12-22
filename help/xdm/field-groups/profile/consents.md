@@ -4,7 +4,7 @@ title: Fältgrupp för innehåll och inställningar
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
 workflow-type: tm+mt
 source-wordcount: '896'
 ht-degree: 0%
@@ -178,7 +178,7 @@ The `adID` samtycke representerar kundens samtycke för om ett annonser-ID (IDFA
 
 För att kunna använda [!UICONTROL Consents and Preferences] fältgrupp för att kunna importera medgivandedata från dina kunder, måste du skapa en datauppsättning baserad på ett schema som innehåller den fältgruppen.
 
-Se självstudiekursen om [skapa ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) för steg om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med [!UICONTROL Consents and Preferences] fältgrupp, se avsnittet om [skapa en datauppsättning](../../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen följer du stegen för att skapa en datauppsättning med ett befintligt schema.
+Se självstudiekursen om [skapa ett schema i användargränssnittet](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) för steg om hur du tilldelar fältgrupper till fält. När du har skapat ett schema som innehåller ett fält med [!UICONTROL Consents and Preferences] fältgrupp, se avsnittet om [skapa en datauppsättning](../../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen följer du stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
 >
