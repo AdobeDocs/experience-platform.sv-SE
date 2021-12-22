@@ -4,22 +4,21 @@ solution: Experience Platform
 title: Namnavstånd i Experience Data Model (XDM)
 topic-legacy: overviews
 description: Lär dig hur namnavstånd i Experience Data Model (XDM) gör att du kan utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs.
-source-git-commit: b4c4f8f7e428d27f389bff5591a03925b6afa6d8
+exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
+source-git-commit: bcffd3d38cecba38e1e57a44ce0febfd2cf0f8fb
 workflow-type: tm+mt
 source-wordcount: '627'
 ht-degree: 0%
 
 ---
 
-
 # Namnavstånd i Experience Data Model (XDM)
 
-Alla fält i XDM-scheman (Experience Data Model) har ett associerat namnutrymme. Med dessa namnutrymmen kan du utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs. Det här dokumentet innehåller en översikt över namnutrymmen i
-XDM och hur de visas i [API:t för schemaregister](../api/overview.md).
+Alla fält i XDM-scheman (Experience Data Model) har ett associerat namnutrymme. Med dessa namnutrymmen kan du utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs. Det här dokumentet innehåller en översikt över namnutrymmen i XDM och hur de visas i [API för schemaregister](../api/overview.md).
 
 Med namnmellanrum kan du definiera ett fält i ett namnutrymme så att det betyder något annat än samma fält i ett annat namnutrymme. I praktiken visar namnutrymmet för ett fält vem som skapade fältet (till exempel standard-XDM (Adobe), en leverantör eller din organisation).
 
-Ta till exempel ett XDM-schema som använder fältgruppen [[!UICONTROL Personal Contact Details]](../field-groups/profile/demographic-details.md), som har ett standardfält av typen `mobilePhone` som finns i namnutrymmet `xdm`. I samma schema kan du även skapa ett separat `mobilePhone`-fält under ett annat namnområde (ditt [klientorganisations-ID](../api/getting-started.md#know-your-tenant_id)). Båda dessa fält kan samexistera med olika underliggande betydelse eller begränsningar.
+Ta till exempel ett XDM-schema som använder [[!UICONTROL Personal Contact Details] fältgrupp](../field-groups/profile/demographic-details.md), som har en standard `mobilePhone` fält som finns i `xdm` namnutrymme. I samma schema kan du även skapa en separat `mobilePhone` fält under ett annat namnutrymme (din [klient-ID](../api/getting-started.md#know-your-tenant_id)). Båda dessa fält kan samexistera med olika underliggande betydelse eller begränsningar.
 
 ## Namnområdessyntax
 
@@ -27,11 +26,11 @@ I följande avsnitt visas hur namnutrymmen tilldelas i XDM-syntax.
 
 ### Standard XDM {#standard}
 
-Standardsyntaxen för XDM ger dig insikt i hur namnutrymmen representeras i scheman (inklusive [hur de översätts i Adobe Experience Platform](#compatibility)).
+Standardsyntaxen för XDM ger insikt i hur namnutrymmen representeras i scheman (inklusive [hur de översätts i Adobe Experience Platform](#compatibility)).
 
-Standard-XDM använder syntaxen [JSON-LD](https://json-ld.org/) för att tilldela namnutrymmen till fält. Det här namnutrymmet kommer i form av en URI (till exempel `https://ns.adobe.com/xdm` för namnutrymmet `xdm`) eller som ett kortskriftsprefix som har konfigurerats i attributet `@context` för ett schema.
+Standard-XDM använder [JSON-LD](https://json-ld.org/) syntax för att tilldela namnutrymmen till fält. Det här namnutrymmet kommer i form av en URI (som `https://ns.adobe.com/xdm` för `xdm` namnutrymme), eller som ett kortskriftsprefix som har konfigurerats i `@context` för ett schema.
 
-Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undantag för `@id` (den unika identifieraren som definieras av JSON-LD-specifikationen) börjar varje fält under `properties` med ett namnutrymme och slutar med fältnamnet. Om du använder ett kortskriftsprefix som definieras under `@context` avgränsas namnutrymmet och fältnamnet med ett kolon (`:`). Om du inte använder ett prefix avgränsas namnutrymmet och fältnamnet med ett snedstreck (`/`).
+Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undantag av `@id` (den unika identifieraren enligt JSON-LD-specifikationen), varje fält under `properties` börjar med ett namnutrymme och slutar med fältnamnet. Om du använder ett kortskriftsprefix som definieras under `@context`avgränsas namnutrymmet och fältnamnet med ett kolon (`:`). Om du inte använder ett prefix avgränsas namnutrymmet och fältnamnet med ett snedstreck (`/`).
 
 ```json
 {
@@ -77,19 +76,19 @@ Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undan
 | Egenskap | Beskrivning |
 | --- | --- |
 | `@context` | Ett objekt som definierar kortskriftsprefixen som kan användas i stället för ett fullständigt namnområdes-URI under `properties`. |
-| `@id` | En unik identifierare för posten enligt definitionen i [JSON-LD spec](https://json-ld.org/spec/latest/json-ld/#node-identifiers). |
-| `xdm:sku` | Ett exempel på ett fält där ett kortskriftsprefix används för att ange ett namnutrymme. I det här fallet är `xdm` namnutrymmet (`https://ns.adobe.com/xdm`) och `sku` fältnamnet. |
-| `https://ns.adobe.com/xdm/channels/application` | Ett exempel på ett fält som använder den fullständiga namnområdes-URI:n. I det här fallet är `https://ns.adobe.com/xdm/channels` namnutrymmet och `application` fältnamnet. |
-| `https://ns.adobe.com/vendorA/product/stockNumber` | Fält som tillhandahålls av leverantörsresurser använder sina egna unika namnutrymmen. I det här exemplet är `https://ns.adobe.com/vendorA/product` leverantörens namnutrymme och `stockNumber` fältnamnet. |
-| `tenantId:internalSku` | Fält som definieras av din organisation använder ditt unika klientorganisations-ID som namnutrymme. I det här exemplet är `tenantId` innehavarens namnutrymme (`https://ns.adobe.com/tenantId`) och `internalSku` fältnamnet. |
+| `@id` | En unik identifierare för posten som den definieras av [JSON-LD spec](https://json-ld.org/spec/latest/json-ld/#node-identifiers). |
+| `xdm:sku` | Ett exempel på ett fält där ett kortskriftsprefix används för att ange ett namnutrymme. I detta fall `xdm` är namnutrymmet (`https://ns.adobe.com/xdm`), och `sku` är fältnamnet. |
+| `https://ns.adobe.com/xdm/channels/application` | Ett exempel på ett fält som använder den fullständiga namnområdes-URI:n. I detta fall `https://ns.adobe.com/xdm/channels` är namnutrymmet, och `application` är fältnamnet. |
+| `https://ns.adobe.com/vendorA/product/stockNumber` | Fält som tillhandahålls av leverantörsresurser använder sina egna unika namnutrymmen. I det här exemplet `https://ns.adobe.com/vendorA/product` är leverantörens namnutrymme, och `stockNumber` är fältnamnet. |
+| `tenantId:internalSku` | Fält som definieras av din organisation använder ditt unika klientorganisations-ID som namnutrymme. I det här exemplet `tenantId` är innehavarens namnutrymme (`https://ns.adobe.com/tenantId`), och `internalSku` är fältnamnet. |
 
 {style=&quot;table-layout:auto&quot;}
 
 ### Kompatibilitetsläge {#compatibility}
 
-I Adobe Experience Platform representeras XDM-scheman i syntaxen [Kompatibilitetsläge](../api/appendix.md#compatibility), som inte använder JSON-LD-syntaxen för att representera namnutrymmen. I stället konverterar Platform namnutrymmet till ett överordnat fält (med början med ett understreck) och kapslar fälten under det.
+I Adobe Experience Platform representeras XDM-scheman i [Kompatibilitetsläge](../api/appendix.md#compatibility) syntax, som inte använder JSON-LD-syntax för att representera namnutrymmen. I stället konverterar Platform namnutrymmet till ett överordnat fält (med början med ett understreck) och kapslar fälten under det.
 
-Standard-XDM `repo:createdDate` konverteras till `_repo.createdDate` och visas under följande struktur i kompatibilitetsläge:
+Standard-XDM `repo:createdDate` konverteras till `_repo.createdDate` och skulle visas under följande struktur i kompatibilitetsläge:
 
 ```json
 "_repo": {
@@ -103,7 +102,7 @@ Standard-XDM `repo:createdDate` konverteras till `_repo.createdDate` och visas u
 }
 ```
 
-Fält som använder namnutrymmet `xdm` visas som rotfält under `properties` och släpper det `xdm:`-prefix som skulle visas i [XDM-standardsyntax](#standard). Till exempel visas `xdm:sku` bara som `sku` i stället.
+Fält som använder `xdm` namnutrymmet visas som rotfält under `properties` och släpp `xdm:` prefix som skulle visas i [XDM-standardsyntax](#standard). Till exempel: `xdm:sku` anges bara som `sku` i stället.
 
 Följande JSON visar hur standardexemplet på XDM-syntax översätts till kompatibilitetsläge.
 
@@ -174,4 +173,4 @@ Följande JSON visar hur standardexemplet på XDM-syntax översätts till kompat
 
 ## Nästa steg
 
-I den här guiden finns en översikt över XDM-namnutrymmen och hur de visas i JSON. Mer information om hur du konfigurerar XDM-scheman med API:t finns i [API-guiden för schemaregister](../api/overview.md).
+I den här guiden finns en översikt över XDM-namnutrymmen och hur de visas i JSON. Mer information om hur du konfigurerar XDM-scheman med API:t finns i [API-guide för schemaregister](../api/overview.md).
