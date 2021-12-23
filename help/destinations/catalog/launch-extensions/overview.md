@@ -3,9 +3,9 @@ keywords: taggtillägg;taggtillägg;startmål; plattformstaggtillägg;plattforms
 title: Taggtillägg i Adobe Experience Platform
 description: Adobe Experience Platform erbjuder nästa generation tagghanteringsfunktioner från Adobe. Med Platform får ni ett enkelt sätt att driftsätta och hantera alla de analyser, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser.
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
+source-git-commit: fe71294cb73a25c2c4708b0a6ebe04fc2b97afdf
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '482'
 ht-degree: 0%
 
 ---
@@ -21,23 +21,33 @@ En introduktion till taggar finns i resurserna nedan:
 
 ## Hitta taggtillägg i plattformsgränssnittet {#how-to-find-extensions-in-interface}
 
-Om du vill hitta tilläggen i plattformsgränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** och väljer **[!UICONTROL Extensions]** i filtret **[!UICONTROL Types]**.
+Om du vill hitta tilläggen i plattformsgränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** och markera **[!UICONTROL Extensions]** i **[!UICONTROL Types]** filter.
 
 ![Filtret Tillägg i gränssnittet](../../assets/catalog/launch-extensions/filter.png)
 
 ## Så här fungerar taggtillägg {#how-extensions-work}
 
-Tillägg vidarebefordrar råa händelsedata till flera typer av destinationer. Tänk på tillägg som en **typ av händelsespårning**-typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [tillägget för Gainsight-anpassning](../personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](../voice/confirmit-digital-feedback.md).
+A [taggtillägg](../../../tags/home.md#extensions) är ett kodpaket som förbättrar funktionerna för en webbplats eller mobilapp. Detta kan inkludera att skicka råhändelsedata till ett mål som [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md) men de kan också tjäna andra funktioner.
 
-**Profil-/** segmentexportdestinationer i Adobe Experience Platform samlar in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Exempel på sådana är [Amazon S3-molnlagringsmålet](../cloud-storage/amazon-s3.md) eller [Google Display &amp; Video 360-annonsmålet](../advertising/google-dv360.md).
+Det är viktigt att skilja mellan tillägg för tagg- och händelsevidarebefordran. De tillägg som visas i användargränssnittet för plattformsmål är *taggtillägg*. Mer information om vidarebefordran av händelser finns i översikten [skillnader mellan taggar och händelsevidarebefordran](/help/tags/ui/event-forwarding/overview.md#differences-between-event-forwarding-and-tags).
 
-![Märkordstillägg jämfört med andra mål](../../assets/common/launch-and-other-destinations.png)
+
+
+<!--
+
+Extensions forward raw event data to several types of destinations. Think of extensions as an **Event Forwarding** type of destination. This is a simpler type of integration with destination platforms, which only forwards raw event data. Examples of those are the [Gainsight personalization extension](../personalization/gainsight.md) or the [Confirmit Voice of the Customer extension](../voice/confirmit-digital-feedback.md).
+
+**Profile/Segment Export** destinations in Adobe Experience Platform capture event data, combine it with other data sources, apply segmentation, and export segments and qualified profiles to destinations. Examples of those are the [Amazon S3 cloud storage destination](../cloud-storage/amazon-s3.md) or the [Google Display & Video 360 advertising destination](../advertising/google-dv360.md).
+
+![Tag extensions compared to other destinations](../../assets/common/launch-and-other-destinations.png)
+
+-->
 
 ## Fördelar med att använda taggtillägg {#extensions-benefits}
 
 Plattformens taggfunktioner är kostnadsfria för befintliga Experience Cloud-kunder. Systemet förenklar taggdistribution på din webbplats med lättanvända tillägg som du kan installera, konfigurera, uppdatera och ta bort. Taggar gör att det inte finns så mycket plats på webbplatsen och gör att du snabbt kan läsa in sidorna.
 
-Du kan inte aktivera segment för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i [taggdokumentationen](../../../tags/ui/managing-resources/rules.md) om regler.
+Du kan inte aktivera segment för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [taggdokumentation](../../../tags/ui/managing-resources/rules.md).
 
 ## Exempel på användningsexempel för tillägg {#extensions-use-cases}
 

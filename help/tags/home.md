@@ -1,7 +1,8 @@
 ---
 title: Översikt över taggar
 description: Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
+source-git-commit: 4f31c77fd3efe06797055ca04a30ae5ff4872b4e
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 1%
@@ -12,31 +13,31 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](./term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](./term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 
-Med taggar kan alla skapa och underhålla egna integreringar, som kallas *tillägg*. Dessa tillägg är tillgängliga för [!DNL Adobe Experience Cloud]-kunder i en appbutik så att de snabbt kan installera, konfigurera och distribuera sina taggar.
+Taggar ger alla möjlighet att bygga och underhålla egna integreringar, som kallas *tillägg*. Dessa tillägg är tillgängliga för [!DNL Adobe Experience Cloud] kunderna i en appbutiksupplevelse så att de snabbt kan installera, konfigurera och driftsätta sina taggar.
 
-Taggar erbjuds [!DNL Adobe Experience Cloud]-kunder som en inkluderad funktion för att lägga till värde.
+Taggar erbjuds [!DNL Adobe Experience Cloud] kunderna som en inkluderad mervärdesskapande funktion.
 
-## Viktiga fördelar
+## Viktiga fördelar {#key-benefits}
 
 * Snabbare time to value.
 * Tillförlitliga data genom centraliserad insamling, organisering och leverans med dataelement.
 * Engagerande upplevelser genom integrering av data- och marknadsföringsteknologi med regelbyggaren.
 
-## Viktiga funktioner
+## Viktiga funktioner {#key-features}
 
-### Tillägg
+### Tillägg {#extensions}
 
 Ett tillägg är ett kodpaket (JavaScript, HTML och CSS) som utökar taggfunktionaliteten. Bygg, hantera och uppdatera integreringarna med hjälp av ett praktiskt taget självbetjäningsgränssnitt. Du kan tänka dig tillägg som appar som du använder för att utföra dina uppgifter.
 
-### Tilläggskatalog
+### Tilläggskatalog {#extension-catalog}
 
 Sök, konfigurera och driftsätt marknadsförings-/annonsverktyg som byggts och underhålls av oberoende programvaruleverantörer.
 
-### Regelverktyget
+### Regelverktyget {#rule-builder}
 
 Skapa robusta regler som kombinerar flera händelser, sekventierade på det sätt som du bestämmer med if/then-logik med villkor och undantag. Regler innehåller alternativ för:
 
@@ -49,11 +50,11 @@ Regelbyggaren innehåller felkontroll i realtid och syntaxmarkering för din anp
 
 När villkoren i reglerna är uppfyllda utförs de definierade åtgärderna i ordning.
 
-### Dataelement
+### Dataelement {#data-elements}
 
 Samla in, ordna och leverera data över webbaserad marknadsföring och annonsteknik.
 
-### Enterprise publishing
+### Enterprise publishing {#enterprise-publishing}
 
 Publiceringsprocessen gör att team kan publicera kod på sidor. Olika personer kan skapa en implementering, godkänna den och publicera den på dina sidor.
 
@@ -63,7 +64,7 @@ Publiceringsprocessen gör att team kan publicera kod på sidor. Olika personer 
 * Obegränsade utvecklingsmiljöer.
 * En avsiktlig behörighetsbaserad process för att sammanfoga bibliotek.
 
-### Öppna API:er
+### Öppna API:er {#open-apis}
 
 Automatisera implementeringar av enskilda tekniker eller en grupp av tekniker.
 
@@ -72,11 +73,11 @@ Automatisera implementeringar av enskilda tekniker eller en grupp av tekniker.
 * Integrera API:erna med era egna interna system.
 * Du kan skapa ett eget användargränssnitt om du vill.
 
-### Ljus, modulär behållartagg
+### Ljus, modulär behållartagg {#modular-tag}
 
-Innehållet i behållaren är minifierat, inklusive din egen kod. Allt är modulärt. Om du inte behöver något objekt inkluderas det inte i ditt bibliotek. Resultatet är en snabb och kompakt implementering. Se [Minification](./ui/publishing/builds.md).
+Innehållet i behållaren är minifierat, inklusive din egen kod. Allt är modulärt. Om du inte behöver något objekt inkluderas det inte i ditt bibliotek. Resultatet är en snabb och kompakt implementering. Se [Miniatyr](./ui/publishing/builds.md).
 
-## Andra högdagrar
+## Andra högdagrar {#other-highlights}
 
 Taggar har flera förbättringar jämfört med liknande system, bland annat:
 
