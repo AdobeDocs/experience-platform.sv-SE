@@ -4,9 +4,10 @@ solution: Experience Platform
 title: Fältgrupp för telekom-prenumerationsschema
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Telecom Subscription.
-source-git-commit: 19675e4042c28061a4b2ed4e68374d5e09216ba1
+exl-id: 00c20081-09d0-425c-9894-0f957558bd43
+source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '713'
 ht-degree: 1%
 
 ---
@@ -15,20 +16,20 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
 
-[!UICONTROL Telecom Subscription] är en standardgrupp för schemafält för  [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) klassen som beskriver en kunds telefonabonnemang, inklusive priser, paket och enskilda produktprenumerationer.
+[!UICONTROL Telecom Subscription] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md) som beskriver en kunds prenumerationsplan för telekom, inklusive priser, paket och enskilda produktprenumerationer.
 
-Fältgruppen innehåller ett enskilt fält av objekttyp, `telecomSubscription`, vars egenskaper beskrivs nedan.
+Fältgruppen innehåller ett enda fält av objekttyp, `telecomSubscription`, vars egenskaper beskrivs nedan.
 
 ![Telecom Subscription structure](../../images/field-groups/telecom-subscription/structure.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `internetSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för Internet, t.ex. databegränsning, anslutningstyp och hastighetsinformation. Mer information finns i [avsnittet nedan](#internetSubscription). |
-| `landlineSubscription` | Array med objekt | Beskriver information om prenumeration på fast linje, inklusive valda funktioner, minuter och uppringningsplaner. Mer information finns i [avsnittet nedan](#landlineSubscription). |
-| `mediaSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för media, inklusive antalet kanaler och inkluderade direktuppspelningstjänster. Mer information finns i [avsnittet nedan](#mediaSubscription). |
-| `mobileSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för mobila enheter, inklusive antal rader, datahastigheter, kostnad och mycket mer. Mer information finns i [avsnittet nedan](#mobileSubscription). |
+| `internetSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för Internet, t.ex. databegränsning, anslutningstyp och hastighetsinformation. Se [avsnitt nedan](#internetSubscription) för mer information. |
+| `landlineSubscription` | Array med objekt | Beskriver information om prenumeration på fast linje, inklusive valda funktioner, minuter och uppringningsplaner. Se [avsnitt nedan](#landlineSubscription) för mer information. |
+| `mediaSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för media, inklusive antalet kanaler och inkluderade direktuppspelningstjänster. Se [avsnitt nedan](#mediaSubscription) för mer information. |
+| `mobileSubscription` | Array med objekt | Beskriver information om prenumerationsplaner för mobila enheter, inklusive antal rader, datahastigheter, kostnad och mycket mer. Se [avsnitt nedan](#mobileSubscription) för mer information. |
 | `primarySubscriber` | [[!UICONTROL Person]](../../data-types/person.md) | Beskriver prenumerationens ägare. |
 | `bundleName` | Sträng | Hämtar namnet på alla typer av prenumerationspaket där kunden är registrerad, till exempel `Internet + Media`. |
 | `primaryPartyID` | Sträng | En identifierare för den primära person som ansvarar för prenumerationen, som vanligtvis kan vara enhetens telefonnummer. |
@@ -42,7 +43,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `internetSubscription` {#internetSubscription}
 
-`internetSubscription` är en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`internetSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![internetSubscription](../../images/field-groups/telecom-subscription/internetSubscription.png)
 
@@ -59,7 +60,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `landlineSubscription` {#landlineSubscription}
 
-`landlineSubscription` är en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`landlineSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![landlineSubscription](../../images/field-groups/telecom-subscription/landlineSubscription.png)
 
@@ -70,7 +71,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | `callBlocking` | Boolean | Anger om det finns samtalsblockering i fasta prenumerationer. |
 | `callForwarding` | Boolean | Anger om onlineprenumerationen innehåller vidarekoppling av samtal. |
 | `callWaiting` | Boolean | Anger om telefonabonnemangsfunktionerna inkluderar telefonsamtal som väntar. |
-| `callerID` | Boolean | Anger om det finns anrops-ID i prenumerationsfunktionen för fasta nätverk. |
+| `callerID` | Boolean | Anger om prenumerationsfunktionerna för fasta nätverk innehåller anroparens ID. |
 | `internationalCalling` | Boolean | Anger om landnätsprenumerationen innehåller internationella telefonsamtal. |
 | `minutes` | Heltal | Antalet månatliga minuter som är tillgängliga i prenumerationen. |
 | `threeWayCalling` | Boolean | Anger om landnätsprenumerationen innehåller trevägssamtal. |
@@ -82,7 +83,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `mediaSubscription` {#mediaSubscription}
 
-`mediaSubscription` är en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`mediaSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![mediaSubscription](../../images/field-groups/telecom-subscription/mediaSubscription.png)
 
@@ -96,7 +97,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## `mobileSubscription` {#mobileSubscription}
 
-`mobileSubscription` är en array med objekt. Strukturen för varje objekt beskrivs nedan.
+`mobileSubscription` anges som en array med objekt. Strukturen för varje objekt beskrivs nedan.
 
 ![mobileSubscription](../../images/field-groups/telecom-subscription/mobileSubscription.png)
 
@@ -109,4 +110,3 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | `portedNumber` | Boolean | Anger om kunden portar sitt nummer från en annan leverantör. |
 
 {style=&quot;table-layout:auto&quot;}
-

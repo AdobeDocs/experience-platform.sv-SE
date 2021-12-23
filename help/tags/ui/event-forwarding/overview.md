@@ -3,7 +3,7 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 82ce288d55e57f05910fd8290c38f44b1846f48e
+source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
 workflow-type: tm+mt
 source-wordcount: '946'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web S
 
 * Öka transparensen och kontrollera vilka data som skickas var i alla egenskaper.
 
-## Skillnader mellan händelsevidarebefordran och taggar
+## Skillnader mellan händelsevidarebefordran och taggar {#differences-from-tags}
 
 Vid vidarebefordran av händelser används i stort sett samma koncept som taggar, till exempel [regler](../managing-resources/rules.md), [dataelement](../managing-resources/data-elements.md)och [tillägg](../managing-resources/extensions/overview.md). Den största skillnaden mellan de två kan sammanfattas enligt följande:
 
@@ -47,7 +47,7 @@ Vid vidarebefordran av händelser används i stort sett samma koncept som taggar
 
 Medan taggar samlar in händelsedata direkt från din webbplats eller från ett mobilprogram som använder plattformens webb- och Mobile SDK:er, kräver händelsevidarebefordran att händelsedata redan skickas via Platform Edge Network för att kunna vidarebefordra dem till destinationer. Med andra ord måste du implementera Platform Web eller Mobile SDK på din digitala egendom (antingen via taggar eller med raw-kod) för att kunna använda händelsevidarebefordran.
 
-### Egenskaper
+### Egenskaper {#properties}
 
 Händelsevidarebefordran upprätthåller ett eget lager med egenskaper som är åtskilda från taggar, som du kan visa i användargränssnittet för datainsamling genom att välja **[!UICONTROL Event Forwarding]** i den vänstra navigeringen.
 
@@ -61,13 +61,13 @@ Vidarebefordran av händelser har en egen katalog med kompatibla tillägg, till 
 
 ![Tillägg för vidarebefordran av händelser i användargränssnittet för datainsamling](../../images/ui/event-forwarding/overview/extensions.png)
 
-### Dataelement
+### Dataelement {#data-elements}
 
 De typer av dataelement som är tillgängliga vid händelsevidarebefordran är begränsade till katalogen med kompatibla [tillägg](#extensions) som ger dem.
 
 Även om dataelementen själva skapas och konfigureras på samma sätt i händelsevidarebefordran som de är för taggar, finns det vissa viktiga syntaxskillnader när det gäller hur de refererar till data från Platform Edge Network.
 
-#### Referera till data från Platform Edge Network
+#### Referera till data från Platform Edge Network {#edge}
 
 Om du vill referera till data från Platform Edge Network måste du skapa ett dataelement som ger en giltig sökväg till dessa data. När du skapar dataelementet i användargränssnittet väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Path]** för typen.
 
@@ -75,23 +75,23 @@ The **[!UICONTROL Path]** värdet för dataelementet måste följa mönstret `ar
 
 ![Exempel på ett dataelement av typen path för händelsevidarebefordran](../../images/ui/event-forwarding/overview/data-reference.png)
 
-### Regler
+### Regler {#rules}
 
 Att skapa regler i egenskaper för händelsevidarebefordran fungerar på ungefär samma sätt som taggar, med den största skillnaden är att du inte kan välja händelser som regelkomponenter. I stället bearbetar en regel för vidarebefordran av händelser alla händelser som tas emot från [datastream](../../../edge/fundamentals/datastreams.md) och vidarebefordrar dessa händelser till destinationer om vissa villkor är uppfyllda.
 
 ![Regler för vidarebefordran av händelser i användargränssnittet för datainsamling](../../images/ui/event-forwarding/overview/rules.png)
 
-#### Tokenisering av dataelement
+#### Tokenisering av dataelement {#tokenization}
 
 I taggregler tokeniseras dataelement med en `%` i början och slutet av dataelementnamnet (till exempel: `%viewportHeight%`). I händelse av vidarebefordringsregler tokeniseras dataelement istället med `{{` i början och `}}` i slutet av dataelementnamnet (till exempel: `{{viewportHeight}}`).
 
 ![Exempel på ett dataelement av typen path för händelsevidarebefordran](../../images/ui/event-forwarding/overview/tokenization.png)
 
-#### Regelåtgärdssekvens
+#### Regelåtgärdssekvens {#action-sequencing}
 
 The [!UICONTROL Actions] -avsnittet i en regel för vidarebefordran av händelser körs alltid sekventiellt. Kontrollera att åtgärdsordningen är korrekt när du sparar en regel. Den här körningssekvensen kan inte köras asynkront på samma sätt som med taggar.
 
-## Hemligheter
+## Hemligheter {#secrets}
 
 Med händelsevidarebefordran kan du skapa, hantera och lagra hemligheter som kan användas för att autentisera till de servrar som du skickar data till. Se guiden [hemligheter](./secrets.md) på olika typer av tillgängliga hemliga typer och hur de implementeras i användargränssnittet.
 
