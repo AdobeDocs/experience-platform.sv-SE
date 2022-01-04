@@ -5,8 +5,7 @@ title: Adobe-definierade SQL-funktioner i frågetjänsten
 topic-legacy: functions
 description: Det här dokumentet innehåller information om de Adobe-definierade funktioner som är tillgängliga i Adobe Experience Platform Query Service.
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 63b6236a7e3689afb2ebaa763349b3102697424e
 workflow-type: tm+mt
 source-wordcount: '2913'
 ht-degree: 1%
@@ -15,17 +14,17 @@ ht-degree: 1%
 
 # Adobe-definierade SQL-funktioner i frågetjänsten
 
-Funktioner som definieras av Adobe, och som kallas ADF, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event]-data. Dessa innehåller funktioner för [Sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
+Adobe-definierade funktioner, nedan kallade ADF:er, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event] data. De innehåller funktioner för [Yrkesställning](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribut](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
 
 Det här dokumentet innehåller information om funktioner som definieras av Adobe i [!DNL Query Service].
 
 ## Fönsterfunktioner {#window-functions}
 
-Huvuddelen av affärslogiken kräver att man samlar kontaktytorna för en kund och beställer dem med tiden. Det här stödet tillhandahålls av [!DNL Spark] SQL i form av fönsterfunktioner. Fönsterfunktioner är en del av standard-SQL och stöds av många andra SQL-motorer.
+Huvuddelen av affärslogiken kräver att man samlar kontaktytorna för en kund och beställer dem med tiden. Den här supporten tillhandahålls av [!DNL Spark] SQL i form av fönsterfunktioner. Fönsterfunktioner är en del av standard-SQL och stöds av många andra SQL-motorer.
 
-En fönsterfunktion uppdaterar en aggregering och returnerar ett enda objekt för varje rad i den ordnade delmängden. Den mest grundläggande aggregeringsfunktionen är `SUM()`. `SUM()` tar raderna och ger en summa. Om du i stället använder `SUM()` på ett fönster och förvandlar det till en fönsterfunktion, får du en kumulativ summa för varje rad.
+En fönsterfunktion uppdaterar en aggregering och returnerar ett enda objekt för varje rad i den ordnade delmängden. Den mest grundläggande aggregeringsfunktionen är `SUM()`. `SUM()` tar raderna och ger en summa. Om du i stället använder `SUM()` till ett fönster, som gör det till en fönsterfunktion, får du en kumulativ summa för varje rad.
 
-Huvuddelen av [!DNL Spark] SQL-hjälpen är fönsterfunktioner som uppdaterar varje rad i fönstret, med radstatus tillagd.
+Huvuddelen av [!DNL Spark] SQL-hjälpredor är fönsterfunktioner som uppdaterar varje rad i fönstret, med radens status tillagd.
 
 **Frågesyntax**
 
@@ -41,11 +40,11 @@ OVER ({PARTITION} {ORDER} {FRAME})
 
 ## Yrkesställning
 
-När du arbetar med [!DNL Experience Event]-data som kommer från en webbplats, en mobilapp, ett interaktivt röstsvarssystem eller någon annan kundinteraktionskanal, är det bra om händelser kan grupperas runt en relaterad aktivitetsperiod. Vanligtvis har du en specifik avsikt att driva din aktivitet, som att söka efter en produkt, betala en räkning, kontrollera kontosaldot, fylla i ett program och så vidare.
+När du arbetar med [!DNL Experience Event] data som kommer från en webbplats, en mobiltillämpning, ett interaktivt röstsvarssystem eller någon annan kundinteraktionskanal, hjälper till om händelser kan grupperas runt en relaterad aktivitetsperiod. Vanligtvis har du en specifik avsikt att driva din aktivitet, som att söka efter en produkt, betala en räkning, kontrollera kontosaldot, fylla i ett program och så vidare.
 
 Denna gruppering, eller sammanställning av data, hjälper till att associera händelserna för att hitta mer kontext om kundupplevelsen.
 
-Mer information om sessioner i Adobe Analytics finns i dokumentationen om [kontextmedvetna sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html.
+Mer information om sessioner i Adobe Analytics finns i dokumentationen om [sammanhangsberoende sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
 
 **Frågesyntax**
 
@@ -58,7 +57,7 @@ SESS_TIMEOUT({TIMESTAMP}, {EXPIRATION_IN_SECONDS}) OVER ({PARTITION} {ORDER} {FR
 | `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
 | `{EXPIRATION_IN_SECONDS}` | Antalet sekunder som behövs mellan händelser för att kvalificera slutet av den aktuella sessionen och början av en ny session. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -94,7 +93,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen `session` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `session` kolumn. The `session` kolumnen består av följande komponenter:
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -122,7 +121,7 @@ SESS_START_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 | `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
 | `{TEST_EXPRESSION}` | Ett uttryck som du vill kontrollera datafälten mot. Exempel, `application.launches > 0`. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -159,7 +158,7 @@ SELECT
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen `session` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `session` kolumn. The `session` kolumnen består av följande komponenter:
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -187,7 +186,7 @@ SESS_END_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 | `{TIMESTAMP}` | Tidsstämpelfältet som finns i datauppsättningen. |
 | `{TEST_EXPRESSION}` | Ett uttryck som du vill kontrollera datafälten mot. Exempel, `application.launches > 0`. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -224,7 +223,7 @@ SELECT
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen `session` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `session` kolumn. The `session` kolumnen består av följande komponenter:
 
 ```sql
 ({TIMESTAMP_DIFF}, {NUM}, {IS_NEW}, {DEPTH})
@@ -241,13 +240,13 @@ För den angivna exempelfrågan anges resultaten i kolumnen `session`. Kolumnen 
 
 Att koppla kundåtgärder till framgång är en viktig del av förståelsen av de faktorer som påverkar kundupplevelserna. Följande ADF:er har stöd för första-touch-attribuering och sista-touch-attribuering med olika förfalloinställningar.
 
-Mer information om attribuering i Adobe Analytics finns i [Attribution IQ overview](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html) i guiden för panelen [!DNL Analytics] Attribution.
+Mer information om attribuering i Adobe Analytics finns i [Översikt över Attribution IQ](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html) i [!DNL Analytics] Attribution panel guide.
 
 ### Första kontakten-attribuering
 
-Den här frågan returnerar det första beröringsattributvärdet och information för en enskild kanal i måldatauppsättningen [!DNL Experience Event]. Frågan returnerar ett `struct`-objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan returnerar det första beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning. Frågan returnerar en `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder. I exemplet som visas nedan tilldelas den initiala spårningskoden (`em:946426`) i [!DNL Experience Event]-data 100 % (`1.0`) ansvar för kundens åtgärder, eftersom det var den första interaktionen.
+Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder. I exemplet nedan visas den inledande spårningskoden (`em:946426`) i [!DNL Experience Event] data tillskrivs 100 % (`1.0`) ansvar för kundens åtgärder, eftersom det var den första interaktionen.
 
 **Frågesyntax**
 
@@ -261,7 +260,7 @@ ATTRIBUTION_FIRST_TOUCH({TIMESTAMP}, {CHANNEL_NAME}, {CHANNEL_VALUE}) OVER ({PAR
 | `{CHANNEL_NAME}` | Etiketten för det returnerade objektet. |
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan. |
 
-En förklaring av parametrarna i `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -295,7 +294,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `first_touch`. Kolumnen `first_touch` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `first_touch` kolumn. The `first_touch` kolumnen består av följande komponenter:
 
 ```sql
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -303,16 +302,16 @@ För den angivna exempelfrågan anges resultaten i kolumnen `first_touch`. Kolum
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{NAME}` | `{CHANNEL_NAME}`, som angavs som etikett i ADF. |
-| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den första beröringen i [!DNL Experience Event] |
-| `{TIMESTAMP}` | Tidsstämpeln för den [!DNL Experience Event] där den första beröringen inträffade. |
+| `{NAME}` | The `{CHANNEL_NAME}`, som har angetts som en etikett i ADF. |
+| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den första kontakten i [!DNL Experience Event] |
+| `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där den första beröringen inträffade. |
 | `{FRACTION}` | Den första pektens attribuering, uttryckt i decimaltal. |
 
 ### Sista-touch-attribuering
 
-Den här frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL Experience Event]. Frågan returnerar ett `struct`-objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i målet [!DNL Experience Event] datauppsättning. Frågan returnerar en `struct` objekt med det sista beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se den slutliga interaktionen i en serie kundåtgärder. I exemplet nedan är spårningskoden i det returnerade objektet den sista interaktionen i varje [!DNL Experience Event]-post. Varje kod tilldelas 100 % (`1.0`) ansvar för kundens åtgärder, eftersom det var den senaste interaktionen.
+Den här frågan är användbar om du vill se den slutliga interaktionen i en serie kundåtgärder. I exemplet nedan är spårningskoden i det returnerade objektet den sista interaktionen i varje [!DNL Experience Event] post. Varje kod tilldelas 100 % (`1.0`) ansvar för kundens åtgärder, eftersom det var den sista interaktionen.
 
 **Frågesyntax**
 
@@ -326,7 +325,7 @@ ATTRIBUTION_LAST_TOUCH({TIMESTAMP}, {CHANNEL_NAME}, {CHANNEL_VALUE}) OVER ({PART
 | `{CHANNEL_NAME}` | Det returnerade objektets etikett. |
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan. |
 
-En förklaring av parametrarna i `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -359,7 +358,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `last_touch`. Kolumnen `last_touch` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `last_touch` kolumn. The `last_touch` kolumnen består av följande komponenter:
 
 ```sql
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -367,16 +366,16 @@ För den angivna exempelfrågan anges resultaten i kolumnen `last_touch`. Kolumn
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- |
-| `{NAME}` | `{CHANNEL_NAME}`, som angavs som etikett i ADF. |
-| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista beröringen i [!DNL Experience Event] |
-| `{TIMESTAMP}` | Tidsstämpeln för den [!DNL Experience Event] där `channelValue` användes. |
+| `{NAME}` | The `{CHANNEL_NAME}`, som har angetts som en etikett i ADF. |
+| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista kontakten i [!DNL Experience Event] |
+| `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där `channelValue` användes. |
 | `{FRACTION}` | Den sista pektens attribuering, uttryckt i decimaltal. |
 
 ### Första beröringen-attribuering med förfallovillkor
 
-Den här frågan returnerar det första beröringsattribueringsvärdet och information för en enskild kanal i måldatauppsättningen [!DNL Experience Event], som går ut efter eller före ett villkor. Frågan returnerar ett `struct`-objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan returnerar det första beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning som slutar gälla efter eller före ett villkor. Frågan returnerar en `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder i en del av [!DNL Experience Event]-datauppsättningen som bestäms av ett villkor som du väljer. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den inledande spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
+Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder inom en del av [!DNL Experience Event] datauppsättningen bestäms av ett villkor som du väljer. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den inledande spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
 
 **Frågesyntax**
 
@@ -392,9 +391,9 @@ ATTRIBUTION_FIRST_TOUCH_EXP_IF(
 | `{CHANNEL_NAME}` | Etiketten för det returnerade objektet. |
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan. |
 | `{EXP_CONDITION}` | Villkoret som bestämmer kanalens slutpunkt. |
-| `{EXP_BEFORE}` | Ett booleskt värde som anger om kanalen går ut före eller efter det angivna villkoret `{EXP_CONDITION}` är uppfyllt. Detta är i första hand aktiverat för en sessions förfallovillkor, för att säkerställa att den första beröringen inte väljs från en tidigare session. Som standard är det här värdet `false`. |
+| `{EXP_BEFORE}` | Ett booleskt värde som anger om kanalen går ut före eller efter det angivna villkoret, `{EXP_CONDITION}`, är uppfyllt. Detta är i första hand aktiverat för en sessions förfallovillkor, för att säkerställa att den första beröringen inte väljs från en tidigare session. Som standard är det här värdet inställt på `false`. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -427,7 +426,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `first_touch`. Kolumnen `first_touch` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `first_touch` kolumn. The `first_touch` kolumnen består av följande komponenter:
 
 ```sql
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -435,16 +434,16 @@ För den angivna exempelfrågan anges resultaten i kolumnen `first_touch`. Kolum
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- |
-| `{NAME}` | `{CHANNEL_NAME}`, som angavs som etikett i ADF. |
-| `{VALUE}` | Värdet från `CHANNEL_VALUE}` som är den första beröringen i [!DNL Experience Event], före `{EXP_CONDITION}`. |
-| `{TIMESTAMP}` | Tidsstämpeln för den [!DNL Experience Event] där den första beröringen inträffade. |
+| `{NAME}` | The `{CHANNEL_NAME}`, som har angetts som en etikett i ADF. |
+| `{VALUE}` | Värdet från `CHANNEL_VALUE}` som är den första kontakten i [!DNL Experience Event], före `{EXP_CONDITION}`. |
+| `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där den första beröringen inträffade. |
 | `{FRACTION}` | Den första pektens attribuering, uttryckt i decimaltal. |
 
 ### Första beröringen-attribuering med tidsgräns för förfallodatum
 
-Den här frågan returnerar det första beröringsattributvärdet och information för en enskild kanal i måldatauppsättningen [!DNL Experience Event] för en angiven tidsperiod. Frågan returnerar ett `struct`-objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan returnerar det första beröringsattributvärdet och information för en enskild kanal i målet [!DNL Experience Event] datauppsättning för en angiven tidsperiod. Frågan returnerar en `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se vilken interaktion, inom ett valt tidsintervall, som ledde till en kundåtgärd. I exemplet nedan är den första beröringen som returneras för varje kundåtgärd den tidigaste interaktionen inom de föregående sju dagarna (`expTimeout = 86400 * 7`).
+Den här frågan är användbar om du vill se vilken interaktion, inom ett valt tidsintervall, som ledde till en kundåtgärd. I exemplet nedan är den första tryckningen som returneras för varje kundåtgärd den tidigaste interaktionen inom de föregående sju dagarna (`expTimeout = 86400 * 7`).
 
 **Specifikation**
 
@@ -461,7 +460,7 @@ ATTRIBUTION_FIRST_TOUCH_EXP_TIMEOUT(
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan. |
 | `{EXP_TIMEOUT}` | Tidsfönstret före kanalhändelsen, i sekunder, som frågan söker efter en första beröringshändelse. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -494,7 +493,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `first_touch`. Kolumnen `first_touch` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `first_touch` kolumn. The `first_touch` kolumnen består av följande komponenter:
 
 ```sql
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -502,16 +501,16 @@ För den angivna exempelfrågan anges resultaten i kolumnen `first_touch`. Kolum
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- |
-| `{NAME}` | `{CHANNEL_NAME}`, som angavs som etikett i ADF. |
-| `{VALUE}` | Värdet från `CHANNEL_VALUE}` som är den första beröringen inom det angivna `{EXP_TIMEOUT}`-intervallet. |
-| `{TIMESTAMP}` | Tidsstämpeln för den [!DNL Experience Event] där den första beröringen inträffade. |
+| `{NAME}` | The `{CHANNEL_NAME}`, som har angetts som en etikett i ADF. |
+| `{VALUE}` | Värdet från `CHANNEL_VALUE}` som är den första beröringen inom det angivna `{EXP_TIMEOUT}` intervall. |
+| `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där den första beröringen inträffade. |
 | `{FRACTION}` | Den första pektens attribuering, uttryckt i decimaltal. |
 
 ### Senaste-beröring-attribuering med förfallovillkor
 
-Den här frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL Experience Event], som förfaller efter eller före ett villkor. Frågan returnerar ett `struct`-objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i målet [!DNL Experience Event] datauppsättning som slutar gälla efter eller före ett villkor. Frågan returnerar en `struct` objekt med det sista beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se den senaste interaktionen i en serie kundåtgärder i en del av [!DNL Experience Event]-datauppsättningen som bestäms av ett villkor som du väljer. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den sista spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
+Den här frågan är användbar om du vill se den senaste interaktionen i en serie kundåtgärder i en del av [!DNL Experience Event] datauppsättningen bestäms av ett villkor som du väljer. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den sista spårningskoden varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
 
 **Frågesyntax**
 
@@ -527,7 +526,7 @@ ATTRIBUTION_LAST_TOUCH_EXP_IF(
 | `{CHANNEL_NAME}` | Etiketten för det returnerade objektet. |
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan. |
 | `{EXP_CONDITION}` | Villkoret som bestämmer kanalens slutpunkt. |
-| `{EXP_BEFORE}` | Ett booleskt värde som anger om kanalen går ut före eller efter det angivna villkoret `{EXP_CONDITION}` är uppfyllt. Detta är i första hand aktiverat för en sessions förfallovillkor, för att säkerställa att den första beröringen inte väljs från en tidigare session. Som standard är det här värdet `false`. |
+| `{EXP_BEFORE}` | Ett booleskt värde som anger om kanalen går ut före eller efter det angivna villkoret, `{EXP_CONDITION}`, är uppfyllt. Detta är i första hand aktiverat för en sessions förfallovillkor, för att säkerställa att den första beröringen inte väljs från en tidigare session. Som standard är det här värdet inställt på `false`. |
 
 **Exempelfråga**
 
@@ -560,7 +559,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `last_touch`. Kolumnen `last_touch` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `last_touch` kolumn. The `last_touch` kolumnen består av följande komponenter:
 
 ```sql
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -568,16 +567,16 @@ För den angivna exempelfrågan anges resultaten i kolumnen `last_touch`. Kolumn
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- |
-| `{NAME}` | `{CHANNEL_NAME}`, som angavs som etikett i ADF. |
-| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista beröringen i [!DNL Experience Event], före `{EXP_CONDITION}`. |
-| `{TIMESTAMP}` | Tidsstämpeln för den [!DNL Experience Event] där den senaste beröringen inträffade. |
+| `{NAME}` | The `{CHANNEL_NAME}`, som har angetts som en etikett i ADF. |
+| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista kontakten i [!DNL Experience Event], före `{EXP_CONDITION}`. |
+| `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där den senaste beröringen inträffade. |
 | `{FRACTION}` | Den sista pektens attribuering, uttryckt i decimaltal. |
 
 ### Senaste beröringsattribuering med tidsgräns för förfallodatum
 
-Den här frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL Experience Event] för en angiven tidsperiod. Frågan returnerar ett `struct`-objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Den här frågan returnerar det sista beröringsattributvärdet och detaljer för en enskild kanal i målet [!DNL Experience Event] datauppsättning för en angiven tidsperiod. Frågan returnerar en `struct` objekt med det sista beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se den senaste interaktionen inom ett valt tidsintervall. I exemplet nedan är den sista beröringen som returneras för varje kundåtgärd den slutliga interaktionen inom de följande sju dagarna (`expTimeout = 86400 * 7`).
+Den här frågan är användbar om du vill se den senaste interaktionen inom ett valt tidsintervall. I exemplet nedan är den sista tryckningen som returneras för varje kundåtgärd den slutliga interaktionen inom de följande sju dagarna (`expTimeout = 86400 * 7`).
 
 **Frågesyntax**
 
@@ -594,7 +593,7 @@ ATTRIBUTION_LAST_TOUCH_EXP_TIMEOUT(
 | `{CHANNEL_VALUE}` | Kolumnen eller fältet som är målkanalen för frågan |
 | `{EXP_TIMEOUT}` | Tidsfönstret efter kanalhändelsen (i sekunder) som frågan söker efter en sista beröringshändelse. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -627,7 +626,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `last_touch`. Kolumnen `last_touch` består av följande komponenter:
+För den givna exempelfrågan anges resultaten i `last_touch` kolumn. The `last_touch` kolumnen består av följande komponenter:
 
 ```sql
 ({NAME}, {VALUE}, {TIMESTAMP}, {FRACTION})
@@ -635,9 +634,9 @@ För den angivna exempelfrågan anges resultaten i kolumnen `last_touch`. Kolumn
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- |
-| `{NAME}` | `{CHANNEL_NAME}`, som anges som en etikett i ADF. |
-| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista beröringen inom det angivna `{EXP_TIMEOUT}`-intervallet |
-| `{TIMESTAMP}` | Tidsstämpeln för den [!DNL Experience Event] där den senaste beröringen inträffade |
+| `{NAME}` | The `{CHANNEL_NAME}`, anges som en etikett i ADF. |
+| `{VALUE}` | Värdet från `{CHANNEL_VALUE}` som är den sista beröringen inom det angivna `{EXP_TIMEOUT}` intervall |
+| `{TIMESTAMP}` | Tidsstämpeln för [!DNL Experience Event] där den senaste beröringen inträffade |
 | `{FRACTION}` | Den sista pektens attribuering, uttryckt i decimaltal. |
 
 ## Sökvägsanalys
@@ -648,7 +647,7 @@ Följande ADF:er har stöd för att skapa sökningsvyer från sina tidigare och 
 
 ### Föregående sida
 
-Avgör det föregående värdet för ett visst fält ett definierat antal steg bort i fönstret. Observera i exemplet att funktionen `WINDOW` är konfigurerad med bildrutan `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` som ställer in ADF så att den tittar på den aktuella raden och alla efterföljande rader.
+Avgör det föregående värdet för ett visst fält ett definierat antal steg bort i fönstret. Observera i exemplet att `WINDOW` -funktionen är konfigurerad med en bildruta på `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` ange att ADF ska granska den aktuella raden och alla efterföljande rader.
 
 **Frågesyntax**
 
@@ -660,9 +659,9 @@ PREVIOUS({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 | --------- | ----------- |
 | `{KEY}` | Kolumnen eller fältet från händelsen. |
 | `{SHIFT}` | (Valfritt) Antalet händelser utanför den aktuella händelsen. Som standard är värdet 1. |
-| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om null `{KEY}`-värden ska ignoreras. Som standard är värdet `false`. |
+| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om null `{KEY}` värden ska ignoreras. Som standard är värdet `false`. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -695,11 +694,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `previous_page`. Värdet i kolumnen `previous_page` baseras på `{KEY}` som används i ADF.
+För den givna exempelfrågan anges resultaten i `previous_page` kolumn. Värdet i `previous_page` kolumnen baseras på `{KEY}` används i ADF.
 
 ### Nästa sida
 
-Bestämmer nästa värde för ett visst fält med ett definierat antal steg bort i fönstret. Observera i exemplet att funktionen `WINDOW` är konfigurerad med bildrutan `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` som ställer in ADF så att den tittar på den aktuella raden och alla efterföljande rader.
+Bestämmer nästa värde för ett visst fält med ett definierat antal steg bort i fönstret. Observera i exemplet att `WINDOW` -funktionen är konfigurerad med en bildruta på `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` ange att ADF ska granska den aktuella raden och alla efterföljande rader.
 
 **Frågesyntax**
 
@@ -711,9 +710,9 @@ NEXT({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 | --------- | ----------- |
 | `{KEY}` | Kolumnen eller fältet från händelsen. |
 | `{SHIFT}` | (Valfritt) Antalet händelser utanför den aktuella händelsen. Som standard är värdet 1. |
-| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om null `{KEY}`-värden ska ignoreras. Som standard är värdet `false`. |
+| `{IGNORE_NULLS}` | (Valfritt) Ett booleskt värde som anger om null `{KEY}` värden ska ignoreras. Som standard är värdet `false`. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -747,7 +746,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `previous_page`. Värdet i kolumnen `previous_page` baseras på `{KEY}` som används i ADF.
+För den givna exempelfrågan anges resultaten i `previous_page` kolumn. Värdet i `previous_page` kolumnen baseras på `{KEY}` används i ADF.
 
 ## Tid mellan
 
@@ -771,7 +770,7 @@ TIME_BETWEEN_PREVIOUS_MATCH(
 | `{EVENT_DEFINITION}` | Uttrycket som kvalificerar föregående händelse. |
 | `{TIME_UNIT}` | Utdataenheten. Möjligt värde är dagar, timmar, minuter och sekunder. Som standard är värdet sekunder. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -815,7 +814,7 @@ LIMIT 10
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `average_minutes_since_registration`. Värdet i kolumnen `average_minutes_since_registration` är skillnaden i tid mellan aktuella och tidigare händelser. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
+För den givna exempelfrågan anges resultaten i `average_minutes_since_registration` kolumn. Värdet i `average_minutes_since_registration` kolumn är skillnaden i tid mellan aktuella och föregående händelser. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
 
 ### Tid mellan nästa matchning
 
@@ -833,7 +832,7 @@ TIME_BETWEEN_NEXT_MATCH({TIMESTAMP}, {EVENT_DEFINITION}, {TIME_UNIT}) OVER ({PAR
 | `{EVENT_DEFINITION}` | Uttrycket som kvalificerar nästa händelse. |
 | `{TIME_UNIT}` | (Valfritt) Utdataenheten. Möjligt värde är dagar, timmar, minuter och sekunder. Som standard är värdet sekunder. |
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](#window-functions).
+En förklaring av parametrarna i `OVER()` finns i [fönsterfunktionsavsnitt](#window-functions).
 
 **Exempelfråga**
 
@@ -877,11 +876,11 @@ LIMIT 10
 (10 rows)
 ```
 
-För den angivna exempelfrågan anges resultaten i kolumnen `average_minutes_until_order_confirmation`. Värdet i kolumnen `average_minutes_until_order_confirmation` är skillnaden i tid mellan den aktuella och nästa händelsen. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
+För den givna exempelfrågan anges resultaten i `average_minutes_until_order_confirmation` kolumn. Värdet i `average_minutes_until_order_confirmation` kolumn är skillnaden i tid mellan den aktuella och nästa händelsen. Tidsenheten definierades tidigare i `{TIME_UNIT}`.
 
 ## Nästa steg
 
-Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL Experience Event]-datauppsättningar med [!DNL Query Service]. Mer information om hur du skapar frågor i [!DNL Query Service] finns i dokumentationen om [hur du skapar frågor](../best-practices/writing-queries.md).
+Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL Experience Event] datauppsättningar med [!DNL Query Service]. Mer information om redigeringsfrågor finns i [!DNL Query Service], se dokumentationen om [skapa frågor](../best-practices/writing-queries.md).
 
 ## Ytterligare resurser
 
