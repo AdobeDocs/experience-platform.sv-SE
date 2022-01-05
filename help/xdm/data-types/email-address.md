@@ -5,27 +5,27 @@ title: Datatyp för e-postadress
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för e-postadress.
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: fe6abe468025ab3373f802954aedceeb1af625fe
 workflow-type: tm+mt
-source-wordcount: '188'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL Email address] datatyp
 
-[!UICONTROL Email address] är en standard-XDM-datatyp som beskriver informationen för en e-postadress.
+[!UICONTROL Email address] är en XDM-datatyp (Experience Data Model) som beskriver informationen för en e-postadress.
 
 <img src="../images/data-types/email-address.png" width="450" /><br />
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `address` | Den tekniska adressen för e-postmeddelandet enligt den vanliga definitionen i RFC2822 och efterföljande standarder (till exempel `name@domain.com`). |
-| `label` | Ytterligare visningsinformation som kan vara tillgänglig. Om ett e-postmeddelande till exempel har en Microsoft Outlook-adress som är `John Smith smithjr@company.uk`, placeras `John Smith` i det här fältet. |
-| `primary` | Anger om det här är personens primära e-postadress. En profil kan bara ha en `primary`-e-postadress vid en given tidpunkt. |
+| `address` | Den tekniska adressen för e-postmeddelandet enligt den vanliga definitionen i RFC2822 och efterföljande standarder (till exempel `name@domain.com`).<br><br>I XDM måste e-postadresser innehålla en giltig toppnivådomän för att kunna validera. Se följande [dokument](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) om du vill ha en fullständig lista över giltiga toppnivådomäner enligt definitionen av IANA (Internet Assigned Numbers Authority). |
+| `label` | Ytterligare visningsinformation som kan vara tillgänglig. Om ett e-postmeddelande t.ex. har en omfattande adressvisning i Microsoft Outlook på `John Smith smithjr@company.uk`, `John Smith` placeras i det här fältet. |
+| `primary` | Anger om det här är personens primära e-postadress. En profil kan bara ha en `primary` e-postadress vid en viss tidpunkt. |
 | `status` | Anger om e-postadressen kan användas |
-| `statusReason` | En beskrivning av aktuell `status`. |
-| `type` | Det sätt som kontot relaterar till personen (till exempel `work` eller `personal`). |
+| `statusReason` | En beskrivning av den aktuella `status`. |
+| `type` | Hur kontot är kopplat till personen (t.ex. `work` eller `personal`). |
 
 {style=&quot;table-layout:auto&quot;}
 
