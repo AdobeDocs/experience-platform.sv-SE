@@ -4,203 +4,98 @@ solution: Experience Platform
 title: Skapa och publicera en maskininlärningsmodell
 topic-legacy: tutorial
 type: Tutorial
-description: Med Adobe Experience Platform Data Science Workspace kan du uppnå dina mål med hjälp av den färdiga Recommendations Recipe. Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
+description: I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell.
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ff8a3612f34d6547577564ba40261052cd78ef01
 workflow-type: tm+mt
-source-wordcount: '1531'
+source-wordcount: '1071'
 ht-degree: 0%
 
 ---
 
+
 # Skapa och publicera en maskininlärningsmodell
 
-![](../images/models-recipes/model-walkthrough/objective.png)
-
-Anta att du äger en webbutik. När era kunder handlar på er webbplats vill ni ge dem skräddarsydda produktrekommendationer för att visa upp en mängd andra produkter som ert företag erbjuder. Under webbplatsens hela existens har ni kontinuerligt samlat in kunddata och vill på något sätt använda dessa data för att generera personaliserade produktrekommendationer.
-
-[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] ger möjlighet att uppnå dina mål med den färdiga  [produkten Recommendations Recipe](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i [!DNL Data Science Workspace].
-
-I den här självstudien visas arbetsflödet i [!DNL Data Science Workspace] och följande steg beskrivs för att skapa en maskininlärningsmodell:
-
-1. [Förbered data](#prepare-your-data)
-2. [Skapa din modell](#author-your-model)
-3. [Utbilda och utvärdera din modell](#train-and-evaluate-your-model)
-4. [Använd din modell](#operationalize-your-model)
+I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell. Varje avsnitt innehåller en beskrivning av vad du ska göra och en länk till användargränssnittet och API-dokumentationen för att utföra det beskrivna steget.
 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
-- Aktivera resurser. Kontakta din kontorepresentant om du vill ha tillgång till följande artiklar.
-   - Recommendations Recipe
-   - Recommendations Input Dataset
-   - Recommendations Input Schema
-   - Recommendations Output Dataset
-   - Recommendations Output Schema
-   - Golden Data Set postValues
-   - Golden Data Set Schema
-
-- Hämta de tre obligatoriska [!DNL Jupyter Notebook]-filerna från [Adobe public [!DNL Git] databasen](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs). Dessa används för att demonstrera [!DNL JupyterLab]-arbetsflödet i [!DNL Data Science Workspace].
-
-En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-- [[!DNL Experience Data Model]](../../xdm/home.md): Den standardiseringsinsats som Adobe ledde till för att definiera standardscheman som  [!DNL Profile] och ExperienceEvent för Customer Experience Management.
-- Datauppsättningar: En lagrings- och hanteringskonstruktion för faktiska data. En fysisk instansierad instans av ett [XDM-schema](../../xdm/schema/field-dictionary.md).
-- Grupper: Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
-- [!DNL JupyterLab]:  [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt för Project med öppen källkod  [!DNL Jupyter] som är nära integrerat i  [!DNL Experience Platform].
-
-## Förbered dina data {#prepare-your-data}
-
-Om du vill skapa en maskininlärningsmodell som gör personaliserade produktrekommendationer till dina kunder måste du analysera tidigare kundköp på din webbplats. I det här avsnittet beskrivs hur dessa data hämtas till [!DNL Platform] till [!DNL Adobe Analytics] och hur dessa data omvandlas till en funktionsuppsättning som kan användas av maskininlärningsmodellen.
+- Alla självstudiekurser för Data Science Workspace använder Lumas benägenhetsmodell. Du måste ha skapat [Modellscheman och datauppsättningar för luma-benägenhet](./create-luma-data.md).
 
 ### Utforska data och förstå scheman
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och välj **[!UICONTROL Datasets]** om du vill visa alla befintliga datauppsättningar och välja den datauppsättning som du vill utforska. I det här fallet [!DNL Analytics]-datauppsättningen **Golden Data Set postValues**.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och markera **[!UICONTROL Datasets]** för att lista alla befintliga datauppsättningar och välja den datauppsättning som du vill utforska. I det här fallet bör du välja **Luma-webbdata** datauppsättning.
 
-![](../images/models-recipes/model-walkthrough/dataset-browse.png)
+![välj Luma-webbdatauppsättning](../images/models-recipes/model-walkthrough/luma-dataset.png)
 
-Sidan för datauppsättningsaktivitet öppnas med information om datauppsättningen. Du kan välja **[!UICONTROL Preview Dataset]** nära det övre högra hörnet för att undersöka exempelposter. Du kan även visa schemat för den valda datauppsättningen. Markera schemalänken i den högra listen. Om du väljer länken under **[!UICONTROL schema name]** öppnas schemat på en ny flik.
+Sidan för datauppsättningsaktivitet öppnas med information om datauppsättningen. Du kan välja **[!UICONTROL Preview Dataset]** nära det övre högra hörnet för att undersöka exempelposter. Du kan även visa schemat för den valda datauppsättningen.
 
-![](../images/models-recipes/model-walkthrough/dataset-activity.png)
+![förhandsgranska Luma-webbdata](../images/models-recipes/model-walkthrough/preview-dataset.png)
 
+Markera schemalänken i den högra listen. En pekare visas och länken under **[!UICONTROL schema name]** öppnar schemat på en ny flik.
 
-![](../images/models-recipes/model-walkthrough/schema-view.png)
+![förhandsgranska lumas webbdataschema](../images/models-recipes/model-walkthrough/preview-schema.png)
 
-De andra datauppsättningarna har fyllts i i automatiskt med grupper för förhandsgranskning. Du kan visa dessa datauppsättningar genom att upprepa stegen ovan.
+Du kan utforska data ytterligare med den tillhandahållna EDA-anteckningsboken (Exploratory Data Analysis). Den här anteckningsboken kan användas för att förstå mönster i Luma-data, kontrollera datavården och sammanfatta relevanta data för den prediktiva benägenhetsmodellen. Mer information om dataanalys finns på [EDA-dokumentation](../jupyterlab/eda-notebook.md).
 
-| Namn på datauppsättning | Schema | Beskrivning |
-| ----- | ----- | ----- |
-| Golden Data Set postValues | Schema för Gyllene datauppsättning | [!DNL Analytics] källdata från webbplatsen |
-| Recommendations Input Dataset | Recommendations Input Schema | [!DNL Analytics]-data omvandlas till en utbildningsdatamängd med hjälp av en funktionspipeline. Dessa data används för att utbilda Recommendations produktmaskininlärningsmodell. `itemid` och  `userid` motsvarar en produkt som kunden köpt. |
-| Recommendations Output Dataset | Recommendations Output Schema | Den datauppsättning som bedömningsresultat lagras för innehåller en lista med rekommenderade produkter för varje kund. |
+## Skapa receptet för lumabenägenhet {#author-your-model}
 
-## Skapa din modell {#author-your-model}
+En huvudkomponent i [!DNL Data Science Workspace] livscykel innebär att skapa recept och modeller. Lumatbenägenhetsmodellen är utformad för att generera en prognos över om kunderna har en hög benägenhet att köpa en produkt från Luma.
 
-Den andra komponenten i [!DNL Data Science Workspace]-livscykeln omfattar utveckling av recept och modeller. Produktens Recommendations Recept är utformat för att generera produktrekommendationer i stor skala genom att använda tidigare inköpsdata och maskininlärning.
+Om du vill skapa en Luma-benägenhetsmodell används mallen recept builder. Recept är grunden för en modell eftersom de innehåller algoritmer för maskininlärning och logik som utformats för att lösa specifika problem. Viktigast av allt är att Recipes ger er möjlighet att demokratisera maskininlärningen i hela organisationen så att andra användare kan komma åt en modell för olika användningsområden utan att behöva skriva någon kod.
 
-Recept är grunden för en modell eftersom de innehåller maskininlärningsalgoritmer och logik som utformats för att lösa specifika problem. Viktigast av allt är att Recipes ger er möjlighet att demokratisera maskininlärningen i hela organisationen så att andra användare kan komma åt en modell för olika användningsområden utan att behöva skriva någon kod.
+Följ [skapa en modell med JupyterLab-anteckningsböcker](../jupyterlab/create-a-model.md) självstudiekurs för att skapa receptet för lumabenägenhet, som används i efterföljande självstudiekurser.
 
-### Utforska Recommendations Recept
+## Importera och paketera ett recept från externa källor (*valfri*)
 
-I Experience Platform navigerar du till **[!UICONTROL Models]** från den vänstra navigeringskolumnen och väljer sedan **[!UICONTROL Recipes]** i den översta navigeringen för att visa en lista över tillgängliga recept för din organisation.
+Om du vill importera och paketera ett recept som ska användas i arbetsytan Data Science måste du paketera källfilerna i en arkivfil. Följ [paketera källfiler i ett recept](./package-source-files-recipe.md) självstudiekurs. I den här självstudiekursen visas hur du paketerar källfiler i ett recept, vilket är ett nödvändigt steg för att importera ett recept till arbetsytan Data Science. När självstudiekursen är klar får du en dockningsbild i ett Azure-behållarregister tillsammans med motsvarande bild-URL, med andra ord en arkivfil.
 
-![](../images/models-recipes/model-walkthrough/recipe-tab.png)
+Den här arkivfilen kan användas för att skapa ett recept i arbetsytan Data Science genom att följa arbetsflödet för receptimport med [Arbetsflöde för användargränssnitt](./import-packaged-recipe-ui.md) eller [API-arbetsflöde](./import-packaged-recipe-api.md).
 
-Leta reda på och öppna den angivna **[!UICONTROL Recommendations Recipe]** genom att välja dess namn. Sidan Översikt över mottagare visas.
+## Utbildning och utvärdering av modell {#train-and-evaluate-your-model}
 
-![](../images/models-recipes/model-walkthrough/Recipe-view.png)
+Nu när dina data är förberedda och ett recept är klart kan du skapa, utbilda och utvärdera din maskininlärningsmodell ytterligare. När du använder Recipe Builder bör du ha utbildat dig, fått poäng och utvärderat din modell innan du paketerar den i ett recept.
 
-Välj sedan **[!UICONTROL Recommendations Input Schema]** i den högra listen för att visa schemat som används för receptet. Schemafälten [!UICONTROL itemId] och [!UICONTROL userId] motsvarar en produkt som kunden köpt ([!UICONTROL interactionType]) vid en viss tidpunkt ([!UICONTROL timestamp]). Följ samma steg för att granska fälten för **[!UICONTROL Recommendations Output Schema]**.
-
-![](../images/models-recipes/model-walkthrough/input-output.png)
-
-Du har nu granskat de in- och utdatamodeller som krävs av Product Recommendations Recipe. Fortsätt till nästa avsnitt för att lära dig hur du skapar, utbilda och utvärderar en Recommendations-produktmodell.
-
-## Utbildning och utvärdering av din modell {#train-and-evaluate-your-model}
-
-Nu när dina data har förberetts och receptet är klart kan du skapa, utbilda och utvärdera din maskininlärningsmodell.
+Med gränssnittet och API:t för arbetsytan Data Science kan du publicera ditt recept som en modell. Dessutom kan du finjustera specifika aspekter av modellen ytterligare, t.ex. lägga till, ta bort och ändra hyperparametrar.
 
 ### Skapa en modell
 
-En modell är en instans av en Recept som gör att du kan utbilda och poängsätta med data i stor skala.
+Om du vill veta mer om hur du skapar en modell med hjälp av användargränssnittet går du till tåget och utvärderar en modell i arbetsytan för datavetenskap [Självstudiekurs om användargränssnitt](./train-evaluate-model-ui.md) eller [API, genomgång](./train-evaluate-model-api.md). I den här självstudiekursen får du ett exempel på hur du skapar, utbildar och uppdaterar hyperparametrar för att finjustera modellen.
 
-I Experience Platform går du till **[!UICONTROL Models]** från den vänstra navigeringskolumnen och väljer **[!UICONTROL Recipes]** i den övre navigeringen. Här visas en lista med tillgängliga recept för din organisation.Välj recept på produktrekommendationer.
-
-![](../images/models-recipes/model-walkthrough/recipe-tab.png)
-
-Välj **[!UICONTROL Create Model]** på receptsidan.
-
-![skapa modell](../images/models-recipes/model-walkthrough/create-model-recipe.png)
-
-Arbetsflödet för att skapa modell börjar med att välja ett recept. Markera **[!UICONTROL Recommendations Recipe]** och välj sedan **[!UICONTROL Next]** i det övre högra hörnet.
-
-![](../images/models-recipes/model-walkthrough/create-model.png)
-
-Ange sedan ett modellnamn. Tillgängliga konfigurationer för modellen visas med inställningar för modellens standardutbildnings- och bedömningsbeteenden. Granska konfigurationerna och välj **[!UICONTROL Finish]**.
-
-![](../images/models-recipes/model-walkthrough/configure-model.png)
-
-Du dirigeras om en översiktssida för dina modeller med en ny utbildning. En utbildningskörning genereras som standard när en modell skapas.
-
-![](../images/models-recipes/model-walkthrough/model-overview.png)
-
-Du kan välja att vänta tills kursen är klar eller fortsätta att skapa en ny utbildning i följande avsnitt.
-
-### Utbilda modellen med anpassade hyperparametrar
-
-På sidan **Modellöversikt** väljer du **[!UICONTROL Train]** uppe till höger för att skapa en ny utbildning. Välj samma indatauppsättning som du använde när du skapade modellen och välj **[!UICONTROL Next]**.
-
-![](../images/models-recipes/model-walkthrough/select-train.png)
-
-Sidan **[!UICONTROL Configuration]** visas. Här kan du konfigurera kursen `num_recommendations`-värde, som också kallas hyperparameter. En utbildad och optimerad modell kommer att använda de hyperparametrar som ger bäst resultat baserat på resultatet av kursen.
-
-Det går inte att lära sig hyperparametrar, och de måste därför tilldelas innan utbildning kan genomföras. Justering av hyperparametrar kan ändra den tränade modellens exakthet. Eftersom det är en iterativ process att optimera en modell kan det krävas flera kurser innan en tillfredsställande utvärdering kan göras.
-
->[!TIP]
+>[!NOTE]
 >
->Ange `num_recommendations` till 10.
+> Det går inte att lära sig hyperparametrar, och de måste därför tilldelas innan utbildning kan genomföras. Om du justerar hyperparametrar kan du få en större noggrannhet i den tränade modellen. Eftersom det är en iterativ process att optimera en modell kan det krävas flera kurser innan en tillfredsställande utvärdering kan göras.
 
-![](../images/models-recipes/model-walkthrough/training-configuration.png)
+## Posta en modell {#score-a-model}
 
-Ytterligare datapunkter visas i modellutvärderingsdiagrammet. Det kan ta upp till flera minuter innan det här visas när en körning är klar.
+Nästa steg på vägen mot att skapa och publicera en modell är att driftsätta modellen för att få kunskap om datarjön och kundprofil i realtid.
 
-![](../images/models-recipes/model-walkthrough/training-graphs.png)
+Du kan göra en bedömning i datavetenskapens arbetsyta genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 
-### Utvärdera modellen
+Om du vill veta hur du kan göra en modellpoäng kan du gå till en modell [Självstudiekurs om användargränssnitt](./score-model-ui.md) eller [API, genomgång](./score-model-api.md).
 
-Varje gång en utbildning har slutförts kan du se de resulterande utvärderingsvärdena för att avgöra hur bra modellen har fungerat.
+## Publicera en poängsatt modell som en tjänst
 
-Om du vill granska utvärderingsstatistik (Precision och Recall) för varje avslutad utbildningskurs väljer du utbildningskörningen.
+Med Data Science Workspace kan du publicera din tränade modell som en tjänst. Detta gör det möjligt för användare i IMS-organisationen att få fram data utan att behöva skapa egna modeller.
 
-![](../images/models-recipes/model-walkthrough/select-training-run.png)
+Om du vill veta hur du publicerar en modell som en tjänst går du till [Självstudiekurs om användargränssnitt](./publish-model-service-ui.md) eller [API, genomgång](./publish-model-service-api.md).
 
-Du kan utforska informationen för varje utvärderingsmått. Ju högre dessa värden är, desto bättre utfördes modellen.
+### Schemalägg automatiserad utbildning för en tjänst
 
-![](../images/models-recipes/model-walkthrough/metrics.png)
+När du har publicerat en modell som en tjänst kan du konfigurera schemalagda poängsättnings- och utbildningskörningar för maskininlärningstjänsten. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster. Besök [schemalägga en modell i användargränssnittet för datavetenskapen](./schedule-models-ui.md) självstudiekurs.
 
-Du kan se datauppsättningen, schemat och konfigurationsparametrarna som används för varje utbildningskörning på rätt spår. Gå tillbaka till modellsidan och identifiera den utbildning som fungerar bäst genom att observera deras utvärderingsvärden.
-
-## Använd modellen {#operationalize-your-model}
-
-Det sista steget i arbetsflödet för datavetenskap är att driftsätta din modell för att få poäng och ta del av insikter från ert datalager.
-
-### Score and generate insights
-
-På sidan Översikt över produktrekommendationsmodellen väljer du namnet på den utbildning som körs bäst, med de högsta värdena för återkallande och precision.
-
-![göra den bästa körningen](../images/models-recipes/model-walkthrough/select-training-run.png)
-
-Välj sedan **[!UICONTROL Score]** längst upp till höger på informationssidan för utbildningskörningen.
-
-![välj poäng](../images/models-recipes/model-walkthrough/select-score.png)
-
-Sedan väljer du **[!UICONTROL Recommendations Input Dataset]** som betygsindatauppsättning, som är samma datamängd som du använde när du skapade modellen och körde kursen. Välj sedan **[!UICONTROL Next]**.
-
-![](../images/models-recipes/model-walkthrough/score-input.png)
-
-När du har fått din indatauppsättning väljer du **[!UICONTROL Recommendations Output Dataset]** som resultatdatauppsättning. Bedömningsresultat lagras i den här datauppsättningen som en batch.
-
-![](../images/models-recipes/model-walkthrough/score-output.png)
-
-Granska slutligen poängkonfigurationerna. Dessa parametrar innehåller de in- och utdatamängder du valde tidigare tillsammans med lämpliga scheman. Välj **[!UICONTROL Finish]** för att börja poängsättningen. Körningen kan ta flera minuter.
-
-![](../images/models-recipes/model-walkthrough/score-finish.png)
-
-### Visa poängsatta insikter
-
-När poängsättningen är klar kan du förhandsgranska resultatet och se de insikter som genereras.
-
-På sidan för betygskörning väljer du den färdiga poängkörningen och sedan **[!UICONTROL Preview Scoring Results Dataset]** på den högra listen.
-
-![](../images/models-recipes/model-walkthrough/preview-scores.png)
-
-I förhandsgranskningstabellen innehåller varje rad produktrekommendationer för en viss kund, märkta [!UICONTROL recommendations] respektive [!UICONTROL userId]. Eftersom hyperparametern [!UICONTROL num_recommendations] var inställd på 10 i exempelskärmbilderna, kan varje rad med rekommendationer innehålla upp till 10 produktidentiteter avgränsade med ett nummertecken (#).
-
-![](../images/models-recipes/model-walkthrough/preview_score_results.png)
+>[!NOTE]
+>
+> Du kan bara schemalägga en modell för automatiserad utbildning och poängsättning från användargränssnittet.
 
 ## Nästa steg {#next-steps}
 
-I den här självstudiekursen introducerades arbetsflödet för [!DNL Data Science Workspace], som visar hur obearbetade data kan göras till användbar information via maskininlärning. Om du vill veta mer om hur du använder [!DNL Data Science Workspace] fortsätter du till nästa guide [som skapar försäljningsschemat och datauppsättningen](./create-retails-sales-dataset.md).
+Adobe Experience Platform [!DNL Data Science Workspace] innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas till en [!DNL Profile]-aktiverad datauppsättning, att samma data också hämtas som [!DNL Profile] poster som sedan kan segmenteras med [!DNL Adobe Experience Platform Segmentation Service].
+
+När data från profil- och tidsserier hämtas bestämmer kundprofilen i realtid automatiskt att inkludera eller exkludera data från segment genom en pågående process som kallas direktuppspelningssegmentering, innan den sammanfogas med befintliga data och unionsvyn uppdateras. Resultatet blir att ni omedelbart kan utföra beräkningar och fatta beslut för att leverera förbättrade, individanpassade upplevelser till kunderna när de interagerar med ert varumärke.
+
+Gå till självstudiekursen för [berika kundprofilen i realtid med maskininlärningsinsikter](./enrich-profile.md) om du vill veta mer om hur du kan använda maskininlärningsinsikter.
