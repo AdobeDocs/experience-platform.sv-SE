@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
+source-git-commit: 04404ff9ab8d623214b96ec65342d2e8d11e85a6
 workflow-type: tm+mt
-source-wordcount: '5352'
+source-wordcount: '5482'
 ht-degree: 0%
 
 ---
@@ -128,9 +128,13 @@ Händelsen utlöses om en anpassad händelsetyp inträffar. Namngivna JavaScript
 
 Händelsen utlöses om ett angivet dataelement ändras. Du måste ange ett namn för dataelementet. Du kan markera dataelementet genom att antingen skriva dess namn i textfältet eller genom att markera dataelementsikonen till höger om textfältet och välja i en lista som finns i dialogrutan som visas.
 
-#### Direktsamtal
+#### Direktsamtal {#direct-call-event}
 
-Händelsen direct-call kringgår system för händelsidentifiering och sökning. Regler för direktanrop är idealiska för situationer där du vill tala om för plattformen exakt vad som händer. De är också idealiska när Platform inte kan identifiera en händelse i DOM, till exempel med Adobe Flash. Ange `_satellite.track` i identifierartextfältet.
+En direktanropshändelse kringgår system för händelsidentifiering och sökning. Regler för direktsamtal är idealiska för situationer där du vill tala om för systemet exakt vad som händer. De är också idealiska när systemet inte kan identifiera någon händelse i DOM.
+
+När du definierar en direktanropshändelse måste du ange en sträng som ska fungera som den här händelsens identifierare. Om en [aktivera direktanrop](#direct-call-action) som innehåller samma identifierare utlöses, kommer alla regler för direktanropshändelser som lyssnar efter den identifieraren att köras.
+
+![Skärmbild av en direktanropshändelse i användargränssnittet för datainsamling](../../../images/extensions/core/direct-call-event.png)
 
 #### Elementet finns
 
@@ -625,6 +629,14 @@ setTimeout(function() {
 }, 1000);
 </script>
 ```
+
+### Utlös direktanrop {#direct-call-action}
+
+Den här åtgärden aktiverar alla regler som använder en specifik [direktanrop](#direct-call-event). När du konfigurerar åtgärden måste du ange identifierarsträngen för den direktanropshändelse som du vill utlösa. Du kan också skicka data till direktsamtalshändelsen via en `detail` -objekt, som kan innehålla en anpassad uppsättning nyckelvärdepar.
+
+![Skärmbild av en direktanropsåtgärd för utlösare i användargränssnittet för datainsamling](../../../images/extensions/core/direct-call-action.png)
+
+Åtgärden mappar direkt till [`track` method](../../../ui/client-side/satellite-object.md?lang=en#track) i `satellite` -objekt, som kan nås av kod på klientsidan.
 
 ## Dataelementtyper för kärntillägg
 
