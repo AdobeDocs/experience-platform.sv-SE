@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: db7e8de8e2669fae7fdf21d10042b7a71c63a8f6
+source-git-commit: 065f5ef9d3d3be0fcab84d7518d8a00e4cd551cf
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '404'
 ht-degree: 6%
 
 ---
@@ -18,15 +18,16 @@ ht-degree: 6%
 * Scheman {#schema}
    * [Grunderna för schemakomposition](schema/composition.md)
    * [Bästa tillvägagångssätt för datamodellering](schema/best-practices.md)
+   * [Känsliga och personliga uppgifter](./schema/sensitive-and-personal-data.md)
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
    * [Namnavstånd i XDM](./schema/namespaces.md)
-   * [XDM-fältordlista](schema/field-dictionary.md)
    * Branschdatamodeller {#industries}
       * [Översikt](./schema/industries/overview.md)
       * [Detaljhandel](./schema/industries/retail.md)
       * [Finansiella tjänster](./schema/industries/financial.md)
       * [Telekommunikation](./schema/industries/telecom.md)
       * [Resor och turism](./schema/industries/travel-hospitality.md)
+   * [XDM-fältordlista](schema/field-dictionary.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
