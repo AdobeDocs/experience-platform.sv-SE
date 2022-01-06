@@ -5,9 +5,9 @@ title: Spark SQL-funktioner i frågetjänsten
 topic-legacy: spark sql functions
 description: Den här dokumentationen innehåller information om Spark SQL-funktioner som utökar SQL-funktioner.
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-source-git-commit: 07b3483a3e8c666e769a0d00d08fa4784d10813d
+source-git-commit: f291c0db5b751227e979e70ea8f91a0c133ecf34
 workflow-type: tm+mt
-source-wordcount: '3909'
+source-wordcount: '3866'
 ht-degree: 0%
 
 ---
@@ -16,33 +16,21 @@ ht-degree: 0%
 
 Adobe Experience Platform Query Service innehåller flera inbyggda Spark SQL-funktioner som utökar SQL-funktionerna. I det här dokumentet visas Spark SQL-funktioner som stöds av Query Service.
 
-Mer detaljerad information om funktionerna, inklusive syntax, användning och exempel, finns i [Spark SQL function documentation](https://spark.apache.org/docs/latest/api/sql/index.html).
+Mer information om funktionerna, inklusive syntax, användning och exempel finns i [Spark SQL-funktionsdokumentation](https://spark.apache.org/docs/latest/api/sql/index.html).
 
 >[!NOTE]
 >
 >Alla funktioner i den externa dokumentationen stöds inte.
 
-## Kategorier
-
-- [Matematik- och statistikoperatorer och -funktioner](#math)
-- [Logiska operatorer](#logical-operators)
-- [Datum-/tidsfunktioner](#datetime-functions)
-- [Arrayer](#arrays)
-- [Datatypsdatatypsbytefunktioner](#datatype-casting)
-- [Konverterings- och formateringsfunktioner](#conversion)
-- [Utvärdering av data](#data-evaluation)
-- [Aktuell information](#current-information)
-- [Funktioner för högre ordning](#higher-order)
-
 ## Matematik- och statistikoperatorer och -funktioner {#math}
 
 | Operator/funktion | Beskrivning |
 | ----------------- | ----------- |
-| [`%`](https://spark.apache.org/docs/latest/api/sql/index.html#_2) | Returnerar resten av de två talen |
-| [`*`](https://spark.apache.org/docs/latest/api/sql/index.html#_4) | Multiplicerar de två talen |
-| [`+`](https://spark.apache.org/docs/latest/api/sql/index.html#_5) | Lägger till de två talen |
-| [`-`](https://spark.apache.org/docs/latest/api/sql/index.html#_6) | Subtraherar de två talen |
-| [`/`](https://spark.apache.org/docs/latest/api/sql/index.html#_7) | Dividerar de två talen |
+| [`%`](https://spark.apache.org/docs/latest/api/sql/index.html#_3) | Returnerar resten av de två talen |
+| [`*`](https://spark.apache.org/docs/latest/api/sql/index.html#_5) | Multiplicerar de två talen |
+| [`+`](https://spark.apache.org/docs/latest/api/sql/index.html#_6) | Lägger till de två talen |
+| [`-`](https://spark.apache.org/docs/latest/api/sql/index.html#_7) | Subtraherar de två talen |
+| [`/`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | Dividerar de två talen |
 | [`abs`](https://spark.apache.org/docs/latest/api/sql/index.html#abs) | Returnerar indatans absoluta värde |
 | [`acos`](https://spark.apache.org/docs/latest/api/sql/index.html#acos) | Returnerar det inverterade cosinusvärdet |
 | [`approx_count_distinct`](https://spark.apache.org/docs/latest/api/sql/index.html#approx_count_distinct) | Returnerar beräknad kardinalitet av HyperLog++ |
@@ -52,7 +40,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`atan2`](https://spark.apache.org/docs/latest/api/sql/index.html#atan2) | Returnerar vinkeln mellan det positiva x-axelplanet och de punkter som anges av koordinaterna |
 | [`avg`](https://spark.apache.org/docs/latest/api/sql/index.html#avg) | Returnerar det genomsnittliga värdet |
 | [`cbrt`](https://spark.apache.org/docs/latest/api/sql/index.html#cbrt) | Returnerar kubroten |
-| [`ceil`](https://spark.apache.org/docs/latest/api/sql/index.html#ceil) eller  [`ceiling`](https://spark.apache.org/docs/latest/api/sql/index.html#ceiling) | Returnerar det minsta heltalet som inte är större än det inmatade värdet |
+| [`ceil`](https://spark.apache.org/docs/latest/api/sql/index.html#ceil) eller [`ceiling`](https://spark.apache.org/docs/latest/api/sql/index.html#ceiling) | Returnerar det minsta heltalet som inte är större än det inmatade värdet |
 | [`conv`](https://spark.apache.org/docs/latest/api/sql/index.html#conv) | Konvertera från en bas till en annan |
 | [`corr`](https://spark.apache.org/docs/latest/api/sql/index.html#corr) | Returnerar Pearson-koefficienten mellan talen |
 | [`cos`](https://spark.apache.org/docs/latest/api/sql/index.html#cos) | Returnerar cosinusvärdet |
@@ -90,7 +78,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`randn`](https://spark.apache.org/docs/latest/api/sql/index.html#randn) | Returnerar ett slumpmässigt värde |
 | [`rint`](https://spark.apache.org/docs/latest/api/sql/index.html#rint) | Returnerar det närmaste dubbla värdet |
 | [`round`](https://spark.apache.org/docs/latest/api/sql/index.html#round) | Returnerar det närmaste avrundade värdet |
-| [`sign`](https://spark.apache.org/docs/latest/api/sql/index.html#sign),  [`signum`](https://spark.apache.org/docs/latest/api/sql/index.html#signum) | Returnerar talets tecken |
+| [`sign`](https://spark.apache.org/docs/latest/api/sql/index.html#sign), [`signum`](https://spark.apache.org/docs/latest/api/sql/index.html#signum) | Returnerar talets tecken |
 | [`sin`](https://spark.apache.org/docs/latest/api/sql/index.html#sin) | Returnerar sinus för värdet |
 | [`sinh`](https://spark.apache.org/docs/latest/api/sql/index.html#sinh) | Returnerar hyperbolisk sinus för värdet |
 | [`sqrt`](https://spark.apache.org/docs/latest/api/sql/index.html#sqrt) | Returnerar kvadratroten av värdet |
@@ -101,22 +89,21 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`tan`](https://spark.apache.org/docs/latest/api/sql/index.html#tan) | Returnerar värdets tangent |
 | [`tanh`](https://spark.apache.org/docs/latest/api/sql/index.html#tanh) | Returnerar hyperbolisk tangens för värdet |
 | [`var_pop`](https://spark.apache.org/docs/latest/api/sql/index.html#var_pop) | Returnerar den beräknade populationsvariationen |
-| [`var_samp`](https://spark.apache.org/docs/latest/api/sql/index.html#var_samp),  [`variance`](https://spark.apache.org/docs/latest/api/sql/index.html#variance) | Returnerar den beräknade samplingsavvikelsen |
+| [`var_samp`](https://spark.apache.org/docs/latest/api/sql/index.html#var_samp), [`variance`](https://spark.apache.org/docs/latest/api/sql/index.html#variance) | Returnerar den beräknade samplingsavvikelsen |
 
 ### Logiska operatorer och funktioner {#logical-operators}
 
 | Operator/funktion | Beskrivning |
 | ----------------- | ----------- |
-| [`!`](https://spark.apache.org/docs/latest/api/sql/index.html#_1) eller  [`not`](https://spark.apache.org/docs/latest/api/sql/index.html#not) | Logiskt inte |
-| [`<`](https://spark.apache.org/docs/latest/api/sql/index.html#_7) | Less than |
-| [`<=`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | Less than or equal to |
-| [`=`](https://spark.apache.org/docs/latest/api/sql/index.html#_10) | Equal to |
-| [`>`](https://spark.apache.org/docs/latest/api/sql/index.html#_12) | Greater than |
-| [`>=`](https://spark.apache.org/docs/latest/api/sql/index.html#_13) | Greater than or equal to |
-| [`^`](https://spark.apache.org/docs/latest/api/sql/index.html#_14) | Bitvis exklusiv eller |
-| [`>=`](https://spark.apache.org/docs/latest/api/sql/index.html#_13) | Större än eller lika med |
-| [`|`](https://spark.apache.org/docs/latest/api/sql/index.html#_15) | Bitvis eller |
-| [`~`](https://spark.apache.org/docs/latest/api/sql/index.html#_16) | Bitvis inte |
+| [`!`](https://spark.apache.org/docs/latest/api/sql/index.html#_1) eller [`not`](https://spark.apache.org/docs/latest/api/sql/index.html#not) | Logiskt inte |
+| [`<`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | Less than |
+| [`<=`](https://spark.apache.org/docs/latest/api/sql/index.html#_9) | Less than or equal to |
+| [`=`](https://spark.apache.org/docs/latest/api/sql/index.html#_12) | Equal to |
+| [`>`](https://spark.apache.org/docs/latest/api/sql/index.html#_14) | Greater than |
+| [`>=`](https://spark.apache.org/docs/latest/api/sql/index.html#_15) | Greater than or equal to |
+| [`^`](https://spark.apache.org/docs/latest/api/sql/index.html#_16) | Bitvis exklusiv eller |
+| [`\|`](https://spark.apache.org/docs/latest/api/sql/index.html#_17) | Bitvis eller |
+| [`~`](https://spark.apache.org/docs/latest/api/sql/index.html#_19) | Bitvis inte |
 | [`arrays_overlap`](https://spark.apache.org/docs/latest/api/sql/index.html#arrays_overlap) | Returnerar de gemensamma elementen |
 | [`assert_true`](https://spark.apache.org/docs/latest/api/sql/index.html#assert_true) | Kontrollerar om uttrycket är sant |
 | [`if`](https://spark.apache.org/docs/latest/api/sql/index.html#if) | Om uttrycket utvärderas till true returnerar du det andra uttrycket. Annars returnerar du det tredje uttrycket. |
@@ -140,7 +127,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`date_sub`](https://spark.apache.org/docs/latest/api/sql/index.html#date_sub) | Ta bort dagar från datum |
 | [`date_trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#date_trunc) | Returnerar det datum som trunkeras till den angivna enheten |
 | [`datediff`](https://spark.apache.org/docs/latest/api/sql/index.html#datediff) | Returnerar skillnaden mellan datum i dagar |
-| [`day`](https://spark.apache.org/docs/latest/api/sql/index.html#day),  [`dayofmonth`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofmonth) | Returnerar dagen i månaden |
+| [`day`](https://spark.apache.org/docs/latest/api/sql/index.html#day), [`dayofmonth`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofmonth) | Returnerar dagen i månaden |
 | [`dayofweek`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofweek) | Returnerar veckodag (1-7) |
 | [`dayofyear`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofyear) | Returnerar dag på året |
 | [`from_unixtime`](https://spark.apache.org/docs/latest/api/sql/index.html#from_unixtime) | Returnerar datum i Unix-tid |
@@ -153,8 +140,8 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`next_day`](https://spark.apache.org/docs/latest/api/sql/index.html#next_day) | Returnerar den första dagen senare än indata |
 | [`quarter`](https://spark.apache.org/docs/latest/api/sql/index.html#quarter) | Returnerar inmatningens fjärdedel |
 | [`second`](https://spark.apache.org/docs/latest/api/sql/index.html#second) | Returnerar den andra delen av strängen |
-| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | Konverterar strängen till ett datum. **Obs!** Strängen  **** måste ha formatet  `yyyy-mm-ddTHH24:MM:SS`. |
-| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | Konverterar strängen till en tidsstämpel. **Obs!** Strängen  **** måste ha formatet  `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | Konverterar strängen till ett datum. **Obs!** Strängen **måste** vara i formatet `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | Konverterar strängen till en tidsstämpel. **Obs!** Strängen **måste** vara i formatet `yyyy-mm-ddTHH24:MM:SS`. |
 | [`to_unix_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_unix_timestamp) | Konverterar strängen till en Unix-tidsstämpel |
 | [`to_utc_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_utc_timestamp) | Konverterar strängen till en UTC-tidsstämpel |
 | [`trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#trunc) | Trunkerar datumet |
@@ -180,7 +167,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`array_repeat`](https://spark.apache.org/docs/latest/api/sql/index.html#array_repeat) | Skapar en array som innehåller det värde som räknas gånger |
 | [`array_sort`](https://spark.apache.org/docs/latest/api/sql/index.html#array_sort) | Sorterar arrayen |
 | [`array_union`](https://spark.apache.org/docs/latest/api/sql/index.html#array_union) | Sammanfogar arrayen utan några dubbletter |
-| [`array_zip`](https://spark.apache.org/docs/latest/api/sql/index.html#array_zip) | Postnummer |
+| [`arrays_zip`](https://spark.apache.org/docs/latest/api/sql/index.html#array_zip) | Kombinerar värdena för angivna arrayer med värdena för den ursprungliga samlingen vid ett givet index |
 | [`cardinality`](https://spark.apache.org/docs/latest/api/sql/index.html#cardinality) | Returnera arrayens storlek |
 | [`element_at`](https://spark.apache.org/docs/latest/api/sql/index.html#element_at) | Returnera elementet vid positionen |
 | [`explode`](https://spark.apache.org/docs/latest/api/sql/index.html#explode) | Separera element i en array i flera rader, exklusive null |
@@ -189,8 +176,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`flatten`](https://spark.apache.org/docs/latest/api/sql/index.html#flatten) | Förenklar en array med arrayer |
 | [`inline`](https://spark.apache.org/docs/latest/api/sql/index.html#inline) | Separat array med strukturer i en tabell, exklusive null |
 | [`inline_outer`](https://spark.apache.org/docs/latest/api/sql/index.html#inline_outer) | Separat array med strukturer i en tabell, inklusive null |
-| [`posexplod`](https://spark.apache.org/docs/latest/api/sql/index.html#posexplod) | Separera element i en array i flera rader med positioner, exklusive null |
-| [`posexplod`](https://spark.apache.org/docs/latest/api/sql/index.html#posexplod) | Separera element i en array i flera rader med positioner, inklusive null |
+| [`posexplode`](https://spark.apache.org/docs/latest/api/sql/index.html#posexplode) | Separera element i en array i flera rader med positioner, exklusive null |
 | [`reverse`](https://spark.apache.org/docs/latest/api/sql/index.html#reverse) | Invertera elementen i arrayen |
 | [`shuffle`](https://spark.apache.org/docs/latest/api/sql/index.html#shuffle) | Returnera en slumpmässig permutation av arrayen |
 | [`slice`](https://spark.apache.org/docs/latest/api/sql/index.html#slice) | Delar en array |
@@ -224,16 +210,16 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`base64`](https://spark.apache.org/docs/latest/api/sql/index.html#base64) | Ändra argumentet till en base64-sträng |
 | [`bin`](https://spark.apache.org/docs/latest/api/sql/index.html#bin) | Ändra argumentet till ett binärt värde |
 | [`bit_length`](https://spark.apache.org/docs/latest/api/sql/index.html#bit_length) | Returnera bitlängden |
-| [`char`](https://spark.apache.org/docs/latest/api/sql/index.html#char),  [`chr`](https://spark.apache.org/docs/latest/api/sql/index.html#chr) | Returnera ASCII-tecknet |
-| [`char_length`](https://spark.apache.org/docs/latest/api/sql/index.html#char_length),  [`character_length`](https://spark.apache.org/docs/latest/api/sql/index.html#character_length) | Returnera stränglängden |
+| [`char`](https://spark.apache.org/docs/latest/api/sql/index.html#char), [`chr`](https://spark.apache.org/docs/latest/api/sql/index.html#chr) | Returnera ASCII-tecknet |
+| [`char_length`](https://spark.apache.org/docs/latest/api/sql/index.html#char_length), [`character_length`](https://spark.apache.org/docs/latest/api/sql/index.html#character_length) | Returnera stränglängden |
 | [`crc32`](https://spark.apache.org/docs/latest/api/sql/index.html#crc32) | Returnerar det cykliska värdet för redundanskontrollen |
 | [`degrees`](https://spark.apache.org/docs/latest/api/sql/index.html#degrees) | Konvertera radianer till grader |
 | [`format_number`](https://spark.apache.org/docs/latest/api/sql/index.html#format_number) | Ändra talets format |
-| [`from_json`](https://spark.apache.org/docs/latest/api/sql/index.html#from_json),  [`get_json_object`](https://spark.apache.org/docs/latest/api/sql/index.html#get_json_object) | Hämta data från JSON |
+| [`from_json`](https://spark.apache.org/docs/latest/api/sql/index.html#from_json), [`get_json_object`](https://spark.apache.org/docs/latest/api/sql/index.html#get_json_object) | Hämta data från JSON |
 | [`hash`](https://spark.apache.org/docs/latest/api/sql/index.html#hash) | Returnera hash-värdet |
 | [`hex`](https://spark.apache.org/docs/latest/api/sql/index.html#hex) | Konvertera argumentet till ett hexadecimalt värde |
 | [`initcap`](https://spark.apache.org/docs/latest/api/sql/index.html#initcap) | Ändrar strängen så att den får ett namnslut |
-| [`lcase`](https://spark.apache.org/docs/latest/api/sql/index.html#lcase),  [`lower`](https://spark.apache.org/docs/latest/api/sql/index.html#lower) | Ändrar strängen till gemener |
+| [`lcase`](https://spark.apache.org/docs/latest/api/sql/index.html#lcase), [`lower`](https://spark.apache.org/docs/latest/api/sql/index.html#lower) | Ändrar strängen till gemener |
 | [`lpad`](https://spark.apache.org/docs/latest/api/sql/index.html#lpad) | Knuffar den vänstra sidan av en sträng |
 | [`map`](https://spark.apache.org/docs/latest/api/sql/index.html#map) | Skapa en karta |
 | [`map_from_arrays`](https://spark.apache.org/docs/latest/api/sql/index.html#map_from_arrays) | Skapa en karta från en array |
@@ -241,15 +227,15 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`md5`](https://spark.apache.org/docs/latest/api/sql/index.html#md5) | Returnera md5-värdet |
 | [`rpad`](https://spark.apache.org/docs/latest/api/sql/index.html#rpad) | Placerar höger sida i en sträng |
 | [`rtrim`](https://spark.apache.org/docs/latest/api/sql/index.html#rtrim) | Tar bort avslutande blanksteg |
-| [`sha`](https://spark.apache.org/docs/latest/api/sql/index.html#sha),  [`sha1`](https://spark.apache.org/docs/latest/api/sql/index.html#sha1) | Returnera SHA1-värdet |
+| [`sha`](https://spark.apache.org/docs/latest/api/sql/index.html#sha), [`sha1`](https://spark.apache.org/docs/latest/api/sql/index.html#sha1) | Returnera SHA1-värdet |
 | [`sha2`](https://spark.apache.org/docs/latest/api/sql/index.html#sha2) | Returnera SHA2-värdet |
 | [`soundex`](https://spark.apache.org/docs/latest/api/sql/index.html#soundex) | Returnera ljudindexkoden |
 | [`stack`](https://spark.apache.org/docs/latest/api/sql/index.html#stack) | Dela upp värden i rader |
-| [`substr`](https://spark.apache.org/docs/latest/api/sql/index.html#substr),  [`substring`](https://spark.apache.org/docs/latest/api/sql/index.html#substring) | Returnera delsträngen |
+| [`substr`](https://spark.apache.org/docs/latest/api/sql/index.html#substr), [`substring`](https://spark.apache.org/docs/latest/api/sql/index.html#substring) | Returnera delsträngen |
 | [`to_json`](https://spark.apache.org/docs/latest/api/sql/index.html#to_json) | Returnerar en JSON-sträng |
 | [`translate`](https://spark.apache.org/docs/latest/api/sql/index.html#translate) | Ersätt värden i sträng |
 | [`trim`](https://spark.apache.org/docs/latest/api/sql/index.html#trim) | Ta bort inledande och avslutande tecken |
-| [`ucase`](https://spark.apache.org/docs/latest/api/sql/index.html#ucase),  [`upper`](https://spark.apache.org/docs/latest/api/sql/index.html#upper) | Ändra strängen till versaler |
+| [`ucase`](https://spark.apache.org/docs/latest/api/sql/index.html#ucase), [`upper`](https://spark.apache.org/docs/latest/api/sql/index.html#upper) | Ändra strängen till versaler |
 | [`unbase64`](https://spark.apache.org/docs/latest/api/sql/index.html#unbase64) | Konvertera base64-strängen till binär |
 | [`unhex`](https://spark.apache.org/docs/latest/api/sql/index.html#unhex) | Konvertera det hexadecimala till binära |
 | [`uuid`](https://spark.apache.org/docs/latest/api/sql/index.html#uuid) | Returnera ett UUID |
@@ -265,19 +251,19 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`concat_ws`](https://spark.apache.org/docs/latest/api/sql/index.html#concat_ws) | Sammanfogning med avgränsare |
 | [`count`](https://spark.apache.org/docs/latest/api/sql/index.html#count) | Returnerar det totala antalet rader |
 | [`decode`](https://spark.apache.org/docs/latest/api/sql/index.html#decode) | Avkoda med en teckenuppsättning |
-| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | Returnera [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)th input |
+| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | Returnera [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)indata |
 | [`encode`](https://spark.apache.org/docs/latest/api/sql/index.html#encode) | Koda med en teckenuppsättning |
-| [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first),  [`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | Returnerar det första värdet |
+| [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first), [`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | Returnerar det första värdet |
 | [`grouping`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping) | Anger om en kolumn är grupperad |
 | [`grouping_id`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping_id) | Returnerar grupperingsnivån |
 | [`instr`](https://spark.apache.org/docs/latest/api/sql/index.html#instr) | Returnerar ett 1-baserat index för teckenförekomst |
 | [`json_tuple`](https://spark.apache.org/docs/latest/api/sql/index.html#json_tuple) | Returnerar en tuppel från en JSON-inmatning |
-| [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag),  [`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | Returnerar värdet före förskjutningen |
-| [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last),  [`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | Returnerar det sista värdet |
-| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | Returnerar de första [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) tecknen |
+| [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag), [`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | Returnerar värdet före förskjutningen |
+| [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last), [`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | Returnerar det sista värdet |
+| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | Returnerar den första [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) tecken |
 | [`length`](https://spark.apache.org/docs/latest/api/sql/index.html#length) | Returnerar strängens längd |
 | [`levenshtein`](https://spark.apache.org/docs/latest/api/sql/index.html#levenshtein) | Returnerar Levenshetin-avståndet mellan strängar |
-| [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate),  [`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | Returnerar positionen för den första förekomsten av en delsträng |
+| [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate), [`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | Returnerar positionen för den första förekomsten av en delsträng |
 | [`map_concat`](https://spark.apache.org/docs/latest/api/sql/index.html#map_concat) | Sammanfoga en karta |
 | [`map_keys`](https://spark.apache.org/docs/latest/api/sql/index.html#map_keys) | Returnera knapparna för en karta |
 | [`map_values`](https://spark.apache.org/docs/latest/api/sql/index.html#map_values) | Returnera värden för en karta |
@@ -300,12 +286,12 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | [`shiftright`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftright) | Signerat bitvis skift åt höger |
 | [`shiftrightunsigned`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftrightunsigned) | Bitflyttning utan tecken höger |
 | [`size`](https://spark.apache.org/docs/latest/api/sql/index.html#size) | Returnera arrayens storlek |
-| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | Returnera en sträng med [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) blanksteg |
+| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | Returnera en sträng med [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) mellanslag |
 | [`split`](https://spark.apache.org/docs/latest/api/sql/index.html#split) | Delad sträng |
 | [`substring_index`](https://spark.apache.org/docs/latest/api/sql/index.html#substring_index) | Returnera index för delsträng |
 | [`window`](https://spark.apache.org/docs/latest/api/sql/index.html#window) | Fönster |
 | [`xpath`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath) | Tolka XML-noder |
-| [`xpath_double`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_double),  [`xpath_number`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_number) | Tolka XML-noder för dubbla |
+| [`xpath_double`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_double), [`xpath_number`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_number) | Tolka XML-noder för dubbla |
 | [`xpath_float`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_float) | Tolka XML-noder för flytande |
 | [`xpath_int`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_int) | Tolka XML-noder för heltal |
 | [`xpath_long`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_long) | Tolka XML-noder för lång tid |
@@ -318,7 +304,7 @@ Mer detaljerad information om funktionerna, inklusive syntax, användning och ex
 | -------- | ----------- |
 | [`current_database`](https://spark.apache.org/docs/latest/api/sql/index.html#current_database) | Returnerar aktuell databas |
 | [`current_date`](https://spark.apache.org/docs/latest/api/sql/index.html#current_date) | Returnerar aktuellt datum |
-| [`current_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#current_timestamp),  [`now`](https://spark.apache.org/docs/latest/api/sql/index.html#now) | Returnerar aktuell tidsstämpel |
+| [`current_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#current_timestamp), [`now`](https://spark.apache.org/docs/latest/api/sql/index.html#now) | Returnerar aktuell tidsstämpel |
 
 ### Funktioner för högre ordning {#higher-order}
 
