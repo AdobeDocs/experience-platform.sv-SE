@@ -6,36 +6,39 @@ title: Ta bort konton för källanslutning i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 7cb65d17-d99d-46ff-b28f-7469d0b57d07
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 609f7a5de51840fe657ca72df99c90da56c8f466
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
 
 # Ta bort källanslutningskonton
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs hur du tar bort konton från arbetsytan **[!UICONTROL Sources]**.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du tar bort konton från **[!UICONTROL Sources]** arbetsyta.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM)] System](../../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
-   - [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
+- [[!DNL Experience Data Model (XDM)] System](../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
+   - [Grunderna för schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [[!DNL Real-time Customer Profile]](../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Ta bort konton med användargränssnittet
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan **[!UICONTROL Sources]**. Skärmen **[!UICONTROL Catalog]** visar en mängd olika källor som du kan skapa konton och dataflöden med. Varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
+>[!TIP]
+>
+>Innan du tar bort källkontot måste du först ta bort alla befintliga dataflöden som är kopplade till källkontot. Om du vill ta bort befintliga dataflöden kan du läsa självstudiekursen om [ta bort källans dataflöden i användargränssnittet](./delete.md).
 
-Välj **[!UICONTROL Accounts]** för att komma åt sidan **[!UICONTROL Accounts]**.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan markera **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsyta. The **[!UICONTROL Catalog]** I visas en mängd olika källor som du kan skapa konton och dataflöden med. Varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
+
+Välj **[!UICONTROL Accounts]** för att komma åt **[!UICONTROL Accounts]** sida.
 
 ![catalog-accounts](../../images/tutorials/delete-accounts/catalog.png)
 
-En lista över befintliga konton visas. På den här sidan finns en lista med sorterbar information för befintliga konton, t.ex. källa, användarnamn, associerade dataflöden och skapat datum. Välj **kanalikonen** i det övre vänstra hörnet om du vill sortera.
+En lista över befintliga konton visas. På den här sidan finns en lista med sorterbar information för befintliga konton, t.ex. källa, användarnamn, associerade dataflöden och skapat datum. Välj **trattikon** längst upp till vänster för att sortera.
 
 ![dataflows-list](../../images/tutorials/delete-accounts/accounts.png)
 
@@ -47,9 +50,9 @@ Välj det konto du vill ta bort.
 
 ![dataflows-sort](../../images/tutorials/delete-accounts/sort.png)
 
-Panelen **[!UICONTROL Properties]** visas till höger på skärmen och innehåller information om det valda kontot.
+The **[!UICONTROL Properties]** visas till höger på skärmen och innehåller information om det valda kontot.
 
-Markera ellipserna (`...`) bredvid namnet på kontot som du vill ta bort. En popup-panel visas med alternativ för **[!UICONTROL Add data]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]**. Välj **[!UICONTROL Delete]** om du vill ta bort kontot.
+Markera ellipserna (`...`) bredvid namnet på det konto du vill ta bort. En popup-panel visas med alternativ för att **[!UICONTROL Add data]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]**. Välj **[!UICONTROL Delete]** för att ta bort kontot.
 
 ![dataflows-sort](../../images/tutorials/delete-accounts/delete.png)
 
@@ -59,6 +62,6 @@ En slutgiltig bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för a
 
 ## Nästa steg
 
-I den här självstudiekursen har du använt arbetsytan **[!UICONTROL Sources]** för att ta bort befintliga konton.
+Genom att följa den här självstudiekursen har du använt **[!UICONTROL Sources]** arbetsyta för att ta bort befintliga konton.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [ta bort anslutningar med API:t för Flow Service](../../tutorials/api/delete.md)
+För steg om hur du utför dessa åtgärder programmatiskt med [!DNL Flow Service] API, se självstudiekursen om [ta bort anslutningar med API:t för Flow Service](../../tutorials/api/delete.md)
