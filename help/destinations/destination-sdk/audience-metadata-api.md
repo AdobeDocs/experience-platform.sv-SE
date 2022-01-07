@@ -1,9 +1,10 @@
 ---
 description: På den här sidan beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten "/authoring/audition-templates".
 title: API-åtgärder för målgruppsmetadata
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 3444da8c-b2be-4254-980a-8cce7560134d
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '897'
+source-wordcount: '879'
 ht-degree: 2%
 
 ---
@@ -12,17 +13,17 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->**API-slutpunkt**:  `platform.adobe.io/data/core/activation/authoring/audience-templates`
+>**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/audience-templates`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/audience-templates`. En beskrivning av när den här slutpunkten ska användas finns i [hantering av målgruppsmetadata](./audience-metadata-management.md).
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/audience-templates` API-slutpunkt. En beskrivning av när den här slutpunkten ska användas finns i [hantering av målgruppsmetadata](./audience-metadata-management.md).
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Skapa en ny målgruppsmall {#create}
 
-Du kan skapa en ny målgruppsmall genom att göra en POST-förfrågan till `/authoring/audience-templates`-slutpunkten.
+Du kan skapa en ny målgruppsmall genom att göra en POST-förfrågan till `/authoring/audience-templates` slutpunkt.
 
 **API-format**
 
@@ -33,7 +34,7 @@ POST /authoring/audience-templates
 
 **Begäran**
 
-I följande begäran skapas en ny metadatamall för målgruppen, som konfigureras med parametrarna i nyttolasten. Nyttolasten nedan innehåller alla parametrar som accepteras av slutpunkten `/authoring/audience-templates`. Observera att du inte behöver lägga till alla parametrar i anropet och att mallen kan anpassas enligt dina API-krav.
+I följande begäran skapas en ny metadatamall för målgruppen, som konfigureras med parametrarna i nyttolasten. Nedan finns alla parametrar som accepteras av `/authoring/audience-templates` slutpunkt. Observera att du inte behöver lägga till alla parametrar i anropet och att mallen kan anpassas enligt dina API-krav.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-templates \
@@ -163,10 +164,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | `httpMethod` | Sträng | Den metod som används i slutpunkten för att skapa, uppdatera, ta bort eller validera segmentet/målgruppen i ditt mål programmatiskt. Exempel: `POST`, `PUT`, `DELETE` |
 | `headers.header` | Sträng | Anger alla HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"Content-Type"` |
 | `headers.value` | Sträng | Anger värdet för HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"application/x-www-form-urlencoded"` |
-| `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Vilka parametrar som ska läggas till i `requestBody`-objektet beror på vilka fält ditt API accepterar. Se till exempel det första mallexemplet [i funktionsdokumentet för målets metadata.](./audience-metadata-management.md#example-1) |
-| `responseFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexemplen](./audience-metadata-management.md#examples) i funktionsdokumentet för målets metadata. |
+| `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Parametrarna som ska läggas till i `requestBody` -objektet beror på vilka fält som API:t godkänner. Se till exempel [första mallexemplet](./audience-metadata-management.md#example-1) i funktionsdokumentet för målgruppsmetadata. |
+| `responseFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexempel](./audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
 | `responseFields.value` | Sträng | Ange värdet för eventuella svarsfält som API:t returnerar när det anropas. |
-| `responseErrorFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel mallexemplen [](./audience-metadata-management.md#examples) i funktionsdokumentet för målets metadata. |
+| `responseErrorFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [ mallexempel](./audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
 | `responseErrorFields.value` | Sträng | Tolkar felmeddelanden som returneras på API-anropssvar från ditt mål. Dessa felmeddelanden kommer att visas för användare i användargränssnittet i Experience Platform. |
 | `validations.field` | Sträng | Anger om valideringar ska köras för fält innan API-anrop görs till målet. Du kan till exempel använda `{{validations.accountId}}` för att validera användarens konto-ID. |
 | `validations.regex` | Sträng | Anger hur fältet ska struktureras för att valideringen ska gå igenom. |
@@ -179,7 +180,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya målgrupps
 
 ## Uppdatera målgruppsmall {#update}
 
-Du kan uppdatera en befintlig målgruppsmall genom att göra en PUT-begäran till `/authoring/audience-templates`-slutpunkten och ange instans-ID för den målgruppsmall som du vill uppdatera. Ange den uppdaterade mallen i anropets brödtext.
+Du kan uppdatera en befintlig målgruppsmall genom att göra en PUT-förfrågan till `/authoring/audience-templates` slutpunkt och ange instans-ID för den målgruppsmall som du vill uppdatera. Ange den uppdaterade mallen i anropets brödtext.
 
 **API-format**
 
@@ -295,7 +296,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 ## Hämta en lista med målgruppsmallar {#retrieve-list}
 
-Du kan hämta en lista över alla målgruppsmallar för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/audience-templates`-slutpunkten.
+Du kan hämta en lista över alla målgruppsmallar för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/audience-templates` slutpunkt.
 
 **API-format**
 
@@ -426,7 +427,7 @@ Följande svar returnerar HTTP-status 200 med en lista över målgruppsmetadatam
 
 ## Hämta en specifik målgruppsmall {#get}
 
-Du kan hämta detaljerad information om en viss målgruppsmall genom att göra en GET-förfrågan till `/authoring/audience-templates`-slutpunkten och ange instans-ID:t för den målgruppsmall som du vill hämta.
+Du kan hämta detaljerad information om en viss målgruppsmall genom att göra en GET-förfrågan till `/authoring/audience-templates` slutpunkt och ange instans-ID för den målgruppsmall som du vill hämta.
 
 **API-format**
 
@@ -563,7 +564,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ## Ta bort en specifik målgruppsmall {#delete}
 
-Du kan ta bort den angivna målgruppsmallen genom att göra en DELETE-begäran till `/authoring/audience-templates`-slutpunkten och ange ID:t för målgruppsmallen som du vill ta bort i sökvägen för begäran.
+Du kan ta bort den angivna målgruppsmallen genom att göra en DELETE-förfrågan till `/authoring/audience-templates` slutpunkt och ange ID:t för målgruppsmallen som du vill ta bort i sökvägen för begäran.
 
 **API-format**
 
@@ -573,7 +574,7 @@ DELETE /authoring/audience-templates/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{INSTANCE_ID}` | `id` för målgruppsmallen som du vill ta bort. |
+| `{INSTANCE_ID}` | The `id` för målgruppsmallen som du vill ta bort. |
 
 **Begäran**
 
@@ -591,8 +592,8 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 
 ## API-felhantering
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [begäranrubrikfel](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu när du ska använda metadatamallar för målgrupper och hur du konfigurerar en metadatamall för målgrupper med hjälp av API-slutpunkten `/authoring/audience-templates`. Läs [hur du använder mål-SDK för att konfigurera ditt mål](./configure-destination-instructions.md) och förstå var det här steget passar in i processen att konfigurera ditt mål.
+När du har läst det här dokumentet vet du nu när du ska använda metadatamallar för målgrupper och hur du konfigurerar en metadatamall för målgrupper med `/authoring/audience-templates` API-slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.

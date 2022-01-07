@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/sample` för att få en testmeddelandetransformeringsmall för ditt mål.
 title: Hämta API-åtgärder för exempelmallar
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
-source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '401'
+source-wordcount: '383'
 ht-degree: 0%
 
 ---
@@ -13,21 +13,21 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**API-slutpunkt**:  `https://platform.adobe.io/data/core/activation/authoring/testing/template/sample`
+>**API-slutpunkt**: `https://platform.adobe.io/data/core/activation/authoring/testing/template/sample`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/sample` för att generera en [meddelandetransformeringsmall](./message-format.md#using-templating) för ditt mål. En beskrivning av de funktioner som stöds av den här slutpunkten finns i [skapa mall](./create-template.md).
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/testing/template/sample` API-slutpunkt för att generera en [omformningsmall för meddelanden](./message-format.md#using-templating) till destinationen. En beskrivning av de funktioner som stöds av den här slutpunkten finns i [skapa mall](./create-template.md).
 
 ## Komma igång med API-åtgärder för exempelmallar {#get-started}
 
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Hämta exempelmall {#generate-sample-template}
 
-Du kan hämta en exempelmall genom att göra en GET-förfrågan till `authoring/testing/template/sample/`-slutpunkten och ange mål-ID:t för målkonfigurationen som du skapar mallen utifrån.
+Du kan hämta en exempelmall genom att göra en GET-förfrågan till `authoring/testing/template/sample/` slutpunkt och ange mål-ID för den målkonfiguration som du skapar mallen utifrån.
 
 >[!TIP]
 >
->* Det mål-ID som du bör använda här är det `instanceId` som motsvarar en målkonfiguration, som skapas med slutpunkten `/destinations`. Se [API-referens för målkonfiguration](./destination-configuration-api.md#retrieve-list).
+>* Mål-ID som du ska använda här är `instanceId` som motsvarar en målkonfiguration, skapad med `/destinations` slutpunkt. Se [API-referens för destinationskonfiguration](./destination-configuration-api.md#retrieve-list).
 
 
 **API-format**
@@ -59,7 +59,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 Ett lyckat svar returnerar HTTP-status 200 med en exempelmall som du kan redigera för att matcha det förväntade dataformatet.
 
-Om det mål-ID som du anger motsvarar en målkonfiguration med [bästa möjliga ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) och `maxUsersPerRequest=1` i aggregeringsprincipen, returnerar begäran en exempelmall som liknar denna:
+Om det mål-ID du anger motsvarar en målkonfiguration med [bästa ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) och `maxUsersPerRequest=1` I sammansättningsprincipen returnerar begäran en exempelmall som liknar denna:
 
 ```python
 {#- THIS is an example template for a single profile -#}
@@ -92,7 +92,7 @@ Om det mål-ID som du anger motsvarar en målkonfiguration med [bästa möjliga 
 }
 ```
 
-Om det mål-ID som du anger motsvarar en målservermall med [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) eller [bästa möjliga ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) med `maxUsersPerRequest` större än en, returnerar begäran en exempelmall som liknar denna:
+Om det mål-ID du anger motsvarar en målservermall med [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) eller [bästa ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) med `maxUsersPerRequest` mer än en, returnerar begäran en exempelmall som liknar denna:
 
 ```python
 {#- THIS is an example template for multiple profiles -#}
@@ -133,8 +133,8 @@ Om det mål-ID som du anger motsvarar en målservermall med [konfigurerbar aggre
 
 ## API-felhantering {#api-error-handling}
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [begäranrubrikfel](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du genererar en meddelandetransformeringsmall med API-slutpunkten `/authoring/testing/template/sample`. Sedan kan du använda [API-slutpunkten för återgivningsmallen](./render-template-api.md) för att generera exporterade profiler baserat på mallen och jämföra dem med målets förväntade dataformat.
+När du har läst det här dokumentet vet du nu hur du skapar en meddelandeomformningsmall med hjälp av `/authoring/testing/template/sample` API-slutpunkt. Nu kan du använda [Återge mall-API-slutpunkt](./render-template-api.md) för att generera exporterade profiler som är baserade på mallen och jämföra dem med målets förväntade dataformat.

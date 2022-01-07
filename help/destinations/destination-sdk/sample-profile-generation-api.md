@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/sample-profiles` för att generera exempelprofiler som ska användas vid måltestning.
 title: API-åtgärder för generering av exempelprofiler
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 7f0dcc916b72145705ecd09b45aadd40eac99b23
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '989'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
@@ -375,7 +375,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 

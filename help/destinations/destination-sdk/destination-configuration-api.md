@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '2405'
+source-wordcount: '2387'
 ht-degree: 1%
 
 ---
@@ -697,8 +697,8 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 
 ## API-felhantering
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu hur du konfigurerar ditt mål med `/authoring/destinations` API-slutpunkt. Läs [Så här använder du mål-SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu hur du konfigurerar ditt mål med `/authoring/destinations` API-slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.

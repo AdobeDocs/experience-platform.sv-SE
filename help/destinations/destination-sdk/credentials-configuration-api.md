@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/credentials`.
 title: API-åtgärder för slutpunkt för autentiseringsuppgifter
 exl-id: 89957f38-e7f4-452d-abc0-0940472103fe
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '712'
 ht-degree: 2%
 
 ---
@@ -400,8 +400,8 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
 
 ## API-felhantering
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
-När du har läst det här dokumentet vet du nu när du ska använda slutpunkten för autentiseringsuppgifter och hur du ställer in en konfiguration för autentiseringsuppgifter med `/authoring/credentials` API-slutpunkt eller `/authoring/destinations` slutpunkt. Läs [Så här använder du mål-SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu när du ska använda slutpunkten för autentiseringsuppgifter och hur du ställer in en konfiguration för autentiseringsuppgifter med `/authoring/credentials` API-slutpunkt eller `/authoring/destinations` slutpunkt. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.

@@ -5,13 +5,13 @@ title: (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-A
 description: I den här artikeln beskrivs hela arbetsflödet för aktivering av målgruppssegment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: 749fa5dc1e8291382408d9b1a0391c4c7f2b2a46
+exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1045'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API
 
@@ -185,4 +185,4 @@ Ett lyckat svar returnerar HTTP-status 200.
 
 ## API-felhantering
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.

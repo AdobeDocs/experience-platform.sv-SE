@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/render` för att återge exporterade data för ditt mål, baserat på din meddelandeomvandlingsmall.
 title: API-åtgärder för återgivningsmall
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: aa5898369d41ba48a1416a0b4ea82f6345333d18
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '806'
 ht-degree: 0%
 
 ---
@@ -1067,8 +1067,8 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
 
 ## API-felhantering {#api-error-handling}
 
-Destination SDK API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [fel i begäranhuvudet](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du använder meddelandeomformningsmallen för att generera exporterade profiler som matchar målets förväntade dataformat. Läs [hur du konfigurerar ditt mål med Destination SDK](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.
+När du har läst det här dokumentet vet du nu hur du använder meddelandeomformningsmallen för att generera exporterade profiler som matchar målets förväntade dataformat. Läs [Så här använder du Destination SDK för att konfigurera ditt mål](./configure-destination-instructions.md) för att förstå var det här steget passar in i processen att konfigurera målet.

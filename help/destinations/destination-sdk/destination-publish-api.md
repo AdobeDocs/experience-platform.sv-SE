@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/Destations/publish`.
 title: API-slutpunktsåtgärder för publiceringsmål
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '757'
 ht-degree: 2%
 
 ---
@@ -13,23 +13,23 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->**API-slutpunkt**:  `platform.adobe.io/data/core/activation/authoring/destinations/publish`
+>**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destinations/publish`.
+På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/destinations/publish` API-slutpunkt.
 
 När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering.
 
 Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
-* Som SDK-destinationspartner vill ni göra er produkterade destination tillgänglig i alla Experience Platform-organisationer så att alla Experience Platform-kunder kan använda den;
+* Som Destination SDK partner vill ni att alla kunder i Experience Platform ska kunna använda er av den producerade destinationen,
 * Du vill göra ditt anpassade mål tillgängligt i din egen Experience Platform-organisation, i alla sandlådor.
 
 ## Komma igång med API-åtgärder för målpublicering {#get-started}
 
-Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive hur du får nödvändig behörighet för målredigering och nödvändiga rubriker.
+Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Skicka en målkonfiguration för publicering {#create}
 
-Du kan skicka en målkonfiguration för publicering genom att göra en POST-förfrågan till `/authoring/destinations/publish`-slutpunkten.
+Du kan skicka en målkonfiguration för publicering genom att göra en POST-förfrågan till `/authoring/destinations/publish` slutpunkt.
 
 **API-format**
 
@@ -40,7 +40,7 @@ POST /authoring/destinations/publish
 
 **Begäran**
 
-Följande begäran skickar en publiceringsdestination i de organisationer som konfigurerats med parametrarna i nyttolasten. Nyttolasten nedan innehåller alla parametrar som accepteras av slutpunkten `/authoring/destinations/publish`.
+Följande begäran skickar en publiceringsdestination i de organisationer som konfigurerats med parametrarna i nyttolasten. Nedan finns alla parametrar som accepteras av `/authoring/destinations/publish` slutpunkt.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
@@ -62,9 +62,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `destinationId` | Sträng | Mål-ID för målkonfigurationen som du skickar för publicering. Hämta mål-ID:t för en målkonfiguration med hjälp av API-referensen [för målkonfiguration](./destination-configuration-api.md#retrieve-list). |
-| `destinationAccess` | Sträng | `ALL` eller `LIMITED`. Ange om du vill att destinationen ska visas i katalogen för alla Experience Platform-kunder eller bara för vissa organisationer. <br> **Obs**: Om du använder  `LIMITED`kommer målet endast att publiceras för din Experience Platform-organisation. Om du vill publicera destinationen till en delgrupp av Experience Platform-organisationer för kundtestning kan du kontakta supporten för Adobe. |
-| `allowedOrgs` | Sträng | Om du använder `"destinationAccess":"LIMITED"` anger du de Experience Platform-organisationer som målet ska vara tillgängligt för. |
+| `destinationId` | Sträng | Mål-ID för målkonfigurationen som du skickar för publicering. Hämta mål-ID:t för en målkonfiguration med [API-referens för destinationskonfiguration](./destination-configuration-api.md#retrieve-list). |
+| `destinationAccess` | Sträng | `ALL` eller `LIMITED`. Ange om du vill att destinationen ska visas i katalogen för alla Experience Platform-kunder eller bara för vissa organisationer. <br> **Anteckning**: Om du använder `LIMITED`publiceras målet endast för din Experience Platform-organisation. Om du vill publicera destinationen till en delgrupp av Experience Platform-organisationer för kundtestning kan du kontakta supporten för Adobe. |
+| `allowedOrgs` | Sträng | Om du använder `"destinationAccess":"LIMITED"`, ange för vilka Experience Platform-organisationer destinationen ska vara tillgänglig. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -74,7 +74,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om din målpublicerin
 
 ## Lista målpubliceringsbegäranden {#retrieve-list}
 
-Du kan hämta en lista över alla mål som skickats in för publicering för din IMS-organisation genom att göra en GET-begäran till `/authoring/destinations/publish`-slutpunkten.
+Du kan hämta en lista över alla mål som skickats in för publicering för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/destinations/publish` slutpunkt.
 
 **API-format**
 
@@ -129,7 +129,7 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
 
 ## Uppdatera en befintlig målpubliceringsbegäran {#update}
 
-Du kan uppdatera de tillåtna organisationerna i en befintlig målpubliceringsbegäran genom att göra en PUT-begäran till `/authoring/destinations/publish`-slutpunkten och ange ID:t för målet som du vill uppdatera de tillåtna organisationerna för. Ange de uppdaterade tillåtna organisationerna i samtalet.
+Du kan uppdatera de tillåtna organisationerna i en befintlig målpubliceringsbegäran genom att göra en PUT-begäran till `/authoring/destinations/publish` slutpunkt och ange ID för destinationen som du vill uppdatera de tillåtna organisationerna för. Ange de uppdaterade tillåtna organisationerna i samtalet.
 
 **API-format**
 
@@ -166,7 +166,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 
 ## Hämta status för en specifik målpubliceringsbegäran {#get}
 
-Du kan hämta detaljerad information om en viss målpubliceringsbegäran genom att göra en GET-förfrågan till `/authoring/destinations/publish`-slutpunkten och ange ID:t för det mål som du vill hämta publiceringsstatusen för.
+Du kan hämta detaljerad information om en viss målpubliceringsbegäran genom att göra en GET-förfrågan till `/authoring/destinations/publish` slutpunkt och ange ID för destinationen som du vill hämta publiceringsstatusen för.
 
 **API-format**
 
@@ -212,7 +212,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ## API-felhantering
 
-SDK API-målslutpunkterna följer de allmänna felmeddelandeprinciperna för Experience Platform-API. Se [API-statuskoder](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) och [begäranrubrikfel](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) i felsökningsguiden för plattformen.
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
 ## Nästa steg
 
