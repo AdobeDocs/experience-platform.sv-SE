@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 320c95f894c75a7f52808730b0cac4bc1e4411e1
+source-git-commit: 54da385fa3e275137164423a0bec71445b0242e4
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '686'
 ht-degree: 1%
 
 ---
@@ -20,6 +20,8 @@ ht-degree: 1%
    * [Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Anslut till e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/email-marketing.md)
    * [(Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
+   * [Ta bort destinationskonton](./api/delete-destination-account.md)
+   * [Ta bort måldataflöden](./api/delete-destination-dataflow.md)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
    * [Skapa en ny målanslutning](./ui/connect-destination.md)
@@ -174,8 +176,8 @@ ht-degree: 1%
          * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
          * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
    * Stödlinjer {#guides}
-      * [Använd Destination SDK för att konfigurera ett mål för direktuppspelning](./destination-sdk/configure-destination-instructions.md)
-      * [Skicka för granskning till ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
+      * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
+      * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
    * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
       * [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
