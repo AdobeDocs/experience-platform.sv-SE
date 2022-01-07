@@ -4,9 +4,10 @@ solution: Experience Platform
 title: Ta bort ett målkonto med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort ett målkonto med API:t för Flow Service.
-source-git-commit: df89f8ce8050b26068e0ab7aa01f1c964f5d2422
+exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
+source-git-commit: c93a054174bc68ecedf67599ef61ad0b41a56ada
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '766'
 ht-degree: 0%
 
 ---
@@ -184,4 +185,4 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du använt [!DNL Flow Service] API för att ta bort befintliga målkonton.
+Genom att följa den här självstudiekursen har du använt [!DNL Flow Service] API för att ta bort befintliga målkonton. Mer information om hur du använder mål finns i [destinationer, översikt](/help/destinations/home.md).

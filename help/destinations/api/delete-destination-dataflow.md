@@ -4,9 +4,10 @@ solution: Experience Platform
 title: Ta bort ett måldataflöde med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du tar bort dataflöden till batchmål och direktuppspelningsmål med API:t för Flow Service.
-source-git-commit: df89f8ce8050b26068e0ab7aa01f1c964f5d2422
+exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
+source-git-commit: c93a054174bc68ecedf67599ef61ad0b41a56ada
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
@@ -90,3 +91,5 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 Genom att följa den här självstudiekursen har du använt [!DNL Flow Service] API för att ta bort ett befintligt dataflöde till ett mål.
 
 Anvisningar om hur du utför dessa åtgärder med användargränssnittet finns i självstudiekursen om [ta bort dataflöden i användargränssnittet](../ui/delete-destinations.md).
+
+Nu kan du fortsätta och [ta bort destinationskonton](/help/destinations/api/delete-destination-account.md) med [!DNL Flow Service] API.
