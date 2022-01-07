@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: 42a1ceac3de2244bef858bf03eabe4910ae597f8
+source-git-commit: 644be95d9f90e20622c4f8ad68252ac57c09a288
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '623'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## 7 januari 2022
+
+### Adobe Target v2-tillägg 0.17.0
+
+- Uppdaterat till stöd för at.js v2.8.0, som nu samlar in data om funktionsanvändning och prestanda.  Personuppgifter samlas inte in. Om du vill avanmäla dig från den här funktionen anger du `telemetryEnabled` till `false` in `targetGlobalSettings`.
 
 ## 28 oktober 2021
 
