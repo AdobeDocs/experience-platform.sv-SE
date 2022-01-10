@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: f7f3bc229ddad046dca5ea8d2889942fc9cb2cab
+source-git-commit: ba338972be13c7afa6720bba3f0fc96d244b8f9f
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '835'
 ht-degree: 0%
 
 ---
@@ -117,7 +117,7 @@ Observera att alla mappade attribut exporteras för en profil, oavsett var ändr
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade [!DNL Experience Platform] datakörningar i [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] datakörningar i [!DNL Amazon Kinesis] i JSON-format. Exporten nedan innehåller till exempel en profil som har kvalificerats för ett visst segment och avslutat ett annat segment, och den innehåller profilattributets förnamn, efternamn, födelsedatum och personlig e-postadress. Identiteterna för den här profilen är ECID och e-post.
 
 ```json
 {

@@ -3,9 +3,9 @@ keywords: strömning,
 title: HTTP API-anslutning
 description: Med HTTP API-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: b0c2c8313e05d1316f23dc15d99893e1887f8dcf
+source-git-commit: ba338972be13c7afa6720bba3f0fc96d244b8f9f
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ Observera att alla mappade attribut exporteras för en profil, oavsett var ändr
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade [!DNL Experience Platform] data får plats i [!DNL HTTP] mål i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är [!DNL ECID] och mejl.
+Dina exporterade [!DNL Experience Platform] data får plats i [!DNL HTTP] mål i JSON-format. Exporten nedan innehåller till exempel en profil som har kvalificerats för ett visst segment och avslutat ett annat segment, och den innehåller profilattributets förnamn, efternamn, födelsedatum och personlig e-postadress. Identiteterna för den här profilen är ECID och e-post.
 
 ```json
 {

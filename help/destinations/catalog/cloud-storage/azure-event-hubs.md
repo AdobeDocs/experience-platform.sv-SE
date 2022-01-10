@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) [!DNL Azure Event Hubs] anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: b0c2c8313e05d1316f23dc15d99893e1887f8dcf
+source-git-commit: 0a45cb49f3eb2bbd6ac1b39962df88b2352eb121
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '743'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ Observera att alla mappade attribut exporteras för en profil, oavsett var ändr
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade [!DNL Experience Platform] datakörningar i [!DNL Azure Event Hubs] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] datakörningar i [!DNL Azure Event Hubs] i JSON-format. Exporten nedan innehåller till exempel en profil som har kvalificerats för ett visst segment och avslutat ett annat segment, och den innehåller profilattributets förnamn, efternamn, födelsedatum och personlig e-postadress. Identiteterna för den här profilen är ECID och e-post.
 
 ```json
 {
