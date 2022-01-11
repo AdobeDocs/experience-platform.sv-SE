@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: f529a49c994d20f4b8da4c0d6bfe4c06a1a32655
+source-git-commit: a3596624c16da6369f8901d448bb381c37e3510e
 workflow-type: tm+mt
-source-wordcount: '2123'
+source-wordcount: '2130'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill ski
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
 >abstract="Välj Exportera hela filer om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för segmentet. Markera Exportera stegvisa filer om du bara vill exportera de profiler som är kvalificerade för segmentet sedan den senaste exporten. Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för segmentet och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för segmentet sedan den första inkrementella filexporten."
->additional-url="https://www.adobe.com/go/destinations-incremental-files-en" text="Exportera inkrementella filer"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#export-incremental-files" text="Exportera inkrementella filer"
 
 Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
 
