@@ -5,17 +5,16 @@ title: Förförberedda satser i frågetjänsten
 topic-legacy: prepared statements
 description: I SQL används förberedda satser för att malla liknande frågor eller uppdateringar. Adobe Experience Platform Query Service stöder förberedda satser med hjälp av en parametriserad fråga.
 exl-id: 7ee4a10e-2bfe-487f-a8c5-f03b5b1d77e3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 9f4e34edc47a333aa88153529d0af6a10f189a15
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '374'
 ht-degree: 6%
 
 ---
 
 # Förberedda programsatser
 
-I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser med hjälp av en parametriserad fråga. Detta kan användas för att optimera prestanda eftersom du inte längre behöver tolka en fråga om och om igen.
+I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser genom att använda en parametriserad fråga. Detta kan optimera prestanda eftersom du inte längre behöver tolka en fråga upprepade gånger.
 
 ## Använda förberedda satser
 
@@ -25,9 +24,9 @@ Följande syntaxer stöds när förberedda satser används:
 - [KÖR](#execute)
 - [DEALOCATE](#deallocate)
 
-### Förbered en sats {#prepare}
+### Förbered en programsats {#prepare}
 
-Den här SQL-frågan sparar den skrivna SELECT-frågan med namnet `PLAN_NAME`. Du kan använda variabler, till exempel `$1` i stället för faktiska värden. Den här förberedda satsen sparas under den aktuella sessionen. Observera att plannamn är **inte** skiftlägeskänsliga.
+Den här SQL-frågan sparar den skrivna SELECT-frågan med namnet som `PLAN_NAME`. Du kan använda variabler, till exempel `$1` i stället för faktiska värden. Den här förberedda satsen sparas under den aktuella sessionen. Observera att namn på planer är **not** skiftlägeskänslig.
 
 #### SQL-format
 
@@ -41,7 +40,7 @@ PREPARE {PLAN_NAME} AS {SELECT_QUERY}
 PREPARE test AS SELECT * FROM table WHERE country = $1 AND city = $2;
 ```
 
-### Kör en förberedd sats {#execute}
+### Kör en förberett utdrag {#execute}
 
 Den här SQL-frågan använder den förberedda satsen som skapades tidigare.
 
@@ -57,7 +56,7 @@ EXECUTE {PLAN_NAME}('{PARAMETERS}')
 EXECUTE test('canada', 'vancouver');
 ```
 
-### Deallokera en förberedd sats {#deallocate}
+### Frigör en förberedd sats {#deallocate}
 
 Den här SQL-frågan används för att ta bort den namngivna förberedda satsen.
 

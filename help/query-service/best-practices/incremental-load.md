@@ -1,9 +1,10 @@
 ---
 title: Exempel på inkrementella inläsningsfrågor
 description: Funktionen för inkrementell inläsning använder både anonyma funktioner för block och ögonblicksbilder för att ge en nästan realtidslösning för att flytta data från datasjön till data warehouse samtidigt som matchande data ignoreras.
-source-git-commit: fb464c6e6b1972f5a2653872385517749936691a
+exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
+source-git-commit: 943886078fe31a12542c297133ac6a0a0d551e08
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '687'
 ht-degree: 0%
 
 ---
@@ -22,11 +23,11 @@ SQL-exemplen i det här dokumentet kräver att du har en förståelse för de an
 
 Anvisningar om vilka termer som används i den här handboken finns i [SQL-syntaxguide](../sql/syntax.md).
 
-## Steg
+## Inläsning av data inkrementellt
 
 Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonblicksbilder och den anonyma blockfunktionen. Designmönstret kan användas som mall för en egen frågesekvens.
 
-1. Skapa en `checkpoint_log` för att spåra den senaste ögonblicksbilden som använts för att bearbeta data. Spårningstabellen (`checkpoint_log` i det här exemplet) måste först initieras till `null` för att stegvis bearbeta en datauppsättning.
+1 Skapa en `checkpoint_log` för att spåra den senaste ögonblicksbilden som använts för att bearbeta data. Spårningstabellen (`checkpoint_log` i det här exemplet) måste först initieras till `null` för att stegvis bearbeta en datauppsättning.
 
 ```SQL
 DROP TABLE IF EXISTS checkpoint_log;
@@ -39,7 +40,7 @@ SELECT
    WHERE false;
 ```
 
-1. Fyll i `checkpoint_log` tabell med en tom post för den datauppsättning som behöver inkrementell bearbetning. `DIM_TABLE_ABC` är den datauppsättning som ska bearbetas i exemplet nedan. Vid det första tillfället av bearbetning `DIM_TABLE_ABC`, `last_snapshot_id` initieras som `null`. Detta gör att du kan bearbeta hela datauppsättningen vid första tillfället och stegvis efter detta.
+2 Fyll i `checkpoint_log` tabell med en tom post för den datauppsättning som behöver inkrementell bearbetning. `DIM_TABLE_ABC` är den datauppsättning som ska bearbetas i exemplet nedan. Vid det första tillfället av bearbetning `DIM_TABLE_ABC`, `last_snapshot_id` initieras som `null`. Detta gör att du kan bearbeta hela datauppsättningen vid första tillfället och stegvis efter detta.
 
 ```SQL
 INSERT INTO
@@ -51,20 +52,19 @@ INSERT INTO
        CURRENT_TIMESTAMP process_timestamp;
 ```
 
-1. Nästa, initiera `DIM_TABLE_ABC_Incremental` som innehåller bearbetade utdata från `DIM_TABLE_ABC`. Det anonyma blocket i **obligatoriskt** körningsavsnittet i SQL-exemplet nedan, som beskrivs i steg ett till fyra, körs sekventiellt för att bearbeta data stegvis.
+3 Nästa, initiera `DIM_TABLE_ABC_Incremental` som innehåller bearbetade utdata från `DIM_TABLE_ABC`. Det anonyma blocket i **obligatoriskt** körningsavsnittet i SQL-exemplet nedan, som beskrivs i steg ett till fyra, körs sekventiellt för att bearbeta data stegvis.
 
-   1. Ange `from_snapshot_id` som anger var bearbetningen börjar. The `from_snapshot_id` i exemplet frågas från `checkpoint_log` tabell för användning med `DIM_TABLE_ABC`. Vid den första körningen kommer ID:t för ögonblicksbilden att `null` vilket innebär att hela datauppsättningen kommer att bearbetas.
-   2. Ange `to_snapshot_id` som det aktuella ögonblicksbild-ID:t för källtabellen (`DIM_TABLE_ABC`). I exemplet hämtas detta från källtabellens metadatatabell.
-   3. Använd `CREATE` nyckelord som ska skapas `DIM_TABLE_ABC_Incremenal` som måltabell. Måltabellen består av bearbetade data från källdatauppsättningen (`DIM_TABLE_ABC`). Detta tillåter att bearbetade data från källtabellen mellan `from_snapshot_id` och `to_snapshot_id`, som läggs till stegvis i måltabellen.
-   4. Uppdatera `checkpoint_log` tabellen med `to_snapshot_id` för källdata som `DIM_TABLE_ABC` har bearbetats.
-   5. Om någon av de sekventiellt utförda frågorna i det anonyma blocket misslyckas, **valfri** undantagsavsnitt körs. Detta returnerar ett fel och avslutar processen.
+1. Ange `from_snapshot_id` som anger var bearbetningen börjar. The `from_snapshot_id` i exemplet frågas från `checkpoint_log` tabell för användning med `DIM_TABLE_ABC`. Vid den första körningen kommer ID:t för ögonblicksbilden att `null` vilket innebär att hela datauppsättningen kommer att bearbetas.
+2. Ange `to_snapshot_id` som det aktuella ögonblicksbild-ID:t för källtabellen (`DIM_TABLE_ABC`). I exemplet hämtas detta från källtabellens metadatatabell.
+3. Använd `CREATE` nyckelord som ska skapas `DIM_TABLE_ABC_Incremenal` som måltabell. Måltabellen består av bearbetade data från källdatauppsättningen (`DIM_TABLE_ABC`). Detta tillåter att bearbetade data från källtabellen mellan `from_snapshot_id` och `to_snapshot_id`, som läggs till stegvis i måltabellen.
+4. Uppdatera `checkpoint_log` tabellen med `to_snapshot_id` för källdata som `DIM_TABLE_ABC` har bearbetats.
+5. Om någon av de sekventiellt utförda frågorna i det anonyma blocket misslyckas, **valfri** undantagsavsnitt körs. Detta returnerar ett fel och avslutar processen.
 
 >[!NOTE]
 >
 >The `history_meta('source table name')` är en praktisk metod som används för att få åtkomst till tillgängliga ögonblicksbilder i en datauppsättning.
 
 ```SQL
-$$
 BEGIN
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a JOIN
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
@@ -86,17 +86,16 @@ INSERT INTO
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END$$;
+ END;
 ```
 
-1. Använd logiken för inkrementell datainläsning i exemplet med anonyma block nedan för att tillåta att nya data från källdatauppsättningen (sedan den senaste tidsstämpeln) bearbetas och läggs till i måltabellen vid en vanlig gräns. I exemplet ändras data till `DIM_TABLE_ABC` bearbetas och läggs till `DIM_TABLE_ABC_incremental`.
+4 Använd logiken för inkrementell datainläsning i exemplet med anonyma block nedan för att tillåta att nya data från källdatauppsättningen (sedan den senaste tidsstämpeln) bearbetas och läggs till i måltabellen vid en vanlig gräns. I exemplet ändras data till `DIM_TABLE_ABC` bearbetas och läggs till `DIM_TABLE_ABC_incremental`.
 
 >[!NOTE]
 >
 > `_ID` är primärnyckeln i båda `DIM_TABLE_ABC_Incremental` och `SELECT history_meta('DIM_TABLE_ABC')`.
 
 ```SQL
-$$
 BEGIN
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a join
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
@@ -118,7 +117,7 @@ INSERT INTO
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END$$;
+ END;
 ```
 
 Denna logik kan tillämpas på alla tabeller för att utföra inkrementella inläsningar.
@@ -138,7 +137,6 @@ SET resolve_fallback_snapshot_on_failure=true;
 Hela kodblocket ser ut så här:
 
 ```SQL
-$$
 BEGIN
     SET resolve_fallback_snapshot_on_failure=true;
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a JOIN
@@ -160,7 +158,7 @@ Insert Into
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END$$;
+ END;
 ```
 
 ## Nästa steg
