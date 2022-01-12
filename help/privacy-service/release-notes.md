@@ -5,7 +5,7 @@ title: Versionsinformation om Privacy Service
 topic-legacy: release notes
 description: Den senaste versionsinformationen för Adobe Experience Platform Privacy Service.
 exl-id: 66ee38f1-f0d5-44ff-823d-d1b8a9765c6d
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 6%
@@ -47,7 +47,7 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 | [!DNL Privacy Service] omprofilering | Det tidigare namnet&quot;GDPR Service&quot; har ändrats till [!DNL Privacy Service] eftersom tjänsten har växt till att stödja andra bestämmelser utöver GDPR. |
 | Nya API-slutpunkter | Grundsökväg för [!DNL Privacy Service] API har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs` |
 | Nytt krävs `regulation` property | När nya jobb skapas i [!DNL Privacy Service] API, en `regulation` egenskapen måste anges i nyttolasten för att ange vilken regel som ska gälla för att spåra jobbet under. Godkända värden är `gdpr` och `ccpa`. Visa dokumentet på [sekretessjobb](api/privacy-jobs.md) i [!DNL Privacy Service] API-guide för mer information. |
-| Stöd för Adobe Primetime-autentisering | [!DNL Privacy Service] nu accepterar åtkomst-/borttagningsbegäranden från Adobe Primetime-autentisering med `primetimeAuthentication` som produktvärde. Se [Autentiseringsdokumentation för Primetime](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) för mer information. |
+| Stöd för Adobe Primetime-autentisering | [!DNL Privacy Service] nu accepterar åtkomst-/borttagningsbegäranden från Adobe Primetime-autentisering med `primetimeAuthentication` som produktvärde. Se [Autentiseringsdokumentation för Primetime](https://tve.helpdocsonline.com/how-to-make-a-privacy-request) för mer information. |
 
 ### Förbättringar
 

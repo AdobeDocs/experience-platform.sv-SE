@@ -5,7 +5,7 @@ title: Geo-datatyp
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Geo XDM.
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
 source-wordcount: '198'
 ht-degree: 3%
@@ -23,11 +23,11 @@ ht-degree: 3%
 | `_schema` | [[!UICONTROL Geo Coordinates]](./geo-coordinates.md) | Beskriver platsens geografiska koordinater. |
 | `_id` | Sträng | Ett unikt, systemgenererat ID för koordinaterna. |
 | `city` | Sträng | Namnet på staden. |
-| `countryCode` | Sträng | Det två tecknet <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> för landet. |
+| `countryCode` | Sträng | De två tecknen <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> landskoden. |
 | `dmaID` | Heltal | Nielsens medieforskning har utsett ett marknadsområde. |
 | `msaID` | Heltal | Det statistiska storstadsområdet i Förenta staterna där observationen gjordes. |
 | `postalCode` | Sträng | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
-| `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer standarden [ISO 3166-2 (land och delområde)](http://www.unece.org/cefact/locode/subdivisions.html). |
+| `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html) standard. |
 
 {style=&quot;table-layout:auto&quot;}
 

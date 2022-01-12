@@ -1,40 +1,39 @@
 ---
 keywords: rtcdp-administration, översikt;administration, översikt
-title: Översikt över administration av kunddataplattform i realtid
-seo-title: Översikt över CDP-administration i realtid
-description: 'Dokumentet innehåller en översikt över administrationsfunktionerna i kunddataplattformen i realtid med Adobe Experience Platform. '
-seo-description: seo-beskrivning
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+title: Real-time Customer Data Platform Administration - översikt
+seo-title: Real-Time CDP administration overview
+description: 'Dokumentet innehåller en översikt över administrationsfunktionerna i Real-time Customer Data Platform, som drivs av Adobe Experience Platform. '
+seo-description: seo description
+exl-id: c5bdeac6-345a-4ef1-bc5a-a993f565b9d6
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '282'
 ht-degree: 0%
 
 ---
 
+# Real-time Customer Data Platform - översikt
 
-# Översikt över administration av kunddataplattform i realtid
-
-Det här dokumentet innehåller en översikt över administrationsfunktionerna i [!DNL Real-time Customer Data Platform], som drivs av Adobe Experience Platform.
+Dokumentet innehåller en översikt över administrationsfunktionerna i [!DNL Real-time Customer Data Platform], som drivs av Adobe Experience Platform.
 
 [!DNL Experience Platform] gör att administratörer kan hantera rollbaserad åtkomstkontroll för användare samt hantera virtuella sandlådor för programutveckling.
 
-Följande avsnitt innehåller introduktioner till de centrala komponenterna i administrationsfunktionerna för [!DNL Experience Platform] och länkar till [!DNL Experience Platform]-dokumentation där mer detaljerad information finns.
+Följande avsnitt innehåller introduktioner till de centrala komponenterna i [!DNL Experience Platform] administrationsfunktioner och innehåller länkar till [!DNL Experience Platform] dokumentation där mer detaljerad information tillhandahålls.
 
 ## Åtkomstkontroll
 
-Åtkomstkontroll administreras via [Adobe Admin Console](http://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], vilket gör att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomst till specifika CDP-funktioner i realtid för definierade användaruppsättningar.
+Åtkomstkontrollen administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], vilket gör att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomst till specifika CDP-funktioner i realtid för definierade användaruppsättningar.
 
-Mer information om åtkomstkontroll finns i [översikten över åtkomstkontroll](../../access-control/home.md) i dokumentationen för [!DNL Experience Platform].
+Mer information om åtkomstkontroll finns i [åtkomstkontroll - översikt](../../access-control/home.md) i [!DNL Experience Platform] dokumentation.
 
 >[!IMPORTANT]
 >
->Om du vill ha en detaljerad guide om hur du beviljar åtkomst till CDP-funktioner i realtid, inklusive hur du aktiverar synlighet i användargränssnittet, följer du stegen i [användarhandboken för åtkomstkontroll](../../access-control/ui/overview.md), särskilt för hantering av detaljer och ytterligare tjänster för en produktprofil.
+>Om du vill ha en detaljerad guide om hur du ger åtkomst till CDP-funktioner i realtid, inklusive hur du aktiverar synlighet i användargränssnittet, följer du stegen i [användarhandbok för åtkomstkontroll](../../access-control/ui/overview.md), särskilt för hantering av detaljer och ytterligare tjänster för en produktprofil.
 
 ## Sandlådor
 
 Adobe Experience Platform (och CDP i realtid som tillägg) är byggt för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav.
 
-För att tillgodose detta behov tillhandahåller Adobe Experience Platform&quot;sandlådor&quot;, vilket gör att du kan partitionera en enskild [!DNL Platform]-instans i separata virtuella miljöer som kan användas för att utveckla och utveckla program för digitala upplevelser.
+För att tillgodose detta behov tillhandahåller Adobe Experience Platform&quot;sandlådor&quot; som gör att du kan partitionera en enda [!DNL Platform] till separata virtuella miljöer som kan användas för att utveckla och utveckla program för digitala upplevelser.
 
-Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md) i dokumentationen för [!DNL Experience Platform].
+Mer information om sandlådor finns i [översikt över sandlådor](../../sandboxes/home.md) i [!DNL Experience Platform] dokumentation.

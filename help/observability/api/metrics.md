@@ -5,9 +5,9 @@ title: API-slutpunkt för mått
 topic-legacy: developer guide
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 5c893d7c8c455c86c94cd311a20ce774abcf65e0
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '1866'
+source-wordcount: '1864'
 ht-degree: 1%
 
 ---
@@ -84,8 +84,8 @@ curl -X POST \
 | `metrics` | En array med objekt, en för varje mätvärde som du vill hämta. |
 | `name` | Namnet på ett mätvärde som identifieras av observabilitetsinsikter. Se [appendix](#available-metrics) om du vill ha en fullständig lista över godkända måttnamn. |
 | `filters` | Ett valfritt fält där du kan filtrera mätvärden efter specifika datauppsättningar. Fältet är en array med objekt (ett för varje filter), där varje objekt innehåller följande egenskaper: <ul><li>`name`: Den typ av entitet som mätvärden ska filtreras mot. För närvarande, endast `dataSets` stöds.</li><li>`value`: ID för en eller flera datauppsättningar. Flera datauppsättnings-ID:n kan anges som en enda sträng, där varje ID avgränsas med lodräta streck (`\|`).</li><li>`groupBy`: Om värdet är true anger det att motsvarande `value` representerar flera datauppsättningar vars mätresultat ska returneras separat. Om värdet är false grupperas mätresultaten för de datauppsättningarna tillsammans.</li></ul> |
-| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Detaljerad information om tillgängliga aggregatorer finns i [OpenTSDB-dokumentation](http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html). |
-| `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsampling bestäms av `granularity` -egenskap. Mer information om nedsampling finns i [OpenTSDB-dokumentation](http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html). |
+| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Detaljerad information om tillgängliga aggregatorer finns i [OpenTSDB-dokumentation](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
+| `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsampling bestäms av `granularity` -egenskap. Mer information om nedsampling finns i [OpenTSDB-dokumentation](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 
 {style=&quot;table-layout:auto&quot;}
 

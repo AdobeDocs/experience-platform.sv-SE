@@ -5,25 +5,24 @@ title: Grundläggande om Experience Platform API
 topic-legacy: getting started
 description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '519'
 ht-degree: 1%
 
 ---
 
 # Grundläggande om Experience Platform API
 
-Adobe Experience Platform API:er använder flera underliggande tekniker och syntaxer som är viktiga att förstå för att effektivt hantera JSON-baserade [!DNL Platform]-resurser. Dokumentet innehåller en kort översikt över dessa tekniker samt länkar till extern dokumentation för mer information.
+Adobe Experience Platform API:er använder flera underliggande tekniker och syntaxer som är viktiga att förstå för att effektivt hantera JSON-baserade [!DNL Platform] resurser. Dokumentet innehåller en kort översikt över dessa tekniker samt länkar till extern dokumentation för mer information.
 
 ## JSON-pekare {#json-pointer}
 
-JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.org/html/rfc6901)) för att identifiera specifika värden i JSON-dokument. En JSON-pekare är en sträng med variabler som avgränsas med `/`-tecken, som anger antingen objektnycklar eller matrisindex, och variablerna kan vara en sträng eller ett tal. JSON-pekarsträngar används i många PATCH-åtgärder för [!DNL Platform] API:er, vilket beskrivs senare i det här dokumentet. Mer information om JSON-pekare finns i [översiktsdokumentationen för JSON-pekaren](https://rapidjson.org/md_doc_pointer.html).
+JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.org/html/rfc6901)) för att identifiera specifika värden i JSON-dokument. En JSON-pekare är en sträng med tokens avgränsade med `/` -tecken, som anger antingen objektnycklar eller arrayindex, och token kan vara en sträng eller ett tal. JSON-pekarsträngar används i många PATCH-åtgärder för [!DNL Platform] API:er, som beskrivs senare i det här dokumentet. Mer information om JSON-pekaren finns i [Översiktsdokumentation för JSON-pekare](https://rapidjson.org/md_doc_pointer.html).
 
 ### Exempel på JSON-schemaobjekt
 
-Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras med JSON-pekarsträngar. Observera att alla fält som har lagts till med anpassade schemafältgrupper (till exempel `loyaltyLevel`) namnges under ett `_{TENANT_ID}`-objekt, medan fält som har lagts till med huvudfältgrupper (till exempel `fullName`) inte namnges.
+Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras med JSON-pekarsträngar. Observera att alla fält som har lagts till med anpassade schemafältgrupper (till exempel `loyaltyLevel`) namnges under en `_{TENANT_ID}` objekt, medan fält som har lagts till med hjälp av huvudfältgrupper (t.ex. `fullName`) är inte det.
 
 ```json
 {
@@ -87,18 +86,18 @@ Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras 
 | JSON-pekare | Löser till |
 | --- | --- |
 | `"/title"` | `"Example schema"` |
-| `"/properties/person/properties/name/properties/fullName"` | (Returnerar en referens till fältet `fullName`, som tillhandahålls av en huvudfältgrupp.) |
-| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | (Returnerar en referens till fältet `loyaltyLevel`, som tillhandahålls av en anpassad fältgrupp.) |
+| `"/properties/person/properties/name/properties/fullName"` | (Returnerar en referens till `fullName` -fält, från en huvudfältgrupp.) |
+| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | (Returnerar en referens till `loyaltyLevel` -fält, från en anpassad fältgrupp.) |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum"` | `["platinum", "gold", "silver", "bronze"]` |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
 >[!NOTE]
 >
->När det gäller attributen `xdm:sourceProperty` och `xdm:destinationProperty` för [!DNL Experience Data Model] (XDM)-beskrivare måste alla `properties`-nycklar vara **exkluderade** från JSON-pekarsträngen. Mer information finns i [!DNL Schema Registry] API-utvecklarhandboken för [beskrivningar](../xdm/api/descriptors.md).
+>När du hanterar `xdm:sourceProperty` och `xdm:destinationProperty` attribut för [!DNL Experience Data Model] (XDM), alla `properties` nycklar måste vara **exkluderad** från JSON-pekarsträngen. Se [!DNL Schema Registry] Utvecklarhandbok för API på [beskrivare](../xdm/api/descriptors.md) för mer information.
 
-## JSON-lagning {#json-patch}
+## JSON Patch {#json-patch}
 
-Det finns många PATCH-åtgärder för [!DNL Platform]-API:er som accepterar JSON-korrigeringsobjekt för sina begärannyttolaster. JSON Patch är ett standardiserat format ([RFC 6902](https://tools.ietf.org/html/rfc6902)) för att beskriva ändringar i ett JSON-dokument. Det gör att du kan definiera partiella uppdateringar av JSON utan att behöva skicka hela dokumentet i en begärandetext.
+Det finns många PATCH-åtgärder för [!DNL Platform] API:er som accepterar JSON Patch-objekt för deras begärandatanyttolaster. JSON Patch är ett standardiserat format ([RFC 6902](https://tools.ietf.org/html/rfc6902)) för att beskriva ändringar i ett JSON-dokument. Det gör att du kan definiera partiella uppdateringar av JSON utan att behöva skicka hela dokumentet i en begärandetext.
 
 ### Exempel på JSON-lagningsobjekt
 
@@ -109,21 +108,21 @@ Det finns många PATCH-åtgärder för [!DNL Platform]-API:er som accepterar JSO
 }
 ```
 
-* `op`: Typ av korrigeringsåtgärd. JSON Patch har stöd för flera olika åtgärdstyper, men inte alla PATCH-åtgärder i [!DNL Platform] API:er är kompatibla med alla åtgärdstyper. Tillgängliga åtgärdstyper är:
+* `op`: Typ av korrigeringsåtgärd. JSON Patch stöder flera olika åtgärdstyper, men inte alla PATCH-åtgärder i [!DNL Platform] API:er är kompatibla med alla åtgärdstyper. Tillgängliga åtgärdstyper är:
    * `add`
    * `remove`
    * `replace`
    * `copy`
    * `move`
    * `test`
-* `path`: Den del av JSON-strukturen som ska uppdateras, identifieras med  [JSON-](#json-pointer) sammanfogning.
+* `path`: Den del av JSON-strukturen som ska uppdateras, identifieras med [JSON-pekare](#json-pointer) notation.
 
-Beroende på vilken åtgärdstyp som anges i `op` kan JSON Patch-objektet kräva ytterligare egenskaper. Mer information om de olika JSON Patch-åtgärderna och deras obligatoriska syntax finns i [JSON Patch documentation](http://jsonpatch.com/).
+Beroende på vilken åtgärdstyp som anges i `op`kan JSON Patch-objektet kräva ytterligare egenskaper. Mer information om olika JSON Patch-åtgärder och deras syntax finns i [JSON Patch-dokumentation](https://datatracker.ietf.org/doc/html/rfc6902).
 
 ## JSON-schema {#json-schema}
 
-JSON-schema är ett format som används för att beskriva och validera JSON-datastrukturen. [Experience Data Model (XDM)](../xdm/home.md) utnyttjar JSON-schemafunktioner för att begränsa strukturen och formatet för inmatade kundupplevelsedata. Mer information om JSON-schema finns i [officiell dokumentation](https://json-schema.org/).
+JSON-schema är ett format som används för att beskriva och validera JSON-datastrukturen. [Experience Data Model (XDM)](../xdm/home.md) utnyttjar JSON-schemafunktioner för att begränsa strukturen och formatet för inmatade kundupplevelsedata. Mer information om JSON Schema finns i [officiell dokumentation](https://json-schema.org/).
 
 ## Nästa steg
 
-I det här dokumentet introducerades en del av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med plattforms-API:er finns i [komma igång-guiden](api-guide.md), inklusive bästa praxis. Svar på vanliga frågor finns i [Felsökningsguiden för plattformen](troubleshooting.md).
+I det här dokumentet introducerades en del av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Se [komma igång-guide](api-guide.md) för mer information om hur du arbetar med plattforms-API:er, inklusive bästa praxis. Svar på vanliga frågor finns i [Felsökningsguide för plattformen](troubleshooting.md).

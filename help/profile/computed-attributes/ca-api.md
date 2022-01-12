@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden visar hur du skapar, visar, uppdaterar och tar bort beräknade attribut med kundprofils-API:t i realtid.
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '2272'
+source-wordcount: '2275'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,7 @@ PATCH /config/computedAttributes/{ATTRIBUTE_ID}
 
 **Begäran**
 
-Denna begäran använder [JSON Patch-formatering](http://jsonpatch.com/) om du vill uppdatera värdet i uttrycksfältet.
+Denna begäran använder [JSON Patch-formatering](https://datatracker.ietf.org/doc/html/rfc6902) om du vill uppdatera värdet i uttrycksfältet.
 
 ```shell
 curl -X PATCH \
