@@ -5,15 +5,15 @@ title: Skapa webbscheman och datauppsättningar för Luma
 topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du tillgång till de förutsättningar och resurser som krävs för Lumas modell för benägenhet för demo.
-source-git-commit: fd0f6aa2ac73bdc0a5413c437d091df6bb5d38a6
+exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
+source-git-commit: f57ca64c34f569f4402cb998af72e1e9022510ca
 workflow-type: tm+mt
 source-wordcount: '466'
 ht-degree: 0%
 
 ---
 
-
-# Skapa Luma-profilmodellscheman och datauppsättningar
+# Skapa scheman och datauppsättningar för Luma-benägenhetsmodellen
 
 I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När detta är klart är följande scheman och datauppsättningar tillgängliga för dig och din IMS-organisation.
 
