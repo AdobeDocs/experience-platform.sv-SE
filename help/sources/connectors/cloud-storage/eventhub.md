@@ -5,9 +5,9 @@ title: Översikt över Azure Event Hubs Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: cda9ca9c560b1af2147c00ea4e89dff09b7428ba
+source-git-commit: 832e32c31be944fff1101fa409e56f5c3e27d325
 workflow-type: tm+mt
-source-wordcount: '326'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,20 @@ ht-degree: 0%
 Adobe Experience Platform erbjuder anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform]och [!DNL Azure]. Ni kan överföra data från dessa system till plattformen.
 
 Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Plattformen gör att du kan hämta in data från [!DNL Event Hubs] i realtid.
+
+## Skala med [!DNL Event Hubs]
+
+Skalfaktorn för [!DNL Event Hubs] -instansen måste ökas om du behöver lägga in stora datavolymer, öka parallellismen eller öka hastigheten på intag-plattformen.
+
+### Högre volymdata
+
+För närvarande, den maximala datavolym du kan hämta från din [!DNL Event Hubs] kontot till Platform är 2 000 poster per sekund. Om du vill skala upp och importera data i större volymer kontaktar du Adobe.
+
+### Öka parallellismen på [!DNL Event Hubs] och plattform
+
+Parallellitet avser samtidig körning av samma uppgifter på flera bearbetningsenheter för att öka hastighet och prestanda. Du kan öka parallellismen på [!DNL Event Hubs] genom att öka partitionen eller genom att köpa fler bearbetningsenheter för [!DNL Event Hubs] konto. Se det här [[!DNL Event Hubs] dokument vid skalförändring](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-scalability) för mer information.
+
+För att öka hastigheten för intag på plattformssidan måste Platform öka antalet uppgifter i källkopplingen som ska läsas från din [!DNL Event Hubs] partitioner. När du har ökat parallellismen på [!DNL Event Hubs] Kontakta din Adobe-representant för att skala plattformsuppgifter baserat på din nya partition. Den här processen är för närvarande inte automatiserad.
 
 ## Använd ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till plattform
 

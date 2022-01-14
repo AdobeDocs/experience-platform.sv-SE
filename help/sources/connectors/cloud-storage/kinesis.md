@@ -5,35 +5,39 @@ title: Amazon Kinesis Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Amazon Kinesis till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
-source-git-commit: 481f72c5c630f6dbcbbfd3eee11c91787e780f3f
+source-git-commit: 5f4355a9d3ef39ee63581fc70dbf0f6e7d674814
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
 
 # [!DNL Amazon Kinesis] koppling
 
-Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
+Adobe Experience Platform erbjuder anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform]och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
-Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] gör att ni kan hämta in data  [!DNL Amazon Kinesis] i realtid.
+Lagringskällor i molnet kan överföra egna data till [!DNL Platform] utan att behöva ladda ned, formatera eller ladda upp. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] låter dig hämta in data från [!DNL Amazon Kinesis] i realtid.
+
+>[!NOTE]
+>
+>Skalningsfaktorn för [!DNL Kinesis] måste ökas om du behöver importera stora volymer data. För närvarande, maximal datavolym som du kan hämta från dina [!DNL Kinesis] kontot till Platform är 4000 poster per sekund. Om du vill skala upp och importera data i större volymer kontaktar du Adobe.
 
 ## Förutsättningar
 
-I följande avsnitt finns mer information om nödvändiga inställningar som krävs innan du kan skapa en [!DNL Kinesis]-källanslutning.
+I följande avsnitt finns mer information om nödvändiga inställningar som krävs innan du kan skapa en [!DNL Kinesis] källanslutning.
 
 ### Ställ in åtkomstprincip
 
-En [!DNL Kinesis]-ström kräver följande behörigheter för att skapa en källanslutning:
+A [!DNL Kinesis] för att skapa en källanslutning krävs följande behörigheter:
 
 - `GetShardIterator`
 - `GetRecords`
 - `DescribeStream`
 - `ListStreams`
 
-Dessa behörigheter ordnas via [!DNL Kinesis]-konsolen och kontrolleras av plattformen när du anger dina autentiseringsuppgifter och väljer dataström.
+Dessa behörigheter är ordnade i [!DNL Kinesis] och kontrolleras av Platform när du anger dina autentiseringsuppgifter och väljer dataström.
 
-I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att skapa en [!DNL Kinesis]-källanslutning.
+I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att skapa en [!DNL Kinesis] källanslutning.
 
 ```json
 {
@@ -62,7 +66,7 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att skapa
 | `kinesis:DescribeStream` | En åtgärd som returnerar information om strömmen, inklusive skuggkartan, som behövs för att generera ett kort-ID. |
 | `kinesis:ListStreams` | En åtgärd som krävs för att visa en lista över tillgängliga strömmar som du kan välja i användargränssnittet. |
 
-For more information on controlling access for [!DNL Kinesis] data streams, see the following [[!DNL Kinesis] document](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
+Mer information om hur du styr åtkomst för [!DNL Kinesis] dataströmmar, se följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ### Konfigurera iteratortyp
 
@@ -76,7 +80,7 @@ For more information on controlling access for [!DNL Kinesis] data streams, see 
 | `TRIM_HORIZON` | Data läses från den äldsta dataposten. |
 | `LATEST` | Data läses från den senaste dataposten. |
 
-En [!DNL Kinesis]-gränssnittskälla stöder för närvarande bara `TRIM_HORIZON`, medan API:t stöder både `TRIM_HORIZON` och `LATEST` som lägen för att hämta data. Standarditeratorvärdet som används för källan [!DNL Kinesis] är `TRIM_HORIZON`.
+A [!DNL Kinesis] Användargränssnittskällan har för närvarande bara stöd `TRIM_HORIZON`, medan API:t har stöd för båda `TRIM_HORIZON` och `LATEST` som lägen för att hämta data. Det standarditeratorvärde som används för plattformen [!DNL Kinesis] källan är `TRIM_HORIZON`.
 
 Mer information om iteratortyper finns i följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#API_GetShardIterator_RequestSyntax).
 
