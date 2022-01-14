@@ -5,16 +5,16 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 42288ae7db6fb19bc0a0ee8e4ecfa50b7d63d017
+source-git-commit: ac313e2a23037507c95d6713a83ad5ca07e1cd85
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '769'
 ht-degree: 4%
 
 ---
 
 # [!DNL Query Service] felsökningsguide
 
-Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och en lista med vanliga felkoder när frågetjänsten används. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och en lista med vanliga felkoder när frågetjänsten används. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
 
 ## Frågor och svar
 
@@ -62,7 +62,7 @@ När du frågar med tidsseriedata bör du använda tidsstämpelfiltret när det 
 
 >[!NOTE]
 >
-> Datumsträngen **måste** ha formatet `yyyy-mm-ddTHH24:MM:SS`.
+> Datumsträngen **måste** vara i formatet `yyyy-mm-ddTHH24:MM:SS`.
 
 Ett exempel på hur du använder tidsstämpelfiltret visas nedan:
 
@@ -77,13 +77,13 @@ WHERE  timestamp >= To_timestamp('2021-01-21 12:00:00')
 
 ### Ska jag använda jokertecken, till exempel *, för att hämta alla rader från mina datamängder?
 
-Du kan inte använda jokertecken för att hämta alla data från raderna, eftersom frågetjänsten ska behandlas som ett **columnnar-store**-system i stället för som ett vanligt radbaserat lagringssystem.
+Du kan inte använda jokertecken för att hämta alla data från dina rader, eftersom frågetjänsten ska behandlas som en **columnar-store** i stället för ett vanligt radbaserat lagringssystem.
 
 ### Ska jag använda `NOT IN` i min SQL-fråga?
 
-Operatorn `NOT IN` används ofta för att hämta rader som inte finns i en annan tabell eller SQL-sats. Operatorn kan göra prestandan långsammare och kan returnera oväntade resultat om kolumnerna som jämförs accepterar `NOT NULL` eller om du har ett stort antal poster.
+The `NOT IN` används ofta för att hämta rader som inte finns i en annan tabell eller SQL-sats. Operatorn kan göra prestandan långsammare och kan returnera oväntade resultat om kolumnerna som jämförs accepterar `NOT NULL`eller så har du ett stort antal poster.
 
-I stället för att använda `NOT IN` kan du använda antingen `NOT EXISTS` eller `LEFT OUTER JOIN`.
+I stället för att använda `NOT IN`kan du använda antingen `NOT EXISTS` eller `LEFT OUTER JOIN`.
 
 Om du till exempel har skapat följande tabeller:
 
@@ -97,7 +97,7 @@ INSERT INTO T2 VALUES (1)
 INSERT INTO T2 VALUES (2)
 ```
 
-Om du använder operatorn `NOT EXISTS` kan du replikera med operatorn `NOT IN` med följande fråga:
+Om du använder `NOT EXISTS` kan du replikera med `NOT IN` genom att använda följande fråga:
 
 ```sql
 SELECT ID FROM T1
@@ -105,7 +105,7 @@ WHERE NOT EXISTS
 (SELECT ID FROM T2 WHERE T1.ID = T2.ID)
 ```
 
-Om du använder operatorn `LEFT OUTER JOIN` kan du replikera med operatorn `NOT IN` med följande fråga:
+Om du använder `LEFT OUTER JOIN` -operatorn kan du replikera med `NOT IN` genom att använda följande fråga:
 
 ```sql
 SELECT T1.ID FROM T1
@@ -113,11 +113,11 @@ LEFT OUTER JOIN T2 ON T1.ID = T2.ID
 WHERE T2.ID IS NULL
 ```
 
-### Hur används operatorerna `OR` och `UNION` korrekt?
+### Vad är rätt användning av `OR` och `UNION` operatorer?
 
-### Hur använder jag operatorn `CAST` för att konvertera mina tidsstämplar i SQL-frågor?
+### Hur använder jag `CAST` för att konvertera mina tidsstämplar i SQL-frågor?
 
-När du använder operatorn `CAST` för att konvertera en tidsstämpel måste du ta med både datumet **och** tid.
+När du använder `CAST` om du vill konvertera en tidsstämpel måste du inkludera både datumet och **och** tid.
 
 Om du till exempel saknar tidskomponenten, som visas nedan, uppstår ett fel:
 
@@ -126,12 +126,16 @@ SELECT * FROM ABC
 WHERE timestamp = CAST('07-29-2021' AS timestamp)
 ```
 
-En korrekt användning av operatorn `CAST` visas nedan:
+Korrekt användning av `CAST` operatorn visas nedan:
 
 ```sql
 SELECT * FROM ABC
 WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 ```
+
+### Hur hämtar jag mina frågeresultat som en CSV-fil?
+
+Det här är inte en funktion som frågetjänsten erbjuder direkt. Om [!DNL PostgreSQL] klienten som används för att ansluta till databasservern har den funktionen. Svaret på en SELECT-fråga kan skrivas och laddas ned som en CSV-fil. Se dokumentationen för verktyget eller tredjepartsverktyget som du använder för att få mer information om processen.
 
 ## REST API-fel
 
@@ -156,7 +160,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 | **53400** | Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
 | **58000** | Fråga | Systemfel | Internt systemfel |
 | **0A000** | Fråga/kommando | Stöds inte | Funktionen/funktionen i frågan/kommandot stöds inte |
-| **42501** | DROP TABLE Query | Släpptabellen har inte skapats av frågetjänsten | Tabellen som tas bort skapades inte av frågetjänsten med `CREATE TABLE`-satsen |
+| **42501** | DROP TABLE Query | Släpptabellen har inte skapats av frågetjänsten | Tabellen som tas bort skapades inte av frågetjänsten med `CREATE TABLE` programsats |
 | **42501** | DROP TABLE Query | Tabellen har inte skapats av den autentiserade användaren | Tabellen som tas bort skapades inte av den inloggade användaren |
 | **42P01** | DROP TABLE Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
 | **42P12** | DROP TABLE Query | Ingen tabell hittades för `dbName`: kontrollera `dbName` | Inga tabeller hittades i den aktuella databasen |
