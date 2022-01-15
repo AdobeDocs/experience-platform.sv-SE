@@ -5,7 +5,7 @@ title: API-slutpunkt för schemalagda frågor
 topic-legacy: scheduled queries
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 34a3b71ace2f9ece02e4368b6bd7eab716330ee1
+source-git-commit: f1b982e5f788282a8cf2a9c4523370c520b82d0e
 workflow-type: tm+mt
 source-wordcount: '1113'
 ht-degree: 0%
@@ -16,11 +16,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Nu när du förstår vilka rubriker du ska använda kan du börja ringa till [!DNL Query Service] API. Följande avsnitt går igenom de olika API-anropen som du kan göra med [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista med schemalagda frågor
 
-Du kan hämta en lista över alla schemalagda frågor för din IMS-organisation genom att göra en GET-begäran till `/schedules`-slutpunkten.
+Du kan hämta en lista över alla schemalagda frågor för din IMS-organisation genom att göra en GET-förfrågan till `/schedules` slutpunkt.
 
 **API-format**
 
@@ -31,18 +31,18 @@ GET /schedules?{QUERY_PARAMETERS}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_PARAMETERS}` | (*Valfria*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
+| `{QUERY_PARAMETERS}` | (*Valfritt*) Parametrar har lagts till i den begärda sökvägen som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
 
 **Frågeparametrar**
 
-Här följer en lista över tillgängliga frågeparametrar för att lista schemalagda frågor. Alla dessa parametrar är valfria. Om du anropar den här slutpunkten utan parametrar hämtas alla schemalagda frågor som är tillgängliga för din organisation.
+Här följer en lista med tillgängliga frågeparametrar för att lista schemalagda frågor. Alla dessa parametrar är valfria. Om du anropar den här slutpunkten utan parametrar hämtas alla schemalagda frågor som är tillgängliga för din organisation.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultaten efter att de har skapats i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekten i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. `start=2` returnerar till exempel en lista som börjar med den tredje listade frågan. (*Standardvärde: 0*) |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `templateId` och `userId`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än) och `==` (lika med). `userId==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla schemalagda frågor där användar-ID anges. |
+| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `templateId`och `userId`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), och `==` (lika med). Till exempel: `userId==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar alla schemalagda frågor där användar-ID:t är angivet. |
 
 **Begäran**
 
@@ -124,7 +124,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över schemalagda frågo
 
 ### Skapa en ny schemalagd fråga
 
-Du kan skapa en ny schemalagd fråga genom att göra en POST-förfrågan till `/schedules`-slutpunkten. När du skapar en schemalagd fråga i API:t kan du även se den i Frågeredigeraren. Mer information om schemalagda frågor i användargränssnittet finns i [dokumentationen för Frågeredigeraren](../ui/user-guide.md#scheduled-queries).
+Du kan skapa en ny schemalagd fråga genom att göra en POST-förfrågan till `/schedules` slutpunkt. När du skapar en schemalagd fråga i API:t kan du även se den i Frågeredigeraren. Mer information om schemalagda frågor i användargränssnittet finns i [Dokumentation för Frågeredigeraren](../ui/user-guide.md#scheduled-queries).
 
 **API-format**
 
@@ -161,12 +161,12 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 | `query.dbName` | Namnet på databasen som du skapar en schemalagd fråga för. |
 | `query.sql` | Den SQL-fråga som du vill skapa. |
 | `query.name` | Namnet på den schemalagda frågan. |
-| `schedule.schedule` | Kronschemat för frågan. Mer information om cron-scheman finns i [cron expression format](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `1 0 0 1 1 *`. |
+| `schedule.schedule` | Kronschemat för frågan. Mer information om kundscheman finns i [cron, uttrycksformat](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) dokumentation. I det här exemplet betyder &quot;30 * * *&quot; att frågan kommer att köras varje timme vid 30 minuters markering.<br><br>Du kan också använda följande kortkommandouttryck:<ul><li>`@once`: Frågan körs bara en gång.</li><li>`@hourly`: Frågan körs varje timme i början av timmen. Detta motsvarar cron-uttrycket `0 * * * *`.</li><li>`@daily`: Frågan körs en gång om dagen vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * *`.</li><li>`@weekly`: Frågan körs en gång i veckan, på söndag, vid midnatt. Detta motsvarar cron-uttrycket `0 0 * * 0`.</li><li>`@monthly`: Frågan körs en gång i månaden, den första dagen i månaden, vid midnatt. Detta motsvarar cron-uttrycket `0 0 1 * *`.</li><li>`@yearly`: Frågan körs en gång per år, den 1 januari, vid midnatt. Detta motsvarar cron-uttrycket `1 0 0 1 1 *`. |
 | `schedule.startDate` | Startdatumet för den schemalagda frågan, skrivet som en UTC-tidsstämpel. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nyligen skapade schemalagda fråga. När den schemalagda frågan har aktiverats ändras `state` från `REGISTERING` till `ENABLED`.
+Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nyligen skapade schemalagda fråga. När den schemalagda frågan har aktiverats, `state` ändras från `REGISTERING` till `ENABLED`.
 
 ```json
 {
@@ -219,11 +219,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.delete` till [ta bort den schemalagda frågan](#delete-a-specified-scheduled-query) som du har skapat.
+>Du kan använda värdet för `_links.delete` till [ta bort din skapade schemalagda fråga](#delete-a-specified-scheduled-query).
 
 ### Begär information om en angiven schemalagd fråga
 
-Du kan hämta information för en viss schemalagd fråga genom att göra en GET-förfrågan till `/schedules`-slutpunkten och ange dess ID i sökvägen för begäran.
+Du kan hämta information för en viss schemalagd fråga genom att göra en GET-förfrågan till `/schedules` slutpunkt och ange dess ID i sökvägen för begäran.
 
 **API-format**
 
@@ -233,7 +233,7 @@ GET /schedules/{SCHEDULE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill hämta. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga som du vill hämta. |
 
 **Begäran**
 
@@ -302,17 +302,17 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna schema
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.delete` till [ta bort den schemalagda frågan](#delete-a-specified-scheduled-query) som du har skapat.
+>Du kan använda värdet för `_links.delete` till [ta bort din skapade schemalagda fråga](#delete-a-specified-scheduled-query).
 
 ### Uppdatera information om en angiven schemalagd fråga
 
-Du kan uppdatera informationen för en angiven schemalagd fråga genom att göra en PATCH-begäran till `/schedules`-slutpunkten och ange dess ID i sökvägen för begäran.
+Du kan uppdatera informationen för en viss schemalagd fråga genom att göra en PATCH-förfrågan till `/schedules` slutpunkten och genom att ange dess ID i sökvägen för begäran.
 
 Begäran från PATCH stöder två olika sökvägar: `/state` och `/schedule/schedule`.
 
 ### Uppdatera status för schemalagd fråga
 
-Du kan använda `/state` för att uppdatera tillståndet för den valda schemalagda frågan - ENABLED eller DISABLED. Om du vill uppdatera läget måste du ange värdet `enable` eller `disable`.
+Du kan använda `/state` för att uppdatera tillståndet för den valda schemalagda frågan - AKTIVERAD eller INAKTIVERAD. Om du vill uppdatera läget måste du ange värdet som `enable` eller `disable`.
 
 **API-format**
 
@@ -322,7 +322,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill hämta. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga som du vill PATCH. |
 
 
 **Begäran**
@@ -348,7 +348,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet `path` till `/state` eftersom du uppdaterar den schemalagda frågans tillstånd. |
+| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till `/state`. |
 | `value` | Det uppdaterade värdet för `/state`. Värdet kan antingen anges som `enable` eller `disable` för att aktivera eller inaktivera den schemalagda frågan. |
 
 **Svar**
@@ -364,7 +364,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Uppdatera schemalagt frågeschema
 
-Du kan använda `/schedule/schedule` för att uppdatera schemat för kron för den schemalagda frågan. Mer information om cron-scheman finns i [cron expression format](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen.
+Du kan använda `/schedule/schedule` för att uppdatera schemat för cron för den schemalagda frågan. Mer information om kundscheman finns i [cron, uttrycksformat](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) dokumentation.
 
 **API-format**
 
@@ -374,7 +374,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill hämta. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga som du vill PATCH. |
 
 **Begäran**
 
@@ -399,7 +399,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet `path` till `/schedule/schedule` eftersom du uppdaterar schemat för den schemalagda frågan. |
+| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till `/schedule/schedule`. |
 | `value` | Det uppdaterade värdet för `/schedule`. Värdet måste anges i form av ett kronschema. I det här exemplet körs den schemalagda frågan varje timme med 45 minuters markering. |
 
 **Svar**
@@ -415,11 +415,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Ta bort en angiven schemalagd fråga
 
-Du kan ta bort en angiven schemalagd fråga genom att göra en DELETE-begäran till `/schedules`-slutpunkten och ange ID:t för den schemalagda frågan som du vill ta bort i sökvägen för begäran.
+Du kan ta bort en angiven schemalagd fråga genom att göra en DELETE-förfrågan till `/schedules` slutpunkt och ange ID för den schemalagda fråga som du vill ta bort i sökvägen för begäran.
 
 >[!NOTE]
 >
->Schemat **måste** inaktiveras innan det tas bort.
+>Schemat **måste** inaktiveras innan de tas bort.
 
 **API-format**
 
@@ -429,7 +429,7 @@ DELETE /schedules/{SCHEDULE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill hämta. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga som du vill DELETE. |
 
 **Begäran**
 
