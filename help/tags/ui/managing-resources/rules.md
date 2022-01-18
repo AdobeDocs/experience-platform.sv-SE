@@ -2,9 +2,9 @@
 title: Regler
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
 exl-id: 2beca2c9-72b7-4ea0-a166-50a3b8edb9cd
-source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
+source-git-commit: 85413e4a8b604dd9111ca4d47ad6a1ec49d8f547
 workflow-type: tm+mt
-source-wordcount: '1948'
+source-wordcount: '1952'
 ht-degree: 0%
 
 ---
@@ -121,22 +121,18 @@ När du skapar eller redigerar regler kan du spara och bygga enligt [aktivt bibl
 
 ## Regelordning {#rule-ordering}
 
-Med regelordning kan du styra körningsordningen för regler som delar en händelse.
+Med regelordning kan du styra körningsordningen för regler som delar en händelse. Varje regel innehåller ett heltal som bestämmer dess ordningsprioritet (standardvärdet är 50). Regler som innehåller lägre värden för deras ordning körs före regler med högre värden.
 
-Det är ofta viktigt att era regler brinner i en viss ordning. Exempel: (1) du har flera regler som är villkorligt angivna [!DNL Analytics] och du måste se till att regeln med Skicka Beacon är sist. (2) du har en regel som utlöser [!DNL Target] och en annan regel som utlöses [!DNL Analytics] och du vill ha [!DNL Target] regel som ska köras först.
+Ta en titt på fem regler som alla delar en händelse och som alla har standardprioritet:
 
-I slutändan ligger ansvaret för att utföra åtgärder i ordningen hos den utökade utvecklaren av den händelsetyp som du använder. Adobe-utvecklare ser till att deras tillägg fungerar som de ska. För tillägg från tredje part ger Adobe vägledning till tilläggsutvecklare så att de kan implementera detta korrekt, men det är upp till dem att göra det.
+* Om det finns en regel som du vill köra sist kan du redigera den regelkomponenten och ge den ett tal som är högre än 50 (till exempel 60).
+* Om det finns en regel som du vill köra först kan du redigera den regelkomponenten och ge den ett tal som är lägre än 50 (till exempel 40).
 
-Adobe rekommenderar att du beställer regler med positiva tal mellan 1 och 100 (standardvärdet är 50). Enklare är bättre. Kom ihåg att du måste behålla din beställning. Adobe vet dock att det kan finnas kantfall där det känns begränsande, så andra siffror tillåts. Taggar stöder tal mellan +/- 2 147 483 648. Du kan också använda ett dussin decimaler - men om du befinner dig i ett scenario där du tror att du behöver göra det, bör du tänka om några av de beslut du har tagit för att ta dig dit du är nu.
-
->[!IMPORTANT]
+>[!NOTE]
 >
->I åtgärdsavsnittet för en regel körs regler på serversidan sekventiellt. Kontrollera att ordningen är korrekt när du skapar regeln.
+>I slutändan ligger ansvaret för att utföra åtgärder hos den utökade utvecklaren av den händelsetyp som du använder. Adobe-utvecklare ser till att deras tillägg fungerar som de ska. Adobe tillhandahåller vägledning till tredjepartsutvecklare för att göra detta på rätt sätt, men kan inte garantera hur dessa riktlinjer följs.
 
-### Scenarier
-
-* Fem regler delar en händelse. Alla har standardprioritet. Jag vill att en av dem springer sist. Jag behöver bara redigera en regelkomponent och ge den ett tal som är högre än 50 (till exempel 60).
-* Fem regler delar en händelse. Alla har standardprioritet. Jag vill att en av dem springer först. Jag behöver bara redigera en regelkomponent och ge den en siffra som är lägre än 50 (till exempel 40).
+Vi rekommenderar att du ordnar reglerna med positiva tal mellan 1 och 100 (standardvärdet är 50). Eftersom regelordningen måste upprätthållas manuellt är det bäst att behålla beställningsschemat så enkelt som möjligt. Om det finns kantfall där begränsningen är för begränsad stöder taggarna ordningsnummer mellan +/- 2 147 483 648.
 
 ### Regelhantering på klientsidan
 
@@ -146,7 +142,7 @@ Du kan använda `document.write` i dina egna skript, oavsett vilka händelser so
 
 Du kan beställa olika anpassade kodtyper tillsammans. Nu kan du till exempel ha en anpassad JavaScript-kodsåtgärd, sedan en anpassad HTML-kodsåtgärd och sedan en anpassad JavaScript-kodsåtgärd. Taggar säkerställer att de körs i den ordningen.
 
-## Regelpaket
+## Regelbuntning
 
 Regelhändelser och -villkor paketeras alltid i huvudtaggbiblioteket. Åtgärder kan vid behov paketeras i huvudbiblioteket eller laddas för sent som underresurser. Huruvida åtgärderna paketeras eller inte avgörs av regelns händelsetyp.
 
@@ -165,21 +161,23 @@ Adobe kan inte garantera att andra regler verkligen kommer att aktiveras och att
 * **JavaScript:** JavaScript läses in från servern som vanlig text, omsluts av en script-tagg och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade JavaScript-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerades i regeln.
 * **HTML:** HTML läses in från servern och läggs till i dokumentet med Postscribe. Om regeln har flera anpassade HTML-skript läses de in parallellt från servern, men körs i samma ordning som konfigurerades i regeln.
 
-## Regelkomponentsekvenser {#sequencing}
+## Ordna regelkomponenter {#sequencing}
 
-Taggens körningsmiljös beteende beror på om **[!UICONTROL Run rule components in sequence]** är på eller av för din egendom.
+Körningsmiljöns beteende beror på om **[!UICONTROL Run rule components in sequence]** är på eller av för din egendom. Den här inställningen avgör om en regels komponenter kan utvärderas parallellt (asynkront) eller om de måste utvärderas sekventiellt.
+
+>[!IMPORTANT]
+>
+>Den här inställningen avgör bara hur villkor och åtgärder utvärderas inom varje regel, och påverkar inte den sekvens i vilken reglerna körs på din egenskap. Se föregående avsnitt på [regelordning](#rule-ordering) om du vill ha mer information om hur du fastställer körningsordningen för flera regler.
+>
+>I [händelsevidarebefordran](../event-forwarding/overview.md) egenskaper, regelåtgärder utförs alltid sekventiellt och den här inställningen är inte tillgänglig. Kontrollera att ordningen är korrekt när du skapar regeln.
 
 ### Aktiverad
 
-Om det här alternativet är aktiverat läggs regelns villkor och åtgärder till i en behandlingskö, baserat på den ordning du har definierat, när en händelse aktiveras vid körning och bearbetas en i taget enligt FIFO-principen. Taggen väntar på att komponenten ska slutföras innan den flyttas till nästa.
+Om inställningen är aktiverad när en händelse aktiveras vid körning läggs regelns villkor och åtgärder till i en behandlingskö (baserat på den ordning du har definierat) och bearbetas en i taget på FIFO-basis (first in, first out). Regeln väntar på att komponenten ska slutföras innan den går vidare till nästa.
 
 Om ett villkor utvärderas som falskt eller når sin definierade tidsgräns tas regelns efterföljande villkor och åtgärder bort från kön.
 
 Om en åtgärd misslyckas eller når sin definierade tidsgräns tas regelns efterföljande åtgärder bort från kön.
-
->[!NOTE]
->
->När den här inställningen är aktiverad körs alla villkor och åtgärder asynkront, även om du har läst in taggbiblioteket synkront.
 
 ### Handikappade
 
