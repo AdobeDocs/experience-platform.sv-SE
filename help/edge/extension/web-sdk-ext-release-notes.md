@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: e199553a2dcfd2d86d101f19d01e85556c90d05b
+source-git-commit: a768cde86215ed9aad19e45362c6185276456703
 workflow-type: tm+mt
-source-wordcount: '1244'
+source-wordcount: '1256'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.9.0 - 19 januari 2022
+
+Innehåller version 2.8.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.8.0 - 26 oktober 2021
 
@@ -111,7 +115,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
    * Borttagen `getDecisions` -kommando.
    * Lagt till en `scopes` till `sendEvent` -kommando. Besluten returneras i `sendEvent` löst löfte.
    * En inbyggd `__view__` omfång som resulterar i att sidans/vyns breda erbjudanden returneras. (VEC erbjuder till exempel i Target.)
-Dessa beslut kommer från `sendEvent` kommando endast om `renderDecisions` är inställd på false.
+Dessa beslut kommer från `sendEvent` kommando endast om `renderDecisions` är inställt på false.
    * Lagt till en `Decisions Received` som utlöses när beslut blir tillgängliga.
 * Flera personaliseringsaviseringar kombinerades under ett enda serversamtal.
 * Ett problem i ID för händelsenammanfogning där det återställdes varje gång som dataelementet refererades till har korrigerats.
