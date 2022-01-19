@@ -3,7 +3,7 @@ title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
 description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
 keywords: personalisering;renderDecision;sendEvent;DecisionScopes;propositions;
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 0246de5810c632134288347ac7b35abddf2d4308
+source-git-commit: 5d4214c1f9dc8476dd946559f602591c6e929cb1
 workflow-type: tm+mt
 source-wordcount: '701'
 ht-degree: 0%
@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Återge personaliserat innehåll
 
-Adobe Experience Platform Web SDK stöder hämtning av anpassat innehåll från personaliseringslösningar på Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) och [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv). Innehåll som skapas i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK:n. Innehåll som skapats i Adobe Target [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller Offer decisioning kan inte återges automatiskt av SDK:n. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
+Adobe Experience Platform Web SDK har stöd för att hämta personaliserat innehåll från personaliseringslösningar på Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) och [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv). Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK. Innehåll som skapats i Adobe Target [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
 
 ## Återge innehåll automatiskt
 
-När du skickar händelser till servern kan du ange `renderDecisions` som `true`. Om du gör det tvingas SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
+När du skickar händelser till servern kan du ange `renderDecisions` alternativ till `true`. Om du gör det tvingas SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
 
 ```javascript
 alloy("sendEvent", {
@@ -38,7 +38,7 @@ alloy("sendEvent", {
 
 ## Återge innehåll manuellt
 
-Om du vill få åtkomst till innehåll för personalisering kan du tillhandahålla en callback-funktion som anropas efter att SDK har fått ett lyckat svar från servern. Callback-funktionen har ett `result`-objekt, som kan innehålla en `propositions`-egenskap som innehåller returnerat personaliseringsinnehåll. Nedan visas ett exempel på hur du kan tillhandahålla en callback-funktion när du skickar en händelse.
+Om du vill få åtkomst till innehåll för personalisering kan du tillhandahålla en callback-funktion som anropas efter att SDK har fått ett lyckat svar från servern. Ditt återanrop är en `result` objekt, som kan innehålla ett `propositions` -egenskap som innehåller returnerat personaliseringsinnehåll. Nedan visas ett exempel på hur du kan tillhandahålla en callback-funktion när du skickar en händelse.
 
 ```javascript
 alloy("sendEvent", {
@@ -50,9 +50,9 @@ alloy("sendEvent", {
   });
 ```
 
-I det här exemplet är `result.propositions`, om det finns, en matris som innehåller personaliseringsförslag relaterade till händelsen. Som standard innehåller den endast förslag som är berättigade till automatisk återgivning.
+I det här exemplet `result.propositions`, om det finns, är en matris som innehåller personaliseringsförslag för händelsen. Som standard innehåller den endast förslag som är berättigade till automatisk återgivning.
 
-Matrisen `propositions` kan se ut ungefär som i det här exemplet:
+The `propositions` arrayen kan se ut ungefär som i det här exemplet:
 
 ```json
 [
@@ -99,11 +99,11 @@ Matrisen `propositions` kan se ut ungefär som i det här exemplet:
 ]
 ```
 
-I exemplet var inte alternativet `renderDecisions` inställt på `true` när kommandot `sendEvent` kördes, så SDK försökte inte återge något innehåll automatiskt. SDK hämtade dock fortfarande automatiskt det innehåll som är berättigat till automatisk återgivning, och om du vill göra det kunde du återge det manuellt. Observera att egenskapen `renderAttempted` för varje förslagsobjekt är `false`.
+I exemplet `renderDecisions` option was inte set to `true` när `sendEvent` SDK-kommandot kördes så det gjordes inget försök att automatiskt återge något innehåll. SDK hämtade dock fortfarande automatiskt det innehåll som är berättigat till automatisk återgivning, och om du vill göra det kunde du återge det manuellt. Observera att varje förslagsobjekt har sin `renderAttempted` egenskap inställd på `false`.
 
-Om du i stället skulle ha angett `renderDecisions` som `true` när du skickade händelsen, skulle SDK ha försökt att återge alla förslag som är berättigade till automatisk återgivning (enligt beskrivningen ovan). Därför skulle var och en av förslagsobjekten ha egenskapen `renderAttempted` inställd på `true`. Du behöver inte återge dessa förslag manuellt i det här fallet.
+Om du istället hade ställt in `renderDecisions` alternativ till `true` när händelsen skulle skickas, skulle SDK ha försökt att återge alla förslag som är berättigade till automatisk återgivning (enligt beskrivningen ovan). Därför får vart och ett av de föreslagna objekten sin `renderAttempted` egenskap inställd på `true`. Du behöver inte återge dessa förslag manuellt i det här fallet.
 
-Hittills har vi bara diskuterat personaliserat innehåll som är berättigat till automatisk återgivning (det vill säga allt innehåll som har skapats i Adobe Target Visual Experience Composer). Om du vill hämta anpassat innehåll _som inte är_-kvalificerat för automatisk återgivning måste du begära innehållet genom att fylla i alternativet `decisionScopes` när du skickar händelsen. Ett omfång är en sträng som identifierar ett visst förslag som du vill hämta från servern.
+Hittills har vi bara diskuterat personaliserat innehåll som är berättigat till automatisk återgivning (det vill säga allt innehåll som har skapats i Adobe Target Visual Experience Composer). Så här hämtar du anpassat innehåll _not_ som kan återge automatiskt måste du begära innehållet genom att fylla i `decisionScopes` när händelsen skickas. Ett omfång är en sträng som identifierar ett visst förslag som du vill hämta från servern.
 
 Här är ett exempel:
 
@@ -118,7 +118,7 @@ alloy("sendEvent", {
   });
 ```
 
-I det här exemplet returneras och inkluderas i `result.propositions`-arrayen om det finns förslag på servern som matchar `salutation`- eller `discount`-omfånget. Observera att alla förslag som kvalificerar för automatisk återgivning kommer att inkluderas i `propositions`-arrayen, oavsett hur du konfigurerar alternativen `renderDecisions` eller `decisionScopes`. Matrisen `propositions`, i det här fallet, skulle se ut ungefär som i det här exemplet:
+I det här exemplet, om förslag hittas på servern som matchar `salutation` eller `discount` omfång, returneras de och inkluderas i `result.propositions` array. Observera att alla förslag som kvalificerar sig för automatisk återgivning kommer att finnas med i `propositions` -array, oavsett hur du konfigurerar `renderDecisions` eller `decisionScopes` alternativ. The `propositions` skulle i det här fallet se ut som i det här exemplet:
 
 ```json
 [
@@ -216,13 +216,13 @@ I det här exemplet returneras och inkluderas i `result.propositions`-arrayen om
 ]
 ```
 
-Nu kan du återge offertinnehåll när du vill. I det här exemplet är det förslag som matchar `discount`-omfånget ett HTML-förslag som skapats med Adobe Target Form-based Experience Composer. Om du har ett element på sidan med ID:t `daily-special` och vill återge innehållet från `discount`-utkastet till `daily-special`-elementet gör du följande:
+Nu kan du återge offertinnehåll när du vill. I det här exemplet matchar förslaget `discount` omfånget är ett HTML-förslag som har skapats med Adobe Target formulärbaserade Experience Composer. Anta att du har ett element på sidan med ID:t för `daily-special` och vill återge innehållet från `discount` lägga in `daily-special` -element gör du följande:
 
-1. Extrahera utdrag från `result`-objektet.
-1. Slinga igenom varje förslag och leta efter förslaget med omfånget `discount`.
-1. Om du hittar ett förslag kan du slinga igenom varje objekt i utkastet och leta efter det objekt som är HTML-innehåll. (Det är bättre att kontrollera än att anta.)
-1. Om du hittar ett objekt som innehåller HTML-innehåll söker du efter elementet `daily-special` på sidan och ersätter dess HTML-kod med det anpassade innehållet.
-1. När innehållet har återgetts skickar du en `display`-händelse.
+1. Extrahera förslag från `result` -objekt.
+1. Slinga igenom varje förslag och leta efter det med omfånget `discount`.
+1. Om du hittar ett förslag går du igenom varje objekt i utkastet och letar efter det objekt som innehåller HTML. (Det är bättre att kontrollera än att anta.)
+1. Om du hittar ett objekt som innehåller innehåll från HTML kan du hitta `daily-special` -element på sidan och ersätt HTML med det anpassade innehållet.
+1. När innehållet har renderats skickar du en `display` -händelse.
 
 Koden ser ut så här:
 
@@ -266,7 +266,7 @@ alloy("sendEvent", {
       // Send a "display" event 
     alloy("sendEvent", {
       xdm: {
-        eventType: "display",
+        eventType: "decisioning.propositionDisplay",
         _experience: {
           decisioning: {
             propositions: [
@@ -291,4 +291,4 @@ alloy("sendEvent", {
 
 ### Hantera flimmer
 
-SDK ger möjlighet att [hantera flimmer](../personalization/manage-flicker.md) under personaliseringsprocessen.
+SDK erbjuder anläggningar för [hantera flimmer](../personalization/manage-flicker.md) under personaliseringsprocessen.
