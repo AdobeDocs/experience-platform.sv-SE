@@ -3,14 +3,20 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 7d7a9357f17b941a8f7800be86f211bb1276698d
+source-git-commit: a768cde86215ed9aad19e45362c6185276456703
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '852'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.8.0 - 19 januari 2022
+
+* Stöd för skugg-DOM-väljare för personalisering.
+* Ändrade namn på händelsetyper för personalisering. (`display` och `click` bli `decisioning.propositionDisplay` och `decisioning.propositionInteract`)
+* Ett problem har korrigerats där HTML erbjuder med infogade script-taggar lade till script-taggarna två gånger på sidan trots att skriptet bara kördes en gång.
 
 ## Version 2.7.0 - 26 oktober 2021
 
