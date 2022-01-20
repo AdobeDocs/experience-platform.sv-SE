@@ -6,48 +6,48 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: beb5d615da6d825678f446eec609a2bb356bb310
+source-git-commit: d6b16f09dc4e97135f42ddadd8e34b0f7db93327
 workflow-type: tm+mt
-source-wordcount: '1371'
+source-wordcount: '1369'
 ht-degree: 0%
 
 ---
 
 # Strömma tidsseriedata med Streaming Ingmit APIs
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i Adobe Experience Platform [!DNL Data Ingestion Service] API:er.
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning som ingår i Adobe Experience Platform [!DNL Data Ingestion Service] API:er.
 
 ## Komma igång
 
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som  [!DNL Platform] organiserar upplevelsedata.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Utvecklarhandbok](../../xdm/api/getting-started.md) för schemaregister: En omfattande guide som täcker alla tillgängliga slutpunkter i  [!DNL Schema Registry] API:t och hur du anropar dem. Det handlar om att känna till din `{TENANT_ID}`, som visas i anrop under hela kursen, samt att veta hur du skapar scheman, som används för att skapa en datauppsättning för förtäring.
+- [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md): En omfattande guide som täcker alla tillgängliga slutpunkter i [!DNL Schema Registry] API och hur du anropar dem. Detta innefattar att känna till `{TENANT_ID}`, som visas i anrop genom den här självstudiekursen, samt hur du skapar scheman, som används för att skapa en datauppsättning för inhämtning.
 
-Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i [Skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
+Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i [skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:er för direktuppspelning.
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -55,7 +55,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa ett schema baserat på klassen XDM ExperienceEvent
 
-Om du vill skapa en datauppsättning måste du först skapa ett nytt schema som implementerar klassen [!DNL XDM ExperienceEvent]. Mer information om hur du skapar scheman finns i [API-utvecklarhandboken för schematabeller](../../xdm/api/getting-started.md).
+Om du vill skapa en datauppsättning måste du först skapa ett nytt schema som implementerar [!DNL XDM ExperienceEvent] klassen. Mer information om hur du skapar scheman finns i [Utvecklarhandbok för API för schematabell](../../xdm/api/getting-started.md).
 
 **API-format**
 
@@ -100,7 +100,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | Namnet som du vill använda för ditt schema. Namnet måste vara unikt. |
 | `description` | En meningsfull beskrivning av schemat som du skapar. |
-| `meta:immutableTags` | I det här exemplet används taggen `union` för att behålla dina data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
+| `meta:immutableTags` | I det här exemplet `union` -taggen används för att lagra data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
 
 **Svar**
 
@@ -178,13 +178,13 @@ Ett lyckat svar returnerar HTTP-status 201 med information om ditt nyligen skapa
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Mer information om klient-ID:t finns i [schemaregisterguiden](../../xdm/api/getting-started.md#know-your-tenant-id). |
+| `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Mer information om klient-ID finns i [guide för schemaregister](../../xdm/api/getting-started.md#know-your-tenant-id). |
 
-Observera både `$id` och `version`-attributen eftersom båda används när du skapar datauppsättningen.
+Observera `$id` och `version` -attribut, eftersom båda dessa kommer att användas när du skapar datauppsättningen.
 
 ## Ange en primär identitetsbeskrivning för schemat
 
-Lägg sedan till en [identitetsbeskrivare](../../xdm/api/descriptors.md) i schemat som skapas ovan, med e-postadressattributet work som primär identifierare. Om du gör detta kommer två ändringar att göras:
+Lägg sedan till en [identitetsbeskrivare](../../xdm/api/descriptors.md) till schemat som skapas ovan, med arbetsprogrammets e-postadressattribut som primär identifierare. Om du gör detta kommer två ändringar att göras:
 
 1. E-postadressen till arbetet blir ett obligatoriskt fält. Det innebär att meddelanden som skickas utan det här fältet inte kan valideras och inte kan importeras.
 
@@ -212,15 +212,15 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEMA_REF_ID}` | Den `$id` som du tidigare fick när du disponerade schemat. Det borde se ut ungefär så här: `"https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}"` |
+| `{SCHEMA_REF_ID}` | The `$id` som du tidigare fått när du komponerade schemat. Det borde se ut ungefär så här: `"https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}"` |
 
 >[!NOTE]
 >
->&#x200B;**Identity Namespace Codes**
+>&#x200B;**Identitetsnamnområdeskoder**
 >
 > Kontrollera att koderna är giltiga - i exemplet ovan används&quot;email&quot; som är ett vanligt identitetsnamnutrymme. Andra vanliga standardnamnutrymmen för identiteter finns i [Vanliga frågor om identitetstjänsten](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform).
 >
-> Om du vill skapa ett anpassat namnutrymme följer du de steg som beskrivs i [översikten över identitetsnamnrymden](../../identity-service/home.md).
+> Om du vill skapa ett anpassat namnutrymme följer du de steg som beskrivs i [Översikt över namnutrymmet identity](../../identity-service/home.md).
 
 **Svar**
 
@@ -248,7 +248,7 @@ När du har skapat schemat måste du skapa en datauppsättning för att kunna im
 
 >[!NOTE]
 >
->Den här datauppsättningen aktiveras för **[!DNL Real-time Customer Profile]** och **[!DNL Identity]** genom att lämpliga taggar anges.
+>Den här datauppsättningen kommer att aktiveras för **[!DNL Real-time Customer Profile]** och **[!DNL Identity]** genom att ange lämpliga taggar.
 
 **API-format**
 
@@ -294,11 +294,11 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 
 När du har skapat ditt schema och din datauppsättning måste du skapa en direktuppspelningsanslutning för att kunna importera dina data.
 
-Mer information om hur du skapar en direktuppspelningsanslutning finns i [Skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
+Mer information om hur du skapar en direktuppspelningsanslutning finns i [skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
 
 ## Infoga tidsseriedata i direktuppspelningsanslutningen
 
-När datauppsättningen, direktuppspelningsanslutningen och dataflödet har skapats kan du importera XDM-formaterade JSON-poster för import av tidsseriedata i [!DNL Platform].
+När datauppsättningen, direktuppspelningsanslutningen och dataflödet har skapats kan du importera XDM-formaterade JSON-poster för att importera tidsseriedata i [!DNL Platform].
 
 **API-format**
 
@@ -308,8 +308,8 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Värdet `id` för den nyligen skapade direktuppspelningsanslutningen. |
-| `syncValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om den anges till `true` kan den användas för direkt feedback för att avgöra om begäran kunde skickas. Som standard är det här värdet `false`. Observera att om du anger den här frågeparametern till `true` så begränsas förfrågningen till 60 gånger per minut per `CONNECTION_ID`. |
+| `{CONNECTION_ID}` | The `id` värdet för den nyligen skapade direktuppspelningsanslutningen. |
+| `syncValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om inställt på `true`kan den användas för att omedelbart avgöra om begäran har skickats. Som standard är det här värdet inställt på `false`. Observera att om du ställer in den här frågeparametern på `true` att antalet förfrågningar begränsas till 60 gånger per minut `CONNECTION_ID`. |
 
 **Begäran**
 
@@ -317,11 +317,13 @@ Inmatning av tidsseriedata till en direktuppspelningsanslutning kan göras antin
 
 Exemplet nedan anger att tidsseriedata med ett saknat källnamn ska importeras till plattformen. Om källnamnet saknas i data läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
 
->[!IMPORTANT]
+Båda `xdmEntity._id` och `xdmEntity.timestamp` är obligatoriska fält för tidsseriedata. The `xdmEntity._id` attribut representerar en unik identifierare för själva posten, **not** ett unikt ID för den person eller enhet vars register det är.
+
+Du måste skapa en egen `xdmEntity._id` och `xdmEntity.timestamp` för posten på ett sätt som är konsekvent om posten någonsin behöver hämtas på nytt. I idealfallet innehåller källsystemet dessa värden. Om ett ID inte är tillgängligt bör du överväga att sammanfoga värden för andra fält i posten för att skapa ett unikt värde som konsekvent kan återskapas från posten vid återinläsning.
+
+>[!NOTE]
 >
->Du måste skapa en egen `xdmEntity._id` och `xdmEntity.timestamp`. Ett bra sätt att generera ett ID är att använda UUID-funktionen i Data Prep. Mer information om UUID-funktionen finns i [handboken om dataprep-funktioner](../../data-prep/functions.md). Attributet `xdmEntity._id` representerar en unik identifierare för själva posten, **inte** ett unikt ID för den person eller enhet vars post det är. Person- eller enhets-ID är specifikt i alla attribut som tilldelas som en person eller enhets-ID för schemat.
->
->Både `xdmEntity._id` och `xdmEntity.timestamp` är de enda obligatoriska fälten för tidsseriedata. Dessutom kräver följande API-anrop **inte** några autentiseringshuvuden.
+>Följande API-anrop fungerar **not** kräver några autentiseringsrubriker.
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
@@ -404,7 +406,7 @@ Om du vill ta med ett källnamn visar följande exempel hur du skulle ta med det
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen direktuppspelade [!DNL Profile].
+Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen strömmade [!DNL Profile].
 
 ```json
 {
@@ -419,18 +421,18 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen direkt
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{CONNECTION_ID}` | `inletId` för den tidigare skapade direktuppspelningsanslutningen. |
+| `{CONNECTION_ID}` | The `inletId` av den tidigare skapade direktuppspelningsanslutningen. |
 | `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
 | `receivedTimeMs`: En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
-| `syncValidation.status` | Eftersom frågeparametern `syncValidation=true` lades till visas det här värdet. Om valideringen har slutförts är statusen `pass`. |
+| `syncValidation.status` | Sedan frågeparametern `syncValidation=true` läggs till, det här värdet visas. Om valideringen har slutförts kommer statusen att `pass`. |
 
 ## Hämta data för den nyligen inmatade tidsserien
 
-Om du vill validera de poster som har importerats tidigare kan du använda [[!DNL Profile Access API]](../../profile/api/entities.md) för att hämta tidsseriedata. Detta kan göras med en GET-begäran till `/access/entities`-slutpunkten och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
+Om du vill validera tidigare importerade poster kan du använda [[!DNL Profile Access API]](../../profile/api/entities.md) för att hämta tidsseriedata. Detta kan göras med en GET-begäran till `/access/entities` slutpunkt och valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
 
 >[!NOTE]
 >
->Om ID:t för sammanfogningsprincipen inte har definierats och `schema.name` eller `relatedSchema.name` är `_xdm.context.profile`, hämtar [!DNL Profile Access] alla **relaterade identiteter.**
+>Om ID för sammanfogningsprincip inte har definierats och `schema.name` eller `relatedSchema.name` är `_xdm.context.profile`, [!DNL Profile Access] hämtar **alla** relaterade identiteter.
 
 **API-format**
 
@@ -443,7 +445,7 @@ GET /access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `schema.name` | **Obligatoriskt.** Namnet på schemat som du försöker komma åt. |
-| `relatedSchema.name` | **Obligatoriskt.** Eftersom du använder en  `_xdm.context.experienceevent`anger det här värdet schemat för den profilentitet som tidsseriehändelser är relaterade till. |
+| `relatedSchema.name` | **Obligatoriskt.** Eftersom du använder en `_xdm.context.experienceevent`anger det här värdet schemat för den profilentitet som tidsseriehändelser är relaterade till. |
 | `relatedEntityId` | ID för den relaterade entiteten. Om det anges måste du även ange entitetens namnutrymme. |
 | `relatedEntityIdNS` | Namnområdet för det ID som du försöker hämta. |
 
@@ -528,6 +530,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de begärda entite
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet kan du nu förstå hur du importerar postdata till [!DNL Platform] med hjälp av direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via användargränssnittet i [!DNL Platform]. Mer information finns i [guiden Övervaka dataöverföring](../quality/monitor-data-ingestion.md).
+Genom att läsa det här dokumentet kan du nu förstå hur du importerar postdata till [!DNL Platform] med direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via [!DNL Platform] Gränssnitt. Mer information finns i [övervaka datainmatning](../quality/monitor-data-ingestion.md) guide.
 
-Mer information om direktuppspelning i allmänhet finns i [översikten över direktuppspelning](../streaming-ingestion/overview.md).
+Mer information om direktuppspelning i allmänhet finns i [översikt över direktuppspelning](../streaming-ingestion/overview.md).
