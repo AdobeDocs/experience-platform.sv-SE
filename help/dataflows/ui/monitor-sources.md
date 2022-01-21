@@ -6,7 +6,7 @@ title: Övervaka dataflöden för källor i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 507fa2981f99cad26b117eb576c9dc18080886c8
+source-git-commit: 241deb93b3500139b79425a4da79258670e044a8
 workflow-type: tm+mt
 source-wordcount: '1689'
 ht-degree: 0%
@@ -41,13 +41,13 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
 >title="Intag av källa"
->abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. <br> Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
+>abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_ingestion"
 >title="Information om dataflödeskörning"
->abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. <br> Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
+>abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
 I [Plattformsgränssnitt](https://platform.adobe.com), markera **[!UICONTROL Monitoring]** från vänster navigering för att komma åt [!UICONTROL Monitoring] kontrollpanel. The [!UICONTROL Monitoring] Instrumentpanelen innehåller mätvärden och information om alla källdata, dataflöden, inklusive insikter om datatrafikens hälsa från en källa till [!DNL Identity Service]och till [!DNL Profile].
@@ -151,7 +151,7 @@ Välj **[!UICONTROL Identities]** för att se intag i [!UICONTROL Identities] st
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_identity_processing"
 >title="Identitetsbearbetning"
->abstract="Identitetsbearbetning innehåller information om poster som importerats till identitetstjänsten, inklusive antalet identiteter som lagts till, diagram som skapats och diagram som uppdaterats. <br> Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
+>abstract="Identitetsbearbetning innehåller information om poster som importerats till identitetstjänsten, inklusive antalet identiteter som lagts till, diagram som skapats och diagram som uppdaterats. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
 The [!UICONTROL Identity processing] sidan innehåller information om poster som har importerats till [!DNL Identity Service], inklusive antal tillagda identiteter, skapade diagram och uppdaterade diagram.
