@@ -5,70 +5,71 @@ title: Skapa en Salesforce Marketing Cloud-källanslutning i användargränssnit
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Salesforce Marketing Cloud-källanslutning med Adobe Experience Platform-gränssnittet.
-source-git-commit: f196da32f67578ad1d73f3200f6050a7ddab0d88
+exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
+source-git-commit: 531d5619e0643b6195abaa53d1708e0368d45871
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '480'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Salesforce Marketing Cloud]-källanslutning i användargränssnittet
+# Skapa en [!DNL Salesforce Marketing Cloud] källanslutning i användargränssnittet
 
 >[!NOTE]
 >
-> Källan [!DNL Salesforce Marketing Cloud] är i betaversion. Mer information om hur du använder betatecknade källor finns i [källöversikten](../../../../home.md#terms-and-conditions).
+> The [!DNL Salesforce Marketing Cloud] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce Marketing Cloud]-källkoppling med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. Den här självstudiekursen innehåller steg för att skapa en [!DNL Salesforce Marketing Cloud] källkoppling med hjälp av användargränssnittet för plattformen.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
+   * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en [!DNL Salesforce Marketing Cloud]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [konfigurera ett dataflöde](../../dataflow/marketing-automation.md).
+Om du redan har en [!DNL Salesforce Marketing Cloud] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/marketing-automation.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt [!DNL Salesforce Marketing Cloud]-konto på Platform måste du ange följande värden:
+För att komma åt [!DNL Salesforce Marketing Cloud] på Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | Programmets värdserver. Detta är ofta din underdomän. |
-| `clientId` | Klient-ID som är associerat med ditt [!DNL Salesforce Marketing Cloud]-program. |
-| `clientSecret` | Klienthemligheten som är associerad med ditt [!DNL Salesforce Marketing Cloud]-program. |
+| `host` | Programmets värdserver. Detta är ofta din underdomän. **Obs!** När du anger `host` behöver du bara ange underdomänen och inte hela URL:en. Om din värd-URL till exempel är `https://abcd-ab12c3d4e5fg6hijk7lmnop8qrst.auth.marketingcloudapis.com/`behöver du bara ange `abcd-ab12c3d4e5fg6hijk7lmnop8qrst` som värdvärde. |
+| `clientId` | Klient-ID som är kopplat till din [!DNL Salesforce Marketing Cloud] program. |
+| `clientSecret` | Klienthemligheten som är kopplad till din [!DNL Salesforce Marketing Cloud] program. |
 
-Mer information om hur du kommer igång finns i det här [[!DNL Salesforce Marketing Cloud] dokumentet](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/authentication.htm).
+Mer information om hur du kommer igång finns i [[!DNL Salesforce Marketing Cloud] dokument](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/authentication.htm).
 
-## Anslut ditt [!DNL Salesforce Marketing Cloud]-konto
+## Koppla samman [!DNL Salesforce Marketing Cloud] konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Salesforce Marketing Cloud]-konto till Platform.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL Salesforce Marketing Cloud] konto till plattform.
 
-Välj **[!UICONTROL Sources]** från vänster navigering i plattformsgränssnittet för att komma åt arbetsytan [!UICONTROL Sources]. Skärmen [!UICONTROL Catalog] visar en mängd olika källor som du kan skapa ett konto för.
+Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet för att begränsa vilka kopplingar som visas.
 
-Under kategorin [!UICONTROL Marketing automation] väljer du **[!UICONTROL Salesforce Marketing Cloud]** och sedan **[!UICONTROL Set up]**.
+Under [!UICONTROL Marketing automation] kategori, välj **[!UICONTROL Salesforce Marketing Cloud]** och sedan markera **[!UICONTROL Set up]**.
 
 ![katalog](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
 
-Sidan **[!UICONTROL Connect to Salesforce Marketing Cloud]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+The **[!UICONTROL Connect to Salesforce Marketing Cloud]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina inloggningsuppgifter för [!DNL Salesforce Marketing Cloud] i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och din [!DNL Salesforce Marketing Cloud] autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![new](../../../../images/tutorials/create/salesforce-marketing-cloud/new.png)
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det [!DNL Salesforce Marketing Cloud]-konto du vill ansluta till och sedan väljer du **[!UICONTROL Next]** för att fortsätta.
+Om du vill ansluta ett befintligt konto väljer du [!DNL Salesforce Marketing Cloud] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/salesforce-marketing-cloud/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce Marketing Cloud]-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data från automatiseringssystemet för marknadsföring i plattformen](../../dataflow/marketing-automation.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL Salesforce Marketing Cloud] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att få in data från automatiseringssystemet för marknadsföring i plattformen](../../dataflow/marketing-automation.md).
