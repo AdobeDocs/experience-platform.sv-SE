@@ -6,9 +6,9 @@ title: Övervaka dataflöden för källor i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 241deb93b3500139b79425a4da79258670e044a8
+source-git-commit: 38e56beacd8857648abbbf20f4a5c4941ff779ee
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1739'
 ht-degree: 0%
 
 ---
@@ -154,6 +154,11 @@ Välj **[!UICONTROL Identities]** för att se intag i [!UICONTROL Identities] st
 >abstract="Identitetsbearbetning innehåller information om poster som importerats till identitetstjänsten, inklusive antalet identiteter som lagts till, diagram som skapats och diagram som uppdaterats. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_identity"
+>title="Information om dataflödeskörning"
+>abstract="På sidan med information om dataflödeskörning visas mer information om Identity-dataflödets körning, inklusive dess IMS Org ID och dataflödes-ID."
+
 The [!UICONTROL Identity processing] sidan innehåller information om poster som har importerats till [!DNL Identity Service], inklusive antal tillagda identiteter, skapade diagram och uppdaterade diagram.
 
 Markera filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödet för att se mer information om [!DNL Identity] dataflödeskörning.
@@ -191,6 +196,11 @@ Från [!UICONTROL Identity processing] sida, markera **[!UICONTROL Profiles]** f
 >title="Profilbearbetning"
 >abstract="Profilbearbetning innehåller information om poster som importerats till profiltjänsten, inklusive antalet profilfragment som skapats, uppdaterade profilfragment och det totala antalet profilfragment."
 >text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_profile"
+>title="Information om dataflödeskörning"
+>abstract="På sidan Information om dataflödeskörning visas mer information om hur profildataflödet körs, inklusive dess IMS Org ID och ID för dataflödeskörning."
 
 The [!UICONTROL Profile processing] sidan innehåller information om poster som har importerats till [!DNL Profile], inklusive antalet skapade profilfragment, uppdaterade profilfragment och det totala antalet profilfragment.
 

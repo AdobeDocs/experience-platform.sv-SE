@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 567cfd5ecec23d35317a46a3126a608cc4792a73
+source-git-commit: b9f9e709fe51000a32eaea7a1a7c76488a36dd9b
 workflow-type: tm+mt
-source-wordcount: '1799'
+source-wordcount: '1952'
 ht-degree: 0%
 
 ---
@@ -65,6 +65,35 @@ Se följande tabell för mer information om status:
 >abstract="Antalet enskilda profilidentiteter som misslyckades för det valda målet. Mer information finns i feldiagnostiken."
 >additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
 
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_activation_streaming"
+>title="Information om dataflödeskörning"
+>abstract="Körningsinformationen för måldataflödet innehåller information om segmentets aktiveringsstatus och mått som hämtats från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_profiles_received_streaming"
+>title="Mottagna profiler"
+>abstract="Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_dataflow_identitiesactivated_streaming"
+>title="Aktiverade identiteter"
+>abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_dataflow_identitiesexcluded_streaming"
+>title="Undantagna identiteter"
+>abstract="Antalet enskilda profilposter som har uteslutits från aktivering för den valda destinationen baserat på saknade attribut och godkännandefel."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_dataflow_identitiesfailed_streaming"
+>title="Identiteter misslyckades"
+>abstract="Antalet enskilda profilidentiteter som misslyckades för det valda målet. Mer information finns i feldiagnostiken."
+>text="Learn more in documentation"
+
 För direktuppspelningsmål finns följande [!UICONTROL Dataflow runs] tillhandahåller en timuppdatering för mätdata på dina dataflöden. Den mest framträdande statistiken är för identiteter.
 
 Identiteter representerar olika aspekter av en profil. Om en profil till exempel innehåller både ett telefonnummer och en e-postadress har den profilen två identiteter.
@@ -102,15 +131,33 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 ### Dataflödeskörningar för batchmål {#dataflow-runs-for-batch-destinations}
 
 >[!CONTEXTUALHELP]
->id="platform_monitoring_dataflow_run_details_activation"
+>id="platform_monitoring_profiles_received"
+>title="Mottagna profiler"
+>abstract="Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_activation_batch"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om segmentets aktiveringsstatus och mått som hämtats från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
 
 >[!CONTEXTUALHELP]
->id="platform_monitoring_profiles_received"
+>id="platform_monitoring_profiles_received_batch"
 >title="Mottagna profiler"
 >abstract="Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut."
->additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_dataflow_identitiesactivated_batch"
+>title="Aktiverade identiteter"
+>abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_dataflow_identitiesexcluded_batch"
+>title="Undantagna identiteter"
+>abstract="Antalet enskilda profilposter som har uteslutits från aktivering för den valda destinationen baserat på saknade attribut och godkännandefel."
+>text="Learn more in documentation"
 
 För batchdestinationer är [!UICONTROL Dataflow runs] -fliken innehåller mätdata för dina dataflödeskörningar. En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
 
