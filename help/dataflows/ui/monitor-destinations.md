@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: b9f9e709fe51000a32eaea7a1a7c76488a36dd9b
+source-git-commit: b66c39016b2ccd4a4e24899f9e59f9a80cdc531b
 workflow-type: tm+mt
-source-wordcount: '1952'
+source-wordcount: '1987'
 ht-degree: 0%
 
 ---
@@ -135,6 +135,11 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 >title="Mottagna profiler"
 >abstract="Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut."
 >text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_activation"
+>title="Information om dataflödeskörning"
+>abstract="Körningsinformationen för måldataflödet innehåller information om segmentets aktiveringsstatus och mått som hämtats från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_batch"
