@@ -2,11 +2,11 @@
 keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
-seo-description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet.
+seo-description: The details page for an individual destination provides an overview of the destination details. Destination details include the destination name, ID, segments mapped to the destination, and controls to edit the activation and to enable and disable the data flow.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
+source-git-commit: 6d81973554f30642cafff54330140c606ab5499d
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '641'
 ht-degree: 0%
 
 ---
@@ -15,21 +15,21 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I Adobe Experience Platform användargränssnitt kan du visa och övervaka attributen och aktiviteterna för dina mål. Dessa uppgifter omfattar målets namn och ID, kontroller för att aktivera eller inaktivera destinationer och mycket annat. Detaljer för batchdestinationer omfattar även mått för aktiverade profilposter och en historik över dataflöden.
+I Adobe Experience Platform användargränssnitt kan du visa och övervaka attributen och aktiviteterna för dina mål. Dessa uppgifter omfattar målets namn och ID, kontroller för att aktivera eller inaktivera destinationer och mycket annat. Detaljerna innehåller även mått för aktiverade profilposter, aktiverade identiteter, misslyckade och exkluderade identiteter samt en historik över dataflöden.
 
 >[!NOTE]
 >
->Målinformationssidan är en del av arbetsytan [!UICONTROL Destinations] i [!DNL Platform] [!DNL UI]. Mer information finns i översikten [[!UICONTROL Destinations] för arbetsytan](./destinations-workspace.md).
+>Målinformationssidan är en del av [!UICONTROL Destinations] arbetsytan i [!DNL Platform] [!DNL UI]. Se [[!UICONTROL Destinations] arbetsyta - översikt](./destinations-workspace.md) för mer information.
 
 ## Visa målinformation {#view-details}
 
 Följ stegen nedan för att visa mer information om ett befintligt mål.
 
-1. Logga in på användargränssnittet [Experience Platform och välj **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. ](https://platform.adobe.com/) Välj **[!UICONTROL Browse]** i den övre rubriken för att visa dina befintliga mål.
+1. Logga in på [Experience Platform UI](https://platform.adobe.com/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre sidhuvudet för att visa dina befintliga mål.
 
    ![Bläddra bland mål](../assets/ui/details-page/browse-destinations.png)
 
-1. Välj filterikonen ![Filterikon](../assets/ui/details-page/filter.png) uppe till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
+1. Markera filterikonen ![Filterikon](../assets/ui/details-page/filter.png) längst upp till vänster för att öppna sorteringspanelen. På sorteringspanelen finns en lista med alla mål. Du kan markera mer än ett mål i listan om du vill visa ett filtrerat urval av dataflöden som är kopplade till det valda målet.
 
    ![Filtermål](../assets/ui/details-page/filter-destinations.png)
 
@@ -37,11 +37,11 @@ Följ stegen nedan för att visa mer information om ett befintligt mål.
 
    ![Välj mål](../assets/ui/details-page/destination-select.png)
 
-1. Målets informationssida visas med de tillgängliga kontrollerna. Om du visar information om ett batchmål visas även en kontrollpanel.
+1. Målets informationssida visas med de tillgängliga kontrollerna.
 
    ![Destinationsinformation](../assets/ui/details-page/destination-details.png)
 
-## Höger räl
+## Höger räl {#right-rail}
 
 Den högra listen visar grundläggande information om det valda målet.
 
@@ -51,38 +51,46 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 
 | Höger rälsartikel | Beskrivning |
 | --- | --- |
-| [!UICONTROL Activate] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet. Mer information finns i guiderna om [aktivering av målgruppsdata till segmentdirektuppspelningsmål](./activate-segment-streaming-destinations.md), [aktivering av målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md) och [aktivering av målgruppsdata till direktuppspelningsprofilbaserade mål](./activate-streaming-profile-destinations.md). |
+| [!UICONTROL Activate segments] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet, uppdatera exportscheman eller lägga till och ta bort mappade attribut och identiteter. Visa stödlinjerna på [aktivera målgruppsdata till segmenterade direktuppspelningsmål](./activate-segment-streaming-destinations.md), [aktivera målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md)och [aktivera målgruppsdata för direktuppspelning av profilbaserade mål](./activate-streaming-profile-destinations.md) för mer information. |
 | [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappningar för segment som tidigare har aktiverats, om det finns några. |
 | [!UICONTROL Destination name] | Det här fältet kan redigeras för att uppdatera målets namn. |
 | [!UICONTROL Description] | Det här fältet kan redigeras för att uppdatera eller lägga till en valfri beskrivning till målet. |
-| [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [målkatalogen](../catalog/overview.md). |
+| [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Se [målkatalog](../catalog/overview.md) för mer information. |
 | [!UICONTROL Status] | Anger om målet är aktiverat eller inaktiverat. |
 | [!UICONTROL Marketing actions] | Anger de marknadsföringsåtgärder (användningsfall) som gäller för den här destinationen i datastyrningssyfte. |
-| [!UICONTROL Category] | Anger måltypen. Mer information finns i [målkatalogen](../catalog/overview.md). |
+| [!UICONTROL Category] | Anger måltypen. Se [målkatalog](../catalog/overview.md) för mer information. |
 | [!UICONTROL Connection type] | Anger det formulär som era målgrupper skickas till. Möjliga värden är [!UICONTROL Cookie] och [!UICONTROL Profile-based]. |
 | [!UICONTROL Frequency] | Anger hur ofta målgrupperna skickas till målet. Möjliga värden är [!UICONTROL Streaming] och [!UICONTROL Batch]. |
-| [!UICONTROL Identity] | Representerar det identitetsnamnutrymme som accepteras av målet, till exempel `GAID`, `IDFA` eller `email`. Mer information om godkända ID-namnutrymmen finns i [översikten över identitetsnamnrymden](../../identity-service/namespaces.md). |
+| [!UICONTROL Identity] | Representerar det ID-namnutrymme som accepteras av målet, till exempel `GAID`, `IDFA`, eller `email`. Mer information om godkända ID-namnutrymmen finns i [Översikt över namnutrymmet identity](../../identity-service/namespaces.md). |
 | [!UICONTROL Created by] | Anger den användare som skapade det här målet. |
 | [!UICONTROL Created] | Anger UTC-datum/tid när det här målet skapades. |
 
 {style=&quot;table-layout:auto&quot;}
 
-## [!UICONTROL Enabled]/[!UICONTROL Disabled] toggle
+## [!UICONTROL Enabled]/[!UICONTROL Disabled] växla {#enabled-disabled-toggle}
 
-Du kan använda alternativet **[!UICONTROL Enabled]/[!UICONTROL Disabled]** för att starta och pausa all dataexport till målet.
+Du kan använda **[!UICONTROL Enabled]/[!UICONTROL Disabled]** växla för att starta och pausa all dataexport till målet.
 
-![Aktivera/inaktivera växlingsknapp](../assets/ui/details-page/enable-disable.png)
+![Aktivera eller inaktivera dataflödets växlingsknapp](../assets/ui/details-page/enable-disable.png)
 
-## [!UICONTROL Dataflow runs]
+## [!UICONTROL Dataflow runs] {#dataflow-runs}
 
-Fliken [!UICONTROL Dataflow runs] innehåller mätdata för dataflödet som körs till batchdestinationer. Mer information finns i [Övervaka dataflöden](monitor-dataflows.md).
+The [!UICONTROL Dataflow runs] -fliken innehåller mätdata om dataflödet som körs till batchmål och direktuppspelningsmål. Se [Övervaka dataflöden](monitor-dataflows.md) för detaljer och måttdefinitioner.
+
+![Vy för körning av dataflöde](../assets/ui/details-page/dataflow-runs.png)
 
 ## [!UICONTROL Activation data] {#activation-data}
 
-På fliken [!UICONTROL Activation data] visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt). Om du vill visa information om ett visst segment väljer du dess namn i listan.
+The [!UICONTROL Activation data] På -fliken visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt), samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om ett visst segment väljer du dess namn i listan.
 
-![Aktiveringsdata](../assets/ui/details-page/activation-data.png)
+>[!TIP]
+>
+>Om du vill visa och redigera information om attribut och identiteter som är mappade till ett mål väljer du **[!UICONTROL Activate segments]** i [höger räl](#right-rail).
+
+![Batchmål för aktiveringsdatavyn](../assets/ui/details-page/activation-data-batch.png)
+
+![Mål för direktuppspelning av aktiveringsdatavy](../assets/ui/details-page/activation-data-streaming.png)
 
 >[!NOTE]
 >
->Mer information om hur du utforskar informationssidan för ett segment finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
+>Mer information om hur du utforskar detaljsidan för ett segment finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
