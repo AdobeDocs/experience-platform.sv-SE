@@ -1,7 +1,8 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 74e2ebd324265744702a385dbaca2ac4a10ea1f7
+exl-id: bcd52989-ef62-4ab9-866e-1d9e57b76a0c
+source-git-commit: 78f9b8434d577909ccb1c62211a802e05c8291e1
 workflow-type: tm+mt
 source-wordcount: '958'
 ht-degree: 2%
@@ -58,6 +59,31 @@ Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../das
 | Konsoliderad kartläggning | Det nya mappningsgränssnittet i plattformsgränssnittet ger en konsekvent mappningsupplevelse så att du kan dra nytta av intelligenta mappningsrekommendationer, manuellt konfigurera mappningsregler och felsöka eventuella fel som inträffar i mappningsuppsättningarna. Mer information finns i [[!DNL Data Prep] Användargränssnittsguide](../../data-prep/ui/mapping.md). |
 
 Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
+
+<!--
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] are pre-built integrations with destination platforms that allow for the seamless activation of data from Adobe Experience Platform. You can use destinations to activate your known and unknown data for cross-channel marketing campaigns, email campaigns, targeted advertising, and many other use cases.
+
+| Feature | Description |
+| ----------- | ----------- |
+| Placeholder for next-hit personalization | Description |
+| Placeholder for batch monitoring | Description |
+| Placeholder for re-introducing scheduling in the UI | Description |
+| Placeholder for Marketo destination update | Description |
+
+
+**New destinations**
+
+| Destination | Description |
+| ----------- | ----------- |
+| Placeholder for Target | Description |
+| Placeholder for Custom Personalization | Description |
+
+For more general information on destinations, refer to the [destinations overview](../../destinations/home.md).
+
+-->
 
 ## Frågetjänst {#query-service}
 
