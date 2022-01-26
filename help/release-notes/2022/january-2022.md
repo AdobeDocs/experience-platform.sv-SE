@@ -1,25 +1,26 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 9cd9307d54d0950d4f67d5d8cee9c6412a558275
+source-git-commit: 74e2ebd324265744702a385dbaca2ac4a10ea1f7
 workflow-type: tm+mt
-source-wordcount: '707'
-ht-degree: 1%
+source-wordcount: '958'
+ht-degree: 2%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 26 januari 2021**
+**Releasedatum: 26 januari 2022**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Larm {#alerts}](#alerts-alerts)
-- [[!DNL Data Prep] {#data-prep}](#dnl-data-prep-data-prep)
-- [[!DNL Dashboards] {#dashboards}](#dnl-dashboards-dashboards)
-- [Frågetjänst {#query-service}](#query-service-query-service)
-- [Sandlådor {#sandboxes}](#sandboxes-sandboxes)
-- [Segmenteringstjänst {#segmentation}](#segmentation-service-segmentation)
+- [Larm](#alerts)
+- [[!DNL Data Prep]](#data-prep)
+- [[!DNL Dashboards]](#dashboards)
+- [Frågetjänst](#query-service)
+- [Sandlådor](#sandboxes)
+- [Segmenteringstjänst](#segmentation)
+- [Källor](#sources)
 
 ## Larm {#alerts}
 
@@ -30,8 +31,21 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 | Funktion | Beskrivning |
 | --- | --- |
 | Nya varningsregler | Flera nya varningsregler finns nu tillgängliga för arbetsflöden som rör datainhämtning, identiteter, profiler, segmentering och aktivering. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
+| Aviseringar i sitt sammanhang för källdataflöden | Du kan nu prenumerera för att få varningsmeddelanden om status för dina dataflöden under arbetsflödet för inmatning. Mer information finns i handboken på [prenumerera på källvarningar i användargränssnittet](../../sources/tutorials/ui/alerts.md). |
 
 Mer information om varningar i Platform finns i [varningsöversikt](../../observability/alerts/overview.md).
+
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform har flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har tagits med vid dagliga ögonblicksbilder.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Intelligenta bildtexter | En maskininlärningsalgoritm ger automatiskt insikter om profil- och målgruppsdata och illustrerar mönster och trender under en 30-90-dagars- eller 12-månadersperiod. Bildtexterna innehåller information om <ul><li>Generell form och statistik</li><li>Trender och plötsliga ändringar</li><li>Säsongsmönster</li><li>Oväntade avvikelser</li></ul> Mer information finns på [profiler dashboards](../../dashboards/guides/profiles.md#profiles-count-trend) och [instrumentpaneler för segment](../../dashboards/guides/segments.md#audience-size-trend) dokumentation. |
+| Instrumentpanelsinventering | Få tillgång till förkonfigurerade rapporter om profiler, segment och målpaneler, inklusive installerade integreringar som PowerBI, på en central plats. Mer information finns i [[!DNL Dashboards] översikt](../../dashboards/home.md). |
+| PowerBI-rapportmallar | Bygg, anpassa eller utöka mätvärden från profil-, segment- och målrapporteringsdatamodeller med nya PowerBI-diagram. Det automatiserade installationsarbetsflödet gör att ni kan dela med er av era marknadsföringsinsikter i hela organisationen inifrån PowerBI-miljön. Mer information finns i [[!DNL Dashboards] översikt](../../dashboards/home.md). |
+
+Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
@@ -41,28 +55,18 @@ Mer information om varningar i Platform finns i [varningsöversikt](../../observ
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Konsoliderad kartläggning | Det nya mappningsgränssnittet i plattformsgränssnittet ger en konsekvent mappningsupplevelse så att du kan dra nytta av intelligenta mappningsrekommendationer, manuellt konfigurera mappningsregler och felsöka eventuella fel som inträffar i mappningsuppsättningarna. Mer information finns i [[!DNL Data Prep] Användargränssnittsguide](../../data-prep/home.md). |
+| Konsoliderad kartläggning | Det nya mappningsgränssnittet i plattformsgränssnittet ger en konsekvent mappningsupplevelse så att du kan dra nytta av intelligenta mappningsrekommendationer, manuellt konfigurera mappningsregler och felsöka eventuella fel som inträffar i mappningsuppsättningarna. Mer information finns i [[!DNL Data Prep] Användargränssnittsguide](../../data-prep/ui/mapping.md). |
 
 Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
-
-## [!DNL Dashboards] {#dashboards}
-
-[!DNL Dashboards] gör vackra saker.
-
-| Funktion | Beskrivning |
-|---------|-------------|
-| Intelligenta bildtexter | En maskininlärningsalgoritm ger automatiskt insikter om profil- och målgruppsdata och illustrerar mönster och trender under en 30-90-dagars- eller 12-månadersperiod. Bildtexterna innehåller information om <ul><li>Generell form och statistik</li><li>Trender och plötsliga ändringar</li><li>Säsongsmönster</li><li>Oväntade avvikelser</li></ul> Mer information finns på [profiler dashboards](../../dashboards/guides/profiles.md#profiles-count-trend) och [instrumentpaneler för segment](../../dashboards/guides/segments.md#audience-size-trend) dokumentation. |
-| Instrumentpanelsinventering | Få tillgång till förkonfigurerade rapporter om profiler, segment och målpaneler, inklusive installerade integreringar som PowerBI, på en central plats. Mer information finns i [[!DNL Dashboards] översikt](../../dashboards/home.md). |
-| PowerBI-rapportmallar | Bygg, anpassa eller utöka mätvärden från profil-, segment- och målrapporteringsdatamodeller med nya PowerBI-diagram. Det automatiserade installationsarbetsflödet gör att ni kan dela med er av era marknadsföringsinsikter i hela organisationen inifrån PowerBI-miljön. Mer information finns i [[!DNL Dashboards] översikt](../../dashboards/home.md). |
-
-Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
 
 ## Frågetjänst {#query-service}
 
 [!DNL Query Service] låter dig använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
 
+**Uppdaterade funktioner**
+
 | Funktion | Beskrivning |
-|----------------------|-----------------------|
+| --- | --- |
 | Anonymt block | Med den anonyma SQL-blockkonstruktionen kan du dela upp stora datapresentationsjobb i Query Service till mindre uppgifter och sedan återanvända och köra dem i sekvens för inkrementell datainläsning. Mer information finns i [Översikt över frågetjänsten](../../query-service/home.md). |
 | Datauppsättningsorganisation | Tillhandahåller en sammanhängande, logisk datastruktur för att organisera dina dataresurser för användning med Query Service när mängden dataresurser i sandlådan växer. Mer information finns i [Översikt över frågetjänsten](../../query-service/home.md). |
 
@@ -84,10 +88,22 @@ Mer information om sandlådor finns i [översikt över sandlådor](../../sandbox
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
-**Uppdaterade funktioner**
+**Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Segmentmatchning | Segmentmatchning är en tjänst för datasamarbete som gör det möjligt för två eller flera plattformsanvändare att utbyta data, baserat på gemensamma identifierare, på ett säkert, styrt och sekretessvänligt sätt. Mer information finns i [Översikt över segmentmatchning](../../segmentation/ui/segment-match/overview.md). |
+| Segmentmatchning | Segmentmatchning är en tjänst för datasamarbete som gör det möjligt för två eller flera plattformsanvändare att utbyta data, baserat på gemensamma identifierare, på ett säkert, styrt och sekretessvänligt sätt. Segment Match använder sekretessstandarder för Platform och personliga identifierare som hash-kodade e-postmeddelanden, hashade telefonnummer och enhetsidentifierare som IDFA och GAID. Mer information finns i [Översikt över segmentmatchning](../../segmentation/ui/segment-match/overview.md). |
 
 Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
+
+## Källor {#sources}
+
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+
+Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Beta-källor som går över till GA | Följande källor har befordrats från beta till GA: <ul><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li><li>[[!DNL Veeva CRM]](../../sources/connectors/crm/veeva.md)</li></ul> |
+| [!DNL Event Hubs] källförbättringar | The [!DNL Event Hubs] source har nu stöd för SAS-nyckeltyper som inte är rot för autentisering för att ansluta och skapa källanslutning. Mer information finns i [[!DNL Event Hubs] översikt](../../sources/connectors/cloud-storage/eventhub.md). |
+| [!DNL SFTP] källförbättringar | The [!DNL SFTP] kan du nu skapa ett angivet antal samtidiga anslutningar som ett dataflöde kan använda för att ansluta till SFTP-servern. Mer information finns i [[!DNL SFTP] översikt](../../sources/connectors/cloud-storage/sftp.md). |
