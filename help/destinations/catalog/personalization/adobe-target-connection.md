@@ -1,24 +1,20 @@
 ---
 keywords: målinriktad personalisering, destination, mål för upplevelseplattform;adobe target destination;
-title: Adobe Target-anslutning (beta)
-description: Adobe Target är en applikation som innehåller personalisering och experimenterande i realtid, 1:1, och AI-driven i alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
+title: Adobe Target-anslutning
+description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: fae3d9a5aff3e84354831026e9724e1c85d32b5c
+source-git-commit: 8845bb42fe1a47f1bcd6521f7886c1582d209993
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '432'
 ht-degree: 0%
 
 ---
 
-# Adobe Target-anslutning (beta) {#adobe-target-connection}
+# Adobe Target-anslutning {#adobe-target-connection}
 
 ## Översikt {#overview}
 
->[!IMPORTANT]
->
->Adobe Target-anslutningen i Adobe Experience Platform är för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
-
-Adobe Target är en applikation som ger personalisering och experimenterande i realtid, 1:1, i AI, i alla kundinteraktioner, på webbplatser, i mobilappar med mera.
+Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 
 Adobe Target är en personaliseringsanslutning i Adobe Experience Platform.
 

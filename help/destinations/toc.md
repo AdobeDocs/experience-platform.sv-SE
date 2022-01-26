@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: b41230c1280bf699e9a78d5fd15b43d51ab298f7
+source-git-commit: 628e7a993a3566322e0249a5a9864cf6b3fe4493
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 1%
 
 ---
@@ -32,6 +32,7 @@ ht-degree: 1%
       * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md)
       * [Aktivera målgruppsdata för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md)
       * [Aktivera målgruppsdata för att profilera mål för begäran (beta)](./ui/activate-profile-request-destinations.md)
+      * [Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida](./ui/configure-personalization-destinations.md)
    * [Visa målinformation](./ui/destination-details-page.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Redigera aktiveringsflöden](./ui/edit-activation.md)
@@ -118,11 +119,11 @@ ht-degree: 1%
       * [Braze connection](./catalog/mobile-engagement/braze.md)
    * Destinationer för personalisering {#personalization}
       * [Översikt över destinationer för personalisering](./catalog/personalization/overview.md)
-      * [Adobe Target-anslutning (beta)](./catalog/personalization/adobe-target-connection.md)
+      * [Adobe Target-anslutning](./catalog/personalization/adobe-target-connection.md)
       * [Adobe Target-tillägg](./catalog/personalization/adobe-target.md)
       * [Adobe Target v2-tillägg](./catalog/personalization/adobe-target-v2.md)
       * [Beemray-tillägg](./catalog/personalization/beemray.md)
-      * [Anpassad personaliseringsanslutning (beta)](./catalog/personalization/custom-personalization.md)
+      * [Anpassad personaliseringsanslutning](./catalog/personalization/custom-personalization.md)
       * [D&amp;B Visitor Intelligence-tillägg](./catalog/personalization/dnb.md)
       * [Experience Cloud ID-tjänsttillägg](./catalog/personalization/adobe-ecid.md)
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
