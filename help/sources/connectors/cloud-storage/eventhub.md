@@ -5,9 +5,9 @@ title: Översikt över Azure Event Hubs Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 832e32c31be944fff1101fa409e56f5c3e27d325
+source-git-commit: b64054859cbd88687dd05b0c65e51d0b2ef2a7b3
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
@@ -35,13 +35,29 @@ För att öka hastigheten för intag på plattformssidan måste Platform öka an
 
 ## Använd ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till plattform
 
-Du kan konfigurera ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till Platform samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till [[!DNL Event Hubs] uppsättningsdokument för nätverksregel](https://docs.microsoft.com/en-us/rest/api/eventhub/preview/namespaces-network-rule-set/create-or-update-network-rule-set#code-try-0) och sedan markera **Prova** från REST API-panelen. Autentisera sedan [!DNL Azure] ditt konto med dina inloggningsuppgifter och välj sedan [!DNL Event Hubs] namnutrymme, resursgrupp och prenumeration som du vill ta med på plattformen.
+Du kan konfigurera ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till Platform samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till [[!DNL Event Hubs] uppsättningsdokument för nätverksregel](https://docs.microsoft.com/en-us/rest/api/eventhub/preview/namespaces-network-rule-set/create-or-update-network-rule-set#code-try-0) och följ stegen nedan:
 
-Uppdatera **begärandetext** med den JSON som motsvarar din nätregion, från listan nedan:
+* Välj **Prova** från REST API-panelen,
+* Autentisera [!DNL Azure] kontot med hjälp av dina inloggningsuppgifter i samma webbläsare,
+* Välj [!DNL Event Hubs] namnutrymme, resursgrupp och prenumeration som du vill hämta till plattformen och sedan välja **KÖR**;
+* I JSON-brödtexten som visas lägger du till följande Platform-undernät under `virtualNetworkRules` inuti `properties`:
 
->[!TIP]
+
+>[!IMPORTANT]
 >
->Du måste säkerhetskopiera IP-filtreringsreglerna för brandväggen eftersom de tas bort efter det här anropet.
+>Du måste skapa en säkerhetskopia av det JSON-innehåll som du får innan du uppdaterar `virtualNetworkRules` med Platform-undernätet eftersom det innehåller dina befintliga IP-filtreringsregler. Annars tas reglerna bort efter anropet.
+
+
+```json
+{
+    "subnet": {
+        "id": "/subscriptions/93f21779-b1fd-49ee-8547-2cdbc979a44f/resourceGroups/ethos_12_prod_va7_network/providers/Microsoft.Network/virtualNetworks/ethos_12_prod_va7_network_10_19_144_0_22/subnets/ethos_12_prod_va7_network_10_19_144_0_22"
+    },
+    "ignoreMissingVnetServiceEndpoint": true
+}
+```
+
+Se listan nedan för olika regioner av plattformsundernät:
 
 ### VA7: Nordamerika
 
@@ -108,10 +124,10 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Event Hub
 
 ### Använda API:er
 
-- [Skapa en Event Hubs-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/eventhub.md)
-- [Samla in strömmande data med API:t för Flow Service](../../tutorials/api/collect/streaming.md)
+* [Skapa en Event Hubs-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/eventhub.md)
+* [Samla in strömmande data med API:t för Flow Service](../../tutorials/api/collect/streaming.md)
 
 ### Använda gränssnittet
 
-- [Skapa en källanslutning för händelsehubbar i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
-- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+* [Skapa en källanslutning för händelsehubbar i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
+* [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
