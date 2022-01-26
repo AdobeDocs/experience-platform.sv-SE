@@ -5,20 +5,24 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: bb5a56557ce162395511ca9a3a2b98726ce6c190
+source-git-commit: f168566d03485176b16b6d3833c37930b38b0149
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittsguide för kantsegmentering (beta)
+# Användargränssnittsguide för kantsegmentering
+
+>[!NOTE]
+>
+>Kantsegmentering är nu allmänt tillgängligt för alla plattformsanvändare. Om du skapade kantsegment under betaversionen kommer dessa segment att fortsätta fungera.
+
+Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Experience Platform [på kanten](../../edge/home.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 
 >[!IMPORTANT]
 >
->Kantsegmentering är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
-
-Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Experience Platform [på kanten](../../edge/home.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
+> Kantdata lagras på en edge-serverplats som ligger närmast den plats där de samlades in och kan lagras på en annan plats än den som anges som Adobe Experience Platform datacenter (eller huvudserver).
 
 ## Frågetyper för kantsegmentering
 
@@ -30,7 +34,7 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 
 >[!NOTE]
 >
->Om frågan matchar någon av frågetyperna i följande tabell utvärderas den automatiskt med kantsegmentering. Den här funktionen bestäms automatiskt av systemet baserat på frågeuttrycket.
+>Om frågan matchar någon av frågetyperna i följande tabell utvärderas den automatiskt med kantsegmentering. Den här funktionen bestäms automatiskt av systemet utifrån frågeuttrycket.
 
 | Frågetyp | Detaljer | Exempel |
 | ---------- | ------- | ------- |
