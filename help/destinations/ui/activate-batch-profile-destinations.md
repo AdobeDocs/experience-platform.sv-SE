@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 7bafa87de874c6be90b80e4a899c02fd3868290e
+source-git-commit: 551b07eac95b560950fe2d70fd2a981ae3a29252
 workflow-type: tm+mt
-source-wordcount: '2129'
+source-wordcount: '2124'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule"
 >title="Schema"
->abstract="Filexporttyp (fullständiga eller stegvisa filer) och schemaläggning kan inte ändras när segmentet har sparats."
+>abstract="Ange filexporttyp (fullständiga eller stegvisa filer) och exportfrekvens."
 >additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="Läs mer i dokumentationen"
 
 [!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av [!DNL CSV] filer. I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
