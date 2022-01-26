@@ -4,9 +4,9 @@ title: Introduktion till Experience Platform Dashboards
 type: Documentation
 description: Utforska flera instrumentpaneler i Adobe Experience Platform för att visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
-source-git-commit: e927dbef8a3028155e907e0ca05c17c29fb74cf1
+source-git-commit: e7ff48d6aa7d7f70688081df45ae2d36da741eb4
 workflow-type: tm+mt
-source-wordcount: '251'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,19 @@ Instrumentpaneler ger användningsklara rapporter om organisationens data och ä
 
 ## Komma igång med instrumentpaneler
 
-Navigera till rätt avsnitt i användargränssnittet för plattformen för att få åtkomst till instrumentpaneler. När du är i avsnittet kan du visa kontrollpanelen genom att välja fliken **[!UICONTROL Overview]**, om den inte väljs automatiskt.
+Om du vill visa och hantera kontrollpaneler går du till **[!UICONTROL Dashboards]** i användargränssnittet för Experience Platform och välj **[!UICONTROL Browse]** -fliken för att komma åt instrumentpanelens lager.
+
+Du kan även komma åt kontrollpaneler genom att navigera till rätt avsnitt i användargränssnittet för den kontrollpanel som du vill visa. Om du vill visa kontrollpanelen för profiler navigerar du till **[!UICONTROL Profiles]** arbetsytan och välj **[!UICONTROL Overview]** -fliken.
 
 Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och instrumentpanelerna uppdateras inte i realtid.
 
 >[!NOTE]
 >
 >Ändringar eller uppdateringar som gjorts i data sedan ögonblicksbilden togs kommer inte att visas på kontrollpanelen förrän nästa ögonblicksbild tas.
+
+## Instrumentpanelslager
+
+Detaljerade anvisningar om hur du använder **[!UICONTROL Dashboards]** arbetsytan för att visa alla tillgängliga instrumentpaneler finns på [lagerguide för instrumentpanel](./inventory.md).
 
 ## Tillgängliga instrumentpaneler
 

@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Dashboards
 breadcrumb-title: Handbok för instrumentpaneler
 user-guide-description: Visualisera Experience Platform-data på anpassningsbara instrumentpaneler.
 feature: Dashboards
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: 058f1cf5aa0ea134f276d1b3bc7064195fb252f1
 workflow-type: tm+mt
-source-wordcount: '58'
-ht-degree: 8%
+source-wordcount: '64'
+ht-degree: 7%
 
 ---
 
@@ -16,6 +16,7 @@ ht-degree: 8%
 
 * [Översikt över instrumentpaneler](home.md)
 * [Åtkomstbehörigheter för instrumentpanel](permissions.md)
+* [Instrumentpaneler](inventory.md)
 * [Hämta instrumentpaneler till PDF](download.md)
 * Tillgängliga instrumentpaneler {#guides}
    * [Profiler](guides/profiles.md)
@@ -29,5 +30,7 @@ ht-degree: 8%
    * [Standardwidgetar](customize/standard-widgets.md)
    * [Anpassade widgetar](customize/custom-widgets.md)
    * [Redigera schema](customize/edit-schema.md)
+* Programintegreringar {#integrations}
+   * [Power BI](integrations/power-bi.md)
 * [Datamängder för frågeinstrumentpanelen](query.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
