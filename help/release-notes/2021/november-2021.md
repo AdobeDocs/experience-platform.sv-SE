@@ -1,8 +1,7 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: a089ff9c053e46d32b98f94ddaf71d75d29fd4c7
+source-git-commit: 7cd4a776ab07fcd123e798497b23edd41266f409
 workflow-type: tm+mt
 source-wordcount: '798'
 ht-degree: 1%
