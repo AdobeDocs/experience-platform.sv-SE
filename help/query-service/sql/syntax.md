@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c2c543e64a4f2aef0064abf5e4fb9d7f2738159b
+source-git-commit: 91fc4c50eb9a5ab64de3445b47465eec74a61736
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2301'
 ht-degree: 1%
 
 ---
@@ -343,6 +343,23 @@ EXCEPTION
     SELECT 'ERROR';
 END;
 ```
+
+## Dataresursorganisation
+
+Det är viktigt att logiskt organisera era datatillgångar inom Adobe Experience Platform dataresa när de växer. Med frågetjänsten utökas SQL-konstruktioner som gör att du logiskt kan gruppera dataresurser i en sandlåda. Med den här organisationsmetoden kan du dela datatillgångar mellan scheman utan att behöva flytta dem fysiskt.
+
+Följande SQL-konstruktioner som använder standard-SQL-syntax stöds så att du kan organisera dina data logiskt.
+
+```SQL
+CREATE DATABASE dg1;
+CREATE SCHEMA dg1.schema1;
+CREATE table t1 ...;
+CREATE view v1 ...;
+ALTER TABLE t1 ADD PRIMARY KEY (c1) NOT ENFORCED;
+ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
+```
+
+Se guiden [logisk organisation av datatillgångar](../best-practices/organize-data-assets.md) om du vill ha mer detaljerad information om hur frågetjänsten fungerar.
 
 ## [!DNL Spark] SQL-kommandon
 
