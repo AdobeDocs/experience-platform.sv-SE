@@ -5,7 +5,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Snowflake-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: 76b3e3e9bcb27eb2bd6981ae6eb109410ae16336
+source-git-commit: 0928da0ad15ce23d3677fec7b9866d079f3db407
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
@@ -38,7 +38,7 @@ För att få åtkomst till ditt Snowflake-konto på [!DNL Platform]måste du ang
 | Databas | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | Användarnamn | Användarnamnet för [!DNL Snowflake] konto. |
 | Lösenord | Lösenordet för [!DNL Snowflake] användarkonto. |
-| Anslutningssträng | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
+| Anslutningssträng | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 
 Mer information om dessa värden finns i [det här Snowflake-dokumentet](https://docs.snowflake.com/en/user-guide/oauth-custom.html).
 

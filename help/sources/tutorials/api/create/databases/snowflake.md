@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake med API:t för Flow Service.
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: 76b3e3e9bcb27eb2bd6981ae6eb109410ae16336
+source-git-commit: 0928da0ad15ce23d3677fec7b9866d079f3db407
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 1%
@@ -43,7 +43,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange fö
 | `database` | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | `username` | Användarnamnet för [!DNL Snowflake] konto. |
 | `password` | Lösenordet för [!DNL Snowflake] användarkonto. |
-| `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
+| `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Snowflake] är `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
 Mer information om hur du kommer igång finns i [[!DNL Snowflake] dokument](https://docs.snowflake.com/en/user-guide/oauth-custom.html).
