@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här gränssnittshandboken hjälper dig att skapa en direktuppspelningsanslutning med Adobe Experience Platform.
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: d39cdeaa57a221f10c975353a54d3ff7c88239d6
+source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '993'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,8 @@ Om du vill använda en befintlig datauppsättning väljer du **[!UICONTROL Exist
 
 ### Mappa standardfält
 
-Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om mappningsfunktioner och beräkningsfält finns i [Handbok för dataprefixfunktioner](../../../../../data-prep/functions.md) eller [guide för beräknade fält](../../../../../data-prep/calculated-fields.md).
+
+Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
 
 Om du vill lägga till ett nytt källfält väljer du **[!UICONTROL Add new mapping]**.
 
