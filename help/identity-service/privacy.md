@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
-source-git-commit: 49f5de6c4711120306bfc3e6759ed4e83e8a19c2
+exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
+source-git-commit: f0fa8d77e6184314056f8e70205a9b42409d09d5
 workflow-type: tm+mt
-source-wordcount: '664'
-ht-degree: 1%
+source-wordcount: '720'
+ht-degree: 0%
 
 ---
-
 
 # Behandling av sekretessförfrågningar i [!DNL Identity Service]
 
@@ -48,7 +48,11 @@ När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste a
 
 Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. Vid förfrågningar till [!DNL Identity]måste arrayen innehålla värdet `Identity`.
 
-Följande begäran skapar ett nytt sekretessjobb under GDPR för en enskild kunds data i [!DNL Identity] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` identity namespace, and the other using an `ECID` namespace, It includes the product value for [!DNL Identity] (`Identity`) i `include` array:
+Följande begäran skapar ett nytt sekretessjobb under GDPR för en enskild kunds data i [!DNL Identity] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` id namespace, and the other using an `ECID` namespace, It includes the product value for [!DNL Identity] (`Identity`) i `include` array:
+
+>[!TIP]
+>
+>När du tar bort ett anpassat namnutrymme med API:t måste du ange identitetssymbolen som namnutrymme i stället för visningsnamnet.
 
 ```shell
 curl -X POST \
@@ -89,6 +93,10 @@ curl -X POST \
 ```
 
 ### Använda gränssnittet
+
+>[!TIP]
+>
+>När du tar bort ett anpassat namnutrymme med användargränssnittet måste du ange identitetssymbolen som namnutrymme i stället för visningsnamnet. Du kan inte heller ta bort anpassade namnutrymmen i användargränssnittet för icke-produktionssandlådor.
 
 När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL Identity]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i [!DNL Identity Service].
 
