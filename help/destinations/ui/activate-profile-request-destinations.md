@@ -5,38 +5,35 @@ type: Tutorial
 seo-title: Activate audience data to profile request destinations
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
-source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
+exl-id: cd7132eb-4047-4faa-a224-47366846cb56
+source-git-commit: dd9493077706b102467493e90b363ac202550eee
 workflow-type: tm+mt
-source-wordcount: '448'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
 
-# Aktivera målgruppsdata för att profilera mål för begäran (beta)
+# Aktivera målgruppsdata för att profilera mål för begäran
 
 ## Översikt {#overview}
 
->[!IMPORTANT]
->
->Destinationer för profilförfrågningar i Adobe Experience Platform är för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
-
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform-profilförfrågningar. Exempel på mål för profilbegäran är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md)-anslutningar.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform-profilförfrågningar. Exempel på mål för profilbegäran är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) anslutningar.
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill aktivera data till mål måste du ha [anslutit till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](../catalog/overview.md), bläddrar bland de mål som stöds och konfigurerar det mål som du vill använda.
+Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ### Sammanslagningsprincip för segment {#merge-policy}
 
-Målen för profilbegäran stöder för närvarande endast aktivering av segment som använder [standardprincipen för sammanslagning](../../segmentation/ui/segment-builder.md#merge-policies).
+För närvarande stöder profilförfrågningar endast aktivering av segment som använder [standardprincip för sammanslagning](../../segmentation/ui/segment-builder.md#merge-policies).
 
 ## Välj mål {#select-destination}
 
-1. Gå till **[!UICONTROL Connections > Destinations]** och välj fliken **[!UICONTROL Catalog]**.
+1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
    ![Fliken Målkatalog](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
 
    ![Aktivera knappar](../assets/ui/activate-profile-request-destinations/activate-segments-button.png)
 
@@ -44,33 +41,33 @@ Målen för profilbegäran stöder för närvarande endast aktivering av segment
 
    ![Välj mål](../assets/ui/activate-profile-request-destinations/select-destination.png)
 
-1. Gå till nästa avsnitt för att [markera dina segment](#select-segments).
+1. Gå till nästa avsnitt till [markera segment](#select-segments).
 
 ## Välj segment {#select-segments}
 
-Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och välj sedan **[!UICONTROL Next]**.
+Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
 
 ![Markera segment](../assets/ui/activate-profile-request-destinations/select-segments.png)
 
 ## Schemalägg segmentexport {#scheduling}
 
-Som standard visar sidan [!UICONTROL Segment schedule] bara de segment som du nyligen har valt i det aktuella aktiveringsflödet.
+Som standard är [!UICONTROL Segment schedule] visas endast de nyligen valda segmenten som du valde i det aktuella aktiveringsflödet.
 
 ![Nya segment](../assets/ui/activate-profile-request-destinations/new-segments.png)
 
-Om du vill se alla segment som aktiveras till målet använder du filteralternativet och inaktiverar filtret **[!UICONTROL Show new segments only]**.
+Om du vill se alla segment som aktiveras till målet använder du filteralternativet och inaktiverar **[!UICONTROL Show new segments only]** filter.
 
 ![Alla segment](../assets/ui/activate-profile-request-destinations/all-segments.png)
 
-På sidan **[!UICONTROL Segment schedule]** markerar du varje segment och använder sedan väljarna **[!UICONTROL Start date]** och **[!UICONTROL End date]** för att konfigurera tidsintervallet för att skicka data till målet.
+På **[!UICONTROL Segment schedule]** markerar du varje segment och använder sedan **[!UICONTROL Start date]** och **[!UICONTROL End date]** väljare för att konfigurera tidsintervallet för att skicka data till målet.
 
 ![Segmentschema](../assets/ui/activate-profile-request-destinations/segment-schedule.png)
 
-Välj **[!UICONTROL Next]** om du vill gå till sidan [!UICONTROL Review].
+Välj **[!UICONTROL Next]** för att gå till [!UICONTROL Review] sida.
 
 ## Granska {#review}
 
-På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta valet och börja skicka data till målet.
+På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 >[!IMPORTANT]
 >
@@ -78,10 +75,10 @@ På sidan **[!UICONTROL Review]** visas en sammanfattning av ditt val. Välj **[
 
 ![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
 
-Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 ![Granska](../assets/ui/activate-profile-request-destinations/review.png)
 
 ## Verifiera segmentaktivering {#verify}
 
-Läs [dokumentationen för målövervakning](../../dataflows/ui/monitor-destinations.md) om du vill ha mer information om hur du övervakar dataflödet till dina mål.
+Kontrollera [dokumentation för målövervakning](../../dataflows/ui/monitor-destinations.md) om du vill ha detaljerad information om hur du övervakar dataflödet till dina destinationer.

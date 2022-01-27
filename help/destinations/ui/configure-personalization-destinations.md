@@ -5,13 +5,13 @@ type: Tutorial
 seo-title: Configure personalization destinations for same-page and next-page personalization.
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
 seo-description: Configure personalization destinations for same-page and next-page personalization.
-source-git-commit: 24e8d088dd79304e0bf0335b7c3df2ef75baf81d
+exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
+source-git-commit: dd9493077706b102467493e90b363ac202550eee
 workflow-type: tm+mt
 source-wordcount: '317'
 ht-degree: 1%
 
 ---
-
 
 # Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida
 
