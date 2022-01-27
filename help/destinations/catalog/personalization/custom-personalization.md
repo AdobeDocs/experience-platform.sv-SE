@@ -1,9 +1,9 @@
 ---
 keywords: personalisering, destination, upplevelseplattform anpassad destination,
 title: Anpassad personaliseringsanslutning
-description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats som ett sätt att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
+description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: dd9493077706b102467493e90b363ac202550eee
+source-git-commit: cfbf8fb29d15badd10bafe35c558d95e534d23e8
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 1%
