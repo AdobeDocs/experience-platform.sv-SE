@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 title: Användargränssnittshandbok för dataprep
 description: Det här dokumentet innehåller anvisningar om hur du använder förinställningsfunktioner för data i plattformsgränssnittet för att mappa CSV-filer till ett XDM-schema.
-source-git-commit: 4c2e3380881e6a032100ef00502b55112f3b103f
+exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
+source-git-commit: 4cce36ef21ad7490941eecff3933ff0459a0425c
 workflow-type: tm+mt
 source-wordcount: '1564'
 ht-degree: 0%
@@ -80,18 +81,18 @@ The **[!UICONTROL mapping]** I finns ett omfattande verktyg för att mappa käll
 
 ### Mappningsgränssnittet
 
-Mappningsgränssnittet innehåller en kontrollpanel med information om hälsotillståndet för mappningsuppsättningarna i det sammanhang som inmatningsarbetsflödet gäller. På kontrollpanelen visas följande information om dina mappningsuppsättningar:
+Mappningsgränssnittet innehåller en kontrollpanel som ger information om hälsotillståndet för mappningsfälten i det aktuella inmatningsarbetsflödet. På kontrollpanelen visas följande information om mappningsfälten:
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Mapped fields] | Visar det totala antalet källfält som har mappats till ett mål-XDM-fält, oavsett fel. |
 | [!UICONTROL Required fields] | Visar antalet obligatoriska mappningsfält. |
-| [!UICONTROL Identity fields] | Visar det totala antalet mappningsuppsättningar som definierats som identitet. De här mappningsuppsättningarna representeras av en fingeravtrycksikon. |
-| [!UICONTROL Errors] | Visar antalet felaktiga mappningsuppsättningar. |
+| [!UICONTROL Identity fields] | Visar det totala antalet mappningsfält som definierats som identitet. Mappningsfälten representeras av en fingeravtrycksikon. |
+| [!UICONTROL Errors] | Visar antalet felaktiga mappningsfält. |
 
 ![översta panelen](../images/ui/mapping/top-panel.png)
 
-Mappningsgränssnittet innehåller också en panel med alternativ som du kan välja mellan för att bättre interagera eller filtrera genom mappningsuppsättningarna.
+Mappningsgränssnittet innehåller också en panel med alternativ som du kan välja mellan för att bättre interagera eller filtrera genom mappningsfälten.
 
 ![andra panelen](../images/ui/mapping/second-panel.png)
 
@@ -112,11 +113,11 @@ Filtreringsalternativen är:
 | [!UICONTROL Unmapped fields] | Med det här alternativet filtreras källschemat så att endast de fält som ännu inte har mappats visas. |
 | [!UICONTROL Fields with recommendation] | Med det här alternativet filtreras källschemat så att endast de fält som innehåller mappningsrekommendationer visas. |
 
-Välj **[!UICONTROL Fields with errors]** om du vill visa alla mappningsuppsättningar med fel.
+Välj **[!UICONTROL Fields with errors]** om du vill visa alla mappningsfält med fel.
 
 ![filter](../images/ui/mapping/filter.png)
 
-En isolerad vy med felaktiga mappningsuppsättningar visas, vilket gör att du kan åtgärda fel med hjälp av intelligenta mappningsrekommendationer eller genom det manuella mappningsträdet.
+En isolerad vy med felaktiga mappningsfält visas, där du kan åtgärda fel med hjälp av intelligenta mappningsrekommendationer eller genom det manuella mappningsträdet.
 
 ![fält-med-fel](../images/ui/mapping/fields-with-errors.png)
 
@@ -176,13 +177,13 @@ Under förhandsgranskningen prioriteras identitetskolumnen som det första fält
 
 ![preview-screen](../images/ui/mapping/preview-screen.png)
 
-Om du vill ta bort alla mappningsuppsättningar väljer du **[!UICONTROL Clear all mappings]**.
+Om du vill ta bort alla mappningsfält väljer du **[!UICONTROL Clear all mappings]**.
 
 ![clear-all](../images/ui/mapping/clear-all.png)
 
 ### Använda mappningsgränssnittet
 
-Plattformen ger automatiskt intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall eller åtgärda eventuella dubblerade mappningsuppsättningar för att ta bort eventuella fel.
+Plattformen ger automatiskt intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall eller åtgärda eventuella dubblerade mappningsfält för att ta bort eventuella fel.
 
 ![mappningsgränssnitt](../images/ui/mapping/mapping-interface.png)
 
@@ -200,7 +201,7 @@ Du kan också välja **[!UICONTROL Select manually]** om du vill använda det in
 
 ![recc-panel](../images/ui/mapping/recc-panel.png)
 
-Gränssnittet för målschemamappning visas i samma vy som mappningsuppsättningarna, vilket gör att du kan ändra mappningspar på samma skärm. Välj det målfält som passar ditt användningssätt eller korrigerar felen.
+Gränssnittet för målschemamappning visas i samma vy som mappningsfälten, vilket gör att du kan ändra mappningspar på samma skärm. Välj det målfält som passar ditt användningssätt eller korrigerar felen.
 
 ![select-target-field](../images/ui/mapping/select-target-field.png)
 
