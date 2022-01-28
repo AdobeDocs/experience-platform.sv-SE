@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: bcd52989-ef62-4ab9-866e-1d9e57b76a0c
-source-git-commit: 703e49a20fae0fbf527275e1385f596d01642954
+source-git-commit: 5a27b725d945fcfc3908b2299f770796ce4fdbd1
 workflow-type: tm+mt
-source-wordcount: '1328'
+source-wordcount: '1336'
 ht-degree: 1%
 
 ---
@@ -44,8 +44,8 @@ Adobe Experience Platform har flera instrumentpaneler där du kan se viktiga ins
 | Funktion | Beskrivning |
 | --- | --- |
 | Intelligenta bildtexter | En maskininlärningsalgoritm ger automatiskt insikter om profil- och målgruppsdata och illustrerar mönster och trender under en 30-90-dagars- eller 12-månadersperiod. Bildtexterna innehåller information om <ul><li>Generell form och statistik</li><li>Trender och plötsliga ändringar</li><li>Säsongsmönster</li><li>Oväntade avvikelser</li></ul> Mer information finns på [profiler dashboards](../../dashboards/guides/profiles.md#profiles-count-trend) och [instrumentpaneler för segment](../../dashboards/guides/segments.md#audience-size-trend) dokumentation. |
-| Instrumentpanelsinventering | Få tillgång till förkonfigurerade rapporter om profiler, segment och målpaneler, inklusive installerade integreringar som PowerBI, på en central plats. Mer information finns i [[!DNL Dashboards] översikt](../../dashboards/home.md). |
-| PowerBI-rapportmallar | Bygg, anpassa eller utöka mätvärden från profil-, segment- och målrapporteringsdatamodeller med nya PowerBI-diagram. Det automatiserade installationsarbetsflödet gör att ni kan dela med er av era marknadsföringsinsikter i hela organisationen inifrån PowerBI-miljön. Mer information finns i [[!DNL Dashboards] översikt](../../dashboards/home.md). |
+| Instrumentpanelsinventering | Få tillgång till förkonfigurerade rapporter om profiler, segment och målpaneler, inklusive installerade integreringar som PowerBI, på en central plats. Mer information finns i [[!DNL Dashboards] lagerdokumentation](../../dashboards/inventory.md). |
+| PowerBI-rapportmallar | Bygg, anpassa eller utöka mätvärden från profil-, segment- och målrapporteringsdatamodeller med nya PowerBI-diagram. Det automatiserade installationsarbetsflödet gör att ni kan dela med er av era marknadsföringsinsikter i hela organisationen inifrån PowerBI-miljön. Mer information finns i [Dokumentation för PowerBI-rapportmall](../../dashboards/integrations/power-bi.md). |
 
 Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
 
@@ -91,8 +91,8 @@ Mer allmän information om destinationer finns i [destinationer, översikt](../.
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Anonymt block | Med den anonyma SQL-blockkonstruktionen kan du dela upp stora datapresentationsjobb i Query Service till mindre uppgifter och sedan återanvända och köra dem i sekvens för inkrementell datainläsning. Mer information finns i [Översikt över frågetjänsten](../../query-service/home.md). |
-| Datauppsättningsorganisation | Tillhandahåller en sammanhängande, logisk datastruktur för att organisera dina dataresurser för användning med Query Service när mängden dataresurser i sandlådan växer. Mer information finns i [Översikt över frågetjänsten](../../query-service/home.md). |
+| Anonymt block | Med den anonyma SQL-blockkonstruktionen kan du dela upp stora datapresentationsjobb i Query Service till mindre uppgifter och sedan återanvända och köra dem i sekvens för inkrementell datainläsning. Mer information finns i [exempelfrågor för anonym blockdokumentation](../../query-service/best-practices/anonymous-block.md). |
+| Datauppsättningsorganisation | Tillhandahåller en sammanhängande, logisk datastruktur för att organisera dina dataresurser för användning med Query Service när mängden dataresurser i sandlådan växer. Mer information finns i [ordna dokumentation för dataresurser](../../query-service/best-practices/organize-data-assets.md). |
 
 Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).
 
