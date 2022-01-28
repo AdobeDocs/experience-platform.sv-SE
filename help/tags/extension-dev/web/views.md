@@ -2,9 +2,9 @@
 title: Vyer i webbtillägg
 description: Lär dig hur du definierar vyer för biblioteksmoduler i Adobe Experience Platform webbtillägg.
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 41efcb14df44524b58be2293d2b943bd890c1621
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2083'
 ht-degree: 0%
 
 ---
@@ -169,6 +169,10 @@ Innan inställningsobjektet skickas till biblioteksmodulen skannas inställnings
 För att ange var det kan vara praktiskt för användarna att använda dataelement och för att göra det enkelt för användarna att ange ett dataelement, rekommenderar vi att du lägger till en ikonknapp bredvid de fält som visas här:
 
 ![dataelementfält](../images/data-element-field.png)
+
+>[!NOTE]
+>
+>Om du vill hämta rätt ikon går du till [ikonsida i Adobe Spectrum](https://spectrum.adobe.com/page/icons/) och sök efter[!DNL Data]&quot;.
 
 När knappen bredvid textfältet är markerad av en användare, anropa `window.extensionBridge.openDataElementSelector` as [ovan](#open-data-element). Då visas en lista med användarens dataelement som användaren kan välja bland i stället för att tvinga användaren att komma ihåg tecknen för namn och procent. När användaren har valt ett dataelement får du namnet på det markerade dataelementet omgivet av procenttecken (om du inte har angett `tokenize` alternativ till `false`). Vi rekommenderar att du sedan fyller i textfältet med resultatet.
 
