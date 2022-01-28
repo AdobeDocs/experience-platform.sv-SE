@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 7356802ee5bb0c5c05b224d9aa5f0e32cf1de843
+source-git-commit: 60df79ce1d12bdce133bff54ffda1ed13307bfa4
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 >
 > * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Knappen Aktivera segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate segments]**om du vill skicka segment till det målet.
 > * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Knappen Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**knapp till [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Övervakningsknapp ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL Monitoring]**för att visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Visa i övervakningsknapp ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**om du vill visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
 
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
