@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmentmatchning;segmentmatchning
 solution: Experience Platform
-title: Vanliga frågor om segmentmatchning (beta)
+title: Vanliga frågor om segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: cfa9db16-0bc3-4d25-914d-0d923eccb5a3
-source-git-commit: 50795be308649052037be62153109eadab02c9a1
+source-git-commit: 823eb549e5514a3201ba68ed395c69e202cb747f
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
 
-# [!DNL Segment Match] Frågor och svar (beta)
+# [!DNL Segment Match] vanliga frågor
 
 Den här guiden ger svar på frågor om sekretess och juridik som ofta ställs om Adobe Experience Platform Segment Match.
 
