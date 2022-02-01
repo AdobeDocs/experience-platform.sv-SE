@@ -4,9 +4,9 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
+source-git-commit: 65ad76bb4a5318b03d79d68d3c7e030d7878cf30
 workflow-type: tm+mt
-source-wordcount: '1996'
+source-wordcount: '2015'
 ht-degree: 0%
 
 ---
@@ -53,10 +53,11 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 {
   "consents": {
     "collect": {
-      "val": "y",
+      "val": "VI",
     },
     "adID": {
-      "val": "VI"
+      "idType": "IDFA",
+      "val": "y"
     },
     "share": {
       "val": "y",
@@ -99,10 +100,11 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 ```json
 "consents": {
   "collect": {
-    "val": "y",
+    "val": "VI",
   },
   "adID": {
-    "val": "VI"
+    "idType": "IDFA",
+    "val": "y"
   },
   "share": {
     "val": "y",
@@ -144,16 +146,18 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 
 ### `adID`
 
-`adID` representerar kundens samtycke för om ett annonser-ID (IDFA eller GAID) kan användas för att länka kunden mellan appar på den här enheten.
+`adID` representerar kundens samtycke för huruvida ett annonser-ID kan användas för att länka kunden mellan appar på den här enheten.
 
 ```json
 "adID": {
+  "idType": "IDFA",
   "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
+| `idType` | Typ av annons-ID, antingen `IDFA` för Apple ID för annonsörer eller `GAID` för Google Advertiser ID, även känt som Android Advertiser ID (AAID). |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
 {style=&quot;table-layout:auto&quot;}
