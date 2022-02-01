@@ -5,18 +5,14 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Snowflake-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: 0928da0ad15ce23d3677fec7b9866d079f3db407
+source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '431'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Snowflake] källanslutning i användargränssnittet
-
->[!NOTE]
->
-> The [!DNL Snowflake] anslutningen är i betaversion. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Snowflake] källanslutning med Adobe Experience Platform användargränssnitt.
 

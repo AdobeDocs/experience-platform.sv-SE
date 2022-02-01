@@ -5,55 +5,52 @@ title: Skapa en Vector CRM-basanslutning med API:t för flödestjänsten
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Veeva CRM med API:t för Flow Service.
-source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
+exl-id: e1aea5a2-a247-43eb-8252-2e2ed96b82a1
+source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '497'
 ht-degree: 1%
 
 ---
 
-# (Beta) Skapa en [!DNL Veeva CRM]-basanslutning med hjälp av API:t [!DNL Flow Service]
-
->[!NOTE]
->
->Källan [!DNL Veeva CRM] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# Skapa en [!DNL Veeva CRM] basanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Veeva CRM] med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Veeva CRM] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Veeva CRM] med API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Veeva CRM] med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL Veeva CRM] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] att ansluta till [!DNL Veeva CRM]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `environmentUrl` | URL:en för din [!DNL Veeva CRM]-instans. |
-| `username` | Användarnamnsvärdet för ditt [!DNL Veeva CRM]-konto. |
-| `password` | Lösenordsvärdet för ditt [!DNL Veeva CRM]-konto. |
-| `securityToken` | Säkerhetstoken för din [!DNL Veeva CRM]-instans. |
+| `environmentUrl` | URL:en till [!DNL Veeva CRM] -instans. |
+| `username` | Användarnamnsvärdet för din [!DNL Veeva CRM] konto. |
+| `password` | Lösenordsvärdet för [!DNL Veeva CRM] konto. |
+| `securityToken` | Säkerhetstoken för din [!DNL Veeva CRM] -instans. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Veeva CRM] är: `fcad62f3-09b0-41d3-be11-449d5a621b69`. |
 
-Mer information om dessa värden finns i det här [[!DNL Veeva CRM] dokumentet](https://developer.veevacrm.com/api/#order-management-rest-api).
+Mer information om dessa värden finns i [[!DNL Veeva CRM] dokument](https://developer.veevacrm.com/api/#order-management-rest-api).
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Veeva CRM] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Veeva CRM] autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -94,18 +91,18 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `name` | Namnet på din [!DNL Veeva CRM]-basanslutning. Du kan använda det här namnet för att söka efter din [!DNL Veeva CRM]-basanslutning. |
-| `description` | En valfri beskrivning för din [!DNL Veeva CRM]-basanslutning. |
+| `name` | Namnet på [!DNL Veeva CRM] basanslutning. Du kan använda det här namnet för att söka efter [!DNL Veeva CRM] basanslutning. |
+| `description` | En valfri beskrivning av [!DNL Veeva CRM] basanslutning. |
 | `auth.specName` | Autentiseringstypen som används för anslutningen. |
-| `auth.params.environmentUrl` | URL:en för din [!DNL Veeva CRM]-instans. |
-| `auth.params.username` | Användarnamnsvärdet för ditt [!DNL Veeva CRM]-konto. |
-| `auth.params.password` | Lösenordsvärdet för ditt [!DNL Veeva CRM]-konto. |
-| `auth.params.securityToken` | Säkerhetstoken för din [!DNL Veeva CRM]-instans. |
+| `auth.params.environmentUrl` | URL:en till [!DNL Veeva CRM] -instans. |
+| `auth.params.username` | Användarnamnsvärdet för din [!DNL Veeva CRM] konto. |
+| `auth.params.password` | Lösenordsvärdet för [!DNL Veeva CRM] konto. |
+| `auth.params.securityToken` | Säkerhetstoken för din [!DNL Veeva CRM] -instans. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Veeva CRM]: `fcad62f3-09b0-41d3-be11-449d5a621b69`. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en källanslutning.
 
 ```json
 {
@@ -116,4 +113,4 @@ Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusi
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Veeva CRM]-basanslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta ID i nästa självstudiekurs när du lär dig hur du [utforskar CRM-system med API:t för Flow Service](../../explore/crm.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Veeva CRM] basanslutning med [!DNL Flow Service] API och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforska CRM-system med API:t för Flow Service](../../explore/crm.md).
