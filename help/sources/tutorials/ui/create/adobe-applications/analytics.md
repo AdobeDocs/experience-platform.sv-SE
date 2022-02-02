@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
+source-git-commit: 7bc706751a801a9a673590582cf57872c9c4ae95
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1472'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,16 @@ The **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Report
 >[!IMPORTANT]
 >
 >Funktionen för dataprep-stöd för [!DNL Analytics] källan är i betaversion.
+
+Innan du kan mappa [!DNL Analytics] data för XDM-målschemat måste du först välja om du använder ett standardschema eller ett anpassat schema.
+
+Ett standardschema skapar ett nytt schema åt dig och innehåller [!DNL Analytics] fältgrupp. Om du vill använda ett standardschema väljer du **[!UICONTROL Default schema]**.
+
+![default-schema](../../../../images/tutorials/create/analytics/default-schema.png)
+
+Med ett anpassat schema kan du välja valfritt tillgängligt schema för [!DNL Analytics] data, förutsatt att schemat har [!DNL Analytics] fältgrupp. Om du vill använda ett anpassat schema väljer du **[!UICONTROL Custom schema]**.
+
+![anpassat schema](../../../../images/tutorials/create/analytics/custom-schema.png)
 
 The [!UICONTROL Mapping] På sidan finns ett gränssnitt för att mappa källfält till rätt målschemafält. Härifrån kan du mappa anpassade variabler till nya schemafältgrupper och använda beräkningar som stöds av Data Prep. Välj ett målschema för att starta mappningsprocessen.
 
