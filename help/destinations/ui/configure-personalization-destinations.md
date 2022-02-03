@@ -6,16 +6,14 @@ seo-title: Configure personalization destinations for same-page and next-page pe
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
 seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: dd9493077706b102467493e90b363ac202550eee
+source-git-commit: 851a9598523d26ba52a367f6c03e3c9612f6678b
 workflow-type: tm+mt
-source-wordcount: '317'
-ht-degree: 1%
+source-wordcount: '357'
+ht-degree: 0%
 
 ---
 
 # Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida
-
-## Översikt {#overview}
 
 Adobe Experience Platform använder [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för att kunderna ska kunna skapa och inrikta sig på målgruppssegment i stor skala i realtid.
 
@@ -23,11 +21,15 @@ Den här funktionen hjälper er att konfigurera användningen av personalisering
 
 I den här artikeln finns stegvisa instruktioner för hur du konfigurerar Experience Platform och dina anpassningsmål för dessa användningsfall.
 
-## Steg 1: Konfigurera ett Experience Platform Web SDK-datastream {#configure-datastream}
+## Steg 1: Konfigurera ett datastream i användargränssnittet för datainsamling {#configure-datastream}
 
-Det första steget när du konfigurerar ditt användningsexempel för personalisering är att konfigurera en [!DNL Web SDK datastream].
+Det första steget för att konfigurera ditt personaliseringsmål är att konfigurera ett datastream för Experience Platform Web SDK. Detta görs i användargränssnittet för datainsamling.
 
-Följ instruktionerna som beskrivs i [datastream-konfiguration](../../edge/fundamentals/datastreams.md) dokumentation.
+När datastream konfigureras, under **[!UICONTROL Adobe Experience Platform]** se till att båda **[!UICONTROL Edge Segmentation]** och **[!UICONTROL Personalization Destinations]** är markerade.
+
+![Datastream-konfiguration](../assets/ui/configure-personalization-destinations/datastream-config.png)
+
+Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../edge/fundamentals/datastreams.md).
 
 ## Steg 2: Konfigurera ditt personaliseringsmål {#configure-destination}
 
