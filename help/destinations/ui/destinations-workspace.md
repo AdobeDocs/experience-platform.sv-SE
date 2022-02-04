@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 60df79ce1d12bdce133bff54ffda1ed13307bfa4
+source-git-commit: 533f76891f47ba11e2a9de87aa8c249eb9249895
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '981'
 ht-degree: 0%
 
 ---
@@ -64,11 +64,30 @@ Mer information om målkategorier och information om varje mål finns i [Målkat
 
 ## [!UICONTROL Accounts] {#accounts}
 
-The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som du har upprättat med olika mål, och där kan du uppdatera befintlig anslutningsinformation. Se [Uppdatera konton](update-accounts.md) för detaljerade anvisningar.
+The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som du har upprättat med olika destinationer, och där kan du uppdatera eller ta bort befintlig kontoinformation. Se tabellen nedan för all information som du kan få för varje destinationskonto.
+
+>[!TIP]
+>
+> * Markera de tre punkterna i dialogrutan [!UICONTROL Platform] kolumn och använd ![Knappen Aktivera segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate segments]**om du vill skicka segment till det målet.
+> * Markera de tre punkterna i dialogrutan [!UICONTROL Platform] kolumn och använd ![Knappen Redigera information ](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL Edit details]**knapp till [uppdatera](update-accounts.md) Information om ett befintligt destinationskonto.
+> * Markera de tre punkterna i dialogrutan [!UICONTROL Platform] kolumn och använd ![Knappen Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**knapp till [delete](delete-destination-account.md) ett befintligt destinationskonto.
+
+
+![Fliken Konton](../assets/ui/workspace/destination-account-options.png)
+
+| Element | Beskrivning |
+|---|---|
+| [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
+| [!UICONTROL Connection Type] | Representerar kontoanslutningstypen för din lagringsbucket eller destination. Beroende på målet är autentiseringsalternativen: <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller Azure Blob.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För molnlagringsmål för Amazon S3: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li><li>OAuth 1- eller OAuth 2-autentisering</li><li>Autentisering av innehavartoken</li></ul> |
+| [!UICONTROL Username] | Användarnamnet som du valde i dialogrutan [guide för anslutningsmål](../catalog/email-marketing/overview.md#connect-destination). |
+| [!UICONTROL Destinations] | Representerar antalet unika slutförda måldataflöden som är kopplade till grundläggande information som skapats för ett mål. |
+| [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## [!UICONTROL Browse] {#browse}
 
-The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL Enabled/Disabled]** för att växla aktiverat anger målet som aktivt respektive inaktivt. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Segments]** > **[!UICONTROL Browse]** och välja ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål på fliken Bläddra:
+The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL Enabled/Disabled]** för att växla aktiverat anger målet som aktivt respektive inaktivt. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Segments]** > **[!UICONTROL Browse]** och välja ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål i [!UICONTROL Browse] tab:
 
 >[!TIP]
 >
