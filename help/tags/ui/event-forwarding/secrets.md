@@ -2,9 +2,9 @@
 title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för datainsamling för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
+source-git-commit: 737354ca3b286f6c39cb71bc09aa4d6141c4d9a4
 workflow-type: tm+mt
-source-wordcount: '1376'
+source-wordcount: '1374'
 ht-degree: 0%
 
 ---
@@ -130,7 +130,7 @@ Du kan försöka göra om eller uppdatera ett hemligt utbyte från redigeringssk
 | Hemlig typ | Försök igen |
 | --- | --- |
 | [!UICONTROL Token] | Välj **[!UICONTROL Exchange Secret]** för att försöka göra om det hemliga utbytet. Den här kontrollen är bara tillgänglig när det finns en miljö kopplad till hemligheten. |
-| [!UICONTROL HTTP] | Om ingen miljö är kopplad till hemligheten väljer du **[!UICONTROL Exchange Secret]** för att växla autentiseringsuppgifter till base64. Om en miljö är bifogad markerar du **[!UICONTROL Exchange and Deploy Secret]** för att byta till base64 och distribuera hemligheten till Cloudfare. |
+| [!UICONTROL HTTP] | Om ingen miljö är kopplad till hemligheten väljer du **[!UICONTROL Exchange Secret]** för att växla autentiseringsuppgifter till base64. Om en miljö är bifogad markerar du **[!UICONTROL Exchange and Deploy Secret]** att utbyta till base64 och driftsätta hemligheten. |
 | [!UICONTROL OAuth2] | Välj **[!UICONTROL Generate Token]** för att växla autentiseringsuppgifter och returnera en åtkomsttoken från autentiseringsprovidern. |
 
 ## Ta bort en hemlighet
