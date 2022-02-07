@@ -1,13 +1,12 @@
 ---
 keywords: Experience Platform;publicera en modell;Data Science Workspace;populära topics;sensei machine learning api
 solution: Experience Platform
-title: Publicera en modell som en tjänst med hjälp av API:t Sensei Machine Learning
+title: Publicera en modell som en tjänst Använda inlärnings-API:t för Sensei Machine
 topic-legacy: tutorial
 type: Tutorial
-description: I den här självstudien beskrivs processen att publicera en modell som en tjänst med hjälp av API:t Sensei Machine Learning.
+description: I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med Sensei Machine Learning API.
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-translation-type: tm+mt
-source-git-commit: a6d047d52dad085ba662bd684c896bdffe3eef2e
+source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
 workflow-type: tm+mt
 source-wordcount: '1516'
 ht-degree: 0%
@@ -16,15 +15,15 @@ ht-degree: 0%
 
 # Publicera en modell som en tjänst med [!DNL Sensei Machine Learning API]
 
-I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
+I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med hjälp av [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för Adobe Experience Platform Data Science Workspace. Innan du börjar med den här självstudiekursen bör du gå igenom översikten [Data Science Workspace](../home.md) för att få en introduktion till tjänsten på hög nivå.
+Den här självstudiekursen kräver en fungerande förståelse för Adobe Experience Platform Data Science Workspace. Innan du börjar med den här självstudiekursen ska du gå igenom [Översikt över arbetsytan Datavetenskap](../home.md) för en introduktion till tjänsten på hög nivå.
 
-Om du vill följa med i den här självstudiekursen måste du ha en befintlig ML-motor, ML-instans och Experiment. Anvisningar om hur du skapar dessa i API:t finns i självstudiekursen om att [importera ett paketerat recept](./import-packaged-recipe-api.md).
+Om du vill följa med i den här självstudiekursen måste du ha en befintlig ML-motor, ML-instans och Experiment. Anvisningar om hur du skapar dessa i API:t finns i självstudiekursen om [importera ett paketerat recept](./import-packaged-recipe-api.md).
 
-Innan du startar den här självstudiekursen bör du gå igenom [kom igång](../api/getting-started.md)-avsnittet i utvecklarhandboken för att få viktig information som du behöver känna till för att kunna anropa [!DNL Sensei Machine Learning] API:t, inklusive de rubriker som krävs i den här självstudiekursen:
+Innan du startar den här självstudiekursen ska du gå igenom [komma igång](../api/getting-started.md) i utvecklarhandboken för att få viktig information som du behöver känna till för att kunna ringa till [!DNL Sensei Machine Learning] API, inklusive de rubriker som behövs i den här självstudiekursen:
 
 - `{ACCESS_TOKEN}`
 - `{IMS_ORG}`
@@ -40,7 +39,7 @@ I följande tabell beskrivs några vanliga termer som används i den här själv
 
 | Term | Definition |
 | --- | --- |
-| **Machine Learning-instans (ML-instans)** | En instans av en [!DNL Sensei]-motor för en viss klientorganisation som innehåller specifika data, parametrar och [!DNL Sensei]-kod. |
+| **Machine Learning-instans (ML-instans)** | En instans av en [!DNL Sensei] Motor för en viss klientorganisation som innehåller specifika data, parametrar och [!DNL Sensei] kod. |
 | **Experimentera** | En paraplyenhet för utbildning Experiment Runs, Scoring Experiment Runs eller båda. |
 | **Schemalagd experiment** | En term som beskriver automatiseringen av kurser eller poängsättning i Experiment Runs som styrs av ett användardefinierat schema. |
 | **Experimentera** | Ett särskilt fall av utbildning eller poängsättningsexperiment. Multipla Experiment körs från en viss Experiment och kan skilja sig åt i datauppsättningsvärden som används för utbildning eller poängsättning. |
@@ -88,7 +87,7 @@ curl -X POST
 | `trainingExperimentId` | Experimentera-ID som motsvarar ML-instansidentifieringen. |
 | `trainingExperimentRunId` | En särskild utbildning Experiment Run som ska användas för att publicera ML-tjänsten. |
 | `scoringDataSetId` | Identifiering som refererar till den specifika datauppsättning som ska användas för schemalagda poängsättningsförsök. |
-| `scoringTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för poängsättning av Experiment Runs. Värdet `10080` betyder till exempel att data från de senaste 10080 minuterna eller 168 timmar kommer att användas för varje schemalagd bedömningsutvärderingsutvärderingsutvärderingskörning. Observera att värdet `0` inte filtrerar data, alla data i datauppsättningen används för poängsättningen. |
+| `scoringTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för poängsättning av Experiment Runs. Ett värde på `10080` betyder att data från de senaste 10080 minuterna eller 168 timmarna kommer att användas för varje schemalagd bedömningsförsökskörning. Observera att värdet för `0` filtrerar inte data, alla data i datauppsättningen används för poängsättning. |
 | `scoringSchedule` | Innehåller information om schemalagda poängsättningsförsök. |
 | `scoringSchedule.startTime` | Datum och tid som anger när poängsättningen ska börja. |
 | `scoringSchedule.endTime` | Datum och tid som anger när poängsättningen ska börja. |
@@ -96,7 +95,7 @@ curl -X POST
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten, inklusive dess unika `id` och `scoringExperimentId` för motsvarande poängsättningsexperiment.
+Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten, inklusive dess unika `id` och `scoringExperimentId` för deras motsvarande poängsättningsexperiment.
 
 
 ```JSON
@@ -129,9 +128,9 @@ Beroende på ditt specifika användningsfall och dina specifika krav är det fle
 
 Observera att en ML-tjänst kan skapas med en ML-instans utan schemaläggning av några utbildnings- eller poängsättningsexperiment. Sådana ML-tjänster skapar vanliga experimentenheter och en enda Experimentrunda för utbildning och poängsättning.
 
-### ML-tjänst med schemalagd utvärdering för poängsättning {#ml-service-with-scheduled-experiment-for-scoring}
+### ML-tjänst med schemalagd utvärdering för bedömning {#ml-service-with-scheduled-experiment-for-scoring}
 
-Du kan skapa en ML-tjänst genom att publicera en ML-instans med schemalagda Experiment Runs för bedömning, som skapar en vanlig Experimentenhet för utbildning. En utbildnings-Experimentkörning genereras och kommer att användas för alla schemalagda poängsättningsutvärderingsutvärderingsprocesser. Kontrollera att du har `mlInstanceId`, `trainingDataSetId` och `scoringDataSetId` som krävs för att skapa ML-tjänsten, och att de finns och är giltiga värden.
+Du kan skapa en ML-tjänst genom att publicera en ML-instans med schemalagda Experiment Runs för bedömning, som skapar en vanlig Experimentenhet för utbildning. En utbildnings-Experimentkörning genereras och kommer att användas för alla schemalagda poängsättningsutvärderingsutvärderingsprocesser. Se till att du har `mlInstanceId`, `trainingDataSetId`och `scoringDataSetId` krävs för att skapa ML-tjänsten och att de finns och är giltiga värden.
 
 **API-format**
 
@@ -168,9 +167,9 @@ curl -X POST
 | --- | --- |
 | `mlInstanceId` | Befintlig ML-instans-ID, som representerar ML-instansen som används för att skapa ML-tjänsten. |
 | `trainingDataSetId` | Identifiering som avser den specifika datauppsättning som ska användas för utbildningsexperiment. |
-| `trainingTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för utbildning av Experiment. Värdet `"10080"` betyder till exempel att data från de senaste 10080 minuterna eller 168 timmar kommer att användas för att utbilda Experiment Run. Observera att värdet `"0"` inte filtrerar data. Alla data i datauppsättningen används för utbildning. |
+| `trainingTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för utbildning av Experiment. Ett värde på `"10080"` betyder att data från de senaste 10080 minuterna eller 168 timmarna kommer att användas för utbildningens Experimentkörning. Observera att värdet för `"0"` inte filtrerar data, alla data i datauppsättningen används för utbildning. |
 | `scoringDataSetId` | Identifiering som refererar till den specifika datauppsättning som ska användas för schemalagda poängsättningsförsök. |
-| `scoringTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för poängsättning av Experiment Runs. Värdet `"10080"` betyder till exempel att data från de senaste 10080 minuterna eller 168 timmar kommer att användas för varje schemalagd bedömningsutvärderingsutvärderingsutvärderingskörning. Observera att värdet `"0"` inte filtrerar data, alla data i datauppsättningen används för poängsättningen. |
+| `scoringTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för poängsättning av Experiment Runs. Ett värde på `"10080"` betyder att data från de senaste 10080 minuterna eller 168 timmarna kommer att användas för varje schemalagd bedömningsförsökskörning. Observera att värdet för `"0"` filtrerar inte data, alla data i datauppsättningen används för poängsättning. |
 | `scoringSchedule` | Innehåller information om schemalagda poängsättningsförsök. |
 | `scoringSchedule.startTime` | Datum och tid som anger när poängsättningen ska börja. |
 | `scoringSchedule.endTime` | Datum och tid som anger när poängsättningen ska börja. |
@@ -178,7 +177,7 @@ curl -X POST
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten. Detta inkluderar tjänstens unika `id`, samt `trainingExperimentId` och `scoringExperimentId` för motsvarande utbildnings- och poängsättningsexperiment.
+Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten. Detta inkluderar tjänstens unika `id`, samt `trainingExperimentId` och `scoringExperimentId` för motsvarande utbildnings- och poängsättningsexperter.
 
 ```JSON
 {
@@ -215,7 +214,7 @@ POST /mlServices
 **Begäran**
 
 ```SHELL
-curl -X POST 'https://platform-int.adobe.io/data/sensei/mlServices' 
+curl -X POST 'https://platform.adobe.io/data/sensei/mlServices' 
   -H 'Authorization: Bearer {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
   -H 'x-gw-ims-org-id: {IMS_ORG}' 
@@ -245,9 +244,9 @@ curl -X POST 'https://platform-int.adobe.io/data/sensei/mlServices'
 | --- | --- |
 | `mlInstanceId` | Befintlig ML-instans-ID, som representerar ML-instansen som används för att skapa ML-tjänsten. |
 | `trainingDataSetId` | Identifiering som avser den specifika datauppsättning som ska användas för utbildningsexperiment. |
-| `trainingTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för utbildning av Experiment. Värdet `"10080"` betyder till exempel att data från de senaste 10080 minuterna eller 168 timmar kommer att användas för att utbilda Experiment Run. Observera att värdet `"0"` inte filtrerar data. Alla data i datauppsättningen används för utbildning. |
+| `trainingTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för utbildning av Experiment. Ett värde på `"10080"` betyder att data från de senaste 10080 minuterna eller 168 timmarna kommer att användas för utbildningens Experimentkörning. Observera att värdet för `"0"` inte filtrerar data, alla data i datauppsättningen används för utbildning. |
 | `scoringDataSetId` | Identifiering som refererar till den specifika datauppsättning som ska användas för schemalagda poängsättningsförsök. |
-| `scoringTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för poängsättning av Experiment Runs. Värdet `"10080"` betyder till exempel att data från de senaste 10080 minuterna eller 168 timmar kommer att användas för varje schemalagd bedömningsutvärderingsutvärderingsutvärderingskörning. Observera att värdet `"0"` inte filtrerar data, alla data i datauppsättningen används för poängsättningen. |
+| `scoringTimeframe` | Ett heltalsvärde som representerar minuter för filtrering av data som ska användas för poängsättning av Experiment Runs. Ett värde på `"10080"` betyder att data från de senaste 10080 minuterna eller 168 timmarna kommer att användas för varje schemalagd bedömningsförsökskörning. Observera att värdet för `"0"` filtrerar inte data, alla data i datauppsättningen används för poängsättning. |
 | `trainingSchedule` | Innehåller information om schemalagda kurser i Experimentprogram. |
 | `scoringSchedule` | Innehåller information om schemalagda poängsättningsförsök. |
 | `scoringSchedule.startTime` | Datum och tid som anger när poängsättningen ska börja. |
@@ -256,7 +255,7 @@ curl -X POST 'https://platform-int.adobe.io/data/sensei/mlServices'
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten. Detta inkluderar tjänstens unika `id`, samt `trainingExperimentId` och `scoringExperimentId` för motsvarande utbildnings- och poängsättningsexperiment. I exempelsvaret nedan tyder närvaron av `trainingSchedule` och `scoringSchedule` på att de experimentella enheterna för utbildning och poängsättning är schemalagda experiment.
+Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten. Detta inkluderar tjänstens unika `id`, samt `trainingExperimentId` och `scoringExperimentId` av motsvarande utbildnings- och poängsättningsexperter. I exempelsvaret nedan finns det `trainingSchedule` och `scoringSchedule` tyder på att de experimentella enheterna för utbildning och poängsättning är inplanerade experiment.
 
 ```JSON
 {
@@ -287,7 +286,7 @@ Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten. Dett
 
 ## Söka efter en ML-tjänst {#retrieving-ml-services}
 
-Du kan söka efter en befintlig ML-tjänst genom att göra en `GET`-begäran till `/mlServices` och tillhandahålla den unika `id`-tjänsten i sökvägen.
+Du kan söka efter en befintlig ML-tjänst genom att skapa en `GET` begäran till `/mlServices` och erbjuder unika `id` av ML-tjänsten i sökvägen.
 
 **API-format**
 
@@ -297,7 +296,7 @@ GET /mlServices/{SERVICE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SERVICE_ID}` | Unik `id` för den ML-tjänst du söker upp. |
+| `{SERVICE_ID}` | Unika `id` av ML-tjänsten du söker. |
 
 **Begäran**
 
@@ -342,12 +341,12 @@ Ett godkänt svar returnerar information om ML-tjänsten.
 
 >[!NOTE]
 >
->Hämtning av olika ML-tjänster kan returnera ett svar med fler eller färre nyckelvärdepar. Ovanstående svar är en representation av en [ML-tjänst med både schemalagda kurser och poängsättningsförsök](#ml-service-with-scheduled-experiments-for-training-and-scoring).
+>Hämtning av olika ML-tjänster kan returnera ett svar med fler eller färre nyckelvärdepar. Svaret ovan är en representation av en [ML-tjänst med både schemalagda kurser och poängsättningsförsök](#ml-service-with-scheduled-experiments-for-training-and-scoring).
 
 
 ## Schemalägg utbildning eller poängsättning
 
-Om du vill schemalägga poängsättning och utbildning för en ML-tjänst som redan har publicerats kan du göra det genom att uppdatera den befintliga ML-tjänsten med en `PUT`-begäran den `/mlServices`.
+Om du vill schemalägga poängsättning och utbildning för en ML-tjänst som redan har publicerats kan du göra det genom att uppdatera den befintliga ML-tjänsten med en `PUT` begäran på `/mlServices`.
 
 **API-format**
 
@@ -357,11 +356,11 @@ PUT /mlServices/{SERVICE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SERVICE_ID}` | Unik `id` för ML-tjänsten som du uppdaterar. |
+| `{SERVICE_ID}` | Unika `id` av ML-tjänsten som du uppdaterar. |
 
 **Begäran**
 
-Följande begäran schemalägger utbildning och poängsättning för en befintlig ML-tjänst genom att lägga till knapparna `trainingSchedule` och `scoringSchedule` med respektive `startTime`, `endTime` och `cron`.
+Följande begäran avser utbildning och poängsättning för en befintlig ML-tjänst genom att lägga till `trainingSchedule` och `scoringSchedule` tangenter med respektive `startTime`, `endTime`och `cron` nycklar.
 
 ```SHELL
 curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}' 
@@ -394,7 +393,7 @@ curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}'
 
 >[!WARNING]
 >
->Försök inte ändra `startTime` för befintliga schemalagda kurser och poängsättningsjobb. Om `startTime` måste ändras bör du överväga att publicera samma modell och schemalägga om utbildnings- och poängsättningsjobben.
+>Försök inte ändra `startTime` befintliga schemalagda utbildnings- och poängsättningsjobb. Om `startTime` måste ändras, överväg att publicera samma modell och omplanera utbildning- och poängsättningsjobben.
 
 **Svar**
 

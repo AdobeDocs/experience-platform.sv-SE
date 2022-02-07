@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med API:t för Flow Service.
 exl-id: 5b7d1aa4-5e6d-48f4-82bd-5348dc0e890d
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
 workflow-type: tm+mt
 source-wordcount: '629'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Övervaka dataflöden med API:t för Flow Service
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
@@ -23,28 +23,28 @@ I den här självstudiekursen beskrivs stegen för övervakning av körningsdata
 
 ## Komma igång
 
-I den här självstudiekursen måste du ha ID-värdet för ett giltigt dataflöde. Om du inte har något giltigt dataflödes-ID väljer du en valfri koppling i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
+I den här självstudiekursen måste du ha ID-värdet för ett giltigt dataflöde. Om du inte har ett giltigt dataflödes-ID väljer du den önskade anslutningen på menyn [källöversikt](../../home.md) och följ instruktionerna innan du provar den här självstudiekursen.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna övervaka flödeskörningar med API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna övervaka flödeskörningar med [!DNL Flow Service] API.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive sådana som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -54,7 +54,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Körningar av bildskärmsflöde
 
-När du har gjort ett dataflöde utför du en GET-begäran till API:t [!DNL Flow Service].
+När du har gjort ett dataflöde skickar du en GET till [!DNL Flow Service] API.
 
 **API-format**
 
@@ -64,7 +64,7 @@ GET /runs?property=flowId=={FLOW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FLOW_ID}` | Det unika `id`-värdet för det dataflöde som du vill övervaka. |
+| `{FLOW_ID}` | Unika `id` värdet för det dataflöde som du vill övervaka. |
 
 **Begäran**
 
@@ -81,7 +81,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om flödeskörningen, inklusive information om dess skapandedatum, käll- och målanslutningar samt flödeskörningens unika identifierare (`id`).
+Ett lyckat svar returnerar information om flödets körning, inklusive information om dess skapandedatum, käll- och målanslutningar samt flödets unika identifierare (`id`).
 
 ```json
 {
@@ -193,7 +193,7 @@ Ett lyckat svar returnerar information om flödeskörningen, inklusive informati
                         "outputFileCount": 1,
                         "extensions": {
                             "manifest": {
-                                "fileInfo": "https://platform-int.adobe.io/data/foundation/export/batches/01EF01X41KJD82Y9ZX6ET54PCZ/meta?path=input_files"
+                                "fileInfo": "https://platform.adobe.io/data/foundation/export/batches/01EF01X41KJD82Y9ZX6ET54PCZ/meta?path=input_files"
                             }
                         }
                     },
@@ -207,8 +207,8 @@ Ett lyckat svar returnerar information om flödeskörningen, inklusive informati
                         ],
                         "extensions": {
                             "manifest": {
-                                "failedRecords": "https://platform-int.adobe.io/data/foundation/export/batches/01EF01X41KJD82Y9ZX6ET54PCZ/meta?path=row_errors",
-                                "sampleErrors": "https://platform-int.adobe.io/data/foundation/export/batches/01EF01X41KJD82Y9ZX6ET54PCZ/meta?path=row_error_samples.json"
+                                "failedRecords": "https://platform.adobe.io/data/foundation/export/batches/01EF01X41KJD82Y9ZX6ET54PCZ/meta?path=row_errors",
+                                "sampleErrors": "https://platform.adobe.io/data/foundation/export/batches/01EF01X41KJD82Y9ZX6ET54PCZ/meta?path=row_error_samples.json"
                             },
                             "errors": [
                                 {
@@ -256,4 +256,4 @@ Ett lyckat svar returnerar information om flödeskörningen, inklusive informati
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hämtat mått och felinformation för ditt dataflöde med hjälp av API:t [!DNL Flow Service]. Du kan nu fortsätta att övervaka ditt dataflöde, beroende på ditt intag, för att spåra dess status och intag. Information om hur du utför samma uppgifter med användargränssnittet finns i självstudiekursen om [övervakning av dataflöden med användargränssnittet](../ui/monitor.md).
+Genom att följa den här självstudiekursen har du hämtat statistik och felinformation om ditt dataflöde med hjälp av [!DNL Flow Service] API. Du kan nu fortsätta att övervaka ditt dataflöde, beroende på ditt intag, för att spåra dess status och intag. Information om hur du utför samma uppgifter med användargränssnittet finns i självstudiekursen om [övervaka dataflöden med användargränssnittet](../ui/monitor.md)
