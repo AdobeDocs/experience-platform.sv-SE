@@ -3,12 +3,12 @@ solution: Experience Platform, Data Collection
 audience: user
 user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
-user-guide-description: Interagera med Experience Cloud via Edge Network.
+user-guide-description: Interagera med Experience Cloud via Edge-nätverket.
 feature: Web SDK
-source-git-commit: ccda6d3e16fd6b9966c2f30491feed5fafec47f2
+source-git-commit: 2b6a64bed3033cc5e4f97ed838050dab4400a282
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 16%
+source-wordcount: '146'
+ht-degree: 15%
 
 ---
 
@@ -45,6 +45,7 @@ ht-degree: 16%
       * [Översikt](personalization/adobe-target/target-overview.md)
       * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
       * [Åtkomst till svarstoken](personalization/adobe-target/accessing-response-tokens.md)
+      * [Använda tredje parts-ID i mbox](personalization/adobe-target/using-mbox-3rdpartyid.md)
    * offer decisioning {#offer-decisioning}
       * [Översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
 * Godkännande {#consent}
