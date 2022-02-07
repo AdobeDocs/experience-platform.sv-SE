@@ -2,8 +2,7 @@
 title: Profilsynkronisering i realtid för mbox3rdPartyId
 description: Lär dig hur du använder mbox3rdPartyId med Adobe Experience Platform Web SDK.
 keywords: anpassning;mål;adobe target;renderDecision;sendEvent;mbox3rdPartyId;
-exl-id: null
-source-git-commit: b02a7a95be33b28ab79afc7418bb3a644c417fc9
+source-git-commit: 86acedc6813a14648848a25e08aa7e65f48d1a2a
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 2%
