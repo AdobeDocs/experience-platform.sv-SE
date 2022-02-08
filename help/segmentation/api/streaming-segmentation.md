@@ -5,9 +5,9 @@ title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 4b9c72b4acb9c419afc1725235a9d7865181736b
 workflow-type: tm+mt
-source-wordcount: '1831'
+source-wordcount: '1834'
 ht-degree: 0%
 
 ---
@@ -338,7 +338,7 @@ curl -X POST \
 | `type` | **(Obligatoriskt)** Jobbtypen i strängformat. De typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | **(Obligatoriskt)** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
 | `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Använda `["*"]` säkerställer att alla segment ingår. |
-| `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i [cron, uttrycksformat](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) dokumentation. |
+| `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i bilagan på [cron, uttrycksformat](./schedules.md#appendix) i dokumentationen om scheman inom segmentering. |
 | `state` | *(Valfritt)* Sträng som innehåller schemats tillstånd. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En IMS-organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
 
 **Svar**
