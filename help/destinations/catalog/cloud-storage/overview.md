@@ -3,7 +3,7 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina segment som datafiler till dina Amazon S3-, AWS Kinesis-, Azure Event Hubs- eller SFTP-molnlagringsplatser.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: 818c9a6f5cd39db1405827b657872b99254ad1e5
 workflow-type: tm+mt
 source-wordcount: '295'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe Experience Platform stöder följande molnlagringsmål:
 Om du vill skicka segment till molnlagringsmål för dina kampanjer måste plattformen först ansluta till målet. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
 
 
-## Skapa en mapp på lagringsplatsen med hjälp av makron {#use-macros}
+## Använd makron för att skapa en mapp på lagringsplatsen {#use-macros}
 
 >[!NOTE]
 >
