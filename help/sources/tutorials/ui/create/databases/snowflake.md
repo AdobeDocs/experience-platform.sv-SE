@@ -5,7 +5,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Snowflake-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
+source-git-commit: ac7910c971fbedf3afebd87633f814d597260cae
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 1%
@@ -36,7 +36,7 @@ För att få åtkomst till ditt Snowflake-konto på [!DNL Platform]måste du ang
 | Lösenord | Lösenordet för [!DNL Snowflake] användarkonto. |
 | Anslutningssträng | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 
-Mer information om dessa värden finns i [det här Snowflake-dokumentet](https://docs.snowflake.com/en/user-guide/oauth-custom.html).
+Mer information om dessa värden finns i [det här Snowflake-dokumentet](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
 
 ## Anslut ditt Snowflake-konto
 
