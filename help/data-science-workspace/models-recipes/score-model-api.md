@@ -1,28 +1,27 @@
 ---
 keywords: Experience Platform;Visa en modell;Datavetenskapen;populära ämnen;ensei machine learning api
 solution: Experience Platform
-title: Posta en modell med hjälp av API:t för inlärning av Sensei-maskinvara
+title: Posta en modell med API:t för Sensei Machine Learning
 topic-legacy: tutorial
 type: Tutorial
-description: I den här självstudiekursen visas hur du använder API:erna för inlärning i Sensei-maskinvara för att skapa en Experiment och en Experimentrunda.
+description: I den här självstudiekursen får du lära dig hur du använder Sensei Machine Learning-API:erna för att skapa en Experiment och en Experimentrunda.
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6ae6bbb5af0f007e483145dca5d4d505c388cc2c
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '554'
 ht-degree: 0%
 
 ---
 
 # Posta en modell med [!DNL Sensei Machine Learning API]
 
-I den här självstudiekursen visas hur du använder API:erna för att skapa en Experiment och en ExperimentKör. En detaljerad lista över API-dokumentation finns i [det här dokumentet](https://www.adobe.io/apis/cloudplatform/dataservices/api-reference.html).
+I den här självstudiekursen visas hur du använder API:erna för att skapa en Experiment och en ExperimentKör. En lista över alla slutpunkter i Sensei Machine Learning API finns på [det här dokumentet](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
 
 ## Skapa en schemalagd expert för poängsättning
 
-På samma sätt som schemalagda experiment för utbildning, skapas en schemalagd utvärdering av poängsättningen genom att ett `template`-avsnitt tas med i body-parametern. Dessutom anges fältet `name` under `tasks` i brödtexten som `score`.
+På samma sätt som schemalagda utbildningsexperter, kan man även skapa en schemalagd utvärdering av poängsättningen genom att inkludera en `template` -avsnittet till body-parametern. Dessutom finns `name` fält under `tasks` i brödtexten är inställd som `score`.
 
-Följande är ett exempel på hur du skapar en Experiment som körs var 20:e minut från `startTime` och körs till `endTime`.
+Följande är ett exempel på hur du skapar en Experiment som körs var 20:e minut från `startTime` och kommer att köras tills `endTime`.
 
 **Begäran**
 
@@ -110,7 +109,7 @@ Följande är svaret efter att den schemalagda experten har skapats.
 
 ### Skapa en provkörning för poängsättning
 
-Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet för parametern `modelId` är den `id`-parameter som returnerades i GET Model-begäran ovan.
+Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet för `modelId` parametern är `id` parameter som returneras i GET Model-begäran ovan.
 
 **Begäran**
 
@@ -219,7 +218,7 @@ Eftersom det finns flera Experiment Runs för en viss Experiment har det returne
 
 ### Stoppa och ta bort en schemalagd experiment
 
-Om du vill avbryta körningen av en schemalagd experiment innan den `endTime` körs, kan du göra det genom att skicka en DELETE-begäran till `{EXPERIMENT_ID}`
+Om du vill avbryta körningen av en schemalagd expert innan den körs `endTime`kan du göra detta genom att fråga DELETE till `{EXPERIMENT_ID}`
 
 **Begäran**
 
