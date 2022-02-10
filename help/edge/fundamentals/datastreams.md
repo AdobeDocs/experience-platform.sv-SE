@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar dataströmmar. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: d3f1a6a5f3f10b8ccbe73ebc744dc60bbbf1bb07
+source-git-commit: 012ebbadc7149747df1414360eca6451836d6bbc
 workflow-type: tm+mt
-source-wordcount: '989'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ Med inställningarna som anges här kan du skicka data till Adobe Experience Pla
 
 | Fält | Beskrivning |
 | --- | --- |
-| [!UICONTROL Sandbox] | **(Obligatoriskt)** Välj den plattformssandlåda som du vill skicka data till. Sandlådor är virtuella partitioner i Adobe Experience Platform som gör att du kan isolera data och implementeringar från andra i din organisation. Mer information om hur de fungerar finns i [dokumentation för sandlådor](../../sandboxes/home.md). |
+| [!UICONTROL Sandbox] | **(Obligatoriskt)** Välj den plattformssandlåda som du vill skicka data till. Sandlådor är virtuella partitioner i Adobe Experience Platform som gör att du kan isolera data och implementeringar från andra i din organisation.<br><br>När en datastream har skapats kan dess sandlåda inte ändras. The [!UICONTROL Sandbox] markeringsfältet är därför inte tillgängligt när du redigerar ett befintligt datastream.<br><br>Mer information om sandlådornas roll i Experience Platform finns i [dokumentation för sandlådor](../../sandboxes/home.md). |
 | [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den plattformsdatauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [Klassen XDM ExperienceEvent](../../xdm/classes/experienceevent.md). |
 | [!UICONTROL Profile Dataset] | Välj den plattformsdatauppsättning som kundattributdata ska skickas till. Det här schemat måste använda [Klassen XDM Individuell profil](../../xdm/classes/individual-profile.md). |
 | [!UICONTROL Offer Decisioning] | Markera den här kryssrutan om du vill aktivera Offer decisioning för en implementering av en Platform Web SDK. Se guiden [använda Offer decisioning med Platform Web SDK](../personalization/offer-decisioning/offer-decisioning-overview.md) om du vill ha mer information om implementeringen. Mer information om Offer decisioning finns i [Adobe Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html). |
