@@ -3,9 +3,9 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 8845bb42fe1a47f1bcd6521f7886c1582d209993
+source-git-commit: fb79d0697244518cc713efeada7d017d64ce6214
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '475'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,10 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 Ett uthyrnings- och säljföretag vill skräddarsy sin hemsida med en banderoll som bygger på kundsegmentets kvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dem till Adobe Target som målinriktningskriterier för sitt Target-erbjudande.
 
 ## Anslut till målet {#connect}
+
+>[!IMPORTANT]
+>
+>Innan du skapar en [!DNL Adobe Target] rekommenderar vi att du läser vår guide om hur du [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_target_datastream"
