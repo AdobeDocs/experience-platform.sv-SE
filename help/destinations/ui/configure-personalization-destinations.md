@@ -6,9 +6,9 @@ seo-title: Configure personalization destinations for same-page and next-page pe
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
 seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: 851a9598523d26ba52a367f6c03e3c9612f6678b
+source-git-commit: 69db8dbc315f97a0133bcc761ebf850d587dd7d1
 workflow-type: tm+mt
-source-wordcount: '357'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ Adobe Experience Platform använder [kantsegmentering](../../segmentation/ui/edg
 Den här funktionen hjälper er att konfigurera användningen av personalisering på samma sida och nästa sida.
 
 I den här artikeln finns stegvisa instruktioner för hur du konfigurerar Experience Platform och dina anpassningsmål för dessa användningsfall.
+
+I videon nedan visas dessutom en översikt över hela konfigurationsprocessen.
+
+>[!VIDEO](https://video.tv.adobe.com/v/340091/)
 
 ## Steg 1: Konfigurera ett datastream i användargränssnittet för datainsamling {#configure-datastream}
 
