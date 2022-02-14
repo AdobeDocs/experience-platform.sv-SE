@@ -5,9 +5,9 @@ title: Klassen XDM ExperienceEvent
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
+source-git-commit: 07fdbf467f3dde16f9216db47099b92cbbfd18d2
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1752'
 ht-degree: 0%
 
 ---
@@ -118,6 +118,10 @@ I följande tabell visas godkända värden för `eventType`och deras definitione
 | `directMarketing.emailDelivered` | Ett e-postmeddelande har levererats till personens e-posttjänst |
 | `directMarketing.emailOpened` | En person öppnade ett marknadsföringsmejl. |
 | `directMarketing.emailUnsubscribed` | En person som avbrutit prenumerationen på ett marknadsföringsmejl. |
+| `inappmessageTracking.dismiss` | Ett meddelande i appen stängdes. |
+| `inappmessageTracking.display` | Ett meddelande i appen viserades. |
+| `inappmessageTracking.interact` | Ett meddelande i appen interagerades med. |
+| `leadOperation.callWebhook` | En webkrok anropades som svar på en lead. |
 | `leadOperation.convertLead` | Ett lead konverterades. |
 | `leadOperation.interestingMoment` | Ett intressant ögonblick spelades in för en person. |
 | `leadOperation.newLead` | Ett lead skapades. |
