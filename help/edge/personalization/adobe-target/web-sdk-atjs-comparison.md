@@ -1,10 +1,10 @@
 ---
-title: Jämföra at.js med Platform Web SDK
-description: Jämför at.js-funktionerna med Web SDK
+title: Jämföra at.js med Experience Platform Web SDK
+description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
-source-git-commit: 95c6d0d20ee04affb4b67c3d9f90d80e655e2752
+source-git-commit: 6efb40e90cb8c29a0141bb0db6e20cec23f2be9a
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2277'
 ht-degree: 2%
 
 ---
@@ -129,7 +129,7 @@ alloy("sendEvent", {
 });
 ```
 
-AEP WEB SDK skickar automatiskt ett meddelande med erbjudanden som har körts av WEB SDK. Det här är ett exempel på hur nyttolasten för en meddelandebegäran ser ut:
+Experience Platform Web SDK skickar automatiskt ut ett meddelande med erbjudanden som kördes av WEB SDK. Det här är ett exempel på hur nyttolasten för en meddelandebegäran ser ut:
 
 ```json
 {
@@ -638,7 +638,7 @@ adobe.target.triggerView("homeView")
 
 ### Använda Web SDK
 
-Om du vill aktivera eller signera ett enda program anger du inställningen `web.webPageDetails.viewName` egenskapen under `xdm` alternativ för `sendEvent` -kommando. AEP WEB SDK kontrollerar visningscachen om det finns erbjudanden för `viewName` anges i `sendEvent` kommer att köra dem och skicka en händelse för visningsmeddelanden.
+Om du vill aktivera eller signera ett enda program anger du inställningen `web.webPageDetails.viewName` egenskapen under `xdm` alternativ för `sendEvent` -kommando. Web SDK kontrollerar visningscachen om det finns erbjudanden för `viewName` anges i `sendEvent` kommer att köra dem och skicka en händelse för visningsmeddelanden.
 
 **Exempel**
 
