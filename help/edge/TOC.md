@@ -5,10 +5,10 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge-nätverket.
 feature: Web SDK
-source-git-commit: 2b6a64bed3033cc5e4f97ed838050dab4400a282
+source-git-commit: f237ee364cdf6048840dca797f7827b9b88dd73b
 workflow-type: tm+mt
-source-wordcount: '146'
-ht-degree: 15%
+source-wordcount: '154'
+ht-degree: 14%
 
 ---
 
@@ -46,6 +46,7 @@ ht-degree: 15%
       * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
       * [Åtkomst till svarstoken](personalization/adobe-target/accessing-response-tokens.md)
       * [Använda tredje parts-ID i mbox](personalization/adobe-target/using-mbox-3rdpartyid.md)
+      * [Jämföra biblioteket at.js med Web SDK](personalization/adobe-target/web-sdk-atjs-comparison.md)
    * offer decisioning {#offer-decisioning}
       * [Översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
 * Godkännande {#consent}
