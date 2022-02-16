@@ -5,7 +5,7 @@ title: Översikt över SFTP-källkoppling
 topic-legacy: overview
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 1abbe74c1005e1358b5388f580d309f0aec5f124
+source-git-commit: 2db458fa335d65642549773a35ddefe602102f7f
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 0%
@@ -58,7 +58,7 @@ En lista med valfria funktioner visas. If **OpenSSH-klient** är redan förinsta
 Om den inte är installerad väljer du **Installera** och sedan öppna **[!DNL Powershell]** och kör följande kommando för att generera din privata nyckel:
 
 ```shell
-PS C:\Users\lucy> ssh-keygen -t rsa
+PS C:\Users\lucy> ssh-keygen -t rsa -m pem
 Generating public/private rsa key pair.
 Enter file in which to save the key (C:\Users\lucy/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
@@ -94,7 +94,7 @@ Kommandot ovan sparar [!DNL Base64]-encoded private key in the file path you spe
 Om du använder en [!DNL Mac], öppna **Terminal** och kör följande kommando för att generera den privata nyckeln (i det här fallet sparas den privata nyckeln i `/Documents/id_rsa`):
 
 ```shell
-ssh-keygen -t rsa -f ~/Documents/id_rsa
+ssh-keygen -t rsa -m pem -f ~/Documents/id_rsa
 Generating public/private rsa key pair.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
