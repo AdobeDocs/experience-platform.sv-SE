@@ -4,7 +4,7 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 9d2e98c834eddcacf67de7caafef4717e38d80f8
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 2%
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföring.
 
-Plattformen exporterar dina segment som `.csv`-filer och levererar dem till den plats du föredrar. Schemalägg dataimporten i din e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i [!DNL Platform]. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
+Plattformen exporterar era segment som `.csv` och levererar dem till den plats du önskar. Schemalägg dataimporten i e-postmarknadsföringsplattformen från lagringsplatsen som är aktiverad i [!DNL Platform]. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
 
 ## E-postmarknadsföringsmål som stöds {#supported-destinations}
 
@@ -30,13 +30,13 @@ Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
 
 ## Anslut till ett nytt mål för e-postmarknadsföring {#connect-destination}
 
-För att kunna skicka segment till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [när du skapar mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+För att kunna skicka segment till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
 
 ## Bästa tillvägagångssätt när ni aktiverar målgrupper för e-postmarknadsföring {#best-practices}
 
 ### Identitetsurval {#identity}
 
-Adobe rekommenderar att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användaridentiteter är avaktiverade i. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
+Adobe rekommenderar att du väljer en unik identifierare från [union](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användaridentiteter är avaktiverade i. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
 
 | Unik identifierare | XDM-fält i Unified Schema |
 |----------------- | ---------------------------|
@@ -70,9 +70,9 @@ Läs de enskilda målartiklarna för e-postmarknadsföring och lär dig hur du i
 
 ## Aktivera segment för e-postmarknadsföringsmål {#activate}
 
-Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera målgruppsdata till exportmål för gruppprofiler](../../ui/activate-batch-profile-destinations.md).
+Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md).
 
 ## Ytterligare resurser
 
 * [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md)
-* [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](../../api/email-marketing.md)
+* [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](../../api/connect-activate-batch-destinations.md)
