@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 3f3a8d100a38d60dc8e15a8c3589e5566492885f
+source-git-commit: c36ef1d5f5e5f7875da2b7a878c86b449d46c3c5
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '1031'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform [!DNL Query Service].
 
-Mer information om SQL-syntaxen som används i [!DNL Query Service] finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
+Detaljerad information om SQL-syntaxen som används i [!DNL Query Service], kan du läsa [SQL-syntaxdokumentation](../sql/syntax.md).
 
 ## Frågekörningsmodeller
 
@@ -25,7 +25,7 @@ Adobe Experience Platform [!DNL Query Service] har två modeller för frågekör
 
 ### Interaktiv frågekörning
 
-Du kan köra frågor interaktivt genom att skicka dem via [!DNL Query Service]-gränssnittet eller [via en ansluten klient](../clients/overview.md). När du kör [!DNL Query Service] via en ansluten klient körs en aktiv session mellan klienten och [!DNL Query Service] tills den skickade frågan returneras eller timeout inträffar.
+Du kan köra frågor interaktivt genom att skicka dem via [!DNL Query Service] Gränssnitt eller [via en ansluten klient](../clients/overview.md). Vid körning [!DNL Query Service] via en ansluten klient, körs en aktiv session mellan klienten och [!DNL Query Service] tills den skickade frågan returneras eller timeout inträffar.
 
 Interaktiv frågekörning har följande begränsningar:
 
@@ -37,17 +37,17 @@ Interaktiv frågekörning har följande begränsningar:
 
 >[!NOTE]
 >
->Om du vill åsidosätta den maximala radbegränsningen inkluderar du `LIMIT 0` i frågan. Frågetidsgränsen på 10 minuter gäller fortfarande.
+>Om du vill åsidosätta den maximala radbegränsningen inkluderar du `LIMIT 0` i din fråga. Frågetidsgränsen på 10 minuter gäller fortfarande.
 
-Som standard returneras resultatet av interaktiva frågor till klienten och är **inte** beständigt. Om du vill behålla resultaten som en datamängd i [!DNL Experience Platform] måste frågan använda syntaxen `CREATE TABLE AS SELECT`.
+Som standard returneras resultatet av interaktiva frågor till klienten och är **not** beständig. För att behålla resultaten som en datauppsättning i [!DNL Experience Platform]måste frågan använda `CREATE TABLE AS SELECT` syntax.
 
 ### Icke-interaktiv frågekörning
 
-Frågor som skickas via API:t [!DNL Query Service] körs icke-interaktivt. Icke-interaktiv körning innebär att [!DNL Query Service] tar emot API-anropet och kör frågan i den ordning den tas emot. Icke-interaktiva frågor leder alltid till att en ny datamängd skapas i [!DNL Experience Platform] för att ta emot resultaten, eller att nya rader infogas i en befintlig datamängd.
+Frågor som skickats via [!DNL Query Service] API körs icke-interaktivt. Icke-interaktivt genomförande innebär att [!DNL Query Service] tar emot API-anropet och kör frågan i den ordning som den tas emot. Icke-interaktiva frågor leder alltid till att en ny datauppsättning skapas i [!DNL Experience Platform] för att ta emot resultaten eller för att infoga nya rader i en befintlig datauppsättning.
 
 ## Åtkomst till ett specifikt fält i ett objekt
 
-Om du vill komma åt ett fält i ett objekt i frågan kan du antingen använda punktnotation (`.`) eller hakparentesnotation (`[]`). Följande SQL-sats använder punktnotation för att gå igenom `endUserIds`-objektet ned till `mcid`-objektet.
+Om du vill få åtkomst till ett fält i ett objekt i frågan kan du antingen använda punktnotation (`.`) eller hakparenteser (`[]`). Följande SQL-sats använder punktnotation för att gå igenom `endUserIds` objektet ned till `mcid` -objekt.
 
 ```sql
 SELECT endUserIds._experience.mcid
@@ -61,7 +61,7 @@ LIMIT 1
 | -------- | ----------- |
 | `{ANALYTICS_TABLE_NAME}` | Namnet på analystabellen. |
 
-Följande SQL-sats använder hakparenteser för att gå igenom `endUserIds`-objektet ned till `mcid`-objektet.
+Följande SQL-sats använder hakparenteser för att gå igenom `endUserIds` objektet ned till `mcid` -objekt.
 
 ```sql
 SELECT endUserIds['_experience']['mcid']
@@ -88,7 +88,7 @@ Båda exempelfrågorna ovan returnerar ett förenklat objekt i stället för ett
 (1 row)
 ```
 
-Det returnerade `endUserIds._experience.mcid`-objektet innehåller motsvarande värden för följande parametrar:
+Den returnerade `endUserIds._experience.mcid` -objektet innehåller motsvarande värden för följande parametrar:
 
 - `id`
 - `namespace`
@@ -117,7 +117,7 @@ Enkla citattecken, dubbla citattecken och bakåtcitattecken kan användas på ol
 
 ### Enkla citattecken
 
-Det enkla citattecknet (`'`) används för att skapa textsträngar. Den kan till exempel användas i `SELECT`-satsen för att returnera ett statiskt textvärde i resultatet och i `WHERE`-satsen för att utvärdera innehållet i en kolumn.
+Ett enkelt citattecken (`'`) används för att skapa textsträngar. Den kan till exempel användas i `SELECT` -programsats för att returnera ett statiskt textvärde i resultatet och i `WHERE` -sats för att utvärdera innehållet i en kolumn.
 
 Följande fråga deklarerar ett statiskt textvärde (`'datasetA'`) för en kolumn:
 
@@ -131,7 +131,7 @@ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
-Följande fråga använder en sträng med ett citattecken (`'homepage'`) i WHERE-satsen för att returnera händelser för en viss sida.
+Följande fråga använder en sträng med bara citattecken (`'homepage'`) i WHERE-satsen för att returnera händelser för en viss sida.
 
 ```sql
 SELECT 
@@ -145,7 +145,7 @@ LIMIT 10
 
 ### Citattecken
 
-Dubbelcitattecknet (`"`) används för att deklarera en identifierare med blanksteg.
+Dubbelt citattecken (`"`) används för att deklarera en identifierare med blanksteg.
 
 I följande fråga används dubbla citattecken för att returnera värden från angivna kolumner när en kolumn innehåller ett blanksteg i sin identifierare:
 
@@ -162,11 +162,11 @@ FROM
 
 >[!NOTE]
 >
->Dubbla citattecken **kan inte** användas med åtkomst till punktnotationsfält.
+>Citattecken **inte** användas med åtkomst till punktnoteringsfält.
 
 ### Bakåtcitat
 
-Det bakre citattecknet `` ` `` används bara för att undvika reserverade kolumnnamn **när punktnotationssyntax används.** Eftersom `order` är ett reserverat ord i SQL måste du använda citattecken för att komma åt fältet `commerce.order`:
+Bakåtcitat `` ` `` används för att undvika reserverade kolumnnamn **endast** när punktnoteringssyntax används. Till exempel har `order` är ett reserverat ord i SQL, du måste använda citattecken för att komma åt fältet `commerce.order`:
 
 ```sql
 SELECT 
@@ -176,7 +176,7 @@ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
-Bakåtcitattecken används också för att komma åt ett fält som börjar med en siffra. Om du till exempel vill komma åt fältet `30_day_value` måste du använda notation för bakåtcitat.
+Bakåtcitattecken används också för att komma åt ett fält som börjar med en siffra. Till exempel för att komma åt fältet `30_day_value`måste du använda citattecken.
 
 ```SQL
 SELECT
@@ -186,7 +186,7 @@ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
-Bakåtcitattecken är **inte** som behövs om du använder hakparentesnotation.
+Bakåtcitattecken är **not** behövs om du använder hakparenteser.
 
 ```sql
  SELECT
@@ -198,11 +198,11 @@ Bakåtcitattecken är **inte** som behövs om du använder hakparentesnotation.
 
 ## Visa tabellinformation
 
-När du har anslutit till frågetjänsten kan du se alla tillgängliga tabeller på plattformen med hjälp av kommandona `\d` eller `SHOW TABLES`.
+När du har anslutit till frågetjänsten kan du se alla tillgängliga tabeller på plattformen med antingen `\d` eller `SHOW TABLES` kommandon.
 
 ### Standardtabellvy
 
-Kommandot `\d` visar PostgreSQL-standardvyn för listtabeller. Ett exempel på det här kommandots utdata visas nedan:
+The `\d` -kommandot visar PostgreSQL-standardvyn för listtabeller. Ett exempel på det här kommandots utdata visas nedan:
 
 ```sql
              List of relations
@@ -227,9 +227,9 @@ Kommandot `\d` visar PostgreSQL-standardvyn för listtabeller. Ett exempel på d
 
 ### Schemainformation
 
-Om du vill visa mer detaljerad information om scheman i tabellen kan du använda kommandot `\d {TABLE_NAME}`, där `{TABLE_NAME}` är namnet på tabellen vars schemainformation du vill visa.
+Om du vill visa mer detaljerad information om scheman i tabellen kan du använda `\d {TABLE_NAME}` kommando, där `{TABLE_NAME}` är namnet på tabellen vars schemainformation du vill visa.
 
-I följande exempel visas schemainformationen för tabellen `luma_midvalues`, som skulle visas med `\d luma_midvalues`:
+I följande exempel visas schemainformationen för `luma_midvalues` tabell, som skulle visas med `\d luma_midvalues`:
 
 ```sql
                          Table "public.luma_midvalues"
@@ -254,7 +254,7 @@ I följande exempel visas schemainformationen för tabellen `luma_midvalues`, so
 
 Du kan dessutom få mer information om en viss kolumn genom att lägga till namnet på kolumnen till tabellnamnet. Detta skrivs i formatet `\d {TABLE_NAME}_{COLUMN}`.
 
-I följande exempel visas ytterligare information för kolumnen `web` och anropas med följande kommando: `\d luma_midvalues_web`:
+I följande exempel visas ytterligare information för `web` och anropas med följande kommando: `\d luma_midvalues_web`:
 
 ```sql
                  Composite type "public.luma_midvalues_web"
@@ -268,7 +268,7 @@ I följande exempel visas ytterligare information för kolumnen `web` och anropa
 
 Du kan sammanfoga flera datauppsättningar för att inkludera data från andra datauppsättningar i din fråga.
 
-I följande exempel kopplas följande två datauppsättningar (`your_analytics_table` och `custom_operating_system_lookup`) till och skapar en `SELECT`-sats för de 50 främsta operativsystemen efter antal sidvisningar.
+Följande exempel skulle ansluta till följande två datauppsättningar (`your_analytics_table` och `custom_operating_system_lookup`) och skapar `SELECT` för de 50 främsta operativsystemen efter antal sidvisningar.
 
 **Fråga**
 
@@ -308,10 +308,14 @@ LIMIT 50;
 
 ## Deduplicering
 
-Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader från data. Mer information om borttagning av dubbletter finns i [guiden för borttagning av dubbletter av frågetjänster](./deduplication.md).
+Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader från data. Mer information om borttagning av dubbletter finns i [Handbok för borttagning av dubbletter i frågetjänsten](./deduplication.md).
+
+## Tidszonsberäkningar i frågetjänsten
+
+Frågetjänsten standardiserar beständiga data i Adobe Experience Platform med UTC-tidsstämpelformatet. Mer information om hur du översätter dina krav på tidszon till och från en UTC-tidsstämpel finns i [Frågor och svar om hur du ändrar tidszon till och från en UTC-tidsstämpel](../troubleshooting-guide.md#How-do-I-change-the-time-zone-to-and-from-a-UTC-Timestamp?).
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du fått en del viktiga synpunkter när du skriver frågor med [!DNL Query Service]. Mer information om hur du använder SQL-syntaxen för att skriva egna frågor finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
+Genom att läsa det här dokumentet har du fått en del viktiga synpunkter när du skriver frågor med [!DNL Query Service]. Mer information om hur du använder SQL-syntaxen för att skriva egna frågor finns i [SQL-syntaxdokumentation](../sql/syntax.md).
 
-Fler exempel på frågor som kan användas i frågetjänsten finns i [Adobe Analytics exempelfrågor](./adobe-analytics.md), [Adobe Target exempelfrågor](./adobe-target.md) eller [ExperienceEvent-exempelfrågor](./experience-event-queries.md).
+Fler exempel på frågor som kan användas i frågetjänsten finns i [Adobe Analytics exempelfrågor](./adobe-analytics.md), [Adobe Target exempelfrågor](./adobe-target.md), eller [Exempelfrågor för ExperienceEvent](./experience-event-queries.md).

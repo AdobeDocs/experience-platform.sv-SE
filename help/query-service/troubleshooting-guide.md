@@ -5,10 +5,10 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: ac313e2a23037507c95d6713a83ad5ca07e1cd85
+source-git-commit: 03cd013e35872bcc30c68508d9418cb888d9e260
 workflow-type: tm+mt
-source-wordcount: '769'
-ht-degree: 4%
+source-wordcount: '1106'
+ht-degree: 2%
 
 ---
 
@@ -54,6 +54,53 @@ FROM actual_dataset a
 WHERE timestamp >= TO_TIMESTAMP('2021-01-21 12:00:00')
 AND timestamp < TO_TIMESTAMP('2021-01-21 13:00:00')
 LIMIT 100;
+```
+
+### Hur ändrar jag tidszonen till och från en UTC-tidsstämpel?
+
+Adobe Experience Platform innehåller data i UTC-format (Coordinated Universal Time) för tidsstämpling. Ett exempel på UTC-formatet är `2021-12-22T19:52:05Z`
+
+Frågetjänsten stöder inbyggda SQL-funktioner för konvertering av en viss tidsstämpel till och från UTC-format. Båda `to_utc_timestamp()` och `from_utc_timestamp()` metoder har två parametrar: tidsstämpel och tidszon.
+
+| Parameter | Beskrivning |
+|---|---|
+| Tidsstämpel | Tidsstämpeln kan skrivas antingen i UTC-format eller enkelt `{year-month-day}` format. Om ingen tid anges är standardvärdet midnatt på morgonen den angivna dagen. |
+| Tidszon | Tidszonen skrivs i en `{continent/city})` format. Det måste vara en av de erkända tidszonskoderna som finns i [TZ-databas för offentlig domän](https://data.iana.org/time-zones/tz-link.html#tzdb). |
+
+#### Konvertera till UTC-tidsstämpeln
+
+The `to_utc_timestamp()` -metoden tolkar de givna parametrarna och konverterar dem **till tidsstämpeln i den lokala tidszonen** i UTC-format. Exempelvis är tidszonen i Seoul i Sydkorea UTC/GMT +9 timmar. Genom att ange en tidsstämpel som bara är ett datum, använder metoden standardvärdet midnatt på morgonen. Tidsstämpeln och tidszonen konverteras till UTC-format från tidpunkten i den regionen till en UTC-tidsstämpel för den lokala regionen.
+
+```SQL
+SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
+```
+
+Frågan returnerar en tidsstämpel i användarens lokala tid. I det här fallet är klockan 16.00 föregående dag som Seoul nio timmar framåt.
+
+```
+2021-08-30 15:00:00
+```
+
+Som ett annat exempel om den angivna tidsstämpeln var `2021-07-14 12:40:00.0` för `Asia/Seoul` tidszon, skulle den returnerade UTC-tidsstämpeln `2021-07-14 03:40:00.0`
+
+Konsolutdata i gränssnittet för frågetjänsten är ett mer läsbart format:
+
+```
+8/30/2021, 3:00 PM
+```
+
+### Konvertera från UTC-tidsstämpeln
+
+The `from_utc_timestamp()` method tolkar de givna parametrarna **från tidsstämpeln i den lokala tidszonen** och ger motsvarande tidsstämpel för det önskade området i UTC-format. I exemplet nedan är timmen 2:40 PM i användarens lokala tidszon. Seoul-tidszonen som skickas som en variabel ligger nio timmar före den lokala tidszonen.
+
+```SQL
+SELECT from_utc_timestamp('2021-08-31 14:40:00.0', 'Asia/Seoul');
+```
+
+Frågan returnerar en tidsstämpel i UTC-format för den tidszon som skickas som en parameter. Resultatet är nio timmar före den tidszon som körde frågan.
+
+```
+8/31/2021, 11:40 PM
 ```
 
 ### Hur ska jag filtrera mina tidsseriedata?
