@@ -6,7 +6,7 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 551b07eac95b560950fe2d70fd2a981ae3a29252
+source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
 workflow-type: tm+mt
 source-wordcount: '2124'
 ht-degree: 0%
@@ -71,7 +71,7 @@ Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill ski
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
->abstract="Välj Exportera hela filer om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för segmentet. Markera Exportera stegvisa filer om du bara vill exportera de profiler som är kvalificerade för segmentet sedan den senaste exporten. Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för segmentet och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för segmentet sedan den första inkrementella filexporten."
+>abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för segmentet. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för segmentet sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för segmentet och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för segmentet sedan den första inkrementella filexporten."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#export-incremental-files" text="Exportera inkrementella filer"
 
 Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
@@ -348,7 +348,6 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 >
 >* Fälten används i segmentdefinitionen.
 >* Fälten konfigureras som projicerade attribut för målmålet.
-
 >
 > Om fältet `person.name.firstName` har vissa dataanvändningsetiketter som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
 

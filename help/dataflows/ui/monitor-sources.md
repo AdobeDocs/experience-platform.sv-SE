@@ -6,9 +6,9 @@ title: Övervaka dataflöden för källor i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 38e56beacd8857648abbbf20f4a5c4941ff779ee
+source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
 workflow-type: tm+mt
-source-wordcount: '1739'
+source-wordcount: '1745'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
 >title="Intag av källa"
->abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
+>abstract="Vyn för källinläsning innehåller information om dataaktivitetsstatus och mått i Data Lake Service, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -151,7 +151,7 @@ Välj **[!UICONTROL Identities]** för att se intag i [!UICONTROL Identities] st
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_identity_processing"
 >title="Identitetsbearbetning"
->abstract="Identitetsbearbetning innehåller information om poster som importerats till identitetstjänsten, inklusive antalet identiteter som lagts till, diagram som skapats och diagram som uppdaterats. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
+>abstract="I vyn Identitetsbearbetning finns information om poster som har importerats till identitetstjänsten, inklusive antalet identiteter som har lagts till, diagram som har skapats och diagram som har uppdaterats. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -194,7 +194,7 @@ Från [!UICONTROL Identity processing] sida, markera **[!UICONTROL Profiles]** f
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profile_processing"
 >title="Profilbearbetning"
->abstract="Profilbearbetning innehåller information om poster som importerats till profiltjänsten, inklusive antalet profilfragment som skapats, uppdaterade profilfragment och det totala antalet profilfragment."
+>abstract="Vyn för profilbearbetning innehåller information om poster som har importerats till profiltjänsten, inklusive antalet profilfragment som har skapats, uppdaterade profilfragment och det totala antalet profilfragment."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]

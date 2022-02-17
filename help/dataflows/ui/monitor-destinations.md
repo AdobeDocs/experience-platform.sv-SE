@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: e75dec7d71c301ea16cc5bfb6bad948964180c4d
+source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
 workflow-type: tm+mt
-source-wordcount: '3041'
+source-wordcount: '3042'
 ht-degree: 0%
 
 ---
@@ -203,7 +203,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segment_jobs"
 >title="Segmentjobb"
->abstract="Kontrollpanelen för segmentjobb innehåller information om utvärderings- och exportjobb för alla segment."
+>abstract="Vyn Segmentjobb innehåller information om utvärderings- och exportjobb för alla segment."
 
 Så här öppnar du [!UICONTROL Segment Jobs] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Segment Jobs]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mätvärden och information om segmentutvärderingen och exportjobben.
 
@@ -226,7 +226,7 @@ Följande mått är tillgängliga för segmentjobb:
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
 >title="Aktivering"
->abstract="Målaktiveringen innehåller information om segmentets aktiveringsstatus och mått som hämtats från kundprofilen i realtid för att generera unika identiteter."
+>abstract="Målaktiveringsvyn innehåller information om segmentets aktiveringsstatus och mått från kundprofilen i realtid för att generera unika identiteter."
 
 Så här öppnar du [!UICONTROL Monitoring] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Destinations]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mått och information om målkörningsjobb.
 
