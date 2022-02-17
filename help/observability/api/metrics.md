@@ -5,7 +5,7 @@ title: API-slutpunkt för mått
 topic-legacy: developer guide
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 365fb476fa80f665ddd43bf85ec22533ee0c8ad8
 workflow-type: tm+mt
 source-wordcount: '1864'
 ht-degree: 1%
@@ -282,7 +282,7 @@ Följande tabell visar mätvärden för [!DNL Real-time Customer Profile].
 | timeseries.profiles.dataset.batchsuccess.count | Antal [!DNL Profile] batchar som har kapslats för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 | timeseries.profiles.dataset.batchfailed.count | Antal [!DNL Profile] grupper misslyckades för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 | platform.ups.ingest.streaming.request.m1_rate | Frekvens för inkommande begäran. | IMS-organisation (**Obligatoriskt**) |
-| platform.ups.ingest.streaming.access.put.success.m1_rate | Andelen lyckade intag. | IMS-organisation (**Obligatoriskt**) |
+| aep.core.unified-profile.psi.platform.ups.ingest.streaming.access.put.success.meter.m1_rate | Andelen lyckade intag. | IMS-organisation (**Obligatoriskt**) |
 | platform.ups.ingest.streaming.records.created.m15_rate | Frekvens för nya poster som har importerats för en datauppsättning. | Datauppsättnings-ID (**Obligatoriskt**) |
 | platform.ups.ingest.streaming.request.error.created.outOfOrder.m1_rate | Frekvens för inaktuella tidsstämplade poster för skapandebegäran för en datauppsättning. | Datauppsättnings-ID (**Obligatoriskt**) |
 | platform.ups.profile-commons.ingest.streaming.dataSet.record.created.timestamp | Tidsstämpel för senaste begäran om att skapa post för en datauppsättning. | Datauppsättnings-ID (**Obligatoriskt**) |
