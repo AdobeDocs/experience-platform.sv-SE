@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: 18a6a693f664211428d4c153fd9849cc3ac2ee47
 workflow-type: tm+mt
-source-wordcount: '3042'
+source-wordcount: '2961'
 ht-degree: 0%
 
 ---
@@ -46,24 +46,6 @@ Se följande tabell för mer information om status:
 | Fel | The `Error` status anger att aktiveringsprocessen för ett dataflöde har avbrutits. |
 
 ### Dataflödeskörningar för direktuppspelningsmål {#dataflow-runs-for-streaming-destinations}
-
->[!CONTEXTUALHELP]
->id="platform_destinations_dataflow_identitiesactivated"
->title="Aktiverade identiteter"
->abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_destinations_dataflow_identitiesexcluded"
->title="Undantagna identiteter"
->abstract="Antalet enskilda profilposter som har uteslutits från aktivering för den valda destinationen baserat på saknade attribut och godkännandefel."
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_destinations_dataflow_identitiesfailed"
->title="Identiteter misslyckades"
->abstract="Antalet enskilda profilidentiteter som misslyckades för det valda målet. Mer information finns i feldiagnostiken."
->additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="Läs mer i dokumentationen"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
@@ -129,12 +111,6 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 ![Dataflödesposter för direktuppspelningsmål](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
 ### Dataflödeskörningar för batchmål {#dataflow-runs-for-batch-destinations}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_profiles_received"
->title="Mottagna profiler"
->abstract="Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut."
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
