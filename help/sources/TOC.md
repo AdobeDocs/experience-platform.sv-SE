@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: d6b633c5c53c3deba9e27c91ec2ced78d3ca9c9e
+source-git-commit: 0154891cf2c68a38c08b9fe44251ec13325a7366
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '741'
 ht-degree: 5%
 
 ---
@@ -81,6 +81,7 @@ ht-degree: 5%
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
    - Automatisering av marknadsföring {#marketing-automation}
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
+      - [Mailchimp-anslutning](connectors/marketing-automation/mailchimp.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
@@ -232,6 +233,8 @@ ht-degree: 5%
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
+         - [Mailchimp-kampanjer](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
+         - [Mailchimp-medlemmar](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
