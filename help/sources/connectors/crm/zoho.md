@@ -4,18 +4,15 @@ solution: Experience Platform
 title: Zoho CRM Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Zoho CRM till Adobe Experience Platform med API:er eller användargränssnittet.
-source-git-commit: 030789af0a049b54d6e271410836c08456a83441
+exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
+source-git-commit: 46b2fd6bc715bf1d8ccfeed576a2a2d193f92edd
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Zoho CRM]
-
->[!NOTE]
->
->The [!DNL Zoho CRM] källan är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
+# [!DNL Zoho CRM]
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

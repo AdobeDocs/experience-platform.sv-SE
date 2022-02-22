@@ -5,7 +5,7 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 0154891cf2c68a38c08b9fe44251ec13325a7366
+source-git-commit: 7254c84f1a7f4f45a0098e27515a7a01cae395db
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Experience Platform har stöd för inmatning av data från ditt lokala system. M
 Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md)
-- [[!DNL MailChimp]](connectors/marketing-automation/mailchimp.md)
+- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
 
 ### Betalningar
