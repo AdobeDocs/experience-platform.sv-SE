@@ -6,9 +6,9 @@ description: Stegvisa instruktioner om hur du använder API:t för Flow Service 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: ae9c43b3a3cd59b0c0bcfd5034f5edc5ebb818d8
+source-git-commit: a8a8b3b9e4fdae11be95d2fa80abc0f356eff345
 workflow-type: tm+mt
-source-wordcount: '3179'
+source-wordcount: '3083'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 I den här självstudien visas hur du använder API:t för Flow Service för att skapa en batch [molnlagring](../catalog/cloud-storage/overview.md) eller [e-postmarknadsföringsmål](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya målet och exportera data till det nya målet via CSV-filer.
 
-I den här självstudiekursen används Adobe Campaign-destinationen i alla exempel, men stegen är identiska för alla batchmolnlagring och e-postmarknadsföringsmål.
+I den här självstudiekursen används [!DNL Adobe Campaign] mål i alla exempel, men stegen är identiska för alla gruppmolnlagring och e-postmarknadsföringsmål.
 
 ![Översikt - stegen för att skapa ett mål och aktivera segment](../assets/api/email-marketing/overview.png)
 
@@ -37,14 +37,14 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 Om du vill slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter klara, beroende på vilken typ av mål du ansluter och aktiverar segment till.
 
-* För [!DNL Amazon] S3-anslutningar: `accessId`, `secretKey`
-* För [!DNL Amazon] S3-anslutningar till [!DNL Adobe Campaign]: `accessId`, `secretKey`
+* För [!DNL Amazon S3] anslutningar: `accessId`, `secretKey`
+* För [!DNL Amazon S3] anslutningar till [!DNL Adobe Campaign]: `accessId`, `secretKey`
 * För SFTP-anslutningar: `domain`, `port`, `username`, `password` eller `sshKey` (beroende på anslutningsmetoden till FTP-platsen)
 * För [!DNL Azure Blob] anslutningar: `connectionString`
 
 >[!NOTE]
 >
->Autentiseringsuppgifterna `accessId`, `secretKey` för Amazon S3-anslutningar och `accessId`, `secretKey` för Amazon S3-anslutningar till Adobe Campaign är identiska.
+>Autentiseringsuppgifterna `accessId`, `secretKey` for [!DNL Amazon S3] anslutningar och `accessId`, `secretKey` for [!DNL Amazon S3] anslutningar till [!DNL Adobe Campaign] är identiska.
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
@@ -100,7 +100,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar**
 
-Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera segment till Adobe Campaign ska du leta efter följande utdrag i svaret:
+Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera segment till [!DNL Adobe Campaign]söker du efter följande utdrag i svaret:
 
 ```json
 {
@@ -115,13 +115,13 @@ Tabellen nedan innehåller anslutningsspecifikations-ID:n för vanliga gruppmål
 
 | Destination | Anslutningsspecifikation-ID |
 ---------|----------|
-| [!DNL Adobe Campaign] | 0b23e41a-cb4a-4321-a78f-3b654f5d7d97 |
-| [!DNL Amazon S3] | 4890fc95-5a1f-4983-94bb-e060c08e3f81 |
-| [!DNL Azure Blob] | e258278b-a4cf-43ac-b158-4fa0ca0d948b |
-| [!DNL Oracle Eloqua] | c1e44b6b-e7c8-404b-9031-58f0ef760604 |
-| [!DNL Oracle Responsys] | a5e28ddf-e265-426e-83a1-9d03a3a6822b |
-| [!DNL Salesforce Marketing Cloud] | f599a5b3-60a7-4951-950a-cc4115c7ea27 |
-| SFTP | 64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0 |
+| [!DNL Adobe Campaign] | `0b23e41a-cb4a-4321-a78f-3b654f5d7d97` |
+| [!DNL Amazon S3] | `4890fc95-5a1f-4983-94bb-e060c08e3f81` |
+| [!DNL Azure Blob] | `e258278b-a4cf-43ac-b158-4fa0ca0d948b` |
+| [!DNL Oracle Eloqua] | `c1e44b6b-e7c8-404b-9031-58f0ef760604` |
+| [!DNL Oracle Responsys] | `a5e28ddf-e265-426e-83a1-9d03a3a6822b` |
+| [!DNL Salesforce Marketing Cloud] | `f599a5b3-60a7-4951-950a-cc4115c7ea27` |
+| SFTP | `64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -163,9 +163,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `name` | Ange ett namn för basanslutningen till Experience Platform Profile Store. |
+| `name` | Ange ett namn för basanslutningen till Experience Platform [!DNL Profile Store]. |
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -212,11 +214,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `name` | Ange ett namn för källanslutningen till Experience Platform Profile Store. |
+| `name` | Ange ett namn för källanslutningen till Experience Platform [!DNL Profile Store]. |
 | `description` | Du kan också ange en beskrivning för källanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 | `baseConnectionId` | Använd det grundläggande anslutnings-ID som du fick i föregående steg. |
 | `data.format` | `CSV` är för närvarande det enda filexportformat som stöds. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -247,7 +251,7 @@ POST /connections
 
 **Begäran**
 
-I begäran nedan upprättas en basanslutning till Adobe Campaign-destinationer. Beroende på den lagringsplats där du vill exportera filer till (Amazon S3, SFTP, Azure Blob) ska du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Adobe Campaign] destinationer. Beroende på lagringsplatsen som du vill exportera filer till ([!DNL Amazon S3], SFTP, [!DNL Azure Blob]), `auth` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -297,9 +301,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-+++ Exempelbegäran om anslutning till Amazon S3-mål
+Se exempelbegärandena nedan för att ansluta till andra batchmolnlagringsmedier och e-postmarknadsföringsmål som stöds.
 
-I begäran nedan upprättas en basanslutning till Amazon S3-destinationer.
++++ Exempelbegäran att ansluta till [!DNL Amazon S3] mål
+
+Begäran nedan upprättar en basanslutning till [!DNL Amazon S3] destinationer.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -327,9 +333,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om att ansluta till Azure-blobbmål
++++ Exempelbegäran att ansluta till [!DNL Azure Blob] mål
 
-I begäran nedan upprättas en basanslutning till Azure Blob-mål.
+Begäran nedan upprättar en basanslutning till [!DNL Azure Blob] destinationer.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -356,9 +362,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om anslutning till Oracle Eloqua-mål
++++ Exempelbegäran att ansluta till [!DNL Oracle Eloqua] mål
 
-I begäran nedan upprättas en basanslutning till Oracle Eloqua-destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Oracle Eloqua] destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -397,9 +403,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om att ansluta till Oraclets svarsmål
++++ Exempelbegäran att ansluta till [!DNL Oracle Responsys] mål
 
-I begäran nedan upprättas en basanslutning till Oraclets svarsmål. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Oracle Responsys] destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -438,9 +444,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om anslutning till Salesforce Marketing Cloud-mål
++++ Exempelbegäran att ansluta till [!DNL Salesforce Marketing Cloud] mål
 
-I begäran nedan upprättas en basanslutning till Salesforce Marketing Cloud-destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
+Begäran nedan upprättar en basanslutning till [!DNL Salesforce Marketing Cloud] destinationer. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `auth` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -518,6 +524,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `auth.specname` | Anger målets autentiseringsformat. Om du vill ta reda på ditt måls specName utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `authSpec.name` i svaret. <br> För Adobe Campaign-mål kan du till exempel använda något av `S3`, `SFTP with Password`, eller `SFTP with SSH Key`. |
 | `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska autentiseringsparametrar. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Om du vill ta reda på vilka parametrar som krävs för destinationen utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `authSpec.spec.required` i svaret. |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett godkänt svar innehåller basanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i nästa steg för att skapa en målanslutning.
@@ -546,7 +554,7 @@ POST /targetConnections
 
 **Begäran**
 
-I begäran nedan upprättas en målanslutning till Adobe Campaign-destinationer för att avgöra var de exporterade filerna kommer att landas på din lagringsplats. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+Begäran nedan upprättar en målanslutning till [!DNL Adobe Campaign] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -589,9 +597,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-+++ Exempelbegäran om att konfigurera lagringsplats för Amazon S3-mål
+Se exempelbegärandena nedan för att konfigurera en lagringsplats för andra batchmolnlagringsplatser och e-postmarknadsföringsmål som stöds.
 
-I begäran nedan upprättas en målanslutning till Amazon S3-destinationer som avgör var de exporterade filerna kommer att landas på din lagringsplats.
++++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Amazon S3] mål
+
+Begäran nedan upprättar en målanslutning till [!DNL Amazon S3] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -625,9 +635,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran för att konfigurera lagringsplats för Azure-blobbmål
++++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Azure Blob] mål
 
-I begäran nedan upprättas en målanslutning till Azure Blob-destinationer för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats.
+Begäran nedan upprättar en målanslutning till [!DNL Azure Blob] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -661,9 +671,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om att ställa in lagringsplats för Oracle Eloqua-mål
++++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Oracle Eloqua] mål
 
-I begäran nedan upprättas en målanslutning till Oracle Eloqua-destinationer för att avgöra var de exporterade filerna kommer att landas på din lagringsplats. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+Begäran nedan upprättar en målanslutning till [!DNL Oracle Eloqua] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -702,9 +712,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om att ställa in lagringsplats för Oraclets svarsmål
++++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Oracle Responsys] mål
 
-I begäran nedan upprättas en målanslutning till Oraclets svarsmål, som avgör var de exporterade filerna kommer att hamna på din lagringsplats. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+Begäran nedan upprättar en målanslutning till [!DNL Oracle Responsys] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -743,9 +753,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om att ställa in lagringsplats för Salesforce Marketing Cloud-mål
++++ Exempelbegäran om att konfigurera en lagringsplats för [!DNL Salesforce Marketing Cloud] mål
 
-I begäran nedan upprättas en målanslutning till Salesforce Marketing Cloud-destinationer för att avgöra var de exporterade filerna kommer att hamna på din lagringsplats. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
+Begäran nedan upprättar en målanslutning till [!DNL Salesforce Marketing Cloud] mål, för att bestämma var de exporterade filerna ska landas på lagringsplatsen. Beroende på den lagringsplats dit du vill exportera filer till bör du behålla lämplig `params` och ta bort de andra.
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -784,7 +794,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ Exempelbegäran om att konfigurera lagringsplats för SFTP-mål
++++ Exempelbegäran om att konfigurera en lagringsplats för SFTP-mål
 
 I begäran nedan upprättas en målanslutning till SFTP-mål som avgör var de exporterade filerna kommer att landas på din lagringsplats.
 
@@ -830,6 +840,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `params.bucketName` | För S3-anslutningar anger du namnet på den bucket där filerna ska exporteras. |
 | `params.path` | För S3-anslutningar anger du den filsökväg på lagringsplatsen dit filerna ska exporteras. |
 | `params.format` | `CSV` är för närvarande den enda filexporttyp som stöds. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
@@ -908,9 +920,9 @@ Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
 
 | Mål | Flödesspekt-ID |
 ---------|----------|
-| Alla molnlagringsmål (Amazon S3, SFTP, Azure Blob) och Oracle Eloqua | 71471eba-b620-49e4-90fd-23f1fa0174d8 |
-| Oraclets svar | 51d675ce-e270-408d-91fc-22717bdf2148 |
-| Salesforce Marketing Cloud | 493b2bd6-26e4-4167-ab3b-5e910bba44f0 |
+| Alla molnlagringsmål ([!DNL Amazon S3], SFTP, [!DNL Azure Blob]) och [!DNL Oracle Eloqua] | `71471eba-b620-49e4-90fd-23f1fa0174d8` |
+| [!DNL Oracle Responsys] | `51d675ce-e270-408d-91fc-22717bdf2148` |
+| [!DNL Salesforce Marketing Cloud] | `493b2bd6-26e4-4167-ab3b-5e910bba44f0` |
 
 **Svar**
 
@@ -1019,6 +1031,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `frequency` | Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge kan du välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
 | `endDate` | Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då segmentmedlemmar slutar att exporteras till målet. |
 | `startTime` | Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar i segmentet ska genereras och exporteras till målet. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
