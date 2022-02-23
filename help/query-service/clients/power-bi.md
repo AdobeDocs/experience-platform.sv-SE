@@ -5,60 +5,84 @@ title: Anslut Power BI till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
+source-git-commit: 69f57a0e2293e438a0e5c986d888027892cc6359
 workflow-type: tm+mt
-source-wordcount: '461'
-ht-degree: 0%
+source-wordcount: '967'
+ht-degree: 1%
 
 ---
 
-# Anslut [!DNL Power BI] till frågetjänsten (PC)
+# Anslut Power BI till frågetjänst
 
-Det här dokumentet beskriver hur du ansluter Power BI till Adobe Experience Platform Query Service.
+Det här dokumentet beskriver hur du ansluter Power BI Desktop till Adobe Experience Platform Query Service.
 
->[!NOTE]
+## Komma igång
+
+Den här guiden kräver att du redan har tillgång till datorprogrammet Power BI och känner till hur du navigerar i gränssnittet. Om du vill hämta Power BI Desktop eller om du vill ha mer information kan du läsa [officiell Power BI](https://docs.microsoft.com/en-us/power-bi/).
+
+>[!IMPORTANT]
 >
-> Den här handboken förutsätter att du redan har tillgång till [!DNL Power BI] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Power BI] finns i [officiell [!DNL Power BI] dokumentation](https://docs.microsoft.com/en-us/power-bi/).
->
-> Dessutom är Power BI **endast** tillgängligt på Windows-enheter.
+> Power BI är **endast** som är tillgängliga på Windows-enheter.
 
-När du har installerat Power BI måste du installera `Npgsql`, ett .NET-drivrutinspaket för PostgreSQL. Mer information om Npgsql finns i [Npgsql-dokumentationen](https://www.npgsql.org/doc/index.html).
+Om du vill ha de autentiseringsuppgifter som krävs för att ansluta Power BI till Experience Platform måste du ha tillgång till arbetsytan Frågor i plattformsgränssnittet. Kontakta IMS-organisationens administratör om du inte har tillgång till arbetsytan Frågor.
+
+När du har installerat Power BI måste du installera `Npgsql`, ett .NET-drivrutinspaket för PostgreSQL. Mer information om Npgsql finns i [Npgsql-dokumentation](https://www.npgsql.org/doc/index.html).
 
 >[!IMPORTANT]
 >
 >Du måste hämta v4.0.10 eller tidigare, eftersom nyare versioner orsakar fel.
 
-Välj **[!DNL Will be installed on local hard drive]** under [!DNL Npgsql GAC Installation] på den anpassade installationsskärmen.
+Under &quot;[!DNL Npgsql GAC Installation]&quot; på skärmen för anpassade inställningar väljer du **[!DNL Will be installed on local hard drive]**.
 
-För att säkerställa att npgsql har installerats korrekt startar du om datorn innan du fortsätter till nästa steg.
+För att säkerställa att Npgsql har installerats korrekt måste du starta om datorn innan du fortsätter till nästa steg.
 
-## Anslut [!DNL Power BI] till [!DNL Query Service]
+## Anslut Power BI till frågetjänst {#connect-power-bi}
 
-Om du vill ansluta [!DNL Power BI] till [!DNL Query Service] öppnar du [!DNL Power BI] och väljer **[!DNL Get Data]** i menyfliksområdet på den översta menyn.
+Om du vill ansluta Power BI till frågetjänsten öppnar du Power BI och väljer **[!DNL Get Data]** i menyfliksområdet på den översta menyn.
 
 ![](../images/clients/power-bi/open-power-bi.png)
 
-Välj **[!DNL PostgreSQL database]** följt av **[!DNL Connect]**.
+Ange PostgreSQL i sökfältet om du vill begränsa listan med datakällor. Under resultaten som visas väljer du **[!DNL PostgreSQL database]**, följt av **[!DNL Connect]**.
 
 ![](../images/clients/power-bi/get-data.png)
 
-Nu kan du ange värden för servern och databasen. Mer information om hur du söker efter databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguiden](../ui/credentials.md). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+Dialogrutan PostgreSQl-databas öppnas och värden för servern och databasen efterfrågas. Dessa värden hämtas från dina Adobe Experience Platform-uppgifter. Logga in på användargränssnittet för plattformen och välj **[!UICONTROL Queries]** från vänster navigering, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md).
 
-**[!DNL Server]** är värddatorn som finns under anslutningsinformationen. För produktion lägger du till porten `:80` i slutet av värdsträngen. **[!DNL Database]** kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn.
+![Instrumentpanelen för inloggningsuppgifter med autentiseringsuppgifter är markerad i Experience Platform.](../images/clients/power-bi/query-service-credentials-page.png)
 
-Dessutom kan du välja din **[!DNL Data Connectivity mode]**. Välj **[!DNL Import]** om du vill visa en lista över alla tillgängliga tabeller, eller välj **[!DNL DirectQuery]** om du vill skapa en fråga direkt.
+För **[!DNL Server]** i Power BI anger du värdet för värddatorn som finns i avsnittet med autentiseringsuppgifter för frågetjänsten. Lägg till port för produktion `:80` till slutet av värdsträngen. Exempel, `made-up.platform-query.adobe.io:80`.
 
-Läs avsnittet [förhandsgranska och importera en tabell](#preview) om du vill veta mer om **[!DNL Import]**-läget. Mer information om läget **[!DNL DirectQuery]** finns i avsnittet [skapa SQL-satser](#create). Välj **[!DNL OK]** när du har bekräftat databasinformationen.
+The **[!DNL Database]** -fältet kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn. Exempel, `prod:all`.
+
+![Power BI-kontrollpanelen med server- och databasindatafälten markerade.](../images/clients/power-bi/postgresql-database-dialog.png)
+
+### Dataanslutningsläge
+
+Nu kan du välja **[!DNL Data Connectivity mode]**. Välj **[!DNL Import]** följt av **[!DNL OK]** om du vill visa en lista över alla tillgängliga tabeller, eller väljer **[!DNL DirectQuery]** för att fråga datakällan direkt utan att importera eller kopiera data direkt till Power BI.
+
+Mer information om **[!DNL Import]** mode, please read the section on [importera en tabell](#import). Mer information om **[!DNL DirectQuery]** mode, please read the section on [fråga en datauppsättning utan att importera data](#direct-query).
+
+Välj **[!DNL OK]** när du har bekräftat databasinformationen.
 
 ![](../images/clients/power-bi/connectivity-mode.png)
 
-En fråga om ditt användarnamn, lösenord och programinställningar visas. Fyll i dessa uppgifter och välj sedan **[!DNL Connect]** för att fortsätta till nästa steg.
+### Autentisering
+
+En fråga om ditt användarnamn, lösenord och programinställningar visas. Användarnamnet är i det här fallet ditt företags-ID och lösenordet är din autentiseringstoken. Båda finns på sidan med autentiseringsuppgifter för frågetjänsten.
+
+Fyll i dessa uppgifter och välj **[!DNL Connect]** för att fortsätta till nästa steg.
 
 ![](../images/clients/power-bi/import-mode.png)
 
-## Förhandsgranska och importera en tabell {#preview}
+## Importera en tabell {#import}
 
-Om du har valt **[!DNL Import]**-läge visas en dialogruta med en lista över alla tillgängliga tabeller. Markera den tabell som du vill förhandsgranska, följt av **[!DNL Load]** för att hämta datauppsättningen till [!DNL Power BI].
+Genom att välja **[!DNL Import]** [!DNL Data Connectivity mode]importeras hela datauppsättningen, vilket gör att du kan använda de markerade tabellerna och kolumnerna i Power BI-datorprogrammet i befintligt skick.
+
+>[!IMPORTANT]
+>
+>Om du vill se dataändringar som har gjorts sedan den första importen måste du uppdatera data i Power BIET genom att importera hela datauppsättningen igen.
+
+Om du vill importera en tabell anger du server- och databasinformation [enligt ovan](#connect-power-bi) och väljer **[!DNL Import]** [!DNL Data Connectivity mode], följt av **[!DNL OK]**. En dialogruta med en lista över alla tillgängliga tabeller visas. Markera tabellen som du vill förhandsgranska, följt av **[!DNL Load]** för att föra in datauppsättningen i Power BI.
 
 ![](../images/clients/power-bi/preview-table.png)
 
@@ -66,18 +90,34 @@ Tabellen importeras nu till Power BI.
 
 ![](../images/clients/power-bi/import-table.png)
 
-## Skapa SQL-satser {#create}
+### Importera tabeller med anpassad SQL
 
-Om du har valt **[!DNL DirectQuery]**-läge måste du fylla i avsnittet Avancerade alternativ med den SQL-fråga som du vill skapa.
+Power BI och andra tredjepartsverktyg som Tableau tillåter för närvarande inte användare att importera kapslade objekt, som XDM-objekt i Platform. Med Power BI kan du använda anpassad SQL för att komma åt dessa kapslade fält och skapa en förenklad vy av data. Power BI läser sedan in den förenklade vyn av tidigare kapslade data som en normal tabell.
 
-Under **[!DNL SQL statement]** infogar du den SQL-fråga som du vill skapa. Kontrollera att kryssrutan **[!DNL Include relationship columns]** är markerad. När du har skrivit frågan väljer du **[!DNL OK]** för att fortsätta.
+I PostgreSQL-databasdrivrutinen väljer du **[!DNL Advanced options]** för att ange en anpassad SQL-fråga i **[!DNL SQL statement]** -avsnitt. Den här anpassade frågan bör användas för att förenkla JSON-par med namn och värde till ett tabellformat.
+
+![Avancerade alternativ för att skapa en anpassad SQL-sats i dataanslutningsläget.](../images/clients/power-bi/custom-sql-statement.png)
+
+När du har angett en egen fråga väljer du **[!DNL OK]** för att fortsätta ansluta databasen. Se [autentisering](#authentication) om du vill ha vägledning om hur du ansluter en databas från den här delen av arbetsflödet ovan.
+
+När autentiseringen är klar visas en förhandsgranskning av de förenklade data som en tabell på kontrollpanelen för Power BI Desktop. Servern och databasnamnet visas högst upp i dialogrutan. Välj **[!DNL Load]** för att slutföra importprocessen.
+
+![Den förenklade importerade tabellen på kontrollpanelen för Power BI.](../images/clients/power-bi/imported-table-preview.png)
+
+Visualiseringarna är nu tillgängliga för redigering och export från Power BI-datorprogrammet.
+
+## Fråga datauppsättningen utan att importera data {#direct-query}
+
+The **[!DNL DirectQuery]** [!DNL Data Connectivity mode] Frågar datakällan direkt utan att importera eller kopiera data till Power BI Desktop. I det här anslutningsläget kan du uppdatera alla visualiseringar med aktuella data via gränssnittet. Den tid som krävs för att skapa eller uppdatera visualiseringen varierar dock beroende på den underliggande datakällans prestanda.
+
+Om du vill använda [!DNL Data Connectivity mode]väljer du **[!DNL DirectQuery]** växla sedan **[!DNL Advanced options]** för att ange en anpassad SQL-fråga i **[!DNL SQL statement]** -avsnitt. Kontrollera att **[!DNL Include relationship columns]** är markerat. När du har slutfört frågan väljer du **[!DNL OK]** för att fortsätta.
 
 ![](../images/clients/power-bi/direct-query-mode.png)
 
-En förhandsgranskning av frågan visas. Välj **[!DNL Load]** om du vill visa resultatet av frågan.
+En förhandsgranskning av frågan visas. Välj **[!DNL Load]** för att se resultatet av frågan.
 
 ![](../images/clients/power-bi/preview-direct-query.png)
 
 ## Nästa steg
 
-Nu när du är ansluten till [!DNL Query Service] kan du använda [!DNL Power BI] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i guiden [kör frågor](../best-practices/writing-queries.md).
+Genom att läsa det här dokumentet bör du nu förstå hur du ansluter till Power BI-datorprogrammet och de olika dataanslutningslägena som är tillgängliga. Mer information om hur du skriver och kör frågor finns i [riktlinjer för frågekörning](../best-practices/writing-queries.md).
