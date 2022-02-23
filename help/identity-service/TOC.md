@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Handbok för Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personaliserade digitala upplevelser.
 feature: Identities
-source-git-commit: 81b325fe0994eef73111f9fc474984a4550dd256
+source-git-commit: 6ef978251c8b1ecaffa3a28cf2b89e24e2d725b6
 workflow-type: tm+mt
-source-wordcount: '98'
-ht-degree: 12%
+source-wordcount: '102'
+ht-degree: 11%
 
 ---
 
@@ -16,6 +16,7 @@ ht-degree: 12%
 
 - [Översikt över identitetstjänsten](home.md)
 - [Översikt över namnområde för identitet](namespaces.md)
+- [Gardrutor för identitetsdata](guardrails.md)
 - Identitetstjänstens API {#api}
    - [Komma igång](api/getting-started.md)
    - [Ange etikett för ett fält som identitet](api/label-identities.md)
