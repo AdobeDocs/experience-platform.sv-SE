@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 065f5ef9d3d3be0fcab84d7518d8a00e4cd551cf
+source-git-commit: fecea2040af6e6c666de8eb4f1b13b3beaa45486
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '411'
 ht-degree: 6%
 
 ---
@@ -55,6 +55,7 @@ ht-degree: 6%
       * [XDM Business Person Components](./field-groups/profile/business-person-components.md)
       * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
    * Händelsefältgrupper {#event}
+      * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
       * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
       * [Kanalinformation](./field-groups/event/channel-details.md)
       * [Handelsinformation](./field-groups/event/commerce-details.md)
@@ -95,6 +96,7 @@ ht-degree: 6%
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
    * [Impressions](./data-types/impressions.md)
+   * [Nyckelvärdepar](./data-types/key-value-pair.md)
    * [Marknadsföring](./data-types/marketing.md)
    * [Mät](./data-types/measure.md)
    * [Order](./data-types/order.md)
