@@ -1,7 +1,8 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 6d360721a598ff3fa82169aea608263a09c1f05f
+exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
+source-git-commit: 3ae4d0f0a92c96b15c605c6654693fd6d7e94ba8
 workflow-type: tm+mt
 source-wordcount: '575'
 ht-degree: 2%
@@ -37,7 +38,7 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 
 [!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
-**Uppdaterade funktioner**
+**Ny funktion**
 
 | Funktion | Beskrivning |
 | --- | --- |

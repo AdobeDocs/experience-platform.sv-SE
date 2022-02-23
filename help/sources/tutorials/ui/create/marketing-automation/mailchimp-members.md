@@ -4,13 +4,15 @@ solution: Experience Platform
 title: Skapa en källanslutning för MailChimp-medlemmar med hjälp av plattformsgränssnittet
 topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-medlemmar med hjälp av plattformsgränssnittet.
-source-git-commit: a67f9589346a117eb6f51dc9f908680d661e5d5b
+hide: true
+hidefromtoc: true
+exl-id: dc620ef9-624d-4fc9-8475-bb475ea86eb7
+source-git-commit: f8951b5a0a0ca94679155bad9f4c4c2991740b1a
 workflow-type: tm+mt
 source-wordcount: '649'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Mailchimp Members] källanslutning med plattformsgränssnitt
 

@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Översikt över Mailchimp Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Mailchimp till Adobe Experience Platform med API:er eller användargränssnittet.
-source-git-commit: a67f9589346a117eb6f51dc9f908680d661e5d5b
+exl-id: eedb4fe0-3aae-4e93-bf13-c095171e2d11
+source-git-commit: f8951b5a0a0ca94679155bad9f4c4c2991740b1a
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '195'
 ht-degree: 0%
 
 ---
 
 # [!DNL Mailchimp] koppling
-
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -27,9 +27,15 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mailchimp
 ## Anslut [!DNL Mailchimp Campaigns] till plattform
 
 * [Skapa en källanslutning att hämta [!DNL Mailchimp Campaigns] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-campaign.md).
-* [Skapa en källanslutning att hämta [!DNL Mailchimp Campaigns] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-campaigns.md).
+
+<!--
+* [Create a source connection to bring [!DNL Mailchimp Campaigns] data to Platform using the user interface](../../tutorials/ui/create/marketing-automation/mailchimp-campaigns.md).
+-->
 
 ## Anslut [!DNL Mailchimp Members] till plattform
 
 * [Skapa en källanslutning att hämta [!DNL Mailchimp Members] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-members.md).
-* [Skapa en källanslutning att hämta [!DNL Mailchimp Members] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-members.md).
+
+<!--
+* [Create a source connection to bring [!DNL Mailchimp Members] data to Platform using the user interface](../../tutorials/ui/create/marketing-automation/mailchimp-members.md).
+-->
