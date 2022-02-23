@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 91fc4c50eb9a5ab64de3445b47465eec74a61736
+source-git-commit: b291bcf4e0ce068b071adde489653b006f4e7fb2
 workflow-type: tm+mt
-source-wordcount: '2301'
+source-wordcount: '2360'
 ht-degree: 1%
 
 ---
@@ -217,14 +217,37 @@ INSERT INTO table_name select_query
 
 **Exempel**
 
+>[!NOTE]
+>
+>Följande är ett intressant exempel som bara är till för instruktionsändamål.
+
 ```sql
 INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 
 INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 ```
 
->[!NOTE]
+>[!INFO]
+> 
 > The `SELECT` programsats **får inte** omges av parenteser (). Dessutom är schemat för resultatet av `SELECT` -programsatsen måste överensstämma med den tabell som definieras i `INSERT INTO` -programsats. Du kan ange en `SNAPSHOT` -sats för att läsa inkrementella deltas i måltabellen.
+
+De flesta fält i ett riktigt XDM-schema finns inte på rotnivå och SQL tillåter inte användning av punktnotation. För att få ett realistiskt resultat med kapslade fält måste du mappa varje fält i `INSERT INTO` bana.
+
+Till `INSERT INTO` kapslade sökvägar använder du följande syntax:
+
+```sql
+INSERT INTO [dataset]
+SELECT struct([source field1] as [target field in schema],
+[source field2] as [target field in schema],
+[source field3] as [target field in schema]) [tenant name]
+FROM [dataset]
+```
+
+**Exempel**
+
+```sql
+INSERT INTO Customers SELECT struct(SupplierName as Supplier, City as SupplierCity, Country as SupplierCountry) _Adobe FROM OnlineCustomers;
+```
 
 ## DROP TABLE
 
