@@ -5,9 +5,9 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge-nätverket.
 feature: Web SDK
-source-git-commit: f237ee364cdf6048840dca797f7827b9b88dd73b
+source-git-commit: 6fb6d1579f888720b6af9617400d512a68d06264
 workflow-type: tm+mt
-source-wordcount: '154'
+source-wordcount: '157'
 ht-degree: 14%
 
 ---
@@ -29,6 +29,7 @@ ht-degree: 14%
    * [Användningsexempel som stöds](fundamentals/supported-use-cases.md)
 * Identitet {#identity}
    * [Översikt](identity/overview.md)
+   * [Enhets-ID:n från första part](identity/first-party-device-ids.md)
 * Datainsamling {#data-collection}
    * [Automatiskt insamlad information](data-collection/automatic-information.md)
    * [Spåra länkar](data-collection/track-links.md)
