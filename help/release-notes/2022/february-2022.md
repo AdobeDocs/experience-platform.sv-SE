@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 07dc417cbeb5ac0a59d2405986e9bb771b0735f2
+source-git-commit: 6d360721a598ff3fa82169aea608263a09c1f05f
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '575'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,6 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 
-
 ## [!DNL Data Prep] {#data-prep}
 
 [!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
@@ -52,7 +51,7 @@ För att kunna leverera relevanta digitala upplevelser måste ni ha en fullstän
 
 Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
-**Nya funktioner**
+**Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
@@ -65,6 +64,8 @@ Mer allmän information om [!DNL Identity Service], se [Översikt över identite
 Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+**Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
