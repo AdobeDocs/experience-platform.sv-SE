@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 762a4b7336f1c26b79883db9484d8f5fc7bff53c
+source-git-commit: 07dc417cbeb5ac0a59d2405986e9bb771b0735f2
 workflow-type: tm+mt
-source-wordcount: '362'
+source-wordcount: '573'
 ht-degree: 2%
 
 ---
@@ -14,9 +14,25 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Datainsamling](#data-collection)
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Identity Service]](#identity)
 - [Källor](#sources)
+
+## Datainsamling {#data-collection}
+
+Plattformen innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Förbättrat gränssnittsarbetsflöde för datastream-konfiguration | Arbetsflödet för att skapa en ny datastam i användargränssnittet för datainsamling har uppdaterats. När du lägger till tjänster i ett dataflöde inkluderas endast de tjänster som du har tillgång till i listan med alternativ. Se guiden [konfigurera ett datastream](../../edge/fundamentals/datastreams.md) för mer information. |
+| Dataförberedelse för datainsamling | Om du använder Adobe Experience Platform Web SDK kan du nu utnyttja funktionerna för dataförberedelser för att mappa dina data till Experience Data Model (XDM) på serversidan. Se avsnittet om [Dataförberedelse för datainsamling](../../edge/fundamentals/datastreams.md#data-prep) i datastreams-guiden om du vill ha mer information. |
+| Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Se guiden [enhets-ID:n från första part](../../edge/identity/first-party-device-ids.md) för mer information. |
+
+Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+
 
 ## [!DNL Data Prep] {#data-prep}
 
