@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 0154891cf2c68a38c08b9fe44251ec13325a7366
+source-git-commit: da3d0399bae9953cd74bd0ac6d6e16b64796a578
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '745'
 ht-degree: 5%
 
 ---
@@ -181,6 +181,7 @@ ht-degree: 5%
          - [Adobe Analytics (report-suite data)](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Analytics (klassificeringsdata)](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Adobe Campaign Managed Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - Reklam {#create}
