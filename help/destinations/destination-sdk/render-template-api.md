@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/render` för att återge exporterade data för ditt mål, baserat på din meddelandeomvandlingsmall.
 title: API-åtgärder för återgivningsmall
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
+source-git-commit: b337d65bcdfbb65da1b751645ddc649d30440dc7
 workflow-type: tm+mt
 source-wordcount: '806'
 ht-degree: 0%
@@ -30,7 +30,6 @@ Du kan börja med en enkel mall som exporterar dina Raw-profiler utan att använ
 >[!TIP]
 >
 >* Mål-ID som du ska använda här är `instanceId` som motsvarar en målkonfiguration, skapad med `/destinations` slutpunkt. Se [API-åtgärder för destinationskonfiguration](./destination-configuration-api.md#retrieve-list).
-
 
 
 **API-format**

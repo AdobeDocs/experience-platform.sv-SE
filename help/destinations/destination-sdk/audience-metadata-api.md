@@ -2,7 +2,7 @@
 description: På den här sidan beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten "/authoring/audition-templates".
 title: API-åtgärder för målgruppsmetadata
 exl-id: 3444da8c-b2be-4254-980a-8cce7560134d
-source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
+source-git-commit: afdabdebe9b82d828cb1941edb99ca2518a941a2
 workflow-type: tm+mt
 source-wordcount: '879'
 ht-degree: 2%
@@ -26,7 +26,6 @@ Läs igenom [komma igång-guide](./getting-started.md) för viktig information s
 Du kan skapa en ny målgruppsmall genom att göra en POST-förfrågan till `/authoring/audience-templates` slutpunkt.
 
 **API-format**
-
 
 ```http
 POST /authoring/audience-templates
@@ -146,6 +145,31 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
                "value":"string"
             }
          ]
+      },
+      "notify":{
+         "url":"string",
+         "httpMethod":"string",
+         "headers":[
+            {
+               "header":"string",
+               "value":"string"
+            }
+         ],
+         "requestBody":{
+            
+         },
+         "responseFields":[
+            {
+               "name":"string",
+               "value":"string"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "name":"string",
+               "value":"string"
+            }
+         ]
       }
    },
    "validations":[
@@ -183,7 +207,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya målgrupps
 Du kan uppdatera en befintlig målgruppsmall genom att göra en PUT-förfrågan till `/authoring/audience-templates` slutpunkt och ange instans-ID för den målgruppsmall som du vill uppdatera. Ange den uppdaterade mallen i anropets brödtext.
 
 **API-format**
-
 
 ```http
 PUT /authoring/audience-templates/{INSTANCE_ID}
@@ -292,7 +315,6 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-te
    }
 }
 ```
-
 
 ## Hämta en lista med målgruppsmallar {#retrieve-list}
 
@@ -430,7 +452,6 @@ Följande svar returnerar HTTP-status 200 med en lista över målgruppsmetadatam
 Du kan hämta detaljerad information om en viss målgruppsmall genom att göra en GET-förfrågan till `/authoring/audience-templates` slutpunkt och ange instans-ID för den målgruppsmall som du vill hämta.
 
 **API-format**
-
 
 ```http
 GET /authoring/audience-templates/{INSTANCE_ID}

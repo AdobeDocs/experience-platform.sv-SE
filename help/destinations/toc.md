@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 9d2e98c834eddcacf67de7caafef4717e38d80f8
+source-git-commit: 2f8e31321345a14c098f795b50d33c700ac0faa8
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '722'
 ht-degree: 1%
 
 ---
@@ -156,8 +156,10 @@ ht-degree: 1%
    * [Komma igång](./destination-sdk/getting-started.md)
    * Destination SDK {#functionality}
       * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
-      * [Målkonfiguration](./destination-sdk/destination-configuration.md)
-      * [Server- och mallspecifikationer](./destination-sdk/server-and-template-configuration.md)
+      * [Konfiguration för direktuppspelningsmål](./destination-sdk/destination-configuration.md)
+      * [Filbaserad målkonfiguration](./destination-sdk/file-based-destination-configuration.md)
+      * [Serverspecifikationer och mallspecifikationer för direktuppspelningsmål](./destination-sdk/server-and-template-configuration.md)
+      * [Filbaserad målserver och filspecifikationer](./destination-sdk/server-and-file-configuration.md)
       * [Meddelandeformat](./destination-sdk/message-format.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/audience-metadata-management.md)
       * Autentisering {#authentication}
@@ -180,6 +182,7 @@ ht-degree: 1%
          * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
    * Stödlinjer {#guides}
       * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
+      * [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
       * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
    * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)

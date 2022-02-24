@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/Destations/publish`.
 title: API-slutpunktsåtgärder för publiceringsmål
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
+source-git-commit: 6ad556e3b7bf15f1d6ff522307ff232b8fd947d3
 workflow-type: tm+mt
 source-wordcount: '757'
 ht-degree: 2%
@@ -20,6 +20,7 @@ På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med
 När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering.
 
 Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
+
 * Som Destination SDK partner vill ni att alla kunder i Experience Platform ska kunna använda er av den producerade destinationen,
 * Du vill göra ditt anpassade mål tillgängligt i din egen Experience Platform-organisation, i alla sandlådor.
 
@@ -32,7 +33,6 @@ Läs igenom [komma igång-guide](./getting-started.md) för viktig information s
 Du kan skicka en målkonfiguration för publicering genom att göra en POST-förfrågan till `/authoring/destinations/publish` slutpunkt.
 
 **API-format**
-
 
 ```http
 POST /authoring/destinations/publish
@@ -78,7 +78,6 @@ Du kan hämta en lista över alla mål som skickats in för publicering för din
 
 **API-format**
 
-
 ```http
 GET /authoring/destinations/publish
 ```
@@ -114,7 +113,6 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
       }
    ]
 }
-    
 ```
 
 | Parameter | Typ | Beskrivning |
@@ -132,7 +130,6 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
 Du kan uppdatera de tillåtna organisationerna i en befintlig målpubliceringsbegäran genom att göra en PUT-begäran till `/authoring/destinations/publish` slutpunkt och ange ID för destinationen som du vill uppdatera de tillåtna organisationerna för. Ange de uppdaterade tillåtna organisationerna i samtalet.
 
 **API-format**
-
 
 ```http
 PUT /authoring/destinations/publish/{DESTINATION_ID}
@@ -169,7 +166,6 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 Du kan hämta detaljerad information om en viss målpubliceringsbegäran genom att göra en GET-förfrågan till `/authoring/destinations/publish` slutpunkt och ange ID för destinationen som du vill hämta publiceringsstatusen för.
 
 **API-format**
-
 
 ```http
 GET /authoring/destinations/publish/{DESTINATION_ID}

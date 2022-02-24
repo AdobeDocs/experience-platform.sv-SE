@@ -1,27 +1,27 @@
 ---
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
-title: Alternativ för destinationskonfiguration för mål-SDK
+title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '1754'
+source-wordcount: '1753'
 ht-degree: 2%
 
 ---
 
-# Målkonfiguration {#destination-configuration}
+# Konfiguration för direktuppspelningsmål {#destination-configuration}
 
 ## Översikt {#overview}
 
-Med den här konfigurationen kan du ange viktig information, som målnamn, kategori, beskrivning med mera. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
+Med den här konfigurationen kan du ange viktig information för ditt mål för direktuppspelning, som målnamn, kategori, beskrivning med mera. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 
 Den här konfigurationen kopplar även de andra konfigurationer som krävs för att målet ska fungera - målserver och målgruppsmetadata - till den här konfigurationen. Läs om hur du kan referera till de två konfigurationerna i en [avsnitt längre nedan](./destination-configuration.md#connecting-all-configurations).
 
 Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av `/authoring/destinations` API-slutpunkt. Läs [Slutpunktsåtgärder för mål-API](./destination-configuration-api.md) för en fullständig lista över åtgärder som du kan utföra på slutpunkten.
 
-## Exempelkonfiguration {#example-configuration}
+## Exempel på direktuppspelningskonfiguration {#example-configuration}
 
-Nedan finns ett exempel på konfiguration av en fiktiv destination, Moviestar, som har slutpunkter på fyra platser i världen. Målet tillhör kategorin för mobila destinationer. Avsnitten nedan beskriver hur konfigurationen är konstruerad.
+Detta är ett exempel på konfiguration av ett fiktivt mål för direktuppspelning, Moviestar, som har slutpunkter på fyra platser i världen. Målet tillhör kategorin för mobila destinationer.
 
 ```json
 {
@@ -137,29 +137,28 @@ Nedan finns ett exempel på konfiguration av en fiktiv destination, Moviestar, s
 
 Det här avsnittet i destinationskonfigurationen genererar [Konfigurera nytt mål](/help/destinations/ui/connect-destination.md) i användargränssnittet i Experience Platform, där användare ansluter Experience Platform till konton som de har med ditt mål. Beroende på vilket autentiseringsalternativ du anger i dialogrutan `authType` -fältet, genereras Experience Platform-sidan för användarna enligt följande:
 
-**Bärarautentisering**
+### Bärarautentisering
 
 När du konfigurerar typen för innehavarautentisering måste användarna ange den innehavartoken som de får från ditt mål.
 
-![Gränssnittsåtergivning med innehavarautentisering](./assets/bearer-authentication-ui.png)
+![Gränssnittsåtergivning med innehavarautentisering](assets/bearer-authentication-ui.png)
 
-**OAuth 2-autentisering**
+### OAuth 2-autentisering
 
-Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för målplatsen för Twitter Skräddarsydda målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns i den dedikerade [Autentiseringssida för mål-SDK OAuth 2](./oauth2-authentication.md).
+Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitter Custom Audiences-målet. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns i den dedikerade [Destination SDK OAuth 2-autentiseringssida](./oauth2-authentication.md).
 
-![Gränssnittsåtergivning med OAuth 2-autentisering](./assets/oauth2-authentication-ui.png)
-
+![Gränssnittsåtergivning med OAuth 2-autentisering](assets/oauth2-authentication-ui.png)
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `customerAuthenticationConfigurations` | Sträng | Anger den konfiguration som används för att autentisera Experience Platform-kunder mot servern. Se `authType` nedan för godkända värden. |
-| `authType` | Sträng | Godkända värden är `OAUTH2, BEARER`. <br><ul><li> Om målet har stöd för OAuth 2-autentisering väljer du `OAUTH2` och lägg till obligatoriska fält för OAuth 2, vilket visas i [Autentiseringssida för mål-SDK OAuth 2](./oauth2-authentication.md). Dessutom bör du välja `authenticationRule=CUSTOMER_AUTHENTICATION` i [målleveransavsnitt](./destination-configuration.md). </li><li>Välj `BEARER` och markera `authenticationRule=CUSTOMER_AUTHENTICATION` i [målleveransavsnitt](./destination-configuration.md).</li></ul> |
+| `authType` | Sträng | Följande värden accepteras för direktuppspelningsmål:<ul><li>`BEARER`. Om målet har stöd för innehavarautentisering anger du `"authType":"Bearer"` och  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li><li>`OAUTH2`. Om målet har stöd för OAuth 2-autentisering anger du `"authType":"OAUTH2"` och lägg till de obligatoriska fälten för OAuth 2, som visas i [Destination SDK OAuth 2-autentiseringssida](./oauth2-authentication.md). Dessutom, ange `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li> |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## Kunddatafält {#customer-data-fields}
 
-I det här avsnittet kan partners lägga in anpassade fält. I exempelkonfigurationen ovan `customerDataFields` kräver att användare väljer en slutpunkt i autentiseringsflödet och anger sitt kund-ID med målet. Konfigurationen återspeglas i autentiseringsflödet enligt nedan:
+Använd det här avsnittet för att be användare fylla i anpassade fält, som är specifika för ditt mål, när de ansluter till målet i användargränssnittet i Experience Platform. Konfigurationen återspeglas i autentiseringsflödet enligt nedan:
 
 ![Anpassat fältautentiseringsflöde](./assets/custom-field-authentication-flow.png)
 
@@ -184,7 +183,7 @@ Det här avsnittet hänvisar till de gränssnittselement i konfigurationen ovan 
 | `documentationLink` | Sträng | Refererar till dokumentationssidan i [Målkatalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) till destinationen. Använd `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på destinationen. För ett mål som heter Moviestar använder du `http://www.adobe.com/go/destinations-moviestar-en` |
 | `category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). Använd något av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
 | `connectionType` | Sträng | `Server-to-server` är för närvarande det enda tillgängliga alternativet. |
-| `frequency` | Sträng | `Streaming` är för närvarande det enda tillgängliga alternativet. |
+| `frequency` | Sträng | Hänvisar till den typ av dataexport som stöds av målet. Värden som stöds: <ul><li>`Streaming`</li><li>`Batch`</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -202,6 +201,7 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
 | `identityRequired` | Boolean | Använd `true` om användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
 
 {style=&quot;table-layout:auto&quot;}
+
 
 ## Identiteter och attribut {#identities-and-attributes}
 

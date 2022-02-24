@@ -2,9 +2,9 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: cb4e399798a9521e6f3da89cbd88d19476ab070d
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Med stöd för målgruppsmetadata i Destination SDK kan du, när du konfigurerar
 
 ### Använd fall 1 - Du har ett API från tredje part och användarna behöver inte ange ID för indatamappning
 
-Om du har en API-slutpunkt för att skapa/uppdatera/ta bort segment eller målgrupper, kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att det matchar specifikationerna för din segments skapa/uppdatera/ta bort-slutpunkt. Experience Platform kan programmatiskt skapa/uppdatera/ta bort segment och synkronisera metadata tillbaka till Experience Platform.
+Om du har en API-slutpunkt för att skapa/uppdatera/ta bort segment eller målgrupper kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att den matchar specifikationerna för segmentets skapa/uppdatera/ta bort-slutpunkt. Experience Platform kan programmatiskt skapa/uppdatera/ta bort segment och synkronisera metadata tillbaka till Experience Platform.
 
 När man aktiverar segment i användargränssnittet i Experience Platform behöver man inte fylla i ett ID-fält för segmentmappning manuellt i aktiveringsarbetsflödet.
 
@@ -67,10 +67,11 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
 | `update` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att programmässigt uppdatera segment/målgrupper på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
 | `delete` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort segment/målgrupper på din plattform. |
 | `validate` | Kör valideringar för fält i mallkonfigurationen innan du anropar partner-API:t. Du kan till exempel validera att användarens konto-ID är korrekt angivet. |
+| `notify` | Gäller endast filbaserade mål. Inkluderar alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att meddela dig om filexporter lyckades. |
 
 {style=&quot;table-layout:auto&quot;}
 
-### Första exemplet {#example-1}
+### Exempel på direktuppspelning 1 {#example-1}
 
 ```json
 {
@@ -179,7 +180,7 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
 }
 ```
 
-### Andra exemplet {#example-2}
+### Exempel på direktuppspelning 2 {#example-2}
 
 ```json
 {
@@ -273,7 +274,7 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
 }
 ```
 
-### Tredje exemplet {#example-3}
+### Exempel på direktuppspelning 3 {#example-3}
 
 ```json
 {
@@ -371,6 +372,153 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
          ]
       },
       "name":"Moviestar audience template - Third example"
+   }
+}
+```
+
+
+### Filbaserat exempel {#example-file-based}
+
+```json
+{
+   "instanceId":"34ab9cc2-2536-44a5-9dc5-b2fea60b3bd6",
+   "createdDate":"2021-07-26T19:30:52.012490Z",
+   "lastModifiedDate":"2021-07-27T21:25:42.763478Z",
+   "metadataTemplate":{
+      "create":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
+         "httpMethod":"POST",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "requestBody":{
+            "json":{
+               "segments":[
+                  {
+                     "name":"{{segment.name}}",
+                     "description":"{{segment.description}}",
+                     "source_type":"FIRST_PARTY",
+                     "ad_account_id":"{{customerData.accountId}}",
+                     "retention_in_days":180
+                  }
+               ]
+            }
+         },
+         "responseFields":[
+            {
+               "value":"{{body.segments[0].segment.id}}",
+               "name":"externalAudienceId"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "update":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
+         "httpMethod":"PUT",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "requestBody":{
+            "json":{
+               "segments":[
+                  {
+                     "id":"{{segment.alias}}",
+                     "name":"{{segment.name}}",
+                     "description":"{{segment.description}}"
+                  }
+               ]
+            }
+         },
+         "responseFields":[
+            {
+               "value":"{{body.segments[0].segment.id}}",
+               "name":"externalAudienceId"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "notify":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
+         "httpMethod":"PUT",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "requestBody":{
+            "json":{
+               "segments":[
+                  {
+                     "id":"{{segment.alias}}",
+                     "name":"{{segment.name}}",
+                     "description":"{{segment.description}}"
+                  }
+               ]
+            }
+         },
+         "responseFields":[
+            {
+               "value":"{{body.segments[0].segment.id}}",
+               "name":"externalAudienceId"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "delete":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
+         "httpMethod":"DELETE",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "name":"Moviestar destination audience template - Example 1"
    }
 }
 ```

@@ -2,9 +2,9 @@
 description: Använd autentiseringskonfigurationerna som stöds i Adobe Experience Platform Destination SDK för att autentisera användare och aktivera data till målslutpunkten.
 title: Autentiseringskonfiguration
 exl-id: 33eaab24-f867-4744-b424-4ba71727373c
-source-git-commit: e6d922800c17312df8529061c56d8a2deac46662
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '256'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -13,18 +13,32 @@ ht-degree: 0%
 
 ## Autentiseringstyper som stöds {#supported-authentication-types}
 
-Adobe Experience Platform mål-SDK har stöd för flera autentiseringstyper:
+Den autentiseringskonfiguration som du väljer avgör hur Experience Platform ska autentisera till ditt mål i plattformsgränssnittet.
+
+Adobe Experience Platform Destination SDK stöder flera autentiseringstyper:
 
 * Bärarautentisering
+* (Beta) Amazon S3-autentisering
+* (Beta) Azure-anslutningssträng
+* (Beta) Azure-tjänstens huvudnamn
+* (Beta) SFTP med SSH-nyckel
+* (Beta) SFTP med lösenord
 * OAuth 2 med auktoriseringskod
 * OAUth 2 med lösenordsbeviljande
 * OAuth 2 med klientautentiseringsuppgifter
 
-Du kan konfigurera autentiseringsinformationen för ditt mål via `customerAuthenticationConfigurations` parametrarna för `/destinations` slutpunkt. Se [avsnittet med konfigurationer för kundautentisering](./destination-configuration.md#customer-authentication-configurations) i artikeln om målkonfigurationen och avsnitten nedan för mer ingående information om konfigurationerna för varje autentiseringstyp.
+Du kan konfigurera autentiseringsinformationen för ditt mål via `customerAuthenticationConfigurations` parametrarna för `/destinations` slutpunkt.
+
+I följande avsnitt finns information om autentiseringskonfigurationen för varje typ av mål:
+
+* [Autentiseringskonfigurationer för direktuppspelningsmål](destination-configuration.md#customer-authentication-configurations)
+* [Autentiseringskonfigurationer för filbaserade mål](file-based-destination-configuration.md#customer-authentication-configurations)
 
 ## Bärarautentisering {#bearer}
 
-Om du vill konfigurera autentisering av bearer-typ för dina mål behöver du bara konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Bearer-autentisering stöds för direktuppspelningsmål i Experience Platform.
+
+Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
 
 ```json
    "customerAuthenticationConfigurations":[
@@ -34,9 +48,101 @@ Om du vill konfigurera autentisering av bearer-typ för dina mål behöver du ba
    ]
 ```
 
-## OAuth 2-autentisering {#oauth2}
+## (Beta) [!DNL Amazon S3] autentisering {#s3}
 
-Mer information om hur du ställer in de olika OAuth 2-flödena som stöds, samt om anpassat OAuth 2-stöd, finns i dokumentationen för mål-SDK på [OAuth 2-autentisering](./oauth2-authentication.md).
+[!DNL Amazon S3] autentisering stöds för filbaserade mål i Experience Platform.
+
+>[!IMPORTANT]
+>
+>Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+
+Om du vill konfigurera Amazon S3-autentisering för ditt mål konfigurerar du `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+
+```json
+   "customerAuthenticationConfigurations":[
+      {
+         "authType":"S3"
+      }
+   ]
+```
+
+## (Beta) [!DNL Azure Blob Storage] {#blob}
+
+[!DNL Azure Blob Storage] autentisering stöds för filbaserade mål i Experience Platform.
+
+>[!IMPORTANT]
+>
+>Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+
+Konfigurera [!DNL Azure Blob] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+
+```json
+   "customerAuthenticationConfigurations":[
+     {
+        "authType":"AZURE_CONNECTION_STRING"
+     }
+  ]
+```
+
+## (Beta) [!DNL Azure Data Lake Storage] {#adls}
+
+[!DNL Azure Data Lake Storage] autentisering stöds för filbaserade mål i Experience Platform.
+
+>[!IMPORTANT]
+>
+>Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+
+Konfigurera [!DNL Azure Data Lake Storage] (ADLS) autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+
+```json
+   "customerAuthenticationConfigurations":[
+     {
+        "authType":"AZURE_SERVICE_PRINCIPAL"
+     }
+  ]
+```
+
+## (Beta) [!DNL SFTP] autentisering med [!DNL SSH] key {#sftp-ssh}
+
+[!DNL SFTP] autentisering med [!DNL SSH] -nyckeln stöds för filbaserade mål i Experience Platform.
+
+>[!IMPORTANT]
+>
+>Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+
+Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+
+```json
+   "customerAuthenticationConfigurations":[
+      {
+         "authType":"SFTP_WITH_SSH_KEY"
+      }
+   ]
+```
+
+## (Beta) [!DNL SFTP] autentisering med lösenord {#sftp-password}
+
+[!DNL SFTP] autentisering med lösenord stöds för filbaserade mål i Experience Platform.
+
+>[!IMPORTANT]
+>
+>Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+
+Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+
+```json
+   "customerAuthenticationConfigurations":[
+      {
+         "authType":"SFTP_WITH_PASSWORD"
+      }
+   ]
+```
+
+## [!DNL OAuth 2] autentisering {#oauth2}
+
+[!DNL OAuth 2] Autentisering stöds för direktuppspelningsmål i Experience Platform.
+
+Mer information om hur du ställer in de olika OAuth 2-flödena som stöds, samt om anpassat OAuth 2-stöd, finns i Destinationens SDK dokumentation på [OAuth 2-autentisering](./oauth2-authentication.md).
 
 
 ## När ska du använda `/credentials` API-slutpunkt {#when-to-use}

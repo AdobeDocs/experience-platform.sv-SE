@@ -1,15 +1,15 @@
 ---
-description: På den här sidan finns all information du behöver för att kunna granska ett mål som skapats med Destination SDK.
-title: Skicka för granskning till ett mål som skapats i Destination SDK
+description: På den här sidan finns all information du behöver för att skicka in en målversion som skapats med Destination SDK för granskning.
+title: Skicka för granskning av ett mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
+source-git-commit: 111da9ce3e38096d11a1910929ee892e5661722c
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 0%
 
 ---
 
-# Skicka för granskning till ett mål som skapats i Destination SDK
+# Skicka för granskning av ett mål som skapats i Destination SDK
 
 ## Översikt {#overview}
 
@@ -37,6 +37,7 @@ Ange en beskrivning av de användningsfall som din destination löser för Exper
 ## Testresultat efter användning av testmåls-API
 
 Tillhandahåll testresultat efter användning av [API för testmål](./test-destination.md) slutpunkt för att utföra ett HTTP-anrop till målet. Det inkluderar:
+
 * Den fullständiga API-begäran (huvuden och brödtext) som görs till målslutpunkten med hjälp av testnings-API:t.
 * API-svaret som togs emot från målslutpunkten.
 

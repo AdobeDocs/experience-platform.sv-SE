@@ -1,35 +1,31 @@
 ---
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
-title: Använd Destination SDK för att konfigurera ett mål för direktuppspelning
+title: Använd Destination SDK för att konfigurera ett direktuppspelningsmål
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: b3d0f0c43b60895961cee2ee54518c0450e2e2f7
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
 
-# Använd Destination SDK för att konfigurera ett mål för direktuppspelning
+# Använd Destination SDK för att konfigurera ett direktuppspelningsmål
 
 ## Översikt {#overview}
 
-Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativ i mål-SDK](./configuration-options.md) och i andra Destination SDK-funktioner och API-referensdokument för att konfigurera en [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
-
->[!NOTE]
->
->Det går för närvarande inte att konfigurera ett batchmål via Destination SDK.
+Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativ i mål-SDK](./configuration-options.md) och i andra Destinationer SDK och API-referensdokument för att konfigurera [direktuppspelningsmål](/help/destinations/destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med Destination SDK](./getting-started.md) sida med information om hur du får de autentiseringsuppgifter för Adobe I/O som krävs och andra krav för att arbeta med Destination SDK API:er.
+Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med Destination SDK](./getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
 
-## Steg för hur du använder konfigurationsalternativen i Destination SDK för att konfigurera destinationen {#steps}
+## Steg för att använda konfigurationsalternativen i Destinationen SDK för att konfigurera destinationen {#steps}
 
-![Illustrerade steg för att använda Destination SDK-slutpunkter](./assets/destination-sdk-steps.png)
+![Illustrerade steg för att använda Destinationens SDK slutpunkter](./assets/destination-sdk-steps.png)
 
 ## Steg 1: Skapa en server- och mallkonfiguration {#create-server-template-configuration}
 
-Börja med att skapa en server- och mallkonfiguration med `/destinations-server` slutpunkt (läs [API-referens](./destination-server-api.md)). Mer information om server- och mallkonfigurationen finns i [Server- och mallspecifikationer](./configuration-options.md#server-and-template) i referensavsnittet.
+Börja med att skapa en server- och mallkonfiguration med `/destinations-server` slutpunkt (läs [API-referens](destination-server-api.md)). Mer information om server- och mallkonfigurationen finns i [Server- och mallspecifikationer](server-and-template-configuration.md) i referensavsnittet.
 
 Nedan visas ett exempel på en konfiguration. Observera att mallen för meddelandeomformning i `requestBody.value` parametern behandlas i steg 3, [Skapa omformningsmall](./configure-destination-instructions.md#create-transformation-template).
 
@@ -58,7 +54,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 ## Steg 2: Skapa målkonfiguration {#create-destination-configuration}
 
-Nedan visas ett exempel på en konfiguration för en målmall som skapats med `/destinations` API-slutpunkt. Mer information om den här mallen finns i [Målkonfiguration](./destination-configuration.md).
+Nedan visas ett exempel på en konfiguration för en målmall som skapats med `/destinations` API-slutpunkt. Mer information om den här konfigurationen finns i [Målkonfiguration](./destination-configuration.md).
 
 Om du vill ansluta server- och mallkonfigurationen i steg 1 till den här målkonfigurationen lägger du till instans-ID:t för servern och mallkonfigurationen som `destinationServerId` här.
 
@@ -156,11 +152,11 @@ När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du
 
 ## Steg 4: Skapa konfiguration för målgruppsmetadata {#create-audience-metadata-configuration}
 
-För vissa destinationer kräver Destination SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Se [Hantering av målgruppsmetadata](./audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
+För vissa destinationer kräver Destinationen SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Se [Hantering av målgruppsmetadata](./audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID:t för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
-## Steg 5: Skapa konfiguration av autentiseringsuppgifter/Konfigurera autentisering {#set-up-authentication}
+## Steg 5: Konfigurera autentisering {#set-up-authentication}
 
 Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller `"authenticationRule": "PLATFORM_AUTHENTICATION"` i målkonfigurationen ovan kan du konfigurera autentisering för målet med hjälp av `/destination` eller `/credentials` slutpunkt.
 
