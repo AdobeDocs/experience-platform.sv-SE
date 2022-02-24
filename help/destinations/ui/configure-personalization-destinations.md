@@ -6,9 +6,9 @@ seo-title: Configure personalization destinations for same-page and next-page pe
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
 seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: 69db8dbc315f97a0133bcc761ebf850d587dd7d1
+source-git-commit: a990e829c8ba034f31b883360495513f3f5b4cfc
 workflow-type: tm+mt
-source-wordcount: '370'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -24,6 +24,10 @@ I den här artikeln finns stegvisa instruktioner för hur du konfigurerar Experi
 I videon nedan visas dessutom en översikt över hela konfigurationsprocessen.
 
 >[!VIDEO](https://video.tv.adobe.com/v/340091/)
+
+>[!NOTE]
+>
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i konfigurationsstegen som beskrivs i avsnitten nedan.
 
 ## Steg 1: Konfigurera ett datastream i användargränssnittet för datainsamling {#configure-datastream}
 
