@@ -2,7 +2,7 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med hjälp av de datainsamlingstekniker som tillhandahålls av Adobe Experience Platform.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 1125907e02c23b89ea672f424d1bbf9e9de0ba04
+source-git-commit: d326267cacf8d678937e8c959de8acbfbbb88c93
 workflow-type: tm+mt
 source-wordcount: '2536'
 ht-degree: 0%
@@ -103,7 +103,7 @@ I användargränssnittet för datainsamling väljer du **[!UICONTROL Datastreams
 
 Konfigurationskraven för en datastream beror på vilka produkter och funktioner du skickar data till. Mer information om konfigurationsalternativen för respektive produkt finns i [datastreams - översikt](../edge/fundamentals/datastreams.md).
 
-## Installera och konfigurera Web SDK {#install}
+## Installera och konfigurera Web SDK
 
 När du har skapat ett schema och ett datastream är nästa steg att installera och konfigurera Platform Web SDK för att börja skicka data till Edge Network.
 
