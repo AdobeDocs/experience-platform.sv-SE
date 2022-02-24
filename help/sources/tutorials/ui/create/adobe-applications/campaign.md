@@ -4,10 +4,10 @@ title: Skapa en källanslutning till Adobe Campaign Managed Services med hjälp 
 description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Services med hjälp av plattformsgränssnittet.
 hide: true
 hidefromtoc: true
-source-git-commit: 24d7a549e83245fc363bd76f26ba58130e980c6c
+source-git-commit: 1b1f25093db642b394c6e05f15f6d1071096eb36
 workflow-type: tm+mt
-source-wordcount: '294'
-ht-degree: 0%
+source-wordcount: '280'
+ht-degree: 1%
 
 ---
 
@@ -31,30 +31,24 @@ Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan o
 
 Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Campaign Managed Services]** och sedan markera **[!UICONTROL Add data]**.
 
-### Markera data
+### Markera data {#select-data}
 
 The [!UICONTROL Select data] visas, där du får ett gränssnitt för att konfigurera värden för [!UICONTROL Adobe Campaign instance], [!UICONTROL Target mapping]och [!UICONTROL Schema name].
 
-#### Välj kampanjinstans {#select-campaign-instance}
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_instance"
->title="Välj kampanjinstans"
+>title="ACC-instans"
 >abstract="Namnet på den Adobe Campaign Classic-miljö som du vill använda."
 >text="Learn more in documentation"
 
-#### Välj kampanjmappning {#select-campaign-mapping}
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_mapping"
->title="Välj mappning av kampanjmål"
+>title="Målmappning"
 >abstract="Målmappningar är tekniska objekt som används av Campaign för att leverera meddelanden och innehåller alla tekniska inställningar som krävs för att skicka leveranser (adresser, telefonnummer, anmälningsindikatorer, ytterligare identifierare..)."
 >text="Learn more in documentation"
 
-#### Välj kampanjschema {#select-campaign-schema}
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_schema"
->title="Välj kampanjschemanamn"
+>title="Schemanamn"
 >abstract="Namnet på entiteten som definieras i Adobe Campaign-databasen."
 >text="Learn more in documentation"
