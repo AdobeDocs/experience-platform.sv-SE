@@ -4,7 +4,7 @@ title: Skapa en källanslutning till Adobe Campaign Managed Services med hjälp 
 description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Services med hjälp av plattformsgränssnittet.
 hide: true
 hidefromtoc: true
-source-git-commit: 1b1f25093db642b394c6e05f15f6d1071096eb36
+source-git-commit: 57a34b10e40dee80638392477d49c21e107c491f
 workflow-type: tm+mt
 source-wordcount: '280'
 ht-degree: 1%
@@ -33,8 +33,6 @@ Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Ca
 
 ### Markera data {#select-data}
 
-The [!UICONTROL Select data] visas, där du får ett gränssnitt för att konfigurera värden för [!UICONTROL Adobe Campaign instance], [!UICONTROL Target mapping]och [!UICONTROL Schema name].
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_instance"
 >title="ACC-instans"
@@ -52,3 +50,5 @@ The [!UICONTROL Select data] visas, där du får ett gränssnitt för att konfig
 >title="Schemanamn"
 >abstract="Namnet på entiteten som definieras i Adobe Campaign-databasen."
 >text="Learn more in documentation"
+
+The [!UICONTROL Select data] visas, där du får ett gränssnitt för att konfigurera värden för [!UICONTROL Adobe Campaign instance], [!UICONTROL Target mapping]och [!UICONTROL Schema name].
