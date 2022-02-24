@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 2f8e31321345a14c098f795b50d33c700ac0faa8
+source-git-commit: e03f680bfa2ee4c1e79e7ee22724702ac3721a84
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '724'
 ht-degree: 1%
 
 ---
@@ -157,9 +157,9 @@ ht-degree: 1%
    * Destination SDK {#functionality}
       * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
       * [Konfiguration för direktuppspelningsmål](./destination-sdk/destination-configuration.md)
-      * [Filbaserad målkonfiguration](./destination-sdk/file-based-destination-configuration.md)
+      * [(Beta) Filbaserad målkonfiguration](./destination-sdk/file-based-destination-configuration.md)
       * [Serverspecifikationer och mallspecifikationer för direktuppspelningsmål](./destination-sdk/server-and-template-configuration.md)
-      * [Filbaserad målserver och filspecifikationer](./destination-sdk/server-and-file-configuration.md)
+      * [(Beta) Filbaserade mål, server- och filspecifikationer](./destination-sdk/server-and-file-configuration.md)
       * [Meddelandeformat](./destination-sdk/message-format.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/audience-metadata-management.md)
       * Autentisering {#authentication}
