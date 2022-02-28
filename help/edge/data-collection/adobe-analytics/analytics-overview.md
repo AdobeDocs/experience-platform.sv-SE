@@ -1,18 +1,18 @@
 ---
-title: Skicka data till Adobe Analytics med Adobe Experience Platform Web SDK
+title: Använda Adobe Analytics med Platform Web SDK
 description: Lär dig hur du skickar data till Adobe Analytics med Adobe Experience Platform Web SDK.
 keywords: adobe analytics;analytics;mapped data;mapped vars;
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
+source-git-commit: 45becec3b198821e38afbc21fe42a8901e352888
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '189'
 ht-degree: 0%
 
 ---
 
-# Skicka data till Adobe Analytics
+# Använda Adobe Analytics med Platform Web SDK
 
-Adobe Experience Platform [!DNL Web SDK] kan skicka data till Adobe Analytics. Detta fungerar genom att översätta `xdm` till ett format som Adobe Analytics kan använda.
+Adobe Experience Platform [!DNL Web SDK] kan skicka data till Adobe Analytics. Detta fungerar genom översättning `xdm` till ett format som Adobe Analytics kan använda.
 
 ## Inställningar
 
@@ -20,7 +20,7 @@ Adobe Analytics hämtar automatiskt de data som du skickar om du har en rapports
 
 ## Automatiskt mappade data
 
-Adobe Experience Platform [!DNL Edge Network] mappar automatiskt många XDM-variabler. Den fullständiga listan med dessa variabler listas [här](automatically-mapped-vars.md).
+Adobe Experience Platform [!DNL Edge Network] mappar automatiskt många XDM-variabler. En fullständig lista över dessa variabler finns [här](automatically-mapped-vars.md).
 
 ## Manuellt mappade data
 
