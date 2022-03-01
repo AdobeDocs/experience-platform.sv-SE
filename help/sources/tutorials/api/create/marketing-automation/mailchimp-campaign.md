@@ -1,36 +1,36 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Skapa ett dataflöde för MailChimp-kampanj med API:t för Flow Service
+title: Skapa ett dataflöde för Mailchimp Campaign med API:t för flödestjänsten
 topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp Campaign med API:t för Flow Service.
 exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: fd851dea5623522e4706c6beb8bd086d466773b5
 workflow-type: tm+mt
 source-wordcount: '2319'
 ht-degree: 0%
 
 ---
 
-# Skapa ett dataflöde för [!DNL MailChimp Campaign] med API:t för Flow Service
+# Skapa ett dataflöde för [!DNL Mailchimp Campaign] med API:t för Flow Service
 
-I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [!DNL MailChimp Campaign] data till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [!DNL Mailchimp Campaign] data till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Förutsättningar
 
-Innan du kan ansluta [!DNL MailChimp] till Adobe Experience Platform med OAuth 2-uppdateringskod måste du först hämta din åtkomsttoken för [!DNL MailChimp.] Se [[!DNL MailChimp] OAuth 2 guide](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) om du vill ha detaljerade anvisningar om hur du hittar din åtkomsttoken.
+Innan du kan ansluta [!DNL Mailchimp] till Adobe Experience Platform med OAuth 2-uppdateringskod måste du först hämta din åtkomsttoken för [!DNL MailChimp.] Se [[!DNL Mailchimp] OAuth 2 guide](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) om du vill ha detaljerade anvisningar om hur du hittar din åtkomsttoken.
 
 ## Skapa en basanslutning {#base-connection}
 
-När du har hämtat [!DNL MailChimp] autentiseringsreferenser, du kan nu starta processen att skapa dataflöde för att [!DNL MailChimp Campaign] data till plattformen. Det första steget i att skapa ett dataflöde är att skapa en basanslutning.
+När du har hämtat [!DNL Mailchimp] autentiseringsreferenser, du kan nu starta processen att skapa dataflöde för att [!DNL Mailchimp Campaign] data till plattformen. Det första steget i att skapa ett dataflöde är att skapa en basanslutning.
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-[!DNL MailChimp] har stöd för både grundläggande autentisering och OAuth 2-uppdateringskod. I följande exempel finns vägledning om hur du autentiserar med någon av autentiseringstyperna.
+[!DNL Mailchimp] har stöd för både grundläggande autentisering och OAuth 2-uppdateringskod. I följande exempel finns vägledning om hur du autentiserar med någon av autentiseringstyperna.
 
-### Skapa en [!DNL MailChimp] basanslutning med grundläggande autentisering
+### Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering
 
-Skapa en [!DNL MailChimp] basanslutning med grundläggande autentisering, gör en POST-förfrågan till `/connections` slutpunkt för [!DNL Flow Service] API:t anger autentiseringsuppgifter för `host`, `authorizationTestUrl`, `username`och `password`.
+Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering, gör en POST-förfrågan till `/connections` slutpunkt för [!DNL Flow Service] API:t anger autentiseringsuppgifter för `host`, `authorizationTestUrl`, `username`och `password`.
 
 **API-format**
 
@@ -40,7 +40,7 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en basanslutning för [!DNL MailChimp]:
+Följande begäran skapar en basanslutning för [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -51,8 +51,8 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
-      "name": "MailChimp base connection with basic authentication",
-      "description": "MailChimp Campaign base connection with basic authentication",
+      "name": "Mailchimp base connection with basic authentication",
+      "description": "Mailchimp Campaign base connection with basic authentication",
       "connectionSpec": {
           "id": "c8ce8c8c-37fb-4162-9fbf-c2f181e04a7a",
           "version": "1.0"
@@ -75,10 +75,10 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via [!DNL Flow Service] API. |
 | `auth.specName` | Autentiseringstypen som du använder för att ansluta källan till plattformen. |
-| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL MailChimp] API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
+| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL Mailchimp] API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | `auth.params.authorizationTestUrl` | (Valfritt) URL:en för auktoriseringstestet används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
-| `auth.params.username` | Användarnamnet som motsvarar ditt [!DNL MailChimp] konto. Detta krävs för grundläggande autentisering. |
-| `auth.params.password` | Lösenordet som motsvarar [!DNL MailChimp] konto. Detta krävs för grundläggande autentisering. |
+| `auth.params.username` | Användarnamnet som motsvarar ditt [!DNL Mailchimp] konto. Detta krävs för grundläggande autentisering. |
+| `auth.params.password` | Lösenordet som motsvarar [!DNL Mailchimp] konto. Detta krävs för grundläggande autentisering. |
 
 **Svar**
 
@@ -91,9 +91,9 @@ Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika a
 }
 ```
 
-### Skapa en [!DNL MailChimp] basanslutning med OAuth 2-uppdateringskod
+### Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod
 
-Skapa en [!DNL MailChimp] basanslutning med OAuth 2-uppdateringskod, gör en POST-förfrågan till `/connections` slutpunkt när autentiseringsuppgifter anges för `host`, `authorizationTestUrl`och `accessToken`.
+Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod, gör en POST-förfrågan till `/connections` slutpunkt när autentiseringsuppgifter anges för `host`, `authorizationTestUrl`och `accessToken`.
 
 **API-format**
 
@@ -103,7 +103,7 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en basanslutning för [!DNL MailChimp]:
+Följande begäran skapar en basanslutning för [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -114,8 +114,8 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
-      "name": "MailChimp base connection with OAuth 2 refresh code",
-      "description": "MailChimp Campaign base connection with OAuth 2 refresh code",
+      "name": "Mailchimp base connection with OAuth 2 refresh code",
+      "description": "Mailchimp Campaign base connection with OAuth 2 refresh code",
       "connectionSpec": {
           "id": "c8ce8c8c-37fb-4162-9fbf-c2f181e04a7a",
           "version": "1.0"
@@ -137,7 +137,7 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när du har registrerat källan med [!DNL Flow Service] API. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
-| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL MailChimp] API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
+| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL Mailchimp] API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | `auth.params.authorizationTestUrl` | (Valfritt) Testnings-URL:en för auktorisering används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
 | `auth.params.accessToken` | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
@@ -279,7 +279,7 @@ POST /sourceConnections
 
 **Begäran**
 
-Följande begäran skapar en källanslutning för [!DNL MailChimp]:
+Följande begäran skapar en källanslutning för [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -310,10 +310,10 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
-| `baseConnectionId` | Basanslutnings-ID för [!DNL MailChimp]. Detta ID genererades i ett tidigare steg. |
+| `baseConnectionId` | Basanslutnings-ID för [!DNL Mailchimp]. Detta ID genererades i ett tidigare steg. |
 | `connectionSpec.id` | Det ID för anslutningsspecifikation som motsvarar källan. |
-| `data.format` | Formatet på [!DNL MailChimp] data som du vill importera. |
-| `params.campaignId` | The [!DNL MailChimp] kampanj-ID identifierar en specifik [!DNL MailChimp] , som sedan gör det möjligt att skicka e-post till era listor/målgrupper. |
+| `data.format` | Formatet på [!DNL Mailchimp] data som du vill importera. |
+| `params.campaignId` | The [!DNL Mailchimp] kampanj-ID identifierar en specifik [!DNL Mailchimp] , som sedan gör det möjligt att skicka e-post till era listor/målgrupper. |
 
 **Svar**
 
@@ -354,7 +354,7 @@ POST /targetConnections
 
 **Begäran**
 
-Följande begäran skapar en målanslutning för [!DNL MailChimp]:
+Följande begäran skapar en målanslutning för [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -389,7 +389,7 @@ curl -X POST \
 | `name` | Namnet på målanslutningen. Kontrollera att namnet på målanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om målanslutningen. |
 | `description` | Ett valfritt värde som du kan inkludera för att ange mer information om målanslutningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Lake]. Detta fasta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | Formatet på [!DNL MailChimp] data som du vill ta med till plattformen. |
+| `data.format` | Formatet på [!DNL Mailchimp] data som du vill ta med till plattformen. |
 | `params.dataSetId` | Måldatauppsättnings-ID som hämtades i ett tidigare steg. |
 
 
@@ -406,7 +406,7 @@ Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`
 
 >[!IMPORTANT]
 >
->Förinställningsfunktioner för data stöds för närvarande inte för [!DNL MailChimp Campaign].
+>Förinställningsfunktioner för data stöds för närvarande inte för [!DNL Mailchimp Campaign].
 
 <!--
 ## Create a mapping {#mapping}
@@ -476,7 +476,7 @@ A successful response returns details of the newly created mapping including its
 
 ## Skapa ett flöde {#flow}
 
-Det sista steget mot att [!DNL MailChimp] data till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
+Det sista steget mot att [!DNL Mailchimp] data till plattformen är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Källanslutnings-ID](#source-connection)
 * [Målanslutnings-ID](#target-connection)
