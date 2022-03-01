@@ -6,21 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: da7b6fe8f9d274b8e5f27138a1baf8caf63a0c01
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '474'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Google PubSub]-källanslutning i användargränssnittet
+# Skapa en [!DNL Google PubSub] källanslutning i användargränssnittet
 
->[!NOTE]
->
-> [!DNL Google PubSub]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
-
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Google PubSub] (kallas nedan [!DNL PubSub]) med hjälp av användargränssnittet för plattformen.
+Den här självstudiekursen innehåller steg för att skapa en [!DNL Google PubSub] (nedan kallad[!DNL PubSub]&quot;) med användargränssnittet för plattformen.
 
 ## Komma igång
 
@@ -29,49 +24,49 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Om du redan har en giltig [!DNL PubSub]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
+Om du redan har en giltig [!DNL PubSub] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL PubSub] till plattformen måste du ange ett giltigt värde för följande autentiseringsuppgifter:
+För att kunna ansluta [!DNL PubSub] till Platform måste du ange ett giltigt värde för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `projectId` | Det projekt-ID som krävs för att autentisera [!DNL PubSub]. |
-| `credentials` | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för att autentisera [!DNL PubSub]. |
+| `projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
+| `credentials` | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för autentisering [!DNL PubSub]. |
 
-Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication)-dokument. Om du använder kontobaserad autentisering för tjänster kan du läsa följande [PubSub-guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar autentiseringsuppgifter.
+Mer information om dessa värden finns i följande [PubSub-autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du använder kontobaserad autentisering för tjänster, se följande [PubSub Guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
 >[!TIP]
 >
 >Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PubSub]-konto till Platform.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL PubSub] konto till plattform.
 
-## Anslut ditt [!DNL PubSub]-konto
+## Koppla samman [!DNL PubSub] konto
 
-I [Plattformsgränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan [!UICONTROL Sources]. Skärmen [!UICONTROL Catalog] visar en mängd olika källor som du kan skapa ett konto för.
+I [Plattformsgränssnitt](https://platform.adobe.com), markera **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under kategorin [!UICONTROL Cloud storage] väljer du **[!UICONTROL Google PubSub]** och sedan **[!UICONTROL Add data]**.
+Under [!UICONTROL Cloud storage] kategori, välj **[!UICONTROL Google PubSub]** och sedan markera **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
-Sidan **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+The **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du det [!DNL PubSub]-konto som du vill skapa ett nytt dataflöde med och väljer sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda ett befintligt konto väljer du [!DNL PubSub] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/google-pubsub/existing.png)
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och anger sedan ett namn, en valfri beskrivning och inloggningsuppgifterna för [!DNL PubSub] i indataformuläret. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och [!DNL PubSub] autentiseringsuppgifter för indataformuläret. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![new](../../../../images/tutorials/create/google-pubsub/new.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen måste du skapa en anslutning mellan ditt [!DNL PubSub]-konto och din plattform. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta direktuppspelningsdata från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage-streaming.md).
+Om du följer den här självstudiekursen måste du skapa en anslutning mellan [!DNL PubSub] konto och plattform. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta strömmande data från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage-streaming.md).

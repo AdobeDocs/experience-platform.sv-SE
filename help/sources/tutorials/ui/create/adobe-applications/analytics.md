@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 96791e24c59734f82113972a8db9191ea1c0c557
+source-git-commit: 06232d4b567ba1d6bed55226aaa08147510c4498
 workflow-type: tm+mt
-source-wordcount: '1461'
+source-wordcount: '1479'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,10 @@ The **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Report
 <!---Analytics Report Suites can be configured for one sandbox at a time. To import the same Report Suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
 
 ### Mappning
+
+>[!IMPORTANT]
+>
+>Data Prep-stöd för [!DNL Analytics] Källan finns för närvarande i betaversionen. Funktionen och dokumentationen kan komma att ändras.
 
 Innan du kan mappa [!DNL Analytics] data för XDM-målschemat måste du först välja om du använder ett standardschema eller ett anpassat schema.
 
