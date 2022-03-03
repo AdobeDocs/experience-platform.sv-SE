@@ -2,9 +2,9 @@
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
 description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 92344ca9c2daf603d866c8a3cc4e92b72a382fb1
+source-git-commit: 1f9454148ed4ee95f0d86f03c4bcf8c917d0aeea
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '991'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ The [!UICONTROL IMS Organization ID] är den organisation som du vill att data s
 
 ### **[!UICONTROL Edge Domain]**
 
-The [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en förstahandsleverantör finns i listan [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
+The [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Adobe rekommenderar att du använder en CNAME (1st-party domain) för det här tillägget. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en förstahandsleverantör finns i listan [här](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
 
 ## [!UICONTROL Datastreams]
 
