@@ -1,38 +1,38 @@
 ---
-title: Använda Offer decisioning med Platform Web SDK
-description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
-keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
+title: Using Offer Decisioning with the Platform Web SDK
+description: The Adobe Experience Platform Web SDK can deliver and render personalized offers managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning UI or API.
+keywords: offer decisioning;decisioning;Web SDK;Platform Web SDK;personalized offers;deliver offers;offer delivery;offer personalization;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 5a688fed26a8f641347ed1c625bfe448004f75b0
+source-git-commit: b0cc2343a502e180267d86bca4a699c02f2d6f3d
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '870'
 ht-degree: 1%
 
 ---
 
-# Använda Offer decisioning med Platform Web SDK
+# Using Offer Decisioning with the Platform Web SDK
 
 >[!NOTE]
 >
->Offer decisioning i Adobe Experience Platform Web SDK är tillgänglig i ett tidigt skede för vissa användare. Den här funktionen är inte tillgänglig för alla IMS-organisationer.
+>The use of Offer Decisioning in Adobe Experience Platform Web SDK is available in early access to select users. This functionality is not available to all IMS organizations.
 
-Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av användargränssnittet (UI) eller API:erna för Offera decisioningen.
+[!DNL Web SDK] You can create your offers and other related objects using the Offer Decisioning user interface (UI) or APIs.
 
 ## Förutsättningar
 
-* IMS-organisation är aktiverad för kantbeslut
-* Erbjudanden, skapade aktiviteter
-* Datastream publiceras
+* IMS organization is enabled for edge decisioning
+* Offers, Activities created
+* Datastream is published
 
 ## Terminologi
 
-Det är viktigt att förstå följande terminologi när du arbetar med Offer decisioning. Mer information och ytterligare termer finns i [Offera decisioningens ordlista](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
+It is important to understand the following terminology when working with Offer Decisioning. [](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)
 
-* **Behållare:** En behållare är en isoleringsmekanism som håller olika bekymmer isär. Behållar-ID är det första sökvägselementet för alla databas-API:er. Alla beslutsobjekt finns i en behållare.
+* **** The container ID is the first path element for all repository APIs. All decisioning objects reside within a container.
 
-* **Beslutsomfattningar:** För Offer decisioning är beslutsomfattningar Base64-kodade strängar för JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
+* ****
 
-   *Beslutsomfattelse JSON:*
+   **
 
    ```json
    {
@@ -41,7 +41,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
    }
    ```
 
-   *Beslutsomfattare Base64-kodad sträng:*
+   **
 
    ```json
    "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
@@ -49,28 +49,28 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
    >[!TIP]
    >
-   >Du kan kopiera värdet för beslutsomfånget från sidan **Aktivitetsöversikt** i användargränssnittet.
+   >****
 
    ![](assets/decision-scope-copy.png)
 
-* **Datastreams:** Mer information finns i  [](../../fundamentals/datastreams.md) datastreamsdokumentationen.
+* ****[](../../fundamentals/datastreams.md)
 
-* **Identitet**: Mer information finns i den här dokumentationen om hur  [Platform Web SDK använder identitetstjänsten](../../identity/overview.md).
+* ****[](../../identity/overview.md)
 
-## Aktivera Offer decisioning
+## Enabling Offer Decisioning
 
-Så här aktiverar du Offer decisioning:
+To enable Offer Decisioning, perform the following steps:
 
-1. Aktivera Adobe Experience Platform i [datastream](../../fundamentals/datastreams.md) och markera kryssrutan Offer decisioning
+1. [](../../fundamentals/datastreams.md)
 
-   ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
+   ![](./assets/offer-decisioning-edge-config.png)
 
-1. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via gränssnittet [för datainsamling](https://experience.adobe.com/#/data-collection/). Mer information finns i [snabbstartsguiden för taggar](../../../tags/quick-start/quick-start.md).
-1. [Konfigurera ](../../fundamentals/configuring-the-sdk.md) SDK för Offer decisioning. Ytterligare Offer decisioning-specifika steg finns nedan.
+1. [](../../fundamentals/installing-the-sdk.md)[](https://experience.adobe.com/#/data-collection/) [](../../../tags/quick-start/quick-start.md)
+1. [](../../fundamentals/configuring-the-sdk.md) Additional Offer Decisioning specific steps are provided below.
 
-   * Installera den fristående SDK:n
+   * Install the standalone SDK
 
-      1. Konfigurera åtgärden &quot;sendEvent&quot; med din `decisionScopes`
+      1. `decisionScopes`
 
          ```javascript
           alloy("sendEvent", {
@@ -81,36 +81,36 @@ Så här aktiverar du Offer decisioning:
              ]
           })
          ```
-   * Installera SDK via taggar
+   * Install the SDK through tags
 
-      1. [Skapa en taggegenskap](../../../tags/ui/administration/companies-and-properties.md)
-      1. [Lägg till inbäddningskoden](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      1. Installera och konfigurera Platform Web SDK-tillägget med den dataström du skapade genom att välja konfigurationen i listrutan Datastream. Mer information finns i dokumentationen om [tillägg](../../../tags/ui/managing-resources/extensions/overview.md).
+      1. [Create a tag property](../../../tags/ui/administration/companies-and-properties.md)
+      1. [](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      1. Install and configure the Platform Web SDK extension with the Datastream you created by selecting the configuration from the &quot;Datastream&quot; dropdown. [](../../../tags/ui/managing-resources/extensions/overview.md)
 
-         ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
+         ![](./assets/install-aep-web-sdk-extension.png)
 
-         ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
+         ![](./assets/configure-aep-web-sdk-extension.png)
 
-      1. Skapa nödvändiga [dataelement](../../../tags/ui/managing-resources/data-elements.md). Minimikravet är att du måste skapa en plattformsbaserad SDK-identitetskarta och ett XDM-objektdataelement för plattformswebben.
+      1. [](../../../tags/ui/managing-resources/data-elements.md) At the bare minimum, you must create a Platform Web SDK Identity Map and a Platform Web SDK XDM Object data element.
 
-         ![identity-map-data-element](./assets/identity-map-data-element.png)
+         ![](./assets/identity-map-data-element.png)
 
-         ![xdm-object-data-element](./assets/xdm-object-data-element.png)
+         ![](./assets/xdm-object-data-element.png)
 
-      1. Skapa dina [regler](../../../tags/ui/managing-resources/rules.md).
+      1. [](../../../tags/ui/managing-resources/rules.md)
 
-         * Lägg till en SDK-sändningshändelse för en plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
+         * `decisionScopes`
 
-            ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
-      1. [Skapa och publicera ett ](../../../tags/ui/publishing/libraries.md) bibliotek som innehåller alla relevanta regler, dataelement och tillägg som du har konfigurerat
+            ![](./assets/send-event-action-decisionScopes.png)
+      1. [](../../../tags/ui/publishing/libraries.md)
 
 
 
-## Exempelbegäranden och svar
+## Sample requests and responses
 
-### Ett `decisionScopes`-värde
+### `decisionScopes`
 
-**Begäran**
+****
 
 ```json
 {
@@ -137,12 +137,12 @@ Så här aktiverar du Offer decisioning:
 }
 ```
 
-| Egenskap | Obligatoriskt | Beskrivning | Gränser | Exempel |
+| Property | Required | Beskrivning | Limits | Exempel |
 |---|---|---|---|---|
-| `identityMap` | Ja | Läs den här [identitetstjänstens dokumentation](../../identity/overview.md). | En identitet per begäran. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }` |
-| `decisionScopes` | Ja | En array med Base64-kodade strängar av JSON som innehåller aktivitets- och placerings-ID:n. | Högst 30 `decisionScopes` per begäran. | `"decisionScopes": ["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="]` |
+| `identityMap` | Ja | [](../../identity/overview.md) | One identity per request. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`. <br><br>`ECID` This parameter is automatically added to the call if needed. |
+| `decisionScopes` | Ja | An array of Base64 encoded strings of JSON containing the activity and placement IDs. | `decisionScopes` | `"decisionScopes": ["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="]` |
 
-**Svar**
+****
 
 ```json
 {
@@ -189,23 +189,23 @@ Så här aktiverar du Offer decisioning:
 }
 ```
 
-| Egenskap | Beskrivning | Exempel |
+| Property | Beskrivning | Exempel |
 |---|---|---|
-| `scope` | Beslutets omfattning som resulterade i de föreslagna erbjudandena. | `"scope": "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="` |
-| `activity.id` | Unikt ID för erbjudandeaktiviteten. | `"id": "xcore:offer-activity:11cfb1fa93381aca"` |
-| `placement.id` | Unikt ID för erbjudandeplaceringen. | `"id": "xcore:offer-placement:1175009612b0100c"` |
-| `items.id` | ID för det föreslagna erbjudandet. | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
-| `schema` | Schemat för innehållet som är associerat med det föreslagna erbjudandet. | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-html"` |
-| `data.id` | ID för det föreslagna erbjudandet. | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
-| `format` | Formatet på innehållet som är associerat med det föreslagna erbjudandet. | `"format": "text/html"` |
-| `language` | En array med språk som är associerade med innehållet i det föreslagna erbjudandet. | `"language": [ "en-US" ]` |
-| `content` | Innehåll som är associerat med det föreslagna erbjudandet i form av en sträng. | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
-| `deliveryUrl` | Bildinnehåll som är associerat med det föreslagna erbjudandet i formatet för en URL. | `"deliveryURL": "https://image.jpeg"` |
-| `characteristics` | Egenskaper som är kopplade till det föreslagna erbjudandet i formatet JSON-objekt. | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
+| `scope` | The decision scope that resulted in the proposed offers. | `"scope": "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="` |
+| `activity.id` | The unique ID of the offer activity. | `"id": "xcore:offer-activity:11cfb1fa93381aca"` |
+| `placement.id` | The unique ID of the offer placement. | `"id": "xcore:offer-placement:1175009612b0100c"` |
+| `items.id` | The ID of the proposed offer. | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
+| `schema` | The schema of the content associated with the proposed offer. | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-html"` |
+| `data.id` | The ID of the proposed offer. | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
+| `format` | The format of the content associated with the proposed offer. | `"format": "text/html"` |
+| `language` | An array of languages associated with the content from the proposed offer. | `"language": [ "en-US" ]` |
+| `content` | Content associated with the proposed offer in the format of a string. | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
+| `deliveryUrl` | Image content associated with the proposed offer in the format of a URL. | `"deliveryURL": "https://image.jpeg"` |
+| `characteristics` | Characteristics associated with the proposed offer in the format of a JSON object. | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
 
-### Flera `decisionScopes`-värden
+### `decisionScopes`
 
-**Begäran**
+****
 
 ```json
 {
@@ -234,12 +234,12 @@ Så här aktiverar du Offer decisioning:
 }
 ```
 
-| Egenskap | Obligatoriskt | Beskrivning | Gränser | Exempel |
+| Property | Required | Beskrivning | Limits | Exempel |
 |---|---|---|---|---|
-| `identityMap` | Ja | Läs den här [identitetstjänstens dokumentation](../../identity/overview.md). | En identitet per begäran. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }` |
-| `decisionScopes` | Ja | En array med Base64-kodade strängar av JSON som innehåller aktivitets- och placerings-ID:n. | Högst 30 `decisionScopes` per begäran. | `"decisionScopes":["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ==", "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIyMjA4YjNhODc0MDU1OCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMjIwNDUyOTUxNGEyYzAifQ=="` |
+| `identityMap` | Ja | [](../../identity/overview.md) | One identity per request. | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`. <br><br>`ECID` This parameter is automatically added to the call if needed. |
+| `decisionScopes` | Ja | An array of Base64 encoded strings of JSON containing the activity and placement IDs. | `decisionScopes` | `"decisionScopes":["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ==", "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIyMjA4YjNhODc0MDU1OCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMjIwNDUyOTUxNGEyYzAifQ=="` |
 
-**Svar**
+****
 
 ```json
 {
@@ -316,20 +316,20 @@ Så här aktiverar du Offer decisioning:
 }
 ```
 
-| Egenskap | Beskrivning | Exempel |
+| Property | Beskrivning | Exempel |
 |---|---|---|
-| `scope` | Beslutets omfattning som resulterade i de föreslagna erbjudandena. | `"scope": "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="` |
-| `activity.id` | Unikt ID för erbjudandeaktiviteten. | `"id": "xcore:offer-activity:11cfb1fa93381123"` |
-| `placement.id` | Unikt ID för erbjudandeplaceringen. | `"xcore:offer-placement:1175009612b01123"` |
-| `items.id` | ID för det föreslagna erbjudandet. | `"id": "xcore:personalized-offer:11e36d4a22954123"` |
-| `schema` | Schemat för innehållet som är associerat med det föreslagna erbjudandet. | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-text"` |
-| `data.id` | ID för det föreslagna erbjudandet. | `"id": "xcore:personalized-offer:11e36d4a22954123"` |
-| `format` | Formatet på innehållet som är associerat med det föreslagna erbjudandet. | `"format": "text/text"` |
-| `language` | En array med språk som är associerade med innehållet i det föreslagna erbjudandet. | `"language": [ "en-US" ]` |
-| `content` | Innehåll som är associerat med det föreslagna erbjudandet i form av en sträng. | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
-| `deliveryUrl` | Bildinnehåll som är associerat med det föreslagna erbjudandet i formatet för en URL. | `"deliveryURL": "https://image.jpeg"` |
-| `characteristics` | Egenskaper som är kopplade till det föreslagna erbjudandet i formatet JSON-objekt. | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
+| `scope` | The decision scope that resulted in the proposed offers. | `"scope": "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="` |
+| `activity.id` | The unique ID of the offer activity. | `"id": "xcore:offer-activity:11cfb1fa93381123"` |
+| `placement.id` | The unique ID of the offer placement. | `"xcore:offer-placement:1175009612b01123"` |
+| `items.id` | The ID of the proposed offer. | `"id": "xcore:personalized-offer:11e36d4a22954123"` |
+| `schema` | The schema of the content associated with the proposed offer. | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-text"` |
+| `data.id` | The ID of the proposed offer. | `"id": "xcore:personalized-offer:11e36d4a22954123"` |
+| `format` | The format of the content associated with the proposed offer. | `"format": "text/text"` |
+| `language` | An array of languages associated with the content from the proposed offer. | `"language": [ "en-US" ]` |
+| `content` | Content associated with the proposed offer in the format of a string. | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
+| `deliveryUrl` | Image content associated with the proposed offer in the format of a URL. | `"deliveryURL": "https://image.jpeg"` |
+| `characteristics` | Characteristics associated with the proposed offer in the format of a JSON object. | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
 
 ## Begränsningar
 
-Vissa begränsningar för erbjudanden stöds för närvarande inte i mobila Experience Edge-arbetsflöden, till exempel Capping. Fältvärdet för begränsning anger hur många gånger ett erbjudande kan visas för alla användare. Mer information finns i [Dokumentation om regler och begränsningar för erbjudanden](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
+Some offer constraints are currently not supported with the mobile Experience Edge workflows, for example Capping. The Capping field value specifies the number of times an offer can be presented across all users. [](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility)

@@ -1,36 +1,38 @@
 ---
 solution: Experience Platform
-title: Segmentdefinitionsklass
+title: Segment Definition Class
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över segmentdefinitionsklassen i XDM (Experience Data Model).
+description: This document provides an overview of the Segment definition class in Experience Data Model (XDM).
 exl-id: c0f7b04c-2266-4d08-89a1-67ba758a51a7
-source-git-commit: 632ea4e2a94bfcad098a5fc5a5ed8985c0f41e0e
+source-git-commit: c0437b8f9d93c46dbec991a33a893a5b9e0cdf2c
 workflow-type: tm+mt
-source-wordcount: '366'
+source-wordcount: '369'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Segment definition] class
+# [!UICONTROL Segment definition]
 
-&quot;[!UICONTROL Segment definition]&quot; är en XDM-klass (Standard Experience Data Model) som hämtar information om en segmentdefinition. Klassen innehåller obligatoriska fält som ID och namn för ett segment, tillsammans med andra valfria attribut. Den här klassen bör användas om du infogar segmentdefinitioner från externa system i Adobe Experience Platform.
+[!UICONTROL Segment definition] The class includes required fields such as the ID and name of a segment, along with other optional attributes. This class should be used if you are bringing in segment definitions from external systems into Adobe Experience Platform.
 
 >[!NOTE]
 >
->Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. För att kunna samla in information om segmentmedlemskap i dina profildata bör du använda fältgruppen [Information om segmentmedlemskap](../field-groups/profile/segmentation.md) i ditt [!UICONTROL XDM Individual Profile]-schema.
+>This class should only be used to capture information about segment definitions themselves. [](../field-groups/profile/segmentation.md)[!UICONTROL XDM Individual Profile]
 
 ![](../images/classes/segment-definition.png)
 
-| Egenskap | Beskrivning |
+| Property | Beskrivning |
 | --- | --- |
-| `_repo` | Ett objekt som innehåller följande [!UICONTROL DateTime]-fält: <ul><li>`createDate`: Datum och tid då resursen skapades i datalagret, till exempel när data först importerades.</li><li>`modifyDate`: Datum och tid då resursen senast ändrades.</li></ul> |
-| `_id` | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill.<br><br>Det är viktigt att särskilja att detta fält inte  **ger** en identitet som är relaterad till en enskild person, utan snarare själva registreringen av uppgifter. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity). |
-| `createdByBatchID` | ID:t för den inkapslade batchen som gjorde att posten skapades. |
-| `description` | En beskrivning av segmentdefinitionen. |
-| `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för de personer som segmentet gäller för. Mer information om hur de används finns i avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap). |
-| `modifiedByBatchID` | ID:t för den senaste inkapslade batchen som gjorde att posten uppdaterades. |
-| `repositoryCreatedBy` | ID för den användare som skapade posten. |
-| `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
-| `segmentName` | **(Obligatoriskt)** Ett namn för segmentdefinitionen. |
-| `segmentStatus` | Status för segmentet från det externa systemet. Följande värden accepteras: <ul><li>`ACTIVE`</li><li>`INACTIVE`</li><li>`DELETED`</li><li>`DRAFT`</li><li>`REVOKED`</li></ul> |
-| `version` | Det senaste versionsnumret för segmentdefinitionen. |
+| `_repo` | [!UICONTROL DateTime] <ul><li>`createDate`</li><li>`modifyDate`</li></ul> |
+| `_id` | A unique, system-generated string identifier for the record. This field is used to track the uniqueness of an individual record, prevent duplication of data, and to look up that record in downstream services.<br><br> However, you can still opt to supply your own unique ID values if you wish.<br><br>**** [](../schema/composition.md#identity) |
+| `createdByBatchID` | The ID of the ingested batch that caused the record to be created. |
+| `description` | A description for the segment definition. |
+| `identityMap` | A map field that contains a set of namespaced identities for the individuals the segment applies to. [](../schema/composition.md#identityMap) |
+| `modifiedByBatchID` | The ID of the last ingested batch that caused the record to be updated. |
+| `repositoryCreatedBy` | The ID of the user who created the record. |
+| `repositoryLastModifiedBy` | The ID of the user who last modified the record. |
+| `segmentName` | **** |
+| `segmentStatus` | The status of the segment from the external system. The following values are accepted: <ul><li>`ACTIVE`</li><li>`INACTIVE`</li><li>`DELETED`</li><li>`DRAFT`</li><li>`REVOKED`</li></ul> |
+| `version` | The latest version number of the segment definition. |
+
+{style=&quot;table-layout:auto&quot;}
