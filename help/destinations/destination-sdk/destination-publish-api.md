@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/Destations/publish`.
 title: API-slutpunktsåtgärder för publiceringsmål
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 6ad556e3b7bf15f1d6ff522307ff232b8fd947d3
+source-git-commit: 702a5b7154724faa9f5e6847b462e0ae90475571
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '718'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med `/authoring/destinations/publish` API-slutpunkt.
 
-När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering.
+När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering. Läs [Skicka för granskning av ett mål som skapats i Destination SDK](./submit-destination.md) för alla andra steg som du måste göra som en del av målöverföringsprocessen.
 
 Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
 
@@ -52,19 +52,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
  -d '
 {
    "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
-   "destinationAccess":"LIMITED",
-   "allowedOrgs":[
-      "xyz@AdobeOrg",
-      "lmn@AdobeOrg"
-   ]
+   "destinationAccess":"ALL"
 }
 ```
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `destinationId` | Sträng | Mål-ID för målkonfigurationen som du skickar för publicering. Hämta mål-ID:t för en målkonfiguration med [API-referens för destinationskonfiguration](./destination-configuration-api.md#retrieve-list). |
-| `destinationAccess` | Sträng | `ALL` eller `LIMITED`. Ange om du vill att destinationen ska visas i katalogen för alla Experience Platform-kunder eller bara för vissa organisationer. <br> **Anteckning**: Om du använder `LIMITED`publiceras målet endast för din Experience Platform-organisation. Om du vill publicera destinationen till en delgrupp av Experience Platform-organisationer för kundtestning kan du kontakta supporten för Adobe. |
-| `allowedOrgs` | Sträng | Om du använder `"destinationAccess":"LIMITED"`, ange för vilka Experience Platform-organisationer destinationen ska vara tillgänglig. |
+| `destinationAccess` | Sträng | Använd `ALL` för att din destination ska visas i katalogen för alla Experience Platform-kunder. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -103,12 +98,12 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
    "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
    "publishDetailsList":[
       {
-         "configId":"string",
-         "allowedOrgs":[
-            "xyz@AdobeOrg",
-            "lmn@AdobeOrg"
-         ],
-         "status":"TEST",
+         "configId":"123cs780-ce29-434f-921e-4ed6ec2a6c35",
+         "allowedOrgs": [
+            "*"
+         ],    
+         "status":"PUBLISHED",
+         "destinationType": "PUBLIC",
          "publishedDate":"1630617746"
       }
    ]
@@ -119,47 +114,12 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
 |---------|----------|------|
 | `destinationId` | Sträng | Mål-ID för målkonfigurationen som du har skickat in för publicering. |
 | `publishDetailsList.configId` | Sträng | Det unika ID:t för målpubliceringsbegäran för det skickade målet. |
-| `publishDetailsList.allowedOrgs` | Sträng | Returnerar de Experience Platform-organisationer som målet ska vara tillgängligt för. |
-| `publishDetailsList.status` | Sträng | Status för målpubliceringsbegäran. Möjliga värden är `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. |
+| `publishDetailsList.allowedOrgs` | Sträng | Returnerar de Experience Platform-organisationer som målet är tillgängligt för. <br> <ul><li> För `"destinationType": "PUBLIC"`returneras `"*"`, vilket innebär att destinationen är tillgänglig för alla Experience Platform-organisationer.</li><li> För `"destinationType": "DEV"`returnerar den här parametern organisations-ID:t för organisationen som du använde för att redigera och testa målet.</li></ul> |
+| `publishDetailsList.status` | Sträng | Status för målpubliceringsbegäran. Möjliga värden är `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. Destinationer med värdet `PUBLISHED` är direktsända och kan användas av Experience Platform-kunder. |
+| `publishDetailsList.destinationType` | Sträng | Typ av mål. Värden kan vara `DEV` och `PUBLIC`. `DEV` motsvarar destinationen i din Experience Platform-organisation. `PUBLIC` motsvarar målet som du har skickat in för publicering. Tänk på de här två alternativen i Git-termer, där `DEV` versionen representerar din lokala redigeringsgren och `PUBLIC` version representerar fjärrhuvudgrenen. |
 | `publishDetailsList.publishedDate` | Sträng | Det datum då målet skickades för publicering, i epoktid. |
 
 {style=&quot;table-layout:auto&quot;}
-
-## Uppdatera en befintlig målpubliceringsbegäran {#update}
-
-Du kan uppdatera de tillåtna organisationerna i en befintlig målpubliceringsbegäran genom att göra en PUT-begäran till `/authoring/destinations/publish` slutpunkt och ange ID för destinationen som du vill uppdatera de tillåtna organisationerna för. Ange de uppdaterade tillåtna organisationerna i samtalet.
-
-**API-format**
-
-```http
-PUT /authoring/destinations/publish/{DESTINATION_ID}
-```
-
-| Parameter | Beskrivning |
-| -------- | ----------- |
-| `{DESTINATION_ID}` | ID:t för destinationen som du vill uppdatera publiceringsbegäran för. |
-
-**Begäran**
-
-Följande begäran uppdaterar en befintlig målpubliceringsbegäran som konfigurerats med parametrarna i nyttolasten. I exempelsamtalet nedan uppdaterar vi de tillåtna organisationerna.
-
-```shell
-curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destinations/publish/1230e5e4-4ab8-4655-ae1e-a6296b30f2ec \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d '
-{
-   "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
-   "destinationAccess":"LIMITED",
-   "allowedOrgs":[
-      "abc@AdobeOrg",
-      "def@AdobeOrg"
-   ]
-}
-```
 
 ## Hämta status för en specifik målpubliceringsbegäran {#get}
 
@@ -194,13 +154,30 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
    "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
    "publishDetailsList":[
       {
-         "configId":"string",
+         "configId":"ab41387c0-4772-4709-a3ce-6d5fee654520",
          "allowedOrgs":[
-            "xyz@AdobeOrg",
-            "lmn@AdobeOrg"
+            "716543205DB85F7F0A495E5B@AdobeOrg"
          ],
          "status":"TEST",
-         "publishedDate":"string"
+         "destinationType":"DEV"
+      },
+      {
+         "configId":"cd568c67-f25e-47e4-b9a2-d79297a20b27",
+         "allowedOrgs":[
+            "*"
+         ],
+         "status":"DEPRECATED",
+         "destinationType":"PUBLIC",
+         "publishedDate":1630525501009
+      },
+      {
+         "configId":"ef6f07154-09bc-4bee-8baf-828ea9c92fba",
+         "allowedOrgs":[
+            "*"
+         ],
+         "status":"PUBLISHED",
+         "destinationType":"PUBLIC",
+         "publishedDate":1630531586002
       }
    ]
 }
