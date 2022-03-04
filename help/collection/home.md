@@ -5,9 +5,9 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 0926f0a6dc005b1bf278e7a0fa0afe4296d8ad80
+source-git-commit: 1322ef78683e62130b56c5b6a22b8699e57a31cf
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '478'
 ht-degree: 3%
 
 ---
@@ -59,6 +59,10 @@ Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av se
 [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md) kan utnyttja valfri datastream för Experience Platform så att du kan omvandla, berika och skicka data till andra mål än Adobe med extrem låg latens och utan att lägga till någon kod från tredje part till klientenheten.
 
 ![Vidarebefordran av händelser](./images/home/event-forwarding.png)
+
+>[!NOTE]
+>
+>Vidarebefordran av händelser är en betalfunktion som endast ingår i Real-time Customer Data Platform Connections-erbjudandet.
 
 ## Nästa steg
 
