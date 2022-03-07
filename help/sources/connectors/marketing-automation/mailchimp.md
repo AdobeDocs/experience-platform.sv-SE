@@ -5,9 +5,9 @@ title: Översikt över Mailchimp Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Mailchimp till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: eedb4fe0-3aae-4e93-bf13-c095171e2d11
-source-git-commit: f8951b5a0a0ca94679155bad9f4c4c2991740b1a
+source-git-commit: ed185d0957c3cd84c33a6ff60c5ded2b17fbfe74
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
@@ -27,15 +27,9 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mailchimp
 ## Anslut [!DNL Mailchimp Campaigns] till plattform
 
 * [Skapa en källanslutning att hämta [!DNL Mailchimp Campaigns] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-campaign.md).
-
-<!--
-* [Create a source connection to bring [!DNL Mailchimp Campaigns] data to Platform using the user interface](../../tutorials/ui/create/marketing-automation/mailchimp-campaigns.md).
--->
+* [Skapa en källanslutning att hämta [!DNL Mailchimp Campaigns] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-campaigns.md).
 
 ## Anslut [!DNL Mailchimp Members] till plattform
 
 * [Skapa en källanslutning att hämta [!DNL Mailchimp Members] data till plattformen med API:er](../../tutorials/api/create/marketing-automation/mailchimp-members.md).
-
-<!--
-* [Create a source connection to bring [!DNL Mailchimp Members] data to Platform using the user interface](../../tutorials/ui/create/marketing-automation/mailchimp-members.md).
--->
+* [Skapa en källanslutning att hämta [!DNL Mailchimp Members] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/mailchimp-members.md).
