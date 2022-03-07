@@ -3,7 +3,7 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar datastreams. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 0141f0a83ca7b444015d98d8ce11199b400f77a5
+source-git-commit: c2378c5da73c36e5889d2c83b18194ff239fce96
 workflow-type: tm+mt
 source-wordcount: '1942'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Konfigurera ett datastream
 
-En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Med [konfigurera, kommando](configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network `edgeConfigId` används för att referera till datastream. This allows you to update the server-side configuration without having to make code changes on your website.
+En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Med [konfigurera, kommando](configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network `edgeConfigId` används för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
 
 Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i användargränssnittet för datainsamling.
 
@@ -20,19 +20,19 @@ Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i a
 >
 >Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Om du inte har tillgång till tjänsten kontaktar du din Customer Success Manager (CSM) för att komma igång med tillåtelselista.
 
-## Access the [!UICONTROL Datastreams] workspace
+## Öppna [!UICONTROL Datastreams] arbetsyta
 
-You can create and manage datastreams in the Data Collection UI by selecting **[!UICONTROL Datastreams]** in the left navigation.
+Du kan skapa och hantera datastammar i användargränssnittet för datainsamling genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
 ![Fliken Datastreams i användargränssnittet för datainsamling](../images/datastreams/datastreams-tab.png)
 
 >[!NOTE]
 >
->While you can access the [!UICONTROL Datastreams] tab regardless of whether you use Platform&#39;s tag management capabilities, you must have developer permissions to manage datastreams themselves. Se [användarbehörigheter](../../tags/ui/administration/user-permissions.md) artikel i taggdokumentationen om du vill ha mer information.
+>Medan du kan komma åt [!UICONTROL Datastreams] oavsett om du använder plattformens tagghanteringsfunktioner eller inte måste du ha utvecklarbehörighet för att kunna hantera dataströmmar själva. Se [användarbehörigheter](../../tags/ui/administration/user-permissions.md) artikel i taggdokumentationen om du vill ha mer information.
 
 The [!UICONTROL Datastreams] På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
 
-Välj ikonen &quot;mer&quot; (**...**) för en viss datastream för att visa fler alternativ. Select **[!UICONTROL Edit]** to update the [basic configuration](#configure) for the datastream, or select **[!UICONTROL Delete]** to remove the datastream.
+Välj ikonen &quot;mer&quot; (**...**) för en viss datastream för att visa fler alternativ. Välj **[!UICONTROL Edit]** för att uppdatera [grundläggande konfiguration](#configure) för datastream, eller välj **[!UICONTROL Delete]** för att ta bort datastream.
 
 ![Alternativ för redigering eller borttagning och befintlig datastream](../images/datastreams/edit-datastream.png)
 
@@ -70,7 +70,7 @@ Underavsnitten nedan beskriver de grundläggande stegen för att mappa data i an
 
 Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört [grundläggande konfigurationssteg](#configure)och **[!UICONTROL Select data]** visas. Härifrån måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Platform. Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället.
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >JSON-objektet måste ha en enda rotnod `data` för att validera.
 
@@ -108,7 +108,7 @@ När du har konfigurerat en ny datastam eller valt en befintlig som ska visas, v
 
 ![Informationssida för ett datastream som skapats](../images/datastreams/view-details.png)
 
-När en datastream skapas skapas tre associerade miljöer automatiskt med identiska inställningar. Dessa tre miljöer `dev`, `stage`och `prod`, som motsvarar [standardmiljöer för taggar](../../tags/ui/publishing/environments.md). När du skapar ett taggbibliotek till en `dev` -miljön använder biblioteket automatiskt `dev` från datastream. You can freely edit the settings in individual environments to suit your needs.
+När en datastream skapas skapas tre associerade miljöer automatiskt med identiska inställningar. Dessa tre miljöer `dev`, `stage`och `prod`, som motsvarar [standardmiljöer för taggar](../../tags/ui/publishing/environments.md). När du skapar ett taggbibliotek till en `dev` -miljön använder biblioteket automatiskt `dev` från datastream. Du kan fritt redigera inställningarna i enskilda miljöer efter behov.
 
 I SDK-implementeringar kan `edgeConfigId` är ett sammansatt ID som anger datastream och den särskilda miljön i den aktuella datastream. Du kan till exempel ange `stage` miljö för ett datastream med ID `1c86778b-cdba-4684-9903-750e52912ad1`, använder du `edgeConfigId` `1c86778b-cdba-4684-9903-750e52912ad1:stage`.
 
@@ -128,7 +128,7 @@ På nästa skärm använder du listrutemenyn för att välja en tjänst som ska 
 
 ![Välj en tjänst i listan](../images/datastreams/service-selection.png)
 
-Select the desired service, fill in the configuration options that appear, and then select **[!UICONTROL Save]** to add the service to the datastream. Alla tillagda tjänster visas i informationsvyn för datastream.
+Välj önskad tjänst, fyll i de konfigurationsalternativ som visas och välj sedan **[!UICONTROL Save]** för att lägga till tjänsten i datastream. Alla tillagda tjänster visas i informationsvyn för datastream.
 
 ![Tjänster som lagts till i ett datastream](../images/datastreams/services-added.png)
 
@@ -138,9 +138,9 @@ Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
 >
 >Varje tjänstkonfiguration innehåller en **[!UICONTROL Enabled]** som aktiveras automatiskt när tjänsten väljs. Om du vill inaktivera den valda tjänsten för den här datastreamen väljer du **[!UICONTROL Enabled]** växla igen.
 
-### Adobe Analytics settings
+### Adobe Analytics-inställningar
 
-This service controls whether and how data is sent to Adobe Analytics. Additional details can be found in the guide on [sending data to Analytics](../data-collection/adobe-analytics/analytics-overview.md).
+Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Mer information finns i guiden på [skicka data till Analytics](../data-collection/adobe-analytics/analytics-overview.md).
 
 ![Adobe Analytics Settings Block](../images/datastreams/analytics-config.png)
 
@@ -193,9 +193,9 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 | [!UICONTROL Target Environment ID] | [Miljöer i Adobe Target](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) hjälper er att hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du tänker använda med den här datastream.<br><br>Det bästa sättet är att ange detta på olika sätt för var och en av dina `dev`, `stage`och `prod` datastream-miljöer för att hålla saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du använda dessa. |
 | [!UICONTROL Target Third Party ID namespace] | Identitetsnamnrymden för `mbox3rdPartyId` som du vill använda för den här datastream. Se guiden [implementera `mbox3rdPartyId` med Web SDK](../personalization/adobe-target/using-mbox-3rdpartyid.md) för mer information. |
 
-### [!UICONTROL Event Forwarding] settings
+### [!UICONTROL Event Forwarding] inställningar
 
-This service controls whether and how data is sent to [event forwarding](../../tags/ui/event-forwarding/overview.md).
+Den här tjänsten kontrollerar om och hur data skickas till [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md).
 
 ![Avsnittet Händelsevidarebefordran i konfigurationsgränssnittet](../images/datastreams/event-forwarding-config.png)
 
@@ -216,8 +216,8 @@ Avsnittet med tredje parts-ID är det enda avsnitt som alltid är aktivt. Det fi
 
 | Inställning | Beskrivning |
 | --- | --- |
-| [!UICONTROL Third Party ID Sync Container ID] | ID syncs can be grouped into containers to allow different ID syncs to be run at different times. This controls which container of ID syncs is run for this datastream. |
+| [!UICONTROL Third Party ID Sync Container ID] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. Detta styr vilken behållare för ID-synk som körs för den här datastream. |
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du konfigurerar ett datastam i användargränssnittet för datainsamling. For more information on how to install and configure the Web SDK after setting up a datastream, refer to the [Data Collection E2E guide](../../collection/e2e.md#install).
+I den här guiden beskrivs hur du konfigurerar ett datastam i användargränssnittet för datainsamling. Mer information om hur du installerar och konfigurerar Web SDK när du har konfigurerat ett datastream finns i [E2E-guide för datainsamling](../../collection/e2e.md#install).
