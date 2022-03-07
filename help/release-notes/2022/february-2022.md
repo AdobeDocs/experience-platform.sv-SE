@@ -2,10 +2,10 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 3ae4d0f0a92c96b15c605c6654693fd6d7e94ba8
+source-git-commit: d407d6bedbe0eb9b4dde229d990160c114fad472
 workflow-type: tm+mt
-source-wordcount: '575'
-ht-degree: 2%
+source-wordcount: '502'
+ht-degree: 1%
 
 ---
 
@@ -16,7 +16,6 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Datainsamling](#data-collection)
-- [[!DNL Data Prep]](#data-prep)
 - [[!DNL Identity Service]](#identity)
 - [Källor](#sources)
 
@@ -33,18 +32,6 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 | Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Se guiden [enhets-ID:n från första part](../../edge/identity/first-party-device-ids.md) för mer information. |
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
-
-## [!DNL Data Prep] {#data-prep}
-
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
-
-**Ny funktion**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| [!DNL Data Prep] stöd för Adobe Analytics källanslutning | Adobe Analytics-källkopplingen har nu stöd för dataprep-funktioner, vilket gör att du kan mappa dina data i Analytics-rapportsviten till ett mål-XDM-schema när du skapar ett dataflöde. Se självstudiekursen om [skapa en Analytics-källkoppling](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för mer information. |
-
-Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
 ## [!DNL Identity Service] {#identity}
 
