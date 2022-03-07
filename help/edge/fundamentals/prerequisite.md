@@ -3,9 +3,9 @@ title: Krav för att använda Adobe Experience Platform Web SDK
 description: Läs om förutsättningarna för Adobe Experience Platform Web SDK.
 keywords: 1st-party domain;CNAME;schema;skapa schema;starta;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
 exl-id: 98ae69db-bc87-4ea3-b101-664ac53e7ae0
-source-git-commit: a9b63d2ad2c1adbd647c0c3a43331cddffa8a04e
+source-git-commit: 1ff52944be6e9475f57c62793b0e4c671ff8786b
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Om du vill använda Adobe Experience Platform Web SDK måste du först:
 
-- Låt din organisation tillhandahålla den här funktionen. Om du vill ha åtkomst fyller du i följande [formulär](https://adobe.ly/websdkaccess) och Adobe kommer att ge dig tillgång till dataströmmar och Adobe Experience Platform (om det behövs). Observera att Adobe utan extra kostnad kommer att ge dig den nödvändiga tillgången att använda SDK i begränsad omfattning.
+- Låt din organisation tillhandahålla den här funktionen. Om du vill ha åtkomst fyller du i följande [formulär](https://adobe.ly/websdkaccess) och Adobe ger dig tillgång till dataströmmar och Adobe Experience Platform (om det behövs). Observera att Adobe utan extra kostnad kommer att ge dig den nödvändiga tillgången att använda SDK i begränsad omfattning.
 - Vi rekommenderar att CNAME (1st-party domain) är aktiverat. Om du redan har en CNAME för Adobe Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men Adobe rekommenderar att du gör det innan du går till produktion. Även om en CNAME-implementering inte ger några fördelar när det gäller cookie-livstid kan den förhindra att vissa annonsblockerare och mindre vanliga webbläsare blockerar SDK-begäranden. I sådana fall kan användning av CNAME förhindra att datainsamlingen avbryts för användare som använder dessa verktyg.
 
 >[!IMPORTANT]
