@@ -2,11 +2,9 @@
 title: Första parts enhets-ID i Platform Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-hide: true
-hidefromtoc: true
-source-git-commit: c094e72232f9ac44d10a1919a00024e5faa27b2b
+source-git-commit: 700dea7ed7f35797b3a3fe4bf09f5e266577363b
 workflow-type: tm+mt
-source-wordcount: '1680'
+source-wordcount: '1776'
 ht-degree: 0%
 
 ---
@@ -27,36 +25,44 @@ I den här handboken förutsätts du känna till hur identitetsdata fungerar fö
 
 ## Använda FPID
 
-Första parts-cookies är mest effektiva när de ställs in med en kundägd server som använder en DNS A-post i stället för en DNS CNAME. Med enhets-ID:n från första part kan du ange egna enhets-ID:n i cookies med DNS A-poster. Dessa ID:n kan sedan skickas till Adobe och användas som frön för att generera ECID:n som även i fortsättningen kommer att vara de primära identifierarna i Adobe Experience Cloud-program.
+FPID:n spårar besökare genom att använda cookies från första part. Första parts-cookies är mest effektiva när de ställs in med en server som använder en DNS [En post](https://datatracker.ietf.org/doc/html/rfc1035) (för IPv4) eller [AAAA-post](https://datatracker.ietf.org/doc/html/rfc3596) (för IPv6), till skillnad från en DNS CNAME- eller JavaScript-kod.
+
+>[!IMPORTANT]
+>
+>En post eller AAAA-poster stöds bara för att ange och spåra cookies. Den primära metoden för datainsamling är via en DNS CNAME. Med andra ord anges FPID:n med en A-post eller AAAA-post och skickas sedan till Adobe med en CNAME.
+>
+>The [Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) stöds fortfarande för datainsamling från första part.
+
+När en FPID-cookie har angetts kan dess värde hämtas och skickas till Adobe när händelsedata samlas in. Insamlade FPID används som frön för att generera ECID, som även fortsättningsvis är de primära identifierarna i Adobe Experience Cloud-program.
 
 Om du vill skicka ett FPID för en webbplatsbesökare till Platform Edge Network måste du inkludera FPID i `identityMap` för besökaren. Se avsnittet senare i det här dokumentet på [använda FPID i `identityMap`](#identityMap) för mer information.
 
-## Krav för ID-formatering
+### Krav för ID-formatering
 
 Platform Edge Network godkänner endast ID:n som uppfyller [UUIDv4-format](https://datatracker.ietf.org/doc/html/rfc4122). Enhets-ID som inte är i UUIDv4-format kommer att avvisas.
 
 Generering av ett UUID resulterar nästan alltid i ett unikt, slumpmässigt ID, där sannolikheten för en kollision är försumbar. UUIDv4 kan inte dirigeras med IP-adresser eller någon annan personligt identifierbar information (PII). UUID är vanligt förekommande och bibliotek finns för praktiskt taget alla programmeringsspråk för att generera dem.
 
-## Ange en cookie med en DNS A-post
+## Ange en cookie med din egen server
 
-En mängd olika metoder kan användas för att ställa in en cookie på ett sätt som förhindrar att den begränsas på grund av webbläsarprinciper:
+När du ställer in en cookie med en server som du äger kan du använda olika metoder för att förhindra att cookien begränsas på grund av webbläsarprinciper:
 
 * Generera cookies med serverskriptspråk
 * Ange cookies som svar på en API-begäran som görs till en underdomän eller annan slutpunkt på webbplatsen
 * Generera cookies med CMS
 * Generera cookies med ett CDN
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >Cookies som ställs in med JavaScript `document.cookie` Metoden skyddas nästan aldrig av webbläsarprinciper som begränsar varaktigheten för cookies.
 
-## När cookien ska ställas in
+### När cookien ska ställas in
 
 FPID-cookien bör helst anges innan du skickar några begäranden till Edge Network. I scenarier där detta inte är möjligt genereras dock ett ECID fortfarande med befintliga metoder och fungerar som primär identifierare så länge som cookien finns.
 
 Om man utgår ifrån att ECID så småningom påverkas av en policy för borttagning av webbläsare, men inte av FPID, kommer FPID att bli den primära identifieraren vid nästa besök och kommer att användas för att förorsaka ECID vid varje påföljande besök.
 
-## Ange förfallodatum för cookien
+### Ange förfallodatum för cookien
 
 Att ange förfallodatum för en cookie är något som du bör tänka på noga när du implementerar FPID-funktionen. När du fattar detta beslut bör du ta hänsyn till de länder eller regioner där din organisation verkar tillsammans med lagstiftningen och politiken i var och en av dessa regioner.
 
