@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 8571d86e1ce9dc894e54fe72dea75b9f8fe84f0b
+source-git-commit: 7590c24baae669ebe3214985088a7135a69ff8bc
 workflow-type: tm+mt
-source-wordcount: '1541'
+source-wordcount: '2219'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,26 @@ Du kan ändra utseendet på [!UICONTROL Profiles] kontrollpanel genom att välja
 
 Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
 
+## (Beta) Profileffektivitetsinsikter {#profile-efficiency-insights}
+
+>[!IMPORTANT]
+>
+>Profilens insiktsfunktion finns för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+
+The [!UICONTROL Efficacy] på fliken finns mått på kvaliteten och fullständigheten hos dina profildata som grundligt bygger på widgetar för profileffektivitet. De här widgetarna visar i korthet hur profilerna är uppbyggda, trender för fullständighet över tiden och bedömningar av kvaliteten på profildata.
+
+[Kontrollpanelen för profileffektivitet.](../images/profiles/attributes-quality-assessment.png)
+
+Se [profileffektwidgetar](#profile-efficacy-widgets) om du vill ha mer information om de widgetar som är tillgängliga just nu.
+
+Layouten på den här instrumentpanelen kan även anpassas genom att välja [**[!UICONTROL Modify dashboard]**](../customize/modify.md) från [!UICONTROL Overview] -fliken.
+
+## Bläddra bland profiler {#browse-profiles}
+
+The [!UICONTROL Browse] kan du söka efter och visa de skrivskyddade profiler som har importerats till din IMS-organisation. Härifrån kan du se viktig information som hör till profilen om deras inställningar, tidigare händelser, interaktioner och segment
+
+Mer information om profilvisningsfunktionerna i plattformsgränssnittet finns i dokumentationen om [webbläsarprofiler i Real-time Customer Data Platform](../../rtcdp/profile/profile-browse.md).
+
 ## Sammanfoga profiler {#merge-policies}
 
 De mått som visas i [!UICONTROL Profiles] Instrumentpanelen baseras på sammanslagningsprinciper som tillämpas på dina kundprofildata i realtid. När data samlas in från flera olika källor för att skapa kundprofilen är det möjligt att data innehåller motstridiga värden (en datauppsättning kan till exempel lista en kund som&quot;enkel&quot; medan en annan datauppsättning kan lista kunden som&quot;gift&quot;). Det är huvudsyftet med sammanfogningsprincipen att avgöra vilka data som ska prioriteras och visas som en del av profilen.
@@ -56,6 +76,14 @@ Kontrollpanelen väljer automatiskt vilken sammanfogningsprincip som ska visas, 
 >I listrutan visas endast sammanfogningsprinciper som är relaterade till den enskilda klassen för XDM-profiler, men om din organisation har skapat flera sammanfogningsprinciper kan det innebära att du måste rulla för att kunna visa den fullständiga listan över tillgängliga sammanfogningsprinciper.
 
 ![](../images/profiles/select-merge-policy.png)
+
+## Unionens system
+
+The [!UICONTROL Union Schema] På kontrollpanelen visas unionsschemat för en viss XDM-klass. Genom att välja [!UICONTROL **Klass**] kan du visa föreningsscheman för olika XDM-klasser.
+
+Unionsscheman består av flera scheman som delar samma klass och har aktiverats för profilen. Med dem kan du i en enda vy se en sammanslagning av alla fält i varje schema som delar samma klass.
+
+Läs användargränssnittsguiden för unionsschemat om du vill veta mer om [visa fackscheman i plattformsgränssnittet](../../profile/ui/union-schema.md#view-union-schemas).
 
 ## Widgetar och mätvärden
 
@@ -134,6 +162,59 @@ Mer information om profilfragment får du om du börjar med att läsa avsnittet 
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
 ![](../images/profiles/identity-overlap.png)
+
+## (Beta) Profileffektwidgetar {#profile-efficacy-widgets}
+
+>[!IMPORTANT]
+>
+>Profileffektivitetswidgetarna finns för närvarande i Beta och är inte tillgängliga för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+
+Adobe tillhandahåller flera widgetar för att bedöma om de inkapslade profilerna som finns tillgängliga för din dataanalys är fullständiga. Var och en av profilens effektwidgetar kan filtreras efter sammanfogningspolicy. Om du vill ändra kopplingsprofilfiltret väljer du[!UICONTROL Profiles using merge policy] och välj en lämplig profil i listan.
+
+Om du vill veta mer om alla profileffektwidgetar väljer du namnet på en widget i följande lista:
+
+* [[!UICONTROL Attribute quality assessment]](#attribute-quality-assessment)
+* [[!UICONTROL Profile completeness]](#profile-completeness)
+* [[!UICONTROL Profile completeness trend]](#profile-completeness-trend)
+
+### (Beta) [!UICONTROL Attribute quality assessment] {#attribute-quality-assessment}
+
+Den här widgeten visar fullständigheten och kardinaliteten för varje profilattribut sedan det senaste bearbetningsdatumet. Den här informationen presenteras som en tabell med fyra kolumner där varje rad i tabellen representerar ett enda attribut.
+
+| Kolumn | Beskrivning |
+|---|---|
+| Attribut | Attributets namn. |
+| Profiler | Antalet profiler som har det här attributet och som fylls med värden som inte är null. |
+| Fullständighet | Procentandelen bestäms av det totala antalet profiler som har det här attributet och som fylls med värden som inte är null. Talet beräknas genom att det totala antalet profiler divideras med det totala antalet icke-tomma värden i profilerna för det attributet. |
+| Kardinalitet | Det totala antalet **unik** värden som inte är null för det här attributet. Den mäts över alla profiler. |
+
+![Attribut för kvalitetsbedömningswidgeten](../images/profiles/attributes-quality-assessment.png)
+
+### (Beta) [!UICONTROL Profiles by completeness] {#profile-completeness}
+
+Den här widgeten skapar ett cirkeldiagram över hur komplett profilen är sedan det senaste bearbetningsdatumet. En profils fullständighet mäts av procentandelen attribut som är fyllda med värden som inte är null bland alla observerade attribut.
+
+Den här widgeten visar andelen profiler som är av hög, medelhög eller låg fullständighet. Som standard har tre nivåer av fullständighet konfigurerats:
+
+* Hög fullständighet: Profiler har fler än 70 % ifyllda attribut.
+* Medelfullständighet: Profiler har mindre än 70 % och mer än 30 % attribut är ifyllda.
+* Låg fullständighet: Profiler har färre än 30 % ifyllda attribut.
+
+![Widgeten för profiler efter fullständighets](../images/profiles/profiles-by-completeness.png)
+
+### (Beta) [!UICONTROL Profile completeness trend] {#profile-completeness-trend}
+
+Den här widgeten skapar ett staplat stapeldiagram som avbildar trenden för hur fullständig profilen är över tiden. Fullständigheten mäts i procent av attributen som fylls med värden som inte är null bland alla observerade attribut. Den klassar profilens fullständighet som hög, medelhög eller låg sedan det senaste bearbetningsdatumet.
+
+X-axeln representerar tid, y-axeln representerar antalet profiler och färgerna representerar de tre nivåerna för profilens fullständighet.
+
+De tre nivåerna av fullständighet är följande:
+
+* Hög fullständighet: Profiler har fler än 70 % ifyllda attribut.
+* Medelfullständighet: Profiler har mindre än 70 % och mer än 30 % attribut är ifyllda.
+* Låg fullständighet: Profiler har färre än 30 % ifyllda attribut.
+
+![Trendwidgeten för profiler](../images/profiles/profiles-completeness-trend.png)
 
 ## Nästa steg
 
