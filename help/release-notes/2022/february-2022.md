@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: d407d6bedbe0eb9b4dde229d990160c114fad472
+source-git-commit: 534d87aed98359b979fe06d40f9b9a2daee5308c
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '720'
 ht-degree: 1%
 
 ---
@@ -15,9 +15,22 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
 - [[!DNL Identity Service]](#identity)
 - [Källor](#sources)
+
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilka ni kan få viktiga insikter om organisationens data, som de fångats in under dagliga ögonblicksbilder.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Nya widgetar för standarddestinationer | Med följande standardwidgetar kan du visualisera olika mätvärden för dina destinationer.<ul><li>Nyligen aktiverade segment efter mål. Den här widgeten visar de fem senast aktiverade segmenten i fallande ordning enligt det valda målet.</li><li>Storlekstrend för målgruppen. Den här widgeten visar relationen mellan profilantalet under en tidsperiod för ett segment som har mappats till det målkontot.</li><li>Omappade segment efter identitet. Den här widgeten visar de fem viktigaste omappade segmenten som rangordnats av fallande identitetsantal för ett visst mål och en viss identitet.</li><li>Mappade segment efter identitet. Den här widgeten visar de fem viktigaste mappade segmenten. Segmenten ordnas från hög till låg enligt deras respektive antal käll-ID:n som matchar det mål-ID som valts i widgetens listruta.</li><li>Gemensamma målgrupper. Den här widgeten innehåller en lista över de fem översta segment som är aktiverade över målkontot som är valt längst upp på sidan och det mål som är markerat i widgetens listruta.</li></ul> Mer information om tillgängliga standardwidgetar finns i [dokumentation för kontrollpanelen för destinationer.](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
+
+Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
