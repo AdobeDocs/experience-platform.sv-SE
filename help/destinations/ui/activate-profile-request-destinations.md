@@ -6,9 +6,9 @@ seo-title: Activate audience data to profile request destinations
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: dd9493077706b102467493e90b363ac202550eee
+source-git-commit: d0660f29df93659990d80353f86dcbf856afb733
 workflow-type: tm+mt
-source-wordcount: '428'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
 ### Sammanslagningsprincip för segment {#merge-policy}
 
-För närvarande stöder profilförfrågningar endast aktivering av segment som använder [standardprincip för sammanslagning](../../segmentation/ui/segment-builder.md#merge-policies).
+För närvarande stöder profilförfrågningar endast aktivering av segment som använder [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) anges som standard.
 
 ## Välj mål {#select-destination}
 
