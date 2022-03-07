@@ -2,16 +2,20 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 534d87aed98359b979fe06d40f9b9a2daee5308c
+source-git-commit: b714a5cf0f4bdf2c0f010664bfef96c5b6641c22
 workflow-type: tm+mt
-source-wordcount: '720'
+source-wordcount: '732'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 23 februari 2022**
+**Releasedatum: 7 mars 2022**
+
+>[!NOTE]
+>
+>Den här versionen ändrades från det ursprungliga datumet 23 februari till 7 mars.
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
