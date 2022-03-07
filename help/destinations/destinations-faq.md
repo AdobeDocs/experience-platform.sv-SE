@@ -5,9 +5,9 @@ seo-title: Frequently asked questions
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 seo-description: Answers to the most frequently asked questions about Adobe Experience Platform destinations
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 69fc8e8ec3211495056be73c2e49c6aecfc569ea
+source-git-commit: b2636377eda6740dceb9bc07fbcc082b85ff3c94
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '861'
 ht-degree: 4%
 
 ---
@@ -78,6 +78,12 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 **Kan jag skapa flera Facebook-mål i plattformsgränssnittet för separata Facebook-konton?**
 
 Ja. En Facebook-destination i Experience Platform är 1:1 till ett annonskonto i Facebook. Du kan skapa ett separat Facebook-mål för varje Facebook-annonskonto i ditt företag. Följ [självstudiekurs om målanslutning](/help/destinations/ui/connect-destination.md) och ansluta till ett separat Facebook-konto för varje nytt Facebook-mål i användargränssnittet för plattformen. Det finns ingen gräns för hur många Facebook-annonskonton du kan ansluta till.
+
+## Google kundmatchning {#google-customer-match}
+
+**När jag exporterar segment till Google Customer Match, varför visas extra siffror i slutet av segmentnamnen i Google-gränssnittet?**
+
+Google kräver att segmentnamnen är unika. Siffrorna du ser är [UNIX-tidsstämplar](https://www.unixtimestamp.com/) och de läggs till så att segmentnamnen förblir unika om du mappar samma segment till flera Google-mål.
 
 ## linkedIn Matched Auditions {#linkedin}
 
