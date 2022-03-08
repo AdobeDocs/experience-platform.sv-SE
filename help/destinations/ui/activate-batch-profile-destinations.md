@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: 6c64e8400c85865aab4e8cfb9e86850562ba97aa
 workflow-type: tm+mt
-source-wordcount: '2124'
+source-wordcount: '2114'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule"
 >title="Schema"
->abstract="Ange filexporttyp (fullständiga eller stegvisa filer) och exportfrekvens."
+>abstract="Använd pennikonen för att ange filexportformat (fullständiga eller stegvisa filer) och exportfrekvens."
 >additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="Läs mer i dokumentationen"
 
 [!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av [!DNL CSV] filer. I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
@@ -133,7 +133,6 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 >id="platform_destinations_activate_filename"
 >title="Konfigurera filnamn"
 >abstract="För filbaserade mål genereras ett unikt filnamn per segment. Använd filnamnsredigeraren för att skapa och redigera ett unikt filnamn eller behåll standardnamnet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#file-names" text="Läs mer i dokumentationen"
 
 Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
 
