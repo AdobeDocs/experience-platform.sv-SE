@@ -1,9 +1,10 @@
 ---
 title: Utöka ett fält för mjuk uppräkning
 description: Lär dig hur du utökar ett mjukt uppräkningsfält i API:t för schemaregister.
-source-git-commit: 2d85db789e6e6a28402bb68122a3b5cfe9d0c5dc
+exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
+source-git-commit: a26c8d43ff7874bcedd2adb3d6da995986198c96
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '531'
 ht-degree: 0%
 
 ---
@@ -197,4 +198,4 @@ När ändringen har tillämpats svarar schemaregistret med följande när schema
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du utökar valfria uppräkningar i API:t för schemaregister. Mer information om hur du definierar olika fälttyper i API:t finns i handboken [Begränsningar för XDM-fälttyp](../schema/field-constraints.md#define-fields).
+I den här guiden beskrivs hur du utökar valfria uppräkningar i API:t för schemaregister. Se guiden [definiera anpassade fält i API](./custom-fields-api.md) om du vill ha mer information om hur du skapar olika fälttyper.
