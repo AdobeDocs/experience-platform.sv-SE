@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 387e10038f61a7444a16f4e6270a62082446c09d
+source-git-commit: 042a739593b291cdd7193437906a16dc889a3b4b
 workflow-type: tm+mt
-source-wordcount: '3104'
+source-wordcount: '3193'
 ht-degree: 0%
 
 ---
@@ -61,7 +61,7 @@ Se följande tabell för mer information om status:
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
 >title="Aktiverade identiteter"
->abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
+>abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -82,7 +82,7 @@ Identiteter representerar olika aspekter av en profil. Om en profil till exempel
 
 En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
 
-- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som har skapats eller uppdaterats för aktivering.
+- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har hoppats över för aktivering baserat på saknade attribut och medgivandeöverträdelse.
 - **[!UICONTROL Identities failed]**: Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
 
@@ -95,7 +95,7 @@ Varje enskild dataflödeskörning visar följande information:
    - För **[!UICONTROL completed]** körs visar körtidsmåttet alltid en timme.
    - För dataflöden som fortfarande körs i en **[!UICONTROL processing]** det fönster där alla mätvärden hämtas är öppet i mer än en timme för att bearbeta alla mätvärden som motsvarar dataflödeskörningen. Ett dataflöde som startades kl. 9.30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd**, ändras den visade bearbetningstiden till en timme.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet.
-- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som har aktiverats för det valda målet.
+- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
 - **[!UICONTROL Identities failed]** Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
 - **[!UICONTROL Activation rate]**: Procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Följande formel visar hur det här värdet beräknas:
@@ -133,7 +133,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
 >title="Aktiverade identiteter"
->abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet."
+>abstract="Antalet enskilda profilidentiteter har aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -144,7 +144,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 För batchdestinationer är [!UICONTROL Dataflow runs] -fliken innehåller mätdata för dina dataflödeskörningar. En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
 
-- **[!UICONTROL Identities activated]**: Antalet enskilda profilidentiteter har aktiverats för det valda målet.
+- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
 - **[!UICONTROL Identities excluded]**: Antalet individuella profilidentiteter som har uteslutits från aktivering för den valda destinationen, baserat på saknade attribut och medgivande.
 
 ![Dataflödeskörningsvy för batchmål](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
@@ -154,7 +154,7 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Dataflow run start]**: Den tid som dataflödet körs vid.
 - **[!UICONTROL Processing time]**: Den tid det tog för dataflödet att bearbeta.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut.
-- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som har aktiverats för det valda målet.
+- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
 - **[!UICONTROL Status]**: Representerar det läge som dataflödet är i. Det kan vara ett av tre lägen: [!UICONTROL Success], [!UICONTROL Failed]och [!UICONTROL Processing]. [!UICONTROL Success] betyder att dataflödet är aktivt och exporterar data enligt angivet schema. [!UICONTROL Failed] innebär att aktiveringen av uppgifter har avbrutits på grund av fel. [!UICONTROL Processing] betyder att dataflödet ännu inte är aktivt och vanligtvis uppstår när ett nytt dataflöde skapas.
 
