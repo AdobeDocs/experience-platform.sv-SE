@@ -6,7 +6,7 @@ topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: c36ef1d5f5e5f7875da2b7a878c86b449d46c3c5
+source-git-commit: c0e7ae8f65aa0373d35a55d4da46e0ffcb0e60f9
 workflow-type: tm+mt
 source-wordcount: '1031'
 ht-degree: 2%
@@ -318,4 +318,4 @@ Frågetjänsten standardiserar beständiga data i Adobe Experience Platform med 
 
 Genom att läsa det här dokumentet har du fått en del viktiga synpunkter när du skriver frågor med [!DNL Query Service]. Mer information om hur du använder SQL-syntaxen för att skriva egna frågor finns i [SQL-syntaxdokumentation](../sql/syntax.md).
 
-Fler exempel på frågor som kan användas i frågetjänsten finns i [Adobe Analytics exempelfrågor](./adobe-analytics.md), [Adobe Target exempelfrågor](./adobe-target.md), eller [Exempelfrågor för ExperienceEvent](./experience-event-queries.md).
+Fler exempel på frågor som kan användas i frågetjänsten finns i [Adobe Analytics exempelfrågor](../sample-queries/adobe-analytics.md), [Adobe Target exempelfrågor](../sample-queries/adobe-target.md), eller [Exempelfrågor för ExperienceEvent](../sample-queries/experience-event.md).

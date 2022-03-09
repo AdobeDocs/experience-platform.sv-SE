@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: 7dd0f69b51ebda5e43fc0e832be249ed2a0eebe1
+source-git-commit: c3baf586f5e11e085114b1f26422d191b1067281
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '151'
 ht-degree: 2%
 
 ---
@@ -32,12 +32,13 @@ ht-degree: 2%
    - [Allmän vägledning för frågekörning](best-practices/writing-queries.md)
    - [Vägledning för organisationen av datatillgångar](./best-practices/organize-data-assets.md)
    - [Arbeta med kapslade datastrukturer](best-practices/nested-data-structures.md)
-   - [Datadeduplicering](best-practices/deduplication.md)
-   - [Exempelfrågor om Experience Event](best-practices/experience-event-queries.md)
-   - [Exempel på Adobe Analytics-frågor](best-practices/adobe-analytics.md)
-   - [Exempel på Adobe Target-frågor](best-practices/adobe-target.md)
    - [Exempel på anonyma blockfrågor](best-practices/anonymous-block.md)
    - [Inkrementell inläsning](best-practices/incremental-load.md)
+   - [Datadeduplicering](best-practices/deduplication.md)
+- Exempelfrågor {#sample-queries}
+   - [Exempelfrågor om Experience Event](sample-queries/experience-event.md)
+   - [Exempel på Adobe Analytics-frågor](sample-queries/adobe-analytics.md)
+   - [Exempel på Adobe Target-frågor](sample-queries/adobe-target.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)

@@ -1,15 +1,15 @@
 ---
-title: Exempel på inkrementella inläsningsfrågor
+title: Inkrementell inläsning i frågetjänsten
 description: Funktionen för inkrementell inläsning använder både anonyma funktioner för block och ögonblicksbilder för att ge en nästan realtidslösning för att flytta data från datasjön till data warehouse samtidigt som matchande data ignoreras.
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: e5a79db157524d014c9a07d2bf5907a5544e7b77
+source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
 
-# Exempel på inkrementella datainläsningsfrågor
+# Inkrementell inläsning i frågetjänsten
 
 Designmönstret för inkrementell belastning är en lösning för datahantering. Mönstret bearbetar bara information i datauppsättningen som har skapats eller ändrats sedan den senaste inläsningen.
 

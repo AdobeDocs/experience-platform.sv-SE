@@ -1,15 +1,15 @@
 ---
-title: Exempel på anonyma blockfrågor
+title: Anonymt block i frågetjänsten
 description: Det anonyma blocket är en SQL-syntax som stöds av Adobe Experience Platform Query Service, som gör att du effektivt kan köra en sekvens med frågor
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 83b9aad78bcbf6e40d3059607a3779b6f1a2083f
+source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
 
-# Exempelfrågor för anonymt block
+# Anonymt block i frågetjänsten
 
 Adobe Experience Platform Query Service stöder anonyma block. Med den anonyma blockfunktionen kan du kedja en eller flera SQL-satser som körs i sekvens. De gör det även möjligt att hantera undantag.
 
@@ -60,4 +60,4 @@ $$;
 
 Genom att läsa det här dokumentet har du nu en tydlig förståelse för anonyma block och hur de är strukturerade. [Mer information om frågekörning](./writing-queries.md), läs guiden om frågekörning i Query Service.
 
-Fler exempel på frågor som kan användas i frågetjänsten finns i [Adobe Analytics exempelfrågor](./adobe-analytics.md), [Adobe Target exempelfrågor](./adobe-target.md), eller [Exempelfrågor för ExperienceEvent](./experience-event-queries.md).
+Du bör även läsa om [hur anonymt block används med det inkrementella belastningsdesignmönstret](./incremental-load.md) för att öka frågans effektivitet.

@@ -5,10 +5,10 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 03cd013e35872bcc30c68508d9418cb888d9e260
+source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
 workflow-type: tm+mt
-source-wordcount: '1106'
-ht-degree: 2%
+source-wordcount: '3275'
+ht-degree: 0%
 
 ---
 
@@ -16,23 +16,270 @@ ht-degree: 2%
 
 Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och en lista med vanliga felkoder när frågetjänsten används. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
 
-## Frågor och svar
+Följande lista med svar på vanliga frågor är indelad i följande kategorier:
 
-Nedan följer en lista med svar på vanliga frågor om frågetjänsten.
+- [Allmänt](#general)
+- [Exporterar data](#exporting-data)
+- [Tredjepartsverktyg](#third-party-tools)
+
+## Allmänna frågor om frågetjänsten {#general}
+
+Det här avsnittet innehåller information om prestanda, begränsningar och processer.
+
+### Kan jag inaktivera funktionen för automatisk komplettering i frågetjänstredigeraren?
+
++++Svarsnummer Redigeraren stöder för närvarande inte att funktionen Komplettera automatiskt stängs av.
++++
+
+### Varför blir Frågeredigeraren ibland långsam när jag skriver en fråga?
+
++++Svar En möjlig orsak är funktionen för automatisk komplettering. Funktionen bearbetar vissa metadatakommandon som ibland kan göra redigeraren långsammare vid redigering av frågor.
++++
+
+### Kan jag använda Postman för API:t för frågetjänsten?
+
++++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Installationsguide för Postman](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga autentiseringsuppgifter för användning med Postman. Läs den officiella dokumentationen för [riktlinjer för att starta, köra och dela Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
++++
+
+### Finns det någon gräns för hur många rader som får returneras från en fråga via användargränssnittet?
+
++++Besvara Ja, frågetjänsten tillämpar internt en gräns på 50 000 rader om inte en explicit gräns anges externt. Se vägledningen på [interaktiv frågekörning](./best-practices/writing-queries.md#interactive-query-execution) för mer information.
++++
+
+### Finns det någon gräns för datastorlek för resultatet från en fråga?
+
++++Svarsnummer Det finns ingen gräns för datastorlek, men det finns en timeout för frågor på 10 minuter från en interaktiv session. Om frågan körs som en batch-CTAS gäller inte en 10-minuterstimeout. Se vägledningen på [interaktiv frågekörning](./best-practices/writing-queries.md#interactive-query-execution) för mer information.
++++
+
+### Hur åsidosätter jag gränsen för antalet rader i utdata från en SELECT-fråga?
+
++++Svar Om du vill åsidosätta gränsen för utdataraden använder du LIMIT 0 i frågan. Exempel:
+
+```sql
+SELECT * FROM customers LIMIT 0;
+```
+
++++
+
+### Hur stoppar jag mina frågor från att tajma ut på tio minuter?
+
++++Besvara En eller flera av följande lösningar rekommenderas vid timeout i frågor.
+
+- [Konvertera frågan till en CTAS-fråga](./sql/syntax.md#create-table-as-select) och schemalägga körningen. Du kan schemalägga en körning antingen [via användargränssnittet](./ui/user-guide.md#scheduled-queries) eller [API](./api/scheduled-queries.md#create).
+- Kör frågan i ett mindre datasegment genom att använda ytterligare [filtervillkor](https://spark.apache.org/docs/latest/api/sql/index.html#filter).
+- [Kör kommandot EXPLAIN](./sql/syntax.md#explain) för att samla in mer information.
+- Granska statistiken för data i datauppsättningen.
+- Konvertera frågan till ett förenklat formulär och kör den igen med [förberedda programsatser](./sql/prepared-statements.md).
++++
+
+### Finns det något problem eller någon inverkan på frågetjänstens prestanda om flera frågor körs samtidigt?
+
++++Svarsnummer Frågetjänsten har en autoskalningsfunktion som säkerställer att samtidiga frågor inte har någon märkbar påverkan på tjänstens prestanda.
++++
+
+### Hur hittar jag ett kolumnnamn från en hierarkisk datauppsättning?
+
++++Svar Följande steg beskriver hur du visar en tabellvy av en datauppsättning via användargränssnittet, inklusive alla kapslade fält och kolumner i ett förenklat formulär.
+
+- När du har loggat in i Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen i användargränssnittet för att navigera till [!UICONTROL Datasets] kontrollpanel.
+- Datamängderna [!UICONTROL Browse] -fliken öppnas. Du kan använda sökfältet för att förfina de tillgängliga alternativen. Välj en datauppsättning i den lista som visas.
+
+![En datauppsättning som är markerad i plattformsgränssnittet.](./images/troubleshooting/dataset-selection.png)
+
+- The [!UICONTROL Datasets activity] visas. Välj [!UICONTROL Preview dataset] om du vill öppna en dialogruta med XDM-schemat och en tabellvy med separerade data från den markerade datauppsättningen. Mer information finns i [förhandsgranska en datauppsättningsdokumentation](../catalog/datasets/user-guide.md#preview-a-dataset)
+
+![XDM-schemat och tabellvyn för de separerade data.](./images/troubleshooting/dataset-preview.png)
+
+- Markera ett fält i schemat om du vill visa innehållet i en förenklad kolumn. Kolumnens namn visas ovanför innehållet till höger på sidan. Du bör kopiera det här namnet om du vill använda det för att fråga om den här datauppsättningen.
+
+![Kolumnnamnet för en kapslad datauppsättning som är markerad i användargränssnittet.](./images/troubleshooting/column-name.png)
+
+Se dokumentationen för fullständig vägledning om [arbeta med kapslade datastrukturer](./best-practices/nested-data-structures.md) med frågeredigeraren eller en tredjepartsklient.
++++
+
+### Hur snabbar jag upp en fråga i en datauppsättning som innehåller arrayer?
+
++++Svar Om du vill förbättra prestanda för frågor om datauppsättningar som innehåller arrayer bör du [explodera i arrayen](https://spark.apache.org/docs/latest/api/sql/index.html#explode) som [CTAS-fråga](./sql/syntax.md#create-table-as-select) i runtime, och utforska den för att hitta möjligheter att förbättra bearbetningstiden.
++++
+
+### Varför bearbetas min CTAS-fråga fortfarande efter många timmar för ett litet antal rader?
+
++++Svar Om frågan har tagit lång tid på en mycket liten datauppsättning kontaktar du kundsupport.
+
+Det kan finnas många orsaker till att en fråga har fastnat under bearbetningen. För att fastställa den exakta orsaken krävs en djupgående analys från fall till fall. [Kontakta Adobe kundsupport](#customer-support) till att vara den här processen.
++++
+
+### Hur kontaktar jag Adobe kundsupport? {#customer-support}
+
++++Svar
+[En fullständig lista över telefonnummer till kundsupport från Adobe](https://helpx.adobe.com/ca/contact/phone.html) finns på hjälpsidan för Adobe. Du kan även hitta hjälp online genom att utföra följande steg:
+
+- Navigera till [https://www.adobe.com/](https://www.adobe.com/) i webbläsaren.
+- Till höger om det övre navigeringsfältet väljer du **[!UICONTROL Sign In]**.
+
+![Adobe webbplats med inloggning markerad.](./images/troubleshooting/adobe-sign-in.png)
+
+- Använd din Adobe ID och ditt lösenord som är registrerat med din Adobe-licens.
+- Välj **[!UICONTROL Help & Support]** i det övre navigeringsfältet.
+
+![Den övre listrutan med hjälp och stöd markerad.](./images/troubleshooting/help-and-support.png)
+
+En rullgardinsbanderoll visas med en [!UICONTROL Help and support] -avsnitt. Välj **[!UICONTROL Contact us]** om du vill öppna den virtuella kundtjänstassistenten för Adobe, eller välja **[!UICONTROL Enterprise support]** för dedikerad hjälp för stora organisationer.
++++
+
+### Hur implementerar jag en sekventiell serie med jobb, utan att köra efterföljande jobb om det tidigare jobbet inte slutförs korrekt?
+
++++Svar Med den anonyma blockfunktionen kan du kedja en eller flera SQL-satser som körs i följd. De gör det även möjligt att hantera undantag.
+
+Se [anonym blockdokumentation](./best-practices/anonymous-block.md) för mer information.
++++
+
+### Hur implementerar jag anpassad attribuering i Query Service?
+
++++Svar Det finns två sätt att implementera anpassad attribuering:
+
+1. Använd en kombination av befintliga [Adobe-definierade funktioner](./sql/adobe-defined-functions.md) för att identifiera om behovet av ärendehantering är uppfyllt.
+1. Om föregående förslag inte uppfyller ditt användningssätt bör du använda en kombination av [fönsterfunktioner](./sql/adobe-defined-functions.md#window-functions). Fönsterfunktioner tittar på alla händelser i en sekvens. De gör det även möjligt att granska historiska data och kan användas i valfri kombination.
++++
+
+### Kan jag formatera mina frågor så att jag enkelt kan återanvända dem?
+
++++Besvara Ja, du kan mallsidentifiera frågor med hjälp av förberedda satser. Förförberedda satser kan optimera prestanda och undvika att behöva tolka en fråga flera gånger. Se [dokumentation om förberedda programsatser](./sql/prepared-statements.md) för mer information.
++++
+
+### Hur hämtar jag felloggar för en fråga? {#error-logs}
+
++++Svar Om du vill hämta felloggar för en viss fråga måste du först använda API:t för frågetjänsten för att hämta information om frågeloggen. HTTP-svaret innehåller de fråge-ID:n som krävs för att undersöka ett frågefel.
+
+Använd kommandot GET för att hämta flera frågor. Information om hur du anropar API:t finns i [exempeldokumentation för API-anrop](./api/queries.md#sample-api-calls).
+
+Identifiera den fråga du vill undersöka från svaret och gör en annan GET-förfrågan med hjälp av dess `id` värde. Fullständiga instruktioner finns i [hämta en fråga efter ID-dokumentation](./api/queries.md#retrieve-a-query-by-id).
+
+Ett godkänt svar returnerar HTTP-status 200 och innehåller `errors` array. Svaret har förkortats av kortfattad anledning.
+
+```json
+{
+    "isInsertInto": false,
+    "request": {
+                "dbName": "prod:all",
+                "sql": "SELECT *\nFROM\n  accounts\nLIMIT 10\n"
+            },
+    "clientId": "8c2455819a624534bb665c43c3759877",
+    "state": "SUCCESS",
+    "rowCount": 0,
+    "errors": [{
+      'code': '58000', 
+      'message': 'Batch query execution gets : [failed reason ErrorCode: 58000 Batch query execution gets : [Analysis error encountered. Reason: [sessionId: f055dc73-1fbd-4c9c-8645-efa609da0a7b Function [varchar] not defined.]]]', 
+      'errorType': 'USER_ERROR'
+      }],
+    "isCTAS": false,
+    "version": 1,
+    "id": "343388b0-e0dd-4227-a75b-7fc945ef408a",
+}
+```
+
+The [Referenshandbok för API för frågetjänst](https://www.adobe.io/experience-platform-apis/references/query-service/) innehåller mer information om alla tillgängliga slutpunkter.
++++
+
+### Vad betyder &quot;Fel vid validering av schema&quot;?
+
++++Svar Meddelandet &quot;Fel vid validering av schema&quot; innebär att systemet inte kan hitta ett fält i schemat. Du bör läsa dokumentet med bästa praxis för att [ordna dataresurser i frågetjänsten](./best-practices/organize-data-assets.md) följt av [Skapa tabell som markerad dokumentation](./sql/syntax.md#create-table-as-select).
+
+I följande exempel visas hur en CTAS-syntax och en strukturell datatyp används:
+
+```sql
+CREATE TABLE table_name WITH (SCHEMA='schema_name')
+
+AS SELECT '1' as _id,
+
+ STRUCT
+
+  ('2021-02-17T15:39:29.0Z' AS taskActualCompletionDate,
+
+    '2020-09-09T21:21:16.0Z' AS taskActualStartDate,
+
+    'Consulting' AS taskdescription,
+
+    '5f6527c10011e09b89666c52d9a8c564' AS taskguide,
+
+    'Stakeholder Consulting Engagement' AS taskname, 
+
+    '2020-09-09T15:00:00.0Z' AS taskPlannedStartDate,
+
+    '2021-02-15T11:00:00.0Z' AS taskPlannedCompletionDate
+
+  ) AS _workfront ;
+```
+
++++
+
+### Hur behandlar jag snabbt nya data som kommer in i systemet varje dag?
+
++++Besvara [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) -satsen kan användas för att stegvis läsa data i en tabell baserat på ett ögonblicksbild-ID. Detta är idealiskt för [inkrementell belastning](./best-practices/incremental-load.md) designmönster som endast bearbetar information i datauppsättningen som har skapats eller ändrats sedan den senaste inläsningen. Resultatet blir effektivare bearbetning och kan användas med både direktuppspelning och batchdatabearbetning.
++++
+
+### Varför är det en skillnad mellan siffrorna som visas i profilgränssnittet och siffrorna som beräknas från datauppsättningen för profilexport?
+
++++Svar Numren som visas på profilkontrollpanelen är korrekta vid den senaste ögonblicksbilden. De tal som genereras i exporttabellen är helt beroende av exportfrågan. Därför är en vanlig orsak till den här skillnaden att fråga hur många profiler som kvalificerar sig för ett visst segment.
+
+>[!NOTE]
+>
+>Vid sökning inkluderas historiska data, medan användargränssnittet bara visar aktuella profildata.
+
++++
+
+### Varför returnerade min fråga en tom delmängd och vad ska jag göra?
+
++++Svar Den troligaste orsaken är att frågan är för smal i omfånget. Du bör ta bort ett avsnitt i `WHERE` tills du börjar se data.
+
+Du kan också bekräfta att datauppsättningen innehåller data genom att använda en liten fråga som:
+
+```sql
+SELECT count(1) FROM myTableName
+```
+
++++
+
+### Kan jag ta prov på mina data?
+
++++Svar Den här funktionen är ett pågående arbete. Mer information finns i [versionsinformation](../release-notes/latest/latest.md) och via dialogrutorna för användargränssnittet när funktionen är klar för lansering.
++++
+
+### Vilka hjälpfunktioner stöds av frågetjänsten?
+
++++Svarsfrågetjänsten innehåller flera inbyggda SQL-hjälpfunktioner som utökar SQL-funktionerna. Se dokumentet för en fullständig lista över [SQL-funktioner som stöds av frågetjänsten](./sql/spark-sql-functions.md).
++++
+
+### Vad ska jag göra om min schemalagda fråga misslyckas?
+
++++Besvara först, kontrollera loggarna för att ta reda på mer om felet. Frågor och svar om [hitta fel i loggar](#error-logs) innehåller mer information om hur du gör detta.
+
+Du bör även läsa dokumentationen om hur du utför [schemalagda frågor i användargränssnittet](./ui/user-guide.md#scheduled-queries) och via [API](./api/scheduled-queries.md).
++++
+
+### Vad betyder felet &quot;Sessionsgräns nådd&quot;?
+
++++Svara &quot;Sessionsgränsen har nåtts&quot; innebär att det maximala antalet sessioner med frågetjänsten som tillåts för din organisation har uppnåtts. Kontakta Adobe Experience Platform-administratören i din organisation.
++++
+
+### Hur hanterar frågeloggen frågor som relaterar till en borttagen datamängd?
+
++++Svarsfrågetjänsten tar aldrig bort frågehistoriken. Detta innebär att alla frågor som refererar till en borttagen datauppsättning returnerar&quot;Ingen giltig datauppsättning&quot; som ett resultat.
++++
 
 ### Hur hämtar jag bara metadata för en fråga?
 
-Om du bara vill hämta metadata för en fråga kan du köra en fråga som returnerar noll rader enligt följande:
++++Svar Du kan köra en fråga som returnerar noll rader för att bara få metadata som svar. Den här exempelfrågan returnerar bara metadata för den angivna tabellen.
 
 ```sql
 SELECT * FROM <table> WHERE 1=0
 ```
 
-Den här frågan returnerar bara metadata för den angivna tabellen.
++++
 
-### Hur itererar jag snabbt på en CTAS-fråga (Skapa tabell som markerad) utan att materialisera den?
+### Hur kan jag snabbt iterera på en CTAS-fråga (Skapa tabell som markerad) utan att materialisera den?
 
-Du kan skapa tillfälliga tabeller för att snabbt iterera och experimentera med en fråga innan den materialiseras för användning. Du kan också använda temporära tabeller för att validera om en fråga fungerar.
++++Svar Du kan skapa tillfälliga tabeller för att snabbt iterera och experimentera med en fråga innan den materialiseras för användning. Du kan också använda temporära tabeller för att validera om en fråga fungerar.
 
 Du kan till exempel skapa en tillfällig tabell:
 
@@ -56,14 +303,16 @@ AND timestamp < TO_TIMESTAMP('2021-01-21 13:00:00')
 LIMIT 100;
 ```
 
++++
+
 ### Hur ändrar jag tidszonen till och från en UTC-tidsstämpel?
 
-Adobe Experience Platform innehåller data i UTC-format (Coordinated Universal Time) för tidsstämpling. Ett exempel på UTC-formatet är `2021-12-22T19:52:05Z`
++++Besvara Adobe Experience Platform består av data i UTC-format (Coordinated Universal Time) för tidsstämpling. Ett exempel på UTC-formatet är `2021-12-22T19:52:05Z`
 
 Frågetjänsten stöder inbyggda SQL-funktioner för konvertering av en viss tidsstämpel till och från UTC-format. Båda `to_utc_timestamp()` och `from_utc_timestamp()` metoder har två parametrar: tidsstämpel och tidszon.
 
 | Parameter | Beskrivning |
-|---|---|
+|-----------|---------------|
 | Tidsstämpel | Tidsstämpeln kan skrivas antingen i UTC-format eller enkelt `{year-month-day}` format. Om ingen tid anges är standardvärdet midnatt på morgonen den angivna dagen. |
 | Tidszon | Tidszonen skrivs i en `{continent/city})` format. Det måste vara en av de erkända tidszonskoderna som finns i [TZ-databas för offentlig domän](https://data.iana.org/time-zones/tz-link.html#tzdb). |
 
@@ -89,7 +338,7 @@ Konsolutdata i gränssnittet för frågetjänsten är ett mer läsbart format:
 8/30/2021, 3:00 PM
 ```
 
-### Konvertera från UTC-tidsstämpeln
+#### Konvertera från UTC-tidsstämpeln
 
 The `from_utc_timestamp()` method tolkar de givna parametrarna **från tidsstämpeln i den lokala tidszonen** och ger motsvarande tidsstämpel för det önskade området i UTC-format. I exemplet nedan är timmen 2:40 PM i användarens lokala tidszon. Seoul-tidszonen som skickas som en variabel ligger nio timmar före den lokala tidszonen.
 
@@ -105,7 +354,7 @@ Frågan returnerar en tidsstämpel i UTC-format för den tidszon som skickas som
 
 ### Hur ska jag filtrera mina tidsseriedata?
 
-När du frågar med tidsseriedata bör du använda tidsstämpelfiltret när det är möjligt för att få en mer korrekt analys.
++++Svar Vid fråga med tidsseriedata bör du använda tidsstämpelfiltret när det är möjligt för mer korrekt analys.
 
 >[!NOTE]
 >
@@ -122,13 +371,36 @@ WHERE  timestamp >= To_timestamp('2021-01-21 12:00:00')
        AND timestamp < To_timestamp('2021-01-21 13:00:00')
 ```
 
++++
+
+### Hur använder jag `CAST` för att konvertera mina tidsstämplar i SQL-frågor?
+
++++Svara när du använder `CAST` om du vill konvertera en tidsstämpel måste du inkludera både datumet och **och** tid.
+
+Om du till exempel saknar tidskomponenten, som visas nedan, uppstår ett fel:
+
+```sql
+SELECT * FROM ABC
+WHERE timestamp = CAST('07-29-2021' AS timestamp)
+```
+
+Korrekt användning av `CAST` operatorn visas nedan:
+
+```sql
+SELECT * FROM ABC
+WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
+```
+
++++
+
 ### Ska jag använda jokertecken, till exempel *, för att hämta alla rader från mina datamängder?
 
-Du kan inte använda jokertecken för att hämta alla data från dina rader, eftersom frågetjänsten ska behandlas som en **columnar-store** i stället för ett vanligt radbaserat lagringssystem.
++++Svar Du kan inte använda jokertecken för att hämta alla data från dina rader, eftersom frågetjänsten ska behandlas som en **columnar-store** i stället för ett vanligt radbaserat lagringssystem.
++++
 
 ### Ska jag använda `NOT IN` i min SQL-fråga?
 
-The `NOT IN` används ofta för att hämta rader som inte finns i en annan tabell eller SQL-sats. Operatorn kan göra prestandan långsammare och kan returnera oväntade resultat om kolumnerna som jämförs accepterar `NOT NULL`eller så har du ett stort antal poster.
++++Besvara `NOT IN` används ofta för att hämta rader som inte finns i en annan tabell eller SQL-sats. Operatorn kan göra prestandan långsammare och kan returnera oväntade resultat om kolumnerna som jämförs accepterar `NOT NULL`eller så har du ett stort antal poster.
 
 I stället för att använda `NOT IN`kan du använda antingen `NOT EXISTS` eller `LEFT OUTER JOIN`.
 
@@ -152,7 +424,7 @@ WHERE NOT EXISTS
 (SELECT ID FROM T2 WHERE T1.ID = T2.ID)
 ```
 
-Om du använder `LEFT OUTER JOIN` -operatorn kan du replikera med `NOT IN` genom att använda följande fråga:
+Om du använder `LEFT OUTER JOIN` kan du replikera med `NOT IN` genom att använda följande fråga:
 
 ```sql
 SELECT T1.ID FROM T1
@@ -160,34 +432,12 @@ LEFT OUTER JOIN T2 ON T1.ID = T2.ID
 WHERE T2.ID IS NULL
 ```
 
-### Vad är rätt användning av `OR` och `UNION` operatorer?
-
-### Hur använder jag `CAST` för att konvertera mina tidsstämplar i SQL-frågor?
-
-När du använder `CAST` om du vill konvertera en tidsstämpel måste du inkludera både datumet och **och** tid.
-
-Om du till exempel saknar tidskomponenten, som visas nedan, uppstår ett fel:
-
-```sql
-SELECT * FROM ABC
-WHERE timestamp = CAST('07-29-2021' AS timestamp)
-```
-
-Korrekt användning av `CAST` operatorn visas nedan:
-
-```sql
-SELECT * FROM ABC
-WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
-```
-
-### Hur hämtar jag mina frågeresultat som en CSV-fil?
-
-Det här är inte en funktion som frågetjänsten erbjuder direkt. Om [!DNL PostgreSQL] klienten som används för att ansluta till databasservern har den funktionen. Svaret på en SELECT-fråga kan skrivas och laddas ned som en CSV-fil. Se dokumentationen för verktyget eller tredjepartsverktyget som du använder för att få mer information om processen.
++++
 
 ## REST API-fel
 
 | HTTP-statuskod | Beskrivning | Möjliga orsaker |
-| ---------------- | ----------- | --------------- |
+|------------------|-----------------------|----------------------------|
 | 400 | Felaktig begäran | Felaktig eller ogiltig fråga |
 | 401 | Autentiseringen misslyckades | Ogiltig autentiseringstoken |
 | 500 | Internt serverfel | Internt systemfel |
@@ -195,7 +445,7 @@ Det här är inte en funktion som frågetjänsten erbjuder direkt. Om [!DNL Post
 ## PostgreSQL API-fel
 
 | Felkod | Anslutningstillstånd | Beskrivning | Möjlig orsak |
-| ---------- | ---------------- | ----------- | -------------- |
+|------------|---------------------------|-------------|----------------|
 | **08P01** | Ej tillämpligt | Meddelandetypen stöds inte | Meddelandetypen stöds inte |
 | **28P01** | Start - autentisering | Ogiltigt lösenord | Ogiltig autentiseringstoken |
 | **28000** | Start - autentisering | Ogiltig auktoriseringstyp | Ogiltig auktoriseringstyp. Måste vara `AuthenticationCleartextPassword`. |
@@ -211,3 +461,67 @@ Det här är inte en funktion som frågetjänsten erbjuder direkt. Om [!DNL Post
 | **42501** | DROP TABLE Query | Tabellen har inte skapats av den autentiserade användaren | Tabellen som tas bort skapades inte av den inloggade användaren |
 | **42P01** | DROP TABLE Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
 | **42P12** | DROP TABLE Query | Ingen tabell hittades för `dbName`: kontrollera `dbName` | Inga tabeller hittades i den aktuella databasen |
+
+## Exporterar data {#exporting-data}
+
+I det här avsnittet finns information om hur du exporterar data och begränsningar.
+
+
+### Finns det något sätt att extrahera data från frågetjänsten efter frågebearbetning och spara resultaten i en CSV-fil?
+
++++Besvara Ja. Data kan extraheras från frågetjänsten och det finns även ett alternativ för att lagra resultaten i CSV-format via ett SQL-kommando.
+
+Det finns två sätt att spara resultatet av en fråga när du använder en PSQL-klient. Du kan använda `COPY TO` eller skapa en programsats med följande format:
+
+```sql
+SELECT column1, column2 
+FROM <table_name>  
+\g <table_name>.out
+```
+
+[Vägledning om användningen av `COPY TO` kommando](./sql/syntax.md#copy) finns i referensdokumentationen för SQL-syntaxen.
++++
+
+### Kan jag extrahera innehållet i den slutliga datauppsättningen som har importerats via CTAS-frågor (förutsatt att det är större mängder data som Terabytes)?
+
++++Svarsnummer Det finns för närvarande ingen funktion för extrahering av inkapslade data.
++++
+
+## Tredjepartsverktyg {#third-party-tools}
+
++++Svar Detta avsnitt innehåller information om användning av tredjepartsverktyg som PSQL och Power BI.
++++
+
+### Kan jag ansluta frågetjänsten till ett verktyg från tredje part?
+
++++Besvara Ja, du kan ansluta flera tredjepartsklienter till Query Service. Läs dokumentationen för [fullständig information om tillgängliga klienter och hur du ansluter dem till tjänsten Query](./clients/overview.md).
++++
+
+### Finns det något sätt att ansluta frågetjänsten en gång för kontinuerlig användning med ett verktyg från tredje part?
+
++++Besvara Ja, klientdatorer från tredje part kan anslutas till frågetjänsten via en engångsinstallation av ej förfallande autentiseringsuppgifter. Autentiseringsuppgifter som inte förfaller kan genereras av en behörig användare och kommer att få dem i en JSON-fil som laddas ned till den lokala datorn. Fullständig [vägledning om hur du skapar och hämtar ej förfallodatum för inloggningsuppgifter](./ui/credentials.md#non-expiring-credentials) finns i dokumentationen.
++++
+
+### Vilken typ av SQL-redigerare från tredje part kan jag ansluta till Query Service Editor?
+
++++Besvara någon SQL-redigerare från tredje part som är PSQL eller [!DNL Postgres] klientkompatibel kan anslutas till Query Service Editor. Läs dokumentationen för [ansluta klienter till frågetjänsten](./clients/overview.md) om du vill se en lista över tillgängliga instruktioner.
++++
+
+### Kan jag ansluta Power BI-verktyget till Query Service?
+
++++Svar Ja, du kan ansluta Power BI till frågetjänsten. Läs dokumentationen för [anvisningar om hur du ansluter Power BI-datorprogrammet till Query Service](./clients/power-bi.md).
++++
+
+### Varför tar det lång tid att läsa in kontrollpanelerna när de är anslutna till Query Service?
+
++++Svar När systemet är anslutet till frågetjänsten är det anslutet till en interaktiv eller gruppbearbetningsmotor. Detta kan leda till längre inläsningstider för att återspegla de bearbetade data.
+
+Om du vill förbättra svarstiderna för dina instrumentpaneler bör du implementera en Business Intelligence-server (BI) som ett cachelagringslager mellan Query Service och BI-verktyg. I allmänhet har de flesta BI-verktyg ett extra erbjudande för en server.
+
+Syftet med att lägga till cacheserverlagret är att cachelagra data från frågetjänsten och använda samma för kontrollpaneler för att snabba upp svaret. Detta är möjligt eftersom resultaten för frågor som körs cachelagras i BI-servern varje dag. Cachelagringsservern skickar sedan dessa resultat till alla användare med samma fråga för att minska fördröjningen. Se dokumentationen för verktyget eller tredjepartsverktyget som du använder för att få mer information om den här konfigurationen.
++++
+
+### Är det möjligt att komma åt Query Service med anslutningsverktyget pgAdmin?
+
++++Svarsnr, pgAdmin-anslutning stöds inte. A [lista över tillgängliga tredjepartsklienter och instruktioner för hur de ska anslutas till frågetjänsten](./clients/overview.md) finns i dokumentationen.
++++
