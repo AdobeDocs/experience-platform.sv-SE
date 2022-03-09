@@ -5,9 +5,9 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
+source-git-commit: 38d0c34e7af2466fa005c8adaf3bd9e1d9fd78e1
 workflow-type: tm+mt
-source-wordcount: '3275'
+source-wordcount: '3274'
 ht-degree: 0%
 
 ---
@@ -489,8 +489,7 @@ FROM <table_name>
 
 ## Tredjepartsverktyg {#third-party-tools}
 
-+++Svar Detta avsnitt innehåller information om användning av tredjepartsverktyg som PSQL och Power BI.
-+++
+Detta avsnitt innehåller information om användning av tredjepartsverktyg som PSQL och Power BI.
 
 ### Kan jag ansluta frågetjänsten till ett verktyg från tredje part?
 
