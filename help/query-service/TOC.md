@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: c3baf586f5e11e085114b1f26422d191b1067281
+source-git-commit: 341b34c9acd7b3e19369ec30c4ba643c0cf1b829
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '149'
 ht-degree: 2%
 
 ---
@@ -16,36 +16,36 @@ ht-degree: 2%
 
 - [Översikt över frågetjänsten](home.md)
 - [Snabbstartguide](quickstart.md)
-- API för frågetjänst {#api}
+- Query Service API {#api}
    - [Komma igång](api/getting-started.md)
    - [Frågor](api/queries.md)
-   - [Anslutningsparametrar](api/connection-parameters.md)
-   - [Schemalagda frågor](api/scheduled-queries.md)
-   - [Körs för schemalagda frågor](api/runs-scheduled-queries.md)
-   - [Frågemallar](api/query-templates.md)
+   - [Connection parameters](api/connection-parameters.md)
+   - [Scheduled queries](api/scheduled-queries.md)
+   - [Runs for scheduled queries](api/runs-scheduled-queries.md)
+   - [Query templates](api/query-templates.md)
 - Användargränssnitt för frågetjänst {#ui}
    - [Översikt över användargränssnittet](ui/overview.md)
-   - [Användarhandbok för Frågeredigeraren](ui/user-guide.md)
+   - [Query Editor user guide](ui/user-guide.md)
    - [Använda autentiseringsuppgifter för frågetjänsten](ui/credentials.md)
-   - [Genererar datauppsättningar från frågeresultat](ui/create-datasets.md)
+   - [Generating datasets from query results](ui/create-datasets.md)
 - God praxis {#best-practices}
    - [Allmän vägledning för frågekörning](best-practices/writing-queries.md)
    - [Vägledning för organisationen av datatillgångar](./best-practices/organize-data-assets.md)
-   - [Arbeta med kapslade datastrukturer](best-practices/nested-data-structures.md)
-   - [Exempel på anonyma blockfrågor](best-practices/anonymous-block.md)
-   - [Inkrementell inläsning](best-practices/incremental-load.md)
+   - [Working with nested data structures](best-practices/nested-data-structures.md)
+   - [Anonymt block](best-practices/anonymous-block.md)
+   - [Incremental loading](best-practices/incremental-load.md)
    - [Datadeduplicering](best-practices/deduplication.md)
-- Exempelfrågor {#sample-queries}
+- Sample Queries {#sample-queries}
    - [Exempelfrågor om Experience Event](sample-queries/experience-event.md)
-   - [Exempel på Adobe Analytics-frågor](sample-queries/adobe-analytics.md)
-   - [Exempel på Adobe Target-frågor](sample-queries/adobe-target.md)
+   - [Sample Adobe Analytics queries](sample-queries/adobe-analytics.md)
+   - [Sample Adobe Target queries](sample-queries/adobe-target.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
-   - [SQL-syntax](sql/syntax.md)
+   - [SQL syntax](sql/syntax.md)
    - [Adobe-definierade funktioner](sql/adobe-defined-functions.md)
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
-   - [Metadata-kommandon](sql/metadata.md)
-   - [Förberedda programsatser](sql/prepared-statements.md)
+   - [Metadata commands](sql/metadata.md)
+   - [Prepared statements](sql/prepared-statements.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
@@ -55,6 +55,6 @@ ht-degree: 2%
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
    - [Tableau](clients/tableau.md)
-- [Felsökningsguide](troubleshooting-guide.md)
+- [Troubleshooting guide](troubleshooting-guide.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Platform release notes](https://www.adobe.com/go/platform-release-notes-en)
