@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar datastreams. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: c2378c5da73c36e5889d2c83b18194ff239fce96
+source-git-commit: 0d23576097b113fa3b24857467658bdf745be427
 workflow-type: tm+mt
-source-wordcount: '1942'
+source-wordcount: '1837'
 ht-degree: 0%
 
 ---
@@ -107,14 +107,6 @@ När antalet obligatoriska fält har nått noll och du är nöjd med mappningen 
 När du har konfigurerat en ny datastam eller valt en befintlig som ska visas, visas informationssidan för den datastream. Här finns mer information om datastream, inklusive dess ID.
 
 ![Informationssida för ett datastream som skapats](../images/datastreams/view-details.png)
-
-När en datastream skapas skapas tre associerade miljöer automatiskt med identiska inställningar. Dessa tre miljöer `dev`, `stage`och `prod`, som motsvarar [standardmiljöer för taggar](../../tags/ui/publishing/environments.md). När du skapar ett taggbibliotek till en `dev` -miljön använder biblioteket automatiskt `dev` från datastream. Du kan fritt redigera inställningarna i enskilda miljöer efter behov.
-
-I SDK-implementeringar kan `edgeConfigId` är ett sammansatt ID som anger datastream och den särskilda miljön i den aktuella datastream. Du kan till exempel ange `stage` miljö för ett datastream med ID `1c86778b-cdba-4684-9903-750e52912ad1`, använder du `edgeConfigId` `1c86778b-cdba-4684-9903-750e52912ad1:stage`.
-
->[!IMPORTANT]
->
->Om det inte finns någon miljö i det sammansatta ID:t är produktionsmiljön (`prod`) används.
 
 På informationsskärmen kan du [lägg till tjänster](#add-services) för att aktivera funktioner från de Adobe Experience Cloud-produkter du har tillgång till.
 
