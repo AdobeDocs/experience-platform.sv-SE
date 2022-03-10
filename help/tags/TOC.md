@@ -4,9 +4,9 @@ user-guide-title: Hjälp om taggar
 breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
-source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
+source-git-commit: 66975d2352062e4abe1af35d7a7130a5c85188d0
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '386'
 ht-degree: 25%
 
 ---
@@ -44,6 +44,7 @@ ht-degree: 25%
    * [Bibliotek](./ui/publishing/libraries.md)
    * [Självvärdande bibliotek](./ui/publishing/hosts/self-hosting-libraries.md)
    * [Publicera om ett bibliotek](./ui/publishing/republish.md)
+   * [Förstklassigt CDN-stöd (beta)](./ui/publishing/premium-cdn.md)
 * Information på klientsidan {#client-side}
    * [Översikt](./ui/client-side/overview.md)
    * [Asynkron distribution](./ui/client-side/asynchronous-deployment.md)
