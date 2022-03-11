@@ -5,7 +5,7 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7254c84f1a7f4f45a0098e27515a7a01cae395db
+source-git-commit: 5be496cec28ab99c057834005aa1f014cea7406c
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 
 Källor i Experience Platform är grupperade i följande kategorier:
 
-### Adobe-program
+### Adobe-program {#adobe-applications}
 
 Experience Platform tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
 
@@ -38,13 +38,13 @@ Experience Platform tillåter att data hämtas från andra Adobe-program, inklus
 - [[!DNL Marketo Engage] anslutningsöversikt](connectors/adobe-applications/marketo/marketo.md)
 - [Skapa en [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
 
-### Reklam
+### Reklam {#advertising}
 
 Experience Platform stöder inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Google AdWords]](connectors/advertising/ads.md) koppling
 
-### molnlagring
+### molnlagring {#cloud-storage}
 
 Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
@@ -62,7 +62,7 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 - [[!DNL Oracle Object Storage] koppling](connectors/cloud-storage/oracle-object-storage.md)
 - [[!DNL SFTP] koppling](connectors/cloud-storage/sftp.md)
 
-### CRM (Customer Relationship Management)
+### CRM (Customer Relationship Management) {#crm}
 
 CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
@@ -71,14 +71,14 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md)
 - [[!DNL Zoho CRM]](connectors/crm/zoho.md)
 
-### Nöjda kunder
+### Nöjda kunder {#customer-success}
 
 Experience Platform har stöd för inhämtning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Salesforce Service Cloud] koppling](connectors/customer-success/salesforce-service-cloud.md)
 - [[!DNL ServiceNow] koppling](connectors/customer-success/servicenow.md)
 
-### Databas
+### Databas {#database}
 
 Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
@@ -101,19 +101,19 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 - [[!DNL PostgreSQL] koppling](connectors/databases/postgres.md)
 - [[!DNL Snowflake] koppling](connectors/databases/snowflake.md)
 
-### eCommerce
+### eCommerce {#ecommerce}
 
 Experience Platform stöder inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
-### Lokalt system
+### Lokalt system {#local-system}
 
 Experience Platform har stöd för inmatning av data från ditt lokala system. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [Lokal filöverföring](connectors/local-system/local-file-upload.md)
 
-### Marknadsföringsautomatisering
+### Marknadsföringsautomatisering {#marketing-automation}
 
 Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
@@ -121,19 +121,19 @@ Experience Platform stöder inmatning av data från ett system för automatiseri
 - [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
 
-### Betalningar
+### Betalningar {#payments}
 
 Experience Platform stöder inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL PayPal] koppling](connectors/payments/paypal.md)
 
-### Direktuppspelning
+### Direktuppspelning {#streaming}
 
 Experience Platform stöder inmatning av data från strömningskällor. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL HTTP API]](connectors/streaming/http.md)
 
-### Protokoll
+### Protokoll {#protocols}
 
 Experience Platform har stöd för inmatning av data från tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
