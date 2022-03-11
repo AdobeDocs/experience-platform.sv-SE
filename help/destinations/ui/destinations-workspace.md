@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 533f76891f47ba11e2a9de87aa8c249eb9249895
+source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
 workflow-type: tm+mt
-source-wordcount: '981'
+source-wordcount: '998'
 ht-degree: 0%
 
 ---
@@ -107,8 +107,8 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 | [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller [!DNL Azure Blob].</li><li>För reklamdestinationer i realtid: Server-till-server.</li><li>För direktuppspelningsmål: Kan [!DNL Azure Event Hubs] eller [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
 | [!UICONTROL Activation Data] | Anger antalet segment som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade segmenten. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation om du vill ha mer information om de aktiverade segmenten. |
-| [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. |
-| [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data aktiveras till det här målet. |
+| [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. Välj uppåt-/nedåtpilen för att sortera aktiveringsflödena efter det senaste först eller det äldsta först. |
+| [!UICONTROL Status] | `Enabled` eller `Disabled`. Anger om data aktiveras till det här målet. |
 
 Klicka på en målrad för att visa mer information om målet i den högra listen.
 
