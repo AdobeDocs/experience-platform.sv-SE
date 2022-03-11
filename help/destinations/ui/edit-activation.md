@@ -6,9 +6,9 @@ seo-title: Edit activation dataflows
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 seo-description: Follow the steps in this article to edit an existing activation dataflow in Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
+source-git-commit: cf87db062f162f73a22c7085a25cc34e997597b1
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '319'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 # Redigera aktiveringsdataflöden {#edit-activation-flows}
 
 I Adobe Experience Platform kan du redigera olika komponenter i befintliga aktiveringsdataflöden till mål, t.ex. exporterade segment och profilattribut, exportfrekvens, om aktiveringsdataflödet är aktiverat eller inaktiverat, med mera.
+
+## Redigera dataflöden {#edit-dataflows}
 
 Följ stegen nedan för att redigera befintliga aktiveringsdataflöden:
 
@@ -42,4 +44,8 @@ Följ stegen nedan för att redigera befintliga aktiveringsdataflöden:
 
    ![Destinationsinformation](../assets/ui/edit-activation/destination-details.png)
 
-5. Se [Aktiveringsöversikt](activation-overview.md) om du vill ha mer information om hur du aktiverar nya segment för dina destinationer.
+## Nästa steg {#next-steps}
+
+Genom att följa den här självstudiekursen har du använt **[!UICONTROL destinations]** arbetsyta för att uppdatera befintliga måldataflöden.
+
+Mer information om destinationer finns i [destinationer, översikt](../catalog/overview.md).
