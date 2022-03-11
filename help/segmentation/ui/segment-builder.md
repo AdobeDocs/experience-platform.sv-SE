@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Segment Builder
 topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6f4d250750d36c516a9a5730b5ced91e47d3bf05
+source-git-commit: 708103a52187ef17892de60ff8e562a05fc2f2db
 workflow-type: tm+mt
-source-wordcount: '2311'
+source-wordcount: '2397'
 ht-degree: 0%
 
 ---
@@ -114,6 +114,14 @@ Om du vill lägga till en ny regel i segmentdefinitionen drar du en ruta från *
 >
 >De senaste ändringarna av Adobe Experience Platform har uppdaterat användningen av `OR` och `AND` logiska operatorer mellan händelser. Dessa uppdateringar påverkar inte befintliga segment. Alla efterföljande uppdateringar av befintliga segment och nya segment kommer dock att påverkas av dessa ändringar. Läs [uppdatering av tidskonstanter](./segment-refactoring.md) för mer information.
 
+När du väljer ett värde för attributet visas en lista med uppräkningsvärden som attributet kan vara.
+
+![](../images/ui/segment-builder/enum-list.png)
+
+Om du väljer ett värde i den här listan med enum, visas värdet med en heldragen kantlinje. För fält som använder `meta:enum` (mjuk) uppräkning kan du även välja ett värde som är **not** från listan med enum. Om du skapar ett eget värde kontureras det med en prickad ram tillsammans med en varning om att det här värdet inte finns med i uppräkningslistan.
+
+![](../images/ui/segment-builder/enum-warning.png)
+
 ### Lägga till målgrupper
 
 Du kan dra och släppa en målgrupp från **[!UICONTROL Audience]** på regelbyggarens arbetsyta för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i den nya segmentregeln.
@@ -126,7 +134,7 @@ För [!DNL Platform] målgrupper skapade med [!DNL Segment Builder]kan du konver
 
 ![](../images/ui/segment-builder/add-audience-to-segment.png)
 
-Om det uppstår konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
+Om det uppstår några konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
 
 ### kodvyn
 
@@ -226,4 +234,4 @@ Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isoler
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Mer information om [!DNL Segmentation Service]kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Mer information om de andra delarna av [!DNL Segmentation Service] Gränssnittet, läs [[!DNL Segmentation Service] användarhandbok](./overview.md)
+Mer information om [!DNL Segmentation Service]kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Mer information om de andra delarna i [!DNL Segmentation Service] Gränssnittet, läs [[!DNL Segmentation Service] användarhandbok](./overview.md)
