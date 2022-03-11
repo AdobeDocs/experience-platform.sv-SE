@@ -1,9 +1,10 @@
 ---
 title: Förstklassigt CDN-stöd för taggar
 description: Läs om den premiumbaserade CDN-funktionen för taggar och hur den kan användas för att leverera innehåll i flera geografiska regioner.
-source-git-commit: 530fc1ad3f389ffb5d77ddf6aa0b0b3208f1d532
+exl-id: 33e36d3b-9e21-44a8-8498-32a5fc20b46b
+source-git-commit: 3843b08a3a047200f02c1ceb17a64a196d4a0287
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '533'
 ht-degree: 0%
 
 ---
@@ -20,21 +21,13 @@ För att ta hänsyn till detta har taggar i Experience Platform en premiumfunkti
 
 Premium CDN-support är en betalfunktion och måste köpas av din organisation för att kunna aktivera och använda den. I den här guiden beskrivs hur du konfigurerar och använder funktionen i användargränssnittet för datainsamling när du har köpt den.
 
-## Aktivera premium-CDN för ett företag
+## Aktivera premium-CDN för din organisation
 
-Premium-CDN är aktiverat på företagsnivå, vilket innebär att du måste ha företagsredigeringsbehörighet för att aktivera funktionen.
-
-I användargränssnittet för datainsamling går du till **[!UICONTROL Tags]** > **[!UICONTROL Companies]**. Här väljer du det företag som du vill aktivera funktionen för och sedan väljer du **[!UICONTROL Configure]** .
-
-![Välj ett företag att konfigurera](../../images/ui/publishing/premium-cdn/configure-property.png)
-
-I konfigurationsdialogrutan som visas väljer du alternativet för **[!UICONTROL Premium CDN Enabled]** före markering **[!UICONTROL Save]** för att bekräfta dina ändringar.
-
-![Aktivera alternativet Premium CDN](../../images/ui/publishing/premium-cdn/enable-premium-cdn.png)
+Premium-CDN är aktiverat på företagsnivå. När din organisation har köpt den premiumbaserade CDN-funktionen aktiverar en Adobe-administratör för ditt företag i användargränssnittet för datainsamling.
 
 ## Återskapa och installera taggbibliotek med uppdaterade inbäddningskoder
 
-Att aktivera premiumfunktionen för CDN innebär inte att dina taggresurser omedelbart replikeras och kan användas i de nya regionerna. Det betyder bara att du nu kan välja när du vill använda den här funktionen.
+När du har aktiverat Premium CDN betyder det inte att dina taggresurser omedelbart replikeras och är klara att användas i de nya regionerna. Det betyder bara att du nu kan välja när du vill använda den här funktionen.
 
 >[!IMPORTANT]
 >
