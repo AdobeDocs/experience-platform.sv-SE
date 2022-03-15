@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: a768cde86215ed9aad19e45362c6185276456703
+source-git-commit: bb06dd63de1a36d3e3d065a986f3d34f63783895
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1290'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,12 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.10.0 - 10 mars 2022
+
+* Uppdatera det fördolda kodutdrag som är tillgängligt för kopiering på konfigurationssidan så att det fungerar med den uppdaterade Adobe Target VEC-redigeraren.
+
+Innehåller version 2.9.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.9.0 - 19 januari 2022
 

@@ -3,14 +3,24 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: a768cde86215ed9aad19e45362c6185276456703
+source-git-commit: 3d8e21f76b23bac3ee88702c19cf6d6a6e25a3ae
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '976'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.9.0 - 10 mars 2022
+
+* Stöd för spårning har lagts till [!DNL control (default)] Adobe Target upplevelser.
+* Optimerade vyändringshändelser för ensidesprogram. Visningsmeddelandet ingår nu i händelsen view-change när personaliserade upplevelser återges.
+* Konsolvarning har tagits bort när ingen `eventType` är närvarande.
+* Ett problem där `propositions` egenskapen returnerades endast från en `sendEvent` när upplevelser begärdes eller hämtades från cachen. The `propositions` kommer nu alltid att definieras som en array.
+* Korrigerade ett problem där dolda behållare inte visades när ett fel returnerades från Adobe Experience Edge.
+* Ett problem där interaktionshändelserna inte räknades i Adobe Target har korrigerats. Detta korrigerades genom att vynamnet lades till i XDM på web.webPageDetails.viewName.
+* Åtgärda brutna dokumentationslänkar i konsolmeddelanden.
 
 ## Version 2.8.0 - 19 januari 2022
 
