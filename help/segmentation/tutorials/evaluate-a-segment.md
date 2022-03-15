@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
+source-git-commit: 885ebbcae223229f4614acd5b50266ea11bcf906
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -153,7 +153,7 @@ Följande steg krävs för att exportera målgruppen:
 - [Övervaka exportförlopp](#monitor-export-progress) - Kontrollera exportförloppet.
 - [Läs målgruppsdata](#next-steps) - Hämta de resulterande enskilda XDM-profilerna som representerar medlemmarna i din publik.
 
-### Skapa en måldatauppsättning
+### Skapa en måldatauppsättning {#create-dataset}
 
 När du exporterar en målgrupp måste du först skapa en måldatauppsättning. Det är viktigt att datauppsättningen är korrekt konfigurerad för att exporten ska lyckas.
 
