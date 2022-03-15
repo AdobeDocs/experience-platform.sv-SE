@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 0a6813d5d614d86940b042e03d2ab4f083644600
+source-git-commit: a076e9815050b10c0db5001a15371761710a3c28
 workflow-type: tm+mt
-source-wordcount: '3173'
+source-wordcount: '3200'
 ht-degree: 0%
 
 ---
@@ -194,6 +194,10 @@ Följande mått är tillgängliga för segmentjobb:
 >id="platform_monitoring_activation"
 >title="Aktivering"
 >abstract="Målaktiveringsvyn innehåller information om segmentets aktiveringsstatus och mått från kundprofilen i realtid för att generera unika identiteter."
+
+>[!NOTE]
+>
+>Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md), [HTTP-API](/help/destinations/catalog/streaming/http-destination.md), [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)och [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) destinationer.
 
 Så här öppnar du [!UICONTROL Monitoring] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Destinations]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mått och information om målkörningsjobb.
 
