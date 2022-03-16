@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Hjälp om intelligenta tjänster
 breadcrumb-title: Guide för intelligenta tjänster
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, hitta insikter och skapa segment utifrån era marknadsföringshändelsedata.
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 43405e50d0c418a8ee988f4d10b187cc4941c5ea
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '123'
 ht-degree: 4%
 
 ---
@@ -24,10 +24,11 @@ ht-degree: 4%
    - [Upptäck insikter](attribution-ai/discover-insights.md)
    - [Hämta bakgrundsmusik](attribution-ai/download-scores.md)
    - [Analysera bakgrundsmusik med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
-- Innehåll och handel AI (beta) {#content-commerce-ai}
+   - [Fel vid felsökning](attribution-ai/troubleshooting.md)
+- Innehåll och handel, AI (beta) {#content-commerce-ai}
    - [Översikt](content-commerce-ai/overview.md)
    - [Komma igång](content-commerce-ai/getting-started.md)
-   - API för innehåll och handel med API{#api}
+   - API för innehåll och handel med AI{#api}
       - [Färgextrahering](content-commerce-ai/api/color-extraction.md)
       - [Extrahering av nyckelord](content-commerce-ai/api/keyword-extraction.md)
       - [Textklassificering](content-commerce-ai/api/text-classification.md)
