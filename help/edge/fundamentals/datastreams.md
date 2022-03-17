@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar datastreams. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 0d23576097b113fa3b24857467658bdf745be427
+source-git-commit: 9dbadcb65d4306702e5e4d7dae2614e86cbde332
 workflow-type: tm+mt
-source-wordcount: '1837'
+source-wordcount: '1841'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i a
 
 >[!NOTE]
 >
->Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Om du inte har tillgång till tjänsten kontaktar du din Customer Success Manager (CSM) för att komma igång med tillåtelselista.
+>Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Om du inte har åtkomst fyller du i följande [formulär](http://adobe.ly/websdkaccess) och vi ger dig den åtkomst du behöver.
 
 ## Öppna [!UICONTROL Datastreams] arbetsyta
 
