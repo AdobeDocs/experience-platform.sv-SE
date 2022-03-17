@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '709'
 ht-degree: 1%
 
 ---
@@ -37,15 +37,24 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] m
 | MAID | Microsoft Advertising ID. Detta ID identifierar unikt enheter som kör Windows 10. |  |
 | Amazon Fire TV-ID | Detta ID identifierar Amazon Fire TV-program unikt. |  |
 
-## Exporttyp {#export-type}
+{style=&quot;table-layout:auto&quot;}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) till Google-destinationen.
+## Exportera typ och frekvens {#export-type-frequency}
 
-## Förutsättningar
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till Google-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
+
+## Förutsättningar {#prerequisites}
 
 Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och har inte aktiverat [Synkroniseringsfunktion för ID](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) tidigare i Experience Cloud ID-tjänsten (med Audience Manager eller andra program), kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du redan har konfigurerat [!DNL Google] integreringar i Audience Manager, de ID-synkroniseringar du har konfigurerat överförs till Platform.
 
-## Tillåtelselista
+### Tillåt listning {#allow-listing}
 
 >[!NOTE]
 >
@@ -82,6 +91,6 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
-## Exporterade data
+## Exporterade data {#exported-data}
 
 Verifiera om data har exporterats till [!DNL Google Ad Manager] mål, kontrollera [!DNL Google Ad Manager] konto. Om aktiveringen lyckades fylls målgrupperna i ditt konto.

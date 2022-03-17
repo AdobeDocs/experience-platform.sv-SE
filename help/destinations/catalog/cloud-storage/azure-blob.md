@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '465'
 ht-degree: 1%
 
 ---
@@ -27,11 +27,22 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 Om du redan har en giltig [!DNL Blob] mål kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [aktivera segment till ditt mål](../../ui/activate-batch-profile-destinations.md).
 
+## Exportera typ och frekvens {#export-type-frequency}
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
+
 ## Filformat som stöds {#file-formats}
 
 [!DNL Experience Platform] stöder följande filformat som ska exporteras till [!DNL Blob]:
 
-* Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaavgränsade värden. Stöd för allmänna DSV-filer kommer att ges i framtiden.
+* Kommaavgränsade värden (CSV): Stödet för exporterade datafiler är för närvarande begränsat till kommaavgränsade värden.
 
 ## Anslut till målet {#connect}
 

@@ -1,13 +1,13 @@
 ---
 title: Twitter Custom Auditions connection
 description: Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats i Adobe Experience Platform
-source-git-commit: 3ea3f9ed156ba3a1fbc790153a4b8fa193d5e2da
+exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '599'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Twitter Custom Audiences] anslutning
 
@@ -17,10 +17,10 @@ Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta �
 
 ## Förutsättningar {#prerequisites}
 
-Innan du konfigurerar ditt [!DNL Twitter Custom Audiences]-mål bör du kontrollera att du uppfyller följande krav för Twitter.
+Innan du konfigurerar [!DNL Twitter Custom Audiences] ska du kontrollera att du uppfyller följande krav för Twitter.
 
-1. Ditt [!DNL Twitter Ads]-konto måste kunna annonseras. Nya [!DNL Twitter Ads]-konton är inte berättigade till reklam under de första två veckorna efter att de har skapats.
-2. Ditt Twitter-användarkonto som du har auktoriserat åtkomst för i [!DNL Twitter Audience Manager] måste ha behörigheten *[!DNL Partner Audience Manager]* aktiverad.
+1. Dina [!DNL Twitter Ads] kontot måste vara reklamberättigat. Nytt [!DNL Twitter Ads] Konton är inte berättigade till reklam under de första två veckorna efter att de har skapats.
+2. Ditt Twitter-användarkonto som du har auktoriserat åtkomst till i [!DNL Twitter Audience Manager] måste ha *[!DNL Partner Audience Manager]* behörighet aktiverad.
 
 
 ## Identiteter som stöds {#supported-identities}
@@ -29,42 +29,49 @@ Innan du konfigurerar ditt [!DNL Twitter Custom Audiences]-mål bör du kontroll
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| device_id | IDFA/AdID/Android ID | Google Advertising ID (GAID) och Apple ID for Advertisers (IDFA) stöds i Adobe Experience Platform. Mappa dessa namnutrymmen och/eller attribut från källschemat i [mappningssteget](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) i målaktiveringsarbetsflödet. |
-| e-post | E-postadress(er) för användaren | Mappa dina e-postadresser med oformaterad text och dina SHA256-hashed-e-postadresser till det här fältet. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. Om du hash-kodar dina kunders e-postadresser innan du överför dem till Adobe Experience Platform måste dessa identiteter hash-kodas med SHA256, utan något salt. |
+| device_id | IDFA/AdID/Android ID | Google Advertising ID (GAID) och Apple ID for Advertisers (IDFA) stöds i Adobe Experience Platform. Mappa dessa namnutrymmen och/eller attribut från källschemat i enlighet med [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) av arbetsflödet för målaktivering. |
+| e-post | E-postadress(er) för användaren | Mappa dina e-postadresser med oformaterad text och dina SHA256-hashed-e-postadresser till det här fältet. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. Om du hash-kodar dina kunders e-postadresser innan du överför dem till Adobe Experience Platform måste dessa identiteter hash-kodas med SHA256, utan något salt. |
 
 {style=&quot;table-layout:auto&quot;}
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare som används i Twitter Custom Audiences-målet.
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare som används i Twitter Custom Audiences-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Användningsexempel {#use-cases}
 
-För att du bättre ska förstå hur och när du ska använda målet [!DNL Twitter Custom Audiences] finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda det här målet.
+För att du bättre ska förstå hur och när du ska använda [!DNL Twitter Custom Audiences] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
 ### Användningsfall 1
 
-Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta marknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform som [!DNL List Custom Audiences] i Twitter.
+Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform som [!DNL List Custom Audiences] i Twitter.
 
 ## Anslut till mål {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
 
-När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Ditt  [!DNL Twitter Ads] konto-ID. Detta finns i dina [!DNL Twitter Ads]-inställningar.
+* **[!UICONTROL Account ID]**: Dina [!DNL Twitter Ads] konto-ID. Det finns i [!DNL Twitter Ads] inställningar.
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentets exportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Mer information om hur [!DNL Adobe Experience Platform] framtvingar datastyrning finns i [Datastyrningsöversikten](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser {#additional-resources}
 
@@ -73,4 +80,4 @@ När du mappar målgruppssegment till Twitter måste du se till att följande kr
 1. Ge segmentmappningsnamn som kan läsas av människor. Vi rekommenderar att du använder samma namn som du använde för Experience Platform-segmenten.
 2. Använd inte specialtecken (+ &amp; , % : ; @ / = ? $) i namn på segmentmappning och segmentmappning. Om Experience Platform-segmentnamnet innehåller dessa tecken tar du bort dem innan du mappar segmentet till ett Twitter-mål.
 
-Mer information om [!DNL List Custom Audiences] i Twitter finns i [Twitter-dokumentationen](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).
+Mer information om [!DNL List Custom Audiences] i Twitter finns i [Twitter-dokumentation](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).

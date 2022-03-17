@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 357916aa925c7b3ada4abe64a2bc6ad090d70cc0
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1630'
 ht-degree: 1%
 
 ---
@@ -48,9 +48,16 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-destinationen.
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Krav för facebook-konton {#facebook-account-prerequisites}
 

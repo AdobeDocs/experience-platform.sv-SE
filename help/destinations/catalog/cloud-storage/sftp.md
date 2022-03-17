@@ -3,9 +3,9 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: bf46f4e6549fcbd975a9f0a6034040ed2e9b34e6
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '355'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,16 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 >
 > Adobe stöder dataexport till SFTP-servrar, men de rekommenderade molnlagringsplatserna för dataexport är [!DNL Amazon S3] och [!DNL Azure Blob].
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Profilbaserad** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut på [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md).
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ![Profilbaserad SFTP-exporttyp](../../assets/catalog/cloud-storage/sftp/catalog.png)
 

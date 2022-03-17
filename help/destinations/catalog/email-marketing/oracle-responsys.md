@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-postadresser;oraclets svarsmål
 title: Oraclena svarssystemanslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,16 @@ ht-degree: 0%
 
 Skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i Adobe Experience Platform, och [konfigurera en dataimport](#import-data-into-responsys) från din lagringsplats till [!DNL Oracle Responsys].
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Profilbaserad** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut på [målaktiveringsarbetsflöde](../../ui/activate-batch-profile-destinations.md#select-attributes).
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## IP-adress tillåtelselista {#allow-list}
 

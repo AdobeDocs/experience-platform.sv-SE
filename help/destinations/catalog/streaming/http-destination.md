@@ -3,9 +3,9 @@ keywords: strömning,
 title: HTTP API-anslutning
 description: Med HTTP API-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 577b42eef9d4b44b5b556ee31d22276d72c609ea
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,17 @@ Om du vill skicka profildata till HTTP-slutpunkter måste du först [ansluta til
 HTTP-målet riktar sig till kunder som behöver exportera XDM-profildata och målgruppssegment till generiska HTTP-slutpunkter.
 
 HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösningar.
+
+## Exportera typ och frekvens {#export-type-frequency}
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Förutsättningar {#prerequisites}
 

@@ -2,9 +2,9 @@
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 90aa0d16851443255dd4828e9f28330a89a12692
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '571'
 ht-degree: 1%
 
 ---
@@ -39,9 +39,16 @@ I [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.
 
 {style=&quot;table-layout:auto&quot;}
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Pinterest kundlista.
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Pinterest kundlista. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Användningsexempel {#use-cases}
 

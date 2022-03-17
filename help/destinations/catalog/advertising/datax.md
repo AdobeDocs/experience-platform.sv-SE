@@ -2,9 +2,9 @@
 title: Verizon MediaYahoo DataX-anslutning
 description: DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är värd för olika komponenter som gör att Verizon Media/Yahoo kan utbyta data med sina externa partner på ett säkert, automatiserat och skalbart sätt.
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '642'
 ht-degree: 1%
 
 ---
@@ -73,9 +73,16 @@ Verizon Media stöder aktivering av identiteter som beskrivs i tabellen nedan. L
 
 {style=&quot;table-layout:auto&quot;}
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med de identifierare (e-post) som används i Verizon Media-målet.
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (Email, GAID, IDFA) som används i Verizon Media-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Användningsexempel {#use-cases}
 

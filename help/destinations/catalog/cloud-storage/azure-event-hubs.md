@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) [!DNL Azure Event Hubs] anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: be09d794a4cbc3afc76df70d11f55b0cae6f2009
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '1174'
+source-wordcount: '1236'
 ht-degree: 0%
 
 ---
@@ -34,9 +34,16 @@ Genom att använda direktuppspelningsmål som [!DNL Azure Event Hubs]kan du enke
 
 En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden tillhör [!DNL Azure Event Hubs] mål får du den här händelsen i [!DNL Azure Event Hubs]. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Profilbaserad** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut på [målaktiveringsarbetsflöde](../../ui/activate-streaming-profile-destinations.md#select-attributes).
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Anslut till målet {#connect}
 

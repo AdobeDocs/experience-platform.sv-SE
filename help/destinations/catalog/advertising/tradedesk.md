@@ -3,9 +3,9 @@ keywords: Reklam. skrivbordet, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 169a7ad1adfa3282bd0503ce277373b654ec57cd
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '530'
 ht-degree: 1%
 
 ---
@@ -34,9 +34,18 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Tra
 | IDFA | [!DNL Apple ID for Advertisers] |
 | The Trade Desk ID | Advertiser ID i Trade Desk-plattformen |
 
-## Exporttyp {#export-type}
+{style=&quot;table-layout:auto&quot;}
 
-**[!DNL Segment export]** - du exporterar alla medlemmar i ett segment (publik) till målet.
+## Exportera typ och frekvens {#export-type-frequency}
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Förutsättningar {#prerequisites}
 

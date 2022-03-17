@@ -3,7 +3,7 @@ keywords: personalisering, destination, upplevelseplattform anpassad destination
 title: Anpassad personaliseringsanslutning
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: a990e829c8ba034f31b883360495513f3f5b4cfc
+source-git-commit: 95d287f3eac08064da35aea7c4cb22ea901c7324
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 >
 >Innan du skapar en anpassad personaliseringsanslutning ska du läsa guiden om hur du [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
 **Profilbegäran** - du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan konfigureras för olika [Datasamlingsdatamängder för Adobe](../../../edge/fundamentals/datastreams.md).
 

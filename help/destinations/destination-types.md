@@ -4,9 +4,9 @@ title: Måltyper och -kategorier
 seo-title: Destination types and categories
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
+source-git-commit: 08c6c2716b88180b1eb290663117e6da2d8641f0
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -30,15 +30,15 @@ I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och 
 Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyckel. Experience Platform har för närvarande stöd för två typer av profilexportdestinationer:
 
 * [Exportmål för direktuppspelningsprofil](#streaming-profile-export)
-* [Filbaserade mål](#file-based)
+* [Batchmål (filbaserade)](#file-based)
 
 ### Exportmål för direktuppspelningsprofil {#streaming-profile-export}
 
 Exportdestinationer för direktuppspelningsprofiler tar emot segment- och profildata som dataströmmar i Experience Platform. [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](catalog/cloud-storage/azure-event-hubs.md) är exempel på sådana destinationer.
 
-### Filbaserade mål {#file-based}
+### Batchmål (filbaserade) {#file-based}
 
-Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på destinationen där du kan sätta in filer som innehåller profilexporter.
+Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på ett mål där du kan exportera filer som innehåller profilexporter.
 
 ## Målgrupper för direktuppspelad segmentexport {#streaming-destinations}
 

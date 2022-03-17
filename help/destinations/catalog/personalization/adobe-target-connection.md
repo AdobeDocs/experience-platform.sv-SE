@@ -3,7 +3,7 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: a990e829c8ba034f31b883360495513f3f5b4cfc
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
@@ -26,9 +26,16 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 >
 >Innan du skapar en [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Profilbegäran** - du begär alla segment som är mappade i Adobe Target-målet för en enda profil.
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!DNL Profile request]** | Du begär alla segment som är mappade i Adobe Target-målet för en enskild profil. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Användningsfall {#use-cases}
 

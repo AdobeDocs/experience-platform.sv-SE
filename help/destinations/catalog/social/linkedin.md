@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Aktivera profiler för era [!DNL LinkedIn]-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden och mobil-ID:n.
+Aktivera profiler för [!DNL LinkedIn] kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post och mobila ID:n.
 
 ![linkedIn-mål i Adobe Experience Platform användargränssnitt](../../assets/catalog/social/linkedin/catalog.png)
 
 ## Användningsfall
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL LinkedIn Matched Audiences] finns det ett användningsexempel som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda [!DNL LinkedIn Matched Audiences] mål, här är ett exempel på användning som Adobe Experience Platform-kunder kan lösa med den här funktionen.
 
-Ett programvaruföretag organiserar en konferens och vill hålla kontakt med deltagarna och visa dem personliga erbjudanden baserat på deras konferensstatus. Företaget kan importera e-postadresser eller mobilenhets-ID:n från sina egna [!DNL CRM] till Adobe Experience Platform. Sedan kan de bygga segment utifrån sina egna offlinedata och skicka dessa segment till den sociala plattformen [!DNL LinkedIn], vilket optimerar deras annonsutgifter.
+Ett programvaruföretag organiserar en konferens och vill hålla kontakt med deltagarna och visa dem personliga erbjudanden baserat på deras konferensstatus. Företaget kan importera e-postadresser eller mobilenhets-ID:n från sina egna [!DNL CRM] till Adobe Experience Platform. Sedan kan de skapa segment utifrån sina egna offlinedata och skicka dessa segment till [!DNL LinkedIn] social plattform, optimera deras annonsutgifter.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -32,30 +32,38 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 |---|---|---|
 | GAID | Google Advertising ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashad e-post. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text och hashad e-post. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 
+{style=&quot;table-layout:auto&quot;}
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer och andra) som används i  [!DNL LinkedIn Matched Audiences] målet.
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer och andra) som används i [!DNL LinkedIn Matched Audiences] mål. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Krav för linkedIn-konton {#LinkedIn-account-prerequisites}
 
-Innan du kan använda målet [!UICONTROL LinkedIn Matched Audience] måste du kontrollera att ditt [!DNL LinkedIn Campaign Manager]-konto har behörighetsnivån [!DNL Creative Manager] eller högre.
+Innan du kan använda [!UICONTROL LinkedIn Matched Audience] mål, se till att [!DNL LinkedIn Campaign Manager] kontot har [!DNL Creative Manager] behörighet eller högre.
 
-Mer information om hur du redigerar dina [!DNL LinkedIn Campaign Manager]-användarbehörigheter finns i [Lägg till, redigera och ta bort användarbehörigheter för annonskonton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
+Så här redigerar du [!DNL LinkedIn Campaign Manager] användarbehörigheter, se [Lägg till, redigera och ta bort användarbehörigheter på annonskonton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
-[!DNL LinkedIn Matched Audiences] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL LinkedIn Matched Audiences] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller mobila enhets-ID:n.
+[!DNL LinkedIn Matched Audiences] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför aktiverades målgrupperna [!DNL LinkedIn Matched Audiences] kan vara avstängd *hash* identifierare, till exempel e-postadresser eller mobilenhets-ID.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
 ## Krav för e-posthashning {#email-hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och låta [!DNL Platform] hash-koda dem när de aktiveras.
+Du kan hash-koda e-postadresser innan du hämtar dem till Adobe Experience Platform, eller använda e-postadresser utan att märka dem i Experience Platform, och du kan [!DNL Platform] hash-koda dem vid aktiveringen.
 
-Om du vill veta mer om att importera e-postadresser i Experience Platform kan du läsa översikten [över gruppimporten](/help/ingestion/batch-ingestion/overview.md) och översikten [över direktuppspelningsförslag](/help/ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du importerar e-postadresser i Experience Platform kan du läsa [batchvis hantering - översikt](/help/ingestion/batch-ingestion/overview.md) och [översikt över direktuppspelning](/help/ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -68,42 +76,42 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 >[!NOTE]
 >
->Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+>Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktivering.
 > Attributkälldata hashas inte automatiskt.
 > 
-> Om källfältet innehåller ohstreckade attribut ska du under steget [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+> Under [Identitetsmappning](../../ui/activate-segment-streaming-destinations.md#mapping) om källfältet innehåller ohashade attribut ska du kontrollera **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 > 
-> Alternativet **[!UICONTROL Apply transformation]** visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
+> The **[!UICONTROL Apply transformation]** -alternativet visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
 ![Transformering av identitetsmappning](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
-I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Matched Audiences]-mål och aktivera segment.
+I videon nedan visas även hur du konfigurerar en [!DNL LinkedIn Matched Audiences] mål och aktivera segment.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekursen för målkonfiguration](../../ui/connect-destination.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
 
-När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
 * **[!UICONTROL Name]**: ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: en beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: din  [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i ditt [!DNL LinkedIn Campaign Manager]-konto.
+* **[!UICONTROL Account ID]**: din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i din [!DNL LinkedIn Campaign Manager] konto.
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
+Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Exporterade data {#exported-data}
 
-En lyckad aktivering innebär att en [!DNL LinkedIn]-anpassad målgrupp skapas programmatiskt i [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
+En lyckad aktivering innebär att [!DNL LinkedIn] anpassade målgrupper skapas programmatiskt i [[!DNL LinkedIn Campaign Manager]](https://www.linkedin.com/campaignmanager/login). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
 >[!TIP]
 >

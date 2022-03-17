@@ -3,10 +3,10 @@ keywords: 'Reklam. Vedning. '
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Display Advertising.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 169a7ad1adfa3282bd0503ce277373b654ec57cd
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '378'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -30,9 +30,20 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Mic
 |---|---|
 | MAID | Microsoft Advertising ID |
 
-## Exporttyp {#export-type}
+{style=&quot;table-layout:auto&quot;}
+
+## Exportera typ och frekvens {#export-type-frequency}
 
 **[!DNL Segment Export]** - du exporterar alla medlemmar i ett segment (publik) till [!DNL Microsoft Bing] mål.
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till [!DNL Microsoft Bing] mål. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Förutsättningar {#prerequisites}
 

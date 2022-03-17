@@ -1,14 +1,14 @@
 ---
 keywords: aktivera mål för profilbegäran;aktivera data;mål för profilbegäran
-title: Aktivera målgruppsdata för att profilera mål för begäran (beta)
+title: Aktivera målgruppsdata för att profilera mål för begäran
 type: Tutorial
 seo-title: Activate audience data to profile request destinations
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: d0660f29df93659990d80353f86dcbf856afb733
+source-git-commit: 388a061c87cfe9acda177ed71ed9f6017c8c2f4c
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '408'
 ht-degree: 0%
 
 ---
@@ -79,6 +79,12 @@ Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish
 
 ![Granska](../assets/ui/activate-profile-request-destinations/review.png)
 
-## Verifiera segmentaktivering {#verify}
+<!--
 
-Kontrollera [dokumentation för målövervakning](../../dataflows/ui/monitor-destinations.md) om du vill ha detaljerad information om hur du övervakar dataflödet till dina destinationer.
+Commenting out this part since destination monitoring is not available currently for the Adobe Target and Custom Personalization destinations.
+
+## Verify segment activation {#verify}
+
+Check the [destination monitoring documentation](../../dataflows/ui/monitor-destinations.md) for detailed information on how to monitor the flow of data to your destinations.
+
+-->

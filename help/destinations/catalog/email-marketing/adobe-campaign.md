@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign-anslutning
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,16 @@ Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera 
 
 Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta till målet](#connect-destination) i Adobe Experience Platform, och [konfigurera en dataimport](#import-data-into-campaign) från lagringsplatsen till Adobe Campaign.
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Profilbaserad** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du väljer i **[!UICONTROL Select attributes]** steg i [målaktiveringsarbetsflöde](../../ui/activate-batch-profile-destinations.md#select-attributes).
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## IP-adress tillåtelselista {#allow-list}
 

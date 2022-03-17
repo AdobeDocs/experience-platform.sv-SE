@@ -1,11 +1,11 @@
 ---
 keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
+description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '1538'
+source-wordcount: '1601'
 ht-degree: 0%
 
 ---
@@ -14,27 +14,27 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[Med Google Customer ](https://support.google.com/google-ads/answer/6379332?hl=en) Matchlets kan ni använda era online- och offlinedata för att nå och återengagera era kunder över Googles egna och styrda egenskaper, som:  [!DNL Search],  [!DNL Shopping],  [!DNL Gmail]och  [!DNL YouTube].
+[Google kundmatchning](https://support.google.com/google-ads/answer/6379332?hl=en) Med kan ni använda era online- och offlinedata för att nå ut till och återinteragera med era kunder via Google egna och driftsatta egendomar, som: [!DNL Search], [!DNL Shopping], [!DNL Gmail]och [!DNL YouTube].
 
-![Google Customer Match destination in the Adobe Experience Platform UI](../../assets/catalog/advertising/google-customer-match/catalog.png)
+![Google kundmatchningsmål i Adobe Experience Platform användargränssnitt](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
-## Användningsfall
+## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda [!DNL Google Customer Match]-målet finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Google Customer Match] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
 ### Använd skiftläge 1
 
-Ett sportklädmärke vill nå befintliga kunder via [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Det klädvarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga segment utifrån sina egna offlinedata. Sedan kan de skicka dessa segment till [!DNL Google Customer Match] för användning i [!DNL Search] och [!DNL Shopping], vilket optimerar deras annonsutgifter.
+Ett sportklädmärke vill nå befintliga kunder genom [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare inköp och webbhistorik. Det klädvarumärket kan importera e-postadresser från sin egen CRM till Experience Platform och bygga segment utifrån sina egna offlinedata. Sedan kan de skicka dessa segment till [!DNL Google Customer Match] ska användas tvärs över [!DNL Search] och [!DNL Shopping], optimera deras annonsutgifter.
 
 ### Använd skiftläge 2
 
 Ett framstående teknikföretag lanserade en ny telefon. För att marknadsföra den nya telefonmodellen vill de öka medvetenheten om de nya funktionerna i telefonen för kunder som äger tidigare modeller av sina telefoner.
 
-För att befordra releasen överför de e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Segment skapas baserat på kunder som äger äldre telefonmodeller. Sedan skickas segment till [!DNL Google Customer Match] så att företaget kan inrikta sig på befintliga kunder, kunder som äger äldre telefonmodeller och liknande kunder på [!DNL YouTube].
+För att befordra releasen överför de e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Segment skapas baserat på kunder som äger äldre telefonmodeller. Sedan skickas segment till [!DNL Google Customer Match]så att företaget kan inrikta sig på befintliga kunder, kunder som äger äldre telefonmodeller och liknande kunder på [!DNL YouTube].
 
-## Datastyrning för [!DNL Google Customer Match]-mål {#data-governance}
+## Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
 
-Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../../data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
+Vissa destinationer i Experience Platform har vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs mer](../../../data-governance/labels/overview.md) om verktyg och policyer för datastyrning.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -44,48 +44,57 @@ Vissa destinationer i Experience Platform har vissa regler och skyldigheter för
 |---|---|---|
 | GAID | Google Advertising ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
-| phone_sha256_e.164 | Telefonnummer i E164-format som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för normal text respektive hashade telefonnummer. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| phone_sha256_e.164 | Telefonnummer i E164-format som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | user_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
-## Exporttyp {#export-type}
+{style=&quot;table-layout:auto&quot;}
 
-**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer och andra) som används i  [!DNL Google Customer Match] målet.
+## Exportera typ och frekvens {#export-type-frequency}
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer och andra) som används i [!DNL Google Customer Match] mål. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## [!DNL Google Customer Match] kontokrav {#google-account-prerequisites}
 
-Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
+Innan du konfigurerar en [!DNL Google Customer Match] mål i Experience Platform, se till att du läser och följer Google policy för användning av [!DNL Customer Match], konturerad i [Google supportdokumentation](https://support.google.com/google-ads/answer/6299717).
 
-Kontrollera sedan att ditt [!DNL Google]-konto är konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [Google Ads-dokumentationen](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Kontrollera sedan att [!DNL Google] kontot har konfigurerats för [!DNL Standard] eller högre behörighetsnivå. Se [Google Ads-dokumentation](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) för mer information.
 
 ### Tillåtelselista {#allowlist}
 
-Innan du skapar [!DNL Google Customer Match]-målet i Experience Platform måste du kontrollera att ditt [!DNL Google Ads]-konto är kompatibelt med [Google Customer Match Policy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+Innan du skapar [!DNL Google Customer Match] mål i Experience Platform, se till att [!DNL Google Ads] kontot följer [Google kundmatchningspolicy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
 Kunder med kompatibla konton tillåts automatiskt listade av Google.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
-[!DNL Google] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL Google Customer Match] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller telefonnummer.
+[!DNL Google] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför aktiverades målgrupperna [!DNL Google Customer Match] kan vara avstängd *hash* identifierare, till exempel e-postadresser eller telefonnummer.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-## Krav för telefonnummerhashning {#phone-number-hashing-requirements}
+### Krav för telefonnummerhashning {#phone-number-hashing-requirements}
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Google Customer Match]:
 
-* **Hämtar råtelefonnummer**: kan du importera råa telefonnummer i  [!DNL E.164] formatet till  [!DNL Platform]och de hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina raw-telefonnummer till namnutrymmet `Phone_E.164`.
-* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i  [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `PHONE_SHA256_E.164`.
+* **Inmatning av råtelefonnummer**: du kan importera råa telefonnummer i [!DNL E.164] formatera till [!DNL Platform]och de hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till `Phone_E.164` namnutrymme.
+* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hash-kodade telefonnummer till `PHONE_SHA256_E.164` namnutrymme.
 
 >[!NOTE]
 >
->Telefonnummer som är inkapslade i namnområdet `Phone` kan inte aktiveras i [!DNL Google Customer Match].
+>Telefonnummer som hämtas till `Phone` namnutrymmet kan inte aktiveras i [!DNL Google Customer Match].
 
-## Krav för e-posthashning {#hashing-requirements}
+### Krav för e-posthashning {#hashing-requirements}
 
-Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och låta [!DNL Platform] hash-koda dem när de aktiveras.
+Du kan hash-koda e-postadresser innan du hämtar dem till Adobe Experience Platform, eller använda e-postadresser utan att märka dem i Experience Platform, och du kan [!DNL Platform] hash-koda dem vid aktiveringen.
 
-Mer information om Googles hash-krav och andra begränsningar för aktivering finns i följande avsnitt i Googles dokumentation:
+Mer information om Google hashkrav och andra begränsningar för aktivering finns i följande avsnitt i Google dokumentation:
 
 * [[!DNL Customer Match] med e-postadress, adress eller användar-ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] överväganden](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_considerations)
@@ -93,13 +102,13 @@ Mer information om Googles hash-krav och andra begränsningar för aktivering fi
 * [Kundmatchning med mobila enhets-ID:n](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_mobile_device_ids)
 
 
-Om du vill veta mer om att importera e-postadresser i Experience Platform kan du läsa översikten [över gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten [över direktuppspelningsförslag](../../../ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om hur du importerar e-postadresser i Experience Platform kan du läsa [batchvis hantering - översikt](../../../ingestion/batch-ingestion/overview.md) och [översikt över direktuppspelning](../../../ingestion/streaming-ingestion/overview.md).
 
-Om du väljer att hash-koda e-postadresserna själv måste du se till att följa kraven för Google som beskrivs i länkarna ovan.
+Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla Google krav som beskrivs i länkarna ovan.
 
-## Använda anpassade namnutrymmen {#custom-namespaces}
+### Använda anpassade namnutrymmen {#custom-namespaces}
 
-Innan du kan använda namnutrymmet `User_ID` för att skicka data till Google måste du synkronisera dina egna identifierare med [!DNL gTag]. Mer information finns i [Googles officiella dokumentation](https://support.google.com/google-ads/answer/9199250).
+Innan du kan använda `User_ID` namnutrymme för att skicka data till Google, se till att du synkroniserar dina egna identifierare med [!DNL gTag]. Se [Google officiella dokumentation](https://support.google.com/google-ads/answer/9199250) för detaljerad information.
 
 <!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
 
@@ -114,30 +123,30 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för målkonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
 
-När du [konfigurerar](../../ui/connect-destination.md) det här målet måste du ange följande information:
+while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
 * **[!UICONTROL Name]**: ange ett namn för den här målanslutningen
 * **[!UICONTROL Description]**: ange en beskrivning för den här målanslutningen
-* **[!UICONTROL Account ID]**: ditt Google-kundklient-ID. Formatet på ID:t är xxx-xxx-xxxx.
+* **[!UICONTROL Account ID]**: ditt Google kundklient-ID. Formatet på ID:t är xxx-xxx-xxxx.
 
 >[!IMPORTANT]
 >
-> * Marknadsföringsåtgärden **[!UICONTROL Combine with PII]** är markerad som standard för målet [!DNL Google Customer Match] och kan inte tas bort.
+> * The **[!UICONTROL Combine with PII]** marknadsföringsåtgärd väljs som standard för [!DNL Google Customer Match] och kan inte tas bort.
 
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentets exportmål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till den här destinationen.
+Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
-I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] när du skickar segmenten [!DNL IDFA] eller [!DNL GAID] till [!DNL Google Customer Match].
+I **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] när [!DNL IDFA] eller [!DNL GAID] segment till [!DNL Google Customer Match].
 
-![Google Customer Match App ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
+![Google program-ID för kundmatchning](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-Mer information om hur du hittar [!DNL App ID] finns i [Googles officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
+Mer information om hur du hittar [!DNL App ID], se [Google officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
 
 ### Mappningsexempel: aktivera målgruppsdata i [!DNL Google Customer Match] {#example-gcm}
 
@@ -145,34 +154,34 @@ Detta är ett exempel på korrekt identitetsmappning när målgruppsdata aktiver
 
 Välja källfält:
 
-* Välj namnutrymmet `Email` som källidentitet om de e-postadresser du använder inte hashas.
-* Välj namnutrymmet `Email_LC_SHA256` som källidentitet om du hashade kundens e-postadresser vid dataöverföring i [!DNL Platform], enligt [!DNL Google Customer Match] [e-posthashkrav](#hashing-requirements).
-* Välj namnutrymmet `PHONE_E.164` som källidentitet om dina data består av icke-hash-kodade telefonnummer. [!DNL Platform] kommer att hash-koda telefonnumren så att de uppfyller  [!DNL Google Customer Match] kraven.
-* Välj namnutrymmet `Phone_SHA256_E.164` som källidentitet om du hashade telefonnummer vid dataöverföring till [!DNL Platform], enligt [!DNL Facebook] [krav på telefonnummer som hash-kodar](#phone-number-hashing-requirements).
-* Välj namnutrymmet `IDFA` som källidentitet om dina data består av [!DNL Apple] enhets-ID:n.
-* Välj namnutrymmet `GAID` som källidentitet om dina data består av [!DNL Android] enhets-ID:n.
-* Välj namnutrymmet `Custom` som källidentitet om dina data består av andra typer av identifierare.
+* Välj `Email` namnutrymmet som källidentitet om e-postadresserna du använder inte hashas.
+* Välj `Email_LC_SHA256` namnrymd som källidentitet om du har hasarkiverat e-postadresser till kundens inmatning i [!DNL Platform], enligt [!DNL Google Customer Match] [krav på e-posthashning](#hashing-requirements).
+* Välj `PHONE_E.164` namnutrymme som källidentitet om dina data består av icke-hash-kodade telefonnummer. [!DNL Platform] kommer att hash-koda telefonnumren för att uppfylla [!DNL Google Customer Match] krav.
+* Välj `Phone_SHA256_E.164` namnrymd som källidentitet om du hashade telefonnummer vid datainmatning till [!DNL Platform], enligt [!DNL Facebook] [hashkrav för telefonnummer](#phone-number-hashing-requirements).
+* Välj `IDFA` namnutrymme som källidentitet om dina data består av [!DNL Apple] enhets-ID.
+* Välj `GAID` namnutrymme som källidentitet om dina data består av [!DNL Android] enhets-ID.
+* Välj `Custom` namnutrymme som källidentitet om dina data består av andra typer av identifierare.
 
 Markera målfält:
 
-* Välj namnutrymmet `Email_LC_SHA256` som målidentitet när källnamnutrymmena är antingen `Email` eller `Email_LC_SHA256`.
-* Välj namnutrymmet `Phone_SHA256_E.164` som målidentitet när källnamnutrymmena är antingen `PHONE_E.164` eller `Phone_SHA256_E.164`.
-* Välj namnutrymmena `IDFA` eller `GAID` som mål-ID när källnamnutrymmena är `IDFA` eller `GAID`.
-* Välj namnutrymmet `User_ID` som målidentitet när källnamnutrymmet är ett anpassat namnutrymme.
+* Välj `Email_LC_SHA256` namespace som target identity när källnamnutrymmena antingen är `Email` eller `Email_LC_SHA256`.
+* Välj `Phone_SHA256_E.164` namespace som target identity när källnamnutrymmena antingen är `PHONE_E.164` eller `Phone_SHA256_E.164`.
+* Välj `IDFA` eller `GAID` namnutrymmen som målidentitet när källnamnutrymmena är `IDFA` eller `GAID`.
+* Välj `User_ID` namespace som target identity när källnamnutrymmet är ett anpassat.
 
 ![Identitetsmappning](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
 
-Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
+Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktivering.
 
-Attributkälldata hashas inte automatiskt. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 
 ![Transformering av identitetsmappning](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
 
-När aktiveringsflödet är klart växlar du till ditt **[!UICONTROL Google Ads]**-konto. De aktiverade segmenten visas i ditt Google-konto som kundlistor. Observera att beroende på segmentstorleken fyller vissa målgrupper inte i bilden om det inte finns fler än 100 aktiva användare att betjäna.
+När aktiveringsflödet är klart växlar du till **[!UICONTROL Google Ads]** konto. De aktiverade segmenten visas i ditt Google-konto som kundlistor. Observera att beroende på segmentstorleken fyller vissa målgrupper inte i bilden om det inte finns fler än 100 aktiva användare att betjäna.
 
-När du mappar ett segment till både [!DNL IDFA] och [!DNL GAID] mobila ID:n skapar [!DNL Google Customer Match] ett separat segment för varje ID-mappning. Ditt [!DNL Google Ads]-konto visar två olika segment, ett för [!DNL IDFA] och ett för [!DNL GAID]-mappningen.
+När ett segment mappas till båda [!DNL IDFA] och [!DNL GAID] mobil-ID, [!DNL Google Customer Match] skapar ett separat segment för varje ID-mappning. Dina [!DNL Google Ads] kontot visar två olika segment, ett för [!DNL IDFA]och en för [!DNL GAID] mappning.
 
 ## Felsökning {#troubleshooting}
 
@@ -182,9 +191,9 @@ När du konfigurerar det här målet kan du få följande fel:
 
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
-Det här felet inträffar när kundkonton inte uppfyller [kraven](#google-account-prerequisites). Kontakta Google för att åtgärda problemet och kontrollera att ditt konto är tillåtet och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Mer information finns i [Google Ads-dokumentationen](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1).
+Det här felet inträffar när kundkonton inte uppfyller [krav](#google-account-prerequisites). Kontakta Google och kontrollera att ditt konto är godkänt och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Se [Google Ads-dokumentation](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) för mer information.
 
-## Extra resurser {#additional-resources}
+## Ytterligare resurser {#additional-resources}
 
-* [Integrera Google Customer Match - videosjälvstudiekurs](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
+* [Integrera Google kundmatchning - videosjälvstudiekurs](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
 

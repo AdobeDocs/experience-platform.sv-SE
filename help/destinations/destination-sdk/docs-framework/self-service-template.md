@@ -2,10 +2,10 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '896'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -51,11 +51,22 @@ ht-degree: 1%
 
 {style=&quot;table-layout:auto&quot;}
 
-## Exporttyp {#export-type}
+## Exportera typ och frekvens {#export-type-frequency}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i *YOURDESTINATION* mål.
+*I tabellen behåller du bara de rader som motsvarar målet. Du bör ha en rad för typen Exportera och en rad för Exportfrekvens. Ta bort de värden som inte gäller för målet.*
 
-## Användningsfall
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i *YOURDESTINATION* mål. |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
+
+## Användningsfall {#use-cases}
 
 För att du bättre ska förstå hur och när du ska använda *YOURDESTINATION* mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
@@ -79,7 +90,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) Om du vill ange destinationen måste du ange följande information:
 
-*Lägg till de fält som kunderna måste fylla i när de konfigurerar ett nytt mål. Dessa fält är målspecifika och beroende på din konfiguration i mål-SDK. Målets fält kanske inte är samma som de som anges nedan.*
+*Lägg till de fält som kunderna måste fylla i när de konfigurerar ett nytt mål. De här fälten är målspecifika och beror på hur Destinationen SDK konfigureras. Målets fält kanske inte är samma som de som anges nedan.*
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
