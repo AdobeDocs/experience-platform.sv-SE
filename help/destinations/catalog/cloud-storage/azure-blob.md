@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 691e3181e05a24b6bb0ebbe8e0f797a2b4c572d2
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '494'
 ht-degree: 1%
 
 ---
@@ -49,6 +49,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_blob_rsa"
+>title="RSA offentlig nyckel"
+>abstract="Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Den offentliga nyckeln måste skrivas som en Base64-kodad sträng."
 
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 

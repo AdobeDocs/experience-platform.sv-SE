@@ -3,7 +3,7 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 691e3181e05a24b6bb0ebbe8e0f797a2b4c572d2
 workflow-type: tm+mt
 source-wordcount: '355'
 ht-degree: 0%
@@ -43,7 +43,6 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >id="platform_destinations_connect_sftp_rsa"
 >title="RSA offentlig nyckel"
 >abstract="Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Den offentliga nyckeln måste skrivas som en Base64-kodad sträng."
->text="Learn more in documentation"
 
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
