@@ -5,7 +5,7 @@ title: Data Prep Mapping Functions
 topic-legacy: overview
 description: This document introduces the mapping functions used with Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 080ff800c78263a29f855ae6fe0e6acdb73554d5
+source-git-commit: a50d903fe2765ec5153786c19eb767b695440eba
 workflow-type: tm+mt
 source-wordcount: '3965'
 ht-degree: 2%
@@ -43,7 +43,7 @@ The following tables list all supported mapping functions, including sample expr
 |  -funktion | Beskrivning | Parametrar | Syntax | Expression | Sample output |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | concat | Concatenates the given strings. | <ul><li>STRING: The strings that will be concatenated.</li></ul> | concat(STRING_1, STRING_2) | concat(&quot;Hi, &quot;, &quot;there&quot;, &quot;!&quot;) | `"Hi, there!"` |
-| explode | Splits the string based on a regex and returns an array of parts. Can optionally include regex to split the string. By default, the splitting resolves to &quot;,&quot;. ****`\``+, ?, ^, |, ., [, (, {, ), *, $, \` | <ul><li>****</li><li>**</li></ul> | explode(STRING, REGEX) | explode(&quot;Hi, there!&quot;, &quot; &quot;) | `["Hi,", "there"]` |
+| explode | Splits the string based on a regex and returns an array of parts. Can optionally include regex to split the string. By default, the splitting resolves to &quot;,&quot;. ****`\``+, ?, ^, \|, ., [, (, {, ), *, $, \` | <ul><li>****</li><li>**</li></ul> | explode(STRING, REGEX) | explode(&quot;Hi, there!&quot;, &quot; &quot;) | `["Hi,", "there"]` |
 | instr | Returns the location/index of a substring. | <ul><li>****</li><li>****</li><li>**</li><li>** By default, it is 1. </li></ul> | instr(INPUT, SUBSTRING, START_POSITION, OCCURRENCE) | instr(&quot;adobe.com&quot;, &quot;com&quot;) | 6 |
 | replacestr | Replaces the search string if present in original string. | <ul><li>****</li><li>****</li><li>****</li></ul> | replacestr(INPUT, TO_FIND, TO_REPLACE) | replacestr(&quot;This is a string re test&quot;, &quot;re&quot;, &quot;replace&quot;) | &quot;This is a string replace test&quot; |
 | substr | Returns a substring of a given length. | <ul><li>****</li><li>****</li><li>****</li></ul> | substr(INPUT, START_INDEX, LENGTH) | substr(&quot;This is a substring test&quot;, 7, 8) | &quot; a subst&quot; |
