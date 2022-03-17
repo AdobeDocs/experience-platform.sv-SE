@@ -3,9 +3,9 @@ title: Använda Adobe Analytics med Platform Web SDK
 description: Lär dig hur du skickar data till Adobe Analytics med Adobe Experience Platform Web SDK.
 keywords: adobe analytics;analytics;mapped data;mapped vars;
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: 45becec3b198821e38afbc21fe42a8901e352888
+source-git-commit: 921a3a32ee5f2daa04512a3f2c68935667ab3875
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '233'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ Adobe Experience Platform [!DNL Web SDK] kan skicka data till Adobe Analytics. D
 ## Inställningar
 
 Adobe Analytics hämtar automatiskt de data som du skickar om du har en rapportsvit mappad i användargränssnittet för kundkonfiguration. Här kan du mappa en eller flera rapporter till en viss konfiguration. När en rapportsvit har mappats börjar data automatiskt flöda.
+
+## XDM-fältgrupp
+
+För att göra det enklare att hämta de vanligaste Adobe Analytics-mätvärdena tillhandahåller vi en analysfältgrupp som ni kan använda. Mer information om schemat finns i dokumentationen för [Schemafältgruppen Adobe Analytics ExperienceEvent Full Extension](../../../xdm/field-groups/event/analytics-full-extension.md)
 
 ## Automatiskt mappade data
 
