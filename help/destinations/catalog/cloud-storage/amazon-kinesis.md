@@ -1,11 +1,11 @@
 ---
 keywords: Amazon Kinesis;kinesis destination;kinesis
-title: Amazon Kinesis-anslutning
+title: (Beta) Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1296'
 ht-degree: 0%
 
 ---
