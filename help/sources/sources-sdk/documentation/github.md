@@ -6,9 +6,10 @@ topic-legacy: tutorial
 description: Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
+source-git-commit: 39accd28edc388c6444910f9a2ea6d2f01acfdaf
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '624'
 ht-degree: 0%
 
 ---
@@ -35,7 +36,11 @@ När gaffeln är klar väljer du **överordnad** och ange ett namn för den nya 
 
 ![create-branch](../assets/create-branch.png)
 
-Navigera till GitHub-mappstrukturen för din förankrade databas `experience-platform.en/help/sources/tutorials/api/create/` och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny molnlagringskälla väljer du **molnlagring**.
+I GitHub-mappstrukturen för din förankrade databas navigerar du till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny molnlagringskälla väljer du **molnlagring**.
+
+>[!TIP]
+>
+>Om du skapar dokumentation för användargränssnittet går du till [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) och väljer lämplig kategori för källan. Om du vill lägga till dina bilder går du till [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) lägg sedan till skärmbilderna i `sdk` mapp.
 
 ![molnlagring](../assets/cloud-storage.png)
 

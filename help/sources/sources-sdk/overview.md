@@ -6,9 +6,10 @@ topic-legacy: overview
 description: Adobe Experience Platform Sources SDK är en uppsättning konfigurations-API:er som gör att du kan integrera en REST API-baserad källa med API:t för Flow Service för att överföra data till Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: 3d510876cfdd8ac3045dae8df6fcf6045de2538b
+exl-id: 5d5449ad-a1ba-402b-a281-0b2d8b704f32
+source-git-commit: ce902e461c748e30e0307558da894a4dbdd212a4
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -62,7 +63,7 @@ Hur du konfigurerar källan i Experience Platform beskrivs nedan:
    * Se guiden [konfigurera dina källspecifikationer](./config/sourcespec.md);
    * Se guiden [konfigurera dina specifikationer](./config/explorespec.md);
 * Information om hur du börjar dokumentera källan finns i [översikt över hur du skapar dokumentation för SDK för källor](./documentation/doc-overview.md)
-   * Du kan använda den här [dokumentationsmall för källor](./documentation/template.md) för att strukturera dokumentationen,
+   * Du kan använda den här [dokumentationsmall för käll-API](./documentation/template.md) för att strukturera API-dokumentationen,
+   * Du kan använda den här [dokumentationsmall för källanvändargränssnitt](./documentation/ui-template.md) för att strukturera användargränssnittets dokumentation,
    * Se guiden [med GitHub-webbgränssnittet](./documentation/github.md) för steg om hur du skapar dokumentation med GitHub,
    * Se guiden [använda en textredigerare](./documentation/text-editor.md) för steg om hur du skapar dokumentation med din lokala dator.
-

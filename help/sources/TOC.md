@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: da3d0399bae9953cd74bd0ac6d6e16b64796a578
+source-git-commit: c74676836d4690568665f16445c0dcf91496daf6
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '750'
 ht-degree: 5%
 
 ---
@@ -277,7 +277,8 @@ ht-degree: 5%
    - [Dokumentera källan i Adobe Experience Platform](sources-sdk/documentation/doc-overview.md)
    - [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](sources-sdk/documentation/github.md)
    - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
-   - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/template.md)
+   - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
+   - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)

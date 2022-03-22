@@ -6,9 +6,10 @@ topic-legacy: overview
 description: Det sista steget innan den nya källan kan publiceras i Adobe Experience Platform är att dokumentera den nya källan.
 hide: true
 hidefromtoc: true
-source-git-commit: ae1a1139c24fd80e9f689e4c637897c905004c5f
+exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
+source-git-commit: e732a43f7ac578d7fde41c48d2c819899fabb0be
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -44,7 +45,10 @@ Om du vill skapa dokumentation för din källa måste du på en hög nivå skapa
 
 Du kan använda en förfylld injektionspenna. [dokumentmall](./template.md) som hjälper dig att skapa dokumentation för källan. Nedan finns instruktioner om hur du redigerar mallen och öppnar en pull-begäran. Dokumentation som skickas till den nya källan granskas och publiceras av dokumentationsteamet på Adobe.
 
-Du kan även hämta [dokumentmall här](../assets/template.zip).
+Du kan även hämta dokumentationsmallarna nedan:
+
+* [API-dokumentationsmall](../assets/template.zip)
+* [Dokumentationsmall för användargränssnitt](../assets/ui-template.zip)
 
 ## Skapa en ny källsida
 
