@@ -3,10 +3,10 @@ keywords: personalisering, destination, upplevelseplattform anpassad destination
 title: Anpassad personaliseringsanslutning
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 95d287f3eac08064da35aea7c4cb22ea901c7324
+source-git-commit: 05217dead7e1365d6dcc0cc7ae4078628514d1d5
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '672'
+ht-degree: 1%
 
 ---
 
@@ -48,7 +48,7 @@ Med ett separat anpassat anpassningsmål för sin annonsserver kan samma webbpla
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om dataStream-ID"
 >abstract="Med det här alternativet anger du i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="Lär dig hur du konfigurerar ett datastream."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="Lär dig konfigurera ett datastream"
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
