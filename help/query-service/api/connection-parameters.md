@@ -5,10 +5,9 @@ title: API-slutpunkt för anslutningsparametrar
 topic-legacy: connection parameters
 description: Du kan hämta anslutningsparametrar för användning av den interaktiva tjänsten genom att göra en GET-förfrågan till slutpunkten /connection_parameters.
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: cff95575530e0db00d34ff1ea4c90e5422b6562d
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '130'
 ht-degree: 0%
 
 ---
@@ -17,11 +16,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+I följande avsnitt får du hjälp med API-anropet som du kan göra med [!DNL Query Service] API. Anropet innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Begär anslutningsparametrar
 
-Du kan hämta anslutningsparametrar genom att göra en GET-förfrågan till `/connection_parameters`-slutpunkten. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
+Du kan hämta anslutningsparametrarna genom att göra en GET-förfrågan till `/connection_parameters` slutpunkt. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
 
 **API-format**
 
