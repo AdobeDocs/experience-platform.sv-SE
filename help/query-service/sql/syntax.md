@@ -5,10 +5,10 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: b291bcf4e0ce068b071adde489653b006f4e7fb2
+source-git-commit: 575352d8ee6da092fd0fc3a3033e481ee59bd7d3
 workflow-type: tm+mt
-source-wordcount: '2360'
-ht-degree: 1%
+source-wordcount: '2378'
+ht-degree: 2%
 
 ---
 
@@ -182,11 +182,11 @@ Följande syntax definierar en `CREATE TABLE AS SELECT` (CTAS) fråga:
 CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
 ```
 
-**Parametrar**
-
-- `schema`: Titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan.
-- `rowvalidation`: (Valfritt) Anger om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datauppsättningen. Standardvärdet är `true`.
-- `select_query`: A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries).
+| Parametrar | Beskrivning |
+| ----- | ----- |
+| `schema` | Titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan. |
+| `rowvalidation` | (Valfritt) Anger om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datauppsättningen. Standardvärdet är `true`. |
+| `select_query` | A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries). |
 
 **Exempel**
 
@@ -210,10 +210,10 @@ The `INSERT INTO` kommandot definieras enligt följande:
 INSERT INTO table_name select_query
 ```
 
-**Parametrar**
-
-- `table_name`: Namnet på tabellen som du vill infoga frågan i.
-- `select_query`: A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries).
+| Parametrar | Beskrivning |
+| ----- | ----- |
+| `table_name` | Namnet på tabellen som du vill infoga frågan i. |
+| `select_query` | A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries). |
 
 **Exempel**
 
@@ -257,9 +257,9 @@ The `DROP TABLE` kommandot släpper en befintlig tabell och tar bort katalogen s
 DROP TABLE [IF EXISTS] [db_name.]table_name
 ```
 
-**Parametrar**
-
-- `IF EXISTS`: Om detta anges genereras inget undantag om tabellen gör det **not** finns.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `IF EXISTS` | Om detta anges genereras inget undantag om tabellen gör det **not** finns. |
 
 ## DROP DATABASE
 
@@ -269,9 +269,9 @@ The `DROP DATABASE` kommandot släpper en befintlig databas.
 DROP DATABASE [IF EXISTS] db_name
 ```
 
-**Parametrar**
-
-- `IF EXISTS`: Om detta anges genereras inget undantag om databasen gör det **not** finns.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `IF EXISTS` | Om detta anges genereras inget undantag om databasen gör det **not** finns. |
 
 ## DROP SCHEMA
 
@@ -281,13 +281,11 @@ The `DROP SCHEMA` kommandot släpper ett befintligt schema.
 DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 ```
 
-**Parametrar**
-
-- `IF EXISTS`: Om detta anges genereras inget undantag om schemat gör det **not** finns.
-
-- `RESTRICT`: Standardvärde för läget. Om detta anges kommer schemat endast att tas bort om det **inte** innehåller alla tabeller.
-
-- `CASCADE`: Om detta anges kommer schemat att tas bort tillsammans med alla tabeller som finns i schemat.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `IF EXISTS` | Om detta anges genereras inget undantag om schemat gör det **not** finns. |
+| `RESTRICT` | Standardvärde för läget. Om detta anges kommer schemat endast att tas bort om det **inte** innehåller alla tabeller. |
+| `CASCADE` | Om detta anges kommer schemat att tas bort tillsammans med alla tabeller som finns i schemat. |
 
 ## SKAPA VY
 
@@ -297,10 +295,10 @@ Följande syntax definierar en `CREATE VIEW` fråga:
 CREATE VIEW view_name AS select_query
 ```
 
-**Parametrar**
-
-- `view_name`: Namnet på den vy som ska skapas.
-- `select_query`: A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries).
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `view_name` | Namnet på den vy som ska skapas. |
+| `select_query` | A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries). |
 
 **Exempel**
 
@@ -318,10 +316,10 @@ Följande syntax definierar en `DROP VIEW` fråga:
 DROP VIEW [IF EXISTS] view_name
 ```
 
-**Parameter**
-
-- `IF EXISTS`: Om detta anges genereras inget undantag om vyn gör det **not** finns.
-- `view_name`: Namnet på den vy som ska tas bort.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `IF EXISTS` | Om detta anges genereras inget undantag om vyn gör det **not** finns. |
+| `view_name` | Namnet på den vy som ska tas bort. |
 
 **Exempel**
 
@@ -396,10 +394,10 @@ The `SET` anger du en egenskap och returnerar värdet för en befintlig egenskap
 SET property_key = property_value
 ```
 
-**Parametrar**
-
-- `property_key`: Namnet på den egenskap som du vill visa eller ändra.
-- `property_value`: Värdet som du vill att egenskapen ska anges som.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `property_key` | Namnet på den egenskap som du vill visa eller ändra. |
+| `property_value` | Värdet som du vill att egenskapen ska anges som. |
 
 Om du vill returnera värdet för en inställning använder du `SET [property key]` utan `property_value`.
 
@@ -447,10 +445,10 @@ The `DECLARE` kan användaren skapa en markör som kan användas för att hämta
 DECLARE name CURSOR FOR query
 ```
 
-**Parametrar**
-
-- `name`: Namnet på den markör som ska skapas.
-- `query`: A `SELECT` eller `VALUES` som anger de rader som markören ska returnera.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `name` | Namnet på den markör som ska skapas. |
+| `query` | A `SELECT` eller `VALUES` som anger de rader som markören ska returnera. |
 
 ### KÖR
 
@@ -462,10 +460,10 @@ Om `PREPARE` -programsats som skapade programsatsen specificerade vissa parametr
 EXECUTE name [ ( parameter ) ]
 ```
 
-**Parametrar**
-
-- `name`: Namnet på den förberedda sats som ska köras.
-- `parameter`: Det faktiska värdet för en parameter till den förberedda programsatsen. Det här måste vara ett uttryck som ger ett värde som är kompatibelt med den här parameterns datatyp, vilket bestämdes när den förberedda satsen skapades.  Om det finns flera parametrar för den förberedda programsatsen avgränsas de med kommatecken.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `name` | Namnet på den förberedda sats som ska köras. |
+| `parameter` | Det faktiska värdet för en parameter till den förberedda programsatsen. Det här måste vara ett uttryck som ger ett värde som är kompatibelt med den här parameterns datatyp, vilket bestämdes när den förberedda satsen skapades.  Om det finns flera parametrar för den förberedda programsatsen avgränsas de med kommatecken. |
 
 ### FÖRKLARA
 
@@ -482,11 +480,11 @@ ANALYZE
 FORMAT { TEXT | JSON }
 ```
 
-**Parametrar**
-
-- `ANALYZE`: Om `option` innehåller `ANALYZE`, körtider och annan statistik visas.
-- `FORMAT`: Om `option` innehåller `FORMAT`anger det utdataformatet som kan `TEXT` eller `JSON`. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`.
-- `statement`: Alla `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`, eller `CREATE MATERIALIZED VIEW AS` -programsats vars körningsplan du vill se.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `ANALYZE` | Om `option` innehåller `ANALYZE`, körtider och annan statistik visas. |
+| `FORMAT` | Om `option` innehåller `FORMAT`anger det utdataformatet som kan `TEXT` eller `JSON`. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`. |
+| `statement` | Alla `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`, eller `CREATE MATERIALIZED VIEW AS` -programsats vars körningsplan du vill se. |
 
 >[!IMPORTANT]
 >
@@ -515,10 +513,10 @@ The `FETCH` hämtar rader med hjälp av en markör som skapats tidigare.
 FETCH num_of_rows [ IN | FROM ] cursor_name
 ```
 
-**Parametrar**
-
-- `num_of_rows`: Antalet rader som ska hämtas.
-- `cursor_name`: Namnet på den markör som du hämtar information från.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `num_of_rows` | Antalet rader som ska hämtas. |
+| `cursor_name` | Namnet på den markör som du hämtar information från. |
 
 ### FÖRBEREDA {#prepare}
 
@@ -532,10 +530,10 @@ Du kan också ange en lista med parameterdatatyper. Om en parameters datatyp int
 PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 ```
 
-**Parametrar**
-
-- `name`: Namnet på den förberedda satsen.
-- `data_type`: Datatyperna för den förberedda satsens parametrar. Om en parameters datatyp inte finns med i listan kan typen härledas från kontexten. Om du behöver lägga till flera datatyper kan du lägga till dem i en kommaseparerad lista.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `name` | Namnet på den förberedda satsen. |
+| `data_type` | Datatyperna för den förberedda satsens parametrar. Om en parameters datatyp inte finns med i listan kan typen härledas från kontexten. Om du behöver lägga till flera datatyper kan du lägga till dem i en kommaseparerad lista. |
 
 ### ROLLBACK
 
@@ -568,13 +566,13 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ] [...] ]
 ```
 
-**Parametrar**
-
 Mer information om SELECT-standardfrågeparametrarna finns i [SELECT-frågesektion](#select-queries). I det här avsnittet listas endast parametrar som är exklusiva för `SELECT INTO` -kommando.
 
-- `TEMPORARY` eller `TEMP`: En valfri parameter. Om det anges blir det register som skapas ett temporärt register.
-- `UNLOGGED`: En valfri parameter. Om det anges kommer tabellen som skapas att vara en ologgad tabell. Mer information om ologgade tabeller finns i [PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/sql-createtable.html).
-- `new_table`: Namnet på tabellen som ska skapas.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `TEMPORARY` eller `TEMP` | En valfri parameter. Om det anges blir det register som skapas ett temporärt register. |
+| `UNLOGGED` | En valfri parameter. Om det anges kommer tabellen som skapas att vara en ologgad tabell. Mer information om ologgade tabeller finns i [PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/sql-createtable.html). |
+| `new_table` | Namnet på tabellen som ska skapas. |
 
 **Exempel**
 
@@ -593,15 +591,10 @@ SHOW name
 SHOW ALL
 ```
 
-**Parametrar**
-
-- `name`: Namnet på körningsparametern som du vill ha information om. Möjliga värden för körningsparametern är följande värden:
-   - `SERVER_VERSION`: Den här parametern visar serverns versionsnummer.
-   - `SERVER_ENCODING`: Den här parametern visar kodningen för teckenuppsättningen på serversidan.
-   - `LC_COLLATE`: Den här parametern visar databasens språkområdesinställning för sortering (textordning).
-   - `LC_CTYPE`: Den här parametern visar databasens språkområdesinställning för teckenklassificering.
-      `IS_SUPERUSER`: Den här parametern visar om den aktuella rollen har superanvändarbehörighet.
-- `ALL`: Visa värdena för alla konfigurationsparametrar med beskrivningar.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `name` | Namnet på körningsparametern som du vill ha information om. Möjliga värden för körningsparametern är följande värden:<br>`SERVER_VERSION`: Den här parametern visar serverns versionsnummer.<br>`SERVER_ENCODING`: Den här parametern visar kodningen för teckenuppsättningen på serversidan.<br>`LC_COLLATE`: Den här parametern visar databasens språkområdesinställning för sortering (textordning).<br>`LC_CTYPE`: Den här parametern visar databasens språkområdesinställning för teckenklassificering.<br>`IS_SUPERUSER`: Den här parametern visar om den aktuella rollen har superanvändarbehörighet. |
+| `ALL` | Visa värdena för alla konfigurationsparametrar med beskrivningar. |
 
 **Exempel**
 
@@ -628,10 +621,10 @@ COPY query
     [  WITH FORMAT 'format_name']
 ```
 
-**Parametrar**
-
-- `query`: Frågan som du vill kopiera.
-- `format_name`: Det format som du vill kopiera frågan i. The `format_name` kan vara en av `parquet`, `csv`, eller `json`. Som standard är värdet `parquet`.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `query` | Frågan som du vill kopiera. |
+| `format_name` | Det format som du vill kopiera frågan i. The `format_name` kan vara en av `parquet`, `csv`, eller `json`. Som standard är värdet `parquet`. |
 
 >[!NOTE]
 >
@@ -657,13 +650,13 @@ ALTER TABLE table_name DROP CONSTRAINT constraint_name PRIMARY KEY ( column_name
 ALTER TABLE table_name DROP CONSTRAINT constraint_name FOREIGN KEY ( column_name )
 ```
 
-**Parametrar**
-
-- `table_name`: Namnet på tabellen som du redigerar.
-- `constraint_name`: Namnet på begränsningen som du vill lägga till eller ta bort.
-- `column_name`: Namnet på den kolumn som du lägger till en begränsning i.
-- `referenced_table_name`: Namnet på tabellen som refereras av sekundärnyckeln.
-- `primary_column_name`: Namnet på den kolumn som refereras av sekundärnyckeln.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `table_name` | Namnet på tabellen som du redigerar. |
+| `constraint_name` | Namnet på begränsningen som du vill lägga till eller ta bort. |
+| `column_name` | Namnet på den kolumn som du lägger till en begränsning i. |
+| `referenced_table_name` | Namnet på tabellen som refereras av sekundärnyckeln. |
+| `primary_column_name` | Namnet på den kolumn som refereras av sekundärnyckeln. |
 
 >[!NOTE]
 >
@@ -679,11 +672,11 @@ ALTER TABLE table_name ADD COLUMN column_name data_type
 ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_type2 
 ```
 
-**Parametrar**
-
-- `table_name`: Namnet på tabellen som du redigerar.
-- `column_name`: Namnet på den kolumn som du vill lägga till.
-- `data_type`: Datatypen för den kolumn som du vill lägga till. Följande datatyper stöds: bigint, char, string, date, datetime, double, double precision, integer, smallint, tinyint, varchar.
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `table_name` | Namnet på tabellen som du redigerar. |
+| `column_name` | Namnet på den kolumn som du vill lägga till. |
+| `data_type` | Datatypen för den kolumn som du vill lägga till. Följande datatyper stöds: bigint, char, string, date, datetime, double, double precision, integer, smallint, tinyint, varchar. |
 
 ### VISA PRIMÄRNYCKLAR
 
