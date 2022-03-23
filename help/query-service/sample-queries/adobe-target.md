@@ -5,18 +5,18 @@ title: Exempelfrågor om Adobe Target-data
 topic-legacy: queries
 description: Data från Adobe Target omvandlas till Experience Event XDM-schema och hämtas till Experience Platform som datauppsättningar åt dig. Det här dokumentet innehåller exempelfrågor för användning av frågetjänsten med dina Adobe Target-datauppsättningar.
 exl-id: 0ab3cd6e-25ed-43dc-b8f0-a2b71621ae50
-source-git-commit: c0e7ae8f65aa0373d35a55d4da46e0ffcb0e60f9
+source-git-commit: 76847d8286776a554e55209fa1b334c98b02d76b
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
 
 # Exempelfrågor om Adobe Target-data
 
-Data från Adobe Target omvandlas till Experience Event XDM-schema och hämtas in till Adobe Experience Platform som datauppsättningar åt dig. Det finns många användningsområden för Adobe Experience Platform Query Service med dessa data, och följande exempelfrågor bör fungera med dina Adobe Target-datauppsättningar.
+Data som hämtas från Adobe Target omvandlas till Experience Event XDM-schema och hämtas till Adobe Experience Platform som datauppsättningar. Adobe Experience Platform Query Service underlättar många användningssätt för dessa data och följande exempelfrågor bör fungera med dina Adobe Target-datauppsättningar.
 
-I Experience Platform heter den automatiskt skapade datauppsättningen&quot;Adobe Target Experience Events&quot;. När du använder den här datauppsättningen med frågor bör du använda namnet `adobe_target_experience_events`.
+I Experience Platform är namnet på en automatiskt skapad datauppsättning&quot;Adobe Target Experience Events&quot;. Använd namnet när du använder den här datauppsättningen med frågor `adobe_target_experience_events`.
 
 ## Partiell XDM-fältmappning på hög nivå
 
