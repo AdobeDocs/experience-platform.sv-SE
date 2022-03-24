@@ -3,11 +3,11 @@ keywords: Experience Platform;home;populära topics;query service;Query service;
 solution: Experience Platform
 title: Exempelfrågor om Adobe Analytics-data
 topic-legacy: queries
-description: Data från utvalda Adobe Analytics rapportsviter omvandlas till XDM Experience Events och hämtas till Adobe Experience Platform som datauppsättningar för dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform Query Service använder dessa data, och de inkluderade exempelfrågorna bör fungera med dina Adobe Analytics-datauppsättningar.
+description: Data från utvalda Adobe Analytics-rapportsviter omvandlas till XDM ExperienceEvents och hämtas till Adobe Experience Platform som datauppsättningar. I det här dokumentet beskrivs ett antal användningsfall där frågetjänsten använder dessa data och innehåller exempelfrågor som är utformade för att fungera med dina Adobe Analytics-datauppsättningar.
 exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
-source-git-commit: bb5ece5e48ca5e3bb97aa1367515f510ab03deee
+source-git-commit: fec6f614946860e6ad377beaca05972a63052dd8
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1066'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Data från utvalda Adobe Analytics-rapportsviter omvandlas till data som överensstämmer med [!DNL XDM ExperienceEvent] och inkapslat i Adobe Experience Platform som datauppsättningar.
 
-Det här dokumentet innehåller en översikt över ett antal användningsfall där Adobe Experience Platform [!DNL Query Service] använder dessa data, inklusive exempelfrågor bör fungera med dina Adobe Analytics-datauppsättningar. Läs dokumentationen om [Mappning av analysfält](../../sources/connectors/adobe-applications/mapping/analytics.md) för mer information om mappning till [!DNL Experience Events].
+Det här dokumentet innehåller en översikt över ett antal användningsfall där Adobe Experience Platform [!DNL Query Service] använder dessa data, inklusive exempelfrågor som utformats för att fungera med dina Adobe Analytics-datauppsättningar. Läs dokumentationen om [Mappning av analysfält](../../sources/connectors/adobe-applications/mapping/analytics.md) för mer information om mappning till [!DNL Experience Events].
 
 ## Komma igång
 
@@ -24,7 +24,7 @@ SQL-exemplen i hela det här dokumentet kräver att du redigerar SQL och fyller 
 
 ## Vanliga SQL-exempel
 
-I följande exempel visas vanliga SQL-frågor för att analysera dina Adobe Analytics-data.
+I följande exempel visas SQL-frågor för vanliga användningsområden för att analysera dina Adobe Analytics-data.
 
 ### Antal besökare per timme för en viss dag
 
@@ -120,14 +120,15 @@ ORDER BY Hour;
 
 ## Deduplicering
 
-Adobe Experience Platform Query Service stöder datadeduplicering. Se [Datadeduplicering i frågetjänstens dokumentation](../best-practices/deduplication.md) för information om hur nya värden genereras när frågan ställs [!DNL Experience Event] datauppsättningar.
+[!DNL Query Service] har stöd för datadeduplicering. Se [Datadeduplicering i [!DNL Query Service] dokumentation](../best-practices/deduplication.md) för information om hur nya värden genereras när frågan ställs [!DNL Experience Event] datauppsättningar.
 
 ## Marknadsföringsvariabler (produktsyntax)
 
+I följande avsnitt finns XDM-fält och exempelfrågor som du kan använda för att få åtkomst till försäljningsvariablerna i [!DNL Analytics] datauppsättning.
 
 ### Produktsyntax
 
-I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt konfigurerade variabler som kallas marknadsföringsvariabler. Dessa baseras antingen på en eVar eller anpassade händelser. Skillnaden mellan dessa variabler och deras standardanvändning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen.
+I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt konfigurerade variabler som kallas marknadsföringsvariabler. Dessa baseras antingen på en eVar eller anpassade händelser. Skillnaden mellan de här variablerna och deras typiska användning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen.
 
 Dessa variabler kallas för säljvariabler för produktsyntax. Detta gör det möjligt att samla in information, t.ex. ett&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
 
@@ -205,7 +206,7 @@ En annan typ av försäljningsvariabel som finns i Adobe Analytics är konverter
 1. En användare utför och söker internt efter &quot;vinterhatt&quot;, vilket ställer in funktionen för konverteringssyntax på Merchandising eVar6 till &quot;intern sökning:vinterhatt&quot;
 2. Användaren klickar på&quot;våffelsbeanie&quot; och hamnar på produktinformationssidan.\
    a. Landing here utlöser en `Product View` event för &quot;waffle beanie&quot; för 12,99 USD.\
-   b. För `Product View` har konfigurerats som en bindningshändelse och produkten &quot;waffle beanie&quot; är nu bunden till eVar6-värdet för &quot;intern sökning:vinterhatt&quot;. När&quot;våffelbeanie&quot;-produkten samlas in kopplas den till&quot;intern sökning:vinterhatt&quot; tills antingen (1) förfalloinställningen nås eller (2) ett nytt eVar6-värde anges och bindningshändelsen inträffar med produkten igen.
+   b. Sedan `Product View` är konfigurerad som en bindningshändelse, är produkten &quot;waffle beanie&quot; nu bunden till eVar6-värdet &quot;internal search:vinterhat&quot;. När&quot;våffelbeanie&quot;-produkten samlas in kopplas den till&quot;intern sökning:vinterhatt&quot; tills antingen (1) förfalloinställningen nås eller (2) ett nytt eVar6-värde anges och bindningshändelsen inträffar med produkten igen.
 3. Användaren lägger till produkten i sin kundvagn, vilket ger `Cart Add` -händelse.
 4. Användaren gör en annan intern sökning efter&quot;sommarskjorta&quot; som ställer in konverteringssyntaxen till&quot;intern sökning:sommarskjorta&quot; i Merchandising eVar6
 5. Användaren klickar på&quot;en sportig t-shirt&quot; och hamnar på produktinformationssidan.\

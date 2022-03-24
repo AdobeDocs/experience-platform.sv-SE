@@ -5,10 +5,10 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 38d0c34e7af2466fa005c8adaf3bd9e1d9fd78e1
+source-git-commit: a6924a1018d5dd4e3f03b3d8b6375cacb450a4f5
 workflow-type: tm+mt
-source-wordcount: '3274'
-ht-degree: 0%
+source-wordcount: '3395'
+ht-degree: 1%
 
 ---
 
@@ -19,8 +19,10 @@ Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och 
 Följande lista med svar på vanliga frågor är indelad i följande kategorier:
 
 - [Allmänt](#general)
-- [Exporterar data](#exporting-data)
+- [Exportera data](#exporting-data)
 - [Tredjepartsverktyg](#third-party-tools)
+- [PostgreSQL API-fel](#postgresql-api-errors)
+- [REST API-fel](#rest-api-errors)
 
 ## Allmänna frågor om frågetjänsten {#general}
 
@@ -38,7 +40,7 @@ Det här avsnittet innehåller information om prestanda, begränsningar och proc
 
 ### Kan jag använda Postman för API:t för frågetjänsten?
 
-+++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Installationsguide för Postman](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga autentiseringsuppgifter för användning med Postman. Läs den officiella dokumentationen för [riktlinjer för att starta, köra och dela Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
++++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Postman installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för Postman. Läs den officiella dokumentationen för [vägledning om hur du startar, kör och delar Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
 +++
 
 ### Finns det någon gräns för hur många rader som får returneras från en fråga via användargränssnittet?
@@ -434,38 +436,9 @@ WHERE T2.ID IS NULL
 
 +++
 
-## REST API-fel
-
-| HTTP-statuskod | Beskrivning | Möjliga orsaker |
-|------------------|-----------------------|----------------------------|
-| 400 | Felaktig begäran | Felaktig eller ogiltig fråga |
-| 401 | Autentiseringen misslyckades | Ogiltig autentiseringstoken |
-| 500 | Internt serverfel | Internt systemfel |
-
-## PostgreSQL API-fel
-
-| Felkod | Anslutningstillstånd | Beskrivning | Möjlig orsak |
-|------------|---------------------------|-------------|----------------|
-| **08P01** | Ej tillämpligt | Meddelandetypen stöds inte | Meddelandetypen stöds inte |
-| **28P01** | Start - autentisering | Ogiltigt lösenord | Ogiltig autentiseringstoken |
-| **28000** | Start - autentisering | Ogiltig auktoriseringstyp | Ogiltig auktoriseringstyp. Måste vara `AuthenticationCleartextPassword`. |
-| **42P12** | Start - autentisering | Inga tabeller hittades | Inga tabeller hittades för användning |
-| **42601** | Fråga | Syntaxfel | Ogiltigt kommando eller syntaxfel |
-| **42P01** | Fråga | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
-| **42P07** | Fråga | Tabellen finns | Det finns redan en tabell med samma namn (CREATE TABLE) |
-| **53400** | Fråga | LIMIT överskrider maxvärdet | Användaren angav en LIMIT-sats som är högre än 100 000 |
-| **53400** | Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
-| **58000** | Fråga | Systemfel | Internt systemfel |
-| **0A000** | Fråga/kommando | Stöds inte | Funktionen/funktionen i frågan/kommandot stöds inte |
-| **42501** | DROP TABLE Query | Släpptabellen har inte skapats av frågetjänsten | Tabellen som tas bort skapades inte av frågetjänsten med `CREATE TABLE` programsats |
-| **42501** | DROP TABLE Query | Tabellen har inte skapats av den autentiserade användaren | Tabellen som tas bort skapades inte av den inloggade användaren |
-| **42P01** | DROP TABLE Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
-| **42P12** | DROP TABLE Query | Ingen tabell hittades för `dbName`: kontrollera `dbName` | Inga tabeller hittades i den aktuella databasen |
-
-## Exporterar data {#exporting-data}
+## Exportera data {#exporting-data}
 
 I det här avsnittet finns information om hur du exporterar data och begränsningar.
-
 
 ### Finns det något sätt att extrahera data från frågetjänsten efter frågebearbetning och spara resultaten i en CSV-fil?
 
@@ -524,3 +497,51 @@ Syftet med att lägga till cacheserverlagret är att cachelagra data från fråg
 
 +++Svarsnr, pgAdmin-anslutning stöds inte. A [lista över tillgängliga tredjepartsklienter och instruktioner för hur de ska anslutas till frågetjänsten](./clients/overview.md) finns i dokumentationen.
 +++
+
+## PostgreSQL API-fel {#postgresql-api-errors}
+
+Följande tabell innehåller PSQL-felkoder och deras möjliga orsaker.
+
+| Felkod | Anslutningstillstånd | Beskrivning | Möjlig orsak |
+|------------|---------------------------|-------------|----------------|
+| **08P01** | Ej tillämpligt | Meddelandetypen stöds inte | Meddelandetypen stöds inte |
+| **28P01** | Start - autentisering | Ogiltigt lösenord | Ogiltig autentiseringstoken |
+| **28000** | Start - autentisering | Ogiltig auktoriseringstyp | Ogiltig auktoriseringstyp. Måste vara `AuthenticationCleartextPassword`. |
+| **42P12** | Start - autentisering | Inga tabeller hittades | Inga tabeller hittades för användning |
+| **42601** | Fråga | Syntaxfel | Ogiltigt kommando eller syntaxfel |
+| **42P01** | Fråga | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
+| **42P07** | Fråga | Tabellen finns | Det finns redan en tabell med samma namn (CREATE TABLE) |
+| **53400** | Fråga | LIMIT överskrider maxvärdet | Användaren angav en LIMIT-sats som är högre än 100 000 |
+| **53400** | Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
+| **58000** | Fråga | Systemfel | Internt systemfel |
+| **0A000** | Fråga/kommando | Stöds inte | Funktionen/funktionen i frågan/kommandot stöds inte |
+| **42501** | DROP TABLE Query | Släpptabellen har inte skapats av frågetjänsten | Tabellen som tas bort skapades inte av frågetjänsten med `CREATE TABLE` programsats |
+| **42501** | DROP TABLE Query | Tabellen har inte skapats av den autentiserade användaren | Tabellen som tas bort skapades inte av den inloggade användaren |
+| **42P01** | DROP TABLE Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
+| **42P12** | DROP TABLE Query | Ingen tabell hittades för `dbName`: kontrollera `dbName` | Inga tabeller hittades i den aktuella databasen |
+
+### Varför fick jag en 58000-felkod när jag använde metoden history_meta() i min tabell?
+
++++Besvara `history_meta()` -metoden används för att komma åt en ögonblicksbild från en datauppsättning. Tidigare, om du skulle köra en fråga på en tom datauppsättning i Azure Data Lake Storage (ADLS), skulle du få en felkod på 58000 som anger att datauppsättningen inte finns. Ett exempel på det gamla systemfelet visas nedan.
+
+```shell
+ErrorCode: 58000 Internal System Error [Invalid table your_table_name. historyMeta can be used on datalake tables only.]
+```
+
+Det här felet uppstod eftersom det inte fanns något returvärde för frågan. Detta beteende har nu åtgärdats för att returnera följande meddelande:
+
+```text
+Query complete in {timeframe}. 0 rows returned. 
+```
+
++++
+
+## REST API-fel {#rest-api-errors}
+
+Följande tabell innehåller HTTP-felkoder och deras möjliga orsaker.
+
+| HTTP-statuskod | Beskrivning | Möjliga orsaker |
+|------------------|-----------------------|----------------------------|
+| 400 | Felaktig begäran | Felaktig eller ogiltig fråga |
+| 401 | Autentiseringen misslyckades | Ogiltig autentiseringstoken |
+| 500 | Internt serverfel | Internt systemfel |
