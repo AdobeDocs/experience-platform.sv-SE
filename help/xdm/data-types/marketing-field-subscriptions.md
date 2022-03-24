@@ -4,9 +4,9 @@ title: Allmänt fält för marknadsföringsinställningar med prenumerationsdata
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över det allmänna inställningsfältet för marknadsföring med datatypen Subscriptions XDM.
 exl-id: 170ea6ca-77fc-4b0a-87f9-6d4b6f32d953
-source-git-commit: 0f39e9237185b49417f2af8dfc288ab1420cccae
+source-git-commit: bccf97d85421fcb2f8fe153ad0ddbef4975b6f7e
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '885'
 ht-degree: 1%
 
 ---
@@ -59,29 +59,31 @@ Vissa företag tillåter kunder att välja mellan olika prenumerationer som är 
 Följande JSON representerar ett exempel på ett marknadsföringsfält för en marknadsföringskanal för telefonsamtal som innehåller en `subscriptions` karta. Varje tangent i `subscriptions` -objektet representerar en enskild prenumeration för marknadsföringskanalen. Varje prenumeration innehåller i sin tur ett avanmälningsvärde (`val`).
 
 ```json
-"phone-marketing-field": {
+"email-marketing-field": {
   "val": "y",
   "time": "2019-01-01T15:52:25+00:00",
   "subscriptions": {
     "loyalty-offers": {
       "val": "y",
       "type": "sales",
+      "topics": ["discounts", "early-access"],
       "subscribers": {
-        "123-555-0928": {
+        "jdoe@example.com": {
           "time": "2019-01-01T15:52:25+00:00",
           "source": "website"
         }
       }
     },
-    "overdrawn-account": {
+    "newsletters": {
       "val": "y",
-      "type": "issues",
+      "type": "advertising",
+      "topics": ["hardware"],
       "subscribers": {
-        "123-555-0928": {
+        "jdoe@example.com": {
           "time": "2021-01-01T08:32:53+07:00",
           "source": "website"
         },
-        "301-555-1527": {
+        "tparan@example.com": {
           "time": "2020-02-03T07:54:21+07:00",
           "source": "call center"
         }
@@ -93,7 +95,9 @@ Följande JSON representerar ett exempel på ett marknadsföringsfält för en m
 
 | Egenskap | Beskrivning |
 | --- | --- |
+| `val` | The [medgivandevärde](#val) för prenumerationen. |
 | `type` | Prenumerationstypen. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken. |
+| `topics` | En array med strängar som representerar intressanta områden som en kund prenumererar på, som kan användas för att skicka relevant innehåll till dem. |
 | `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel som anger när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
