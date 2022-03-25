@@ -1,11 +1,12 @@
 ---
 keywords: Experience Platform;komma igång;attribueringai;populära ämnen;attribueringsindata;attribueringai output;attribueringai troublesholeshooting;attribueringsfel
-solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+solution: Intelligent Services, Real-time Customer Data Platform
 feature: Attribution AI
 title: Felsökning av Attribution AI
 description: Hitta svar på vanliga fel i Attribution AI.
 type: Documentation
-source-git-commit: 896dda631cd4182f278de0607bea442d8366fe8c
+exl-id: c2ff700a-1e36-4ba2-876c-9f8b56344241
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '167'
 ht-degree: 0%

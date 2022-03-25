@@ -1,12 +1,11 @@
 ---
 keywords: Experience Platform;komma igång;content ai;commerce ai;content and commerce ai;color extraction;Color extraction
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: Färgextrahering i innehålls- och handels-API
 topic-legacy: Developer guide
 description: Färgextraheringstjänsten kan, när den har en bild, beräkna histogrammet för pixelfärger och sortera dem efter dominerande färger i grupper.
 exl-id: 6b3b6314-cb67-404f-888c-4832d041f5ed
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 1%
@@ -47,7 +46,7 @@ Följande begäran extraherar färger från en bild baserat på indataparametrar
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som  [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. För färgextraheringstjänsten är ID:t `analyzer_id`:
+>`analyzer_id` avgör [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. För färgextraheringstjänsten `analyzer_id` ID är:
 >`Feature:image-color-histogram:Service-6fe52999293e483b8e4ae9a95f1b81a7`
 
 ```SHELL
@@ -87,27 +86,27 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det tjänst-ID för [!DNL Sensei] som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] som används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
+| `analyzer_id` | The [!DNL Sensei] tjänst-ID som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det program du skapade. | Ja |
-| `data` | En array som innehåller JSON-objekt. Varje objekt i arrayen representerar en bild. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data`-arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
+| `data` | En array som innehåller JSON-objekt. Varje objekt i arrayen representerar en bild. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` array. Alla återstående egenskaper som beskrivs nedan i den här tabellen kan åsidosättas inifrån `data`. | Ja |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
-| `content` | Det innehåll som ska analyseras av färgextraheringstjänsten. Om bilden är en del av begärandetexten använder du `-F file=@<filename>` i rullkommandot för att skicka bilden och låter den här parametern vara en tom sträng. <br> Om bilden är en fil på S3 skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
+| `content` | Det innehåll som ska analyseras av färgextraheringstjänsten. Om bilden är en del av begärandetexten använder du `-F file=@<filename>` i kommandot curl för att skicka bilden och lämna den här parametern som en tom sträng. <br> Om bilden är en fil på S3 skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
 | `content-type` | Används för att ange om indata är en del av begärandetexten eller en signerad URL för en S3-bucket. Standardvärdet för den här egenskapen är `inline`. | Nej |
-| `encoding` | Indatabildens filformat. För närvarande kan endast JPEG- och PNG-bilder bearbetas. Standardvärdet för den här egenskapen är `jpeg`. | Nej |
+| `encoding` | Indatabildens filformat. För närvarande går det endast att bearbeta bilder i JPEG och PNG. Standardvärdet för den här egenskapen är `jpeg`. | Nej |
 | `threshold` | Tröskelvärdet för poäng (0 till 1) över vilket resultaten måste returneras. Använd värdet `0` för att returnera alla resultat. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. När det används tillsammans med `threshold` är antalet resultat som returneras det lägsta av båda begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
+| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
 | `custom` | Alla anpassade parametrar som ska skickas. | Nej |
 | `historic-metadata` | En array som kan skickas som metadata. | Nej |
 
 **Svar**
 
-Ett lyckat svar returnerar detaljerna om de extraherade färgerna. Varje färg representeras av en `feature_value`-nyckel som innehåller följande information:
+Ett lyckat svar returnerar detaljerna om de extraherade färgerna. Varje färg representeras av en `feature_value` som innehåller följande information:
 
 - Ett färgnamn
 - Procentandelen av den här färgen som visas i förhållande till bilden
-- Färgens RGB-värde
+- Färgens RGB
 
-I det första exempelobjektet nedan betyder `feature_value` på `White,0.59,251,251,243` att den hittade färgen är vit, vit finns i 59 % av bilden och har RGB-värdet 251 251 243.
+I det första exempelobjektet nedan är `feature_value` av `White,0.59,251,251,243` innebär att den hittade färgen är vit, vit förekommer i 59 % av bilden och har RGB-värdet 251 251 243.
 
 ```json
 {
@@ -153,4 +152,4 @@ I det första exempelobjektet nedan betyder `feature_value` på `White,0.59,251,
 | Egenskap | Beskrivning |
 | --- | --- |
 | `content_id` | Namnet på den bild som överfördes i din POST. |
-| `feature_value` | En array vars objekt innehåller nycklar med samma egenskapsnamn. Dessa tangenter innehåller en sträng som representerar färgnamnet, en procentandel av den här färgen visas i förhållande till den bild som skickas i `content_id` och färgens RGB-värde. |
+| `feature_value` | En array vars objekt innehåller nycklar med samma egenskapsnamn. Dessa tangenter innehåller en sträng som representerar färgnamnet. En procentandel av den här färgen visas i relation till den bild som skickas i `content_id`och färgvärdet RGB. |

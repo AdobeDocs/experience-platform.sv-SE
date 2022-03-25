@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;ladda ned poäng;kundnummer;populära ämnen;Exportera;exportera;kundnummer;kundpoäng
-solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+solution: Intelligent Services, Real-time Customer Data Platform
 feature: Customer AI
 title: Ladda ned bakgrundsmusik i kundens AI
 topic-legacy: Downloading scores
-description: Med Customer AI kan du hämta bakgrundsmusik i filformatet Parquet.
+description: Med kundens AI kan du hämta bakgrundsmusik i filformatet Parquet.
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 0%
@@ -19,18 +19,18 @@ Det här dokumentet är en guide för nedladdning av poäng för kundens AI.
 
 ## Komma igång
 
-Med Customer AI kan du hämta bakgrundsmusik i filformatet Parquet. Den här självstudien kräver att du har läst och slutfört nedladdningen av AI-poäng för kunder i [guiden ](../getting-started.md) för att komma igång.
+Med kundens AI kan du hämta bakgrundsmusik i filformatet Parquet. Den här självstudiekursen kräver att du har läst och slutfört nedladdningen av AI-poäng för kunder i [komma igång](../getting-started.md) guide.
 
-För att få tillgång till poäng för kunds-AI måste du dessutom ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Configuring a Customer AI instance](./configure.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+För att få tillgång till poäng för kunds-AI måste du dessutom ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Konfigurera en AI-instans för kund](./configure.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 För närvarande finns det två sätt att hämta kundens AI-poäng:
 
-1. Om du vill ladda ned poängen på individuell nivå och/eller inte har kundprofilen i realtid aktiverad börjar du med att navigera till [och hitta datauppsättnings-ID](#dataset-id).
-2. Om du har en profil aktiverad och vill hämta segment som du har konfigurerat med hjälp av kundens AI går du till [hämta ett segment som har konfigurerats med kundens AI](#segment).
+1. Om du vill ladda ned poängen på individuell nivå och/eller inte har kundprofilen aktiverad i realtid börjar du med att navigera till [hitta ditt datauppsättnings-ID](#dataset-id).
+2. Om du har en profil aktiverad och vill hämta segment som du har konfigurerat med hjälp av kundens AI går du till [ladda ned ett segment som konfigurerats med kundens AI](#segment).
 
 ## Hitta ditt datauppsättnings-ID {#dataset-id}
 
-Klicka på listrutan *Fler åtgärder* i den övre högra navigeringsrutan i tjänstinstansen för AI-insikter om kunder och välj sedan **[!UICONTROL Access scores]**.
+Klicka på *Fler åtgärder* i den övre högra navigeringen och välj **[!UICONTROL Access scores]**.
 
 ![fler åtgärder](../images/insights/more-actions.png)
 
@@ -40,7 +40,7 @@ En ny dialogruta visas med en länk till dokumentationen för nedladdning av bak
 
 ## Hämta ditt batch-ID {#retrieve-your-batch-id}
 
-Om du använder ditt datauppsättnings-ID från föregående steg måste du ringa ett anrop till katalog-API:t för att hämta ett batch-ID. Ytterligare frågeparametrar används för detta API-anrop för att returnera den senaste lyckade gruppen i stället för en lista med batchar som tillhör din organisation. Om du vill returnera ytterligare batchar ökar du talet för parametern limit query till det önskade belopp som du vill returnera. Mer information om vilka typer av frågeparametrar som finns tillgängliga finns i guiden [filtrera katalogdata med hjälp av frågeparametrar](../../../catalog/api/filter-data.md).
+Om du använder ditt datauppsättnings-ID från föregående steg måste du ringa ett anrop till katalog-API:t för att hämta ett batch-ID. Ytterligare frågeparametrar används för detta API-anrop för att returnera den senaste lyckade gruppen i stället för en lista med batchar som tillhör din organisation. Om du vill returnera ytterligare batchar ökar du talet för parametern limit query till det önskade belopp som du vill returnera. Mer information om vilka typer av frågeparametrar som finns finns finns i guiden på [filtrera katalogdata med frågeparametrar](../../../catalog/api/filter-data.md).
 
 **API-format**
 
@@ -64,7 +64,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?dataSet=5
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller ett batch-ID-objekt. I det här exemplet är nyckelvärdet till det returnerade objektet batch-ID `01E5QSWCAASFQ054FNBKYV6TIQ`. Kopiera ditt batch-ID till nästa API-anrop.
+Ett godkänt svar returnerar en nyttolast som innehåller ett batch-ID-objekt. I det här exemplet är nyckelvärdet för det returnerade objektet batch-ID `01E5QSWCAASFQ054FNBKYV6TIQ`. Kopiera ditt batch-ID till nästa API-anrop.
 
 ```json
 {
@@ -125,7 +125,7 @@ GET batches/{BATCH_ID}/files
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{BATCH_ID}` | Det batch-ID som hämtades i föregående steg [hämtar ditt batch-ID](#retrieve-your-batch-id). |
+| `{BATCH_ID}` | Det batch-ID som hämtades i föregående steg [hämta ditt batch-ID](#retrieve-your-batch-id). |
 
 **Begäran**
 
@@ -141,7 +141,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/035e2520-5
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller ett `_links`-objekt. I `_links`-objektet finns ett `href`-anrop med ett nytt API-anrop som värde. Kopiera det här värdet för att fortsätta till nästa steg.
+Ett godkänt svar returnerar en nyttolast som innehåller en `_links` -objekt. I `_links` objektet är ett `href` med ett nytt API-anrop som värde. Kopiera det här värdet för att fortsätta till nästa steg.
 
 ```json
 {
@@ -169,7 +169,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links`-objekt. I
 
 ## Hämta filer {#retrieving-your-files}
 
-Använd det `href`-värde som du fick i det föregående steget som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
+Använda `href` om du anger värdet som du fick i föregående steg som ett API-anrop, gör en ny GET-förfrågan för att hämta din filkatalog.
 
 **API-format**
 
@@ -179,7 +179,7 @@ GET files/{DATASETFILE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href`-värdet från [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). Den är också tillgänglig i `data`-arrayen under objekttypen `dataSetFileId`. |
+| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href` värde från [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). Det finns även i `data` array under objekttypen `dataSetFileId`. |
 
 **Begäran**
 
@@ -193,7 +193,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 **Svar**
 
-Svaret innehåller en datamatris som kan ha en enda post, eller en lista med filer som tillhör den katalogen. Exemplet nedan innehåller en lista med filer och har komprimerats för läsbarhet. I det här fallet måste du följa URL:en för varje fil för att kunna komma åt filen.
+Svaret innehåller en datamatris som kan ha en enda post eller en lista med filer som tillhör den katalogen. Exemplet nedan innehåller en lista med filer och har komprimerats för läsbarhet. I det här fallet måste du följa URL:en för varje fil för att kunna komma åt filen.
 
 ```json
 {
@@ -238,15 +238,15 @@ Svaret innehåller en datamatris som kan ha en enda post, eller en lista med fil
 | `_links.self.href` | Den URL för GET-begäran som används för att hämta en fil i din katalog. |
 
 
-Kopiera `href`-värdet för valfritt filobjekt i `data`-arrayen och fortsätt sedan till nästa steg.
+Kopiera `href` värde för alla filobjekt i `data` och gå sedan vidare till nästa steg.
 
 ## Hämta fildata
 
-Om du vill hämta fildata skickar du en GET till `"href"`-värdet som du kopierade i föregående steg [när du hämtade dina filer](#retrieving-your-files).
+Om du vill hämta fildata skickar du en GET till `"href"` värde som du kopierade i föregående steg [hämta filer](#retrieving-your-files).
 
 >[!NOTE]
 >
->Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. I följande exempel används `--output {FILENAME.FILETYPE}`.
+>Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. I följande exempel på begäran används `--output {FILENAME.FILETYPE}`.
 
 **API-format**
 
@@ -256,7 +256,7 @@ GET files/{DATASETFILE_ID}?path={FILE_NAME}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href`-värdet från ett [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). |
+| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href` värde från [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). |
 | `{FILE_NAME}` | Filens namn. |
 
 **Begäran**
@@ -282,19 +282,19 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 ## Hämta ett segment som konfigurerats med kundens AI {#segment}
 
-Ett annat sätt att ladda ned poängdata är att exportera målgruppen till en datauppsättning. När ett segmenteringsjobb har slutförts (värdet för attributet `status` är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras. Mer information om segmentering finns i [segmenteringsöversikten](../../../segmentation/home.md).
+Ett annat sätt att ladda ned poängdata är att exportera målgruppen till en datauppsättning. När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är &quot;SUCCEEDED&quot;), kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras. Mer information om segmentering finns på [segmenteringsöversikt](../../../segmentation/home.md).
 
 >[!IMPORTANT]
 >
 >För att den här exportmetoden ska kunna användas måste kundprofilen i realtid aktiveras för datauppsättningen.
 
-Avsnittet [exportera ett segment](../../../segmentation/tutorials/evaluate-a-segment.md) i segmentutvärderingsguiden innehåller de steg som krävs för att exportera en målgruppsdatauppsättning. Stödlinjen innehåller konturer och exempel på följande:
+The [exportera ett segment](../../../segmentation/tutorials/evaluate-a-segment.md) i segmentutvärderingshandboken beskriver de steg som krävs för att exportera en målgruppsdatauppsättning. Stödlinjen innehåller konturer och exempel på följande:
 
 - **Skapa en måldatauppsättning:** Skapa datauppsättningen för målgruppsmedlemmar.
 - **Generera målgruppsprofiler i datauppsättningen:** Fyll i datauppsättningen med enskilda XDM-profiler baserat på resultatet av ett segmentjobb.
 - **Övervaka exportförlopp:** Kontrollera exportförloppet.
-- **Läsa målgruppsdata:** Hämta de resulterande enskilda XDM-profilerna som representerar medlemmarna i din publik.
+- **Läs målgruppsdata:** Hämta de resulterande enskilda XDM-profilerna som representerar medlemmarna i din publik.
 
 ## Nästa steg
 
-I det här dokumentet beskrivs stegen som krävs för att hämta AI-poäng för kunder. Du kan nu fortsätta att bläddra bland de andra [intelligenta tjänsterna](../../home.md) och guiderna som erbjuds.
+I det här dokumentet beskrivs stegen som krävs för att hämta AI-poäng för kunder. Du kan nu fortsätta att bläddra bland de andra [Intelligenta tjänster](../../home.md) och guider som erbjuds.

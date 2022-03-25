@@ -1,12 +1,11 @@
 ---
 keywords: Experience Platform;home;intelligent services;populära topics;intelligent service;Intelligent service
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: Intelligent Services - översikt
 topic-legacy: Intelligent Services overview
 description: Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
 exl-id: db080c83-2a45-4fd5-8502-d9cae2a063be
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 # Intelligent Services - översikt
 
-Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud], [!DNL Adobe Experience Platform] och program från tredje part.
+Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud], [!DNL Adobe Experience Platform]och program från tredje part.
 
 Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI- och kunds-AI.
 
@@ -23,7 +22,7 @@ Följande video är utformad för att ge stöd för din förståelse av intellig
 
 ## Fördelar med intelligenta tjänster
 
-Intelligenta tjänster, som bygger på [!DNL Adobe Experience Platform], ger marknadsförare ansvariga för kundupplevelseåtkomst till AI-as-service, vilket gör det enkelt för alla att förutse kundbeteende, mäta effekten av en kampanj eller säkerställa bättre avkastning på varje investering. Nedan anges några av fördelarna med intelligenta tjänster.
+Intelligenta tjänster som bygger på [!DNL Adobe Experience Platform], ger marknadsförare som ansvarar för kundupplevelsen tillgång till AI-as-service, vilket gör det enkelt för alla att förutsäga kundbeteende, mäta effekten av en kampanj eller säkerställa bättre avkastning på varje investering. Nedan anges några av fördelarna med intelligenta tjänster.
 
 ### Kostnadseffektiv snabbhet på marknaden
 
@@ -41,7 +40,7 @@ Ge marknadsförarna möjlighet att komma igång med AI/ML direkt och börja för
 
 ### Ingest
 
-Kunddata importeras och omvandlas med Experience Data Model (XDM) på [!DNL Adobe Experience Platform]. Mer information om XDM finns i [XDM-översikten](../xdm/home.md).
+Kunddata importeras och omvandlas med Experience Data Model (XDM) på [!DNL Adobe Experience Platform]. Mer information om XDM finns på [XDM - översikt](../xdm/home.md).
 
 ### Konfigurera
 
@@ -53,8 +52,8 @@ När modellerna har avslutat utbildningen och poängsättningen skrivs poängen 
 
 ### Vidta åtgärder
 
-Slutligen kan du bestämma vilka åtgärder som ska vidtas med förutsägelserna, som att ta del av insikter, aktivera program i [!DNL Adobe Experience Cloud] och skapa anpassade kontrollpaneler.
+Slutligen kan ni bestämma vilka åtgärder som ska vidtas med prognoserna, som att konsumera insikter, aktivera program i hela [!DNL Adobe Experience Cloud]och bygga anpassade kontrollpaneler.
 
 ## Nästa steg
 
-För närvarande erbjuder Intelligent Services Attribution AI och AI. Med Attribution AI kan marknadsförarna på ett intelligent sätt effektivisera marknadsföringen i olika kanaler och kampanjer. Mer information om Attribution AI finns i [Attribution AI overview](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om kundens AI finns i [Översikt över AI för kunder](./customer-ai/overview.md).
+För närvarande erbjuder Intelligent Services Attribution AI och AI. Med Attribution AI kan marknadsförarna på ett intelligent sätt effektivisera marknadsföringen i olika kanaler och kampanjer. Mer information om Attribution AI finns på [Översikt över Attribution AI](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om AI för kunder finns på [Översikt över AI för kunder](./customer-ai/overview.md).

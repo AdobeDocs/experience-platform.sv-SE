@@ -1,12 +1,11 @@
 ---
 keywords: Visuell likhet;visuell likhet;ccai api
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: Visuell likhet i API:t för innehåll och handel
 topic-legacy: Developer guide
 description: När en bild anges hittas visuellt liknande bilder från en katalog automatiskt av den visuella likhetstjänsten.
 exl-id: fe31d9be-ee42-44fa-b83f-3b8a718cb4e3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 2%
@@ -37,7 +36,7 @@ Följande begäran hämtar visuellt liknande bilder från en katalog baserat på
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som  [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. Kontakta Content and Commerce AI beta-teamet för att få ditt `analyzer_id` för den här tjänsten.
+>`analyzer_id` avgör [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. Kontakta Content and Commerce AI beta team för att få ditt `analyzer_id` för den här tjänsten.
 
 ```SHELL
 curl -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -76,21 +75,21 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det tjänst-ID för [!DNL Sensei] som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] som används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
+| `analyzer_id` | The [!DNL Sensei] tjänst-ID som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det program du skapade. | Ja |
-| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar en bild. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data`-arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
+| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar en bild. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` array. Alla återstående egenskaper som beskrivs nedan i den här tabellen kan åsidosättas inifrån `data`. | Ja |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
-| `content` | Det innehåll som ska analyseras av den visuella likhetstjänsten. Om bilden är en del av begärandetexten använder du `-F file=@<filename>` i rullkommandot för att skicka bilden och låter den här parametern vara en tom sträng. <br> Om bilden är en fil på S3 skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
+| `content` | Det innehåll som ska analyseras av den visuella likhetstjänsten. Om bilden är en del av begärandetexten använder du `-F file=@<filename>` i kommandot curl för att skicka bilden och lämna den här parametern som en tom sträng. <br> Om bilden är en fil på S3 skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
 | `content-type` | Används för att ange om indata är en del av begärandetexten eller en signerad URL för en S3-bucket. Standardvärdet för den här egenskapen är `inline`. | Nej |
-| `encoding` | Indatabildens filformat. För närvarande kan endast JPEG- och PNG-bilder bearbetas. Standardvärdet för den här egenskapen är `jpeg`. | Nej |
+| `encoding` | Indatabildens filformat. För närvarande går det endast att bearbeta bilder i JPEG och PNG. Standardvärdet för den här egenskapen är `jpeg`. | Nej |
 | `threshold` | Tröskelvärdet för poäng (0 till 1) över vilket resultaten måste returneras. Använd värdet `0` för att returnera alla resultat. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. När det används tillsammans med `threshold` är antalet resultat som returneras det lägsta av båda begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
+| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
 | `custom` | Alla anpassade parametrar som ska skickas. | Nej |
 | `historic-metadata` | En array som kan skickas som metadata. | Nej |
 
 **Svar**
 
-Ett lyckat svar returnerar en `response`-matris som innehåller `feature_value` och `feature_name` för var och en av de visuellt liknande bilderna i katalogen.
+Ett godkänt svar returnerar ett `response` en array som innehåller `feature_value` och `feature_name` för var och en av de visuellt liknande bilder som finns i katalogen.
 
 Följande visuellt liknande bilder returnerades i det exempelsvar som visas nedan:
 

@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;översikt;customer ai;populära topics;customer ai overview
-solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+solution: Intelligent Services, Real-time Customer Data Platform
 feature: Customer AI
 title: Översikt över AI för kunder
 topic-legacy: Customer AI Overview
 description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 landing-page-description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala.
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
@@ -52,4 +52,4 @@ Kunds-AI fungerar genom att analysera befintliga data om kundupplevelsehändelse
 
 ## Nästa steg
 
-Du kan börja med att följa guiden [komma igång](./getting-started.md). I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina autentiseringsuppgifter och data klara går du till [konfigurera en AI-instans](./user-guide/configure.md) för kunden. Här beskrivs hur du använder AI för kunder.
+Du kan börja med att följa följande [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina uppgifter tillgängliga går du till  [konfigurera en AI-instans för kund](./user-guide/configure.md). Här beskrivs hur du använder AI för kunder.

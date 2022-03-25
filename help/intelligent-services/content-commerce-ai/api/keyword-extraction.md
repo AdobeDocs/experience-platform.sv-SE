@@ -1,12 +1,11 @@
 ---
 keywords: Experience Platform;komma igång;content ai;commerce ai;content and commerce ai;keyword extraction;Keyword extraction
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: Extrahering av nyckelord i API:t för innehåll och handel
 topic-legacy: Developer guide
 description: Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '1082'
 ht-degree: 2%
@@ -21,7 +20,7 @@ ht-degree: 2%
 
 Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
 
-Namngivna entiteter som känns igen av [!DNL Content and Commerce AI] visas i följande tabell:
+Namngivna entiteter som känns igen av [!DNL Content and Commerce AI] finns i följande tabell:
 
 | Enhetsnamn | Beskrivning |
 | --- | --- |
@@ -39,7 +38,7 @@ Namngivna entiteter som känns igen av [!DNL Content and Commerce AI] visas i f�
 
 >[!NOTE]
 >
->Om du planerar att bearbeta PDF-filer går du vidare till instruktionerna för [PDF-nyckelordsextrahering](#pdf-extraction) i det här dokumentet. Stöd för ytterligare filtyper som docx, ppt, amd xml ställs in på att släppas vid ett senare datum.
+>Om du planerar att bearbeta PDF går du vidare till instruktionerna för [Extrahering av nyckelord för PDF](#pdf-extraction) i det här dokumentet. Stöd för ytterligare filtyper som docx, ppt, amd xml ställs in på att släppas vid ett senare datum.
 
 **API-format**
 
@@ -78,7 +77,7 @@ Se tabellen under exempelnyttolasten för mer information om de indataparametrar
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som  [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. För nyckelordsextraheringstjänsten är ID:t `analyzer_id`:
+>`analyzer_id` avgör [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. För nyckelordsextraheringstjänsten finns följande `analyzer_id` ID är:
 >`Feature:cintel-ner:Service-1a35aefb0f0f4dc0a3b5262370ebc709`
 
 ```SHELL
@@ -114,21 +113,21 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det tjänst-ID för [!DNL Sensei] som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] som används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
+| `analyzer_id` | The [!DNL Sensei] tjänst-ID som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det skapade programmet. | Ja |
-| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data`-arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
+| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` array. Alla återstående egenskaper som beskrivs nedan i den här tabellen kan åsidosättas inifrån `data`. | Ja |
 | `language` | Inmatningstextens språk. Standardvärdet är `en`. | Nej |
 | `content-type` | Används för att ange om indata är en del av begärandetexten eller en signerad URL för en S3-bucket. Standardvärdet för den här egenskapen är `inline`. | Ja |
-| `encoding` | Kodningsformatet för indatatext. Detta kan vara `utf-8` eller `utf-16`. Standardvärdet för den här egenskapen är `utf-8`. | Nej |
+| `encoding` | Kodningsformatet för indatatext. Det här kan `utf-8` eller `utf-16`. Standardvärdet för den här egenskapen är `utf-8`. | Nej |
 | `threshold` | Tröskelvärdet för poäng (0 till 1) över vilket resultaten måste returneras. Använd värdet `0` för att returnera alla resultat. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. När det används tillsammans med `threshold` är antalet resultat som returneras det lägsta av båda begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. Mer information om anpassade parametrar finns i [bilagan](#appendix). | Nej |
+| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
+| `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. Se [appendix](#appendix) om du vill ha mer information om anpassade parametrar. | Nej |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
 | `content` | Innehållet som används av nyckelordsextraheringstjänsten. Innehållet kan vara rå text (&quot;textbunden&quot; innehållstyp). <br> Om innehållet är en fil på S3 (&#39;s3-bucket&#39; content-type) skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
 
 **Svar**
 
-Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord i `response`-arrayen.
+Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord i `response` array.
 
 ```json
 {
@@ -228,9 +227,9 @@ Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord
 }
 ```
 
-## Extrahering av PDF-nyckelord {#pdf-extraction}
+## Extrahering av nyckelord för PDF {#pdf-extraction}
 
-Nyckelordsextraheringstjänsten stöder PDF-filer, men du måste använda ett nytt AnalyzerID för PDF-filer och ändra dokumenttypen till PDF. Se exemplet nedan för mer information.
+Nyckelordsextraheringstjänsten stöder PDF, men du måste använda ett nytt AnalyzerID för PDF-filer och ändra dokumenttypen till PDF. Se exemplet nedan för mer information.
 
 **API-format**
 
@@ -244,7 +243,7 @@ Följande begäran extraherar nyckelord från ett PDF-dokument baserat på indat
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som  [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. Vid extrahering av PDF-nyckelord är `analyzer_id`-ID:
+>`analyzer_id` avgör [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. Vid extrahering av nyckelord från PDF `analyzer_id` ID är:
 >`Feature:cintel-ner:Service-7a87cb57461345c280b62470920bcdc5`
 
 ```SHELL
@@ -276,21 +275,21 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det tjänst-ID för [!DNL Sensei] som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] som används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
+| `analyzer_id` | The [!DNL Sensei] tjänst-ID som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det skapade programmet. | Ja |
-| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data`-arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
+| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` array. Alla återstående egenskaper som beskrivs nedan i den här tabellen kan åsidosättas inifrån `data`. | Ja |
 | `language` | Inmatningsspråk. Standardvärdet är `en` (engelska). | Nej |
-| `content-type` | Används för att ange innehållstypen för indata. Detta ska anges till `file`. | Ja |
-| `encoding` | Inmatningens kodningsformat. Detta ska anges till `pdf`. Fler kodningstyper är inställda på att stödjas vid ett senare datum. | Ja |
+| `content-type` | Används för att ange innehållstypen för indata. Detta bör anges till `file`. | Ja |
+| `encoding` | Inmatningens kodningsformat. Detta bör anges till `pdf`. Fler kodningstyper är inställda på att stödjas vid ett senare datum. | Ja |
 | `threshold` | Tröskelvärdet för poäng (0 till 1) över vilket resultaten måste returneras. Använd värdet `0` för att returnera alla resultat. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. När det används tillsammans med `threshold` är antalet resultat som returneras det lägsta av båda begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. Mer information om anpassade parametrar finns i [bilagan](#appendix). | Nej |
+| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
+| `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. Se [appendix](#appendix) om du vill ha mer information om anpassade parametrar. | Nej |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
-| `content` | Detta ska anges till `file`. | Ja |
+| `content` | Detta bör anges till `file`. | Ja |
 
 **Svar**
 
-Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord i `response`-arrayen.
+Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord i `response` array.
 
 ```json
 {
@@ -359,11 +358,11 @@ Ett lyckat svar returnerar ett JSON-objekt som innehåller extraherade nyckelord
 }
 ```
 
-Mer information och ett exempel på hur du använder PDF-extrahering med instruktioner om hur du konfigurerar, distribuerar och integrerar med AEM molntjänst. Besök [arbetskatalogen för extrahering av CCAI PDF-filer](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-ccai-pdfextract).
+Mer information och ett exempel på hur du använder PDF-extrahering med instruktioner för hur du konfigurerar, distribuerar och integrerar med AEM molntjänst. Besök [CCAI-databas för extrahering av arbetare i PDF](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-ccai-pdfextract).
 
 ## Bilaga {#appendix}
 
-Följande tabell innehåller tillgängliga parametrar som kan användas från `custom`.
+Följande tabell innehåller tillgängliga parametrar som kan användas inifrån `custom`.
 
 | Namn | Beskrivning | Obligatoriskt |
 | --- | --- | --- |

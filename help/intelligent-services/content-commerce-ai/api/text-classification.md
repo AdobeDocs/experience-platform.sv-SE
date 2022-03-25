@@ -1,12 +1,11 @@
 ---
 keywords: textklassificering;Textklassificering
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: Textklassificering i API:t för innehåll och handel
 topic-legacy: Developer guide
 description: När textklassificeringstjänsten anger ett textfragment kan den klassificeras i en eller flera etiketter. Klassificeringen kan vara en enstaka etikett, flera etiketter eller hierarkisk.
 exl-id: f240519a-0d83-4309-91e4-4e48be7955a1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '441'
 ht-degree: 2%
@@ -33,7 +32,7 @@ Följande begäran klassificerar text från ett fragment baserat på indataparam
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som  [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. Kontakta Content and Commerce AI beta-teamet för att få ditt `analyzer_id` för den här tjänsten.
+>`analyzer_id` avgör [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` innan du gör din begäran. Kontakta Content and Commerce AI beta team för att få ditt `analyzer_id` för den här tjänsten.
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -62,14 +61,14 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det tjänst-ID för [!DNL Sensei] som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] som används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
+| `analyzer_id` | The [!DNL Sensei] tjänst-ID som din begäran distribueras under. Detta ID avgör vilket av [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det program som skapades. | Ja |
-| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data`-arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
+| `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` array. Alla återstående egenskaper som beskrivs nedan i den här tabellen kan åsidosättas inifrån `data`. | Ja |
 | `language` | Inmatningstextens språk. Standardvärdet är `en`. | Nej |
 | `content-type` | Används för att ange om indata är en del av begärandetexten eller en signerad URL för en S3-bucket. Standardvärdet för den här egenskapen är `inline`. | Nej |
-| `encoding` | Kodningsformatet för indatatext. Detta kan vara `utf-8` eller `utf-16`. Standardvärdet för den här egenskapen är `utf-8`. | Nej |
+| `encoding` | Kodningsformatet för indatatext. Det här kan `utf-8` eller `utf-16`. Standardvärdet för den här egenskapen är `utf-8`. | Nej |
 | `threshold` | Tröskelvärdet för poäng (0 till 1) över vilket resultaten måste returneras. Använd värdet `0` för att returnera alla resultat. Standardvärdet för den här egenskapen är `0`. | Nej |
-| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. När det används tillsammans med `threshold` är antalet resultat som returneras det lägsta av båda begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
+| `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
 | `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. | Nej |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
 | `content` | Innehållet som används av texturklassificeringstjänsten. Innehållet kan vara rå text (&quot;textbunden&quot; innehållstyp). <br> Om innehållet är en fil på S3 (&#39;s3-bucket&#39; content-type) skickar du den signerade URL:en. | Ja |

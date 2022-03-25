@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;komma igång;content ai;commerce ai;content/commerce ai
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: Komma igång med innehåll och handel med AI
 topic-legacy: Getting started
 description: Innehålls- och handels-API:er använder Adobe I/O-API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
 exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -18,9 +18,9 @@ ht-degree: 0%
 >
 >Innehåll och handel AI är i betaversion. Dokumentationen kan komma att ändras.
 
-[!DNL Content and Commerce AI] använder Adobe I/O API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering.
+[!DNL Content and Commerce AI] använder Adobe I/O API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrationen måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
-När du kommer till steget **Lägg till API** finns API:t under Experience Cloud i stället för Adobe Experience Platform, vilket visas i skärmbilden nedan:
+Men när du kommer till **Lägg till API** API:t finns under Experience Cloud i stället för Adobe Experience Platform, vilket visas i skärmbilden nedan:
 
 ![lägga till innehåll och handel med AI](./images/add-api.png)
 
@@ -32,25 +32,25 @@ När du är klar med självstudiekursen för autentisering visas värdena för v
 
 ## Skapa en Postman-miljö (valfritt)
 
-När du har konfigurerat ditt projekt och API i Adobe Developer Console kan du välja att hämta en miljöfil för Postman. Välj **[!UICONTROL Content and Commerce AI]** under **[!UICONTROL APIs]** den vänstra listen i ditt projekt. En ny flik öppnas med ett kort med etiketten [!DNL Try it out]. Välj **Hämta för Postman** om du vill hämta en JSON-fil som används för att konfigurera postmanmiljön.
+När du har konfigurerat ditt projekt och API i Adobe Developer Console kan du välja att hämta en miljöfil för Postman. Under **[!UICONTROL APIs]** till vänster om projektet, välj **[!UICONTROL Content and Commerce AI]**. En ny flik öppnas med ett kort med etiketten &quot;[!DNL Try it out]&quot;. Välj **Ladda ned för Postman** för att hämta en JSON-fil som används för att konfigurera din postmanmiljö.
 
 ![ladda ned för postman](./images/add-to-postman.png)
 
-När du har hämtat filen öppnar du Postman och väljer **kugghjulsikonen** i det övre högra hörnet för att öppna dialogrutan **Hantera miljöer**.
+När du har laddat ned filen öppnar du Postman och väljer **kugghjulsikon** överst till höger för att öppna **hantera miljöer** -dialogrutan.
 
 ![kugghjulsikon](./images/select-gear-icon.png)
 
-Välj sedan **Importera** från dialogrutan **Hantera miljöer**.
+Nästa, välj **Importera** inifrån **Hantera miljöer** -dialogrutan.
 
 ![import](./images/import.png)
 
-Du omdirigeras och uppmanas att välja en miljöfil på datorn. Markera den JSON-fil som du hämtade tidigare och välj sedan **Öppna** för att läsa in miljön.
+Du omdirigeras och uppmanas att välja en miljöfil på datorn. Markera JSON-filen som du hämtade tidigare och välj sedan **Öppna** för att läsa in miljön.
 
 ![](./images/choose-your-file.png)
 
 ![](./images/click-open.png)
 
-Du omdirigeras tillbaka till fliken *Hantera miljöer* med ett nytt miljönamn ifyllt. Markera miljönamnet om du vill visa och redigera variablerna som är tillgängliga i Postman. Du måste fortfarande fylla i `JWT_TOKEN` och `ACCESS_TOKEN` manuellt. Dessa värden borde ha hämtats när självstudiekursen [autentisering](https://www.adobe.com/go/platform-api-authentication-en) slutfördes.
+Du omdirigeras tillbaka till *Hantera miljöer* med ett nytt miljönamn ifyllt. Markera miljönamnet för att visa och redigera de variabler som är tillgängliga i Postman. Du måste fortfarande fylla i `JWT_TOKEN` och `ACCESS_TOKEN`. Dessa värden skulle ha erhållits medan [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
 ![](./images/re-direct.png)
 
@@ -66,12 +66,12 @@ Mer information om hur du arbetar med Adobe I/O API:er med Postman finns i poste
 
 ## Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
 
 ## Nästa steg {#next-steps}
 
-När du har alla dina autentiseringsuppgifter kan du konfigurera en anpassad arbetare för [!DNL Content and Commerce AI]. Följande dokument hjälper till att förstå Extensibility Framework och miljöinställningar.
+När du har alla dina autentiseringsuppgifter är du redo att konfigurera en anpassad arbetare för [!DNL Content and Commerce AI]. Följande dokument hjälper till att förstå Extensibility Framework och miljöinställningar.
 
-Om du vill veta mer om Extensibility Framework börjar du med att läsa [introduktionen till dokumentet extensibility](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html). I det här dokumentet beskrivs förutsättningarna och etableringskraven.
+Om du vill veta mer om Extensibility Framework börjar du med att läsa [introduktion till utbyggbarhet](https://experienceleague.adobe.com/docs/asset-compute/using/extend/understand-extensibility.html) -dokument. I det här dokumentet beskrivs förutsättningarna och etableringskraven.
 
-Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content and Commerce AI] börjar du med att läsa guiden för [konfigurera en utvecklarmiljö](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.
+Mer information om hur du konfigurerar en miljö för [!DNL Content and Commerce AI], börja med att läsa guiden för [konfigurera en utvecklarmiljö](https://experienceleague.adobe.com/docs/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.

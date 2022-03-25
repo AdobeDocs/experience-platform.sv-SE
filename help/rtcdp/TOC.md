@@ -1,10 +1,10 @@
 ---
 product: adobe experience platform
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Real-time Customer Data Platform
 audience: user
 user-guide-title: Real-time Customer Data Platform Guide
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 69833137498fedd87e99ca4255b8f1ace0921ff9
+source-git-commit: c0ea64691ad5f901bca9729ff6d742ffd423f1e5
 workflow-type: tm+mt
 source-wordcount: '174'
 ht-degree: 7%
