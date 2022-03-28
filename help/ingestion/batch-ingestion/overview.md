@@ -5,9 +5,9 @@ title: Översikt över API för gruppinmatning
 topic-legacy: overview
 description: Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 75426b1ddc16af39eb6c423027fac7d4d0e21c6a
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1387'
 ht-degree: 4%
 
 ---
@@ -151,7 +151,7 @@ Du kan överföra filer med hjälp av API:t för liten filöverföring. Om filer
 
 >[!INFO]
 >
->Exemplen nedan använder [Apache Parquet](https://parquet.apache.org/documentation/latest/) filformat. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](api-overview.md).
+>Exemplen nedan använder [Apache Parquet](https://parquet.apache.org/docs/) filformat. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](api-overview.md).
 
 ### Liten filöverföring
 

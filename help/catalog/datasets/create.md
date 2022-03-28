@@ -5,9 +5,9 @@ title: Skapa en datauppsättning med API:er
 topic-legacy: datasets
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 75426b1ddc16af39eb6c423027fac7d4d0e21c6a
 workflow-type: tm+mt
-source-wordcount: '1305'
+source-wordcount: '1304'
 ht-degree: 0%
 
 ---
@@ -214,7 +214,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->I den här självstudiekursen används [Apache Parquet](https://parquet.apache.org/documentation/latest/) filformat för alla dess exempel. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md)
+>I den här självstudiekursen används [Apache Parquet](https://parquet.apache.org/docs/) filformat för alla dess exempel. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md)
 
 **Svar**
 
