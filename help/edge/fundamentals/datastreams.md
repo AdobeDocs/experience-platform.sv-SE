@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar datastreams. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 7fc62099ef7561595d260a5507fb2094f58b6016
+source-git-commit: 026d45b2c9d362d7510576601174c296e3b18a2a
 workflow-type: tm+mt
-source-wordcount: '1908'
+source-wordcount: '1899'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i a
 
 >[!NOTE]
 >
->Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Om du inte har åtkomst fyller du i följande [formulär](http://adobe.ly/websdkaccess) och vi ger dig den åtkomst du behöver.
+>Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Fyll i följande [formulär](https://adobe.ly/websdkaccess) för att begära nödvändig åtkomst.
 
 ## Öppna [!UICONTROL Datastreams] arbetsyta
 
@@ -66,7 +66,7 @@ Resten av det här avsnittet fokuserar på stegen för att mappa data till ett v
 
 >[!IMPORTANT]
 >
->Data Prep för datainsamling stöds för närvarande inte för implementeringar av Mobile SDK.
+>Data Prep för datainsamling stöds för närvarande inte för Mobile SDK-implementeringar.
 
 Data Prep är en Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från Experience Data Model (XDM). När du konfigurerar en plattformsaktiverad datastream kan du använda dataprep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
 
