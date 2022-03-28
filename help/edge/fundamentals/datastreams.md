@@ -3,9 +3,9 @@ title: Konfigurera ditt datastream för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar datastreams. '
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 9dbadcb65d4306702e5e4d7dae2614e86cbde332
+source-git-commit: 7fc62099ef7561595d260a5507fb2094f58b6016
 workflow-type: tm+mt
-source-wordcount: '1841'
+source-wordcount: '1908'
 ht-degree: 0%
 
 ---
@@ -49,6 +49,16 @@ Arbetsflödet för att skapa en datastam visas med början i konfigurationsstege
 Om du konfigurerar det här dataflödet för användning i Experience Platform och använder Platform Web SDK måste du även välja en [händelsebaserat XDM-schema (Experience Data Model)](../../xdm/classes/experienceevent.md) för att representera de data du planerar att använda vid inhämtning.
 
 ![Grundkonfiguration för ett datastream](../images/datastreams/configure.png)
+
+Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller för att konfigurera datastream.
+
+![Avancerade konfigurationsalternativ](../images/datastreams/advanced-options.png)
+
+| Inställning | Beskrivning |
+| --- | --- |
+| [!UICONTROL Geo Location] | Avgör om GPS-sökningar utförs baserat på användarens IP-adress. Standardinställningen **[!UICONTROL None]** inaktiverar GPS-sökningar, medan **[!UICONTROL City]** -inställningen ger GPS-koordinater två decimaler. |
+| [!UICONTROL First Party ID Cookie] | När det här alternativet är aktiverat anger den här inställningen att Edge Network ska referera till en angiven cookie när en [enhets-ID för första part](../identity/first-party-device-ids.md)i stället för att leta upp det här värdet i identitetskartan.<br><br>När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras. |
+| [!UICONTROL Third Party ID Sync] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. När den här inställningen är aktiverad kan du ange vilken ID-synkroniseringsbehållare som ska köras för den här datastream-filen. |
 
 Resten av det här avsnittet fokuserar på stegen för att mappa data till ett valt plattformshändelseschema. Om du använder Mobile SDK eller på annat sätt inte konfigurerar ditt datastream för Platform väljer du **[!UICONTROL Save]** innan du går vidare till nästa avsnitt på [lägga till tjänster i datastream](#add-services).
 
@@ -199,16 +209,6 @@ Den här tjänsten kontrollerar om och hur data skickas till [händelsevidarebef
 >[!NOTE]
 >
 >Du kan välja **[!UICONTROL Manually enter IDs]** om du vill skriva i egenskaps- och miljönamnen i stället för att använda listrutemenyer.
-
-### [!UICONTROL Third Party ID Sync] inställningar
-
-Avsnittet med tredje parts-ID är det enda avsnitt som alltid är aktivt. Det finns två tillgängliga inställningar: &quot;[!UICONTROL Third Party ID Sync Enabled]&quot; och &quot;[!UICONTROL Third Party ID Sync Container ID]&quot;.
-
-![Synkroniseringsavsnittet för tredjeparts-ID i konfigurationsgränssnittet](../images/datastreams/third-party-id-sync-config.png)
-
-| Inställning | Beskrivning |
-| --- | --- |
-| [!UICONTROL Third Party ID Sync Container ID] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. Detta styr vilken behållare för ID-synk som körs för den här datastream. |
 
 ## Nästa steg
 
