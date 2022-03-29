@@ -2,18 +2,14 @@
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 7e4853cee8a0fa937c82eb842cd73b675eb337a3
+source-git-commit: d726576a4d1f29d83f3b7cf72c9f5c5d4ff114d3
 workflow-type: tm+mt
-source-wordcount: '637'
-ht-degree: 1%
+source-wordcount: '736'
+ht-degree: 2%
 
 ---
 
-# Granskningsloggar (beta)
-
->[!IMPORTANT]
->
->Granskningsloggfunktionen i Adobe Experience Platform är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+# Granskningsloggar
 
 För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem på plattformen och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
 
@@ -27,13 +23,18 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 
 | Resurs | Instruktioner |
 | --- | --- |
-| [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [Kundprofil i realtid](../../../profile/home.md)</li></ul> |
-| [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [Kundprofil i realtid](../../../profile/home.md)</li><li>Inaktivera för profil</li></ul> |
+| [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för profil</li></ul> |
 | [Klass](../../../xdm/schema/composition.md#class) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Datatyp](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Återställ</li><li>Ta bort</li></ul> |
-| [Destination](../../../destinations/home.md) | <ul><li>Aktivera</li></ul> |
+| [Destination](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
+| [Segment](../../../segmentation/home.md) | <ul><li>Skapa</li><li>Ta bort</li><li>Aktivera segment</li><li>Ta bort segment</li></ul> |
+| [Kopplingsprincip](../../../profile/merge-policies/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Beräknat attribut](../../../profile/computed-attributes/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Produktprofil](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Konto (Adobe)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 
 ## Åtkomst till granskningsloggar
 
@@ -47,7 +48,7 @@ Du kan visa granskningsloggar för olika Experience Platform-funktioner i **[!UI
 
 ![Kontrollpanel för granskningsloggar](../../images/audit-logs/audits.png)
 
-Systemet visar endast granskningsloggar från det senaste året. Loggar som överskrider den här gränsen tas automatiskt bort från systemet.
+Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara vara tillbaka under en period på högst 365 dagar.
 
 Välj en händelse i listan om du vill visa information om händelsen i den högra listen.
 
@@ -55,7 +56,12 @@ Välj en händelse i listan om du vill visa information om händelsen i den hög
 
 ### Filtrera granskningsloggar
 
-Markera trattecknet (![Filterikon](../../images/audit-logs/icon.png)) för att visa en lista med filterkontroller för att begränsa resultatet.
+>[!NOTE]
+>
+>Eftersom det här är en ny funktion går de data som visas endast tillbaka till mars 2022. Beroende på vilken resurs som valts kan tidigare data vara tillgängliga från och med januari 2022.
+
+
+Markera trattecknet (![Filterikon](../../images/audit-logs/icon.png)) för att visa en lista med filterkontroller för att begränsa resultatet. Endast de 1000 sista posterna visas oavsett vilket filter du har valt.
 
 ![Filter](../../images/audit-logs/filters.png)
 
@@ -65,8 +71,9 @@ Följande filter är tillgängliga för granskningshändelser i användargränss
 | --- | --- |
 | [!UICONTROL Category] | Använd listrutan för att filtrera de resultat som visas med [kategori](#category). |
 | [!UICONTROL Action] | Filtrera efter åtgärd. Endast för närvarande [!UICONTROL Create] och [!UICONTROL Delete] kan filtreras. |
+| [!UICONTROL User] | Ange hela användar-ID:t (till exempel `johndoe@acme.com`) för att filtrera efter användare. |
 | [!UICONTROL Status] | Filtrera efter om åtgärden tilläts (slutförd) eller nekades på grund av brist på [åtkomstkontroll](../../../access-control/home.md) behörigheter. |
-| [!UICONTROL Date] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. |
+| [!UICONTROL Date] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. Data kan exporteras med en 90-dagars uppslagsperiod (till exempel 2021-12-15 till 2022-03-15). Detta kan skilja sig åt beroende på händelsetyp. |
 
 Om du vill ta bort ett filter väljer du &quot;X&quot; på ikonen för pilen för filtret i fråga eller väljer **[!UICONTROL Clear all]** om du vill ta bort alla filter.
 
@@ -90,6 +97,10 @@ Alla åtgärder som du kan utföra i användargränssnittet kan också utföras 
 
 Mer information om hur du hanterar granskningsloggar för aktiviteter i Adobe Admin Console finns i följande [dokument](https://helpx.adobe.com/enterprise/using/audit-logs.html).
 
-## Nästa steg
+## Nästa steg och ytterligare resurser
 
 I den här guiden beskrivs hur du hanterar granskningsloggar i Experience Platform. Mer information om hur du övervakar plattformsaktiviteter finns i dokumentationen om [Insikter om observerbarhet](../../../observability/home.md) och [övervaka datainmatning](../../../ingestion/quality/monitor-data-ingestion.md).
+
+Titta på följande video för att få en bättre förståelse för granskningsloggar i Experience Platform:
+
+>[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)
