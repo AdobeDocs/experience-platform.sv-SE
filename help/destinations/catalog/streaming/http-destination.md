@@ -3,9 +3,9 @@ keywords: strömning,
 title: HTTP API-anslutning
 description: Med HTTP API-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
+source-git-commit: 7acacc4a5ddd10f47da59837ad7dab2615d41789
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1369'
 ht-degree: 0%
 
 ---
@@ -61,8 +61,11 @@ curl --location --request POST '<YOUR_API_ENDPOINT>' \
 --data-urlencode 'client_secret=<CLIENT_SECRET>'
 ```
 
-
 Du kan också använda [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) för att konfigurera en integrering och skicka Experience Platform-profildata till en HTTP-slutpunkt.
+
+## IP-adress tillåtelselista {#ip-address-allowlist}
+
+För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista över statiska IP-adresser som du kan tillåtslista för HTTP API-destinationen. Se [IP-adress tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för den fullständiga listan över IP-adresser som ska tillåtslista.
 
 ## Anslut till målet {#connect-destination}
 
@@ -97,10 +100,6 @@ Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../
 ### Målattribut {#attributes}
 
 I [[!UICONTROL Select attributes]](../../ui/activate-streaming-profile-destinations.md#select-attributes) Adobe rekommenderar att du väljer en unik identifierare från [union](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet.
-
-## Produktöverväganden {#product-considerations}
-
-Experience Platform strömmar inte ut data till HTTP-slutpunkter via en fast uppsättning statiska IP-adresser. Adobe kan därför inte tillhandahålla en lista över statiska IP-adresser som du kan tillåtslista för HTTP API-målet.
 
 ## Beteende vid export av profiler {#profile-export-behavior}
 

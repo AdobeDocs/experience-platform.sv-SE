@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: (Beta) Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
+source-git-commit: b2ac26589527313ec9f3cf84126e3e23da6c7b83
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1338'
 ht-degree: 0%
 
 ---
@@ -44,6 +44,10 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
+
+## IP-adress tillåtelselista {#ip-address-allowlist}
+
+För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista över statiska IP-adresser som du kan tillåtslista för [!DNL Amazon Kinesis] mål. Se [IP-adress tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för den fullständiga listan över IP-adresser som ska tillåtslista.
 
 ## Obligatoriskt [!DNL Amazon Kinesis] behörigheter {#required-kinesis-permission}
 

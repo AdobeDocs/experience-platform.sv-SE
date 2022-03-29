@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) [!DNL Azure Event Hubs] anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: b2ac26589527313ec9f3cf84126e3e23da6c7b83
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
@@ -44,6 +44,10 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
+
+## IP-adress tillåtelselista {#ip-address-allowlist}
+
+För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista över statiska IP-adresser som du kan tillåtslista för [!DNL Azure Event Hubs] mål. Se [IP-adress tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för den fullständiga listan över IP-adresser som ska tillåtslista.
 
 ## Anslut till målet {#connect}
 

@@ -4,10 +4,9 @@ title: 'IP-adress tillåtelselista för molnlagringsmål '
 type: Documentation
 description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till din SFTP-server, Amazon S3 eller Azure Blob-lagring.
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-translation-type: tm+mt
-source-git-commit: 4cc7fb2714f6df8065a0531f7e507983940d662c
+source-git-commit: c4d8ae6de2e1bbf23a25a66bde5dc88c13a13402
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -22,11 +21,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till din [SFTP-server](./sftp.md).
+Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till [SFTP-server](./sftp.md).
 
 Du kan definiera nätverksåtkomstkontroller via nätverkets brandvägg. Genom att ange rätt IP-intervall kan du tillåta trafik för dataöverföringstjänsten.
 
-Adobe rekommenderar att du lägger till följande IP-intervall i en tillåtelselista innan du arbetar med molnlagringsmålanslutningar. Om du inte lägger till ditt regionspecifika IP-intervall i tillåtelselista kan det leda till fel eller sämre prestanda när du använder målanslutningarna för molnlagring.
+Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtelselista innan du arbetar med molnlagringsmålanslutningar. Om du inte lägger till ditt regionspecifika IP-intervall i tillåtelselista kan det leda till fel eller prestandafel när du använder målanslutningarna för molnlagring.
 
 ## Krävs för alla kunder
 

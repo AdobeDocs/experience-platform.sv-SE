@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
+source-git-commit: c4d8ae6de2e1bbf23a25a66bde5dc88c13a13402
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '733'
 ht-degree: 1%
 
 ---
@@ -96,7 +96,7 @@ ht-degree: 1%
       * [Azure Blob-anslutning](./catalog/cloud-storage/azure-blob.md)
       * [(Beta) Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
-      * [IP-adress tillåtelselista](./catalog/cloud-storage/ip-address-allow-list.md)
+      * [IP-adress tillåtelselista för molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
@@ -138,6 +138,7 @@ ht-degree: 1%
       * [[!DNL Twitter Custom Audiences] anslutning](./catalog/social/twitter.md)
    * Målgrupper för direktuppspelning {#streaming}
       * [ (Beta) HTTP API-anslutning](./catalog/streaming/http-destination.md)
+      * [IP-adress tillåtelselista för direktuppspelningsmål](./catalog/streaming/ip-address-allow-list.md)
    * Undersökningsmål {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
