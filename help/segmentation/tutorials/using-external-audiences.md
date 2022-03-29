@@ -5,9 +5,9 @@ title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
+source-git-commit: 077622e891f4c42ce283e2553d6a2983569d3584
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '1432'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ Följ instruktionerna i [guide för identitetsnamnutrymme](../../identity-servic
 
 ![](../images/tutorials/external-audiences/identity-namespace-info.png)
 
+>[!NOTE]
+>
+>Om du vill börja använda anpassade namnutrymmen med externa målgrupper måste du skapa en supportanmälan. Kontakta din Adobe-representant om du vill ha mer information.
+
 ## Skapa ett schema för segmentmetadata
 
 När du har skapat ett identitetsnamnutrymme måste du skapa ett nytt schema för det segment som du ska skapa.
@@ -72,7 +76,7 @@ Det här schemat är nu aktiverat för profilen, med den primära identifieringe
 
 När du har konfigurerat schemat måste du skapa en datauppsättning för segmentets metadata.
 
-Om du vill skapa en datauppsättning följer du instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#create). Du kommer att följa **[!UICONTROL Create dataset from schema]** med det schema som du skapade tidigare.
+Om du vill skapa en datauppsättning följer du instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#create). Du bör följa **[!UICONTROL Create dataset from schema]** med det schema som du skapade tidigare.
 
 ![](../images/tutorials/external-audiences/select-schema.png)
 
@@ -82,13 +86,70 @@ När du har skapat datauppsättningen fortsätter du att följa instruktionerna 
 
 ## Konfigurera och importera målgruppsdata
 
-När datauppsättningen är aktiverad kan data nu skickas till plattformen antingen via användargränssnittet eller med Experience Platform API:er. Om du vill importera dessa data till plattformen måste du skapa en direktuppspelningsanslutning.
+När datauppsättningen är aktiverad kan data nu skickas till plattformen antingen via användargränssnittet eller med Experience Platform API:er. Du kan importera dessa data antingen via en batch- eller direktuppspelningsanslutning.
+
+### Infoga data med en batchanslutning
+
+Om du vill skapa en batchanslutning kan du följa instruktionerna i det generiska [användargränssnittshandbok för lokal filöverföring](../../sources/tutorials/ui/create/local-system/local-file-upload.md). En fullständig lista över tillgängliga källor som du kan använda importdata med finns i [källöversikt](../../sources/home.md).
+
+### Importera data via en direktuppspelningsanslutning
 
 Om du vill skapa en direktuppspelningsanslutning följer du instruktionerna i [API, genomgång](../../sources/tutorials/api/create/streaming/http.md) eller [Självstudiekurs om användargränssnitt](../../sources/tutorials/ui/create/streaming/http.md).
 
 När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om att direktuppspela postdata](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
 ![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+
+## Struktur för målgruppsmetadata
+
+När du har skapat en anslutning kan du nu importera dina data till plattformen.
+
+Ett exempel på den externa målgruppens nyttolastmetadata visas nedan:
+
+```json
+{
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample External Audience"
+        }
+    },
+    "body": {
+        "xdmMeta": {
+            "schemaRef": {
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+                "contentType": "application/vnd.adobe.xed-full+json;version=1"
+            }
+        },
+        "xdmEntity": {
+            "_id": "{SEGMENT_ID}",
+            "description": "Sample description",
+            "identityMap": {
+                "{IDENTITY_NAMESPACE}": [{
+                    "id": "{}"
+                }]
+            },
+            "segmentName" : "{SEGMENT_NAME}",
+            "segmentStatus": "ACTIVE",
+            "version": "1.0"
+        }
+    }
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `schemaRef` | Schemat **måste** hänvisar till det tidigare skapade schemat för segmentmetadata. |
+| `datasetId` | Datauppsättnings-ID **måste** referera till den tidigare skapade datauppsättningen för det schema du just skapade. |
+| `xdmEntity._id` | ID:t **måste** referera till samma segment-ID som du använder som extern målgrupp. |
+| `xdmEntity.identityMap` | Detta avsnitt **måste** innehåller den identitetsetikett som användes när det namnutrymme som skapades tidigare skapades. |
+| `{IDENTITY_NAMESPACE}` | Detta är etiketten för det identitetsnamnutrymme som skapades tidigare. Om du till exempel anropar ditt identitetsnamnutrymme &quot;externalAudience&quot;, använder du det som nyckel för arrayen. |
+| `segmentName` | Namnet på det segment som du vill att den externa målgruppen ska segmenteras av. |
 
 ## Skapa segment med importerade målgrupper
 
@@ -99,3 +160,105 @@ När de importerade målgrupperna har konfigurerats kan de användas som en del 
 ## Nästa steg
 
 Nu när ni kan använda externa målgrupper i era segment kan ni använda segmentverktyget för att skapa segment. Läs mer om hur du skapar segment i [självstudiekurs om hur du skapar segment](./create-a-segment.md).
+
+## Bilaga
+
+Förutom att använda importerade externa målgruppsmetadata och använda dem för att skapa segment, kan du även importera externa segmentmedlemskap till plattformen.
+
+### Ställ in ett externt målschema för segmentmedlemskap
+
+Börja med att välja **[!UICONTROL Schemas]** i det vänstra navigeringsfältet, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Här väljer du **[!UICONTROL XDM Individual Profile]**.
+
+![](../images/tutorials/external-audiences/create-schema-profile.png)
+
+Nu när schemat har skapats måste du lägga till fältgruppen för segmentmedlemskap som en del av schemat. Välj [!UICONTROL Segment Membership Details], följt av [!UICONTROL Add field groups].
+
+![](../images/tutorials/external-audiences/segment-membership-details.png)
+
+Kontrollera dessutom att schemat är markerat för **[!UICONTROL Profile]**. För att kunna göra detta måste du markera ett fält som primär identitet.
+
+![](../images/tutorials/external-audiences/external-segment-profile.png)
+
+### Konfigurera datauppsättningen
+
+När du har skapat schemat måste du skapa en datauppsättning.
+
+Om du vill skapa en datauppsättning följer du instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#create). Du bör följa **[!UICONTROL Create dataset from schema]** med det schema som du skapade tidigare.
+
+![](../images/tutorials/external-audiences/select-schema.png)
+
+När du har skapat datauppsättningen fortsätter du att följa instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#enable-profile) för att aktivera den här datauppsättningen för kundprofil i realtid.
+
+![](../images/tutorials/external-audiences/dataset-profile.png)
+
+## Ställ in och importera externa data för målgruppsmedlemskap
+
+När datauppsättningen är aktiverad kan data nu skickas till plattformen antingen via användargränssnittet eller med Experience Platform API:er. Du kan importera dessa data antingen via en batch- eller direktuppspelningsanslutning.
+
+### Infoga data med en batchanslutning
+
+Om du vill skapa en batchanslutning kan du följa instruktionerna i det generiska [användargränssnittshandbok för lokal filöverföring](../../sources/tutorials/ui/create/local-system/local-file-upload.md). En fullständig lista över tillgängliga källor som du kan använda importdata med finns i [källöversikt](../../sources/home.md).
+
+### Importera data via en direktuppspelningsanslutning
+
+Om du vill skapa en direktuppspelningsanslutning följer du instruktionerna i [API, genomgång](../../sources/tutorials/api/create/streaming/http.md) eller [Självstudiekurs om användargränssnitt](../../sources/tutorials/ui/create/streaming/http.md).
+
+När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om att direktuppspela postdata](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+
+![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+
+## Segmentmedlemsstruktur
+
+När du har skapat en anslutning kan du nu importera dina data till plattformen.
+
+Ett exempel på nyttolasten för det externa målgruppsmedlemskapet visas nedan:
+
+```json
+{
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample External Audience Membership"
+        }
+    },
+    "body": {
+        "xdmMeta": {
+            "schemaRef": {
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+                "contentType": "application/vnd.adobe.xed-full+json;version=1"
+            }
+        },
+        "xdmEntity": {
+            "_id": "{UNIQUE_ID}",
+            "description": "Sample description",
+            "{TENANT_NAME}": {
+                "identities": {
+                    "{SCHEMA_IDENTITY}": "sample-id"
+                }
+            },
+            "personId" : "sample-name",
+            "segmentMembership": {
+                "{IDENTITY_NAMESPACE}": {
+                    "{EXTERNAL_IDENTITY}": {
+                        "status": "realized",
+                        "lastQualificationTime": "2022-03-14T:00:00:00Z"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `schemaRef` | Schemat **måste** hänvisar till det tidigare skapade schemat för segmentmedlemskapsdata. |
+| `datasetId` | Datauppsättnings-ID **måste** hänvisa till den tidigare skapade datauppsättningen för det medlemsschema som du just skapade. |
+| `xdmEntity._id` | Ett lämpligt ID som används för att unikt identifiera posten i datauppsättningen. |
+| `{TENANT_NAME}.identities` | Det här avsnittet används för att koppla fältgruppen för anpassade identiteter till de användare som du tidigare importerat. |
+| `segmentMembership.{IDENTITY_NAMESPACE}` | Detta är etiketten för det anpassade identitetsnamnutrymmet som skapades tidigare. Om du till exempel anropar ditt identitetsnamnutrymme &quot;externalAudience&quot;, använder du det som nyckel för arrayen. |
