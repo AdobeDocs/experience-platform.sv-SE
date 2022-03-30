@@ -2,9 +2,9 @@
 title: Exempel på segmenteringsanvändning för CDP B2B Edition i realtid
 description: En översikt över de olika användningsområdena för CDP B2B Edition i realtid.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 9bd7434f2b224d76decac1e04d8491a6b3149a3a
+source-git-commit: 6a108a0bfde3c8f44c1a1221b06581f0f69b5203
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller exempel på segmentdefinitioner i realtid CDP B2
 >
 >Attributen som krävs för denna segmenteringsanvändning är endast tillgängliga för Real-time Customer Data Platform B2B Edition-kunder. Om du inte använder Real-time Customer Data Platform B2B Edition läser du [segmenteringsöversikt](./segmentation-overview.md) i stället.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Innan du kan använda segmenteringsattributen för B2B-klasser måste du utföra följande steg:
 
@@ -28,7 +28,7 @@ Innan du kan använda segmenteringsattributen för B2B-klasser måste du utföra
 
 När dessa krav är uppfyllda kan du kombinera dessa attribut för vanliga B2B-syften.
 
-## Komma igång
+## Komma igång {#getting-started}
 
 När föreningsscheman för B2B-klasserna har upprättat relationer och har använts för att importera data, blir deras attribut tillgängliga i den vänstra listen i Segment Builder.
 
@@ -54,52 +54,58 @@ Se [scheman i Real-time Customer Data Platform B2B Edition-dokumentation](../sch
 
 Användningsexemplen nedan ger information om vilka klasser som används för att upprätta relationer mellan olika scheman för att uppnå dessa resultat. De här exemplen kan användas för att skapa egna segment.
 
-## Exempel på olika användningsområden
+## Exempel på olika användningsområden för segmentering {#use-cases}
 
 Följande användningsexempel finns för segmentering med B2B Edition. Varje exempel innehåller en beskrivning av vad segmentet gör och en beskrivning av de klasser som används för att skapa dem. Bilderna visar filsökvägen i [!UICONTROL Attributes] sidospår som återspeglar schemats struktur. The [!UICONTROL Segment properties] -avsnittet till höger om visningen innehåller en skriftlig beskrivning av segmentets attribut.
 
-### Exempel 1
+### Exempel 1: Hitta&quot;beslutsfattare&quot; för B2B-möjligheter {#find-decision-maker}
 
 Hitta alla personer som är &quot;beslutsfattare&quot; för alla möjligheter. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] -klassen och [!UICONTROL XDM Business Opportunity Person Relation] klassen.
 
 ![Gränssnitt som visar exempelinställningar 1](../assets/segmentation/example-1.png)
 
-### Exempel 2
+### Exempel 2: Hitta B2B-profiler som tilldelats affärsmöjligheter till ett visst belopp {#find-opportunities-amount}
 
 Hitta alla personer som är direkt tilldelade till alla möjligheter vars affärsmöjlighet är större än det angivna beloppet ($1 miljon). Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Opportunity Person Relation] och [!UICONTROL XDM Business Opportunity] klassen.
 
 ![Gränssnitt som visar exempelinställningar 2](../assets/segmentation/example-2.png)
 
-### Exempel 3
+### Exempel 3: Hitta B2B-profiler som tilldelats affärsmöjligheter efter plats {#find-opportunities-location}
 
 Hitta alla personer som är direkt tilldelade till affärsmöjligheter där kontot finns på en viss plats (Kanada). Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Opportunity Person Relation] klass, [!UICONTROL XDM Business Opportunity] och [!UICONTROL XDM Business Account] klassen.
 
 ![Gränssnitt som visar exempelinställningar 3](../assets/segmentation/example-3.png)
 
-### Exempel 4
+### Exempel 4: Hitta beslutsfattare för att hitta möjligheter utifrån bransch och surfbeteende {#find-industry-browsing-behavior}
 
 Hitta alla personer som är en&quot;beslutsfattare&quot; för alla möjligheter där kontot finns i&quot;finansbranschen&quot; och som har besökt prissidan de senaste tre dagarna. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Opportunity Person Relation] klass, [!UICONTROL XDM Business Opportunity] och [!UICONTROL XDM Business Account] och [!UICONTROL XDM ExperienceEvent] klassen.
 
 ![Gränssnitt som visar exempel 4 inställningar](../assets/segmentation/example-4.png)
 
-### Exempel 5
+### Exempel 5: Hitta B2B-profiler för affärsmöjligheter efter avdelningens namn och affärsmöjlighetsbelopp {#find-department-opportunity-amount}
 
 Hitta alla personer som arbetar på en HR-avdelning och som är kopplade till ett konto som har minst en öppen möjlighet till ett visst belopp ($1 miljon) eller mer. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM Business Opportunity] klassen.
 
 ![Gränssnitt som visar exempelinställningar för 5](../assets/segmentation/example-5.png)
 
-### Exempel 6
+### Exempel 6: Hitta B2B-profiler efter befattning och årsomsättning {#find-by-job-title-and-revenue}
 
 Hitta alla personer vars befattning är Vice President och som är kopplade till ett konto med en årsomsättning på ett visst belopp ($100 miljoner) eller mer, och som har besökt prissidan minst tre gånger den senaste månaden. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM ExperienceEvent] klassen.
 
 ![Gränssnitt som visar exempel 6 inställningar](../assets/segmentation/example-6.png)
 
-### Exempel 7
+### Exempel 7: Hitta&quot;beslutsfattare&quot; efter affärsmöjlighet och webbläsarbeteende {#find-by-opportunity-status-and-browsing-behavior}
 
 Hitta alla personer som är en &quot;beslutsfattare&quot; för alla stängda affärsmöjligheter och besökte prissidan förra veckan. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Opportunity Person Relation] klass, [!UICONTROL XDM Business Opportunity] och [!UICONTROL XDM ExperienceEvent] klassen.
 
 ![Gränssnitt som visar exempelinställningar 7](../assets/segmentation/example-7.png)
 
-## Nästa steg
+### Exempel 8: Använd relaterade konton för att utöka segmenteringsräckvidden {#related-accounts}
+
+Hitta alla personer som arbetar på en HR-avdelning och som är kopplade till något konto *eller något av kontots relaterade konton* som har minst en öppen möjlighet till ett värde av minst 1 miljon USD. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM Business Opportunity] klassen.
+
+![Gränssnitt som visar segmentering för relaterade konton](../assets/segmentation/segmentation-related-accounts.png)
+
+## Nästa steg {#next-steps}
 
 Efter att ha läst den här översikten har du nu en förståelse för de segmenteringsmöjligheter som finns med CDP, B2B Edition i realtid. Mer information om segmenteringstjänsten finns i [Segmenteringsdokumentation](../../segmentation/home.md).

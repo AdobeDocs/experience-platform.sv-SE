@@ -3,9 +3,9 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 9bd7434f2b224d76decac1e04d8491a6b3149a3a
+source-git-commit: 55af435c4819193fa3f18a85543bc1fad423bb4d
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1376'
 ht-degree: 0%
 
 ---
@@ -20,21 +20,21 @@ Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna
 
 Mer information om hur kontoprofiler skapas som en del av B2B-arbetsflödet finns i [självstudiekurs från början till slut](../b2b-tutorial.md).
 
-## Bläddra bland kontoprofiler
+## Bläddra bland kontoprofiler {#browse-account-profiles}
 
 Bläddra bland kontoprofiler genom att börja med att välja **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen.
 
-![](images/b2b-account-browse.png)
+![Välj profiler i den vänstra navigeringen](images/b2b-account-browse.png)
 
 På **[!UICONTROL Browse]** kan du utforska kontoprofiler med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt.
 
-![](images/b2b-account-browse-by.png)
+![Använd konto-ID för att utforska profiler](images/b2b-account-browse-by.png)
 
-### Bläddra efter [!UICONTROL Connected enterprise source]
+### Bläddra efter [!UICONTROL Connected enterprise source] {#browse-by-connected-enterprise-source}
 
 Om du vill bläddra bland kontoprofiler via en ansluten företagskälla väljer du **[!UICONTROL Connected enterprise source]** från **[!UICONTROL Browse by]** väljer du sedan en ansluten källa med väljarknappen bredvid **[!UICONTROL Source]** fält.
 
-![](images/b2b-account-browse.png)
+![Bläddra bland kontoprofiler efter ansluten företagskälla](images/b2b-account-browse.png)
 
 Då öppnas **[!UICONTROL Select source]** där du kan välja en källa baserat på de anslutningar som din organisation har upprättat.
 
@@ -44,7 +44,7 @@ Då öppnas **[!UICONTROL Select source]** där du kan välja en källa baserat 
 
 Mer information om hur du ansluter företagskällor finns i [källöversikt](../sources/sources-overview.md).
 
-![](images/b2b-account-select-source.png)
+![Välj källarbetsflöde](images/b2b-account-select-source.png)
 
 Du kan välja en källa genom att markera alternativknappen bredvid anslutningsnamnet och sedan använda **[!UICONTROL Select]** för att gå tillbaka till [!UICONTROL Browse] -fliken.
 
@@ -54,11 +54,11 @@ När en källa är markerad måste du nu ange **[!UICONTROL Account ID]** relate
 >
 >För Marketo konto-ID:n finns det två möjliga kontotabeller som du kan referera till. Därför måste du använda en specifik syntax för att se till att du visar rätt konto.
 >
->Den vanligaste standardsyntaxen är det konto-ID för Marketo som läggs till av `.mkto_org` (t.ex. `1234567.mkto_org`). Marketo kontobaserade marknadsföringskunder kan ha ytterligare värden som kan hittas med det konto-ID för Marketo som finns i `.mkto_account`. Kontakta Marketo-administratören om du är osäker på vilken syntax du ska använda.
+>Den vanligaste standardsyntaxen är det konto-ID för Marketo som läggs till av `.mkto_org` (t.ex. `1234567.mkto_org`). Marketo Account-Based Marketing-kunder kan ha ytterligare värden som kan hittas med Marketo konto-ID som bifogas av `.mkto_account`. Kontakta Marketo-administratören om du är osäker på vilken syntax du ska använda.
 
-![](images/b2b-account-browse-id.png)
+![Val av konto-ID](images/b2b-account-browse-id.png)
 
-### Bläddra efter [!UICONTROL Others]
+### Bläddra efter [!UICONTROL Others] {#browse-by-others}
 
 I realtid stöder CDP, B2B Edition möjligheten att utföra en direktsökning genom att du kan ange en **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för ett konto som du vill visa. Genom att ange källnamnet och instansen direkt anger du det sammanhang som krävs för att Experience Platform ska kunna söka efter och visa korrekta kontoprofildata.
 
@@ -68,9 +68,9 @@ Ett annat exempel kan vara att du utför en omvandling av data mellan den tidpun
 
 Välj **[!UICONTROL Others]** från **[!UICONTROL Browse by]** nedrullningsbar listruta och ange **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för kontot som du vill visa.
 
-![](images/b2b-account-browse-adhoc.png)
+![Bläddra bland andra](images/b2b-account-browse-adhoc.png)
 
-## Visa kontoprofilinformation
+## Visa kontoprofilinformation {#view-account-profile-details}
 
 När du har använt **[!UICONTROL Browse]** för att hitta en kontoprofil, välja **[!UICONTROL Profile ID]** öppnar **[!UICONTROL Detail]** för kontoprofilen. Profilinformationen som visas på **[!UICONTROL Detail]** har sammanfogats från flera profilfragment till en enda vy av det enskilda kontot. Detta inkluderar kontoinformation som grundläggande attribut och data för sociala medier.
 
@@ -80,19 +80,19 @@ Standardfälten som visas kan också ändras på organisationsnivå för att vis
 >
 >Liknande funktioner finns för kundprofiler och en steg-för-steg-guide har skapats med instruktioner för att lägga till och ta bort attribut, ändra storlek på paneler osv. Läs [guide för anpassning av profildetaljer](../../profile/ui/profile-customization.md) om du vill veta mer.
 
-![](images/b2b-account-details.png)
+![Visa kontoprofilinformation](images/b2b-account-details.png)
 
 Du kan visa ytterligare information om kontot genom att välja en annan av de tillgängliga flikarna. Flikarna innehåller attribut, personer och fliken för affärsmöjligheter som visar öppna och stängda möjligheter som är kopplade till kontot i företagets system. Mer information om varje flik finns i följande avsnitt.
 
-## Fliken Attribut
+## Fliken Attribut {#attributes-tab}
 
 The **[!UICONTROL Attributes]** På -fliken visas all postinformation som hör till kontot. Detta inkluderar attributdata från flera källor som har sammanfogats till en enda vy av kontot.
 
 Förutom att du kan visa data i en lista kan du använda sökfältet för att söka efter specifika attribut eller visa postdata som JSON.
 
-![](images/b2b-account-attributes.png)
+![Fliken Attribut](images/b2b-account-attributes.png)
 
-## Fliken Personer
+## Fliken Personer {#people-tab}
 
 The **[!UICONTROL People]** -fliken innehåller en lista med enskilda personer som är kopplade till kontot. Dessa personer kan vara kontakter och leads från olika företagssystem som hanteras av olika team inom organisationen, men i realtid visas CDP, B2B Edition som en enda lista som gör att du kan få en mer helhetsbild av dina kontokontakter.
 
@@ -102,9 +102,9 @@ The **[!UICONTROL People]** -fliken innehåller en lista med enskilda personer s
 
 Förutom att visa dig en ögonblicksbild av information för kontakten, innehåller varje person i listan även en **[!UICONTROL Profile ID]**, som är en klickbar länk som gör att du kan utforska kundprofilen i realtid för den personen. Läs mer om hur du visar enskilda kundprofiler för dina konton i guiden [webbläsarprofiler i realtid med CDP, B2B Edition](../profile/profile-browse.md).
 
-![](images/b2b-account-people.png)
+![Fliken Personer](images/b2b-account-people.png)
 
-## Fliken Affärsmöjligheter
+## Fliken Affärsmöjligheter {#opportunities-tab}
 
 The **[!UICONTROL Opportunities]** -fliken innehåller information om öppna och stängda affärsmöjligheter som är relaterade till kontot. Dessa möjligheter kan förtäras i Experience Platform från flera olika källor, men CDP, B2B Edition i realtid gör det enkelt för marknadsförarna att se alla dessa möjligheter på ett och samma ställe.
 
@@ -114,4 +114,20 @@ The **[!UICONTROL Opportunities]** -fliken innehåller information om öppna och
 
 Varje affärsmöjlighet innehåller information som namn på affärsmöjligheten, belopp, fas och huruvida affärsmöjligheten är öppen, stängd, vunnen eller förlorad.
 
-![](images/b2b-account-opportunities.png)
+![Fliken Kontomöjligheter](images/b2b-account-opportunities.png)
+
+## Fliken Relaterade konton {#related-accounts-tab}
+
+The **[!UICONTROL Related accounts]** -fliken innehåller information om andra konton som kan vara relaterade till det konto du bläddrar i. Mer information om funktionerna finns i [översikt över relaterade konton](/help/rtcdp/b2b-ai-ml-services/related-accounts.md).
+
+>[!NOTE]
+>
+>* En relaterad kontogrupp kan ha maximalt 30 kontoprofiler. Om fler än 30 kontoprofiler befunnits vara relaterade delas de godtyckligt i flera grupper, där var och en inte har fler än 30 medlemmar. Gruppen Relaterade konton i en kontoprofil omfattar alltid sig själv.
+>* The [!UICONTROL Related accounts] På -fliken visas för närvarande en lista med upp till 25 relaterade konton som är kopplade till kontot som du bläddrar i. Detta är en begränsning som kommer att åtgärdas i en framtida uppdatering. Trots den här gränssnittsbegränsningen används alla profiler för målgruppsanpassning när du använder relaterade konton i segmentdefinitioner för grupper med 30 relaterade kontoprofiler.
+
+
+Varje relaterat konto innehåller information om t.ex. kontoprofils-ID och namn, kontokällnyckeln och ytterligare information om hemsida, adress, överordnat konto, telefon, bransch och årsomsättning.
+
+![Fliken Relaterade konton](images/b2b-account-related-accounts.png)
+
+Du kan använda relaterade konton i den här listan för segmenteringsändamål. Se en [segmenteringsexempel](/help/rtcdp/segmentation/b2b.md#related-account) för att förstå hur du använder relaterade konton för att utöka räckvidden i segmentdefinitioner.
