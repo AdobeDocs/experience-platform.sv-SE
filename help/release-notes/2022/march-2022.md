@@ -1,63 +1,84 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 7145867795bcd8e1093c09df3fefdee518f9578a
+title: Adobe Experience Platform Release Notes
+description: The latest release notes for Adobe Experience Platform.
+source-git-commit: 9117fffc58786f05e8741d9695ddb551344b6cc7
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '651'
 ht-degree: 2%
 
 ---
 
-# Versionsinformation för Adobe Experience Platform
+# Adobe Experience Platform release notes
 
-**Releasedatum: 30 mars 2022**
+****
 
-Nya funktioner i Adobe Experience Platform:
+New features in Adobe Experience Platform:
 
-- [[!DNL Audit Logs]](#audit-logs)
+- [Audit logs](#audit-logs)
 
-Uppdateringar av befintliga funktioner i Adobe Experience Platform:
+Updates to existing features in Adobe Experience Platform:
 
 - [Larm](#alerts)
+- [Experience Data Model (XDM)](#xdm)
 - [Källor](#sources)
 
-## [!DNL Audit Logs] {#audit-logs}
+## Audit Logs {#audit-logs}
 
-Med Experience Platform kan du granska användaraktivitet för olika tjänster och funktioner. Granskningsloggarna innehåller information om vem som gjorde vad och när.
+Experience Platform allows you to audit user activity for various services and capabilities. The audit logs provide information about who did what and when.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Granskningsloggar för datauppsättning, schema, klass, fältgrupp, datatyp, sandlåda, mål, segment, sammanfogningsprincip, beräknat attribut, produktprofil och konto (Adobe) | Detta är de resurser som registreras av granskningsloggar. Om funktionen är aktiverad samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt. |
-| Exportera granskningsloggar | Granskningsloggarna kan hämtas som en `CSV` eller `JSON` -fil. De genererade filerna sparas direkt på datorn. |
+| Audit logs for Dataset, Schema, Class, Field group, Data type, Sandbox, Destination, Segment, Merge policy, Computed attribute, Product profile and Account (Adobe) | These are the resources which are recorded by audit logs. If the feature is enabled, the audit logs will be automatically collected as activity occurs. You do not need to manually enable log collection. |
+| Export audit logs | `CSV``JSON` The generated files are saved directly to your machine. |
 
-Mer information om granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
+{style=&quot;table-layout:auto&quot;}
+
+[](../../landing/governance-privacy-security/audit-logs/overview.md)
 
 ## Larm {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via [!UICONTROL Alerts] -fliken i användargränssnittet för plattformen och kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Experience Platform allows you to subscribe to event-based alerts for various Platform activities. [!UICONTROL Alerts]
 
-**Uppdaterade funktioner**
+****
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nya varningsregler | Det finns nu två nya varningsregler för källor som rör dataöverföring. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
+| New alert rules | Two new alert rules are now available for sources related to data ingestion. [](../../observability/alerts/rules.md) |
 
-Mer information om varningar i Platform finns i [varningsöversikt](../../observability/alerts/overview.md).
+{style=&quot;table-layout:auto&quot;}
+
+[](../../observability/alerts/overview.md)
+
+## Experience Data Model (XDM) {#xdm}
+
+Experience Data Model (XDM) is an open-source specification that provides common structures and definitions (schemas) for data that is brought into Adobe Experience Platform. By adhering to XDM standards, all customer experience data can be incorporated into a common representation to deliver insights in a faster, more integrated way. You can gain valuable insights from customer actions, define customer audiences through segments, and use customer attributes for personalization purposes.
+
+****
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Add or remove individual standard fields for a schema | The Schema Editor UI now allows you to add portions of standard field groups to your schemas, providing more flexibility for the fields you choose to include without needing to build custom resources from scratch.<br><br><br><br>[](../../xdm/ui/resources/schemas.md) |
+
+{style=&quot;table-layout:auto&quot;}
+
+[](../../xdm/home.md)
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform can ingest data from external sources while allowing you to structure, label, and enhance that data using Platform services. You can ingest data from a variety of sources such as Adobe applications, cloud-based storage, third-party software, and your CRM system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform provides a RESTful API and an interactive UI that lets you set up source connections for various data providers with ease. These source connections allow you to authenticate and connect to external storage systems and CRM services, set times for ingestion runs, and manage data ingestion throughput.
 
-**Uppdaterade funktioner**
+****
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nu finns nya källor för B2B-användning | Du kan nu använda alla tillgängliga källor på plattformen för B2B-användning. Se [källkatalog](../../sources/home.md) för en fullständig lista över tillgängliga källor. |
-| Allmän tillgänglighet för nya [!DNL Oracle Eloqua] källa | Nu kan du använda [!DNL Oracle Eloqua] källa till smidig import av data från [!DNL Oracle Eloqua] -instans (konto, kampanj, kontakter) till Platform. Läs dokumentationen om [skapa [!DNL Oracle Eloqua] källanslutning](../../sources/connectors/oracle-eloqua.md) för mer information. |
-| API-förbättringar för [!DNL Data Landing Zone] | The [!DNL Data Landing Zone] -källan har nu stöd för automatisk identifiering av filegenskaper när du använder [!DNL Flow Service] API. Läs dokumentationen om [skapa [!DNL Data Landing Zone] källanslutning](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) för mer information. |
+| New sources now available for B2B usage | You can now use all the available sources on Platform for B2B use cases. [](../../sources/home.md) |
+| [!DNL Oracle Eloqua] | [!DNL Oracle Eloqua][!DNL Oracle Eloqua] [ [!DNL Oracle Eloqua] ](../../sources/connectors/oracle-eloqua.md) |
+| [!DNL Data Landing Zone] | [!DNL Data Landing Zone][!DNL Flow Service] [ [!DNL Data Landing Zone] ](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) |
 
-Mer information om källor finns i [källöversikt](../../sources/home.md).
+{style=&quot;table-layout:auto&quot;}
+
+[](../../sources/home.md)
