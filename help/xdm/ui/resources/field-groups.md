@@ -5,9 +5,9 @@ title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 716250b8bcfa1b2d9c868aa80b3122da401553b9
+source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '734'
 ht-degree: 0%
 
 ---
@@ -54,11 +54,7 @@ När du har öppnat schemat i redigeraren kan du börja [lägga till fält i fä
 
 ## Lägga till fält i en fältgrupp {#add-fields}
 
->[!NOTE]
->
->Det här avsnittet fokuserar på att lägga till fält i anpassade fältgrupper. Mer information om hur du lägger till anpassade fält i standardfältgrupper finns i [gränssnittshandbok för scheman](./schemas.md#custom-fields-for-standard-groups).
-
-Lägga till fält i en anpassad fältgrupp i [!DNL Schema Editor], börja med att markera fältgruppens namn i den vänstra listen och sedan välja **plus (+)** -ikonen bredvid schemats namn på arbetsytan.
+Lägga till fält i en fältgrupp i [!DNL Schema Editor], börja med att markera fältgruppens namn i den vänstra listen och sedan välja **plus (+)** -ikonen bredvid schemats namn på arbetsytan.
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 

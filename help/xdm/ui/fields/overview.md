@@ -5,10 +5,10 @@ title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 08002616450259aded0cc53046472f10ce0a9bb9
+source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
 workflow-type: tm+mt
-source-wordcount: '1299'
-ht-degree: 2%
+source-wordcount: '1256'
+ht-degree: 3%
 
 ---
 
@@ -26,30 +26,25 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översik
 
 Om du vill definiera nya XDM-fält i användargränssnittet måste du först öppna ett schema i [!DNL Schema Editor]. Beroende på vilka scheman som är tillgängliga för dig i [!DNL Schema Library]kan du välja att [skapa ett nytt schema](../resources/schemas.md#create) eller [välj ett befintligt schema att redigera](../resources/schemas.md#edit).
 
-När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till eller redigera fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
+När du har [!DNL Schema Editor] öppnar du, använder den vänstra listen för att välja den klass eller fältgrupp som du vill definiera fält för. Om resursen är en anpassad resurs som definieras av din organisation visas kontroller för att lägga till eller redigera fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
->[!WARNING]
+>[!NOTE]
 >
->Om du försöker lägga till ett fält i ett objekt som tillhandahålls av en standardfältgrupp, kommer den fältgruppen att konverteras till en anpassad fältgrupp och den ursprungliga fältgruppen kommer inte längre att vara tillgänglig. Se avsnittet om [lägga till fält i standardfältgrupper](../resources/schemas.md#custom-fields-for-standard-groups) i gränssnittshandboken för scheman för mer information.
+>Om den klass eller fältgrupp du väljer är en huvudresurs som tillhandahålls av Adobe, kan den inte redigeras och därför visas inte kontrollerna ovan. Om schemat som du vill lägga till fält i baseras på en XDM-huvudklass och inte innehåller några anpassade fältgrupper, kan du [skapa en ny fältgrupp](../resources/field-groups.md#create) att lägga till i schemat i stället.
 
 Om du vill lägga till ett nytt fält i resursen väljer du **plus (+)** -ikonen bredvid schemats namn på arbetsytan eller bredvid det objekttypsfält som du vill definiera fältet under.
 
 ![](../../images/ui/fields/overview/plus-icon.png)
 
-Beroende på om du lägger till ett fält direkt i ett schema eller dess klass och fältgrupper för beståndsdelar, varierar stegen som krävs för att lägga till fältet. Resten av det här dokumentet fokuserar på hur du konfigurerar ett fälts egenskaper oavsett var det fältet visas i schemat. Mer information om olika sätt att lägga till fält i ett schema finns i följande avsnitt i gränssnittshandboken för scheman:
+## Definiera ett fält för en resurs {#define}
 
-* [Lägg till fält i fältgrupper](../resources/schemas.md#add-fields)
-* [Lägga till fält direkt i ett schema](../resources/schemas.md#add-individual-fields)
-
-## Definiera egenskaperna för ett fält {#define}
-
-När du har valt **plus (+)** ikon, en **[!UICONTROL New field]** visas i arbetsytan, som finns i ett objekt som har ett namn som är kopplat till ditt unika klientorganisations-ID (visas som `_tenantId` i exemplet nedan). Alla anpassade fält som läggs till i ett schema placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och fältgrupper som tillhandahålls av Adobe.
+När du har valt **plus (+)** ikon, en **[!UICONTROL New field]** visas på arbetsytan i ett objekt på rotnivå som namnges enligt ditt unika klientorganisations-ID (visas som `_tenantId` i exemplet nedan). Alla fält som läggs till i ett schema via anpassade klasser och fältgrupper placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och fältgrupper som tillhandahålls av Adobe.
 
 ![](../../images/ui/fields/overview/new-field.png)
 
-I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera informationen för det nya fältet. Följande information krävs för varje fält:
+I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera informationen för de nya fälten. Följande information krävs för varje fält:
 
 | Fältegenskap | Beskrivning |
 | --- | --- |
