@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 04d35137a301492794ab8c0c67183cf5c76f2105
+source-git-commit: 4bead30e4bb13461cf42374cb93f3d67520a14ec
 workflow-type: tm+mt
-source-wordcount: '1062'
-ht-degree: 1%
+source-wordcount: '881'
+ht-degree: 2%
 
 ---
 
@@ -20,9 +20,9 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Larm](#alerts)
 - [[!DNL Dashboards]](#dashboards)
-- [Experience Data Model (XDM)](#xdm)
 - [[!DNL Query Service]](#query-service)
 - [Källor](#sources)
+<!-- - [Experience Data Model (XDM)](#xdm) -->
 
 ## Granskningsloggar {#audit-logs}
 
@@ -70,6 +70,8 @@ På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din or
 | Osegmenterade profiler efter identitetswidget | Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
 | widgeten Enstaka identitetsprofiler | Den här widgeten innehåller information om organisationens profiler som bara har en typ av ID som skapar deras identitet, antingen ett e-postmeddelande eller ett ECID. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
 
+{style=&quot;table-layout:auto&quot;}
+
 Mer information om profilpaneler finns i [Översikt över kontrollpaneler för profiler](../../dashboards/guides/profiles.md).
 
 ### Destinationspaneler
@@ -82,19 +84,21 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 | --- | --- |
 | Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Se [dokumentation för standardwidget](../../dashboards/guides/destinations.md#standard-widgets) för mer information. |
 
-Mer information om kontrollpaneler för destinationer i plattformen finns i [Översikt över kontrollpaneler för destinationer](../../dashboards/guides/destinations.md).
-
-## Experience Data Model (XDM) {#xdm}
-
-Experience Data Model (XDM) är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Lägga till eller ta bort enskilda standardfält för ett schema | Nu kan du lägga till delar av standardfältgrupper i scheman, vilket ger större flexibilitet för de fält du väljer att ta med utan att du behöver skapa anpassade resurser från grunden.<br><br>Nu kan du även definiera egna ad hoc-fält direkt i schemastrukturen och tilldela dem till en ny eller befintlig anpassad fältgrupp utan att behöva skapa eller redigera fältgruppen i förväg.<br><br>Se guiden [skapa och redigera scheman i användargränssnittet](../../xdm/ui/resources/schemas.md) om du vill ha mer information om de nya arbetsflödena. |
-
 {style=&quot;table-layout:auto&quot;}
 
-Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer information om kontrollpaneler för destinationer i plattformen finns i [Översikt över kontrollpaneler för destinationer](../../dashboards/guides/destinations.md).
+
+<!-- ## Experience Data Model (XDM) {#xdm}
+
+Experience Data Model (XDM) is an open-source specification that provides common structures and definitions (schemas) for data that is brought into Adobe Experience Platform. By adhering to XDM standards, all customer experience data can be incorporated into a common representation to deliver insights in a faster, more integrated way. You can gain valuable insights from customer actions, define customer audiences through segments, and use customer attributes for personalization purposes.
+
+| Feature | Description |
+| --- | --- |
+| Add or remove individual standard fields for a schema | The Schema Editor UI now allows you to add portions of standard field groups to your schemas, providing more flexibility for the fields you choose to include without needing to build custom resources from scratch.<br><br>You can now also define ad-hoc custom fields directly within the schema structure and assign them to a new or existing custom field group without needing to create or edit the field group beforehand.<br><br>See the guide on [creating and editing schemas in the UI](../../xdm/ui/resources/schemas.md) for more information on these new workflows. |
+
+{style="table-layout:auto"}
+
+For more information on XDM in Platform, see the [XDM System overview](../../xdm/home.md). -->
 
 ## Frågetjänst {#query-service}
 
@@ -105,6 +109,8 @@ Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home
 | Funktion | Beskrivning |
 | --- | --- |
 | `table_exists` | Det nya funktionskommandot används för att bekräfta om det finns en tabell eller inte i systemet. Kommandot returnerar ett booleskt värde: `true` om tabellen **gör** finns, och `false` om tabellen **not** finns. Se [SQL-syntaxdokumentation](../../query-service/sql/syntax.md) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om tillgängliga funktioner finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
