@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 7590c24baae669ebe3214985088a7135a69ff8bc
+source-git-commit: 86041e3165d4ea9cb55717f24b002afa084ff420
 workflow-type: tm+mt
-source-wordcount: '1526'
+source-wordcount: '1586'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Unmapped segments by identity]](#unmapped-segments-by-identity)
 * [[!UICONTROL Mapped segments by identity]](#mapped-segments-by-identity)
 * [[!UICONTROL Common audiences]](#common-audiences)
+* [[!UICONTROL Destinations count]](#destinations-count)
 
 ### [!UICONTROL Most used destinations] {#most-used-destinations}
 
@@ -151,6 +152,14 @@ Om antalet segmentmappade profiler ligger utanför en standardavvikelse från de
 Om ett segment inom [!UICONTROL Mapped audience health] widgeten avviker med en bred marginal bör du referera till trenddiagrammet för målgruppsstorlek och leta reda på det avvikande segmentet. Trenden kan ge ytterligare insikter i segmentets hälsa.
 
 ![Mappad målgruppswidget.](../images/destinations/mapped-audience-health.png)
+
+### [!UICONTROL Destinations count] (#destination-count)
+
+The [!UICONTROL Destinations count] widgeten anger det totala antalet tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål.
+
+Under det totala antalet väljer du **[!UICONTROL Destinations]** för att navigera till målfliken. På den här sidan visas en lista över alla mål som du har upprättat en anslutning till den aktuella.
+
+![Widgeten för antal destinationer.](../images/destinations/destinations-count.png)
 
 ## Nästa steg
 
