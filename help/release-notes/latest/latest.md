@@ -2,89 +2,133 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 366656346c25cd5206b36c7ff2b9942c5027de17
+source-git-commit: 6ae54c1f3f06c8daaf7c0d36beb4d5884bc258eb
 workflow-type: tm+mt
-source-wordcount: '1018'
-ht-degree: 1%
+source-wordcount: '881'
+ht-degree: 2%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 7 mars 2022**
+**Releasedatum: 30 mars 2022**
 
->[!NOTE]
->
->Den här versionen ändrades från det ursprungliga datumet 23 februari till 7 mars.
+Nya funktioner i Adobe Experience Platform:
+
+- [Granskningsloggar](#audit-logs)
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Larm](#alerts)
 - [[!DNL Dashboards]](#dashboards)
-- [[!DNL Data collection]](#data-collection)
-- [[!DNL Destinations]](#destinations)
-- [[!DNL Identity Service]](#identity)
-- [[!DNL Sources]](#sources)
+- [[!DNL Query Service]](#query-service)
+- [Källor](#sources)
+<!-- - [Experience Data Model (XDM)](#xdm) -->
 
-## [!DNL Dashboards] {#dashboards}
+## Granskningsloggar {#audit-logs}
 
-Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilka ni kan få viktiga insikter om organisationens data, som de fångats in under dagliga ögonblicksbilder.
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Nya widgetar för standarddestinationer | Med följande standardwidgetar kan du visualisera olika mätvärden för dina destinationer.<ul><li>Nyligen aktiverade segment efter mål. Den här widgeten visar de fem senast aktiverade segmenten i fallande ordning enligt det valda målet.</li><li>Storlekstrend för målgruppen. Den här widgeten visar relationen mellan profilantalet under en tidsperiod för ett segment som har mappats till det målkontot.</li><li>Omappade segment efter identitet. Den här widgeten visar de fem viktigaste omappade segmenten som rangordnats av fallande identitetsantal för ett visst mål och en viss identitet.</li><li>Mappade segment efter identitet. Den här widgeten visar de fem viktigaste mappade segmenten. Segmenten ordnas från hög till låg enligt deras respektive antal käll-ID:n som matchar det mål-ID som valts i widgetens listruta.</li><li>Gemensamma målgrupper. Den här widgeten innehåller en lista över de fem översta segment som är aktiverade över målkontot som är valt längst upp på sidan och det mål som är markerat i widgetens listruta.</li></ul> Mer information om tillgängliga standardwidgetar finns i [dokumentation för kontrollpanelen för destinationer.](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
-
-Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
-
-## Datainsamling {#data-collection}
-
-Plattformen innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Med Experience Platform kan du granska användaraktivitet för olika tjänster och funktioner. Granskningsloggarna innehåller information om vem som gjorde vad och när.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättrat gränssnittsarbetsflöde för datastream-konfiguration | Arbetsflödet för att skapa en ny datastam i användargränssnittet för datainsamling har uppdaterats. När du lägger till tjänster i ett dataflöde inkluderas endast de tjänster som du har tillgång till i listan med alternativ. Se guiden [konfigurera ett datastream](../../edge/fundamentals/datastreams.md) för mer information. |
-| Dataförberedelse för datainsamling | Om du använder Adobe Experience Platform Web SDK kan du nu utnyttja funktionerna för dataförberedelser för att mappa dina data till Experience Data Model (XDM) på serversidan. Se avsnittet om [Dataförberedelse för datainsamling](../../edge/fundamentals/datastreams.md#data-prep) i datastreams-guiden om du vill ha mer information. |
-| Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Se guiden [enhets-ID:n från första part](../../edge/identity/first-party-device-ids.md) för mer information. |
+| Granskningsloggar för datauppsättning, schema, klass, fältgrupp, datatyp, sandlåda, mål, segment, sammanfogningsprincip, beräknat attribut, produktprofil och konto (Adobe) | Detta är de resurser som registreras av granskningsloggar. Om funktionen är aktiverad samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt. |
+| Exportera granskningsloggar | Granskningsloggarna kan hämtas som en `CSV` eller `JSON` -fil. De genererade filerna sparas direkt på datorn. |
 
-Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+{style=&quot;table-layout:auto&quot;}
 
-## [!DNL Destinations] {#destinations}
+Mer information om granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+## Larm {#alerts}
 
-**Nya eller uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| ----------- | ----------- |
-| (Beta) Destination SDK support för filbaserade mål | [Stöd för Destination SDK för filbaserade mål](../../destinations/destination-sdk/file-based-destination-configuration.md) är för närvarande i en privat betaversion och är endast tillgängligt för ett visst antal partners och kunder. Funktionerna och tillhörande dokumentation kan ändras före den allmänna tillgänglighetsversionen.<br><br>Kontakta din kontorepresentant på Adobe om du vill veta hur du får tillgång till funktionen. Företrädare för Adobe-interna konton bör vända sig till Experience Platform för att få kontakt med produkts- och konstruktionsgrupper för att diskutera vilka användningsområden som stöds. <br><br> I betaversionen av Destination SDK-support för filbaserade destinationer kan betatestare och -kunder använda [Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) för att bygga privata destinationer och få tillgång till följande funktionalitet: <ul><li>Skapa en filbaserad (batch) destination via Amazon S3, SFTP-servrar, Azure Blob, Azure Data Lake Storage, Data Landing Zone-lagring.</li><li>Konfigurera och ange standardalternativ för schemaläggning och frekvens för filexport.</li><li>Konfigurera och ange alternativ för att formatera de exporterade CSV-filerna (avgränsare, escape-tecken och andra alternativ).</li><li>Möjlighet att ange och redigera anpassade filhuvuden.</li><li>Möjlighet att få händelsemeddelanden om export av filer och segment.</li><li>Möjlighet att exportera ytterligare filtyper som CSV, TSV, JSON, Parquet.</li></ul>  <br>Om du vill komma igång med de nya funktionerna läser du [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](../../destinations/destination-sdk/file-based-destination-configuration.md). <br><br> Funktionen för att skapa privata eller producerade *direktuppspelning* destinationer genom att använda Destination SDK är redan tillgängliga för alla kunder och partners i Experience Platform. Läs guiden om hur man [använd Destination SDK för att konfigurera ett mål för direktuppspelning](/help/destinations/destination-sdk/configure-destination-instructions.md) för mer information. |
-
-## [!DNL Identity Service] {#identity}
-
-För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
-
-Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via [!UICONTROL Alerts] -fliken i användargränssnittet för plattformen och kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ny behörighet för `view-identity-graph` | Nu kan du använda `view-identity-graph` behörighet att kontrollera om användare i organisationen kan visa data i identitetsdiagram. Användare utan denna behörighet tillåts inte att komma åt identitetsdiagramvisningsprogrammet i användargränssnittet eller vid åtkomst [!DNL Identity Service] API:er som returnerar identiteter. Se [åtkomstkontroll - översikt](../../access-control/home.md) för mer information om behörigheter. |
+| Nya varningsregler | Det finns nu två nya varningsregler för källor som rör dataöverföring. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
 
-Mer allmän information om [!DNL Identity Service], se [Översikt över identitetstjänsten](../../identity-service/home.md).
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om varningar i Platform finns i [varningsöversikt](../../observability/alerts/overview.md).
+
+## Kontrollpaneler {#dashboards}
+
+Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilken ni kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+
+### Profilinstrumentpaneler
+
+På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Widgeten Osegmenterade profiler | Widgeten visar det totala antalet profiler som inte är kopplade till något segment. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| widgeten Trend för osegmenterade profiler | Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| Osegmenterade profiler efter identitetswidget | Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| widgeten Enstaka identitetsprofiler | Den här widgeten innehåller information om organisationens profiler som bara har en typ av ID som skapar deras identitet, antingen ett e-postmeddelande eller ett ECID. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om profilpaneler finns i [Översikt över kontrollpaneler för profiler](../../dashboards/guides/profiles.md).
+
+### Destinationspaneler
+
+På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer som din organisation har aktiverat i Experience Platform.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Se [dokumentation för standardwidget](../../dashboards/guides/destinations.md#standard-widgets) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om kontrollpaneler för destinationer i plattformen finns i [Översikt över kontrollpaneler för destinationer](../../dashboards/guides/destinations.md).
+
+<!-- ## Experience Data Model (XDM) {#xdm}
+
+Experience Data Model (XDM) is an open-source specification that provides common structures and definitions (schemas) for data that is brought into Adobe Experience Platform. By adhering to XDM standards, all customer experience data can be incorporated into a common representation to deliver insights in a faster, more integrated way. You can gain valuable insights from customer actions, define customer audiences through segments, and use customer attributes for personalization purposes.
+
+| Feature | Description |
+| --- | --- |
+| Add or remove individual standard fields for a schema | The Schema Editor UI now allows you to add portions of standard field groups to your schemas, providing more flexibility for the fields you choose to include without needing to build custom resources from scratch.<br><br>You can now also define ad-hoc custom fields directly within the schema structure and assign them to a new or existing custom field group without needing to create or edit the field group beforehand.<br><br>See the guide on [creating and editing schemas in the UI](../../xdm/ui/resources/schemas.md) for more information on these new workflows. |
+
+{style="table-layout:auto"}
+
+For more information on XDM in Platform, see the [XDM System overview](../../xdm/home.md). -->
+
+## Frågetjänst {#query-service}
+
+[!DNL Query Service] låter dig använda standard-SQL för att fråga efter data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| `table_exists` | Det nya funktionskommandot används för att bekräfta om det finns en tabell eller inte i systemet. Kommandot returnerar ett booleskt värde: `true` om tabellen **gör** finns, och `false` om tabellen **not** finns. Se [SQL-syntaxdokumentation](../../query-service/sql/syntax.md) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om tillgängliga funktioner finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
 ## Källor {#sources}
 
 Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera datainmatning genom hela processen.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Beta-källor som går över till GA | Följande källor har befordrats från beta till GA: <ul><li>[[!DNL Mailchimp Campaigns]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Mailchimp Members]](../../sources/connectors/marketing-automation/mailchimp.md)</li><li>[[!DNL Zoho CRM]](../../sources/connectors/crm/zoho.md)</li></ul> |
+| Nu finns nya källor för B2B-användning | Du kan nu använda alla tillgängliga källor på plattformen för B2B-användning. Se [källkatalog](../../sources/home.md) för en fullständig lista över tillgängliga källor. |
+| Allmän tillgänglighet för nya [!DNL Oracle Eloqua] källa | Nu kan du använda [!DNL Oracle Eloqua] källa till smidig import av data från [!DNL Oracle Eloqua] -instans (konto, kampanj, kontakter) till Platform. Läs dokumentationen om [skapa [!DNL Oracle Eloqua] källanslutning](../../sources/connectors/marketing-automation/oracle-eloqua.md) för mer information. |
+| API-förbättringar för [!DNL Data Landing Zone] | The [!DNL Data Landing Zone] -källan har nu stöd för automatisk identifiering av filegenskaper när du använder [!DNL Flow Service] API. Läs dokumentationen om [skapa [!DNL Data Landing Zone] källanslutning](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).
