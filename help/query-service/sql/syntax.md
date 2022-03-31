@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 9493909d606ba858deab5a15f1ffcc8ec9257972
+source-git-commit: 5468097c61d42a7b565520051b955329e493d51f
 workflow-type: tm+mt
-source-wordcount: '2448'
+source-wordcount: '2596'
 ht-degree: 1%
 
 ---
@@ -261,9 +261,17 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 | ------ | ------ |
 | `IF EXISTS` | Om detta anges genereras inget undantag om tabellen gör det **not** finns. |
 
+## SKAPA DATABAS
+
+The `CREATE DATABASE` skapar en ADLS-databas.
+
+```sql
+CREATE DATABASE [IF NOT EXISTS] db_name
+```
+
 ## DROP DATABASE
 
-The `DROP DATABASE` kommandot släpper en befintlig databas.
+The `DROP DATABASE` kommandot tar bort databasen från en instans.
 
 ```sql
 DROP DATABASE [IF EXISTS] db_name
@@ -666,6 +674,7 @@ COPY query
 
 The `ALTER TABLE` kan du lägga till eller ta bort begränsningar för primär eller extern nyckel samt lägga till kolumner i tabellen.
 
+
 #### LÄGG TILL ELLER SLÄPP BEGRÄNSNINGAR
 
 Följande SQL-frågor visar exempel på hur du lägger till eller släpper begränsningar i en tabell.
@@ -704,6 +713,34 @@ ALTER TABLE table_name ADD COLUMN column_name data_type
 ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_type2 
 ```
 
+#### LÄGG TILL SCHEMA
+
+Följande SQL-fråga visar ett exempel på hur du lägger till en tabell i en databas/ett schema.
+
+```sql
+ALTER TABLE table_name ADD SCHEMA database_name.schema_name
+```
+
+>[!NOTE]
+>
+> Det går inte att lägga till ADLS-tabeller och -vyer i DWH-databaser/scheman.
+
+
+#### TA BORT SCHEMA
+
+Följande SQL-fråga visar ett exempel på hur du tar bort en tabell från en databas/ett schema.
+
+```sql
+ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
+```
+
+>[!NOTE]
+>
+> DWH-tabeller och -vyer kan inte tas bort från fysiskt länkade DWH-databaser/DWH-scheman.
+
+
+**Parametrar**
+
 | Parametrar | Beskrivning |
 | ------ | ------ |
 | `table_name` | Namnet på tabellen som du redigerar. |
@@ -738,4 +775,43 @@ SHOW FOREIGN KEYS
 ------------------+---------------------+----------+---------------------+----------------------+-----------
  table_name_1   | column_name1        | text     | table_name_3        | column_name3         |  "ECID"
  table_name_2   | column_name2        | text     | table_name_4        | column_name4         |  "AAID"
+```
+
+
+### VISA DATAGROUPS
+
+The `SHOW DATAGROUPS` returnerar en tabell med alla associerade databaser. För varje databas innehåller tabellen schema, grupptyp, underordnad typ, underordnat namn och underordnat ID.
+
+```sql
+SHOW DATAGROUPS
+```
+
+```console
+   Database   |      Schema       | GroupType |      ChildType       |                     ChildName                       |               ChildId
+  -------------+-------------------+-----------+----------------------+----------------------------------------------------+--------------------------------------
+   adls_db     | adls_scheema      | ADLS      | Data Lake Table      | adls_table1                                        | 6149ff6e45cfa318a76ba6d3
+   adls_db     | adls_scheema      | ADLS      | Data Warehouse Table | _table_demo1                                       | 22df56cf-0790-4034-bd54-d26d55ca6b21
+   adls_db     | adls_scheema      | ADLS      | View                 | adls_view1                                         | c2e7ddac-d41c-40c5-a7dd-acd41c80c5e9
+   adls_db     | adls_scheema      | ADLS      | View                 | adls_view4                                         | b280c564-df7e-405f-80c5-64df7ea05fc3
+```
+
+
+### VISA DATAGROUPS FÖR register
+
+The `SHOW DATAGROUPS FOR` Kommandot table_name returnerar en tabell med alla associerade databaser som innehåller parametern som underordnad. För varje databas innehåller tabellen schema, grupptyp, underordnad typ, underordnat namn och underordnat ID.
+
+```sql
+SHOW DATAGROUPS FOR 'table_name'
+```
+
+**Parametrar**
+
+- `table_name`: Namnet på den tabell som du vill söka efter associerade databaser för.
+
+```console
+   Database   |      Schema       | GroupType |      ChildType       |                     ChildName                      |               ChildId
+  -------------+-------------------+-----------+----------------------+----------------------------------------------------+--------------------------------------
+   dwh_db_demo | schema2           | QSACCEL   | Data Warehouse Table | _table_demo2                                       | d270f704-0a65-4f0f-b3e6-cb535eb0c8ce
+   dwh_db_demo | schema1           | QSACCEL   | Data Warehouse Table | _table_demo2                                       | d270f704-0a65-4f0f-b3e6-cb535eb0c8ce
+   qsaccel     | profile_aggs      | QSACCEL   | Data Warehouse Table | _table_demo2                                       | d270f704-0a65-4f0f-b3e6-cb535eb0c8ce
 ```
