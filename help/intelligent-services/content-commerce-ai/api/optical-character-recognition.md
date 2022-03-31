@@ -1,11 +1,11 @@
 ---
 keywords: OCR;text presence;optical character recognition
-solution: Intelligent Services
+solution: Experience Platform
 title: Textnärvaro och optisk teckenigenkänning
 topic-legacy: Developer guide
 description: I API:t för innehåll och handel kan OCR-tjänsten (Text Presence/Optical Character Recognition) visa om det finns text i en viss bild. Om det finns text kan OCR returnera texten.
 exl-id: 85b976a7-0229-43e9-b166-cdbd213b867f
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 2%

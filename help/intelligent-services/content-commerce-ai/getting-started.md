@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;komma igång;content ai;commerce ai;content/commerce ai
-solution: Intelligent Services
+solution: Experience Platform
 title: Komma igång med innehåll och handel med AI
 topic-legacy: Getting started
 description: Innehålls- och handels-API:er använder Adobe I/O-API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
 exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%

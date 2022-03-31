@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;home;Intelligent Services;populära ämnen;Intelligent service;Intelligent service
-solution: Intelligent Services
+solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic-legacy: Intelligent Services
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '2906'
 ht-degree: 0%

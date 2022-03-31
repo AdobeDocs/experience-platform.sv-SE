@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundsegment
-solution: Intelligent Services, Real-time Customer Data Platform
+solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Skapa kundsegment med prediktiva poäng
 topic-legacy: Create a segment
 description: När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget.
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%

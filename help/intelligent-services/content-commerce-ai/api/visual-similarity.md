@@ -1,11 +1,11 @@
 ---
 keywords: Visuell likhet;visuell likhet;ccai api
-solution: Intelligent Services
+solution: Experience Platform
 title: Visuell likhet i API:t för innehåll och handel
 topic-legacy: Developer guide
 description: När en bild anges hittas visuellt liknande bilder från en katalog automatiskt av den visuella likhetstjänsten.
 exl-id: fe31d9be-ee42-44fa-b83f-3b8a718cb4e3
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 2%

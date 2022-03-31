@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;home;intelligent services;populära topics;intelligent service;Intelligent service
-solution: Intelligent Services
+solution: Experience Platform
 title: Intelligent Services - översikt
 topic-legacy: Intelligent Services overview
 description: Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
 exl-id: db080c83-2a45-4fd5-8502-d9cae2a063be
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
