@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 5be8eac1603f1b81e45b4c0aeace5c2017b46149
+source-git-commit: d8983f08821b9157edd64fdba1f42a8ac9d38a3d
 workflow-type: tm+mt
-source-wordcount: '1058'
+source-wordcount: '1155'
 ht-degree: 1%
 
 ---
@@ -91,6 +91,18 @@ På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din or
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om profilpaneler finns i [Översikt över kontrollpaneler för profiler](../../dashboards/guides/profiles.md).
+
+## Datainsamling {#data-collection}
+
+Plattformen innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geo location, first-party ID cookie, and third-party ID sync. Se avsnittet om [konfigurera ett datastream](../../edge/fundamentals/datastreams.md#configure) i användargränssnittsguiden för datastreams om du vill ha mer information. |
+
+Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 
 ### Destinationspaneler
 
