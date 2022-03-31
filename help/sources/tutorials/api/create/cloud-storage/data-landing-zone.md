@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 57089cc9aa9c586f5fae70e2a7154d48ebd62447
+source-git-commit: 5829b50a81741cc4883dfa8f4d7d7891b791caf5
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '1223'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 [!DNL Data Landing Zone] är en molnbaserad datalagringsfunktion för tillfällig fillagring som tillhandahålls med Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
-I den här självstudiekursen får du hjälp med att skapa en [!DNL Data Landing Zone]-källanslutning med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). Den här självstudiekursen innehåller även anvisningar om hur du hämtar din [!DNL Data Landing Zone] samt visar och uppdaterar dina inloggningsuppgifter.
+Den här självstudiekursen visar hur du skapar en [!DNL Data Landing Zone] källanslutning med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/). Den här självstudiekursen innehåller även anvisningar om hur du hämtar [!DNL Data Landing Zone], samt visa och uppdatera dina uppgifter.
 
 ## Komma igång
 
@@ -26,13 +26,13 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Data Landing Zone]-källanslutning med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Data Landing Zone] källanslutning med [!DNL Flow Service] API.
 
-I den här självstudien måste du även läsa guiden [komma igång med plattforms-API:er](../../../../../landing/api-guide.md) för att lära dig hur du autentiserar till plattforms-API:er och tolkar de exempelanrop som finns i dokumentationen.
+Den här självstudiekursen kräver även att du läser guiden på [komma igång med plattforms-API:er](../../../../../landing/api-guide.md) om du vill lära dig hur du autentiserar till plattforms-API:er och tolkar exempelanrop som finns i dokumentationen.
 
 ## Hämta en användbar landningszon
 
-Det första steget i att använda API:er för att få åtkomst till [!DNL Data Landing Zone] är att göra en GET-begäran till `/landingzone`-slutpunkten för API:t [!DNL Connectors] samtidigt som du anger `type=user_drop_zone` som en del av begärandehuvudet.
+Det första steget i att använda API:er för att komma åt [!DNL Data Landing Zone] ska göra en GET-förfrågan till `/landingzone` slutpunkt för [!DNL Connectors] API:n ger `type=user_drop_zone` som en del av ditt begärandehuvud.
 
 **API-format**
 
@@ -42,7 +42,7 @@ GET /connectors/landingzone?type=user_drop_zone
 
 | Sidhuvuden | Beskrivning |
 | --- | --- |
-| `user_drop_zone` | Typen `user_drop_zone` gör att API:t kan skilja en behållare för landningszon från andra typer av behållare som är tillgängliga för dig. |
+| `user_drop_zone` | The `user_drop_zone` -typ gör att API:t kan skilja en landningszonsbehållare från andra typer av behållare som är tillgängliga för dig. |
 
 **Begäran**
 
@@ -60,7 +60,7 @@ curl -X GET \
 
 **Svar**
 
-Följande svar returnerar information om en landningszon, inklusive motsvarande `containerName` och `containerTTL`.
+Följande svar returnerar information om en landningszon, inklusive dess motsvarande `containerName` och `containerTTL`.
 
 ```json
 {
@@ -74,9 +74,9 @@ Följande svar returnerar information om en landningszon, inklusive motsvarande 
 | `containerName` | Namnet på den landningszon som du har hämtat. |
 | `containerTTL` | Tidsinställningen som tillämpas på dina data inom landningszonen. Alla inom en viss landningszon ska strykas efter sju dagar. |
 
-## Hämta [!DNL Data Landing Zone]-autentiseringsuppgifter
+## Hämta [!DNL Data Landing Zone] autentiseringsuppgifter
 
-Om du vill hämta autentiseringsuppgifter för en [!DNL Data Landing Zone]-instans gör du en GET-begäran till `/credentials`-slutpunkten för API:t [!DNL Connectors].
+Så här hämtar du autentiseringsuppgifter för en [!DNL Data Landing Zone], gör en GET-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
 
 **API-format**
 
@@ -100,7 +100,7 @@ curl -X GET \
 
 **Svar**
 
-Följande svar returnerar inloggningsinformationen för din landningszon, inklusive din nuvarande `SASToken` och `SASUri`, samt den `storageAccountName` som motsvarar din landningszonsbehållare.
+Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusive din nuvarande `SASToken` och `SASUri`, samt `storageAccountName` som motsvarar behållaren för landningszonen.
 
 ```json
 {
@@ -118,9 +118,9 @@ Följande svar returnerar inloggningsinformationen för din landningszon, inklus
 | `SASUri` | Den delade åtkomstsignaturens URI för din landningszon. Den här strängen är en kombination av URI:n till den landningszon som du autentiseras mot och dess motsvarande SAS-token, |
 
 
-## Uppdatera [!DNL Data Landing Zone]-autentiseringsuppgifter
+## Uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter
 
-Du kan uppdatera din `SASToken` genom att göra en POST-förfrågan till `/credentials`-slutpunkten för API:t [!DNL Connectors].
+Du kan uppdatera din `SASToken` genom att göra en POST-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
 
 **API-format**
 
@@ -130,8 +130,8 @@ POST /connectors/landingzone/credentials?type=user_drop_zone&action=refresh
 
 | Sidhuvuden | Beskrivning |
 | --- | --- |
-| `user_drop_zone` | Typen `user_drop_zone` gör att API:t kan skilja en behållare för landningszon från andra typer av behållare som är tillgängliga för dig. |
-| `refresh` | Med åtgärden `refresh` kan du återställa dina inloggningsuppgifter för landningszonen och automatiskt generera en ny `SASToken`. |
+| `user_drop_zone` | The `user_drop_zone` -typ gör att API:t kan skilja en landningszonsbehållare från andra typer av behållare som är tillgängliga för dig. |
+| `refresh` | The `refresh` kan du återställa dina inloggningsuppgifter för landningszonen och automatiskt generera en ny `SASToken`. |
 
 **Begäran**
 
@@ -162,7 +162,7 @@ Följande svar returnerar uppdaterade värden för `SASToken` och `SASUri`.
 
 ## Utforska landningszonens filstruktur och innehåll
 
-Du kan utforska filstrukturen och innehållet i landningszonen genom att göra en GET-förfrågan till `connectionSpecs`-slutpunkten för API:t [!DNL Flow Service].
+Du kan utforska filstrukturen och innehållet i din landningszon genom att göra en GET-förfrågan till `connectionSpecs` slutpunkt för [!DNL Flow Service] API.
 
 **API-format**
 
@@ -172,7 +172,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=root
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CONNECTION_SPEC_ID}` | Anslutningsspecifikationens ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `{CONNECTION_SPEC_ID}` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 
 **Begäran**
 
@@ -187,7 +187,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfrågade katalogen. Observera egenskapen `path` för filen som du vill överföra, eftersom du måste ange den i nästa steg för att kunna kontrollera filens struktur.
+Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfrågade katalogen. Observera `path` -egenskapen för filen som du vill överföra, eftersom du måste ange den i nästa steg för att kunna kontrollera dess struktur.
 
 ```json
 [
@@ -227,7 +227,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `{CONNECTION_SPEC_ID}` | Anslutningsspecifikationens ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `{CONNECTION_SPEC_ID}` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 | `{OBJECT_TYPE}` | Den typ av objekt som du vill komma åt. | `file` |
 | `{OBJECT}` | Sökvägen till och namnet på det objekt du vill komma åt. | `dlz-user-container/data8.csv` |
 | `{FILE_TYPE}` | Filtypen. | <ul><li>`delimited`</li><li>`json`</li><li>`parquet`</li></ul> |
@@ -246,7 +246,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tabellnamn och datatyper.
+Ett lyckat svar returnerar strukturen för den efterfrågade filen, inklusive filnamn och datatyper.
 
 ```json
 {
@@ -309,11 +309,149 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
 }
 ```
 
+### Använd `determineProperties` för att automatiskt identifiera filegenskapsinformation för en [!DNL Data Landing Zone]
+
+Du kan använda `determineProperties` parameter för att automatiskt identifiera egenskapsinformation för filinnehållet i [!DNL Data Landing Zone] när du gör ett GET-anrop för att utforska källans innehåll och struktur.
+
+#### `determineProperties` användningsfall
+
+I följande tabell visas olika scenarier som du kan träffa på när du använder `determineProperties` eller ange information manuellt om filen.
+
+| `determineProperties` | `queryParams` | Svar |
+| --- | --- | --- |
+| True | Ej tillämpligt | If `determineProperties` anges som en frågeparameter, upptäcks filegenskaperna och svaret returnerar ett nytt `properties` som innehåller information om filtyp, komprimeringstyp och kolumnavgränsare. |
+| Ej tillämpligt | True | Om värdena för filtyp, komprimeringstyp och kolumnavgränsare anges manuellt som en del av `queryParams`, används de för att generera schemat och samma egenskaper returneras som en del av svaret. |
+| True | True | Om båda alternativen utförs samtidigt returneras ett fel. |
+| Ej tillämpligt | Ej tillämpligt | Om inget av de två alternativen anges returneras ett fel eftersom det inte finns något sätt att hämta egenskaper för svaret. |
+
+**API-format**
+
+```http
+GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT}&fileType={FILE_TYPE}&preview={PREVIEW}&determineProperties=true
+```
+
+| Parameter | Beskrivning | Exempel |
+| --- | --- | --- |
+| `determineProperties` | Den här frågeparametern tillåter [!DNL Flow Service] API för att identifiera information om filens egenskaper, inklusive information om filtyp, komprimeringstyp och kolumnavgränsare. | `true` |
+
+**Begäran**
+
+```shell
+curl -X GET \
+    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/26f526f2-58f4-4712-961d-e41bf1ccc0e8/explore?objectType=file&object=dlz-user-container/garageWeek/file1&preview=true&determineProperties=true' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett svar returnerar strukturen för den efterfrågade filen, inklusive filnamn och datatyper, samt en `properties` nyckel, med information om `fileType`, `compressionType`och `columnDelimiter`.
+
++++Klicka på mig
+
+```json
+{
+    "properties": {
+        "fileType": "delimited",
+        "compressionType": "tarGzip",
+        "columnDelimiter": "~"
+    },
+    "format": "flat",
+    "schema": {
+        "columns": [
+            {
+                "name": "id",
+                "type": "string",
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "firstName",
+                "type": "string",
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "lastName",
+                "type": "string",
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "email",
+                "type": "string",
+                "xdm": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "birthday",
+                "type": "string",
+                "xdm": {
+                    "type": "string"
+                }
+            }
+        ]
+    },
+    "data": [
+        {
+            "birthday": "1313-0505-19731973",
+            "firstName": "Yvonne",
+            "lastName": "Thilda",
+            "id": "100",
+            "email": "Yvonne.Thilda@yopmail.com"
+        },
+        {
+            "birthday": "1515-1212-19731973",
+            "firstName": "Mary",
+            "lastName": "Pillsbury",
+            "id": "101",
+            "email": "Mary.Pillsbury@yopmail.com"
+        },
+        {
+            "birthday": "0505-1010-19751975",
+            "firstName": "Corene",
+            "lastName": "Joeann",
+            "id": "102",
+            "email": "Corene.Joeann@yopmail.com"
+        },
+        {
+            "birthday": "2727-0303-19901990",
+            "firstName": "Dari",
+            "lastName": "Greenwald",
+            "id": "103",
+            "email": "Dari.Greenwald@yopmail.com"
+        },
+        {
+            "birthday": "1717-0404-19651965",
+            "firstName": "Lucy",
+            "lastName": "Magdalen",
+            "id": "199",
+            "email": "Lucy.Magdalen@yopmail.com"
+        }
+    ]
+}
+```
+
++++
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `properties.fileType` | Motsvarande filtyp för den efterfrågade filen. De filtyper som stöds är: `delimited`, `json`och `parquet`. |
+| `properties.compressionType` | Motsvarande komprimeringstyp som används för den efterfrågade filen. Komprimeringstyperna som stöds är: <ul><li>`bzip2`</li><li>`gzip`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
+| `properties.columnDelimiter` | Motsvarande kolumnavgränsare som används för den efterfrågade filen. Ett teckenvärde är en tillåten kolumnavgränsare. Standardvärdet är ett komma `(,)`. |
+
+
 ## Skapa en källanslutning
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för API:t [!DNL Flow Service].
+Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
 
 
 **API-format**
@@ -349,14 +487,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på din [!DNL Data Landing Zone]-källanslutning. |
+| `name` | Namnet på [!DNL Data Landing Zone] källanslutning. |
 | `data.format` | Formatet på de data du vill hämta till plattformen. |
 | `params.path` | Sökvägen till filen som du vill hämta till plattformen. |
-| `connectionSpec.id` | Anslutningsspecifikationens ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudiekurs för att skapa ett dataflöde.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudiekurs för att skapa ett dataflöde.
 
 ```json
 {
@@ -367,4 +505,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hämtat dina [!DNL Data Landing Zone]-autentiseringsuppgifter, utforskat filstrukturen för att hitta filen som du vill hämta till plattformen och skapat en källanslutning för att börja överföra dina data till plattformen. Du kan nu gå vidare till nästa självstudiekurs där du får lära dig att [skapa ett dataflöde för att överföra molnlagringsdata till plattformen med hjälp av [!DNL Flow Service] API](../../collect/cloud-storage.md).
+Genom att följa den här självstudiekursen har du hämtat [!DNL Data Landing Zone] inloggningsuppgifter, utforskade filstrukturen för att hitta filen som du vill hämta till plattformen och skapade en källanslutning för att börja överföra data till plattformen. Du kan nu gå vidare till nästa självstudiekurs där du får lära dig hur [skapa ett dataflöde för att överföra molnlagringsdata till plattformen med [!DNL Flow Service] API](../../collect/cloud-storage.md).
