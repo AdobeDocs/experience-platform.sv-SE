@@ -1,11 +1,11 @@
 ---
-title: Konfigurera ditt datastream för Experience Platform Web SDK
-description: 'Lär dig hur du konfigurerar datastreams. '
-keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite;
+title: Konfigurera ett datastream
+description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
+keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 026d45b2c9d362d7510576601174c296e3b18a2a
+source-git-commit: cfe524169b94b5b4160ed75e5e36c83c217f4270
 workflow-type: tm+mt
-source-wordcount: '1899'
+source-wordcount: '1994'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,7 @@ Resten av det här avsnittet fokuserar på stegen för att mappa data till ett v
 
 >[!IMPORTANT]
 >
->Data Prep för datainsamling stöds för närvarande inte för Mobile SDK-implementeringar.
+>Data Prep för datainsamling stöds för närvarande inte för implementeringar av Mobile SDK.
 
 Data Prep är en Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från Experience Data Model (XDM). När du konfigurerar en plattformsaktiverad datastream kan du använda dataprep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
 
@@ -78,13 +78,78 @@ Underavsnitten nedan beskriver de grundläggande stegen för att mappa data i an
 
 #### [!UICONTROL Select data]
 
-Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört [grundläggande konfigurationssteg](#configure)och **[!UICONTROL Select data]** visas. Härifrån måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Platform. Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället.
+Välj **[!UICONTROL Save and Add Mapping]** när du har slutfört [grundläggande konfigurationssteg](#configure)och **[!UICONTROL Select data]** visas. Härifrån måste du ange ett exempel på ett JSON-objekt som representerar strukturen för de data som du planerar att skicka till Platform.
+
+Du bör skapa det här JSON-objektet så att du kan mappa det till de egenskaper i datalagret som du vill hämta. Markera avsnittet nedan om du vill visa ett exempel på ett korrekt formaterat JSON-objekt.
+
++++Exempel på JSON-fil
+
+```json
+{
+  "data": {
+    "eventMergeId": "cce1b53c-571f-4f36-b3c1-153d85be6602",
+    "eventType": "view:load",
+    "timestamp": "2021-09-30T14:50:09.604Z",
+    "web": {
+      "webPageDetails": {
+        "siteSection": "Product section",
+        "server": "example.com",
+        "name": "product home",
+        "URL": "https://www.example.com"
+      },
+      "webReferrer": {
+        "URL": "https://www.adobe.com/index2.html",
+        "type": "external"
+      }
+    },
+    "commerce": {
+      "purchase": 1,
+      "order": {
+        "orderID": "1234"
+      }
+    },
+    "product": [
+      {
+        "productInfo": {
+          "productID": "123"
+        }
+      },
+      {
+        "productInfo": {
+          "productID": "1234"
+        }
+      }
+    ],
+    "reservation": {
+      "id": "anc45123xlm",
+      "name": "Embassy Suits",
+      "SKU": "12345-L",
+      "skuVariant": "12345-LG-R",
+      "priceTotal": "112.99",
+      "currencyCode": "USD",
+      "adults": 2,
+      "children": 3,
+      "productAddMethod": "PDP",
+      "_namespace": {
+        "test": 1,
+        "priceTotal": "112.99",
+        "category": "Overnight Stay"
+      },
+      "freeCancellation": false,
+      "cancellationFee": 20,
+      "refundable": true
+    }
+  }
+}
+```
+
++++
 
 >[!IMPORTANT]
 >
 >JSON-objektet måste ha en enda rotnod `data` för att validera.
 
-Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** för att fortsätta.
+Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället. Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** för att fortsätta.
 
 ![JSON-exempel på förväntade inkommande data](../images/datastreams/select-data.png)
 
@@ -105,6 +170,12 @@ Välj sedan schemaikonen (![Schemaikon](../images/datastreams/schema-icon.png)) 
 Mappningssidan visas igen med den ifyllda fältmappningen. The **[!UICONTROL Mapping progress]** avsnittsuppdateringar för att återspegla det totala antalet fält som har mappats.
 
 ![Fältet har mappats med förloppet speglat](../images/datastreams/field-mapped.png)
+
+>[!TIP]
+>
+>Om du vill mappa en array med objekt (i källfältet) till en array med olika objekt (i målfältet) lägger du till `[*]` efter arraynamnet i käll- och målfältssökvägarna, vilket visas nedan.
+>
+>![Arrayobjektsmappning](../images/datastreams/array-object-mapping.png)
 
 Följ stegen ovan för att mappa resten av fälten till målschemat. Även om du inte behöver mappa alla tillgängliga källfält, måste alla fält i målschemat som har angetts som obligatoriska mappas för att det här steget ska kunna slutföras. The **[!UICONTROL Required fields]** anger hur många obligatoriska fält som ännu inte har mappats i den aktuella konfigurationen.
 
