@@ -5,9 +5,9 @@ title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 4b9c72b4acb9c419afc1725235a9d7865181736b
+source-git-commit: 58c58048538eaf5977b1a5905fab44307bb433a9
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1896'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,9 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 
 >[!NOTE]
 >
->Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som hämtas via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, utan kommer att utvärderas tillsammans med det nightly schemalagda segmenterade jobbet.
+>Direktuppspelningssegmentering fungerar på alla data som har importerats från en direktuppspelningskälla. Segment som importerats med hjälp av en batchbaserad källa utvärderas nightly, även om det kvalificerar för direktuppspelningssegmentering.
+>
+>Dessutom kan segment som utvärderas med direktuppspelningssegmentering avvika från det idealiska och det faktiska medlemskapet om segmentet är baserat på ett annat segment som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
 
 ## Komma igång
 
