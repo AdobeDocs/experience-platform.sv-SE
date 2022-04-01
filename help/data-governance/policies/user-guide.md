@@ -3,11 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;datastyrning;användarhandbok
 solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
 topic-legacy: policies
-description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan Profiler i användargränssnittet i Experience Platform.
+description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 8feb9fbdead75ca7b9ed7e5dcd3a0aab6f328ad5
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '1232'
 ht-degree: 0%
 
 ---
@@ -24,14 +24,18 @@ Adobe Experience Platform Data Governance har ett användargränssnitt där du k
 
 Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] begrepp:
 
-- [Datastyrning](../home.md)
-- [Dataanvändningspolicyer](./overview.md)
+* [Datastyrning](../home.md)
+* [Dataanvändningspolicyer](./overview.md)
 
 ## Visa befintliga profiler {#view-policies}
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Policies]** för att öppna **[!UICONTROL Policies]** arbetsyta. I **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
 
 ![](../images/policies/browse-policies.png)
+
+Om du har åtkomst till profiler för samtycke (för närvarande i betaversion) väljer du **[!UICONTROL Consent policies]** växla för att visa dem i [!UICONTROL Browse] -fliken.
+
+![](../images/policies/consent-policy-toggle.png)
 
 Välj en listad profil för att visa dess beskrivning och typ. Om du väljer en anpassad profil visas ytterligare kontroller för att redigera, ta bort eller [aktivera/inaktivera profilen](#enable).
 
@@ -42,6 +46,14 @@ Välj en listad profil för att visa dess beskrivning och typ. Om du väljer en 
 Om du vill skapa en ny anpassad dataanvändningsprincip väljer du **[!UICONTROL Create policy]** i det övre högra hörnet av **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta.
 
 ![](../images/policies/create-policy-button.png)
+
+Beroende på om du är en del av betatestningspolicyn för samtycke, händer något av följande:
+
+* Om du inte är en del av betaversionen kommer du omedelbart till arbetsflödet för [skapa en datastyrningspolicy](#create-governance-policy).
+* Om du är en del av betaversionen visas en dialogruta med ett extra alternativ för att [skapa en medgivandeprincip](#consent-policy).
+   ![](../images/policies/choose-policy-type.png)
+
+### Skapa en datastyrningspolicy {#create-governance-policy}
 
 The **[!UICONTROL Create policy]** arbetsflödet visas. Börja med att ange ett namn och en beskrivning för den nya principen.
 
@@ -66,6 +78,59 @@ The **[!UICONTROL Review]** visas så att du kan granska informationen om den ny
 The **[!UICONTROL Browse]** -fliken visas igen, där den nya principen nu visas med statusen Utkast. Om du vill aktivera profilen går du till nästa avsnitt.
 
 ![](../images/policies/created-policy.png)
+
+### Skapa en medgivandeprincip (beta) {#consent-policy}
+
+>[!IMPORTANT]
+>
+>Samtyckesprofiler är för närvarande betaversioner och din organisation har kanske inte åtkomst till dem än.
+
+Om du väljer att skapa en profil för samtycke visas en ny skärm där du kan konfigurera den nya principen.
+
+![](../images/policies/consent-policy-dialog.png)
+
+Om du vill kunna använda profiler för samtycke måste du ha attribut för samtycke i dina profildata. Se guiden [behandling av samtycke i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md) för detaljerade steg om hur du inkluderar de nödvändiga attributen i ditt unionsschema.
+
+Samtyckesprinciper består av två logiska komponenter:
+
+* **[!UICONTROL If]**: Villkoret som utlöser principkontrollen. Detta kan baseras på en viss marknadsföringsåtgärd som utförs, förekomsten av vissa dataanvändningsetiketter eller en kombination av de två.
+* **[!UICONTROL Then]**: Medgivandeattributen som måste finnas för en profil som ska inkluderas i åtgärden som utlöste policyn.
+
+#### Konfigurera villkor
+
+Under **[!UICONTROL If]** väljer du de marknadsföringsåtgärder och/eller dataanvändningsetiketter som ska utlösa den här principen. Välj **[!UICONTROL View all]** och **[!UICONTROL Select labels]** för att få en fullständig lista över tillgängliga marknadsföringsåtgärder och etiketter.
+
+När du har lagt till minst ett villkor kan du välja **[!UICONTROL Add condition]** om du vill fortsätta lägga till ytterligare villkor efter behov, väljer du lämplig villkorstyp i listrutan.
+
+![](../images/policies/add-condition.png)
+
+Om du markerar mer än ett villkor kan du använda ikonen som visas mellan dem för att växla den villkorliga relationen mellan &quot;AND&quot; och &quot;OR&quot;.
+
+![](../images/policies/and-or-selection.png)
+
+#### Välj medgivandeattribut
+
+Under **[!UICONTROL Then]** väljer du minst ett medgivandeattribut från unionsschemat. Det här är attributet som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen. Du kan välja något av alternativen i listan eller välja **[!UICONTROL View all]** för att välja attributet direkt från unionsschemat.
+
+När du väljer medgivandeattributet väljer du värdena för attributet som du vill att den här principen ska söka efter.
+
+![](../images/policies/select-schema-field.png)
+
+När du har valt minst ett medgivandeattribut, **[!UICONTROL Policy properties]** Panelen uppdateras för att visa det uppskattade antalet profiler som tillåts enligt den här principen, inklusive procentandelen av det totala profilarkivet. Den här uppskattningen uppdateras automatiskt när du justerar principkonfigurationen.
+
+![](../images/policies/audience-preview.png)
+
+Om du vill lägga till fler medgivandeattribut till profilen väljer du **[!UICONTROL Add result]**.
+
+![](../images/policies/add-result.png)
+
+Du kan fortsätta lägga till och justera villkor och medgivandeattribut i profilen efter behov. När du är nöjd med konfigurationen anger du ett namn och en valfri beskrivning för profilen innan du väljer **[!UICONTROL Save]**.
+
+![](../images/policies/name-and-save.png)
+
+Medgivandeprincipen skapas nu och dess status anges till [!UICONTROL Disabled] som standard. Om du vill aktivera profilen direkt väljer du **[!UICONTROL Status]** till höger.
+
+![](../images/policies/enable-consent-policy.png)
 
 ## Aktivera eller inaktivera en profil {#enable}
 

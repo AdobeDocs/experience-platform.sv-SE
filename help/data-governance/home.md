@@ -5,9 +5,9 @@ title: Datastyrning - översikt
 topic-legacy: overview
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 6e4a3ff03a551069efb8dc96f21b82de06cc47d8
 workflow-type: tm+mt
-source-wordcount: '1371'
+source-wordcount: '1427'
 ht-degree: 0%
 
 ---
@@ -76,15 +76,18 @@ Se översikten på [etiketter för dataanvändning](./labels/overview.md) för m
 
 För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII, inte kan exporteras och en I-etikett (Identity Data) har tillämpats på datauppsättningen, får du ett svar från [!DNL Policy Service] att en dataanvändningspolicy har överträtts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att personligt identifierbar information (PII) inte kan exporteras och att en I-etikett (identitetsdata) har tillämpats på datauppsättningen. [!DNL Policy Service] förhindrar alla åtgärder som skulle exportera den här datauppsättningen till ett mål från en annan leverantör. Om någon av dessa åtgärder skulle utföras skickar Policy Service ett meddelande om att en dataanvändningsprincip har överträtts.
 
-När dataanvändningsetiketterna har tillämpats kan datafördelare skapa profiler med [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnitt.
+Det finns två typer av principer:
+
+* **[!UICONTROL Data governance policy]**: Begränsa aktiveringen av data baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
+* **[!UICONTROL Consent policy](Beta)**: Filtrera de profiler som kan aktiveras för [mål](../destinations/home.md) baserat på kundernas samtycke eller önskemål.
+
+När dataanvändningsetiketterna har tillämpats kan datafördelare skapa profiler med [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnitt. Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [profiler, översikt](./policies/overview.md).
 
 >[!IMPORTANT]
 >
 >Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
-
-Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [profiler, översikt](./policies/overview.md).
 
 ## Nästa steg
 

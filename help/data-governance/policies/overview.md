@@ -5,9 +5,9 @@ title: Översikt över dataanvändningsprinciper
 topic-legacy: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 6e4a3ff03a551069efb8dc96f21b82de06cc47d8
 workflow-type: tm+mt
-source-wordcount: '1075'
+source-wordcount: '1117'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,11 @@ ht-degree: 0%
 
 För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
+Det finns två typer av principer:
+
+* **[!UICONTROL Data governance policy]**: Begränsa aktiveringen av data baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
+* **[!UICONTROL Consent policy](Beta)**: Filtrera de profiler som kan aktiveras för [mål](../../destinations/home.md) baserat på kundernas samtycke eller önskemål
+
 Det här dokumentet innehåller en översikt över dataanvändningsprinciper på hög nivå och länkar till ytterligare dokumentation om hur du arbetar med principer i gränssnittet eller API:t.
 
 ## Marknadsföringsåtgärder {#marketing-actions}
@@ -23,7 +28,7 @@ Det här dokumentet innehåller en översikt över dataanvändningsprinciper på
 Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramen är åtgärder som [!DNL Experience Platform] dataanvändare kan använda, som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
 
 1. En specifik marknadsföringsåtgärd
-2. Etiketter för dataanvändning som åtgärden är begränsad från att utföras mot
+2. De villkor under vilka åtgärden begränsas
 
 Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. PII) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), får du ett svar från [!DNL Policy Service] att en dataanvändningspolicy har överträtts.
 
@@ -35,9 +40,9 @@ När dataanvändningen sker i er organisations tjänst bör relevanta marknadsf�
 
 >[!NOTE]
 >
->Om du använder [!DNL Real-time Customer Data Platform]kan ni lägga upp användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Visa dokumentet på [Datastyrning i realtid CDP](../../rtcdp/privacy/data-governance-overview.md) för mer information.
+>Ni kan ställa in användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Se [destinationsdokumentation](../../destinations/home.md) om du vill ha mer information om konfigurationsalternativen för ditt särskilda mål.
 
-I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna anpassade marknadsföringsåtgärder med [!DNL Policy Service] API eller [!DNL Experience Platform ]användargränssnitt. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
+I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna anpassade marknadsföringsåtgärder med [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnitt. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
@@ -80,10 +85,10 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 | Analytics  | En åtgärd som använder data för analysändamål, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar. |
 | Kombinera med direkt identifierbara data | En åtgärd som kombinerar all personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data. |
 | Målgruppsövergripande | En åtgärd som använder data för annonsanpassning mellan webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen. |
-| Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
+| Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
 | E-postmarknadsföring | En åtgärd som använder data i e-postriktade kampanjer. |
 | Exportera till tredje part | En åtgärd som exporterar data till processorer och enheter som inte har direkta relationer med kunder. Många dataleverantörer har villkor i avtalen som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. |
 | Annonsering på plats | En åtgärd som använder data för annonser på plats, inklusive urval och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser. |
-| Personalisering på plats | En åtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser. |
+| Personalization på plats | En åtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser. |
 | Segmentmatchning | En åtgärd som använder data för Adobe Experience Platform Segment Match, som gör att två eller flera plattformsanvändare kan utbyta segmentdata. Genom att aktivera profiler som refererar till den här åtgärden kan du begränsa vilka data som används för segmentmatchning. Om huvudprincipen &quot;Begränsa datadelning&quot; till exempel är aktiverad, kan alla data med en [C11-etikett](../labels/reference.md#c11) kan inte användas för segmentmatchning. |
-| Personalisering med en identitet | En åtgärd som kräver att en enda identitet används för personalisering i stället för att sammanfoga identiteter från flera källor. |
+| Single Identity Personalization | En åtgärd som kräver att en enda identitet används för personalisering i stället för att sammanfoga identiteter från flera källor. |
