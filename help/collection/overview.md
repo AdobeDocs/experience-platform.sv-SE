@@ -3,9 +3,9 @@ title: API för Edge Network Server
 description: Lär dig vad API:t för Adobe Experience Platform Edge Network Server är och hur du kan använda det.
 seo-description: Learn what the Adobe Experience Platform Edge Network Server API is and how you can use it.
 keywords: datainsamling;samling;Adobe Experience Platform Edge Network;server-api;
-source-git-commit: 92b3a7bff576f72edc8628a850a2cdb9b43cb1c4
+source-git-commit: 4145e22519c1df2d5c010e563b81642a6f647cdc
 workflow-type: tm+mt
-source-wordcount: '287'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ The [!DNL Server API] har stöd för interaktiv datainsamling och batchdatainsam
 1. Den interaktiva slutpunkten stöder kommunikation med Adobe Experience Platform- och Adobe Experience Cloud-tjänster som stöder avancerad segmentering, personalisering och andra användningsfall inom marknadsföring.
 2. Batchslutpunkten tillåter att begäranden skickas i batch när data behöver sparas utan att något svar från de program som anropas tas emot.
 
-The [!DNL Server API] stöder följande typer av begäranden: The [!DNL Server API] stöder autentiserade begäranden via [Adobe I/O](https://developer.adobe.com/), med nya `server.adobedc.net` slutpunkt.
+The [!DNL Server API] stöder följande typer av begäranden:
 
 * Autentiserade begäranden via [Adobe I/O](https://developer.adobe.com/), med nya `server.adobedc.net` slutpunkt.
 * Oautentiserade begäranden via `edge.adobedc.net` slutpunkt.
