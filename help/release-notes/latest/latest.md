@@ -2,7 +2,7 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b378a920380030d51956a0910271f1b1f9f4c371
+source-git-commit: 63c25b1d99e55fae92c3c5e89025ac2bbcff5b03
 workflow-type: tm+mt
 source-wordcount: '1157'
 ht-degree: 1%
@@ -94,18 +94,6 @@ På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din or
 
 Mer information om profilpaneler finns i [Översikt över kontrollpaneler för profiler](../../dashboards/guides/profiles.md).
 
-## Datainsamling {#data-collection}
-
-Plattformen innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geo location, first-party ID cookie, and third-party ID sync. Se avsnittet om [konfigurera ett datastream](../../edge/fundamentals/datastreams.md#configure) i användargränssnittsguiden för datastreams om du vill ha mer information. |
-
-Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
-
 ### Destinationspaneler
 
 På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer som din organisation har aktiverat i Experience Platform.
@@ -119,6 +107,18 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om kontrollpaneler för destinationer i plattformen finns i [Översikt över kontrollpaneler för destinationer](../../dashboards/guides/destinations.md).
+
+## Datainsamling {#data-collection}
+
+Plattformen innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geo location, first-party ID cookie, and third-party ID sync. Se avsnittet om [konfigurera ett datastream](../../edge/fundamentals/datastreams.md#configure) i användargränssnittsguiden för datastreams om du vill ha mer information. |
+
+Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 
 <!-- ## Experience Data Model (XDM) {#xdm}
 
