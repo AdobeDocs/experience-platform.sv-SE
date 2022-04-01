@@ -5,17 +5,17 @@ user-guide-title: API-hjälp för Adobe Experience Platform Edge Network Server
 breadcrumb-title: API-guide för Adobe Experience Platform Edge Network Server
 user-guide-description: 'Interagera med Experience Cloud-tjänster via Edge Network Server API '
 feature: Data Collection
-source-git-commit: a8a6681e878932c03ed9a2e59527e2adc565a28e
+source-git-commit: 8ea9877fd7dc00b4f5e7b1c974bb3743ce4e1356
 workflow-type: tm+mt
-source-wordcount: '67'
-ht-degree: 4%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
 
-# API för Edge Network Server {#server-api}
+# API för Edge Network Server {#edge-network-server-api}
 
-* API för Edge Network Server {#server-api}
+* API för Edge Network Server {#edge-network-server-api}
    * [Översikt](overview.md)
    * [Autentisering](authentication.md)
    * Datainsamling {#server-api-data-collection}
