@@ -3,9 +3,9 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 9805b984a0b19ad7e942e82f3ad927523102e772
+source-git-commit: 99bb5d1b76b926622ca21fa1df7c3cb9fabc4856
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '499'
 ht-degree: 1%
 
 ---
@@ -63,6 +63,8 @@ Om du väljer **[!UICONTROL Basic authentication]** skriv för att ansluta till 
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64] kodad sträng.
    * Exempel: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`
 
+      ![PGP-nyckel](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
+
 
 Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansluta till din SFTP-plats:
 
@@ -74,6 +76,8 @@ Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansl
 * **[!UICONTROL SSH Key]**: SSH-nyckeln för att logga in på din SFTP-lagringsplats.
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64] kodad sträng.
    * Exempel: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`
+
+      ![PGP-nyckel](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 #### Destinationsinformation {#destination-details}
 
