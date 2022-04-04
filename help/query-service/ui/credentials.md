@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 87ec2ab37105aefc52abe102d45fd124492ac79f
+source-git-commit: b4388106caf1c6ee48c44051fe484cd595278483
 workflow-type: tm+mt
 source-wordcount: '1081'
 ht-degree: 0%
@@ -32,7 +32,7 @@ The **[!UICONTROL Expiring credentials]** innehåller följande information:
 - **[!UICONTROL PSQL command]**: Ett kommando som automatiskt har infogat all relevant information för att ansluta till frågetjänsten med PSQL på kommandoraden.
 - **[!UICONTROL Expires]**: Utgångsdatumet för inloggningsuppgifterna. Autentiseringsuppgifterna går ut 24 timmar efter att de har skapats.
 
-## Giltiga autentiseringsuppgifter
+## Giltiga autentiseringsuppgifter {#non-expiring-credentials}
 
 Du kan använda autentiseringsuppgifter som inte upphör att gälla för att konfigurera en mer permanent anslutning till en extern klient.
 
