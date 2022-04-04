@@ -1,12 +1,11 @@
 ---
 keywords: Experience Cloud;komma igång;content and commerce ai;populära topics;Intelligent Services;ccai
-solution: Experience Cloud, Intelligent Services, Experience Platform
+solution: Experience Platform
 title: Översikt över innehåll och handel med AI
 topic-legacy: Content and Commerce AI
 description: Innehåll och Commerce AI är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%
@@ -30,7 +29,7 @@ Innehåll är en viktig del av dessa upplevelser. För att ni bättre ska kunna 
 | Innehållstyp | Funktioner | Översikt över funktioner |
 | --- | --- | --- |
 | Text | - Extrahering av nyckelord och entitet <br>- Anpassade klassificerare | - Extrahera nyckelord och taggar från företagsdokument och webbsidor automatiskt med hjälp av en färdig AI-tjänst. <br> - Etikettera automatiskt ett företags dokument eller webbsidor per företagstaxonomi med en tjänst som bygger på anpassade AI-modeller. |
-| Bilder | - Visuella rekommendationer <br> - färgextrahering | - Leverera visuellt liknande produktrekommendationer till konsumenter, som bygger på en AI-modell som utvecklats utifrån intuitiva produktfunktioner (design, färg, form). <br> - Extrahera exakta dominerande färger (etiketter och hexvärden) och deras vikt från en produktbild. |
+| Bilder | - Visuella rekommendationer <br> - Färgextrahering | - Leverera visuellt liknande produktrekommendationer till konsumenter, som bygger på en AI-modell som utvecklats utifrån intuitiva produktfunktioner (design, färg, form). <br> - Extrahera exakta dominerande färger (etiketter och hexvärden) och deras vikt från en produktbild. |
 
 ## Förstå innehåll och handel med AI
 
