@@ -3,9 +3,9 @@ title: Supporting Customer Consent Preferences Using the Adobe Experience Platfo
 description: Lär dig hur du stöder medgivandeinställningar med Adobe Experience Platform Web SDK.
 keywords: medgivande;defaultConsent;standard medgivande;setConsent;Profile Privacy field group;Experience Event Privacy field group;Privacy field group;
 exl-id: 647e4a84-4a66-45d6-8b05-d78786bca63a
-source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
+source-git-commit: 16c8972333fa67fa2e308445f4ad6282510370d1
 workflow-type: tm+mt
-source-wordcount: '984'
+source-wordcount: '947'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Om användaren väljer bort alla syften utför SDK inte någon av dessa åtgärd
 
 ## Konfigurera samtycke
 
-Som standard väljs användaren i alla syften. För att förhindra att SDK utför ovanstående uppgifter tills användaren väljer att delta skickar du `"defaultConsent": "pending"` under SDK-konfigurationen enligt följande:
+Som standard väljs användaren i alla syften. För att förhindra att SDK utför ovanstående uppgifter tills användaren väljer att inte göra det skickar du `"defaultConsent": "pending"` under SDK-konfigurationen enligt följande:
 
 ```javascript
 alloy("configure", {
@@ -33,17 +33,17 @@ alloy("configure", {
 });
 ```
 
-När standardmedgivandet för det allmänna syftet har angetts till väntande, och du försöker köra kommandon som är beroende av användarens inställningar för deltagande (till exempel kommandot `sendEvent`), kommer kommandot att ställas i kö i SDK. Dessa kommandon bearbetas inte förrän du har meddelat användarens inställningar för deltagande till SDK.
+När standardmedgivandet för det allmänna syftet är inställt på väntande, försöker köra kommandon som är beroende av användarens inställningar för deltagande (till exempel `sendEvent` -kommando) köas kommandot i SDK:n. Dessa kommandon bearbetas inte förrän du har meddelat användarens inställningar för deltagande till SDK.
 
 >[!NOTE]
 >
 >Kommandon står bara i kö i minnet. De sparas inte över sidinläsningar.
 
-Om du inte vill samla in händelser som inträffat innan användarens inställningar för deltagande har angetts, kan du skicka `"defaultConsent": "out"` under SDK-konfigurationen. Försök att köra kommandon som är beroende av användarens inställningar för deltagande kommer inte att ha någon effekt förrän du har meddelat användarens inställningar för deltagande till SDK.
+Om du inte vill samla in händelser som inträffat innan användarens inställningar för anmälan har angetts, kan du skicka `"defaultConsent": "out"` under SDK-konfigurationen. Försök att köra kommandon som är beroende av användarens inställningar för deltagande kommer inte att ha någon effekt förrän du har meddelat användarens inställningar för deltagande till SDK.
 
 >[!NOTE]
 >
->För närvarande stöder SDK endast ett enda syfte, helt eller ingenting. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som kommer att motsvara de olika möjligheterna och produkterbjudandena för Adobe, är den nuvarande implementeringen en metod som helt eller inte alls kan användas.  Detta gäller endast Adobe Experience Platform [!DNL Web SDK] och INTE andra Adobe JavaScript-bibliotek.
+>För närvarande stöder SDK endast ett enda syfte, helt eller ingenting. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som kommer att motsvara de olika möjligheterna och produkterbjudandena för Adobe, är den nuvarande implementeringen en metod som helt eller inte alls kan användas.  Detta gäller endast Adobe Experience Platform [!DNL Web SDK] och INTE andra JavaScript-bibliotek från Adobe.
 
 Nu kanske du föredrar att be användaren att välja någonstans i användargränssnittet. När användarens inställningar har samlats in kan du meddela SDK:n dessa inställningar.
 
@@ -53,9 +53,9 @@ SDK stöder version 1.0 och 2.0 av Adobe Experience Platform medgivandestandard.
 
 ### Använda Adobe standardversion 2.0
 
-Om du använder Adobe Experience Platform måste du inkludera en fältgrupp för sekretessschema i ditt profilschema. Mer information om Adobe standardversion 2.0 finns i [Styrning, sekretess och säkerhet i Adobe Experience Platform](../../landing/governance-privacy-security/overview.md). Du kan lägga till data i värdeobjektet nedan som motsvarar schemat för fältet `consents` i profilfältgruppen [!UICONTROL Consents and Preferences].
+Om du använder Adobe Experience Platform måste du inkludera en fältgrupp för sekretessschema i ditt profilschema. Se [Styrning, integritet och säkerhet i Adobe Experience Platform](../../landing/governance-privacy-security/overview.md) om du vill ha mer information om Adobe standardversion 2.0. Du kan lägga till data i värdeobjektet nedan som motsvarar schemat för `consents` fält för [!UICONTROL Consents and Preferences] profilfältgrupp.
 
-Om användaren väljer att gå in kör du kommandot `setConsent` med inställningen `y` enligt följande:
+Kör `setConsent` med inställningen för att samla in `y` enligt följande:
 
 ```javascript
 alloy("setConsent", {
@@ -74,7 +74,7 @@ alloy("setConsent", {
 });
 ```
 
-Tidsfältet ska ange när användaren senast uppdaterade sina medgivandeinställningar. Om användaren väljer att avanmäla sig kör du kommandot `setConsent` med inställningen `n` enligt följande:
+Tidsfältet ska ange när användaren senast uppdaterade sina medgivandeinställningar. Om användaren väljer att avanmäla sig kör du `setConsent` med inställningen för att samla in `n` enligt följande:
 
 ```javascript
 alloy("setConsent", {
@@ -93,13 +93,9 @@ alloy("setConsent", {
 });
 ```
 
->[!NOTE]
->
->När en användare har avanmält sig kan du inte ange `y` som användare samlar in samtycke.
-
 ### Använda Adobe standardversion 1.0
 
-Om användaren väljer att gå in kör du kommandot `setConsent` med alternativet `general` inställt på `in` enligt följande:
+Kör `setConsent` med `general` alternativ inställt på `in` enligt följande:
 
 ```javascript
 alloy("setConsent", {
@@ -113,7 +109,7 @@ alloy("setConsent", {
 });
 ```
 
-Om användaren väljer att avanmäla sig kör du kommandot `setConsent` med alternativet `general` inställt på `out` enligt följande:
+Om användaren väljer att avanmäla sig kör du `setConsent` med `general` alternativ inställt på `out` enligt följande:
 
 ```javascript
 alloy("setConsent", {
@@ -127,13 +123,9 @@ alloy("setConsent", {
 });
 ```
 
->[!NOTE]
->
->När en användare har avanmält sig kan du inte ange användarens samtycke till `in`.
-
 ## Kommunicera medgivandepreferenser via IAB TCF-standarden
 
-SDK har stöd för inspelning av en användares medgivandepreferenser via IAB-standarden (Interactive Advertising Bureau Europe) Transparency and Consent Framework (TCF). Medgivandesträngen kan anges med samma `setConsent`-kommando som ovan så här:
+SDK har stöd för inspelning av en användares medgivandepreferenser via IAB-standarden (Interactive Advertising Bureau Europe) Transparency and Consent Framework (TCF). Medgivandesträngen kan anges med samma `setConsent` så här:
 
 ```javascript
 alloy("setConsent", {
@@ -146,7 +138,7 @@ alloy("setConsent", {
 });
 ```
 
-När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla schemafältgruppen [Profilsekretess](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka information om samtycke i händelser måste fältgruppen [Experience Event Privacy](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) läggas till i Experience Event-schemat.
+När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilen i XDM-schemat innehålla [Fältgrupp för profilsekretesschema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka information om samtycke i händelser, [Fältgruppen Experience Event Privacy](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) måste läggas till i Experience Event-schemat.
 
 ## Skicka flera standarder i en begäran
 
@@ -176,10 +168,10 @@ alloy("setConsent", {
 
 ## Upprätthållande av medgivandeinställningar
 
-När du har skickat användarinställningar till SDK med kommandot `setConsent` kvarstår användarens inställningar i SDK som en cookie. Nästa gång användaren läser in webbplatsen i webbläsaren hämtar och använder SDK de beständiga inställningarna för att avgöra om händelser kan skickas till Adobe eller inte.
+När du har skickat användarinställningar till SDK med `setConsent` SDK-kommandot behåller användarens inställningar för en cookie. Nästa gång användaren läser in webbplatsen i webbläsaren hämtar och använder SDK de beständiga inställningarna för att avgöra om händelser kan skickas till Adobe eller inte.
 
-Du måste lagra användarinställningarna oberoende av varandra för att kunna visa dialogrutan för samtycke med de aktuella inställningarna. Det finns inget sätt att hämta användarinställningar från SDK:n. Om du vill vara säker på att användarinställningarna är synkroniserade med SDK:n kan du anropa kommandot `setConsent` för varje sidinläsning. SDK:n gör bara ett serveranrop om inställningarna har ändrats.
+Du måste lagra användarinställningarna oberoende av varandra för att kunna visa dialogrutan för samtycke med de aktuella inställningarna. Det finns inget sätt att hämta användarinställningar från SDK:n. Om du vill vara säker på att användarinställningarna är synkroniserade med SDK:n kan du anropa `setConsent` på varje sida som läses in. SDK:n gör bara ett serveranrop om inställningarna har ändrats.
 
 ## Synkronisera identiteter när du ställer in samtycke
 
-När standardmedgivandet väntar eller går ut kan `setConsent` vara den första begäran som skickas ut och fastställer identitet. På grund av detta kan det vara viktigt att synkronisera identiteter på den första begäran. Identitetskartan kan läggas till i kommandot `setConsent` precis som i kommandot `sendEvent`. Se [Hämta Experience Cloud ID](../identity/overview.md)
+När standardmedgivandet väntar eller dras ut, `setConsent` kan vara den första begäran som skickas ut och fastställer identitet. På grund av detta kan det vara viktigt att synkronisera identiteter på den första begäran. Identitetskartan kan läggas till i `setConsent` på samma sätt som på `sendEvent` -kommando. Se [Hämtar Experience Cloud ID](../identity/overview.md)
