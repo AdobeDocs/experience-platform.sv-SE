@@ -2,10 +2,10 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
+source-git-commit: a45fe9185e0ae74cfba7905a4bb6d18df7efed9e
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1182'
+ht-degree: 1%
 
 ---
 
@@ -17,11 +17,27 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-*Ge en kort översikt för ditt företag, inklusive det värde det ger kunderna. Ta med en länk till startsidan för din produktdokumentation för ytterligare läsning.*
+*Ge en kort översikt över ditt företag, inklusive det värde det ger kunderna. Ta med en länk till startsidan för din produktdokumentation för ytterligare läsning.*
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av *YOURDESTINATION* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar*
+>Dokumentationssidan skapades av *YOURDESTINATION* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar, till exempel `support@yourdestination.com`.*
+
+## Användningsfall {#use-cases}
+
+För att du bättre ska förstå hur och när du ska använda *YOURDESTINATION* mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+
+### Använd skiftläge 1
+
+*För plattformar för mobilmeddelanden:*
+
+*En uthyrnings- och försäljningsplattform vill skicka mobilmeddelanden till kundernas Android- och iOS-enheter för att tala om för dem att det finns 100 uppdaterade listor i det område där de tidigare sökte efter en uthyrning.*
+
+### Använd skiftläge 2
+
+*För plattformar för sociala nätverk:*
+
+*Ett sportklädmärke vill nå befintliga kunder via sina konton för sociala medier. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till YOURDESTINATION för att visa annonser i sina kunders sociala medier.*
 
 ## Förutsättningar {#prerequisites}
 
@@ -38,13 +54,13 @@ ht-degree: 0%
 
 *Lägg till information i det här avsnittet om de identiteter som stöds av ditt mål. Vi har förfyllt tabellen med några standardvärden. Ta bort de värden som inte gäller för målet och de värden som inte är förifyllda.*
 
-*YOURDESTINATION* stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+*YOURDESTINATION* stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
-| ECID | Experience Cloud ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras till av följande alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) för mer information. |
+| ECID | Experience Cloud ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras till av följande alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/ecid.md) för mer information. |
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
@@ -66,31 +82,27 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style=&quot;table-layout:auto&quot;}
 
-## Användningsfall {#use-cases}
-
-För att du bättre ska förstå hur och när du ska använda *YOURDESTINATION* mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
-
-### Använd skiftläge 1
-
-*För plattformar för mobilmeddelanden:*
-
-*En uthyrnings- och försäljningsplattform vill skicka mobilmeddelanden till kundernas Android- och iOS-enheter för att tala om för dem att det finns 100 uppdaterade listor i det område där de tidigare sökte efter en uthyrning.*
-
-### Använd skiftläge 2
-
-*För plattformar för sociala nätverk:*
-
-*Ett sportklädmärke vill nå befintliga kunder via sina konton för sociala medier. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till YOURDESTINATION för att visa annonser i sina kunders sociala medier.*
-
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-### Anslutningsparametrar {#parameters}
+### Autentisera till mål {#authenticate}
 
-while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) Om du vill ange destinationen måste du ange följande information:
+*Lägg till de fält som kunderna måste fylla i när de autentiserar till målet. De här fälten är målspecifika och beror på hur Destinationen SDK konfigureras. Målets fält kanske inte är samma som de som anges nedan. Ta även med en skärmbild som liknar den exempelbild som visas nedan.*
 
-*Lägg till de fält som kunderna måste fylla i när de konfigurerar ett nytt mål. De här fälten är målspecifika och beror på hur Destinationen SDK konfigureras. Målets fält kanske inte är samma som de som anges nedan.*
+Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
+
+![Exempelbild som visar hur man autentiserar till målet](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
+
+* **[!UICONTROL Bearer token]**: Fyll i bearer-token för att autentisera mot målet.
+
+### Fyll i målinformation {#destination-details}
+
+*Lägg till de fält som kunderna måste fylla i när de konfigurerar ett nytt mål. De här fälten är målspecifika och beror på hur Destinationen SDK konfigureras. Målets fält kanske inte är samma som de som anges nedan. Ta även med en skärmbild som liknar den exempelbild som visas nedan.*
+
+Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**.
+
+![Exempelbild som visar hur du fyller i detaljer för destinationen](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -161,9 +173,9 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 -->
 
-## Exporterade data {#exported-data}
+## Exporterade data/Validera dataexport {#exported-data}
 
-*Lägg till en anteckning om hur data exporteras till målet. Detta hjälper kunden att se till att de är korrekt integrerade med er destination. Du kan till exempel skriva ett exempel på JSON som den nedan.*
+*Lägg till ett stycke om hur data exporteras till målet. Detta hjälper kunden att se till att de är korrekt integrerade med er destination. Du kan till exempel skriva ett exempel på JSON som den nedan. Eller så kan du tillhandahålla skärmbilder och information från målgränssnittet som visar hur kunderna förväntar sig att segment ska fyllas i på målplattformen.*
 
 ```
 {
@@ -205,7 +217,7 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](/help/data-governance/home.md).
 
 ## Ytterligare resurser {#additional-resources}
 
