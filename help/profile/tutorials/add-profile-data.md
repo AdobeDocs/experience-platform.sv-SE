@@ -5,9 +5,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-source-git-commit: 3b34cf37182ae98545651a7b54f586df7d811f34
+source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '452'
 ht-degree: 0%
 
 ---
@@ -15,32 +15,32 @@ ht-degree: 0%
 
 # Lägg till data i [!DNL Real-time Customer Profile]
 
-I den här självstudiekursen beskrivs de steg som krävs för att lägga till data i [!DNL Real-time Customer Profile].
+I den här självstudien beskrivs de steg som krävs för att lägga till data i [!DNL Real-time Customer Profile].
 
 ## Aktivera ett schema för [!DNL Real-time Customer Profile]
 
-Data som hämtas till [!DNL Experience Platform] för användning av [!DNL Real-time Customer Profile] måste överensstämma med ett [!DNL Experience Data Model] (XDM)-schema som är aktiverat för [!DNL Profile]. För att ett schema ska kunna aktiveras för profilen måste det implementera antingen klassen [!DNL XDM Individual Profile] eller [!DNL XDM ExperienceEvent].
+Data som hämtas in till [!DNL Experience Platform] för användning av [!DNL Real-time Customer Profile] måste överensstämma med [!DNL Experience Data Model] (XDM) schema som är aktiverat för [!DNL Profile]. För att ett schema ska kunna aktiveras för profilen måste det implementera antingen [!DNL XDM Individual Profile] eller [!DNL XDM ExperienceEvent] klassen.
 
-Du kan aktivera ett schema för användning i [!DNL Real-time Customer Profile] med API:t [!DNL Schema Registry] eller användargränssnittet för [!DNL Schema Editor]. Kom igång genom att följa självstudiekurserna för [att skapa ett schema med API:er](../../xdm/tutorials/create-schema-api.md) eller [skapa ett schema med hjälp av schemaredigerarens gränssnitt](../../xdm/tutorials/create-schema-ui.md).
+Du kan aktivera ett schema för användning i [!DNL Real-time Customer Profile] med [!DNL Schema Registry] API eller [!DNL Schema Editor] användargränssnitt. Kom igång genom att följa självstudiekurserna för [skapa ett schema med API:er](../../xdm/tutorials/create-schema-api.md) eller [skapa ett schema med hjälp av gränssnittet i schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
 
 ## Lägg till data med batchinmatning
 
-Alla data som överförs till [!DNL Platform] med batchöverföring överförs till enskilda datauppsättningar. Innan dessa data kan användas av [!DNL Real-time Customer Profile] måste den aktuella datauppsättningen konfigureras specifikt. Fullständiga anvisningar finns i självstudiekursen om att [konfigurera en datauppsättning för profil- och identitetstjänsten](dataset-configuration.md).
+Alla data har överförts till [!DNL Platform] att använda batchmatning överförs till enskilda datauppsättningar. Innan dessa data kan användas av [!DNL Real-time Customer Profile]måste den aktuella datauppsättningen konfigureras specifikt. Fullständiga anvisningar finns i självstudiekursen på [konfigurera en datauppsättning för profil- och identitetstjänsten](dataset-configuration.md).
 
-När datauppsättningen har konfigurerats kan du börja inhämta data i den. I [Utvecklarhandboken för gruppfrågor](../../ingestion/batch-ingestion/api-overview.md) finns detaljerade anvisningar om hur du överför filer i olika format.
+När datauppsättningen har konfigurerats kan du börja inhämta data i den. Se [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md) för detaljerade steg om hur du överför filer i olika format.
 
 ## Lägg till data med direktuppspelning
 
-Alla ströminkapslade data som är kompatibla med ett [!DNL Profile]-aktiverat XDM-schema lägger automatiskt till eller skriver över lämplig post i [!DNL Real-time Customer Profile]. Om fler än en identitet anges i posten, eller om tidsseriedata används, mappas dessa identiteter i identitetsdiagrammet utan ytterligare konfiguration. Mer information finns i [Utvecklarhandboken för direktuppspelning av intagning](../../ingestion/tutorials/streaming-record-data.md).
+Alla ströminkapslade data som är kompatibla med en [!DNL Profile]-aktiverat XDM-schema lägger automatiskt till eller skriver över lämplig post i [!DNL Real-time Customer Profile]. Om fler än en identitet anges i posten, eller om tidsseriedata används, mappas dessa identiteter i identitetsdiagrammet utan ytterligare konfiguration. Se [Utvecklarhandbok för direktuppspelning](../../ingestion/tutorials/streaming-record-data.md) om du vill veta mer.
 
 ## Bekräfta att överföringen lyckades
 
 När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts korrekt.
 
-Med åtkomst-API:t [!DNL Real-time Customer Profile] kan du hämta batchdata när de läses in till en datauppsättning. Om du inte kan hämta någon av de enheter du förväntar dig, kanske din datauppsättning inte är aktiverad för [!DNL Profile]. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar.
+Använda [!DNL Real-time Customer Profile] Med åtkomst-API kan du hämta batchdata när de läses in i en datauppsättning. Om du inte kan hämta någon av de enheter som du förväntar dig kanske din datauppsättning inte är aktiverad för [!DNL Profile]. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar.
 
-Detaljerade instruktioner om hur du får åtkomst till enheter med API:t [!DNL Real-time Customer Profile] finns i [entitetens slutpunktshandbok](../api/entities.md), som också kallas API:t [!DNL Profile Access].
+Detaljerade instruktioner om hur du får åtkomst till enheter med [!DNL Real-time Customer Profile] API, se [slutpunktsguide för enheter](../api/entities.md), som också kallas[!DNL Profile Access] API&quot;.
 
 ## Uppdatera profilarkivdata
 
-Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batch- eller direktuppspelningsuppläsning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivering av en datauppsättning för profil och upsert](../../catalog/datasets/enable-upsert.md).
+Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batchinmatning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivera en datauppsättning för profil och upsert](../../catalog/datasets/enable-upsert.md).

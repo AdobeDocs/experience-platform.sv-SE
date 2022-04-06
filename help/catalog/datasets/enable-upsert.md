@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 58c58048538eaf5977b1a5905fab44307bb433a9
+source-git-commit: e7bd2c699b30276dca1a2e29c19f0a885b246f48
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '991'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 0%
 
 Den här självstudiekursen handlar om hur du aktiverar en datauppsättning med&quot;upsert&quot;-funktioner för att uppdatera kundprofildata i realtid. Detta inkluderar steg för att skapa en ny datauppsättning och konfigurera en befintlig datauppsättning.
 
+>[!NOTE]
+>
+>Arbetsflödet för att infoga fungerar bara för gruppinmatning. Direktinmatning är **not** stöds.
+
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för dessa relaterade [!DNL Platform] tjänster:
@@ -22,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Ex
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
-- [Batchförtäring](../../ingestion/batch-ingestion/overview.md)
+- [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
@@ -102,11 +106,11 @@ Ett lyckat svar visar en array som innehåller ID:t för den nya datauppsättnin
 
 ## Konfigurera en befintlig datauppsättning {#configure-an-existing-dataset}
 
-Följande steg beskriver hur du konfigurerar en befintlig profilaktiverad datauppsättning för uppdateringsfunktioner (&quot;upsert&quot;).
+Följande steg beskriver hur du konfigurerar en befintlig profilaktiverad datauppsättning för uppdateringsfunktioner (upsert).
 
 >[!NOTE]
 >
->Om du vill konfigurera en befintlig profilaktiverad datauppsättning för &quot;upsert&quot; måste du först inaktivera datauppsättningen för profil och sedan återaktivera den bredvid `isUpsert` -tagg. Om den befintliga datauppsättningen inte är aktiverad för profilen kan du fortsätta direkt till stegen för [aktivera datauppsättningen för profil och upsert](#enable-the-dataset). Om du är osäker visar följande steg hur du kontrollerar om datauppsättningen redan är aktiverad.
+>Om du vill konfigurera en befintlig profilaktiverad datauppsättning för uppdatering måste du först inaktivera datauppsättningen för profilen och sedan återaktivera den bredvid `isUpsert` -tagg. Om den befintliga datauppsättningen inte är aktiverad för profilen kan du fortsätta direkt till stegen för [aktivera datauppsättningen för profil och upsert](#enable-the-dataset). Om du är osäker visar följande steg hur du kontrollerar om datauppsättningen redan är aktiverad.
 
 ### Kontrollera om datauppsättningen är aktiverad för profilen
 
@@ -220,6 +224,7 @@ curl -X PATCH \
 ```
 
 **Svar**
+
 En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. The `unifiedProfile` -taggen har nu inaktiverats.
 
 ```json
@@ -270,4 +275,4 @@ En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som inneh�
 
 ## Nästa steg
 
-Din profil och datauppsättning som har stöd för upsert kan nu användas av arbetsflöden för import av grupper och strömning för att göra uppdateringar av profildata. Om du vill veta mer om inmatning av data i Adobe Experience Platform börjar du med att läsa [dataöverföring - översikt](../../ingestion/home.md).
+Din profilaktiverade och upsert-aktiverade datauppsättning kan nu användas av arbetsflöden för batchimport för att uppdatera profildata. Om du vill veta mer om inmatning av data i Adobe Experience Platform börjar du med att läsa [dataöverföring - översikt](../../ingestion/home.md).
