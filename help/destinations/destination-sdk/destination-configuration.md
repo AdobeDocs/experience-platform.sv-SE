@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
+source-git-commit: 51417bee5dba7a96d3a7a7eb507fc95711fad4a5
 workflow-type: tm+mt
-source-wordcount: '1753'
+source-wordcount: '1784'
 ht-degree: 2%
 
 ---
@@ -98,8 +98,8 @@ Detta är ett exempel på konfiguration av ett fiktivt mål för direktuppspelni
       "aggregationType":"CONFIGURABLE_AGGREGATION",
       "configurableAggregation":{
          "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
+         "maxBatchAgeInSecs":2400,
+         "maxNumEventsInBatch":5000,
          "aggregationKey":{
             "includeSegmentId":true,
             "includeSegmentStatus":true,
@@ -276,6 +276,10 @@ Med det här alternativet kan du:
    * Segment-ID;
    * Segmentstatus;
    * Identitet eller grupper av identiteter.
+
+>[!NOTE]
+>
+>När du använder det konfigurerbara aggregeringsalternativet för ditt mål ska du tänka på minimi- och maximivärdena som du kan använda för de två parametrarna `maxBatchAgeInSecs` (minst 1 800 och högst 3 600) och `maxNumEventsInBatch` (minimum 1.000, max 10.000).
 
 Detaljerade förklaringar av aggregeringsparametrarna finns i [Slutpunktsåtgärder för mål-API](./destination-configuration-api.md) referenssida, där varje parameter beskrivs.
 
