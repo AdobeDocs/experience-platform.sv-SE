@@ -5,10 +5,10 @@ title: Anslut PSQL till frågetjänst
 topic-legacy: connect
 description: PSQL är ett kommandoradsgränssnitt som medföljer när du installerar PostgreSQL på datorn. Du kan installera det genom att följa dessa anvisningar.
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: 06d3a8aa6f2f73c2d5392a76fb5b36b18691cf0d
+source-git-commit: 4d9e6ce81809c6e6ee1188177a937ac8fc609996
 workflow-type: tm+mt
-source-wordcount: '271'
-ht-degree: 1%
+source-wordcount: '287'
+ht-degree: 0%
 
 ---
 
@@ -22,9 +22,11 @@ PSQL är ett kommandoradsgränssnitt som installeras när du installerar [!DNL P
 
 När du har installerat PSQL på datorn kan du ansluta PSQL med frågetjänsten. Återgå till [!DNL Platform] Gränssnitt, välj sedan **[!UICONTROL Queries]**, följt av **[!UICONTROL Credentials]**.
 
-![Bild](../images/clients/psql/connect-bi.png)
+Under **[!UICONTROL PSQL Command]** väljer du **[!UICONTROL Copy to clipboard]** ikon (![Kopiera ikon](../images/clients/psql/copy-icon.png)) för att kopiera kommandosträngen.
 
-Markera ikonen om du vill kopiera avsnittet med etiketten **[!UICONTROL PSQL Command]** klistrar du sedan in kommandosträngen i ett terminal- eller kommandoradsfönster innan du trycker på Retur.
+![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med kopieringsikonen markerad.](../images/clients/psql/connect-bi.png)
+
+Klistra in kommandosträngen i ett terminal- eller kommandoradsfönster och tryck på **Retur** på tangentbordet.
 
 >[!IMPORTANT]
 >

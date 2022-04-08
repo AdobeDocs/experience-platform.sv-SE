@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: b4388106caf1c6ee48c44051fe484cd595278483
+source-git-commit: a5e8b4df78d8dff58e000030d209606b46a582e8
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1122'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Med Adobe Experience Platform Query Service kan du ansluta till externa klienter
 
 Du kan använda utgångsuppgifter för att snabbt konfigurera en anslutning till en extern klient.
 
-![](../images/ui/credentials/expiring-credentials.png)
+![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Utgångsuppgifter markerat.](../images/ui/credentials/expiring-credentials.png)
 
 The **[!UICONTROL Expiring credentials]** innehåller följande information:
 
@@ -55,7 +55,7 @@ Alla behörigheter som krävs har nu konfigurerats i Adobe Developer Console så
 
 Om du vill skapa en uppsättning med autentiseringsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet för plattformen och väljer **[!UICONTROL Queries]** från vänster navigering för att komma åt [!UICONTROL Queries] arbetsyta. Välj sedan **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
 
-![](../images/ui/credentials/generate-credentials.png)
+![Kontrollpanelen Frågor med fliken Autentiseringsuppgifter och Generera autentiseringsuppgifter markerade.](../images/ui/credentials/generate-credentials.png)
 
 En dialogruta visas där du kan generera autentiseringsuppgifter. Om du vill skapa inloggningsuppgifter som inte förfaller måste du ange följande information:
 
@@ -66,11 +66,11 @@ En dialogruta visas där du kan generera autentiseringsuppgifter. Om du vill ska
 
 När du har angett all nödvändig information väljer du **[!UICONTROL Generate credentials]** för att generera dina autentiseringsuppgifter.
 
-![](../images/ui/credentials/create-account.png)
+![Dialogrutan Generera inloggningsuppgifter är markerad.](../images/ui/credentials/create-account.png)
 
 >[!IMPORTANT]
 >
->När **[!UICONTROL Generate credentials]** om du väljer det här alternativet hämtas en konfigurations-JSON-fil till den lokala datorn. Eftersom Adobe gör det **not** spela in de genererade inloggningsuppgifterna, måste du lagra den hämtade filen på ett säkert sätt och spara en inloggningsuppgift.
+>När **[!UICONTROL Generate credentials]** väljs hämtas en konfigurations-JSON-fil till den lokala datorn. Eftersom Adobe gör det **not** spela in de genererade inloggningsuppgifterna, måste du lagra den hämtade filen på ett säkert sätt och spara en inloggningsuppgift.
 >
 >Om inloggningsuppgifterna inte används på 90 dagar kommer de dessutom att tas bort.
 
@@ -82,7 +82,7 @@ JSON-konfigurationsfilen innehåller information som namn på tekniskt konto, ID
 
 När du har sparat dina genererade inloggningsuppgifter väljer du **[!UICONTROL Close]**. Nu kan du se en lista över alla dina ej förfallna autentiseringsuppgifter.
 
-![](../images/ui/credentials/list-credentials.png)
+![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Ej förfallande autentiseringsuppgifter utökat.](../images/ui/credentials/list-credentials.png)
 
 Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte förfaller väljer du pennikonen (![](../images/ui/credentials/edit-icon.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du ikonen Ta bort (![](../images/ui/credentials/delete-icon.png)).
 
@@ -92,7 +92,7 @@ När du redigerar en referens som inte förfaller visas ett modalt värde. Du ka
 - **[!UICONTROL Description]**: (Valfritt) En beskrivning av de autentiseringsuppgifter som du genererar.
 - **[!UICONTROL Assigned to]**: Användaren som autentiseringsuppgifterna ska tilldelas till. Värdet ska vara e-postadressen till den användare som skapar inloggningsuppgifterna.
 
-![](../images/ui/credentials/update-credentials.png)
+![Dialogrutan Uppdatera konto.](../images/ui/credentials/update-credentials.png)
 
 När du har angett all nödvändig information väljer du **[!UICONTROL Update account]** för att slutföra uppdateringen av dina autentiseringsuppgifter.
 
@@ -112,11 +112,11 @@ Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till e
 
 | Parameter | Beskrivning |
 |---|---|
-| Server/värd | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och har formen av `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> |
-| Port | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och finns under **[!UICONTROL Port]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. Ett exempelvärde för porten skulle vara `80`.</ul></li> |
-| Databas | Databasen som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum för inloggningsuppgifter och finns under **[!UICONTROL Database]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. Ett exempelvärde för databasen skulle vara `prod:all`.</ul></li> |
-| Användarnamn | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum. Det tar formen av en alfanumerisk sträng före `@AdobeOrg`. Detta värde finns under **[!UICONTROL Username]**.</li></ul> |
-| Lösenord | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** inom [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> |
+| **Server/värd** | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och har formen av `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> |
+| **Port** | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och finns under **[!UICONTROL Port]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. Ett exempelvärde för porten skulle vara `80`.</ul></li> |
+| **Databas** | Databasen som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum för inloggningsuppgifter och finns under **[!UICONTROL Database]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. Ett exempelvärde för databasen skulle vara `prod:all`.</ul></li> |
+| **Användarnamn** | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum. Det tar formen av en alfanumerisk sträng före `@AdobeOrg`. Detta värde finns under **[!UICONTROL Username]**.</li></ul> |
+| **Lösenord** | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** inom [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> |
 
 ## Nästa steg
 
