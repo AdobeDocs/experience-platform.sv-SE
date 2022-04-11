@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 5468097c61d42a7b565520051b955329e493d51f
+source-git-commit: 2a74d900053a868ce936d957dee008da846d6608
 workflow-type: tm+mt
-source-wordcount: '2596'
+source-wordcount: '2668'
 ht-degree: 1%
 
 ---
@@ -420,6 +420,27 @@ EXCEPTION
 WHEN other THEN SELECT 'ERROR';
 
 END $$; 
+```
+
+## Textbunden {#inline}
+
+Den infogade funktionen separerar elementen i en array med strukturer och genererar värdena i en tabell. Den kan bara placeras i `SELECT` lista eller en `LATERAL VIEW`.
+
+Den infogade funktionen **inte** placeras i en urvalslista där det finns andra generatorfunktioner.
+
+Som standard får kolumnerna som skapas namnen &quot;col1&quot;, &quot;col2&quot; och så vidare. Om uttrycket är `NULL` så skapas inga rader.
+
+**Exempel**
+
+```sql
+> SELECT inline(array(struct(1, 'a'), struct(2, 'b'))), 'Spark SQL';
+```
+
+Exemplet returnerar följande:
+
+```text
+1  a Spark SQL
+2  b Spark SQL
 ```
 
 ## [!DNL Spark] SQL-kommandon
