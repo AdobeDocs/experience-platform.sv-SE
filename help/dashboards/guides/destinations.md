@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 86041e3165d4ea9cb55717f24b002afa084ff420
+source-git-commit: 32df4c5972cb32afc6021ae27dc05f77076a5984
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1585'
 ht-degree: 0%
 
 ---
@@ -153,7 +153,7 @@ Om ett segment inom [!UICONTROL Mapped audience health] widgeten avviker med en 
 
 ![Mappad målgruppswidget.](../images/destinations/mapped-audience-health.png)
 
-### [!UICONTROL Destinations count] (#destination-count)
+### [!UICONTROL Destinations count] {#destinations-count}
 
 The [!UICONTROL Destinations count] widgeten anger det totala antalet tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål.
 
