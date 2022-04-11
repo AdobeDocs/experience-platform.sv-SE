@@ -3,9 +3,9 @@ keywords: Amazon S3;S3-mål;s3;amazon s3
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 691e3181e05a24b6bb0ebbe8e0f797a2b4c572d2
+source-git-commit: 935bbbc842ce5e2f42ee92c525255c9708bf34c2
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >id="platform_destinations_connect_s3_folderpath"
 >title="Mappsökväg"
 >abstract="Får endast innehålla tecknen A-Z, a-z, 0-9 och kan innehålla följande specialtecken: `/!-_.'()"^[]+$%.*"`. Om du vill skapa en mapp per segmentfil infogar du makrot /%SEGMENT_NAME% eller /%SEGMENT_ID% eller /%SEGMENT_NAME%/%SEGMENT_ID% i textfältet. Makron kan bara infogas i slutet av mappsökvägen. Visa makroexempel i dokumentationen."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=en#use-macros" text="Använd makron för att skapa en mapp på lagringsplatsen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="Använd makron för att skapa en mapp på lagringsplatsen"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_rsa"
