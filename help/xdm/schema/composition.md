@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 3397e0ef79b585b828e794ca5f5d9e4c8ae470aa
+source-git-commit: 997a3cdd6301adc2c52b6b397307c1dd1d194d7c
 workflow-type: tm+mt
-source-wordcount: '3809'
+source-wordcount: '3797'
 ht-degree: 0%
 
 ---
@@ -230,7 +230,7 @@ Giltiga intervall för dessa skalära typer kan begränsas ytterligare till viss
 
 >[!NOTE]
 >
->Fälttypen &quot;map&quot; tillåter nyckelvärdepar, inklusive flera värden för en enskild nyckel. Kartor kan bara definieras på systemnivå, vilket innebär att du kan stöta på en karta i ett bransch- eller leverantörsdefinierat schema, men den är inte tillgänglig för användning i fält som du definierar. The [Utvecklarhandbok för API för schematabell](../api/getting-started.md) innehåller mer information om hur du definierar fälttyper.
+>Fälttypen &quot;map&quot; tillåter nyckelvärdepar, inklusive flera värden för en enskild nyckel. Kartor finns i standard-XDM-klasser och fältgrupper, men du kan också definiera anpassade kartor med API:t för schemaregister. Se självstudiekursen om [definiera egna fält](../tutorials/custom-fields-api.md#maps) för mer information.
 
 ## Kompositionsexempel
 
