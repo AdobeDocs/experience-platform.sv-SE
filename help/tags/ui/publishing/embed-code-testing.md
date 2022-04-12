@@ -1,9 +1,10 @@
 ---
 title: Testa inbäddningskoder med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Platform Debugger för att lokalt testa olika inbäddningskoder för Adobe Experience Platform på din webbplats.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
+source-git-commit: 71c63e0d0b993206cb3bb5de7f7fbd5e10c6f2e3
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -12,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 När du gör ändringar i kodbiblioteksbyggen i Adobe Experience Platform bör du testa dessa ändringar innan du distribuerar bygget till din produktionsmiljö. Om du inte har någon dedikerad staging- eller utvecklingsmiljö för webbplatsen kan du använda Adobe Experience Platform Debugger för att lokalt testa olika inbäddningskoder på webbplatsen.
 
 ## Förutsättningar
 
-Den här självstudiekursen kräver en fungerande förståelse för hur du använder miljöer och bäddar in koder i användargränssnittet för datainsamling. Mer information finns i [miljööversikten](./environments.md).
+Den här självstudiekursen kräver en fungerande förståelse för hur du använder miljöer och bäddar in koder i användargränssnittet för datainsamling. Se [miljööversikt](./environments.md) för mer information.
 
 Den här självstudien kräver även att du har installerat webbläsartillägget Platform Debugger. Felsökningsprogrammet för plattformen är bara tillgängligt för Chrome- och Firefox-webbläsare. Använd någon av följande länkar för att installera tillägget innan du startar självstudiekursen:
 
@@ -27,7 +28,7 @@ Den här självstudien kräver även att du har installerat webbläsartillägget
 
 ## Open Platform Debugger på din webbplats
 
-Använd valfri webbläsare och navigera till webbplatsen och öppna tillägget för plattformsfelsökning. Den webbplats som Platform Debugger är ansluten till visas längst ned i fönstret. Om taggar för närvarande körs på din plats visas den på fliken [!UICONTROL Summary].
+Använd valfri webbläsare och navigera till webbplatsen och öppna tillägget för plattformsfelsökning. Den webbplats som Platform Debugger är ansluten till visas längst ned i fönstret. Om taggar för närvarande körs på din plats visas de i [!UICONTROL Summary] -fliken.
 
 ![](./images/embed-code-testing/summary.png)
 
@@ -41,7 +42,7 @@ När plattformsfelsökaren har anslutit till webbplatsen väljer du **[!UICONTRO
 
 ![](./images/embed-code-testing/launch-tab.png)
 
-Under [!UICONTROL Page Embed Codes] visas den inbäddningskod som används på din plats. Välj **[!UICONTROL Actions]** till höger om inbäddningskoden och välj sedan **[!UICONTROL Replace]**.
+Under [!UICONTROL Page Embed Codes]visas den inbäddningskod som används på platsen. Välj **[!UICONTROL Actions]** till höger om inbäddningskoden väljer du **[!UICONTROL Replace]**.
 
 ![](./images/embed-code-testing/replace.png)
 
@@ -51,10 +52,10 @@ Klistra in den inbäddningskod som du vill testa i den angivna textrutan och vä
 
 ![](./images/embed-code-testing/paste-code.png)
 
-Fliken **[!UICONTROL Configuration]** visas igen, vilket visar att den aktiva inbäddningskoden har ersatts med den som du angav. Du kan nu använda webbläsaren för att se om den inbäddningskod som du testar fungerar som förväntat.
+The **[!UICONTROL Configuration]** visas igen, vilket visar att inbäddningskoden har ersatts med den som du angav. Du kan nu använda webbläsaren för att se om den inbäddningskod som du testar fungerar som förväntat.
 
 ![](./images/embed-code-testing/code-replaced.png)
 
 ## Nästa steg
 
-I den här självstudien beskrivs hur du lokalt byter inbäddningskoder för testning med hjälp av plattformsfelsökaren. Mer information om de olika funktionerna finns i [dokumentationen för plattformsfelsökning](https://experienceleague.adobe.com/docs/debugger/using-v2/experience-cloud-debugger.html).
+I den här självstudien beskrivs hur du lokalt byter inbäddningskoder för testning med hjälp av plattformsfelsökaren. Se [Dokumentation för plattformsfelsökning](../../../debugger/home.md) för mer information om dess olika funktioner.

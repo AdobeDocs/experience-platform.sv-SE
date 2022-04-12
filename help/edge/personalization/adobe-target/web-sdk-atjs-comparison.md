@@ -2,9 +2,10 @@
 title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
-source-git-commit: 6efb40e90cb8c29a0141bb0db6e20cec23f2be9a
+exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
+source-git-commit: 71c63e0d0b993206cb3bb5de7f7fbd5e10c6f2e3
 workflow-type: tm+mt
-source-wordcount: '2277'
+source-wordcount: '2269'
 ht-degree: 2%
 
 ---
@@ -1224,5 +1225,5 @@ Du har flera felsökningsfunktioner när du använder Web SDK:
 * Använda [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 * [Felsökning för Web SDK har aktiverats](../../../edge/fundamentals/debugging.md)
 * Använd [Webbövervakningskopplingar för SDK](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
-* Använd [Adobe Experience Platform Debugger](https://experienceleague.adobe.com/docs/debugger/using-v2/experience-cloud-debugger.html?lang=en)
+* Använd [Adobe Experience Platform Debugger](../../../debugger/home.md)
 * Målspårning
