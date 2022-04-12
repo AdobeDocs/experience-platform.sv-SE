@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 5d03dda7a972d37697032978b6e91a39800f81c8
+source-git-commit: 66dafe4bca6e1eb0fc67a745ac20a6e0b119aa39
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '773'
 ht-degree: 5%
 
 ---
@@ -48,6 +48,8 @@ ht-degree: 5%
       - [Oracle Object Storage](connectors/cloud-storage/oracle-object-storage.md)
       - [SFTP-anslutning](connectors/cloud-storage/sftp.md)
       - [Amazon S3 och Azure Blob Connector](connectors/cloud-storage/blob-s3.md)
+   - Samtycke och inställningar {#consent}
+      - [OneTrust-integrering](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
@@ -109,6 +111,8 @@ ht-degree: 5%
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
          - [Oracle Object Storage](tutorials/api/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
+      - Samtycke och inställningar {#consent}
+         - [OneTrust-integrering](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
@@ -203,6 +207,8 @@ ht-degree: 5%
          - [Oracle Object Storage](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3 och Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
+      - Samtycke och inställningar {#consent}
+         - [OneTrust-integrering](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
@@ -250,6 +256,7 @@ ht-degree: 5%
       - [Annonserar anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
       - [Anslutningsdataflöde för batchmolnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [Dataflöde för direktuppspelning av molnlagring](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+      - [Anslutningsdataflöde för samtycke och inställningar](tutorials/ui/dataflow/consent-and-preferences.md)
       - [Dataflöde för CRM-anslutning](tutorials/ui/dataflow/crm.md)
       - [Anslutningsdataflöde för lyckade kunder](tutorials/ui/dataflow/customer-success.md)
       - [Dataflöde för databasanslutning](tutorials/ui/dataflow/databases.md)
