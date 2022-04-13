@@ -2,7 +2,7 @@
 title: Definiera XDM-fält i API:t för schemaregister
 description: Lär dig hur du definierar olika fält när du skapar anpassade XDM-resurser (Experience Data Model) i API:t för schemaregister.
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 536657f11a50ea493736296780dd57f41dfefeae
+source-git-commit: 4ce9e53ec420a8c9ba07cdfd75e66d854989f8d2
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Börja med att hitta den önskade fälttypen och använd exempelkoden som medfö
     <td>Begränsade uppräkningsvärden anges under <code>enum</code> matris, medan valfria kundvända etiketter för varje värde kan anges under <code>meta:enum</code>:
       <pre class="JSON language-JSON hljs">
 "sampleField": { "type": "string", "enum": [ "value1", "value2", "value3" ], "meta:enum": { "value1": "Värde 1", "värde2": "Värde 2", "värde3": "Value 3" }, "default": "value1" }</pre>
-    <br>Observera att <code>meta:enum</code> värdet gör <strong>not</strong> deklarera en uppräkning eller kör en datavalidering på egen hand. I de flesta fall anges strängar i <code>meta:enum</code> tillhandahålls också enligt <code>enum</code> för att säkerställa att data begränsas. Det finns dock vissa användningsområden där <code>meta:enum</code> tillhandahålls utan motsvarande <code>enum</code> array. Se självstudiekursen om <a href="../tutorials/extend-soft-enum.md">utöka valfria uppräkningar</a> för mer information.
+    <br>Observera att <code>meta:enum</code> värdet gör <strong>not</strong> deklarera en uppräkning eller kör en datavalidering på egen hand. I de flesta fall anges strängar i <code>meta:enum</code> tillhandahålls också enligt <code>enum</code> för att säkerställa att data begränsas. Det finns dock vissa användningsområden där <code>meta:enum</code> tillhandahålls utan motsvarande <code>enum</code> array. Se självstudiekursen om <a href="../tutorials/suggested-values.md">definiera föreslagna värden</a> för mer information.
     </td>
   </tr>
   <tr>
