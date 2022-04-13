@@ -3,10 +3,10 @@ keywords: personalisering, destination, upplevelseplattform anpassad destination
 title: Anpassad personaliseringsanslutning
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 05217dead7e1365d6dcc0cc7ae4078628514d1d5
+source-git-commit: c83c7e2a74a6bf4a7a4c9c04ccebfd0296c89bce
 workflow-type: tm+mt
-source-wordcount: '672'
-ht-degree: 1%
+source-wordcount: '906'
+ht-degree: 0%
 
 ---
 
@@ -30,17 +30,27 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 
 ## Användningsfall {#use-cases}
 
-Den här målgruppen delar målgrupper med annonsservrar och icke-Adobe-personaliseringsapplikationer, som ska användas i realtid för att avgöra vilken annonsanvändare som ska se på en webbplats.
+The [!DNL Custom personalization connection] gör att du kan använda dina egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), samtidigt som du drar nytta av datainsamling och segmenteringsfunktioner i Experience Platform Edge Network, för att ge en djupare upplevelse av kundpersonalisering.
 
-### Användningsfall 1
+De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
-**Anpassa en hemsida**
+För att möjliggöra detta behöver kunderna ett snabbt och smidigt sätt att hämta segmentinformation från Experience Platform och skicka denna information till sina utsedda system som de har konfigurerat som anpassade personaliseringsanslutningar i användargränssnittet i Experience Platform.
 
-En webbplats för uthyrning och försäljning i hemmet vill personalisera sin hemsida baserat på segmentkvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och mappa dem till det anpassade personaliseringsmål som hade konfigurerats för deras personaliseringsprogram utanför Adobe som målinriktningskriterier.
+Dessa system kan vara externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs över kundernas webb- och mobilsajter.
 
-**Målinriktad annonsering på plats**
+### Personalisering på samma sida {#same-page}
 
-Med ett separat anpassat anpassningsmål för sin annonsserver kan samma webbplats rikta in sig på annonser på webbplatsen med en annan uppsättning segment än Adobe Experience Platform som målinriktningskriterier.
+En användare besöker en sida på webbplatsen. Kunden kan använda den aktuella sidbesöksinformationen (till exempel URL, webbläsarspråk, inbäddad produktinformation) för att välja nästa åtgärd/beslut (till exempel personalisering) med hjälp av den anpassade personaliseringsanslutningen för andra plattformar än Adobe (till exempel [!DNL Pega], [!DNL Optimizely], osv.).
+
+### Anpassa nästa sida {#next-page}
+
+En användare besöker Sida A på din webbplats. Utifrån denna interaktion har användaren kvalificerat sig för en uppsättning segment. Användaren klickar sedan på en länk som tar dem från sida A till sida B. Segmenten som användaren hade kvalificerat sig för under den föregående interaktionen på sida A, tillsammans med profiluppdateringarna som bestäms av det aktuella webbplatsbesöket, kommer att användas för att driva nästa åtgärd/beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
+
+### Anpassa nästa session {#next-session}
+
+En användare besöker flera sidor på webbplatsen. Baserat på dessa interaktioner har användaren kvalificerat sig för en uppsättning segment. Användaren avbryter sedan den aktuella webbläsarsessionen.
+
+Följande dag kommer användaren tillbaka till samma kundwebbplats. De segment som de kvalificerat sig för under den tidigare interaktionen med alla besökta webbplatser, tillsammans med profiluppdateringar som bestäms av det aktuella webbplatsbesöket, kommer att användas för att välja nästa åtgärd/beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
 
 ## Anslut till målet {#connect}
 
