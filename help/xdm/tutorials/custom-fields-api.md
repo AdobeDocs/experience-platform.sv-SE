@@ -1,9 +1,10 @@
 ---
 title: Definiera XDM-fält i API:t för schemaregister
 description: Lär dig hur du definierar olika fält när du skapar anpassade XDM-resurser (Experience Data Model) i API:t för schemaregister.
-source-git-commit: af4c345819d3e293af4e888c9cabba6bd874583b
+exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
+source-git-commit: 536657f11a50ea493736296780dd57f41dfefeae
 workflow-type: tm+mt
-source-wordcount: '734'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
@@ -165,16 +166,18 @@ Börja med att hitta den önskade fälttypen och använd exempelkoden som medfö
 
 ## Skapa anpassade mappningstyper {#maps}
 
-Objekten kan kommenteras med en `meta:xdmType` ange till `map` för att klargöra att ett objekt ska hanteras som om nyckeluppsättningen var obegränsad. XDM har följande begränsningar för användning av detta lagringstips:
+Objekten kan kommenteras med en `meta:xdmType` ange till `map` för att klargöra att ett objekt ska hanteras som om nyckeluppsättningen var obegränsad. Data som är inkapslade i mappningsfält måste använda strängnycklar och endast sträng- eller heltalsvärden (som bestäms av `additionalProperties.type`).
 
-* Karttyper MÅSTE vara av typen `object`
-* Karttyper FÅR INTE ha egenskaper definierade (de definierar med andra ord&quot;tomma&quot; objekt)
-* Karttyper MÅSTE innehålla en `additionalProperties` schema som beskriver de värden som kan placeras i kartan
+XDM har följande begränsningar för användning av detta lagringstips:
+
+* Karttyper MÅSTE vara av typen `object`.
+* Karttyper FÅR INTE ha egenskaper definierade (de definierar med andra ord tomma objekt).
+* Karttyper MÅSTE innehålla en `additionalProperties.type` fält som beskriver värdena som kan placeras på kartan, antingen `string` eller `integer`.
 
 Se till att du bara använder karttypsfält när det är absolut nödvändigt, eftersom de har följande prestandanackdelar:
 
-* Svarstiden från Adobe Experience Platform Query Service försämras från tre sekunder till tio sekunder för 100 miljoner poster
-* Kartor måste ha färre än 16 tangenter, annars riskerar de att försämras ytterligare
+* Svarstiden från Adobe Experience Platform Query Service försämras från tre sekunder till tio sekunder för 100 miljoner poster.
+* Kartor måste ha färre än 16 tangenter, annars riskerar de att försämras ytterligare.
 
 Användargränssnittet för plattformen har även begränsningar för hur nycklarna för mappningsfält kan extraheras. Objekttypsfält kan expanderas, men kartor visas i stället som ett enda fält.
 
