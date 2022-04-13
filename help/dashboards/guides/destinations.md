@@ -4,7 +4,7 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 45806166e48e3a9d9d7eeeaea0827d6f83c3ca3b
+source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
 workflow-type: tm+mt
 source-wordcount: '1636'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Recently created destinations]](#recently-created-destinations)
 * [[!UICONTROL Recently activated segments]](#recently-activated-segments)
 * [[!UICONTROL Recently activated segments by destination]](#recently-activated-segments-by-destination)
-* [[!UICONTROL Audience size trend]](#audience-size-trends)
+* [[!UICONTROL Audience size trend]](#audience-size-trend)
 * [[!UICONTROL Unmapped segments by identity]](#unmapped-segments-by-identity)
 * [[!UICONTROL Mapped segments by identity]](#mapped-segments-by-identity)
 * [[!UICONTROL Common audiences]](#common-audiences)
