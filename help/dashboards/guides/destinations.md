@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 32df4c5972cb32afc6021ae27dc05f77076a5984
+source-git-commit: 45806166e48e3a9d9d7eeeaea0827d6f83c3ca3b
 workflow-type: tm+mt
-source-wordcount: '1585'
+source-wordcount: '1636'
 ht-degree: 0%
 
 ---
@@ -112,6 +112,10 @@ En tidsperiod för målgruppstrenden under de senaste 30 dagarna, 90 dagar eller
 I den andra listrutan visas alla tillgängliga segment som kan skickas till det målkonto som valts högst upp på kontrollpanelen.
 
 ![Trendwidgeten för målgruppsstorlek.](../images/destinations/audience-size-trend.png)
+
+The **[!UICONTROL Audience size trend]** widgeten innehåller en [!UICONTROL Captions] i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter. En maskininlärningsmodell genererar automatiskt bildtexter som beskriver de viktigaste trenderna och viktiga händelser genom att analysera diagram- och segmentdata.
+
+![Dialogrutan med automatiska bildtexter för widgeten Storlekstrend för publik.](../images/destinations/audience-size-trend-captions.png)
 
 ### [!UICONTROL Unmapped segments by identity] {#unmapped-segments-by-identity}
 
