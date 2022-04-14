@@ -3,9 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;OneTrust
 solution: Experience Platform
 title: (Beta) Skapa ett dataflöde för en OneTrust-integreringskälla med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till OneTrust Integration med API:t för Flow Service.
-source-git-commit: adefaeb895c91d45727f791b73b73a17a2b1ccf9
+exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
+source-git-commit: 74ef1b3abb90ab3ca24690c88c073083f02a2f1b
 workflow-type: tm+mt
-source-wordcount: '2317'
+source-wordcount: '2313'
 ht-degree: 0%
 
 ---
@@ -6794,7 +6795,7 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
 Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](../../../../../xdm/api/schemas.md).
 
@@ -7786,4 +7787,3 @@ curl -X DELETE \
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
 Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) på anslutningen.
-
