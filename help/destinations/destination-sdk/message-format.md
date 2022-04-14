@@ -2,9 +2,9 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
+source-git-commit: f000eadb689a99f7667c47e2bef5d2a780aa0505
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '2266'
 ht-degree: 1%
 
 ---
@@ -41,18 +41,15 @@ Users who want to activate data to your destination need to map the fields in th
 
 -->
 
-**XDM-källschema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, på [mappningssteg](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) av arbetsflödet för aktivering av destinationen skulle kunderna mappa fält från källschemat till målschemat (2).
+**XDM-källschema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, på [mappningssteg](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) av arbetsflödet för aktivering av mål mappar kunderna fält från sitt XDM-schema till målschemat (2).
 
-**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format kan du definiera profilattribut och identiteter i ditt mål-XDM-schema. Du kan göra detta i destinationskonfigurationen i [schemaConfig](./destination-configuration.md#schema-configuration) och [identityNamespaces](./destination-configuration.md#identities-and-attributes) objekt.
+**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format och de attribut som destinationen kan tolka, kan du definiera profilattribut och identiteter i mål-XDM-schemat. Du kan göra detta i destinationskonfigurationen i [schemaConfig](./destination-configuration.md#schema-configuration) och [identityNamespaces](./destination-configuration.md#identities-and-attributes) objekt.
 
-**JSON-standardschema för målprofilens attribut (3)**: Det här objektet representerar en [JSON-schema](https://json-schema.org/learn/miscellaneous-examples.html) av alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`och så vidare. Du behöver en [omformningsmall för meddelanden](./message-format.md#using-templating) för att skräddarsy de data som exporteras från Experience Platform till det förväntade formatet.
+**JSON-standardschema för målprofilens attribut (3)**: Det här exemplet representerar en [JSON-schema](https://json-schema.org/learn/miscellaneous-examples.html) av alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`och så vidare. Du behöver en [omformningsmall för meddelanden](./message-format.md#using-templating) för att skräddarsy de data som exporteras från Experience Platform till det förväntade formatet.
 
 Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur en profilkonfiguration ändras mellan käll-XDM-schemat och ett exempelschema på partnersidan:
 
 ![Exempel på omformningsmeddelande](./assets/transformations-with-examples.png)
-
-<br> 
-
 
 ## Komma igång - omforma tre grundläggande attribut {#getting-started}
 
@@ -87,9 +84,79 @@ Med tanke på meddelandeformatet är motsvarande omformningar följande:
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
 
+## Profilstruktur i Experience Platform {#profile-structure}
+
+För att förstå exemplen längre ned på sidan är det viktigt att du känner till strukturen för en profil i Experience Platform.
+
+Profiler har tre avsnitt:
+
+* `segmentMembership` (finns alltid i en profil)
+   * det här avsnittet innehåller alla segment som finns i profilen. Segmenten kan ha en av tre statusvärden: `realized`, `existing`, `exited`.
+* `identityMap` (finns alltid i en profil)
+   * det här avsnittet innehåller alla identiteter som finns i profilen (e-post, Google GAID, Apple IDFA och så vidare) och som användaren har mappat för export i aktiveringsarbetsflödet.
+* attribut (beroende på målkonfigurationen kan dessa finnas i profilen). Det finns också en liten skillnad mellan fördefinierade attribut och frihandsattribut:
+   * for *frihandsattribut* innehåller de `.value` sökväg om attributet finns i profilen (se `lastName` -attribut från exempel 1). Om de inte finns med i profilen kommer de inte att innehålla `.value` sökväg (se `firstName` -attribut från exempel 1).
+   * for *fördefinierade attribut*, innehåller de inte `.value` bana. Alla mappade attribut som finns i en profil finns i attributmappningen. De som inte finns kommer inte att finnas (se exempel 2 - `firstName` finns inte i profilen).
+
+Se två exempel på profiler i Experience Platform:
+
+### Exempel 1 med `segmentMembership`, `identityMap` och attribut för frihandsattribut {#example-1}
+
+```json
+{
+  "segmentMembership": {
+    "ups": {
+      "11111111-1111-1111-1111-111111111111": {
+        "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "mobileIds": [
+      {
+        "id": "e86fb215-0921-4537-bc77-969ff775752c"
+      }
+    ]
+  },
+  "attributes": {
+    "firstName": {
+    },
+    "lastName": {
+      "value": "lastName"
+    }
+  }
+}
+```
+
+### Exempel 2 med `segmentMembership`, `identityMap` och attribut för fördefinierade attribut {#example-2}
+
+```json
+{
+  "segmentMembership": {
+    "ups": {
+      "11111111-1111-1111-1111-111111111111": {
+        "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "mobileIds": [
+      {
+        "id": "e86fb215-0921-4537-bc77-969ff775752c"
+      }
+    ]
+  },
+  "attributes": {
+    "lastName": "lastName"
+  }
+}
+```
+
 ## Använda ett mallspråk för identitet, attribut och segmentmedlemskapsomvandlingar {#using-templating}
 
-Adobe använder ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) för att omvandla fälten från XDM-schemat till ett format som stöds av ditt mål.
+Adobe använder [Bärbara mallar](https://pebbletemplates.io/), ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), för att omvandla fälten från Experience Platform XDM-schemat till ett format som stöds av ditt mål.
 
 Det här avsnittet innehåller flera exempel på hur dessa omformningar görs - från XDM-indataschemat, via mallen och från utdata i nyttolastformat som accepteras av ditt mål. Exemplen nedan presenteras av ökad komplexitet, enligt följande:
 
@@ -1129,12 +1196,10 @@ Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 | `addedSegments(listOfSegments)` | Returnerar endast de segment som har status `realized` eller `existing`. |
 | `removedSegments(listOfSegments)` | Returnerar endast de segment som har status `exited`. |
 
-<!--
+## Nästa steg {#next-steps}
 
-## What Adobe needs from you to set up your destination {#what-adobe-needs}
+När du har läst det här dokumentet kan du nu se hur data som exporteras från Experience Platform omformas. Läs sedan följande sidor för att lära dig mer om hur du skapar meddelandeomformningsmallar för ditt mål:
 
-Based on the transformations outlined in the sections above, Adobe needs the following information to set up your destination:
-
-* Considering *all* the fields that your platform can receive, Adobe needs the standard JSON schema that corresponds to your expected message format. Having the template allows Adobe to define transformations and to create a custom XDM schema for your company, which customers would use to export data to your destination.
-
--->
+* [Skapa och testa en meddelandeomformningsmall](/help/destinations/destination-sdk/create-template.md)
+* [API-åtgärder för återgivningsmall](/help/destinations/destination-sdk/render-template-api.md)
+* [Omformningsfunktioner som stöds i Destinationen SDK](/help/destinations/destination-sdk/supported-functions.md)
