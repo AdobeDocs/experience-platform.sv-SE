@@ -2,9 +2,10 @@
 keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräcken;riktlinjer;gräns;
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
-source-git-commit: b36ace84acdb13b89deb6f77a02c298acade8d8e
+exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
+source-git-commit: b07a45e5bb9cae6e147ea790ebb77cb63f8790c1
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '385'
 ht-degree: 2%
 
 ---
@@ -30,7 +31,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
-| Antal identiteter i ett diagram | 150 | Identitetsdiagrammet uppdateras inte när gränsen har nåtts. |
+| Antal identiteter i ett diagram | 150 | Gränsen tillämpas på sandlådenivå. Identitetsdiagrammet uppdateras inte när gränsen har nåtts. |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
 | Antal diagram | Ingen | Det finns inga gränser för hur många identitetsdiagram du kan skapa. |
