@@ -5,9 +5,9 @@ seo-title: Advertising destinations overview
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Connect Adobe Experience Platform to a 3rd-party advertising platform (e.g. DSP, ad network, SSP) and share pseudonymous audiences to these platforms.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 0911a0a08c5571161acdafa6857095e275a50600
+source-git-commit: 275c3fae8b001154a702edbf4356d6a374f9a16f
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '234'
 ht-degree: 0%
 
 ---
@@ -24,10 +24,11 @@ När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till
 
 För närvarande stöder Experience Platform de reklamdestinationer som anges nedan.
 
-Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
+Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och -kategorier.
 
 ### Anslutningar
 
+* [(Beta) Kriterieanslutning](criteo.md)
 * [Google Display &amp; Video 360-anslutning](google-dv360.md)
 * [Google Ads-anslutning](google-ads-destination.md)
 * [Google Ad Manager-anslutning](google-ad-manager.md)
@@ -48,11 +49,11 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Facebook Pixel-tillägg](facebook-pixel.md)
 * [Flashtalk OneTag-tillägg](flashtalking.md)
 * [Google Ads-tillägg](google-ads-extension.md)
-* [Google-taggtillägg](gtag-advertising.md)
+* [Google Gtag-tillägg](gtag-advertising.md)
 * [linkedIn Insight Tag Extension](linkedin.md)
 * [Pinterest Conversion Tracking-tillägg](pinterest-extension.md)
 * [Tillägget twitter Universal Web Site Tag](twitter-uwt.md)
 
 ## Anslut till ett nytt annonsmål {#connect-destination}
 
-Om du vill skicka segment till reklamdestinationer för era kampanjer måste Platform först ansluta till destinationen. Se självstudiekursen [när du skapar mål](../../ui/connect-destination.md) för mer information om hur du konfigurerar ett nytt mål.
+Om du vill skicka segment till reklamdestinationer för era kampanjer måste Platform först ansluta till destinationen. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
