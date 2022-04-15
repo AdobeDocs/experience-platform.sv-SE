@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Attribution AI
 topic-legacy: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: ca390f8cba05148ba39a57734c5172265dcfa5ce
+source-git-commit: f27ddda4d5e6c33fa41e4ac503f80ddb1e39b09b
 workflow-type: tm+mt
-source-wordcount: '2227'
+source-wordcount: '2277'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ I datauppsättningsförhandsvisningen är ett procentvärde för datauppsättnin
 
 ### Välj en identitet {#identity}
 
-Om du vill att flera datauppsättningar ska kunna kopplas till varandra måste du välja en identitetstyp (kallas även&quot;id namespace&quot;) och ett identitetsvärde i det namnutrymmet. Om du har tilldelat mer än ett fält som en identitet i ditt schema under samma namnutrymme, visas alla tilldelade identitetsvärden i den listruta för identitet som föregås av namnutrymmet, till exempel `EMAIL (personalEmail.address)` eller `EMAIL (workEmail.address)`.
+Nu kan du koppla flera datauppsättningar till varandra baserat på identitetskartan (fältet). Du måste välja en identitetstyp (kallas även&quot;id namespace&quot;) och ett identitetsvärde i det namnutrymmet. Om du har tilldelat mer än ett fält som en identitet i ditt schema under samma namnutrymme, visas alla tilldelade identitetsvärden i den listruta för identitet som föregås av namnutrymmet, till exempel `EMAIL (personalEmail.address)` eller `EMAIL (workEmail.address)`.
 
 >[!IMPORTANT]
 >
@@ -92,11 +92,11 @@ Om du vill att flera datauppsättningar ska kunna kopplas till varandra måste d
 
 Markera en identitet genom att markera det understrukna värdet i identitetskolumnen. Välj en identitetsleverantör.
 
-![välj samma namnutrymme](./images/user-guide/identity-type.png)
+![välj samma namnutrymme](./images/user-guide/aai-identity-map.png)
 
 Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, en arbets- och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Det innebär att du måste välja `EMAIL (personalEmail.address)` som din identitet.
 
-![Datauppsättningsnyckeln är inte markerad](./images/user-guide/select-identity.png)
+![Datauppsättningsnyckeln är inte markerad](./images/user-guide/aai-identity-namespace.png)
 
 >[!NOTE]
 >
@@ -122,9 +122,9 @@ Det finns tre olika typer av indata som används för att definiera händelser:
 
 ### Definiera konverteringshändelser {#define-conversion-events}
 
-Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetypen genom att välja **Ange fältnamn** nedrullningsbar meny.
+Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetyp genom att välja datauppsättningen och fältet i **Välj en datauppsättning och ett fält** nedrullningsbar meny.
 
-![ja, listruta](./images/user-guide/conversion_event_2.png)
+![ja, listruta](./images/user-guide/define-conversion-events.png)
 
 När en händelse har valts visas en ny listruta till höger om händelsen. Den andra listrutan används för att ge ytterligare kontext till händelsen genom att åtgärder används. Standardåtgärden för den här konverteringshändelsen *exists* används.
 
@@ -133,6 +133,8 @@ När en händelse har valts visas en ny listruta till höger om händelsen. Den 
 >En sträng under *konverteringsnamn* uppdateras när du definierar händelsen.
 
 ![ingen listruta](./images/user-guide/conversion_event_1.png)
+
+Därefter kan du välja en kombinerad datauppsättning som genereras genom att kombinera alla indatauppsättningar i föregående steg. Du kan också välja en kolumn baserad på enskilda datauppsättningar i **Välj en datauppsättning och ett fält** nedrullningsbar meny.
 
 The **[!UICONTROL Add event]** och **[!UICONTROL Add Group]** -knappar används för att ytterligare definiera konverteringen. Beroende på vilken konvertering du definierar kan du behöva använda **[!UICONTROL Add event]** och **[!UICONTROL Add group]** knappar som ger ytterligare kontext.
 

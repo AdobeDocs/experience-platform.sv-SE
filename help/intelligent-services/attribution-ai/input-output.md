@@ -5,9 +5,9 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 3ea17aa57a5bfbc968f354b13d2ed107b2efa39b
 workflow-type: tm+mt
-source-wordcount: '2261'
+source-wordcount: '2385'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,14 @@ Följande dokument visar de olika indata och utdata som används i [!DNL Attribu
 Attribution AI arbetar genom att analysera följande datauppsättningar för att beräkna algoritmiska poäng:
 
 - Adobe Analytics datasets med [Källanslutning för analyser](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
-- Experience Event-datauppsättning
-- CEE-datauppsättning (Consumer Experience Event)
+- Experience Event-datauppsättningar (EE) i allmänhet från Adobe Experience Platform-schema
+- CEE-datauppsättningar (Consumer Experience Event)
 
-Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID. Mer information om hur du lägger till flera datauppsättningar finns på [Användarhandbok för Attribution AI](./user-guide.md#identity).
+Nu kan du lägga till flera datauppsättningar från olika källor baserat på **identitetskarta** (fält) om var och en av datauppsättningarna har samma identitetstyp (namnutrymme), t.ex. ett ECID. När du har valt en identitet och ett namnutrymme visas ID-kolumnens fullständighetsmått som anger den datavolym som sammanfogas. Mer information om hur du lägger till flera datauppsättningar finns på [Användarhandbok för Attribution AI](./user-guide.md#identity).
+
+Kanalinformationen mappas inte alltid som standard. I vissa fall, om mediaChannel (field) är tom, kan du inte&quot;fortsätta&quot; förrän du mappar ett fält till mediaChannel som det är en obligatorisk kolumn. Om kanalen identifieras i datauppsättningen mappas den som standard till mediaChannel. Andra kolumner som **medietyp** och **medieåtgärd** är fortfarande valfria.
+
+När du har mappat kanalfältet fortsätter du till steget &#39;Definiera händelser&#39; där du kan välja konverteringshändelser, kontakthändelser och välja specifika fält från enskilda datauppsättningar.
 
 >[!IMPORTANT]
 >
@@ -34,11 +38,9 @@ Mer information om hur du ställer in [!DNL Consumer Experience Event] (CEE), se
 
 Inte alla kolumner i [!DNL Consumer Experience Event] (CEE)-schema är obligatoriskt för Attribution AI.
 
->[!NOTE]
->
-> Följande nio kolumner är obligatoriska, ytterligare kolumner är valfria men rekommenderas/behövs om du vill använda samma data för andra Adobe-lösningar som till exempel [!DNL Customer AI] och [!DNL Journey AI].
+Du kan konfigurera kontaktpunkterna med hjälp av de fält som rekommenderas nedan i schemat eller den valda datauppsättningen.
 
-| Obligatoriska kolumner | Behövs för |
+| Rekommenderade kolumner | Behövs för |
 | --- | --- |
 | Primärt identitetsfält | Pekpunkt/konvertering |
 | Tidsstämpel | Pekpunkt/konvertering |
@@ -52,17 +54,11 @@ Inte alla kolumner i [!DNL Consumer Experience Event] (CEE)-schema är obligator
 
 Attributen körs vanligtvis på konverteringskolumner som order, inköp och utcheckningar under&quot;handel&quot;. Kolumnerna för&quot;channel&quot; och&quot;marketing&quot; används för att definiera kontaktytor för Attribution AI (till exempel `channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`). För optimala resultat och insikter rekommenderar vi att du inkluderar så många konverterings- och kontaktpunktskolumner som möjligt. Dessutom är du inte begränsad till bara de ovanstående kolumnerna. Du kan inkludera andra rekommenderade eller anpassade kolumner som en konvertering eller kontaktytpunktsdefinition.
 
+Experience event-datauppsättningar behöver inte uttryckligen ha Channel- och Marketing-mixins så länge som den kanal- eller kampanjinformation som är relevant för att konfigurera en kontaktyta finns i något av mixin- eller vidarekopplingsfälten.
+
 >[!TIP]
 >
 >Om du använder Adobe Analytics-data i ditt CEE-schema, lagras kontaktpunktsinformationen för Analytics vanligtvis i `channel.typeAtSource` (t.ex. `channel.typeAtSource = 'email'`).
-
-Kolumnerna nedan är inte obligatoriska, men vi rekommenderar att du inkluderar dem i ditt CEE-schema om du har tillgång till informationen.
-
-**Ytterligare rekommenderade kolumner:**
-- web.webReferer
-- web.webInteraction
-- web.webPageDetails
-- xdm:productListItems
 
 ## Historiska data {#data-requirements}
 
@@ -158,7 +154,6 @@ Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja
 Välj sedan ett fält i **[!UICONTROL Structure]** fönstret för användargränssnittet, **[!UICONTROL Field properties]** -fliken öppnas. Inom **[!UICONTROL Field properties]** är sökvägsfältet som mappar till dina Raw-resultat.
 
 ![Välj ett schema](./images/input-output/field_properties.png)
-
 
 ### Sammanlagda attribueringspoäng {#aggregated-attribution-scores}
 
