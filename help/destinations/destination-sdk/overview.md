@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt, baserat på valfritt dataformat och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 85b308b3f92a734fed0c885a574b71fa05684bb4
+source-git-commit: 7c6d0c8d4d1eea16f13359e9d7a895d767ad3c00
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '703'
 ht-degree: 1%
 
 ---
@@ -76,7 +76,7 @@ Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 2. [Begäran om att etablera en Experience Platform-sandlåda](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) och aktivera målredigeringsbehörigheten.
 3. [Bygg din integration](./configure-destination-instructions.md) följa produktdokumentationen.
 4. [Testa integreringen](./test-destination.md) följa produktdokumentationen.
-5. [Skicka in integreringen](./submit-destination.md) för Adobe granskning (standardsvarstiden är 5 arbetsdagar).
+5. [Skicka in integreringen](./submit-destination.md) för Adobe granskning (standardsvarstiden är fem arbetsdagar).
 6. Om du är en ISV- eller SI-utvecklare [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida på Experience League för destinationen.
 7. När Adobe har godkänt din integrering visas den i [Experience Platform-katalog](/help/destinations/catalog/overview.md).
 8. Om du vill uppdatera integreringen följer du samma process.

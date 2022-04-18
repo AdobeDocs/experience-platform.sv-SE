@@ -2,9 +2,9 @@
 description: På den här sidan finns all information du behöver för att skicka in en målversion som skapats med Destination SDK för granskning.
 title: Skicka för granskning av ett mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 85b308b3f92a734fed0c885a574b71fa05684bb4
+source-git-commit: 7c6d0c8d4d1eea16f13359e9d7a895d767ad3c00
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,14 @@ På den här sidan visas all information du behöver ange när du skickar eller 
 * (Endast för producerade integreringar) en PR-dokumentation (pull-begäran) enligt instruktionerna i [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md).
 * En bildfil som visas som logotyp för målkortet i Experience Platform-katalogen.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Adobe standardsvarstid för att granska begäranden om publicering är fem arbetsdagar.
+>* Adobe standardsvarstid för att granska begäranden om publicering är fem arbetsdagar.
+>
+>* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter ditt ursprungliga inskick, måste du skicka in en ny begäran om målpublicering när du har gjort uppdateringarna.
+>
+>* Även efter att målet finns i Experience Platform-katalogen måste du, om du behöver göra några uppdateringar av dina konfigurationer, skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna.
+
 
 Du hittar detaljerad information om varje objekt i avsnitten nedan:
 
