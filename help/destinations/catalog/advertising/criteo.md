@@ -1,14 +1,14 @@
 ---
-keywords: 'Reklam. villkor, '
+keywords: Reklam. villkor,
 title: Kriterieanslutning
 description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
-source-git-commit: a3263a322012a48f37cee6137054c7fcf3cdb8a2
+exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
+source-git-commit: 36da42b184450cfaf12b097f982234d628681430
 workflow-type: tm+mt
-source-wordcount: '747'
+source-wordcount: '761'
 ht-degree: 2%
 
 ---
-
 
 # (Beta) Kriterieanslutning
 
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Den här dokumentationssidan har skapats av Criteo. Detta är för närvarande en betaprodukt. Kontakta Criteo direkt om du har frågor eller uppdateringsfrågor [här](mailto:criteoTechnicalPartnerships@criteo.com).
+>Den här dokumentationssidan har skapats av Criteo. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Kontakta Criteo direkt om du har frågor eller uppdateringsfrågor [här](mailto:criteoTechnicalPartnerships@criteo.com).
 
 Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
 
@@ -24,7 +24,11 @@ Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter b
 
 * Du måste ha ett administratörsanvändarkonto aktiverat [Criteo Management Center](https://marketing.criteo.com).
 * Du behöver ditt Criteo Advertiser ID (fråga din Criteo-kontakt om du inte har detta ID).
-* Kriteriet godkänner endast SHA-256 och e-postmeddelanden med oformaterad text (som omvandlas till SHA-256 innan de skickas). Skicka inga PII-filer (personligt ID-nummer, till exempel namn på enskilda personer eller telefonnummer).
+
+## Begränsningar {#limitations}
+
+* Kriteriet stöder för närvarande inte borttagning av användare från målgrupper.
+* Endast tävlingens villkor godkänns [!DNL SHA-256]-hashed och normal text emails (att omvandlas till [!DNL SHA-256] före sändning). Skicka inga PII-filer (personligt ID-nummer, till exempel namn på enskilda personer eller telefonnummer).
 
 ![Förutsättningar](../../assets/catalog/advertising/criteo/prerequisites.png)
 
