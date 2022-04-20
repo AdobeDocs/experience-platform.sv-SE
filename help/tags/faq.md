@@ -1,9 +1,10 @@
 ---
 title: Felsökningsguide för taggar
 description: Få svar på vanliga frågor om taggar i Adobe Experience Platform.
-source-git-commit: dc957372e5e8c6f034f2e0cd0283e0e997501ba8
+exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
+source-git-commit: 2181ec15f2d868d1821a5f9926729d2796f2f298
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1042'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](./term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](./term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Det här dokumentet innehåller svar på vanliga frågor om taggar i Adobe Experience Platform.
 
@@ -20,15 +21,15 @@ Det här dokumentet innehåller svar på vanliga frågor om taggar i Adobe Exper
 
 Taggar är nästa generation av tagghanteringsfunktioner från Adobe, som är inbyggda i Adobe Experience Platform. Taggar gör att klienter kan:
 
-- Distribuera webbprodukter på klientsidan med integreringar som kallas *tillägg*
+- Distribuera webbprodukter på klientsidan med hjälp av integreringar som kallas *tillägg*
 - Leverera dynamiskt konfigurationer för att uppdatera klientimplementeringar i inbyggda mobilprogram
 - Inhämta, definiera, hantera och dela data konsekvent mellan marknadsförings- och annonsprodukter från andra leverantörer och från Adobe
 
-Taggar är ett avancerat kod- och konfigurationsleveranssystem som utvärderar villkor och utför åtgärder för att effektivt distribuera bibliotek och produkter på klientsidan. De erbjuder också en mycket skalbar metod för att hantera och bygga integreringar och har en robust uppsättning API:er för programmatisk interaktion.
+Taggar är ett avancerat kod- och konfigurationsleveranssystem som utvärderar villkor och utför åtgärder för att effektivt distribuera bibliotek och produkter på klientsidan. De har också en mycket skalbar metod för att hantera och bygga integreringar och har en robust uppsättning API:er för programmatisk interaktion.
 
 ## Hur mycket kostar taggar?
 
-Inga extra kostnader för taggar. De är tillgängliga för alla [!DNL Adobe Experience Cloud]-kunder.
+Inga extra kostnader för taggar. De är tillgängliga för alla [!DNL Adobe Experience Cloud] kund.
 
 ## Jag hörde att det finns plugins nu. Vad handlar det om?
 
@@ -91,20 +92,18 @@ De flesta Adobe-kunder använder moderna webbplattformsfunktioner i sina webblä
 
 ## Fungerar taggar i inbyggda mobilappar?
 
-Ja! Taggar har nu stöd för mobila egenskaper och konfigurationer för nya Adobe Experience Platform [SDK:er för mobiler](https://sdkdocs.com) för att implementera datainsamling och leverans i en intern mobilappsmiljö. Mer information finns i [dokumentationen](https://sdkdocs.com).
+Ja! Taggar har nu stöd för mobila egenskaper och konfigurationer för nya Adobe Experience Platform [SDK för mobiler](https://sdkdocs.com) för att implementera datainsamling och -leverans i en intern mobilappsmiljö. Besök [dokumentation](https://sdkdocs.com) om du vill veta mer.
 
 ## Varför står det att det uppstod ett fel när mitt konto lästes in?
 
-Om du får ett meddelande om att det uppstod ett fel när ditt konto lästes in innebär det att ditt konto inte tillhör någon produktprofil för taggar. Läs guiden [Hantera behörigheter](./ui/administration/manage-permissions.md) om du vill veta mer om hur du konfigurerar en produktprofil i Adobe Admin Console för att ge åtkomst till användargränssnittet i datainsamlingen.
+Om du får ett meddelande om att det uppstod ett fel när ditt konto lästes in innebär det att ditt konto inte tillhör någon produktprofil för taggar. Se guiden [hantera behörigheter](./ui/administration/manage-permissions.md) om du vill lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge åtkomst till användargränssnittet i datainsamlingen.
 
 ## Varför kan jag inte lägga till några egenskaper i gränssnittet?
 
 Om du inte kan skapa några nya egenskaper när du är inloggad i användargränssnittet för datainsamling innebär det att ditt konto inte tillhör en produktprofil som har behörigheten Hantera egenskaper.
 
-Se guiden [Hantera behörigheter](./ui/administration/manage-permissions.md) för att lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge rättigheten Hantera egenskaper. Mer information om de olika rättigheterna för taggar finns i översikten över [användarbehörigheter för taggar](./ui/administration/user-permissions.md).
+Se guiden [hantera behörigheter](./ui/administration/manage-permissions.md) om du vill lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge rättigheten Hantera egenskaper. Mer information om de olika rättigheterna för taggar finns i översikten på [användarbehörigheter för taggar](./ui/administration/user-permissions.md).
 
 ## Vad händer om jag har andra frågor?
 
-Om du har andra frågor kan du ställa dem i Adobe Community på sidan med huvudtaggar på [https://adobe.com/go/launchme](https://adobe.com/go/launchme).
-
-Taggar är bara ett exempel på var vår plattform är på väg: mer öppen, mer integrerad och som alltid är inriktad på att lyckas med kunderna.
+Om du har andra frågor kan du ställa på [Adobe Experience Platform Data Collection - communitysida](https://adobe.com/go/launchme) på Experience League eller gå med [officiell Slack-grupp för tagghanterare](http://join.connectionsdevs.chat).
