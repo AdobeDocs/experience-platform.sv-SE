@@ -6,9 +6,9 @@ seo-description: Experience Platform Debugger Summary Screen
 seo-title: Summary Tab
 uuid: 46b17eaa-b611-43cf-8c6a-67b2e9b9d940
 exl-id: 91234125-15c4-4111-9ee4-f3af093a3c4d
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: f94bba7eb4763230dae6794eb70a75f53a853c53
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '909'
 ht-degree: 1%
 
 ---
@@ -35,11 +35,11 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Version </p> </td> 
-   <td colname="col2"> <p>The <a href="https://experiencecloud.adobe.com/resources/help/en_US/sc/implement/appmeasure_mjs.html" format="html" scope="external"> AppMeasurement</a> version definierad för sidan </p> </td> 
+   <td colname="col2"> <p>The <a href="https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html" format="html" scope="external"> AppMeasurement</a> version definierad för sidan </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Besökarversion </p> </td> 
-   <td colname="col2"> <p>Versionen av <a href="https://experiencecloud.adobe.com/resources/help/en_US/sc/implement/visid_analytics.html" format="html" scope="external"> besökar-ID</a> bibliotek. </p> </td> 
+   <td colname="col2"> <p>Versionen av <a href="https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html" format="html" scope="external"> besökar-ID</a> bibliotek. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Sidnamn </p> </td> 
@@ -139,7 +139,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Version </p> </td> 
-   <td colname="col2"> <p>Versionen av<a href="https://experiencecloud.adobe.com/resources/help/en_US/sc/implement/visid_analytics.html" format="html" scope="external"> besökar-ID</a> bibliotek </p> </td> 
+   <td colname="col2"> <p>Versionen av<a href="https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html" format="html" scope="external"> besökar-ID</a> bibliotek </p> </td> 
   </tr> 
  </tbody> 
 </table>
