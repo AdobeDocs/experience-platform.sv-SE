@@ -3,9 +3,9 @@ title: (Beta) HTTP API-anslutning
 keywords: strömning,
 description: Med HTTP API-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 0d58445557490a5539279f55c34183994429c632
+source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1545'
 ht-degree: 0%
 
 ---
@@ -72,6 +72,36 @@ För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_clientcredentialstype"
+>title="Autentiseringstyp för klient"
+>abstract="Välj **Body Form Encoded** för att inkludera klient-ID och klienthemlighet i själva begäran eller **Grundläggande auktorisering** om du vill inkludera klient-ID och klienthemlighet i ett auktoriseringshuvud. Se exempel i dokumentationen."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_headers"
+>title="Sidhuvuden"
+>abstract="Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format: `header1:value1,header2:value2,...headerN:valueN`"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_endpoint"
+>title="HTTP-slutpunkt"
+>abstract="URL:en för HTTP-slutpunkten dit du vill skicka profildata."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_includesegmentnames"
+>title="Inkludera segmentnamn"
+>abstract="Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_includesegmenttimestamps"
+>title="Inkludera tidsstämplar för segment"
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_queryparameters"
+>title="Frågeparametrar"
+>abstract="Du kan också lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`."
 
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 

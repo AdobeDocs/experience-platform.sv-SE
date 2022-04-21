@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) [!DNL Azure Event Hubs] anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: b2ac26589527313ec9f3cf84126e3e23da6c7b83
+source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1360'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,16 @@ För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
 ### Anslutningsparametrar {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmentnames"
+>title="Inkludera segmentnamn"
+>abstract="Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
+>title="Inkludera tidsstämplar för segment"
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
