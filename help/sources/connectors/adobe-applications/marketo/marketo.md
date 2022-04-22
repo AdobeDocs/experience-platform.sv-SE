@@ -5,9 +5,9 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 21617c6ec364fc05d7b8b6d00daa68608d1ed318
+source-git-commit: ebf605bda32a7e587e6a6ca93a58669d16581ff9
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,9 @@ För att kunna ansluta [!DNL Marketo] till Platform måste du först hämta vär
 
 Se stegen som beskrivs i [Autentisera din Marketo-källanslutning](./marketo-auth.md) för att hämta dina inloggningsuppgifter.
 
-## Konfigurera Adobe Experience Cloud Audience Sharing
+## Ställ in organisationsmappning för Adobe
 
-Innan du kan skapa mappningsuppsättningar för [!DNL Marketo]måste du först konfigurera Adobe Experience Cloud Audience Sharing. Detaljerade anvisningar om hur du slutför detta finns i handboken på [konfigurera Adobe Experience Cloud Audience Sharing för [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html?lang=en).
+Innan du kan skapa mappningsuppsättningar för [!DNL Marketo]måste du först konfigurera Organisationsmappning för Adobe. Detaljerade anvisningar om hur du slutför detta finns i handboken på [konfigurera organisationsmappning för Adobe [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
 
 ## Experience Data Model (XDM)
 
