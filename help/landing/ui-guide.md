@@ -5,9 +5,9 @@ title: Experience Platform - översikt
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 8236806efae6a4f570c3dd2ef78e80184e189b84
+source-git-commit: 5fb7284760489fc526b5891d258c51ed20a2b095
 workflow-type: tm+mt
-source-wordcount: '1749'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -164,7 +164,7 @@ offera decisioningen är en programtjänst som är integrerad med Adobe Experien
 
 ### [!UICONTROL Administration]
 
-Användargränssnittet för plattformen (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den har hämtats under en ögonblicksbild. Gå till den här instrumentpanelen genom att välja **[!UICONTROL License usage]** i navigeringen. Mer information om kontrollpanelen för licensanvändning finns på [kontrollpanel för licensanvändning](license-usage-dashboard.md).
+Användargränssnittet för plattformen (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den har hämtats under en ögonblicksbild. Gå till den här instrumentpanelen genom att välja **[!UICONTROL License usage]** i navigeringen. Mer information om kontrollpanelen för licensanvändning finns på [kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md).
 
 >[!IMPORTANT]
 >
