@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 964bdaab8a90983f1e40b33720580110ac9e40fe
+source-git-commit: 4cc1c164ca7caa0b64859cf67a4cc206bc6404d7
 workflow-type: tm+mt
-source-wordcount: '1319'
+source-wordcount: '1304'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I den här självstudiekursen beskrivs stegen för att hämta data från en beta
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt [!DNL PayPal] grundläggande anslutnings-ID. Om du inte har det här ID:t kan du följa stegen för att [skapa en [!DNL PayPal] basanslutning](../create/payments/paypal.md) innan du försöker göra den här självstudiekursen.
+>För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med någon av följande betalningskällor på Platform:<ul><li>[[!DNL PayPal]](../create/payments/paypal.md)</li><li>[[!DNL Square]](../create/payments/square.md)</li></ul>
 
 ## Komma igång
 
