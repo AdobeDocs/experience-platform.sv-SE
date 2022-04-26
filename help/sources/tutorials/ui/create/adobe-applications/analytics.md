@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 06232d4b567ba1d6bed55226aaa08147510c4498
+source-git-commit: 2cb6803ecf56dd9a7d9614c72e3a1ff4e76ba966
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1603'
 ht-degree: 0%
 
 ---
@@ -46,11 +46,17 @@ Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe An
 
 ### Markera data
 
-The **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Report Suite]** för att börja skapa en källanslutning för Analytics Report Suite-data och sedan välja den Report Suite som du vill importera. Rapportsviter som inte kan markeras har redan importerats, antingen i den här sandlådan eller i en annan sandlåda. Välj **[!UICONTROL Next]** för att fortsätta.
+The **[!UICONTROL Analytics source add data]** innehåller en lista med [!DNL Analytics] skapa en källanslutning med rapportsvitdata.
+
+En rapportsvit kan bara importeras med ett enda aktivt dataflöde. Den kan inte användas i flera dataflöden. Dessutom måste en rapportserie tillhöra samma region som den plattformssandlådeinstans där källanslutningen skapas. En rapportsvit som inte kan markeras har redan importerats, antingen i den här sandlådan eller i en annan sandlåda.
+
+Flera ingående anslutningar kan göras för att överföra flera rapportsviter till samma sandlåda. Om rapportsviterna har olika scheman för variabler (t.ex. eVars eller events) bör de mappas till specifika fält i de anpassade fältgrupperna och datakonflikter undviks med [Dataprep](../../../../../data-prep/ui/mapping.md). Rapportsviter kan bara läggas till i en enda sandlåda.
 
 >[!NOTE]
 >
->Du kan skapa flera inbundna anslutningar för flera rapportsviter, men bara en Report Suite kan användas med Real-time Customer Data Platform åt gången.
+>Data från flera rapportsviter kan bara aktiveras för kunddataprofilen i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd, kan inte mappas till samma attribut i XDM.
+
+Skapa en [!DNL Analytics] källanslutning, välj en rapportserie och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![](../../../../images/tutorials/create/analytics/add-data.png)
 
@@ -60,7 +66,7 @@ The **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Report
 
 >[!IMPORTANT]
 >
->Data Prep-stöd för [!DNL Analytics] Källan finns för närvarande i betaversionen. Funktionen och dokumentationen kan komma att ändras.
+>Omformningar av dataförberedelser kan öka fördröjningen i det övergripande dataflödet. Den extra fördröjning som läggs till varierar beroende på komplexiteten i omvandlingslogiken.
 
 Innan du kan mappa [!DNL Analytics] data för XDM-målschemat måste du först välja om du använder ett standardschema eller ett anpassat schema.
 
