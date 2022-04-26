@@ -4,9 +4,9 @@ description: Lär dig hur du lägger till fält från befintliga fältgrupper in
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
+source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1176'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->De arbetsflöden som beskrivs i det här dokumentet är för närvarande betaversioner och din organisation har kanske inte åtkomst till dem än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+>De arbetsflöden som beskrivs i det här betadokumentet är nu allmänt tillgängliga i Adobe Experience Platform. Den senaste vägledningen om fältbaserade arbetsflöden i Schemaredigeraren finns i [gränssnittshandbok för scheman](./resources/schemas.md) i stället. Den här guiden kommer snart att tas bort.
 
 Adobe Experience Platform har en robust uppsättning standardiserade [fältgrupper](../schema/composition.md#field-group) för användning i XDM-scheman (Experience Data Model). Strukturen och semantiken bakom dessa fältgrupper är noga anpassade för att uppfylla ett stort antal användningsfall för segmentering och andra applikationer längre fram i kedjan av plattformar. Du kan också definiera egna fältgrupper för att tillgodose unika affärsbehov.
 

@@ -5,10 +5,9 @@ title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: c83b5616f46f6f7d752979fa66a66fad16f16102
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '977'
 ht-degree: 0%
 
 ---
@@ -17,69 +16,77 @@ ht-degree: 0%
 
 I Experience Data Model (XDM) definierar klasser de beteendeaspekter av data som ett schema ska innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
 
-Adobe tillhandahåller flera standard-XDM-klasser (&quot;core&quot;), inklusive [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent]. Förutom dessa huvudklasser kan du även skapa egna anpassade klasser som beskriver mer specifika användningsfall för organisationen.
+Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för XDM, inklusive [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent]. Förutom dessa huvudklasser kan du även skapa egna anpassade klasser som beskriver mer specifika användningsfall för organisationen.
 
 Det här dokumentet innehåller en översikt över hur du skapar, redigerar och hanterar anpassade klasser i Adobe Experience Platform-gränssnittet.
 
 ## Förutsättningar
 
-Handboken kräver en fungerande förståelse för XDM System. Se [XDM-översikten](../../home.md) för en introduktion till XDM-rollen i ekosystemet Experience Platform och [grunderna i schemakomposition](../../schema/composition.md) för att lära dig hur klasser bidrar till XDM-scheman.
+Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översikt](../../home.md) en introduktion till XDM:s roll i Experience Platform-ekosystemet, och [grunderna för schemakomposition](../../schema/composition.md) om du vill veta hur klasser bidrar till XDM-scheman.
 
-Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen om [disposition av ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
+Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen på [skapa ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 
 ## Skapa en ny klass {#create}
 
-Välj **[!UICONTROL Create schema]** på arbetsytan **[!UICONTROL Schemas]** och välj sedan **[!UICONTROL Browse]** i listrutan.
+I **[!UICONTROL Schemas]** arbetsyta, välja **[!UICONTROL Create schema]** väljer **[!UICONTROL Browse]** i listrutan.
 
 ![](../../images/ui/resources/classes/browse-classes.png)
 
-En dialogruta visas där du kan välja från en lista med tillgängliga klasser. Välj **[!UICONTROL Create new class]** högst upp i dialogrutan. Du kan sedan ge den nya klassen ett visningsnamn (ett kort, beskrivande, unikt och användarvänligt namn för klassen), en beskrivning och ett beteende för de data som schemat ska definiera (&quot;[!UICONTROL Record]&quot; eller &quot;[!UICONTROL Time-series]&quot;).
+En dialogruta visas där du kan välja från en lista med tillgängliga klasser. Välj **[!UICONTROL Create new class]**. Du kan sedan ge den nya klassen ett visningsnamn (ett kort, beskrivande, unikt och användarvänligt namn för klassen), en beskrivning och ett beteende för de data som ska definieras av schemat (&quot;[!UICONTROL Record]&quot; eller &quot;[!UICONTROL Time-series]&quot;).
 
 När du är klar väljer du **[!UICONTROL Assign class]**.
 
 ![](../../images/ui/resources/classes/class-details.png)
 
-[!DNL Schema Editor] visas och visar ett nytt schema på arbetsytan som är baserat på den anpassade klass som du just skapade. Eftersom inga fält har lagts till i klassen ännu innehåller schemat bara ett `_id`-fält, som representerar den systemgenererade unika identifieraren som automatiskt tillämpas på alla resurser i [!DNL Schema Registry].
+The [!DNL Schema Editor] visas, med ett nytt schema på arbetsytan som är baserat på den klass du just skapade. Eftersom inga fält har lagts till i klassen ännu innehåller schemat bara ett `_id` -fält, som representerar den systemgenererade unika identifieraren som automatiskt tillämpas på alla resurser i [!DNL Schema Registry].
 
 ![](../../images/ui/resources/classes/schema.png)
 
 >[!IMPORTANT]
 >
->När du skapar ett schema som implementerar en klass som definierats av din organisation, måste du komma ihåg att schemafältgrupper endast är tillgängliga för användning med kompatibla klasser. Eftersom klassen som du definierade är ny finns det inga kompatibla fältgrupper i listan i dialogrutan **[!UICONTROL Add field group]**. Du måste i stället [skapa nya fältgrupper](./field-groups.md#create) som kan användas med den klassen. Nästa gång du skapar ett schema som implementerar den nya klassen visas de fältgrupper som du har definierat och är tillgängliga för användning.
+>När du skapar ett schema som implementerar en klass som definierats av din organisation, måste du komma ihåg att schemafältgrupper endast är tillgängliga för användning med kompatibla klasser. Eftersom klassen du definierade är ny finns det inga kompatibla fältgrupper i listan **[!UICONTROL Add field group]** -dialogrutan. Istället måste du [skapa nya fältgrupper](./field-groups.md#create) för användning med den klassen. Nästa gång du skapar ett schema som implementerar den nya klassen visas de fältgrupper som du har definierat och är tillgängliga för användning.
 
 Nu kan du börja [lägga till fält i klassen](#add-fields), som delas av alla scheman som använder klassen.
 
 ## Redigera en befintlig klass {#edit}
 
+>[!IMPORTANT]
+>
+>Anpassade klasser som skapats efter den 30 april 2022 kan inte redigeras direkt, och en korrigering håller på att tas fram. Som tillfällig lösning kan du [skapa en anpassad fältgrupp](./field-groups.md) och återanvända den för varje schema som använder den anpassade klass som du vill utöka. Anpassade klasser som skapats före den 30 april 2022 påverkas inte av den här begränsningen.
+
 >[!NOTE]
 >
->Endast anpassade klasser som definierats av din organisation kan redigeras och anpassas helt. För huvudklasser som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom kontexten för enskilda scheman. Mer information finns i avsnittet [redigera visningsnamn för schemafält](./schemas.md#display-names).
+>Endast anpassade klasser som definierats av din organisation kan redigeras och anpassas helt. För huvudklasser som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom kontexten för enskilda scheman. Se avsnittet om [redigera visningsnamn för schemafält](./schemas.md#display-names) för mer information.
 >
->När en anpassad klass har sparats och använts vid dataanvändningen kan endast additiva ändringar göras i den därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
+>När en anpassad klass har sparats och använts vid dataanvändningen kan endast additiva ändringar göras i den därefter. Se [regler för schemautveckling](../../schema/composition.md#evolution) för mer information.
 
-Om du vill redigera en befintlig klass väljer du fliken **[!UICONTROL Browse]** och väljer sedan namnet på ett schema som använder den klass som du vill redigera.
+Om du vill redigera en befintlig klass väljer du **[!UICONTROL Browse]** och markera sedan namnet på ett schema som innehåller den klass som du vill redigera.
 
 ![](../../images/ui/resources/classes/select-for-edit.png)
 
 >[!TIP]
 >
->Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Mer information finns i guiden [utforska XDM-resurser](../explore.md).
+>Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Se guiden [utforska XDM-resurser](../explore.md) för mer information.
 
-[!DNL Schema Editor] visas med schemats struktur på arbetsytan. Nu kan du börja [lägga till fält i klassen](#add-fields).
+The [!DNL Schema Editor] visas med schemats struktur på arbetsytan. Nu kan du börja [lägga till fält i klassen](#add-fields).
 
 ![](../../images/ui/resources/classes/edit.png)
 
 ## Lägga till fält i en klass {#add-fields}
 
-När du har ett schema med en anpassad klass öppen i [!UICONTROL Schema Editor] kan du börja lägga till fält i klassen. Om du vill lägga till ett nytt fält väljer du ikonen **plus (+)** bredvid schemats namn.
+>[!IMPORTANT]
+>
+>Anpassade klasser som skapats efter den 30 april 2022 kan inte redigeras direkt, och en korrigering håller på att tas fram. Som tillfällig lösning kan du [skapa en anpassad fältgrupp](./field-groups.md) och återanvända den för varje schema som använder den anpassade klass som du vill utöka. Anpassade klasser som skapats före den 30 april 2022 påverkas inte av den här begränsningen.
+
+När du har ett schema som använder en anpassad klass öppen i [!UICONTROL Schema Editor]kan du börja lägga till fält i klassen. Om du vill lägga till ett nytt fält väljer du **plus (+)** -ikon bredvid schemats namn.
 
 ![](../../images/ui/resources/classes/add-field.png)
 
 >[!IMPORTANT]
 >
->Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan visa användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
+>Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan se användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
 
-En **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen.
+A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen.
 
 Fortsätt att lägga till så många fält som behövs för klassen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och klassen.
 
@@ -89,10 +96,10 @@ Om du tidigare har skapat scheman som använder den här klassen visas de nya f�
 
 ## Ändra klassen för ett schema {#schema}
 
-Du kan ändra schemaklassen när som helst under den inledande skapandeprocessen innan det har sparats. Mer information finns i guiden [skapa och redigera scheman](./schemas.md#change-class).
+Du kan ändra schemaklassen när som helst under den inledande skapandeprocessen innan det har sparats. Se guiden [skapa och redigera scheman](./schemas.md#change-class) för mer information.
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet för plattformen. Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] finns i översikten för arbetsytan [[!UICONTROL Schemas]](../overview.md).
+I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet för plattformen. Mer information om funktionerna i [!UICONTROL Schemas] arbetsytan, se [[!UICONTROL Schemas] arbetsyta - översikt](../overview.md).
 
-Mer information om hur du hanterar klasser med hjälp av API:t [!DNL Schema Registry] finns i [handboken om klassers slutpunkter](../../api/classes.md).
+Så här hanterar du klasser med [!DNL Schema Registry] API, se [klassers slutpunktshandbok](../../api/classes.md).
