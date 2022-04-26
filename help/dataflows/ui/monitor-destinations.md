@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 935bbbc842ce5e2f42ee92c525255c9708bf34c2
+source-git-commit: 1bb3db196ed603a5a9ba0dcf9d54419d36a6ed51
 workflow-type: tm+mt
-source-wordcount: '3198'
+source-wordcount: '3042'
 ht-degree: 0%
 
 ---
@@ -164,29 +164,6 @@ På informationssidan för ett dataflöde visas mer specifik information om data
 På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både de misslyckade och exkluderade identiteterna visas, inklusive felkoden och beskrivningen. Som standard visas de misslyckade identiteterna i listan. Om du vill visa utelämnade identiteter väljer du **[!UICONTROL Identities excluded]** växla.
 
 ![Dataflödesposter för batchdestinationer](../assets/ui/monitor-destinations/dataflow-records-batch.png)
-
-## Kontrollpanel för segmentjobb {#monitoring-segment-jobs-dashboard}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_segment_jobs"
->title="Segmentjobb"
->abstract="Vyn Segmentjobb innehåller information om utvärderings- och exportjobb för alla segment."
-
-Så här öppnar du [!UICONTROL Segment Jobs] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Segment Jobs]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mätvärden och information om segmentutvärderingen och exportjobben.
-
-![Kontrollpanel för segmentjobbövervakning](../assets/ui/monitor-destinations/dashboard-segment-jobs.png)
-
-Använd [!UICONTROL Segment Jobs] Instrumentpanelen för att ta reda på om profilutvärdering och -export sker i tid och utan några undantag, så att de underordnade tjänsterna för målaktivering kan ha de senaste utvärderade profildata.
-
-Följande mått är tillgängliga för segmentjobb:
-
-| Mått | Beskrivning |
----------|----------|
-| **[!UICONTROL Segment job]** | Anger segmentjobbets namn. |
-| **[!UICONTROL Type]** | Anger typen av segmentjobb - export eller utvärdering. Observera att i båda fallen utvärderas eller exporteras segmentjobbet *alla* segment som tillhör en organisation. |
-| **[!UICONTROL Job start]** | Datum och tid då segmentjobbet startades. |
-| **[!UICONTROL Job end]** | Datum och tid då segmentjobbet slutfördes. |
-| **[!UICONTROL Status]** | Status för det slutförda jobbet - slutfört eller misslyckat. |
 
 ## Kontrollpanel för målplatser {#monitoring-destinations-dashboard}
 

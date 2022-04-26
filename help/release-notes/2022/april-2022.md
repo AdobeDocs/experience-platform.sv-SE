@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
-source-git-commit: 4bbf7642a456f36ea0fe7fc1c8d68ad37351ff4c
+source-git-commit: fe30444fb2d11c38433c73d88ee4c8e9a32bdff8
 workflow-type: tm+mt
-source-wordcount: '829'
-ht-degree: 0%
+source-wordcount: '967'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +14,22 @@ ht-degree: 0%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Dataflöden](#dataflows)
 - [Experience Data Model (XDM)](#xdm)
+
+## Dataflöden {#dataflows}
+
+I Platform hämtas data från många olika källor, analyseras i systemet och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
+
+Dataflöden är en representation av jobb som flyttar data över plattformen. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av identitetstjänsten och kundprofilen i realtid innan de aktiveras för destinationerna.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Kontrollpanel för segment | Nu kan du använda kontrollpanelen för övervakning för att övervaka dataflöden för segment. Läs guiden om du vill veta mer [övervaka segment i användargränssnittet](../../dataflows/ui/monitor-segments.md) |
+
+Mer allmän information om dataflöden finns i [dataflödesöversikt](../../dataflows/home.md). Mer information om segmentering finns i [segmenteringsöversikt](../../segmentation/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -70,3 +85,4 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+
