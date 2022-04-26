@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
-source-git-commit: fe30444fb2d11c38433c73d88ee4c8e9a32bdff8
+source-git-commit: d09eb2e71a5ebce31aeaf8560c20f0c8595f5d19
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '1395'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,10 @@ ht-degree: 1%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Dataflöden](#dataflows)
+- [[!DNL Data Prep]](#data-prep)
 - [Experience Data Model (XDM)](#xdm)
+- [Real-time Customer Data Platform B2B Edition](#B2B)
+- [Källor](#sources)
 
 ## Dataflöden {#dataflows}
 
@@ -30,6 +33,19 @@ Dataflöden är en representation av jobb som flyttar data över plattformen. De
 | Kontrollpanel för segment | Nu kan du använda kontrollpanelen för övervakning för att övervaka dataflöden för segment. Läs guiden om du vill veta mer [övervaka segment i användargränssnittet](../../dataflows/ui/monitor-segments.md) |
 
 Mer allmän information om dataflöden finns i [dataflödesöversikt](../../dataflows/home.md). Mer information om segmentering finns i [segmenteringsöversikt](../../segmentation/home.md).
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för Adobe Analytics | Adobe Analytics-källan har nu stöd för Data Prep-funktioner, vilket gör att du kan mappa data från Analytics-rapportsviten till ett mål-XDM-schema när du skapar ett dataflöde. Se självstudiekursen om [skapa en anslutning till en Analytics-källa](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för mer information. |
+| Stöd för import av befintliga mappningsregler | Nu kan du importera mappningsregler från ett befintligt dataflöde för att snabba upp dataflödeskonfigurationerna och begränsa antalet fel. Se självstudiekursen om [importera befintliga mappningsregler](../../data-prep/ui/mapping.md) för mer information. |
+
+Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -86,3 +102,30 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
+### Real-time Customer Data Platform B2B Edition {#B2B}
+
+CDP B2B Edition i realtid bygger på Real-time Customer Data Platform (Real-time CDP) och är särskilt framtagen för marknadsförare som använder en modell för business-to-business-service. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för `isDeleted` funktionalitet | Alla [!DNL Marketo] datauppsättningar förutom `Activities` har nu stöd för `isDeleted` mappning. Den nya mappningen läggs automatiskt till i dina befintliga B2B-dataflöden. Du kan använda `isDeleted` mappning för att filtrera bort poster som har tagits bort så att data i [!DNL Data Lake] är konsekvent med källdata. Se [[!DNL Marketo] guide för mappningsfält](../../sources/connectors/adobe-applications/mapping/marketo.md) för mer information om `isDeleted`. |
+
+Mer information om Real-time Customer Data Platform B2B Edition finns i [B2B - översikt](../../rtcdp/b2b-overview.md).
+
+## Källor {#sources}
+
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+
+Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för [!DNL OneTrust Integration] | Nu kan du använda [!DNL OneTrust Integration] källa för att hämta data om samtycke och preferenser från din [!DNL OneTrust] konto till plattform. Läs dokumentationen om [skapa [!DNL OneTrust Integration] källanslutning](../../sources/connectors/consent-and-preferences/onetrust.md) för mer information. |
+| Stöd för [!DNL Square] | Nu kan du använda [!DNL Square] källa att importera betalningsdata från [!DNL Square] konto till plattform. |
+| Stöd för att ta bort kundattributsdataflöden | Nu kan du ta bort dataflöden som har skapats med källkopplingen för kundattribut. |
+
+Mer information om källor finns i [källöversikt](../../sources/home.md).
