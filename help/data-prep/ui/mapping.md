@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv 
 title: Användargränssnittshandbok för dataprep
 description: Det här dokumentet innehåller anvisningar om hur du använder förinställningsfunktioner för data i plattformsgränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: 4cce36ef21ad7490941eecff3933ff0459a0425c
+source-git-commit: edef8843c03282774991f30220504ece97af52cf
 workflow-type: tm+mt
-source-wordcount: '1564'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---
@@ -168,6 +168,34 @@ The **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan inn
 Du kan lägga till fält, funktioner och operatorer manuellt med uttrycksredigeraren i mitten. Välj redigeraren för att börja skapa ett uttryck. När du är klar väljer du **[!UICONTROL Save]** för att fortsätta.
 
 ![create-calculate-field](../images/ui/mapping/create-calculated-field.png)
+
+### Importera mappning {#import}
+
+Du kan återanvända mappningen av ett befintligt dataflöde för att minska den manuella konfigurationstiden för dataimporten och begränsa antalet misstag. Välj **[!UICONTROL Import mapping]** för att återanvända en befintlig mappning.
+
+![import-mappning](../images/ui/mapping/import-mapping.png)
+
+The [!UICONTROL Import mapping] visas så att du får en lista över de dataflöden du kan välja mellan.
+
+Välj förhandsgranskningsikonen om du vill förhandsgranska mappningen av det dataflöde du valde.
+
+![list-mapping](../images/ui/mapping/list-mapping.png)
+
+I förhandsgranskningsfönstret kan du granska befintlig mappning innan du importerar till dataflödet. När du har verifierat mappningen kan du välja **[!UICONTROL Back]** om du vill återgå till listan med dataflöden och inspektera en annan uppsättning mappningar, eller så kan du välja **[!UICONTROL Select]** för att fortsätta.
+
+![preview-mapping](../images/ui/mapping/preview-mapping.png)
+
+Du kan också välja den mappning som du vill importera i listan i fönstret med dataflöden. Markera det dataflöde som innehåller den mappning som du vill importera och välj sedan **[!UICONTROL Select]** för att fortsätta.
+
+![select-mapping](../images/ui/mapping/select-mapping.png)
+
+Gränssnittet uppdateras med den mappning som du importerade.
+
+>[!NOTE]
+>
+>Alla befintliga mappningsuppsättningar som du anger eller ML-mappningsrekommendationer för ersätts av mappningen som du importerade från ett befintligt dataflöde.
+
+![mappning-importerad](../images/ui/mapping/mapping-imported.png)
 
 Välj **[!UICONTROL Preview data]** för att se mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
 
