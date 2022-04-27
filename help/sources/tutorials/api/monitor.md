@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;övervaka dataflöden;flödestjänst api;Flödestjänst
 solution: Experience Platform
-title: Övervaka dataflöden med API:t för flödestjänsten
+title: Övervaka källfilsflöden med API:t för flödestjänsten
 topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med API:t för Flow Service.
 exl-id: 5b7d1aa4-5e6d-48f4-82bd-5348dc0e890d
-source-git-commit: 95f455bd03b7baefe0133a9818c9d048f36f9d38
+source-git-commit: 9727f7b0e8eaae92c85f102e5e7bea018a2ee6de
 workflow-type: tm+mt
-source-wordcount: '410'
+source-wordcount: '412'
 ht-degree: 1%
 
 ---
 
-# Övervaka dataflöden med API:t för Flow Service
+# Övervaka källornas dataflöden med API:t för Flow Service
 
 I den här självstudiekursen beskrivs stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
