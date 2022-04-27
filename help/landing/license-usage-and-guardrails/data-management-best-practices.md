@@ -2,9 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättigande;licensiering;bästa praxis
 title: Metodtips för tillstånd för datahantering
 description: I det här dokumentet beskrivs de bästa sätten att följa och de verktyg du kan använda för att hantera dina licensrättigheter bättre med Adobe Experience Platform.
-source-git-commit: 3bac35ba5f6e9cde6c1324b11220c523daa1f8cb
+exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
+source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2586'
 ht-degree: 0%
 
 ---
@@ -193,7 +194,7 @@ I följande tabell visas en lista över tillgängliga funktioner för att bättr
 | [Adobe Analytics Data Prep-filter](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | Använd [!DNL Kafka] filter för att utesluta onödiga data från inmatning |
 | [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd anslutningsfilter för Audience Manager-källa för att exkludera onödiga data från intag |
 | [Tillåt SDK-datafilter](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) | Använd Tillåt-filter för att exkludera onödiga data från intag |
-| [Datafilter på serversidan](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en-better-data-governance) | Använd [!DNL Kafka] filter för att utesluta onödiga data från intag.  Läs dokumentationen om [händelser och villkor](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)) för ytterligare information. |
+| [Datafilter för vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) | Använd serversidan [!DNL Kafka] filter för att utesluta onödiga data från intag.  Läs dokumentationen om [taggregler](../../tags/ui/managing-resources/rules.md) för ytterligare information. |
 | [Användargränssnitt för kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | Visa en ögonblicksbild av din organisations licensrelaterade data för Experience Platform |
 | [Rapport-API för datasammanslagning](../../profile/tutorials/dataset-overlap-report.md) | Visar de datauppsättningar som ger mest för er adresserbara publik |
 | [Okänt API för profilrapport](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) | Visar effekten av pseudonym TTL för olika tidströsklar |
