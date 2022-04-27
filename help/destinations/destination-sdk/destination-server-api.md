@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten "/authoring/destination-servers". Servern och mallspecifikationerna för ditt mål kan konfigureras i Adobe Experience Platform Destination SDK via den gemensamma slutpunkten `/authoring/destination-servers`.
 title: API-åtgärder för målserverns slutpunkt
 exl-id: a144b0fb-d34f-42d1-912b-8576296e59d2
-source-git-commit: 6bdb7a3ce6e9f37070dceff8b0226bd6cd53038b
+source-git-commit: ce63d602e768d04ba7fdc6aded34869682ee7206
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1382'
 ht-degree: 1%
 
 ---
@@ -82,11 +82,13 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserver
 
 ## Skapa konfiguration för en filbaserad målserver {#create-file-based}
 
-### Exempel: skapa konfiguration för en SFTP-målserver
-
 >[!IMPORTANT]
 >
 >Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+
+### Exempelkonfiguration för SFTP-målserver {#sftp-server-sample}
+
++++Visa ett exempel för [!DNL SFTP] målserverkonfiguration
 
 Du kan skapa en ny konfiguration för SFTP-målservern genom att göra en POST-förfrågan till `/authoring/destination-servers` slutpunkt.
 
@@ -192,11 +194,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserverkonfigurationen.
 +++
 
-+++Exempel: skapa konfiguration för en Amazon S3-målserver
+### [!DNL Amazon S3] exempelkonfiguration för målserver {#s3-server-sample}
 
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
++++Visa ett exempel för [!DNL Amazon S3] målserverkonfiguration
 
 Du kan skapa en ny Amazon S3-målserverkonfiguration genom att göra en POST-förfrågan till `/authoring/destination-servers` slutpunkt.
 
@@ -303,16 +303,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserverkonfigurationen.
 +++
 
-+++Exempel: skapa konfiguration för en Azure Blob-målserver
+### [!DNL Azure Blob] exempelkonfiguration för målserver {#blob-server-sample}
 
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
++++Visa ett exempel för [!DNL Azure Blob] målserverkonfiguration
 
 Du kan skapa en ny Azure Blob-målserverkonfiguration genom att göra en POST-förfrågan till `/authoring/destination-servers` slutpunkt.
 
 **API-format**
-
 
 ```http
 POST /authoring/destination-servers
@@ -415,16 +412,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserverkonfigurationen.
 +++
 
-+++Exempel: skapa konfiguration för en ADLS-målserver (Azure Data Lake Storage)
+### [!DNL Azure Data Lake Storage] exempelkonfiguration för målserver {#adls-server-sample}
 
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
++++Visa ett exempel för [!DNL Azure Data Lake Storage (ADLS)] målserverkonfiguration
 
 Du kan skapa en ny ADLS-målserverkonfiguration genom att göra en POST-förfrågan till `/authoring/destination-servers` slutpunkt.
 
 **API-format**
-
 
 ```http
 POST /authoring/destination-servers
@@ -523,18 +517,15 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserverkonfigurationen.
 +++
 
-+++Exempel: skapa konfiguration för en DLZ-målserver (Data Landing Zone)
+### [!DNL Data Landing Zone] (DLZ) exempelkonfiguration för målserver {#dlz-server-sample}
 
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
++++Visa ett exempel för [!DNL Data Landing Zone (DLZ)] målserverkonfiguration
 
-[!DNL Data Landing Zone] ([!DNL DLZ]) är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till plattformen. Se
+[!DNL Data Landing Zone] ([!DNL DLZ]) är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till plattformen.
 
 Du kan skapa en ny konfiguration för en DLZ-målserver genom att göra en POST-förfrågan till `/authoring/destination-servers` slutpunkt.
 
 **API-format**
-
 
 ```http
 POST /authoring/destination-servers
@@ -640,7 +631,6 @@ Du kan hämta en lista över alla målserverkonfigurationer för din IMS-organis
 
 **API-format**
 
-
 ```http
 GET /authoring/destination-servers
 ```
@@ -741,7 +731,6 @@ Du kan uppdatera en befintlig målserverkonfiguration genom att göra en PUT-beg
 
 **API-format**
 
-
 ```http
 PUT /authoring/destination-servers/{INSTANCE_ID}
 ```
@@ -788,7 +777,6 @@ Du kan hämta detaljerad information om en viss målserverkonfiguration genom at
 
 **API-format**
 
-
 ```http
 GET /authoring/destination-servers/{INSTANCE_ID}
 ```
@@ -831,7 +819,6 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
    }
 }
 ```
-
 
 ## Ta bort en specifik målserverkonfiguration {#delete}
 
