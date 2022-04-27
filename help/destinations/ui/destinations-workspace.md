@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
+source-git-commit: b275621d9c6552327e0e55c00c8fcf0397088168
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '1049'
 ht-degree: 0%
 
 ---
@@ -94,6 +94,7 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 > * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Knappen Aktivera segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate segments]**om du vill skicka segment till det målet.
 > * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Knappen Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**knapp till [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
 > * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Visa i övervakningsknapp ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**om du vill visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Prenumerera på aviseringar ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på aviseringar om destinationer i sitt sammanhang](alerts.md) om du vill ha detaljerad information om aviseringar om måldataflöde.
 
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)

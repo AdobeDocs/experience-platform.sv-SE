@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 73bb1d21e70644ffef50b08f22048d0937a6a729
+source-git-commit: d5f83f9d99789afba44e26400d0cea8a72946d7a
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '758'
 ht-degree: 1%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 1%
    * [Redigera aktiveringsdataflöden](./ui/edit-activation.md)
    * [Ta bort mål](./ui/delete-destinations.md)
    * [Övervaka dataflöden](./ui/monitor-dataflows.md)
+   * [Prenumerera på aviseringar om destinationer i sitt sammanhang](ui/alerts.md)
 * Målkatalog {#catalog}
    * [Översikt över destinationskatalogen](./catalog/overview.md)
    * Adobe destinationer{#adobe}
