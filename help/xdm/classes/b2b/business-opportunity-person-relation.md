@@ -2,10 +2,10 @@
 title: XDM - personrelationsklass för affärsmöjlighet
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Opportunity Person Relation i Experience Data Model (XDM).
 exl-id: 7be193d2-52eb-4b28-953b-5e0fc21d8f93
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
 workflow-type: tm+mt
-source-wordcount: '258'
-ht-degree: 2%
+source-wordcount: '343'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 [!UICONTROL XDM Business Opportunity Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en person som är kopplad till en affärsmöjlighet.
 
-![](../../images/classes/b2b/business-opportunity-person-relation.png)
+![Strukturen för XDM-klassen Affärsmöjlighet, som den visas i användargränssnittet](../../images/classes/b2b/business-opportunity-person-relation.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
@@ -26,9 +26,10 @@ ht-degree: 2%
 | `opportunityPersonKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | En sammansatt identifierare för relationen affärsmöjlighet-person. |
 | `personKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | En sammansatt identifierare för personen i affärsmöjlighetsrelationen. |
 | `_id` | Sträng | En unik identifierare för posten. Det här är ett systemgenererat värde som är skilt från de andra ID-fälten som fångats av klassen. |
+| `isDeleted` | Boolean | Anger om den här marknadsföringslistentiteten har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
+| `isPrimary` | Boolean | Anger om personen är den primära kontakten för affärsmöjligheten. |
 | `opportunityID` | Sträng | En unik identifierare för affärsmöjligheten i affärsmöjlighetsrelationen. |
 | `opportunityPersonID` | Sträng | En unik identifierare för relationen affärsmöjlighet-person |
-| `isPrimary` | Boolean | Anger om personen är den primära kontakten för affärsmöjligheten. |
 | `personID` | Sträng | En unik identifierare för personen i affärsmöjlighetsrelationen. |
 | `personRole` | Sträng | Personens roll i relationen affärsmöjlighet-person. |
 

@@ -2,10 +2,10 @@
 title: Schemafältgrupp för XDM-affärspersonsinformation
 description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Person Details.
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
 workflow-type: tm+mt
-source-wordcount: '516'
-ht-degree: 3%
+source-wordcount: '584'
+ht-degree: 2%
 
 ---
 
@@ -53,6 +53,7 @@ ht-degree: 3%
 | `workEmail` | [E-postadress](../../data-types/email-address.md) | Personens e-postadress till arbetet. |
 | `workPhone` | [Telefonnummer](../../data-types/phone-number.md) | Personens telefonnummer till arbetet. |
 | `identityMap` | Mappa | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas på rätt sätt [Kundprofil i realtid](../../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
+| `isDeleted` | Boolean | Anger om den här personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 | `organizations` | Array med strängar | En lista med organisationsnamn där personen arbetar. |
 
 {style=&quot;table-layout:auto&quot;}

@@ -2,10 +2,10 @@
 title: XDM Business Account Person Relationsklass
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Account Person Relation i Experience Data Model (XDM).
 exl-id: d51abe9b-d936-4c84-96e2-35a81ca6b67f
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
 workflow-type: tm+mt
-source-wordcount: '325'
-ht-degree: 2%
+source-wordcount: '420'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 [!UICONTROL XDM Business Account Person Relation] är en XDM-klass (Standard Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en person som är kopplad till ett företagskonto.
 
-![](../../images/classes/b2b/business-account-person-relation.png)
+![Strukturen för klassen XDM Business Account Person Relation så som den visas i användargränssnittet](../../images/classes/b2b/business-account-person-relation.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
@@ -30,12 +30,14 @@ ht-degree: 2%
 | `accountPersonID` | Sträng | En unik identifierare för relationsenheten konto-person. |
 | `currencyCode` | Sträng | ISO 4217-valutakoden som används för relationen mellan kontot och personen. |
 | `isActive` | Boolean | Anger om relationen mellan kontot och personen är aktiv. |
+| `isDeleted` | Boolean | Anger om den här förhållandet mellan konto och person har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 | `isDirect` | Boolean | Anger om detta är en direkt relation mellan kontot och personen. |
 | `isPrimary` | Boolean | Anger om personen är den primära kontakten för det här kontot. |
 | `personID` | Sträng | En unik identifierare för personen i relationen konto-person. |
-| `personRole` | Sträng | Personens roll i relationen konto-person. |
+| `personRoles` | Array med strängar | Visar rollerna för personen i relationen konto-person. |
 | `relationEndDate` | DateTime | Datumet då relationen mellan kontot och personen avslutades. |
 | `relationStartDate` | DateTime | Det datum då relationen mellan kontot och personen startades. |
+| `relationshipSource` | Sträng | Källan för konto-person-relationen. |
 
 {style=&quot;table-layout:auto&quot;}
 

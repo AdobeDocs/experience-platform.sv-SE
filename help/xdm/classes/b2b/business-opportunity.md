@@ -2,10 +2,10 @@
 title: XDM Business Opportunity Class
 description: Det här dokumentet innehåller en översikt över klassen XDM Business Opportunity i Experience Data Model (XDM).
 exl-id: d816b0f9-fd37-45da-aa55-247f7f662da0
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
 workflow-type: tm+mt
-source-wordcount: '220'
-ht-degree: 3%
+source-wordcount: '304'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 [!UICONTROL XDM Business Opportunity] är en XDM-klass (Experience Data Model) som fångar upp de minsta nödvändiga egenskaperna för en affärsmöjlighet.
 
-![](../../images/classes/b2b/business-opportunity.png)
+![Strukturen för XDM-klassen för affärsmöjligheter så som den visas i användargränssnittet](../../images/classes/b2b/business-opportunity.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
@@ -26,6 +26,7 @@ ht-degree: 3%
 | `opportunityKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | En sammansatt identifierare för affärsmöjlighetsenheten. |
 | `_id` | Sträng | En unik identifierare för posten. Detta är ett systemgenererat värde som är skilt från `opportunityID`. |
 | `accountID` | Sträng | Ett unikt ID för kontot som affärsmöjligheten är kopplad till. |
+| `isDeleted` | Boolean | Anger om den här marknadsföringslistentiteten har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 | `opportunityDescription` | Sträng | En beskrivning av affärsmöjligheten. |
 | `opportunityID` | Sträng | Ett unikt ID för affärsmöjlighetsenheten. |
 | `opportunityName` | Sträng | Namnet på affärsmöjligheten. |
