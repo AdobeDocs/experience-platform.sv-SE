@@ -6,14 +6,22 @@ description: Stegvisa instruktioner om hur du använder API:t för Flow Service 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: a8a8b3b9e4fdae11be95d2fa80abc0f356eff345
+source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
 workflow-type: tm+mt
-source-wordcount: '3083'
+source-wordcount: '3119'
 ht-degree: 0%
 
 ---
 
 # Anslut till gruppmål och aktivera data med API:t för Flow Service
+
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions).
+>
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+>
+>Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 I den här självstudien visas hur du använder API:t för Flow Service för att skapa en batch [molnlagring](../catalog/cloud-storage/overview.md) eller [e-postmarknadsföringsmål](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya målet och exportera data till det nya målet via CSV-filer.
 

@@ -6,14 +6,18 @@ seo-title: Activation overview
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform till olika typer av destinationer.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform to various types of destinations.
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: f4ae6831569e8a5b458c42f76810212174f04811
+source-git-commit: 5240e0db96a5072ab02a4c8b52e9c2d3dd4d6aa0
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
 
 # Aktiveringsöversikt
+
+>[!IMPORTANT]
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Adobe Experience Platform har stöd för ett stort antal destinationer. Arbetsflödet för målgruppsaktivering varierar mellan olika mål, beroende på vilken typ av målgruppsdata de stöder och frekvensen för dataexporten.
 

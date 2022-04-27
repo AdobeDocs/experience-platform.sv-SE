@@ -4,14 +4,18 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ansluta till ett mål i Adobe Experience Platform
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: b275621d9c6552327e0e55c00c8fcf0397088168
+source-git-commit: 729c0724c7af88bb69c9d68a45d58c3575c90828
 workflow-type: tm+mt
-source-wordcount: '354'
+source-wordcount: '380'
 ht-degree: 0%
 
 ---
 
 # Skapa en ny målanslutning
+
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 ## Översikt {#overview}
 

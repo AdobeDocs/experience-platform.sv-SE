@@ -6,9 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
 workflow-type: tm+mt
-source-wordcount: '2016'
+source-wordcount: '2052'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,14 @@ ht-degree: 0%
 >[!NOTE]
 >
 >The [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] mål i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions).
+>
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+>
+>Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md) eller [Azure Event Hubs](../catalog/cloud-storage/azure-event-hubs.md)), skapa ett dataflöde till det nya målet och aktivera data till det nya målet.
 
@@ -608,15 +616,15 @@ Klicka [här](../assets/api/streaming-destination/DestinationPostmanCollection.z
 
 Varje samling innehåller nödvändiga begäranden och miljövariabler för [!DNL AWS Kinesis]och [!DNL Azure Event Hub], respektive.
 
-### Så här använder du Postman-samlingarna
+### Så här använder du Postman-samlingar
 
 För att ansluta till målen med hjälp av den bifogade [!DNL Postman] samlingar, följ dessa steg:
 
 * Hämta och installera [!DNL Postman];
 * [Hämta](../assets/api/streaming-destination/DestinationPostmanCollection.zip) och packa upp de bifogade samlingarna,
-* Importera samlingarna från deras motsvarande mappar till Postman.
+* Importera samlingarna från deras motsvarande mappar till Postman,
 * Fyll i miljövariablerna enligt instruktionerna i denna artikel.
-* Kör [!DNL API] begäran från Postman, baserat på instruktionerna i den här artikeln.
+* Kör [!DNL API] förfrågningar från Postman, baserat på instruktionerna i den här artikeln.
 
 ## Nästa steg
 

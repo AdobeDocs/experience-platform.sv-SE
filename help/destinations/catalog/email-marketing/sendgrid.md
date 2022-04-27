@@ -2,13 +2,13 @@
 keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
-source-git-commit: ccbc633bfce8f4f66577b50064c28cfc26cb6dca
+exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '1395'
+source-wordcount: '1446'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL SendGrid] anslutning
 
@@ -74,6 +74,11 @@ Marknadsföringsteam som använder SendGrid kan skapa en e-postlista i SendGrid 
 
 ## Anslut till mål {#connect}
 
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+
+
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). Stegen som är specifika för det här målet visas i detalj nedan.
 
 1. I [!DNL Adobe Experience Platform] konsol, navigera till **Destinationer**.
@@ -101,6 +106,10 @@ while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/
 ![](../../assets/catalog/email-marketing/sendgrid/06.jpg)
 
 ## Aktivera segment till den här destinationen {#activate}
+
+>[!IMPORTANT]
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
