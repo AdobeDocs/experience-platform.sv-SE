@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
-source-git-commit: 820fba06d3460408640c816c80f05bff1de227cd
+source-git-commit: ea04132c5092ce62820b0af1edc95bb1e0a1a16f
 workflow-type: tm+mt
-source-wordcount: '1876'
+source-wordcount: '2137'
 ht-degree: 1%
 
 ---
@@ -14,12 +14,28 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Dashboards]](#dashboards)
 - [Dataflöden](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
 - [Experience Data Model (XDM)](#xdm)
 - [Real-time Customer Data Platform B2B Edition](#B2B)
 - [Källor](#sources)
+
+## [!DNL Intelligent Services] {#intelligent-services}
+
+Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+
+Med Attribution AI- och kundens AI kan kunderna konfigurera avancerade AI/ML-modeller för marknadsattribuering och kundbenägenhet. Funktionen Multi DataSet hjälper kunderna att ta fram flera datauppsättningar samtidigt utan att behöva sy ihop och förbereda data i förväg.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI stöder följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event. Kundens AI stöder alla dessa scheman plus Adobe Audience Manager-schemat. Mer information om stöd för flera datauppsättningar i Attribution AI- och kundgränssnittet finns i [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md) och [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md). |
+| Nya mått för modellutvärdering i kundens AI | Nya vinstscheman i kundens AI gör det möjligt för marknadsförare att fastställa gruppstorleken utifrån sin budget och sina lönsamhetsmål. Nya Lyft-diagram mäter modellens kvalitet och ger bättre synlighet i lyften de skulle få över slumpmässig målinriktning. Mer information finns i [identifiera insikter med kundens AI](../../intelligent-services/customer-ai/user-guide/discover-insights.md) -dokument. |
+
+Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] översikt](../../intelligent-services/home.md).
 
 ## [!DNL Dashboards] {#dashboards}
 
