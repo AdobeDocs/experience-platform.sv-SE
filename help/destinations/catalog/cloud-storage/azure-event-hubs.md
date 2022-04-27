@@ -1,22 +1,22 @@
 ---
 keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
-title: (Beta) [!DNL Azure Event Hubs] anslutning
+title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
+source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1876'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Azure Event Hubs] anslutning
+# [!DNL Azure Event Hubs] anslutning
 
 ## Översikt {#overview}
 
 >[!IMPORTANT]
 >
->The [!DNL Azure Event Hubs] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+> Det här målet är bara tillgängligt för [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
 
 [!DNL Azure Event Hubs] är en stor dataströmningsplattform och en tjänst för händelseredigering. Den kan ta emot och bearbeta miljontals händelser per sekund. Data som skickas till ett händelsehubb kan omformas och lagras med hjälp av alla realtidsanalysleverantörer eller batchnings-/lagringsadaptrar.
 
@@ -51,9 +51,25 @@ För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-### Anslutningsparametrar {#parameters}
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). När du ansluter till det här målet måste du ange följande information:
+
+### Autentiseringsinformation {#authentication-information}
+
+#### Standardautentisering {#standard-authentication}
+
+![Bild av gränssnittsskärmen som visar slutförda fält för Azure Event Hubs-standardautentiseringsinformation](../../assets/catalog/cloud-storage/event-hubs/event-hubs-standard-authentication.png)
+
+Om du väljer **[!UICONTROL Standard authentication]** typ för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
+
+* **[!UICONTROL SAS Key Name]**: Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn.
+* **[!UICONTROL SAS Key]**: Den primära nyckeln för namnutrymmet för händelsehubbar. The `sasPolicy` som `sasKey` motsvarar måste ha **hantera** rättigheter som konfigurerats för att händelsehubs-listan ska fyllas i. Lär dig mer om autentisering av [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* **[!UICONTROL Namespace]**: Fyll i [!DNL Azure Event Hubs] namnutrymme. Läs mer om [!DNL Azure Event Hubs] namnutrymmen i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+
+#### SAS-autentisering (Shared Access Signature) {#sas-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_eventhubs_includesegmentnames"
@@ -65,16 +81,32 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >title="Inkludera tidsstämplar för segment"
 >abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
-while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
+![Bild av gränssnittsskärmen som visar slutförda fält för Azure Event Hubs-standardautentiseringsinformation](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
+
+Om du väljer **[!UICONTROL Standard authentication]** typ för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
 
 * **[!UICONTROL SAS Key Name]**: Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn.
 * **[!UICONTROL SAS Key]**: Den primära nyckeln för namnutrymmet för händelsehubbar. The `sasPolicy` som `sasKey` motsvarar måste ha **hantera** rättigheter som konfigurerats för att händelsehubs-listan ska fyllas i. Lär dig mer om autentisering av [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL Namespace]**: Fyll i [!DNL Azure Event Hubs] namnutrymme. Läs mer om [!DNL Azure Event Hubs] namnutrymmen i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+* **[!UICONTROL Namespace]**: Fyll i [!DNL Azure Event Hubs] namnutrymme. Läs mer om [!DNL Azure Event Hubs] namnutrymmen i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+
+### Destinationsinformation {#destination-details}
+
+När du har upprättat autentiseringsanslutningen till Azure Event Hubs-målet anger du följande information för målet:
+
+![Bild av gränssnittsskärmen som visar slutförda fält för Azure Event Hubs-målinformationen](../../assets/catalog/cloud-storage/event-hubs/event-hubs-destination-details.png)
+
 * **[!UICONTROL Name]**: Fyll i ett namn för anslutningen till [!DNL Azure Event Hubs].
 * **[!UICONTROL Description]**: Ange en beskrivning av anslutningen.  Exempel: &quot;Förstklassiga kunder&quot;,&quot;kunder som är intresserade av att skaffa utrustning&quot;.
 * **[!UICONTROL eventHubName]**: Ange ett namn för strömmen till din [!DNL Azure Event Hubs] mål.
+* **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
+* **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
 
 ## Aktivera segment till den här destinationen {#activate}
+
+>[!IMPORTANT]
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
@@ -107,6 +139,10 @@ Tänk dig till exempel det här dataflödet som en [!DNL Azure Event Hubs] mål 
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem i dem. Om en profil kvalificerar sig för kunden med DeLorean Cars-segmentet men även är medlem i &quot;Tillbaka till framtiden&quot;-segmentet för film- och science fiction-fans, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
+
+## Bakgrundsfyllning av historiska data {#historical-data-backfill}
+
+När du lägger till ett nytt segment till ett befintligt mål, eller när du skapar ett nytt mål och mappningssegment till det, exporterar Experience Platform data för historiska segmentkvalificeringar till målet. Profiler som är kvalificerade för segmentet *före* segmentet lades till i målet och exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -165,6 +201,52 @@ Dina exporterade [!DNL Experience Platform] data får plats i [!DNL Azure Event 
 }
 ```
 
+Nedan visas ytterligare exempel på exporterade data, beroende på vilka användargränssnittsinställningar du har valt i anslutningsmålflödet för **[!UICONTROL Include Segment Names]** och **[!UICONTROL Include Segment Timestamps]** alternativ:
+
++++ Exemplet på dataexport nedan innehåller segmentnamn i `segmentMembership` section
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+            "name": "First name equals John"
+          }
+        }
+      }
+```
+
++++
+
++++ Exemplet på dataexport nedan innehåller segmenttidsstämplar i `segmentMembership` section
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+          }
+        }
+      }
+```
+
++++
+
+## Begränsningar och återförsöksprincip {#limits-retry-policy}
+
+På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningsfördröjning på mindre än 10 minuter för meddelanden som skickats med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till ett HTTP-mål.
+
+Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
 
 >[!MORELIKETHIS]
 >

@@ -4,9 +4,9 @@ title: Måltyper och -kategorier
 seo-title: Destination types and categories
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 08c6c2716b88180b1eb290663117e6da2d8641f0
+source-git-commit: 1c2846941df09b66eb74f8ea8bec91574577fbbc
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '591'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av Adobe Experience Platform-mål.
 
-## Måltyper
+## Måltyper {#destination-types}
 
 I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
 
@@ -25,16 +25,28 @@ I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och 
 
 **[!UICONTROL Profile Export]** och **[!UICONTROL Streaming Segment Export]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
 
-## Profilexportdestinationer
+## Profilexportdestinationer {#profile-export}
 
 Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyckel. Experience Platform har för närvarande stöd för två typer av profilexportdestinationer:
 
-* [Exportmål för direktuppspelningsprofil](#streaming-profile-export)
+* [Exportmål för direktuppspelningsprofil (företagsmål)](#streaming-profile-export)
 * [Batchmål (filbaserade)](#file-based)
 
-### Exportmål för direktuppspelningsprofil {#streaming-profile-export}
+### Exportmål för direktuppspelningsprofil (företagsmål) {#streaming-profile-export}
 
-Exportdestinationer för direktuppspelningsprofiler tar emot segment- och profildata som dataströmmar i Experience Platform. [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](catalog/cloud-storage/azure-event-hubs.md) är exempel på sådana destinationer.
+>[!IMPORTANT]
+>
+>Företagsmål, eller exportmål för direktuppspelningsprofiler, är tillgängliga för [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) endast kunder.
+
+Använd dataanslutningarna för företag för att leverera Real-time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
+
+Dessa mål tar emot segment- och profildata som dataströmmar i Experience Platform.
+
+Företagets mål är:
+
+* [HTTP API-mål](catalog/streaming/http-destination.md)
+* [Amazon Kinesis](catalog/cloud-storage/amazon-kinesis.md)
+* [Azure Event Hubs](catalog/cloud-storage/azure-event-hubs.md)
 
 ### Batchmål (filbaserade) {#file-based}
 
@@ -42,7 +54,7 @@ Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attrib
 
 ## Målgrupper för direktuppspelad segmentexport {#streaming-destinations}
 
-Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)och är exempel på sådana destinationer.
+Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
 
 ## Profilexport och segmentexportdestinationer - videoöversikt {#video}
 

@@ -6,18 +6,14 @@ description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
+source-git-commit: 1b9b2476047b78c67a8c9950e28b0812642c7941
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2034'
 ht-degree: 0%
 
 ---
 
 # Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service
-
->[!NOTE]
->
->The [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] mål i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 >[!IMPORTANT]
 > 

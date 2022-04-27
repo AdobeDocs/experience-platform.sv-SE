@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: d5f83f9d99789afba44e26400d0cea8a72946d7a
+source-git-commit: 0f3cb17650612399091c12a6b638471a80306729
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '755'
 ht-degree: 1%
 
 ---
@@ -93,10 +93,10 @@ ht-degree: 1%
       * [Yext Conversion Tracking-tillägg](./catalog/analytics/yext.md)
    * Lagringsmål i molnet {#cloud-storage}
       * [Översikt över destinationer för molnlagring](./catalog/cloud-storage/overview.md)
-      * [(Beta) Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
+      * [Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-anslutning](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob-anslutning](./catalog/cloud-storage/azure-blob.md)
-      * [(Beta) Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
+      * [Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
       * [IP-adress tillåtelselista för molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
    * Plattformsmål för datahantering {#data-management}
@@ -140,7 +140,7 @@ ht-degree: 1%
       * [linkedIn Matched Auditions connection](./catalog/social/linkedin.md)
       * [[!DNL Twitter Custom Audiences] anslutning](./catalog/social/twitter.md)
    * Målgrupper för direktuppspelning {#streaming}
-      * [ (Beta) HTTP API-anslutning](./catalog/streaming/http-destination.md)
+      * [HTTP API-anslutning](./catalog/streaming/http-destination.md)
       * [IP-adress tillåtelselista för direktuppspelningsmål](./catalog/streaming/ip-address-allow-list.md)
    * Undersökningsmål {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)

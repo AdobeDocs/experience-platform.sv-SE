@@ -1,22 +1,22 @@
 ---
-title: (Beta) HTTP API-anslutning
+title: HTTP API-anslutning
 keywords: strömning,
-description: Med HTTP API-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
+description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
+source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
 workflow-type: tm+mt
-source-wordcount: '1545'
+source-wordcount: '2217'
 ht-degree: 0%
 
 ---
 
-# (Beta) HTTP API-anslutning
+# HTTP API-anslutning
+
+## Översikt {#overview}
 
 >[!IMPORTANT]
 >
->HTTP API-målet i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
-
-## Översikt {#overview}
+> Det här målet är bara tillgängligt för [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
 
 HTTP API-målet är en [!DNL Adobe Experience Platform] direktuppspelningsmål som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 
@@ -24,7 +24,7 @@ Om du vill skicka profildata till HTTP-slutpunkter måste du först [ansluta til
 
 ## Användningsfall {#use-cases}
 
-HTTP-målet riktar sig till kunder som behöver exportera XDM-profildata och målgruppssegment till generiska HTTP-slutpunkter.
+Med HTTP API-målet kan du exportera XDM-profildata och målgruppssegment till generiska HTTP-slutpunkter. Där kan du köra dina egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
 
 HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösningar.
 
@@ -34,24 +34,34 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på mappningsskärmen på [arbetsflöde för målaktivering](../../ui/activate-segment-streaming-destinations.md#mapping). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## Förutsättningar {#prerequisites}
 
->[!IMPORTANT]
->
->Kontakta Adobe eller Adobe kundtjänst om du vill aktivera betafunktionen för HTTP API-mål för ditt företag.
-
 Om du vill använda HTTP API-målet för att exportera data från Experience Platform måste du uppfylla följande krav:
 
 * Du måste ha en HTTP-slutpunkt som stöder REST API.
 * HTTP-slutpunkten måste ha stöd för Experience Platform-profilschemat. Ingen omvandling till ett nyttolastschema från tredje part stöds i HTTP API-målet. Se [exporterade data](#exported-data) för ett exempel på utdataschemat för Experience Platform.
 * HTTP-slutpunkten måste ha stöd för rubriker.
-* HTTP-slutpunkten måste ha stöd [Autentiseringsuppgifter för OAuth 2.0-klient](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) autentisering. Detta krav är giltigt medan HTTP API-målet är i betafasen.
-* Klientens autentiseringsuppgifter måste inkluderas i POSTENS innehåll till din slutpunkt, vilket visas i exemplet nedan.
+
+>[!TIP]
+>
+> Du kan också använda [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) för att konfigurera en integrering och skicka Experience Platform-profildata till en HTTP-slutpunkt.
+
+## IP-adress tillåtelselista {#ip-address-allowlist}
+
+För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista över statiska IP-adresser som du kan tillåtslista för HTTP API-destinationen. Se [IP-adress tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för den fullständiga listan över IP-adresser som ska tillåtslista.
+
+## Autentiseringstyper som stöds {#supported-authentication-types}
+
+HTTP API-målet stöder flera autentiseringstyper för HTTP-slutpunkten:
+
+* HTTP-slutpunkt utan autentisering;
+* Autentisering av innehavartoken;
+* [Autentiseringsuppgifter för OAuth 2.0-klient](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) autentisering med innehållsformuläret, med [!DNL client ID], [!DNL client secret] och [!DNL grant type] i HTTP-begärans brödtext, vilket visas i exemplet nedan.
 
 ```shell
 curl --location --request POST '<YOUR_API_ENDPOINT>' \
@@ -61,22 +71,74 @@ curl --location --request POST '<YOUR_API_ENDPOINT>' \
 --data-urlencode 'client_secret=<CLIENT_SECRET>'
 ```
 
-Du kan också använda [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) för att konfigurera en integrering och skicka Experience Platform-profildata till en HTTP-slutpunkt.
+* [Autentiseringsuppgifter för OAuth 2.0-klient](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) med grundläggande auktorisering, med en auktoriseringshuvud som innehåller URL-kodad [!DNL client ID] och [!DNL client secret].
 
-## IP-adress tillåtelselista {#ip-address-allowlist}
+```shell
+curl --location --request POST 'https://some-api.com/token' \
+--header 'Authorization: Basic base64(clientId:clientSecret)' \
+--header 'Content-type: application/x-www-form-urlencoded; charset=UTF-8' \
+--data-urlencode 'grant_type=client_credentials'
+```
 
-För att uppfylla kundernas säkerhets- och kompatibilitetskrav tillhandahåller Experience Platform en lista över statiska IP-adresser som du kan tillåtslista för HTTP API-destinationen. Se [IP-adress tillåtelselista för direktuppspelningsmål](/help/destinations/catalog/streaming/ip-address-allow-list.md) för den fullständiga listan över IP-adresser som ska tillåtslista.
+* [OAuth 2.0-lösenord](https://www.oauth.com/oauth2-servers/access-tokens/password-grant/).
 
 ## Anslut till målet {#connect-destination}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-### Anslutningsparametrar {#parameters}
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). När du ansluter till det här målet måste du ange följande information:
+
+### Autentiseringsinformation {#authentication-information}
+
+#### Autentisering av innehavartoken {#bearer-token-authentication}
+
+Om du väljer **[!UICONTROL Bearer token]** autentiseringstyp för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
+
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med autentisering av innehavartoken](../../assets/catalog/http/http-api-authentication-bearer.png)
+
+* **[!UICONTROL Bearer token]**: infoga bearer-token för att autentisera till din HTTP-plats.
+
+#### Ingen autentisering {#no-authentication}
+
+Om du väljer **[!UICONTROL None]** autentiseringstyp för att ansluta till HTTP-slutpunkten:
+
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet utan autentisering](../../assets/catalog/http/http-api-authentication-none.png)
+
+När du har valt den här autentiseringen öppen behöver du bara välja **[!UICONTROL Connect to destination]** och anslutningen till slutpunkten har upprättats.
+
+#### Lösenordsautentisering för OAuth 2 {#oauth-2-password-authentication}
+
+Om du väljer **[!UICONTROL OAuth 2 Password]** autentiseringstyp för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
+
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med OAuth 2 med lösenordsautentisering](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
+
+* **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
+* **[!UICONTROL Client ID]**: The [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
+* **[!UICONTROL Client Secret]**: The [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
+* **[!UICONTROL Username]**: Användarnamnet som ger åtkomst till HTTP-slutpunkten.
+* **[!UICONTROL Password]**: Lösenordet för att komma åt HTTP-slutpunkten.
+
+#### Autentisering med OAuth 2-klientautentiseringsuppgifter {#oauth-2-client-credentials-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_clientcredentialstype"
 >title="Autentiseringstyp för klient"
 >abstract="Välj **Body Form Encoded** för att inkludera klient-ID och klienthemlighet i själva begäran eller **Grundläggande auktorisering** om du vill inkludera klient-ID och klienthemlighet i ett auktoriseringshuvud. Se exempel i dokumentationen."
+
+Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
+
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med hjälp av OAuth 2 med autentisering av klientautentiseringsuppgifter](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
+
+* **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
+* **[!UICONTROL Client ID]**: The [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
+* **[!UICONTROL Client Secret]**: The [!DNL client secret] som ditt system tilldelar Adobe Experience Platform.
+* **[!UICONTROL Client Credentials Type]**: Välj den typ av OAuth2-klientautentiseringsuppgifter som stöds av din slutpunkt:
+   * **[!UICONTROL Body Form Encoded]**: I det här fallet [!DNL client ID] och [!DNL client secret] ingår *i själva begäran* skickas till ditt mål. Se till exempel [Autentiseringstyper som stöds](#supported-authentication-types) -avsnitt.
+   * **[!UICONTROL Basic Authorization]**: I det här fallet [!DNL client ID] och [!DNL client secret] ingår *i en `Authorization` header* efter att base64-kodats och skickats till ditt mål. Se till exempel [Autentiseringstyper som stöds](#supported-authentication-types) -avsnitt.
+
+### Destinationsinformation {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_headers"
@@ -103,27 +165,23 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >title="Frågeparametrar"
 >abstract="Du kan också lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`."
 
-while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
+När du har upprättat autentiseringsanslutningen till HTTP-slutpunkten anger du följande information för målet:
 
-* **[!UICONTROL httpEndpoint]**: den [!DNL URL] för den HTTP-slutpunkt som du vill skicka profildata till.
-   * Du kan också lägga till frågeparametrar i [!UICONTROL httpEndpoint] [!DNL URL].
-* **[!UICONTROL authEndpoint]**: den [!DNL URL] av HTTP-slutpunkten som används för [!DNL OAuth2] autentisering.
-* **[!UICONTROL Client ID]**: den [!DNL clientID] parametern som används i [!DNL OAuth2] klientautentiseringsuppgifter.
-* **[!UICONTROL Client Secret]**: den [!DNL clientSecret] parametern som används i [!DNL OAuth2] klientautentiseringsuppgifter.
-
-   >[!NOTE]
-   >
-   >Endast [!DNL OAuth2] klientautentiseringsuppgifter stöds för närvarande.
+![Bild av gränssnittsskärmen som visar slutförda fält för HTTP-målinformationen](../../assets/catalog/http/http-api-destination-details.png)
 
 * **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Custom Headers]**: Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format: `header1:value1,header2:value2,...headerN:valueN`.
-
-   >[!IMPORTANT]
-   >
-   >Den aktuella implementeringen kräver minst en anpassad rubrik. Den här begränsningen kommer att åtgärdas i en framtida uppdatering.
+* **[!UICONTROL Headers]**: Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format: `header1:value1,header2:value2,...headerN:valueN`.
+* **[!UICONTROL HTTP Endpoint]**: URL:en för HTTP-slutpunkten dit du vill skicka profildata.
+* **[!UICONTROL Query parameters]**: Du kan också lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`.
+* **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
+* **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
 
 ## Aktivera segment till den här destinationen {#activate}
+
+>[!IMPORTANT]
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
@@ -160,6 +218,10 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre segment 
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem i dem. Om en profil kvalificerar sig för kunden med DeLorean Cars-segmentet men även är medlem i &quot;Tillbaka till framtiden&quot;-segmentet för film- och science fiction-fans, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
+
+## Bakgrundsfyllning av historiska data {#historical-data-backfill}
+
+När du lägger till ett nytt segment till ett befintligt mål, eller när du skapar ett nytt mål och mappningssegment till det, exporterar Experience Platform data för historiska segmentkvalificeringar till målet. Profiler som är kvalificerade för segmentet *före* segmentet lades till i målet och exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -217,3 +279,50 @@ Dina exporterade [!DNL Experience Platform] data får plats i [!DNL HTTP] mål i
   }
 }
 ```
+
+Nedan visas ytterligare exempel på exporterade data, beroende på vilka användargränssnittsinställningar du har valt i anslutningsmålflödet för **[!UICONTROL Include Segment Names]** och **[!UICONTROL Include Segment Timestamps]** alternativ:
+
++++ Exemplet på dataexport nedan innehåller segmentnamn i `segmentMembership` section
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+            "name": "First name equals John"
+          }
+        }
+      }
+```
+
++++
+
++++ Exemplet på dataexport nedan innehåller segmenttidsstämplar i `segmentMembership` section
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+          }
+        }
+      }
+```
+
++++
+
+## Begränsningar och återförsöksprincip {#limits-retry-policy}
+
+På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningsfördröjning på mindre än 10 minuter för meddelanden som skickats med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till ett HTTP-mål.
+
+Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.

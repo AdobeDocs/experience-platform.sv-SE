@@ -1,22 +1,22 @@
 ---
 keywords: Amazon Kinesis;kinesis destination;kinesis
-title: (Beta) Amazon Kinesis-anslutning
+title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
+source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
 workflow-type: tm+mt
-source-wordcount: '1420'
+source-wordcount: '1778'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Amazon Kinesis] anslutning
+# [!DNL Amazon Kinesis] anslutning
 
 ## Översikt {#overview}
 
 >[!IMPORTANT]
 >
->The [!DNL Amazon Kinesis] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+> Det här målet är bara tillgängligt för [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
 
 The [!DNL Kinesis Data Streams] service av [!DNL Amazon Web Services] gör det möjligt att samla in och bearbeta stora dataströmmar i realtid.
 
@@ -90,9 +90,13 @@ Mer information om hur du styr åtkomst för [!DNL Kinesis] dataströmmar, läs 
 
 ## Anslut till målet {#connect}
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-### Anslutningsparametrar {#parameters}
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). När du ansluter till det här målet måste du ange följande information:
+
+### Autentiseringsinformation {#authentication-information}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_kinesis_includesegmentnames"
@@ -104,13 +108,24 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >title="Inkludera tidsstämplar för segment"
 >abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
-while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
+Ange fälten nedan och välj **[!UICONTROL Connect to destination]**:
+
+![Bild av gränssnittsskärmen som visar slutförda fält för Amazon Kinesis-autentiseringsinformation](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
 
 * **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: I [!DNL Amazon Web Services], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-* **region**: Ange vilken [!DNL Amazon Web Services] region som data ska strömmas till.
-* **Namn**: Ange ett namn för anslutningen till [!DNL Amazon Kinesis]
-* **Beskrivning**: Ange en beskrivning för din anslutning till [!DNL Amazon Kinesis].
-* **stream**: Ange namnet på en befintlig dataström i din [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
+* **[!UICONTROL Region]**: Ange vilken [!DNL Amazon Web Services] region som data ska strömmas till.
+
+### Destinationsinformation {#destination-details}
+
+När du har upprättat autentiseringsanslutningen till Amazon Kinesis-målet anger du följande information för målet:
+
+![Bild av gränssnittsskärmen med ifyllda fält för Amazon Kinesis-målinformationen](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-destination-details.png)
+
+* **[!UICONTROL Name]**: Ange ett namn för anslutningen till [!DNL Amazon Kinesis]
+* **[!UICONTROL Description]**: Ange en beskrivning för din anslutning till [!DNL Amazon Kinesis].
+* **[!UICONTROL stream]**: Ange namnet på en befintlig dataström i din [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
+* **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
+* **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
 
 <!--
 
@@ -121,6 +136,10 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 -->
 
 ## Aktivera segment till den här destinationen {#activate}
+
+>[!IMPORTANT]
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
@@ -153,6 +172,10 @@ Tänk dig till exempel det här dataflödet som en [!DNL Amazon Kinesis] mål d�
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem i dem. Om en profil kvalificerar sig för kunden med DeLorean Cars-segmentet men även är medlem i &quot;Tillbaka till framtiden&quot;-segmentet för film- och science fiction-fans, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
+
+## Bakgrundsfyllning av historiska data {#historical-data-backfill}
+
+När du lägger till ett nytt segment till ett befintligt mål, eller när du skapar ett nytt mål och mappningssegment till det, exporterar Experience Platform data för historiska segmentkvalificeringar till målet. Profiler som är kvalificerade för segmentet *före* segmentet lades till i målet och exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -210,6 +233,53 @@ Dina exporterade [!DNL Experience Platform] data får plats i [!DNL Amazon Kines
   }
 }
 ```
+
+Nedan visas ytterligare exempel på exporterade data, beroende på vilka användargränssnittsinställningar du har valt i anslutningsmålflödet för **[!UICONTROL Include Segment Names]** och **[!UICONTROL Include Segment Timestamps]** alternativ:
+
++++ Exemplet på dataexport nedan innehåller segmentnamn i `segmentMembership` section
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+            "name": "First name equals John"
+          }
+        }
+      }
+```
+
++++
+
++++ Exemplet på dataexport nedan innehåller segmenttidsstämplar i `segmentMembership` section
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+          }
+        }
+      }
+```
+
++++
+
+## Begränsningar och återförsöksprincip {#limits-retry-policy}
+
+På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningsfördröjning på mindre än 10 minuter för meddelanden som skickats med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till ett HTTP-mål.
+
+Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
 
 >[!MORELIKETHIS]
 >
