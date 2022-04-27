@@ -6,9 +6,9 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: c4e1d739bf54cbebf6a04d87f92d0df4bdbc083e
 workflow-type: tm+mt
-source-wordcount: '2525'
+source-wordcount: '2535'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Ange önskade värden och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ## Markera data {#select-data}
 
-Kunds-AI använder designdata för Adobe Analytics, Adobe Audience Manager, Experience Event och Consumer Experience Event för att beräkna benägenhetspoängen. När du väljer en datauppsättning visas bara de som är kompatibla med kundens AI. Om du vill välja en datauppsättning väljer du (**+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Använd sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
+Kunds-AI använder sig av data från Adobe Analytics, Adobe Audience Manager, Experience Events i allmänhet och Consumer Experience Event för att beräkna benägenhetspoängen. När du väljer en datauppsättning visas bara de som är kompatibla med kundens AI. Om du vill välja en datauppsättning väljer du (**+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Använd sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
 
 ![Välj och söka efter datauppsättning](../images/user-guide/configure-dataset-page.png)
 
@@ -90,7 +90,9 @@ Det finns ett procentvärde för datauppsättningens fullständighet i dataupps�
 
 ### Välj en identitet {#identity}
 
-För att flera datauppsättningar ska kunna kopplas till varandra måste du välja en identitetstyp (kallas även&quot;id namespace&quot;) och ett identitetsvärde i det namnutrymmet. Om du har tilldelat mer än ett fält som en identitet i ditt schema under samma namnutrymme, visas alla tilldelade identitetsvärden i den listruta för identitet som föregås av namnutrymmet, till exempel `EMAIL (personalEmail.address)` eller `EMAIL (workEmail.address)`.
+Nu kan du koppla flera datauppsättningar till varandra baserat på identitetskartan (fältet). Du måste välja en identitetstyp (kallas även&quot;id namespace&quot;) och ett identitetsvärde i det namnutrymmet. Om du har tilldelat mer än ett fält som en identitet i ditt schema under samma namnutrymme, visas alla tilldelade identitetsvärden i den listruta för identitet som föregås av namnutrymmet, till exempel `EMAIL (personalEmail.address)` eller `EMAIL (workEmail.address)`.
+
+[välj samma namnutrymme](../images/user-guide/cai-identity-map.png)
 
 >[!IMPORTANT]
 >
@@ -98,7 +100,8 @@ För att flera datauppsättningar ska kunna kopplas till varandra måste du väl
 
 Markera en identitet genom att markera det understrukna värdet i identitetskolumnen. Välj en identitetsleverantör.
 
-![välj samma namnutrymme](../images/user-guide/identity-type.png)
+<!-- ![select same namespace](../images/user-guide/identity-type.png) -->
+[välj samma namnutrymme](../images/user-guide/cai-identity-namespace.png)
 
 Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, en arbets- och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Detta innebär att `EMAIL (personalEmail.address)` väljs som identitet.
 
@@ -116,7 +119,8 @@ The **[!UICONTROL Define goal]** visas och innehåller en interaktiv miljö där
 
 Om du vill skapa ett mål väljer du **[!UICONTROL Enter Field Name]** följt av ett fält från listrutan. Välj den andra inmatningen, en sats för händelsens villkor, och ange sedan eventuellt målvärdet för att slutföra händelsen. Ytterligare händelser kan konfigureras genom att välja **[!UICONTROL Add event]**. Slutför målet genom att tillämpa en tidsram för förutsägelse i antal dagar och sedan välja **[!UICONTROL Next]**.
 
-![](../images/user-guide/define-a-goal.png)
+<!-- ![](../images/user-guide/define-a-goal.png) -->
+![](../images/user-guide/cai-define-a-goal.png)
 
 ### Kommer att inträffa och kommer inte att inträffa
 
@@ -124,7 +128,8 @@ När du definierar ditt mål kan du välja **[!UICONTROL Will occur]** eller **[
 
 Om du till exempel vill konfigurera ett program för att förutsäga om en kund kommer att göra ett köp, kan du välja **[!UICONTROL Will occur]** följt av **[!UICONTROL All of]** och sedan ange **commerce.purchase.id** (eller ett liknande fält) och **[!UICONTROL exists]** som -operatorn.
 
-![inträffar](../images/user-guide/occur.png)
+<!-- ![will occur](../images/user-guide/occur.png) -->
+![inträffar](../images/user-guide/cai-will-occur.png)
 
 Det kan dock finnas fall då du är intresserad av att förutsäga om en händelse inte kommer att inträffa inom en viss tidsperiod. Om du vill konfigurera ett mål med det här alternativet väljer du **[!UICONTROL Will not occur]** i listrutan på den översta nivån.
 

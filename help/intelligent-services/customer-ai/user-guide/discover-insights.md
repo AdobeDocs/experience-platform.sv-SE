@@ -6,9 +6,9 @@ title: Identifiera insikter med kundens AI
 topic-legacy: Discovering insights
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: 417b3f885f75f107d2db06331053917a76c904c4
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '2016'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ Om du vill visa det nya segmentet i användargränssnittet för plattformen väl
 
 ![Alla segment](../images/insights/Segments-dashboard.png)
 
-## Resultatsammanfattningsmått {#performance-metrics}
+## Historiska prestanda {#historical-performance}
 
 The **[!UICONTROL Performance summary]** På fliken visas de faktiska bortfall- eller konverteringsfrekvenserna, som är indelade i de olika benägenhetsintervall som kunden har angett som AI.
 
@@ -192,6 +192,37 @@ Den nedre halvan av **[!UICONTROL Performance summary]** visar resultaten för v
 Beroende på om du förutser bortfall eller konvertering kan [!UICONTROL Distribution of Scores] I diagrammet visas fördelningen av profiler som är kurvformade/konverterade och inte kurvformade/inte konverterade i varje steg.
 
 ![individuell poängsättning](../images/insights/scoring_tab.png)
+
+## Modellutvärdering {#model-evaluation}
+
+Förutom att följa upp de förväntade och faktiska resultaten över tid på fliken Historiska prestanda har marknadsförarna ännu större transparens över modellkvalitet på fliken Modellutvärdering. Du kan använda diagrammen Lyft och Vinst för att avgöra skillnaderna när det gäller att använda en prediktiv modell jämfört med målinriktning slumpmässigt. Dessutom kan du bestämma hur många positiva utfall som ska tas vid varje poängutfall. Detta är användbart för segmentering och för att anpassa avkastningen på investeringar till marknadsföringsåtgärder.
+
+### Lyft diagram
+
+![lyfta diagram](../images/user-guide/lift-chart.png)
+
+Lyftdiagrammet mäter förbättringen av användningen av en prediktiv modell i stället för slumpmässig målinriktning.
+
+Exempel på indikatorer för högkvalitetsmodeller är:
+
+- Höga höjdvärden i de första decimalerna. Det innebär att modellen är bra på att identifiera de användare som har störst benägenhet att vidta intressanta åtgärder.
+- Fallande lyftvärden. Det innebär att kunder med högre poäng är mer benägna att vidta intressanta åtgärder än personer med lägre poäng.
+
+### Vinster
+
+![vinstdiagram](../images/user-guide/gains-chart.png)
+
+Diagrammet över kumulativa vinster mäter andelen positiva resultat som erhållits genom målresultat över ett visst tröskelvärde. Efter att ha sorterat kunderna efter benägenhetspoäng från hög till låg delas populationen in i deciler - 10 lika stora grupper. En perfekt modell skulle fånga alla positiva utfall i de högsta poängen. En målinriktningsmetod som baslinje hämtar positiva resultat proportionellt mot gruppens storlek - 30 % av användarna fångar 30 % av resultaten.
+
+Exempel på indikatorer för högkvalitetsmodeller är:
+
+- De kumulativa vinsterna når upp till 100 % snabbt.
+- Den kumulativa kurvan för modellen ligger närmare diagrammets övre vänstra hörn.
+- Diagrammet över kumulativa vinster kan användas för att fastställa poängbortfall för segmentering och målinriktning. Om modellen till exempel fångar 70 % av de positiva resultaten i de två första poängen kommer målgruppsanvändare med PercentileScore > 80 att förväntas fånga upp cirka 70 % av de positiva resultaten.
+
+### AUC (yta under kurvan)
+
+AUC återspeglar styrkan i relationen mellan rangordningen efter poäng och förekomsten av det förväntade målet. An **AUC** av 0,5 betyder att modellen inte är bättre än en slumpmässig gissning. An **AUC** av 1 innebär att modellen kan förutsäga exakt vem som kommer att vidta den relevanta åtgärden.
 
 ## Nästa steg
 
