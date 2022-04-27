@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 22ae7d206d4393719352232dc254d7669ca667bd
+source-git-commit: 54211c6166552ac86382d08da80fde3d9dad1257
 workflow-type: tm+mt
-source-wordcount: '1313'
+source-wordcount: '1331'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,12 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.11.1 - 22 april 2022
+
+* Korrigerat kommandofel för konfiguration från version 2.11.0.
+
+Innehåller version 2.10.0 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.11.0 - 22 april 2022
 
