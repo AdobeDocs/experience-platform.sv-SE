@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättig
 title: Metodtips för tillstånd för datahantering
 description: I det här dokumentet beskrivs de bästa sätten att följa och de verktyg du kan använda för att hantera dina licensrättigheter bättre med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
+source-git-commit: 02882957fc38058ff092938d631e290725d4bdc2
 workflow-type: tm+mt
-source-wordcount: '2586'
+source-wordcount: '2531'
 ht-degree: 0%
 
 ---
@@ -130,7 +130,8 @@ Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet ä
 
 * **Rapport-API för datasammanslagning**: Visar de datauppsättningar som bidrar mest till er adresserbara publik. Du kan använda den här rapporten för att identifiera vilka [!DNL ExperienceEvent] datauppsättningar att ange en TTL för. Se självstudiekursen om [generera överlappningsrapport för datauppsättning](../../profile/tutorials/dataset-overlap-report.md) för mer information.
 * **API för identitetsöverlappningsrapport**: Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik. Se självstudiekursen om [generera rapporten om identitetsöverlappning](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) för mer information.
-* **Okänt API för profilrapport**: Visar effekten av att använda pseudonym TTL för olika tidströsklar. Du kan använda den här rapporten för att identifiera vilket pseudonymt TTL-värde som ska användas. Se självstudiekursen om [generera rapporten med okända profiler](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) för mer information.
+<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous TTL for different time thresholds. You can use this report to identify which pseudonymous TTL threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
+-->
 
 #### [!DNL ExperienceEvent] Datamängd TTL {#dataset-ttl}
 
@@ -197,7 +198,6 @@ I följande tabell visas en lista över tillgängliga funktioner för att bättr
 | [Datafilter för vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) | Använd serversidan [!DNL Kafka] filter för att utesluta onödiga data från intag.  Läs dokumentationen om [taggregler](../../tags/ui/managing-resources/rules.md) för ytterligare information. |
 | [Användargränssnitt för kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | Visa en ögonblicksbild av din organisations licensrelaterade data för Experience Platform |
 | [Rapport-API för datasammanslagning](../../profile/tutorials/dataset-overlap-report.md) | Visar de datauppsättningar som ger mest för er adresserbara publik |
-| [Okänt API för profilrapport](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) | Visar effekten av pseudonym TTL för olika tidströsklar |
 | [API för identitetsöverlappningsrapport](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) | Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik |
 
 {style=&quot;table-layout:auto&quot;}
