@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ea04132c5092ce62820b0af1edc95bb1e0a1a16f
+source-git-commit: 7b12a4094be3eed9b562fff2d0274a1e169913f3
 workflow-type: tm+mt
-source-wordcount: '2136'
+source-wordcount: '2255'
 ht-degree: 1%
 
 ---
@@ -19,6 +19,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Dashboards]](#dashboards)
 - [Dataflöden](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
+- [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Real-time Customer Data Platform B2B Edition](#B2B)
 - [Källor](#sources)
@@ -89,6 +90,23 @@ Mer allmän information om dataflöden finns i [dataflödesöversikt](../../data
 | Stöd för import av befintliga mappningsregler | Nu kan du importera mappningsregler från ett befintligt dataflöde för att snabba upp dataflödeskonfigurationerna och begränsa antalet fel. Se självstudiekursen om [importera befintliga mappningsregler](../../data-prep/ui/mapping.md) för mer information. |
 
 Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ----------- | ----------- |
+| [Aviseringar i sitt sammanhang för måldataflöden](../../destinations/ui/alerts.md) | Du kan nu prenumerera på aviseringar när du skapar ett måldataflöde och få varningsmeddelanden om status, slutförande eller fel i dataflödet. Du kan välja att få aviseringar i användargränssnittet för Experience Platform eller via e-post. |
+
+**Nya destinationer**
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) | Koppla samman och aktivera data till Criteos annonseringsplattform. |
+| [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) | Anslut och aktivera data till Sendgrid-plattformen för transaktioner och marknadsföring via e-post. |
 
 ## Experience Data Model (XDM) {#xdm}
 
