@@ -3,7 +3,7 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Förstå kundprofil i realtid i CDP
 description: Läs om hur Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med hjälp av kundprofilen i realtid.
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: 0aca080d9f2c39b8f0a1197e1048d1a77d5e7bc1
 workflow-type: tm+mt
 source-wordcount: '456'
 ht-degree: 0%
@@ -22,7 +22,7 @@ CDP är byggt i realtid ovanpå Experience Platform och utnyttjar många av de v
 
 ## Profilförbättringar för CDP, B2B Edition i realtid
 
-Förutom profilfunktionerna som stöds av CDP i realtid kan du använda CDP, B2B Edition i realtid för att bläddra igenom viktig information som är kopplad till en individ, som ett konto och möjligheter. Läs mer om profilförbättringar för CDP, B2B Edition i realtid i [bläddringsguide för profiler](profile-browse.md).
+Förutom profilfunktionerna som stöds av CDP i realtid kan du använda CDP, B2B Edition i realtid för att bläddra igenom viktig information som är kopplad till en individ, som ett konto och möjligheter. Om du vill veta mer om profilförbättringar för CDP, B2B Edition i realtid börjar du med att läsa [bläddringsguide för profiler](profile-browse.md).
 
 ## Identiteter och identitetsnamnutrymmen
 
