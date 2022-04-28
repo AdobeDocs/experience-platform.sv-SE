@@ -3,7 +3,7 @@ title: Översikt över tillägget för vidarebefordring av kärnhändelser
 description: Läs mer om Core-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: d41779c5897b748130b88d3886472c7908347389
 workflow-type: tm+mt
 source-wordcount: '1716'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Tillägget Core Event-Forwarding innehåller standardhändelser, standardvillkor och datatyper för händelsevidarebefordran i Adobe Experience Platform.
 
@@ -32,7 +32,7 @@ Ange eventuell anpassad kod som måste finnas som villkor för händelsen. Anvä
 1. Skriv den anpassade koden.
 1. Välj **[!UICONTROL Save]**.
 
-Använd metoden `getDataElementValue` om du vill komma åt värdet för ett dataelement i anpassad kod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName` skriver du följande: 
+Om du vill komma åt ett dataelement i anpassad kod använder du `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
 
 ```javascript
 getDataElementValue('productName') 
@@ -40,25 +40,25 @@ getDataElementValue('productName')
 
 #### ruleStash-objekt
 
-I din egen kod kan du även använda objektet `ruleStash`.
+I din egen kod kan du även använda `ruleStash` -objekt.
 
 ```javascript
 arc.ruleStash: Object<string, *>`
 ```
 
 ```javascript
-logger.log(context.arc.ruleStash);
+utils.logger.log(context.arc.ruleStash);
 ```
 
 `ruleStash` är ett objekt som samlar in alla resultat från åtgärdsmoduler.
 
-Varje tillägg har ett eget namnutrymme. Om tillägget till exempel har namnet `send-beacon`, lagras alla resultat från `send-beacon`-åtgärderna i namnutrymmet `ruleStash['send-beacon']`.
+Varje tillägg har ett eget namnutrymme. Om tillägget till exempel har namnet `send-beacon`, alla resultat från `send-beacon` åtgärder lagras på `ruleStash['send-beacon']` namnutrymme.
 
 Namnutrymmet är unikt för varje tillägg och har värdet `undefined` i början.
 
-Namnutrymmet åsidosätts med det returnerade resultatet från varje åtgärd. Det händer ingen namnrymdsmagi. Om du till exempel har ett `transform`-tillägg som innehåller två åtgärder: `generate-fullname` och `generate-fulladdress` och lägg sedan till de två åtgärderna i en regel.
+Namnutrymmet åsidosätts med det returnerade resultatet från varje åtgärd. Det händer ingen namnrymdsmagi. Om du till exempel har en `transform` tillägg som innehåller två åtgärder: `generate-fullname` och `generate-fulladdress`lägger sedan till de två åtgärderna i en regel.
 
-Om resultatet av `generate-fullname`-åtgärden är `Firstname Lastname` visas regelstrecket så här när åtgärden har slutförts:
+Om resultatet av `generate-fullname` åtgärden är `Firstname Lastname`visas regelstrecket på följande sätt när åtgärden har slutförts:
 
 ```js
 {
@@ -66,7 +66,7 @@ Om resultatet av `generate-fullname`-åtgärden är `Firstname Lastname` visas r
 }
 ```
 
-Om resultatet av `generate-address`-åtgärden är `3900 Adobe Way` visas regelstrecket så här när åtgärden har slutförts:
+Om resultatet av `generate-address` åtgärden är `3900 Adobe Way`visas regelstrecket på följande sätt när åtgärden har slutförts:
 
 ```js
 {
@@ -74,9 +74,9 @@ Om resultatet av `generate-address`-åtgärden är `3900 Adobe Way` visas regels
 }
 ```
 
-Observera att `Firstname Lastname` inte längre finns i regelstrecket. Detta beror på att åtgärden `generate-address` åsidosatte den med adressen.
+Observera att `Firstname Lastname` finns inte längre i regelstrecket. Det beror på att `generate-address` åtgärden åsidosätter den med adressen.
 
-Om du vill lagra resultaten från båda åtgärderna i namnutrymmet `transform` i `ruleStash` kan du skriva åtgärdsmodulen på samma sätt som i följande exempel:
+Om du vill lagra resultaten från båda åtgärderna i `transform` namnutrymme i `ruleStash`kan du skriva en åtgärdsmodul som i följande exempel:
 
 ```javascript
 module.exports = (context) => {
@@ -89,7 +89,7 @@ module.exports = (context) => {
 }
 ```
 
-Första gången den här åtgärden körs är `ruleStash` `undefined` och den initieras med ett tomt objekt. Nästa gång åtgärden körs returneras `ruleStash` av åtgärden när den anropades tidigare. Om du använder ett objekt som `ruleStash` kan du lägga till nya data utan att data som tidigare angetts av andra åtgärder från tillägget går förlorade.
+Första gången som den här åtgärden utförs är `ruleStash` är `undefined` och initieras med ett tomt objekt. Nästa gång åtgärden körs, `ruleStash` returneras av åtgärden när den anropades tidigare. Använda ett objekt som `ruleStash` Med kan du lägga till nya data utan att förlora data som tidigare angetts av andra åtgärder från tillägget.
 
 Du måste vara noga med att alltid returnera det fullständiga tillägget för regelstreck i det här fallet. Om du bara returnerar ett värde (till exempel 5) ser regelstrecket ut så här:
 
@@ -111,9 +111,9 @@ Om du har en regel med flera villkor är det möjligt att det här villkoret ret
 
 Följande värdejämförelseoperatorer är tillgängliga:
 
-**Lika:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript returnerar operatorn ==). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_ eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
+**Lika med:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript == -operatorn). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
-**Är inte lika:** Villkoret returnerar true om de två värdena inte är lika med en icke-strikt jämförelse (i JavaScript returneras != operator). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_ eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
+**Är inte lika med:** Villkoret returnerar true om de två värdena inte är lika med en icke-strikt jämförelse (i JavaScript är != operator). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
 **Innehåller:** Villkoret returnerar true om det första värdet innehåller det andra värdet. Tal konverteras till strängar. Alla värden utom ett tal eller en sträng resulterar i att villkoret returnerar false.
 
@@ -133,19 +133,19 @@ Följande värdejämförelseoperatorer är tillgängliga:
 
 **Är mindre än:** Villkoret returnerar true om det första värdet är mindre än det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
-**Är mindre än eller lika med:** Villkoret returnerar true om det första värdet är mindre än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
+**är mindre än eller lika med:** Villkoret returnerar true om det första värdet är mindre än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
 **Är större än:** Villkoret returnerar true om det första värdet är större än det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
-**Är större än eller lika med:** Villkoret returnerar true om det första värdet är större än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
+**är större än eller lika med:** Villkoret returnerar true om det första värdet är större än eller lika med det andra värdet. Strängar som representerar tal konverteras till tal. Alla värden utom ett tal eller en konvertibel sträng resulterar i att villkoret returnerar false.
 
-**Är true:** Villkoret returnerar true om värdet är booleskt med värdet true. Värdet som du anger konverteras inte till ett booleskt värde om det är någon annan typ. Alla värden utom ett booleskt värde med värdet true returnerar villkoret false.
+**Är sant:** Villkoret returnerar true om värdet är booleskt med värdet true. Värdet som du anger konverteras inte till ett booleskt värde om det är någon annan typ. Alla värden utom ett booleskt värde med värdet true returnerar villkoret false.
 
 **Är sann:** Villkoret returnerar true om värdet är true efter att ha konverterats till ett booleskt värde. Se [MDN:s sanna dokumentation](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) för exempel på sanna värden.
 
 **Är falskt:** Villkoret returnerar true om värdet är ett booleskt värde med värdet false. Värdet som du anger konverteras inte till ett booleskt värde om det är någon annan typ. Alla värden utom ett booleskt värde med värdet false resulterar i att villkoret returnerar false.
 
-**Är falskt:** Villkoret returnerar true om värdet är false efter att ha konverterats till ett booleskt värde. Se [MDN:s Falsy-dokumentation](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) för exempel på felaktiga värden.
+**Är falskt:** Villkoret returnerar true om värdet är false efter att det har konverterats till ett booleskt värde. Se [MDN:s Falsy-dokumentation](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) för exempel på falska värden.
 
 
 
@@ -159,15 +159,15 @@ Ange koden som körs efter att händelsen har utlösts och villkoren har utvärd
 
 1. Namnge åtgärdskoden.
 1. Välj **[!UICONTROL Open Editor]**.
-1. Redigera koden och välj sedan **[!UICONTROL Save]**.
+1. Redigera koden och välj **[!UICONTROL Save]**.
 
-Använd metoden `getDataElementValue` om du vill komma åt värdet för ett dataelement i anpassad kod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName` skriver du följande: 
+Om du vill komma åt ett dataelement i anpassad kod använder du `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
 
 ```javascript
 getDataElementValue('productName') 
 ```
 
-Vidarebefordrande åtgärder utförs sekventiellt. Det går också att returnera ett värde som kan användas i en efterföljande åtgärd för anpassad kod i en åtgärd. Det returnerade värdet kan komma från kod i den åtgärden eller från svarstexten för ett anrop till en extern källa. Om du vill referera till data från en tidigare utförd åtgärd i en enskild regel där Core-tillägget används, skapar du ett dataelement av typen `Path` och använder följande sökväg för att referera till värdet för variabeln `productCategory` som definierats i anpassad kod i Core-tillägget:
+Vidarebefordrande åtgärder utförs sekventiellt. Det går också att returnera ett värde som kan användas i en efterföljande åtgärd för anpassad kod i en åtgärd. Det returnerade värdet kan komma från kod i den åtgärden eller från svarstexten för ett anrop till en extern källa. Om du vill referera till data från en tidigare utförd åtgärd i en enda regel där Core-tillägget används, skapar du ett dataelement av typen `Path` och använd följande sökväg för att referera till värdet för en variabel som anropas `productCategory` definieras i anpassad kod i Core-tillägget:
 
 ```javascript
 arc.ruleStash.[Extension-Name].[key-as-defined-by-action] 
@@ -183,11 +183,11 @@ I följande avsnitt beskrivs de typer av dataelement som finns i Core-tillägget
 
 ### Egen kod
 
-Du kan ange egen JavaScript i användargränssnittet genom att markera **[!UICONTROL Open Editor]** och infoga kod i redigeringsfönstret.
+Du kan ange egen JavaScript i användargränssnittet genom att välja  **[!UICONTROL Open Editor]** och infoga kod i redigeringsfönstret.
 
-En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska användas som dataelementvärde. Om en return-programsats inte ingår eller om värdet `null` eller `undefined` returneras, återspeglas dataelementets standardvärde `null` eller `undefined`.
+En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska användas som dataelementvärde. Om en retursats inte ingår eller om värdet `null` eller `undefined` returneras, dataelementets standardvärde återspeglar `null` eller `undefined`.
 
-Använd metoden `getDataElementValue` om du vill komma åt värdet för ett dataelement i anpassad kod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName` skriver du följande: 
+Om du vill komma åt ett dataelement i anpassad kod använder du `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
 
 ```javascript
 getDataElementValue('productName') 
@@ -203,9 +203,9 @@ return getDataElementValue('section').concat(getDataElementValue('pName'));
 
 En sökväg till ett nyckelvärdepar för en händelse som skickas till Adobe Experience Platform Edge Network kan refereras med hjälp av datatypen Path.
 
-Om du vill referera till hela objektet för en händelse anger du `arc` som sökväg. Akronymen `arc` står för Adobe Resource Context och är den översta sökvägen för en händelse som skickas till Adobe Experience Platform Edge Network.
+Om du vill referera till hela objektet för en händelse anger du `arc` som banan. Akronymen `arc` står för Adobe Resource Context och är den översta sökvägen för en händelse som skickas till Adobe Experience Platform Edge Network.
 
-Med tanke på `interact`-anropet från klienten till Edge Network har till exempel följande begäran från webbläsarkonsolen:
+Med `interact` anrop från klienten till Edge Network har följande begäran från webbläsarkonsolen:
 
 ```javascript
 "events": [ 
@@ -218,7 +218,7 @@ Med tanke på `interact`-anropet från klienten till Edge Network har till exemp
                      }] 
 ```
 
-Om du vill ange en sökväg som refererar till `pageName` anger du följande i sökvägsfältet:
+Ange en sökväg som refererar `pageName`anger du följande i sökvägsfältet:
 
 ```javascript
 arc.event.xdm.page.pageName 
@@ -226,4 +226,4 @@ arc.event.xdm.page.pageName
 
 >[!NOTE]
 >
->`interact`-anropet från klienten har `events`, men för händelsevidarebefordran behöver du `event`. Detta beror på att vidarebefordran av händelser undersöker varje händelse individuellt och inte som en grupp med flera händelser som visas på klienten.
+>The `interact` anrop från klienten har `events`, men för vidarebefordran av händelser behöver du `event`. Detta beror på att vidarebefordran av händelser undersöker varje händelse individuellt och inte som en grupp med flera händelser som visas på klienten.
