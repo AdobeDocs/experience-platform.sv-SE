@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6c2271e4c5be924dcd8c137cb40bef72e104c7e2
+source-git-commit: d4a4baf330925d6696f515bf650d86740c18e97c
 workflow-type: tm+mt
-source-wordcount: '2369'
+source-wordcount: '2584'
 ht-degree: 1%
 
 ---
@@ -87,19 +87,15 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 | Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> I den allmänna tillgängligheten för Enterprise-destinationsanslutningar ingår alla funktioner som tidigare fanns i betaversionen, och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [Signatur för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) med mera [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (Bärartoken, OAuth 2) i HTTP API-målet.</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (Sändande av historiska profiler som är kvalificerade för segmentet när det först aktiveras).</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och tidsstämplar för segment,</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
 | Aviseringar i sitt sammanhang för måldataflöden | Nu kan du [prenumerera på aviseringar](../../destinations/ui/alerts.md) när du skapar ett måldataflöde, för att få varningsmeddelanden om status, lyckade eller misslyckade dataflöden. Du kan välja att få aviseringar i användargränssnittet för Experience Platform eller via e-post. |
 
-<!--
+### Frisläppningsprocess för avancerade målanslutningar för företag {#release-process-enterprise-destinations}
 
-### Release process for advanced enterprise destination connectors {#release-process-enterprise-destinations}
+För Amazon Kinesis, Azure Event Hubs och HTTP API-destinationer visas både det tidigare Beta-målkortet och det nya allmänt tillgängliga (GA) målkortet i målkatalogen under versionsprocessen (från och med den 27 april). Alla dataflöden som konfigureras av kunder som använder betatestarna migreras inom de närmaste dagarna till GA-versionen av samma mål. Denna migrering bör vara slutförd till slutet av fredagen den 29 april. Beta-destinationerna är fortfarande synliga under denna korta tid och märkta som **Föråldrat**.
 
-For the Amazon Kinesis, Azure Event Hubs, and HTTP API destinations, during the release process (starting April 27th), you will see both the former Beta destination card, as well as the new generally available (GA) destination card in the destinations catalog. Any dataflows configured by customers using the beta destinations will be migrated in the next couple of days to the GA version of the same destination. This migration should ultimately be completed by the end of day Friday April 29th. The Beta destinations will be continue to be visible during this short time-window and labeled as **Deprecated**.
+Observera följande om du har använt dessa destinationer under betaversionen:
 
-If you have been utilizing these destinations in the Beta phase, please note the following:
-
-- If have been previously in Beta with any of the 3 destinations, no action is needed. All dataflows set up as part of Beta will continue to be functional and will be migrated to the GA version.
-- If you want to set up these destinations beginning April 27th, please do so with the new GA version of the destinations.
-- The beta cards marked as deprecated will be removed once the release operation is complete, estimated by the end of day Friday April 29th. The Experience Platform engineering team is monitoring closely for a successful release operation.
-
--->
+- Om du tidigare har varit i Beta med någon av de tre destinationerna behövs ingen åtgärd. Alla dataflöden som har konfigurerats som en del av betaversionen kommer att fortsätta att fungera och migreras till GA-versionen.
+- Om du vill konfigurera dessa destinationer från och med den 27 april, gör det med den nya GA-versionen av destinationerna.
+- Betakorten som markerats som inaktuella tas bort när releaseversionen är klar, vilket beräknas inträffa till slutet av fredagen den 29 april. Teknikteamet på Experience Platform bevakar noggrant inför en lyckad release-operation.
 
 **Nya destinationer**
 
