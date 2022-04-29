@@ -3,9 +3,9 @@ title: Konfigurera ett datastream
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 5c57f65014736e20e1bcad6a9b158c923bbb4220
+source-git-commit: 2275a32cfa9419d2ca407dd48a15f8d06354cd49
 workflow-type: tm+mt
-source-wordcount: '2006'
+source-wordcount: '1986'
 ht-degree: 0%
 
 ---
@@ -18,17 +18,13 @@ Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i a
 
 >[!NOTE]
 >
->Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Fyll i följande [formulär](https://adobe.ly/websdkaccess) för att begära nödvändig åtkomst.
+>Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Fyll i följande [formulär](https://adobe.ly/websdkaccess) för att begära nödvändig åtkomst. Om du vill hantera dataströmmar måste ditt användarkonto läggas till i en produktprofil för taggar i [!DNL Adobe Experience Platform].
 
 ## Öppna [!UICONTROL Datastreams] arbetsyta
 
 Du kan skapa och hantera datastammar i användargränssnittet för datainsamling genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
 ![Fliken Datastreams i användargränssnittet för datainsamling](../images/datastreams/datastreams-tab.png)
-
->[!NOTE]
->
->Medan du kan komma åt [!UICONTROL Datastreams] oavsett om du använder plattformens tagghanteringsfunktioner eller inte måste du ha utvecklarbehörighet för att kunna hantera dataströmmar själva. Se [användarbehörigheter](../../tags/ui/administration/user-permissions.md) artikel i taggdokumentationen om du vill ha mer information.
 
 The [!UICONTROL Datastreams] På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
 
