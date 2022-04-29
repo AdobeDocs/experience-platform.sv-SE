@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: e19c70883785ff338623ea2e6433562a792b3841
 workflow-type: tm+mt
-source-wordcount: '1802'
+source-wordcount: '1855'
 ht-degree: 1%
 
 ---
@@ -19,8 +19,8 @@ Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan s
 
 Data skickas på ett lösningsagnostiskt sätt (XDM) till Adobe Experience Platform Edge Network, som sedan mappar data till lösningsspecifika format och destinationer och skickar dem i realtid.
 
-**Mer**
-[informationPresentation av Adobe Summit](https://www.adobe.com/summit/2020/with-alloy-js-never-tag-for-an-evar-or-mbox-again.html)
+**Mer information**
+[Adobe Summit presentation](https://www.adobe.com/summit/2020/with-alloy-js-never-tag-for-an-evar-or-mbox-again.html)
 
 ## Hur skiljer sig Adobe Experience Platform Web SDK från tidigare lösningar?
 
@@ -60,45 +60,43 @@ Adobe Experience Platform Web SDK kan även skicka data direkt till Adobe Experi
 
 ## Vad är värdet med nya Web SDK?
 
-**Prestanda:** SDK för webben är mindre än alla de aktuella Adobe-biblioteken och ger avsevärt snabbare sidinläsning.
+**Prestanda:** SDK för webben är mindre än för alla Adobe-bibliotek och ger avsevärt snabbare sidinläsning.
 
-**Enkelhet:** Kombinationen av XDM, Web SDK, taggar, Experience Edge, Adobe Experience Cloud-lösningar och Adobe Experience Platform skapar en lättbegriplig och lättanvänd datainsamlingsberättelse.
+**Enkelt:** Kombinationen av XDM, Web SDK, taggar, Experience Edge, Adobe Experience Cloud-lösningar och Adobe Experience Platform skapar en lättbegriplig och lättanvänd datainsamlingsberättelse.
 
 * **XDM:** Det lösningsagnostiska schema som du använder för att skicka data till Adobe. Ingen mer taggning för variabler eller rutor.
 * **Adobe Experience Platform Web SDK:** Gör det enkelt att skicka och ta emot data till Adobe Experience Platform Edge Network.
-* **Taggar:** Förenklar distribution och konfiguration av Web SDK (och andra JavaScript-taggar) på en plats.
+* **Taggar:** Förenklar driftsättning och konfiguration av Web SDK (och andra JavaScript-taggar) på en plats.
 * **Experience Edge:** Skicka enkelt data till Adobe Experience Platform och lösningar i det format de behöver.
-* **Adobe Experience Platform och Adobe:** Aktivera deras värdepaket.
+* **Adobe Experience Platform och Adobe:** Aktivera deras värdeförslag.
 
-**Kontroll:** Eftersom alla data använder en enda och sammankopplad dataström kan ni logiskt följa och styra hur data ser ut under varje millisekund av deras resa, till och från program.
+**Kontroll:** Eftersom alla data använder en enda och sammankopplad dataström kan ni logiskt följa och styra hur data ser ut under varje millisekund av resan, till och från program.
 
-**Modern och redo för framtiden:** Web SDK och dess anslutning till Experience Edge-nätverket har gjort att Adobe har kunnat modernisera hur Adobe hanterar datainsamling, personalisering, samtycke och framtiden för cookies från tredje part. (Det aktiverar en förstahandsdomän som hanteras av Adobe.)
+**Modern och redo för framtiden:** Web SDK och dess anslutning till Experience Edge Network har gjort det möjligt för Adobe att avsevärt modernisera hur Adobe hanterar datainsamling, personalisering, samtycke och framtiden för cookies från tredje part. (Det aktiverar en förstahandsdomän som hanteras av Adobe.)
 
-**Time-to-value:** Adobe har jobbat hårt (och kommer att fortsätta) för att göra det så enkelt som möjligt att driftsätta Web SDK via taggar och mappa klientdata till XDM.  När detta arbete är klart kan alla andra Adobe-lösningar och Adobe Experience Platform-tjänster aktiveras eller inaktiveras på serversidan. Om du t.ex. använder detta för Adobe Analytics och vill aktivera Target eller Experience Platform kan du enkelt växla mellan olika datastream-konfigurationer och ljusa upp dessa användningsfall.
+**Tid till värde:** Adobe har arbetat hårt (och kommer att fortsätta) för att göra det så enkelt som möjligt att driftsätta Web SDK via taggar och mappa klientdata till XDM. När detta arbete är klart kan alla andra Adobe-lösningar och Adobe Experience Platform-tjänster aktiveras eller inaktiveras på serversidan. Om du t.ex. använder detta för Adobe Analytics och vill aktivera Target eller Experience Platform kan du enkelt växla mellan olika datastream-konfigurationer och ljusa upp dessa användningsfall.
 
 ## Vad är Alloy?
 
 Alloy är kodnamnet för Adobe Experience Platform Web SDK. Det används i SDK:s källkod och filnamn, även om Adobe Experience Platform Web SDK är det officiella namnet.
 
-## Behöver kunderna köpa Adobe Experience Platform för att använda Web SDK?
+## Behöver kunderna köpa Adobe Experience Platform för att använda [!DNL Web SDK]?
 
-Nej. Alla Adobe Digital Experience-kunder kan använda den. Helt gratis. Alla kunder som vill använda Web SDK får tillgång till scheman och datauppsättningar i Adobe Experience Platform användargränssnitt.
+Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience Platform Web SDK kostnadsfritt. Om du vill använda Web SDK måste din organisation ha etablerat sig för den här funktionen. Om du vill ha åtkomst fyller du i följande [formulär](https://adobe.ly/websdkaccess) och Adobe kommer att ge dig tillgång till [Användargränssnitt för datastreams](fundamentals/datastreams.md) och Adobe Experience Platform användargränssnitt (om det behövs).
+
+Kunder som vill använda [!DNL Web SDK] kommer att få åtkomst till att skapa scheman, datauppsättningar och identitetsnamnutrymmen i Adobe Experience Platform användargränssnitt.
 
 ## Vem ska använda Web SDK?
 
 Adobe Experience Platform Web SDK har utvecklats för följande personer:
 
 * Adobe Experience Platform
-
-   Om du behöver skicka data direkt från en enhet till Adobe Experience Platform är detta det officiellt rekommenderade sättet.
-
-   Adobe är medvetna om att det går snabbare att använda Adobe Analytics Connector om kunden redan har Adobe Analytics, men det är inte den långsiktiga strategin för datainsamling.
+   * Om du behöver skicka data direkt från en enhet till Adobe Experience Platform är detta det officiellt rekommenderade sättet.
+   * Adobe är medvetna om att det går snabbare att använda Adobe Analytics Connector om kunden redan har Adobe Analytics, men det är inte den långsiktiga strategin för datainsamling.
 
 * Kunder med Adobe Experience Cloud
-
-   Nya Adobe Analytics-, Adobe Audience Manager- och Adobe Target-kunder bör börja med nya Web SDK och inte använda äldre bibliotek.
-
-   Befintliga kunder som vill få optimerad implementering bör använda nya Web SDK.
+   * Nya Adobe Analytics-, Adobe Audience Manager- och Adobe Target-kunder bör börja med nya Web SDK och inte använda äldre bibliotek.
+   * Befintliga kunder som vill få optimerad implementering bör använda nya Web SDK.
 
 
 ## Hur får jag tillgång till Adobe Experience Platform Web SDK?
@@ -107,61 +105,61 @@ Web SDK är för närvarande tillgängligt för allmänheten och kan användas f
 
 ## Vilka användningsfall stöds för närvarande av Web SDK?
 
-Web SDK utvecklas snabbt. Fler användningsexempel håller på att bearbetas. Du hittar listan [över användningsfall som stöds här.](https://github.com/adobe/alloy/projects/5)
+Web SDK utvecklas snabbt. Fler användningsexempel håller på att bearbetas. Du hittar [lista över de användningsfall som stöds här.](https://github.com/adobe/alloy/projects/5)
 
 ## Måste befintliga kunder tagga om sina webbplatser?
 
 Det beror på. Adobe Experience Platform Web SDK kan användas i två olika format. Ett dokument för framtida migrering innehåller ytterligare information.
 
-* **Bara en annan tagg:** Om webbplatsen redan är taggad för lösningar och du inte kan tagga om, men du vill skicka data till Adobe Experience Platform Edge Network för Experience Platform eller kommande händelsevidarebefordringsfunktioner (se nedan), kan du lägga till  `alloy.js` taggen på webbplatsen, där den fungerar som&quot;bara en annan tagg&quot;.
+* **Bara en annan tagg:** Om webbplatsen redan är taggad för lösningar och du inte kan tagga om, men du vill skicka data till Adobe Experience Platform Edge Network för Experience Platform eller kommande händelsevidarebefordringsfunktioner (se nedan), kan du lägga till `alloy.js` -taggen till webbplatsen, där den fungerar som&quot;bara en annan tagg&quot;.
 
-* **Den enda taggen:** Om du vill använda Web SDK för en Experience Cloud-lösning måste du använda den för  __ alla lösningar på den sidan. Om din webbplats till exempel redan är taggad för Adobe Analytics och du vill använda den för Target måste du använda den för både och för alla andra i framtiden.
+* **Den enda taggen:** Om du vill använda Web SDK för en Experience Cloud-lösning måste du använda den för _alla_ av lösningarna på den sidan. Om din webbplats till exempel redan är taggad för Adobe Analytics och du vill använda den för Target måste du använda den för både och för alla andra i framtiden.
 
-Det innebär att om du bestämmer dig för att använda Adobe Experience Platform Web SDK för icke-lösningsbaserade fall kan du tagga webbplatsen med `alloy.js` och gå vidare som om det vore en ny lösning. Om du vill använda den för Adobe Analytics, Target eller Audience Manager, eller för programanvändning, kan du behöva ta bort någon av de äldre koderna på sidan.
+Med andra ord, om du bestämmer dig för att använda Adobe Experience Platform Web SDK för icke-lösningsexempel, kan du tagga webbplatsen med `alloy.js` och gå vidare som om det vore en ny lösning. Om du vill använda den för Adobe Analytics, Target eller Audience Manager, eller för programanvändning, kan du behöva ta bort någon av de äldre koderna på sidan.
 
 ## Kan jag migrera ECID:n när jag börjar använda Alloy så att webbplatsens besökare inte börjar visas som nya besökare?
 
-Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [identitetshandboken för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en#id-migration) om du vill ha mer information.
+Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [Identitetsdokumentation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en#id-migration) för mer information.
 
 ## Hur skiljer sig Web SDK från taggar?
 
-* **Taggar i Experience** Platform hanterar enhetskoden. Använd dem för att enklare distribuera koden. De är kostnadsfria och kraftfulla.
+* **Taggar i Experience Platform** hantera enhetskoden. Använd dem för att enklare distribuera koden. De är kostnadsfria och kraftfulla.
 
-* **Adobe Experience Platform Web** SDK är det officiella namnet på den nya koden som ska distribueras av taggar för Adobe. Den är också kostnadsfri och kraftfull.
+* **Adobe Experience Platform Web SDK** är det officiella namnet på den nya koden som ska distribueras av taggar för Adobe-användningsfall. Den är också kostnadsfri och kraftfull.
 
 * **`alloy.js`** är filnamnet på Adobe Experience Platform Web SDK-koden.
 
 ## Måste jag använda taggar för att distribuera Web SDK?
 
-Nej. Du kan hämta `alloy.js`-filen själv.
+Nej. Du kan ladda ned `alloy.js` själv.
 
 Men:
 
 * Adobe Experience Platform Web SDK kräver något som kallas dataström-ID så att edge-nätverket kan identifiera dataströmmen och avgöra vad som ska göras med data. Detta ID skapas i Experience Platform. Det innebär inte att du måste använda användargränssnittet för datainsamling för att skapa egenskaper eller distribuera JavaScript-koden, men du måste använda taggar för att skapa ett konfigurations-ID.
 
-* Taggar är inte bara den bästa tillgängliga taggen och SDK-hanteraren, utan gör det mycket enkelt att distribuera `alloy.js` och mappa data till XDM-scheman. Om du bestämmer dig för att inte använda taggar måste du hantera distributionen av `alloy.js`, händelser och mappning av data till XDM innan du skickar dem. Detta är en _mycket_ svårare process än att använda taggar.
+* Taggar är inte bara den bästa tillgängliga taggen och SDK-hanteraren, det är mycket enkelt att distribuera `alloy.js` och mappa data till XDM-scheman. Om du bestämmer dig för att inte använda taggar måste du hantera distributionen `alloy.js`, händelser och mappning av data till XDM innan de skickas. Det här är en _mycket_ svårare än att använda taggar.
 
 * Vi rekommenderar att du använder taggar för att distribuera `alloy.js`, även om det är den enda taggen som du använder den för.
 
 ## Vad innebär vidarebefordran av händelser?
 
-Om du använder våra SDK:er och skickar XDM till Experience Edge kan du med dessa nya funktioner för händelsevidarebefordran installera nya tillägg på serversidan och mappa dessa data till vad som helst - och skicka dem var som helst - från vårt edge-nätverk. Se det som&quot;datainsamling som en tjänst&quot;.  Detta kommer att vara kostnadsfritt och paketeras som en del av Adobe Experience Platform.
+Om du använder våra SDK:er och skickar XDM till Experience Edge kan du med dessa nya funktioner för händelsevidarebefordran installera nya tillägg på serversidan och mappa dessa data till vad som helst - och skicka dem var som helst - från vårt edge-nätverk. Se det som&quot;datainsamling som en tjänst&quot;. Detta kommer att vara kostnadsfritt och paketeras som en del av Adobe Experience Platform.
 
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
-Mer information om en CNAME finns i [Adobe-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html)
+Mer information om CNAME finns i [Adobe dokumentation](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/cname.html)
 
 ## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
 
 Ja, för närvarande använder Web SDK var som helst mellan 1-4 cookies beroende på implementeringen. Nedan visas en lista över de fyra cookies som du kan se med Web SDK och hur de används:
 
-**kCct_origin_identity:** Identitetskakan används för att lagra ECID samt annan information som rör ECID.
+**kndct_orgid_identity:** Identitetskakan används för att lagra ECID och annan information som rör ECID.
 
-**kndctr_original_medgivande:** Den här cookien lagrar användarens medgivandeinställning för webbplatsen.
+**kndctr_orgid_medgivande:** Denna cookie lagrar användarens medgivandeinställning för webbplatsen.
 
 **kndctr_orgid_personalization:** Denna cookie innehåller sessionsinformation som Adobe Target använder för att anpassa webbsidor.
 
-**kndctr_orgid_consentcheck:** Denna sessionsbaserade cookie signalerar till servern att söka efter serversidan för medgivandeinställningarna.
+**kndctr_orgid_consentcheck:** Denna sessionsbaserade cookie signalerar till servern att leta upp serversidan för medgivandeinställningar.
 
 ## Vilka webbläsare stöder Adobe Experience Platform Web SDK?
 
