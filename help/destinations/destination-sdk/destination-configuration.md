@@ -2,7 +2,7 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 51417bee5dba7a96d3a7a7eb507fc95711fad4a5
+source-git-commit: e3886cbcde76e37263d2fa23769fb9e96501edc4
 workflow-type: tm+mt
 source-wordcount: '1784'
 ht-degree: 2%
@@ -220,7 +220,7 @@ Läs mer i [Översikt över namnområde för identitet](https://experienceleague
 |---------|----------|------|
 | `acceptsAttributes` | Boolean | Anger om målet accepterar standardprofilattribut. Normalt markeras dessa attribut i partners dokumentation. |
 | `acceptsCustomNamespaces` | Boolean | Anger om kunderna kan ställa in anpassade namnutrymmen i målet. |
-| `allowedAttributesTransformation` | Sträng | *Visas inte i exempelkonfigurationen*. Används till exempel när [!DNL Platform] kunden har oformaterade e-postadresser som attribut och din plattform accepterar bara hashkodade e-postmeddelanden. I det här objektet kan du använda den omformning som ska användas (till exempel omvandla e-postmeddelandet till gemener och sedan hash). Ett exempel finns i `requiredTransformation` i [API-referens för destinationskonfiguration](./destination-configuration-api.md#update). |
+| `transformation` | Sträng | *Visas inte i exempelkonfigurationen*. Används till exempel när [!DNL Platform] kunden har oformaterade e-postadresser som attribut och din plattform accepterar bara hashkodade e-postmeddelanden. I det här objektet kan du använda den omformning som ska användas (till exempel omvandla e-postmeddelandet till gemener och sedan hash). Ett exempel finns i `requiredTransformation` i [API-referens för destinationskonfiguration](./destination-configuration-api.md#update). |
 | `acceptedGlobalNamespaces` | – | Används för fall där plattformen godkänner [standardidentitetsnamnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (till exempel IDFA), så du kan begränsa Platform-användare till att endast välja dessa identitetsnamnutrymmen. |
 
 {style=&quot;table-layout:auto&quot;}
