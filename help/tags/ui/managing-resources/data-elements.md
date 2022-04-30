@@ -1,7 +1,8 @@
 ---
 title: Dataelement
 description: Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
+source-git-commit: af9a5118f3633c132dd88ab659f570c9136b12e1
 workflow-type: tm+mt
 source-wordcount: '1610'
 ht-degree: 0%
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
 
@@ -20,24 +21,24 @@ Ett enskilt dataelement är en variabel vars värde kan mappas till frågesträn
 
 >[!IMPORTANT]
 >
->Ändringarna börjar inte gälla förrän de [publiceras](../publishing/overview.md).
+>Ändringarna börjar inte gälla förrän de är [publicerad](../publishing/overview.md).
 
 Använd dataelement i så stor omfattning som möjligt genom hela regelskapandet för att konsolidera definitionen av dynamiska data och förbättra effektiviteten i taggningsprocessen. Du definierar dataregler en gång och använder dem sedan på flera ställen.
 
 Begreppet återanvändbara dataelement är mycket kraftfullt och du bör använda dem som bästa praxis.
 
-Om det till exempel finns ett visst sätt att referera till sidnamn eller produkt-ID:n eller hämta information från frågesträngsparametrar från en filialmarknadsföringslänk eller från [!DNL AdWords], och så vidare, kan du skapa en dataordlista (dataelement) genom att hämta information från dess källa och sedan använda dessa data i olika taggregler.
+Om det till exempel finns ett visst sätt att referera till sidnamn eller produkt-ID:n eller hämta information från frågesträngsparametrar från en filialmarknadsföringslänk eller från [!DNL AdWords]o.s.v. kan du skapa ett datalexikon (dataelement) genom att hämta information från dess källa och sedan använda dessa data i olika taggregler.
 
-Anta att du använder ett visst sidnamn som exempel genom att referera till ett datalager, `document.title`-element eller en title-tagg på webbplatsen. Med taggar i Adobe Experience Platform kan du skapa ett dataelement som en enda referenspunkt för den aktuella datapunkten. Du kan sedan använda det här dataelementet i alla regler som behöver referera till sidnamnet. Om du av någon anledning i framtiden bestämmer dig för att ändra sättet som du refererar till sidnamnet (du har t.ex. refererat till `document.title` men nu vill referera till ett visst datalager), behöver du inte redigera många olika regler för att ändra den referensen. Du ändrar bara referensen en gång i dataelementet och alla regler som refererar till det dataelementet uppdateras automatiskt.
+Anta att du använder ett visst sidnamnsschema genom att referera till ett datalager, `document.title` eller en title-tagg på webbplatsen. Med taggar i Adobe Experience Platform kan du skapa ett dataelement som en enda referenspunkt för den aktuella datapunkten. Du kan sedan använda det här dataelementet i alla regler som behöver referera till sidnamnet. Om du av någon anledning i framtiden bestämmer dig för att ändra sättet som du refererar till sidnamnet (du har till exempel refererat till `document.title` men du vill nu referera till ett visst datalager) behöver du inte redigera många olika regler för att ändra den referensen. Du ändrar bara referensen en gång i dataelementet och alla regler som refererar till det dataelementet uppdateras automatiskt.
 
 >[!NOTE]
 >
->Om det inte finns någon referens till ett dataelement i en regel, läses det inte in på någon sida såvida det inte anropas specifikt i det anpassade skriptet
+>Om det inte finns någon referens till ett dataelement i en regel, läses det inte in på någon sida om det inte anropas specifikt i det anpassade skriptet
 
 Dataelement fylls i med data när de används i regler eller när de anropas manuellt i ett skript. På en hög nivå:
 
-1. [Skapa ett dataelement](#create-a-data-element) om du inte redan har gjort det.
-1. Använd dataelementet i en [regel](./rules.md) eller ett anpassat skript.
+1. [Skapa ett dataelement](#create-a-data-element)om du inte redan har gjort det.
+1. Använd dataelementet i en [regel](./rules.md) eller ett eget skript.
 
 ## Användning av dataelement
 
@@ -47,7 +48,7 @@ Du kan använda dataelement i redigeringsgränssnittet för regler genom att anv
 
 ### I anpassat skript
 
-Du kan använda dataelement i egna skript med objektsyntaxen `_satellite`:
+Du kan använda dataelement i egna skript med `_satellite` objektsyntax:
 
 `_satellite.getVar('data element name');`
 
@@ -55,11 +56,11 @@ Du kan använda dataelement i egna skript med objektsyntaxen `_satellite`:
 
 Dataelement är byggstenarna för regler. Med dataelement kan du skapa ett datalexikon (eller datamappning) med vanliga objekt på en sida, oavsett varifrån de kommer (frågesträngar, URL:er eller cookie-värden) för alla objekt som finns på webbplatsen.
 
-1. Öppna fliken [!UICONTROL Data Elements] på en egenskapssida och välj sedan **[!UICONTROL Create New Data Element]**.
+1. Öppna sidan Egenskaper [!UICONTROL Data Elements] tabbtangenten och sedan **[!UICONTROL Create New Data Element]**.
 1. Namnge dataelementet.
 1. Välj ett tillägg och skriv.
 
-   De tillgängliga elementtyperna för data bestäms av tillägget. Mer information om vilka typer som finns tillgängliga med Core-taggtillägget finns i [Typer av dataelement](data-elements.md#types-of-data-elements).
+   De tillgängliga elementtyperna för data bestäms av tillägget. Information om vilka typer som finns tillgängliga med Core-taggtillägget finns i [Typer av dataelement](data-elements.md#types-of-data-elements).
 
 1. Ange eventuell begärd information om den valda typen i de angivna fälten.
 1. (Valfritt) Ange ett standardvärde.
@@ -86,7 +87,7 @@ Dataelement är byggstenarna för regler. Med dataelement kan du skapa ett datal
 
 1. Välj **[!UICONTROL Save]**.
 
-När du skapar eller redigerar element kan du spara och skapa i ditt [aktiva bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas. Du kan också skapa ett nytt bibliotek från listrutan [!UICONTROL Active Library].
+När du skapar eller redigerar element kan du spara och bygga på [aktivt bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas. Du kan också skapa ett nytt bibliotek från [!UICONTROL Active Library] listruta.
 
 ## Typer av dataelement {#types-of-data-elements}
 
@@ -104,9 +105,9 @@ Alla tillgängliga domäncookies kan refereras i fältet för cookie-namn.
 
 ### Egen kod
 
-Du kan ange egen JavaScript i användargränssnittet genom att markera [!UICONTROL Open Editor] och infoga kod i redigeringsfönstret.
+Du kan ange egen JavaScript i användargränssnittet genom att välja  [!UICONTROL Open Editor] och infoga kod i redigeringsfönstret.
 
-En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska anges som dataelementvärde. Om ingen return-programsats ingår tolkas dataelementet till `undefined`.  Detta utlöser reservkontrollen för att leta efter ett lagrat värde och sedan ett standardvärde om det inte finns något lagrat värde.
+En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska anges som dataelementvärde. Om en return-programsats inte ingår tolkas dataelementet som `undefined`.  Detta utlöser reservkontrollen för att leta efter ett lagrat värde och sedan ett standardvärde om det inte finns något lagrat värde.
 
 **Exempel:**
 
@@ -119,7 +120,7 @@ if (window.location.pathname == '/') {
 }
 ```
 
-Anpassad kod kan acceptera `event`-objektet från den anropande regeln som ett argument. Detta gör att koden kan läsa värdet där.
+Anpassad kod kan acceptera `event` -objektet från anropsregeln som ett argument. Detta gör att koden kan läsa värdet där.
 
 **Exempel:**
 
@@ -129,13 +130,18 @@ var eventType = event.$type;
 return eventType; // if this data element is called from a "DOM Ready" event, then `core.dom-ready` is returned
 ```
 
-Du kan sedan använda detta i egna skript med objektsyntaxen `_satellite`:
+Du kan sedan använda detta i egna skript med `_satellite` objektsyntax:
 
-`_satellite.getVar('data element name', event);`
+```javascript
+// event refers to the calling rule's event
+var rule = _satellite.getVar('return event rule', event);
+```
 
-När du använder `%..%`-notation behöver du bara ange dataelementets namn. Du behöver inte ange `event`.
+Vid användning av procent (`%`) behöver du bara ange dataelementets namn. Du behöver inte ange `event`.
 
-`%data element name%`
+```text
+%data element name%
+```
 
 ### DOM-attribut
 
@@ -157,7 +163,7 @@ Alla tillgängliga JavaScript-objekt eller -variabler kan refereras med sökväg
 
 Om du vill samla in JavaScript-variabler eller objektegenskaper i koden och använda dem med något av dina tillägg eller regler, kan dataelement användas för att hämta dessa värden. På så sätt kan du referera till dataelementet i alla regler, och om datakällan ändras behöver du bara ändra referensen till källan (dataelementet) på ett ställe i användargränssnittet för datainsamling.
 
-Anta att koden innehåller en JavaScript-variabel som heter `Page_Name`, så här:
+Anta att koden innehåller en JavaScript-variabel som kallas `Page_Name`, så här:
 
 ```markup
 <script>
@@ -168,7 +174,7 @@ Anta att koden innehåller en JavaScript-variabel som heter `Page_Name`, så hä
 
 Du måste ange sökvägen till variabeln när du skapar dataelementet.
 
-Om du använder ett datainsamlarobjekt som en del av datalagret använder du bara punktnotation i sökvägen för att referera till objektet och egenskapen som du vill hämta till dataelementet, till exempel `_myData.pageName` eller `digitalData.pageName`.
+Om du använder ett datainsamlarobjekt som en del av datalagret använder du bara punktnotation i sökvägen för att referera till det objekt och den egenskap som du vill hämta till dataelementet, som `_myData.pageName`, eller `digitalData.pageName`, osv.
 
 #### Exempel:
 
@@ -176,7 +182,7 @@ Om du använder ett datainsamlarobjekt som en del av datalagret använder du bar
 
 ### Lokal lagring
 
-Ange namnet på det lokala lagringsobjektet i fältet [!UICONTROL Local Storage Item Name].
+Ange namnet på ditt lokala lagringsobjekt i [!UICONTROL Local Storage Item Name] fält.
 
 Med lokal lagring kan webbläsare lagra information från sida till sida ([https://www.w3schools.com/html/html5\_webstorage.asp](https://www.w3schools.com/html/html5_webstorage.asp)). Lokal lagring fungerar mycket som cookies, men är mycket större och mer flexibel.
 
@@ -184,7 +190,7 @@ Använd det angivna fältet för att ange värdet som du skapade för ett lokalt
 
 ### Sidinformation
 
-Använd dessa datapunkter för att hämta sidinformation som kan användas i regellogiken eller för att skicka information till [!DNL Analytics] eller externa spårningssystem.
+Använd dessa datapunkter för att samla in sidinformation som kan användas i regellogiken eller för att skicka information till [!DNL Analytics] eller externa spårningssystem.
 
 Du kan välja något av följande sidattribut som ska användas i dataelementet:
 
@@ -197,7 +203,7 @@ Du kan välja något av följande sidattribut som ska användas i dataelementet:
 
 ### Frågesträngsparameter
 
-Ange en enda URL-parameter i fältet [!UICONTROL URL Parameter].
+Ange en enda URL-parameter i [!UICONTROL URL Parameter] fält.
 
 Endast namnavsnittet är nödvändigt och alla specialdesigners som &quot;?&quot; eller &quot;=&quot; ska utelämnas
 
@@ -224,7 +230,7 @@ Maximum: 1000000000
 
 ### Sessionslagring
 
-Ange namnet på sessionslagringsobjektet i fältet [!UICONTROL Session Storage Item Name].
+Ange namnet på sessionslagringsobjektet i [!UICONTROL Session Storage Item Name] fält.
 
 Sessionslagring liknar lokal lagring, förutom att data tas bort efter att sessionen har avslutats, medan lokala lager eller en cookie kan behålla data.
 
@@ -245,7 +251,7 @@ Välj ett av följande attribut för besökarbeteende:
 Några vanliga användningsområden:
 
 * Visa en enkät när en besökare har varit på webbplatsen i fem minuter
-* Om detta är startsidan för besöket, fyll i ett [!DNL Analytics]-mått
+* Om det här är besökets landningssida ska du fylla i en [!DNL Analytics] mått
 * Visa ett nytt erbjudande till besökaren efter X antal sessioner
 * Visa ett nyhetsbrev om detta är en förstagångsbesökare
 
