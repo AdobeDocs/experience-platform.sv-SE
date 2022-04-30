@@ -2,9 +2,9 @@
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
+source-git-commit: 47391de09bcad1dc99340caa84cdfff13e9f5237
 workflow-type: tm+mt
-source-wordcount: '1279'
+source-wordcount: '1291'
 ht-degree: 1%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Det här dokumentet fungerar som referens för `_satellite`-objektet på klientsidan och de olika funktioner du kan utföra med det.
+Det här dokumentet fungerar som referens för klientsidan `_satellite` -objekt och de olika funktioner du kan utföra med det.
 
 ## `track`
 
@@ -31,7 +31,7 @@ _satellite.track(identifier: string [, detail: *] )
 _satellite.track('contact_submit', { name: 'John Doe' });
 ```
 
-`track` Aktiverar alla regler med händelsetypen för direktanrop som har konfigurerats med den angivna identifieraren från Core-taggtillägget. Exemplet ovan utlöser alla regler med en Direct Call-händelsetyp där den konfigurerade identifieraren är `contact_submit`. Ett valfritt objekt som innehåller relaterad information skickas också. Du kommer åt detaljobjektet genom att ange `%event.detail%` i ett textfält i ett villkor eller en åtgärd eller `event.detail` i kodredigeraren i ett villkor eller en åtgärd för anpassad kod.
+`track` Aktiverar alla regler med händelsetypen för direktanrop som har konfigurerats med den angivna identifieraren från Core-taggtillägget. Exemplet ovan utlöser alla regler med hjälp av en Direct Call-händelsetyp där den konfigurerade identifieraren är `contact_submit`. Ett valfritt objekt som innehåller relaterad information skickas också. Du kommer åt detaljobjektet genom att ange `%event.detail%` i ett textfält i ett villkor eller en åtgärd eller `event.detail` inuti kodredigeraren i ett villkor eller en åtgärd för anpassad kod.
 
 ## `getVar`
 
@@ -47,9 +47,18 @@ _satellite.getVar(name: string) => *
 var product = _satellite.getVar('product');
 ```
 
-I det angivna exemplet returneras dataelementets värde om det finns ett dataelement med ett matchande namn. Om det inte finns något matchande dataelement kontrollerar den sedan om en anpassad variabel med ett matchande namn tidigare har angetts med `_satellite.setVar()`. Om en matchande anpassad variabel hittas returneras dess värde.
+I det angivna exemplet returneras dataelementets värde om det finns ett dataelement med ett matchande namn. Om det inte finns något matchande dataelement kontrollerar den sedan om en anpassad variabel med ett matchande namn tidigare har ställts in med `_satellite.setVar()`. Om en matchande anpassad variabel hittas returneras dess värde.
 
-Observera att i många formulärfält i användargränssnittet för datainsamling kan du använda syntaxen `%%` för att referera till variabler, vilket minskar behovet av att anropa `_satellite.getVar()`. Om du till exempel använder %product% kommer du åt värdet för produktdataelementet eller den anpassade variabeln.
+>[!NOTE]
+>
+>Du kan använda procent (`%`) till referensvariabler för många formulärfält i användargränssnittet för datainsamling, vilket minskar behovet av att anropa `_satellite.getVar()`. Använd till exempel `%product%` kommer åt värdet för produktdataelementet eller den anpassade variabeln.
+
+När en händelse utlöser en regel kan du skicka regelns motsvarande `event` objekt till `_satellite.getVar()` gilla so:
+
+```javascript
+// event refers to the calling rule's event
+var rule = _satellite.getVar('return event rule', event);
+```
 
 ## `setVar`
 
@@ -65,7 +74,7 @@ _satellite.setVar(name: string, value: *)
 _satellite.setVar('product', 'Circuit Pro');
 ```
 
-`setVar()` anger en anpassad variabel med ett visst namn och värde. Värdet för variabeln kan sedan nås med `_satellite.getVar()`.
+`setVar()` anger en anpassad variabel med ett visst namn och värde. Värdet på variabeln kan sedan nås med `_satellite.getVar()`.
 
 Du kan också ange flera variabler samtidigt genom att skicka ett objekt där nycklarna är variabelnamn och värdena är respektive variabelvärde.
 
@@ -87,7 +96,7 @@ _satellite.getVisitorId() => Object
 var visitorIdInstance = _satellite.getVisitorId();
 ```
 
-Om tillägget [!DNL Adobe Experience Cloud ID] är installerat på egenskapen returnerar den här metoden instansen av Visitor-ID. Mer information finns i [Experience Cloud ID Service-dokumentationen](https://experienceleague.adobe.com/docs/id-service/using/home.html).
+Om [!DNL Adobe Experience Cloud ID] -tillägget är installerat på egenskapen. Den här metoden returnerar Visitor ID-instansen. Se [Experience Cloud ID-tjänstdokumentation](https://experienceleague.adobe.com/docs/id-service/using/home.html) för mer information.
 
 ## `logger`
 
@@ -115,7 +124,7 @@ _satellite.logger.error(message: string)
 _satellite.logger.error('No product ID found.');
 ```
 
-Objektet `logger` tillåter att ett meddelande loggas till webbläsarkonsolen. Meddelandet visas bara om taggfelsfunktionen är aktiverad av användaren (genom att ringa `_satellite.setDebug(true)` eller använda ett lämpligt webbläsartillägg).
+The `logger` kan ett meddelande loggas till webbläsarkonsolen. Meddelandet visas bara om taggfelsfunktionen är aktiverad av användaren (genom att anropa `_satellite.setDebug(true)` eller använda ett lämpligt webbläsartillägg).
 
 ### Varningar om borttagning av loggning
 
@@ -133,7 +142,7 @@ Detta loggar en varning till webbläsarkonsolen. Meddelandet visas oavsett om ta
 
 ## `cookie` {#cookie}
 
-`_satellite.cookie` innehåller funktioner för att läsa och skriva cookies. Det är en exponerad kopia av tredjepartsbiblioteket js-cookie. Mer information om mer avancerad användning av det här biblioteket finns i [js-cookie-dokumentationen](https://www.npmjs.com/package/js-cookie#basic-usage).
+`_satellite.cookie` innehåller funktioner för att läsa och skriva cookies. Det är en exponerad kopia av tredjepartsbiblioteket js-cookie. Mer information om mer avancerad användning av det här biblioteket finns i [js-cookie-dokumentation](https://www.npmjs.com/package/js-cookie#basic-usage).
 
 ### Ange en cookie {#cookie-set}
 
@@ -147,7 +156,7 @@ _satellite.cookie.set(name: string, value: string[, attributes: Object])
 
 >[!NOTE]
 >
->I den gamla [`setCookie`](#setCookie)-metoden för att ställa in cookies var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade att cookien har TTL-värde (time-to-live) i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument i stället. Om du vill ange en TTL för en cookie med den nya metoden måste du ange en `expires`-egenskap i attributobjektet och ställa in den på önskat värde. Detta visas i exemplet nedan.
+>I gamla [`setCookie`](#setCookie) metoden för att ställa in cookies, var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade att cookien är TTL (time-to-live) i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument i stället. Om du vill ange en TTL för en cookie med den nya metoden måste du ange en `expires` -egenskapen i attributobjektet och ange det till det önskade värdet. Detta visas i exemplet nedan.
 
 **Exempel**
 
@@ -205,11 +214,11 @@ Det här objektet innehåller information om bygget av det aktuella biblioteket 
 
 ### `turbineVersion`
 
-Det innehåller den version av [turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) som används i det aktuella biblioteket.
+Detta ger [Turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) version som används i det aktuella biblioteket.
 
 ### `turbineBuildDate`
 
-ISO 8601-datumet när den version av [turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) som används inuti behållaren skapades.
+ISO 8601-datumet när versionen av [Turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) som användes inuti behållaren skapades.
 
 ### `buildDate`
 
@@ -247,7 +256,7 @@ Objektet innehåller följande egenskaper:
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | ID för miljön. |
-| `stage` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging` och `production`. |
+| `stage` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging`och `production`. |
 
 ## `notify`
 
@@ -267,7 +276,7 @@ _satellite.notify(message: string[, level: number])
 _satellite.notify('Hello world!');
 ```
 
-`notify` loggar ett meddelande till webbläsarkonsolen. Meddelandet visas bara om taggfelsfunktionen är aktiverad av användaren (genom att ringa `_satellite.setDebug(true)` eller använda ett lämpligt webbläsartillägg).
+`notify` loggar ett meddelande till webbläsarkonsolen. Meddelandet visas bara om taggfelsfunktionen är aktiverad av användaren (genom att anropa `_satellite.setDebug(true)` eller använda ett lämpligt webbläsartillägg).
 
 Du kan skicka en loggningsnivå som kan påverka formatering och filtrering av meddelandet som loggas. Följande nivåer stöds:
 
@@ -373,7 +382,7 @@ _satellite._monitors
 
 **Exempel**
 
-Lägg till ett kodfragment till HTML-koden på din webbsida som kör ett taggbibliotek. Vanligtvis infogas koden i `<head>`-elementet före `<script>`-elementet som läser in taggbiblioteket. På så sätt kan övervakaren fånga upp de tidigaste systemhändelserna som inträffar i taggbiblioteket. Exempel:
+Lägg till ett kodfragment på HTML på din webbsida som kör ett taggbibliotek. Normalt infogas koden i `<head>` -element före `<script>` -element som läser in taggbiblioteket. På så sätt kan övervakaren fånga upp de tidigaste systemhändelserna som inträffar i taggbiblioteket. Exempel:
 
 ```html
 <!DOCTYPE html>
@@ -415,7 +424,7 @@ Lägg till ett kodfragment till HTML-koden på din webbsida som kör ett taggbib
 </html>
 ```
 
-I det första skriptelementet skapas det inledande `_satellite`-objektet och en array på `_satellite._monitors` initieras eftersom taggbiblioteket ännu inte har lästs in. Skriptet lägger sedan till ett övervakarobjekt i den arrayen. Övervakningsobjektet kan ange följande metoder som senare anropas av taggbiblioteket:
+I det första skriptelementet har det inledande `_satellite` objektet skapas och en array på `_satellite._monitors` har initierats. Skriptet lägger sedan till ett övervakarobjekt i den arrayen. Övervakningsobjektet kan ange följande metoder som senare anropas av taggbiblioteket:
 
 ### `ruleTriggered`
 
@@ -423,17 +432,17 @@ Den här funktionen anropas efter att en händelse utlöser en regel, men innan 
 
 ### `ruleCompleted`
 
-Den här funktionen anropas efter att en regel har bearbetats fullständigt. Händelsen har med andra ord inträffat, alla villkor har skickats och alla åtgärder har utförts. Händelseobjektet som skickades till `ruleCompleted` innehåller information om regeln som slutfördes.
+Den här funktionen anropas efter att en regel har bearbetats fullständigt. Händelsen har med andra ord inträffat, alla villkor har skickats och alla åtgärder har utförts. Händelseobjektet som skickas till `ruleCompleted` innehåller information om regeln som har slutförts.
 
 ### `ruleConditionFailed`
 
 Den här funktionen anropas efter att en regel har utlösts och ett av dess villkor har misslyckats. Händelseobjektet som skickas till `ruleConditionFailed` innehåller information om regeln som utlöstes och villkoret som misslyckades.
 
-Om `ruleTriggered` anropas kommer antingen `ruleCompleted` eller `ruleConditionFailed` att anropas kort därefter.
+If `ruleTriggered` anropas, antingen `ruleCompleted` eller `ruleConditionFailed` kommer att anropas kort därefter.
 
 >[!NOTE]
 >
->En bildskärm behöver inte ange alla tre metoderna (`ruleTriggered`, `ruleCompleted` och `ruleConditionFailed`). Taggar i Adobe Experience Platform fungerar med de metoder som stöds av bildskärmen.
+>En bildskärm behöver inte ange alla tre metoderna (`ruleTriggered`, `ruleCompleted`och `ruleConditionFailed`). Taggar i Adobe Experience Platform fungerar med de metoder som stöds av bildskärmen.
 
 ### Testa monitorn
 
