@@ -5,9 +5,9 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: a6924a1018d5dd4e3f03b3d8b6375cacb450a4f5
+source-git-commit: aa61cb696d647c5f039283ce5926d5fa1e901a13
 workflow-type: tm+mt
-source-wordcount: '3395'
+source-wordcount: '3498'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,7 @@ Det här avsnittet innehåller information om prestanda, begränsningar och proc
 
 ### Kan jag använda Postman för API:t för frågetjänsten?
 
-+++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Postman installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för Postman. Läs den officiella dokumentationen för [vägledning om hur du startar, kör och delar Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
++++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Postman installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för Postman. Läs den officiella dokumentationen för [riktlinjer för att starta, köra och dela Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
 +++
 
 ### Finns det någon gräns för hur många rader som får returneras från en fråga via användargränssnittet?
@@ -257,6 +257,8 @@ SELECT count(1) FROM myTableName
 +++Besvara först, kontrollera loggarna för att ta reda på mer om felet. Frågor och svar om [hitta fel i loggar](#error-logs) innehåller mer information om hur du gör detta.
 
 Du bör även läsa dokumentationen om hur du utför [schemalagda frågor i användargränssnittet](./ui/user-guide.md#scheduled-queries) och via [API](./api/scheduled-queries.md).
+
+Nedan följer en lista med överväganden för schemalagda frågor när du använder [!DNL Query Editor]. De gäller inte för [!DNL Query Service] API:<br/>Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts.<br/>Du **inte** lägga till ett schema i en parametriserad fråga.<br/>Schemalagda frågor **inte** innehåller ett anonymt block.<br/>Du kan bara schemalägga **en** frågemall med hjälp av användargränssnittet. Om du vill lägga till fler scheman i en frågemall måste du använda API:t. Om ett schema redan har lagts till med API:t kan du inte lägga till fler scheman med hjälp av gränssnittet.
 +++
 
 ### Vad betyder felet &quot;Sessionsgräns nådd&quot;?
