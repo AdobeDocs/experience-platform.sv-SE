@@ -3,14 +3,18 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 22ae7d206d4393719352232dc254d7669ca667bd
+source-git-commit: 29852bc8f17de6db04805f4738f383f2dc7c1406
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '1018'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation
+
+## Version 2.10.1 - 3 maj 2022
+
+* Korrigerade ett problem där flera beständiga iframes skapades för ID-synkronisering och segmentmål.
 
 ## Version 2.10.0 - 22 april 2022
 
