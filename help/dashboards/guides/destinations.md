@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
+source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
 workflow-type: tm+mt
-source-wordcount: '1636'
+source-wordcount: '1800'
 ht-degree: 0%
 
 ---
@@ -39,11 +39,11 @@ Om du vill navigera till kontrollpanelen för mål i plattformsgränssnittet vä
 
 Du kan ändra utseendet på kontrollpanelen för mål genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
+Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
 
 ## Standardwidgetar
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera om segmenten som är tillgängliga för din dataanalys är fullständiga. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [widgetbibliotek - översikt](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera om segmenten som är tillgängliga för din dataanalys är fullständiga. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
@@ -56,6 +56,9 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Mapped segments by identity]](#mapped-segments-by-identity)
 * [[!UICONTROL Common audiences]](#common-audiences)
 * [[!UICONTROL Destinations count]](#destinations-count)
+* [[!UICONTROL Destination status]](#destination-status)
+* [[!UICONTROL Active destinations by destination platform]](#active-destinations-by-destination-platform)
+* [[!UICONTROL Activated audiences across all destinations]](#activated-audiences-across-all-destinations)
 
 ### [!UICONTROL Most used destinations] {#most-used-destinations}
 
@@ -164,6 +167,28 @@ The [!UICONTROL Destinations count] widgeten anger det totala antalet tillgängl
 Under det totala antalet väljer du **[!UICONTROL Destinations]** för att navigera till målfliken. På den här sidan visas en lista över alla mål som du har upprättat en anslutning till den aktuella.
 
 ![Widgeten för antal destinationer.](../images/destinations/destinations-count.png)
+
+### [!UICONTROL Destination status] {#destination-status}
+
+The [!UICONTROL Destination status] visar det totala antalet aktiverade destinationer som ett enda mått och visar den proportionella skillnaden mellan aktiverade och inaktiverade destinationer med hjälp av ett mundiagram.
+
+Individuella antal för antingen aktiverade eller inaktiverade mål visas i en dialogruta när markören hålls över respektive avsnitt i mundiagrammet.
+
+![Widgeten Målstatus.](../images/destinations/destination-status.png)
+
+### [!UICONTROL Active destinations by destination platform] {#active-destinations-by-destination-platform}
+
+Widgeten innehåller en tabell med två kolumner som visar en lista över aktiva målplattformar och det totala antalet aktiva destinationer för varje målplattform. Listan över målplattformar ordnas från hög till låg.
+
+![Widgeten Aktiva destinationer efter målplattform.](../images/destinations/active-destinations-by-destination-platform.png)
+
+### [!UICONTROL Activated audiences across all destinations] {#activated-audiences-across-all-destinations}
+
+The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. Den här siffran motsvarar den senaste ögonblicksbilden.
+
+![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
+
+Välj **[!UICONTROL Audiences]** för att navigera till destinationerna [!UICONTROL Browse] -fliken. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Läs dokumentationen för [mer information om [!UICONTROL Browse] tab](../../destinations/ui/destinations-workspace.md#browse).
 
 ## Nästa steg
 

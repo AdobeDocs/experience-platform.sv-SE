@@ -4,9 +4,9 @@ title: Kontrollpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 2842344f4b17d76bf1c3313500e691357df31ebc
+source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1157'
 ht-degree: 0%
 
 ---
@@ -41,11 +41,11 @@ Navigera till [!UICONTROL Segments] kontrollpanelen i plattformsgränssnittet v�
 
 Du kan ändra utseendet på [!UICONTROL Segments] kontrollpanel genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
+Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
 
 ## Markera ett segment
 
-Kontrollpanelen markerar automatiskt ett segment som ska visas, men du kan ändra segmentet med hjälp av den nedrullningsbara menyn eller segmentväljaren.
+Kontrollpanelen markerar automatiskt ett segment som ska visas, men du kan ändra segmentet med hjälp av listrutemenyn eller segmentväljaren.
 
 Om du vill välja ett annat segment markerar du listrutan bredvid segmentnamnet eller använder segmentväljaren för att öppna segmentmarkeringsdialogrutan.
 
@@ -63,14 +63,17 @@ Datum och tid för den senaste uppdateringen av en widget visar när den senaste
 
 ## Standardwidgetar
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden för dina segment. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [widgetbibliotek - översikt](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden för dina segment. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Audience size]](#audience-size)
-* [[!UICONTROL Audience size trend]](#audience-size-trend)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
+* [[!UICONTROL Audience activation order]](#audience-activation-order)
+* [[!UICONTROL Audience size trend]](#audience-size-trend)
+* [[!UICONTROL Audience size change trend]](#audience-size-change-trend)
+* [[!UICONTROL Audience size trend by identity]](#audience-size-trend-by-identity)
 
 ### [!UICONTROL Audience size] {#audience-size}
 
@@ -79,18 +82,6 @@ The **[!UICONTROL Audience size]** visar det totala antalet sammanfogade profile
 Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ![](../images/segments/audience-size.png)
-
-### [!UICONTROL Audience size trend] {#audience-size-trend}
-
-The **[!UICONTROL Audience size trend]** innehåller information om det totala antalet profiler i segmentet som tagits under den dagliga ögonblicksbilden under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Den här widgeten visar hur segmentstorleken kan ha ändrats över tiden när nya profiler kvalificerar sig för eller avslutar segmentet.
-
-Mer information om segmentutvärdering och hur profiler kvalificerar sig och avslutar segment finns i [Dokumentation för segmenteringstjänst](../../segmentation/home.md).
-
-![I segmentöversikten visas widgeten för målgruppsstorlekstrend.](../images/segments/audience-size-trend-captions.png)
-
-The **[!UICONTROL Audience size trend]** widgeten innehåller en [!UICONTROL Captions] i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter. En maskininlärningsmodell genererar automatiskt bildtexter som beskriver de viktigaste trenderna och viktiga händelser genom att analysera diagram- och segmentdata.
-
-![Dialogrutan med automatiska bildtexter för widgeten Storlekstrend för publik.](../images/segments/audience-size-trend-automatic-captions-dialog.png)
 
 ### [!UICONTROL Identity overlap] {#identity-overlap}
 
@@ -108,9 +99,37 @@ Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identi
 
 The **[!UICONTROL Profiles by identity]** widgeten visar uppdelningen av identiteter för alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler efter identitet kan vara högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera associerade identiteter. Med andra ord kan de värden som visas för varje identitet tillsammans bli större än den totala målgruppsstorleken i segmentet, eftersom om en kund interagerar med varumärket i mer än en kanal kan flera identiteter kopplas till den enskilda kunden.
 
+Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
+
+![Dialogrutan Profiler efter identitetsteckningar.](../images/segments/profiles-by-identity.png)
+
+En maskininlärningsmodell genererar automatiskt datainsikter genom att analysera den övergripande fördelningen och de viktigaste dimensionerna av data.
+
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
-![](../images/segments/profiles-by-identity.png)
+### [!UICONTROL Audience activation order] {#audience-activation-order}
+
+The [!UICONTROL Audience activation order] widgeten innehåller en tabell med tre kolumner som visar [!UICONTROL destination name], [!UICONTROL platform]och aktiveringen [!UICONTROL date] av publiken. Listan ordnas från hög till låg enligt senaste och kan innehålla upp till 10 rader.
+
+![The Audience activation order widget.](../images/segments/audience-activation-order.png)
+
+### [!UICONTROL Audience size trend] {#audience-size-trend}
+
+The [!UICONTROL Audience size trend] widgeten innehåller en illustration av linjediagram för det totala antalet profiler som uppfyller villkoren i **alla** segmentdefinition under en viss tidsperiod. Trenden för målgruppens storlek kan visas under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Publiken visas på y-axeln och tiden på x-axeln.
+
+![Widgeten för målgruppsstorlekstrend.](../images/segments/audience-size-trend.png)
+
+### [!UICONTROL Audience size change trend] {#audience-size-change-trend}
+
+Den här widgeten innehåller ett linjediagram som illustrerar skillnaden i det totala antalet profiler som är kvalificerade för ett visst segment mellan de senaste ögonblicksbilderna. Det segment som valts för analys väljs i listrutan Översikt. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Publiken visas på y-axeln och tiden på x-axeln.
+
+![Widgeten Ändra målgruppsstorlek.](../images/segments/audience-size-change-trend.png)
+
+### [!UICONTROL Audience size trend by identity] {#audience-size-trend-by-identity}
+
+Den här widgeten visar trenden för målgruppens storlek för ett visst segment baserat på identitetstypen som valts i widgetens listruta. Det segment som används för analys väljs i listrutan Översikt. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
+
+![Storlekstrend för målgrupper efter identitetswidget.](../images/segments/audience-size-trend-by-identity.png)
 
 ## Nästa steg
 

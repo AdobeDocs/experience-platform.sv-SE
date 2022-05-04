@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
+source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
 workflow-type: tm+mt
-source-wordcount: '2432'
+source-wordcount: '2784'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Navigera till [!UICONTROL Profiles] kontrollpanelen i plattformsgränssnittet v�
 
 Du kan ändra utseendet på [!UICONTROL Profiles] kontrollpanel genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
+Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
 
 ## (Beta) Profileffektivitetsinsikter {#profile-efficacy-insights}
 
@@ -49,7 +49,7 @@ Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - över
 >
 >Profilens insiktsfunktion finns för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-The [!UICONTROL Efficacy] på fliken finns mått på kvaliteten och fullständigheten hos dina profildata som grundligt bygger på widgetar för profileffektivitet. De här widgetarna visar i korthet hur profilerna är uppbyggda, trender för fullständighet över tiden och bedömningar av kvaliteten på profildata.
+The [!UICONTROL Efficacy] på fliken finns mått på kvaliteten och fullständigheten hos dina profildata med hjälp av profileffektswidgetar. De här widgetarna visar i korthet hur profilerna är uppbyggda, trender för fullständighet över tiden och bedömningar av kvaliteten på profildata.
 
 ![Kontrollpanelen för profileffektivitet.](../images/profiles/attributes-quality-assessment.png)
 
@@ -65,21 +65,21 @@ Mer information om profilvisningsfunktionerna i plattformsgränssnittet finns i 
 
 ## Sammanfoga profiler {#merge-policies}
 
-De mått som visas i [!UICONTROL Profiles] Instrumentpanelen baseras på sammanslagningsprinciper som tillämpas på dina kundprofildata i realtid. När data samlas in från flera olika källor för att skapa kundprofilen är det möjligt att data innehåller motstridiga värden (en datauppsättning kan till exempel lista en kund som&quot;enkel&quot; medan en annan datauppsättning kan lista kunden som&quot;gift&quot;). Det är huvudsyftet med sammanfogningsprincipen att avgöra vilka data som ska prioriteras och visas som en del av profilen.
+De mått som visas i [!UICONTROL Profiles] Instrumentpanelen baseras på sammanslagningsprinciper som tillämpas på dina kundprofildata i realtid. När data samlas in från flera källor för att skapa kundprofilen kan data innehålla värden som är i konflikt. En datauppsättning kan till exempel visa en kund som&quot;enkel&quot; medan en annan datauppsättning kan visa kunden som&quot;gift&quot;. Det är huvudsyftet med sammanfogningsprincipen att avgöra vilka data som ska prioriteras och visas som en del av profilen.
 
 Mer information om kopplingsprofiler, inklusive hur du skapar, redigerar och deklarerar en standardkopplingsprofil för din organisation, får du genom att läsa [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md).
 
-Kontrollpanelen väljer automatiskt vilken sammanfogningsprincip som ska visas, men du kan ändra den sammanfogningsprincip som väljs med hjälp av den nedrullningsbara menyn. Om du vill välja en annan sammanfogningsprincip markerar du listrutan bredvid sammanfogningsprincipnamnet och väljer sedan den sammanfogningsprincip som du vill visa.
+Kontrollpanelen väljer automatiskt vilken sammanfogningsprincip som ska visas, men du kan ändra den sammanfogningsprincip som väljs med hjälp av listrutan. Om du vill välja en annan sammanfogningsprincip väljer du listrutan bredvid sammanfogningsprincipnamnet och väljer sedan den sammanfogningsprincip som du vill visa.
 
 >[!NOTE]
 >
->I listrutan visas endast sammanfogningsprinciper som är relaterade till den enskilda klassen för XDM-profiler, men om din organisation har skapat flera sammanfogningsprinciper kan det innebära att du måste rulla för att kunna visa den fullständiga listan över tillgängliga sammanfogningsprinciper.
+>I listrutan visas endast sammanfogningsprinciper som är relaterade till den enskilda klassen för XDM-profiler. Om din organisation har skapat flera sammanfogningsprinciper kan det dock innebära att du måste rulla för att kunna visa den fullständiga listan över tillgängliga sammanfogningsprinciper.
 
 ![](../images/profiles/select-merge-policy.png)
 
 ## Unionens system
 
-The [!UICONTROL Union Schema] På kontrollpanelen visas unionsschemat för en viss XDM-klass. Genom att välja [!UICONTROL **Klass**] kan du visa föreningsscheman för olika XDM-klasser.
+The [!UICONTROL Union Schema] På kontrollpanelen visas unionsschemat för en viss XDM-klass. Genom att välja **[!UICONTROL Class]** kan du visa föreningsscheman för olika XDM-klasser.
 
 Unionsscheman består av flera scheman som delar samma klass och har aktiverats för profilen. Med dem kan du i en enda vy se en sammanslagning av alla fält i varje schema som delar samma klass.
 
@@ -93,19 +93,23 @@ Datum och tid för den senaste uppdateringen av en widget visar när den senaste
 
 ## Standardwidgetar
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [widgetbibliotek - översikt](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Profile count]](#profile-count)
 * [[!UICONTROL Profiles added]](#profiles-added)
-* [[!UICONTROL Profiles count trend]](#profiles-count-trend)
+* [[!UICONTROL Profiles added trend]](#profiles-added-trend)
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
 * [[!UICONTROL Single Identity Profiles]](#single-identity-profiles)
 * [[!UICONTROL Unsegmented Profiles]](#unsegmented-profiles)
-* [[!UICONTROL Unsegmented Profiles] Trend](#unsegmented-profiles-trend)
+* [[!UICONTROL Unsegmented Profiles Trend]](#unsegmented-profiles-trend)
 * [[!UICONTROL Unsegmented Profiles by Identity]](#unsegmented-profiles-by-identity)
+* [[!UICONTROL Audiences mapped to destination status]](#audiences-mapped-to-destination-status)
+* [[!UICONTROL Audiences size]](#audiences-size)
+* [[!UICONTROL Profile count trend]](#profile-count-trend)
+* [[!UICONTROL Single identity profiles by identity]](#single-identity-profiles-by-identity)
 
 ### [!UICONTROL Profile count] {#profile-count}
 
@@ -115,7 +119,7 @@ Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-
 
 >[!NOTE]
 >
->The [!UICONTROL Profile count] widgeten kan visa ett annat nummer än det antal profiler som visas på [!UICONTROL Browse] i [!UICONTROL Profiles] av flera anledningar. Den vanligaste orsaken är att [!UICONTROL Browse] -fliken refererar till det totala antalet sammanfogade profiler baserat på organisationens standardpolicy för sammanfogning, medan [!UICONTROL Profile count] widgeten refererar till det totala antalet sammanfogade profiler baserat på den sammanfogningsprincip som du har valt att visa på kontrollpanelen.
+>The [!UICONTROL Profile count] widgeten kan visa ett annat nummer än det antal profiler som visas på [!UICONTROL Browse] i [!UICONTROL Profiles] av flera anledningar. Den vanligaste orsaken till detta är att [!UICONTROL Browse] -fliken refererar till det totala antalet sammanfogade profiler baserat på organisationens standardpolicy för sammanfogning, medan [!UICONTROL Profile count] widgeten refererar till det totala antalet sammanfogade profiler baserat på den sammanfogningsprincip som du har valt att visa på kontrollpanelen.
 >
 >En annan vanlig orsak är att det finns skillnader mellan tidpunkten då instrumentpanelsögonblicksbilden tas och tidpunkten då exempeljobbet körs för [!UICONTROL Browse] -fliken. Du kan se när [!UICONTROL Profile count] widgeten uppdaterades senast genom att titta på tidsstämpeln i widgeten och lära dig mer om hur exempeljobbet utlöses på [!UICONTROL Browse] -fliken finns i [profilräknaren i användargränssnittsguiden för kundprofiler i realtid](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
 
@@ -127,23 +131,23 @@ The **[!UICONTROL Profiles added]** visar det totala antalet sammanfogade profil
 
 >[!NOTE]
 >
->The [!UICONTROL Profiles added] widgeten visar antalet profiler som har lagts till efter att profilarkivet har konfigurerats och profiler har importerats. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profiles added] widgeten ställs in på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profiles added] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] widgeten visar totalt 5 000 000 profiler.
+>The [!UICONTROL Profiles added] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profiles added] widgeten ställs in på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profiles added] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] widgeten visar totalt 5 000 000 profiler.
 
 ![](../images/profiles/profiles-added.png)
 
-### [!UICONTROL Profiles count trend] {#profiles-count-trend}
+### [!UICONTROL Profiles added trend] {#profiles-added-trend}
 
-The **[!UICONTROL Profiles count trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
+The **[!UICONTROL Profiles added trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
 Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies) om du vill veta mer.
 
-The **[!UICONTROL Profile count trend]** widgeten visar en knapp för bildtexter i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
+The **[!UICONTROL Profiles added trend]** widgeten visar en knapp för bildtexter i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
 
-![Fliken Profilöversikt som visar widgeten Antal profiler med knappen Bildtexter markerad.](../images/profiles/profile-count-trend-captions.png)
+![Fliken Profilöversikt som visar widgeten Profiler tillagda med bildtextsknappen markerad.](../images/profiles/profiles-added-trend-captions.png)
 
 En maskininlärningsmodell genererar automatiskt beskrivningar av viktiga trender och viktiga händelser genom att analysera diagrammet och data.
 
-![Dialogrutan med automatiska bildtexter för widgeten Antal profiler.](../images/profiles/profiles-count-trends-automatic-captions-dialog.png)
+![Dialogrutan med automatiska bildtexter för profilwidgeten har lagts till.](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
 
 ### [!UICONTROL Profiles by identity] {#profiles-by-identity}
 
@@ -151,9 +155,15 @@ The **[!UICONTROL Profiles by identity]** widgeten visar en beskrivning av ident
 
 Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies) om du vill veta mer.
 
-Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
+![Kontrollpanelen Profiler i översikt med widgeten Profiler per identitet markerad.](../images/profiles/profiles-by-identity.png)
 
-![](../images/profiles/profiles-by-identity.png)
+Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
+
+![Dialogrutan Profiler efter identitetsteckningar.](../images/profiles/profiles-by-identity-captions.png)
+
+En maskininlärningsmodell genererar automatiskt datainsikter genom att analysera den övergripande fördelningen och de viktigaste dimensionerna av data.
+
+Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
 ### [!UICONTROL Identity overlap] {#identity-overlap}
 
@@ -181,7 +191,7 @@ The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler so
 
 ### [!UICONTROL Unsegmented Profiles Trend] {#unsegmented-profiles-trend}
 
-The [!UICONTROL Unsegmented Profiles Trend] innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden för profiler som inte är kopplade till något segment kan visas under perioderna 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas i y-axeln och tiden på x-axeln.
+The [!UICONTROL Unsegmented Profiles Trend] innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden för profiler som inte är kopplade till något segment kan visas under perioderna 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
 
 ![Widgeten Trend för osegmenterade profiler.](../images/profiles/unsegmented-profiles-trend.png)
 
@@ -191,13 +201,47 @@ The [!UICONTROL Unsegmented Profiles by Identity] widgeten kategoriserar det tot
 
 ![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png)
 
+### [!UICONTROL Audiences mapped to destination status] {#audiences-mapped-to-destination-status}
+
+The [!UICONTROL Audiences mapped to destination status] widgeten visar det totala antalet både mappade och omappade målgrupper i ett enda mätresultat och använder ett ringdiagram för att illustrera den proportionella skillnaden mellan deras summor. Beräknade tal är beroende av den valda sammanfogningsprincipen.
+
+Individuella värden för antingen mappade eller omappade målgrupper visas i en dialogruta när markören hålls över respektive avsnitt i donatdiagrammet.
+
+![De målgrupper som är mappade till målstatuswidgeten.](../images/profiles/audiences-mapped-to-destination-status.png)
+
+### [!UICONTROL Audiences size] {#audiences-size}
+
+The [!UICONTROL Audiences size] widgeten innehåller en tabell med två kolumner som visar upp till 20 segment och det totala antalet målgrupper i varje segment. Listan ordnas från hög till låg enligt det totala antalet målgrupper. Det totala antalet målgrupper beror på vilken sammanfogningsprincip som används.
+
+![Storlekswidgeten för publiker.](../images/profiles/audiences-size.png)
+
+Om du vill visa omfattande information om ett segment väljer du ett segmentnamn i listan för att navigera till [!UICONTROL Segments] [!UICONTROL Detail] sida. Genom att markera **[!UICONTROL View all segments]** från slutet av widgeten kan du navigera till [!UICONTROL Segments] [!UICONTROL Browse] för att hitta ett befintligt segment.
+
+![Widgeten Publikens storlek med ett segmentnamn och visa all segmenttext markerad.](../images/profiles/audiences-size-view-all-segments.png)
+
+Mer information om [[!UICONTROL Segments] [!UICONTROL  Browse] tab](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
+
+### [!UICONTROL Profile count trend] {#profile-count-trend}
+
+The [!UICONTROL Profile count trend] används ett linjediagram för att illustrera trenden i det totala antalet profiler i systemet över tiden. Det totala antalet inkluderar alla profiler som importerats till systemet sedan den senaste ögonblicksbilden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
+
+![Trendwidgeten Profilantal.](../images/profiles/profile-count-trend.png)
+
+### [!UICONTROL Single identity profiles by identity] {#single-identity-profiles-by-identity}
+
+Den här widgeten använder ett stapeldiagram för att illustrera det totala antalet profiler som identifieras med endast en unik identifierare. Widgeten stöder upp till fem av de vanligaste identiteterna.
+
+Håll pekaren över enskilda fält för att visa en dialogruta med information om det totala antalet profiler för en identitet.
+
+![The Single identity profiles by identity widget.](../images/profiles/single-identity-profiles-by-identity.png)
+
 ## (Beta) Profileffektwidgetar {#profile-efficacy-widgets}
 
 >[!IMPORTANT]
 >
 >Widgetarna för profileffekt finns för närvarande i Beta och är inte tillgängliga för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Adobe tillhandahåller flera widgetar för att bedöma om de kapslade profilerna som finns tillgängliga för dataanalysen är fullständiga. Var och en av profilens effektwidgetar kan filtreras efter sammanfogningspolicy. Om du vill ändra kopplingsprofilfiltret väljer du[!UICONTROL Profiles using merge policy] och välj en lämplig profil i listan.
+Adobe tillhandahåller flera widgetar för att bedöma om de kapslade profilerna som finns tillgängliga för dataanalysen är fullständiga. Var och en av profilens effektwidgetar kan filtreras enligt sammanfogningspolicyn. Om du vill ändra kopplingsprofilfiltret väljer du[!UICONTROL Profiles using merge policy] och välj en lämplig profil i listan.
 
 Om du vill veta mer om alla profileffektwidgetar väljer du namnet på en widget i följande lista:
 
@@ -232,7 +276,7 @@ Den här widgeten visar andelen profiler som är av hög, medelhög eller låg f
 
 ### (Beta) [!UICONTROL Profile completeness trend] {#profile-completeness-trend}
 
-Den här widgeten skapar ett staplat ytdiagram som avspeglar trenden för hur komplett profilen är över tiden. Fullständigheten mäts i procent av attributen som fylls med värden som inte är null bland alla observerade attribut. Den klassar profilens fullständighet som hög, medelhög eller låg sedan det senaste bearbetningsdatumet.
+Den här widgeten skapar ett staplat ytdiagram som avspeglar trenden för hur komplett profilen är över tiden. Fullständigheten mäts i procent av alla attribut som fylls med värden som inte är null. Den klassar profilens fullständighet som hög, medelhög eller låg sedan det senaste bearbetningsdatumet.
 
 X-axeln representerar tid, y-axeln representerar antalet profiler och färgerna representerar de tre nivåerna för profilens fullständighet.
 
