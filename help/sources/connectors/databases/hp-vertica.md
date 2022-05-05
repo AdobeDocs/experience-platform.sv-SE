@@ -5,33 +5,33 @@ title: Översikt över HP Vertica Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter HP Vertica till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 5785d8bb-ccda-4d53-a79b-030923e3ae81
-source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL HP Vertica]-koppling
+# (Beta) [!DNL HP Vertica] koppling
 
 >[!NOTE]
 >
->[!DNL HP Vertica]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>The [!DNL HP Vertica] anslutningen är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
 
-Adobe Experience Platform erbjuder systemspecifik anslutning för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
+Adobe Experience Platform erbjuder systemspecifik anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
-Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasproviders inkluderar [!DNL HP Vertica].
+Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasleverantörer innefattar [!DNL HP Vertica].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL HP Vertica] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL HP Vertica] till [!DNL Platform] med API:er
+## Anslut [!DNL HP Vertica] till [!DNL Platform] använda API:er
 
 - [Skapa en HP Vertica-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/hp-vertica.md)
-- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL HP Vertica] till [!DNL Platform] med användargränssnittet

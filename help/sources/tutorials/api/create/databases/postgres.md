@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till PostgreSQL med API:t för Flow Service.
 exl-id: 5225368a-08c1-421d-aec2-d50ad09ae454
-source-git-commit: eea815f72c1e807f4ad6ca6273ba18a9da09ac6e
+source-git-commit: 0ca900b77275851076a13dcc4b8b4a9995ddd0be
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '509'
 ht-degree: 1%
 
 ---
@@ -113,4 +113,7 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya basans
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL PostgreSQL] anslutning med [!DNL Flow Service] API, och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforska databaser eller NoSQL-system med API:t för Flow Service](../../explore/database-nosql.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL PostgreSQL] anslutningsbasanslutning med [!DNL Flow Service] API. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
+
+* [Utforska strukturen och innehållet i datatabellerna med [!DNL Flow Service] API](../../explore/tabular.md)
+* [Skapa ett dataflöde för att hämta databasdata till plattformen med [!DNL Flow Service] API](../../collect/database-nosql.md)

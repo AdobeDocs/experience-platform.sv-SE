@@ -5,9 +5,9 @@ title: Salesforce Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: bd3d3a83c030baaecccba2b1793b49ad8a6caa08
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '897'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ En lyckad begäran skapar B2B-namnutrymmen och scheman enligt betaspecifikatione
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce] till Plattform med API:er eller användargränssnittet:
 
 - [Skapa en Salesforce-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/salesforce.md)
-- [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
+- [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
 ## Anslut [!DNL Salesforce] till plattform med användargränssnittet

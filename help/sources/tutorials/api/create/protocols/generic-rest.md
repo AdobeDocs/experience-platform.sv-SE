@@ -5,9 +5,10 @@ title: Skapa en allmän REST API-basanslutning med API:t för Flow Service
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter allmänt REST API till Adobe Experience Platform med API:t för Flow Service.
-source-git-commit: 1a9c4d5ba3ba9201378e78c0e92dea5101668a24
+exl-id: 6b414868-503e-49d5-8f4a-5b2fc003dab0
+source-git-commit: 1f2ae53e5503618b7ac12628923b30c457fd17e2
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
@@ -187,4 +188,7 @@ Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika a
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Generic REST API] anslutning med [!DNL Flow Service] API och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforska protokollprogram med API:t för Flow Service](../../explore/protocols.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Generic REST API] basanslutning med [!DNL Flow Service] API. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
+
+* [Utforska strukturen och innehållet i datatabellerna med [!DNL Flow Service] API](../../explore/tabular.md)
+* [Skapa ett dataflöde för att hämta protokolldata till plattformen med [!DNL Flow Service] API](../../collect/protocols.md)

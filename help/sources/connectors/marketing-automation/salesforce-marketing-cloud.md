@@ -5,9 +5,9 @@ title: Salesforce Marketing Cloud källöversikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
-source-git-commit: 6876ad592e4924dc884568899662dfa9c8eecc62
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Salesforce Marketing Cloud] till plattform med API:er:
 
 * [Skapa en Salesforce Marketing Cloud-basanslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
-* [Utforska datastrukturen och innehållet i en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/explore/marketing-automation.md)
+* [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/collect/marketing-automation.md)
 
 ## Anslut [!DNL Salesforce Marketing Cloud] till plattform med användargränssnittet

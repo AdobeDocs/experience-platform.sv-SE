@@ -5,9 +5,10 @@ title: Skapa en Oracle Eloqua-basanslutning med API:t för flödestjänsten
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Eloqua med API:t för Flow Service.
-source-git-commit: 423f0efc3c0d9fb38cb8d1b16b885e1eddc23e72
+exl-id: 866e408f-6e0b-4e81-9ad8-9d74c485c89a
+source-git-commit: 1f2ae53e5503618b7ac12628923b30c457fd17e2
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '567'
 ht-degree: 1%
 
 ---
@@ -111,7 +112,5 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 Genom att följa den här självstudiekursen har du skapat en [!DNL Oracle Eloqua] basanslutning med [!DNL Flow Service] API. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
-* [Utforska strukturen och innehållet i en källa för automatiserad marknadsföring med [!DNL Flow Service] API](../../explore/marketing-automation.md)
+* [Utforska strukturen och innehållet i datatabellerna med [!DNL Flow Service] API](../../explore/tabular.md)
 * [Skapa ett dataflöde för att ta fram data för automatiserad marknadsföring till plattformen med [!DNL Flow Service] API](../../collect/marketing-automation.md)
-
-

@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter allmänna OData till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 45b302cb-1a43-4fab-a8a2-cb4e1ee129f9
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 1f2ae53e5503618b7ac12628923b30c457fd17e2
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '449'
 ht-degree: 1%
 
 ---
@@ -105,4 +105,7 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL OData] anslutning med [!DNL Flow Service] API och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforska protokollprogram med API:t för Flow Service](../../explore/protocols.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Generic REST OData] basanslutning med [!DNL Flow Service] API. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
+
+* [Utforska strukturen och innehållet i datatabellerna med [!DNL Flow Service] API](../../explore/tabular.md)
+* [Skapa ett dataflöde för att hämta protokolldata till plattformen med [!DNL Flow Service] API](../../collect/protocols.md)

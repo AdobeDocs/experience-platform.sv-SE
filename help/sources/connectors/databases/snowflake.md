@@ -5,9 +5,9 @@ title: Översikt över Snowflake Source Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Snowflake till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Snowflake
 ## Anslut [!DNL Snowflake] till plattform med API:er
 
 - [Skapa en Snowflake-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/snowflake.md)
-- [Utforska datastrukturen och innehållet i en databaskälla med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
+- [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Snowflake] till plattform med användargränssnittet

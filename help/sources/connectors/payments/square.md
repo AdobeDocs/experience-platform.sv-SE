@@ -3,9 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;fyrkantiga
 solution: Experience Platform
 title: Kvadratisk källkoppling, översikt
 description: Lär dig hur du ansluter Square till Adobe Experience Platform med API:er eller användargränssnittet.
-source-git-commit: cb2902455f965aced8d40859c36824710b9e695f
+exl-id: 18d33c5a-2955-4d0b-938c-52b6f72a444d
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '225'
+source-wordcount: '218'
 ht-degree: 0%
 
 ---
@@ -25,7 +26,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Square] t
 ## Anslut [!DNL Square] till plattform med API:er
 
 * [Skapa en kvadratisk basanslutning med API:t för Flow Service](../../tutorials/api/create/payments/square.md)
-* [Utforska datastrukturen och innehållet i en betalningskälla med API:t för Flow Service](../../tutorials/api/explore/payments.md)
+* [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en betalningskälla med API:t för Flow Service](../../tutorials/api/collect/payments.md)
 
 ## Anslut [!DNL Square] till plattform med användargränssnittet

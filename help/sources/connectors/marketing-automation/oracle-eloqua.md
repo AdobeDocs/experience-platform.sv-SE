@@ -4,9 +4,10 @@ solution: Experience Platform
 title: Översikt över Oracle Eloqua Connector
 topic-legacy: overview
 description: Lär dig hur du ansluter Oraclet Eloqua till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
-source-git-commit: a0c7ba20926d9f55a1f7818374fc6d2b5320820f
+exl-id: ebe16bff-4c89-4d45-9973-e5aa13b61a36
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -26,7 +27,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle El
 ## Anslut [!DNL Oracle Eloqua] till plattform med API:er
 
 * [Skapa en Oracle Eloqua-basanslutning med API:t för Flow Service](../../tutorials/api/create/marketing-automation/oracle-eloqua.md)
-* [Utforska datastrukturen och innehållet i en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/explore/marketing-automation.md)
+* [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 * [Skapa ett dataflöde för en källa för automatiserad marknadsföring med API:t för Flow Service](../../tutorials/api/collect/marketing-automation.md)
 
 ## Anslut [!DNL Oracle Eloqua] till plattform med användargränssnittet

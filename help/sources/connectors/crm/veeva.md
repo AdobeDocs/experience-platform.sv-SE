@@ -5,9 +5,9 @@ title: Veeva CRM Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Veeva CRM till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: fcd7af48-e66a-4313-bbfe-73301d335c67
-source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Veeva CRM
 ## Anslut [!DNL Veeva CRM] till [!DNL Platform] använda API:er
 
 - [Skapa en Veeva CRM-basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/veeva.md)
-- [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
+- [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
 ## Anslut [!DNL Veeva CRM] till [!DNL Platform] med användargränssnittet

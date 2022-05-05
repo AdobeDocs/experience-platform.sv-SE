@@ -5,9 +5,9 @@ title: Zoho CRM Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Zoho CRM till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
-source-git-commit: 46b2fd6bc715bf1d8ccfeed576a2a2d193f92edd
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ Detaljerade anvisningar om hur du hämtar dina inloggningsuppgifter finns i [[!D
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Zoho CRM] till Plattform med API:er eller användargränssnittet:
 
 - [Skapa en [!DNL Zoho CRM] basanslutning med API:t för Flow Service](../../tutorials/api/create/crm/zoho.md)
-- [Utforska datastrukturen och innehållet i en CRM-källa med API:t för Flow Service](../../tutorials/api/explore/crm.md)
+- [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en CRM-källa med API:t för Flow Service](../../tutorials/api/collect/crm.md)
 
 ## Anslut [!DNL Zoho CRM] till [!DNL Platform] med användargränssnittet

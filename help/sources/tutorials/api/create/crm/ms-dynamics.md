@@ -6,18 +6,18 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter plattformen till ett Microsoft Dynamics-konto med API:t för Flow Service.
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 17055f76800deadacf435970a691cec79c9f1d17
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '639'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Microsoft Dynamics]-basanslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Microsoft Dynamics] basanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Microsoft Dynamics] (kallas nedan &quot;[!DNL Dynamics]&quot;) med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Microsoft Dynamics] (nedan kallad[!DNL Dynamics]&quot;) med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
@@ -26,36 +26,36 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta plattformen till ett Dynamics-konto med API:t [!DNL Flow Service].
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta plattformen till ett Dynamics-konto med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] ska kunna ansluta till [!DNL Dynamics] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] för att ansluta till [!DNL Dynamics]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `serviceUri` | Tjänst-URL:en för din [!DNL Dynamics]-instans. |
-| `username` | Användarnamnet för ditt [!DNL Dynamics]-användarkonto. |
-| `password` | Lösenordet för ditt [!DNL Dynamics]-konto. |
-| `servicePrincipalId` | Klient-ID för ditt [!DNL Dynamics]-konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
+| `serviceUri` | Tjänstens URL [!DNL Dynamics] -instans. |
+| `username` | Ditt användarnamn [!DNL Dynamics] användarkonto. |
+| `password` | Lösenordet för [!DNL Dynamics] konto. |
+| `servicePrincipalId` | Klient-ID för din [!DNL Dynamics] konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 | `servicePrincipalKey` | Tjänstens hemliga huvudnyckel. Denna autentiseringsuppgift krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Dynamics] är: `38ad80fe-8b06-4938-94f4-d4ee80266b07`. |
 
-Mer information om hur du kommer igång finns i [det här [!DNL Dynamics] dokumentet](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
+Mer information om hur du kommer igång finns på [this [!DNL Dynamics] dokument](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till `/connections`-slutpunkten och anger dina autentiseringsuppgifter för [!DNL Dynamics] som en del av parametrarna för begäran.
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Dynamics] autentiseringsuppgifter som en del av parametrarna för begäran.
 
-### Skapa en [!DNL Dynamics]-basanslutning med grundläggande autentisering
+### Skapa en [!DNL Dynamics] basanslutning med grundläggande autentisering
 
-Om du vill skapa en [!DNL Dynamics]-basanslutning med grundläggande autentisering skickar du en POST till API:t [!DNL Flow Service] och anger värden för anslutningsens `serviceUri`, `username` och `password`.
+Skapa en [!DNL Dynamics] basanslutning med grundläggande autentisering, gör en POST-förfrågan till [!DNL Flow Service] API när du anger värden för anslutningen `serviceUri`, `username`och `password`.
 
 **API-format**
 
@@ -93,10 +93,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.serviceUri` | Den tjänst-URI som är associerad med din [!DNL Dynamics]-instans. |
-| `auth.params.username` | Användarnamnet som är associerat med ditt [!DNL Dynamics]-konto. |
-| `auth.params.password` | Lösenordet som är kopplat till ditt [!DNL Dynamics]-konto. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Dynamics]: `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
+| `auth.params.serviceUri` | Den tjänst-URI som är associerad med din [!DNL Dynamics] -instans. |
+| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Dynamics] konto. |
+| `auth.params.password` | Lösenordet som är kopplat till [!DNL Dynamics] konto. |
+| `connectionSpec.id` | The [!DNL Dynamics] anslutningsspecifikation-ID: `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
 
 **Svar**
 
@@ -109,9 +109,9 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
 }
 ```
 
-### Skapa en [!DNL Dynamics]-basanslutning med huvudnyckelbaserad autentisering för tjänsten
+### Skapa en [!DNL Dynamics] basanslutning med huvudnyckelbaserad autentisering
 
-Om du vill skapa en [!DNL Dynamics]-basanslutning med huvudnyckelbaserad autentisering för tjänsten gör du en POST-förfrågan till [!DNL Flow Service]-API:t och anger värden för din anslutnings `serviceUri`, `servicePrincipalId` och `servicePrincipalKey`.
+Skapa en [!DNL Dynamics] basanslutning med huvudnyckelbaserad autentisering, gör en POST-förfrågan till [!DNL Flow Service] API när du anger värden för anslutningen `serviceUri`, `servicePrincipalId`och `servicePrincipalKey`.
 
 **API-format**
 
@@ -149,10 +149,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.serviceUri` | Den tjänst-URI som är associerad med din [!DNL Dynamics]-instans. |
-| `auth.params.servicePrincipalId` | Klient-ID för ditt [!DNL Dynamics]-konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
+| `auth.params.serviceUri` | Den tjänst-URI som är associerad med din [!DNL Dynamics] -instans. |
+| `auth.params.servicePrincipalId` | Klient-ID för din [!DNL Dynamics] konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 | `auth.params.servicePrincipalKey` | Tjänstens hemliga huvudnyckel. Denna autentiseringsuppgift krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Dynamics]: `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
+| `connectionSpec.id` | The [!DNL Dynamics] anslutningsspecifikation-ID: `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
 
 **Svar**
 
@@ -167,4 +167,7 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en [!DNL Dynamics]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda detta ID i nästa självstudiekurs när du lär dig hur du [utforskar CRM-system med API:t för Flow Service](../../explore/crm.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Microsoft Dynamics] basanslutning med [!DNL Flow Service] API. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
+
+* [Utforska strukturen och innehållet i datatabellerna med [!DNL Flow Service] API](../../explore/tabular.md)
+* [Skapa ett dataflöde för att hämta CRM-data till plattformen med [!DNL Flow Service] API](../../collect/crm.md)
