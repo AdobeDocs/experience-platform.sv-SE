@@ -3,7 +3,7 @@ title: Översikt över tillägget för vidarebefordring av kärnhändelser
 description: Läs mer om Core-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: d41779c5897b748130b88d3886472c7908347389
+source-git-commit: 15e7245acef1fe13a09ed0e083033b3963c444f2
 workflow-type: tm+mt
 source-wordcount: '1716'
 ht-degree: 0%
@@ -43,16 +43,16 @@ getDataElementValue('productName')
 I din egen kod kan du även använda `ruleStash` -objekt.
 
 ```javascript
-arc.ruleStash: Object<string, *>`
-```
-
-```javascript
 utils.logger.log(context.arc.ruleStash);
 ```
 
 `ruleStash` är ett objekt som samlar in alla resultat från åtgärdsmoduler.
 
 Varje tillägg har ett eget namnutrymme. Om tillägget till exempel har namnet `send-beacon`, alla resultat från `send-beacon` åtgärder lagras på `ruleStash['send-beacon']` namnutrymme.
+
+```javascript
+utils.logger.log(context.arc.ruleStash['adobe-cloud-connector']);
+```
 
 Namnutrymmet är unikt för varje tillägg och har värdet `undefined` i början.
 
