@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen med hjälp av källanslutningar och API:t för Flow Service.
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1302'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Den här självstudiekursen handlar om hur du hämtar data från en annonsapplik
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt [!DNL Google AdWords] grundläggande anslutnings-ID. Om du inte har det här ID:t kan du följa stegen för att [skapa en [!DNL Google AdWords] basanslutning](../create/advertising/ads.md) innan du försöker göra den här självstudiekursen.
+>För att kunna skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en annonskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#advertising) om du vill se en lista över annonskällor som du kan skapa en basanslutning med.
 
 ## Komma igång
 

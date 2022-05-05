@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1311'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Den här självstudiekursen handlar om hur du hämtar data från en källa för 
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med någon av följande källor för automatiserad marknadsföring på Platform:<ul><li>[[!DNL HubSpot]](../create/marketing-automation/hubspot.md)</li><li>[[!DNL Mailchimp Campaigns]](../create/marketing-automation/mailchimp-campaign.md)</li><li>[[!DNL Mailchimp Members]](../create/marketing-automation/mailchimp-members.md)</li><li>[[!DNL Salesforce Marketing Cloud]](../create/marketing-automation/salesforce-marketing-cloud.md)</li></ul>
+>För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med en källa för automatiserad marknadsföring. Om du inte har detta ID kan du se [källöversikt](../../../home.md#marketing-automation) om du vill ha en lista med källor för automatiserad marknadsföring som du kan skapa en basanslutning till.
 
 ## Komma igång
 

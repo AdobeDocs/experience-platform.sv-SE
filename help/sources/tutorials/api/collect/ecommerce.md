@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1266'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Den här självstudiekursen handlar om hur du hämtar data från en e-handelskä
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt [!DNL Shopify] grundläggande anslutnings-ID. Om du inte har det här ID:t kan du följa stegen för att [skapa en [!DNL Shopify] basanslutning](../create/ecommerce/shopify.md) innan du försöker göra den här självstudiekursen.
+>Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en e-handelskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#ecommerce) om du vill se en lista över e-handelskällor som du kan skapa en basanslutning med.
 
 ## Komma igång
 
@@ -500,7 +500,7 @@ Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvara
 }
 ```
 
-## Create a dataflow
+## Skapa ett dataflöde
 
 Det sista steget mot att samla in data är att skapa ett dataflöde. Nu bör du ha förberett följande obligatoriska värden:
 
@@ -509,9 +509,9 @@ Det sista steget mot att samla in data är att skapa ett dataflöde. Nu bör du 
 * [Mappnings-ID](#mapping)
 * [ID för dataflödesspecifikation](#specs)
 
-A dataflow is responsible for scheduling and collecting data from a source. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten för begäran.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten för begäran.
 
-Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Then, you must set the frequency value to one of the five options: `once`, `minute`, `hour`, `day`, or `week`. The interval value designates the period between two consecutive ingestions and creating a one-time ingestion does not require an interval to be set. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`, eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
 
 **API-format**
 
@@ -566,11 +566,11 @@ curl -X POST \
 | `transformations.params.mappingId` | Det mappnings-ID som är kopplat till e-handelskällan. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
 | `scheduleParams.frequency` | The `frequency` där dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`, eller `week`. |
-| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. The interval&#39;s value should be a non-zero integer. An interval is not required when `frequency` is set as `once` and should be greater than or equal to `15` for other `frequency` values. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Ett intervall krävs inte när `frequency` anges som `once` och ska vara större än eller lika med `15` för andra `frequency` värden. |
 
 **Svar**
 
-A successful response returns the ID `id` of the newly created dataflow.
+Ett godkänt svar returnerar ID:t `id` av det nya dataflödet.
 
 ```json
 {

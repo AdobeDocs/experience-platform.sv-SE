@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1305'
+source-wordcount: '1327'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Den här självstudiekursen beskriver stegen för att hämta data från en Custo
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med någon av följande källor för kundframgångar på Platform:<ul><li>[[!DNL Salesforce Service Cloud]](../create/customer-success/salesforce-service-cloud.md)</li><li>[[!DNL ServiceNow]](../create/customer-success/servicenow.md)</li></ul>
+>För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med en källa för lyckade kunder. Om du inte har detta ID kan du se [källöversikt](../../../home.md#customer-success) om du vill ha en lista över framgångsrika kundkällor som du kan skapa en grundläggande anslutning till.
 
 ## Komma igång
 
