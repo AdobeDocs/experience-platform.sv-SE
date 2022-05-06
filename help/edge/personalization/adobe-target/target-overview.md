@@ -3,7 +3,7 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: cdcbfdec6a232495aacaf9066d880bc9a10455d1
 workflow-type: tm+mt
 source-wordcount: '1266'
 ht-degree: 3%
@@ -88,7 +88,7 @@ Mer information finns i [Kategorier för målgrupper](https://experienceleague.a
 
 Svarstoken används främst för att skicka metadata till tredje part som Google, Facebook, osv. Svarstoken returneras i `meta` fält inom `propositions` -> `items`. Här följer ett exempel:
 
-```
+```json
 {
   "id": "AT:eyJhY3Rpdml0eUlkIjoiMTI2NzM2IiwiZXhwZXJpZW5jZUlkIjoiMCJ9",
   "scope": "__view__",
@@ -112,7 +112,7 @@ Svarstoken används främst för att skicka metadata till tredje part som Google
 Om du vill samla in svarstoken måste du prenumerera på `alloy.sendEvent` löfte, iterera genom `propositions`
 och extrahera detaljerna från `items` -> `meta`. Varje `proposition` har en `renderAttempted` booleskt fält som anger om `proposition` återgavs eller inte. Se exemplet nedan:
 
-```
+```js
 alloy("sendEvent",
   {
     renderDecisions: true,
@@ -183,7 +183,7 @@ Normal [!DNL Platform Web SDK] koden som använder det här kommandot ser ut så
 
 **`sendEvent`med profildata**
 
-```
+```js
 alloy("sendEvent", {
    renderDecisions: true|false,
    xdm: { // Experience Event XDM data },
@@ -193,7 +193,7 @@ alloy("sendEvent", {
 
 **Så här skickar du profilattribut till Adobe Target:**
 
-```
+```js
 alloy("sendEvent", {
   renderDecisions: true,
   data: {
@@ -232,7 +232,7 @@ Följande tabell innehåller [!DNL Recommendations] och om vart och ett stöds v
 
 **Så här skickar du Recommendations-attribut till Adobe Target:**
 
-```
+```js
 alloy("sendEvent", {
   renderDecisions: true,
   data: {
