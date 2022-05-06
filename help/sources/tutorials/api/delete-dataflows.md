@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du tar bort batch- och direktuppspelade dataflöden med API:t för Flow Service.
 exl-id: ea9040b1-3a40-493d-86f0-27deef09df07
-source-git-commit: 95f455bd03b7baefe0133a9818c9d048f36f9d38
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '324'
 ht-degree: 1%
@@ -53,7 +53,7 @@ curl -X DELETE \
     'https://platform.adobe.io/data/foundation/flowservice/flows/20c115bc-46e3-40f3-bfe9-fb25abe4ba76' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

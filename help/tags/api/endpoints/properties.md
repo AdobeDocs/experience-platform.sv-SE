@@ -1,7 +1,8 @@
 ---
 title: Egenskapsslutpunkt
 description: Lär dig hur du anropar slutpunkten /properties i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1146'
 ht-degree: 1%
@@ -10,7 +11,7 @@ ht-degree: 1%
 
 # Egenskapsslutpunkt
 
-En egenskap är en behållarkonstruktion som innehåller de flesta andra resurser som finns i Reaktors-API:t. Du hanterar egenskaper programmatiskt med slutpunkten `/properties`.
+En egenskap är en behållarkonstruktion som innehåller de flesta andra resurser som finns i Reaktors-API:t. Du hanterar egenskaper programmatiskt med `/properties` slutpunkt.
 
 I resurshierarkin är en egenskap ägare av följande:
 
@@ -24,13 +25,13 @@ I resurshierarkin är en egenskap ägare av följande:
 * [Regelkomponenter](./rule-components.md)
 * [Regler](./rules.md)
 
-En egenskap tillhör exakt ett [företag](./companies.md). Ett företag kan ha många egenskaper.
+En egenskap tillhör exakt en [företag](./companies.md). Ett företag kan ha många egenskaper.
 
-Mer allmän information om egenskaper och deras roll i tagghantering finns i översikten över [företag och egenskaper](../../ui/administration/companies-and-properties.md).
+Mer allmän information om egenskaper och deras roll i tagghantering finns i översikten på [företag och egendomar](../../ui/administration/companies-and-properties.md).
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med egenskaper {#list}
 
@@ -44,13 +45,13 @@ GET /companies/{COMPANY_ID}/properties
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | `id` för företaget som äger de egenskaper som du vill visa. |
+| `COMPANY_ID` | The `id` för det företag som äger de egenskaper som du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade egenskaper filtreras baserat på följande attribut:<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade egenskaper filtreras baserat på följande attribut:<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -59,7 +60,7 @@ curl -X GET \
   https://reactor.adobe.io/companies/CO2bf094214ffd4785bb4bcf88c952a7c1/properties \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -268,7 +269,7 @@ GET /properties/{PROPERTY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som du vill söka efter. |
+| `PROPERTY_ID` | The `id` för egenskapen som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -279,7 +280,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR48ade10e6acf4385ba96214e9f5d31e1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -391,20 +392,20 @@ POST /company/{COMPANY_ID}/properties
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | `id` för företaget som du definierar egenskapen under. |
+| `COMPANY_ID` | The `id` för företaget som du definierar egendomen under. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran skapar en ny egenskap för den angivna egenskapen. Anropet associerar även egenskapen med ett befintligt tillägg via egenskapen `relationships`. Mer information finns i guiden om [relationer](../guides/relationships.md).
+Följande begäran skapar en ny egenskap för den angivna egenskapen. Anropet associerar även egenskapen med ett befintligt tillägg via `relationships` -egenskap. Se guiden [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/companies/CO2bf094214ffd4785bb4bcf88c952a7c1/properties \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -426,9 +427,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för egenskapen. |
-| `attributes.platform` | **(Obligatoriskt)** Egenskapens plattform. Kan antingen vara `web` för webbegenskaper eller `mobile` eller `edge` för mobila egenskaper. |
-| `attributes.domains` | **(Krävs för webbegenskaper)**  En array med URL-domäner för egenskapen. |
+| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för egenskapen. |
+| `attributes.platform` | **(Obligatoriskt)** Plattformen för egenskapen. Kan vara antingen `web` för webbegenskaper, eller `mobile` eller `edge` för mobila egenskaper. |
+| `attributes.domains` | **(Krävs för webbegenskaper)** En array med URL-domäner för egenskapen. |
 | `attributes.development` | Ett booleskt värde som anger om det här är en utvecklingsegenskap. |
 | `attributes.privacy` | En sträng som kan användas för att referera till sekretessrelaterade överväganden för egenskapen. |
 | `attributes.rule_component_sequencing_enabled` | Ett booleskt värde för om regelkomponentsekvensering ska aktiveras för den här egenskapen. |
@@ -545,7 +546,7 @@ PATCH /properties/{PROPERTY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som du vill uppdatera. |
+| `PROPERTY_ID` | The `id` för egenskapen som du vill uppdatera. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -558,7 +559,7 @@ curl -X PATCH \
   https://reactor.adobe.io/properties/HT5d90148e72224224aac9bc0b01498b84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -577,7 +578,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för egenskapen. Följande attribut kan uppdateras för en egenskap: <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | `id` för egenskapen som du vill uppdatera. Detta ska matcha `{PROPERTY_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` för egenskapen som du vill uppdatera. Det här bör matcha `{PROPERTY_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `properties`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -689,7 +690,7 @@ DELETE /properties/{PROPERTY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som du vill ta bort. |
+| `PROPERTY_ID` | The `id` för egenskapen som du vill ta bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -700,7 +701,7 @@ curl -X DELETE \
   https://reactor.adobe.io/properties/PR541dbb24bad54dceb04710d7a9e7a740 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
@@ -709,17 +710,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för en egenskap {#notes}
 
-Egenskaperna är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för egenskaper och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
+Egenskaperna är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för egenskaper och andra kompatibla resurser.
 
 ## Hämta relaterade resurser för en egenskap {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söker upp en egenskap](#lookup) visas dessa relationer under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söka efter en egenskap](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationsguiden](../guides/relationships.md) för mer information om relationer i Reactor API.
+Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
 
 ### Lista relaterade återanrop för en egenskap {#callbacks}
 
-Du kan lista de [återanrop](./callbacks.md) som är registrerade för en egenskap genom att lägga till `/callbacks` till sökvägen för en sökbegäran.
+Du kan lista [återanrop](./callbacks.md) som är registrerade i en egenskap genom att lägga till `/callbacks` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -729,7 +730,7 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars återanrop du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars återanrop du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -740,7 +741,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR66a3356c73fc4aabb67ee22caae53d70/callbacks \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -794,7 +795,7 @@ Ett lyckat svar returnerar en lista med återanrop som ägs av den angivna egens
 
 ### Lista relaterade dataelement för en egenskap {#data-elements}
 
-Du kan lista de [dataelement](./data-elements.md) som ägs av en egenskap genom att lägga till `/data_elements` till sökvägen för en sökbegäran.
+Du kan lista [dataelement](./data-elements.md) som ägs av en egendom genom att lägga till `/data_elements` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -804,7 +805,7 @@ GET  /properties/{PROPERTY_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars dataelement du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars dataelement du vill lista. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -815,7 +816,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -935,7 +936,7 @@ Ett lyckat svar returnerar en lista med dataelement som ägs av den angivna egen
 
 ### Lista de relaterade miljöerna för en egenskap {#environments}
 
-Du kan lista de [miljöer](./environments.md) som ägs av en egenskap genom att lägga till `/environments` till sökvägen för en sökbegäran.
+Du kan lista [miljöer](./environments.md) som ägs av en egendom genom att lägga till `/environments` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -945,7 +946,7 @@ GET  /properties/{PROPERTY_ID}/environments
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars miljöer du vill visa. |
+| `{PROPERTY_ID}` | The `id` för den egenskap vars miljöer du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -956,7 +957,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR06c9196bc57048dd8ff169c27baeeca8/environments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1055,7 +1056,7 @@ Ett lyckat svar returnerar en lista över miljöer som ägs av den angivna egens
 
 ### Visa en lista över relaterade tillägg för en egenskap {#extensions}
 
-Du kan lista de [tillägg](./extensions.md) som ägs av en egenskap genom att lägga till `/extensions` till sökvägen för en sökbegäran.
+Du kan lista [tillägg](./extensions.md) som ägs av en egendom genom att lägga till `/extensions` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -1065,7 +1066,7 @@ GET  /properties/{PROPERTY_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars tillägg du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars tillägg du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1076,7 +1077,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRee071cb5b7794f42b74c913e1ad2e325/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1186,7 +1187,7 @@ Ett godkänt svar returnerar en lista med tillägg som ägs av den angivna egens
 
 ### Lista de relaterade värdarna för en egenskap {#hosts}
 
-Du kan lista de [värdar](./hosts.md) som används av en egenskap genom att lägga till `/hosts` till sökvägen för en sökbegäran.
+Du kan lista [värdar](./hosts.md) som används av en egenskap genom att lägga till `/hosts` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -1196,7 +1197,7 @@ GET  /properties/{PROPERTY_ID}/hosts
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars värdar du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars värdar du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1207,7 +1208,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRd428c2a25caa4b32af61495f5809b737/hosts \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1264,7 +1265,7 @@ Ett lyckat svar returnerar en lista med värdar som används av en angiven egens
 
 ### Visa de relaterade reglerna för en egenskap {#rules}
 
-Du kan lista de [regler](./rules.md) som används av en egenskap genom att lägga till `/rules` till sökvägen för en sökbegäran.
+Du kan lista [regler](./rules.md) som används av en egenskap genom att lägga till `/rules` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -1274,7 +1275,7 @@ GET  /properties/{PROPERTY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars regler du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars regler du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1285,7 +1286,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR41f64d2a9d9b4862b0582c5ff6a07504/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1377,7 +1378,7 @@ Ett godkänt svar returnerar en lista med regler som används av en angiven egen
 
 ### Söka efter en egenskap i det relaterade företaget {#company}
 
-Du kan söka efter företaget som äger en egenskap genom att lägga till `/company` i sökvägen för en sökbegäran.
+Du kan leta upp företaget som äger en egendom genom att lägga till `/company` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -1387,7 +1388,7 @@ GET /properties/{PROPERTY_ID}/company
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för den egenskap vars företag du vill söka efter. |
+| `{PROPERTY_ID}` | The `id` av den egendom vars företag du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1398,7 +1399,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/HT5d90148e72224224aac9bc0b01498b84/company \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

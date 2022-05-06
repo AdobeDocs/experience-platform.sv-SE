@@ -5,7 +5,7 @@ title: Diagnostik för dataöverföringsfel hämtas
 topic-legacy: overview
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: 104e6eb258136caa2192b61c793697baf95b55eb
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Hämtar feldiagnostik för dataöverföring
 
-Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
+Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda batchinmatning, som gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelningsuppläsning, som gör att du kan infoga data i [!DNL Platform] med direktuppspelade slutpunkter i realtid.
 
 Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 
@@ -22,32 +22,32 @@ Det här dokumentet innehåller information om övervakning av batchförbrukning
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md): Metoderna som data kan skickas till  [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
 ## Hämtar feldiagnostik {#download-diagnostics}
 
-Med Adobe Experience Platform kan användare hämta feldiagnostiken för indatafilerna. Diagnostiken sparas inom [!DNL Platform] i upp till 30 dagar.
+Med Adobe Experience Platform kan användare hämta feldiagnostiken för indatafilerna. Diagnostiken behålls inom [!DNL Platform] i upp till 30 dagar.
 
 ### Visa indatafiler {#list-files}
 
@@ -69,7 +69,7 @@ GET /batches/{BATCH_ID}/meta?path=input_files
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-2233-11ea-acf0-f3edfcded2d2/meta?path=input_files \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -127,13 +127,13 @@ GET /batches/{BATCH_ID}/meta?path=input_files/{FILE}
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-2233-11ea-acf0-f3edfcded2d2/meta?path=input_files/fileMetaData1.json \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar JSON-objekt som innehåller `path`-objekt som anger var diagnostikerna sparades. Svaret returnerar `path`-objekten i formatet [JSON-rader](https://jsonlines.org/).
+Ett lyckat svar returnerar JSON-objekt som innehåller `path` objekt som anger var diagnostikerna sparades. Svaret returnerar `path` objekt i [JSON-rader](https://jsonlines.org/) format.
 
 ```json
 {"path": "F1.json"}
@@ -146,7 +146,7 @@ Om batchar innehåller fel bör du hämta felinformation om dessa fel så att du
 
 ### Kontrollera status {#check-status}
 
-Om du vill kontrollera status för den inkapslade batchen måste du ange batchens ID i sökvägen till en GET-förfrågan. Läs [katalogslutpunktshandboken](../../catalog/api/list-objects.md) om du vill veta mer om hur du använder det här API-anropet.
+Om du vill kontrollera status för den inkapslade batchen måste du ange batchens ID i sökvägen till en GET-förfrågan. Läs mer om hur du använder detta API-anrop i [slutpunktshandbok för katalog](../../catalog/api/list-objects.md).
 
 **API-format**
 
@@ -157,7 +157,7 @@ GET /catalog/batches/{BATCH_ID}?{FILTER}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{BATCH_ID}` | `id`-värdet för gruppen som du vill kontrollera statusen för. |
+| `{BATCH_ID}` | The `id` värdet för den batch som du vill kontrollera status för. |
 | `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden [filtrera katalogdata](../../catalog/api/filter-data.md). |
 
 **Begäran**
@@ -166,7 +166,7 @@ GET /catalog/batches/{BATCH_ID}?{FILTER}
 curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2233-11ea-acf0-f3edfcded2d2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -193,7 +193,7 @@ Ett lyckat svar returneras med detaljerad information om batchens status.
         "inputFormat": {
             "format": "parquet"
         },
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "started": 1576741718543,
         "metrics": {
             "inputByteSize": 568,
@@ -215,7 +215,7 @@ Ett lyckat svar returneras med detaljerad information om batchens status.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar oavsett om `errorDiagnostics` är aktiverat. |
+| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar, oavsett om `errorDiagnostics` är aktiverat. |
 
 **Svara med fel**
 
@@ -240,7 +240,7 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
         "inputFormat": {
             "format": "parquet"
         },
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "started": 1576741718543,
         "metrics": {
             "inputByteSize": 568,
@@ -278,8 +278,8 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar oavsett om `errorDiagnostics` är aktiverat. |
-| `errors.recordCount` | Antalet rader som misslyckades för den angivna felkoden. Det här värdet är **endast** som genereras om `errorDiagnostics` är aktiverat. |
+| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar, oavsett om `errorDiagnostics` är aktiverat. |
+| `errors.recordCount` | Antalet rader som misslyckades för den angivna felkoden. Detta värde är **endast** genereras om `errorDiagnostics` är aktiverat. |
 
 >[!NOTE]
 >
@@ -296,7 +296,7 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
 
 ## Nästa steg {#next-steps}
 
-I den här självstudiekursen beskrivs hur du övervakar fel vid partiell gruppinmatning. Mer information om batchförbrukning finns i [Utvecklarhandbok för batchkonsumtion](../batch-ingestion/api-overview.md).
+I den här självstudiekursen beskrivs hur du övervakar fel vid partiell gruppinmatning. Mer information om batchintag finns i [Utvecklarhandbok för batchintag](../batch-ingestion/api-overview.md).
 
 ## Bilaga {#appendix}
 
@@ -312,11 +312,11 @@ Partiell gruppinmatning har tre olika feltyper vid datainmatning:
 
 ### Oläsbara filer {#unreadable}
 
-Om det finns oläsbara filer i den inlästa gruppen bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden ](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
+Om det finns oläsbara filer i den inlästa gruppen bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [hämta guide för misslyckade batchar](../quality/retrieve-failed-batches.md).
 
 ### Ogiltiga scheman eller rubriker {#schemas-headers}
 
-Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden ](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
+Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [hämta guide för misslyckade batchar](../quality/retrieve-failed-batches.md).
 
 ### Otolkningsbara rader {#unparsable}
 
@@ -330,7 +330,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{BATCH_ID}` | `id`-värdet för gruppen som du hämtar felinformation från. |
+| `{BATCH_ID}` | The `id` värdet för den batch som du hämtar felinformation från. |
 
 **Begäran**
 
@@ -338,7 +338,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203PEKSAMVJC3X99VHQ/meta?path=row_errors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -375,7 +375,7 @@ Ett lyckat svar returnerar en lista över de filer som innehåller fel.
 }
 ```
 
-Du kan sedan hämta detaljerad information om felen med hjälp av [diagnostikslutpunkten](#retrieve-diagnostics).
+Sedan kan du hämta detaljerad information om felen med [slutpunkt för diagnostikhämtning](#retrieve-diagnostics).
 
 Ett exempelsvar på hämtning av felfilen visas nedan:
 

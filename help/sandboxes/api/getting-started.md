@@ -5,7 +5,7 @@ title: Komma igång med sandbox-API
 topic-legacy: developer guide
 description: Med sandbox API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: d38df5ede84c1306a76fd1ec83d9d0a540b0d01c
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '376'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Den här guiden kräver att du har slutfört [självstudiekurs om autentisering]
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* x-gw-ims-org-id: `{ORG_ID}`
 
 Förutom autentiseringshuvuden kräver alla begäranden en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 

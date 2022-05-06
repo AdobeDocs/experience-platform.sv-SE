@@ -5,8 +5,7 @@ title: API-slutpunkt för motorer
 topic-legacy: Developer guide
 description: Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetenskap. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1165'
 ht-degree: 0%
@@ -21,7 +20,7 @@ Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetensk
 
 >[!TIP]
 >
->Om du inte har någon Docker URL går du till självstudiekursen [Paketera källfiler i ett recept](../models-recipes/package-source-files-recipe.md) och får en stegvis genomgång av hur du skapar en Docker-värd-URL.
+>Om du inte har någon Docker URL går du till [Paketera källfiler i ett recept](../models-recipes/package-source-files-recipe.md) självstudiekurs för steg-för-steg-genomgång av hur du skapar en Docker-värd-URL.
 
 Docker-registerautentiseringsuppgifterna krävs för att överföra en paketerad mottagarfil, inklusive Docker-värdens URL, användarnamn och lösenord. Du kan söka efter den här informationen genom att utföra följande GET-förfrågan:
 
@@ -37,17 +36,17 @@ GET /engines/dockerRegistry
 curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-registret inklusive Docker-URL (`host`), användarnamn (`username`) och lösenord (`password`).
+Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-registret inklusive Docker-URL:en (`host`), användarnamn (`username`), och lösenord (`password`).
 
 >[!NOTE]
 >
->Dockerlösenordet ändras när `{ACCESS_TOKEN}` uppdateras.
+>Dockningslösenordet ändras när `{ACCESS_TOKEN}` uppdateras.
 
 ```json
 {
@@ -57,7 +56,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-
 }
 ```
 
-## Skapa en motor med Docker URL:er {#docker-image}
+## Skapa en motor med hjälp av Docker URL:er {#docker-image}
 
 Du kan skapa en motor genom att utföra en begäran om POST samtidigt som du anger dess metadata och en Docker-URL som refererar till en Docker-bild i multipart-formulär.
 
@@ -74,7 +73,7 @@ curl -X POST \
     https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: multipart/form-data' \
     -F 'engine={
@@ -105,14 +104,14 @@ curl -X POST \
 
 **Begär PySpark/Scala**
 
-När du begär PySpark-recept är `executionType` och `type`&quot;PySpark&quot;. När du begär ett Scala-recept är `executionType` och `type`&quot;Spark&quot;. I följande exempel på Scala-recept används Spark:
+När du begär PySpark-recept `executionType` och `type` är &quot;PySpark&quot;. När du begär Scala recept `executionType` och `type` är &quot;Spark&quot;. I följande exempel på Scala-recept används Spark:
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: multipart/form-data' \
     -F 'engine={
@@ -215,14 +214,14 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Värdet kan anges till Spark eller PySpark. |
-| `algorithm` | Den algoritm som används, ange det här värdet till `fp` (funktionspipeline). |
+| `algorithm` | Den algoritm som används, ange det här värdet till `fp` (rörligt material). |
 | `name` | Namnet på funktionspipeline-motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
 | `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
 | `mlLibrary` | Ett fält som krävs när du skapar motorer för PySpark- och Scala-recept. Det här fältet måste anges till `databricks-spark`. |
 | `artifacts.default.image.location` | Docker-bildens plats. Endast Azure ACR eller Public (unauthenticated) Dockerhub stöds. |
 | `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Detta kan vara antingen &quot;Spark&quot; eller &quot;PySpark&quot;. |
-| `artifacts.default.image.packagingType` | Motorns paketeringstyp. Värdet ska vara `docker`. |
-| `artifacts.default.defaultMLInstanceConfigs` | Konfigurationsfilsparametrarna för `pipeline.json`. |
+| `artifacts.default.image.packagingType` | Motorns paketeringstyp. Värdet ska anges till `docker`. |
+| `artifacts.default.defaultMLInstanceConfigs` | Dina `pipeline.json` konfigurationsfilsparametrar. |
 
 **Svar**
 
@@ -255,7 +254,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 
 ## Hämta en lista med motorer
 
-Du kan hämta en lista över motorer genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
+Du kan hämta en lista över motorer genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -272,7 +271,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -349,7 +348,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/engines/22f4166f-85ba-4130-a995-a2b8e1edde32 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -388,7 +387,7 @@ Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egens
 
 >[!NOTE]
 >
->För att denna PUT-förfrågan ska lyckas föreslår vi att du först utför en GET-förfrågan om att [hämta motorn med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta motorn efter ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en motors namn och beskrivning samtidigt som dessa egenskaper initialt används:
 
@@ -426,7 +425,7 @@ curl -X PUT \
     https://platform.adobe.io/data/sensei/engines/22f4166f-85ba-4130-a995-a2b8e1edde32 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=engine.v1.json' \
     -d '{
@@ -494,7 +493,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/engines/22f4166f-85ba-4130-a995-a2b8e1edde32 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

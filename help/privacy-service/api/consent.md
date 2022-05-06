@@ -5,7 +5,7 @@ title: API-slutpunkt för samtycke
 topic-legacy: developer guide
 description: Lär dig hur du hanterar förfrågningar om kundsamtycke för Experience Cloud-program med Privacy Service-API:t.
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '247'
 ht-degree: 0%
@@ -38,7 +38,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -d '{
         "optOutOfSale": true,
         "entities": [

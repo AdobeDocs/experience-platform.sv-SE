@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 - Behörighet att skapa [!DNL Experience Platform] API-anrop. Slutför [Autentisera och få åtkomst till Adobe Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en) självstudiekurs för att få tillgång till följande värden för att slutföra den här självstudiekursen:
    - Behörighet: `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
-   - x-gw-ims-org-id: `{IMS_ORG}`
+   - x-gw-ims-org-id: `{ORG_ID}`
    - Klienthemlighet: `{CLIENT_SECRET}`
    - Klientcertifikat: `{PRIVATE_KEY}`
 - Exempeldata och källfiler för [Butiksförs.mottagare](../pre-built-recipes/retail-sales.md). Ladda ned resurser som krävs för detta och andra [!DNL Data Science Workspace] självstudiekurser från [Adobe offentlig Git-databas](https://github.com/adobe/experience-platform-dsw-reference/).
@@ -50,7 +50,7 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
    ```yaml
    Enterprise:
        api_key: {API_KEY}
-       org_id: {IMS_ORG}
+       org_id: {ORG_ID}
        tech_acct: {technical_account_id}
        client_secret: {CLIENT_SECRET}
        priv_key_filename: {PRIVATE_KEY}

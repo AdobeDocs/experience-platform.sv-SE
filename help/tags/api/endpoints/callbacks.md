@@ -1,7 +1,8 @@
 ---
 title: Återanropsslutpunkt
 description: Lär dig hur du anropar slutpunkten /callback i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: dd980f91-89e3-4ba0-a6fc-64d66b288a22
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '621'
 ht-degree: 1%
@@ -12,7 +13,7 @@ ht-degree: 1%
 
 Ett återanrop är ett meddelande som Reactor API skickar till en specifik URL (vanligtvis en som din organisation är värd för).
 
-Återanrop är avsedda att användas tillsammans med [granskningshändelser](./audit-events.md) för att spåra aktiviteter i Reactor API. Varje gång en granskningshändelse av en viss typ genereras kan ett återanrop skicka ett matchande meddelande till den angivna URL:en.
+Återanrop är avsedda att användas tillsammans med [granskningshändelser](./audit-events.md) för att följa upp aktiviteter i reaktors-API:t. Varje gång en granskningshändelse av en viss typ genereras kan ett återanrop skicka ett matchande meddelande till den angivna URL:en.
 
 Tjänsten bakom URL:en som anges i återanropet måste svara med HTTP-statuskoden 200 (OK) eller 201 (Skapad). Om tjänsten inte svarar med någon av dessa statuskoder provas meddelandeleveransen igen med följande intervall:
 
@@ -30,11 +31,11 @@ Tjänsten bakom URL:en som anges i återanropet måste svara med HTTP-statuskode
 
 Om alla leveransförsök misslyckas ignoreras meddelandet.
 
-Ett återanrop tillhör exakt en [egenskap](./properties.md). En egenskap kan ha många återanrop.
+Ett återanrop tillhör exakt ett [property](./properties.md). En egenskap kan ha många återanrop.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Visa återanrop {#list}
 
@@ -48,13 +49,13 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars återanrop du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars återanrop du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade återanrop filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade återanrop filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -63,7 +64,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR66a3356c73fc4aabb67ee22caae53d70/callbacks \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -127,7 +128,7 @@ GET /callbacks/{CALLBACK_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `CALLBACK_ID` | `id` för det återanrop som du vill söka efter. |
+| `CALLBACK_ID` | The `id` för det återanrop som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -138,7 +139,7 @@ curl -X GET \
   https://reactor.adobe.io/callbacks/CBeef389cee8d84e69acef8665e4dcbef6 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -191,7 +192,7 @@ POST /properties/{PROPERTY_ID}/callbacks
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för den [egenskap](./properties.md) som du definierar återanropet under. |
+| `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar återanropet under. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -202,7 +203,7 @@ curl -X POST \
   https://reactor.adobe.io/properties/PR5e22de986a7c4070965e7546b2bb108d/callbacks \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -219,7 +220,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `url` | URL-målet för återanropsmeddelandet. URL:en måste använda HTTPS-protokolltillägget. |
-| `subscriptions` | En array med strängar som anger de granskningshändelsetyper som kommer att utlösa återanropet. En lista över möjliga händelsetyper finns i [slutpunktshandboken för granskningshändelser](./audit-events.md). |
+| `subscriptions` | En array med strängar som anger de granskningshändelsetyper som kommer att utlösa återanropet. Se [slutpunktsguide för granskningshändelser](./audit-events.md) för en lista över möjliga händelsetyper. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -271,20 +272,20 @@ PUT /callbacks/{CALLBACK_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `CALLBACK_ID` | `id` för det återanrop som du vill uppdatera. |
+| `CALLBACK_ID` | The `id` för det återanrop som du vill uppdatera. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran uppdaterar `subscriptions`-arrayen för ett befintligt återanrop.
+Följande begäran uppdaterar `subscriptions` array för ett befintligt återanrop.
 
 ```shell
 curl -X PUT \
   https://reactor.adobe.io/callbacks/CB4310904d415549888cc9e31ebe1e1e45 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -303,7 +304,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för återanropet. Varje nyckel representerar det callback-attribut som ska uppdateras, tillsammans med motsvarande värde som det ska uppdateras till.<br><br>Följande attribut kan uppdateras för återanrop:<ul><li>`subscriptions`</li><li>`url`</li></ul> |
-| `id` | `id` för det återanrop som du vill uppdatera. Detta ska matcha `{CALLBACK_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` för det återanrop som du vill uppdatera. Det här bör matcha `{CALLBACK_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `callbacks`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -357,7 +358,7 @@ DELETE /callbacks/{CALLBACK_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `CALLBACK_ID` | `id` för det återanrop som du vill ta bort. |
+| `CALLBACK_ID` | The `id` för det återanrop som du vill ta bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -368,7 +369,7 @@ curl -X DELETE \
   https://reactor.adobe.io/callbacks/CB4310904d415549888cc9e31ebe1e1e45 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**

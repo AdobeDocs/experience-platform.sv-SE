@@ -5,8 +5,7 @@ title: API-slutpunkt för schemalagda frågor körs
 topic-legacy: runs for scheduled queries
 description: Följande avsnitt går igenom de olika API-anrop du kan göra för att köra schemalagda frågor med API:t för frågetjänsten.
 exl-id: 1e69b467-460a-41ea-900c-00348c3c923c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '696'
 ht-degree: 0%
@@ -17,11 +16,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Nu när du förstår vilka rubriker du ska använda kan du börja ringa till [!DNL Query Service] API. Följande avsnitt går igenom de olika API-anropen som du kan göra med [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista över alla körningar för en angiven schemalagd fråga
 
-Du kan hämta en lista över alla körningar för en viss schemalagd fråga, oavsett om de körs eller redan har slutförts. Detta görs genom att en GET-begäran görs till `/schedules/{SCHEDULE_ID}/runs`-slutpunkten, där `{SCHEDULE_ID}` är `id`-värdet för den schemalagda fråga vars körningar du vill hämta.
+Du kan hämta en lista över alla körningar för en viss schemalagd fråga, oavsett om de körs eller redan har slutförts. Detta gör du genom att göra en GET-förfrågan till `/schedules/{SCHEDULE_ID}/runs` slutpunkt, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda fråga vars körningar du vill hämta.
 
 **API-format**
 
@@ -32,8 +31,8 @@ GET /schedules/{SCHEDULE_ID}/runs?{QUERY_PARAMETERS}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill hämta. |
-| `{QUERY_PARAMETERS}` | (*Valfria*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga som du vill hämta. |
+| `{QUERY_PARAMETERS}` | (*Valfritt*) Parametrar har lagts till i den begärda sökvägen som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
 
 **Frågeparametrar**
 
@@ -41,10 +40,10 @@ Här följer en lista över tillgängliga frågeparametrar för att lista körni
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultaten efter att de har skapats i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekten i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. `start=2` returnerar till exempel en lista som börjar med den tredje listade frågan. (*Standardvärde: 0*) |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `state` och `externalTrigger`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än) och `==` (lika med) och `!=` (inte lika med). `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` returnerar till exempel alla körningar som skapats manuellt, slutförts och skapats efter den 20 april 2019. |
+| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `state`och `externalTrigger`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), och  `==` (lika med), och `!=` (inte lika med). Till exempel: `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` kommer att returnera alla körningar som har skapats manuellt, slutförts och skapats efter den 20 april 2019. |
 
 **Begäran**
 
@@ -53,7 +52,7 @@ Följande begäran hämtar de fyra sista körningarna för den angivna schemalag
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm/runs?limit=4
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -150,11 +149,11 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över körningar för de
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.cancel` för att [stoppa en körning för en angiven schemalagd fråga](#immediately-stop-a-run-for-a-specific-scheduled-query).
+>Du kan använda värdet för `_links.cancel` till [stoppa en körning för en angiven schemalagd fråga](#immediately-stop-a-run-for-a-specific-scheduled-query).
 
 ### Starta omedelbart ut en körning för en specifik schemalagd fråga
 
-Du kan omedelbart utlösa en körning för en angiven schemalagd fråga genom att göra en begäran om POST till `/schedules/{SCHEDULE_ID}/runs`-slutpunkten, där `{SCHEDULE_ID}` är `id`-värdet för den schemalagda fråga vars körning du vill utlösa.
+Du kan omedelbart starta en körning för en angiven schemalagd fråga genom att göra en POST-förfrågan till `/schedules/{SCHEDULE_ID}/runs` slutpunkt, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda fråga vars körning du vill utlösa.
 
 **API-format**
 
@@ -167,7 +166,7 @@ POST /schedules/{SCHEDULE_ID}/runs
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm/runs
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -185,7 +184,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Hämta information om en körning för en specifik schemalagd fråga
 
-Du kan hämta information om en körning för en specifik schemalagd fråga genom att göra en GET-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`-slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan hämta information om en körning för en viss schemalagd fråga genom att göra en GET-förfrågan till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkt och tillhandahåller både ID för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
@@ -195,15 +194,15 @@ GET /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan vars körning du vill hämta information om. |
-| `{RUN_ID}` | `id`-värdet för den körning du vill hämta. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga vars körning du vill hämta information om. |
+| `{RUN_ID}` | The `id` värdet på den körning du vill hämta. |
 
 **Begäran**
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm/runs/c2NoZWR1bGVkX18yMDIwLTAxLTA4VDIwOjQ1OjAwKzAwOjAw
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -246,7 +245,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna körni
 
 ### Stoppa omedelbart en körning för en specifik schemalagd fråga
 
-Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`-slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkt och tillhandahåller både ID för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
@@ -256,8 +255,8 @@ PATCH /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan vars körning du vill hämta information om. |
-| `{RUN_ID}` | `id`-värdet för den körning du vill hämta. |
+| `{SCHEDULE_ID}` | The `id` värdet för den schemalagda fråga vars körning du vill hämta information om. |
+| `{RUN_ID}` | The `id` värdet på den körning du vill hämta. |
 
 **Begäran**
 
@@ -266,7 +265,7 @@ Denna API-begäran använder JSON Patch-syntaxen för sin nyttolast. Mer informa
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm/runs/c2NoZWR1bGVkX18yMDIwLTAxLTA4VDIwOjQ1OjAwKzAwOjAw
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{

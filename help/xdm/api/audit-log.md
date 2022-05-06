@@ -5,7 +5,7 @@ title: API-slutpunkt för granskningslogg
 description: Med slutpunkten /audilog i API:t för schemaregister kan du hämta en kronologisk lista över ändringar som har gjorts i en befintlig XDM-resurs.
 topic-legacy: developer guide
 exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
-source-git-commit: 7abe27d7fcc461becb0495fcd470eaea031b94bc
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -47,7 +47,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.schemas.50649eb1b040bf042d6400a0335901cd2a97d31a4eac4330 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -60,7 +60,7 @@ Ett lyckat svar returnerar en kronologisk lista över ändringar som gjorts i re
   {
     "id": "https://ns.adobe.com/{TENANT_ID}/schemas/50649eb1b040bf042d6400a0335901cd2a97d31a4eac4330",
     "updatedUser": "{USER_ID}",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "updatedTime": "02-19-2021 05:43:56",
     "requestId": "a14NMF0jd6BIfyXaHdTDl4bC4R0r9rht",
     "clientId": "{CLIENT_ID}",
@@ -78,7 +78,7 @@ Ett lyckat svar returnerar en kronologisk lista över ändringar som gjorts i re
   {
     "id": "https://ns.adobe.com/{TENANT_ID}/schemas/50649eb1b040bf042d6400a0335901cd2a97d31a4eac4330",
     "updatedUser": "{USER_ID}",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "updatedTime": "02-19-2021 05:43:56",
     "requestId": "pFQbgmWrdbJrNB9GdxTSGECpXYWspu68",
     "clientId": "{CLIENT_ID}",

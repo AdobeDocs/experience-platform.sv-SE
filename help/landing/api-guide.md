@@ -5,7 +5,7 @@ title: Komma igång med Adobe Experience Platform API:er
 topic-legacy: api guide
 description: Adobe Experience Platform tillhandahåller API-tjänster som är nära kopplade till varandra. Den här handboken innehåller information om tillgängliga tjänster, nödvändiga huvuden för CRUD-åtgärder, felmeddelanden, Postman-samlingar och exempel på API-anrop.
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-source-git-commit: e62e4e3a12ad2a85de5b10c60fde3618cde84c4b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1379'
 ht-degree: 0%
@@ -24,7 +24,7 @@ För att kunna ringa anrop till plattformsslutpunkter måste du slutföra [själ
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
 ### Sandlådehuvud
 
@@ -48,7 +48,7 @@ Om du vill veta mer om de underliggande API-teknikerna som används i Platform, 
 
 Postman är en samarbetsplattform för API-utveckling som gör att du kan konfigurera miljöer med förinställda variabler, dela API-samlingar, effektivisera CRUD-begäranden och mycket annat. De flesta Platform API-tjänster har Postman-samlingar som kan användas för att göra API-anrop.
 
-Om du vill veta mer om Postman, t.ex. om hur man ställer in en miljö, en lista över tillgängliga samlingar och hur man importerar samlingar, går du till [Platform Postman-dokumentation](postman.md).
+Om du vill veta mer om Postman, t.ex. om hur du konfigurerar en miljö, en lista över tillgängliga samlingar och hur du importerar samlingar, går du till [Postman-dokumentation](postman.md).
 
 ## Läser exempel-API-anrop {#sample-api}
 
@@ -80,7 +80,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -144,4 +144,4 @@ I det här dokumentet introducerades nödvändiga rubriker, tillgängliga guider
 
 Svar på vanliga frågor finns i [Felsökningsguide för plattformen](troubleshooting.md).
 
-Om du vill konfigurera en Postman-miljö och utforska de tillgängliga Postman-samlingarna kan du läsa [Platform Postman Guide](postman.md).
+Om du vill konfigurera en Postman-miljö och utforska de tillgängliga Postman-samlingarna kan du läsa [Plattformsguide för Postman](postman.md).

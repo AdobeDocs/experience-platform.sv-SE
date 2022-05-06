@@ -5,7 +5,7 @@ title: API-slutpunkt för beteenden
 description: Med slutpunkten /behaviors i API:t för schemaregister kan du hämta alla tillgängliga beteenden i den globala behållaren.
 topic-legacy: developer guide
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '426'
 ht-degree: 1%
@@ -21,19 +21,19 @@ I Experience Data Model (XDM) definierar beteenden vilken typ av data som ett sc
 
 >[!NOTE]
 >
->Det finns vissa användningsfall i Platform som kräver användning av schema som inte har något av ovanstående beteenden. I dessa fall finns ett tredje &quot;ad hoc&quot;-beteende att tillgå. Mer information finns i självstudiekursen om att [skapa ett ad hoc-schema](../tutorials/ad-hoc.md).
+>Det finns vissa användningsfall i Platform som kräver användning av schema som inte har något av ovanstående beteenden. I dessa fall finns ett tredje &quot;ad hoc&quot;-beteende att tillgå. Se självstudiekursen om [skapa ett ad hoc-schema](../tutorials/ad-hoc.md) för mer information.
 >
->Mer allmän information om databeteenden i termer av hur de påverkar schemakomposition finns i guiden [grunder för schemakomposition](../schema/composition.md).
+>Mer allmän information om databeteenden i termer av hur de påverkar schemakomposition finns i handboken på [grunderna för schemakomposition](../schema/composition.md).
 
-Med slutpunkten `/behaviors` i API:t [!DNL Schema Registry] kan du visa tillgängliga beteenden i `global`-behållaren.
+The `/behaviors` slutpunkt i [!DNL Schema Registry] Med API kan du visa tillgängliga beteenden i `global` behållare.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden är en del av [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med beteenden {#list}
 
-Du kan hämta en lista över alla tillgängliga beteenden genom att göra en GET-förfrågan till `/behaviors`-slutpunkten.
+Du kan hämta en lista över alla tillgängliga beteenden genom att göra en GET-förfrågan till `/behaviors` slutpunkt.
 
 **API-format**
 
@@ -48,7 +48,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/global/behaviors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
@@ -90,7 +90,7 @@ curl -X GET \
 
 ## Söka efter ett beteende {#lookup}
 
-Du kan söka efter ett visst beteende genom att ange dess ID i sökvägen för en GET-begäran till `/behaviors`-slutpunkten.
+Du kan söka efter ett visst beteende genom att ange dess ID i sökvägen till en GET-begäran till `/behaviors` slutpunkt.
 
 **API-format**
 
@@ -100,20 +100,20 @@ GET /global/behaviors/{BEHAVIOR_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BEHAVIOR_ID}` | `meta:altId` eller URL-kodad `$id` för beteendet som du vill söka efter. |
+| `{BEHAVIOR_ID}` | The `meta:altId` eller URL-kodad `$id` av beteendet du vill hitta. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran hämtar information om postens beteende genom att ange dess `meta:altId` i sökvägen för begäran.
+Följande begäran hämtar information om postbeteendet genom att ange dess `meta:altId` i sökvägen till begäran.
 
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/global/behaviors/_xdm.data.record \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Accept: application/vnd.adobe.xed+json;version=1'
 ```
@@ -173,4 +173,4 @@ Ett godkänt svar returnerar detaljerna om beteendet, inklusive version, beskriv
 
 ## Nästa steg
 
-I den här guiden beskrivs användningen av slutpunkten `/behaviors` i [!DNL Schema Registry]-API:t. Mer information om hur du tilldelar ett beteende till en klass med API finns i [handboken för klassers slutpunkter](./classes.md).
+Den här guiden beskriver användningen av `/behaviors` slutpunkt i [!DNL Schema Registry] API. Om du vill lära dig hur du tilldelar ett beteende till en klass med API:t kan du läsa [klassers slutpunktshandbok](./classes.md).

@@ -1,7 +1,8 @@
 ---
 title: Slutpunkt för tillägg
 description: Lär dig hur du anropar slutpunkten /extensions i Reaktors API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 1%
@@ -10,13 +11,13 @@ ht-degree: 1%
 
 # Slutpunkt för tillägg
 
-I Reactor API representerar ett tillägg den installerade instansen av ett [tilläggspaket](./extension-packages.md). Ett tillägg gör de funktioner som definieras av ett tilläggspaket tillgängliga för en [egenskap](./properties.md). Dessa funktioner används när du skapar [tillägg](./data-elements.md) och [regelkomponenter](./rule-components.md).
+I Reaktors-API representerar ett tillägg den installerade instansen av en [tilläggspaket](./extension-packages.md). Ett tillägg gör de funktioner som definieras av ett tilläggspaket tillgängliga för en [property](./properties.md). Funktionerna används när du skapar [tillägg](./data-elements.md) och [regelkomponenter](./rule-components.md).
 
 Ett tillägg tillhör exakt en egenskap. En egenskap kan ha många tillägg, men inte mer än en installerad instans av ett visst tilläggspaket.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med tillägg {#list}
 
@@ -30,13 +31,13 @@ GET properties/{PROPERTY_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | `id` för egenskapen vars tillägg du vill visa. |
+| `{PROPERTY_ID}` | The `id` för egenskapen vars tillägg du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade tillägg filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade tillägg filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -45,7 +46,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRee071cb5b7794f42b74c913e1ad2e325/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -159,7 +160,7 @@ Du kan söka efter ett tillägg genom att ange dess ID i sökvägen för en GET-
 
 >[!NOTE]
 >
->När tillägg tas bort flaggas de som borttagna i systemet, men tas inte bort. Det är därför möjligt att hämta ett borttaget tillägg. Borttagna tillägg kan identifieras med en `deleted_at`-egenskap i `meta` för de returnerade tilläggsdata.
+>När tillägg tas bort flaggas de som borttagna i systemet, men tas inte bort. Det är därför möjligt att hämta ett borttaget tillägg. Borttagna tillägg kan identifieras med en `deleted_at` -egenskapen i `meta` av returnerade tilläggsdata.
 
 **API-format**
 
@@ -169,7 +170,7 @@ GET /extensions/{EXTENSION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_ID` | `id` för det tillägg som du vill söka efter. |
+| `EXTENSION_ID` | The `id` för det tillägg som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -180,7 +181,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX2ba586f436ac48e390a1ee7e8c9a8f6e \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -279,7 +280,7 @@ Ett godkänt svar returnerar information om tillägget.
 
 ## Skapa eller uppdatera ett tillägg {#create}
 
-Tillägg skapas genom att referera till ett [tilläggspaket](./extension-packages.md) och lägga till det installerade tillägget i en egenskap. När installationsaktiviteten har slutförts returneras ett svar som anger om tillägget har installerats korrekt.
+Tillägg skapas genom att en referens refereras till ett [tilläggspaket](./extension-packages.md) och lägga till det installerade tillägget i en egenskap. När installationsaktiviteten har slutförts returneras ett svar som anger om tillägget har installerats korrekt.
 
 **API-format**
 
@@ -289,7 +290,7 @@ POST /properties/{PROPERTY_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som du vill installera tillägget under. |
+| `PROPERTY_ID` | The `id` av egenskapen som du vill installera tillägget under. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -300,7 +301,7 @@ curl -X POST \
   https://reactor.adobe.io/properties/PRee071cb5b7794f42b74c913e1ad2e325/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/vnd.api+json' \
   -d '{
         "data": {
@@ -324,8 +325,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `relationships.extension_package` | **(Obligatoriskt)**  Ett objekt som refererar till ID:t för tilläggspaketet som installeras. |
-| `attributes.delegate_descriptor_id` | Om tillägget kräver anpassade inställningar krävs även ett delegatbeskrivnings-ID. Mer information finns i guiden för [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md). |
+| `relationships.extension_package` | **(Obligatoriskt)** Ett objekt som refererar till ID:t för tilläggspaketet som installeras. |
+| `attributes.delegate_descriptor_id` | Om tillägget kräver anpassade inställningar, krävs även ett delegatbeskrivnings-ID. Se guiden [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
 | `attributes.enabled` | Ett booleskt värde som anger om tillägget är aktiverat. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 
@@ -435,20 +436,20 @@ PATCH /extensions/{EXTENSION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_ID` | `id` för det tillägg som du vill revidera. |
+| `EXTENSION_ID` | The `id` för det tillägg som du vill ändra. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Precis som när [skapar ett tillägg](#create) måste en lokal version av det reviderade paketet överföras via formulärdata.
+Som med [skapa ett tillägg](#create), måste en lokal version av det reviderade paketet överföras via formulärdata.
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/vnd.api+json' \
   -d '{
         "data": {
@@ -466,14 +467,14 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | De attribut som du vill ändra. För tillägg kan du granska deras `delegate_descriptor_id`-, `enabled`- och `settings`-attribut. |
-| `meta.action` | Måste inkluderas med värdet `revise` när du gör en revision. |
+| `attributes` | De attribut som du vill ändra. För tillägg kan du ändra deras `delegate_descriptor_id`, `enabled`och `settings` attribut. |
+| `meta.action` | Måste inkluderas med värdet `revise` när du gör en revidering. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
-Ett lyckat svar returnerar detaljerna för det reviderade tillägget, med egenskapen `meta.latest_revision_number` ökad med 1.
+Ett godkänt svar returnerar detaljerna om det ändrade tillägget, med dess `meta.latest_revision_number` egenskapen ökade med 1.
 
 ```json
 {
@@ -575,7 +576,7 @@ DELETE /extensions/{EXTENSION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_ID` | `id` för det tillägg som du vill ta bort. |
+| `EXTENSION_ID` | The `id` för det tillägg som du vill ta bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -586,7 +587,7 @@ curl -X DELETE \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
@@ -595,17 +596,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för ett tillägg {#notes}
 
-Tillägg är&quot;betydande&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för tillägg och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
+Tillägg är&quot;betydande&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för tillägg och andra kompatibla resurser.
 
 ## Hämta relaterade resurser för ett tillägg {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för ett tillägg. När [söker upp ett tillägg](#lookup) visas de här relationerna under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för ett tillägg. När [söka efter ett tillägg](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationsguiden](../guides/relationships.md) för mer information om relationer i Reactor API.
+Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
 
 ### Lista relaterade bibliotek för ett tillägg {#libraries}
 
-Du kan lista de bibliotek som använder ett tillägg genom att lägga till `/libraries` i sökvägen för en sökningsbegäran.
+Du kan lista de bibliotek som använder ett tillägg genom att lägga till `/libraries` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -615,7 +616,7 @@ GET  /extensions/{EXTENSION_ID}/libraries
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{EXTENSION_ID}` | `id` för det tillägg vars bibliotek du vill visa. |
+| `{EXTENSION_ID}` | The `id` för det tillägg vars bibliotek du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -626,7 +627,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -727,7 +728,7 @@ Ett godkänt svar returnerar en lista med bibliotek som använder det angivna ti
 
 ### Visa en lista över relaterade revisioner för ett tillägg {#revisions}
 
-Du kan lista tidigare versioner av ett tillägg genom att lägga till `/revisions` i sökvägen för en sökbegäran.
+Du kan lista tidigare versioner av ett tillägg genom att bifoga `/revisions` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -737,7 +738,7 @@ GET  /extensions/{EXTENSION_ID}/revisions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{EXTENSION_ID}` | `id` för tillägget vars revisioner du vill visa. |
+| `{EXTENSION_ID}` | The `id` för det tillägg vars ändringar du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -748,7 +749,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/revisions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -941,7 +942,7 @@ Ett godkänt svar returnerar en lista med revisioner för det angivna tillägget
 
 ### Söka efter ett tillägg i det relaterade tilläggspaketet {#extension}
 
-Du kan slå upp det tilläggspaket som ett tillägg baseras på genom att lägga till `/extension_package` till sökvägen för en GET-begäran.
+Du kan leta upp tilläggspaketet som ett tillägg baseras på genom att lägga till `/extension_package` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -951,7 +952,7 @@ GET  /extensions/{EXTENSION_ID}/extension_package
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{EXTENSION_ID}` | `id` för tillägget vars tillägg du vill söka efter. |
+| `{EXTENSION_ID}` | The `id` för det tillägg vars tillägg du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -962,7 +963,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/extension \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1176,7 +1177,7 @@ Ett godkänt svar returnerar information om tilläggspaketet som det angivna til
 
 ### Söka efter relaterat ursprung för ett tillägg {#origin}
 
-Du kan slå upp tilläggets ursprung genom att lägga till `/origin` i sökvägen för en GET-begäran. Ursprunget för ett tillägg är den tidigare versionen som uppdaterades för att skapa den aktuella ändringen.
+Du kan slå upp tilläggets ursprung genom att lägga till `/origin` till sökvägen för en GET-begäran. Ursprunget för ett tillägg är den tidigare versionen som uppdaterades för att skapa den aktuella ändringen.
 
 **API-format**
 
@@ -1186,7 +1187,7 @@ GET  /extensions/{EXTENSION_ID}/origin
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{EXTENSION_ID}` | `id` för tillägget vars ursprung du vill söka efter. |
+| `{EXTENSION_ID}` | The `id` för tillägget vars ursprung du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1197,7 +1198,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/origin \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1296,7 +1297,7 @@ Ett godkänt svar returnerar information om det angivna tilläggets ursprung.
 
 ### Söka efter den relaterade egenskapen för ett tillägg {#property}
 
-Du kan söka efter den egenskap som äger ett tillägg genom att lägga till `/property` i sökvägen för en GET-begäran.
+Du kan söka efter den egenskap som äger ett tillägg genom att lägga till `/property` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -1306,7 +1307,7 @@ GET  /extensions/{EXTENSION_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{EXTENSION_ID}` | `id` för tillägget vars egenskap du vill söka efter. |
+| `{EXTENSION_ID}` | The `id` för det tillägg vars egenskap du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1317,7 +1318,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

@@ -5,7 +5,7 @@ title: Översikt över partiell gruppinmatning
 topic-legacy: overview
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: 636d6dcbe8eb73b7898fc3794f6b4567956e5618
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -37,7 +37,7 @@ För att ringa [!DNL Platform] API:er måste du först slutföra [självstudieku
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- x-gw-ims-org-id: `{ORG_ID}`
 
 Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 

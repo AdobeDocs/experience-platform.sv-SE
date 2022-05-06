@@ -2,7 +2,7 @@
 title: Komma igång med Reactor API
 description: Lär dig hur du kommer igång med Reaktors-API, inklusive steg för att generera nödvändiga inloggningsuppgifter.
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1060'
 ht-degree: 0%
@@ -15,9 +15,9 @@ För att kunna använda [Reaktors-API](https://www.adobe.io/experience-platform-
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
-I den här guiden beskrivs hur du använder utvecklarkonsolen i Adobe för att samla in värdena för vart och ett av dessa rubriker så att du kan börja anropa Reaktors API.
+Den här guiden beskriver hur du använder Adobe Developer Console för att samla in värdena för vart och ett av dessa rubriker så att du kan börja anropa Reactor API.
 
 ## Få utvecklare tillgång till Adobe Experience Platform
 
@@ -27,11 +27,11 @@ Innan du kan generera autentiseringsvärden för Reactor API måste du ha utveck
 
 Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
-* `{IMS_ORG}`
+* `{ORG_ID}`
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-Din IMS-organisations ID (`{IMS_ORG}`) och API-nyckel (`{API_KEY}`) kan återanvändas i framtida API-anrop efter att de ursprungligen har skapats. Din åtkomsttoken (`{ACCESS_TOKEN}`) är tillfälligt och måste genereras om var 24:e timme.
+Din IMS-organisations ID (`{ORG_ID}`) och API-nyckel (`{API_KEY}`) kan återanvändas i framtida API-anrop efter att de ursprungligen har skapats. Din åtkomsttoken (`{ACCESS_TOKEN}`) är tillfälligt och måste genereras om var 24:e timme.
 
 Stegen för att generera dessa värden beskrivs närmare nedan.
 
@@ -70,13 +70,13 @@ Välj önskade produktprofiler i listan och välj sedan **Spara konfigurerat API
 När API:t har lagts till i projektet visas projektsidan igen på Experience Platform Reactor API-sidan. Här rullar du nedåt till **Tjänstkonto (JWT)** som ger följande åtkomstbehörigheter som krävs i alla anrop till Reactor API:
 
 * **KLIENT-ID**: Klient-ID krävs `{API_KEY}` som måste anges i `x-api-key` header.
-* **ORGANISATIONS-ID**: Organisations-ID är `{IMS_ORG}` värde som måste användas i `x-gw-ims-org-id` header.
+* **ORGANISATIONS-ID**: Organisations-ID är `{ORG_ID}` värde som måste användas i `x-gw-ims-org-id` header.
 
 ![](../images/api/getting-started/access-creds.png)
 
 ### Autentisering för varje session
 
-Nu när du har `{API_KEY}` och `{IMS_ORG}` värden, det sista steget genererar ett `{ACCESS_TOKEN}` värde.
+Nu när du har `{API_KEY}` och `{ORG_ID}` värden, det sista steget genererar ett `{ACCESS_TOKEN}` värde.
 
 >[!NOTE]
 >
@@ -153,7 +153,7 @@ Ett lyckat svar returnerar en ny åtkomsttoken samt antalet sekunder som återst
 
 ## Nästa steg
 
-Om du följer stegen i den här självstudiekursen bör du ha giltiga värden för `{IMS_ORG}`, `{API_KEY}`och `{ACCESS_TOKEN}`. Du kan nu testa dessa värden genom att använda dem i en enkel cURL-begäran till Reactor API.
+Om du följer stegen i den här självstudiekursen bör du ha giltiga värden för `{ORG_ID}`, `{API_KEY}`och `{ACCESS_TOKEN}`. Du kan nu testa dessa värden genom att använda dem i en enkel cURL-begäran till Reactor API.
 
 Börja med att göra ett API-anrop till [lista alla företag](./endpoints/companies.md#list).
 
@@ -167,4 +167,4 @@ När du har bekräftat att dina inloggningsuppgifter fungerar kan du fortsätta 
 
 JWT Libraries och SDK: [https://jwt.io/](https://jwt.io/)
 
-API-utveckling för Postman: [https://www.postman.com/](https://www.postman.com/)
+Postman API-utveckling: [https://www.postman.com/](https://www.postman.com/)

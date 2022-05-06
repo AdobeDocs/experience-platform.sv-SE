@@ -4,8 +4,7 @@ solution: Experience Platform
 title: API-slutpunkt för scheman
 topic-legacy: schemas
 description: 'Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper in Platform. '
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 0%
@@ -16,7 +15,7 @@ ht-degree: 0%
 
 # Schemas slutpunkt
 
-Scheman kan användas med Mapper för att säkerställa att data som du har inhämtat till Adobe Experience Platform matchar det du vill importera. Du kan använda slutpunkten `/schemas` för att skapa, lista och hämta anpassade scheman för användning med Mapper i Platform.
+Scheman kan användas med Mapper för att säkerställa att data som du har inhämtat till Adobe Experience Platform matchar det du vill importera. Du kan använda `/schemas` slutpunkt för att skapa, lista och hämta anpassade scheman för användning med Mapper in Platform.
 
 >[!NOTE]
 >
@@ -24,11 +23,11 @@ Scheman kan användas med Mapper för att säkerställa att data som du har inh�
 
 ## Hämta alla scheman
 
-Du kan hämta en lista över alla tillgängliga mappningsscheman för din IMS-organisation genom att göra en GET-begäran till `/schemas`-slutpunkten.
+Du kan hämta en lista över alla tillgängliga mappningsscheman för din IMS-organisation genom att göra en GET-förfrågan till `/schemas` slutpunkt.
 
 **API-format**
 
-`/schemas`-slutpunkten stöder flera frågeparametrar som hjälper dig att filtrera resultaten. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera både `start`- och `limit`-parametrarna som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+The `/schemas` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera resultaten. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera båda `start` och `limit` parametrar som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /schemas?limit={LIMIT}&start={START}
@@ -39,9 +38,9 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{LIMIT}` | **Obligatoriskt**. Anger antalet returnerade scheman. |
-| `{START}` | **Obligatoriskt**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du `start=0` som värde. |
+| `{START}` | **Obligatoriskt**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
 | `{NAME}` | Filtrerar schemat baserat på namnet. |
-| `{ORDER_BY}` | Sorterar resultatens ordning. De fält som stöds är `modifiedDate` och `createdDate`. Du kan lägga till egenskapen i `+` eller `-` för att sortera den i stigande respektive fallande ordning. |
+| `{ORDER_BY}` | Sorterar resultatens ordning. De fält som stöds är `modifiedDate` och `createdDate`. Du kan lägga till en prepent för egenskapen med `+` eller `-` om du vill sortera den i stigande eller fallande ordning. |
 
 **Begäran**
 
@@ -50,7 +49,7 @@ Följande begäran hämtar de två senast skapade schemana för din IMS-organisa
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0&limit=2 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -134,7 +133,7 @@ Följande svar returnerar HTTP-status 200 med en lista över begärda scheman.
 
 ## Skapa ett schema
 
-Du kan skapa ett schema att validera mot genom att göra en POST-förfrågan till `/schemas`-slutpunkten. Det finns tre sätt att skapa ett schema: skicka ett [JSON-schema](https://json-schema.org/), använda exempeldata eller referera till ett befintligt XDM-schema.
+Du kan skapa ett schema att validera mot genom att göra en POST-förfrågan till `/schemas` slutpunkt. Det finns tre sätt att skapa ett schema: skicka ett [JSON-schema](https://json-schema.org/), använda exempeldata eller referera till ett befintligt XDM-schema.
 
 ```http
 POST /schemas
@@ -144,13 +143,13 @@ POST /schemas
 
 **Begäran**
 
-Med följande begäran kan du skapa ett schema genom att skicka ett [JSON-schema](https://json-schema.org/).
+Med följande begäran kan du skapa ett schema genom att skicka en [JSON-schema](https://json-schema.org/).
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -189,7 +188,7 @@ Med följande begäran kan du skapa ett schema med exempeldata som du tidigare h
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -254,7 +253,7 @@ Med följande begäran kan du skapa ett schema genom att referera till ett befin
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -271,7 +270,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 | -------- | ----------- |
 | `name` | Namnet på schemat som du vill skapa. |
 | `schemaRef.id` | ID:t för schemat som du refererar till. |
-| `schemaRef.contentType` | Bestämmer svarsformatet för det refererade schemat. Mer information om det här fältet finns i [utvecklarguiden för schemaregister](../../xdm/api/schemas.md#lookup) |
+| `schemaRef.contentType` | Bestämmer svarsformatet för det refererade schemat. Mer information om det här fältet finns i [utvecklarhandbok för schemaregister](../../xdm/api/schemas.md#lookup) |
 
 **Svar**
 
@@ -286,7 +285,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
     "id": "4b64daa51b774cb2ac21b61d80125ed0",
     "version": 0,
     "name": "schemaName",
-    "jsonSchema": "{\"id\":null,\"schema\":null,\"_refId\":null,\"title\":\"SimpleUser\",...,\"imsOrg\":\"{IMS_ORG}\",\"$id\":\"https://ns.adobe.com/{TENANT_ID}/schemas/901c44cc5b2748488574f4e2824c5f96\"}",
+    "jsonSchema": "{\"id\":null,\"schema\":null,\"_refId\":null,\"title\":\"SimpleUser\",...,\"imsOrg\":\"{ORG_ID}\",\"$id\":\"https://ns.adobe.com/{TENANT_ID}/schemas/901c44cc5b2748488574f4e2824c5f96\"}",
     "schemaRef": {
         "id": "https://ns.adobe.com/{TENANT_ID}/schemas/901c44cc5b2748488574f4e2824c5f96",
         "contentType": "application/vnd.adobe.xed+json;version=1.0"
@@ -312,7 +311,7 @@ Med följande begäran kan du skapa ett schema från en överförd JSON-fil.
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: multipart/form-data' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -F 'file=@{PATH_TO_FILE}.json'
@@ -336,7 +335,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema
 
-Du kan hämta information om ett specifikt schema genom att göra en GET-begäran till `/schemas`-slutpunkten och ange ID:t för det schema som du vill hämta i sökvägen till begäran.
+Du kan hämta information om ett specifikt schema genom att göra en GET-förfrågan till `/schemas` slutpunkt och ange ID för det schema som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -355,7 +354,7 @@ Följande begäran hämtar information om det angivna schemat.
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas/0f868d3a1b804fb0abf738306290ae79 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```

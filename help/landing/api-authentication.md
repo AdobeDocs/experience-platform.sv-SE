@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: f5f4230c85a16aba00d0071b388e8305ccc654d5
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1230'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgå
 
 * `{ACCESS_TOKEN}`
 * `{API_KEY}`
-* `{IMS_ORG}`
+* `{ORG_ID}`
 
 För att skydda program och användare måste alla förfrågningar till Adobe I/O API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). En JWT används tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
 
@@ -61,7 +61,7 @@ Dina [!DNL Admin Console] måste administratören också lägga till dig som anv
 >
 >Om du följer det här dokumentet från [API-guide för Privacy Service](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att skapa inloggningsuppgifter som är unika för [!DNL Privacy Service].
 
-När du har fått utvecklare och användare åtkomst till Platform via [!DNL Admin Console]är nästa steg att skapa `{IMS_ORG}` och `{API_KEY}` autentiseringsuppgifter i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
+När du har fått utvecklare och användare åtkomst till Platform via [!DNL Admin Console]är nästa steg att skapa `{ORG_ID}` och `{API_KEY}` autentiseringsuppgifter i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
 
 ### Lägga till Experience Platform i ett projekt
 
@@ -86,7 +86,7 @@ Följ instruktionerna som beskrivs i självstudiekursen om [lägga till ett API 
 När API:t har lagts till i projektet **[!UICONTROL Experience Platform API]** På projektsidan visas följande autentiseringsuppgifter som krävs för alla anrop till API:er för Experience Platform:
 
 * `{API_KEY}` ([!UICONTROL Client ID])
-* `{IMS_ORG}` ([!UICONTROL Organization ID])
+* `{ORG_ID}` ([!UICONTROL Organization ID])
 
 ![](././images/api-authentication/api-key-ims-org.png)
 
@@ -118,7 +118,7 @@ Sidan uppdateras för att visa den genererade JWT-filen tillsammans med ett exem
 
 ## Generera en åtkomsttoken
 
-När du har genererat en JWT-fil kan du använda den i ett API-anrop för att generera `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Platform API:er.
+När du har genererat en JWT-fil kan du använda den i ett API-anrop för att generera `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Platform API:er.
 
 **Begäran**
 
@@ -169,7 +169,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
   -H 'Accept: application/vnd.adobe.xed-id+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
@@ -197,7 +197,7 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 ## Använd Postman för att autentisera och testa API-anrop
 
-[Postman](https://www.postman.com/) är ett populärt verktyg som gör att utvecklare kan utforska och testa RESTful API:er. Detta [Medellång post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) I beskrivs hur du kan konfigurera Postman så att den automatiskt utför JWT-autentisering och använder den för att förbruka Platform API:er.
+[Postman](https://www.postman.com/) är ett populärt verktyg som gör att utvecklare kan utforska och testa RESTful API:er. Detta [Medellång post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) I beskrivs hur du kan konfigurera Postman så att det automatiskt utför JWT-autentisering och använder det för att använda Platform API:er.
 
 ## Nästa steg
 

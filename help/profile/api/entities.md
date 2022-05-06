@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 0%
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 # Entitetens slutpunkt (profilåtkomst)
 
-Med Adobe Experience Platform kan du komma åt [!DNL Real-time Customer Profile]-data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med hjälp av gränssnittet [!DNL Platform] finns i [användarhandboken för profilen](../ui/user-guide.md).
+Adobe Experience Platform ger dig åtkomst [!DNL Real-time Customer Profile] data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Åtkomst till profildata via identitet
 
-Du kan komma åt en [!DNL Profile]-entitet genom att göra en GET-begäran till `/access/entities`-slutpunkten och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnutrymmet (`entityIdNS`).
+Du kan komma åt en [!DNL Profile] genom att göra en GET-förfrågan till `/access/entities` slutpunkt och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnutrymmet (`entityIdNS`).
 
-Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i [frågeparametrar](#query-parameters) i bilagan.
 
 **API-format**
 
@@ -41,7 +41,7 @@ curl -X GET \
   'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email&fields=identities,person.name,workEmail' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -120,7 +120,7 @@ curl -X GET \
 
 ## Åtkomst till profildata via lista över identiteter
 
-Du kan komma åt flera profilentiteter genom att göra en POST-förfrågan till `/access/entities`-slutpunkten och ange identiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+Du kan få åtkomst till flera profilentiteter via deras identiteter genom att göra en POST-förfrågan till `/access/entities` slutpunkt och tillhandahåller identiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
 
 **API-format**
 
@@ -138,7 +138,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "schema":{
@@ -183,7 +183,7 @@ curl -X POST \
 |---|---|
 | `schema.name` | ***(Obligatoriskt)*** Namnet på XDM-schemat som entiteten tillhör. |
 | `fields` | XDM-fälten som ska returneras, som en array med strängar. Som standard returneras alla fält. |
-| `identities` | ***(Obligatoriskt)***  En array som innehåller en lista över identiteter för de entiteter som du vill komma åt. |
+| `identities` | ***(Obligatoriskt)*** En array som innehåller en lista med identiteter för de entiteter som du vill komma åt. |
 | `identities.entityId` | ID:t för en enhet som du vill komma åt. |
 | `identities.entityIdNS.code` | Namnområdet för ett enhets-ID som du vill komma åt. |
 | `timeFilter.startTime` | Starttid för tidsintervallfiltret, som ingår. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet början av tillgänglig tid. |
@@ -192,7 +192,7 @@ curl -X POST \
 | `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
 | `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false. |
 
-**Svar:**
+**Svar**
 Ett lyckat svar returnerar de begärda fälten för entiteter som anges i begärandetexten.
 
 ```json
@@ -334,9 +334,9 @@ Ett lyckat svar returnerar de begärda fälten för entiteter som anges i begär
 
 ## Åtkomst till tidsseriehändelser för en profil per identitet
 
-Du kan komma åt tidsseriehändelser via identiteten för deras associerade profilentitet genom att göra en GET-begäran till `/access/entities`-slutpunkten. Den här identiteten består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+Du kan komma åt tidsseriehändelser via identiteten för deras associerade profilentitet genom att göra en GET-förfrågan till `/access/entities` slutpunkt. Den här identiteten består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
 
-Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i [frågeparametrar](#query-parameters) i bilagan.
 
 **API-format**
 
@@ -346,14 +346,14 @@ GET /access/entities?{QUERY_PARAMETERS}
 
 **Begäran**
 
-Följande begäran hittar en profilentitet efter ID och hämtar värdena för egenskaperna `endUserIDs`, `web` och `channel` för alla tidsseriehändelser som är associerade med entiteten.
+Följande begäran hittar en profilentitet efter ID och hämtar värdena för egenskaperna `endUserIDs`, `web`och `channel` för alla tidsseriehändelser som är associerade med entiteten.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -363,7 +363,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och a
 
 >[!NOTE]
 >
->Begäran angav en gräns på ett (`limit=1`), därför är `count` i svaret nedan 1 och endast en entitet returneras.
+>Begäran angav en gräns på ett (`limit=1`) och därför `count` i svaret nedan är 1 och endast en enhet returneras.
 
 ```json
 {
@@ -414,11 +414,11 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och a
 
 ### Åtkomst till en efterföljande resultatsida
 
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen `_page.next` att innehålla ett ID. Dessutom innehåller egenskapen `_links.next.href` en URI för att hämta nästa sida. Om du vill hämta resultaten gör du en ny GET-begäran till `/access/entities`-slutpunkten, men du måste se till att ersätta `/entities` med värdet för den angivna URI:n.
+Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor `_page.next` -egenskapen kommer att innehålla ett ID. Dessutom finns `_links.next.href` -egenskapen tillhandahåller en URI för begäran för hämtning av nästa sida. Om du vill hämta resultaten skickar du en ny GET-förfrågan till `/access/entities` slutpunkt, men du måste se till att ersätta `/entities` med värdet för angiven URI.
 
 >[!NOTE]
 >
->Se till att du inte råkar upprepa `/entities/` i sökvägen för begäran. Den ska bara visas en gång, `/access/entities?start=...`
+>Se till att du inte råkar upprepa `/entities/` i sökvägen till begäran. Den ska bara visas en gång. `/access/entities?start=...`
 
 **API-format**
 
@@ -428,24 +428,24 @@ GET /access/{NEXT_URI}
 
 | Parameter | Beskrivning |
 |---|---|
-| `{NEXT_URI}` | URI-värdet är taget från `_links.next.href`. |
+| `{NEXT_URI}` | URI-värdet hämtas från `_links.next.href`. |
 
 **Begäran**
 
-Följande begäran hämtar nästa resultatsida genom att använda URI:n `_links.next.href` som begärandesökväg.
+Följande begäran hämtar nästa resultatsida med `_links.next.href` URI som begärandesökväg.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/core/ups/access/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efterföljande resultatsidor, vilket anges av de tomma strängvärdena `_page.next` och `_links.next.href`.
+Ett godkänt svar returnerar nästa resultatsida. Svaret har inga efterföljande resultatsidor, vilket anges av de tomma strängvärdena för `_page.next` och `_links.next.href`.
 
 ```json
 {
@@ -496,7 +496,7 @@ Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efter
 
 ## Få åtkomst till tidsseriehändelser för flera profiler per identitet
 
-Du kan komma åt tidsseriehändelser från flera associerade profiler genom att göra en POST-förfrågan till `/access/entities`-slutpunkten och ange profilidentiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+Du kan komma åt tidsseriehändelser från flera associerade profiler genom att göra en POST-förfrågan till `/access/entities` slutpunkt och ange profilidentiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
 
 **API-format**
 
@@ -514,7 +514,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
     "schema": {
@@ -548,8 +548,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 |---|---|
 | `schema.name` | **(OBLIGATORISKT)** XDM-schemat för entiteten som ska hämtas |
-| `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` måste det här värdet ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. |
-| `identities` | **(OBLIGATORISKT)**  En lista med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) som tillhandahåller ett XID. |
+| `relatedSchema.name` | If `schema.name` är `_xdm.context.experienceevent` det här värdet måste ange schemat för den profilentitet som tidsseriehändelser är relaterade till. |
+| `identities` | **(OBLIGATORISKT)** En array med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) som tillhandahåller ett XID. |
 | `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.namn,person.kön |
 | `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i servicesamtalet kommer din organisations standardinställning för det schemat att användas. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. |
 | `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
@@ -768,19 +768,19 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 }`
 ```
 
-I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns fler resultatsidor för den här profilen. I följande avsnitt om [hur du får tillgång till ytterligare resultat](#access-additional-results) finns mer information om hur du får tillgång till dessa ytterligare resultat.
+I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns ytterligare resultatsidor för den här profilen. Se följande avsnitt på [få tillgång till ytterligare resultat](#access-additional-results) om du vill ha mer information om hur du får tillgång till dessa ytterligare resultat.
 
 ### Få tillgång till ytterligare resultat {#access-additional-results}
 
-När tidsseriehändelser hämtas kan det finnas många resultat som returneras, och därför sidnumreras ofta resultaten. Om det finns efterföljande resultatsidor för en viss profil innehåller `_links.next.payload`-värdet för den profilen ett nyttolastobjekt.
+När tidsseriehändelser hämtas kan det finnas många resultat som returneras, och därför sidnumreras ofta resultaten. Om det finns efterföljande resultatsidor för en viss profil visas `_links.next.payload` värdet för den profilen kommer att innehålla ett nyttolastobjekt.
 
-Om du använder den här nyttolasten i begärandetexten kan du utföra en extra begäran om POST till `access/entities`-slutpunkten för att hämta efterföljande sida med tidsseriedata för den profilen.
+Om du använder den här nyttolasten i begärandetexten kan du utföra ytterligare en begäran om POST till `access/entities` slutpunkt för att hämta efterföljande sida med tidsseriedata för den profilen.
 
 ## Få åtkomst till tidsseriehändelser i flera schemaentiteter
 
-Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivare finns i [!DNL Schema Registry] API-utvecklarhandboken [deskriptors endpoint guide](../../xdm/api/descriptors.md).
+Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivningar finns i [!DNL Schema Registry] Utvecklarhandbok för API [slutpunktshandbok för beskrivningar](../../xdm/api/descriptors.md).
 
-Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet [frågeparametrar](#query-parameters) i bilagan.
+Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i [frågeparametrar](#query-parameters) i bilagan.
 
 **API-format**
 
@@ -798,7 +798,7 @@ curl -X GET \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
 ```
 
 **Svar**
@@ -884,28 +884,28 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 
 ### Åtkomst till en efterföljande resultatsida
 
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen `_page.next` att innehålla ett ID. Dessutom innehåller egenskapen `_links.next.href` en URI för att hämta efterföljande sida genom att göra ytterligare GET-begäranden till `access/entities`-slutpunkten.
+Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor `_page.next` -egenskapen kommer att innehålla ett ID. Dessutom finns `_links.next.href` egenskapen innehåller en URI för begäran om att hämta efterföljande sida genom att göra ytterligare GET-begäranden till `access/entities` slutpunkt.
 
 ## Nästa steg
 
-Genom att följa den här guiden har du fått åtkomst till [!DNL Real-time Customer Profile] datafält, profiler och tidsseriedata. Mer information om hur du får åtkomst till andra dataresurser som lagras i [!DNL Platform] finns i [Dataåtkomstöversikten](../../data-access/home.md).
+Genom att följa den här guiden har du fått åtkomst till [!DNL Real-time Customer Profile] datafält, profiler och tidsseriedata. Så här får du lära dig att komma åt andra dataresurser som lagras i [!DNL Platform], se [Dataåtkomstöversikt](../../data-access/home.md).
 
 ## Bilaga {#appendix}
 
-Följande avsnitt innehåller ytterligare information om hur du får åtkomst till [!DNL Profile]-data med API:t.
+Följande avsnitt innehåller ytterligare information om åtkomst [!DNL Profile] data med API:t.
 
 ### Frågeparametrar {#query-parameters}
 
-Följande parametrar används i sökvägen för GET-begäranden till `/access/entities`-slutpunkten. De används för att identifiera den profilentitet som du vill komma åt och filtrera data som returneras i svaret. Obligatoriska parametrar är märkta, medan resten är valfria.
+Följande parametrar används i sökvägen för GET-begäranden till `/access/entities` slutpunkt. De används för att identifiera den profilentitet som du vill komma åt och filtrera data som returneras i svaret. Obligatoriska parametrar är märkta, medan resten är valfria.
 
 | Parameter | Beskrivning | Exempel |
 |---|---|---|
 | `schema.name` | **(OBLIGATORISKT)** XDM-schemat för entiteten som ska hämtas | `schema.name=_xdm.context.experienceevent` |
-| `relatedSchema.name` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange schemat för den profilentitet som tidsseriehändelserna är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
-| `entityId` | **(OBLIGATORISKT)** Enhetens ID. Om värdet för den här parametern inte är ett XID måste även en parameter för identitetsnamnrymd anges (se `entityIdNS` nedan). | `entityId=janedoe@example.com` |
-| `entityIdNS` | Om `entityId` inte anges som ett XID måste det här fältet ange identitetsnamnområdet. | `entityIdNE=email` |
-| `relatedEntityId` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange den relaterade profilentitetens identitetsnamnutrymme. Detta värde följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
-| `relatedEntityIdNS` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
+| `relatedSchema.name` | If `schema.name` är &quot;_xdm.context.experience.event&quot;, måste det här värdet ange schemat för den profilentitet som tidsseriehändelser är relaterade till. | `relatedSchema.name=_xdm.context.profile` |
+| `entityId` | **(OBLIGATORISKT)** ID för entiteten. Om värdet för den här parametern inte är ett XID måste även en parameter för identitetsnamnrymd anges (se `entityIdNS` nedan). | `entityId=janedoe@example.com` |
+| `entityIdNS` | If `entityId` anges inte som ett XID. Det här fältet måste ange identitetsnamnutrymmet. | `entityIdNE=email` |
+| `relatedEntityId` | If `schema.name` är &quot;_xdm.context.experience.event&quot;, måste det här värdet ange den relaterade profilentitetens identitetsnamnutrymme. Detta värde följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `relatedEntityIdNS` | If `schema.name` är &quot;_xdm.context.experienceevent&quot;, måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan | `fields=personalEmail,person.name,person.gender` |
 | `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. | `orderby=-timestamp` |

@@ -1,7 +1,8 @@
 ---
 title: Slutpunkt för granskningshändelser
 description: Lär dig hur du anropar slutpunkten /audit_events i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 59cd58dc-4085-47b7-846f-d3937740dd9b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 1%
@@ -12,11 +13,11 @@ ht-degree: 1%
 
 >[!WARNING]
 >
->Implementeringen av `/audit_events`-slutpunkten börjar fungera när funktioner läggs till, tas bort och omarbetas.
+>Genomförandet av `/audit_events` slutpunkten ändras när funktioner läggs till, tas bort och omarbetas.
 
-En granskningshändelse är en post med en specifik ändring av en annan resurs i Reactor API som genereras när ändringen görs. Det här är systemhändelser som du kan prenumerera på genom att använda ett [återanrop](./callbacks.md). Med slutpunkten `/audit_events` i Reactor API kan du programmässigt hantera granskningshändelser i ditt upplevelseprogram.
+En granskningshändelse är en post med en specifik ändring av en annan resurs i Reactor API som genereras när ändringen görs. Det här är systemhändelser som du kan prenumerera på via en [callback](./callbacks.md). The `/audit_events` -slutpunkten i Reaktors API gör att du kan hantera granskningshändelser i ditt upplevelseprogram programmatiskt.
 
-Granskningshändelser är strukturerade i formatet `{RESOURCE_TYPE}.{EVENT}`, till exempel `build.created` eller `rule.updated`.
+Granskningshändelser är strukturerade i form av `{RESOURCE_TYPE}.{EVENT}`, till exempel `build.created` eller `rule.updated`.
 
 Resurstypen kan vara något av följande:
 
@@ -38,11 +39,11 @@ Följande händelser stöds för varje resurstyp:
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med granskningshändelser {#list}
 
-Du kan hämta en lista över granskningshändelser för alla egenskaper som ägs av din organisation genom att göra en GET-begäran till `/audit_events`-slutpunkten.
+Du kan hämta en lista över granskningshändelser för alla egenskaper som ägs av din organisation genom att göra en GET-förfrågan till `/audit_events` slutpunkt.
 
 **API-format**
 
@@ -57,7 +58,7 @@ curl -X GET \
   https://reactor.adobe.io/audit_events \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -169,7 +170,7 @@ GET /audit_events/{AUDIT_EVENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `AUDIT_EVENT_ID` | `id` för den granskningshändelse som du vill söka efter. |
+| `AUDIT_EVENT_ID` | The `id` av granskningshändelsen som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -180,7 +181,7 @@ curl -X GET \
   https://reactor.adobe.io/audit_events/AEa98742de8ef044d8b86767aa6a15a674 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

@@ -5,8 +5,7 @@ title: API-slutpunkt för mappningsuppsättningar
 topic-legacy: mapping sets
 description: Du kan använda slutpunkten "/mappingSets" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '807'
 ht-degree: 0%
@@ -15,15 +14,15 @@ ht-degree: 0%
 
 # Slutpunkt för mappningsuppsättningar
 
-Mappningsuppsättningar kan användas för att definiera hur data i ett källschema mappas till data i ett målschema. Du kan använda slutpunkten `/mappingSets` i API:t för dataprep för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
+Mappningsuppsättningar kan användas för att definiera hur data i ett källschema mappas till data i ett målschema. Du kan använda `/mappingSets` slutpunkt i API:t för dataprep för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
 
 ## Listmappningsuppsättningar
 
-Du kan hämta en lista över alla mappningsuppsättningar för din IMS-organisation genom att göra en GET-begäran till `/mappingSets`-slutpunkten.
+Du kan hämta en lista över alla mappningsuppsättningar för din IMS-organisation genom att göra en GET-förfrågan till `/mappingSets` slutpunkt.
 
 **API-format**
 
-`/mappingSets`-slutpunkten har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera både `start`- och `limit`-parametrarna som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+The `/mappingSets` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. De flesta av dessa parametrar är valfria, men bör användas för att minska kostsamma overheadkostnader. Du måste dock inkludera båda `start` och `limit` parametrar som en del av din begäran. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /mappingSets?limit={LIMIT}&start={START}
@@ -35,9 +34,9 @@ GET /mappingSets?limit={LIMIT}&start={START}&expandSchema={EXPAND_SCHEMA}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{LIMIT}` | (**Obligatoriskt**) Anger antalet returnerade mappningsuppsättningar. |
-| `{START}` | (**Obligatorisk**) Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du `start=0` som värde. |
+| `{START}` | (**Obligatoriskt**) Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
 | `{NAME}` | Filtrerar mappningsuppsättningarna efter namn. |
-| `{ORDER_BY}` | Sorterar resultatens ordning. De enda fält som stöds är `createdDate` och `updatedDate`. Du kan lägga till egenskapen i `+` eller `-` för att sortera den i stigande respektive fallande ordning. |
+| `{ORDER_BY}` | Sorterar resultatens ordning. De enda fält som stöds är `createdDate` och `updatedDate`. Du kan lägga till en prepent för egenskapen med `+` eller `-` om du vill sortera den i stigande eller fallande ordning. |
 | `{EXPAND_SCHEMA}` | Ett booleskt värde som avgör om det fullständiga utdataschemat returneras som en del av svaret. |
 
 **Begäran**
@@ -48,7 +47,7 @@ Följande begäran hämtar de två sista mappningsuppsättningarna inom IMS-orga
 curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets?limit=2&start=0 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -167,7 +166,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets?lim
 
 ## Skapa en mappningsuppsättning
 
-Du kan skapa en ny mappningsuppsättning genom att göra en POST-förfrågan till `/mappingSets`-slutpunkten.
+Du kan skapa en ny mappningsuppsättning genom att göra en POST-förfrågan till `/mappingSets` slutpunkt.
 
 **API-format**
 
@@ -184,7 +183,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -241,7 +240,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nyligen skapad
 
 ## Validera mappningar
 
-Du kan validera att mappningarna fungerar som de ska genom att göra en POST-förfrågan till `/mappingSets/validate`-slutpunkten.
+Du kan validera att mappningarna fungerar som de ska genom att göra en POST-förfrågan till `/mappingSets/validate` slutpunkt.
 
 **API-format**
 
@@ -258,7 +257,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets/va
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -315,7 +314,7 @@ Ett lyckat svar returnerar HTTP-status 200 med verifieringsinformation för den 
 
 ## Förhandsgranska data för mappningar
 
-Du kan förhandsgranska vilka data som mappas till genom att göra en POST-förfrågan till `/mappingSets/preview`-slutpunkten.
+Du kan förhandsgranska vilka data som mappas till genom att göra en POST-förfrågan på `/mappingSets/preview` slutpunkt.
 
 **API-format**
 
@@ -330,7 +329,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets/pr
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
 {
@@ -394,7 +393,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en förhandsgranskning av dina ma
 
 ## Söka efter en mappningsuppsättning
 
-Du kan hämta en specifik mappningsuppsättning genom att ange dess ID i sökvägen för en GET-begäran till `/mappingSets`-slutpunkten. Den här slutpunkten har också stöd för flera frågeparametrar som hjälper dig att hämta information om den angivna versionen av mappningsuppsättningen.
+Du kan hämta en specifik mappningsuppsättning genom att ange dess ID i sökvägen för en GET-begäran till `/mappingSets` slutpunkt. Den här slutpunkten har också stöd för flera frågeparametrar som hjälper dig att hämta information om den angivna versionen av mappningsuppsättningen.
 
 **API-format**
 
@@ -418,7 +417,7 @@ Följande begäran hämtar detaljerad information om en angiven mappningsuppsät
 curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c80e4c0d8f4a98a7d400b4e178b635 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -538,7 +537,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om mappnin
                 }
             },
             "version": "1.0",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/89abc189258b1cb1a816d8f2b2341a6d98000ed8f4008305"
         },
         "schemaRef": {
@@ -585,7 +584,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om mappnin
 
 ## Uppdatera en mappningsuppsättning
 
-Du kan uppdatera en mappningsuppsättning genom att ange dess ID i sökvägen för en `PUT`-begäran till `mappingSets`-slutpunkten.
+Du kan uppdatera en mappningsuppsättning genom att ange dess ID i sökvägen till en `PUT` begäran till `mappingSets` slutpunkt.
 
 **API-format**
 
@@ -604,7 +603,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -832,7 +831,7 @@ Följande begäran returnerar alla mappningar i den angivna mappningsuppsättnin
 curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c80e4c0d8f4a98a7d400b4e178b635/mappings \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -936,7 +935,7 @@ Följande begäran hämtar information om en viss mappning i den angivna mappnin
 curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets/e7c80e4c0d8f4a98a7d400b4e178b635/mappings/394bec970d54410b98e1d4c55a3843ca \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

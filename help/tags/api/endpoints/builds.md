@@ -1,7 +1,8 @@
 ---
 title: Skapar slutpunkt
 description: Lär dig hur du anropar slutpunkten /builds i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 476abea0-efff-478a-b87f-ef6b91bfcca5
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '833'
 ht-degree: 1%
@@ -10,21 +11,21 @@ ht-degree: 1%
 
 # Skapar slutpunkt
 
-Tillägg, regler och dataelement är byggstenarna för taggar i Adobe Experience Platform. När du vill att programmet ska göra något läggs dessa byggblock till i ett [bibliotek](./libraries.md). För att kunna distribuera ett bibliotek i ditt upplevelseprogram kompileras biblioteket till ett bygge. Med slutpunkten `/builds` i Reaktors API kan du programmässigt hantera byggen i ditt upplevelseprogram.
+Tillägg, regler och dataelement är byggstenarna för taggar i Adobe Experience Platform. När du vill att programmet ska göra något läggs dessa byggblock till i en [bibliotek](./libraries.md). För att kunna distribuera ett bibliotek i ditt upplevelseprogram kompileras biblioteket till ett bygge. The `/builds` -slutpunkten i Reaktors API gör att du kan hantera byggen i ditt upplevelseprogram programmatiskt.
 
 Ett bygge är den eller de filer som är inlästa i ditt webb- och mobilprogram. Innehållet i varje bygge varierar beroende på följande faktorer:
 
 * Resurserna som ingår i biblioteket
-* Konfigurationen för den [miljö](./environments.md) i vilken biblioteket byggs
-* Plattformen för den [egenskap](./properties.md) som bygget tillhör
+* Konfigurationen av [miljö](./environments.md) där biblioteket är byggt
+* Plattformen för [property](./properties.md) som bygget tillhör
 
 Ett bygge tillhör exakt ett bibliotek. Ett bibliotek kan ha många byggen.
 
-Mer allmän information om byggen och hur de passar in i publiceringsflödet för taggar finns i [publiceringsöversikten](../../ui/publishing/overview.md).
+Mer allmän information om byggen och hur de passar in i publiceringsflödet för taggar finns i [publicera översikt](../../ui/publishing/overview.md).
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med byggen {#list}
 
@@ -38,13 +39,13 @@ GET /libraries/{LIBRARY_ID}/builds
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | `id` för biblioteket vars byggen du vill visa. |
+| `LIBRARY_ID` | The `id` för det bibliotek vars byggen du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade byggen filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade byggen filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -53,7 +54,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LBad32d71feff844b7b5a11dd0bf030964/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -155,7 +156,7 @@ GET /builds/{BUILD_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `BUILD_ID` | `id` för det bygge som du vill söka efter. |
+| `BUILD_ID` | The `id` av det bygge som du vill leta upp. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -166,7 +167,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BL8238895201d548718bda2d0bf2b83467 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -257,7 +258,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | `id` för biblioteket som du definierar bygget under. |
+| `LIBRARY_ID` | The `id` i biblioteket som du definierar bygget under. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -270,7 +271,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LBd8eaef8283fe40738348db65a8984475/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
@@ -349,7 +350,7 @@ Ett lyckat svar returnerar information om den nyskapade versionen.
 
 ## Publicera en version igen {#republish}
 
-Du kan publicera om ett bygge från ett [publicerat bibliotek](./libraries.md#publish) genom att inkludera dess ID i sökvägen för en PATCH-begäran.
+Du kan publicera om ett bygge från en [publicerat bibliotek](./libraries.md#publish) genom att inkludera dess ID i sökvägen för en PATCH-begäran.
 
 **API-format**
 
@@ -359,7 +360,7 @@ PATCH /builds/{BUILD_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `BUILD_ID` | `id` för det bygge som du vill publicera igen. |
+| `BUILD_ID` | The `id` av det bygge som du vill publicera på nytt. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -372,7 +373,7 @@ curl -X PATCH \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -387,7 +388,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | `id` för det bygge som du vill uppdatera. Detta ska matcha `{BUILD_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` av det bygge som du vill uppdatera. Det här bör matcha `{BUILD_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `builds`. |
 | `meta.action` | Den typ av åtgärd från PATCH som ska utföras. Måste anges till `republish`. |
 
@@ -470,13 +471,13 @@ Ett godkänt svar returnerar information om den publicerade versionen.
 
 ## Hämta relaterade resurser för ett bygge {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en bygge. När [söker upp en build](#lookup) listas dessa relationer under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för en bygge. När [hitta ett bygge](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationsguiden](../guides/relationships.md) för mer information om relationer i Reactor API.
+Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
 
 ### Visa en lista över relaterade dataelement för ett bygge {#data-elements}
 
-Du kan lista relaterade dataelement för en bygge genom att lägga till `/data_elements` i sökvägen för en sökbegäran.
+Du kan lista relaterade dataelement för en bygge genom att lägga till `/data_elements` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -486,7 +487,7 @@ GET  /builds/{BUILD_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | `id` för bygget vars dataelement du vill visa. |
+| `{BUILD_ID}` | The `id` för det bygge vars dataelement du vill lista. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -497,7 +498,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -617,7 +618,7 @@ Ett lyckat svar returnerar en lista med dataelement som är relaterade till bygg
 
 ### Visa en lista över relaterade tillägg för ett bygge {#extensions}
 
-Du kan lista relaterade tillägg för en bygge genom att lägga till `/extensions` i sökvägen för en sökbegäran.
+Du kan visa relaterade tillägg för en version genom att lägga till `/extensions` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -627,7 +628,7 @@ GET  /builds/{BUILD_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | `id` för bygget vars tillägg du vill visa. |
+| `{BUILD_ID}` | The `id` för det bygge vars tillägg du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -638,7 +639,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -748,7 +749,7 @@ Ett godkänt svar returnerar en lista med tillägg som är relaterade till bygge
 
 ### Visa en lista över relaterade regler för ett bygge {#rules}
 
-Du kan lista de relaterade reglerna för en bygge genom att lägga till `/rules` till sökvägen för en sökbegäran.
+Du kan lista relaterade regler för en version genom att lägga till `/rules` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -758,7 +759,7 @@ GET  /builds/{BUILD_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | `id` för bygget vars regler du vill visa. |
+| `{BUILD_ID}` | The `id` för det bygge vars regler du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -769,7 +770,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -861,7 +862,7 @@ Ett godkänt svar returnerar en lista med regler som är relaterade till bygget.
 
 ### Söka efter ett bygge i det relaterade biblioteket {#library}
 
-Du kan hämta det relaterade biblioteket för en bygge genom att lägga till `/library` till sökvägen för en sökbegäran.
+Du kan hämta det relaterade biblioteket för ett bygge genom att lägga till `/library` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -871,7 +872,7 @@ GET  /builds/{BUILD_ID}/library
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | `id` för bygget vars bibliotek du vill söka efter. |
+| `{BUILD_ID}` | The `id` av bygget vars bibliotek du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -882,7 +883,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/library \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -974,7 +975,7 @@ curl -X GET \
 
 ### Söka efter en byggmiljö {#environment}
 
-Du kan hämta den relaterade miljön för en bygge genom att lägga till `/environment` till sökvägen för en sökbegäran.
+Du kan hämta den relaterade miljön för ett bygge genom att lägga till `/environment` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -984,7 +985,7 @@ GET  /builds/{BUILD_ID}/environment
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BUILD_ID}` | Den `id` för bygget vars miljö du vill söka efter. |
+| `{BUILD_ID}` | The `id` för den byggnad vars miljö du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -995,7 +996,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

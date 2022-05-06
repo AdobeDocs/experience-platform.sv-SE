@@ -5,9 +5,9 @@ title: Prenumerera på Privacy Service Events
 topic-legacy: privacy events
 description: Lär dig hur du prenumererar på Privacy Service-händelser med en förkonfigurerad webkrok.
 exl-id: 9bd34313-3042-46e7-b670-7a330654b178
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '435'
 ht-degree: 1%
 
 ---
@@ -36,13 +36,13 @@ Läs igenom följande Privacy Service-dokumentation innan du startar den här sj
 
 ## Registrera en webkrok på [!DNL Privacy Service Events]
 
-För att kunna ta emot [!DNL Privacy Service Events]måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Privacy Service] integrering.
+För att kunna ta emot [!DNL Privacy Service Events]måste du använda Adobe Developer Console för att registrera en webkrok för [!DNL Privacy Service] integrering.
 
-Följ självstudiekursen på [prenumerera på [!DNL I/O Event] meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du uppnår detta. Se till att du väljer **[!UICONTROL Privacy Service Events]** som din händelseleverantör för att få tillgång till de händelser som listas ovan.
+Följ självstudiekursen på [prenumererar på [!DNL I/O Event]-meddelanden](../observability/alerts/subscribe.md) för detaljerade steg om hur du uppnår detta. Se till att du väljer **[!UICONTROL Privacy Service Events]** som din händelseleverantör för att få tillgång till de händelser som listas ovan.
 
 ## Ta emot [!DNL Privacy Service Event] meddelanden
 
-När du har registrerat webkrok- och sekretessjobben kan du börja få händelsemeddelanden. Du kan visa dessa händelser med webbkroken eller genom att välja **[!UICONTROL Debug Tracing]** -fliken i ditt projekts översikt över händelseregistrering i Adobe Developer Console.
+När du har registrerat webkrok- och sekretessjobben kan du börja få händelsemeddelanden. Du kan visa dessa händelser med webbkroken eller genom att välja **[!UICONTROL Debug Tracing]** i projektanmälningsöversikten i Adobe Developer Console.
 
 ![](images/privacy-events/debug-tracing.png)
 
@@ -57,7 +57,7 @@ Följande JSON är ett exempel på en [!DNL Privacy Service Event] meddelandenyt
   "source":"https://ns.adobe.com/platform/gdpr",
   "time":"Wed Oct 23 18:52:32 GMT 2019",
   "data":{
-    "imsOrg":"{IMS_ORG}",
+    "imsOrg":"{ORG_ID}",
     "value":{
       "jobId":"6f0f2b62-88a7-4515-ba05-432d9a7021c5",
       "message":"analytics.access.complete"

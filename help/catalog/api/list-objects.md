@@ -5,8 +5,7 @@ title: Lista katalogobjekt
 topic-legacy: developer guide
 description: Du kan hämta en lista över alla tillgängliga objekt av en viss typ via ett enda API-anrop. Det bästa sättet är att ta med filter som begränsar svarsstorleken.
 exl-id: 2c65e2bc-4ddd-445a-a52d-6ceb1153ccea
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
@@ -26,29 +25,29 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden [filtrera katalogdata](filter-data.md). |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Se guiden [filtrera katalogdata](filter-data.md) för mer information. |
 
 **Begäran**
 
-Exempelbegäran nedan hämtar en lista med datauppsättningar, med ett `limit`-filter som reducerar svaret till fem resultat, och ett `properties`-filter som begränsar de egenskaper som visas för varje datauppsättning.
+Exempelbegäran nedan hämtar en lista med datauppsättningar, med en `limit` filtrera och reducera svaret till fem resultat, samt `properties` filter som begränsar de egenskaper som visas för varje datauppsättning.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/dataSets?limit=5&properties=name,description,files' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med [!DNL Catalog]-objekt i form av nyckelvärdepar, filtrerade med frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för [!DNL Catalog]-objektet i fråga, som sedan kan användas i ett annat anrop till [visa det specifika objektet](look-up-object.md) för mer information.
+Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade efter frågeparametrarna i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för [!DNL Catalog] objektet i fråga, som sedan kan användas i ett annat anrop till [visa det specifika objektet](look-up-object.md) för mer information.
 
 >[!NOTE]
 >
->Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties`-frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` -frågan returnerar bara de begärda egenskaperna som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
 
 ```json
 {

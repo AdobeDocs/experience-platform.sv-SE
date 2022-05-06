@@ -4,7 +4,7 @@ description: Lär dig hur du programmässigt korrigerar eller tar bort dina kund
 hide: true
 hidefromtoc: true
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: f956a8191614cc8e0eeaadaa55277abfbc5be106
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '535'
 ht-degree: 0%
@@ -27,11 +27,11 @@ I det här avsnittet ges en introduktion till de centrala koncept som du behöve
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa API:t för datahygien måste du först samla in dina autentiseringsuppgifter. Detta är samma autentiseringsuppgifter som används för att komma åt Privacy Service-API:t. Följ [guiden ](./api/getting-started.md) för att komma igång för Privacy Service-API:t för att generera värden för var och en av de rubriker som krävs för API:t för datahygien, som visas nedan:
+För att kunna anropa API:t för datahygien måste du först samla in dina autentiseringsuppgifter. Detta är samma autentiseringsuppgifter som används för att komma åt Privacy Service-API:t. Följ [komma igång-guide](./api/getting-started.md) för Privacy Service-API:t för att generera värden för var och en av de rubriker som krävs för API:t för datahygien, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -39,7 +39,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Läser exempel-API-anrop
 
-Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../landing/api-guide.md#sample-api) i Komma igång-guiden för Experience Platform-API:er.
+Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../landing/api-guide.md#sample-api) i guiden Komma igång för Experience Platform API:er.
 
 ## Skapa ett borttagningsjobb
 
@@ -53,20 +53,20 @@ POST /jobs
 
 **Begäran**
 
-Nyttolasten för begäran är strukturerad på ungefär samma sätt som en [borttagningsbegäran i Privacy Service-API](./api/privacy-jobs.md#access-delete). Den innehåller en `users`-array vars objekt representerar de användare vars data ska tas bort.
+Nyttolasten för begäran är strukturerad på liknande sätt som för en [ta bort begäran i Privacy Service-API](./api/privacy-jobs.md#access-delete). Den innehåller `users` arrayen vars objekt representerar de användare vars data ska tas bort.
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/hygiene/jobs \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "companyContexts": [
           {
             "namespace": "imsOrgID",
-            "value": "{IMS_ORG}"
+            "value": "{ORG_ID}"
           }
         ],
         "users": [
@@ -107,8 +107,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` | En array som innehåller autentiseringsinformation för din organisation. Den måste innehålla ett enda objekt med följande egenskaper: <ul><li>`namespace`: Måste anges till  `imsOrgID`.</li><li>`value`: Ditt IMS-organisations-ID. Detta är samma värde som anges i `x-gw-ims-org-id`-huvudet.</li></ul> |
-| `users` | En array som innehåller en samling med minst en användare vars information du vill ta bort. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det kan refereras till eller slås upp senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Måste innehålla ett strängvärde: `delete`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet innehåller följande egenskaper: <ul><li>`namespace`: Det  [ID-](../identity-service/namespaces.md) namnutrymme som är associerat med ID:t. Detta kan vara ett [standardnamnutrymme](./api/appendix.md#standard-namespaces) som identifieras av Platform, eller ett anpassat namnutrymme som definieras av din organisation. Den typ av namnutrymme som används måste återspeglas i egenskapen `type`.</li><li>`value`: Identitetsvärdet.</li><li>`type`: Måste anges till  `standard` om ett globalt identifierat namnutrymme används, eller  `custom` om du använder ett namnutrymme som definieras av din organisation.</li></ul></li></ul> |
+| `companyContexts` | En array som innehåller autentiseringsinformation för din organisation. Den måste innehålla ett enda objekt med följande egenskaper: <ul><li>`namespace`: Måste anges till `imsOrgID`.</li><li>`value`: Ditt IMS-organisations-ID. Detta är samma värde som anges i `x-gw-ims-org-id` header.</li></ul> |
+| `users` | En array som innehåller en samling med minst en användare vars information du vill ta bort. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det kan refereras till eller slås upp senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Måste innehålla ett strängvärde: `delete`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet innehåller följande egenskaper: <ul><li>`namespace`: The [identity namespace](../identity-service/namespaces.md) som är associerad med ID:t. Detta kan vara en [standardnamnutrymme](./api/appendix.md#standard-namespaces) känns igen av Platform, eller kan vara ett anpassat namnutrymme som definieras av din organisation. Den typ av namnutrymme som används måste återspeglas i `type` -egenskap.</li><li>`value`: Identitetsvärdet.</li><li>`type`: Måste anges till `standard` om ett globalt identifierat namnutrymme används, eller `custom` om du använder ett namnutrymme som definieras av din organisation.</li></ul></li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 

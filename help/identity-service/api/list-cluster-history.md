@@ -5,8 +5,7 @@ title: Hämta klusterhistorik för en identitet
 topic-legacy: API guide
 description: Identiteter kan flytta kluster under olika enhetsgrafkörningar. Identitetstjänsten ger synlighet i klusterassociationerna för en viss identitet över tiden.
 exl-id: e52edb15-e3d6-4085-83d5-212bbd952632
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '337'
 ht-degree: 0%
@@ -17,10 +16,10 @@ ht-degree: 0%
 
 Identiteter kan flytta kluster under olika enhetsgrafkörningar. [!DNL Identity Service] ger synlighet i klusterassociationerna för en viss identitet över tid.
 
-Använd den valfria parametern `graph-type` för att ange vilken utdatatyp som klustret ska hämtas från. Alternativen är:
+Använd valfritt `graph-type` parameter som anger vilken utdatatyp som klustret ska hämtas från. Alternativen är:
 
 - `None` - Utför ingen identitetssammanfogning.
-- `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om `graph-type` inte anges är detta standardvärde.
+- `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om nej `graph-type` anges är detta standardvärde.
 
 ## Hämta klusterhistoriken för en enskild identitet
 
@@ -39,7 +38,7 @@ curl -X GET \
   'https://platform-va7.adobe.io/data/core/identity/cluster/history?nsId=411&id=WTCpVgAAAFq14FMF' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -50,24 +49,24 @@ curl -X GET \
   'https://platform-va7.adobe.io/data/core/identity/cluster/history?ns=AMO&id=WTCpVgAAAFq14FMF' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet i det här dokumentet som handlar om [att hämta XID för en identitet](./list-native-id.md).
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om det här dokumentet [hämta XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
   'https://platform-va7.adobe.io/data/core/identity/cluster/history?xid=CJsDEAMaEAHmCKwPCQYNvzxD9JGDHZ8' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 ## Hämta klusterhistoriken för flera identiteter
 
-Använd metoden `POST` som en batchmotsvarighet till metoden `GET` som beskrivs ovan för att returnera klusterhistoriken för flera identiteter.
+Använd `POST` som en batchmotsvarighet till `GET` som beskrivs ovan för att returnera klusterhistorik för flera identiteter.
 
 >[!NOTE]
 >
@@ -110,7 +109,7 @@ Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje n
 
 **Stub-förfrågan**
 
-Användning av `x-uis-cst-ctx: stub`-huvudet returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
+Användning av `x-uis-cst-ctx: stub` huvudet returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
 
 ```shell
 curl -X POST \
@@ -118,7 +117,7 @@ curl -X POST \
   -H 'authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'x-uis-cst-ctx: stub' \
   -d '{
@@ -135,7 +134,7 @@ curl -X POST \
   -H 'authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "xids": ["GYMBWaoXbMtZ1j4eAAACepuQGhs","b2NJK9a5X7x4LVE4rUqkMyM"],
@@ -151,7 +150,7 @@ curl -X POST \
   -H 'authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "compositeXids": [{
@@ -219,4 +218,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå vidare till nästa självstudiekurs för att [lista identitetsmappningar](./list-identity-mappings.md)
+Gå till nästa självstudiekurs för att [lista identitetsmappningar](./list-identity-mappings.md)

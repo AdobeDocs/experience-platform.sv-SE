@@ -1,7 +1,8 @@
 ---
 title: Regelslutpunkt
 description: Lär dig hur du anropar /rules-slutpunkten i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '933'
 ht-degree: 1%
@@ -10,17 +11,17 @@ ht-degree: 1%
 
 # Regelslutpunkt
 
-När det gäller datainsamlingstaggar styr reglerna beteendet för resurserna i ett distribuerat bibliotek. En regel består av en eller flera [regelkomponenter](./rule-components.md), finns för att knyta regelkomponenterna på ett logiskt sätt. Med slutpunkten `/rules` i Reaktors API kan du hantera taggregler programmatiskt.
+När det gäller datainsamlingstaggar styr reglerna beteendet för resurserna i ett distribuerat bibliotek. En regel består av en eller flera [regelkomponenter](./rule-components.md), finns för att knyta ihop regelkomponenterna på ett logiskt sätt. The `/rules` -slutpunkten i Reaktors API gör att du kan hantera taggregler programmatiskt.
 
 >[!NOTE]
 >
->I det här dokumentet beskrivs hur du hanterar regler i Reactor API. Mer information om hur du interagerar med regler i användargränssnittet för datainsamling finns i [användargränssnittshandboken](../../ui/managing-resources/rules.md).
+>I det här dokumentet beskrivs hur du hanterar regler i Reactor API. Information om hur du interagerar med regler i användargränssnittet för datainsamling finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
 
-En regel tillhör exakt en [egenskap](./properties.md). En egenskap kan ha många regler.
+En regel tillhör exakt en [property](./properties.md). En egenskap kan ha många regler.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med regler {#list}
 
@@ -34,13 +35,13 @@ GET /properties/{PROPERTY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen vars komponenter du vill visa. |
+| `PROPERTY_ID` | The `id` för egenskapen vars komponenter du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -49,7 +50,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR41f64d2a9d9b4862b0582c5ff6a07504/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -145,7 +146,7 @@ Du kan söka efter en regel genom att ange dess ID i sökvägen för en GET-beg�
 
 >[!NOTE]
 >
->När regler tas bort markeras de som borttagna men tas inte bort från systemet. Det är därför möjligt att hämta en borttagen regel. Borttagna regler kan identifieras med en `meta.deleted_at`-egenskap.
+>När regler tas bort markeras de som borttagna men tas inte bort från systemet. Det är därför möjligt att hämta en borttagen regel. Borttagna regler kan identifieras med en `meta.deleted_at` -egenskap.
 
 **API-format**
 
@@ -155,7 +156,7 @@ GET /rules/{RULE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | `id` för regeln som du vill söka efter. |
+| `RULE_ID` | The `id` av regeln som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -166,7 +167,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RL14dc6a8c37b14b619ddb2b3ba489a1f5 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -257,7 +258,7 @@ POST /properties/{PROPERTY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som du definierar en regel under. |
+| `PROPERTY_ID` | The `id` för egenskapen som du definierar en regel under. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -268,7 +269,7 @@ curl -X POST \
   https://reactor.adobe.io/properties/PR03cc61073ef74fd2af21e4cfb6ed97a7/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -283,7 +284,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för regeln. |
+| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för regeln. |
 | `attributes.enabled` | Ett booleskt värde som anger om regeln är aktiverad. |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rules`. |
 
@@ -365,7 +366,7 @@ Ett godkänt svar returnerar information om den nya regeln.
 
 ## Lägga till händelser, villkor och åtgärder i en regel {#components}
 
-När du har [skapat en regel](#create) kan du börja bygga ut dess logik genom att lägga till händelser, villkor och åtgärder (kallas tillsammans regelkomponenter). Läs avsnittet [skapa en regelkomponent](./rule-components.md#create) i `/rule_components`-slutpunktshandboken om du vill veta hur du gör det i Reaktors-API:t.
+När du har [skapade en regel](#create)kan du börja bygga ut logiken genom att lägga till händelser, villkor och åtgärder (kallas gemensamt för regelkomponenter). Se avsnittet om [skapa en regelkomponent](./rule-components.md#create) i `/rule_components` Slutpunktshandbok som visar hur du gör detta i Reaktors API.
 
 ## Uppdatera en regel {#update}
 
@@ -379,7 +380,7 @@ PATCH /rules/{RULE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | `id` för regeln som du vill uppdatera. |
+| `RULE_ID` | The `id` av regeln som du vill uppdatera. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -392,7 +393,7 @@ curl -X PATCH \
   https://reactor.adobe.io/rules/RLd2528a53c21a468f93cfd85244f16fdd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
   "data": {
@@ -408,7 +409,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars regler representerar attributen som ska uppdateras för regeln. Följande attribut kan uppdateras för en regel: <ul><li>`name`</li><li>`enabled`</li></ul> |
-| `id` | `id` för regeln som du vill uppdatera. Detta ska matcha `{RULE_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` för regeln som du vill uppdatera. Det här bör matcha `{RULE_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `rules`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -499,7 +500,7 @@ DELETE /rules/{RULE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | `id` för regeln som du vill ta bort. |
+| `RULE_ID` | The `id` av regeln som du vill ta bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -510,7 +511,7 @@ curl -X DELETE \
   https://reactor.adobe.io/rules/RLd2528a53c21a468f93cfd85244f16fdd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
@@ -519,17 +520,17 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hantera anteckningar för en regel {#notes}
 
-Regler är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för regler och andra kompatibla resurser finns i [anteckningsslutpunktshandboken](./notes.md).
+Regler är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för regler och andra kompatibla resurser.
 
 ## Hämta relaterade resurser för en regel {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en regel. När [söker efter en regel](#lookup) listas dessa relationer under regeln `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för en regel. När [hitta en regel](#lookup), listas dessa relationer under `relationships` regel.
 
-Se [relationsguiden](../guides/relationships.md) för mer information om relationer i Reactor API.
+Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
 
 ### Visa en lista över relaterade bibliotek för en regel {#libraries}
 
-Du kan lista de bibliotek som använder en viss regel genom att lägga till `/libraries` till sökvägen för en sökningsbegäran.
+Du kan lista bibliotek som använder en viss regel genom att lägga till `/libraries` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -539,7 +540,7 @@ GET  /rules/{RULE_ID}/libraries
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | `id` för regeln vars bibliotek du vill visa. |
+| `{RULE_ID}` | The `id` för regeln vars bibliotek du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -550,7 +551,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RLd2528a53c21a468f93cfd85244f16fdd/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -651,7 +652,7 @@ Ett godkänt svar returnerar en lista med bibliotek som använder den angivna re
 
 ### Lista relaterade revisioner för en regel {#revisions}
 
-Du kan lista ändringarna för en regel genom att lägga till `/revisions` i sökvägen för en sökbegäran.
+Du kan lista ändringarna för en regel genom att lägga till `/revisions` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -661,7 +662,7 @@ GET  /rules/{RULE_ID}/revisions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | `id` för regeln vars revisioner du vill visa. |
+| `{RULE_ID}` | The `id` för regeln vars ändringar du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -672,7 +673,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RL67de76e5bff9413aa8ad14e55172d8dc/revisions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -829,7 +830,7 @@ Ett godkänt svar returnerar en lista med revisioner som använder den angivna r
 
 ### Söka efter relaterat ursprung för en regel {#origin}
 
-Du kan slå upp regelns ursprung (tidigare version) genom att lägga till `/origin` till sökvägen för en sökbegäran.
+Du kan slå upp regelns ursprung (tidigare version) genom att lägga till `/origin` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -839,7 +840,7 @@ GET /rules/{RULE_ID}/origin
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | `id` för regeln vars ursprung du vill söka efter. |
+| `{RULE_ID}` | The `id` för den regel vars ursprung du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -850,7 +851,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RLb83ed2278dc045628c069ab7eb9bb866/origin \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -931,7 +932,7 @@ Ett godkänt svar returnerar information om den angivna regelns tillägg.
 
 ### Söka efter den relaterade egenskapen för en regel {#property}
 
-Du kan söka efter den egenskap som äger en regel genom att lägga till `/property` i sökvägen för en sökbegäran.
+Du kan leta upp den egenskap som äger en regel genom att lägga till `/property` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -941,7 +942,7 @@ GET /rules/{RULE_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RULE_ID}` | `id` för regeln vars egenskap du vill söka efter. |
+| `{RULE_ID}` | The `id` för den regel vars egenskap du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -952,7 +953,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RC3d0805fde85d42db8988090bc074bb44/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

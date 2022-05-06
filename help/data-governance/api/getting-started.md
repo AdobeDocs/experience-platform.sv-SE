@@ -5,7 +5,7 @@ title: Komma igång med API:t för principtjänsten
 topic-legacy: developer guide
 description: Med hjälp av API:t för principtjänst kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för principtjänsten.
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 0%
@@ -20,7 +20,7 @@ The [!DNL Policy Service] Med API kan du skapa och hantera olika resurser för A
 
 Att använda utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används i arbetet med datastyrningsfunktioner. Innan du börjar arbeta med [!DNL Policy Service API], läs dokumentationen för följande tjänster:
 
-* [Datastyrning](../home.md): Den ram som [!DNL Experience Platform] tvingar till efterlevnad av dataanvändning.
+* [Datastyrning](../home.md): Den ram som [!DNL Experience Platform] regelefterlevnad för dataanvändning.
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
@@ -35,7 +35,7 @@ API-dokumentationen kräver också att du har slutfört [självstudiekurs om aut
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
 Alla resurser i [!DNL Experience Platform], inklusive sådana som tillhör datastyrning, isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 

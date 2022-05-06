@@ -5,8 +5,7 @@ title: API-slutpunkt för MLServices
 topic-legacy: Developer guide
 description: En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '890'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 
-Automatiska utbildnings- och poängsättningsscheman definieras med en starttidsstämpel, sluttidsstämpel och en frekvens som representeras som ett [cron expression](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [du skapar en MLService](#create-an-mlservice) eller använder [uppdatering av en befintlig MLService](#update-an-mlservice).
+Automatiserade kurser och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras av en [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [skapa en MLService](#create-an-mlservice) eller använt av [uppdatera en befintlig MLService](#update-an-mlservice).
 
 ## Skapa en MLService {#create-an-mlservice}
 
@@ -36,7 +35,7 @@ curl -X POST \
     https://platform.adobe.io/data/sensei/mlServices \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json; profile=mlService.v1.json' \
     -d '{
@@ -78,7 +77,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade MLService, inklusive dess unika identifierare (`id`), test-ID för utbildning (`trainingExperimentId`), test-ID för poängsättning (`scoringExperimentId`) och indatauppsättning-ID för utbildning (`trainingDataSetId`).
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLService, inklusive dess unika identifierare (`id`), Experiment-ID för utbildning (`trainingExperimentId`), Experiment-ID för poängsättning (`scoringExperimentId`) och datauppsättnings-ID för inmatningsutbildning (`trainingDataSetId`).
 
 ```json
 {
@@ -109,7 +108,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med MLServices {#retrieve-a-list-of-mlservices}
 
-Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
+Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -121,7 +120,7 @@ GET /mlServices?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
+| `{QUERY_PARAMETER}` | En av [tillgängliga frågeparametrar](./appendix.md#query) används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -133,13 +132,13 @@ curl -X GET \
     'https://platform.adobe.io/data/sensei/mlServices?property=mlInstanceId==46986c8f-7739-4376-8509-0178bdf32cda' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista över MLServices och deras information, inklusive deras MLService-ID (`{MLSERVICE_ID}`), test-ID för utbildning (`{TRAINING_ID}`), test-ID för poängsättning (`{SCORING_ID}`) och indatauppsättning-ID för utbildning (`{DATASET_ID}`).
+Ett godkänt svar returnerar en lista över MLServices och dess detaljer inklusive deras MLService-ID (`{MLSERVICE_ID}`), Experiment-ID för utbildning (`{TRAINING_ID}`), Experiment-ID för poängsättning (`{SCORING_ID}`) och datauppsättnings-ID för inmatningsutbildning (`{DATASET_ID}`).
 
 ```json
 {
@@ -185,7 +184,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/mlServices/68d936d8-17e6-44ef-a4b6-c7502055638b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -216,7 +215,7 @@ Du kan uppdatera en befintlig MLService genom att skriva över dess egenskaper v
 
 >[!TIP]
 >
->För att försäkra dig om att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLService med ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta MLService efter ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 **API-format**
 
@@ -233,7 +232,7 @@ curl -X PUT \
     https://platform.adobe.io/data/sensei/mlServices/68d936d8-17e6-44ef-a4b6-c7502055638b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json; profile=mlService.v1.json' \
     -d '{
@@ -308,7 +307,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/mlServices/68d936d8-17e6-44ef-a4b6-c7502055638b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -343,7 +342,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/mlServices?mlInstanceId=46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

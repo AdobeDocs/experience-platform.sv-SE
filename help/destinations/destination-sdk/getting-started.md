@@ -2,7 +2,7 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: d5ce6c8ccdd29b9bcf90a1c2d08085f3be4cf33f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '611'
 ht-degree: 2%
@@ -26,7 +26,7 @@ Destinationen SDK använder [Adobe I/O](https://www.adobe.io/) gateway för aute
 Om du vill anropa Destination SDK API-slutpunkter följer du [Självstudiekurs om autentisering av Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Starta självstudiekursen från &quot;[Generera en API-nyckel, IMS-org-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot; steg. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK-API-anrop, vilket visas nedan:
 
 * `x-api-key: {API_KEY}`, även kallat klient-ID
-* `x-gw-ims-org-id: {IMS_ORG}`, även kallat organisations-ID
+* `x-gw-ims-org-id: {ORG_ID}`, även kallat organisations-ID
 * `Authorization: Bearer {ACCESS_TOKEN}`. Åtkomsttoken har en förfallotid på 24 timmar, uttryckt i millisekunder, så du måste uppdatera den. Uppdatera åtkomsttoken genom att upprepa stegen som beskrivs i självstudiekursen för autentisering.
 
 <!--
@@ -38,7 +38,7 @@ To obtain the `{ACCESS_TOKEN}`, you must generate a JWT token and exchange it fo
 1. Follow the instructions in the [Generate JWT section](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) in the credentials guide.
 2. Follow the instructions in [Step 3: try it](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/ServiceAccountIntegration.md) in the Service account connection guide.
 
-You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-ims-org-id: {IMS_ORG}`, and `Authorization: Bearer {ACCESS_TOKEN}`.
+You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-ims-org-id: {ORG_ID}`, and `Authorization: Bearer {ACCESS_TOKEN}`.
 
 >[!NOTE]
 >
@@ -81,4 +81,4 @@ Genom att följa stegen i den här artikeln fick du inloggningsuppgifter för Ad
    * [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](./configure-file-based-destination-instructions.md)
 
 * För alla åtgärder, se [API-dokumentation för målredigering](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
-* Använd [Postman-samling för målredigerings-API](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera destinationen med Destination SDK API-slutpunkterna. För att komma igång med Postman, se [steg för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).
+* Använd [Postman-samling för målredigerings-API](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera destinationen med Destination SDK API-slutpunkterna. Om du vill komma igång med Postman går du till [steg för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).

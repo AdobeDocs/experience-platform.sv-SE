@@ -5,7 +5,7 @@ title: Komma igång med innehåll och handel med AI
 topic-legacy: Getting started
 description: Innehålls- och handels-API:er använder Adobe I/O-API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
 exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -28,11 +28,11 @@ När du är klar med självstudiekursen för autentisering visas värdena för v
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
 ## Skapa en Postman-miljö (valfritt)
 
-När du har konfigurerat ditt projekt och API i Adobe Developer Console kan du välja att hämta en miljöfil för Postman. Under **[!UICONTROL APIs]** till vänster om projektet, välj **[!UICONTROL Content and Commerce AI]**. En ny flik öppnas med ett kort med etiketten &quot;[!DNL Try it out]&quot;. Välj **Ladda ned för Postman** för att hämta en JSON-fil som används för att konfigurera din postmanmiljö.
+När du har konfigurerat projektet och API:t i Adobe Developer Console kan du välja att hämta en miljöfil för Postman. Under **[!UICONTROL APIs]** till vänster om projektet, välj **[!UICONTROL Content and Commerce AI]**. En ny flik öppnas med ett kort med etiketten &quot;[!DNL Try it out]&quot;. Välj **Ladda ned för Postman** för att hämta en JSON-fil som används för att konfigurera din postmanmiljö.
 
 ![ladda ned för postman](./images/add-to-postman.png)
 

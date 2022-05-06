@@ -6,31 +6,31 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 0%
 
 ---
 
-# Skapa ett direktuppspelat dataflöde för rådata med hjälp av API:t [!DNL Flow Service]
+# Skapa ett direktuppspelat dataflöde för rådata med [!DNL Flow Service] API
 
-I den här självstudiekursen beskrivs stegen för att hämta rådata från en direktuppspelningskälla och föra dem till Experience Platform med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen beskrivs stegen för att hämta rådata från en direktuppspelningskälla och överföra dem till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Utvecklarhandbok](../../../../xdm/api/getting-started.md) för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar din `{TENANT_ID}`, begreppet &quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på huvudet Godkänn och dess möjliga värden).
+   - [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
+   - [Utvecklarhandbok för schemaregister](../../../../xdm/api/getting-started.md): Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar `{TENANT_ID}`, begreppet&quot;behållare&quot; och de rubriker som krävs för att göra en begäran (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 - [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
 - [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md): Direktuppspelning för Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 - [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
-Information om hur du kan anropa API:er för plattformar finns i guiden [komma igång med API:er för plattformar](../../../../landing/api-guide.md).
+Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../landing/api-guide.md).
 
 ### Skapa en källanslutning {#source}
 
@@ -42,9 +42,9 @@ Den här självstudien kräver även att du har ett giltigt källanslutnings-ID 
 
 ## Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns. Detta mål-XDM-schema utökar även klassen XDM [!DNL Individual Profile].
+För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns. Detta mål-XDM-schema utökar även XDM [!DNL Individual Profile] klassen.
 
-Om du vill skapa ett mål-XDM-schema skickar du en POST till `/schemas`-slutpunkten för [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Om du vill skapa ett mål-XDM-schema skickar du en POST till `/schemas` slutpunkt för [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 **API-format**
 
@@ -54,14 +54,14 @@ POST /tenant/schemas
 
 **Begäran**
 
-Följande exempelbegäran skapar ett XDM-schema som utökar klassen XDM [!DNL Individual Profile].
+I följande exempelbegäran skapas ett XDM-schema som utökar XDM [!DNL Individual Profile] klassen.
 
 ```shell
 curl -X POST \
     'https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -121,7 +121,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
         "https://ns.adobe.com/xdm/context/profile-personal-details",
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "meta:extensible": false,
     "meta:abstract": false,
     "meta:extends": [
@@ -152,7 +152,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-När ett mål-XDM-schema har skapats och dess unika `$id` kan du nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatauppsättning gör du en POST till `dataSets`-slutpunkten för [katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), och anger ID:t för målschemat i nyttolasten.
+Med ett mål-XDM-schema skapat och dess unika `$id` du kan nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatauppsättning skickar du en POST till `dataSets` slutpunkt för [Katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), samtidigt som ID:t för målschemat anges i nyttolasten.
 
 **API-format**
 
@@ -167,7 +167,7 @@ curl -X POST \
     'https://platform.adobe.io/data/foundation/catalog/dataSets?requestDataSource=true' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -190,8 +190,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på datauppsättningen som ska skapas. |
-| `schemaRef.id` | URI `$id` för XDM-schemat som datamängden baseras på. |
-| `schemaRef.contentType` | Schemats version. Värdet måste anges till `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. Mer information finns i avsnittet [schemaversion](../../../../xdm/api/getting-started.md#versioning) i XDM API-guiden. |
+| `schemaRef.id` | URI `$id` för XDM-schemat kommer datauppsättningen att baseras på. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges till `application/vnd.adobe.xed-full-notext+json;version=1`, som returnerar den senaste delversionen av schemat. Se avsnittet om [schemaversion](../../../../xdm/api/getting-started.md#versioning) i XDM API-guiden för mer information. |
 
 **Svar**
 
@@ -207,7 +207,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 Målanslutningar skapar och hanterar en målanslutning till plattformen eller någon plats där de överförda data landas. Målanslutningar innehåller information om datamål, dataformat och det anslutnings-ID som krävs för att skapa ett dataflöde. Målanslutningens instanser är specifika för en klientorganisation och IMS-organisation.
 
-Om du vill skapa en målanslutning skickar du en POST till `/targetConnections`-slutpunkten för API:t [!DNL Flow Service]. Som en del av begäran måste du ange dataformatet, det `dataSetId` som hämtades i föregående steg och det fasta ID för anslutningsspecifikationen som är knutet till [!DNL Data Lake]. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+Om du vill skapa en målanslutning skickar du en POST till `/targetConnections` slutpunkt för [!DNL Flow Service] API. Som en del av begäran måste du ange dataformatet, `dataSetId` hämtat i föregående steg och det fasta ID för anslutningsspecifikation som är knutet till [!DNL Data Lake]. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 **API-format**
 
@@ -222,7 +222,7 @@ curl -X POST \
     'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -248,12 +248,12 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som används för att ansluta till [!DNL Data Lake]. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | Det angivna formatet för de data som du överför till [!DNL Data Lake]. |
+| `data.format` | Det angivna formatet för de data som du hämtar till [!DNL Data Lake]. |
 | `params.dataSetId` | ID för måldatauppsättningen som hämtades i föregående steg. |
 
 **Svar**
 
-Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
+Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`). Detta ID krävs i senare steg.
 
 ```json
 {
@@ -266,7 +266,7 @@ Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`).
 
 För att källdata ska kunna hämtas till en måldatamängd måste den först mappas till målschemat som måldatamängden följer.
 
-Om du vill skapa en mappningsuppsättning skickar du en POST till `mappingSets`-slutpunkten för [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) samtidigt som du anger mål-XDM-schemat `$id` och information om de mappningsuppsättningar du vill skapa.
+Skapa en mappningsuppsättning genom att göra en POST-förfrågan till `mappingSets` slutpunkt för [[!DNL Data Prep] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-prep.yaml) när du tillhandahöll ditt mål-XDM-schema `$id` och information om de mappningsuppsättningar som du vill skapa.
 
 **API-format**
 
@@ -281,7 +281,7 @@ curl -X POST \
     'https://platform.adobe.io/data/foundation/mappingSets' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -307,11 +307,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `xdmSchema` | `$id` för mål-XDM-schemat. |
+| `xdmSchema` | The `$id` av mål-XDM-schemat. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta ID krävs i ett senare steg för att skapa ett dataflöde.
+Ett godkänt svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -326,7 +326,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Hämta en lista med dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. Om du vill skapa ett dataflöde måste du först hämta dataflödesspecifikationerna genom att utföra en GET-begäran till API:t [!DNL Flow Service].
+Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få dataflödesspecifikationerna genom att göra en GET-förfrågan till [!DNL Flow Service] API.
 
 **API-format**
 
@@ -340,13 +340,13 @@ GET /flowSpecs
 curl -X GET \
     'https://platform.adobe.io/data/foundation/flowservice/flowSpecs' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med dataflödesspecifikationer. Det ID för dataflödesspecifikation som du måste hämta för att skapa ett dataflöde med [!DNL Amazon Kinesis], [!DNL Azure Event Hubs] eller [!DNL Google PubSub] är `d69717ba-71b4-4313-b654-49f9cf126d7a`.
+Ett lyckat svar returnerar en lista med dataflödesspecifikationer. Det ID för dataflödesspecifikation som du behöver hämta för att skapa ett dataflöde med något av [!DNL Amazon Kinesis], [!DNL Azure Event Hubs], eller  [!DNL Google PubSub], is `d69717ba-71b4-4313-b654-49f9cf126d7a`.
 
 ```json
 {
@@ -437,7 +437,7 @@ POST /flows
 curl -X POST \
     'https://platform.adobe.io/data/foundation/flowservice/flows' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -467,14 +467,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `flowSpec.id` | Det [flödesspec-ID](#specs) som hämtades i föregående steg. |
-| `sourceConnectionIds` | Det [källanslutnings-ID](#source) som hämtades i ett tidigare steg. |
-| `targetConnectionIds` | [målanslutnings-ID](#target-connection) har hämtats i ett tidigare steg. |
-| `transformations.params.mappingId` | [mappnings-ID](#mapping) har hämtats i ett tidigare steg. |
+| `flowSpec.id` | The [flödesspec-ID](#specs) hämtat i föregående steg. |
+| `sourceConnectionIds` | The [källanslutnings-ID](#source) hämtat i ett tidigare steg. |
+| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) hämtat i ett tidigare steg. |
+| `transformations.params.mappingId` | The [mappnings-ID](#mapping) hämtat i ett tidigare steg. |
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
+Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 
 ```json
 {
@@ -485,7 +485,7 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

@@ -6,41 +6,41 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera Apache Parquet-data från ett molnlagringssystem från en annan leverantör.
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1095'
 ht-degree: 1%
 
 ---
 
-# Infoga Parquet-data från ett molnlagringssystem från tredje part med hjälp av API:t [!DNL Flow Service]
+# Infoga Parquet-data från ett molnlagringssystem från tredje part med [!DNL Flow Service] API
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att importera Parquet-data från ett molnlagringssystem från en annan leverantör.
+I den här självstudiekursen används [!DNL Flow Service] API för att vägleda dig genom stegen för att importera Parquet-data från ett molnlagringssystem från tredje part.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-- [Sandlådor](../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Källor](../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+- [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna importera Parquet-data från ett molnlagringsutrymme från tredje part med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna importera Parquet-data från ett molnlagringsutrymme från tredje part med hjälp av [!DNL Flow Service] API.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att ringa [!DNL Platform] API:er måste du först slutföra [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive sådana som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -50,7 +50,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-För att kunna importera Parquet-data med hjälp av [!DNL Platform] API:er måste du ha en giltig anslutning för den molnlagringskälla från tredje part som du använder. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
+För att kunna importera Parquet-data med [!DNL Platform] API:er måste du ha en giltig anslutning för den molnlagringskälla från tredje part som du använder. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
 
 - [Amazon S3](./create/cloud-storage/s3.md)
 - [Azure Blob](./create/cloud-storage/blob.md)
@@ -58,13 +58,13 @@ För att kunna importera Parquet-data med hjälp av [!DNL Platform] API:er måst
 - [Google Cloud Store](./create/cloud-storage/google.md)
 - [SFTP](./create/cloud-storage/sftp.md)
 
-Hämta och lagra den unika identifieraren (`$id`) för anslutningen och fortsätt sedan till nästa steg i kursen.
+Hämta och lagra den unika identifieraren (`$id`) av anslutningen och gå sedan vidare till nästa steg i den här självstudiekursen.
 
 ## Skapa ett målschema
 
-För att källdata ska kunna användas i [!DNL Platform] måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform]-datauppsättning där källdata finns.
+För att källdata ska kunna användas i [!DNL Platform]måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning i vilken källdata finns.
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [självstudiekursen för Schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i Schemaredigeraren.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform], [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md) innehåller stegvisa instruktioner för att utföra liknande åtgärder i Schemaredigeraren.
 
 **API-format**
 
@@ -74,14 +74,14 @@ POST /schemaregistry/tenant/schemas
 
 **Begäran**
 
-Följande exempelbegäran skapar ett XDM-schema som utökar klassen XDM [!DNL Individual Profile].
+I följande exempelbegäran skapas ett XDM-schema som utökar XDM [!DNL Individual Profile] klassen.
 
 ```shell
 curl -X POST \
     'https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -168,7 +168,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
         "https://ns.adobe.com/xdm/context/identitymap",
         "https://ns.adobe.com/xdm/context/profile-work-details"
     ],
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "meta:extensible": false,
     "meta:abstract": false,
     "meta:extends": [
@@ -199,7 +199,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en källanslutning {#source}
 
-När ett mål-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t [!DNL Flow Service]. En källanslutning består av en anslutning för API:t, ett källdataformat och en referens till det mål-XDM-schema som hämtades i föregående steg.
+När ett mål-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till [!DNL Flow Service] API. En källanslutning består av en anslutning för API:t, ett källdataformat och en referens till det mål-XDM-schema som hämtades i föregående steg.
 
 **API-format**
 
@@ -214,7 +214,7 @@ curl -X POST \
     'http://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -242,12 +242,12 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `baseConnectionId` | Anslutningen till API:t som representerar din molnlagring. |
-| `data.schema.id` | (`$id`) om mål-xdm-schemat hämtades i föregående steg. |
+| `data.schema.id` | The (`$id`) om mål-xdm-schemat hämtades i föregående steg. |
 | `params.path` | Källfilens sökväg. |
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Lagra det här värdet som det krävs i senare steg för att skapa en målanslutning.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Lagra det här värdet som det krävs i senare steg för att skapa en målanslutning.
 
 ```json
 {
@@ -258,15 +258,15 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Skapa en datauppsättningsbasanslutning
 
-För att kunna importera externa data till [!DNL Platform] måste en [!DNL Experience Platform]-datauppsättningsbasanslutning först hämtas.
+För att kunna importera externa data till [!DNL Platform], en [!DNL Experience Platform] Datauppsättningsbasanslutningen måste först hämtas.
 
-Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i självstudiekursen [för datauppsättningsbasanslutningar](./create-dataset-base-connection.md).
+Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i [självstudiekurs om grundläggande dataanslutning](./create-dataset-base-connection.md).
 
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) och fortsätt att använda den som bas-anslutnings-ID i nästa steg för att skapa en målanslutning.
+Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) och fortsätta att använda det som bas-anslutnings-ID i nästa steg för att skapa en målanslutning.
 
 ## Skapa en måldatauppsättning
 
-En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), som anger målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), med ID:t för målschemat i nyttolasten.
 
 **API-format**
 
@@ -281,7 +281,7 @@ curl -X POST \
     'https://platform.adobe.io/data/foundation/catalog/dataSets?requestDataSource=true' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -309,7 +309,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 ## Skapa en målanslutning {#target}
 
-Du har nu unika identifierare för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Med dessa identifierare kan du skapa en målanslutning med hjälp av API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
+Du har nu unika identifierare för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -324,7 +324,7 @@ curl -X POST \
     'http://platform.adobe.io/data/foundation/flowservice/targetConnections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -350,13 +350,13 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `baseConnectionId` | ID:t för datauppsättningsbasanslutningen. |
-| `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.id` | The `$id` av mål-XDM-schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för ditt molnlagringsutrymme. |
 
 **Svar**
 
-Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i senare steg.
+Ett godkänt svar returnerar den nya målanslutningens unika identifierare (`id`). Lagra det här värdet som det behövs i senare steg.
 
 ```json
 {
@@ -386,7 +386,7 @@ POST /flows
 curl -X POST \
     'https://platform.adobe.io/data/foundation/flowservice/flows' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
@@ -417,7 +417,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
+Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 
 ```json
 {
@@ -428,7 +428,7 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in Parquet-data från ditt molnlagringssystem från tredje part på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform]-tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in Parquet-data från ditt molnlagringssystem från tredje part på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../data-science-workspace/home.md)

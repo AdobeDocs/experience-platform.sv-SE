@@ -6,43 +6,43 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1365'
 ht-degree: 0%
 
 ---
 
-# Definiera en relation mellan två scheman med hjälp av API:t [!DNL Schema Registry]
+# Definiera en relation mellan två scheman med [!DNL Schema Registry] API
 
-Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer inom strukturen för dina [!DNL Experience Data Model] (XDM)-scheman kan du få komplexa insikter i dina kunddata.
+Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
-Schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile], men detta gäller endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
+När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
 Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse för [!DNL Experience Data Model] (XDM) och [!DNL XDM System]. Läs följande dokumentation innan du börjar den här självstudiekursen:
+Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experience Data Model] (XDM) och [!DNL XDM System]. Läs följande dokumentation innan du börjar den här självstudiekursen:
 
-* [XDM System i Experience Platform](../home.md): En översikt över XDM och dess implementering i  [!DNL Experience Platform].
-   * [Grundläggande om schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
+* [XDM-system i Experience Platform](../home.md): En översikt över XDM och dess implementering i [!DNL Experience Platform].
+   * [Grunderna för schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa anrop till API:t [!DNL Schema Registry]. Detta inkluderar din `{TENANT_ID}`, begreppet &quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på [!DNL Accept]-huvudet och dess möjliga värden).
+Innan du startar den här självstudiekursen bör du gå igenom [utvecklarhandbok](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa [!DNL Schema Registry] API. Detta inkluderar `{TENANT_ID}`, begreppet &quot;behållare&quot; och de rubriker som krävs för att göra en förfrågan (med särskild uppmärksamhet på [!DNL Accept] header och dess möjliga värden).
 
 ## Definiera en källa och ett målschema {#define-schemas}
 
-Du förväntas redan ha skapat de två scheman som ska definieras i relationen. Den här självstudien skapar en relation mellan medlemmar i ett företags aktuella lojalitetsprogram (definierat i ett [!DNL Loyalty Members]-schema) och deras favorithotell (definierade i ett [!DNL Hotels]-schema).
+Du förväntas redan ha skapat de två scheman som ska definieras i relationen. Den här självstudien skapar en relation mellan medlemmar i en organisations aktuella lojalitetsprogram (definieras i en[!DNL Loyalty Members]&quot; schema) och deras favorithotell (definieras i en[!DNL Hotels]&quot; schema).
 
-Schemarelationer representeras av ett **källschema** med ett fält som refererar till ett annat fält i ett **målschema**. I de följande stegen kommer &quot;[!DNL Loyalty Members]&quot; att vara källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
+Schemarelationer representeras av en **källschema** ha ett fält som refererar till ett annat fält i ett **målschema**. I följande steg: &quot;[!DNL Loyalty Members]&quot; blir källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
 
 >[!IMPORTANT]
 >
->För att kunna etablera en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. Se avsnittet [Aktivera ett schema för användning i profilen](./create-schema-api.md#profile) i självstudiekursen för att skapa schema om du behöver hjälp med hur du konfigurerar scheman därefter.
+>För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-api.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
 
-Om du vill definiera en relation mellan två scheman måste du först hämta `$id`-värdena för båda scheman. Om du känner till visningsnamnen (`title`) för scheman kan du hitta deras `$id`-värden genom att göra en GET-begäran till `/tenant/schemas`-slutpunkten i [!DNL Schema Registry]-API:t.
+Om du vill definiera en relation mellan två scheman måste du först skaffa `$id` värden för båda scheman. Om du känner till visningsnamnen (`title`) av scheman kan du hitta deras `$id` genom att göra en GET-förfrågan till `/tenant/schemas` slutpunkt i [!DNL Schema Registry] API.
 
 **API-format**
 
@@ -57,18 +57,18 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
 >[!NOTE]
 >
->[!DNL Accept]-huvudet `application/vnd.adobe.xed-id+json` returnerar bara rubriker, ID:n och versioner av de resulterande scheman.
+>The [!DNL Accept] header `application/vnd.adobe.xed-id+json` returnerar bara rubriker, ID:n och versioner av de resulterande scheman.
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med scheman som definierats av din organisation, inklusive deras `name`, `$id`, `meta:altId` och `version`.
+Ett godkänt svar returnerar en lista med scheman som definierats av organisationen, inklusive deras `name`, `$id`, `meta:altId`och `version`.
 
 ```json
 {
@@ -106,25 +106,25 @@ Ett lyckat svar returnerar en lista med scheman som definierats av din organisat
 }
 ```
 
-Registrera `$id`-värdena för de två scheman som du vill definiera en relation mellan. Dessa värden används i senare steg.
+Spela in `$id` värden för de två scheman som du vill definiera en relation mellan. Dessa värden används i senare steg.
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry] fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha `type`-värdet [!DNL string].
+I [!DNL Schema Registry]fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha en `type` värdet &quot;[!DNL string]&quot;.
 
 >[!IMPORTANT]
 >
 >Till skillnad från målschemat kan källschemat inte använda sin primära identitet som referensfält.
 
-I den här självstudiekursen innehåller målschemat [!DNL Hotels] ett `hotelId`-fält som fungerar som schemats primära identitet och fungerar därför även som referensfält. Källschemat [!DNL Loyalty Members] har emellertid inget dedikerat fält som ska användas som referens, och måste ges en ny fältgrupp som lägger till ett nytt fält i schemat: `favoriteHotel`.
+I den här självstudiekursen är målschemat &quot;[!DNL Hotels]&quot; innehåller `hotelId` fält som fungerar som schemats primära identitet och därför även fungerar som referensfält. Källschemat[!DNL Loyalty Members]&quot; har inget dedikerat fält som ska användas som referens och måste ges en ny fältgrupp som lägger till ett nytt fält i schemat: `favoriteHotel`.
 
 >[!NOTE]
 >
->Om källschemat redan har ett dedikerat fält som du tänker använda som referensfält kan du hoppa fram till steget när du [skapar en referensbeskrivare](#reference-identity).
+>Om källschemat redan har ett dedikerat fält som du tänker använda som referensfält kan du hoppa fram till steget på [skapa en referensbeskrivning](#reference-identity).
 
 ### Skapa en ny fältgrupp
 
-Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en fältgrupp. Du kan skapa en ny fältgrupp genom att göra en POST-förfrågan till `/tenant/fieldgroups`-slutpunkten.
+Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en fältgrupp. Du kan skapa en ny fältgrupp genom att göra en POST-förfrågan till `/tenant/fieldgroups` slutpunkt.
 
 **API-format**
 
@@ -134,14 +134,14 @@ POST /tenant/fieldgroups
 
 **Begäran**
 
-Följande begäran skapar en ny fältgrupp som lägger till ett `favoriteHotel`-fält under namnområdet `_{TENANT_ID}` för alla scheman som det läggs till i.
+Följande begäran skapar en ny fältgrupp som lägger till en `favoriteHotel` fält under `_{TENANT_ID}` namnområde för alla scheman som det läggs till i.
 
 ```shell
 curl -X POST\
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'content-type: application/json' \
   -d '{
@@ -232,11 +232,11 @@ Ett godkänt svar returnerar information om den nyligen skapade fältgruppen.
 
 {style=&quot;table-layout:auto&quot;}
 
-Registrera URI:n `$id` för fältgruppen, som ska användas i nästa steg när fältgruppen läggs till i källschemat.
+Spela in `$id` URI för fältgruppen, som ska användas i nästa steg när fältgruppen läggs till i källschemat.
 
 ### Lägg till fältgruppen i källschemat
 
-När du har skapat en fältgrupp kan du lägga till den i källschemat genom att göra en PATCH-begäran till `/tenant/schemas/{SCHEMA_ID}`-slutpunkten.
+När du har skapat en fältgrupp kan du lägga till den i källschemat genom att göra en PATCH-begäran i `/tenant/schemas/{SCHEMA_ID}` slutpunkt.
 
 **API-format**
 
@@ -252,7 +252,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **Begäran**
 
-Följande begäran lägger till fältgruppen [!DNL Favorite Hotel] i schemat [!DNL Loyalty Members].
+Följande begäran lägger till &quot;[!DNL Favorite Hotel]fältgrupp till[!DNL Loyalty Members]schemat.
 
 ```shell
 curl -X PATCH \
@@ -260,7 +260,7 @@ curl -X PATCH \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
     { 
@@ -275,15 +275,15 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `op` | Den PATCH-åtgärd som ska utföras. Denna begäran använder åtgärden `add`. |
+| `op` | Den PATCH-åtgärd som ska utföras. Den här begäran använder `add` operation. |
 | `path` | Sökvägen till schemafältet där den nya resursen ska läggas till. När du lägger till fältgrupper i scheman måste värdet vara /allOf/-. |
-| `value.$ref` | `$id` för fältgruppen som ska läggas till. |
+| `value.$ref` | The `$id` för den fältgrupp som ska läggas till. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu innehåller `$ref`-värdet för den tillagda fältgruppen under dess `allOf`-matris.
+Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu innehåller `$ref` värdet för den tillagda fältgruppen under dess `allOf` array.
 
 ```json
 {
@@ -319,7 +319,7 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu inne
     "meta:abstract": false,
     "meta:extensible": false,
     "meta:tenantNamespace": "_{TENANT_ID}",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "meta:extends": [
         "https://ns.adobe.com/xdm/context/profile",
         "https://ns.adobe.com/xdm/data/record",
@@ -344,9 +344,9 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu inne
 
 ## Skapa en beskrivning av en referensidentitet {#reference-identity}
 
-Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel`-fältet i [!DNL Loyalty Members] refererar till `hotelId`-fältet i [!DNL Hotels] måste `hotelId` ges en referensidentitetsbeskrivning.
+Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Sedan `favoriteHotel` fält i &quot;[!DNL Loyalty Members]&quot; kommer att referera till `hotelId` fält i &quot;[!DNL Hotels]&quot;, `hotelId` måste anges som en referensidentitetsbeskrivning.
 
-Skapa en referensbeskrivning för målschemat genom att göra en POST-förfrågan till `/tenant/descriptors`-slutpunkten.
+Skapa en referensbeskrivning för målschemat genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
 
 **API-format**
 
@@ -356,14 +356,14 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran skapar en referensbeskrivning för fältet `hotelId` i målschemat [!DNL Hotels].
+Följande begäran skapar en referensbeskrivning för `hotelId` i målschemat &quot;[!DNL Hotels]&quot;.
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -378,10 +378,10 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `@type` | Den typ av beskrivning som definieras. För referensbeskrivare måste värdet vara &quot;xdm:descriptorReferenceIdentity&quot;. |
-| `xdm:sourceSchema` | Målschemats `$id`-URL. |
+| `xdm:sourceSchema` | The `$id` Målschemats URL. |
 | `xdm:sourceVersion` | Målschemats versionsnummer. |
 | `sourceProperty` | Sökvägen till målschemats primära identitetsfält. |
-| `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnutrymme som används när fältet definieras som schemats primära identitet. Mer information finns i [översikten över identitetsnamnrymden](../../identity-service/home.md). |
+| `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnutrymme som används när fältet definieras som schemats primära identitet. Se [Översikt över namnutrymmet identity](../../identity-service/home.md) för mer information. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -403,7 +403,7 @@ Ett lyckat svar returnerar information om den nya referensbeskrivningen för må
 
 ## Skapa en relationsbeskrivning {#create-descriptor}
 
-Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensbeskrivning för målschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till slutpunkten `/tenant/descriptors`.
+Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensbeskrivning för målschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
 
 **API-format**
 
@@ -413,14 +413,14 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran skapar en ny relationsbeskrivare med &quot;[!DNL Loyalty Members]&quot; som källschema och &quot;[!DNL Legacy Loyalty Members]&quot; som målschema.
+Följande begäran skapar en ny relationsbeskrivning med &quot;[!DNL Loyalty Members]&quot; som källschema och &quot;[!DNL Legacy Loyalty Members]&quot; som målschema.
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -436,11 +436,11 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som ska skapas. Värdet `@type` för relationsbeskrivare är &quot;xdm:descriptorOneToOne&quot;. |
-| `xdm:sourceSchema` | URL:en `$id` för källschemat. |
+| `@type` | Den typ av beskrivning som ska skapas. The `@type` värdet för relationsbeskrivare är &quot;xdm:descriptorOneToOne&quot;. |
+| `xdm:sourceSchema` | The `$id` Källschemats URL. |
 | `xdm:sourceVersion` | Källschemats versionsnummer. |
 | `xdm:sourceProperty` | Sökvägen till referensfältet i källschemat. |
-| `xdm:destinationSchema` | Målschemats `$id`-URL. |
+| `xdm:destinationSchema` | The `$id` Målschemats URL. |
 | `xdm:destinationVersion` | Målschemats versionsnummer. |
 | `xdm:destinationProperty` | Sökvägen till referensfältet i målschemat. |
 
@@ -466,4 +466,4 @@ Ett lyckat svar returnerar information om den nyligen skapade relationsbeskrivni
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en 1:1-relation mellan två scheman. Mer information om hur du arbetar med beskrivningar med API:t [!DNL Schema Registry] finns i [Utvecklarhandbok för schemaregister](../api/descriptors.md). Anvisningar om hur du definierar schemarelationer i användargränssnittet finns i självstudiekursen om att [definiera schemarelationer med Schemaredigeraren](relationship-ui.md).
+I den här självstudiekursen har du skapat en 1:1-relation mellan två scheman. Mer information om hur du arbetar med beskrivningar med [!DNL Schema Registry] API, se [Utvecklarhandbok för schemaregister](../api/descriptors.md). Anvisningar om hur du definierar schemarelationer i användargränssnittet finns i självstudiekursen om [definiera schemarelationer med Schemaredigeraren](relationship-ui.md).

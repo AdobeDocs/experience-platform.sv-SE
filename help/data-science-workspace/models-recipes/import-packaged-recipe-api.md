@@ -1,24 +1,23 @@
 ---
 keywords: Experience Platform;import packaged recept;Data Science Workspace;populära topics;recipes;api;sensei machine learning;create engine
 solution: Experience Platform
-title: Importera en paketerad mottagare med hjälp av API:t Sensei Machine Learning
+title: Importera en paketerad mottagare med Sensei Machine Learning API
 topic-legacy: tutorial
 type: Tutorial
-description: I den här självstudien används API:t Sensei Machine Learning för att skapa en motor, som också kallas Recept i användargränssnittet.
+description: I den här självstudien används API:t för inlärning i Sensei Machine för att skapa en motor, som också kallas Recept i användargränssnittet.
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 0%
 
 ---
 
-# Importera ett paketerat recept med hjälp av API:t Sensei Machine Learning
+# Importera ett paketerat recept med Sensei Machine Learning API
 
-I den här självstudien används [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för att skapa en [motor](../api/engines.md), som också kallas recept i användargränssnittet.
+I den här självstudiekursen används [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för att skapa [Motor](../api/engines.md), kallas även Recept i användargränssnittet.
 
-Innan du börjar är det viktigt att tänka på att Adobe Experience Platform [!DNL Data Science Workspace] använder olika termer för att referera till liknande element i API:t och användargränssnittet. API-termerna används genomgående i den här självstudien och i följande tabell beskrivs motsvarande termer:
+Innan du börjar är det viktigt att tänka på att Adobe Experience Platform [!DNL Data Science Workspace] använder olika termer för att referera till liknande element i API och användargränssnitt. API-termerna används genomgående i den här självstudien och i följande tabell beskrivs motsvarande termer:
 
 | Användargränssnittsterm | API-term |
 | ---- | ---- |
@@ -27,20 +26,20 @@ Innan du börjar är det viktigt att tänka på att Adobe Experience Platform [!
 | Utbildning och utvärdering | [Experimentera](../api/experiments.md) |
 | Tjänst | [MLService](../api/mlservices.md) |
 
-En motor innehåller maskininlärningsalgoritmer och logik för att lösa specifika problem. I diagrammet nedan visas API-arbetsflödet i [!DNL Data Science Workspace]. Den här självstudiekursen fokuserar på att skapa en motor, hjärnan i en maskininlärningsmodell.
+En motor innehåller maskininlärningsalgoritmer och logik för att lösa specifika problem. I bilden nedan visas API-arbetsflödet i [!DNL Data Science Workspace]. Den här självstudiekursen fokuserar på att skapa en motor, hjärnan i en maskininlärningsmodell.
 
 ![](../images/models-recipes/import-package-api/engine_hierarchy_api.png)
 
 ## Komma igång
 
-Den här självstudien kräver en paketerad mottagarfil i form av en Docker-URL. Följ [Paketera källfiler i en Recipe](./package-source-files-recipe.md)-självstudiekurs för att skapa en paketerad mottagarfil eller skapa en egen.
+Den här självstudien kräver en paketerad mottagarfil i form av en Docker-URL. Följ [Paketera källfiler i en mottagare](./package-source-files-recipe.md) självstudiekurs för att skapa en paketerad mottagarfil eller skapa en egen.
 
 - `{DOCKER_URL}`: En URL-adress till en Docker-bild av en intelligent tjänst.
 
-I den här självstudiekursen måste du ha slutfört [autentiseringen till Adobe Experience Platform-självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa anrop till [!DNL Platform] API:er. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+Den här självstudiekursen kräver att du har slutfört [Autentisering till Adobe Experience Platform, självstudiekurs](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa [!DNL Platform] API:er. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+- `{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
 - `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 ## Skapa en motor
@@ -53,7 +52,7 @@ Om du vill skapa en motor med en paketerad mottagarfil som lagras i en Docker-be
 
 >[!CAUTION]
 >
-> Om du använder [!DNL Python] eller R använder du begäran nedan. Om du använder PySpark eller Scala ska du använda exemplet på PySpark/Scala-begäran som finns under Python/R-exemplet.
+> Om du använder [!DNL Python] eller R använder begäran nedan. Om du använder PySpark eller Scala ska du använda exemplet på PySpark/Scala-begäran som finns under Python/R-exemplet.
 
 **API-format**
 
@@ -69,7 +68,7 @@ curl -X POST \
     -H 'Authorization: {ACCESS_TOKEN}' \
     -H 'X-API-KEY: {API_KEY}' \
     -H 'content-type: multipart/form-data' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H `x-sandbox-name: {SANDBOX_NAME}` \
     -F 'engine={
         "name": "Retail Sales Engine Python",
@@ -89,12 +88,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------  | ----------- |
-| `engine.name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i [!DNL Data Science Workspace]-användargränssnittet som mottagarens namn. |
-| `engine.description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i [!DNL Data Science Workspace]-användargränssnittet som mottagarens beskrivning. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du väljer att inte ange en beskrivning. |
-| `engine.type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på. När en Docker URL anges för att skapa en motor är `type` antingen `Python`, `R`, `PySpark`, `Spark` (Scala) eller `Tensorflow`. |
-| `artifacts.default.image.location` | Din `{DOCKER_URL}` är här. En komplett Docker-URL har följande struktur: `your_docker_host.azurecr.io/docker_image_file:version` |
+| `engine.name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i [!DNL Data Science Workspace] som mottagarens namn. |
+| `engine.description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i [!DNL Data Science Workspace] som mottagarens beskrivning. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du väljer att inte ange en beskrivning. |
+| `engine.type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på. När en Docker URL anges för att skapa en motor, `type` är antingen `Python`, `R`, `PySpark`, `Spark` (Scala), eller `Tensorflow`. |
+| `artifacts.default.image.location` | Dina `{DOCKER_URL}` går hit. En komplett Docker-URL har följande struktur: `your_docker_host.azurecr.io/docker_image_file:version` |
 | `artifacts.default.image.name` | Ytterligare ett namn för Docker-bildfilen. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du inte anger ett extra namn på Docker-bildfilen. |
-| `artifacts.default.image.executionType` | Den här motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på. När en Docker URL anges för att skapa en motor är `executionType` antingen `Python`, `R`, `PySpark`, `Spark` (Scala) eller `Tensorflow`. |
+| `artifacts.default.image.executionType` | Den här motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på. När en Docker URL anges för att skapa en motor, `executionType` är antingen `Python`, `R`, `PySpark`, `Spark` (Scala), eller `Tensorflow`. |
 
 **Begär PySpark**
 
@@ -103,7 +102,7 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: multipart/form-data' \
     -F 'engine={
@@ -140,7 +139,7 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: multipart/form-data' \
     -F 'engine={
@@ -172,7 +171,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar är för en [!DNL Python]-motor. Tangenterna `executionType` och `type` ändras baserat på den angivna POSTEN.
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar är för en [!DNL Python] Motor. The `executionType` och `type` ändras baserat på angiven POST.
 
 ```json
 {
@@ -199,8 +198,8 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 }
 ```
 
-Ett godkänt svar visar en JSON-nyttolast med information om den nya motorn. Nyckeln `id` representerar den unika motoridentifieraren och krävs i nästa självstudie för att skapa en MLInstance. Se till att motorns identifierare sparas innan du fortsätter till nästa steg.
+Ett godkänt svar visar en JSON-nyttolast med information om den nya motorn. The `id` -nyckeln representerar den unika motoridentifieraren och krävs i nästa självstudie för att skapa en MLInstance. Se till att motorns identifierare sparas innan du fortsätter till nästa steg.
 
 ## Nästa steg {#next-steps}
 
-Du har skapat en motor med API:t och en unik motoridentifierare har hämtats som en del av svarstexten. Du kan använda den här motoridentifieraren i nästa självstudiekurs när du lär dig att [skapa, utbilda och utvärdera en modell med API](./train-evaluate-model-api.md).
+Du har skapat en motor med API:t och en unik motoridentifierare har hämtats som en del av svarstexten. Du kan använda den här motoridentifieraren i nästa självstudiekurs när du lär dig hur du [skapa, utbilda och utvärdera en modell med API:t](./train-evaluate-model-api.md).

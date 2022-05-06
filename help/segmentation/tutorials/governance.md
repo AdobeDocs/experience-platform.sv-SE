@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1368'
 ht-degree: 0%
@@ -42,7 +42,7 @@ För att ringa [!DNL Platform] API:er måste du först slutföra [självstudieku
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- x-gw-ims-org-id: `{ORG_ID}`
 
 Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
@@ -79,7 +79,7 @@ curl -X GET \
   https://platform.adobe.io/data/core/ups/segment/definitions/24379cae-726a-4987-b7b9-79c32cddb5c1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -94,7 +94,7 @@ Ett lyckat svar returnerar informationen om segmentdefinitionen.
         "name": "_xdm.context.profile"
     },
     "ttlInDays": 90,
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "name": "Cart abandons in CA",
     "description": "",
     "expression": {
@@ -146,7 +146,7 @@ curl -X GET \
   https://platform.adobe.io/data/core/ups/config/mergePolicies/2b43d78d-0ad4-4c1e-ac2d-574c09b01119 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -157,7 +157,7 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 ```json
 {
     "id": "2b43d78d-0ad4-4c1e-ac2d-574c09b01119",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "schema": {
         "name": "_xdm.context.profile"
     },
@@ -212,7 +212,7 @@ curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/exportToThirdParty/constraints
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '[
@@ -241,7 +241,7 @@ Ett lyckat svar returnerar URI:n för marknadsföringsåtgärden, dataanvändnin
   "timestamp": 1556324277895,
   "clientId": "{CLIENT_ID}",
   "userId": "{USER_ID}",
-  "imsOrg": "{IMS_ORG}",
+  "imsOrg": "{ORG_ID}",
   "marketingActionRef": "https://platform.adobe.io:443/data/foundation/dulepolicy/marketingActions/custom/exportToThirdParty",
   "duleLabels": [
     "C1",
@@ -340,7 +340,7 @@ Ett lyckat svar returnerar URI:n för marknadsföringsåtgärden, dataanvändnin
           }
         ]
       },
-      "imsOrg": "{IMS_ORG}",
+      "imsOrg": "{ORG_ID}",
       "created": 1565651746693,
       "createdClient": "{CREATED_CLIENT}",
       "createdUser": "{CREATED_USER",

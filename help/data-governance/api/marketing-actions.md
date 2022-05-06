@@ -5,7 +5,7 @@ title: API-slutpunkt för marknadsföringsåtgärder
 topic-legacy: developer guide
 description: En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en datakonsument i Experience Platform vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 exl-id: bc16b318-d89c-4fe6-bf5a-1a4255312f54
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '732'
 ht-degree: 0%
@@ -42,7 +42,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -65,7 +65,7 @@ Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgä
         {
             "name": "sampleMarketingAction",
             "description": "Marketing Action description.",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "created": 1550714012088,
             "createdClient": "string",
             "createdUser": "string",
@@ -81,7 +81,7 @@ Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgä
         {
             "name": "newMarketingAction",
             "description": "Another marketing action.",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "created": 1550793833224,
             "createdClient": "string",
             "createdUser": "string",
@@ -129,7 +129,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/combineData \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -141,7 +141,7 @@ Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive s
 {
     "name": "combineData",
     "description": "Combine multiple data sources together.",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "created": 1550793805590,
     "createdClient": "string",
     "createdUser": "string",
@@ -179,7 +179,7 @@ curl -X PUT \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -201,7 +201,7 @@ Ett lyckat svar returnerar detaljerna om marknadsföringsåtgärden. Om en befin
 {
     "name": "crossSiteTargeting",
     "description": "Perform targeting on information obtained across multiple web sites.",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "created": 1550713341915,
     "createdClient": "string",
     "createdUser": "string",
@@ -222,7 +222,7 @@ Du kan ta bort en anpassad marknadsföringsåtgärd genom att ta med dess namn i
 
 >[!NOTE]
 >
->Marknadsföringsåtgärder som refereras av befintliga principer kan inte tas bort. Om du försöker ta bort en av dessa marknadsföringsåtgärder kommer det att uppstå ett HTTP 400-fel (felaktig begäran) tillsammans med ett meddelande som innehåller ID:n för alla profiler som refererar till marknadsföringsåtgärden.
+>Marknadsföringsåtgärder som refereras av befintliga principer kan inte tas bort. Om du försöker ta bort en av dessa marknadsföringsåtgärder genereras ett HTTP 400-fel (felaktig begäran) tillsammans med ett meddelande som innehåller ID:n för alla profiler som refererar till marknadsföringsåtgärden.
 
 **API-format**
 
@@ -241,7 +241,7 @@ curl -X DELETE \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

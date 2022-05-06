@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid genom att göra rätt data lättillgänglig och kontinuerligt uppdaterad när förändringar inträffar. Detta görs genom användning av kanter, en geografiskt placerad server som lagrar data och gör dem tillgängliga för program.
 exl-id: ce429164-8e87-412d-9a9d-e0d4738c7815
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1959'
 ht-degree: 0%
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t [!DNL Real-time Customer Profile] för att arbeta med kantprognoser, inklusive mål och konfigurationer.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder [!DNL Real-time Customer Profile] API för att arbeta med kantprognoser, inklusive mål och konfigurationer.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 >[!NOTE]
 >
->Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ett `Content-Type`-huvud. Mer än en `Content-Type` används i det här dokumentet. Var särskilt uppmärksam på rubrikerna i exempelsamtalen för att försäkra dig om att du använder rätt `Content-Type` för varje begäran.
+>Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en `Content-Type` header. Mer än en `Content-Type` används i det här dokumentet. Var särskilt uppmärksam på rubrikerna i samplingssamtalen för att försäkra dig om att du använder rätt `Content-Type` för varje begäran.
 
 ## Projektionsdestinationer
 
@@ -30,7 +30,7 @@ En projektion kan dirigeras till en eller flera kanter genom att ange var data s
 
 ### Visa alla mål
 
-Du kan lista de kantmål som redan har skapats för din organisation genom att göra en GET-förfrågan till `/config/destinations`-slutpunkten.
+Du kan lista de kantmål som redan har skapats för din organisation genom att göra en GET-förfrågan till `/config/destinations` slutpunkt.
 
 **API-format**
 
@@ -45,13 +45,13 @@ curl -X GET \
   https://platform.adobe.io/data/core/ups/config/destinations \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Svaret innehåller en `projectionDestinations`-array med information för varje mål som visas som ett enskilt objekt i arrayen. Om inga projektioner har konfigurerats returnerar matrisen `projectionDestinations` tom.
+Svaret innehåller en `projectionDestinations` arrayen med information för varje mål som visas som ett enskilt objekt i arrayen. Om inga projektioner har konfigurerats `projectionDestinations` matrisen returnerar tom.
 
 >[!NOTE]
 >
@@ -105,13 +105,13 @@ Svaret innehåller en `projectionDestinations`-array med information för varje 
 | Egenskap | Beskrivning |
 |---|---|
 | `_links.self.href` | På den översta nivån matchar den sökväg som användes för att göra en GET-förfrågan. I varje enskilt målobjekt kan den här sökvägen användas i en GET-begäran för att söka efter information om ett specifikt mål direkt. |
-| `id` | I varje målobjekt visar `"id"` det skrivskyddade, systemgenererade unika ID:t för målet. Detta ID används vid referens till ett specifikt mål och när projektionskonfigurationer skapas. |
+| `id` | Inom varje målobjekt `"id"` visar det skrivskyddade, systemgenererade unika ID:t för målet. Detta ID används vid referens till ett specifikt mål och när projektionskonfigurationer skapas. |
 
-Mer information om attributen för ett enskilt mål finns i följande avsnitt om [att skapa ett mål](#create-a-destination).
+Mer information om attributen för en enskild destination finns i avsnittet om [skapa ett mål](#create-a-destination) som följer.
 
 ### Skapa ett mål {#create-a-destination}
 
-Om målet som du vill använda inte redan finns, kan du skapa ett nytt projektionsmål genom att göra en POST-förfrågan till `/config/destinations`-slutpunkten.
+Om det mål du vill använda inte redan finns kan du skapa ett nytt projektionsmål genom att göra en POST-förfrågan till `/config/destinations` slutpunkt.
 
 **API-format**
 
@@ -125,14 +125,14 @@ Följande begäran skapar ett nytt kantmål.
 
 >[!NOTE]
 >
->För att POSTEN ska kunna skapa ett mål krävs en specifik `Content-Type`-rubrik, vilket visas nedan. Om du använder ett felaktigt `Content-Type`-huvud uppstår ett HTTP-statusfel 415 (medietypen stöds inte).
+>För att POSTEN ska kunna skapa ett mål krävs en specifik `Content-Type` sidhuvud, enligt nedan. Använda ett felaktigt `Content-Type` header resulterar i ett HTTP Status 415-fel (mediatypen stöds inte).
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/ups/config/destinations \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/vnd.adobe.platform.projectionDestination+json; version=1' \
   -d '{
@@ -180,7 +180,7 @@ Ett lyckat svar returnerar information om det nya kantmålet, inklusive det skri
 
 ### Visa ett mål
 
-Om du känner till det unika ID:t för ett projektionsmål kan du utföra en uppslagsbegäran för att visa information om det. Detta gör du genom att göra en GET-begäran till `/config/destinations`-slutpunkten och inkludera ID:t för destinationen i begärandesökvägen.
+Om du känner till det unika ID:t för ett projektionsmål kan du utföra en uppslagsbegäran för att visa information om det. Detta gör du genom att göra en GET-förfrågan till `/config/destinations` slutpunkten och ID:t för destinationen i sökvägen för begäran tas med.
 
 **API-format**
 
@@ -201,13 +201,13 @@ curl -X GET \
   https://platform.adobe.io/data/core/ups/config/destinations/9d66c06e-c745-480c-b64c-1d5234d25f4b \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Svarsobjektet visar information om projektionsmålet. Attributet `id` måste matcha ID:t för projektionsmålet som angavs i begäran.
+Svarsobjektet visar information om projektionsmålet. The `id` -attributet ska matcha ID:t för projektionsmålet som angavs i begäran.
 
 ```json
 {
@@ -227,7 +227,7 @@ Svarsobjektet visar information om projektionsmålet. Attributet `id` måste mat
 
 ### Uppdatera ett mål
 
-Ett befintligt mål kan uppdateras genom att en PUT-begäran görs till `/config/destinations`-slutpunkten och med ID:t för det mål som ska uppdateras i begärandesökvägen. Den här åtgärden skriver i stort sett om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
+Ett befintligt mål kan uppdateras genom att en PUT-begäran görs till `/config/destinations` slutpunkt och inklusive ID för målet som ska uppdateras i sökvägen för begäran. Den här åtgärden skriver i stort sett om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
 
 >[!CAUTION]
 >
@@ -249,14 +249,14 @@ Följande begäran uppdaterar det befintliga målet så att det inkluderar en an
 
 >[!IMPORTANT]
 >
->Begäran från PUT kräver ett specifikt `Content-Type`-huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type`-huvud uppstår ett HTTP-statusfel 415 (medietypen stöds inte).
+>Begäran från PUT kräver en specifik `Content-Type` sidhuvud, enligt nedan. Använda ett felaktigt `Content-Type` header resulterar i ett HTTP Status 415-fel (mediatypen stöds inte).
 
 ```shell
 curl -X PUT \
   https://platform.adobe.io/data/core/ups/config/destinations/8b90ce19-e7dd-403a-ae24-69683a6674e7 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/vnd.adobe.platform.projectionDestination+json' \
   -d '{
@@ -272,11 +272,11 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `currentVersion` | Den aktuella versionen av det befintliga målet. Värdet för attributet `version` när en sökbegäran för målet utförs. |
+| `currentVersion` | Den aktuella versionen av det befintliga målet. Värdet för `version` när du utför en uppslagsbegäran för målet. |
 
 **Svar**
 
-Svaret innehåller den uppdaterade informationen för målet, inklusive dess ID och målets nya `version`.
+Svaret innehåller den uppdaterade informationen om målet, inklusive dess ID och det nya `version` för destinationen.
 
 ```json
 {
@@ -297,11 +297,11 @@ Svaret innehåller den uppdaterade informationen för målet, inklusive dess ID 
 
 ### Ta bort ett mål
 
-Om din organisation inte längre behöver ett projektionsmål kan du ta bort det genom att göra en DELETE-begäran till `/config/destinations`-slutpunkten och inkludera ID:t för målet som du vill ta bort i sökvägen till begäran.
+Om din organisation inte längre behöver ett projektionsmål kan du ta bort det genom att göra en DELETE-begäran till `/config/destinations` slutpunkten och inklusive ID:t för målet som du vill ta bort i sökvägen för begäran.
 
 >[!CAUTION]
 >
->API-svaret på borttagningsbegäran är omedelbart, men de faktiska ändringarna av data i kanterna sker asynkront. Profildata tas med andra ord bort från alla kanter (det `dataCenters` som anges i projektionsmålet), men processen tar tid att slutföra.
+>API-svaret på borttagningsbegäran är omedelbart, men de faktiska ändringarna av data i kanterna sker asynkront. Profildata kommer med andra ord att tas bort från alla kanter ( `dataCenters` anges i projektionsmålet) men processen tar tid att slutföra.
 
 **API-format**
 
@@ -321,7 +321,7 @@ curl -X DELETE \
   https://platform.adobe.io/data/core/ups/config/destinations/8b90ce19-e7dd-403a-ae24-69683a6674e7 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -331,11 +331,11 @@ Begäran om borttagning returnerar HTTP-status 204 (inget innehåll) och en tom 
 
 ## Projektionskonfigurationer
 
-Projektionskonfigurationer ger information om vilka data som ska vara tillgängliga på varje kant. I stället för att projicera ett fullständigt [!DNL Experience Data Model]-schema (XDM) mot kanten, ger en projektion bara specifika data, eller fält, från schemat. Din organisation kan definiera mer än en projektionskonfiguration för varje XDM-schema.
+Projektionskonfigurationer ger information om vilka data som ska vara tillgängliga på varje kant. I stället för att projicera en fullständig [!DNL Experience Data Model] (XDM) schema till kanten, en projektion ger bara specifika data, eller fält, från schemat. Din organisation kan definiera mer än en projektionskonfiguration för varje XDM-schema.
 
 ### Visa alla projektionskonfigurationer
 
-Du kan lista alla projektionskonfigurationer som har skapats för din organisation genom att göra en GET-förfrågan till `/config/projections`-slutpunkten. Du kan också lägga till valfria parametrar i sökvägen för begäran för att komma åt projektionskonfigurationer för ett visst schema eller söka efter en enskild projektion efter dess namn.
+Du kan lista alla projektionskonfigurationer som har skapats för din organisation genom att göra en GET-förfrågan till `/config/projections` slutpunkt. Du kan också lägga till valfria parametrar i sökvägen för begäran för att komma åt projektionskonfigurationer för ett visst schema eller söka efter en enskild projektion efter dess namn.
 
 **API-format**
 
@@ -352,24 +352,24 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 
 >[!NOTE]
 >
->`schemaName` krävs när du använder  `name` parametern, eftersom ett projektionskonfigurationsnamn bara är unikt i kontexten för en schemaklass.
+>`schemaName` krävs när du använder `name` parameter, som ett projektionskonfigurationsnamn är bara unikt i kontexten för en schemaklass.
 
 **Begäran**
 
-I följande begäran visas alla projektionskonfigurationer som är associerade med schemaklassen [!DNL Experience Data Model], [!DNL XDM Individual Profile]. Mer information om XDM och dess roll i [!DNL Platform] får du genom att läsa [systemöversikten för XDM](../../xdm/home.md).
+I följande begäran visas alla projektionskonfigurationer som är associerade med [!DNL Experience Data Model] schemaklass, [!DNL XDM Individual Profile]. Mer information om XDM och dess roll i [!DNL Platform], kan du börja med att läsa [XDM - systemöversikt](../../xdm/home.md).
 
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/core/ups/config/projections?schemaName=_xdm.context.profile \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med projektionskonfigurationer i roten `_embedded`-attributet som finns i `projectionConfigs`-arrayen. Om inga projektionskonfigurationer har gjorts för din organisation kommer `projectionConfigs`-matrisen att vara tom.
+Ett lyckat svar returnerar en lista med projektionskonfigurationer i roten `_embedded` -attribut, som finns i `projectionConfigs` array. Om inga projektionskonfigurationer har gjorts för din organisation kan `projectionConfigs` matrisen kommer att vara tom.
 
 ```json
 {
@@ -437,14 +437,14 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 
 >[!NOTE]
 >
->POSTENS begäran om att skapa en konfiguration kräver ett specifikt `Content-Type`-huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type`-huvud uppstår ett HTTP-statusfel 415 (medietypen stöds inte).
+>POSTEN som begär att få skapa en konfiguration kräver en specifik `Content-Type` sidhuvud, enligt nedan. Använda ett felaktigt `Content-Type` header resulterar i ett HTTP Status 415-fel (mediatypen stöds inte).
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/ups/config/projections?schemaName=_xdm.context.profile \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/vnd.adobe.platform.projectionConfig+json; version=1' \
   -d '{
@@ -456,7 +456,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `selector` | En sträng som innehåller en lista med egenskaper i schemat som ska replikeras till kanterna. De bästa sätten att arbeta med väljare finns i avsnittet [Väljare](#selectors) i det här dokumentet. |
+| `selector` | En sträng som innehåller en lista med egenskaper i schemat som ska replikeras till kanterna. De bästa sätten att arbeta med väljare finns i [Väljare](#selectors) i det här dokumentet. |
 | `name` | Ett beskrivande namn för den nya projektionskonfigurationen. |
 | `destinationId` | Identifieraren för kantmålet som data projiceras till. |
 
@@ -502,16 +502,16 @@ Ett lyckat svar returnerar information om den nyligen skapade projektionskonfigu
 
 ## Väljare {#selectors}
 
-En väljare är en kommaavgränsad lista med XDM-fältnamn. I en projektionskonfiguration anger väljaren vilka egenskaper som ska ingå i projektioner. Formatet på `selector`-parametervärdet är löst baserat på XPath-syntax. Syntaxen som stöds sammanfattas nedan, med ytterligare exempel för referens.
+En väljare är en kommaavgränsad lista med XDM-fältnamn. I en projektionskonfiguration anger väljaren vilka egenskaper som ska ingå i projektioner. Formatet på `selector` parametervärdet är löst baserat på XPath-syntax. Syntaxen som stöds sammanfattas nedan, med ytterligare exempel för referens.
 
 ### Syntax som stöds
 
 * Använd kommatecken för att markera flera fält. Använd inte blanksteg.
 * Använd punktnotation för att markera kapslade fält.
-   * Om du till exempel vill markera ett fält med namnet `field` som är kapslat i ett fält med namnet `foo`, använder du väljaren `foo.field`.
+   * Om du till exempel vill välja ett fält med namnet `field` som är kapslad i ett fält med namnet `foo`använder du väljaren `foo.field`.
 * När du inkluderar ett fält som innehåller delfält projiceras alla delfält också som standard. Du kan emellertid filtrera de delfält som returneras med parenteser `"( )"`.
-   * Till exempel returnerar `addresses(type,city.country)` bara adresstypen och det land där adressstaden finns för varje `addresses`-matriselement.
-   * Ovanstående exempel motsvarar `addresses.type,addresses.city.country`.
+   * Till exempel: `addresses(type,city.country)` returnerar bara adresstypen och landet där adressens ort finns för varje `addresses` arrayelement.
+   * Exemplet ovan motsvarar `addresses.type,addresses.city.country`.
 
 >[!NOTE]
 >
@@ -524,11 +524,11 @@ En väljare är en kommaavgränsad lista med XDM-fältnamn. I en projektionskonf
 
 ### Exempel på väljarparametern
 
-I följande exempel visas `selector`-parametrar följt av de strukturerade värden som de representerar.
+Exemplen nedan visar exempel `selector` parametrar, följt av de strukturerade värden de representerar.
 
 **person.lastName**
 
-Returnerar `lastName`-underfältet för `person`-objektet i den begärda resursen.
+Returnerar `lastName` delfält i `person` objekt i den begärda resursen.
 
 ```json
 {
@@ -540,7 +540,7 @@ Returnerar `lastName`-underfältet för `person`-objektet i den begärda resurse
 
 **adresser**
 
-Returnerar alla element i `addresses`-arrayen, inklusive alla fält i varje element, men inga andra fält.
+Returnerar alla element i `addresses` -array, inklusive alla fält i varje element, men inga andra fält.
 
 ```json
 {
@@ -567,7 +567,7 @@ Returnerar alla element i `addresses`-arrayen, inklusive alla fält i varje elem
 
 **person.lastName,adresser**
 
-Returnerar `person.lastName`-fältet och alla element i `addresses`-arrayen.
+Returnerar `person.lastName` och alla element i `addresses` array.
 
 ```json
 {
@@ -624,7 +624,7 @@ Returnerar endast stadsfältet för alla element i adressarrayen.
 
 **adresser(typ, ort)**
 
-Returnerar endast värdena för fälten `type` och `city` för varje element i `addresses`-arrayen. Alla andra underfält i varje `addresses`-element filtreras bort.
+Returnerar endast värdena för `type` och `city` fält för varje element i `addresses` array. Alla andra underfält i varje `addresses` -elementet har filtrerats bort.
 
 ```json
 {
@@ -649,4 +649,4 @@ Returnerar endast värdena för fälten `type` och `city` för varje element i `
 
 ## Nästa steg
 
-Den här guiden har visat vilka steg som krävs för att konfigurera projektioner och destinationer, inklusive hur du formaterar parametern `selector` korrekt. Nu kan du skapa nya projektionsmål och konfigurationer som är specifika för organisationens behov.
+Den här guiden har visat vilka steg som krävs för att konfigurera prognoser och destinationer, inklusive hur du formaterar `selector` parameter. Nu kan du skapa nya projektionsmål och konfigurationer som är specifika för organisationens behov.

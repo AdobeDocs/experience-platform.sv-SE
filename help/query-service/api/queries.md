@@ -5,7 +5,7 @@ title: Frågar API-slutpunkt
 topic-legacy: queries
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 536c2998f7d320dec0cb392465677dd30c8ea622
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '676'
 ht-degree: 0%
@@ -16,11 +16,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Följande avsnitt går igenom anrop som du kan göra med slutpunkten `/queries` i API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Följande avsnitt går igenom anrop som du kan göra med `/queries` slutpunkt i [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista med frågor
 
-Du kan hämta en lista med alla frågor för din IMS-organisation genom att göra en GET-förfrågan till `/queries`-slutpunkten.
+Du kan hämta en lista över alla frågor för din IMS-organisation genom att göra en GET-förfrågan till `/queries` slutpunkt.
 
 **API-format**
 
@@ -29,7 +29,7 @@ GET /queries
 GET /queries?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`: (*Valfritt*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan.
+- `{QUERY_PARAMETERS}`: (*Valfritt*) Parametrar har lagts till i den begärda sökvägen som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan.
 
 **Frågeparametrar**
 
@@ -37,12 +37,12 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultaten efter att de har skapats i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekten i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. `start=2` returnerar till exempel en lista som börjar med den tredje listade frågan. (*Standardvärde: 0*) |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state` och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med) och `~` (innehåller). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla frågor med det angivna ID:t. |
-| `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. `excludeSoftDeleted=false` kommer till exempel att **inkludera** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
-| `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Om värdet är false inkluderas **icke-användardrivna frågor**, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
+| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state`och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med), och `~` (innehåller). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar alla frågor med det angivna ID:t. |
+| `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. Till exempel: `excludeSoftDeleted=false` kommer **include** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
+| `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Värdet false kommer att anges **include** icke-användardrivna frågor, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
 
 **Begäran**
 
@@ -51,7 +51,7 @@ Följande begäran hämtar den senaste frågan som skapats för din IMS-organisa
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -119,7 +119,7 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågor för den
 
 ### Skapa en fråga
 
-Du kan skapa en ny fråga genom att göra en POST-förfrågan till `/queries`-slutpunkten.
+Du kan skapa en ny fråga genom att göra en POST-förfrågan till `/queries` slutpunkt.
 
 **API-format**
 
@@ -135,7 +135,7 @@ I följande begäran skapas en ny fråga som konfigurerats med värdena som ange
 curl -X POST https://platform.adobe.io/data/foundation/query/queries \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
@@ -155,7 +155,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nya fråga. När frågan har aktiverats och körts ändras `state` från `SUBMITTED` till `SUCCESS`.
+Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nya fråga. När frågan har aktiverats och körts är `state` ändras från `SUBMITTED` till `SUCCESS`.
 
 ```json
 {
@@ -198,11 +198,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.cancel` för att [avbryta den skapade frågan](#cancel-a-query).
+>Du kan använda värdet för `_links.cancel` till [avbryt din skapade fråga](#cancel-a-query).
 
 ### Hämta en fråga via ID
 
-Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen till begäran.
+Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries` slutpunkt och som tillhandahåller frågans `id` värdet i begärandesökvägen.
 
 **API-format**
 
@@ -212,14 +212,14 @@ GET /queries/{QUERY_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | `id`-värdet för frågan som du vill hämta. |
+| `{QUERY_ID}` | The `id` värdet för frågan som du vill hämta. |
 
 **Begäran**
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8f-463a-a182-54bccb9954fc \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -269,11 +269,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 >[!NOTE]
 >
->Du kan använda värdet `_links.cancel` för att [avbryta den skapade frågan](#cancel-a-query).
+>Du kan använda värdet för `_links.cancel` till [avbryt din skapade fråga](#cancel-a-query).
 
 ### Avbryt en fråga
 
-Du kan begära att få ta bort en viss fråga genom att göra en PATCH-begäran till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen till begäran.
+Du kan begära att få ta bort en viss fråga genom att göra en PATCH-förfrågan till `/queries` slutpunkt och som tillhandahåller frågans `id` värdet i begärandesökvägen.
 
 **API-format**
 
@@ -283,7 +283,7 @@ PATCH /queries/{QUERY_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | `id`-värdet för frågan som du vill avbryta. |
+| `{QUERY_ID}` | The `id` värdet på frågan som du vill avbryta. |
 
 
 **Begäran**
@@ -294,7 +294,7 @@ Denna API-begäran använder JSON Patch-syntaxen för sin nyttolast. Mer informa
 curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8f-463a-a182-54bccb9954fc \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json',
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{

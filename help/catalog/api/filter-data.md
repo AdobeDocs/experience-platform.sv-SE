@@ -5,28 +5,27 @@ title: Filtrera katalogdata med hjälp av frågeparametrar
 topic-legacy: developer guide
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '2121'
 ht-degree: 0%
 
 ---
 
-# Filtrera [!DNL Catalog]-data med frågeparametrar
+# Filter [!DNL Catalog] data med frågeparametrar
 
-Med API:t [!DNL Catalog Service] kan svarsdata filtreras med hjälp av frågeparametrar för begäran. En del av de bästa sätten för [!DNL Catalog] är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra den övergripande prestandan.
+The [!DNL Catalog Service] API tillåter att svarsdata filtreras med hjälp av frågeparametrar. En del av bästa praxis för [!DNL Catalog] är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra den övergripande prestandan.
 
-Det här dokumentet innehåller de vanligaste metoderna för filtrering av [!DNL Catalog]-objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [handboken för katalogutvecklare](getting-started.md) för att lära dig mer om hur du interagerar med API:t [!DNL Catalog]. Mer allmän information om [!DNL Catalog Service] finns i [[!DNL Catalog] översikten](../home.md).
+Det här dokumentet innehåller de vanligaste filtreringsmetoderna [!DNL Catalog] -objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [Utvecklarhandbok för kataloger](getting-started.md) om du vill veta mer om hur du interagerar med [!DNL Catalog] API. Mer allmän information om [!DNL Catalog Service], se [[!DNL Catalog] översikt](../home.md).
 
 ## Begränsa returnerade objekt
 
-Frågeparametern `limit` begränsar antalet objekt som returneras i ett svar. [!DNL Catalog] svaren mäts automatiskt i enlighet med de konfigurerade gränserna:
+The `limit` frågeparametern begränsar antalet objekt som returneras i ett svar. [!DNL Catalog] svaren mäts automatiskt i enlighet med de konfigurerade gränserna:
 
-* Om ingen `limit`-parameter anges är det maximala antalet objekt per svarsnyttolast 20.
-* Om `observableSchema` begärs med frågeparametern `properties` för datauppsättningsfrågor är det maximala antalet returnerade datauppsättningar 20.
+* Om en `limit` ingen parameter har angetts, det maximala antalet objekt per svarsnyttolast är 20.
+* För datauppsättningsfrågor, om `observableSchema` begärs med `properties` frågeparameter, det maximala antalet returnerade datauppsättningar är 20.
 * Den globala gränsen för alla andra katalogfrågor är 100 objekt.
-* Ogiltiga `limit`-parametrar (inklusive `limit=0`) resulterar i felsvar på 400-nivå som konturerar korrekta intervall.
+* Ogiltig `limit` parametrar (inklusive `limit=0`) resulterar i 400-nivåfel som anger rätt intervall.
 * Gränser eller förskjutningar som skickas som frågeparametrar har företräde framför de som skickas som rubriker.
 
 **API-format**
@@ -37,7 +36,7 @@ GET /{OBJECT_TYPE}?limit={LIMIT}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{LIMIT}` | Ett heltal som anger antalet objekt som ska returneras, från 1 till 100. |
 
 **Begäran**
@@ -49,13 +48,13 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med datauppsättningar, begränsad till det antal som anges av frågeparametern `limit`.
+Ett godkänt svar returnerar en lista med datauppsättningar, begränsad till det antal som anges av `limit` frågeparameter.
 
 ```json
 {
@@ -77,11 +76,11 @@ Ett godkänt svar returnerar en lista med datauppsättningar, begränsad till de
 
 ## Begränsa visade egenskaper
 
-Även om du filtrerar antalet objekt som returneras med parametern `limit` kan de returnerade objekten ofta innehålla mer information än du faktiskt behöver. För att ytterligare minska belastningen på systemet är det bäst att filtrera svaren så att de bara innehåller de egenskaper som du behöver.
+Även vid filtrering av antalet objekt som returneras med `limit` -parametern kan de returnerade objekten i sig ofta innehålla mer information än du behöver. För att ytterligare minska belastningen på systemet är det bäst att filtrera svaren så att de bara innehåller de egenskaper som du behöver.
 
-Parametern `properties` filtrerar svarsobjekt så att de bara returnerar en uppsättning angivna egenskaper. Parametern kan ställas in så att den returnerar en eller flera egenskaper.
+The `properties` parameterfiltrerar svarsobjekt så att bara en uppsättning angivna egenskaper returneras. Parametern kan ställas in så att den returnerar en eller flera egenskaper.
 
-Parametern `properties` accepterar bara objektegenskaper på den översta nivån, vilket innebär att du för följande exempelobjekt kan tillämpa filter för `name`, `description` och `subItem`, men INTE för `sampleKey`.
+The `properties` parametern accepterar bara objektegenskaper på den översta nivån, vilket innebär att du kan använda filter för följande exempelobjekt `name`, `description`och `subItem`, men INTE för `sampleKey`.
 
 ```json
 {
@@ -105,26 +104,26 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY}` | Namnet på ett attribut som ska inkluderas i svarstexten. |
-| `{OBJECT_ID}` | Den unika identifieraren för ett specifikt [!DNL Catalog]-objekt som hämtas. |
+| `{OBJECT_ID}` | Unik identifierare för en specifik [!DNL Catalog] objekt som hämtas. |
 
 **Begäran**
 
-Följande begäran hämtar en lista med datauppsättningar. Den kommaavgränsade listan med egenskapsnamn som anges med parametern `properties` anger vilka egenskaper som ska returneras i svaret. En `limit`-parameter ingår också, vilket begränsar antalet returnerade datauppsättningar. Om begäran inte innehöll en `limit`-parameter skulle svaret innehålla maximalt 20 objekt.
+Följande begäran hämtar en lista med datauppsättningar. Den kommaavgränsade listan med egenskapsnamn som anges under `properties` parameter anger de egenskaper som ska returneras i svaret. A `limit` parametern ingår också, vilket begränsar antalet returnerade datauppsättningar. Om begäran inte innehöll en `limit` -parametern innehåller svaret högst 20 objekt.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/dataSets?limit=4&properties=name,schemaRef' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med [!DNL Catalog]-objekt där endast de begärda egenskaperna visas.
+Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt där endast de begärda egenskaperna visas.
 
 ```json
 {
@@ -158,13 +157,13 @@ Baserat på ovanstående svar kan man dra slutsatsen följande:
 
 >[!NOTE]
 >
->I egenskapen `schemaRef` för varje datauppsättning anger versionsnumret den senaste delversionen av schemat. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden.
+>I `schemaRef` för varje datauppsättning, versionsnumret anger den senaste delversionen av schemat. Se avsnittet om [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden för mer information.
 
 ## Startindex för förskjutning av svarslista
 
-Frågeparametern `start` förskjuter svarslistan framåt med ett angivet nummer, med nollbaserad numrering. `start=2` skulle till exempel förskjuta svaret så att det startar på det tredje listade objektet.
+The `start` frågeparametern förskjuter svarslistan framåt med ett angivet nummer, med hjälp av nollbaserad numrering. Till exempel: `start=2` skulle förskjuta svaret så att det startar på det tredje listade objektet.
 
-Om parametern `start` inte är kopplad till en `limit`-parameter, är det maximala antalet returnerade objekt 20.
+Om `start` parametern är inte kopplad till en `limit` -parametern är det maximala antalet returnerade objekt 20.
 
 **API-format**
 
@@ -179,20 +178,20 @@ GET /{OBJECT_TYPE}?start={OFFSET}
 
 **Begäran**
 
-Följande begäran hämtar en lista med datauppsättningar, som förskjuts till det femte objektet (`start=4`) och begränsar svaret till två returnerade datauppsättningar (`limit=2`).
+Följande begäran hämtar en lista med datauppsättningar, som förskjuter det femte objektet (`start=4`) och begränsa svaret till två returnerade datauppsättningar (`limit=2`).
 
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/catalog/dataSets?start=4&limit=2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Svaret innehåller ett JSON-objekt som innehåller två objekt på den översta nivån (`limit=2`), ett för varje datauppsättning och deras information (detaljerna har konverterats i exemplet). Svaret ändras med fyra (`start=4`), vilket innebär att datamängderna som visas är nummer fem och sex kronologiskt.
+Svaret innehåller ett JSON-objekt som innehåller två objekt på den översta nivån (`limit=2`), en för varje datauppsättning och deras detaljer (detaljerna har komprimerats i exemplet). Svaret ändras med fyra (`start=4`), vilket innebär att de data som visas är nummer fem och sex kronologiskt.
 
 ```json
 {
@@ -203,23 +202,23 @@ Svaret innehåller ett JSON-objekt som innehåller två objekt på den översta 
 
 ## Filtrera efter tagg
 
-Vissa katalogobjekt stöder användningen av ett `tags`-attribut. Taggar kan bifoga information till ett objekt och sedan användas för att hämta objektet. Vilka taggar som ska användas och hur de ska användas beror på organisationens processer.
+Vissa katalogobjekt stöder användning av en `tags` -attribut. Taggar kan bifoga information till ett objekt och sedan användas för att hämta objektet. Vilka taggar som ska användas och hur de ska användas beror på organisationens processer.
 
 Det finns några begränsningar att tänka på när du använder taggar:
 
 * De enda katalogobjekt som för närvarande stöder taggar är datamängder, grupper och anslutningar.
 * Taggnamnen är unika för din IMS-organisation.
 * Adobe kan använda taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
-* Följande taggnamn är reserverade för användning i [!DNL Experience Platform] och kan därför inte deklareras som ett taggnamn för din organisation:
-   * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av  [[!DNL Real-time Customer Profile]](../../profile/home.md).
-   * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av  [[!DNL Identity Service]](../../identity-service/home.md).
+* Följande taggnamn är reserverade för användning i [!DNL Experience Platform]och kan därför inte deklareras som ett taggnamn för din organisation:
+   * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Real-time Customer Profile]](../../profile/home.md).
+   * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Identity Service]](../../identity-service/home.md).
 
-Nedan visas ett exempel på en datauppsättning som innehåller en `tags`-egenskap. Taggarna i den egenskapen har formen av nyckelvärdepar, där varje taggvärde visas som en array som innehåller en enda sträng:
+Nedan visas ett exempel på en datauppsättning som innehåller en `tags` -egenskap. Taggarna i den egenskapen har formen av nyckelvärdepar, där varje taggvärde visas som en array som innehåller en enda sträng:
 
 ```json
 {
     "5be1f2ecc73c1714ceba66e2": {
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "tags": {
             "sampleTag": [
                 "123456"
@@ -253,9 +252,9 @@ Nedan visas ett exempel på en datauppsättning som innehåller en `tags`-egensk
 
 **API-format**
 
-Värdena för parametern `tags` har formen av nyckelvärdepar i formatet `{TAG_NAME}:{TAG_VALUE}`. Flera nyckelvärdepar kan anges i form av en kommaavgränsad lista. När flera taggar anges antas en AND-relation.
+Värden för `tags` parametern har formen av nyckelvärdepar, med formatet `{TAG_NAME}:{TAG_VALUE}`. Flera nyckelvärdepar kan anges i form av en kommaavgränsad lista. När flera taggar anges antas en AND-relation.
 
-Parametern stöder jokertecken (`*`) för taggvärden. En söksträng på `test*` returnerar till exempel alla objekt där taggvärdet börjar med &quot;test&quot;. En söksträng som endast består av ett jokertecken kan användas för att filtrera objekt baserat på om de innehåller en viss tagg eller inte, oavsett dess värde.
+Parametern stöder jokertecken (`*`) för taggvärden. En söksträng med `test*` returnerar alla objekt där taggvärdet börjar med &quot;test&quot;. En söksträng som endast består av ett jokertecken kan användas för att filtrera objekt baserat på om de innehåller en viss tagg eller inte, oavsett dess värde.
 
 ```http
 GET /{OBJECT_TYPE}?tags={TAG_NAME}:{TAG_VALUE}
@@ -266,7 +265,7 @@ GET /{OBJECT_TYPE}?tags={TAG_NAME}:*
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
 | `{TAG_NAME}` | Namnet på taggen som ska filtreras efter. |
 | `{TAG_VALUE}` | Värdet på taggen som ska filtreras efter. Stöder jokertecken (`*`). |
 
@@ -279,19 +278,19 @@ curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/dataSets?tags=sampleTag:123456,secondTag:* \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med datauppsättningar som innehåller `sampleTag` med värdet &quot;123456&quot;, AND `secondTag` med vilket värde som helst. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett godkänt svar returnerar en lista med datauppsättningar som innehåller `sampleTag` med värdet &quot;123456&quot;, AND `secondTag` med vilket värde som helst. Om inte en gräns också anges innehåller svaret högst 20 objekt.
 
 ```json
 {
     "5b67f4dd9f6e710000ea9da4": {
             "version": "1.0.2",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "Example Dataset 1",
             "created": 1533539550237,
             "updated": 1533539552416,
@@ -311,7 +310,7 @@ Ett lyckat svar returnerar en lista med datauppsättningar som innehåller `samp
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.0",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "Example Dataset 2",
             "created": 1533539550237,
             "updated": 1533539552416,
@@ -337,7 +336,7 @@ Ett lyckat svar returnerar en lista med datauppsättningar som innehåller `samp
 
 ## Filtrera efter datumintervall
 
-Vissa slutpunkter i API:t [!DNL Catalog] har frågeparametrar som tillåter intervallfrågor, oftast för datum.
+Vissa slutpunkter i [!DNL Catalog] API har frågeparametrar som tillåter intervallfrågor, oftast för datum.
 
 **API-format**
 
@@ -358,19 +357,19 @@ curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/batches?createdAfter=1554076800000&createdBefore=1556668799000' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angivna datumintervallet. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angivna datumintervallet. Om inte en gräns också anges innehåller svaret högst 20 objekt.
 
 ```json
 {
     "5b67f4dd9f6e710000ea9da4": {
             "version": "1.0.2",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "Example Dataset 1",
             "created": 1554930967705,
             "updated": 1554931119718,
@@ -382,7 +381,7 @@ Ett godkänt svar innehåller en lista med [!DNL Catalog] objekt som ligger inom
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.0",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "Example Dataset 2",
             "created": 1554974386247,
             "updated": 1554974386268,
@@ -397,11 +396,11 @@ Ett godkänt svar innehåller en lista med [!DNL Catalog] objekt som ligger inom
 
 ## Sortera efter egenskap
 
-Med frågeparametern `orderBy` kan du sortera (ordna) svarsdata baserat på ett angivet egenskapsvärde. Den här parametern kräver &quot;direction&quot; (`asc` för stigande eller `desc` för fallande), följt av kolon (`:`) och sedan en egenskap som resultaten ska sorteras efter. Om ingen riktning anges kommer standardriktningen att bli stigande.
+The `orderBy` Med frågeparametern kan du sortera (ordna) svarsdata baserat på ett angivet egenskapsvärde. Den här parametern kräver en &quot;direction&quot; (`asc` för stigande eller `desc` för fallande), följt av ett kolon (`:`) och sedan en egenskap som du vill sortera resultaten efter. Om ingen riktning anges kommer standardriktningen att bli stigande.
 
 Flera sorteringsegenskaper kan anges i en kommaseparerad lista. Om den första sorteringsegenskapen skapar flera objekt som innehåller samma värde för den egenskapen, används den andra sorteringsegenskapen för att ytterligare sortera de matchande objekten.
 
-Ta till exempel följande fråga: `orderBy=name,desc:created`. Resultaten sorteras i stigande ordning baserat på den första sorteringsegenskapen, `name`. Om flera poster har samma `name`-egenskap sorteras de matchande posterna sedan efter den andra sorteringsegenskapen, `created`. Om inga returnerade poster har samma `name`-värde räknas inte egenskapen `created` in i sorteringen.
+Ta till exempel följande fråga: `orderBy=name,desc:created`. Resultaten sorteras i stigande ordning baserat på den första sorteringsegenskapen. `name`. I fall där flera poster delar samma `name` -egenskapen sorteras de matchande posterna sedan efter den andra sorteringsegenskapen, `created`. Om inga returnerade poster delar samma `name`, `created` egenskapen spelar ingen roll i sorteringen.
 
 
 **API-format**
@@ -419,26 +418,26 @@ GET /{OBJECT_TYPE}?orderBy={PROPERTY_NAME_1},desc:{PROPERTY_NAME_2}
 
 **Begäran**
 
-Följande begäran hämtar en lista med datauppsättningar sorterade efter deras `name`-egenskap. Om en datamängd har samma `name`-värde kommer dessa datauppsättningar i sin tur att ordnas av sin `updated`-egenskap i fallande ordning.
+Följande begäran hämtar en lista med datauppsättningar sorterade efter deras `name` -egenskap. Om någon datauppsättning delar samma `name`, kommer dessa datauppsättningar i sin tur att beställas av deras `updated` i fallande ordning.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/dataSets?orderBy=name,desc:updated' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett svar innehåller en lista med [!DNL Catalog]-objekt som är sorterade enligt parametern `orderBy`. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt `orderBy` parameter. Om inte en gräns också anges innehåller svaret högst 20 objekt.
 
 ```json
 {
     "5b67f4dd9f6e710000ea9da4": {
             "version": "1.0.2",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "0405",
             "created": 1554930967705,
             "updated": 1554931119718,
@@ -450,7 +449,7 @@ Ett svar innehåller en lista med [!DNL Catalog]-objekt som är sorterade enligt
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.3",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "AAM Dataset",
             "created": 1554974386247,
             "updated": 1554974386268,
@@ -462,7 +461,7 @@ Ett svar innehåller en lista med [!DNL Catalog]-objekt som är sorterade enligt
     },
     "5cd3a129ec106214b722a939": {
             "version": "1.0.2",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "AAM Dataset",
             "created": 1554028394852,
             "updated": 1554130582960,
@@ -484,11 +483,11 @@ Ett svar innehåller en lista med [!DNL Catalog]-objekt som är sorterade enligt
 
 ### Använda enkla filter {#using-simple-filters}
 
-Med enkla filter kan du filtrera svar baserat på specifika egenskapsvärden. Ett enkelt filter har formen `{PROPERTY_NAME}={VALUE}`.
+Med enkla filter kan du filtrera svar baserat på specifika egenskapsvärden. Ett enkelt filter har formen av `{PROPERTY_NAME}={VALUE}`.
 
-Frågan `name=exampleName` returnerar till exempel bara objekt vars `name`-egenskap innehåller värdet &quot;exampleName&quot;. Däremot returnerar frågan `name=!exampleName` bara objekt vars `name`-egenskap är **inte** &quot;exampleName&quot;.
+Frågan `name=exampleName` returnerar endast objekt vars `name` egenskapen innehåller värdet &quot;exampleName&quot;. Däremot är frågan `name=!exampleName` returnerar endast objekt vars `name` egenskapen är **not** &quot;exampleName&quot;.
 
-Dessutom har enkla filter stöd för att fråga efter flera värden för en enda egenskap. När flera värden anges returnerar svaret objekt vars egenskap matchar **någon** av värdena i den angivna listan. Du kan invertera en fråga med flera värden genom att lägga till ett `!`-tecken i listan som prefix och bara returnera objekt vars egenskapsvärde är **inte** i den angivna listan (till exempel `name=!exampleName,anotherName`).
+Dessutom har enkla filter stöd för att fråga efter flera värden för en enda egenskap. När flera värden anges returnerar svaret objekt vars egenskap matchar **alla** av värdena i den angivna listan. Du kan invertera en fråga med flera värden genom att använda ett prefix `!` tecken till listan, endast objekt vars egenskapsvärde är **not** i den angivna listan (t.ex. `name=!exampleName,anotherName`).
 
 **API-format**
 
@@ -501,20 +500,20 @@ GET /{OBJECT_TYPE}?{PROPERTY_NAME}=!{VALUE_1},{VALUE_2},{VALUE_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY_NAME}` | Namnet på den egenskap vars värde du vill filtrera efter. |
 | `{VALUE}` | Ett egenskapsvärde som avgör vilka resultat som ska inkluderas (eller exkluderas, beroende på frågan). |
 
 **Begäran**
 
-Följande begäran hämtar en lista med datauppsättningar, filtrerad så att den bara innehåller datauppsättningar vars `name`-egenskap har värdet &quot;exampleName&quot; eller &quot;anotherName&quot;.
+Följande begäran hämtar en lista med datauppsättningar, filtrerad så att den endast innehåller datauppsättningar vars `name` -egenskapen har värdet &quot;exampleName&quot; eller &quot;anotherName&quot;.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/dataSets?name=exampleName,anotherName' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -526,7 +525,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
 {
     "5b67f4dd9f6e710000ea9da4": {
             "version": "1.0.2",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "exampleName",
             "created": 1554930967705,
             "updated": 1554931119718,
@@ -538,7 +537,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.3",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "anotherName",
             "created": 1554974386247,
             "updated": 1554974386268,
@@ -551,11 +550,11 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
 }
 ```
 
-### Använda parametern `property` {#using-the-property-parameter}
+### Använda `property` parameter {#using-the-property-parameter}
 
-Frågeparametern `property` ger större flexibilitet för egenskapsbaserad filtrering än enkla filter. Förutom filtrering baserad på om en egenskap har ett visst värde kan parametern `property` använda andra jämförelseoperatorer (till exempel&quot;mer än&quot; (`>`) och&quot;mindre än&quot; (`<`)) samt reguljära uttryck för att filtrera efter egenskapsvärden. Det kan också filtrera efter om en egenskap finns eller inte, oavsett dess värde.
+The `property` frågeparametern ger större flexibilitet för egenskapsbaserad filtrering än enkla filter. Förutom att filtrera baserat på om en egenskap har ett visst värde, kan `property` parametern kan använda andra jämförelseoperatorer (till exempel&quot;mer än&quot;)`>`) och &quot;mindre än&quot; (`<`)) samt reguljära uttryck för att filtrera efter egenskapsvärden. Det kan också filtrera efter om en egenskap finns eller inte, oavsett dess värde.
 
-Parametern `property` accepterar bara objektegenskaper på den översta nivån, vilket innebär att du för följande exempelobjekt kan filtrera efter egenskap för `name`, `description` och `subItem`, men INTE för `sampleKey`.
+The `property` parametern accepterar bara objektegenskaper på den översta nivån, vilket innebär att du för följande exempelobjekt kan filtrera efter egenskap för `name`, `description`och `subItem`, men INTE för `sampleKey`.
 
 ```json
 {
@@ -577,26 +576,26 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{CONDITION}` | Ett villkorsuttryck som anger vilken egenskap som ska efterfrågas och hur dess värde ska utvärderas. Nedan finns exempel. |
 
-Värdet för parametern `property` stöder flera olika typer av villkorsuttryck. I följande tabell visas den grundläggande syntaxen för uttryck som stöds:
+Värdet för `property` -parametern stöder flera olika typer av villkorsuttryck. I följande tabell visas den grundläggande syntaxen för uttryck som stöds:
 
 | Symbol(er) | Beskrivning | Exempel |
 | --- | --- | --- |
 | (Ingen) | Om du anger egenskapsnamnet utan operator returneras bara objekt där egenskapen finns, oavsett dess värde. | `property=name` |
-| ! | Om du lägger till ett `!`-värde för en `property`-parameter returneras endast objekt där egenskapen **inte** finns. | `property=!name` |
-| ~ | Returnerar endast objekt vars egenskapsvärden (sträng) matchar ett reguljärt uttryck som anges efter tilde-symbolen (`~`). | `property=name~^example` |
+| ! | Prefixera ett`!`&quot; till värdet av `property` parametern returnerar bara objekt där egenskapen gör det **not** finns. | `property=!name` |
+| ~ | Returnerar endast objekt vars egenskapsvärden (sträng) matchar ett reguljärt uttryck som anges efter tilde (`~`). | `property=name~^example` |
 | == | Returnerar endast objekt vars egenskapsvärden exakt matchar strängen som anges efter double-equals-symbolen (`==`). | `property=name==exampleName` |
-| != | Returnerar endast objekt vars egenskapsvärden **inte** matchar strängen som anges efter symbolen not-equals (`!=`). | `property=name!=exampleName` |
-| &lt;> | Returnerar endast objekt vars egenskapsvärden är mindre än (men inte lika med) ett angivet värde. | `property=version<1.0.0` |
-| &lt;> | Returnerar endast objekt vars egenskapsvärden är mindre än (eller lika med) ett angivet värde. | `property=version<=1.0.0` |
+| != | Returnerar endast objekt vars egenskapsvärden gör det **not** matchningssträng som anges efter symbolen not-equals (`!=`). | `property=name!=exampleName` |
+| &lt; | Returnerar endast objekt vars egenskapsvärden är mindre än (men inte lika med) ett angivet värde. | `property=version<1.0.0` |
+| &lt;= | Returnerar endast objekt vars egenskapsvärden är mindre än (eller lika med) ett angivet värde. | `property=version<=1.0.0` |
 | > | Returnerar endast objekt vars egenskapsvärden är större än (men inte lika med) ett angivet värde. | `property=version>1.0.0` |
 | >= | Returnerar endast objekt vars egenskapsvärden är större än (eller lika med) ett angivet värde. | `property=version>=1.0.0` |
 
 >[!NOTE]
 >
->Egenskapen `name` stöder användningen av jokertecknet `*`, antingen som hela söksträngen eller som en del av den. Jokertecken matchar tomma tecken så att söksträngen `te*st` matchar värdet &quot;test&quot;. Asterisker kan fördubblas (`**`). En dubbel asterisk i en söksträng representerar en enkel asterisk som en litteral sträng.
+>The `name` egenskapen har stöd för användning av jokertecken `*`, antingen som hela söksträngen eller som en del av den. Jokertecken matchar tomma tecken, så att söksträngen `te*st` matchar värdet &quot;test&quot;. Asterisker kan undvikas genom att fördubbla dem (`**`). En dubbel asterisk i en söksträng representerar en enkel asterisk som en litteral sträng.
 
 **Begäran**
 
@@ -607,7 +606,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/catalog/dataSets?property=version>1.0.3 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -619,7 +618,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
 {
     "5b67f4dd9f6e710000ea9da4": {
             "version": "1.1.2",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "sampleDataset",
             "created": 1554930967705,
             "updated": 1554931119718,
@@ -631,7 +630,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.6",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "exampleDataset",
             "created": 1554974386247,
             "updated": 1554974386268,
@@ -643,7 +642,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
     },
     "5cd3a129ec106214b722a939": {
             "version": "1.0.4",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "name": "anotherDataset",
             "created": 1554028394852,
             "updated": 1554130582960,
@@ -658,7 +657,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
 
 ## Kombinera flera filter
 
-Med ett et-tecken (`&`) kan du kombinera flera filter i en enda begäran. När ytterligare villkor läggs till i en begäran antas en AND-relation.
+Använda ett et-tecken (`&`) kan du kombinera flera filter i en enda begäran. När ytterligare villkor läggs till i en begäran antas en AND-relation.
 
 **API-format**
 

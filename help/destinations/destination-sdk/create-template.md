@@ -2,18 +2,18 @@
 description: Som en del av Destinationen SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. Den här sidan beskriver hur du skapar och testar en meddelandeomformningsmall.
 title: Skapa och testa en meddelandeomformningsmall
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: 97ffaa2a53dbbf5a7be5f002e63be4ed3339f565
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '960'
 ht-degree: 0%
 
 ---
 
-# Create and test a message transformation template {#create-template}
+# Skapa och testa en meddelandeomformningsmall {#create-template}
 
 ## Översikt {#overview}
 
-Som en del av Destinationen SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. This page describes how to create and test a message transformation template. For information on how to test your destination, read [Test your destination configuration](./test-destination.md).
+Som en del av Destinationen SDK har Adobe utvecklarverktyg som hjälper dig att konfigurera och testa destinationen. Den här sidan beskriver hur du skapar och testar en meddelandeomformningsmall. Information om hur du testar destinationen finns i [Testa målkonfigurationen](./test-destination.md).
 
 Till **skapa och testa en meddelandeomvandlingsmall** mellan målschemat i Adobe Experience Platform och meddelandeformatet som stöds av ditt mål, använd *Mallredigeringsverktyg* beskrivs närmare nedan.  Läs mer om dataomvandlingen mellan käll- och målschemat i [meddelandeformatdokument](./message-format.md#using-templating).
 
@@ -23,23 +23,23 @@ Nedan visas hur du skapar och testar en meddelandeomformningsmall som passar in 
 
 ## Varför du måste skapa och testa en meddelandeomformningsmall {#why-create-message-transformation-template}
 
-One of the first steps in creating your destination in Destination SDK is to think about how the data format for segment membership, identities, and profile attributes is transformed when exported from Adobe Experience Platform to your destination. Hitta information om omvandlingen mellan Adobe XDM-schemat och målschemat i [meddelandeformatdokument](./message-format.md#using-templating).
+Ett av de första stegen i att skapa destinationen i Destination SDK är att tänka på hur dataformatet för segmentmedlemskap, identiteter och profilattribut ändras när de exporteras från Adobe Experience Platform till destinationen. Hitta information om omvandlingen mellan Adobe XDM-schemat och målschemat i [meddelandeformatdokument](./message-format.md#using-templating).
 
 För att omvandlingen ska lyckas måste du skapa en omformningsmall som liknar den i det här exemplet: [Skapa en mall som skickar segment, identiteter och profilattribut](./message-format.md#segments-identities-attributes).
 
 Adobe har ett mallverktyg som gör att du kan skapa och testa meddelandemallen som omformar data från Adobe XDM-formatet till det format som stöds av målet. Verktyget har två API-slutpunkter som du kan använda:
-* Use the *sample template API* to get a sample template.
-* Använd *rendera mall-API* för att återge exempelmallen så att du kan jämföra resultatet med målets förväntade dataformat. När du har jämfört exporterade data med det dataformat som förväntas av målet kan du redigera mallen. This way, the exported data you generate matches the data format expected by your destination.
+* Använd *exempel-API för mall* för att hämta en exempelmall.
+* Använd *rendera mall-API* för att återge exempelmallen så att du kan jämföra resultatet med målets förväntade dataformat. När du har jämfört exporterade data med det dataformat som förväntas av målet kan du redigera mallen. På så sätt matchar de exporterade data som du genererar det dataformat som förväntas av målet.
 
-## Steps to complete before creating the template {#prerequisites}
+## Steg som ska slutföras innan mallen skapas {#prerequisites}
 
 Innan du är redo att skapa mallen måste du slutföra stegen nedan:
 
 1. [Skapa en målserverkonfiguration](./destination-server-api.md). Mallen som du skapar skiljer sig åt, baserat på det värde som du anger för `maxUsersPerRequest` parameter.
-   * Use `maxUsersPerRequest=1` if you want an API call to your destination to include a single profile, along with its segment qualifications, identities, and profile attributes.
-   * Use `maxUsersPerRequest` with a value greater than one if you want an API call to your destination to include multiple profiles, along with their segment qualifications, identities, and profile attributes.
-2. [Create a destination configuration](./destination-configuration-api.md#create) and add the ID of the destination server configuration in `destinationDelivery.destinationServerId`.
-3. [Get the ID of the destination configuration](./destination-configuration-api.md#retrieve-list) that you just created, so you can use it in the template creation tool.
+   * Använd `maxUsersPerRequest=1` om du vill att ett API-anrop till målet ska innehålla en enda profil, tillsammans med dess segmentkvalifikationer, identiteter och profilattribut.
+   * Använd `maxUsersPerRequest` med ett större värde än ett om du vill att ett API-anrop till målet ska innehålla flera profiler, tillsammans med deras segmentkvalifikationer, identiteter och profilattribut.
+2. [Skapa en målkonfiguration](./destination-configuration-api.md#create) och lägg till ID:t för målserverkonfigurationen i `destinationDelivery.destinationServerId`.
+3. [Hämta ID:t för målkonfigurationen](./destination-configuration-api.md#retrieve-list) som du just har skapat, så att du kan använda det i mallverktyget.
 4. Förstå [vilka funktioner och filter du kan använda](./supported-functions.md) i meddelandeomformningsmallen.
 
 ## Använda exempelmallens API och återge mall-API för att skapa en mall för ditt mål {#iterative-process}
@@ -48,15 +48,15 @@ Innan du är redo att skapa mallen måste du slutföra stegen nedan:
 >
 >Innan du skapar och redigerar din meddelandeomformningsmall kan du börja med att anropa [rendera mall-API-slutpunkt](./render-template-api.md#render-exported-data) med en enkel mall som exporterar dina Raw-profiler utan att använda några omformningar. Syntaxen för den enkla mallen är: <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
-The process to get and test the template is iterative. Repeat the steps below until the exported profiles match your destination&#39;s expected data format.
+Processen att hämta och testa mallen är iterativ. Upprepa stegen nedan tills de exporterade profilerna matchar målets förväntade dataformat.
 
 1. Första, [hämta en exempelmall](./create-template.md#sample-template-api).
 2. Använd exempelmallen som utgångspunkt för att skapa ett eget utkast.
-3. Call the [render template API endpoint](./create-template.md#render-template-api) with your own template. Adobe genererar exempelprofiler baserat på ditt schema och returnerar resultatet eller eventuella fel som påträffats.
+3. Ring [rendera mall-API-slutpunkt](./create-template.md#render-template-api) med en egen mall. Adobe genererar exempelprofiler baserat på ditt schema och returnerar resultatet eller eventuella fel som påträffats.
 4. Jämför exporterade data med det dataformat som du förväntar dig av målet. Redigera mallen om det behövs.
 5. Upprepa den här processen tills de exporterade profilerna matchar målets förväntade dataformat.
 
-## Get a sample template using the Sample template API {#sample-template-api}
+## Hämta en exempelmall med exempelmallens API {#sample-template-api}
 
 >[!NOTE]
 >
@@ -70,11 +70,11 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 --header 'Accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
---header 'x-gw-ims-org-id: {IMS_ORG}' \
+--header 'x-gw-ims-org-id: {ORG_ID}' \
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-If the destination ID you provide corresponds to a destination configuration with [best effort aggregation](./destination-configuration.md#best-effort-aggregation) and `maxUsersPerRequest=1` in the aggregation policy, the request returns a sample template similar to this one:
+Om det mål-ID du anger motsvarar en målkonfiguration med [bästa ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) och `maxUsersPerRequest=1` I sammansättningsprincipen returnerar begäran en exempelmall som liknar denna:
 
 ```python
 {#- THIS is an example template for a single profile -#}
@@ -107,7 +107,7 @@ If the destination ID you provide corresponds to a destination configuration wit
 }
 ```
 
-If the destination ID you provide corresponds to a destination server template with [configurable aggregation](./destination-configuration.md#configurable-aggregation) or [best effort aggregation](./destination-configuration.md#best-effort-aggregation) with `maxUsersPerRequest` greater than one, the request returns a sample template similar to this one:
+Om det mål-ID du anger motsvarar en målservermall med [konfigurerbar aggregering](./destination-configuration.md#configurable-aggregation) eller [bästa ansträngningsaggregering](./destination-configuration.md#best-effort-aggregation) med `maxUsersPerRequest` mer än en, returnerar begäran en exempelmall som liknar denna:
 
 ```python
 {#- THIS is an example template for multiple profiles -#}
@@ -146,19 +146,19 @@ If the destination ID you provide corresponds to a destination server template w
 }
 ```
 
-## Character-escape your template {#character-escape-template}
+## Tecken-undgå din mall {#character-escape-template}
 
 Innan du använder mallen för att återge profiler som matchar målets förväntade format, måste du undvika mallen som i skärminspelningen nedan.
 
-![Video that shows how to character-escape a template using an online character escaping tool](./assets/escape-characters.gif)
+![Video som visar hur du kan kringgå en mall med hjälp av ett onlineverktyg för teckenigenkänning](./assets/escape-characters.gif)
 
-Du kan använda ett onlineverktyg för teckenigenkänning. The demo above uses the [JSON Escape formatter](https://jsonformatter.org/json-escape).
+Du kan använda ett onlineverktyg för teckenigenkänning. Demon ovan använder [JSON Escape-format](https://jsonformatter.org/json-escape).
 
 ## Återge mall-API {#render-template-api}
 
-After creating a message transformation template using the [sample template API](./create-template.md#sample-template-api), you can [render the template](./render-template-api.md) to generate exported data based on it. På så sätt kan du verifiera om de profiler som Adobe Experience Platform skulle exportera till ditt mål matchar målets förväntade format.
+När du har skapat en meddelandeomformningsmall med [exempel-API för mall](./create-template.md#sample-template-api)kan du [återge mallen](./render-template-api.md) för att generera exporterade data baserat på dessa. På så sätt kan du verifiera om de profiler som Adobe Experience Platform skulle exportera till ditt mål matchar målets förväntade format.
 
-Refer to the API reference for examples of calls that you can make:
+Se API-referensen för exempel på anrop som du kan göra:
 
 * [Återge en mall utan profiler som skickats i brödtexten](./render-template-api.md#multiple-profiles-no-body)
 * [Återge en mall med profiler som skickats i brödtexten](./render-template-api.md#multiple-profiles-with-body)
@@ -167,4 +167,4 @@ Redigera mallen och anropa återgivningsmallens API-slutpunkt tills de exportera
 
 ## Lägg till mallen för escape-konverteringar i målserverkonfigurationen
 
-Once you are satisfied with your message transformation template, add it to your [destination server configuration](./server-and-template-configuration.md), in `httpTemplate.requestBody.value`.
+När du är nöjd med mallen för meddelandeomvandling lägger du till den i [målserverkonfiguration](./server-and-template-configuration.md), in `httpTemplate.requestBody.value`.

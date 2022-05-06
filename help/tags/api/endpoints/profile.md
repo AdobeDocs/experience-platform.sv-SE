@@ -1,7 +1,8 @@
 ---
 title: Profilslutpunkt
 description: Lär dig hur du anropar slutpunkten /profiles i Reaktors API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: d0434098-f49a-45f3-9772-488bd3c134aa
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 1%
@@ -10,17 +11,17 @@ ht-degree: 1%
 
 # Profilslutpunkt
 
-I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan förlitar sig i stället på Adobe-ID:n som hanteras av [Adobe&#39;s identity management system (IMS)](https://helpx.adobe.com/enterprise/using/identity.html).
+I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan bygger i stället på Adobe-ID:n som hanteras av [Adobe system för identitetshantering (IMS)](https://helpx.adobe.com/enterprise/using/identity.html).
 
 En profil innehåller all information om den inloggade användaren, inklusive alla IMS-organisationer de tillhör, de produktprofiler de tillhör inom varje organisation och de rättigheter de har från varje produktprofil.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta den aktuella profilen {#lookup}
 
-Du kan hämta information om den inloggade profilen genom att göra en GET-förfrågan till `/profile`-slutpunkten.
+Du kan hämta information om den inloggade profilen genom att göra en GET-förfrågan till `/profile` slutpunkt.
 
 **API-format**
 
@@ -35,7 +36,7 @@ curl -X GET \
   https://reactor.adobe.io/profile \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -99,4 +100,3 @@ Ett godkänt svar returnerar informationen om profilen.
   }
 }
 ```
-

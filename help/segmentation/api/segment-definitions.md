@@ -5,7 +5,7 @@ title: API-slutpunkt för segmentdefinitioner
 topic-legacy: developer guide
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 265607b3b21fda48a92899ec3d750058ca48868a
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 1%
@@ -14,21 +14,21 @@ ht-degree: 1%
 
 # Slutpunkt för segmentdefinitioner
 
-Med Adobe Experience Platform kan du skapa segment som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL predikerar regler för segmentet baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-guiden](../pql/overview.md).
+Med Adobe Experience Platform kan du skapa segment som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentdefinitioner bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med segmentdefinitioner {#list}
 
-Du kan hämta en lista över alla segmentdefinitioner för din IMS-organisation genom att göra en GET-begäran till `/segment/definitions`-slutpunkten.
+Du kan hämta en lista över alla segmentdefinitioner för din IMS-organisation genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
-`/segment/definitions`-slutpunkten har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla segmentdefinitioner som är tillgängliga för organisationen. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+The `/segment/definitions` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla segmentdefinitioner som är tillgängliga för organisationen. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /segment/definitions
@@ -52,7 +52,7 @@ Följande begäran hämtar de två sista segmentdefinitionerna som publicerats i
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -70,7 +70,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
                 "name": "_xdm.context.profile"
             },
             "ttlInDays": 30,
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
                 "sandboxName": "prod",
@@ -110,7 +110,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
                 "name": "_xdm.context.profile"
             },
             "ttlInDays": 30,
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "name": "test segment",
             "description": "",
             "expression": {
@@ -153,7 +153,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
 
 ## Skapa en ny segmentdefinition {#create}
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions`-slutpunkten.
+Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
@@ -167,7 +167,7 @@ POST /segment/definitions
 curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{
@@ -190,16 +190,16 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `name` | **Obligatoriskt.** Ett unikt namn som ska referera till segmentet. |
-| `schema` | **Obligatoriskt.** Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
+| `schema` | **Obligatoriskt.** Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | **Obligatoriskt.** En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
-| `expression.value` | Ett uttryck som överensstämmer med den typ som anges i `expression.format`. |
+| `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 
 >[!NOTE]
 >
->Ett segmentdefinitionsuttryck kan också referera till ett beräknat attribut. Mer information finns i [API-slutpunktshandboken för beräknade attribut](../../profile/computed-attributes/ca-api.md)
+>Ett segmentdefinitionsuttryck kan också referera till ett beräknat attribut. Mer information finns i [API-slutpunktshandbok för beräknat attribut](../../profile/computed-attributes/ca-api.md)
 >
 >Funktionen för beräknade attribut är alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
@@ -215,7 +215,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
     },
     "ttlInDays": 60,
     "profileInstanceId": "ups",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
         "sandboxName": "prod",
@@ -256,7 +256,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
 
 ## Hämta en specifik segmentdefinition {#get}
 
-Du kan hämta detaljerad information om en viss segmentdefinition genom att göra en GET-förfrågan till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen till begäran.
+Du kan hämta detaljerad information om en viss segmentdefinition genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen för begäran.
 
 **API-format**
 
@@ -266,14 +266,14 @@ GET /segment/definitions/{SEGMENT_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SEGMENT_ID}` | Värdet `id` för segmentdefinitionen som du vill hämta. |
+| `{SEGMENT_ID}` | The `id` värdet för segmentdefinitionen som du vill hämta. |
 
 **Begäran**
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -290,7 +290,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
     },
     "ttlInDays": 60,
     "profileInstanceId": "ups",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
         "sandboxName": "prod",
@@ -328,17 +328,17 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat ID för segmentdefinitionen. |
 | `name` | Ett unikt namn som ska referera till segmentet. |
-| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
-| `expression.value` | Ett uttryck som överensstämmer med den typ som anges i `expression.format`. |
+| `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett systemgenererat objekt som anger vilken typ av utvärdering, batch, kontinuerlig (kallas även direktuppspelning) eller synkron, segmentdefinitionen ska genomgå. |
 
 ## Hämta segmentdefinitioner gruppvis {#bulk-get}
 
-Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get`-slutpunkten och ange `id`-värdena för segmentdefinitionerna i begärandetexten.
+Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get` slutpunkt och tillhandahåller `id` värden för segmentdefinitionerna i begärandetexten.
 
 **API-format**
 
@@ -352,7 +352,7 @@ POST /segment/definitions/bulk-get
 curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-get \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
@@ -381,7 +381,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
             },
             "ttlInDays": 60,
             "profileInstanceId": "ups",
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
                 "sandboxName": "prod",
@@ -420,7 +420,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
             },
             "ttlInDays": 60,
             "profileInstanceId": "ups",
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
                 "sandboxName": "prod",
@@ -461,21 +461,21 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat ID för segmentdefinitionen. |
 | `name` | Ett unikt namn som ska referera till segmentet. |
-| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen ett `id`- eller `name`-fält. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
-| `expression.value` | Ett uttryck som överensstämmer med den typ som anges i `expression.format`. |
+| `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett systemgenererat objekt som anger vilken typ av utvärdering, batch, kontinuerlig (kallas även direktuppspelning) eller synkron, segmentdefinitionen ska genomgå. |
 
 ## Ta bort en specifik segmentdefinition {#delete}
 
-Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELETE-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill ta bort i sökvägen till begäran.
+Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELETE-förfrågan till `/segment/definitions` slutpunkt och ange ID:t för segmentdefinitionen som du vill ta bort i sökvägen för begäran.
 
 >[!NOTE]
 >
-> Du kan **inte** ta bort ett segment som används i en målaktivering.
+> Du kommer att **not** kan ta bort ett segment som används i en målaktivering.
 
 **API-format**
 
@@ -485,14 +485,14 @@ DELETE /segment/definitions/{SEGMENT_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SEGMENT_ID}` | Värdet `id` för segmentdefinitionen som du vill ta bort. |
+| `{SEGMENT_ID}` | The `id` värdet för segmentdefinitionen som du vill ta bort. |
 
 **Begäran**
 
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -503,7 +503,7 @@ Ett lyckat svar returnerar HTTP-status 200 utan något meddelande.
 
 ## Uppdatera en specifik segmentdefinition
 
-Du kan uppdatera en specifik segmentdefinition genom att göra en PATCH-begäran till `/segment/definitions`-slutpunkten och ange ID:t för segmentdefinitionen som du vill uppdatera i sökvägen till begäran.
+Du kan uppdatera en specifik segmentdefinition genom att göra en PATCH-begäran till `/segment/definitions` slutpunkt och ange ID:t för segmentdefinitionen som du vill uppdatera i sökvägen för begäran.
 
 **API-format**
 
@@ -513,7 +513,7 @@ PATCH /segment/definitions/{SEGMENT_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{SEGMENT_ID}` | Värdet `id` för segmentdefinitionen som du vill uppdatera. |
+| `{SEGMENT_ID}` | The `id` värdet för segmentdefinitionen som du vill uppdatera. |
 
 **Begäran**
 
@@ -523,7 +523,7 @@ Följande begäran kommer att uppdatera arbetsadresslandet från USA till Kanada
 curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '
@@ -560,7 +560,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
     },
     "ttlInDays": 60,
     "profileInstanceId": "ups",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
         "sandboxName": "prod",
@@ -596,7 +596,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 
 ## Konvertera segmentdefinition
 
-Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-begäran till `/segment/conversion`-slutpunkten.
+Du kan konvertera en segmentdefinition mellan `pql/text` och `pql/json` eller `pql/json` till `pql/text` genom att göra en POST-förfrågan till `/segment/conversion` slutpunkt.
 
 **API-format**
 
@@ -612,7 +612,7 @@ Följande begäran ändrar segmentdefinitionens format från `pql/text` till `pq
 curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{
@@ -657,4 +657,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nyligen konver
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur segmentdefinitioner fungerar. Mer information om hur du skapar ett segment finns i självstudiekursen [Skapa ett segment](../tutorials/create-a-segment.md).
+När du har läst den här guiden får du nu en bättre förståelse för hur segmentdefinitioner fungerar. Mer information om hur du skapar ett segment finns i [skapa ett segment](../tutorials/create-a-segment.md) självstudiekurs.

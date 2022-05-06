@@ -5,8 +5,7 @@ title: API-handbok för katalogtjänst
 topic-legacy: developer guide
 description: Det här dokumentet innehåller ytterligare information som kan hjälpa dig att arbeta med katalog-API:t i Adobe Experience Platform.
 exl-id: fafc8187-a95b-4592-9736-cfd9d32fd135
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '920'
 ht-degree: 0%
@@ -15,13 +14,13 @@ ht-degree: 0%
 
 # [!DNL Catalog Service] API-guide, tillägg
 
-Det här dokumentet innehåller ytterligare information som kan hjälpa dig att arbeta med API:t [!DNL Catalog].
+Det här dokumentet innehåller ytterligare information som kan hjälpa dig att arbeta med [!DNL Catalog] API.
 
 ## Visa relaterade objekt {#view-interrelated-objects}
 
-Vissa [!DNL Catalog]-objekt kan vara relaterade till andra [!DNL Catalog]-objekt. Alla fält som har `@` som prefix i svarsnyttolasterna betecknar relaterade objekt. Värdena för dessa fält har formen av en URI, som kan användas i en separat GET-begäran för att hämta relaterade objekt som de representerar.
+Några [!DNL Catalog] objekt kan kopplas samman med andra [!DNL Catalog] objekt. Alla fält som föregås av `@` som svarsnyttolaster betecknar relaterade objekt. Värdena för dessa fält har formen av en URI, som kan användas i en separat GET-begäran för att hämta relaterade objekt som de representerar.
 
-Exempeldatamängden som returneras i dokumentet vid [sökning efter en specifik datamängd](look-up-object.md) innehåller ett `files`-fält med följande URI-värde: `"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`. Innehållet i `files`-fältet kan visas med denna URI som sökväg för en ny GET-begäran.
+Exempeldatauppsättningen som returneras i dokumentet den [söka efter en specifik datauppsättning](look-up-object.md) innehåller en `files` fält med följande URI-värde: `"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`. Innehållet i `files` kan visas med denna URI som sökväg för en ny GET-begäran.
 
 **API-format**
 
@@ -31,18 +30,18 @@ GET {OBJECT_URI}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_URI}` | Den URI som anges av det interrelaterade objektfältet (exklusive symbolen `@`). |
+| `{OBJECT_URI}` | URI:n som tillhandahålls av det interrelaterade objektfältet (exklusive `@` symbol). |
 
 **Begäran**
 
-Följande begäran använder URI:n som anges för exempeldatauppsättningens `files`-egenskap för att hämta en lista över datauppsättningens associerade filer.
+Följande begäran använder den URI som anges i exempeldatauppsättningens `files` för att hämta en lista över datauppsättningens associerade filer.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -56,7 +55,7 @@ Ett godkänt svar returnerar en lista med relaterade objekt. I det här exemplet
         "id": "7d501090-0280-11ea-a6bb-f18323b7005c-1",
         "batchId": "7d501090-0280-11ea-a6bb-f18323b7005c",
         "dataSetViewId": "5ba9452f7de80400007fc52b",
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "createdUser": "{USER_ID}",
         "createdClient": "{CLIENT_ID}",
         "updatedUser": "{USER_ID}",
@@ -68,7 +67,7 @@ Ett godkänt svar returnerar en lista med relaterade objekt. I det här exemplet
         "id": "148ac690-0280-11ea-8d23-8571a35dce49-1",
         "batchId": "148ac690-0280-11ea-8d23-8571a35dce49",
         "dataSetViewId": "5ba9452f7de80400007fc52b",
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "createdUser": "{USER_ID}",
         "createdClient": "{CLIENT_ID}",
         "updatedUser": "{USER_ID}",
@@ -80,7 +79,7 @@ Ett godkänt svar returnerar en lista med relaterade objekt. I det här exemplet
         "id": "64dd5e19-8ea4-4ddd-acd1-f43cccd8eddb-1",
         "batchId": "64dd5e19-8ea4-4ddd-acd1-f43cccd8eddb",
         "dataSetViewId": "5ba9452f7de80400007fc52b",
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "createdUser": "{USER_ID}",
         "createdClient": "{CLIENT_ID}",
         "updatedUser": "{USER_ID}",
@@ -93,9 +92,9 @@ Ett godkänt svar returnerar en lista med relaterade objekt. I det här exemplet
 
 ## Göra flera förfrågningar i ett enda samtal
 
-Rotslutpunkten för API:t [!DNL Catalog] gör att flera begäranden kan göras inom ett enda anrop. Nyttolasten för begäran innehåller en array med objekt som representerar vad som normalt skulle vara enskilda begäranden, som sedan utförs i ordning.
+Rotslutpunkten för [!DNL Catalog] Med API kan flera begäranden göras inom ett enda anrop. Nyttolasten för begäran innehåller en array med objekt som representerar vad som normalt skulle vara enskilda begäranden, som sedan utförs i ordning.
 
-Om dessa begäranden är ändringar eller tillägg i [!DNL Catalog] och någon av ändringarna misslyckas, återställs alla ändringar.
+Om dessa förfrågningar är ändringar eller tillägg till [!DNL Catalog] och om någon av ändringarna misslyckas återställs alla ändringar.
 
 **API-format**
 
@@ -107,18 +106,18 @@ POST /
 
 I följande begäran skapas en ny datauppsättning och sedan skapas relaterade vyer för den datauppsättningen. I det här exemplet visas hur mallspråk används för att komma åt värden som returnerats i tidigare anrop för användning i efterföljande anrop.
 
-Om du till exempel vill referera till ett värde som returnerats från en tidigare underbegäran kan du skapa en referens i formatet: `<<{REQUEST_ID}.{ATTRIBUTE_NAME}>>` (där `{REQUEST_ID}` är det användarangivna ID:t för underbegäran, vilket visas nedan). Du kan referera till alla attribut som är tillgängliga i brödtexten för en tidigare underbegärans svarsobjekt med hjälp av dessa mallar.
+Om du till exempel vill referera till ett värde som returnerats från en tidigare underbegäran kan du skapa en referens i formatet: `<<{REQUEST_ID}.{ATTRIBUTE_NAME}>>` (där `{REQUEST_ID}` är användarangivet ID för underbegäran, vilket visas nedan). Du kan referera till alla attribut som är tillgängliga i brödtexten för en tidigare underbegärans svarsobjekt med hjälp av dessa mallar.
 
 >[!NOTE]
 >
->När en utförd underbegäran endast returnerar referensen till ett objekt (som är standard för de flesta POST- och PUT-begäranden i Catalog-API:t), får referensen alias för värdet `id` och kan användas som `<<{OBJECT_ID}.id>>`.
+>När en utförd underbegäran endast returnerar referensen till ett objekt (som är standard för de flesta POST- och PUT-begäranden i Catalog-API:t), får referensen alias för värdet `id` och kan användas som  `<<{OBJECT_ID}.id>>`.
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/catalog \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '[
@@ -146,13 +145,13 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | Användar-ID som är kopplat till svarsobjektet så att du kan matcha begäranden mot svar. [!DNL Catalog] lagrar inte det här värdet och returnerar det bara i svaret i referenssyfte. |
-| `resource` | Resurssökvägen relativ till roten för API:t [!DNL Catalog]. Protokollet och domänen ska inte ingå i det här värdet, och det ska föregås av &quot;/&quot;. <br/><br/> När du använder PATCH eller DELETE som underbegäran  `method`tar du med objekt-ID:t i resurssökvägen. För att inte blandas ihop med den användardefinierade `id` använder resurssökvägen ID:t för själva [!DNL Catalog]-objektet (till exempel `resource: "/dataSets/1234567890"`). |
+| `resource` | Resurssökvägen i förhållande till roten för [!DNL Catalog] API. Protokollet och domänen ska inte ingå i det här värdet, och det ska föregås av &quot;/&quot;. <br/><br/> När du använder PATCH eller DELETE som underbegäran `method`tar du med objekt-ID:t i resurssökvägen. Ska inte blandas ihop med den användare som anges `id`, använder resurssökvägen ID:t för [!DNL Catalog] själva objektet (till exempel `resource: "/dataSets/1234567890"`). |
 | `method` | Namnet på den metod (GET, PUT, POST, PATCH eller DELETE) som är relaterad till åtgärden som utförs i begäran. |
 | `body` | JSON-dokumentet som normalt skulle överföras som nyttolast i en POST-, PUT- eller PATCH-begäran. Den här egenskapen krävs inte för GET- eller DELETE-begäranden. |
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt som innehåller `id` som du tilldelade varje begäran, HTTP-statuskoden för den enskilda begäran och svaret `body`. Eftersom de tre exempelbegärandena var alla för att skapa nya objekt är `body` för varje objekt en array som bara innehåller ID:t för det nyskapade objektet, vilket är standard med de mest framgångsrika POSTERNA i [!DNL Catalog].
+Ett lyckat svar returnerar en array med objekt som innehåller `id` som du tilldelade varje begäran, HTTP-statuskoden för den enskilda begäran och svaret `body`. Eftersom de tre exempelbegärandena var att skapa nya objekt, `body` för varje objekt är en array som bara innehåller ID:t för det nyskapade objektet, vilket är standard med de mest framgångsrika POSTERNA i [!DNL Catalog].
 
 ```json
 [
@@ -183,16 +182,16 @@ Var försiktig när du inspekterar svar på en flerbegäran eftersom du måste v
 
 Det är en god vana att använda objektversionshantering för att förhindra den typ av datafel som uppstår när ett objekt sparas av flera användare nästan samtidigt.
 
-När du uppdaterar ett objekt bör du först göra ett API-anrop för att visa (GET) det objekt som ska uppdateras. Finns i svaret (och alla anrop där svaret innehåller ett enda objekt) är ett `E-Tag`-huvud som innehåller objektets version. Om du lägger till objektversionen som ett begärandehuvud med namnet `If-Match` i dina uppdateringsanrop (PUT eller PATCH) kommer uppdateringen bara att lyckas om versionen fortfarande är densamma, vilket förhindrar datakonflikter.
+När du uppdaterar ett objekt bör du först göra ett API-anrop för att visa (GET) det objekt som ska uppdateras. Finns i svaret (och alla anrop där svaret innehåller ett enda objekt) är ett `E-Tag` sidhuvud som innehåller objektets version. Lägga till objektversionen som ett begärandehuvud med namnet `If-Match` i din uppdatering (PUT eller PATCH) kommer uppdateringsanrop endast att lyckas om versionen fortfarande är densamma, vilket förhindrar att data kolliderar.
 
 Om versionerna inte matchar (objektet ändrades av en annan process sedan du hämtade det) får du HTTP-status 412 (Förhandsvillkor misslyckades) som anger att åtkomst till målresursen har nekats.
 
 ### Pragma
 
-Ibland kanske du vill validera ett objekt utan att spara informationen. Om du använder rubriken `Pragma` med värdet `validate-only` kan du skicka POST- eller PUT-begäranden endast i valideringssyfte, vilket förhindrar att ändringar i data bevaras.
+Ibland kanske du vill validera ett objekt utan att spara informationen. Använda `Pragma` header med värdet `validate-only` Med kan du skicka POST- eller PUT-begäranden endast i valideringssyfte, vilket förhindrar att ändringar i data bevaras.
 
 ## Datakomprimering
 
-Komprimering är en [!DNL Experience Platform]-tjänst som sammanfogar data från små filer till större filer utan att ändra några data. Av prestandaskäl kan det ibland vara bra att kombinera en uppsättning små filer till större filer för att ge snabbare åtkomst till data när frågor ställs.
+Komprimering är en [!DNL Experience Platform] som sammanfogar data från små filer till större filer utan att ändra några data. Av prestandaskäl är det ibland bra att kombinera en uppsättning små filer till större filer för att ge snabbare åtkomst till data när frågor ställs.
 
-När filerna i en kapslad batch har kompilerats uppdateras dess associerade [!DNL Catalog]-objekt i övervakningssyfte.
+När filerna i en inkapslad grupp har komprimerats, associeras de [!DNL Catalog] objektet uppdateras i övervakningssyfte.

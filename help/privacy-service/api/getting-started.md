@@ -3,7 +3,7 @@ title: Komma igång med Privacy Services-API
 description: Lär dig hur du autentiserar till Privacy Service-API:t och hur du tolkar exempel-API-anrop i dokumentationen.
 topic-legacy: developer guide
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-source-git-commit: 6dcbf2df46ba35104abd9c4e6412799e77c9c49f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '635'
 ht-degree: 0%
@@ -26,23 +26,23 @@ För att kunna anropa Privacy Service-API:t måste du först samla in dina inlog
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
 Detta innebär att du måste skaffa utvecklarbehörigheter för Adobe Experience Platform i Adobe Admin Console och sedan generera autentiseringsuppgifterna i Adobe Developer Console.
 
 ### Få utvecklare åtkomst till Experience Platform
 
-Få utvecklare åtkomst till [!DNL Platform]följer du de inledande stegen i [Självstudiekurs om autentisering av Experience Platform](https://www.adobe.com/go/platform-api-authentication-en). När du kommer till steget&quot;Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera autentiseringsuppgifter för Privacy Servicen.
+Få utvecklare åtkomst till [!DNL Platform]följer du de inledande stegen i [Självstudiekurs om autentisering av Experience Platform](https://www.adobe.com/go/platform-api-authentication-en). När du kommit till steget&quot;Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera de autentiseringsuppgifter som är specifika för Privacy Servicen.
 
 ### Generera autentiseringsuppgifter för åtkomst
 
 Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
-* `{IMS_ORG}`
+* `{ORG_ID}`
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-Dina `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida API-anrop. Men `{ACCESS_TOKEN}` är tillfälligt och måste genereras om var 24:e timme.
+Dina `{ORG_ID}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida API-anrop. Men `{ACCESS_TOKEN}` är tillfälligt och måste genereras om var 24:e timme.
 
 Stegen för att generera dessa värden beskrivs närmare nedan.
 
@@ -66,16 +66,16 @@ Nyckelparet genereras automatiskt och en ZIP-fil som innehåller en privat nycke
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-När API:t har lagts till i projektet visas projektsidan igen på sidan **Översikt över Privacy Service-API** sida. Här rullar du nedåt till **[!UICONTROL Service Account (JWT)]** som innehåller följande åtkomstautentiseringsuppgifter som krävs i alla anrop till Privacy Service-API:
+När API:t har lagts till i projektet visas projektsidan igen på sidan **Översikt över Privacy Service-API** sida. Här rullar du nedåt till **[!UICONTROL Service Account (JWT)]** som innehåller följande åtkomstautentiseringsuppgifter som krävs för alla anrop till Privacy Service-API:
 
 * **[!UICONTROL CLIENT ID]**: Klient-ID krävs `{API_KEY}` för det måste anges i rubriken x-api-key.
-* **[!UICONTROL ORGANIZATION ID]**: Organisations-ID är `{IMS_ORG}` värde som måste användas i huvudet x-gw-ims-org-id.
+* **[!UICONTROL ORGANIZATION ID]**: Organisations-ID är `{ORG_ID}` värde som måste användas i huvudet x-gw-ims-org-id.
 
 ![](../images/api/getting-started/jwt-credentials.png)
 
 #### Autentisering för varje session
 
-Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`, som används i auktoriseringshuvudet. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda [!DNL Platform] API:er.
+Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`, som används i auktoriseringshuvudet. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda [!DNL Platform] API:er.
 
 Så här skapar du en ny `{ACCESS_TOKEN}`öppnar du den tidigare hämtade privata nyckeln och klistrar in innehållet i textrutan bredvid **[!UICONTROL Generate access token]** före markering **[!UICONTROL Generate Token]**.
 

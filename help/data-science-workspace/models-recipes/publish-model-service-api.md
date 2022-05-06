@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med Sensei Machine Learning API.
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1516'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Om du vill följa med i den här självstudiekursen måste du ha en befintlig ML
 Innan du startar den här självstudiekursen ska du gå igenom [komma igång](../api/getting-started.md) i utvecklarhandboken för att få viktig information som du behöver känna till för att kunna ringa till [!DNL Sensei Machine Learning] API, inklusive de rubriker som behövs i den här självstudiekursen:
 
 - `{ACCESS_TOKEN}`
-- `{IMS_ORG}`
+- `{ORG_ID}`
 - `{API_KEY}`
 
 Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
@@ -64,7 +64,7 @@ curl -X POST
   https://platform.adobe.io/data/sensei/mlServices
   -H 'Authorization: {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
   -H 'Content-Type: application/json'
   -d '{
         "name": "Service name",
@@ -145,7 +145,7 @@ curl -X POST
   https://platform.adobe.io/data/sensei/mlServices
   -H 'Authorization: {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
         "name": "Service name",
@@ -217,7 +217,7 @@ POST /mlServices
 curl -X POST 'https://platform.adobe.io/data/sensei/mlServices' 
   -H 'Authorization: Bearer {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
         "name": "string",
@@ -304,7 +304,7 @@ GET /mlServices/{SERVICE_ID}
 curl -X GET 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}' 
   -H 'Authorization: Bearer {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -366,7 +366,7 @@ Följande begäran avser utbildning och poängsättning för en befintlig ML-tj�
 curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}' 
   -H 'Authorization: {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
         "name": "string",

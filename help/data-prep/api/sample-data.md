@@ -4,8 +4,7 @@ solution: Experience Platform
 title: Exempel på API-slutpunkt för data
 topic-legacy: sample data
 description: 'Du kan använda ändpunkten "/samples" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsexempeldata. '
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 0%
@@ -15,15 +14,15 @@ ht-degree: 0%
 
 # Exempeldataslut
 
-Exempeldata kan användas när du skapar ett schema för mappningsuppsättningen. Du kan använda slutpunkten `/samples` i API:t för dataprep för att hämta, skapa och uppdatera exempeldata programmatiskt.
+Exempeldata kan användas när du skapar ett schema för mappningsuppsättningen. Du kan använda `/samples` -slutpunkten i Data Prep API för att hämta, skapa och uppdatera exempeldata programmatiskt.
 
 ## Visa exempeldata
 
-Du kan hämta en lista över alla mappningsexempeldata för din IMS-organisation genom att göra en GET-begäran till `/samples`-slutpunkten.
+Du kan hämta en lista över alla mappningsexempeldata för din IMS-organisation genom att göra en GET-förfrågan till `/samples` slutpunkt.
 
 **API-format**
 
-`/samples`-slutpunkten har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. För närvarande måste du inkludera både `start`- och `limit`-parametrarna som en del av din begäran.
+The `/samples` slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. För närvarande måste du inkludera båda `start` och `limit` parametrar som en del av din begäran.
 
 ```http
 GET /samples?limit={LIMIT}&start={START}
@@ -32,7 +31,7 @@ GET /samples?limit={LIMIT}&start={START}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{LIMIT}` | **Obligatoriskt**. Anger antalet mappningssamplingsdata som returneras. |
-| `{START}` | **Obligatoriskt**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du `start=0` som värde. |
+| `{START}` | **Obligatoriskt**. Anger förskjutningen för resultatsidorna. Om du vill hämta den första resultatsidan anger du värdet till `start=0`. |
 
 **Begäran**
 
@@ -42,7 +41,7 @@ Följande begäran hämtar de två sista mappningsexempeldata inom IMS-organisat
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2&start=0 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -88,7 +87,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de två sista obje
 
 ## Skapa exempeldata
 
-Du kan skapa exempeldata genom att göra en POST-förfrågan till `/samples`-slutpunkten.
+Du kan skapa exempeldata genom att göra en POST-förfrågan till `/samples` slutpunkt.
 
 ```http
 POST /samples
@@ -101,7 +100,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -129,7 +128,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om dina nya exempelda
 
 ## Skapa exempeldata genom att överföra en fil
 
-Du kan skapa exempeldata med hjälp av en fil genom att göra en POST-förfrågan till `/samples/upload`-slutpunkten.
+Du kan skapa exempeldata med hjälp av en fil genom att göra en POST-förfrågan till `/samples/upload` slutpunkt.
 
 **API-format**
 
@@ -144,7 +143,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: multipart/form-data' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -F 'file=@{PATH_TO_FILE}.json'
 ```
@@ -168,7 +167,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om dina nya exempelda
 
 ## Söka efter ett specifikt exempeldataobjekt
 
-Du kan söka efter ett specifikt objekt med exempeldata genom att ange dess ID i sökvägen för en GET-begäran till `/samples`-slutpunkten.
+Du kan söka efter ett specifikt objekt med exempeldata genom att ange dess ID i sökvägen till en GET-begäran till `/samples` slutpunkt.
 
 **API-format**
 
@@ -186,7 +185,7 @@ GET /samples/{SAMPLE_ID}
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c20bae49d8ab33209ed126bdcd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -209,7 +208,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om det exempeldataobj
 
 ## Uppdatera exempeldata
 
-Du kan uppdatera ett specifikt exempeldataobjekt genom att ange dess ID i sökvägen för en PUT-begäran till `/samples`-slutpunkten.
+Du kan uppdatera ett specifikt exempeldataobjekt genom att ange dess ID i sökvägen till en PUT-begäran till `/samples` slutpunkt.
 
 **API-format**
 
@@ -229,7 +228,7 @@ Följande begäran uppdaterar angivna exempeldata. Det uppdaterar efternamnet fr
 curl -X PUT https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c20bae49d8ab33209ed126bdcd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {

@@ -1,7 +1,8 @@
 ---
 title: Miljöslutpunkt
 description: Lär dig hur du anropar slutpunkten /environment i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 4c22f799-8338-4cf0-980a-3900d725ab5d
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1038'
 ht-degree: 1%
@@ -10,12 +11,12 @@ ht-degree: 1%
 
 # Miljöslutpunkt
 
-När ett [bibliotek](./libraries.md) kompileras till en [build](./builds.md) i Reaktors-API, beror det exakta innehållet i bygget på miljöinställningarna och de resurser som ingår i biblioteket. Miljön avgör i synnerhet följande:
+När en [bibliotek](./libraries.md) kompileras till en [bygga](./builds.md) i Reaktors-API:t beror det exakta innehållet i bygget på de miljöinställningar och resurser som finns i biblioteket. Miljön avgör i synnerhet följande:
 
-1. **Mål**: Platsen där du vill att bygget ska distribueras. Detta styrs av att du väljer en [värd](./hosts.md) som miljön ska använda.
-1. **Arkiv**: Du kan välja att hämta bygget som en distributionsbar uppsättning filer eller få det packat i ett arkivformat. Detta styrs av inställningen `archive` i miljön.
+1. **Mål**: Platsen där du vill att bygget ska distribueras. Detta styrs genom att välja en [värd](./hosts.md) för miljön.
+1. **Arkiv**: Du kan välja att hämta bygget som en distributionsbar uppsättning filer eller få det packat i ett arkivformat. Detta kontrolleras av `archive` inställning för miljön.
 
-Mål- och arkivformatet som konfigureras av miljön ändrar hur du refererar till bygget i programmet (referensen är en [inbäddningskod](../../ui/publishing/environments.md#embed-code)). Om du gör några ändringar i mål- eller filformat måste du göra en matchande uppdatering av programmet för att kunna använda den nya referensen.
+Mål- och arkivformatet som konfigureras av miljön ändrar hur du refererar till bygget i programmet (referensen är en [bädda in kod](../../ui/publishing/environments.md#embed-code)). Om du gör några ändringar i mål- eller filformat måste du göra en matchande uppdatering av programmet för att kunna använda den nya referensen.
 
 Miljöer finns i tre typer (eller faser), där varje typ har en egen gräns för det totala antalet du kan ha:
 
@@ -27,15 +28,15 @@ Miljöer finns i tre typer (eller faser), där varje typ har en egen gräns för
 
 {style=&quot;table-layout:auto&quot;}
 
-Dessa miljötyper har liknande beteende, men används i olika steg i [taggpubliceringsarbetsflödet](../../ui/publishing/publishing-flow.md).
+Dessa miljötyper har liknande beteende, men används i olika stadier av [arbetsflöde för taggpublicering](../../ui/publishing/publishing-flow.md).
 
-En miljö tillhör exakt en [egenskap](./properties.md).
+En miljö tillhör exakt en [property](./properties.md).
 
 Mer allmän information om miljöer finns i avsnittet om [miljöer](../../ui/publishing/environments.md) i publiceringsdokumenten.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista över miljöer {#list}
 
@@ -49,13 +50,13 @@ GET /properties/{PROPERTY_ID}/environments
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som äger miljöerna. |
+| `PROPERTY_ID` | The `id` av den egendom som äger miljöerna. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade miljöer filtreras baserat på följande attribut:<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade miljöer filtreras baserat på följande attribut:<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -64,7 +65,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/environments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -173,7 +174,7 @@ GET /environments/{ENVIRONMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `ENVIRONMENT_ID` | `id` för miljön som du vill söka efter. |
+| `ENVIRONMENT_ID` | The `id` av miljön som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -184,7 +185,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENb0c1fbfdc1fd4b8593bfd269f827b3e6 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -282,20 +283,20 @@ POST /properties/{PROPERTY_ID}/environments
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för den [egenskap](./properties.md) som du definierar miljön under. |
+| `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar miljön under. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran skapar en ny miljö för den angivna egenskapen. Anropet associerar även miljön med en befintlig värd via egenskapen `relationships`. Mer information finns i guiden om [relationer](../guides/relationships.md).
+Följande begäran skapar en ny miljö för den angivna egenskapen. Anropet associerar även miljön med en befintlig värd via `relationships` -egenskap. Se guiden [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/environments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -321,12 +322,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för miljön. |
+| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för miljön. |
 | `attributes.archive` | Ett booleskt värde som anger om bygget är i arkivformat. |
 | `attributes.archive_passphrase` | Ett stränglösenord som kan användas för att låsa upp arkivfilen. |
 | `attributes.path` | En sökväg från värd-URL:en för miljön. |
 | `attributes.stage` | Scenen för miljön (utveckling, staging eller produktion). |
-| `id` | `id` för miljön som du vill uppdatera. Detta ska matcha `{ENVIRONMENT_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` av miljön som du vill uppdatera. Det här bör matcha `{ENVIRONMENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -424,7 +425,7 @@ PATCH /environments/{ENVIRONMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `ENVIRONMENT_ID` | `id` för miljön som du vill uppdatera. |
+| `ENVIRONMENT_ID` | The `id` av miljön som du vill uppdatera. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -437,7 +438,7 @@ curl -X PATCH \
   https://reactor.adobe.io/environments/DE3fab176ccf8641838b3da59f716fc42b \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -452,8 +453,8 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för miljön. Följande miljöattribut kan uppdateras: <ul><li>`archive`</li><li>`archive_passphrase`</li><li>`include_debug_library`</li><li>`name`</li><li>`path`</li></ul> Se exempelanropet för [att skapa en miljö](#create) för en lista över attribut och deras användningsfall. |
-| `id` | `id` för miljön som du vill uppdatera. Detta ska matcha `{ENVIRONMENT_ID}`-värdet som anges i sökvägen till begäran. |
+| `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för miljön. Följande miljöattribut kan uppdateras: <ul><li>`archive`</li><li>`archive_passphrase`</li><li>`include_debug_library`</li><li>`name`</li><li>`path`</li></ul> Se exempelanropet för [skapa en miljö](#create) om du vill se en lista över attribut och deras användningsfall. |
+| `id` | The `id` av miljön som du vill uppdatera. Det här bör matcha `{ENVIRONMENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -551,7 +552,7 @@ DELETE /environments/{ENVIRONMENT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `ENVIRONMENT_ID` | `id` för miljön som du vill ta bort. |
+| `ENVIRONMENT_ID` | The `id` av miljön som du vill ta bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -562,7 +563,7 @@ curl -X DELETE \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
@@ -571,13 +572,13 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 ## Hämta relaterade resurser för en miljö {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för en miljö. När du [söker efter en miljö](#lookup) visas dessa relationer under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för en miljö. När [söka efter en miljö](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationsguiden](../guides/relationships.md) för mer information om relationer i Reactor API.
+Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
 
 ### Lista relaterade byggen för en miljö {#builds}
 
-Du kan lista byggen som använder en miljö genom att lägga till `/builds` i sökvägen för en sökningsbegäran.
+Du kan lista byggen som använder en miljö genom att lägga till `/builds` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -587,7 +588,7 @@ GET  /environments/{ENVIRONMENT_ID}/builds
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | `id` för miljön vars byggen du vill visa. |
+| `{ENVIRONMENT_ID}` | The `id` av miljön vars byggen du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -598,7 +599,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -690,11 +691,11 @@ Ett lyckat svar returnerar en lista med byggen som använder den angivna miljön
 
 ### Söka efter den relaterade värden för en miljö {#host}
 
-Du kan leta upp värden som använder en miljö genom att lägga till `/host` i sökvägen för en GET-begäran.
+Du kan leta upp värden som använder en miljö genom att lägga till `/host` till sökvägen för en GET-begäran.
 
 >[!NOTE]
 >
->Du kan söka upp själva värdrelationsobjektet genom ett [separat anrop](#host-relationship).
+>Du kan söka efter själva värdrelationsobjektet via en [separat samtal](#host-relationship).
 
 **API-format**
 
@@ -704,7 +705,7 @@ GET  /environments/{ENVIRONMENT_ID}/host
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | `id` för miljön vars värd du vill söka efter. |
+| `{ENVIRONMENT_ID}` | The `id` i den miljö vars värd du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -715,7 +716,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/host \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -761,7 +762,7 @@ Ett lyckat svar returnerar information om värden som använder den angivna milj
 
 ### Söka efter ett relaterat bibliotek efter en miljö {#library}
 
-Du kan söka efter biblioteket som använder en miljö genom att lägga till `/library` i sökvägen för en GET-begäran.
+Du kan söka efter biblioteket som använder en miljö genom att lägga till `/library` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -771,7 +772,7 @@ GET  /environments/{ENVIRONMENT_ID}/library
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | `id` för miljön vars bibliotek du vill söka efter. |
+| `{ENVIRONMENT_ID}` | The `id` i den miljö vars bibliotek du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -782,7 +783,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/library \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -876,7 +877,7 @@ Ett lyckat svar returnerar information om biblioteket som använder den angivna 
 
 ### Söka efter den relaterade egenskapen för en miljö {#property}
 
-Du kan söka efter den egenskap som äger en miljö genom att lägga till `/property` i sökvägen för en GET-begäran.
+Du kan söka efter den egenskap som äger en miljö genom att lägga till `/property` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -886,7 +887,7 @@ GET  /environments/{ENVIRONMENT_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | `id` för miljön vars egenskap du vill söka efter. |
+| `{ENVIRONMENT_ID}` | The `id` för miljön vars egenskap du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -897,7 +898,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

@@ -5,8 +5,7 @@ title: API-slutpunkt för scheman
 topic-legacy: schemas
 description: Du kan använda slutpunkten "/functions" i Adobe Experience Platform API för att validera mappningsuttrycken och visa tillgängliga mappningsmängdsfunktioner.
 exl-id: dc24bfb4-2d96-4757-a610-0c2ee960d41d
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -15,11 +14,11 @@ ht-degree: 0%
 
 # Funktionsslutpunkter
 
-Med mappningsfunktionerna kan du omforma data mellan käll- och målscheman. Du kan använda slutpunkten `/languages/el` för att validera dina uttryck och få en lista över alla tillgängliga mappningsfunktioner.
+Med mappningsfunktionerna kan du omforma data mellan käll- och målscheman. Du kan använda `/languages/el` slutpunkt för att validera dina uttryck och få en lista över alla tillgängliga mappningsfunktioner.
 
 ## Validera uttryck
 
-Du kan validera om det aktuella uttrycket är giltigt genom att göra en POST-förfrågan till `/languages/el/validate`-slutpunkten.
+Du kan validera om det aktuella uttrycket är giltigt genom att göra en POST-förfrågan till `/languages/el/validate` slutpunkt.
 
 **API-format**
 
@@ -34,7 +33,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/languages/el/v
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -55,7 +54,7 @@ Ett lyckat svar returnerar HTTP-status 200 med uttryckets valideringsstatus.
 
 ## Funktioner för listmappningsuppsättning
 
-Du kan hämta en lista över alla mappningsfunktioner som är tillgängliga genom att göra en GET-begäran till `/languages/el/functions`-slutpunkten.
+Du kan hämta en lista över alla mappningsfunktioner som är tillgängliga genom att göra en GET-förfrågan till `/languages/el/functions` slutpunkt.
 
 **API-format**
 
@@ -69,7 +68,7 @@ GET /languages/el/functions
 curl -X GET https://platform.adobe.io/data/foundation/conversion/languages/el/functions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -120,7 +119,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla tillgängliga
 
 ## Operatorer för listmappningsuppsättning
 
-Du kan hämta en lista över alla mappningsoperatorer som är tillgängliga för dig genom att göra en GET-begäran till `/languages/el/operators`-slutpunkten.
+Du kan hämta en lista över alla mappningsoperatorer som är tillgängliga för dig genom att göra en GET-förfrågan till `/languages/el/operators` slutpunkt.
 
 **API-format**
 
@@ -134,7 +133,7 @@ GET /languages/el/operators
 curl -X GET https://platform.adobe.io/data/foundation/conversion/languages/el/operators \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

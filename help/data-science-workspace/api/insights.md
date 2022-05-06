@@ -5,8 +5,7 @@ title: API-slutpunkt för insikter
 topic-legacy: Developer guide
 description: Insikter innehåller mätvärden som används för att ge datavetare möjlighet att utvärdera och välja optimala ML-modeller genom att visa relevanta utvärderingsvärden.
 exl-id: 603546d6-5686-4b59-99a7-90ecc0db8de3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
@@ -19,7 +18,7 @@ Insikter innehåller mätvärden som används för att ge datavetare möjlighet 
 
 ## Hämta en lista med insikter
 
-Du kan hämta en lista med insikter genom att utföra en enda GET-förfrågan till insikter-slutpunkten.  Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
+Du kan hämta en lista med insikter genom att utföra en enda GET-förfrågan till insikter-slutpunkten.  Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -34,13 +33,13 @@ curl -X GET \
   https://platform.adobe.io/data/sensei/insights \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller en lista med insikter och varje insikter har en unik identifierare ( `id` ). Dessutom får du `context` som innehåller de unika identifierare som är kopplade till den specifika insikten som följer med Insights-händelser och mätdata.
+Ett lyckat svar returnerar en nyttolast som innehåller en lista med insikter och varje insikt har en unik identifierare ( `id` ). Dessutom får du `context` som innehåller de unika identifierare som är associerade med den specifika insikten som följer med Insights-händelser och mätdata.
 
 ```json
 {
@@ -109,7 +108,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller en lista med insikter 
 
 ## Hämta en specifik insight
 
-Om du vill söka efter en viss insikt kan du begära en GET och ange en giltig `{INSIGHT_ID}` i sökvägen till begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
+Gör en förfrågan om GET och ange en giltig `{INSIGHT_ID}` i sökvägen till begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -128,13 +127,13 @@ curl -X GET \
   https://platform.adobe.io/data/sensei/insights/08b8d174-6b0d-4d7e-acd8-1c4c908e14b2 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller den unika identifieraren (`id`) för insikter. Dessutom kommer du att få `context` som innehåller de unika identifierare som är associerade med den särskilda insikt som följer med Insights-händelser och mätdata.
+Ett godkänt svar returnerar en nyttolast som innehåller en unik identifierare för insikter (`id`). Dessutom får du `context` som innehåller de unika identifierare som är associerade med den särskilda insikten som följer med Insights-händelser och mätdata.
 
 ```json
 {
@@ -200,7 +199,7 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/insights \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
     -H `Content-Type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json`
     -d {
@@ -230,7 +229,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som har `{INSIGHT_ID}` och alla parametrar som du angav i den ursprungliga begäran.
+Ett godkänt svar returnerar en nyttolast som har en `{INSIGHT_ID}` och eventuella parametrar som du angav i den ursprungliga begäran.
 
 ```json
 {
@@ -265,7 +264,7 @@ Ett lyckat svar returnerar en nyttolast som har `{INSIGHT_ID}` och alla parametr
 
 ## Hämta en lista med standardvärden för algoritmer
 
-Du kan hämta en lista över alla algoritmernas och standardmåtten genom att utföra en enda GET-begäran till metrisk slutpunkt. Om du vill fråga efter ett visst mått skapar du en GET-förfrågan och anger ett giltigt `{ALGORITHM}` i sökvägen till begäran.
+Du kan hämta en lista över alla algoritmernas och standardmåtten genom att utföra en enda GET-begäran till metrisk slutpunkt. Gör en GET-förfrågan och ange en giltig `{ALGORITHM}` i sökvägen till begäran.
 
 **API-format**
 
@@ -280,20 +279,20 @@ GET /insights/metrics?algorithm={ALGORITHM}
 
 **Begäran**
 
-Följande begäran innehåller en fråga och hämtar ett specifikt mått med hjälp av algoritmidentifieraren `{ALGORITHM}`
+Följande begäran innehåller en fråga och hämtar ett specifikt mått med algoritmidentifieraren `{ALGORITHM}`
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/sensei/insights/metrics?algorithm={ALGORITHM}' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller den unika identifieraren `algorithm` och en matris med standardmått.
+Ett godkänt svar returnerar en nyttolast som innehåller `algorithm` unik identifierare och en array med standardvärden.
 
 ```json
 {

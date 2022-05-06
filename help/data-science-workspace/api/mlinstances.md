@@ -5,8 +5,7 @@ title: API-slutpunkt för MLInstances
 topic-legacy: Developer guide
 description: En MLInstance är en kombination av en befintlig motor med en lämplig uppsättning konfigurationer som definierar alla utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 0%
@@ -15,13 +14,13 @@ ht-degree: 0%
 
 # MLInstances-slutpunkt
 
-En MLInstance är en kombination av en befintlig [motor](./engines.md) med en lämplig uppsättning konfigurationer som definierar alla utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
+En MLInstance är en kombination av en befintlig [Motor](./engines.md) med en lämplig uppsättning konfigurationer som definierar utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
 
 ## Skapa en MLInstance {#create-an-mlinstance}
 
 Du kan skapa en MLInstance genom att utföra en begäran om POST samtidigt som du anger en nyttolast som består av ett giltigt motor-ID (`{ENGINE_ID}`) och en lämplig uppsättning standardkonfigurationer.
 
-Om motor-ID:t refererar till en PySpark- eller Spark-motor kan du konfigurera mängden beräkningsresurser, till exempel antalet kärnor eller mängden minne. Om du refererar till en Python Engine kan du välja mellan att använda en CPU eller GPU för utbildning och poängsättning. Mer information finns i avsnitten i bilagan om [PySpark- och Spark-resurskonfigurationer](./appendix.md#resource-config) och [Python CPU- och GPU-konfigurationer](./appendix.md#cpu-gpu-config).
+Om motor-ID:t refererar till en PySpark- eller Spark-motor kan du konfigurera mängden beräkningsresurser, till exempel antalet kärnor eller mängden minne. Om du refererar till en Python Engine kan du välja mellan att använda en CPU eller GPU för utbildning och poängsättning. Se avsnitten i bilagan om [Resurskonfigurationer för PySpark och Spark](./appendix.md#resource-config) och [Python CPU- och GPU-konfigurationer](./appendix.md#cpu-gpu-config) för mer information.
 
 **API-format**
 
@@ -36,7 +35,7 @@ curl -X POST \
     https://platform.adobe.io/data/sensei/mlInstances \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json' \
     -d '{
@@ -131,7 +130,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 
 ## Hämta en lista med MLInstances
 
-Du kan hämta en lista med MLInstances genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
+Du kan hämta en lista med MLInstances genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 **API-format**
 
@@ -143,7 +142,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
+| `{QUERY_PARAMETER}` | En av [tillgängliga frågeparametrar](./appendix.md#query) används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -153,7 +152,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/mlInstances \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -218,7 +217,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -276,7 +275,7 @@ Du kan uppdatera en befintlig MLInstance genom att skriva över dess egenskaper 
 
 >[!TIP]
 >
->För att försäkra dig om att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLInstance med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta MLInstance efter ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en MLInstance-instans utbildnings- och poängparametrar samtidigt som dessa egenskaper initialt finns:
 
@@ -330,7 +329,7 @@ curl -X PUT \
     https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json' \
     -d '{
@@ -425,7 +424,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/mlInstances?engineId=22f4166f-85ba-4130-a995-a2b8e1edde32 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -460,7 +459,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

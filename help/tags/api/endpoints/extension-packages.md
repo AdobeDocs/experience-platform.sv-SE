@@ -1,7 +1,8 @@
 ---
 title: Slutpunkt för tilläggspaket
 description: Lär dig hur du anropar slutpunkten /extension_packages i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '951'
 ht-degree: 1%
@@ -12,47 +13,47 @@ ht-degree: 1%
 
 >[!WARNING]
 >
->Implementeringen av `/extension_packages`-slutpunkten börjar fungera när funktioner läggs till, tas bort och omarbetas.
+>Genomförandet av `/extension_packages` slutpunkten ändras när funktioner läggs till, tas bort och omarbetas.
 
-Ett tilläggspaket representerar ett [tillägg](./extensions.md) som författats av en tilläggsutvecklare. Ett tilläggspaket definierar ytterligare funktioner som kan göras tillgängliga för tagganvändare. De vanligaste är att dessa funktioner finns i form av [regelkomponenter](./rule-components.md) (händelser, villkor och åtgärder) och [dataelement](./data-elements.md), men kan även innehålla huvudmoduler och delade moduler.
+Ett tilläggspaket representerar ett [extension](./extensions.md) som skrivits av en tilläggsutvecklare. Ett tilläggspaket definierar ytterligare funktioner som kan göras tillgängliga för tagganvändare. De vanligaste funktionerna är [regelkomponenter](./rule-components.md) (händelser, villkor och åtgärder) och [dataelement](./data-elements.md), men kan även innehålla huvudmoduler och delade moduler.
 
 Tilläggspaket visas i tilläggskatalogen i användargränssnittet för datainsamling så att användarna kan installera dem. Du kan lägga till ett tilläggspaket till en egenskap genom att skapa ett tillägg med en länk till tilläggspaketet.
 
-Ett tilläggspaket tillhör [företaget](./companies.md) för den utvecklare som skapade det.
+Ett tilläggspaket tillhör [företag](./companies.md) av utvecklaren som skapade den.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
-Förutom att förstå hur du anropar Reactor API är det också viktigt att du förstår hur attributen `status` och `availability` för ett tilläggspaket påverkar vilka åtgärder du kan utföra på det. Dessa förklaras i avsnitten nedan.
+Förutom att förstå hur du anropar Reactor API är det också viktigt att du förstår hur ett tilläggspaket `status` och `availability` attribut påverkar vilka åtgärder du kan utföra på den. Dessa förklaras i avsnitten nedan.
 
 ### Status
 
-Tilläggspaket har tre möjliga statusvärden: `pending`, `succeeded` och `failed`.
+Tilläggspaket har tre möjliga statusvärden: `pending`, `succeeded`och `failed`.
 
 | Status | Beskrivning |
 | --- | --- |
-| `pending` | När ett tilläggspaket skapas ställs `status` in på `pending`. Detta anger att systemet har tagit emot informationen för tilläggspaketet och kommer att påbörja bearbetningen. Tilläggspaket med statusen `pending` är inte tillgängliga för användning. |
-| `succeeded` | Status för ett tilläggspaket uppdateras till `succeeded` om bearbetningen slutförs. |
-| `failed` | Status för ett tilläggspaket uppdateras till `failed` om bearbetningen inte slutförs. Ett tilläggspaket med statusen `failed` kan uppdateras tills bearbetningen är klar. Tilläggspaket med statusen `failed` är inte tillgängliga för användning. |
+| `pending` | När ett tilläggspaket skapas, `status` är inställd på `pending`. Detta anger att systemet har tagit emot informationen för tilläggspaketet och kommer att påbörja bearbetningen. Tilläggspaket med statusen `pending` är inte tillgängliga för användning. |
+| `succeeded` | Ett tilläggspaketets status uppdateras till `succeeded` om bearbetningen har slutförts. |
+| `failed` | Ett tilläggspaketets status uppdateras till `failed` om bearbetningen inte slutförs. Ett tilläggspaket med statusen `failed` kan uppdateras tills bearbetningen har slutförts. Tilläggspaket med statusen `failed` är inte tillgängliga för användning. |
 
 ### Tillgänglighet
 
-Det finns tillgänglighetsnivåer för ett tilläggspaket: `development`, `private` och `public`.
+Det finns tillgänglighetsnivåer för ett tilläggspaket: `development`, `private`och `public`.
 
 | Tillgänglighet | Beskrivning |
 | --- | --- |
 | `development` | Ett tilläggspaket i `development` är bara synligt för och tillgängligt i det företag som äger det. Dessutom kan den bara användas på egenskaper som är konfigurerade för tilläggsutveckling. |
-| `private` | Ett `private`-tilläggspaket är bara synligt för det företag som äger det och kan bara installeras på egenskaper som företaget äger. |
-| `public` | Ett `public`-tilläggspaket är synligt och tillgängligt för alla företag och egenskaper. |
+| `private` | A `private` tilläggspaketet är bara synligt för det företag som äger det och kan bara installeras på egenskaper som företaget äger. |
+| `public` | A `public` tilläggspaketet är synligt och tillgängligt för alla företag och egenskaper. |
 
 >[!NOTE]
 >
->När ett tilläggspaket skapas ställs `availability` in på `development`. När testningen är klar kan du överföra tilläggspaketet till antingen `private` eller `public`.
+>När ett tilläggspaket skapas, `availability` är inställd på `development`. När testningen är klar kan du överföra tilläggspaketet till antingen `private` eller `public`.
 
 ## Hämta en lista med tilläggspaket {#list}
 
-Du kan hämta en lista med tilläggspaket genom att göra en GET-begäran till `/extension_packages`.
+Du kan hämta en lista över tilläggspaket genom att göra en GET-förfrågan till `/extension_packages`.
 
 **API-format**
 
@@ -62,7 +63,7 @@ GET /extension_packages
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade tilläggspaket filtreras baserat på följande attribut:<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade tilläggspaket filtreras baserat på följande attribut:<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -71,7 +72,7 @@ curl -X GET \
   https://reactor.adobe.io/extension_packages \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -246,7 +247,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | `id` för tilläggspaketet som du vill söka efter. |
+| `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -257,14 +258,14 @@ curl -X GET \
   https://reactor.adobe.io/extension_packages/EP75db2452065b44e2b8a38ca883ce369a \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar information om tilläggspaketet, inklusive dess delegatresurser som `actions`, `conditions`, `data_elements` med mera. Exemplet nedan har trunkerats för blanksteg.
+Ett godkänt svar returnerar information om tilläggspaketet, inklusive dess delegatresurser, som `actions`, `conditions`, `data_elements`, med mera. Exemplet nedan har trunkerats för blanksteg.
 
 ```json
 {
@@ -471,7 +472,7 @@ Ett lyckat svar returnerar information om tilläggspaketet, inklusive dess deleg
 
 ## Skapa ett tilläggspaket {#create}
 
-Tilläggspaket skapas med ett Node.js-byggnadsverktyg och sparas på den lokala datorn innan de skickas till Reactor API. Mer information om hur du konfigurerar ett tilläggspaket finns i guiden [komma igång med tilläggsutveckling](../../extension-dev/getting-started.md).
+Tilläggspaket skapas med ett Node.js-byggnadsverktyg och sparas på den lokala datorn innan de skickas till Reactor API. Mer information om hur du konfigurerar ett tilläggspaket finns i handboken [komma igång med tilläggsutveckling](../../extension-dev/getting-started.md).
 
 När du har skapat tilläggspaketfilen kan du skicka den till Reactor API via en POST-begäran.
 
@@ -483,14 +484,14 @@ POST /extension_packages
 
 **Begäran**
 
-Följande begäran skapar ett nytt tilläggspaket. Den lokala sökvägen till den paketfil som överförs refereras till som formulärdata (`package`), och därför kräver den här slutpunkten ett `Content-Type`-huvud på `multipart/form-data`.
+Följande begäran skapar ett nytt tilläggspaket. Den lokala sökvägen till den paketfil som överförs refereras till som formulärdata (`package`) och därför kräver denna slutpunkt en `Content-Type` sidhuvud `multipart/form-data`.
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/extension_packages \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: multipart/form-data' \
   -F 'package=@"/Users/temp/extension-package.zip"'
 ```
@@ -714,20 +715,20 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | `id` för tilläggspaketet som du vill uppdatera. |
+| `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill uppdatera. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Precis som med [när du skapar ett tilläggspaket](#create) måste en lokal version av det uppdaterade paketet överföras via formulärdata.
+Som med [skapa ett tilläggspaket](#create), måste en lokal version av det uppdaterade paketet överföras via formulärdata.
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: multipart/form-data' \
   -F 'package=@"/Users/temp/extension-package.zip"'
 ```
@@ -943,7 +944,7 @@ Ett godkänt svar returnerar information om det uppdaterade tilläggspaketet.
 
 När du har testat tilläggspaketet kan du frigöra det privat. Detta gör den tillgänglig för alla ägor i företaget.
 
-När du har släppt privat kan du påbörja den offentliga releaseprocessen genom att fylla i [formuläret för begäran om allmän release](https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=7DRB5U).
+När du har släppt programmet privat kan du påbörja den offentliga releaseprocessen genom att fylla i [blankett för begäran om offentliggörande](https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=7DRB5U).
 
 **API-format**
 
@@ -953,20 +954,20 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | `id` för tilläggspaketet som du vill ska frisläppas privat. |
+| `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill ska släppas privat. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-En privat release uppnås genom att en `action` anges med värdet `release_private` i `meta` för begärandedata.
+En privat release uppnås genom att en `action` med värdet `release_private` i `meta` av begärandedata.
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/vnd.api+json' \
   -d '{
         "data": {
@@ -1188,7 +1189,7 @@ Ett godkänt svar returnerar information om tilläggspaketet.
 
 ## Avbryt ett tilläggspaket {#discontinue}
 
-Du kan avbryta ett tilläggspaket genom att ange attributet `discontinued` till `true` via en PATCH-begäran.
+Du kan avbryta ett tilläggspaket genom att ange dess `discontinued` attribut till `true` på begäran av PATCH.
 
 **API-format**
 
@@ -1198,20 +1199,20 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | `id` för tilläggspaketet som du vill avbryta. |
+| `EXTENSION_PACKAGE_ID` | The `id` för tilläggspaketet som du vill avbryta. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-En privat release uppnås genom att en `action` anges med värdet `release_private` i `meta` för begärandedata.
+En privat release uppnås genom att en `action` med värdet `release_private` i `meta` av begärandedata.
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/vnd.api+json' \
   -d '{
         "data": {
@@ -1291,7 +1292,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}/versions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | `id` för tilläggspaketet vars versioner du vill visa. |
+| `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket vars versioner du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1302,7 +1303,7 @@ curl -X GET \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172/versions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

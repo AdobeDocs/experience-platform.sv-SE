@@ -5,7 +5,7 @@ title: API-slutpunkt för tillgängliga sandlådor
 topic-legacy: developer guide
 description: Du kan lista de sandlådor som är tillgängliga för den aktuella användaren genom att göra en GET-begäran till den tillgängliga sandlådeslutpunkten.
 exl-id: 9b0719af-c1ca-439a-9c8b-86c7fa26a3b8
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
@@ -28,7 +28,7 @@ GET /{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
 
 **Begäran**
 
@@ -37,12 +37,12 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/sandbox-management/?&limit=3&offset=1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med sandlådor som är tillgängliga för den aktuella användaren, inklusive information som `name`, `title`, `state` och `type`.
+Ett lyckat svar returnerar en lista över sandlådor som är tillgängliga för den aktuella användaren, inklusive information som `name`, `title`, `state`och `type`.
 
 ```json
 {

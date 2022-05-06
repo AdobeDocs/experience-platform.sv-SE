@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;data model;export;import;rpc;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;export;import;rpc;
 solution: Experience Platform
 title: Exportera/importera API-slutpunkter
 description: Med slutpunkterna /export och /import i API:t för schemaregister kan du dela XDM-resurser mellan IMS-organisationer och sandlådor.
 topic-legacy: developer guide
 exl-id: 33b62f75-2670-42f4-9aac-fa1540cd7d4a
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '506'
 ht-degree: 0%
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 # Exportera/importera slutpunkter
 
-Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda i en IMS-organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och IMS-organisationer. API:t [!DNL Schema Registry] innehåller två slutpunkter som gör att du kan generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i [!DNL  Schema Library] och sedan använda nyttolasten för att importera resursen (och alla beroende resurser) till en målsandlåda och IMS-organisation.
+Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda inom en IMS-organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och IMS-organisationer. The [!DNL Schema Registry] API innehåller två slutpunkter som gör att du kan generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i[!DNL  Schema Library]och sedan använda den nyttolasten för att importera resursen (och alla beroende resurser) till en målsandlåda och IMS-organisation.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Slutpunkterna som används i den här guiden är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
-Slutpunkterna för export/import är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i API:t [!DNL Schema Registry], kräver RPC-slutpunkter inga ytterligare rubriker som `Accept` eller `Content-Type`, och använder inte en `CONTAINER_ID`. I stället måste de använda namnutrymmet `/rpc`, vilket visas i API-anropen nedan.
+Slutpunkterna för export/import är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropen nedan.
 
 ## Hämta en exportnyttolast för en resurs {#export}
 
-För alla befintliga scheman, fältgrupper eller datatyper i [!DNL Schema Library] kan du generera en exportnyttolast genom att göra en GET-begäran till `/export`-slutpunkten, som anger ID för resursen i sökvägen.
+För alla befintliga scheman, fältgrupper eller datatyper i [!DNL Schema Library]kan du generera en exportnyttolast genom att göra en GET-förfrågan till `/export` slutpunkt som anger ID för resursen i sökvägen.
 
 **API-format**
 
@@ -34,27 +34,27 @@ GET /rpc/export/{RESOURCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RESOURCE_ID}` | `meta:altId` eller URL-kodad `$id` för XDM-resursen som du vill exportera. |
+| `{RESOURCE_ID}` | The `meta:altId` eller URL-kodad `$id` för den XDM-resurs som du vill exportera. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran hämtar en exportnyttolast för en `Restaurant`-fältgrupp.
+Följande begäran hämtar en exportnyttolast för en `Restaurant` fältgrupp.
 
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/export/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen en datatyp som skapats av en innehavare (`Property`) och som används av fältgruppen `Restaurant`, medan det andra objektet är själva fältgruppen `Restaurant`. Denna nyttolast kan sedan användas för att [importera resursen](#import) till en annan sandlåda eller IMS-organisation.
+Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen ett objekt som skapats av en innehavare `Property` datatypen som `Restaurant` fältgruppen används, medan det andra objektet är `Restaurant` själva fältgruppen. Nyttolasten kan sedan användas för [importera resursen](#import) till en annan sandlåda eller IMS-organisation.
 
 Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_PLACEHOLDER>`. Detta gör att schemaregistret automatiskt kan använda rätt klient-ID för resurserna beroende på var de skickas i det efterföljande importanropet.
 
@@ -198,7 +198,7 @@ Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_
 
 ## Importera en resurs {#import}
 
-När du har [genererat en exportnyttolast](#export) för en XDM-resurs kan du använda den nyttolasten i en POST-begäran till `/import`-slutpunkten för att importera resursen till en IMS-målorganisation och sandlåda.
+När du har [genererade en exportnyttolast](#export) för en XDM-resurs kan du använda den nyttolasten i en POST-förfrågan till `/import` slutpunkt för import av den resursen till en IMS-målorganisation och sandlåda.
 
 **API-format**
 
@@ -208,14 +208,14 @@ POST /rpc/import
 
 **Begäran**
 
-Följande begäran tar nyttolasten som returnerades i det föregående [exportexemplet](#export) för att importera fältgruppen `Restaurant` till en ny IMS-organisation och sandlåda, enligt rubrikerna `x-gw-ims-org-id` respektive `x-sandbox-name`.
+Följande begäran tar nyttolasten som returnerades i föregående [exportexempel](#export) för att importera `Restaurant` fältgrupp till en ny IMS-organisation och sandlåda, som bestäms av `x-gw-ims-org-id` och `x-sandbox-name` rubriker.
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/import \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '[
@@ -427,7 +427,7 @@ Ett lyckat svar returnerar en lista över de importerade resurserna med rätt in
             }
         ],
         "refs": [],
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "meta:extensible": true,
         "meta:abstract": true,
         "meta:xdmType": "object",
@@ -506,7 +506,7 @@ Ett lyckat svar returnerar en lista över de importerade resurserna med rätt in
         "refs": [
             "https://ns.adobe.com/{TENANT_ID}/datatypes/fc07162ee7ca8d18e074a3bb50c3938c76160bf6040e8495"
         ],
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "meta:extensible": true,
         "meta:abstract": true,
         "meta:intendedToExtend": [],

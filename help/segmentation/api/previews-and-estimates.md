@@ -5,7 +5,7 @@ title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 topic-legacy: developer guide
 description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: a5cc688357e4750dee73baf3fc9af02a9f2e49e3
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 1%
@@ -16,24 +16,24 @@ ht-degree: 1%
 
 När du utvecklar en segmentdefinition kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att se till att du isolerar den målgrupp du förväntar dig.
 
-* **I** Förhandsgranskningar finns sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
+* **Förhandsvisningar** tillhandahåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
 
-* **Uppskattningar** ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+* **Uppskattningar** tillhandahålla statistisk information om en segmentdefinition, t.ex. den förväntade målgruppsstorleken, konfidensintervall och felstandardavvikelse.
 
 >[!NOTE]
 >
->Om du vill få tillgång till liknande mått som rör kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, kan du läsa [profilförhandsgranskningsguiden (förhandsgranskningsexempelstatus)](../../profile/api/preview-sample-status.md), som ingår i utvecklarhandboken för profil-API.
+>Om du vill få tillgång till liknande värden för kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, ska du läsa [slutpunktsguide för förhandsgranskning av profil (förhandsgranska exempelstatus)](../../profile/api/preview-sample-status.md), som ingår i utvecklarhandboken för profil-API.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hur uppskattningar genereras
 
 När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur datainsamling utlöses beror på intagsmetoden:
 
-* **Batchförtäring:** Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet inom 15 minuter efter att en batch har importerats till profilbutiken.
-* **Direktuppspelningsuppläsning:** För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller inte. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet.
+* **Batchförtäring:** Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet vid batchintag inom 15 minuter efter att en batch har importerats till profilbutiken.
+* **Direktuppspelning:** För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet.
 
 Exempelstorleken för genomsökningen beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 
@@ -49,7 +49,7 @@ Exempelstorleken för genomsökningen beror på det totala antalet enheter i din
 
 ## Skapa en ny förhandsgranskning {#create-preview}
 
-Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till `/preview`-slutpunkten.
+Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till `/preview` slutpunkt.
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ POST /preview
 curl -X POST https://platform.adobe.io/data/core/ups/preview \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -82,9 +82,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `predicateExpression` | PQL-uttrycket som data ska frågas efter. |
-| `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda tillåtna värdet för den här egenskapen `pql/text`. |
-| `predicateModel` | Namnet på schemaklassen [!DNL Experience Data Model] (XDM) som profildata baseras på. |
-| `graphType` | Den diagramtyp som du vill hämta klustret från. Värdena som stöds är `none` (utför ingen identitetssammanfogning) och `pdg` (utför identitetssammanfogning baserat på ditt privata identitetsdiagram). |
+| `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda giltiga värdet för den här egenskapen `pql/text`. |
+| `predicateModel` | Namnet på [!DNL Experience Data Model] (XDM) schemaklass som profildata baseras på. |
+| `graphType` | Den diagramtyp som du vill hämta klustret från. Värdena som stöds är `none` (utför ingen identitetssammanfogning) och `pdg` (Utför identitetssammanfogning baserat på ditt privata identitetsdiagram). |
 
 **Svar**
 
@@ -105,9 +105,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med information om den nya f
 | `state` | Det aktuella läget för förhandsgranskningsjobbet. När den skapas är den i läget&quot;NYTT&quot;. Därefter kommer det att vara i tillståndet &quot;RUNNING&quot; tills bearbetningen är klar, och då blir det &quot;RESULT_READY&quot; eller &quot;FAILED&quot;. |
 | `previewId` | ID:t för förhandsgranskningsjobbet, som ska användas i sökningssyfte vid visning av en uppskattning eller förhandsvisning, enligt beskrivningen i nästa avsnitt. |
 
-## Hämta resultatet av en specifik förhandsgranskning {#get-preview}
+## Hämta resultatet från en viss förhandsgranskning {#get-preview}
 
-Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-förfrågan till `/preview`-slutpunkten och ange ID:t för förhandsgranskning i sökvägen för begäran.
+Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-förfrågan till `/preview` slutpunkt och ange ID för förhandsgranskning i sökvägen för begäran.
 
 **API-format**
 
@@ -117,14 +117,14 @@ GET /preview/{PREVIEW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | `previewId`-värdet för den förhandsgranskning som du vill hämta. |
+| `{PREVIEW_ID}` | The `previewId` värdet för den förhandsgranskning som du vill hämta. |
 
 **Begäran**
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgtM2YzMS00YjY0LThkODQtYWNkMGM0ZmJkYWQzOmU4OTAwNjhiLWY1Y2EtNGE4Zi1hNmI1LWFmODdmZjBjYWFjMzow \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -180,11 +180,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att leta upp de angivna entiteterna med hjälp av [API-slutpunkten för profilåtkomst](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att söka efter de angivna entiteterna med hjälp av [API-slutpunkt för profilåtkomst](../../profile/api/entities.md). |
 
-## Hämta resultatet för ett specifikt uppskattningsjobb {#get-estimate}
+## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
-När du har skapat ett förhandsgranskningsjobb kan du använda dess `previewId` i sökvägen för en GET-begäran till `/estimate`-slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+När du har skapat ett förhandsgranskningsjobb kan du använda det `previewId` i sökvägen till en GET-begäran till `/estimate` slutpunkt för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
 
 **API-format**
 
@@ -194,7 +194,7 @@ GET /estimate/{PREVIEW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | Ett uppskattningsjobb aktiveras bara när ett förhandsgranskningsjobb skapas och de två jobben har samma ID-värde för sökningssyften. Detta är det `previewId`-värde som returnerades när förhandsgranskningsjobbet skapades. |
+| `{PREVIEW_ID}` | Ett uppskattningsjobb aktiveras bara när ett förhandsgranskningsjobb skapas och de två jobben har samma ID-värde för sökningssyften. Detta är i synnerhet `previewId` som returnerades när förhandsgranskningsjobbet skapades. |
 
 **Begäran**
 
@@ -203,7 +203,7 @@ Följande begäran hämtar resultatet av ett specifikt uppskattningsjobb.
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWFjOTEtNGJiNy1hNDI2LTE1MDkzN2I2YWY1Yzo0Mg \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -246,8 +246,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 | -------- | ----------- |
 | `estimatedNamespaceDistribution` | En array med objekt som visar antalet profiler i segmentet uppdelade efter identitetsnamnutrymme. Det totala antalet profiler per namnutrymme (genom att lägga ihop värdena som visas för varje namnutrymme) kan vara högre än antalet profiler eftersom en profil kan kopplas till flera namnutrymmen. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden. |
 | `state` | Det aktuella läget för förhandsgranskningsjobbet. Läget kommer att vara &quot;RUNNING&quot; tills bearbetningen är slutförd, och då blir det &quot;RESULT_READY&quot; eller &quot;FAILED&quot;. |
-| `_links.preview` | När `state` är &quot;RESULT_READY&quot; ger det här fältet en URL för att visa uppskattningen. |
+| `_links.preview` | När `state` är &quot;RESULT_READY&quot;, ger det här fältet en URL för att visa uppskattningen. |
 
 ## Nästa steg
 
-När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får åtkomst till mått som hör till kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, kan du gå till [profilförhandsgranskningsguiden (`/previewsamplestatus`).](../../profile/api/preview-sample-status.md)
+När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får tillgång till statistik om kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, går du till [förhandsgranskning av profil (`/previewsamplestatus`) slutpunktsguide](../../profile/api/preview-sample-status.md).

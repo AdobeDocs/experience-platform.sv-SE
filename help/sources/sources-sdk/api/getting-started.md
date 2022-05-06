@@ -6,7 +6,8 @@ topic-legacy: developer guide
 description: Det här dokumentet innehåller en introduktion till den information som krävs innan du försöker skapa en ny källa med hjälp av Sources SDK.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: ba131442-ff20-4854-87fe-918aa313382d
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '400'
 ht-degree: 0%
@@ -40,7 +41,7 @@ För att kunna ringa anrop till plattforms-API:er måste du först slutföra [sj
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
 Alla resurser i Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 

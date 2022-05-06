@@ -5,7 +5,7 @@ title: Exempel på API-slutpunkt för data
 description: Med slutpunkten /sampledata i API:t för schemaregister kan du generera exempeldata mappade till strukturen för ett befintligt XDM-schema.
 topic-legacy: developer guide
 exl-id: 424d33ca-0624-4891-bf83-044ac2861579
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 0%
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 För att kunna importera data till Adobe Experience Platform måste dataformatet och datastrukturen överensstämma med ett befintligt XDM-schema (Experience Data Model). Beroende på hur komplicerat schemat är för en viss datauppsättning kan det vara svårt att fastställa den exakta formen för de data som datauppsättningen förväntar sig vid intag.
 
-Med hjälp av `/sampledata`-slutpunkten i [!DNL Schema Registry]-API:t kan du generera ett exempelobjekt för eventuella tidigare skapade schema.
+Använda `/sampledata` slutpunkt i [!DNL Schema Registry] API, du kan generera ett exempelobjekt för inläsning av alla tidigare skapade scheman.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
-Exempeldatans slutpunkt är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i API:t [!DNL Schema Registry], kräver RPC-slutpunkter inga ytterligare rubriker som `Accept` eller `Content-Type`, och använder inte en `CONTAINER_ID`. I stället måste de använda namnutrymmet `/rpc`, vilket visas i API-anropet nedan.
+Exempeldatans slutpunkt är en del av de RPC-anrop (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropet nedan.
 
 ## Hämta exempeldata för ett schema
 
@@ -36,7 +36,7 @@ GET /rpc/sampledata/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SCHEMA_ID}` | `meta:altId` eller URL-kodad `$id` för schemat som du vill generera exempeldata för. |
+| `{SCHEMA_ID}` | The `meta:altId` eller URL-kodad `$id` för schemat som du vill generera exempeldata för. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -49,7 +49,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/sampledata/_{TENANT_ID}.schemas.533ca5da28087c44344810891b0f03d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

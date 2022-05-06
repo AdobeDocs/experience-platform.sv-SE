@@ -5,7 +5,7 @@ title: API-guide för dataåtkomst
 topic-legacy: developer guide
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # API-guide för dataåtkomst
 
-API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
+API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i [!DNL Experience Platform].
 
 ![Dataåtkomst i Experience Platform](images/Data_Access_Experience_Platform.png)
 
@@ -51,7 +51,7 @@ GET /batches/{BATCH_ID}/files
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/files \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -94,7 +94,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-Matrisen `"data"` innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i fältet `"dataSetFileId"`. Detta unika ID kan sedan användas för att komma åt eller hämta filen.
+The `"data"` arrayen innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i `"dataSetFileId"` fält. Detta unika ID kan sedan användas för att komma åt eller hämta filen.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
@@ -115,7 +115,7 @@ GET /files/{FILE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{FILE_ID}` | Samma som `"dataSetFileId"`, ID:t för filen som ska öppnas. |
+| `{FILE_ID}` | Lika med `"dataSetFileId"`, ID:t för filen som ska användas. |
 
 **Begäran**
 
@@ -123,7 +123,7 @@ GET /files/{FILE_ID}
 curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -203,7 +203,7 @@ När en katalog returneras innehåller den en array med alla filer i katalogen.
 
 ## Åtkomst till innehållet i en fil
 
-API:t [!DNL Data Access] kan också användas för att komma åt innehållet i en fil. Den kan sedan användas för att hämta innehållet till en extern källa.
+The [!DNL Data Access] API kan också användas för att komma åt innehållet i en fil. Den kan sedan användas för att hämta innehållet till en extern källa.
 
 **API-format**
 
@@ -221,7 +221,7 @@ GET /files/{dataSetFileId}?path={FILE_NAME}
 curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?path={FILE_NAME} \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -236,8 +236,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## Ytterligare kodexempel
 
-Ytterligare exempel finns i [självstudiekursen](tutorials/dataset-data.md) för dataåtkomst.
+Ytterligare exempel finns i [dataåtkomst, genomgång](tutorials/dataset-data.md).
 
 ## Prenumerera på dataöverföringshändelser
 
-[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via  [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om [att prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md).
+[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Se självstudiekursen om [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md) för mer information.

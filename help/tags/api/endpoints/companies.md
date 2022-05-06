@@ -1,7 +1,8 @@
 ---
 title: Företagets slutpunkt
 description: Lär dig hur du anropar slutpunkten /companies i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '243'
 ht-degree: 1%
@@ -12,15 +13,15 @@ ht-degree: 1%
 
 Ett företag representerar en kundorganisation, vanligtvis en verksamhet. I Reactor API matchar de här företagen 1:1 med IMS Organization ID. API-användare har bara insyn i de företag som de har tillgång till. Ett företag kan innehålla många [egenskaper](./properties.md). En egenskap tillhör exakt ett företag.
 
-Med slutpunkten `/companies` i Reaktors-API kan du hämta de företag som du har tillgång till i ditt upplevelseprogram programmatiskt.
+The `/companies` -slutpunkten i Reaktors API gör att du kan hämta de företag som du har tillgång till i ditt upplevelseprogram via programkod.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista över företag {#list}
 
-Du kan lista de företag som du har behörighet att använda genom att göra en GET-förfrågan till `/companies`-slutpunkten. I de flesta fall finns det precis en.
+Du kan lista de företag som du är behörig att använda genom att göra en GET-förfrågan till `/companies` slutpunkt. I de flesta fall finns det precis en.
 
 **API-format**
 
@@ -30,7 +31,7 @@ GET /companies
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade företag filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade företag filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -39,7 +40,7 @@ curl -X GET \
   https://reactor.adobe.io/companies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -57,7 +58,7 @@ Ett godkänt svar returnerar en lista över företag som du har tillgång till.
       "attributes": {
         "created_at": "2020-08-13T17:13:30.667Z",
         "name": "Example Company",
-        "org_id": "{IMS_ORG}",
+        "org_id": "{ORG_ID}",
         "updated_at": "2020-08-13T17:13:30.667Z",
         "token": "d5a4f682bbae",
         "cjm_enabled": false,
@@ -118,7 +119,7 @@ GET /companies/{COMPANY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{COMPANY_ID}` | Värdet `id` för det företag du vill söka efter. |
+| `{COMPANY_ID}` | The `id` värdet på det företag du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -129,7 +130,7 @@ curl -X GET \
   https://reactor.adobe.io/companies/COdb0cd64ad4524440be94b8496416ec7d \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -146,7 +147,7 @@ Ett godkänt svar returnerar information om företaget.
     "attributes": {
       "created_at": "2020-08-13T17:13:30.667Z",
       "name": "Example Company",
-      "org_id": "{IMS_ORG}",
+      "org_id": "{ORG_ID}",
       "updated_at": "2020-08-13T17:13:30.667Z",
       "token": "d5a4f682bbae",
       "cjm_enabled": false,

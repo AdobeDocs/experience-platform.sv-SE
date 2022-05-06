@@ -4,7 +4,7 @@ description: Läs om hur API:t för Adobe Experience Platform Edge Network Serve
 seo-description: Learn how the Adobe Experience Platform Edge Network Server API performs interactive data collection
 keywords: datainsamling;samling;upplevelseplattform kantnätverk;api;interaktiv datainsamling
 exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 3%
@@ -32,7 +32,7 @@ POST /ee/v2/interact
 ```shell
 curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}" 
 -H "Authorization: Bearer {TOKEN}" 
--H "x-gw-ims-org-id: {IMS_ORG_ID}" 
+-H "x-gw-ims-org-id: {ORG_ID}" 
 -H "x-api-key: {API_KEY}" 
 -H "Content-Type: application/json" 
 -d '{

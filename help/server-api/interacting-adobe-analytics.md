@@ -4,7 +4,7 @@ description: Lär dig hur du använder API:t för Edge Network Server för att i
 seo-description: Learn how to use the Edge Network Server API to interact with Adobe Analytics
 keywords: datainsamling, Utlopp. Analyser. Adobe Experience Platform Edge Network API;analytics
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Alla värden som användarna mappar till dessa fält mappas automatiskt till rä
 ```shell
 curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}" \
 -H "Authorization: Bearer {TOKEN}" 
--H "x-gw-ims-org-id: {IMS_ORG_ID}" 
+-H "x-gw-ims-org-id: {ORG_ID}" 
 -H "x-api-key: {API_KEY}" 
 -H "Content-Type: application/json" \
 -d '{

@@ -5,7 +5,7 @@ title: Felsökningsguide för batchinmatning
 topic-legacy: troubleshooting
 description: Den här dokumentationen hjälper dig att besvara vanliga frågor om Adobe Experience Platform API:er för inmatning av batchdata.
 exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1416'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Indataformatet ska anges när gruppen skapas i nyttolasten. Ett exempel på hur 
 ```shell
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
   -H "accept: application/json" \
-  -H "x-gw-ims-org-id: {IMS_ORG}" \
+  -H "x-gw-ims-org-id: {ORG_ID}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "x-api-key: {API_KEY}"
   -d '{
@@ -65,7 +65,7 @@ För att data ska kunna visas i datauppsättningen måste gruppen markeras som s
 ```shell
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE" \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -77,7 +77,7 @@ Om du vill importera flerradig JSON, `isMultiLineJson` Flagga måste anges när 
 ```shell
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
   -H "accept: application/json" \
-  -H "x-gw-ims-org-id: {IMS_ORG}" \
+  -H "x-gw-ims-org-id: {ORG_ID}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "x-api-key: {API_KEY}"
   -d '{
@@ -147,7 +147,7 @@ När en batch har signalerats för batchbefordran kan batchbearbetningsförloppe
 
 ```shell
 curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}" \
-  -H "x-gw-ims-org-id: {IMS_ORG}" \
+  -H "x-gw-ims-org-id: {ORG_ID}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "x-api-key: {API_KEY}"
 ```
@@ -161,7 +161,7 @@ Med den här förfrågan får du ett svar som liknar detta:
 ```json
 {
     "{BATCH_ID}":{
-        "imsOrg":"{IMS_ORG}",
+        "imsOrg":"{ORG_ID}",
         "created":1494349962314,
         "createdClient":"{API_KEY}",
         "createdUser":"{USER_ID}",

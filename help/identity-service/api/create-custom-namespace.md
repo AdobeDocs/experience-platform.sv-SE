@@ -5,8 +5,7 @@ title: Skapa ett anpassat namnutrymme i Identity Service API
 topic-legacy: API guide
 description: Med API:t för identitetsnamnområde kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
 exl-id: 6015a225-4508-49cc-9dda-fb9f73a8746c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 1%
@@ -15,9 +14,9 @@ ht-degree: 1%
 
 # Skapa ett anpassat namnutrymme i Identity Service API
 
-Med API:t [!DNL Identity Namespace] kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
+Använda [!DNL Identity Namespace] API: du kan skapa ett anpassat ID-namnutrymme som bara är tillgängligt för din organisation.
 
-Rekommendationer om hur du skapar anpassade namnutrymmen finns i [Vanliga frågor om identitetstjänsten](../troubleshooting-guide.md).
+Rekommendationer om hur du skapar anpassade namnutrymmen finns i [dokumentation om vanliga frågor om identitetstjänster](../troubleshooting-guide.md).
 
 >[!NOTE]
 >
@@ -38,7 +37,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -d '{
         "name": "Loyalty Member",
         "code": "Loyalty",
@@ -65,4 +64,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå vidare till nästa självstudiekurs för att [visa en lista över ett identitets ursprungliga ID](./list-native-id.md)
+Gå till nästa självstudiekurs för att [lista ID:t för en identitet](./list-native-id.md)

@@ -5,8 +5,7 @@ title: Lista tillgängliga identitetsnamnutrymmen
 topic-legacy: API guide
 description: Visa alla tillgängliga namnutrymmen.
 exl-id: b65e5f86-143d-4ca5-8b3f-2c0a24433bbf
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '79'
 ht-degree: 2%
@@ -28,13 +27,13 @@ curl -X GET \
   'https://platform-va7.adobe.io/data/core/idnamespace/identities' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet [!UICONTROL custom] för [!UICONTROL false] är standardnamnutrymmen, medan de med värdet [!UICONTROL custom] för [!UICONTROL true] är namnutrymmen som din organisation har skapat.
+Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med ett &quot;[!UICONTROL custom]&quot; värdet &quot;[!UICONTROL false]&quot; är standardnamnutrymmen, medan de med &quot;[!UICONTROL custom]&quot; värdet &quot;[!UICONTROL true]&quot; är namnutrymmen som din organisation har skapat.
 
 >[!NOTE]
 >
@@ -80,4 +79,4 @@ Svaret innehåller en array med objekt, där varje objekt representerar ett till
 
 ## Nästa steg
 
-Gå vidare till nästa självstudiekurs för att [skapa ett anpassat namnutrymme](./create-custom-namespace.md)
+Gå till nästa självstudiekurs för att [skapa ett anpassat namnutrymme](./create-custom-namespace.md)

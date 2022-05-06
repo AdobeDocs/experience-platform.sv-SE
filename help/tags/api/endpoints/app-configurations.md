@@ -1,7 +1,8 @@
 ---
 title: Slutpunkt för appkonfigurationer
 description: Lär dig hur du anropar slutpunkten /app_configurations i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 88a1ec36-b4d2-4fb6-92cb-1da04268492a
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '586'
 ht-degree: 1%
@@ -12,13 +13,13 @@ ht-degree: 1%
 
 >[!WARNING]
 >
->Implementeringen av `/app_configurations`-slutpunkten börjar fungera när funktioner läggs till, tas bort och omarbetas.
+>Genomförandet av `/app_configurations` slutpunkten ändras när funktioner läggs till, tas bort och omarbetas.
 
-Appkonfigurationer tillåter att autentiseringsuppgifter lagras och hämtas för senare bruk. Med slutpunkten `/app_configurations` i Reaktors API kan du programmässigt hantera appkonfigurationer i ditt upplevelseprogram.
+Appkonfigurationer tillåter att autentiseringsuppgifter lagras och hämtas för senare bruk. The `/app_configurations` -slutpunkten i Reaktors API gör att du kan hantera appkonfigurationer inom ditt upplevelseprogram programmatiskt.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med appkonfigurationer {#list}
 
@@ -30,13 +31,13 @@ GET /companies/{COMPANY_ID}/app_configurations
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | `id` för [företaget](./companies.md) som äger appkonfigurationerna. |
+| `COMPANY_ID` | The `id` i [företag](./companies.md) som äger appkonfigurationerna. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade appkonfigurationer filtreras baserat på följande attribut:<ul><li>`app_id`</li><li>`created_at`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade appkonfigurationer filtreras baserat på följande attribut:<ul><li>`app_id`</li><li>`created_at`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -45,7 +46,7 @@ curl -X GET \
   https://reactor.adobe.io/companies/COdb0cd64ad4524440be94b8496416ec7d/app_configurations \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -110,7 +111,7 @@ GET /app_configurations/{APP_CONFIGURATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | `id` för den programkonfiguration som du vill söka efter. |
+| `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -121,7 +122,7 @@ curl -X GET \
   https://reactor.adobe.io/app_configurations/AC40c339ab80d24c958b90d67b698602eb \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -175,7 +176,7 @@ POST /companies/{COMPANY_ID}/app_configurations
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `COMPANY_ID` | `id` för [företaget](./companies.md) som du definierar appkonfigurationen under. |
+| `COMPANY_ID` | The `id` i [företag](./companies.md) som du definierar appkonfigurationen under. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -186,7 +187,7 @@ curl -X POST \
   https://reactor.adobe.io/companies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -211,8 +212,8 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `platform` | Plattformen som programmet körs på (webb eller mobil). Detta avgör vilka meddelandetjänster som är tillgängliga. |
-| `messaging_service` | Meddelandetjänsten som är associerad med appen, till exempel [Apple Push Notification service (APNs)](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) och [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging). Detta avgör vilka nyckeltyper som kan användas. |
-| `key_type` | Representerar det protokoll som en push-tjänstleverantör stöder och fastställer formatet för `push_credential`-objektet. När protokoll utvecklas för meddelandetjänster skapas nya `key_type`-värden som stöder de uppdaterade protokollen. |
+| `messaging_service` | Meddelandetjänsten som är kopplad till appen, till exempel [Apple Push Notification service (APN:er)](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) och [Firebase Cloud Messaging (FCM)](https://firebase.google.com/docs/cloud-messaging). Detta avgör vilka nyckeltyper som kan användas. |
+| `key_type` | Representerar det protokoll som en push-tjänstleverantör stöder och fastställer formatet för `push_credential` -objekt. I takt med att protokollen utvecklas för meddelandetjänster finns det nya `key_type` -värden skapas som stöd för de uppdaterade protokollen. |
 | `push_credential` | Det faktiska autentiseringsvärdet, som är krypterat i vila. Det här fältet dekrypteras vanligtvis inte eller inkluderas i API-svar. Endast vissa Adobe-tjänster kan få ett svar som innehåller en dekrypterad push-autentiseringsuppgift. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -266,7 +267,7 @@ PUT /app_configurations/{APP_CONFIGURATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | `id` för den programkonfiguration som du vill uppdatera. |
+| `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill uppdatera. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -279,7 +280,7 @@ curl -X PUT \
   https://reactor.adobe.io/app_configurations/AC40c339ab80d24c958b90d67b698602eb \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -295,7 +296,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar attributen som ska uppdateras för appkonfigurationen. Varje nyckel representerar det specifika programkonfigurationsattribut som ska uppdateras, tillsammans med motsvarande värde som det ska uppdateras till.<br><br>Följande attribut kan uppdateras för appkonfigurationer:<ul><li>`app_id`</li><li>`key_type`</li><li>`messaging_service`</li><li>`name`</li><li>`platform`</li><li>`push_credential`</li></ul> |
-| `id` | `id` för den programkonfiguration som du vill uppdatera. Detta ska matcha `{APP_CONFIGURATION_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` för den programkonfiguration som du vill uppdatera. Det här bör matcha `{APP_CONFIGURATION_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `app_configurations`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -349,7 +350,7 @@ DELETE /app_configurations/{APP_CONFIGURATION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `APP_CONFIGURATION_ID` | `id` för den programkonfiguration som du vill ta bort. |
+| `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill ta bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -360,7 +361,7 @@ curl -X DELETE \
   https://reactor.adobe.io/app_configurations/AC40c339ab80d24c958b90d67b698602eb \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**

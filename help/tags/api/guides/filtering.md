@@ -1,7 +1,8 @@
 ---
 title: Filtrera svar i reaktors-API
 description: Lär dig hur du filtrerar resultat när du visar resurser i Reactor API.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: 8a91f3dd-4ead-4a10-abb1-e71acb0d73b6
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '556'
 ht-degree: 1%
@@ -10,7 +11,7 @@ ht-degree: 1%
 
 # Filtrera svar i reaktors-API
 
-När du använder listslutpunkter (GET) i Reaktors-API:t kan det vara nödvändigt att begränsa de returnerade resultaten till en delmängd av poster. För att uppnå detta har många av API:ns listslutpunkter stöd för möjligheten att filtrera efter specifika attribut. Om du i stället vill göra strukturerade frågor till API:t läser du i guiden [söka](./search.md).
+När du använder listslutpunkter (GET) i Reaktors-API:t kan det vara nödvändigt att begränsa de returnerade resultaten till en delmängd av poster. För att uppnå detta har många av API:ns listslutpunkter stöd för möjligheten att filtrera efter specifika attribut. Om du vill göra strukturerade frågor till API:t i stället, se guiden [söka](./search.md).
 
 ## Filtreringssyntax
 
@@ -18,11 +19,11 @@ I följande exempel förklaras hur du implementerar filter för dina GETTER.
 
 **API-format**
 
-Om du vill filtrera svaret för en viss listslutpunkt måste du ange en `filter`-frågeparameter i sökvägen till begäran.
+Om du vill filtrera svaret för en viss listslutpunkt måste du ange en `filter` frågeparametern i sökvägen för begäran.
 
 >[!NOTE]
 >
->I mallen nedan används hakparenteser (`[]`) och blankstegstecken för läsbarhet. I praktiken måste dessa tecken vara URI-kodade, vilket beskrivs i [RFC 3986](https://tools.ietf.org/html/rfc3986). Ett exempel på en korrekt kodad sökväg visas senare i den här handboken.
+>I mallen nedan används hakparentes (`[]`) och blankstegstecken för läsbarhet. I praktiken måste de här tecknen vara URI-kodade enligt instruktionerna i [RFC 3986](https://tools.ietf.org/html/rfc3986). Ett exempel på en korrekt kodad sökväg visas senare i den här handboken.
 >
 >Observera att om filterstrukturen är felaktig tillämpas inga filter och den fullständiga resultatmängden returneras.
 
@@ -34,14 +35,14 @@ GET {ENDPOINT}?filter[{ATTRIBUTE_NAME}]={OPERATOR} {VALUE}
 | --- | --- |
 | `{ENDPOINT}` | En listslutpunkt i Reactor API som stöder filterparametrar. |
 | `{ATTRIBUTE_NAME}` | Namnet på ett specifikt attribut att filtrera resultat efter. Tänk på att olika slutpunkter har stöd för olika attribut för filtrering. I referenshandboken för slutpunkten som du arbetar med finns en lista med tillgängliga filterattribut. |
-| `{OPERATOR}` | Operatorn som bestämmer hur resultaten utvärderas mot angiven `{VALUE}`. Operatorer som stöds listas i avsnittet [appendix](#supported-operators). |
-| `{VALUE}` | Värdet som returnerade resultat ska jämföras med. När du jämför för för likhet med operatorn `EQ` måste värdet vara en exakt, skiftlägeskänslig matchning för att kunna inkluderas i svaret. |
+| `{OPERATOR}` | Operatorn som bestämmer hur resultaten utvärderas mot den angivna `{VALUE}`. Operatorer som stöds listas i [appendix-avsnitt](#supported-operators). |
+| `{VALUE}` | Värdet som returnerade resultat ska jämföras med. Vid jämförelse av likhet med `EQ` måste värdet vara en exakt, skiftlägeskänslig matchning för att kunna inkluderas i svaret. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Exempelbegäran nedan hämtar en lista med publicerade bibliotek genom att använda ett filter som kräver att bibliotekets `state`-attribut är lika med `published`.
+Exempelbegäran nedan hämtar en lista med publicerade bibliotek genom att använda ett filter som kräver bibliotekets `state` attribute to equal `published`.
 
 Före URI-kodning skulle syntaxen för det här filtret i sökvägen för begäran se ut ungefär så här:
 
@@ -54,7 +55,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR906238a59bbf4262bcedba248f483600/libraries?filter%5Bstate%5D=EQ%20published \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 ## Filtrera på flera värden {#multiple-values}
@@ -67,7 +68,7 @@ GET {ENDPOINT}?filter[{ATTRIBUTE_NAME}]={OPERATOR} {VALUE_1},{VALUE_2}
 
 ## Använda flera filter
 
-Om du vill använda filter för flera attribut anger du en `filter`-parameter för varje attribut. Parametrar måste avgränsas med et-tecken (`&`).
+Om du vill använda filter för flera attribut anger du en `filter` parameter för varje attribut. Parametrar måste avgränsas med et-tecken (`&`).
 
 ```http
 GET {ENDPOINT}?filter[{ATTRIBUTE_NAME_1}]={OPERATOR} {VALUE}&filter[{ATTRIBUTE_NAME_2}]={OPERATOR} {VALUE}
@@ -91,5 +92,5 @@ I följande tabell visas vilka operatorvärden som stöds för filterparametrar.
 | `NOT` | Attributet får inte vara lika med det angivna värdet. |
 | `LT` | Attributet måste vara mindre än det angivna värdet. |
 | `GT` | Attributet måste vara större än det angivna värdet. |
-| `BETWEEN` | Attributet måste ligga inom ett angivet värdeintervall. När du använder den här operatorn måste [två värden](#multiple-values) anges för att ange minimi- och maximivärden för det önskade intervallet. |
+| `BETWEEN` | Attributet måste ligga inom ett angivet värdeintervall. När du använder den här operatorn [två värden](#multiple-values) måste anges för att ange minimi- och maximivärden för det önskade intervallet. |
 | `CONTAINS` | Attributet måste innehålla det angivna värdet, till exempel en teckenuppsättning i ett strängattribut. |

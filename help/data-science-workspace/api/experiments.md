@@ -5,8 +5,7 @@ title: API-slutpunkt för experiment
 topic-legacy: Developer guide
 description: Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '783'
 ht-degree: 1%
@@ -38,7 +37,7 @@ curl -X POST \
     https://platform.adobe.io/data/sensei/experiments \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=experiment.v1.json' \
     -d '{
@@ -49,7 +48,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Det önskade namnet för Experimenten. Utbildningen som motsvarar denna Experiment ärver det här värdet som ska visas i användargränssnittet som namn på utbildningskörningen. |
+| `name` | Det önskade namnet på Experiment. Utbildningen som motsvarar denna Experiment ärver det här värdet som ska visas i användargränssnittet som namn på utbildningskörningen. |
 | `mlInstanceId` | Ett giltigt MLInstance-ID. |
 
 **Svar**
@@ -70,7 +69,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 }
 ```
 
-## Skapa och utför en kurs- eller poängkörning {#experiment-training-scoring}
+## Skapa och genomföra en utbildning eller ett poängprov {#experiment-training-scoring}
 
 Du kan skapa utbildnings- eller poängkörningar genom att utföra en POST och ange ett giltigt test-ID och specificera körningsaktiviteten. Bedömningskörningar kan bara skapas om experten har en befintlig och framgångsrik utbildning. En utbildningskurs kommer att initiera modellutbildningsproceduren och om den slutförs utan fel genereras en tränad modell. När du genererar utbildade modeller ersätts alla befintliga modeller, så att en expert bara kan använda en enda tränad modell åt gången.
 
@@ -91,7 +90,7 @@ curl -X POST \
     https://platform.adobe.io/data/sensei/experiments/5cb25a2d-2cbd-4c99-a619-8ddae5250a7b/runs \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=experimentRun.v1.json' \
     -d '{
@@ -101,11 +100,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `{TASK}` | Anger körningens aktivitet. Ange det här värdet som antingen `train` för utbildning, `score` för poängsättning eller `featurePipeline` för funktionsledning. |
+| `{TASK}` | Anger körningens aktivitet. Ange det här värdet som antingen `train` för utbildning, `score` för poängsättning, eller `featurePipeline` för funktionsflöde. |
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade körningen, inklusive de ärvda standardutbildnings- eller poängparametrarna, och körningens unika ID (`{RUN_ID}`).
+Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade körningen inklusive de ärvda standardutbildnings- eller poängparametrarna samt körningens unika ID (`{RUN_ID}`).
 
 ```json
 {
@@ -134,7 +133,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med experter
 
-Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
+Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista över tillgängliga frågor finns i avsnittet om tillägg i [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 
 **API-format**
@@ -155,13 +154,13 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/experiments?property=mlInstanceId==46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista över Experiment som delar samma MLInstance-ID (`{MLINSTANCE_ID}`).
+Ett godkänt svar returnerar en lista över Experiment som delar samma MLInstance-ID (`{MLINSTANCE_ID}`).
 
 ```json
 {
@@ -198,7 +197,7 @@ Ett lyckat svar returnerar en lista över Experiment som delar samma MLInstance-
 }
 ```
 
-## Hämta en specifik experiment {#retrieve-specific}
+## Hämta en specifik expert {#retrieve-specific}
 
 Du kan hämta information om en specifik Experiment genom att utföra en GET-förfrågan som innehåller det önskade Experiment-ID:t i sökvägen för begäran.
 
@@ -219,7 +218,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/experiments/5cb25a2d-2cbd-4c99-a619-8ddae5250a7b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -243,7 +242,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ## Hämta en lista med Experimentkörningar
 
-Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning av resurser](./appendix.md#query).
+Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i bilagan [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 >[!NOTE]
 >
@@ -260,7 +259,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 | Parameter | Beskrivning |
 | --- | --- |
 | `{EXPERIMENT_ID}` | Ett giltigt test-ID. |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
+| `{QUERY_PARAMETER}` | En av [tillgängliga frågeparametrar](./appendix.md#query) används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -272,13 +271,13 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/experiments/5cb25a2d-2cbd-4c99-a619-8ddae5250a7b/runs?property=mode==train \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller en lista över körningar och alla detaljer för dem, inklusive deras ID för Experiment Run (`{RUN_ID}`).
+Ett godkänt svar returnerar en nyttolast som innehåller en lista över körningar och alla detaljer för dem, inklusive ID för Experimentkörning (`{RUN_ID}`).
 
 ```json
 {
@@ -308,7 +307,7 @@ Du kan uppdatera en befintlig Experiment genom att skriva över dess egenskaper 
 
 >[!TIP]
 >
->För att PUT ska lyckas rekommenderar vi att du först utför en GET-förfrågan om att [hämta Experimentet med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först skickar en GET-förfrågan till [hämta Experimentera med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 I följande exempel på API-anrop uppdateras en Experiments namn samtidigt som dessa egenskaper används från början:
 
@@ -341,7 +340,7 @@ curl -X PUT \
     https://platform.adobe.io/data/sensei/experiments/5cb25a2d-2cbd-4c99-a619-8ddae5250a7b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=experiments.v1.json' \
     -d '{
@@ -394,7 +393,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/experiments/5cb25a2d-2cbd-4c99-a619-8ddae5250a7b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -429,7 +428,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/experiments?mlInstanceId=46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

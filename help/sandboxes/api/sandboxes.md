@@ -5,7 +5,7 @@ title: API-slutpunkt för sandlådehantering
 topic-legacy: developer guide
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: a43dd851a5c7ec722e792a0f43d1bb42777f0c15
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 1%
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # Slutpunkt för sandlådehantering
 
-Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön. Med `/sandboxes`-slutpunkten i [!DNL Sandbox]-API:t kan du programmässigt hantera sandlådor i plattformen.
+Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön. The `/sandboxes` slutpunkt i [!DNL Sandbox] Med API kan du programmässigt hantera sandlådor i plattformen.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med sandlådor {#list}
 
-Du kan lista alla sandlådor som tillhör din IMS-organisation (aktiv eller annan) genom att göra en GET-begäran till `/sandboxes`-slutpunkten.
+Du kan visa alla sandlådor som tillhör din IMS-organisation (aktiv eller annan) genom att göra en GET-förfrågan till `/sandboxes` slutpunkt.
 
 **API-format**
 
@@ -32,7 +32,7 @@ GET /sandboxes?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet [frågeparametrar](./appendix.md#query). |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se avsnittet om [frågeparametrar](./appendix.md#query) för mer information. |
 
 **Begäran**
 
@@ -41,13 +41,13 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes?&limit=4&offset=1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation, inklusive information som `name`, `title`, `state` och `type`.
+Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation, inklusive information som `name`, `title`, `state`och `type`.
 
 ```json
 {
@@ -137,7 +137,7 @@ Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation
 
 ## Söka efter en sandlåda {#lookup}
 
-Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans `name`-egenskap i sökvägen för begäran.
+Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 **API-format**
 
@@ -147,7 +147,7 @@ GET /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill söka efter. |
+| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill söka efter. |
 
 **Begäran**
 
@@ -158,12 +158,12 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/dev-2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `title`, `state` och `type`.
+Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `title`, `state`och `type`.
 
 ```json
 {
@@ -194,13 +194,13 @@ Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `
 
 >[!NOTE]
 >
->När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Mer information om hur du distribuerar en sandlåda till en produktprofil finns i dokumentationen om [hantering av behörigheter för en produktprofil](../../access-control/ui/permissions.md).
+>När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Läs dokumentationen om [hantera behörigheter för en produktprofil](../../access-control/ui/permissions.md) om du vill ha information om hur du distribuerar en sandlåda till en produktprofil.
 
-Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till `/sandboxes`-slutpunkten.
+Du kan skapa en ny utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till `/sandboxes` slutpunkt.
 
 ### Skapa en utvecklingssandlåda
 
-Om du vill skapa en utvecklingssandlåda måste du ange ett `type`-attribut med värdet `development` i nyttolasten för begäran.
+Om du vill skapa en utvecklingssandlåda måste du ange en `type` attribut med värdet `development` i nyttolasten för begäran.
 
 **API-format**
 
@@ -217,7 +217,7 @@ curl -X POST \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "acme-dev",
@@ -234,7 +234,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilket visar att `state` är &quot;creating&quot;.
+Ett lyckat svar returnerar informationen om den nya sandlådan, vilket visar att dess `state` är &quot;creating&quot;.
 
 ```json
 {
@@ -248,11 +248,11 @@ Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilk
 
 >[!NOTE]
 >
->Det tar cirka 30 sekunder för sandlådor att etableras av systemet, varefter deras `state` blir&quot;aktiv&quot; eller&quot;misslyckades&quot;.
+>Sandlådor tar cirka 30 sekunder att tilldela av systemet, varefter deras `state` blir &quot;aktiv&quot; eller &quot;misslyckades&quot;.
 
 ### Skapa en produktionssandlåda
 
-Om du vill skapa en produktionssandlåda måste du ange ett `type`-attribut med värdet `production` i nyttolasten för begäran.
+Om du vill skapa en produktionssandlåda måste du ange en `type` attribut med värdet `production` i nyttolasten för begäran.
 
 **API-format**
 
@@ -269,7 +269,7 @@ curl -X POST \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H `Accept: application/json` \
   -H 'Content-Type: application/json' \
   -d '{
@@ -287,7 +287,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilket visar att `state` är &quot;creating&quot;.
+Ett lyckat svar returnerar informationen om den nya sandlådan, vilket visar att dess `state` är &quot;creating&quot;.
 
 ```json
 {
@@ -301,15 +301,15 @@ Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilk
 
 >[!NOTE]
 >
->Det tar cirka 30 sekunder för sandlådor att etableras av systemet, varefter deras `state` blir&quot;aktiv&quot; eller&quot;misslyckades&quot;.
+>Sandlådor tar cirka 30 sekunder att tilldela av systemet, varefter deras `state` blir &quot;aktiv&quot; eller &quot;misslyckades&quot;.
 
 ## Uppdatera en sandlåda {#put}
 
-Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i sökvägen för begäran och egenskapen som ska uppdateras i nyttolasten för begäran.
+Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i sökvägen till begäran och egenskapen som ska uppdateras i nyttolasten för begäran.
 
 >[!NOTE]
 >
->För närvarande kan bara egenskapen `title` för en sandlåda uppdateras.
+>För närvarande är det bara en sandlåda `title` kan uppdateras.
 
 **API-format**
 
@@ -319,18 +319,18 @@ PATCH /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill uppdatera. |
+| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill uppdatera. |
 
 **Begäran**
 
-Följande begäran uppdaterar egenskapen `title` för sandlådan med namnet &quot;acme&quot;.
+Följande begäran uppdaterar `title` i sandlådan med namnet&quot;acme&quot;.
 
 ```shell
 curl -X PATCH \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json'
   -d '{
     "title": "Acme Business Group prod"
@@ -353,7 +353,7 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) med information om den nyligen u
 
 ## Återställ en sandlåda {#reset}
 
-Sandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen för begäran.
+Sandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen till begäran.
 
 **API-format**
 
@@ -363,8 +363,8 @@ PUT /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill återställa. |
-| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeåterställningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` för att kontrollera om sandlådan som du ska återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
+| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill återställa. |
+| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeåterställningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` om du vill kontrollera om sandlådan du håller på att återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
 
 **Begäran**
 
@@ -375,7 +375,7 @@ curl -X PUT \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme-dev?validationOnly=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json'
   -d '{
     "action": "reset"
@@ -392,7 +392,7 @@ curl -X PUT \
 >
 >När en sandlåda har återställts tar det cirka 30 sekunder att etablera den av systemet.
 
-Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställa&quot;.
+Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;resetting&quot;.
 
 ```json
 {
@@ -405,7 +405,7 @@ Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket v
 }
 ```
 
-Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för funktionen [Cross Device Analytics (CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html), eller om identitetsdiagrammet som finns i den också används av Adobe Audience Manager för funktionen [People Based Destinations (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html).
+Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) -funktion.
 
 Nedan följer en lista över möjliga undantag som kan förhindra att en sandlåda återställs:
 
@@ -432,7 +432,7 @@ Nedan följer en lista över möjliga undantag som kan förhindra att en sandlå
 }
 ```
 
-Du kan återställa en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service] genom att lägga till parametern `ignoreWarnings` i din begäran.
+Du kan återställa en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service] genom att lägga till `ignoreWarnings` parameter till din begäran.
 
 **API-format**
 
@@ -442,7 +442,7 @@ PUT /sandboxes/{SANDBOX_NAME}?ignoreWarnings=true
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | Egenskapen `name` för den sandlåda som du vill återställa. |
+| `{SANDBOX_NAME}` | The `name` egenskapen för den sandlåda som du vill återställa. |
 | `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och tvinga fram återställningen av en produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
 
 **Begäran**
@@ -454,7 +454,7 @@ curl -X PUT \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme?ignoreWarnings=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json'
   -d '{
     "action": "reset"
@@ -463,7 +463,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställa&quot;.
+Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;resetting&quot;.
 
 ```json
 {
@@ -482,11 +482,11 @@ Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket v
 >
 >Standardproduktionssandlådan kan inte tas bort.
 
-Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i sökvägen för begäran.
+Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i sökvägen till begäran.
 
 >[!NOTE]
 >
->Om du gör det här API-anropet uppdateras sandlådans `status`-egenskap till &quot;removed&quot; och inaktiveras. GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
+>Göra detta API-anrop uppdaterar sandlådans `status` egenskapen till&quot;deleted&quot; och inaktiverar den. GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
 
 **API-format**
 
@@ -496,8 +496,8 @@ DELETE /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | `name` för den sandlåda som du vill ta bort. |
-| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeborttagningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` för att kontrollera om sandlådan som du ska återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
+| `{SANDBOX_NAME}` | The `name` för den sandlåda som du vill ta bort. |
+| `validationOnly` | En valfri parameter som gör att du kan utföra en kontroll före flygning av sandlådeborttagningsåtgärden utan att göra den faktiska begäran. Ställ in den här parametern på `validationOnly=true` om du vill kontrollera om sandlådan du håller på att återställa innehåller Adobe Analytics-, Adobe Audience Manager- eller segmentdelningsdata. |
 | `ignoreWarnings` | En valfri parameter som gör att du kan hoppa över valideringskontrollen och framtvinga borttagning av en användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med [!DNL Audience Manager] eller [!DNL Audience Core Service]. Den här parametern kan inte tillämpas på en standardproduktionssandlåda. |
 
 **Begäran**
@@ -509,12 +509,12 @@ curl -X DELETE \
   https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme?ignoreWarnings=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **Svar**
 
-Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att dess `state` är &quot;borttagen&quot;.
+Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att dess `state` är &quot;deleted&quot;.
 
 ```json
 {

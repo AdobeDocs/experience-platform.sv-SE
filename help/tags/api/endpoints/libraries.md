@@ -1,7 +1,8 @@
 ---
 title: Bibliotekets slutpunkt
 description: Lär dig hur du anropar slutpunkten /libraries i Reactor API.
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 0f7bc10f-2e03-43fa-993c-a2635f4d0c64
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1584'
 ht-degree: 1%
@@ -10,15 +11,15 @@ ht-degree: 1%
 
 # Bibliotekets slutpunkt
 
-Ett bibliotek är en samling taggresurser ([tillägg](./extensions.md), [regler](./rules.md) och [dataelement](./data-elements.md)) som representerar önskat beteende för en [egenskap](./properties.md). Med `/libraries`-slutpunkten i Reaktors API kan du programmässigt hantera bibliotek i taggegenskaperna.
+Ett bibliotek är en samling taggresurser ([tillägg](./extensions.md), [regler](./rules.md)och [dataelement](./data-elements.md)) som representerar önskat beteende för ett [property](./properties.md). The `/libraries` -slutpunkten i Reaktors-API gör att du kan hantera bibliotek i dina taggegenskaper programmatiskt.
 
 Ett bibliotek tillhör exakt en egenskap. En egenskap kan ha många bibliotek.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du läsa [kom igång-guiden](../getting-started.md) för att få viktig information om hur du autentiserar dig för API:t.
+Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
-Innan du arbetar med bibliotek i Reaktors-API:t är det viktigt att du förstår vilka roller bibliotekstillstånd och -miljöer spelar när du ska avgöra vilka åtgärder du kan utföra i ett visst bibliotek. Mer information finns i guiden om [bibliotekets publiceringsflöde](../../ui/publishing/publishing-flow.md).
+Innan du arbetar med bibliotek i Reaktors-API:t är det viktigt att du förstår vilka roller bibliotekstillstånd och -miljöer spelar när du ska avgöra vilka åtgärder du kan utföra i ett visst bibliotek. Se guiden på [bibliotekets publiceringsflöde](../../ui/publishing/publishing-flow.md) för mer information.
 
 ## Hämta en lista med bibliotek {#list}
 
@@ -32,13 +33,13 @@ GET /properties/{PROPERTY_ID}/libraries
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för egenskapen som äger biblioteken. |
+| `PROPERTY_ID` | The `id` av den egendom som äger biblioteken. |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade bibliotek filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>Mer information finns i guiden [filtrera svar](../guides/filtering.md).
+>Med hjälp av frågeparametrar kan listade bibliotek filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -47,7 +48,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR4bc17fb09ed845b1acfb0f6600a1f3c0/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -158,7 +159,7 @@ GET /libraries/{LIBRARY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | `id` för det bibliotek som du vill söka efter. |
+| `LIBRARY_ID` | The `id` för det bibliotek som du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -169,7 +170,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -269,20 +270,20 @@ POST /properties/{PROPERTY_ID}/libraries
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `PROPERTY_ID` | `id` för den [egenskap](./properties.md) som du definierar biblioteket under. |
+| `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar biblioteket under. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran skapar ett nytt bibliotek för den angivna egenskapen. När du först skapar ett bibliotek kan bara attributet `name` konfigureras. Om du vill lägga till dataelement, tillägg och regler i biblioteket måste du skapa relationer. Mer information finns i avsnittet [hantera biblioteksresurser](#resources).
+Följande begäran skapar ett nytt bibliotek för den angivna egenskapen. När du först skapar ett bibliotek är det bara dess `name` kan konfigureras. Om du vill lägga till dataelement, tillägg och regler i biblioteket måste du skapa relationer. Se avsnittet om [hantera biblioteksresurser](#resources) för mer information.
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -409,7 +410,7 @@ De dataelement, tillägg, regler och miljöer som är kopplade till ett bibliote
 
 ### Lägga till resurser i ett bibliotek {#add-resources}
 
-Du kan lägga till resurser i ett bibliotek genom att lägga till `/relationships` i sökvägen för en POST som efterfrågas, följt av resurstypen.
+Du kan lägga till resurser i ett bibliotek genom att lägga till `/relationships` till sökvägen för en begäran om POST, följt av resurstypen.
 
 **API-format**
 
@@ -433,7 +434,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -459,7 +460,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar information om de tillagda relationerna. Om du utför en [sökbegäran](#lookup) för biblioteket visas de tillagda relationerna under egenskapen `relationships`.
+Ett godkänt svar returnerar information om de tillagda relationerna. Utföra en [sökförfrågan](#lookup) för biblioteket visar de tillagda relationerna under `relationships` -egenskap.
 
 ```json
 {
@@ -499,14 +500,14 @@ PATCH /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 **Begäran**
 
-Följande begäran ersätter tilläggen för ett bibliotek med tilläggen i `data`-arrayen.
+Följande begäran ersätter tilläggen för ett bibliotek med tilläggen i `data` array.
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -528,7 +529,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar information om de uppdaterade relationerna. Om du utför en [sökbegäran](#lookup) för biblioteket visas relationerna under egenskapen `relationships`.
+Ett lyckat svar returnerar information om de uppdaterade relationerna. Utföra en [sökförfrågan](#lookup) för biblioteket visar relationerna under `relationships` -egenskap.
 
 ```json
 {
@@ -547,7 +548,7 @@ Ett lyckat svar returnerar information om de uppdaterade relationerna. Om du utf
 
 ### Ta bort resurser för ett bibliotek {#remove-resources}
 
-Du kan ta bort befintliga resurser från ett bibliotek genom att lägga till `/relationships` till sökvägen för en DELETE-begäran, följt av resurstypen som du håller på att ta bort.
+Du kan ta bort befintliga resurser från ett bibliotek genom att lägga till `/relationships` till sökvägen för en DELETE-begäran, följt av resurstypen som du tar bort.
 
 **API-format**
 
@@ -564,14 +565,14 @@ DELETE /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 **Begäran**
 
-Följande begäran tar bort en regel från ett bibliotek. Befintliga regler som inte ingår i `data`-arrayen tas inte bort.
+Följande begäran tar bort en regel från ett bibliotek. Alla befintliga regler som inte ingår i `data` arrayen tas inte bort.
 
 ```shell
 curl -X DELETE \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -593,7 +594,7 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar returnerar information om de uppdaterade relationerna för resurstypen. Om det inte finns några relationer för den här resurstypen returneras egenskapen `data` som en tom array. Om du utför en [sökbegäran](#lookup) för biblioteket visas relationerna under egenskapen `relationships`.
+Ett lyckat svar returnerar information om de uppdaterade relationerna för resurstypen. Om det inte finns några relationer för den här resurstypen `data` -egenskapen returneras som en tom array. Utföra en [sökförfrågan](#lookup) för biblioteket visar relationerna under `relationships` -egenskap.
 
 ```json
 {
@@ -609,7 +610,7 @@ Ett lyckat svar returnerar information om de uppdaterade relationerna för resur
 
 ## Tilldela ett bibliotek till en miljö {#environment}
 
-Du kan tilldela ett bibliotek till en miljö `/relationships/environment` till sökvägen för en begäran om POST.
+Du kan tilldela ett bibliotek till en miljö  `/relationships/environment` till sökvägen för en begäran om POST.
 
 **API-format**
 
@@ -630,7 +631,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -650,7 +651,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar detaljerna om relationen. Om du utför en [sökbegäran](#lookup) för biblioteket visas den tillagda relationen under egenskapen `relationships`.
+Ett godkänt svar returnerar detaljerna om relationen. Utföra en [sökförfrågan](#lookup) för biblioteket visar den tillagda relationen under `relationships` -egenskap.
 
 ```json
 {
@@ -667,7 +668,7 @@ Ett godkänt svar returnerar detaljerna om relationen. Om du utför en [sökbeg�
 
 ## Överföra ett bibliotek {#transition}
 
-Du kan överföra ett bibliotek till ett annat publiceringstillstånd genom att ta med dess ID i sökvägen för en PATCH-begäran och ange ett lämpligt `meta.action`-värde i nyttolasten.
+Du kan överföra ett bibliotek till ett annat publiceringstillstånd genom att ta med dess ID i sökvägen för en PATCH-begäran och ange ett lämpligt `meta.action` värdet i nyttolasten.
 
 **API-format**
 
@@ -677,20 +678,20 @@ PATCH /libraries/{LIBRARY_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | `id` för det bibliotek som du vill övergå. |
+| `LIBRARY_ID` | The `id` för det bibliotek som du vill gå över till. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran överför tillståndet för ett befintligt bibliotek baserat på värdet `meta.action` som anges i nyttolasten. Vilka åtgärder som är tillgängliga för ett bibliotek beror på dess aktuella publiceringstillstånd, enligt beskrivningen i [publiceringsflödet](../../ui/publishing/publishing-flow.md#state).
+Följande begäran översätter tillståndet för ett befintligt bibliotek baserat på värdet för `meta.action` anges i nyttolasten. Vilka åtgärder som är tillgängliga för ett bibliotek beror på dess aktuella publiceringstillstånd, enligt beskrivningen i [publiceringsflöde](../../ui/publishing/publishing-flow.md#state).
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -706,7 +707,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `meta.action` | Den specifika övergångsåtgärd som du vill utföra i biblioteket. Följande åtgärder är tillgängliga beroende på bibliotekets aktuella publiceringstillstånd: <ul><li>`develop`</li><li>`submit`</li><li>`approve`</li><li>`reject`</li></ul> |
-| `id` | `id` för det bibliotek som du vill uppdatera. Detta ska matcha `{LIBRARY_ID}`-värdet som anges i sökvägen till begäran. |
+| `id` | The `id` för det bibliotek som du vill uppdatera. Det här bör matcha `{LIBRARY_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `libraries`. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -813,7 +814,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `LIBRARY_ID` | `id` för det bibliotek som du vill publicera. |
+| `LIBRARY_ID` | The `id` för det bibliotek som du vill publicera. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -826,7 +827,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LB80c337c956804738b2db2ea2f69fcdf0/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json'
 ```
 
@@ -904,17 +905,17 @@ curl -X POST \
 
 ## Hantera anteckningar för ett bibliotek {#notes}
 
-Bibliotek är&quot;betydande&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Mer information om hur du hanterar anteckningar för bibliotek och andra kompatibla resurser finns i [anteckningsguiden](./notes.md).
+Bibliotek är&quot;betydande&quot; resurser, vilket innebär att du kan skapa och hämta textbaserade anteckningar för varje enskild resurs. Se [slutpunktshandbok för anteckningar](./notes.md) om du vill ha mer information om hur du hanterar anteckningar för bibliotek och andra kompatibla resurser.
 
 ## Hämta relaterade resurser för ett bibliotek {#related}
 
-Följande anrop visar hur du hämtar relaterade resurser för ett bibliotek. När [söker upp ett bibliotek](#lookup) listas dessa relationer under egenskapen `relationships`.
+Följande anrop visar hur du hämtar relaterade resurser för ett bibliotek. När [söka efter ett bibliotek](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationsguiden](../guides/relationships.md) för mer information om relationer i Reactor API.
+Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
 
 ### Lista relaterade dataelement för ett bibliotek {#data-elements}
 
-Du kan lista dataelement som används i ett bibliotek genom att lägga till `/data_elements` i sökvägen för en sökningsbegäran.
+Du kan lista dataelement som används i ett bibliotek genom att lägga till `/data_elements` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -924,7 +925,7 @@ GET  /libraries/{LIBRARY_ID}/data_elements
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LIBRARY_ID}` | `id` för biblioteket vars dataelement du vill visa. |
+| `{LIBRARY_ID}` | The `id` i biblioteket vars dataelement du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -935,7 +936,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1055,7 +1056,7 @@ Ett godkänt svar returnerar en lista med dataelement som använder det angivna 
 
 ### Lista relaterade tillägg för ett bibliotek {#extensions}
 
-Du kan lista de tillägg som används i ett bibliotek genom att lägga till `/extensions` i sökvägen för en sökningsbegäran.
+Du kan visa de tillägg som används i ett bibliotek genom att lägga till `/extensions` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -1065,7 +1066,7 @@ GET  /libraries/{LIBRARY_ID}/extensions
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LIBRARY_ID}` | `id` för biblioteket vars tillägg du vill visa. |
+| `{LIBRARY_ID}` | The `id` för det bibliotek vars tillägg du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1076,7 +1077,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1186,7 +1187,7 @@ Ett godkänt svar returnerar en lista med tillägg som använder det angivna bib
 
 ### Visa relaterade regler för ett bibliotek {#rules}
 
-Du kan lista reglerna som används i ett bibliotek genom att lägga till `/rules` i sökvägen för en sökningsbegäran.
+Du kan visa reglerna som används i ett bibliotek genom att lägga till `/rules` till sökvägen för en sökningsbegäran.
 
 **API-format**
 
@@ -1196,7 +1197,7 @@ GET  /libraries/{LIBRARY_ID}/rules
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LIBRARY_ID}` | `id` för det bibliotek vars regler du vill visa. |
+| `{LIBRARY_ID}` | The `id` för det bibliotek vars regler du vill visa. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1207,7 +1208,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1299,7 +1300,7 @@ Ett godkänt svar returnerar en lista med regler som använder det angivna bibli
 
 ### Söka efter en relaterad miljö för ett bibliotek {#related-environment}
 
-Du kan söka efter den miljö som ett bibliotek tilldelas genom att lägga till `/environment` till sökvägen för en GET-begäran.
+Du kan söka efter miljön som ett bibliotek tilldelas genom att lägga till `/environment` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -1309,7 +1310,7 @@ GET  /libraries/{LIBRARY_ID}/environment
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LIBRARY_ID}` | `id` för det bibliotek vars miljö du vill söka efter. |
+| `{LIBRARY_ID}` | The `id` för det bibliotek vars miljö du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1320,7 +1321,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1411,7 +1412,7 @@ Ett lyckat svar returnerar information om miljön som det angivna biblioteket ha
 
 ### Söka efter den relaterade egenskapen för ett bibliotek {#property}
 
-Du kan söka efter den egenskap som äger ett bibliotek genom att lägga till `/property` i sökvägen för en GET-begäran.
+Du kan söka efter den egenskap som äger ett bibliotek genom att lägga till `/property` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -1421,7 +1422,7 @@ GET  /libraries/{LIBRARY_ID}/property
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LIBRARY_ID}` | `id` för biblioteket vars egenskap du vill söka efter. |
+| `{LIBRARY_ID}` | The `id` för det bibliotek vars egenskap du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1432,7 +1433,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1534,7 +1535,7 @@ Ett lyckat svar returnerar information om egenskapen som äger det angivna bibli
 
 ### Söka efter ett bibliotek i det överordnade flödet {#upstream}
 
-Du kan söka upp nästa biblioteksuppdataström från ett bibliotek genom att lägga till `/upstream_library` till sökvägen för en GET-begäran.
+Du kan söka upp nästa bibliotek uppåt från ett bibliotek genom att lägga till `/upstream_library` till sökvägen för en GET-begäran.
 
 **API-format**
 
@@ -1544,7 +1545,7 @@ GET  /libraries/{LIBRARY_ID}/upstream_library
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LIBRARY_ID}` | `id` för det bibliotek vars överordnade bibliotek du vill söka efter. |
+| `{LIBRARY_ID}` | The `id` för det bibliotek vars överordnade bibliotek du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1555,7 +1556,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/upstream_library \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

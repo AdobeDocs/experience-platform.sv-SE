@@ -5,7 +5,7 @@ title: Översikt över sandlådor
 topic-legacy: overview
 description: Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser.
 exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1004'
 ht-degree: 0%
@@ -24,8 +24,8 @@ Det här dokumentet innehåller en översikt på hög nivå över sandlådor i E
 
 Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser. Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Det finns två typer av sandlådor som stöds i Experience Platform:
 
-* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till din licensierade [!DNL Profile]-bindning (mäts kumulativt i alla dina godkända produktionssandlådor). Du har rätt att använda en licensierad genomsnittlig profil per auktoriserad [!DNL Profile] (uppmätt kumulativt i alla dina auktoriserade produktionssandlådor).
-* **Utvecklingssandlåda**: En utvecklingssandlåda är en sandlåda som endast kan användas för utveckling och testning med icke-produktionsprofiler. Utvecklingssandlådor har stöd för en mängd icke-produktionsprofiler på upp till 10 % av ditt licensierade [!DNL Profile]-åtagande (uppmätt kumulativt i alla dina auktoriserade utvecklingssandlådor). Du har rätt till upp till:
+* **Produktionssandlåda**: En produktionssandlåda är avsedd att användas med profiler i din produktionsmiljö. Plattformen gör att du kan skapa flera produktionssandlådor för att tillhandahålla rätt funktionalitet för data samtidigt som driftisoleringen bibehålls. Med den här funktionen kan du dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Produktionssandlådor har stöd för en mängd produktionsprofiler upp till din licens [!DNL Profile] -engagemang (mäts kumulativt i alla dina godkända produktionssandlådor). Du har rätt att använda en licensierad genomsnittsprofil per auktoriserad [!DNL Profile] (uppmätt kumulativt i alla dina godkända produktionssandlådor).
+* **Utvecklingssandlåda**: En utvecklingssandlåda är en sandlåda som endast kan användas för utveckling och testning med icke-produktionsprofiler. Utvecklingssandlådor har stöd för en mängd icke-produktionsprofiler på upp till 10 % av de licensierade [!DNL Profile] -engagemang (mäts kumulativt i alla dina godkända utvecklingssandlådor). Du har rätt till upp till:
    * En genomsnittlig icke-produktionsprofil på 75 kB per godkänd icke-produktionsprofil (uppmätt kumulativt i alla dina godkända utvecklingssandlådor).
    * Ett batchsegmenteringsjobb per dag, per utvecklingssandlåda.
    * Ett genomsnitt på 120 [!DNL Profile] API-anrop, per [!DNL Profile], per år (mäts kumulativt i alla dina godkända utvecklingssandlådor.
@@ -42,9 +42,9 @@ Slutligen är standardproduktionssandlådan den första produktionssandlådan so
 
 Sammanfattningsvis ger sandlådor följande fördelar:
 
-* **Programlivscykelhantering**: Skapa separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* **Hantering av programlivscykler**: Skapa separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 * **Projekt- och varumärkeshantering**: Tillåt att flera projekt körs parallellt inom samma IMS-organisation, samtidigt som isolering och åtkomstkontroll tillhandahålls. Framtida versioner kommer att ge stöd för driftsättning i flera regioner.
-* **Flexibelt ekosystem** för utveckling: Tillhandahåll sandlådor på ett smidigt, skalbart och kostnadseffektivt sätt för prospektering, aktivering och demonstrationssyften.
+* **Flexibla ekosystem för utveckling**: Tillhandahåll sandlådor på ett smidigt, skalbart och kostnadseffektivt sätt för prospektering, aktivering och demonstrationssyften.
 
 ## Åtkomstkontroll för sandlådor
 
@@ -52,33 +52,33 @@ Som standard har alla användare i en organisation åtkomst till en produktionss
 
 För att du ska kunna visa, skapa, uppdatera eller ta bort icke-produktionssandlådor måste användare även beviljas administratörsbehörighet för sandlådan.
 
-Mer information om hur du hanterar roller och behörigheter för sandlådor finns i [översikten över åtkomstkontroll](../access-control/home.md).
+Mer information om hur du hanterar roller och behörigheter för sandlådor finns i [åtkomstkontroll - översikt](../access-control/home.md).
 
 ## Sandlådor i användargränssnittet för Experience Platform
 
-I [Experience Platform-användargränssnittet](https://platform.adobe.com) kan användare växla mellan de sandlådor de har åtkomst till genom att använda kontrollen **sandlådeväxlare** högst upp till vänster på skärmen.  Användare med administratörsbehörighet för sandlådan har även åtkomst till fliken **[!UICONTROL Sandboxes]** i den vänstra navigeringen, där de kan visa och hantera sandlådor för sin organisation. Mer information om hur du arbetar med sandlådor i användargränssnittet finns i [användarhandboken för sandlådan](ui/overview.md).
+I [Experience Platform användargränssnitt](https://platform.adobe.com)kan användare växla mellan de sandlådor de har tillgång till genom att använda **sandlådeväxlare** överst till vänster på skärmen.  Användare med administratörsbehörighet för sandlådan har även åtkomst till **[!UICONTROL Sandboxes]** i den vänstra navigeringen, där de kan visa och hantera sandlådor för sin organisation. Mer information om hur du arbetar med sandlådor i användargränssnittet finns i [användarhandbok för sandlåda](ui/overview.md).
 
 ## Sandlådor i Experience Platform API:er
 
-När du anropar API:er för Experience Platform måste du ange ett sandlådenamn under rubriken `x-sandbox-name`. När du till exempel anropar [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) för att visa alla datauppsättningar i produktionssandlådan, anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
+När anrop görs till API:er för Experience Platform måste ett sandlådenamn anges under rubriken `x-sandbox-name`. När du till exempel anropar [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) Om du vill visa alla datauppsättningar i Production-sandlådan anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
 
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/catalog/dataSets \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: prod'
 ```
 
-Om `x-sandbox-name` inte ingår i ett API-anrop använder systemet en standardsandlåda i stället. Det bästa sättet är dock att alltid inkludera den här rubriken i alla API-anrop, även när du använder standardsandlådan. Därför behandlas `x-sandbox-name` som ett obligatoriskt huvud i API-dokumentationen för Experience Platform.
+If `x-sandbox-name` finns inte med i ett API-anrop. Systemet använder i stället en standardsandlåda. Det bästa sättet är dock att alltid inkludera den här rubriken i alla API-anrop, även när du använder standardsandlådan. Därför behandlas API-dokumentationen för Experience Platform `x-sandbox-name` som ett obligatoriskt sidhuvud.
 
 ### Sandbox-API
 
-Med sandbox-API kan du hantera sandlådor med hjälp av RESTful API-åtgärder. Mer information om hur du använder API:t finns i [utvecklarhandboken för sandlådor](api/overview.md), inklusive korrekt formaterade begäranden och exempelsvar.
+Med sandbox-API kan du hantera sandlådor med hjälp av RESTful API-åtgärder. Se [utvecklarguide för sandlådor](api/overview.md) om du vill ha detaljerad information om hur du använder API:t, inklusive korrekt formaterade begäranden och exempelsvar.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lagts till de viktigaste begreppen om sandlådor i Experience Platform. Detaljerade anvisningar om hur du hanterar sandlådor finns i [användarhandboken](ui/overview.md) för användargränssnittet och i [utvecklarhandboken](./api/getting-started.md) för API:t.
+Genom att läsa det här dokumentet har du lagts till de viktigaste begreppen om sandlådor i Experience Platform. Detaljerade steg om hur du hanterar sandlådor finns i [användarhandbok](ui/overview.md) för användargränssnittet eller [utvecklarhandbok](./api/getting-started.md) för API.
 
-Sandlådor fungerar som ett värdefullt verktyg för att isolera plattformsmiljöer för utvecklingsteamet, men du kan också hantera mer detaljerad åtkomstkontroll med hjälp av Adobe Admin Console. Mer information finns i [översikten över åtkomstkontroll](../access-control/home.md).
+Sandlådor fungerar som ett värdefullt verktyg för att isolera plattformsmiljöer för utvecklingsteamet, men du kan också hantera mer detaljerad åtkomstkontroll med hjälp av Adobe Admin Console. Se [åtkomstkontroll - översikt](../access-control/home.md) för mer information.

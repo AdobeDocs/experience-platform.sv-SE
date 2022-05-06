@@ -5,7 +5,7 @@ title: API-slutpunkt för konton
 topic-legacy: connection parameters
 description: Du kan skapa ett frågetjänstkonto för beständig .
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: 391b1943f1c941188b370e62ec86216367aa747f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 1%
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # Kontoslutpunkt
 
-I Adobe Experience Platform Query Service används konton för att skapa autentiseringsuppgifter som inte förfaller och som du kan använda med externa SQL-klienter. Du kan använda slutpunkten `/accounts` i API:t för frågetjänsten, som gör att du kan skapa, hämta, redigera och ta bort integrationskonton för frågetjänsten (kallas även för ett tekniskt konto).
+I Adobe Experience Platform Query Service används konton för att skapa autentiseringsuppgifter som inte förfaller och som du kan använda med externa SQL-klienter. Du kan använda `/accounts` -slutpunkten i frågetjänstens API, som gör att du kan skapa, hämta, redigera och ta bort integrationskonton för frågetjänsten automatiskt (kallas även tekniskt konto).
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Skapa ett konto
 
-Du kan skapa ett integrationskonto för frågetjänsten genom att göra en POST-förfrågan till `/accounts`-slutpunkten.
+Du kan skapa ett integrationskonto för frågetjänsten genom att göra en POST-förfrågan till `/accounts` slutpunkt.
 
 **API-format**
 
@@ -38,7 +38,7 @@ Följande begäran skapar ett nytt Query Service-integrationskonto för din IMS-
 curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/json' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
@@ -53,8 +53,8 @@ curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `accountName` | **Obligatoriskt** Namnet på Query Service-integrationskontot. |
-| `assignedToUser` | **** ObligatorisktDet Adobe ID som Query Service-integrationskontot ska skapas för. |
-| `credential` | *(Valfritt)* De autentiseringsuppgifter som används för integreringen av frågetjänsten. Om inget anges genereras en autentiseringsuppgift automatiskt. |
+| `assignedToUser` | **Obligatoriskt** Det Adobe ID som Query Service-integrationskontot ska skapas för. |
+| `credential` | *(Valfritt)* Autentiseringsuppgiften som används för integreringen av frågetjänsten. Om inget anges genereras en autentiseringsuppgift automatiskt. |
 | `description` | *(Valfritt)* En beskrivning av Query Service-integrationskontot. |
 
 **Svar**
@@ -72,12 +72,12 @@ Ett lyckat svar returnerar HTTP-status 200, med information om ditt nya Query Se
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `technicalAccountName` | Namnet på ditt Query Service-integrationskonto. |
-| `technicalAccountId` | ID:t för ditt Query Service-integrationskonto. Detta tillsammans med `credential`, sätter ihop ditt lösenord för ditt konto. |
-| `credential` | Autentiseringsuppgifterna för ditt Query Service-integrationskonto. Detta tillsammans med `technicalAccountId`, sätter ihop ditt lösenord för ditt konto. |
+| `technicalAccountId` | ID:t för ditt Query Service-integrationskonto. Detta, tillsammans med `credential`skapar ditt lösenord för ditt konto. |
+| `credential` | Autentiseringsuppgifterna för ditt Query Service-integrationskonto. Detta, tillsammans med `technicalAccountId`skapar ditt lösenord för ditt konto. |
 
 ## Uppdatera ett konto
 
-Du kan uppdatera integrationskontot för frågetjänsten genom att göra en PUT-begäran till `/accounts`-slutpunkten.
+Du kan uppdatera integrationskontot för frågetjänsten genom att göra en PUT-förfrågan till `/accounts` slutpunkt.
 
 **API-format**
 
@@ -95,7 +95,7 @@ POST /accounts/{ACCOUNT_ID}
 curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DFB5FDB25D90A494012 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '
@@ -111,7 +111,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DF
 | -------- | ----------- |
 | `accountName` | *(Valfritt)* Det uppdaterade namnet för Query Service-integrationskontot. |
 | `assignedToUser` | *(Valfritt)* Det uppdaterade Adobe ID som Query Service-integrationskontot är länkat till. |
-| `credential` | *(Valfritt)* De uppdaterade autentiseringsuppgifterna för frågetjänstkontot. |
+| `credential` | *(Valfritt)* Uppdaterade autentiseringsuppgifter för ditt Query Service-konto. |
 | `description` | *(Valfritt)* Den uppdaterade beskrivningen för Query Service-integrationskontot. |
 
 **Svar**
@@ -135,7 +135,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nya Query Ser
 
 ## Visa alla konton
 
-Du kan hämta en lista över alla integrationskonton för frågetjänsten genom att göra en GET-begäran till `/accounts`-slutpunkten.
+Du kan hämta en lista över alla integrationskonton för frågetjänsten genom att göra en GET-förfrågan till `/accounts` slutpunkt.
 
 **API-format**
 
@@ -148,7 +148,7 @@ GET /accounts
 ```shell
 curl -X GET https://platform.adobe.io/foundation/queryauth/accounts \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -206,7 +206,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla Query Service
 
 ## Ta bort ett konto
 
-Du kan ta bort integrationskontot för frågetjänsten genom att göra en DELETE-begäran till `/accounts`-slutpunkten.
+Du kan ta bort integrationskontot för frågetjänsten genom att göra en DELETE-förfrågan till `/accounts` slutpunkt.
 
 **API-format**
 
@@ -223,7 +223,7 @@ DELETE /accounts/{ACCOUNT_ID}
 ```shell
 curl -X DELETE https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DFB5FDB25D90A494012 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```

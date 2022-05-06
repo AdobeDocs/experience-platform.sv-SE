@@ -5,7 +5,7 @@ title: API-slutpunkt för etiketter
 topic-legacy: developer guide
 description: Lär dig hur du hanterar dataanvändningsetiketter i Experience Platform med hjälp av API:t för principtjänsten.
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '506'
 ht-degree: 1%
@@ -14,19 +14,19 @@ ht-degree: 1%
 
 # Slutpunkt för etiketter
 
-Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som kan gälla för dessa data. Med `/labels`-slutpunkten i [!DNL Policy Service API] kan du programmässigt hantera dataanvändningsetiketter i ditt upplevelseprogram.
+Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som kan gälla för dessa data. The `/labels` slutpunkt i [!DNL Policy Service API] gör det möjligt att programmässigt hantera dataanvändningsetiketter i ert upplevelseprogram.
 
 >[!NOTE]
 >
->Slutpunkten `/labels` används bara för att hämta, skapa och uppdatera dataanvändningsetiketter. Anvisningar om hur du lägger till etiketter i datauppsättningar och fält med API-anrop finns i guiden [hantera datauppsättningsrubriker](../labels/dataset-api.md).
+>The `/labels` slutpunkten används bara för att hämta, skapa och uppdatera dataanvändningsetiketter. Anvisningar om hur du lägger till etiketter i datauppsättningar och fält med API-anrop finns i handboken [hantera datauppsättningsrubriker](../labels/dataset-api.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Hämta en lista med etiketter {#list}
 
-Du kan visa alla `core`- eller `custom`-etiketter genom att göra en GET-förfrågan till `/labels/core` respektive `/labels/custom`.
+Du kan visa alla `core` eller `custom` etiketter genom att göra en GET-förfrågan till `/labels/core` eller `/labels/custom`, respektive.
 
 **API-format**
 
@@ -44,13 +44,13 @@ curl -X GET \
   'https://platform.adobe.io/data/foundation/dulepolicy/labels/custom' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från systemet. Eftersom exempelbegäran ovan gjordes till `/labels/custom` visar svaret nedan bara anpassade etiketter.
+Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från systemet. Eftersom exempelbegäran ovan gjordes till `/labels/custom`visas endast anpassade etiketter i svaret nedan.
 
 ```json
 {
@@ -69,7 +69,7 @@ Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från
             "category": "Custom",
             "friendlyName": "Banking Information",
             "description": "Data containing banking information for a customer.",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "sandboxName": "{SANDBOX_NAME}",
             "created": 1594396718731,
             "createdClient": "{CLIENT_ID}",
@@ -88,7 +88,7 @@ Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från
             "category": "Custom",
             "friendlyName": "Purchase History Data",
             "description": "Data containing information on past transactions",
-            "imsOrg": "{IMS_ORG}",
+            "imsOrg": "{ORG_ID}",
             "sandboxName": "{SANDBOX_NAME}",
             "created": 1594397415663,
             "createdClient": "{CLIENT_ID}",
@@ -108,7 +108,7 @@ Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från
 
 ## Söka efter en etikett {#look-up}
 
-Du kan söka efter en specifik etikett genom att ta med etikettens `name`-egenskap i sökvägen till en GET-begäran till API:t [!DNL Policy Service].
+Du kan söka efter en specifik etikett genom att ta med den etikettens `name` i sökvägen för en GET-begäran till [!DNL Policy Service] API.
 
 **API-format**
 
@@ -119,18 +119,18 @@ GET /labels/custom/{LABEL_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LABEL_NAME}` | Egenskapen `name` för den anpassade etikett som du vill söka efter. |
+| `{LABEL_NAME}` | The `name` egenskapen för den anpassade etikett som du vill söka efter. |
 
 **Begäran**
 
-Följande begäran hämtar den anpassade etiketten `L2`, som anges i sökvägen.
+Följande begäran hämtar den anpassade etiketten `L2`, vilket anges i sökvägen.
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/dulepolicy/labels/custom/L2' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -144,7 +144,7 @@ Ett godkänt svar returnerar informationen om den anpassade etiketten.
     "category": "Custom",
     "friendlyName": "Purchase History Data",
     "description": "Data containing information on past transactions",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "sandboxName": "{SANDBOX_NAME}",
     "created": 1594397415663,
     "createdClient": "{CLIENT_ID}",
@@ -162,7 +162,7 @@ Ett godkänt svar returnerar informationen om den anpassade etiketten.
 
 ## Skapa eller uppdatera en anpassad etikett {#create-update}
 
-Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-begäran till API:t [!DNL Policy Service].
+Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-förfrågan till [!DNL Policy Service] API.
 
 **API-format**
 
@@ -172,7 +172,7 @@ PUT /labels/custom/{LABEL_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{LABEL_NAME}` | Egenskapen `name` för en anpassad etikett. Om det inte finns någon egen etikett med det här namnet skapas en ny etikett. Om det finns en sådan kommer den etiketten att uppdateras. |
+| `{LABEL_NAME}` | The `name` egenskap för en anpassad etikett. Om det inte finns någon egen etikett med det här namnet skapas en ny etikett. Om det finns en sådan kommer den etiketten att uppdateras. |
 
 **Begäran**
 
@@ -183,7 +183,7 @@ curl -X PUT \
   'https://platform.adobe.io/data/foundation/dulepolicy/labels/custom/L3' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "name": "L3",
@@ -196,7 +196,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | En unik strängidentifierare för etiketten. Det här värdet används för uppslagssyften och för att använda etiketten på datauppsättningar och fält, och vi rekommenderar därför att det är kort och koncist. |
-| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men du bör använda `Custom` om du vill att etiketten ska visas i användargränssnittet. |
+| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men vi rekommenderar att du använder `Custom` om du vill att etiketten ska visas i användargränssnittet. |
 | `friendlyName` | Ett eget namn för etiketten som används för visning. |
 | `description` | (Valfritt) En beskrivning av etiketten som ger ytterligare kontext. |
 
@@ -210,7 +210,7 @@ Ett lyckat svar returnerar informationen för en anpassad etikett, med HTTP-kod 
   "category": "Custom",
   "friendlyName": "Payment Plan",
   "description": "Data containing information on selected payment plans.",
-  "imsOrg": "{IMS_ORG}",
+  "imsOrg": "{ORG_ID}",
   "sandboxName": "{SANDBOX_NAME}",
   "created": 1529696681413,
   "createdClient": "{CLIENT_ID}",
@@ -228,4 +228,4 @@ Ett lyckat svar returnerar informationen för en anpassad etikett, med HTTP-kod 
 
 ## Nästa steg
 
-I den här guiden beskrivs användningen av slutpunkten `/labels` i principtjänstens API. Anvisningar om hur du använder etiketter på datauppsättningar och fält finns i [API-guiden för datauppsättningsrubriker](../labels/dataset-api.md).
+Den här guiden beskriver användningen av `/labels` slutpunkt i principtjänstens API. Anvisningar om hur du använder etiketter på datauppsättningar och fält finns i [API-guide för datauppsättningsrubriker](../labels/dataset-api.md).

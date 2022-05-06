@@ -5,8 +5,7 @@ title: API-slutpunkt för gällande principer
 topic-legacy: developer guide
 description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du visar effektiva profiler med hjälp av API:t för åtkomstkontroll för Adobe Experience Platform.
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '317'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 # Slutpunkt för gällande principer
 
-Om du vill visa gällande principer för den aktuella POSTEN gör du en begäran till `/acl/effective-policies`-slutpunkten i [!DNL Access Control]-API:t. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
+Om du vill visa gällande principer för den aktuella användaren skickar du en POST till `/acl/effective-policies` slutpunkt i [!DNL Access Control] API. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
 
 **API-format**
 
@@ -25,14 +24,14 @@ POST /acl/effective-policies
 
 **Begäran**
 
-Följande begäranden hämtar information om behörigheten [!UICONTROL Manage Datasets] och åtkomsten till resurstypen [!UICONTROL schemas] för den aktuella användaren.
+Följande förfrågningar hämtar information om &quot;[!UICONTROL Manage Datasets]&quot; behörighet och åtkomst till[!UICONTROL schemas]&quot; resurstyp för den aktuella användaren.
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/access-control/acl/effective-policies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '[
@@ -43,7 +42,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->En fullständig lista över behörigheter och resurstyper som kan anges i nyttolastarrayen finns i bilagan om [godkända behörigheter och resurstyper](#accepted-permissions-and-resource-types).
+>En fullständig lista över behörigheter och resurstyper som kan anges i nyttolastarrayen finns i avsnittet om tillägg i [godkända behörigheter och resurstyper](#accepted-permissions-and-resource-types).
 
 **Svar**
 
@@ -66,15 +65,15 @@ Ett godkänt svar returnerar information om behörigheter och resurstyper som an
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du anropar [!DNL Access Control]-API:t för att returnera information om aktiva behörigheter och relaterade principer för resurstyper. Mer information om åtkomstkontroll för [!DNL Experience Platform] finns i [åtkomstkontrollsöversikt](../home.md).
+Det här dokumentet beskriver hur du ringer till [!DNL Access Control] API som returnerar information om aktiva behörigheter och relaterade principer för resurstyper. Mer information om åtkomstkontroll för [!DNL Experience Platform], se [åtkomstkontroll - översikt](../home.md).
 
 ## Bilaga
 
-I det här avsnittet finns ytterligare information om hur du använder API:t [!DNL Access Control].
+I det här avsnittet finns ytterligare information om hur du använder [!DNL Access Control] API.
 
 ### Godkända behörigheter och resurstyper
 
-Nedan följer en lista över behörigheter och resurstyper som du kan inkludera i nyttolasten för en begäran om POST till `/acl/active-permissions`-slutpunkten.
+Nedan följer en lista över behörigheter och resurstyper som du kan inkludera i nyttolasten för en POST som begär till `/acl/active-permissions` slutpunkt.
 
 **Behörigheter**
 

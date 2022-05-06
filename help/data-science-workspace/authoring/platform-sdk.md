@@ -5,7 +5,7 @@ title: Modellredigering med Adobe Experience Platform Platform SDK
 topic-legacy: SDK authoring
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: 38c493e6306e493f4ef5caf90509bda6f4d80023
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 5%
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
 
-Den här självstudiekursen innehåller information om konvertering `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
+Den här självstudiekursen innehåller information om hur du konverterar `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
 
 - [Bygg autentisering](#build-authentication)
 - [Grundläggande läsning av data](#basic-reading-of-data)
@@ -37,7 +37,7 @@ Om du inte använder Jupyter Notebook eller behöver ändra IMS-organisationen a
 ```python
 from platform_sdk.client_context import ClientContext
 client_context = ClientContext(api_key={API_KEY},
-              org_id={IMS_ORG},
+              org_id={ORG_ID},
               user_token={USER_TOKEN},
               service_token={SERVICE_TOKEN})
 ```
@@ -62,7 +62,7 @@ library(reticulate)
 use_python("/usr/local/bin/ipython")
 psdk <- import("platform_sdk")
 client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
-              org_id={IMS_ORG},
+              org_id={ORG_ID},
               user_token={USER_TOKEN},
               service_token={SERVICE_TOKEN})
 ```
