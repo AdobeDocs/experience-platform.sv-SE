@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 88e6f084ce1b857f785c4c1721d514ac3b07e80b
 workflow-type: tm+mt
-source-wordcount: '1597'
+source-wordcount: '1549'
 ht-degree: 0%
 
 ---
@@ -38,9 +38,9 @@ Mer information om hur du kan anropa API:er för plattformar finns i handboken [
 
 ## Skapa en källanslutning {#source}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till `sourceConnections` slutpunkt för [!DNL Flow Service] API när du anger ditt basanslutnings-ID, sökvägen till källfilen som du vill importera och källans motsvarande anslutningsspecifikations-ID.
 
-Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
+När du skapar en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
 Använd följande uppräkningsvärden för filbaserade källor:
 
@@ -52,22 +52,13 @@ Använd följande uppräkningsvärden för filbaserade källor:
 
 För alla tabellbaserade källor anger du värdet till `tabular`.
 
-- [Skapa en källanslutning med anpassade avgränsade filer](#using-custom-delimited-files)
-- [Skapa en källanslutning med komprimerade filer](#using-compressed-files)
-
 **API-format**
 
 ```http
 POST /sourceConnections
 ```
 
-### Skapa en källanslutning med anpassade avgränsade filer {#using-custom-delimited-files}
-
 **Begäran**
-
-Du kan importera en avgränsad fil med en anpassad avgränsare genom att ange en `columnDelimiter` som en egenskap. Ett teckenvärde är en tillåten kolumnavgränsare. Om det inte finns något kommatecken `(,)` används som standardvärde.
-
-I följande exempelbegäran skapas en källanslutning för en avgränsad filtyp med tabbavgränsade värden.
 
 ```shell
 curl -X POST \
@@ -78,16 +69,20 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Cloud storage source connection for delimited files",
-        "description": "Cloud storage source connector",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "name": "Cloud Storage source connection",
+        "description: "Source connection for a cloud storage source",
+        "baseConnectionId": "1f164d1b-debe-4b39-b4a9-df767f7d6f7c",
         "data": {
             "format": "delimited",
-            "columnDelimiter": "\t"
+            "properties": {
+                "columnDelimiter": "{COLUMN_DELIMITER}",
+                "encoding": "{ENCODING}"
+                "compressionType": "{COMPRESSION_TYPE}"
+            }
         },
         "params": {
-            "path": "/ingestion-demos/leads/tsv_data/*.tsv",
-            "recursive": "true"
+            "path": "/acme/summerCampaign/account.csv",
+            "type": "file"
         },
         "connectionSpec": {
             "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
@@ -98,69 +93,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `baseConnectionId` | Det unika anslutnings-ID:t för det molnlagringssystem från tredje part som du använder. |
-| `data.format` | Ett uppräkningsvärde som definierar dataformatsattributet. |
-| `data.columnDelimiter` | Du kan använda valfri kolumnavgränsare för tecken för att samla in platta filer. Den här egenskapen krävs bara vid import av CSV- eller TSV-filer. |
+| `baseConnectionId` | Basanslutnings-ID för molnlagringskällan. |
+| `data.format` | Formatet på de data du vill hämta till plattformen. Värden som stöds är: `delimited`, `JSON`och `parquet`. |
+| `data.properties` | (Valfritt) En uppsättning egenskaper som du kan använda på dina data när du skapar en källanslutning. |
+| `data.properties.columnDelimiter` | (Valfritt) En kolumnavgränsare för ett tecken som du kan ange när du samlar in platta filer. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges, ett komma (`,`) används som standardvärde. **Anteckning**: The `columnDelimiter` -egenskapen kan bara användas vid inhämtning av avgränsade filer. |
+| `data.properties.encoding` | (Valfritt) En egenskap som definierar den kodningstyp som ska användas när data hämtas till plattformen. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Anteckning**: The `encoding` -parametern är bara tillgänglig vid inhämtning av avgränsade CSV-filer. Andra filtyper kommer att importeras med standardkodningen, `UTF-8`. |
+| `data.properties.compressionType` | (Valfritt) En egenskap som definierar den komprimerade filtypen för förtäring. Komprimerade filtyper som stöds är: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip`och `tar`. **Anteckning**: The `compressionType` -egenskapen kan bara användas vid inhämtning av avgränsade filer eller JSON-filer. |
 | `params.path` | Sökvägen till källfilen som du försöker komma åt. |
-| `connectionSpec.id` | Det anslutningsspec-ID som är kopplat till ditt specifika molnlagringssystem från tredje part. Se [appendix](#appendix) för en lista över anslutningsspecifikations-ID:n. |
-
-**Svar**
-
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
-
-```json
-{
-    "id": "26b53912-1005-49f0-b539-12100559f0e2",
-    "etag": "\"11004d97-0000-0200-0000-5f3c3b140000\""
-}
-```
-
-### Skapa en källanslutning med komprimerade filer {#using-compressed-files}
-
-**Begäran**
-
-Du kan även importera komprimerade JSON-filer eller avgränsade filer genom att ange dess `compressionType` som en egenskap. Listan över komprimerade filtyper som stöds är:
-
-- `bzip2`
-- `gzip`
-- `deflate`
-- `zipDeflate`
-- `tarGzip`
-- `tar`
-
-Följande exempelbegäran skapar en källanslutning för en komprimerad avgränsad fil med hjälp av en `gzip` filtyp.
-
-```shell
-curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Cloud storage source connection for compressed files",
-        "description": "Cloud storage source connection for compressed files",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
-        "data": {
-            "format": "delimited",
-            "properties": {
-                "compressionType": "gzip"
-            }
-        },
-        "params": {
-            "path": "/compressed/files.gzip"
-        },
-        "connectionSpec": {
-            "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-            "version": "1.0"
-        }
-     }'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `data.properties.compressionType` | Anger den komprimerade filtypen för inläsning. Den här egenskapen krävs bara vid import av komprimerade JSON-filer eller avgränsade filer. |
+| `connectionSpec.id` | Det ID för anslutningsspecifikation som är kopplat till din specifika molnlagringskälla. Se [appendix](#appendix) för en lista över anslutningsspecifikations-ID:n. |
 
 **Svar**
 

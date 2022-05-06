@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;molnlagring;molnlagring
 title: Utforska en molnlagringsmapp med API:t för flödestjänsten
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
 exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 88e6f084ce1b857f785c4c1721d514ac3b07e80b
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '699'
 ht-degree: 1%
 
 ---
@@ -106,6 +106,7 @@ Du kan inspektera datafilens struktur från molnlagringskällan genom att utför
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&{QUERY_PARAMS}&preview=true
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&columnDelimiter=\t
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&compressionType=gzip;
+GET /connections/{BASE_CONNECTION_ID}/explore?objectType=FILE&object={FILE_PATH}&preview=true&ileType=delimited&encoding=ISO-8859-1;
 ```
 
 | Parameter | Beskrivning |
@@ -119,7 +120,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/aep-bootcamp/Adobe%20Pets%20Customer%2020190801%20EXP.json&fileType=json&preview=true' \
+    'http://platform.adobe.io/data/foundation/flowservice/connections/{BASE_CONNECTION_ID}/explore?objectType=file&object=/aep-bootcamp/Adobe%20Pets%20Customer%2020190801%20EXP.json&fileType=json&preview=true' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -163,6 +164,7 @@ The [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/refe
 | --------- | ----------- |
 | `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används som standard ett komma `(,)`. |
 | `compressionType` | En obligatorisk frågeparameter för förhandsgranskning av en komprimerad avgränsad fil eller JSON-fil. Komprimerade filer som stöds är: <ul><li>`bzip2`</li><li>`gzip`</li><li>`deflate`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
+| `encoding` | Definierar vilken kodningstyp som ska användas vid förhandsgranskning av återgivning. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Anteckning**: The `encoding` -parametern är bara tillgänglig vid inhämtning av avgränsade CSV-filer. Andra filtyper kommer att importeras med standardkodningen, `UTF-8`. |
 
 ## Nästa steg
 
