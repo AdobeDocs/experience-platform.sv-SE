@@ -5,7 +5,7 @@ title: Mappningsfunktioner för dataförinställningar
 topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 5b40476051ceb20cd4d43f6a49b0ee984c17abc3
+source-git-commit: 14c7c3bd0bda0ab56767b9c0f5470090cf2bdb15
 workflow-type: tm+mt
 source-wordcount: '4164'
 ht-degree: 2%
@@ -135,7 +135,6 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| size_of | Returnerar storleken på indata. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker hitta storleken på.</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | falskt |
 | arrayer_to_object | Skapar en lista med objekt. | <ul><li>INMATNING: **Obligatoriskt** En gruppering av nyckel- och matrispar.</li></ul> | arrayer_to_object(INPUT) | need sample | need sample |
 | to_object | Skapar ett objekt baserat på de platta nyckel-/värdepar som anges. | <ul><li>INMATNING: **Obligatoriskt** En platt lista med nyckel/värde-par.</li></ul> | to_object(INPUT) | to_object &#x200B;(&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
@@ -163,6 +162,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | add_to_array | Lägger till element i slutet av arrayen. | <ul><li>ARRAY: **Obligatoriskt** Arrayen som du lägger till element i.</li><li>VÄRDEN: De element som du vill lägga till i arrayen.</li></ul> | add_to_array &#x200B;(ARRAY, VALUES) | add_to_array &#x200B;([a, b], &#39;c&#39;, &#39;d&#39;) | [a, b, c, d] |
 | join_arrays | Kombinerar arrayerna med varandra. | <ul><li>ARRAY: **Obligatoriskt** Arrayen som du lägger till element i.</li><li>VÄRDEN: Arrayen/arrayerna som du vill lägga till i den överordnade arrayen.</li></ul> | join_arrays &#x200B;(ARRAY, VALUES) | join_arrays &#x200B;([a, b], [&#39;c&#39;], [d, e]) | [a, b, c, d, e] |
 | to_array | Tar en lista med indata och konverterar den till en array. | <ul><li>INCLUDE_NULLS: **Obligatoriskt** Ett booleskt värde som anger om null-värden ska tas med i svarsarrayen eller inte.</li><li>VÄRDEN: **Obligatoriskt** De element som ska konverteras till en array.</li></ul> | to_array &#x200B;(INCLUDE_NULLS, VALUES) | to_array(false, 1, null, 2, 3) | `[1, 2, 3]` |
+| size_of | Returnerar storleken på indata. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker hitta storleken på.</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 
 {style=&quot;table-layout:auto&quot;}
 
