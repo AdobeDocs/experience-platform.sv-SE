@@ -5,7 +5,7 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: aa61cb696d647c5f039283ce5926d5fa1e901a13
+source-git-commit: 31a95a107b4d1c7aef87455833d6d4dc2a5a360d
 workflow-type: tm+mt
 source-wordcount: '3498'
 ht-degree: 1%
@@ -40,7 +40,7 @@ Det här avsnittet innehåller information om prestanda, begränsningar och proc
 
 ### Kan jag använda Postman för API:t för frågetjänsten?
 
-+++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Postman installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för Postman. Läs den officiella dokumentationen för [riktlinjer för att starta, köra och dela Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
++++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Postman installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för Postman. Läs den officiella dokumentationen för [vägledning om hur du startar, kör och delar Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
 +++
 
 ### Finns det någon gräns för hur många rader som får returneras från en fråga via användargränssnittet?
@@ -442,7 +442,7 @@ WHERE T2.ID IS NULL
 
 I det här avsnittet finns information om hur du exporterar data och begränsningar.
 
-### Finns det något sätt att extrahera data från frågetjänsten efter frågebearbetning och spara resultaten i en CSV-fil?
+### Finns det något sätt att extrahera data från frågetjänsten efter frågebearbetning och spara resultaten i en CSV-fil? {#export-csv}
 
 +++Besvara Ja. Data kan extraheras från frågetjänsten och det finns även ett alternativ för att lagra resultaten i CSV-format via ett SQL-kommando.
 

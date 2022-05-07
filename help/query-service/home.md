@@ -5,7 +5,7 @@ title: Översikt över frågetjänsten
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: 36710ced69cc951c27869e5491344a5f38935324
+source-git-commit: 796460be52b465216cdc69d45aa38ac80aa3516d
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Adobe Experience Platform [!DNL Segmentation Service] gör det möjligt för anv
 
 ### Adobe Analytics browse-nedläggning
 
-Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics]](./get-started/use-case.md) data för att skapa en viss användbar målgrupp. [!DNL Query Service] använder komplex logik för segmentering för att beräkna olika anpassade attribut för användning längre fram i kedjan, eller för att avsevärt förenkla hur ni bygger upp era segment.
+Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics]](./use-cases/abandoned-cart.md) data för att skapa en viss användbar målgrupp. [!DNL Query Service] använder komplex logik för segmentering för att beräkna olika anpassade attribut för användning längre fram i kedjan, eller för att avsevärt förenkla hur ni bygger upp era segment.
 
 ### Kontrollpaneler för Looker BI
 
