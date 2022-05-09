@@ -5,7 +5,7 @@ title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 5118a12dee0adf17e755003361ca841be99da62b
+source-git-commit: 0db94891f9ba49e451d78843d08b7201ac6de8fa
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 0%
@@ -257,6 +257,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `id` | `opportunityKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `iif(externalOpportunityId != null && externalOpportunityId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", externalOpportunityId, "sourceKey", concat(externalOpportunityId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey.sourceKey` | Sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(mktoCdpAccountOrgld != null && mktoCdpAccountOrgld != "",to_object("sourceTyPe","Marketo","sourcelnstancelD","631-STS-900","sourcelD",concat(mktoCdpAccountOrgld,".mkto_org"),"sourceKey",concat(mktoCdpAccountOrgId,".mkto_org@631-STS-900.Marketo")), null)` | `accountKey` |
 | `description` | `opportunityDescription` |
 | `name` | `opportunityName` |
 | `stage` | `opportunityStage` |
