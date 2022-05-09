@@ -4,7 +4,7 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
+source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
 workflow-type: tm+mt
 source-wordcount: '2784'
 ht-degree: 0%
@@ -102,10 +102,10 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Profiles added trend]](#profiles-added-trend)
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
-* [[!UICONTROL Single Identity Profiles]](#single-identity-profiles)
-* [[!UICONTROL Unsegmented Profiles]](#unsegmented-profiles)
-* [[!UICONTROL Unsegmented Profiles Trend]](#unsegmented-profiles-trend)
-* [[!UICONTROL Unsegmented Profiles by Identity]](#unsegmented-profiles-by-identity)
+* [[!UICONTROL Single identity profiles]](#single-identity-profiles)
+* [[!UICONTROL Unsegmented profiles]](#unsegmented-profiles)
+* [[!UICONTROL Unsegmented profiles trend]](#unsegmented-profiles-trend)
+* [[!UICONTROL Unsegmented profiles by identity]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL Audiences mapped to destination status]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL Audiences size]](#audiences-size)
 * [[!UICONTROL Profile count trend]](#profile-count-trend)
@@ -177,25 +177,25 @@ Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identi
 
 ![](../images/profiles/identity-overlap.png)
 
-### [!UICONTROL Single Identity Profiles] {#single-identity-profiles}
+### [!UICONTROL Single identity profiles] {#single-identity-profiles}
 
 The [!UICONTROL Single Identity Profiles] widgeten innehåller ett antal profiler för din organisation som bara har en typ av ID-typ som skapar deras identitet. Den här ID-typen kan antingen vara ett e-postmeddelande eller ett ECID. Profilantalet genereras från data i den senaste ögonblicksbilden.
 
 ![Widgeten för profiler för en identitet.](../images/profiles/single-identity-profiles.png)
 
-### [!UICONTROL Unsegmented Profiles] {#unsegmented-profiles}
+### [!UICONTROL Unsegmented profiles] {#unsegmented-profiles}
 
 The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler som inte är kopplade till något segment. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Det visar också möjligheten att utvinna profiler som inte ger tillräcklig avkastning.
 
 ![Widgeten Osegmenterade profiler.](../images/profiles/unsegmented-profiles.png)
 
-### [!UICONTROL Unsegmented Profiles Trend] {#unsegmented-profiles-trend}
+### [!UICONTROL Unsegmented profiles trend] {#unsegmented-profiles-trend}
 
 The [!UICONTROL Unsegmented Profiles Trend] innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden för profiler som inte är kopplade till något segment kan visas under perioderna 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
 
 ![Widgeten Trend för osegmenterade profiler.](../images/profiles/unsegmented-profiles-trend.png)
 
-### [!UICONTROL Unsegmented Profiles by Identity] (#unsegmented-profiles-by-identity)
+### [!UICONTROL Unsegmented profiles by identity] (#unsegmented-profiles-by-identity)
 
 The [!UICONTROL Unsegmented Profiles by Identity] widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram för att underlätta jämförelse.
 

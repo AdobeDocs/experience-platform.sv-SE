@@ -5,10 +5,10 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: a5391c1ccc24845673217e15bafd1a1df33cbc18
+source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
 workflow-type: tm+mt
-source-wordcount: '2741'
-ht-degree: 1%
+source-wordcount: '2747'
+ht-degree: 2%
 
 ---
 
@@ -459,7 +459,12 @@ select inline(productListItems) from source_dataset limit 10;
 
 De värden som hämtas från `source_dataset` används för att fylla i måltabellen.
 
-| SKU | _upplevelse | kvantitet | priceTotal | |—+—+—+—| | product-id-1 | (&quot;(&quot;(&quot;(A,pass,B,NULL)&quot;)&quot;)&quot;)&quot; | 5 | 10.5 | | product-id-5 | (&quot;(&quot;(&quot;(A, pass, B,NULL)&quot;)&quot;)&quot;)&quot;) | | | | product-id-2 | (&quot;(&quot;(&quot;(AF, C, D,NULL)&quot;)&quot;)&quot;)&quot;) | 6 | 40 | | product-id-4 | (&quot;(&quot;(&quot;(BM, pass, NA,NULL)&quot;)&quot;)&quot;)&quot;) | 3 | 12 |
+| SKU | upplevelse | kvantitet | priceTotal |
+|---------------------|-----------------------------------|----------|--------------|
+| product-id-1 | (&quot;(&quot;(&quot;(A,pass,B,NULL)&quot;)&quot;)&quot;)&quot; | 5 | 10.5 |
+| product-id-5 | (&quot;(&quot;(&quot;(A, pass, B,NULL)&quot;)&quot;)&quot;)&quot;) |  |  |
+| product-id-2 | (&quot;(&quot;(&quot;(AF, C, D,NULL)&quot;)&quot;)&quot;)&quot;) | 6 | 40 |
+| product-id-4 | (&quot;(&quot;(&quot;(BM, pass, NA,NULL)&quot;)&quot;)&quot;)&quot;) | 3 | 12 |
 
 ## [!DNL Spark] SQL-kommandon
 

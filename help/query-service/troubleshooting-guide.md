@@ -3,11 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;f
 solution: Experience Platform
 title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
-description: Det här dokumentet innehåller information om vanliga felkoder som du stöter på och möjliga orsaker.
+description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 31a95a107b4d1c7aef87455833d6d4dc2a5a360d
+source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3504'
 ht-degree: 1%
 
 ---
