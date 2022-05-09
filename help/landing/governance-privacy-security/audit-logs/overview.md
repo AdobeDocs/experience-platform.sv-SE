@@ -2,9 +2,9 @@
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: d726576a4d1f29d83f3b7cf72c9f5c5d4ff114d3
+source-git-commit: ba190bdd1856b2d89fa28679eb7f09c258ddd17c
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '746'
 ht-degree: 2%
 
 ---
@@ -35,6 +35,8 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 | [Beräknat attribut](../../../profile/computed-attributes/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Produktprofil](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Konto (Adobe)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Frågemall](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Schemalagd fråga](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 
 ## Åtkomst till granskningsloggar
 
