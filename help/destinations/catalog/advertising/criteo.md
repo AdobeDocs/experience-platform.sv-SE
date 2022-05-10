@@ -3,9 +3,9 @@ keywords: Reklam. villkor,
 title: Kriterieanslutning
 description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: add177efd3fdd0a39dc33c5add59375f8e918c1e
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '808'
 ht-degree: 2%
 
 ---
@@ -138,4 +138,4 @@ Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper n
 ## Ytterligare resurser
 
 * [Criteo Help Center](https://help.criteo.com/kb/en)
-* [Criteo Developer Portal](https://developers.criteo.com/marketing-solutions/v2022.04/reference/modifyaudienceuserswithattributes)
+* [Criteo Developer Portal](https://developers.criteo.com)
