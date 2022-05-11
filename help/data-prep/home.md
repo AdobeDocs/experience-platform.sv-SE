@@ -5,9 +5,9 @@ title: Dataförhandsgranskning
 topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: f8ad7ce2ed5a45fa0200715a2b961d75f17d192c
+source-git-commit: 3dac1a80e640364f8c0b6b6fd81821499bf889b3
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -27,30 +27,34 @@ Data Prep använder också flera inbyggda datavalideringar för att säkerställ
 
 >[!NOTE]
 >
->Om inte det resulterande meddelandet blir ogiltig XDM, kommer eventuella transformeringsfel i Data Prep att resultera i att dessa attribut ställs in på `null`, medan resten av raden kommer att kapslas. Om raden leder till ogiltig XDM kommer raden **inte** att kapslas. I båda dessa fall dokumenteras felet.
+>Om inte det resulterande meddelandet blir ogiltig XDM, kommer eventuella transformeringsfel i Data Prep att resultera i att attributen anges till `null`medan resten av raden kommer att kapslas. Om raden blir ogiltig XDM kommer raden att **not** vara förtjust. I båda dessa fall dokumenteras felet.
 
 ## Mappning
 
 En mappning är en association av ett indataattribut eller beräknat fält till ett XDM-attribut. Ett enda attribut kan mappas till flera XDM-attribut genom att skapa enskilda mappningar.
 
-Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om de olika mappningsfunktionerna.
+Läs mer om de olika mappningsfunktionerna i [guide för mappningsfunktioner](./functions.md).
 
 ### Beräknade fält
 
 Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
 
-Läs guiden [Beräknade fält](./functions.md#calculated-fields) om du vill veta mer om beräkningsfält.
+Läs mer om beräknade fält i [guide för beräknade fält](./functions.md#calculated-fields).
 
 ## Mappningsuppsättning
 
 En uppsättning mappningar som omformar ett schema till ett annat kallas tillsammans för en mappningsuppsättning. En enda mappningsuppsättning skapas som en del av varje dataflöde. En mappningsuppsättning är en integrerad del av dataflödena och skapas, redigeras och övervakas som en del av dataflödena.
 
-Om du vill veta mer om mappningsuppsättningar, inklusive hur du använder fälten i en mappningsuppsättning, kan du läsa [guiden för mappningsuppsättning](./mapping-set.md). Läs avsnittet om mappningsuppsättning i [utvecklarhandboken](./api/mapping-set.md) om du vill lära dig hur du skapar en mappningsuppsättning och använder andra API-anrop för mappningsuppsättningar.
+Läs mer om mappningsuppsättningar, inklusive hur du använder fälten i en mappningsuppsättning i [guide för mappningsuppsättning](./mapping-set.md). Om du vill lära dig hur du skapar en mappningsuppsättning och använder andra API-anrop som är kopplade till mappningsuppsättningar läser du avsnittet om mappningsuppsättning i [utvecklarhandbok](./api/mapping-set.md).
 
 ## Dataformatshantering
 
-Data Prep kan hantera olika dataformat som importerats till Platform på ett robust sätt. Om du vill veta mer om hur dataprep hanterar olika datatyper kan du läsa [översikten över dataformatshantering](./data-handling.md).
+Data Prep kan hantera olika dataformat som importerats till Platform på ett robust sätt. Läs mer om hur dataprep hanterar olika datatyper i [dataformatshantering - översikt](./data-handling.md).
+
+## Skicka uppdateringar av delar av rader med [!DNL Data Prep]
+
+Direktuppspelande överföringar i [!DNL Data Prep] kan du skicka uppdateringar av delar av rader till [!DNL Profile Service] data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran. Mer information om hur du direktuppspelar överföringar i [!DNL Data Prep], se dokumentet på [skicka uppdateringar med partiella rader](./upserts.md).
 
 ## Nästa steg
 
-Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om olika mappningsfunktioner. Läs [Handboken för dataformatshantering](./data-handling.md#dates) om du vill veta mer om hur dataprep hanterar olika datatyper. Läs [Utvecklarhandboken för dataprep](api/overview.md) om du vill lära dig hur du använder API:t för dataprep.
+Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs mer om olika mappningsfunktioner i [guide för mappningsfunktioner](./functions.md). Läs mer om hur dataprep hanterar olika datatyper i [guide för hantering av dataformat](./data-handling.md#dates). Läs mer om hur du använder API:t för dataförberedelser i [Utvecklarhandbok för dataprep](api/overview.md).
