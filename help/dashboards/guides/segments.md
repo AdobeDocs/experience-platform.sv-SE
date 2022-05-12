@@ -4,9 +4,9 @@ title: Kontrollpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
+source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '1414'
 ht-degree: 0%
 
 ---
@@ -77,6 +77,12 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 
 ### [!UICONTROL Audience size] {#audience-size}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_audiencesize"
+>title="Målgruppsstorlek"
+>abstract="Den här widgeten visar det totala antalet sammanfogade profiler i det valda segmentet. Det här numret beror på den sammanfogningsprincip som används för dina data och är korrekt vid tidpunkten för den senaste ögonblicksbilden."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size" text="Läs mer i dokumentationen"
+
 The **[!UICONTROL Audience size]** visar det totala antalet sammanfogade profiler i det markerade segmentet när ögonblicksbilden togs. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
 
 Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
@@ -85,9 +91,15 @@ Mer information om fragment och sammanfogade profiler får du om du börjar med 
 
 ### [!UICONTROL Identity overlap] {#identity-overlap}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_identityoverlap"
+>title="Identitetsöverlappning"
+>abstract="Den här widgeten visar överlappningen av profiler i ditt segment som innehåller båda valda identiteter. Cirklarna visar den relativa storleken för varje identitet. Antalet profiler som innehåller båda namnutrymmena representeras av överlappningen mellan cirklarna."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#identity-overlap" text="Läs mer i dokumentationen"
+
 The **[!UICONTROL Identity overlap]** widgeten visar ett Venndiagram, eller ett uppsättningsdiagram, som visar överlappningen mellan profiler i segmentet som innehåller flera identiteter.
 
-När du har använt listrutemenyerna i widgeten för att markera de identiteter som du vill jämföra, visas cirklar med den relativa storleken för varje identitet. Antalet profiler som innehåller båda namnutrymmena representeras av storleken på överlappningen mellan cirklarna.
+Använd listrutemenyerna i widgeten för att välja de identiteter som du vill jämföra. Cirklarna visar den relativa storleken för varje vald identitet, där antalet profiler som innehåller båda namnutrymmena representeras av storleken på överlappningen mellan cirklarna.
 
 Om en kund interagerar med ert varumärke i mer än en kanal kopplas flera identiteter till den enskilda kunden, och därför är det troligt att organisationen har flera profiler som innehåller fragment från mer än en identitet.
 
@@ -97,7 +109,13 @@ Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identi
 
 ### [!UICONTROL Profiles by identity] {#profiles-by-identity}
 
-The **[!UICONTROL Profiles by identity]** widgeten visar uppdelningen av identiteter för alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler efter identitet kan vara högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera associerade identiteter. Med andra ord kan de värden som visas för varje identitet tillsammans bli större än den totala målgruppsstorleken i segmentet, eftersom om en kund interagerar med varumärket i mer än en kanal kan flera identiteter kopplas till den enskilda kunden.
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_profilesbyidentity"
+>title="Profiler efter identitet"
+>abstract="Den här widgeten visar hur identiteterna fördelar sig för alla sammanslagna profiler i det valda segmentet."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#profiles-by-identity" text="Läs mer i dokumentationen"
+
+The **[!UICONTROL Profiles by identity]** widgeten visar uppdelningen av identiteter i alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler efter identitet kan vara högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera associerade identiteter. Med andra ord kan de värden som visas för varje identitet tillsammans bli större än den totala målgruppsstorleken i segmentet, eftersom om en kund interagerar med varumärket i mer än en kanal kan flera identiteter kopplas till den enskilda kunden.
 
 Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
 
@@ -115,9 +133,23 @@ The [!UICONTROL Audience activation order] widgeten innehåller en tabell med tr
 
 ### [!UICONTROL Audience size trend] {#audience-size-trend}
 
-The [!UICONTROL Audience size trend] widgeten innehåller en illustration av linjediagram för det totala antalet profiler som uppfyller villkoren i **alla** segmentdefinition under en viss tidsperiod. Trenden för målgruppens storlek kan visas under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Publiken visas på y-axeln och tiden på x-axeln.
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_audiencesizetrend"
+>title="Trend för målgruppsstorlek"
+>abstract="Den här widgeten innehåller information om det totala antalet profiler som uppfyller villkoren i **alla** segmentdefinition, som den tagits under den dagliga ögonblicksbilden, för de senaste 30 dagarna, 90 dagarna eller 12 månaderna."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size-trend" text="Läs mer i dokumentationen"
 
-![Widgeten för målgruppsstorlekstrend.](../images/segments/audience-size-trend.png)
+The **[!UICONTROL Audience size trend]** widgeten innehåller en illustration av linjediagram för det totala antalet profiler som uppfyller villkoren i **alla** segmentdefinition under en viss tidsperiod. Trenden för målgruppens storlek kan visas under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Publiken visas på y-axeln och tiden på x-axeln.
+
+Den här widgeten innehåller även den automatiska [!UICONTROL Captions] där en maskininlärningsmodell analyserar diagram- och segmentdata och automatiskt genererar bildtexter som beskriver viktiga trender och viktiga händelser. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
+
+![I segmentöversikten visas widgeten för målgruppsstorlekstrend.](../images/segments/audience-size-trend-captions.png)
+
+Dialogrutan med automatiska bildtexter öppnas och innehåller information om dina data.
+
+![Dialogrutan med automatiska bildtexter för widgeten Storlekstrend för publik.](../images/segments/audience-size-trend-automatic-captions-dialog.png)
+
+Mer information om segmentutvärdering och hur profiler kvalificerar sig och avslutar segment finns i [Dokumentation för segmenteringstjänst](../../segmentation/home.md).
 
 ### [!UICONTROL Audience size change trend] {#audience-size-change-trend}
 
