@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: d4a4baf330925d6696f515bf650d86740c18e97c
+source-git-commit: 1f5c21e09e471ac0d6f1d98e219e06e571ede89f
 workflow-type: tm+mt
-source-wordcount: '2585'
+source-wordcount: '2679'
 ht-degree: 1%
 
 ---
@@ -32,8 +32,10 @@ Kontrollpanelerna tillhandahåller förkonfigurerade rapportalternativ för orga
 
 Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive instrumentpaneler. Mer information om [hur du lägger till widgetar via widgetbiblioteket](../../dashboards/customize/widget-library.md).
 
-| Funktion | Kontrollpanel | Beskrivning |
-| --------------------------------------------------------- | ------------- | ----------- |
+**Nya widgetar**
+
+| Widget | Kontrollpanel | Beskrivning |
+| ------ | --------- | ----------- |
 | [!UICONTROL Profiles added trend] | Profiler | Den här widgeten använder ett linjediagram för att illustrera det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. |
 | [!UICONTROL Audiences mapped to destination status] | Profiler | Den här widgeten visar det totala antalet både mappade och omappade målgrupper i ett enda mätresultat och använder ett ringdiagram för att illustrera den proportionella skillnaden mellan deras summor. |
 | [!UICONTROL Audiences size] | Profiler | Den här widgeten innehåller en tabell med två kolumner som visar upp till 20 segment och det totala antalet målgrupper i varje segment. Listan är beroende av vilken sammanfogningspolicy som tillämpas och ordnas från hög till låg enligt det totala antalet målgrupper. |
@@ -46,6 +48,12 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 | [!UICONTROL Audience size trend] | Segment | Den här widgeten innehåller en illustration av ett linjediagram för det totala antalet profiler som uppfyller villkoren för en segmentdefinition under 30 dagar, 90 dagar och 12-månadersperioder. |
 | [!UICONTROL Audience size change trend] | Segment | Den här widgeten innehåller ett linjediagram som illustrerar skillnaden i det totala antalet profiler som är kvalificerade för ett visst segment mellan de senaste ögonblicksbilderna. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
 | [!UICONTROL Audience size trend by identity] | Segment | Den här widgeten visar trenden för målgruppsstorlek för ett visst segment baserat på en vald identitetstyp. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
+
+**Nya funktioner**
+
+| Funktion | Kontrollpanel | Beskrivning |
+| ------- | --------- | ----------- |
+| Rensning av överblivet profilsegmentmedlemskap | Profiler och licensanvändning | Profiltjänsten tar nu bort kvarvarande segment dagligen för att ge en mer korrekt återgivning av dina profiler i systemet. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilantalet&quot;-måttet på kontrollpanelen för profiler, eftersom dessa mått inkluderade kvarvarande segment före den här versionen. |
 
 Mer information om [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)och [[!DNL Segments]](../../dashboards/guides/segments.md) instrumentpaneler.
 
