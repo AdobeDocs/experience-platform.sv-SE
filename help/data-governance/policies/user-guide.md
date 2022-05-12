@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datastyrning;användarhandbok för dataanvändningspolicy
 solution: Experience Platform
-title: Hantera dataanvändningsprinciper i användargränssnittet
+title: Manage Data Usage Policies in the UI
 topic-legacy: policies
-description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
+description: Adobe Experience Platform Data Governance provides a user interface that allows you to create and manage data usage policies. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 8feb9fbdead75ca7b9ed7e5dcd3a0aab6f328ad5
+source-git-commit: 1c0685e7acb594829795674f859f76f229ecee61
 workflow-type: tm+mt
-source-wordcount: '1232'
+source-wordcount: '1268'
 ht-degree: 0%
 
 ---
 
 # Hantera dataanvändningsprinciper i användargränssnittet
 
-Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra i **Profiler** arbetsytan i [!DNL Experience Platform] användargränssnitt.
+Adobe Experience Platform Data Governance provides a user interface that allows you to create and manage data usage policies. This document provides an overview of the actions that you can perform in the **Policies** workspace in the [!DNL Experience Platform] user interface.
 
 >[!IMPORTANT]
 >
@@ -22,14 +22,14 @@ Adobe Experience Platform Data Governance har ett användargränssnitt där du k
 
 ## Förutsättningar
 
-Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] begrepp:
+This guide requires a working understanding of the following [!DNL Experience Platform] concepts:
 
 * [Datastyrning](../home.md)
 * [Dataanvändningspolicyer](./overview.md)
 
-## Visa befintliga profiler {#view-policies}
+## View existing policies {#view-policies}
 
-I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Policies]** för att öppna **[!UICONTROL Policies]** arbetsyta. I **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
+I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Policies]** för att öppna **[!UICONTROL Policies]** arbetsyta. In the **[!UICONTROL Browse]** tab, you can see a list of available policies, including their associated labels, marketing actions, and status.
 
 ![](../images/policies/browse-policies.png)
 
@@ -37,7 +37,7 @@ Om du har åtkomst till profiler för samtycke (för närvarande i betaversion) 
 
 ![](../images/policies/consent-policy-toggle.png)
 
-Välj en listad profil för att visa dess beskrivning och typ. Om du väljer en anpassad profil visas ytterligare kontroller för att redigera, ta bort eller [aktivera/inaktivera profilen](#enable).
+Select a listed policy to view its description and type. Om du väljer en anpassad profil visas ytterligare kontroller för att redigera, ta bort eller [aktivera/inaktivera profilen](#enable).
 
 ![](../images/policies/policy-details.png)
 
@@ -49,11 +49,11 @@ Om du vill skapa en ny anpassad dataanvändningsprincip väljer du **[!UICONTROL
 
 Beroende på om du är en del av betatestningspolicyn för samtycke, händer något av följande:
 
-* Om du inte är en del av betaversionen kommer du omedelbart till arbetsflödet för [skapa en datastyrningspolicy](#create-governance-policy).
+* If you are not part of the beta, you are immediately brought to the workflow for [creating a data governance policy](#create-governance-policy).
 * Om du är en del av betaversionen visas en dialogruta med ett extra alternativ för att [skapa en medgivandeprincip](#consent-policy).
    ![](../images/policies/choose-policy-type.png)
 
-### Skapa en datastyrningspolicy {#create-governance-policy}
+### Create a data governance policy {#create-governance-policy}
 
 The **[!UICONTROL Create policy]** arbetsflödet visas. Börja med att ange ett namn och en beskrivning för den nya principen.
 
@@ -75,7 +75,7 @@ The **[!UICONTROL Review]** visas så att du kan granska informationen om den ny
 
 ![](../images/policies/policy-review.png)
 
-The **[!UICONTROL Browse]** -fliken visas igen, där den nya principen nu visas med statusen Utkast. Om du vill aktivera profilen går du till nästa avsnitt.
+The **[!UICONTROL Browse]** tab reappears, which now lists the newly created policy in &quot;Draft&quot; status. Om du vill aktivera profilen går du till nästa avsnitt.
 
 ![](../images/policies/created-policy.png)
 
@@ -89,16 +89,16 @@ Om du väljer att skapa en profil för samtycke visas en ny skärm där du kan k
 
 ![](../images/policies/consent-policy-dialog.png)
 
-Om du vill kunna använda profiler för samtycke måste du ha attribut för samtycke i dina profildata. Se guiden [behandling av samtycke i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md) för detaljerade steg om hur du inkluderar de nödvändiga attributen i ditt unionsschema.
+In order to make use of consent policies, you must have consent attributes present in your profile data. Se guiden [behandling av samtycke i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md) för detaljerade steg om hur du inkluderar de nödvändiga attributen i ditt unionsschema.
 
 Samtyckesprinciper består av två logiska komponenter:
 
 * **[!UICONTROL If]**: Villkoret som utlöser principkontrollen. Detta kan baseras på en viss marknadsföringsåtgärd som utförs, förekomsten av vissa dataanvändningsetiketter eller en kombination av de två.
-* **[!UICONTROL Then]**: Medgivandeattributen som måste finnas för en profil som ska inkluderas i åtgärden som utlöste policyn.
+* **[!UICONTROL Then]**: The consent attributes that must be present for a profile to be included in the action that triggered the policy.
 
 #### Konfigurera villkor
 
-Under **[!UICONTROL If]** väljer du de marknadsföringsåtgärder och/eller dataanvändningsetiketter som ska utlösa den här principen. Välj **[!UICONTROL View all]** och **[!UICONTROL Select labels]** för att få en fullständig lista över tillgängliga marknadsföringsåtgärder och etiketter.
+Under **[!UICONTROL If]** väljer du de marknadsföringsåtgärder och/eller dataanvändningsetiketter som ska utlösa den här principen. Select **[!UICONTROL View all]** and **[!UICONTROL Select labels]** to view the full lists of available marketing actions and labels, respectively.
 
 När du har lagt till minst ett villkor kan du välja **[!UICONTROL Add condition]** om du vill fortsätta lägga till ytterligare villkor efter behov, väljer du lämplig villkorstyp i listrutan.
 
@@ -116,7 +116,7 @@ När du väljer medgivandeattributet väljer du värdena för attributet som du 
 
 ![](../images/policies/select-schema-field.png)
 
-När du har valt minst ett medgivandeattribut, **[!UICONTROL Policy properties]** Panelen uppdateras för att visa det uppskattade antalet profiler som tillåts enligt den här principen, inklusive procentandelen av det totala profilarkivet. Den här uppskattningen uppdateras automatiskt när du justerar principkonfigurationen.
+När du har valt minst ett medgivandeattribut, **[!UICONTROL Policy properties]** Panelen uppdateras för att visa det uppskattade antalet profiler som tillåts enligt den här principen, inklusive procentandelen av det totala profilarkivet. This estimation automatically updates as you adjust the policy configuration.
 
 ![](../images/policies/audience-preview.png)
 
@@ -124,19 +124,23 @@ Om du vill lägga till fler medgivandeattribut till profilen väljer du **[!UICO
 
 ![](../images/policies/add-result.png)
 
-Du kan fortsätta lägga till och justera villkor och medgivandeattribut i profilen efter behov. När du är nöjd med konfigurationen anger du ett namn och en valfri beskrivning för profilen innan du väljer **[!UICONTROL Save]**.
+You can continue adding and adjusting conditions and consent attributes to the policy as needed. När du är nöjd med konfigurationen anger du ett namn och en valfri beskrivning för profilen innan du väljer **[!UICONTROL Save]**.
 
 ![](../images/policies/name-and-save.png)
 
-Medgivandeprincipen skapas nu och dess status anges till [!UICONTROL Disabled] som standard. Om du vill aktivera profilen direkt väljer du **[!UICONTROL Status]** till höger.
+Medgivandeprincipen skapas nu och dess status anges till [!UICONTROL Disabled] som standard. To enable the policy right away, select the **[!UICONTROL Status]** toggle in the right rail.
 
 ![](../images/policies/enable-consent-policy.png)
+
+#### Verify policy enforcement
+
+När du har skapat och aktiverat en medgivandeprincip kan du förhandsgranska hur den påverkar de godkända målgrupperna när du aktiverar segment till mål. Se avsnittet om [utvärdering av godkännandepolicy](../enforcement/auto-enforcement.md#consent-policy-evaluation) för mer information.
 
 ## Aktivera eller inaktivera en profil {#enable}
 
 Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Du kan aktivera eller inaktivera profiler på **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]** markerar du knappen för att aktivera eller inaktivera profilen.
+Du kan aktivera eller inaktivera profiler på **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]**, select the toggle button to enable or disable the policy.
 
 ![](../images/policies/enable-policy.png)
 
@@ -164,9 +168,9 @@ Den nyligen skapade åtgärden visas i dialogrutan **[!UICONTROL Marketing actio
 
 >[!NOTE]
 >
->Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definieras av Adobe kan inte ändras eller tas bort.
+>Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marketing actions defined by Adobe cannot be changed or deleted.
 
-I **[!UICONTROL Policies]** arbetsyta väljer du **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definieras av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
+I **[!UICONTROL Policies]** arbetsyta väljer du **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definieras av Adobe och din egen organisation. Select a custom marketing action from the list, then used the provided fields in the right-hand section to edit the marketing action&#39;s details.
 
 ![](../images/policies/edit-marketing-action.png)
 
@@ -180,8 +184,8 @@ Om marknadsföringsåtgärden inte används av någon befintlig användarprofil 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över hur du hanterar dataanvändningsprinciper i [!DNL Experience Platform] Gränssnitt. För steg om hur du hanterar profiler med [!DNL Policy Service API], se [utvecklarhandbok](../api/getting-started.md). Information om hur du tillämpar dataanvändningsprinciper finns i [genomgång av policytillämpning](../enforcement/overview.md).
+Det här dokumentet innehåller en översikt över hur du hanterar dataanvändningsprinciper i [!DNL Experience Platform] Gränssnitt. For steps on how to manage policies using the [!DNL Policy Service API], see the [developer guide](../api/getting-started.md). Information om hur du tillämpar dataanvändningsprinciper finns i [genomgång av policytillämpning](../enforcement/overview.md).
 
-I följande video visas hur du arbetar med användarprofiler i [!DNL Experience Platform] Gränssnitt:
+The following video provides a demonstration of how to work with usage policies in the [!DNL Experience Platform] UI:
 
 >[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)
