@@ -6,9 +6,9 @@ title: Övervaka dataflöden för källor i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: ed88ebe7822f60ace2babd7d5a04d2d92d83cf49
 workflow-type: tm+mt
-source-wordcount: '1745'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -130,102 +130,9 @@ Du kan använda det synliga systemet i det övre huvudet för att navigera tillb
 
 ![breadcrumbs](../assets/ui/monitor-sources/breadcrumbs.png)
 
-## Övervakning över flera tjänster {#cross-service-monitoring}
-
-Den övre delen av kontrollpanelen innehåller en representation av intagsflödet från källnivån till [!DNL Identity Service]och till [!DNL Profile]. Varje cell innehåller en punktmarkör som anger att det finns fel som inträffade vid det aktuella intaget. En grön punkt innebär ett felfritt intag, medan en röd punkt betyder att ett fel uppstod i just det steget.
-
-![övervakning mellan tjänster](../assets/ui/monitor-sources/cross-service-monitoring.png)
-
-Leta reda på ett lyckat dataflöde på dataflödessidan och välj filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid det för att se information om dataflödets körning.
-
-![dataflöde-success](../assets/ui/monitor-sources/dataflow-success.png)
-
-The [!UICONTROL Source ingestion] sidan innehåller information som bekräftar att dataflödet har överförts. Härifrån kan du börja övervaka ditt dataflödes resa från källnivå till [!DNL Identity Service]och sedan [!DNL Profile].
-
-Välj **[!UICONTROL Identities]** för att se intag i [!UICONTROL Identities] stage.
-
-![källor](../assets/ui/monitor-sources/sources.png)
-
-### [!DNL Identity] mått {#identity-metrics}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_identity_processing"
->title="Identitetsbearbetning"
->abstract="I vyn Identitetsbearbetning finns information om poster som har importerats till identitetstjänsten, inklusive antalet identiteter som har lagts till, diagram som har skapats och diagram som har uppdaterats. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_dataflow_run_details_identity"
->title="Information om dataflödeskörning"
->abstract="På sidan med information om dataflödeskörning visas mer information om Identity-dataflödets körning, inklusive dess IMS Org ID och dataflödes-ID."
-
-The [!UICONTROL Identity processing] sidan innehåller information om poster som har importerats till [!DNL Identity Service], inklusive antal tillagda identiteter, skapade diagram och uppdaterade diagram.
-
-Markera filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödet för att se mer information om [!DNL Identity] dataflödeskörning.
-
-![identiteter](../assets/ui/monitor-sources/identities.png)
-
-| Identitetsmått | Beskrivning |
-| ---------------- | ----------- |
-| [!UICONTROL Records received] | Antalet poster som tagits emot från [!DNL Data Lake]. |
-| [!UICONTROL Records failed] | Antalet poster som inte har importerats till plattformen på grund av datafel. |
-| [!UICONTROL Records skipped] | Antalet poster som har importerats, men inte [!DNL Identity Service] därför att det bara fanns en identifierare i postraden. |
-| [!UICONTROL Records ingested] | Antalet poster som inhämtats till [!DNL Identity Service]. |
-| [!UICONTROL Total records] | Totalt antal poster, inklusive poster som misslyckats, poster som hoppats över. [!DNL Identities] och dubblerade poster. |
-| [!UICONTROL Identities added] | Antalet nya nettoidentifierare som lagts till i [!DNL Identity Service]. |
-| [!UICONTROL Graphs created] | Antalet nya identitetsdiagram som skapas i [!DNL Identity Service]. |
-| [!UICONTROL Graphs updated] | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
-| [!UICONTROL Failed dataflow runs] | Antalet misslyckade dataflödeskörningar. |
-| [!UICONTROL Processing time] | Tidsstämpeln från det att du har fått in det hela till det färdiga. |
-| [!UICONTROL Status] | Definierar den övergripande statusen för ett dataflöde. Möjliga statusvärden är: <ul><li>`Success`: Anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls.</li><li>`Failed`: Anger att aktiveringsprocessen för ett dataflöde har avbrutits på grund av fel. </li><li>`Processing`: Anger att dataflödet ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats.</li></ul> |
-
-The [!UICONTROL Dataflow run details] sidan visar mer information om [!DNL Identity] dataflödeskörning, inklusive dess IMS Org ID och dataflödeskörnings-ID. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Identity Service], om det uppstår några fel i intagsprocessen.
-
-Välj **[!UICONTROL Run start: 2/14/2021, 9:47 PM]** för att återgå till föregående sida.
-
-![identities-dataflow-run](../assets/ui/monitor-sources/identities-dataflow-run.png)
-
-Från [!UICONTROL Identity processing] sida, markera **[!UICONTROL Profiles]** för att se status för registrering i [!UICONTROL Profiles] stage.
-
-![select-profiles](../assets/ui/monitor-sources/select-profiles.png)
-
-### [!DNL Profile] mått {#profile-metrics}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_profile_processing"
->title="Profilbearbetning"
->abstract="Vyn för profilbearbetning innehåller information om poster som har importerats till profiltjänsten, inklusive antalet profilfragment som har skapats, uppdaterade profilfragment och det totala antalet profilfragment."
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_dataflow_run_details_profile"
->title="Information om dataflödeskörning"
->abstract="På sidan Information om dataflödeskörning visas mer information om hur profildataflödet körs, inklusive dess IMS Org ID och ID för dataflödeskörning."
-
-The [!UICONTROL Profile processing] sidan innehåller information om poster som har importerats till [!DNL Profile], inklusive antalet skapade profilfragment, uppdaterade profilfragment och det totala antalet profilfragment.
-
-Markera filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödet för att se mer information om [!DNL Profile] dataflödeskörning.
-
-![profiler](../assets/ui/monitor-sources/profiles.png)
-
-| Profilmått | Beskrivning |
-| --------------- | ----------- |
-| [!UICONTROL Records received] | Antalet poster som tagits emot från [!DNL Data Lake]. |
-| [!UICONTROL Records failed ] | Antalet poster som har importerats, men inte [!DNL Profile] på grund av fel. |
-| [!UICONTROL Profile fragments added] | Antalet nya netto [!DNL Profile] tillagda fragment. |
-| [!UICONTROL Profile fragments updated] | Antalet befintliga [!DNL Profile] fragment har uppdaterats |
-| [!UICONTROL Total Profile fragments] | Det totala antalet poster som skrivs till [!DNL Profile], inklusive alla befintliga [!DNL Profile] fragment uppdaterade och nya [!DNL Profile] skapade fragment. |
-| [!UICONTROL Failed dataflow runs] | Antalet misslyckade dataflödeskörningar. |
-| [!UICONTROL Processing time] | Tidsstämpeln från det att du har fått in det hela till det färdiga. |
-| [!UICONTROL Status] | Definierar den övergripande statusen för ett dataflöde. Möjliga statusvärden är: <ul><li>`Success`: Anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls.</li><li>`Failed`: Anger att aktiveringsprocessen för ett dataflöde har avbrutits på grund av fel. </li><li>`Processing`: Anger att dataflödet ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats.</li></ul> |
-
-The [!UICONTROL Dataflow run details] sidan visar mer information om [!DNL Profile] dataflödeskörning, inklusive dess IMS Org ID och dataflödeskörnings-ID. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Profile], om det uppstår några fel i intagsprocessen.
-
-![profiles-dataflow-run](../assets/ui/monitor-sources/profiles-dataflow-run.png)
-
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du övervakat inmatningsdataflödet från källnivån till [!DNL Identity Service]och till [!DNL Profile], med **[!UICONTROL Monitoring]** kontrollpanel. Du har också identifierat fel som bidrog till att dataflödena misslyckades under importen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du övervakat inmatningsdataflödet från källnivån med hjälp av **[!UICONTROL Monitoring]** kontrollpanel. Du har också identifierat fel som bidrog till att dataflödena misslyckades under importen. Mer information finns i följande dokument:
 
-* [Översikt över kundprofiler i realtid](../../profile/home.md)
-* [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md)
+* [Övervaka identiteter i dataflöden](./monitor-identities.md)
+* [Övervaka profiler i dataflöden](./monitor-profiles.md)
