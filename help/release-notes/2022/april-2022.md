@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: a80f011dc8a6e10d1d311bc85029fa9f57d8b4ab
+source-git-commit: 7040a3415ced04035e2a6a73292c2113411df21d
 workflow-type: tm+mt
-source-wordcount: '2682'
+source-wordcount: '2794'
 ht-degree: 1%
 
 ---
@@ -15,12 +15,12 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai/ml-services)
 - [[!DNL Dashboards]](#dashboards)
 - [Dataflöden](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [[!DNL Intelligent Services]](#intelligent-services)
 - [Real-time Customer Data Platform B2B Edition](#B2B)
 - [Källor](#sources)
 
@@ -171,17 +171,31 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
-## [!DNL Intelligent Services] {#intelligent-services}
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai/ml-services}
 
-Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
 
-Med Attribution AI- och kundens AI kan kunderna konfigurera avancerade AI/ML-modeller för marknadsattribuering och kundbenägenhet. Funktionen Multi DataSet hjälper kunderna att ta fram flera datauppsättningar samtidigt utan att behöva sy ihop och förbereda data i förväg.
+### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI stöder följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event. Kundens AI stöder alla dessa scheman plus Adobe Audience Manager-schemat. Mer information om stöd för flera datauppsättningar i Attribution AI- och kundgränssnittet finns i [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md) och [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md). |
+| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI stöder följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event. Mer information om stöd för flera datauppsättningar i Attribution AI finns i [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md). |
+
+Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] översikt](../../intelligent-services/home.md).
+
+### Kund-AI
+
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Kund-AI har stöd för följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event och Adobe Audience Manager schema. Mer information om stöd för flera datauppsättningar i kundens AI finns i [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md). |
 | Nya mått för modellutvärdering i kundens AI | Nya vinstscheman i kundens AI gör det möjligt för marknadsförare att fastställa gruppstorleken utifrån sin budget och sina lönsamhetsmål. Nya Lyft-diagram mäter modellens kvalitet och ger bättre synlighet i lyften de skulle få över slumpmässig målinriktning. Mer information finns i [identifiera insikter med kundens AI](../../intelligent-services/customer-ai/user-guide/discover-insights.md) -dokument. |
 
 Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] översikt](../../intelligent-services/home.md).
