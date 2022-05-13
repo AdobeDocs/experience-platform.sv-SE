@@ -1,9 +1,10 @@
 ---
 title: Rotfiltrering i frågetjänsten med maskininlärning
 description: Det här dokumentet innehåller en översikt över hur du använder frågetjänst och maskininlärning för att fastställa robotaktivitet och filtrera deras åtgärder från äkta besökstrafik på webben.
-source-git-commit: 7b223b4917e6bdb3f4a05238cbaf66261d80660e
+exl-id: fc9dbc5c-874a-41a9-9b60-c926f3fd6e76
+source-git-commit: c5b91bd516e876e095a2a6b6e3ba962b29f55a7b
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '873'
 ht-degree: 5%
 
 ---
@@ -164,6 +165,6 @@ Exemplmodellen avgör med stor noggrannhet att alla besökare som har mer än 13
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet får du en bättre förståelse för hur du använder frågetjänsten och maskininlärning för att fastställa och filtrera startaktiviteten.
+Genom att läsa det här dokumentet får du en bättre förståelse för hur du använder [!DNL Query Service] och maskininlärning för att avgöra och filtrera startaktiviteten.
 
-Andra dokument som demonstrerar fördelarna med [!DNL Query Service] till er organisations strategiska affärsinsikter är ett övergivet exempel på användning i webbläsare.
+Andra dokument som demonstrerar fördelarna med [!DNL Query Service] till er organisations strategiska affärsinsikter är [övergiven bläddringsmetod](./abandoned-browse.md) exempel.

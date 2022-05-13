@@ -2,9 +2,9 @@
 title: Granska loggintegrering för frågetjänsten
 description: Granskningsloggar för frågetjänsten bevarar poster för olika användaråtgärder för att skapa en åtkomsthistorik för felsökningsproblem eller följa företagets policyer för datahantering och lagstadgade krav. Den här självstudiekursen ger en översikt över granskningsloggsfunktioner som är specifika för frågetjänsten.
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: 861283cb8ea99b91480bf776ff0c53de52f464ad
+source-git-commit: 12b717be67cb35928d84e83b6d692f9944d651d8
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '775'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Granskningsloggkategorierna tillhandahålls av [!DNL Query Service] är som föl
 |---|---|
 | [!UICONTROL Scheduled query] | Med den här kategorin kan du granska de scheman som har skapats, uppdaterats eller tagits bort i [!DNL Query Service]. |
 | [!UICONTROL Query template] | Med den här kategorin kan du granska de olika åtgärder (skapa, uppdatera och ta bort) som har utförts på en frågemall. |
-| [!UICONTROL Query] | Med den här kategorin kan du granska frågekörningar. |
+<!-- | [!UICONTROL Query] | This category allows you to audit query executions. | -->
 
 ## Utför en [!DNL Query Service] granskningslogg {#perform-an-audit-log}
 
