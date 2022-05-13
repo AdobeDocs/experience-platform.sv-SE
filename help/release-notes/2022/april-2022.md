@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 1f5c21e09e471ac0d6f1d98e219e06e571ede89f
+source-git-commit: a80f011dc8a6e10d1d311bc85029fa9f57d8b4ab
 workflow-type: tm+mt
-source-wordcount: '2679'
+source-wordcount: '2682'
 ht-degree: 1%
 
 ---
@@ -49,11 +49,13 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 | [!UICONTROL Audience size change trend] | Segment | Den här widgeten innehåller ett linjediagram som illustrerar skillnaden i det totala antalet profiler som är kvalificerade för ett visst segment mellan de senaste ögonblicksbilderna. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
 | [!UICONTROL Audience size trend by identity] | Segment | Den här widgeten visar trenden för målgruppsstorlek för ett visst segment baserat på en vald identitetstyp. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
 
-**Nya funktioner**
+**Nya funktioner** {#new-features}
 
 | Funktion | Kontrollpanel | Beskrivning |
 | ------- | --------- | ----------- |
 | Rensning av överblivet profilsegmentmedlemskap | Profiler och licensanvändning | Profiltjänsten tar nu bort kvarvarande segment dagligen för att ge en mer korrekt återgivning av dina profiler i systemet. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilantalet&quot;-måttet på kontrollpanelen för profiler, eftersom dessa mått inkluderade kvarvarande segment före den här versionen. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)och [[!DNL Segments]](../../dashboards/guides/segments.md) instrumentpaneler.
 
