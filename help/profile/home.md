@@ -4,9 +4,9 @@ title: Kundprofilöversikt i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
+source-git-commit: d2182b48e21de059f12ad8923bb3b420ed87bcfc
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '2046'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,24 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 Förhållandet mellan kundprofil i realtid och andra tjänster inom Experience Platform framgår av följande diagram:
 
-![](images/profile-overview/profile-in-platform.png)
+![Förhållandet mellan kundprofil i realtid och andra tjänster i Adobe Experience Platform. Bilden visar att Profil är en av huvudkomponenterna i Adobe Experience Platform.](images/profile-overview/profile-in-platform.png)
 
 ## Förstå profiler
 
 [!DNL Real-time Customer Profile] sammanfogar data från olika affärssystem och ger sedan tillgång till dessa data i form av kundprofiler med relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler. I följande avsnitt beskrivs några av de grundläggande begrepp som du måste förstå för att effektivt kunna skapa och underhålla profiler inom plattformen.
+
+### Profilens enhetskomposition
+
+En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. Den primära enheten består av egenskaper, beteenden och segmentmedlemskap i en profil. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
+
+- **Dimensionell enhet**: Den entitet som används för att förenkla datamodelleringsprocessen för information som delas mellan händelser eller profilposter. Detta kallas även sökentitet eller klassificeringsenhet.
+- **B2B-enhet**: Enheter som beskriver profilens relation till konton och affärsmöjligheter för företag.
+
+![Ett diagram som förklarar profilentitetens komposition.](./images/profile-overview/profile-entity-composition.png)
+
+>[!IMPORTANT]
+>
+>Eftersom dimensionella företag och B2B-företag bara finns utanför den primära enheten används dessa endast för gruppsegmentering.
 
 ### Profildatalager
 
@@ -115,9 +128,9 @@ Datastyrning är en serie strategier och tekniker som används för att hantera 
 
 När det gäller åtkomst av data spelar datastyrning en viktig roll inom [!DNL Experience Platform] på olika nivåer:
 
-* Dataanvändningsetikett
-* Dataåtkomstprinciper
-* Åtkomstkontroll över data för marknadsföringsåtgärder
+- Dataanvändningsetikett
+- Dataåtkomstprinciper
+- Åtkomstkontroll över data för marknadsföringsåtgärder
 
 Datastyrning hanteras vid flera tillfällen. Det kan handla om att bestämma vilka data som ska importeras till [!DNL Platform] och vilka data som är tillgängliga efter intag för en viss marknadsföringsåtgärd. Mer information finns i [datastyrningsöversikt](../data-governance/home.md).
 
