@@ -1,13 +1,13 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform för 25 augusti 2021.
+title: Versionsinformation om Adobe Experience Platform, augusti 2021
+description: Versionsinformation från augusti 2021 för Adobe Experience Platform.
 doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
 exl-id: 0513b9dc-b16c-43b3-8e17-4be4499308d4
-source-git-commit: e9d5f24bec8cd2793ce30245b46c1d912bf17cc7
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '712'
 ht-degree: 3%
 
 ---
@@ -45,7 +45,7 @@ Destinationer är färdiga integrationer med målplattformar som möjliggör smi
 | [[!DNL Destination SDK]](../../destinations/destination-sdk/overview.md) | Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till slutpunkten, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar. |
 | [Användbarhetsförbättringar för destinationer](../../destinations/ui/activation-overview.md) | Förbättrad användarvänlighet för destinationer gör det möjligt för marknadsförare att smidigt aktivera segment till befintliga destinationer. |
 
-Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Insikter om observerbarhet {#observability}
 
@@ -55,9 +55,9 @@ Med observabilitetsinsikter kan ni övervaka plattformsaktiviteter med hjälp av
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Larm | Du kan nu prenumerera på viktiga aviseringar om arbetsflöden som körs på plattformen. När du har prenumererat på specifika varningsregler får du meddelanden och e-postmeddelanden i användargränssnittet när en viktig livscykelhändelse inträffar (t.ex. slutförd datainmatning) eller om det finns problem som kräver din uppmärksamhet (t.ex. ett intag-flöde som misslyckas eller ett segmentjobb som tar längre tid än förväntat). Mer information finns i [varningsöversikten](../../observability/alerts/overview.md). |
+| Larm | Du kan nu prenumerera på viktiga aviseringar om arbetsflöden som körs på plattformen. När du har prenumererat på specifika varningsregler får du meddelanden och e-postmeddelanden i användargränssnittet när en viktig livscykelhändelse inträffar (t.ex. slutförd datainmatning) eller om det finns problem som kräver din uppmärksamhet (t.ex. ett intag-flöde som misslyckas eller ett segmentjobb som tar längre tid än förväntat). Mer information finns i [varningsöversikt](../../observability/alerts/overview.md). |
 
-Mer information om tjänsten finns i [Insights overview](../../observability/home.md).
+Se [Översikt över Insikter i observationer](../../observability/home.md) för mer information om tjänsten.
 
 ## Kundprofil i realtid {#profile}
 
@@ -65,9 +65,9 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i handboken [Kundprofil i realtid](../../profile/ui/user-guide.md). |
+| Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i [Användargränssnittsguide för kundprofiler i realtid](../../profile/ui/user-guide.md). |
 
-Om du vill veta mer om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för arbete med profildata, kan du börja med att läsa [Kundprofilöversikt i realtid](../../profile/home.md).
+Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ## Källor {#sources}
 
@@ -77,6 +77,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, vilket gör att du kan överföra lokala filer direkt till plattformen med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Mer information finns i översikten över den lokala filöverföringskällan](../../sources/connectors/local-system/local-file-upload.md).[ |
+| Källanslutning för lokal filöverföring | Kategorin för filinläsning har bytt namn till det lokala systemet, vilket gör att du kan överföra lokala filer direkt till plattformen med den lokala filöverföringskopplingen. Data som hämtas via den här kopplingen kan övervakas via kontrollpanelen för övervakning. Se [Översikt över källa för lokal filöverföring](../../sources/connectors/local-system/local-file-upload.md) för mer information. |
 
-Mer information om källor finns i [Källor - översikt](../../sources/home.md).
+Mer information om källor finns i [källöversikt](../../sources/home.md).

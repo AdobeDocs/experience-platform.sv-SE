@@ -1,9 +1,10 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 7cd4a776ab07fcd123e798497b23edd41266f409
+title: Versionsinformation om Adobe Experience Platform november 2021
+description: Versionsinformation november 2021 för Adobe Experience Platform.
+exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '799'
 ht-degree: 1%
 
 ---
@@ -90,4 +91,3 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 | Anpassade profilattribut | Kund-AI har nu stöd för att definiera anpassade profildatauppsättningsfält (med tidsstämplar) i dina data utöver vanliga händelsefält. Om du använder det här alternativet kan du lägga till ytterligare profilattribut som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och ge mer korrekta resultat. |
 
 Mer information om kundens AI finns i [AI-dokumentation för kund](../../intelligent-services/customer-ai/overview.md).
-

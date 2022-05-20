@@ -1,13 +1,13 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform 11 november 2020
+title: Versionsinformation om Adobe Experience Platform november 2020
+description: Versionsinformation november 2020 för Adobe Experience Platform.
 doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: 38c493e6306e493f4ef5caf90509bda6f4d80023
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '2157'
+source-wordcount: '2161'
 ht-degree: 2%
 
 ---

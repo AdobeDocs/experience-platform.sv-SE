@@ -1,10 +1,10 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Den senaste versionsinformationen för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform mars 2022
+description: Versionsinformation mars 2022 för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 3f1750d75bd69c5cf47eb593144f564564f90405
+source-git-commit: 9a506fcecc94ba20906133e60e4ff54fbe0403a3
 workflow-type: tm+mt
-source-wordcount: '1192'
+source-wordcount: '1193'
 ht-degree: 1%
 
 ---
@@ -25,8 +25,6 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Datainsamling](#data-collection)
 - [[!DNL Query Service]](#query-service)
 - [Källor](#sources)
-
-<!-- - [Experience Data Model (XDM)](#xdm) -->
 
 ## Granskningsloggar {#audit-logs}
 
@@ -120,18 +118,6 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 | [API för Edge Network Server](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som stöder en rad olika fall av datainsamling, personalisering, annonsering och marknadsföring. |
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
-
-<!-- ## Experience Data Model (XDM) {#xdm}
-
-Experience Data Model (XDM) is an open-source specification that provides common structures and definitions (schemas) for data that is brought into Adobe Experience Platform. By adhering to XDM standards, all customer experience data can be incorporated into a common representation to deliver insights in a faster, more integrated way. You can gain valuable insights from customer actions, define customer audiences through segments, and use customer attributes for personalization purposes.
-
-| Feature | Description |
-| --- | --- |
-| Add or remove individual standard fields for a schema | The Schema Editor UI now allows you to add portions of standard field groups to your schemas, providing more flexibility for the fields you choose to include without needing to build custom resources from scratch.<br><br>You can now also define ad-hoc custom fields directly within the schema structure and assign them to a new or existing custom field group without needing to create or edit the field group beforehand.<br><br>See the guide on [creating and editing schemas in the UI](../../xdm/ui/resources/schemas.md) for more information on these new workflows. |
-
-{style="table-layout:auto"}
-
-For more information on XDM in Platform, see the [XDM System overview](../../xdm/home.md). -->
 
 ## Frågetjänst {#query-service}
 

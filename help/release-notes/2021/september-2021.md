@@ -1,10 +1,10 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Den senaste versionsinformationen för Adobe Experience Platform.
+title: Adobe Experience Platform Release Notes september 2021
+description: Versionsinformation för september 2021 för Adobe Experience Platform.
 exl-id: 96375409-803f-45af-805e-900207d972e4
-source-git-commit: 57089cc9aa9c586f5fae70e2a7154d48ebd62447
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '377'
 ht-degree: 3%
 
 ---
@@ -27,9 +27,9 @@ Adobe Experience Platform datainmatning representerar de olika metoder som anvä
 
 | Funktion | Beskrivning |
 |------- | -----------|
-| Uppgradera eller korrigera profilposter med hjälp av gruppinmatning | Realtidskundprofil tillåter nu uppdateringar av profilattribut i enskilda profilpostdata via batchinmatning. Mer information finns i [Utvecklarhandboken för gruppfrågor](../../ingestion/batch-ingestion/api-overview.md). |
+| Uppgradera eller korrigera profilposter med hjälp av gruppinmatning | Realtidskundprofil tillåter nu uppdateringar av profilattribut i enskilda profilpostdata via batchinmatning. Mer information finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md). |
 
-Mer information om hur du hämtar data till Platform finns i [dokumentationen för datainmatning](../../ingestion/home.md).
+Läs mer om hur du hämtar in data till Platform på [Dokumentation för datainmatning](../../ingestion/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
@@ -39,9 +39,9 @@ Mer information om hur du hämtar data till Platform finns i [dokumentationen f�
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för strömmande dataflöden | Du kan nu använda dataprep-funktioner när du skapar ett direktuppspelat dataflöde för [!DNL Amazon Kinesis], [!DNL Azure Event Hubs] och [!DNL Google PubSub]. Mer information finns i självstudiekursen om att [skapa ett direktuppspelat dataflöde för molnlagringskällor](../../sources/tutorials/ui/dataflow/streaming/cloud-storage-streaming.md). |
+| Stöd för strömmande dataflöden | Nu kan du använda förinställningsfunktioner för data när du skapar ett direktuppspelat dataflöde för [!DNL Amazon Kinesis], [!DNL Azure Event Hubs]och [!DNL Google PubSub]. Se självstudiekursen om [skapa ett direktuppspelat dataflöde för molnlagringskällor](../../sources/tutorials/ui/dataflow/streaming/cloud-storage-streaming.md) för mer information. |
 
-Mer information om [!DNL Data Prep] finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
+Mer information om [!DNL Data Prep] se [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
 ## Källor {#sources}
 
@@ -51,8 +51,8 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL Data Landing Zone] | Nu kan du skapa en [!DNL Data Landing Zone]-källanslutning med hjälp av [[!DNL Flow Service] API](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) eller [användargränssnittet](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md). [!DNL Data Landing Zone] är ett  [!DNL Azure Blob] lagringsgränssnitt som tillhandahålls av Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till plattformen. Mer information finns i [[!DNL Data Landing Zone] översikten](../../sources/connectors/cloud-storage/data-landing-zone.md). |
-| [!DNL Snowflake] | Nu kan du skapa en [!DNL Snowflake]-källanslutning med hjälp av [[!DNL Flow Service] API](../../sources/tutorials/api/create/databases/snowflake.md) eller [användargränssnittet](../../sources/tutorials/ui/create/databases/snowflake.md) för att hämta data från din [!DNL Snowflake]-databas till plattformen. Mer information finns i [[!DNL Snowflake] översikten](../../sources/connectors/databases/snowflake.md). |
-| [!DNL SFTP] källförbättringar | Du kan ange ett eget portnummer manuellt när du skapar en [!DNL SFTP]-källanslutning. Mer information finns i [[!DNL SFTP] översikten](../../sources/connectors/cloud-storage/sftp.md). |
+| [!DNL Data Landing Zone] | Nu kan du skapa en [!DNL Data Landing Zone] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) eller [användargränssnitt](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md). [!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till plattformen. Se [[!DNL Data Landing Zone] översikt](../../sources/connectors/cloud-storage/data-landing-zone.md) för mer information. |
+| [!DNL Snowflake] | Nu kan du skapa en [!DNL Snowflake] källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/databases/snowflake.md) eller [användargränssnitt](../../sources/tutorials/ui/create/databases/snowflake.md) för att hämta data från [!DNL Snowflake] databas till plattform. Se [[!DNL Snowflake] översikt](../../sources/connectors/databases/snowflake.md) för mer information. |
+| [!DNL SFTP] källförbättringar | Du kan ange ett eget portnummer manuellt när du skapar ett [!DNL SFTP] källanslutning. Se [[!DNL SFTP] översikt](../../sources/connectors/cloud-storage/sftp.md) för mer information. |
 
-Mer information om källor finns i [Källor - översikt](../../sources/home.md).
+Mer information om källor finns i [källöversikt](../../sources/home.md).

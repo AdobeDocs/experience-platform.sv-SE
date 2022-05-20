@@ -1,14 +1,13 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform, oktober 2020
+title: Versionsinformation om Adobe Experience Platform oktober 2020
+description: Versionsinformation från oktober 2020 för Adobe Experience Platform.
 doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 exl-id: 89f5e2bd-8892-4d3f-a3fe-5433bb5ece7a
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1016'
 ht-degree: 1%
 
 ---
@@ -31,25 +30,25 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| `is_set` funktion | Med funktionen `is_set` kan du kontrollera om det finns ett attribut i källdata. `is_set` kan användas tillsammans med  `is_empty` för att kontrollera både förekomsten av attributet och förekomsten av värdet i attributet. |
-| `get_values` funktion | Med funktionen `get_values` kan du hämta värden från indatamappningen för en given nyckel. |
+| `is_set` funktion | The `is_set` kan du kontrollera om det finns ett attribut i källdata. `is_set` kan användas i kombination med `is_empty` för att kontrollera både förekomsten av attributet och förekomsten av värdet i attributet. |
+| `get_values` funktion | The `get_values` kan du hämta värden från indatamappningen för en given nyckel. |
 
-Mer information finns i [översikten över dataprep](../../data-prep/home.md).
+Mer information finns i [Översikt över datapreflight](../../data-prep/home.md).
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-time Customer Profile] kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-time Customer Profile]kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API-tillägg för förhandsgranskning av profil | API:t för förhandsgranskning av profil (`/previewsamplestatus`) inkluderar nu möjligheten att visa en uppdelning av totala profilfragment i hela IMS-organisationen samt att visa distributionen av profilfragment över identitetsnamnutrymmen. |
+| API-tillägg för förhandsgranskning av profil | API för förhandsgranskning av profil (`/previewsamplestatus`) kan nu visa en uppdelning av det totala antalet profilfragment i hela IMS-organisationen samt visa distributionen av profilfragment över identitetsnamnutrymmen. |
 | Uppdateringar av unionens schemavy | I användargränssnittet i Experience Platform är det enklare att hitta information om alla scheman och datauppsättningar som bidrar till unionsschemat samt attribut för ytnycklar som identitets- och relationsfält. Dessa uppdateringar förbättrar möjligheten att felsöka och verifiera att profiler är korrekt konfigurerade, identiteterna är korrekt sammanfogade och data har importerats. |
 
-Mer information om [!DNL Real-time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile]-data finns i [Kundprofilöversikt i realtid](../../profile/home.md).
+Mer information om [!DNL Real-time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
-Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile]-data. Dessa segment konfigureras och underhålls centralt på [!DNL Platform], vilket gör dem tillgängliga för alla Adobe-program.
+Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från din [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
@@ -59,11 +58,11 @@ Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargr�
 | ------- | ----------- |
 | Borttagning av begränsning av direktuppspelad segmentering | Sjudagarsgränsen för uppslagsperioden har tagits bort. |
 
-Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md)
+Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md)
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
@@ -71,10 +70,10 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| SSH-autentiseringsstöd för SFTP | Du kan ansluta ditt SFTP-konto till [!DNL Platform] med RSA/DSA Open SSH-nycklar. Mer information finns i [SFTP-översikt](../../sources/connectors/cloud-storage/sftp.md). |
-| UX-förbättringar | Du kan aktivera datauppsättningen för [!DNL Profile] under dataöverföringsprocessen. Mer information finns i självstudiekursen [cloud storage dataflow](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md). |
+| SSH-autentiseringsstöd för SFTP | Du kan ansluta ditt SFTP-konto till [!DNL Platform] med RSA/DSA Open SSH-nycklar. Se [Översikt över SFTP](../../sources/connectors/cloud-storage/sftp.md) för mer information. |
+| UX-förbättringar | Du kan aktivera din datauppsättning för [!DNL Profile] under dataöverföringsprocessen. Se [arbetsflöde för dataflöde för molnlagring](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) självstudiekurs för mer information. |
 
-Mer information om källor finns i [Källor - översikt](../../sources/home.md).
+Mer information om källor finns i [källöversikt](../../sources/home.md).
 
 ## Tid till värde {#time-to-value}
 

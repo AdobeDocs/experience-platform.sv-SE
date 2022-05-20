@@ -1,14 +1,13 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform för 24 februari 2021.
+title: Versionsinformation om Adobe Experience Platform, februari 2021
+description: Versionsinformation från februari 2021 för Adobe Experience Platform.
 doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1141'
 ht-degree: 2%
 
 ---
@@ -49,7 +48,7 @@ Data Science Workspace använder maskininlärning och artificiell intelligens f�
 
 | Funktion | Beskrivning |
 | --- | --- |
-| JupyterLab EDA-anteckningsbok | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Se självstudiekursen [utforska webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md) för mer information. |
+| JupyterLab EDA-anteckningsbok | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Se självstudiekursen om [utforska webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md) för mer information. |
 
 Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md).
 
@@ -57,15 +56,15 @@ Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arb
 
 I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
-Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-time Customer Profile] innan de aktiveras till [!DNL Destinations].
+Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-time Customer Profile] innan den aktiveras [!DNL Destinations].
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ny kontrollpanel | Nu kan du använda kontrollpanelen för genomskinlighet mellan tjänster och åtgärdbara insikter för källdatainhämtning. Den nya kontrollpanelen ger en heltäckande bild av data som bearbetats från [!DNL Data Lake] till [!DNL Identity Service] och till [!DNL Profile], samtidigt som du kan övervaka hur många gånger du har fått tag på dem, hur många gånger de har lyckats och misslyckats. Mer information finns i självstudiekursen om [övervakning av källdataflöden i användargränssnittet](../../dataflows/ui/monitor-sources.md). |
+| Ny kontrollpanel | Nu kan du använda kontrollpanelen för genomskinlighet mellan tjänster och åtgärdbara insikter för källdatainhämtning. Den nya kontrollpanelen ger en heltäckande bild av data som bearbetats från [!DNL Data Lake] till [!DNL Identity Service] och till [!DNL Profile], samtidigt som du kan övervaka hur många gånger du har fått tag på produkten, hur många gånger det har gått och hur många fel som har uppstått. Se självstudiekursen om [övervaka källdataflöden i användargränssnittet](../../dataflows/ui/monitor-sources.md) för mer information. |
 
-Mer allmän information om dataflöden finns i [översikten över dataflöden](../../dataflows/home.md).
+Mer allmän information om dataflöden finns i [dataflödesöversikt](../../dataflows/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
@@ -75,9 +74,9 @@ Mer allmän information om dataflöden finns i [översikten över dataflöden](.
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | Med [!DNL LinkedIn Matched Audiences]-anslutningen kan du aktivera målgrupper på den sociala plattformen [!DNL LinkedIn]. |
+| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | The [!DNL LinkedIn Matched Audiences] kan du aktivera målgrupper i [!DNL LinkedIn] social plattform. |
 
-Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## [!DNL Experience Data Model (XDM) System] {#xdm}
 
@@ -89,9 +88,9 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu på fliken [!UICONTROL Browse] på arbetsytan [!UICONTROL Schemas] och i dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Mer information finns i dokumenten om  [att utforska XDM-resurser ](../../xdm/ui/explore.md) och  [hantera ](../../xdm/ui/resources/schemas.md) scheman i användargränssnittet. |
+| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu i [!UICONTROL Browse] i [!UICONTROL Schemas] arbetsytan och dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Se dokumenten på [utforska XDM-resurser](../../xdm/ui/explore.md) och [hantera scheman](../../xdm/ui/resources/schemas.md) i användargränssnittet om du vill ha mer information. |
 
-Mer allmän information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer allmän information om XDM finns i [XDM - systemöversikt](../../xdm/home.md).
 
 ## [!DNL Identity Service] {#identity}
 
@@ -103,9 +102,9 @@ Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Mer information finns i [identitetsdiagramvisningsdokumentet](../../identity-service/ui/identity-graph-viewer.md). |
+| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Se [dokument för identitetsdiagramvisningsprogram](../../identity-service/ui/identity-graph-viewer.md) för mer information. |
 
-Mer allmän information om [!DNL Identity Service] finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
+Mer allmän information om [!DNL Identity Service], se [Översikt över identitetstjänsten](../../identity-service/home.md).
 
 ## Kundprofil i realtid {#profile}
 
@@ -115,9 +114,9 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Beräknade attribut (alfa) | ***Obs! Den här funktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.*** <br/><br/>Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Sedan kan ni använda aggregaten för segmentering, aktivering och personalisering. Exempel på sådana funktioner är count, sum, Average, min, max, true/false. Beräknade attribut är för närvarande bara tillgängliga via API. Mer information finns i översikten [beräknade attribut](../../profile/computed-attributes/overview.md). |
+| Beräknade attribut (alfa) | ***Obs! Den här funktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.*** <br/><br/>Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Sedan kan ni använda aggregaten för segmentering, aktivering och personalisering. Exempel på sådana funktioner är count, sum, Average, min, max, true/false. Beräknade attribut är för närvarande bara tillgängliga via API. Mer information finns i [översikt över beräknade attribut](../../profile/computed-attributes/overview.md). |
 
-Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, får du om du börjar med att läsa översikten över kundprofilen i realtid](../../profile/home.md).[
+Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med [!DNL Profile] data, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ## [!DNL Sources] {#sources}
 
@@ -129,7 +128,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL Google PubSub] | Nu kan du ansluta [!DNL Google PubSub] till [!DNL Experience Platform] med hjälp av API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Google PubSub] anslutningsöversikten](../../sources/connectors/cloud-storage/google-pubsub.md). |
-| [!DNL Oracle Object Storage] | Nu kan du ansluta [!DNL Oracle Object Storage] till [!DNL Experience Platform] med hjälp av API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Oracle Object Storage] anslutningsöversikten](../../sources/connectors/cloud-storage/oracle-object-storage.md). |
+| [!DNL Google PubSub] | Nu kan du ansluta [!DNL Google PubSub] till [!DNL Experience Platform] med [!DNL Flow Service] API eller gränssnittet. Se [[!DNL Google PubSub] anslutningsöversikt](../../sources/connectors/cloud-storage/google-pubsub.md) för mer information. |
+| [!DNL Oracle Object Storage] | Nu kan du ansluta [!DNL Oracle Object Storage] till [!DNL Experience Platform] med [!DNL Flow Service] API eller gränssnittet. Se [[!DNL Oracle Object Storage] anslutningsöversikt](../../sources/connectors/cloud-storage/oracle-object-storage.md) för mer information. |
 
-Mer allmän information om källor finns i [Källor översikt](../../sources/home.md).
+Mer allmän information om källor finns i [källöversikt](../../sources/home.md).

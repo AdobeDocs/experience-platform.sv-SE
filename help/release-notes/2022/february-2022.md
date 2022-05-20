@@ -1,10 +1,10 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Den senaste versionsinformationen för Adobe Experience Platform.
+title: Versionsinformation om Adobe Experience Platform, februari 2022
+description: Versionsinformation från februari 2022 för Adobe Experience Platform.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 5f6b46245781051da01a8051f023df11ff4c7d51
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1019'
 ht-degree: 1%
 
 ---
