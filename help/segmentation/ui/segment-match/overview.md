@@ -5,9 +5,9 @@ title: Översikt över segmentmatchning
 topic-legacy: overview
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 50795be308649052037be62153109eadab02c9a1
+source-git-commit: 1c2b9862facfe9fbce59246c882e6373f3e2c3ef
 workflow-type: tm+mt
-source-wordcount: '1889'
+source-wordcount: '1915'
 ht-degree: 0%
 
 ---
@@ -114,7 +114,13 @@ Så här ansluter du en partner med deras [!UICONTROL connect ID]anger du deras 
 
 ![connect-partner.png](./images/connect-partner.png)
 
-### Skapa feed
+### Skapa feed {#create-feed}
+
+>[!CONTEXTUALHELP]
+>id="platform_segment_match_marketing"
+>title="Begränsade användningsfall för marknadsföring"
+>abstract="Begränsade användningsexempel för marknadsföring hjälper er att ge vägledning till era partner för att säkerställa att delade segment används korrekt enligt era begränsningar för datastyrning."
+>text="Learn more in documentation"
 
 A **feed** är en gruppering av data (segment), regler för hur data kan exponeras eller användas och konfigurationer som bestämmer hur data matchas mot dina partners data. En feed kan hanteras oberoende och utbytas med andra plattformsanvändare via [!DNL Segment Match].
 
