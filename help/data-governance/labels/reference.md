@@ -5,9 +5,9 @@ title: Ordlista för dataanvändningsetiketter
 topic-legacy: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 15b0c2fb2565ada489c5a8811b946efc4319696b
 workflow-type: tm+mt
-source-wordcount: '1984'
+source-wordcount: '2053'
 ht-degree: 1%
 
 ---
@@ -55,6 +55,8 @@ En typ av data som du anser vara känsliga kan vara olika typer av geografiska d
 | --- | --- |
 | **S1** | Data som anger latitud och longitud som kan användas för att fastställa en enhets exakta placering. |
 | **S2** | Data som kan användas för att fastställa ett brett definierat geofence-område. |
+| **PSPD** | Tillåtna känsliga personuppgifter (PSPD, Sensitive Personal Data) avser data som enligt avtal mellan Adobe tillåts ladda upp som anses vara&quot;känsliga&quot;,&quot;särskild datakategori&quot; eller en liknande term som används i tillämpliga lagar. Detta utesluter särskilt skyddad hälsoinformation (PHI) och andra reglerade hälsodata. |
+| **RHD** | Data som hänvisar till Skyddad hälsoinformation (PHI) eller information om en patient som enligt avtal får överföras av Adobe. |
 
 ## Bilaga
 
@@ -122,7 +124,7 @@ Data kan inte användas för att mäta, förstå och rapportera om hur användar
 
 #### C9 {#c9}
 
-I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
+Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
 
 #### C10 {#c10}
 
