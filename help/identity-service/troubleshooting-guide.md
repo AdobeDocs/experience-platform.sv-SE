@@ -5,9 +5,9 @@ title: Felsökningsguide för identitetstjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 80530705f5f8d30294ad31e00d8956257ee2c085
+source-git-commit: 3d308d18c926cabdf0bd4b52c0623d8ec9428ee8
 workflow-type: tm+mt
-source-wordcount: '2236'
+source-wordcount: '2180'
 ht-degree: 0%
 
 ---
@@ -90,13 +90,7 @@ Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller 
 
 ## Hur hanterar Identity Service personligt identifierbar information (PII)?
 
-Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena &quot;Telefon&quot; och &quot;E-post&quot; hashas automatiskt med SHA-256, där värdena &quot;E-post&quot; automatiskt konverteras till gemener före hashning.
-
-## Ska jag kryptera alla PII-filer innan jag skickar till plattformen?
-
-Du behöver inte kryptera PII-data manuellt innan du importerar dem till plattformen. Genom att använda `I1` dataanvändningsetikett till alla tillämpliga datafält, konverterar Platform automatiskt dessa fält till hashed ID-värden vid inmatning.
-
-Anvisningar om hur du använder och hanterar dataanvändningsetiketter finns i [självstudiekurs om etiketter för dataanvändning](../data-governance/labels/user-guide.md).
+Identitetstjänsten har standardnamnutrymmen som stöder inmatning av hash-kodade identitetsvärden för telefonnummer och e-post. Du ansvarar dock för att värden hash-kodas. Om du vill veta mer om hur du hash-kodar data som hämtas till Platform kan du läsa [[!DNL Data Prep] guide för mappningsfunktioner](../data-prep/functions.md#hashing).
 
 ## Är det något du bör tänka på när du hash-kodar PII-baserade identiteter?
 
