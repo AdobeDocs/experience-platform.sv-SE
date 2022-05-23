@@ -7,7 +7,7 @@ topic-legacy: Customer AI Overview
 description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 landing-page-description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala.
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: fccb5e6193d9c456d0035ef5c7d2adf5ffe883a4
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
