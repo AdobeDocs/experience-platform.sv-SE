@@ -5,7 +5,7 @@ title: API-slutpunkt för scheman
 topic-legacy: developer guide
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 604d1d02156b441ab3978ff976e02191bbdc311f
 workflow-type: tm+mt
 source-wordcount: '2013'
 ht-degree: 1%
@@ -257,7 +257,7 @@ PATCH /config/schedules/{SCHEDULE_ID}
 **Begäran**
 
 ```shell
-curl -X DELETE https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
+curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-dbd8-449e-988a-4ac639ebe72b \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
