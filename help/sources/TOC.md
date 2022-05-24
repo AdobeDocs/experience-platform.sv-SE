@@ -4,23 +4,24 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: be3967e7045e159736952e369a55df322afd9fec
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '777'
 ht-degree: 5%
 
 ---
 
 
-# Källkopplingar {#sources}
+# Källor {#sources}
 
-- [Översikt över källkopplingar](home.md)
+- [Översikt över källor](home.md)
 - Tillgängliga källanslutningar {#connectors}
    - Adobe-program {#adobe-applications}
-      - [Källanslutning för analysklassificeringar](connectors/adobe-applications/classifications.md)
-      - [Källanslutning för analyser](connectors/adobe-applications/analytics.md)
-      - [Audience Manager-källanslutning](connectors/adobe-applications/audience-manager.md)
-      - [Källkoppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
+      - [Källa för analysklassificeringar](connectors/adobe-applications/classifications.md)
+      - [Analyskälla](connectors/adobe-applications/analytics.md)
+      - [Audience Manager source](connectors/adobe-applications/audience-manager.md)
+      - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
+      - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
       - Fältkopplingar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
@@ -53,7 +54,7 @@ ht-degree: 5%
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
-      - [Veeva CRM connector](connectors/crm/veeva.md)
+      - [Veeva CRM-koppling](connectors/crm/veeva.md)
       - [Zoho CRM-koppling](connectors/crm/zoho.md)
    - Nöjda kunder {#customer-success}
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
@@ -61,13 +62,13 @@ ht-degree: 5%
    - Databaser {#databases}
       - [Amazon Redshift-anslutning](connectors/databases/redshift.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
-      - [Apache Spark on Azure HDInsights connector](connectors/databases/spark.md)
+      - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
-      - [Azure Synapse Analytics connector](connectors/databases/synapse-analytics.md)
+      - [azure synapse Analytics-kontakt](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
-      - [Google BigQuery connector](connectors/databases/bigquery.md)
-      - [GreenPlum connector](connectors/databases/greenplum.md)
+      - [Google BigQuery-koppling](connectors/databases/bigquery.md)
+      - [GreenPlum-kontakt](connectors/databases/greenplum.md)
       - [HP Vertica-koppling](connectors/databases/hp-vertica.md)
       - [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
       - [MariaDB-koppling](connectors/databases/mariadb.md)
@@ -119,14 +120,14 @@ ht-degree: 5%
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
-      - Customer success {#customer-success}
+      - Nöjda kunder {#customer-success}
          - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
       - Databaser {#databases}
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
-         - [Apache Hive on Azure HDInsights](tutorials/api/create/databases/hive.md)
+         - [Apache Hive på Azure HDInsights](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/api/create/databases/spark.md)
-         - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
+         - [Azure-Data Explorer](tutorials/api/create/databases/data-explorer.md)
          - [azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/api/create/databases/ats.md)
          - [Kuchbase](tutorials/api/create/databases/couchbase.md)
@@ -157,32 +158,32 @@ ht-degree: 5%
          - [Allmänt REST API](tutorials/api/create/protocols/generic-rest.md)
       - Direktuppspelning {#streaming}
          - [HTTP-API](tutorials/api/create/streaming/http.md)
-   - Explore data {#explore}
-      - [Explore advertising data](tutorials/api/explore/advertising.md)
+   - Utforska data {#explore}
+      - [Utforska annonsdata](tutorials/api/explore/advertising.md)
       - [Utforska molnlagringsdata](tutorials/api/explore/cloud-storage.md)
-      - [Explore CRM data](tutorials/api/explore/crm.md)
+      - [Utforska CRM-data](tutorials/api/explore/crm.md)
       - [Utforska data om kundframgångar](tutorials/api/explore/customer-success.md)
       - [Utforska databasdata](tutorials/api/explore/database-nosql.md)
       - [Utforska e-handelsdata](tutorials/api/explore/ecommerce.md)
       - [Utforska automatiserade marknadsföringsdata](tutorials/api/explore/marketing-automation.md)
       - [Utforska betalningsdata](tutorials/api/explore/payments.md)
-      - [Explore protocol data](tutorials/api/explore/protocols.md)
+      - [Utforska protokolldata](tutorials/api/explore/protocols.md)
       - [Utforska datatabeller](tutorials/api/explore/tabular.md)
    - Samla in data {#collect}
       - [Samla in annonsdata](tutorials/api/collect/advertising.md)
       - [Samla in molnlagringsdata](tutorials/api/collect/cloud-storage.md)
-      - [Collect CRM data](tutorials/api/collect/crm.md)
+      - [Samla in CRM-data](tutorials/api/collect/crm.md)
       - [Samla in kunddata](tutorials/api/collect/customer-success.md)
       - [Samla in databasdata](tutorials/api/collect/database-nosql.md)
       - [Samla in e-handelsdata](tutorials/api/collect/ecommerce.md)
       - [Samla in automatiserade marknadsföringsdata](tutorials/api/collect/marketing-automation.md)
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
-      - [Collect protocol data](tutorials/api/collect/protocols.md)
+      - [Samla in protokolldata](tutorials/api/collect/protocols.md)
       - [Samla in strömmande data](tutorials/api/collect/streaming.md)
-   - [Monitor dataflows](tutorials/api/monitor.md)
-   - [Update accounts](tutorials/api/update.md)
+   - [Övervaka dataflöden](tutorials/api/monitor.md)
+   - [Uppdatera konton](tutorials/api/update.md)
    - [Uppdatera dataflöden](tutorials/api/update-dataflows.md)
-   - [Delete accounts](tutorials/api/delete.md)
+   - [Ta bort konton](tutorials/api/delete.md)
    - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källanslutning {#create}
@@ -209,7 +210,7 @@ ht-degree: 5%
          - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
          - [Oracle Object Storage](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
-         - [Amazon S3 and Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Amazon S3 och Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - Samtycke och inställningar {#consent}
          - [OneTrust-integrering](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
@@ -217,15 +218,15 @@ ht-degree: 5%
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
-      - Customer Success {#customer-success}
+      - Nöjda kunder {#customer-success}
          - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
-      - Databases {#databases}
+      - Databaser {#databases}
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
-         - [Apache Hive on Azure HDInsights](tutorials/ui/create/databases/hive.md)
+         - [Apache Hive på Azure HDInsights](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/ui/create/databases/spark.md)
          - [Azure-Data Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
+         - [azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/ui/create/databases/ats.md)
          - [Kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
@@ -268,7 +269,7 @@ ht-degree: 5%
       - [Dataflöde för automatiserad marknadsföring](tutorials/ui/dataflow/marketing-automation.md)
       - [Dataflöde för betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Dataflöde för protokollanslutning](tutorials/ui/dataflow/protocols.md)
-   - [Activate inbound data to populate customer profiles](tutorials/ui/profile.md)
+   - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
    - [Övervaka batchdataflöden](tutorials/ui/monitor.md)
    - [Övervaka strömmande dataflöden](tutorials/ui/monitor-streaming.md)
    - [Uppdatera konton](tutorials/ui/update.md)
@@ -279,7 +280,7 @@ ht-degree: 5%
 - Källor SDK {#sdk}
    - [Översikt](sources-sdk/overview.md)
    - [Konfigurationsalternativ](sources-sdk/config/config.md)
-   - [Configure authentication specification](sources-sdk/config/authspec.md)
+   - [Konfigurera autentiseringsspecifikation](sources-sdk/config/authspec.md)
    - [Konfigurera källspecifikation](sources-sdk/config/sourcespec.md)
    - [Konfigurera specifikation för utforskande](sources-sdk/config/explorespec.md)
    - [Sources SDK API - översikt](sources-sdk/api/api-overview.md)
@@ -291,10 +292,10 @@ ht-degree: 5%
    - [Dokumentera källan i Adobe Experience Platform](sources-sdk/documentation/doc-overview.md)
    - [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](sources-sdk/documentation/github.md)
    - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
-   - [Documentation self-service API template](sources-sdk/documentation/template.md)
-   - [Documentation self-service UI template](sources-sdk/documentation/ui-template.md)
+   - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
+   - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Platform release notes](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

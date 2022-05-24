@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f0b8b5d16739b2bec6e1a11b718962de3faed463
+source-git-commit: 365e36351bf18864c677f53dffbc30b47f29b074
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '970'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,7 @@ Experience Platform tillåter att data hämtas från andra Adobe-program, inklus
 - [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics Report Suite - anslutningsöversikt för datakälla](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
+- [Adobe datainsamling](connectors/adobe-applications/data-collection.md)
 - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] anslutningsöversikt](connectors/adobe-applications/marketo/marketo.md)
 - [Skapa en [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
