@@ -5,9 +5,9 @@ title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: b68e69314af819daa93e1e6a777f1edeca359164
+source-git-commit: 1d2f485a91a8ad2c5b2bea9816c05b7bc26ae8e7
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
@@ -383,6 +383,8 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `email` | `workEmail.address` |
 | `iif(ecids != null, to_object('ECID',arrays_to_objects('id',explode(ecids))), null)` | `identityMap` | Detta är ett beräkningsfält. |
 | `marketoIsDeleted` | `isDeleted` |
+| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | Detta är ett beräkningsfält. |
+| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | Detta är ett beräkningsfält. |
 
 {style=&quot;table-layout:auto&quot;}
 
