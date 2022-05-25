@@ -1,0 +1,154 @@
+---
+keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
+title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
+description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
+hide: true
+hidefromtoc: true
+exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
+source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+workflow-type: tm+mt
+source-wordcount: '0'
+ht-degree: 0%
+
+---
+
+# Hantera behörigheter för en roll
+
+>[!IMPORTANT]
+>
+>Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
+
+Omedelbart efter [skapa en ny roll](#create-a-new-role)återgår du till **[!UICONTROL Roles]** -fliken. Om du redigerar behörigheter för en befintlig roll väljer du rollen från **[!UICONTROL Roles]** -fliken. Du kan också använda filteralternativet för att filtrera resultaten för att hitta en roll.
+
+## Filtrera roller
+
+Markera trattecknet (![Filterikon](../../images/icon.png)) för att visa en lista med filterkontroller för att begränsa resultatet.
+
+![flac-filter](../../images/flac-ui/flac-filters.png)
+
+Följande filter är tillgängliga för roller i användargränssnittet:
+
+| Filter | Beskrivning |
+| --- | --- |
+| [!UICONTROL Created between] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. |
+| [!UICONTROL Created by] | Filtrera efter rollskapare genom att välja en användare i listrutan. |
+| [!UICONTROL Modified between] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. |
+| [!UICONTROL Modified by] | Filtrera efter rollmodifierare genom att välja en användare i listrutan. |
+
+Om du vill ta bort ett filter väljer du &quot;X&quot; på ikonen för pilen för filtret i fråga eller väljer **[!UICONTROL Clear all]** om du vill ta bort alla filter.
+
+![flac-clear-filters](../../images/flac-ui/flac-clear-filters.png)
+
+## Rollinformation
+
+Välj rollen från **[!UICONTROL Roles]** som öppnar rollens informationssida.
+
+![flac-details](../../images/flac-ui/flac-details.png)
+
+Fliken Detaljer innehåller en översikt över rollen. I översikten visas rollnamn, rollbeskrivning, namnet på den användare som skapade och ändrade rollen, när rollen skapades och ändrades samt behörigheter som är kopplade till rollen. Rollnamnet och rollbeskrivningen kan ändras om det behövs.
+
+## Hantera etiketter för en roll
+
+Välj **[!UICONTROL Labels]** för att öppna sidan med rolletiketter och sedan välja **[!UICONTROL Add labels]** om du vill tilldela etiketter till rollen.
+
+![flac-labels](../../images/flac-ui/flac-labels.png)
+
+Etiketter visas på den här sidan. I listan visas etikettnamn, eget namn, kategori och beskrivning.
+
+Markera etiketterna i listan som du vill lägga till i rollen och välj sedan **[!UICONTROL Save]**
+
+![flash-add-labels](../../images/flac-ui/flac-add-labels.png)
+
+Tillagda etiketter visas under **[!UICONTROL Labels]** -fliken.
+
+![flac-added-labels](../../images/flac-ui/flac-added-labels.png)
+
+Om du vill ta bort en etikett från en roll väljer du **X** -ikonen bredvid etikettens namn.
+
+![flac-delete-labels](../../images/flac-ui/flac-delete-labels.png)
+
+## Hantera sandlådor för roll
+
+Välj **[!UICONTROL Sandboxes]** för att öppna sidan med rollsandlådor. Här visas en lista med sandlådor som har lagts till i rollen.
+
+![flac-sandlådor](../../images/flac-ui/flac-sandboxes.png)
+
+Om du vill lägga till fler sandlådor i en roll väljer du **[!UICONTROL Edit]**.
+
+![flash-add-sandbox](../../images/flac-ui/flac-add-sandboxes.png)
+
+På nästa skärm får du en fråga om du vill välja vilka resursbehörigheter som finns i sandlådor som ska inkluderas i rollen med hjälp av listrutan. När du är klar väljer du **[!UICONTROL Save and exit]**.
+
+![flash-add-role-permission](../../images/flac-ui/flac-add-role-permission.png)
+
+## Hantera användare för roll
+
+Välj **[!UICONTROL Users]** för att öppna sidan Roller användare och sedan välja **[!UICONTROL Add Users]** för att tilldela användare till rollen.
+
+![användare](../../images/flac-ui/flac-users.png)
+
+Välj de användare i listan som du vill lägga till i rollen. Du kan också använda sökfältet för att söka efter användaren genom att ange användarens namn eller e-postadress och sedan välja **[!UICONTROL Save]**
+
+![flash-add-users](../../images/flac-ui/flac-add-users.png)
+
+Tillagda användare visas under **[!UICONTROL Users]** -fliken.
+
+![flash-added-users](../../images/flac-ui/flac-added-users.png)
+
+Om du vill ta bort en användare från en roll väljer du **X** -ikonen bredvid användarnamnet.
+
+![flac-remove-users](../../images/flac-ui/flac-remove-users.png)
+
+## Hantera API-autentiseringsuppgifter för roll
+
+Välj **[!UICONTROL API credentials]** för att öppna sidan för roller-API-autentiseringsuppgifter och sedan välja **[!UICONTROL Add API credentials]** för att tilldela API-autentiseringsuppgifter till rollen.
+
+![flac-api-credentials](../../images/flac-ui/flac-api-credentials.png)
+
+Välj API-autentiseringsuppgifterna i listan som du vill lägga till i rollen och välj sedan **[!UICONTROL Save]**
+
+![flac-add-api-credentials](../../images/flac-ui/flac-add-api-credentials.png)
+
+Tillagda API-autentiseringsuppgifter visas under **[!UICONTROL API credentials]** -fliken.
+
+![flac-added-api-credentials](../../images/flac-ui/flac-added-api-credentials.png)
+
+Om du vill ta bort API-autentiseringsuppgifter från en roll väljer du **X** -ikon bredvid API-autentiseringsuppgiftens namn.
+
+![flac-remove-api-credentials](../../images/flac-ui/flac-remove-api-credentials.png)
+
+The **[!UICONTROL Remove API credentials]** visas och du uppmanas att bekräfta borttagningen.
+
+![flac-confirm-api-credentials-delete](../../images/flac-ui/flac-confirm-api-credentials-delete.png)
+
+Du kommer tillbaka till **[!UICONTROL API credentials]** -fliken.
+
+## Hantera användargrupper för roller
+
+Användargrupper är flera användare som har grupperats tillsammans och har tillgång till samma funktioner.
+
+Välj **[!UICONTROL User groups]** för att öppna sidan med roller användargrupper och sedan välja **[!UICONTROL Add Groups]** för att tilldela användargrupper till rollen.
+
+![flash-user-groups](../../images/flac-ui/flac-user-groups.png)
+
+Markera användargrupperna i listan som du vill lägga till i rollen. Du kan också använda sökfältet för att söka efter användargruppen genom att ange namnet på gruppen och sedan välja **[!UICONTROL Save]**
+
+![flash-add-user-groups](../../images/flac-ui/flac-add-user-groups.png)
+
+Tillagd användargrupp visas under **[!UICONTROL User groups]** -fliken.
+
+![flash-added-user-groups](../../images/flac-ui/flac-added-user-groups.png)
+
+Om du vill ta bort en användargrupp från en roll väljer du **X** -ikonen bredvid användargruppnamnet.
+
+![flac-remove-user-groups](../../images/flac-ui/flac-remove-user-groups.png)
+
+The **[!UICONTROL Remove user group]** visas och du uppmanas att bekräfta borttagningen.
+
+![flash-confirm-user-groups -delete](../../images/flac-ui/flac-confirm-user-groups-delete.png)
+
+Du kommer tillbaka till **[!UICONTROL User groups]** -fliken.
+
+## Nästa steg
+
+När behörigheter har fastställts kan du fortsätta till nästa steg i [hantera användare](users.md).
