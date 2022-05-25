@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
+source-git-commit: 2fdcd0748ccfe5b6b079bc21c8dbde491fbb2471
 workflow-type: tm+mt
-source-wordcount: '3336'
+source-wordcount: '3540'
 ht-degree: 0%
 
 ---
@@ -110,6 +110,8 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Audiences size]](#audiences-size)
 * [[!UICONTROL Profile count trend]](#profile-count-trend)
 * [[!UICONTROL Single identity profiles by identity]](#single-identity-profiles-by-identity)
+* [[!UICONTROL Audience overlap by merge policy]](#audience-overlap-by-merge-policy)
+* [[!UICONTROL Profiles count change trend by identity]](#profiles-count-change-trend-by-identity)
 
 ### [!UICONTROL Profile count] {#profile-count}
 
@@ -290,6 +292,25 @@ Den här widgeten använder ett stapeldiagram för att illustrera det totala ant
 Håll pekaren över enskilda fält för att visa en dialogruta med information om det totala antalet profiler för en identitet.
 
 ![The Single identity profiles by identity widget.](../images/profiles/single-identity-profiles-by-identity.png)
+
+### [!UICONTROL Audience overlap by merge policy] {#audience-overlap-by-merge-policy}
+
+Den här widgeten använder ett Venndiagram för att visa överlappningen mellan två markerade segment. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och segmenten för analys väljs från två listrutor i widgeten. Det totala antalet profiler i den relevanta segmentdefinitionen kan du se genom att hålla markören över en cirkel eller skärningspunkten.
+
+När widgeten visar den visuella överlappningen av segmentdefinitioner kan du optimera segmenteringsstrategin genom att studera likheter mellan segmentdefinitionerna.
+
+![Kontrollpanelen Plattformsgränssnittsprofiler med listrutan för sammanslagningsprinciper och listrutorna för widgetsegment markerade.](../images/profiles/audience-overlap-by-merge-policy.png)
+
+### [!UICONTROL Profiles count change trend by identity] {#profiles-count-change-trend-by-identity}
+
+<!-- This widget uses a line graph to illustrate the change in number of profiles filtered by a chosen source identity and merge policy. -->
+
+Den här widgeten filtrerar profilantalet baserat på en vald källidentitet och sammanfogningsprincip, och visar sedan ändringen av antalet för en rad punkter med hjälp av ett linjediagram. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och källans identitet och tidsperiod väljs i widgetens listruta. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader.
+
+Denna widget hjälper dig att hantera dina behov av målaktivering genom att visa tillväxtmönstret för profiler som filtrerats med en obligatorisk identitet.
+
+![Profilerna räknar en trend som ändras efter identitetswidget.](../images/profiles/profiles-count-change-trend-by-identity.png)
+
 
 ## (Beta) Profileffektwidgetar {#profile-efficacy-widgets}
 
