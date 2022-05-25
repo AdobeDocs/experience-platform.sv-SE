@@ -2,10 +2,10 @@
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: ba190bdd1856b2d89fa28679eb7f09c258ddd17c
+source-git-commit: cd7ce8c107769a77373f328d9aa84c982be0d8ee
 workflow-type: tm+mt
-source-wordcount: '746'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -23,20 +23,28 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 
 | Resurs | Instruktioner |
 | --- | --- |
-| [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [Kundprofil i realtid](../../../profile/home.md)</li><li>Inaktivera för profil</li></ul> |
-| [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för profil</li></ul> |
+| [Åtkomstkontrollprincip (attributbaserad åtkomstkontroll)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Konto (Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Granskningsloggar](../../../landing/governance-privacy-security/audit-logs/overview.md) | <ul><li>Exportera</li></ul> |
 | [Klass](../../../xdm/schema/composition.md#class) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Datatyp](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Återställ</li><li>Ta bort</li></ul> |
-| [Destination](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
-| [Segment](../../../segmentation/home.md) | <ul><li>Skapa</li><li>Ta bort</li><li>Aktivera segment</li><li>Ta bort segment</li></ul> |
-| [Kopplingsprincip](../../../profile/merge-policies/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Beräknat attribut](../../../profile/computed-attributes/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [Kundprofil i realtid](../../../profile/home.md)</li><li>Inaktivera för profil</li><li>Lägg till data</li><li>Ta bort batch</li></ul> |
+| [Datatyper](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Destination](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
+| [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Identitetsdiagram](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>Visa</li></ul> |
+| [Namnutrymme för identitet](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>Skapa</li><li>Uppdatera</li></ul> |
+| [Kopplingsprincip](../../../profile/merge-policies/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Produktprofil](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Konto (Adobe)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Frågemall](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Schemalagd fråga](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Fråga](../../../query-service/ui/overview.md) | <ul><li>Kör</li></ul> |
+| [Frågemall](../../../query-service/ui/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Roll (attributbaserad åtkomstkontroll)](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Lägg till användare</li><li>Ta bort användare</li></ul> |
+| [Sandbox](../../../sandboxes/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Återställ</li><li>Ta bort</li></ul> |
+| [Schemalagd fråga](../../../query-service/ui/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
+| [Schema](../../../xdm/schema/composition.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för profil</li></ul> |
+| [Segment](../../../segmentation/home.md) | <ul><li>Skapa</li><li>Ta bort</li><li>Aktivera segment</li><li>Ta bort segment</li></ul> |
+| [Källdataflöde](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Profil aktiverad</li><li>Ta bort profil</li></ul> |
+| [Arbetsorder](../../../hygiene/home.md) | <ul><li>Skapa</li></ul> |
 
 ## Åtkomst till granskningsloggar
 
@@ -50,7 +58,7 @@ Du kan visa granskningsloggar för olika Experience Platform-funktioner i **[!UI
 
 ![Kontrollpanel för granskningsloggar](../../images/audit-logs/audits.png)
 
-Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara vara tillbaka under en period på högst 365 dagar.
+Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver data som är längre än 365 dagar bör du exportera loggar med en regelbunden mellanrum för att uppfylla dina interna policykrav.
 
 Välj en händelse i listan om du vill visa information om händelsen i den högra listen.
 
