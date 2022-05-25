@@ -1,7 +1,10 @@
 ---
 title: Datahygien - översikt
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
-source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
+exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
+hide: true
+hidefromtoc: true
+source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
 workflow-type: tm+mt
 source-wordcount: '217'
 ht-degree: 0%

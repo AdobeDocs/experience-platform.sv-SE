@@ -1,7 +1,10 @@
 ---
 title: API-slutpunkt för arbetsorder
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för konsumentidentiteter.
-source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
+exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
+hide: true
+hidefromtoc: true
+source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
 workflow-type: tm+mt
 source-wordcount: '1000'
 ht-degree: 0%

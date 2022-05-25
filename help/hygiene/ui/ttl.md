@@ -1,7 +1,10 @@
 ---
 title: Hantera TTL för datauppsättning
 description: Lär dig hur du schemalägger en TTL-tid (time to live) för en datauppsättning i Adobe Experience Platform-gränssnittet.
-source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
+exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
+hide: true
+hidefromtoc: true
+source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
 workflow-type: tm+mt
 source-wordcount: '392'
 ht-degree: 0%
