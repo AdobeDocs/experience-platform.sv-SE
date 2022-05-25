@@ -5,9 +5,9 @@ title: Automatisk policytillämpning
 topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 679b9eb621baff99342fb55c0a13a60f5ef256bd
+source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
 workflow-type: tm+mt
-source-wordcount: '1688'
+source-wordcount: '1686'
 ht-degree: 0%
 
 ---
@@ -49,48 +49,48 @@ När ett segment aktiveras första gången [!DNL Policy Service] kontroller av t
 
 Datalindelningen spelar en viktig roll när det gäller hur policyer tillämpas i plattformen. I allmänhet avser datalinjen ursprunget för en datauppsättning och vad som händer med den (eller där den flyttas) över tiden.
 
-När det gäller datastyrning gör länkning det möjligt för dataanvändningsetiketter att sprida data från datauppsättningar till tjänster i senare led som konsumerar deras data, som kundprofil i realtid och destinationer. This allows policies to be evaluated and enforced at several key points in the data&#39;s journey through Platform, and provides context to data consumers as to why a policy violation occurred.
+När det gäller datastyrning gör länkning det möjligt för dataanvändningsetiketter att sprida data från datauppsättningar till tjänster i senare led som konsumerar deras data, som kundprofil i realtid och destinationer. Detta gör det möjligt att utvärdera och tillämpa principer vid flera viktiga punkter i dataöverföringen via Platform och ger kontext till datakonsumenterna om varför en policyöverträdelse inträffade.
 
-In Experience Platform, policy enforcement is concerned with the following lineage:
+I Experience Platform gäller den politiska kontrollen följande:
 
-1. Data is ingested into Platform and stored in **datasets**.
-1. Customer profiles are identified and constructed from those datasets by merging data fragments according to the **merge policy**.
+1. Data hämtas till plattformen och lagras i **datauppsättningar**.
+1. Kundprofiler identifieras och konstrueras utifrån dessa datauppsättningar genom att sammanfoga datafragment enligt **sammanfogningsprincip**.
 1. Profilgrupper delas in i **segment** baserat på gemensamma attribut.
 1. Segmenten aktiveras nedåt **mål**.
 
 Varje steg i ovanstående tidslinje representerar en enhet som kan bidra till policytillämpning, enligt tabellen nedan:
 
-| Datalindelningsfas | Role in policy enforcement |
+| Datalindelningsfas | Roll vid policytillämpning |
 | --- | --- |
-| Dataset | Datauppsättningar innehåller dataanvändningsetiketter (som används på datauppsättnings- eller fältnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har åtkomst till profiler för samtycke (som för närvarande finns i betaversion), kommer profiler som inte uppfyller kraven för medgivande från dina profiler att exkluderas från segment som aktiveras till ett mål. |
-| Kopplingsprincip | Merge policies are the rules that Platform uses to determine how data will be prioritized when merging together fragments from multiple datasets. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Se [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md) för mer information. |
-| Segment | Segmentregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver segmentet användningsetiketter som används för dessa fält. Policy violations will occur if you activate a segment whose inherited labels are restricted by the target destination&#39;s applicable policies, based on its marketing use case. |
+| Datauppsättning | Datauppsättningar innehåller dataanvändningsetiketter (som används på datauppsättnings- eller fältnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har åtkomst till profiler för samtycke (som för närvarande finns i betaversion), kommer profiler som inte uppfyller kraven för medgivande från dina profiler att exkluderas från segment som aktiveras till ett mål. |
+| Kopplingsprincip | Sammanslagningsprinciper är de regler som används i Platform för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Se [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md) för mer information. |
+| Segment | Segmentregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver segmentet användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du aktiverar ett segment vars ärvda etiketter begränsas av måldestinationens tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
 | Destination | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du aktiverar ett segment vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När ett segment aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (som definieras i er medgivandepolicy) från den aktiverade målgruppen. |
 
 >[!IMPORTANT]
 >
 >En del dataanvändningsprinciper kan ange två eller flera etiketter med en AND-relation. En policy kan till exempel begränsa en marknadsföringsåtgärd om etiketter `C1` OCH `C2` finns båda, men begränsar inte samma åtgärd om bara en av etiketterna finns.
 >
->När det gäller automatisk verkställighet anser datastyrningsramverket inte att aktivering av separata segment till en destination är en kombination av data. Därför är exemplet `C1 AND C2` principen är **NOT** framtvingas om dessa etiketter ingår i separata segment. Instead, this policy is only enforced when both labels are present in the same segment upon activation.
+>När det gäller automatisk verkställighet anser datastyrningsramverket inte att aktivering av separata segment till en destination är en kombination av data. Därför är exemplet `C1 AND C2` principen är **NOT** framtvingas om dessa etiketter ingår i separata segment. I stället tillämpas den här principen bara när båda etiketterna finns i samma segment vid aktivering.
 
 När policyöverträdelser inträffar ger de resulterande meddelandena som visas i användargränssnittet användbara verktyg för att utforska det datalinje som bidrar till att lösa problemet. Mer information finns i nästa avsnitt.
 
-## Policy enforcement messages {#enforcement}
+## Policytvingande meddelanden {#enforcement}
 
 Avsnitten nedan beskriver olika policyefterlevnadsmeddelanden som visas i plattformsgränssnittet:
 
-* [Data usage policy violation](#data-usage-violation)
-* [Consent policy evaluation](#consent-policy-evaluation)
+* [Policyöverträdelse för dataanvändning](#data-usage-violation)
+* [Principutvärdering av samtycke](#consent-policy-evaluation)
 
-### Data usage policy violation {#data-usage-violation}
+### Policyöverträdelse för dataanvändning {#data-usage-violation}
 
 Om en principöverträdelse inträffar vid försök att aktivera ett segment (eller [redigera ett redan aktiverat segment](#policy-enforcement-for-activated-segments)) förhindras åtgärden och en pover visas som indikerar att en eller flera profiler har överträtts. När en överträdelse har utlösts **[!UICONTROL Save]** knappen är inaktiverad för den entitet som du ändrar tills rätt komponenter uppdateras för att uppfylla dataanvändningsprinciperna.
 
-Select a policy violation in the popover&#39;s left column to display details for that violation.
+Välj en principöverträdelse i poverarens vänstra kolumn för att visa information om den överträdelsen.
 
 ![](../images/enforcement/violation-policy-select.png)
 
-The violation message provides a summary of the policy that was violated, including the conditions the policy is configured to check for, the specific action that triggered the violation, and a list of possible resolutions for the issue.
+Överträdelsemeddelandet innehåller en sammanfattning av den princip som överträtts, inklusive villkoren som principen är konfigurerad att kontrollera, den specifika åtgärd som utlöste överträdelsen och en lista med möjliga lösningar på problemet.
 
 ![](../images/enforcement/violation-summary.png)
 
@@ -106,11 +106,11 @@ Välj **[!UICONTROL List view]** för att visa datalinjen som en lista. Om du vi
 
 ![](../images/enforcement/list-view.png)
 
-### Prova samtycke (beta) {#consent-policy-evaluation}
+### Principutvärdering av samtycke {#consent-policy-evaluation}
 
 >[!IMPORTANT]
 >
->Samtyckesprofiler är för närvarande betaversioner och din organisation har kanske inte åtkomst till dem än.
+>Samtyckesregler är för närvarande bara tillgängliga för organisationer som har köpt Adobe Shield for Healthcare.
 
 Om du har [policyer för skapat samtycke](../policies/user-guide.md#consent-policy) och som aktiverar ett segment till en destination kan du se hur dina medgivandeprinciper påverkar procentandelen profiler som ingår i aktiveringen.
 
@@ -148,7 +148,7 @@ Håll pekaren över en av målgrupperna i diagrammet för att visa antalet profi
 
 Den godkända publiken representeras av den centrala överlappningen i diagrammet och kan markeras som i andra avsnitt.
 
-![Highlighting the consented audience in the diagram](../images/enforcement/consented-audience.png)
+![Markera den godkända målgruppen i diagrammet](../images/enforcement/consented-audience.png)
 
 #### Flödeskörning
 
@@ -160,8 +160,8 @@ När data aktiveras till ett mål visar flödeskörningsinformationen antalet id
 
 Regelefterlevnad gäller fortfarande för segment efter att de har aktiverats och begränsar eventuella ändringar av ett segment eller dess mål som skulle leda till en policyöverträdelse. På grund av hur [datalinje](#lineage) fungerar i policytillämpning, kan någon av följande åtgärder utlösa en överträdelse:
 
-* Updating data usage labels
-* Changing datasets for a segment
+* Uppdaterar dataanvändningsetiketter
+* Ändra datauppsättningar för ett segment
 * Ändra segmentpredikat
 * Ändra målkonfigurationer
 
