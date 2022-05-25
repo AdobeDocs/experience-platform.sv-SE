@@ -2,9 +2,9 @@
 title: Granska loggintegrering för frågetjänsten
 description: Granskningsloggar för frågetjänsten bevarar poster för olika användaråtgärder för att skapa en åtkomsthistorik för felsökningsproblem eller följa företagets policyer för datahantering och lagstadgade krav. Den här självstudiekursen ger en översikt över granskningsloggsfunktioner som är specifika för frågetjänsten.
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: 12b717be67cb35928d84e83b6d692f9944d651d8
+source-git-commit: 40de87ae407884d4ec7c75215fc7319721fbe1d0
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '875'
 ht-degree: 1%
 
 ---
@@ -25,9 +25,9 @@ Granskningsloggkategorierna tillhandahålls av [!DNL Query Service] är som föl
 
 | Kategori | Beskrivning |
 |---|---|
-| [!UICONTROL Scheduled query] | Med den här kategorin kan du granska de scheman som har skapats, uppdaterats eller tagits bort i [!DNL Query Service]. |
+| [!UICONTROL Query] | Med den här kategorin kan du granska frågekörningar. |
 | [!UICONTROL Query template] | Med den här kategorin kan du granska de olika åtgärder (skapa, uppdatera och ta bort) som har utförts på en frågemall. |
-<!-- | [!UICONTROL Query] | This category allows you to audit query executions. | -->
+| [!UICONTROL Scheduled query] | Med den här kategorin kan du granska de scheman som har skapats, uppdaterats eller tagits bort i [!DNL Query Service]. |
 
 ## Utför en [!DNL Query Service] granskningslogg {#perform-an-audit-log}
 
@@ -35,14 +35,14 @@ Utföra en granskning för [!DNL Query Service] aktiviteter, välja **[!UICONTRO
 
 ![Kontrollpanelen för Plattformsgränssnittets granskningslogg med Granskningar i den vänstra navigeringen och filterkontrollerna markerade.](../images/audit-log/filter-controls.png)
 
-Från [!UICONTROL Audits] kontrollpanel [!UICONTROL Activity log] kan du filtrera alla inspelade plattformsåtgärder med [!DNL Query Service] kategorier. Loggresultaten kan filtreras ytterligare baserat på den tidsperiod som de kördes, vilken åtgärd/funktion som utfördes eller vilken användare som aktiverade frågan. Dokumentation till granskningsloggen finns [fullständiga anvisningar om hur loggarna filtreras baserat på kategori, åtgärd, användare och status](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui).
+Från [!UICONTROL Audits] kontrollpanel [!UICONTROL Activity log] kan du filtrera alla inspelade plattformsåtgärder med [!DNL Query Service] kategorier. Loggresultaten kan filtreras ytterligare baserat på den tidsperiod som de kördes, vilken åtgärd/funktion som utfördes eller vilken användare som tog emot frågan. Dokumentation till granskningsloggen finns [fullständiga anvisningar om hur loggarna filtreras baserat på kategori, åtgärd, användare och status](../../landing/governance-privacy-security/audit-logs/overview.md#managing-audit-logs-in-the-ui).
 
 Returnerade granskningsloggdata innehåller följande information om alla frågor som uppfyller de valda filtervillkoren.
 
 | Kolumnnamn | Beskrivning |
 |---|---|
 | [!UICONTROL Timestamp] | Exakt datum och tid för åtgärden som utfördes i en `month/day/year hour:minute AM/PM` format. |
-| [!UICONTROL Asset Name] | Värdet för [!UICONTROL Asset Name] fältet beror på vilken kategori som valts som filter. När du använder [!UICONTROL Scheduled query] kategori här är **schemanamn**. När du använder [!UICONTROL Query template] -kategori, det här är **mallnamn**. |
+| [!UICONTROL Asset Name] | Värdet för [!UICONTROL Asset Name] fältet beror på vilken kategori som valts som filter. När du använder [!UICONTROL Scheduled query] kategori här är **schemanamn**. När du använder [!UICONTROL Query template] -kategori, det här är **mallnamn**. När du använder [!UICONTROL Query] -kategori, det här är **sessions-ID** |
 | [!UICONTROL Category] | Det här fältet matchar den kategori som du har valt i listrutan för filter. |
 | [!UICONTROL Action] | Det kan vara antingen skapa, ta bort, uppdatera eller köra. Vilka åtgärder som är tillgängliga beror på vilken kategori som valts som filter. |
 | [!UICONTROL User] | Det här fältet innehåller användar-ID:t som körde frågan. |
@@ -53,13 +53,25 @@ Returnerade granskningsloggdata innehåller följande information om alla frågo
 >
 >Mer frågeinformation ges genom att du hämtar loggresultaten i antingen CSV- eller JSON-filformat, än vad som visas som standard på kontrollpanelen för granskningsloggen.
 
+## Panelen Detaljer
+
 Välj en rad med granskningsloggresultat för att öppna en informationspanel till höger på skärmen.
 
 ![Granskar fliken Aktivitetslogg på kontrollpanelen med informationspanelen markerad.](../images/audit-log/details-panel.png)
 
->[!NOTE]
->
->Du kan använda informationspanelen för att hitta [!UICONTROL Asset ID]. Värdet för [!UICONTROL Asset ID] ändringar beroende på vilken kategori som används i granskningen. När du använder [!UICONTROL Query template] kategori, [!UICONTROL Asset ID] är **mall-ID**. När du använder [!UICONTROL Scheduled query] kategori, [!UICONTROL Asset ID] är  **schema-ID**.
+Du kan använda informationspanelen för att hitta [!UICONTROL Asset ID] och [!UICONTROL Event status].
+
+Värdet för [!UICONTROL Asset ID] ändringar beroende på vilken kategori som används i granskningen.
+
+* När du använder [!UICONTROL Query] kategori, [!UICONTROL Asset ID] är  **sessions-ID**.
+* När du använder [!UICONTROL Query template] kategori, [!UICONTROL Asset ID] är **mall-ID** och prefixat med `[!UICONTROL templateID:]`.
+* När du använder [!UICONTROL Scheduled query] kategori, [!UICONTROL Asset ID] är  **schema-ID** och prefixat med `[!UICONTROL scheduleID:]`.
+
+Värdet för [!UICONTROL Event status] ändringar beroende på vilken kategori som används i granskningen.
+
+* När du använder [!UICONTROL Query] kategori, [!UICONTROL Event status] fältet innehåller en lista med alla **fråga-ID** som körs av användaren i sessionen.
+* När du använder [!UICONTROL Query template] kategori, [!UICONTROL Event status] fältet innehåller **mallnamn** som ett prefix för händelsestatusen.
+* När du använder [!UICONTROL Query schedule] kategori, [!UICONTROL Event status] fältet innehåller **schemanamn** som ett prefix för händelsestatusen.
 
 ## Tillgängliga filter för [!DNL Query Service] granskningsloggskategorier {#available-filters}
 
@@ -68,9 +80,9 @@ Vilka filter som är tillgängliga varierar beroende på vilken kategori som har
 | Filter | Beskrivning |
 |---|---|
 | Kategori | Se [[!DNL Query Service] granskningsloggskategorier](#audit-log-categories) för en fullständig lista över tillgängliga kategorier. |
-| Åtgärd | När det refererar till [!DNL Query Service] granskningskategorier, uppdatering är **ändring av befintligt formulär**, delete är **borttagning av schemat eller mallen**, skapa **skapa ett nytt schema eller en ny mall** och kör kör en fråga. |
+| Åtgärd | När det refererar till [!DNL Query Service] granskningskategorier, uppdatering är **ändring av befintligt formulär**, delete är **borttagning av schemat eller mallen**, skapa **skapa ett nytt schema eller en ny mall** och kör är **köra en fråga**. |
 | Användare | Ange det fullständiga användar-ID:t (till exempel johndoe@acme.com) som ska filtreras efter användare. |
-| Status | Det här filtret gäller inte för [!DNL Query Service] granskningsloggar. The [!UICONTROL Allow], [!UICONTROL Success]och [!UICONTROL Failure] kommer inte att filtrera resultaten, medan [!UICONTROL Deny] alternativ filtreras bort **alla** loggar. |
+| Status | The [!UICONTROL Allow], [!UICONTROL Success]och [!UICONTROL Failure] -alternativen filtrerar loggarna baserat på &quot;Status&quot; eller &quot;Händelsestatus&quot; medan [!UICONTROL Deny] alternativ filtreras bort **alla** loggar. |
 | Datum | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. |
 
 ## Nästa steg
