@@ -5,7 +5,7 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 365e36351bf18864c677f53dffbc30b47f29b074
+source-git-commit: cae2c80c5e0fc7aaece948599e781b32d67989bb
 workflow-type: tm+mt
 source-wordcount: '970'
 ht-degree: 0%
@@ -85,6 +85,7 @@ Experience Platform har stöd för inhämtning av data från tredjepartsprogram.
 
 - [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md)
 - [[!DNL ServiceNow]](connectors/customer-success/servicenow.md)
+- [[!DNL Zendesk]](connectors/customer-success/zendesk.md)
 
 ### Databas {#database}
 
