@@ -6,14 +6,20 @@ seo-title: Configure personalization destinations for same-page and next-page pe
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
 seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 99a60621bca43ecf2dacb6202e005bbd8f191c99
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '425'
 ht-degree: 0%
 
 ---
 
 # Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida
+
+## Översikt {#overview}
+
+>[!NOTE]
+>
+>När [konfigurera Adobe Target-anslutningen](../catalog/personalization/adobe-target-connection.md) de användningsfall som beskrivs i den här artikeln stöds inte utan ett datastream-ID.
 
 Adobe Experience Platform använder [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för att kunderna ska kunna skapa och inrikta sig på målgruppssegment i stor skala i realtid.
 

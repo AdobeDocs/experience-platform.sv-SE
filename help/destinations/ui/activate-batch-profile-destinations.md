@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 729c0724c7af88bb69c9d68a45d58c3575c90828
+source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
 workflow-type: tm+mt
-source-wordcount: '2170'
+source-wordcount: '2331'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,20 @@ Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som i
    * **[!UICONTROL Once]**: schemalägg en enda gång vid behov av fullständig filexport.
    * **[!UICONTROL Daily]**: schemalägga fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
 
-1. Använd **[!UICONTROL Time]** väljaren för att välja tid på dagen, i [!DNL UTC] format, när exporten ska ske.
+1. Använd **[!UICONTROL Time]** växla för att välja om exporten ska ske omedelbart efter segmentutvärderingen eller enligt schema, vid en viss tidpunkt. När du väljer **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
+
+   >[!NOTE]
+   >
+   >The **[!UICONTROL After segment evaluation]** det alternativ som beskrivs nedan är för närvarande endast tillgängligt för utvalda Beta-kunder.
+
+   Använd **[!UICONTROL After segment evaluation]** Möjlighet att låta aktiveringsjobbet köras omedelbart efter att det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.
+
+   <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
+
+   ![Bild som markerar alternativet för utvärdering av After segment i aktiveringsflödet för batchmål.](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
+Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en fast tidpunkt. Detta garanterar att profildata för Experience Platform exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar.
+
+   ![Bild som markerar alternativet Schemalagd i aktiveringsflödet för batchdestinationer och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
    >[!IMPORTANT]
    >
@@ -110,7 +123,6 @@ Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som i
    > När du väljer ett exportintervall inkluderas inte den sista dagen i intervallet i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum den 10 januari.
 
 1. Välj **[!UICONTROL Create]** för att spara schemat.
-
 
 ### Exportera inkrementella filer {#export-incremental-files}
 

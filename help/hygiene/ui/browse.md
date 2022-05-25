@@ -1,7 +1,8 @@
 ---
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
-source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
+exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
+source-git-commit: 18ef55a084ced8c26e583598f9016dd9f4741153
 workflow-type: tm+mt
 source-wordcount: '533'
 ht-degree: 0%
@@ -29,7 +30,7 @@ När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet vi
 
 ![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
-I listan visas endast arbetsorder för en kategori i taget Välj **[!UICONTROL Consumer]** för att visa en lista över uppgifter som rör borttagning av konsumenter, och **[!UICONTROL Dataset]** om du vill visa en lista med TTL-scheman (time-to-live) för datauppsättningar.
+I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** för att visa en lista över uppgifter som rör borttagning av konsumenter, och **[!UICONTROL Dataset]** om du vill visa en lista med TTL-scheman (time-to-live) för datauppsättningar.
 
 ![Bilden visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
 

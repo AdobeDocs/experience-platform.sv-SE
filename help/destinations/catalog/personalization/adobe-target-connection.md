@@ -3,10 +3,10 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 0868d81bcd1968b3223c79abb5a7bb8f279a4130
 workflow-type: tm+mt
-source-wordcount: '580'
-ht-degree: 1%
+source-wordcount: '740'
+ht-degree: 0%
 
 ---
 
@@ -20,11 +20,13 @@ Adobe Target är en personaliseringsanslutning i Adobe Experience Platform.
 
 ## Förutsättningar {#prerequisites}
 
-Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md). Du måste använda denna SDK för att kunna använda den här destinationen.
+När Adobe Target-anslutningen konfigureras till [använd ett datastream-ID](#parameters)måste du ha [Adobe Experience Platform Web SDK](../../../edge/home.md) implementerat.
+
+Om du konfigurerar Adobe Target-anslutningen utan att använda ett datastream-ID behöver du inte implementera Web SDK.
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
+>Innan du skapar en [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. För personalisering på samma sida och nästa sida krävs att du använder ett dataström-ID när du konfigurerar Adobe Target-anslutningen.
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -48,8 +50,8 @@ Ett uthyrnings- och säljföretag vill skräddarsy sin hemsida med en banderoll 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_target_datastream"
 >title="Om dataStream-ID"
->abstract="Med det här alternativet anger du i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="Lär dig konfigurera ett datastream"
+>abstract="Det här alternativet avgör i vilket datainsamlingsdatastam segmenten inkluderas. I den nedrullningsbara menyn visas endast datastreams som har Target-konfigurationen aktiverad. Om du vill använda kantsegmentering måste du välja ett datastream-ID. Om du väljer Ingen inaktiveras alla användningsfall där kantsegmentering används."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html#parameters" text="Läs mer om hur du väljer datastreams."
 
 >[!IMPORTANT]
 > 
@@ -65,7 +67,12 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **Namn**: Fyll i det önskade namnet för det här målet.
 * **Beskrivning**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
-* **Datastream-ID**: Detta anger i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/datastreams/overview.md) för mer information.
+* **Datastream-ID**: Detta anger i vilken datainsamling som segmenten ska inkluderas. I den nedrullningsbara menyn visas endast datastreams som har målmålet aktiverat. Se [konfigurera ett datastream](../../../edge/datastreams/overview.md#target) om du vill ha mer information om hur du konfigurerar ett datastam för Adobe Target.
+   * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](../../../edge/home.md). När du använder det här alternativet har segment som exporterats från Experience Platform till Target endast stöd för anpassning efter nästa session, och kantsegmentering är inaktiverat. Se tabellen nedan för mer information.
+
+| Ingen datastream har valts | Datastream har valts |
+|---|---|
+| <ul><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md) stöds inte.</li><li>Du kan bara dela segment till Adobe Target-anslutningen för produktionssandlådan.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md) stöds.</li><li>Segmentdelning stöds för andra sandlådor.</li></ul> |
 
 ## Aktivera segment till den här destinationen {#activate}
 

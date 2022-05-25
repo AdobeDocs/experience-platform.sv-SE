@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort segment och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
 workflow-type: tm+mt
-source-wordcount: '2136'
+source-wordcount: '2419'
 ht-degree: 0%
 
 ---
@@ -484,8 +484,8 @@ curl -X PATCH \
             "schedule":{
                "startDate":"2022-01-05",
                "frequency":"DAILY",
-               "endData":"2022-03-10"
-               "startTime":"16:00",
+               "triggerType": "AFTER_SEGMENT_EVAL",
+               "endDate":"2022-03-10"
             }
          }
       }
@@ -504,6 +504,7 @@ curl -X PATCH \
 | `exportMode` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i satskörningssjälvstudiekursen. |
 | `startDate` | Välj det datum då segmentet ska börja exportera profiler till målet. |
 | `frequency` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge kan du välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
+| `triggerType` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du väljer `"DAILY_FULL_EXPORT"` i `frequency` väljare. <br> Obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` så att aktiveringsjobbet körs omedelbart när det dagliga gruppsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` för att få aktiveringsjobbet att köras på en fast tid. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du även lägga till en `startTime` ange vid vilken tidpunkt i UTC den dagliga exporten ska ske.</li></ul> |
 | `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då segmentmedlemmar slutar att exporteras till målet. |
 | `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar i segmentet ska genereras och exporteras till målet. |
 
@@ -639,6 +640,112 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
     "etag": "\"50014cc8-0000-0200-0000-6036eb720000\""
 }
 ```
+
+Se exemplen nedan för fler exempel på segmentkomponenter som du kan uppdatera i ett dataflöde.
+
+## Uppdatera exportläget för ett segment från schemalagd till efter segmentutvärdering {#update-export-mode}
+
++++ Klicka här om du vill se ett exempel där en segmentexport uppdateras från att aktiveras varje dag vid en viss tidpunkt till att aktiveras varje dag efter att batch-segmenteringsjobbet för plattformen har slutförts.
+
+Segmentet exporteras varje dag kl. 16.00 UTC.
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "SCHEDULED",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13",
+      "startTime":"16:00"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
+Segmentet exporteras varje dag när det dagliga gruppsegmenteringsjobbet har slutförts.
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "AFTER_SEGMENT_EVAL",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
++++
+
+## Uppdatera filnamnsmallen så att den innehåller fler fält i filnamnet {#update-filename-template}
+
++++ Klicka här om du vill se ett exempel där filnamnsmallen uppdateras för att inkludera ytterligare fält i filnamnet
+
+De exporterade filerna innehåller målnamn och Experience Platform-segment-ID
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "SCHEDULED",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13",
+      "startTime":"16:00"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
+De exporterade filerna innehåller målnamn, Experience Platform segment-ID, datum och tid då filen skapades av Experience Platform och egen text i slutet av filerna.
+
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%_%this is custom text%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "SCHEDULED",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13",
+      "startTime":"16:00"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
++++
 
 ## Lägga till ett profilattribut i ett dataflöde {#add-profile-attribute}
 

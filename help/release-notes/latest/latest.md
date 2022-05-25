@@ -2,16 +2,16 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7040a3415ced04035e2a6a73292c2113411df21d
+source-git-commit: 73aaf93e4d11c9e6dd20dfaaf64501eda9220ef8
 workflow-type: tm+mt
-source-wordcount: '2793'
+source-wordcount: '2490'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 27 april 2022**
+**Lanseringsdatum: 25 maj 2022**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
@@ -19,7 +19,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Dashboards]](#dashboards)
 - [Dataflöden](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
-- [Mål ](#destinations)
+- [[!DNL Destinations]](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Real-time Customer Data Platform B2B Edition](#B2B)
 - [Källor](#sources)
@@ -94,27 +94,9 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> I den allmänna tillgängligheten för Enterprise-destinationsanslutningar ingår alla funktioner som tidigare fanns i betaversionen, och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [Signatur för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) med mera [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (Bärartoken, OAuth 2) i HTTP API-målet.</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (Sändande av historiska profiler som är kvalificerade för segmentet när det först aktiveras).</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och tidsstämplar för segment,</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
-| Aviseringar i sitt sammanhang för måldataflöden | Nu kan du [prenumerera på aviseringar](../../destinations/ui/alerts.md) när du skapar ett måldataflöde, för att få varningsmeddelanden om status, lyckade eller misslyckade dataflöden. Du kan välja att få aviseringar i användargränssnittet för Experience Platform eller via e-post. |
+| Exportera de senaste profilkvalifikationerna [efter daglig segmentutvärdering](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) | Nu kan du schemalägga en fullständig filexport, en eller en gång om dagen, med de senaste profilkvalifikationerna, när den dagliga utvärderingen av segment är klar. |
+| Valfritt datastream-ID för [Adobe Target destinationer](../../destinations/catalog/personalization/adobe-target-connection.md) | Om du vill aktivera Adobe Target-personalisering för användare som inte kan implementera Experience Platform Web SDK är valet av datastream-ID valfritt när du konfigurerar Adobe Target-mål. När du inte använder ett datastödram kommer segment som exporteras från Experience Platform till Target endast att ha stöd för nästa sessionspersonalisering, medan kantsegmentering är inaktiverat, tillsammans med alla [användningsfall](../../destinations/ui/configure-personalization-destinations.md) som är beroende av kantsegmentering. |
 
-### Frisläppningsprocess för avancerade målanslutningar för företag {#release-process-enterprise-destinations}
-
-För Amazon Kinesis, Azure Event Hubs och HTTP API-destinationer visas både det tidigare Beta-målkortet och det nya allmänt tillgängliga (GA) målkortet i målkatalogen under versionsprocessen (från och med den 27 april). Alla dataflöden som konfigureras av kunder som använder betatestarna migreras inom de närmaste dagarna till GA-versionen av samma mål. Denna migrering bör vara slutförd till slutet av fredagen den 29 april. Beta-destinationerna är fortfarande synliga under denna korta tid och märkta som **Föråldrat**.
-
-Observera följande om du har använt dessa destinationer under betaversionen:
-
-- Om du tidigare har varit i Beta med någon av de tre destinationerna behövs ingen åtgärd. Alla dataflöden som har konfigurerats som en del av betaversionen kommer att fortsätta att fungera och migreras till GA-versionen.
-- Om du vill konfigurera dessa destinationer från och med den 27 april, gör det med den nya GA-versionen av destinationerna.
-- Betakorten som markerats som inaktuella tas bort när releaseversionen är klar, vilket beräknas inträffa till slutet av fredagen den 29 april. Teknikteamet på Experience Platform bevakar noggrant inför en lyckad release-operation.
-
-**Nya destinationer**
-
-| Destination | Beskrivning |
-| ----------- | ----------- |
-| [!DNL Criteo] | Koppla samman och aktivera data till [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) annonsplattform. |
-| [!DNL Sendgrid] | Koppla samman och aktivera data till [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) plattform för transaktions- och marknadsföringsmejl. |
-
-Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 

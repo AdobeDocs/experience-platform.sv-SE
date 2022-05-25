@@ -6,9 +6,9 @@ description: Stegvisa instruktioner om hur du använder API:t för Flow Service 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
 workflow-type: tm+mt
-source-wordcount: '3119'
+source-wordcount: '3324'
 ht-degree: 0%
 
 ---
@@ -1003,6 +1003,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
                 "exportMode": "DAILY_FULL_EXPORT",
                 "schedule": {
                     "frequency": "ONCE",
+                    "triggerType": "SCHEDULED",
                     "startDate": "2021-12-20",
                     "startTime": "17:00"
                 },   
@@ -1037,10 +1038,15 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `exportMode` | Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i satskörningssjälvstudiekursen. |
 | `startDate` | Välj det datum då segmentet ska börja exportera profiler till målet. |
 | `frequency` | Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge kan du välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
-| `endDate` | Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då segmentmedlemmar slutar att exporteras till målet. |
-| `startTime` | Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar i segmentet ska genereras och exporteras till målet. |
+| `triggerType` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du väljer `"DAILY_FULL_EXPORT"` i `frequency` väljare. <br> Obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` så att aktiveringsjobbet körs omedelbart när det dagliga gruppsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` för att få aktiveringsjobbet att köras på en fast tid. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du även lägga till en `startTime` ange vid vilken tidpunkt i UTC den dagliga exporten ska ske.</li></ul> |
+| `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då segmentmedlemmar slutar att exporteras till målet. |
+| `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar i segmentet ska genereras och exporteras till målet. |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!TIP]
+>
+> Se [Uppdatera komponenter i ett segment i ett dataflöde](/help/destinations/api/update-destination-dataflows.md#update-segment) om du vill lära dig hur du uppdaterar olika komponenter (filnamnsmall, exporttid och så vidare) för exporterade segment.
 
 **Svar**
 

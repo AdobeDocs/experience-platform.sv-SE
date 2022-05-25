@@ -3,7 +3,7 @@ title: Översikt över dataströmmar
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 4ad80d8198f86010291532a9e6b9cd564abf6d15
+source-git-commit: fe66cbd61d546da8fb6621ef78b3565126cb193d
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -84,7 +84,7 @@ Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
 >
 >Varje tjänstkonfiguration innehåller en **[!UICONTROL Enabled]** som aktiveras automatiskt när tjänsten väljs. Om du vill inaktivera den valda tjänsten för den här datastreamen väljer du **[!UICONTROL Enabled]** växla igen.
 
-### Adobe Analytics-inställningar
+### Adobe Analytics-inställningar {#analytics}
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Mer information finns i guiden på [skicka data till Analytics](../data-collection/adobe-analytics/analytics-overview.md).
 
@@ -94,7 +94,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Me
 | --- | --- |
 | [!UICONTROL Report Suite ID] | **(Obligatoriskt)** ID:t för analysrapportsviten som du vill skicka data till. Detta ID finns i användargränssnittet i Adobe Analytics under [!UICONTROL Admin] > [!UICONTROL ReportSuites]. Om flera rapportsviter anges kopieras data till varje rapportserie. |
 
-### Adobe Audience Manager-inställningar
+### Adobe Audience Manager-inställningar {#audience-manager}
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Manager. Allt som behövs för att skicka data till Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
 
@@ -105,7 +105,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Mana
 | [!UICONTROL Cookie Destinations Enabled] | Gör att SDK kan dela segmentinformation via [cookie-destinationer](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager]. |
 | [!UICONTROL URL Destinations Enabled] | Gör att SDK kan dela segmentinformation via [URL-mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html) från [!DNL Audience Manager]. |
 
-### Adobe Experience Platform-inställningar
+### Adobe Experience Platform-inställningar {#aep}
 
 >[!IMPORTANT]
 >
@@ -127,7 +127,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Pl
 | [!UICONTROL Edge Segmentation] | Markera den här kryssrutan för att aktivera [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för denna datastream. När SDK skickar data via en datastam som är aktiverad för kantsegmentering, skickas alla uppdaterade segmentmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Det här alternativet kan användas i kombination med [!UICONTROL Personalization Destinations] for [exempel på användning av personalisering på nästa sida](../../destinations/ui/configure-personalization-destinations.md). |
 | [!UICONTROL Personalization Destinations] | Vid användning i kombination med [!UICONTROL Edge Segmentation] kan datastream ansluta till personaliseringsmotorer som Adobe Target. Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../../destinations/ui/configure-personalization-destinations.md). |
 
-### Adobe Target-inställningar
+### Adobe Target-inställningar {#target}
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 
