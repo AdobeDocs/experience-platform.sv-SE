@@ -4,9 +4,9 @@ title: Kontrollpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
+source-git-commit: 63a7857c2b88e81de3df7d925daf15bf631ff84c
 workflow-type: tm+mt
-source-wordcount: '1414'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
@@ -74,6 +74,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Audience size trend]](#audience-size-trend)
 * [[!UICONTROL Audience size change trend]](#audience-size-change-trend)
 * [[!UICONTROL Audience size trend by identity]](#audience-size-trend-by-identity)
+* [[!UICONTROL Audience overlap]](#audience-overlap)
 
 ### [!UICONTROL Audience size] {#audience-size}
 
@@ -162,6 +163,14 @@ Den här widgeten innehåller ett linjediagram som illustrerar skillnaden i det 
 Den här widgeten visar trenden för målgruppens storlek för ett visst segment baserat på identitetstypen som valts i widgetens listruta. Det segment som används för analys väljs i listrutan Översikt. Perioden för trendanalys kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
 
 ![Storlekstrend för målgrupper efter identitetswidget.](../images/segments/audience-size-trend-by-identity.png)
+
+### [!UICONTROL Audience overlap] {#audience-overlap}
+
+Den här widgeten representerar antalet profiler från två segment som uppfyller kriterierna för båda segmentdefinitionerna. Segmenten som används för jämförelsen markeras på menyerna i widgeten. Det totala antalet profiler i den relevanta segmentdefinitionen kan du se genom att hålla markören över en cirkel eller skärningspunkten i Venndiagrammet.
+
+Med den här widgeten kan du optimera din segmenteringsstrategi genom att visualisera likheterna i resultaten av segmentdefinitionerna.
+
+![Widgeten för överlappning av publik.](../images/segments/audience-overlap.png)
 
 ## Nästa steg
 

@@ -4,9 +4,9 @@ title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
+source-git-commit: 2fdcd0748ccfe5b6b079bc21c8dbde491fbb2471
 workflow-type: tm+mt
-source-wordcount: '2373'
+source-wordcount: '2499'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Destination status]](#destination-status)
 * [[!UICONTROL Active destinations by destination platform]](#active-destinations-by-destination-platform)
 * [[!UICONTROL Activated audiences across all destinations]](#activated-audiences-across-all-destinations)
+* [[!UICONTROL Activated audiences]](#activated-audiences)
 
 ### [!UICONTROL Most used destinations] {#most-used-destinations}
 
@@ -250,6 +251,18 @@ The [!UICONTROL Activated audiences across all destinations] widgeten visar det 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
 Välj **[!UICONTROL Audiences]** för att navigera till destinationerna [!UICONTROL Browse] -fliken. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Läs dokumentationen för [mer information om [!UICONTROL Browse] tab](../../destinations/ui/destinations-workspace.md#browse).
+
+### [!UICONTROL Activated audiences] {#activated-audiences}
+
+Den här widgeten ger ett enda mått för det totala antalet målgrupper som aktiveras för ett mål.
+
+![Widgeten Aktiverade målgrupper.](../images/destinations/activated-audiences.png)
+
+Välj **[!UICONTROL Audiences]** för att navigera till informationssidan på kontrollpanelen för mål. The [!UICONTROL Activation data] På -fliken visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt), samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om ett visst segment väljer du dess namn i listan.
+
+![Sidan med information om kontrollpanelen för mål med fliken Aktiveringsdata markerad.](../images/destinations/activation-data-tab.png)
+
+Den här widgeten hjälper dig att förstå värdet av dina destinationer baserat på det antal målgrupper som har aktiverats snabbt. Den ger också enkel tillgång till mer detaljerad information för ytterligare analys.
 
 ## Nästa steg
 
