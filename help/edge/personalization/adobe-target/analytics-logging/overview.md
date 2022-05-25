@@ -4,13 +4,13 @@ description: Lär dig hur du styr samlingen av Adobe Analytics for Target-data (
 seo-title: Adobe Analytics for Target (A4T) Logging in the Platform Web SDK
 seo-description: Learn how to control the collection of Adobe Analytics for Target (A4T) data using the Experience Platform Web SDK.
 keywords: a4t;logga;analys;sdk;web sdk;
-source-git-commit: a2214465001f90d19d88c0622c154e7a4ae3bb03
+exl-id: f1c90ccd-48a9-4668-b2ac-eacd5bec0b91
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '284'
 ht-degree: 1%
 
 ---
-
 
 # Logga in på Platform Web SDK för Adobe Analytics for Target (A4T)
 
@@ -29,7 +29,7 @@ Adobe Experience Platform Web SDK har stöd för två typer av Analytics-loggnin
 | Loggning av analys på serversidan | Alla Analytics-träffar som skickas via Edge Network utökas med Target-information på serversidan, utan att du behöver gå igenom träffstensprocessen. |
 | Loggning av analys på klientsidan | Måldata returneras på klientsidan, vilket gör att du manuellt kan förbättra och skicka data till Analytics med [API för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html). |
 
-Loggningsmetoden avgörs av om du har aktiverat Adobe Analytics på din konfigurerade [datastream](../../../fundamentals/datastreams.md):
+Loggningsmetoden avgörs av om du har aktiverat Adobe Analytics på din konfigurerade [datastream](../../../datastreams/overview.md):
 
 ![Beslutsflöde för loggningsmetod](../assets/analytics-logging.png)
 

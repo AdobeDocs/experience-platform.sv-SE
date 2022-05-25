@@ -4,7 +4,7 @@ description: Lär dig hur du använder API:t för Edge Network Server för att i
 seo-description: Learn how to use the Edge Network Server API to interact with Adobe Analytics
 keywords: datainsamling, Utlopp. Analyser. Adobe Experience Platform Edge Network API;analytics
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 08b1924c518a76873051b4038d8a1fe38dc7ddac
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Adobe Analytics datainsamling fungerar genom att översätta XDM-data till ett f
 
 Du kan också [mappa XDM-värden manuellt](../edge/data-collection/adobe-analytics/manually-mapping-variables.md) till äldre analysvariabler.
 
-Om du vill att Adobe Analytics ska kunna ta emot data från Server-API:t måste du [konfigurera ditt datastream](../edge/fundamentals/datastreams.md#adobe-analytics-settings) om du vill vidarebefordra händelser till Adobe Analytics genom att ange rapportsvitens ID på konfigurationssidan för datastream.
+Om du vill att Adobe Analytics ska kunna ta emot data från Server-API:t måste du [konfigurera ditt datastream](../edge/datastreams/overview.md#adobe-analytics-settings) om du vill vidarebefordra händelser till Adobe Analytics genom att ange rapportsvitens ID på konfigurationssidan för datastream.
 
 ![Adobe Analytics DataStream-konfiguration](assets/analytics-datastream.png)
 
@@ -33,7 +33,7 @@ POST https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}
 
 ### Begäran {#request}
 
-Exemplet nedan innehåller flera automatiskt mappade värden från `_experience.analytics` fältgrupp. Den innehåller även JSON-baserade datalager. Dessa datalager kan inte mappas automatiskt, men det går att använda [Dataförberedelse för datainsamling](../edge/fundamentals/datastreams.md#data-prep) för att mappa dessa värden till ett schema som innehåller fältgrupper som refereras ovan.
+Exemplet nedan innehåller flera automatiskt mappade värden från `_experience.analytics` fältgrupp. Den innehåller även JSON-baserade datalager. Dessa datalager kan inte mappas automatiskt, men det går att använda [Dataförberedelse för datainsamling](../edge/datastreams/data-prep.md) för att mappa dessa värden till ett schema som innehåller fältgrupper som refereras ovan.
 
 Alla värden som användarna mappar till dessa fält mappas automatiskt till rätt Analytics-värden, som om de ingick i API-begäran.
 

@@ -4,7 +4,7 @@ description: Lär dig hur du använder API:t för Edge Network Server för att v
 seo-description: Learn how to use the Edge Network Server API to forward events to non-Adobe solutions
 keywords: datainsamling, Utlopp. Analyser. Adobe Experience Platform Edge Network API;händelsevidarebefordran
 exl-id: a8902b2a-fc9c-4087-a7eb-89b6cf9a6d29
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '81'
 ht-degree: 1%
@@ -19,6 +19,6 @@ Använd funktionerna för vidarebefordran av händelser i Edge Network Server AP
 
 ## Konfigurera vidarebefordran av datastream-händelser {#event-forwarding}
 
-Om du vill att tredjepartslösningar ska kunna ta emot data från Server-API:t måste du [konfigurera ditt datastream](../edge/fundamentals/datastreams.md#event-forwarding-settings) för vidarebefordran av händelser.
+Om du vill att tredjepartslösningar ska kunna ta emot data från Server-API:t måste du [konfigurera ditt datastream](../edge/datastreams/overview.md#event-forwarding-settings) för vidarebefordran av händelser.
 
 ![Adobe Analytics DataStream-konfiguration](assets/event-forwarding-datastream.png)

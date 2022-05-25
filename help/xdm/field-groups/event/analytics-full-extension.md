@@ -1,7 +1,8 @@
 ---
 title: Fältgruppen Adobe Analytics ExperienceEvent Full Extension Schema
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Adobe Analytics ExperienceEvent Full Extension.
-source-git-commit: bfdcee33fb2cbd28039633d1d981149c40aa1d68
+exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '875'
 ht-degree: 1%
@@ -102,4 +103,4 @@ Varje jämnt objekt använder [[!UICONTROL Measure]](../../data-types/measure.md
 
 Det här dokumentet innehöll struktur och användningsexempel för fältgruppen för Analytics-tillägget. Mer information om själva fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
-Om du använder den här fältgruppen för att samla in Analytics-data med Adobe Experience Platform Web SDK läser du i handboken på [konfigurera ett datastream](../../../edge/fundamentals/datastreams.md) om du vill lära dig att mappa data till XDM på serversidan.
+Om du använder den här fältgruppen för att samla in Analytics-data med Adobe Experience Platform Web SDK läser du i handboken på [konfigurera ett datastream](../../../edge/datastreams/overview.md) om du vill lära dig att mappa data till XDM på serversidan.

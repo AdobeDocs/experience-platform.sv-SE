@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform, februari 2022
 description: Versionsinformation från februari 2022 för Adobe Experience Platform.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 3a031c84138d36a5e23b2f80a44ada06e1a52184
 workflow-type: tm+mt
 source-wordcount: '1019'
 ht-degree: 1%
@@ -45,8 +45,8 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättrat gränssnittsarbetsflöde för datastream-konfiguration | Arbetsflödet för att skapa en ny datastam i användargränssnittet för datainsamling har uppdaterats. När du lägger till tjänster i ett dataflöde inkluderas endast de tjänster som du har tillgång till i listan med alternativ. Se guiden [konfigurera ett datastream](../../edge/fundamentals/datastreams.md) för mer information. |
-| Dataförberedelse för datainsamling | Om du använder Adobe Experience Platform Web SDK kan du nu utnyttja funktionerna för dataförberedelser för att mappa dina data till Experience Data Model (XDM) på serversidan. Se avsnittet om [Dataförberedelse för datainsamling](../../edge/fundamentals/datastreams.md#data-prep) i datastreams-guiden om du vill ha mer information. |
+| Förbättrat gränssnittsarbetsflöde för datastream-konfiguration | Arbetsflödet för att skapa en ny datastam i användargränssnittet för datainsamling har uppdaterats. När du lägger till tjänster i ett dataflöde inkluderas endast de tjänster som du har tillgång till i listan med alternativ. Se guiden [konfigurera ett datastream](../../edge/datastreams/overview.md) för mer information. |
+| Dataförberedelse för datainsamling | Om du använder Adobe Experience Platform Web SDK kan du nu utnyttja funktionerna för dataförberedelser för att mappa dina data till Experience Data Model (XDM) på serversidan. Se avsnittet om [Dataförberedelse för datainsamling](../../edge/datastreams/data-prep.md) i datastreams-guiden om du vill ha mer information. |
 | Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Se guiden [enhets-ID:n från första part](../../edge/identity/first-party-device-ids.md) för mer information. |
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).

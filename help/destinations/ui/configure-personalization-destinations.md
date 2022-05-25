@@ -6,9 +6,9 @@ seo-title: Configure personalization destinations for same-page and next-page pe
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
 seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: a990e829c8ba034f31b883360495513f3f5b4cfc
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '403'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ När datastream konfigureras, under **[!UICONTROL Adobe Experience Platform]** s
 
 ![Datastream-konfiguration](../assets/ui/configure-personalization-destinations/datastream-config.png)
 
-Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../edge/fundamentals/datastreams.md).
+Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../edge/datastreams/overview.md).
 
 ## Steg 2: Konfigurera ditt personaliseringsmål {#configure-destination}
 

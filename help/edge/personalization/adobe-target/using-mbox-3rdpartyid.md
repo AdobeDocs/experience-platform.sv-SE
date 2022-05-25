@@ -2,13 +2,13 @@
 title: Profilsynkronisering i realtid för mbox3rdPartyId
 description: Lär dig hur du använder mbox3rdPartyId med Adobe Experience Platform Web SDK.
 keywords: anpassning;mål;adobe target;renderDecision;sendEvent;mbox3rdPartyId;
-source-git-commit: 439f26177837e985ef95e972c3102cc2db37d539
+exl-id: 677d1054-0769-4ec6-811e-e02d4b247c2a
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '161'
 ht-degree: 2%
 
 ---
-
 
 # Vad är `mbox3rdPartyId`
 
@@ -21,7 +21,7 @@ När en besökare loggar in på ett företags webbplats skapar företaget vanlig
 
 ### Steg 1: Konfigurera `Target Third Party ID Namespace`
 
-Konfigurera `Target Third Party ID Namespace` i [Datastream](../../fundamentals/datastreams.md), med det ID-namnutrymme som du vill använda som ett mbox-ID för tredje part.
+Konfigurera `Target Third Party ID Namespace` i [Datastream](../../datastreams/overview.md), med det ID-namnutrymme som du vill använda som ett mbox-ID för tredje part.
 [Läs mer om ID-namnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html)
 
 ![](assets/mbox3rdpartyid.png)
@@ -45,5 +45,3 @@ alloy("sendEvent", {
   }
 });
 ```
-
-

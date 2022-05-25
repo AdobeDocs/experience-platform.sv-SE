@@ -2,7 +2,7 @@
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
 description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 1f9454148ed4ee95f0d86f03c4bcf8c917d0aeea
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '991'
 ht-degree: 0%
@@ -51,7 +51,7 @@ The [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillä
 
 När en begäran skickas till Adobe Experience Platform Edge Network, används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Se guiden [datastreams](../fundamentals/datastreams.md) för mer information.
+Se guiden [datastreams](../datastreams/overview.md) för mer information.
 
 
 ## [!UICONTROL Privacy]

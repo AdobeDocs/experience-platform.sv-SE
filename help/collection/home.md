@@ -5,7 +5,7 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 1322ef78683e62130b56c5b6a22b8699e57a31cf
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 3%
@@ -26,7 +26,7 @@ De datainsamlingstekniker som tillhandahålls av Experience Platform fokuserar p
 
 * [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
 * [Taggar](../tags/home.md)
-* [Datastreams](../edge/fundamentals/datastreams.md)
+* [Datastreams](../edge/datastreams/overview.md)
 * [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
 * [Webb-SDK för Adobe Experience Platform](../edge/home.md)
 * [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
@@ -46,7 +46,7 @@ Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar åt
 
 ## Platform Edge Network och datastreams {#edge}
 
-Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../edge/fundamentals/datastreams.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../edge/datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
 
 ![Datastreams and Adobe solutions](./images/home/adobe-solutions.png)
 

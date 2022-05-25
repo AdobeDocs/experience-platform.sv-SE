@@ -4,7 +4,8 @@ description: Lär dig hur du aktiverar loggning på klientsidan för Adobe Analy
 seo-title: Client-side logging for A4T data in the Platform Web SDK
 seo-description: Learn how to enable client-side logging for Adobe Analytics for Target (A4T) using the Experience Platform Web SDK.
 keywords: mål;a4t;logga;web sdk;upplevelse;plattform;
-source-git-commit: a2214465001f90d19d88c0622c154e7a4ae3bb03
+exl-id: 7071d7e4-66e0-4ab5-a51a-1387bbff1a6d
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '1159'
 ht-degree: 0%
@@ -39,7 +40,7 @@ I följande underavsnitt beskrivs hur du aktiverar loggning på klientsidan för
 
 ### Aktivera loggning på klientsidan för Analytics {#enable-analytics-client-side-logging}
 
-Om du vill ta hänsyn till att Analytics-loggning på klientsidan är aktiverad för implementeringen måste du inaktivera Adobe Analytics-konfigurationen i din [datastream](../../../fundamentals/datastreams.md).
+Om du vill ta hänsyn till att Analytics-loggning på klientsidan är aktiverad för implementeringen måste du inaktivera Adobe Analytics-konfigurationen i din [datastream](../../../datastreams/overview.md).
 
 ![Analysdataströmskonfiguration har inaktiverats](../assets/disable-analytics-datastream.png)
 
