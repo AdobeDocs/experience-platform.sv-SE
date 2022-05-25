@@ -7,9 +7,9 @@ topic-legacy: Customer AI Overview
 description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 landing-page-description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala.
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: fccb5e6193d9c456d0035ef5c7d2adf5ffe883a4
+source-git-commit: 62188f56861dd021db7b13325f622323644af8e0
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Följande video är utformad för att ge stöd för din förståelse av kundens 
 
 >[!VIDEO](https://video.tv.adobe.com/v/32664?learn=on&quality=12)
 
-## Hur fungerar det?
+## Så fungerar det
 
 Kunds-AI fungerar genom att analysera befintliga data om kundupplevelsehändelser för att förutsäga bortfall eller konverteringsbenägenhetspoäng. Adobe inser att definitionen av bortfall och konvertering inte är enhetlig för alla användningsfall och därför kan du definiera anpassade målmål som en uppsättning villkor. Ni kan konfigurera det förutspådda målet så länge som det finns en intressant händelse i informationen om konsumentupplevelsehändelser.
 

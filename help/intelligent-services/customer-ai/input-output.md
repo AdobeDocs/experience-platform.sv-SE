@@ -6,7 +6,7 @@ title: Indata och utdata i kundens AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 0f408f217dd168b9c94b8dbbd7dc3c6edb06488c
+source-git-commit: 62188f56861dd021db7b13325f622323644af8e0
 workflow-type: tm+mt
 source-wordcount: '3084'
 ht-degree: 0%
@@ -134,7 +134,7 @@ I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obl
 
 ### Scenario 1: Köpkonvertering på en e-handelsplats
 
-**Förutsägelsemål:** Förutspå konverteringsbenägenheten för de berättigade profilerna för att köpa en viss artikel på en webbplats.
+**Förutsägelsemål:** Förutspå konverteringsbenägenheten för de profiler som är berättigade att köpa en viss artikel på en webbplats.
 
 **Nödvändiga standardhändelsetyper:**
 
@@ -265,7 +265,7 @@ När du konfigurerar en ny kund-AI-instans `audienceName` och `audienceID` kan a
 
 Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att använda poängen (utdata) baserat på vad du har etablerat. Om du har en kundprofilaktiverad datauppsättning i realtid kan du ta del av insikter från kundprofilen i realtid i [Segment Builder](../../segmentation/ui/segment-builder.md). Om du inte har någon profilaktiverad datauppsättning kan du [ladda ned kundens AI-utdata](./user-guide/download-scores.md) Data som finns tillgängliga på datasjön.
 
-Du kan hitta utdatamängden under **Datauppsättningar** i Platform. Alla AI-utdata för kunder börjar med namnet **AI-bakgrundsmusik för kunder - namn_på_app** medan alla kundens AI-utdatascheman börjar med namnet **Kundens AI-schema - namn_på_app**.
+Du kan hitta utdatamängden under **Datauppsättningar** i Platform. Alla AI-utdata för kunder börjar med namnet **AI-bakgrundsmusik för kunder - namn_på_app**. På samma sätt börjar alla kundens AI-utdatascheman med namnet **Kundens AI-schema - namn_på_app**.
 
 ![cai-schema-name-of-app](./images/user-guide/cai-schema-name-of-app.png)
 
