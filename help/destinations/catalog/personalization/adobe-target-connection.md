@@ -67,7 +67,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **Namn**: Fyll i det önskade namnet för det här målet.
 * **Beskrivning**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
-* **Datastream-ID**: Detta anger i vilken datainsamling som segmenten ska inkluderas. I den nedrullningsbara menyn visas endast datastreams som har målmålet aktiverat. Se [konfigurera ett datastream](../../../edge/fundamentals/datastreams.md#target) om du vill ha mer information om hur du konfigurerar ett datastam för Adobe Target.
+* **Datastream-ID**: Detta anger i vilken datainsamling som segmenten ska inkluderas. I den nedrullningsbara menyn visas endast datastreams som har målmålet aktiverat. Se [konfigurera ett datastream](../../../edge/datastreams/overview.md#target) om du vill ha mer information om hur du konfigurerar ett datastam för Adobe Target.
    * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](../../../edge/home.md). När du använder det här alternativet har segment som exporterats från Experience Platform till Target endast stöd för anpassning efter nästa session, och kantsegmentering är inaktiverat. Se tabellen nedan för mer information.
 
 | Ingen datastream har valts | Datastream har valts |
