@@ -84,7 +84,7 @@ Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
 >
 >Varje tjänstkonfiguration innehåller en **[!UICONTROL Enabled]** som aktiveras automatiskt när tjänsten väljs. Om du vill inaktivera den valda tjänsten för den här datastreamen väljer du **[!UICONTROL Enabled]** växla igen.
 
-### Adobe Analytics-inställningar {#analytics}
+### Adobe Analytics-inställningar
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Mer information finns i guiden på [skicka data till Analytics](../data-collection/adobe-analytics/analytics-overview.md).
 
@@ -94,7 +94,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Me
 | --- | --- |
 | [!UICONTROL Report Suite ID] | **(Obligatoriskt)** ID:t för analysrapportsviten som du vill skicka data till. Detta ID finns i användargränssnittet i Adobe Analytics under [!UICONTROL Admin] > [!UICONTROL ReportSuites]. Om flera rapportsviter anges kopieras data till varje rapportserie. |
 
-### Adobe Audience Manager-inställningar {#audience-manager}
+### Adobe Audience Manager-inställningar
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Manager. Allt som behövs för att skicka data till Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
 
@@ -105,7 +105,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Mana
 | [!UICONTROL Cookie Destinations Enabled] | Gör att SDK kan dela segmentinformation via [cookie-destinationer](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager]. |
 | [!UICONTROL URL Destinations Enabled] | Gör att SDK kan dela segmentinformation via [URL-mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html) från [!DNL Audience Manager]. |
 
-### Adobe Experience Platform-inställningar {#aep}
+### Adobe Experience Platform-inställningar
 
 >[!IMPORTANT]
 >
