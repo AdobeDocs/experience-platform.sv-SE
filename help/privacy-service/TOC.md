@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Privacy Service
 breadcrumb-title: Privacy Service Guide
 user-guide-description: Hantera förfrågningar om kunddata för att följa juridiska sekretessregler som GDPR och CCPA.
 feature: Privacy
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: e74d0658d5c389a22497301d289e0310d28731f0
 workflow-type: tm+mt
-source-wordcount: '87'
-ht-degree: 18%
+source-wordcount: '83'
+ht-degree: 19%
 
 ---
 
@@ -32,7 +32,6 @@ ht-degree: 18%
    * [Översikt](./regulations/overview.md)
    * [Vanliga frågor och svar ](./regulations/faq.md)
    * [Terminologi](./regulations/terminology.md)
-* [API för datahygien (alfa)](./data-hygiene-api.md)
 * [Felsökningsguide](./troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/privacy-service/)
 * [Versionsinformation](./release-notes.md)
