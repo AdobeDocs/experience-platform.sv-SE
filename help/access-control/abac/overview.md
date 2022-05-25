@@ -5,9 +5,9 @@ description: Det här dokumentet innehåller information om attributbaserad åtk
 hide: true
 hidefromtoc: true
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 4ac69f614d878cd3c3b9f47e41dedbc6f09288ac
+source-git-commit: 70c0ba81c682fd512c24265f12d1fef6ca14b34e
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1575'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
+>Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
 
-Attributbaserad åtkomstkontroll gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan vara ett befintligt värde, till exempel en persons geopositionering eller avdelning. Attribut kan också vara metadata som läggs till i ett objekt, t.ex. en etikett som läggs till i ett schemafält eller segment.
+Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
 Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
 
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera specifika användarroller som bara har åtkomst till specifika fält, samt endast till specifika data som motsvarar dessa fält.
+Med attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
 ## Attributbaserad åtkomstkontrollterminologi
 
@@ -30,7 +30,7 @@ Attributbaserad åtkomstkontroll omfattar följande komponenter:
 
 | Terminologi | Definition |
 | --- | --- |
-| Attribut | Attribut är de identifierare som anger korrelationen mellan en användare och de plattformsresurser som de har åtkomst till. Attribut kan vara ett befintligt värde, till exempel en persons geopositionering eller avdelning. Attribut kan också vara metadata som läggs till i ett objekt, t.ex. en etikett som läggs till i ett schemafält eller segment. |
+| Attribut | Attribut är de identifierare som anger korrelationen mellan en användare och de plattformsresurser som de har åtkomst till. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst. |
 | Etiketter | Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de har importerats till Platform, eller så snart data blir tillgängliga för användning i Platform. |
 | Behörigheter | Behörigheter omfattar möjligheten att visa och/eller använda plattformsfunktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar. |
 | Behörighetsuppsättningar | Behörighetsuppsättningar representerar en grupp behörigheter som en administratör kan tillämpa på en roll. En administratör kan tilldela behörighetsgrupper till en roll i stället för att tilldela enskilda behörigheter. Detta gör att du kan skapa anpassade roller från en fördefinierad roll som innehåller en grupp behörigheter. |
@@ -46,11 +46,13 @@ Attributbaserad åtkomstkontroll omfattar följande komponenter:
 >
 >När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för produktprofiler i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
 
-Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner, funktioner och objekt i ett produktprogram. Med behörigheterna kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för dessa roller. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i behörighetshandboken.
+Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
+
+Genom Behörigheter kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för dessa roller. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Behörighetsguide](ui/browse.md).
 
 ## Attributbaserad API för åtkomstkontroll
 
-Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller, principer och produkter inom plattformen med API:er.
+Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller, principer och produkter inom plattformen med API:er. Mer information finns i handboken på [använda API:t för att hantera attributbaserade åtkomstkontrollskonfigurationer](api/overview.md).
 
 ## Attributbaserad åtkomstkontroll i Adobe Experience Platform
 
