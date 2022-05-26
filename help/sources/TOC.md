@@ -6,8 +6,8 @@ user-guide-description: Hämta in data från olika källor eller struktur, etike
 feature: Sources
 source-git-commit: 3c80f3b297e7119067480739e206064bb2ace22c
 workflow-type: tm+mt
-source-wordcount: '781'
-ht-degree: 5%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
