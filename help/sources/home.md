@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: cae2c80c5e0fc7aaece948599e781b32d67989bb
+source-git-commit: 7ffc2ed09b58cc6b6118ef2115666aae092c202c
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
@@ -28,22 +28,22 @@ Källor i Experience Platform är grupperade i följande kategorier:
 
 Experience Platform tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
 
-- [Adobe Audience Manager Connector - översikt](connectors/adobe-applications/audience-manager.md)
+- [Översikt över Adobe Audience Manager-källa](connectors/adobe-applications/audience-manager.md)
 - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Översikt över anslutningen till datakällan i Adobe Analytics Classics](connectors/adobe-applications/classifications.md)
 - [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics Report Suite - anslutningsöversikt för datakälla](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
-- [Adobe datainsamling](connectors/adobe-applications/data-collection.md)
+- [Översikt över datakällan för Adobe Data Collection](connectors/adobe-applications/data-collection.md)
 - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
-- [[!DNL Marketo Engage] anslutningsöversikt](connectors/adobe-applications/marketo/marketo.md)
+- [[!DNL Marketo Engage] källöversikt](connectors/adobe-applications/marketo/marketo.md)
 - [Skapa en [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
 
 ### Reklam {#advertising}
 
 Experience Platform stöder inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Google AdWords]](connectors/advertising/ads.md) koppling
+- [[!DNL Google AdWords]](connectors/advertising/ads.md)
 
 ### molnlagring {#cloud-storage}
 
