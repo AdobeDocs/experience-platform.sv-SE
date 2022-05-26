@@ -3,7 +3,7 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 0868d81bcd1968b3223c79abb5a7bb8f279a4130
+source-git-commit: 46e732dfc630ad1875a57289a6e6cf9c964b9547
 workflow-type: tm+mt
 source-wordcount: '740'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Ett uthyrnings- och säljföretag vill skräddarsy sin hemsida med en banderoll 
 >id="platform_destinations_target_datastream"
 >title="Om dataStream-ID"
 >abstract="Det här alternativet avgör i vilket datainsamlingsdatastam segmenten inkluderas. I den nedrullningsbara menyn visas endast datastreams som har Target-konfigurationen aktiverad. Om du vill använda kantsegmentering måste du välja ett datastream-ID. Om du väljer Ingen inaktiveras alla användningsfall där kantsegmentering används."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html#parameters" text="Läs mer om hur du väljer datastreams."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html#parameters" text="Läs mer om att välja datastreams"
 
 >[!IMPORTANT]
 > 
