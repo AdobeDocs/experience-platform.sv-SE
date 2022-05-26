@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: f509b468e7779b822eda96033a2c55cc3a12893d
 workflow-type: tm+mt
-source-wordcount: '2747'
+source-wordcount: '3050'
 ht-degree: 2%
 
 ---
@@ -714,7 +714,7 @@ COPY query
 >
 >Den fullständiga utdatasökvägen `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
 
-### ALTER TABLE
+### ALTER TABLE {#alter-table}
 
 The `ALTER TABLE` kan du lägga till eller ta bort begränsningar för primär eller extern nyckel samt lägga till kolumner i tabellen.
 
@@ -747,6 +747,26 @@ ALTER TABLE table_name DROP CONSTRAINT constraint_name FOREIGN KEY ( column_name
 >
 >Tabellschemat ska vara unikt och inte delas mellan flera tabeller. Dessutom är namnutrymmet obligatoriskt för begränsningar för primärnycklar.
 
+#### Lägga till eller släppa primära och sekundära identiteter
+
+The `ALTER TABLE` kan du lägga till eller ta bort begränsningar för både primära och sekundära identitetstabellkolumner direkt via SQL.
+
+I följande exempel läggs en primär identitet och en sekundär identitet till genom att begränsningar läggs till.
+
+```sql
+ALTER TABLE t1 ADD CONSTRAINT PRIMARY IDENTITY (id) NAMESPACE 'IDFA';
+ALTER TABLE t1 ADD CONSTRAINT IDENTITY(id) NAMESPACE 'IDFA';
+```
+
+Identiteter kan också tas bort genom att begränsningar släpps, vilket visas i exemplet nedan.
+
+```sql
+ALTER TABLE t1 DROP CONSTRAINT PRIMARY IDENTITY (c1) ;
+ALTER TABLE t1 DROP CONSTRAINT IDENTITY (c1) ;
+```
+
+Mer information finns i dokumentet om att ställa in identiteter i en ad hoc-datauppsättning.
+
 #### LÄGG TILL KOLUMN
 
 Följande SQL-frågor visar exempel på hur du lägger till kolumner i en tabell.
@@ -756,6 +776,23 @@ ALTER TABLE table_name ADD COLUMN column_name data_type
 
 ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_type2 
 ```
+
+##### Datatyper som stöds
+
+I följande tabell visas godkända datatyper för att lägga till kolumner i en tabell med [!DNL Postgres SQL], XDM och [!DNL Accelerated Database Recovery] (ADR) i Azure SQL.
+
+| — | PSQL-klient | XDM | ADR. | Beskrivning |
+|---|---|---|---|---|
+| 1 | `bigint` | `int8` | `bigint` | En numerisk datatyp som används för att lagra stora heltal mellan -9 223 372 036 854 775 807 och 9 223 372 036 854 775 807 i 8 byte. |
+| 2 | `integer` | `int4` | `integer` | En numerisk datatyp som används för att lagra heltal mellan -2 147 483 648 och 2 147 483 647 i 4 byte. |
+| 3 | `smallint` | `int2` | `smallint` | En numerisk datatyp som används för att lagra heltal mellan -32 768 och 215-1 32 767 i 2 byte. |
+| 4 | `tinyint` | `int1` | `tinyint` | En numerisk datatyp som används för att lagra heltal mellan 0 och 255 i 1 byte. |
+| 5 | `varchar(len)` | `string` | `varchar(len)` | En teckendatatyp med variabel storlek. `varchar` används bäst när kolumndatainmatningarnas storlek varierar avsevärt. |
+| 6 | `double` | `float8` | `double precision` | `FLOAT8` och `FLOAT` är giltiga synonymer för `DOUBLE PRECISION`. `double precision` är en flyttalsdatatyp. Flyttalsvärden sparas i 8 byte. |
+| 7 | `double precision` | `float8` | `double precision` | `FLOAT8` är en giltig synonym för `double precision`.`double precision` är en flyttalsdatatyp. Flyttalsvärden sparas i 8 byte. |
+| 8 | `date` | `date` | `date` | The `date` datatypen är 4 byte-lagrade kalenderdatumvärden utan tidsstämpelinformation. Giltiga datum är från 01-01-0001 till 12-31-9999. |
+| 9 | `datetime` | `datetime` | `datetime` | En datatyp som används för att lagra en instans i tid uttryckt som ett kalenderdatum och en tidpunkt på dagen. `datetime` omfattar kvalificerare för år, månad, dag, timme, sekund och bråk. A `datetime` -deklarationen kan innehålla alla delmängder av dessa tidsenheter som är förenade i den sekvensen, eller till och med bara en enda tidsenhet. |
+| 10 | `char(len)` | `string` | `char(len)` | The `char(len)` nyckelord används för att ange att objektet är ett tecken med fast längd. |
 
 #### LÄGG TILL SCHEMA
 
