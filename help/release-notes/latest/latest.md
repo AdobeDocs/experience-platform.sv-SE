@@ -73,7 +73,7 @@ Med Experience Platform kan du granska användaraktivitet för olika tjänster o
 
 | Funktion | Namn | Beskrivning | | — | — | — | | Resurser tillagda | <ul><li> Åtkomstkontrollprincip </li><li> Roll </li><li> Granskningsloggar </li><li> Arbetsorder </li><li> Namnutrymme för identitet </li><li> Identitetsdiagram </li><li> Fråga </li><li> Datauppsättning </li><li> Källdataflöde </li></ul> | Granskningsloggresurser registreras automatiskt när aktiviteten utförs. Om funktionen är aktiverad behöver du inte aktivera loggsamling manuellt. |
 
-{style=&quot;table-layout:auto&quot;}
+
 
 Mer information om granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
 
