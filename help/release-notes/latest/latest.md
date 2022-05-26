@@ -2,10 +2,10 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 37d073266bf9293ad3a9e85c193acd1e2e47fa2a
+source-git-commit: 9484da6948243a098db2ff8ebdd59c5e70a51635
 workflow-type: tm+mt
 source-wordcount: '1536'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -71,9 +71,11 @@ Med Experience Platform kan du granska användaraktivitet för olika tjänster o
 
 **Uppdaterade funktioner**
 
-| Funktion | Namn | Beskrivning | | — | — | — | | Resurser tillagda | <ul><li> Åtkomstkontrollprincip </li><li> Roll </li><li> Granskningsloggar </li><li> Arbetsorder </li><li> Namnutrymme för identitet </li><li> Identitetsdiagram </li><li> Fråga </li><li> Datauppsättning </li><li> Källdataflöde </li></ul> | Granskningsloggresurser registreras automatiskt när aktiviteten utförs. Om funktionen är aktiverad behöver du inte aktivera loggsamling manuellt. |
+| Funktion | Namn | Beskrivning |
+| --- | --- | --- |
+| Tillagda resurser | <ul><li> Åtkomstkontrollprincip </li><li> Roll </li><li> Granskningsloggar </li><li> Arbetsorder </li><li> Namnutrymme för identitet </li><li> Identitetsdiagram </li><li> Fråga </li><li> Datauppsättning </li><li> Källdataflöde </li></ul> | Granskningsloggresurser registreras automatiskt när aktiviteten utförs. Om funktionen är aktiverad behöver du inte aktivera loggsamling manuellt. |
 
-
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
 
