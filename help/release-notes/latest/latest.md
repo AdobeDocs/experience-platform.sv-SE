@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d8f62bdaa0d043fa2c27b25ae2a6f5979076314e
+source-git-commit: 8e1f4d8cef1a962a056328417a1dbdff1aed2078
 workflow-type: tm+mt
-source-wordcount: '1576'
+source-wordcount: '1667'
 ht-degree: 2%
 
 ---
@@ -20,16 +20,29 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Larm](#alerts)
 - [Granskningsloggar](#audit-logs)
 - [Kontrollpaneler](#dashbaords)
 - [Datainsamling](#data-collection)
-
 <!-- - [Data Governance](#data-governance) -->
 - [Dataprep](#data-prep)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Frågetjänst](#query-service)
 - [Källor](#sources)
+
+## Larm {#alerts}
+
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via [!UICONTROL Alerts] -fliken i användargränssnittet för plattformen och kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+
+**Uppdaterade funktioner**
+
+| Funktion | Varningsregel | Beskrivning |
+| --- | --- | --- |
+| Ny varningsregel | Överskridningsgraden överskrider tröskelvärdet | Du kan nu använda varningen för att få meddelanden när källans dataflöde överskrider identitetströskeln. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
+
+{style=&quot;table-layout:auto&quot;}
+
 
 <!-- ## Attribute-based access control {#abac}
 
