@@ -4,7 +4,7 @@ title: Standardvarningsregler
 description: Detta dokument innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: 67aef7ca2ad4061003af8d91fb29339397d8af01
+source-git-commit: c0559fc55531e2b0c2938294742397b43e9e0445
 workflow-type: tm+mt
 source-wordcount: '811'
 ht-degree: 0%
@@ -29,7 +29,6 @@ Följande varningsregler gäller [Dataintag](../../ingestion/home.md) och  [käl
 | Körningsfördröjningar för källflöde, fel och fel | Fördröjning av intag | Den här varningen utlöses när ett batchmatningsflöde tar längre tid än 150 minuter att bearbeta. |
 | Körningsfördröjningar för källflöde, fel och fel | Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform. |
 | Körningsfördröjningar för källflöde, fel och fel | Inmatningsfel | Den här varningen utlöses när förhållandet mellan misslyckade poster och alla poster överstiger ett tröskelvärde på 0,5 %. |
-| Körningsfördröjningar för källflöde, fel och fel | Överskridningsgraden överskrider tröskelvärdet | Den här varningen utlöses när förhållandet mellan överhoppade ID:n och totalt ID:n överskrider ett tröskelvärde. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -83,6 +82,7 @@ Följande varningsregler gäller [mål](../../destinations/home.md):
 | Körningsinformation för målflöde | Målflödet har körts | Den här varningen utlöses när ett segment har aktiverats till ett mål. |
 | Körningsfördröjningar för målflöde, fel och fel | Körningsfördröjning för målflöde | Den här varningen utlöses när ett målflöde tar längre tid än 150 minuter att aktivera ett segment. |
 | Körningsfördröjningar för målflöde, fel och fel | Körningsfel för målflöde | Den här varningen utlöses när ett fel inträffar när ett segment aktiveras till ett mål. |
+| Körningsfördröjningar för målflöde, fel och fel | Överskridningsgraden överskrider tröskelvärdet | Den här varningen utlöses när förhållandet mellan överhoppade ID:n och totalt ID:n överskrider ett tröskelvärde. |
 
 {style=&quot;table-layout:auto&quot;}
 
