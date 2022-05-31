@@ -3,12 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;api;attributbaserad åtkomstk
 solution: Experience Platform
 title: Attributbaserad API-guide för åtkomstkontroll
 description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och profiler inom Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
-hide: true
-hidefromtoc: true
 exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
-source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '424'
 ht-degree: 0%
 
 ---

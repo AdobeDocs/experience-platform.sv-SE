@@ -1,13 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
 title: Attributbaserad åtkomstkontrollbläddring
-description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
-hide: true
-hidefromtoc: true
+description: Det här dokumentet innehåller information om hur du använder gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: 143db2c19ec5ee7628b5cb9b30e71f24b4b3dcc8
+source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '374'
 ht-degree: 3%
 
 ---

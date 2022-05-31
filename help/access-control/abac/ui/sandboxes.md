@@ -1,13 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
 title: Attributbaserade sandlådor för åtkomstkontroll
-description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
-hide: true
-hidefromtoc: true
+description: Det här dokumentet innehåller information om hur du hanterar sandlådor via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
-source-git-commit: 02a17d8aed743b03219958cae2f0585f871e56f6
+source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '246'
 ht-degree: 0%
 
 ---

@@ -1,13 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
-description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
-hide: true
-hidefromtoc: true
+description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 02a17d8aed743b03219958cae2f0585f871e56f6
+source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '802'
 ht-degree: 0%
 
 ---

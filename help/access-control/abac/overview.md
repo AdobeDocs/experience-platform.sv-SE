@@ -2,10 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
-hide: true
-hidefromtoc: true
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 70c0ba81c682fd512c24265f12d1fef6ca14b34e
+source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
 workflow-type: tm+mt
 source-wordcount: '1575'
 ht-degree: 0%
