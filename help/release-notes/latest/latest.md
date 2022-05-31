@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8e1f4d8cef1a962a056328417a1dbdff1aed2078
+source-git-commit: 1b417935d557f7d58039c508544ed768f6ad1cc4
 workflow-type: tm+mt
-source-wordcount: '1667'
+source-wordcount: '1701'
 ht-degree: 2%
 
 ---
@@ -252,7 +252,8 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | Betaversion av [!DNL Zendesk] källa | Använd [!DNL Zendesk] källa till inhämtning av användar-, agent- och organisationsdata från din [!DNL Zendesk] instans för [!DNL Profile] berikning. Se [[!DNL Zendesk] källöversikt](../../sources/connectors/customer-success/zendesk.md) för mer information. |
-| Stöd för datainsamling från Adobe | Använd källkatalogen i Platform för att få tillgång till dina data på Platform Edge Network, inklusive Data Prep för datainsamling och förbättrat stöd för varningar om dataprep. Se [Översikt över datakällan för Adobe Data Collection](../../sources/connectors/adobe-applications/data-collection.md) för mer information. |
+| Allmän tillgänglighet för B2B [!DNL Microsoft Dynamics] källa | Nu kan du använda [!DNL Microsoft Dynamics] källa för att importera B2B-objekt som konton, möjligheter, kampanjer, marknadsföringslistor och medlemmar i marknadsföringslistan. Se [[!DNL Microsoft Dynamics] källöversikt](../../sources/connectors/crm/ms-dynamics.md) för mer information. |
+| Stöd för datainsamling från Adobe | Använd källkatalogen för att komma åt dina Data Collection Experience Edge-data, inklusive Data Prep för datainsamling och förbättrat stöd för datavarningar från Data Prep. Se [Översikt över datakällan för Adobe Data Collection](../../sources/connectors/adobe-applications/data-collection.md) för mer information. |
 | Stöd för att importera filer med `ISO-8859-1` kodning | Använd `encoding` parameter att importera `ISO-8859-1` kodade filer med en molnlagringskälla till plattformen med [!DNL Flow Service] API. Se guiden [skapa en anslutning till molnlagringskälla](../../sources/tutorials/api/collect/cloud-storage.md) för mer information. |
 
 {style=&quot;table-layout:auto&quot;}

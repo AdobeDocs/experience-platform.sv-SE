@@ -5,9 +5,9 @@ title: Microsoft Dynamics Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Microsoft Dynamics till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 6ca162ce-2016-4270-b741-301cf4230233
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 4fbf1b9a55c755d0bac9e15efbf6bdb25fa24deb
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '282'
 ht-degree: 1%
 
 ---
@@ -21,6 +21,21 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 ## IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Se [IP-adress tillåtelselista](../../ip-address-allow-list.md) sida för mer information.
+
+## Fältmappning från [!DNL Microsoft Dynamics] till XDM
+
+Så här upprättar du en källanslutning mellan [!DNL Microsoft Dynamics] och Platform [!DNL Microsoft Dynamics] källdatafält måste mappas till rätt mål-XDM-fält innan de kan hämtas till Platform.
+
+Mer information om fältmappningsreglerna mellan [!DNL Microsoft Dynamics] datauppsättningar och plattform:
+
+- [Kontakter](../adobe-applications/mapping/dynamics.md#contacts)
+- [Leads](../adobe-applications/mapping/dynamics.md#leads)
+- [Konton](../adobe-applications/mapping/dynamics.md#accounts)
+- [Möjligheter](../adobe-applications/mapping/dynamics.md#opportunities)
+- [Kontaktroller för affärsmöjlighet](../adobe-applications/mapping/dynamics.md#opportunity-contact-roles)
+- [Kampanjer](../adobe-applications/mapping/dynamics.md#campaigns)
+- [Marknadsföringslista](../adobe-applications/mapping/dynamics.md#marketing-list)
+- [Medlemmar i marknadsföringslistan](../adobe-applications/mapping/dynamics.md#marketing-list-members)
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Microsoft Dynamics] till [!DNL Platform] med API:er eller användargränssnittet:
 
