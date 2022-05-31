@@ -4,9 +4,9 @@ user-guide-title: Hjälp om datahygien
 breadcrumb-title: Handbok för datahygien
 user-guide-description: Hantera förfrågningar om konsumentdata för att följa juridiska sekretessregler som GDPR och CCPA.
 feature: Privacy
-source-git-commit: adce89e5601daf18fe9cacb704a787472262db41
+source-git-commit: 9057d424d63217a3cef7ad2237a65700d9159323
 workflow-type: tm+mt
-source-wordcount: '54'
+source-wordcount: '52'
 ht-degree: 3%
 
 ---
@@ -18,9 +18,8 @@ ht-degree: 3%
 * Användargränssnitt för datahygien {#ui}
    * [Översikt](./ui/overview.md)
    * [Bläddra bland befintliga arbetsorder](./ui/browse.md)
-   * [Ta bort konsumentdata](./ui/delete-consumer.md)
    * [Hantera TTL (time to live) för datauppsättningar](./ui/ttl.md)
 * API för datahygien {#api}
    * [Översikt](./api/overview.md)
-   * [Arbetsorder](./api/workorder.md)
    * [TTL (DataSet Time to live)](./api/ttl.md)
+   * [Raderingsjobb för konsument](./api/jobs.md)

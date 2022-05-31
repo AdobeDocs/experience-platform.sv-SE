@@ -2,11 +2,9 @@
 title: Användargränssnittshandbok för datahygien
 description: Lär dig hur du hanterar datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
-source-wordcount: '157'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
@@ -25,8 +23,7 @@ Om du vill komma åt arbetsytan väljer du **[!UICONTROL Data Hygiene]** i den v
 
 ![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/overview/home.png)
 
-Härifrån kan du bläddra bland befintliga arbetsorder och skapa nya datahygien. Läs mer i följande avsnitt i den här handboken:
+Härifrån kan du bläddra bland befintliga arbetsorder och konfigurera nya datahygienåtgärder. Läs mer i följande avsnitt i den här handboken:
 
 * [Bläddra bland befintliga arbetsorder](./browse.md)
-* [Ta bort konsumentdata](./delete-consumer.md)
 * [Hantera TTL (time to live) för datauppsättningar](./ttl.md)

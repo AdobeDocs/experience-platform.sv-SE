@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b557946252cd2afc07159caad939ec3a11d35e28
+source-git-commit: c318d64f6dc09094855ec20d998a7c41d837211f
 workflow-type: tm+mt
-source-wordcount: '2369'
+source-wordcount: '2355'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 Nya funktioner i Adobe Experience Platform:
 
-- [Attributbaserad åtkomstkontroll](#abac) —>
+- [Attributbaserad åtkomstkontroll](#abac)
 - [Datahygien](#hygiene)
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
@@ -60,8 +60,9 @@ Experience Platform har en rad funktioner för datahygien som gör att du kan ha
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Ta bort kund | [Ta bort konsumentposter](../../hygiene/ui/delete-consumer.md) från datasjön och profilarkivet baserat på primära identitetsdata. |
 | TTL (Time to live) för datauppsättningar | [Schemalägg TTL:er](../../hygiene/ui/ttl.md) för plattformsdatauppsättningar. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Mer information om granskningsloggar i Platform finns i [datahygienöversikt](../../hygiene/home.md).
 

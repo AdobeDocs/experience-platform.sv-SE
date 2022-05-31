@@ -2,11 +2,9 @@
 title: Datahygien - översikt
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '214'
 ht-degree: 0%
 
 ---
@@ -19,11 +17,11 @@ ht-degree: 0%
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
-Plattformens datahygifunktioner gör att ni kan hantera lagrade konsumentdata genom programmatisk borttagning av konsumentregister och datauppsättningar.
+Plattformens datahygifunktioner gör att ni kan hantera lagrade konsumentdata genom att ta bort programmatiska datauppsättningar.
 
 ## [!UICONTROL Data Hygiene] Arbetsyta i användargränssnittet
 
-The [!UICONTROL Data Hygiene] på arbetsytan i användargränssnittet för plattformen kan du konfigurera och schemalägga datahygienåtgärder och verifiera att dina register bevaras som förväntat.
+The [!UICONTROL Data Hygiene] I plattformsgränssnittet kan du konfigurera och schemalägga dataåtgärder för hygienen, vilket gör att du kan vara säker på att dina poster bevaras som förväntat.
 
 Detaljerade anvisningar om hur du hanterar datahygien i användargränssnittet finns i [Användargränssnittshandbok för datahygien](./ui/overview.md).
 

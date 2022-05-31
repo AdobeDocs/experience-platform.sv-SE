@@ -2,16 +2,14 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-hide: true
-hidefromtoc: true
-source-git-commit: 41fee3bacb441c2f773382de215eba8bfac9f9df
+source-git-commit: c24aa700eb425770266bbee5c187e2e87b15a9ac
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '402'
 ht-degree: 0%
 
 ---
 
-# Bläddra bland arbetsorder för datahygien
+# Bläddra bland arbetsorder för datahygien {#browse-work-orders}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
@@ -23,7 +21,7 @@ ht-degree: 0%
 >
 >Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Shield for Healthcare.
 
-När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en särskild datahygienprocess (t.ex. att ta bort konsumentdata), som omfattar dess aktuella status och andra relaterade detaljer.
+När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datahygienprocess, t.ex. en schemalagd TTL-tid (time to live) för en datauppsättning, som inkluderar dess nuvarande status och andra relaterade detaljer.
 
 Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Adobe Experience Platform användargränssnitt.
 
@@ -33,23 +31,20 @@ När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet vi
 
 ![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
-I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** för att visa en lista över uppgifter som rör borttagning av konsumenter, och **[!UICONTROL Dataset]** om du vill visa en lista med TTL-scheman (time-to-live) för datauppsättningar.
+<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of time-to-live (TTL) schedules for datasets.
 
-![Bilden visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
+![Image showing the [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png) -->
 
 Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 
 ![Bild på de arbetsorderfilter som visas](../images/ui/browse/filters.png)
 
-Beroende på vilken flik du visar finns olika filter:
-
-| Filter | Kategori | Beskrivning |
-| --- | --- | --- |
-| [!UICONTROL Status] | [!UICONTROL Consumer] &amp; [!UICONTROL Dataset] | Filtrera baserat på arbetsorderns aktuella status. |
-| [!UICONTROL Date created] | [!UICONTROL Consumer] | Filtrera baserat på när konsumentborttagningsbegäran gjordes. |
-| [!UICONTROL Date created] | [!UICONTROL Dataset] | Filtrera baserat på när konsumentborttagningsbegäran gjordes. |
-| [!UICONTROL Deletion date] | [!UICONTROL Dataset] | Filtrera baserat på det borttagningsdatum som TTL har schemalagts. |
-| [!UICONTROL Date updated] | [!UICONTROL Dataset] | Filtrera baserat på när datamängden TTL senast uppdaterades. TTL-skapelser och förfallodatum räknas som uppdateringar. |
+| Filter | Beskrivning |
+| --- | --- |
+| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status. |
+| [!UICONTROL Date created] | Filtrera baserat på när datauppsättningens TTL-begäran gjordes. |
+| [!UICONTROL Deletion date] | Filtrera baserat på det borttagningsdatum som TTL har schemalagts. |
+| [!UICONTROL Date updated] | Filtrera baserat på när datamängden TTL senast uppdaterades. TTL-skapelser och förfallodatum räknas som uppdateringar. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -59,22 +54,21 @@ Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
 ![Bild som visar ett arbetsorders-ID som markeras](../images/ui/browse/select-work-order.png)
 
-Beroende på vilken typ av arbetsordning du har valt visas olika information och kontroller. Dessa beskrivs i avsnitten nedan.
+<!-- Depending on the type of work order selected, different information and controls are provided. These are covered in the sections below.
 
-### Information om borttagning av kund
+### Consumer delete details
 
-<!-- (Not available for initial release)
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="Consumer delete response"
 >abstract="When a consumer deletion process receives a response from the system, these messages are displayed under the **[!UICONTROL Result]** section. If a problem occurs while a work order is processing, any relevant error messages will appear in this section to help you troubleshoot the issue. To learn more, see the data hygiene UI guide."
--->
 
-Detaljerna för en begäran om att ta bort en kund är skrivskyddade och visar dess grundläggande attribut, till exempel dess aktuella status och den tid som gått sedan begäran gjordes.
 
-![Bild som visar informationssidan för en arbetsorder som ska tas bort av en kund](../images/ui/browse/consumer-delete-details.png)
+The details of a consumer delete request are read-only, displaying its basic attributes such as its current status and the time elapsed since the request was made.
 
-### TTL-information för datauppsättning
+![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
+
+### Dataset TTL details -->
 
 Detaljsidan för en datauppsättnings-TTL innehåller information om dess grundläggande attribut, inklusive det schemalagda förfallodatumet på de dagar som återstår innan borttagningen sker. I den högra listen kan du använda kontroller för att redigera eller avbryta TTL-värdet.
 
@@ -82,7 +76,4 @@ Detaljsidan för en datauppsättnings-TTL innehåller information om dess grundl
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
-
-* [Ta bort en konsument](./delete-consumer.md)
-* [Schemalägg en datamängd-TTL](./ttl.md)
+I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i guiden [schemalägga en datamängd-TTL](./ttl.md).
