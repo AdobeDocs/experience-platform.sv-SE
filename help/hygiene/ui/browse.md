@@ -4,9 +4,9 @@ description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar 
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 hide: true
 hidefromtoc: true
-source-git-commit: e539ee73b04230ac6e3dc4801ce0f8446bec8de6
+source-git-commit: 41fee3bacb441c2f773382de215eba8bfac9f9df
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >id="platform_hygiene_workorders"
 >title="ID för arbetsorder"
 >abstract="När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar med andra ord en specifik datahygienprocess, som omfattar dess aktuella status och andra relaterade detaljer. Varje arbetsorder tilldelas automatiskt ett eget unikt ID när den skapas."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/browse.html" text="Mer information finns i användargränssnittsguiden för datahygien."
+>text="See the data hygiene UI guide to learn more."
 
 >[!IMPORTANT]
 >
