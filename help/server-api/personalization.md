@@ -3,7 +3,7 @@ title: Hämta personaliseringsinnehåll från andra Adobe-lösningar
 description: Lär dig hur du använder API:t för Adobe Experience Platform Edge Network Server för att hämta personaliserat innehåll från personaliseringslösningar från Adobe
 seo-description: Learn how to use the Adobe Experience Platform Edge Network Server API to retrieve personalized content from Adobe personalization solutions
 keywords: personalisering, server-api; Adobe Experience Platform Edge Network hämta personalisering
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 3c9dff35cf1645b31207719ec73a68da37e8d685
 workflow-type: tm+mt
 source-wordcount: '671'
 ht-degree: 8%
@@ -138,7 +138,7 @@ POST /ee/v2/interact
 ### Begäran {#request}
 
 ```shell
-curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}"
+curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}"
 -H "Authorization: Bearer {TOKEN}"
 -H "x-gw-ims-org-id: {ORG_ID}"
 -H "x-api-key: {API_KEY}"
@@ -253,13 +253,13 @@ Meddelanden till höger `id` För att rapporteringen ska kunna speglas på rätt
 ### API-format
 
 ```http
-POST /v2/collect
+POST /ee/v2/collect
 ```
 
 ### Begäran
 
 ```shell
-url -X POST "https://server.adobedc.net/v2/collect?dataStreamId={DATASTREAM_ID}" 
+url -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_ID}" 
 -H "Authorization: Bearer {TOKEN}" 
 -H "x-gw-ims-org-id: {ORG_ID}" 
 -H "x-api-key: {API_KEY}"

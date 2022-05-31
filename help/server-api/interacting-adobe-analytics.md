@@ -4,7 +4,7 @@ description: Lär dig hur du använder API:t för Edge Network Server för att i
 seo-description: Learn how to use the Edge Network Server API to interact with Adobe Analytics
 keywords: datainsamling, Utlopp. Analyser. Adobe Experience Platform Edge Network API;analytics
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 08b1924c518a76873051b4038d8a1fe38dc7ddac
+source-git-commit: 396dc8d861f0e699a76aa367fc07fe62be804cc5
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 0%
@@ -28,7 +28,7 @@ Om du vill att Adobe Analytics ska kunna ta emot data från Server-API:t måste 
 ### API-format {#format}
 
 ```http
-POST https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}
+POST https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}
 ```
 
 ### Begäran {#request}
@@ -38,7 +38,7 @@ Exemplet nedan innehåller flera automatiskt mappade värden från `_experience.
 Alla värden som användarna mappar till dessa fält mappas automatiskt till rätt Analytics-värden, som om de ingick i API-begäran.
 
 ```shell
-curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}" \
+curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}" \
 -H "Authorization: Bearer {TOKEN}" 
 -H "x-gw-ims-org-id: {ORG_ID}" 
 -H "x-api-key: {API_KEY}" 
