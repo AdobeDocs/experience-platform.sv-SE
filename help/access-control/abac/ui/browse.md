@@ -5,10 +5,10 @@ description: Det här dokumentet innehåller information om attributbaserad åtk
 hide: true
 hidefromtoc: true
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+source-git-commit: 143db2c19ec5ee7628b5cb9b30e71f24b4b3dcc8
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '373'
+ht-degree: 3%
 
 ---
 
@@ -17,6 +17,17 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
+
+Behörigheter är det område i Adobe Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
+
+Med behörigheter kan du konfigurera:
+
+* [Etiketter](./labels.md)
+* [Behörigheter](./permissions.md)
+* [Profiler](./permissions.md)
+* [Roller](./roles.md)
+* [Sandlådor](./sandboxes.md)
+* [Användare](./users.md)
 
 För att få åtkomst till attributbaserade åtkomstkontrollsbehörigheter för [!DNL Experience Cloud]måste du vara administratör för din organisation som har en prenumeration på [!DNL Experience Cloud]. Adobe stöder flexibla administratörshierarkier för dina organisationer, men du måste vara produktadministratör för Adobe Experience Platform för att kunna konfigurera behörigheter. Se Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) för mer information.
 

@@ -5,9 +5,9 @@ description: Det här dokumentet innehåller information om attributbaserad åtk
 hide: true
 hidefromtoc: true
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+source-git-commit: 02a17d8aed743b03219958cae2f0585f871e56f6
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
+
+Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
+
+Genom Behörigheter kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för dessa roller. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll.
 
 Omedelbart efter [skapa en ny roll](#create-a-new-role)återgår du till **[!UICONTROL Roles]** -fliken. Om du redigerar behörigheter för en befintlig roll väljer du rollen från **[!UICONTROL Roles]** -fliken. Du kan också använda filteralternativet för att filtrera resultaten för att hitta en roll.
 

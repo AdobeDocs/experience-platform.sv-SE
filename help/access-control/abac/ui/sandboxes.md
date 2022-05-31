@@ -5,10 +5,10 @@ description: Det här dokumentet innehåller information om attributbaserad åtk
 hide: true
 hidefromtoc: true
 exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
-source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+source-git-commit: 02a17d8aed743b03219958cae2f0585f871e56f6
 workflow-type: tm+mt
-source-wordcount: '186'
-ht-degree: 1%
+source-wordcount: '243'
+ht-degree: 0%
 
 ---
 
@@ -17,6 +17,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
+
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser. Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Mer information om sandlådor finns i [Översikt över sandlådor](../../../sandboxes/home.md).
+
+## Konfigurera sandlådor
 
 Om du vill visa information och roller som en sandlåda har tilldelats/med väljer du **[!UICONTROL Sandboxes]** -fliken.
 
