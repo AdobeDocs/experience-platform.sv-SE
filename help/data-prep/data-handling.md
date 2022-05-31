@@ -5,9 +5,9 @@ title: Hantera dataformat med Data Prep
 topic-legacy: overview
 description: Det här dokumentet ger en översikt över hur olika datatyper hanteras i Data Prep.
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: 27c59904b1ebe98d65ff8d4001edc2a85cada294
+source-git-commit: 15afb221a3576b7a37ea02195549f246833b800d
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '575'
 ht-degree: 12%
 
 ---
@@ -106,3 +106,7 @@ Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatstr
 | V | Tidszon-ID | Text | America/Los_Angeles |
 | O | Tidszonsförskjutning | Text | GMT+8 |
 | Q/q | Kvartal på året | Tal/text | 3. 03, Q3; 3:e kvartalet |
+
+## Kartor {#maps}
+
+Kartor stöds för närvarande inte i [!DNL Data Prep].
