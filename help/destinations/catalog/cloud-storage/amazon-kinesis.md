@@ -3,7 +3,7 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
+source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
 workflow-type: tm+mt
 source-wordcount: '1778'
 ht-degree: 0%
@@ -98,6 +98,15 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 ### Autentiseringsinformation {#authentication-information}
 
+Ange fälten nedan och välj **[!UICONTROL Connect to destination]**:
+
+![Bild av gränssnittsskärmen som visar slutförda fält för Amazon Kinesis-autentiseringsinformation](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
+
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: I [!DNL Amazon Web Services], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!UICONTROL Region]**: Ange vilken [!DNL Amazon Web Services] region som data ska strömmas till.
+
+### Destinationsinformation {#destination-details}
+
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_kinesis_includesegmentnames"
 >title="Inkludera segmentnamn"
@@ -107,15 +116,6 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >id="platform_destinations_connect_kinesis_includesegmenttimestamps"
 >title="Inkludera tidsstämplar för segment"
 >abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
-
-Ange fälten nedan och välj **[!UICONTROL Connect to destination]**:
-
-![Bild av gränssnittsskärmen som visar slutförda fält för Amazon Kinesis-autentiseringsinformation](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
-
-* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: I [!DNL Amazon Web Services], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-* **[!UICONTROL Region]**: Ange vilken [!DNL Amazon Web Services] region som data ska strömmas till.
-
-### Destinationsinformation {#destination-details}
 
 När du har upprättat autentiseringsanslutningen till Amazon Kinesis-målet anger du följande information för målet:
 

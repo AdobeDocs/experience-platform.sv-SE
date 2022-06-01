@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
+source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
 workflow-type: tm+mt
-source-wordcount: '2331'
+source-wordcount: '2464'
 ht-degree: 0%
 
 ---
@@ -31,15 +31,15 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
-   ![Fliken Målkatalog](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
+   ![Färgmarkering för hur du kommer till fliken Målkatalog](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
 1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
 
-   ![Knappen Aktivera segment](../assets/ui/activate-batch-profile-destinations/activate-segments-button.png)
+   ![Markera bilden med knappen Aktivera segment](../assets/ui/activate-batch-profile-destinations/activate-segments-button.png)
 
 1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
 
-   ![Välj mål](../assets/ui/activate-batch-profile-destinations/select-destination.png)
+   ![Bild som visar hur du väljer ett eller flera mål att aktivera segment till](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt till [markera segment](#select-segments).
 
@@ -47,7 +47,7 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
 Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
 
-![Markera segment](../assets/ui/activate-batch-profile-destinations/select-segments.png)
+![Bildmarkering som visar hur du markerar ett eller flera segment som ska aktiveras](../assets/ui/activate-batch-profile-destinations/select-segments.png)
 
 
 ## Schemalägg segmentexport {#scheduling}
@@ -68,7 +68,7 @@ Använd kryssrutorna till vänster om segmentnamnen för att markera de segment 
 
 Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill skicka till målet.
 
-![Knappen Skapa schema](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
+![Markera bilder med knappen Skapa schema](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### Exportera fullständiga filer {#export-full-files}
 
@@ -90,7 +90,7 @@ Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill ski
 
 Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
 
-![Exportera fullständiga filer](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
+![Bild av användargränssnittet med alternativet Exportera hela filer markerat.](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
 1. Använd **[!UICONTROL Frequency]** för att välja exportfrekvens:
 
@@ -132,7 +132,7 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 >
 >Den första exporterade stegvisa filen innehåller alla profiler som kvalificerar sig för ett segment och fungerar som en bakgrundsfyllning.
 
-![Exportera inkrementella filer](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
+![Bild av användargränssnittet med alternativet Exportera stegvisa filer markerat.](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
 1. Använd **[!UICONTROL Frequency]** för att välja exportfrekvens:
 
@@ -164,11 +164,15 @@ Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. 
 
 Välj pennikonen för att öppna ett modalt fönster och redigera filnamnen. Filnamn får innehålla högst 255 tecken.
 
-![konfigurera filnamn](../assets/ui/activate-batch-profile-destinations/configure-name.png)
+>[!NOTE]
+>
+>Bilden nedan visar hur filnamn kan redigeras för Amazon S3-mål, men processen är identisk för alla gruppmål (till exempel SFTP eller Azure Blob Storage).
+
+![Bild som markerar pennikonen, som används för att konfigurera filnamn.](../assets/ui/activate-batch-profile-destinations/configure-name.png)
 
 I filnamnsredigeraren kan du välja olika komponenter att lägga till i filnamnet.
 
-![redigera filnamnsalternativ](../assets/ui/activate-batch-profile-destinations/activate-workflow-configure-step-2.png)
+![Bild som visar alla tillgängliga filnamnsalternativ.](../assets/ui/activate-batch-profile-destinations/activate-workflow-configure-step-2.png)
 
 Målnamnet och segment-ID kan inte tas bort från filnamn. Utöver dessa kan du lägga till följande:
 
@@ -191,17 +195,17 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
 1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
 
-   ![Lägg till ny mappning](../assets/ui/activate-batch-profile-destinations/add-new-field.png)
+   ![Markera bilden med knappen Lägg till nytt fält.](../assets/ui/activate-batch-profile-destinations/add-new-field.png)
 
 1. Markera pilen till höger om **[!UICONTROL Schema field]** post.
 
-   ![Välj källfält](../assets/ui/activate-batch-profile-destinations/select-target-field.png)
+   ![Bildmarkering som visar hur du väljer ett källfält.](../assets/ui/activate-batch-profile-destinations/select-target-field.png)
 
 1. I **[!UICONTROL Select field]** väljer du de XDM-attribut som du vill skicka till målet och väljer **[!UICONTROL Select]**.
 
-   ![Välj källfältssida](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
+   ![Bild som visar de olika fälten som är tillgängliga som källfält.](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
 
-1. Om du vill lägga till fler mappningar upprepar du steg 1 till 3.
+1. Om du vill lägga till fler mappningar upprepar du steg ett till tre.
 
 >[!NOTE]
 >
@@ -211,7 +215,7 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 * Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
 * Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
-![rekommenderade attribut](../assets/ui/activate-batch-profile-destinations/mandatory-deduplication.png)
+![Bild som visar förifyllda rekommenderade attribut i mappningssteget i segmentaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/mandatory-deduplication.png)
 
 ### Obligatoriska attribut {#mandatory-attributes}
 
@@ -384,11 +388,11 @@ På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **
 >
 >I det här steget söker Adobe Experience Platform efter brott mot dataanvändningspolicyn. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [Politiska åtgärder](../../rtcdp/privacy/data-governance-overview.md#enforcement) i dokumentationsavsnittet för datastyrning.
 
-![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
+![Bild som visar ett exempel på dataprincipöverträdelse.](../assets/common/data-policy-violation.png)
 
 Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-![Granska](../assets/ui/activate-batch-profile-destinations/review.png)
+![Bild som visar granskningsskärmen för segmentaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/review.png)
 
 ## Verifiera segmentaktivering {#verify}
 

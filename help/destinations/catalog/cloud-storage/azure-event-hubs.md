@@ -3,7 +3,7 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
+source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
 workflow-type: tm+mt
 source-wordcount: '1876'
 ht-degree: 0%
@@ -71,16 +71,6 @@ Om du väljer **[!UICONTROL Standard authentication]** typ för att ansluta till
 
 #### SAS-autentisering (Shared Access Signature) {#sas-authentication}
 
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_eventhubs_includesegmentnames"
->title="Inkludera segmentnamn"
->abstract="Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
-
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
->title="Inkludera tidsstämplar för segment"
->abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
-
 ![Bild av gränssnittsskärmen som visar slutförda fält för Azure Event Hubs-standardautentiseringsinformation](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
 
 Om du väljer **[!UICONTROL Standard authentication]** typ för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
@@ -91,6 +81,16 @@ Om du väljer **[!UICONTROL Standard authentication]** typ för att ansluta till
 * **[!UICONTROL Namespace]**: Fyll i [!DNL Azure Event Hubs] namnutrymme. Läs mer om [!DNL Azure Event Hubs] namnutrymmen i [Microsoft-dokumentation](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
 
 ### Destinationsinformation {#destination-details}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmentnames"
+>title="Inkludera segmentnamn"
+>abstract="Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
+>title="Inkludera tidsstämplar för segment"
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
 När du har upprättat autentiseringsanslutningen till Azure Event Hubs-målet anger du följande information för målet:
 
