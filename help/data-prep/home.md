@@ -5,9 +5,9 @@ title: Dataförhandsgranskning
 topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: 3dac1a80e640364f8c0b6b6fd81821499bf889b3
+source-git-commit: d6d8b6ad9877735848d04cb229b3059842471ee8
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,14 @@ Data Prep kan hantera olika dataformat som importerats till Platform på ett rob
 ## Skicka uppdateringar av delar av rader med [!DNL Data Prep]
 
 Direktuppspelande överföringar i [!DNL Data Prep] kan du skicka uppdateringar av delar av rader till [!DNL Profile Service] data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran. Mer information om hur du direktuppspelar överföringar i [!DNL Data Prep], se dokumentet på [skicka uppdateringar med partiella rader](./upserts.md).
+
+## Attributbaserad åtkomstkontroll i [!DNL Data Prep]
+
+Med attributbaserad åtkomstkontroll i Adobe Experience Platform kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut.
+
+Attributbaserad åtkomstkontroll ser till att du bara kan mappa de attribut du har tillgång till. Attribut som du inte har åtkomst till kan inte användas i direktmappningar och beräkningsfält. Om du inte har åtkomst till ett obligatoriskt fält kan du inte spara en mappning. Du kan inte heller mappa objekt eller objektarrayer om du inte har tillgång till något av de underordnade attributen. Du kan mappa andra element inom objektet eller objektarrayen separat.
+
+Se [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md) för mer information.
 
 ## Nästa steg
 
