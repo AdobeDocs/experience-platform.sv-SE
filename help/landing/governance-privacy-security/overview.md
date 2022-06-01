@@ -5,10 +5,9 @@ title: Styrning, sekretess och säkerhetsöversikt
 topic-legacy: overview
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
 exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f456b28016af6d2978933deac68f45c2f8d37f80
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '855'
 ht-degree: 1%
 
 ---
@@ -22,18 +21,18 @@ Experience Platform tillhandahåller flera tjänster och verktyg som gör att ni
 Tjänsterna kan kategoriseras i tre domäner:
 
 * [Datastyrning](#governance)
-* [Integritet](#privacy)
+* [Sekretess](#privacy)
 * [Säkerhet](#security)
 
 ## Datastyrning {#governance}
 
 Datastyrning är ett viktigt koncept som är sammankopplat med alla funktioner i Experience Platform. Datastyrning representerar er förmåga att kontrollera och förstå era data under hela resan via Platform. Detta innebär att upprätthålla datakvalitet, datalinje, datakatalogisering med mera.
 
-### Adobe Experience Platform Data Governance {#data-governance}
+### Adobe Experience Platform datastyrning {#data-governance}
 
 Adobe Experience Platform datastyrning är en plattformstjänst som gör att ni kan hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om dataanvändningsetiketter, dataanvändningspolicyer, policystyrning och datalänkning.
 
-Mer information finns i [Datastyrningsöversikten](../../data-governance/home.md).
+Se [Datastyrning - översikt](../../data-governance/home.md) för mer information.
 
 ### Katalog och datauppsättningar {#catalog}
 
@@ -41,7 +40,7 @@ Katalogtjänsten är systemet för registrering av dataplatser och datalänkning
 
 Katalogen organiserar inkapslade data i datauppsättningar, där varje datauppsättning innehåller metadata som kan användas för att etikettera och kategorisera data som den innehåller.
 
-Mer information om tjänsten finns i [Katalogtjänstöversikt](../../catalog/home.md). Mer information om hur du hanterar datauppsättningar i Experience Platform finns i översikten över [datauppsättningar](../../catalog/datasets/overview.md).
+Se [Katalogtjänst - översikt](../../catalog/home.md) för mer information om tjänsten. Mer information om hur du hanterar datauppsättningar i Experience Platform finns i [datauppsättningar, översikt](../../catalog/datasets/overview.md).
 
 ## Sekretess {#privacy}
 
@@ -53,25 +52,29 @@ Juridiska sekretessbestämmelser som EU:s allmänna dataskyddsförordning (GDPR)
 
 Adobe Experience Platform Privacy Service tillhandahåller ett RESTful-API och användargränssnitt för att hantera dessa förfrågningar. Med Privacy Service kan ni skicka in förfrågningar om åtkomst till eller radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
 
-Mer information finns i [Privacy Servicen overview](../../privacy-service/home.md).
+Se [Översikt över Privacy Servicen](../../privacy-service/home.md) för mer information.
 
 ### Samtyckesbearbetning {#consent}
 
 Många juridiska sekretessbestämmelser har infört krav på aktivt och specifikt samtycke när det gäller datainsamling, personalisering och andra användningsfall inom marknadsföring. För att uppfylla dessa krav kan Experience Platform samla in information om samtycke i enskilda kundprofiler och använda dessa inställningar som en avgörande faktor i hur varje kunds data används i arbetsflöden för plattformen längre fram i kedjan.
 
-Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten över [godkännandebearbetning i Experience Platform](./consent/adobe/overview.md).
+Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten på [behandling av samtycke i Experience Platform](./consent/adobe/overview.md).
 
-Mer information om hur du bearbetar kundens medgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0 finns i översikten på [IAB TCF 2.0-stöd i Platform](./consent/iab/overview.md).
+Mer information om hur man behandlar data om kundsamtycke i enlighet med IAB Transparency and Consent Framework (TCF) 2.0 finns i översikten på [Stöd för IAB TCF 2.0 i Platform](./consent/iab/overview.md).
 
 ## Säkerhet {#security}
 
 Integriteten och säkerheten hos era data är oundgänglig för ert företag, och denna risk kräver branschledande säkerhetsfunktioner. För att klara den här utmaningen har Platform flera verktyg som hjälper dig att skydda dina dataåtgärder.
 
+### Datakryptering
+
+Alla plattformsdata krypteras under överföring och i vila. Visa dokumentet på [datakryptering på plattform](./encryption.md) för mer information.
+
 ### Åtkomstkontroll {#access-control}
 
 Experience Platform använder Adobe Admin Console för att tillhandahålla rollbaserad åtkomstkontroll för olika plattformsfunktioner. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 
-Mer information finns i [översikten över åtkomstkontroll](../../access-control/home.md).
+Se [åtkomstkontroll - översikt](../../access-control/home.md) för mer information.
 
 ### Sandlådor {#sandboxes}
 
@@ -79,7 +82,7 @@ Experience Platform är byggt för att berika applikationer för digitala upplev
 
 För att tillgodose behovet av flexibilitet i utvecklingen tillhandahåller Experience Platform sandlådor som delar upp en enda plattformsinstans i separata virtuella miljöer för att hjälpa er att utveckla era program för digitala upplevelser baserat på er egen utvecklingslivscykel.
 
-Mer information finns i [översikten över sandlådor](../../sandboxes/home.md).
+Se [översikt över sandlådor](../../sandboxes/home.md) för mer information.
 
 ## Nästa steg
 
