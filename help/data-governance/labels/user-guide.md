@@ -5,9 +5,9 @@ title: Hantera dataanvändningsetiketter i användargränssnittet
 topic-legacy: labels
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 3876af19ef100f29ef738cf7518696a57600945a
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1119'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 
 ![Dölj ärvda etiketter](../images/labels/inherited-labels.png)
 
-## Hantera etiketter på fältnivå
+## Hantera etiketter på datamängdsfältnivå
 
 Fortsätta arbetsflödet för [lägga till och redigera etiketter för dataanvändning på datauppsättningsnivå](#add-labels)kan du också hantera fältetiketter i **[!UICONTROL Data Governance]** arbetsyta för den datauppsättningen.
 
@@ -99,6 +99,12 @@ Du kan upprepa de här stegen om du vill fortsätta lägga till och redigera eti
 ![Markera flera fält om du vill använda etiketter på fältnivå samtidigt.](../images/labels/multiple-fields.png)
 
 Det är viktigt att komma ihåg att arv endast flyttas från den översta nivån nedåt (datamängd → fält), vilket innebär att etiketter som används på fältnivå inte sprids till andra fält eller datamängder.
+
+## Hantera etiketter på schemanivå
+
+Du kan lägga till etiketter direkt i ett eller flera scheman inom det schemat. Alla fält som används på schemanivå sprids till alla datauppsättningar som baseras på det schemat.
+
+Se självstudiekursen om [hantera etiketter på schemanivå](../../xdm/tutorials/labels.md) för mer information.
 
 ## Hantera anpassade etiketter
 

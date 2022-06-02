@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
+source-git-commit: 6156d84cfdd33f8fe491e9a80e3711cf304733e9
 workflow-type: tm+mt
-source-wordcount: '1575'
+source-wordcount: '1576'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ Experience Data Model (XDM) är en öppen källkodsspecifikation som är utforma
 
 Med attributbaserad åtkomstkontroll kan du
 
-* Använd attribut på fältgrupper och/eller klasser. Detta gör att flera scheman med samma fältgrupper eller klasser kan ha fält taggade med samma attribut, beroende på konfigurationen på fältgrupps- eller klassnivå.
+* [Tillämpa dataanvändningsetiketter på fältgrupper och klasser](../../xdm/tutorials/labels.md). Detta gör att flera scheman med samma fältgrupper eller klasser kan ha fält taggade med samma attribut, beroende på konfigurationen på fältgrupps- eller klassnivå.
 * Konfigurera användaråtkomst till specifika XDM-schemafält beroende på vilka behörighetsgrupper som används för roller som tilldelats användare.
 
 Mer information om XDM finns i [XDM - översikt](../../xdm/home.md).
