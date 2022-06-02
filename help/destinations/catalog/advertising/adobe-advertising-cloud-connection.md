@@ -1,19 +1,19 @@
 ---
 title: Adobe Advertising Cloud DSP-anslutning
-description: 'Adobe Advertising Cloud DSP är ett integrerat mål för [!DNL Adobe Real-time Customer Data Profile]så att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.  '
-source-git-commit: 2b1e74a704003bbbf1d72e4a01b2fb9f9c8d22ca
+description: Adobe Advertising Cloud DSP är ett integrerat mål för [!DNL Adobe Real-time Customer Data Profile]så att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.
+exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
+source-git-commit: 2b8c9d81b7d9eddbbed3119a496e9c8d37e6c415
 workflow-type: tm+mt
-source-wordcount: '863'
+source-wordcount: '914'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Advertising Cloud DSP-anslutning
 
 ## Översikt {#overview}
 
-Med Advertising Cloud DSP mål kan ni dela autentiserade förstapartssegment med godkända annonsörer och användare för kampanjaktivering med DSP.<!-- To learn more about the Real-Time CDP integration with DSP, see [About Activating Authenticated Segments from Audience Sources](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html). -->
+Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP) kan ni dela autentiserade förstapartssegment med godkända annonsörer och användare för kampanjaktivering med DSP. Mer information om Real-Time CDP integrering med DSP finns i [Om aktivering av autentiserade segment från målgruppskällor](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html).
 
 >[!IMPORTANT]
 >
@@ -35,8 +35,8 @@ En mediebyrå med ett DSP konto kör en återannonskampanj för sina kunders rä
 
 * DSP på konto- och kampanjnivå för att aktivera segmentdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP kommer att utföra den här konfigurationen.
 * Experience Cloud organisation-ID för Experience Platform-kontot. Du kan hitta ditt ID på din [!DNL Real-Time CDP] användarprofilsida.
-* A [!DNL Real-Time CDP] källa i DSP<!-- [[!DNL Real-Time CDP] source in DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) --> för att få segment för kampanjaktivering. Din DSP skapar källan med ditt Experience Cloud organisation-ID.
-* Källnyckeln för DSP eller annonsören, som genereras när en [!DNL Real-Time CDP] källan skapas i DSP<!-- [[!DNL Real-Time CDP] source is created in DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) -->. Ditt DSP kommer att dela nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, som [förklaras nedan](#authenticate).
+* A [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) för att få segment för kampanjaktivering. Din DSP skapar källan med ditt Experience Cloud organisation-ID.
+* Källnyckeln för DSP eller annonsören, som genereras när en [[!DNL Real-Time CDP] källan skapas i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Ditt DSP kommer att dela nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, som [förklaras nedan](#authenticate).
 * Kunddata som består av e-post eller hash-kodade e-postmeddelanden.
 
 ## Identiteter som stöds {#supported-identities}
@@ -72,7 +72,7 @@ Följ instruktionerna för att ansluta till målet [skapa en målanslutning](/he
 
 Om du vill ansluta till målet anger du följande parameter i [!UICONTROL Connection type] och sedan markera **[!UICONTROL Connect to destination]**.:
 
-* **[!UICONTROL Account or Advertiser Key]**: Detta [!UICONTROL Source Key] genereras när en [!DNL Real-Time CDP] källan skapas i DSP användargränssnitt<!-- [[!DNL Real-Time CDP] source is created in the DSP user interface](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) -->. Ditt DSP-kontoteam delar nyckeln med dig när de har skapat källan.
+* **[!UICONTROL Account or Advertiser Key]**: Detta [!UICONTROL Source Key] genereras när en [[!DNL Real-Time CDP] källan skapas i DSP användargränssnitt](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Ditt DSP-kontoteam delar nyckeln med dig när de har skapat källan.
 
 ![Fält för anslutningstyp](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
