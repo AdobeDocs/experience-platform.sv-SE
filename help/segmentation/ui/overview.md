@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: ce3d5e3db28d39b8d7d5a984700dd681c650ac94
+source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
 workflow-type: tm+mt
-source-wordcount: '1648'
+source-wordcount: '1701'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,16 @@ Mer information finns på [instrumentpanelsguide för segment](../../dashboards/
 
 ## Bläddra {#browse}
 
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_churncolumnname"
+>title="Churn"
+>abstract="Kurvan anger den procentandel profiler som ändras inom en segmentdefinition jämfört med den senaste gången segmentjobbet kördes."
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_evaluationmethodcolumnname"
+>title="Utvärderingsmetod"
+>abstract="Utvärderingsmetoder för segment är batch, streaming och edge."
+
 Välj **[!UICONTROL Browse]** om du vill visa en lista över alla segmentdefinitioner för din IMS-organisation.
 
 ![](../images/ui/overview/segment-browse-all.png)
@@ -65,7 +75,7 @@ Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillh�
 
 Kurvan anger hur många procent av profilerna som ändras inom en segmentdefinition jämfört med den senaste gången segmentjobbet kördes, medan antalet profiler representerar det totala antalet profiler som kvalificerar sig för segmentet.
 
-Utvärderingsmetoden kan antingen vara direktuppspelning eller batch. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema.
+Utvärderingsmetoden kan antingen vara direktuppspelning, batch eller kant. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema. Kantsegment utvärderas i realtid, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
 ![](../images/ui/overview/segment-browse-segments.png)
 
