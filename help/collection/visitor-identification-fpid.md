@@ -4,7 +4,7 @@ description: Lär dig att konsekvent identifiera besökare via server-API med hj
 seo-description: Learn how to consistently identify visitors via the Server API, by using the FPID
 keywords: gränsnätverk;gateway;api;besökare;identifiering;fpid
 exl-id: c61d2e7c-7b5e-4b14-bd52-13dde34e32e3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 946959d450cddd95fc6ee3775686bd6b4156c8c2
 workflow-type: tm+mt
 source-wordcount: '340'
 ht-degree: 0%
@@ -111,7 +111,7 @@ Identifiera användare via `FPID`, se till att `FPID` cookie har skickats innan 
 ## Request with `FPID` passed as cookie header
 
 ```shell
-curl -X POST 'https://edge.adobedc.net/ee/v2/interact?dataStreamId={Data Stream ID}' \
+curl -X POST 'https://edge.adobedc.net/v2/interact?dataStreamId={Data Stream ID}' \
 -H 'cookie: FPID=e98f38e6-6183-442d-8cd2-0e384f4c8aa8' \
 -H 'Content-Type: application/json' \
 -d '{
