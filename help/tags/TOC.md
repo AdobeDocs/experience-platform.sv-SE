@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
+source-git-commit: 638b4fea8a80763a2b46863ecb0e3969a6fc127a
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '392'
 ht-degree: 25%
 
 ---
@@ -119,6 +119,9 @@ ht-degree: 25%
       * [!DNL BrightCove] videouppföljning {#brightcove}
          * [Översikt](./extensions/web/brightcove/overview.md)
          * [Versionsinformation](./extensions/web/brightcove/release-notes.md)
+      * Google datalager {#google-data-layer}
+         * [Översikt](./extensions/web/google-data-layer/overview.md)
+         * [Versionsinformation](./extensions/web/google-data-layer/release-notes.md)
       * [!DNL YouTube] videospårningstillägg {#youtube}
          * [Översikt](./extensions/web/youtube/overview.md)
          * [Versionsinformation](./extensions/web/youtube/release-notes.md)
