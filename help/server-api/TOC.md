@@ -5,10 +5,10 @@ user-guide-title: API-dokumentation för Edge Network Server
 breadcrumb-title: API-dokumentation för Edge Network Server
 user-guide-description: Lär dig vad API:t för Edge Network Server är och hur du kan använda det.
 feature: Data Collection
-source-git-commit: c6ecd493bd8366d49ca0b9dd851c92c5ce732d18
+source-git-commit: 492efa6ef0d95b502839d612988f0b7f59b8bd69
 workflow-type: tm+mt
-source-wordcount: '67'
-ht-degree: 5%
+source-wordcount: '63'
+ht-degree: 6%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 5%
 * Samverka med andra Adobe-lösningar {#interacting-other-adobe-solutions}
    * [Interagera med Adobe Analytics](interacting-adobe-analytics.md)
 * Personalisering {#personalization}
-   * [Hämta personaliseringsinnehåll från Adobe-lösningar](personalization-overview.md)
+   * [Personalisering - översikt](personalization-overview.md)
    * [Personalisering via Offer decisioning](personalization-offer-decisioning.md)
    * [Personalisering via Adobe Target](personalization-target.md)
 * [Felhantering](error-handling.md)

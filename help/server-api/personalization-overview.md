@@ -1,19 +1,17 @@
 ---
-title: Hämta personaliseringsinnehåll från andra Adobe-lösningar
+title: Personalisering - översikt
 description: Lär dig hur du använder API:t för Adobe Experience Platform Edge Network Server för att hämta personaliserat innehåll från personaliseringslösningar från Adobe
 seo-description: Learn how to use the Adobe Experience Platform Edge Network Server API to retrieve personalized content from Adobe personalization solutions
 keywords: personalisering, server-api; Adobe Experience Platform Edge Network hämta personalisering
-source-git-commit: 4fd5b5eebdeca065582365343b605a5b9ee695bb
+source-git-commit: 492efa6ef0d95b502839d612988f0b7f59b8bd69
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '751'
 ht-degree: 7%
 
 ---
 
 
-# Hämta personaliseringsinnehåll från Adobe-lösningar
-
-## Översikt {#overview}
+# Personalisering - översikt
 
 Med [!DNL Server API]kan ni hämta personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) och [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=en).
 
@@ -138,7 +136,7 @@ Personaliserat innehåll som hämtats från personaliseringslösningar presenter
 **API-format**
 
 ```http
-POST /v2/interact
+POST /ee/v2/interact
 ```
 
 ### Begäran {#request}
