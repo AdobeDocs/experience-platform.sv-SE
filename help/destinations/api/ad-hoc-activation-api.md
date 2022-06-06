@@ -6,9 +6,9 @@ description: I den här artikeln beskrivs hela arbetsflödet för aktivering av 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 049b9c3ef2b96001a23ee54ac3e86a4df7b4ecea
 workflow-type: tm+mt
-source-wordcount: '1045'
+source-wordcount: '1098'
 ht-degree: 0%
 
 ---
@@ -91,9 +91,10 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Innan du kan aktivera segment via API:t för ad hoc-aktivering måste du först ha ett aktiveringsflöde konfigurerat i plattformsgränssnittet för det valda målet.
 
-Detta innefattar att starta aktiveringsarbetsflödet, välja segment, konfigurera ett schema och aktivera dem.
+Detta innefattar att starta aktiveringsarbetsflödet, välja segment, konfigurera ett schema och aktivera dem. Du kan använda gränssnittet eller API:t för att skapa ett aktiveringsflöde:
 
-I följande självstudiekurs finns detaljerade anvisningar om hur du konfigurerar ett aktiveringsflöde för dina gruppmål: [Aktivera målgruppsdata för att batchprofilera exportmål](../ui/activate-batch-profile-destinations.md).
+* [Använd användargränssnittet för plattformen för att skapa ett aktiveringsflöde för att batchprofilera exportdestinationer](../ui/activate-batch-profile-destinations.md)
+* [Använd API:t för Flow Service för att ansluta till exportmål för batchprofiler och aktivera data](../api/connect-activate-batch-destinations.md)
 
 ## Steg 4: Hämta det senaste segmentexportjobb-ID:t {#segment-export-id}
 
@@ -156,7 +157,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera segment för. |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera segment för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i [dokumentation om målarbetsyta](/help/destinations/ui/destinations-workspace.md#browse). |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de segment som du vill aktivera till det valda målet. |
 | <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [segmentexport](../../segmentation/api/export-jobs.md#retrieve-list) jobb. Se [Steg 4: Hämta det senaste segmentexportjobb-ID:t](#segment-export-id) för instruktioner om hur du hittar detta ID. |
 
