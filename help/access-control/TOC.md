@@ -4,7 +4,7 @@ user-guide-title: Åtkomstkontroll i hjälpen för Adobe Experience Platform
 breadcrumb-title: Handbok för åtkomstkontroll
 user-guide-description: Använd produktprofiler i Adobe Admin Console för att länka användare med behörigheter och sandlådor.
 feature: Access Control
-source-git-commit: aa4dda26a55963ea26b0e050c8f2a39966da67d7
+source-git-commit: cd598b58af3067dd1615348beef3fb96e2233cba
 workflow-type: tm+mt
 source-wordcount: '116'
 ht-degree: 12%
@@ -17,7 +17,7 @@ ht-degree: 12%
 * [Översikt över åtkomstkontroll](home.md)
 * Attributbaserad åtkomstkontroll {#abac}
    * [Översikt](abac/overview.md)
-   * [Behörigheter] {#permissions-ui}
+   * Behörigheter {#permissions-ui}
       * [Bläddra](abac/ui/browse.md)
       * [Etiketter](abac/ui/labels.md)
       * [Behörigheter](abac/ui/permissions.md)
