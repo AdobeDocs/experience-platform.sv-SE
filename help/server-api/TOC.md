@@ -5,9 +5,9 @@ user-guide-title: API-dokumentation för Edge Network Server
 breadcrumb-title: API-dokumentation för Edge Network Server
 user-guide-description: Lär dig vad API:t för Edge Network Server är och hur du kan använda det.
 feature: Data Collection
-source-git-commit: 492efa6ef0d95b502839d612988f0b7f59b8bd69
+source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
 workflow-type: tm+mt
-source-wordcount: '63'
+source-wordcount: '65'
 ht-degree: 6%
 
 ---
@@ -17,6 +17,7 @@ ht-degree: 6%
 
 
 * [Översikt](overview.md)
+* [Prestandaskydd](guardrails.md)
 * [Autentisering](authentication.md)
 * Datainsamling {#data-collection}
    * [Datainsamling för en händelse](interactive-data-collection.md)

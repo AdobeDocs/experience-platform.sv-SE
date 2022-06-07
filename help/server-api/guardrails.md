@@ -1,47 +1,31 @@
 ---
-title: Servicenivåavtal och -mål
-description: Lär dig hur du konfigurerar autentisering för API:t för Edge Network Server
-seo-description: Learn how to configure authentication for the Edge Network Server API
+title: Prestandaskydd
+description: Lär dig hur du använder Server-API:t med optimala prestandaregativ
 keywords: datainsamling;samling;edge network;api;sla;slt;service levels
-hide: true
-hidefromtoc: true
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
 workflow-type: tm+mt
-source-wordcount: '515'
-ht-degree: 1%
+source-wordcount: '435'
+ht-degree: 2%
 
 ---
 
 
-# Guardrails
+# Prestandaskydd
 
 ## Översikt {#overview}
 
-Adobe kommer att göra kommersiellt rimliga ansträngningar för att [!DNL Server API] som är tillgängliga inom en månatlig drifttid på minst 99,9 % för varje region, under varje månatlig faktureringscykel.
+Prestandaskydd definierar användningsgränser som relaterar till Server API-användningsfall. Om du överskrider de prestandaskydd som beskrivs i den här artikeln kan prestandan försämras.
+
+Adobe ansvarar inte för prestandaförsämringar orsakade av överskridna användningsgränser. Kunder som genomgående överskrider prestandaskyddsrutinerna kan begära ytterligare bearbetningskapacitet för att undvika prestandaförsämringar.
 
 ## Definitioner
 
 * **Tillgänglighet** beräknas för varje femminutersintervall som den procentandel begäranden som bearbetas av Experience Adobe Experience Platform Edge Network och som inte misslyckas med fel och som endast gäller de Adobe Experience Platform Edge Network API:er som tillhandahålls. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
 * **Procentvärde för månatlig drifttid** för ett givet område beräknas som medelvärdet av tillgängligheten för alla femminutersintervall under en månad.
 * An **uppström** är en tjänst bakom Adobe Edge Network, som har aktiverats för ett specifikt datastream, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
-* A **förfrågan** som skickas till Server-API:t definieras som en eller flera begärandatsenheter.
 * A **begärandeenhet** motsvarar ett 8 kB-fragment av en begäran och ett uppströms konfigurerat för ett datastream.
+* A **förfrågan** är ett enda meddelande som skickas av en kundägd applikation till [!DNL Server API]. En begäran kan innehålla en eller flera begärandeenheter.
 * An **fel** är en begäran som misslyckas på grund av ett Adobe Experience Platform Edge Network [internt tjänstfel](error-handling.md).
-
-## Interna mål
-
-Adobe ingenjörsteam driftsätter nära telemetri i realtid, övervakning och utskalning för att säkerställa följande mål:
-
-* Mindre än 1 % av HTTP-begäranden returnerar `5xx` fel de senaste fem minuterna
-* Färre än 1 % av uppströmsanslutningarna returnerar ett fel under de senaste fem minuterna
-* En eventuell innehavarkapacitet fördubblas på mindre än 10 minuter från det att en gräns nås.
-
-## Undantag för serviceavtal
-
-Det åtagande på tjänstenivå som beskrivs ovan gäller inte problem med tillgänglighet eller prestanda som orsakas av följande händelser:
-
-* Faktorer som ligger utanför vår rimliga kontroll, inklusive Internet-åtkomst eller relaterade problem utanför Adobe infrastruktur.
-* All felaktig användning av [!DNL Server API], enligt de gränser som anges nedan.
 
 ## Tjänstbegränsningar
 
@@ -80,4 +64,3 @@ Tabellen nedan visar standardgränsvärdena. Om du behöver större enhetsgräns
 >[!NOTE]
 >
 >Beroende på nyttolasten är binära format i allmänhet 20-40 % mer kompakta, vilket gör att du kan skicka mer data än vad du skulle göra med vanlig JSON. Kontakta din kundtjänstrepresentant om du behöver en högre kapacitet för dina dataströmmar.
-
