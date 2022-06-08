@@ -4,9 +4,9 @@ description: Lär dig hur du tar bort konsumentposter i Adobe Experience Platfor
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: 95d75292b7697ef4f98e3ebd34c04724019ac37f
+source-git-commit: 6f94c7c5e844eaddd50653296875886757f6fb35
 workflow-type: tm+mt
-source-wordcount: '1076'
+source-wordcount: '1073'
 ht-degree: 0%
 
 ---
@@ -62,12 +62,12 @@ Om du vill ta bort konsumentdata från alla datauppsättningar väljer du **[!UI
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="Primär identitet"
->abstract="En primär identitet är ett attribut som kopplar en post till en konsumentprofil i Experience Platform. Det primära identitetsfältet för en datauppsättning definieras av det schema som datauppsättningen baseras på. I den här kolumnen måste du ange typen (eller namnutrymmet) för konsumentens primära identitet, till exempel&quot;e-postadress&quot; för e-postadresser och&quot;e-id&quot; för Experience Cloud-ID:n. Mer information finns i användargränssnittsguiden för datahygien."
+>abstract="En primär identitet är ett attribut som kopplar en post till en konsumentprofil i Experience Platform. Det primära identitetsfältet för en datauppsättning definieras av det schema som datauppsättningen baseras på. I den här kolumnen måste du ange typen (eller namnutrymmet) för konsumentens primära identitet, till exempel `email` för e-postadresser och `ecid` för Experience Cloud ID. Mer information finns i användargränssnittsguiden för datahygien."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="Identitetsvärde"
->abstract="I den här kolumnen måste du ange värdet för konsumentens primära identitet, som måste motsvara identitetstypen som anges i den vänstra kolumnen. Om den primära identitetstypen är &quot;e-post&quot; ska värdet vara konsumentens e-postadress. Mer information finns i användargränssnittsguiden för datahygien."
+>abstract="I den här kolumnen måste du ange värdet för konsumentens primära identitet, som måste motsvara identitetstypen som anges i den vänstra kolumnen. Om den primära identitetstypen är `email`ska värdet vara konsumentens e-postadress. Mer information finns i användargränssnittsguiden för datahygien."
 
 När du tar bort konsumentdata måste du ange identitetsinformation så att systemet kan avgöra vilka poster som ska tas bort. För alla datauppsättningar i plattformen tas poster bort baserat på **primär identitet** fält som definieras av datauppsättningens schema.
 
