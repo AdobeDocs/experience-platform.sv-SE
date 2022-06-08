@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 88e6f084ce1b857f785c4c1721d514ac3b07e80b
+source-git-commit: e059ff1066ef0197207667b40fb2f31c296464cb
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1586'
 ht-degree: 0%
 
 ---
@@ -99,7 +99,8 @@ curl -X POST \
 | `data.properties.columnDelimiter` | (Valfritt) En kolumnavgränsare för ett tecken som du kan ange när du samlar in platta filer. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges, ett komma (`,`) används som standardvärde. **Anteckning**: The `columnDelimiter` -egenskapen kan bara användas vid inhämtning av avgränsade filer. |
 | `data.properties.encoding` | (Valfritt) En egenskap som definierar den kodningstyp som ska användas när data hämtas till plattformen. Följande kodningstyper stöds: `UTF-8` och `ISO-8859-1`. **Anteckning**: The `encoding` -parametern är bara tillgänglig vid inhämtning av avgränsade CSV-filer. Andra filtyper kommer att importeras med standardkodningen, `UTF-8`. |
 | `data.properties.compressionType` | (Valfritt) En egenskap som definierar den komprimerade filtypen för förtäring. Komprimerade filtyper som stöds är: `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip`och `tar`. **Anteckning**: The `compressionType` -egenskapen kan bara användas vid inhämtning av avgränsade filer eller JSON-filer. |
-| `params.path` | Sökvägen till källfilen som du försöker komma åt. |
+| `params.path` | Sökvägen till källfilen som du försöker komma åt. Den här parametern pekar på en enskild fil eller en hel mapp. |
+| `params.type` | Filtypen för den källdatafil som du vill importera. Använd typ `file` för att importera en enskild fil och använda typ `folder` om du vill importera en hel mapp. |
 | `connectionSpec.id` | Det ID för anslutningsspecifikation som är kopplat till din specifika molnlagringskälla. Se [appendix](#appendix) för en lista över anslutningsspecifikations-ID:n. |
 
 **Svar**
