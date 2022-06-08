@@ -4,7 +4,7 @@ description: Lär dig hur du tar bort konsumentposter i Adobe Experience Platfor
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 95d75292b7697ef4f98e3ebd34c04724019ac37f
 workflow-type: tm+mt
 source-wordcount: '1076'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Om du vill ta bort konsumentdata från alla datauppsättningar väljer du **[!UI
 >
 >Markera **[!UICONTROL All datasets]** kan göra att borttagningsåtgärden tar längre tid och kanske inte resulterar i korrekt borttagning av poster.
 
-## Ange konsumentidentiteter {#identities}
+## Ange konsumentidentiteter {#provide-consumer-identities}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
