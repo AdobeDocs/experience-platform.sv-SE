@@ -4,9 +4,9 @@ description: Lär dig hur du tar bort konsumentposter i Adobe Experience Platfor
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: 6f94c7c5e844eaddd50653296875886757f6fb35
+source-git-commit: d17c53066d77652e46471ba4c696fde682eb3bab
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1054'
 ht-degree: 0%
 
 ---
@@ -144,4 +144,10 @@ När begäran har skickats skapas en arbetsorder och visas på [!UICONTROL Consu
 
 I det här dokumentet beskrivs hur du tar bort konsumentposter i användargränssnittet för Experience Platform. Mer information om hur du utför andra datahygienuppgifter i användargränssnittet finns i [översikt över användargränssnittet för datahygien](./overview.md).
 
-Mer information om hur du tar bort konsumentposter med hjälp av API:t för datahygien finns i [slutpunktsguide för arbetsorder](../api/workorder.md).
+<!--
+
+Paragraph below should be commented out until workorder.md will be added to the TOC.
+
+To learn how to delete consumer records using the Data Hygiene API, refer to the [work order endpoint guide](../api/workorder.md).
+
+-->
