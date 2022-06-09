@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Handbok för dataförberedelse
 user-guide-description: Förbered data för konsumtion i Adobe Experience Platform.
 feature: Data Prep
-source-git-commit: 752c662876df012dbcb44db6168705be2a5375ce
+source-git-commit: e96263847f53ea2c884c273fd7986855d4c478c1
 workflow-type: tm+mt
-source-wordcount: '48'
+source-wordcount: '50'
 ht-degree: 10%
 
 ---
@@ -25,4 +25,5 @@ ht-degree: 10%
 - [Hantera dataformat](./data-handling.md)
 - [Mappningsuppsättningar](mapping-set.md)
 - [Direktuppspelningar](upserts.md)
+- [Felsökningsguide](troubleshooting-guide.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
