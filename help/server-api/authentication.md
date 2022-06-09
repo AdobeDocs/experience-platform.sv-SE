@@ -4,9 +4,9 @@ description: Lär dig hur du konfigurerar autentisering för API:t för Adobe Ex
 seo-description: Learn how to configure authentication for the Adobe Experience Platform Edge Network Server API
 keywords: datainsamling, autentisering, Adobe Experience Platform Edge Network API; auktorisation
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 64093bdb8cb1bf2f14caaa562e196a1d69e74359
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '643'
 ht-degree: 1%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 1%
 
 ## Översikt
 
-The [!DNL Adobe Experience Platform Edge Network Server API] hanterar både autentiserad och oautentiserad datainsamling, beroende på händelsekällan och API-samlingsdomänen.
+The [!DNL Edge Network Server API] hanterar både autentiserad och oautentiserad datainsamling, beroende på händelsekällan och API-samlingsdomänen.
 
-För varje begäran [!DNL Server API] verifierar datastream `access_type` inställning.
+För varje begäran [!DNL Server API] verifierar datastream [!DNL access type] inställning. Med den här inställningen kan kunderna konfigurera en datastam för att acceptera antingen autentiserade data eller både autentiserade och oautentiserade data. Som standard accepteras båda datatyperna.
 
-Med den här inställningen kan kunderna konfigurera en datastam för att acceptera antingen autentiserade data eller både autentiserade och oautentiserade data. Som standard accepteras båda datatyperna.
+Mer information om hur du konfigurerar åtkomsttypen för datastream finns i dokumentationen om hur du [skapa och konfigurera ett datastream](../edge/datastreams/overview.md#create).
 
-Nedan visas en sammanfattning av beteendet utifrån `access_type` konfiguration och slutpunkten som begäran tas emot på.
+Nedan visas en sammanfattning av beteendet utifrån datastream [!DNL Access Type] konfiguration och slutpunkten som begäran tas emot på.
 
-| `access_type` | edge.adobedc.net | server.adobedc.net |
+| [!DNL Access Type] | edge.adobedc.net | server.adobedc.net |
 |-----------------|-------------------------------|-----------------------|
 | blandad (standard) | Autentiserar inte begäran | Autentiserar begäran |
 | autentiserad | Autentiserar begäran | Autentiserar begäran |
