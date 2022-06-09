@@ -2,13 +2,13 @@
 title: Prestandaskydd
 description: Lär dig hur du använder Server-API:t med optimala prestandaregativ
 keywords: datainsamling;samling;edge network;api;sla;slt;service levels
-source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
+exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
+source-git-commit: 6f0eb81f9709cf4fcaea94334449117c4ed76107
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '426'
 ht-degree: 2%
 
 ---
-
 
 # Prestandaskydd
 
@@ -20,12 +20,12 @@ Adobe ansvarar inte för prestandaförsämringar orsakade av överskridna använ
 
 ## Definitioner
 
-* **Tillgänglighet** beräknas för varje femminutersintervall som den procentandel begäranden som bearbetas av Experience Adobe Experience Platform Edge Network och som inte misslyckas med fel och som endast gäller de Adobe Experience Platform Edge Network API:er som tillhandahålls. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
+* **Tillgänglighet** beräknas för varje femminutersintervall som procentandelen begäranden som bearbetas av Experience Platform Edge Network som inte misslyckas med fel och som endast gäller de tilldelade Edge Network API:erna. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
 * **Procentvärde för månatlig drifttid** för ett givet område beräknas som medelvärdet av tillgängligheten för alla femminutersintervall under en månad.
-* An **uppström** är en tjänst bakom Adobe Edge Network, som har aktiverats för ett specifikt datastream, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
+* An **uppström** är en tjänst bakom Edge Network, som är aktiverad för ett specifikt datastream, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
 * A **begärandeenhet** motsvarar ett 8 kB-fragment av en begäran och ett uppströms konfigurerat för ett datastream.
 * A **förfrågan** är ett enda meddelande som skickas av en kundägd applikation till [!DNL Server API]. En begäran kan innehålla en eller flera begärandeenheter.
-* An **fel** är en begäran som misslyckas på grund av ett Adobe Experience Platform Edge Network [internt tjänstfel](error-handling.md).
+* An **fel** är en begäran som misslyckas på grund av ett Edge Network [internt tjänstfel](error-handling.md).
 
 ## Tjänstbegränsningar
 
