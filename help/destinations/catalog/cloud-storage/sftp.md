@@ -3,9 +3,9 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
+source-git-commit: 715533352e84573f60f012504988595af6146e2f
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '637'
 ht-degree: 0%
 
 ---
@@ -50,8 +50,8 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_ssh"
->title="SSH-nyckel"
->abstract="SSH-nyckeln kräver en Base64-sträng."
+>title="Privat SSH-nyckel"
+>abstract="Den privata SSH-nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad. "
 
 När [koppla](../../ui/connect-destination.md) till detta mål måste du ange följande information:
 
@@ -59,7 +59,7 @@ När [koppla](../../ui/connect-destination.md) till detta mål måste du ange f�
 
 Om du väljer **[!UICONTROL Basic authentication]** skriv för att ansluta till din SFTP-plats:
 
-![Grundläggande autentisering för SFTP-mål](../..//assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
+![Grundläggande autentisering för SFTP-mål](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
 * **[!UICONTROL Host]**: Adress till din SFTP-lagringsplats.
 * **[!UICONTROL Username]**: Användarnamn för att logga in på din SFTP-lagringsplats.
@@ -77,11 +77,11 @@ Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansl
 * **[!UICONTROL Domain]**: Fyll i IP-adressen eller domännamnet för ditt SFTP-konto
 * **[!UICONTROL Port]**: Den port som används av SFTP-lagringsplatsen;
 * **[!UICONTROL Username]**: Användarnamn för att logga in på din SFTP-lagringsplats.
-* **[!UICONTROL SSH Key]**: SSH-nyckeln för att logga in på din SFTP-lagringsplats.
+* **[!UICONTROL SSH Key]**: Den privata SSH-nyckeln som används för att logga in på din SFTP-lagringsplats. Den privata nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad.
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64] kodad sträng.
    * Exempel: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`. Nedan visas ett exempel på en korrekt formaterad PGP-nyckel, med den mellersta delen förkortad.
 
-      ![PGP-nyckel](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
+      ![PGP-nyckel](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 #### Destinationsinformation {#destination-details}
 
