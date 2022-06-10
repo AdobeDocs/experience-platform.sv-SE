@@ -2,13 +2,13 @@
 title: Delning av mobil-till-webb och domänövergripande ID
 description: Lär dig hur du behåller besökar-ID:n från mobil- till webbegenskaper och mellan domäner
 keywords: Identitet;mobil;id;sharing;domain;cross-domain;sdk;platform;
-source-git-commit: 55e28f749741c653a230b42fabf5a047ba8c7d01
+exl-id: b9bb236f-52cf-4615-96d8-1137d957de8c
+source-git-commit: 3b65143e33804b251f888dbe2a69d238b3f4cda3
 workflow-type: tm+mt
-source-wordcount: '839'
+source-wordcount: '847'
 ht-degree: 0%
 
 ---
-
 
 # Delning av mobil-till-webb och domänövergripande ID
 
@@ -32,9 +32,11 @@ En teknikhandlare vill förbättra sin rapportering om besökaraktivitet med inf
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill använda delning av mobil-till-webb och domänövergripande ID måste du uppdatera till [!DNL Web SDK] version 2.11.0 eller senare.
+Om du vill använda delning av mobil-till-webb och domänövergripande ID måste du använda [!DNL Web SDK] version 2.11.0 eller senare.
 
 För mobilimplementeringar med Edge Network stöds den här funktionen i [Identitet för Edge Network](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network) från och med version 1.1.0 (iOS och Android).
+
+Den här funktionen är även kompatibel med [!DNL VisitorAPI.js] version 1.7.0 eller senare.
 
 ## Delning av mobil-till-webb-ID {#mobile-to-web}
 
