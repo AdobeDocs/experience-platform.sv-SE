@@ -3,14 +3,32 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 29852bc8f17de6db04805f4738f383f2dc7c1406
+source-git-commit: 207fdd6d8a8dc27fa89798999734ba820f30fd54
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
 
+
 # Versionsinformation
+
+Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
+Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](extension/web-sdk-ext-release-notes.md).
+
+## Version 2.11.0 - 13 juni 2022
+
+**Nya funktioner**
+
+* Ni kan nu leverera personaliserade upplevelser mer korrekt genom att dela besökar-ID:n mellan mobilappar och mobilwebbinnehåll samt mellan domäner. Se [dedikerad dokumentation](identity/id-sharing.md) om du vill veta mer.
+* Nu kan du återge eller köra en array med förslag från [!DNL Adobe Target] till enkelsidiga applikationer, utan att öka analysmåtten. Detta minskar antalet rapporteringsfel och ökar noggrannheten i analysen. Se [dedikerad dokumentation](personalization/rendering-personalization-content.md#applypropositions) om du vill veta mer.
+* Ytterligare information har lagts till i `getLibraryInfo` med tillgängliga kommandon och den slutliga konfigurationen för instansen.
+
+**Korrigeringar och förbättringar**
+
+* Uppdaterade cookie-inställningar för användning `sameSite="none"` och `secure` flagga på [!DNL HTTPS] sidor.
+* Ett problem där anpassat innehåll inte tillämpades korrekt när `eq` pseudoväljare.
+* Ett problem där `localTimezoneOffset` kan inte validera Experience Platform.
 
 ## Version 2.10.1 - 3 maj 2022
 

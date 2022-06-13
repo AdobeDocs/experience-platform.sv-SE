@@ -2,16 +2,27 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 18f7e32c8922b254d68655aeb2b633c12a97d2a7
+source-git-commit: 83f7fca5d8a3fd2a57d39c155153caa70d89d353
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1395'
 ht-degree: 0%
 
 ---
 
+
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.12.0 - 13 juni 2022
+
+* Uppdaterade `identityMap` dataelement för att fylla i namnutrymmesalternativ baserat på de sandlådor som definieras av tilläggsinställningarna.
+* Tillagd **[!UICONTROL Redirect with identity]** åtgärd för att tillåta delning av domänöverskridande identiteter.
+* Lagt till dokumentationslänkar till `sendEvent` åtgärd.
+* Uppgraderat användargränssnittsbibliotek för React Spectrum.
+* Flera förbättringar av användargränssnittet.
+
+Innehåller version 2.11.0 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.11.2 - 3 maj 2022
 
