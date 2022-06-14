@@ -5,9 +5,9 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: ebf605bda32a7e587e6a6ca93a58669d16581ff9
+source-git-commit: 1ecdd5f058a5996b4a3d12ba62c5f352633cd75a
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,10 @@ Se stegen som beskrivs i [Autentisera din Marketo-källanslutning](./marketo-aut
 ## Ställ in organisationsmappning för Adobe
 
 Innan du kan skapa mappningsuppsättningar för [!DNL Marketo]måste du först konfigurera Organisationsmappning för Adobe. Detaljerade anvisningar om hur du slutför detta finns i handboken på [konfigurera organisationsmappning för Adobe [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
+
+## Konfigurera B2B-namnutrymmen och automatisk schemagenerering
+
+Använd sedan verktyget för automatisk generering av B2B-namnutrymme och schema för att konfigurera din plattformsutvecklarkonsol och Postman-miljö. På så sätt kan du automatiskt fylla i B2B-namnutrymmen och scheman. Detaljerade anvisningar finns i handboken på [konfigurera B2B-namnutrymmen och automatisk generering av scheman](./marketo-namespaces.md)
 
 ## Experience Data Model (XDM)
 

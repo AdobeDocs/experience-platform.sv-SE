@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 8d88af787508f9aeaa7966409b33bf0aae488a87
+source-git-commit: 72fb25a262d2ab76085f12e3ad0c6a8decba50ac
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1408'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,7 @@ Den här självstudiekursen innehåller steg för att skapa en [!DNL Marketo Eng
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
+* [B2B-namnutrymmen och automatisk schemagenerering](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med verktyget för automatisk generering av B2B-namnutrymmen och scheman kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste fylla i B2B-namnutrymmen och scheman innan du skapar en [!DNL Marketo] källanslutning och dataflöde.
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
