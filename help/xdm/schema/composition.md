@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 997a3cdd6301adc2c52b6b397307c1dd1d194d7c
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '3797'
+source-wordcount: '3840'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,12 @@ Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier
 Scheman för både post- och tidsserier innehåller en karta över identiteter (`xdm:identityMap`). Det här fältet innehåller identitetsbeteckningen för ett ämne, som har ritats från fält markerade som &quot;Identitet&quot; enligt beskrivningen i nästa avsnitt.
 
 ### [!UICONTROL Identity] {#identity}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_identities"
+>title="Identiteter i scheman"
+>abstract="Identiteter är nyckelfält i ett schema som kan användas för att identifiera ett ämne, till exempel en e-postadress eller ett marknadsförings-ID. Dessa fält används för att skapa identitetsdiagrammet för varje enskild person och för att skapa kundprofiler."
+>text="See the documentation for more information on identities in schemas."
 
 Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data kan användas för flera tjänster för att skapa en enda, enhetlig vy av en enskild enhet. Därför är det viktigt att tänka på scheman när det gäller kundidentiteter och vilka fält som kan användas för att identifiera ett ämne oavsett varifrån data kommer.
 
@@ -286,7 +292,7 @@ Följande avsnitt innehåller ytterligare information om principerna för schema
 
 ### Relationstabeller jämfört med inbäddade objekt {#embedded}
 
-När du arbetar med relationsdatabaser omfattar de bästa metoderna att normalisera data eller att ta en enhet och dela upp den i separata delar som sedan visas i flera tabeller. För att kunna läsa data som helhet eller uppdatera enheten måste läs- och skrivåtgärder utföras i många enskilda tabeller med JOIN.
+När du arbetar med relationsdatabaser omfattar de bästa metoderna att normalisera data, eller att ta en enhet och dela upp den i separata delar som sedan visas i flera tabeller. För att kunna läsa data som helhet eller uppdatera enheten måste läs- och skrivåtgärder utföras i många enskilda tabeller med JOIN.
 
 Genom att använda inbäddade objekt kan XDM-scheman representera komplexa data direkt och lagra dem i självständiga dokument med en hierarkisk struktur. En av de största fördelarna med den här strukturen är att den gör det möjligt att fråga efter data utan att behöva rekonstruera enheten med dyrbara kopplingar till flera deformerade tabeller. Det finns inga hårda begränsningar för hur många nivåer din schemahierarki kan vara.
 

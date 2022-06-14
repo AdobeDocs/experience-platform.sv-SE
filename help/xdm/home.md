@@ -5,9 +5,9 @@ title: XDM - systemöversikt
 topic-legacy: overview
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 18d245574ba771aa42776d8755a2c6681c8c8532
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '1978'
+source-wordcount: '2039'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,12 @@ Mer information om hur du hanterar och interagerar med scheman i Platform finns 
 * [API-guide för schemaregister](./api/overview.md)
 
 ## Databeteenden i XDM-system {#data-behaviors}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_behavior"
+>title="Databeteenden"
+>abstract="Data som är avsedda att användas i Experience Platform är indelade i tre beteendetyper: spela in, tidsserier och ad hoc. Registreringsscheman ger information om attributen för ett motiv, medan tidsseriescheman tar en ögonblicksbild av systemet när en åtgärd vidtas. Ad hoc-scheman hämtar fält som är namnutrymmen som bara kan användas av en enskild datauppsättning."
+>text="See the documentation for more information on data behaviors in Platform."
 
 Data som är avsedda att användas i Experience Platform är indelade i tre beteendetyper:
 

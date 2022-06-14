@@ -5,9 +5,9 @@ title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: e0148480ce8d4179771f1c10fb6b921baf6a24d1
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '2766'
+source-wordcount: '2817'
 ht-degree: 0%
 
 ---
@@ -221,6 +221,12 @@ När du har gjort ändringarna visas det nya fältet under ditt innehavar-ID-nam
 ![Fält tillagt i standardobjekt](../../images/ui/resources/schemas/added-to-standard-object.png)
 
 ## Aktivera ett schema för kundprofil i realtid {#profile}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_enableforprofile"
+>title="Aktivera ett schema för profil"
+>abstract="När ett schema har aktiverats för profilen, deltar alla datauppsättningar som skapats från det här schemat i kundprofilen i realtid, som sammanfogar data från olika källor för att skapa en fullständig bild av varje kund. När ett schema används för att importera data till profilen kan det inte inaktiveras."
+>text="See the documentation for more information on enabling a schema for Profile."
 
 [Kundprofil i realtid](../../../profile/home.md) sammanfogar data från olika källor för att skapa en komplett bild av varje enskild kund. Om du vill att de data som hämtas av ett schema ska delta i processen måste du aktivera schemat för användning i [!DNL Profile].
 

@@ -6,64 +6,70 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 2118dc175b421e856c6b0a33a83a7238f01b7ee3
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
 
 # Definiera en relation mellan två scheman med [!DNL Schema Editor]
 
+>[!CONTEXTUALHELP]
+>id="platform_schemas_relationships"
+>title="Schemarelationer"
+>abstract="Scheman som tillhör olika klasser kan länkas till sammanhanget via relationsfält, vilket gör att du kan skapa mer komplexa segmenteringsregler."
+>text="See the documentation for more information on schema relationships."
+
 >[!NOTE]
 >
->Om du använder Real-time Customer Data Platform B2B Edition läser du i guiden [skapa B2B-relationer](./relationship-b2b.md) istället.
+>Om du använder Real-time Customer Data Platform B2B Edition, se guiden på [skapa B2B-relationer](./relationship-b2b.md) i stället.
 
-Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer inom strukturen för dina [!DNL Experience Data Model] (XDM)-scheman kan du få komplexa insikter i dina kunddata.
+Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
-Schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile], men detta gäller endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
+När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
-I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet för [!DNL Experience Platform]. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om att [definiera en relation med API:t för schemaregister](relationship-api.md).
+I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i [!DNL Experience Platform] användargränssnitt. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om [definiera en relation med API:t för schemaregister](relationship-api.md).
 
 ## Komma igång
 
-Den här självstudiekursen kräver en arbetsförståelse för [!DNL XDM System] och Schemaredigeraren i gränssnittet för [!DNL Experience Platform]. Läs följande dokumentation innan du börjar den här självstudiekursen:
+Den här självstudiekursen kräver en fungerande förståelse av [!DNL XDM System] och Schemaredigeraren i [!DNL Experience Platform] Gränssnitt. Läs följande dokumentation innan du börjar den här självstudiekursen:
 
-* [XDM System i Experience Platform](../home.md): En översikt över XDM och dess implementering i  [!DNL Experience Platform].
-* [Grundläggande om schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
-* [Skapa ett schema med [!DNL Schema Editor]](create-schema-ui.md): En självstudiekurs som handlar om grunderna för att arbeta med  [!DNL Schema Editor].
+* [XDM-system i Experience Platform](../home.md): En översikt över XDM och dess implementering i [!DNL Experience Platform].
+* [Grunderna för schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
+* [Skapa ett schema med [!DNL Schema Editor]](create-schema-ui.md): En självstudiekurs som handlar om grunderna i att arbeta med [!DNL Schema Editor].
 
 ## Definiera en källa och ett målschema
 
-Du förväntas redan ha skapat de två scheman som ska definieras i relationen. I demonstrationssyfte skapar den här självstudien en relation mellan medlemmar i en organisations lojalitetsprogram (definierat i ett [!DNL Loyalty Members]-schema) och deras favorithotell (definierat i ett [!DNL Hotels]-schema).
+Du förväntas redan ha skapat de två scheman som ska definieras i relationen. I den här självstudiekursen skapas en relation mellan medlemmar i en organisations lojalitetsprogram (definieras i en[!DNL Loyalty Members]schema) och deras favorithotell (definieras i en[!DNL Hotels]&quot; schema).
 
 >[!IMPORTANT]
 >
->För att kunna etablera en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. Se avsnittet [Aktivera ett schema för användning i profilen](./create-schema-ui.md#profile) i självstudiekursen för att skapa schema om du behöver hjälp med hur du konfigurerar scheman därefter.
+>För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-ui.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
 
-Schemarelationer representeras av ett dedikerat fält i ett **källschema** som refererar till ett annat fält i ett **målschema**. I de följande stegen kommer &quot;[!DNL Loyalty Members]&quot; att vara källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
+Schemarelationer representeras av ett dedikerat fält i en **källschema** som refererar till ett annat fält i en **målschema**. I följande steg: &quot;[!DNL Loyalty Members]&quot; blir källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
 
 I följande avsnitt beskrivs strukturen för varje schema som används i den här självstudiekursen innan en relation har definierats.
 
 ### [!DNL Loyalty Members] schema
 
-Källschemat [!DNL Loyalty Members] baseras på klassen [!DNL XDM Individual Profile] och är det schema som skapades i självstudiekursen för att [skapa ett schema i användargränssnittet](create-schema-ui.md). Det innehåller ett `loyalty`-objekt under namnutrymmet `_tenantId`, som innehåller flera lojalitetsspecifika fält. Ett av dessa fält, `loyaltyId`, fungerar som primär identitet för schemat under namnområdet [!UICONTROL Email]. Som framgår av **[!UICONTROL Schema Properties]** har schemat aktiverats för användning i [!DNL Real-time Customer Profile].
+Källschemat &quot;[!DNL Loyalty Members]&quot; baseras på [!DNL XDM Individual Profile] och är det schema som skapades i självstudiekursen för [skapa ett schema i användargränssnittet](create-schema-ui.md). Den innehåller `loyalty` objekt under dess `_tenantId` namespace, som innehåller flera lojalitetsspecifika fält. Ett av dessa fält, `loyaltyId`, fungerar som primär identitet för schemat under [!UICONTROL Email] namnutrymme. Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiverats för användning i [!DNL Real-time Customer Profile].
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
 ### [!DNL Hotels] schema
 
-Målschemat [!DNL Hotels] är baserat på en anpassad [!DNL Hotels]-klass och innehåller fält som beskriver ett hotell.
+Målschemat &quot;[!DNL Hotels]&quot; är baserad på en anpassad &quot;[!DNL Hotels]och innehåller fält som beskriver ett hotell.
 
 ![](../images/tutorials/relationship/hotels.png)
 
-För att kunna delta i en relation måste målschemat ha en primär identitet. I det här exemplet används fältet `hotelId` som primär identitet med ett anpassat ID-namnområde för Hotel.
+För att kunna delta i en relation måste målschemat ha en primär identitet. I det här exemplet `hotelId` fältet används som primär identitet med ett anpassat ID-namnområde för Hotel-ID.
 
 ![Primär identitet för hotell](../images/tutorials/relationship/hotel-identity.png)
 
 >[!NOTE]
 >
->Mer information om hur du skapar anpassade identitetsnamnutrymmen finns i [dokumentationen för identitetstjänsten](../../identity-service/namespaces.md#manage-namespaces).
+>Mer information om hur du skapar anpassade identitetsnamnutrymmen finns i [Identitetstjänstens dokumentation](../../identity-service/namespaces.md#manage-namespaces).
 
 När den primära identiteten har angetts måste målschemat aktiveras för [!DNL Real-time Customer Profile].
 
@@ -73,23 +79,23 @@ När den primära identiteten har angetts måste målschemat aktiveras för [!DN
 
 >[!NOTE]
 >
->Det här steget krävs bara om källschemat inte har ett dedikerat strängtypsfält som ska användas som referens till målschemat. Om det här fältet redan är definierat i källschemat går du vidare till nästa steg i [som definierar ett relationsfält](#relationship-field).
+>Det här steget krävs bara om källschemat inte har ett dedikerat strängtypsfält som ska användas som referens till målschemat. Om fältet redan är definierat i källschemat går du vidare till nästa steg i [definiera ett relationsfält](#relationship-field).
 
 För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som ska användas som referens till målschemat. Du kan lägga till det här fältet i källschemat genom att skapa en ny schemafältgrupp.
 
-Börja med att välja **[!UICONTROL Add]** i avsnittet **[!UICONTROL Field groups]**.
+Börja genom att välja **[!UICONTROL Add]** i **[!UICONTROL Field groups]** -avsnitt.
 
 ![](../images/tutorials/relationship/loyalty-add-field-group.png)
 
-Dialogrutan [!UICONTROL Add field group] visas. Välj **[!UICONTROL Create new field group]** härifrån. I textfälten som visas anger du ett visningsnamn och en beskrivning för den nya fältgruppen. Välj **[!UICONTROL Add field groups]** när du är klar.
+The [!UICONTROL Add field group] visas. Här väljer du **[!UICONTROL Create new field group]**. I textfälten som visas anger du ett visningsnamn och en beskrivning för den nya fältgruppen. Välj **[!UICONTROL Add field groups]** när du är klar.
 
 ![](../images/tutorials/relationship/create-field-group.png)
 
-Arbetsytan visas igen med &quot;[!DNL Favorite Hotel]&quot; i **[!UICONTROL Field groups]**-avsnittet. Markera fältgruppsnamnet och välj sedan **[!UICONTROL Add field]** bredvid fältet `Loyalty Members` på rotnivå.
+Arbetsytan visas igen med &quot;[!DNL Favorite Hotel]&quot; visas i **[!UICONTROL Field groups]** -avsnitt. Markera fältgruppsnamnet och välj **[!UICONTROL Add field]** bredvid rotnivån `Loyalty Members` fält.
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-Ett nytt fält visas på arbetsytan under namnutrymmet `_tenantId`. Under **[!UICONTROL Field properties]** anger du ett fältnamn och ett visningsnamn för fältet och anger dess typ till [!UICONTROL String].
+Ett nytt fält visas på arbetsytan under `_tenantId` namnutrymme. Under **[!UICONTROL Field properties]**, ange ett fältnamn och ett visningsnamn för fältet och ange dess typ till &quot;[!UICONTROL String]&quot;.
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
@@ -97,7 +103,7 @@ När du är klar väljer du **[!UICONTROL Apply]**.
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-Det uppdaterade `favoriteHotel`-fältet visas på arbetsytan. Välj **[!UICONTROL Save]** för att slutföra ändringarna av schemat.
+Den uppdaterade `favoriteHotel` visas på arbetsytan. Välj **[!UICONTROL Save]** för att slutföra ändringarna av schemat.
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
@@ -105,18 +111,18 @@ Det uppdaterade `favoriteHotel`-fältet visas på arbetsytan. Välj **[!UICONTRO
 
 När ett dedikerat referensfält har definierats i källschemat kan du ange det som ett relationsfält.
 
-Markera fältet `favoriteHotel` på arbetsytan och rulla sedan nedåt under **[!UICONTROL Field properties]** tills kryssrutan **[!UICONTROL Relationship]** visas. Markera kryssrutan för att visa de parametrar som krävs för att konfigurera ett relationsfält.
+Välj `favoriteHotel` på arbetsytan och rulla sedan nedåt under **[!UICONTROL Field properties]** tills **[!UICONTROL Relationship]** visas. Markera kryssrutan för att visa de parametrar som krävs för att konfigurera ett relationsfält.
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
-Välj listrutan för **[!UICONTROL Reference schema]** och välj målschemat för relationen (&quot;[!DNL Hotels]&quot; i det här exemplet). Om målschemat är aktiverat för [!DNL Profile] ställs fältet **[!UICONTROL Reference identity namespace]** automatiskt in på namnområdet för målschemats primära identitet. Om schemat inte har någon primär identitet definierad, måste du manuellt välja det namnutrymme som du vill använda i listrutan. Välj **[!UICONTROL Apply]** när du är klar.
+Välj listrutan för **[!UICONTROL Reference schema]** och välj målschema för relationen (&quot;[!DNL Hotels]&quot; i det här exemplet). Om målschemat är aktiverat för [!DNL Profile], **[!UICONTROL Reference identity namespace]** fältet ställs automatiskt in på namnområdet för målschemats primära identitet. Om schemat inte har någon primär identitet definierad, måste du manuellt välja det namnutrymme som du vill använda i listrutan. Välj **[!UICONTROL Apply]** när du är klar.
 
 ![](../images/tutorials/relationship/reference-schema-id-namespace.png)
 
-Fältet `favoriteHotel` är nu markerat som en relation på arbetsytan, med namnet och referensidentitetens namnområde i målschemat. Välj **[!UICONTROL Save]** om du vill spara ändringarna och slutföra arbetsflödet.
+The `favoriteHotel` fältet markeras nu som en relation på arbetsytan med namnet och referensidentitetens namnområde i målschemat. Välj **[!UICONTROL Save]** för att spara ändringarna och slutföra arbetsflödet.
 
 ![](../images/tutorials/relationship/relationship-save.png)
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en 1:1-relation mellan två scheman med [!DNL Schema Editor]. Anvisningar om hur du definierar relationer med API:t finns i självstudiekursen om att [definiera en relation med API:t för schemaregister](relationship-api.md).
+I den här självstudiekursen har du skapat en 1:1-relation mellan två scheman med hjälp av [!DNL Schema Editor]. Anvisningar om hur du definierar relationer med API:t finns i självstudiekursen om [definiera en relation med API:t för schemaregister](relationship-api.md).

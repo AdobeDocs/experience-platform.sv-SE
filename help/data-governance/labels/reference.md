@@ -5,14 +5,20 @@ title: Ordlista för dataanvändningsetiketter
 topic-legacy: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 15b0c2fb2565ada489c5a8811b946efc4319696b
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '2053'
+source-wordcount: '2083'
 ht-degree: 1%
 
 ---
 
 # Etikettordlista för dataanvändning
+
+>[!CONTEXTUALHELP]
+>id="platform_policies_labeltype"
+>title="Etikettyper"
+>abstract="Det finns flera kategorier för dataanvändningsetiketter. De Adobe-definierade etiketterna innehåller kontraktsetiketter, identitetsetiketter och känsliga etiketter. Etiketter som definieras av din organisation kategoriseras som anpassade etiketter."
+>text="See the data usage labels glossary for more information on these label types."
 
 Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance innehåller flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
