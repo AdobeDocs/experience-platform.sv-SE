@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: 23828fcbb1257fa093c1e114ee4c2fcb2162d9d6
 workflow-type: tm+mt
-source-wordcount: '1652'
+source-wordcount: '1683'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **[!UICONTROL Name]**: ange ett namn för den här målanslutningen
 * **[!UICONTROL Description]**: ange en beskrivning för den här målanslutningen
-* **[!UICONTROL Account ID]**: ditt Google kundklient-ID. Formatet på ID:t är xxx-xxx-xxxx.
+* **[!UICONTROL Account ID]**: din [Google Ads, kund-ID](https://support.google.com/google-ads/answer/1704344?hl=en). Formatet på ID:t är xxx-xxx-xxxx. Om du använder [!DNL Google Ads Manager Account (My Client Center)]använder du inte ditt konto-ID för chef. Använd [Google Ads, kund-ID](https://support.google.com/google-ads/answer/1704344?hl=en) i stället.
 
 >[!IMPORTANT]
 >
