@@ -5,9 +5,9 @@ title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 1d2f485a91a8ad2c5b2bea9816c05b7bc26ae8e7
+source-git-commit: be3ec7dc7e2089a8cee0b1577659e1ec0a465044
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '710'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,8 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 >Alla [!DNL Marketo] datauppsättningar förutom `Activities` nu support `isDeleted`. Befintliga dataflöden inkluderar automatiskt `isDeleted`, men kommer bara att importera flaggan för nya importerade data. Om du vill använda flaggan för alla dina historiska data måste du stoppa dina befintliga dataflöden och återskapa dem med den nya mappningen. Observera att om du tar bort `isDeleted`så har du inte längre tillgång till funktionerna. Det är viktigt att mappningen behålls efter att den har fyllts i automatiskt.
 
 ## Aktiviteter {#activities}
+
+The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med [program för automatisk generering av schema](../marketo/marketo-namespaces.md) därför att om du skapar nya `activities` utan att uppdatera schemat, kommer mappningsmallarna att misslyckas eftersom de nya målfälten inte kommer att finnas i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att hämtas till Platform.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
