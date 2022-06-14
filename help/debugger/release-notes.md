@@ -4,14 +4,26 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
+source-git-commit: 9c4f16c84b78403e5baf02595a38093341eefa67
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Debugger
+
+## Version 1.3.2 - 9 juni 2022
+
+* En standardavatar lades till när användaren är inloggad.
+* Syntaxmarkering har lagts till för JSON-objekt i loggar.
+
+## Version 1.3.1 - 24 maj 2022
+
+* Uppdaterade beroenden.
+* Ett analysproblem har korrigerats där efterprocessträffar inte kunde aktiveras.
+* Ett problem där felsökaren skulle kopplas till inloggningsfönstret i Adobe har korrigerats.
+* Ett AT.js-problem där loggmeddelanden inte kunde visas i Felsökning har korrigerats.
 
 ## Version 1.3.0 - 28 januari 2022
 
