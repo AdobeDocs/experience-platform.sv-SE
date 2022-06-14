@@ -4,9 +4,9 @@ title: Måltyper och -kategorier
 seo-title: Destination types and categories
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 1c2846941df09b66eb74f8ea8bec91574577fbbc
+source-git-commit: 2252c6e8bd5f0ada717d67f005b7f6ddd0b238ab
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '637'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och 
 
 ## Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]** och **[!UICONTROL Streaming Segment Export]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Segment Export]** och **[!DNL Edge Personalization]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
 
 ## Profilexportdestinationer {#profile-export}
 
@@ -55,6 +55,12 @@ Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attrib
 ## Målgrupper för direktuppspelad segmentexport {#streaming-destinations}
 
 Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
+
+## Destinationer för kantanpassning {#edge-personalization-destinations}
+
+De främsta målsättningarna för personalisering i Experience Platform är bland annat [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassat personaliseringsmål](/help/destinations/catalog/personalization/custom-personalization.md). Genom att använda dessa destinationer kan ni möjliggöra användning av samma sida och nästa sida för personalisering för era kunder.
+
+Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](/help/destinations/ui/configure-personalization-destinations.md).
 
 ## Profilexport och segmentexportdestinationer - videoöversikt {#video}
 
