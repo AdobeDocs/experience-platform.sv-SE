@@ -5,9 +5,9 @@ title: Hantera dataanvändningsprinciper i användargränssnittet
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
+source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
 workflow-type: tm+mt
-source-wordcount: '1266'
+source-wordcount: '1263'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Policies]** för a
 
 ![](../images/policies/browse-policies.png)
 
-Om du har åtkomst till profiler för samtycke (för närvarande i betaversion) väljer du **[!UICONTROL Consent policies]** växla för att visa dem i [!UICONTROL Browse] -fliken.
+Om du har åtkomst till profiler för samtycke väljer du **[!UICONTROL Consent policies]** växla för att visa dem i [!UICONTROL Browse] -fliken.
 
 ![](../images/policies/consent-policy-toggle.png)
 

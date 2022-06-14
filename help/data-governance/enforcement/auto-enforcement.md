@@ -5,9 +5,9 @@ title: Automatisk policytillämpning
 topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
+source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
 workflow-type: tm+mt
-source-wordcount: '1686'
+source-wordcount: '1682'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ När ett segment aktiveras första gången [!DNL Policy Service] kontroller av t
 
 * De dataanvändningsetiketter som används för fält och datauppsättningar i segmentet som ska aktiveras.
 * Destinationens marknadsföringssyfte.
-* (Beta) De profiler som har samtyckt till att inkluderas i segmentaktiveringen, baserat på dina konfigurerade medgivandeprinciper.
+* De profiler som har samtyckt till att inkluderas i segmentaktiveringen, baserat på dina konfigurerade medgivandeprinciper.
 
 >[!NOTE]
 >
@@ -62,7 +62,7 @@ Varje steg i ovanstående tidslinje representerar en enhet som kan bidra till po
 
 | Datalindelningsfas | Roll vid policytillämpning |
 | --- | --- |
-| Datauppsättning | Datauppsättningar innehåller dataanvändningsetiketter (som används på datauppsättnings- eller fältnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har åtkomst till profiler för samtycke (som för närvarande finns i betaversion), kommer profiler som inte uppfyller kraven för medgivande från dina profiler att exkluderas från segment som aktiveras till ett mål. |
+| Datauppsättning | Datauppsättningar innehåller dataanvändningsetiketter (som används på datauppsättnings- eller fältnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har tillgång till profiler för samtycke, kommer profiler som inte uppfyller kraven för attributet för samtycke i dina profiler att exkluderas från segment som aktiveras för en destination. |
 | Kopplingsprincip | Sammanslagningsprinciper är de regler som används i Platform för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Se [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md) för mer information. |
 | Segment | Segmentregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver segmentet användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du aktiverar ett segment vars ärvda etiketter begränsas av måldestinationens tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
 | Destination | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du aktiverar ett segment vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När ett segment aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (som definieras i er medgivandepolicy) från den aktiverade målgruppen. |

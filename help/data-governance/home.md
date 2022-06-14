@@ -5,9 +5,9 @@ title: Datastyrning - översikt
 topic-legacy: overview
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 6e4a3ff03a551069efb8dc96f21b82de06cc47d8
+source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en
 Det finns två typer av principer:
 
 * **[!UICONTROL Data governance policy]**: Begränsa aktiveringen av data baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
-* **[!UICONTROL Consent policy](Beta)**: Filtrera de profiler som kan aktiveras för [mål](../destinations/home.md) baserat på kundernas samtycke eller önskemål.
+* **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras för [mål](../destinations/home.md) baserat på kundernas samtycke eller önskemål.
 
 När dataanvändningsetiketterna har tillämpats kan datafördelare skapa profiler med [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnitt. Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [profiler, översikt](./policies/overview.md).
 
