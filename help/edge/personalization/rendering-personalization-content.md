@@ -3,9 +3,9 @@ title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
 description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
 keywords: personalisering;renderDecision;sendEvent;DecisionScopes;propositions;
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 6ba563db7fd31084813426ffbb0c35be9d7fe4bb
+source-git-commit: 0d8e19d8428191cc0c6c56e629e8c5528a96115c
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
@@ -296,3 +296,94 @@ alloy("sendEvent", {
 ### Hantera flimmer
 
 SDK erbjuder anläggningar för [hantera flimmer](../personalization/manage-flicker.md) under personaliseringsprocessen.
+
+## Rendera utkast i ensidiga program utan att öka mätvärdena {#applypropositions}
+
+The `applyPropositions` kan du återge eller köra en array med förslag från [!DNL Target] till ensidiga program, utan att öka [!DNL Analytics] och [!DNL Target] mätvärden. Detta ökar rapporteringsnoggrannheten.
+
+>[!IMPORTANT]
+>
+>Om föreslår för `__view__` omfånget återges vid sidinläsning, deras `renderAttempted` flaggan ställs in på `true`. The `applyPropositions` kommer inte att återge `__view__` omfångsförslag som har `renderAttempted: true` flagga.
+
+### Användningsfall 1: Återge förslag på en enkelsidig programvy
+
+Det användningsfall som beskrivs i exemplet nedan återger de tidigare hämtade och återgivna kundvagnsvisningsförslagen utan att skicka visningsmeddelanden.
+
+I exemplet nedan är `sendEvent` -kommandot aktiveras vid en vyändring och sparar det resulterande objektet i en konstant.
+
+När sedan vyn eller komponenten uppdateras visas `applyPropositions` -kommandot anropas med förslag från föregående `sendEvent` om du vill återge visningsförslagen.
+
+```js
+var cartPropositions = alloy("sendEvent", {
+    renderDecisions: true,
+    xdm: {
+        web: {
+            webPageDetails: {
+                viewName: "cart"
+            }
+        }
+    }
+}).then(function(result) {
+    var propositions = result.propositions;
+
+    // Collect response tokens, etc.
+    return propositions;
+});
+
+// Call applyPropositions to re-render the view propositions from the previous sendEvent command.
+alloy("applyPropositions", {
+    propositions: cartPropositions
+});
+```
+
+### Användningsfall 2: Återge förslag som inte har någon väljare
+
+Det här användningsexemplet gäller aktivitetserbjudanden som skapats med [!DNL Target Form-based Experience Composer].
+
+Du måste ange väljaren, åtgärden och omfånget i `applyPropositions` ring.
+
+Stöds `actionTypes` är:
+
+* `setHtml`
+* `replaceHtml`
+* `appendHtml`
+
+```js
+// Retrieve propositions for salutation and discount scopes
+alloy("sendEvent", {
+    decisionScopes: ["salutation", "discount"]
+}).then(function(result) {
+    var retrievedPropositions = result.propositions;
+    // Render propositions on the page by providing additional metadata
+
+    return alloy("applyPropositions", {
+        propositions: retrievedPropositions,
+        metadata: {
+            salutation: {
+                selector: "#first-form-based-offer",
+                actionType: "setHtml"
+            },
+            discount: {
+                selector: "#second-form-based-offer",
+                actionType: "replaceHtml"
+            }
+        }
+    }).then(function(applyPropositionsResult) {
+        var renderedPropositions = applyPropositionsResult.propositions;
+
+        // Send the display notifications via sendEvent command
+        alloy("sendEvent", {
+            xdm: {
+                eventType: "decisioning.propositionDisplay",
+                _experience: {
+                    decisioning: {
+                        propositions: renderedPropositions
+                    }
+                }
+            }
+        });
+    });
+});
+```
+
+Om du inte anger några metadata för ett beslutsomfång återges inte de associerade förslagen.
