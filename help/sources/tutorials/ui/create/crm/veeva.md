@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Vector CRM-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 4ef76c28-9bd2-4e54-a3d6-dceb89162337
-source-git-commit: 8b4e3b9e95dd4c2ff8f3b5a1399eb7d114024bb6
+source-git-commit: ea20a850a5d83f648c699119913aa31e2ea16233
 workflow-type: tm+mt
-source-wordcount: '410'
+source-wordcount: '411'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ Om du redan har en giltig [!DNL Veeva CRM] kan du hoppa över resten av dokument
 | `password` | Lösenordet för [!DNL Veeva CRM] användarkonto. |
 | `securityToken` | Säkerhetstoken för [!DNL Veeva CRM] användarkonto. |
 
-Mer information om hur du kommer igång finns i [[!DNL Veeva CRM] dokument](https://developer.veevacrm.com/api/#order-management-rest-api).
+Mer information om hur du kommer igång finns i [[!DNL Veeva CRM] dokument](https://developer.veevacrm.com/doc/Content/rest-api.htm).
 
 ## Koppla samman [!DNL Veeva CRM] konto
 

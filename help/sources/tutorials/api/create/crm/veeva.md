@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Veeva CRM med API:t för Flow Service.
 exl-id: e1aea5a2-a247-43eb-8252-2e2ed96b82a1
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: ea20a850a5d83f648c699119913aa31e2ea16233
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '505'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Veeva CRM]måste du ange vä
 | `securityToken` | Säkerhetstoken för din [!DNL Veeva CRM] -instans. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Veeva CRM] är: `fcad62f3-09b0-41d3-be11-449d5a621b69`. |
 
-Mer information om dessa värden finns i [[!DNL Veeva CRM] dokument](https://developer.veevacrm.com/api/#order-management-rest-api).
+Mer information om dessa värden finns i [[!DNL Veeva CRM] dokument](https://developer.veevacrm.com/doc/Content/rest-api.htm).
 
 ### Använda plattforms-API:er
 
