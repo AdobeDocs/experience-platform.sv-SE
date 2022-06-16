@@ -5,10 +5,10 @@ breadcrumb-title: Handbok för datavetenskap
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
 feature: Data Science Workspace
 solution: Experience Platform
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: ec69c859a7b40f3d527c73405b358862ebdb92e7
 workflow-type: tm+mt
-source-wordcount: '248'
-ht-degree: 2%
+source-wordcount: '236'
+ht-degree: 1%
 
 ---
 
@@ -35,11 +35,6 @@ ht-degree: 2%
    * [MLServices](api/mlservices.md)
    * [Insikter](api/insights.md)
    * [Bilaga](api/appendix.md)
-* Maskininlärning i realtid (alfa) {#real-time-machine-learning}
-   * [Översikt](real-time-machine-learning/home.md)
-   * [Komma igång](real-time-machine-learning/getting-started.md)
-   * [Hantera anteckningsböcker](real-time-machine-learning/rtml-authoring-notebook.md)
-   * [Nodreferenshandbok](real-time-machine-learning/node-reference.md)
 * Fördefinierade recept {#pre-built-recipes}
    * [Produktrekommendationsrecept](pre-built-recipes/product-recommendations.md)
    * [Produktinköpsprognos](pre-built-recipes/product-purchase-prediction.md)
