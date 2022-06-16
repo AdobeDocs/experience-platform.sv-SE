@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: b21e735b5c6c310b485700ef619302e3e3086763
+source-git-commit: 6f7611b120046fffc1b7c15bd657d699f4b4a588
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '795'
 ht-degree: 5%
 
 ---
@@ -35,6 +35,8 @@ ht-degree: 5%
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - Reklam {#advertising}
       - [Google AdWords Connector](connectors/advertising/ads.md)
+   - Analytics{#analytics} 
+      - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
    - molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
@@ -101,6 +103,8 @@ ht-degree: 5%
    - Skapa en basanslutning {#create}
       - Reklam {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
+      - Analytics{#analytics} 
+         - [Blandpanel](tutorials/api/create/analytics/mixpanel.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
@@ -197,8 +201,10 @@ ht-degree: 5%
          - [Adobe Campaign Managed Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
-      - Reklam {#create}
+      - Reklam {#advertising}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
+      - Analytics{#analytics} 
+         - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
@@ -263,6 +269,7 @@ ht-degree: 5%
          - [HTTP-API](tutorials/ui/create/streaming/http.md)
    - Konfigurera ett dataflöde {#dataflow}
       - [Annonserar anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
+      - [Dataflöde för Analytics-anslutning](tutorials/ui/dataflow/analytics.md)
       - [Anslutningsdataflöde för batchmolnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [Dataflöde för direktuppspelning av molnlagring](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
       - [Anslutningsdataflöde för samtycke och inställningar](tutorials/ui/dataflow/consent-and-preferences.md)

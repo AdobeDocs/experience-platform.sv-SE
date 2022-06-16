@@ -5,7 +5,7 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7ffc2ed09b58cc6b6118ef2115666aae092c202c
+source-git-commit: 16f61ae259f6da23cfb7aa96e685716cd623d1b2
 workflow-type: tm+mt
 source-wordcount: '971'
 ht-degree: 0%
@@ -45,6 +45,12 @@ Experience Platform stöder inmatning av data från ett annonssystem från tredj
 
 - [[!DNL Google AdWords]](connectors/advertising/ads.md)
 
+<!-- ### Analytics {#analytics}
+
+Experience Platform provides support for ingesting data from a third-party analytics platform. See the following related documents for more information:
+
+- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) -->
+
 ### molnlagring {#cloud-storage}
 
 Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
@@ -68,7 +74,6 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 Experience Platform stöder inmatning av data från en plattform för hantering av medgivanden och preferenser från tredje part. Mer information finns i följande relaterade dokument:
 
 - [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md)
-
 
 ### CRM (Customer Relationship Management) {#customer-relationship-management}
 
