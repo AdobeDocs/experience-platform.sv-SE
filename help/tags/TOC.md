@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 638b4fea8a80763a2b46863ecb0e3969a6fc127a
+source-git-commit: 1d1d070de0a62c42cdda3f021cafad731a73709b
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '393'
 ht-degree: 25%
 
 ---
@@ -57,6 +57,7 @@ ht-degree: 25%
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
+   * [Övervakning](./ui/event-forwarding/monitoring.md)
 * Administrering {#admin}
    * [Översikt](./ui/administration/overview.md)
    * [Företag och fastigheter](./ui/administration/companies-and-properties.md)
