@@ -5,9 +5,9 @@ title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1356'
 ht-degree: 0%
 
 ---
@@ -211,6 +211,7 @@ I följande tabell visas kompatibla `Accept` rubrikvärden, inklusive de med ver
 | `application/vnd.adobe.xed-notext+json; version=1` | Raw XDM med `$ref` och `allOf`. Inga rubriker eller beskrivningar. |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` attribut och `allOf` löstes. Inga rubriker eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` attribut och `allOf` löstes. Beskrivningar ingår. |
+| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` och `allOf` har åtgärdats, har rubriker och beskrivningar. Föråldrade fält indikeras med en `meta:status` attribut för `deprecated`. |
 
 {style=&quot;table-layout:auto&quot;}
 

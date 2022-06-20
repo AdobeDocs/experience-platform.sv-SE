@@ -5,9 +5,9 @@ title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1834'
 ht-degree: 0%
 
 ---
@@ -311,7 +311,7 @@ En identitetsbeskrivning signalerar att[!UICONTROL sourceProperty]&quot; i &quot
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. |
+| `@type` | Den typ av beskrivning som definieras. För en identitetsbeskrivning måste det här värdet anges till `xdm:descriptorIdentity`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
@@ -347,7 +347,7 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. |
+| `@type` | Den typ av beskrivning som definieras. För en egen namnbeskrivning måste det här värdet anges till `xdm:alternateDisplayInfo`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
@@ -377,7 +377,7 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. |
+| `@type` | Den typ av beskrivning som definieras. För en relationsbeskrivning måste det här värdet anges till `xdm:descriptorOneToOne`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
@@ -386,7 +386,6 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade 
 | `xdm:destinationProperty` | Valfri sökväg till ett målfält i målschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
 
 {style=&quot;table-layout:auto&quot;}
-
 
 #### Referens för identitetsbeskrivning
 
@@ -404,8 +403,32 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. |
+| `@type` | Den typ av beskrivning som definieras. För en referensidentitetsbeskrivning måste det här värdet anges till `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat där beskrivningen definieras. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
 | `xdm:identityNamespace` | Identitetsnamnområdeskoden för egenskapen source. |
+
+{style=&quot;table-layout:auto&quot;}
+
+#### Borttagen fältbeskrivning
+
+Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecation.md#custom) genom att lägga till en `meta:status` attribut inställt på `deprecated` till fältet i fråga. Om du vill ta bort fält från standard-XDM-resurser i dina scheman kan du tilldela schemat en inaktuell fältbeskrivning för att uppnå samma effekt. Använda [korrigera `Accept` header](../tutorials/field-deprecation.md#verify-deprecation)kan du sedan visa vilka standardfält som är inaktuella för ett schema när du söker efter det i API:t.
+
+```json
+{
+  "@type": "xdm:descriptorDeprecated",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/c65ddf08cf2d4a2fe94bd06113bf4bc4c855e12a936410d5",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/faxPhone"
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `@type` | Beskrivningstypen. För en deskriptor för fältborttagning måste det här värdet anges till `xdm:descriptorDeprecated`. |
+| `xdm:sourceSchema` | URI `$id` för det schema som du använder beskrivningen på. |
+| `xdm:sourceVersion` | Den version av schemat som du tillämpar beskrivningen på. Ska anges till `1`. |
+| `xdm:sourceProperty` | Sökvägen till egenskapen i schemat som du tillämpar beskrivningen på. Om du vill tillämpa beskrivningen på flera egenskaper kan du ange en lista med sökvägar i form av en array (till exempel `["/firstName", "/lastName"]`). |
+
+{style=&quot;table-layout:auto&quot;}

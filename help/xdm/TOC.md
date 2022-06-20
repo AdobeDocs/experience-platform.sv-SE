@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: ec61d4ed810029646e2ae28ffc91215eb9189f10
+source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
 workflow-type: tm+mt
-source-wordcount: '464'
-ht-degree: 6%
+source-wordcount: '468'
+ht-degree: 5%
 
 ---
 
@@ -171,12 +171,13 @@ ht-degree: 6%
    * [Skapa ett schema i användargränssnittet](tutorials/create-schema-ui.md)
    * [Skapa ett schema i API:t](tutorials/create-schema-api.md)
    * [Definiera anpassade fält i API:t](./tutorials/custom-fields-api.md)
+   * [Lägga till föreslagna värden i ett fält (API)](tutorials/suggested-values.md)
+   * [Föråldrade ett XDM-fält](tutorials/field-deprecation.md)
    * [Definiera en schemarelation i användargränssnittet](tutorials/relationship-ui.md)
    * [Definiera en schemarelation i API:t](tutorials/relationship-api.md)
    * [Definiera en schemarelation i realtid med CDP B2B Edition](tutorials/relationship-b2b.md)
    * [Hantera dataanvändningsetiketter för ett schema](tutorials/labels.md)
-   * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
-   * [Lägga till föreslagna värden i ett fält (API)](tutorials/suggested-values.md)
+   * [Skapa ett ad hoc-schema](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
