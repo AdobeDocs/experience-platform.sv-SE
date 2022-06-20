@@ -5,9 +5,9 @@ title: Salesforce Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: e178e0df2653b8cb0d4176734be7cb421098e225
 workflow-type: tm+mt
-source-wordcount: '897'
+source-wordcount: '900'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,7 @@ Mer information om fältmappningsreglerna mellan [!DNL Salesforce] datauppsättn
 - [Kontaktroller för affärsmöjlighet](../adobe-applications/mapping/salesforce.md#opportunity-contact-role)
 - [Kampanjer](../adobe-applications/mapping/salesforce.md#campaign)
 - [Kampanjmedlemmar](../adobe-applications/mapping/salesforce.md#campaign-member)
+- [Kontaktrelation för konto](../adobe-applications/mapping/salesforce.md#account-contact-relation)
 
 ## Konfigurera [!DNL Salesforce] program för automatisk generering av namnutrymme och schema
 
