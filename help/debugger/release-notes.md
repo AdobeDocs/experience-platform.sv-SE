@@ -4,14 +4,19 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: 9c4f16c84b78403e5baf02595a38093341eefa67
+source-git-commit: b4e3b40942390ef183ccb01f65702ae400a5e22f
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Debugger
+
+## Version 1.3.3 - 20 juni 2022
+
+* Korrigerat problem som förhindrade att popup-fönster öppnades från nätverkshändelsetabeller.
+* Ett problem som hindrade inläsning av tilläggsinformation på sidan har korrigerats.
 
 ## Version 1.3.2 - 9 juni 2022
 
