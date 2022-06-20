@@ -2,9 +2,10 @@
 title: Övervaka aktiviteter i händelsevidarebefordran
 description: Lär dig hur du övervakar användning, fel och beräkningstid i egenskaperna för vidarebefordran av händelser.
 feature: Event Forwarding
-source-git-commit: 4de448fb5e8ed94d23ebfbcc1bfe19bcfd36fbca
+exl-id: 9d8572a3-816e-4b66-afe6-344fe8a15f22
+source-git-commit: 9313ebe6d51d5ef42915d154def9cb0612407439
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
@@ -22,6 +23,12 @@ The **[!UICONTROL Monitoring]** I användargränssnittet för datainsamling kan 
 ## Förutsättningar
 
 Den här guiden förutsätter att du har köpt vidarebefordran av händelser och att du har en fungerande förståelse för hur vidarebefordran av händelser fungerar. Se [händelsevidarebefordring - översikt](./overview.md) för mer information.
+
+## Videoöversikt
+
+I följande video visas en översikt över övervakningsfunktionen på hög nivå:
+
+>[!VIDEO](https://video.tv.adobe.com/v/343999?quality=12&learn=on)
 
 ## Välja egenskaper och miljöer
 
