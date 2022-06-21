@@ -1,9 +1,10 @@
 ---
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
-source-git-commit: 6156d84cfdd33f8fe491e9a80e3711cf304733e9
+exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
+source-git-commit: 6c72e9dd5961d4dc94d8264a7da795ebd96c40ec
 workflow-type: tm+mt
-source-wordcount: '675'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -20,6 +21,8 @@ En etikett som används i ett schemafält anger de användningsprinciper som gä
 
 Även om etiketter kan tillämpas på enskilda datauppsättningar (och fält i dessa datauppsättningar), kan du även använda etiketter på schemanivå. När etiketter används direkt i ett schema sprids dessa etiketter till alla befintliga och framtida datauppsättningar som baseras på det schemat.
 
+Dessutom sprids alla fältetiketter som du lägger till i ett schema till alla andra scheman som använder samma fält från en delad klass eller fältgrupp. Detta bidrar till att säkerställa att användningsreglerna för liknande fält är konsekventa i hela datamodellen.
+
 I den här självstudiekursen beskrivs stegen för hur du lägger till etiketter i ett schema med Schemaredigeraren i plattformsgränssnittet.
 
 ## Komma igång
@@ -32,7 +35,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 ## Välj ett schema eller fält som etiketter ska läggas till i
 
-Etiketter kan bara användas på scheman och kan inte läggas till i de komponenter som utgör dessa scheman (klasser, fältgrupper och datatyper). Om du vill lägga till etiketter måste du först [välj ett befintligt schema att redigera](../ui/resources/schemas.md#edit) eller [skapa ett nytt schema](../ui/resources/schemas.md#create) om du vill visa dess struktur i Schemaredigeraren.
+Om du vill lägga till etiketter måste du först [välj ett befintligt schema att redigera](../ui/resources/schemas.md#edit) eller [skapa ett nytt schema](../ui/resources/schemas.md#create) om du vill visa dess struktur i Schemaredigeraren.
 
 Om du vill redigera etiketterna för ett enskilt fält kan du markera fältet på arbetsytan och sedan välja **[!UICONTROL Manage access]** i rätt spår.
 
