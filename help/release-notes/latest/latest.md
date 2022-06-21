@@ -2,247 +2,52 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 1dc97fa33fa8cb46184e11d311ef8246199b4f03
+source-git-commit: 56d43d93be7aca059a38e9428ad5680dd52ad6f9
 workflow-type: tm+mt
-source-wordcount: '2389'
-ht-degree: 2%
+source-wordcount: '562'
+ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Lanseringsdatum: 25 maj 2022**
-
-Nya funktioner i Adobe Experience Platform:
-
-- [Attributbaserad åtkomstkontroll](#abac)
-- [Datahygien](#hygiene)
+**Releasedatum: 22 juni 2022**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Larm](#alerts)
-- [Granskningsloggar](#audit-logs)
-- [Kontrollpaneler](#dashbaords)
-- [Datainsamling](#data-collection)
-- [Datastyrning](#data-governance)
-- [Dataprep](#data-prep)
-- [Mål ](#destinations)
-- [Experience Data Model (XDM)](#xdm)
+- [[!DNL Data Science Workspace]](#dsw)
 - [Frågetjänst](#query-service)
 - [Källor](#sources)
 
-## Attributbaserad åtkomstkontroll {#abac}
+## [!DNL Data Science Workspace] {#dsw}
 
->[!IMPORTANT]
->
->Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
-
-Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
-
-Med attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att ge insikter från era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar. Ett sätt som Data Science Workspace kan uppnå detta är genom JupyterLab. JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> och är nära integrerat i Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Attributbaserad åtkomstkontroll | Attributbaserad åtkomstkontroll gör att du kan etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisation eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper som omfattar XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment. Mer information finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md). |
-| Behörigheter | Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram. Genom Behörigheter kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för dessa roller. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Användargränssnittshandbok för behörigheter](../../access-control/abac/ui/browse.md). |
-
-Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md).
-
-## Datahygien {#hygiene}
-
-Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att ta bort konsumentposter och datauppsättningar programmatiskt. Använda antingen [!UICONTROL Data Hygiene] arbetsytan i användargränssnittet eller genom anrop till API:t för datahygien kan du hantera dina datalager för att se till att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
-
->[!IMPORTANT]
->
->Datahygien är för närvarande endast tillgänglig för organisationer som har köpt tillägget Adobe Shield for Healthcare.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| TTL (Time to live) för datauppsättningar | [Schemalägg TTL:er](../../hygiene/ui/ttl.md) för plattformsdatauppsättningar. |
+| JupyterLab Launcher | JupyterLab Launcher innehåller nu startsidor för bärbara Spark 3.2-datorer. Bärbara Spark 2.4-startdatorer ersätts nu av bärbara Spark 3.2-datorer och kommer att ingå i den här versionen. |
+| Spark 3.2 | Nya recept från Scala (Spark) och PySpark använder nu Spark 3.2 |
+| Kernlar | Scala (Spark) bärbara datorer har nu skapats via Scala-kernel. PySpark-anteckningsböcker skrivs nu via Python Kernel. Spark- och PySpark-kärnan är föråldrad och inställd på att tas bort i en senare version. |
+| Recept | Nya PySpark- och Spark-recept följer nu Docker-arbetsflödet som liknar Python- och R-recept. |
 
 {style=&quot;table-layout:auto&quot;}
 
-Mer information om granskningsloggar i Platform finns i [datahygienöversikt](../../hygiene/home.md).
-
-## Larm {#alerts}
-
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via [!UICONTROL Alerts] -fliken i användargränssnittet för plattformen och kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
-
-**Uppdaterade funktioner**
-
-| Funktion | Varningsregel | Beskrivning |
-| --- | --- | --- |
-| Ny varningsregel | Överskridningsgraden överskrider tröskelvärdet | Du kan nu använda varningen för att få meddelanden när källans dataflöde överskrider identitetströskeln. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om varningar finns i [[!DNL Observability Insights] översikt](../../observability/home.md).
-
-## Granskningsloggar {#audit-logs}
-
-Med Experience Platform kan du granska användaraktivitet för olika tjänster och funktioner. Granskningsloggarna innehåller information om vem som gjorde vad och när.
-
-**Uppdaterade funktioner**
-
-| Funktion | Namn | Beskrivning |
-| --- | --- | --- |
-| Tillagda resurser | <ul><li> Åtkomstkontrollprincip </li><li> Roll </li><li> Granskningsloggar </li><li> Arbetsorder </li><li> Namnutrymme för identitet </li><li> Identitetsdiagram </li><li> Fråga </li><li> Datauppsättning </li><li> Källdataflöde </li></ul> | Granskningsloggresurser registreras automatiskt när aktiviteten utförs. Om funktionen är aktiverad behöver du inte aktivera loggsamling manuellt. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
-
-## Kontrollpaneler {#dashboards}
-
-Adobe Experience Platform tillhandahåller flera kontrollpaneler där du kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
-
-### Kontrollpaneler för profiler
-
-På profilkontrollpanelen visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform.
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Målgruppsöverlappning efter widget för sammanfogningspolicy | Den här widgeten visar den visuella överlappningen av segmentdefinitioner och gör att du kan optimera segmenteringsstrategin genom att studera likheter mellan segmentdefinitionerna. |
-| Antal profiler förändrar trenden per identitetswidget | Med dessa widgetar kan du hantera dina behov av målaktivering genom att visa tillväxtmönstret för profiler som filtrerats med den önskade identiteten. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om profiler finns i [profilkontrollpanelens dokumentation](../../dashboards/guides/profiles.md).
-
-### Kontrollpaneler för destinationer
-
-På kontrollpanelen för destinationer visas en ögonblicksbild av de destinationer som din organisation har aktiverat i Experience Platform.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Aktiverade målgrupper efter målwidget | Den här widgeten hjälper dig att snabbt förstå värdet av dina destinationer baserat på antalet aktiva målgrupper. Den ger också enkel åtkomst till mer detaljerad information om de segment som har mappats till målet. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om destinationer finns i [dokumentation för kontrollpanelen för destinationer](../../dashboards/guides/destinations.md).
-
-### Kontrollpaneler för segment
-
-Segmentkontrollpanelen har ett användargränssnitt där du kan visa viktig information om dina segment, som den som fångas in under en daglig ögonblicksbild.
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Widget för publiköverlappning | Med den här widgeten kan du optimera din segmenteringsstrategi genom att visualisera likheterna i resultaten av segmentdefinitionerna. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om segment finns i [dokumentation för instrumentpanelen för segment](../../dashboards/guides/segments.md).
-
-## Datainsamling {#data-collection}
-
-Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Kopiera datastreams | [Skapa en kopia av en befintlig datastream](../../edge/datastreams/overview.md#copy) och vid behov justera konfigurationen för att undvika att behöva börja från början. |
-| Importera mappningsregler för datastream | När du konfigurerar Data Prep för datainsamling kan du [importera mappningsreglerna för en befintlig datastream](../../edge/datastreams/data-prep.md#import-mapping) i stället för att konfigurera varje fältmappning manuellt. |
-| Stöd för datamappning för Mobile SDK | Nu kan du konfigurera Data Prep för datainsamling för datastreams som ska användas med Experience Platform Mobile SDK. |
-| Stöd för datamappning för XDM-objekt | Mappa XDM-objekt utöver datalagerobjekt när [konfigurerar dataprep för datainsamling](../../edge/datastreams/data-prep.md#select-data). |
-| Integrering med dataflöden | Använd källkatalogen i Platform för att få tillgång till dina data på Platform Edge Network, inklusive Data Prep för datainsamling och förbättrat stöd för varningar om dataprep. Se [Översikt över datakällan för Adobe Data Collection](../../sources/connectors/adobe-applications/data-collection.md) för mer information. |
-
-Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
-
-## Datastyrning {#governance}
-
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Regelefterlevnad för samtycke (begränsad tillgänglighet) | Om ni har köpt tillägget Adobe Shield for Healthcare kan ni nu [skapa medgivandeprinciper](../../data-governance/policies/user-guide.md#consent-policy) till automatiskt [tillämpa kundens samtycke och preferenser i segmentdeltagandet](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation). |
-
-{style=&quot;table-layout:auto&quot;}
-
-Se [Datastyrning - översikt](../../data-governance/home.md) för mer information om tjänsten.
-
-## [!DNL Data Prep] {#data-prep}
-
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Attributbaserad åtkomstkontroll i [!DNL Data Prep] | Nu kan du bara mappa attribut som du har tillgång till. Attribut som du inte har åtkomst till kan inte användas i direktmappningar och beräkningsfält. Mer information finns i [attributbaserad åtkomstkontroll i [!DNL Data Prep]](../../data-prep/home.md). **Anteckning**: Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt. |
-| Lokaliserade datafel | [!DNL Data Prep] lokaliserar nu alla omformningsfel till attributnivån (tidigare på radnivå). Dataflöden kommer nu att importera delar av rader fyllda med kolumner som inte har några omformningsfel, i stället för att ignorera de fullständiga raderna. |
-| Direktuppspelningar till [!DNL Profile Service] | Direktuppspelningar med [!DNL Data Prep] för att skicka uppdateringar av delar av rader till profiltjänsten med [[!DNL Amazon Kinesis]](../../sources/connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hubs]](../../sources/connectors/cloud-storage/eventhub.md), eller [[!DNL HTTP API]](../../sources/connectors/streaming/http.md) källa. Se guiden [direktuppspelande upserts](../../data-prep/upserts.md) för mer information. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
-
-## [!DNL Destinations] {#destinations}
-
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-
-**Nya eller uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| ----------- | ----------- |
-| Exportera de senaste profilkvalifikationerna [efter daglig segmentutvärdering](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) | Nu kan du schemalägga en fullständig filexport, en eller en gång om dagen, med de senaste profilkvalifikationerna, när den dagliga utvärderingen av segment är klar. |
-| Valfritt datastream-ID för [Adobe Target destinationer](../../destinations/catalog/personalization/adobe-target-connection.md) | Om du vill aktivera Adobe Target-personalisering för användare som inte kan implementera Experience Platform Web SDK är valet av datastream-ID valfritt när du konfigurerar Adobe Target-mål. När du inte använder ett datastödram kommer segment som exporteras från Experience Platform till Target endast att ha stöd för nästa sessionspersonalisering, medan kantsegmentering är inaktiverat, tillsammans med alla [användningsfall](../../destinations/ui/configure-personalization-destinations.md) som är beroende av kantsegmentering. |
-
-{style=&quot;table-layout:auto&quot;}
-
-## Experience Data Model (XDM) {#xdm}
-
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
-
-**Nya XDM-komponenter**
-
-| Komponenttyp | Namn | Beskrivning |
-| --- | --- | --- |
-| Fältgrupp | [[!UICONTROL Change set]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/changeset.schema.json) | Hämtar ändringar på radnivå till och från datauppsättningar. Den här fältgruppen kan användas av alla klasser. |
-| Fältgrupp | [[!UICONTROL Reference keys]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-reference-keys.schema.json) | Hämtar referensnycklar för ExperienceEvent-scheman, vilket gör att du kan skapa relationer med scheman som baseras på andra klasser. |
-
-{style=&quot;table-layout:auto&quot;}
-
-**Uppdaterade XDM-komponenter**
-
-| Komponenttyp | Namn | Uppdatera beskrivning |
-| --- | --- | --- |
-| Beteende | [[!UICONTROL Time-series Schema]](https://github.com/surbhi114/xdm/blob/master/components/behaviors/time-series.schema.json) | Uppdaterat `eventType` för att inkludera flera nya händelsetyper relaterade till media och ett webbaserat användningsexempel för Adobe Journey Optimizer. |
-| Globalt schema | [[!UICONTROL Destination]](https://github.com/tumulurik/xdm/blob/master/schemas/destinations/destination.schema.json) | Uppräkningsvärden har tagits bort från `xdm:destinationCategory`. |
-| Fältgrupp | [[!UICONTROL Record Status]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/record-status.schema.json) | Uppdaterad fältgruppsstatus från `experimental` till `stable`. |
-| Fältgrupp | (Flera) | Flera B2B-fältgrupper har uppdaterats så att vissa ID-fält har tagits bort till förmån för nyckeltypsfält som använder [[!UICONTROL B2B Source]](../../xdm/data-types/b2b-source.md) datatyp. Föregående ID-fält kommer att bli inaktuella i en framtida uppdatering. Se följande [pull-förfrågan](https://github.com/adobe/xdm/pull/1533/files#diff-720c0bb1d1cbaf622f5656c2a4b62d35830c75f6563794da72a280a6a520fbc1) för en fullständig lista över ändringar i de berörda fältgrupperna. |
-| Datatyp | [[!UICONTROL Browser details]](https://github.com/liljenback/xdm/blob/master/components/datatypes/browserdetails.schema.json) | Ett nytt fält har lagts till `xdm:userAgentClientHints` som samlar in sammanhangsbaserad information om hur användaragenten interagerar med webbläsaren. |
-| Datatyp | [[!UICONTROL Media information]](https://github.com/lidiaist/xdm/blob/master/components/datatypes/media.schema.json) | En `xdm:playhead` för att spela in spelhuvudstiden för ett visst medieinnehåll. Fast mönstervalidering för `xdm:videoSegment`. |
-| Datatyp | [[!UICONTROL Rating]](https://github.com/lidiaist/xdm/blob/master/components/datatypes/external/iptc/rating.schema.json) | `iptc4xmpExt:RatingSourceLink` är inte längre ett obligatoriskt fält. |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer allmän information om arbetsytan Datavetenskap finns i [översiktlig dokumentation](../../data-science-workspace/home.md).
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL data lake]. Du kan koppla alla datauppsättningar från [!DNL data lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Integrering av granskningslogg för frågetjänsten | Granskningsloggen för frågetjänsten innehåller register över frågerelaterade användaråtgärder i syfte att felsöka eller följa företagets policyer för datahantering och lagstadgade krav. Se [integreringsdokumentation för granskningslogg](../../query-service/data-governance/audit-log-guide.md) för omfattande information |
-| SQL-konstruktion för ALTER TABLE | Använd SQL för att ange primära identiteter i en ad hoc-datauppsättning. Med frågetjänsten kan du markera datauppsättningskolumner som antingen primära eller sekundära identiteter direkt via SQL med `ALTER TABLE` -kommando. |
+| Ad hoc-schemamärkning | Hantera åtkomsten till känsliga data genom att lägga till etiketter i datafält med ad hoc-scheman som genereras automatiskt via Query Service CTAS-frågor. Du kan begränsa användningen av vissa fält, eller datauppsättningar, i ad hoc-scheman för att styra åtkomsten till både känsliga personuppgifter och personligt identifierbar information. Genom att använda den attributbaserade åtkomstkontrollfunktionen kan du etikettera ad hoc-schemafält via plattformens användargränssnitt. |
+| `FLATTEN` inställning | När du ansluter till en databas via BI-verktyg från tredje part `FLATTEN` När du anger förenklas kapslade datastrukturer till separata kolumner där attributnamnet blir det kolumnnamn som innehåller radvärdena. Detta förbättrar användbarheten för ad hoc-scheman och minskar den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data i BI-verktyg som inte stöder kapslade datastrukturer. |
 
 {style=&quot;table-layout:auto&quot;}
 
-Mer information om funktionerna i frågetjänsten finns i [Översikt över frågetjänsten](../../query-service/home.md)
-
-<!--For more information on data governance in Query Service, see the [data governance overview](../../query-service/data-governance/overview.md).-->
+Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
 ## Källor {#sources}
 
@@ -252,11 +57,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Attributbaserad åtkomstkontroll i källor | Nu kan du hantera och styra åtkomsten till enskilda källfält och attribut vid importen. **Anteckning**: Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt. |
-| Betaversion av [!DNL Zendesk] källa | Använd [!DNL Zendesk] källa till inhämtning av användar-, agent- och organisationsdata från din [!DNL Zendesk] instans för [!DNL Profile] berikning. Se [[!DNL Zendesk] källöversikt](../../sources/connectors/customer-success/zendesk.md) för mer information. |
-| Allmän tillgänglighet för B2B [!DNL Microsoft Dynamics] källa | Nu kan du använda [!DNL Microsoft Dynamics] källa för att importera B2B-objekt som konton, möjligheter, kampanjer, marknadsföringslistor och medlemmar i marknadsföringslistan. Se [[!DNL Microsoft Dynamics] källöversikt](../../sources/connectors/crm/ms-dynamics.md) för mer information. |
-| Stöd för datainsamling från Adobe | Använd källkatalogen i Platform för att få tillgång till dina data på Platform Edge Network, inklusive Data Prep för datainsamling och förbättrat stöd för varningar om dataprep. Se [Översikt över datakällan för Adobe Data Collection](../../sources/connectors/adobe-applications/data-collection.md) för mer information. |
-| Stöd för att importera filer med `ISO-8859-1` kodning | Använd `encoding` parameter att importera `ISO-8859-1` kodade filer med en molnlagringskälla till plattformen med [!DNL Flow Service] API. Se guiden [skapa en anslutning till molnlagringskälla](../../sources/tutorials/api/collect/cloud-storage.md) för mer information. |
+| Betaversion av [!DNL Mixpanel] källa | Nu kan du använda [!DNL Mixpanel] källa att importera analysdata från [!DNL Mixpanel] konto till Experience Platform. Se [[!DNL Mixpanel] källdokumentation](../../sources/connectors/analytics/mixpanel.md) för mer information. |
 
 {style=&quot;table-layout:auto&quot;}
 
