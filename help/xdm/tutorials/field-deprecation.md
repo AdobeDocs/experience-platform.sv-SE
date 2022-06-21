@@ -1,16 +1,18 @@
 ---
 title: Föråldrade ett XDM-fält
 description: Lär dig hur du ersätter XDM-fält (Experience Data Model) i API:t för schemaregister.
-source-git-commit: dc400dce8a77f27347e767230faf7301afc7c1fb
+source-git-commit: a1b86e6976cdb5b2bd3c2ecee933dfde337c9880
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
 
 # Föråldrade ett XDM-fält
 
-I Experience Data Model (XDM) kan du ersätta ett fält i ett schema eller en anpassad resurs med hjälp av [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Det här dokumentet beskriver hur du ersätter fält för olika XDM-resurser.
+I Experience Data Model (XDM) kan du ersätta ett fält i ett schema eller en anpassad resurs med hjälp av [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). När ett fält tas bort döljs det från användargränssnitt längre ned, t.ex. [!UICONTROL Profiles] arbetsytan och Customer Journey Analytics, men det är i övrigt en oföränderlig ändring och påverkar inte befintliga dataflöden negativt.
+
+Det här dokumentet beskriver hur du ersätter fält för olika XDM-resurser.
 
 ## Komma igång
 
