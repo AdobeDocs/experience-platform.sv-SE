@@ -5,7 +5,7 @@ title: Begränsningar för XDM-fälttyp
 topic-legacy: overview
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: 279a1d90be82188ad6fd9d2bb9123354d0046b0d
+source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 2%
@@ -22,7 +22,7 @@ Innan du använder den här handboken bör du granska [grunderna för schemakomp
 
 Om du planerar att definiera egna fälttyper i API:t rekommenderar vi att du börjar med [Utvecklarhandbok för schemaregister](../api/getting-started.md) om du vill lära dig hur du skapar fältgrupper och datatyper som du vill inkludera dina anpassade fält i. Om du använder användargränssnittet för Experience Platform för att skapa dina scheman kan du läsa guiden på [definiera fält i användargränssnittet](../ui/fields/overview.md) om du vill lära dig hur du implementerar begränsningar för fält som du definierar i anpassade fältgrupper och datatyper.
 
-## Grundstruktur och exempel
+## Grundstruktur och exempel {#basic-types}
 
 XDM byggs ovanpå JSON-schema och därför ärver XDM-fält en liknande syntax när de definierar sin typ. Att förstå hur olika fälttyper visas i JSON-schema kan hjälpa till att indikera basbegränsningarna för varje typ.
 

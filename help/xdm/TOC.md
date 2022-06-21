@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: c57c0ff63abe35fcf0246088b12b6bc6cfc542b6
 workflow-type: tm+mt
-source-wordcount: '468'
-ht-degree: 5%
+source-wordcount: '472'
+ht-degree: 6%
 
 ---
 
@@ -161,7 +161,9 @@ ht-degree: 5%
    * [Datatyper](api/data-types.md)
    * [Beskrivningar](api/descriptors.md)
    * [Unions](api/unions.md)
-   * [Exportera/importera](api/export-import.md)
+   * [CSV till schemakonvertering](api/csv-to-schema.md)
+   * [Exportera](api/export.md)
+   * [Import](api/import.md)
    * [Exempeldata](api/sample-data.md)
    * [Granskningslogg](api/audit-log.md)
    * [Ad hoc-scheman](api/ad-hoc.md)

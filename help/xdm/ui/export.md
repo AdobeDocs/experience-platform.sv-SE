@@ -5,9 +5,9 @@ description: Lär dig hur du exporterar ett befintligt schema till en annan sand
 topic-legacy: user guide
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '489'
 ht-degree: 0%
 
 ---
@@ -16,29 +16,29 @@ ht-degree: 0%
 
 Alla resurser i schemabiblioteket finns i en specifik sandlåda i en IMS-organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och IMS-organisationer.
 
-För att tillgodose detta behov kan du med arbetsytan [!UICONTROL Schemas] i Adobe Experience Platform UI generera en exportnyttolast för vilket schema som helst i schemabiblioteket. Denna nyttolast kan sedan användas i ett anrop till API:t för schemaregister för att importera schemat (och alla beroende resurser) till en målsandlåda och IMS-organisation.
+För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Experience Platform UI kan du generera en exportnyttolast för alla scheman i schemabiblioteket. Denna nyttolast kan sedan användas i ett anrop till API:t för schemaregister för att importera schemat (och alla beroende resurser) till en målsandlåda och IMS-organisation.
 
 >[!NOTE]
 >
->Du kan också använda API:t för schemafält för att exportera andra resurser utöver scheman, inklusive klasser, schemafältgrupper och datatyper. Mer information finns i guiden för [export-/importslutpunkterna](../api/export-import.md).
+>Du kan också använda API:t för schemafält för att exportera andra resurser utöver scheman, inklusive klasser, schemafältgrupper och datatyper. Se [slutpunktsguide för export](../api/export.md) för mer information.
 
 ## Förutsättningar
 
-Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller IMS-organisationer för att slutföra arbetsflödet. Om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden läser du i guiden [komma igång med API:t för schemaregistret](../api/getting-started.md).
+Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller IMS-organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
 
 ## Generera en exportnyttolast
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. I arbetsytan [!UICONTROL Schemas] letar du reda på schemat som du vill exportera och öppnar det i mappen [!DNL Schema Editor].
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. I [!UICONTROL Schemas] på arbetsytan, leta reda på schemat som du vill exportera och öppna det i [!DNL Schema Editor].
 
 >[!TIP]
 >
->Mer information om hur du hittar den XDM-resurs du söker finns i guiden [utforska XDM-resurser](./explore.md).
+>Se guiden [utforska XDM-resurser](./explore.md) om du vill ha mer information om hur du hittar den XDM-resurs du söker.
 
-När du har öppnat schemat väljer du ikonen **[!UICONTROL Copy JSON]** (![Kopiera-ikon](../images/ui/export/icon.png)) i arbetsytans övre högra hörn.
+När du har öppnat schemat väljer du **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../images/ui/export/icon.png)) längst upp till höger på arbetsytan.
 
 ![](../images/ui/export/copy-json.png)
 
-Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För schemat [!DNL Loyalty Members] som visas ovan genereras följande JSON:
+Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För &quot;[!DNL Loyalty Members]&quot; som visas ovan genereras följande JSON:
 
 ```json
 [
@@ -202,14 +202,14 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
 ]
 ```
 
-Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan ingår den anpassade fältgruppen [!DNL Loyalty details] och schemat [!DNL Loyalty Members]. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och IMS-organisationer.
+Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan är &quot;[!DNL Loyalty details]&quot; egen fältgrupp och &quot;[!DNL Loyalty Members]schemat ingår. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och IMS-organisationer.
 
 Observera att varje instans av organisationens klientorganisations-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du importerar schemat i nästa steg.
 
 ## Importera resursen med API:t
 
-När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-begäran till `/import`-slutpunkten i API:t för schemaregistret. I avsnittet [Importera en XDM-resurs i API](../api/export-import.md#import) finns mer information om hur du konfigurerar anropet för att skicka schemat till önskad IMS-organisation och sandlåda.
+När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-förfrågan till `/rpc/import` slutpunkt i API:t för schemaregistret. Se [importera slutpunktsguide](../api/import.md) om du vill ha mer information om hur du konfigurerar anropet för att skicka schemat till önskad IMS-organisation och sandlåda.
 
 ## Nästa steg
 
-Genom att följa den här guiden har du exporterat ett XDM-schema till en annan IMS-organisation eller sandlåda. Mer information om funktionerna i gränssnittet [!UICONTROL Schemas] finns i översikten [[!UICONTROL Schemas] för användargränssnittet](./overview.md).
+Genom att följa den här guiden har du exporterat ett XDM-schema till en annan IMS-organisation eller sandlåda. Mer information om funktionerna i [!UICONTROL Schemas] Gränssnittet, se [[!UICONTROL Schemas] Översikt över användargränssnittet](./overview.md).
