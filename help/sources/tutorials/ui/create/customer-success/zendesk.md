@@ -3,9 +3,9 @@ keywords: Experience Platform;Zendesk;sources;connectors;source connectors;sourc
 title: Skapa en anslutning till Zendesk-källa i användargränssnittet
 description: Lär dig hur du skapar en Zendesk-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: 017f074a325b5ca1921128f6d3d9759612a8a398
+source-git-commit: f0348abd41e7d594109a04fd11ed06857cedfa53
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '775'
 ht-degree: 3%
 
 ---
@@ -97,10 +97,6 @@ Välj **[!UICONTROL Datasets]** från vänster navigering för att komma åt [!U
 Välj sedan det dataflödes-ID för dataflödet som du vill visa för att se specifik information om dataflödeskörningen.
 
 ![Dataflödessida](../../../../images/tutorials/create/zendesk/dataflow-monitoring.png)
-
-Om du vill se information om ditt schema väljer du **[!UICONTROL Data governance]**.
-
-![Zendesk-schema](../../../../images/tutorials/create/zendesk/dataset-governance.png)
 
 Äntligen väljer du **[!UICONTROL Preview dataset]** för att visa de data som har importerats.
 

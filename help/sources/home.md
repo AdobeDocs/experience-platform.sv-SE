@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 16f61ae259f6da23cfb7aa96e685716cd623d1b2
+source-git-commit: e44f6d5bb2fd891a3e3b3c5e4aed68e8d4687b53
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '992'
 ht-degree: 0%
 
 ---
@@ -45,11 +45,11 @@ Experience Platform stöder inmatning av data från ett annonssystem från tredj
 
 - [[!DNL Google AdWords]](connectors/advertising/ads.md)
 
-<!-- ### Analytics {#analytics}
+### Analytics  {#analytics}
 
-Experience Platform provides support for ingesting data from a third-party analytics platform. See the following related documents for more information:
+Experience Platform stöder inmatning av data från en analysplattform från tredje part. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) -->
+- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md)
 
 ### molnlagring {#cloud-storage}
 

@@ -2,9 +2,8 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;
 title: (Beta) Översikt över källkoppling för blandpanel
 description: Lär dig hur du ansluter Mixpanel till Adobe Experience Platform med API:er eller användargränssnittet.
-hide: true
-hidefromtoc: true
-source-git-commit: e7a5e20721f5826ca1f4520b4a27d261eed1e4df
+exl-id: 7eb605f6-8580-40b7-a9b3-96b9c3444f5d
+source-git-commit: e44f6d5bb2fd891a3e3b3c5e4aed68e8d4687b53
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 0%
@@ -61,4 +60,3 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Mixpanel]
 
 * [Skapa en [!DNL Mixpanel] källanslutning i användargränssnittet](../../tutorials/ui/create/analytics/mixpanel.md)
 * [Skapa ett dataflöde för en källanslutning till en lyckad kund i användargränssnittet](../../tutorials/ui/dataflow/analytics.md)
-
