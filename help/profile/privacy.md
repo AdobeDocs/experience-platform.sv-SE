@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1686ff1684080160057462e9aa40819a60bf6b75
 workflow-type: tm+mt
-source-wordcount: '1255'
+source-wordcount: '1264'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,7 @@ När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Pri
 
 >[!IMPORTANT]
 >
->En begäran om borttagning tar bort insamlade attributdata för en kund (eller en uppsättning kunder), men begäran tar inte bort de associationer som har upprättats i identitetsdiagrammet.
+>Om en borttagningsbegäran görs för profilen (`ProfileService`) men inte identitetstjänst (`identity`) tar det resulterande jobbet bort de insamlade attributdata för en kund (eller en uppsättning kunder), men tar inte bort de associationer som har upprättats i identitetsdiagrammet.
 >
 >En borttagningsbegäran som använder en kunds `email_id` och `customer_id` tar bort alla attributdata som lagras under dessa ID:n. Alla uppgifter som därefter importeras under samma `customer_id` kommer fortfarande att kopplas till lämplig `email_id`, eftersom associationen fortfarande finns.
 >
