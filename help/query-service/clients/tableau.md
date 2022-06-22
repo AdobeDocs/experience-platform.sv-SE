@@ -5,9 +5,9 @@ title: Anslut tabell till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 0c20b19c4c34b29c46964d5d87a8646c61055b06
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -32,9 +32,13 @@ Kontrollera att du har markerat **[!UICONTROL SSL Required]** innan du försöke
 >
 >Se [[!DNL Query Service] SSL-dokumentation](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter med `verify-full` SSL-läge.
 
-När du har fyllt i alla dina uppgifter väljer du **[!DNL Sign In]** för att fortsätta.
-
 ![](../images/clients/tableau/sign-in.png)
+
+>[!IMPORTANT]
+>
+>Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../best-practices/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
+
+När du har fyllt i alla dina uppgifter väljer du **[!DNL Sign In]** för att fortsätta.
 
 Du har nu anslutit till Adobe Experience Platform, med en lista över tabellerna på sidan.
 

@@ -5,9 +5,9 @@ title: Anslut Power BI till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 69f57a0e2293e438a0e5c986d888027892cc6359
+source-git-commit: 0c20b19c4c34b29c46964d5d87a8646c61055b06
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '1012'
 ht-degree: 1%
 
 ---
@@ -53,6 +53,10 @@ Dialogrutan PostgreSQl-databas öppnas och värden för servern och databasen ef
 För **[!DNL Server]** i Power BI anger du värdet för värddatorn som finns i avsnittet med autentiseringsuppgifter för frågetjänsten. Lägg till port för produktion `:80` till slutet av värdsträngen. Exempel, `made-up.platform-query.adobe.io:80`.
 
 The **[!DNL Database]** -fältet kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn. Exempel, `prod:all`.
+
+>[!IMPORTANT]
+>
+>Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../best-practices/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
 
 ![Power BI-kontrollpanelen med server- och databasindatafälten markerade.](../images/clients/power-bi/postgresql-database-dialog.png)
 
