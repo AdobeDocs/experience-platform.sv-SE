@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: d01875bcb89d887ca4f4dbb9e7fe6179446faa3c
+source-git-commit: 34c408e5e4c9917be7f664f284e4b8e87898945c
 workflow-type: tm+mt
-source-wordcount: '759'
+source-wordcount: '761'
 ht-degree: 1%
 
 ---
@@ -153,6 +153,7 @@ ht-degree: 1%
       * [Översikt över kundens destinationer](./catalog/voice/overview.md)
       * [Bekräfta tillägg för digital feedback](./catalog/voice/confirmit-digital-feedback.md)
       * [Anropa taggtillägg](./catalog/voice/invoca.md)
+      * [Medieanslutning](./catalog/voice/medallia-connector.md)
       * [Medietillägg](./catalog/voice/medallia.md)
       * [Tillägg för URL-inkorg](./catalog/voice/talkurl.md)
 * Destination SDK {#destination-sdk}
