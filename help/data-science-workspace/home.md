@@ -5,7 +5,7 @@ title: Översikt över arbetsytan Datavetenskap
 topic-legacy: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen för Data Science Workspace i Adobe Experience Platform.
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: b30700fde3ce75cc4f66343c8d37d3e731775627
+source-git-commit: 4119242fef46d916e90e1dfb95f7e8fb9e8902f0
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
@@ -154,7 +154,7 @@ Alla data i Adobe Experience Platform följer ett standardiserat XDM-schema, vil
 Om du inte omedelbart hittar de data du behöver, men de finns utanför Adobe Experience Platform, är det en relativt enkel uppgift att importera ytterligare datauppsättningar, som också omvandlas till ett standardiserat XDM-schema.\
 Du kan använda [!DNL Jupyter Notebook] för att förenkla förbehandling av data - eventuellt med början från en mall för bärbara datorer eller en anteckningsbok som du tidigare har använt för benägenhet att köpa.
 
-![](./images/home/notebook_templates.png)
+![](./images/home/notebook_templates-new.png)
 
 ### Skriv receptet
 

@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa ett recept med mallen för receptbyggaren för JupyterLab-anteckningsböcker.
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: fd0f6aa2ac73bdc0a5413c437d091df6bb5d38a6
+source-git-commit: b4dabd36f54cc571b78a6c6c9535f9f08c403b64
 workflow-type: tm+mt
 source-wordcount: '2090'
 ht-degree: 0%
@@ -38,7 +38,7 @@ The [!UICONTROL Recipe Builder] bärbara datorer gör att du kan köra utbildnin
 >
 >The [!UICONTROL Recipe Builder] anteckningsboken stöder arbete med alla filformat, men för närvarande har funktionen för att skapa recept endast stöd för [!DNL Python].
 
-![](../images/jupyterlab/create-recipe/recipe_builder.png)
+![](../images/jupyterlab/create-recipe/recipe_builder-new.png)
 
 När du väljer [!UICONTROL Recipe Builder] anteckningsboken från startprogrammet öppnas den på en ny flik.
 
