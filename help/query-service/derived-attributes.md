@@ -1,7 +1,9 @@
 ---
 title: Härledda attribut
 description: Med härledda attribut kan du beräkna attribut på en vanlig cadence och eventuellt publicera dessa härledda attribut i kundprofilen i realtid som profilattribut. Det här dokumentet innehåller en översikt över hur du använder frågetjänsten för att skapa härledda attribut som kan användas med dina profildata.
-source-git-commit: 72e157e0a6310ebf2f55205b03b60600a56e3cf6
+hide: true
+hidefromtoc: true
+source-git-commit: fc2d2e7dadb95460f5d735ba33e5f106880a0198
 workflow-type: tm+mt
 source-wordcount: '1650'
 ht-degree: 0%

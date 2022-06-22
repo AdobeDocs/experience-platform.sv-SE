@@ -4,7 +4,7 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: d074ebaef19616f1556671f4c7307faeb954cd60
+source-git-commit: fc2d2e7dadb95460f5d735ba33e5f106880a0198
 workflow-type: tm+mt
 source-wordcount: '193'
 ht-degree: 5%
@@ -47,10 +47,6 @@ ht-degree: 5%
 - Exempelfrågor {#sample-queries}
    - [Exempelfrågor om Experience Event](sample-queries/experience-event.md)
    - [Exempel på Adobe Analytics-frågor](sample-queries/adobe-analytics.md)
-- Datastyrning {#data-governance}
-   - [Granskningsloggguide](data-governance/audit-log-guide.md)
-   - [Identiteter i ad hoc-schemadatauppsättningar](data-governance/ad-hoc-schema-identities.md)
-   - [Attributbaserad åtkomstkontroll för ad hoc-scheman](./data-governance/ad-hoc-schema-labels.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)
@@ -69,6 +65,10 @@ ht-degree: 5%
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
    - [Tableau](clients/tableau.md)
+- Datastyrning {#data-governance}
+   - [Granskningsloggguide](data-governance/audit-log-guide.md)
+   - [Identiteter i ad hoc-schemadatauppsättningar](data-governance/ad-hoc-schema-identities.md)
+   - [Attributbaserad åtkomstkontroll för ad hoc-scheman](./data-governance/ad-hoc-schema-labels.md)
 - [Felsökningsguide](troubleshooting-guide.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
