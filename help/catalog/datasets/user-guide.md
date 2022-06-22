@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för datauppsättningar
 topic-legacy: datasets
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 09db4aab17b933c63968d997f33279ab9a96bdef
+source-git-commit: 6238558e8edf968df4b24c43a626b736e2478be6
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1148'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,13 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
 
-## Visa datauppsättningar
+## Visa datauppsättningar {#view-datasets}
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_negative_numbers"
+>title="Negativa tal i datauppsättningsaktivitet"
+>abstract="Negativa tal i importerade poster innebär att en användare har tagit bort vissa batchar i ett valt tidsintervall."
+>text="Learn more in documentation"
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna **[!UICONTROL Datasets]** kontrollpanel. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
