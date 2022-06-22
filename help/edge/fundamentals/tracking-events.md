@@ -3,9 +3,9 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 9b108d0e1722ea1b895c08fd7f42104a0d0da5df
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1177'
 ht-degree: 0%
 
 ---
@@ -218,14 +218,6 @@ The `sendEvent` returnerar ett löfte som lösts med ett `result` -objekt. The `
 >[!WARNING]
 >
 >`destinations` är för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
-
-**slutsatser**: Maskininlärningsinsikter i realtid. [Läs mer om maskininlärning i realtid.](https://experienceleague.adobe.com/docs/experience-platform/data-science-workspace/real-time-machine-learning/home.html?lang=en)
-
->[!WARNING]
->
->`inferences` är för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
-
-
 
 ## Ändra händelser globalt {#modifying-events-globally}
 
