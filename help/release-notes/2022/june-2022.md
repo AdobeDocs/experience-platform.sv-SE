@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Versionsinformation juni 2022
 description: Versionsinformation juni 2022 för Adobe Experience Platform.
-source-git-commit: 4edd2042234149ab8836da4fc58eb4d6084ae205
+source-git-commit: 314cd79185748e848bcb06fb21bfe4fea37a8853
 workflow-type: tm+mt
-source-wordcount: '824'
-ht-degree: 2%
+source-wordcount: '860'
+ht-degree: 1%
 
 ---
 
@@ -58,6 +58,7 @@ Mer allmän information om arbetsytan Datavetenskap finns i [översiktlig dokume
 | Funktion | Beskrivning |
 | ----------- | ----------- |
 | (Beta) Destination SDK support för [[!DNL Google Cloud Storage]](../../destinations/destination-sdk/server-and-file-configuration.md#gcs-example) filbaserade mål och [konfigurerbara filnamn](../../destinations/destination-sdk/file-based-destination-configuration.md#file-name-configuration). | Nu kan du använda Destinationen SDK för att skapa Google Cloud-lagringsmål och definiera egna filnamn för exporterade filer, via filnamnsmakron. <br><br> Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras. |
+| Segmentkolumnen i dataflödet körs till batchmål | För dataflöden som körs till batchmål visas nu namnet på segmentet som är associerat med varje dataflödeskörning. Läs mer om [dataflödet körs till batchmål](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
 
