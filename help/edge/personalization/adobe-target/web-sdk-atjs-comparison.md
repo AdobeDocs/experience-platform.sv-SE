@@ -3,9 +3,9 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 71c63e0d0b993206cb3bb5de7f7fbd5e10c6f2e3
+source-git-commit: 7bdf4c01ad3b361b3bc53574d4da1096757c815c
 workflow-type: tm+mt
-source-wordcount: '2269'
+source-wordcount: '2286'
 ht-degree: 2%
 
 ---
@@ -462,11 +462,22 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en)
+Läs mer om `applyOffers` från [dedikerad dokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en).
+
 
 ### Använda Web SDK
 
-Den här funktionen stöds för närvarande inte i Web SDK.
+Du kan använda Target-aktiviteterna med `applyPropositions` -kommando.
+
+Exempel:
+
+```javascript
+alloy("applyPropositions", {
+    propositions: [...]
+});
+```
+
+Läs mer om `applyPropositions` från [dedikerad dokumentation](../../personalization/rendering-personalization-content.md#applypropositions).
 
 ## Spåra händelser
 
