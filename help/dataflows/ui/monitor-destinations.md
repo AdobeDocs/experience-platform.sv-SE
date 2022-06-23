@@ -6,9 +6,9 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 2be8ed7daaac6554bdbc52acab325a474fa87566
+source-git-commit: 20fbc4a33baa677cf34b3e1525f45af1862a7024
 workflow-type: tm+mt
-source-wordcount: '3052'
+source-wordcount: '3062'
 ht-degree: 0%
 
 ---
@@ -141,6 +141,7 @@ För batchdestinationer är [!UICONTROL Dataflow runs] -fliken innehåller mätd
 Varje enskild dataflödeskörning visar följande information:
 
 - **[!UICONTROL Dataflow run start]**: Den tid som dataflödet körs vid.
+- **[!UICONTROL Segment]**: Namnet på det segment som är associerat med varje dataflödeskörning.
 - **[!UICONTROL Processing time]**: Den tid det tog för dataflödet att bearbeta.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut.
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
