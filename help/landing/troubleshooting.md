@@ -7,9 +7,9 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: ef565383ab6abfe93eb8ed6a86216642eec11f6e
+source-git-commit: da3e93f6c10c89c173fff786604ef844f56081be
 workflow-type: tm+mt
-source-wordcount: '1758'
+source-wordcount: '1851'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ Många PATCH-åtgärder i [!DNL Platform] API:er använder [JSON-pekare](https:/
 
 ## Kan jag använda Postman för att ringa [!DNL Platform] API:er? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
-[Postman](https://www.postman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. The [Starthandbok för att komma igång med plattforms-API](api-guide.md) innehåller en video och instruktioner för import av Postman-samlingar. Dessutom finns en lista med Postman-samlingar för varje tjänst.
+[Postman](https://www.postman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. The [Starthandbok för att komma igång med plattforms-API](api-guide.md) innehåller en video och instruktioner för hur du importerar Postman-samlingar. Dessutom finns en lista över Postman-samlingar för varje tjänst.
 
 ## Vilka är systemkraven för [!DNL Platform]? {#what-are-the-system-requirements-for-platform}
 
@@ -109,7 +109,7 @@ Alla API-anrop [!DNL Platform] kräver särskilda begäranrubriker. Om du vill s
 
 Det här felmeddelandet visas när en `Authorization` huvud saknas i en API-begäran. Kontrollera att auktoriseringshuvudet ingår i en giltig åtkomsttoken innan du försöker igen.
 
-### OAuth-token är inte giltig
+### OAuth-token är inte giltig {#oauth-token-is-not-valid}
 
 ```json
 {
@@ -120,7 +120,7 @@ Det här felmeddelandet visas när en `Authorization` huvud saknas i en API-beg�
 
 Det här felmeddelandet visas när den angivna åtkomsttoken finns i `Authorization` header is not valid. Kontrollera att token har angetts korrekt, eller [generera en ny token](https://www.adobe.com/go/platform-api-authentication-en) i Adobe I/O Console.
 
-### API-nyckel krävs
+### API-nyckel krävs {#api-key-is-required}
 
 ```json
 {
@@ -131,7 +131,7 @@ Det här felmeddelandet visas när den angivna åtkomsttoken finns i `Authorizat
 
 Det här felmeddelandet visas när ett API-nyckelhuvud (`x-api-key`) saknas i en API-begäran. Kontrollera att rubriken är inkluderad med en giltig API-nyckel innan du försöker igen.
 
-### API-nyckeln är ogiltig
+### API-nyckeln är ogiltig {#api-key-is-invalid}
 
 ```json
 {
@@ -142,8 +142,7 @@ Det här felmeddelandet visas när ett API-nyckelhuvud (`x-api-key`) saknas i en
 
 Det här felmeddelandet visas när värdet för den angivna API-nyckelrubriken (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till din API-nyckel kan du hitta den i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Översikt** för en specifik integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
 
-
-### Rubrik saknas
+### Rubrik saknas {#missing-header}
 
 ```json
 {
@@ -154,7 +153,7 @@ Det här felmeddelandet visas när värdet för den angivna API-nyckelrubriken (
 
 Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`) saknas i en API-begäran. Kontrollera att rubriken är inkluderad i ID:t för IMS-organisationen innan du försöker igen.
 
-### Profilen är inte giltig
+### Profilen är inte giltig {#profile-is-not-valid}
 
 ```json
 {
@@ -165,7 +164,19 @@ Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`)
 
 Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` header) inte har rätt att ringa [!DNL Experience Platform] API:er för IMS-organisationen som finns i `x-gw-ims-org-id` header. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
-### Giltig innehållstyp har inte angetts
+### Fel vid uppdatering av tagg {#refresh-etag-error}
+
+```json
+{
+"errorMessage":"Supplied version=[\\\\\\\"a200a2a3-0000-0200-0000-123178f90000\\\\\\\"] does not match the current version on entity=[\\\\\\\"a200cdb2-0000-0200-0000-456179940000\\\\\\\"]"
+}
+```
+
+Du kan få ett taggfel om en ändring har gjorts för en käll- eller målenhet, t.ex. flöde, anslutning, källkoppling eller målanslutning av en annan API-anropare. På grund av versionsmatchningsfelet tillämpas inte den ändring du försöker göra på den senaste versionen av entiteten.
+
+För att lösa detta måste du hämta entiteten igen, se till att dina ändringar är kompatibla med den nya versionen av entiteten och sedan placera den nya taggen i `If-Match` och anropa slutligen API.
+
+### Giltig innehållstyp har inte angetts {#valid-content-type-not-specified}
 
 ```json
 {
@@ -178,7 +189,7 @@ Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O
 
 Det här felmeddelandet visas när en POST-, PUT eller PATCH-begäran saknar eller är ogiltig `Content-Type` header. Kontrollera att rubriken är inkluderad i begäran och att dess värde är `application/json`.
 
-### Användarregion saknas
+### Användarregion saknas {#user-region-is-missing}
 
 ```json
 {

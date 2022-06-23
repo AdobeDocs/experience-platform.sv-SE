@@ -6,9 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 183830318a3dd5012f27a73a8dd2753638aff83f
 workflow-type: tm+mt
-source-wordcount: '2034'
+source-wordcount: '2231'
 ht-degree: 0%
 
 ---
@@ -471,10 +471,17 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]
 ```
 
-* `{DATAFLOW_ID}`: Använd det dataflöde du fick i föregående steg.
-* `{ETAG}`: Använd taggen som du fick i föregående steg.
-* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till **https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**, markera **[!UICONTROL Segmentation Service API]** i den vänstra navigeringsmenyn och leta efter `GET /segment/definitions` operation in **[!UICONTROL Segment Definitions]**.
-* `{PROFILE_ATTRIBUTE}`: Till exempel: `personalEmail.address` eller `person.lastName`
+| Egenskap | Beskrivning |
+| --------- | ----------- |
+| `{DATAFLOW_ID}` | Använd ID:t för dataflödet som du skapade i föregående steg i URL-adressen. |
+| `{ETAG}` | Skaffa `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Exempel på svar: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde att använda i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde. |
+| `{SEGMENT_ID}` | Ange det segment-ID som du vill exportera till det här målet. Information om hur du hämtar segment-ID:n för de segment som du vill aktivera finns i [hämta en segmentdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
+| `{PROFILE_ATTRIBUTE}` | Exempel: `"person.lastName"` |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till ett segment i ett dataflöde använder du `add` operation. |
+| `path` | Definierar den del av flödet som ska uppdateras. När du lägger till ett segment i ett dataflöde använder du den sökväg som anges i exemplet. |
+| `value` | Det nya värdet som du vill uppdatera parametern med. |
+| `id` | Ange ID:t för det segment som du lägger till i måldataflödet. |
+| `name` | *Valfritt*. Ange namnet på segmentet som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till ett segment i måldataflödet utan att ange dess namn. |
 
 **Svar**
 
@@ -597,7 +604,7 @@ Det returnerade svaret ska innehålla `transformations` parametern segmenten och
 }
 ```
 
-## Använda Postman-samlingar för att ansluta till direktuppspelningsmål  {#collections}
+## Använda [!DNL Postman] samlingar att ansluta till direktuppspelningsmål  {#collections}
 
 Om du vill ansluta till de direktuppspelningsmål som beskrivs i den här självstudiekursen på ett effektivare sätt kan du använda [[!DNL Postman]](https://www.postman.com/).
 
@@ -612,17 +619,21 @@ Klicka [här](../assets/api/streaming-destination/DestinationPostmanCollection.z
 
 Varje samling innehåller nödvändiga begäranden och miljövariabler för [!DNL AWS Kinesis]och [!DNL Azure Event Hub], respektive.
 
-### Så här använder du Postman-samlingar
+### Så här använder du [!DNL Postman] samlingar {#how-to-use-postman-collections}
 
 För att ansluta till målen med hjälp av den bifogade [!DNL Postman] samlingar, följ dessa steg:
 
 * Hämta och installera [!DNL Postman];
 * [Hämta](../assets/api/streaming-destination/DestinationPostmanCollection.zip) och packa upp de bifogade samlingarna,
-* Importera samlingarna från deras motsvarande mappar till Postman,
+* Importera samlingar från deras motsvarande mappar till [!DNL Postman];
 * Fyll i miljövariablerna enligt instruktionerna i denna artikel.
-* Kör [!DNL API] förfrågningar från Postman, baserat på instruktionerna i den här artikeln.
+* Kör [!DNL API] förfrågningar från [!DNL Postman], baserat på instruktionerna i den här artikeln.
 
-## Nästa steg
+## API-felhantering {#api-error-handling}
+
+API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+
+## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du anslutit plattformen till ett av dina önskade direktuppspelningsmål och konfigurerat ett dataflöde till respektive mål. Utgående data kan nu användas i målet för kundanalys eller andra dataåtgärder som du kanske vill utföra. Mer information finns på följande sidor:
 
