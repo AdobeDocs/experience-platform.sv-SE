@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Versionsinformation juni 2022
 description: Versionsinformation juni 2022 för Adobe Experience Platform.
-source-git-commit: bff266fca5762d6da123af712364ee1fc30a6784
+source-git-commit: 492a05b24ec905de926d861f607a6e5d294d46e0
 workflow-type: tm+mt
-source-wordcount: '802'
+source-wordcount: '801'
 ht-degree: 2%
 
 ---
@@ -57,7 +57,6 @@ Mer allmän information om arbetsytan Datavetenskap finns i [översiktlig dokume
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| [(Beta) Google Ad Manager 360-anslutning](../../destinations/catalog/advertising/google-ad-manager-360-connection.md) | The [!DNL Google Ad Manager 360] anslutning aktiverar batchöverföring för [!DNL publisher provided identifiers] (PPID) till [!DNL Google Ad Manager 360], via [!DNL Google Cloud Storage] <br><br>Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Ad Manager 360] kontakta din Adobe-representant och uppge [!DNL IMS Organization ID]. |
 | (Beta) Destination SDK support för [[!DNL Google Cloud Storage]](../../destinations/destination-sdk/server-and-file-configuration.md#gcs-example) filbaserade mål och [konfigurerbara filnamn](../../destinations/destination-sdk/file-based-destination-configuration.md#file-name-configuration). | Nu kan du använda Destinationen SDK för att skapa Google Cloud-lagringsmål och definiera egna filnamn för exporterade filer, via filnamnsmakron. <br><br> Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -66,6 +65,7 @@ Mer allmän information om arbetsytan Datavetenskap finns i [översiktlig dokume
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
+| [(Beta) Google Ad Manager 360](../../destinations/catalog/advertising/google-ad-manager-360-connection.md) | The [!DNL Google Ad Manager 360] anslutning aktiverar batchöverföring för [!DNL publisher provided identifiers] (PPID) till [!DNL Google Ad Manager 360], via [!DNL Google Cloud Storage] <br><br>Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Ad Manager 360] kontakta din Adobe-representant och uppge [!DNL IMS Organization ID]. |
 | [[!DNL Medallia]](/help/destinations/catalog/voice/medallia-connector.md) | Aktivera profiler för riktade medieundersökningar och insamling av feedback för att bättre förstå kundernas behov och förväntningar. |
 
 {style=&quot;table-layout:auto&quot;}

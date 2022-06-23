@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: e017f98ba2fbeab9fe1a785cc7710f75d3dd496a
+source-git-commit: 492a05b24ec905de926d861f607a6e5d294d46e0
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '778'
 ht-degree: 1%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 1%
       * [Google Ads-anslutning](./catalog/advertising/google-ads-destination.md)
       * [Google Ads-tillägg](./catalog/advertising/google-ads-extension.md)
       * [Google Ad Manager-anslutning](./catalog/advertising/google-ad-manager.md)
-      * [Google Ad Manager 360-anslutning](./catalog/advertising/google-ad-manager-360-connection.md)
+      * [(Beta) Google Ad Manager 360-anslutning](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google Customer Match Connection](./catalog/advertising/google-customer-match.md)
       * [Google Display &amp; Video 360-anslutning](./catalog/advertising/google-dv360.md)
       * [Google Gtag-tillägg](./catalog/advertising/gtag-advertising.md)
