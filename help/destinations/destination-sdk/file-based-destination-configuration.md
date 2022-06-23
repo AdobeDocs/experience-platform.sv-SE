@@ -2,7 +2,7 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: (Beta) Filbaserade alternativ för destinationskonfiguration för Destination SDK
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 3c8ad296ab9f0ce62743466ca8823b13c4545a9d
+source-git-commit: 89e05ed522aed697ba3a2f06137546fd5673920d
 workflow-type: tm+mt
 source-wordcount: '2268'
 ht-degree: 2%
@@ -30,14 +30,16 @@ Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av
    "name":"S3 Destination with CSV Options",
    "description":"S3 Destination with CSV Options",
    "status":"TEST",
-   "maxProfileAttributes": "2000",
-   "maxIdentityAttributes": "10",
+   "maxProfileAttributes":"2000",
+   "maxIdentityAttributes":"10",
    "customerAuthenticationConfigurations":[
       {
          "authType":"S3"
       }
    ],
-   "customerEncryptionConfigurations":[],
+   "customerEncryptionConfigurations":[
+      
+   ],
    "customerDataFields":[
       {
          "name":"bucket",
@@ -245,34 +247,34 @@ Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av
          "destinationServerId":"{{destinationServerId}}"
       }
    ],
-   "identityNamespaces": {
-        "adobe_id": {
-            "acceptsAttributes": true,
-            "acceptsCustomNamespaces": true
-        },
-        "mobile_id": {
-            "acceptsAttributes": true,
-            "acceptsCustomNamespaces": true
-        }
-    },
+   "identityNamespaces":{
+      "adobe_id":{
+         "acceptsAttributes":true,
+         "acceptsCustomNamespaces":true
+      },
+      "mobile_id":{
+         "acceptsAttributes":true,
+         "acceptsCustomNamespaces":true
+      }
+   },
    "segmentMappingConfig":{
-       "mapExperiencePlatformSegmentName":false,
-       "mapExperiencePlatformSegmentId":false,
-       "mapUserInput":false,
-       "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
+      "mapExperiencePlatformSegmentName":false,
+      "mapExperiencePlatformSegmentId":false,
+      "mapUserInput":false,
+      "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
    },
    "schemaConfig":{
       "profileFields":[
-           {
-              "name":"phoneNo",
-              "title":"phoneNo",
-              "description":"This is a fixed attribute on your destination side that customers can map profile attributes to. For example, the phoneNumber value in Experience Platform could be phoneNo on your side.",
-              "type":"string",
-              "isRequired":false,
-              "readOnly":false,
-              "hidden":false
-           }
-        ],
+         {
+            "name":"phoneNo",
+            "title":"phoneNo",
+            "description":"This is a fixed attribute on your destination side that customers can map profile attributes to. For example, the phoneNumber value in Experience Platform could be phoneNo on your side.",
+            "type":"string",
+            "isRequired":false,
+            "readOnly":false,
+            "hidden":false
+         }
+      ],
       "profileRequired":true,
       "segmentRequired":true,
       "identityRequired":true
@@ -295,19 +297,24 @@ Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av
       ],
       "defaultFrequency":"DAILY",
       "defaultStartTime":"00:00",
-      "filenameConfig": {
-            "allowedFilenameAppendOptions": [
-                "SEGMENT_NAME",
-                "DATETIME",
-                "TIMESTAMP",
-                "DESTINATION_NAME",
-                "SANDBOX_NAME"
-            ],
-            "defaultFilename": "{{DESTINATION_NAME}}_{{SEGMENT_ID}}"
-      }
-   },
-   "backfillHistoricalProfileData":true
-}
+      "filenameConfig":{
+         "allowedFilenameAppendOptions":[
+            "SEGMENT_NAME",
+            "DESTINATION_INSTANCE_ID",
+            "DESTINATION_INSTANCE_NAME",
+            "ORGANIZATION_NAME",
+            "SANDBOX_NAME",
+            "DATETIME",
+            "CUSTOM_TEXT"
+         ],
+         "defaultFilenameAppendOptions":[
+            "SEGMENT_ID",
+            "DATETIME"
+         ],
+         "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
+      },
+      "backfillHistoricalProfileData":true
+   }
 ```
 
 | Parameter | Typ | Beskrivning |
