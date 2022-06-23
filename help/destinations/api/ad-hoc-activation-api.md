@@ -1,23 +1,25 @@
 ---
 keywords: Experience Platform;mål-API;ad hoc-aktivering;aktivera segment ad hoc
 solution: Experience Platform
-title: (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API
+title: Aktivera målgruppssegment för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln beskrivs hela arbetsflödet för aktivering av målgruppssegment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 049b9c3ef2b96001a23ee54ac3e86a4df7b4ecea
+source-git-commit: 9e191d52d8385d716ed312725f72bd85c1e4b72d
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1482'
 ht-degree: 0%
 
 ---
 
-# (Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API
+# Aktivera målgruppssegment on demand till batchdestinationer via ad hoc-aktiverings-API
 
 >[!IMPORTANT]
 >
->The [!DNL ad-hoc activation API] in Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>När betaversionen är klar [!DNL ad-hoc activation API] är nu allmänt tillgängligt (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste segmentexportjobb-ID:t](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>
+>Se [Kör ad hoc-aktiveringsjobbet](#activation-job) mer information finns nedan i den här självstudiekursen.
 
 ## Översikt {#overview}
 
@@ -37,7 +39,6 @@ Bilden nedan visar det kompletta arbetsflödet för aktivering av segment via AP
 
 En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Via Experience Platform ad hoc-aktiverings-API kan marknadsföringsteamet exportera segment on-demand och snabbt skicka e-postreklam till kundbasen.
 
-
 ### Aktuella event eller senaste nytt
 
 Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill snabbt informera de ankommande gästerna så att de kan planera därefter. Marknadsföringsteamet kan använda Experience Platform ad hoc-aktiverings-API för att exportera segment on-demand och meddela gästerna.
@@ -46,12 +47,11 @@ Ett hotell förväntar sig ett infallsväder de kommande dagarna och teamet vill
 
 IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att exportera segment on-demand, så att de kan testa sin anpassade integrering med Adobe Experience Platform och se till att allt fungerar som det ska.
 
-
 ## Guardrails {#guardrails}
 
 Tänk på följande skyddsutkast när du använder API:t för ad hoc-aktivering.
 
-* För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 20 segment. Om du försöker aktivera fler än 20 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
+* För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 segment. Om du försöker aktivera fler än 80 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
 * Ad hoc-aktiveringsjobb kan inte köras parallellt med schemalagda [segmentexportjobb](../../segmentation/api/export-jobs.md). Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda segmentexportjobbet har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet.
 * Kör inte mer än ett samtidiga ad hoc-aktiveringsjobb per segment.
 
@@ -96,7 +96,11 @@ Detta innefattar att starta aktiveringsarbetsflödet, välja segment, konfigurer
 * [Använd användargränssnittet för plattformen för att skapa ett aktiveringsflöde för att batchprofilera exportdestinationer](../ui/activate-batch-profile-destinations.md)
 * [Använd API:t för Flow Service för att ansluta till exportmål för batchprofiler och aktivera data](../api/connect-activate-batch-destinations.md)
 
-## Steg 4: Hämta det senaste segmentexportjobb-ID:t {#segment-export-id}
+## Steg 4: Hämta det senaste segmentexportjobb-ID:t (krävs inte i v2) {#segment-export-id}
+
+>[!IMPORTANT]
+>
+>I version 2 av API:t för ad hoc-aktivering behöver du inte skaffa det senaste segmentexportjobbet-ID:t. Du kan hoppa över det här steget och fortsätta till nästa.
 
 När du har konfigurerat ett aktiveringsflöde för batchdestinationen börjar schemalagda segmenteringsjobb automatiskt att köras var 24:e timme.
 
@@ -127,9 +131,48 @@ När segmentexportjobbet är klart kan du aktivera det.
 
 >[!NOTE]
 >
->För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 20 segment. Om du försöker aktivera fler än 20 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
+>För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 segment. Om du försöker aktivera fler än 80 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
 
-### Begäran
+### Begäran {#request}
+
+>[!IMPORTANT]
+>
+>Det är obligatoriskt att inkludera `Accept: application/vnd.adobe.adhoc.activation+json; version=2` huvud i din begäran för att kunna använda v2 av API:t för ad hoc-aktivering.
+
+```shell
+curl --location --request POST 'https://platform.adobe.io/data/core/activation/disflowprovider/adhocrun' \
+--header 'x-gw-ims-org-id: 5555467B5D8013E50A494220@AdobeOrg' \
+--header 'Authorization: Bearer {{token}}' \
+--header 'x-sandbox-id: 6ef74723-3ee7-46a4-b747-233ee7a6a41a' \
+--header 'x-sandbox-name: {sandbox-id}' \
+--header 'Accept: application/vnd.adobe.adhoc.activation+json; version=2' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "activationInfo":{
+      "destinationId1":[
+         "segmentId1",
+         "segmentId2"
+      ],
+      "destinationId2":[
+         "segmentId2",
+         "segmentId3"
+      ]
+   }
+}'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera segment för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i [dokumentation om målarbetsyta](/help/destinations/ui/destinations-workspace.md#browse). |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de segment som du vill aktivera till det valda målet. |
+
+{style=&quot;table-layout:auto&quot;}
+
+### Begäran med export-ID:n (ska bli inaktuell) {#request-deprecated}
+
+>[!IMPORTANT]
+>
+>**Undertryckt begärandetyp**. Den här exempeltypen beskriver begärandetypen för API-version 1. I version 2 av API:t för ad hoc-aktivering behöver du inte inkludera det senaste segmentexportjobbet-ID:t.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adhocrun \
@@ -161,7 +204,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de segment som du vill aktivera till det valda målet. |
 | <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [segmentexport](../../segmentation/api/export-jobs.md#retrieve-list) jobb. Se [Steg 4: Hämta det senaste segmentexportjobb-ID:t](#segment-export-id) för instruktioner om hur du hittar detta ID. |
 
-### Svar
+{style=&quot;table-layout:auto&quot;}
+
+### Svar {#response}
 
 Ett lyckat svar returnerar HTTP-status 200.
 
@@ -183,7 +228,21 @@ Ett lyckat svar returnerar HTTP-status 200.
 | `order` | ID:t för det mål som segmentet aktiverades till. |
 | `statusURL` | Status-URL för aktiveringsflödet. Du kan följa flödets förlopp med [API för flödestjänst](../../sources/tutorials/api/monitor.md). |
 
+{style=&quot;table-layout:auto&quot;}
 
-## API-felhantering
+## API-felhantering {#api-error-handling}
 
 Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+
+### API-felkoder och meddelanden som är specifika för API:t för ad hoc-aktivering {#specific-error-messages}
+
+När du använder API:t för ad hoc-aktivering kan du få felmeddelanden som är specifika för denna API-slutpunkt. Granska tabellen för att förstå hur de ska adresseras när de visas.
+
+| Felmeddelande | Upplösning |
+|---------|----------|
+| Kör redan för segment `segment ID` för order `dataflow ID` med körnings-ID `flow run ID` | Det här felmeddelandet anger att ett ad hoc-aktiveringsflöde pågår för ett segment. Vänta tills jobbet är klart innan aktiveringsjobbet aktiveras igen. |
+| Segment `<segment name>` är inte en del av detta dataflöde eller ligger utanför schemaintervallet! | Det här felmeddelandet anger att de segment som du har valt att aktivera inte är mappade till dataflödet eller att aktiveringsschemat som har konfigurerats för segmenten har upphört att gälla eller inte har startats ännu. Kontrollera om segmentet verkligen är mappat till dataflödet och kontrollera att segmentaktiveringsplanen överlappar dagens datum. |
+
+## Relaterad information {#related-information}
+
+* [Anslut till gruppmål och aktivera data med API:t för Flow Service](/help/destinations/api/connect-activate-batch-destinations.md)

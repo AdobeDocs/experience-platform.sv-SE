@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 34c408e5e4c9917be7f664f284e4b8e87898945c
+source-git-commit: 8c2ce6936eea5c90319a03e35f697ebcdb89e1e5
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '773'
 ht-degree: 1%
 
 ---
@@ -33,6 +33,7 @@ ht-degree: 1%
       * [Aktivera målgruppsdata för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md)
       * [Aktivera målgruppsdata för att profilera mål för begäran](./ui/activate-profile-request-destinations.md)
       * [Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida](./ui/configure-personalization-destinations.md)
+      * [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
    * [Visa målinformation](./ui/destination-details-page.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Ta bort destinationskonton](./ui/delete-destination-account.md)
