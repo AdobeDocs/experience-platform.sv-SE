@@ -1,9 +1,10 @@
 ---
 description: Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigureras i Adobe Experience Platform Destination SDK via slutpunkten /destination-servers.
 title: (Beta) Konfigurationsalternativ för filbaserade målserverspecifikationer
-source-git-commit: bc357e2e93b80edb5f7825bf2dee692f14bd7297
+exl-id: 56434e36-0458-45d9-961d-f6505de998f7
+source-git-commit: 3c8ad296ab9f0ce62743466ca8823b13c4545a9d
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '895'
 ht-degree: 8%
 
 ---
@@ -37,7 +38,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
         }
     },
     "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -50,6 +51,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
 | `fileBasedS3Destination.bucket.value` | Sträng | Namnet på [!DNL Amazon S3] bucket som ska användas för detta mål. |
 | `fileBasedS3Destination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
 | `fileBasedS3Destination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
+| `fileConfigurations` | Objekt | Se [filformatskonfiguration](#file-configuration) om du vill ha detaljerade förklaringar om det här avsnittet. |
 
 ## Filbaserad SFTP-målserverspecifikation {#sftp-example}
 
@@ -70,7 +72,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
       "encryptionMode" : "PGP"
    },
     "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -85,6 +87,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
 | `fileBasedSftpDestination.hostName.value` | Sträng | Mållagringens värdnamn. |
 | `port` | Heltal | SFTP-filserverporten. |
 | `encryptionMode` | Sträng | Anger om filkryptering ska användas. Värden som stöds: <ul><li>PGP</li><li>Ingen</li></ul> |
+| `fileConfigurations` | Objekt | Se [filformatskonfiguration](#file-configuration) om du vill ha detaljerade förklaringar om det här avsnittet. |
 
 ## Filbaserad [!DNL Azure Data Lake Storage] ([!DNL ADLS]) målserverspecifikation {#adls-example}
 
@@ -99,7 +102,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
       }
    },
   "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -110,6 +113,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
 | `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Azure Data Lake Storage] mål, ange detta till `FILE_BASED_ADLS_GEN2`. |
 | `fileBasedAdlsGen2Destination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
 | `fileBasedAdlsGen2Destination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
+| `fileConfigurations` | Objekt | Se [filformatskonfiguration](#file-configuration) om du vill ha detaljerade förklaringar om det här avsnittet. |
 
 ## Filbaserad [!DNL Azure Blob Storage] målserverspecifikation {#blob-example}
 
@@ -128,7 +132,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
       }
    },
   "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -141,6 +145,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
 | `fileBasedAzureBlobDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
 | `fileBasedAzureBlobDestination.container.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
 | `fileBasedAzureBlobDestination.container.value` | Sträng | Namnet på [!DNL Azure Blob Storage] behållare som ska användas av det här målet. |
+| `fileConfigurations` | Objekt | Se [filformatskonfiguration](#file-configuration) om du vill ha detaljerade förklaringar om det här avsnittet. |
 
 ## Filbaserad [!DNL Data Landing Zone] ([!DNL DLZ]) målserverspecifikation {#dlz-example}
 
@@ -156,7 +161,7 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
       "useCase": "Your use case"
    },
    "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -167,8 +172,41 @@ Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigu
 | `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Data Landing Zone] mål, ange detta till `FILE_BASED_DLZ`. |
 | `fileBasedDlzDestination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
 | `fileBasedDlzDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
+| `fileConfigurations` | Objekt | Se [filformatskonfiguration](#file-configuration) om du vill ha detaljerade förklaringar om det här avsnittet. |
 
-## Filbaserad konfiguration av målfil {#file-configuration}
+## Filbaserad [!DNL Google Cloud Storage] målserverspecifikation {#gcs-example}
+
+```json
+{
+   "name":"Google Cloud Storage Server",
+   "destinationServerType":"FILE_BASED_GOOGLE_CLOUD",
+   "fileBasedGoogleCloudStorageDestination":{
+      "bucket":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{customerData.bucket}}"
+      },
+      "path":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{customerData.path}}"
+      }
+   },
+   "fileConfigurations":{
+      // See the file formatting configuration section further below on this page
+   }
+}
+```
+
+| Parameter | Typ | Beskrivning |
+|---|---|---|
+| `name` | Sträng | Namnet på målanslutningen. |
+| `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. För [!DNL Google Cloud Storage] mål, ange detta till `FILE_BASED_GOOGLE_CLOUD`. |
+| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `fileBasedGoogleCloudStorageDestination.bucket.value` | Sträng | Namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål. |
+| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `fileBasedGoogleCloudStorageDestination.path.value` | Sträng | Sökvägen till målmappen som ska vara värd för de exporterade filerna. |
+| `fileConfigurations` | Objekt | Se [filformatskonfiguration](#file-configuration) om du vill ha detaljerade förklaringar om det här avsnittet. |
+
+## Filformateringskonfiguration {#file-configuration}
 
 I det här avsnittet beskrivs filformateringsinställningarna för den exporterade `CSV` filer. Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i filmottagningssystemet på din sida för att optimera läsningen och tolkningen av de filer som tas emot från Experience Platform.
 
@@ -239,7 +277,8 @@ I det här avsnittet beskrivs filformateringsinställningarna för den exportera
                 "templatingStrategy": "NONE",
                 "value": "\n"
             }
-        }
+        },
+        "maxFileRowCount":5000000
     }
 ```
 
@@ -260,3 +299,4 @@ I det här avsnittet beskrivs filformateringsinställningarna för den exportera
 | `csvOptions.charToEscapeQuoteEscaping.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Ställer in ett enda tecken som används för att kringgå citattecknet. | `\` när escape- och citattecknen är olika. `\0` när escape- och citattecknet är detsamma. |
 | `csvOptions.emptyValue.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger strängbeteckningen för ett tomt värde. | `""` |
 | `csvOptions.lineSep.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Definierar den radavgränsare som ska användas för skrivning. Maxlängden är 1 tecken. | `\n` |
+| `maxFileRowCount` | Valfritt | Maximalt antal rader som den exporterade filen kan innehålla. Konfigurera detta baserat på kraven för målplattformens filstorlek. | Ej tillämpligt |

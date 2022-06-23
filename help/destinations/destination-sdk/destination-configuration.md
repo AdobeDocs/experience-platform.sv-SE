@@ -2,7 +2,7 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: e3886cbcde76e37263d2fa23769fb9e96501edc4
+source-git-commit: b12e46592c6c7bb09a90b809e7fac7d05703210a
 workflow-type: tm+mt
 source-wordcount: '1784'
 ht-degree: 2%
@@ -271,6 +271,7 @@ Använd `maxUsersPerRequest` -parameter som anger det maximala antalet profiler 
 Det här alternativet fungerar bäst om du hellre vill ta stora grupper med tusentals profiler på samma samtal. Med det här alternativet kan du också sammanfoga de exporterade profilerna baserat på komplexa sammanställningsregler.
 
 Med det här alternativet kan du:
+
 * Ange maximal tid och maximalt antal profiler som ska samlas innan ett API-anrop görs till målet.
 * Sammanställ de exporterade profilerna som är mappade till målet baserat på:
    * Segment-ID;

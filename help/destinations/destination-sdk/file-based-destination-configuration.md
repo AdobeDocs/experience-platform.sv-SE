@@ -1,10 +1,11 @@
 ---
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: (Beta) Filbaserade alternativ för destinationskonfiguration för Destination SDK
-source-git-commit: 5186e90b850f1e75ec358fa01bfb8a5edac29277
+exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
+source-git-commit: 3c8ad296ab9f0ce62743466ca8823b13c4545a9d
 workflow-type: tm+mt
-source-wordcount: '1884'
-ht-degree: 3%
+source-wordcount: '2268'
+ht-degree: 2%
 
 ---
 
@@ -278,7 +279,7 @@ Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av
    },
    "batchConfig":{
       "allowMandatoryFieldSelection":true,
-      "allowJoinKeyFieldSelection":true,
+      "allowDedupeKeyFieldSelection":true,
       "defaultExportMode":"DAILY_FULL_EXPORT",
       "allowedExportMode":[
          "DAILY_FULL_EXPORT",
@@ -290,11 +291,20 @@ Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av
          "EVERY_6_HOURS",
          "EVERY_8_HOURS",
          "EVERY_12_HOURS",
-         "ONCE",
-         "EVERY_HOUR"
+         "ONCE"
       ],
       "defaultFrequency":"DAILY",
-      "defaultStartTime":"00:00"
+      "defaultStartTime":"00:00",
+      "filenameConfig": {
+            "allowedFilenameAppendOptions": [
+                "SEGMENT_NAME",
+                "DATETIME",
+                "TIMESTAMP",
+                "DESTINATION_NAME",
+                "SANDBOX_NAME"
+            ],
+            "defaultFilename": "{{DESTINATION_NAME}}_{{SEGMENT_ID}}"
+      }
    },
    "backfillHistoricalProfileData":true
 }
@@ -324,7 +334,7 @@ Det här avsnittet i destinationskonfigurationen genererar [Konfigurera nytt må
 
 Beroende på vilket [autentiseringsalternativ](authentication-configuration.md##supported-authentication-types) du anger i dialogrutan `authType` -fältet, genereras Experience Platform-sidan för användarna enligt följande:
 
-### Amazon S3-autentisering
+### Amazon S3-autentisering {#s3}
 
 När du konfigurerar autentiseringstypen för Amazon S3 måste användare ange autentiseringsuppgifterna för S3.
 
@@ -352,7 +362,7 @@ När du konfigurerar SFTP med autentiseringstypen SSH-nyckel måste användarna 
 
 Använd det här avsnittet för att be användare fylla i anpassade fält, som är specifika för ditt mål, när de ansluter till målet i användargränssnittet i Experience Platform.
 
-I exemplet nedan `customerDataFields` kräver att användare anger ett namn för sitt mål och anger [!DNL Amazon S3] namn och mappsökväg samt komprimeringstyp och filformat.
+I exemplet nedan `customerDataFields` kräver att användare anger ett namn för sitt mål och anger [!DNL Amazon S3] filnamn och mappsökväg, liksom komprimeringstyp, filformat och flera andra alternativ för filexport.
 
 ```json
  "customerDataFields":[
@@ -649,6 +659,7 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
       "profileRequired":true,
       "segmentRequired":true,
       "identityRequired":true
+}
 ```
 
 | Parameter | Typ | Beskrivning |
@@ -722,37 +733,96 @@ Kunder kan till exempel mappa en [!DNL Platform] [!DNL IDFA] namnutrymme till et
 I det här avsnittet hänvisas till de inställningar för filexport i konfigurationen ovan som Adobe ska använda för ditt mål i Adobe Experience Platform användargränssnitt.
 
 ```json
- "batchConfig":{
-      "allowMandatoryFieldSelection":true,
-      "allowDedupeKeyFieldSelection":true,
-      "defaultExportMode":"DAILY_FULL_EXPORT",
-      "allowedExportMode":[
-         "DAILY_FULL_EXPORT",
-         "FIRST_FULL_THEN_INCREMENTAL"
+"batchConfig":{
+   "allowMandatoryFieldSelection":true,
+   "allowDedupeKeyFieldSelection":true,
+   "defaultExportMode":"DAILY_FULL_EXPORT",
+   "allowedExportMode":[
+      "DAILY_FULL_EXPORT",
+      "FIRST_FULL_THEN_INCREMENTAL"
+   ],
+   "allowedScheduleFrequency":[
+      "DAILY",
+      "EVERY_3_HOURS",
+      "EVERY_6_HOURS",
+      "EVERY_8_HOURS",
+      "EVERY_12_HOURS",
+      "ONCE"
+   ],
+   "defaultFrequency":"DAILY",
+   "defaultStartTime":"00:00",
+   "filenameConfig":{
+      "allowedFilenameAppendOptions":[
+         "SEGMENT_NAME",
+         "DESTINATION_INSTANCE_ID",
+         "DESTINATION_INSTANCE_NAME",
+         "ORGANIZATION_NAME",
+         "SANDBOX_NAME",
+         "DATETIME",
+         "CUSTOM_TEXT"
       ],
-      "allowedScheduleFrequency":[
-         "DAILY",
-         "EVERY_3_HOURS",
-         "EVERY_6_HOURS",
-         "EVERY_8_HOURS",
-         "EVERY_12_HOURS",
-         "ONCE",
-         "EVERY_HOUR"
+      "defaultFilenameAppendOptions":[
+         "SEGMENT_ID",
+         "DATETIME"
       ],
-      "defaultFrequency":"DAILY",
-      "defaultStartTime":"00:00"
+      "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
    }
+}
 ```
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `allowMandatoryFieldSelection` | Boolean | Ange till `true` så att kunderna kan ange vilka profilattribut som är obligatoriska. Standardvärdet är `false`. Se [Obligatoriska attribut](../ui/activate-batch-profile-destinations.md#mandatory-attributes) för mer information. |
 | `allowDedupeKeyFieldSelection` | Boolean | Ange till `true` så att kunderna kan ange dedupliceringsnycklar. Standardvärdet är `false`.  Se [Dedupliceringsnycklar](../ui/activate-batch-profile-destinations.md#deduplication-keys) för mer information. |
-| `defaultExportMode` | Enum | Definierar standardläget för filexport. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul><br> Standardvärdet är `DAILY_FULL_EXPORT`. Se [batchaktiveringsdokumentation](../ui/activate-batch-profile-destinations.md#scheduling) om du vill ha mer information om schemaläggning av filexport. |
+| `defaultExportMode` | Enum | Definierar standardläget för filexport. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> Standardvärdet är `DAILY_FULL_EXPORT`. Se [batchaktiveringsdokumentation](../ui/activate-batch-profile-destinations.md#scheduling) om du vill ha mer information om schemaläggning av filexport. |
 | `allowedExportModes` | Lista | Definierar vilka filexportlägen som är tillgängliga för kunderna. Värden som stöds:<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
 | `allowedScheduleFrequency` | Lista | Definierar den filexportfrekvens som är tillgänglig för kunder. Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
-| `defaultFrequency` | Enum | Definierar standardexportfrekvensen för filer.Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> <br> Standardvärdet är `DAILY`. |
+| `defaultFrequency` | Enum | Definierar standardexportfrekvensen för filer.Värden som stöds:<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> Standardvärdet är `DAILY`. |
 | `defaultStartTime` | Sträng | Definierar standardstarttiden för filexporten. Använder 24-timmars filformat. Standardvärdet är &quot;00:00&quot;. |
+| `filenameConfig.allowedFilenameAppendOptions` | Sträng | *Obligatoriskt*. Lista över tillgängliga filnamnsmappar som användare kan välja mellan. Detta avgör vilka objekt som läggs till i de exporterade filnamnen (segment-ID, organisationsnamn, exportdatum och exporttid med mera). Vid inställning `defaultFilename`bör du se till att du inte duplicerar makron. <br><br>Värden som stöds: <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>Oavsett i vilken ordning du definierar makrona visas de alltid i den ordning som de anges här i användargränssnittet för Experience Platform. <br><br> If `defaultFilename` är tom, `allowedFilenameAppendOptions` listan måste innehålla minst ett makro. |
+| `filenameConfig.defaultFilenameAppendOptions` | Sträng | *Obligatoriskt*. Förvalda standardmakron för filnamn som användare kan avmarkera.<br><br> Makrona i den här listan är en delmängd av de som definieras i `allowedFilenameAppendOptions`. |
+| `filenameConfig.defaultFilename` | Sträng | *Valfritt*. Definierar standardmakron för filnamn för de exporterade filerna. Användarna kan inte skriva över dem. <br><br>Alla makron som definieras av `allowedFilenameAppendOptions` läggs till efter `defaultFilename` makron. <br><br>If `defaultFilename` är tom, du måste definiera minst ett makro i `allowedFilenameAppendOptions`. |
+
+
+### Filnamnskonfiguration {#file-name-configuration}
+
+Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i användargränssnittet i [filnamnskonfiguration](../ui/activate-batch-profile-destinations.md#file-names) skärm.
+
+Som en god praxis bör du alltid inkludera `SEGMENT_ID` makro i de exporterade filnamnen. Segment-ID:n är unika, så om du tar med dem i filnamnet är det bästa sättet att se till att filnamnen också är unika.
+
+| Makro | Gränssnittsetikett | Beskrivning | Exempel |
+|---|---|---|---|
+| `DESTINATION` | [!UICONTROL Destination] | Målnamn i användargränssnittet. | Amazon S3 |
+| `SEGMENT_ID` | [!UICONTROL Segment ID] | Unikt, plattformsgenererat segment-ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
+| `SEGMENT_NAME` | [!UICONTROL Segment Name] | Användardefinierat segmentnamn | VIP prenumerant |
+| `DESTINATION_INSTANCE_ID` | [!UICONTROL Destination ID] | Unikt, plattformsgenererat ID för målinstansen | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
+| `DESTINATION_INSTANCE_NAME` | [!UICONTROL Destination Name] | Användardefinierat namn för målinstansen. | Mål för min 2022-annons |
+| `ORGANIZATION_NAME` | [!UICONTROL Organization Name] | Namn på kundorganisationen i Adobe Experience Platform. | Organisationsnamn |
+| `SANDBOX_NAME` | [!UICONTROL Sandbox Name] | Namn på den sandlåda som används av kunden. | prod |
+| `DATETIME` / `TIMESTAMP` | [!UICONTROL Date and time] | `DATETIME` och `TIMESTAMP` båda definierar när filen skapades, men i olika format. <br><br><ul><li>`DATETIME` använder följande format: YYYMMDD_HMMSS.</li><li>`TIMESTAMP` använder det 10-siffriga Unix-formatet. </li></ul> `DATETIME` och `TIMESTAMP` utesluter varandra och kan inte användas samtidigt. | <ul><li>`DATETIME`: 20220509_210543</li><li>`TIMESTAMP`: 1652131584</li></ul> |
+| `CUSTOM_TEXT` | [!UICONTROL Custom text] | Användardefinierad egen text som ska inkluderas i filnamnet. Kan inte användas i `defaultFilename`. | Min_egen_text |
+| `TIMESTAMP` | [!UICONTROL Date and time] | 10-siffrig tidsstämpel i Unix-format för den tid då filen skapades. | 1652131584 |
+
+
+![Användargränssnittsbild som visar konfigurationsskärmen för filnamn med förvalda makron](assets/file-name-configuration.png)
+
+Exemplet som visas i bilden ovan använder följande makrokonfiguration för filnamn:
+
+```json
+"filenameConfig":{
+   "allowedFilenameAppendOptions":[
+      "CUSTOM_TEXT",
+      "SEGMENT_ID",
+      "DATETIME"
+   ],
+   "defaultFilenameAppendOptions":[
+      "SEGMENT_ID",
+      "DATETIME"
+   ],
+   "defaultFilename": "%DESTINATION%"
+}
+```
+
 
 ## Krav på historisk profil {#profile-backfill}
 

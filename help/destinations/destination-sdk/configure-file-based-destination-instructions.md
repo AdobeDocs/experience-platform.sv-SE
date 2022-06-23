@@ -1,9 +1,10 @@
 ---
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
 title: (Beta) Använd Destination SDK för att konfigurera ett filbaserat mål
-source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
+exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
+source-git-commit: 77c80c391ef6677f95af81ef15272380687e6789
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
@@ -259,8 +260,9 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 * Om du valde `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen, se följande avsnitt för de autentiseringstyper som stöds av Destinationen SDK för filbaserade mål:
 
    * [Amazon S3-autentisering](authentication-configuration.md#s3)
-   * [Azure-anslutningssträng](authentication-configuration.md#blob)
-   * [Azure-tjänstens huvudnamn](authentication-configuration.md#adls)
+   * [Azure Blob](authentication-configuration.md#blob)
+   * [Azure Data Lake-lagring](authentication-configuration.md#adls)
+   * [Google Cloud-lagring](authentication-configuration.md#gcs)
    * [SFTP-autentisering med SSH-nyckel](authentication-configuration.md#sftp-ssh)
    * [SFTP-autentisering med lösenord](authentication-configuration.md#sftp-password)
 

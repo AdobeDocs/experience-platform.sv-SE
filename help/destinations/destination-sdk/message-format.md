@@ -2,7 +2,7 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: f000eadb689a99f7667c47e2bef5d2a780aa0505
+source-git-commit: 6600549cf421e2adc360b75e0b463992d549b85e
 workflow-type: tm+mt
 source-wordcount: '2266'
 ht-degree: 1%
@@ -61,7 +61,7 @@ I exemplet nedan används tre vanliga profilattribut i Adobe Experience Platform
 
 Anta att din plattform kan ta emot ett meddelandeformat som:
 
-```curl
+```shell
 POST https://YOUR_REST_API_URL/users/
 Content-Type: application/json
 Authorization: Bearer YOUR_REST_API_KEY
@@ -474,7 +474,6 @@ Profil 2:
     ]
 }
 ```
-
 
 ### Skapa en mall som skickar segment och identiteter {#segments-and-identities}
 
