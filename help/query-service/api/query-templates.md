@@ -3,11 +3,11 @@ keywords: Experience Platform;home;populära topics;query service;query template
 solution: Experience Platform
 title: Frågemallar för API-slutpunkt
 topic-legacy: query templates
-description: Följande dokumentation går igenom de olika API-anrop du kan göra med hjälp av frågemallar för API:t för frågetjänsten.
+description: Den här guiden beskriver de olika API-anrop för frågemallar som du kan göra med hjälp av API:t för frågetjänsten.
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: c8b3b22b678622c31462ba0baa2f50fbe89b00d5
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '668'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,9 @@ ht-degree: 1%
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker du ska använda kan du börja ringa till [!DNL Query Service] API. Följande avsnitt går igenom de olika API-anropen som du kan göra med [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+I följande avsnitt beskrivs de olika API-anropen som du kan göra med [!DNL Query Service] API. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+
+Se [Dokumentation för UI-frågemallar](../ui/query-templates.md) om du vill ha information om hur du skapar mallar i användargränssnittet för Experience Platform.
 
 ### Hämta en lista med frågemallar
 
