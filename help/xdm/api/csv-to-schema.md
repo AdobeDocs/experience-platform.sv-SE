@@ -1,9 +1,10 @@
 ---
 title: CSV-mall till API-slutpunkt för schemakonvertering
 description: Med slutpunkten /rpc/csv2schema i API:t för schemaregister kan du använda CSV-mallar för att automatiskt skapa XDM-scheman (Experience Data Model).
-source-git-commit: 3860724b97987e555e12807c47f65fe040912d69
+exl-id: cf08774a-db94-4ea1-a22e-bb06385f8d0e
+source-git-commit: b4c186c8c40d1372fb5011f49979523e1201fb0b
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '857'
 ht-degree: 5%
 
 ---
@@ -14,7 +15,7 @@ The `/rpc/csv2schema` slutpunkt i [!DNL Schema Registry] Med API kan du automati
 
 ## Komma igång
 
-The `/rpc/csv2schema` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+The `/rpc/csv2schema` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Adobe Experience Platform-API.
 
 The `/rpc/csv2schema` slutpunkten är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropen nedan.
 
