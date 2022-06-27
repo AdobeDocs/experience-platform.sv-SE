@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: (Beta) Filbaserade alternativ för destinationskonfiguration för Destination SDK
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 39fbdcdb704f096e1fcee680221c529758a00555
+source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
 workflow-type: tm+mt
-source-wordcount: '2268'
+source-wordcount: '2277'
 ht-degree: 2%
 
 ---
@@ -788,6 +788,7 @@ I det här avsnittet hänvisas till de inställningar för filexport i konfigura
 | `filenameConfig.defaultFilenameAppendOptions` | Sträng | *Obligatoriskt*. Förvalda standardmakron för filnamn som användare kan avmarkera.<br><br> Makrona i den här listan är en delmängd av de som definieras i `allowedFilenameAppendOptions`. |
 | `filenameConfig.defaultFilename` | Sträng | *Valfritt*. Definierar standardmakron för filnamn för de exporterade filerna. Användarna kan inte skriva över dem. <br><br>Alla makron som definieras av `allowedFilenameAppendOptions` läggs till efter `defaultFilename` makron. <br><br>If `defaultFilename` är tom, du måste definiera minst ett makro i `allowedFilenameAppendOptions`. |
 
+{style=&quot;table-layout:auto&quot;}
 
 ### Filnamnskonfiguration {#file-name-configuration}
 
@@ -808,6 +809,7 @@ Som en god praxis bör du alltid inkludera `SEGMENT_ID` makro i de exporterade f
 | `CUSTOM_TEXT` | [!UICONTROL Custom text] | Användardefinierad egen text som ska inkluderas i filnamnet. Kan inte användas i `defaultFilename`. | Min_egen_text |
 | `TIMESTAMP` | [!UICONTROL Date and time] | 10-siffrig tidsstämpel i Unix-format för den tid då filen skapades. | 1652131584 |
 
+{style=&quot;table-layout:auto&quot;}
 
 ![Användargränssnittsbild som visar konfigurationsskärmen för filnamn med förvalda makron](assets/file-name-configuration.png)
 
@@ -840,6 +842,8 @@ Du kan använda `backfillHistoricalProfileData` -parametern i destinationskonfig
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`: [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`: [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Så här ansluter den här konfigurationen all nödvändig information för ditt mål {#connecting-all-configurations}
 

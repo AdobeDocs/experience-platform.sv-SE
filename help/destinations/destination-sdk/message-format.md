@@ -2,9 +2,9 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 6600549cf421e2adc360b75e0b463992d549b85e
+source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
 workflow-type: tm+mt
-source-wordcount: '2266'
+source-wordcount: '2272'
 ht-degree: 1%
 
 ---
@@ -83,6 +83,8 @@ Med tanke på meddelandeformatet är motsvarande omformningar följande:
 | `_your_custom_schema.firstName` | ` attributes.first_name` | `first_name` |
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Profilstruktur i Experience Platform {#profile-structure}
 
@@ -1194,6 +1196,8 @@ Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 | `destination.segmentNames` | Mappa från segmentnamn i Adobe Experience Platform-namnutrymmet till segmentnamn i partnersystemet. |
 | `addedSegments(listOfSegments)` | Returnerar endast de segment som har status `realized` eller `existing`. |
 | `removedSegments(listOfSegments)` | Returnerar endast de segment som har status `exited`. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Nästa steg {#next-steps}
 

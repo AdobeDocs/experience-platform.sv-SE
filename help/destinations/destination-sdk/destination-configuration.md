@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: b12e46592c6c7bb09a90b809e7fac7d05703210a
+source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1787'
 ht-degree: 2%
 
 ---
@@ -291,6 +291,8 @@ Du kan använda `backfillHistoricalProfileData` -parametern i destinationskonfig
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. <br> <ul><li> `true`: [!DNL Platform] skickar de historiska användarprofiler som är kvalificerade för segmentet innan segmentet aktiveras. </li><li> `false`: [!DNL Platform] innehåller endast användarprofiler som är kvalificerade för segmentet efter att segmentet har aktiverats. </li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Så här ansluter den här konfigurationen all nödvändig information för ditt mål {#connecting-all-configurations}
 
