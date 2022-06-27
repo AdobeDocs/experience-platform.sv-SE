@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 881d9602ff3462afb5df30f8446113a372650c8d
+source-git-commit: 2cabd8d8fa44f942f9bfce914fd2910a4ddbb973
 workflow-type: tm+mt
-source-wordcount: '394'
+source-wordcount: '396'
 ht-degree: 25%
 
 ---
@@ -107,6 +107,9 @@ ht-degree: 25%
       * Adobe Target v2 {#target-v2}
          * [Översikt](./extensions/web/target-v2/overview.md)
          * [Versionsinformation](./extensions/web/target-v2/release-notes.md)
+      * [!DNL BrightCove] videouppföljning {#brightcove}
+         * [Översikt](./extensions/web/brightcove/overview.md)
+         * [Versionsinformation](./extensions/web/brightcove/release-notes.md)
       * Plugin-program för vanlig analys {#plugins}
          * [Översikt](./extensions/web/plugins/overview.md)
          * [Versionsinformation](./extensions/web/plugins/release-notes.md)
@@ -114,12 +117,11 @@ ht-degree: 25%
          * [Översikt](./extensions/web/core/overview.md)
          * [Vidarebefordran av händelser](./extensions/web/core/event-forwarding.md)
          * [Versionsinformation](./extensions/web/core/release-notes.md)
+      * [!DNL Mailchimp] Edge {#mailchimp-edge}
+         * [Översikt](./extensions/web/mailchimp/overview.md)
       * [!DNL Marketo Munchkin] {#marketo}
          * [Översikt](./extensions/web/marketo/overview.md)
          * [Versionsinformation](./extensions/web/marketo/release-notes.md)
-      * [!DNL BrightCove] videouppföljning {#brightcove}
-         * [Översikt](./extensions/web/brightcove/overview.md)
-         * [Versionsinformation](./extensions/web/brightcove/release-notes.md)
       * Google datalager {#google-data-layer}
          * [Översikt](./extensions/web/google-data-layer/overview.md)
          * [Versionsinformation](./extensions/web/google-data-layer/release-notes.md)

@@ -3,7 +3,7 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: b445e25ebda39e1604b926dc40d8ed52ad2e9b54
 workflow-type: tm+mt
 source-wordcount: '946'
 ht-degree: 0%
@@ -67,7 +67,7 @@ De typer av dataelement som är tillgängliga vid händelsevidarebefordran är b
 
 Även om dataelementen själva skapas och konfigureras på samma sätt i händelsevidarebefordran som de är för taggar, finns det vissa viktiga syntaxskillnader när det gäller hur de refererar till data från Platform Edge Network.
 
-#### Referera till data från Platform Edge Network {#edge}
+#### Referera till data från Platform Edge Network {#data-element-path}
 
 Om du vill referera till data från Platform Edge Network måste du skapa ett dataelement som ger en giltig sökväg till dessa data. När du skapar dataelementet i användargränssnittet väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Path]** för typen.
 
