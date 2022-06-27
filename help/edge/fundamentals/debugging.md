@@ -3,9 +3,9 @@ title: Felsökning i Adobe Experience Platform Web SDK
 description: Lär dig hur du växlar felsökningsfunktioner i Experience Platform Web SDK.
 keywords: felsöka webb-sdk;felsöka;konfigurera;konfigurera kommando;felsökningskommando;edgeConfigId;setDebug;debugEnabled;debug;
 exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
-source-git-commit: d0d7fe42827579c502be9de29d36f24c94259b5f
+source-git-commit: c1e6b1519bc40e7d36bd83dc49e442d3d5583fed
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -19,13 +19,13 @@ Felsökning är inaktiverat som standard, men kan aktiveras på fyra olika sätt
 * `configure` kommando
 * `setDebug` kommando
 * frågesträngsparameter
-* Växlar till Aktivera felsökning i Adobe Experience Platform Debugger. Adobe Experience Platform är ett kraftfullt verktyg som undersöker dina webbsidor och hjälper dig att felsöka implementeringsproblem med dina Experience Cloud-produkter. Adobe Experience Platform Debugger finns som både [Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) och [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-experience-platform-dbg/). Felsökning kan aktiveras på konfigurationsfliken i avsnittet AEP Web SDK.
+* Växlar till Aktivera felsökning i Adobe Experience Platform Debugger. Adobe Experience Platform är ett kraftfullt verktyg som undersöker dina webbsidor och hjälper dig att felsöka implementeringsproblem med dina Experience Cloud-produkter. Adobe Experience Platform Debugger finns som både en [Krom](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) och [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-experience-platform-dbg/) tillägg. Felsökning kan aktiveras på konfigurationsfliken i avsnittet AEP Web SDK.
 
 ![](../images/enable-debugging.png)
 
 ## Växla felsökning med kommandot Konfigurera
 
-När du konfigurerar SDK med kommandot `configure` aktiverar du felsökning genom att ange alternativet `debugEnabled` till `true`.
+När SDK konfigureras med `configure` kommando, aktivera felsökning genom att ställa in `debugEnabled` alternativ till `true`.
 
 ```javascript
 alloy("configure", {
@@ -41,7 +41,7 @@ alloy("configure", {
 
 ## Växla felsökning med kommandot Felsökning
 
-Växla felsökning med ett separat `debug`-kommando enligt följande:
+Växla felsökning med en separat `debug` enligt följande:
 
 ```javascript
 alloy("setDebug", {
@@ -49,36 +49,40 @@ alloy("setDebug", {
 });
 ```
 
-Om du inte vill ändra kod på webbsidan eller inte vill att loggmeddelanden ska skapas för alla användare på webbplatsen är detta särskilt användbart eftersom du kan köra kommandot `debug` i webbläsarens JavaScript-konsol när som helst.
+Om du inte vill ändra kod på webbsidan eller inte vill att loggmeddelanden ska skapas för alla användare på webbplatsen är detta särskilt användbart eftersom du kan köra `debug` i webbläsarens JavaScript-konsol när som helst.
 
 ## Växla felsökning med en frågesträngsparameter
 
-Växla felsökning genom att ställa in en `alloy_debug`-frågesträngsparameter på `true` eller `false` enligt följande:
+Växla felsökning genom att ställa in en `alloy_debug` frågesträngsparameter till `true` eller `false` enligt följande:
 
 ```HTTP
 http://example.com/?alloy_debug=true
 ```
 
-Precis som kommandot `debug` är det särskilt användbart om du inte vill ändra kod på webbsidan eller inte vill att loggmeddelanden ska skapas för alla användare på webbplatsen, eftersom du kan ange frågesträngsparametern när du läser in webbsidan i webbläsaren.
+Liknar `debug` om du inte vill ändra kod på webbsidan eller inte vill att loggmeddelanden ska skapas för alla användare på webbplatsen, är detta särskilt användbart eftersom du kan ange frågesträngsparametern när du läser in webbsidan i webbläsaren.
 
 ## Prioritet och varaktighet
 
-När felsökning ställs in via kommandot `debug` eller frågesträngsparametern åsidosätts alla alternativ som har angetts för `debug` i kommandot `configure`. I dessa två fall förblir felsökning aktiverat under hela sessionen. Det innebär att om du aktiverar felsökning med felsökningskommandot eller frågesträngsparametern är den aktiverad tills något av följande:
+När felsökning ställs in via `debug` kommando eller frågesträngsparameter, åsidosätter den `debug` i `configure` -kommando. I dessa två fall förblir felsökning aktiverat under hela sessionen. Det innebär att om du aktiverar felsökning med felsökningskommandot eller frågesträngsparametern är den aktiverad tills något av följande:
 
 * Sessionens slut
-* Du kör kommandot `debug`
+* Du kör `debug` kommando
 * Du ställer in frågesträngsparametern igen
 
 ## Hämtar biblioteksinformation
 
-Det är ofta praktiskt att komma åt en del av informationen bakom biblioteket som du har laddat in på din webbplats. Om du vill göra det kör du kommandot `getLibraryInfo` enligt följande:
+Det är ofta praktiskt att komma åt en del av informationen bakom biblioteket som du har laddat in på din webbplats. Om du vill göra det kör du `getLibraryInfo` enligt följande:
 
 ```js
 alloy("getLibraryInfo").then(function(result) {
   console.log(result.libraryInfo.version);
+  console.log(result.libraryInfo.commands);
+  console.log(result.libraryInfo.configs);
 });
 ```
 
-För närvarande innehåller det angivna `libraryInfo`-objektet följande egenskaper:
+För närvarande, `libraryInfo` -objektet innehåller följande egenskaper:
 
-* `version` Det här är versionen av det inlästa biblioteket. Om t.ex. versionen av biblioteket som läses in var 1.0.0 är värdet `1.0.0`. När biblioteket körs inuti taggtillägget (med namnet&quot;AEP Web SDK&quot;) är versionen biblioteksversionen och taggtilläggsversionen som är kopplad till ett plustecken (+). Om biblioteksversionen till exempel är 1.0.0 och taggtilläggets version är 1.2.0, blir värdet `1.0.0+1.2.0`.
+* `version`: Det här är versionen av det inlästa biblioteket. Om t.ex. versionen av biblioteket som läses in var 1.0.0 blir värdet `1.0.0`. När biblioteket körs inuti taggtillägget (med namnet&quot;AEP Web SDK&quot;) är versionen biblioteksversionen och taggtilläggsversionen som är kopplad till ett plustecken (+). Om biblioteksversionen till exempel är 1.0.0 och taggtilläggets version är 1.2.0, blir värdet 1.0 `1.0.0+1.2.0`.
+* `commands`: Det här är alla tillgängliga kommandon som stöds av det inlästa biblioteket.
+* `configs`: Dessa är alla aktuella konfigurationer i det inlästa biblioteket.

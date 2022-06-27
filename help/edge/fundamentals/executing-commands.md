@@ -3,7 +3,7 @@ title: Kör Adobe Experience Platform Web SDK-kommandon
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 keywords: Kör kommandon;commandName;Promises;getLibraryInfo;response objects;medgivande;
 exl-id: dda98b3e-3e37-48ac-afd7-d8852b785b83
-source-git-commit: ca3ee230d510dfb9de400b6f573a612ec33c8f7a
+source-git-commit: f3344c9c9b151996d94e40ea85f2b0cf9c9a6235
 workflow-type: tm+mt
 source-wordcount: '416'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 # Kör kommandon
 
 
-När baskoden har implementerats på webbsidan kan du börja köra kommandon med SDK:n. Du behöver inte vänta på att den externa filen (`alloy.js`) ska läsas in från servern innan du kör kommandon. Om SDK inte har lästs in helt köas och bearbetas kommandona av SDK så snart som möjligt.
+När baskoden har implementerats på webbsidan kan du börja köra kommandon med SDK:n. Du behöver inte vänta på den externa filen (`alloy.js`) som ska läsas in från servern innan kommandon körs. Om SDK inte har lästs in helt köas och bearbetas kommandona av SDK så snart som möjligt.
 
 Kommandon körs med följande syntax.
 
@@ -21,15 +21,15 @@ Kommandon körs med följande syntax.
 alloy("commandName", options);
 ```
 
-`commandName` anger för SDK vad som ska göras, medan `options` är de parametrar och data som du vill skicka till ett kommando. Eftersom de tillgängliga alternativen är beroende av kommandot bör du läsa dokumentationen för mer information om varje kommando.
+The `commandName` anger för SDK vad som ska göras, medan `options` är de parametrar och data som du vill skicka till ett kommando. Eftersom de tillgängliga alternativen är beroende av kommandot bör du läsa dokumentationen för mer information om varje kommando.
 
 ## Ett meddelande om löften
 
-[SDK ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) ger löften om hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Om du vill veta mer om löften kan du läsa [den här självstudiekursen](https://javascript.info/promise-basics) eller någon av de andra resurserna på webben.
+[Löften](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) är grundläggande för hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Läs mer om löften [den här självstudiekursen](https://javascript.info/promise-basics) eller någon annan resurs på webben.
 
 ## Hantera lyckade eller misslyckade {#handling-success-or-failure}
 
-Varje gång ett kommando körs returneras ett löfte. Löftet representerar det slutliga slutförandet av kommandot. I exemplet nedan kan du använda metoderna `then` och `catch` för att avgöra när kommandot har slutförts eller misslyckats.
+Varje gång ett kommando körs returneras ett löfte. Löftet representerar det slutliga slutförandet av kommandot. I exemplet nedan kan du använda `then` och `catch` metoder för att avgöra när kommandot har slutförts eller misslyckats.
 
 ```javascript
 alloy("commandName", options)
@@ -43,7 +43,7 @@ alloy("commandName", options)
   });
 ```
 
-Om det inte är viktigt för dig att veta när kommandot lyckas kan du ta bort `then`-anropet.
+Om det inte är viktigt för dig att veta när kommandot har utförts kan du ta bort `then` ring.
 
 ```javascript
 alloy("commandName", options)
@@ -53,7 +53,7 @@ alloy("commandName", options)
   });
 ```
 
-På samma sätt kan du ta bort `catch`-anropet om det inte är viktigt för dig att veta när kommandot misslyckas.
+På samma sätt kan du ta bort `catch` ring.
 
 ```javascript
 alloy("commandName", options)
@@ -65,12 +65,14 @@ alloy("commandName", options)
 
 ### Svarsobjekt
 
-Alla löften som returneras från kommandon löses med ett `result`-objekt. Resultatobjektet kommer att innehålla data beroende på kommandot och användarens samtycke. Biblioteksinformation skickas till exempel som en egenskap för resultatobjektet i följande kommando.
+Alla löften som returneras från kommandon löses med en `result` -objekt. Resultatobjektet kommer att innehålla data beroende på kommandot och användarens samtycke. Biblioteksinformation skickas till exempel som en egenskap för resultatobjektet i följande kommando.
 
 ```js
 alloy("getLibraryInfo")
   .then(function(result) {
     console.log(result.libraryInfo.version);
+    console.log(result.libraryInfo.commands);
+    console.log(result.libraryInfo.configs);
   });
 ```
 
