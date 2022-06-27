@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt, baserat på valfritt dataformat och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 7c6d0c8d4d1eea16f13359e9d7a895d767ad3c00
+source-git-commit: abc9b9857e4a93a334440e855ca0ae562c695df1
 workflow-type: tm+mt
-source-wordcount: '703'
+source-wordcount: '704'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ Destinationernas SDK åtkomst varierar beroende på din status som partner eller
 | Independent Software Vendor (ISV) | Gå med i [Adobe Exchange-programmet](https://partners.adobe.com/exchangeprogram/experiencecloud.html) och begär att få en Experience Platform-sandlåda för att få åtkomst till Destination SDK. |
 | Systemintegratör | Du måste vara på antingen Guld- eller Platina-nivå i [Adobe Solution Partner Program](https://solutionpartners.adobe.com/home.html)och du får en Experience Platform-sandlåda och tillgång till Destination SDK. |
 | Experience Platform kund på [Aktiveringspaket](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | Som standard får du åtkomst till sandlådor och Destination SDK i Experience Platform. |
-| Experience Platform kund på [CDP-paket i realtid](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Du har inte tillgång till Destination SDK, men du har tillgång till alla produktioner som konfigurerats av andra företag med hjälp av Destination SDK och som publicerats i olika Experience Platform-organisationer. |
+| Experience Platform kund på [CDP Ultimate-paket i realtid](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Du har inte tillgång till Destination SDK, men du har tillgång till alla produktioner som konfigurerats av andra företag med hjälp av Destination SDK och som publicerats i olika Experience Platform-organisationer. |
 
 {style=&quot;table-layout:auto&quot;}
 

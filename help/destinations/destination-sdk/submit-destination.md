@@ -1,17 +1,21 @@
 ---
-description: På den här sidan finns all information du behöver för att skicka in en målversion som skapats med Destination SDK för granskning.
-title: Skicka för granskning av ett mål som skapats i Destination SDK
+description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
+title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: dd4a150351b5e0c41586cf663324aeb345a896e4
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '683'
 ht-degree: 0%
 
 ---
 
-# Skicka för granskning av ett mål som skapats i Destination SDK
+# Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 
 ## Översikt {#overview}
+
+>[!IMPORTANT]
+>
+>Processen som beskrivs här krävs endast för partners som skickar producerade (offentliga) destinationer. Om du skapar ett privat mål för eget bruk behöver du inte producera och dela dessa material med Adobe.
 
 Innan destinationen kan publiceras på [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md)måste du ge Adobe viss information om destinationen och testningen du utförde för att säkerställa att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
 
@@ -22,7 +26,7 @@ På den här sidan visas all information du behöver ange när du skickar eller 
    * Ett API-anrop har gjorts till målslutpunkten.
    * API-svaret som togs emot från målslutpunkten.
 * Bevis på att du har skickat in en begäran om målpublicering för destinationen med [målpublicerings-API](./destination-publish-api.md).
-* (Endast för producerade integreringar) en PR-dokumentation (pull-begäran) enligt instruktionerna i [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md).
+* A documentation PR (pull request), following the instructions descriin the [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md).
 * En bildfil som visas som logotyp för målkortet i Experience Platform-katalogen.
 
 >[!IMPORTANT]
