@@ -1,16 +1,16 @@
 ---
-title: Prestandaskydd
-description: Lär dig hur du använder Server-API:t med optimala prestandaregativ
+title: Prestandaskydd för Edge Network Server API
+description: Lär dig hur du använder server-API:t med optimala prestandaresäkerhetsprofiler.
 keywords: datainsamling;samling;edge network;api;sla;slt;service levels
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 6f0eb81f9709cf4fcaea94334449117c4ed76107
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '436'
 ht-degree: 2%
 
 ---
 
-# Prestandaskydd
+# Prestandaskydd för Edge Network Server API
 
 ## Översikt {#overview}
 

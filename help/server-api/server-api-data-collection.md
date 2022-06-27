@@ -1,12 +1,10 @@
 ---
 title: Datainsamling
-description: Läs om hur API:t för Adobe Experience Platform Edge Network Server strukturerar insamlade data
-seo-description: Learn how the Adobe Experience Platform Edge Network Server API structures the collected data
-keywords: datainsamling;samling;Adobe Experience Platform Edge Network;api;struktur
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+description: Läs om hur API:t för Adobe Experience Platform Edge Network Server strukturerar insamlade data.
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 2%
+source-wordcount: '131'
+ht-degree: 3%
 
 ---
 

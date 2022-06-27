@@ -1,12 +1,10 @@
 ---
 title: Icke-interaktiv datainsamling
-description: Läs om hur API:t för Adobe Experience Platform Edge Network Server utför icke-interaktiv datainsamling
-seo-description: Learn how the Adobe Experience Platform Edge Network Server API performs non-interactive data collection
-keywords: datainsamling;samling;adobe experience platform edge network;api;icke-interaktiv datainsamling
+description: Läs om hur API:t för Adobe Experience Platform Edge Network Server utför icke-interaktiv datainsamling.
 exl-id: 1a704e8f-8900-4f56-a843-9550007088fe
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '217'
 ht-degree: 2%
 
 ---
@@ -20,17 +18,6 @@ Icke-interaktiva slutpunkter för händelsedatainsamling används för att skick
 Du bör skicka grupphändelser när slutanvändarhändelser köas lokalt under en kort tidsperiod (t.ex. när det inte finns någon nätverksanslutning).
 
 Batchhändelser bör inte nödvändigtvis tillhöra samma slutanvändare, vilket innebär att händelser kan ha olika identiteter inom sina `identityMap` -objekt.
-
-
-<!-- However, when an `ECID` identity is sent via a cookie or metadata (in Edge Network accepted format), the Edge Network will read it and associate it with each event in the batch.
-
-Each event should include the corresponding `XDM` content that needs to be collected.
-
->[!NOTE]
->
->[Experience Edge Identity Protocol](visitor-identification.md#experience-edge-identity-protocol) (`ECID` generation) is not applicable for data collection requests, meaning that events sent to this API should already have at least one identity associated to them. For server datastreams (calls to `server.adobedc.net`), the API requires that each event contains an identity **explicitly set as primary**. For device datastreams, the Edge Network will attempt to set the `ECID` as primary, when it is present, and no other primary identity is explicitly set.
-
--->
 
 ## Exempel på icke-interaktiva API-anrop {#example}
 

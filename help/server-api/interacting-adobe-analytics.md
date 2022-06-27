@@ -1,12 +1,10 @@
 ---
 title: Interagera med Adobe Analytics
-description: Lär dig hur du använder API:t för Edge Network Server för att interagera med Adobe Analytics
-seo-description: Learn how to use the Edge Network Server API to interact with Adobe Analytics
-keywords: datainsamling, Utlopp. Analyser. Adobe Experience Platform Edge Network API;analytics
+description: Lär dig hur du använder Edge Network Server API för att interagera med Adobe Analytics.
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 4fd5b5eebdeca065582365343b605a5b9ee695bb
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '179'
 ht-degree: 0%
 
 ---

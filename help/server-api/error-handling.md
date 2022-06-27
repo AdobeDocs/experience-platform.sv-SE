@@ -1,12 +1,10 @@
 ---
 title: Felhantering
 description: Lär dig mer om eventuella fel som kan uppstå när du utför API-begäranden till API:t för Adobe Experience Platform Edge Network Server.
-seo-description: Learn about the possible errors you might encounter when performing API requests to the Adobe Experience Platform Edge Network Server API.
-keywords: fel;kod;hantering;edge;network;gateway;api
 exl-id: f6b8435c-b163-4046-b5fb-50a13a897637
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '765'
 ht-degree: 2%
 
 ---

@@ -1,14 +1,13 @@
 ---
 title: Personalisering via Adobe Target
-description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target
-keywords: personalisering, server-api; Adobe Experience Platform Edge Network hämta personalisering;mål;adobe target
-source-git-commit: 59cb43007c4a7ff125738c21064381cf833063b2
+description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target.
+exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '700'
 ht-degree: 0%
 
 ---
-
 
 # Personalisering via Adobe Target
 
