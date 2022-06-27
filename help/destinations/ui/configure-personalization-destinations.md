@@ -2,11 +2,9 @@
 keywords: personalisering, Mål. destination, personaliseringsplatser, konfigurera destinationer för personalisering, samma sida, nästa sida;
 title: Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida
 type: Tutorial
-seo-title: Configure personalization destinations for same-page and next-page personalization.
 description: Lär dig hur du konfigurerar personaliseringsmål för personalisering på samma sida och nästa sida.
-seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: 99a60621bca43ecf2dacb6202e005bbd8f191c99
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
 source-wordcount: '425'
 ht-degree: 0%

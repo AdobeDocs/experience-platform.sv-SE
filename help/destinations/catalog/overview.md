@@ -1,11 +1,9 @@
 ---
 keywords: Katalog;katalog
 title: Översikt över destinationskatalogen
-seo-title: Destinations catalog overview
 description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
-seo-description: The Destinations catalog provides a list of available destinations that are ready to receive data. These destinations include Adobe solutions, advertising platforms, survey platforms, email marketing platforms, and more.
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: 320c95f894c75a7f52808730b0cac4bc1e4411e1
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%

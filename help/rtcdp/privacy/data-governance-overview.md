@@ -1,14 +1,12 @@
 ---
 keywords: datastyrning rtcdp;rtcdp datastyrning;datastyrning i realtid för kunddataprofil
 title: Datastyrning - översikt
-seo-title: Data Governance in Real-time Customer Data Platform
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
-seo-description: Data Governance allows you to manage customer data and ensure compliance with regulations, restrictions, and policies applicable to data use.
 exl-id: eb501d85-cabd-4667-a1cd-2210ec83fb71
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '688'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 

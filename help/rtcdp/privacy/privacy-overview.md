@@ -1,11 +1,9 @@
 ---
 keywords: datastyrning rtcdp;rtcdp datastyrning;kunddataprofildatastyrning i realtid;sekretess rtcdp;rtcdp sekretess
 title: Integritet i Real-time Customer Data Platform
-seo-title: Privacy in Real-time Customer Data Platform
 description: Med Real-time Customer Data Platform kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
-seo-description: Real-time Customer Data Platform allows you to streamline the process of keeping your data operations compliant with privacy regulations.
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: e3519817559dca372e228ed19bba4f9adf279768
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 0%
@@ -24,7 +22,7 @@ Lagliga sekretessregler som [!DNL General Data Protection Regulation] (GDPR) och
 
 >[!IMPORTANT]
 >
-> Begäran om sekretess från Adobe Experience Platform Privacy Service för Adobe Marketo Engage gäller endast för CDP B2B-kunder i realtid.
+> Sekretessförfrågningar som skickas in via Adobe Experience Platform Privacy Service för Adobe Marketo Engage gäller endast CDP B2B-kunder i realtid.
 
 ## Avanmälningsfunktioner
 

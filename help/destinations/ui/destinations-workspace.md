@@ -1,12 +1,11 @@
 ---
 keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;destinationskatalog;
 title: Arbetsytan Destinationer
-description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
-seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
+description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: b275621d9c6552327e0e55c00c8fcf0397088168
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
-source-wordcount: '1049'
+source-wordcount: '1050'
 ht-degree: 0%
 
 ---

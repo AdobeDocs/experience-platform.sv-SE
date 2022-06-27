@@ -1,20 +1,17 @@
 ---
 keywords: rtcdp-källor;källor rtcdp;källor för kunddataplattform i realtid
-title: Källor i kunddataplattformen i realtid
-seo-title: Källor i kunddataplattformen i realtid
-description: Det här dokumentet innehåller en översikt över källor i kunddataplattformen i realtid
-seo-description: Det här dokumentet innehåller en översikt över källor i kunddataplattformen i realtid
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+title: Källor i Real-time Customer Data Platform
+description: Det här dokumentet innehåller en översikt över Källor i Real-time Customer Data Platform
+exl-id: 15b3ee9b-6faf-4091-9641-e653e4cdd7fb
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '100'
 ht-degree: 0%
 
 ---
 
+# Källor i Real-time Customer Data Platform
 
-# Källor i kunddataplattformen i realtid
+[!DNL Real-Time Customer Data Platform] tillåter att data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe Solutions, molnbaserad lagring, tredjepartsprogramvara och CRM.
 
-[!DNL Real-Time Customer Data Platform] gör att data kan hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe Solutions, molnbaserad lagring, tredjepartsprogramvara och CRM.
-
-Mer information om källor, inklusive en lista över tillgängliga källor och länkar till självstudiekurser finns i [källdokumentationen](../../sources/home.md).
+En mer detaljerad översikt över källor, inklusive en lista över tillgängliga källor och länkar till självstudiekurser finns i [källdokumentation](../../sources/home.md).

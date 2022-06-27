@@ -1,11 +1,11 @@
 ---
 keywords: e-post;E-post;e-post;e-postadresser;salesforce;salesforce-mål
 title: Salesforce Marketing Cloud-anslutning
-seo-description: Salesforce Marketing Cloud is a digital marketing suite formerly known as ExactTarget that allows you to build and customize journeys for visitors and customers to personalize their experience.
+description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---

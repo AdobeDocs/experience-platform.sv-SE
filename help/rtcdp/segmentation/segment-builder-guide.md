@@ -1,20 +1,17 @@
 ---
 keywords: rtcdp segment;segment builder rtcdp;rtcdp segment
-title: Segment Builder in Real-time Customer Data Platform
-seo-title: Använda segmenteringstjänstens segmentbyggare i kunddataplattformen i realtid
+title: Segment Builder i Real-time Customer Data Platform
 description: En guide som beskriver hur du använder Segment Builder.
-seo-description: En användarhandbok som beskriver hur segmenteringstjänstens segmentbyggare används på kunddataplattformen i realtid.
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+exl-id: a9a14ec4-d8e2-48b2-882f-5afd0cb06b71
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
-source-wordcount: '115'
+source-wordcount: '87'
 ht-degree: 0%
 
 ---
 
+# Segment Builder i Real-time Customer Data Platform
 
-# Segment Builder in Real-time Customer Data Platform
+Byggt på Adobe Experience Platform, [!DNL Real-time Customer Data Platform] kan använda de fullständiga segmentbyggfunktionerna som ingår i [!DNL Experience Platform]. I användargränssnittet i segmentbyggaren kan du skapa nya segment, komma åt befintliga segment och ändra befintliga segment.
 
-[!DNL Real-time Customer Data Platform] bygger på Adobe Experience Platform och kan använda de fullständiga segmentbyggfunktionerna som ingår i [!DNL Experience Platform]. I användargränssnittet i segmentbyggaren kan du skapa nya segment, komma åt befintliga segment och ändra befintliga segment.
-
-En mer detaljerad guide om segmentbyggaren finns i [användarhandboken för Segment Builder](../../segmentation/ui/segment-builder.md).
+En mer detaljerad guide om segmentbyggaren finns i [Användarhandbok för Segment Builder](../../segmentation/ui/segment-builder.md).

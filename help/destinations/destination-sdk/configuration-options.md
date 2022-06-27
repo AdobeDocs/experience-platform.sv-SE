@@ -1,17 +1,15 @@
 ---
 description: Måltjänsten i Adobe Experience Platform använder konfigurationsmallar för flera komponenter som bygger upp målfunktionaliteten. Tillsammans kan dessa komponenter hjälpa Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
-seo-description: The destinations service in Adobe Experience Platform uses configuration templates for several components that build up the destinations functionality. Combined, these components allow Experience Platform to connect to destination partners, send custom messages, and activate profile data across the digital ecosystem.
-seo-title: Configuration options in Destination SDK
-title: Konfigurationsalternativ i mål-SDK
+title: Konfigurationsalternativ i Destinationen SDK
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '345'
 ht-degree: 0%
 
 ---
 
-# Konfigurationsalternativ i mål-SDK
+# Konfigurationsalternativ i Destinationen SDK
 
 ## Översikt {#overview}
 
@@ -24,11 +22,11 @@ Måltjänsten i Adobe Experience Platform använder konfigurationsmallar för fl
 * **Autentiseringskonfiguration**: De här inställningarna definierar hur Adobe Experience Platform-användare ansluter till ditt mål.
 * **Konfiguration av målgruppsmetadata**: Med den här mallen kan du konfigurera hur målgrupper/segment skapas, uppdateras eller tas bort programmatiskt i målet.
 
-![SDK-mallar och konfigurationer för mål](./assets/self-service-configuration.png)
+![Destinationer SDK och konfigurationer](./assets/self-service-configuration.png)
 
 ## Relaterade länkar {#related-links}
 
-På sidorna nedan finns mer information om de funktioner och konfigurationsalternativ som är tillgängliga i mål-SDK och om de motsvarande API-åtgärder som du kan utföra.
+På sidorna nedan finns mer information om de funktioner och konfigurationsalternativ som finns i Destinationen SDK och om de motsvarande API-åtgärder som du kan utföra.
 
 | Funktionsbeskrivning | API-referens |
 |--- |--- |

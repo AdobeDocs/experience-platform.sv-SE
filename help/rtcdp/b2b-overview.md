@@ -1,11 +1,9 @@
 ---
 keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp;kundens AI
 title: Översikt över CDP B2B Edition i realtid
-seo-title: Real-time Customer Data Platform B2B Edition overview
 description: Översikt över Real-time Customer Data Platform B2B Edition-konto
-seo-description: Overview of Real-time Customer Data Platform B2B Edition Account
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '1083'
 ht-degree: 0%
