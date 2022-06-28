@@ -2,14 +2,18 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/Destations/publish`.
 title: API-slutpunktsåtgärder för publiceringsmål
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1fb0fde2054528679235268ae96e3b7e78de80ef
 workflow-type: tm+mt
-source-wordcount: '748'
-ht-degree: 2%
+source-wordcount: '779'
+ht-degree: 1%
 
 ---
 
 # API-åtgärder för publiceringsdestinationsslutpunkt {#publish-destination}
+
+>[!IMPORTANT]
+>
+>Du behöver bara använda den här API-slutpunkten om du skickar en produkterad (offentlig) destination som ska användas av andra Experience Platform-kunder. Om du skapar ett privat mål för eget bruk behöver du inte skicka målet formellt med publicerings-API:t.
 
 >[!IMPORTANT]
 >
@@ -22,8 +26,9 @@ När du har konfigurerat och testat destinationen kan du skicka den till Adobe f
 Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
 
 * Som Destination SDK partner vill ni att alla kunder i Experience Platform ska kunna använda er av den producerade destinationen,
-* Du vill göra ditt anpassade mål tillgängligt i din egen Experience Platform-organisation, i alla sandlådor.
 * Du skapar *alla uppdateringar* till dina konfigurationer. Konfigurationsuppdateringar visas endast i målet när du har skickat in en ny publiceringsbegäran som har godkänts av Experience Platform-teamet.
+
+<!-- * You want to make your custom destination available in your own Experience Platform organization, across all sandboxes. -->
 
 ## Komma igång med API-åtgärder för målpublicering {#get-started}
 
