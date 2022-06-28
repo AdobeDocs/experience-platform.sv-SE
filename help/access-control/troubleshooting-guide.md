@@ -5,9 +5,9 @@ title: Felsökningsguide för åtkomstkontroll
 topic-legacy: troubleshooting guide
 description: Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform.
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 79ffdf35e27d74a64ea8e25544fdeeb293b58306
 workflow-type: tm+mt
-source-wordcount: '316'
+source-wordcount: '403'
 ht-degree: 0%
 
 ---
@@ -33,3 +33,7 @@ Om du inte har åtkomstbehörighet för en viss [!DNL Platform] funktionen komme
 Behörigheterna grupperas och kategoriseras av [!DNL Platform] funktioner som de gäller för (t.ex. [!DNL Data Management] och [!DNL Profile Management]). En fullständig lista över tillgängliga behörigheter och vilka grupper de tillhör finns i [permissions section](home.md#permissions) i översikten över åtkomstkontrollen.
 
 Se [åtkomstkontroll - översikt](home.md) för mer information om rollbaserad åtkomstkontroll.
+
+## Vad händer med behörigheter efter migrering från Adobe IO till företags-ID?
+
+Åtkomstkontrollen använder användar-ID (ett internt unikt ID som tilldelats en användare) för att bevilja behörigheter. När en organisation migreras från Adobe ID till Business ID, kommer alla behörigheter som angetts för dess användare att gå förlorade eftersom användar-ID ändras och åtkomstkontrollen kommer att använda det nyligen genererade användar-ID:t. Om din organisation migreras till ditt företags-ID kontaktar du din Adobe-representant för att migrera ditt användar-ID från Adobe ID till ditt företags-ID.
