@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 207fdd6d8a8dc27fa89798999734ba820f30fd54
+source-git-commit: b12f97a7c5e937a116d86495b3434dd9c0805b04
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1227'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,11 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](extension/web-sdk-ext-release-notes.md).
+
+## Version 2.12.0 - 29 juni 2022
+
+* Ändra förfrågningarna till Edge Network för att använda `cluster` cookie-platstips som en del av URL:en. Detta garanterar att användare som byter plats (t.ex. genom ett VPN eller kör med mobila enheter, etc.) når samma kant och har samma personaliseringsprofil.
+* Sträng konfigurerade funktioner i kommandosvaret getLibraryInfo.
 
 ## Version 2.11.0 - 13 juni 2022
 
