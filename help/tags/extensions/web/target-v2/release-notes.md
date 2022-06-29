@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: 824fea41bc7e7082814648efd58184f5208e5e6f
+source-git-commit: 3f6526ec87189d6e629d4dcb8eb626367543b9e5
 workflow-type: tm+mt
-source-wordcount: '642'
-ht-degree: 1%
+source-wordcount: '603'
+ht-degree: 0%
 
 ---
 
@@ -15,36 +15,31 @@ ht-degree: 1%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-## 28 januari 2022
+## v0.18.0 (1 juni 2022)
 
-### Adobe Target v2-tillägg 0.17.1
+- Uppdaterat till support `at.js` v2.9.0
+- Stöd för klienttips för användaragent har lagts till.
+
+## v0.17.1 (28 januari 2022)
 
 - Uppdaterat till support `at.js` v2.8.1
 - Fast `pageLoad` inte mappas till `target-global-mbox` i ODD-hybridkörningsläge
 - Ett problem med analysinformation för korrigerades `mbox` förfrågan
 - Uppgraderade utvecklarberoenden för att åtgärda säkerhetsluckor
 
-## 7 januari 2022
-
-### Adobe Target v2-tillägg 0.17.0
+## v0.17.0 (7 januari 2022)
 
 - Uppdaterat till support `at.js` v2.8.0, som nu samlar in data om funktionsanvändning och prestanda.  Personuppgifter samlas inte in. Om du vill avanmäla dig från den här funktionen anger du `telemetryEnabled` till `false` in `targetGlobalSettings`.
 
-## 28 oktober 2021
-
-### Adobe Target v2-tillägg 0.16.0
+## v0.16.0 (28 oktober 2021)
 
 - Uppdaterat till support `at.js` v2.7.0, nu tillgängligt för nedladdning från Adobe Target.
 
-## 20 juli 2021
-
-### Adobe Target v2-tillägg 0.15.1
+## v0.15.1 (20 juli 2021)
 
 - Ett problem med ett `stringify` funktionsnamnskonflikt, vilket ledde till att felaktiga UUID-värden genererades för `sessionId`, `requestId`och så vidare.
 
-## 16 juli 2021
-
-### Adobe Target v2-tillägg 0.15.0
+## v0.15.0 (16 juli 2021)
 
 - Lägg till ett säkert attribut till cookies när `at.js` settings secureOnly is set to true
 - Svarstoken är nu tillgängliga när du använder `triggerView()`
@@ -54,77 +49,57 @@ ht-degree: 1%
 - `sessionId` Utgångsdatum för cookie-filen har utökats korrekt för varje nätverksanrop
 - Initieringen av SPA-vycachen hanteras nu korrekt och följs `viewsEnable` inställningar
 
-## 2 juni 2021
-
-### Adobe Target v2-tillägg 0.14.2
+## v0.14.2 (2 juni 2021)
 
 - Åtgärda ett fel där det slutliga paketet innehåller två `at.js` versioner, en med On-Device Decision och en utan.
 
-## 19 maj 2021
-
-### Adobe Target v2-tillägg 0.14.1
+## v0.14.1 (19 maj 2021)
 
 - Korrigera regression som introducerades i version 0.14 där Load Target-åtgärden utlöste globala mbox-anrop
 
-## 14 maj 2021
-
-### Adobe Target v2-tillägg 0.14
+## v0.14 (14 maj 2021)
 
 - Lagt till ett nytt åtgärdsinläsningsmål med [Beslut på enheten](./overview.md#load-target-with-on-device-decisioning)som läses in `at.js` 2.5 med beslutsfunktioner på enheter
 - Uppdaterat `at.js` till 2.5
 
 
-## 25 mars 2021
-
-### Adobe Target v2-tillägg 0.13.7
+## v0.13.7 (25 mars 2021)
 
 - Ett problem med `targetPageParams` som ingår i mbox-begäranden. `targetPageParams` bör endast inkluderas i `pageLoad` förfrågningar.
 - Korrigerade ett problem med globala dokument- och fönsterobjekt i taggtillägget genom att ersätta globala objektberoenden med direkta referenser till dem.
 - Uppdaterat `at.js` till 2.4.1.
 
-## 25 januari 2021
-
-### Adobe Target v2-tillägg 0.13.6
+## v0.13.6 (25 januari 2021)
 
 - Lägger till stöd för en enhetlig profil/plattform-ID för leverans-API customerIds
 - Korrigerar ogiltig formattaggsinmatning
 - Uppdaterat kl. 2.4.0
 - Ett problem där odefinierade parametrar kan leda till felaktiga leveransbegäranden har åtgärdats
 
-## 25 november 2020
-
-### Adobe Target v2-tillägg 0.13.4
+## v0.13.4 (25 november 2020)
 
 - Korrigerade ett fel där mbox-parametrar inte visades i användargränssnittet
 - Varumärkesuppdateringar
 - Uppdaterade `at.js` version till 2.3.3
 
-## 24 juli 2020
-
-### Adobe Target v2-tillägg 0.13.3
+## v0.13.3 (24 juli 2020)
 
 - Korrigerade ett fel som orsakade att QA-lägeslänkar inte fungerade för inaktiva aktiviteter
 - Korrigerade ett fel när tillägget misslyckas om ett skript eller en kod läggs till `default` egenskapen till `window` eller `document`
 
-## 15 juni 2020
-
-### Adobe Target v2-tillägg 0.13.2
+## v0.13.2 (15 juni 2020)
 
 - Ett problem har korrigerats när CNAME och kantåsidosättning användes, där `at.js` 1.x kan felaktigt skapa serverdomänen, vilket resulterar i att Target-begäran misslyckas
 - Ett problem har korrigerats där Target fördröjde anropet från Analytics sendBeacon när v2-taggtillägget för Target och Adobe Analytics användes
 - Förbättrade `deviceIdLifetime` genom att göra den åsidosättningsbar via `targetGlobalSettings`
 
-## 25 mars 2020
-
-### Adobe Target v2-tillägg 0.13.0
+## v0.13.0 (25 mars 2020)
 
 - Uppdaterat `at.js` till v2.3.
 - Stöd för global Mbox-målmapp har lagts till i API:t adobe.target.getOffer
 - Ett problem har korrigerats där parametrar och sidinläsningsparametrar inte bearbetades korrekt
 
-## 10 oktober 2019
-
-### Adobe Target v2-tillägg 0.12.0
+## v0.12.0 (10 oktober 2019)
 
 - Uppdaterat `at.js` till v2.2.
 - Förbättrade prestanda för integrering mellan Experience Cloud ID-bibliotek (ECID) v4.4 och `at.js` 2.2.
@@ -133,15 +108,11 @@ ht-degree: 1%
 >[!NOTE]
 >Uppgradera ditt ECID-taggtillägg till v4.4.1 om du vill utnyttja den här prestandaförbättringen.
 
-## 31 juli 2019
-
-### Adobe Target v2-tillägg 0.11.1
+## v0.11.1 (31 juli 2019)
 
 - Uppdaterad tilläggsversion som ska användas `at.js` 2.1.1
 - En korrigering för hantering av parametrar har lagts till
 
-## 3 juni 2019
-
-### Adobe Target v2-tillägg 0.11.0
+## v0.11.0 (3 juni 2019)
 
 - Nytt taggtillägg som stöds `at.js` 2.1
