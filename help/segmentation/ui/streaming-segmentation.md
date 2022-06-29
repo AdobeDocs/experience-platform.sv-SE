@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 4022eb62e791282bb519f9604b6edf903d69239f
+source-git-commit: f6825869805733d2c3838f0cad0bca0f4baf7f16
 workflow-type: tm+mt
-source-wordcount: '1287'
+source-wordcount: '1308'
 ht-degree: 0%
 
 ---
@@ -67,9 +67,9 @@ När du har skapat ett direktuppspelningsaktiverat segment kan du visa informati
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-Mer om **[!UICONTROL total qualified audience size]** visas. The **[!UICONTROL Total qualified audience size]** visar det totala antalet kvalificerade målgrupper från den senaste slutförda körningen av segmentjobb. Om ett segmentjobb inte slutfördes inom de senaste 24 timmarna hämtas antalet målgrupper från en uppskattning i stället.
+I synnerhet **[!UICONTROL Total qualified]** Mätvärdet visas, vilket visar det totala antalet kvalificerade målgrupper baserat på utvärdering av grupper och direktuppspelning för det här segmentet.
 
-Under är ett linjediagram som visar antalet segment som kvalificerats och diskvalificerats under de senaste 24 timmarna. Listrutan kan justeras så att den visar de senaste 24 timmarna, den senaste veckan eller de senaste 30 dagarna.
+Underliggande är ett linjediagram som visar antalet nya målgrupper som uppdaterats under de senaste 24 timmarna med direktuppspelningsmetoden. Listrutan kan justeras så att den visar de senaste 24 timmarna, den senaste veckan eller de senaste 30 dagarna. The **[!UICONTROL New audience updated]** Mätvärdet baseras på förändringen i målgruppens storlek under det valda tidsintervallet, utvärderat genom direktuppspelningssegmentering. Det här måttet inkluderar inte den totala kvalificerade målgruppen från den dagliga grupputvärderingen av segment.
 
 >[!NOTE]
 >
@@ -79,7 +79,7 @@ Under är ett linjediagram som visar antalet segment som kvalificerats och diskv
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 
-Du hittar mer information om den senaste utvärderingen av segment genom att välja informationsbubblan.
+Mer information om den senaste utvärderingen av segment finns i informationsbubblan bredvid **[!UICONTROL Total qualified]**.
 
 ![](../images/ui/streaming-segmentation/info-bubble.png)
 
