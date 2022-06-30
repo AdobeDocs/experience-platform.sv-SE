@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
-source-git-commit: 958bd461be0eb3ed59b44759407bed40a3edc00a
+source-git-commit: ec8eb0e805f7127dd8712fc3fe08057d1d8c10c1
 workflow-type: tm+mt
 source-wordcount: '917'
 ht-degree: 1%
@@ -60,13 +60,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Synkron validering
 
->[!WARNING]
->
->The `syncValidation` frågeparametern är bara tillgänglig för den enda meddelandeslutpunkten och kan inte användas för batchslutpunkten.
-
 Synkron validering är en valideringsmetod som ger omedelbar feedback om varför ett intag misslyckades. Vid fel tas dock de poster som inte godkänns vid valideringen bort och kan inte skickas längre fram i kedjan. Därför bör synkron validering endast användas under utvecklingsprocessen. När synkron validering utförs informeras anroparna om både resultatet av XDM-valideringen och, om det misslyckas, orsaken till felet.
 
 Synkron validering är inte aktiverat som standard. Om du vill aktivera den måste du ange den valfria frågeparametern `syncValidation=true` när API-anrop görs. Dessutom är synkron validering för närvarande bara tillgängligt om strömslutpunkten finns i datacentret VA7.
+
+>[!NOTE]
+>
+>The `syncValidation` frågeparametern är bara tillgänglig för den enda meddelandeslutpunkten och kan inte användas för batchslutpunkten.
 
 Om ett meddelande misslyckas under synkron validering kommer meddelandet inte att skrivas till utdatakön, vilket ger omedelbar feedback till användarna.
 
