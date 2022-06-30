@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform, februari 2022
 description: Versionsinformation från februari 2022 för Adobe Experience Platform.
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 3a031c84138d36a5e23b2f80a44ada06e1a52184
+source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
 workflow-type: tm+mt
 source-wordcount: '1019'
 ht-degree: 1%
@@ -49,7 +49,7 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 | Dataförberedelse för datainsamling | Om du använder Adobe Experience Platform Web SDK kan du nu utnyttja funktionerna för dataförberedelser för att mappa dina data till Experience Data Model (XDM) på serversidan. Se avsnittet om [Dataförberedelse för datainsamling](../../edge/datastreams/data-prep.md) i datastreams-guiden om du vill ha mer information. |
 | Enhets-ID:n från första part | Nu kan du skicka dina egna enhets-ID:n till Adobe Experience Platform Edge Network när du samlar in kunddata med Platform Web SDK, vilket ger en lösning för de senaste webbläsarbegränsningarna för cookie-intervall från tredje part. Se guiden [enhets-ID:n från första part](../../edge/identity/first-party-device-ids.md) för mer information. |
 
-Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../rtcdp-connections/home.md).
 
 ## [!DNL Destinations] {#destinations}
 

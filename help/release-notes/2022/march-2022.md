@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform mars 2022
 description: Versionsinformation mars 2022 för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 3a031c84138d36a5e23b2f80a44ada06e1a52184
+source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
 workflow-type: tm+mt
 source-wordcount: '1193'
 ht-degree: 1%
@@ -117,7 +117,7 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 | Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geo location, first-party ID cookie, and third-party ID sync. Se avsnittet om [konfigurera ett datastream](../../edge/datastreams/overview.md#create) i användargränssnittsguiden för datastreams om du vill ha mer information. |
 | [API för Edge Network Server](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som stöder en rad olika fall av datainsamling, personalisering, annonsering och marknadsföring. |
 
-Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../rtcdp-connections/home.md).
 
 ## Frågetjänst {#query-service}
 
