@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform Versionsinformation juni 2022
-description: Versionsinformation juni 2022 för Adobe Experience Platform.
+title: Versionsinformation för Adobe Experience Platform
+description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3b0ae00e97eddc342e5a502f4ebf08d2fa90259f
+source-git-commit: def32d9667c4630de760d228c88676eb9d5a6de4
 workflow-type: tm+mt
-source-wordcount: '1032'
-ht-degree: 2%
+source-wordcount: '1720'
+ht-degree: 1%
 
 ---
 
@@ -18,6 +18,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Data Collection]](#data-collection)
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
+- [Experience Data Model (XDM)](#xdm)
 - [Frågetjänst](#query-service)
 - [Källor](#sources)
 
@@ -74,6 +75,46 @@ Mer allmän information om arbetsytan Datavetenskap finns i [översiktlig dokume
 {style=&quot;table-layout:auto&quot;}
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Klass | [[!UICONTROL Medication]](https://github.com/adobe/xdm/blob/master/components/classes/medication.schema.json) | En klass inom hälso- och sjukvården som innehåller uppgifter om ett ämne som används för medicinsk behandling, särskilt ett läkemedel eller läkemedel. |
+| Klass | [[!UICONTROL Plan]](https://github.com/adobe/xdm/blob/master/components/classes/plan.schema.json) | En klass inom hälso- och sjukvården som innehåller information om en medicinsk plan, som en hälsoplan eller en försäkringsplan. |
+| Klass | [[!UICONTROL Provider]](https://github.com/adobe/xdm/blob/master/components/classes/provider.schema.json) | En klass inom hälso- och sjukvården som samlar in uppgifter om en vårdgivare. |
+| Klass | [[!UICONTROL Payer]](https://github.com/adobe/xdm/blob/master/components/classes/payer.schema.json) | En vårdklass som innehåller information om ett försäkringsbolag. |
+| Klass | [[!UICONTROL Live Event Schedule]](https://github.com/adobe/xdm/blob/master/components/classes/live-event-schedule.json) | En klass inom sport- och underhållningsbranschen som innehåller information om ett schema för live-event, som ett schema för en resekonsert eller ett sportlags schema. |
+| Klass | [[!UICONTROL Location]](https://github.com/adobe/xdm/blob/master/components/classes/location.json) | En klass inom sport- och underhållningsbranschen som föreställer platsen för ett live event, som en konsert eller en sportarena. |
+| Fältgrupp | [[!UICONTROL Healthcare medication]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/medication/healthcare-medication.schema.json) | En fältgrupp för [!UICONTROL Medication] klass som innehåller information om medicinen, t.ex. varumärkesnamn, partinummer och kvantitet. |
+| Fältgrupp | [[!UICONTROL Healthcare Plan Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/plan/healthcare-plan-details.schema.json) | En fältgrupp för [!UICONTROL Plan] klass som hämtar information som nätverk, typ och aktiv status. |
+| Fältgrupp | [[!UICONTROL Healthcare Provider]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/provider/healthcare-provider-details.schema.json) | En fältgrupp för [!UICONTROL Provider] En klass som innehåller uppgifter om en enskild hälso- och sjukvårdspersonal eller en organisation som har licens att tillhandahålla hälso- och sjukvårdstjänster. |
+| Fältgrupp | [[!UICONTROL Healthcare Member Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/provider/healthcare-provider-details.schema.json) | En fältgrupp för [!UICONTROL XDM Individual Profile] klass som innehåller information om en person som har eller kommer att få en tjänst eller vård, som kontaktinformation, primärvårdsläkare och planinformation. |
+| Fältgrupp | [[!UICONTROL Sitetool Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json) | En fältgrupp för [!UICONTROL XDM ExperienceEvent] klass som samlar in information som samlas in av webbplatsverktyg som chatbot, survey, osv. |
+| Fältgrupp | [[!UICONTROL Live Event Ticket Purchase]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-live-event-ticket-purchase.json) | En fältgrupp för [!UICONTROL XDM ExperienceEvent] klass som fångar inköpshistoriken för biljetter till ett live-event, som en konsert eller sportspel. |
+| Fältgrupp | [[!UICONTROL Sports and Entertainment Event Schedule]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/live-event-schedule/sports-entertainment-event-schedule.schema.json) | En fältgrupp för [!UICONTROL Live Event Schedule] klass som innehåller mer information om schemat, t.ex. attraktionsnamn, öppningstider för dörrar med mera. |
+| Fältgrupp | [[!UICONTROL Sports Entertainment Event Venue]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/location/sports-entertainment-event-venue.schema.json) | En fältgrupp för [!UICONTROL Location] En klass som innehåller ytterligare information om evenemangsplatsen, t.ex. sittplatskapacitet och utsedda marknadsområden. |
+| Globalt schema | (Flera) | Nya globala scheman är tillgängliga för målmått för RTCDP Insights. Se följande [pull-förfrågan](https://github.com/adobe/xdm/pull/1560) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Uppdatera beskrivning |
+| --- | --- | --- |
+| Beteende | [[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | En händelsetyp för uppdatering av mediatillstånd har lagts till. |
+| Fältgrupp | [[!UICONTROL Lodging Reservation]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.schema.json) | En incheckningsegenskap har lagts till. |
+| Datatyp | [[!UICONTROL Media information]](https://github.com/adobe/xdm/blob/master/components/datatypes/media.schema.json) | Tillagda fält för statusstart och tillståndsslut. |
+| Tillägg | [[!UICONTROL Workfront Change Event]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | Två fält har lagts till som används för att lagra attribut för att identifiera användaren och tidpunkten för en create-händelse. |
+| Tillägg | [[!UICONTROL Adobe CJM ExperienceEvent - Message interaction details]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/message-interaction.schema.json) | Lagt till prenumeration, samtycke, anpassad e-post och ytterligare datainformation i landningssidans objekt. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
 ## Frågetjänst {#query-service}
 
