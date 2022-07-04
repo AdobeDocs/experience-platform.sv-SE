@@ -4,16 +4,14 @@ description: Lär dig att konsekvent identifiera besökare via server-API med hj
 seo-description: Learn how to consistently identify visitors via the Server API, by using the FPID
 keywords: gränsnätverk;gateway;api;besökare;identifiering;fpid
 exl-id: c61d2e7c-7b5e-4b14-bd52-13dde34e32e3
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 6798c15b1cee781c41b9faf5cc6dcfa73090a60a
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '348'
 ht-degree: 0%
 
 ---
 
 # Besökaridentifiering via FPID
-
-## Översikt
 
 [!DNL First-party IDs] (`FPIDs`) är enhets-ID:n som genereras, hanteras och lagras av kunder. Detta ger kunderna kontroll över att identifiera användarenheter. Genom att skicka `FPIDs`, genererar Edge Network inte något helt nytt `ECID` för en begäran som inte innehåller någon.
 
@@ -35,7 +33,7 @@ The `ECID` som hämtas på det här sättet kan hämtas via en `identity.fetch` 
 }
 ```
 
-För förfrågningar som innehåller både `FPID` och `ECID`, `ECID` som redan finns i begäran har högre prioritet än den som kan genereras från `FPID`. Edge Network kommer därför att använda `ECID` redan tillhandahållen och kommer inte att beräkna en från angiven `FPID`.
+För förfrågningar som innehåller både `FPID` och `ECID`, `ECID` som redan finns i begäran har högre prioritet än den som kan genereras från `FPID`. Edge Network använder med andra ord `ECID` som redan tillhandahålls och `FPID` ignoreras. En ny `ECID` genereras endast när en `FPID` tillhandahålls på egen hand.
 
 När det gäller enhets-ID:n `server` datastreams ska använda `FPID` som enhets-ID. Andra identiteter (dvs. `EMAIL`) kan också anges i begärandetexten, men Edge Network kräver att en primär identitet anges explicit. Primär identitet är den grundläggande identitet som profildata ska lagras i.
 

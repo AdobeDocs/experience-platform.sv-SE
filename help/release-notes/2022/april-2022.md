@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 7040a3415ced04035e2a6a73292c2113411df21d
+source-git-commit: 6798c15b1cee781c41b9faf5cc6dcfa73090a60a
 workflow-type: tm+mt
-source-wordcount: '2794'
+source-wordcount: '2793'
 ht-degree: 1%
 
 ---
@@ -135,7 +135,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Globalt schema | [[!UICONTROL Data Hygiene Operation Request]](https://github.com/adobe/xdm/blob/master/schemas/hygiene/aep-hygiene-ops-record.schema.json) | Hämtar information om en datarensningsbegäran om att ta bort eller ändra poster i en angiven datamängd eller sandlåda. |
 | Beskrivning | [[!UICONTROL Time-series Granularity Descriptor]](https://github.com/adobe/xdm/blob/master/schemas/descriptors/time-series/descriptorTimeSeriesGranularity.schema.json) | Anger granulariteten för tidsserie- och sammanfattningsdata. När schemat tillämpas på ett schema, är schemats `timestamp` fältet är den första tidsstämpeln i en period av den här granulariteten. |
 | Klass | [[!UICONTROL XDM Summary Metrics]](https://github.com/adobe/xdm/blob/master/components/classes/summary_metrics.schema.json) | Tillhandahåller försummerade mått med grupperingsdimensioner, t.ex. resultatet av en SQL SELECT med en GROUP BY. |
-| Fältgrupp | [[!UICONTROL Consent policies evaluation results map]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | Hämtar utvärderingsresultatet för principen för samtycke för en individ. |
+| Fältgrupp | [[!UICONTROL Consent policies evaluation results map]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResults.schema.json) | Hämtar utvärderingsresultatet för principen för samtycke för en individ. |
 | Fältgrupp | [[!UICONTROL Site Search]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | Hämtar platssökningsrelaterad information som sökfråga, filtrering och ordning. |
 | Fältgrupp | [[!UICONTROL Merge Leads]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/merge-leads.schema.json) | Hämtar information om en händelse där två eller flera leads sammanfogas. |
 | Fältgrupp | [[!UICONTROL Email Sent]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/emailsent.schema.json) | Hämtar information om en händelse där ett e-postmeddelande skickas till en mottagare. |
@@ -145,7 +145,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Fältgrupp | [[!UICONTROL Account Person Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | Hämtar information som är relaterad till en konto-person-relation. |
 | Datatyp | [[!UICONTROL Cart]](https://github.com/adobe/xdm/blob/master/components/datatypes/cart.schema.json) | Fångar information om en e-handelskundvagn. |
 | Datatyp | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | Hämtar leveransinformation för en eller flera produkter. |
-| Datatyp | [[!UICONTROL Site Search]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | Hämtar information om webbplatssökningsaktivitet. |
+| Datatyp | [[!UICONTROL Site Search]](https://github.com/adobe/xdm/blob/master/components/datatypes/sitesearch.schema.json) | Hämtar information om webbplatssökningsaktivitet. |
 | Tillägg (Workfront) | [[!UICONTROL Operational Task Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/opTask.schema.json) | Hämtar information om en operativ uppgift. |
 | Tillägg (Workfront) | [[!UICONTROL Work Portfolio Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/portfolio.schema.json) | Hämtar information om en arbetsportfölj. |
 | Tillägg (Workfront) | [[!UICONTROL Work Program Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/program.schema.json) | Hämtar information om ett arbetsprogram. |

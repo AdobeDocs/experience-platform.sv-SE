@@ -4,18 +4,16 @@ description: Se hur Adobe Experience Platform Edge Network Server API identifier
 seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
 keywords: gränsnätverk;gateway;api;besökare;identifiering
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 6798c15b1cee781c41b9faf5cc6dcfa73090a60a
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 5%
+source-wordcount: '151'
+ht-degree: 4%
 
 ---
 
 # Besökaridentifiering
 
-## Översikt {#overview}
-
-API:t för Edge Network Server har stöd för [besöksidentifiering via förstapartsens ID ([!DNL FPID])](visitor-identification-fpid.md)
+API:t för Edge Network Server har stöd för [besöksidentifiering via förstapartsens ID ([!DNL FPID])](visitor-identification-fpid.md).
 
 Alla användaridentiteter ska anges i `identityMap` fältgrupp. Den här fältgruppen ingår i AEP Web SDK `ExperienceEvent` blanda.
 
