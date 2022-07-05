@@ -5,9 +5,9 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 1ecdd5f058a5996b4a3d12ba62c5f352633cd75a
+source-git-commit: 8b8e08adb5ff3498169c1702680ea44f3bebf5c5
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '601'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 [[!DNL Marketo Engage]](https://www.marketo.com/software/) (nedan kallad[!DNL Marketo]&quot;) är en komplett lösning för lead-hantering och B2B-marknadsförare som vill omvandla kundupplevelser genom att engagera sig i alla faser av komplexa inköpsresor.
 
 Med [!DNL Marketo] källanslutning kan du hämta B2B-data från [!DNL Marketo] till Platform och hålla dessa data uppdaterade med plattformsanslutna program.
+
+>[!IMPORTANT]
+>
+>Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att Marketo Engage ska kunna delta i [Kundprofil i realtid](../../../../profile/home.md).
 
 Dokumentet innehåller en översikt över [!DNL Marketo] källkoppling, inklusive information om hur anslutningen autentiseras, mappa [!DNL Marketo] fält till Experience Data Model (XDM) och anslutningsens datalatens.
 

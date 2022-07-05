@@ -2,9 +2,9 @@
 title: Källor i Real-time Customer Data Platform B2B Edition
 description: En översikt över källornas roll i Real-time Customer Data Platform B2B Edition.
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: 76bbb188f6a1643cc7f10f4a3cded1316be9e23c
+source-git-commit: 8b8e08adb5ff3498169c1702680ea44f3bebf5c5
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ Med Real-time Customer Data Platform B2B Edition kan ni hämta in B2B-data via o
 Information om hur källorna passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#ingest-your-data-into-experience-platform).
 
 Se [översikt över källanslutningar](../../sources/home.md) om du vill ha mer information om de olika källtyperna i Adobe Experience Platform.
+
+>[!IMPORTANT]
+>
+>Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../rctcdp/../rtcdp/b2b-overview.md) för att B2B-scheman ska kunna delta i [Kundprofil i realtid](../proile/../../profile/home.md).
 
 Följande dokument innehåller mer information om hur du använder [!DNL Marketo] för att ta med B2B-data till plattformen:
 
