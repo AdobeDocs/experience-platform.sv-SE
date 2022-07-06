@@ -1,14 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;scheman;scheman;scheman;schema;relation;relation;relation;relationsbeskrivare;relationsbeskrivare;referensidentitet;referensidentitet;
-solution: Experience Platform
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 description: Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med API:t för schemaregistret.
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1367'
 ht-degree: 0%
 
 ---
@@ -110,13 +109,13 @@ Spela in `$id` värden för de två scheman som du vill definiera en relation me
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry]fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha en `type` värdet &quot;[!DNL string]&quot;.
+I [!DNL Schema Registry]fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha en `type` värde för `string`.
 
 >[!IMPORTANT]
 >
->Till skillnad från målschemat kan källschemat inte använda sin primära identitet som referensfält.
+>Källschemat kan inte använda sin primära identitet som referensfält.
 
-I den här självstudiekursen är målschemat &quot;[!DNL Hotels]&quot; innehåller `hotelId` fält som fungerar som schemats primära identitet och därför även fungerar som referensfält. Källschemat[!DNL Loyalty Members]&quot; har inget dedikerat fält som ska användas som referens och måste ges en ny fältgrupp som lägger till ett nytt fält i schemat: `favoriteHotel`.
+I den här självstudiekursen är målschemat &quot;[!DNL Hotels]&quot; innehåller `hotelId` fält som fungerar som schemats primära identitet. Källschemat[!DNL Loyalty Members]&quot; har inget dedikerat fält att använda som referens till `hotelId`och därför måste en anpassad fältgrupp skapas för att ett nytt fält ska kunna läggas till i schemat: `favoriteHotel`.
 
 >[!NOTE]
 >
@@ -344,9 +343,9 @@ Ett lyckat svar returnerar informationen om det uppdaterade schemat, som nu inne
 
 ## Skapa en beskrivning av en referensidentitet {#reference-identity}
 
-Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Sedan `favoriteHotel` fält i &quot;[!DNL Loyalty Members]&quot; kommer att referera till `hotelId` fält i &quot;[!DNL Hotels]&quot;, `hotelId` måste anges som en referensidentitetsbeskrivning.
+Schemafält måste ha en referensidentitetsbeskrivning tillämpad på dem om de används som referens till ett annat schema i en relation. Sedan `favoriteHotel` fält i &quot;[!DNL Loyalty Members]&quot; kommer att referera till `hotelId` fält i &quot;[!DNL Hotels]&quot;, `favoriteHotel` måste anges som en referensidentitetsbeskrivning.
 
-Skapa en referensbeskrivning för målschemat genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
+Skapa en referensbeskrivning för källschemat genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
 
 **API-format**
 
@@ -356,7 +355,7 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran skapar en referensbeskrivning för `hotelId` i målschemat &quot;[!DNL Hotels]&quot;.
+Följande begäran skapar en referensbeskrivning för `favoriteHotel` i källschemat[!DNL Loyalty Members]&quot;.
 
 ```shell
 curl -X POST \
@@ -368,33 +367,33 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "@type": "xdm:descriptorReferenceIdentity",
-    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
+    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/533ca5da28087c44344810891b0f03d9",
     "xdm:sourceVersion": 1,
-    "xdm:sourceProperty": "/_{TENANT_ID}/hotelId",
+    "xdm:sourceProperty": "/_{TENANT_ID}/favoriteHotel",
     "xdm:identityNamespace": "Hotel ID"
   }'
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. För referensbeskrivare måste värdet vara &quot;xdm:descriptorReferenceIdentity&quot;. |
-| `xdm:sourceSchema` | The `$id` Målschemats URL. |
-| `xdm:sourceVersion` | Målschemats versionsnummer. |
-| `sourceProperty` | Sökvägen till målschemats primära identitetsfält. |
-| `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnutrymme som används när fältet definieras som schemats primära identitet. Se [Översikt över namnutrymmet identity](../../identity-service/home.md) för mer information. |
+| `@type` | Den typ av beskrivning som definieras. För referensbeskrivare måste värdet vara `xdm:descriptorReferenceIdentity`. |
+| `xdm:sourceSchema` | The `$id` Källschemats URL. |
+| `xdm:sourceVersion` | Källschemats versionsnummer. |
+| `sourceProperty` | Sökvägen till fältet i källschemat som ska användas för att referera till målschemats primära identitet. |
+| `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnområde som målschemats primära identitet. Se [Översikt över namnutrymmet identity](../../identity-service/home.md) för mer information. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nya referensbeskrivningen för målschemat.
+Ett lyckat svar returnerar information om den nya referensbeskrivningen för källfältet.
 
 ```json
 {
     "@type": "xdm:descriptorReferenceIdentity",
-    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
+    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/533ca5da28087c44344810891b0f03d9",
     "xdm:sourceVersion": 1,
-    "xdm:sourceProperty": "/_{TENANT_ID}/hotelId",
+    "xdm:sourceProperty": "/_{TENANT_ID}/favoriteHotel",
     "xdm:identityNamespace": "Hotel ID",
     "meta:containerId": "tenant",
     "@id": "53180e9f86eed731f6bf8bf42af4f59d81949ba6"
@@ -403,7 +402,7 @@ Ett lyckat svar returnerar information om den nya referensbeskrivningen för må
 
 ## Skapa en relationsbeskrivning {#create-descriptor}
 
-Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensbeskrivning för målschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
+Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensidentitetsbeskrivning för rätt fält i källschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
 
 **API-format**
 
@@ -413,7 +412,7 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran skapar en ny relationsbeskrivning med &quot;[!DNL Loyalty Members]&quot; som källschema och &quot;[!DNL Legacy Loyalty Members]&quot; som målschema.
+Följande begäran skapar en ny relationsbeskrivning med &quot;[!DNL Loyalty Members]&quot; som källschema och &quot;[!DNL Hotels]&quot; som målschema.
 
 ```shell
 curl -X POST \
@@ -436,13 +435,13 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `@type` | Den typ av beskrivning som ska skapas. The `@type` värdet för relationsbeskrivare är &quot;xdm:descriptorOneToOne&quot;. |
+| `@type` | Den typ av beskrivning som ska skapas. The `@type` värdet för relationsbeskrivningar är `xdm:descriptorOneToOne`. |
 | `xdm:sourceSchema` | The `$id` Källschemats URL. |
 | `xdm:sourceVersion` | Källschemats versionsnummer. |
 | `xdm:sourceProperty` | Sökvägen till referensfältet i källschemat. |
 | `xdm:destinationSchema` | The `$id` Målschemats URL. |
 | `xdm:destinationVersion` | Målschemats versionsnummer. |
-| `xdm:destinationProperty` | Sökvägen till referensfältet i målschemat. |
+| `xdm:destinationProperty` | Sökvägen till det primära identitetsfältet i målschemat. |
 
 {style=&quot;table-layout:auto&quot;}
 

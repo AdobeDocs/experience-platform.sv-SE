@@ -5,9 +5,9 @@ title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1837'
 ht-degree: 0%
 
 ---
@@ -389,7 +389,7 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade 
 
 #### Referens för identitetsbeskrivning
 
-Referensidentitetsbeskrivningar ger en referenskontext till den primära identiteten för ett schemafält, vilket gör att det kan refereras till av fält i andra scheman. Fält måste redan ha en identitetsbeskrivning innan en referensbeskrivning kan användas på dem.
+Referensidentitetsbeskrivningar ger en referenskontext till den primära identiteten för ett schemafält, vilket gör att det kan refereras till av fält i andra scheman. Målschemat måste redan ha ett primärt identitetsfält definierat innan det kan refereras till av andra scheman via den här beskrivningen.
 
 ```json
 {
@@ -406,7 +406,7 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 | `@type` | Den typ av beskrivning som definieras. För en referensidentitetsbeskrivning måste det här värdet anges till `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökväg till fältet i källschemat där beskrivningen definieras. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
+| `xdm:sourceProperty` | Sökväg till fältet i källschemat som ska användas för att referera till målschemat. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
 | `xdm:identityNamespace` | Identitetsnamnområdeskoden för egenskapen source. |
 
 {style=&quot;table-layout:auto&quot;}
