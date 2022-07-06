@@ -2,9 +2,9 @@
 title: Referens för konfigurationstest
 description: Lär dig hur granskaren testar konfigurationer i Adobe Experience Platform Debugger.
 exl-id: 92b07224-57f1-4891-9923-aa079945e6bc
-source-git-commit: 10a5605c40143b58f6ba0108cc087956aa929866
+source-git-commit: 797d4f305b4a6884ada4e0619beadff6a45ab42d
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '740'
 ht-degree: 4%
 
 ---
@@ -30,8 +30,8 @@ Konfigurationstester söker efter specifika inställningar, värden eller potent
 | Launch - tredjepartstaggar läses in asynkront efter DOM-klart | 3 | För att skapa en balans mellan en bra användarupplevelse och insamling av korrekta data bör tredjepartstaggar aktiveras vid DOM-förberedd. Detta säkerställer att dessa spårningsskript körs utan att webbplatsfunktionaliteten påverkas. | Lös det här problemet genom att justera alla regler som kör pixlar från tredje part som ska aktiveras på DOM Ready.<br><br>[Ytterligare information](../../tags/ui/managing-resources/rules.md) |
 | Experience Cloud ID-tjänst - senaste version | 2 | Dina sidor kör inte den senaste versionen av kodbiblioteket för Visitor ID-tjänsten, visitorAPI.js. Kodbibliotek som används av Experience Cloud-teknik uppdateras och ändras ständigt för att dra nytta av prestandaförbättringar och tillhandahålla de senaste funktionerna. | Installera den senaste versionen av tjänstbiblioteket för Visitor-ID.<br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/library.html) |
 | Launch - Senaste version | 2 | De här sidorna kör inte den senaste versionen av taggkodbiblioteket (Turbine). Kodbibliotek som används av Experience Cloud-teknik uppdateras och ändras ständigt för att dra nytta av prestandaförbättringar och tillhandahålla de senaste funktionerna. | Återskapa och publicera taggbiblioteket.<br><br>[Ytterligare information](../../tags/quick-start/quick-start.md) |
-| Mål - senaste version | 2 | Dina sidor kör inte den senaste versionen av kodbiblioteket Target. Kodbibliotek som används av Experience Cloud-teknik uppdateras och ändras ständigt för att dra nytta av prestandaförbättringar och tillhandahålla de senaste funktionerna. | Installera den senaste versionen av målbiblioteket.<br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/implement-target-for-client-side-web.html) |
-| Mål - mboxDefault föregår mboxCreate | 5 | Den korrekta användningen av mboxCreate ser ut ungefär så här:<br><br> `<div class="mboxDefault"><!-Customer content--></div><script>mboxCreate('myMboxName')</script>` | Var noga med att inkludera en  `<div class="mboxDefault"></div>` -tagg innan mboxCreate() anropas. at.js kommer inte att lägga till en åt dig.<br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/implement-target-for-client-side-web.html) |
-| Mål - Giltig DOCTYPE | 5 | En ogiltig DOCTYPE upptäcktes. Inga lådor kommer att utlösas i det här scenariot.  För at.js måste DOCTYPE vara i standardläge, annars fungerar inte Target. | Uppdatera DOCTYPE på sidan.<br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/faq-at-js/target-atjs-faq.html) |
+| Mål - senaste version | 2 | Dina sidor kör inte den senaste versionen av kodbiblioteket Target. Kodbibliotek som används av Experience Cloud-teknik uppdateras och ändras ständigt för att dra nytta av prestandaförbättringar och tillhandahålla de senaste funktionerna. | Installera den senaste versionen av målbiblioteket.<br><br>[Ytterligare information](https://developer.adobe.com/target/implement/client-side/) |
+| Mål - mboxDefault föregår mboxCreate | 5 | Den korrekta användningen av mboxCreate ser ut ungefär så här:<br><br> `<div class="mboxDefault"><!-Customer content--></div><script>mboxCreate('myMboxName')</script>` | Var noga med att inkludera en  `<div class="mboxDefault"></div>` -tagg innan mboxCreate() anropas. at.js kommer inte att lägga till en åt dig.<br><br>[Ytterligare information](https://developer.adobe.com/target/implement/client-side/) |
+| Mål - Giltig DOCTYPE | 5 | En ogiltig DOCTYPE upptäcktes. Inga lådor kommer att utlösas i det här scenariot.  För at.js måste DOCTYPE vara i standardläge, annars fungerar inte Target. | Uppdatera DOCTYPE på sidan.<br><br>[Ytterligare information](https://developer.adobe.com/target/implement/client-side/atjs/target-atjs-faq/) |
 
 {style=&quot;table-layout:auto&quot;}

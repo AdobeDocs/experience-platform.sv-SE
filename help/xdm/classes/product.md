@@ -1,35 +1,36 @@
 ---
-title: Product Class
-description: This document provides an overview of the Product class in Experience Data Model (XDM).
-source-git-commit: c0437b8f9d93c46dbec991a33a893a5b9e0cdf2c
+title: Produktklass
+description: Det här dokumentet innehåller en översikt över produktklassen i Experience Data Model (XDM).
+exl-id: 911680ae-b761-4945-9ad3-0233eaea89b0
+source-git-commit: fdd68e5a94d841992a6f8abe10f3cffe0ebb6794
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '208'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL Product]
+# [!UICONTROL Product] class
 
-[!UICONTROL Product]
+I Experience Data Model (XDM) är [!UICONTROL Product] klassen hämtar den minsta uppsättningen egenskaper som definierar en återförsäljningsprodukt.
 
 ![](../images/classes/product.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `productListPrice` | [](../data-types/currency.md) | Describes the default price of the product before sales and discounting. |
-| `_id` | Sträng | A unique, system-generated string identifier for the record. This field is used to track the uniqueness of an individual record, prevent duplication of data, and to look up that record in downstream services.<br><br> However, you can still opt to supply your own unique ID values if you wish. |
-| `productDescription` | Sträng | A description of the product. |
-| `productID` | Sträng | A unique identifier for the product. |
-| `productLastModifiedDate` | DateTime | [](https://datatracker.ietf.org/doc/html/rfc3339) |
-| `productManufacturedDate` | DateTime | [](https://datatracker.ietf.org/doc/html/rfc3339) |
-| `productName` | Sträng | The name of the product. |
-| `productRating` | Sträng | The customer review rating of the product. |
+| `productListPrice` | [Valuta](../data-types/currency.md) | Beskriver standardpriset för produkten före försäljning och rabatter. |
+| `_id` | Sträng | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, anges inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
+| `productDescription` | Sträng | En beskrivning av produkten. |
+| `productID` | Sträng | En unik identifierare för produkten. |
+| `productLastModifiedDate` | DateTime | An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) tidsstämpel för när produkten senast ändrades för uppdateringar. |
+| `productManufacturedDate` | DateTime | An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) tidsstämpel för när den här produkten skapades. |
+| `productName` | Sträng | Produktens namn. |
+| `productRating` | Sträng | Kundens recensionsbedömning av produkten. |
 
 {style=&quot;table-layout:auto&quot;}
 
-## Compatible field groups {#field-groups}
+## Kompatibla fältgrupper {#field-groups}
 
-[!DNL XDM Individual Profile] The following is a list of some commonly used field groups for the class:
+Adobe har flera standardfältgrupper som kan användas med [!UICONTROL Product] klassen. Nedan följer en lista över några vanliga fältgrupper för klassen:
 
 * [[!UICONTROL Product catalog]](../field-groups/product/product-catalog.md)
 * [[!UICONTROL Product category]](../field-groups/product/product-category.md)
