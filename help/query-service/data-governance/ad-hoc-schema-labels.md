@@ -1,7 +1,8 @@
 ---
 title: Attributbaserad åtkomstkontroll har stöd för ad hoc-scheman
 description: En guide som begränsar åtkomsten till datafält i ad hoc-scheman som genererats via Adobe Experience Platform Query Service.
-source-git-commit: 3d908face315c7aa2ad8f6350fb1fe0d3446d428
+exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
+source-git-commit: 9b327257eacea189363587ad79dc6595b636d5b8
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 0%
@@ -41,7 +42,7 @@ Om du vill lägga till en dataetikett går du till [!UICONTROL Schemas] kontroll
 
 ## Upptäck ad hoc-scheman i schemalagret för plattformsgränssnittet
 
-Om du vill aktivera visning av ad hoc-scheman i plattformsgränssnittet väljer du filterikonen (../images/data-governance/filter.png) till vänster om sökfältet och väljer sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
+Om du vill aktivera visning av ad hoc-scheman i plattformsgränssnittet väljer du filterikonen (![En filterikon.](../images/data-governance/filter.png)) till vänster om sökfältet och välj sedan **[!UICONTROL Show adhoc schemas] i den vänstra listen som visas.
 
 ![Filteralternativen för kontrollpanelen Schema har en vänsterkant med alternativet Visa ad hoc-schema aktiverat.](../images/data-governance/adhoc-schema-toggle.png)
 
