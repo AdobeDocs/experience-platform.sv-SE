@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 title: Definiera obligatoriska fält i användargränssnittet
 description: Lär dig hur du definierar ett obligatoriskt XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 3a5885a0-6f07-42f3-b521-053083d5b556
-source-git-commit: 1d04bf56c51506f84c5156e6d2ed6c9f58f15235
+source-git-commit: 11dcb1a824020a5b803621025863e95539ab4d71
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '356'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,21 @@ ht-degree: 0%
 
 I Experience Data Model (XDM) anger ett obligatoriskt fält att det måste anges som ett giltigt värde för att en viss post- eller tidsseriehändelse ska kunna accepteras under datainmatning. Vanliga användningsexempel för obligatoriska fält är användaridentitetsinformation och tidsstämplar.
 
-När [du definierar ett nytt fält](./overview.md#define) i Adobe Experience Platform användargränssnitt kan du ange det som ett obligatoriskt fält genom att markera kryssrutan **[!UICONTROL Required]** i den högra listen. Välj **[!UICONTROL Apply]** om du vill använda ändringen i schemat.
+>[!IMPORTANT]
+>
+>Oavsett om ett schemafält krävs eller inte accepterar inte plattformen `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
+
+När [definiera ett nytt fält](./overview.md#define) i Adobe Experience Platform-användargränssnittet kan du ange det som ett obligatoriskt fält genom att välja **[!UICONTROL Required]** i den högra listen. Välj **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
 
 ![Kryssrutan Obligatoriskt](../../images/ui/fields/required/root.png)
 
-Om fältet är ett rotnivåattribut under klientorganisations-ID-objektet visas sökvägen omedelbart under **[!UICONTROL Required fields]** i den vänstra listen.
+Om fältet är ett rotnivåattribut under klientorganisations-ID-objektet visas sökvägen omedelbart under **[!UICONTROL Required fields]** till vänster.
 
 ![Obligatoriskt fält på rotnivå](../../images/ui/fields/required/applied.png)
 
-Om ett obligatoriskt fält är kapslat i ett objekt som inte är markerat som obligatoriskt, visas emellertid inte det kapslade fältet under **[!UICONTROL Required fields]** i den vänstra listen.
+Om ett obligatoriskt fält är kapslat i ett objekt som inte är markerat som obligatoriskt, visas emellertid inte det kapslade fältet under **[!UICONTROL Required fields]** till vänster.
 
-I exemplet nedan anges fältet `loyaltyId` som obligatoriskt, men det överordnade objektet `loyalty` är det inte. I det här fallet skulle inga valideringsfel uppstå om `loyalty` uteslöts vid inmatning av data, även om det underordnade fältet `loyaltyId` markerats som nödvändigt. Det innebär att även om `loyalty` är valfritt måste det innehålla ett `loyaltyId`-fält i den händelse det inkluderas.
+I exemplet nedan är `loyaltyId` fältet anges som obligatoriskt, men dess överordnade objekt `loyalty` inte. I det här fallet uppstår inga valideringsfel om `loyalty` uteslöts vid inmatning av data, även om det underordnade fältet `loyaltyId` markeras som obligatoriskt. Med andra ord: `loyalty` är valfri måste den innehålla `loyaltyId` -fältet i den händelse det inkluderas.
 
 ![Kapslat obligatoriskt fält](../../images/ui/fields/required/nested.png)
 
@@ -34,4 +38,4 @@ Om du vill att ett kapslat fält alltid ska vara obligatoriskt i ett schema, må
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du definierar ett obligatoriskt fält i användargränssnittet. I översikten [definierar fält i användargränssnittet](./overview.md#special) finns mer information om hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].
+I den här handboken beskrivs hur du definierar ett obligatoriskt fält i användargränssnittet. Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].

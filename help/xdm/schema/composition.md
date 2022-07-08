@@ -5,9 +5,9 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
+source-git-commit: 11dcb1a824020a5b803621025863e95539ab4d71
 workflow-type: tm+mt
-source-wordcount: '3840'
+source-wordcount: '3951'
 ht-degree: 0%
 
 ---
@@ -133,13 +133,21 @@ I följande tabell visas vilka ändringar som stöds vid redigering av scheman, 
 | --- | --- |
 | <ul><li>Lägga till nya fält i resursen</li><li>Göra ett obligatoriskt fält valfritt</li><li>Nya obligatoriska fält*</li><li>Ändra resursens visningsnamn och beskrivning</li><li>Aktiverar schemats deltagande i profilen</li></ul> | <ul><li>Tar bort tidigare definierade fält</li><li>Byta namn på eller definiera om befintliga fält</li><li>Ta bort eller begränsa fältvärden som tidigare stöds</li><li>Flytta befintliga fält till en annan plats i trädet</li><li>Tar bort schemat</li><li>Inaktivera schemat från att delta i profilen</li></ul> |
 
-\**Se [underavsnitt nedan](#post-ingestion-required-fields) om du vill ha mer information om hur du ställer in nya obligatoriska fält.*
+\**Se avsnittet nedan för viktig information [ställa in nya obligatoriska fält](#post-ingestion-required-fields).*
 
-#### Ange fält som obligatoriska efter intag {#post-ingestion-required-fields}
+### Obligatoriska fält
+
+Enskilda schemafält kan vara [markerat som obligatoriskt](../ui/fields/required.md), vilket innebär att alla kapslade poster måste innehålla data i dessa fält för att validera. Om du till exempel anger ett schemats primära identitetsfält som obligatoriskt kan du se till att alla inkapslade poster deltar i kundprofilen i realtid, samtidigt som du anger ett tidsstämpelfält som det behövs, säkerställer att alla tidsseriehändelser bevaras kronologiskt.
+
+>[!IMPORTANT]
+>
+>Oavsett om ett schemafält krävs eller inte accepterar inte plattformen `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
+
+#### Ange obligatoriska fält efter intag {#post-ingestion-required-fields}
 
 Om ett fält har använts för att importera data och inte ursprungligen ställdes in som nödvändigt, kan det fältet ha ett null-värde för vissa poster. Om du anger det här fältet som obligatoriskt för postinmatning måste alla framtida poster innehålla ett värde för det här fältet, även om historiska poster kan vara null.
 
-När du anger ett tidigare valfritt fält som obligatoriskt ska du tänka på följande:
+Tänk på följande när du ställer in ett tidigare valfritt fält efter behov:
 
 1. Om du frågar efter historiska data och skriver resultaten i en ny datamängd, kommer vissa rader att misslyckas eftersom de innehåller null-värden för det obligatoriska fältet.
 1. Om fältet deltar i [Kundprofil i realtid](../../profile/home.md) och du exporterar data innan du ställer in dem efter behov, kan det vara null för vissa profiler.
