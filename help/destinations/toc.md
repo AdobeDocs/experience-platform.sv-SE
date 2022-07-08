@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 492a05b24ec905de926d861f607a6e5d294d46e0
+source-git-commit: fa092e4d1828d9ecd5bc98e3f225fa377f38065f
 workflow-type: tm+mt
-source-wordcount: '778'
+source-wordcount: '814'
 ht-degree: 1%
 
 ---
@@ -184,10 +184,17 @@ ht-degree: 1%
       * [API-åtgärder för slutpunkt för autentiseringsuppgifter](./destination-sdk/credentials-configuration-api.md)
       * [Publicera API-åtgärder för slutpunkt](./destination-sdk/destination-publish-api.md)
       * Referens för utvecklingsverktyg {#developer-tools-reference}
-         * [Hämta API-åtgärder för exempelmallar](./destination-sdk/sample-template-api.md)
-         * [API-åtgärder för återgivningsmall](./destination-sdk/render-template-api.md)
-         * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
-         * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
+         * API för testning av direktuppspelningsmål {#streaming-destination-testing-api}
+            * [Hämta API-åtgärder för exempelmallar](./destination-sdk/sample-template-api.md)
+            * [API-åtgärder för återgivningsmall](./destination-sdk/render-template-api.md)
+            * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
+            * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
+         * Filbaserat API för måltestning {#file-based-destination-testing-api}
+            * [Översikt över API för filbaserad destinationstestning](./destination-sdk/file-based-destination-testing-overview.md)
+            * [Generera exempelprofiler baserat på ett källschema](./destination-sdk/file-based-sample-profile-generation-api.md)
+            * [Testa ditt filbaserade mål med exempelprofiler](./destination-sdk/file-based-destination-testing-api.md)
+            * [Visa detaljerade aktiveringsresultat](./destination-sdk/file-based-destination-results-api.md)
+            * [Validera mallsidiga kundfält](./destination-sdk/file-based-render-template-api.md)
    * Stödlinjer {#guides}
       * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
       * [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
