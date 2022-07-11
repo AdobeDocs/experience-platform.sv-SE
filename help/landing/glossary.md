@@ -5,9 +5,9 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 7bafa87de874c6be90b80e4a899c02fd3868290e
+source-git-commit: c0f01efa224bffb5b435e2f247e793edfbc576b9
 workflow-type: tm+mt
-source-wordcount: '7379'
+source-wordcount: '7422'
 ht-degree: 0%
 
 ---
@@ -257,6 +257,8 @@ ht-degree: 0%
 **Geofence**: En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område.
 
 **GDPR (den allmänna dataskyddsförordningen)**: Den allmänna dataskyddsförordningen (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Den allmänna dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter och omfattar alla företag som hanterar EU-medborgarnas uppgifter.
+
+**Guardrails**: Garantier är trösklar som ger vägledning för data- och systemanvändning, prestandaoptimering och undvikande av fel eller oväntade resultat i Adobe Experience Platform. Garantier kan avse din användning eller konsumtion av data och bearbetning i relation till dina licensrättigheter.
 
 ## H
 

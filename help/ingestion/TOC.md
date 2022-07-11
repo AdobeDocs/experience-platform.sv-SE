@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform datainmatning
 breadcrumb-title: Handbok för dataöverföring
 user-guide-description: Använd era data på plattformen genom batchvis eller direktuppspelande ingrepp.
 feature: Data Ingestion
-source-git-commit: 19837e820ab3abdaa0bc8569ad78ce51dec1d21e
+source-git-commit: 2c0791af8bb4f40c5ab4e0504af154b757af5e84
 workflow-type: tm+mt
-source-wordcount: '124'
-ht-degree: 4%
+source-wordcount: '128'
+ht-degree: 3%
 
 ---
 
@@ -41,6 +41,7 @@ ht-degree: 4%
    - [Hämta misslyckade batchar](quality/retrieve-failed-batches.md)
    - [Direktinmatningsvalidering](quality/streaming-validation.md)
    - [Meddelanden om dataöverföring](quality/subscribe-events.md)
+- [Skyddsritningar för dataöverföring](guardrails.md)
 - [Källkopplingar](source-connectors.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
