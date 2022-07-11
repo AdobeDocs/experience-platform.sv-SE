@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;segment;segmentMembership;segment membership;Schema design;map;Map;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;scheman;segment;segment;Membership;segment membership;Schema design;map;Map;
 solution: Experience Platform
-title: Segment Membership Details Schema Field Group
+title: Schemafältgrupp för information om segmentmedlemskap
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
+source-git-commit: 5f28c9eceb42ee19f7a8b22604ff36f8ffbd89b1
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '424'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
 
-[!UICONTROL Segment Membership Details] är en standardgrupp för schemafält för  [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Fältgruppen innehåller ett enda kartfält som samlar in information om segmentmedlemskap, inklusive vilka segment den enskilda personen tillhör, senaste kvalificeringstid och när medlemskapet är giltigt till.
+[!UICONTROL Segment Membership Details] är en standardgrupp för schemafält för [[!DNL XDM Individual Profile] class](../../classes/individual-profile.md). Fältgruppen innehåller ett enda kartfält som samlar in information om segmentmedlemskap, inklusive vilka segment den enskilda personen tillhör, senaste kvalificeringstid och när medlemskapet är giltigt till.
 
 >[!WARNING]
 >
->Fältet `segmentMembership` måste läggas till manuellt i profilschemat med den här fältgruppen, men du bör inte försöka fylla i eller uppdatera det här fältet manuellt. Systemet uppdaterar automatiskt mappningen `segmentMembership` för varje profil när segmenteringsjobb utförs.
+>Med `segmentMembership` fältet måste läggas till manuellt i profilschemat med den här fältgruppen. Du bör inte försöka fylla i eller uppdatera det här fältet manuellt. Systemet uppdaterar automatiskt `segmentMembership` mappning för varje profil när segmenteringsjobb utförs.
 
 <img src="../../images/data-types/profile-segmentation.png" width="400" /><br />
 
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 {style=&quot;table-layout:auto&quot;}
 
-Följande är ett exempel på en `segmentMembership`-karta som systemet har fyllt i för en viss profil. Segmentmedlemskap sorteras efter namnutrymme, vilket anges av objektets rotnivånycklar. De enskilda nycklarna under varje namnutrymme representerar i sin tur ID:n för de segment som profilen är medlem i. Varje segmentobjekt innehåller flera underfält med mer information om medlemskapet:
+Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i för en viss profil. Segmentmedlemskap sorteras efter namnutrymme, vilket anges av objektets rotnivånycklar. De enskilda nycklarna under varje namnutrymme representerar i sin tur ID:n för de segment som profilen är medlem i. Varje segmentobjekt innehåller flera underfält med mer information om medlemskapet:
 
 ```json
 {
@@ -77,12 +77,12 @@ Följande är ett exempel på en `segmentMembership`-karta som systemet har fyll
 | `xdm:version` | Den version av segmentet som profilen är kvalificerad för. |
 | `xdm:lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
 | `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. |
-| `xdm:status` | Anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
-| `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger nyttolastens typ (`boolean`,  `number`,  `propensity` eller  `string`), medan dess jämställda egenskap anger värdet för nyttolasttypen. |
+| `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
+| `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger typ av nyttolast (`boolean`, `number`, `propensity`, eller `string`), medan dess jämställda egenskap tillhandahåller värdet för nyttolasttypen. |
 
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
-* [Full schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
