@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över reklamdestinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 14f7efc2d893bf081c4e167b46a3e85baeff4ec9
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,7 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 * [Google Customer Match Connection](google-customer-match.md)
 * [Microsoft Bing-anslutning](bing.md)
 * [Pinterest Customer List Connection](pinterest.md)
+* [(Beta) Snapchat Ads-anslutning](snap-inc.md)
 * [The Trade Desk connection](tradedesk.md)
 * [Yahoo/Verizon DataX](datax.md)
 
