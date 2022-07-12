@@ -1,25 +1,19 @@
 ---
-title: Självbetjäningsmall // Ersätt med namnet på destinationen
+title: Självbetjäningsmall // Ersätt med namnet på målet
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
-exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '1353'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
+
 
 # Din målanslutning {#your-destination}
 
 *När du går igenom den här mallen ersätter eller tar du bort alla stycken i kursiv stil (med början från det här).*
 
 *Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Ignorera alla instanser av UICONTROL på den här sidan. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat in den.*
-
->[!IMPORTANT]
->
->* Fyll i alla avsnitt i den här mallen i den ordning som de beskrivs i mallen.
->* Den här mallen uppdateras sällan baserat på feedback från partner. Innan du börjar skapa dokumentation för destinationen bör du kontrollera att du har laddat ned [senaste versionen av mallen](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
-
 
 ## Översikt {#overview}
 
@@ -33,13 +27,13 @@ ht-degree: 0%
 
 För att du bättre ska förstå hur och när du ska använda *DittMål* mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
-### Använd skiftläge 1 {#use-case-1}
+### Använd skiftläge 1
 
 *För plattformar för mobilmeddelanden:*
 
 *En uthyrnings- och försäljningsplattform vill skicka mobilmeddelanden till kundernas Android- och iOS-enheter för att tala om för dem att det finns 100 uppdaterade listor i det område där de tidigare sökte efter en uthyrning.*
 
-### Använd skiftläge 2 {#use-case-2}
+### Använd skiftläge 2
 
 *För plattformar för sociala nätverk:*
 
@@ -102,7 +96,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-![Exempelbild som visar hur man autentiserar till målet](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
+![Lägg till en länk här till ett eller flera exempelskärmbilder som visar hur användarna autentiserar till målet](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
 
 * **[!UICONTROL Bearer token]**: Fyll i bearer-token för att autentisera mot målet.
 
@@ -112,7 +106,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Exempelbild som visar hur du fyller i detaljer för destinationen](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
+![Lägg till en länk här till en eller flera exempelskärmbilder som visar hur användarna fyller i information för destinationen](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -130,7 +124,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](../../ui/activate/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
@@ -176,7 +170,7 @@ Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](h
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](/help/data-governance/home.md).
+Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](/help/data-governance/home.md).
 
 ## Ytterligare resurser {#additional-resources}
 

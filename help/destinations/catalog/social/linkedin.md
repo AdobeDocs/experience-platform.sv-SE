@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '869'
+source-wordcount: '1009'
 ht-degree: 1%
 
 ---
@@ -91,7 +91,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 > 
 >Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
 I videon nedan visas även hur du konfigurerar en [!DNL LinkedIn Matched Audiences] mål och aktivera segment.
 
@@ -101,13 +101,31 @@ I videon nedan visas även hur du konfigurerar en [!DNL LinkedIn Matched Audienc
 >
 >Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
-### Anslutningsparametrar {#parameters}
+### Autentisera till mål {#authenticate}
 
-while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
+1. Hitta [!DNL LinkedIn Matched Audiences] mål i målkatalogen och välj **[!UICONTROL Set Up]**.
+2. Välj **[!UICONTROL Connect to destination]**.
+   ![Autentisera till LinkedIn](/help/destinations/assets/catalog/social/linkedin/authenticate-linkedin-destination.png)
+3. Ange dina LinkedIn-uppgifter och välj **Logga in**.
 
-* **[!UICONTROL Name]**: ett namn som du känner igen det här målet med i framtiden.
-* **[!UICONTROL Description]**: en beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i din [!DNL LinkedIn Campaign Manager] konto.
+### Fyll i målinformation {#destination-details}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_linkedin_accountid"
+>title="Konto-ID"
+>abstract="Ditt konto-ID för LinkedIn Campaign Manager. Du hittar detta ID i ditt LinkedIn Campaign Manager-konto."
+
+Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
+
+* **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
+* **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
+* **[!UICONTROL Account ID]**: Din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i din [!DNL LinkedIn Campaign Manager] konto.
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 

@@ -3,9 +3,9 @@ keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Displ
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 898bd0d5d986bf26e62b0843de7cbb71b859aee3
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '873'
 ht-degree: 1%
 
 ---
@@ -86,6 +86,12 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 >[!NOTE]
 >
 >När du konfigurerar en [!DNL Google Display & Video 360] mål, arbeta med [!DNL Google Account Manager] eller Adobe för att förstå vilken kontotyp du har.
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 

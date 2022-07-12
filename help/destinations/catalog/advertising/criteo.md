@@ -3,10 +3,10 @@ keywords: Reklam. villkor,
 title: Kriterieanslutning
 description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 07974f92c741d74e6d0289120538655379d3ca35
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '930'
-ht-degree: 2%
+source-wordcount: '992'
+ht-degree: 1%
 
 ---
 
@@ -102,6 +102,12 @@ Fyll i följande anslutningsparametrar när du har autentiserat till målet.
 | API-version | Version av rit-API. Välj Förhandsgranska. | Ja |
 | Annonsörs-ID | ID för er organisations Criteo Advertiser. Kontakta er kontoansvarige för ditt kriterium för att få denna information. | Ja |
 | Kriterium [!DNL GUM caller ID] | [!DNL GUM Caller ID] för er organisation. Kontakta er kontogrupp för att få reda på vad som är lämpligt [!DNL GUM Caller ID] eller om du vill ha mer information om detta [!DNL GUM] synkronisera, om det behövs. | Ja, när [!DNL GUM ID] anges som en identifierare |
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate-segments}
 

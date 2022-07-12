@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1446'
+source-wordcount: '1518'
 ht-degree: 1%
 
 ---
@@ -78,8 +78,9 @@ Marknadsföringsteam som använder SendGrid kan skapa en e-postlista i SendGrid 
 > 
 >Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). Stegen som är specifika för det här målet visas i detalj nedan.
+### Autentisera till mål {#authenticate}
 
 1. I [!DNL Adobe Experience Platform] konsol, navigera till **Destinationer**.
 
@@ -96,7 +97,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 ![](../../assets/catalog/email-marketing/sendgrid/05.jpg)
 
-### Anslutningsparametrar {#parameters}
+### Fyll i målinformation {#destination-details}
 
 while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) Om du vill ange destinationen måste du ange följande information:
 
@@ -104,6 +105,12 @@ while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/
 * **[!UICONTROL Description]**: En valfri beskrivning som hjälper dig att identifiera det här målet i framtiden.
 
 ![](../../assets/catalog/email-marketing/sendgrid/06.jpg)
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 

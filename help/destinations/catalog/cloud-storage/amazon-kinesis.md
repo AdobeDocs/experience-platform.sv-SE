@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
+source-git-commit: abe2e7ba363b82a696136aa46aa1adbbe25ee461
 workflow-type: tm+mt
-source-wordcount: '1778'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -86,6 +86,8 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att expor
 | `kinesis:PutRecord` | En åtgärd som skriver en enskild datapost till en dataström från Kinesis. |
 | `kinesis:PutRecords` | En åtgärd som skriver flera dataposter till en dataström från Kinesis i ett enda anrop. |
 
+{style=&quot;table-layout:auto&quot;}
+
 Mer information om hur du styr åtkomst för [!DNL Kinesis] dataströmmar, läs följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ## Anslut till målet {#connect}
@@ -105,7 +107,7 @@ Ange fälten nedan och välj **[!UICONTROL Connect to destination]**:
 * **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: I [!DNL Amazon Web Services], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL Region]**: Ange vilken [!DNL Amazon Web Services] region som data ska strömmas till.
 
-### Destinationsinformation {#destination-details}
+### Fyll i målinformation {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_kinesis_includesegmentnames"
@@ -117,7 +119,7 @@ Ange fälten nedan och välj **[!UICONTROL Connect to destination]**:
 >title="Inkludera tidsstämplar för segment"
 >abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
-När du har upprättat autentiseringsanslutningen till Amazon Kinesis-målet anger du följande information för målet:
+Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 ![Bild av gränssnittsskärmen med ifyllda fält för Amazon Kinesis-målinformationen](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-destination-details.png)
 
@@ -134,6 +136,12 @@ När du har upprättat autentiseringsanslutningen till Amazon Kinesis-målet ang
 >Platform needs `write` permissions on the bucket object where the export files will be delivered.
 
 -->
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 

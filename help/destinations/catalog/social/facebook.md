@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1829'
 ht-degree: 1%
 
 ---
@@ -90,7 +90,6 @@ Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 >
 >Telefonnummer som hämtas till `Phone` namnutrymmet kan inte aktiveras i [!DNL Facebook].
 
-
 ## Krav för e-posthashning {#email-hashing-requirements}
 
 Du kan hash-koda e-postadresser innan du hämtar dem till Adobe Experience Platform, eller använda e-postadresser utan att märka dem i Experience Platform, och du kan [!DNL Platform] hash-koda dem vid aktiveringen.
@@ -124,7 +123,7 @@ Innan du kan använda `Extern_ID` namnutrymme som data skickas till [!DNL Facebo
 > 
 >Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
 I videon nedan visas även hur du konfigurerar en [!DNL Facebook] mål och aktivera segment.
 
@@ -134,13 +133,31 @@ I videon nedan visas även hur du konfigurerar en [!DNL Facebook] mål och aktiv
 >
 >Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
-### Anslutningsparametrar {#parameters}
+### Autentisera till mål {#authenticate}
 
-while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
+1. Hitta Facebook-målet i målkatalogen och välj **[!UICONTROL Set Up]**.
+2. Välj **[!UICONTROL Connect to destination]**.
+   ![Autentisera till Facebook](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
+3. Ange dina Facebook-uppgifter och välj **Logga in**.
+
+### Fyll i målinformation {#destination-details}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_facebook_accountid"
+>title="Konto-ID"
+>abstract="Ditt Facebook-konto-ID. Du hittar detta ID i ditt Facebook Ads Manager-konto. När du anger detta ID ska du alltid prefix det med `act_`."
+
+Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: din [!DNL Facebook Ad Account ID]. Du hittar detta ID i din [!DNL Facebook Ads Manager] konto. När du anger detta ID ska du alltid prefix det med `act_`.
+* **[!UICONTROL Account ID]**: Din [!DNL Facebook Ad Account ID]. Du hittar detta ID i din [!DNL Facebook Ads Manager] konto. När du anger detta ID ska du alltid prefix det med `act_`.
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 

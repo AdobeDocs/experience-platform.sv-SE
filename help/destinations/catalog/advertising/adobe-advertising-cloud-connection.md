@@ -2,9 +2,9 @@
 title: Adobe Advertising Cloud DSP-anslutning
 description: Adobe Advertising Cloud DSP är ett integrerat mål för [!DNL Adobe Real-time Customer Data Profile]så att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: 2b8c9d81b7d9eddbbed3119a496e9c8d37e6c415
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '914'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -78,12 +78,18 @@ Om du vill ansluta till målet anger du följande parameter i [!UICONTROL Connec
 
 ### Fyll i målinformation {#destination-details}
 
-Om du vill konfigurera information för målet fyller du i de obligatoriska fälten i [!UICONTROL Destination details] och sedan markera **[!UICONTROL Next]**.
+Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 
 ![Målinformationsfält](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/destination-details.png)
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 

@@ -3,9 +3,9 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 715533352e84573f60f012504988595af6146e2f
+source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '637'
+source-wordcount: '639'
 ht-degree: 0%
 
 ---
@@ -39,9 +39,9 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 > 
 >Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-### Anslutningsparametrar {#parameters}
+### Autentiseringsinformation {#authentication-information}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_rsa"
@@ -51,11 +51,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_ssh"
 >title="Privat SSH-nyckel"
->abstract="Den privata SSH-nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad. "
-
-När [koppla](../../ui/connect-destination.md) till detta mål måste du ange följande information:
-
-#### Autentiseringsinformation {#authentication-information}
+>abstract="Den privata SSH-nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad."
 
 Om du väljer **[!UICONTROL Basic authentication]** skriv för att ansluta till din SFTP-plats:
 
@@ -83,7 +79,7 @@ Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansl
 
       ![PGP-nyckel](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
-#### Destinationsinformation {#destination-details}
+### Destinationsinformation {#destination-details}
 
 När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du följande information för målet:
 
