@@ -6,14 +6,14 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
+source-git-commit: 0ce574700ce4134cddbb990b9b2765c25112b44d
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1110'
 ht-degree: 0%
 
 ---
 
-# Definiera en relation mellan två scheman med [!DNL Schema Editor]
+# Definiera en 1:1-relation mellan två scheman med [!DNL Schema Editor]
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
@@ -21,9 +21,21 @@ ht-degree: 0%
 >abstract="Scheman som tillhör olika klasser kan länkas till sammanhanget via relationsfält, vilket gör att du kan skapa mer komplexa segmenteringsregler."
 >text="See the documentation for more information on schema relationships."
 
+>[!CONTEXTUALHELP]
+>id="platform_xdm_1to1_reference_schema"
+>title="Referensschema"
+>abstract="Välj det schema som du vill skapa en relation med. Det här schemat kan vara en annan klass än det aktuella schemat."
+>text="See the documentation for more information on schema relationships."
+
+>[!CONTEXTUALHELP]
+>id="platform_xdm_1to1_identity_namespace"
+>title="Namnutrymme för referensidentitet"
+>abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation."
+>text="See the documentation for more information on schema relationships."
+
 >[!NOTE]
 >
->Om du använder Real-time Customer Data Platform B2B Edition, se guiden på [skapa B2B-relationer](./relationship-b2b.md) i stället.
+>Anvisningar om hur du skapar en många-till-ett-relation i Real-time Customer Data Platform B2B Edition finns i guiden på [skapa B2B-relationer](./relationship-b2b.md).
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
@@ -110,6 +122,10 @@ Den uppdaterade `favoriteHotel` visas på arbetsytan. Välj **[!UICONTROL Save]*
 ## Definiera ett relationsfält för källschemat {#relationship-field}
 
 När ett dedikerat referensfält har definierats i källschemat kan du ange det som ett relationsfält.
+
+>[!NOTE]
+>
+>Stegen nedan beskriver hur du definierar ett relationsfält med kontrollerna för höger skena på arbetsytan. Om du har tillgång till Real-Time CDP B2B Edition kan du även definiera en personlig relation med [samma dialogruta](./relationship-b2b.md#relationship-field) som när du skapar många-till-en-relationer.
 
 Välj `favoriteHotel` på arbetsytan och rulla sedan nedåt under **[!UICONTROL Field properties]** tills **[!UICONTROL Relationship]** visas. Markera kryssrutan för att visa de parametrar som krävs för att konfigurera ett relationsfält.
 

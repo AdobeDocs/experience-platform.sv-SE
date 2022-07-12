@@ -2,18 +2,24 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: b9ec275df738e006d3fec2cdd64b0ed6577dbff8
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1318'
 ht-degree: 0%
 
 ---
 
-# Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
+# Definiera en många-till-ett-relation mellan två scheman i Real-time Customer Data Platform B2B Edition
+
+>[!CONTEXTUALHELP]
+>id="platform_xdm_b2b_reference_schema"
+>title="Referensschema"
+>abstract="Välj det schema som du vill skapa en relation med. Beroende på schemaklassen kan den även ha befintliga relationer med andra entiteter i B2B-kontexten."
+>text="See the documentation to learn how B2B schema classes relate to each other."
 
 >[!NOTE]
 >
->Om du inte använder Real-time Customer Data Platform B2B Edition läser du guiden på [skapa en relation som inte är B2B](./relationship-ui.md) i stället.
+>Om du inte använder Real-time Customer Data Platform B2B Edition eller vill skapa en personlig relation läser du i guiden på [skapa en personlig relation](./relationship-ui.md) i stället.
 
 Real-time Customer Data Platform B2B Edition innehåller flera XDM-klasser (Experience Data Model) som samlar in grundläggande B2B-datatabeller, inklusive [konton](../classes/b2b/business-account.md), [möjligheter](../classes/b2b/business-opportunity.md), [kampanjer](../classes/b2b/business-campaign.md), med mera. Genom att skapa scheman baserade på dessa klasser och aktivera dem för användning i [Kundprofil i realtid](../../profile/home.md)kan du sammanfoga data från olika källor till en enhetlig representation som kallas för ett unionsschema.
 
@@ -45,7 +51,13 @@ Schemarelationer representeras av ett dedikerat fält i en **källschema** som r
 
 ### Identiteter i B2B-relationer
 
-För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Platform.
+>[!CONTEXTUALHELP]
+>id="platform_xdm_b2b_identity_namespace"
+>title="Namnutrymme för referensidentitet"
+>abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation."
+>text="See the documentation to learn more about identities in B2B relationships."
+
+För att en relation ska kunna skapas måste målschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Platform.
 
 För att ta hänsyn till detta innehåller alla standardklasser för B2B&quot;nyckelfält&quot; som följer [[!UICONTROL B2B Source] datatyp](../data-types/b2b-source.md). Den här datatypen innehåller fält för en strängidentifierare för B2B-enheten tillsammans med annan sammanhangsberoende information om identifierarens källa. Ett av dessa fält, `sourceKey`, sammanfogar värdena för de andra fälten i datatypen så att en helt unik identifierare skapas för entiteten. Det här fältet ska alltid användas som primär identitet för B2B-entitetsscheman.
 
@@ -60,6 +72,7 @@ I följande avsnitt beskrivs strukturen för varje schema som används i den hä
 ### [!DNL Opportunities] schema
 
 Källschemat &quot;[!DNL Opportunities]&quot; baseras på [!UICONTROL XDM Business Opportunity] klassen. Ett av fälten i klassen, `opportunityKey`, fungerar som identifierare för schemat. I synnerhet `sourceKey` fält under `opportunityKey` objektet anges som schemats primära identitet under ett anpassat namnområde som kallas [!DNL B2B Opportunity].
+
 Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiverats för användning i [!DNL Real-time Customer Profile].
 
 ![Schema för affärsmöjligheter](../images/tutorials/relationship-b2b/opportunities.png)
@@ -72,11 +85,23 @@ Målschemat &quot;[!DNL Accounts]&quot; baseras på [!UICONTROL XDM Account] kla
 
 ## Definiera ett relationsfält för källschemat {#relationship-field}
 
+>[!CONTEXTUALHELP]
+>id="platform_xdm_b2b_relationship_name_current"
+>title="Relationsnamn från aktuellt schema"
+>abstract="En etikett som beskriver relationen från det aktuella schemat till referensschemat (till exempel Relaterat konto). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter."
+>text="See the documentation to learn more about building B2B schema relationships."
+
+>[!CONTEXTUALHELP]
+>id="platform_xdm_b2b_relationship_name_reference"
+>title="Relationsnamn från referensschema"
+>abstract="En etikett som beskriver relationen från referensschemat till det aktuella schemat (till exempel Relaterade affärsmöjligheter). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter."
+>text="See the documentation to learn more about building B2B schema relationships."
+
 För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som refererar till målschemats primära identitet. StandardB2B-klasser innehåller dedikerade källnyckelfält för vanliga affärsföretag. Till exempel [!UICONTROL XDM Business Opportunity] klassen innehåller källnyckelfält för ett relaterat konto (`accountKey`) och en relaterad kampanj (`campaignKey`). Du kan dock även lägga till andra [!UICONTROL B2B Source] fält till schemat genom att använda anpassade fältgrupper om du behöver fler än standardkomponenterna.
 
 >[!NOTE]
 >
->För närvarande kan endast många-till-ett-relationer definieras från ett källschema till ett målschema. För en-till-många-relationer måste du definiera relationsfältet i schemat som representerar&quot;många&quot;.
+>För närvarande kan endast många-till-ett- och en-till-en-relationer definieras från ett källschema till ett målschema. För en-till-många-relationer måste du definiera relationsfältet i schemat som representerar&quot;många&quot;.
 
 Om du vill ange ett relationsfält väljer du pilen (![Pilikon](../images/tutorials/relationship-b2b/arrow.png)) bredvid fältet i fråga på arbetsytan. När det gäller [!DNL Opportunities] schema, det här är `accountKey.sourceKey` eftersom målet är att skapa en många-till-en-relation med ett konto.
 
