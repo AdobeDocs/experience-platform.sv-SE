@@ -1,9 +1,9 @@
 ---
 description: Den här sidan förklarar hur du använder slutpunkten /authoring/testing/template/render för att visualisera hur de mallsidiga kunddatafälten som definieras i målkonfigurationen skulle se ut.
 title: Validera mallsidiga kundfält
-source-git-commit: fa092e4d1828d9ecd5bc98e3f225fa377f38065f
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '386'
 ht-degree: 2%
 
 ---
@@ -83,7 +83,7 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/t
 
 Ett godkänt svar returnerar ett `HTTP 200 OK` och brödtexten innehåller slumpmässigt genererade värden för de mallsidiga fälten.
 
-Svaret är avsett att hjälpa dig att validera den korrekta strukturen i kunddatafälten, till exempel bucketnamn eller mappsökvägar.
+Detta svar kan hjälpa er att validera den korrekta strukturen i kunddatafälten, till exempel bucketnamn eller mappsökvägar.
 
 
 ```json

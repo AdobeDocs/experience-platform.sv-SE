@@ -1,7 +1,7 @@
 ---
 description: På den här sidan beskrivs hur du använder API-slutpunkten /testing/destinationInstance för att visa fullständig information om testresultaten. Denna API-slutpunkt returnerar samma resultat som du skulle få när du använde API:t för Flow Service för att övervaka dataflöden.
 title: Visa detaljerade aktiveringsresultat
-source-git-commit: 5b62203113dd55dad8adeb96cbcc2d46b3420c3a
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
 source-wordcount: '545'
 ht-degree: 1%

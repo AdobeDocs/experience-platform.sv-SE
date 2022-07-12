@@ -1,9 +1,9 @@
 ---
 title: (Beta) Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar målgruppssegment från Experience Platform.
-source-git-commit: 14f7efc2d893bf081c4e167b46a3e85baeff4ec9
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
-source-wordcount: '926'
+source-wordcount: '988'
 ht-degree: 1%
 
 ---
@@ -103,6 +103,12 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 >[!IMPORTANT]
 > 
 >Om du anger ett felaktigt eller ogiltigt konto-ID för Snapchat-annonsen misslyckas segmentaktiveringen. Kontrollera att du har angett rätt ID för annonskonto.
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera segment till den här destinationen {#activate}
 
