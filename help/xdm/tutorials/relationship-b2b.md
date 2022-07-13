@@ -2,9 +2,9 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: b9ec275df738e006d3fec2cdd64b0ed6577dbff8
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '1318'
+source-wordcount: '1368'
 ht-degree: 0%
 
 ---
@@ -14,12 +14,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_reference_schema"
 >title="Referensschema"
->abstract="Välj det schema som du vill skapa en relation med. Beroende på schemaklassen kan den även ha befintliga relationer med andra entiteter i B2B-kontexten."
->text="See the documentation to learn how B2B schema classes relate to each other."
-
->[!NOTE]
->
->Om du inte använder Real-time Customer Data Platform B2B Edition eller vill skapa en personlig relation läser du i guiden på [skapa en personlig relation](./relationship-ui.md) i stället.
+>abstract="Välj det schema som du vill skapa en relation med. Beroende på schemaklassen kan den även ha befintliga relationer med andra entiteter i B2B-kontexten. Läs dokumentationen för att lära dig hur B2B-schemaklasser relaterar till varandra."
 
 Real-time Customer Data Platform B2B Edition innehåller flera XDM-klasser (Experience Data Model) som samlar in grundläggande B2B-datatabeller, inklusive [konton](../classes/b2b/business-account.md), [möjligheter](../classes/b2b/business-opportunity.md), [kampanjer](../classes/b2b/business-campaign.md), med mera. Genom att skapa scheman baserade på dessa klasser och aktivera dem för användning i [Kundprofil i realtid](../../profile/home.md)kan du sammanfoga data från olika källor till en enhetlig representation som kallas för ett unionsschema.
 
@@ -32,6 +27,8 @@ I följande diagram visas ett exempel på hur de olika B2B-klasserna kan relater
 I den här självstudiekursen beskrivs stegen för att definiera ett många-till-ett-förhållande mellan två scheman i CDP B2B Edition i realtid.
 
 >[!NOTE]
+>
+>Om du inte använder Real-time Customer Data Platform B2B Edition eller vill skapa en personlig relation läser du i guiden på [skapa en personlig relation](./relationship-ui.md) i stället.
 >
 >I den här självstudiekursen fokuseras på hur du manuellt skapar relationer mellan B2B-scheman i plattformsgränssnittet. Om du hämtar in data från en B2B-källanslutning kan du använda ett verktyg för automatisk generering för att skapa nödvändiga scheman, identiteter och relationer i stället. I källdokumentationen om B2B-namnutrymmen och scheman finns mer information om [med verktyget för autogenerering](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md).
 
@@ -54,8 +51,7 @@ Schemarelationer representeras av ett dedikerat fält i en **källschema** som r
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_identity_namespace"
 >title="Namnutrymme för referensidentitet"
->abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation."
->text="See the documentation to learn more about identities in B2B relationships."
+>abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation. Mer information om identiteter i B2B-relationer finns i dokumentationen."
 
 För att en relation ska kunna skapas måste målschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Platform.
 
@@ -88,14 +84,12 @@ Målschemat &quot;[!DNL Accounts]&quot; baseras på [!UICONTROL XDM Account] kla
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_current"
 >title="Relationsnamn från aktuellt schema"
->abstract="En etikett som beskriver relationen från det aktuella schemat till referensschemat (till exempel Relaterat konto). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter."
->text="See the documentation to learn more about building B2B schema relationships."
+>abstract="En etikett som beskriver relationen från det aktuella schemat till referensschemat (till exempel Relaterat konto). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter. Mer information om hur du skapar B2B-schemarelationer finns i dokumentationen."
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_reference"
 >title="Relationsnamn från referensschema"
->abstract="En etikett som beskriver relationen från referensschemat till det aktuella schemat (till exempel Relaterade affärsmöjligheter). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter."
->text="See the documentation to learn more about building B2B schema relationships."
+>abstract="En etikett som beskriver relationen från referensschemat till det aktuella schemat (till exempel Relaterade affärsmöjligheter). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter. Mer information om hur du skapar B2B-schemarelationer finns i dokumentationen."
 
 För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som refererar till målschemats primära identitet. StandardB2B-klasser innehåller dedikerade källnyckelfält för vanliga affärsföretag. Till exempel [!UICONTROL XDM Business Opportunity] klassen innehåller källnyckelfält för ett relaterat konto (`accountKey`) och en relaterad kampanj (`campaignKey`). Du kan dock även lägga till andra [!UICONTROL B2B Source] fält till schemat genom att använda anpassade fältgrupper om du behöver fler än standardkomponenterna.
 

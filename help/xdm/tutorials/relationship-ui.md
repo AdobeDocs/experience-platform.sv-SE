@@ -6,9 +6,9 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 0ce574700ce4134cddbb990b9b2765c25112b44d
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '1110'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -18,30 +18,27 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
 >title="Schemarelationer"
->abstract="Scheman som tillhör olika klasser kan länkas till sammanhanget via relationsfält, vilket gör att du kan skapa mer komplexa segmenteringsregler."
->text="See the documentation for more information on schema relationships."
+>abstract="Scheman som tillhör olika klasser kan länkas till sammanhanget via relationsfält, vilket gör att du kan skapa mer komplexa segmenteringsregler. Mer information om schemarelationer finns i dokumentationen."
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_reference_schema"
 >title="Referensschema"
->abstract="Välj det schema som du vill skapa en relation med. Det här schemat kan vara en annan klass än det aktuella schemat."
->text="See the documentation for more information on schema relationships."
+>abstract="Välj det schema som du vill skapa en relation med. Det här schemat kan vara en annan klass än det aktuella schemat. Mer information om schemarelationer finns i dokumentationen."
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_identity_namespace"
 >title="Namnutrymme för referensidentitet"
->abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation."
->text="See the documentation for more information on schema relationships."
-
->[!NOTE]
->
->Anvisningar om hur du skapar en många-till-ett-relation i Real-time Customer Data Platform B2B Edition finns i guiden på [skapa B2B-relationer](./relationship-b2b.md).
+>abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation. Mer information om schemarelationer finns i dokumentationen."
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
 När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
 I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i [!DNL Experience Platform] användargränssnitt. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om [definiera en relation med API:t för schemaregister](relationship-api.md).
+
+>[!NOTE]
+>
+>Anvisningar om hur du skapar en många-till-ett-relation i Real-time Customer Data Platform B2B Edition finns i guiden på [skapa B2B-relationer](./relationship-b2b.md).
 
 ## Komma igång
 
