@@ -5,9 +5,9 @@ title: Översikt över identitetstjänsten
 topic-legacy: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: eb0fe2267416c5053cb589cc6d147324cc31c985
+source-git-commit: 3e073d2c45f88c56473ccc2e3d18a2bbedd4f254
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
@@ -59,14 +59,25 @@ I princip [!DNL Identity Service] gör att ni kan sammanställa en komplett bild
 Exempel på [!DNL Identity Service] implementeringarna omfattar:
 
 - Ett telekomföretag kan förlita sig på värdet för&quot;telefonnummer&quot;, där ett telefonnummer hänvisar till samma person i intresse både offline och online.
-- Ett detaljhandelsföretag kan använda&quot;e-postadress&quot; i offline-datauppsättningar och ECID i online-datauppsättningar på grund av den stora andelen anonyma besökare.
+- Ett detaljhandelsföretag kan använda&quot;e-postadress&quot; i offlinedatauppsättningar och ECID i onlinedatauppsättningar på grund av den stora andelen anonyma besökare.
 - En bank kan föredra&quot;kontonummer&quot; i offlinedatauppsättningar, t.ex. filialtransaktioner. De kan vara beroende av&quot;inloggnings-ID&quot; i onlinedatauppsättningar, eftersom de flesta besökare autentiseras under besöket.
 - Dina kunder kan också ha unika egna ID:n, som GUID eller andra universellt unika ID:n.
 
-## Identitetsnamnutrymmen
+## Namnutrymme för identitet {#identity-namespace}
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_namespace"
+>title="Identitetsnamnutrymmen"
+>abstract="Ett identitetsnamnutrymme används för att skilja på kontexten eller typen för en identitet. En identitet urskiljer till exempel &quot;name<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_value"
+>title="Identitetsvärden"
+>abstract="Ett identitetsvärde är en identifierare som representerar en unik individ, organisation eller resurs. Kontexten eller typen av identitet som värdet representerar definieras av ett motsvarande identitetsnamnutrymme. När postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matchaNär postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matcha."
+>text="Learn more in documentation"
 
 Om du frågade en person&quot;Vad är ditt ID?&quot; utan vidare sammanhang skulle det vara svårt för dem att ge ett användbart svar. Med samma logik är ett strängvärde som representerar ett identitetsvärde, oavsett om det är ett systemgenererat ID eller en e-postadress, endast fullständigt när det levereras med en kvalificerare som ger strängvärdeskontexten: identitetsnamnutrymmet.
-
 
 Era kunder kan interagera med ert varumärke genom en kombination av online- och offlinekanaler, vilket kan vara en utmaning när det gäller att kombinera dessa fragmenterade interaktioner med en enda kundidentitet.
 

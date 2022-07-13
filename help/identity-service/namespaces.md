@@ -5,9 +5,9 @@ title: Översikt över namnområde för identitet
 topic-legacy: overview
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 3a9e97b472482d6a7f6df5f2a59f2f75635be181
+source-git-commit: 3e073d2c45f88c56473ccc2e3d18a2bbedd4f254
 workflow-type: tm+mt
-source-wordcount: '1576'
+source-wordcount: '1605'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,13 @@ Två profilfragment kan till exempel innehålla olika primära ID:n, men de dela
 
 ![](images/identity-service-stitching.png)
 
-### Identitetstyper
+### Identitetstyper {#identity-types}
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_create_namespace"
+>title="Ange identitetstyp"
+>abstract="Identitetstypen styr om data lagras i identitetsdiagrammet eller inte. Identifierare som inte är personer kommer inte att lagras och alla andra identitetstyper kommer att lagras."
+>text="Learn more in documentation"
 
 Data kan identifieras av flera olika identitetstyper. Identitetstypen anges när identitetsnamnutrymmet skapas och kontrollerar om data bevaras i identitetsdiagrammet och eventuella specialinstruktioner för hur data ska hanteras. Alla identitetstyper utom **Identifierare för icke-personer** följer samma beteende som när du sammanfogar ett namnutrymme med dess motsvarande ID-värde till ett identitetsdiagramkluster. Data sammanfogas inte när du använder **Identifierare för icke-personer**.
 
