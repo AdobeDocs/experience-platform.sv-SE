@@ -1,9 +1,9 @@
 ---
 description: På den här sidan beskrivs hur du använder API-slutpunkten /sample-profiles från Destinationen SDK för att generera exempelprofiler baserat på ett källschema. Du kan använda de här exempelprofilerna för att testa din filbaserade målkonfiguration.
 title: Generera exempelprofiler baserat på ett källschema
-source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
+source-git-commit: ee2bf346a4857a70a7f9aec02bab574f8a257ace
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '678'
 ht-degree: 1%
 
 ---
@@ -108,7 +108,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 | -------- | ----------- |
 | `segmentMembership` | Ett kartobjekt som beskriver personens segmentmedlemskap. Mer information om `segmentMembership`, läsa [Information om segmentmedlemskap](../../xdm/field-groups/profile/segmentation.md). |
 | `lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `status` | Anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
+| `status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
 | `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, se [grund för schemakomposition](../../xdm/schema/composition.md#identityMap). |
 
 {style=&quot;table-layout:auto&quot;}
