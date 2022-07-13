@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 0c5d3ae2f43b0eeb6c86f535e37a906b7c414600
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '847'
 ht-degree: 1%
 
 ---
@@ -64,8 +64,8 @@ Innan du skapar [!DNL Google Ad Manager] mål i plattform måste du kontakta [!D
 
 * **Konto-ID**: Adobe konto-ID hos Google. Konto-ID: 87933855.
 * **Kund-ID**: Adobe kundkonto-ID hos Google. Kund-ID: 89690775.
-* **Nätverks-ID**: det här är ditt konto med [!DNL Google Ad Manager]
-* **Målgruppslänks-ID**: det här är ditt konto med [!DNL Google Ad Manager]
+* **Nätverkskod**: Det här är din [!DNL Google Ad Manager] nätverksidentifierare, hittades under **[!UICONTROL Admin > Global settings]** i Google-gränssnittet och i URL-adressen.
+* **Målgruppslänks-ID**: Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]), som också finns under **[!UICONTROL Admin > Global settings]** i Google gränssnitt.
 * Din kontotyp. DFP av Google eller AdX-köpare.
 
 ## Anslut till målet {#connect}
