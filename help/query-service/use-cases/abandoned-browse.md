@@ -4,7 +4,7 @@ title: Exempel på användningsfall för Adobe Experience Platform Query Service
 topic-legacy: tutorial
 description: Ett heltäckande exempel som demonstrerar mångsidigheten och fördelarna med Adobe Experience Platform Query Service.
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 06655e930e447b48089891ca930da89854b8320b
+source-git-commit: 6f6256b5601ce5c230ef334a9ce71325b43fda45
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Det här dokumentet och den medföljande videopresentationen ger ett avancerat arbetsflöde som visar hur Adobe Experience Platform [!DNL Query Service] är en fördel för er organisations strategiska affärsinsikter. I den här guiden visas följande viktiga begrepp:
 
-* Den centrala vikten av databearbetning för att maximera Adobe Experience Platform potential
+* Den centrala vikten av databearbetning för att maximera Adobe Experience Platform potential.
 * Olika sätt att bygga frågan baserat på din befintliga dataarkitektur.
 * Säkerställ den datakvalitet som uppfyller era behov och metoder för att minska eventuella brister.
 * Processen för att schemalägga en fråga att köras med en fast frekvens för användning längre fram i segmenteringen och destinationer för personalisering.

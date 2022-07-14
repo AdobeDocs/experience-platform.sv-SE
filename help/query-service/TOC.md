@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: b93221a9611de719d5194c387d582e77a162a1fd
+source-git-commit: b35581387a8b75f365db433b6138fdd8a7f96db0
 workflow-type: tm+mt
-source-wordcount: '195'
-ht-degree: 5%
+source-wordcount: '199'
+ht-degree: 6%
 
 ---
 
@@ -44,7 +44,9 @@ ht-degree: 5%
    - [Anonymt block](best-practices/anonymous-block.md)
    - [Inkrementell inläsning](best-practices/incremental-load.md)
    - [Datadeduplicering](best-practices/deduplication.md)
-- [Härledda attribut](derived-attributes.md)
+- Härledda attribut {#derived-attributes}
+   - [Översikt](derived-attributes/overview.md)
+   - [Användningsfall för decimaler](derived-attributes/deciles-use-case.md)
 - Exempelfrågor {#sample-queries}
    - [Exempelfrågor om Experience Event](sample-queries/experience-event.md)
    - [Exempel på Adobe Analytics-frågor](sample-queries/adobe-analytics.md)
