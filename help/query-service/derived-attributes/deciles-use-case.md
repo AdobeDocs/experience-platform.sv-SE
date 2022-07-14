@@ -1,9 +1,7 @@
 ---
 title: 'Använd skiftläge för dekorbaserade härledda attribut '
 description: Den här guiden visar de steg som krävs för att använda frågetjänsten för att skapa decimalbaserade härledda attribut som kan användas med dina profildata.
-hide: true
-hidefromtoc: true
-source-git-commit: 4f44e66ee7537e038628a5beb6b3b3bd0760ff1b
+source-git-commit: 61e0895484b8005e2109056d51557f609fecaf97
 workflow-type: tm+mt
 source-wordcount: '1508'
 ht-degree: 1%
