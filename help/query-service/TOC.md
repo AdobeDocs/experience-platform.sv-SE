@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: b35581387a8b75f365db433b6138fdd8a7f96db0
+source-git-commit: d955473fb9123a6fc2384cde4073c713b921f582
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '200'
 ht-degree: 6%
 
 ---
@@ -69,6 +69,7 @@ ht-degree: 6%
    - [RStudio](clients/rstudio.md)
    - [Tableau](clients/tableau.md)
 - Datastyrning {#data-governance}
+   - [Översikt](data-governance/overview.md)
    - [Granskningsloggguide](data-governance/audit-log-guide.md)
    - [Identiteter i ad hoc-schemadatauppsättningar](data-governance/ad-hoc-schema-identities.md)
    - [Attributbaserad åtkomstkontroll för ad hoc-scheman](./data-governance/ad-hoc-schema-labels.md)
