@@ -6,7 +6,7 @@ title: Övervaka dataflöden för mål i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 4a9511f055854ab574aca46f44acf155b0c16af6
+source-git-commit: bbace3c3768ef9b130c94f3d7519d52dfadeafa1
 workflow-type: tm+mt
 source-wordcount: '3062'
 ht-degree: 0%
@@ -168,16 +168,16 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 ## Kontrollpanel för målplatser {#monitoring-destinations-dashboard}
 
->[!CONTEXTUALHELP]
->id="platform_monitoring_activation"
->title="Aktivering"
->abstract="Målaktiveringsvyn innehåller information om segmentets aktiveringsstatus och mått från kundprofilen i realtid för att generera unika identiteter."
-
 >[!NOTE]
 >
 >- Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) destinationer.
 >- För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) utelämnade mål, identiteter visas inte för närvarande.
 
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_activation"
+>title="Aktivering"
+>abstract="Målaktiveringsvyn innehåller information om segmentets aktiveringsstatus och mått från kundprofilen i realtid för att generera unika identiteter."
 
 Så här öppnar du [!UICONTROL Monitoring] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Destinations]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mått och information om målkörningsjobb.
 
