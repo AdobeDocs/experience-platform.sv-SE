@@ -6,14 +6,14 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: 86a230d746d6642437c4e37958c07a1186ebadc3
 workflow-type: tm+mt
 source-wordcount: '1137'
 ht-degree: 0%
 
 ---
 
-# Definiera en 1:1-relation mellan två scheman med [!DNL Schema Editor]
+# Definiera en 1:1-relation mellan två scheman med [!DNL Schema Editor] {#relationship-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
