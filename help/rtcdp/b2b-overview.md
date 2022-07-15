@@ -22,7 +22,7 @@ Med CDP B2B Edition i realtid kan man
 * Förbättra, segmentera och exportera alla era data från olika källor från en central lagringsplats med enhetliga kontoprofiler.
 * Hantera era data med hjälp av datastyrningsverktyg som är tillgängliga i varje steg av centraliseringsprocessen för att säkerställa att era data följer juridiska regler och affärspolicyer.
 
-Mer omfattande information om förbättringarna som gjorts för CDP B2B Edition i realtid finns i avsnitten nedan.
+Mer omfattande information om förbättringarna för CDP B2B Edition i realtid finns i avsnitten nedan.
 
 ## XDM
 

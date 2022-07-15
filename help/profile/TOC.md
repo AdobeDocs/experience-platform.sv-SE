@@ -23,8 +23,8 @@ ht-degree: 5%
    * [Komma igång](api/getting-started.md)
    * [Kantprojektioner](api/edge-projections.md)
    * [Enheter ([!DNL Profile] åtkomst)](api/entities.md)
-   * [Exportera jobb ([!DNL Profile] export)](api/export-jobs.md)
-   * [Förhandsgranska exempelstatus ([!DNL Profile] preview)](api/preview-sample-status.md)
+   * [Exportjobb ([!DNL Profile] exportera)](api/export-jobs.md)
+   * [Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning)](api/preview-sample-status.md)
    * [[!DNL Profile] systemjobb (Delete-begäranden)](api/profile-system-jobs.md)
 * Profilgränssnitt {#ui}
    * [[!DNL Profile] Användargränssnittsguide](ui/user-guide.md)
@@ -39,7 +39,7 @@ ht-degree: 5%
    * [API för sammanslagningsprinciper](api/merge-policies.md)
    * [Användargränssnittshandbok för sammanslagningsprinciper](merge-policies/ui-guide.md)
    * [Skapa sammanfogningsprinciper (video)](video/create-merge-policies.md)
-* Unionens scheman {#union-schemas}
+* Unionens system {#union-schemas}
    * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
    * [Översikt över unionens schema (video)](video/union-schemas-overview.md)
 * Självstudiekurser {#tutorials}

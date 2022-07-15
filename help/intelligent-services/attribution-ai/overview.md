@@ -36,9 +36,9 @@ Följande video har utformats för att ge stöd för din förståelse av Attribu
 Attribution AI kan användas som hjälp i följande exempel:
 
 - **Verkställande rapportering**: Låt cheferna förstå den verkliga inkrementella effekten av marknadsföring, både som helhet och efter kanal, region, SKU osv.
-- **Budgettilldelning**: Informera om budgetallokeringsbeslut i alla marknadsföringskanaler.
+- **Budgetallokering**: Informera om budgetallokeringsbeslut i alla marknadsföringskanaler.
 - **Kampanjoptimering**: I varje kanal kan du förstå vilka kampanjer, kreatörer och nyckelord som fungerar bättre för vilka SKU:er eller geos. På så sätt kan ni titta på varje kanal så att marknadsföringsteamet kan optimera taktikerna.
-- **Fullständig attribuering**: Förstå hur marknadsföringen påverkar hela kundresan. Exempel: kostnadsfri kontoregistrering till betalkonvertering och vidare.
+- **Komplett attribuering**: Förstå hur marknadsföringen påverkar hela kundresan. Exempel: kostnadsfri kontoregistrering till betalkonvertering och vidare.
 - **Partnerutvärderingar**: Utvärdera effektiviteten hos myndigheter och partners utifrån attribueringsresultaten.
 
 ### Ytterligare funktioner
@@ -47,4 +47,4 @@ Attribution AI erbjuder även integrering med andra Adobe-lösningar som [!DNL A
 
 ## Nästa steg
 
-Du kan börja med att följa guiden [komma igång](./getting-started.md). I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har inloggningsuppgifter och data klara kan du gå till [användarhandboken för Attribution AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
+Du kan börja med att följa följande [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har dina uppgifter tillgängliga går du till [Användarhandbok för Attribution AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
