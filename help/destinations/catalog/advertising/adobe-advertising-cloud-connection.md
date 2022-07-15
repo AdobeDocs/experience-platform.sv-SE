@@ -2,9 +2,9 @@
 title: Adobe Advertising Cloud DSP-anslutning
 description: Adobe Advertising Cloud DSP är ett integrerat mål för [!DNL Adobe Real-time Customer Data Profile]så att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 27869b91deeb4a5cca580970507845d992d21aaf
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '1006'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ En mediebyrå med ett DSP konto kör en återannonskampanj för sina kunders rä
 
 ## Förutsättningar {#prerequisites}
 
-* DSP på konto- och kampanjnivå för att aktivera segmentdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP kommer att utföra den här konfigurationen.
+* DSP på konto- och kampanjnivå för att aktivera segmentdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP kommer att utföra den här konfigurationen. [!DNL RampID] är tillgängligt via ett partnerskap mellan DSP och [!DNL LiveRamp]och du behöver inte en egen [!DNL LiveRamp] medlemskap för att använda det.
 * Experience Cloud organisation-ID för Experience Platform-kontot. Du kan hitta ditt ID på din [!DNL Real-Time CDP] användarprofilsida.
 * A [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) för att få segment för kampanjaktivering. Din DSP skapar källan med ditt Experience Cloud organisation-ID.
 * Källnyckeln för DSP eller annonsören, som genereras när en [[!DNL Real-Time CDP] källan skapas i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Ditt DSP kommer att dela nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, som [förklaras nedan](#authenticate).
