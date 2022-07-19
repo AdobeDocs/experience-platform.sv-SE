@@ -1,8 +1,8 @@
 ---
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
-feature: Data Governance
-source-git-commit: ec063a0f5600729d3575f98898ade04443f29f2a
+exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
+source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
 workflow-type: tm+mt
 source-wordcount: '2659'
 ht-degree: 0%
@@ -80,7 +80,7 @@ Med den här funktionen kan du ge åtkomsträttigheter för konfidentiella kolum
 
 När rätt åtkomstnivå har tillämpats med etiketter och roller inträffar följande systembeteende när en användare försöker få åtkomst till data som inte är tillgängliga:
 
-1. Om en användare har nekats åtkomst till en av kolumnerna i ett schema nekas användaren även behörighet att läsa eller skriva i den begränsade kolumnen. Detta gäller följande vanliga scenarier:
+1. Om en användare har nekats åtkomst till en av kolumnerna i ett schema, nekas användaren även behörighet att läsa eller skriva i den begränsade kolumnen. Detta gäller följande vanliga scenarier:
 
    * **Fall 1**: När en användare försöker köra en fråga som bara påverkar en begränsad kolumn, genereras ett fel om att kolumnen inte finns.
    * **Fall 2**: När en användare försöker köra en fråga med flera kolumner, inklusive en begränsad kolumn, returnerar systemet endast utdata för alla kolumner som inte är begränsade.

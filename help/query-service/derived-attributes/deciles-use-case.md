@@ -1,7 +1,8 @@
 ---
-title: 'Använd skiftläge för dekorbaserade härledda attribut '
+title: Använd skiftläge för dekorbaserade härledda attribut
 description: Den här guiden visar de steg som krävs för att använda frågetjänsten för att skapa decimalbaserade härledda attribut som kan användas med dina profildata.
-source-git-commit: 61e0895484b8005e2109056d51557f609fecaf97
+exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
+source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
 workflow-type: tm+mt
 source-wordcount: '1508'
 ht-degree: 1%
@@ -59,7 +60,7 @@ I följande tabell visas exempeldata i `_profilefoundationreportingstg` som anv�
 
 >[!NOTE]
 >
->För en fortsättning, tenet-ID `_profilefoundationreportingstg` har utelämnats från början av namnutrymmet i kolumnrubrikerna och efterföljande omnämnanden i hela dokumentet.
+>Klient-ID `_profilefoundationreportingstg` har utelämnats från början av namnutrymmet i kolumnrubrikerna och efterföljande omnämnanden i hela dokumentet.
 
 | `.membershipNumber` | `.emailAddress.address` | `.transactionDate` | `.transactionType` | `.transactionDetails` | `.mileage` | `.loyaltyStatus` |
 |---|---|---|---|---|---|---|
@@ -299,4 +300,3 @@ Kör frågan för att fylla i decimaldatauppsättningen. Du kan också spara fr�
 ## Nästa steg
 
 Exemplet visar hur man gör decimalattribut tillgängliga i kundprofilen i realtid. På så sätt kan segmenteringstjänsten, antingen via ett användargränssnitt eller RESTful API, generera målgrupper baserat på dessa decimalgrupper. Se [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill ha information om hur du skapar, utvärderar och får tillgång till segment.
-
