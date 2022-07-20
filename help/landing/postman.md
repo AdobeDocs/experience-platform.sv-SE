@@ -5,9 +5,9 @@ title: Postman i Adobe Experience Platform
 topic-legacy: api guide
 description: Det här dokumentet innehåller steg som beskriver hur du konfigurerar en Postman-miljö, importerar Postman-samlingar och en lista över tillgängliga samlingar för varje plattformstjänst.
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
-source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
+source-git-commit: d06c3bc51909b464b9eed2a2f0df04ca531010b3
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '545'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Om du vill hämta en Postman-samling väljer du **[!DNL Raw]** från GitHub-sida
 
 ## Importera en Postman-samling {#import}
 
-För att kunna använda en [Postman-samling](#collections)måste du ha en miljö konfigurerad. När du är klar väljer du **[!DNL Manage Environments]** i det övre högra hörnet.
+För att kunna använda en [Postman Collection](#collections)måste du ha en miljö konfigurerad. När du är klar väljer du **[!DNL Manage Environments]** i det övre högra hörnet.
 
 ![hantera miljöväljare](./images/api-guide/environment-selector.png)
 
@@ -52,9 +52,9 @@ Läs mer om Postman användargränssnitt och dess tillgängliga funktioner på [
 
 >[!WARNING]
 >
->Som noterats i Postman-samlingen för generering av åtkomsttoken för Adobe I/O är de angivna genereringsmetoderna lämpliga för **icke-produktionsbruk**. Lokal signering läser in ett JavaScript-bibliotek från en tredjepartsvärd och fjärrsignering skickar den privata nyckeln till en webbtjänst som ägs och drivs av Adobe. Även om Adobe inte lagrar den här privata nyckeln bör produktionsnycklar aldrig delas med någon.
+>Som framgår av Identity Management Service (IMS) Postman Collection är de angivna generationsmetoderna lämpliga för **icke-produktionsbruk**. Lokal signering läser in ett JavaScript-bibliotek från en tredjepartsvärd och fjärrsignering skickar den privata nyckeln till en webbtjänst som ägs och drivs av Adobe. Även om Adobe inte lagrar den här privata nyckeln bör produktionsnycklar aldrig delas med någon.
 
-I videon nedan används [Genereringssamling för åtkomsttoken för Adobe I/O](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Adobe%20IO%20Access%20Token%20Generation.postman_collection.json) som kan hämtas från den offentliga GitHub-databasen.
+I videon nedan används [Identity Management Service (IMS) Postman-samling](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Identity%20Management%20Service.postman_collection.json) som kan hämtas från den offentliga GitHub-databasen.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29698/?quality=12&learn=on)
 
