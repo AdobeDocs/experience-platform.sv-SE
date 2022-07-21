@@ -1,9 +1,9 @@
 ---
 title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
-source-git-commit: 69bf43f86ab3369ad0c7febcb69ec41d3bcac8bb
+source-git-commit: b186a1a4b7417503ffa08a66136411ccff495510
 workflow-type: tm+mt
-source-wordcount: '1023'
+source-wordcount: '1018'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ Det här dokumentet är utformat för att hjälpa dig att aktivera profiler för
 
 Innan du kan aktivera segment till [!DNL The Trade Desk]måste du kontakta [!DNL The Trade Desk] kontoansvarig för att signera CRM-introduktionskontraktet. [!DNL The Trade Desk] ger sedan tillstånd och delar ditt annonsörs-ID för att konfigurera ditt mål.
 
-## Krav för ID-matchning (#id-matching-requirements)
+## Krav för ID-matchning {#id-matching-requirements}
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav. Läs [Översikt över namnområde för identitet](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv) för mer information.
 
@@ -50,7 +50,7 @@ Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experie
 
 {style=&quot;table-layout:auto&quot;}
 
-## Krav för hashning via e-post (#hashing-requirements)
+## Krav för e-posthashning {#hashing-requirements}
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform eller använda obearbetade e-postadresser.
 
@@ -77,11 +77,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Anslut till målet {#connect}
 
-### Autentisera till mål (#authenticate)
+### Autentisera till mål {#authenticate}
 
 [!DNL The Trade Desk] CRM-målet är en daglig batchfilöverföring och kräver ingen autentisering av användaren.
 
-### Fyll i målinformation (#fill-in-details)
+### Fyll i målinformation {#fill-in-details}
 
 Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) Om du vill ange destinationen måste du ange följande information:
 
@@ -120,7 +120,7 @@ Markera målfält:
 * Välj `Email` namnutrymme som målidentitet när källnamnutrymmet eller attributet är `Email`.
 * Välj `Email_LC_SHA256` namnutrymme som målidentitet när källnamnutrymmet eller attributet är `Email_LC_SHA256`.
 
-## Validera dataexport (#validate)
+## Validera dataexport {#validate}
 
 Validera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk]hittar du segmenten under datapanelen Adobe 1PD i [!DNL The Trade Desk] Plattform för datahantering (DMP). Här följer stegen för att hitta motsvarande ID i [!DNL Trade Desk] Gränssnitt:
 
