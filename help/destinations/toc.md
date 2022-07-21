@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 14f7efc2d893bf081c4e167b46a3e85baeff4ec9
+source-git-commit: 69bf43f86ab3369ad0c7febcb69ec41d3bcac8bb
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '823'
 ht-degree: 1%
 
 ---
@@ -72,6 +72,7 @@ ht-degree: 1%
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)
       * [(Beta) Snapchat Ads-anslutning](./catalog/advertising/snap-inc.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
+      * [CRM-anslutningen för Trade Desk](./catalog/advertising/tradedesk-emails.md)
       * [Tillägget twitter Universal Web Site Tag](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX-anslutning](./catalog/advertising/datax.md)
    * Analysmål {#analytics}
