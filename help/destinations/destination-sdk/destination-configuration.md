@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
+source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
 workflow-type: tm+mt
-source-wordcount: '1804'
+source-wordcount: '1885'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ Detta är ett exempel på konfiguration av ett fiktivt mål för direktuppspelni
    ],
    "customerDataFields":[
       {
-         "name":"endpointsInstance",
+         "name":"endpointRegion",
          "type":"string",
          "title":"Select Endpoint",
          "description":"Moviestar manages several instances across the globe for REST endpoints that our customers are provisioned for. Select your endpoint in the dropdown list.",
@@ -158,9 +158,13 @@ Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAu
 
 ## Kunddatafält {#customer-data-fields}
 
-Använd det här avsnittet för att be användare fylla i anpassade fält, som är specifika för ditt mål, när de ansluter till målet i användargränssnittet i Experience Platform. Konfigurationen återspeglas i autentiseringsflödet enligt nedan:
+Använd det här avsnittet för att be användare fylla i anpassade fält, som är specifika för ditt mål, när de ansluter till målet i användargränssnittet i Experience Platform. Konfigurationen återspeglas i autentiseringsflödet enligt nedan.
 
 ![Anpassat fältautentiseringsflöde](./assets/custom-field-authentication-flow.png)
+
+>[!TIP]
+>
+>Du kan komma åt och använda kundindata från kunddatafält i mallar. Använd makrot `{{customerData.name}}`. Om du till exempel ber användare att ange ett Kund-ID-fält, med namnet `userId`kan du använda makrot till att få åtkomst till den i mallar `{{customerData.userId}}`. Visa ett exempel på hur ett kunddatafält används i URL:en för API-slutpunkten i [målserverkonfiguration](/help/destinations/destination-sdk/server-and-template-configuration.md#server-specs).
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
@@ -178,10 +182,12 @@ Använd det här avsnittet för att be användare fylla i anpassade fält, som �
 
 Det här avsnittet hänvisar till de gränssnittselement i konfigurationen ovan som Adobe ska använda för ditt mål i Adobe Experience Platform användargränssnitt. Se nedan:
 
+![Bild av konfiguration av gränssnittsattribut.](/help/destinations/destination-sdk/assets/ui-attributes-configuration.png)
+
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `documentationLink` | Sträng | Refererar till dokumentationssidan i [Målkatalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) till destinationen. Använd `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på destinationen. För ett mål som heter Moviestar använder du `http://www.adobe.com/go/destinations-moviestar-en`. Observera att den här länken bara fungerar när Adobe har aktiverat målet och dokumentationen har publicerats. |
-| `category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). Använd något av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
+| `category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). Använd något av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. <br> Observera att du för närvarande bara kan välja en kategori per mål. |
 | `connectionType` | Sträng | `Server-to-server` är för närvarande det enda tillgängliga alternativet. |
 | `frequency` | Sträng | Hänvisar till den typ av dataexport som stöds av målet. Värden som stöds: <ul><li>`Streaming`</li><li>`Batch`</li></ul> |
 
@@ -201,7 +207,6 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
 | `identityRequired` | Boolean | Använd `true` om användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
 
 {style=&quot;table-layout:auto&quot;}
-
 
 ## Identiteter och attribut {#identities-and-attributes}
 

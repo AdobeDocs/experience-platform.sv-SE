@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: (Beta) Filbaserade alternativ för destinationskonfiguration för Destination SDK
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
+source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
 workflow-type: tm+mt
-source-wordcount: '2294'
+source-wordcount: '2353'
 ht-degree: 2%
 
 ---
@@ -369,6 +369,8 @@ När du konfigurerar SFTP med autentiseringstypen SSH-nyckel måste användarna 
 Använd det här avsnittet för att be användare fylla i anpassade fält, som är specifika för ditt mål, när de ansluter till målet i användargränssnittet i Experience Platform.
 
 I exemplet nedan `customerDataFields` kräver att användare anger ett namn för sitt mål och anger [!DNL Amazon S3] filnamn och mappsökväg, liksom komprimeringstyp, filformat och flera andra alternativ för filexport.
+
+Du kan komma åt och använda kundindata från kunddatafält i mallar. Använd makrot `{{customerData.name}}`. Om du till exempel ber användare att ange ett Amazon S3-bucket-fält, med namnet `bucket`kan du använda makrot till att få åtkomst till den i mallar `{{customerData.bucket}}`. Visa ett exempel på hur ett kunddatafält används i [målserverkonfiguration](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example).
 
 ```json
  "customerDataFields":[
