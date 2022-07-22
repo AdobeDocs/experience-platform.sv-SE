@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform Connections End-to-End Overview
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Real-time Customer Data Platform Connections.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
 workflow-type: tm+mt
-source-wordcount: '2530'
+source-wordcount: '2531'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ I den här självstudien används användargränssnittet för datainsamling för
 * Utveckla
 * Hantera tillägg
 
-Se guiden [hantera behörigheter för taggar](../tags/ui/administration/manage-permissions.md) om du vill lära dig hur du ger åtkomst till egendomar och egendomsrättigheter.
+Se guiden [hantera behörigheter för datainsamling](./permissions.md) om du vill lära dig hur du ger åtkomst till egendomar och egendomsrättigheter.
 
 Om du vill använda de olika datainsamlingsprodukterna som nämns i den här guiden måste du även ha tillgång till datastreams och möjlighet att skapa och hantera scheman. Om du behöver ha tillgång till någon av dessa funktioner kontaktar du din CSM för att få den åtkomst du behöver. Observera att om du inte har köpt Adobe Experience Platform ger Adobe dig tillgång till SDK utan extra kostnad.
 

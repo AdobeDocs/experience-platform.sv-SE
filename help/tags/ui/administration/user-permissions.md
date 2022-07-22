@@ -2,9 +2,9 @@
 title: Användarbehörigheter för taggar
 description: Lär dig mer om de olika typerna av behörigheter som är tillgängliga för taggar och några grundläggande implementeringsstrategier för olika affärsanvändningsfall.
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
+source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1311'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Användarbehörigheter för taggar i Adobe Experience Platform tilldelas användare via Adobe Admin Console. I stället för att tilldelas enskilda användare, konfigureras olika behörighetsgrupper separat som produktprofiler. Användarna tilldelas sedan till dessa produktprofiler för att få de behörigheter de har konfigurerats för.
 
@@ -21,7 +21,7 @@ Den här guiden ger en översikt över de olika typerna av behörigheter som är
 
 >[!NOTE]
 >
->Anvisningar om hur du konfigurerar behörigheter för användare som använder Admin Console finns i självstudiekursen [Hantera behörigheter för taggar](./manage-permissions.md).
+>Anvisningar om hur du konfigurerar behörigheter för användare som använder Admin Console finns i självstudiekursen om [hantera behörigheter för datainsamling](../../../rtcdp-connections/permissions.md).
 
 ## Behörighetstyper
 
@@ -55,8 +55,8 @@ I följande tabell visas de tillgängliga egenskapsrättigheterna och de funktio
 | **Utveckla** | Detta gör att du kan utföra följande åtgärder:<ul><li>Skapa regler och dataelement</li><li>Skapa bibliotek och bygg dem i befintliga utvecklingsmiljöer</li><li>Skicka ett bibliotek för godkännande</li></ul>De flesta dagliga uppgifter i gränssnittet för datainsamling kräver den här rättigheten. |
 | **Godkänn** | På så sätt kan du ta ett skickat bibliotek och bygga vidare till testmiljön. Du kan också godkänna ett bibliotek för publicering när testningen är klar. |
 | **Publicera** | På så sätt kan du publicera godkända bibliotek i produktionsmiljön. |
-| **Hantera tillägg** | Detta gör att du kan utföra följande åtgärder: <ul><li>Installera nya tillägg för en egenskap</li><li>Ändra konfigurationen för ett redan installerat tillägg</li><li>Ta bort ett tillägg</li></ul>Mer information om tillägg[finns i översiktsdokumentationen för tillägg](../managing-resources/extensions/overview.md). Den här rollen tillhör vanligen IT eller marknadsföring, beroende på din organisation. |
-| **Hantera miljöer** | På så sätt kan du skapa och ändra miljöer. Mer information finns i [miljödokumentationen](../publishing/environments.md). Den här rollen tillhör vanligtvis IT-gruppen. |
+| **Hantera tillägg** | Detta gör att du kan utföra följande åtgärder: <ul><li>Installera nya tillägg för en egenskap</li><li>Ändra konfigurationen för ett redan installerat tillägg</li><li>Ta bort ett tillägg</li></ul>Mer information finns i översiktsdokumentationen för tillägg. [mer information om tillägg](../managing-resources/extensions/overview.md). Den här rollen tillhör vanligen IT eller marknadsföring, beroende på din organisation. |
+| **Hantera miljöer** | På så sätt kan du skapa och ändra miljöer. Se [miljödokumentation](../publishing/environments.md) för mer information. Den här rollen tillhör vanligtvis IT-gruppen. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -66,9 +66,9 @@ Företagsrättigheter gäller för behörigheter som sträcker sig över flera e
 
 | Företagsrätt | Beskrivning |
 | --- | --- |
-| **Hantera egenskaper** | Detta gör att du kan utföra följande åtgärder:<ul><li>Skapa nya egenskaper</li><li>Ändra metadata och inställningar på egenskapsnivå</li><li>Ta bort egenskaper</li></ul>Administratörer utför vanligtvis den här rollen. Mer information finns i [egenskapsdokumentationen](companies-and-properties.md). |
+| **Hantera egenskaper** | Detta gör att du kan utföra följande åtgärder:<ul><li>Skapa nya egenskaper</li><li>Ändra metadata och inställningar på egenskapsnivå</li><li>Ta bort egenskaper</li></ul>Administratörer utför vanligtvis den här rollen. Se [egenskapsdokumentation](companies-and-properties.md) för mer information. |
 | **Utveckla tillägg** | Ger möjlighet att skapa och ändra tilläggspaket som ägs av företaget, inklusive privata releaser och förfrågningar om allmän spridning. |
-| **Hantera appkonfigurationer** | Detta gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden.  På så sätt kan du hantera de appar som Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification Service. |
+| **Hantera appkonfigurationer** | Detta gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden.  På så sätt kan du hantera de appar som Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple push-meddelandetjänst. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -121,4 +121,4 @@ Följande tabell innehåller några exempel på vilka typer av roller du kan ha 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över de tillgängliga behörigheterna för taggar i Experience Platform. Anvisningar om hur du konfigurerar produktprofiler för taggar i Adobe Admin Console finns i guiden [Hantera användarbehörigheter](./manage-permissions.md).
+Det här dokumentet innehåller en översikt över de tillgängliga behörigheterna för taggar i Experience Platform. Anvisningar om hur du konfigurerar produktprofiler för taggar i Adobe Admin Console finns i handboken [hantera användarbehörigheter för datainsamling](../../../rtcdp-connections/permissions.md).
