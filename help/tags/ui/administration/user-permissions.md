@@ -2,7 +2,7 @@
 title: Användarbehörigheter för taggar
 description: Lär dig mer om de olika typerna av behörigheter som är tillgängliga för taggar och några grundläggande implementeringsstrategier för olika affärsanvändningsfall.
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '1311'
 ht-degree: 1%
@@ -21,7 +21,7 @@ Den här guiden ger en översikt över de olika typerna av behörigheter som är
 
 >[!NOTE]
 >
->Anvisningar om hur du konfigurerar behörigheter för användare som använder Admin Console finns i självstudiekursen om [hantera behörigheter för datainsamling](../../../rtcdp-connections/permissions.md).
+>Anvisningar om hur du konfigurerar behörigheter för användare som använder Admin Console finns i självstudiekursen om [hantera behörigheter för datainsamling](../../../collection/permissions.md).
 
 ## Behörighetstyper
 
@@ -121,4 +121,4 @@ Följande tabell innehåller några exempel på vilka typer av roller du kan ha 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över de tillgängliga behörigheterna för taggar i Experience Platform. Anvisningar om hur du konfigurerar produktprofiler för taggar i Adobe Admin Console finns i handboken [hantera användarbehörigheter för datainsamling](../../../rtcdp-connections/permissions.md).
+Det här dokumentet innehåller en översikt över de tillgängliga behörigheterna för taggar i Experience Platform. Anvisningar om hur du konfigurerar produktprofiler för taggar i Adobe Admin Console finns i handboken [hantera användarbehörigheter för datainsamling](../../../collection/permissions.md).

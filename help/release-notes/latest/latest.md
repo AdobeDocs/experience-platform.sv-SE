@@ -2,7 +2,7 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4956b940dfd25f55eaf67296f2cb31db65fac079
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '1798'
 ht-degree: 1%
@@ -77,7 +77,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | [Google Ads Enhanced Conversions event forward extension](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html) | Med tillägget Google Ads Enhanced Conversions kan du förbättra dina konverteringar av Google Ads i realtid. |
 | [Vidarekoppling av händelse för Mailchimp](../../tags/extensions/web/mailchimp/overview.md) | Tillägget för vidarebefordran av Mailchimp-händelser skickar händelser till Mailchimp Marketing API som kan utlösa e-postmeddelanden för marknadsföringskampanjer, resor eller transaktioner för Mailchimp. |
 
-Mer information finns i [datainsamling - översikt](../../rtcdp-connections/home.md).
+Mer information finns i [datainsamling - översikt](../../collection/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 

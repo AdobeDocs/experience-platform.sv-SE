@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;källa;datainsamling
 title: Adobe datainsamling
 description: Det här dokumentet innehåller en översikt över Adobe Data Collection-källan.
 exl-id: 3cb582a9-b852-4ede-8047-af1a47aa3647
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '285'
 ht-degree: 0%
@@ -32,8 +32,8 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 
 ![datastreams](./images/data-collection/datastreams.png)
 
-Detaljerade anvisningar om hur du använder användargränssnittet för datainsamling finns i [datainsamling - från början till slut - översikt](../../../rtcdp-connections/e2e.md).
+Detaljerade anvisningar om hur du använder användargränssnittet för datainsamling finns i [datainsamling - från början till slut - översikt](../../../collection/e2e.md).
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att komma åt användargränssnittet för datainsamling med hjälp av källarbetsytan. Mer information om datainsamling finns i [Översikt över datainsamling](../../../rtcdp-connections/e2e.md).
+Genom att läsa det här dokumentet har du lärt dig att komma åt användargränssnittet för datainsamling med hjälp av källarbetsytan. Mer information om datainsamling finns i [Översikt över datainsamling](../../../collection/e2e.md).
