@@ -2,7 +2,7 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 4addf64a819cd302b514334ce9cd949e96d0e698
 workflow-type: tm+mt
 source-wordcount: '1798'
 ht-degree: 1%
@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
-- [[Datainsamling]](#data-collection)
+- [Datainsamling](#data-collection)
 - [Experience Data Model (XDM)](#xdm)
 - [Frågetjänst](#query-service)
 - [Källor](#sources)
