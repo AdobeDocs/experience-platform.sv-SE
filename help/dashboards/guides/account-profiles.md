@@ -1,7 +1,8 @@
 ---
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
-source-git-commit: 4ff30c689808e0513245852625efc4a162ab2c0e
+exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
+source-git-commit: 8de94d38fd1d2c001935180851d6877dfe2a8941
 workflow-type: tm+mt
 source-wordcount: '789'
 ht-degree: 0%
@@ -42,7 +43,7 @@ The [!UICONTROL Browse] Med -fliken kan du söka efter och visa de skrivskyddade
 
 Välj [!UICONTROL Profile ID] från resultaten som visas på [!UICONTROL Browse] för att öppna [!UICONTROL Details] för kontoprofilen.
 
-![Fliken Kontoprofiler bläddrar med resultat visade och profil-ID markerat.](../images/account-profiles/account-profiles-browse-tab.png) —>
+![Fliken Kontoprofiler bläddrar med resultat visade och profil-ID markerat.](../images/account-profiles/account-profiles-browse-tab.png)
 
 Kontoprofilinformationen som visas på [!UICONTROL Details] har sammanfogats från flera profilfragment till en enda vy av det enskilda kontot. Läs dokumentationen om [surfkontoprofiler i Real-time Customer Data Platform](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) om du vill veta mer om visningsfunktioner för kontoprofiler i användargränssnittet för plattformen.
 
