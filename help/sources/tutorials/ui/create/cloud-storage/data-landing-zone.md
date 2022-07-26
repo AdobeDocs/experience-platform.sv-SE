@@ -1,21 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Data Landing Zone;datalandningszon
-solution: Experience Platform
 title: Anslut datalandningszonen till plattformen med användargränssnittet
-topic-legacy: overview
-type: Tutorial
 description: Lär dig hur du skapar en källanslutning för en Data Landing Zone med hjälp av användargränssnittet för plattformen.
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: b007cdf92811b453df5b5d005456a05cd845b769
+source-git-commit: fb16ea940ef394a15dd24fe703239b4487fafb18
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Data Landing Zone] till plattform med användargränssnittet
 
-[!DNL Data Landing Zone] är en molnbaserad datalagringsfunktion för tillfällig fillagring som tillhandahålls med Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
+[!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion för att överföra filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Data Landing Zone] källanslutning med hjälp av användargränssnittet för plattformen.
 
@@ -38,7 +35,24 @@ Under [!UICONTROL cloud storage] kategori, välj [!DNL Data Landing Zone] och se
 
 The [!UICONTROL Add data] visas så att du får ett gränssnitt där du kan välja och förhandsgranska de data du vill hämta till plattformen.
 
+* Den vänstra delen av gränssnittet är en mappläsare som visar en lista över filer från behållaren som du sedan kan hämta till plattformen.
+* Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
+
+Markera filen som du vill hämta till plattformen och vänta en stund tills rätt gränssnitt uppdateras till en förhandsgranskningsskärm.
+
 ![tilläggsdata](../../../../images/tutorials/create/dlz/add-data.png)
+
+>[!TIP]
+>
+>Plattformen identifierar automatiskt egenskapsinformation för filen som du valde, inklusive information om filens dataformat, angiven kolumnavgränsare och komprimeringstyp.
+
+I förhandsvisningsgränssnittet kan du inspektera innehållet och strukturen i en fil. Som standard visas den första filen i den markerade mappen i förhandsvisningsgränssnittet.
+
+Om du vill förhandsgranska en annan fil markerar du förhandsvisningsikonen bredvid namnet på filen som du vill inspektera.
+
+När du är klar väljer du **[!UICONTROL Next]**.
+
+![filidentifiering](../../../../images/tutorials/create/dlz/file-detection.png)
 
 En detaljerad steg-för-steg-guide om hur du skapar ett dataflöde för en molnlagringskälla finns i självstudiekursen om [skapa ett molnlagringsdataflöde för att överföra data till plattformen](../../dataflow/batch/cloud-storage.md).
 
