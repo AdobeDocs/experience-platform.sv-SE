@@ -1,22 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;azure data explorer
 solution: Experience Platform
-title: Översikt över Azure Data Explorer Source Connector
+title: Översikt över Azure Data Explorer Source
 topic-legacy: overview
 description: Lär dig hur du ansluter Azure-Data Explorer till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 869bd8bb-51e6-4e0c-a3ec-ff083dda5789
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Azure Data Explorer] koppling
-
->[!NOTE]
->
->The [!DNL Azure Data Explorer] anslutningen är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
+# [!DNL Azure Data Explorer] källa
 
 Adobe Experience Platform erbjuder systemspecifik anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 

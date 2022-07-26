@@ -1,22 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;OData;odata;oData;Generic OData;generiska data
 solution: Experience Platform
-title: Allmän översikt över OData Source Connector
+title: Allmän översikt över OData-källa
 topic-legacy: overview
 description: Lär dig hur du ansluter generiska OData till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: ff50f883-d4fd-4f32-a9d6-fe4624a32e24
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Generic OData] koppling
-
->[!NOTE]
->
->The [!DNL Generic OData] anslutningen är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
+# [!DNL Generic OData] källa
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
