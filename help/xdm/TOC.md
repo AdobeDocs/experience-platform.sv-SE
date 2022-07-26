@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: c57c0ff63abe35fcf0246088b12b6bc6cfc542b6
+source-git-commit: e476574e35ea18a50749009ffd1b4182941cc496
 workflow-type: tm+mt
-source-wordcount: '472'
-ht-degree: 6%
+source-wordcount: '502'
+ht-degree: 5%
 
 ---
 
@@ -25,14 +25,19 @@ ht-degree: 6%
       * [Översikt](./schema/industries/overview.md)
       * [Detaljhandel](./schema/industries/retail.md)
       * [Finansiella tjänster](./schema/industries/financial.md)
+      * [Sjukvård](./schema/industries/healthcare.md)
       * [Telekommunikation](./schema/industries/telecom.md)
       * [Resor och turism](./schema/industries/travel-hospitality.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
+   * [Medicin](./classes/medication.md)
+   * [Betalare](./classes/payer.md)
+   * [Plan](./classes/plan.md)
    * [Policy](./classes/policy.md)
    * [Produkt](./classes/product.md)
+   * [Provider](./classes/provider.md)
    * [Segmentdefinition](./classes/segment-definition.md)
    * B2B-klasser {#b2b}
       * [XDM Business Account](./classes/b2b/business-account.md)
@@ -45,12 +50,13 @@ ht-degree: 6%
       * [XDM Business Marketing List-medlemmar](./classes/b2b/business-marketing-list-members.md)
 * Fältgrupper {#field-groups}
    * Individuell XDM-profil {#profile}
+      * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Demografiska detaljer](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0-samtycke](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [Information om sjukvårdsmedlem](./field-groups/profile/healthcare-member-details.md)
       * [Förmånsinformation](./field-groups/profile/loyalty-details.md)
       * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
-      * [Innehåll och inställningar](./field-groups/profile/consents.md)
       * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
       * [Telecom Subscription](./field-groups/profile/telecom-subscription.md)
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
@@ -58,6 +64,8 @@ ht-degree: 6%
       * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
+      * [Reklaminformation](./field-groups/event/advertising-details.md)
+      * [Programinformation](./field-groups/event/application-details.md)
       * [Saldoöverföringar](./field-groups/event/balance-transfers.md)
       * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
       * [Kortåtgärder](./field-groups/event/card-actions.md)
@@ -73,6 +81,7 @@ ht-degree: 6%
       * [Bostadsreservation](./field-groups/event/lodging-reservation.md)
       * [Information om offertförfrågan](./field-groups/event/quote-request-details.md)
       * [Reservationsinformation](./field-groups/event/reservation-details.md)
+      * [Information om Sitetool](./field-groups/event/sitetool-details.md)
       * [Supportwebbplatssökning](./field-groups/event/support-site-search.md)
       * [Uppgraderingsinformation](./field-groups/event/upgrade-details.md)
       * [Merförsäljning](./field-groups/event/upsell-details.md)
@@ -81,11 +90,19 @@ ht-degree: 6%
       * [Information om XDM Business Campaign](./field-groups/b2b-campaign/details.md)
    * XDM Business Campaign-medlemmar {#b2b-campaign-members}
       * [Information om medlemmar i XDM Business Campaign](./field-groups/b2b-campaign-members/details.md)
+   * Medicin {#medication}
+      * [Sjukvård](./field-groups/medication/healthcare-medication.md)
+   * Plan {#plan}
+      * [Information om vårdplan](./field-groups/plan/healthcare-plan-details.md)
    * Produkt {#product}
       * [Produktkatalog](./field-groups/product/product-catalog.md)
       * [Produktkategori](./field-groups/product/product-category.md)
+   * Provider {#provider}
+      * [Vårdgivare](./field-groups/provider/healthcare-provider.md)
    * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
+   * [Kontoinformation](./data-types/account-details.md)
+   * [Annonsbrytning](./data-types/ad-break.md)
    * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
@@ -111,6 +128,7 @@ ht-degree: 6%
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
    * [Impressions](./data-types/impressions.md)
+   * [Implementeringsinformation](./data-types/implementation-details.md)
    * [Intern webbplatssökning](./data-types/internal-site-search.md)
    * [Nyckelvärdepar](./data-types/key-value-pair.md)
    * [Marknadsföring](./data-types/marketing.md)
