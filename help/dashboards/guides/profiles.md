@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 4bb0078b6687da5239f57e7285507815aa7f3255
+source-git-commit: a1a5a34ed0f46223b1eae3df75ff65f27041503e
 workflow-type: tm+mt
-source-wordcount: '3588'
+source-wordcount: '3639'
 ht-degree: 0%
 
 ---
@@ -98,8 +98,10 @@ Adobe tillhandahåller flera standardwidgetar som du kan använda för att visua
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Profile count]](#profile-count)
-* [[!UICONTROL Profiles added]](#profiles-added)
-* [[!UICONTROL Profiles added trend]](#profiles-added-trend)
+* [[!UICONTROL Profile count trend]](#profile-count-trend)
+* [[!UICONTROL Profile count change]](#profile-count-change)
+* [[!UICONTROL Profiles count change trend]](#profiles-count-change-trend)
+* [[!UICONTROL Profiles count change trend by identity]](#profiles-count-change-trend-by-identity)
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
 * [[!UICONTROL Single identity profiles]](#single-identity-profiles)
@@ -109,10 +111,8 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Audiences]](#audiences)
 * [[!UICONTROL Audiences mapped to destination status]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL Audiences size]](#audiences-size)
-* [[!UICONTROL Profile count trend]](#profile-count-trend)
 * [[!UICONTROL Single identity profiles by identity]](#single-identity-profiles-by-identity)
 * [[!UICONTROL Audience overlap by merge policy]](#audience-overlap-by-merge-policy)
-* [[!UICONTROL Profiles count change trend by identity]](#profiles-count-change-trend-by-identity)
 
 ### [!UICONTROL Profile count] {#profile-count}
 
@@ -120,7 +120,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 >id="platform_dashboards_profiles_profilecount"
 >title="Profilantal"
 >abstract="Den här widgeten visar det totala antalet sammanfogade profiler i profilarkivet när ögonblicksbilden togs. Numret beror på den valda sammanfogningsprincipen som tillämpas på dina profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Profile count]** visar det totala antalet sammanfogade profiler i profilarkivet när ögonblicksbilden togs. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
@@ -134,43 +134,57 @@ Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-
 
 ![](../images/profiles/profile-count.png)
 
-### [!UICONTROL Profiles added] {#profiles-added}
+### [!UICONTROL Profile count trend] {#profile-count-trend}
 
-<!-- This CONTEXTUALHELP was commented out because this widget name will change. Details in https://jira.corp.adobe.com/browse/PLAT-120313  -->
+The [!UICONTROL Profile count trend] används ett linjediagram för att illustrera trenden i det totala antalet profiler i systemet över tiden. Det totala antalet inkluderar alla profiler som importerats till systemet sedan den senaste ögonblicksbilden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
 
-<!-- >[!CONTEXTUALHELP]
->id="platform_dashboards_profiles_profilesadded"
->title="Profiles added"
->abstract="This widget displays the total number of merged profiles **added** to the Profile Store at the time of the last snapshot. The number depends on the selected merge policy being applied to your Profile data."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profiles-added" text="Learn more from documentation" -->
+![Trendwidgeten Profilantal.](../images/profiles/profile-count-trend.png)
 
-The **[!UICONTROL Profiles added]** visar det totala antalet sammanfogade profiler som lagts till i profilarkivet vid tidpunkten för den senaste ögonblicksbilden. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person. Du kan använda listruteväljaren för att visa de profiler som lagts till under de senaste 30 dagarna, 90 dagarna eller 12 månaderna.
+### [!UICONTROL Profile count change] {#profile-count-change}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilescountchange"
+>title="Ändring av antal profiler"
+>abstract="Den här widgeten visar totalt antal sammanfogade profiler **tillagd** till profilarkivet vid tidpunkten för den senaste ögonblicksbilden. Numret beror på den valda sammanfogningsprincipen som tillämpas på dina profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
+
+The **[!UICONTROL Profile count change]** visar antalet sammanfogade profiler som lagts till i profilarkivet sedan föregående ögonblicksbild. Det här numret är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person. Du kan använda listruteväljaren för att visa antalet profiler som lagts till under de senaste 30 dagarna, 90 dagarna eller 12 månaderna.
 
 >[!NOTE]
 >
->The [!UICONTROL Profiles added] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profiles added] widgeten ställs in på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profiles added] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] widgeten visar totalt 5 000 000 profiler.
+>The [!UICONTROL Profile count change] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profile count change] widgeten ställs in på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profile count change] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] widgeten visar totalt 5 000 000 profiler.
 
-![](../images/profiles/profiles-added.png)
+![Kontrollpanelen för användargränssnittsprofiler för plattformen med widgeten för ändring av profilantal markerad.](../images/profiles/profile-count-change.png)
 
-### [!UICONTROL Profiles added trend] {#profiles-added-trend}
+### [!UICONTROL Profiles count change trend] {#profiles-count-change-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesaddedtrend"
->title="Profiler som lagts till trender"
->abstract="Den här widgeten visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Talet beror också på vilken sammanfogningsprincip som används för profildata."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profiles-count-trend" text="Läs mer i dokumentationen"
+>title="trender för antal profiler"
+>abstract="Den här widgeten visar antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Talet beror också på vilken sammanfogningsprincip som används för profildata."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
-The **[!UICONTROL Profiles added trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
+The **[!UICONTROL Profiles count change trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
 Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies) om du vill veta mer.
 
-The **[!UICONTROL Profiles added trend]** widgeten visar en knapp för bildtexter i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
+The **[!UICONTROL Profiles count change trend]** widgeten visar en knapp för bildtexter i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
 
-![Fliken Profilöversikt som visar widgeten Profiler tillagda med bildtextsknappen markerad.](../images/profiles/profiles-added-trend-captions.png)
+![Fliken Profilöversikt som visar widgeten Antal profiler ändrar trend med bildtextknappen markerad.](../images/profiles/profiles-count-change-trend-captions.png)
 
 En maskininlärningsmodell genererar automatiskt beskrivningar av viktiga trender och viktiga händelser genom att analysera diagrammet och data.
 
-![Dialogrutan med automatiska bildtexter för profilwidgeten har lagts till.](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
+![Dialogrutan med automatiska bildtexter för widgeten Antal profiler ändrar trendvändning.](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
+
+### [!UICONTROL Profiles count change trend by identity] {#profiles-count-change-trend-by-identity}
+
+<!-- This widget uses a line graph to illustrate the change in number of profiles filtered by a chosen source identity and merge policy. -->
+
+Den här widgeten filtrerar profilantalet baserat på en vald källidentitet och sammanfogningsprincip, och visar sedan ändringen av antalet för en rad punkter med hjälp av ett linjediagram. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och källans identitet och tidsperiod väljs i widgetens listruta. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader.
+
+Denna widget hjälper dig att hantera dina behov av målaktivering genom att visa tillväxtmönstret för profiler som filtrerats med en obligatorisk identitet.
+
+![Profilerna räknar en trend som ändras efter identitetswidget.](../images/profiles/profiles-count-change-trend-by-identity.png)
 
 ### [!UICONTROL Profiles by identity] {#profiles-by-identity}
 
@@ -178,7 +192,7 @@ En maskininlärningsmodell genererar automatiskt beskrivningar av viktiga trende
 >id="platform_dashboards_profiles_profilesbyidentity"
 >title="Profiler efter identitet"
 >abstract="Den här widgeten visar en uppdelning av alla sammanfogade profiler i din profilbutik efter identiteter."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profiles-by-identity" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Profiles by identity]** widgeten visar en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik. Det totala antalet profiler per identitet (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kan vara högre än det totala antalet sammanfogade profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
 
@@ -200,7 +214,7 @@ Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identi
 >id="platform_dashboards_profiles_identityoverlap"
 >title="Identitetsöverlappning"
 >abstract="Den här widgeten använder ett Venndiagram för att visa överlappningen mellan profiler i din profilbutik som innehåller de två valda identiteterna."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#identity-overlap" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Identity overlap]** widgeten använder ett Venndiagram, eller ett angivet diagram, för att visa överlappningen mellan profiler i din profilbutik som innehåller de två valda identiteterna.
 
@@ -218,7 +232,7 @@ Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identi
 >id="platform_dashboards_profiles_singleidentityprofiles"
 >title="Enstaka identitetsprofiler"
 >abstract="Den här widgeten innehåller ett antal profiler för din organisation som bara har en typ av ID som skapar deras identitet. Den här ID-typen kan antingen vara ett e-postmeddelande eller ett ECID."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#single-identity-profiles" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The [!UICONTROL Single Identity Profiles] widgeten innehåller ett antal profiler för din organisation som bara har en typ av ID-typ som skapar deras identitet. Den här ID-typen kan antingen vara ett e-postmeddelande eller ett ECID. Profilantalet genereras från data i den senaste ögonblicksbilden.
 
@@ -230,7 +244,7 @@ The [!UICONTROL Single Identity Profiles] widgeten innehåller ett antal profile
 >id="platform_dashboards_profiles_unsegmentedprofiles"
 >title="Osegmenterade profiler"
 >abstract="Den här widgeten visar det totala antalet profiler som inte är kopplade till något segment och representerar möjligheten till profilaktivering i hela organisationen."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#unsegmented-profiles" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler som inte är kopplade till något segment. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Det visar också möjligheten att utvinna profiler som inte ger tillräcklig avkastning.
 
@@ -254,7 +268,7 @@ The [!UICONTROL Unsegmented Profiles Trend] innehåller en illustration av linje
 >id="platform_dashboards_profiles_unsegmentedprofilesbyidentity"
 >title="Osegmenterade profiler efter identitet"
 >abstract="Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#unsegmented-profiles-by-identity" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The [!UICONTROL Unsegmented Profiles by Identity] widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram för att underlätta jämförelse.
 
@@ -306,12 +320,6 @@ Om du vill visa omfattande information om ett segment väljer du ett segmentnamn
 
 Mer information om [[!UICONTROL Segments] [!UICONTROL  Browse] tab](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
 
-### [!UICONTROL Profile count trend] {#profile-count-trend}
-
-The [!UICONTROL Profile count trend] används ett linjediagram för att illustrera trenden i det totala antalet profiler i systemet över tiden. Det totala antalet inkluderar alla profiler som importerats till systemet sedan den senaste ögonblicksbilden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
-
-![Trendwidgeten Profilantal.](../images/profiles/profile-count-trend.png)
-
 ### [!UICONTROL Single identity profiles by identity] {#single-identity-profiles-by-identity}
 
 Den här widgeten använder ett stapeldiagram för att illustrera det totala antalet profiler som identifieras med endast en unik identifierare. Widgeten stöder upp till fem av de vanligaste identiteterna.
@@ -327,16 +335,6 @@ Den här widgeten använder ett Venndiagram för att visa överlappningen mellan
 När widgeten visar den visuella överlappningen av segmentdefinitioner kan du optimera segmenteringsstrategin genom att studera likheter mellan segmentdefinitionerna.
 
 ![Kontrollpanelen Plattformsgränssnittsprofiler med listrutan för sammanslagningsprinciper och listrutorna för widgetsegment markerade.](../images/profiles/audience-overlap-by-merge-policy.png)
-
-### [!UICONTROL Profiles count change trend by identity] {#profiles-count-change-trend-by-identity}
-
-<!-- This widget uses a line graph to illustrate the change in number of profiles filtered by a chosen source identity and merge policy. -->
-
-Den här widgeten filtrerar profilantalet baserat på en vald källidentitet och sammanfogningsprincip, och visar sedan ändringen av antalet för en rad punkter med hjälp av ett linjediagram. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och källans identitet och tidsperiod väljs i widgetens listruta. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader.
-
-Denna widget hjälper dig att hantera dina behov av målaktivering genom att visa tillväxtmönstret för profiler som filtrerats med en obligatorisk identitet.
-
-![Profilerna räknar en trend som ändras efter identitetswidget.](../images/profiles/profiles-count-change-trend-by-identity.png)
 
 
 ## (Beta) Profileffektwidgetar {#profile-efficacy-widgets}
@@ -359,7 +357,7 @@ Om du vill veta mer om alla profileffektwidgetar väljer du namnet på en widget
 >id="platform_dashboards_profiles_attributesqualityassessment"
 >title="Attribut för kvalitetsbedömning"
 >abstract="Den här widgeten visar fullständigheten och kardinaliteten för alla profiler utifrån deras attribut. Varje rad beskriver ett attribut. The **Profiler** kolumn innehåller antalet profiler som har det här attributet och som fylls med värden som inte är null. The **Fullständighet** procentandelen bestäms av det totala antalet profiler som har det här attributet och som fylls med värden som inte är null delat med det totala antalet icke-tomma värden i profilerna för det attributet. **Kardinalitet** innehåller det totala antalet unika icke-null-värden för det här attributet för alla attribut."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#attributes-quality-assessment" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The [!UICONTROL Attribute quality assessment] widgeten visar att alla profiler är fullständiga och kardinella beroende på deras attribut. Data är korrekta till det senaste bearbetningsdatumet. Den här informationen presenteras som en tabell med fyra kolumner där varje rad i tabellen representerar ett enda attribut.
 
@@ -378,7 +376,7 @@ The [!UICONTROL Attribute quality assessment] widgeten visar att alla profiler �
 >id="platform_dashboards_profiles_profilesbycompleteness"
 >title="Fullständiga profiler"
 >abstract="Diagrammet visar procentandelen profilattribut som fylls med värden som inte är null bland alla observerade attribut. Det visar andelen profiler som är av hög, medelhög eller låg fullständighet. Profiler med hög fullständighet har mer än 70 % av sina attribut ifyllda. Profilerna för medelhög fullständighet har mellan 30 % och 70 % av sina attribut ifyllda. Profiler med låg fullständighet har mindre än 30 % av sina attribut ifyllda."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-completeness" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 The [!UICONTROL Profiles by completeness] widgeten skapar ett diagram över hur komplett profilen är sedan det senaste bearbetningsdatumet. En profils fullständighet mäts av procentandelen attribut som är fyllda med värden som inte är null bland alla observerade attribut.
 
@@ -396,7 +394,7 @@ Den här widgeten visar andelen profiler som är av hög, medelhög eller låg f
 >id="platform_dashboards_profiles_profilescompletenesstrend"
 >title="Trenden för fullständighet för profiler"
 >abstract="Den här widgeten skapar ett staplat ytdiagram som avspeglar trenden för hur komplett profilen är över tiden. Fullständigheten mäts i procent av de attribut som fylls med värden som inte är null bland alla observerade attribut."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-completeness-trend" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html" text="Läs mer i dokumentationen"
 
 Den här widgeten skapar ett staplat ytdiagram som avspeglar trenden för hur komplett profilen är över tiden. Fullständigheten mäts i procent av alla attribut som fylls med värden som inte är null. Den klassar profilens fullständighet som hög, medelhög eller låg sedan det senaste bearbetningsdatumet.
 
