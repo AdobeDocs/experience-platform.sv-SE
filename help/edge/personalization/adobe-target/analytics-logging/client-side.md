@@ -5,9 +5,9 @@ seo-title: Client-side logging for A4T data in the Platform Web SDK
 seo-description: Learn how to enable client-side logging for Adobe Analytics for Target (A4T) using the Experience Platform Web SDK.
 keywords: mål;a4t;logga;web sdk;upplevelse;plattform;
 exl-id: 7071d7e4-66e0-4ab5-a51a-1387bbff1a6d
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: de420d3bbf35968fdff59b403a0f2b18110f3c17
 workflow-type: tm+mt
-source-wordcount: '1159'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -136,7 +136,7 @@ Följande är ett exempel på en `interact` när loggning på klientsidan för A
 }
 ```
 
-Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla både innehåll och klickmätningsobjekt under samma förslag. I stället för att ha en enda analystoken för innehållsvisning i `scopeDetails.characteristics.analyticsToken` -egenskapen kan dessa ha både en visnings- och en klickanalystoken angiven under `scopeDetails.characteristics.analyticsTokens` objekt, in `display` och `click` egenskaper.
+Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla både innehåll och klickmätningsobjekt under samma förslag. I stället för att ha en enda analystoken för innehållsvisning i `scopeDetails.characteristics.analyticsToken` -egenskapen kan dessa ha både en visnings- och en klickanalystoken angiven i `scopeDetails.characteristics.analyticsDisplayToken` och `scopeDetails.characteristics.analyticsClickToken` egenskaper.
 
 ```json
 {
@@ -162,14 +162,10 @@ Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla b
               }
             ],
             "characteristics": {
-              "eventTokens": {
-                "display": "2lTS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqbOw==",
-                "click": "E0gb6q1+WyFW3FMbbQJmrg=="
-              },
-              "analyticsTokens": {
-                "display": "434689:0:0|2,434689:0:0|1",
-                "click": "434689:0:0|32767"
-              }
+               "displayToken": "2lTS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqbOw==",
+               "clickToken": "E0gb6q1+WyFW3FMbbQJmrg==",
+               "analyticsDisplayToken": "434689:0:0|2,434689:0:0|1", 
+               "analyticsClickToken": "434689:0:0|32767"
             }
           },
           "items": [
@@ -208,11 +204,11 @@ Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla b
 }
 ```
 
-Alla värden från `scopeDetails.characteristics.analyticsToken`, samt `scopeDetails.characteristics.analyticsTokens.display` (för visat innehåll) och `scopeDetails.characteristics.analyticsTokens.click` (för klickvärden) är A4T-nyttolasterna som behöver samlas in och inkluderas som `tnta` -taggen i [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) ring.
+Alla värden från `scopeDetails.characteristics.analyticsToken`, samt `scopeDetails.characteristics.analyticsDisplayToken` (för visat innehåll) och `scopeDetails.characteristics.analyticsClickToken` (för klickvärden) är A4T-nyttolasterna som behöver samlas in och inkluderas som `tnta` -taggen i [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) ring.
 
 >[!IMPORTANT]
 >
->Observera att vissa `analyticsToken`/`analyticsTokens` egenskaper kan innehålla flera variabler, sammanfogade som en enda kommaavgränsad sträng.
+>The `analyticsToken`, `analyticsDisplayToken`, `analyticsClickToken` egenskaper kan innehålla flera variabler, sammanfogade som en enda kommaavgränsad sträng.
 >
 >I implementeringsexemplen i nästa avsnitt samlas flera analystoken in iterativt. Om du vill sammanfoga en array med analystoken använder du en funktion som ser ut så här:
 >
@@ -344,13 +340,10 @@ Härifrån måste ni implementera kod för att genomföra förslagen och skapa e
         }
       ],
       "characteristics": {
-        "eventTokens": {
-          "display": "91TS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqgEt==",
-          "click": "Tagb6q1+WyFW3FMbbQJrtg=="
-        },
-        "analyticsTokens": {
-          "display": "434688:0:0|2,434688:0:0|1",
-          "click": "434688:0:0|32767"
+          "displayToken": "91TS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqgEt==",
+          "clickToken": "Tagb6q1+WyFW3FMbbQJrtg==",
+          "analyticsDisplayTokens": "434688:0:0|2,434688:0:0|1",
+          "analyticsClickTokens": "434688:0:0|32767"
         }
       }
     },
@@ -392,8 +385,8 @@ function getDisplayAnalyticsPayload(proposition) {
     return;
   }
   var characteristics = proposition.scopeDetails.characteristics;
-  if (characteristics.analyticsTokens) {
-    return characteristics.analyticsTokens.display;
+  if (characteristics.analyticsDisplayToken) {
+    return characteristics.analyticsDisplayToken;
   }
   return characteristics.analyticsToken;
 }
@@ -420,8 +413,8 @@ function getClickAnalyticsPayload(proposition) {
     return;
   }
   var characteristics = proposition.scopeDetails.characteristics;
-  if (characteristics.analyticsTokens) {
-    return characteristics.analyticsTokens.click;
+  if (characteristics.analyticsClickToken) {
+    return characteristics.analyticsClickToken;
   }
   return characteristics.analyticsToken;
 }
