@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 69bf43f86ab3369ad0c7febcb69ec41d3bcac8bb
+source-git-commit: 26fb80a2a09b8374ddec8e164817855169fa0a81
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '828'
 ht-degree: 1%
 
 ---
@@ -138,6 +138,7 @@ ht-degree: 1%
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
       * [KickFire-tillägg](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
+      * [Pega-anslutning för kundens beslutshubb](./catalog/personalization/pega.md)
    * Sociala destinationer{#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
