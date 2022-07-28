@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: a8faa3a146669e206b9aa129f5541a7511c1854a
+source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '843'
 ht-degree: 1%
 
 ---
@@ -72,7 +72,7 @@ ht-degree: 1%
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)
       * [(Beta) Snapchat Ads-anslutning](./catalog/advertising/snap-inc.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
-      * [CRM-anslutningen för Trade Desk](./catalog/advertising/tradedesk-emails.md)
+      * [(Beta) The Trade Desk CRM connection](./catalog/advertising/tradedesk-emails.md)
       * [Tillägget twitter Universal Web Site Tag](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX-anslutning](./catalog/advertising/datax.md)
    * Analysmål {#analytics}
@@ -104,7 +104,7 @@ ht-degree: 1%
       * [Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
       * [IP-adress tillåtelselista för molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
-   * CRM-mål {#crm-destinations}
+   * CRM-mål {#crm}
       * [Salesforce CRM-anslutning](./catalog/crm/salesforce.md)
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
