@@ -3,9 +3,9 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 9963c78bff8d48816982bc79af9239f1a7b5e90a
+source-git-commit: e94753236623343dcd739ff65c18248c1112f361
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,11 @@ Mer information om hur kontoprofiler skapas som en del av B2B-arbetsflödet finn
 
 ## Översikt över kontoprofiler {#account-profiles-overview}
 
-Börja med att välja en kontoprofilöversikt **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen. Under [!UICONTROL Overview] visas en bild eller ett diagram på kontrollpanelen med widgetar på en enda startpunkt.
+Välj **[!UICONTROL Profiles]** under [!UICONTROL Accounts] till vänster om du vill visa översikten över kontoprofiler. Under [!UICONTROL Overview] visas en bild eller ett diagram på kontrollpanelen med widgetar på en enda startpunkt.
 
-![Fliken Översikt](images/b2b-account-profile-overview.png)
+![Fliken Översikt med widgetar](images/b2b-account-profile-overview.png)
 
-Mer information om kontrollpanelen för kontoprofiler finns i [Kontrollpanel för kontoprofiler](../../dashboards/guides/account-profiles.md) dokumentation.
+Läs dokumentationen om [[!UICONTROL Account Profiles]] (../../dashboards/guides/account-profiles.md) om du vill veta mer.
 
 ## Bläddra bland kontoprofiler {#browse-account-profiles}
 
