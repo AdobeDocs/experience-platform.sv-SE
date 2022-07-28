@@ -2,9 +2,9 @@
 title: TTL-API-slutpunkt (Time-to-Live) för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga TTL-värden för datamängd i Adobe Experience Platform.
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1313'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Shield for Healthcare.
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
 
 The `/ttl` -slutpunkten i Data Hygiene API gör att du kan schemalägga TTL-protokoll (time-to-live) för datauppsättningar i Adobe Experience Platform.
 

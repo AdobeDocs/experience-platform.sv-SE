@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för datahygien
 description: Lär dig hur du hanterar datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '154'
+source-wordcount: '152'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Shield for Healthcare.
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
 
 The **[!UICONTROL Data Hygiene]** Med arbetsytan i Adobe Experience Platform UI kan du skapa och övervaka olika datahygien, till exempel ta bort konsumentidentiteter och schemalägga TTL-protokoll för datauppsättningar.
 

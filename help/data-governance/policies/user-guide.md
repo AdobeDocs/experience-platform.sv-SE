@@ -5,9 +5,9 @@ title: Hantera dataanvändningsprinciper i användargränssnittet
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1261'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,7 @@ The **[!UICONTROL Browse]** -fliken visas igen, där den nya principen nu visas 
 
 >[!IMPORTANT]
 >
->Samtyckesregler är för närvarande bara tillgängliga för organisationer som har köpt Adobe Shield for Healthcare.
+>Samtyckesregler är för närvarande bara tillgängliga för organisationer som har köpt skölden.
 
 Om du väljer att skapa en profil för samtycke visas en ny skärm där du kan konfigurera den nya principen.
 
