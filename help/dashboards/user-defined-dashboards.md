@@ -1,7 +1,8 @@
 ---
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
-source-git-commit: 47e74a0cabbf40df3a45e835ca3a1e9a36fb4532
+exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
+source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
 workflow-type: tm+mt
 source-wordcount: '850'
 ht-degree: 0%
@@ -68,9 +69,9 @@ Förhandsvisningslistan innehåller information om tabellerna i datamodellen. Ta
 
 Välj **[!UICONTROL Next]** för att bekräfta ditt val av datamodell. I nästa vy visas en lista med tillgängliga tabeller i den vänstra listen. Välj en tabell om du vill visa en omfattande beskrivning av data i den valda tabellen.
 
-The [!UICONTROL Preview] panelen innehåller flikar för [!UICONTROL Sample records] och [!UICONTROL Attributes].The [!UICONTROL Sample records] -fliken innehåller en delmängd av posterna från den markerade tabellen i en tabellvy. The [!UICONTROL Attributes] -fliken innehåller attributnamnet, datatypen och källtabellen för alla attribut som är associerade med den valda tabellen.
+The [!UICONTROL Preview] panelen innehåller flikar för [!UICONTROL Sample records] och [!UICONTROL Attributes]. The [!UICONTROL Sample records] -fliken innehåller en delmängd av posterna från den markerade tabellen i en tabellvy. The [!UICONTROL Attributes] -fliken innehåller attributnamnet, datatypen och källtabellen för alla attribut som är associerade med den valda tabellen.
 
-Välj en tabell från listan som är tillgänglig i den vänstra listen för att tillhandahålla data för din widget och välj [!UICONTROL Select] för att gå tillbaka till widgetens disposition.
+Välj en tabell från listan som är tillgänglig i den vänstra listen för att tillhandahålla data för din widget och välj **[!UICONTROL Select]** för att gå tillbaka till widgetens disposition.
 
 ![Dialogrutan Välj data med det valda alternativet markerat.](./images/user-defined-dashboards/select-a-table.png)
 
@@ -117,7 +118,3 @@ Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj
 Genom att läsa det här dokumentet får du en bättre förståelse för hur du skapar en anpassad kontrollpanel och hur du skapar, redigerar och uppdaterar anpassade widgetar för den instrumentpanelen.
 
 Identifiera tillgängliga förkonfigurerade mått och visualiseringar för [profiler](./guides/profiles.md#standard-widgets), [segment](./guides/segments.md#standard-widgets)och [mål](./guides/destinations.md#standard-widgets) på kontrollpaneler, se listan över standardwidgetar i deras respektive dokumentation.
-
-
-
-

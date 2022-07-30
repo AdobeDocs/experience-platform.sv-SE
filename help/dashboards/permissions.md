@@ -4,7 +4,7 @@ title: Så här får du och beviljar behörigheter för Experience Platform-kont
 type: Documentation
 description: Ge användare möjlighet att visa, redigera och uppdatera kontrollpaneler i Experience Platform med Adobe Admin Console.
 exl-id: 2e50790f-b3ab-4851-a9a5-7cb98bf98ce3
-source-git-commit: 052e365c6127961363b7b5333cb0f4f82ab5479a
+source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 6%

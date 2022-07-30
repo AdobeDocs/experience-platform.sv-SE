@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a1a5a34ed0f46223b1eae3df75ff65f27041503e
+source-git-commit: e1d44c453385b8beaa49e9793eb4858876d865b0
 workflow-type: tm+mt
-source-wordcount: '3639'
+source-wordcount: '3664'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,9 @@ Läs användargränssnittsguiden för unionsschemat om du vill veta mer om [visa
 
 Kontrollpanelen består av widgetar, som är skrivskyddade mått som ger viktig information om dina profildata.
 
-Datum och tid för den senaste uppdateringen av en widget visar när den senaste ögonblicksbilden av data togs. Datum och tid för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
+Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid listrutan för sammanfogningsprinciper. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
+
+![På fliken Profiles dashboard overview med den senaste tidsstämpeln för ögonblicksbilder markerad.](../images/profiles/snapshot-timestamp.png)
 
 ## Standardwidgetar {#standard-widgets}
 
@@ -105,13 +107,13 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
 * [[!UICONTROL Single identity profiles]](#single-identity-profiles)
+* [[!UICONTROL Single identity profiles by identity]](#single-identity-profiles-by-identity)
 * [[!UICONTROL Unsegmented profiles]](#unsegmented-profiles)
 * [[!UICONTROL Unsegmented profiles trend]](#unsegmented-profiles-trend)
 * [[!UICONTROL Unsegmented profiles by identity]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL Audiences]](#audiences)
 * [[!UICONTROL Audiences mapped to destination status]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL Audiences size]](#audiences-size)
-* [[!UICONTROL Single identity profiles by identity]](#single-identity-profiles-by-identity)
 * [[!UICONTROL Audience overlap by merge policy]](#audience-overlap-by-merge-policy)
 
 ### [!UICONTROL Profile count] {#profile-count}
@@ -238,6 +240,14 @@ The [!UICONTROL Single Identity Profiles] widgeten innehåller ett antal profile
 
 ![Widgeten för profiler för en identitet.](../images/profiles/single-identity-profiles.png)
 
+### [!UICONTROL Single identity profiles by identity] {#single-identity-profiles-by-identity}
+
+Den här widgeten använder ett stapeldiagram för att illustrera det totala antalet profiler som identifieras med endast en unik identifierare. Widgeten stöder upp till fem av de vanligaste identiteterna.
+
+Håll pekaren över enskilda fält för att visa en dialogruta med information om det totala antalet profiler för en identitet.
+
+![The Single identity profiles by identity widget.](../images/profiles/single-identity-profiles-by-identity.png)
+
 ### [!UICONTROL Unsegmented profiles] {#unsegmented-profiles}
 
 >[!CONTEXTUALHELP]
@@ -319,14 +329,6 @@ Om du vill visa omfattande information om ett segment väljer du ett segmentnamn
 ![Widgeten Publikens storlek med ett segmentnamn och visa all segmenttext markerad.](../images/profiles/audiences-size-view-all-segments.png)
 
 Mer information om [[!UICONTROL Segments] [!UICONTROL  Browse] tab](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
-
-### [!UICONTROL Single identity profiles by identity] {#single-identity-profiles-by-identity}
-
-Den här widgeten använder ett stapeldiagram för att illustrera det totala antalet profiler som identifieras med endast en unik identifierare. Widgeten stöder upp till fem av de vanligaste identiteterna.
-
-Håll pekaren över enskilda fält för att visa en dialogruta med information om det totala antalet profiler för en identitet.
-
-![The Single identity profiles by identity widget.](../images/profiles/single-identity-profiles-by-identity.png)
 
 ### [!UICONTROL Audience overlap by merge policy] {#audience-overlap-by-merge-policy}
 
