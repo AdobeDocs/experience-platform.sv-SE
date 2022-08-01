@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
+source-git-commit: ff00dcda3bbccd731c91fdf475b37221edb659db
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '925'
 ht-degree: 1%
 
 ---
@@ -205,6 +205,12 @@ ht-degree: 1%
       * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
       * [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
       * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
+      * Konfigurera filbaserade mål {#configure-file-based-destinations}
+         * [(Beta) Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
+         * [(Beta) Konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-custom-file-formatting.md)
+         * [(Beta) Konfigurera ett Azure Blob Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-blob-destination-with-custom-file-formatting.md)
+         * [(Beta) Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och konfiguration av anpassade filnamn](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
+         * [(Beta) Konfigurera ett SFTP-mål med fördefinierade filformateringsalternativ och konfiguration av eget filnamn](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
    * Referens {#reference}
       * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/rate-limiting-retry-policy.md)
       * [Omformningsfunktioner som stöds](./destination-sdk/supported-functions.md)
