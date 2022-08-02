@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i datasjön
 topic-legacy: overview
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1383'
 ht-degree: 1%
 
 ---
@@ -148,9 +148,9 @@ I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Dat
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i [!DNL Data Lake] eller [!DNL Real-time Customer Profile], respektive.
+När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i [!DNL Data Lake].
 
-<img src="images/privacy/product-value.png" width="450"><br>
+![Bild som visar den Data Lake-produkt som valts i dialogrutan för att skapa sekretessbegäran](./images/privacy/product-value.png)
 
 ### Använda API:et
 

@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 1686ff1684080160057462e9aa40819a60bf6b75
+source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
 workflow-type: tm+mt
-source-wordcount: '1264'
+source-wordcount: '1301'
 ht-degree: 0%
 
 ---
@@ -46,9 +46,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-t
 
 >[!IMPORTANT]
 >
->Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas kontrollerar du att du använder en profil med &quot;[!DNL None]&quot; som [!UICONTROL ID stitching] typ. Du kan alltså inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på &quot;[!UICONTROL Private graph]&quot;.
->
->![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
+>Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Se avsnittet om [begränsningar för sammanslagningsprincip](#merge-policy-limitations) för mer information.
 >
 >Det är också viktigt att notera att det inte går att garantera hur lång tid en sekretessbegäran kan ta att slutföra. Om ändringar inträffar i [!DNL Profile] data medan en begäran fortfarande bearbetas, oavsett om dessa poster bearbetas eller inte kan också garanteras.
 
@@ -60,7 +58,11 @@ När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste a
 >
 >Du kan behöva ange mer än ett ID för varje kund, beroende på identitetsdiagrammet och hur dina profilfragment distribueras i plattformsdatauppsättningar. Se nästa avsnitt [profilfragment](#fragments) för mer information.
 
-Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. När förfrågningar görs till [!DNL Data Lake]måste arrayen innehålla värdet &quot;ProfileService&quot;.
+Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. Om du vill ta bort profildata som är associerade med en identitet måste arrayen innehålla värdet `ProfileService`. Om du vill ta bort kundens identitetsdiagramassociationer måste arrayen innehålla värdet `identity`.
+
+>[!NOTE]
+>
+>Se avsnittet om [profilförfrågningar och identitetsförfrågningar](#profile-v-identity) senare i det här dokumentet för mer detaljerad information om effekterna av att använda `ProfileService` och `identity` inom `include` array.
 
 Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` id namespace, and the other using a custom `Customer_ID` namnutrymme. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i `include` array:
 
@@ -96,7 +98,7 @@ curl -X POST \
         ]
       }
     ],
-    "include": ["ProfileService"],
+    "include": ["ProfileService","identity"],
     "expandIds": false,
     "priority": "normal",
     "regulation": "ccpa"
@@ -129,22 +131,25 @@ En av datauppsättningarna använder `customer_id` som primär identifierare, me
 
 För att säkerställa att dina sekretessförfrågningar behandlar alla relevanta kundattribut måste du ange de primära identitetsvärdena för alla tillämpliga datauppsättningar där dessa attribut kan lagras (upp till högst nio ID:n per kund). Se avsnittet om identitetsfält i [grunderna för schemakomposition](../xdm/schema/composition.md#identity) för mer information om fält som vanligen markeras som identiteter.
 
-## Ta bort bearbetning av begäran
+## Ta bort bearbetning av begäran {#delete}
 
 När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från [!DNL Data Lake] eller [!DNL Profile] lagra när sekretessjobbet är klart. Medan borttagningsjobbet fortfarande bearbetas tas data bort och är därför inte tillgängliga för alla [!DNL Platform] service. Se [[!DNL Privacy Service] dokumentation](../privacy-service/home.md#monitor) för mer information om spårning av jobbstatus.
 
->[!IMPORTANT]
->
->Om en borttagningsbegäran görs för profilen (`ProfileService`) men inte identitetstjänst (`identity`) tar det resulterande jobbet bort de insamlade attributdata för en kund (eller en uppsättning kunder), men tar inte bort de associationer som har upprättats i identitetsdiagrammet.
->
->En borttagningsbegäran som använder en kunds `email_id` och `customer_id` tar bort alla attributdata som lagras under dessa ID:n. Alla uppgifter som därefter importeras under samma `customer_id` kommer fortfarande att kopplas till lämplig `email_id`, eftersom associationen fortfarande finns.
->
->Dessutom kan Privacy Servicen bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas kontrollerar du att du använder en profil med &quot;[!DNL None]&quot; som [!UICONTROL ID stitching] typ. Du kan alltså inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på &quot;[!UICONTROL Private graph]&quot;.
->
->![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
-
 I framtida versioner [!DNL Platform] skickar bekräftelsen till [!DNL Privacy Service] efter att data har tagits bort fysiskt.
 
+### Profilförfrågningar kontra identitetsförfrågningar {#profile-v-identity}
+
+Om en borttagningsbegäran görs för profilen (`ProfileService`) men inte identitetstjänst (`identity`) tar det resulterande jobbet bort de insamlade attributdata för en kund (eller en uppsättning kunder), men tar inte bort de associationer som har upprättats i identitetsdiagrammet.
+
+En borttagningsbegäran som använder en kunds `email_id` och `customer_id` tar bort alla attributdata som lagras under dessa ID:n. Alla uppgifter som därefter importeras under samma `customer_id` kommer fortfarande att kopplas till lämplig `email_id`, eftersom associationen fortfarande finns.
+
+Om du vill ta bort profilen och alla identitetsassociationer för en viss kund måste du ta med både profil- och identitetstjänsten som målprodukter i borttagningsförfrågningarna.
+
+### Begränsningar för sammanfogningsprincip {#merge-policy-limitations}
+
+Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas måste du se till att du använder en profil med **[!DNL None]** som [!UICONTROL ID stitching] typ. Du kan alltså inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på [!UICONTROL Private graph].
+>![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
+>
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Experience Platform]. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
