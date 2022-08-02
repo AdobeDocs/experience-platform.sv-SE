@@ -2,9 +2,9 @@
 title: Värdslutpunkt
 description: Lär dig hur du anropar slutpunkten /hosts i Reaktors API.
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 905384b3190cd55e7caa9c4560d6b2774280eee7
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '821'
 ht-degree: 1%
 
 ---
@@ -211,6 +211,7 @@ curl -X POST \
             "username": "John Doe",
             "encrypted_private_key": "{PRIVATE_KEY}",
             "server": "https://example.com",
+            "skip_symlinks": true,
             "path": "assets",
             "port": 22
           },
@@ -227,6 +228,7 @@ curl -X POST \
 | `attributes.path` | Den bana som ska läggas till i `server` URL. |
 | `attributes.port` | Ett heltal som anger vilken serverport som ska användas. |
 | `attributes.server` | Serverns värd-URL. |
+| `attributes.skip_symlinks`<br><br>(Endast för SFTP-värdar) | Som standard använder alla SFTP-värdar symboliska länkar (symboler) till referensbiblioteksbyggen som sparas på servern. Alla servrar har dock inte stöd för symboler. När det här attributet ingår och ställs in på `true`, använder värden en kopieringsåtgärd för att uppdatera byggmaterialet direkt i stället för att använda symboler. |
 | `attributes.username` | Ett valfritt användarnamn för autentisering. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `hosts`. |
 
@@ -248,6 +250,7 @@ Ett lyckat svar returnerar information om den nyligen skapade värden.
       "path": "assets",
       "port": 22,
       "status": "pending",
+      "skip_symlinks": true,
       "type_of": "sftp",
       "updated_at": "2020-12-14T17:42:07.033Z",
       "username": "John Doe"
@@ -337,6 +340,7 @@ Ett lyckat svar returnerar information om den uppdaterade värden.
       "path": null,
       "port": null,
       "status": "succeeded",
+      "skip_symlinks": true,
       "type_of": "sftp",
       "updated_at": "2020-12-14T17:42:45.696Z",
       "username": null
