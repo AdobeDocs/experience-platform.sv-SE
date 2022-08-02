@@ -3,9 +3,9 @@ title: Identitetsdata i Platform Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 85ff35e0e7f7e892de5252e8f3ad069eff83aa15
+source-git-commit: d6aed404828d06bf223f348dd97960652b05933a
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1355'
 ht-degree: 0%
 
 ---
@@ -101,6 +101,10 @@ alloy("sendEvent", {
 ```
 
 Varje egenskap i `identityMap` representerar identiteter som tillhör en viss [identity namespace](../../identity-service/namespaces.md). Egenskapsnamnet ska vara identitetssymbolen för namnutrymmet, som du hittar i användargränssnittet i Adobe Experience Platform under &quot;[!UICONTROL Identities]&quot;. Egenskapsvärdet ska vara en array med identiteter som gäller det identitetsnamnutrymmet.
+
+>[!IMPORTANT]
+>
+>Det namnområdes-ID som skickades i `identityMap` är skiftlägeskänsligt. Se till att använda rätt namnområdes-ID för att undvika ofullständig datainsamling.
 
 Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 
