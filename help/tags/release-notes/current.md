@@ -45,7 +45,7 @@ Mer information finns i stödlinjerna på [hantera hemligheter i användargräns
 
 ## 10 maj 2021
 
-**Förenklad publicering** - Att bygga till mellanlagringsmiljön behövs inte längre.  Om du har rätt behörighet kan du hoppa över tillståndet Skickat helt och publicera direkt från Development så länge som du har skapat något och det inte finns några andra bibliotek i uppströmmen.
+**Förenklad publicering** - Att bygga till mellanlagringsmiljön behövs inte längre.  Om du har rätt behörighet kan du hoppa över tillståndet Skickat helt och publicera direkt från Development så länge som du har skapat något och det inte finns några andra bibliotek uppströms.
 
 ## 22 april 2021
 
