@@ -3,9 +3,9 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 604d2e100981b2c92d4cfac6862d78511791aa91
+source-git-commit: 9119e6376228c3cec214977265abf0ce55093b64
 workflow-type: tm+mt
-source-wordcount: '1421'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,26 @@ Välj **[!UICONTROL Profiles]** under [!UICONTROL Accounts] till vänster om du 
 ![Fliken Översikt med widgetar](images/b2b-account-profile-overview.png)
 
 Läs dokumentationen på [[!UICONTROL Account Profiles]](../../dashboards/guides/account-profiles.md) instrumentpanel för mer information.
+
+## Konfigurera kontomatchning för lead {#configure-lead-to-account-matching}
+
+>[!IMPORTANT]
+>
+> Det är bara B2B AI-administratörer som kan aktivera, inaktivera och konfigurera tjänsten lead-to-account matching. När tjänsten inaktiveras tas matchande resultat bort inom 24 timmar.
+
+Om du vill konfigurera lead till kontomatchning väljer du **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen. På **[!UICONTROL Overview]** flik, välja **[!UICONTROL Settings]** i det övre högra hörnet.
+
+![Välj inställningar](images/b2b-configuring-accounts-profile.png)
+
+The **[!UICONTROL Account settings]** öppnas. Här väljer du **[!UICONTROL Enable lead-to-account-matching]** för att aktivera funktionen. Använd listrutan för att välja **[!UICONTROL Daily]** för **[!UICONTROL Matching cadence]** inställning. Välj sedan relevant **[!UICONTROL Matching criteria]** alternativ följt av **[!UICONTROL Save]** för att bekräfta dina inställningar och gå tillbaka till **[!UICONTROL Account Profiles]** skärm.
+
+>[!NOTE]
+>
+> Adressen kan inte användas som det enda matchande villkoret. Ett eller flera andra matchande villkor måste väljas.
+
+![Konfigurera kontoinställningar](images/b2b-configuring-account-settings.png)
+
+Mer information om lead-to-account matching finns i [Lead till kontomatchning i realtidsöversikt över CDP B2B](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
 
 ## Bläddra bland kontoprofiler {#browse-account-profiles}
 
