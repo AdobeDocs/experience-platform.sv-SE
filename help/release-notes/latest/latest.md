@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4ba6ef979945ccd7decf4816c3410f2468b596ed
+source-git-commit: 5c40235b388c20f5a28a7d8535d5cf2b6d9cb40c
 workflow-type: tm+mt
-source-wordcount: '2257'
+source-wordcount: '2252'
 ht-degree: 1%
 
 ---
@@ -15,15 +15,14 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Versionsinformation för Adobe Experience Platform](#adobe-experience-platform-release-notes)
-   - [Kontrollpaneler](#dashboards)
-   - [Datainsamling](#data-collection)
-   - [[!DNL Data Prep]](#data-prep)
-   - [[!DNL Destinations]](#destinations)
-   - [Experience Data Model (XDM)](#xdm)
-   - [Real-time Customer Data Platform B2B Edition](#b2b)
-   - [Kundprofil i realtid](#profile)
-   - [Källor](#sources)
+- [Kontrollpaneler](#dashboards)
+- [Datainsamling](#data-collection)
+- [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
+- [Experience Data Model (XDM)](#xdm)
+- [Real-time Customer Data Platform B2B Edition](#b2b)
+- [Kundprofil i realtid](#profile)
+- [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
 
