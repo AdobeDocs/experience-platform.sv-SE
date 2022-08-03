@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 47a6cc9b77a0591d488d5ebc3929b465e1a6e6d2
+source-git-commit: 842fe74b0b751c515a4faee437e1f94bd0662e11
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Använd [!UICONTROL Profile Enrichment] Instrumentpanel för att förstå om pro
 
 I [Plattformsgränssnitt](https://platform.adobe.com), markera **[!UICONTROL Monitoring]** från vänster navigering för att komma åt [!UICONTROL Monitoring] kontrollpanel. I vyväljaren väljer du **B2B-flöde** om du vill visa instrumentpanelselement som är specifika för [Real-Time CDP B2B](/help/rtcdp/b2b-overview.md).  The [!UICONTROL Monitoring] Kontrollpanelen innehåller grundläggande mått från den senaste lyckade körningen och jobbstatus upp till 90 dagar tidigare.
 
-## Profilberikning för relaterade konton (#related-accounts)
+## Profilberikning för relaterade konton {#related-accounts}
 
 The [!UICONTROL Related accounts] på kontrollpanelen visas grundläggande mått och statusen för det dagliga jobbet som är specifikt för [Relaterade konton](/help/rtcdp/b2b-ai-ml-services/related-accounts.md) profilberikning.
 
