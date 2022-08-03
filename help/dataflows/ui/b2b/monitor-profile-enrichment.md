@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 6811e3032abe569b1f00d757553eb6862e4e3354
+source-git-commit: 47a6cc9b77a0591d488d5ebc3929b465e1a6e6d2
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
 
-# Övervaka profilberikande jobb i användargränssnittet (#monitor-profile-enrichment)
+# Övervaka profilberikande jobb i användargränssnittet {#monitor-profile-enrichment}
 
 Använd [!UICONTROL Profile Enrichment] Instrumentpanel för att förstå om profilberikningsjobben kördes och slutfördes samt för att visa grundläggande mått för att mäta effektiviteten av berikningarna.
 
@@ -38,7 +38,7 @@ Följande mått är tillgängliga för relaterade kontouppgifter:
 | **[!UICONTROL Status]** | Anger status (slutförd, misslyckades eller bearbetad) för det relaterade kontojobbet. |
 | **[!UICONTROL Message]** | Anger ett fel- eller varningsmeddelande för en viss jobbkörning. |
 
-## Lead till kontomatchningsprofilens berikning (#lead-to-account-matching)
+## Lead till kontomatchningsprofilens berikning {#lead-to-account-matching}
 
 The [!UICONTROL Lead to account matching] på kontrollpanelen visas grundläggande mått och daglig jobbkörningsstatus som är specifik för [Lead till kontomatchning](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md) profilberikning.
 
