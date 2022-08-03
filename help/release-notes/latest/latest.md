@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 72ca4f0c22d5e37ffa079940ed20e219445a0bf1
+source-git-commit: 4ba6ef979945ccd7decf4816c3410f2468b596ed
 workflow-type: tm+mt
-source-wordcount: '2274'
+source-wordcount: '2257'
 ht-degree: 1%
 
 ---
@@ -16,17 +16,14 @@ ht-degree: 1%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Versionsinformation för Adobe Experience Platform](#adobe-experience-platform-release-notes)
-   - [Kontrollpaneler {#dashboards}](#dashboards-dashboards)
-      - [Kontrollpaneler för kontoprofiler](#account-profiles-dashboards)
-      - [Profilpaneler](#profile-dashboards)
-      - [Kontrollpaneler för destinationer](#destinations-dashboards)
-   - [Datainsamling {#collection}](#data-collection-collection)
-   - [[!DNL Data Prep] {#data-prep}](#dnl-data-prep-data-prep)
-   - [[!DNL Destinations] {#destinations}](#dnl-destinations-destinations)
-   - [Experience Data Model (XDM) {#xdm}](#experience-data-model-xdm-xdm)
-   - [Real-time Customer Data Platform B2B Edition {#b2b}](#real-time-customer-data-platform-b2b-edition-b2b)
-   - [Kundprofil i realtid {#profile}](#real-time-customer-profile-profile)
-   - [Källor {#sources}](#sources-sources)
+   - [Kontrollpaneler](#dashboards)
+   - [Datainsamling](#data-collection)
+   - [[!DNL Data Prep]](#data-prep)
+   - [[!DNL Destinations]](#destinations)
+   - [Experience Data Model (XDM)](#xdm)
+   - [Real-time Customer Data Platform B2B Edition](#b2b)
+   - [Kundprofil i realtid](#profile)
+   - [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
 
@@ -187,7 +184,7 @@ Mer information finns i dokumentet om [lead to account matching](../../rtcdp/b2b
 
 En guide om hur du övervakar profilberikning finns i dokumentet om [övervaka profilberikning i användargränssnittet](../../dataflows/ui/b2b/monitor-profile-enrichment.md).
 
-Instruktioner om hur du använder relaterade konton i segmentdefinitioner finns i handboken [Exempel på segmenteringsanvändning för Real-time Customer Data Platform B2B Edition](../../rtcdp/segmentation/b2b.md#related-accounts).
+Instruktioner om hur du konfigurerar lead till kontomatchning finns i [Användargränssnittshandbok för kontoprofil](../../rtcdp/account/../accounts/account-profile-ui-guide.md?lang=en#configure-lead-to-account-matching).
 
 Mer information om CDP B2B Edition i realtid finns i [Översikt över CDP B2B i realtid](../../rtcdp/overview.md).
 
