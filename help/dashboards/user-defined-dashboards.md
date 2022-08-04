@@ -2,9 +2,9 @@
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
+source-git-commit: bf2b35e3366c71c51c58b6257cc55f7c9b0cd9c7
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,19 @@ ht-degree: 0%
 
 Adobe Experience Platform Dashboards hjälper er att få insikter och anpassa visualisering med den användardefinierade funktionen för kontrollpaneler. Med den här funktionen kan du skapa och hantera anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen.
 
-## Komma igång
+<!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
-Om du vill visa kontrollpaneler i Adobe Experience Platform måste du ha rätt behörighet aktiverat. Läs [behörigheter för kontrollpaneler dokumentation](./permissions.md#available-permissions) om du vill lära dig hur du ger användare möjlighet att visa, redigera och uppdatera instrumentpaneler i Experience Platform med Adobe Admin Console. Om du inte har administratörsbehörighet för din organisation kontaktar du produktadministratören för att få de behörigheter som krävs.
+## Getting started
+
+To view dashboards in Adobe Experience Platform you must have the appropriate permissions enabled. Please read the [dashboards permissions documentation](./permissions.md#available-permissions) to learn how to grant users the ability to view, edit, and update Experience Platform dashboards using Adobe Admin Console. If you do not have administrator privileges for your organization, contact your product administrator to obtain the required permissions. -->
 
 ## Skapa anpassade instrumentpaneler
 
 Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpanelens lager. Välj **[!UICONTROL Dashboards]** från vänster navigering i plattformsgränssnittet följt av **[!UICONTROL Create dashboard]**.
 
-Mer information om de tillgängliga förkonfigurerade instrumentpanelerna finns i [översikt över instrumentpanelsinventering](./inventory.md).
+![Kontrollpanelens lager med kontrollpaneler i den vänstra navigeringen och&quot;Skapa kontrollpanel&quot; markerat.](./images/user-defined-dashboards/create-dashboard.png)
 
->[!NOTE]
->
->Genom att lägga till en anpassad kontrollpanel tas listan med förkonfigurerade kontrollpaneler bort från kontrollpanelens lager. Kontrollpanelens inventering består i stället endast av användardefinierade kontrollpaneler.
-
-![Kontrollpanelens lager med&quot;Skapa instrumentpanel&quot; markerat.](./images/user-defined-dashboards/create-dashboard.png)
+Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tomt och en&quot;Inga kontrollpaneler hittades&quot; visas. meddelande. När du har skapat en kontrollpanel visas alla dina användardefinierade kontrollpaneler i kontrollpanelens lager.
 
 The [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande namn för den samling widgetar som du vill skapa och välj **[!UICONTROL Save]**.
 
@@ -85,9 +83,9 @@ Datamodellen och den markerade tabellen visas längst upp i den vänstra listen,
 >
 >Du kan ändra den valda datamodellen genom att välja pennikonen (![Pennikon.](./images/user-defined-dashboards/edit-icon.png)) i den vänstra listen.
 
-Markera ellipserna (`...`) bredvid ett attributnamn för att lägga till ett attribut i antingen X- eller Y-axeln.
+Välj ikonen Lägg till (./images/user-defined-dashboards/add-icon.png) bredvid ett attributnamn för att lägga till ett attribut i antingen X- eller Y-axeln.
 
-![Widgetdispositionen med listrutan Ellipser markerad för att lägga till attribut på en widgetaxel.](./images/user-defined-dashboards/attributes-dropdown.png)
+![Widgetdispositionen med listrutan Lägg till markerad för att lägga till attribut på en widgetaxel.](./images/user-defined-dashboards/attributes-dropdown.png)
 
 Välj sedan diagramtyp på menyn [!UICONTROL Marks] listruta för att generera en förhandsvisningsbild av widgetens aktuella inställningar. I [!UICONTROL Properties] till höger på skärmen anger du ett namn för widgeten i [!UICONTROL Widget title] textfält.
 
