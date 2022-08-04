@@ -5,9 +5,9 @@ title: Dataförhandsgranskning
 topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: d6d8b6ad9877735848d04cb229b3059842471ee8
+source-git-commit: 7042c6f5e3061fee7183b1befa447333f116c125
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '780'
 ht-degree: 0%
 
 ---
@@ -40,6 +40,10 @@ Läs mer om de olika mappningsfunktionerna i [guide för mappningsfunktioner](./
 Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
 
 Läs mer om beräknade fält i [guide för beräknade fält](./functions.md#calculated-fields).
+
+### Esc-specialtecken
+
+Du kan undvika specialtecken i ett fält genom att använda `${...}`. JSON-filer som innehåller fält med punkt (`.`) stöds inte av den här mekanismen. Vid interaktion med hierarkier, om ett underordnat attribut har en punkt (`.`) måste du använda ett omvänt snedstreck (`\`) för att undvika specialtecken. Till exempel: `address` är ett objekt som innehåller attributet `street.name`kan det sedan kallas `address.street\.name` i stället för `address.street.name`.
 
 ## Mappningsuppsättning
 

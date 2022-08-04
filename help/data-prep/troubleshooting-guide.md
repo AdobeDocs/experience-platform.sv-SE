@@ -3,9 +3,10 @@ keywords: Experience Platform;hemmabruk;populära ämnen;
 title: Felsökningsguide för dataprep
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Prep.
-source-git-commit: e96263847f53ea2c884c273fd7986855d4c478c1
+exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
+source-git-commit: 4bb21ce5861419964b80a827269e40ef3e6483f8
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '326'
 ht-degree: 0%
 
 ---
@@ -25,3 +26,7 @@ Nedan följer en lista med vanliga frågor och svar om [!DNL Data Prep] och dera
 Om kolumnerna är markerade som **Obligatoriskt** har upphävts på grund av transformeringsproblem, så kommer raden inte att kapslas in. När partiell datainmatning är aktiverat kan du ange tröskelvärdet för sådana avvisningar innan hela flödet misslyckas. Om attributet null inte påverkade några valideringar på schemanivå kommer raden att fortsätta att kapslas.
 
 Alla rader som är ogiltiga, även utan omformningsfel, kommer också att refuseras. Ett datainmatningsflöde kan till exempel ha en genomströmningsmappning (ingen omformningslogik) till ett obligatoriskt fält och det finns inget inkommande värde för det attributet. Den här raden kommer att refuseras.
+
+### Hur kan jag undgå specialtecken i ett fält?
+
+Du kan undvika specialtecken i ett fält genom att använda `${...}`. JSON-filer som innehåller fält med punkt (`.`) stöds inte av den här mekanismen. Vid interaktion med hierarkier, om ett underordnat attribut har en punkt (`.`) måste du använda ett omvänt snedstreck (`\`) för att undvika specialtecken. Till exempel: `address` är ett objekt som innehåller attributet `street.name`kan det sedan kallas `address.street\.name` i stället för `address.street.name`.
