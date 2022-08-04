@@ -3,24 +3,24 @@ keywords: Experience Platform;hem;populära ämnen;datasjösekretess;identitetsn
 solution: Experience Platform
 title: Behandling av sekretessförfrågningar i datasjön
 topic-legacy: overview
-description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
+description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i datasjön.
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
+source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
 workflow-type: tm+mt
-source-wordcount: '1383'
-ht-degree: 1%
+source-wordcount: '1423'
+ht-degree: 0%
 
 ---
 
-# Behandling av sekretessförfrågningar i [!DNL Data Lake]
+# Behandling av förfrågningar om skydd av privatlivet i datasjön
 
 Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
 
-Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i [!DNL Data Lake].
+Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i datasjön.
 
 >[!NOTE]
 >
->Den här guiden beskriver bara hur du gör sekretessförfrågningar för Data Lake i Experience Platform. Om du även planerar att göra sekretessförfrågningar för datalagret för kundprofiler i realtid, se guiden om [sekretessförfrågningsbehandling för profil](../profile/privacy.md) förutom den här självstudiekursen.
+>Den här handboken handlar bara om hur man gör förfrågningar om integritet för sjön med data i Experience Platform. Om du även planerar att göra sekretessförfrågningar för datalagret för kundprofiler i realtid, se guiden om [sekretessförfrågningsbehandling för profil](../profile/privacy.md) förutom den här självstudiekursen.
 >
 >Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service](../privacy-service/experience-cloud-apps.md).
 
@@ -43,7 +43,7 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Öve
 
 ## Lägga till identitetsdata i datauppsättningar
 
-När sekretessförfrågningar skapas för [!DNL Data Lake]måste giltiga identitetsvärden (och tillhörande namnutrymmen) anges för varje enskild kund för att kunna hitta deras data och bearbeta dem därefter. Därför måste alla datauppsättningar som omfattas av sekretessförfrågningar innehålla en identitetsbeskrivning i det associerade XDM-schemat.
+När du skapar sekretessförfrågningar för datasjön måste giltiga identitetsvärden (och tillhörande namnutrymmen) anges för varje enskild kund för att deras data ska kunna hittas och bearbetas därefter. Därför måste alla datauppsättningar som omfattas av sekretessförfrågningar innehålla en identitetsbeskrivning i det associerade XDM-schemat.
 
 >[!NOTE]
 >
@@ -138,9 +138,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för [!DNL Data Lake]. Vi rekommenderar att du granskar [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
+>I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för datasjön. Vi rekommenderar att du granskar [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
 
-I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Data Lake] med [!DNL Privacy Service] Gränssnitt eller API.
+I följande avsnitt beskrivs hur du gör sekretessförfrågningar för datasjön med hjälp av [!DNL Privacy Service] Gränssnitt eller API.
 
 >[!IMPORTANT]
 >
@@ -148,17 +148,17 @@ I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Dat
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i [!DNL Data Lake].
+När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön.
 
 ![Bild som visar den Data Lake-produkt som valts i dialogrutan för att skapa sekretessbegäran](./images/privacy/product-value.png)
 
 ### Använda API:et
 
-När jobbförfrågningar skapas i API:t, `userIDs` som tillhandahålls måste använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID för [!DNL Data Lake] måste använda `unregistered` för `type` och `namespace` värde som matchar ett av [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
+När jobbförfrågningar skapas i API:t, `userIDs` som tillhandahålls måste använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för datasjön måste använda `unregistered` för `type` och `namespace` värde som matchar ett av [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
 
-Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. När förfrågningar görs till [!DNL Data Lake]måste arrayen innehålla värdet `aepDataLake`.
+Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. När en begäran görs till datasjön måste arrayen innehålla värdet `aepDataLake`.
 
-Följande begäran skapar ett nytt sekretessjobb för [!DNL Data Lake], med hjälp av det oregistrerade `email_label` namnutrymme. Den innehåller också produktvärdet för [!DNL Data Lake] i `include` array:
+Följande begäran skapar ett nytt sekretessjobb för datasjön med hjälp av det oregistrerade `email_label` namnutrymme. Den innehåller också produktvärdet för sjön i `include` array:
 
 ```shell
 curl -X POST \
@@ -205,19 +205,19 @@ curl -X POST \
 
 ## Ta bort bearbetning av begäran
 
-När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från [!DNL Data Lake] inom sju dagar. Under denna sju-dagars period tas data bort på skärmen och är därför inte tillgängliga för alla [!DNL Platform] service.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Registren tas sedan bort från sjön inom sju dagar. Under denna sju-dagars period tas data bort på skärmen och är därför inte tillgängliga för alla [!DNL Platform] service.
 
-I framtida versioner [!DNL Platform] skickar bekräftelsen till [!DNL Privacy Service] efter att data har tagits bort fysiskt.
+Om du även inkluderat `ProfileService` eller `identity` i sekretessbegäran hanteras tillhörande data separat. Se avsnittet om [ta bort begärandebearbetning för profil](../profile/privacy.md#delete) för mer information.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar för [!DNL Data Lake]. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
+Genom att läsa det här dokumentet har du lagts till i de viktiga koncept som rör behandling av sekretessförfrågningar för datasjön. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
 
 Visa dokumentet på [sekretessförfrågningar för kundprofil i realtid](../profile/privacy.md) för steg vid bearbetning av sekretessförfrågningar för [!DNL Profile] butik.
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om hur du hanterar sekretessförfrågningar i [!DNL Data Lake].
+Följande avsnitt innehåller ytterligare information för att behandla sekretessförfrågningar i datasjön.
 
 ### Märka kapslade mappningsfält {#nested-maps}
 

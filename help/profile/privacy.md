@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
+source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
 workflow-type: tm+mt
-source-wordcount: '1301'
+source-wordcount: '1552'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 >[!NOTE]
 >
->Den här handboken beskriver bara hur du gör sekretessförfrågningar för datalagret Profil i Experience Platform. Om du även planerar att göra sekretessförfrågningar för Platform Data Lake, se guiden på [behandling av sekretessförfrågningar i Data Lake](../catalog/privacy.md) förutom den här självstudiekursen.
+>Den här handboken beskriver bara hur du gör sekretessförfrågningar för datalagret Profil i Experience Platform. Om du även planerar att göra sekretessförfrågningar för sjön med plattformsdata, se guiden på [behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md) förutom den här självstudiekursen.
 >
 >Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service](../privacy-service/experience-cloud-apps.md).
 
@@ -111,7 +111,7 @@ curl -X POST \
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i [!DNL Data Lake] eller [!DNL Real-time Customer Profile], respektive.
+När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön eller [!DNL Real-time Customer Profile], respektive.
 
 ![En begäran om åtkomstjobb skapas i användargränssnittet med alternativet Profil markerat under Produkter](./images/privacy/product-value.png)
 
@@ -133,9 +133,18 @@ För att säkerställa att dina sekretessförfrågningar behandlar alla relevant
 
 ## Ta bort bearbetning av begäran {#delete}
 
-När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från [!DNL Data Lake] eller [!DNL Profile] lagra när sekretessjobbet är klart. Medan borttagningsjobbet fortfarande bearbetas tas data bort och är därför inte tillgängliga för alla [!DNL Platform] service. Se [[!DNL Privacy Service] dokumentation](../privacy-service/home.md#monitor) för mer information om spårning av jobbstatus.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort när sekretessjobbet har slutförts.
 
-I framtida versioner [!DNL Platform] skickar bekräftelsen till [!DNL Privacy Service] efter att data har tagits bort fysiskt.
+Beroende på om du även har inkluderat identitetstjänsten (`identity`) och datasjön (`aepDataLake`) som produkter i din sekretesspolicy för profil (`ProfileService`) tas olika datauppsättningar som är relaterade till profilen bort från systemet vid potentiellt olika tidpunkter:
+
+| Produkter som ingår | Effekter |
+| --- | --- |
+| `ProfileService` endast | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilens identitetsdiagram finns fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De data som är associerade med profilen finns också kvar i datasjön. |
+| `ProfileService` och `identity` | Profilen och dess associerade identitetsdiagram tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
+| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilens identitetsdiagram finns fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
+| `ProfileService`, `identity`och `aepDataLake` | Profilen och dess associerade identitetsdiagram tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
+
+Se [[!DNL Privacy Service] dokumentation](../privacy-service/home.md#monitor) för mer information om spårning av jobbstatus.
 
 ### Profilförfrågningar kontra identitetsförfrågningar {#profile-v-identity}
 
@@ -154,4 +163,4 @@ Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprin
 
 Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Experience Platform]. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
 
-För information om behandling av sekretessförfrågningar för [!DNL Platform] resurser som inte används av [!DNL Profile], se dokumentet på [behandling av sekretessförfrågningar i Data Lake](../catalog/privacy.md).
+För information om behandling av sekretessförfrågningar för [!DNL Platform] resurser som inte används av [!DNL Profile], se dokumentet på [behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md).
