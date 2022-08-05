@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till direktuppspelade profilbaserade mål.
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: af761155bc510d96cea2b0bd475ee4a3bc4abe16
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
@@ -29,15 +29,15 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
-   ![Fliken Målkatalog](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
+   ![Bild som visar fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
 1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
 
-   ![Knappen Aktivera segment](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+   ![Bild som markerar kontrollen för aktivering av segment på fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
 
 1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
 
-   ![Välj mål](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
+   ![Bild som visar ett urval av två mål som du kan ansluta till.](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt till [markera segment](#select-segments).
 
@@ -45,11 +45,11 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
 Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
 
-![Markera segment](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
+![Markera kryssrutorna i steget Markera segment i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
 
 ## Välj profilattribut {#select-attributes}
 
-Markera de profilattribut som du vill skicka till målmålet.
+I **[!UICONTROL Mapping]** markerar du de profilattribut som du vill skicka till målmålet.
 
 >[!NOTE]
 >
@@ -59,19 +59,19 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 * Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
 * Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
-![rekommenderade attribut](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
+![Bild som visar de förfyllda, rekommenderade attributen i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
 
 1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
 
-   ![Lägg till ny mappning](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
+   ![Bild som markerar kontrollen Lägg till nytt fält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
 
 1. Markera pilen till höger om **[!UICONTROL Schema field]** post.
 
-   ![Välj källfält](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
+   ![Bilden visar hur du väljer ett källfält i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
 1. I **[!UICONTROL Select field]** väljer du de XDM-attribut som du vill skicka till målet och väljer **[!UICONTROL Select]**.
 
-   ![Välj källfältssida](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
+   ![Bild som visar ett urval av XDM-fält som du kan välja som källfält.](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
 
 1. Om du vill lägga till fler mappningar upprepar du steg 1 till 3 och väljer sedan **[!UICONTROL Next]**.
@@ -84,11 +84,11 @@ På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **
 >
 >I det här steget söker Adobe Experience Platform efter brott mot dataanvändningspolicyn. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [Politiska åtgärder](../../rtcdp/privacy/data-governance-overview.md#enforcement) i dokumentationsavsnittet för datastyrning.
 
-![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
+![Bild som visar en dataprincipöverträdelse i granskningssteget.](../assets/common/data-policy-violation.png)
 
 Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-![Granska](../assets/ui/activate-streaming-profile-destinations/review.png)
+![Bild som visar granskningssteget i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/review.png)
 
 ## Verifiera segmentaktivering {#verify}
 
