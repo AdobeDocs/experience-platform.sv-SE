@@ -5,7 +5,7 @@ title: Mappningsfunktioner för dataförinställningar
 topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 7cb940019905240b36e96b834b9e5d0166c1324d
+source-git-commit: a48072d2c418588a05397e991c1a2e17eee4c028
 workflow-type: tm+mt
 source-wordcount: '4286'
 ht-degree: 2%
@@ -25,7 +25,7 @@ Om ett fältnamn inte följer den här regeln måste fältnamnet omslutas med `$
 Om ett fältnamn dessutom är **alla** av följande reserverade nyckelord måste omslutas med `${}`:
 
 ```console
-new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return
+new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return, _errors
 ```
 
 Du kan komma åt data i underfält genom att använda punktnotation. Om det till exempel finns en `name` -objekt, för att komma åt `firstName` fält, använda `name.firstName`.
