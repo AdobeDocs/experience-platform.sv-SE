@@ -1,9 +1,10 @@
 ---
 title: Bästa tillvägagångssätt
 description: Lär dig vilka regler och tips du bör följa när du skapar en dokumentationssida för målet, så att du kan vara säker på att den uppfyller Adobe Experience Platform kvalitetsstandarder för dokumentation.
-source-git-commit: 35e5c388e9572a3b27ec4bce55e766725936eda4
+exl-id: b12059f1-6635-41cd-acc5-6ff471111164
+source-git-commit: 0b9b724c2530e43ce681011d12fc1341148ddbf5
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '562'
 ht-degree: 0%
 
 ---
@@ -20,6 +21,15 @@ Den här sidan beskriver regler som du bör följa när [skapa din måldokumenta
 * Ta inte med observationer och uppskattningar i produktdokumentationen.
 * I Experience Platform-dokumentationen använder Adobe-skribenter **fet formatering** för att hänvisa till användargränssnittskontroller, så här:
    * Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och väljer **[!UICONTROL Catalog]** -fliken. Visa ett exempel på hur gränssnittskontroller dokumenteras i en [mål, genomgång](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#select-destination).
+
+## Skrivstil
+
+>[!IMPORTANT]
+>
+>Läs [Skriftlig vägledning för Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) innan du börjar redigera måldokumentationssidan.
+
+* Håll dina meningar korta och kom till saken snabbt. Om din mening är längre än 20 ord eller använder flera kommatecken kan du dela upp den i olika meningar. Meningar som är längre än 20 ord kan vara särskilt komplicerade för läsarna.
+* Var inte överdrivet artig. Undvik att använda &quot;please&quot; eller &quot;snälla do ...&quot; i teknisk dokumentation.
 
 ## Länkar {#linking}
 
