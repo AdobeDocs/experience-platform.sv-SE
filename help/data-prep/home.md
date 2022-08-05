@@ -5,9 +5,9 @@ title: Dataförhandsgranskning
 topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: 7042c6f5e3061fee7183b1befa447333f116c125
+source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Läs mer om de olika mappningsfunktionerna i [guide för mappningsfunktioner](./
 
 ### Beräknade fält
 
-Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
+Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till. Beräknade fält får innehålla högst 4 096 tecken.
 
 Läs mer om beräknade fält i [guide för beräknade fält](./functions.md#calculated-fields).
 

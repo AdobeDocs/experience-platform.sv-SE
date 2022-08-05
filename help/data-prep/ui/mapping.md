@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv 
 title: Användargränssnittshandbok för dataprep
 description: Det här dokumentet innehåller anvisningar om hur du använder förinställningsfunktioner för data i plattformsgränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: edef8843c03282774991f30220504ece97af52cf
+source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
 workflow-type: tm+mt
-source-wordcount: '1729'
+source-wordcount: '1737'
 ht-degree: 0%
 
 ---
@@ -149,7 +149,7 @@ När du är klar väljer du schemaikonen för att stänga målschemagränssnitte
 
 #### Beräknade fält {#calculated-fields}
 
-Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
+Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till. Beräknade fält får innehålla högst 4 096 tecken.
 
 Om du vill skapa ett beräkningsfält väljer du **[!UICONTROL New field type]** och sedan markera **[!UICONTROL Add calculated field]**
 

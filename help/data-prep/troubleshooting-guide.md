@@ -4,9 +4,9 @@ title: Felsökningsguide för dataprep
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Prep.
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
-source-git-commit: 4bb21ce5861419964b80a827269e40ef3e6483f8
+source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
 workflow-type: tm+mt
-source-wordcount: '326'
+source-wordcount: '342'
 ht-degree: 0%
 
 ---
@@ -30,3 +30,7 @@ Alla rader som är ogiltiga, även utan omformningsfel, kommer också att refuse
 ### Hur kan jag undgå specialtecken i ett fält?
 
 Du kan undvika specialtecken i ett fält genom att använda `${...}`. JSON-filer som innehåller fält med punkt (`.`) stöds inte av den här mekanismen. Vid interaktion med hierarkier, om ett underordnat attribut har en punkt (`.`) måste du använda ett omvänt snedstreck (`\`) för att undvika specialtecken. Till exempel: `address` är ett objekt som innehåller attributet `street.name`kan det sedan kallas `address.street\.name` i stället för `address.street.name`.
+
+### Vilken är maxlängden för beräknade fält?
+
+Beräknade fält får innehålla högst 4 096 tecken.
