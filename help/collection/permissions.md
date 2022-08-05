@@ -2,9 +2,9 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 58b8446d6a20ac797ac004b19bdbfdb10f692647
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1282'
 ht-degree: 2%
 
 ---
@@ -70,19 +70,36 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 >
 >Mer information om hur dessa behörigheter påverkar funktioner i taggar, inklusive administrationsstrategier för vanliga scenarier, finns i taggdokumentationen för [användarbehörigheter](../tags/ui/administration/user-permissions.md).
 
-## Hantera behörigheter för Adobe Experience Platform Data Collection {#manage}
+## Hantera behörigheter {#manage}
 
->[!IMPORTANT]
->
->I det här avsnittet beskrivs bara hur du hanterar behörigheter för Adobe Experience Platform Data Collection-produkten i Admin Console. Stegen för att hantera behörigheter i Adobe Experience Platform-produkten är dock desamma.
->
->Se [gränssnittsguide för åtkomstkontroll](../access-control/ui/overview.md) om du vill ha detaljerade anvisningar om hur du hanterar plattformsbehörigheter. Beroende på vilka SKU:er din organisation har tillgång till kanske du inte har alla behörigheter.
+Som framgår av föregående avsnitt hanteras behörigheter för datainsamling genom två produktbeteckningar i Admin Console: **Adobe Experience Platform** och **Adobe Experience Platform Data Collection**.
 
-Om du vill hantera behörigheter för datainsamling loggar du in på [Admin Console](https://adminconsole.adobe.com/) och markera **[!UICONTROL Products]** i den övre navigeringen. Här väljer du kortet för **[!UICONTROL Adobe Experience Platform Data Collection]**.
+Logga in på [Admin Console](https://adminconsole.adobe.com/) och markera **[!UICONTROL Products]** i den övre navigeringen. Här väljer du produktkort för de behörigheter du vill konfigurera. Se underavsnitten nedan för steg om hur du hanterar behörigheter för respektive produkt i Admin Console:
+
+* [Adobe Experience Platform permissions](#manage-platform)
+* [Behörigheter för Adobe Experience Platform Data Collection](#manage-collection)
+
+### Hantera behörigheter i Adobe Experience Platform {#manage-platform}
+
+Från **[!UICONTROL Products]** visa i Admin Console, markera **[!UICONTROL Adobe Experience Platform Data Collection]**. Välj den produktprofil som du vill redigera behörigheter för och navigera sedan till **[!UICONTROL Permissions]** -fliken.
+
+För att få åtkomst till datainsamlingsfunktionerna måste du aktivera alla behörigheter i **[!UICONTROL Sandboxes]**, **[!UICONTROL Data Modeling]**, **[!UICONTROL Identity Management]** och **[!UICONTROL Data Collection]** kategorier.
+
+![Bild som visar produktkortet för datainsamling i Admin Console](./images/permissions/platform-permission-card.png)
+
+Se [gränssnittsguide för åtkomstkontroll](../access-control/ui/overview.md) om du vill ha detaljerade anvisningar om hur du hanterar plattformsbehörigheter.
+
+>[!NOTE]
+>
+>Beroende på vilka SKU:er din organisation har tillgång till kanske du inte har alla plattformsbehörigheter.
+
+### Hantera behörigheter i Adobe Experience Platform Data Collection {#manage-collection}
+
+Från **[!UICONTROL Products]** visa i Admin Console, markera **[!UICONTROL Adobe Experience Platform Data Collection]**.
 
 ![Bild som visar produktkortet för datainsamling i Admin Console](./images/permissions/data-collection-card.png)
 
-### Välj eller skapa en produktprofil
+#### Välj eller skapa en produktprofil
 
 På nästa skärm visas en lista med tillgängliga produktprofiler för datainsamling i din organisation. Standardprofilen är **[!DNL Default Data Collection All Access]**. Du kan välja att redigera standardproduktprofilen om du vill, eller välja att **[!UICONTROL New Profile]** för att skapa en. Om du har flera roller eller användargrupper i organisationen som kräver olika åtkomstnivåer bör du skapa en separat produktprofil för var och en av dem.
 
@@ -92,7 +109,7 @@ När du har valt eller skapat en produktprofil kan du använda **[!UICONTROL Edi
 
 ![Bild som visar fliken Behörigheter för en produktprofil Admin Console](./images/permissions/edit-permission-categories.png)
 
-### Redigera behörigheter för produktprofilen {#edit-permissions}
+#### Redigera behörigheter för produktprofilen {#edit-permissions}
 
 När du redigerar behörigheter för en profil visas tillgängliga behörigheter i den vänstra kolumnen medan de som ingår i profilen visas i den högra kolumnen. Välj de angivna behörigheterna för att flytta dem mellan någon av kolumnerna.
 
@@ -110,7 +127,7 @@ Produktprofilvyn visas igen med de tillagda behörigheterna.
 
 ![Bild som visar de tillagda behörigheterna för produktprofilen](./images/permissions/permissions-added.png)
 
-### Tilldela användare till produktprofilen {#assign-users}
+#### Tilldela användare till produktprofilen {#assign-users}
 
 Om du vill tilldela användare till produktprofilen (och ge dem profilens konfigurerade behörigheter) väljer du **[!UICONTROL Users]** tabbtecken, följt av **[!UICONTROL Add user]**.
 
