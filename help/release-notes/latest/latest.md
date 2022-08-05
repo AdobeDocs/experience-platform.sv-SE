@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 5c40235b388c20f5a28a7d8535d5cf2b6d9cb40c
+source-git-commit: c4cd691eeae9e27dd7616dc19672dc5d08b8cec7
 workflow-type: tm+mt
-source-wordcount: '2252'
+source-wordcount: '2254'
 ht-degree: 1%
 
 ---
@@ -177,7 +177,7 @@ CDP B2B Edition i realtid bygger på Real-time Customer Data Platform (Real-time
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Lead till kontomatchning | Matchning från lead till konto gör att du kan gå med i kända personprofiler till kontoprofiler. Sedan kan ni segmentera och rikta in data i ett B2B-sammanhang som konton eller affärsmöjligheter. Dagliga jobb använder både deterministiska och sannolika faktorer för att matcha personprofiler som inte redan är kopplade till något konto mot ett bäst matchat konto. Du kan sedan bestämma om du vill ta med sådana matchningar i segmentdefinitionerna |
+| Lead till kontomatchning | Lead till kontomatchning gör att du kan gå med i kända personprofiler till kontoprofiler. Sedan kan ni segmentera och rikta in data i ett B2B-sammanhang som konton eller affärsmöjligheter. Dagliga jobb använder både deterministiska och sannolika faktorer för att matcha personprofiler som inte redan är kopplade till något konto mot ett bäst matchat konto. Du kan sedan bestämma om du vill ta med sådana matchningar i segmentdefinitionerna |
 
 Mer information finns i dokumentet om [lead to account matching](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
 
