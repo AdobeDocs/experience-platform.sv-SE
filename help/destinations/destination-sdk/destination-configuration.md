@@ -2,7 +2,7 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
 source-wordcount: '1885'
 ht-degree: 2%
@@ -285,7 +285,7 @@ Med det här alternativet kan du:
 
 >[!NOTE]
 >
->När du använder det konfigurerbara aggregeringsalternativet för ditt mål ska du tänka på minimi- och maximivärdena som du kan använda för de två parametrarna `maxBatchAgeInSecs` (minst 1 800 och högst 3 600) och `maxNumEventsInBatch` (minimum 1.000, max 10.000).
+>När du använder det konfigurerbara aggregeringsalternativet för ditt mål ska du tänka på minimi- och maximivärdena som du kan använda för de två parametrarna `maxBatchAgeInSecs` (minst 1 800 och högst 3 600) och `maxNumEventsInBatch` (minst 1 000, högst 10 000).
 
 Detaljerade förklaringar av aggregeringsparametrarna finns i [Slutpunktsåtgärder för mål-API](./destination-configuration-api.md) referenssida, där varje parameter beskrivs.
 

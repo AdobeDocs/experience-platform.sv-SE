@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
-source-wordcount: '1951'
+source-wordcount: '1952'
 ht-degree: 0%
 
 ---
@@ -250,7 +250,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka använd
 
 ## Begränsningar och återförsöksprincip {#limits-retry-policy}
 
-På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningsfördröjning på mindre än 10 minuter för meddelanden som skickats med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till ett HTTP-mål.
+På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 begäranden per sekund för varje dataflöde till en HTTP-destination.
 
 Om det uppstår misslyckade begäranden till HTTP API-målet, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till slutpunkten två gånger.
 

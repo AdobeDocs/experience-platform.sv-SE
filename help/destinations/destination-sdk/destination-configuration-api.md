@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
-source-wordcount: '2571'
+source-wordcount: '2572'
 ht-degree: 1%
 
 ---
@@ -171,7 +171,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | Heltal | Experience Platform kan samla flera exporterade profiler i ett enda HTTP-anrop. Ange maximalt antal profiler som din slutpunkt ska ta emot i ett enda HTTP-anrop. Observera att detta är en bästa ansträngningsaggregering. Om du till exempel anger värdet 100 kan Platform skicka valfritt antal profiler som är mindre än 100 på ett samtal. <br> Om servern inte accepterar flera användare per begäran anger du värdet 1. |
 | `aggregation.bestEffortAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop, för ett givet namnutrymme. |
 | `aggregation.configurableAggregation.splitUserById` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop, för ett givet namnutrymme. |
-| `aggregation.configurableAggregation.maxBatchAgeInSecs` | Heltal | <ul><li>*Minsta värde: 1800*</li><li>*Högsta värde: 3600*</li><li>Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Konfigurera ett värde mellan lägsta och högsta godkända värden. Tillsammans med `maxNumEventsInBatch`anger den här parametern hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <br> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. </li></ul> |
+| `aggregation.configurableAggregation.maxBatchAgeInSecs` | Heltal | <ul><li>*Minsta värde: 1800*</li><li>*Högsta värde: 3600*</li><li>Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Konfigurera ett värde mellan lägsta och högsta godkända värden. Tillsammans med `maxNumEventsInBatch`anger den här parametern hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <br> Om du till exempel använder maxvärdet för båda parametrarna, väntar Experience Platform antingen 3 600 sekunder ELLER tills det finns 10 000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. </li></ul> |
 | `aggregation.configurableAggregation.maxNumEventsInBatch` | Heltal | <ul><li>*Minsta värde: 1000*</li><li>*Högsta värde: 10000*</li><li>Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Konfigurera ett värde mellan lägsta och högsta godkända värden. En beskrivning av den här parametern finns på `maxBatchAgeInSecs` precis ovanför.</li></ul> |
 | `aggregation.configurableAggregation.aggregationKey` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna nedan: <br> <ul><li>segment-ID</li><li> segmentstatus </li><li> identity namespace </li></ul> |
 | `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Ange detta till `true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID. |
