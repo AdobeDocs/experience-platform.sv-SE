@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
+source-git-commit: e57b5ec6c6234d4d1fe22f8d03c70d6bd9c02f0f
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '468'
 ht-degree: 0%
 
 ---
@@ -41,10 +41,10 @@ Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.pn
 
 | Filter | Beskrivning |
 | --- | --- |
-| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status. |
-| [!UICONTROL Date created] | Filtrera baserat på när datauppsättningens TTL-begäran gjordes. |
-| [!UICONTROL Deletion date] | Filtrera baserat på det borttagningsdatum som TTL har schemalagts. |
-| [!UICONTROL Date updated] | Filtrera baserat på när datamängden TTL senast uppdaterades. TTL-skapelser och förfallodatum räknas som uppdateringar. |
+| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Pending]**: Jobbet har skapats men har inte körts än. A [TTL-begäran (time-to-live) för datauppsättning](./ttl.md) antar denna status före det schemalagda raderingsdatumet. När borttagningsdatumet har passerats uppdateras statusen till [!UICONTROL Executing] om inte jobbet har avbrutits i förväg.</li><li>**[!UICONTROL Executing]**: Jobbet har startats och bearbetas för närvarande.</li><li>**[!UICONTROL Cancelled]**: Jobbet har avbrutits som en del av en manuell användarbegäran.</li></ul> |
+| [!UICONTROL Date created] | Filtrera baserat på när arbetsordern skapades. |
+| [!UICONTROL Expiration date] | Filtrera TTL-begäranden baserat på det schemalagda raderingsdatumet för datauppsättningen i fråga. |
+| [!UICONTROL Date updated] | Filtrera TTL-begäranden baserat på när arbetsordern senast uppdaterades. TTL-skapelser och förfallodatum räknas som uppdateringar. |
 
 {style=&quot;table-layout:auto&quot;}
 
