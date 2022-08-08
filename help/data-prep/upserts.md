@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till profiltjänsten med dataprep
 description: Det här dokumentet innehåller information om hur du skickar uppdateringar (del av rad) till profiltjänsten med hjälp av Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: cc3ecbd8544839246d54f72b894ad27e850c0c90
+source-git-commit: 4e24552c441c9096ef1139df66ad07d89f08a5d6
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
@@ -249,7 +249,6 @@ Följande visar en lista med kända begränsningar att tänka på vid direktupps
 
 * Metoden för direktuppspelning av överföringar bör endast användas när partiella raduppdateringar skickas till [!DNL Profile Service]. Uppdateringar av delar av rader är **not** som konsumeras av en datasjö.
 * Metoden för att skicka direktuppspelning stöder inte uppdatering, ersättning och borttagning av identiteter. Nya identiteter skapas om de inte finns. Därför är `identity` måste alltid anges för att skapa. Om en identitet redan finns är åtgärden no-op.
-* Metoden streaming upserts stöder för närvarande bara primitiva attribut med ett värde (som heltal, datum, tidsstämplar och strängar) och objekt.
 * Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) och [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 
 ## Nästa steg
