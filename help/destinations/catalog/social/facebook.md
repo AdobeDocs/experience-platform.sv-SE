@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '1829'
+source-wordcount: '1821'
 ht-degree: 1%
 
 ---
@@ -165,7 +165,6 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="Målgruppens ursprung"
 >abstract="Välj hur kunddata i segmentet ursprungligen samlades in. Data visas i Facebook när en användare anges av segmentet"
->additional-url="http://www.adobe.com/go/destinations-facebook-activate-section-en" text="Läs mer i dokumentationen"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"

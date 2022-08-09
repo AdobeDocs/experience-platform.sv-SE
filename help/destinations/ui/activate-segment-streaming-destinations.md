@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att direktuppspela segmentexportmål
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till mål för segmentdirektuppspelning.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '748'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,6 @@ Vissa mål för segmentdirektuppspelning kräver att du väljer källattribut el
 >id="platform_destinations_activate_applytransformation"
 >title="Använd omformning"
 >abstract="Markera det här alternativet om du vill att Adobe Experience Platform automatiskt ska hash-koda dem vid aktiveringen när du använder ohashed-källfält."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html#apply-transformation" text="Läs mer i dokumentationen"
 
 När du mappar ohashade källattribut till målattribut som målet förväntar sig ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), kontrollera **Använd omformning** att Adobe Experience Platform automatiskt ska hash-koda källattributen vid aktiveringen.
 
@@ -95,7 +94,6 @@ När du mappar ohashade källattribut till målattribut som målet förväntar s
 >id="platform_destinations_activate_enddate"
 >title="Slutdatum"
 >abstract="Det går inte att lägga till ett slutdatum för segmentschema."
->additional-url="https://www.adobe.com/go/destinations-activate-segment-scheduling-en" text="Läs mer i dokumentationen"
 
 Som standard är [!UICONTROL Segment schedule] visas endast de nyligen valda segmenten som du valde i det aktuella aktiveringsflödet.
 
