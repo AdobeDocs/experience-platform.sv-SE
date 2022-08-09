@@ -2,9 +2,9 @@
 title: Pega-anslutning för kundens beslutshubb
 description: Använd Pega Customer Decision Hub-destinationen i Adobe Experience Platform för att skicka profilattribut och data om segmentmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: f06afec31b7fa550a612280b8ad665b8393ee2e3
+source-git-commit: 144aa80beeb13fde7ca339692774e3d20256f49c
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '986'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ En marknadsförare vill optimera erbjudandena för kunder som prenumererar på e
 
 Innan du kan använda det här målet för att exportera data från Adobe Experience Platform måste du uppfylla följande krav i [!DNL Pega Customer Decision Hub]:
 
-* Konfigurera Adobe-segmentmedlemskapskomponenten i [!DNL Pega Customer Decision Hub] -instans.
+* Konfigurera [Integrationskomponent för Adobe Experience Platform-profil och segmentmedlemskap](https://docs.pega.com/component/customer-decision-hub/adobe-experience-platform-profile-and-segment-membership-integration-component) i [!DNL Pega Customer Decision Hub] -instans.
 * Konfigurera OAuth 2.0 [Klientregistrering med klientautentiseringsuppgifter](https://docs.pega.com/security/87/creating-and-configuring-oauth-20-client-registration) Typ av bidrag i din [!DNL Pega Customer Decision Hub] -instans.
 * Konfigurera [dataflöde vid körning i realtid](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flows) för Adobe segmentmedlemskapets dataflöde i [!DNL Pega Customer Decision Hub] -instans.
 
