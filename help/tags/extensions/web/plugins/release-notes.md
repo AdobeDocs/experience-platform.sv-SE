@@ -2,10 +2,10 @@
 title: Versionsinformation för tillägget Common Analytics-plugin-program
 description: Den senaste versionsinformationen om taggtillägget Common Analytics Plugins i Adobe Experience Platform.
 exl-id: 5ea4b709-4e21-4f5d-be99-e72e4889ed99
-source-git-commit: 1be361f9cd70b0424542af64a994da0b21d6b5dc
+source-git-commit: c0aa12e9d50e3d1a05a8692a153242f2e6c044ca
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '329'
+ht-degree: 5%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 #### Funktioner
 
-Plugin-program som anger cookies använder nu flaggan secure
+* Plugin-program som anger cookies använder nu flaggan secure
 
 ## 23 juni 2021
 
