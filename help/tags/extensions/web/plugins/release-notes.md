@@ -1,14 +1,23 @@
 ---
 title: Versionsinformation för tillägget Common Analytics-plugin-program
 description: Den senaste versionsinformationen om taggtillägget Common Analytics Plugins i Adobe Experience Platform.
-source-git-commit: cce218d984bae92428c7d48aefcd0f57dab837ea
+exl-id: 5ea4b709-4e21-4f5d-be99-e72e4889ed99
+source-git-commit: 1be361f9cd70b0424542af64a994da0b21d6b5dc
 workflow-type: tm+mt
-source-wordcount: '314'
-ht-degree: 5%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
 # Versionsinformation om Common Analytics-plugin-program
+
+## 3 juni 2022
+
+### Common Analytics Plugins Extension 3.0.7
+
+#### Funktioner
+
+Plugin-program som anger cookies använder nu flaggan secure
 
 ## 23 juni 2021
 
@@ -75,7 +84,7 @@ ht-degree: 5%
 
 * Ett problem som förhindrade bakåtkompatibilitet med version 2.0.X har korrigerats
 * Ett problem där dokumentationslänkar pekade på fel dokumentation har åtgärdats
-* Ett problem där `getTimeSinceLastVisit` påträffades två gånger i initieringsåtgärden har korrigerats
+* Ett problem där `getTimeSinceLastVisit` har visats två gånger i initieringsåtgärden
 
 ## 15 november 2019
 
@@ -84,9 +93,9 @@ ht-degree: 5%
 #### Felkorrigeringar
 
 * Omarbetade enskilda plugin-åtgärder för bakåtkompatibilitet
-* Ett problem med plugin-programmet `cleanStr` har korrigerats
-* Ett problem med plugin-programmet `getResponsiveLayout` har korrigerats
-* Ett problem med plugin-programmet `getPageName` har korrigerats
+* Ett problem med `cleanStr` plugin
+* Ett problem med `getResponsiveLayout` plugin
+* Ett problem med `getPageName` plugin
 
 #### Funktioner
 
