@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 3130d9731a53c01fb7bc15265e044191ceae47f6
+source-git-commit: 0267b0141f7b6944ea65bc413f14cc9580081387
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1630'
 ht-degree: 0%
 
 ---
@@ -46,25 +46,47 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 >
 >Om TTL (time-to-live) är aktiverat för datauppsättningen kan det dessutom påverka medlemskapet i det skapade segmentet. Mer information om TTL och hur det kan påverka segmenteringen finns i [TTL-guide för profiltjänst](../profile/apply-ttl.md).
 
-## Utvärdera segment
+## Utvärdera segment {#evaluate-segments}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation"
+>title="Utvärderingsmetoder"
+>abstract="Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering."
 
 Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
 
-### Direktuppspelningssegmentering
+### Direktuppspelningssegmentering {#streaming}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation_streaming"
+>title="Utvärdering av strömning"
+>abstract="Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html" text="Utvärdera händelser i nära realtid med strömmande segmentering"
 
 Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
 Läs mer om direktuppspelningssegmentering i [dokumentation om direktuppspelningssegmentering](./api/streaming-segmentation.md).
 
-### Gruppsegmentering
+### Gruppsegmentering {#batch}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation_batch"
+>title="Batchutvärdering"
+>abstract="Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning."
 
 Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning.
 
 Batchsegment utvärderas automatiskt var 24:e timme. Om du vill utvärdera ett batchsegment vid behov kan du använda ett segmentjobb. Läs mer om segmentjobb i [dokumentation för segmentjobb](./api/segment-jobs.md).
 
-### Kantsegmentering
+### Kantsegmentering {#edge}
 
-Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen på Experience Edge, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation_edge"
+>title="Kantutvärdering"
+>abstract="Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen på Experience Edge, vilket möjliggör användning av samma sida och nästa sida."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för kantsegmentering"
+
+Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Experience Edge](../edge/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
 
 Läs antingen [API-dokumentation](./api/edge-segmentation.md) eller [Användargränssnittsdokumentation](./ui/edge-segmentation.md).
 
