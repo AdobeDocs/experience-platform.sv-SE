@@ -3,9 +3,9 @@ title: Krav för att använda Adobe Experience Platform Web SDK
 description: Läs om förutsättningarna för Adobe Experience Platform Web SDK.
 keywords: 1st-party domain;CNAME;schema;skapa schema;starta;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
 exl-id: 98ae69db-bc87-4ea3-b101-664ac53e7ae0
-source-git-commit: 1ff52944be6e9475f57c62793b0e4c671ff8786b
+source-git-commit: 853c0a662592939c280c7e7ede8235d1b6155b2f
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
@@ -25,14 +25,4 @@ Om du vill använda Adobe Experience Platform Web SDK måste du först:
 
 ## Hantera behörigheter för Adobe Experience Platform Web SDK
 
-För att börja använda Adobe Experience Platform måste du ha rätt [behörigheter](https://experienceleague.adobe.com/docs/experience-platform/access-control/home.html?lang=en) för att skapa scheman och hantera identiteter. De minimibehörigheter som krävs finns i kategorin Datamodellering och Identiteter.
-
-![](../images/AEP-permission-categories.png)
-
-I kategorin Datamodellering ger du användarna behörigheterna Hantera scheman och Visa scheman.
-
-![](../images/data-modeling-permissions.png)
-
-I kategorin Identity Management ger du användarna behörigheterna Hantera identitetsnamn och Visa identitetsnamnutrymmen.
-
-![](../images/identity-management-permissions.png)
+Om du vill börja använda Adobe Experience Platform Web SDK måste du ha rätt behörighet konfigurerad. Mer information om hur du konfigurerar konfigurationen finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
