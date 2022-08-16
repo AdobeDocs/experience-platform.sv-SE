@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Segment Builder
 topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
+source-git-commit: dd87f9e5787961442ca7d7b4c761d2e7ca724994
 workflow-type: tm+mt
-source-wordcount: '2552'
+source-wordcount: '3018'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Segment Builder] innehåller en omfattande arbetsyta som du kan använda för att interagera med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 
-![](../images/ui/segment-builder/segment-builder.png)
+![Gränssnittet för segmentbyggaren visas.](../images/ui/segment-builder/segment-builder.png)
 
 ## Byggstenar för segmentdefinitioner {#building-blocks}
 
@@ -29,13 +29,13 @@ De grundläggande byggstenarna för segmentdefinitioner är attribut och händel
 
 Du kan se dessa byggstenar i **[!UICONTROL Fields]** till vänster i [!DNL Segment Builder] arbetsyta. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: &quot;[!UICONTROL Attributes]&quot;, &quot;[!UICONTROL Events]&quot;, och &quot;[!UICONTROL Audiences]&quot;.
 
-![](../images/ui/segment-builder/segment-fields.png)
+![Fältavsnittet i segmentbyggaren markeras.](../images/ui/segment-builder/segment-fields.png)
 
 ### Attribut
 
 The **[!UICONTROL Attributes]** kan du bläddra [!DNL Profile] attribut som tillhör [!DNL XDM Individual Profile] klassen. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. The [arbetsyta för regelbyggaren](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
 
-![](../images/ui/segment-builder/attributes.png)
+![Attributavsnittet i segmentbyggarfälten markeras.](../images/ui/segment-builder/attributes.png)
 
 ### Händelser
 
@@ -51,7 +51,7 @@ Du kan söka efter alla typer av komponenter genom att skriva dess namn i sökf�
 
 Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och &quot;[!UICONTROL Event Types]&quot; i segmentdefinitionen.
 
-![](../images/ui/segment-builder/events-eventTypes.png)
+![Händelseavsnittet i segmentbyggargränssnittet är markerat.](../images/ui/segment-builder/events.png)
 
 Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om[!UICONTROL Event Types]&quot; visas inte eller så kan du bara välja &quot;[!UICONTROL Any]&quot; som &quot;[!UICONTROL Event Type]&quot;, välj **kugghjulsikon** nästa **[!UICONTROL Fields]** väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikon** igen för att gå tillbaka till **[!UICONTROL Fields]** och du bör nu kunna visa flera[!UICONTROL Event Types]&quot; och schemafält, oavsett om de innehåller data eller inte.
 
@@ -103,7 +103,7 @@ På **[!UICONTROL Audiences]** kan du se alla tillgängliga källor som en grupp
 
 Du kan hovra över ⓘ bredvid en målgrupp för att visa information om målgruppen, inklusive dess ID, beskrivning och mapphierarkin för att hitta målgruppen.
 
-![](../images/ui/segment-builder/audience-folder-structure.png)
+![En bild som visar hur mapphierarkin fungerar för målgrupper.](../images/ui/segment-builder/audience-folder-structure.png)
 
 Du kan också söka efter målgrupper med hjälp av sökfältet som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). På **[!UICONTROL Audiences]** om du väljer en mapp på den översta nivån visas sökfältet så att du kan söka i den mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill hitta en publik med namnet `Online Shoppers`börjar du skriva &quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
 
@@ -113,7 +113,7 @@ En segmentdefinition är en samling regler som används för att beskriva viktig
 
 Om du vill lägga till en ny regel i segmentdefinitionen drar du en ruta från **[!UICONTROL Fields]** och släpp det på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum, [!DNL ExperienceEvents], &quot;[!UICONTROL Event Types]och målgrupper.
 
-![](../images/ui/segment-builder/rule-builder-canvas.png)
+![Den tomma arbetsytan för regelbyggaren.](../images/ui/segment-builder/rule-builder-canvas.png)
 
 >[!IMPORTANT]
 >
@@ -121,11 +121,11 @@ Om du vill lägga till en ny regel i segmentdefinitionen drar du en ruta från *
 
 När du väljer ett värde för attributet visas en lista med uppräkningsvärden som attributet kan vara.
 
-![](../images/ui/segment-builder/enum-list.png)
+![En bild som visar en lista med enum-värden som ett attribut kan vara.](../images/ui/segment-builder/enum-list.png)
 
 Om du väljer ett värde i den här listan med enum, visas värdet med en heldragen kantlinje. För fält som använder `meta:enum` (mjuk) uppräkning kan du även välja ett värde som är **not** från listan med enum. Om du skapar ett eget värde kontureras det med en prickad ram tillsammans med en varning om att det här värdet inte finns med i uppräkningslistan.
 
-![](../images/ui/segment-builder/enum-warning.png)
+![En varning som visas om du infogar ett värde som inte ingår i uppräkningslistan.](../images/ui/segment-builder/enum-warning.png)
 
 ### Lägga till målgrupper
 
@@ -137,7 +137,7 @@ För [!DNL Platform] målgrupper skapade med [!DNL Segment Builder]kan du konver
 >
 >När du lägger till en målgrupp från en extern källa refereras endast målgruppsmedlemskapet. Du kan inte konvertera målgruppen till regler, och därför kan reglerna som används för att skapa den ursprungliga målgruppen inte ändras i den nya segmentdefinitionen.
 
-![](../images/ui/segment-builder/add-audience-to-segment.png)
+![Den här bilden visar hur du konverterar ett målgruppsattribut till regler.](../images/ui/segment-builder/add-audience-to-segment.png)
 
 Om det uppstår några konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
 
@@ -145,11 +145,11 @@ Om det uppstår några konflikter när målgrupper konverteras till regler, [!DN
 
 Du kan även visa en kodbaserad version av en regel som har skapats i [!DNL Segment Builder]. När du har skapat regeln på arbetsytan i regelbyggaren kan du välja **[!UICONTROL Code view]** för att se ditt segment som PQL.
 
-![](../images/ui/segment-builder/code-view.png)
+![Knappen för kodvyn är markerad, vilket gör att du kan se segmentet som PQL.](../images/ui/segment-builder/code-view.png)
 
 I kodvyn finns en knapp som du kan använda för att kopiera segmentets värde för API-anrop. Kontrollera att du har sparat dina senaste ändringar i segmentet för att få den senaste versionen av segmentet.
 
-![](../images/ui/segment-builder/copy-code.png)
+![Knappen Kopiera kod är markerad så att du kan ](../images/ui/segment-builder/copy-code.png)
 
 ### Sammanställningsfunktioner
 
@@ -157,15 +157,15 @@ En aggregering i [!DNL Segment Builder] är en beräkning för en grupp XDM-attr
 
 Om du vill skapa en aggregeringsfunktion väljer du en händelse från den vänstra listen och infogar den i [!UICONTROL Events] behållare.
 
-![](../images/ui/segment-builder/select-event.png)
+![Händelseavsnittet är markerat.](../images/ui/segment-builder/events.png)
 
 När du har placerat händelsen i händelsebehållaren markerar du ellipsikonen (..) följt av **[!UICONTROL Aggregate]**.
 
-![](../images/ui/segment-builder/add-aggregation.png)
+![Sammanställd text markeras. Om du väljer det här alternativet kan du välja sammanställningsfunktioner.](../images/ui/segment-builder/add-aggregation.png)
 
 Aggregeringsvärdet har nu lagts till. Nu kan du välja sammanställningsfunktionen, välja vilket attribut som ska sammanställas, likhetsfunktionen samt värdet. I exemplet nedan kvalificerar det här segmentet alla profiler som har en summa köpta värden som är större än 100 USD, även om varje enskilt köp är mindre än 100 USD.
 
-![](../images/ui/segment-builder/filled-aggregation.png)
+![Händelsereglerna, som visar en sammanställningsfunktion.](../images/ui/segment-builder/filled-aggregation.png)
 
 ### Räkningsfunktioner {#count-functions}
 
@@ -173,15 +173,15 @@ Räkningsfunktioner i Segment Builder används för att söka efter angivna hän
 
 Om du vill skapa en räkningsfunktion väljer du en händelse från den vänstra listen och infogar den i dialogrutan [!UICONTROL Events] behållare.
 
-![](../images/ui/segment-builder/add-event.png)
+![Händelsefälten markeras.](../images/ui/segment-builder/events.png)
 
 När du har placerat händelsen i händelsebehållaren markerar du [!UICONTROL At least 1] -knappen.
 
-![](../images/ui/segment-builder/add-count.png)
+![Minst är markerat och visar området som ska väljas så att en fullständig lista över räkningsfunktioner visas.](../images/ui/segment-builder/add-count.png)
 
 Funktionen count har nu lagts till. Nu kan du välja funktionen count och värdet för funktionen. Exemplet nedan är att inkludera alla händelser som har minst ett klick.
 
-![](../images/ui/segment-builder/select-count.png)
+![En lista över räkningsfunktionerna visas och markeras.](../images/ui/segment-builder/select-count.png)
 
 ## Behållare
 
@@ -189,13 +189,13 @@ Segmentregler utvärderas i den ordning som de listas. Behållare ger kontroll �
 
 När du har lagt till minst en platta på regelbyggararbetsytan kan du börja lägga till behållare. Om du vill skapa en ny behållare markerar du ellipserna (..) i rutans övre högra hörn och väljer sedan **[!UICONTROL Add container]**.
 
-![](../images/ui/segment-builder/add-container.png)
+![Knappen Lägg till behållare markeras, vilket gör att du kan lägga till en behållare som underordnad till den första behållaren.](../images/ui/segment-builder/add-container.png)
 
 En ny behållare visas som underordnad till den första behållaren, men du kan justera hierarkin genom att dra och flytta behållarna. Standardbeteendet för en behållare är &quot;[!UICONTROL Include]&quot; attributet, händelsen eller publiken som anges. Du kan ställa in regeln på[!UICONTROL Exclude]&quot; profiler som matchar behållarvillkoren genom att välja **[!UICONTROL Include]** i rutans övre vänstra hörn och väljer &quot;[!UICONTROL Exclude]&quot;.
 
 En underordnad behållare kan också extraheras och läggas till i den överordnade behållaren genom att markera&quot;dela upp behållare&quot; i den underordnade behållaren. Markera ellipserna (..) i det övre högra hörnet av den underordnade behållaren för att komma åt det här alternativet.
 
-![](../images/ui/segment-builder/include-exclude.png)
+![Alternativ som gör att du kan dela upp eller ta bort behållaren markeras.](../images/ui/segment-builder/include-exclude.png)
 
 När du har valt **[!UICONTROL Unwrap container]** den underordnade behållaren tas bort och villkoren visas textbundna.
 
@@ -203,7 +203,7 @@ När du har valt **[!UICONTROL Unwrap container]** den underordnade behållaren 
 >
 >När du delar upp behållare ska du se till att logiken fortsätter att uppfylla den önskade segmentdefinitionen.
 
-![](../images/ui/segment-builder/unwrapped-container-inline.png)
+![Behållaren visas efter uppackning.](../images/ui/segment-builder/unwrapped-container.png)
 
 ## Sammanfoga profiler
 
@@ -213,7 +213,7 @@ Du kan välja en sammanfogningsprincip som matchar ditt marknadsföringssyfte f�
 
 Välj en kopplingsprincip för segmentdefinitionen genom att klicka på kugghjulsikonen på sidan **[!UICONTROL Fields]** -fliken och sedan använder du **[!UICONTROL Merge Policy]** i listrutan för att välja den sammanfogningsprincip som du vill använda.
 
-![](../images/ui/segment-builder/merge-policy-selector.png)
+![Väljaren för sammanfogningsprincip är markerad. På så sätt kan du välja vilken sammanfogningsprincip som ska väljas för segmentdefinitionen.](../images/ui/segment-builder/merge-policy-selector.png)
 
 ## Segmentegenskaper {#segment-properties}
 
@@ -228,18 +228,29 @@ Välj en kopplingsprincip för segmentdefinitionen genom att klicka på kugghjul
 >abstract="Du kan uppdatera uppskattningarna av ditt segment och omedelbart se en förhandsvisning av hur många profiler som skulle kvalificera sig för det föreslagna segmentet. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=en#estimate-and-preview-an-audience" text="Läs mer i dokumentationen"
 
-
 När du skapar en segmentdefinition visas **[!UICONTROL Segment Properties]** -avsnittet till höger om arbetsytan visar en uppskattning av storleken på det resulterande segmentet, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
-The **[!UICONTROL Segment Properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn och beskrivning. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
+The **[!UICONTROL Segment Properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn, beskrivning och utvärderingstyp. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
 När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
 
-![](../images/ui/segment-builder/segment-properties.png)
+![Avsnittet för segmentdefinitionsegenskaper är markerat. Segmentegenskaperna innehåller, men är inte begränsade till, segmentnamnet, beskrivningen och utvärderingsmetoden.](../images/ui/segment-builder/segment-properties.png)
 
 >[!NOTE]
 >
 >Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar segmentuppskattningar finns i [uppskattningsgenereringsavsnitt](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) av självstudiekursen för att skapa segment.
+
+Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som det här segmentet är kvalificerat för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas](../images/ui/segment-builder/segment-evaluation-select-icon.png) om du vill se en lista över tillgängliga metoder för segmentutvärdering.
+
+The [!UICONTROL Evaluation method eligibility] popover visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive utvärderingsmetod finns i [direktuppspelningssegmentering](./streaming-segmentation.md#query-types) eller [kantsegmentering](./edge-segmentation.md#query-types) översikter.
+
+![Popup-fönstret för berättigande av utvärderingsmetod visas. Här visas vilka metoder för segmentutvärdering som är kvalificerade och inte kan användas för segmentet.](../images/ui/segment-builder/select-evaluation-method.png)
+
+Om du väljer en ogiltig utvärderingsmetod uppmanas du att antingen ändra segmentdefinitionsreglerna eller ändra utvärderingsmetoden.
+
+![Utvärderingsmetoden visas. Om du väljer en metod som inte är giltig för segmentutvärdering, förklarar popup-fönstret varför den inte är giltig.](../images/ui/segment-builder/ineligible-evaluation-method.png)
+
+Mer information om olika metoder för utvärdering av segmentdefinitioner finns i [segmenteringsöversikt](../home.md#evaluate-segments).
 
 ## Nästa steg {#next-steps}
 

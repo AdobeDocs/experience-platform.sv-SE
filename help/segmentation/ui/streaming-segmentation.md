@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: f6825869805733d2c3838f0cad0bca0f4baf7f16
+source-git-commit: 654e141735b6882b4c0233b8e1c73d0838c8374e
 workflow-type: tm+mt
-source-wordcount: '1308'
+source-wordcount: '1266'
 ht-degree: 0%
 
 ---
@@ -106,10 +106,6 @@ Direktuppspelningssegmentering fungerar på alla data som har importerats från 
 ### Hur definieras segment som grupp- eller direktuppspelningssegmentering?
 
 Ett segment definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
-
-### Kan en användare definiera ett segment som gruppsegmentering eller direktuppspelningssegmentering?
-
-För närvarande kan användaren inte definiera om ett segment ska utvärderas med hjälp av batch- eller direktuppspelningsinmatning, eftersom systemet automatiskt avgör vilken metod segmentet ska utvärderas med.
 
 ### Varför ökar antalet&quot;totala kvalificerade&quot; segment medan antalet under&quot;De senaste X dagarna&quot; är noll i segmentinformationsavsnittet?
 

@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 0173fbd36791f837e0d0336f9fa7bcc84e64909f
+source-git-commit: 654e141735b6882b4c0233b8e1c73d0838c8374e
 workflow-type: tm+mt
 source-wordcount: '769'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Expe
 
 För närvarande kan endast utvalda frågetyper utvärderas med kantsegmentering. I följande avsnitt finns en lista med frågetyper som kan utvärderas med kantsegmentering och de som för närvarande inte stöds.
 
-### Frågetyper som stöds
+### Frågetyper som stöds {#query-types}
 
 En fråga kan utvärderas med kantsegmentering om den uppfyller något av villkoren i följande tabell.
 

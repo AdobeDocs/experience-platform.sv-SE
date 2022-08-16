@@ -5,9 +5,9 @@ title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 81659da18d4fa8b733200998c27c25ec356ca264
+source-git-commit: 654e141735b6882b4c0233b8e1c73d0838c8374e
 workflow-type: tm+mt
-source-wordcount: '1915'
+source-wordcount: '1873'
 ht-degree: 0%
 
 ---
@@ -429,10 +429,6 @@ Direktuppspelningssegmentering fungerar på alla data som har importerats från 
 ### Hur definieras segment som grupp- eller direktuppspelningssegmentering?
 
 Ett segment definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
-
-### Kan en användare definiera ett segment som gruppsegmentering eller direktuppspelningssegmentering?
-
-För närvarande kan användaren inte definiera om ett segment ska utvärderas med hjälp av batch- eller direktuppspelningsinmatning, eftersom systemet automatiskt avgör vilken metod segmentet ska utvärderas med.
 
 ### Varför ökar antalet&quot;totala kvalificerade&quot; segment medan antalet under&quot;De senaste X dagarna&quot; är noll i segmentinformationsavsnittet?
 
