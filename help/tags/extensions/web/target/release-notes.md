@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation om Adobe Target Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Target i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: ba29f614-c3cd-4e0b-b043-2b1c17567def
+source-git-commit: 130db749ef84840532588a8a27e40cb277c13066
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '520'
 ht-degree: 3%
 
 ---
@@ -12,13 +13,20 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## 16 september 2021
+
+### Adobe Target Extension 0.11.4
+
+* Uppdaterat till at.js v1.8.3
+* Tillagd `SameSite=None` och `Secure` attribut när cookies anges
 
 ## 24 juli 2020
 
 ### Adobe Target Extension 0.11.3
 
-* Korrigerade ett fel när tillägget misslyckas om ett skript eller en kod lägger till egenskapen `default` i `window` eller `document`
+* Korrigerade ett fel när tillägget misslyckas om ett skript eller en kod läggs till `default` egenskapen till `window` eller `document`
 
 ## 15 juni 2020
 
@@ -106,7 +114,7 @@ ht-degree: 3%
 ### Adobe Target Extension 0.7.2
 
 * Mindre ändringar
-* Egenskapen `exchangeUrl` i filen `extension.json` har uppdaterats
+* Uppdaterade `exchangeUrl` -egenskapen i `extension.json` fil
 
 ## 1 augusti 2018
 
