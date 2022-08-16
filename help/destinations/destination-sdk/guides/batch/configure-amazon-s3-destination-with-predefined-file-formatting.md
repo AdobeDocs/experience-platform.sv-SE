@@ -1,7 +1,8 @@
 ---
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration.
 title: (Beta) Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration.
-source-git-commit: 1e6515bf4fe34258194f56d341e477a02a1c31be
+exl-id: 0ecd3575-dcda-4e5c-af5c-247d4ea13fa1
+source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 0%
@@ -117,10 +118,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
             "emptyValue": {
                 "templatingStrategy": "NONE",
                 "value": ""
-            },
-            "lineSep": {
-                "templatingStrategy": "NONE",
-                "value": "\n"
             }
         }
     }

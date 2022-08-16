@@ -2,9 +2,9 @@
 description: Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigureras i Adobe Experience Platform Destination SDK via slutpunkten /destination-servers.
 title: (Beta) Konfigurationsalternativ för filbaserade målserverspecifikationer
 exl-id: 56434e36-0458-45d9-961d-f6505de998f7
-source-git-commit: 7a72c190d28d63c7bcd1bf12d8a52efc4589b848
+source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '899'
 ht-degree: 8%
 
 ---
@@ -284,10 +284,6 @@ I det här avsnittet beskrivs filformateringsinställningarna för den exportera
             "emptyValue": {
                 "templatingStrategy": "NONE",
                 "value": ""
-            },
-            "lineSep": {
-                "templatingStrategy": "NONE",
-                "value": "\n"
             }
         },
         "maxFileRowCount":5000000
@@ -310,7 +306,6 @@ I det här avsnittet beskrivs filformateringsinställningarna för den exportera
 | `csvOptions.timestampFormat.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger strängen som anger ett tidsstämpelformat. | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
 | `csvOptions.charToEscapeQuoteEscaping.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Ställer in ett enda tecken som används för att kringgå citattecknet. | `\` när escape- och citattecknen är olika. `\0` när escape- och citattecknet är detsamma. |
 | `csvOptions.emptyValue.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger strängbeteckningen för ett tomt värde. | `""` |
-| `csvOptions.lineSep.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Definierar den radavgränsare som ska användas för skrivning. Maxlängden är 1 tecken. | `\n` |
 | `maxFileRowCount` | Valfritt | Maximalt antal rader som den exporterade filen kan innehålla. Konfigurera detta baserat på kraven för målplattformens filstorlek. | Ej tillämpligt |
 
 {style=&quot;table-layout:auto&quot;}
