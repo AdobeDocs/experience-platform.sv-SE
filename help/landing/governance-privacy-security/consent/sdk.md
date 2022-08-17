@@ -3,9 +3,9 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 79bc41c713425e14bb3c12646b9b71b2c630618b
 workflow-type: tm+mt
-source-wordcount: '1299'
+source-wordcount: '1344'
 ht-degree: 0%
 
 ---
@@ -98,14 +98,19 @@ När du har konfigurerat tillägget kan det integreras med webbplatsen. Se [publ
 
 När du har integrerat SDK-tillägget på webbplatsen kan du börja använda Platform Web SDK `setConsent` för att skicka data om samtycke till plattformen.
 
->[!IMPORTANT]
->
->The `setConsent` kommandot uppdaterar bara data direkt i profilarkivet och skickar inga data till datasjön.
+The `setConsent` kommandot utför två åtgärder:
+
+1. Uppdaterar användarens profilattribut direkt i profilarkivet. Detta skickar inga data till datasjön.
+1. Skapar en [Experience Event](../../../xdm/classes/experienceevent.md) som registrerar ett tidsstämplat konto för händelsen för tillståndsändring. Dessa data skickas direkt till datasjön och kan användas för att hålla reda på ändringar av medgivandepreferenser över tiden.
+
+### När ska du ringa `setConsent`
 
 Det finns två scenarier där `setConsent` ska anropas på din webbplats:
 
 1. När samtycke har lästs in på sidan (med andra ord vid varje sidinläsning)
 1. Som en del av en CMP-krok eller händelseavlyssnare som upptäcker ändringar i medgivandeinställningarna
+
+### `setConsent` syntax
 
 >[!NOTE]
 >
