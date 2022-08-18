@@ -2,7 +2,7 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: dd4a150351b5e0c41586cf663324aeb345a896e4
+source-git-commit: 50f205a5ddd9ec264d7390911fef45dc595ca6a1
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 0%
@@ -15,7 +15,14 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Processen som beskrivs här krävs endast för partners som skickar producerade (offentliga) destinationer. Om du skapar ett privat mål för eget bruk behöver du inte producera och dela dessa material med Adobe.
+>* Processen som beskrivs här krävs endast för partners som skickar producerade (offentliga) destinationer. Om du skapar ett privat mål för eget bruk behöver du inte producera och dela dessa material med Adobe.
+>
+>* Adobe standardsvarstid för att granska begäranden om publicering är fem arbetsdagar.
+>
+>* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter ditt ursprungliga inskick, måste du skicka in en ny begäran om målpublicering när du har gjort uppdateringarna.
+>
+>* Även efter att målet finns i Experience Platform-katalogen måste du, om du behöver göra några uppdateringar av dina konfigurationer, skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna.
+
 
 Innan destinationen kan publiceras på [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md)måste du ge Adobe viss information om destinationen och testningen du utförde för att säkerställa att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
 
@@ -28,15 +35,6 @@ På den här sidan visas all information du behöver ange när du skickar eller 
 * Bevis på att du har skickat in en begäran om målpublicering för destinationen med [målpublicerings-API](./destination-publish-api.md).
 * A documentation PR (pull request), following the instructions descriin the [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md).
 * En bildfil som visas som logotyp för målkortet i Experience Platform-katalogen.
-
->[!IMPORTANT]
->
->* Adobe standardsvarstid för att granska begäranden om publicering är fem arbetsdagar.
->
->* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter ditt ursprungliga inskick, måste du skicka in en ny begäran om målpublicering när du har gjort uppdateringarna.
->
->* Även efter att målet finns i Experience Platform-katalogen måste du, om du behöver göra några uppdateringar av dina konfigurationer, skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna.
-
 
 Du hittar detaljerad information om varje objekt i avsnitten nedan:
 

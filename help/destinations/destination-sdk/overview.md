@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt, baserat på valfritt dataformat och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: abc9b9857e4a93a334440e855ca0ae562c695df1
+source-git-commit: 179d5697e1b8d14f613a512f51bcea3575b7a832
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '740'
 ht-degree: 1%
 
 ---
@@ -74,11 +74,11 @@ Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 
 1. Om du är en ISV eller SI läser du informationen om hur du får åtkomst i avsnittet ovan. [Adobe Experience Platform Activation](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) kunder kan hoppa över det här steget.
 2. [Begäran om att etablera en Experience Platform-sandlåda](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) och aktivera målredigeringsbehörigheten.
-3. [Bygg din integration](./configure-destination-instructions.md) följa produktdokumentationen.
-4. [Testa integreringen](./test-destination.md) följa produktdokumentationen.
-5. [Skicka in integreringen](./submit-destination.md) för Adobe granskning (standardsvarstiden är fem arbetsdagar).
-6. Om du är en ISV- eller SI-utvecklare [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida på Experience League för destinationen.
-7. När Adobe har godkänt din integrering visas den i [Experience Platform-katalog](/help/destinations/catalog/overview.md).
+3. Bygg er integration. Följ anvisningarna i produktdokumentationen för att konfigurera [mål för direktuppspelning](./configure-destination-instructions.md) eller [filbaserade mål (beta)](./configure-file-based-destination-instructions.md).
+4. Testa integreringen. Följ anvisningarna i produktdokumentationen för att testa [mål för direktuppspelning](./test-destination.md) eller [filbaserade mål (beta)](./file-based-destination-testing-overview.md).
+5. Om du är en ISV- eller SI-utvecklare [produktionsintegrering](./overview.md#productized-custom-integrations), [skicka in integreringen](./submit-destination.md) för Adobe granskning (standardsvarstiden är fem arbetsdagar).
+6. Om du är en ISV eller SI som skapar en produktiverad integrering använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida på Experience League för destinationen.
+7. När integreringen godkänts av Adobe visas den i [Experience Platform-katalog](/help/destinations/catalog/overview.md).
 8. Om du vill uppdatera integreringen följer du samma process.
 
 ## Referens  {#reference}
