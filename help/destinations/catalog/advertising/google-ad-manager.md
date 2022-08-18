@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: f163b1e3c60953192b2ddf543eb4f3e8df88799b
+source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
 workflow-type: tm+mt
-source-wordcount: '830'
+source-wordcount: '877'
 ht-degree: 1%
 
 ---
@@ -58,7 +58,8 @@ Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och har inte akt
 
 >[!NOTE]
 >
->Tillåtelselista är obligatoriskt innan du konfigurerar din första [!DNL Google Ad Manager] mål i Platform. Se till att tillåtelselista-processen som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
+>Du måste ange Tillåt innan du konfigurerar din första [!DNL Google Ad Manager] mål i Platform. Se till att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
+>Undantaget till den här regeln är för [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
 
 Innan du skapar [!DNL Google Ad Manager] mål i plattform måste du kontakta [!DNL Google] för att Adobe ska föras upp på listan över tillåtna dataleverantörer och för att ditt konto ska läggas till tillåtelselista. Kontakt [!DNL Google] och lämna följande information:
 
