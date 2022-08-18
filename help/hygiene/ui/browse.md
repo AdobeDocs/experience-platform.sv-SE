@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 525e2520bb6140b00cfb7e68579eb2d0288ad9b1
+source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 >
 >Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
 
-När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datahygienprocess, t.ex. en schemalagd TTL-tid (time to live) för en datauppsättning, som inkluderar dess nuvarande status och andra relaterade detaljer.
+När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datahygienprocess, t.ex. ett schemalagt utgångsdatum för datauppsättningen, som inkluderar dess aktuella status och andra relaterade detaljer.
 
 Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Adobe Experience Platform användargränssnitt.
 
@@ -31,7 +31,7 @@ När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet vi
 
 ![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
-<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of time-to-live (TTL) schedules for datasets.
+<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of scheduled dataset expirations.
 
 ![Image showing the [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png) -->
 
@@ -41,10 +41,10 @@ Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.pn
 
 | Filter | Beskrivning |
 | --- | --- |
-| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Pending]**: Jobbet har skapats men har inte körts än. A [TTL-begäran (time-to-live) för datauppsättning](./ttl.md) antar denna status före det schemalagda raderingsdatumet. När borttagningsdatumet har passerats uppdateras statusen till [!UICONTROL Executing] om inte jobbet har avbrutits i förväg.</li><li>**[!UICONTROL Executing]**: TTL-begäran har startats och bearbetas för närvarande.</li><li>**[!UICONTROL Cancelled]**: Jobbet har avbrutits som en del av en manuell användarbegäran.</li></ul> |
+| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Pending]**: Jobbet har skapats men har inte körts än. A [förfallobegäran för datauppsättning](./dataset-expiration.md) antar denna status före det schemalagda raderingsdatumet. När borttagningsdatumet har passerats uppdateras statusen till [!UICONTROL Executing] om inte jobbet har avbrutits i förväg.</li><li>**[!UICONTROL Executing]**: Datauppsättningens förfallobegäran har startats och bearbetas för närvarande.</li><li>**[!UICONTROL Cancelled]**: Jobbet har avbrutits som en del av en manuell användarbegäran.</li></ul> |
 | [!UICONTROL Date created] | Filtrera baserat på när arbetsordern skapades. |
-| [!UICONTROL Expiration date] | Filtrera TTL-begäranden baserat på det schemalagda raderingsdatumet för datauppsättningen i fråga. |
-| [!UICONTROL Date updated] | Filtrera TTL-begäranden baserat på när arbetsordern senast uppdaterades. TTL-skapelser och förfallodatum räknas som uppdateringar. |
+| [!UICONTROL Expiration date] | Förfrågningar om förfallodatum för filterdatauppsättningen baserat på det schemalagda raderingsdatumet för den aktuella datauppsättningen. |
+| [!UICONTROL Date updated] | Förfrågningar om förfallodatum för filterdatauppsättning baserat på när arbetsordern senast uppdaterades. Skapanden och förfallodatum räknas som uppdateringar. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -68,12 +68,12 @@ The details of a consumer delete request are read-only, displaying its basic att
 
 ![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
 
-### Dataset TTL details -->
+### Dataset expiration details -->
 
-Detaljsidan för en datauppsättnings-TTL innehåller information om dess grundläggande attribut, inklusive det schemalagda förfallodatumet på de dagar som återstår innan borttagningen sker. I den högra listen kan du använda kontroller för att redigera eller avbryta TTL-värdet.
+Detaljsidan för en datauppsättnings förfallodatum innehåller information om dess grundläggande attribut, inklusive det schemalagda förfallodatumet på de dagar som återstår innan borttagningen sker. I den högra listen kan du använda kontroller för att redigera eller avbryta förfallotiden.
 
-![Bild som visar informationssidan för en TTL-arbetsorder för datauppsättning](../images/ui/browse/ttl-details.png)
+![Bild som visar informationssidan för en arbetsorder för förfallodatum för datauppsättning](../images/ui/browse/ttl-details.png)
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i guiden [schemalägga en datamängd-TTL](./ttl.md).
+I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i guiden [schemalägga förfallodatum för en datauppsättning](./dataset-expiration.md).
