@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 0267b0141f7b6944ea65bc413f14cc9580081387
+source-git-commit: 52197a6c009fb5b0b6037a4fef3c98ad7c327e2e
 workflow-type: tm+mt
-source-wordcount: '1630'
+source-wordcount: '1632'
 ht-degree: 0%
 
 ---
@@ -53,15 +53,15 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 >title="Utvärderingsmetoder"
 >abstract="Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering."
 
-Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
-
-### Direktuppspelningssegmentering {#streaming}
-
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_streaming"
 >title="Utvärdering av strömning"
->abstract="Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering."
+>abstract="Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html" text="Utvärdera händelser i nära realtid med strömmande segmentering"
+
+Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
+
+### Direktuppspelningssegmentering {#streaming}
 
 Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
