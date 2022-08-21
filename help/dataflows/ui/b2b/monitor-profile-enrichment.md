@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 842fe74b0b751c515a4faee437e1f94bd0662e11
+source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,23 @@ Följande mått är tillgängliga för lead-till-konto-matchande profilberikande
 | **[!UICONTROL Last successful run]** | Anger datum och tid för den senaste lyckade lead-till-kontomatchningsjobbkörningen. |
 | **[!UICONTROL Status]** | Anger status (slutförd, misslyckades eller bearbetad) för lead-till-kontomatchningsjobbet. |
 
+## Profil för prediktiv analys av lead- och kontopoäng {#predictive-lead-to-account-scoring}
+
+The [!UICONTROL Predictive lead and account scoring] på kontrollpanelen visas grundläggande mått och daglig jobbkörningsstatus som är specifik för [Prediktiv lead- och kontobedömning](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md) profilberikning.
+
+![Profil för prediktiv analys av lead- och kontopoäng](/help/dataflows/assets/ui/b2b/predictive-lead-and-account-scoring.png)
+
+Följande mätvärden är tillgängliga för prediktiva lead- och kontopoängsprofiler:
+
+| Mått | Beskrivning |
+| --------- | ---------- |
+| **[!UICONTROL Job start]** | Anger startdatum och starttid för körningen av det prediktiva lead- och kontobedömningsjobbet. |
+| **[!UICONTROL Processing time]** | Den totala tid det tog för jobbet att slutföras. |
+| **[!UICONTROL Score name]** | Jobbets poängnamn. |
+| **[!UICONTROL Profile type]** | Typ av poäng: <ul><li>Person</li><li>Konto</li></ul>. |
+| **[!UICONTROL Job type]** | Typ av jobb:<ul><li>Poäng</li><li>Utbildning</li>. |
+| **[!UICONTROL Status]** | Anger status (slutförd, misslyckad eller bearbetning) för det prediktiva lead- och kontobedömningsjobbet. |
+
 ## Gränssnittskontroller {#ui-controls}
 
 I det här avsnittet beskrivs olika gränssnittsalternativ (UI) i övervakningsgränssnittet, som gör att du kan filtrera mätvärdena som visas på sidan.
@@ -79,3 +96,4 @@ Genom att följa den här självstudiekursen kan du nu övervaka och förstå m�
 * [Relaterade konton i realtid CDP B2B](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)
 * [Fliken Relaterade konton i gränssnittsguiden för kontoprofiler](/help/rtcdp/accounts/account-profile-ui-guide.md)
 * [Lead till kontomatchning i realtid CDP B2B](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md)
+* [Prediktiv lead- och kontobedömning i realtid CDP B2B](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)

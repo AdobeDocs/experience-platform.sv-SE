@@ -2,9 +2,9 @@
 title: Exempel på segmenteringsanvändning för CDP B2B Edition i realtid
 description: En översikt över de olika användningsområdena för CDP B2B Edition i realtid.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 6a108a0bfde3c8f44c1a1221b06581f0f69b5203
+source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1183'
 ht-degree: 0%
 
 ---
@@ -105,6 +105,12 @@ Hitta alla personer som är en &quot;beslutsfattare&quot; för alla stängda aff
 Hitta alla personer som arbetar på en HR-avdelning och som är kopplade till något konto *eller något av kontots relaterade konton* som har minst en öppen möjlighet till ett värde av minst 1 miljon USD. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM Business Opportunity] klassen.
 
 ![Gränssnitt som visar segmentering för relaterade konton](../assets/segmentation/segmentation-related-accounts.png)
+
+### Exempel 9: Använd lead scores och/eller account scores för att kvalificera profil {#account-scoring}
+
+Hitta alla profiler med lead score över 80.
+
+![Användargränssnitt som visar segmentering för prediktiv lead- och kontobedömning](../assets/segmentation/segmentation-predictive-lead-and-account-scoring.png)
 
 ## Nästa steg {#next-steps}
 
