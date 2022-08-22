@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;Query editor;
 solution: Experience Platform
-title: Användargränssnittshandbok för frågetjänst
+title: Handbok för autentiseringsuppgifter för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: a5e8b4df78d8dff58e000030d209606b46a582e8
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
 source-wordcount: '1122'
 ht-degree: 0%
@@ -49,7 +49,7 @@ Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utf�
 
 Mer information om hur du tilldelar behörigheter finns i dokumentationen om [åtkomstkontroll](../../access-control/home.md).
 
-Alla behörigheter som krävs har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfallodatum för inloggningsuppgifter.
+Alla behörigheter som krävs har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfalloinloggningsuppgifter.
 
 ### Generera autentiseringsuppgifter
 

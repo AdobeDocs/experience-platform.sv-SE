@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;exportjobb;api;
 solution: Experience Platform
-title: API-slutpunkt för exportjobb
+title: API-slutpunkt för segmentexportjobb
 topic-legacy: developer guide
 description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation Service API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1680'
+source-wordcount: '1682'
 ht-degree: 1%
 
 ---
 
-# Slutpunkt för exportjobb
+# Slutpunkt för segmentexportjobb
 
 Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda `/export/jobs` -slutpunkten i Adobe Experience Platform Segmentation API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 

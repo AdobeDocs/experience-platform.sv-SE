@@ -1,20 +1,24 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;Politik;API-baserad tillämpning;datastyrning
 solution: Experience Platform
-title: API-slutpunkt för principer
+title: API-slutpunkt för dataanvändningsprinciper
 topic-legacy: developer guide
 description: Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1813'
+source-wordcount: '1840'
 ht-degree: 0%
 
 ---
 
-# Profilslutpunkt
+# Slutpunkt för policyer för dataanvändning
 
 Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform]. The `/policies` slutpunkt i [!DNL Policy Service API] kan ni programmässigt hantera dataanvändningsprinciper för organisationen.
+
+>[!IMPORTANT]
+>
+>Den här slutpunkten ska inte blandas ihop med `/policies` slutpunkt i [API för åtkomstkontroll](../../access-control/abac/api/policies.md), som används för att hantera åtkomstkontrollprinciper.
 
 ## Komma igång
 

@@ -1,23 +1,27 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;Attributbaserad åtkomstkontroll;attributbaserad åtkomstkontroll
 solution: Experience Platform
-title: API-slutpunkt för principer
+title: API-slutpunkt för åtkomstkontrollprinciper
 description: Med slutpunkten /policies i API:t för attributbaserad åtkomstkontroll kan du programmässigt hantera principer i Adobe Experience Platform.
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1413'
+source-wordcount: '1443'
 ht-degree: 0%
 
 ---
 
-# Profilslutpunkt
+# Slutpunkt för åtkomstkontrollprinciper
 
 >[!IMPORTANT]
 >
 >Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
 
-Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. The `/policies` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör det möjligt att programmässigt hantera principer, inklusive information om reglerna som styr dem samt deras respektive ämnesvillkor.
+Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Dessa profiler kan antingen vara lokala eller globala och kan åsidosätta andra principer. The `/policies` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör det möjligt att programmässigt hantera principer, inklusive information om reglerna som styr dem samt deras respektive ämnesvillkor.
+
+>[!IMPORTANT]
+>
+>Den här slutpunkten ska inte blandas ihop med `/policies` slutpunkt i [API för datastyrning](../../../data-governance/api/policies.md), som används för att hantera dataanvändningsprinciper.
 
 ## Komma igång
 

@@ -1,13 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;dataförberedelse;api guide;scheman;
-solution: Experience Platform
-title: API-slutpunkt för scheman
-topic-legacy: schemas
-description: Du kan använda slutpunkten "/functions" i Adobe Experience Platform API för att validera mappningsuttrycken och visa tillgängliga mappningsmängdsfunktioner.
+title: API-slutpunkt för funktioner
+description: Du kan använda slutpunkten "/functions" i API:t för dataförberedelser för att validera mappningsuttrycken och visa tillgängliga mappningsuppsättningsfunktioner.
 exl-id: dc24bfb4-2d96-4757-a610-0c2ee960d41d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '209'
 ht-degree: 0%
 
 ---

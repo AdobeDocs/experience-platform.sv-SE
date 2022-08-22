@@ -1,5 +1,5 @@
 ---
-title: Kundprofilöversikt i realtid
+title: Översikt över kundprofiler i realtid
 description: Den här videon ger en grundläggande förståelse för kundprofilen i realtid inom Adobe Experience Platform och visar hur du bläddrar bland profiler i plattformens användargränssnitt.
 product: experience platform
 type: Documentation
@@ -8,21 +8,20 @@ kt: 2701
 audience: all
 doc-type: video
 activity: understand
-translation-type: tm+mt
-source-git-commit: cad9c690be986961aea2969ef0ade975f33a8ee5
+exl-id: cdc91194-771f-4026-808f-97d70db436d9
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '117'
 ht-degree: 0%
 
 ---
 
-
 # Översikt över kundprofiler i realtid
 
-Den här videon ger en grundläggande förståelse för kundprofilen i realtid inom Adobe Experience Platform och visar hur data från flera källor samlas i en central profil för varje enskild kund. Om du vill veta mer om funktioner och funktioner för kundprofiler i realtid börjar du med att läsa [Kundprofilöversikt i realtid](../home.md).
+Den här videon ger en grundläggande förståelse för kundprofilen i realtid inom Adobe Experience Platform och visar hur data från flera källor samlas i en central profil för varje enskild kund. Om du vill veta mer om funktioner och funktioner för kundprofiler i realtid börjar du med att läsa [Översikt över kundprofiler i realtid](../home.md).
 
 >[!NOTE]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [Användargränssnittshandboken för profiler](../ui/user-guide.md).
+>Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den senaste informationen finns i [Användargränssnittshandbok för profil](../ui/user-guide.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/27251?quality=12&learn=on&captions=eng)

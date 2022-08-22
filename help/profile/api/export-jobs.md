@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
-title: API-slutpunkt för exportjobb
+title: API-slutpunkt för profilexportjobb
 topic-legacy: guide
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1519'
 ht-degree: 0%
 
 ---
 
-# Slutpunkt för exportjobb
+# Slutpunkt för profilexportjobb
 
 [!DNL Real-time Customer Profile] Med kan ni skapa en enda vy över enskilda kunder genom att sammanföra data från flera källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning. Till exempel målgruppssegment från [!DNL Profile] data kan exporteras för aktivering och profilattribut kan exporteras för rapportering.
 
