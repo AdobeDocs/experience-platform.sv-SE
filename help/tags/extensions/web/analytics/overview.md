@@ -2,7 +2,7 @@
 title: Adobe Analytics Extension - översikt
 description: Läs om Adobe Analytics-taggtillägget i Adobe Experience Platform.
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
-source-git-commit: 4b0b4cf7c262940bd21965d928cc7d0cf12d15d1
+source-git-commit: 9fe94af349e1d9c979c78dce69c5180086df3adb
 workflow-type: tm+mt
 source-wordcount: '2253'
 ht-degree: 2%
@@ -222,7 +222,7 @@ Konfigurera fältbeskrivningar för de globala Cookies-inställningar som använ
 
 Unikt värde som representerar en kund både online och offline.
 
-Se [visitorID](https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html).
+Se [visitorID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html).
 
 ### Namnutrymme för besökare
 
