@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c4cd691eeae9e27dd7616dc19672dc5d08b8cec7
+source-git-commit: a82381d6133fe793fc0f4be38b6e064684581afb
 workflow-type: tm+mt
-source-wordcount: '2254'
+source-wordcount: '2363'
 ht-degree: 1%
 
 ---
@@ -177,15 +177,10 @@ CDP B2B Edition i realtid bygger på Real-time Customer Data Platform (Real-time
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Lead till kontomatchning | Lead till kontomatchning gör att du kan gå med i kända personprofiler till kontoprofiler. Sedan kan ni segmentera och rikta in data i ett B2B-sammanhang som konton eller affärsmöjligheter. Dagliga jobb använder både deterministiska och sannolika faktorer för att matcha personprofiler som inte redan är kopplade till något konto mot ett bäst matchat konto. Du kan sedan bestämma om du vill ta med sådana matchningar i segmentdefinitionerna |
+| Lead till kontomatchning | Lead till kontomatchning gör att du kan gå med i kända personprofiler till kontoprofiler. Sedan kan ni segmentera och rikta in data i ett B2B-sammanhang som konton eller affärsmöjligheter. Dagliga jobb använder både deterministiska och sannolika faktorer för att matcha personprofiler som inte redan är kopplade till något konto mot ett bäst matchat konto. Du kan sedan bestämma om du vill ta med sådana matchningar i segmentdefinitionerna. <br><br>Mer information finns i dokumentet om [lead to account matching](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md). Instruktioner om hur du konfigurerar lead till kontomatchning finns i [Användargränssnittshandbok för kontoprofil](../../rtcdp/account/../accounts/account-profile-ui-guide.md?lang=en#configure-lead-to-account-matching).</li> |
+| Prediktiv lead- och kontobedömning | Predictive Lead and Account Scoring använder en trädbaserad (slumpmässig skog/övertoningsförbättring) maskininlärningsmetod som innebär inlärning från och prediktion för konverteringshändelser i affärsmöjlighetsfasen och sammanläggning av personaktiviteter på kontonivån för att producera kontouppgifterna. De viktigaste inflytelserika faktorerna finns också tillgängliga både på aggregat- och enhetsnivå för att hjälpa B2B-marknadsförarna att bättre förstå vilka element som låg bakom poängen. <br><br>Mer information finns i dokumentet om [prediktiv lead- och kontobedömning](../../rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md). Mer information om hur du hanterar dina poäng finns i handboken på [hantering av prediktiv lead- och kontobedömning i Real-time Customer Data Platform, B2B Edition.](../../rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md) |
 
-Mer information finns i dokumentet om [lead to account matching](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
-
-En guide om hur du övervakar profilberikning finns i dokumentet om [övervaka profilberikning i användargränssnittet](../../dataflows/ui/b2b/monitor-profile-enrichment.md).
-
-Instruktioner om hur du konfigurerar lead till kontomatchning finns i [Användargränssnittshandbok för kontoprofil](../../rtcdp/account/../accounts/account-profile-ui-guide.md?lang=en#configure-lead-to-account-matching).
-
-Mer information om CDP B2B Edition i realtid finns i [Översikt över CDP B2B i realtid](../../rtcdp/overview.md).
+En guide om hur du övervakar profilberikning finns i dokumentet om [övervaka profilberikning i användargränssnittet](../../dataflows/ui/b2b/monitor-profile-enrichment.md). Mer information om CDP B2B Edition i realtid finns i [Översikt över CDP B2B i realtid](../../rtcdp/overview.md).
 
 ## Kundprofil i realtid {#profile}
 
