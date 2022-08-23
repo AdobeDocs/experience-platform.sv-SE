@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
-source-git-commit: 5e7ceda9ed126a2c003fb51302393631e0425cd2
+source-git-commit: 2a507b4fe5b7c9dc523ceb5b2f39becf9e574ed9
 workflow-type: tm+mt
-source-wordcount: '201'
-ht-degree: 4%
+source-wordcount: '317'
+ht-degree: 3%
 
 ---
 
@@ -14,7 +14,22 @@ ht-degree: 4%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Dataprep](#data-prep)
 - [Källor](#sources)
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för inmatning av poster med varningar | Dataprep lokaliserar nu varningar (icke-kritiska fel) till fälten och tillåter att resten av raden importeras. Alla mappningsomformningsfel rapporteras nu som varningar och rader som är delvis inkapslade betraktas som lyckade, med en varning.  Övervakning stöds även för poster med varningar och diagnostikinformation. Det går för närvarande bara att få del av poster med varningar att strömma data. Läs dokumentationen om [importera poster med varningar](../../sources/tutorials/ui/monitor-streaming.md) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
 ## Källor {#sources}
 
