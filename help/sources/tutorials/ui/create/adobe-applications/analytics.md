@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 2cb6803ecf56dd9a7d9614c72e3a1ff4e76ba966
+source-git-commit: 1d77ad44c7123f32301257c238299b7c16e2c92b
 workflow-type: tm+mt
-source-wordcount: '1603'
+source-wordcount: '2047'
 ht-degree: 0%
 
 ---
@@ -151,6 +151,82 @@ I följande dokumentation finns mer information om dataprep, beräkningsfält oc
 * [Översikt över datapreflight](../../../../../data-prep/home.md)
 * [Funktioner för datapersonmappning](../../../../../data-prep/functions.md)
 * [Lägg till beräknade fält](../../../../../data-prep/ui/mapping.md#calculated-fields)
+
+### Filtrera för [!DNL Profile Service] (Beta)
+
+>[!IMPORTANT]
+>
+>Stöd för filtrering [!DNL Analytics] data finns för närvarande i betaversion och är inte tillgängliga för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+
+När du är klar med mappningarna för [!DNL Analytics] kan du använda filtreringsregler och -villkor för att selektivt inkludera eller exkludera data från konsumtion i [!DNL Profile Service]. Stöd för filtrering finns endast för [!DNL Analytics] data och data filtreras endast innan de anges [!DNL Profile.] Alla data hämtas in i sjön.
+
+#### Filtrering på radnivå
+
+Du kan filtrera data för [!DNL Profile] intag på radnivå och kolumnnivå. Med filtrering på radnivå kan du definiera villkor som strängen innehåller, är lika med, börjar eller slutar med. Du kan också använda filtrering på radnivå för att koppla villkor med `AND` och `OR`och negera villkor med `NOT`.
+
+Filtrera [!DNL Analytics] på radnivå, markera **[!UICONTROL Row filter]**.
+
+![radfilter](../../../../images/tutorials/create/analytics/row-filter.png)
+
+Använd den vänstra listen för att navigera i schemahierarkin och välj det schemaattribut du vill ha för att ytterligare detaljgranska ett visst schema.
+
+![vänster-räl](../../../../images/tutorials/create/analytics/left-rail.png)
+
+När du har identifierat attributet som du vill konfigurera markerar du och drar attributet från den vänstra listen till filtreringspanelen.
+
+![filtreringspanel](../../../../images/tutorials/create/analytics/filtering-panel.png)
+
+Om du vill konfigurera olika villkor väljer du **[!UICONTROL equals]** och välj sedan ett villkor i listrutan som visas.
+
+Listan över konfigurerbara villkor omfattar:
+
+* [!UICONTROL equals]
+* [!UICONTROL does not equal]
+* [!UICONTROL starts with]
+* [!UICONTROL ends with]
+* [!UICONTROL does not end with]
+* [!UICONTROL contains]
+* [!UICONTROL does not contain]
+* [!UICONTROL exists]
+* [!UICONTROL does not exist]
+
+![villkor](../../../../images/tutorials/create/analytics/conditions.png)
+
+Ange sedan de värden som du vill inkludera baserat på det attribut som du har valt. I exemplet nedan [!DNL Apple] och [!DNL Google] väljs för konsumtion som en del av **[!UICONTROL Manufacturer]** -attribut.
+
+![include-manufacturer](../../../../images/tutorials/create/analytics/include-manufacturer.png)
+
+Om du vill specificera filtervillkoren ytterligare lägger du till ett attribut från schemat och lägger sedan till värden baserade på det attributet. I exemplet nedan är **[!UICONTROL Model]** attribut läggs till och modeller som [!DNL iPhone 13] och [!DNL Google Pixel 6] filtreras för förtäring.
+
+![include-model](../../../../images/tutorials/create/analytics/include-model.png)
+
+Om du vill lägga till en ny behållare markerar du ellipserna (`...`) längst upp till höger i filtreringsgränssnittet och välj sedan **[!UICONTROL Add container]**.
+
+![add-container](../../../../images/tutorials/create/analytics/add-container.png)
+
+När en ny behållare har lagts till väljer du **[!UICONTROL Include]** och sedan markera **[!UICONTROL Exclude]** i listrutan som visas.
+
+![exclude](../../../../images/tutorials/create/analytics/exclude.png)
+
+Slutför sedan samma process genom att dra schemaattribut och lägga till deras motsvarande värden som du vill utesluta från filtreringen. I exemplet nedan är [!DNL iPhone 12], [!DNL iPhone 12 mini]och [!DNL Google Pixel 5] filtreras alla från att exkluderas från **[!UICONTROL Model]** attribute, landscape is exclude from the **[!UICONTROL Screen orientation]** och modellnummer [!DNL A1633] är exkluderad från **[!UICONTROL Model number]**.
+
+När du är klar väljer du **[!UICONTROL Next]**.
+
+![exclude-examples](../../../../images/tutorials/create/analytics/exclude-examples.png)
+
+#### Filtrering på kolumnnivå
+
+Välj **[!UICONTROL Column filter]** från rubriken för att använda filtrering på kolumnnivå.
+
+![column-filter](../../../../images/tutorials/create/analytics/column-filter.png)
+
+Sidan uppdateras till ett interaktivt schematräd och visar dina schemaattribut på kolumnnivå. Här kan du välja de datakolumner som du vill utesluta från [!DNL Profile] intag. Du kan också expandera en kolumn och välja särskilda attribut för uteslutning.
+
+Som standard är alla [!DNL Analytics] gå till [!DNL Profile] och den här processen gör det möjligt att undanta grenar av XDM-data från [!DNL Profile] intag.
+
+När du är klar väljer du **[!UICONTROL Next]**.
+
+![kolumner-markerade](../../../../images/tutorials/create/analytics/columns-selected.png)
 
 ### Ange information om dataflöde
 
