@@ -4,9 +4,9 @@ title: Stödlinje för instrumentpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
 workflow-type: tm+mt
-source-wordcount: '1516'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -82,7 +82,6 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 >id="platform_dashboards_segments_audiencesize"
 >title="Målgruppsstorlek"
 >abstract="Den här widgeten visar det totala antalet sammanfogade profiler i det valda segmentet. Det här numret beror på den sammanfogningsprincip som används för dina data och är korrekt vid tidpunkten för den senaste ögonblicksbilden."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Audience size]** visar det totala antalet sammanfogade profiler i det markerade segmentet när ögonblicksbilden togs. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
 
@@ -96,7 +95,6 @@ Mer information om fragment och sammanfogade profiler får du om du börjar med 
 >id="platform_dashboards_segments_audiencesizetrend"
 >title="Trend för målgruppsstorlek"
 >abstract="Den här widgeten innehåller information om det totala antalet profiler som uppfyller villkoren i **alla** segmentdefinition, som den tagits under den dagliga ögonblicksbilden, för de senaste 30 dagarna, 90 dagarna eller 12 månaderna."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size-trend" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Audience size trend]** widgeten innehåller en illustration av linjediagram för det totala antalet profiler som uppfyller villkoren i **alla** segmentdefinition under en viss tidsperiod. Trenden för målgruppens storlek kan visas under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Publiken visas på y-axeln och tiden på x-axeln.
 
@@ -151,7 +149,6 @@ Med den här widgeten kan du optimera din segmenteringsstrategi genom att visual
 >id="platform_dashboards_segments_identityoverlap"
 >title="Identitetsöverlappning"
 >abstract="Den här widgeten visar överlappningen av profiler i ditt segment som innehåller båda valda identiteter. Cirklarna visar den relativa storleken för varje identitet. Antalet profiler som innehåller båda namnutrymmena representeras av överlappningen mellan cirklarna."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#identity-overlap" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Identity overlap]** widgeten visar ett Venndiagram, eller ett uppsättningsdiagram, som visar överlappningen mellan profiler i segmentet som innehåller flera identiteter.
 
@@ -169,7 +166,6 @@ Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identi
 >id="platform_dashboards_segments_profilesbyidentity"
 >title="Profiler efter identitet"
 >abstract="Den här widgeten visar hur identiteterna fördelar sig för alla sammanslagna profiler i det valda segmentet."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#profiles-by-identity" text="Läs mer i dokumentationen"
 
 The **[!UICONTROL Profiles by identity]** widgeten visar uppdelningen av identiteter i alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler efter identitet kan vara högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera associerade identiteter. Med andra ord kan de värden som visas för varje identitet tillsammans bli större än den totala målgruppsstorleken i segmentet, eftersom om en kund interagerar med varumärket i mer än en kanal kan flera identiteter kopplas till den enskilda kunden.
 
