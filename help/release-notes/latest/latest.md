@@ -2,9 +2,9 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 0e23475fd120858b59794742860b7afececfece2
+source-git-commit: 24f16e315607a1076ff2efef129d9e97040a9500
 workflow-type: tm+mt
-source-wordcount: '1827'
+source-wordcount: '1777'
 ht-degree: 1%
 
 ---
@@ -61,7 +61,7 @@ Mer information om kundens AI finns i [Kund-AI](../../intelligent-services/custo
 
 ## [!DNL Dashboards] {#dashboards}
 
-Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilka ni kan få viktiga insikter om organisationens data, som de fångats in under dagliga ögonblicksbilder.
+Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilka ni kan få viktiga insikter om organisationens data, som de har fångats in under dagliga ögonblicksbilder.
 
 **Uppdaterade funktioner**
 
@@ -155,7 +155,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Allmän tillgänglighet för [!DNL Google BigQuery] källa | Använd [!DNL Google BigQuery] källa att importera data från [!DNL Google BigQuery] data warehouse till Experience Platform. Mer information finns i dokumentationen för [[!DNL Google BigQuery] källa](../../sources/connectors/databases/bigquery.md). |
 | [!DNL Teradata Vantage] källa (beta) | Använd [!DNL Teradata Vantage] källa till import av data från hybridmiljöer med flera moln till Experience Platform. Mer information finns i dokumentationen för [[!DNL Teradata Vantage] källa](../../sources/connectors/databases/teradata-vantage.md). |
 | Stöd för olika regioner för Adobe Analytics | Du kan nu importera rapportsviter från valfri region (USA, Storbritannien eller Singapore). Rapportsviterna måste mappas till samma organisation som den Experience Platform Sandbox-instans i vilken källanslutningen skapas. Mer information finns i guiden [skapa en Adobe Analytics-källanslutning i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/analytics.md). |
-| API-stöd för on-demand-inmatning | Använd on-demand-inmatning för att skapa ad hoc-flöden för ett givet dataflöde med [!DNL Flow Service] API. Skapade flödeskörningar måste anges som engångsintag. Mer information finns i guiden [skapa en flödeskörning för on-demand-inmatning med API](../../sources/tutorials/api/on-demand-ingestion.md) för mer information. |
 
 {style=&quot;table-layout:auto&quot;}
 
