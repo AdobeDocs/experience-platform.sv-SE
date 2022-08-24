@@ -5,18 +5,14 @@ title: Google BigQuery Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter Google BigQuery till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 7a62dcf1e9712d3c0c0d148b953e50dc11c91f1b
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Google BigQuery] koppling
-
->[!NOTE]
->
->The [!DNL Google BigQuery] är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
+# [!DNL Google BigQuery]
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -40,6 +36,7 @@ Ansluta [!DNL Google BigQuery] till Platform måste du generera värden för fö
 | `clientID` | Klient-ID:t är hälften av ditt [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
 | `clientSecret` | Klienthemligheten är den andra halvan av din [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
 | `refreshToken` | Med uppdateringstoken kan du hämta nya åtkomsttoken för ditt API. Åtkomsttoken har begränsad livslängd och kan förfalla under projektets gång. Du kan använda uppdateringstoken för att autentisera och begära efterföljande åtkomsttoken för ditt projekt vid behov. |
+| `largeResultsDataSetId` | Det färdiga  [!DNL Google BigQuery] ID för datauppsättning som krävs för att aktivera stöd för stora resultatuppsättningar. |
 
 Detaljerade instruktioner om hur du genererar OAuth 2.0-autentiseringsuppgifter för [!DNL Google] API:er, se följande [[!DNL Google] Autentiseringsguide för OAuth 2.0](https://developers.google.com/identity/protocols/oauth2).
 

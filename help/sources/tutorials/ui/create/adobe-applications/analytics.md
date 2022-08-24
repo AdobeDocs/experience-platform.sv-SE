@@ -6,20 +6,20 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 1d77ad44c7123f32301257c238299b7c16e2c92b
+source-git-commit: ae30ac2fe1c6366c987748e198b9dc3530bc512a
 workflow-type: tm+mt
-source-wordcount: '2047'
+source-wordcount: '2076'
 ht-degree: 0%
 
 ---
 
 # Skapa en Adobe Analytics-källanslutning i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att ta med [!DNL Analytics] Rapportera Suite-data till Adobe Experience Platform.
+I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra data från Adobe Analytics rapportsvit till Adobe Experience Platform.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
 * [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [Kundprofil i realtid](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -30,7 +30,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma betydelse för alla kunder och finns i [!DNL Analytics] källdata och [!DNL Analytics] schemafältgrupper.
-* **Eget attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i [!DNL Analytics]. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en Report Suite, och de kan skilja sig åt när det gäller användningen från Report Suite till Report Suite. Anpassade attribut är eVars, props och lists. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) för mer information om eVars.
+* **Eget attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i [!DNL Analytics]. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) för mer information om eVars.
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är alla användardefinierade och betraktas varken som standardattribut eller anpassade attribut.
 * **Eget namn**: Vänliga namn är etiketter som tillhandahålls av människor för anpassade variabler i en [!DNL Analytics] implementering. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) om du vill ha mer information om egna namn.
 
@@ -48,13 +48,17 @@ Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe An
 
 The **[!UICONTROL Analytics source add data]** innehåller en lista med [!DNL Analytics] skapa en källanslutning med rapportsvitdata.
 
-En rapportsvit kan bara importeras med ett enda aktivt dataflöde. Den kan inte användas i flera dataflöden. Dessutom måste en rapportserie tillhöra samma region som den plattformssandlådeinstans där källanslutningen skapas. En rapportsvit som inte kan markeras har redan importerats, antingen i den här sandlådan eller i en annan sandlåda.
+En rapportsvit är en databehållare som utgör grunden för [!DNL Analytics] rapportering. En organisation kan ha många rapportsviter, som alla innehåller olika datauppsättningar.
+
+Du kan importera rapportsviter från alla regioner (USA, Storbritannien och Singapore) så länge de mappas till samma organisation som den Experience Platform sandlådeinstans i vilken källanslutningen skapas. En rapportsvit kan bara importeras med ett enda aktivt dataflöde. En rapportsvit som inte kan markeras har redan importerats, antingen i sandlådan som du använder eller i en annan sandlåda.
 
 Flera ingående anslutningar kan göras för att överföra flera rapportsviter till samma sandlåda. Om rapportsviterna har olika scheman för variabler (t.ex. eVars eller events) bör de mappas till specifika fält i de anpassade fältgrupperna och datakonflikter undviks med [Dataprep](../../../../../data-prep/ui/mapping.md). Rapportsviter kan bara läggas till i en enda sandlåda.
 
+![](../../../../images/tutorials/create/analytics/report-suite.png)
+
 >[!NOTE]
 >
->Data från flera rapportsviter kan bara aktiveras för kunddataprofilen i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd, kan inte mappas till samma attribut i XDM.
+>Data från flera rapportsviter kan bara aktiveras för kunddataprofilen i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd.
 
 Skapa en [!DNL Analytics] källanslutning, välj en rapportserie och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
