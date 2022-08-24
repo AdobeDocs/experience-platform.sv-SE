@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 9d615d70ce37c6dad683e9082db02697b9882ab3
+source-git-commit: ed6a5ba39de2aecaef6f44604ff605721bfcb924
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '820'
 ht-degree: 5%
 
 ---
@@ -292,23 +292,26 @@ ht-degree: 5%
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
    - [Prenumerera på källvarningar](tutorials/ui/alerts.md)
-- Källor SDK {#sdk}
+- Självbetjänade källor (batch-SDK) {#sdk}
    - [Översikt](sources-sdk/overview.md)
-   - [Konfigurationsalternativ](sources-sdk/config/config.md)
-   - [Konfigurera autentiseringsspecifikation](sources-sdk/config/authspec.md)
-   - [Konfigurera källspecifikation](sources-sdk/config/sourcespec.md)
-   - [Konfigurera specifikation för utforskande](sources-sdk/config/explorespec.md)
-   - [Sources SDK API - översikt](sources-sdk/api/api-overview.md)
-   - [Komma igång](sources-sdk/api/getting-started.md)
-   - [Skapa en anslutningsspecifikation](sources-sdk/api/create.md)
-   - [Uppdatera en anslutningsspecifikation](sources-sdk/api/update-connection-specs.md)
-   - [Uppdatera en flödesspecifikation](sources-sdk/api/update-flow-specs.md)
-   - [Skicka din källa](sources-sdk/api/submit.md)
-   - [Dokumentera källan i Adobe Experience Platform](sources-sdk/documentation/doc-overview.md)
-   - [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](sources-sdk/documentation/github.md)
-   - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
-   - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
-   - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
+   - Konfigurera anslutningsspecifikationen {#config}
+      - [Konfigurationsalternativ](sources-sdk/config/config.md)
+      - [Konfigurera autentiseringsspecifikation](sources-sdk/config/authspec.md)
+      - [Konfigurera källspecifikation](sources-sdk/config/sourcespec.md)
+      - [Konfigurera specifikation för utforskande](sources-sdk/config/explorespec.md)
+   - Självbetjänade källor (Batch SDK) API-guide {#self-serve-api}
+      - [Självbetjänade källor (Batch SDK) - API-översikt](sources-sdk/api/api-overview.md)
+      - [Komma igång](sources-sdk/api/getting-started.md)
+      - [Skapa en anslutningsspecifikation](sources-sdk/api/create.md)
+      - [Uppdatera en anslutningsspecifikation](sources-sdk/api/update-connection-specs.md)
+      - [Uppdatera en flödesspecifikation](sources-sdk/api/update-flow-specs.md)
+      - [Skicka din källa](sources-sdk/api/submit.md)
+   - Dokumentationsguide {#documentation}
+      - [Dokumentera källan i Adobe Experience Platform](sources-sdk/documentation/doc-overview.md)
+      - [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](sources-sdk/documentation/github.md)
+      - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
+      - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
+      - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)
