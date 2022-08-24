@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform segmenteringstjänst
 breadcrumb-title: Segmenteringstjänstguide
 user-guide-description: Bygg segment och generera målgrupper utifrån kundprofildata i realtid.
 feature: Segments
-source-git-commit: 0f20b5cfb3301bc7f7f336e14e9faa0234c05c51
+source-git-commit: b70b4302c95cbf4301b036feea799537fa633490
 workflow-type: tm+mt
-source-wordcount: '163'
-ht-degree: 5%
+source-wordcount: '164'
+ht-degree: 6%
 
 ---
 
@@ -19,6 +19,7 @@ ht-degree: 5%
 - Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
+   - [Målgrupper](api/audiences.md)
    - [Kantsegmentering](api/edge-segmentation.md)
    - [Exportera jobb](api/export-jobs.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)

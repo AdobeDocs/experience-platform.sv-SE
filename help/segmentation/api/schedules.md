@@ -5,9 +5,9 @@ title: API-slutpunkt för scheman
 topic-legacy: developer guide
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: 604d1d02156b441ab3978ff976e02191bbdc311f
+source-git-commit: 84026b447eea00955bc9e6482b81ae1aad3c312e
 workflow-type: tm+mt
-source-wordcount: '2013'
+source-wordcount: '2011'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experienc
 
 ## Hämta en lista med scheman {#retrieve-list}
 
-Du kan hämta en lista över alla scheman för din IMS-organisation genom att göra en GET-förfrågan till `/config/schedules` slutpunkt.
+Du kan hämta en lista över alla scheman för din organisation genom att göra en GET-förfrågan till `/config/schedules` slutpunkt.
 
 **API-format**
 
@@ -41,7 +41,7 @@ GET /config/schedules?limit={LIMIT}
 
 **Begäran**
 
-Följande begäran hämtar de tio senaste schemana som publicerats inom IMS-organisationen.
+Följande förfrågan hämtar de tio senaste scheman som publicerats inom din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
