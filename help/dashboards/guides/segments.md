@@ -4,9 +4,9 @@ title: Stödlinje för instrumentpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
+source-git-commit: e18d37ba02d6edee77c91b719a0a2336e1316b71
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1578'
 ht-degree: 0%
 
 ---
@@ -75,6 +75,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Audience overlap]](#audience-overlap)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
+* [[!UICONTROL Scheduled activations]](#scheduled-activations)
 
 ### [!UICONTROL Audience size] {#audience-size}
 
@@ -176,6 +177,14 @@ Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bild
 En maskininlärningsmodell genererar automatiskt datainsikter genom att analysera den övergripande fördelningen och de viktigaste dimensionerna av data.
 
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
+
+### Schemalagda aktiveringar {#scheduled-activations}
+
+The [!UICONTROL Scheduled activations] widgeten innehåller en tabellvy över de senast aktiverade målplatserna. Tabellen innehåller målplattformen, namnet på aktiveringsflödet till den här destinationen samt start- och slutdatumet för aktiveringen för det valda segmentet. Om det inte finns något slutdatum för aktiveringen visas det som [!UICONTROL Ongoing]. Det segment som ska analyseras väljs i listrutan högst upp på sidan.
+
+Med widgeten kan du snabbt identifiera var och när målgruppen aktiveras och göra duplicerade eller onödiga aktiveringar mer transparenta. Den samlade informationen visar också var aktiveringar har utelämnats.
+
+![Widgeten för schemalagda aktiveringar.](../images/segments/scheduled-activations.png)
 
 ## Nästa steg
 
