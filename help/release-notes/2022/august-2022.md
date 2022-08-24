@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
-source-git-commit: c3452dda554b3c7750ad1166cef598d51d739e02
+source-git-commit: 208dbba4c2ed4abb51b90073eeee0663e2b2f35f
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1828'
 ht-degree: 1%
 
 ---
@@ -14,12 +14,50 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [[!DNL Dashboards]](#dashboards)
 - [Dataprep](#data-prep)
 - [Experience Data Model (XDM)](#xdm)
 - [Kundprofil i realtid](#profile)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
+
+AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa modeller som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+
+### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för sekretess | <li> Attribution AI har nu stöd för att definiera användarroller och åtkomstprinciper som ska hanteras [behörigheter](../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li> <li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut, som kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li> <li>[Datahygien](../../help/hygiene/home.md) i Attribution AI kan ni bara använda uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår Attribution AI från att använda borttagna data.</li><li>Attribution AI utnyttjar plattformsdatauppsättningar. För att underlätta GDPR-kompatibiliteten kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort data i datasjön, identitetstjänst och kundprofil i realtid. Alla data krypteras under överföring och i vila.</li> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Anteckning**: Attribution AI kommer inte att vara tillgänglig för vårdpersonal förrän till slutet av det fjärde kvartalet 2022.
+
+Mer information om Attribution AI finns i [Attribution AI](../../intelligent-services/attribution-ai/overview.md) översikt.
+
+### Kund-AI
+
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för sekretess | <li> Kundens AI har nu stöd för att definiera användarroller och åtkomstprinciper för att hantera [behörigheter](../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li> <li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut. Dessa attribut kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li> <li>[Datahygien](../../help/hygiene/home.md) med funktioner i kundens AI kan ni bara använda uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.</li><li>Kund-AI utnyttjar plattformsdatauppsättningar. För att underlätta GDPR-kompatibiliteten kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort data i datasjön, identitetstjänst och kundprofil i realtid. Alla data krypteras under överföring och i vila.</li> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Anteckning**: Customer AI will not be available for Healthcare Shield customers until the end of Q4 2022.
+
+Mer information om kundens AI finns i [Kund-AI](../../intelligent-services/customer-ai/overview.md) översikt.
 
 ## [!DNL Dashboards] {#dashboards}
 
