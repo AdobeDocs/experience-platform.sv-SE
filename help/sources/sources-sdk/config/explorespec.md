@@ -1,19 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Konfigurera specifikationer för Sources SDK
+title: Konfigurera specifikationer för självbetjäningskällor (Batch SDK)
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda Sources SDK.
-hide: true
-hidefromtoc: true
-source-git-commit: ae1a1139c24fd80e9f689e4c637897c905004c5f
+description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
+exl-id: 423a7e56-9dd1-4071-bd26-ee4f9f206122
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '258'
 ht-degree: 1%
 
 ---
 
-
-# Konfigurera specifikationer för Sources SDK
+# Konfigurera specifikationer för självbetjäningskällor (Batch SDK)
 
 Utforska specifikationerna och definiera de parametrar som krävs för att utforska och inspektera objekt som finns i källan. Utforska specifikationerna definierar också det svarsformat som returneras när objekt utforskas och inspekteras.
 
@@ -87,4 +85,4 @@ Utforska specifikationerna och definiera de parametrar som krävs för att utfor
 
 ## Nästa steg
 
-När du har fyllt i dina specifikationer kan du fortsätta att skapa en fullständig anslutningsspecifikation med [!DNL Flow Service] API. Se [[!DNL Sources SDK] API-guide](../api/api-overview.md) för mer information.
+När du har fyllt i dina specifikationer kan du fortsätta att skapa en fullständig anslutningsspecifikation med [!DNL Flow Service] API. Se [Självbetjänade källor (Batch SDK) API-guide](../api/api-overview.md) för mer information.

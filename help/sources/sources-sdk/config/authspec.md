@@ -1,19 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Konfigurera autentiseringsspecifikationer för Sources SDK
+title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (batch-SDK)
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda Sources SDK.
-hide: true
-hidefromtoc: true
+description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: a3bfd3b87343ca1dd2d122f4f82926082965578c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '535'
 ht-degree: 1%
 
 ---
 
-# Konfigurera autentiseringsspecifikationer för Sources SDK
+# Konfigurera autentiseringsspecifikationer för självbetjäningskällor (batch-SDK)
 
 Autentiseringsspecifikationer definierar hur Adobe Experience Platform-användare kan ansluta till din källa.
 
@@ -21,7 +19,7 @@ The `authSpec` arrayen innehåller information om de autentiseringsparametrar so
 
 ## Autentiseringsspecifikationer
 
-För närvarande [!DNL Sources SDK] stöder OAuth 2-uppdateringskoder och grundläggande autentisering. Se tabellerna nedan för vägledning om hur du använder en OAuth 2-uppdateringskod och grundläggande autentisering
+Självbetjäningskällor (Batch SDK) stöder OAuth 2-uppdateringskoder och grundläggande autentisering. Se tabellerna nedan för vägledning om hur du använder en OAuth 2-uppdateringskod och grundläggande autentisering
 
 ### OAuth 2-uppdateringskod
 
@@ -36,10 +34,6 @@ En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generer
     "type": "object",
     "description": "Define auth params required for connecting to generic rest using oauth2 authorization code.",
     "properties": {
-      "host": {
-        "type": "string",
-        "description": "Enter resource url host path."
-      },
       "authorizationTestUrl": {
         "description": "Authorization test url to validate accessToken.",
         "type": "string"

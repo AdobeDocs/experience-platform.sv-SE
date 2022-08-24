@@ -1,29 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Uppdatera flödesspecifikationer med API:t för Flow Service (beta)
+title: Uppdatera flödesspecifikationer med API:t för Flow Service
 topic-legacy: developer guide
-description: I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med API:t för Flow Service för Sources SDK.
-hide: true
-hidefromtoc: true
+description: I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med API:t för Flow Service för självbetjäningskällor (Batch SDK).
 exl-id: 67a0cd3e-ac18-43a4-aa22-8f6376d5cc3f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '408'
 ht-degree: 0%
 
 ---
 
-# Uppdatera flödesspecifikationer med [!DNL Flow Service] API (beta)
-
->[!IMPORTANT]
->
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+# Uppdatera flödesspecifikationer med [!DNL Flow Service] API
 
 När du har genererat ett nytt anslutningsspecifikations-ID måste du lägga till det här ID:t i en flödesspecifikation för att kunna skapa ett dataflöde.
 
 Flödesspecifikationer innehåller information som definierar ett flöde, inklusive käll- och målanslutnings-ID:n som stöds, transformeringsspecifikationer som behövs för att kunna tillämpas på data samt schemaläggningsparametrar som krävs för att generera ett flöde. Du kan redigera flödesspecifikationer med `/flowSpecs` slutpunkt.
 
-I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med [!DNL Flow Service] API för SDK för Källor.
+I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med [!DNL Flow Service] API för självbetjäningskällor (Batch SDK).
 
 ## Komma igång
 

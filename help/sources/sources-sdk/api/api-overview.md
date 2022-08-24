@@ -1,28 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Sources SDK API Guide (beta)
+title: Självbetjänade källor (Batch SDK) API-guide
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över processen att skapa en ny källa, inklusive steg för hur du hämtar, skriver och skickar en ny anslutningsspecifikation med API:t för Flow Service.
-hide: true
-hidefromtoc: true
-source-git-commit: ae1a1139c24fd80e9f689e4c637897c905004c5f
+exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '488'
 ht-degree: 0%
 
 ---
 
-# Sources SDK API Guide (beta)
-
->[!IMPORTANT]
->
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+# Självbetjänade källor (Batch SDK) API-guide
 
 I det här dokumentet finns en översikt över processen att skapa en ny källa, inklusive steg för hur du skriver och skickar en ny anslutningsspecifikation med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom plattformen. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
 
-The [!DNL Flow Service] API har flera slutpunkter som gör att du kan hantera anslutnings- och flödesspecifikationerna programmatiskt för en ny källa som du integrerar via Sources SDK.
+The [!DNL Flow Service] API har flera slutpunkter som gör att du kan hantera anslutnings- och flödesspecifikationerna programmatiskt för en ny källa som du integrerar via självbetjäningskällor (Batch SDK).
 
 ## Skapa en ny anslutningsspecifikation
 
@@ -50,4 +45,4 @@ Om du vill skicka in källan för integrering till Experience Platform måste du
 
 ## Nästa steg
 
-Börja använda [!DNL Flow Service] API och skapa en ny källa via Sources SDK, läs [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter.
+Börja använda [!DNL Flow Service] API och skapa en ny källa via självbetjäningskällor (Batch SDK), läs [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter.

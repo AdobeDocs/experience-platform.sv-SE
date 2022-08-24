@@ -1,30 +1,24 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Komma igång med SDK-källor (beta)
+title: Komma igång med självbetjäningskällor (batch-SDK)
 topic-legacy: developer guide
-description: Det här dokumentet innehåller en introduktion till den information som krävs innan du försöker skapa en ny källa med hjälp av Sources SDK.
-hide: true
-hidefromtoc: true
+description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med självbetjäningskällor (Batch SDK).
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---
 
-# Komma igång med SDK-källor (beta)
+# Komma igång med självbetjäningskällor (batch-SDK)
 
->[!IMPORTANT]
->
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
-
-Med Sources SDK kan du integrera din egen REST-baserade källa för att överföra data till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna innan du försöker ringa till [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+Med självbetjäningskällor (Batch SDK) kan du integrera din egen REST-baserade källa för att skicka batchdata till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna innan du försöker ringa till [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Förutsättningar
 
-Om du vill använda Sources SDK måste du se till att du har tillgång till en IMS-organisationssandlåda som har etablerats med Adobe Experience Platform Sources.
+Om du vill använda självbetjäningskällor (Batch SDK) måste du se till att du har tillgång till en IMS-organisationssandlåda som har etablerats med Adobe Experience Platform-källor.
 
 Handboken kräver även en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
@@ -33,7 +27,7 @@ Handboken kräver även en fungerande förståelse av följande komponenter i Ad
 
 ## Läser exempel-API-anrop
 
-SDK för källorna och [!DNL Flow Service] API-dokumentationen innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Självbetjäningskällor (batch-SDK) och [!DNL Flow Service] API-dokumentationen innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ## Samla in värden för obligatoriska rubriker
 
@@ -57,4 +51,4 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Nästa steg
 
-För att börja skapa en ny källa med Sources SDK, se självstudiekursen om [skapa en ny källa](./create.md).
+Om du vill börja skapa en ny källa med självbetjäningskällor (Batch SDK) ska du titta i självstudiekursen om [skapa en ny källa](./create.md).

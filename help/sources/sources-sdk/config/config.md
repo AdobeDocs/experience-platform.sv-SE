@@ -1,28 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Konfigurationsalternativ i SDK för källor
+title: Konfigurationsalternativ i självbetjäningskällor (batch-SDK)
 topic-legacy: overview
-description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda Sources SDK.
-hide: true
-hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
+exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '316'
+source-wordcount: '297'
 ht-degree: 0%
 
 ---
 
-# Konfigurationsalternativ i SDK för källor
+# Konfigurationsalternativ i självbetjäningskällor (batch-SDK)
 
->[!IMPORTANT]
->
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
-
-Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda Sources SDK.
+Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 
 ## Anslutningsspecifikation
 
-Anslutningsspecifikationerna returnerar en källas kopplingsegenskaper. De innehåller autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningar och ett fast anslutningsspecifikations-ID som tilldelats en viss källa. Anslutningsspecifikationerna är innehavar- och IMS-organisationstjänster. En typisk anslutningsspecifikation innehåller grundläggande information om en viss källa samt tre olika avsnitt: `authSpec`, `sourceSpec`och `exploreSpec`.
+Anslutningsspecifikationerna returnerar en källas kopplingsegenskaper. De innehåller autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningar och ett fast anslutningsspecifikations-ID som tilldelats en viss källa. Anslutningsspecifikationerna är innehavar- och organisationsagnostiker. En typisk anslutningsspecifikation innehåller grundläggande information om en viss källa samt tre olika avsnitt: `authSpec`, `sourceSpec`och `exploreSpec`.
 
 | Specifikationer | Beskrivning |
 | --- | --- |
@@ -41,5 +36,3 @@ I följande dokument finns instruktioner om hur du fyller i värdena för varje 
 * [Konfigurera autentiseringsspecifikationen](./authspec.md)
 * [Konfigurera källspecifikationen](./sourcespec.md)
 * [Konfigurera din utforskarspecifikation](./explorespec.md)
-
-

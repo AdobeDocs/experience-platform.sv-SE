@@ -1,28 +1,22 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Skapa en ny anslutningsspecifikation med Flow Service API (Beta)
+title: Skapa en ny anslutningsspecifikation med API:t för Flow Service
 topic-legacy: tutorial
-description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med Sources SDK.
-hide: true
-hidefromtoc: true
+description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: ae5bb475bca90b31d8eb7cf6b66d4d191d36ac5c
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '800'
 ht-degree: 1%
 
 ---
 
-# Skapa en ny anslutningsspecifikation med [!DNL Flow Service] API (beta)
-
->[!IMPORTANT]
->
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+# Skapa en ny anslutningsspecifikation med [!DNL Flow Service] API
 
 En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. The `/connectionSpecs` slutpunkt i [!DNL Flow Service] Med API kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
 
-I följande dokument beskrivs hur du skapar en anslutningsspecifikation med [!DNL Flow Service] API och integrera en ny källa via Sources SDK.
+I följande dokument beskrivs hur du skapar en anslutningsspecifikation med [!DNL Flow Service] API och integrera en ny källa via självbetjäningskällor (Batch SDK).
 
 ## Komma igång
 
@@ -30,16 +24,37 @@ Läs igenom [komma igång-guide](./getting-started.md) för länkar till relater
 
 ## Samla in artefakter
 
-Det första steget för att skapa en ny källa genom [!DNL Sources SDK] är att koordinera med Adobe och identifiera värden för källans motsvarande **icon**, **description**, **label** och **kategori**.
+Om du vill skapa en ny batchkälla med hjälp av självbetjäningskällor måste du först koordinera med Adobe, begära en privat Git-databas och anpassa dig till Adobe om källans etikett, beskrivning, kategori och ikon.
 
-| Artefakter | Beskrivning | Exempel |
+När du har angett den måste du strukturera din privata Git-databas så här:
+
+* Källor
+   * {your_source}
+      * Artefakter
+         * {your_source}-category.txt
+         * {your_source}-description.txt
+         * {your_source}-icon.svg
+         * {your_source}-label.txt
+         * {your_source}-connectionSpec.json
+
+| Artefakter (filnamn) | Beskrivning | Exempel |
 | --- | --- | --- |
-| Etikett | Namnet på källan. | [!DNL MailChimp Members] |
-| Beskrivning | En kort beskrivning av källan. | Skapa en inkommande liveanslutning till din [!DNL Mailchimp Members] till exempel för att importera både historiska och schemalagda data till Experience Platform. |
-| Ikon | Bilden eller logotypen som representerar källan. Ikonen visas i plattformsgränssnittsåtergivningen i källan. | `mailchimp-members-icon.svg` |
-| Kategori | Källans kategori. | <ul><li>`advertising`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
+| {your_source} | Namnet på källan. Den här mappen bör innehålla alla artefakter som hör till källan i din privata Git-databas. | `mailchimp-members` |
+| {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Reklam</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-handel</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Anteckning**: Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera detta. | `mailchimp-members-category.txt` Ange källans kategori i filen, som: `marketingAutomation`. |
+| {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som ni kan använda för att [!DNL Mailchimp Members] data till Experience Platform. |
+| {your_source}-icon.svg | Bilden som ska användas för att representera källan i katalogen för Experience Platform-källor. Den här ikonen måste vara en SVG-fil. |
+| {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Mailchimp-medlemmar |
+| {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `mailchimp-members-connectionSpec.json` |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!TIP]
+>
+>Under testperioden för anslutningsspecifikationen kan du i stället för nyckelvärden använda `text` i anslutningsspecifikationen.
+
+När du har lagt till de nödvändiga filerna i din privata Git-databas måste du skapa en pull-begäran (PR) som Adobe kan granska. När din PR har godkänts och sammanfogats får du ett ID som kan användas för din anslutningsspecifikation för att hänvisa till källans etikett, beskrivning och ikon.
+
+Följ sedan stegen som beskrivs nedan för att konfigurera anslutningsspecifikationen. Mer information om olika funktioner som du kan lägga till i källan, till exempel avancerad schemaläggning, anpassat schema eller olika sidnumreringstyper, finns i handboken [konfigurera källspecifikationer](../config/sourcespec.md).
 
 ## Kopiera mall för anslutningsspecifikation
 
@@ -68,10 +83,6 @@ När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in m
         "type": "object",
         "description": "Define auth params required for connecting to generic rest using oauth2 authorization code.",
         "properties": {
-          "host": {
-            "type": "string",
-            "description": "Enter resource url host path."
-          },
           "authorizationTestUrl": {
             "description": "Authorization test url to validate accessToken.",
             "type": "string"
@@ -206,6 +217,10 @@ När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in m
         "urlParams": {
           "type": "object",
           "properties": {
+            "host": {
+            "type": "string",
+            "description": "Enter resource url host path."
+          },
             "path": {
               "type": "string",
               "description": "Enter resource path",
@@ -480,9 +495,9 @@ curl -X POST \
                   "type": "object",
                   "description": "Define auth params required for connecting to generic rest using oauth2 authorization code.",
                   "properties": {
-                      "host": {
-                          "type": "string",
-                          "description": "Enter resource url host path"
+                      "domain": {
+                        "type": "string",
+                        "description": "Enter domain name for host url"
                       },
                       "authorizationTestUrl": {
                           "description": "Authorization test url to validate accessToken.",
@@ -495,7 +510,7 @@ curl -X POST \
                       }
                   },
                   "required": [
-                      "host",
+                      "domain",
                       "accessToken"
                   ]
               }
@@ -508,9 +523,9 @@ curl -X POST \
                   "type": "object",
                   "description": "defines auth params required for connecting to rest service.",
                   "properties": {
-                      "host": {
-                          "type": "string",
-                          "description": "Enter resource url host path."
+                      "domain": {
+                        "type": "string",
+                        "description": "Enter domain name for host url"
                       },
                       "username": {
                           "description": "Username to connect mailChimp endpoint.",
@@ -523,7 +538,7 @@ curl -X POST \
                       }
                   },
                   "required": [
-                      "host",
+                      "domain",
                       "username",
                       "password"
                   ]
@@ -547,10 +562,19 @@ curl -X POST \
                   }
               },
               "urlParams": {
+                  "host": "https://${domain}.api.mailchimp.com",
                   "path": "/3.0/lists/${listId}/members",
                   "method": "GET"
               },
-              "contentPath": "$.members",
+              "contentPath": {
+                  "path": "$.members",
+                  "skipAttributes": [
+                    "_links",
+                    "total_items",
+                    "list_id"
+                  ],
+                  "overrideWrapperAttribute": "member"
+                },
               "paginationParams": {
                   "type": "OFFSET",
                   "limitName": "count",

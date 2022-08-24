@@ -1,19 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Uppdatera en anslutningsspecifikation med API:t för Flow Service (beta)
+title: Uppdatera en anslutningsspecifikation med API:t för Flow Service
 topic-legacy: developer guide
 description: Du kan uppdatera egenskaperna för en anslutningsspecifikation genom en PUT-åtgärd.
-hide: true
-hidefromtoc: true
 exl-id: fcb00521-8fc2-491e-aa35-6e0f9b730dd4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '120'
+source-wordcount: '118'
 ht-degree: 0%
 
 ---
 
-# Uppdatera en anslutningsspecifikation med API:t för Flow Service (beta)
+# Uppdatera en anslutningsspecifikation med API:t för Flow Service
 
 Du kan uppdatera egenskaperna för en anslutningsspecifikation genom en PUT-åtgärd. När du uppdaterar en anslutningsspecifikation via en PUT-begäran, måste texten innehålla alla fält som krävs för att skapa en ny anslutningsspecifikation i en POST-begäran.
 

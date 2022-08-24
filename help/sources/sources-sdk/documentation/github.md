@@ -4,10 +4,8 @@ solution: Experience Platform
 title: Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida
 topic-legacy: tutorial
 description: Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
-hide: true
-hidefromtoc: true
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: 39accd28edc388c6444910f9a2ea6d2f01acfdaf
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 0%
@@ -36,19 +34,19 @@ När gaffeln är klar väljer du **överordnad** och ange ett namn för den nya 
 
 ![create-branch](../assets/create-branch.png)
 
-I GitHub-mappstrukturen för din förankrade databas navigerar du till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny molnlagringskälla väljer du **molnlagring**.
+I GitHub-mappstrukturen för din förankrade databas navigerar du till [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) och välj sedan lämplig kategori för källan i listan. Om du till exempel skapar dokumentation för en ny CRM-källa väljer du **crm**.
 
 >[!TIP]
 >
 >Om du skapar dokumentation för användargränssnittet går du till [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) och väljer lämplig kategori för källan. Om du vill lägga till dina bilder går du till [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) lägg sedan till skärmbilderna i `sdk` mapp.
 
-![molnlagring](../assets/cloud-storage.png)
+![crm](../assets/crm.png)
 
-En mapp med befintliga molnlagringskällor visas. Om du vill lägga till dokumentation för en ny källa väljer du **Lägg till fil** och sedan markera **Skapa ny fil** i listrutan som visas.
+En mapp med befintliga CRM-källor visas. Om du vill lägga till dokumentation för en ny källa väljer du **Lägg till fil** och sedan markera **Skapa ny fil** i listrutan som visas.
 
 ![create-new-file](../assets/create-new-file.png)
 
-Namnge källfilen `YOURSOURCE.md` där YOURSOURCE är namnet på källan i Platform. Om ditt företag till exempel är [!DNL Mailchimp]ska filnamnet vara `mailchimp.md`.
+Namnge källfilen `YOURSOURCE.md` där YOURSOURCE är namnet på källan i Platform. Om ditt företag till exempel är ACME CRM ska ditt filnamn vara `acme-crm.md`.
 
 ![git-interface](../assets/git-interface.png)
 

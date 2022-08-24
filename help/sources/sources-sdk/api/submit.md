@@ -1,24 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: Skicka in din källa (beta)
+title: Skicka din källa
 topic-legacy: overview
-description: I följande dokument beskrivs hur du testar och verifierar en ny källa med API:t för Flow Service och integrerar en ny källa med Sources SDK.
-hide: true
-hidefromtoc: true
-source-git-commit: 274784a5b82d12497f7437fdeaf665dd64224c2d
+description: I följande dokument beskrivs hur du testar och verifierar en ny källa med hjälp av API:t för Flow Service och integrerar en ny källa med självbetjäningskällor (Batch SDK).
+exl-id: 9e945ba1-51b6-40a9-b92f-e0a52b3f92fa
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '826'
 ht-degree: 0%
 
 ---
 
-# Skicka din källa (beta)
+# Skicka din källa
 
->[!IMPORTANT]
->
->SDK:n för källor är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
-
-Det sista steget mot att integrera din nya källa till Adobe Experience Platform med [!DNL Sources SDK] testar källan för verifiering. När det är klart kan du sedan skicka in din nya källfil genom att kontakta Adobe.
+Det sista steget mot att integrera din nya källa till Adobe Experience Platform med självbetjäningskällor (Batch SDK) är att testa källan för verifiering. När det är klart kan du sedan skicka in din nya källfil genom att kontakta Adobe.
 
 Följande dokument innehåller anvisningar om hur du testar och felsöker källan med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -27,13 +22,13 @@ Följande dokument innehåller anvisningar om hur du testar och felsöker källa
 * Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
 * Mer information om hur du genererar autentiseringsuppgifter för plattforms-API:er finns i självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md).
 * Mer information om hur du konfigurerar [!DNL Postman] för plattforms-API:er, se självstudiekursen om [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md).
-* Ladda ned [[!DNL Sources SDK] verifieringsinsamling och miljö här](../assets/sdk-verification.zip) och följ stegen nedan.
+* Ladda ned [Självserverad källverifieringssamling och -miljö här](../assets/sdk-verification.zip) och följ stegen nedan.
 
 ## Testa källan
 
-Om du vill testa källan måste du köra [[!DNL Sources SDK] verifieringsinsamling och -miljö](../assets/sdk-verification.zip) på [!DNL Postman] samtidigt som du tillhandahåller rätt miljövariabler som hör till källan.
+Om du vill testa källan måste du köra [Insamling och miljö för verifiering av självserverkällor](../assets/sdk-verification.zip) på [!DNL Postman] samtidigt som du tillhandahåller rätt miljövariabler som hör till källan.
 
-För att kunna börja testa måste du först konfigurera samlingen och miljön på [!DNL Postman]. Ange sedan det ID för anslutningsspecifikationen som du vill testa. Detta ID ska vara samma ID som du skapade med [!DNL Sources SDK].
+För att kunna börja testa måste du först konfigurera samlingen och miljön på [!DNL Postman]. Ange sedan det ID för anslutningsspecifikationen som du vill testa.
 
 ### Ange `authSpecName`
 
