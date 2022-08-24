@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: 'Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda. '
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 8a343ad275dcfc33eb304e3fc19d375b81277448
+source-git-commit: e3813691af6477a0afbb47ed0fd53d5bb3834fd0
 workflow-type: tm+mt
 source-wordcount: '1941'
 ht-degree: 1%
@@ -109,9 +109,9 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Segment per sandlåda | 10 000 | Mjuk | En organisation kan ha fler än 10 000 segment totalt, förutsatt att det finns färre än 10 000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment kan det påverka systemets prestanda. |
+| Segment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 segment totalt, förutsatt att det finns mindre än 4000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment kan det påverka systemets prestanda. |
 | Direktuppspelningssegment per sandlåda | 500 | Mjuk | En organisation kan ha fler än 500 direktuppspelningssegment totalt, förutsatt att det finns färre än 500 direktuppspelningssegment i varje enskild sandlåda. Om du försöker skapa fler direktuppspelningssegment kan det påverka systemets prestanda. |
-| Gruppsegment per sandlåda | 10 000 | Mjuk | En organisation kan ha fler än 10 000 gruppsegment totalt, förutsatt att det finns färre än 10 000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment kan det påverka systemets prestanda. |
+| Gruppsegment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 gruppsegment totalt, förutsatt att det finns mindre än 4000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment kan det påverka systemets prestanda. |
 
 {style=&quot;table-layout:auto&quot;}
 

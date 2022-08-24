@@ -5,10 +5,10 @@ title: API-slutpunkt för segmentjobb
 topic-legacy: developer guide
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: cb28f52029ac63e4d2c7c210c6199adcd855cf5a
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 1%
+source-wordcount: '1511'
+ht-degree: 0%
 
 ---
 
@@ -24,7 +24,7 @@ Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experienc
 
 ## Hämta en lista med segmentjobb {#retrieve-list}
 
-Du kan hämta en lista över alla segmentjobb för din IMS-organisation genom att göra en GET-förfrågan till `/segment/jobs` slutpunkt.
+Du kan hämta en lista över alla segmentjobb för din organisation genom att göra en GET-förfrågan till `/segment/jobs` slutpunkt.
 
 **API-format**
 
@@ -57,7 +57,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna IMS-organisationen som JSON. Följande svar returnerar en lista över alla framgångsrika segmentjobb för IMS-organisationen.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna IMS-organisationen som JSON. Svaret varierar dock beroende på antalet segment i segmentjobbet.
+
+**Mindre än eller lika med 1 500 segment i segmentjobbet**
+
+Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständig lista över alla segment i `children.segments` -attribut.
 
 >[!NOTE]
 >
@@ -164,6 +168,102 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
 }
 ```
 
+**Mer än 1 500 segment**
+
+Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segments` attribut kommer att visas `*`, vilket anger att alla segment utvärderas.
+
+>[!NOTE]
+>
+>Följande svar har trunkerats för utrymme och visar bara det första returnerade jobbet.
+
+```json
+{
+    "_page": {
+        "totalCount": 14,
+        "pageSize": 14
+    },
+    "children": [
+        {
+            "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+            "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
+            "sandbox": {
+                "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
+                "sandboxName": "prod",
+                "type": "production",
+                "default": true
+            },
+            "profileInstanceId": "ups",
+            "source": "scheduler",
+            "status": "SUCCEEDED",
+            "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
+            "computeJobId": 8811,
+            "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
+            "segments": [
+                {
+                    "segmentId": "*",
+                }
+            ],
+            "metrics": {
+                "totalTime": {
+                    "startTimeInMs": 1573203617195,
+                    "endTimeInMs": 1573204395655,
+                    "totalTimeInMs": 778460
+                },
+                "profileSegmentationTime": {
+                    "startTimeInMs": 1573204266727,
+                    "endTimeInMs": 1573204395655,
+                    "totalTimeInMs": 128928
+                },
+                "totalProfiles": 13146432,
+                "segmentedProfileCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":1033
+                },
+                "segmentedProfileByNamespaceCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
+                        "tenantiduserobjid":1033,
+                        "campaign_profile_mscom_mkt_prod2":1033
+                    }
+                },
+                "segmentedProfileByStatusCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
+                        "exited":144646,
+                        "existing":10,
+                        "realized":2056
+                    }
+                },
+                "totalProfilesByMergePolicy":{
+                    "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
+                }
+            },
+            "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
+            "schema": {
+                "name": "_xdm.context.profile"
+            },
+            "properties": {
+                "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
+                "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
+            },
+            "_links": {
+                "cancel": {
+                    "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+                    "method": "DELETE"
+                },
+                "checkStatus": {
+                    "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+                    "method": "GET"
+                }
+            },
+            "updateTime": 1573204395000,
+            "creationTime": 1573203600535,
+            "updateEpoch": 1573204395
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+```
+
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet. |
@@ -189,6 +289,10 @@ Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/seg
 POST /segment/jobs
 ```
 
+När du skapar ett nytt segmentjobb skiljer sig förfrågningen och svaret åt beroende på antalet segment i segmentjobbet.
+
+**Mindre än eller lika med 1 500 segment i segmentjobbet**
+
 **Begäran**
 
 ```shell
@@ -198,12 +302,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
  -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d '
-[
-  {
-    "segmentId": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
-  }
-]'
+ -d '[
+    {
+        "segmentId": "7863c010-e092-41c8-ae5e-9e533186752e"
+    }
+ ]'
 ```
 
 | Egenskap | Beskrivning |
@@ -216,8 +319,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ```json
 {
-    "id": "d3b4a50d-dfea-43eb-9fca-557ea53771fd",
-    "imsOrgId": "{ORG_ID}",
+    "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+    "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
     "sandbox": {
         "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
         "sandboxName": "prod",
@@ -225,43 +328,82 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
         "default": true
     },
     "profileInstanceId": "ups",
-    "source": "api",
-    "status": "NEW",
+    "source": "scheduler",
+    "status": "PROCESSING",
+    "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
+    "computeJobId": 8811,
+    "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
     "segments": [
         {
-            "segmentId": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
+            "segmentId": "7863c010-e092-41c8-ae5e-9e533186752e",
             "segment": {
-                "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
+                "id": "7863c010-e092-41c8-ae5e-9e533186752e",
                 "expression": {
                     "type": "PQL",
-                    "format": "pql/text",
+                    "format": "pql/json",
                     "value": "workAddress.country = \"US\""
                 },
-                "mergePolicyId": "e161dae9-52f0-4c7f-b264-dc43dd903d56",
+                "mergePolicyId": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
                 "mergePolicy": {
-                    "id": "e161dae9-52f0-4c7f-b264-dc43dd903d56",
+                    "id": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
                     "version": 1
                 }
             }
         }
     ],
-    "requestId": "Hw1jdAHeuWHVKVxcAPFrLCbbjkriDl9v",
+    "metrics": {
+        "totalTime": {
+            "startTimeInMs": 1573203617195,
+            "endTimeInMs": 1573204395655,
+            "totalTimeInMs": 778460
+        },
+        "profileSegmentationTime": {
+            "startTimeInMs": 1573204266727,
+            "endTimeInMs": 1573204395655,
+            "totalTimeInMs": 128928
+        },
+        "segmentedProfileCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":1033
+        },
+        "segmentedProfileByNamespaceCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":{
+                "tenantiduserobjid":1033,
+                "campaign_profile_mscom_mkt_prod2":1033
+            }
+        },
+        "segmentedProfileByStatusCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":{
+                "exited":144646,
+                "existing":10,
+                "realized":2056
+            }
+        },
+        "totalProfiles":13146432,
+        "totalProfilesByMergePolicy":{
+            "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
+        }
+    },
+    "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
     "schema": {
         "name": "_xdm.context.profile"
     },
+    "properties": {
+        "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
+        "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
+    },
     "_links": {
         "cancel": {
-            "href": "/segment/jobs/d3b4a50d-dfea-43eb-9fca-557ea53771fd",
+            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
             "method": "DELETE"
         },
         "checkStatus": {
-            "href": "/segment/jobs/d3b4a50d-dfea-43eb-9fca-557ea53771fd",
+            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
             "method": "GET"
         }
     },
-    "updateTime": 1579304260000,
-    "creationTime": 1579304260897,
-    "updateEpoch": 1579304260
+    "updateTime": 1573204395000,
+    "creationTime": 1573203600535,
+    "updateEpoch": 1573204395
 }
 ```
 
@@ -272,6 +414,126 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
 | `segments.segment.id` | ID:t för segmentdefinitionen som du angav. |
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
+
+**Mer än 1 500 segment**
+
+**Begäran**
+
+>[!NOTE]
+>
+>Du kan skapa ett segmentjobb med fler än 1 500 segment, men det här är **rekommenderas inte**.
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '{
+    "schema": {
+        "name": "_xdm.context.profile"
+    },
+    "segments": [
+        {
+            "segmentId": "*"
+        }
+    ]
+ }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `schema.name` | Namnet på schemat för segmenten. |
+| `segments.segmentId` | När du kör ett segmentjobb med mer än 1 500 segment måste du skicka `*` som det segment-ID som anger att du vill köra ett segmenteringsjobb med alla segment. |
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapade segmentjobb.
+
+```json
+{
+    "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+    "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
+    "sandbox": {
+        "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
+        "sandboxName": "prod",
+        "type": "production",
+        "default": true
+    },
+    "profileInstanceId": "ups",
+    "source": "scheduler",
+    "status": "PROCESSING",
+    "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
+    "computeJobId": 8811,
+    "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
+    "segments": [
+        {
+            "segmentId": "*"
+        }
+    ],
+    "metrics": {
+        "totalTime": {
+            "startTimeInMs": 1573203617195,
+            "endTimeInMs": 1573204395655,
+            "totalTimeInMs": 778460
+        },
+        "profileSegmentationTime": {
+            "startTimeInMs": 1573204266727,
+            "endTimeInMs": 1573204395655,
+            "totalTimeInMs": 128928
+        },
+        "segmentedProfileCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":1033
+        },
+        "segmentedProfileByNamespaceCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":{
+                "tenantiduserobjid":1033,
+                "campaign_profile_mscom_mkt_prod2":1033
+            }
+        },
+        "segmentedProfileByStatusCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":{
+                "exited":144646,
+                "existing":10,
+                "realized":2056
+            }
+        },
+        "totalProfiles":13146432,
+        "totalProfilesByMergePolicy":{
+            "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
+        }
+    },
+    "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
+    "schema": {
+        "name": "_xdm.context.profile"
+    },
+    "properties": {
+        "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
+        "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
+    },
+    "_links": {
+        "cancel": {
+            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+            "method": "DELETE"
+        },
+        "checkStatus": {
+            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+            "method": "GET"
+        }
+    },
+    "updateTime": 1573204395000,
+    "creationTime": 1573203600535,
+    "updateEpoch": 1573204395
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet som nyligen skapades. |
+| `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat kommer statusen alltid att vara `NEW`. |
+| `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
+| `segments.segment.id` | The `*` innebär att segmentjobbet körs för alla segment i organisationen. |
 
 ## Hämta ett specifikt segmentjobb {#get}
 
@@ -299,7 +561,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna segmentjobbet.
+Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna segmentjobbet.  Svaret varierar dock beroende på antalet segment i segmentjobbet.
+
+**Mindre än eller lika med 1 500 segment i segmentjobbet**
+
+Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständig lista över alla segment i `children.segments` -attribut.
 
 ```json
 {
@@ -361,6 +627,87 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 }
 ```
 
+**Mer än 1 500 segment**
+
+Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segments` attribut kommer att visas `*`, vilket anger att alla segment utvärderas.
+
+```json
+{
+    "id": "b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+    "imsOrgId": "E95186D65A28ABF00A495D82@AdobeOrg",
+    "sandbox": {
+        "sandboxId": "28e74200-e3de-11e9-8f5d-7f27416c5f0d",
+        "sandboxName": "prod",
+        "type": "production",
+        "default": true
+    },
+    "profileInstanceId": "ups",
+    "source": "scheduler",
+    "status": "SUCCEEDED",
+    "batchId": "678f53bc-e21d-4c47-a7ec-5ad0064f8e4c",
+    "computeJobId": 8811,
+    "computeGatewayJobId": "9ea97b25-a0f5-410e-ae87-b2d85e58f399",
+    "segments": [
+        {
+            "segmentId": "*"
+        }
+    ],
+    "metrics": {
+        "totalTime": {
+            "startTimeInMs": 1573203617195,
+            "endTimeInMs": 1573204395655,
+            "totalTimeInMs": 778460
+        },
+        "profileSegmentationTime": {
+            "startTimeInMs": 1573204266727,
+            "endTimeInMs": 1573204395655,
+            "totalTimeInMs": 128928
+        },
+        "segmentedProfileCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":1033
+        },
+        "segmentedProfileByNamespaceCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":{
+                "tenantiduserobjid":1033,
+                "campaign_profile_mscom_mkt_prod2":1033
+            }
+        },
+        "segmentedProfileByStatusCounter":{
+            "7863c010-e092-41c8-ae5e-9e533186752e":{
+                "exited":144646,
+                "existing":10,
+                "realized":2056
+            }
+        },
+        "totalProfiles":13146432,
+        "totalProfilesByMergePolicy":{
+            "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
+        }
+    },
+    "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
+    "schema": {
+        "name": "_xdm.context.profile"
+    },
+    "properties": {
+        "scheduleId": "4e538382-dbd8-449e-988a-4ac639ebe72b",
+        "runId": "e6c1308d-0d4b-4246-b2eb-43697b50a149"
+    },
+    "_links": {
+        "cancel": {
+            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+            "method": "DELETE"
+        },
+        "checkStatus": {
+            "href": "/segment/jobs/b31aed3d-b3b1-4613-98c6-7d3846e8d48f",
+            "method": "GET"
+        }
+    },
+    "updateTime": 1573204395000,
+    "creationTime": 1573203600535,
+    "updateEpoch": 1573204395
+}
+```
+
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet. |
@@ -403,7 +750,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben.
+Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben. Värdet för `children.segments` Attributet skiljer sig åt beroende på om segmentjobbet körs i mer än 1 500 segment.
 
 >[!NOTE]
 >
@@ -444,20 +791,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben.
             "status": "SUCCEEDED",
             "segments": [
                 {
-                    "segmentId": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
-                    "segment": {
-                        "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
-                        "expression": {
-                            "type": "PQL",
-                            "format": "pql/json",
-                            "value": "{PQL_EXPRESSION}"
-                        },
-                        "mergePolicyId": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
-                        "mergePolicy": {
-                            "id": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
-                            "version": 1
-                        }
-                    }
+                    "segmentId": "*"
                 }
             ],
             "updateTime": 1573204395000,
