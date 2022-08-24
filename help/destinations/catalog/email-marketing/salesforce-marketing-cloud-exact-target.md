@@ -2,13 +2,13 @@
 keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cloud destination
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
-source-git-commit: ce7b28ce31c652965a6eaad81348e330bd38e9ac
+exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
+source-git-commit: 2dda77c3d9a02b53a02128e835abf77ab97ad033
 workflow-type: tm+mt
-source-wordcount: '1829'
+source-wordcount: '1866'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL (API) Salesforce Marketing Cloud] anslutning
 
@@ -48,7 +48,7 @@ Gå till Salesforce [testversion](https://www.salesforce.com/in/form/signup/free
 
 #### Skapa anpassat fält i Salesforce {#prerequisites-custom-field}
 
-Skapa ett anpassat attribut av typen `Text Area Long` vilket Experience Platform som ska använda för att uppdatera segmentstatusen i Salesforce Marketing Cloud.
+Du måste skapa ett anpassat attribut av typen `Text Area Long`, som Experience Platform ska använda för att uppdatera segmentstatusen i Salesforce Marketing Cloud. I arbetsflödet för att aktivera segment till målet, i **[Segmentschema](#schedule-segment-export-example)** använder du det anpassade attributet som mappnings-ID för varje segment som du aktiverar.
 
 Läs Salesforce Marketing Cloud-dokumentationen för att [skapa anpassade fält](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) om du behöver ytterligare vägledning.
 
@@ -72,6 +72,8 @@ Observera objekten nedan innan du autentiserar till Salesforce Marketing Cloud-m
 | --- | --- | --- |
 | <ul><li>Salesforce Marketing Cloud prefix</li></ul> | Se [Domänprefix för Salesforce Marketing Cloud](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) för ytterligare vägledning. | <ul><li>Om din domän är som nedan behöver du det markerade värdet.<br> <i>`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exactarget.com</i></li></ul> |
 | <ul><li>Klient-ID</li><li>Klienthemlighet</li></ul> | Se [Salesforce-dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du behöver ytterligare vägledning. | <ul><li>r23kxxxxxx0z05xxxx</li><li>ipxxxxxxxxxxT4xxxxxxxx</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -140,7 +142,7 @@ Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Om du vill skicka målgruppsdata från Adobe Experience Platform till Salesforce Marketing Cloud måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ de här stegen för att mappa dina XDM-fält till målfälten i Salesforce Marketing Cloud:
+Om du vill skicka målgruppsdata från Adobe Experience Platform till Salesforce Marketing Cloud måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Följ stegen nedan för att mappa dina XDM-fält till målfälten i Salesforce Marketing Cloud.
 
 Listan med attributmappningar som kan ställas in för [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_composite_upsert_example.htm?q=contacts) anges nedan. Målet använder [Salesforce Search Attribut-Set Definitions REST API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) för att hämta attribut som definierats i Salesforce för dina kontakter och som är specifika för ditt konto.
 
@@ -148,10 +150,10 @@ Listan med attributmappningar som kan ställas in för [Salesforce REST API](htt
 > 
 > Även om dina attributnamn är som i ditt Salesforce-konto är mappningarna för `contactKey` och `personalEmail.address` är obligatoriska.
 
-1. Klicka på i mappningssteget **[!UICONTROL Add new mapping]**visas en ny mappningsrad på skärmen.
+1. Klicka på i mappningssteget **[!UICONTROL Add new mapping]**. Nu kan du se en ny mappningsrad på skärmen.
    ![Lägg till ny mappning](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/add-new-mapping.png)
 
-1. När du markerar källfältet i fönstret Välj källfält **[!UICONTROL Select attributes]** och lägg till mappningarna.
+1. När du väljer källfältet i fönstret Välj källfält väljer du **[!UICONTROL Select attributes]** och lägg till mappningarna.
    ![Källmappning](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/source-mapping.png)
 
 1. Markera målfältet och välj **[!UICONTROL Select identity namespace]** och lägg till mappningarna.
@@ -172,7 +174,7 @@ Listan med attributmappningar som kan ställas in för [Salesforce REST API](htt
 
 ### Schemalägg segmentexport och exempel {#schedule-segment-export-example}
 
-När du utför [Schemalägg segmentexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) steg du måste manuellt mappa plattformssegment till det anpassade attributet i Salesforce.
+När du utför [Schemalägg segmentexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa plattformssegment till det anpassade attributet i Salesforce.
 
 Det gör du genom att markera varje segment och sedan ange motsvarande anpassade attribut från Salesforce i dialogrutan **[!UICONTROL Mapping ID]** fält.
 
@@ -233,4 +235,3 @@ Om felmeddelandet nedan visas när du kontrollerar ett dataflöde kontrollerar d
 * Se [Salesforce Marketing Cloud Engagement Pricing](https://www.salesforce.com/editions-pricing/marketing-cloud/email/) sida till *Ladda ned jämförelsetabellen för fullversionen* som en pdf som detaljerar de begränsningar som din plan innebär.
 * The [API-översikt](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html) ytterligare begränsningar för sidinformation.
 * Det finns ett kB-objekt som sorterar informationen [här](https://salesforce.stackexchange.com/questions/205898/marketing-cloud-api-limits#:~:text=Day%2FHour%2FMinute%20Limit&amp;text=We%20recommend%20a%20limit%20of,per%20minute%20for%20SOAP%20calls.&amp;text=As%20has%20has%20added%20in,interacting%20with%20the%20REST%2DAPI).
-
