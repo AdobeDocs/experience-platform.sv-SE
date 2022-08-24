@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: f458b3f204e961f849782f26a1563a67d6ea4b60
+source-git-commit: 3e3389c3e77597ace4177e683aaf7494364a5be7
 workflow-type: tm+mt
-source-wordcount: '1934'
+source-wordcount: '1868'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ Attribution AI används för att attribuera krediter till kontaktytor som leder 
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för sekretess | <ul><li> Attribution AI har nu stöd för att definiera användarroller och åtkomstprinciper som ska hanteras [behörigheter](../../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li><li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut, som kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li><li>[Datahygien](../../../help/hygiene/home.md) i Attribution AI kan ni bara använda uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår Attribution AI från att använda borttagna data.</li><li>Attribution AI utnyttjar plattformsdatauppsättningar. För att underlätta GDPR-kompatibiliteten kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort data i datasjön, identitetstjänst och kundprofil i realtid. Alla data krypteras under överföring och i vila.</li></ul> |
+| Stöd för sekretess | <ul><li> Attribution AI har nu stöd för att definiera användarroller och åtkomstprinciper som ska hanteras [behörigheter](../../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li><li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut, som kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li><li>Attribution AI utnyttjar plattformsdatauppsättningar. För att underlätta GDPR-kompatibiliteten kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort data i datasjön, identitetstjänst och kundprofil i realtid. Alla data krypteras under överföring och i vila.</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -52,7 +52,7 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för sekretess | <ul><li> Kundens AI har nu stöd för att definiera användarroller och åtkomstprinciper för att hantera [behörigheter](../../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li><li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut. Dessa attribut kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li><li>[Datahygien](../../../help/hygiene/home.md) med funktioner i kundens AI kan ni bara använda uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.</li><li>Kund-AI utnyttjar plattformsdatauppsättningar. För att underlätta GDPR-kompatibiliteten kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort data i datasjön, identitetstjänst och kundprofil i realtid. Alla data krypteras under överföring och i vila.</li></ul> |
+| Stöd för sekretess | <ul><li> Kundens AI har nu stöd för att definiera användarroller och åtkomstprinciper för att hantera [behörigheter](../../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li><li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut. Dessa attribut kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li><li>Kund-AI utnyttjar plattformsdatauppsättningar. För att underlätta GDPR-kompatibiliteten kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort data i datasjön, identitetstjänst och kundprofil i realtid. Alla data krypteras under överföring och i vila.</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
