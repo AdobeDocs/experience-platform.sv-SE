@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
-source-git-commit: 925991d58c3cdd84e13b12a095e9681b8f4b254b
+source-git-commit: 5967dee9c8b1c05ebd103998021e02a47ac3982c
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '1215'
 ht-degree: 1%
 
 ---
@@ -16,6 +16,8 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Dataprep](#data-prep)
 - [Experience Data Model (XDM)](#xdm)
+- [Kundprofil i realtid](#profile)
+- [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -63,6 +65,30 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+
+## Kundprofil i realtid {#profile}
+
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Rensning av kanter för överblivna profiler | För alla organisationer tar nu profiltjänsten bort vänsterkantsattribut i användaraktivitetsområdet dagligen för att ge en mer korrekt återgivning av dina profiler i systemet. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort och påverkar profiler som sammanfogas från datauppsättningar där `com_adobe_aep_profile_region_dataset` markeras som `true`. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilräknaren&quot; i profilkontrollpanelen, eftersom dessa mått inkluderade attributfragment med vänsterkant före den här versionen. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
+
+## Segmenteringstjänst {#segmentation}
+
+[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för 4 000 segment | Alla organisationer med Platform har nu stöd för upp till 4 000 segmentdefinitioner. Mer information om hur den här ändringen påverkar API:erna för segmentjobb finns i [slutpunktsguide för segmentjobb](../../segmentation/api/segment-jobs.md) |
+
+Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
 
 ## Källor {#sources}
 
