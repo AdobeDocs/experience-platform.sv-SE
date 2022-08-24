@@ -5,9 +5,9 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 3ea17aa57a5bfbc968f354b13d2ed107b2efa39b
+source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
 workflow-type: tm+mt
-source-wordcount: '2385'
+source-wordcount: '2469'
 ht-degree: 0%
 
 ---
@@ -234,6 +234,12 @@ Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om d
 | åtgärd | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.mediaAction |
 | campaign_group | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.campaignGroup |
 | campaign_name | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.campaignName |
+
+>[!IMPORTANT]
+>
+> - Attribution AI använder endast uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår Attribution AI från att använda borttagna data.
+> - För att underlätta GDPR-kompatibiliteten i Attribution AI kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort deras data i datasjön, identitetstjänst och kundprofil i realtid.
+> - Alla data krypteras under överföring och i vila. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md)
 
 
 ## Nästa steg {#next-steps}

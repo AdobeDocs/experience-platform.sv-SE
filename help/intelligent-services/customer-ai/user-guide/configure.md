@@ -4,20 +4,21 @@ solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
-description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
+description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: c4e1d739bf54cbebf6a04d87f92d0df4bdbc083e
+source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2977'
 ht-degree: 0%
 
 ---
 
+
 # Konfigurera en AI-instans för kund
 
-Tack vare kundens AI, som ingår i Intelligent Services, kan ni generera anpassade benägenhetspoäng utan att behöva bekymra er om maskininlärning.
+Med kundens AI, som en del av AI/ML-tjänsterna, kan ni generera anpassade benägenhetspoäng utan att behöva bekymra er om maskininlärning.
 
-Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
+AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 
 ## Skapa en instans {#set-up-your-instance}
 
@@ -191,6 +192,18 @@ Du kan definiera viktiga profildatauppsättningsfält (med tidsstämplar) i dina
 
 ![lägg till ett anpassat profilattribut](../images/user-guide/profile-attributes.png)
 
+#### Välj profilattribut från export av ögonblicksbild av profil
+
+Du kan också välja att ta med profilattribut från den dagliga exporten av ögonblicksbilder. Dessa attribut synkroniseras med export av ögonblicksbilder och visar det senast tillgängliga värdet.
+
+>[!WARNING]
+>
+> Var noga med att inte välja ett profilattribut som uppdateras som ett resultat av förutsägelsemålet eller som är starkt korrelerat med förutsägelsemålet. Detta orsakar dataläckage och överpassning av modellen. Ett exempel på ett sådant attribut är `total_purchases_in_the_last_3_months` som förutser köpkonverteringar.
+
+>[!NOTE]
+>
+>Stöd för att använda profilattribut från export av UPS-ögonblicksbilder finns på begäran i användargränssnittet.
+
 ### Lägga till ett eget händelseexempel {#custom-event}
 
 I följande exempel läggs ett anpassat händelse- och profilattribut till i en Kund AI-instans. Målet med kundens AI-instans är att förutsäga sannolikheten för att en kund köper en annan Luma-produkt inom de kommande 60 dagarna. Vanligtvis är produktdata länkade till en produkt-SKU. I det här fallet är SKU:n `prd1013`. När kundens AI-modell har tränats/bedömts kan denna SKU länkas till en händelse och visas som en inflytelserik faktor för en benägenhetspyts.
@@ -234,6 +247,38 @@ Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och e
 >Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
 
 Genom att följa det här avsnittet har du konfigurerat en instans av Customer AI och utfört en förutsägelsekörning. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poängvärden om profilväxlingen är aktiverad. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
+
+### Attributbaserad åtkomstkontroll
+
+>[!IMPORTANT]
+>
+>Attributbaserad åtkomstkontroll är för närvarande endast tillgänglig i en begränsad version.
+
+[Attributbaserad åtkomstkontroll](../../../access-control/abac/overview.md) är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
+
+Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
+
+Med attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+
+På grund av den attributbaserade åtkomstkontrollen skulle vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa instanser av kundens AI-tjänst. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
+
+![Kundens AI-arbetsyta med de begränsade fälten i tjänstinstansresultaten markerade.](../images/user-guide/unavailable-functionalities.png)
+
+Överst på kundens AI-arbetsyta **insikter** Lägg märke till att informationen i sidofältet, poängdefinitionen, identiteten och profilattributen visar &quot;Åtkomst begränsad&quot;.
+
+![Kundens AI-arbetsyta med de begränsade fälten i schemat markerade.](../images/user-guide/access-restricted.png)
+
+<!-- If you select datasets with restricted schemas on the **[!UICONTROL Create instance workflow]** page, a warning sign appears next to the dataset name with the message: [!UICONTROL Restricted information is excluded].
+
+![The Customer AI workspace with the restricted fields of the selected datasets results highlighted.](../images/user-guide/restricted-info-excluded.png) -->
+
+När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICONTROL Create instance workflow]** visas en varning om att [!UICONTROL Due to access restrictions, certain information isn't displayed in the dataset preview.]
+
+![Kundens AI-arbetsyta med begränsade fält för förhandsgranskningsdatauppsättningar med begränsade schemaresultat markerade.](../images/user-guide/restricted-dataset-preview.png)
+
+När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
+
+![Kundens AI-arbetsyta med de begränsade fälten i tjänstinstansresultaten markerade.](../images/user-guide/information-not-displayed.png)
 
 ## Nästa steg {#next-steps}
 

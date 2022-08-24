@@ -6,9 +6,9 @@ topic-legacy: Attribution AI
 description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
 landing-page-description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: a71da02b7cef5870bc9ca689a47c25098b2297b8
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Attribution AI kan användas som hjälp i följande exempel:
 
 ### Ytterligare funktioner
 
-Attribution AI erbjuder även integrering med andra Adobe-lösningar som [!DNL Adobe Analytics]. På så sätt kan ni använda dessa lösningar för att använda den anpassningsbara algoritmiska modellen för att utvärdera mediaprestanda och ge analytiska insikter.
+Attribution AI erbjuder även integrering med andra Adobe-lösningar som [!DNL Customer Journey Analytics]. På så sätt kan ni använda dessa lösningar för att använda den anpassningsbara algoritmiska modellen för att utvärdera mediaprestanda och ge analytiska insikter.
 
 ## Nästa steg
 

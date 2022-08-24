@@ -6,9 +6,9 @@ title: Komma igång med AI
 topic-legacy: Getting started
 description: Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster.
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '650'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,12 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 ### Läser exempel-API-anrop
 
 Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
+
+## Behörigheter
+
+När du använder åtkomstkontroll **Visa kund-AI** och **Hantera kund-AI** ger åtkomst till olika funktioner i Customer AI. The **Hantera kund-AI** behörighet ger dig **skapa**,**uppdatera**, **delete**, **enable**, eller **disable** en instans while **Visa kund-AI** gör att du kan läsa eller visa den. The **skapa**, **uppdatera** och **delete** åtgärder registreras av granskningsloggar.
+
+Läs dokumentationen för att lära dig mer [tilldela behörigheter för åtkomstkontroll](../../../help/access-control/home.md) eller hur [använda granskningsloggar för att övervaka åtkomst och aktivitet](../../../help/landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg
 

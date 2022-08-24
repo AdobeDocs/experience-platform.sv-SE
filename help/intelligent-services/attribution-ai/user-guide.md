@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Attribution AI
 topic-legacy: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: f27ddda4d5e6c33fa41e4ac503f80ddb1e39b09b
+source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
 workflow-type: tm+mt
-source-wordcount: '2277'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -261,6 +261,36 @@ För att säkerställa att ni får den mest korrekta modellen är det viktigt at
 När du har valt kursfönster väljer du **[!UICONTROL Finish]** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Välj **[!UICONTROL Ok]** omdirigeras till **[!UICONTROL Service instances]** sida där du kan se tjänstinstansen.
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
+
+### Attributbaserad åtkomstkontroll
+
+>[!IMPORTANT]
+>
+>Attributbaserad åtkomstkontroll är för närvarande endast tillgänglig i en begränsad version.
+
+[Attributbaserad åtkomstkontroll](../../../help/access-control/abac/overview.md) är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
+
+Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
+
+Genom attributbaserad åtkomstkontroll kan administratörer styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och -resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+
+På grund av den attributbaserade åtkomstkontrollen kan vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa Attribution AI-tjänstinstanser. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
+
+Överst på arbetsytan Attribution AI **insikter**, har den information som visas i sidofältet begränsad åtkomst.
+
+![Arbetsytan i Attribution AI med de begränsade fälten i schemat markerade.](./images/user-guide/access-restricted.png)
+
+Om du väljer datauppsättningar med begränsade scheman på **[!UICONTROL Create instance workflow]** visas ett varningstecken bredvid datauppsättningsnamnet med meddelandet: [!UICONTROL Restricted information is excluded].
+
+![Arbetsytan i Attribution AI med begränsade fält i de markerade datauppsättningarna med begränsade schemaresultat markerade.](./images/user-guide/restricted-info-excluded.png)
+
+När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICONTROL Create instance workflow]** visas en varning om att [!UICONTROL Due to access restrictions, certain information isn't displayed in the dataset preview.]
+
+![Arbetsytan i Attribution AI med de begränsade fälten i det förhandsgranskade schemaresultatet markerat.](./images/user-guide/restricted-dataset-preview.png)
+
+När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
+
+![Attribution AI arbetsyta med de begränsade fälten för instansresultaten markerade.](./images/user-guide/information-not-displayed.png)
 
 ## Nästa steg
 

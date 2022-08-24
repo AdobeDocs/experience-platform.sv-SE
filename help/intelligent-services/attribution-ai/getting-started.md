@@ -5,9 +5,9 @@ title: Komma igång med Attribution AI
 topic-legacy: Getting started
 description: Följande handledningar kräver förståelse för de olika Adobe Experience Platform-tjänster som används för att använda Attribution AI. Innan du börjar med självstudiekurserna bör du läsa följande dokument.
 exl-id: ab269c24-97ac-4da9-9b6c-7d2dde61f0dc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,12 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 ### Läser exempel-API-anrop
 
 Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
+
+## Behörigheter {#permissions}
+
+När rollbaserad åtkomstkontroll används **Visa Attribution AI** och **Hantera Attribution AI** behörighet ger åtkomst till olika funktioner i Attribution AI. The **Hantera Attribution AI** låter dig **skapa**, **klona**, **redigera**, **delete**, **enable**, eller **disable** en instans while **Visa Attribution AI** låter dig **read** eller **visa** den. The **skapa**, **redigera** och **delete** åtgärder registreras av granskningsloggar.
+
+Läs dokumentationen för att lära dig mer [tilldela behörigheter för åtkomstkontroll](../../../help/access-control/home.md) eller hur [använda granskningsloggar för att övervaka åtkomst och aktivitet](../../../help/landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg {#next-steps}
 
