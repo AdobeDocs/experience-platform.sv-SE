@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
-source-git-commit: 5967dee9c8b1c05ebd103998021e02a47ac3982c
+source-git-commit: c3452dda554b3c7750ad1166cef598d51d739e02
 workflow-type: tm+mt
-source-wordcount: '1215'
+source-wordcount: '1315'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,24 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Dashboards]](#dashboards)
 - [Dataprep](#data-prep)
 - [Experience Data Model (XDM)](#xdm)
 - [Kundprofil i realtid](#profile)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilka ni kan få viktiga insikter om organisationens data, som de fångats in under dagliga ögonblicksbilder.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Widget för schemalagda aktiveringar | The [!UICONTROL Scheduled activations] widgeten innehåller en tabellvy över de senast aktiverade målplatserna. För varje segment innehåller det namn, målplattform samt start- och slutdatum för aktiveringen. Med den här widgeten kan du snabbt identifiera var och när målgruppen aktiveras och göra duplicerade eller onödiga aktiveringar mer transparenta. Den samlade informationen visar också var aktiveringar har utelämnats. |
+
+Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
