@@ -2,10 +2,10 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt, baserat på valfritt dataformat och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: c207b6700a31c59b00af6d55264c7a345219d999
+source-git-commit: 2e2ed880650ad6823b60819e36081540a35ab727
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '717'
+ht-degree: 1%
 
 ---
 
@@ -62,8 +62,7 @@ Destinationernas SDK åtkomst varierar beroende på din status som partner eller
 ---------|----------|
 | Independent Software Vendor (ISV) | Gå med i [Adobe Exchange-programmet](https://partners.adobe.com/exchangeprogram/experiencecloud.html) och begär att få en Experience Platform-sandlåda för att få åtkomst till Destination SDK. |
 | Systemintegratör | Du måste vara på antingen Guld- eller Platina-nivå i [Adobe Solution Partner Program](https://solutionpartners.adobe.com/home.html)och du får en Experience Platform-sandlåda och tillgång till Destination SDK. |
-| Experience Platform kund på [Aktiveringspaket](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | Som standard får du åtkomst till sandlådor och Destination SDK i Experience Platform. <br> Ni får även tillgång till alla produktioner som konfigurerats av andra företag med hjälp av Destination SDK och som publicerats i olika Experience Platform-organisationer. |
-| Experience Platform kund på [Real-Time CDP Ultimate-paket](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Som standard får du åtkomst till sandlådor och Destination SDK i Experience Platform. <br> Ni får även tillgång till alla produktioner som konfigurerats av andra företag med hjälp av Destination SDK och som publicerats i olika Experience Platform-organisationer. |
+| Experience Platform kund på [Aktiveringspaket](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) eller [Real-Time CDP Ultimate-paket](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Som standard får du tillgång till sandlådor och Destination SDK i Experience Platform, så att du kan skapa privata mål för din organisation. |
 
 {style=&quot;table-layout:auto&quot;}
 
