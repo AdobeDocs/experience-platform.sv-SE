@@ -6,7 +6,7 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
+source-git-commit: 4f74be4ed8d84a58779b9e7d9f1de6d9bf19cc5e
 workflow-type: tm+mt
 source-wordcount: '2977'
 ht-degree: 0%
@@ -248,7 +248,7 @@ Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och e
 
 Genom att följa det här avsnittet har du konfigurerat en instans av Customer AI och utfört en förutsägelsekörning. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poängvärden om profilväxlingen är aktiverad. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
 
-### Attributbaserad åtkomstkontroll
+## Attributbaserad åtkomstkontroll
 
 >[!IMPORTANT]
 >

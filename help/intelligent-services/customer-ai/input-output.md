@@ -6,9 +6,9 @@ title: Indata och utdata i kundens AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
+source-git-commit: 9ce5a383bed24c4bfe9245521149443a57764da5
 workflow-type: tm+mt
-source-wordcount: '3168'
+source-wordcount: '3142'
 ht-degree: 0%
 
 ---
@@ -134,7 +134,7 @@ I det här avsnittet beskrivs olika scenarier för kundens AI-instanser samt obl
 
 ### Scenario 1: Köpkonvertering på en e-handelsplats
 
-**Förutsägelsemål:** Förutspå konverteringsbenägenheten för de berättigade profilerna för att köpa en viss artikel på en webbplats.
+**Förutsägelsemål:** Förutspå konverteringsbenägenheten för de profiler som är berättigade att köpa en viss artikel på en webbplats.
 
 **Nödvändiga standardhändelsetyper:**
 
@@ -286,7 +286,6 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 
 >[!NOTE]
 >
-> - Kunds-AI använder endast uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.
 > - För att underlätta GDPR-kompatibiliteten i kundens AI kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort deras data i datasjön, identitetstjänst och kundprofil i realtid.
 > - Alla data krypteras under överföring och i vila. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md)
 

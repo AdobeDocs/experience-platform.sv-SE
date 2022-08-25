@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Attribution AI
 topic-legacy: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
+source-git-commit: 67b4c49de6ebb9986f735390a0657d908b07e039
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2616'
 ht-degree: 0%
 
 ---
@@ -262,7 +262,7 @@ När du har valt kursfönster väljer du **[!UICONTROL Finish]** i det övre hö
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
 
-### Attributbaserad åtkomstkontroll
+## Attributbaserad åtkomstkontroll
 
 >[!IMPORTANT]
 >
@@ -278,15 +278,15 @@ På grund av den attributbaserade åtkomstkontrollen kan vissa fält och funktio
 
 Överst på arbetsytan Attribution AI **insikter**, har den information som visas i sidofältet begränsad åtkomst.
 
-![Arbetsytan i Attribution AI med de begränsade fälten i schemat markerade.](./images/user-guide/access-restricted.png)
+![Arbetsytan i Attribution AI med de begränsade schemafälten markerade.](./images/user-guide/access-restricted.png)
 
 Om du väljer datauppsättningar med begränsade scheman på **[!UICONTROL Create instance workflow]** visas ett varningstecken bredvid datauppsättningsnamnet med meddelandet: [!UICONTROL Restricted information is excluded].
 
-![Arbetsytan i Attribution AI med begränsade fält i de markerade datauppsättningarna med begränsade schemaresultat markerade.](./images/user-guide/restricted-info-excluded.png)
+![Attribution AI arbetsyta med begränsade datamängdsfält markerade.](./images/user-guide/restricted-info-excluded.png)
 
 När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICONTROL Create instance workflow]** visas en varning om att [!UICONTROL Due to access restrictions, certain information isn't displayed in the dataset preview.]
 
-![Arbetsytan i Attribution AI med de begränsade fälten i det förhandsgranskade schemaresultatet markerat.](./images/user-guide/restricted-dataset-preview.png)
+![Attribution AI arbetsyta med de begränsade förhandsvisade schemafälten som resultat markerade.](./images/user-guide/restricted-dataset-preview.png)
 
 När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
 
