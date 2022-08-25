@@ -5,9 +5,9 @@ title: Sekretessjobb API-slutpunkt
 topic-legacy: developer guide
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b126726aa7f7fe6070693fdecfdac1ec66050aa9
 workflow-type: tm+mt
-source-wordcount: '1362'
+source-wordcount: '1429'
 ht-degree: 0%
 
 ---
@@ -143,10 +143,11 @@ curl -X POST \
         ]
       }
     ],
-    "include": ["Analytics", "AudienceManager"],
+    "include": ["Analytics", "AudienceManager","profileService"],
     "expandIds": false,
     "priority": "normal",
     "analyticsDeleteMethod": "anonymize",
+    "mergePolicyId": 124,
     "regulation": "ccpa"
 }'
 ```
@@ -159,6 +160,7 @@ curl -X POST \
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. If `priority` utelämnas, standardbeteendet är `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. If `analyticsDeleteMethod` utelämnas, det här är standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
+| `mergePolicyId` | När sekretessförfrågningar görs för kundprofil i realtid (`profileService`) kan du också ange ID:t för [sammanfogningsprincip](../../profile/merge-policies/overview.md) som du vill använda för ID-sammanfogning. Genom att ange en kopplingsprofil kan sekretessförfrågningar innehålla segmentinformation när data returneras från en kund. Endast en sammanfogningsprincip kan anges per begäran. Om det inte finns någon sammanfogningspolicy inkluderas inte segmenteringsinformation i svaret. |
 | `regulation` **(Obligatoriskt)** | Reglerna för sekretessarbetet. Följande värden accepteras: <ul><li>`gdpr` (Europeiska unionen)</li><li>`ccpa` (Kalifornien)</li><li>`lgpd_bra` (Brasilien)</li><li>`nzpa_nzl` (Nya Zeeland)</li><li>`pdpa_tha` (Thailand)</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
