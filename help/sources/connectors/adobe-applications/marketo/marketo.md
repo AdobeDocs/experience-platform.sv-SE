@@ -5,9 +5,9 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 8b8e08adb5ff3498169c1702680ea44f3bebf5c5
+source-git-commit: efa6891024cacd383f4cd958162a7a4f8ead0624
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '630'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Med [!DNL Marketo] källanslutning kan du hämta B2B-data från [!DNL Marketo] t
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att Marketo Engage ska kunna delta i [Kundprofil i realtid](../../../../profile/home.md).
+>Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan CDP B2B Edition i realtid kan ni fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
 
 Dokumentet innehåller en översikt över [!DNL Marketo] källkoppling, inklusive information om hur anslutningen autentiseras, mappa [!DNL Marketo] fält till Experience Data Model (XDM) och anslutningsens datalatens.
 
