@@ -5,7 +5,7 @@ title: Använd en textredigerare i din lokala miljö för att skapa en källdoku
 topic-legacy: tutorial
 description: Det här dokumentet innehåller anvisningar om hur du använder din lokala miljö för att skapa dokumentation för källan och skicka en pull-begäran (PR).
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
 workflow-type: tm+mt
 source-wordcount: '650'
 ht-degree: 0%
@@ -70,7 +70,7 @@ Nästa, ange `Adobe Markdown Authoring` i sökfältet och välj **Installera** f
 
 ![installera](../assets/install.png)
 
-Ladda ned [dokumentationsmall för källor](../assets/template.zip) och extrahera filen till `experience-platform.en/help/sources/tutorials/api/create/...` med [`...`] som representerar den kategori som du väljer. Om du t.ex. skapar en datakälla väljer du databasmappen.
+Ladda ned [dokumentationsmall för källor](../assets/api-template.zip) och extrahera filen till `experience-platform.en/help/sources/tutorials/api/create/...` med [`...`] som representerar den kategori som du väljer. Om du t.ex. skapar en datakälla väljer du databasmappen.
 
 Till sist följer du instruktionerna i mallen och redigerar mallen med relevant information om källan.
 

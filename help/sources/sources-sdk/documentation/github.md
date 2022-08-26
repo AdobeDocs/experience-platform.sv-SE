@@ -5,7 +5,7 @@ title: Använd GitHub-webbgränssnittet för att skapa en källdokumentationssid
 topic-legacy: tutorial
 description: Det här dokumentet innehåller anvisningar om hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR).
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 0%
@@ -52,7 +52,7 @@ Namnge källfilen `YOURSOURCE.md` där YOURSOURCE är namnet på källan i Platf
 
 ## Skriv dokumentationssidan för källan
 
-Om du vill börja dokumentera den nya källan klistrar du in innehållet i [dokumentationsmall för källor](./template.md) till GitHub-webbredigeraren. Du kan även hämta mallen [här](../assets/template.zip).
+Om du vill börja dokumentera den nya källan klistrar du in innehållet i [dokumentationsmall för källor](./template.md) till GitHub-webbredigeraren. Du kan även hämta mallen [här](../assets/api-template.zip).
 
 När mallen har kopierats till GitHub-webbredigeringsgränssnittet följer du instruktionerna som beskrivs i mallen och redigerar värdena som innehåller relevant information för källan.
 
