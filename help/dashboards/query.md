@@ -4,9 +4,9 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som används på kontrollpaneler för profiler, segment och mål i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: fe2d9e60dd641e1f03f7dde72e64e2892ae7c1a2
+source-git-commit: 62e282138de8cf2d74b4a62f4ced39e3fb78001a
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '941'
 ht-degree: 0%
 
 ---
@@ -83,6 +83,16 @@ Namnkonventionen för den här datauppsättningen är **DIM_Destination**.
 Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen kan du förhandsgranska och utforska datauppsättningen [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
 
 ![](images/query/destinations-metadata.png)
+
+## (Beta) Insiktsrapporter för kunddataplattformen (CDP)
+
+>[!IMPORTANT]
+>
+>Funktionen CDP Insights Data Models är en betaversion. Dess funktioner och dokumentation kan komma att ändras.
+
+CDP Insights Data Models-funktionen visar SQL som ger insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för marknadsförings- och KPI-användningsfall.
+
+CDP-rapportering ger insikter i era profildata och dess relation till segment och destinationer. Mer information om hur du gör det finns i dokumentationen om CDP Insights-datamodellen [tillämpa CDP Insights-datamodeller på dina specifika KPI-användningsfall](./cdp-insights-data-model.md).
 
 ## Exempelfrågor
 
