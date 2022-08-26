@@ -3,9 +3,9 @@ title: Använda Adobe Analytics med Platform Web SDK
 description: Lär dig hur du skickar data till Adobe Analytics med Adobe Experience Platform Web SDK.
 keywords: adobe analytics;analytics;mapped data;mapped vars;
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: f627c1f6c917e74e0a366ce0611a1fa6bd0e3c3d
+source-git-commit: 836fa7814a6966903639e871bfaea0563847f363
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience Platform [!DNL Edge Network] mappar automatiskt många XDM-vari
 
 ## Manuellt mappade data
 
-Data som inte automatiskt mappas av gränsnätverket kan nås via bearbetningsregler. Data förenklas med punktnotation och är tillgängliga som contextData.
+Alla data som inte automatiskt mappas av [!DNL Edge Network] kan nås via bearbetningsregler. Data förenklas med punktnotation och är tillgängliga som contextData.
 
 Om du hade ett schema som såg ut så här.
 
@@ -71,3 +71,7 @@ a.x.arrayofobjects.1.obj2key //objval1
 Här är ett exempel på en bearbetningsregel som skulle använda dessa data.
 
 ![Gränssnitt för bearbetningsregler](./assets/edge_analytics_processing_rules.png)
+
+>[!NOTE]
+>
+>Med Experience Edge-samlingen skickas alla händelser till Analytics samt till andra tjänster som du har konfigurerat för din datastream. Om du till exempel har både Analytics och Target konfigurerade som tjänster och du gör separata anrop för personalisering och för Analytics, skickas båda händelserna till Analytics och Target. Dessa händelser registreras i analysrapporter och kan påverka mätvärden som studsfrekvens.
