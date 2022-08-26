@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 3e3389c3e77597ace4177e683aaf7494364a5be7
+source-git-commit: f2d2499147b40a15a413773068b65139278bd4ff
 workflow-type: tm+mt
-source-wordcount: '1868'
+source-wordcount: '2045'
 ht-degree: 1%
 
 ---
@@ -90,17 +90,13 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-<!--
+**Nya eller uppdaterade funktioner**
 
-**New or updated features**
-
-| Feature | Description |
+| Funktion | Beskrivning |
 | ----------- | ----------- |
-|  ||
+| (Beta) Attributbaserat personaliseringsstöd för personaliseringsmål | I betaversionen av attributbaserad personalisering ser du två nya kort i [målkatalog](../../destinations/catalog/overview.md): <ul><li>**[!UICONTROL Adobe Target V2]**: Den här kopplingen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Utöver de funktioner som finns på Adobe Target V1-kortet lägger Target V2-kontakten till en [mappningssteg](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till Adobe Target, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.</li><li>**[!UICONTROL Custom Personalization With Attributes]**: Den här kopplingen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Förutom funktionerna i **[!UICONTROL Custom Personalization]**, **[!UICONTROL Custom Personalization With Attributes]** tillägg av en valfri [mappningssteg](../../destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till ditt anpassade personaliseringsmål, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.</li></ul> <br> Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization With Attributes]** mål kräver att du använder [API för Edge Network Server](../../server-api/overview.md) för datainsamling. Dessutom måste alla Server-API-anrop göras i en [autentiserad kontext](../../server-api/authentication.md). |
 
-{style="table-layout:auto"}
-
--->
+{style=&quot;table-layout:auto&quot;}
 
 **Nya destinationer**
 
