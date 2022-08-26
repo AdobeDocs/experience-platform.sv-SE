@@ -3,14 +3,33 @@ keywords: personalisering, destination, upplevelseplattform anpassad destination
 title: Anpassad personaliseringsanslutning
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 09e81093c2ed2703468693160939b3b6f62bc5b6
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1254'
 ht-degree: 0%
 
 ---
 
 # Anpassad personaliseringsanslutning {#custom-personalization-connection}
+
+## Destinationsändringslogg {#changelog}
+
+Med betaversionen av **[!UICONTROL Custom personalization]** målanslutning, du kanske ser två **[!UICONTROL Custom personalization]** i målkatalogen.
+
+The **[!UICONTROL Custom Personalization With Attributes]** är för närvarande i betaversion och endast tillgängligt för ett visst antal kunder. Förutom funktionerna i **[!UICONTROL Custom Personalization]**, **[!UICONTROL Custom Personalization With Attributes]** tillägg av en valfri [mappningssteg](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till ditt anpassade personaliseringsmål, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.
+
+>[!IMPORTANT]
+>
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization With Attributes]** mål kräver att du använder [API för Edge Network Server](/help/server-api/overview.md) för datainsamling. Dessutom måste alla Server-API-anrop göras i en [autentiserad kontext](../../../server-api/authentication.md).
+>
+>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API på två sätt:
+>
+> * Lägg till en integration på serversidan som hämtar attribut via Server-API:t.
+> * Uppdatera klientsidans konfiguration med en anpassad JavaScript-kod för att hämta attribut via Server-API:t.
+>
+> Om du inte uppfyller kraven ovan kommer personaliseringen endast att baseras på segmentmedlemskap, vilket är identiskt med den upplevelse som finns i **[!UICONTROL Custom Personalization]** koppling.
+
+![Bild av de två anpassade målkorten för personalisering i en sida vid sida-vy.](../../assets/catalog/personalization/custom-personalization/custom-personalization-side-by-side-view.png)
 
 ## Översikt {#overview}
 
@@ -30,7 +49,7 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 
 ## Användningsfall {#use-cases}
 
-The [!DNL Custom personalization connection] gör att du kan använda dina egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), samtidigt som du drar nytta av datainsamling och segmenteringsfunktioner i Experience Platform Edge Network, för att ge en djupare upplevelse av kundpersonalisering.
+The [!DNL Custom Personalization Connection] gör att du kan använda dina egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom företagsspecifika system (t.ex. intern CMS), och samtidigt utnyttja datainsamling och segmenteringsfunktioner i Experience Platform Edge Network, för att ge en djupare personaliseringsupplevelse.
 
 De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
@@ -134,11 +153,11 @@ alloy("sendEvent", {
     if(result.destinations) { // Looking to see if the destination results are there
  
         // Get the destination with a particular alias
-        var personalizationDestinations = result.destinations.filter(x => x.alias == “personalizationAlias”)
+        var personalizationDestinations = result.destinations.filter(x => x.alias == "personalizationAlias")
         if(personalizationDestinations.length > 0) {
              // Code to pass the segment IDs into the system that corresponds to personalizationAlias
         }
-        var adServerDestinations = result.destinations.filter(x => x.alias == “adServerAlias”)
+        var adServerDestinations = result.destinations.filter(x => x.alias == "adServerAlias")
         if(adServerDestinations.length > 0) {
             // Code to pass the segment ids into the system that corresponds to adServerAlias
         }
@@ -149,6 +168,37 @@ alloy("sendEvent", {
   });
 ```
 
+### Exempelsvar för [!UICONTROL Custom Personalization With Attributes]
+
+När du använder **[!UICONTROL Custom Personalization With Attributes]** ser API-svaret ut ungefär som i exemplet nedan.
+
+Skillnaden mellan **[!UICONTROL Custom Personalization With Attributes]** och **[!UICONTROL Custom Personalization]** innebär att `attributes` i API-svaret.
+
+```json
+[
+    {
+        "type": "profileLookup",
+        "destinationId": "7bb4cb8d-8c2e-4450-871d-b7824f547130",
+        "alias": "personalizationAlias",
+        "attributes": {
+             "countryCode": {
+                   "value" : "DE"
+              },
+             "membershipStatus": {
+                   "value" : "PREMIUM"
+              }
+         },         
+        "segments": [
+            {
+                "id": "399eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
+            },
+            {
+                "id": "499eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
+            }
+        ]
+    }
+]
+```
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

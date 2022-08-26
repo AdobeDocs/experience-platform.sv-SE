@@ -3,14 +3,23 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 769d3f14e858ed69c6bb50360da90e4e0816a377
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '992'
 ht-degree: 0%
 
 ---
 
 # Adobe Target-anslutning {#adobe-target-connection}
+
+## Destinationsändringslogg {#changelog}
+
+>[!IMPORTANT]
+>
+>I betaversionen av den förbättrade Adobe Target V2-målanslutningen kan det hända att du ser två Adobe Target-kort i målkatalogen.
+>Adobe Target V2-målanslutningen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Utöver de funktioner som finns på Adobe V1-kortet lägger Target V2-kontakten till en [mappningssteg](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till Adobe Target, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.
+
+![Bild av de två Adobe Target-målkorten i en sida vid sida-vy.](/help/destinations/assets/catalog/personalization/adobe-target-connection/adobe-target-side-by-side-view.png)
 
 ## Översikt {#overview}
 

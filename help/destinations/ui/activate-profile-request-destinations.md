@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att profilera mål för begäran
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 26e7a3e78a4513aa69cdfbed7902509609e114cc
 workflow-type: tm+mt
-source-wordcount: '433'
+source-wordcount: '641'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform-profilförfrågningar. Exempel på mål för profilbegäran är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) anslutningar.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform-profilförfrågningar. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md)kan de här målen användas för att anpassa webbsidor efter sida och nästa sida i era webbegenskaper. Läs mer om [aktivera personalisering på samma sida och nästa sida](/help/destinations/ui/configure-personalization-destinations.md).
+
+Exempel på mål för profilbegäran är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) anslutningar.
 
 ## Förutsättningar {#prerequisites}
 
-Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de anpassningsmål som stöds och konfigurera det mål som du vill använda.
 
 ### Sammanslagningsprincip för segment {#merge-policy}
 
@@ -35,7 +37,7 @@ För närvarande stöder profilförfrågningar endast aktivering av segment som 
 
    ![Fliken Målkatalog](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar det personaliseringsmål där du vill aktivera dina segment, vilket visas i bilden nedan.
 
    ![Aktivera knappar](../assets/ui/activate-profile-request-destinations/activate-segments-button.png)
 
@@ -50,6 +52,22 @@ För närvarande stöder profilförfrågningar endast aktivering av segment som 
 Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
 
 ![Markera segment](../assets/ui/activate-profile-request-destinations/select-segments.png)
+
+## (Beta) Mappningsattribut {#map-attributes}
+
+>[!IMPORTANT]
+>
+>Mappningssteget, som möjliggör attributbaserad personalisering för [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [generiska personaliseringsmål](/help/destinations/catalog/personalization/custom-personalization.md), är för närvarande i betaversion och din organisation kanske inte har tillgång till den än. Dokumentationen kan komma att ändras.
+
+Välj de attribut baserat på vilka du vill aktivera användningsfall för personalisering för dina användare. Det innebär att om värdet för ett attribut ändras eller om ett attribut läggs till i en profil, kommer den profilen att bli medlem i segmentet och aktiveras för personaliseringsmålet.
+
+Det är valfritt att lägga till attribut och du kan fortsätta till nästa steg och aktivera anpassning av samma sida och nästa sida utan att välja attribut. Om du inte lägger till några attribut i det här steget sker fortfarande personalisering baserat på segmentmedlemskapet och identitetskartan för profiler.
+
+![Bild som visar mappningssteget med ett markerat attribut](../assets/ui/activate-profile-request-destinations/mapping-step.png)
+
+Om du vill lägga till attribut väljer du **[!UICONTROL Add new field]** styr och söker efter eller navigerar till det önskade XDM-attributfältet, som visas nedan.
+
+![Skärminspelning som visar hur du väljer ett XDM-attribut i mappningssteget](../assets/ui/activate-profile-request-destinations/mapping-step-select-attribute.gif)
 
 ## Schemalägg segmentexport {#scheduling}
 
