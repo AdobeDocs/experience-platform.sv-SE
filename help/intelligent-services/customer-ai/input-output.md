@@ -6,9 +6,9 @@ title: Indata och utdata i kundens AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 9ce5a383bed24c4bfe9245521149443a57764da5
+source-git-commit: e0e96a52e30f5c34e0695c3e291bed9b6c085e00
 workflow-type: tm+mt
-source-wordcount: '3142'
+source-wordcount: '3183'
 ht-degree: 0%
 
 ---
@@ -286,10 +286,15 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 
 >[!NOTE]
 >
-> - För att underlätta GDPR-kompatibiliteten i kundens AI kan ni använda Adobe Experience Platform Privacy Service för att skapa protokoll som följer kundförfrågningar för att få tillgång till och ta bort deras data i datasjön, identitetstjänst och kundprofil i realtid.
-> - Alla data krypteras under överföring och i vila. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md)
+> - Kunds-AI använder endast uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.
+> - Kund-AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in förfrågningar från konsumenter om åtkomst och radering för att ta bort sina data över datasjön, identitetstjänst och kundprofil i realtid.
+> - Alla datauppsättningar som vi använder för in-/utdata av modeller följer riktlinjerna för plattformen. Plattformsdatakryptering gäller för data i vila och under överföring. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md)
 
 
 ## Nästa steg {#next-steps}
 
 När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa följande [Konfigurera en AI-instans för kund](./user-guide/configure.md) guide. Den här guiden hjälper dig att skapa en instans för kundens AI.
+
+
+
+
