@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 0b7196b195fc5ee8abb45ccb93f1fcc9a000a603
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '501'
 ht-degree: 0%
 
 ---
@@ -49,6 +49,11 @@ Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.pn
 {style=&quot;table-layout:auto&quot;}
 
 ## Visa information om en arbetsorder
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_statusbyservice"
+>title="Status per tjänst"
+>abstract="Förfrågningar om datahygien behandlas oberoende av olika Experience Platform-tjänster. I det här avsnittet beskrivs den aktuella bearbetningsstatusen för begäran för varje tjänst. Mer information finns i användargränssnittshandboken för datahygien."
 
 Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
