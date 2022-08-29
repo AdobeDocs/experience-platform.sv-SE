@@ -4,9 +4,9 @@ title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 25e0061cc47ec4179f3f02958eb8bda1714ea139
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '525'
 ht-degree: 1%
 
 ---
@@ -105,7 +105,6 @@ En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generer
       }
     },
     "required": [
-      "host",
       "accessToken"
     ]
   }
@@ -137,7 +136,7 @@ En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generer
 
 ### Grundläggande autentisering
 
-Grundläggande autentisering är en autentiseringstyp som gör att du kan komma åt programmet med hjälp av en kombination av programmets värd-URL, ditt kontoanvändarnamn och ditt kontolösenord.
+Grundläggande autentisering är en autentiseringstyp som gör att du kan komma åt programmet genom att använda en kombination av ditt användarnamn och ditt lösenord för kontot.
 
 ```json
 {
@@ -148,10 +147,6 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
     "type": "object",
     "description": "defines auth params required for connecting to rest service.",
     "properties": {
-      "host": {
-        "type": "string",
-        "description": "Enter resource url host path"
-      },
       "username": {
         "description": "Username to connect rest endpoint.",
         "type": "string"
@@ -163,7 +158,6 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
       }
     },
     "required": [
-      "host",
       "username",
       "password"
     ]
@@ -180,10 +174,9 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
 | `authSpec.spec.type` | Definierar schemats datatyp. | `object` |
 | `authSpec.spec.description` | Visar ytterligare information som är specifik för din autentiseringstyp. |
 | `authSpec.spec.properties` | Innehåller information om de autentiseringsuppgifter som används för autentiseringen. |
-| `authSpec.spec.properties.host` | Programmets värd-URL. |
 | `authSpec.spec.properties.username` | Det kontoanvändarnamn som är associerat med ditt program. |
 | `authSpec.spec.properties.password` | Kontolösenordet som är kopplat till programmet. |
-| `authSpec.spec.required` | Anger de fält som krävs som obligatoriska värden som ska anges i Platform. | `host` |
+| `authSpec.spec.required` | Anger de fält som krävs som obligatoriska värden som ska anges i Platform. | `username` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -201,10 +194,6 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
         "type": "object",
         "description": "Define auth params required for connecting to generic rest using oauth2 authorization code.",
         "properties": {
-          "host": {
-            "type": "string",
-            "description": "Enter resource url host path"
-          },
           "authorizationTestUrl": {
             "description": "Authorization test url to validate accessToken.",
             "type": "string"
@@ -216,7 +205,6 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
           }
         },
         "required": [
-          "host",
           "accessToken"
         ]
       }
@@ -229,10 +217,6 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
         "type": "object",
         "description": "defines auth params required for connecting to rest service.",
         "properties": {
-          "host": {
-            "type": "string",
-            "description": "Enter resource url host path."
-          },
           "username": {
             "description": "Username to connect mailChimp endpoint.",
             "type": "string"
@@ -244,7 +228,6 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
           }
         },
         "required": [
-          "host",
           "username",
           "password"
         ]

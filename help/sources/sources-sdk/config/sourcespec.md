@@ -4,7 +4,7 @@ title: Konfigurera källspecifikationer för självbetjäningskällor (batch-SDK
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: adaa0e1a63536bc1fdf751eec477e5cda9fd20ae
 workflow-type: tm+mt
 source-wordcount: '1690'
 ht-degree: 0%
@@ -48,7 +48,8 @@ Se [appendix](#source-spec) för ett exempel på en fullt ifylld källspecifikat
           "properties": {
             "host": {
               "type": "string",
-              "description": "Enter resource url host path."
+              "description": "Enter resource url host path.",
+              "example": "https://{domain}.api.mailchimp.com"
             },
             "path": {
               "type": "string",
@@ -69,6 +70,7 @@ Se [appendix](#source-spec) för ett exempel på en fullt ifylld källspecifikat
             }
           },
           "required": [
+            "host",
             "path",
             "method"
           ]
@@ -336,6 +338,7 @@ Följande är en färdig källspecifikation som använder [!DNL MailChimp Member
         }
       },
       "urlParams": {
+        "host": "https://{domain}.api.mailchimp.com",
         "path": "/3.0/lists/${listId}/members",
         "method": "GET"
       },

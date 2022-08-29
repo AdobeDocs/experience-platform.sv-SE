@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för Mailchimp Campaign med API:t för flödestjäns
 topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp Campaign med API:t för Flow Service.
 exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
 workflow-type: tm+mt
-source-wordcount: '2319'
+source-wordcount: '1942'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ En basanslutning bevarar information mellan källan och plattformen, inklusive k
 
 ### Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering
 
-Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering, gör en POST-förfrågan till `/connections` slutpunkt för [!DNL Flow Service] API:t anger autentiseringsuppgifter för `host`, `authorizationTestUrl`, `username`och `password`.
+Skapa en [!DNL Mailchimp] basanslutning med grundläggande autentisering, gör en POST-förfrågan till `/connections` slutpunkt för [!DNL Flow Service] API:t anger autentiseringsuppgifter för `authorizationTestUrl`, `username`och `password`.
 
 **API-format**
 
@@ -60,7 +60,6 @@ curl -X POST \
       "auth": {
           "specName": "Basic Authentication",
           "params": {
-              "host": "{HOST}",
               "authorizationTestUrl": "https://login.mailchimp.com/oauth2/metadata",
               "username": "{USERNAME}",
               "password": "{PASSWORD}"
@@ -75,7 +74,6 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via [!DNL Flow Service] API. |
 | `auth.specName` | Autentiseringstypen som du använder för att ansluta källan till plattformen. |
-| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL Mailchimp] API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | `auth.params.authorizationTestUrl` | (Valfritt) URL:en för auktoriseringstestet används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
 | `auth.params.username` | Användarnamnet som motsvarar ditt [!DNL Mailchimp] konto. Detta krävs för grundläggande autentisering. |
 | `auth.params.password` | Lösenordet som motsvarar [!DNL Mailchimp] konto. Detta krävs för grundläggande autentisering. |
@@ -93,7 +91,7 @@ Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika a
 
 ### Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod
 
-Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod, gör en POST-förfrågan till `/connections` slutpunkt när autentiseringsuppgifter anges för `host`, `authorizationTestUrl`och `accessToken`.
+Skapa en [!DNL Mailchimp] basanslutning med OAuth 2-uppdateringskod, gör en POST-förfrågan till `/connections` slutpunkt när autentiseringsuppgifter anges för `authorizationTestUrl`och `accessToken`.
 
 **API-format**
 
@@ -123,7 +121,6 @@ curl -X POST \
       "auth": {
           "specName": "oAuth2RefreshCode",
           "params": {
-              "host": "{HOST}",
               "authorizationTestUrl": "https://login.mailchimp.com/oauth2/metadata",
               "accessToken": "{ACCESS_TOKEN}"
           }
@@ -137,7 +134,6 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när du har registrerat källan med [!DNL Flow Service] API. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
-| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL Mailchimp] API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | `auth.params.authorizationTestUrl` | (Valfritt) Testnings-URL:en för auktorisering används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
 | `auth.params.accessToken` | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
@@ -546,308 +542,26 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet. Du kan använda
 }
 ```
 
-## Övervaka dataflödet
+## Bilaga
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel.
+Följande avsnitt innehåller information om hur du övervakar, uppdaterar och tar bort dataflödet.
 
-**API-format**
+### Övervaka dataflödet
 
-```http
-GET /runs?property=flowId=={FLOW_ID}
-```
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Fullständiga API-exempel finns i guiden [övervaka källans dataflöden med API](../../monitor.md).
 
-**Begäran**
+### Uppdatera ditt dataflöde
 
-Följande begäran hämtar specifikationerna för ett befintligt dataflöde.
+Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körningsschema och tillhörande mappningsuppsättningar genom att göra en PATCH-begäran till `/flows` slutpunkt för [!DNL Flow Service] API, samtidigt som du anger ID:t för dataflödet. När du gör en begäran från PATCH måste du ange dataflödets unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera källans dataflöde med API](../../update-dataflows.md).
 
-```shell
-curl -X GET \
-  'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==993f908f-3342-4d9c-9f3c-5aa9a189ca1a' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
+### Uppdatera ditt konto
 
-**Svar**
+Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](../../update.md).
 
-Ett lyckat svar returnerar information om flödets körning, inklusive information om dess skapandedatum, käll- och målanslutningar samt flödets unika identifierare (`id`).
+### Ta bort ditt dataflöde
 
-```json
-{
-    "items": [
-        {
-            "id": "209812ad-7bef-430c-b5b2-a648aae72094",
-            "createdAt": 1633044829955,
-            "updatedAt": 1633044838006,
-            "createdBy": "{CREATED_BY}",
-            "updatedBy": "{UPDATED_BY}",
-            "createdClient": "{CREATED_CLIENT}",
-            "updatedClient": "{UPDATED_CLIENT}",
-            "sandboxId": "{SANDBOX_ID}",
-            "sandboxName": "{SANDBOX_NAME}",
-            "imsOrgId": "{ORG_ID}",
-            "name": "MailChimp Campaign dataflow",
-            "description": "MailChimp Campaign dataflow",
-            "flowSpec": {
-                "id": "6499120c-0b15-42dc-936e-847ea3c24d72",
-                "version": "1.0"
-            },
-            "state": "enabled",
-            "version": "\"7e01322c-0000-0200-0000-615b5d520000\"",
-            "etag": "\"7e01322c-0000-0200-0000-615b5d520000\"",
-            "sourceConnectionIds": [
-                "d6557bf1-7347-415f-964c-9316bd4cbf56"
-            ],
-            "targetConnectionIds": [
-                "9463fe9c-027d-4347-a423-894fcd105647"
-            ],
-            "inheritedAttributes": {
-                "sourceConnections": [
-                    {
-                        "id": "d6557bf1-7347-415f-964c-9316bd4cbf56",
-                        "connectionSpec": {
-                            "id": "c8ce8c8c-37fb-4162-9fbf-c2f181e04a7a",
-                            "version": "1.0"
-                        },
-                        "baseConnection": {
-                            "id": "9601747c-6874-4c02-bb00-5732a8c43086",
-                            "connectionSpec": {
-                                "id": "c8ce8c8c-37fb-4162-9fbf-c2f181e04a7a",
-                                "version": "1.0"
-                            }
-                        }
-                    }
-                ],
-                "targetConnections": [
-                    {
-                        "id": "9463fe9c-027d-4347-a423-894fcd105647",
-                        "connectionSpec": {
-                            "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
-                            "version": "1.0"
-                        }
-                    }
-                ]
-            },
-            "scheduleParams": {
-                "startTime": "1633377385",
-                "frequency": "minute",
-                "interval": 15
-            },
-            "runs": "/flows/be2d5249-eeaf-4a74-bdbd-b7bf62f7b2da/runs",
-            "lastOperation": {
-                "started": 1633377421476,
-                "updated": 0,
-                "operation": "create"
-            },
-            "lastRunDetails": {
-                "id": "84f95788-3e83-4ce0-8e45-c0a89117c6f1",
-                "state": "failed",
-                "startedAtUTC": 1633377445979,
-                "completedAtUTC": 1633377487082
-            }
-        }
-    ]
-}
-```
+Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger ID:t för det dataflöde som du vill ta bort som en del av frågeparametern. Fullständiga API-exempel finns i guiden [ta bort dataflöden med API](../../delete-dataflows.md).
 
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `items` | Innehåller en enda nyttolast av metadata som är associerade med din specifika flödeskörning. |
-| `id` | Visar det ID som motsvarar ditt dataflöde. |
-| `state` | Visar det aktuella tillståndet för dataflödet. |
-| `inheritedAttributes` | Innehåller attribut som definierar ditt flöde, t.ex. ID:n för motsvarande bas-, käll- och målanslutning. |
-| `scheduleParams` | Innehåller information om dataflödets intag, t.ex. starttid (i epok-tid), frekvens och intervall. |
-| `transformations` | Innehåller information om de omformningsegenskaper som används i dataflödet. |
-| `runs` | Visar flödets motsvarande körnings-ID. Du kan använda det här ID:t för att övervaka specifika flödeskörningar. |
+### Ta bort ditt konto
 
-## Uppdatera ditt dataflöde
-
-Om du vill uppdatera ditt dataflödes körningsschema, namn och beskrivning utför du en PATCH-begäran till [!DNL Flow Service] API när du anger ditt flödes-ID, version och det nya schema som du vill använda.
-
->[!IMPORTANT]
->
->The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
-
-**API-format**
-
-```http
-PATCH /flows/{FLOW_ID}
-```
-
-**Begäran**
-
-Följande begäran uppdaterar ditt flödeskörningsschema samt dataflödets namn och beskrivning.
-
-```shell
-curl -X PATCH \
-  'https://platform.adobe.io/data/foundation/flowservice/flows/209812ad-7bef-430c-b5b2-a648aae72094' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-  -H 'If-Match: "2e01f11d-0000-0200-0000-615649660000"' \
-  -d '[
-          {
-              "op": "replace",
-              "path": "/scheduleParams/frequency",
-              "value": "day"
-          },
-          {
-              "op": "replace",
-              "path": "/name",
-              "value": "MailChimp Campaign Dataflow 2.0"
-          },
-          {
-              "op": "replace",
-              "path": "/description",
-              "value": "MailChimp Campaign Dataflow Updated"
-          }
-      ]'
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
-| `path` | Sökvägen till den parameter som ska uppdateras. |
-| `value` | Det nya värdet som du vill uppdatera parametern med. |
-
-**Svar**
-
-Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt flödes-ID.
-
-```json
-{
-    "id": "209812ad-7bef-430c-b5b2-a648aae72094",
-    "etag": "\"50014cc8-0000-0200-0000-6036eb720000\""
-}
-```
-
-## Ta bort ditt dataflöde
-
-Med ett befintligt flödes-ID kan du ta bort ett dataflöde genom att göra en DELETE-begäran till [!DNL Flow Service] API.
-
-**API-format**
-
-```http
-DELETE /flows/{FLOW_ID}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{FLOW_ID}` | Unika `id` värdet för det dataflöde som du vill ta bort. |
-
-**Begäran**
-
-```shell
-curl -X DELETE \
-  'https://platform.adobe.io/data/foundation/flowservice/flows/209812ad-7bef-430c-b5b2-a648aae72094' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext. Du kan bekräfta borttagningen genom att försöka utföra en sökbegäran (GET) i dataflödet. API:t returnerar ett HTTP 404-fel (Hittades inte) som anger att dataflödet har tagits bort.
-
-## Uppdatera anslutningen
-
-Om du vill uppdatera anslutningsens namn, beskrivning och autentiseringsuppgifter utför du en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID, version och den nya information du vill använda.
-
->[!IMPORTANT]
->
->The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av anslutningen som du vill uppdatera.
-
-**API-format**
-
-```http
-PATCH /connections/{BASE_CONNECTION_ID}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | Unika `id` värdet för anslutningen som du vill uppdatera. |
-
-**Begäran**
-
-Följande begäran innehåller ett nytt namn och en beskrivning samt en ny uppsättning autentiseringsuppgifter för att uppdatera anslutningen med.
-
-```shell
-curl -X PATCH \
-  'https://platform.adobe.io/data/foundation/flowservice/connections/4cea039f-f1cc-4fa5-9136-db8dd4c7fbfa' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-  -H 'If-Match: 4000cff7-0000-0200-0000-6154bad60000' \
-  -d '[
-      {
-          "op": "replace",
-          "path": "/auth/params",
-          "value": {
-              "username": "mailchimp-member-activity-user",
-              "password": "{NEW_PASSWORD}"
-          }
-      },
-      {
-          "op": "replace",
-          "path": "/name",
-          "value": "MailChimp Campaign Connection 2.0"
-      },
-      {
-          "op": "add",
-          "path": "/description",
-          "value": "Updated MailChimp Campaign Connection"
-      }
-  ]'
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera anslutningen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
-| `path` | Sökvägen till den parameter som ska uppdateras. |
-| `value` | Det nya värdet som du vill uppdatera parametern med. |
-
-**Svar**
-
-Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad tagg. Du kan verifiera uppdateringen genom att göra en GET-förfrågan till [!DNL Flow Service] API, samtidigt som du anger ditt anslutnings-ID.
-
-```json
-{
-    "id": "4cea039f-f1cc-4fa5-9136-db8dd4c7fbfa",
-    "etag": "\"3600e378-0000-0200-0000-5f40212f0000\""
-}
-```
-
-## Ta bort anslutningen
-
-När du har ett befintligt basanslutnings-ID utför du en DELETE-förfrågan till [!DNL Flow Service] API.
-
-**API-format**
-
-```http
-DELETE /connections/{CONNECTION_ID}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | Unika `id` värdet för den basanslutning som du vill ta bort. |
-
-**Begäran**
-
-```shell
-curl -X DELETE \
-  'https://platform.adobe.io/data/foundation/flowservice/connections/4cea039f-f1cc-4fa5-9136-db8dd4c7fbfa' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
-
-Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) på anslutningen.
+Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger basanslutnings-ID för det konto du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](../../delete.md).
