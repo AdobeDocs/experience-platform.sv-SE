@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förhandsvisning;exempel
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
-description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar datasetsöverlappning, identitetsöverlappning och okända profiler.
+description: Med förhandsgranskningsexemplets statusslutpunkt i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution efter datauppsättning och identitet, och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 8a17648757b342bd8026382918ca41c469210b51
 workflow-type: tm+mt
-source-wordcount: '2877'
+source-wordcount: '2870'
 ht-degree: 0%
 
 ---
@@ -465,25 +465,25 @@ Den här rapporten innehåller följande information:
 * Det finns 24 profiler som består av `AAID` och `ECID` ID-namnutrymmen.
 * Det finns 6 565 profiler som bara innehåller en `ECID` identitet.
 
-## Generera rapport över okända profiler
+## Generera rapport över profiler som inte sammanfogats
 
-Du kan få mer insyn i hur din organisations profilarkiv är uppbyggd genom den okända profilrapporten. En&quot;okänd profil&quot; avser en profil som är både osydd och inaktiv under en given tidsperiod. En icke sammansatt profil är en profil som bara innehåller ett profilfragment, medan en inaktiv profil är en profil som inte har lagt till nya händelser under den angivna tidsperioden. I rapporten med okända profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
+Du kan få mer insyn i hur din organisations profilarkiv är uppbyggd genom den sammansatta profilrapporten. En &quot;sammanfogad&quot; profil är en profil som bara innehåller ett profilfragment. En&quot;okänd&quot; profil är en profil som associeras med pseudonyma identitetsnamnutrymmen som `ECID` och `AAID`. Okända profiler är inaktiva, vilket innebär att de inte har lagt till nya händelser under den angivna tidsperioden. I rapporten för icke sammansatta profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
 
-Du kan generera rapporten med okända profiler genom att utföra en GET-förfrågan till `/previewsamplestatus/report/unknownProfiles` slutpunkt.
+Du kan generera rapporten för icke sammansatta profiler genom att göra en GET-förfrågan till `/previewsamplestatus/report/unstitchedProfiles` slutpunkt.
 
 **API-format**
 
 ```http
-GET /previewsamplestatus/report/unknownProfiles
+GET /previewsamplestatus/report/unstitchedProfiles
 ```
 
 **Begäran**
 
-Följande begäran returnerar rapporten med okända profiler.
+Följande begäran returnerar rapporten för icke sammansatta profiler.
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/unknownProfiles \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/unstitchedProfiles \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -491,18 +491,18 @@ curl -X GET \
 
 **Svar**
 
-En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten med okända profiler.
+En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten för icke-sammansatta profiler.
 
 >[!NOTE]
 >
->I den här guiden har rapporten trunkerats till att endast innehålla `"120days"` och &quot;`7days`&quot; tidsperioder. Den fullständiga rapporten med okända profiler innehåller en uppdelning av profiler för en period på 7, 30, 60, 90 och 120 dagar.
+>I den här guiden har rapporten trunkerats till att endast innehålla `"120days"` och &quot;`7days`&quot; tidsperioder. Den fullständiga rapporten över icke sammansatta profiler innehåller en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
 
 ```json
 {
   "data": {
       "totalNumberOfProfiles": 63606,
       "totalNumberOfEvents": 130977,
-      "unknownProfiles": {
+      "unstitchedProfiles": {
           "120days": {
               "countOfProfiles": 1644,
               "eventsAssociated": 26824,
@@ -547,16 +547,16 @@ En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten med okända 
 
 | Egenskap | Beskrivning |
 |---|---|
-| `data` | The `data` -objektet innehåller den information som returneras för rapporten med okända profiler. |
-| `totalNumberOfProfiles` | Det totala antalet unika profiler i profilarkivet. Detta motsvarar antalet adresserbara målgrupper. Den innehåller både kända och okända profiler. |
+| `data` | The `data` -objektet innehåller den information som returneras för rapporten för icke-sammansatta profiler. |
+| `totalNumberOfProfiles` | Det totala antalet unika profiler i profilarkivet. Detta motsvarar antalet adresserbara målgrupper. Den innehåller både kända och osydda profiler. |
 | `totalNumberOfEvents` | Det totala antalet ExperienceEvents i profilarkivet. |
-| `unknownProfiles` | Ett objekt som innehåller en uppdelning av okända profiler (osydda och inaktiva) efter tidsperiod. I rapporten med okända profiler finns en beskrivning av profiler för tidsperioderna 7, 30, 60, 90 och 120 dagar. |
-| `countOfProfiles` | Antalet okända profiler för tidsperioden eller antalet okända profiler för namnutrymmet. |
+| `unstitchedProfiles` | Ett objekt som innehåller en uppdelning av icke sammanfogade profiler efter tidsperiod. I rapporten för icke sammansatta profiler finns en beskrivning av profiler för tidsperioderna 7, 30, 60, 90 och 120 dagar. |
+| `countOfProfiles` | Antalet profiler som inte sammanfogats för tidsperioden eller antalet profiler som inte sammanfogats för namnutrymmet. |
 | `eventsAssociated` | Antalet ExperienceEvents för tidsintervallet eller antalet händelser för namnutrymmet. |
-| `nsDistribution` | Ett objekt som innehåller enskilda identitetsnamnutrymmen med distributionen av okända profiler och händelser för varje namnutrymme. Obs! Lägga samman summan `countOfProfiles` för varje identitetsnamnutrymme i `nsDistribution` är lika med `countOfProfiles` för tidsperioden. Detsamma gäller `eventsAssociated` per namnutrymme och totalt `eventsAssociated` per tidsperiod. |
+| `nsDistribution` | Ett objekt som innehåller enskilda identitetsnamnutrymmen med distributionen av osydda profiler och händelser för varje namnutrymme. Obs! Lägga samman summan `countOfProfiles` för varje identitetsnamnutrymme i `nsDistribution` är lika med `countOfProfiles` för tidsperioden. Detsamma gäller `eventsAssociated` per namnutrymme och totalt `eventsAssociated` per tidsperiod. |
 | `reportTimestamp` | Rapportens tidsstämpel. |
 
-### Tolka rapporten med okända profiler
+### Tolka rapporten över icke sammansatta profiler
 
 Resultaten av rapporten ger insikt i hur många icke-sammansatta och inaktiva profiler din organisation har i sin Profile Store.
 
@@ -586,9 +586,9 @@ Titta på följande utdrag från `data` objekt:
 Den här rapporten innehåller följande information:
 
 * Det finns 1 782 profiler som bara innehåller ett profilfragment och som inte har några nya händelser de senaste sju dagarna.
-* Det finns 29 151 ExperienceEvents associerade med de 1 782 okända profilerna.
-* Det finns 1 734 okända profiler som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
-* Det finns 28 591 händelser associerade med de 1 734 okända profilerna som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
+* Det finns 29 151 ExperienceEvents associerade med de 1 782 icke-sammansatta profilerna.
+* Det finns 1 734 osydda profiler som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
+* Det finns 28 591 händelser som är associerade med de 1 734 icke-sammansatta profilerna som innehåller ett enda profilfragment från ECID-identitetsnamnområdet.
 
 ## Nästa steg
 
