@@ -4,9 +4,9 @@ title: Stödlinje för instrumentpanel för segment
 description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: e18d37ba02d6edee77c91b719a0a2336e1316b71
+source-git-commit: 70fb980b276d256e0f7170b6e49527bca59adfe9
 workflow-type: tm+mt
-source-wordcount: '1578'
+source-wordcount: '1594'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,10 @@ Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetb
 Kontrollpanelen markerar automatiskt ett segment som ska visas, men du kan ändra segmentet med hjälp av listrutemenyn eller segmentväljaren.
 
 Om du vill välja ett annat segment markerar du listrutan bredvid segmentnamnet eller använder segmentväljaren för att öppna segmentmarkeringsdialogrutan.
+
+>[!IMPORTANT]
+>
+>Endast segment med ett profilantal över noll visas i listan med valbara segment.
 
 ![](../images/segments/change-segment.png)
 
