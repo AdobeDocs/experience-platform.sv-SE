@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att profilera mål för begäran
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 26e7a3e78a4513aa69cdfbed7902509609e114cc
+source-git-commit: cda4591021c5b0a0bd6f43765d72b5867ec59aea
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '728'
 ht-degree: 0%
 
 ---
@@ -65,9 +65,23 @@ Det är valfritt att lägga till attribut och du kan fortsätta till nästa steg
 
 ![Bild som visar mappningssteget med ett markerat attribut](../assets/ui/activate-profile-request-destinations/mapping-step.png)
 
-Om du vill lägga till attribut väljer du **[!UICONTROL Add new field]** styr och söker efter eller navigerar till det önskade XDM-attributfältet, som visas nedan.
+### Välj källattribut {#select-source-attributes}
 
-![Skärminspelning som visar hur du väljer ett XDM-attribut i mappningssteget](../assets/ui/activate-profile-request-destinations/mapping-step-select-attribute.gif)
+Om du vill lägga till källattribut väljer du **[!UICONTROL Add new field]** kontroll på **[!UICONTROL Source field]** kolumn och sök eller navigera till önskat XDM-attributfält, enligt nedan.
+
+![Skärminspelning som visar hur du väljer ett målattribut i mappningssteget](../assets/ui/activate-profile-request-destinations/mapping-step-select-attribute.gif)
+
+### Välj målattribut {#select-target-attributes}
+
+>[!NOTE]
+>
+>Vissa mål kräver att du bara väljer källattribut, medan andra kräver både käll- och målattribut.
+>
+>För närvarande är [Adobe Target V2](../catalog/personalization/adobe-target-connection.md) mål endast kräver källattribut, medan [Anpassad anpassning med attribut](../catalog/personalization/custom-personalization.md) kräver både käll- och målattribut.
+
+Om du vill lägga till målattribut väljer du **[!UICONTROL Add new field]** kontroll på **[!UICONTROL Target field]** kolumn och typ i det anpassade attributnamn som du vill mappa källattributet till.
+
+![Skärminspelning som visar hur du väljer ett XDM-attribut i mappningssteget](../assets/ui/activate-profile-request-destinations/mapping-step-select-target-attribute.gif)
 
 ## Schemalägg segmentexport {#scheduling}
 
