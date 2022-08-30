@@ -4,9 +4,9 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
+source-git-commit: 7a67ac4e1e8730197221832090c1414073399a1b
 workflow-type: tm+mt
-source-wordcount: '2491'
+source-wordcount: '2537'
 ht-degree: 0%
 
 ---
@@ -215,6 +215,10 @@ Alla målgruppsstorlekar i systemet sorteras från hög till låg målgruppsstor
 Om antalet segmentmappade profiler ligger utanför en standardavvikelse från den genomsnittliga mappade profilstorleken under de senaste 30 dagarna, indikerar detta en avvikelse i systemet och bör undersökas.
 
 Om ett segment inom [!UICONTROL Mapped audience health] widgeten avviker med en bred marginal bör du referera till trenddiagrammet för målgruppsstorlek och leta reda på det avvikande segmentet. Trenden kan ge ytterligare insikter i segmentets hälsa.
+
+>[!NOTE]
+>
+>Standardstorleken för den mappade publikens hälsowidget kan förhindra tabellinformationen. Ändra storleken på widgeten för att förbättra läsbarheten för mappade segmentnamn och kolumnrubriker. Mer information om hur du använder paneler finns i dokumentationen om hur du ändrar kontrollpaneler. [hur du ändrar storlek på en widget](../customize/modify.md).
 
 ![Mappad målgruppswidget.](../images/destinations/mapped-audience-health.png)
 
