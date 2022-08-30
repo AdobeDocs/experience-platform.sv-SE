@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågeredigeraren
 topic-legacy: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: c8b3b22b678622c31462ba0baa2f50fbe89b00d5
+source-git-commit: b393311a4ddcfaab3f8ea2ccd517e0e3b32a268a
 workflow-type: tm+mt
-source-wordcount: '1585'
+source-wordcount: '1829'
 ht-degree: 1%
 
 ---
@@ -62,7 +62,37 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågo
 
 - **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn som du vill använda `SELECT` navigera sedan till tabellen du letar efter med piltangenterna och tryck på **Retur**. När en tabell är markerad identifieras fält i tabellen automatiskt.
 
-![Bild](../images/ui/query-editor/tables-auto.png)
+![Kommandoradsgränssnittet i Frågeredigeraren med förslag på listrutor.](../images/ui/query-editor/tables-auto.png)
+
+### (Beta) Växla mellan automatisk komplettering av användargränssnittskonfigurationen {#auto-complete}
+
+>[!IMPORTANT]
+>
+>Den automatiska gränssnittskonfigurationsknappen är i beta. Dess funktioner och dokumentation kan komma att ändras.
+
+The [!DNL Query Editor] föreslår automatiskt potentiella SQL-nyckelord tillsammans med tabell- eller kolumninformation för frågan när du skriver den. Funktionen för automatisk komplettering är aktiverad som standard och kan när som helst inaktiveras eller aktiveras genom att du väljer [!UICONTROL Syntax auto-complete] till höger i Frågeredigeraren.
+
+Konfigurationsinställningen som slutförs automatiskt är per användare och sparas för den användarens efterföljande inloggningar.
+
+![Frågeredigeraren med syntaxen auto-complete aktiverad.](../images/ui/query-editor/auto-complete-toggle.png)
+
+Om du inaktiverar den här funktionen hindras flera metadatakommandon från att bearbetas och ger rekommendationer som vanligtvis underlättar för författaren att redigera frågor.
+
+När du använder växlingsknappen för att aktivera funktionen för automatisk komplettering blir förslag på tabell- och kolumnnamn samt SQL-nyckelord tillgängliga efter en kort paus. Ett meddelande om att åtgärden lyckades i konsolen under Frågeredigeraren anger att funktionen är aktiv.
+
+Om du inaktiverar funktionen för automatisk komplettering måste du uppdatera sidan för att funktionen ska börja gälla. En bekräftelsedialogruta med tre alternativ visas när du inaktiverar [!UICONTROL Syntax auto-complete] växla:
+
+- [!UICONTROL Cancel]
+- [!UICONTROL Save changes and refresh]
+- [!UICONTROL Refresh without saving changes]
+
+>[!IMPORTANT]
+>
+>Om du skriver eller redigerar en fråga när du inaktiverar den här funktionen måste du spara alla ändringar i frågan innan du uppdaterar sidan, annars går alla förlopp förlorade.
+
+![Bekräftelsedialogrutan för att inaktivera funktionen för automatisk komplettering.](../images/ui/query-editor/confirmation-dialog.png)
+
+Välj lämpligt alternativ för att inaktivera funktionen för automatisk komplettering.
 
 ### Felidentifiering {#error-detection}
 
@@ -100,7 +130,7 @@ The **[!UICONTROL Schedule details]** visas. På den här sidan kan du välja fr
 
 Du kan välja följande alternativ för **[!UICONTROL Frequency]**:
 
-- **[!UICONTROL Hourly]**: Den schemalagda frågan körs varje timme för den datumperiod du har valt.
+- **[!UICONTROL Hourly]**: Den schemalagda frågan kommer att köras varje timme för den datumperiod du har valt.
 - **[!UICONTROL Daily]**: Den schemalagda frågan kommer att köras var X:e dag vid den tidpunkt och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
 - **[!UICONTROL Weekly]**: Den valda frågan körs på de veckodagar, tidpunkter och datumperioder som du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
 - **[!UICONTROL Monthly]**: Den valda frågan kommer att köras varje månad på den dag, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
