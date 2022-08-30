@@ -3,9 +3,9 @@ title: Översikt över dataströmmar
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 45f5d23a671c8e015ca26e0d5025685255c2fc35
 workflow-type: tm+mt
-source-wordcount: '1687'
+source-wordcount: '1641'
 ht-degree: 1%
 
 ---
@@ -15,10 +15,6 @@ ht-degree: 1%
 En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Med [konfigurera, kommando](../fundamentals/configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network `edgeConfigId` används för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
 
 Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i användargränssnittet för datainsamling.
-
->[!NOTE]
->
->Din organisation måste etableras för den här funktionen för att kunna komma åt den i användargränssnittet. Fyll i följande [formulär](https://adobe.ly/websdkaccess) för att begära nödvändig åtkomst. Om du vill hantera dataströmmar måste ditt användarkonto läggas till i en produktprofil för taggar i [!DNL Adobe Experience Platform].
 
 ## Öppna [!UICONTROL Datastreams] arbetsyta
 

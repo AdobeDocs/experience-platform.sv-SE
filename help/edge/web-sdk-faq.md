@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 95305c0a5df71295e1321eb4c8c28baa66c5d94d
+source-git-commit: 720960b7d63c30707f823fdfafc2299289ea0a11
 workflow-type: tm+mt
-source-wordcount: '1955'
+source-wordcount: '1935'
 ht-degree: 1%
 
 ---
@@ -82,9 +82,9 @@ Alloy är kodnamnet för Adobe Experience Platform Web SDK. Det används i SDK:s
 
 ## Behöver kunderna köpa Adobe Experience Platform för att använda [!DNL Web SDK]?
 
-Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience Platform Web SDK kostnadsfritt. Om du vill använda Web SDK måste din organisation ha etablerat sig för den här funktionen. Om du vill ha åtkomst fyller du i följande [formulär](https://adobe.ly/websdkaccess) och Adobe kommer att ge dig tillgång till [Användargränssnitt för datastreams](datastreams/overview.md) och Adobe Experience Platform användargränssnitt (om det behövs).
+Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience Platform Web SDK kostnadsfritt. Kunder som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman, datauppsättningar, identitetsnamnutrymmen och datastreams i användargränssnittet för Adobe Experience Platform Data Collection.
 
-Kunder som vill använda [!DNL Web SDK] kommer att få åtkomst till att skapa scheman, datauppsättningar och identitetsnamnutrymmen i Adobe Experience Platform användargränssnitt.
+Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
 
 ## Vem ska använda Web SDK?
 
