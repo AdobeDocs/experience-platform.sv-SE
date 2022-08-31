@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 80f9f0c64f2af2c7ceea59bddab9a5d6b57bc882
+source-git-commit: f246a014de7869b627a677ac82e98d4556065010
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '599'
 ht-degree: 0%
 
 ---
@@ -55,25 +55,29 @@ Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.pn
 >title="Status per tjänst"
 >abstract="Förfrågningar om datahygien behandlas oberoende av olika Experience Platform-tjänster. I det här avsnittet beskrivs den aktuella bearbetningsstatusen för begäran för varje tjänst. Mer information finns i användargränssnittshandboken för datahygien."
 
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_numberofidentities"
+>title="Antal identiteter"
+>abstract="Antalet identiteter som begärdes att tas bort som en del av den här arbetsordern. De identiteter som ingår i antalet kanske inte finns i de datauppsättningar som påverkas. Mer information finns i användargränssnittshandboken för datahygien."
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_responsemessages"
+>title="Ta bort svar från kund"
+>abstract="När en konsumentborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som hjälper dig att felsöka problemet. Mer information finns i användargränssnittsguiden för datahygien."
+
 Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
 ![Bild som visar ett arbetsorders-ID som markeras](../images/ui/browse/select-work-order.png)
 
 <!-- Depending on the type of work order selected, different information and controls are provided. These are covered in the sections below.
 
-### Consumer delete details
-
->[!CONTEXTUALHELP]
->id="platform_hygiene_responsemessages"
->title="Consumer delete response"
->abstract="When a consumer deletion process receives a response from the system, these messages are displayed under the **[!UICONTROL Result]** section. If a problem occurs while a work order is processing, any relevant error messages will appear in this section to help you troubleshoot the issue. To learn more, see the data hygiene UI guide."
-
+### Consumer delete details {#consumer-delete}
 
 The details of a consumer delete request are read-only, displaying its basic attributes such as its current status and the time elapsed since the request was made.
 
 ![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
 
-### Dataset expiration details -->
+### Dataset expiration details {#dataset-expiration} -->
 
 Detaljsidan för en datauppsättnings förfallodatum innehåller information om dess grundläggande attribut, inklusive det schemalagda förfallodatumet på de dagar som återstår innan borttagningen sker. I den högra listen kan du använda kontroller för att redigera eller avbryta förfallotiden.
 
