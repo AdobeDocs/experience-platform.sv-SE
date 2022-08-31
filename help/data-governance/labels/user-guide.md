@@ -5,9 +5,9 @@ title: Hantera dataanvändningsetiketter i användargränssnittet
 topic-legacy: labels
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 3876af19ef100f29ef738cf7518696a57600945a
+source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
 workflow-type: tm+mt
-source-wordcount: '1119'
+source-wordcount: '1162'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,12 @@ Du kan lägga till etiketter direkt i ett eller flera scheman inom det schemat. 
 
 Se självstudiekursen om [hantera etiketter på schemanivå](../../xdm/tutorials/labels.md) för mer information.
 
-## Hantera anpassade etiketter
+## Hantera anpassade etiketter {#manage-custom-labels}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_createlabels"
+>title="Skapa etiketter"
+>abstract="Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Platform har en standarduppsättning med etiketter som du kan använda, men du kan också skapa anpassade etiketter som är specifika för din organisation."
 
 Du kan skapa egna anpassade användningsetiketter i **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Gränssnitt. Välj **[!UICONTROL Policies]** i den vänstra navigeringen väljer du **[!UICONTROL Labels]** om du vill visa en lista med befintliga etiketter. Här väljer du **[!UICONTROL Create label]**.
 

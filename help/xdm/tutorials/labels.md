@@ -2,9 +2,9 @@
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 6c72e9dd5961d4dc94d8264a7da795ebd96c40ec
+source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '720'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,12 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
    * [Schemaredigerare](../ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Tillhandahåller infrastrukturen för att genomdriva begränsningar av dataanvändning för plattformsåtgärder, med hjälp av principer som definierar vilka marknadsföringsåtgärder som kan (eller inte kan) utföras på märkta data.
 
-## Välj ett schema eller fält som etiketter ska läggas till i
+## Välj ett schema eller fält som etiketter ska läggas till i {#select-schema-field}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_editgovernancelabels"
+>title="Redigera styrningsetiketter"
+>abstract="Tillämpa en etikett på ett schemafält för att ange de användningsprinciper som gäller för data i det specifika fältet."
 
 Om du vill lägga till etiketter måste du först [välj ett befintligt schema att redigera](../ui/resources/schemas.md#edit) eller [skapa ett nytt schema](../ui/resources/schemas.md#create) om du vill visa dess struktur i Schemaredigeraren.
 
