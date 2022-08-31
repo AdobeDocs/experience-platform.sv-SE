@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
-source-git-commit: f456b28016af6d2978933deac68f45c2f8d37f80
+source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '248'
 ht-degree: 7%
 
 ---
@@ -40,11 +40,11 @@ ht-degree: 7%
    * [Språkstöd](documentation/language-support.md)
 * Programtjänster som bygger på plattform {#ecosystem}
    * [Översikt](application-services.md)
-   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
-   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
-   * [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning.html)
    * [Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
+   * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
+   * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
+   * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
    * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
 * Styrning, integritet och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)

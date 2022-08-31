@@ -4,8 +4,7 @@ title: Dokumentation för programtjänster
 topic-legacy: overview
 description: Adobe Experience Platform-dokumentation finns i flera format, inklusive översikter, självstudiekurser och guider för både användargränssnittet och API. Här följer en kort beskrivning av de vanligaste dokumentationstyperna som är tillgängliga för Experience Platform.
 exl-id: 24fdb183-f75b-40e0-828e-9dd49422a7b1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: cf0864ed0f2437e4992ec77cc55dae2bca269890
 workflow-type: tm+mt
 source-wordcount: '100'
 ht-degree: 0%
@@ -18,5 +17,5 @@ Adobe har byggt flera programtjänster ovanpå Experience Platform. Du kan hitta
 
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
 * [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
-* [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning.html)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html)
 * [[!DNL Real-time Customer Data Platform (Real-time CDP)]](../rtcdp/overview.md)

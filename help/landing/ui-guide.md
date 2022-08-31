@@ -5,9 +5,9 @@ title: Experience Platform - översikt
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 5fb7284760489fc526b5891d258c51ed20a2b095
+source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1752'
 ht-degree: 0%
 
 ---
@@ -160,7 +160,7 @@ The **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper och direkt
 
 ### [!UICONTROL Decisioning]
 
-offera decisioningen är en programtjänst som är integrerad med Adobe Experience Platform. Ni kan använda Experience Platform för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Mer information om Offer decisioning, inklusive att arbeta med [!UICONTROL Offers] och [!UICONTROL Activities] gå till [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning.html).
+Adobe Journey Optimizer är en programtjänst som är byggd ovanpå Experience Platform. Ni kan använda kraftfulla beslutstekniker för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Läs mer om Journey Optimizer, inklusive att arbeta med [!UICONTROL Offers] och [!UICONTROL Activities] gå till [Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer.html).
 
 ### [!UICONTROL Administration]
 
