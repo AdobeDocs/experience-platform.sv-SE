@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
+source-git-commit: 93bb816857545e2e5abca51e4046d225927daef4
 workflow-type: tm+mt
-source-wordcount: '3532'
+source-wordcount: '3551'
 ht-degree: 0%
 
 ---
@@ -171,9 +171,9 @@ The **[!UICONTROL Profiles count change trend]** widgeten visar en knapp för bi
 
 ![Fliken Profilöversikt som visar widgeten Antal profiler ändrar trend med bildtextknappen markerad.](../images/profiles/profiles-count-change-trend-captions.png)
 
-En maskininlärningsmodell genererar automatiskt beskrivningar av viktiga trender och viktiga händelser genom att analysera diagrammet och data.
+En maskininlärningsmodell genererar automatiskt beskrivningar av viktiga trender och viktiga händelser genom att analysera diagrammet och data. Anteckningar läggs till i diagrammet baserat på bildtexterna. Välj en bildtext som ska fokuseras på motsvarande anteckning.
 
-![Dialogrutan med automatiska bildtexter för widgeten Antal profiler ändrar trendvändning.](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
+![Dialogrutan med automatiska bildtexter för widgeten Antal profiler ändrar trendvändning.](../images/profiles/profiles-added-trends-automatic-captions-dialog-with-annotation.png)
 
 ### [!UICONTROL Profiles count change trend by identity] {#profiles-count-change-trend-by-identity}
 
