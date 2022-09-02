@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 17a90bb716bd64c9fb9b383a5ffa49598e978288
+source-git-commit: 33c45c53e2ff591e7b94be1b4b17c25d2fe9d497
 workflow-type: tm+mt
-source-wordcount: '3042'
+source-wordcount: '3033'
 ht-degree: 2%
 
 ---
@@ -554,25 +554,23 @@ EXECUTE name [ ( parameter ) ]
 The `EXPLAIN` -kommandot visar körningsplanen för den angivna programsatsen. Körningsplanen visar hur tabellerna som programsatsen refererar till skannas.  Om flera tabeller refereras visas vilka kopplingsalgoritmer som används för att sammanfoga de rader som krävs från varje indatatabell.
 
 ```sql
-EXPLAIN option statement
+EXPLAIN statement
 ```
 
-Plats `option` kan vara något av:
+Använd `FORMAT` nyckelord med `EXPLAIN` för att definiera svarsformatet.
 
 ```sql
-ANALYZE
-FORMAT { TEXT | JSON }
+EXPLAIN FORMAT { TEXT | JSON } statement
 ```
 
 | Parametrar | Beskrivning |
 | ------ | ------ |
-| `ANALYZE` | Om `option` innehåller `ANALYZE`, körtider och annan statistik visas. |
-| `FORMAT` | Om `option` innehåller `FORMAT`anger det utdataformatet som kan `TEXT` eller `JSON`. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`. |
+| `FORMAT` | Använd `FORMAT` för att ange utdataformat. De tillgängliga alternativen är `TEXT` eller `JSON`. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`. |
 | `statement` | Alla `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`, eller `CREATE MATERIALIZED VIEW AS` -programsats vars körningsplan du vill se. |
 
 >[!IMPORTANT]
 >
->Kom ihåg att programsatsen faktiskt körs när `ANALYZE` används. Fast `EXPLAIN` tar bort alla utdata som `SELECT` andra biverkningar av satsen inträffar som vanligt.
+>Alla utdata som `SELECT` programsatsen kan returneras om den körs med `EXPLAIN` nyckelord. Andra biverkningar av satsen inträffar som vanligt.
 
 **Exempel**
 
@@ -585,7 +583,7 @@ EXPLAIN SELECT * FROM foo;
 ```console
                        QUERY PLAN
 ---------------------------------------------------------
- Seq Scan on foo  (cost=0.00..155.00 rows=10000 width=4)
+ Seq Scan on foo (dataSetId = "6307eb92f90c501e072f8457", dataSetName = "foo") [0,1000000242,6973776840203d3d,6e616c58206c6153,6c6c6f430a3d4d20,74696d674c746365]
 (1 row)
 ```
 
