@@ -2,9 +2,9 @@
 title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för datainsamling för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 737354ca3b286f6c39cb71bc09aa4d6141c4d9a4
+source-git-commit: 4f3c97e2cad6160481adb8b3dab3d0c8b23717cc
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1548'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,8 @@ Det finns för närvarande tre hemliga typer som stöds:
 | --- | --- |
 | [!UICONTROL Token] | En enda teckensträng som representerar ett autentiseringstokenvärde som är känt och begripligt för båda systemen. |
 | [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
-| [!UICONTROL OAuth2] | Innehåller flera attribut som stöder [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. För närvarande bara [Klientautentiseringsuppgifter](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) version av OAuth2 stöds. |
+| [!UICONTROL OAuth 2] | Innehåller flera attribut som stöder [tilldelningstyp för klientautentiseringsuppgifter](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) för [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
+| [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation för användning i [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) och [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -65,7 +66,8 @@ Här skiljer sig stegen för att skapa hemligheten åt beroende på vilken typ a
 
 * [[!UICONTROL Token]](#token)
 * [[!UICONTROL HTTP]](#http)
-* [[!UICONTROL OAuth2]](#oauth2)
+* [[!UICONTROL OAuth 2]](#oauth2)
+* [[!UICONTROL Google OAuth 2]](#google-oauth2)
 
 ### [!UICONTROL Token] {#token}
 
@@ -83,11 +85,11 @@ Om du vill skapa en HTTP-hemlighet väljer du **[!UICONTROL Simple HTTP]** från
 
 ![HTTP-hemlighet](../../images/ui/event-forwarding/secrets/http-secret.png)
 
-### [!UICONTROL OAuth2] {#oauth2}
+### [!UICONTROL OAuth 2] {#oauth2}
 
-Om du vill skapa en OAuth2-hemlighet väljer du **[!UICONTROL OAuth2]** från **[!UICONTROL Type]** listruta. I fälten som visas nedan anger du [[!UICONTROL Client ID] och [!UICONTROL Client Secret]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)och [Autentiserings-URL](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Authorization URL] i användargränssnittet för datainsamling är en sammanfogning mellan auktoriseringsservervärden och tokensökvägen.
+Om du vill skapa en OAuth 2-hemlighet väljer du **[!UICONTROL OAuth 2]** från **[!UICONTROL Type]** listruta. I fälten som visas nedan anger du [[!UICONTROL Client ID] och [!UICONTROL Client Secret]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] i användargränssnittet för datainsamling är en sammanfogning mellan auktoriseringsservervärden och tokensökvägen.
 
-![OAuth2-hemlighet](../../images/ui/event-forwarding/secrets/oauth-secret-1.png)
+![OAuth 2-hemlighet](../../images/ui/event-forwarding/secrets/oauth-secret-1.png)
 
 Under **[!UICONTROL Credential Options]** kan du ange andra alternativ för autentiseringsuppgifter, till exempel `scope` och `audience` i form av nyckelvärdepar. Om du vill lägga till fler nyckelvärdepar väljer du **[!UICONTROL Add another]**.
 
@@ -107,7 +109,24 @@ Om uppdateringsförskjutningen till exempel är inställd på standardvärdet `1
 
 När du är klar väljer du **[!UICONTROL Create Secret]** för att spara hemligheten.
 
-![Spara OAuth2-förskjutning](../../images/ui/event-forwarding/secrets/oauth-secret-4.png)
+![Spara OAuth 2-förskjutning](../../images/ui/event-forwarding/secrets/oauth-secret-4.png)
+
+### [!UICONTROL Google OAuth 2] {#google-oauth2}
+
+Om du vill skapa en hemlighet i Google OAuth 2 väljer du **[!UICONTROL Google OAuth 2]** från **[!UICONTROL Type]** listruta. Under **[!UICONTROL Scopes]** markerar du de Google-API:er som du vill använda den här hemligheten för att ge åtkomst till. Följande produkter stöds för närvarande:
+
+* [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview)
+* [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview)
+
+När du är klar väljer du **[!UICONTROL Create Secret]**.
+
+![Google OAuth 2 - hemlighet](../../images/ui/event-forwarding/secrets/google-oauth.png)
+
+En pover som informerar dig om att hemligheten måste auktoriseras manuellt via Google visas. Välj **[!UICONTROL Create & Authorize]** för att fortsätta.
+
+![Google auktoriseringsleverantör](../../images/ui/event-forwarding/secrets/google-authorization.png)
+
+En dialogruta visas där du kan ange autentiseringsuppgifter för ditt Google-konto. Följ instruktionerna för att ge händelsevidarebefordringsåtkomst till dina data i det valda omfånget. När auktoriseringsprocessen är klar skapas hemligheten.
 
 ## Redigera en hemlighet
 
@@ -131,7 +150,7 @@ Du kan försöka göra om eller uppdatera ett hemligt utbyte från redigeringssk
 | --- | --- |
 | [!UICONTROL Token] | Välj **[!UICONTROL Exchange Secret]** för att försöka göra om det hemliga utbytet. Den här kontrollen är bara tillgänglig när det finns en miljö kopplad till hemligheten. |
 | [!UICONTROL HTTP] | Om ingen miljö är kopplad till hemligheten väljer du **[!UICONTROL Exchange Secret]** för att växla autentiseringsuppgifter till base64. Om en miljö är bifogad markerar du **[!UICONTROL Exchange and Deploy Secret]** att utbyta till base64 och driftsätta hemligheten. |
-| [!UICONTROL OAuth2] | Välj **[!UICONTROL Generate Token]** för att växla autentiseringsuppgifter och returnera en åtkomsttoken från autentiseringsprovidern. |
+| [!UICONTROL OAuth 2] | Välj **[!UICONTROL Generate Token]** för att växla autentiseringsuppgifter och returnera en åtkomsttoken från autentiseringsprovidern. |
 
 ## Ta bort en hemlighet
 
