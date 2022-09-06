@@ -3,9 +3,9 @@ title: Översikt över dataströmmar
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 45f5d23a671c8e015ca26e0d5025685255c2fc35
+source-git-commit: 3690a32f32c6cfa25120e9af44fe559122e779a0
 workflow-type: tm+mt
-source-wordcount: '1641'
+source-wordcount: '1642'
 ht-degree: 1%
 
 ---
@@ -117,12 +117,12 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Pl
 ![Adobe Experience Platform inställningsblock](../images/datastreams/overview/platform-config.png)
 
 | Inställning | Beskrivning |
-| --- | --- |
+|---| --- |
 | [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den plattformsdatauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [Klassen XDM ExperienceEvent](../../xdm/classes/experienceevent.md). |
 | [!UICONTROL Profile Dataset] | Välj den plattformsdatauppsättning som kundattributdata ska skickas till. Det här schemat måste använda [Klassen XDM Individuell profil](../../xdm/classes/individual-profile.md). |
 | [!UICONTROL Offer Decisioning] | Markera den här kryssrutan om du vill aktivera Offer decisioning för en implementering av en Platform Web SDK. Se guiden [använda Offer decisioning med Platform Web SDK](../personalization/offer-decisioning/offer-decisioning-overview.md) om du vill ha mer information om implementeringen. Mer information om Offer decisioning finns i [Adobe Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html). |
 | [!UICONTROL Edge Segmentation] | Markera den här kryssrutan för att aktivera [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för denna datastream. När SDK skickar data via en datastam som är aktiverad för kantsegmentering, skickas alla uppdaterade segmentmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Det här alternativet kan användas i kombination med [!UICONTROL Personalization Destinations] for [exempel på användning av personalisering på nästa sida](../../destinations/ui/configure-personalization-destinations.md). |
-| [!UICONTROL Personalization Destinations] | Vid användning i kombination med [!UICONTROL Edge Segmentation] kan datastream ansluta till personaliseringsmotorer som Adobe Target. Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../../destinations/ui/configure-personalization-destinations.md). |
+| [!UICONTROL Personalization Destinations] | När du har aktiverat detta efter att du har aktiverat [!UICONTROL Edge Segmentation] kryssrutan tillåter det här alternativet att datastream ansluter till personaliseringsmål, som [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../../destinations/ui/configure-personalization-destinations.md). |
 
 ### Adobe Target-inställningar {#target}
 
