@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b0ba7578cc8e790c70cba4cc55c683582b685843
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '994'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ POST /dataSets
 
 **Begäran**
 
-Genom att `unifiedProfile` under `tags` i begärandetexten kommer datauppsättningen att aktiveras för [!DNL Profile] när de skapas. I `unifiedProfile` array, lägga till `isUpsert:true` kommer att lägga till möjligheten för datauppsättningen att stödja uppdateringar.
+Genom att inkludera båda `unifiedIdentity` och `unifiedProfile` under `tags` i begärandetexten kommer datauppsättningen att aktiveras för [!DNL Profile] när de skapas. I `unifiedProfile` array, lägga till `isUpsert:true` kommer att lägga till möjligheten för datauppsättningen att stödja uppdateringar.
 
 ```shell
 curl -X POST \
@@ -75,24 +75,27 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-        "fields":[],
+        "fields": [],
         "schemaRef": {
-          "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
-          "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
+            "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
         },
         "tags": {
-          "unifiedProfile": [
-            "enabled:true",
-            "isUpsert:true"
-          ]
+            "unifiedIdentity": [
+                "enabled: true"
+            ],
+            "unifiedProfile": [
+                "enabled: true",
+                "isUpsert: true"
+            ]
         }
       }'
 ```
 
 | Egenskap | Beskrivning |
-|---|---|
+| -------- | ----------- |
 | `schemaRef.id` | ID för [!DNL Profile]-aktiverat schema som datauppsättningen baseras på. |
-| `{TENANT_ID}` | Namnutrymmet i [!DNL Schema Registry] som innehåller resurser som tillhör din IMS-organisation. Se [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] för mer information. |
+| `{TENANT_ID}` | Namnutrymmet i [!DNL Schema Registry] som innehåller resurser som tillhör din organisation. Se [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] för mer information. |
 
 **Svar**
 
@@ -147,6 +150,9 @@ curl -X GET \
         "tags": {
             "adobe/pqs/table": [
                 "unifiedprofileingestiontesteventsdataset"
+            ],
+            "unifiedIdentity": [
+                "enabled:true"
             ],
             "unifiedProfile": [
                 "enabled:true"
