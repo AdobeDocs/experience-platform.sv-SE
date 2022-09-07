@@ -2,9 +2,9 @@
 title: Rotfiltrering i frågetjänsten med maskininlärning
 description: Det här dokumentet innehåller en översikt över hur du använder frågetjänst och maskininlärning för att fastställa robotaktivitet och filtrera deras åtgärder från äkta besökstrafik på webben.
 exl-id: fc9dbc5c-874a-41a9-9b60-c926f3fd6e76
-source-git-commit: c5b91bd516e876e095a2a6b6e3ba962b29f55a7b
+source-git-commit: 8a7c04ebe8fe372dbf686fddc92867e938a93614
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '899'
 ht-degree: 5%
 
 ---
@@ -29,8 +29,12 @@ Det här exemplet använder [!DNL Jupyter Notebook] som en utvecklingsmiljö. De
 
 De två attributen som används för att extrahera data för att identifiera robotar är:
 
-* Marketing Cloud ID (MCID): Detta ger ett universellt, beständigt ID som identifierar besökarna i alla Adobe-lösningar.
+* Experience Cloud Visitor-ID (ECID, även kallat MCID): Detta ger ett universellt, beständigt ID som identifierar besökarna i alla Adobe-lösningar.
 * Tidsstämpel: Detta anger tid och datum i UTC-format när en aktivitet inträffade på webbplatsen.
+
+>[!NOTE]
+>
+>Användning av `mcid` finns fortfarande i namnutrymmesreferenser till Experience Cloud Visitor-ID:t som i exemplet nedan.
 
 Följande SQL-sats ger ett inledande exempel för att identifiera robotaktivitet. Programsatsen förutsätter att om en besökare utför 50 klick inom en minut är användaren en robot.
 
@@ -45,7 +49,7 @@ WHERE  enduserids._experience.mcid NOT IN (SELECT enduserids._experi
                                            HAVING Count(*) > 50);  
 ```
 
-Uttrycket filtrerar MCID:n för alla besökare som uppfyller tröskelvärdet men inte åtgärdar trafiktoppar från andra intervall.
+Uttrycket filtrerar ECID:n (`mcid`) av alla besökare som uppfyller tröskelvärdet men inte åtgärdar trafiktoppar från andra intervall.
 
 ## Förbättra robotidentifiering med maskininlärning
 
@@ -53,7 +57,7 @@ Den inledande SQL-satsen kan förfinas så att den blir en funktionsextraherings
 
 Exemplet är expanderat från en minut med upp till 60 klick, och innehåller 5- och 30-minutersperioder med antalet klick på 300 respektive 1 800.
 
-Exemplet samlar in det maximala antalet klick för varje MCID under de olika varaktigheterna. Den inledande programsatsen har utökats så att den omfattar en minut (60 sekunder), 5 minuter (300 sekunder) och en timme (1 800 sekunder).
+Exemplet samlar in det maximala antalet klick för varje ECID (`mcid`) över de olika varaktigheterna. Den inledande programsatsen har utökats så att den omfattar en minut (60 sekunder), 5 minuter (300 sekunder) och en timme (1 800 sekunder).
 
 ```sql
 SELECT table_count_1_min.mcid AS id, 

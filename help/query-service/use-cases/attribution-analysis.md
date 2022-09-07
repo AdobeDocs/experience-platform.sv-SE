@@ -1,9 +1,10 @@
 ---
 title: Attributanalys
 description: I det här dokumentet förklaras hur du kan använda Query Service för att skapa en mätningsteknik för marknadsföringseffektivitet som baseras på marknadsattribueringsmodellen för första och sista beröringen.
-source-git-commit: 870626f25b1aabdcb5739bbb1ab85bdad44df195
+exl-id: d62cd349-06fc-4ce6-a5e8-978f11186927
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1402'
+source-wordcount: '1419'
 ht-degree: 0%
 
 ---
@@ -68,6 +69,10 @@ Resultaten för attribueringsfrågorna anges i antingen `first_touch` eller `las
 Den första beröringsattribueringen ger 100 % av ansvaret för ett lyckat resultat för den initiala kanal som konsumenten stötte på. Det här SQL-exemplet används för att markera den interaktion som ledde till en serie kundåtgärder.
 
 Frågan nedan returnerar det första beröringsattributvärdet och information om kanalen i målet [!DNL Experience Event] datauppsättning. Den returnerar också en `struct` objekt för den valda kanalen med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad.
+
+>[!NOTE]
+>
+>Experience Cloud ID (ECID) kallas även MCID och används även i namnutrymmen.
 
 **Frågesyntax**
 

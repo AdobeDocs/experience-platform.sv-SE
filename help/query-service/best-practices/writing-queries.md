@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 13e2248845734d985331653a17599f48aec0ebde
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1048'
 ht-degree: 2%
 
 ---
@@ -48,6 +48,10 @@ Frågor som skickats via [!DNL Query Service] API körs icke-interaktivt. Icke-i
 ## Åtkomst till ett specifikt fält i ett objekt
 
 Om du vill få åtkomst till ett fält i ett objekt i frågan kan du antingen använda punktnotation (`.`) eller hakparenteser (`[]`). Följande SQL-sats använder punktnotation för att gå igenom `endUserIds` objektet ned till `mcid` -objekt.
+
+>[!NOTE]
+>
+>Experience Cloud ID (ECID) kallas även MCID och används även i namnutrymmen.
 
 ```sql
 SELECT endUserIds._experience.mcid

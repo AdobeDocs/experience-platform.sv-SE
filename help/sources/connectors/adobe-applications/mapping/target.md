@@ -5,19 +5,18 @@ title: Mappa Adobe Target-händelsedata till XDM
 topic-legacy: overview
 description: Lär dig hur du mappar Adobe Target-händelsefält till ett XDM-schema (Experience Data Model) som kan användas i Adobe Experience Platform.
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
-translation-type: tm+mt
-source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '482'
 ht-degree: 0%
 
 ---
 
 # Mappningar av målmappningsfält
 
-Med Adobe Experience Platform kan du importera Adobe Target-data via Target-källanslutningen. När du använder kopplingen måste alla data från målfält mappas till [XDM-fälten (Experience Data Model)](../../../../xdm/home.md) som är associerade med klassen XDM ExperienceEvent.
+Med Adobe Experience Platform kan du importera Adobe Target-data via Target-källanslutningen. När du använder kopplingen måste alla data från målfält mappas till [Experience Data Model (XDM)](../../../../xdm/home.md) fält som är associerade med klassen XDM ExperienceEvent.
 
-Följande tabell visar fälten i ett Experience Event-schema (*XDM ExperienceEvent-fält*) och motsvarande målfält som de ska mappas till (*Målbegärandefält*). Ytterligare information om vissa mappningar finns också.
+I följande tabell beskrivs fälten i ett Experience Event-schema (*XDM ExperienceEvent-fält*) och motsvarande målfält ska mappas till (*Fält för målbegäran*). Ytterligare information om vissa mappningar finns också.
 
 >[!NOTE]
 >
@@ -34,7 +33,7 @@ Följande tabell visar fälten i ett Experience Event-schema (*XDM ExperienceEve
 | **`channel`** | `context.channel` | Fungerar bara med visningsleverans. Alternativen är &quot;web&quot; och &quot;mobile&quot;, med &quot;web&quot; som standard. |
 | **`endUserIds`** |
 | `endUserIds.experience.tntId` | `tntId/mboxPC` |
-| `endUserIds.experience.mcId` | `marketingCloudVisitorId` |
+| `endUserIds.experience.mcId` | `marketingCloudVisitorId` | Experience Cloud ID (ECID) kallas även MCID och används även i namnutrymmen. |
 | **`environment`** |
 | `environment.browserDetails.userAgent` | `mboxRequest.userAgent` |
 | `environment.browserDetails.viewPortHeight` | `mboxRequest.browserHeight` |
@@ -62,7 +61,7 @@ Följande tabell visar fälten i ett Experience Event-schema (*XDM ExperienceEve
 | `experience.target.activities[i].activityEvents` | Innehåller information om aktivitetshändelser som användaren har träffats med den här händelsen. |
 | **`device`** |
 | `device.typeIDService` | `XDMDevice.Device.TypeIDService.typeIDService_deviceatlas` |
-| `device.type` | En av följande egenskaper för `deviceAtlas` (eller NULL): <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
+| `device.type` | En av följande egenskaper i `deviceAtlas` (eller NULL): <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
 | `device.typeID` | (tom sträng) |
 | `device.manufacturer` | `deviceAtlas.manufacturer` |
 | `device.model` | `deviceAtlas.model` |

@@ -5,9 +5,9 @@ title: Adobe-definierade SQL-funktioner i frågetjänsten
 topic-legacy: functions
 description: Det här dokumentet innehåller information om de Adobe-definierade funktioner som är tillgängliga i Adobe Experience Platform Query Service.
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-source-git-commit: e0cdfc514a9e1277134d4c0d5396fc0bdf9d9958
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1469'
+source-wordcount: '1486'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 2%
 Adobe-definierade funktioner, nedan kallade ADF:er, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event] data. De innehåller funktioner för [Yrkesställning](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribut](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
 
 Det här dokumentet innehåller information om funktioner som definieras av Adobe i [!DNL Query Service].
+
+>[!NOTE]
+>
+>Experience Cloud ID (ECID) kallas även MCID och används även i namnutrymmen.
 
 ## Fönsterfunktioner {#window-functions}
 

@@ -5,9 +5,9 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: e0e96a52e30f5c34e0695c3e291bed9b6c085e00
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '2484'
+source-wordcount: '2497'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | commerce_order_purchaseCity (String) | True | Kolumn med extra bakgrundsuppsättning. <br> **Exempel:** stad: San Jose |
 | customerProfile (Object) | Falskt | Identitetsinformation om användaren som användes för att skapa modellen. |
 | identity (Object) | Falskt | Innehåller information om användaren som används för att skapa modellen, t.ex. `id` och `namespace`. |
-| id (String) | True | Identitets-ID för användaren, t.ex. cookie-ID, AAID eller MCID. <br> **Exempel:** 17348762725408656344688320891369597404 |
+| id (String) | True | Identitets-ID för användaren, till exempel cookie-ID, Adobe Analytics-ID (AAID) eller Experience Cloud-ID (ECID, även kallat MCID eller besökar-ID) osv. <br> **Exempel:** 17348762725408656344688320891369597404 |
 | namespace (String) | True | Identitetsnamnutrymme som används för att skapa sökvägarna och därmed modellen. <br> **Exempel:** aaid |
 | touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras av | förekomst av kontaktyta eller tidsstämpel. |
 | touchpointName (String) | True | Namnet på den kontaktyta som konfigurerades under installationen. <br> **Exempel:** PAID_SEARCH_CLICK |

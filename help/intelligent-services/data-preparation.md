@@ -5,9 +5,9 @@ title: Förbered data för användning i intelligenta tjänster
 topic-legacy: Intelligent Services
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '2906'
+source-wordcount: '2923'
 ht-degree: 0%
 
 ---
@@ -116,6 +116,10 @@ Alla nyckelfält bör användas, men det finns två fält som **obligatoriskt** 
 Ett av fälten i schemat måste anges som ett primärt identitetsfält, vilket tillåter [!DNL Intelligent Services] för att länka varje instans av tidsseriedata till en enskild person.
 
 Du måste fastställa det bästa fältet som ska användas som primär identitet baserat på källan och datatypen. Ett identitetsfält måste innehålla en **identity namespace** som anger vilken typ av identitetsdata som fältet förväntar sig som ett värde. Några giltiga namnutrymmesvärden är:
+
+>[!NOTE]
+>
+>Experience Cloud ID (ECID) kallas även MCID och används även i namnutrymmen.
 
 * &quot;email&quot;
 * &quot;phone&quot;

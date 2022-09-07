@@ -5,9 +5,9 @@ title: Mappningsfält för Adobe Analytics Source Connector
 topic-legacy: overview
 description: Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics-källan. Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: efe36904b0dce94a8b1f5e7a3d3f38da1038d49c
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '3401'
+source-wordcount: '3431'
 ht-degree: 0%
 
 ---
@@ -186,9 +186,9 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | ip | environment.ipV4 | string | IP-adressen, baserad på HTTP-huvudet i bildbegäran. |
 | j_jscript | environment.browserDetails.javaScriptEnabled | boolesk | Den version av JavaScript som används. |
 | mcvisid_high + mcvisid_low | identityMap | object | Experience Cloud Visitor-ID. |
-| mcvisid_high + mcvisid_low | endUserID:n._experience.mcid.id | string | Experience Cloud Visitor-ID. |
-| mcvisid_high | endUserID:n._experience.mcid.primär | boolesk | Experience Cloud Visitor-ID. |
-| mcvisid_high | endUserID:n._experience.mcid.namespace.code | string | Experience Cloud Visitor-ID. |
+| mcvisid_high + mcvisid_low | endUserID:n._experience.mcid.id | string | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
+| mcvisid_high | endUserID:n._experience.mcid.primär | boolesk | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
+| mcvisid_high | endUserID:n._experience.mcid.namespace.code | string | Experience Cloud ID (ECID) kallas också MCID och används ibland i namnutrymmen. |
 | mcvisid_low | identityMap | object | Experience Cloud Visitor-ID. |
 | sdid_high + sdid_low | _experience.target.supplementalDataID | string | Tryck på Stitching ID. Analysfältet sdid_high och sdid_low är det kompletterande data-id som används för att sammanfoga två (eller flera) inkommande träffar. |
 | mobilebeaconproximity | placeContext.POIinteraction.POIDetail.beaconInteractionDetails.proximity | string | Mobiltjänster är nära. |
