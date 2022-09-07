@@ -4,7 +4,7 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: ed6a5ba39de2aecaef6f44604ff605721bfcb924
+source-git-commit: b732fa1f4afb71e7b8c3276335b371d0f8ef888d
 workflow-type: tm+mt
 source-wordcount: '820'
 ht-degree: 5%
@@ -34,7 +34,7 @@ ht-degree: 5%
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - Reklam {#advertising}
-      - [Google AdWords Connector](connectors/advertising/ads.md)
+      - [Google Ads Connector](connectors/advertising/ads.md)
    - Analytics{#analytics} 
       - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
    - molnlagring {#cloud-storage}
@@ -103,7 +103,7 @@ ht-degree: 5%
 - API-självstudiekurser {#api-tutorials}
    - Skapa en basanslutning {#create}
       - Reklam {#advertising}
-         - [Google AdWords](tutorials/api/create/advertising/ads.md)
+         - [Google Ads](tutorials/api/create/advertising/ads.md)
       - Analytics{#analytics} 
          - [Blandpanel](tutorials/api/create/analytics/mixpanel.md)
       - molnlagring {#cloud-storage}
@@ -205,7 +205,7 @@ ht-degree: 5%
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - Reklam {#advertising}
-         - [Google AdWords](tutorials/ui/create/advertising/ads.md)
+         - [Google Ads](tutorials/ui/create/advertising/ads.md)
       - Analytics{#analytics} 
          - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
       - molnlagring {#cloud-storage}
