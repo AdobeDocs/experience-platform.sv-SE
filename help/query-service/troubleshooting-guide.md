@@ -5,9 +5,9 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: 722d7144639d7280ef85c9bfc285e616e7d7fcce
 workflow-type: tm+mt
-source-wordcount: '3504'
+source-wordcount: '3737'
 ht-degree: 1%
 
 ---
@@ -252,6 +252,16 @@ SELECT count(1) FROM myTableName
 +++Svarsfrågetjänsten innehåller flera inbyggda SQL-hjälpfunktioner som utökar SQL-funktionerna. Se dokumentet för en fullständig lista över [SQL-funktioner som stöds av frågetjänsten](./sql/spark-sql-functions.md).
 +++
 
+### Är alla inbyggda [!DNL Spark SQL] funktioner som stöds eller är användare begränsade till endast wrapper [!DNL Spark SQL] funktioner från Adobe?
+
++++Svara ännu, inte alla öppen källkod [!DNL Spark SQL] funktioner har testats på data i sjön. När de har testats och bekräftats läggs de till i listan över funktioner som stöds. Se [lista över stöd [!DNL Spark SQL] funktioner](./sql/spark-sql-functions.md) om du vill söka efter en viss funktion.
++++
+
+### Kan användare definiera egna användardefinierade funktioner (UDF) som kan användas i andra frågor?
+
++++Svara På grund av datasäkerhetshänsyn är den anpassade definitionen av användardefinierat fält inte tillåten.
++++
+
 ### Vad ska jag göra om min schemalagda fråga misslyckas?
 
 +++Besvara först, kontrollera loggarna för att ta reda på mer om felet. Frågor och svar om [hitta fel i loggar](#error-logs) innehåller mer information om hur du gör detta.
@@ -438,6 +448,11 @@ WHERE T2.ID IS NULL
 
 +++
 
+### Kan jag skapa en datauppsättning med en CTAS-fråga med ett namn med dubbla understreck som de som visas i gränssnittet? Exempel: `test_table_001`.
+
++++Svarsnr. Detta är en avsiktlig begränsning i Experience Platform som gäller för alla Adobe-tjänster, inklusive frågetjänsten. Ett namn med två understreck accepteras som ett schema- och datauppsättningsnamn, men tabellnamnet för datauppsättningen får bara innehålla ett understreck.
++++
+
 ## Exportera data {#exporting-data}
 
 I det här avsnittet finns information om hur du exporterar data och begränsningar.
@@ -462,6 +477,25 @@ FROM <table_name>
 +++Svarsnummer Det finns för närvarande ingen funktion för extrahering av inkapslade data.
 +++
 
+### Varför returnerar inte Analytics-dataanslutningen data?
+
++++Svar En vanlig orsak till det här problemet är att fråga efter data i tidsserier utan tidsfilter. Exempel:
+
+```sql
+SELECT * FROM prod_table LIMIT 1;
+```
+
+Ska skrivas som:
+
+```sql
+SELECT * FROM prod_table
+WHERE
+timestamp >= to_timestamp('2022-07-22')
+and timestamp < to_timestamp('2022-07-23');
+```
+
++++
+
 ## Tredjepartsverktyg {#third-party-tools}
 
 Detta avsnitt innehåller information om användning av tredjepartsverktyg som PSQL och Power BI.
@@ -473,7 +507,13 @@ Detta avsnitt innehåller information om användning av tredjepartsverktyg som P
 
 ### Finns det något sätt att ansluta frågetjänsten en gång för kontinuerlig användning med ett verktyg från tredje part?
 
-+++Besvara Ja, klientdatorer från tredje part kan anslutas till frågetjänsten via en engångsinstallation av ej förfallande autentiseringsuppgifter. Autentiseringsuppgifter som inte förfaller kan genereras av en behörig användare och kommer att få dem i en JSON-fil som laddas ned till den lokala datorn. Fullständig [vägledning om hur du skapar och hämtar ej förfallodatum för inloggningsuppgifter](./ui/credentials.md#non-expiring-credentials) finns i dokumentationen.
++++Besvara Ja, klientdatorer från tredje part kan anslutas till frågetjänsten via en engångsinstallation av ej förfallande autentiseringsuppgifter. Autentiseringsuppgifter som inte förfaller kan genereras av en behörig användare och tas emot i en JSON-fil som automatiskt hämtas till den lokala datorn. Fullständig [vägledning om hur du skapar och hämtar ej förfallodatum för inloggningsuppgifter](./ui/credentials.md#non-expiring-credentials) finns i dokumentationen.
++++
+
+### Varför fungerar inte mina inloggningsuppgifter som inte förfaller?
+
++++Svara Värdet för ej förfallande autentiseringsuppgifter är sammanfogade argument från `technicalAccountID` och `credential` hämtas från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{{technicalAccountId}:{credential}}`.
+Mer information om hur du gör det finns i dokumentationen [ansluta till externa klienter med autentiseringsuppgifter](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
 +++
 
 ### Vilken typ av SQL-redigerare från tredje part kan jag ansluta till Query Service Editor?
