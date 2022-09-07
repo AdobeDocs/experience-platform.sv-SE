@@ -4,11 +4,11 @@ title: Standardguardrutor för kundprofildata i realtid
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: 'Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda. '
+description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: e3813691af6477a0afbb47ed0fd53d5bb3834fd0
+source-git-commit: 1b98a04f92833f5c906ec0081b35144cd47d77bc
 workflow-type: tm+mt
-source-wordcount: '1941'
+source-wordcount: '1950'
 ht-degree: 1%
 
 ---
@@ -139,7 +139,7 @@ I det här dokumentet finns det flera skyddsutkast som refererar till&quot;profi
 
 ### Sammanfoga profiler {#merge-policies}
 
-När du sammanfogar data från flera olika källor är sammanslagningsprinciper de regler som används av plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt avgör sammanfogningsprincipen vilken information som ska inkluderas i profilen för den enskilda personen. Om du vill veta mer om kopplingsregler börjar du med att läsa [sammanfogningsprinciper - översikt](merge-policies/overview.md).
+När du sammanfogar data från flera olika källor är sammanslagningsprinciper de regler som används av plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt avgör sammanfogningsprincipen vilken information som ska inkluderas i profilen för den enskilda personen. Max fem (5) sammanslagningsprinciper tillåts per organisation. Läs mer om kopplingsregler i [sammanfogningsprinciper - översikt](merge-policies/overview.md).
 
 ### Adobe Analytics rapportuppsättningar av datauppsättningar i plattformen {#aa-datasets}
 
