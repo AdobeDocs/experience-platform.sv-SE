@@ -5,21 +5,20 @@ title: PQL-strängfunktioner
 topic-legacy: developer guide
 description: PQL (Profile Query Language) har funktioner som underlättar interaktion med strängar.
 exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1c9ed96cdbd9e670bd1f05467e33e8dab5bc2121
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '840'
 ht-degree: 3%
 
 ---
 
 # Strängfunktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## Gilla
 
-Funktionen `like` används för att avgöra om en sträng matchar ett angivet mönster.
+The `like` används för att avgöra om en sträng matchar ett angivet mönster.
 
 **Format**
 
@@ -42,7 +41,7 @@ city like "%es%"
 
 ## Börjar med
 
-Funktionen `startsWith` används för att avgöra om en sträng börjar med en angiven delsträng.
+The `startsWith` -funktionen används för att avgöra om en sträng börjar med en angiven delsträng.
 
 **Format**
 
@@ -66,7 +65,7 @@ person.name.startsWith("Joe")
 
 ## Börjar inte med
 
-Funktionen `doesNotStartWith` används för att avgöra om en sträng inte börjar med en angiven delsträng.
+The `doesNotStartWith` -funktionen används för att avgöra om en sträng inte börjar med en angiven delsträng.
 
 **Format**
 
@@ -90,7 +89,7 @@ person.name.doesNotStartWith("Joe")
 
 ## Slutar med
 
-Funktionen `endsWith` används för att avgöra om en sträng avslutas med en angiven delsträng.
+The `endsWith` används för att avgöra om en sträng avslutas med en angiven delsträng.
 
 **Format**
 
@@ -114,7 +113,7 @@ person.emailAddress.endsWith(".com")
 
 ## Slutar inte med
 
-Funktionen `doesNotEndWith` används för att avgöra om en sträng inte avslutas med en angiven delsträng.
+The `doesNotEndWith` -funktionen används för att avgöra om en sträng inte avslutas med en angiven delsträng.
 
 **Format**
 
@@ -138,7 +137,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 ## Innehåller
 
-Funktionen `contains` används för att avgöra om en sträng innehåller en angiven delsträng.
+The `contains` -funktionen används för att avgöra om en sträng innehåller en angiven delsträng.
 
 **Format**
 
@@ -162,7 +161,7 @@ person.emailAddress.contains("2010@gm")
 
 ## Innehåller inte
 
-Funktionen `doesNotContain` används för att avgöra om en sträng inte innehåller en angiven delsträng.
+The `doesNotContain` -funktionen används för att avgöra om en sträng inte innehåller en angiven delsträng.
 
 **Format**
 
@@ -186,7 +185,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 ## Är lika med
 
-Funktionen `equals` används för att avgöra om en sträng är lika med den angivna strängen.
+The `equals` -funktionen används för att avgöra om en sträng är lika med den angivna strängen.
 
 **Format**
 
@@ -209,7 +208,7 @@ person.name.equals("John")
 
 ## Inte lika med
 
-Funktionen `notEqualTo` används för att avgöra om en sträng inte är lika med den angivna strängen.
+The `notEqualTo` -funktionen används för att avgöra om en sträng inte är lika med den angivna strängen.
 
 **Format**
 
@@ -232,7 +231,7 @@ person.name.notEqualTo("John")
 
 ## Matchar
 
-Funktionen `matches` används för att avgöra om en sträng matchar ett visst reguljärt uttryck. Mer information om att matcha mönster i reguljära uttryck finns i [det här dokumentet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
+The `matches` används för att avgöra om en sträng matchar ett visst reguljärt uttryck. Se [det här dokumentet](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) för mer information om att matcha mönster i reguljära uttryck.
 
 **Format**
 
@@ -248,9 +247,13 @@ Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens nam
 person.name.matches("(?i)^John")
 ```
 
+>[!NOTE]
+>
+>Om du använder funktioner för reguljära uttryck som `\w`, **måste** undgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
+
 ## Grupp för reguljära uttryck
 
-Funktionen `regexGroup` används för att extrahera specifik information baserat på det reguljära uttrycket som anges.
+The `regexGroup` -funktionen används för att extrahera specifik information baserat på det reguljära uttrycket.
 
 **Format**
 
@@ -263,9 +266,13 @@ Funktionen `regexGroup` används för att extrahera specifik information baserat
 Följande PQL-fråga används för att extrahera domännamnet från en e-postadress.
 
 ```sql
-emailAddress.regexGroup("@(\w+)", 1)
+emailAddress.regexGroup("@(\\w+)", 1)
 ```
+
+>[!NOTE]
+>
+>Om du använder funktioner för reguljära uttryck som `\w`, **måste** undgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
 
 ## Nästa steg
 
-Nu när du har lärt dig om strängfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig om strängfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).
