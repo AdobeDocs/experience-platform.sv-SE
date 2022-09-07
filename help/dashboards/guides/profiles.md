@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 93bb816857545e2e5abca51e4046d225927daef4
+source-git-commit: 9a4257ef6f9e32feeb2bb90bc7dd46b0d533cb35
 workflow-type: tm+mt
-source-wordcount: '3551'
+source-wordcount: '3620'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,14 @@ Du kan ändra utseendet på [!UICONTROL Profiles] kontrollpanel genom att välja
 
 Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
 
+### Lägg till widgetar {#add-widget}
+
+Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och se en lista över tillgängliga widgetar att lägga till på din instrumentpanel.
+
+![Panelen Profiler med widgeten markerad.](../images/profiles/profiles-overview-add-widget.png)
+
+I widgetbiblioteket kan du bläddra genom urvalet av standardwidgetar och anpassade segmentwidgetar.Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket. [lägga till en widget](../customize/widget-library.md#add-widgets).
+
 ## (Beta) Profileffektivitetsinsikter {#profile-efficacy-insights}
 
 >[!IMPORTANT]
@@ -73,9 +81,9 @@ Kontrollpanelen väljer automatiskt vilken sammanfogningsprincip som ska använd
 
 >[!NOTE]
 >
->I listrutan visas endast sammanfogningsprinciper som är relaterade till den enskilda klassen för XDM-profiler. Om din organisation har skapat flera sammanfogningsprinciper kan det dock innebära att du måste rulla för att kunna visa den fullständiga listan över tillgängliga sammanfogningsprinciper.
+>I listrutan visas endast sammanfogningsprinciper som använder `_xdm.context.profile` schema. Om din organisation har skapat flera sammanfogningsprinciper kan det dock innebära att du måste rulla för att kunna visa den fullständiga listan över tillgängliga sammanfogningsprinciper.
 
-![](../images/profiles/select-merge-policy.png)
+![Fliken Profiler - översikt med listrutan Sammanslagningsprincip markerad.](../images/profiles/select-merge-policy.png)
 
 ## Unionens system
 

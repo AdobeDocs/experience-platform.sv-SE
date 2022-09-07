@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;profil;segment;segment;segmentering;användargränssnitt;gränssnitt;anpassning;segmentpanel;instrumentpanel
 title: Stödlinje för instrumentpanel för segment
-description: 'Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat. '
+description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 70fb980b276d256e0f7170b6e49527bca59adfe9
+source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
 workflow-type: tm+mt
-source-wordcount: '1594'
+source-wordcount: '1699'
 ht-degree: 0%
 
 ---
 
-# Kontrollpanel för segment {#segment-dashboard}
+# [!UICONTROL Segments] kontrollpanel {#segment-dashboard}
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina segment, som de tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med segmentkontrollpanelen i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
 En översikt över alla funktioner i Adobe Experience Platform Segmentation Service i användargränssnittet finns på [Användargränssnittsguide för segmenteringstjänst](../../segmentation/ui/overview.md).
 
-## Instrumentpanelsdata för segment
+## [!UICONTROL Segments] instrumentpanelsdata
 
 På segmentkontrollpanelen visas en ögonblicksbild av de attributdata (postdata) som din organisation har i profilarkivet i Experience Platform. Ögonblicksbilden innehåller inga händelsedata (tidsserier).
 
@@ -27,7 +27,7 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 >
 >Ändringar eller uppdateringar som gjorts i data sedan ögonblicksbilden togs kommer inte att visas på kontrollpanelen förrän nästa ögonblicksbild tas.
 
-## Utforska segmentkontrollpanelen
+## Utforska [!UICONTROL Segments] kontrollpanel {#explore}
 
 Navigera till [!UICONTROL Segments] kontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra listen väljer du **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
@@ -35,13 +35,21 @@ Navigera till [!UICONTROL Segments] kontrollpanelen i plattformsgränssnittet v�
 >
 >Om din organisation inte har använt Platform tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanfogningsprinciper har skapats kan [!UICONTROL Segments] Kontrollpanelen visas inte. I stället [!UICONTROL Overview] På -fliken visas länkar och dokumentation som hjälper dig att komma igång med segmentering.
 
-![](../images/segments/dashboard-overview.png)
+![Fliken Översikt över kontrollpanelen Segment.](../images/segments/dashboard-overview.png)
 
-### Ändra [!UICONTROL Segments] kontrollpanel
+### Ändra [!UICONTROL Segments] kontrollpanel {#modify}
 
 Du kan ändra utseendet på [!UICONTROL Segments] kontrollpanel genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
 Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
+
+### Lägg till widgetar {#add-widget}
+
+Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och se en lista över tillgängliga widgetar att lägga till på din instrumentpanel.
+
+![Översikt över kontrollpanelen Segment med widgeten Lägg till markerad.](../images/segments/segments-overview-add-widget.png)
+
+I widgetbiblioteket kan du bläddra genom urvalet av standardwidgetar och anpassade segmentwidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket. [lägga till en widget](../customize/widget-library.md#add-widgets).
 
 ## Markera ett segment
 
@@ -53,15 +61,15 @@ Om du vill välja ett annat segment markerar du listrutan bredvid segmentnamnet 
 >
 >Endast segment med ett profilantal över noll visas i listan med valbara segment.
 
-![](../images/segments/change-segment.png)
+![Översikt över kontrollpanelen Segment med den globala segmentlistrutan markerad.](../images/segments/change-segment.png)
 
-![](../images/segments/select-segment-dialog.png)
+![Dialogrutan Välj segment som visar alla tillgängliga segment.](../images/segments/select-segment-dialog.png)
 
 ## Widgetar och mätvärden
 
 Kontrollpanelen för segment består av widgetar, som är skrivskyddade mått som ger viktig information om det valda segmentet.
 
-Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid segmentlistrutan. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
+Datum och tid för den senaste ögonblicksbilden visas högst upp på [!UICONTROL Overview] bredvid segmentlistrutan. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
 
 ![Fliken Segmentöversikt med en widgettidsstämpel markerad.](../images/segments/widget-timestamp.png)
 
@@ -92,7 +100,7 @@ The **[!UICONTROL Audience size]** visar det totala antalet sammanfogade profile
 
 Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
-![](../images/segments/audience-size.png)
+![Översikt över kontrollpanelen Segment med widgeten Målgruppsstorlek markerad.](../images/segments/audience-size.png)
 
 ### [!UICONTROL Audience size trend] {#audience-size-trend}
 
@@ -163,7 +171,7 @@ Om en kund interagerar med ert varumärke i mer än en kanal kopplas flera ident
 
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
-![](../images/segments/identity-overlap.png)
+![Översikt över kontrollpanelen Segment med widgeten Identity overlap markerad.](../images/segments/identity-overlap.png)
 
 ### [!UICONTROL Profiles by identity] {#profiles-by-identity}
 

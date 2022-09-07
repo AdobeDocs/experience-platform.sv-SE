@@ -4,9 +4,9 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 7a67ac4e1e8730197221832090c1414073399a1b
+source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
 workflow-type: tm+mt
-source-wordcount: '2537'
+source-wordcount: '2648'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ The [!UICONTROL Destinations] På kontrollpanelen visas en ögonblicksbild av de
 >
 >Ändringar eller uppdateringar som gjorts i data sedan ögonblicksbilden togs kommer inte att visas på kontrollpanelen förrän nästa ögonblicksbild tas.
 
-## Utforska kontrollpanelen för destinationer
+## Utforska [!UICONTROL Destinations] kontrollpanel {#explore}
 
 Om du vill navigera till kontrollpanelen för mål i plattformsgränssnittet väljer du **[!UICONTROL Destinations]** i den vänstra listen väljer du **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
@@ -37,11 +37,19 @@ Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL 
 
 ![Översikt över plattformsgränssnittets destinationer med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
 
-### Ändra kontrollpanelen för destinationer
+### Ändra [!UICONTROL Destinations] kontrollpanel {#modify}
 
-Du kan ändra utseendet på kontrollpanelen för mål genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
+Välj **[!UICONTROL Modify dashboard]** om du vill ändra utseendet på kontrollpanelen för mål. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till widgetbiblioteket. Från widgetbiblioteket kan du utforska de tillgängliga widgetarna och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
+Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
+
+### Lägg till widgetar {#add-widget}
+
+Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och se en lista över tillgängliga widgetar att lägga till på din instrumentpanel.
+
+![Översikt över kontrollpanelen Destinationer med widgeten Lägg till markerad.](../images/destinations/destinations-overview-add-widget.png)
+
+I widgetbiblioteket kan du bläddra genom urvalet av standardwidgetar och anpassade segmentwidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
 
 ## Standardwidgetar {#standard-widgets}
 
@@ -80,7 +88,7 @@ Antalet mappade segment som visas i kolumnen Antal segment är exakt som i den s
 
 Om du väljer namnet på ett mål i den lista som visas på widgeten kommer du till målinformationen som länkad från **[!UICONTROL Browse]** -fliken. Du kan också välja **[!UICONTROL View All]** för att navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
 
-![](../images/destinations/most-used-destinations.png)
+![Fliken Översikt på kontrollpanelen Destinationer med widgeten Mest använda mål markerad.](../images/destinations/most-used-destinations.png)
 
 ### [!UICONTROL Recently created destinations] {#recently-created-destinations}
 
@@ -97,7 +105,7 @@ Om du väljer namnet på ett mål i den lista som visas på widgeten kommer du t
 
 Mer information om hur du konfigurerar särskilda typer av destinationer finns på [destinationsdokumentation](../../destinations/home.md).
 
-![](../images/destinations/recently-created-destinations.png)
+![Fliken Översikt på kontrollpanelen Destinationer med widgeten Senast skapade mål markerad.](../images/destinations/recently-created-destinations.png)
 
 ### [!UICONTROL Recently activated segments] {#recently-activated-segments}
 
@@ -114,7 +122,7 @@ Om du väljer namnet på ett segment i listan som visas på widgeten kommer du t
 
 Mer information om hur du arbetar med segment i Experience Platform finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
 
-![](../images/destinations/recently-activated-segments.png)
+![Fliken Översikt på kontrollpanelen Destinationer med widgeten Nyligen aktiverade segment markerad.](../images/destinations/recently-activated-segments.png)
 
 ### [!UICONTROL Recently activated segments by destination] {#recently-activated-segments-by-destination}
 
@@ -129,7 +137,7 @@ Den här widgeten innehåller två mätvärden: segmentnamnet och datumet då se
 
 Du kan visa information om ett segment genom att välja namnet på ett segment i listan som visas.
 
-![Nyligen aktiverade segment efter målwidget.](../images/destinations/recently-activated-segments-by-destination.png)
+![De senast aktiverade segmenten efter målwidget.](../images/destinations/recently-activated-segments-by-destination.png)
 
 ### [!UICONTROL Audience size trend] {#audience-size-trend}
 
@@ -144,7 +152,7 @@ En tidsperiod för målgruppstrenden under de senaste 30 dagarna, 90 dagar eller
 
 I den andra listrutan visas alla tillgängliga segment som kan skickas till det målkonto som valts högst upp på kontrollpanelen.
 
-![Trendwidgeten för målgruppsstorlek.](../images/destinations/audience-size-trend.png)
+![Widgeten för målgruppsstorlekstrend.](../images/destinations/audience-size-trend.png)
 
 The **[!UICONTROL Audience size trend]** widgeten innehåller en [!UICONTROL Captions] i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter. En maskininlärningsmodell genererar automatiskt bildtexter som beskriver de viktigaste trenderna och viktiga händelser genom att analysera diagram- och segmentdata.
 
