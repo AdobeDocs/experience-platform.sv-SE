@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: ae30ac2fe1c6366c987748e198b9dc3530bc512a
+source-git-commit: 7ad0015dbea0b74673ed0ed2c8c2159065f47ba7
 workflow-type: tm+mt
-source-wordcount: '2076'
+source-wordcount: '2108'
 ht-degree: 0%
 
 ---
@@ -165,6 +165,10 @@ I följande dokumentation finns mer information om dataprep, beräkningsfält oc
 När du är klar med mappningarna för [!DNL Analytics] kan du använda filtreringsregler och -villkor för att selektivt inkludera eller exkludera data från konsumtion i [!DNL Profile Service]. Stöd för filtrering finns endast för [!DNL Analytics] data och data filtreras endast innan de anges [!DNL Profile.] Alla data hämtas in i sjön.
 
 #### Filtrering på radnivå
+
+>[!IMPORTANT]
+>
+>Använd filtrering på radnivå för att tillämpa villkor och ange vilka data som ska **inkludera för profilinmatning**. Använd filtrering på kolumnnivå för att markera de datakolumner som du vill använda **exkludera för profilinmatning**.
 
 Du kan filtrera data för [!DNL Profile] intag på radnivå och kolumnnivå. Med filtrering på radnivå kan du definiera villkor som strängen innehåller, är lika med, börjar eller slutar med. Du kan också använda filtrering på radnivå för att koppla villkor med `AND` och `OR`och negera villkor med `NOT`.
 
