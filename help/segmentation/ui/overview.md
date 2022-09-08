@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
+source-git-commit: 356d76d61293b9ff0887afbf30852159af8d72ad
 workflow-type: tm+mt
-source-wordcount: '1701'
+source-wordcount: '1730'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,11 @@ Mer information finns på [instrumentpanelsguide för segment](../../dashboards/
 >id="platform_segments_browse_evaluationmethodcolumnname"
 >title="Utvärderingsmetod"
 >abstract="Utvärderingsmetoder för segment är batch, streaming och edge."
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_addallsegmentstoschedule"
+>title="Lägg till alla segment i schemat"
+>abstract="Gör det möjligt att inkludera alla grupputvärderingssegment i den dagliga schemalagda uppdateringen kl. 3:30 UTC. Inaktivera borttagning av alla segment från den schemalagda uppdateringen."
 
 Välj **[!UICONTROL Browse]** om du vill visa en lista över alla segmentdefinitioner för din IMS-organisation.
 
