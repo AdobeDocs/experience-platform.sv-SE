@@ -1,75 +1,25 @@
 ---
-title: Versionsinformation för taggar
-description: Den senaste versionsinformationen för taggar i Adobe Experience Platform.
+title: Versionsinformation för taggar och händelsevidarebefordran
+description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
+source-git-commit: af424089c0afdaae76b312137afc5cbd28e82856
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '138'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation om taggar i Adobe Experience Platform
+# Versionsinformation om taggar och vidarebefordran av händelser
 
->[!NOTE]
->
->Adobe Experience Platform Launch omdöms till en serie datainsamlingstekniker i Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+## 27 juli 2022
 
-## 15 november 2021
+* Tillgång till taggar och funktioner för vidarebefordran av händelser hanteras nu via Adobe Admin Console under kortet för Adobe Experience Platform Data Collection. Se guiden [behörigheter för datainsamling](../../collection/permissions.md) för mer information.
+* Stöd för Internet Explorer 10 och 11 har lagts till [föråldrad](../ie-deprecation.md).
 
-**Acceptera ES6-kod i taggar** - Tillägg och anpassad kod som innehåller ES6-kod kan nu användas i taggar. I tilläggskatalogen visas en ES6+-etikett inuti kortet för varje tillägg som innehåller ES6-kod. IE10 och IE11 stöder inte ES6-kod. Innan du använder ES6-kod i taggbiblioteken bör du göra dina ändringar.
+## 22 juni 2022
 
-**Använda Terser som JavaScript-komprimerare** - uglifier ersattes med Terser. Från och med den här versionen är alla taggbibliotek minifierade av Terser.
+Nya tillägg har släppts:
 
-## 21 oktober 2021
-
-**Skicka data till autentiserade slutpunkter vid händelsevidarebefordran** - Med hjälp av hemligheter kan du skicka data till slutpunkter som kräver följande autentiseringsprotokoll:
-
-* **[!UICONTROL Token]**: En enda teckensträng som representerar ett autentiseringstokenvärde.
-* **[!UICONTROL Simple HTTP]**: Innehåller två strängattribut för ett användarnamn och lösenord.
-* **[!UICONTROL OAuth2]**: Innehåller flera attribut som stöder [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) spec.
-
-Mer information finns i stödlinjerna på [hantera hemligheter i användargränssnittet för datainsamling](../ui/event-forwarding/secrets.md) eller [hantera hemligheter i Reactor API](../api/guides/secrets.md).
-
-## 19 juli 2021
-
-**Justeringar till höger&quot;Hantera egenskaper&quot;** - rättigheten Hantera egenskaper stötte på ett problem där en användare hade behörighet att skapa en ny egenskap, men inte kunde se den efter att den skapades (vilket beskrivs i communitytråden [här](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/technical-advisory-adjustments-to-the-manage-properties/ba-p/399176)). En korrigering är nu aktiv med behörigheter som framtvingas enligt beskrivningen i artikeln.
-
->[!NOTE]
->
->Om du tilldelar den nya behörigheten Redigera egenskap till en användargrupp uppdateras inte gränssnittet för att aktivera fälten på egenskapskonfigurationsskärmen. En korrigering av problemet kommer att implementeras i en kommande version.
-
-## 17 maj 2021
-
-**Bättre hantering av osparade ändringar** - Det brukade vara så att när du navigerade bort från en inställningsvy (tillägg, dataelement och regelkomponenter) fick du en fråga om du ville ignorera ändringarna. Men logiken för att fastställa det var inte särskilt bra, så större delen av tiden du fick en uppmaning att spara ändringar trots att det inte fanns några.  Det har rättats till.  Från och med nu bör du bara se den uppmaningen när du har gjort ändringar.
-
-## 10 maj 2021
-
-**Förenklad publicering** - Att bygga till mellanlagringsmiljön behövs inte längre.  Om du har rätt behörighet kan du hoppa över tillståndet Skickat helt och publicera direkt från Development så länge som du har skapat något och det inte finns några andra bibliotek uppströms.
-
-## 22 april 2021
-
-**Datainsamling i Adobe Experience Platform** - Att skicka data till Adobe handlar inte bara om att distribuera taggar till din webbplats eller konfiguration till din app.  Användning av Experience Platform SDK och Edge Network kräver åtkomst till andra plattformsfunktioner.  Tidigare krävdes det att man loggade in i några olika verktyg, men nu är de tillsammans på ett ställe.
-
-Datainsamling i Platform består av sex funktioner, och din nya smidiga navigering innehåller bara de objekt som ditt företag och ditt användarkonto har tillgång till.  Vissa funktionsnamn har också uppdaterats för att matcha Experience Platform namngivningsmönster.
-
-* Klient (som tidigare användes som klientsida)
-* Datastreams (tidigare Edge Configurations)
-* Server (tidigare använd som serversida)
-* Appkonfigurationer
-* Scheman
-* Identiteter
-
-Se fram emot fler uppdateringar i takt med att Experience Platform och datainsamlingen utvecklas.
-
-## 18 februari 2021
-
-* Användargränssnittet för datainsamling har uppdaterats för att reagera-spektrum v3
-* Uppdaterade tilläggskort till de senaste spektrummönstren
-* Ökade storleken på namnfält i hela programmet
-
-## 13 januari 2021
-
-**Allmän tillgänglighet: Vidarebefordran av händelser** Skicka data på händelsenivå till Adobe Experience Platform Edge Network och använd sedan händelsevidarebefordran för att omvandla, berika och skicka data till en slutpunkt som inte är Adobe med hjälp av Adobe, inte klienten, med låg latens.
-
-Se [händelsevidarebefordring - översikt](../ui/event-forwarding/overview.md) och [komma igång-guide](../ui/event-forwarding/getting-started.md) för mer information.
+* [Google Data Layer-taggtillägg](../extensions/web/google-data-layer/overview.md): Gör att du kan använda ett Google-datalager i taggimplementeringen.
+* [Google Ads Enhanced Conversions event forward extension](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html): Gör att du kan förbättra dina Google Ads-konverteringar i realtid.
+* [Vidarekoppling av händelse för Mailchimp](../extensions/web/mailchimp/overview.md): Skickar händelser till Mailchimp Marketing API som kan utlösa e-postmeddelanden för marknadsföringskampanjer, resor eller transaktioner för Mailchimp.
