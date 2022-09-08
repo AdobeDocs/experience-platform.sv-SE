@@ -2,7 +2,7 @@
 title: Hemligheter i reaktors-API
 description: Lär dig grunderna i hur du konfigurerar hemligheter i Reaktors API för användning vid vidarebefordran av händelser.
 exl-id: 0298c0cd-9fba-4b54-86db-5d2d8f9ade54
-source-git-commit: 4f3c97e2cad6160481adb8b3dab3d0c8b23717cc
+source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
 workflow-type: tm+mt
 source-wordcount: '1237'
 ht-degree: 1%
@@ -107,11 +107,11 @@ Hemligheter med en `type_of` värde för `oauth2-google` kräver följande attri
 | --- | --- | --- |
 | `scopes` | Array | Visar Google produktomfång för autentisering. Följande omfattningar stöds:<ul><li>[Google Ads](https://developers.google.com/google-ads/api/docs/oauth/overview): `https://www.googleapis.com/auth/adwords`</li><li>[Google Pub/Sub](https://cloud.google.com/pubsub/docs/reference/service_apis_overview): `https://www.googleapis.com/auth/pubsub`</li></ul> |
 
-När du har skapat `oauth2-google` hemlighet, svaret innehåller en `meta.token_url` -egenskap. Du måste kopiera och klistra in den här URL:en i en webbläsare för att slutföra autentiseringsflödet i Google.
+När du har skapat `oauth2-google` hemlighet, svaret innehåller en `meta.authorization_url` -egenskap. Du måste kopiera och klistra in den här URL:en i en webbläsare för att slutföra autentiseringsflödet i Google.
 
 #### Återauktorisera en `oauth2-google` hemlig
 
-Auktoriserings-URL för en `oauth2-google` hemligheten går ut en timme efter att hemligheten har skapats (vilket anges av `meta.token_url_expires_at`). Därefter måste hemligheten auktoriseras på nytt för att autentiseringsprocessen ska kunna förnyas.
+Auktoriserings-URL för en `oauth2-google` hemligheten går ut en timme efter att hemligheten har skapats (vilket anges av `meta.authorization_url_expires_at`). Därefter måste hemligheten auktoriseras på nytt för att autentiseringsprocessen ska kunna förnyas.
 
 Se [Slutpunktshandbok för hemligheter](../endpoints/secrets.md#reauthorize) om du vill ha mer information om hur du omauktoriserar en `oauth2-google` hemligt genom att göra en PATCH-begäran till Reactor API.
 
