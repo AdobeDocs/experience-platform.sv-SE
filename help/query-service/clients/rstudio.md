@@ -5,7 +5,7 @@ title: Anslut RStudio till frågetjänsten
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 9ab3d69553dee9fdb97472edfa3f812133ee1bb1
 workflow-type: tm+mt
 source-wordcount: '385'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] med Adobe
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL RStudio] och känner till hur den används. Mer information om [!DNL RStudio] finns i [officiell [!DNL RStudio] dokumentation](https://rstudio.com/products/rstudio/).
 > 
-> Om du vill använda RStudio med Query Service måste du installera drivrutinen PostgreSQL JDBC 4.2. Du kan hämta JDBC-drivrutinen från [PostgreSQL officiell plats](https://jdbc.postgresql.org/download.html).
+> Om du vill använda RStudio med Query Service måste du installera drivrutinen PostgreSQL JDBC 4.2. Du kan hämta JDBC-drivrutinen från [PostgreSQL officiell plats](https://jdbc.postgresql.org/download/).
 
 ## Skapa en [!DNL Query Service] anslutningen i [!DNL RStudio] gränssnitt
 
