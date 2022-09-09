@@ -2,9 +2,9 @@
 title: Hantera förfallodatum för datauppsättning
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 769c872d67141b4973b29a492e72c23491e2d1ae
+source-git-commit: 5a12c75a54f420b2ca831dbfe05105dfd856dc4d
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '422'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 >Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
 
 The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Platform UI kan du schemalägga en förfallotid för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som slutförd.
+
+>[!WARNING]
+>
+>Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
 
 Det här dokumentet beskriver hur du schemalägger och hanterar förfallodatum för datauppsättningar i plattformsgränssnittet.
 

@@ -2,9 +2,9 @@
 title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 5a12c75a54f420b2ca831dbfe05105dfd856dc4d
 workflow-type: tm+mt
-source-wordcount: '1375'
+source-wordcount: '1405'
 ht-degree: 1%
 
 ---
@@ -26,6 +26,10 @@ En datamängds förfallotid är endast en tidsfördröjd borttagningsåtgärd. D
 Du kan när som helst innan datauppsättningsborttagningen initieras avbryta förfallotiden eller ändra dess utlösningstid. När du har avbrutit en förfallotid för en datauppsättning kan du öppna den igen genom att ange en ny förfallotid.
 
 När borttagningen av datauppsättningen initieras markeras dess förfallojobb som `executing`och får inte ändras ytterligare. Själva datauppsättningen kan återvinnas i upp till sju dagar, men endast genom en manuell process som initierats via en begäran från Adobe. När begäran verkställs startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna är förfallodatumet markerat som `executed`.
+
+>[!WARNING]
+>
+>Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
 
 ## Komma igång
 
@@ -156,7 +160,7 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum.
 
 ## Skapa en förfallotid för datauppsättning {#create}
 
-Du kan skapa ett förfallodatum för en datauppsättning via en POST.
+Du kan skapa ett förfallodatum för en datauppsättning via en POST-förfrågan.
 
 **API-format**
 
