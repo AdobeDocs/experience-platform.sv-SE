@@ -2,9 +2,9 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: 788c02622b5176b41eb6da70bed0994d4824c984
 workflow-type: tm+mt
-source-wordcount: '1353'
+source-wordcount: '1423'
 ht-degree: 0%
 
 ---
@@ -131,6 +131,13 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+
+### Mappa attribut och identiteter {#map}
+
+*Lägg till information om mappningar som stöds mellan käll- och målfält i mappningssteget i aktiveringsarbetsflödet. Målet kan ha stöd för export av profilattribut, identitetsnamnutrymmen eller båda. Vissa fält kan vara obligatoriska. Målattribut kan vara fördefinierade eller anpassade. Utmana viktiga kavattar och använd exempel, helst med skärmbilder. Två exempel på målsidor som du kan använda som referens är:*
+
+* *[Pega](/help/destinations/catalog/personalization/pega.md#mapping-example)*
+* *[Medallia](/help/destinations/catalog/voice/medallia-connector.md#map)*
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
