@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: b0ba7578cc8e790c70cba4cc55c683582b685843
+source-git-commit: 5bd3e43e6b307cc1527e8734936c051fb4fc89c4
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '1015'
 ht-degree: 0%
 
 ---
@@ -126,14 +126,13 @@ GET /dataSets/{DATASET_ID}
 ```
 
 | Parameter | Beskrivning |
-|---|---|
+| --------- | ----------- |
 | `{DATASET_ID}` | ID:t för en datauppsättning som du vill inspektera. |
 
 **Begäran**
 
 ```shell
-curl -X GET \
-  'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e' \
+curl -X GET 'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -196,11 +195,11 @@ Under `tags` -egenskapen ser du att `unifiedProfile` finns med värdet `enabled:
 
 ### Inaktivera datauppsättningen för profilen
 
-Om du vill konfigurera en profilaktiverad datauppsättning för uppdateringar måste du först inaktivera `unifiedProfile` och sedan aktivera om det tillsammans med `isUpsert` -tagg. Detta görs med två PATCH-begäranden, en gång för att inaktivera och en för att återaktivera.
+Om du vill konfigurera en profilaktiverad datauppsättning för uppdateringar måste du först inaktivera `unifiedProfile` och `unifiedIdentity` -taggar och sedan återaktivera dem bredvid `isUpsert` -tagg. Detta görs med två PATCH-begäranden, en gång för att inaktivera och en för att återaktivera.
 
 >[!WARNING]
 >
->Data som hämtas till datauppsättningen när den är inaktiverad kommer inte att hämtas till profilarkivet. Vi rekommenderar att du undviker att samla in data i datauppsättningen tills den har återaktiverats för profilen.
+>Data som hämtas till datauppsättningen när den är inaktiverad kommer inte att hämtas till profilarkivet. Du bör undvika att samla in data i datauppsättningen tills den har återaktiverats för profilen.
 
 **API-format**
 
@@ -209,29 +208,37 @@ PATCH /dataSets/{DATASET_ID}
 ```
 
 | Parameter | Beskrivning |
-|---|---|
+| --------- | ----------- |
 | `{DATASET_ID}` | ID:t för den datauppsättning som du vill uppdatera. |
 
 **Begäran**
 
-Den första texten i PATCH-begäran innehåller en `path` till `unifiedProfile` ställa in `value` till `enabled:false` för att inaktivera taggen.
+Den första texten i PATCH-begäran innehåller en `path` till `unifiedProfile` och `path` till `unifiedIdentity`, ange `value` till `enabled:false` för båda dessa sökvägar för att inaktivera taggarna.
 
 ```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
+curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
   -H 'Content-Type:application/json-patch+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "replace", "path": "/tags/unifiedProfile", "value": ["enabled:false"] }
+        { 
+            "op": "replace", 
+            "path": "/tags/unifiedProfile", 
+            "value": ["enabled:false"] 
+        },
+        {
+            "op": "replace",
+            "path": "/tags/unifiedIdentity",
+            "value": ["enabled:false"]
+        }
       ]'
 ```
 
 **Svar**
 
-En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. The `unifiedProfile` -taggen har nu inaktiverats.
+En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. The `unifiedProfile` och `unifiedIdentity` -taggar har nu inaktiverats.
 
 ```json
 [
@@ -250,28 +257,42 @@ PATCH /dataSets/{DATASET_ID}
 ```
 
 | Parameter | Beskrivning |
-|---|---|
+| --------- | ----------- |
 | `{DATASET_ID}` | ID:t för den datauppsättning som du vill uppdatera. |
 
 **Begäran**
 
-Begärandetexten innehåller en `path` till `unifiedProfile` ställa in `value` som innehåller `enabled` och `isUpsert` taggar, båda inställda på `true`.
+Begärandetexten innehåller en `path` till `unifiedProfile` ställa in `value` som innehåller `enabled` och `isUpsert` taggar, båda inställda på `true`och en `path` till `unifiedIdentity` ställa in `value` som innehåller `enabled` tagg angiven till `true`.
 
 ```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
+curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
   -H 'Content-Type:application/json-patch+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "add", "path": "/tags/unifiedProfile", "value": ["enabled:true","isUpsert:true"] },
+        { 
+            "op": "add", 
+            "path": "/tags/unifiedProfile", 
+            "value": [
+                "enabled:true",
+                "isUpsert:true"
+            ] 
+        },
+        {
+            "op": "add",
+            "path": "/tags/unifiedIdentity",
+            "value": [
+                "enabled:true"
+            ]
+        }
       ]'
 ```
 
 **Svar**
-En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. The `unifiedProfile` -taggen har nu aktiverats och konfigurerats för attributuppdateringar.
+
+En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. The `unifiedProfile` tagg och `unifiedIdentity` -taggen har nu aktiverats och konfigurerats för attributuppdateringar.
 
 ```json
 [
