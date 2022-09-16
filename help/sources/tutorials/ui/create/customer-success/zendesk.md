@@ -3,7 +3,7 @@ keywords: Experience Platform;Zendesk;sources;connectors;source connectors;sourc
 title: Skapa en anslutning till Zendesk-källa i användargränssnittet
 description: Lär dig hur du skapar en Zendesk-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: f0348abd41e7d594109a04fd11ed06857cedfa53
+source-git-commit: e92c2386d9f4a4709f0a749d3ed97e033f066610
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 3%
@@ -33,7 +33,7 @@ För att komma åt [!DNL Zendesk] på Platform måste du ange värden för följ
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| Värd | Den unika domän som är specifik för ditt konto och som skapas under registreringsprocessen. | `https://yoursubdomain.zendesk.com` |
+| Underdomän | Den unika domän som är specifik för ditt konto och som skapas under registreringsprocessen. | `https://yoursubdomain.zendesk.com` |
 | Åtkomsttoken | Zendesk API-token. | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
 Mer information om hur du autentiserar [!DNL Zendesk] -källa, se [[!DNL Zendesk] källöversikt](../../../../connectors/customer-success/zendesk.md).

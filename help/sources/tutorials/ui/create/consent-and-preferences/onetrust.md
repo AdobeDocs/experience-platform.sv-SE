@@ -5,9 +5,10 @@ title: (Beta) Skapa en OneTrust-källanslutning i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en OneTrust-källanslutning med Adobe Experience Platform-gränssnittet.
-source-git-commit: adefaeb895c91d45727f791b73b73a17a2b1ccf9
+exl-id: 6af0604d-cbb6-4c8e-b017-3eb82ec6ee1c
+source-git-commit: cfc6e7cb3877f3b5f716b7f82e7c2d308ef5ed10
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -36,7 +37,7 @@ För att kunna ansluta [!DNL OneTrust Integration] till Platform måste du ange 
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| Värd | Den miljö som [!DNL OneTrust Integration] data måste hämtas från. | `https://uat.onetrust.com/` |
+| Värdnamn | Den miljö som [!DNL OneTrust Integration] data måste hämtas från. | `https://uat.onetrust.com/` |
 | Test-URL för auktorisering | (Valfritt) URL:en för auktoriseringstestet används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |  |
 | Åtkomsttoken | Åtkomsttoken som motsvarar din [!DNL OneTrust Integration] konto. | `ZGFkZDMyMjFhMmEyNDQ2ZGFhNTdkZjNkZjFmM2IyOWE6QjlUSERVUTNjOFVsRmpEZTJ6Vk9oRnF3Sk8xNlNtcm4=` |
 

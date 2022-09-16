@@ -5,10 +5,10 @@ title: Skapa en källanslutning för MailChimp-medlemmar med hjälp av plattform
 topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-medlemmar med hjälp av plattformsgränssnittet.
 exl-id: dc620ef9-624d-4fc9-8475-bb475ea86eb7
-source-git-commit: ed185d0957c3cd84c33a6ff60c5ded2b17fbfe74
+source-git-commit: 430b544835956ec0b212fb44d48beaae46afdd2e
 workflow-type: tm+mt
 source-wordcount: '649'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -33,7 +33,7 @@ The [!DNL Mailchimp Members] Källan har stöd för både OAuth 2-uppdateringsko
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Värd | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
+| Domän | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | Verifieringstestets URL | Verifieringstestets URL används för att validera autentiseringsuppgifter vid anslutning [!DNL Mailchimp] till Platform. Om detta inte anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |
 | Åtkomsttoken | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
@@ -43,7 +43,7 @@ Mer information om hur du använder OAuth 2 för att autentisera [!DNL Mailchimp
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Värd | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
+| Domän | Den rot-URL som används för att ansluta till MailChimp API. Formatet för rot-URL:en är `https://{DC}.api.mailchimp.com`, där `{DC}` representerar det datacenter som motsvarar ditt konto. |
 | Användarnamn | Användarnamnet som motsvarar ditt MailChimp-konto. Detta krävs för grundläggande autentisering. |
 | Lösenord | Lösenordet som motsvarar ditt MailChimp-konto. Detta krävs för grundläggande autentisering. |
 
@@ -74,13 +74,13 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 
 #### Autentisera med OAuth 2
 
-Om du vill använda OAuth 2 väljer du [!UICONTROL OAuth 2 Refresh Code], anger värden för värden, verifieringstestets URL och åtkomsttoken och väljer sedan **[!UICONTROL Connect to source]**. Låt inloggningsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda OAuth 2 väljer du [!UICONTROL OAuth 2 Refresh Code], anger värden för din domän, verifieringstest-URL och åtkomsttoken och väljer sedan **[!UICONTROL Connect to source]**. Låt inloggningsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![oauth](../../../../images/tutorials/create/mailchimp-members/oauth.png)
 
 #### Autentisera med grundläggande autentisering
 
-Om du vill använda grundläggande autentisering väljer du [!UICONTROL Basic authentication], anger värden för värden, användarnamn och lösenord och väljer sedan **[!UICONTROL Connect to source]**. Låt inloggningsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
+Om du vill använda grundläggande autentisering väljer du [!UICONTROL Basic authentication], anger värden för din domän, ditt användarnamn och lösenord och väljer sedan **[!UICONTROL Connect to source]**. Låt inloggningsuppgifterna valideras under en stund och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![grundläggande](../../../../images/tutorials/create/mailchimp-members/basic.png)
 

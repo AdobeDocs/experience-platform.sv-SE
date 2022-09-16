@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: (Beta) Skapa en källanslutning med flera paneler i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en blandpanel med Adobe Experience Platform-gränssnittet.
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
-source-git-commit: e44f6d5bb2fd891a3e3b3c5e4aed68e8d4687b53
+source-git-commit: bee13becb59e3277921549e6db027ce864bba28b
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '852'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,6 @@ För att kunna ansluta [!DNL Mixpanel] till Platform måste du ange värden för
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| Värd | The [!DNL Mixpanel] API-slutpunkt för export av rådata. Se [!DNL Raw Data Export API] i [API-referensdokumentation för blandpanelen](https://developer.mixpanel.com/reference/overview) för mer information. | `https://data.mixpanel.com` |
 | Användarnamn | Användarnamnet för tjänstkontot som motsvarar ditt [!DNL Mixpanel] konto. Se [[!DNL Mixpanel] dokumentation för tjänstkonton](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) för mer information. | `Test8.6d4ee7.mp-service-account` |
 | Lösenord | Lösenordet för tjänstkontot som motsvarar ditt [!DNL Mixpanel] konto. | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
 | Projekt-ID | Dina [!DNL Mixpanel] projekt-ID. Detta ID krävs för att skapa en källanslutning. Se [[!DNL Mixpanel] dokumentation för projektinställningar](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) och [[!DNL Mixpanel] guide för att skapa och hantera projekt](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) för mer information. | `2384945` |

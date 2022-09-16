@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för Zendesk med API:t för Flow Service
 topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Zendesk med API:t för Flow Service.
 exl-id: 3e00e375-c6f8-407c-bded-7357ccf3482e
-source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
+source-git-commit: e92c2386d9f4a4709f0a749d3ed97e033f066610
 workflow-type: tm+mt
-source-wordcount: '1977'
+source-wordcount: '1996'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,7 @@ För att komma åt [!DNL Zendesk] på Platform måste du ange värden för följ
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
+| `subdomain` | Den unika domän som är kopplad till ditt konto. | `https://yoursubdomain.zendesk.com` |
 | `accessToken` | Zendesk API-token. | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
 Mer information om hur du autentiserar [!DNL Zendesk] -källa, se [[!DNL Zendesk] källöversikt](../../../../connectors/customer-success/zendesk.md).
@@ -77,6 +78,7 @@ curl -X POST \
         "auth": {
             "specName": "OAuth2 Refresh Code",
             "params": {
+                "subdomain": "{SUBDOMAIN}",
                 "accessToken": "{ACCESS_TOKEN}"
             }
         }
@@ -90,6 +92,7 @@ curl -X POST \
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via [!DNL Flow Service] API. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
 | `auth.params.` | Innehåller de autentiseringsuppgifter som krävs för att autentisera källan. |
+| `auth.params.subdomain` | Den unika domän som är kopplad till ditt konto. Formatet för underdomänen är `https://yoursubdomain.zendesk.com`. |
 | `auth.params.accessToken` | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
 **Svar**
