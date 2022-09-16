@@ -1,9 +1,9 @@
 ---
 title: Handbok för hela datastyrningen
 description: Följ hela processen för att tillämpa begränsningar för användning av data för fält och datauppsättningar i Adobe Experience Platform.
-source-git-commit: 415300f6338eb485b8dead307f3e6a5b2d5d8b22
+source-git-commit: c8b2dba9b1e305f826830b8341bf1a6dde4e2da2
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1388'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ På nästa skärm väljer du de marknadsföringsåtgärder som den här principe
 
 ![Bild som visar en marknadsföringsåtgärd som tilldelas en princip i användargränssnittet](./images/e2e/select-marketing-action.png)
 
-I den sista skärmen visas en sammanfattning av principens detaljer och de åtgärder som den kommer att begränsa för vilka etiketter. Välj **[!UICONTROL Finish]** för att skapa och aktivera profilen.
+I den sista skärmen visas en sammanfattning av principens detaljer och de åtgärder som den kommer att begränsa för vilka etiketter. Välj **[!UICONTROL Finish]** för att skapa profilen.
 
 ![Bild som visar vilken principkonfiguration som bekräftas i användargränssnittet](./images/e2e/confirm-policy.png)
 

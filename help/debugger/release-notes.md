@@ -4,20 +4,20 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: f2733cca00f98e85cd1b3944c5127f5c1c89594e
+source-git-commit: 28e54656fcd85fc56e72d4fdd3d079cf8590302f
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om Adobe Experience Platform Debugger
 
-## Version 1.4.0 - 24 augusti 2022
+<!-- ## Version 1.4.0 - August 24, 2022
 
-* Stöd för hybridimplementering av Web SDK har lagts till.
-* Ett felmeddelande har lagts till när målspårning inte kan aktiveras.
-* Uppdaterade beroenden.
+* Added support for Web SDK hybrid implementation.
+* Added error message when enabling Target Trace fails.
+* Updated dependencies. -->
 
 ## Version 1.3.3 - 20 juni 2022
 
