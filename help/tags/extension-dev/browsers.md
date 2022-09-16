@@ -1,9 +1,10 @@
 ---
 title: Webbläsare som stöds
 description: En lista över flera webbläsare som är kompatibla med en Adobe Experience Platform-tagg.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: fc9ff6f5-7d54-4f13-8286-44791499d704
+source-git-commit: 32aa453ca40c0500da0fec8957db978c319a3dbe
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '142'
 ht-degree: 1%
 
 ---
@@ -12,14 +13,13 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Taggkörningen i Adobe Experience Platform (som levereras till klientwebbplatser) är kompatibel med flera webbläsare:
 
 - Krom (senaste)
 - Safari (senaste)
 - Firefox (senaste)
-- IE (10 och senare)
 - Edge (senaste)
 - iOS Safari (senaste)
 - Android Chrome (senaste)
