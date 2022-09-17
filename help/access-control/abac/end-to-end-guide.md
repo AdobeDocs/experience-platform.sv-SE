@@ -4,9 +4,9 @@ title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 hide: true
 hidefromtoc: true
-source-git-commit: 440176ea1f21db3c7c4b3572fb52771dc70c80a0
+source-git-commit: f7a8f9a5eb0ef3c961f9524057ff01564f88dec3
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '2099'
 ht-degree: 0%
 
 ---
@@ -58,6 +58,35 @@ När du har administratörsbehörighet går du till [Adobe Experience Cloud](htt
 Arbetsytan Behörigheter för plattformsanvändargränssnittet visas på **[!UICONTROL Roles]** sida.
 
 ## Använd etiketter för en roll {#label-roles}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_labels_about"
+>title="Vad är etiketter?"
+>abstract="Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Plattformen har flera Adobe-definierade etiketter för dataanvändning, som omfattar ett stort antal vanliga begränsningar för datastyrning. Känsliga&quot;S&quot;-etiketter, till exempel RHD (Regulated Health Data), gör att du kan kategorisera data som hänvisar till Skyddad hälsoinformation (PHI). Du kan också definiera egna etiketter som passar organisationens behov."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=en#understanding-data-usage-labels" text="Översikt över etiketter för dataanvändning"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_labels_about_create"
+>title="Skapa ny etikett"
+>abstract="Du kan skapa egna etiketter som passar organisationens behov. Anpassade etiketter kan användas för att tillämpa både datastyrning och åtkomstkontrollskonfigurationer på dina data."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=en#manage-labels" text="Hantera anpassade etiketter"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_about"
+>title="Vad är roller?"
+>abstract="Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=en" text="Hantera roller"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_about_create"
+>title="Skapa ny roll"
+>abstract="Du kan skapa en ny roll för att kategorisera användare som har åtkomst till din Platform-instans bättre. Du kan till exempel skapa en roll för ett internt marknadsföringsteam och använda RHD-etiketten på den rollen, vilket gör att ditt interna marknadsföringsteam kan komma åt informationen om den skyddade hälsan (PHI). Du kan också skapa en roll för ett externt organ och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=en#create-a-new-role" text="Skapa en ny roll"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_details"
+>title="Rollöversikt"
+>abstract="I dialogrutan för rollöversikt visas de resurser och sandlådor som en viss roll har åtkomst till."
 
 Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilken typ av åtkomst de behöver.
 
@@ -117,6 +146,34 @@ The **[!UICONTROL Edit labels]** visas så att du kan välja de etiketter som du
 Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 
 ## Skapa en åtkomstkontrollprincip {#policy}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_about"
+>title="Vad är policyer?"
+>abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att definiera regler för resurser som segment och schemafält. Standardprofiler kan varken redigeras eller tas bort. Standardprofiler kan dock aktiveras eller inaktiveras."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en" text="Hantera profiler"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_about_create"
+>title="Skapa en profil"
+>abstract="Skapa en profil för att definiera de åtgärder som dina användare kan och inte kan vidta mot dina segment och schemafält."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#create-a-new-policy" text="Skapa en profil"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_edit_permitdeny"
+>title="Konfigurera tillåtna och otillåtna åtgärder för en princip"
+>abstract="Välj Tillåt åtkomst till för att konfigurera tillåtna åtgärder som dina användare kan utföra mot resurser. Markera Neka åtkomst till om du vill konfigurera otillåtna åtgärder som användarna inte kan utföra mot resurser."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Redigera en profil"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_edit_resource"
+>title="Konfigurera behörigheter för en resurs"
+>abstract="En resurs är den resurs eller det objekt som en användare kan eller inte kan komma åt. Resurser kan vara segment eller scheman. Du kan konfigurera skriv-, läs- och borttagningsbehörigheter för segment och schemafält."
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_edit_condition"
+>title="Redigera villkor"
+>abstract="Använd villkorssatser i din profil för att konfigurera användaråtkomst till vissa resurser. Välj Matcha alla om du vill att användare ska ha roller med exakt samma etiketter som en resurs för att få åtkomst. Välj Matcha alla om du bara vill att användare ska ha en roll med bara en etikett som matchar en resurs. Etiketter kan antingen definieras som kärnetiketter eller egna etiketter, med etiketter som representerar etiketter som skapats och tillhandahållits av Adobe och anpassade etiketter som representerar etiketter som du har skapat för din organisation."
 
 Åtkomstkontrollprinciper använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. I det här exemplet nekas åtkomst till schemafält och segment i alla sandlådor för användare som inte har motsvarande etiketter i schemafältet.
 
