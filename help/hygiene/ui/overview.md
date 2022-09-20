@@ -2,14 +2,24 @@
 title: Användargränssnittshandbok för datahygien
 description: Lär dig hur du hanterar datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 3a98275b4b2969e2c7d8c1ec6ada14d1dd52b9b8
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '222'
 ht-degree: 0%
 
 ---
 
-# Användargränssnittshandbok för datahygien
+# Användargränssnittshandbok för datahygien {#hygiene-ui-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_privacyconsole_consumer"
+>title="Datahjul"
+>abstract="Den här widgeten visar status för Data Hygiene-konsumentborttagningsjobb för den valda tidsramen. Mer information om datahygienprocesserna finns i **Datahygien** i den vänstra navigeringen."
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_privacyconsole_recents"
+>title="Senaste arbetsorder för datahygien"
+>abstract="Den här widgeten visar de fem senast skapade eller uppdaterade arbetsordningarna för datahygien, beroende på vilket alternativ du väljer högst upp till höger. Mer information om datahygienprocesserna finns i **Datahygien** i den vänstra navigeringen."
 
 >[!IMPORTANT]
 >

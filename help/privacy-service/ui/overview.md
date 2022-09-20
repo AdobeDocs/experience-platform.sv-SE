@@ -3,16 +3,21 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Översikt över användargränssnittet i Privacy Service
 topic-legacy: UI guide
-description: Kom igång med användargränssnittet för Privacy Service för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
+description: Kom igång med att använda Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 3a98275b4b2969e2c7d8c1ec6ada14d1dd52b9b8
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
-# [!DNL Privacy Service] Översikt över användargränssnittet
+# [!DNL Privacy Service] Översikt över användargränssnittet {#privacy-ui-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacy_privacyconsole_requests"
+>title="Förfrågningar om registrerade"
+>abstract="Den här widgeten visar antalet inskickade och slutförda förfrågningar från registrerade personer som bearbetats per Privacy Service för en viss dag. Mer information om Privacy Servicen finns i **Begäranden** i den vänstra navigeringen."
 
 Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful-API och användargränssnitt som gör att du kan koordinera sekretess- och kompatibilitetsbegäranden över olika lösningar. Det här dokumentet utforskar [!DNL Privacy Service] Gränssnitt. Information om hur du använder API finns i [API-guide för Privacy Service](../api/overview.md).
 
