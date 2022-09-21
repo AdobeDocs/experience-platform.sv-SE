@@ -2,9 +2,9 @@
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: bf2b35e3366c71c51c58b6257cc55f7c9b0cd9c7
+source-git-commit: bb94f7438efe1e24056d6689ffc10b928fc633c2
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '842'
 ht-degree: 0%
 
 ---
@@ -37,9 +37,18 @@ The [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande
 
 Den nya tomma kontrollpanelen visas med ditt valda namn i vyns övre vänstra hörn.
 
-## Skapa en widget
+## Skapa en widget {#create-widget}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_udd_maxwidgets"
+>title="Maximalt antal widgetar"
+>abstract="Användardefinierade kontrollpaneler har stöd för upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått."
 
 Välj **[!UICONTROL Add new widget]** för att börja skapa widgeten.
+
+>[!IMPORTANT]
+>
+>Användardefinierade kontrollpaneler har stöd för upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått.
 
 ![Den nya tomma instrumentpanelen med Lägg till ny widget markerad.](./images/user-defined-dashboards/add-new-widget.png)
 
