@@ -2,9 +2,9 @@
 title: Slutpunkt för tilläggspaket
 description: Lär dig hur du anropar slutpunkten /extension_packages i Reactor API.
 exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '956'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Ett tilläggspaket representerar ett [extension](./extensions.md) som skrivits av en tilläggsutvecklare. Ett tilläggspaket definierar ytterligare funktioner som kan göras tillgängliga för tagganvändare. De vanligaste funktionerna är [regelkomponenter](./rule-components.md) (händelser, villkor och åtgärder) och [dataelement](./data-elements.md), men kan även innehålla huvudmoduler och delade moduler.
 
-Tilläggspaket visas i tilläggskatalogen i användargränssnittet för datainsamling så att användarna kan installera dem. Du kan lägga till ett tilläggspaket till en egenskap genom att skapa ett tillägg med en länk till tilläggspaketet.
+Tilläggspaket visas i tilläggskatalogen i användargränssnittet för datainsamling och Adobe Experience Platform så att användare kan installera dem. Du kan lägga till ett tilläggspaket till en egenskap genom att skapa ett tillägg med en länk till tilläggspaketet.
 
 Ett tilläggspaket tillhör [företag](./companies.md) av utvecklaren som skapade den.
 

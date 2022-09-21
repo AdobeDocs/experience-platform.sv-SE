@@ -1,9 +1,10 @@
 ---
 title: Adobe Target v2 Extension - översikt
 description: Läs mer om taggtillägget Adobe Target v2 i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1359'
+source-wordcount: '1352'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -22,15 +23,15 @@ Använd den här referensen för information om de alternativ som är tillgängl
 >
 >Adobe Target-tillägget kräver At.js 2.x.
 
-Om Adobe Target-tillägget ännu inte är installerat öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, hovrar över Target-tillägget och väljer **[!UICONTROL Install]**.
+Om Adobe Target-tillägget inte är installerat ännu öppnar du din egenskap och väljer **[!UICONTROL Extensions > Catalog]**, hovra över måltillägget och välj **[!UICONTROL Install]**.
 
-Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
+Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren över tillägget och väljer sedan **[!UICONTROL Configure]**.
 
 ![](../../../images/targetv2config.png)
 
 ### at.js-inställningar
 
-Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målgränssnittet. Tillägget hämtar bara inställningar från målgränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet för datainsamling om ytterligare uppdateringar behövs.
+Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målgränssnittet. Tillägget hämtar bara inställningar från målgränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet om ytterligare uppdateringar behövs.
 
 Följande konfigurationsalternativ är tillgängliga:
 
@@ -48,13 +49,13 @@ Serverdomänen refererar till den domän som Target-begäranden skickas till. De
 
 #### GDPR-deltagande
 
-När detta är aktiverat tillhandahåller Adobe Target anmälningsfunktioner som kan stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras.  Mer information om Adobe-deltagande finns i [Sekretess och allmänna dataskyddsförordningen (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html).
+När detta är aktiverat tillhandahåller Adobe Target anmälningsfunktioner som kan stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras.  Mer information om deltagande i Adobe finns i [Sekretess och allmänna dataskyddsförordningen (GDPR)](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html).
 
 #### Timeout (ms)
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
+Mer information om hur inställningen Timeout fungerar finns i [Hjälp om Adobe Target](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
 
 ## Åtgärdstyper för måltillägg
 
@@ -70,7 +71,7 @@ Ingen konfiguration behövs.
 
 ### Load Target with On-Device Decisioning
 
-Lägg till den här åtgärden i taggregeln där det är rimligt att läsa in Target med [enhetsbeslut](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) aktiverat i regelsammanhanget. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Läs in mål med enhetsbeslut om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
+Lägg till den här åtgärden i taggregeln där det är bra att läsa in Target med [beslut på enheten](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) aktiveras i regelsammanhang. Detta läser in at.js-biblioteket med enhetsbeslut aktiverat på sidan. I de flesta implementeringar bör Target läsas in på alla sidor på webbplatsen. Adobe rekommenderar att du endast använder åtgärden Läs in mål med enhetsbeslut om den föregås av ett Target-anrop. Annars kan du råka ut för problem som att Analytics-anropet fördröjs.
 
 Ingen konfiguration behövs.
 
@@ -94,10 +95,10 @@ Den här åtgärdstypen gör att Target kan utlösa en begäran när sidan läse
 
 Du måste ange om brödtext ska kunna döljas för att undvika flimmer, och vilket format som ska användas när du döljer brödtextelementet. Följande alternativ är tillgängliga:
 
-* **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket betyder att HTML BODY är dold.
-* **Dölj format för brödtext:** Standardvärdet är body{opacity:0}. Värdet kan ändras till något annat, som body{display:none}.
+* **Döljande av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
+* **Dolt format för brödtext:** Standardvärdet är body{opacity:0}. Värdet kan ändras till något annat, som body{display:none}.
 
-Mer information finns i [onlinehjälpdokumentationen för målet](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+Mer information finns i [Ange onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
 
 ### Utlösarvy
 
@@ -106,7 +107,7 @@ Mer information finns i [onlinehjälpdokumentationen för målet](https://experi
 1. Ange det vynamn som måste utlösas.
 1. Ange om utlösaren för vyn ska tillskrivas ett intryck för rapportering genom att markera kryssrutan Sida. Om vyn är korrelerad till en komponent som återges på nytt och inte ger ett intryck av att rapportera, ska du inte markera kryssrutan Sida.
 
-Mer information om hur du utlöser en vy finns i [`triggerView()` hjälpdokumentationen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html).
+Mer information om hur du aktiverar en vy finns i [`triggerView()` hjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/functions-overview/adobe-target-triggerview-atjs-2.html).
 
 ## Grundläggande Adobe Target-driftsättning
 
@@ -133,7 +134,7 @@ Här är några saker du bör tänka på när du använder det fördolda fragmen
    * När sidans inläsningsbegäran tar slut
    * När själva fragmentet timeout
 * Åtgärden &quot;Begäran om inläsning av brandsida&quot; bör användas på alla sidor med det föregående dolda fragmentet för att minimera tiden för det föregående.
-* Dölj brödtext måste även aktiveras i åtgärden för sidinläsningsbegäran i den sidinläsningsregel som du använder för mål i användargränssnittet för datainsamling. I annat fall förblir alla sidinläsningar dolda under timeoutperioden.
+* Dölj brödtext måste även aktiveras i åtgärden för sidinläsningsbegäran i den sidinläsningsregel som du använder för mål; I annat fall förblir alla sidinläsningar dolda under timeoutperioden.
 
 Det föregående dolda kodfragmentet är följande och kan minimeras. De konfigurerbara alternativen finns i slutet:
 
@@ -177,7 +178,7 @@ Det föregående dolda kodfragmentet är följande och kan minimeras. De konfigu
 }(window, document, "body {opacity: 0 !important}", 3000));
 ```
 
-Som standard döljs hela HTML-BODY av fragmentet. I vissa fall kanske du bara vill dölja vissa HTML-element i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
+Som standard döljs hela HTML BODY med fragmentet. I vissa fall kanske du bara vill dölja vissa element i HTML i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
 
 Om du till exempel har två områden som identifieras av ID:n container-1 och container-2 kan formatet ersättas med följande:
 

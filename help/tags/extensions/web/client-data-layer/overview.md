@@ -2,9 +2,9 @@
 title: Adobe Client Data Layer Extension
 description: Läs mer om taggtillägget Adobe Client Data Layer i Adobe Experience Platform.
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ If you would like to have more details on development consideration, [please rea
 
 ## Installation
 
-Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för datainsamling och väljer Adobe Client Data Layer.
+Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för Experience Platform eller datainsamlingen och väljer Adobe Client Data Layer.
 
 ![ACDL-tilläggsvy i katalog](./images/catalog.png)
 
@@ -119,7 +119,7 @@ Avsnitten nedan beskriver de unika dataelementtyperna som tillägget tillhandah�
 
 Datalagrets dataelement för beräknat läge kan returnera en av två saker, beroende på hur du konfigurerar det:
 
-* Det fullständiga datalagrets tillstånd: Som standard returneras hela datalagrets beräknade tillstånd.
+* Det fullständiga datalagrets tillstånd: Som standard returneras hela datalagrets beräknade läge.
 * En specifik sökväg: Du kan ange den sökväg som du vill returnera i datalagret. Banor anges med punktnotation (till exempel `data.foo`).
 
 ### Datalagerstorlek

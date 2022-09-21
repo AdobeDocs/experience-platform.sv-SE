@@ -1,10 +1,11 @@
 ---
 title: Översikt över Common Analytics-tillägg
-description: Lär dig mer om taggtillägget för Common Analytics i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+description: Läs mer om taggtillägget för Common Analytics i Adobe Experience Platform.
+exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '549'
-ht-degree: 1%
+source-wordcount: '406'
+ht-degree: 0%
 
 ---
 
@@ -12,21 +13,21 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Använd den här referensen för information om hur du konfigurerar tillägget Common Analytics Plugins och de alternativ som är tillgängliga när du använder det här tillägget för att förstärka tillägget [!DNL Adobe Analytics].
+Använd den här referensen för information om hur du konfigurerar tillägget Common Analytics Plugins och de alternativ som är tillgängliga när du använder det här tillägget för att förstärka [!DNL Adobe Analytics] Tillägg.
 
 ## Konfigurera tillägget för Common Analytics-plugin-program
 
-I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar tillägget för Common Analytics-plugin-program.
+I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar tillägget Common Analytics-plugin-program.
 
 >[!IMPORTANT]
 >
->Tillägget för Common Analytics-plugin utökar tillägget [!DNL Adobe Analytics]. Tillägget [!DNL Adobe Analytics] måste vara installerat på egenskapen för att det ska fungera. Dessutom måste du göra spåraren globalt åtkomlig i tillägget [!DNL Adobe Analytics].
+>Tillägget Common Analytics Plugins utökar [!DNL Adobe Analytics] tillägg. Du måste ha [!DNL Adobe Analytics] tillägget är installerat på din egenskap för att det ska fungera. Dessutom måste du göra spåraren globalt åtkomlig i dialogrutan [!DNL Adobe Analytics] tillägg.
 
 Ingen ytterligare konfiguration krävs på tilläggsnivån.
 
-## Lägger till plugin-program i tillägget [!DNL Adobe Analytics]
+## Lägga till plugin-program i [!DNL Adobe Analytics] extension
 
 För att kunna använda de plugin-program som ingår i det här tillägget måste du först initiera de plugin-program som du tänker använda i sin egen regel.
 
@@ -49,7 +50,7 @@ Tillägget Common Analytics Plugins innehåller följande åtgärder:
 >
 >Denna åtgärd är enklare att implementera, men Adobe Consulting rekommenderar inte att du använder den här åtgärden eftersom plugin-programmets vikt ökar.
 
-I den här åtgärden kan du välja varje plugin som du vill ta med i implementeringen och spara ändringarna. Välj så många eller så få som du vill använda under implementeringen. Länkar till dokumentation om hur du använder varje plugin-program och en kort beskrivning finns i Analytics [Plug-ins overview](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+I den här åtgärden kan du välja varje plugin som du vill ta med i implementeringen och spara ändringarna. Välj så många eller så få som du vill använda under implementeringen.
 
 ### Initiera plugin-program
 
@@ -57,36 +58,17 @@ Dessa åtgärder initierar det specifika plugin-program som du tänker använda 
 
 ## Dataelement för tillägg till Common Analytics-plugin-program
 
-I det här avsnittet beskrivs de dataelement som finns i tillägget Plugin-program för Common Analytics.
+Följande dataelement finns i tillägget Common Analytics-plugin-program, som använder taggfunktioner för att konfigurera och konfigurera motsvarande plugin-program i Analytics:
 
-### getGeoCoordinates
+* `getGeoCoordinates`
+* `getNewRepeat`
+* `getPageName`
+* `getResponsiveLayout`
+* `getTimeParting`
+* `getTimeSinceLastVisit`
+* `getVisitDuration`
+* `getVisitNum`
 
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling i Adobe Experience Platform för att konfigurera och konfigurera plugin-programmet getGeoCoordinates.
-
-### getNewRepeat
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getNewRepeat.
-
-### getPageName
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getPageName.
-
-### getResponsiveLayout
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getResponsiveLayout.
-
-### getTimeParting
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getTimeParting.
-
-### getTimeSinceLastVisit
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getTimeSinceLastVisit.
-
-### getVisitDuration
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getVisitDuration.
-
-### getVisitNum
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getVisitNum.
+>[!NOTE]
+>
+>Mer information om plugin-programmen ovan finns i [Analysdokumentation](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).

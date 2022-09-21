@@ -1,9 +1,10 @@
 ---
 title: Dataelementtyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen data-element för ett taggtillägg i en webbegenskap.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 3aa79322-2237-492f-82ff-0ba4d4902f70
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '600'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 I datainsamlingstaggar är dataelement i princip alias för datadelar på en sida. Dessa data finns i frågesträngsparametrar, cookies, DOM-element eller andra platser. Ett dataelement kan refereras av regler och fungerar som en abstraktion för att komma åt dessa datadelar.
 
@@ -22,16 +23,16 @@ Det här dokumentet beskriver hur du definierar dataelementtyper för ett webbti
 
 >[!IMPORTANT]
 >
->Om du utvecklar ett kanttillägg läser du i guiden för [dataelementtyper för kanttillägg](../edge/data-element-types.md) i stället.
+>Om du utvecklar ett kanttillägg läser du i handboken [dataelementtyper för kanttillägg](../edge/data-element-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i webbtillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
+>I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i webbtillägg. Om du behöver en introduktion kan du se översikten på [formatering av biblioteksmodul](./format.md) innan du återgår till den här guiden.
 
 Dataelementtyper består vanligtvis av följande:
 
-1. En [vy](./views.md) i användargränssnittet för datainsamling som gör att användare kan ändra inställningar för dataelementet.
+1. A [visa](./views.md) som visas i användargränssnittet för Experience Platform och datainsamling där användare kan ändra inställningar för dataelementet.
 2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och hämta data.
 
-Tänk dig en situation där du vill tillåta användare att hämta data från ett lokalt lagringsobjekt med namnet `productName`. Modulen kan se ut så här:
+Tänk dig en situation där du vill tillåta användare att hämta en datadel från ett lokalt lagringsobjekt med namnet `productName`. Modulen kan se ut så här:
 
 ```js
 module.exports = function(settings) {
@@ -39,7 +40,7 @@ module.exports = function(settings) {
 }
 ```
 
-Om du vill att det lokala lagringsobjektets namn ska kunna konfigureras av Adobe Experience Platform-användaren kan du tillåta att användaren anger ett namn och sedan spara namnet i `settings`-objektet. Objektet kan se ut ungefär så här:
+Om du vill att det lokala lagringsobjektets namn ska kunna konfigureras av Adobe Experience Platform-användaren kan du tillåta att användaren anger ett namn och sedan spara namnet på `settings` -objekt. Objektet kan se ut ungefär så här:
 
 ```js
 {
@@ -57,7 +58,7 @@ module.exports = function(settings) {
 
 ## Stöd för standardvärden
 
-Tänk på att användare kan konfigurera ett standardvärde för valfritt dataelement. Om biblioteksmodulen för dataelement returnerar värdet `undefined` eller `null` ersätts den automatiskt av det standardvärde som användaren har konfigurerat för dataelementet.
+Tänk på att användare kan konfigurera ett standardvärde för valfritt dataelement. Om biblioteksmodulen för dataelement returnerar värdet `undefined` eller `null`ersätts den automatiskt av det standardvärde som användaren har konfigurerat för dataelementet.
 
 ## Sammanhangsberoende händelsedata
 
@@ -69,11 +70,11 @@ module.exports = function(settings, event) {
 };
 ```
 
-Objektet `event` måste innehålla följande egenskaper:
+The `event` -objektet måste innehålla följande egenskaper:
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | `$type` | En sträng som beskriver tilläggets namn och händelsenamn, som förenas med en punkt. Exempel, `youtube.play`. |
 | `$rule` | Ett objekt som innehåller information om den regel som körs. Objektet måste innehålla följande underegenskaper:<ul><li>`id`: ID:t för den regel som körs.</li><li>`name`: Namnet på den regel som körs.</li></ul> |
 
-Tillägget som innehåller händelsetypen som utlöste regeln kan eventuellt lägga till annan användbar information till det här `event`-objektet.
+Tillägget som anger händelsetypen som utlöste regeln kan eventuellt lägga till annan användbar information till den här `event` -objekt.

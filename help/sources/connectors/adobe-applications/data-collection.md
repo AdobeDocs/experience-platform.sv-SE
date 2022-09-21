@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;källa;datainsamling
 title: Adobe datainsamling
 description: Det här dokumentet innehåller en översikt över Adobe Data Collection-källan.
 exl-id: 3cb582a9-b852-4ede-8047-af1a47aa3647
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '285'
+source-wordcount: '287'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Adobe Experience Platform erbjuder en serie tekniker som gör att ni kan samla in kundupplevelsedata från källor på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra mål på några sekunder.
 
-Källintegrationen av Adobe Data Collection ger dig åtkomst till dina data i Experience Edge för datainsamling, inklusive Data Prep för datainsamling, samt förbättrat stöd för varningar via källkatalogen.
+Källintegrationen av Adobe Experience Platform Data Collection gör att du kan komma åt dina data i Edge Network, inklusive Data Prep för datainsamling, samt förbättrat stöd för varningar via källkatalogen.
 
-## Använd källarbetsytan för att komma åt Adobe-datainsamling
+## Använd källarbetsytan för att komma åt datainsamling
 
 Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
@@ -32,7 +32,7 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 
 ![datastreams](./images/data-collection/datastreams.png)
 
-Detaljerade anvisningar om hur du använder användargränssnittet för datainsamling finns i [datainsamling - från början till slut - översikt](../../../collection/e2e.md).
+Ett omfattande steg om hur du konfigurerar datainsamling i användargränssnittet finns i [datainsamling - från början till slut - översikt](../../../collection/e2e.md).
 
 ## Nästa steg
 

@@ -2,10 +2,10 @@
 title: Dataelement
 description: Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
 exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
-source-git-commit: af9a5118f3633c132dd88ab659f570c9136b12e1
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1610'
-ht-degree: 0%
+source-wordcount: '1601'
+ht-degree: 1%
 
 ---
 
@@ -161,7 +161,7 @@ Hämta värdet för:
 
 Alla tillgängliga JavaScript-objekt eller -variabler kan refereras med sökvägsfältet.
 
-Om du vill samla in JavaScript-variabler eller objektegenskaper i koden och använda dem med något av dina tillägg eller regler, kan dataelement användas för att hämta dessa värden. På så sätt kan du referera till dataelementet i alla regler, och om datakällan ändras behöver du bara ändra referensen till källan (dataelementet) på ett ställe i användargränssnittet för datainsamling.
+Om du vill samla in JavaScript-variabler eller objektegenskaper i koden och använda dem med något av dina tillägg eller regler, kan dataelement användas för att hämta dessa värden. På så sätt kan du referera till dataelementet i alla regler, och om datakällan ändras behöver du bara ändra referensen till källan (dataelementet) på ett ställe.
 
 Anta att koden innehåller en JavaScript-variabel som kallas `Page_Name`, så här:
 
@@ -257,7 +257,7 @@ Några vanliga användningsområden:
 
 ## Inbyggda dataelement
 
-Du måste skapa ett anpassat dataelement i användargränssnittet för datainsamling om du tidigare har använt något av följande dataelement:
+Du måste skapa ytterligare anpassade dataelement om du tidigare har använt något av följande dataelement:
 
 * URI
 * Protokoll

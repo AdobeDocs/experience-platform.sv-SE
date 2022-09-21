@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 04404ff9ab8d623214b96ec65342d2e8d11e85a6
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '5482'
+source-wordcount: '5472'
 ht-degree: 0%
 
 ---
@@ -708,7 +708,7 @@ Hämta värdet för:
 
 Alla tillgängliga JavaScript-objekt eller -variabler kan refereras med sökvägsfältet.
 
-Element i taggdata kan användas för att hämta JavaScript-variabler eller objektegenskaper för kod. Dessa värden kan sedan användas i tilläggen eller anpassade regler genom att referera till taggdataelementen. Om datakällan ändras är det bara nödvändigt att uppdatera referensen till källan i användargränssnittet för datainsamling.
+Element i taggdata kan användas för att hämta JavaScript-variabler eller objektegenskaper för kod. Dessa värden kan sedan användas i tilläggen eller anpassade regler genom att referera till taggdataelementen. Om datakällan ändras är det bara nödvändigt att uppdatera referensen till källan.
 
 I exemplet nedan innehåller koden en JavaScript-variabel som kallas `Page_Name`.
 
@@ -719,9 +719,9 @@ I exemplet nedan innehåller koden en JavaScript-variabel som kallas `Page_Name`
 </script>
 ```
 
-När du skapar dataelementet i användargränssnittet för datainsamling anger du bara sökvägen till variabeln.
+När du skapar dataelementet anger du bara sökvägen till variabeln.
 
-Om du använder ett datainsamlarobjekt som en del av datalagret använder du punktnotation i sökvägen för att referera till det objekt och den egenskap som du vill hämta till dataelementet, som `_myData.pageName`, eller `digitalData.pageName`och så vidare.
+Om du använder ett datainsamlarobjekt som en del av datalagret använder du punktnotation i banan för att referera till det objekt och den egenskap som du vill hämta till dataelementet, som `_myData.pageName`, eller `digitalData.pageName`och så vidare.
 
 #### Exempel:
 
@@ -807,7 +807,7 @@ Du kan välja något av följande sidattribut som ska användas i dataelementet:
 
 Ange en enda URL-parameter i fältet URL-parameter.
 
-Endast namnavsnittet är nödvändigt och alla specialdesigners som &quot;?&quot; eller &quot;=&quot;bör utelämnas
+Endast namnavsnittet är nödvändigt och alla specialdesigners som &quot;?&quot; eller &quot;=&quot; ska utelämnas
 
 #### Exempel:
 

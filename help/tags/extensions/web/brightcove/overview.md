@@ -1,9 +1,10 @@
 ---
 title: Översikt över tillägget för videospårning i BrightStor
 description: Lär dig mer om taggtillägget för videospårning i BrightStor i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: d27eff21-2abf-4495-8382-08cab32742e0
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '908'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 ## Krav
 
@@ -22,43 +23,43 @@ För varje taggegenskap i Adobe Experience Platform krävs följande tillägg so
 * Experience Cloud Visitor ID-tjänst
 * Kärntillägg har installerats
 
-Använd kodfragmentet&quot;In-Page embed code (Advanced)&quot; i HTML-koden för varje webbsida där en videospelare ska återges. HTML-kodfragmentet &quot;In-Page Embed code (Advanced)&quot; finns i [dokumentationen för Brightcove](https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html#inpage). Följande länk innehåller mer information om [hur du genererar inbäddad kod för både förhandsgransknings- och publicerade videospelare](https://studio.support.brightcove.com/players/generating-player-embed-code.html).
+Använd kodfragmentet&quot;In-Page embed code (Advanced)&quot; HTML på varje webbsida där en videospelare ska återges. HTML-utdraget &quot;In-Page Embed code (Advanced)&quot; finns i [Brightcove-dokumentation](https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html#inpage). Följande länk innehåller mer information om [hur du genererar inbäddad kod för både förhandsgransknings- och publicerade videospelare](https://studio.support.brightcove.com/players/generating-player-embed-code.html).
 
-Tilläggsversion 1.1.0 stöder inbäddning av flera BrightStor-videor på en enda webbsida. Om det finns flera `id`-egenskaper i de avancerade inbäddningstaggarna kontrollerar du att de har unika värden. Till exempel `player1`, `player2` och så vidare.
+Tilläggsversion 1.1.0 stöder inbäddning av flera BrightStor-videor på en enda webbsida. Om det finns flera `id` -egenskaper i de avancerade inbäddningstaggarna, se till att de har unika värden. Till exempel: `player1`, `player2`och så vidare.
 
 >[!NOTE]
 >
 >På sidor med flera videoklipp använder varje video samma konfigurationsuppsättning som i den taggregel som körs på den sidan. Om du till exempel skapar en regel med en händelse som utlöser en video som är 50 % färdig, utlöser varje video på sidan regeln vid referenspunkten 50 %.
 
-Om webbsidan som använder det här tillägget interagerar med videon innan det aktuella skriptet har lästs in fullständigt, finns det två åtgärder du kan vidta för att åtgärda problemet. Först kan taggbiblioteket läsas in synkront och sedan placerar du `<script type="text/javascript">\_satellite.pageBottom();\</script\>`-elementet före videoinbäddningen på sidan.
+Om webbsidan som använder det här tillägget interagerar med videon innan det aktuella skriptet har lästs in fullständigt, finns det två åtgärder du kan vidta för att åtgärda problemet. För det första kan taggbiblioteket läsas in synkront och för det andra måste du placera `<script type="text/javascript">\_satellite.pageBottom();\</script\>` -element före videoinbäddningen på sidan.
 
-Mer information om komponentmetoder och -händelser som används i det här tillägget finns i [API-dokumentationen för BrightStor](https://docs.brightcove.com/brightcove-player/1.x/Player.html#vjsplayer).
+Se [Dokumentation för BrightStor API](https://docs.brightcove.com/brightcove-player/1.x/Player.html#vjsplayer) för mer information om komponentmetoder och -händelser som används i det här tillägget.
 
 ## Dataelement
 
 Det finns sju dataelement tillgängliga i tillägget, varav inget kräver konfiguration.
 
-* **Spelhuvudsposition:** När det här dataelementet anropas inom en taggregel spelas positionen för spelhuvudets position på tidslinjen in i sekunder.
-* **ID för videokonto:** Detta dataelement registrerar ID för det Brightcove-konto som publicerade videon.
-* **Videovaraktighet:** Det här dataelementet registrerar den totala längden, i sekunder, för videoinnehållet. Dessutom kan ett beräknat mätvärde skapas i Analytics för att konvertera antalet i sekunder till minuter eller timmar.
-* **Stöd för videoannonsering:** Detta dataelement anger om annonser stöds i videon eller inte.
-* **Video-ID:** Detta dataelement anger det BrightStor-ID som är kopplat till videon.
-* **Videonamn:** Detta dataelement anger videofilens beskrivande eller egna namn.
+* **Spelhuvudsposition:** När det här dataelementet anropas inom en taggregel spelas det in i sekunder som spelhuvudets placering på videons tidslinje.
+* **ID för videokonto:** Detta dataelement registrerar ID:t för det Brightcove-konto som publicerade videon.
+* **Videotid:** Det här dataelementet registrerar den totala längden (i sekunder) för videoinnehållet. Dessutom kan ett beräknat mätvärde skapas i Analytics för att konvertera antalet i sekunder till minuter eller timmar.
+* **Stöd för videoreklam:** Det här dataelementet anger om annonser stöds i videon eller inte.
+* **Video-ID:** Detta dataelement anger det BrightCove-ID som är associerat med videon.
+* **Videonamn:** Detta dataelement anger videofilens beskrivande, eller egna namn.
 * **Videotaggar:** Detta dataelement anger de specifika skript som är associerade med videon.
 
 ## Händelser
 
 Det finns sju tillgängliga händelser i tillägget. Endast anpassad punktspårning kräver konfiguration.
 
-* **Anpassad referenspunktsspårning:** Den här händelsen utlöses när videon når det angivna tröskelvärdet i procent. Om en video till exempel är 60 sekunder lång och den angivna referenspunkten är 50 %, utlöses händelsen vid 30-sekundersmarkeringen.
+* **Spårning av anpassad referenspunkt:** Den här händelsen utlöses när videon når det angivna tröskelvärdet för video i procent. Om en video till exempel är 60 sekunder lång och den angivna referenspunkten är 50 %, utlöses händelsen vid 30-sekundersmarkeringen.
 
 >[!NOTE]
 >
 >Observera att den här händelsen utlöses varje gång referenspunkten nås. Om användaren till exempel når upp till 50 %-märket, söker efter videon före 50 %-markeringen och sedan når 50 %-markeringen igen, aktiveras utlösaren igen.
 
-* **Video slutförd:** Den här händelsen utlöses när en video har slutförts helt.
-* **Inlästa metadata för video:** Den här händelsen utlöses när spelaren har fått inledande tids- och dimensionsinformation.
-* **Videopaus:** Den här händelsen utlöses när videon pausas.
+* **Video klar:** Den här händelsen utlöses när en video är klar.
+* **Inlästa metadata för video:** Den här händelsen utlöses när spelaren har fått inledande information om varaktighet och dimension.
+* **Pausa video:** Den här händelsen utlöses när videon pausas.
 * **Återuppta video:** Den här händelsen utlöses när videoinnehållet återupptas efter en pause-händelse.
 * **Ändring av videobildskärm:** Händelsen utlöses när videon växlar in eller ut från helskärmsläge.
 * **Videostart:** Den här händelsen utlöses när videoinnehållet startar för första gången.
@@ -89,17 +90,17 @@ Följande videotilläggsobjekt ska inkluderas:
 
    1. Ange följande i en Analytics-åtgärd,&quot;Set Variables&quot;:
 
-      * Händelsen för **videostart** (exempel: event17)
-      * Ett prop/eVar för **videoelementet** (exempel: eVar10)
-      * Ett prop/eVar för **videovaraktigheten**-dataelementet (exempel: eVar11)
-      * Ett prop/eVar för **det aktuella videoplatselementet** (exempel: eVar12)
+      * Händelsen för **Videostart** (exempel: event17)
+      * Ett proffs/en eVar för **Videonamn** dataelement (exempel: eVar10)
+      * Ett proffs/en eVar för **Videotid** dataelement (exempel: eVar11)
+      * Ett proffs/en eVar för **Aktuell videoplats** dataelement (exempel: eVar12)
    1. Analysåtgärden&quot;Skicka Beacon&quot; (`s.tl`)
    1. Analysåtgärden&quot;Rensa variabler&quot;
 
 
 >[!TIP]
 >
->För dem som kanske inte vill etablera flera eVars eller props för varje videoelement finns det en alternativ metod. Värden för dataelement kan sammanfogas i användargränssnittet för datainsamling. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Mer information finns i [dokumentationen för verktyget Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html). Slutligen används de som ett segment i Analysis Workspace.
+>För dem som kanske inte vill tillhandahålla flera eVars eller props för varje videoelement sammanfogas datavärdesvärden som en alternativ metod. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Se [Verktyget Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html) mer information. Slutligen används de som ett segment i Analysis Workspace.
 >
 >Det gör du genom att skapa ett nytt dataelement som kallas &quot;Video MetaData&quot; och programmera det för att hämta in alla videodataelement (som listas ovan) och sammanfoga dem.
 

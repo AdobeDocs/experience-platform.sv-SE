@@ -2,9 +2,9 @@
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 47391de09bcad1dc99340caa84cdfff13e9f5237
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1290'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ I det angivna exemplet returneras dataelementets värde om det finns ett dataele
 
 >[!NOTE]
 >
->Du kan använda procent (`%`) till referensvariabler för många formulärfält i användargränssnittet för datainsamling, vilket minskar behovet av att anropa `_satellite.getVar()`. Använd till exempel `%product%` kommer åt värdet för produktdataelementet eller den anpassade variabeln.
+>Du kan använda procent (`%`) till referensvariabler för många formulärfält i taggimplementeringen, vilket minskar behovet av att anropa `_satellite.getVar()`. Använd till exempel `%product%` kommer åt värdet för produktdataelementet eller den anpassade variabeln.
 
 När en händelse utlöser en regel kan du skicka regelns motsvarande `event` objekt till `_satellite.getVar()` gilla so:
 

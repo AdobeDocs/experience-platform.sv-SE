@@ -2,9 +2,9 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: da17b273d5464ecd8b00aa37de51425ce3a9a576
 workflow-type: tm+mt
-source-wordcount: '2524'
+source-wordcount: '2537'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,8 @@ Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar
 >[!NOTE]
 >
 >Du kan också välja att installera och konfigurera SDK manuellt om du inte vill använda taggar, men de omgivande stegen måste ändå slutföras enligt nedan.
+>
+>Alla steg som omfattar användargränssnittet för datainsamling kan också utföras i användargränssnittet för Experience Platform.
 
 ## Förutsättningar
 
@@ -57,7 +59,7 @@ Det första steget i att konfigurera datainsamlingsåtgärderna är att skapa et
 >
 >XDM-scheman är mycket anpassningsbara. I stället för att vara alltför prediktiv fokuserar stegen nedan specifikt på schemakraven för Web SDK. Utanför dessa parametrar kan du definiera den återstående strukturen för dina data.
 
-I användargränssnittet för datainsamling väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. Här visas en lista med tidigare skapade scheman som tillhör din organisation. Välj **[!UICONTROL Create schema]** väljer **[!UICONTROL XDM ExperienceEvent]** i listrutan.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. Här visas en lista med tidigare skapade scheman som tillhör din organisation. Välj **[!UICONTROL Create schema]** väljer **[!UICONTROL XDM ExperienceEvent]** i listrutan.
 
 ![Arbetsytan Scheman](./images/e2e/schemas.png)
 
@@ -97,7 +99,7 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 >
 >Om du vill använda [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md) (förutsatt att din organisation har licens för den funktionen) måste du aktivera den för en datastream på samma sätt som du aktiverar Adobe-produkter. Information om processen finns i [senare avsnitt](#event-forwarding).
 
-I användargränssnittet för datainsamling väljer du **[!UICONTROL Datastreams]**. Här kan du välja ett befintligt datastam från listan som du vill redigera eller skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
+Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen. Här kan du välja ett befintligt datastam från listan som du vill redigera eller skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
 
 ![Datastreams](./images/e2e/datastreams.png)
 

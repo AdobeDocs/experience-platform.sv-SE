@@ -2,9 +2,9 @@
 title: Extension Manifest
 description: Lär dig hur du konfigurerar en JSON-manifestfil som informerar Adobe Experience Platform om hur du använder tillägget på rätt sätt.
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '2647'
+source-wordcount: '2645'
 ht-degree: 0%
 
 ---
@@ -107,7 +107,7 @@ En typdefinition är ett objekt som används för att beskriva en händelse, ett
     </tr>
     <tr>
       <td><code>categoryName</code> <em>(Valfritt)</em></td>
-      <td>När det finns <code>displayName</code> listas under <code>categoryName</code> i användargränssnittet för datainsamling. Alla typer med samma <code>categoryName</code> kommer att listas under samma kategori. Om tillägget till exempel innehöll en <code>keyUp</code> händelsetyp och <code>keyDown</code> händelsetyp och båda hade <code>categoryName</code> av <code>Keyboard</code>, skulle båda händelsetyperna listas under kategorin Tangentbord när användaren väljer i listan över tillgängliga händelsetyper när en regel skapas. Värdet för <code>categoryName</code> ska vara läsbart för människor.</td>
+      <td>När det finns <code>displayName</code> listas under <code>categoryName</code> i användargränssnittet. Alla typer med samma <code>categoryName</code> kommer att listas under samma kategori. Om tillägget till exempel innehöll en <code>keyUp</code> händelsetyp och <code>keyDown</code> händelsetyp och båda hade <code>categoryName</code> av <code>Keyboard</code>, skulle båda händelsetyperna listas under kategorin Tangentbord när användaren väljer i listan över tillgängliga händelsetyper när en regel skapas. Värdet för <code>categoryName</code> ska vara läsbart för människor.</td>
     </tr>
     <tr>
       <td><code>libPath</code></td>

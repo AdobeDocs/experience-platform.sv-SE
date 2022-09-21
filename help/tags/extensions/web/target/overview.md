@@ -1,9 +1,10 @@
 ---
 title: Adobe Target Extension - översikt
 description: Läs om taggtillägget för Adobe Target i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1186'
+source-wordcount: '1184'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Använd den här referensen för information om de alternativ som är tillgängliga när du använder det här tillägget för att skapa en regel.
 
@@ -22,15 +23,15 @@ Använd den här referensen för information om de alternativ som är tillgängl
 >
 > Adobe Target-tillägget kräver at.js. Det stöder inte mbox.js.
 
-Om Adobe Target-tillägget ännu inte är installerat öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, hovrar över Target-tillägget och väljer **[!UICONTROL Install]**.
+Om Adobe Target-tillägget inte är installerat ännu öppnar du din egenskap och väljer **[!UICONTROL Extensions > Catalog]**, hovra över måltillägget och välj **[!UICONTROL Install]**.
 
-Om du vill konfigurera tillägget öppnar du fliken [!UICONTROL Extensions], håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
+Om du vill konfigurera tillägget öppnar du [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**.
 
 ![](../../../images/ext-target-config.png)
 
 ### at.js-inställningar
 
-Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målanvändargränssnittet. Tillägget hämtar bara inställningar från målanvändargränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet för datainsamling om ytterligare uppdateringar behövs.
+Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målanvändargränssnittet. Tillägget hämtar bara inställningar från målanvändargränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet om ytterligare uppdateringar behövs.
 
 Följande konfigurationsalternativ är tillgängliga:
 
@@ -60,18 +61,18 @@ Domänen dit Target-begäranden skickas. Detta bör nästan alltid vara kvar som
 
 Avgör var Target anger cookies i webbläsarna.
 
-* **Inaktiverad:** Anger endast cookies på förstapartsdomänen. Det här är den typiska inställningen.
-* **Aktiverad:** Anger cookies på både den första domänen och tredjepartsmåldomänen (&quot;serverdomänen&quot;).
+* **Inaktiverad:** Anger endast cookies på förstahandsdomänen. Det här är den typiska inställningen.
+* **Aktiverad:** Anger cookies på både den första domänen och måldomänen för tredje part (&quot;serverdomänen&quot;).
 
 #### Timeout (ms)
 
 Om svaret från Target inte tas emot inom den definierade perioden, går begäran ut och standardinnehållet visas. Ytterligare förfrågningar fortsätter att utföras under besökarens session. Standardvärdet är 3 000 ms, vilket kan vara ett annat värde än den timeout som konfigurerats i målanvändargränssnittet.
 
-Mer information om hur Timeout-inställningen fungerar finns i [Adobe Target-hjälpen](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
+Mer information om hur inställningen Timeout fungerar finns i [Hjälp om Adobe Target](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/deploy-at-js/implementing-target-without-a-tag-manager.html).
 
 #### Andra at.js-inställningar som är tillgängliga i målanvändargränssnittet
 
-Flera inställningar som är tillgängliga på sidan [!UICONTROL Edit at.js settings] i målgränssnittet ingår inte i måltillägget. Här är förslag på tillfälliga lösningar:
+Flera inställningar som är tillgängliga på [!UICONTROL Edit at.js settings] sidan i målgränssnittet är inte en del av måltillägget. Här är förslag på tillfälliga lösningar:
 
 * Skapa global mbox automatiskt Den här inställningen ersätts av den globala mbox-åtgärden för Fire i tillägget Target.
 * Bibliotekshuvud Den här inställningen ingår inte i måltillägget. Placera kod som ska läsas in före at.js i en Core Extension>Custom Code-åtgärd innan du använder åtgärden Load Target.
@@ -94,14 +95,14 @@ Ingen konfiguration behövs.
 Lägg till parametrar i alla mbox-begäranden. Åtgärden Läs in mål måste användas tidigare.
 
 1. Ange namn och värde för de parametrar som du vill lägga till.
-1. Välj ikonen **plus (+)** om du vill lägga till fler parametrar.
+1. Välj **plus (+)** om du vill lägga till fler parametrar.
 
 ### Lägg till globala mbox-parametrar
 
 Lägg bara till parametrar i dina globala mbox-begäranden. Åtgärden Läs in mål måste användas tidigare.
 
 1. Ange namn och värde för de parametrar som du vill lägga till.
-1. Välj ikonen **plus (+)** om du vill lägga till fler parametrar.
+1. Välj **plus (+)** om du vill lägga till fler parametrar.
 
 ### Fire Global Mbox
 
@@ -111,10 +112,10 @@ Ange om du vill aktivera dold brödtext för att förhindra flimmer och vilket f
 
 Följande alternativ är tillgängliga:
 
-* **Döljning av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket betyder att HTML BODY är dold.
-* **Dölj format för brödtext:** Standardvärdet är  `body{opacity:0}`. Värdet kan ändras till något annat, som `body{display:none}`.
+* **Döljande av brödtext:** Du kan aktivera eller inaktivera den här inställningen. Standardvärdet är Aktiverat, vilket innebär att HTML BODY är dolt.
+* **Dolt format för brödtext:** Standardvärdet är `body{opacity:0}`. Det här värdet kan ändras till något annat, som `body{display:none}`.
 
-Mer information finns i [onlinehjälpdokumentationen för målet](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+Mer information finns i [Ange onlinehjälpdokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
 
 ## Grundläggande Adobe Target-driftsättning
 
@@ -184,7 +185,7 @@ Det föregående dolda kodfragmentet är följande och kan minimeras. De konfigu
 }(window, document, "body {opacity: 0 !important}", 3000));
 ```
 
-Som standard döljs hela HTML-BODY av fragmentet. I vissa fall kanske du bara vill dölja vissa HTML-element i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
+Som standard döljs hela HTML BODY med fragmentet. I vissa fall kanske du bara vill dölja vissa element i HTML i förväg, inte hela sidan. Du kan uppnå det genom att anpassa style-parametern. Ersätt den med något som bara döljer vissa delar av sidan.
 
 Om du till exempel har två områden som identifieras av ID:n container-1 och container-2 kan formatet ersättas med följande:
 

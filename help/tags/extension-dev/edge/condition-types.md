@@ -1,9 +1,10 @@
 ---
 title: Villkorstyper för Edge-tillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen condition för ett edge-tillägg i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+> Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 I en taggregel utvärderas ett villkor efter att en händelse har inträffat. Alla villkor måste returnera true för att regeln ska kunna fortsätta bearbetningen. Villkorstyper tillhandahålls av tillägg och utvärderar om något är sant eller falskt, vilket returnerar ett booleskt värde.
 
@@ -22,16 +23,16 @@ I det här dokumentet beskrivs hur du definierar villkorstyper för ett kanttill
 
 >[!IMPORTANT]
 >
->Om du utvecklar ett webbtillägg läser du i guiden om [villkorstyper för webbtillägg](../web/condition-types.md) i stället.
+>Om du utvecklar ett webbtillägg läser du i handboken [villkorstyper för webbtillägg](../web/condition-types.md) i stället.
 >
->I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion läser du översikten om [biblioteksmodulens formatering](./format.md) innan du går tillbaka till den här guiden.
+>I det här dokumentet förutsätts även att du känner till biblioteksmoduler och hur de är integrerade i kanttillägg. Om du behöver en introduktion kan du se översikten på [formatering av biblioteksmodul](./format.md) innan du återgår till den här guiden.
 
 Villkorstyperna består vanligtvis av följande:
 
-1. En vy som visas i användargränssnittet för datainsamling där användarna kan ändra inställningarna för villkoret.
+1. En vy som visas i användargränssnittet för Experience Platform och datainsamling där användarna kan ändra inställningarna för villkoret.
 2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och utvärdera ett villkor.
 
-Om du till exempel vill utvärdera om användaren finns på värden `example.com` kan din modul se ut så här.
+Om du till exempel vill utvärdera om användaren finns på värden `example.com`kan din modul se ut så här.
 
 ```js
 module.exports = (context) => {
@@ -62,8 +63,8 @@ module.exports = (context) => {
 Resultatet som returneras av en villkorsmodul kan vara något av följande:
 
 1. Ett booleskt värde (`true` eller `false`).
-1. Ett [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som returnerar ett booleskt värde när det lösts.
+1. A [löfte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som returnerar ett booleskt värde när det lösts.
 
 ## Kontext för modulen Bibliotek
 
-Alla villkorsmoduler har åtkomst till en `context`-variabel som anges när modulen anropas. Du kan läsa mer [här](./context.md).
+Alla villkorsmoduler har åtkomst till en `context` variabel som anges när modulen anropas. Du kan lära dig mer [här](./context.md).

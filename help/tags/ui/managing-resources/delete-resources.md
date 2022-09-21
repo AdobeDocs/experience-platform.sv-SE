@@ -1,9 +1,10 @@
 ---
 title: Ta bort resurser
 description: Lär dig hur du tar bort taggresurser i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '557'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du fortfarande vill att resursen ska visas i användargränssnittet för datainsamling, men inte finnas i taggbiblioteket, läser du [Ta bort resurser från ett bibliotek](remove-resources-from-library.md).
+Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du vill ta bort en resurs från ett visst taggbibliotek, men ändå vill att resursen ska vara tillgänglig för användning i andra bibliotek, se guiden [ta bort resurser från ett bibliotek](remove-resources-from-library.md).
 
 Du kan ta bort dataelement, regler, tillägg, värdar, miljöer och egenskaper. När resurserna har tagits bort går de inte att återställa.
 
@@ -77,4 +78,4 @@ Innan du kan ta bort en resurs måste du ta bort den från alla bibliotek där d
 
 ## Ta bort en resurs
 
-I lämplig listvy väljer du den resurs som du vill ta bort och väljer sedan **[!UICONTROL Delete]**.
+I lämplig listvy väljer du den resurs du vill ta bort och väljer sedan **[!UICONTROL Delete]**.

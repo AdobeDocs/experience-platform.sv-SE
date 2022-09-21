@@ -1,9 +1,10 @@
 ---
 title: Publicera om ett bibliotek
 description: Lär dig hur du publicerar om ett tidigare taggbibliotek i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 026b01f2-a93d-4e8a-9ed2-47c4f011e70f
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 De fem senaste biblioteken som har publicerats i produktionsmiljön på en webbegenskap är tillgängliga för senare hämtning. Den här funktionen är användbar när du hittar ett fel i ditt produktionsbibliotek och behöver återställa till ett känt bra läge omedelbart.
 
@@ -44,7 +45,7 @@ Det innebär att när du publicerar om ett äldre bibliotek:
 
 * Det sätt på vilket utvecklings- och mellanlagringsmiljöer beräknar vad som är uppströms förändras inte
 
-Tänk på scenariot när du återställer på grund av ett problem med en viss regel. Regelrevisionen som nu är i produktion kan till exempel vara tre versioner gammal.  När du visar den regeln i användargränssnittet för datainsamling för att åtgärda den, återspeglas den fortfarande de senaste ändringarna som har sparats i stället för de som är under produktion.
+Tänk på scenariot när du återställer på grund av ett problem med en viss regel. Regelrevisionen som nu är i produktion kan till exempel vara tre versioner gammal.  När du visar den regeln i användargränssnittet för att åtgärda den, återspeglas den fortfarande de senaste ändringarna som har sparats i stället för de som är under produktion.
 
 Därför meddelar Platform dig om att en egenskap är i ett återpublicerat läge som en påminnelse om att det du ser i användargränssnittet för datainsamling är lite mer borttaget från Production än vanligt. Det här meddelandet kan inte visas och visas en gång per webbläsarsession första gången du visar egenskapen.
 

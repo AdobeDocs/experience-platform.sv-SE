@@ -2,9 +2,9 @@
 title: Miljöer
 description: Lär dig mer om taggmiljöerna och hur de fungerar i Adobe Experience Platform.
 exl-id: 0bf641c9-412e-4737-9b76-232d980385b2
-source-git-commit: 66975d2352062e4abe1af35d7a7130a5c85188d0
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1456'
+source-wordcount: '1452'
 ht-degree: 0%
 
 ---
@@ -91,7 +91,7 @@ Välj **[!UICONTROL Host]** om du vill välja en förkonfigurerad värd för mil
 
 ![](./images/environments/select-host.png)
 
-När ett bygge skapas levereras det till den plats som du angav för den tilldelade värden. Information om hur du skapar och konfigurerar värdar i användargränssnittet för datainsamling finns i [Översikt över värdar](./hosts/hosts-overview.md).
+När ett bygge skapas levereras det till den plats som du angav för den tilldelade värden. Mer information om hur du skapar och konfigurerar taggvärdar finns i [Översikt över värdar](./hosts/hosts-overview.md).
 
 ### Arkivinställning {#archive}
 
