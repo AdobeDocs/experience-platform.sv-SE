@@ -2,7 +2,7 @@
 title: Biblioteksmoduler i webbtillägg
 description: Lär dig formatera biblioteksmoduler för webbtillägg i Adobe Experience Platform.
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 8d29765c0d3b57c69b46271e3f0b7338c75c135d
 workflow-type: tm+mt
 source-wordcount: '378'
 ht-degree: 0%
@@ -23,7 +23,7 @@ En biblioteksmodul är en del av återanvändbar kod som tillhandahålls av ett 
 
 Biblioteksmodulen är strukturerad som en [CommonJS, modul](https://nodejs.org/api/modules.html#modules-commonjs-modules). I en CommonJS-modul är följande variabler tillgängliga för användning:
 
-## [!DNL require]
+## `require`
 
 A `require` kan du komma åt:
 
@@ -37,7 +37,7 @@ var cookie = require('@adobe/reactor-cookie');
 cookie.set('foo', 'bar');
 ```
 
-## [!DNL module]
+## `module`
 
 En kostnadsfri variabel med namnet `module` är tillgängligt så att du kan exportera modulens API.
 
@@ -47,7 +47,7 @@ Exempelanvändning:
 module.exports = function(…) { … }
 ```
 
-## [!DNL exports]
+## `exports`
 
 En kostnadsfri variabel med namnet `exports` är tillgängligt så att du kan exportera modulens API.
 
