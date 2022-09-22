@@ -2,7 +2,7 @@
 title: Biblioteksmoduler i webbtillägg
 description: Lär dig formatera biblioteksmoduler för webbtillägg i Adobe Experience Platform.
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
-source-git-commit: 8d29765c0d3b57c69b46271e3f0b7338c75c135d
+source-git-commit: b3754c94843f32ba58aa1e020dface1179372de3
 workflow-type: tm+mt
 source-wordcount: '378'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Exempelanvändning:
 module.exports = function(…) { … }
 ```
 
-## `exports`
+## `exports` {#exports-variable}
 
 En kostnadsfri variabel med namnet `exports` är tillgängligt så att du kan exportera modulens API.
 
