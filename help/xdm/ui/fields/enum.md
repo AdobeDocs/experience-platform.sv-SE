@@ -5,7 +5,7 @@ title: Definiera uppräkningsfält i användargränssnittet
 description: Lär dig hur du definierar ett uppräkningsfält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: f6fefda974d2ae6fd4b035ef3b5fe633311c9772
+source-git-commit: 878d99d9eb45f40ff76e5e90116abf032be1c93f
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 # Definiera uppräkningsfält i användargränssnittet {#enum}
 
 >[!CONTEXTUALHELP]
->id="platform_xdm_enumsuggestedvalue"
+>id="platform_xdm_enum_suggestedvalue"
 >title="Uppräkning och föreslagna värden"
 >abstract="En uppräkning begränsar ett strängfält så att endast data som matchar en fördefinierad uppsättning värden kan importeras. Du kan också definiera en uppsättning föreslagna värden för fältet som inte begränsar åtkomsten, utan i stället definiera de attribut du kan välja mellan i segmenteringen. Mer information finns i dokumentationen."
 
