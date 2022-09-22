@@ -2,9 +2,9 @@
 title: Google Data Layer Extension
 description: Läs mer om taggtillägget Google Client Data Layer i Adobe Experience Platform.
 exl-id: 7990351d-8669-432b-94a9-4f9db1c2b3fe
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '818'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Version 1.0.x av tillägget är en betaversion. Utbyggnaden har inte testats ful
 
 ## Installation
 
-Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för Experience Platform eller datainsamlingen och väljer **Google datalager**.
+Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för datainsamling och väljer **Google datalager**.
 
 När tillägget har installerats skapas eller används ett datalager varje gång som taggbiblioteket läses in på webbplatsen.
 

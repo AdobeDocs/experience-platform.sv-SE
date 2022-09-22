@@ -3,9 +3,9 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '874'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Mer information om scheman finns i [Experience Data Model (XDM) - systemhjälp](
 
 ## Skapa en egenskap för vidarebefordring av händelser
 
-I **[!UICONTROL Tags]** arbetsyta, skapa en egenskap av typen **[!UICONTROL Edge]**.
+I användargränssnittet för datainsamling skapar du en egenskap av typen &quot;Edge&quot;.
 
 1. Välj **[!UICONTROL New Property]**.
 
@@ -70,18 +70,22 @@ När du har skapat egenskapen går du till **[!UICONTROL Environments]** för de
 
 Om du vill skapa ett dataflöde i Adobe Experience Platform använder du det miljö-ID som genererades när du skapade egenskapen för vidarebefordran av händelser.
 
-1. Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen.
+1. Använd länken till vänster i användargränssnittet för datainsamling för att öppna datastreams-gränssnittet.
+
+1. Välj **[!UICONTROL Datastreams]**.
 
 1. Ge konfigurationen ett namn och ange en valfri beskrivning.
 Beskrivningen hjälper till att identifiera konfigurationer i en lista med flera konfigurationer.
 
 1. Välj **[!UICONTROL Save]**.
 
+
+
 ## Aktivera vidarebefordran av händelser
 
 Konfigurera sedan Edge Network för att skicka data till händelsevidarebefordran och till andra Adobe-produkter.
 
-1. I **[!UICONTROL Datastreams]** markerar du den egenskap du skapade.
+1. Markera den egenskap du skapade i datastreams-gränssnittet.
 
 1. Välj utvecklingsmiljö, produktionsmiljö eller mellanlagringsmiljö.
 
@@ -97,9 +101,17 @@ Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
 ## Konfigurera Platform Web SDK-tillägget för att skicka data till dataströmmen som skapats tidigare
 
-Skapa din egenskap i **[!UICONTROL Tags]** arbetsyta och sedan navigera till **[!UICONTROL Extensions]** och välj tillägget Experience Platform Web SDK i katalogen för att konfigurera och installera det.
+Skapa din egenskap i användargränssnittet för datainsamling och använd sedan tillägget Adobe Experience Platform Web SDK för att konfigurera den.
 
-Se [Dokumentation för Web SDK-tillägg](../../extensions/web/sdk/overview.md) för mer information om konfigurationsalternativ.
+1. Namnge egenskapen.
+
+   Du kan ha flera instanser av Alloy. Du kan till exempel ha olika spårningsegenskaper för för- och efterhandsbetalningar.
+
+1. Välj organisation-ID.
+
+1. Välj Edge Domain.
+
+Se [Dokumentation för Web SDK-tillägg](../../extensions/web/sdk/overview.md) för fler konfigurationsalternativ.
 
 ## Skapa en taggregel för att skicka data till Platform Web SDK
 

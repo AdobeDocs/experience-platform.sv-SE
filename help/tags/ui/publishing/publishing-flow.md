@@ -2,9 +2,9 @@
 title: Publiceringsflöde
 description: Lär dig hur du skapar bibliotek, testar byggen och godkänner dem för produktion i Adobe Experience Platform.
 exl-id: 4885f60b-6401-4ec7-aa1a-29c135087847
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1397'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ När det gäller publiceringsflödet finns det fyra grundläggande lägen för e
 * [[!UICONTROL Approved]](#approved)
 * [[!UICONTROL Published]](#published)
 
-Dessa fyra lägen representeras som kolumner i **[!UICONTROL Publishing Flow]** -fliken.
+Dessa fyra lägen representeras som kolumner i **[!UICONTROL Publishing Flow]** i användargränssnittet för datainsamling.
 
 ![](./images/approval-workflow/flow-ui.png)
 
@@ -112,7 +112,7 @@ Vad som ingår i det överordnade flödet beror på bibliotekets aktuella stadiu
 
 ![](./images/approval-workflow/upstream.png)
 
-När du redigerar ett bibliotek i användargränssnittet visas alla resurser som ärvs från den överordnade sidan i **[!UICONTROL Resources Upstream]** -avsnitt. Om du vill visa resurserna väljer du fliken Expandera under avsnittsrubriken.
+När du redigerar ett bibliotek i användargränssnittet för datainsamling visas alla resurser som ärvs från det överordnade flödet i **[!UICONTROL Resources Upstream]** -avsnitt. Om du vill visa resurserna väljer du fliken Expandera under avsnittsrubriken.
 
 ![](./images/approval-workflow/upstream-collapse.png)
 

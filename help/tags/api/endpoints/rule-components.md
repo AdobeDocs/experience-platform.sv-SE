@@ -2,9 +2,9 @@
 title: Slutpunkt för regelkomponenter
 description: Lär dig hur du anropar /rule_components-slutpunkten i Reactor API.
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1202'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ I datainsamlingstaggar [regler](./rules.md) styra beteendet för resurserna i en
 
 >[!NOTE]
 >
->Det här dokumentet beskriver hur du hanterar regelkomponenter i Reaktors-API:t. Mer information om hur du interagerar med regler och regelkomponenter i användargränssnittet finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
+>Det här dokumentet beskriver hur du hanterar regelkomponenter i Reaktors-API:t. Mer information om hur du interagerar med regler och regelkomponenter i användargränssnittet för datainsamling finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
 
 Regelkomponenter har tre grundläggande typer:
 

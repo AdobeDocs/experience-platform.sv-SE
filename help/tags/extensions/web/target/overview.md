@@ -2,9 +2,9 @@
 title: Adobe Target Extension - översikt
 description: Läs om taggtillägget för Adobe Target i Adobe Experience Platform.
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1184'
+source-wordcount: '1186'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Om du vill konfigurera tillägget öppnar du [!UICONTROL Extensions] hovra över
 
 ### at.js-inställningar
 
-Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målanvändargränssnittet. Tillägget hämtar bara inställningar från målanvändargränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet om ytterligare uppdateringar behövs.
+Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målanvändargränssnittet. Tillägget hämtar bara inställningar från målanvändargränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet för datainsamling om ytterligare uppdateringar behövs.
 
 Följande konfigurationsalternativ är tillgängliga:
 

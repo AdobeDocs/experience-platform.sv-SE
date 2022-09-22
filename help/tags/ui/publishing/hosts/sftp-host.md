@@ -2,9 +2,9 @@
 title: SFTP-värdar
 description: Lär dig hur du konfigurerar taggar i Adobe Experience Platform för att leverera biblioteksbyggen till en säker, självvärd SFTP-server.
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '802'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Med Adobe Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-server som du har som värd, vilket ger dig större kontroll över hur byggnaderna lagras och hanteras. Den här guiden beskriver hur du konfigurerar en SFTP-värd för en taggegenskap i användargränssnittet för Experience Platform eller datainsamlingen.
+Med Adobe Experience Platform kan du leverera kodbiblioteksbyggen till en säker SFTP-server som du har som värd, vilket ger dig större kontroll över hur byggnaderna lagras och hanteras. Den här guiden beskriver hur du konfigurerar en SFTP-värd för en taggegenskap i användargränssnittet för datainsamling.
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ Mer detaljerad information finns i följande artikel på [konfigurera SFTP-servr
 
 ## Skapa en SFTP-värd {#create}
 
-Välj **[!UICONTROL Hosts]** i den vänstra navigeringen, följt av **[!UICONTROL Add Host]**.
+I användargränssnittet för datainsamling väljer du **[!UICONTROL Hosts]** i den vänstra navigeringen, följt av **[!UICONTROL Add Host]**.
 
 ![Bild som visar knappen Lägg till värd som markeras i användargränssnittet](../../../images/ui/publishing/sftp-hosts/add-host-button.png)
 

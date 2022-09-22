@@ -1,10 +1,10 @@
 ---
 title: Tilläggskonfiguration
-description: Lär dig hur du konfigurerar ett taggtillägg för att samla in globala inställningar från en användare i användargränssnittet för Adobe Experience Platform eller användargränssnittet för datainsamling.
+description: Lär dig hur du konfigurerar ett taggtillägg för att samla in globala inställningar från en användare i användargränssnittet för datainsamling i Adobe Experience Platform.
 exl-id: 2bf33617-1398-499f-8325-3849dbdb1f97
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---

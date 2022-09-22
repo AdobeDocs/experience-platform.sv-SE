@@ -2,9 +2,9 @@
 title: Publicera om ett bibliotek
 description: Lär dig hur du publicerar om ett tidigare taggbibliotek i Adobe Experience Platform.
 exl-id: 026b01f2-a93d-4e8a-9ed2-47c4f011e70f
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Det innebär att när du publicerar om ett äldre bibliotek:
 
 * Det sätt på vilket utvecklings- och mellanlagringsmiljöer beräknar vad som är uppströms förändras inte
 
-Tänk på scenariot när du återställer på grund av ett problem med en viss regel. Regelrevisionen som nu är i produktion kan till exempel vara tre versioner gammal.  När du visar den regeln i användargränssnittet för att åtgärda den, återspeglas den fortfarande de senaste ändringarna som har sparats i stället för de som är under produktion.
+Tänk på scenariot när du återställer på grund av ett problem med en viss regel. Regelrevisionen som nu är i produktion kan till exempel vara tre versioner gammal.  När du visar den regeln i användargränssnittet för datainsamling för att åtgärda den, återspeglas den fortfarande de senaste ändringarna som har sparats i stället för de som är under produktion.
 
 Därför meddelar Platform dig om att en egenskap är i ett återpublicerat läge som en påminnelse om att det du ser i användargränssnittet för datainsamling är lite mer borttaget från Production än vanligt. Det här meddelandet kan inte visas och visas en gång per webbläsarsession första gången du visar egenskapen.
 

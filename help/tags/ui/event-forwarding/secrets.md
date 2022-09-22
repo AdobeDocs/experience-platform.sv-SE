@@ -1,10 +1,10 @@
 ---
 title: Konfigurera hemligheter i händelsevidarebefordran
-description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
+description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för datainsamling för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1548'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Det finns för närvarande tre hemliga typer som stöds:
 
 {style=&quot;table-layout:auto&quot;}
 
-Den här guiden ger en översikt på hög nivå över hur du konfigurerar hemligheter för en händelsevidarebefordring ([!UICONTROL Edge]) i användargränssnittet för Experience Platform eller användargränssnittet för datainsamling.
+Den här guiden ger en översikt på hög nivå över hur du konfigurerar hemligheter för en händelsevidarebefordring ([!UICONTROL Edge]) i användargränssnittet för datainsamling.
 
 >[!NOTE]
 >
@@ -32,13 +32,13 @@ Den här guiden ger en översikt på hög nivå över hur du konfigurerar hemlig
 
 ## Förutsättningar
 
-I den här handboken förutsätts det att du redan känner till hur du hanterar resurser för taggar och vidarebefordran av händelser i användargränssnittet, inklusive hur du skapar ett dataelement och en regel för vidarebefordran av händelser. Se guiden [hantera resurser](../managing-resources/overview.md) om du behöver en introduktion.
+I den här handboken förutsätts det att du redan känner till hur du hanterar resurser för taggar och vidarebefordran av händelser i användargränssnittet för datainsamling, inklusive hur du skapar ett dataelement och en regel för vidarebefordran av händelser. Se guiden [hantera resurser](../managing-resources/overview.md) om du behöver en introduktion.
 
 Du bör också ha en fungerande förståelse för publiceringsflödet för taggar och vidarebefordran av händelser, inklusive hur du lägger till resurser i ett bibliotek och installerar ett bygge på webbplatsen för testning. Se [publicera översikt](../publishing/overview.md) för mer information.
 
 ## Skapa en hemlighet {#create}
 
-Om du vill skapa en hemlighet väljer du **[!UICONTROL Event Forwarding]** i den vänstra navigeringen öppnar du sedan den händelsevidarebefordringsegenskap som du vill lägga till hemligheten under. Nästa, välj **[!UICONTROL Secrets]** i den vänstra navigeringen, följt av **[!UICONTROL Create New Secret]**.
+Om du vill skapa en hemlighet loggar du in på användargränssnittet för datainsamlingen och öppnar den händelsevidarebefordringsegenskap som du vill lägga till hemligheten under. Nästa, välj **[!UICONTROL Secrets]** i den vänstra navigeringen, följt av **[!UICONTROL Create New Secret]**.
 
 ![Skapa ny hemlighet](../../images/ui/event-forwarding/secrets/create-new-secret.png)
 
@@ -87,7 +87,7 @@ Om du vill skapa en HTTP-hemlighet väljer du **[!UICONTROL Simple HTTP]** från
 
 ### [!UICONTROL OAuth 2] {#oauth2}
 
-Om du vill skapa en OAuth 2-hemlighet väljer du **[!UICONTROL OAuth 2]** från **[!UICONTROL Type]** listruta. I fälten som visas nedan anger du [[!UICONTROL Client ID] och [!UICONTROL Client Secret]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] i användargränssnittet är en sammanfogning mellan auktoriseringsservervärden och tokensökvägen.
+Om du vill skapa en OAuth 2-hemlighet väljer du **[!UICONTROL OAuth 2]** från **[!UICONTROL Type]** listruta. I fälten som visas nedan anger du [[!UICONTROL Client ID] och [!UICONTROL Client Secret]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] i användargränssnittet för datainsamling är en sammanfogning mellan auktoriseringsservervärden och tokensökvägen.
 
 ![OAuth 2-hemlighet](../../images/ui/event-forwarding/secrets/oauth-secret-1.png)
 
@@ -180,4 +180,4 @@ Genom att tilldela flera hemligheter till ett dataelement och inkludera det i en
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du hanterar hemligheter i användargränssnittet. Mer information om hur du interagerar med hemligheter med Reaktors API finns i [Slutpunktshandbok för hemligheter](../../api/endpoints/secrets.md).
+I den här guiden beskrivs hur du hanterar hemligheter i användargränssnittet för datainsamling. Mer information om hur du interagerar med hemligheter med Reaktors API finns i [Slutpunktshandbok för hemligheter](../../api/endpoints/secrets.md).

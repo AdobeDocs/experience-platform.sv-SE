@@ -2,9 +2,9 @@
 title: Adobe-hanterade värdar - översikt
 description: Läs mer om standardvärdalternativet för distribution av kodbiblioteksbyggen i Adobe Experience Platform.
 exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
@@ -88,9 +88,9 @@ Som framgår av tabellen ovan stöds inte webbläsarcachelagring i utvecklings- 
 
 Cachekontrollhuvuden används bara för huvudbiblioteksbygget. Alla underresurser under huvudbiblioteket betraktas alltid som nästa och därför behöver de inte cachelagras i webbläsaren.
 
-## Använda värdtjänster som hanteras av Adobe i användargränssnittet
+## Använda värdtjänster som hanteras av Adobe i användargränssnittet för datainsamling
 
-När du först skapar en egenskap i användargränssnittet för plattformen eller datainsamlingen skapas en värddator som hanteras av Adobe automatiskt åt dig. Alla tillgängliga miljöer som har omedelbart användbara egenskaper tilldelas som standard till värddatorn som hanteras av Adobe.
+När du först skapar en egenskap i [Användargränssnitt för datainsamling](https://experience.adobe.com/#/data-collection/)skapas en värddator som hanteras av Adobe automatiskt åt dig. Alla tillgängliga miljöer som har omedelbart användbara egenskaper tilldelas som standard till värddatorn som hanteras av Adobe.
 
 >[!NOTE]
 >

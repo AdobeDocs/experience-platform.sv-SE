@@ -2,9 +2,9 @@
 title: Kopiera resurser
 description: Lär dig hur du skapar en ny taggresurs med inställningarna för en befintlig taggresurs i Adobe Experience Platform.
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Om du kopierar en regel eller ett dataelement kan du använda listrutan i kopier
 
 >[!NOTE]
 >
->Det går inte att kopiera resurser till en annan egenskap om en egenskap är konfigurerad för tilläggsutveckling och den andra inte är det.
+>I användargränssnittet för datainsamling går det inte att kopiera resurser till en annan egenskap om en egenskap har konfigurerats för tilläggsutveckling och den andra egenskapen inte har det.
 
 När du har konfigurerat det beteende du vill använda väljer du **[!UICONTROL Copy]**.
 

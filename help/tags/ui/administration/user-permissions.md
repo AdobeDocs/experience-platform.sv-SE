@@ -2,9 +2,9 @@
 title: Användarbehörigheter för taggar
 description: Lär dig mer om de olika typerna av behörigheter som är tillgängliga för taggar och några grundläggande implementeringsstrategier för olika affärsanvändningsfall.
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1308'
+source-wordcount: '1311'
 ht-degree: 1%
 
 ---
@@ -42,7 +42,7 @@ Som standard ger produktprofiler åtkomst till alla egenskaper som finns på fö
 
 ### Egendomsrättigheter {#property-rights}
 
-Alla taggegenskaper som du skapar i användargränssnittet blir tillgängliga i Admin Console, vilket gör att du kan gruppera egenskapen med specifika egenskapsbehörigheter i samma produktprofil.
+Alla egenskaper som du skapar i användargränssnittet för datainsamling blir tillgängliga i Admin Console, vilket gör att du kan gruppera egenskapen med specifika egenskapsbehörigheter i samma produktprofil.
 
 Om till exempel en viss produktprofil inte har tillgång till egenskap A1 kan användare som tillhör den profilen inte se eller ändra några inställningar i egenskap A1.
 
@@ -52,7 +52,7 @@ I följande tabell visas de tillgängliga egenskapsrättigheterna och de funktio
 
 | Egendomsrättighet | Beskrivning |
 | --- | --- |
-| **Utveckla** | Detta gör att du kan utföra följande åtgärder:<ul><li>Skapa regler och dataelement</li><li>Skapa bibliotek och bygg dem i befintliga utvecklingsmiljöer</li><li>Skicka ett bibliotek för godkännande</li></ul>De flesta rutinuppgifter i gränssnittet kräver det här. |
+| **Utveckla** | Detta gör att du kan utföra följande åtgärder:<ul><li>Skapa regler och dataelement</li><li>Skapa bibliotek och bygg dem i befintliga utvecklingsmiljöer</li><li>Skicka ett bibliotek för godkännande</li></ul>De flesta dagliga uppgifter i gränssnittet för datainsamling kräver den här rättigheten. |
 | **Godkänn** | På så sätt kan du ta ett skickat bibliotek och bygga vidare till testmiljön. Du kan också godkänna ett bibliotek för publicering när testningen är klar. |
 | **Publicera** | På så sätt kan du publicera godkända bibliotek i produktionsmiljön. |
 | **Hantera tillägg** | Detta gör att du kan utföra följande åtgärder: <ul><li>Installera nya tillägg för en egenskap</li><li>Ändra konfigurationen för ett redan installerat tillägg</li><li>Ta bort ett tillägg</li></ul>Mer information finns i översiktsdokumentationen för tillägg. [mer information om tillägg](../managing-resources/extensions/overview.md). Den här rollen tillhör vanligen IT eller marknadsföring, beroende på din organisation. |

@@ -2,9 +2,9 @@
 title: Versionsinformation för AEM Asset Insights Extension
 description: Den senaste versionsinformationen för AEM Asset Insights-taggtillägget i Adobe Experience Platform.
 exl-id: cee35b44-2249-47c6-80d6-8b4eaa9802df
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 - Det här tillägget är avsett att användas tillsammans med AEM tillgångsinsikter.
 - Mer specifikt ersätter den ***pageTracker*** process- och sidkod.
-- När det är konfigurerat och aktiverat skickar det här tillägget AEM tillgångsintrång och klickstatistik till Adobe Analytics, som sedan automatiskt importeras tillbaka till tillgångsinsikterna i AEM.
+- När det är konfigurerat i användargränssnittet för datainsamling skickar det här tillägget AEM tillgångsintrång och klickstatistik till Adobe Analytics, som sedan automatiskt importeras tillbaka till tillgångsinsikterna i AEM.
 
 **Felkorrigeringar**
 

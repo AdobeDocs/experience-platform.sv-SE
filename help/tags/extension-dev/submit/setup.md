@@ -2,9 +2,9 @@
 title: Organisationsinställningar för Experience Cloud
 description: Lär dig hur du registrerar en Adobe Experience Cloud-organisation för att börja utveckla tillägg för Adobe Experience Platform.
 exl-id: ee36319d-5de8-462e-879b-311445cf334c
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '608'
 ht-degree: 0%
 
 ---
@@ -41,9 +41,7 @@ Detta program är avsett för konsultföretag som hjälper Adobe att få ut det 
 >
 >Din företagsmejl kan för närvarande bara användas i ett partnerprogram i taget, så du måste använda en annan företagsmejl som registrerad kontakt för vart och ett av programmen.
 
-När ditt företag är med i Exchange Partner-programmet kan du begära åtkomst till Adobe Solutions genom att logga in på [Exchange Partner Site](https://partners.adobe.com/exchangeprogram/experiencecloud) och följer stegen nedan.
-
-Om du har ett Experience Cloud-konto som kräver åtkomst till användargränssnittet för datainsamling och användargränssnittet för Experience Platform, se [behörighetsguide för datainsamling](../../../collection/permissions.md).
+När ditt företag är med i Exchange Partner-programmet kan du begära åtkomst till Adobe Solutions genom att logga in på [Exchange Partner Site](https://partners.adobe.com/exchangeprogram/experiencecloud) och följer stegen nedan. Om du redan har ett Experience Cloud-konto och tillgång till lösningar, men du inte har tillgång till användargränssnittet för datainsamling i Adobe Experience Platform, se [anvisningar för hur du konfigurerar grupper och användare](../../ui/administration/user-permissions.md).
 
 ## För oberoende utvecklare
 

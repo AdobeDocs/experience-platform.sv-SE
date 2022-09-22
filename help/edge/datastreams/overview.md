@@ -3,9 +3,9 @@ title: Översikt över dataströmmar
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1642'
 ht-degree: 1%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 1%
 
 En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Med [konfigurera, kommando](../fundamentals/configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network `edgeConfigId` används för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
 
-Det här dokumentet innehåller stegen för hur du konfigurerar ett datastream i användargränssnittet.
+Det här dokumentet innehåller stegen för hur du konfigurerar ett datastam i användargränssnittet för datainsamling.
 
 ## Öppna [!UICONTROL Datastreams] arbetsyta
 
-Du kan skapa och hantera datastölar i användargränssnittet för datainsamling eller användargränssnittet för Experience Platform genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen.
+Du kan skapa och hantera datastammar i användargränssnittet för datainsamling genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
-![Fliken Datastreams i användargränssnittet](../images/datastreams/overview/datastreams-tab.png)
+![Fliken Datastreams i användargränssnittet för datainsamling](../images/datastreams/overview/datastreams-tab.png)
 
 The [!UICONTROL Datastreams] På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
 
@@ -106,7 +106,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Mana
 
 >[!IMPORTANT]
 >
->När du aktiverar en datastream för Platform bör du tänka på den plattformssandlåda som du använder just nu, så som den visas på den översta menyfliken i användargränssnittet.
+>När du aktiverar en datastream för plattformen bör du tänka på den plattformssandlåda som du använder, som visas på den översta menyfliken i användargränssnittet för datainsamling.
 >
 >![Markerad sandlåda](../images/datastreams/overview/platform-sandbox.png)
 >
@@ -175,4 +175,4 @@ Huvudsidan i [!UICONTROL Datastreams] arbetsytan visas igen med den nya datastre
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du hanterar datastölar i användargränssnittet. Mer information om hur du installerar och konfigurerar Web SDK när du har konfigurerat ett datastream finns i [E2E-guide för datainsamling](../../collection/e2e.md#install).
+I den här guiden beskrivs hur du hanterar datastölar i användargränssnittet för datainsamling. Mer information om hur du installerar och konfigurerar Web SDK när du har konfigurerat ett datastream finns i [E2E-guide för datainsamling](../../collection/e2e.md#install).

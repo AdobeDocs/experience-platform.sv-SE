@@ -2,9 +2,9 @@
 title: Översikt över tillägget för videospårning i BrightStor
 description: Lär dig mer om taggtillägget för videospårning i BrightStor i Adobe Experience Platform.
 exl-id: d27eff21-2abf-4495-8382-08cab32742e0
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '908'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
@@ -100,7 +100,7 @@ Följande videotilläggsobjekt ska inkluderas:
 
 >[!TIP]
 >
->För dem som kanske inte vill tillhandahålla flera eVars eller props för varje videoelement sammanfogas datavärdesvärden som en alternativ metod. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Se [Verktyget Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html) mer information. Slutligen används de som ett segment i Analysis Workspace.
+>För dem som kanske inte vill etablera flera eVars eller props för varje videoelement finns det en alternativ metod. Värden för dataelement kan sammanfogas i användargränssnittet för datainsamling. Därefter parsas de i klassificeringsrapporter med verktyget Klassificeringsregelbyggaren. Se [Verktyget Skapa klassificeringsregel](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html) mer information. Slutligen används de som ett segment i Analysis Workspace.
 >
 >Det gör du genom att skapa ett nytt dataelement som kallas &quot;Video MetaData&quot; och programmera det för att hämta in alla videodataelement (som listas ovan) och sammanfoga dem.
 

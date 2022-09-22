@@ -2,9 +2,9 @@
 title: Testa inbäddningskoder med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Platform Debugger för att lokalt testa olika inbäddningskoder för Adobe Experience Platform på din webbplats.
 exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ När du gör ändringar i kodbiblioteksbyggen i Adobe Experience Platform bör d
 
 ## Förutsättningar
 
-Den här självstudiekursen kräver en fungerande förståelse för hur du använder miljöer och bäddar in koder för taggar. Se [miljööversikt](./environments.md) för mer information.
+Den här självstudiekursen kräver en fungerande förståelse för hur du använder miljöer och bäddar in koder i användargränssnittet för datainsamling. Se [miljööversikt](./environments.md) för mer information.
 
 Den här självstudien kräver även att du har installerat webbläsartillägget Platform Debugger. Felsökningsprogrammet för plattformen är bara tillgängligt för Chrome- och Firefox-webbläsare. Använd någon av följande länkar för att installera tillägget innan du startar självstudiekursen:
 

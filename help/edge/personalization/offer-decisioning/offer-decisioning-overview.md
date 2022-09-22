@@ -3,9 +3,9 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '870'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ Så här aktiverar du Offer decisioning:
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
-1. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via användargränssnittet. Se [snabbstartsguide för taggar](../../../tags/quick-start/quick-start.md)) om du vill ha mer information.
+1. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via [Användargränssnitt för datainsamling](https://experience.adobe.com/#/data-collection/). Se [snabbstartsguide för taggar](../../../tags/quick-start/quick-start.md)) om du vill ha mer information.
 1. [Konfigurera SDK](../../fundamentals/configuring-the-sdk.md) för Offer decisioning. Ytterligare Offer decisioning-specifika steg finns nedan.
 
    * Installera den fristående SDK:n

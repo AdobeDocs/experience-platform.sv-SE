@@ -3,7 +3,7 @@ title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 topic-legacy: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
 source-wordcount: '1344'
 ht-degree: 0%
@@ -23,7 +23,7 @@ I den här självstudien förutsätts det att du redan har fastställt hur data 
 * [Skapa en datauppsättning med Adobe-standarden](./adobe/dataset.md)
 * [Skapa en datauppsättning med TCF 2.0-standarden](./iab/dataset.md)
 
-Den här guiden följer arbetsflödet för att konfigurera SDK med hjälp av taggtillägget i användargränssnittet. Om du inte vill använda tillägget och vill bädda in den fristående versionen av SDK direkt på din webbplats kan du läsa följande dokument i stället för den här handboken:
+Den här guiden följer arbetsflödet för att konfigurera SDK med taggtillägget i användargränssnittet för datainsamling. Om du inte vill använda tillägget och vill bädda in den fristående versionen av SDK direkt på din webbplats kan du läsa följande dokument i stället för den här handboken:
 
 * [Konfigurera ett datastream](../../../edge/datastreams/overview.md)
 * [Installera SDK](../../../edge/fundamentals/installing-the-sdk.md)
@@ -37,7 +37,7 @@ Installationsstegen i den här handboken kräver en fungerande förståelse för
 
 ## Konfigurera en datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du först konfigurera ett datastream. I användargränssnittet för datainsamling eller användargränssnittet för Experience Platform väljer du **[!UICONTROL Datastreams]** i den vänstra navigeringen.
+För att SDK ska kunna skicka data till Experience Platform måste du först konfigurera ett datastream. I användargränssnittet för datainsamling väljer du **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
 När du har skapat ett nytt dataflöde eller valt ett befintligt som du vill redigera, markerar du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan värdena nedan för att fylla i formuläret.
 
@@ -80,7 +80,7 @@ Om användarens region bestäms av en CMP kan du använda följande steg i stäl
 1. I händelsehanteraren anger du en `adobeDefaultConsent` variabel som baseras på användarens region och sedan läsa in taggbiblioteksskriptet med JavaScript.
 1. Konfigurera ett dataelement som använder `adobeDefaultConsent` JavaScript-variabel och använd det här dataelementet som standardvärde för samtycke för användaren.
 
-Om du vill skapa ett dataelement i användargränssnittet väljer du **[!UICONTROL Data Elements]** i den vänstra navigeringen väljer du **[!UICONTROL Add Data Element]** för att navigera till dialogrutan för att skapa dataelement.
+Om du vill skapa ett dataelement i användargränssnittet för datainsamling väljer du **[!UICONTROL Data Elements]** i den vänstra navigeringen väljer du **[!UICONTROL Add Data Element]** för att navigera till dialogrutan för att skapa dataelement.
 
 Härifrån måste du skapa en [!UICONTROL JavaScript Variable] dataelement baserat på `adobeDefaultConsent`. Välj **[!UICONTROL Save]** när du är klar.
 

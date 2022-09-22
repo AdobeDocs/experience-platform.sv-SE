@@ -2,9 +2,9 @@
 title: Regelslutpunkt
 description: Lär dig hur du anropar /rules-slutpunkten i Reactor API.
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '933'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ När det gäller datainsamlingstaggar styr reglerna beteendet för resurserna i 
 
 >[!NOTE]
 >
->I det här dokumentet beskrivs hur du hanterar regler i Reactor API. Information om hur du interagerar med regler i användargränssnittet finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
+>I det här dokumentet beskrivs hur du hanterar regler i Reactor API. Information om hur du interagerar med regler i användargränssnittet för datainsamling finns i [Användargränssnittsguide](../../ui/managing-resources/rules.md).
 
 En regel tillhör exakt en [property](./properties.md). En egenskap kan ha många regler.
 

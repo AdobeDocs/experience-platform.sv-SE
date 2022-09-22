@@ -2,9 +2,9 @@
 title: Adobe Target v2 Extension - översikt
 description: Läs mer om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1352'
+source-wordcount: '1359'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Om du vill konfigurera tillägget öppnar du fliken Tillägg, håller pekaren ö
 
 ### at.js-inställningar
 
-Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målgränssnittet. Tillägget hämtar bara inställningar från målgränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet om ytterligare uppdateringar behövs.
+Alla dina at.js-inställningar, med undantag för Timeout, hämtas automatiskt från din at.js-konfiguration i målgränssnittet. Tillägget hämtar bara inställningar från målgränssnittet när det läggs till första gången, så alla inställningar bör hanteras i användargränssnittet för datainsamling om ytterligare uppdateringar behövs.
 
 Följande konfigurationsalternativ är tillgängliga:
 
@@ -134,7 +134,7 @@ Här är några saker du bör tänka på när du använder det fördolda fragmen
    * När sidans inläsningsbegäran tar slut
    * När själva fragmentet timeout
 * Åtgärden &quot;Begäran om inläsning av brandsida&quot; bör användas på alla sidor med det föregående dolda fragmentet för att minimera tiden för det föregående.
-* Dölj brödtext måste även aktiveras i åtgärden för sidinläsningsbegäran i den sidinläsningsregel som du använder för mål; I annat fall förblir alla sidinläsningar dolda under timeoutperioden.
+* Dölj brödtext måste även aktiveras i åtgärden för sidinläsningsbegäran i den sidinläsningsregel som du använder för mål i användargränssnittet för datainsamling. I annat fall förblir alla sidinläsningar dolda under timeoutperioden.
 
 Det föregående dolda kodfragmentet är följande och kan minimeras. De konfigurerbara alternativen finns i slutet:
 

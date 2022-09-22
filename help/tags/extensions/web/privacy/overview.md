@@ -2,9 +2,9 @@
 title: Översikt över sekretesstillägg för Adobe
 description: Läs mer om taggtillägget Adobe Privacy i Adobe Experience Platform.
 exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '869'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Med taggtillägget Adobe Privacy kan du samla in och ta bort användar-ID:n som tilldelats slutanvändare av Adobe-lösningar på klientenheter. Insamlade ID:n kan sedan skickas till [Adobe Experience Platform Privacy Service](../../../../privacy-service/home.md) för att få tillgång till eller ta bort den relaterade personens personuppgifter i de Adobe Experience Cloud-program som stöds.
 
-I den här guiden beskrivs hur du installerar och konfigurerar tillägget Sekretess för Adobe i användargränssnittet för Experience Platform och användargränssnittet för datainsamling.
+I den här guiden beskrivs hur du installerar och konfigurerar tillägget Sekretess för Adobe i användargränssnittet för datainsamling.
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ I den här guiden beskrivs hur du installerar och konfigurerar tillägget Sekret
 
 ## Installera och konfigurera tillägget
 
-Välj **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av **[!UICONTROL Catalog]** -fliken. Använd sökfältet för att begränsa listan över tillgängliga tillägg tills du hittar sekretessen för Adobe. Välj **[!UICONTROL Install]** för att fortsätta.
+I användargränssnittet för datainsamling väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen, följt av **[!UICONTROL Catalog]** -fliken. Använd sökfältet för att begränsa listan över tillgängliga tillägg tills du hittar sekretessen för Adobe. Välj **[!UICONTROL Install]** för att fortsätta.
 
 ![Installera tillägget](../../../images/extensions/privacy/install.png)
 
@@ -71,7 +71,7 @@ När du använder taggtillägget Sekretess för Adobe måste du ange den återan
 
 ### Definiera ett dataelement som ska hantera identiteter
 
-Börja skapa ett nytt dataelement genom att välja **[!UICONTROL Data Elements]** i den vänstra navigeringen, följt av **[!UICONTROL Add Data Element]**. När du är på konfigurationsskärmen väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Custom Code]** för elementtypen data. Här väljer du **[!UICONTROL Open Editor]** i den högra panelen.
+I användargränssnittet för datainsamling börjar du med att skapa ett nytt dataelement genom att välja **[!UICONTROL Data Elements]** i den vänstra navigeringen, följt av **[!UICONTROL Add Data Element]**. När du är på konfigurationsskärmen väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Custom Code]** för elementtypen data. Här väljer du **[!UICONTROL Open Editor]** i den högra panelen.
 
 ![Välj dataelementtyp](../../../images/extensions/privacy/data-element-type.png)
 
@@ -111,4 +111,4 @@ När du har installerat tillägget kan du inaktivera eller ta bort det. Välj **
 
 ## Nästa steg
 
-I den här handboken beskrivs användningen av taggtillägget för sekretess i Adobe i användargränssnittet. Mer information om funktionerna i tillägget, inklusive exempel på hur du använder Raw-kod, finns i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) i Privacy Servicens dokumentation.
+I den här handboken beskrivs hur du använder taggtillägget Sekretess i Adobe i användargränssnittet för datainsamling. Mer information om funktionerna i tillägget, inklusive exempel på hur du använder Raw-kod, finns i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) i Privacy Servicens dokumentation.

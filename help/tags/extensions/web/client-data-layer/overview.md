@@ -2,9 +2,9 @@
 title: Adobe Client Data Layer Extension
 description: Läs mer om taggtillägget Adobe Client Data Layer i Adobe Experience Platform.
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ If you would like to have more details on development consideration, [please rea
 
 ## Installation
 
-Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för Experience Platform eller datainsamlingen och väljer Adobe Client Data Layer.
+Om du vill installera tillägget går du till tilläggskatalogen i användargränssnittet för datainsamling och väljer Adobe Client Data Layer.
 
 ![ACDL-tilläggsvy i katalog](./images/catalog.png)
 

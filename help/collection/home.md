@@ -5,9 +5,9 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '464'
 ht-degree: 3%
 
 ---
@@ -38,7 +38,7 @@ Den här guiden ger en introduktion på hög nivå till datainsamling och hur de
 
 ## Taggar, Web SDK och Mobile SDK
 
-Platform Web SDK och Platform Mobile SDK komprimerar och komprimerar alla Adobe-produktbibliotek till ett enda utvecklingspaket för webb- respektive mobilplattformar. Dessa kan implementeras med råkod eller med [taggar](../tags/home.md) via användargränssnittet för datainsamling eller Adobe Experience Platform-gränssnittet.
+Platform Web SDK och Platform Mobile SDK komprimerar och komprimerar alla Adobe-produktbibliotek till ett enda utvecklingspaket för webb- respektive mobilplattformar. Dessa kan implementeras med råkod eller med [taggar](../tags/home.md) via användargränssnittet för datainsamling.
 
 Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar åtgärder till en enda ström från klientenheter till Platform Edge Network.
 
