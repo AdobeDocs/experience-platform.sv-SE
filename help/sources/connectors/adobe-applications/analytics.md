@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;Analytics Source Connector;an
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 352993365dfcd4f39e7aea337b014430f7bad41c
+source-git-commit: fd114a418668436efa17edb00f2849a10f2c8cd6
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '997'
 ht-degree: 0%
 
 ---
@@ -82,7 +82,3 @@ Dessa fält är inte markerade som identiteter. I stället kopieras samma identi
 * `{ “key”: “AACUSTOMID”, “value”: [ { “id”: “<identity>”, “primary”: false } ] }`
 
 Om det finns ECID på identitetskartan markeras den som händelsens primära identitet. I detta fall kan stödet baseras på ECID på grund av [Giltighetsperiod för identitetstjänst](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). I annat fall markeras AID som händelsens primära identitet. AACUSTOMID markeras aldrig som händelsens primära ID. Om det finns ett AACUSTOMID, baseras emellertid AAID på AACUSTOMID på grund av att åtgärderna utförs i Experience Cloud.
-
-### Customer Journey Analytics och primärt ID
-
-För Customer Journey Analytics är definitionen av primärt ID bara viktig om du bestämmer dig för att använda primärt ID som person-ID. Detta är dock inte obligatoriskt. Du kan välja någon annan identitetskolumn som person-ID.
