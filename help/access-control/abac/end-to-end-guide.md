@@ -4,9 +4,9 @@ title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 hide: true
 hidefromtoc: true
-source-git-commit: f7a8f9a5eb0ef3c961f9524057ff01564f88dec3
+source-git-commit: 230bcfdb92c3fbacf2e24e7210d61e2dbe0beb86
 workflow-type: tm+mt
-source-wordcount: '2099'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -39,9 +39,9 @@ För att kunna göra detta måste du konfigurera roller, resurser och principer.
 
 Du kommer att:
 
-* [Ange en etikett för rollerna för användarna]{#label-roles}: Använd exemplet med en vårdleverantör (ACME Business Group) vars marknadsföringsgrupp arbetar med externa byråer.
-* [Märk upp dina resurser (schemafält och segment)]{#label-resources}: Tilldela **[!UICONTROL PHI/ Regulated Health Data]** för att schemalägga resurser och segment.
-* [Skapa en profil som länkar ihop dem]{#policy}: Skapa en profil för att länka etiketterna på dina resurser till etiketterna i din roll och neka åtkomst till schemafält och segment. Detta nekar åtkomst till schemafältet och segmentet i alla sandlådor för användare som inte har matchande etiketter.
+* [Ange en etikett för rollerna för användarna](#label-roles): Använd exemplet med en vårdleverantör (ACME Business Group) vars marknadsföringsgrupp arbetar med externa byråer.
+* [Märk upp dina resurser (schemafält och segment)](#label-resources): Tilldela **[!UICONTROL PHI/ Regulated Health Data]** för att schemalägga resurser och segment.
+* [Skapa en profil som länkar ihop dem](#policy): Skapa en profil för att länka etiketterna på dina resurser till etiketterna i din roll och neka åtkomst till schemafält och segment. Detta nekar åtkomst till schemafältet och segmentet i alla sandlådor för användare som inte har matchande etiketter.
 
 ## Behörigheter
 
@@ -162,7 +162,7 @@ Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="Konfigurera tillåtna och otillåtna åtgärder för en princip"
->abstract="Välj Tillåt åtkomst till för att konfigurera tillåtna åtgärder som dina användare kan utföra mot resurser. Markera Neka åtkomst till om du vill konfigurera otillåtna åtgärder som användarna inte kan utföra mot resurser."
+>abstract="A <b>neka åtkomst till</b> principen nekar användare åtkomst när villkoren är uppfyllda. Vid kombination med <b>Följande är false</b> - alla användare nekas åtkomst såvida de inte uppfyller de angivna kriterierna. Med den här typen av profil kan du skydda en känslig resurs och bara tillåta åtkomst till användare som har matchande etiketter. <br>A <b>ge tillträde till</b> -principen ger användarna åtkomst när villkoren är uppfyllda. Vid kombination med <b>Följande är sant</b> - användarna får åtkomst om de uppfyller de villkor som angetts. Detta nekar inte explicit åtkomst till användare, men lägger till en åtkomstbehörighet. Med den här typen av profil kan du ge ytterligare åtkomst till resurser och utöver de användare som redan har åtkomst via rollbehörigheter.&quot;</br>
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Redigera en profil"
 
 >[!CONTEXTUALHELP]
