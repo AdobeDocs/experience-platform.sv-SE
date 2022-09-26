@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för datauppsättningar
 topic-legacy: datasets
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 6238558e8edf968df4b24c43a626b736e2478be6
+source-git-commit: 3e25bd111d7a5cb482fa8e872452b352676b29ad
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1149'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ En bekräftelseruta visas. Välj **[!UICONTROL Delete]** för att bekräfta bort
 
 ## Ta bort en profilaktiverad datauppsättning
 
-Om en datauppsättning är aktiverad för [!DNL Profile]Om du tar bort den datauppsättningen via användargränssnittet tas den bort både från datasjön och profilarkivet inom plattformen.
+Om en datauppsättning är aktiverad för profil tas den bort från datasjön, identitetstjänsten och profilarkivet inom plattformen om den tas bort via användargränssnittet.
 
 Du kan ta bort en datauppsättning från [!DNL Profile] lagra endast (data lämnas kvar i datasjön) med hjälp av kundprofils-API:t i realtid. Mer information finns i [API-slutpunktsguide för profilsystemjobb](../../profile/api/profile-system-jobs.md).
 
