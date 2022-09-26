@@ -2,9 +2,9 @@
 title: Verizon MediaYahoo DataX-anslutning
 description: DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är värd för olika komponenter som gör att Verizon Media/Yahoo kan utbyta data med sina externa partner på ett säkert, automatiserat och skalbart sätt.
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: f61771ec11b8bd2d19e303b39e57e82da8f11ead
+source-git-commit: 0580816c471400ba17eddcb6b1a9dfbf01797938
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '767'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Läs mer om [Taxonomimetadata](https://developer.verizonmedia.com/datax/guide/ta
 
 >[!IMPORTANT]
 >
->När fler än 100 segment aktiveras till [!DNL Verizon Media/Yahoo DataX]kan du få hastighetsbegränsande fel från målet. När segment aktiveras för [!DNL Yahoo/DataX] rekommenderar vi att du aktiverar färre än 100 segment i ett aktiveringsdataflöde. Om du behöver aktivera fler segment skapar du ett nytt mål för samma konto.
+>När fler än 100 segment aktiveras till [!DNL Verizon Media/Yahoo DataX]kan du få hastighetsbegränsande fel från målet. När du aktiverar segment till det här målet ska du försöka aktivera färre än 100 segment i ett aktiveringsdataflöde. Om du behöver aktivera fler segment skapar du ett nytt mål för samma konto.
 
 [!DNL DataX] är avgiftsbegränsat enligt de kvotgränser för taxonomi- och målgruppsposter som anges i [DataX-dokumentation](https://developer.verizonmedia.com/datax/guide/rate-limits/).
 
