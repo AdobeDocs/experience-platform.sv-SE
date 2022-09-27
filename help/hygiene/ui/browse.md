@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: f246a014de7869b627a677ac82e98d4556065010
+source-git-commit: 425298ec28517bba4eca1bf0966fd3b205fce764
 workflow-type: tm+mt
-source-wordcount: '599'
+source-wordcount: '826'
 ht-degree: 0%
 
 ---
@@ -17,10 +17,6 @@ ht-degree: 0%
 >abstract="När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar med andra ord en specifik datahygienprocess, som omfattar dess aktuella status och andra relaterade detaljer. Varje arbetsorder tilldelas automatiskt ett eget unikt ID när den skapas."
 >text="See the data hygiene UI guide to learn more."
 
->[!IMPORTANT]
->
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
-
 När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datahygienprocess, t.ex. ett schemalagt utgångsdatum för datauppsättningen, som inkluderar dess aktuella status och andra relaterade detaljer.
 
 Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Adobe Experience Platform användargränssnitt.
@@ -31,20 +27,40 @@ När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet vi
 
 ![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
-<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of scheduled dataset expirations.
+I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** för att visa en lista över konsumentborttagningsåtgärder, och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
 
-![Image showing the [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png) -->
+![Bilden visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
+
+>[!IMPORTANT]
+>
+>Konsumentborttagningar är endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 
 ![Bild på de arbetsorderfilter som visas](../images/ui/browse/filters.png)
+
+Beroende på vilken typ av arbetsordning du visar finns det olika filteralternativ.
+
+### Filter för konsumentborttagning
+
+Följande filter gäller för begäranden om konsumentborttagning:
+
+| Filter | Beskrivning |
+| --- | --- |
+| [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Failed]**: Ett fel uppstod och jobbet kunde inte slutföras.</li><li>**[!UICONTROL Processing]**: Begäran har startats och bearbetas för närvarande.</li></ul> |
+| [!UICONTROL Date created] | Filtrera baserat på när arbetsordern skapades. |
+| [!UICONTROL Date updated] | Filtrera baserat på när arbetsordern senast uppdaterades. Skapanden räknas som uppdateringar. |
+
+### Filter för datauppsättningens förfallodatum
+
+Följande filter gäller för datauppsättningens förfallobegäranden:
 
 | Filter | Beskrivning |
 | --- | --- |
 | [!UICONTROL Status] | Filtrera baserat på arbetsorderns aktuella status:<ul><li>**[!UICONTROL Completed]**: Jobbet har slutförts.</li><li>**[!UICONTROL Pending]**: Jobbet har skapats men har inte körts än. A [förfallobegäran för datauppsättning](./dataset-expiration.md) antar denna status före det schemalagda raderingsdatumet. När borttagningsdatumet har passerats uppdateras statusen till [!UICONTROL Executing] om inte jobbet har avbrutits i förväg.</li><li>**[!UICONTROL Executing]**: Datauppsättningens förfallobegäran har startats och bearbetas för närvarande.</li><li>**[!UICONTROL Cancelled]**: Jobbet har avbrutits som en del av en manuell användarbegäran.</li></ul> |
 | [!UICONTROL Date created] | Filtrera baserat på när arbetsordern skapades. |
 | [!UICONTROL Expiration date] | Förfrågningar om förfallodatum för filterdatauppsättningen baserat på det schemalagda raderingsdatumet för den aktuella datauppsättningen. |
-| [!UICONTROL Date updated] | Förfrågningar om förfallodatum för filterdatauppsättning baserat på när arbetsordern senast uppdaterades. Skapanden och förfallodatum räknas som uppdateringar. |
+| [!UICONTROL Date updated] | Filtrera baserat på när arbetsordern senast uppdaterades. Skapanden och förfallodatum räknas som uppdateringar. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -69,15 +85,15 @@ Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
 ![Bild som visar ett arbetsorders-ID som markeras](../images/ui/browse/select-work-order.png)
 
-<!-- Depending on the type of work order selected, different information and controls are provided. These are covered in the sections below.
+Beroende på vilken typ av arbetsordning du har valt visas olika information och kontroller. Dessa beskrivs i avsnitten nedan.
 
-### Consumer delete details {#consumer-delete}
+### Information om borttagning av kund {#consumer-delete}
 
-The details of a consumer delete request are read-only, displaying its basic attributes such as its current status and the time elapsed since the request was made.
+Informationen om en konsumentborttagningsbegäran omfattar dess aktuella status och den tid som gått sedan begäran gjordes. Varje begäran innehåller även **[!UICONTROL Status by service]** som ger information om status för varje tjänst längre fram i kedjan som ingår i borttagningen. På den högra listen kan du använda kontroller för att uppdatera arbetsorderns namn och beskrivning.
 
-![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
+![Bild som visar informationssidan för en arbetsorder som ska tas bort av en kund](../images/ui/browse/consumer-delete-details.png)
 
-### Dataset expiration details {#dataset-expiration} -->
+### Information om förfallodatum för datauppsättning {#dataset-expiration}
 
 Detaljsidan för en datauppsättnings förfallodatum innehåller information om dess grundläggande attribut, inklusive det schemalagda förfallodatumet på de dagar som återstår innan borttagningen sker. I den högra listen kan du använda kontroller för att redigera eller avbryta förfallotiden.
 
@@ -85,4 +101,7 @@ Detaljsidan för en datauppsättnings förfallodatum innehåller information om 
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i guiden [schemalägga förfallodatum för en datauppsättning](./dataset-expiration.md).
+I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
+
+* [Hantera förfallodatum för datauppsättning](./dataset-expiration.md)
+* [Hantera konsumentborttagningar](./delete-consumer.md)

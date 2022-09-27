@@ -2,11 +2,9 @@
 title: Ta bort konsumentposter
 description: Lär dig hur du tar bort konsumentposter i Adobe Experience Platform användargränssnitt.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-hide: true
-hidefromtoc: true
-source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
+source-git-commit: 425298ec28517bba4eca1bf0966fd3b205fce764
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1091'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
+>Begäran om att ta bort kunder är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Platform UI kan du ta bort konsumentposter som ingår i identitetstjänsten och kundprofilen i realtid.
 
@@ -37,7 +35,7 @@ Välj **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
 
 ![Bilden visar [!UICONTROL Create request] knappen markeras](../images/ui/delete-consumer/create-request-button.png)
 
-Dialogrutan där begäran skapas visas. Som standard är **[!UICONTROL Consumer]** alternativet är markerat under **[!UICONTROL Action]** -avsnitt. Låt alternativet vara markerat.
+Dialogrutan där begäran skapas visas. Som standard är **[!UICONTROL Consumer]** alternativet är markerat under **[!UICONTROL Requested Action]** -avsnitt. Låt alternativet vara markerat.
 
 ![Bild som visar konsumentalternativet som valts i dialogrutan Skapa](../images/ui/delete-consumer/consumer-action.png)
 
@@ -130,7 +128,7 @@ Om du vill lägga till fler identiteter väljer du plusikonen (![Bild av plusiko
 
 ## Skicka begäran (#submit)
 
-När du är klar med att lägga till identiteter i begäran väljer du **[!UICONTROL Submit]**.
+När du är klar med att lägga till identiteter i begäran, under **[!UICONTROL Request settings]**, ange ett namn och en valfri beskrivning för begäran innan du väljer **[!UICONTROL Submit]**.
 
 ![Bilden visar [!UICONTROL Submit] knappen markeras](../images/ui/delete-consumer/submit.png)
 
@@ -138,16 +136,14 @@ Du ombeds bekräfta listan med identiteter vars data du vill ta bort. Välj **[!
 
 ![Bild som visar bekräftelsedialogrutan](../images/ui/delete-consumer/confirm-request.png)
 
-När begäran har skickats skapas en arbetsorder och visas på [!UICONTROL Consumer] -fliken i [!UICONTROL Data Hygiene] arbetsyta. Härifrån kan du övervaka arbetsorderns status medan den bearbetar begäran. De flesta arbetsorder för borttagning av konsumenter tar flera dagar att slutföra.
+När begäran har skickats skapas en arbetsorder och visas på [!UICONTROL Consumer] -fliken i [!UICONTROL Data Hygiene] arbetsyta. Härifrån kan du övervaka arbetsorderns status medan den bearbetar begäran.
+
+>[!NOTE]
+>
+>Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#consumer-delete-transparency) om du vill ha information om hur konsumentborttagningar bearbetas när de har körts.
 
 ## Nästa steg
 
 I det här dokumentet beskrivs hur du tar bort konsumentposter i användargränssnittet för Experience Platform. Mer information om hur du utför andra datahygienuppgifter i användargränssnittet finns i [översikt över användargränssnittet för datahygien](./overview.md).
 
-<!--
-
-Paragraph below should be commented out until workorder.md will be added to the TOC.
-
-To learn how to delete consumer records using the Data Hygiene API, refer to the [work order endpoint guide](../api/workorder.md).
-
--->
+Mer information om hur du tar bort konsumentposter med hjälp av API:t för datahygien finns i [slutpunktsguide för arbetsorder](../api/workorder.md).

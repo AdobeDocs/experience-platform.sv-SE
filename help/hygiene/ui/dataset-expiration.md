@@ -2,20 +2,16 @@
 title: Hantera förfallodatum för datauppsättning
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 5a12c75a54f420b2ca831dbfe05105dfd856dc4d
+source-git-commit: 425298ec28517bba4eca1bf0966fd3b205fce764
 workflow-type: tm+mt
-source-wordcount: '422'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
 
 # Hantera förfallodatum för datauppsättning
 
->[!IMPORTANT]
->
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
-
-The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Platform UI kan du schemalägga en förfallotid för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som slutförd.
+The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Platform UI kan du schemalägga förfallotider för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna markeras förfallotiden som slutförd.
 
 >[!WARNING]
 >
@@ -29,11 +25,13 @@ Om du vill skapa en ny begäran väljer du **[!UICONTROL Create request]** från
 
 ![Bilden visar [!UICONTROL Create request] knappen markeras](../images/ui/ttl/create-request-button.png)
 
-<!-- The request creation dialog appears. Under the **[!UICONTROL Action]** section, select **[!UICONTROL Dataset]** to update the available controls for dataset expiration scheduling-->
+Dialogrutan där begäran skapas visas. Under **[!UICONTROL Requested Action]** avsnitt, markera **[!UICONTROL Delete Dataset]** om du vill uppdatera de tillgängliga kontrollerna för schemaläggning av datauppsättningens förfallodatum.
+
+![Bilden visar [!UICONTROL Create request] knappen markeras](../images/ui/ttl/dataset-selected.png)
 
 ### Välj ett datum och en datauppsättning
 
-Dialogrutan där begäran skapas visas. Under **[!UICONTROL Action]** väljer du ett datum som du vill att datauppsättningen ska tas bort av. Du kan ange datumet manuellt (i formatet `mm/dd/yyyy`) eller välj kalenderikonen (![Bild på kalenderikonen](../images/ui/ttl/calendar-icon.png)) för att välja datumet i en dialogruta.
+Dialogrutan där begäran skapas visas. Under **[!UICONTROL Requested Action]** väljer du ett datum som du vill att datauppsättningen ska tas bort av. Du kan ange datumet manuellt (i formatet `mm/dd/yyyy`) eller välj kalenderikonen (![Bild på kalenderikonen](../images/ui/ttl/calendar-icon.png)) för att välja datumet i en dialogruta.
 
 ![Bild som visar ett förfallodatum som anges för datauppsättningen](../images/ui/ttl/select-date.png)
 
@@ -47,13 +45,17 @@ Nästa, under **[!UICONTROL Dataset Details]**, markerar du databasikonen (![Bil
 
 ### Skicka begäran
 
-När du har valt en datauppsättning och ett förfallodatum väljer du **[!UICONTROL Submit]**.
+The [!UICONTROL Dataset Details] fyller i så att den primära identiteten och schemat för den valda datauppsättningen inkluderas. Under **[!UICONTROL Request settings]**, ange ett namn och en valfri beskrivning för begäran, följt av **[!UICONTROL Submit]**.
 
 ![Bilden visar [!UICONTROL Submit] knappen markeras](../images/ui/ttl/submit.png)
 
 Du ombeds bekräfta datumet då datauppsättningen ska tas bort senast. Välj **[!UICONTROL Submit]** för att fortsätta.
 
 När begäran har skickats skapas en arbetsorder och visas på huvudfliken i [!UICONTROL Data Hygiene] arbetsyta. Härifrån kan du övervaka arbetsorderns status medan den bearbetar begäran.
+
+>[!NOTE]
+>
+>Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#dataset-expiration-transparency) om du vill ha information om hur datauppsättningens förfallodatum behandlas när de har körts.
 
 ## Redigera eller avbryta en förfallotid för en datauppsättning
 
@@ -63,4 +65,6 @@ På informationssidan om datauppsättningens förfallodatum, visar den högra li
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du schemalägger förfallodatum för datauppsättningar i användargränssnittet i Experience Platform. Om du vill lära dig hur du schemalägger förfallodatum för datauppsättningar med hjälp av API:t för datahygien kan du läsa [Slutpunktshandbok för datauppsättningens förfallodatum](../api/dataset-expiration.md).
+I det här dokumentet beskrivs hur du schemalägger förfallodatum för datauppsättningar i användargränssnittet i Experience Platform. Mer information om hur du utför andra datahygienuppgifter i användargränssnittet finns i [översikt över användargränssnittet för datahygien](./overview.md).
+
+Om du vill lära dig hur du schemalägger förfallodatum för datauppsättningar med hjälp av API:t för datahygien kan du läsa [Slutpunktshandbok för datauppsättningens förfallodatum](../api/dataset-expiration.md).

@@ -4,7 +4,7 @@ user-guide-title: Hjälp om datahygien
 breadcrumb-title: Handbok för datahygien
 user-guide-description: Hantera förfrågningar om konsumentdata för att följa juridiska sekretessregler som GDPR och CCPA.
 feature: Data Hygiene
-source-git-commit: 724852c63886ea8761b177c4351cca8a6fe748c3
+source-git-commit: c5a09a01ed9cc180ea5623af6f2c9f176a8334dc
 workflow-type: tm+mt
 source-wordcount: '49'
 ht-degree: 4%
@@ -23,5 +23,5 @@ ht-degree: 4%
 * API för datahygien {#api}
    * [Översikt](./api/overview.md)
    * [Utgångsdatum för datauppsättning](./api/dataset-expiration.md)
-   * [Raderingsjobb för konsument](./api/jobs.md)
+   * [Raderingsjobb för konsument](./api/workorder.md)
    * [Kvot](./api/quota.md)
