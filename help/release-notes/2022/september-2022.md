@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 5335c77b4636d10064e8786525c9f8f893371b9b
+source-git-commit: a3f12b9524d393441923cd11e09ed3e406814691
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '1333'
 ht-degree: 1%
 
 ---
@@ -16,6 +16,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [Källor](#sources)
 
 ## Experience Data Model (XDM) {#xdm}
@@ -76,6 +77,32 @@ Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild 
 | Stöd för borttagning av datauppsättningar | Identitetstjänsten har nu stöd för borttagning av datauppsättningar vid begäran via [Katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), användargränssnittet eller datahygien. Läs guiden på [ta bort datauppsättningar i användargränssnittet](../../catalog/datasets/user-guide.md#delete-a-dataset) för mer information. |
 
 Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
+
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
+
+AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa modeller som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+
+### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Spara utkastinstans | Med den här nya funktionen kan marknadsföringsanalytiker spara modellkonfigurationen som ett utkast under konfigurationer och fortsätta redigera utkastet tills det är klart innan utbildning och poängsättning. Scenarier där den här funktionen är användbar omfattar, men är inte begränsade till, när användare har flera fält att definiera i konfigurationsarbetsflödet som de inte kan slutföra på en gång eller när en eller flera datauppsättningsstatistik (som kolumnfullständighet) tar tid att bearbeta innan de blir tillgängliga. Läs [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md) om du vill veta mer. |
+| Styrningspolitik | När användare har skickat in för att skapa en instans via konfigurationsarbetsflödet kontrollerar den nya tjänsten för regelefterlevnad om det finns några regelbrott för dataanvändningen och visar informationen i en port. Det ser till att dataåtgärder och marknadsföringsåtgärder är kompatibla med dataanvändningsprinciper som konfigurerats på Adobe Experience Platform. |
+
+Mer information om Attribution AI finns i [Översikt över Attribution AI](../../intelligent-services/attribution-ai/overview.md). Mer information om policyer för datastyrning finns i [profiler, översikt](../../data-governance/policies/overview.md).
+
+### Kund-AI
+
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Spara utkastinstans | Med den här nya funktionen kan marknadsföringsanalytiker spara modellkonfigurationen som ett utkast under konfigurationer och fortsätta redigera utkastet tills det är klart innan utbildning och poängsättning. Scenarier där den här funktionen är användbar omfattar, men är inte begränsade till, när användare har flera fält att definiera i konfigurationsarbetsflödet som de inte kan slutföra på en gång eller när en eller flera datauppsättningsstatistik (som kolumnfullständighet) tar tid att bearbeta innan de blir tillgängliga. Läs [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md) om du vill veta mer. |
+| Styrningspolitik | När användare har skickat in för att skapa en instans via konfigurationsarbetsflödet kontrollerar den nya tjänsten för regelefterlevnad om det finns några regelbrott för dataanvändningen och visar informationen i en port. Det ser till att dataåtgärder och marknadsföringsåtgärder är kompatibla med dataanvändningsprinciper som konfigurerats på Adobe Experience Platform. |
+
+Mer information om AI för kunder finns i [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). Mer information om policyer för datastyrning finns i [profiler, översikt](../../data-governance/policies/overview.md).
 
 ## Källor {#sources}
 
