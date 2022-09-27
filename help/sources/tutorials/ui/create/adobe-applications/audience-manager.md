@@ -1,15 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Målgruppshanterarens källkontakt;Audience Manager;målgruppshanterarens koppling
-solution: Experience Platform
 title: Skapa en Adobe Audience Manager Source Connection i användargränssnittet
-topic-legacy: overview
-type: Tutorial
-description: I den här självstudiekursen får du hjälp med att skapa en källanslutning för Adobe Audience Manager för att hämta data om konsumentupplevelsehändelser till plattformen med hjälp av användargränssnittet.
+description: I den här självstudiekursen får du hjälp med att skapa en källanslutning för Adobe Audience Manager så att du kan hämta data om konsumentupplevelsehändelser till plattformen med hjälp av användargränssnittet.
 exl-id: 90c4a719-aaad-4687-afd8-7a1c0c56f744
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 90a917ea2b623079f26c67b776dd46b62531c7da
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
@@ -20,20 +16,28 @@ I den här självstudiekursen får du hjälp med att skapa en källanslutning f�
 
 ## Skapa en källanslutning med Adobe Audience Manager
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan [!UICONTROL Sources]. Skärmen [!UICONTROL Catalog] visar en mängd olika källor som du kan skapa ett konto för.
+Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
 
-Under kategorin [!UICONTROL Adobe applications] väljer du **[!UICONTROL Adobe Audience Manager]** och sedan **[!UICONTROL Configure]**.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
+
+Under [!UICONTROL Adobe Application], markera **[!UICONTROL Adobe Audience Manager]** och sedan markera **[!UICONTROL Set up]**.
 
 ![katalog](../../../../images/tutorials/create/aam/catalog.png)
 
-Steget [!UICONTROL Select traits and segments] visas och ger dig ett interaktivt gränssnitt där du kan utforska och välja egenskaper, segment och data.
+### Markera egenskaper och segment
 
-* Den vänstra panelen i gränssnittet innehåller [!UICONTROL Select traits and segments]-alternativen samt en hierarkisk katalog över alla segment som är tillgängliga för dig.
+>[!NOTE]
+>
+>Du kan inte importera regionala data från Audience Manager-källan till Experience Platform. Om ni har användningsfall för Analytics som kräver regionala data kan ni använda [Källanslutning för analyser](../adobe-applications/analytics.md).
+
+The [!UICONTROL Select traits and segments] visas så att du får ett interaktivt gränssnitt där du kan utforska och välja egenskaper, segment och data.
+
+* Den vänstra panelen i gränssnittet innehåller [!UICONTROL Select traits and segments] samt en hierarkisk katalog över alla segment som är tillgängliga för dig.
 * Den högra delen av gränssnittet gör att du kan interagera med valda segment och välja bland specifika data som du vill använda.
 
 ![tilläggsdata](../../../../images/tutorials/create/aam/add-data.png)
 
-Om du vill navigera bland tillgängliga segment väljer du den mapp du vill komma åt på panelen [!UICONTROL All Segments]. Om du väljer en mapp kan du gå igenom mappens hierarki och visa en lista med segment som du kan filtrera igenom.
+Om du vill navigera bland tillgängliga segment väljer du den mapp du vill komma åt på menyn [!UICONTROL All Segments] -panelen. Om du väljer en mapp kan du gå igenom mappens hierarki och visa en lista med segment som du kan filtrera igenom.
 
 ![segment-mapp](../../../../images/tutorials/create/aam/segment-folder.png)
 
@@ -41,20 +45,20 @@ När du har identifierat och markerat de segment som du vill använda visas en n
 
 ![select-data](../../../../images/tutorials/create/aam/select-data.png)
 
-Du kan också markera rutorna **[!UICONTROL Select all segments]** och **[!UICONTROL Select all traits]**. Om du markerar alla segment kommer Audience Manager segment att få plats på plattformen, och om du väljer alla egenskaper aktiveras alla egenskaper från Audience Manager.
+Du kan också välja **[!UICONTROL Select all segments]** och **[!UICONTROL Select all traits]** rutor. Om du markerar alla segment kommer Audience Manager segment att få plats på plattformen, och om du väljer alla egenskaper aktiveras alla egenskaper från Audience Manager.
 
 När du är klar väljer du **[!UICONTROL Next]**
 
 ![helsegmentering](../../../../images/tutorials/create/aam/all-segments.png)
 
-Steget [!UICONTROL Review] visas så att du kan granska dina valda egenskaper och segment innan de är anslutna till plattformen. Informationen är grupperad i följande kategorier:
+The [!UICONTROL Review] visas så att du kan granska de valda egenskaperna och segmenten innan de är anslutna till plattformen. Informationen är grupperad i följande kategorier:
 
 * **[!UICONTROL Connection]**: Visar källplattformen och anslutningsstatus.
 * **[!UICONTROL Selected data]**: Visar antalet markerade segment och aktiverade egenskaper.
 
 ![recension](../../../../images/tutorials/create/aam/review.png)
 
-När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och anger en tid innan dataflödet skapas.
+När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
 
 ## Nästa steg
 

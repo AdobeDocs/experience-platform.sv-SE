@@ -1,27 +1,27 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Audience Manager-koppling;Målgruppshanterare;målgruppshanterare
 solution: Experience Platform
-title: Översikt över Audience Manager Source Connector
+title: Översikt över Audience Manager-källa
 topic-legacy: overview
-description: Adobe Audience Manager källanslutning strömmar förstahandsdata som samlats in i Audience Manager till Adobe Experience Platform.
+description: Adobe Audience Manager-källan strömmar förstahandsdata som samlats in i Audience Manager till Adobe Experience Platform.
 exl-id: be90db33-69e1-4f42-9d1a-4f8f26405f0f
-source-git-commit: d0b6885b6e8606692cfe1173b75c7d3537800a5f
+source-git-commit: 37e810ce6faf40f9980841b2c9d6eb29e8b0e82a
 workflow-type: tm+mt
-source-wordcount: '920'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
 
-# Audience Manager-kontakt
+# Audience Manager source
 
-Adobe Audience Manager dataanslutning strömmar förstahandsdata som samlats in i Adobe Audience Manager till Adobe Experience Platform. Kopplingen Audience Manager importerar två typer av data till plattformen:
+Adobe Audience Manager-källan strömmar förstahandsdata som samlats in i Adobe Audience Manager för aktivering i Adobe Experience Platform. Källan för Audience Manager importerar två typer av data till plattformen:
 
 - **Realtidsdata:** Data som samlats in i realtid på Audience Manager datainsamlingsserver. Dessa data används i Audience Manager för att fylla i regelbaserade egenskaper och kommer att visas i plattformen på kortast möjliga latenstid.
-- **Profildata:** Audience Manager använder realtids- och interndata för att ta fram kundprofiler. De här profilerna används för att fylla i identitetsdiagram och egenskaper för segmentimplementeringar.
+- **Profildata:** Audience Manager använder realtidsdata och inbyggda data för att ta fram kundprofiler. De här profilerna används för att fylla i identitetsdiagram och egenskaper för segmentimplementeringar.
 
-Kopplingen Audience Manager mappar dessa datakategorier till XDM-schemat (Experience Data Model) och skickar dem till Platform. Realtidsdata skickas som XDM ExperienceEvent-data, medan profildata skickas som enskilda XDM-profiler.
+Audience Manager-källan mappar dessa datatyper till ett XDM-schema (Experience Data Model) och skickar dem sedan till plattformen. Realtidsdata skickas som XDM ExperienceEvent-data, medan profildata skickas som enskilda XDM-profildata.
 
-Instruktioner om hur du skapar en anslutning med Adobe Audience Manager via plattformsgränssnittet finns i [Audience Manager-anslutning, genomgång](../../tutorials/ui/create/adobe-applications/audience-manager.md).
+Mer information finns i guiden [skapa en Audience Manager källanslutning i användargränssnittet](../../tutorials/ui/create/adobe-applications/audience-manager.md).
 
 ## Vad är Experience Data Model (XDM)?
 
@@ -29,7 +29,7 @@ XDM är en öppet dokumenterad specifikation som tillhandahåller ett standardis
 
 Genom att följa XDM-standarder kan kundupplevelsedata integreras på ett enhetligt sätt, vilket gör det enklare att leverera data och samla in information.
 
-Mer information om hur XDM används i Experience Platform finns i [XDM - systemöversikt](../../../xdm/home.md). Mer information om hur XDM-scheman som Profile och ExperienceEvent struktureras finns i [grunderna för schemakomposition](../../../xdm/schema/composition.md).
+Mer information om hur XDM används i Experience Platform finns i [XDM - systemöversikt](../../../xdm/home.md). Läs mer om hur XDM-scheman är strukturerade mellan profiler och händelser i [grunderna för schemakomposition](../../../xdm/schema/composition.md).
 
 ## XDM-scheman - exempel
 
@@ -43,21 +43,19 @@ Nedan visas exempel på Audience Manager-strukturen som är mappad till XDM Expe
 
 ![](images/aam-profile-xdm-for-profile-data.png)
 
-## Hur mappas fält från Adobe Audience Manager till XDM?
-
-Se dokumentationen för [Mappningsfält för Audience Manager](./mapping/audience-manager.md) för mer information.
+Mer information om hur fält mappas från Audience Manager till XDM finns i dokumentationen om [Mappningsfält för Audience Manager](./mapping/audience-manager.md).
 
 ## Datahantering på plattformen
 
 ### Datauppsättningar
 
-Datauppsättningar är en lagrings- och hanteringskonstruktion för en samling data, vanligtvis en tabell, som innehåller schema (kolumner) och fält (rader) och som görs tillgängliga via en dataanslutning. Audience Manager data består av realtidsdata, inkommande data och profildata. Om du vill hitta dina datauppsättningar för Audience Manager använder du sökfunktionen i användargränssnittet med de namnkonventioner som anges för varje datatyp.
+En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader) och som görs tillgängliga via en dataanslutning. Audience Manager data består av realtidsdata, inkommande data och profildata. Om du vill hitta dina datauppsättningar för Audience Manager använder du sökfunktionen i användargränssnittet med de namnkonventioner som anges för varje datatyp.
 
 Audience Manager-datauppsättningar är inaktiverade som standard för Profil och användare kan aktivera eller inaktivera datauppsättningar baserat på användningsfall. Vi rekommenderar inte att du inaktiverar datauppsättningar som ska användas för segmentmedlemskap i profilen.
 
 >[!NOTE]
 >
->AAM i realtid är den enda datauppsättningen som går till [!DNL Data Lake]. Alla andra datauppsättningar för Audience Manager går till [!DNL Profile], om de är aktiverade för [!DNL Profile]. Om de inte är aktiverade för [!DNL Profile], så får de inga data och de visas som tomma.
+>AAM i realtid är den enda datauppsättningen som går till datasjön. Alla andra datauppsättningar för Audience Manager går till [!DNL Profile], om de är aktiverade för [!DNL Profile]. Om de inte är aktiverade för [!DNL Profile], så får de inga data och de visas som tomma.
 
 | Namn på datauppsättning | Beskrivning | Klass |
 | --- | --- | --- |
@@ -72,11 +70,18 @@ Audience Manager-datauppsättningar är inaktiverade som standard för Profil oc
 
 ### Anslutningar
 
-Adobe Audience Manager skapar en anslutning i katalogen: Audience Manager Connection. Katalog är det system som används för att lagra och lagra data inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Se [Katalogtjänst - översikt](../../../catalog/home.md) om du vill ha mer information om katalog, anslutningar och anslutningar.
+Adobe Audience Manager skapar en anslutning i katalogen: Audience Manager Connection. Katalog är det system som används för att lagra och lagra data inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av anslutningar. Läs [Katalogtjänst - översikt](../../../catalog/home.md) om du vill ha mer information om katalog, anslutningar och anslutningar.
+
+### Segmentpopulation som påverkar profilen
+
+Storleken på segmentpopulationer har en direkt inverkan på profilnumren när du skickar ett Audience Manager-segment till plattformen för första gången. Det innebär att om du väljer alla segment kan det potentiellt orsaka profilöverskridningar som överskrider din behörighet för licensanvändning. Plattformen skiljer också på nya data från historiska data för profilinmatning. Ett segment med 100 förstahandsbaserade identiteter skapar 100 profiler. Om populationen i samma segment höjdes till 150 och sattes in på Platform kommer antalet profiler endast att öka med 50, eftersom det bara finns 50 nya profiler.
+
+Du kan även kontrollera profilanvändningen som ditt konto har tillgängligt via [Kontrollpanel för licensanvändning](../../../dashboards/guides/license-usage.md).
 
 ## Vilken fördröjning förväntas för Audience Manager Data on Platform?
 
-| Audience Manager data | Latens | Anteckningar |
-| --- | --- | --- |
-| Realtidsdata | &lt; 35 minuter. | Tiden från att hämtas på noden Audience Manager Edge till att visas på Data Lake för plattformen. |
-| Profildata | &lt; 2 dagar | Tid från att hämtas via DCS/PCS Edge-data och on-board-data, bearbetas till en användarprofil, till att sedan visas i profilen. Dessa data landar inte direkt på Platform Data Lake idag. Profilväxling kan aktiveras för datauppsättningar i Audience Manager-profiler för att importera dessa data direkt till profilen. |
+| Audience Manager data | Typ | Latens | Anteckningar |
+| --- | --- | --- | --- |
+| Realtidsdata | Händelser | &lt;25 minuter | Tiden från att samlas in på noden Audience Manager Edge till att visas i datarjön. |
+| Realtidsdata | Profiluppdateringar | &lt;10 minuter | Det är dags att lägga in kundprofilen i realtid. |
+| Realtid och onboarddata | Profiluppdateringar | 24 till 36 timmar | Tid från att hämtas via DCS/PCS Edge-data och onboarddata, bearbetas till en användarprofil, till att sedan visas i kundprofilen i realtid. För närvarande landar dessa data inte direkt i datasjön. Profilväxling kan aktiveras för datauppsättningar i Audience Manager-profiler för att importera dessa data direkt till kundprofilen i realtid. |
