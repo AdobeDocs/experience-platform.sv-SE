@@ -2,10 +2,10 @@
 title: API-guide för datahygien
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 724852c63886ea8761b177c4351cca8a6fe748c3
+source-git-commit: 16eecb22a1bec89c7dbac2fcee566a2226cf897f
 workflow-type: tm+mt
-source-wordcount: '345'
-ht-degree: 1%
+source-wordcount: '415'
+ht-degree: 0%
 
 ---
 
@@ -39,13 +39,17 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formaterar dina begäranden. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/api-guide.md#sample-api) i guiden Komma igång för Experience Platform API:er.
 
-<!-- ## Work orders
-
-A work order is a representation of a data hygiene task that deletes consumer identities from a specific dataset or all datasets. See the [work order endpoint guide](./workorder.md) for details on working with work orders in the API. -->
-
 ## Utgångsdatum för datauppsättning
 
 En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för datauppsättningen anger du en framtida tidpunkt då datauppsättningen ska tas bort. Se [Slutpunktshandbok för datauppsättningens förfallodatum](./dataset-expiration.md) om du vill ha mer information om schemaläggning av datauppsättningens förfallodatum i API:t.
+
+## Konsumentborttagningar
+
+>[!NOTE]
+>
+>Konsumentborttagningar är bara tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Sheild.
+
+Med API:t för datahygien kan du ta bort alla poster som är kopplade till en konsumentidentitet i en eller alla datauppsättningar. Alla datahygienåtgärder som tar bort konsumentidentiteter representeras av en konstruktion som kallas arbetsorder. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med konsumentborttagningar i API:t.
 
 ## Kvot
 

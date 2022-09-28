@@ -2,10 +2,10 @@
 title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 5a12c75a54f420b2ca831dbfe05105dfd856dc4d
+source-git-commit: c2ff0d5806e57f230b937e8754d40031fb4b2305
 workflow-type: tm+mt
-source-wordcount: '1405'
-ht-degree: 1%
+source-wordcount: '1450'
+ht-degree: 0%
 
 ---
 
@@ -55,7 +55,7 @@ GET /ttl?{QUERY_PARAMETERS}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl?page=1&size=50 \
+  https://platform.adobe.io/data/core/hygiene/ttl?updatedToDate=2021-08-01&author=LIKE%Jane Doe%25 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -68,38 +68,43 @@ Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följ
 
 ```json
 {
-  "results": [
+  "totalRecords": 3,
+  "ttlDetails": [
     {
-      "ttlId": "SDfba908e9fb2e427ab4275d20465631d7",
-      "datasetId": "62799c3e1151781b63ccaa28",
-      "imsOrg": "{ORG_ID}",
-      "status": "cancelled",
-      "expiry": "2022-05-09T22:57:05.531024Z",
-      "updatedAt": "2022-05-09T22:57:05.531025Z",
-      "updatedBy": "{USER_ID}"
+      "status": "completed",
+      "workorderId": "SDc17a9501345c4997878c1383c475a77b",
+      "imsOrgId": "885737B25DC460C50A49411B@AdobeOrg",
+      "datasetId": "f440ac301c414bf1b6ba419162866346",
+      "expiry": "2021-07-07T13:14:15Z",
+      "updatedAt": "2021-07-07T13:14:15Z",
+      "updatedBy": "Jane Doe <jane.doe@example.com> d741b5b877bf47cf@AdobeId"
     },
     {
-      "ttlId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
-      "datasetId": "62759f2ede9e601b63a2ee14",
-      "imsOrg": "{ORG_ID}",
       "status": "pending",
-      "expiry": "2032-12-31T23:59:59Z",
-      "updatedAt": "2022-05-09T22:41:46.731002Z",
-      "updatedBy": "{USER_ID}"
+      "workorderId": "SD8ef60b33dbed444fb81861cced5da10b",
+      "imsOrgId": "885737B25DC460C50A49411B@AdobeOrg",
+      "datasetId": "80f0d38820a74879a2c5be82e38b1a94",
+      "expiry": "2099-02-02T00:00:00Z",
+      "updatedAt": "2021-02-02T13:00:00Z",
+      "updatedBy": "John Q. Public <jqp@example.com> 93220281bad34ed0@AdobeId"
+    },
+    {
+      "status": "pending",
+      "workorderId": "SD2140ad4eaf1f47a1b24c05cce53e303e",
+      "imsOrgId": "885737B25DC460C50A49411B@AdobeOrg",
+      "datasetId": "9e63f9b25896416ba811657678b4fcb7",
+      "expiry": "2099-01-01T00:00:00Z",
+      "updatedAt": "2021-01-01T13:00:00Z",
+      "updatedBy": "Jane Doe <jane.doe@example.com> d741b5b877bf47cf@AdobeId"
     }
-  ],
-  "current_page": 1,
-  "total_pages": 36,
-  "total_count": 886
+  ]
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `results` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallodatum finns i svarsavsnittet för att skapa en [uppslagsanrop](#lookup). |
-| `current_page` | Den aktuella sidan med listade resultat. |
-| `total_pages` | Det totala antalet sidor i svaret. |
-| `total_count` | Det totala antalet datauppsättningsförfallodatum i svaret. |
+| `totalRecords` | Antalet datauppsättningsförfallodatum som matchade listanropets parametrar. |
+| `ttlDetails` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallodatum finns i svarsavsnittet för att skapa en [uppslagsanrop](#lookup). |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -110,20 +115,22 @@ Du kan söka efter en förfallotid för en datauppsättning via en GET-begäran.
 **API-format**
 
 ```http
-GET /ttl/{TTL_ID}
+GET /ttl/{DATASET_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum som du vill söka efter. |
+| `{DATASET_ID}` | ID:t för den datauppsättning vars förfallodatum du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
+Följande begäran letar upp förfalloinformationen för datauppsättningen `62759f2ede9e601b63a2ee14`:
+
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl/5b020a27e7040801dedbf46e \
+  https://platform.adobe.io/data/core/hygiene/ttl/62759f2ede9e601b63a2ee14 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -136,110 +143,71 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum.
 
 ```json
 {
-    "ttlId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
+    "workorderId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
     "datasetId": "62759f2ede9e601b63a2ee14",
     "imsOrg": "{ORG_ID}",
     "status": "pending",
     "expiry": "2023-12-31T23:59:59Z",
     "updatedAt": "2022-05-11T15:12:40.393115Z",
-    "updatedBy": "{USER_ID}"
+    "updatedBy": "{USER_ID}",
+    "displayName": "Example Dataset Expiration Request",
+    "description": "A dataset expiration request that will execute at the end of 2023"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `ttlId` | ID:t för datauppsättningens förfallodatum. |
+| `workorderId` | ID:t för datauppsättningens förfallodatum. |
 | `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
 | `imsOrg` | Organisationens ID. |
 | `status` | Den aktuella statusen för datauppsättningens förfallodatum. |
 | `expiry` | Det schemalagda datumet och den schemalagda tidpunkten när datauppsättningen tas bort. |
 | `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
 | `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
+| `displayName` | Visningsnamnet för förfallobegäran. |
+| `description` | En beskrivning av förfallobegäran. |
 
 {style=&quot;table-layout:auto&quot;}
 
-## Skapa en förfallotid för datauppsättning {#create}
+### Förfallotaggar för katalog
 
-Du kan skapa ett förfallodatum för en datauppsättning via en POST-förfrågan.
+När du använder [Katalog-API](../../catalog/api/getting-started.md) om du vill söka efter datauppsättningsinformation, om datauppsättningen har en aktiv förfallotid, visas den under `tags.adobe/hygiene/ttl`.
 
-**API-format**
-
-```http
-POST /ttl
-```
-
-**Begäran**
-
-Följande begäran schemalägger en datauppsättning `5b020a27e7040801dedbf46e` för borttagning i slutet av 2022 (Greenwich Mean Time).
-
-```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/hygiene/ttl \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-        "datasetId": "5b020a27e7040801dedbf46e",
-        "expiry": "2022-12-31T23:59:59Z"
-      }'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `datasetId` | ID:t för den datauppsättning som du vill schemalägga ett förfallodatum för. |
-| `expiry` | En ISO 8601-tidsstämpel för när datauppsättningen ska tas bort. |
-
-{style=&quot;table-layout:auto&quot;}
-
-**Svar**
-
-Ett lyckat svar returnerar information om datauppsättningens förfallodatum, med HTTP-status 200 (OK) om en befintlig förfallotid uppdaterades, eller 201 (Skapad) om det inte fanns någon tidigare förfallotid.
+Följande JSON representerar ett trunkerat svar för datauppsättningens information från Catalog, som har ett förfallovärde på `32503680000000`. Taggens värde kodar förfallodatumet som ett heltal i millisekunder sedan början av Unix-epoken.
 
 ```json
 {
-    "ttlId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
-    "datasetId": "5b020a27e7040801dedbf46e",
-    "imsOrg": "{ORG_ID}",
-    "status": "pending",
-    "expiry": "2032-12-31T23:59:59Z",
-    "updatedAt": "2022-05-09T22:38:40.393115Z",
-    "updatedBy": "{USER_ID}"
+  "63212313c308d51b997858ba": {
+    "name": "TTL Test Dataset",
+    "description": "A piecrust promise, made to be broken",
+    "imsOrg": "0FCC747E56F59C747F000101@AdobeOrg",
+    "sandboxId": "8dc51b90-d0f9-11e9-b164-ed6a398c8b35",
+    "tags": {
+      "adobe/hygiene/ttl": [ "32503680000000" ],
+      ...
+    },
+    ...
+  }
 }
 ```
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| `ttlId` | ID:t för datauppsättningens förfallodatum. |
-| `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
-| `imsOrg` | Organisationens ID. |
-| `status` | Den aktuella statusen för datauppsättningens förfallodatum. |
-| `expiry` | Det schemalagda datumet och den schemalagda tidpunkten när datauppsättningen tas bort. |
-| `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
-| `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
+## Skapa eller uppdatera en förfallotid för en datauppsättning {#create-or-update}
 
-{style=&quot;table-layout:auto&quot;}
-
-## Uppdatera utgångsdatum för en datauppsättning {#update}
-
-Du kan uppdatera en förfallotid för en datauppsättning via en PUT-begäran.
+Du kan skapa eller uppdatera ett förfallodatum för en datauppsättning via en PUT-begäran.
 
 **API-format**
 
 ```http
-PUT /ttl/{TTL_ID}
+PUT /ttl/{DATASET_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum som du vill ändra. |
-
-{style=&quot;table-layout:auto&quot;}
+| `{DATASET_ID}` | ID:t för den datauppsättning som du vill schemalägga en förfallotid för. |
 
 **Begäran**
 
-Följande begäran uppdaterar förfallodatumet för datauppsättningen `5b020a27e7040801dedbf46e` så att den upphör i slutet av 2023 (Greenwich Mean Time).
+Följande begäran schemalägger en datauppsättning `5b020a27e7040801dedbf46e` för borttagning i slutet av 2022 (Greenwich Mean Time). Om det inte finns något förfallodatum för datauppsättningen skapas ett nytt förfallodatum. Om datauppsättningen redan har en väntande förfallotid uppdateras den med den nya `expiry` värde.
 
 ```shell
 curl -X PUT \
@@ -250,35 +218,41 @@ curl -X PUT \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-        "expiry": "2023-12-31T23:59:59Z"
+        "expiry": "2022-12-31T23:59:59Z",
+        "displayName": "Example Expiration Request",
+        "description": "Cleanup identities required by JIRA request 12345 across all datasets in the prod sandbox."
       }'
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | `expiry` | En ISO 8601-tidsstämpel för när datauppsättningen ska tas bort. |
+| `displayName` | Ett visningsnamn för förfallobegäran. |
+| `description` | En valfri beskrivning av förfallobegäran. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
-Ett godkänt svar returnerar information om den uppdaterade förfallotiden.
+Ett lyckat svar returnerar information om datauppsättningens förfallodatum, med HTTP-status 200 (OK) om en befintlig förfallotid uppdaterades, eller 201 (Skapad) om det inte fanns någon tidigare förfallotid.
 
 ```json
 {
-    "ttlId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
-    "datasetId": "62759f2ede9e601b63a2ee14",
+    "workorderId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
+    "datasetId": "5b020a27e7040801dedbf46e",
     "imsOrg": "{ORG_ID}",
     "status": "pending",
-    "expiry": "2023-12-31T23:59:59Z",
-    "updatedAt": "2022-05-11T15:12:40.393115Z",
-    "updatedBy": "{USER_ID}"
+    "expiry": "2032-12-31T23:59:59Z",
+    "updatedAt": "2022-05-09T22:38:40.393115Z",
+    "updatedBy": "{USER_ID}",
+    "displayName": "Example Expiration Request",
+    "description": "Cleanup identities required by JIRA request 12345 across all datasets in the prod sandbox."
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `ttlId` | ID:t för datauppsättningens förfallodatum. |
+| `workorderId` | ID:t för datauppsättningens förfallodatum. |
 | `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
 | `imsOrg` | Organisationens ID. |
 | `status` | Den aktuella statusen för datauppsättningens förfallodatum. |
@@ -292,25 +266,29 @@ Ett godkänt svar returnerar information om den uppdaterade förfallotiden.
 
 Du kan avbryta en förfallotid för en datauppsättning genom att göra en DELETE-begäran.
 
+>[!NOTE]
+>
+>Endast förfallodatum för datauppsättning som har statusen `pending` kan avbrytas. Om du försöker avbryta ett förfallodatum som har körts eller som redan har avbrutits returneras ett HTTP 404-fel.
+
 **API-format**
 
 ```http
-DELETE /ttl/{TTL_ID}
+DELETE /ttl/{EXPIRATION_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum som du vill avbryta. |
+| `{EXPIRATION_ID}` | The `workorderId` av datauppsättningens förfallodatum som du vill avbryta. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran uppdaterar förfallodatumet för datauppsättningen `5b020a27e7040801dedbf46e` så att den upphör i slutet av 2023 (Greenwich Mean Time).
+Följande begäran avbryter en förfallotid för en datauppsättning med ID `SD5cfd7a11b25543a9bcd9ef647db3d8df`:
 
 ```shell
 curl -X DELETE \
-  https://platform.adobe.io/data/core/hygiene/ttl/5b020a27e7040801dedbf46e \
+  https://platform.adobe.io/data/core/hygiene/ttl/SD5cfd7a11b25543a9bcd9ef647db3d8df \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -319,45 +297,21 @@ curl -X DELETE \
 
 **Svar**
 
-Ett godkänt svar returnerar information om datauppsättningens förfallodatum, med dess `status` attribut har nu angetts till `cancelled`.
+Ett godkänt svar returnerar HTTP-status 204 (inget innehåll) och förfallodatumet `status` attribute is set to `cancelled`.
 
-```json
-{
-    "ttlId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
-    "datasetId": "62759f2ede9e601b63a2ee14",
-    "imsOrg": "{ORG_ID}",
-    "status": "cancelled",
-    "expiry": "2023-12-31T23:59:59Z",
-    "updatedAt": "2022-05-09T23:47:30.071186Z",
-    "updatedBy": "{USER_ID}"
-}
-```
+## Hämta förfallostatushistoriken för en datauppsättning
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| `ttlId` | ID:t för datauppsättningens förfallodatum. |
-| `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
-| `imsOrg` | Organisationens ID. |
-| `status` | Den aktuella statusen för datauppsättningens förfallodatum. |
-| `expiry` | Det schemalagda datumet och den schemalagda tidpunkten när datauppsättningen tas bort. |
-| `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
-| `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
-
-{style=&quot;table-layout:auto&quot;}
-
-## Hämta historiken för en datamängds förfallodatum
-
-Du kan slå upp historiken för en viss datamängds förfallodatum med hjälp av frågeparametern `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, om uppdateringar har tillämpats och om hur den har annullerats eller körts (om tillämpligt).
+Du kan slå upp förfallostatushistoriken för en viss datauppsättning med hjälp av frågeparametern `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, om uppdateringar har tillämpats och om hur den har annullerats eller körts (om tillämpligt).
 
 **API-format**
 
 ```http
-GET /ttl/{TTL_ID}?include=history
+GET /ttl/{DATASET_ID}?include=history
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum vars historik du vill söka efter. |
+| `{DATASET_ID}` | ID:t för den datauppsättning vars förfallohistorik du vill söka efter. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -365,7 +319,7 @@ GET /ttl/{TTL_ID}?include=history
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl/5b020a27e7040801dedbf46e?include=history \
+  https://platform.adobe.io/data/core/hygiene/ttl/62759f2ede9e601b63a2ee14?include=history \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -378,8 +332,12 @@ Ett svar returnerar information om datauppsättningens förfallodatum, med en `h
 
 ```json
 {
-  "ttlId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
+  "workorderId": "SD5cfd7a11b25543a9bcd9ef647db3d8df",
   "datasetId": "62759f2ede9e601b63a2ee14",
+  "datasetName": "Example Dataset",
+  "sandboxName": "prod",
+  "displayName": "Expiration Request 123",
+  "description": "Expiration Request 123 Description",
   "imsOrg": "{ORG_ID}",
   "status": "cancelled",
   "expiry": "2022-05-09T23:47:30.071186Z",
@@ -410,8 +368,12 @@ Ett svar returnerar information om datauppsättningens förfallodatum, med en `h
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `ttlId` | ID:t för datauppsättningens förfallodatum. |
+| `workorderId` | ID:t för datauppsättningens förfallodatum. |
 | `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
+| `datasetName` | Visningsnamnet för den datauppsättning som förfallodatumet gäller för. |
+| `sandboxName` | Namnet på sandlådan som måldatauppsättningen finns under. |
+| `displayName` | Visningsnamnet för förfallobegäran. |
+| `description` | En beskrivning av förfallobegäran. |
 | `imsOrg` | Organisationens ID. |
 | `history` | Visar historiken för uppdateringar för förfallodatumet som en array med objekt, där varje objekt innehåller `status`, `expiry`, `updatedAt`och `updatedBy` attribut för förfallodatum vid tidpunkten för uppdateringen. |
 
@@ -427,8 +389,11 @@ Följande tabell visar de tillgängliga frågeparametrarna när [ange förfallod
 | --- | --- | --- |
 | `size` | Ett heltal mellan 1 och 100 som anger det maximala antalet förfallodatum som ska returneras. Standardvärdet är 25. | `size=50` |
 | `page` | Ett heltal som anger vilken sida med förfallodatum som ska returneras. | `page=3` |
+| `orgId` | Matchar datamängdernas förfallodatum vars organisations-ID matchar parameterns. Standardvärdet är `x-gw-ims-org-id` huvuden och ignoreras såvida inte begäran tillhandahåller en tjänsttoken. | `orgId=885737B25DC460C50A49411B@AdobeOrg` |
 | `status` | En kommaavgränsad lista med statusvärden. När svaret inkluderas matchar det utgångsdatum för datauppsättningen vars aktuella status är bland de som visas. | `status=pending,cancelled` |
 | `author` | Matchar förfallodatum vars `created_by` är en matchning för söksträngen. Om söksträngen börjar med `LIKE` eller `NOT LIKE`behandlas resten som ett SQL-sökmönster. Annars behandlas hela söksträngen som en litteral sträng som exakt måste matcha hela innehållet i en `created_by` fält. | `author=LIKE %john%` |
+| `sandboxName` | Matchar datauppsättningens förfallodatum vars sandlådenamn exakt matchar argumentet. Standardvärdet är sandlådenamnet i begäran `x-sandbox-name` header. Använd `sandboxName=*` om du vill inkludera förfallodatum för datauppsättningar från alla sandlådor. | `sandboxName=dev1` |
+| `datasetId` | Matchar förfallodatum som gäller för en viss datauppsättning. | `datasetId=62b3925ff20f8e1b990a7434` |
 | `createdDate` | Matchar utgångsdatum som skapades i 24-timmarsfönstret med början vid angiven tidpunkt.<br><br>Observera att datum utan tid (som `2021-12-07`) representerar datetime i början av den dagen. Således `createdDate=2021-12-07` avser alla förfallodatum som skapades den 7 december 2021, från `00:00:00` via `23:59:59.999999999` (UTC). | `createdDate=2021-12-07` |
 | `createdFromDate` | Matchar utgångsdatum som skapades vid eller efter den angivna tiden. | `createdFromDate=2021-12-07T00:00:00Z` |
 | `createdToDate` | Matchar utgångsdatum som skapades vid eller före angiven tid. | `createdToDate=2021-12-07T23:59:59.999999999Z` |
