@@ -1,19 +1,38 @@
 ---
-title: Lägg till föreslagna värden i ett fält
+title: Hantera föreslagna värden i API
 description: Lär dig hur du lägger till föreslagna värden i ett strängfält i API:t för schemaregister.
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 19bd5d9c307ac6e1b852e25438ff42bf52a1231e
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '883'
 ht-degree: 0%
 
 ---
 
-# Lägga till föreslagna värden i ett fält
+# Hantera föreslagna värden i API
 
-I Experience Data Model (XDM) representerar ett uppräkningsfält ett strängfält som är begränsat till en fördefinierad delmängd av värden. Uppräkningsfält kan ge validering för att säkerställa att importerade data överensstämmer med en uppsättning godkända värden. Du kan också definiera en uppsättning föreslagna värden för ett strängfält utan att tvinga dem som begränsningar.
+För alla strängfält i Experience Data Model (XDM) kan du definiera en **enum** som begränsar de värden som fältet kan importera till en fördefinierad uppsättning. Om du försöker importera data till ett uppräkningsfält och värdet inte matchar någon av dem som definierats i konfigurationen, nekas intag.
 
-I [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/), representeras de begränsade värdena för ett uppräkningsfält av ett `enum` array, while a `meta:enum` -objektet innehåller egna visningsnamn för dessa värden:
+I motsats till enum lägger du till **föreslagna värden** till ett strängfält begränsar inte de värden som kan importeras. Föreslagna värden påverkar i stället vilka fördefinierade värden som är tillgängliga i [Segmenteringsgränssnitt](../../segmentation/ui/overview.md) när strängfältet inkluderas som ett attribut.
+
+>[!NOTE]
+>
+>Det finns en fördröjning på ungefär fem minuter för ett fälts uppdaterade föreslagna värden som ska återspeglas i segmenteringsgränssnittet.
+
+Den här guiden beskriver hur du hanterar föreslagna värden med [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Anvisningar om hur du gör detta i användargränssnittet i Adobe Experience Platform finns i [Användargränssnittsguide för uppräkningar och föreslagna värden](../ui/fields/enum.md).
+
+## Förutsättningar
+
+I den här handboken förutsätts du känna till elementen i schemakompositionen i XDM och hur du använder API:t för schemaregister för att skapa och redigera XDM-resurser. Om du behöver en introduktion läser du i följande dokumentation:
+
+* [Grunderna för schemakomposition](../schema/composition.md)
+* [API-guide för schemaregister](../api/overview.md)
+
+Vi rekommenderar att du läser [Utvecklingsregler för enum och föreslagna värden](../ui/fields/enum.md#evolution) om du uppdaterar befintliga fält. Om du hanterar föreslagna värden för scheman som ingår i en union kan du läsa [regler för att sammanfoga fasttext och föreslagna värden](../ui/fields/enum.md#merging).
+
+## Disposition
+
+I API:t är de begränsade värdena för **enum** fältet representeras av ett `enum` array, while a `meta:enum` -objektet innehåller egna visningsnamn för dessa värden:
 
 ```json
 "exampleStringField": {
@@ -34,7 +53,7 @@ I [API för schemaregister](https://developer.adobe.com/experience-platform-apis
 
 För uppräkningsfält tillåts inte schemaregistret `meta:enum` att utsträckas utöver de värden som anges i `enum`, eftersom ett försök att importera strängvärden utanför dessa begränsningar inte godkänns i valideringen.
 
-Du kan också definiera ett strängfält som inte innehåller ett `enum` -arrayen och använder bara `meta:enum` objekt för att ange föreslagna värden:
+Du kan också definiera ett strängfält som inte innehåller ett `enum` -arrayen och använder bara `meta:enum` objekt att ange **föreslagna värden**:
 
 ```json
 "exampleStringField": {
@@ -48,16 +67,13 @@ Du kan också definiera ett strängfält som inte innehåller ett `enum` -arraye
 }
 ```
 
-Eftersom strängen inte har en `enum` matris för att definiera begränsningar, dess `meta:enum` kan utökas så att den innehåller nya värden. I den här självstudien beskrivs hur du lägger till föreslagna värden i standardsträngfält och anpassade strängfält i API:t för schemaregister.
+Eftersom strängen inte har en `enum` matris för att definiera begränsningar, dess `meta:enum` kan utökas så att den innehåller nya värden.
 
-## Förutsättningar
+## Hantera föreslagna värden för standardfält
 
-I den här handboken förutsätts du känna till elementen i schemakompositionen i XDM och hur du använder API:t för schemaregister för att skapa och redigera XDM-resurser. Om du behöver en introduktion läser du i följande dokumentation:
+För befintliga standardfält kan du [lägg till föreslagna värden](#add-suggested-standard) eller [ta bort föreslagna värden](#remove-suggested-standard).
 
-* [Grunderna för schemakomposition](../schema/composition.md)
-* [API-guide för schemaregister](../api/overview.md)
-
-## Lägga till föreslagna värden i ett standardfält
+### Lägg till föreslagna värden {#add-suggested-standard}
 
 Utöka `meta:enum` av ett standardsträngfält kan du skapa [egen namnbeskrivning](../api/descriptors.md#friendly-name) för fältet i fråga i ett visst schema.
 
@@ -135,9 +151,71 @@ När du har använt beskrivningen svarar schemaregistret med följande när sche
 >}
 >```
 
-## Lägga till föreslagna värden i ett anpassat fält
+### Ta bort föreslagna värden {#remove-suggested-standard}
 
-Utöka `meta:enum` för ett anpassat fält kan du uppdatera fältets överordnade klass, fältgrupp eller datatyp genom en PATCH-begäran.
+Om ett standardsträngfält har fördefinierade föreslagna värden kan du ta bort värden som du inte vill se i segmenteringen. Detta görs genom att skapa en [egen namnbeskrivning](../api/descriptors.md#friendly-name) för det schema som innehåller `xdm:excludeMetaEnum` -egenskap.
+
+**API-format**
+
+```http
+POST /tenant/descriptors
+```
+
+**Begäran**
+
+Följande begäran tar bort de föreslagna värdena &quot;[!DNL Web Form Filled Out]&quot; och &quot;[!DNL Media ping]&quot; for `eventType` i ett schema baserat på [Klassen XDM ExperienceEvent](../classes/experienceevent.md).
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "@type": "xdm:alternateDisplayInfo",
+        "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18",
+        "xdm:sourceVersion": 1,
+        "xdm:sourceProperty": "/xdm:eventType",
+        "xdm:excludeMetaEnum": {
+          "web.formFilledOut": "Web Form Filled Out",
+          "media.ping": "Media ping"
+        }
+      }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `@type` | Den typ av beskrivning som definieras. För en egen namnbeskrivning måste det här värdet anges till `xdm:alternateDisplayInfo`. |
+| `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
+| `xdm:sourceVersion` | Huvudversionen av källschemat. |
+| `xdm:sourceProperty` | Sökvägen till den specifika egenskap vars föreslagna värden du vill hantera. Sökvägen ska börja med ett snedstreck (`/`) och inte sluta med en. Inkludera inte `properties` i sökvägen (använd till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
+| `meta:excludeMetaEnum` | Ett objekt som beskriver de föreslagna värden som ska exkluderas för fältet i segmentering. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyskapade beskrivningen. De föreslagna värdena i `xdm:excludeMetaEnum` döljs nu i segmenteringsgränssnittet.
+
+```json
+{
+  "@type": "xdm:alternateDisplayInfo",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/xdm:eventType",
+  "xdm:excludeMetaEnum": {
+    "web.formFilledOut": "Web Form Filled Out"
+  },
+  "meta:containerId": "tenant",
+  "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
+}
+```
+
+## Hantera föreslagna värden för ett anpassat fält {#suggested-custom}
+
+Hantera `meta:enum` för ett anpassat fält kan du uppdatera fältets överordnade klass, fältgrupp eller datatyp genom en PATCH-begäran.
 
 >[!WARNING]
 >
@@ -198,4 +276,4 @@ När ändringen har tillämpats svarar schemaregistret med följande när schema
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du lägger till föreslagna värden i strängfält i API:t för schemaregister. Se guiden [definiera anpassade fält i API](./custom-fields-api.md) om du vill ha mer information om hur du skapar olika fälttyper.
+I den här guiden beskrivs hur du hanterar föreslagna värden för strängfält i API:t för schemaregister. Se guiden [definiera anpassade fält i API](./custom-fields-api.md) om du vill ha mer information om hur du skapar olika fälttyper.

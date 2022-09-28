@@ -5,9 +5,9 @@ title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
+source-git-commit: e8ad829ac4ea89c0d0167e6b414db577c9ecf094
 workflow-type: tm+mt
-source-wordcount: '1837'
+source-wordcount: '1898'
 ht-degree: 0%
 
 ---
@@ -341,6 +341,10 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
     "click": "Mouse Click",
     "addCart": "Add to Cart",
     "checkout": "Cart Checkout"
+  },
+  "xdm:excludeMetaEnum": {
+    "web.formFilledOut": "Web Form Filled Out",
+    "media.ping": "Media ping"
   }
 }
 ```
@@ -350,10 +354,11 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
 | `@type` | Den typ av beskrivning som definieras. För en egen namnbeskrivning måste det här värdet anges till `xdm:alternateDisplayInfo`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
+| `xdm:sourceProperty` | Sökvägen till den specifika egenskap vars information du vill ändra. Sökvägen ska börja med ett snedstreck (`/`) och inte sluta med en. Inkludera inte `properties` i sökvägen (använd till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
 | `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
-| `meta:enum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i [!DNL Experience Platform] Gränssnitt. Det är viktigt att notera att `meta:enum` deklarerar inte en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` direkt via en PATCH-begäran till fältets överordnade resurs. |
+| `meta:enum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` kan användas för att lägga till föreslagna värden för fältet i segmenteringsgränssnittet. Det är viktigt att notera att `meta:enum` deklarerar inte en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` direkt via en PATCH-begäran till fältets överordnade resurs. |
+| `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
 
 {style=&quot;table-layout:auto&quot;}
 
