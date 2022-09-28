@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 981d604770fbc2e979346146845ad7bc80805356
+source-git-commit: b095461b0c2510e84ca9a3a368f4907f8b3d5370
 workflow-type: tm+mt
-source-wordcount: '1583'
+source-wordcount: '1684'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Plattformsanvändning [Adobe Admin Console](https://adminconsole.adobe.com) prod
 
 Mer information om åtkomstkontroll finns i [åtkomstkontroll - översikt](../home.md).
 
-### Mål 
+### Mål  {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
@@ -72,6 +72,15 @@ Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner 
    * Under aktiveringsprocessen kan man behöva välja segment som man vill aktivera till ett mål. Som administratör kan du tilldela användare i organisationen att endast se segment som är märkta med etiketter som användare har tillgång till, och segment som inte innehåller några etiketter.
 * Konfigurera användaråtkomst för att visa specifika fält i aktiveringsprocessen, baserat på roll, behörigheter och etiketter.
    * Under aktiveringsprocessen kan användaren behöva välja fält som ska aktiveras till ett mål. Som administratör kan du tilldela användare i din organisation behörighet att endast visa fält som är märkta med etiketter som användare har tillgång till och fält som inte innehåller några etiketter.
+
+>[!IMPORTANT]
+>
+>Sammanfattningsvis bör du tänka på följande när du arbetar med mål och attributbaserad åtkomstkontroll:
+>
+>* Du kan bara aktivera segment som du har behörighet att komma åt och visa i [segmentsurfvy](/help/segmentation/ui/overview.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) aktiveringsarbetsflödet.
+>* I [mappningssteg för aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)kan du bara visa och välja de fält som du har behörighet till för aktivering.
+>* När du vill aktivera ytterligare segment till ett befintligt mål där du inte har tillgång till alla fält som är mappade för export, blockeras aktiveringsarbetsflödet.
+
 
 Mer information om [!DNL Destinations], se [[!DNL Destinations] översikt](../../destinations/home.md).
 

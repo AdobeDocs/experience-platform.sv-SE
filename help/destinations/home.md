@@ -3,9 +3,9 @@ keywords: destinationer;adobe experience platform;platform;mål overview;activat
 title: Översikt över mål
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
+source-git-commit: 842aaa7104b277cf415d1ed9ee2744a200c07ce8
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '612'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,24 @@ Mer information finns i [måltyper och kategorier - översikt](./destination-typ
 
 Målfunktionerna i Platform fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](../access-control/home.md) och rulla nedåt till sidans nederkant.
 
+Följande tabell visar vilka behörigheter och behörighetskombinationer som krävs för att utföra vissa åtgärder på mål:
+
+| Behörighetsnivå | Beskrivning |
+| ---- | ----|
+| **[!UICONTROL Manage Destinations]** | Om du vill ansluta till mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). |
+| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Om du vill aktivera segment till mål måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
+
+{style=&quot;table-layout:auto&quot;}
+
 Mer information om åtkomstkontroller finns i [Användarhandbok för åtkomstkontroll](../access-control/ui/overview.md).
+
+### Attributbaserad åtkomstkontroll för mål {#attribute-based-access}
+
+Med attributbaserad åtkomstkontroll i Adobe Experience Platform kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut.
+
+Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer på fält som du har behörighet till. Dessutom kan du inte exportera data till ett mål om du inte har tillgång till alla fält i datauppsättningen.
+
+Mer information om hur destinationer fungerar med attributbaserade åtkomstkontroller finns i [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md#destinations).
 
 ## Begränsningar för datastyrning vid aktivering av data till destinationer {#data-governance}
 
@@ -64,7 +81,7 @@ Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet fö
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
 * [Sociala destinationer](./catalog/social/overview.md)
 
-Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i steget Granska i följande handböcker:
+Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i **[!UICONTROL Review]** steg i följande guider:
 
 * [Aktivera målgruppsdata för att direktuppspela segmentexportmål](./ui/activate-segment-streaming-destinations.md#review)
 * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md#review)
