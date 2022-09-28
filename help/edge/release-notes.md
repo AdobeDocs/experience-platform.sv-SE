@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: b12f97a7c5e937a116d86495b3434dd9c0805b04
+source-git-commit: 777a1749670f36abc09e4bacd190b1be17a9a237
 workflow-type: tm+mt
-source-wordcount: '1227'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,23 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](extension/web-sdk-ext-release-notes.md).
+
+## Version 2.13.0 - 28 september 2022
+
+**Nya funktioner**
+
+* Stöd för sidvis fullständig migrering har lagts till. Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js- och Web SDK-sidor.
+* Utökat konfigurerbart stöd för [klienttips för hög entropi-användaragent](fundamentals/user-agent-client-hints.md#high-entropy).
+* Stöd för nya `applyResponse` -kommando. Detta möjliggör hybridpersonalisering via [API för Edge Network Server](../server-api/overview.md).
+* QA-lägeslänkar fungerar nu på flera sidor.
+
+**Korrigeringar och förbättringar**
+
+* Ett problem har korrigerats där personalisering av klickspårningsstatistik inte uppdaterades när länkspårning inaktiverades.
+* Uppdaterade kommandon som genererar ett valideringsfel när okända alternativ anges.
+* The `_experience.decisioning.propositionEventType` egenskapen fylls nu i när händelser för visnings- och interaktionspersonalisering skickas automatiskt.
+* Dubblettvalidering av namnutrymme har lagts till för `getIdentity` -kommando.
+* Dubblettvalidering av beslutsomfattning har lagts till för `sendEvent` -kommando.
 
 ## Version 2.12.0 - 29 juni 2022
 
