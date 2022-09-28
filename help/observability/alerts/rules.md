@@ -4,9 +4,9 @@ title: Standardvarningsregler
 description: Detta dokument innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: c0559fc55531e2b0c2938294742397b43e9e0445
+source-git-commit: df79ecac33314cc73ba8ad2508516be706bac767
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '843'
 ht-degree: 0%
 
 ---
@@ -27,8 +27,15 @@ Följande varningsregler gäller [Dataintag](../../ingestion/home.md) och  [käl
 | Körningsinformation för källflöde | Källflöde har körts | Den här varningen utlöses när data har importerats från en källanslutning. |
 | Körningsfördröjningar för källflöde, fel och fel | Körningsfel för källflöde | Den här varningen utlöses när ett fel inträffar när data hämtas från en källanslutning. |
 | Körningsfördröjningar för källflöde, fel och fel | Fördröjning av intag | Den här varningen utlöses när ett batchmatningsflöde tar längre tid än 150 minuter att bearbeta. |
-| Körningsfördröjningar för källflöde, fel och fel | Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform. |
 | Körningsfördröjningar för källflöde, fel och fel | Inmatningsfel | Den här varningen utlöses när förhållandet mellan misslyckade poster och alla poster överstiger ett tröskelvärde på 0,5 %. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Om du tidigare har prenumererat på följande larmtyp får du inte längre några varningar eftersom den här varningen har tagits bort:
+
+| Prenumeration på I/O-händelse | Varningsregel | Beskrivning |
+| --- | --- | --- |
+| Körningsfördröjningar för källflöde, fel och fel | Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform. |
 
 {style=&quot;table-layout:auto&quot;}
 

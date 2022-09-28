@@ -3,9 +3,9 @@ keywords: Experience Platform;hemmabruk;populära ämnen; varningar
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på varningar i sitt sammanhang i användargränssnittet
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: 2acb58d21952699c60471cb4f4347af89621f045
+source-git-commit: d450dc7b0dc0303c9d33c3e8e003659e3140cf5b
 workflow-type: tm+mt
-source-wordcount: '816'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ De tillgängliga aviseringarna för källdataflöden är:
 | Start för källdataflöde | Den här varningen skickar ett meddelande när källdataflödet har startats. |
 | Slutförd körning av källdataflöde | Den här varningen skickar ett meddelande när data från källan har importerats till plattformen. |
 | Körningsfel för källdataflöde | Den här varningen skickar ett meddelande till dig om ett fel inträffar i dataflödet. |
-| Källdataflöde Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform. |
+| ~~Källdataflöde Brist på intag~~ | ~~Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform.~~ <br>**Obs!** Du får inte längre några varningar eftersom den här varningen har tagits bort. |
 
 Välj de aviseringar du vill prenumerera på och välj sedan **[!UICONTROL Next]** för att granska och slutföra dataflödet.
 
