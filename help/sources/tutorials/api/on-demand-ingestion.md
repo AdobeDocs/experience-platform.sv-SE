@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;flödestjänst;
 title: (Beta) Skapa en flödeskörning för behovsstyrd inmatning med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs stegen för att skapa ett flöde för on-demand-inmatning med API:t för Flow Service
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 659f99a47b533bba2a6084bc8e235df2a29a6386
+source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1157'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Flödeskörningar representerar en instans av flödeskörning. Om ett flöde till exempel är schemalagt att köras varje timme kl. 9.00, 10.00 och 11.00 har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
 
-Intag på begäran ger dig möjlighet att skapa ett flöde som körs mot ett givet dataflöde. Detta gör att dina användare kan skapa en flödeskörning baserat på givna parametrar och skapa en insatscykel, utan tjänstens tokens.
+Intag på begäran ger dig möjlighet att skapa ett flöde som körs mot ett givet dataflöde. Detta gör att dina användare kan skapa en flödeskörning baserat på givna parametrar och skapa en insatscykel, utan tjänstens tokens. Stöd för on-demand-konsumtion finns endast för batchkällor.
 
 I den här självstudiekursen beskrivs hur du använder on-demand-inmatning och skapar ett flöde med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

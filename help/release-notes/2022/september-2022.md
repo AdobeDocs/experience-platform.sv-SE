@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 3d7a04c0ec6cf6a9bed90c9c22db2e8b56bfa01f
+source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
 workflow-type: tm+mt
-source-wordcount: '1773'
+source-wordcount: '2272'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,7 @@ ht-degree: 1%
 
 Nya funktioner i Adobe Experience Platform:
 
+- [Attributbaserad åtkomstkontroll](#abac)
 - [Datahygien](#data-hygiene)
 - [[!UICONTROL Privacy Console]](#privacy-console)
 
@@ -25,6 +26,23 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Källor](#sources)
+
+## Attributbaserad åtkomstkontroll {#abac}
+
+>[!IMPORTANT]
+>
+>Attributbaserad åtkomstkontroll aktiveras från och med oktober 2022. Om du vill bli en tidig användare, vänligen kontakta din Adobe-representant.
+
+Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+
+Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Attributbaserad åtkomstkontroll | Med attributbaserad åtkomstkontroll kan du etikettera XDM-schemafält (Experience Data Model) och segment med etiketter som definierar användningsområde för organisation eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper som omfattar XDM-schemafält och -segment för att bättre hantera åtkomsten som ges till användare eller användargrupper (interna, externa eller externa användare). Mer information finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md). |
+| Behörigheter | Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram. Med behörigheter kan du skapa och hantera roller, tilldela önskade resursbehörigheter för de här rollerna och skapa profiler för att utnyttja etiketter och definiera vilka användarroller som har åtkomst till specifika plattformsresurser. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Användargränssnittshandbok för behörigheter](../../access-control/abac/ui/browse.md). |
+
+Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md). En omfattande guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attribueringsbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
 
 ## Datahygien {#data-hygiene}
 
@@ -172,5 +190,9 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | Audience Manager segmentpopulationens påverkan på kundprofilen i realtid | Intag av stora Audience Manager-segmentpopulationer har en direkt inverkan på det totala antalet profiler när du för första gången skickar ett Audience Manager-segment till plattformen via Audience Manager. Det innebär att om du väljer alla segment kan det eventuellt leda till ett profilantal som överskrider licensanvändningsbehörigheten. Mer information finns i [Översikt över Audience Manager-källa](../../sources/connectors/adobe-applications/audience-manager.md). Mer information om licensanvändningen finns i dokumentationen om [med kontrollpanelen för licensanvändning](../../dashboards/guides/license-usage.md). |
+| Stöd för Adobe Campaign Managed Cloud Service | Använd Adobe Campaign Managed Cloud Service-källan för att skicka data från Adobe Campaign v8.4-leverans och spårningsloggar till Experience Platform. Läs guiden på [skapa en källanslutning till en hanterad Cloud Service från Adobe Campaign i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/campaign.md) för mer information. |
+| API-stöd för on demand-inmatning för batchkällor | Använd on-demand-inmatning för att skapa ad hoc-flöden för ett givet dataflöde med [!DNL Flow Service] API. Skapade flödeskörningar måste anges som engångsintag. Mer information finns i guiden [skapa en flödeskörning för on-demand-inmatning med API](../../sources/tutorials/api/on-demand-ingestion.md) för mer information. |
+| API-stöd för nya försök med misslyckade dataflödeskörningar för batchkällor | Använd `re-trigger` för att försöka återanvända det misslyckade dataflödet via API:t. Läs guiden på [försöka köra misslyckade dataflöden igen med API](../../sources/tutorials/api/retry-flows.md) för mer information. |
+| API-stöd för filtrering av radnivådata för [!DNL Google BigQuery] och [!DNL Snowflake] källor | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för [!DNL Google BigQuery] och [!DNL Snowflake] källor. Mer information finns i guiden om att filtrera data för en källa med API:t. |
 
 Läs mer om källor i [källöversikt](../../sources/home.md).
