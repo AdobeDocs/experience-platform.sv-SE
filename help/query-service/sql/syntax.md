@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 33c45c53e2ff591e7b94be1b4b17c25d2fe9d497
+source-git-commit: 5ec37ee797ec297b2e5c275dc0e6091e4ee8ecae
 workflow-type: tm+mt
-source-wordcount: '3033'
+source-wordcount: '3160'
 ht-degree: 2%
 
 ---
@@ -488,6 +488,30 @@ Om du vill returnera värdet för en inställning använder du `SET [property ke
 ## PostgreSQL-kommandon
 
 Underavsnitten nedan täcker de PostgreSQL-kommandon som stöds av Query Service.
+
+### ANALYSERA TABELL
+
+The `ANALYZE TABLE` kommandot beräknar statistik för en tabell på den accelererade lagringsplatsen. Statistiken beräknas på utförda CTAS- eller ITAS-frågor för en given tabell på accelererad butik.
+
+**Exempel**
+
+```sql
+ANALYZE TABLE <original_table_name>
+```
+
+Nedan följer en lista över statistiska beräkningar som är tillgängliga efter användning av `ANALYZE TABLE` kommando:-
+
+| Beräknade värden | Beskrivning |
+|---|---|
+| `field` | Namnet på kolumnen i en tabell. |
+| `data-type` | Godtagbar datatyp för varje kolumn. |
+| `count` | Antalet rader som innehåller ett värde som inte är null för det här fältet. |
+| `distinct-count` | Antalet unika eller distinkta värden för det här fältet. |
+| `missing` | Antalet rader som har ett null-värde för det här fältet. |
+| `max` | Det högsta värdet från den analyserade tabellen. |
+| `min` | Det minsta värdet från den analyserade tabellen. |
+| `mean` | Genomsnittsvärdet för den analyserade tabellen. |
+| `stdev` | Standardavvikelsen för den analyserade tabellen. |
 
 ### BÖRJA
 
