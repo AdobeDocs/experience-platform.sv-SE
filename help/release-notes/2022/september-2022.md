@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
+source-git-commit: 5f79b10306f74db75b25654ca51969ea69e38299
 workflow-type: tm+mt
-source-wordcount: '2272'
+source-wordcount: '2485'
 ht-degree: 1%
 
 ---
@@ -22,9 +22,11 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [Granskningsloggar](#audit-logs)
+- [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
+- [Frågetjänst](#query-service)
 - [Källor](#sources)
 
 ## Attributbaserad åtkomstkontroll {#abac}
@@ -106,7 +108,17 @@ Med Experience Platform kan du granska användaraktivitet för olika tjänster o
 
 Mer information om de olika resursspecifika händelsetyperna som spåras av granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-## Datainsamling
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Etikett för användning | När den visas i widgetbiblioteket identifierar etiketten som används enkelt att det finns befintliga widgetar på din instrumentpanel. Det gör det enkelt att undvika duplicering, även om du kan lägga till samma widget flera gånger om du vill. |
+
+Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
+
+## Datainsamling {#data-collection}
 
 Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
 
@@ -178,6 +190,19 @@ Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild 
 | Stöd för borttagning av datauppsättningar | Identitetstjänsten har nu stöd för borttagning av datauppsättningar vid begäran via [Katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), användargränssnittet eller datahygien. Läs guiden på [ta bort datauppsättningar i användargränssnittet](../../catalog/datasets/user-guide.md#delete-a-dataset) för mer information. |
 
 Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
+
+## Frågetjänst {#query-service}
+
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Aviseringsprenumerations-API | Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Frågevarningar kan för närvarande bara prenumereras på med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
+| Datauppsättningsexempel | Med hjälp av datamängdsprover från frågetjänsten kan du utföra undersökande frågor på stora data, vilket minskar bearbetningstiden avsevärt och därmed kan ge korrekta frågor. |
+
+Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).
 
 ## Källor {#sources}
 
