@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 4e80588777e1c5f334e15533c7c44623a0cd2b64
+source-git-commit: bfdb25e853c16ca38c69d777362681a4b3b06a2f
 workflow-type: tm+mt
-source-wordcount: '1423'
+source-wordcount: '1463'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,14 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.14.0 - 28 september 2022
+
+* Lagt till ny `targetMigrationEnabled` konfiguration som möjliggör sidvis fullständig migrering.
+* En tillämpad svarsåtgärd har lagts till för att aktivera hybridimplementeringar av server och klient.
+* Ett kontextalternativ för användaragenttips har lagts till.
+
+Innehåller version 2.13.0 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.13.0 - 29 juni 2022
 
