@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 feature: Queries
-source-git-commit: 490a24df5ef127ba4ff6727d0d1cd5e0b381f447
+source-git-commit: f1f7bef6bcac5abfaa01f10849f41a55fef797e5
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '208'
 ht-degree: 6%
 
 ---
@@ -58,6 +58,7 @@ ht-degree: 6%
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
    - [Metadata-kommandon](sql/metadata.md)
    - [Förberedda programsatser](sql/prepared-statements.md)
+   - [Datauppsättningsexempel](sql/dataset-samples.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
    - [SSL-lägen](./clients/ssl-modes.md)
