@@ -1,29 +1,27 @@
 ---
-description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
-title: (Beta) Filbaserade alternativ för destinationskonfiguration för Destination SDK
+description: Med den här konfigurationen kan du ange viktig information för ditt filbaserade mål, som målnamn, kategori, beskrivning och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
+title: Filbaserade alternativ för destinationskonfiguration för Destination SDK
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
+source-git-commit: 1d6318e33be639237c2c8e6f1bf67e1702949c20
 workflow-type: tm+mt
-source-wordcount: '2353'
+source-wordcount: '2628'
 ht-degree: 2%
 
 ---
 
-# (Beta) Filbaserad målkonfiguration {#destination-configuration}
+# Filbaserad målkonfiguration {#destination-configuration}
 
 ## Översikt {#overview}
 
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+Med den här konfigurationen kan du ange viktig information för ditt filbaserade mål, som målnamn, kategori, beskrivning och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål. Du kan också använda den här konfigurationen för att visa alternativ som är relaterade till filtypen, filformatet eller komprimeringsinställningarna för de exporterade filerna.
 
-Med den här konfigurationen kan du ange viktig information för ditt filbaserade mål, som målnamn, kategori, beskrivning och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
-
-Den här konfigurationen kopplar även de andra konfigurationer som krävs för att målet ska fungera - målserver och målgruppsmetadata - till den här konfigurationen. Läs om hur du kan referera till de två konfigurationerna i en [avsnitt längre nedan](./destination-configuration.md#connecting-all-configurations).
+Den här konfigurationen kopplar även de andra konfigurationer som krävs för att målet ska fungera - målserver och målgruppsmetadata - till den här konfigurationen. Läs om hur du kan referera till de två konfigurationerna i en [avsnitt längre nedan](./file-based-destination-configuration.md#connecting-all-configurations).
 
 Du kan konfigurera funktionerna som beskrivs i det här dokumentet med hjälp av `/authoring/destinations` API-slutpunkt. Läs [Slutpunktsåtgärder för mål-API](./destination-configuration-api.md) för en fullständig lista över åtgärder som du kan utföra på slutpunkten.
 
 ## Exempel på destinationskonfiguration för Amazon S3 {#batch-example-configuration}
+
+Nedan visas ett exempel på en privat anpassad Amazon S3-destination som skapats via `/destinations` konfigurationsslutpunkt.
 
 ```json
 {
@@ -368,9 +366,9 @@ När du konfigurerar SFTP med autentiseringstypen SSH-nyckel måste användarna 
 
 Använd det här avsnittet för att be användare fylla i anpassade fält, som är specifika för ditt mål, när de ansluter till målet i användargränssnittet i Experience Platform.
 
-I exemplet nedan `customerDataFields` kräver att användare anger ett namn för sitt mål och anger [!DNL Amazon S3] filnamn och mappsökväg, liksom komprimeringstyp, filformat och flera andra alternativ för filexport.
+I exemplet nedan `customerDataFields` kräver att användare anger ett namn för sitt mål och anger [!DNL Amazon S3] filnamn och mappsökväg, liksom komprimeringstyp, filformat och flera andra filformateringsalternativ.
 
-Du kan komma åt och använda kundindata från kunddatafält i mallar. Använd makrot `{{customerData.name}}`. Om du till exempel ber användare att ange ett Amazon S3-bucket-fält, med namnet `bucket`kan du använda makrot till att få åtkomst till den i mallar `{{customerData.bucket}}`. Visa ett exempel på hur ett kunddatafält används i [målserverkonfiguration](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example).
+Du kan komma åt och använda kundindata från kunddatafält i mallar. Använd makrot `{{customerData.exampleName}}`. Om du till exempel ber användare att ange ett Amazon S3-bucket-fält, med namnet `bucket`kan du använda makrot till att få åtkomst till den i mallar `{{customerData.bucket}}`. Visa ett exempel på hur ett kunddatafält används i [målserverkonfiguration](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example).
 
 ```json
  "customerDataFields":[
@@ -558,6 +556,10 @@ Du kan komma åt och använda kundindata från kunddatafält i mallar. Använd m
       }
 ```
 
+>[!TIP]
+>
+>Alla filformateringskonfigurationer som listas i exemplet ovan beskrivs utförligt i [filformatskonfiguration](/help/destinations/destination-sdk/server-and-file-configuration.md#file-configuration) -avsnitt.
+
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `name` | Sträng | Ange ett namn för det anpassade fält som du introducerar. |
@@ -578,7 +580,7 @@ Det här avsnittet hänvisar till de gränssnittselement i konfigurationen ovan 
 ```json
 "uiAttributes":{
       "documentationLink":"http://www.adobe.com/go/YOURDESTINATION-en",
-      "category":"S3",
+      "category":"cloudStorage",
       "iconUrl":"https://dc5tqsrhldvnl.cloudfront.net/2/90048/da276e30c730ce6cd666c8ca78360df21.png",
       "connectionType":"S3",
       "flowRunsSupported":true,
@@ -591,7 +593,7 @@ Det här avsnittet hänvisar till de gränssnittselement i konfigurationen ovan 
 |---------|----------|------|
 | `documentationLink` | Sträng | Refererar till dokumentationssidan i [Målkatalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) till destinationen. Använd `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på destinationen. För ett mål som heter Moviestar använder du `http://www.adobe.com/go/destinations-moviestar-en`. Observera att den här länken bara fungerar när Adobe har aktiverat målet och dokumentationen har publicerats. |
 | `category` | Sträng | Hänvisar till den kategori som tilldelats ditt mål i Adobe Experience Platform. Mer information finns i [Målkategorier](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). Använd något av följande värden: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
-| `iconUrl` | Sträng | Den URL där du var värd för ikonen som ska visas på målkatalogkortet. |
+| `iconUrl` | Sträng | Den URL där du var värd för ikonen som ska visas på målkatalogkortet. För privata anpassade integreringar krävs inte detta. För producerade konfigurationer måste du dela en ikon med Adobe-teamet när du [skicka målet för granskning](/help/destinations/destination-sdk/submit-destination.md#logo). |
 | `connectionType` | Sträng | Vilken typ av anslutning det är, beroende på målet. Värden som stöds: <ul><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li></ul> |
 | `flowRunsSupported` | Boolean | Anger om målanslutningen ingår i [flödeskörningsgränssnitt](../../dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard). När inställningen är `true`: <ul><li>The **[!UICONTROL Last dataflow run date]** och **[!UICONTROL Last dataflow run status]** visas i målbläddringssidan.</li><li>The **[!UICONTROL Dataflow runs]** och **[!UICONTROL Activation data]** -flikar visas på målvysidan.</li></ul> |
 | `monitoringSupported` | Boolean | Anger om målanslutningen ingår i [övervakningsgränssnitt](../ui/destinations-workspace.md#browse). När inställningen är `true`, **[!UICONTROL View in monitoring]** -alternativet visas på målbläddringssidan. |
@@ -600,6 +602,10 @@ Det här avsnittet hänvisar till de gränssnittselement i konfigurationen ovan 
 {style=&quot;table-layout:auto&quot;}
 
 ## Destinationsleverans {#destination-delivery}
+
+Avsnittet om destinationsleverans anger exakt vart exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas. Du måste ange en eller flera `destinationServerId`är var data levereras och autentiseringsregeln. I de flesta fall är autentiseringsregeln som du bör använda `CUSTOMER_AUTHENTICATION`.
+
+The `deliveryMatchers` -avsnittet är valfritt och kan användas om du anger flera `destinationServerId`s. Om så är fallet, `deliveryMatchers` anger hur exporterade data ska delas mellan olika målservrar.
 
 ```json
  "destinationDelivery":[
@@ -621,7 +627,7 @@ Det här avsnittet hänvisar till de gränssnittselement i konfigurationen ovan 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet på något av följande sätt: <ul><li>`"authType": "S3"`</li><li>`"authType":"AZURE_CONNECTION_STRING"`</li><li>`"authType":"AZURE_SERVICE_PRINCIPAL"`</li><li>`"authType":"SFTP_WITH_SSH_KEY"`</li><li>`"authType":"SFTP_WITH_PASSWORD"`</li></ul> </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [Autentiseringsuppgifter](./credentials-configuration-api.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
-| `destinationServerId` | Sträng | The `instanceId` i [målserverkonfiguration](./destination-server-api.md) används för detta mål. |
+| `destinationServerId` | Sträng | The `instanceId` i [målserverkonfiguration](./server-and-file-configuration.md) som du [skapad](/help/destinations/destination-sdk/destination-server-api.md#create-file-based) för detta mål. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -649,7 +655,15 @@ Via `audienceTemplateId`är det här avsnittet också kopplat den här konfigura
 
 ## Schemakonfiguration i mappningssteget {#schema-configuration}
 
+Adobe Experience Platform Destination SDK stöder partnerdefinierade scheman. Med ett partnerdefinierat schema kan användare mappa profilattribut och identiteter till anpassade scheman som definierats av målpartners, ungefär som med [mål för direktuppspelning](destination-configuration.md#schema-configuration) arbetsflöde.
+
 Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbetsflödet för målaktivering. Genom att använda de parametrar som beskrivs nedan kan du bestämma om användare av Experience Platform kan mappa profilattribut och/eller identiteter till ditt filbaserade mål.
+
+Du kan skapa statiska, hårdkodade schemafält eller ange ett dynamiskt schema som Experience Platform ska ansluta till för att dynamiskt hämta och fylla i fält i mappningsarbetsflödets målschema. Målschemat visas på skärmbilden nedan.
+
+![Skärmbild som markerar målschemafälten i mappningssteget i aktiveringsarbetsflödet.](/help/destinations/destination-sdk/assets/target-schema-fields.png)
+
+### Konfiguration av statiskt hårdkodat schemafält
 
 ```json
 "schemaConfig":{
@@ -681,16 +695,14 @@ Använd parametrarna i `schemaConfig` för att aktivera mappningssteget i arbets
 
 ### Dynamisk schemakonfiguration i mappningssteget {#dynamic-schema-configuration}
 
-Adobe Experience Platform Destination SDK stöder partnerdefinierade scheman. Med ett partnerdefinierat schema kan användare mappa profilattribut och identiteter till anpassade scheman som definierats av målpartners, ungefär som med [mål för direktuppspelning](destination-configuration.md#schema-configuration) arbetsflöde.
-
-Använd parametrarna i  `dynamicSchemaConfig` för att definiera ett eget schema som plattformsprofilattribut och/eller identiteter kan mappas till.
+Använd parametrarna i  `dynamicSchemaConfig` för att dynamiskt hämta ditt eget schema som plattformsprofilattribut och/eller identiteter kan mappas till.
 
 ```json
 "schemaConfig":{
    "dynamicSchemaConfig":{
       "dynamicEnum": {
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
-         "destinationServerId":"{{destinationServerId}}",
+         "destinationServerId":"2aa8a809-c4ae-4f66-bb02-12df2e0a2279",
          "value": "Schema Name",
          "responseFormat": "SCHEMA"
       }
@@ -706,7 +718,7 @@ Använd parametrarna i  `dynamicSchemaConfig` för att definiera ett eget schema
 | `profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
 | `identityRequired` | Boolean | Använd `true` om användare ska kunna mappa identitetsnamnutrymmen från Experience Platform till det önskade schemat. |
-| `destinationServerId` | Sträng | The `instanceId` i [målserverkonfiguration](./destination-server-api.md) används för detta mål. |
+| `destinationServerId` | Sträng | The `instanceId` i [målserverkonfiguration](./destination-server-api.md) som du skapade för ditt dynamiska schema. Den här målservern innehåller HTTP-slutpunkten som Experience Platform ska anropa för att hämta det dynamiska schema som används för att fylla i målfält. |
 | `authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet på något av följande sätt: <ul><li>`"authType": "S3"`</li><li>`"authType":"AZURE_CONNECTION_STRING"`</li><li>`"authType":"AZURE_SERVICE_PRINCIPAL"`</li><li>`"authType":"SFTP_WITH_SSH_KEY"`</li><li>`"authType":"SFTP_WITH_PASSWORD"`</li></ul> </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [Autentiseringsuppgifter](./credentials-configuration-api.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `value` | Sträng | Namnet på det schema som ska visas i användargränssnittet i Experience Platform i mappningssteget. |
 | `responseFormat` | Sträng | Alltid inställt på `SCHEMA` när du definierar ett anpassat schema. |
@@ -720,7 +732,7 @@ Parametrarna i det här avsnittet avgör vilka identiteter som ditt mål accepte
 
 ```json
 "identityNamespaces": {
-        "adobe_id": {
+        "crm_id": {
             "acceptsAttributes": true,
             "acceptsCustomNamespaces": true
         },
@@ -736,9 +748,9 @@ Du måste ange vilken [!DNL Platform] identiteter som kunder kan exportera till 
 Identitetsnamnutrymmen kräver ingen 1-till-1-korrespondens mellan [!DNL Platform] och destinationen.
 Kunder kan till exempel mappa en [!DNL Platform] [!DNL IDFA] namnutrymme till ett [!DNL IDFA] namnutrymme från målet eller så kan de mappa samma [!DNL Platform] [!DNL IDFA] namnutrymme till en [!DNL Customer ID] namnutrymme i målet.
 
-## Batchkonfiguration {#batch-configuration}
+## Batchkonfiguration - Namnge filer och schemaläggning av export {#batch-configuration}
 
-I det här avsnittet hänvisas till de inställningar för filexport i konfigurationen ovan som Adobe ska använda för ditt mål i Adobe Experience Platform användargränssnitt.
+Det här avsnittet avser inställningarna för filnamngivning och exportschemaläggning som visas för destinationen i Adobe Experience Platform användargränssnitt. Värdena som du ställer in här visas i [Schemalägg segmentexport](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) steg i det filbaserade arbetsflödet för målaktivering.
 
 ```json
 "batchConfig":{
@@ -796,7 +808,10 @@ I det här avsnittet hänvisas till de inställningar för filexport i konfigura
 
 Använd konfigurationsmakron för filnamn för att definiera vad de exporterade filnamnen ska innehålla. Makrona i tabellen nedan beskriver element som finns i användargränssnittet i [filnamnskonfiguration](../ui/activate-batch-profile-destinations.md#file-names) skärm.
 
-Som en god praxis bör du alltid inkludera `SEGMENT_ID` makro i de exporterade filnamnen. Segment-ID:n är unika, så om du tar med dem i filnamnet är det bästa sättet att se till att filnamnen också är unika.
+
+>[!TIP]
+> 
+>Som en god praxis bör du alltid inkludera `SEGMENT_ID` makro i de exporterade filnamnen. Segment-ID:n är unika, så om du tar med dem i filnamnet är det bästa sättet att se till att filnamnen också är unika.
 
 | Makro | Gränssnittsetikett | Beskrivning | Exempel |
 |---|---|---|---|
@@ -849,7 +864,7 @@ Du kan använda `backfillHistoricalProfileData` -parametern i destinationskonfig
 
 ## Så här ansluter den här konfigurationen all nödvändig information för ditt mål {#connecting-all-configurations}
 
-Vissa av målinställningarna måste konfigureras via [målserver](./server-and-file-configuration.md) eller [konfiguration av målets metadata](./audience-metadata-management.md). Målkonfigurationen som beskrivs här kopplar samman alla dessa inställningar genom att referera till de två andra konfigurationerna enligt följande:
+Vissa av målinställningarna måste konfigureras via [målserver](./server-and-file-configuration.md) eller [konfiguration av målets metadata](./audience-metadata-management.md) slutpunkter. Målkonfigurationen som beskrivs här kopplar samman alla dessa inställningar genom att referera till de två andra konfigurationerna enligt följande:
 
-* Använd `destinationServerId` för att referera till målservern och mallkonfigurationen som har konfigurerats för ditt mål.
+* Använd `destinationServerId` för att referera till målservern och den filmallskonfiguration som har konfigurerats för ditt mål.
 * Använd `audienceMetadataId` för att referera till målgruppens metadatakonfiguration.

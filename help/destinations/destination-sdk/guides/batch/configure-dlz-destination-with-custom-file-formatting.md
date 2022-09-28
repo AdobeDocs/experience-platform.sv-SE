@@ -1,14 +1,15 @@
 ---
 description: Lär dig hur du använder Destination SDK för att konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
-title: (Beta) Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
-source-git-commit: fd3114a4578637dcf99232245f8d2cec64de14b5
+title: Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
+exl-id: 3a5c1188-c2b5-4e81-ae41-9fff797f08a6
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '763'
 ht-degree: 0%
 
 ---
 
-# (Beta) Konfigurera en [!DNL Data Landing Zone (DLZ)] mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration
+# Konfigurera en [!DNL Data Landing Zone (DLZ)] mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration
 
 ## Översikt {#overview}
 

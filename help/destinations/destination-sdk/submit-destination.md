@@ -2,7 +2,7 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 50f205a5ddd9ec264d7390911fef45dc595ca6a1
+source-git-commit: e68ae7d1cb87d078d9fce5a5df501cc6ce944403
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 0%
@@ -225,7 +225,7 @@ Ange ID:t för publiceringsbegäran för ditt mål. Mer information om hur du h�
 
 Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen. Som en del av inlämningsprocessen anger du pull-begäran (PR) för destinationsdokumentationen.
 
-## Logotyp för ditt mål
+## Logotyp för ditt mål {#logo}
 
 Målkatalogen innehåller en logotyp för varje destinationskort. I e-postmeddelandet med ditt tävlingsbidrag inkluderar du en bild med logotypen för destinationen.
 

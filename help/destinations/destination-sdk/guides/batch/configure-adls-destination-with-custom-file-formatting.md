@@ -1,14 +1,15 @@
 ---
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
-title: (Beta) Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
-source-git-commit: 1e6515bf4fe34258194f56d341e477a02a1c31be
+title: Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
+exl-id: cb67b126-cd30-4fb7-b67e-c15dc7daef73
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
 
-# (Beta) Konfigurera en [!DNL Azure Data Lake Storage] mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration
+# Konfigurera en [!DNL Azure Data Lake Storage] mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration
 
 ## Översikt {#overview}
 

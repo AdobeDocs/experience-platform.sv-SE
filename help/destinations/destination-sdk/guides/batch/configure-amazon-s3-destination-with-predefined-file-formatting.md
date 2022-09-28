@@ -1,15 +1,15 @@
 ---
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration.
-title: (Beta) Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration.
+title: Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration.
 exl-id: 0ecd3575-dcda-4e5c-af5c-247d4ea13fa1
-source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '770'
 ht-degree: 0%
 
 ---
 
-# (Beta) Konfigurera en [!DNL Amazon S3] mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration
+# Konfigurera en [!DNL Amazon S3] mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration
 
 ## Översikt {#overview}
 

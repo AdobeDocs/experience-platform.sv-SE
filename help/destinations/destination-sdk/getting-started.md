@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '610'
 ht-degree: 2%
 
 ---
@@ -78,7 +78,7 @@ Genom att följa stegen i den här artikeln fick du inloggningsuppgifter för Ad
 * Läs följande konfigurationsguider, beroende på måltyp:
 
    * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./configure-destination-instructions.md)
-   * [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](./configure-file-based-destination-instructions.md)
+   * [Använd Destination SDK för att konfigurera ett filbaserat mål](./configure-file-based-destination-instructions.md)
 
 * För alla åtgärder, se [API-dokumentation för målredigering](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
 * Använd [Postman-samling för målredigerings-API](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera destinationen med Destination SDK API-slutpunkterna. Om du vill komma igång med Postman går du till [steg för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).

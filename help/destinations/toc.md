@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 9336545ce77406ca8b1a04d9b9c0ce7752aa9ce5
+source-git-commit: 3a46eee98797da7b113f45624682377cc7ad05a3
 workflow-type: tm+mt
-source-wordcount: '950'
+source-wordcount: '945'
 ht-degree: 1%
 
 ---
@@ -173,9 +173,9 @@ ht-degree: 1%
    * Destination SDK {#functionality}
       * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
       * [Konfiguration för direktuppspelningsmål](./destination-sdk/destination-configuration.md)
-      * [(Beta) Filbaserad målkonfiguration](./destination-sdk/file-based-destination-configuration.md)
+      * [Filbaserad målkonfiguration](./destination-sdk/file-based-destination-configuration.md)
       * [Serverspecifikationer och mallspecifikationer för direktuppspelningsmål](./destination-sdk/server-and-template-configuration.md)
-      * [(Beta) Filbaserade mål, server- och filspecifikationer](./destination-sdk/server-and-file-configuration.md)
+      * [Filbaserad målserver och filspecifikationer](./destination-sdk/server-and-file-configuration.md)
       * [Meddelandeformat](./destination-sdk/message-format.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/audience-metadata-management.md)
       * Autentisering {#authentication}
@@ -205,15 +205,16 @@ ht-degree: 1%
             * [Validera mallsidiga kundfält](./destination-sdk/file-based-render-template-api.md)
    * Stödlinjer {#guides}
       * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
-      * [(Beta) Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
+      * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
       * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
       * Konfigurera filbaserade mål {#configure-file-based-destinations}
-         * [(Beta) Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
-         * [(Beta) Konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-custom-file-formatting.md)
-         * [(Beta) Konfigurera ett Azure Blob Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-blob-destination-with-custom-file-formatting.md)
-         * [(Beta) Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och konfiguration av anpassade filnamn](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
-         * [(Beta) Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och konfiguration av anpassade filnamn](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
-         * [(Beta) Konfigurera ett SFTP-mål med fördefinierade filformateringsalternativ och konfiguration av eget filnamn](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
+         * [Konfigurera filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)
+         * [Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
+         * [Konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-custom-file-formatting.md)
+         * [Konfigurera ett Azure Blob Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-blob-destination-with-custom-file-formatting.md)
+         * [Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
+         * [Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och konfiguration av anpassade filnamn](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
+         * [Konfigurera ett SFTP-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
    * Referens {#reference}
       * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/rate-limiting-retry-policy.md)
       * [Omformningsfunktioner som stöds](./destination-sdk/supported-functions.md)

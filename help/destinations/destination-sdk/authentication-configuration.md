@@ -2,9 +2,9 @@
 description: Använd autentiseringskonfigurationerna som stöds i Adobe Experience Platform Destination SDK för att autentisera användare och aktivera data till målslutpunkten.
 title: Autentiseringskonfiguration
 exl-id: 33eaab24-f867-4744-b424-4ba71727373c
-source-git-commit: 631c0ac02cb7f4f95500897ca224aa532393c109
+source-git-commit: 9b4c7da5aa02ae27608c2841b1d825445ac3015e
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -18,12 +18,12 @@ Den autentiseringskonfiguration som du väljer avgör hur Experience Platform sk
 Adobe Experience Platform Destination SDK stöder flera autentiseringstyper:
 
 * [Bärarautentisering](#bearer)
-* [(Beta) Amazon S3-autentisering](#s3)
-* [(Beta) Azure Blob Storage](#blob)
-* [(Beta) Azure Data Lake Storage](#adls)
-* [(Beta) Google Cloud-lagring](#gcs)
-* [(Beta) SFTP med SSH-nyckel](#sftp-ssh)
-* [(Beta) SFTP med lösenord](#sftp-password)
+* [[!DNL Amazon S3] autentisering](#s3)
+* [[!DNL Azure Blob] Lagring](#blob)
+* [[!DNL Azure Data Lake Storage]](#adls)
+* [[!DNL Google Cloud Storage]](#gcs)
+* [SFTP med SSH-nyckel](#sftp-ssh)
+* [SFTP med lösenord](#sftp-password)
 * [OAuth 2 med auktoriseringskod](#oauth2)
 * [OAUth 2 med lösenordsbeviljande](#oauth2)
 * [OAuth 2 med klientautentiseringsuppgifter](#oauth2)
@@ -49,15 +49,11 @@ Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations`
 ]
 ```
 
-## (Beta) [!DNL Amazon S3] autentisering {#s3}
+## [!DNL Amazon S3] autentisering {#s3}
 
 [!DNL Amazon S3] autentisering stöds för filbaserade mål i Experience Platform.
 
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
-
-Om du vill konfigurera Amazon S3-autentisering för ditt mål konfigurerar du `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
+Konfigurera [!DNL Amazon S3] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -67,13 +63,9 @@ Om du vill konfigurera Amazon S3-autentisering för ditt mål konfigurerar du `c
 ]
 ```
 
-## (Beta) [!DNL Azure Blob Storage] {#blob}
+## [!DNL Azure Blob Storage] {#blob}
 
 [!DNL Azure Blob Storage] autentisering stöds för filbaserade mål i Experience Platform.
-
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 Konfigurera [!DNL Azure Blob] autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
 
@@ -85,13 +77,9 @@ Konfigurera [!DNL Azure Blob] autentisering för ditt mål, konfigurera `custome
 ]
 ```
 
-## (Beta) [!DNL Azure Data Lake Storage] {#adls}
+## [!DNL Azure Data Lake Storage] {#adls}
 
 [!DNL Azure Data Lake Storage] autentisering stöds för filbaserade mål i Experience Platform.
-
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 Konfigurera [!DNL Azure Data Lake Storage] (ADLS) autentisering för ditt mål, konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
 
@@ -103,13 +91,9 @@ Konfigurera [!DNL Azure Data Lake Storage] (ADLS) autentisering för ditt mål, 
 ]
 ```
 
-## (Beta) [!DNL Google Cloud Storage] {#gcs}
+## [!DNL Google Cloud Storage] {#gcs}
 
 [!DNL Google Cloud Storage] autentisering stöds för filbaserade mål i Experience Platform.
-
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -120,13 +104,9 @@ Konfigurera [!DNL Azure Data Lake Storage] (ADLS) autentisering för ditt mål, 
 ```
 
 
-## (Beta) [!DNL SFTP] autentisering med [!DNL SSH] key {#sftp-ssh}
+## [!DNL SFTP] autentisering med [!DNL SSH] key {#sftp-ssh}
 
 [!DNL SFTP] autentisering med [!DNL SSH] -nyckeln stöds för filbaserade mål i Experience Platform.
-
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
 
@@ -138,13 +118,9 @@ Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations`
 ]
 ```
 
-## (Beta) [!DNL SFTP] autentisering med lösenord {#sftp-password}
+## [!DNL SFTP] autentisering med lösenord {#sftp-password}
 
 [!DNL SFTP] autentisering med lösenord stöds för filbaserade mål i Experience Platform.
-
->[!IMPORTANT]
->
->Filbaserat målstöd i Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations` slutpunkt enligt nedan:
 
@@ -160,7 +136,7 @@ Konfigurera `customerAuthenticationConfigurations` -parametern i `/destinations`
 
 [!DNL OAuth 2] Autentisering stöds för direktuppspelningsmål i Experience Platform.
 
-Mer information om hur du ställer in de olika OAuth 2-flödena som stöds, samt om anpassat OAuth 2-stöd, finns i Destinationens SDK dokumentation på [OAuth 2-autentisering](./oauth2-authentication.md).
+Information om hur du konfigurerar de olika inställningarna som stöds [!DNL OAuth 2] och för anpassade [!DNL OAuth 2] support, läs Destinationens SDK dokumentation om [[!DNL OAuth 2] autentisering](./oauth2-authentication.md).
 
 
 ## När ska du använda `/credentials` API-slutpunkt {#when-to-use}
