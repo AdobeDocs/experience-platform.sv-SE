@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 5f79b10306f74db75b25654ca51969ea69e38299
+source-git-commit: 8813e423cd62de7932052c1e157f86cc3c4165dd
 workflow-type: tm+mt
-source-wordcount: '2485'
+source-wordcount: '2699'
 ht-degree: 1%
 
 ---
@@ -24,6 +24,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Granskningsloggar](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
+- [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Frågetjänst](#query-service)
@@ -52,9 +53,9 @@ Adobe Experience Platform har en robust uppsättning verktyg för hantering av s
 
 Med Adobe Experience Platform datahygifunktioner kan du rensa dina data genom att schemalägga automatiska datauppsättningsutgångsdatum och programmässigt ta bort konsumentdata per identitet.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Funktioner för borttagning av konsumentinformation är endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
+>Datahygien är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 Läs följande dokumentation för att komma igång med datahygien:
 
@@ -64,7 +65,7 @@ Läs följande dokumentation för att komma igång med datahygien:
 
 ## [!UICONTROL Privacy Console] {#privacy-console}
 
-The [!UICONTROL Privacy Console] i användargränssnittet för Experience Platform ger en översikt över viktiga insikter från sekretessrelaterade funktioner som [förfrågningar från registrerade från Privacy Servicen], [arbetsorder för datahygien]och [granskningsloggar]. Konsolen innehåller också flera handledningar för användning i produkten som hjälp att hantera vanliga sekretessarbetsflöden.
+The [!UICONTROL Privacy Console] i användargränssnittet för Experience Platform ger en översikt över viktiga insikter från sekretessrelaterade funktioner som [förfrågningar från registrerade från Privacy Servicen](../../privacy-service/home.md), [arbetsorder för datahygien](../../hygiene/home.md)och [granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md). Konsolen innehåller också flera handledningar för användning i produkten som hjälp att hantera vanliga sekretessarbetsflöden.
 
 Se [Översikt över Integritetskonsolen](../../landing/governance-privacy-security/privacy-console.md) för mer information om funktionen.
 
@@ -127,10 +128,39 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Funktion | Beskrivning |
 | --- | --- |
 | Integrering med vänster navigering i plattformsgränssnittet | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Platform. |
+| Användarattribuering i taggar och händelsevidarebefordran | När listning är tillgänglig [!UICONTROL Properties] in-taggar och vidarebefordran av händelser, visar nu alla angivna egenskaper när de senast uppdaterades och vilken användare som gjorde uppdateringen. |
 
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ----------- | ----------- |
+| Destination SDK | Destination SDK ger nu fullt stöd för partners och kunder som skapar batchvis (eller filbaserat) producerade eller privata destinationer. Mer information finns på följande dokumentationssidor: <ul><li>[Översikt över Destination SDK](/help/destinations/destination-sdk/overview.md)</li><li>[Konfigurera ett filbaserat mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Konfigurera filformateringsalternativ för filbaserade mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Testa dina filbaserade mål](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Nya eller uppdaterade destinationer**
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | The [!DNL Salesforce CRM] målet har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Ny eller uppdaterad dokumentation**
+
+| Dokumentation | Beskrivning |
+| ----------- | ----------- |
+| API-dokumentation för destinationsflödestjänst | The [Referenshandbok för destinations-API](https://developer.adobe.com/experience-platform-apis/references/destinations/) uppdaterades med vägledning om hur åtgärder ska utföras på filbaserade mål. Åtgärder för direktuppspelningsmål läggs till vid ett senare tillfälle. |
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -218,6 +248,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Stöd för Adobe Campaign Managed Cloud Service | Använd Adobe Campaign Managed Cloud Service-källan för att skicka data från Adobe Campaign v8.4-leverans och spårningsloggar till Experience Platform. Läs guiden på [skapa en källanslutning till en hanterad Cloud Service från Adobe Campaign i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/campaign.md) för mer information. |
 | API-stöd för on demand-inmatning för batchkällor | Använd on-demand-inmatning för att skapa ad hoc-flöden för ett givet dataflöde med [!DNL Flow Service] API. Skapade flödeskörningar måste anges som engångsintag. Mer information finns i guiden [skapa en flödeskörning för on-demand-inmatning med API](../../sources/tutorials/api/on-demand-ingestion.md) för mer information. |
 | API-stöd för nya försök med misslyckade dataflödeskörningar för batchkällor | Använd `re-trigger` för att försöka återanvända det misslyckade dataflödet via API:t. Läs guiden på [försöka köra misslyckade dataflöden igen med API](../../sources/tutorials/api/retry-flows.md) för mer information. |
-| API-stöd för filtrering av radnivådata för [!DNL Google BigQuery] och [!DNL Snowflake] källor | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för [!DNL Google BigQuery] och [!DNL Snowflake] källor. Mer information finns i guiden om att filtrera data för en källa med API:t. |
+| API-stöd för filtrering av radnivådata för [!DNL Google BigQuery] och [!DNL Snowflake] källor | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för [!DNL Google BigQuery] och [!DNL Snowflake] källor. Läs guiden på [filtrera data för en källa med API](../../sources/tutorials/api/filter.md) för mer information. |
 
 Läs mer om källor i [källöversikt](../../sources/home.md).
