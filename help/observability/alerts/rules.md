@@ -4,9 +4,9 @@ title: Standardvarningsregler
 description: Detta dokument innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: df79ecac33314cc73ba8ad2508516be706bac767
+source-git-commit: f707a6338ad72578328b363792010fa50ea9ce88
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '966'
 ht-degree: 0%
 
 ---
@@ -92,6 +92,18 @@ Följande varningsregler gäller [mål](../../destinations/home.md):
 | Körningsfördröjningar för målflöde, fel och fel | Överskridningsgraden överskrider tröskelvärdet | Den här varningen utlöses när förhållandet mellan överhoppade ID:n och totalt ID:n överskrider ett tröskelvärde. |
 
 {style=&quot;table-layout:auto&quot;}
+
+## Frågetjänst
+
+Följande varningsregler gäller [Frågetjänst](../../query-service/home.md):
+
+| Prenumeration på I/O-händelse | Varningsregel | Beskrivning |
+| --- | --- | --- |
+| Frågetjänstens ad hoc-information | Frågetjänstens ad hoc-process har slutförts | Den här varningen utlöses när ett ad hoc-schemajobb slutförs. |
+| Tillfälliga fördröjningar, fel och fel i frågetjänsten | Frågetjänstens ad hoc-fel | Den här varningen utlöses när ett ad hoc-schemajobb misslyckas. |
+| Information om schemalagd fråga för frågetjänst | Start av schemalagd fråga för frågetjänst | Den här varningen utlöses när en schemalagd fråga börjar köras. |
+| Information om schemalagd fråga för frågetjänst | Frågan har planerats för frågetjänsten | Den här varningen utlöses när ett schemalagt frågejobb slutförs. |
+| Schemalagda frågefördröjningar, fel och fel för frågetjänsten | schemalagd frågefel för frågetjänsten | Den här varningen utlöses när ett schemalagt frågejobb misslyckas. |
 
 <!-- (Definitions to be added once available)
 | Segment Job Delay | This alert triggers when a segment job takes longer than 150 minutes to complete. | N/A | 30 seconds | 3 hours |
