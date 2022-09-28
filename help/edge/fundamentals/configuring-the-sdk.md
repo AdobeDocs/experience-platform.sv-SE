@@ -4,10 +4,10 @@ description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Learn how to configure the Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: 4d0f1b3e064bd7b24e17ff0fafb50d930b128968
+source-git-commit: ed39d782ba6991a00a31b48abb9d143e15e6d89e
 workflow-type: tm+mt
-source-wordcount: '860'
-ht-degree: 4%
+source-wordcount: '999'
+ht-degree: 3%
 
 ---
 
@@ -44,15 +44,26 @@ Det finns många alternativ som kan anges under konfigurationen. Alla alternativ
 
 Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration. När du konfigurerar flera instanser på en sida måste du konfigurera ett `edgeConfigId` för varje instans.
 
-### `context`
+### `context` {#context}
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | ---------------- | ------------ | -------------------------------------------------- |
-| Array med strängar | Nej | `["web", "device", "environment", "placeContext"]` |
+| Array med strängar | Nej | `["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]` |
 
 {style=&quot;table-layout:auto&quot;}
 
 Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivningen i [Automatisk information](../data-collection/automatic-information.md). Om den här konfigurationen inte anges används alla kategorier som standard.
+
+>[!IMPORTANT]
+>
+>Alla kontextegenskaper, med undantag för `highEntropyUserAgentHints`, är aktiverade som standard. Om du har angett kontextegenskaper manuellt i Web SDK-konfigurationen måste du aktivera alla kontextegenskaper för att kunna fortsätta samla in den information som behövs.
+
+Aktivera [hög entropi-klienttips](user-agent-client-hints.md#enabling-high-entropy-client-hints) i Web SDK-distributionen måste du lägga till `highEntropyUserAgentHints` kontextalternativ, tillsammans med befintlig konfiguration.
+
+Om du till exempel vill hämta klienttips för hög entropi från webbegenskaper ser konfigurationen ut så här:
+
+`context: ["highEntropyUserAgentHints", "web"]`
+
 
 ### `debugEnabled`
 
@@ -134,9 +145,9 @@ Anger användarens standardsamtycke. Använd den här inställningen när ingen 
 * `"out"`: När den här inställningen är angiven ignoreras arbetet tills användaren ger sitt medgivande.
 När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Se [Stöd för samtycke](../consent/supporting-consent.md) för mer information.
 
-## Anpassningsalternativ
+## Anpassningsalternativ {#personalization}
 
-### `prehidingStyle`
+### `prehidingStyle` {#prehidingStyle}
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
@@ -151,6 +162,16 @@ Om ett element på webbsidan till exempel har ID:t `container`, vars standardinn
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
 ```
+
+### `targetMigrationEnabled` {#targetMigrationEnabled}
+
+Det här alternativet bör användas när du migrerar enskilda sidor från [!DNL at.js] till Web SDK.
+
+Använd det här alternativet om du vill att Web SDK ska kunna läsa och skriva det äldre `mbox` och `mboxEdgeCluster` cookies som används av [!DNL at.js]. Detta hjälper dig att behålla besökarprofilen när du flyttar från en sida där Web SDK används till en sida där [!DNL at.js] bibliotek och vice versa.
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `false` |
 
 ## Målgruppsalternativ
 
@@ -184,7 +205,9 @@ Aktiverar [!DNL Audience Manager] URL-destinationer, som gör det möjligt att b
 
 {style=&quot;table-layout:auto&quot;}
 
-Om true läser SDK in gamla AMCV-cookies. Med det här alternativet kan du gå över till Adobe Experience Platform Web SDK medan Visitor.js fortfarande används i vissa delar av webbplatsen. Om Visitor API är definierat på sidan frågar SDK om Visitor API för ECID. Med det här alternativet kan du dubbeltagga sidor med Adobe Experience Platform Web SDK och fortfarande ha samma ECID.
+Om true läser SDK in gamla AMCV-cookies. Med det här alternativet kan du gå över till Adobe Experience Platform Web SDK medan Visitor.js fortfarande används i vissa delar av webbplatsen.
+
+Om Visitor API är definierat på sidan frågar SDK om Visitor API för ECID. Med det här alternativet kan du dubbeltagga sidor med Adobe Experience Platform Web SDK och fortfarande ha samma ECID.
 
 ### `thirdPartyCookiesEnabled`
 
