@@ -2,20 +2,19 @@
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
-hide: true
-hidefromtoc: true
-source-git-commit: 230bcfdb92c3fbacf2e24e7210d61e2dbe0beb86
+source-git-commit: 0035f4611f2c269bb36f045c3c57e6e7bad7c013
 workflow-type: tm+mt
-source-wordcount: '2196'
+source-wordcount: '2260'
 ht-degree: 0%
 
 ---
 
 # Attributbaserad åtkomstkontroll från början till slut
 
-Attributbaserad åtkomstkontroll är en Adobe Experience Platform-funktion som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger kunder med flera varumärken och integritet större flexibilitet när det gäller att hantera användaråtkomst. Åtkomst till enskilda objekt, t.ex. schemafält och segment, kan beviljas/nekas med profiler som baseras på objektets attribut och roll. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
 
-Med den här funktionen kan du kategorisera schemafält, segment och så vidare med etiketter som definierar användningsområde för organisation eller data. I Adobe Journey Optimizer kan du använda samma etiketter på resor och erbjudanden. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält och bättre hantera vilka användare eller grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
+Med den här funktionen kan du kategorisera schemafält, segment och så vidare med etiketter som definierar användningsområde för organisation eller data. Du kan använda samma etiketter på resor, erbjudanden och andra objekt i Adobe Journey Optimizer. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält och bättre hantera vilka användare eller grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
+
 
 ## Komma igång
 
@@ -28,7 +27,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande plat
 
 ### Använd ärendeöversikt
 
-I den här handboken används ett exempel för att begränsa åtkomsten till känsliga data för att demonstrera arbetsflödet. Du kommer att gå igenom ett exempel på ett attributbaserat arbetsflöde för åtkomstkontroll där du kan skapa och tilldela roller, etiketter och profiler för att konfigurera om användarna kan eller inte kan komma åt vissa resurser i organisationen. Det här användningsexemplet beskrivs nedan:
+Du kommer att gå igenom ett exempel på ett attributbaserat arbetsflöde för åtkomstkontroll där du kan skapa och tilldela roller, etiketter och profiler för att konfigurera om användarna kan eller inte kan komma åt specifika resurser i organisationen. I den här handboken används ett exempel på hur åtkomsten till känsliga data begränsas för att demonstrera arbetsflödet. Det här användningsexemplet beskrivs nedan:
 
 Du är vårdgivare och vill konfigurera åtkomst till resurser i din organisation.
 
@@ -45,13 +44,13 @@ Du kommer att:
 
 ## Behörigheter
 
-[!UICONTROL Permissions] är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
+[!UICONTROL Permissions] är det område i Experience Cloud där administratörer kan definiera användarroller och profiler för att hantera behörigheter för funktioner och objekt i ett produktprogram.
 
-Via [!UICONTROL Permissions]kan du skapa och hantera roller samt tilldela önskade resursbehörigheter för rollerna. [!UICONTROL Permissions] gör det även möjligt att hantera etiketter, sandlådor och användare som är kopplade till en viss roll.
+Via [!UICONTROL Permissions]kan du skapa och hantera roller och tilldela önskade resursbehörigheter för dessa roller. [!UICONTROL Permissions] gör det även möjligt att hantera etiketter, sandlådor och användare som är kopplade till en viss roll.
 
-Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
+Kontakta systemadministratören för att få åtkomst om du inte har administratörsbehörighet.
 
-När du har administratörsbehörighet går du till [Adobe Experience Cloud](https://experience.adobe.com/) och logga in med dina inloggningsuppgifter för Adobe. När du är inloggad visas **[!UICONTROL Overview]** visas för din organisation som du har administratörsbehörighet för. På den här sidan visas de produkter som din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen som helhet. Välj **[!UICONTROL Permissions]** för att öppna arbetsytan för din plattformsintegrering.
+När du har administratörsbehörighet går du till [Adobe Experience Cloud](https://experience.adobe.com/) och logga in med dina inloggningsuppgifter för Adobe. När du är inloggad visas **[!UICONTROL Overview]** visas för din organisation som du har administratörsbehörighet för. På den här sidan visas vilka produkter din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen. Välj **[!UICONTROL Permissions]** för att öppna arbetsytan för din plattformsintegrering.
 
 ![Bild som visar den behörighetsprodukt som väljs i Adobe Experience Cloud](../images/flac-ui/flac-select-product.png)
 
@@ -80,7 +79,7 @@ Arbetsytan Behörigheter för plattformsanvändargränssnittet visas på **[!UIC
 >[!CONTEXTUALHELP]
 >id="platform_permissions_roles_about_create"
 >title="Skapa ny roll"
->abstract="Du kan skapa en ny roll för att kategorisera användare som har åtkomst till din Platform-instans bättre. Du kan till exempel skapa en roll för ett internt marknadsföringsteam och använda RHD-etiketten på den rollen, vilket gör att ditt interna marknadsföringsteam kan komma åt informationen om den skyddade hälsan (PHI). Du kan också skapa en roll för ett externt organ och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
+>abstract="Du kan skapa en ny roll för att kategorisera användare som har åtkomst till din Platform-instans bättre. Du kan till exempel skapa en roll för ett internt marknadsföringsteam och använda RHD-etiketten på den rollen, så att ditt interna marknadsföringsteam kan komma åt informationen om den skyddade hälsan (PHI). Du kan också skapa en roll för ett externt organ och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=en#create-a-new-role" text="Skapa en ny roll"
 
 >[!CONTEXTUALHELP]
@@ -88,7 +87,7 @@ Arbetsytan Behörigheter för plattformsanvändargränssnittet visas på **[!UIC
 >title="Rollöversikt"
 >abstract="I dialogrutan för rollöversikt visas de resurser och sandlådor som en viss roll har åtkomst till."
 
-Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilken typ av åtkomst de behöver.
+Roller är sätt att kategorisera de typer av användare som interagerar med din plattformsinstans och är byggstenar för åtkomstkontrollprinciper. En roll har en given uppsättning behörigheter, och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilken typ av åtkomst de behöver.
 
 För att komma igång väljer du **[!UICONTROL ACME Business Group]** från **[!UICONTROL Roles]** sida.
 
@@ -102,6 +101,10 @@ En lista över alla etiketter i organisationen visas. Välj **[!UICONTROL RHD]**
 
 ![Bild som visar den RHD-etikett som markeras och sparas](../images/abac-end-to-end-user-guide/abac-select-role-label.png)
 
+>[!NOTE]
+>
+>När du lägger till en organisationsgrupp i en roll läggs alla användare i gruppen till i rollen. Alla ändringar i organisationsgruppen (användare som har tagits bort eller lagts till) uppdateras automatiskt i rollen.
+
 ## Tillämpa etiketter på schemafält {#label-resources}
 
 Nu när du har konfigurerat en användarroll med [!UICONTROL RHD] label är nästa steg att lägga till samma etikett till de resurser som du vill styra för den rollen.
@@ -110,9 +113,9 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen och välj **[!UICONTR
 
 ![Bild som visar ACME Healthcare-schemat som väljs på fliken Scheman](../images/abac-end-to-end-user-guide/abac-select-schema.png)
 
-Nästa, välj **[!UICONTROL Labels]** för att visa en lista som visar de fält som är kopplade till ditt schema. Härifrån kan du tilldela etiketter till ett eller flera fält samtidigt. Välj **[!UICONTROL BloodGlucose]** och **[!UICONTROL InsulinLevel]** fält och sedan markera **[!UICONTROL Edit governance labels]**.
+Nästa, välj **[!UICONTROL Labels]** för att visa en lista som visar de fält som är kopplade till ditt schema. Härifrån kan du tilldela etiketter till ett eller flera fält samtidigt. Välj **[!UICONTROL BloodGlucose]** och **[!UICONTROL InsulinLevel]** fält och sedan markera **[!UICONTROL Apply access and data governance labels]**.
 
-![Bild som visar den BloodGlukos och InsulinLevel som väljs och redigerar styrningsetiketter som väljs](../images/abac-end-to-end-user-guide/abac-select-schema-labels-tab.png)
+![Bild som visar den BloodGlukos och InsulinLevel som väljs och som använder de etiketter för åtkomst och datastyrning som väljs](../images/abac-end-to-end-user-guide/abac-select-schema-labels-tab.png)
 
 The **[!UICONTROL Edit labels]** visas så att du kan välja de etiketter som du vill använda i schemafälten. I det här fallet väljer du **[!UICONTROL PHI/ Regulated Health Data]** etikett, markera **[!UICONTROL Save]**.
 
@@ -162,20 +165,24 @@ Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="Konfigurera tillåtna och otillåtna åtgärder för en princip"
->abstract="A <b>neka åtkomst till</b> principen nekar användare åtkomst när villkoren är uppfyllda. Vid kombination med <b>Följande är false</b> - alla användare nekas åtkomst såvida de inte uppfyller de angivna kriterierna. Med den här typen av profil kan du skydda en känslig resurs och bara tillåta åtkomst till användare som har matchande etiketter. <br>A <b>ge tillträde till</b> -principen ger användarna åtkomst när villkoren är uppfyllda. Vid kombination med <b>Följande är sant</b> - användarna får åtkomst om de uppfyller de villkor som angetts. Detta nekar inte explicit åtkomst till användare, men lägger till en åtkomstbehörighet. Med den här typen av profil kan du ge ytterligare åtkomst till resurser och utöver de användare som redan har åtkomst via rollbehörigheter.&quot;</br>
+>abstract="A <b>neka åtkomst till</b> principen nekar användare åtkomst när villkoren är uppfyllda. Kombinerat med <b>Följande är false</b> - alla användare nekas åtkomst såvida de inte uppfyller de angivna kriterierna. Med den här typen av profil kan du skydda en känslig resurs och bara tillåta åtkomst till användare med matchande etiketter. <br>A <b>ge tillträde till</b> principen ger användarna åtkomst när villkoren är uppfyllda. Vid kombination med <b>Följande är sant</b> - användarna får åtkomst om de uppfyller de villkor som angetts. Detta nekar inte explicit åtkomst till användare, men lägger till en åtkomstbehörighet. Med den här typen av profil kan du ge ytterligare åtkomst till resurser och utöver de användare som redan har åtkomst via rollbehörigheter.&quot;</br>
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Redigera en profil"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_resource"
 >title="Konfigurera behörigheter för en resurs"
->abstract="En resurs är den resurs eller det objekt som en användare kan eller inte kan komma åt. Resurser kan vara segment eller scheman. Du kan konfigurera skriv-, läs- och borttagningsbehörigheter för segment och schemafält."
+>abstract="En resurs är den resurs eller det objekt som en användare kan eller inte kan komma åt. Resurser kan vara segment eller schemafält. Du kan konfigurera skriv-, läs- och borttagningsbehörigheter för segment och schemafält."
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_condition"
 >title="Redigera villkor"
->abstract="Använd villkorssatser i din profil för att konfigurera användaråtkomst till vissa resurser. Välj Matcha alla om du vill att användare ska ha roller med exakt samma etiketter som en resurs för att få åtkomst. Välj Matcha alla om du bara vill att användare ska ha en roll med bara en etikett som matchar en resurs. Etiketter kan antingen definieras som kärnetiketter eller egna etiketter, med etiketter som representerar etiketter som skapats och tillhandahållits av Adobe och anpassade etiketter som representerar etiketter som du har skapat för din organisation."
+>abstract="Använd villkorssatser i din profil för att konfigurera användaråtkomst till vissa resurser. Välj Matcha alla om du vill att användare ska ha roller med samma etiketter som en resurs för att få åtkomst. Välj Matcha alla om du vill att användare ska ha en roll med bara en etikett som matchar en etikett på en resurs. Etiketter kan antingen definieras som kärnetiketter eller egna etiketter, med etiketter som representerar etiketter som skapats och tillhandahållits av Adobe och anpassade etiketter som representerar etiketter som du har skapat för din organisation."
 
 Åtkomstkontrollprinciper använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. I det här exemplet nekas åtkomst till schemafält och segment i alla sandlådor för användare som inte har motsvarande etiketter i schemafältet.
+
+>[!NOTE]
+>
+>En&quot;nekandeprincip&quot; skapas för att ge åtkomst till känsliga resurser eftersom rollen ger behörighet till personerna. Den skrivna principen i det här exemplet **förnedrande** om du saknar de nödvändiga etiketterna.
 
 Om du vill skapa en åtkomstkontrollprincip väljer du **[!UICONTROL Permissions]** i den vänstra navigeringen och välj **[!UICONTROL Policies]**. Nästa, välj **[!UICONTROL Create policy]**.
 
@@ -194,7 +201,7 @@ Tabellen nedan visar de villkor som är tillgängliga när du skapar en profil:
 | Villkor | Beskrivning |
 | --- | --- |
 | Följande är false | När Neka åtkomst till är inställt begränsas åtkomsten om användaren inte uppfyller de valda villkoren. |
-| Följande är sant | När Tillåten åtkomst till har angetts, begränsas åtkomsten om användaren uppfyller de valda villkoren. |
+| Följande är sant | När Tillåten åtkomst till har angetts tillåts åtkomst om användaren uppfyller de valda villkoren. |
 | Matchar alla | Användaren har en etikett som matchar alla etiketter som används på en resurs. |
 | Matchar alla | Användaren har alla etiketter som matchar alla etiketter som används på en resurs. |
 | Kärnetikett | En kärnetikett är en Adobe-definierad etikett som är tillgänglig i alla plattformsinstanser. |
