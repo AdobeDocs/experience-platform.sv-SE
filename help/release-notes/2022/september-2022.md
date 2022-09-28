@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: a3f12b9524d393441923cd11e09ed3e406814691
+source-git-commit: 3d7a04c0ec6cf6a9bed90c9c22db2e8b56bfa01f
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1773'
 ht-degree: 1%
 
 ---
@@ -12,12 +12,95 @@ ht-degree: 1%
 
 **Releasedatum: 28 september 2022**
 
+Nya funktioner i Adobe Experience Platform:
+
+- [Datahygien](#data-hygiene)
+- [[!UICONTROL Privacy Console]](#privacy-console)
+
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
+- [Granskningsloggar](#audit-logs)
+- [Datainsamling](#data-collection)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
-- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [Källor](#sources)
+
+## Datahygien {#data-hygiene}
+
+Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
+
+Med Adobe Experience Platform datahygifunktioner kan du rensa dina data genom att schemalägga automatiska datauppsättningsutgångsdatum och programmässigt ta bort konsumentdata per identitet.
+
+>[!NOTE]
+>
+>Funktioner för borttagning av konsumentinformation är endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
+
+Läs följande dokumentation för att komma igång med datahygien:
+
+- [Datahygien - översikt](../../hygiene/home.md): Lär dig grunderna om plattformens datahygien.
+- [[!UICONTROL Data Hygiene] Användargränssnittsguide](../../hygiene/ui/overview.md): Lär dig schemalägga förfallodatum för datauppsättningar och förfrågningar om konsumentborttagning i användargränssnittet för plattformen.
+- [API-guide för datahygien](../../hygiene/api/overview.md): Alla datahygienaktiviteter som du kan utföra i användargränssnittet kan också programmässigt
+
+## [!UICONTROL Privacy Console] {#privacy-console}
+
+The [!UICONTROL Privacy Console] i användargränssnittet för Experience Platform ger en översikt över viktiga insikter från sekretessrelaterade funktioner som [förfrågningar från registrerade från Privacy Servicen], [arbetsorder för datahygien]och [granskningsloggar]. Konsolen innehåller också flera handledningar för användning i produkten som hjälp att hantera vanliga sekretessarbetsflöden.
+
+Se [Översikt över Integritetskonsolen](../../landing/governance-privacy-security/privacy-console.md) för mer information om funktionen.
+
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
+
+AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa modeller som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+
+### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Spara utkastinstans | Med den här nya funktionen kan marknadsföringsanalytiker spara modellkonfigurationen som ett utkast under konfigurationer och fortsätta redigera utkastet tills det är klart innan utbildning och poängsättning. Scenarier där den här funktionen är användbar omfattar, men är inte begränsade till, när användare har flera fält att definiera i konfigurationsarbetsflödet som de inte kan slutföra på en gång eller när en eller flera datauppsättningsstatistik (som kolumnfullständighet) tar tid att bearbeta innan de blir tillgängliga. Läs [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md) om du vill veta mer. |
+| Styrningspolitik | När användare har skickat in för att skapa en instans via konfigurationsarbetsflödet kontrollerar den nya tjänsten för regelefterlevnad om det finns några regelbrott för dataanvändningen och visar informationen i en port. Det ser till att dataåtgärder och marknadsföringsåtgärder är kompatibla med dataanvändningsprinciper som konfigurerats på Adobe Experience Platform. |
+
+Mer information om Attribution AI finns i [Översikt över Attribution AI](../../intelligent-services/attribution-ai/overview.md). Mer information om policyer för datastyrning finns i [profiler, översikt](../../data-governance/policies/overview.md).
+
+### Kund-AI
+
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Spara utkastinstans | Med den här nya funktionen kan marknadsföringsanalytiker spara modellkonfigurationen som ett utkast under konfigurationer och fortsätta redigera utkastet tills det är klart innan utbildning och poängsättning. Scenarier där den här funktionen är användbar omfattar, men är inte begränsade till, när användare har flera fält att definiera i konfigurationsarbetsflödet som de inte kan slutföra på en gång eller när en eller flera datauppsättningsstatistik (som kolumnfullständighet) tar tid att bearbeta innan de blir tillgängliga. Läs [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md) om du vill veta mer. |
+| Styrningspolitik | När användare har skickat in för att skapa en instans via konfigurationsarbetsflödet kontrollerar den nya tjänsten för regelefterlevnad om det finns några regelbrott för dataanvändningen och visar informationen i en port. Det ser till att dataåtgärder och marknadsföringsåtgärder är kompatibla med dataanvändningsprinciper som konfigurerats på Adobe Experience Platform. |
+
+Mer information om AI för kunder finns i [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). Mer information om policyer för datastyrning finns i [profiler, översikt](../../data-governance/policies/overview.md).
+
+## Granskningsloggar {#audit-logs}
+
+Med Experience Platform kan du granska användaraktivitet för olika tjänster och funktioner. Granskningsloggarna innehåller information om vem som gjorde vad och när.
+
+**Uppdaterade funktioner**
+
+| Funktion | Namn | Beskrivning |
+| --- | --- | --- |
+| Tillagda resurser | <ul><li>Attribution AI instans</li><li>AI-instans för kund</li><li>Datastream</li></ul> | Granskningsloggresurser registreras automatiskt när aktiviteten utförs. Om funktionen är aktiverad behöver du inte aktivera loggsamling manuellt. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om de olika resursspecifika händelsetyperna som spåras av granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
+
+## Datainsamling
+
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Integrering med vänster navigering i plattformsgränssnittet | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Platform. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -77,32 +160,6 @@ Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild 
 | Stöd för borttagning av datauppsättningar | Identitetstjänsten har nu stöd för borttagning av datauppsättningar vid begäran via [Katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/), användargränssnittet eller datahygien. Läs guiden på [ta bort datauppsättningar i användargränssnittet](../../catalog/datasets/user-guide.md#delete-a-dataset) för mer information. |
 
 Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
-
-## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
-
-AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa modeller som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
-
-### Attribution AI
-
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Spara utkastinstans | Med den här nya funktionen kan marknadsföringsanalytiker spara modellkonfigurationen som ett utkast under konfigurationer och fortsätta redigera utkastet tills det är klart innan utbildning och poängsättning. Scenarier där den här funktionen är användbar omfattar, men är inte begränsade till, när användare har flera fält att definiera i konfigurationsarbetsflödet som de inte kan slutföra på en gång eller när en eller flera datauppsättningsstatistik (som kolumnfullständighet) tar tid att bearbeta innan de blir tillgängliga. Läs [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md) om du vill veta mer. |
-| Styrningspolitik | När användare har skickat in för att skapa en instans via konfigurationsarbetsflödet kontrollerar den nya tjänsten för regelefterlevnad om det finns några regelbrott för dataanvändningen och visar informationen i en port. Det ser till att dataåtgärder och marknadsföringsåtgärder är kompatibla med dataanvändningsprinciper som konfigurerats på Adobe Experience Platform. |
-
-Mer information om Attribution AI finns i [Översikt över Attribution AI](../../intelligent-services/attribution-ai/overview.md). Mer information om policyer för datastyrning finns i [profiler, översikt](../../data-governance/policies/overview.md).
-
-### Kund-AI
-
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Spara utkastinstans | Med den här nya funktionen kan marknadsföringsanalytiker spara modellkonfigurationen som ett utkast under konfigurationer och fortsätta redigera utkastet tills det är klart innan utbildning och poängsättning. Scenarier där den här funktionen är användbar omfattar, men är inte begränsade till, när användare har flera fält att definiera i konfigurationsarbetsflödet som de inte kan slutföra på en gång eller när en eller flera datauppsättningsstatistik (som kolumnfullständighet) tar tid att bearbeta innan de blir tillgängliga. Läs [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md) om du vill veta mer. |
-| Styrningspolitik | När användare har skickat in för att skapa en instans via konfigurationsarbetsflödet kontrollerar den nya tjänsten för regelefterlevnad om det finns några regelbrott för dataanvändningen och visar informationen i en port. Det ser till att dataåtgärder och marknadsföringsåtgärder är kompatibla med dataanvändningsprinciper som konfigurerats på Adobe Experience Platform. |
-
-Mer information om AI för kunder finns i [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). Mer information om policyer för datastyrning finns i [profiler, översikt](../../data-governance/policies/overview.md).
 
 ## Källor {#sources}
 
