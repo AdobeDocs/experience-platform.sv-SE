@@ -1,20 +1,17 @@
 ---
 title: CDP-datamodell (Customer Data Platform)
 description: Lär dig hur du använder SQL-frågor från CDP Insights-datamodeller för att anpassa dina egna CDP-rapporter för marknadsförings- och KPI-användningsfall.
-source-git-commit: 62e282138de8cf2d74b4a62f4ced39e3fb78001a
+exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
+source-git-commit: 2c96bfd2c1b541d30a72fcf2bac414ee06607456
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
 
-# (Beta) CDP-datamodell (Customer Data Platform)
+# CDP-datamodell (Customer Data Platform)
 
->[!IMPORTANT]
->
->Funktionen CDP Insights Data Models är en betaversion. Dess funktioner och dokumentation kan komma att ändras.
-
-Funktionen CDP (Customer Data Platform) Insights Data Model visar de datamodeller och SQL som driver insikterna för olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för dina användningsfall för marknadsförings- och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina använda instrumentpaneler.
+Funktionen CDP (Customer Data Platform) Insights Data Model visar de datamodeller och SQL som driver insikterna för olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för dina användningsfall för marknadsförings- och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler.
 
 ## Förutsättningar
 

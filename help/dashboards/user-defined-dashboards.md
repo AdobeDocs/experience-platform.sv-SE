@@ -2,18 +2,14 @@
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: bb94f7438efe1e24056d6689ffc10b928fc633c2
+source-git-commit: 2c96bfd2c1b541d30a72fcf2bac414ee06607456
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '826'
 ht-degree: 0%
 
 ---
 
-# Användardefinierade instrumentpaneler (beta)
-
->[!IMPORTANT]
->
->Funktionen för användardefinierade kontrollpaneler är i betaversion. Dess funktioner och dokumentation kan komma att ändras.
+# Användardefinierade kontrollpaneler
 
 Adobe Experience Platform Dashboards hjälper er att få insikter och anpassa visualisering med den användardefinierade funktionen för kontrollpaneler. Med den här funktionen kan du skapa och hantera anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen.
 
