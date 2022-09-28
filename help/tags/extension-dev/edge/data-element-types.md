@@ -2,9 +2,9 @@
 title: Dataelementtyper för Edge-tillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen data-element för ett taggtillägg i en edge-egenskap.
 exl-id: ddbc3912-1c25-4d21-bde8-e40e583b4278
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Det här dokumentet beskriver hur du definierar dataelementtyper för ett kantti
 
 Dataelementtyper består vanligtvis av följande:
 
-1. En vy som visas i användargränssnittet för datainsamling där användare kan ändra inställningar för dataelementet.
+1. En vy som visas i användargränssnittet för Experience Platform och datainsamling där användare kan ändra inställningar för dataelementet.
 2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och hämta data.
 
 Om du vill att användarna ska kunna hämta data från det anpassade datalagret kan modulen se ut som i det här exemplet.

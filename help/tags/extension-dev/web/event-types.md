@@ -2,9 +2,9 @@
 title: Händelsetyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av händelsetyp för ett webbtillägg i Adobe Experience Platform.
 exl-id: dbdd1c88-5c54-46be-9824-2f15cce3d160
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Det här dokumentet beskriver hur du definierar händelsetyper för ett webbtill
 
 Händelsetyper definieras av tillägg och består vanligtvis av följande:
 
-1. A [visa](./views.md) som visas i användargränssnittet för datainsamling där användare kan ändra inställningar för händelsen.
+1. A [visa](./views.md) som visas i användargränssnittet för Experience Platform och datainsamlingen där användare kan ändra inställningar för händelsen.
 2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och för att bevaka att en viss aktivitet inträffar.
 
 `module.exports` acceptera båda `settings` och `trigger` parametrar. Detta gör att händelsetypen kan anpassas.

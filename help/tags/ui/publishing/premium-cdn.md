@@ -2,9 +2,9 @@
 title: Förstklassigt CDN-stöd för taggar
 description: Läs om den premiumbaserade CDN-funktionen för taggar och hur den kan användas för att leverera innehåll i flera geografiska regioner.
 exl-id: 33e36d3b-9e21-44a8-8498-32a5fc20b46b
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ När du använder en [värddator som hanteras av Adobe](./hosts/managed-by-adobe
 
 För att ta hänsyn till detta har taggar i Experience Platform en premiumfunktion för CDN som gör att du kan leverera innehåll till dessa specialregioner.
 
-Premium CDN-support är en betalfunktion och måste köpas av din organisation för att kunna aktivera och använda den. I den här guiden beskrivs hur du konfigurerar och använder funktionen i användargränssnittet för datainsamling när du har köpt den.
+Premium CDN-support är en betalfunktion och måste köpas av din organisation för att kunna aktivera och använda den. I den här guiden beskrivs hur du konfigurerar och använder funktionen i användargränssnittet för Experience Platform eller datainsamling när du har köpt den.
 
 ## Aktivera premium-CDN för din organisation
 
-Premium-CDN är aktiverat på företagsnivå. När din organisation har köpt den premiumbaserade CDN-funktionen aktiverar en Adobe-administratör för ditt företag i användargränssnittet för datainsamling.
+Premium-CDN är aktiverat på företagsnivå. När din organisation har köpt den premiumbaserade CDN-funktionen aktiverar en Adobe-administratör funktionen i användargränssnittet för ditt företag.
 
 ## Återskapa och installera taggbibliotek med uppdaterade inbäddningskoder
 

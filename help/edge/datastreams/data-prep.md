@@ -2,9 +2,9 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '891'
+source-wordcount: '887'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, om
 >* [Hantera dataformat med Data Prep](../../data-prep/data-handling.md)
 
 
-Den här guiden beskriver hur du mappar data i användargränssnittet för datainsamling. Om du vill följa med i stegen börjar du med att skapa en datastream upp till (och inkludera) [grundläggande konfigurationssteg](./overview.md#create).
+Den här guiden beskriver hur du mappar data i användargränssnittet. Om du vill följa med i stegen börjar du med att skapa en datastream upp till (och inkludera) [grundläggande konfigurationssteg](./overview.md#create).
 
 En snabb demonstration av datainsamlingsprocessen finns i följande video:
 
@@ -203,4 +203,4 @@ När antalet obligatoriska fält har nått noll och du är nöjd med mappningen 
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du mappar data till XDM när du konfigurerar ett datastam i användargränssnittet för datainsamling. Om du följer den allmänna datastreams-självstudiekursen kan du nu gå tillbaka till steget [visa information om dataström](./overview.md).
+I den här guiden beskrivs hur du mappar data till XDM när du konfigurerar ett datastream i användargränssnittet. Om du följer den allmänna datastreams-självstudiekursen kan du nu gå tillbaka till steget [visa information om dataström](./overview.md).

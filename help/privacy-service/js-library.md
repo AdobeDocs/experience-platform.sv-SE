@@ -5,9 +5,9 @@ title: Översikt över JavaScript-biblioteket Adobe Privacy
 topic-legacy: overview
 description: Med Adobe Privacy JavaScript Library kan du hämta registrerade identiteter för användning i Privacy Service.
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1007'
 ht-degree: 4%
 
 ---
@@ -48,7 +48,7 @@ Börja använda [!DNL Privacy JS Library]måste du installera den på datorn på
 * Installera med npm genom att köra följande kommando: `npm install @adobe/adobe-privacy`
 * Ladda ned från [Experience Cloud GitHub-databas](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
 
-Du kan också installera biblioteket via ett taggtillägg i användargränssnittet för datainsamling. Se översikten på [Tillägget Adobe Privacy Tag](../tags/extensions/web/privacy/overview.md) för mer information.
+Du kan också installera biblioteket via ett taggtillägg. Se översikten på [Tillägget Adobe Privacy Tag](../tags/extensions/web/privacy/overview.md) för mer information.
 
 ## Instansiera [!DNL Privacy JS Library]
 

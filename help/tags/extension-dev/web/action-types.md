@@ -2,9 +2,9 @@
 title: Åtgärdstyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av åtgärdstyp för ett taggtillägg i en webbegenskap.
 exl-id: d4539132-a72c-40b0-84b6-50cbe3785d2d
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Det här dokumentet beskriver hur du definierar åtgärdstyper för ett webbtill
 
 Åtgärdstyper består vanligtvis av följande:
 
-1. A [visa](./views.md) som visas i användargränssnittet för datainsamling där användare kan ändra inställningar för åtgärden.
+1. A [visa](./views.md) som visas i användargränssnittet för Experience Platform och datainsamlingen där användare kan ändra inställningar för åtgärden.
 2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och utföra en åtgärd.
 
 ```js

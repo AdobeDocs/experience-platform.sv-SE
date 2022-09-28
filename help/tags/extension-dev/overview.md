@@ -2,9 +2,9 @@
 title: Översikt över tilläggsutveckling
 description: Lär dig mer om de primära komponenterna för olika taggtilläggstyper och tilläggsutvecklingsprocessen i Adobe Experience Platform.
 exl-id: b72df3df-f206-488d-a690-0f086973c5b6
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '949'
+source-wordcount: '950'
 ht-degree: 0%
 
 ---
@@ -37,11 +37,11 @@ Du kan placera biblioteksmodulfiler var du vill i tilläggskatalogen, förutsatt
 
 ### Vyer
 
-En vy är en HTML-fil som kan läsas in i en [`iframe` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
+En vy är en HTML-fil som kan läsas in i en [`iframe` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) i taggprogrammet, särskilt via användargränssnittet för plattformen och användargränssnittet för datainsamling. Vyn måste innehålla ett skript från tillägget och följa ett litet API för att kunna kommunicera med programmet.
 
 Den viktigaste visningsfilen för alla tillägg är dess konfiguration. Se avsnittet om [tilläggskonfigurationer](#configuration) för mer information.
 
-Det finns inga begränsningar för vilka bibliotek som används i vyerna. Du kan med andra ord använda jQuery, Understreck, React, Angular, Bootstrap eller andra. Vi rekommenderar dock att du gör så att tillägget ser likadant ut som användargränssnittet i datainsamlingen.
+Det finns inga begränsningar för vilka bibliotek som används i vyerna. Du kan med andra ord använda jQuery, Understreck, React, Angular, Bootstrap eller andra. Vi rekommenderar dock att du gör så att tillägget ser likadant ut som gränssnittet.
 
 Vi rekommenderar att du placerar alla visningsrelaterade filer (HTML, CSS, JavaScript) i en enda underkatalog som är isolerad från biblioteksmodulfilerna. I `extension.json`kan du beskriva var den här underkatalogen för vyn finns. Plattformen hanterar sedan den här underkatalogen (och endast den här underkatalogen) från sina webbservrar.
 

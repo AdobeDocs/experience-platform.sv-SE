@@ -2,7 +2,7 @@
 title: Felsökningsguide för taggar
 description: Få svar på vanliga frågor om taggar i Adobe Experience Platform.
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '1049'
 ht-degree: 0%
@@ -96,11 +96,11 @@ Ja! Taggar har nu stöd för mobila egenskaper och konfigurationer för nya Adob
 
 ## Varför står det att det uppstod ett fel när mitt konto lästes in?
 
-Om du får ett meddelande om att det uppstod ett fel när ditt konto lästes in innebär det att ditt konto inte tillhör någon produktprofil för taggar. Se guiden [hantera behörigheter](../collection/permissions.md) om du vill lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge åtkomst till användargränssnittet i datainsamlingen.
+Om du får ett meddelande om att det uppstod ett fel när ditt konto lästes in innebär det att ditt konto inte tillhör någon produktprofil för taggar. Se guiden [hantera behörigheter](../collection/permissions.md) om du vill lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge åtkomst till datainsamlingsfunktioner i användargränssnittet.
 
 ## Varför kan jag inte lägga till några egenskaper i gränssnittet?
 
-Om du inte kan skapa några nya egenskaper när du är inloggad i användargränssnittet för datainsamling innebär det att ditt konto inte tillhör en produktprofil som har behörigheten Hantera egenskaper.
+Om du inte kan skapa några nya egenskaper när du är inloggad i användargränssnittet innebär det att ditt konto inte tillhör en produktprofil som har behörigheten Hantera egenskaper.
 
 Se guiden [hantera behörigheter](../collection/permissions.md) om du vill lära dig hur du konfigurerar en produktprofil i Adobe Admin Console för att ge rättigheten Hantera egenskaper. Mer information om de olika rättigheterna för taggar finns i översikten på [användarbehörigheter för taggar](./ui/administration/user-permissions.md).
 

@@ -2,9 +2,9 @@
 title: Dataelementtyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen data-element för ett taggtillägg i en webbegenskap.
 exl-id: 3aa79322-2237-492f-82ff-0ba4d4902f70
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '600'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Det här dokumentet beskriver hur du definierar dataelementtyper för ett webbti
 
 Dataelementtyper består vanligtvis av följande:
 
-1. A [visa](./views.md) som visas i användargränssnittet för datainsamling där användare kan ändra inställningar för dataelementet.
+1. A [visa](./views.md) som visas i användargränssnittet för Experience Platform och datainsamling där användare kan ändra inställningar för dataelementet.
 2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och hämta data.
 
 Tänk dig en situation där du vill tillåta användare att hämta en datadel från ett lokalt lagringsobjekt med namnet `productName`. Modulen kan se ut så här:

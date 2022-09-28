@@ -2,7 +2,7 @@
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '2391'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Om du vill testa taggtillägg i Adobe Experience Platform använder du tagg-API:t och/eller kommandoradsverktygen för att överföra dina tilläggspaket. Använd sedan användargränssnittet för datainsamling för att installera tilläggspaketet i en egenskap och använda funktionerna i ett taggbibliotek och skapa det.
+Om du vill testa taggtillägg i Adobe Experience Platform använder du tagg-API:t och/eller kommandoradsverktygen för att överföra dina tilläggspaket. Använd sedan användargränssnittet för plattformen eller användargränssnittet för datainsamling för att installera tilläggspaketet i en egenskap och använda funktionerna i ett taggbibliotek och skapa det.
 
 I det här dokumentet beskrivs hur du implementerar kompletta tester för ditt tillägg.
 
@@ -74,7 +74,7 @@ Tilläggspaketet kommer sedan att överföras och den överförande filen ger di
 
 >[!NOTE]
 >
->Vid överföring eller korrigering placeras tilläggspaket i ett väntande läge medan systemet extraherar paketet och distribuerar asynkront. Medan processen pågår kan du avfråga `extension_package` ID för dess status med API och i användargränssnittet för datainsamling. Ett tilläggskort visas i katalogen som är markerad som Väntande.
+>Vid överföring eller korrigering placeras tilläggspaket i ett väntande läge medan systemet extraherar paketet och distribuerar asynkront. Medan processen pågår kan du avfråga `extension_package` ID för dess status med API och i användargränssnittet. Ett tilläggskort visas i katalogen som är markerad som Väntande.
 
 >[!NOTE]
 >
@@ -82,7 +82,7 @@ Tilläggspaketet kommer sedan att överföras och den överförande filen ger di
 
 ## Skapa en utvecklingsegenskap {#property}
 
-När du har loggat in i användargränssnittet för datainsamling visas skärmen Egenskaper. En egenskap är en behållare för de taggar som du vill distribuera och den kan användas på en eller flera platser.
+När du har loggat in på användargränssnittet och valt **[!UICONTROL Tags]** i den vänstra navigeringen visas [!UICONTROL Properties] visas. En egenskap är en behållare för de taggar som du vill distribuera och den kan användas på en eller flera platser.
 
 ![](../images/getting-started/properties-screen.png)
 
@@ -142,7 +142,7 @@ Tillägg kan definiera dataelementtyper om det behövs för att tillägget ska f
 
 När en användare väljer ditt tillägg i dialogrutan **Tillägg** listrutan, **Dataelementtyp** listrutan fylls i med eventuella dataelementtyper som anges av tillägget. Användaren kan sedan mappa varje dataelement till dess källvärde. Dataelement kan sedan användas när du skapar regler i Ändra dataelement eller Anpassad kodhändelse för att aktivera en regel som ska köras. Ett dataelement kan också användas i Dataelementvillkor eller andra villkor, undantag eller åtgärder i en regel.
 
-När dataelementet har skapats (mappningen har konfigurerats) kan användarna referera till källdata genom att referera till dataelementet. Om värdekällan ändras (webbplatsen ändrar design osv.) -användare behöver bara uppdatera mappningen en gång i användargränssnittet för datainsamling, och alla dataelement får automatiskt det nya källvärdet.
+När dataelementet har skapats (mappningen har konfigurerats) kan användarna referera till källdata genom att referera till dataelementet. Om värdekällan ändras (webbplatsen ändrar design osv.) -användare behöver bara uppdatera mappningen en gång i användargränssnittet och alla dataelement får automatiskt det nya källvärdet.
 
 ### Regler
 
@@ -226,6 +226,6 @@ När du upptäcker ändringar som behöver göras i tilläggspaketet liknar iter
    >
    >Argument kan skickas på kommandoraden för att spara tid genom att undvika upprepade inloggningsuppgifter. Mer information finns i [dokumentation för uppladdning av reaktor](https://www.npmjs.com/package/@adobe/reactor-uploader).
 1. Installationssteget kan hoppas över när du uppdaterar ett befintligt paket.
-1. Ändra resurser - om konfigurationen för någon av dina tilläggskomponenter har ändrats måste du uppdatera de resurserna i användargränssnittet för datainsamling.
+1. Ändra resurser - om konfigurationen för någon av dina tilläggskomponenter har ändrats måste du uppdatera de resurserna i användargränssnittet.
 1. Lägg till de senaste ändringarna i biblioteket och bygg igen.
 1. Komplettera ytterligare en testomgång.

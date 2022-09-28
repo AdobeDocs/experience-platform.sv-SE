@@ -2,10 +2,10 @@
 title: Översikt över Common Analytics-tillägg
 description: Läs mer om taggtillägget för Common Analytics i Adobe Experience Platform.
 exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '549'
-ht-degree: 1%
+source-wordcount: '406'
+ht-degree: 0%
 
 ---
 
@@ -50,7 +50,7 @@ Tillägget Common Analytics Plugins innehåller följande åtgärder:
 >
 >Denna åtgärd är enklare att implementera, men Adobe Consulting rekommenderar inte att du använder den här åtgärden eftersom plugin-programmets vikt ökar.
 
-I den här åtgärden kan du välja varje plugin som du vill ta med i implementeringen och spara ändringarna. Välj så många eller så få som du vill använda under implementeringen. Länkar till dokumentation om hur du använder varje plugin-program och en kort beskrivning finns i Analytics [Översikt över plugin-program](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+I den här åtgärden kan du välja varje plugin som du vill ta med i implementeringen och spara ändringarna. Välj så många eller så få som du vill använda under implementeringen.
 
 ### Initiera plugin-program
 
@@ -58,36 +58,17 @@ Dessa åtgärder initierar det specifika plugin-program som du tänker använda 
 
 ## Dataelement för tillägg till Common Analytics-plugin-program
 
-I det här avsnittet beskrivs de dataelement som finns i tillägget Plugin-program för Common Analytics.
+Följande dataelement finns i tillägget Common Analytics-plugin-program, som använder taggfunktioner för att konfigurera och konfigurera motsvarande plugin-program i Analytics:
 
-### getGeoCoordinates
+* `getGeoCoordinates`
+* `getNewRepeat`
+* `getPageName`
+* `getResponsiveLayout`
+* `getTimeParting`
+* `getTimeSinceLastVisit`
+* `getVisitDuration`
+* `getVisitNum`
 
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling i Adobe Experience Platform för att konfigurera och konfigurera plugin-programmet getGeoCoordinates.
-
-### getNewRepeat
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getNewRepeat.
-
-### getPageName
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getPageName.
-
-### getResponsiveLayout
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getResponsiveLayout.
-
-### getTimeParting
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getTimeParting.
-
-### getTimeSinceLastVisit
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getTimeSinceLastVisit.
-
-### getVisitDuration
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getVisitDuration.
-
-### getVisitNum
-
-Användare kan utnyttja det inbyggda användargränssnittet för datainsamling för att konfigurera och konfigurera plugin-programmet getVisitNum.
+>[!NOTE]
+>
+>Mer information om plugin-programmen ovan finns i [Analysdokumentation](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).

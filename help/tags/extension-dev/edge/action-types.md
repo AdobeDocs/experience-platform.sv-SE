@@ -2,9 +2,9 @@
 title: Åtgärdstyper för Edge Extensions
 description: Lär dig hur du definierar en biblioteksmodul av åtgärdstyp för ett taggtillägg i en edge-egenskap.
 exl-id: c0b058aa-f0fe-4fd8-a873-018482c3e4db
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '386'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Det här dokumentet beskriver hur du definierar åtgärdstyper för ett kanttill
 
 Åtgärdstyper består vanligtvis av följande:
 
-1. En vy som visas i användargränssnittet för datainsamling där användarna kan ändra inställningarna för åtgärden.
+1. En vy som visas i användargränssnittet för Experience Platform och datainsamling där användare kan ändra inställningar för åtgärden.
 2. En biblioteksmodul som skickas i taggens körningsbibliotek för att tolka inställningarna och utföra en åtgärd.
 
 En modul för att vidarebefordra vissa data till en slutpunkt från tredje part kan till exempel se ut så här.

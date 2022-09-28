@@ -1,10 +1,10 @@
 ---
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
-description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling.
+description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '985'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK-taggtillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
 
-Det här dokumentet beskriver hur du konfigurerar tillägget i användargränssnittet för datainsamling.
+Det här dokumentet beskriver hur du konfigurerar tillägget i användargränssnittet.
 
 ## Komma igång
 
-Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i användargränssnittet för datainsamling och väljer alternativet **[!UICONTROL Extensions]** -fliken. Under Platform Web SDK väljer du **[!UICONTROL Configure]**.
+Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i användargränssnittet och väljer **[!UICONTROL Extensions]** -fliken. Under Platform Web SDK väljer du **[!UICONTROL Configure]**.
 
 ![](../images/extension/overview/configure.png)
 

@@ -2,9 +2,9 @@
 title: Ta bort resurser
 description: Lär dig hur du tar bort taggresurser i Adobe Experience Platform.
 exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '557'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du fortfarande vill att resursen ska visas i användargränssnittet för datainsamling, men inte i taggbiblioteket, kan du läsa [Ta bort resurser från ett bibliotek](remove-resources-from-library.md).
+Att ta bort en resurs är en permanent borttagning av den från Adobe Experience Platform. Om du vill ta bort en resurs från ett visst taggbibliotek, men ändå vill att resursen ska vara tillgänglig för användning i andra bibliotek, se guiden [ta bort resurser från ett bibliotek](remove-resources-from-library.md).
 
 Du kan ta bort dataelement, regler, tillägg, värdar, miljöer och egenskaper. När resurserna har tagits bort går de inte att återställa.
 

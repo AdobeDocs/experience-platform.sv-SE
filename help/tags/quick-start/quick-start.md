@@ -2,9 +2,9 @@
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1523'
 ht-degree: 0%
 
 ---
@@ -31,13 +31,13 @@ Grundläggande arbetsflöde för taggar:
 
 Taggar är helt integrerade med din Adobe ID. Användarbehörigheter hanteras via Admin Console med andra Adobe-produkter och lösningar från [!DNL Creative Cloud], [!DNL Document Cloud]och Experience Cloud.
 
-Taggar har ett rättighetsbaserat användarhanteringssystem. Detta innebär att individuella rättigheter måste beviljas uttryckligen. Dessa rättigheter tilldelas grupper och sedan läggs användarna till i rätt grupper för att få åtkomst. Även om din organisation har åtkomst till användargränssnittet för datainsamling kan enskilda användare inte göra något förrän en organisationsadministratör uttryckligen ger dem vissa rättigheter.
+Taggar har ett rättighetsbaserat användarhanteringssystem. Detta innebär att individuella rättigheter måste beviljas uttryckligen. Dessa rättigheter tilldelas grupper och sedan läggs användarna till i rätt grupper för att få åtkomst. Även om din organisation har tillgång till datainsamling kan enskilda användare inte göra något förrän en administratör uttryckligen ger dem vissa rättigheter.
 
-Detaljerade instruktioner om hur du skapar grupper och lägger till användare för taggar finns i [användarbehörigheter](../ui/administration/user-permissions.md) -dokument.
+Detaljerade instruktioner om hur du skapar grupper och lägger till användare för taggar finns i [behörighetsguide för datainsamling](../../collection/permissions.md).
 
 ## 2. Logga in
 
-När taggrättigheter har lagts till i din Adobe ID måste du logga in i användargränssnittet för datainsamling. Du kan göra detta genom att navigera direkt till [Experience Cloud inloggningsskärm](https://experiencecloud.adobe.com)och väljer användargränssnittet för datainsamling på fliken Snabbåtkomst.
+När taggrättigheter har lagts till i Adobe ID måste du logga in i användargränssnittet för Experience Platform eller datainsamlingen. Du kan göra detta genom att navigera direkt till [Experience Cloud inloggningsskärm](https://experience.adobe.com/)och välja antingen **[!UICONTROL Data Collection]** eller **[!UICONTROL Experience Platform]**.
 
 >[!NOTE]
 >
@@ -45,7 +45,7 @@ När taggrättigheter har lagts till i din Adobe ID måste du logga in i använd
 
 ## 3. Skapa en egenskap
 
-När du har loggat in i användargränssnittet för datainsamling är det första du behöver göra att skapa en egenskap. En egenskap är i princip en behållare som du fyller med tillägg, regler, dataelement och bibliotek när du distribuerar taggar till webbplatsen. Många människor skapar en egenskap för varje webbplats (eller grupp med närbesläktade webbplatser) där de vill distribuera samma uppsättning taggar.
+När du har loggat in i användargränssnittet är det första du behöver göra att skapa en egenskap. En egenskap är i princip en behållare som du fyller med tillägg, regler, dataelement och bibliotek när du distribuerar taggar till webbplatsen. Många människor skapar en egenskap för varje webbplats (eller grupp med närbesläktade webbplatser) där de vill distribuera samma uppsättning taggar.
 
 Mer information om hur du skapar egenskaper finns i [Skapa en egenskap](../ui/administration/companies-and-properties.md).
 
@@ -67,7 +67,7 @@ Det som gör taggar i Platform verkligt unika är att dessa tillägg kan byggas 
 * Session och lokal lagring
 * Nästan allt annat
 
-När dataelementet har definierats kan du använda elementet var som helst i användargränssnittet för datainsamling för alla tillägg. Läs dokumentationen om [Dataelement](../ui/managing-resources/data-elements.md) för mer detaljerad information.
+När dataelementet har definierats kan du använda elementet var som helst i användargränssnittet för alla tillägg. Läs dokumentationen om [Dataelement](../ui/managing-resources/data-elements.md) för mer detaljerad information.
 
 **Regler** är den logiska kärnan i implementeringen och styr vad, när, var och hur av alla taggar på din webbplats ska vara. Definiera en händelse, ange villkor och undantag och definiera sedan åtgärderna och ordningen. Publicera ändringarna för att se resultatet. Mer information finns i [Regler](../ui/managing-resources/rules.md).
 

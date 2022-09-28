@@ -2,9 +2,9 @@
 title: Villkorstyper för Edge-tillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen condition för ett edge-tillägg i Adobe Experience Platform.
 exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ I det här dokumentet beskrivs hur du definierar villkorstyper för ett kanttill
 
 Villkorstyperna består vanligtvis av följande:
 
-1. En vy som visas i användargränssnittet för datainsamling där användarna kan ändra inställningarna för villkoret.
+1. En vy som visas i användargränssnittet för Experience Platform och datainsamling där användarna kan ändra inställningarna för villkoret.
 2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och utvärdera ett villkor.
 
 Om du till exempel vill utvärdera om användaren finns på värden `example.com`kan din modul se ut så här.

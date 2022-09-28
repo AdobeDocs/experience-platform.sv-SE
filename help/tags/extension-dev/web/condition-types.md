@@ -2,9 +2,9 @@
 title: Villkorstyper för webbtillägg
 description: Lär dig hur du definierar en biblioteksmodul av typen condition för ett taggtillägg i en webbegenskap.
 exl-id: db504455-858b-4ac8-aa42-de516b0f1d5a
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ I det här dokumentet beskrivs hur du definierar villkorstyper för ett webbtill
 
 Villkorstyperna består vanligtvis av följande:
 
-1. A [visa](./views.md) som visas i användargränssnittet för datainsamling där användare kan ändra inställningarna för villkoret.
+1. A [visa](./views.md) som visas i användargränssnittet för Experience Platform och datainsamling där användare kan ändra inställningarna för villkoret.
 2. En biblioteksmodul som skickas inom taggens körningsbibliotek för att tolka inställningarna och utvärdera ett villkor.
 
 En biblioteksmodul av typen condition har ett mål: utvärdera om något är sant eller falskt. Det som utvärderas är upp till dig.
