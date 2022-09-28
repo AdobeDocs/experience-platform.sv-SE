@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: dfb95f457d7ddb730950159165ed85b2f532f9ab
+source-git-commit: 47a9ce5211d3dabe427ad1e545dc12181a84b644
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '831'
 ht-degree: 5%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 5%
       - [Källa för analysklassificeringar](connectors/adobe-applications/classifications.md)
       - [Analyskälla](connectors/adobe-applications/analytics.md)
       - [Audience Manager source](connectors/adobe-applications/audience-manager.md)
+      - [Adobe Campaign Managed Cloud Services-källa](connectors/adobe-applications/campaign.md)
       - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
       - Fältkopplingar {#mapping}
@@ -202,7 +203,7 @@ ht-degree: 5%
          - [Adobe Analytics (report-suite data)](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Analytics (klassificeringsdata)](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
-         - [Adobe Campaign Managed Services](tutorials/ui/create/adobe-applications/campaign.md)
+         - [Adobe Campaign Managed Cloud Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - Reklam {#advertising}
