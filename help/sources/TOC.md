@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Sources
-source-git-commit: 47a9ce5211d3dabe427ad1e545dc12181a84b644
+source-git-commit: ae6ec330ce62024a0eccec0dbc5c29e9a4645de2
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '837'
 ht-degree: 5%
 
 ---
@@ -191,6 +191,7 @@ ht-degree: 5%
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
       - [Samla in strömmande data](tutorials/api/collect/streaming.md)
    - [On demand-intag](tutorials/api/on-demand-ingestion.md)
+   - [Filtrera data på källnivå](tutorials/api/filter.md)
    - [Övervaka dataflöden](tutorials/api/monitor.md)
    - [Uppdatera konton](tutorials/api/update.md)
    - [Uppdatera dataflöden](tutorials/api/update-dataflows.md)
