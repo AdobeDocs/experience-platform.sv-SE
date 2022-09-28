@@ -7,7 +7,7 @@ topic-legacy: Customer AI Overview
 description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 landing-page-description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala.
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: 62188f56861dd021db7b13325f622323644af8e0
+source-git-commit: 6c0e001419dc78d4ff87bebd0604c7add07b635f
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 # Översikt över AI för kunder
 
-Customer AI , som en del av Intelligent Services ger marknadsförarna möjlighet att generera kundprognoser på individnivå med förklaringar.
+Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att generera kundprognoser på individnivå med förklaringar.
 
 Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund kan tänkas göra och varför. Dessutom kan marknadsförarna dra nytta av kundernas AI-prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen.
 
@@ -39,7 +39,7 @@ Kunden är inte byggd för att:
 - Kundens AI bör inte användas för att förutsäga dynamisk prissättning, eller den prisnivå där kunden ska göra ett köp.
 - Kundens AI kan inte avgöra om det är mer sannolikt att kunden köper en artikel genom att lämna ett erbjudande. Även om ni kanske bestämmer er för att skicka rabatterbjudanden baserat på poängen är det inte nödvändigtvis det bästa sättet att konvertera dessa kunder.
 - Kundens AI är inte ett verktyg för produktrekommendationer. Om du har tusentals SKU:er ska du inte använda kundens AI som proxyserver för en riktig produktrekommendationslösning som [!DNL Adobe Target].
-- Kundens AI kan inte förutsäga i vilket skede av köpresan kunden befinner sig, t.ex. om de befinner sig i&quot;medvetande&quot;,&quot;bedömning&quot;,&quot;inköp&quot; eller&quot;kundlojalitet&quot;.
+- Kunds-AI kan inte förutsäga i vilket skede av köpresan kunden befinner sig, t.ex. om de befinner sig i&quot;medvetande&quot;,&quot;bedömning&quot;,&quot;inköp&quot; eller&quot;kundlojalitet&quot;.
 - Använd inte kundens AI för att avgöra vilka kunder som sannolikt kommer att köpa en produktlansering i framtiden. Detta kräver att vissa framgångshändelser ska finnas i det förflutna så att kundens AI kan utbilda maskininlärningsalgoritmen på dina data.
 
 Följande video är utformad för att ge stöd för din förståelse av kundens AI.
