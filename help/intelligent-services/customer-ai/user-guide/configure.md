@@ -6,9 +6,9 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 4f74be4ed8d84a58779b9e7d9f1de6d9bf19cc5e
+source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
 workflow-type: tm+mt
-source-wordcount: '2977'
+source-wordcount: '3227'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger
 
 - **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
 - **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den valda tjänstinstansinställningen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
-- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
 - **[!UICONTROL Data source]**: En länk till den datauppsättning som används av den här instansen. Om du använder flera datauppsättningar och markerar hyperlänktexten, öppnas förhandsvisningsprogramvaran för datauppsättningen.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
 - **[!UICONTROL Score definition]**: En snabb översikt över målet som du konfigurerade för den här instansen.
@@ -67,7 +67,7 @@ Ange önskade värden och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 Kunds-AI använder sig av data från Adobe Analytics, Adobe Audience Manager, Experience Events i allmänhet och Consumer Experience Event för att beräkna benägenhetspoängen. När du väljer en datauppsättning visas bara de som är kompatibla med kundens AI. Om du vill välja en datauppsättning väljer du (**+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Använd sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
 
-![Välj och söka efter datauppsättning](../images/user-guide/configure-dataset-page.png)
+![Välj och söka efter datauppsättning](../images/user-guide/configure-dataset-page-save-and-exit-cai.png)
 
 När du har valt de datauppsättningar du vill använda väljer du **[!UICONTROL Add]** om du vill lägga till datauppsättningarna i förhandsgranskningsfönstret för datauppsättningar.
 
@@ -78,6 +78,10 @@ Välja informationsikonen ![informationsikon](../images/user-guide/info-icon.png
 ![Välj och söka efter datauppsättning](../images/user-guide/dataset-info.png)
 
 Datauppsättningsförhandsvisningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
+
+Välj **[!UICONTROL Save]** om du vill spara dina utkast när du går vidare i arbetsflödet. Du kan också spara utkastmodellkonfigurationer och gå vidare till nästa steg i arbetsflödet. Använd **[!UICONTROL Save and continue]** för att skapa och spara utkast under modellkonfigurationer. Med den här funktionen kan du skapa och spara utkast av modellkonfigurationen och den är särskilt användbar när du måste definiera många fält i konfigurationsarbetsflödet.
+
+![Arbetsflödet Skapa på fliken Data Science Services Customer AI med Spara och Spara och fortsätt markerat.](../images/user-guide/cai-save-and-exit.png)
 
 ### Fullständighet för datauppsättning {#dataset-completeness}
 
@@ -236,7 +240,7 @@ Tack vare växlingsknappen Profil kan kundens artificiell intelligens (AI) expor
 
 När du använder AI för första gången kan du inaktivera den här funktionen tills du är nöjd med modellens utdataresultat. Detta förhindrar att du överför flera poängsättningsdatauppsättningar till dina kundprofiler samtidigt som du finjusterar modellen. När du har kalibrerat modellen kan du klona den med [klonalternativ](#set-up-your-instance) från **Tjänstinstanser** sida. På så sätt kan du skapa en kopia av modellen och aktivera profilen.
 
-![Växla profil](../images/user-guide/advanced-workflow.png)
+![Växla profil](../images/user-guide/advanced-workflow-save.png)
 
 När du har angett poängschemat, inkluderar du undantag för förutsägelser och profilen växlar var du vill ha det väljer du **[!UICONTROL Finish]** i det övre högra hörnet för att skapa en AI-instans för kunden.
 
@@ -247,6 +251,14 @@ Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och e
 >Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
 
 Genom att följa det här avsnittet har du konfigurerat en instans av Customer AI och utfört en förutsägelsekörning. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poängvärden om profilväxlingen är aktiverad. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
+
+## Styrningspolitik
+
+När du har gått igenom arbetsflödet för att skapa en instans och skicka in modellens konfiguration kan du [policytillämpning](/help/data-governance/enforcement/auto-enforcement.md) kontrollerar om det finns några överträdelser. Om en principöverträdelse inträffar visas en portfölj som anger att en eller flera profiler har överträtts. Detta för att säkerställa att era dataåtgärder och marknadsföringsåtgärder inom plattformen är kompatibla med dataanvändningsprinciper.
+
+![potypografering som visar policyöverträdelse](../images/user-guide/policy-violation-popover-cai.png)
+
+Leverantören ger specifik information om överträdelsen. Du kan lösa dessa överträdelser med hjälp av principinställningar och andra åtgärder som inte är direkt relaterade till konfigurationsarbetsflödet. Du kan till exempel ändra etiketterna så att vissa fält kan användas i datavetenskapliga syften. Du kan också ändra själva modellkonfigurationen så att den inte använder något med en etikett på den. Läs dokumentationen om du vill veta mer om hur du konfigurerar [policyer](/help/data-governance/policies/overview.md).
 
 ## Attributbaserad åtkomstkontroll
 
@@ -274,11 +286,11 @@ På grund av den attributbaserade åtkomstkontrollen skulle vissa fält och funk
 
 När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICONTROL Create instance workflow]** visas en varning om att [!UICONTROL Due to access restrictions, certain information isn't displayed in the dataset preview.]
 
-![Kundens AI-arbetsyta med begränsade fält för förhandsgranskningsdatauppsättningar med begränsade schemaresultat markerade.](../images/user-guide/restricted-dataset-preview.png)
+![Kundens AI-arbetsyta med begränsade fält för förhandsgranskningsdatauppsättningar med begränsade schemaresultat markerade.](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
 
 När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
 
-![Kundens AI-arbetsyta med de begränsade fälten i tjänstinstansresultaten markerade.](../images/user-guide/information-not-displayed.png)
+![Kundens AI-arbetsyta med de begränsade fälten i tjänstinstansresultaten markerade.](../images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## Nästa steg {#next-steps}
 

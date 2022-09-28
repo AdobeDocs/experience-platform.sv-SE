@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Attribution AI
 topic-legacy: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: 8071ddc945e89dd54173b34d44c6f622570801a3
+source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
 workflow-type: tm+mt
-source-wordcount: '2784'
+source-wordcount: '2867'
 ht-degree: 0%
 
 ---
@@ -70,6 +70,10 @@ Välja informationsikonen ![informationsikon](./images/user-guide/info-icon.png)
 
 Datauppsättningsförhandsvisningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
 
+Välj **[!UICONTROL Save]** om du vill spara dina utkast när du går vidare i arbetsflödet. Du kan också spara utkastmodellkonfigurationer och gå vidare till nästa steg i arbetsflödet. Använd **[!UICONTROL Save and continue]** för att skapa och spara utkast under modellkonfigurationer. Med den här funktionen kan du skapa och spara utkast av modellkonfigurationen och den är särskilt användbar när du måste definiera många fält i konfigurationsarbetsflödet.
+
+![Arbetsflödet Skapa på fliken Data Science Services-Attribution AI med Spara och Spara och fortsätt markerat.](./images/user-guide/aai-save-save-&-exit.png)
+
 ### Fullständighet för datauppsättning {#dataset-completeness}
 
 <!-- https://www.adobe.com/go/aai-dataset-completeness -->
@@ -92,7 +96,7 @@ Nu kan du koppla flera datauppsättningar till varandra baserat på identitetska
 
 Markera en identitet genom att markera det understrukna värdet i identitetskolumnen. Välj en identitetsleverantör.
 
-![välj samma namnutrymme](./images/user-guide/aai-identity-map.png)
+![välj samma namnutrymme](./images/user-guide/aai-identity-map-save-and-exit.png)
 
 Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, en arbets- och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Det innebär att du måste välja `EMAIL (personalEmail.address)` som din identitet.
 
@@ -108,7 +112,7 @@ Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rä
 
 När du är klar med att välja och lägga till datauppsättningar **Karta** konfigurationssteget visas. Attribution AI kräver att du mappar mediekanalsfältet för varje datauppsättning som du valde i föregående steg. Detta beror på att utan mediekanalmappningen mellan datauppsättningar kanske insikter som härletts från Attribution AI inte visas korrekt, vilket gör det svårt att tolka insikter. Även om bara mediekanalen krävs rekommenderar vi att du mappar några av de valfria fälten, som Media-åtgärd, Campaign-namn, Campaign-grupp och Campaign-tagg. På så sätt kan Attribution AI få tydligare insikter och optimala resultat.
 
-![mappning](./images/user-guide/mapping.png)
+![mappning](./images/user-guide/mapping-save-&-exit.png)
 
 ## Definiera händelser {#define-events}
 
@@ -198,13 +202,13 @@ Du kan lägga till fler kontaktytor genom att välja **Lägg till kontaktyta** o
 
 När du har definierat alla nödvändiga kontaktytor rullar du uppåt och väljer **Nästa** i det övre högra hörnet för att fortsätta till det sista steget.
 
-![färdig definition](./images/user-guide/define_event_next.png)
+![färdig definition](./images/user-guide/define_event_save_and_exit.png)
 
 ## Avancerad utbildning och poängsättning
 
 Den sista sidan i Attribution AI är **[!UICONTROL Advanced]** sida som används för att ställa in utbildning och poängsättning.
 
-![ny sida avancerad](./images/user-guide/advanced_settings.png)
+![nya alternativ för siduppsättning](./images/user-guide/advanced_settings_set_options.png)
 
 ### Schemalägg utbildning
 
@@ -298,7 +302,7 @@ När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICON
 
 När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
 
-![Attribution AI arbetsyta med de begränsade fälten för instansresultaten markerade.](./images/user-guide/information-not-displayed.png)
+![Attribution AI arbetsyta med de begränsade fälten för instansresultaten markerade.](./images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## Nästa steg
 
