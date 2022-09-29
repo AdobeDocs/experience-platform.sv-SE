@@ -2,9 +2,9 @@
 title: API-guide för datahygien
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 16eecb22a1bec89c7dbac2fcee566a2226cf897f
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '403'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform, samt schemalägga förfallodatum för datauppsättningar. Den här guiden beskriver de nödvändiga stegen för att använda API:t och innehåller länkar till mer slutpunktsspecifik dokumentation.
 
@@ -44,10 +44,6 @@ Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formatera
 En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för datauppsättningen anger du en framtida tidpunkt då datauppsättningen ska tas bort. Se [Slutpunktshandbok för datauppsättningens förfallodatum](./dataset-expiration.md) om du vill ha mer information om schemaläggning av datauppsättningens förfallodatum i API:t.
 
 ## Konsumentborttagningar
-
->[!NOTE]
->
->Konsumentborttagningar är bara tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Sheild.
 
 Med API:t för datahygien kan du ta bort alla poster som är kopplade till en konsumentidentitet i en eller alla datauppsättningar. Alla datahygienåtgärder som tar bort konsumentidentiteter representeras av en konstruktion som kallas arbetsorder. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med konsumentborttagningar i API:t.
 

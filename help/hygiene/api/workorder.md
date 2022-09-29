@@ -2,9 +2,9 @@
 title: API-slutpunkt för arbetsorder
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för konsumentidentiteter.
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: fb9d226a4ea2d23ccbf61416e275a0de5025554f
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '989'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Begäranden om borttagning av konsumenter är för närvarande endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 The `/workorder` -slutpunkten i API:t för datahygien gör att du kan hantera konsumentborttagningsbegäranden i Adobe Experience Platform programmatiskt.
 

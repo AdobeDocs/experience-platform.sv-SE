@@ -2,9 +2,9 @@
 title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: c2ff0d5806e57f230b937e8754d40031fb4b2305
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 The `/ttl` -slutpunkten i Data Hygiene API gör att du kan schemalägga förfallodatum för datauppsättningar i Adobe Experience Platform.
 

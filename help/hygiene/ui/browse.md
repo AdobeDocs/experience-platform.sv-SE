@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 425298ec28517bba4eca1bf0966fd3b205fce764
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '832'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 >title="ID för arbetsorder"
 >abstract="När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar med andra ord en specifik datahygienprocess, som omfattar dess aktuella status och andra relaterade detaljer. Varje arbetsorder tilldelas automatiskt ett eget unikt ID när den skapas."
 >text="See the data hygiene UI guide to learn more."
+
+>[!IMPORTANT]
+>
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datahygienprocess, t.ex. ett schemalagt utgångsdatum för datauppsättningen, som inkluderar dess aktuella status och andra relaterade detaljer.
 
@@ -30,10 +34,6 @@ När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet vi
 I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** för att visa en lista över konsumentborttagningsåtgärder, och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
 
 ![Bilden visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
-
->[!IMPORTANT]
->
->Konsumentborttagningar är endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 

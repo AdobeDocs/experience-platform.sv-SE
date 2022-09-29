@@ -2,7 +2,7 @@
 title: Översikt över datahygien
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 51181dccbd37df60e438f34090ebaeb9e327c4ce
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 0%
@@ -11,16 +11,16 @@ ht-degree: 0%
 
 # Datahygien i Adobe Experience Platform
 
+>[!IMPORTANT]
+>
+>Datahygien är för närvarande endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
+
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
 Plattformens datahygifunktioner gör att du kan hantera dina lagrade konsumentdata genom följande:
 
 * Schemalägga förfallodatum för automatiska datauppsättningar
 * Ta bort konsumentdata baserat på importerade identiteter
-
->[!NOTE]
->
->Begäran om att ta bort kunder är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
 
 Dessa aktiviteter kan utföras med [[!UICONTROL Data Hygiene] Arbetsyta i användargränssnittet](#ui) eller [API för datahygien](#api). När ett datahygijobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Se avsnittet om [tidslinjer och genomskinlighet](#timelines-and-transparency) om du vill ha mer information om hur varje jobbtyp visas i systemet.
 
