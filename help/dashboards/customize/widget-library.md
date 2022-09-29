@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Översikt över widgetbiblioteket Dashboard
 description: Den här handboken innehåller stegvisa instruktioner för hur du kommer åt widgetbiblioteket i Adobe Experience Platform.
 exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
-source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
+source-git-commit: 09f212741321f17372d52fee507a96d2d2834e85
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,12 @@ Välj **[!UICONTROL Widget library]** för att öppna widgetbiblioteket och visa
 Från [!UICONTROL Widget library]väljer du en widget i listan med tillgängliga standardwidgetar eller anpassade widgetar. En bock i hörnet av widgeten anger att du har valt något.
 
 ![Widgetbiblioteket med en markerad widget och bockmarkering markerad.](../images/customization/confirm-selected-widget-to-add.png)
+
+### Etikett för användning {#in-use-label}
+
+Widgetar som redan har lagts till på en instrumentpanel har en [!UICONTROL In-use] etikett som är kopplad till dem när de visas i widgetbiblioteket. Den här etiketten markerar widgetar som redan har lagts till på din instrumentpanel för att undvika duplicering. Du kan fortfarande lägga till samma widget fler än en gång om du vill.
+
+![Widgetbiblioteket med etiketten som används markerad.](../images/customization/in-use-label.png)
 
 När du har markerat alla obligatoriska widgetar väljer du **[!UICONTROL Add widgets]** för att bekräfta ditt val och lägga till widgetarna på din instrumentpanel.
 
