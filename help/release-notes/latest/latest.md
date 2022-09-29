@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 64c376b52aa7f7827c19194d677d8a1648c04195
+source-git-commit: c9abf2d0ef2b8a9a9727224fdbb4c784dd041158
 workflow-type: tm+mt
-source-wordcount: '2717'
+source-wordcount: '2900'
 ht-degree: 1%
 
 ---
@@ -24,6 +24,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Granskningsloggar](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
+- [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Frågetjänst](#query-service)
@@ -135,6 +136,34 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ----------- | ----------- |
+| Destination SDK | Destination SDK ger nu fullt stöd för partners och kunder som skapar batchvis (eller filbaserat) producerade eller privata destinationer. Mer information finns på följande dokumentationssidor: <ul><li>[Översikt över Destination SDK](/help/destinations/destination-sdk/overview.md)</li><li>[Konfigurera ett filbaserat mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Konfigurera filformateringsalternativ för filbaserade mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Testa dina filbaserade mål](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Nya eller uppdaterade destinationer**
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | The [!DNL Salesforce CRM] målet har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Ny eller uppdaterad dokumentation**
+
+| Dokumentation | Beskrivning |
+| ----------- | ----------- |
+| API-dokumentation för destinationsflödestjänst | The [Referenshandbok för destinations-API](https://developer.adobe.com/experience-platform-apis/references/destinations/) uppdaterades med vägledning om hur åtgärder ska utföras på filbaserade mål. Åtgärder för direktuppspelningsmål läggs till vid ett senare tillfälle. |
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
