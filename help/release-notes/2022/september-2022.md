@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: eb146769ac78312f83a8336e4eac578f8301abc8
+source-git-commit: dd17e0903f69a6d639582d83bcd22b269aedb5d0
 workflow-type: tm+mt
-source-wordcount: '3021'
+source-wordcount: '3048'
 ht-degree: 1%
 
 ---
@@ -118,7 +118,7 @@ Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan s
 | Etikett för användning | När den visas i widgetbiblioteket identifierar etiketten som används enkelt att det finns befintliga widgetar på din instrumentpanel. Det gör det enkelt att undvika duplicering, även om du kan lägga till samma widget flera gånger om du vill. |
 | Användardefinierade kontrollpaneler | Användardefinierade kontrollpaneler hjälper dig att få bättre insikter och anpassa visualiseringar genom att du kan skapa och hantera anpassade kontrollpaneler. Med användardefinierade kontrollpaneler kan du skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen. Läs [funktionsguide](../../dashboards/user-defined-dashboards.md) om du vill veta mer. |
 | Datamodell för Insikter om kunddataplattform | Funktionen CDP (Customer Data Platform) Insights Data Model visar de datamodeller och SQL som driver insikterna för olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för dina användningsfall för marknadsförings- och nyckelutförandeindikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs [Funktionsguide för CDP Insights-datamodell](../../dashboards/cdp-insights-data-model.md) om du vill veta mer. |
-| Rapportwidget för publiköverlappning | Den här widgeten är tillgänglig för båda [!UICONTROL Profiles] och [!UICONTROL Segments] instrumentpaneler. Rapporten innehåller en ordnad lista över målgrupper som rangordnas efter de högsta eller lägsta överlappningsprocentsatserna för det valda segmentet. Från [!UICONTROL Profiles] på kontrollpanelen kan du filtrera och visa målgruppsöverlappning genom att sammanfoga principer från alla tillgängliga segment. The [!UICONTROL Segments] Med kontrollpaneler kan du filtrera målgruppsöverlappningen efter ett visst segment.<br>Använd den här analysen för att skapa nya högpresterande segment och undvika att skicka samma målgrupp till olika destinationer. Rapporten kan också hjälpa till att identifiera dolda insikter för att förbättra segmenteringen eller hitta unika profiler att eftersträva. |
+| Rapportwidget för publiköverlappning | Den här widgeten är tillgänglig för båda [!UICONTROL Profiles] och [!UICONTROL Segments] instrumentpaneler. Rapporten innehåller en ordnad lista över målgrupper som rangordnas efter de högsta eller lägsta överlappningsprocentsatserna för det valda segmentet. Från [!UICONTROL Profiles] på kontrollpanelen kan du filtrera och visa målgruppsöverlappning genom att sammanfoga principer från alla tillgängliga segment. The [!UICONTROL Segments] Med kontrollpaneler kan du filtrera målgruppsöverlappningen efter ett visst segment.<br>Använd den här analysen för att skapa nya högpresterande segment och undvika att skicka samma målgrupp till olika destinationer. Rapporten kan också hjälpa till att identifiera dolda insikter för att förbättra segmenteringen eller hitta unika profiler att eftersträva. Läs respektive [profiler](../../dashboards/guides/profiles.md#audience-overlap-report) och [segment](../../dashboards/guides/segments.md#audience-overlap-report) widgetguider för mer information. |
 
 Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../dashboards/home.md).
 
@@ -238,8 +238,8 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Aviseringsprenumerations-API | Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Frågevarningar kan för närvarande bara prenumereras på med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
-| Datauppsättningsexempel | Med hjälp av datamängdsprover från frågetjänsten kan du utföra undersökande frågor på stora data, vilket minskar bearbetningstiden avsevärt och därmed kan ge korrekta frågor. |
+| Aviseringsprenumerations-API | Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Frågevarningar kan för närvarande bara prenumereras på med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/). Se [frågeaviseringsdokumentation](../../query-service/api/alert-subscriptions.md) om du vill veta mer. |
+| Datauppsättningsexempel | Med hjälp av datamängdsprover från frågetjänsten kan du utföra undersökande frågor på stora data, vilket minskar bearbetningstiden avsevärt och därmed kan ge korrekta frågor. Se [exempelguide för datauppsättning](../../query-service/sql/dataset-samples.md) om du vill veta mer. |
 
 Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).
 
