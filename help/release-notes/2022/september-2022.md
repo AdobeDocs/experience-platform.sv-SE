@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 5c6bb56b4b3fa63c285aa62b0a7b68ed269654b2
+source-git-commit: eb146769ac78312f83a8336e4eac578f8301abc8
 workflow-type: tm+mt
-source-wordcount: '2983'
+source-wordcount: '3021'
 ht-degree: 1%
 
 ---
@@ -158,7 +158,8 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | The [!DNL Salesforce CRM] målet har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med Campaign](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). |
+| [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | The [!DNL Salesforce CRM] målet har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
 
 {style=&quot;table-layout:auto&quot;}
 
