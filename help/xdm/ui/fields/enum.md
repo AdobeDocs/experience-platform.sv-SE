@@ -5,9 +5,9 @@ title: Definiera uppräkningsfält och föreslagna värden i användargränssnit
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: e515e32588991e468429c9256533732d04a4339f
+source-git-commit: ea27486a198f5248eeb5348ce20865bc41c2339a
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1176'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Välj **[!UICONTROL Enums and Suggested Values]** väljer **[!UICONTROL Suggeste
 
 ![Bild som visar alternativet Föreslagna värden som valts i användargränssnittet](../../images/ui/fields/enum/suggested-add-row.png)
 
-Under **[!UICONTROL Display Name]** -kolumnen anger du ett användarvänligt namn för värdet som du vill att det ska visas i segmenteringsgränssnittet. Om du vill lägga till fler föreslagna värden väljer du **[!UICONTROL Add row]** och upprepa processen efter behov. Om du vill ta bort en rad som lagts till tidigare markerar du ikonen Ta bort (![Bild av ikonen Ta bort](../../images/ui/fields/enum/remove-icon.png)) bredvid raden i fråga.
+Under **[!UICONTROL Display Name]** -kolumnen anger du ett användarvänligt namn för värdet som du vill att det ska visas i segmenteringsgränssnittet. Om du vill lägga till fler föreslagna värden väljer du **[!UICONTROL Add row]** och upprepa processen efter behov. Om du vill ta bort en rad som lagts till tidigare väljer du ![ikonen Ta bort](../../images/ui/fields/enum/remove-icon.png) bredvid raden i fråga.
 
 När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna i schemat.
 
@@ -61,25 +61,25 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringar
 
 ### Hantera föreslagna värden för standardfält
 
-Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class](../../classes/experienceevent.md). När du använder dessa fält i dina scheman kan du använda de tillgängliga växlarna för att styra vilka befintliga föreslagna värden som ska användas.
+Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class](../../classes/experienceevent.md). Du kan skapa ytterligare föreslagna värden för ett standardfält, men du kan inte ändra eller ta bort föreslagna värden som inte har definierats av organisationen. När du visar ett standardfält i användargränssnittet visas de föreslagna värdena, men de är skrivskyddade.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard.png)
 
-Välj på liknande sätt som anpassade fält **[!UICONTROL Add row]** om du vill lägga till egna föreslagna värden för standardfält.
+Om du vill lägga till nya föreslagna värden för ett standardfält väljer du **[!UICONTROL Add row]**. Om du vill ta bort ett föreslaget värde som tidigare lagts till av organisationen väljer du ![ikonen Ta bort](../../images/ui/fields/enum/remove-icon.png) bredvid raden i fråga.
 
-![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard.png)
+![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard-add.png)
 
-### Ta bort föreslagna värden för standardfält
+<!-- ### Removing suggested values for standard fields
 
-Endast föreslagna värden som du definierar kan tas bort från ett standardfält. Befintliga föreslagna värden kan inaktiveras så att de inte längre visas i segmenteringslistrutan, men de kan inte tas bort direkt.
+Only suggested values that you define can be removed from a standard field. Existing suggested values can be disabled so that they no longer appear in the segmentation dropdown, but they cannot be removed outright.
 
-Ta till exempel ett profilschema där ett föreslaget värde för standarden `person.gender` fältet är inaktiverat:
+For example, consider a profile schema where the a suggested value for the standard `person.gender` field is disabled:
 
-![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/standard-enum-disabled.png)
+![Image showing the enum values and display names filled out for the string field in the UI](../../images/ui/fields/enum/standard-enum-disabled.png)
 
-I det här exemplet är visningsnamnet[!UICONTROL Non-specific]&quot; är nu inaktiverat för att visas i listrutan för segmentering. Värdet `non_specific` är fortfarande en del av listan med uppräknade fält och är därför fortfarande tillåten vid förtäring. Du kan alltså inte inaktivera det faktiska uppräkningsvärdet för standardfältet eftersom det skulle strida mot principen att bara tillåta ändringar som gör ett fält mindre restriktivt.
+In this example, the display name "[!UICONTROL Non-specific]" is now disabled from being shown in the segmentation dropdown list. However, the value `non_specific` is still part of the list of enumerated fields and is therefore still allowed on ingestion. In other words, you cannot disable the actual enum value for the standard field as it would go against the principle of only allowing changes that make a field less restrictive.
 
-Se [avsnitt nedan](#evolution) om du vill ha mer information om reglerna för uppdatering av uppräkningar och föreslagna värden för befintliga schemafält.
+See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. -->
 
 ## Utvecklingsregler för enum och föreslagna värden {#evolution}
 
@@ -109,6 +109,13 @@ Om samma anpassade fältsökväg refereras i olika fältgrupper:
 
 * Ytterligare föreslagna värden är **BIFOGAD** i unionen.
 * Om samma ytterligare föreslagna värde definieras i mer än ett schema är dessa värden **SAMMANSLAGNA** i unionen. Med andra ord visas inte samma föreslagna värde två gånger efter sammanslagningen.
+
+## Valideringsbegränsningar
+
+På grund av nuvarande systembegränsningar finns det två fall där en uppräkning inte valideras av systemet vid intag:
+
+1. Uppräkningen definieras på en [matrisfält](./array.md).
+1. Uppräkningen definieras mer än en nivå djupt i schemahierarkin.
 
 ## Nästa steg
 

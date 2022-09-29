@@ -2,9 +2,9 @@
 title: Hantera föreslagna värden i API
 description: Lär dig hur du lägger till föreslagna värden i ett strängfält i API:t för schemaregister.
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
-source-git-commit: 19bd5d9c307ac6e1b852e25438ff42bf52a1231e
+source-git-commit: 2f916ea4b05ca67c2b9e603512d732a2a3f7a3b2
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
@@ -69,11 +69,11 @@ Du kan också definiera ett strängfält som inte innehåller ett `enum` -arraye
 
 Eftersom strängen inte har en `enum` matris för att definiera begränsningar, dess `meta:enum` kan utökas så att den innehåller nya värden.
 
-## Hantera föreslagna värden för standardfält
+<!-- ## Manage suggested values for standard fields
 
-För befintliga standardfält kan du [lägg till föreslagna värden](#add-suggested-standard) eller [ta bort föreslagna värden](#remove-suggested-standard).
+For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). -->
 
-### Lägg till föreslagna värden {#add-suggested-standard}
+## Lägga till föreslagna värden i ett standardfält {#add-suggested-standard}
 
 Utöka `meta:enum` av ett standardsträngfält kan du skapa [egen namnbeskrivning](../api/descriptors.md#friendly-name) för fältet i fråga i ett visst schema.
 
@@ -151,19 +151,19 @@ När du har använt beskrivningen svarar schemaregistret med följande när sche
 >}
 >```
 
-### Ta bort föreslagna värden {#remove-suggested-standard}
+<!-- ### Remove suggested values {#remove-suggested-standard}
 
-Om ett standardsträngfält har fördefinierade föreslagna värden kan du ta bort värden som du inte vill se i segmenteringen. Detta görs genom att skapa en [egen namnbeskrivning](../api/descriptors.md#friendly-name) för det schema som innehåller `xdm:excludeMetaEnum` -egenskap.
+If a standard string field has predefined suggested values, you can remove any values that you do not wish to see in segmentation. This is done through by creating a [friendly name descriptor](../api/descriptors.md#friendly-name) for the schema that includes an `xdm:excludeMetaEnum` property.
 
-**API-format**
+**API format**
 
 ```http
 POST /tenant/descriptors
 ```
 
-**Begäran**
+**Request**
 
-Följande begäran tar bort de föreslagna värdena &quot;[!DNL Web Form Filled Out]&quot; och &quot;[!DNL Media ping]&quot; for `eventType` i ett schema baserat på [Klassen XDM ExperienceEvent](../classes/experienceevent.md).
+The following request removes the suggested values "[!DNL Web Form Filled Out]" and "[!DNL Media ping]" for `eventType` in a schema based on the [XDM ExperienceEvent class](../classes/experienceevent.md).
 
 ```shell
 curl -X POST \
@@ -185,19 +185,19 @@ curl -X POST \
       }'
 ```
 
-| Egenskap | Beskrivning |
+| Property | Description |
 | --- | --- |
-| `@type` | Den typ av beskrivning som definieras. För en egen namnbeskrivning måste det här värdet anges till `xdm:alternateDisplayInfo`. |
-| `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
-| `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökvägen till den specifika egenskap vars föreslagna värden du vill hantera. Sökvägen ska börja med ett snedstreck (`/`) och inte sluta med en. Inkludera inte `properties` i sökvägen (använd till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
-| `meta:excludeMetaEnum` | Ett objekt som beskriver de föreslagna värden som ska exkluderas för fältet i segmentering. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
+| `@type` | The type of descriptor being defined. For a friendly name descriptor, this value must be set to `xdm:alternateDisplayInfo`. |
+| `xdm:sourceSchema` | The `$id` URI of the schema where the descriptor is being defined. |
+| `xdm:sourceVersion` | The major version of the source schema. |
+| `xdm:sourceProperty` | The path to the specific property whose suggested values you want to manage. The path should begin with a slash (`/`) and not end with one. Do not include `properties` in the path (for example, use `/personalEmail/address` instead of `/properties/personalEmail/properties/address`). |
+| `meta:excludeMetaEnum` | An object that describes the suggested values that should be excluded for the field in segmentation. The key and value for each entry must match those included in the original `meta:enum` of the field in order for the entry to be excluded.  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-**Svar**
+**Response**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyskapade beskrivningen. De föreslagna värdena i `xdm:excludeMetaEnum` döljs nu i segmenteringsgränssnittet.
+A successful response returns HTTP status 201 (Created) and the details of the newly created descriptor. The suggested values included under `xdm:excludeMetaEnum` will now be hidden from the Segmentation UI.
 
 ```json
 {
@@ -211,7 +211,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
   "meta:containerId": "tenant",
   "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
 }
-```
+``` -->
 
 ## Hantera föreslagna värden för ett anpassat fält {#suggested-custom}
 
