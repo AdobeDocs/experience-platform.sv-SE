@@ -1,14 +1,18 @@
 ---
 title: Datauppsättningsexempel
 description: Med exempeldatauppsättningar för frågetjänsten kan du utföra utforskande frågor på stora data med avsevärt reducerad bearbetningstid, vilket gör att frågan blir korrekt. Den här guiden innehåller information om hur du hanterar dina exempel för ungefärlig frågebearbetning
-source-git-commit: 81531f8c5a89fd21a34d4fc233c2c57f79335f76
+source-git-commit: 3d2802ff5cdb359b28da23a05d1d6831cc273a52
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
 
-# Datauppsättningsexempel
+# (Beta) Datauppsättningsexempel
+
+>[!IMPORTANT]
+>
+>Exempelfunktionen för datauppsättningar finns i betaversionen. Dess funktioner och dokumentation kan komma att ändras.
 
 Adobe Experience Platform Query Service innehåller exempeldatauppsättningar som en del av de ungefärliga frågebearbetningsfunktionerna. Exempeldatauppsättningar skapas med enhetliga slumpmässiga urval från befintliga [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar där endast en procentandel av posterna från originalet används. Denna procentandel kallas samplingsfrekvensen. Genom att justera samplingsfrekvensen för att styra balansen mellan noggrannhet och bearbetningstid kan du utföra undersökande frågor på stora data med avsevärt reducerad bearbetningstid på bekostnad av frågans exakthet.
 
