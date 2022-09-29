@@ -2,7 +2,7 @@
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 3ab02646968222c0ad09c1d8ce8fda04de7aaac6
 workflow-type: tm+mt
 source-wordcount: '887'
 ht-degree: 0%
@@ -132,7 +132,7 @@ Om du vill hämta egenskaper från ett XDM-objektdataelement gäller samma regle
 
 Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället. Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** för att fortsätta.
 
-![JSON-exempel på förväntade inkommande data](../images/datastreams/data-prep/select-data.png)
+![JSON-exempel på förväntade inkommande data](../assets/datastreams/data-prep/select-data.png)
 
 ## [!UICONTROL Mapping]
 
@@ -145,25 +145,25 @@ The **[!UICONTROL Mapping]** visas så att du kan mappa fälten i källdata till
 
 För att komma igång väljer du **[!UICONTROL Add new mapping]** för att skapa en ny mappningsrad.
 
-![Lägga till en ny mappning](../images/datastreams/data-prep/add-new-mapping.png)
+![Lägga till en ny mappning](../assets/datastreams/data-prep/add-new-mapping.png)
 
-Välj källikon (![Källikon](../images/datastreams/data-prep/source-icon.png)) och i den dialogruta som visas väljer du det källfält som du vill mappa på den angivna arbetsytan. När du har valt ett fält använder du **[!UICONTROL Select]** för att fortsätta
+Välj källikon (![Källikon](../assets/datastreams/data-prep/source-icon.png)) och i den dialogruta som visas väljer du det källfält som du vill mappa på den angivna arbetsytan. När du har valt ett fält använder du **[!UICONTROL Select]** för att fortsätta
 
-![Markera fältet som ska mappas i källschemat](../images/datastreams/data-prep/source-mapping.png)
+![Markera fältet som ska mappas i källschemat](../assets/datastreams/data-prep/source-mapping.png)
 
-Välj sedan schemaikonen (![Schemaikon](../images/datastreams/data-prep/schema-icon.png)) för att öppna en liknande dialogruta för målhändelseschemat. Välj det fält som du vill mappa data till innan du bekräftar med **[!UICONTROL Select]**.
+Välj sedan schemaikonen (![Schemaikon](../assets/datastreams/data-prep/schema-icon.png)) för att öppna en liknande dialogruta för målhändelseschemat. Välj det fält som du vill mappa data till innan du bekräftar med **[!UICONTROL Select]**.
 
-![Markera fältet som ska mappas i målschemat](../images/datastreams/data-prep/target-mapping.png)
+![Markera fältet som ska mappas i målschemat](../assets/datastreams/data-prep/target-mapping.png)
 
 Mappningssidan visas igen med den ifyllda fältmappningen. The **[!UICONTROL Mapping progress]** avsnittsuppdateringar för att återspegla det totala antalet fält som har mappats.
 
-![Fältet har mappats med förloppet speglat](../images/datastreams/data-prep/field-mapped.png)
+![Fältet har mappats med förloppet speglat](../assets/datastreams/data-prep/field-mapped.png)
 
 >[!TIP]
 >
 >Om du vill mappa en array med objekt (i källfältet) till en array med olika objekt (i målfältet) lägger du till `[*]` efter arraynamnet i käll- och målfältssökvägarna, vilket visas nedan.
 >
->![Arrayobjektsmappning](../images/datastreams/data-prep/array-object-mapping.png)
+>![Arrayobjektsmappning](../assets/datastreams/data-prep/array-object-mapping.png)
 
 ### Importera befintliga mappningsregler {#import-mapping}
 
@@ -175,11 +175,11 @@ Om du tidigare har skapat ett datastream kan du återanvända dess konfigurerade
 
 Börja genom att välja **[!UICONTROL Import Mapping]**.
 
-![Bilden visar [!UICONTROL Import Mapping] knappen markeras](../images/datastreams/data-prep/import-mapping-button.png)
+![Bilden visar [!UICONTROL Import Mapping] knappen markeras](../assets/datastreams/data-prep/import-mapping-button.png)
 
 I den dialogruta som visas markerar du datastream vars mappningsregler du vill importera. När du har valt datastream väljer du **[!UICONTROL Preview]**.
 
-![Bild som visar ett befintligt datastream som markeras](../images/datastreams/data-prep/select-mapping-rules.png)
+![Bild som visar ett befintligt datastream som markeras](../assets/datastreams/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -187,7 +187,7 @@ I den dialogruta som visas markerar du datastream vars mappningsregler du vill i
 
 På nästa skärm visas en förhandsvisning av de sparade mappningsreglerna för det valda datastream. Kontrollera att de visade mappningarna är vad du förväntar dig och välj sedan **[!UICONTROL Import]** för att bekräfta och lägga till mappningarna i den nya datastream.
 
-![Bild som visar mappningsreglerna som ska importeras](../images/datastreams/data-prep/import-mapping-rules.png)
+![Bild som visar mappningsreglerna som ska importeras](../assets/datastreams/data-prep/import-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -199,7 +199,7 @@ Följ stegen ovan för att mappa resten av fälten till målschemat. Även om du
 
 När antalet obligatoriska fält har nått noll och du är nöjd med mappningen väljer du **[!UICONTROL Save]** för att slutföra ändringarna.
 
-![Mappningen är klar](../images/datastreams/data-prep/mapping-complete.png)
+![Mappningen är klar](../assets/datastreams/data-prep/mapping-complete.png)
 
 ## Nästa steg
 

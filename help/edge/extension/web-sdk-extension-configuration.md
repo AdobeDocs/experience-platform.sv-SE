@@ -2,7 +2,7 @@
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
 description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 3ab02646968222c0ad09c1d8ce8fda04de7aaac6
 workflow-type: tm+mt
 source-wordcount: '985'
 ht-degree: 0%
@@ -19,15 +19,15 @@ Det här dokumentet beskriver hur du konfigurerar tillägget i användargränssn
 
 Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i användargränssnittet och väljer **[!UICONTROL Extensions]** -fliken. Under Platform Web SDK väljer du **[!UICONTROL Configure]**.
 
-![](../images/extension/overview/configure.png)
+![](../assets/extension/overview/configure.png)
 
 Om du inte har installerat tillägget än väljer du **[!UICONTROL Catalog]** -fliken. Leta reda på plattformstillägget för Web SDK i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
 
-![](../images/extension/overview/install.png)
+![](../assets/extension/overview/install.png)
 
 I båda fallen kommer du till konfigurationssidan för Platform Web SDK. I avsnitten nedan beskrivs tilläggets konfigurationsalternativ.
 
-![](../images/extension/overview/config-screen.png)
+![](../assets/extension/overview/config-screen.png)
 
 ## Allmänna konfigurationsalternativ
 
@@ -56,7 +56,7 @@ Se guiden [datastreams](../datastreams/overview.md) för mer information.
 
 ## [!UICONTROL Privacy]
 
-![](../images/extension/overview/privacy.png)
+![](../assets/extension/overview/privacy.png)
 
 The [!UICONTROL Privacy] I kan du konfigurera hur SDK hanterar användares medgivandesignaler från din webbplats. Det gör i synnerhet att du kan välja den standardnivå för samtycke som antas av en användare om ingen annan explicit inställning har angetts. Standardnivån för samtycke sparas inte i användarens profil. I följande tabell visas vad varje alternativ innebär:
 
@@ -71,7 +71,7 @@ Använd Utgående eller Väntande om du kräver uttryckligt användargodkännand
 
 ## [!UICONTROL Identity]
 
-![](../images/extension/overview/identity.png)
+![](../assets/extension/overview/identity.png)
 
 ### [!UICONTROL Migrate ECID from VisitorAPI]
 
@@ -83,13 +83,13 @@ Med det här alternativet kan SDK försöka lagra en användaridentifierare i en
 
 ## [!UICONTROL Personalization]
 
-![](../images/extension/overview/personalization.png)
+![](../assets/extension/overview/personalization.png)
 
 Om du vill dölja vissa delar av webbplatsen när anpassat innehåll läses in, kan du ange vilka element som ska döljas i den fördolda formatredigeraren. Du kan sedan kopiera det fördolda standardfragmentet som du har fått och klistra in det inuti `<head>`-element på din HTML-webbplats.
 
 ## [!UICONTROL Data Collection]
 
-![](../images/extension/overview/data-collection.png)
+![](../assets/extension/overview/data-collection.png)
 
 ### [!UICONTROL Callback function]
 
@@ -105,7 +105,7 @@ Som standard samlar SDK in vissa kontextdata för enhet, webb, miljö och platsk
 
 ## [!UICONTROL Advanced Settings]
 
-![](../images/extension/overview/advanced-settings.png)
+![](../assets/extension/overview/advanced-settings.png)
 
 ### [!UICONTROL Edge base path]
 

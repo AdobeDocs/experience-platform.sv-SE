@@ -3,9 +3,9 @@ title: Översikt över dataströmmar
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 81b20d40d3511592125cba123fa070fc27aace5a
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1692'
 ht-degree: 1%
 
 ---
@@ -20,29 +20,29 @@ Det här dokumentet innehåller stegen för hur du konfigurerar ett datastream i
 
 Du kan skapa och hantera datastölar i användargränssnittet för datainsamling eller användargränssnittet för Experience Platform genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen.
 
-![Fliken Datastreams i användargränssnittet](../images/datastreams/overview/datastreams-tab.png)
+![Fliken Datastreams i användargränssnittet](../assets/datastreams/overview/datastreams-tab.png)
 
 The [!UICONTROL Datastreams] På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
 
 Välj ikonen &quot;mer&quot; (**...**) för en viss datastream för att visa fler alternativ. Välj **[!UICONTROL Edit]** för att uppdatera [grundläggande konfiguration](#configure) för datastream, eller välj **[!UICONTROL Delete]** för att ta bort datastream.
 
-![Alternativ för redigering eller borttagning och befintlig datastream](../images/datastreams/overview/edit-datastream.png)
+![Alternativ för redigering eller borttagning och befintlig datastream](../assets/datastreams/overview/edit-datastream.png)
 
 ## Skapa ett nytt datastream {#create}
 
 Om du vill skapa ett datastream börjar du med att välja **[!UICONTROL New Datastream]**.
 
-![Välj nytt datastream](../images/datastreams/overview/new-datastream-button.png)
+![Välj nytt datastream](../assets/datastreams/overview/new-datastream-button.png)
 
 Arbetsflödet för att skapa en datastam visas med början i konfigurationssteget. Härifrån måste du ange ett namn och en valfri beskrivning för datastream.
 
 Om du konfigurerar det här dataflödet för användning i Experience Platform och använder Platform Web SDK måste du även välja en [händelsebaserat XDM-schema (Experience Data Model)](../../xdm/classes/experienceevent.md) för att representera de data du planerar att använda vid inhämtning.
 
-![Grundkonfiguration för ett datastream](../images/datastreams/overview/configure.png)
+![Grundkonfiguration för ett datastream](../assets/datastreams/overview/configure.png)
 
 Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller för att konfigurera datastream.
 
-![Avancerade konfigurationsalternativ](../images/datastreams/overview/advanced-options.png)
+![Avancerade konfigurationsalternativ](../assets/datastreams/overview/advanced-options.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -57,7 +57,7 @@ Om du konfigurerar ditt datastream för Experience Platform följer du självstu
 
 När du har konfigurerat en ny datastam eller valt en befintlig som ska visas, visas informationssidan för den datastream. Här finns mer information om datastream, inklusive dess ID.
 
-![Informationssida för ett datastream som skapats](../images/datastreams/overview/view-details.png)
+![Informationssida för ett datastream som skapats](../assets/datastreams/overview/view-details.png)
 
 På informationsskärmen kan du [lägg till tjänster](#add-services) för att aktivera funktioner från de Adobe Experience Cloud-produkter du har tillgång till. Du kan även redigera datastreams [grundläggande konfiguration](#create), uppdatera [mappningsregler](./data-prep.md), [kopiera datastream](#copy)eller ta bort den helt.
 
@@ -65,15 +65,15 @@ På informationsskärmen kan du [lägg till tjänster](#add-services) för att a
 
 På informationssidan för ett datastream väljer du **[!UICONTROL Add Service]** för att börja lägga till tillgängliga tjänster för den aktuella datastream.
 
-![Välj Lägg till tjänst för att fortsätta](../images/datastreams/overview/add-service.png)
+![Välj Lägg till tjänst för att fortsätta](../assets/datastreams/overview/add-service.png)
 
 På nästa skärm använder du listrutemenyn för att välja en tjänst som ska konfigureras för det här dataflödet. Endast de tjänster som du har åtkomst till visas i den här listan.
 
-![Välj en tjänst i listan](../images/datastreams/overview/service-selection.png)
+![Välj en tjänst i listan](../assets/datastreams/overview/service-selection.png)
 
 Välj önskad tjänst, fyll i de konfigurationsalternativ som visas och välj sedan **[!UICONTROL Save]** för att lägga till tjänsten i datastream. Alla tillagda tjänster visas i informationsvyn för datastream.
 
-![Tjänster som lagts till i ett datastream](../images/datastreams/overview/services-added.png)
+![Tjänster som lagts till i ett datastream](../assets/datastreams/overview/services-added.png)
 
 Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
 
@@ -85,7 +85,7 @@ Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Mer information finns i guiden på [skicka data till Analytics](../data-collection/adobe-analytics/analytics-overview.md).
 
-![Adobe Analytics Settings Block](../images/datastreams/overview/analytics-config.png)
+![Adobe Analytics Settings Block](../assets/datastreams/overview/analytics-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -95,7 +95,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Me
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Manager. Allt som behövs för att skicka data till Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
 
-![Inställningsblock för hantering av målgruppshantering i Adobe](../images/datastreams/overview/audience-manager-config.png)
+![Inställningsblock för hantering av målgruppshantering i Adobe](../assets/datastreams/overview/audience-manager-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -108,27 +108,28 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Mana
 >
 >När du aktiverar en datastream för Platform bör du tänka på den plattformssandlåda som du använder just nu, så som den visas på den översta menyfliken i användargränssnittet.
 >
->![Markerad sandlåda](../images/datastreams/overview/platform-sandbox.png)
+>![Markerad sandlåda](../assets/datastreams/overview/platform-sandbox.png)
 >
 >Sandlådor är virtuella partitioner i Adobe Experience Platform som gör att du kan isolera data och implementeringar från andra i din organisation. När en datastream har skapats kan dess sandlåda inte ändras. Mer information om sandlådornas roll i Experience Platform finns i [dokumentation för sandlådor](../../sandboxes/home.md).
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Platform.
 
-![Adobe Experience Platform inställningsblock](../images/datastreams/overview/platform-config.png)
+![Adobe Experience Platform inställningsblock](../assets/datastreams/overview/platform-config.png)
 
 | Inställning | Beskrivning |
 |---| --- |
 | [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den plattformsdatauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [Klassen XDM ExperienceEvent](../../xdm/classes/experienceevent.md). |
 | [!UICONTROL Profile Dataset] | Välj den plattformsdatauppsättning som kundattributdata ska skickas till. Det här schemat måste använda [Klassen XDM Individuell profil](../../xdm/classes/individual-profile.md). |
-| [!UICONTROL Offer Decisioning] | Markera den här kryssrutan om du vill aktivera Offer decisioning för en implementering av en Platform Web SDK. Se guiden [använda Offer decisioning med Platform Web SDK](../personalization/offer-decisioning/offer-decisioning-overview.md) om du vill ha mer information om implementeringen. Mer information om Offer decisioning finns i [Adobe Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html). |
-| [!UICONTROL Edge Segmentation] | Markera den här kryssrutan för att aktivera [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för denna datastream. När SDK skickar data via en datastam som är aktiverad för kantsegmentering, skickas alla uppdaterade segmentmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Det här alternativet kan användas i kombination med [!UICONTROL Personalization Destinations] for [exempel på användning av personalisering på nästa sida](../../destinations/ui/configure-personalization-destinations.md). |
-| [!UICONTROL Personalization Destinations] | När du har aktiverat detta efter att du har aktiverat [!UICONTROL Edge Segmentation] kryssrutan tillåter det här alternativet att datastream ansluter till personaliseringsmål, som [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../../destinations/ui/configure-personalization-destinations.md). |
+| [!UICONTROL Offer Decisioning] | Markera den här kryssrutan om du vill aktivera Offer decisioning för en implementering av en Platform Web SDK. Se guiden [använda Offer decisioning med Platform Web SDK](../personalization/offer-decisioning/offer-decisioning-overview.md) om du vill ha mer information om implementeringen. <br><br> Mer information om Offer decisioning finns i [Adobe Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html). |
+| [!UICONTROL Edge Segmentation] | Markera den här kryssrutan för att aktivera [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för denna datastream. När SDK skickar data via en datastam som är aktiverad för kantsegmentering, skickas alla uppdaterade segmentmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Det här alternativet kan användas i kombination med [!UICONTROL Personalization Destinations] for [exempel på användning av personalisering på nästa sida](../../destinations/ui/configure-personalization-destinations.md)eller i kombination med [!UICONTROL Adobe Journey Optimizer]. |
+| [!UICONTROL Personalization Destinations] | När du har aktiverat detta efter att du har aktiverat [!UICONTROL Edge Segmentation] kryssrutan tillåter det här alternativet att datastream ansluter till personaliseringsmål, som [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). <br><br>Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../../destinations/ui/configure-personalization-destinations.md). |
+| [!UICONTROL Adobe Journey Optimizer] | Markera den här kryssrutan för att aktivera [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) för denna datastream. <br><br> Om du aktiverar det här alternativet kan datastream returnera personaliserat innehåll från webb- och appbaserade inkommande kampanjer i [!DNL Adobe Journey Optimizer]. Det här alternativet kräver [!UICONTROL Edge Segmentation] att vara aktiv. If [!UICONTROL Edge Segmentation] är avmarkerat, är det här alternativet nedtonat. |
 
 ### Adobe Target-inställningar {#target}
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 
-![Adobe Target inställningsblock](../images/datastreams/overview/target-config.png)
+![Adobe Target inställningsblock](../assets/datastreams/overview/target-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -140,7 +141,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 
 Den här tjänsten kontrollerar om och hur data skickas till [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md).
 
-![Avsnittet Händelsevidarebefordran i konfigurationsgränssnittet](../images/datastreams/overview/event-forwarding-config.png)
+![Avsnittet Händelsevidarebefordran i konfigurationsgränssnittet](../assets/datastreams/overview/event-forwarding-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -161,15 +162,15 @@ Du kan skapa en kopia av ett befintligt datastream och ändra informationen efte
 
 Från huvudsidan i [!UICONTROL Datastreams] väljer du ellips (**....**) för den aktuella datastream-filen och välj **[!UICONTROL Copy]**.
 
-![Bilden visar [!UICONTROL Copy] det alternativ som väljs i datastreams listvy](../images/datastreams/overview/copy-datastream-list.png)
+![Bilden visar [!UICONTROL Copy] det alternativ som väljs i datastreams listvy](../assets/datastreams/overview/copy-datastream-list.png)
 
 Du kan också välja **[!UICONTROL Copy Datastream]** från detaljvyn för en viss datastream.
 
-![Bilden visar [!UICONTROL Copy] alternativ som väljs från datastream-informationsvyn](../images/datastreams/overview/copy-datastream-details.png)
+![Bilden visar [!UICONTROL Copy] alternativ som väljs från datastream-informationsvyn](../assets/datastreams/overview/copy-datastream-details.png)
 
 En bekräftelsedialogruta visas där du uppmanas att ange ett unikt namn för den nya datastream som ska skapas, tillsammans med information om de konfigurationsalternativ som ska kopieras. Välj **[!UICONTROL Copy]**.
 
-![Bild av bekräftelsedialogrutan för kopiering av ett datastream](../images/datastreams/overview/copy-datastream-confirm.png)
+![Bild av bekräftelsedialogrutan för kopiering av ett datastream](../assets/datastreams/overview/copy-datastream-confirm.png)
 
 Huvudsidan i [!UICONTROL Datastreams] arbetsytan visas igen med den nya datastream som visas.
 
