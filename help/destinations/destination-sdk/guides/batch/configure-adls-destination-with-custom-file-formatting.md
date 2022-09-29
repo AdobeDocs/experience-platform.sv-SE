@@ -2,9 +2,9 @@
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
 title: Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
 exl-id: cb67b126-cd30-4fb7-b67e-c15dc7daef73
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '743'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # Konfigurera en [!DNL Azure Data Lake Storage] mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration
 
 ## Översikt {#overview}
-
->[!IMPORTANT]
->
->Funktionen för att konfigurera filbaserade mål med Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera [!DNL Azure Data Lake Storage] mål med anpassad [filformateringsalternativ](../../server-and-file-configuration.md#file-configuration) och en egen [filnamnskonfiguration](../../file-based-destination-configuration.md#file-name-configuration).
 

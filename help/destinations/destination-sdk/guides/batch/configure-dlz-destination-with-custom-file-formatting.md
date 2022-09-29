@@ -2,9 +2,9 @@
 description: Lär dig hur du använder Destination SDK för att konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
 title: Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
 exl-id: 3a5c1188-c2b5-4e81-ae41-9fff797f08a6
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '739'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # Konfigurera en [!DNL Data Landing Zone (DLZ)] mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration
 
 ## Översikt {#overview}
-
->[!IMPORTANT]
->
->Funktionen för att konfigurera filbaserade mål med Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera en [!DNL Data Landing Zone] mål med anpassad [filformateringsalternativ](../../server-and-file-configuration.md#file-configuration) och en egen [filnamnskonfiguration](../../file-based-destination-configuration.md#file-name-configuration).
 

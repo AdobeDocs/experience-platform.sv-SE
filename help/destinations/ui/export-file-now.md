@@ -3,9 +3,9 @@ title: (Beta) Exportera filer on demand till gruppmål med hjälp av användargr
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av användargränssnittet i Experience Platform.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: 874c590e83712a45e75308239fb71db04614bd1e
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->The **[!UICONTROL Export file now]** i Adobe Experience Platform Destination SDK finns i Beta. Dokumentationen och funktionerna kan komma att ändras.
+>The **[!UICONTROL Export file now]** i Adobe Experience Platform finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 >Kontakta din Adobe-representant för att få tillgång till den här funktionen.
 
 >[!IMPORTANT]

@@ -2,9 +2,9 @@
 description: Server- och filkonfigurationsspecifikationerna för filbaserade mål kan konfigureras i Adobe Experience Platform Destination SDK via slutpunkten /destination-servers.
 title: Konfigurationsalternativ för filbaserade målserverspecifikationer
 exl-id: 56434e36-0458-45d9-961d-f6505de998f7
-source-git-commit: 5506a938253083d3dfd657a787eae20a05b1c0a9
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1248'
 ht-degree: 5%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 5%
 # Server- och filkonfiguration för filbaserade målserverspecifikationer
 
 ## Översikt {#overview}
-
->[!IMPORTANT]
->
->Funktionen för att konfigurera och skicka filbaserade mål med Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 På den här sidan beskrivs alla serverkonfigurationsalternativ för de filbaserade målservrarna och hur du ställer in olika filkonfigurationsalternativ för användare som exporterar filer från Experience Platform till målet.
 

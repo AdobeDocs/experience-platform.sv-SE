@@ -2,9 +2,9 @@
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ.
 title: Konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ.
 exl-id: eed73572-5050-44fa-ba16-90729c65495e
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '734'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # Konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ
 
 ## Översikt {#overview}
-
->[!IMPORTANT]
->
->Funktionen för att konfigurera filbaserade mål med Adobe Experience Platform Destination SDK finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
 
 På den här sidan beskrivs hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassad [filformateringsalternativ](/help/destinations/destination-sdk/server-and-file-configuration.md#file-configuration) och en egen [filnamnskonfiguration](/help/destinations/destination-sdk/file-based-destination-configuration.md#file-name-configuration).
 
