@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 9a4257ef6f9e32feeb2bb90bc7dd46b0d533cb35
+source-git-commit: 18288130b98e13d824273426a860d97722c434de
 workflow-type: tm+mt
-source-wordcount: '3620'
+source-wordcount: '3894'
 ht-degree: 0%
 
 ---
@@ -123,6 +123,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Audiences mapped to destination status]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL Audiences size]](#audiences-size)
 * [[!UICONTROL Audience overlap by merge policy]](#audience-overlap-by-merge-policy)
+* [[!UICONTROL Audience overlap report]](#audience-overlap-report)
 
 ### [!UICONTROL Profile count] {#profile-count}
 
@@ -302,12 +303,33 @@ The visualization allows you to monitor the overall health of audiences within A
 
 <!-- ![The Audiences change trend widget.]() -->
 
-<!-- * [[!UICONTROL Audience overlap report]](#audience-overlap-report) -->
-<!-- ### [!UICONTROL Audience overlap report] {#audience-overlap-report} -->
+### [!UICONTROL Audience overlap report] {#audience-overlap-report}
 
-<!-- View an ordered list of audiences by highest or lowest overlap percentages by selected merge policy. -->
-<!-- ![The Audiences overlap report widget.]() -->
-<!-- https://jira.corp.adobe.com/browse/PLAT-126851 -->
+Den här widgeten gör att målgruppen överlappar data från alla tillgängliga segment som filtreras efter sammanfogningsprincip. En lista med fem målgrupper som rangordnas mellan de högsta och de lägsta procentsatserna för överlappning finns för den sammanslagningsprincip som väljs i listrutan högst upp på skärmen. De två analyserade segmenten listas i [!UICONTROL SEGMENT A NAME] och [!UICONTROL SEGMENT B NAME] kolumner. Procentöverlappningen anges i den tredje kolumnen med 12 decimaler.
+
+Rapporten om publiköverlappning hjälper er att skapa nya högpresterande segment. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler att eftersträva.
+
+Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmsläge som innehåller fler överlappande data.
+
+![Målgruppen överlappar rapportwidgeten med Visa mer markerat .](../images/profiles/profiles-audience-overlap-report.png)
+
+The [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehålla upp till 50 rader med målgrupper som överlappar analyser uppdelade i sex kolumner. Välj inställningsikonen (![Inställningsikonen.](../images/profiles/settings-icon.png)) för att ta bort eller lägga till kolumner från tabellen.
+
+![Dialogrutan för publiköverlappande rapporter.](../images/profiles/profiles-audience-overlap-report-dialog.png)
+
+>[!NOTE]
+>
+>Välj **[!UICONTROL Overlapping]** kolumnrubrik om du vill ändra resultatens rangordning mellan högsta och lägsta respektive högsta.
+
+Om du vill hämta hela rapporten i PDF-format väljer du Alternativ-menyn (**`...`**) följt av **[!UICONTROL Download]**.
+
+![Dialogrutan för publiköverlappningsrapport med ellipserna och nedladdningsalternativet markerat.](../images/profiles/profiles-audience-overlap-report-dialog-download.png)
+
+Välj en rad i rapporten för att öppna ett Venndiagram över överlappningsanalysen. Håll pekaren över ett avsnitt i Venndiagrammet för att visa antalet profiler i en dialogruta.
+
+![Dialogrutan för målgruppsöverlappning med ett Venndiagram och en rad markerad.](../images/profiles/profiles-audience-overlap-report-dialog-venn.png)
+
+Välj **[!UICONTROL Close]** för att gå tillbaka till [!UICONTROL Profiles] kontrollpanel.
 
 ### [!UICONTROL Audiences mapped to destination status] {#audiences-mapped-to-destination-status}
 

@@ -4,9 +4,9 @@ title: Stödlinje för instrumentpanel för segment
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
+source-git-commit: 18288130b98e13d824273426a860d97722c434de
 workflow-type: tm+mt
-source-wordcount: '1699'
+source-wordcount: '1981'
 ht-degree: 0%
 
 ---
@@ -85,6 +85,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Audience size change trend]](#audience-size-change-trend)
 * [[!UICONTROL Audience size trend by identity]](#audience-size-trend-by-identity)
 * [[!UICONTROL Audience overlap]](#audience-overlap)
+* [[!UICONTROL Audience overlap report]](#audience-overlap-report)
 * [[!UICONTROL Identity overlap]](#identity-overlap)
 * [[!UICONTROL Profiles by identity]](#profiles-by-identity)
 * [[!UICONTROL Scheduled activations]](#scheduled-activations)
@@ -147,14 +148,33 @@ Med den här widgeten kan du optimera din segmenteringsstrategi genom att visual
 
 ![Widgeten för överlappning av publik.](../images/segments/audience-overlap.png)
 
-<!-- * [[!UICONTROL Audience overlap report]](#audience-overlap-report) -->
-<!-- ### [!UICONTROL Audience overlap report] {#audience-overlap-report} -->
+### [!UICONTROL Audience overlap report] {#audience-overlap-report}
 
-<!-- View an ordered list of audiences by Highest or Lowest overlap percentages. -->
+Den här widgeten gör att målgruppen överlappar data för ett visst segment. En lista med fem målgrupper som rangordnas mellan de högsta och de lägsta procentsatserna för överlappning finns för det segment som väljs i listrutan högst upp på skärmen. Det valda segmentet visas tydligt i [!UICONTROL SEGMENT A NAME] kolumn. Analys av publiköverlappning finns för det andra segmentet som listas i [!UICONTROL SEGMENT B NAME] kolumn. Procentöverlappningen anges i den tredje kolumnen med 12 decimaler.
 
-<!-- ![The Audience overlap report widget.]() -->
+Rapporten om publiköverlappning hjälper er att skapa nya högpresterande segment. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler att eftersträva.
 
-<!-- https://jira.corp.adobe.com/browse/PLAT-125511 -->
+Välj **[!UICONTROL View more]** om du vill öppna en helskärmsdialogruta som innehåller fler segmentöverlappningsdata.
+
+![Målgruppen överlappar rapportwidgeten med Visa mer markerat .](../images/segments/audience-overlap-report.png)
+
+The [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehålla upp till 50 rader med målgrupper som överlappar analyser uppdelade i sex kolumner. Välj inställningsikonen (![Inställningsikonen.](../images/segments/settings-icon.png)) för att ta bort eller lägga till kolumner från tabellen.
+
+![Dialogrutan för publiköverlappande rapporter.](../images/segments/audience-overlap-report-dialog.png)
+
+>[!NOTE]
+>
+>Välj **[!UICONTROL Overlapping]** kolumnrubrik om du vill ändra resultatens rangordning mellan högsta och lägsta respektive högsta.
+
+Om du vill hämta hela rapporten i PDF-format väljer du Alternativ-menyn (**`...`**) följt av **[!UICONTROL Download]**.
+
+![Dialogrutan för publiköverlappningsrapport med ellipserna och nedladdningsalternativet markerat.](../images/segments/segments-audience-overlap-report-dialog-download.png)
+
+Välj en rad i rapporten för att öppna ett Venndiagram över överlappningsanalysen. Håll pekaren över ett avsnitt i Venndiagrammet för att visa antalet profiler i en dialogruta.
+
+![Dialogrutan för målgruppsöverlappning med ett Venndiagram och en rad markerad.](../images/segments/audience-overlap-report-dialog-venn.png)
+
+Välj **[!UICONTROL Close]** för att gå tillbaka till [!UICONTROL Segments] kontrollpanel.
 
 ### [!UICONTROL Identity overlap] {#identity-overlap}
 
