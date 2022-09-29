@@ -4,13 +4,13 @@ title: Custom Accessibility Solutions for Experience Platform
 topic-legacy: guide
 type: Documentation
 description: Läs mer om de anpassade tillgänglighetslösningarna i Adobe Experience Platform användargränssnitt.
-source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
+exl-id: cb5ad99e-8a95-4c9e-aae6-1d0036ecf052
+source-git-commit: e30e04453bd814de103cceb14e3580992436923d
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
-
 
 # Anpassade tillgänglighetslösningar för Experience Platform
 
@@ -30,19 +30,19 @@ Experience Platform strävar efter att följa internationella tillgänglighetsst
 
 Den vänstra navigeringen i användargränssnittet för Experience Platform är tangentbordsanpassad och ger färgkontrast i normalt läge, hovring- och markeringsläge som uppfyller tillgänglighetsstandarder.
 
-På hemskärmen kan användarna tabba in i den vänstra navigeringen. Om du väljer **Skift+Tabb** återgår användaren till hemskärmen.
+På hemskärmen kan användarna tabba in i den vänstra navigeringen. Markera **Skift+Tabb** returnerar användaren till hemskärmen.
 
 ![Experience Platform vänster navigering.](images/left-navigation-select.png)
 
-Med den vänstra navigeringen i fokus tar **Tabb** användarna till interaktionen för att expandera och komprimera. Möjligheten att utöka eller komprimera den vänstra navigeringen aktiveras med **Enter (Return)**.
+Med vänster navigering i fokus **Tabb** tar användarna till interaktionen Utöka och komprimera. Möjligheten att utöka eller komprimera den vänstra navigeringen aktiveras med **Retur**.
 
 ![Navigeringen Experience Platform till vänster komprimerades.](images/left-navigation-collapse.png)
 
-Med den vänstra navigeringen i fokus navigerar upp- och nedpilarna till varje objekt i navigeringen och bläddrar kontinuerligt (med andra ord flyttas inte fokus förrän användaren tabbar bort från den vänstra navigeringen). Fokus visas för navigeringsobjekt när de är markerade. Den aktuella markeringen visas med en högdager och fet text. När du väljer ett vänstra navigeringsobjekt öppnar **Enter (Retur)** det valda gränssnittsobjektet i den högra panelen, men fokus ligger kvar i vänsternavigeringen tills användaren tabbar bort.
+Med den vänstra navigeringen i fokus navigerar upp- och nedpilarna till varje objekt i navigeringen och bläddrar kontinuerligt (med andra ord flyttas inte fokus förrän användaren tabbar bort från den vänstra navigeringen). Fokus visas för navigeringsobjekt när de är markerade. Den aktuella markeringen visas med en högdager och fet text. När du väljer ett vänstra navigeringsobjekt **Retur** öppnar det markerade gränssnittsobjektet på den högra panelen, men fokus ligger kvar i den vänstra navigeringen tills användaren tabbar bort.
 
 ![Navigering Experience Platform till vänster med Källor markerat.](images/left-navigation-sources.png)
 
-Vissa funktioner på plattformen är inte aktiverade för alla användare. Dessa objekt visas i navigeringen men kan inte markeras. När du navigerar med ett tangentbord hoppas dessa objekt över vid pilnavigering och kan inte markeras med **Enter (Return)**.
+Vissa funktioner på plattformen är inte aktiverade för alla användare. Dessa objekt visas i navigeringen men kan inte markeras. När du navigerar med ett tangentbord hoppas dessa objekt över vid pilnavigering och kan inte markeras med **Retur**.
 
 ![De avsnitt av navigeringen till vänster i Experience Platform som inte är aktiverade för användaren kan inte markeras.](images/left-navigation-sections-disabled.png)
 
@@ -58,14 +58,14 @@ Du kan även navigera i den inbäddade videodialogrutan med hjälp av tangentbor
 
 | Dialogruteelement | Tangentbordstillgänglighet | Beskrivning |
 |---|---|---|
-| Spela upp och pausa | Tabb<br/>Blanksteg | Använd **Tabb** för att ställa in fokus på uppspelningsknappen. **Med** mellanslagstangenten startas videouppspelningen och videouppspelningen pausas. |
-| Skrubber | Tabb<br/>Vänsterpil<br/>Högerpil | När videon spelas upp använder du **Tabb** för att fokusera navigeringen. När navigeringslisten är i fokus hoppar **vänster- och högerpilstangenterna** över videouppspelningen framåt respektive bakåt 5 sekunder. |
-| Ljud av | Tabb<br/>Blanksteg | Använd **Tabb** för att fokusera volymelementet för ljud av. Använd **blanksteg** för att stänga av eller slå på videouppspelningen. |
-| Volym | Tabb<br/>Vänsterpil<br/>Högerpil | Använd **Tabb** för att fokusera på volymelementet. **Vänster- och högerpilstangenterna** flyttar volymen uppåt respektive nedåt. |
-| [!UICONTROL Closed Captions] (&quot;cc&quot;) | Tabb<br/>Ange<br/>Uppåtpil<br/>Nedåtpil | **** Tabto  [!UICONTROL Closed Captions] (&quot;cc&quot;)-element. Använd **Enter** för att öppna menyn och **upp- och nedpilarna** för att välja språk för bildtexter. **Enterprise** bekräftar ditt val. |
-| [!UICONTROL Quality] | Tabb<br/>Ange<br/>Uppåtpil<br/>Nedåtpil | Använd **Tabb** för att fokusera [!UICONTROL Quality]-elementet. Använd **Enter** för att öppna menyn och **upp- och nedpilarna** för att välja videokvalitet. **Enterprise** bekräftar ditt val. |
-| Helskärmsläge | Tabb<br/>Blanksteg eller Retur<br/>Esc | Använd **Tabb** för att fokusera helskärmselementet. Använd **blanksteg eller Enter** för att aktivera helskärmsläge. **Esc** (&quot;esc&quot;) avslutar helskärmsläget. |
-| Stäng | Tabb<br/>Blanksteg eller Retur | Använd **Tabb** för att fokusera stängningsknappen. Använd **blankstegstangenten eller Enter**-tangenten för att stänga videodialogrutan. |
+| Spela upp och pausa | Tabb<br/>Blanksteg | Använd **Tabb** för att ställa in fokus på uppspelningsknappen. **Blanksteg** börjar videouppspelningen och pausar videouppspelningen. |
+| Skrubber | Tabb<br/>Vänsterpil<br/>Högerpil | När videon spelas upp kan du använda **Tabb** för att fokusera navigeringen. Med navigeringslisten i fokus **vänster- och högerpilstangenter** hoppa över videouppspelning framåt respektive bakåt 5 sekunder. |
+| Ljud av | Tabb<br/>Blanksteg | Använd **Tabb** för att fokusera på volymelementet för ljud av. Använd **blanksteg** för att stänga av eller slå på videouppspelning. |
+| Volym | Tabb<br/>Vänsterpil<br/>Högerpil | Använd **Tabb** för att fokusera på volymelementet. **Vänster- och högerpilstangenter** flytta volymen uppåt respektive nedåt. |
+| [!UICONTROL Closed Captions] (&quot;cc&quot;) | Tabb<br/>Retur<br/>Uppåtpil<br/>Nedåtpil | **Tabb** till [!UICONTROL Closed Captions] (&quot;cc&quot;). Använd **Retur** för att öppna menyn, och **upp- och nedpilar** för att välja språk för bildtexter. **Retur** bekräftar ditt val. |
+| [!UICONTROL Quality] | Tabb<br/>Retur<br/>Uppåtpil<br/>Nedåtpil | Använd **Tabb** för att fokusera [!UICONTROL Quality] -element. Använd **Retur** för att öppna menyn och **upp- och nedpilar** för att välja videokvalitet. **Retur** bekräftar ditt val. |
+| Helskärmsläge | Tabb<br/>Blanksteg eller Retur<br/>Escape | Använd **Tabb** för att fokusera helskärmselementet. Använd **blanksteg eller Retur** för att aktivera helskärmsläge. **Escape** (&quot;esc&quot;) avslutar helskärmsläget. |
+| Stäng | Tabb<br/>Blanksteg eller Retur | Använd **Tabb** för att fokusera stängningsknappen. Använd **blanksteg eller Retur** för att stänga videodialogrutan. |
 
 >[!NOTE]
 >
@@ -75,11 +75,11 @@ Du kan även navigera i den inbäddade videodialogrutan med hjälp av tangentbor
 
 ## Dra och släpp filer
 
-I Experience Platform går det att komma åt alla dra och släpp-zoner för filmarkering via tangentbordet. Om du använder **tabbtangenten** för att markera **[!UICONTROL Choose files]** och **Enter eller blankstegstangenten** för att markera den anropas operativsystemets filvalsgränssnitt.
+I Experience Platform går det att komma åt alla dra och släpp-zoner för filmarkering via tangentbordet. Använda **Tabb** markera **[!UICONTROL Choose files]** och använda **Retur eller blanksteg** om du vill markera den anropas operativsystemets filvalsgränssnitt.
 
-När en fil har överförts kan du ta bort den markerade filen med en borttagningsikon och överföra en ny. Användare kan använda **Tabb** för att fokusera på borttagningsikonen och **Ange eller blanksteg** för att markera den. När filen har tagits bort är **[!UICONTROL Choose files]** automatiskt i fokus och kan markeras.
+När en fil har överförts kan du ta bort den markerade filen med en borttagningsikon och överföra en ny. Användare kan använda **Tabb** för att fokusera på borttagningsikonen och **Retur eller blanksteg** för att markera den. När filen har tagits bort **[!UICONTROL Choose files]** är automatiskt i fokus och kan markeras.
 
-Om filen som överförs inte har rätt format visas en felikon tillsammans med ett felmeddelande och knappen **[!UICONTROL Choose files]** är i fokus och kan markeras.
+Om den överförda filen inte har rätt format visas en felikon tillsammans med ett felmeddelande och **[!UICONTROL Choose files]** är i fokus och kan markeras.
 
 ![En dra och släpp-zon med ett felmeddelande och knappen Välj filer i fokus.](images/drag-and-drop.png)
 
@@ -91,11 +91,14 @@ Om du använder en mus för att markera dra och släpp-zonen anropas även grän
 
 Alla tabeller i användargränssnittet i Experience Platform går att komma åt via tangentbordet. Det går att bläddra och interagera med tabellrader och kolumner via en serie kortkommandon:
 
-* I tabellhuvudet använder du **nedpilen** för att bläddra i tabellen. Tabellrubriker kan markeras när du navigerar via **Tabb**, och du kan ändra sorteringsordningen med **blanksteg**.
-* **Uppåt- och nedåtpilarna** rör sig uppåt och nedåt genom raderna i tabellen.
-* När en rad är markerad eller i fokus kan du använda **Enter** på raden för att få information i den högra listen.
-* När en rad är markerad eller i fokus använder du **piltangenterna** för att flytta mellan varje objekt på raden.
-* Använd **Ange** för att markera ett objekt i raden. Användare med skärmläsare får ett varningsmeddelande om ett nytt fönster måste öppnas.
+* Använd **nedpil** för att bläddra i tabellen. Tabellrubriker kan markeras vid navigering via **Tabb** och du kan ändra sorteringsordningen med **blanksteg**.
+* **Uppåt- och nedåtpilar** flyttar uppåt och nedåt genom raderna i tabellen.
+* När en rad är markerad eller i fokus använder du **Retur** på raden finns information i den högra listen.
+* När en rad är markerad eller i fokus använder du **piltangenter** för att flytta genom varje objekt på raden.
+* Använd **Retur** om du vill markera ett objekt på raden. Användare med skärmläsare får ett varningsmeddelande om ett nytt fönster måste öppnas.
+* När du zoomar till 200 % eller mer visas **rälsinspektör** ikonen när den högra listen komprimeras för att ge mer visningsutrymme för tabellen.
+
+![Ikonen som visas i rälspanelen är i fokus när en användare zoomar till 200 %.](images/rail-inspector.png)
 
 ### Bläddra bland tabellens tangentbordstillgänglighet
 
@@ -112,14 +115,14 @@ Alla tabeller i användargränssnittet i Experience Platform går att komma åt 
 
 Gränssnittet för schemaredigeraren är tillgängligt med följande funktioner:
 
-* Schemaredigeraren stöder tangentbordsnavigering, inklusive användning av **Tabb** för navigering via gränssnittselement.
-* **I** Tabbar anges sökfältet och sedan i schematrädet.
+* Schemaredigeraren har stöd för tangentbordsnavigering, inklusive användning av **Tabb** för navigering i gränssnittselement.
+* **Tabb** anger sökfältet och sedan i schematrädet.
 * Schematrädet stöder användning av piltangenter för att navigera i schematrädets gränssnitt
-   * **Upp- och nedpilarna** kan användas för att gå igenom trädet.
-   * **Vänster och höger** pilspets kan användas för att expandera och komprimera noder eller flytta mellan infogade åtgärder i schematrädet.
-* **Med Retur** aktiveras enskilda noddetaljer på detaljpanelen till höger.
-* Tangenten **Hem** går tillbaka till trädets övre del.
-* **End**-tangenten navigerar till trädns nederkant.
+   * **Upp- och nedpilar** kan användas för att gå igenom trädet.
+   * **Vänster- och högerpilar** kan användas för att expandera och komprimera noder eller flytta mellan infogade åtgärder i schematrädet.
+* **Retur** aktiverar enskilda noddetaljer i detaljpanelen till höger.
+* The **Startsida** tangenten återgår till trädets övre del.
+* The **End** tangenten navigerar längst ned i trädet.
 * Schematrädet innehåller även ARIA-etiketter för skärmläsare.
 
 ## Segmentbyggargränssnitt
@@ -139,13 +142,13 @@ Följande tillgänglighetsfunktioner är tillgängliga i frågetjänstens redige
 
 ## Fliken Systemvy i Källor och Destinationer
 
-När du bläddrar i **[!UICONTROL System View]** i Källor och Destinationer förbättras tillgängligheten med följande funktioner:
+När du bläddrar **[!UICONTROL System View]** I Källor och Destinationer förbättrar följande funktioner tillgängligheten:
 
-* **Fästpunkterna** fokuserar på det första källanslutningskortet
-   * **Fokusera** på knappen i kortet igen
-   * Välj **Ange** om du vill aktivera knappen för att ringa till åtgärd i kortet
-* Om du väljer **Enter** på anslutningskortet aktiveras även mer information i den högra listen
-   * När den högra listen är aktiverad ställs fokus in på det området. **Tabbar** fokuserar på  **** stängning för den högra rutan. Om du väljer **Tabb** igen flyttas fokus genom panelen för den högra listen
-   * Om det finns mer än ett källanslutningskort förflyttar sig **Tabb** mellan anslutningarna
-   * Använd **piltangenterna (upp, ned, vänster och höger)** för att gå igenom källlistan
-   * Välj **Tabb** för att ange fokus på panelen för den högra listen
+* **Tabb** anger fokus på det första källanslutningskortet
+   * **Tabb** igen för att fokusera på knappen i kortet
+   * Välj **Retur** för att aktivera knappen för att ringa till åtgärd inuti kortet
+* Markera **Retur** på anslutningskortet aktiveras även fler detaljer i den högra listen
+   * När den högra listen är aktiverad ställs fokus in på det området. **Tabb** fokuserar på **Stäng** till höger. Markera **Tabb** flyttar fokus igen genom panelen för den högra listen
+   * Om det finns mer än ett källanslutningskort **Tabb** går igenom anslutningarna
+   * Använd **piltangenter (upp, ned, vänster och höger)** för att gå igenom listan med källor
+   * Välj **Tabb** för att sätta fokus på panelen för höger spår
