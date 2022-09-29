@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Läs mer om de anpassade tillgänglighetslösningarna i Adobe Experience Platform användargränssnitt.
 exl-id: cb5ad99e-8a95-4c9e-aae6-1d0036ecf052
-source-git-commit: e30e04453bd814de103cceb14e3580992436923d
+source-git-commit: 7f4202c9c4a132ed9d74c495f6608357eac8003f
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1601'
 ht-degree: 0%
 
 ---
@@ -132,6 +132,10 @@ När du använder användargränssnittet i Segment Builder för att skapa, redig
 * Gränssnittet för segmentbyggaren är tillgängligt via tangentbordsnavigering.
 * Skärmläsare bör känna igen märkord för rubriker och kan meddela rubriken tillsammans med nivån.
 * Andra hjälpmedelstekniker kan ändra den visuella visningen av en sida genom att använda korrekt kodade rubriker för att visa en disposition eller alternativ vy.
+
+Du kan nu komprimera eller utöka vänster och höger radie för segmentbyggarbetsytan för att få mer utrymme på skärmen. Den här funktionen är särskilt användbar eftersom den har full funktionalitet vid 200 % zoomning.
+
+![Segmentbyggarens arbetsyta med de vänstra och högra markeringswidgetarna.](images/left-right-rail-expandables.png)
 
 ## Frågetjänstredigerare
 
