@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange viktig information för ditt filbaserade mål, som målnamn, kategori, beskrivning och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Filbaserade alternativ för destinationskonfiguration för Destination SDK
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 1d6318e33be639237c2c8e6f1bf67e1702949c20
+source-git-commit: b32450311469ecf2af2ca45b3fa1feaf25147ea2
 workflow-type: tm+mt
-source-wordcount: '2628'
+source-wordcount: '2985'
 ht-degree: 2%
 
 ---
@@ -722,6 +722,54 @@ Använd parametrarna i  `dynamicSchemaConfig` för att dynamiskt hämta ditt ege
 | `authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet på något av följande sätt: <ul><li>`"authType": "S3"`</li><li>`"authType":"AZURE_CONNECTION_STRING"`</li><li>`"authType":"AZURE_SERVICE_PRINCIPAL"`</li><li>`"authType":"SFTP_WITH_SSH_KEY"`</li><li>`"authType":"SFTP_WITH_PASSWORD"`</li></ul> </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [Autentiseringsuppgifter](./credentials-configuration-api.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `value` | Sträng | Namnet på det schema som ska visas i användargränssnittet i Experience Platform i mappningssteget. |
 | `responseFormat` | Sträng | Alltid inställt på `SCHEMA` när du definierar ett anpassat schema. |
+
+{style=&quot;table-layout:auto&quot;}
+
+### Nödvändiga mappningar {#required-mappings}
+
+I schemakonfigurationen kan du lägga till obligatoriska (eller fördefinierade) mappningar. Det här är mappningar som användare kan visa men inte ändra när de konfigurerar en anslutning till ditt mål. Du kan till exempel använda e-postadressfältet så att det alltid skickas till målet i de exporterade filerna. Nedan visas ett exempel på en schemakonfiguration med obligatoriska mappningar och hur den ser ut i mappningssteget i [aktivera data till batchmålarbetsflöde](/help/destinations/ui/activate-batch-profile-destinations.md).
+
+```json
+    "requiredMappingsOnly": true, // this is selected true , users cannot map other attributes and identities in the activation flow, apart from the required mappings that you define.
+    "requiredMappings": [
+      {
+        "destination": "identityMap.ExamplePartner_ID", //if only the destination field is specified, then the user is able to select a source field to map to the destination.
+        "mandatoryRequired": true,
+        "primaryKeyRequired": true
+      },
+      {
+        "sourceType": "text/x.schema-path",
+        "source": "personalEmail.address",
+        "destination": "personalEmail.address" //when both source and destination fields are specified as required mappings, then the user can not select or edit any of the two fields and can only view the selection.
+      },
+      {
+        "sourceType": "text/x.aep-xl",
+        "source": "iif(${segmentMembership.ups.seg_id.status}==\"exited\", \"1\",\"0\")",
+        "destination": "delete"
+      }
+    ] 
+```
+
+![Bild av mappningarna som krävs i UI-aktiveringsflödet.](/help/destinations/destination-sdk/assets/required-mappings.png)
+
+>[!NOTE]
+>
+>Följande kombinationer av obligatoriska mappningar stöds för närvarande:
+>* Du kan konfigurera ett obligatoriskt källfält och ett obligatoriskt målfält. I det här fallet kan användare inte redigera eller markera något av de två fälten och bara visa markeringen.
+>* Du kan bara konfigurera ett obligatoriskt målfält. I det här fallet kan användarna välja ett källfält som ska kopplas till målet.
+>
+> Konfigurering av endast ett obligatoriskt källfält pågår *not* stöds.
+
+Använd de parametrar som beskrivs i tabellen nedan om du vill lägga till obligatoriska mappningar i aktiveringsarbetsflödet för ditt mål.
+
+| Parameter | Typ | Beskrivning |
+|---------|----------|------|
+| `requiredMappingsOnly` | Boolean | Anger om användare kan mappa andra attribut och identiteter i aktiveringsflödet, *skild från* de mappningar som du anger. |
+| `requiredMappings.mandatoryRequired` | Boolean | Ange som true om det här fältet måste vara ett obligatoriskt attribut som alltid ska finnas i filexporten till ditt mål. Läs mer om [obligatoriska attribut](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes). |
+| `requiredMappings.primaryKeyRequired` | Boolean | Ange som true om det här fältet måste användas som en dedupliceringsnyckel vid filexport till ditt mål. Läs mer om [dedupliceringsnycklar](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys). |
+| `requiredMappings.sourceType` | Sträng | Används när du konfigurerar ett källfält efter behov. Anger vilken typ av fält källfältet är. Tillgängliga alternativ är: <ul><li>`"text/x.schema-path"` när källfältet är ett fördefinierat XDM-attribut</li><li>`"text/x.aep-xl"` när källfältet är en funktion, till exempel om du behöver ett villkor som ska uppfyllas på källfältets sida. Mer information om funktioner som stöds finns i [Dataprep](/help/data-prep/api/functions.md) dokumentation.</li></ul> |
+| `requiredMappings.source` | Sträng | Anger vad det obligatoriska källfältet ska vara. |
+| `requiredMappings.destination` | Sträng | Anger vad det obligatoriska målfältet ska vara. |
 
 {style=&quot;table-layout:auto&quot;}
 
