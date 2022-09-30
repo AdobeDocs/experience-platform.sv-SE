@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange viktig information för ditt filbaserade mål, som målnamn, kategori, beskrivning och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Filbaserade alternativ för destinationskonfiguration för Destination SDK
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: b32450311469ecf2af2ca45b3fa1feaf25147ea2
+source-git-commit: 3f336f530873c863727bb50855baf6eb6a3549e0
 workflow-type: tm+mt
-source-wordcount: '2985'
+source-wordcount: '2953'
 ht-degree: 2%
 
 ---
@@ -727,30 +727,33 @@ Använd parametrarna i  `dynamicSchemaConfig` för att dynamiskt hämta ditt ege
 
 ### Nödvändiga mappningar {#required-mappings}
 
-I schemakonfigurationen kan du lägga till obligatoriska (eller fördefinierade) mappningar. Det här är mappningar som användare kan visa men inte ändra när de konfigurerar en anslutning till ditt mål. Du kan till exempel använda e-postadressfältet så att det alltid skickas till målet i de exporterade filerna. Nedan visas ett exempel på en schemakonfiguration med obligatoriska mappningar och hur den ser ut i mappningssteget i [aktivera data till batchmålarbetsflöde](/help/destinations/ui/activate-batch-profile-destinations.md).
+I schemakonfigurationen kan du lägga till obligatoriska (eller fördefinierade) mappningar. Det här är mappningar som användare kan visa men inte ändra när de konfigurerar en anslutning till ditt mål. Du kan till exempel använda e-postadressfältet så att det alltid skickas till målet i de exporterade filerna. Se två exempel nedan på en schemakonfiguration med obligatoriska mappningar och hur dessa ser ut i mappningssteget i [aktivera data till batchmålarbetsflöde](/help/destinations/ui/activate-batch-profile-destinations.md).
 
 ```json
-    "requiredMappingsOnly": true, // this is selected true , users cannot map other attributes and identities in the activation flow, apart from the required mappings that you define.
+    "requiredMappingsOnly": true, // when this is selected true , users cannot map other attributes and identities in the activation flow, apart from the required mappings that you define.
     "requiredMappings": [
       {
         "destination": "identityMap.ExamplePartner_ID", //if only the destination field is specified, then the user is able to select a source field to map to the destination.
         "mandatoryRequired": true,
         "primaryKeyRequired": true
-      },
-      {
-        "sourceType": "text/x.schema-path",
-        "source": "personalEmail.address",
-        "destination": "personalEmail.address" //when both source and destination fields are specified as required mappings, then the user can not select or edit any of the two fields and can only view the selection.
-      },
-      {
-        "sourceType": "text/x.aep-xl",
-        "source": "iif(${segmentMembership.ups.seg_id.status}==\"exited\", \"1\",\"0\")",
-        "destination": "delete"
       }
     ] 
 ```
 
-![Bild av mappningarna som krävs i UI-aktiveringsflödet.](/help/destinations/destination-sdk/assets/required-mappings.png)
+![Bild av mappningarna som krävs i UI-aktiveringsflödet.](/help/destinations/destination-sdk/assets/required-mappings-1.png)
+
+```json
+    "requiredMappingsOnly": true, // when this is selected true , users cannot map other attributes and identities in the activation flow, apart from the required mappings that you define.
+    "requiredMappings": [
+      {
+        "sourceType": "text/x.schema-path",
+        "source": "personalEmail.address",
+        "destination": "personalEmail.address" //when both source and destination fields are specified as required mappings, then the user can not select or edit any of the two fields and can only view the selection.
+      }
+    ] 
+```
+
+![Bild av mappningarna som krävs i UI-aktiveringsflödet.](/help/destinations/destination-sdk/assets/required-mappings-2.png)
 
 >[!NOTE]
 >
@@ -767,7 +770,7 @@ Använd de parametrar som beskrivs i tabellen nedan om du vill lägga till oblig
 | `requiredMappingsOnly` | Boolean | Anger om användare kan mappa andra attribut och identiteter i aktiveringsflödet, *skild från* de mappningar som du anger. |
 | `requiredMappings.mandatoryRequired` | Boolean | Ange som true om det här fältet måste vara ett obligatoriskt attribut som alltid ska finnas i filexporten till ditt mål. Läs mer om [obligatoriska attribut](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes). |
 | `requiredMappings.primaryKeyRequired` | Boolean | Ange som true om det här fältet måste användas som en dedupliceringsnyckel vid filexport till ditt mål. Läs mer om [dedupliceringsnycklar](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys). |
-| `requiredMappings.sourceType` | Sträng | Används när du konfigurerar ett källfält efter behov. Anger vilken typ av fält källfältet är. Tillgängliga alternativ är: <ul><li>`"text/x.schema-path"` när källfältet är ett fördefinierat XDM-attribut</li><li>`"text/x.aep-xl"` när källfältet är en funktion, till exempel om du behöver ett villkor som ska uppfyllas på källfältets sida. Mer information om funktioner som stöds finns i [Dataprep](/help/data-prep/api/functions.md) dokumentation.</li></ul> |
+| `requiredMappings.sourceType` | Sträng | Används när du konfigurerar ett källfält efter behov. Använd `"text/x.schema-path"`, vilket anger att källfältet är ett fördefinierat XDM-attribut |
 | `requiredMappings.source` | Sträng | Anger vad det obligatoriska källfältet ska vara. |
 | `requiredMappings.destination` | Sträng | Anger vad det obligatoriska målfältet ska vara. |
 
