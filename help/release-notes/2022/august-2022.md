@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: fb9fdc70aabb62cdc39888b1ff90557d8420c31b
+source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
 workflow-type: tm+mt
-source-wordcount: '2087'
+source-wordcount: '2081'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,7 @@ Attribution AI används för att attribuera krediter till kontaktytor som leder 
 
 {style=&quot;table-layout:auto&quot;}
 
-**Anteckning**: Attribution AI kommer inte att vara tillgänglig för befintliga kunder inom hälso- och sjukvårdsskölden eller skölden för skydd av privatlivet förrän efter ytterligare meddelande.
+**Anteckning**: Attribution AI kommer inte att vara tillgänglig för befintliga vårdkunder förrän ytterligare varningar om detta.
 
 Mer information om Attribution AI finns i [Attribution AI](../../intelligent-services/attribution-ai/overview.md) översikt.
 
@@ -56,7 +56,7 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 
 {style=&quot;table-layout:auto&quot;}
 
-**Anteckning**: Kunds-AI kommer inte att vara tillgängligt för befintliga kunder inom hälso- och sjukvårdsskölden eller skölden för skydd av privatlivet förrän ytterligare varningar skickas.
+**Anteckning**: Kundens AI kommer inte att vara tillgängligt för befintliga kunder inom hälso- och sjukvården förrän ytterligare varningar.
 
 Mer information om kundens AI finns i [Kund-AI](../../intelligent-services/customer-ai/overview.md) översikt.
 

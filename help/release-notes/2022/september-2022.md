@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 81c17a6ea07efbbea91e0d918d52ec96e0335152
+source-git-commit: 45281721c6fb26c303bb820fa39f5c6ed71b55f9
 workflow-type: tm+mt
-source-wordcount: '3069'
+source-wordcount: '3006'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,6 @@ Nya funktioner i Adobe Experience Platform:
 
 - [Attributbaserad åtkomstkontroll](#abac)
 - [Datahygien](#data-hygiene)
-- [[!UICONTROL Privacy Console]](#privacy-console)
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
@@ -55,19 +54,13 @@ Med Adobe Experience Platform datahygifunktioner kan du rensa dina data genom at
 
 >[!IMPORTANT]
 >
->Datahygien är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield eller Privacy Shield.
+>Datahygien är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield.
 
 Läs följande dokumentation för att komma igång med datahygien:
 
 - [Datahygien - översikt](../../hygiene/home.md): Lär dig grunderna om plattformens datahygien.
 - [[!UICONTROL Data Hygiene] Användargränssnittsguide](../../hygiene/ui/overview.md): Lär dig schemalägga förfallodatum för datauppsättningar och förfrågningar om konsumentborttagning i användargränssnittet för plattformen.
 - [API-guide för datahygien](../../hygiene/api/overview.md): Alla datahygienaktiviteter som du kan utföra i användargränssnittet kan också programmässigt
-
-## [!UICONTROL Privacy Console] {#privacy-console}
-
-The [!UICONTROL Privacy Console] i användargränssnittet för Experience Platform ger en översikt över viktiga insikter från sekretessrelaterade funktioner som [förfrågningar från registrerade från Privacy Servicen](../../privacy-service/home.md), [arbetsorder för datahygien](../../hygiene/home.md)och [granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md). Konsolen innehåller också flera handledningar för användning i produkten som hjälp att hantera vanliga sekretessarbetsflöden.
-
-Se [Översikt över Integritetskonsolen](../../landing/governance-privacy-security/privacy-console.md) för mer information om funktionen.
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 
