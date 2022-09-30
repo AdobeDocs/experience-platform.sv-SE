@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 45281721c6fb26c303bb820fa39f5c6ed71b55f9
+source-git-commit: 20902b6a0dce4c189f43343d9fd0a87913a0fdbf
 workflow-type: tm+mt
-source-wordcount: '3006'
+source-wordcount: '3009'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 1%
 Nya funktioner i Adobe Experience Platform:
 
 - [Attributbaserad åtkomstkontroll](#abac)
-- [Datahygien](#data-hygiene)
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
@@ -23,6 +22,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Granskningsloggar](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
+- [Datahygien](#data-hygiene)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
@@ -45,22 +45,6 @@ Tack vare attributbaserad åtkomstkontroll kan administratören styra användarn
 | Behörigheter | Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram. Med behörigheter kan du skapa och hantera roller, tilldela önskade resursbehörigheter för de här rollerna och skapa profiler för att utnyttja etiketter och definiera vilka användarroller som har åtkomst till specifika plattformsresurser. Med behörigheter kan du också hantera etiketter, sandlådor och användare som är kopplade till en viss roll. Mer information finns i [Användargränssnittshandbok för behörigheter](../../access-control/abac/ui/browse.md). |
 
 Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md). En omfattande guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attribueringsbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
-
-## Datahygien {#data-hygiene}
-
-Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
-
-Med Adobe Experience Platform datahygifunktioner kan du rensa dina data genom att schemalägga automatiska datauppsättningsutgångsdatum och programmässigt ta bort konsumentdata per identitet.
-
->[!IMPORTANT]
->
->Datahygien är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield.
-
-Läs följande dokumentation för att komma igång med datahygien:
-
-- [Datahygien - översikt](../../hygiene/home.md): Lär dig grunderna om plattformens datahygien.
-- [[!UICONTROL Data Hygiene] Användargränssnittsguide](../../hygiene/ui/overview.md): Lär dig schemalägga förfallodatum för datauppsättningar och förfrågningar om konsumentborttagning i användargränssnittet för plattformen.
-- [API-guide för datahygien](../../hygiene/api/overview.md): Alla datahygienaktiviteter som du kan utföra i användargränssnittet kan också programmässigt
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 
@@ -134,6 +118,27 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 -->
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
+
+## Datahygien {#data-hygiene}
+
+Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
+
+Med Adobe Experience Platform datahygifunktioner kan du rensa dina data genom att schemalägga automatiska datauppsättningsutgångsdatum och programmässigt ta bort konsumentdata per identitet.
+
+>[!IMPORTANT]
+>
+>Datahygien är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Uppdaterade gränssnittsarbetsflöden | Arbetsflödena för [schemalägga förfallodatum för datauppsättning](../../hygiene/ui/dataset-expiration.md) och [ta bort konsumentdata](../../hygiene/ui/delete-consumer.md) har strömlinjeformats i användargränssnittet. |
+| API-slutpunkt för kvot | Nu kan du hämta kvotinformation för din organisations datahygienprocesser genom att anropa [`/quota` slutpunkt](../../hygiene/api/quota.md). |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om plattformens datahygien finns i [datahygienöversikt](../../hygiene/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
