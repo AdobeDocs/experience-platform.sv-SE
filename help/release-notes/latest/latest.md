@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 20902b6a0dce4c189f43343d9fd0a87913a0fdbf
+source-git-commit: d93036c26e9f1b86a82f4da4cce6f9e8152e3542
 workflow-type: tm+mt
-source-wordcount: '3008'
+source-wordcount: '2843'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,6 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Granskningsloggar](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [Datainsamling](#data-collection)
-- [Datahygien](#data-hygiene)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
@@ -118,27 +117,6 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 -->
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
-
-## Datahygien {#data-hygiene}
-
-Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
-
-Med Adobe Experience Platform datahygifunktioner kan du rensa dina data genom att schemalägga automatiska datauppsättningsutgångsdatum och programmässigt ta bort konsumentdata per identitet.
-
->[!IMPORTANT]
->
->Datahygien är endast tillgänglig för organisationer som har köpt Adobe Healthcare Shield.
-
-**Nya eller uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Uppdaterade gränssnittsarbetsflöden | Arbetsflödena för [schemalägga förfallodatum för datauppsättning](../../hygiene/ui/dataset-expiration.md) och [ta bort konsumentdata](../../hygiene/ui/delete-consumer.md) har strömlinjeformats i användargränssnittet. |
-| API-slutpunkt för kvot | Nu kan du hämta kvotinformation för din organisations datahygienprocesser genom att anropa [`/quota` slutpunkt](../../hygiene/api/quota.md). |
-
-{style=&quot;table-layout:auto&quot;}
-
-Mer information om plattformens datahygien finns i [datahygienöversikt](../../hygiene/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
