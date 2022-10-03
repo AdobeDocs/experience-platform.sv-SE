@@ -5,9 +5,9 @@ title: Begränsningar för XDM-fälttyp
 topic-legacy: overview
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
+source-git-commit: a3b4dd65b22bb04bcba52c44a09030f51454a9c8
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '614'
 ht-degree: 2%
 
 ---
@@ -126,11 +126,11 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 * [Scala, .NET och CosmosDB](#scala)
 * [MongoDB, Aerospike och Protobuf 2](#mongo)
 
->[!IMPORTANT]
+>[!NOTE]
 >
 >Bland de standardtyper av XDM som anges i tabellerna nedan finns [!UICONTROL Map] typ ingår också. Kartor används i standardscheman när data representeras som nycklar som mappar till vissa värden, eller där nycklar inte rimligen kan inkluderas i ett statiskt schema och måste behandlas som datavärden.
 >
->Karttypsfält är reserverade för användning av branschschema och leverantörsschema och kan därför inte användas i anpassade resurser som du definierar. Karttypen tas med i tabellerna nedan och är endast avsedd att hjälpa dig att bestämma hur befintliga data ska mappas till XDM om de för närvarande lagras i något av formaten som listas nedan.
+>Många standardkomponenter för XDM använder karttyper, och du kan också [definiera anpassade kartfält](../tutorials/custom-fields-api.md#maps) vid behov. Karttypen tas med i tabellerna nedan för att hjälpa dig att bestämma hur befintliga data ska mappas till XDM om de för närvarande lagras i något av formaten som listas nedan.
 
 ### Parquet, Spark SQL och Java {#parquet}
 
