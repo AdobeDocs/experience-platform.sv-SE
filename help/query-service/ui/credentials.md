@@ -5,9 +5,9 @@ title: Handbok för autentiseringsuppgifter för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: f3052745105df603e547535a12285b6c1d771fa6
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1140'
 ht-degree: 0%
 
 ---
@@ -109,6 +109,7 @@ Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till e
 >[!NOTE]
 >
 >När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i [!UICONTROL EXPIRING CREDENTIALS] utom för lösenordet och användarnamnet.
+>Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
 
 | Parameter | Beskrivning |
 |---|---|

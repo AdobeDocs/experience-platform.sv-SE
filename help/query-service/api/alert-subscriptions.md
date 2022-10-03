@@ -2,7 +2,7 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;alert;
 title: API-slutpunkt för aviseringsprenumerationer
 description: Den här handboken innehåller exempel på HTTP-begäranden och svar för de olika API-anrop som du kan göra till slutpunkten för aviseringsprenumerationer med hjälp av API:t för frågetjänsten.
-source-git-commit: bd841244fcb7d63af9c3383335307647b93499ce
+source-git-commit: cab7fcfda1bd8f6462af6e631f1fcee1f354d26b
 workflow-type: tm+mt
 source-wordcount: '2289'
 ht-degree: 0%
@@ -301,7 +301,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **Svar**
 
-Ett lyckat svar returnerar statusen 200 HTML och alla aviseringar som prenumererar på. Detta inkluderar aviserings-ID, typ av avisering, prenumerantens Adobe-registrerade e-post-ID och deras föredragna meddelandekanal.
+Ett lyckat svar returnerar HTTP-statusen 200 och alla aviseringar som prenumererar på. Detta inkluderar aviserings-ID, typ av avisering, prenumerantens Adobe-registrerade e-post-ID och deras föredragna meddelandekanal.
 
 ```json
 {
