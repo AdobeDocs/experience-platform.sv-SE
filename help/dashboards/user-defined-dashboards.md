@@ -2,7 +2,7 @@
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: d874fed681449c6f5114196cface157c8c406d69
+source-git-commit: 8e5df8b3e38197520c6e15f7c6639c62527c086e
 workflow-type: tm+mt
 source-wordcount: '899'
 ht-degree: 0%
@@ -12,11 +12,6 @@ ht-degree: 0%
 # Användardefinierade kontrollpaneler
 
 Adobe Experience Platform Dashboards hjälper er att få insikter och anpassa visualisering med den användardefinierade funktionen för kontrollpaneler. Med den här funktionen kan du skapa och hantera anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen.
-
->[!IMPORTANT]
->
->För att säkerställa att varje fråga för en Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
-
 
 <!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
@@ -120,6 +115,8 @@ Välj **[!UICONTROL Cancel]** för att återgå till din anpassade kontrollpanel
 Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj **[!UICONTROL Save]** för att bevara instrumentpanelens namn och konfigurerade layout.
 
 ![Den användardefinierade kontrollpanelen med en anpassad widget och knappen Spara markerad.](./images/user-defined-dashboards/user-defined-dashboard.png)
+
+För att säkerställa att varje fråga för en Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
 
 ## Nästa steg
 

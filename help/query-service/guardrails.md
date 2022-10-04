@@ -3,14 +3,14 @@ keywords: Experience Platform;fråga;frågetjänst;felsökning;skyddsförslag;ri
 title: Guardsutkast för frågetjänsten
 description: Det här dokumentet innehåller information om användningsgränser för frågetjänstdata som hjälper dig att optimera användningen av frågan.
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: d874fed681449c6f5114196cface157c8c406d69
+source-git-commit: 8e5df8b3e38197520c6e15f7c6639c62527c086e
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '764'
 ht-degree: 1%
 
 ---
 
-# Garantier för frågetjänstdata
+# Guardsutkast för frågetjänsten
 
 Garantier är trösklar som ger vägledning för data- och systemanvändning, prestandaoptimering och undvikande av fel eller oväntade resultat i Adobe Experience Platform.
 
@@ -23,10 +23,6 @@ Innan du fortsätter med det här dokumentet bör du ha en god förståelse för
 * **Ad hoc-frågor**: För körning `SELECT` frågor för att utforska, experimentera och validera data där resultaten av frågorna **lagras inte** på Data Lake.
 
 * **Gruppfrågor**: För körning `INSERT TABLE AS SELECT` och `CREATE TABLE AS SELECT` frågor för att rensa, forma, manipulera och berika data. Resultatet av dessa frågor **lagras** på Data Lake. Mätvärdet för att mäta användningen av den här funktionen är beräkningstimmar.
-
->[!IMPORTANT]
->
->För att säkerställa att varje fråga för en Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
 
 Bilden nedan sammanfattar hur funktionerna i tjänsten Query är paketerade och licensierade:
 
@@ -71,6 +67,8 @@ Tabellerna nedan innehåller de rekommenderade säkerhetsgränserna och beskrivn
 | Resultat returnerade via | Datauppsättning | Ej tillämpligt | Detta definierar hur resultaten görs tillgängliga för användarna. |
 
 {style=&quot;table-layout:auto&quot;}
+
+För att säkerställa att varje fråga för en Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
 
 ## Nästa steg
 
