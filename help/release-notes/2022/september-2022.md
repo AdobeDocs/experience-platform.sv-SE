@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: d93036c26e9f1b86a82f4da4cce6f9e8152e3542
+source-git-commit: 319c30facb7e8093318a01a3155bdb2fee0f548b
 workflow-type: tm+mt
-source-wordcount: '2844'
+source-wordcount: '2883'
 ht-degree: 1%
 
 ---
@@ -108,6 +108,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | --- | --- |
 | Integrering med vänster navigering i plattformsgränssnittet | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Platform. |
 | Användarattribuering i taggar och händelsevidarebefordran | När listning är tillgänglig [!UICONTROL Properties] in-taggar och vidarebefordran av händelser, visar nu alla angivna egenskaper när de senast uppdaterades och vilken användare som gjorde uppdateringen. |
+| [[!DNL Snap Conversions API] extension](https://exchange.adobe.com/apps/ec/108550) för vidarebefordran av händelser | Nu kan du skicka data till [!DNL Snapchat Conversions API] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Mer information om hur du autentiserar och använder API:t finns i [[!DNL Snapchat Marketing API] dokumentation](https://marketingapi.snapchat.com/docs/conversion.html). |
 | [[!DNL User-Agent Client Hints] i Web SDK](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK har nu stöd för [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i [!DNL User-Agent] på ett mer sekretessbelagt sätt. |
 | [Migrering av sida vid sida för Web SDK](../../edge/home.md#migrating-to-web-sdk) | Nu kan du migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, till exempel [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av Web SDK-migrering, utan att du behöver migrera alla sidor samtidigt. |
 
