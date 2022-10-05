@@ -2,9 +2,9 @@
 title: Marketo Engage destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 6dc4a93b46d6111637e0024da574d605e0d2b986
+source-git-commit: 9f305ee7824bd8790dec57ccbd2d9462ccfa8b49
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,15 @@ Detaljerade instruktioner om hur du ställer in målet och aktiverar segment fin
 
 I videon nedan visas också stegen för att konfigurera ett Marketo-mål och aktivera segment.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Användargränssnittet i Experience Platform uppdateras ofta och kan ha ändrats sedan videon spelades in. Den mest aktuella informationen finns i guiden ovan.
+>Videon återspeglar inte helt aktuell funktion. Den mest aktuella informationen finns i guiden ovan. Följande delar av videon är inaktuella:
+> 
+>* Målkortet som du ska använda i användargränssnittet för Experience Platform är **[!UICONTROL Marketo V2]**.
+>* Videon visar inte det nya **[!UICONTROL Person creation]** väljarfält i arbetsflödet för anslutning till mål.
+>* De två begränsningar som anges i videon gäller inte längre. Du kan nu mappa många andra profilattributfält utöver segmentmedlemskapsinformationen som stöddes när videon spelades in. Du kan också exportera segmentmedlemmar till Marketo som ännu inte finns i dina statiska Marketo-listor, och dessa läggs till i listorna.
+>* I **[!UICONTROL Schedule segment step]** i Marketo V1 behövde du lägga till en **[!UICONTROL Mapping ID]** för att exportera data till Marketo. Detta manuella steg behövs inte längre i Marketo V2.
+
 
 >[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
