@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
+source-git-commit: 48e87f6089f6fe0be6cb49f5138422c631a485c3
 workflow-type: tm+mt
-source-wordcount: '2440'
+source-wordcount: '2497'
 ht-degree: 0%
 
 ---
@@ -122,6 +122,11 @@ Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en
 1. Välj **[!UICONTROL Create]** för att spara schemat.
 
 ### Exportera inkrementella filer {#export-incremental-files}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_datasets_exportoptions"
+>title="Filexportalternativ för datauppsättningar"
+>abstract="Välj **Exportera inkrementella filer** om du bara vill exportera data som har lagts till i datauppsättningen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla data i datauppsättningen, vilket fungerar som en förifyllning. Framtida inkrementella filer innehåller endast de data som har lagts till i datauppsättningen sedan den första exporten."
 
 Välj **[!UICONTROL Export incremental files]** för att starta en export där den första filen är en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet, och efterföljande filer är stegvisa profilkvalifikationer sedan den föregående exporten.
 
