@@ -2,9 +2,9 @@
 keywords: mobil;mål för mobilengagemang;LINE;LINE mobile engagement destination
 title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler i ert plattformssegment och leverera personaliserade upplevelser till anslutna användare.
-source-git-commit: 10c04bdee8536194baea00d3466c758f848c46c5
+source-git-commit: b15ad6339cb342d754e3a78e0d68b232a94a835e
 workflow-type: tm+mt
-source-wordcount: '1123'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,10 @@ Observera följande krav i [!DNL LINE]för att exportera data från Platform til
 
 #### Du måste ha en [!DNL LINE] konto {#prerequisites-account}
 
-Gå till [!DNL LINE] [registrering](https://account.line.biz/signup) sida för att registrera och skapa ett konto, om du inte redan har ett.
+Du måste registrera dig och skapa en [!DNL LINE] om du inte redan har ett konto. Så här skapar du ett konto:
+
+1. Navigera till [!DNL LINE] [kontoinloggning](https://account.line.biz/login?redirectUri=https%3A%2F%2Fmanager.line.biz%2F) page
+2. Välj **[!UICONTROL Create an account]**.
 
 #### Samla [!DNL LINE channel access token (long-lived)] från [!DNL LINE] utvecklarkonsol {#gather-credentials}
 
