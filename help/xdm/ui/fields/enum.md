@@ -5,7 +5,7 @@ title: Definiera uppräkningsfält och föreslagna värden i användargränssnit
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: ea27486a198f5248eeb5348ce20865bc41c2339a
+source-git-commit: 3b71f6b07345d7b1e08fa5a8b93abc3519606015
 workflow-type: tm+mt
 source-wordcount: '1176'
 ht-degree: 0%
@@ -16,8 +16,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_enum_suggestedvalue"
->title="Uppräkning och föreslagna värden"
->abstract="An **Enum** begränsar ett strängfält så att endast data som matchar en fördefinierad uppsättning värden kan importeras. Varje begränsning kan tilldelas en **Visningsnamn** som fyller i attributlistrutor i segmenteringsgränssnittet. **Föreslagna värden** för ett fält inte begränsa inträngning och endast avgöra vilka visningsnamn som visas i Segmentering. Om du har flera scheman som delar ett fält som tillhör en gemensam klass eller fältgrupp, och du definierar olika uppräkningar eller föreslagna värden för det fältet mellan varje schema, sammanfogas dessa värden och läggs till i unionsschemat."
+>title="Antal och föreslagna värden"
+>abstract="An **Enum** begränsar ett strängfält så att endast data som matchar en fördefinierad uppsättning värden kan importeras. Varje enum-begränsning kan tilldelas en **Visningsnamn** som fyller i attributlistrutor i segmenteringsgränssnittet. **Föreslagna värden** för ett fält inte begränsa inträngning och endast avgöra vilka visningsnamn som visas i Segmentering. Om du har flera scheman som delar ett fält som tillhör en gemensam klass eller fältgrupp, och du definierar olika uppräkningar eller föreslagna värden för det fältet mellan varje schema, sammanfogas dessa värden och läggs till i unionsschemat."
 
 I Experience Data Model (XDM) kan ett strängfält få en fördefinierad uppsättning godkända eller föreslagna värden för att bättre kontrollera vilka värden som hämtas till det fältet eller hur det fungerar i segmenteringen.
 
