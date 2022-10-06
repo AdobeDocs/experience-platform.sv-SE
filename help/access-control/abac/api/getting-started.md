@@ -3,18 +3,14 @@ keywords: Experience Platform;hem;populära ämnen;Attributbaserad åtkomstkontr
 title: Komma igång med den attributbaserade åtkomstkontrollen
 description: Med den attributbaserade åtkomstkontrollen kan du programmässigt hantera roller och profiler i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: d1a66afa-dff4-49d7-b57c-527f05977155
-source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '325'
 ht-degree: 0%
 
 ---
 
 # Komma igång med den attributbaserade åtkomstkontrollen
-
->[!IMPORTANT]
->
->Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
 
 Den här utvecklarhandboken innehåller steg som hjälper dig att använda den attributbaserade åtkomstkontrollen för att hantera roller, produkter, behörighetskategorier och behörighetsgrupper i Adobe Experience Platform, och innehåller exempel på API-anrop för olika åtgärder.
 

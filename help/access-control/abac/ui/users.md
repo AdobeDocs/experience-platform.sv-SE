@@ -3,18 +3,14 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera användare
 description: Det här dokumentet innehåller information om hur du hanterar användare och användargrupper via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '158'
 ht-degree: 1%
 
 ---
 
 # Hantera användare
-
->[!IMPORTANT]
->
->Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
 
 Om du vill visa användarinformation och roller som de är tilldelade till väljer du **[!UICONTROL Users]** -fliken.
 

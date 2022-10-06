@@ -4,18 +4,14 @@ solution: Experience Platform
 title: API-slutpunkt för åtkomstkontrollprinciper
 description: Med slutpunkten /policies i API:t för attributbaserad åtkomstkontroll kan du programmässigt hantera principer i Adobe Experience Platform.
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '1443'
+source-wordcount: '1412'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för åtkomstkontrollprinciper
-
->[!IMPORTANT]
->
->Attributbaserad åtkomstkontroll är för närvarande tillgänglig i en begränsad version för USA-baserade vårdkunder. Den här funktionen kommer att vara tillgänglig för alla Real-time Customer Data Platform-kunder när den släpps helt.
 
 Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Dessa profiler kan antingen vara lokala eller globala och kan åsidosätta andra principer. The `/policies` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gör det möjligt att programmässigt hantera principer, inklusive information om reglerna som styr dem samt deras respektive ämnesvillkor.
 
