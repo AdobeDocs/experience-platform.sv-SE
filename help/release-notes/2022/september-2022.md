@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 319c30facb7e8093318a01a3155bdb2fee0f548b
+source-git-commit: 87789668da0cfdf86d3c47be6e4dc49282932180
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2875'
 ht-degree: 1%
 
 ---
@@ -215,10 +215,12 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Aviseringsprenumerations-API | Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Frågevarningar kan för närvarande bara prenumereras på med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/). Se [frågeaviseringsdokumentation](../../query-service/api/alert-subscriptions.md) om du vill veta mer. |
+| Aviseringsprenumerations-API | Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Frågevarningar kan för närvarande bara prenumereras på med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
 | Datauppsättningsexempel | Med hjälp av datamängdsprover från frågetjänsten kan du utföra undersökande frågor på stora data, vilket minskar bearbetningstiden avsevärt och därmed kan ge korrekta frågor. Se [exempelguide för datauppsättning](../../query-service/sql/dataset-samples.md) om du vill veta mer. |
 
 Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).
+
+<!-- See the [query alerts documentation](../../query-service/api/alert-subscriptions.md) to learn more. -->
 
 ## Källor {#sources}
 
