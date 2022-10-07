@@ -2,9 +2,9 @@
 title: Kontrollpanelshandbok för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 19d6d3c03e6b3b0f9f82ceeee30816fa054261a3
 workflow-type: tm+mt
-source-wordcount: '790'
+source-wordcount: '1009'
 ht-degree: 0%
 
 ---
@@ -63,6 +63,8 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 
 * [Totalt antal konton per bransch](#total-accounts-by-industry)
 * [Kontoprofiler har lagts till](#account-profiles-added)
+* [Förutsägbar poängfördelning](#predictive-scoring-distribution)
+* [Prediktiv bedömning av viktiga faktorer](#predictive-scoring-top-influential-factors)
 
 ### Totalt antal konton per bransch {#total-accounts-by-industry}
 
@@ -82,6 +84,28 @@ Den här widgeten använder ett färgkodat stapeldiagram för att illustrera ant
 
 ![Kontoprofilerna har lagt till widget.](../images/account-profiles/accounts-profiles-added-widget.png)
 
+### Förutsägbar poängfördelning {#predictive-scoring-distribution}
+
+The [!UICONTROL Predictive scoring distribution] widgeten visar poängdistributionen för alla kontoprofiler så att du snabbt kan förstå hur din säljpipeline mår. Poängdata förmedlas via ett mundiagram och ett kolumndiagram.
+
+I donutdiagrammet visas andelen av dina totala kontoprofiler i var och en av de stora, medelstora och låga benägenheterna att köpa bucklar. Nyckeln ger mer information om de färgkodade avsnitten, inklusive poängintervallen och antalet kontoprofiler i intervallet.
+
+Kolumndiagrammet ger en mer detaljerad resultatfördelning. Varje kolumn visar antalet kontoprofiler i var och en av de 20 fempunktsökningsgrupperna.
+
+I listrutan i widgeten kan du välja kontobedömningsmodellen.
+
+![Widgeten Predictive scoring distribution.](../images/account-profiles/predictive-scoring-distribution.png)
+
+### Prediktiv bedömning av viktiga faktorer {#predictive-scoring-top-influential-factors}
+
+The [!UICONTROL Predictive scoring top influential factors] widgeten hjälper dig att förstå de viktigaste faktorerna som driver poängen för varje benägenhetspyts.
+
+Den här widgeten visar de viktigaste inflytelserika faktorerna för de stora, medelstora och låga benägenhetsintervallen. En stapel för varje inflytelserik faktor anger den procentandel av kontoprofilerna i den benägenhetspytsen som innehåller den specifika inflytelserika faktorn.
+
+I listrutan i widgeten kan du välja kontobedömningsmodellen.
+
+![Widgeten Predictive scoring top influential factor.](../images/account-profiles/predictive-scoring-top-influential-factors.png)
+
 ## Nästa steg
 
-Om du följer det här dokumentet bör du nu kunna hitta [!UICONTROL Account Profiles] kontrollpanel. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med kontoprofiler som en del av dina B2B-data i användargränssnittet för Experience Platform finns i [kontoprofilöversikt](../../rtcdp/accounts/account-profile-overview.md) för Adobe Real-Time CDP, B2B Edition.
+Om du följer det här dokumentet bör du nu veta hur du hittar [!UICONTROL Account Profiles] kontrollpanel. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med kontoprofiler som en del av dina B2B-data i användargränssnittet för Experience Platform finns i [kontoprofilöversikt](../../rtcdp/accounts/account-profile-overview.md) för Adobe Real-Time CDP, B2B Edition.
