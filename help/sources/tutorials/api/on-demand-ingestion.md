@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;flödestjänst;
 title: (Beta) Skapa en flödeskörning för behovsstyrd inmatning med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs stegen för att skapa ett flöde för on-demand-inmatning med API:t för Flow Service
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
+source-git-commit: 795b1af6421c713f580829588f954856e0a88277
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '856'
 ht-degree: 0%
 
 ---
@@ -70,6 +70,7 @@ curl -X POST \
   -d '{
       "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
       "params": {
+          "startTime": "1663735590",
           "windowStartTime": "1651584991",
           "windowEndTime": "16515859567",
           "deltaColumn": {
@@ -82,9 +83,10 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `flowId` | ID:t för det flöde som flödeskörningen ska skapas mot. |
+| `params.startTime` | Ett heltal som definierar körningens starttid. Värdet representeras i Unix Epooch-tid. |
 | `params.windowStartTime` | Ett heltal som definierar starttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
 | `params.windowEndTime` | Ett heltal som definierar sluttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.deltaColumn` | Deltakolumnen krävs för att partitionera data och separera nyimporterade data från historiska data. |
+| `params.deltaColumn` | Deltakolumnen krävs för att partitionera data och separera nyimporterade data från historiska data. **Anteckning**: The `deltaColumn` behövs bara när du skapar ditt första flöde. |
 | `params.deltaColumn.name` | Namnet på deltakolumnen. |
 
 **Svar**
@@ -93,53 +95,36 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 
 ```json
 {
-    "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
-    "createdAt": 1651587212543,
-    "updatedAt": 1651587223839,
-    "createdBy": "{CREATED_BY}",
-    "updatedBy": "{UPDATED_BY}",
-    "createdClient": "{CREATED_CLIENT}",
-    "updatedClient": "{UPDATED_CLIENT}",
-    "sandboxId": "{SANDBOX_ID}",
-    "sandboxName": "prod",
-    "imsOrgId": "{ORGANIZATION_ID}",
-    "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
-    "params": {
-        "windowStartTime": "1651584991",
-        "windowEndTime": "16515859567",
-        "deltaColumn": {
-            "name": "DOB"
+    "items": [
+        {
+            "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
+            "etag": "\"1100c53e-0000-0200-0000-627138980000\""
         }
-    },
-    "etag": "\"1100c53e-0000-0200-0000-627138980000\"",
-    "metrics": {
-        "statusSummary": {
-            "status": "scheduled"
-        }
-    },
-    "activities": []
+    ]
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | ID för den nyligen skapade flödeskörningen. Se guiden [hämta flödesspecifikationer](../api/collect/database-nosql.md#specs) för mer information om tabellbaserade körningsspecifikationer. |
-| `createdAt` | Unix-tidsstämpeln som anger när flödeskörningen skapades. |
-| `updatedAt` | Unix-tidsstämpeln som anger när flödeskörningen senast uppdaterades. |
-| `createdBy` | Organisations-ID för användaren som skapade flödeskörningen. |
-| `updatedBy` | Organisations-ID för den användare som senast uppdaterade flödeskörningen. |
-| `createdClient` | Programklienten som skapade flödeskörningen. |
-| `updatedClient` | Programklienten som senast uppdaterade flödeskörningen. |
-| `sandboxId` | ID:t för sandlådan som innehåller flödeskörningen. |
-| `sandboxName` | Namnet på sandlådan som innehåller flödeskörningen. |
-| `imsOrgId` | Organisations-ID. |
-| `flowId` | ID för det flöde som flödeskörningen skapas mot. |
-| `params.windowStartTime` | Ett heltal som definierar starttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.windowEndTime` | Ett heltal som definierar sluttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.deltaColumn` | Deltakolumnen krävs för att partitionera data och separera nyimporterade data från historiska data. **Anteckning**: The `deltaColumn` behövs bara när du skapar ditt första flöde. |
-| `params.deltaColumn.name` | Namnet på deltakolumnen. |
 | `etag` | Resursversionen av flödeskörningen. |
-| `metrics` | Den här egenskapen visar en statussammanfattning för flödeskörningen. |
+<!-- 
+| `createdAt` | The unix timestamp that designates when the flow run was created. |
+| `updatedAt` | The unix timestamp that designates when the flow run was last updated. |
+| `createdBy` | The organization ID of the user who created the flow run. |
+| `updatedBy` | The organization ID of the user who last updated the flow run. |
+| `createdClient` | The application client that created the flow run. |
+| `updatedClient` | The application client that last updated the flow run. |
+| `sandboxId` | The ID of the sandbox that contains the flow run. |
+| `sandboxName` | The name of the sandbox that contains the flow run. |
+| `imsOrgId` | The organization ID. |
+| `flowId` | The ID of the flow in which the flow run is created against. |
+| `params.windowStartTime` | An integer that defines the start time of the window during which data is to be pulled. The value is represented in unix time. |
+| `params.windowEndTime` | An integer that defines the end time of the window during which data is to be pulled. The value is represented in unix time. |
+| `params.deltaColumn` | The delta column is required to partition the data and separate newly ingested data from historic data. **Note**: The `deltaColumn` is only needed when creating your firs flow run. |
+| `params.deltaColumn.name` | The name of the delta column. |
+| `etag` | The resource version of the flow run. |
+| `metrics` | This property displays a status summary for the flow run. | -->
 
 ## Skapa en flödeskörning för en filbaserad källa
 
@@ -170,6 +155,7 @@ curl -X POST \
   -d '{
       "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
       "params": {
+          "startTime": "1663735590",
           "windowStartTime": "1651584991",
           "windowEndTime": "16515859567"
       }
@@ -179,6 +165,7 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `flowId` | ID:t för det flöde som flödeskörningen ska skapas mot. |
+| `params.startTime` | Ett heltal som definierar körningens starttid. Värdet representeras i Unix Epooch-tid. |
 | `params.windowStartTime` | Ett heltal som definierar starttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
 | `params.windowEndTime` | Ett heltal som definierar sluttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
 
@@ -189,49 +176,19 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 
 ```json
 {
-    "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
-    "createdAt": 1651587212543,
-    "updatedAt": 1651587223839,
-    "createdBy": "{CREATED_BY}",
-    "updatedBy": "{UPDATED_BY}",
-    "createdClient": "{CREATED_CLIENT}",
-    "updatedClient": "{UPDATED_CLIENT}",
-    "sandboxId": "{SANDBOX_ID}",
-    "sandboxName": "prod",
-    "imsOrgId": "{ORGANIZATION_ID}",
-    "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
-    "params": {
-        "windowStartTime": "1651584991",
-        "windowEndTime": "16515859567"
-    },
-    "etag": "\"1100c53e-0000-0200-0000-627138980000\"",
-    "metrics": {
-        "statusSummary": {
-            "status": "scheduled"
+    "items": [
+        {
+            "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
+            "etag": "\"1100c53e-0000-0200-0000-627138980000\""
         }
-    },
-    "activities": []
+    ]
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | ID för den nyligen skapade flödeskörningen. Se guiden [hämta flödesspecifikationer](../api/collect/cloud-storage.md#specs) för mer information om filbaserade körningsspecifikationer. |
-| `createdAt` | Unix-tidsstämpeln som anger när flödeskörningen skapades. |
-| `updatedAt` | Unix-tidsstämpeln som anger när flödeskörningen senast uppdaterades. |
-| `createdBy` | Organisations-ID för användaren som skapade flödeskörningen. |
-| `updatedBy` | Organisations-ID för den användare som senast uppdaterade flödeskörningen. |
-| `createdClient` | Programklienten som skapade flödeskörningen. |
-| `updatedClient` | Programklienten som senast uppdaterade flödeskörningen. |
-| `sandboxId` | ID:t för sandlådan som innehåller flödeskörningen. |
-| `sandboxName` | Namnet på sandlådan som innehåller flödeskörningen. |
-| `imsOrgId` | Organisations-ID. |
-| `flowId` | ID för det flöde som flödeskörningen skapas mot. |
-| `params.windowStartTime` | Ett heltal som definierar starttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.windowEndTime` | Ett heltal som definierar sluttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
+| `id` | ID för den nyligen skapade flödeskörningen. Se guiden [hämta flödesspecifikationer](../api/collect/database-nosql.md#specs) för mer information om tabellbaserade körningsspecifikationer. |
 | `etag` | Resursversionen av flödeskörningen. |
-| `metrics` | Den här egenskapen visar en statussammanfattning för flödeskörningen. |
-
 
 ## Övervaka flödeskörningar
 
