@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 48e87f6089f6fe0be6cb49f5138422c631a485c3
+source-git-commit: c096720d9b7a645475d3a3f63f900e81c212d121
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2544'
 ht-degree: 0%
 
 ---
@@ -212,6 +212,12 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 >[!NOTE]
 >
 > Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+
+>[!IMPORTANT]
+>
+>På grund av en känd begränsning kan du för närvarande inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+>
+>![Skärminspelning som visar segmentmedlemskapets tillfälliga lösning i aktiveringsarbetsflödets mappningssteg.](/help/destinations/assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
 * Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
