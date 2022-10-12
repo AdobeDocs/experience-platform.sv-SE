@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1b98a04f92833f5c906ec0081b35144cd47d77bc
+source-git-commit: b834e278f085adc5a4a90876727b6a0787b181e1
 workflow-type: tm+mt
-source-wordcount: '1950'
+source-wordcount: '1989'
 ht-degree: 1%
 
 ---
@@ -110,6 +110,7 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Segment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 segment totalt, förutsatt att det finns mindre än 4000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment kan det påverka systemets prestanda. |
+| Kantsegment per sandlåda | 150 | Mjuk | En organisation kan ha fler än 150 kantsegment totalt, förutsatt att det finns mindre än 150 kantsegment i varje enskild sandlåda. Försök att skapa ytterligare kantsegment kan påverka systemets prestanda. |
 | Direktuppspelningssegment per sandlåda | 500 | Mjuk | En organisation kan ha fler än 500 direktuppspelningssegment totalt, förutsatt att det finns färre än 500 direktuppspelningssegment i varje enskild sandlåda. Om du försöker skapa fler direktuppspelningssegment kan det påverka systemets prestanda. |
 | Gruppsegment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 gruppsegment totalt, förutsatt att det finns mindre än 4000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment kan det påverka systemets prestanda. |
 
