@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: b07a45e5bb9cae6e147ea790ebb77cb63f8790c1
+source-git-commit: e6d0f0d0bc3de2f6da4e4269811d254db4fa3303
 workflow-type: tm+mt
-source-wordcount: '385'
+source-wordcount: '445'
 ht-degree: 2%
 
 ---
@@ -45,6 +45,10 @@ Följande tabell visar befintliga regler som du måste följa för att identitet
 | --- | --- | --- |
 | ECID | <ul><li>Identitetsvärdet för ett ECID måste vara exakt 38 tecken.</li><li>Identitetsvärdet för ett ECID får endast bestå av siffror.</li></ul> | <ul><li>Om identitetsvärdet för ECID inte är exakt 38 tecken hoppas posten över.</li><li>Om identitetsvärdet för ECID innehåller icke-numeriska tecken hoppas posten över.</li></ul> |
 | Ej ECID | Identitetsvärdet får inte vara längre än 1 024 tecken. | Om identitetsvärdet är längre än 1 024 tecken hoppas posten över. |
+
+### Inläsning av namnområde för identitet
+
+Från och med 31 januari 2023 blockerar identitetstjänsten intag av Adobe Analytics ID (AAID) för nya kunder. Den här identiteten hämtas vanligtvis via [Adobe Analytics-källa](../sources/connectors/adobe-applications/analytics.md) och [Adobe Audience Manager-källa](../sources//connectors/adobe-applications/audience-manager.md) och är överflödigt eftersom ECID representerar samma webbläsare. Kontakta din kontoansvarige om du vill ändra den här standardkonfigurationen.
 
 ## Nästa steg
 

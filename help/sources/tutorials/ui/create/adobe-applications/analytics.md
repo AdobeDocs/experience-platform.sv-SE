@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 7ad0015dbea0b74673ed0ed2c8c2159065f47ba7
+source-git-commit: 04a8ca33e712c00d687432ddf9ad82f5d1644db2
 workflow-type: tm+mt
-source-wordcount: '2108'
+source-wordcount: '2167'
 ht-degree: 0%
 
 ---
@@ -156,7 +156,12 @@ I följande dokumentation finns mer information om dataprep, beräkningsfält oc
 * [Funktioner för datapersonmappning](../../../../../data-prep/functions.md)
 * [Lägg till beräknade fält](../../../../../data-prep/ui/mapping.md#calculated-fields)
 
-### Filtrera för [!DNL Profile Service] (Beta)
+### Filtrera för [!DNL Profile Service] (Beta) {#filtering-for-profile}
+
+>[!CONTEXTUALHELP]
+>id="platform_data_prep_analytics_filtering"
+>title="Skapa filterregler"
+>abstract="Definiera filtreringsregler på rad- och kolumnnivå när du skickar data till kundprofilen i realtid. Använd filtrering på radnivå för att tillämpa villkor och ange vilka data som ska **inkludera för profilinmatning**. Använd filtrering på kolumnnivå för att markera de datakolumner som du vill använda **exkludera för profilinmatning**. Filtreringsreglerna gäller inte för data som skickas till datasjön."
 
 >[!IMPORTANT]
 >
