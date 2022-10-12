@@ -5,10 +5,10 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f6c22d260e1583dc035d1508ca3bce0d7f9de8bd
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 24%
+source-wordcount: '408'
+ht-degree: 25%
 
 ---
 
@@ -112,6 +112,9 @@ ht-degree: 24%
       * Plugin-program för vanlig analys {#plugins}
          * [Översikt](./extensions/web/plugins/overview.md)
          * [Versionsinformation](./extensions/web/plugins/release-notes.md)
+      * Vanliga SDK-plugin-program för webben {#web-sdk-plugins}
+         * [Översikt](./extensions/web/web-sdk-plugins/overview.md)
+         * [Versionsinformation](./extensions/web/web-sdk-plugins/release-notes.md)
       * Core {#core}
          * [Översikt](./extensions/web/core/overview.md)
          * [Vidarebefordran av händelser](./extensions/web/core/event-forwarding.md)
