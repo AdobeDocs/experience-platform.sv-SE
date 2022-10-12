@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform datainmatning
 breadcrumb-title: Handbok för dataöverföring
-user-guide-description: Använd era data på plattformen genom batchvis eller direktuppspelande ingrepp.
+user-guide-description: Hämta in data i Experience Platform genom batchvis eller direktuppspelad inmatning.
 feature: Data Ingestion
-source-git-commit: 2c0791af8bb4f40c5ab4e0504af154b757af5e84
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '129'
 ht-degree: 3%
 
 ---

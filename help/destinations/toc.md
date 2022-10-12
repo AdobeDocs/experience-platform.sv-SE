@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Destinationshandbok
-user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och mycket annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 10c04bdee8536194baea00d3466c758f848c46c5
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '945'
 ht-degree: 1%
 
 ---

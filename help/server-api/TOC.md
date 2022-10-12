@@ -3,12 +3,12 @@ audience: user
 solution: Data Collection
 user-guide-title: API-dokumentation för Edge Network Server
 breadcrumb-title: API-dokumentation för Edge Network Server
-user-guide-description: Adobe Experience Platform Edge Network Server API är ett optimerat sätt för kunder att interagera med alla Adobe Experience Cloud- och Adobe Experience Platform Edge-tjänster. Lär dig hur du använder Server-API:t för olika typer av datainsamling, personalisering, annonsering och marknadsföring.
+user-guide-description: Använd Edge Network Server-API:t för datainsamling, personalisering, annonsering och marknadsföring med Experience Cloud eller Experience Platform Edge-tjänster.
 feature: Data Collection
-source-git-commit: f36892103b0b202550c07a70538c97b1cc673840
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
-source-wordcount: '108'
-ht-degree: 2%
+source-wordcount: '85'
+ht-degree: 3%
 
 ---
 

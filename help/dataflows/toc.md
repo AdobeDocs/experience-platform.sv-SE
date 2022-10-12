@@ -1,11 +1,11 @@
 ---
 audience: user
 user-guide-title: Dataflows Guide
-user-guide-description: Dataflöden är en representation av datajobb som flyttar data mellan plattformar.
+user-guide-description: Lär dig mer om dataflöden och hur du konfigurerar dem för olika tjänster.
 feature: Dataflows
-source-git-commit: 2e5d5a574f4c8bec99ef05ea751908c81c358050
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
-source-wordcount: '63'
+source-wordcount: '62'
 ht-degree: 0%
 
 ---

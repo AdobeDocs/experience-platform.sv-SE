@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
-user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
+user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: df894d8b52aff3708aa06e73d4c5ba3e1e501f10
+source-git-commit: 5aa2be236d35f761a1e4d34fbe0bb28fd9087935
 workflow-type: tm+mt
-source-wordcount: '214'
-ht-degree: 6%
+source-wordcount: '217'
+ht-degree: 5%
 
 ---
 

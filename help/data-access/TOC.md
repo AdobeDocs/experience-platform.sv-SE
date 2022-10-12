@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Adobe Experience Platform Data Access
 breadcrumb-title: Dataåtkomstguide
-user-guide-description: Identifiera och få tillgång till kapslade datauppsättningar inom Platform.
+user-guide-description: Hitta och få tillgång till kapslade datauppsättningar i Experience Platform.
 feature: Data Access
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
-source-wordcount: '37'
+source-wordcount: '38'
 ht-degree: 2%
 
 ---

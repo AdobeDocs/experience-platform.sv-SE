@@ -3,8 +3,8 @@ solution: Experience Platform
 audience: user
 user-guide-title: Hjälp om intelligenta tjänster
 breadcrumb-title: Guide för intelligenta tjänster
-user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, hitta insikter och skapa segment utifrån era marknadsföringshändelsedata.
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, identifiera insikter och skapa segment utifrån era marknadsföringshändelsedata.
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '123'
 ht-degree: 4%

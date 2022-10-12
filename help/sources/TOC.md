@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
-user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
+user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
 feature: Sources
-source-git-commit: eb78984d233c5d0dea04f235ee9e75eefff71752
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
-source-wordcount: '830'
+source-wordcount: '832'
 ht-degree: 5%
 
 ---

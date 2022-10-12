@@ -1,10 +1,10 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform Accessibility
-user-guide-description: Adobe Experience Platform strävar efter att ge alla personer tillgång till alla funktioner.
-source-git-commit: 5cb041504a9bae8b0a9df3e50de7cd9ece8a3d4a
+user-guide-description: Läs om Experience Platform åtagande att erbjuda alla personer tillgång till funktioner som är tillgängliga för alla.
+source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
-source-wordcount: '49'
+source-wordcount: '50'
 ht-degree: 4%
 
 ---
