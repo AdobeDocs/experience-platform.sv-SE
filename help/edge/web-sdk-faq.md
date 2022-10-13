@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 5586c788f4ae5c61b3b94f93b4180fc293d7e179
 workflow-type: tm+mt
-source-wordcount: '1934'
+source-wordcount: '2101'
 ht-degree: 1%
 
 ---
@@ -151,13 +151,17 @@ Mer information om CNAME finns i [Adobe dokumentation](https://experienceleague.
 
 ## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
 
-Ja, för närvarande använder Web SDK var som helst mellan 1-4 cookies beroende på implementeringen. Nedan visas en lista över de fyra cookies som du kan se med Web SDK och hur de används:
+Ja, för närvarande använder Web SDK var som helst mellan en och sju cookies beroende på implementeringen. Nedan visas en lista över de cookies som du kan se med Web SDK och hur de används:
 
-**kndct_orgid_identity:** Identitetskakan används för att lagra ECID och annan information som rör ECID.
-
-**kndctr_orgid_medgivande:** Denna cookie lagrar användarens medgivandeinställning för webbplatsen.
-
-**kndctr_orgid_Cluster:** Denna cookie lagrar Experience Edge-regionen som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Experience Edge kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region.
+| **Namn** | **maxAge** | **Egen ålder** | **Beskrivning** |
+|---|---|---|---|
+| **kndct_orgid_identity** | 34128000 | 395 dagar | I identitetscookie lagras ECID och annan information om ECID. |
+| **kndctr_original_medgivande_check** | 7200 | 2 timmar | Den här cookien lagrar användarens medgivandeinställning för webbplatsen. |
+| **kndctr_orgid_medgivande** | 15552000 | 180 dagar | Denna sessionsbaserade cookie signalerar till servern att leta upp serversidan för medgivandeinställningar. |
+| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar Experience Edge-regionen som betjänar den aktuella användarens önskemål. Regionen används i URL-sökvägen så att Experience Edge kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
+| **mbox** | 63072000 | 2 år | Den här cookien visas när inställningen för målmigrering är true. Detta tillåter att målet [mbox cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) anges av Web SDK. |
+| **mboxEdgeCluster** | 1800 | 30 minuter | Den här cookien visas när inställningen för målmigrering är true. Med denna cookie kan Web SDK kommunicera rätt edge-kluster till at.js så att Target-profiler kan vara synkroniserade när användare navigerar på en webbplats. |
+| **AMCV_###@AdobeOrg** | 34128000 | 395 dagar | Denna cookie visas bara när ID-migrering på Adobe Experience Platform Web SDK är aktiverat. Denna cookie är användbar vid övergång till Web SDK medan vissa delar av webbplatsen fortfarande använder visitor.js. Se [idMigrationEnabled-dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#identity-options) om du vill läsa mer om den här inställningen. |
 
 När du använder Web SDK anger Edge Network en eller flera av cookierna ovan. Edge Network ställer in alla cookies med `secure` och `sameSite="none"` attribut.
 
