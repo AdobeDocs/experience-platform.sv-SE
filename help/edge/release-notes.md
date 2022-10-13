@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: becff2390aca3a1195cc157c075b1c9a087989c8
+source-git-commit: f406ad74da00a7f4bf7ef1b52bee59cd91435d8f
 workflow-type: tm+mt
-source-wordcount: '1349'
+source-wordcount: '1388'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,11 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](extension/web-sdk-ext-release-notes.md).
+
+## Version 2.13.1 - 13 oktober 2022
+
+* Korrigerade ett problem där besökarmigrering inte fungerar om window.Visitor definieras efter konfiguration. Det här är ett särskilt problem när du använder Adobe-taggar.
+* Ett problem där `device.screenWidth` och `device.screenHeight` har fyllts i som strängar i vissa miljöer.
 
 ## Version 2.13.0 - 28 september 2022
 
