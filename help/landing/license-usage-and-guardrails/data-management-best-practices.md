@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättigande;licensiering;bästa praxis
 title: Metodtips för tillstånd för datahantering
-description: I det här dokumentet beskrivs de bästa sätten att följa och de verktyg du kan använda för att hantera dina licensrättigheter bättre med Adobe Experience Platform.
+description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 02882957fc38058ff092938d631e290725d4bdc2
+source-git-commit: 5da2a6cfc9e9da6bbe6c6560577d22eed32c858c
 workflow-type: tm+mt
-source-wordcount: '2531'
+source-wordcount: '2528'
 ht-degree: 0%
 
 ---
