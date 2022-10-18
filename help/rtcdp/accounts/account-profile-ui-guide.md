@@ -3,9 +3,9 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 9119e6376228c3cec214977265abf0ce55093b64
+source-git-commit: 85d3e5f265fdbfd51f184d36205127f005e2b9df
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1553'
 ht-degree: 0%
 
 ---
@@ -52,8 +52,6 @@ Mer information om lead-to-account matching finns i [Lead till kontomatchning i 
 
 Bläddra bland kontoprofiler genom att börja med att välja **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen.
 
-![Välj profiler i den vänstra navigeringen](images/b2b-account-browse.png)
-
 På **[!UICONTROL Browse]** kan du utforska kontoprofiler med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt.
 
 ![Använd konto-ID för att utforska profiler](images/b2b-account-browse-by.png)
@@ -72,9 +70,9 @@ Då öppnas **[!UICONTROL Select source]** där du kan välja en källa baserat 
 
 Mer information om hur du ansluter företagskällor finns i [källöversikt](../sources/sources-overview.md).
 
-![Välj källarbetsflöde](images/b2b-account-select-source.png)
-
 Du kan välja en källa genom att markera alternativknappen bredvid anslutningsnamnet och sedan använda **[!UICONTROL Select]** för att gå tillbaka till [!UICONTROL Browse] -fliken.
+
+![Välj källarbetsflöde](images/b2b-account-select-source.png)
 
 När en källa är markerad måste du nu ange **[!UICONTROL Account ID]** relaterat till källan. Om du till exempel väljer en Salesforce-källa måste du ange ett konto-ID från Salesforce-instansen för att kunna visa den kontoprofil som är kopplad till det ID:t.
 
