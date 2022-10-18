@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: f6c22d260e1583dc035d1508ca3bce0d7f9de8bd
+source-git-commit: 48151842ffcba4082988d008f9370714da51ee05
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '409'
 ht-degree: 25%
 
 ---
@@ -127,6 +127,8 @@ ht-degree: 25%
       * Google datalager {#google-data-layer}
          * [Översikt](./extensions/web/google-data-layer/overview.md)
          * [Versionsinformation](./extensions/web/google-data-layer/release-notes.md)
+      * [!DNL Splunk] {#splunk}
+         * [Översikt](./extensions/web/splunk/overview.md)
       * [!DNL YouTube] videospårningstillägg {#youtube}
          * [Översikt](./extensions/web/youtube/overview.md)
          * [Versionsinformation](./extensions/web/youtube/release-notes.md)
@@ -197,7 +199,7 @@ ht-degree: 25%
       * [Relationer](./api/guides/relationships.md)
       * [Sökresurser](./api/guides/search.md)
       * [Hemligheter](./api/guides/secrets.md)
-* [Vanliga frågor och svar ](./faq.md)
+* [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
 * Versionsinformation {#release-notes}
