@@ -1,11 +1,11 @@
 ---
-keywords: 'Reklam. Vedning. '
+keywords: Reklam. Vedning.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Display Advertising.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 812688043a7da943832b5798de0f433928634998
+source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '598'
 ht-degree: 1%
 
 ---
@@ -69,7 +69,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Din [!DNL Bing Ads CID].
+* **[!UICONTROL Account ID]**: Dina [!DNL Bing Ads Customer ID] (CID). Ditt CID är ett heltal som finns i URL:en när du loggar in [!DNL Microsoft Advertising].
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -90,11 +90,9 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
-I [Segmentschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa dina segment till deras motsvarande numeriska segment-ID i [!DNL Bing] mål. Fyll i det numeriska segmentets ID från [!DNL Bing] i [!UICONTROL Mapping ID] fält.
+I [Segmentschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa segmentnamnet i [!UICONTROL Mapping ID] fält. Detta garanterar att metadata för segment skickas till [!DNL Bing].
 
-![Gränssnittsbild som visar segmentmappningsskärmen med ett exempel på Bing Mapping ID](../../assets/catalog/advertising/bing/mapping-id.png)
-
-Om [!UICONTROL Mapping ID] motsvarar inte ett segment-ID i Bing-målet. Du kommer inte att se förväntade målgruppsdata i ditt Bing-konto.
+![Användargränssnittsbild som visar segmentschemasskärmen med ett exempel på hur segmentnamnet mappas till Bing Mapping-ID:t.](../../assets/catalog/advertising/bing/mapping-id.png)
 
 ## Exporterade data {#exported-data}
 
