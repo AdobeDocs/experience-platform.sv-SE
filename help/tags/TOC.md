@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 48151842ffcba4082988d008f9370714da51ee05
+source-git-commit: d5e8e49e50d0c5792828140626b933a4f232dd00
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '413'
 ht-degree: 25%
 
 ---
@@ -132,6 +132,8 @@ ht-degree: 25%
       * [!DNL YouTube] videospårningstillägg {#youtube}
          * [Översikt](./extensions/web/youtube/overview.md)
          * [Versionsinformation](./extensions/web/youtube/release-notes.md)
+      * [!DNL Zendesk] API-tillägg för händelser {#zendesk}
+         * [Översikt](./extensions/web/zendesk/overview.md)
    * [Tredjepartstillägg](./extensions/3rd-party-extensions.md)
 * Tilläggsutveckling {#extension-dev}
    * [Översikt](./extension-dev/overview.md)
