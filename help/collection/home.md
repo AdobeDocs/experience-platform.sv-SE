@@ -5,9 +5,9 @@ title: Översikt över datainsamling
 topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 96ee731ce8de708b1671c40f1bbef9902495f3b4
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '513'
 ht-degree: 3%
 
 ---
@@ -47,6 +47,8 @@ Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar åt
 ## Platform Edge Network och datastreams {#edge}
 
 Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../edge/datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+
+Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Se avsnittet om [hantera känsliga data](../edge/datastreams/overview.md#sensitive) i datastreams-dokumentationen om du vill ha mer information.
 
 ![Datastreams and Adobe solutions](./images/home/adobe-solutions.png)
 

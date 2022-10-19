@@ -3,10 +3,10 @@ title: Översikt över dataströmmar
 description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
 keywords: konfiguration;datastreams;datastreamId;edge;datastream id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destination;url Destinations;Analytics Settings Blockreport suite;Data Prep för datainsamling;Data Prep;Mapper;XDM Mapper;Mapper on Edge;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 81b20d40d3511592125cba123fa070fc27aace5a
+source-git-commit: 2cec87d3f45b1b774925a9b669b53a958e65e57a
 workflow-type: tm+mt
-source-wordcount: '1692'
-ht-degree: 1%
+source-wordcount: '777'
+ht-degree: 0%
 
 ---
 
@@ -14,166 +14,56 @@ ht-degree: 1%
 
 En datastream representerar konfigurationen på serversidan när Adobe Experience Platform Web och Mobile SDK implementeras. Med [konfigurera, kommando](../fundamentals/configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten (till exempel `edgeDomain`) hanterar datastreams alla andra konfigurationer för SDK. När en begäran skickas till Adobe Experience Platform Edge Network `edgeConfigId` används för att referera till datastream. På så sätt kan du uppdatera konfigurationen på serversidan utan att behöva göra kodändringar på webbplatsen.
 
-Det här dokumentet innehåller stegen för hur du konfigurerar ett datastream i användargränssnittet.
-
-## Öppna [!UICONTROL Datastreams] arbetsyta
-
-Du kan skapa och hantera datastölar i användargränssnittet för datainsamling eller användargränssnittet för Experience Platform genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen.
+Du kan skapa och hantera datastreams genom att välja **[!UICONTROL Datastreams]** i den vänstra navigeringen i Adobe Experience Platform användargränssnitt eller användargränssnittet för datainsamling.
 
 ![Fliken Datastreams i användargränssnittet](../assets/datastreams/overview/datastreams-tab.png)
 
-The [!UICONTROL Datastreams] På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
+Mer information om hur du konfigurerar ett datastream i användargränssnittet finns i [konfigurationsguide](./configure.md).
 
-Välj ikonen &quot;mer&quot; (**...**) för en viss datastream för att visa fler alternativ. Välj **[!UICONTROL Edit]** för att uppdatera [grundläggande konfiguration](#configure) för datastream, eller välj **[!UICONTROL Delete]** för att ta bort datastream.
-
-![Alternativ för redigering eller borttagning och befintlig datastream](../assets/datastreams/overview/edit-datastream.png)
-
-## Skapa ett nytt datastream {#create}
-
-Om du vill skapa ett datastream börjar du med att välja **[!UICONTROL New Datastream]**.
-
-![Välj nytt datastream](../assets/datastreams/overview/new-datastream-button.png)
-
-Arbetsflödet för att skapa en datastam visas med början i konfigurationssteget. Härifrån måste du ange ett namn och en valfri beskrivning för datastream.
-
-Om du konfigurerar det här dataflödet för användning i Experience Platform och använder Platform Web SDK måste du även välja en [händelsebaserat XDM-schema (Experience Data Model)](../../xdm/classes/experienceevent.md) för att representera de data du planerar att använda vid inhämtning.
-
-![Grundkonfiguration för ett datastream](../assets/datastreams/overview/configure.png)
-
-Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller för att konfigurera datastream.
-
-![Avancerade konfigurationsalternativ](../assets/datastreams/overview/advanced-options.png)
-
-| Inställning | Beskrivning |
-| --- | --- |
-| [!UICONTROL Geo Location] | Avgör om GPS-sökningar utförs baserat på användarens IP-adress. Standardinställningen **[!UICONTROL None]** inaktiverar GPS-sökningar, medan **[!UICONTROL City]** -inställningen ger GPS-koordinater två decimaler. |
-| [!UICONTROL First Party ID Cookie] | När det här alternativet är aktiverat anger den här inställningen att Edge Network ska referera till en angiven cookie när en [enhets-ID för första part](../identity/first-party-device-ids.md)i stället för att leta upp det här värdet i identitetskartan.<br><br>När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras. |
-| [!UICONTROL Third Party ID Sync] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. När den här inställningen är aktiverad kan du ange vilken ID-synkroniseringsbehållare som ska köras för den här datastream-filen. |
-| [!UICONTROL Access Type] | Definierar autentiseringstypen som [!DNL Edge Network] accepterar för datastream. <ul><li>**[!UICONTROL Mixed Authentication]**: När det här alternativet är markerat godkänns både autentiserade och oautentiserade begäranden i Edge Network. Välj det här alternativet när du tänker använda Web SDK eller [Mobile SDK](https://aep-sdks.gitbook.io/docs/), tillsammans med [Server-API](../../server-api/overview.md). </li><li>**[!UICONTROL Authenticated Only]**: När det här alternativet är markerat accepterar Edge Network endast autentiserade begäranden. Välj det här alternativet när du bara vill använda Server-API:t och vill förhindra att oautentiserade begäranden behandlas av [!DNL Edge Network]. </li></ul> |
-
-Om du konfigurerar ditt datastream för Experience Platform följer du självstudiekursen på [Dataförberedelse för datainsamling](./data-prep.md) för att mappa dina data till ett plattformshändelseschema innan du återgår till den här guiden. Annars väljer du **[!UICONTROL Save]** och fortsätta till nästa avsnitt.
-
-## Visa information om dataström {#view-details}
-
-När du har konfigurerat en ny datastam eller valt en befintlig som ska visas, visas informationssidan för den datastream. Här finns mer information om datastream, inklusive dess ID.
-
-![Informationssida för ett datastream som skapats](../assets/datastreams/overview/view-details.png)
-
-På informationsskärmen kan du [lägg till tjänster](#add-services) för att aktivera funktioner från de Adobe Experience Cloud-produkter du har tillgång till. Du kan även redigera datastreams [grundläggande konfiguration](#create), uppdatera [mappningsregler](./data-prep.md), [kopiera datastream](#copy)eller ta bort den helt.
-
-## Lägga till tjänster i ett datastream {#add-services}
-
-På informationssidan för ett datastream väljer du **[!UICONTROL Add Service]** för att börja lägga till tillgängliga tjänster för den aktuella datastream.
-
-![Välj Lägg till tjänst för att fortsätta](../assets/datastreams/overview/add-service.png)
-
-På nästa skärm använder du listrutemenyn för att välja en tjänst som ska konfigureras för det här dataflödet. Endast de tjänster som du har åtkomst till visas i den här listan.
-
-![Välj en tjänst i listan](../assets/datastreams/overview/service-selection.png)
-
-Välj önskad tjänst, fyll i de konfigurationsalternativ som visas och välj sedan **[!UICONTROL Save]** för att lägga till tjänsten i datastream. Alla tillagda tjänster visas i informationsvyn för datastream.
-
-![Tjänster som lagts till i ett datastream](../assets/datastreams/overview/services-added.png)
-
-Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
-
->[!NOTE]
->
->Varje tjänstkonfiguration innehåller en **[!UICONTROL Enabled]** som aktiveras automatiskt när tjänsten väljs. Om du vill inaktivera den valda tjänsten för den här datastreamen väljer du **[!UICONTROL Enabled]** växla igen.
-
-### Adobe Analytics-inställningar {#analytics}
-
-Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Mer information finns i guiden på [skicka data till Analytics](../data-collection/adobe-analytics/analytics-overview.md).
-
-![Adobe Analytics Settings Block](../assets/datastreams/overview/analytics-config.png)
-
-| Inställning | Beskrivning |
-| --- | --- |
-| [!UICONTROL Report Suite ID] | **(Obligatoriskt)** ID:t för analysrapportsviten som du vill skicka data till. Detta ID finns i användargränssnittet i Adobe Analytics under [!UICONTROL Admin] > [!UICONTROL ReportSuites]. Om flera rapportsviter anges kopieras data till varje rapportserie. |
-
-### Adobe Audience Manager-inställningar {#audience-manager}
-
-Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Manager. Allt som behövs för att skicka data till Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
-
-![Inställningsblock för hantering av målgruppshantering i Adobe](../assets/datastreams/overview/audience-manager-config.png)
-
-| Inställning | Beskrivning |
-| --- | --- |
-| [!UICONTROL Cookie Destinations Enabled] | Gör att SDK kan dela segmentinformation via [cookie-destinationer](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager]. |
-| [!UICONTROL URL Destinations Enabled] | Gör att SDK kan dela segmentinformation via [URL-mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html) från [!DNL Audience Manager]. |
-
-### Adobe Experience Platform-inställningar {#aep}
+## Hantera känsliga data i datastreams {#sensitive}
 
 >[!IMPORTANT]
 >
->När du aktiverar en datastream för Platform bör du tänka på den plattformssandlåda som du använder just nu, så som den visas på den översta menyfliken i användargränssnittet.
->
->![Markerad sandlåda](../assets/datastreams/overview/platform-sandbox.png)
->
->Sandlådor är virtuella partitioner i Adobe Experience Platform som gör att du kan isolera data och implementeringar från andra i din organisation. När en datastream har skapats kan dess sandlåda inte ändras. Mer information om sandlådornas roll i Experience Platform finns i [dokumentation för sandlådor](../../sandboxes/home.md).
+>Innehållet i detta dokument är inte juridisk rådgivning och är inte avsett att ersätta juridisk rådgivning. Rådfråga företagets juridiska avdelning om råd angående hanteringen av känsliga uppgifter.
 
-Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Platform.
+Regler och krav för datahantering på företag ökar restriktionerna för hur känsliga kunddata kan samlas in, behandlas och användas. Detta innefattar insamling, behandling och användning av data om skyddad hälsa (PHI), som omfattas av bestämmelser som HIPAA (Health Insurance Portability and Accounability Act).
 
-![Adobe Experience Platform inställningsblock](../assets/datastreams/overview/platform-config.png)
+Datastreams erbjuder tre metoder som hjälper dig att hantera känsliga data på ett säkert sätt:
 
-| Inställning | Beskrivning |
-|---| --- |
-| [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den plattformsdatauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [Klassen XDM ExperienceEvent](../../xdm/classes/experienceevent.md). |
-| [!UICONTROL Profile Dataset] | Välj den plattformsdatauppsättning som kundattributdata ska skickas till. Det här schemat måste använda [Klassen XDM Individuell profil](../../xdm/classes/individual-profile.md). |
-| [!UICONTROL Offer Decisioning] | Markera den här kryssrutan om du vill aktivera Offer decisioning för en implementering av en Platform Web SDK. Se guiden [använda Offer decisioning med Platform Web SDK](../personalization/offer-decisioning/offer-decisioning-overview.md) om du vill ha mer information om implementeringen. <br><br> Mer information om Offer decisioning finns i [Adobe Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html). |
-| [!UICONTROL Edge Segmentation] | Markera den här kryssrutan för att aktivera [kantsegmentering](../../segmentation/ui/edge-segmentation.md) för denna datastream. När SDK skickar data via en datastam som är aktiverad för kantsegmentering, skickas alla uppdaterade segmentmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Det här alternativet kan användas i kombination med [!UICONTROL Personalization Destinations] for [exempel på användning av personalisering på nästa sida](../../destinations/ui/configure-personalization-destinations.md)eller i kombination med [!UICONTROL Adobe Journey Optimizer]. |
-| [!UICONTROL Personalization Destinations] | När du har aktiverat detta efter att du har aktiverat [!UICONTROL Edge Segmentation] kryssrutan tillåter det här alternativet att datastream ansluter till personaliseringsmål, som [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). <br><br>Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../../destinations/ui/configure-personalization-destinations.md). |
-| [!UICONTROL Adobe Journey Optimizer] | Markera den här kryssrutan för att aktivera [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) för denna datastream. <br><br> Om du aktiverar det här alternativet kan datastream returnera personaliserat innehåll från webb- och appbaserade inkommande kampanjer i [!DNL Adobe Journey Optimizer]. Det här alternativet kräver [!UICONTROL Edge Segmentation] att vara aktiv. If [!UICONTROL Edge Segmentation] är avmarkerat, är det här alternativet nedtonat. |
+* [Förbättrad kryptering](#encryption)
+* [Datastyrning](#governance)
+* [Granskningsloggar](#audit-logs)
 
-### Adobe Target-inställningar {#target}
+### Förbättrad kryptering {#encryption}
 
-Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
+Alla data som överförs genom Edge Network utförs via säkra, krypterade anslutningar med [HTTPS TLS 1.2](https://datatracker.ietf.org/doc/html/rfc5246). Om datastream hämtar in data till Experience Platform krypteras data sedan i vila i Experience Platform datasjön. Visa dokumentet på [datakryptering i Experience Platform](../../landing/governance-privacy-security/encryption.md) för mer information.
 
-![Adobe Target inställningsblock](../assets/datastreams/overview/target-config.png)
+### Datastyrning {#governance}
 
-| Inställning | Beskrivning |
-| --- | --- |
-| [!UICONTROL Property Token] | [!DNL Target] låter kunderna styra behörigheter genom att använda egenskaper. Mer information om egenskaper finns i handboken [konfigurera företagsbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html) i [!DNL Target] dokumentation.<br><br>Egenskapstoken finns i Adobe Target-gränssnittet under [!UICONTROL Setup] > [!UICONTROL Properties]. |
-| [!UICONTROL Target Environment ID] | [Miljöer i Adobe Target](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) hjälper er att hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du tänker använda med den här datastream.<br><br>Det bästa sättet är att ange detta på olika sätt för var och en av dina `dev`, `stage`och `prod` datastream-miljöer för att hålla saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du använda dessa. |
-| [!UICONTROL Target Third Party ID namespace] | Identitetsnamnrymden för `mbox3rdPartyId` som du vill använda för den här datastream. Se guiden [implementera `mbox3rdPartyId` med Web SDK](../personalization/adobe-target/using-mbox-3rdpartyid.md) för mer information. |
+Datastreams utnyttjar Experience Platform inbyggda funktioner för datastyrning för att förhindra att känsliga data skickas till icke-HIPAA-klara tjänster. Genom att etikettera specifika fält som innehåller känsliga data i dina datastream-scheman kan du få detaljkontroll över vilka datafält som kan användas för särskilda ändamål.
 
-### [!UICONTROL Event Forwarding] inställningar
+I följande video visas en kort översikt över hur dataanvändningsbegränsningar konfigureras och används för datastreams i användargränssnittet:
 
-Den här tjänsten kontrollerar om och hur data skickas till [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md).
+>[!VIDEO](https://video.tv.adobe.com/v/3409588/?quality=12&learn=on&speedcontrol=on)
 
-![Avsnittet Händelsevidarebefordran i konfigurationsgränssnittet](../assets/datastreams/overview/event-forwarding-config.png)
-
-| Inställning | Beskrivning |
-| --- | --- |
-| [!UICONTROL Launch Property] | **(Obligatoriskt)** Egenskapen för vidarebefordran av händelser som du vill skicka data till. |
-| [!UICONTROL Launch Environment] | **(Obligatoriskt)** Den miljö i den valda egenskapen som du vill skicka data till. |
+I Experience Platform kan du använda [etiketter för känslig dataanvändning](../../data-governance/labels/reference.md#sensitive) till scheman och fält som innehåller data som din organisation anser vara känsliga. Till exempel `RHD` Etiketten används för att beteckna Skyddad hälsoinformation (PHI) och `S1` label representerar geopositioneringsdata.
 
 >[!NOTE]
 >
->Du kan välja **[!UICONTROL Manually enter IDs]** om du vill skriva i egenskaps- och miljönamnen i stället för att använda listrutemenyer.
+>Mer information om hur du använder dataetiketter i [!UICONTROL Schemas] -fliken i användargränssnittet eller användargränssnittet för datainsamling i Experience Platform finns i [självstudiekurs om schemamärkning](../../xdm/tutorials/labels.md).
 
-## Kopiera ett datastream {#copy}
+När du skapar en ny datastream kan datastream bara konfigureras för att skicka data till HIPAA-klara mål om det valda schemat innehåller etiketter för känslig dataanvändning. För närvarande är Adobe Experience Platform den enda HIPAA-klara destinationen som stöds av datastreams. Andra destinationstjänster som Adobe Target, Adobe Analytics, Adobe Audience Manager, händelsevidarebefordran och edge-mål är inaktiverade för datastreams som innehåller etiketter för känslig dataanvändning.
 
-Du kan skapa en kopia av ett befintligt datastream och ändra informationen efter behov.
+Om ett schema används i en befintlig datastam med tjänster som inte är HIPAA-förberedda, kommer ett försök att lägga till en känslig dataanvändningsetikett till schemat att resultera i ett principbrytningsmeddelande och åtgärden förhindras. Meddelandet anger vilken datastream som utlöste överträdelsen och föreslår att alla tjänster som inte är HIPAA-klara tas bort från datastream för att lösa problemet.
 
->[!NOTE]
->
->Datastreams kan bara kopieras inom samma [sandlåda](../../sandboxes/home.md). Du kan alltså inte kopiera en datastam från en sandlåda till en annan.
+### Granskningsloggar
 
-Från huvudsidan i [!UICONTROL Datastreams] väljer du ellips (**....**) för den aktuella datastream-filen och välj **[!UICONTROL Copy]**.
+I Experience Platform kan datastream-aktiviteter övervakas i form av granskningsloggar. En granskningslogg anger **som** utförd **vad** och **när**, tillsammans med andra kontextuella data som kan hjälpa er att felsöka problem som rör datastreams för att hjälpa ert företag att följa företagets policyer för datahantering och lagstadgade krav.
 
-![Bilden visar [!UICONTROL Copy] det alternativ som väljs i datastreams listvy](../assets/datastreams/overview/copy-datastream-list.png)
+Varje gång en användare skapar, uppdaterar eller tar bort ett dataflöde skapas en granskningslogg för att spela in åtgärden. Samma sak händer när en användare skapar, uppdaterar eller tar bort en mappning via [Dataförberedelse för datainsamling](./data-prep.md). Oavsett om det var en datastream eller en mappning som uppdaterades, kategoriseras den resulterande granskningsloggen under [!UICONTROL Datastreams] resurstyp.
 
-Du kan också välja **[!UICONTROL Copy Datastream]** från detaljvyn för en viss datastream.
-
-![Bilden visar [!UICONTROL Copy] alternativ som väljs från datastream-informationsvyn](../assets/datastreams/overview/copy-datastream-details.png)
-
-En bekräftelsedialogruta visas där du uppmanas att ange ett unikt namn för den nya datastream som ska skapas, tillsammans med information om de konfigurationsalternativ som ska kopieras. Välj **[!UICONTROL Copy]**.
-
-![Bild av bekräftelsedialogrutan för kopiering av ett datastream](../assets/datastreams/overview/copy-datastream-confirm.png)
-
-Huvudsidan i [!UICONTROL Datastreams] arbetsytan visas igen med den nya datastream som visas.
+Läs dokumentationen om [granskningsloggar](../../landing/governance-privacy-security/audit-logs/overview.md) om du vill ha mer information om hur du tolkar loggar från datastreams och andra tjänster som stöds.
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du hanterar datastölar i användargränssnittet. Mer information om hur du installerar och konfigurerar Web SDK när du har konfigurerat ett datastream finns i [E2E-guide för datainsamling](../../collection/e2e.md#install).
+Den här guiden ger en översikt på hög nivå över datastreams och deras användning i datainsamling och bearbetning av känsliga data. Anvisningar om hur du konfigurerar ett nytt datastream finns i [konfigurationsguide för datastream](./configure.md).
