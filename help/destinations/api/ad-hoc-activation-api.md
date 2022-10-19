@@ -6,9 +6,9 @@ description: I den här artikeln beskrivs hela arbetsflödet för aktivering av 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 9e191d52d8385d716ed312725f72bd85c1e4b72d
+source-git-commit: 8d67d89db6a8c179935b4fe709f91279860d464e
 workflow-type: tm+mt
-source-wordcount: '1482'
+source-wordcount: '1525'
 ht-degree: 0%
 
 ---
@@ -124,6 +124,10 @@ Segmentets exportjobb-ID finns i `id` -egenskap, enligt nedan.
 ## Steg 5: Kör ad hoc-aktiveringsjobbet {#activation-job}
 
 Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e timme. API:t för ad hoc-aktivering körs baserat på de senaste segmenteringsresultaten.
+
+>[!IMPORTANT]
+>
+>Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb bör du kontrollera att det har gått minst 20 minuter från det att segmentet först aktiverades enligt det schema du angav i [Steg 3 - Skapa aktiveringsflöde i plattformsgränssnittet](#activation-flow).
 
 Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda segmentexportjobbet för dina segment har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet.
 
