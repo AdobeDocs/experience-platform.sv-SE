@@ -3,8 +3,8 @@ title: (Beta) Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbplatsinnehåll och kampanjer, anpassade till kundsegment som skapats och hanteras inom Real-Time CDP.
 source-git-commit: 51c5458f444220fb526eb9e82417ae6456857de6
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '663'
+ht-degree: 1%
 
 ---
 

@@ -5,8 +5,8 @@ description: Personaliseringsplattformar samlar in data och insikter från enski
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
 source-git-commit: f3c58dd95730393f899378ffedec4a49363df204
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '151'
+ht-degree: 1%
 
 ---
 
