@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: b834e278f085adc5a4a90876727b6a0787b181e1
+source-git-commit: d6100f58b8ffd6251c3a58576a41dbfb75c3bb0c
 workflow-type: tm+mt
-source-wordcount: '1989'
+source-wordcount: '1902'
 ht-degree: 1%
 
 ---
@@ -144,6 +144,4 @@ När du sammanfogar data från flera olika källor är sammanslagningsprinciper 
 
 ### Adobe Analytics rapportuppsättningar av datauppsättningar i plattformen {#aa-datasets}
 
-Högst en (1) datauppsättning för Adobe Analytics-rapportsviten ska aktiveras för profilen. Detta är en mjuk gräns, vilket innebär att du kan aktivera mer än en Analytics-datauppsättning för profilen, men det rekommenderas inte eftersom det kan få oönskade konsekvenser för dina data. Detta beror på skillnaderna mellan XDM-scheman (Experience Data Model), som ger den semantiska datastrukturen i Experience Platform och gör det möjligt att tolka data på ett konsekvent sätt, och den anpassningsbara typen av eVars och konverteringsvariabler i Adobe Analytics.
-
-I Adobe Analytics kan till exempel en enda organisation ha flera rapportsviter. Om rapportsviten A anger eVar 4 som&quot;internt sökord&quot; och rapportsviten B anger eVar 4 som&quot;hänvisande domän&quot;, kommer båda värdena att infogas i samma fält i profilen, vilket ger upphov till förvirring och försämrad datakvalitet.
+Flera rapportsviter kan aktiveras för profilen så länge som alla datakonflikter är lösta. Du kan använda funktionen Data Prep för att lösa datakonflikter mellan eVars, Lists och Props. Läs mer om hur du använder funktionen Prep i [Användargränssnittshandbok för Adobe Analytics Connector](../sources/tutorials/ui/create/adobe-applications/analytics.md).
