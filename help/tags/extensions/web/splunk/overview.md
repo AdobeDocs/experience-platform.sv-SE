@@ -1,9 +1,9 @@
 ---
 title: Översikt över segmenttillägg
 description: Läs mer om Splunk-tillägget för händelsevidarebefordran i Adobe Experience Platform.
-source-git-commit: e6f0bdcdb11630730834e353064abb960d3d0ea1
+source-git-commit: cad6d78868ac89be325faa58f567b89869bfff02
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Nästa steg är att mappa Splunk-händelseegenskaperna till dataelement som du t
 | [!UICONTROL Source] | Källvärdet som ska tilldelas till händelsedata. Om du till exempel skickar data från ett program som du utvecklar, anger du den här nyckeln som namnet på programmet. |
 | [!UICONTROL Index] | Namnet på händelsedatas index. Det index som du anger här måste finnas i listan över tillåtna index om variabeln har parametern indexes inställd. |
 | [!UICONTROL Time] | Händelsens tid. Standardtidsformatet är UNIX-tid (i formatet `<sec>.<ms>`) och beror på din lokala tidszon. Till exempel: `1433188255.500` anger 1433188255 sekunder och 500 millisekunder efter epok, eller måndag den 1 juni 2015, kl. 7:50:55 PM GMT. |
-| [!UICONTROL Fields] | Ange ett obearbetat JSON-objekt eller en uppsättning nyckelvärdepar som innehåller explicita anpassade fält som ska definieras vid indextiden.  The `fields` -nyckeln kan inte användas för rådata.<br><br>Begäranden som innehåller `fields` egenskapen måste skickas till `/collector/event` slutpunkten, annars indexeras de inte. Mer information finns i Splunk-dokumentationen på [indexerade fältextraheringar](http://docs.splunk.com/Documentation/Splunk/8.2.5/Data/IFXandHEC). |
+| [!UICONTROL Fields] | Ange ett obearbetat JSON-objekt eller en uppsättning nyckelvärdepar som innehåller explicita anpassade fält som ska definieras vid indextiden.  The `fields` -nyckeln kan inte användas för rådata.<br><br>Begäranden som innehåller `fields` egenskapen måste skickas till `/collector/event` slutpunkten, annars indexeras de inte. Mer information finns i Splunk-dokumentationen på [indexerade fältextraheringar](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/IFXandHEC). |
 
 ### Validera data i Splunk {#validate}
 
