@@ -5,9 +5,9 @@ title: Definiera uppräkningsfält och föreslagna värden i användargränssnit
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: 3b71f6b07345d7b1e08fa5a8b93abc3519606015
+source-git-commit: 1c1797a01a0a4e2cd355399d3f913cb81adf9006
 workflow-type: tm+mt
-source-wordcount: '1176'
+source-wordcount: '1183'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 I Experience Data Model (XDM) kan ett strängfält få en fördefinierad uppsättning godkända eller föreslagna värden för att bättre kontrollera vilka värden som hämtas till det fältet eller hur det fungerar i segmenteringen.
 
-An **enum** begränsar de värden som kan importeras för ett strängfält till en fördefinierad uppsättning. Om du försöker importera data till ett uppräkningsfält och värdet inte matchar någon av dem som definierats i konfigurationen, nekas intag.
+**[!UICONTROL Enums]** begränsa de värden som kan importeras för ett strängfält till en fördefinierad uppsättning. Om du försöker importera data till ett uppräkningsfält och värdet inte matchar någon av dem som definierats i konfigurationen, nekas intag.
 
-I motsats till enum lägger du till **föreslagna värden** till ett strängfält begränsar inte de värden som kan importeras. Föreslagna värden påverkar i stället vilka fördefinierade värden som är tillgängliga i [Segmenteringsgränssnitt](../../../segmentation/ui/overview.md) när strängfältet inkluderas som ett attribut.
+I motsats till vad som anges i **[!UICONTROL Suggested values]** kan ange en uppsättning rekommenderade värden för ett strängfält som inte begränsar de värden som kan importeras. Föreslagna värden påverkar i stället vilka fördefinierade värden som är tillgängliga i [Segmenteringsgränssnitt](../../../segmentation/ui/overview.md) när strängfältet inkluderas som ett attribut.
 
 När [definiera ett nytt fält](./overview.md#define) i Adobe Experience Platform användargränssnitt och ange typen till [!UICONTROL String]kan du definiera [enum](#enum) eller [föreslagna värden](#suggested-values) för det fältet.
 
