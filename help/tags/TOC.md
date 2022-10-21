@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: d5e8e49e50d0c5792828140626b933a4f232dd00
+source-git-commit: 1879c8372e3ac1b813f53e445a139daa78ac8858
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '411'
 ht-degree: 25%
 
 ---
@@ -129,10 +129,10 @@ ht-degree: 25%
          * [Versionsinformation](./extensions/web/google-data-layer/release-notes.md)
       * [!DNL Splunk] {#splunk}
          * [Översikt](./extensions/web/splunk/overview.md)
-      * [!DNL YouTube] videospårningstillägg {#youtube}
+      * [!DNL YouTube] videouppföljning {#youtube}
          * [Översikt](./extensions/web/youtube/overview.md)
          * [Versionsinformation](./extensions/web/youtube/release-notes.md)
-      * [!DNL Zendesk] API-tillägg för händelser {#zendesk}
+      * [!DNL Zendesk] Händelse-API {#zendesk}
          * [Översikt](./extensions/web/zendesk/overview.md)
    * [Tredjepartstillägg](./extensions/3rd-party-extensions.md)
 * Tilläggsutveckling {#extension-dev}
