@@ -4,7 +4,7 @@ user-guide-title: Hjälp om Adobe Experience Platform Dashboards
 breadcrumb-title: Handbok för instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara paneler.
 feature: Dashboards
-source-git-commit: 5aa2be236d35f761a1e4d34fbe0bb28fd9087935
+source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 6%
@@ -35,5 +35,5 @@ ht-degree: 6%
 * Programintegreringar {#integrations}
    * [Power BI](integrations/power-bi.md)
 * [Datamängder för frågeinstrumentpanelen](query.md)
-* [CDP-datamodell (Customer Data Platform)](cdp-insights-data-model.md)
+* [Real-time Customer Data Platform Insights-datamodell](cdp-insights-data-model.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

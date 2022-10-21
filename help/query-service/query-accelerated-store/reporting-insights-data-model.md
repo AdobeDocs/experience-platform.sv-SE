@@ -1,9 +1,9 @@
 ---
 title: Fråga efter accelererade butiksrapportsinsikter
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
-source-git-commit: 9c18432bbd9322aee1924c34cb10aadac440e726
+source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '1031'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,9 @@ ht-degree: 0%
 
 Med det frågeaccelererade arkivet kan du minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Vanligtvis behandlas data med regelbundna intervall (t.ex. varje timme eller dag) där aggregerade vyer skapas och rapporteras. Analysen av dessa rapporter som genereras utifrån aggregerade data ger insikter som är avsedda att förbättra affärsresultatet. Det frågeaccelererade arkivet tillhandahåller en cachetjänst, samtidighet, en interaktiv upplevelse och ett tillståndslöst API. Det förutsätter dock att data är förbearbetade och optimerade för aggregerad fråga och inte för rådatafrågor.
 
-Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka den på befintliga Real-time Customer Data Platform datamodeller. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. CDP-datamodellen i realtid från Adobe Experience Platform ger insikter om profiler, segment och destinationer och möjliggör CDP-instrumentpaneler i realtid. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka CDP-datamodeller i realtid efter behov.
+Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka den på befintliga Real-time Customer Data Platform datamodeller. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../dashboards/cdp-insights-data-model.md).
+
+Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profiler, segment och destinationer och möjliggör Real-Time CDP insiktspaneler. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka Real-Time CDP datamodeller efter behov.
 
 ## Förutsättningar
 
@@ -20,7 +22,7 @@ I den här självstudien används användardefinierade kontrollpaneler för att 
 
 ## Komma igång
 
-Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka CDP-datamodeller i realtid som lagrar data från berikade plattformar. Se [packning](../packages.md), [skyddsräcken](../guardrails.md#query-accelerated-store)och [licensiering](../data-distiller/licence-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller data från den nya plattformen. Se [packning](../packages.md), [skyddsräcken](../guardrails.md#query-accelerated-store)och [licensiering](../data-distiller/licence-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
 
 ## Bygg en datamodell för rapportinsikter
 
@@ -124,15 +126,15 @@ ext_custom_audience_id | approximate_count_upper_bound
 (10 rows)
 ```
 
-## Utöka din datamodell med datamodellen CDP insights i realtid
+## Utöka din datamodell med datamodellen Real-Time CDP insights
 
 Du kan utöka målgruppsmodellen med ytterligare information för att skapa en mer omfattande dimensionstabell. Du kan till exempel mappa segmentnamnet och målnamnet till den externa publikens identifierare. Det gör du genom att använda frågetjänsten för att skapa eller uppdatera en ny datauppsättning och lägga till den i målgruppsmodellen som kombinerar segment och mål med en extern identitet. Bilden nedan visar konceptet för det här datamodelltillägget.
 
-![Ett ERD-diagram som länkar CDP-insiktsdatamodellen i realtid och Query Accelerated Store-modellen.](../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
+![Ett ERD-diagram som länkar Real-Time CDP insiktsdatamodell och Query-accelererad lagringsmodell.](../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
 
 ## Skapa dimensionstabeller för att utöka er modell för rapportinsikter
 
-Använd frågetjänsten för att lägga till nyckelbeskrivande attribut från de berikade CDP-dimensionsuppsättningarna i realtid i `audienceinsight` datamodell och skapa en relation mellan faktatabellen och den nya dimensionstabellen. SQL nedan visar hur du integrerar befintliga dimensionstabeller i datamodellen för rapportinsikter.
+Använd frågetjänsten för att lägga till nyckelbeskrivande attribut från de berikade Real-Time CDP-dimensionsuppsättningarna i `audienceinsight` datamodell och skapa en relation mellan faktatabellen och den nya dimensionstabellen. SQL nedan visar hur du integrerar befintliga dimensionstabeller i datamodellen för rapportinsikter.
 
 ```sql
 CREATE TABLE audienceinsight.audiencemodel.external_seg_dest_map AS

@@ -1,29 +1,29 @@
 ---
-title: CDP-datamodell (Customer Data Platform)
-description: Lär dig hur du använder SQL-frågor från CDP Insights-datamodeller för att anpassa dina egna CDP-rapporter för marknadsförings- och KPI-användningsfall.
+title: Real-time Customer Data Platform Insights-datamodell
+description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights-datamodeller för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 2c96bfd2c1b541d30a72fcf2bac414ee06607456
+source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
 
-# CDP-datamodell (Customer Data Platform)
+# Real-time Customer Data Platform Insights-datamodell
 
-Funktionen CDP (Customer Data Platform) Insights Data Model visar de datamodeller och SQL som driver insikterna för olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för dina användningsfall för marknadsförings- och KPI-indikatorer. Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler.
+Funktionen Real-time Customer Data Platform Insights-datamodell visar de datamodeller och SQL som driver insikterna för olika profil-, mål- och segmenteringswidgetar. Du kan anpassa dessa SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator). Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs dokumentet med information om rapportinsikter i det accelererade arkivet om du vill veta mer [hur man bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler](../query-service/query-accelerated-store/reporting-insights-data-model.md).
 
 ## Förutsättningar
 
 Den här guiden kräver en fungerande förståelse av [användardefinierad panelfunktion](./user-defined-dashboards.md). Läs dokumentationen innan du fortsätter med den här guiden.
 
-## CDP-insiktsrapporter och användningsfall
+## Real-Time CDP insiktsrapporter och användningsexempel
 
-CDP-rapportering ger insikter i era profildata och dess relation till segment och destinationer. Olika stjärnschemamodeller utvecklades för att besvara en rad vanliga användningsfall för marknadsföring, och varje datamodell kan stödja flera användningsfall.
+Real-Time CDP rapportering ger insikter i era profildata och dess relation till segment och destinationer. Olika stjärnschemamodeller utvecklades för att besvara en rad vanliga användningsfall för marknadsföring, och varje datamodell kan stödja flera användningsfall.
 
 >[!IMPORTANT]
 >
->De data som används för CDP-rapportering är korrekta för en vald sammanfogningsprincip och från den senaste ögonblicksbilden.
+>De data som används för Real-Time CDP-rapportering är korrekta för en vald sammanfogningsprincip och från den senaste ögonblicksbilden.
 
 ### Profilmodell {#profile-model}
 
