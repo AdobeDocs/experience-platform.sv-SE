@@ -2,9 +2,9 @@
 title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 9f38925645ec4311f4a809a913fe51792e889105
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1624'
 ht-degree: 0%
 
 ---
@@ -127,6 +127,12 @@ En pover som informerar dig om att hemligheten måste auktoriseras manuellt via 
 ![Google auktoriseringsleverantör](../../images/ui/event-forwarding/secrets/google-authorization.png)
 
 En dialogruta visas där du kan ange autentiseringsuppgifter för ditt Google-konto. Följ instruktionerna för att ge händelsevidarebefordringsåtkomst till dina data i det valda omfånget. När auktoriseringsprocessen är klar skapas hemligheten.
+
+>[!IMPORTANT]
+>
+>Om din organisation har en återautentiseringsprincip för Google Cloud-program kommer de hemligheter som skapas inte att uppdateras korrekt efter att autentiseringen har upphört att gälla (mellan 1 och 24 timmar beroende på principkonfigurationen).
+>
+>Du löser det här problemet genom att logga in på Google Admin Console och gå till **[!DNL App access control]** så att du kan markera appen för händelsevidarebefordran (Adobe Real-Time CDP Event Forwarding) som [!DNL Trusted]. Läs Google-dokumentationen på [ange sessionslängder för Google Cloud-tjänster](https://support.google.com/a/answer/9368756) för mer information.
 
 ## Redigera en hemlighet
 
