@@ -5,9 +5,9 @@ title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 13fd1e372a63b55c41893f41d1590d9dab9f7903
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1406'
 ht-degree: 0%
 
 ---
@@ -45,10 +45,6 @@ Det första steget för att använda externa målgrupper är att skapa ett ident
 Följ instruktionerna i [guide för identitetsnamnutrymme](../../identity-service/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
 
 ![](../images/tutorials/external-audiences/identity-namespace-info.png)
-
->[!NOTE]
->
->Om du vill börja använda anpassade namnutrymmen med externa målgrupper måste du skapa en supportanmälan. Kontakta din Adobe-representant om du vill ha mer information.
 
 ## Skapa ett schema för segmentmetadata
 
