@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 04a8ca33e712c00d687432ddf9ad82f5d1644db2
+source-git-commit: 28e7f10529daa8df56534e6ada129a52d3f7604d
 workflow-type: tm+mt
-source-wordcount: '2167'
+source-wordcount: '2210'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe An
 
 ### Markera data
 
+>[!IMPORTANT]
+>
+>Rapportsviterna som visas på skärmen kan komma från olika regioner. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform tvärregioner. Se till att ditt företag tillåter detta.
+
 The **[!UICONTROL Analytics source add data]** innehåller en lista med [!DNL Analytics] skapa en källanslutning med rapportsvitdata.
 
 En rapportsvit är en databehållare som utgör grunden för [!DNL Analytics] rapportering. En organisation kan ha många rapportsviter, som alla innehåller olika datauppsättningar.
@@ -58,7 +62,7 @@ Flera ingående anslutningar kan göras för att överföra flera rapportsviter 
 
 >[!NOTE]
 >
->Data från flera rapportsviter kan bara aktiveras för kunddataprofilen i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd.
+>Data från flera rapportsviter kan bara aktiveras för kundprofiler i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd.
 
 Skapa en [!DNL Analytics] källanslutning, välj en rapportserie och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
