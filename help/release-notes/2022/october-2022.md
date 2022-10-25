@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
-source-git-commit: 098b4b7a0dcd3ddfcd13f7dd473c4fa6832d23df
+source-git-commit: 0ea2718247792e997b7a90ab9027946e800c8157
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '755'
 ht-degree: 1%
 
 ---
@@ -12,14 +12,13 @@ ht-degree: 1%
 
 **Releasedatum: 26 oktober 2022**
 
-Nya funktioner i Adobe Experience Platform:
-
 - [Kundhanterade nycklar](#cmk)
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Datainsamling](#data-collection)
 - [Experience Data Model (XDM)](#xdm)
+- [Frågetjänst](#query-service)
 - [Källor](#sources)
 
 ## Kundhanterade nycklar {#cmk}
@@ -57,6 +56,21 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+
+## Frågetjänst {#query-service}
+
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Se [frågerapport för rapporter i butiker - dokument](https://experienceleague.adobe.com/docs/experience-platform/query/query-accelerated-store/reporting-insights-data-model.html) om du vill veta mer om den här funktionen. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
+Nya funktioner i Adobe Experience Platform:
 
 ## Källor {#sources}
 
