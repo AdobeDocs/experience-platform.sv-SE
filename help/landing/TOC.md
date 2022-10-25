@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: 24efebb89ba36f5047558acd368638f456356a9e
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '248'
 ht-degree: 7%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 7%
    * [Språkstöd](documentation/language-support.md)
 * Programtjänster som bygger på plattform {#ecosystem}
    * [Översikt](application-services.md)
-   * [Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
+   * [Adobe Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
@@ -59,6 +59,7 @@ ht-degree: 7%
    * Granskningsloggar {#audit-logs}
       * [Översikt](./governance-privacy-security/audit-logs/overview.md)
    * [Datakryptering](./governance-privacy-security/encryption.md)
+   * [Kundhanterade nycklar](./governance-privacy-security/customer-managed-keys.md)
 * Licensanvändning och skyddsräcken {#license}
    * [Bästa praxis för tillstånd till datahantering](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
