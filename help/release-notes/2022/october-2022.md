@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
-source-git-commit: e9a7c0561277be21aab1c699a1bc07b793684525
+source-git-commit: 098b4b7a0dcd3ddfcd13f7dd473c4fa6832d23df
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '600'
 ht-degree: 1%
 
 ---
@@ -12,9 +12,51 @@ ht-degree: 1%
 
 **Releasedatum: 26 oktober 2022**
 
+Nya funktioner i Adobe Experience Platform:
+
+- [Kundhanterade nycklar](#cmk)
+
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Datainsamling](#data-collection)
+- [Experience Data Model (XDM)](#xdm)
 - [Källor](#sources)
+
+## Kundhanterade nycklar {#cmk}
+
+Alla data som lagras på Adobe Experience Platform krypteras i viloläge med hjälp av nycklar på systemnivå. Om du använder ett program som är byggt på plattformen kan du nu välja att använda dina egna krypteringsnycklar istället, vilket ger dig större kontroll över datasäkerheten.
+
+Se översikten på [kundhanterade nycklar](../../landing/governance-privacy-security/customer-managed-keys.md) om du vill ha mer information om funktionen.
+
+## Datainsamling {#data-collection}
+
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Känslig datahantering för datastreams | Datastreams utnyttjar nu flera plattformstekniker för att hantera känsliga data på ett lämpligt sätt, i enlighet med bestämmelser som HIPAA (Health Insurance Portability and Accounability Act). Se avsnittet om [hantera känsliga data i dataströmmar](../../edge/datastreams/overview.md#sensitive) för mer information. |
+| [!DNL Splunk] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Splunk] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Splunk] tilläggsöversikt](../../tags/extensions/web/splunk/overview.md) för mer information. |
+| [!DNL Zendesk] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Zendesk] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Zendesk] tilläggsöversikt](../../tags/extensions/web/zendesk/overview.md) för mer information. |
+
+{style=&quot;table-layout:auto&quot;}
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Datatyp | [[!UICONTROL Session details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | Uppdaterade `authorized` fält från en boolesk typ till en sträng. `season` och `episode` har ändrats från heltal till strängar. |
+| Datatyp | [[!UICONTROL Advertising details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` har bytt namn till `friendlyName`och `ID` har bytt namn till `name`. |
+| Datatyp | [[!UICONTROL Error details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` har bytt namn till `name`. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
 ## Källor {#sources}
 

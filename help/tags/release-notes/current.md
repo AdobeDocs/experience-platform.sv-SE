@@ -2,14 +2,20 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 319c30facb7e8093318a01a3155bdb2fee0f548b
+source-git-commit: 12648469a1e06e316597fa46fb877f947c8ddb92
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '348'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om taggar och vidarebefordran av händelser
+
+## 26 oktober 2022
+
+* **Känslig datahantering för datastreams**: Datastreams utnyttjar nu flera plattformstekniker för att hantera känsliga data på ett lämpligt sätt, i enlighet med bestämmelser som HIPAA (Health Insurance Portability and Accounability Act). Se avsnittet om [hantera känsliga data i dataströmmar](../../edge/datastreams/overview.md#sensitive) för mer information.
+* **[!DNL Splunk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Splunk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Splunk] tilläggsöversikt](../extensions/web/splunk/overview.md) för mer information.
+* **[!DNL Zendesk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Zendesk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Zendesk] tilläggsöversikt](../extensions/web/zendesk/overview.md) för mer information.
 
 ## 28 september 2022
 
