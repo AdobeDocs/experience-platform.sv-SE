@@ -5,9 +5,9 @@ title: Översikt över källkopplingar
 topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 9eb7cdd08069a74a8f0680a8a2af7e7e950e83b7
+source-git-commit: 7bcdfb2a49e0c0b65282d401114754a4cc114ad8
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1093'
 ht-degree: 0%
 
 ---
@@ -29,17 +29,19 @@ Källor i Experience Platform är grupperade i följande kategorier:
 Experience Platform tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
 
 - [Översikt över Adobe Audience Manager-källa](connectors/adobe-applications/audience-manager.md)
-- [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
+   - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Översikt över datakällan för Adobe Analytics Classics](connectors/adobe-applications/classifications.md)
-- [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
+   - [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Översikt över datakällan i Adobe Analytics Report Suite](connectors/adobe-applications/analytics.md)
-- [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
+   - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
 - [Översikt över Adobe Campaign Managed Cloud Services-källa](connectors/adobe-applications/campaign.md)
-- [Skapa en Adobe Campaign Managed Cloud Services-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/campaign.md)
+   - [Skapa en Adobe Campaign Managed Cloud Services-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/campaign.md)
 - [Översikt över datakällan för Adobe Data Collection](connectors/adobe-applications/data-collection.md)
-- [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
+   - [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] källöversikt](connectors/adobe-applications/marketo/marketo.md)
-- [Skapa en [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
+   - [Skapa en [!DNL Marketo Engage] källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/marketo.md)
+- [Översikt över Adobe Workfront-källa](connectors/adobe-applications/workfront.md)
+   - [Skapa en Workfront-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/workfront.md)
 
 ### Reklam {#advertising}
 
