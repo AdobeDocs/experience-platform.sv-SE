@@ -1,9 +1,9 @@
 ---
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
-source-git-commit: f06f00f7581ccd7fe64f5292a53ebb0303c65069
+source-git-commit: 6fe0d72bcb3dbf1e1167f80724577ba3e0f741f4
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1414'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ När du har kommit till **[!DNL Review + create]** kan du granska informationen 
 
 ![Grundkonfiguration för nyckelvalvet](../images/governance-privacy-security/customer-managed-keys/finish-creation.png)
 
-## Bevilja Microsoft ett brandväggsundantag
+## Konfigurera nätverksalternativ
 
 Om ditt nyckelvalv är konfigurerat för att begränsa offentlig åtkomst till vissa virtuella nätverk eller inaktivera allmän åtkomst helt måste du bevilja Microsoft ett brandväggsundantag.
 
