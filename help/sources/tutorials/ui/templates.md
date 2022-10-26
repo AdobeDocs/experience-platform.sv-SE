@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;
-description: Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, mappningsregler, ID-namnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
+description: Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, mappningsregler, identiteter, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
 title: (Alfa) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
 hide: true
 hidefromtoc: true
-source-git-commit: a0ca9cff43b6f8276268467fecf944c664992950
+source-git-commit: d6d8281d1be1468b0c2b7474b80be96949dc7d4c
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '1153'
 ht-degree: 1%
 
 ---
@@ -17,11 +17,11 @@ ht-degree: 1%
 >
 >Mallarna är i Alfa och stöds för närvarande bara av [[!DNL Marketo Engage] källa](../../connectors/adobe-applications/marketo/marketo.md). Dokumentationen och funktionerna kan komma att ändras.
 
-Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, mappningsregler, ID-namnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
+Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
 
 Med mallar kan man
 
-* Minska tiden till värdet av intag genom att accelerera skapandet av XML-baserade resurser.
+* Minska tiden till värdet av intag genom att accelerera skapandet av komplexa resurser.
 * Minimera antalet fel som kan uppstå under den manuella dataöverföringsprocessen.
 * Uppdatera automatiskt genererade resurser när som helst för att passa dina användningsexempel.
 
@@ -51,7 +51,12 @@ Under [!UICONTROL Adobe applications] kategori, välj **[!UICONTROL Marketo Enga
 
 ![En katalog över källarbetsytan med Marketo Engage-källan markerad.](../../images/tutorials/templates/catalog.png)
 
-Ett popup-fönster visas där du kan bläddra bland mallar eller använda befintliga scheman och datauppsättningar. Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Browse templates]** och sedan markera **[!UICONTROL Select]**.
+Ett popup-fönster visas där du kan bläddra bland mallar eller använda befintliga scheman och datauppsättningar.
+
+* **Bläddra bland mallar**: Källmallar skapar automatiskt scheman, identiteter, datauppsättningar och dataflöden med mappningsregler åt dig. Du kan anpassa dessa resurser efter behov.
+* **Använd mina befintliga resurser**: Infoga data med befintliga datauppsättningar och scheman som du har skapat. Du kan också skapa nya datauppsättningar och scheman vid behov.
+
+Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Browse templates]** och sedan markera **[!UICONTROL Select]**.
 
 ![Ett popup-fönster med alternativ för att bläddra bland mallar eller använda befintliga resurser.](../../images/tutorials/templates/browse-templates.png)
 
@@ -83,6 +88,12 @@ Förhandsgranskningsfönstret visas så att du kan utforska och inspektera exemp
 
 Välj sedan den mall du vill använda i listan. Du kan välja flera mallar och skapa flera dataflöden samtidigt. En mall kan dock bara användas en gång per konto. När du har valt mallar väljer du **[!UICONTROL Finish]** så att resurserna kan genereras en stund.
 
+Om du väljer ett eller flera objekt i listan med tillgängliga mallar kommer alla B2B-scheman och identitetsnamnutrymmen fortfarande att genereras för att säkerställa att B2B-relationer mellan scheman konfigureras korrekt.
+
+>[!NOTE]
+>
+>Mallar som redan har använts inaktiveras.
+
 ![Listan med mallar med mallen för säljprojektskontaktroll vald.](../../images/tutorials/templates/select-template.png)
 
 ### Granska resurser {#review-assets}
@@ -92,7 +103,7 @@ Välj sedan den mall du vill använda i listan. Du kan välja flera mallar och s
 >title="Granska dina automatiskt genererade resurser"
 >abstract="Det kan ta upp till fem minuter att generera alla resurser. Om du väljer att lämna sidan får du ett meddelande som returneras när resurserna är klara. Du kan granska resurserna när de har skapats och göra ytterligare konfigurationer av dataflödet när som helst."
 
-The [!UICONTROL Review template assets] visas de resurser som genereras automatiskt som en del av mallen. På den här sidan kan du visa de automatiskt genererade scheman, datauppsättningar, identitetsnamnutrymmen och dataflöden som är kopplade till din källanslutning.
+The [!UICONTROL Review template assets] visas de resurser som genereras automatiskt som en del av mallen. På den här sidan kan du visa de automatiskt genererade scheman, datauppsättningar, identitetsnamnutrymmen och dataflöden som är kopplade till din källanslutning. Det kan ta upp till fem minuter att generera alla resurser. Om du väljer att lämna sidan får du ett meddelande som returneras när resurserna är klara. Du kan granska resurserna när de har skapats och göra ytterligare konfigurationer av dataflödet när som helst.
 
 Automatiskt genererade dataflöden är aktiverade som standard. Markera ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Preview mappings]** om du vill visa de mappningsuppsättningar som har skapats för dataflödet.
 
@@ -104,8 +115,22 @@ En förhandsgranskningssida visas där du kan kontrollera mappningsförhållande
 
 Du kan uppdatera dataflödena när som helst efter körningen. Markera ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Update dataflow]**. Du dirigeras till arbetsflödessidan för källor där du kan uppdatera dina dataflödesdetaljer, inklusive inställningar för partiellt intag, feldiagnostik och varningsmeddelanden samt mappning av dataflöde.
 
+Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automatiskt genererade schemat. Besök guiden på [med schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md) för mer information.
+
 ![Ett rullgardinsfönster med alternativet för att uppdatera dataflöden markerat.](../../images/tutorials/templates/update.png)
 
 ## Nästa steg
 
 Genom att följa den här självstudiekursen har du nu skapat dataflöden och resurser som scheman, datauppsättningar och identitetsnamnutrymmen med hjälp av mallar. Allmän information om källor finns på [källöversikt](../../home.md).
+
+## Bilaga
+
+I följande avsnitt finns ytterligare information om mallar.
+
+### Använd meddelandepanelen för att gå tillbaka till granskningssidan
+
+Mallar stöds av Adobe Experience Platform-varningar och du kan använda meddelandepanelen för att få uppdateringar om statusen för dina resurser och även för att gå tillbaka till granskningssidan.
+
+Välj meddelandeikonen i det övre huvudet i plattformsanvändargränssnittet och välj sedan statusaviseringen för att se vilka resurser du vill granska.
+
+![Meddelandepanelen i plattformsgränssnittet med ett meddelande som varnar om ett misslyckat dataflöde markerat.](../../images/tutorials/templates/notifications.png)
