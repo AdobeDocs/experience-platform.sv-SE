@@ -5,9 +5,9 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: efa6891024cacd383f4cd958162a7a4f8ead0624
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Med [!DNL Marketo] källanslutning kan du hämta B2B-data från [!DNL Marketo] t
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan CDP B2B Edition i realtid kan ni fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
+>Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B Edition kan ni fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdata till kundprofilen i realtid för segmentering.
 
 Dokumentet innehåller en översikt över [!DNL Marketo] källkoppling, inklusive information om hur anslutningen autentiseras, mappa [!DNL Marketo] fält till Experience Data Model (XDM) och anslutningsens datalatens.
 
@@ -82,4 +82,4 @@ I följande dokumentation finns mer information om hur du skapar en [!DNL Market
 * Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo]finns i dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
 * Mer information om hur du hittar [!DNL Marketo] munchkin-ID och generera dina inloggningsuppgifter finns i [[!DNL Marketo] autentiseringsguide](./marketo-auth.md).
 * Mer information om mappningsregler som gäller för [!DNL Marketo] datauppsättningar, se dokumentationen om [[!DNL Marketo] fältkopplingar](../mapping/marketo.md).
-* Allmän information om [!DNL Real-time Customer Data Platform B2B Edition] och dess funktioner finns i dokumentationen om [[!DNL Real-time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
+* Allmän information om [!DNL Real-Time Customer Data Platform B2B Edition] och dess funktioner finns i dokumentationen om [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).

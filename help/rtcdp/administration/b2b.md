@@ -1,16 +1,16 @@
 ---
 title: Åtkomstkontroll i Real-time Customer Data Platform B2B Edition
-description: En översikt över åtkomstkontrollens roll i Real-time Customer Data Platform B2B Edition.
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+description: En översikt över åtkomstkontrollens roll i Adobe Real-time Customer Data Platform B2B Edition.
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '153'
 ht-degree: 2%
 
 ---
 
-# Åtkomstkontroll i Real-time Customer Data Platform B2B Edition
+# Åtkomstkontroll i Adobe Real-time Customer Data Platform B2B Edition
 
-Åtkomstkontroll för CDP B2B Edition i realtid administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], vilket gör att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomst till specifika CDP-funktioner i realtid, som B2B UI, för definierade användaruppsättningar.
+Åtkomstkontroll för Real-Time CDP B2B Edition administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console], vilket gör att du kan länka användare med behörigheter och sandlådor. Med den här funktionen kan administratörer ge eller begränsa åtkomst till vissa Real-Time CDP-funktioner, som B2B-gränssnitt, för definierade användaruppsättningar.
 
 Mer information om åtkomstkontroll finns i [åtkomstkontroll - översikt](../../access-control/home.md) i [!DNL Experience Platform] dokumentation.
 

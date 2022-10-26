@@ -1,7 +1,7 @@
 ---
 title: (Beta) Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbplatsinnehåll och kampanjer, anpassade till kundsegment som skapats och hanteras inom Real-Time CDP.
-source-git-commit: 51c5458f444220fb526eb9e82417ae6456857de6
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 1%
@@ -36,7 +36,7 @@ To help you better understand how and when you should use the *YourDestination* 
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för utvalda betakunder som har köpt CDP Prime eller Ultimate i realtid och Adobe Commerce.
+Det här tillägget är tillgängligt i målkatalogen för utvalda betakunder som har köpt Real-Time CDP Prime eller Ultimate och Adobe Commerce.
 
 Beta-kunder bör ha tillgång till:
 
@@ -90,7 +90,7 @@ Läs [Aktivera profiler och segment för att profilera mål för begäran](../..
 
 ## Nästa steg i [!DNL Adobe Commerce]
 
-Nu när du har konfigurerat [!DNL Commerce] mål inom Experience Platform måste du konfigurera [!DNL Commerce Admin] för att importera de CDP-segment i realtid som du har skapat. Se [[!DNL Commerce] dokumentation](https://docs.magento.com/user-guide/marketing/customer-segment-rtcdp.html) om du vill veta mer.
+Nu när du har konfigurerat [!DNL Commerce] mål inom Experience Platform måste du konfigurera [!DNL Commerce Admin] för att importera de Real-Time CDP-segment du har skapat. Se [[!DNL Commerce] dokumentation](https://docs.magento.com/user-guide/marketing/customer-segment-rtcdp.html) om du vill veta mer.
 
 ## Validera dataexport {#exported-data}
 

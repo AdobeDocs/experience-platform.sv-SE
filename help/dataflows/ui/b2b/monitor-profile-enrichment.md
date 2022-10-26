@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Övervaka profilanrikningsjobb
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '696'
 ht-degree: 0%
@@ -93,7 +93,7 @@ Använd **[!UICONTROL Show failures only]** växla endast för att visa misslyck
 
 Genom att följa den här självstudiekursen kan du nu övervaka och förstå mätvärden för profilanrikningsjobb. Mer information finns i följande dokument:
 
-* [Relaterade konton i realtid CDP B2B](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)
+* [Relaterade konton i Real-Time CDP B2B](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)
 * [Fliken Relaterade konton i gränssnittsguiden för kontoprofiler](/help/rtcdp/accounts/account-profile-ui-guide.md)
-* [Lead till kontomatchning i realtid CDP B2B](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md)
-* [Prediktiv lead- och kontobedömning i realtid CDP B2B](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
+* [Lead till kontomatchning i Real-Time CDP B2B](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md)
+* [Prediktiv lead- och kontobedömning i Real-Time CDP B2B](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)

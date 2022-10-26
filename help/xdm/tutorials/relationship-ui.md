@@ -6,9 +6,9 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 86a230d746d6642437c4e37958c07a1186ebadc3
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1138'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ I det här dokumentet finns en självstudiekurs för att definiera en relation m
 
 >[!NOTE]
 >
->Anvisningar om hur du skapar en många-till-ett-relation i Real-time Customer Data Platform B2B Edition finns i guiden på [skapa B2B-relationer](./relationship-b2b.md).
+>Anvisningar om hur du skapar en många-till-ett-relation i Adobe Real-time Customer Data Platform B2B Edition finns i guiden på [skapa B2B-relationer](./relationship-b2b.md).
 
 ## Komma igång
 

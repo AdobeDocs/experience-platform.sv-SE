@@ -1,17 +1,17 @@
 ---
-title: Exempel på segmenteringsanvändning för CDP B2B Edition i realtid
-description: En översikt över de olika användningsområdena för CDP B2B Edition i realtid.
+title: Användningsexempel för segmentering för Real-time Customer Data Platform B2B Edition
+description: En översikt över de olika användningsområdena för Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1191'
 ht-degree: 0%
 
 ---
 
 # Exempel på segmenteringsanvändning för Real-time Customer Data Platform B2B Edition
 
-Det här dokumentet innehåller exempel på segmentdefinitioner i realtid CDP B2B Edition och hur olika typer av attribut kan kombineras för vanliga B2B-användningsfall. Mer information om hur destinationer passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
+Det här dokumentet innehåller exempel på segmentdefinitioner i Adobe Real-time Customer Data Platform B2B Edition och hur olika typer av attribut kan kombineras för vanliga B2B-användningsområden. Mer information om hur destinationer passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
 
 >[!NOTE]
 >
@@ -36,7 +36,7 @@ B2B-klasser och deras attribut läggs till med en `B2B` på arbetsytan Segmenter
 
 För att effektivt kunna skapa segment för B2B-användning är det viktigt att ha en god kunskap om schemat och förstå hur datamodellen ser ut. Det är också praktiskt att vara medveten om den sökväg som data tar från ett dataobjekt till ett annat.
 
-Bilden nedan visar förhållandet mellan de B2B-klasser som finns i CDP B2B Edition i realtid.
+Bilden nedan visar förhållandet mellan de B2B-klasser som finns i Real-Time CDP B2B Edition.
 
 ![ERD för B2B-klass](../assets/segmentation/b2b-classes.png)
 
@@ -114,4 +114,4 @@ Hitta alla profiler med lead score över 80.
 
 ## Nästa steg {#next-steps}
 
-Efter att ha läst den här översikten har du nu en förståelse för de segmenteringsmöjligheter som finns med CDP, B2B Edition i realtid. Mer information om segmenteringstjänsten finns i [Segmenteringsdokumentation](../../segmentation/home.md).
+Efter att ha läst den här översikten har du nu en förståelse för de segmenteringsmöjligheter som är tillgängliga med Real-Time CDP, B2B Edition. Mer information om segmenteringstjänsten finns i [Segmenteringsdokumentation](../../segmentation/home.md).

@@ -3,7 +3,7 @@ keywords: Experience Platform;fråga;frågetjänst;felsökning;skyddsförslag;ri
 title: Guardsutkast för frågetjänsten
 description: Det här dokumentet innehåller information om användningsgränser för frågetjänstdata som hjälper dig att optimera användningen av frågan.
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: e40a9fb0149e194de693a98e5d185860a255b5c4
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '1029'
 ht-degree: 1%
@@ -84,7 +84,7 @@ Tabellen nedan innehåller de rekommenderade gränserna för skyddsutkast och en
 
 | Guardrail | Gräns | Begränsningstyp | Beskrivning |
 |---|---|---|---|
-| Frågesamtidighet | 4 | Hård | För att säkerställa att frågor om aggregerade data via rapporterings-API:t (inklusive frågor som förbättrar datamodeller som CDP-datamodeller i realtid) har resurser som kan köras effektivt, spårar API:t resursanvändning genom att tilldela kortplatser för samtidig användning till varje fråga. Systemet placerar frågor i en kö och väntar tills kortplatser för samtidig användning blir tillgängliga eller kan hanteras från cachen. Högst fyra samtidiga frågekortplatser är tillgängliga vid en given tidpunkt.<br>Om du får åtkomst till rapporterings-API:t via ett BI-verktyg och behöver mer samtidighet, krävs en BI-server. |
+| Frågesamtidighet | 4 | Hård | För att säkerställa att frågor om aggregerade data via rapporterings-API:t (inklusive frågor som förbättrar datamodeller som Real-Time CDP datamodeller) har de resurser som krävs för att kunna köras effektivt, spårar API:t resursanvändning genom att tilldela kortplatser för samtidig användning till varje fråga. Systemet placerar frågor i en kö och väntar tills kortplatser för samtidig användning blir tillgängliga eller kan hanteras från cachen. Högst fyra samtidiga frågekortplatser är tillgängliga vid en given tidpunkt.<br>Om du får åtkomst till rapporterings-API:t via ett BI-verktyg och behöver mer samtidighet, krävs en BI-server. |
 
 {style=&quot;table-layout:auto&quot;}
 

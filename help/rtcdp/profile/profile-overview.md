@@ -1,11 +1,11 @@
 ---
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
-title: Förstå kundprofil i realtid i CDP
-description: Läs om hur Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med hjälp av kundprofilen i realtid.
+title: Förstå kundprofil i realtid i Real-Time CDP
+description: Läs om hur Adobe Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med hjälp av kundprofilen i realtid.
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: 0aca080d9f2c39b8f0a1197e1048d1a77d5e7bc1
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 Med kundprofilen i realtid kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med varje enskild kundprofil kan ni sammanställa olika kunddata i en enhetlig vy som ger en användbar, tidsstämplad översikt över varje kundinteraktion.
 
-## Profiler i [!DNL Real-time Customer Data Platform]
+## Profiler i [!DNL Real-Time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] gör att ni kan skapa samordnade och enhetliga upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Att leverera dessa personaliserade upplevelser så att de känns relevanta och aktuella är ingen liten funktion, men det kan uppnås med hjälp av kundprofilen i realtid, som ingår i Adobe Experience Platform.
+[!DNL Adobe Real-Time Customer Data Platform] gör att ni kan skapa samordnade och enhetliga upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Att leverera dessa personaliserade upplevelser så att de känns relevanta och aktuella är ingen liten funktion, men det kan uppnås med hjälp av kundprofilen i realtid, som ingår i Adobe Experience Platform.
 
-CDP är byggt i realtid ovanpå Experience Platform och utnyttjar många av de viktigaste funktionerna i Experience Platform, bland annat skapandet av profiler. Dessa samlade vyer över en enskild kund sammanför data från olika marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kunddata.
+Real-Time CDP är byggt på Experience Platform och utnyttjar många av de viktigaste funktionerna i Experience Platform, bland annat framtagningen av profiler. Dessa samlade vyer över en enskild kund sammanför data från olika marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kunddata.
 
-## Profilförbättringar för CDP, B2B Edition i realtid
+## Profilförbättringar för Real-Time CDP, B2B Edition
 
-Förutom profilfunktionerna som stöds av CDP i realtid kan du använda CDP, B2B Edition i realtid för att bläddra igenom viktig information som är kopplad till en individ, som ett konto och möjligheter. Om du vill veta mer om profilförbättringar för CDP, B2B Edition i realtid börjar du med att läsa [bläddringsguide för profiler](profile-browse.md).
+Förutom de profilfunktioner som stöds av Real-Time CDP kan du använda Real-Time CDP, B2B Edition för att bläddra bland viktig information som är kopplad till en individ, som ett konto och möjligheter. Om du vill veta mer om profilförbättringar för Real-Time CDP, B2B Edition börjar du med att läsa [bläddringsguide för profiler](profile-browse.md).
 
 ## Identiteter och identitetsnamnutrymmen
 

@@ -1,16 +1,16 @@
 ---
-title: Lead till kontomatchning i realtid CDP B2B
+title: Lead till kontomatchning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om funktionen för att matcha lead-till-konto i Experience Platform CDP B2B.
-source-git-commit: 827bd1b930478c3c0b553a9485f98545771a9062
+exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '612'
 ht-degree: 3%
 
 ---
 
-
-# Lead till kontomatchning i realtid CDP B2B
+# Lead till kontomatchning i Real-Time CDP B2B
 
 ## Översikt {#overview}
 

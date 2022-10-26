@@ -6,7 +6,7 @@ last-update: March 10, 2020
 author: ens71067
 keywords: Versionsinformation.
 exl-id: 407c2bac-4c8a-4939-b3dd-788250f15650
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 3%
@@ -39,8 +39,8 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Automatiserad tillämpning av dataanvändningsprinciper för [!DNL Real-time Customer Data Platform] | Dataanvändningsprinciper används nu i arbetsflödet för att aktivera data till mål. Datastyrning bäddas också in och tillämpas när du gör ändringar som påverkar befintliga aktiveringar (t.ex. ändringar i datauppsättningsrubriker, sammanfogningsprinciper, segmentdefinitioner). |
-| Datalinje för verkställighet | När en dataanvändningsprincip överträds i CDP i realtid visar gränssnittet ett meddelande som innehåller information om datalänkning som hjälper användaren att förstå varför policyer överträds och vad de kan göra för att åtgärda överträdelsen. |
+| Automatiserad tillämpning av dataanvändningsprinciper för [!DNL Real-Time Customer Data Platform] | Dataanvändningsprinciper används nu i arbetsflödet för att aktivera data till mål. Datastyrning bäddas också in och tillämpas när du gör ändringar som påverkar befintliga aktiveringar (t.ex. ändringar i datauppsättningsrubriker, sammanfogningsprinciper, segmentdefinitioner). |
+| Datalinje för verkställighet | När en dataanvändningsprincip överträds i Real-Time CDP visas ett meddelande i användargränssnittet som innehåller information om datalinjerna så att användaren kan förstå varför policyer överträds och vad de kan göra för att åtgärda överträdelsen. |
 
 
 **Kända fel**
@@ -76,8 +76,8 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 | Destination | Beskrivning |
 |--- | ---|
-| Lagringsmål i molnet | CDP kan nu leverera era segment som datafiler till era [!DNL Amazon S3] eller lagringsplatser för SFTP i molnet. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
-| Annonsmål | The [!DNL Google] destinationskortet delas nu upp i tre destinationskort för de tre olika [!DNL Google] plattformar som för närvarande stöds i CDP i realtid: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] Display &amp; Video 360. |
+| Lagringsmål i molnet | Real-Time CDP kan nu leverera era segment som datafiler till [!DNL Amazon S3] eller lagringsplatser för SFTP i molnet. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
+| Annonsmål | The [!DNL Google] destinationskortet delas nu upp i tre destinationskort för de tre olika [!DNL Google] plattformar som för närvarande stöds i Real-Time CDP: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] Display &amp; Video 360. |
 
 Mer information finns på [destinationer, översikt](../../destinations/home.md)
 

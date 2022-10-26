@@ -1,16 +1,16 @@
 ---
-title: Prediktiv lead- och kontobedömning i realtid CDP B2B
+title: Prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om den prediktiva lead- och kontopoängsfunktionen i Experience Platform CDP B2B.
 exl-id: d3afbabb-005d-4537-831a-857c88043759
-source-git-commit: 99b3b2d73b87a64fcaa9ba51563c0942fc21a0dc
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 0%
 
 ---
 
-# Prediktiv lead- och kontobedömning i realtid CDP B2B
+# Prediktiv lead- och kontobedömning i Real-Time CDP B2B
 
 B2B-marknadsförarna står inför flera utmaningar i toppen av marknadsföringstratten. För att vara effektiv behöver B2B-marknadsförarna ett automatiskt sätt att kvalificera det stora antalet människor så att de kan fokusera på de värdefulla målen. Kvalificeringen bör anpassas till det slutliga försäljningsresultatet, inte bara marknadsföringskonverteringen.
 

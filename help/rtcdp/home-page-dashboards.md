@@ -3,22 +3,22 @@ keywords: Översikt över mätvärden. Översikt över rtcdp-mått
 title: Real-time Customer Data Platform hemsida och Dashboards
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '599'
+source-wordcount: '600'
 ht-degree: 1%
 
 ---
 
-# [!DNL Real-time Customer Data Platform] hemsida och kontrollpaneler
+# [!DNL Real-Time Customer Data Platform] hemsida och kontrollpaneler
 
-Hemsidan för Real-time Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan för Adobe Real-time Customer Data Platform (Real-Time CDP), som innehåller en mätinstrumentpanel, visas när du loggar in på Real-Time CDP.
 
-Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
+Hemsidan är bara en av platserna där metriska kort visas. Real-Time CDP tillhandahåller mätkort genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
 ![bild](assets/home.png)
 
-Om det inte finns några data i systemet när du loggar in på CDP i realtid visas inte instrumentpanelen på startsidan. I det här fallet innehåller startsidan utbildningsmaterial för en förstagångsupplevelse. Som data samlas in, med andra ord som <!--sources-->datauppsättningar, profiler, segment och mål skapas och dataflöden in i systemet - instrumentpanelen uppdateras automatiskt för att visa information om dessa data<!-- in metric cards-->.
+Om det inte finns några data i systemet när du loggar in på Real-Time CDP visas inte instrumentpanelen på startsidan. I det här fallet innehåller startsidan utbildningsmaterial för en förstagångsupplevelse. Som data samlas in, med andra ord som <!--sources-->datauppsättningar, profiler, segment och mål skapas och dataflöden in i systemet - instrumentpanelen uppdateras automatiskt för att visa information om dessa data<!-- in metric cards-->.
 
 ## Instrumentpanelsvy för hemsidan
 
@@ -53,7 +53,7 @@ Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge
 
 Antalet profiler uppdateras en gång var 24:e timme.
 
-Mer information om profiler finns i [En enhetlig bild av kunden i CDP i realtid](profile/profile-overview.md).
+Mer information om profiler finns i [En enhetlig bild av era kunder i Real-Time CDP](profile/profile-overview.md).
 
 ### Segment
 
@@ -77,7 +77,7 @@ There is also a metric card that shows the percentage of successful records. Sel
 
 The number of successful profile records is updated hourly. 
 
-For more information about profiles, see [A unified view of your customer in Real-time CDP](profile/profile-overview.md).
+For more information about profiles, see [A unified view of your customer in Real-Time CDP](profile/profile-overview.md).
 
 ### Total profile records
 
@@ -89,7 +89,7 @@ The **[!UICONTROL Total profile records]** metric card shows the total number of
 
 Select **[!UICONTROL View profiles]** to see more details about the profile records.
 
-For more information about profiles, see [A unified view of your customer in Real-time CDP](profile/profile-overview.md).
+For more information about profiles, see [A unified view of your customer in Real-Time CDP](profile/profile-overview.md).
 
 For more information about viewing a specific profile, see [Profile viewer](profile/profile-viewer.md).
 

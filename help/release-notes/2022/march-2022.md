@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform mars 2022
 description: Versionsinformation mars 2022 för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '1193'
 ht-degree: 1%
@@ -47,7 +47,7 @@ Mer information om granskningsloggar i Platform finns i [granskningsloggar - öv
 >
 >Funktionen för relaterade konton är endast tillgänglig för kunder som har Real-Time CDP B2B Edition.
 
-B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara innehåller partiella eller till och med motstridiga data för samma verkliga affärsenhet. Detta skapar en stor utmaning i att få en korrekt bild av kunderna och minskar därmed effektiviteten och effektiviteten i B2B-marknadsförings- och säljsatsningarna. Med frisläppandet av relaterade konton [!DNL Real-time CDP B2B] visar nu en lista över konton som liknar det konto du bläddrar i. Du kan inkludera de relaterade kontona i dina segmentdefinitioner för att bredda din räckvidd eller tillämpa fler kriterier i dina segment.
+B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara innehåller partiella eller till och med motstridiga data för samma verkliga affärsenhet. Detta skapar en stor utmaning i att få en korrekt bild av kunderna och minskar därmed effektiviteten och effektiviteten i B2B-marknadsförings- och säljsatsningarna. Med frisläppandet av relaterade konton [!DNL Real-Time CDP B2B] visar nu en lista över konton som liknar det konto du bläddrar i. Du kan inkludera de relaterade kontona i dina segmentdefinitioner för att bredda din räckvidd eller tillämpa fler kriterier i dina segment.
 
 Läs mer om funktionen på följande dokumentationssidor:
 
@@ -55,7 +55,7 @@ Läs mer om funktionen på följande dokumentationssidor:
 - [Fliken Relaterade konton i gränssnittsguiden för kontoprofiler](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
 - [Så här använder du relaterade konton i segmentdefinitioner](../../rtcdp/segmentation/b2b.md#related-accounts)
 
-Mer information om CDP B2B Edition i realtid finns i [översikt](../../rtcdp/overview.md).
+Mer information om Real-Time CDP B2B Edition finns i [översikt](../../rtcdp/overview.md).
 
 ## Larm {#alerts}
 

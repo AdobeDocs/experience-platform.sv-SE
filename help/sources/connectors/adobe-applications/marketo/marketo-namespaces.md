@@ -5,9 +5,9 @@ title: B2B-namnutrymmen och scheman
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: c6ba91f6aa64f02ac3571bb960d4005fdade3d57
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1707'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Det här dokumentet innehåller information om den underliggande inställningen 
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att B2B-scheman ska kunna delta i [Kundprofil i realtid](../../../../profile/home.md).
+>Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att B2B-scheman ska kunna delta i [Kundprofil i realtid](../../../../profile/home.md).
 
 ## Konfigurera B2B-namnutrymmen och automatisk schemagenerering
 

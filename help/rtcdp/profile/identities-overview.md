@@ -3,7 +3,7 @@ keywords: identiteter rtcdp;rtcdp identiteter;cdp-identiteter i realtid
 title: Identiteter i Real-time Customer Data Platform
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system.
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: 5611a5abc7d1ed7781108b6f263e7550092b715d
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -12,20 +12,20 @@ ht-degree: 0%
 
 # Översikt över identiteter
 
-Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system. Normalt interagerar era kunder med ert varumärke i flera kanaler, vilket kan innebära att ni surfar på er webbplats online, gör ett köp i butiken, går med i ert lojalitetsprogram eller ringer en supportavdelning för att nämna några. I de olika systemen skapas en identitet för kunden, och med [!DNL Identity Service] blir det möjligt att sammanföra dessa identiteter för att se hela bilden.
+Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteenden genom att förena identiteter på olika enheter och system. Normalt interagerar era kunder med ert varumärke i flera kanaler, vilket kan innebära att ni surfar på er webbplats online, gör ett köp i butiken, går med i ert lojalitetsprogram eller ringer en supportavdelning för att nämna några. I de olika systemen har en identitet skapats för kunden, och [!DNL Identity Service] gör det möjligt att sammanföra dessa identiteter för att se hela bilden.
 
 I stället för att nu ha fem separata kunder som interagerar med ert varumärke i fem olika kanaler kan ni se att detta är samma kund, och ni kan se till att de får en enhetlig, personaliserad och relevant upplevelse genom varje interaktion. Efterhand som mer information om kunden (till exempel en anonym webbläsare på er webbplats bestämmer sig för att registrera sig för ett konto och logga in) sammanfogas informationen och kundens bild blir allt tydligare.
 
 ## Identitetsnamnutrymmen
 
-Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] och fungerar som indikatorer som ger ytterligare kontext till kundidentiteter. Ett exempel på ett vanligt ID-namnutrymme är&quot;E-post&quot;, där användningen av samma e-postadress på flera webbplatser gör att du kan sammanfoga flera olika identiteter, var och en med ett unikt kund-ID, som i själva verket tillhör samma kund. [!DNL Experience Platform] I kan du använda ID-namnutrymmen för att söka efter enskilda profiler i användargränssnittet. Mer information om att visa profiler finns i [översikten över profilbläddringen](profile-browse.md). Mer information om namnutrymmen för identiteter finns i [översikten över namnutrymmen för identiteter](../../identity-service/namespaces.md).
+Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] och fungerar som indikatorer som ger ytterligare kontext till kundidentiteter. Ett exempel på ett vanligt ID-namnutrymme är&quot;E-post&quot;, där användningen av samma e-postadress på flera webbplatser gör att du kan sammanfoga flera olika identiteter, var och en med ett unikt kund-ID, som i själva verket tillhör samma kund. [!DNL Experience Platform] I kan du använda ID-namnutrymmen för att söka efter enskilda profiler i användargränssnittet. Mer information om visningsprofiler finns i [Översikt över profilbläddring](profile-browse.md). Mer information om namnutrymmen för identiteter finns i [Översikt över namnutrymmet identity](../../identity-service/namespaces.md).
 
 ## Identitetsdiagram
 
-Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen, som ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler. Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av [!DNL Identity Service] i nära realtid som svar på kundaktivitet.
+Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen, som ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler. Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av [!DNL Identity Service] i nära realtid som svar på kundaktiviteter.
 
 [!DNL Identity Service] hanterar ett identitetsdiagram som bara är synligt för din organisation och som bygger på dina data, kallas för det privata diagrammet. [!DNL Identity Service] förbättrar det privata diagrammet när en inkapslad datapost innehåller mer än en identitet, vilket lägger till en relation mellan de identifierade identiteterna.
 
 ## Nästa steg
 
-Identiteter, och relationerna mellan dem, definieras och upprätthålls av [!DNL Identity Service] och utnyttjas av [!DNL Real-time Customer Profile] för att skapa en fullständig bild av varje enskild kund och deras interaktioner. Mer information finns i [identitetstjänstens dokumentation](../../identity-service/home.md).
+Identiteter och relationerna mellan dem definieras och upprätthålls av [!DNL Identity Service] och utnyttjas av [!DNL Real-time Customer Profile] för att skapa en fullständig bild av varje enskild kund och deras interaktioner. Läs mer här: [Identitetstjänstens dokumentation](../../identity-service/home.md).

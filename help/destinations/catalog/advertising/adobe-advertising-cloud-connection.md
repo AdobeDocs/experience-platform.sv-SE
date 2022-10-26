@@ -1,10 +1,10 @@
 ---
 title: Adobe Advertising Cloud DSP-anslutning
-description: Adobe Advertising Cloud DSP är ett integrerat mål för [!DNL Adobe Real-time Customer Data Profile]så att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.
+description: Adobe Advertising Cloud DSP är en integrerad destination för Adobe Real-time Customer Data Platform, vilket gör att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: 27869b91deeb4a5cca580970507845d992d21aaf
+source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ För att du bättre ska förstå hur och när du ska använda Advertising Cloud 
 
 ### Användning av varumärken för annonsering
 
-En webbutik vill återannonsera sina värdefulla kunder genom en webbannonskampanj utan att använda cookies för målinriktning. Återförsäljaren delar ett segment som består av det hashas-baserade e-post-ID:t för dess värdefulla kunder från dess [!DNL Real-Time CDP] till DSP konto. DSP konverterar sedan hash-kodade e-post-ID:n till autentiserade [!DNL RampIDs] genom ett partnerskap mellan DSP och LiveRamp. Resultatet [!DNL RampIDs] kan användas i en webbannonskampanj för att rikta sig till målgruppen.
+En webbutik vill återannonsera sina värdefulla kunder genom en webbannonskampanj utan att använda cookies för målinriktning. Återförsäljaren delar ett segment som består av det hashas-baserade e-post-ID:t för dess värdefulla kunder från dess Adobe Real-time Customer Data Platform-konto (Real-Time CDP) till dess DSP. DSP konverterar sedan hash-kodade e-post-ID:n till autentiserade [!DNL RampIDs] genom ett partnerskap mellan DSP och LiveRamp. Resultatet [!DNL RampIDs] kan användas i en webbannonskampanj för att rikta sig till målgruppen.
 
 ### Användningsexempel
 

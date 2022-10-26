@@ -1,18 +1,18 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;realtids-cdp;cdp;rtcdp
 title: Komma igång med Real-time Customer Data Platform
-description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Real-time Customer Data Platform.
+description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-time Customer Data Platform.
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '2327'
+source-wordcount: '2328'
 ht-degree: 0%
 
 ---
 
 # Komma igång med Real-time Customer Data Platform
 
-Den här guiden leder dig genom en exempelimplementering av Real-time Customer Data Platform (CDP i realtid). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
+Den här guiden leder dig genom en exempelimplementering av Real-time Customer Data Platform (Real-Time CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
 
 I det här exemplet visas styrkan hos Real-time Customer Data Platform, som drivs av Adobe Experience Platform, för att:
 
@@ -39,7 +39,7 @@ Därför har Luma följande affärsmål:
 
 För att uppnå dessa mål måste marknadsföringsteamet kunna hantera kunddata i stor skala.
 
-Med CDP från Adobe Experience Platform i realtid kan Lumas marknadsföringsorganisation
+Med Real-Time CDP från Adobe Experience Platform kan Lumas marknadsföringsorganisation
 
 1. Samla in data från olika plattformar och se till att de är tillgängliga längre fram i kedjan för andra marknadsföringsaktiviteter.
 1. Skapa en enda realtidsbild av kunderna, oavsett var de kommer från.
@@ -141,7 +141,7 @@ Alla dessa data från olika källor sammanfogas i en enda enhetlig kundprofil.
 
 ## Konfigurera en datakälla
 
-Använd [!DNL Real-time Customer Data Platform] för att ta in nya datakällor i plattformen. CDP i realtid innehåller en katalog med datakällor som snabbt och enkelt kan läggas till i profilen.
+Använd [!DNL Real-Time Customer Data Platform] för att ta in nya datakällor i plattformen. Real-Time CDP innehåller en katalog med datakällor som snabbt och enkelt kan läggas till i profilen.
 
 ![bild](assets/luma-source-cat.png)
 
@@ -178,7 +178,7 @@ Luma har många interna policyer som begränsar användningen av vissa typer av 
 
 ![](assets/governance-labels.png)
 
-När dataanvändningsetiketterna har tillämpats kan Luma sedan använda datastyrning för att skapa dataanvändningsprinciper. Dataanvändningsprinciper är regler som beskriver den typ av åtgärder som du får utföra på data som innehåller vissa etiketter. När man försöker utföra en åtgärd i realtid med CDP som utgör en policyöverträdelse förhindras åtgärden och en varning ges om vilken policy som överträtts och varför.
+När dataanvändningsetiketterna har tillämpats kan Luma sedan använda datastyrning för att skapa dataanvändningsprinciper. Dataanvändningsprinciper är regler som beskriver den typ av åtgärder som du får utföra på data som innehåller vissa etiketter. När man försöker genomföra en åtgärd i Real-Time CDP som utgör en policyöverträdelse förhindras åtgärden och en varning ges om vilken policy som överträtts och varför.
 
 ## Sammanföra data för en viss kund
 
@@ -193,7 +193,7 @@ All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personupp
 | Identiteter | Visar de identiteter som har kopplats ihop i [!DNL Platform] från Sarah interaktioner med Luma över olika kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet inkluderar även ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics] datauppsättning och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
 | Händelser | Visar alla Sarah interaktionsdata med Luma-varumärket. Detta inkluderar det som hon just tittat på, allt som hon tittat på tidigare, de e-postmeddelanden hon fått, hennes interaktioner med callcenter och vilken kanal och enhet som var och en av interaktionerna ägde rum på. |
 
-CDP-profilen i realtid minskar arbetsflödet för Luma-marknadsföringsteamet från veckor till minuter och frigör möjligheter till personalisering baserat på denna helhetsbild av kunden. Profilen sammanfogar beteendedata från när hon surfar på webbplatsen innan hon loggade in, med sin befintliga kundprofil, vilket skapar en heltäckande bild av Sarah.
+Real-Time CDP-profilen minskar arbetsflödet för Lumas marknadsföringsteam från veckor till minuter och frigör möjligheter till personalisering baserat på denna helhetsbild av kunden. Profilen sammanfogar beteendedata från när hon surfar på webbplatsen innan hon loggade in, med sin befintliga kundprofil, vilket skapar en heltäckande bild av Sarah.
 
 Marknadsföringsteamet kan använda den här förbättrade [!DNL Real-time Customer Profile] för att personalisera Sarah bättre och öka varumärkeslojaliteten med Luma.
 
@@ -234,7 +234,7 @@ När du har lagt till segmentet&quot;Gift Giving Cart Abandoners&quot; kan du se
 
 Välj **[!UICONTROL Send to destinations]**.
 
-I realtid kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
+I Real-Time CDP kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
 Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra lösningar än Adobe:
 
 ![bild](assets/luma-dest.png)
@@ -297,7 +297,7 @@ Tack vare funktioner för att hindra åhörarna kommer Sarah inte att vara inrik
 
 ## Analyserar profilen
 
-Luma-marknadsförare använder Adobe Experience Platform för att se på presentgiversegmentet på CDP Dashboard i realtid. De ser resultaten av detta initiativ över tiden och ser att det växer. Kunderna svarar på erbjudanden och spenderar mer pengar.
+Luma-marknadsförare använder Adobe Experience Platform för att se på presentgiversegmentet på Real-Time CDP Dashboard. De ser resultaten av detta initiativ över tiden och ser att det växer. Kunderna svarar på erbjudanden och spenderar mer pengar.
 
 Dessa insikter gör det möjligt för marknadsförarna att agera på den här signalen, som stärktes av att informationen fanns tillgänglig i CDP och att kunder som Sarah var kopplade till segmentet.
 

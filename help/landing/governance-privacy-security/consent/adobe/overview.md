@@ -5,9 +5,9 @@ title: Samtyckesbearbetning i Adobe Experience Platform
 topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: f9ccce8943e2aaf65cd3e0ffe2b974a668bba9b7
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1555'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Detta dokument ger en översikt över hur ni konfigurerar era plattformsdataåtg
 
 >[!NOTE]
 >
->Det här dokumentet fokuserar på behandling av data om samtycke med hjälp av Adobe-standarden. Om du bearbetar medgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0, se guiden på [Stöd för TCF 2.0 i Real-time Customer Data Platform](../iab/overview.md).
+>Det här dokumentet fokuserar på behandling av data om samtycke med hjälp av Adobe-standarden. Om du bearbetar medgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0, se guiden på [Stöd för TCF 2.0 i Adobe Real-time Customer Data Platform](../iab/overview.md).
 
 ## Förutsättningar
 

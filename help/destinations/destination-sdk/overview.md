@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 94d46ceeef6eef507115c60aaa6820d4560e4d44
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '840'
 ht-degree: 1%
 
 ---
@@ -23,16 +23,16 @@ I dokumentationen till Destinationen SDK finns instruktioner om hur du kan anvä
 
 >[!IMPORTANT]
 >
-> Den här funktionen för att skapa privata anpassade destinationer är bara tillgänglig för [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
+> Den här funktionen för att skapa privata anpassade destinationer är bara tillgänglig för [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
 
 Som Destination SDK partner kan du dra nytta av att lägga till din produkterade destination på [Experience Platform-katalog](/help/destinations/catalog/overview.md):
 1. Standardisera integrationskonfigurationer mellan kunder med förkonfigurerade parametrar och förenkla konfigurationsupplevelsen för kunderna.
 2. Lägg in ett varumärkesprofilerat destinationskort i Experience Platform-katalogen för enklare kundkonfiguration och ökad medvetenhet.
-3. Upptäck detta som en produkterad målintegration med Adobe Experience Platform &amp; Real-time Customer Data Platform.
+3. Upptäck detta som en produkterad målintegration med Adobe Experience Platform &amp; Adobe Real-time Customer Data Platform.
 
 Som Experience Platform-kund kan du också skapa en egen, anpassad destinationsplats som bäst passar dina aktiveringsbehov.
 
-![Ett översiktsdiagram som visar hur målutvecklare interagerar med Destination SDK och hur kunder med CDP i realtid drar nytta av produktioner och privata destinationer.](./assets/destination-sdk-visual.png)
+![Ett översiktsdiagram som visar hur målutvecklare interagerar med Destination SDK och hur Real-Time CDP-kunder drar nytta av produktioner och privata destinationer.](./assets/destination-sdk-visual.png)
 
 ## Typer av integreringar som stöds {#supported-integration-types}
 

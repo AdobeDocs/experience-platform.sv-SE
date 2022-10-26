@@ -1,10 +1,10 @@
 ---
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
-description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Real-time Customer Data Platform B2B Edition.
+description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 86a230d746d6642437c4e37958c07a1186ebadc3
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >title="Referensschema"
 >abstract="Välj det schema som du vill skapa en relation med. Beroende på schemaklassen kan den även ha befintliga relationer med andra entiteter i B2B-kontexten. Läs dokumentationen för att lära dig hur B2B-schemaklasser relaterar till varandra."
 
-Real-time Customer Data Platform B2B Edition innehåller flera XDM-klasser (Experience Data Model) som samlar in grundläggande B2B-datatabeller, inklusive [konton](../classes/b2b/business-account.md), [möjligheter](../classes/b2b/business-opportunity.md), [kampanjer](../classes/b2b/business-campaign.md), med mera. Genom att skapa scheman baserade på dessa klasser och aktivera dem för användning i [Kundprofil i realtid](../../profile/home.md)kan du sammanfoga data från olika källor till en enhetlig representation som kallas för ett unionsschema.
+Adobe Real-time Customer Data Platform B2B Edition innehåller flera XDM-klasser (Experience Data Model) som samlar in grundläggande B2B-datatabeller, inklusive [konton](../classes/b2b/business-account.md), [möjligheter](../classes/b2b/business-opportunity.md), [kampanjer](../classes/b2b/business-campaign.md), med mera. Genom att skapa scheman baserade på dessa klasser och aktivera dem för användning i [Kundprofil i realtid](../../profile/home.md)kan du sammanfoga data från olika källor till en enhetlig representation som kallas för ett unionsschema.
 
 Unionsscheman kan dock bara innehålla fält som hämtats av scheman som delar samma klass. Det är här som schemarelationer kommer in. Genom att implementera relationer i dina B2B-scheman kan du beskriva hur dessa affärsenheter relaterar till varandra och kan inkludera attribut från flera klasser i fall där segmentering används längre fram i kedjan.
 
@@ -24,7 +24,7 @@ I följande diagram visas ett exempel på hur de olika B2B-klasserna kan relater
 
 ![B2B-klassrelationer](../images/tutorials/relationship-b2b/classes.png)
 
-I den här självstudiekursen beskrivs stegen för att definiera ett många-till-ett-förhållande mellan två scheman i CDP B2B Edition i realtid.
+I den här självstudiekursen beskrivs stegen för att definiera ett många-till-ett-förhållande mellan två scheman i Real-Time CDP B2B Edition.
 
 >[!NOTE]
 >
@@ -123,4 +123,4 @@ Om du visar strukturen för målschemat visas relationsmarkören bredvid schemat
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en många-till-ett-relation mellan två scheman med hjälp av [!DNL Schema Editor]. När data har importerats med datauppsättningar som baseras på dessa scheman och data har aktiverats i datalagret för profilen, kan du använda attribut från båda scheman för användning av segmentering i flera klasser. Mer information finns i dokumentationen om CDP B2B Edition i realtid.
+I den här självstudiekursen har du skapat en många-till-ett-relation mellan två scheman med hjälp av [!DNL Schema Editor]. När data har importerats med datauppsättningar som baseras på dessa scheman och data har aktiverats i datalagret för profilen, kan du använda attribut från båda scheman för användning av segmentering i flera klasser. Mer information finns i dokumentationen om Real-Time CDP B2B Edition.

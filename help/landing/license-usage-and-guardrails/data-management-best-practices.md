@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättig
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 5da2a6cfc9e9da6bbe6c6560577d22eed32c858c
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '2528'
+source-wordcount: '2529'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ När du licensierar Experience Platform får du licensanvändningsrättigheter s
 
 The [!DNL Profile Richness] mätvärdena varierar beroende på vilken licens du har köpt. Det finns två beräkningar för [!DNL Profile Richness] tillgänglig:
 
-* Summan av alla produktionsdata som lagras i Real-time Customer Data Platform (dvs. profiltjänsten och identitetstjänsten) vid valfri tidpunkt, dividerat med [!DNL Addressable Audience];
+* Summan av alla produktionsdata som lagras i Adobe Real-time Customer Data Platform (dvs. profiltjänsten och identitetstjänsten) vid valfri tidpunkt, dividerat med [!DNL Addressable Audience];
 * Summan av alla data som lagras inom plattformen (inklusive, men inte begränsat till, [!DNL Data Lake], profiltjänst och identitetstjänst) när som helst och alla data som du direktuppspelar via (i stället för att lagra inom) plattformen under de senaste 12 månaderna, dividerat med [!DNL Addressable Audience].
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt.

@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: Versionsinformation.
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: e08deb8bea7f02639b680c4988522627de82bdee
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '983'
 ht-degree: 3%
@@ -93,12 +93,12 @@ I [Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer f
 
 **Nya destinationer**
 
-CDP har nu stöd för dataaktivering i realtid till över femtio [!DNL Experience Cloud Launch] tillägg som möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
+Real-Time CDP har nu stöd för dataaktivering till över femtio [!DNL Experience Cloud Launch] tillägg som möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
 
 | Dokumentation | Beskrivning |
 |--- | ---|
-| [Måltyper och -kategorier](../../destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i CDP-gränssnittet i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](../../destinations/catalog/launch-extensions/overview.md) | Den här sidan förklarar vad [!DNL Launch] är, visar användningsexempel för dem och länkar till dokumentation för [!DNL Launch] i realtid CDP. |
+| [Måltyper och -kategorier](../../destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i Real-Time CDP-gränssnittet och en rekommendation om när var och en av dessa destinationer ska användas. |
+| [Experience Platform Launch-tillägg](../../destinations/catalog/launch-extensions/overview.md) | Den här sidan förklarar vad [!DNL Launch] är, visar användningsexempel för dem och länkar till dokumentation för [!DNL Launch] i Real-Time CDP. |
 
 Mer information finns i [Översikt över destinationer](../../destinations/home.md).
 

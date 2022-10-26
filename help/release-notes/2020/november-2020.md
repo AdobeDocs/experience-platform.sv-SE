@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '2161'
 ht-degree: 2%
@@ -120,7 +120,7 @@ I [Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer f
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| UX-uppdateringar för målinformation | Arbetsflödet för mål-CDP i realtid innefattar nu intern övervakning så att du kan se vilka gruppaktiveringar som lyckades. Med den här funktionen kan användare lösa problem direkt i arbetsflödet för batchdestinationer via aviseringar och en kontrollpanel för övervakning för att spåra fel i bearbetningsprocessen. |
+| UX-uppdateringar för målinformation | Real-Time CDP målarbetsflöde innehåller nu intern övervakning så att du kan se vilka gruppaktiveringar som har slutförts. Med den här funktionen kan användare lösa problem direkt i arbetsflödet för batchdestinationer via aviseringar och en kontrollpanel för övervakning för att spåra fel i bearbetningsprocessen. |
 | Filkryptering | För filbaserade mål kan användare nu lägga till kryptering i de exporterade filerna. |
 | Filplanering | För både e-postbaserade och molnbaserade lagringsplatser kan användare skapa en engångs export eller skapa dagliga ögonblicksbilder. |
 | Obligatoriska fält | Användarna kan markera fält som obligatoriska och se till att endast fält som innehåller det obligatoriska fältet exporteras. |

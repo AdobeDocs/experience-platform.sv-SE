@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en CRM-källa med hjälp av plattformsgränssnittet.
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: a9a443eda060606be4394dfc2e2707fe18618160
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1383'
+source-wordcount: '1384'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ Plattformen ger intelligenta rekommendationer för automatiskt mappade fält bas
 
 >[!NOTE]
 >
->Om du använder [!DNL Salesforce] som en del av Real-time Customer Data Platform B2B Edition, se [[!DNL Salesforce] fältmappningsdokument](../../../connectors/adobe-applications/mapping/salesforce.md) för vägledning om mappning [!DNL Salesforce] källfält till lämpliga XDM-målfält.
+>Om du använder [!DNL Salesforce] som en del av Adobe Real-time Customer Data Platform B2B Edition, se [[!DNL Salesforce] fältmappningsdokument](../../../connectors/adobe-applications/mapping/salesforce.md) för vägledning om mappning [!DNL Salesforce] källfält till lämpliga XDM-målfält.
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 

@@ -1,9 +1,9 @@
 ---
 title: Frågetjänstpaket
 description: I följande dokument beskrivs vilka funktioner och produkter som är tillgängliga för frågetjänsten och skillnaderna mellan ad hoc- och batchfrågor är markerade.
-source-git-commit: 3d2802ff5cdb359b28da23a05d1d6831cc273a52
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '720'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform Query Service kan delas upp i två funktioner baserat 
 
 Frågetjänstfunktionerna paketeras med följande produkter och tillägg:
 
-- **Plattformsbaserade program** (Real-time Customer Data Platform, Customer Journey Analytics och Adobe Journey Optimizer): Frågetjänsten ger möjlighet att köra ad hoc-frågor redan från början med alla varianter och nivåer av plattformsbaserade program.
+- **Plattformsbaserade program** (Adobe Real-time Customer Data Platform, Adobe Customer Journey Analytics och Adobe Journey Optimizer): Frågetjänsten ger möjlighet att köra ad hoc-frågor redan från början med alla varianter och nivåer av plattformsbaserade program.
 - **[!DNL Data Distiller]** (tilläggspaket som kan köpas med Adobe Real-Time CDP, Customer Journey Analytics och Adobe Journey Optimizer): Frågetjänsten har åtkomst till att köra batchfrågor [!DNL Data Distiller].
 
 Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de paketeras:
@@ -30,7 +30,7 @@ Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de 
 | Användningsfall som stöds | <ul><li>&#x200B;</li><li>&#x200B;</li><li>Dataverifiering</li><li>Experimentation</li></ul> | <ul><li>Rengöring</li><li>Form</li><li>Manipulera</li><li>Bättre</li></ul> |
 | Semantik som stöds | <ul><li>SELECT-frågor</li></ul> | <ul><li>CTAS- och ITAS-frågor</li></ul> |
 | Maximal körningstid | 10 minuter | 24 timmar |
-| Licensmått | **Fråga om samtidighet för användare**: <ul><li>1 samtidig användare (CDP, Adobe Journey Optimizer i realtid) &#x200B;</li><li>5 samtidiga användare (Customer Journey Analytics) &#x200B;</li></ul> **Frågesamtidighet**: <ul><li>1 fråga som körs samtidigt (alla program) &#x200B;</li></ul> **Ytterligare tillägg för ad hoc-frågeanvändare** kan köpas för att öka kundernas behörigheter för ad hoc-frågor. <ul><li>+5 ytterligare samtidiga användare per paket</li><li>+1 ytterligare fråga som körs samtidigt per paket</li></ul> | **Beräkna timmar**: <ul><li>Variabel (omfång baserad på kundens ansökningsrättigheter)</li></ul> **Beräkna timmar** är ett mått på hur lång tid det tar för Query Service-motorn att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
+| Licensmått | **Fråga om samtidighet för användare**: <ul><li>1 samtidig användare (Real-Time CDP, Adobe Journey Optimizer) &#x200B;</li><li>5 samtidiga användare (Customer Journey Analytics) &#x200B;</li></ul> **Frågesamtidighet**: <ul><li>1 fråga som körs samtidigt (alla program) &#x200B;</li></ul> **Ytterligare tillägg för ad hoc-frågeanvändare** kan köpas för att öka kundernas behörigheter för ad hoc-frågor. <ul><li>+5 ytterligare samtidiga användare per paket</li><li>+1 ytterligare fråga som körs samtidigt per paket</li></ul> | **Beräkna timmar**: <ul><li>Variabel (omfång baserad på kundens ansökningsrättigheter)</li></ul> **Beräkna timmar** är ett mått på hur lång tid det tar för Query Service-motorn att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
 | Frågekörningsgränssnitt | <ul><li>Användargränssnitt för frågetjänst</li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li></ul> | <ul><li>Frågegränssnitt </li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li><li>REST API:er </li></ul> |
 | Frågeresultat returnerade via | Klientgränssnitt | Härledd datauppsättning lagrad i datasjön |
 | Resultatgräns | <ul><li>Frågegränssnitt - 100 rader</li><li>Tredjepartsklient - 50 000</li><li>[!DNL PostgresSQL] klient - 50 000</li></ul> | <ul><li>Frågegränssnitt (ingen övre gräns till rader)</li><li>Tredjepartsklienter (ingen övre gräns för rader)</li><li>[!DNL PostgresSQL] klient (ingen övre gräns till rader)</li><li>REST API:er (ingen övre gräns för rader)</li></ul> |

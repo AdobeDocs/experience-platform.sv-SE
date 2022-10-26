@@ -1,9 +1,10 @@
 ---
 title: Datatypen för externa källsystemsgranskningsattribut
 description: Det här dokumentet innehåller en översikt över datatypen XDM (External Source System Audit Attributes Experience Data Model).
-source-git-commit: 8bf0c63f33ae9cbfb01d4db9e5220c6762575c5b
+exl-id: ebdd8707-9675-4232-a5b7-4e4a481d706a
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '204'
 ht-degree: 1%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Den här datatypen är endast tillgänglig för organisationer som har tillgång till B2B-utgåvan av kunddataplattformen i realtid.
+>Den här datatypen är endast tillgänglig för organisationer som har tillgång till B2B-utgåvan av Adobe Real-time Customer Data Platform.
 
 [!UICONTROL External Source System Audit Attributes] är en XDM-datatyp (Standard Experience Data Model) som samlar in granskningsinformation om ett externt källsystem.
 

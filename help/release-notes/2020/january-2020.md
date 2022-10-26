@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 exl-id: e488a50c-2a87-4649-b3a4-f9d45cb12fcb
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '885'
 ht-degree: 3%
@@ -91,13 +91,13 @@ Mer information om källor finns i [källöversikt](../../sources/home.md)
 
 ## Mål  {#destinations}
 
-I [CDP i realtid](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Real-Time CDP](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 |--- | ---|
-| Stöd för åtkomstkontrollsbehörigheter | Funktionen Destinationer i CDP i realtid fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. |
+| Stöd för åtkomstkontrollsbehörigheter | Funktionen Destinationer i Real-Time CDP fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. |
 
 **Åtkomstkontrollbehörigheter**
 

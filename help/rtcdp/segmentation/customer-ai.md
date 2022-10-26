@@ -1,19 +1,18 @@
 ---
 keywords: rtcdp segment;segment builder rtcdp;rtcdp segment;customer ai rtcdp
-title: Kund-AI i kunddataplattformen i realtid
+title: Kund-AI i Real-time Customer Data Platform
 description: En översikt över kundens AI och hur den kan bidra till att generera poäng för specifika resultat som konverteringar eller bortfall.
-translation-type: tm+mt
-source-git-commit: de2f4b16677ec6e820903b1e586213a132b126be
+exl-id: 40210196-3c02-4d82-8692-628f2a46b3b5
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '302'
 ht-degree: 0%
 
 ---
 
+# Kund-AI i Real-time Customer Data Platform
 
-# Kund-AI i kunddataplattformen i realtid
-
-Med kundens AI, en inbäddad AI-funktion i kunddataplattformen i realtid, kan marknadsförarna generera individuella bakgrundsmusik för ett specifikt resultat som konverteringar eller bortfall.
+Med kundens AI, en inbäddad AI-funktion i Adobe Real-time Customer Data Platform, kan marknadsförarna generera individuella bakgrundsmusik för ett specifikt resultat som konverteringar eller bortfall.
 
 Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund kan tänkas göra och varför. Dessutom kan ni dra nytta av kundernas AI-prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen. Kundens AI kan hjälpa till med:
 
@@ -24,14 +23,14 @@ Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund
 * Förbättra kundprofiler med inflytelserika faktorer för benägenhetspoäng.
 * Skapa kundsegment baserat på inflytelserika faktorer och benägenhetspoäng.
 
-Kundens AI finns på fliken **[!UICONTROL Services]** under **[!UICONTROL Adobe services]**.
+Kundens AI finns i **[!UICONTROL Services]** flik under **[!UICONTROL Adobe services]**.
 
 ![Kundens AI-plats](../assets/overview/rtcdp-customer-ai.png)
 
 ## Komma igång med kundens AI
 
-För att komma igång med kundens AI måste du följa självstudiekursen [för dataförberedelse](../../intelligent-services/data-preparation.md) och konfigurera inmatningsschemat baserat på ditt användningsfall. Därefter måste du [konfigurera en AI-instans för kund](../../intelligent-services/customer-ai/user-guide/configure.md). När du har konfigurerat en instans skapas en modell där du kan [visa dina insikter och poäng](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa segment för datadriven aktivering.
+För att komma igång med kundens AI måste du följa [självstudiekurs om datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indataschemat baserat på ditt användningsfall. Nästa steg är att du måste [konfigurera en AI-instans för kund](../../intelligent-services/customer-ai/user-guide/configure.md). När du har konfigurerat en instans genereras en modell där du kan [visa era insikter och resultat](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa segment för datadriven aktivering.
 
-Om du vill veta mer om kundens AI går du till [Översikt över AI för kund](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
+Om du vill veta mer om kundens AI kan du börja med att besöka [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)

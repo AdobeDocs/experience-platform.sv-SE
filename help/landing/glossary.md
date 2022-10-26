@@ -5,9 +5,9 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: c0f01efa224bffb5b435e2f247e793edfbc576b9
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '7422'
+source-wordcount: '7430'
 ht-degree: 0%
 
 ---
@@ -118,11 +118,11 @@ ht-degree: 0%
 
 **C5-kontraktsetikett**: A `C5` Användningsetiketten för avtalsdata anger att data inte kan användas för målinriktning mellan webbplatser för intressebaserat innehåll eller annonser. Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls: De uppgifter som samlas in på plats används för att dra slutsatser om en användares intresse. används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska visas baserat på dessa slutsatser.
 
-**C6-kontraktsetikett**: A `C6` värdeetikett för avtalsdata anger att data inte kan användas för annonsmål på plats. Annonsanpassning på plats omfattar val och leverans av annonser på organisationens webbplatser eller i appar eller för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att välja en annons eller göra ett köp.
+**C6-kontraktsetikett**: A `C6` värdeetikett för avtalsdata anger att data inte kan användas för annonsmål på plats. Annonsanpassning på plats omfattar val och leverans av annonser på organisationens webbplatser eller i appar eller för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlade data om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades samt huruvida användarna vidtagit några åtgärder som rör annonsen, som att välja en annons eller göra ett köp.
 
 **C7-kontraktsetikett**: A `C7` värdeetikett för avtalsdata anger att data inte kan användas för målanpassning av innehåll på plats. Med målinriktning mot innehåll på plats kan du välja och leverera innehåll på organisationens webbplatser, eller i appar eller mäta leveransen och effektiviteten av sådant innehåll. Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att välja innehåll.
 
-**C8-kontraktsetikett**: A `C8` Etiketten för användning av avtalsdata anger att data inte kan användas för mätning av organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
+**C8-kontraktsetikett**: A `C8` Etikett för användning av avtalsdata anger att data inte kan användas för mätning av organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
 
 **C9-kontraktsetikett**: A `C9` Etikett för användning av avtalsdata anger att data inte kan användas i arbetsflöden för datavetenskap. Vissa avtal innehåller uttryckliga förbud mot data som används för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
 
@@ -298,7 +298,7 @@ ht-degree: 0%
 
 **Indatafunktion**: En inmatningsfunktion anges i funktionsmappningen och används av en maskininlärningsmodell för att göra prognoser.
 
-**[!DNL Intelligent Services]**: [!DNL Intelligent Services] som [!DNL Attribution AI] och [!DNL Customer AI] är maskininlärningsmodeller som bygger på artificiell intelligens och som kräver att Experience Platform (eller program som är byggda på en plattform som Real-time Customer Data Platform) körs och fungerar.
+**[!DNL Intelligent Services]**: [!DNL Intelligent Services] som [!DNL Attribution AI] och [!DNL Customer AI] är maskininlärningsmodeller som bygger på artificiell intelligens och som kräver att Experience Platform (eller program som är byggda på en plattform som Adobe Real-time Customer Data Platform) körs och fungerar.
 
 **Intressebaserad målinriktning eller personalisering**: Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls:
 
@@ -414,7 +414,7 @@ ht-degree: 0%
 
 ## R
 
-**Real-time Customer Data Platform**: [!DNL Real-time Customer Data Platform] sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan.
+**Real-time Customer Data Platform**: Adobe Real-time Customer Data Platform (Real-Time CDP) sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan.
 
 **Kundprofil i realtid**: Kundprofil i realtid (kallas ibland profil) ger en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. Med en profil kan ni sammanställa kunddata i enskilda profiler som erbjuder åtgärdbara, tidsstämplade konton för varje kundinteraktion.
 

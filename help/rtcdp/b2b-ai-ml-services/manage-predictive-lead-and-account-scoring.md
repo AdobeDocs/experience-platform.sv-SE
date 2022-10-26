@@ -1,16 +1,16 @@
 ---
-title: Hantera prediktiv lead- och kontobedömning i realtid med CDP B2B
+title: Hantera prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: Det här dokumentet innehåller information om hur du hanterar funktionen för prediktiv lead och kontobedömning i Experience Platform CDP B2B.
 exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
-source-git-commit: 99b3b2d73b87a64fcaa9ba51563c0942fc21a0dc
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '964'
 ht-degree: 2%
 
 ---
 
-# Hantera prediktiv lead- och kontobedömning i Real-time Customer Data Platform, B2B Edition
+# Hantera prediktiv lead- och kontobedömning i Adobe Real-time Customer Data Platform, B2B Edition
 
 >[!NOTE]
 >
@@ -134,8 +134,8 @@ Du kommer tillbaka till **[!UICONTROL Services]** där du inte längre kan se po
 | 402 | FEL 402. Leads-AI-pipeline har stoppats: det finns inte tillräckligt med giltiga kontakter för att göra en kontaktbedömning. Antal kontakter: {}. |
 | 403 | FEL 403. Leads-AI-pipeline har stoppats: inte tillräckligt med aktivitetsvolym för modellutbildning. Antal händelser: {}. |
 | 404 | FEL 404. Leads-AI-pipeline har stoppats: inte tillräckligt många konverteringar för modellutbildning. Antal konverteringar: {}. |
-| 405 | FEL 405. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Endast {} procent av kontona har aktivitet. |
-| 406 | FEL 406. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Endast {} procent av kontakterna har aktivitet. |
+| 405 | FEL 405. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Only {} percent of accounts has activity. |
+| 406 | FEL 406. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Only {} percent of contacts has activity. |
 | 407 | FEL 407. Leads-AI-pipeline har stoppats: typer av bedömningsdataaktiviteter matchar inte utbildningsdata. |
 | 408 | FEL 408. Leads-AI-pipeline har stoppats: Felfrekvensen är för hög för aktivitetsfunktioner. Frekvens saknas: {}. |
 | 409 | FEL 409. Leads-AI-pipeline har stoppats: för lågt test auc. Testa auc: {}. |

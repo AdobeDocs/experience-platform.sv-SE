@@ -2,11 +2,11 @@
 keywords: profil;kundprofil i realtid;felsökning;skyddsprofiler;riktlinjer;gräns;enhet;primär enhet;dimension;RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp;b2b;cdp;
 title: StandardguarDRAG för Real-time Customer Data Platform B2B Edition
 type: Documentation
-description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardgränser för användning och frekvens som hjälper dig att modellera data för optimala systemprestanda med Real-time Customer Data Platform B2B Edition.
+description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardgränser för användning och frekvens som hjälper dig att modellera data för optimala systemprestanda med Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1601'
+source-wordcount: '1602'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Gränserna som beskrivs i det här dokumentet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+>Gränserna som beskrivs i det här dokumentet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 Med Real-time Customer Data Platform B2B Edition kan ni leverera personaliserade flerkanalsupplevelser baserat på beteendeinsikter och kundattribut i form av kundprofiler i realtid och kontoprofiler. För att stödja den nya metoden för profiler använder Experience Platform en högdenormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen.
 
@@ -45,11 +45,11 @@ Följande skyddsritningar ger rekommenderade gränser vid modellering av kundpro
 
 >[!NOTE]
 >
->De datamodellsbegränsningar som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+>De datamodellsbegränsningar som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Data för XDM-standardklassen för CDP B2B Edition i realtid | 60 | Mjuk | Högst 60 datauppsättningar rekommenderas som utnyttjar XDM-klasserna (Experience Data Model) som tillhandahålls av CDP B2B Edition i realtid. En fullständig lista över XDM-standardklasser för B2B-fall finns i [scheman i realtidsdokumentationen för CDP B2B Edition](schemas/b2b.md). <br/><br/>*Obs! På grund av karaktären hos Experience Platform standardiserade hybriddatamodell överskrider de flesta kunder inte denna gräns. Om du har frågor om hur du modellerar data, eller om du vill veta mer om anpassade begränsningar, kontaktar du kundtjänstrepresentanten.* |
+| Data för XDM-standardklassen i Real-Time CDP B2B Edition | 60 | Mjuk | Högst 60 datauppsättningar rekommenderas som utnyttjar XDM-klasserna (Experience Data Model) som tillhandahålls av Real-Time CDP B2B Edition. En fullständig lista över XDM-standardklasser för B2B-fall finns i [scheman i Real-Time CDP B2B Edition-dokumentation](schemas/b2b.md). <br/><br/>*Obs! På grund av karaktären hos Experience Platform standardiserade hybriddatamodell överskrider de flesta kunder inte denna gräns. Om du har frågor om hur du modellerar data, eller om du vill veta mer om anpassade begränsningar, kontaktar du kundtjänstrepresentanten.* |
 | Äldre relationer för flera enheter | 20 | Mjuk | Högst 20 multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas. Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
 | Många-till-ett-relationer per XDM-klass | 2 | Mjuk | Högst 2 många-till-en-relationer per XDM-klass rekommenderas. Ytterligare relation bör inte skapas förrän en befintlig relation tas bort eller inaktiveras. Anvisningar om hur du skapar en relation mellan två scheman finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
 
@@ -57,7 +57,7 @@ Följande skyddsritningar ger rekommenderade gränser vid modellering av kundpro
 
 >[!NOTE]
 >
->De datamodellsbegränsningar som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+>De datamodellsbegränsningar som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 >[!NOTE]
 >
->De begränsningar för datastorlek som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+>De begränsningar för datastorlek som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -87,7 +87,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 >[!NOTE]
 >
->De begränsningar för datastorlek som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+>De begränsningar för datastorlek som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -101,7 +101,7 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 
 >[!NOTE]
 >
->De segmenteringsgränser som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+>De segmenteringsgränser som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -109,7 +109,7 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 
 ## Nästa steg
 
-Gränserna som beskrivs i det här dokumentet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardbegränsningar för CDP B2B Edition i realtid finns i kombinationen med de allmänna Adobe Experience Platform-begränsningarna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
+Gränserna som beskrivs i det här dokumentet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsräcken för dokumentation av kundprofildata i realtid](../profile/guardrails.md).
 
 ## Bilaga
 

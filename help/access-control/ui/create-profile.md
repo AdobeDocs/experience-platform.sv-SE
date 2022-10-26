@@ -5,7 +5,7 @@ title: Skapa en ny produktprofil i Adobe Admin Console
 topic-legacy: user guide
 description: Det här dokumentet innehåller de steg som krävs för att skapa en ny produktprofil i Adobe Admin Console. Om du vill börja skapa en ny profil går du till fliken Produktprofiler och klickar på Ny profil.
 exl-id: 47558f03-c3f7-4ead-affb-fcbfd7f1e918
-source-git-commit: 2844ffd7270ffcc2fba4da08dda1aea238cf6c9f
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '302'
 ht-degree: 1%
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # Skapa en ny produktprofil i Adobe Admin Console
 
-Om du vill börja skapa en ny profil går du till fliken **[!UICONTROL Product Profiles]** och väljer **[!UICONTROL New Profile]**.
+Navigera till **[!UICONTROL Product Profiles]** och markera **[!UICONTROL New Profile]**.
 
 ![new-profile](../images/new-profile.png)
 
-Dialogrutan **[!UICONTROL Create a new product profile]** visas där du uppmanas att ange en profil, ett valfritt visningsnamn och en valfri beskrivning. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
+The **[!UICONTROL Create a new product profile]** visas där du uppmanas att ange en profil, ett valfritt visningsnamn och en valfri beskrivning. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -28,14 +28,14 @@ Nästa skärm uppmanar dig att välja vilka plattformstjänster som ska ingå i 
 
 ![enable-services](../images/enable-services.png)
 
-Kunder som är berättigade till B2B- eller B2P-versionen har tillgång till B2B-gränssnittet. B2B-gränssnittet kan etableras för användare via [!UICONTROL Enable services menu]. Markera växlingsknappen bredvid [!UICONTROL B2B UI] för att aktivera tjänsten för en viss produktprofil och välj sedan **[!UICONTROL Save]**.
+Kunder som är berättigade till B2B- eller B2P-versionen har tillgång till B2B-gränssnittet. B2B-gränssnittet kan etableras för användare via [!UICONTROL Enable services menu]. Markera växlingsknappen bredvid [!UICONTROL B2B UI] för att aktivera tjänsten för en viss produktprofil och sedan välja **[!UICONTROL Save]**.
 
-Med användargränssnittet för B2B kan användare visa B2B-arbetsflöden för att hantera konton och affärsmöjligheter samt skapa B2B-relaterade segment. Mer information finns i dokumentationen om [[!DNL Real-time Customer Data Platform B2B Edition]](../../rtcdp/b2b-overview.md).
+Med användargränssnittet för B2B kan användare visa B2B-arbetsflöden för att hantera konton och affärsmöjligheter samt skapa B2B-relaterade segment. Mer information finns i dokumentationen om [[!DNL Adobe Real-Time Customer Data Platform B2B Edition]](../../rtcdp/b2b-overview.md).
 
 ![enable-b2b](../images/enable-b2b.png)
 
-Den nya produktprofilen har skapats och du omdirigeras till profilens [sida Redigera behörigheter](#edit-permissions). Mer information om hur du hanterar produktprofiler när de har skapats finns i avsnitten [hantera behörigheter](#manage-permissions-for-a-product-profile) och [hantera användare](#manage-users-for-a-product-profile).
+Den nya produktprofilen har skapats och du omdirigeras till profilens [redigera behörighetssida](#edit-permissions). Se avsnitten om [hantera behörigheter](#manage-permissions-for-a-product-profile) och [hantera användare](#manage-users-for-a-product-profile) om du vill ha mer information om hur du hanterar produktprofiler när de har skapats.
 
 ## Nästa steg
 
-När en ny produktprofil har skapats kan du gå vidare till nästa steg för att [hantera behörigheter för en produktprofil](permissions.md)
+När du har skapat en ny produktprofil kan du gå vidare till nästa steg i [hantera behörigheter för en produktprofil](permissions.md)
