@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;Målgruppshanterarens källko
 title: Skapa en Adobe Audience Manager Source Connection i användargränssnittet
 description: I den här självstudiekursen får du hjälp med att skapa en källanslutning för Adobe Audience Manager så att du kan hämta data om konsumentupplevelsehändelser till plattformen med hjälp av användargränssnittet.
 exl-id: 90c4a719-aaad-4687-afd8-7a1c0c56f744
-source-git-commit: 90a917ea2b623079f26c67b776dd46b62531c7da
+source-git-commit: 9cdb8933d166445bf41ed314d7ffc7d5762e1adb
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ När du har identifierat och markerat de segment som du vill använda visas en n
 ![select-data](../../../../images/tutorials/create/aam/select-data.png)
 
 Du kan också välja **[!UICONTROL Select all segments]** och **[!UICONTROL Select all traits]** rutor. Om du markerar alla segment kommer Audience Manager segment att få plats på plattformen, och om du väljer alla egenskaper aktiveras alla egenskaper från Audience Manager.
+
+>[!WARNING]
+>
+>Intag av stora Audience Manager-segmentpopulationer har en direkt inverkan på det totala antalet profiler när du för första gången skickar ett Audience Manager-segment till plattformen via Audience Manager. Det innebär att om du väljer alla segment kan det eventuellt leda till ett profilantal som överskrider licensanvändningsbehörigheten. Granska [användningsutrymme för licens](../../../../../dashboards/guides/license-usage.md) innan du fortsätter.
 
 När du är klar väljer du **[!UICONTROL Next]**
 
