@@ -1,9 +1,9 @@
 ---
 title: (Beta) Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbplatsinnehåll och kampanjer, anpassade till kundsegment som skapats och hanteras inom Real-Time CDP.
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 566f26ec0f13bfaceb0ee59f3e4c72e767bc8cc9
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '665'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 > 
 >The **[!UICONTROL Adobe Commerce]** anslutningsprogrammet är i betaversion och endast tillgängligt för ett visst antal kunder.
 
-The [!DNL Adobe Commerce] med målanslutningen kan du markera ett eller flera Experience Platform-segment som ska aktiveras för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan du sedan välja de Adobe Experience Platform-segmenten för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;köp 2 få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna med hjälp av kampanjerbjudanden som alla är anpassade efter Adobe Experience Platform segment.
+The [!DNL Adobe Commerce] med målanslutningen kan du välja ett eller flera Real-Time CDP-segment som ska aktiveras för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan du sedan välja de Real-Time CDP-segmenten för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;köp 2 få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna med hjälp av kampanjerbjudanden som alla är anpassade efter Adobe Real-Time CDP segment.
 
 <!--## Use cases {#use-cases}
 
@@ -90,7 +90,7 @@ Läs [Aktivera profiler och segment för att profilera mål för begäran](../..
 
 ## Nästa steg i [!DNL Adobe Commerce]
 
-Nu när du har konfigurerat [!DNL Commerce] mål inom Experience Platform måste du konfigurera [!DNL Commerce Admin] för att importera de Real-Time CDP-segment du har skapat. Se [[!DNL Commerce] dokumentation](https://docs.magento.com/user-guide/marketing/customer-segment-rtcdp.html) om du vill veta mer.
+Nu när du har konfigurerat [!DNL Commerce] mål inom Experience Platform måste du konfigurera [!DNL Commerce Admin] för att importera de Real-Time CDP-segment du har skapat. Se [[!DNL Commerce] dokumentation](https://experienceleague.adobe.com/docs/commerce-admin/marketing/promotions/cart-rules/customer-segment-rtcdp.html) om du vill veta mer.
 
 ## Validera dataexport {#exported-data}
 
