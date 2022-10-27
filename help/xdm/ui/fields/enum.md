@@ -5,9 +5,9 @@ title: Definiera uppräkningsfält och föreslagna värden i användargränssnit
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: 1c1797a01a0a4e2cd355399d3f913cb81adf9006
+source-git-commit: 89ada47cb6e0b204d8f2f19e7e9b6f31bf347964
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1222'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,10 @@ I motsats till vad som anges i **[!UICONTROL Suggested values]** kan ange en upp
 När [definiera ett nytt fält](./overview.md#define) i Adobe Experience Platform användargränssnitt och ange typen till [!UICONTROL String]kan du definiera [enum](#enum) eller [föreslagna värden](#suggested-values) för det fältet.
 
 ![Bild som visar alternativet Uppräkning och föreslagna värden aktiverat för ett strängfält i användargränssnittet](../../images/ui/fields/enum/enum-options-selected.png)
+
+Det här dokumentet innehåller information om hur du definierar enum och föreslagna värden i [!UICONTROL Schemas] Arbetsytan i användargränssnittet. Titta på följande video om du vill få en snabb översikt över uppräkningar och föreslagna värden, inklusive hur du konfigurerar dem i användargränssnittet och deras underordnade effekter:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3409501/?quality=12&learn=on)
 
 ## Definiera en uppräkning {#enum}
 
