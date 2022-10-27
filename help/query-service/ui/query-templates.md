@@ -1,7 +1,8 @@
 ---
 title: Frågemallar
 description: Frågemallar är återanvändbara sparade SQL-frågor som kan återanvändas av andra användare för att spara tid och arbete. De kan skapas med Frågeredigeraren eller API:t för frågetjänsten och är tillgängliga för användning på alla Experience Platform-datauppsättningar.
-source-git-commit: 5ed822ec16e8e8d38e93370440242ec4c1c01320
+exl-id: e74d058f-bb89-45ed-83cc-2e3a33401270
+source-git-commit: e4526b515dc6f480136615f3aa78f38f3e43a60f
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 1%
@@ -26,9 +27,11 @@ Du kan skapa frågemallar på två sätt, antingen genom att göra en POST-förf
 
 I dokumentationen finns instruktioner om hur du använder Frågeredigeraren för att [skriva](./user-guide.md#query-authoring) och [spara frågor](./user-guide.md#saving-queries). När du har namngett och sparat frågan kan den återanvändas som en frågemall från [!UICONTROL Browse] -fliken.
 
-På arbetsytan Frågor i plattformsgränssnittet väljer du **[!UICONTROL Browse]** om du vill visa en lista med tillgängliga sparade frågor.
+På arbetsytan Frågor i plattformsgränssnittet väljer du **[!UICONTROL Templates]** om du vill visa en lista med tillgängliga sparade frågor.
 
-![Frågearbetsytan med fliken Bläddra markerad.](../images/ui/query-templates/query-templates.png)
+<!-- This may need updating idf the Schedule are added to a separate Tab -->
+
+![Frågearbetsytan med fliken Mallar markerad.](../images/ui/query-templates/query-templates.png)
 
 Om du vill hitta relevant mallinformation väljer du en frågemall i den tillgängliga listan för att öppna informationspanelen.
 

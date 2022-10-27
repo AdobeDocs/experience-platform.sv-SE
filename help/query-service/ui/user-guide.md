@@ -5,10 +5,10 @@ title: Användargränssnittshandbok för frågeredigeraren
 topic-legacy: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: b4f4549e49eb8b37bd4209c5bcf01c5622e8fbd1
+source-git-commit: 9c7068b4209a7c85c444b1cc83415747b93bacb2
 workflow-type: tm+mt
-source-wordcount: '1812'
-ht-degree: 1%
+source-wordcount: '1941'
+ht-degree: 0%
 
 ---
 
@@ -26,7 +26,7 @@ Mer information om begrepp och funktioner i [!DNL Query Service], se [Översikt 
 
 [!DNL Query Editor] tar några sekunder att initiera och ansluta till [!DNL Query Service] när den öppnas. Konsolen talar om när den är ansluten, vilket visas nedan. Om du försöker köra en fråga innan redigeraren har anslutit, fördröjs körningen tills anslutningen är klar.
 
-![Bild](../images/ui/query-editor/connect.png)
+![Frågeredigerarens konsolutdata vid den första anslutningen.](../images/ui/query-editor/connect.png)
 
 ### Hur frågor körs från [!DNL Query Editor] {#run-a-query}
 
@@ -40,13 +40,13 @@ Använda [!DNL Query Editor]kan du skriva, köra och spara frågor om kundupplev
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna [!DNL Query Service] arbetsyta. Nästa, välj **[!UICONTROL Create Query]** längst upp till höger på skärmen för att börja skriva frågor. Den här länken är tillgänglig från någon av sidorna i [!DNL Query Service] arbetsyta.
 
-![Bild](../images/ui/query-editor/create-query.png)
+![Översiktsfliken i arbetsytan Frågor med frågan Skapa markerad.](../images/ui/query-editor/create-query.png)
 
 ### Skriver frågor {#writing-queries}
 
-[!UICONTROL Query Editor] är organiserat för att göra det så enkelt att skriva frågor som möjligt. Skärmbilden nedan visar hur redigeraren visas i användargränssnittet, med **Spela upp** och SQL-postfält är markerade.
+[!UICONTROL Query Editor] är organiserat för att göra det så enkelt att skriva frågor som möjligt. Skärmbilden nedan visar hur redigeraren visas i användargränssnittet, med SQL-postfältet och **Spela upp** markerad.
 
-![Bild](../images/ui/query-editor/editor.png)
+![Frågeredigeraren med SQL-indatafältet och uppspelning markerat.](../images/ui/query-editor/editor.png)
 
 För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågor med begränsningar för antalet rader som returneras. Exempel, `SELECT fields FROM table WHERE conditions LIMIT number_of_rows`. När du har verifierat att frågan ger det förväntade resultatet tar du bort gränserna och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata.
 
@@ -54,15 +54,15 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågo
 
 - **Automatisk syntaxmarkering:** Gör det enklare att läsa och ordna SQL.
 
-![Bild](../images/ui/query-editor/syntax-highlight.png)
+![En SQL-sats i Frågeredigeraren som visar färgmarkering för syntaxen.](../images/ui/query-editor/syntax-highlight.png)
 
 - **SQL-nyckelord har slutförts automatiskt:** Börja skriva frågan, använd sedan piltangenterna för att navigera till önskad term och trycka på **Retur**.
 
-![Bild](../images/ui/query-editor/syntax-auto.png)
+![Några tecken i SQL med listrutan Komplettera automatiskt som innehåller alternativ från Frågeredigeraren.](../images/ui/query-editor/syntax-auto.png)
 
 - **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn som du vill använda `SELECT` navigera sedan till tabellen du letar efter med piltangenterna och tryck på **Retur**. När en tabell är markerad identifieras fält i tabellen automatiskt.
 
-![Kommandoradsgränssnittet i Frågeredigeraren med förslag på listrutor.](../images/ui/query-editor/tables-auto.png)
+![Indata från Frågeredigeraren med förslag på listtabellnamn.](../images/ui/query-editor/tables-auto.png)
 
 ### Växla mellan automatisk komplettering av användargränssnittskonfigurationen {#auto-complete}
 
@@ -94,17 +94,17 @@ Välj lämpligt alternativ för att inaktivera funktionen för automatisk komple
 
 [!DNL Query Editor] validerar automatiskt en fråga medan du skriver den, vilket ger generisk SQL-validering och specifik körningsvalidering. Om en röd understrykning visas under frågan (som bilden nedan visar) representerar den ett fel i frågan.
 
-![Bild](../images/ui/query-editor/syntax-error-highlight.png)
+![Indata från Frågeredigeraren som visar SQL understruket i rött för att indikera ett fel.](../images/ui/query-editor/syntax-error-highlight.png)
 
 När fel upptäcks kan du visa de specifika felmeddelandena genom att hovra över SQL-koden.
 
-![Bild](../images/ui/query-editor/linting-error.png)
+![En dialogruta med ett felmeddelande.](../images/ui/query-editor/linting-error.png)
 
 ### Frågeinformation {#query-details}
 
-När du visar en fråga i [!DNL Query Editor], **[!UICONTROL Query Details]** innehåller verktyg för att hantera den markerade frågan.
+Välj en sparad mall från [!UICONTROL Templates] för att visa den i frågeredigeraren. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan.
 
-![Bild](../images/ui/query-editor/query-details.png)
+![Frågeredigeraren med frågeinformationspanelen markerad.](../images/ui/query-editor/query-details.png)
 
 På den här panelen kan du generera en utdatamängd direkt från användargränssnittet, ta bort eller namnge den visade frågan och lägga till ett schema i frågan.
 
@@ -118,11 +118,13 @@ På den här panelen visas även användbara metadata som den senaste gången fr
 
 Om du vill lägga till ett schema i en fråga väljer du **[!UICONTROL Add schedule]**.
 
-![Bild](../images/ui/query-editor/add-schedule.png)
+<!-- Cannot update this image below yet. Believe schedules tab is being added to the Query Editor -->
+
+![Frågeredigeraren med Lägg till schema markerat.](../images/ui/query-editor/add-schedule.png)
 
 The **[!UICONTROL Schedule details]** visas. På den här sidan kan du välja frekvens för den schemalagda frågan, datum som den schemalagda frågan ska köras samt vilken datamängd som frågan ska exporteras till.
 
-![Bild](../images/ui/query-editor/schedule-details.png)
+![Panelen Schemainformation är markerad.](../images/ui/query-editor/schedule-details.png)
 
 Du kan välja följande alternativ för **[!UICONTROL Frequency]**:
 
@@ -152,7 +154,9 @@ Sidan med frågeinformation visas igen och visar nu information om det nyligen s
 
 Du kan ta bort ett schema genom att välja **[!UICONTROL Delete a schedule]**.
 
-![Bild](../images/ui/query-editor/delete-schedule.png)
+<!-- Cannot update this image below yet. Believe schedules tab is being added to the Query Editor -->
+
+![Frågeredigeraren med Inaktivera schema och Ta bort schema markerat.](../images/ui/query-editor/delete-schedule.png)
 
 >[!IMPORTANT]
 >
@@ -184,7 +188,7 @@ Så här kör du en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren el
 
 Konsolen ger information om status och funktion för [!DNL Query Service]. Konsolen visar anslutningsstatus för [!DNL Query Service], frågeåtgärder som körs och felmeddelanden som är ett resultat av dessa frågor.
 
-![Bild](../images/ui/query-editor/console.png)
+![Fliken Konsol i frågeredigeringskonsolen.](../images/ui/query-editor/console.png)
 
 >[!NOTE]
 >
@@ -194,7 +198,7 @@ Konsolen ger information om status och funktion för [!DNL Query Service]. Konso
 
 När en fråga är klar visas resultatet i **[!UICONTROL Results]** -flik, bredvid **[!UICONTROL Console]** -fliken. I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se [skapa datauppsättningar, genomgång](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
 
-![Bild](../images/ui/query-editor/query-results.png)
+![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
 
 ## Kör frågor med [!DNL Query Service] video med självstudiekurser {#query-tutorial-video}
 

@@ -2,9 +2,9 @@
 title: Attributbaserad åtkomstkontroll har stöd för ad hoc-scheman
 description: En guide som begränsar åtkomsten till datafält i ad hoc-scheman som genererats via Adobe Experience Platform Query Service.
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: d955473fb9123a6fc2384cde4073c713b921f582
+source-git-commit: 91f318596bf268aa93e8b2df9c13774aab76d13a
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1028'
 ht-degree: 0%
 
 ---
@@ -56,13 +56,13 @@ Om du vill redigera dataetiketter för ditt ad hoc-schema väljer du [!UICONTROL
 
 ## Redigera etiketter för schemat eller fältet
 
-Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![](../images/data-governance/edit-icon.png)) till sidan av schemats namn under [!UICONTROL Labels] -fliken.
+Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![En pennikon.](../images/data-governance/edit-icon.png)) till sidan av schemats namn under [!UICONTROL Labels] -fliken.
 
 ![Vyn Etiketter på arbetsytan för scheman med pennikonen markerad.](../images/data-governance/edit-entire-schema-labels.png)
 
 Om du vill använda en etikett på ett befintligt fält väljer du ett eller flera fält i listan följt av [!UICONTROL Edit governance labels] till höger.
 
-![Vyn Etiketter på arbetsytan för scheman med alternativet Redigera styrningsetiketter markerat på höger sidofält.](../images/data-governance/edit-governance-labels.png)
+![Vyn Etiketter på arbetsytan för scheman med alternativet Redigera styrningsetiketter markerat i den högra sidofältet.](../images/data-governance/edit-governance-labels.png)
 
 ## Redigera etikettpekaren
 

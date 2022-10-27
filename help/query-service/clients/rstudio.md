@@ -5,9 +5,9 @@ title: Anslut RStudio till frågetjänsten
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: 9ab3d69553dee9fdb97472edfa3f812133ee1bb1
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '385'
+source-wordcount: '403'
 ht-degree: 0%
 
 ---
@@ -20,29 +20,29 @@ Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] med Adobe
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL RStudio] och känner till hur den används. Mer information om [!DNL RStudio] finns i [officiell [!DNL RStudio] dokumentation](https://rstudio.com/products/rstudio/).
 > 
-> Om du vill använda RStudio med Query Service måste du installera drivrutinen PostgreSQL JDBC 4.2. Du kan hämta JDBC-drivrutinen från [PostgreSQL officiell plats](https://jdbc.postgresql.org/download/).
+> Dessutom, att använda [!DNL RStudio] med Query Service måste du installera [!DNL PostgreSQL] JDBC 4.2-drivrutin. Du kan hämta JDBC-drivrutinen från [[!DNL PostgreSQL] officiell webbplats](https://jdbc.postgresql.org/download/).
 
 ## Skapa en [!DNL Query Service] anslutningen i [!DNL RStudio] gränssnitt
 
 Efter installation [!DNL RStudio]måste du installera RJDBC-paketet. Gå till **[!DNL Packages]** och markera **[!DNL Install]**.
 
-![](../images/clients/rstudio/install-package.png)
+![The [!DNL RStudio] dashboard med Paket och Installera markerat.](../images/clients/rstudio/install-package.png)
 
 Ett popup-fönster visas med **[!DNL Install Packages]** skärm. Se till att **[!DNL Repository (CRAN)]** är markerat för **[!DNL Install from]** -avsnitt. Värdet för **[!DNL Packages]** bör `RJDBC`. Säkerställ **[!DNL Install dependencies]** är markerat. När du har bekräftat att alla värden är korrekta väljer du **[!DNL Install]** för att installera paketen.
 
-![](../images/clients/rstudio/install-jrdbc.png)
+![Dialogrutan Install Packages med RJDBC är angiven i fältet Packages och Install är markerad.](../images/clients/rstudio/install-jrdbc.png)
 
-Nu när RJDBC-paketet har installerats startar du om RStudio för att slutföra installationen.
+Nu när RJDBC-paketet har installerats startar du om [!DNL RStudio] för att slutföra installationen.
 
-När RStudio har startats om kan du ansluta till frågetjänsten. Välj **[!DNL RJDBC]** i **[!DNL Packages]** och ange följande kommando i konsolen:
+Efter [!DNL RStudio] har startats om kan du nu ansluta till frågetjänsten. Välj **[!DNL RJDBC]** i **[!DNL Packages]** och ange följande kommando i konsolen:
 
 ```console
 pgsql <- JDBC("org.postgresql.Driver", "{PATH TO THE POSTGRESQL JDBC JAR}", "`")
 ```
 
-Där {PATH TO THE POSTGRESQL JDBC JAR} representerar sökvägen till PostgreSQL JDBC JAR som installerades på datorn.
+Plats `{PATH TO THE POSTGRESQL JDBC JAR}` representerar sökvägen till [!DNL PostgreSQL] JDBC JAR som installerades på datorn.
 
-Nu kan du skapa anslutningen till frågetjänsten genom att ange följande kommando i konsolen:
+Nu kan du skapa anslutningen till frågetjänsten. Ange följande kommando i konsolen:
 
 ```console
 qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_NAME}?user={USERNAME}&password={PASSWORD}&sslmode=require")
@@ -54,7 +54,7 @@ qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_
 
 Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md). Logga in på [!DNL Platform]väljer **[!UICONTROL Queries]**, följt av **[!UICONTROL Credentials]**.
 
-![](../images/clients/rstudio/connection-rjdbc.png)
+![Konsolutdata i [!DNL RStudio] från anslutningen till frågetjänsten.](../images/clients/rstudio/connection-rjdbc.png)
 
 ## Skriver frågor
 

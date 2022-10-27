@@ -5,9 +5,9 @@ title: PostgreSQL Source Connector - översikt
 topic-legacy: overview
 description: Lär dig hur du ansluter PostgreSQL till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 27b891c5-5fc5-4539-8f98-e3a53e2eefe3
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL PostgreSQ
 
 ## Anslut [!DNL PostgreSQL] till [!DNL Platform] använda API:er
 
-- [Skapa en PostgreSQL-basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/postgres.md)
+- [Skapa en [!DNL PostgreSQL] basanslutning med API:t för Flow Service](../../tutorials/api/create/databases/postgres.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)
 - [Skapa ett dataflöde för en datakälla med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL PostgreSQL] till [!DNL Platform] med användargränssnittet
 
-- [Skapa en PostgreSQL-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/postgres.md)
+- [Skapa en [!DNL PostgreSQL] källanslutning i användargränssnittet](../../tutorials/ui/create/databases/postgres.md)
 - [Skapa ett dataflöde för en datakällanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)

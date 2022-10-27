@@ -5,9 +5,9 @@ title: Anslut sökare till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Looker till Adobe Experience Platform Query Service.
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
@@ -22,15 +22,15 @@ Det här dokumentet innehåller stegen för anslutning [!DNL Looker] med Adobe E
 
 Efter inloggning [!DNL Looker], markera **[!DNL Admin]**, följt av **[!DNL Connections]**.
 
-![](../images/clients/looker/click-admin-connections.png)
+![The [!DNL Looker] Kontrollpanel med anslutningar markerade på den nedrullningsbara menyn Admin.](../images/clients/looker/click-admin-connections.png)
 
 På den här sidan väljer du **[!DNL New Connection]**.
 
-![](../images/clients/looker/click-new-connection.png)
+![Arbetsytan Anslutningar med Ny anslutning markerad.](../images/clients/looker/click-new-connection.png)
 
 Här kan du fylla i information om anslutningsinställningarna.
 
-![](../images/clients/looker/new-connection.png)
+![Sidan Anslutningsinställningar för en ny anslutning.](../images/clients/looker/new-connection.png)
 
 - **[!DNL Name]:** Namnet på anslutningen.
 - **[!DNL Dialect]:** Den dialekt som används för SQL-databasen. [!DNL Query Service] använder **[!DNL PostgreSQL]**.
@@ -47,7 +47,7 @@ Mer information om hur du hittar värd och port, databasnamn och inloggningsuppg
 
 När du har angett anslutningsinformationen väljer du **[!DNL Test These Settings]** för att säkerställa att dina uppgifter fungerar som de ska. Om de gör det visas ett meddelande om att du kan ansluta nedan. Om anslutningen lyckas väljer du **[!DNL Add Connection]** för att skapa din anslutning.
 
-![](../images/clients/looker/click-test-connection.png)
+![Sidan Anslutningsinställningar för en ny anslutning med Testa dessa inställningar är markerad.](../images/clients/looker/click-test-connection.png)
 
 ## Nästa steg
 

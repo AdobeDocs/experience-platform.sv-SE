@@ -1,9 +1,9 @@
 ---
 title: Anslut Jupyter-anteckningsbok till frågetjänst
 description: Lär dig hur du ansluter Jupyter-anteckningsbok med Adobe Experience Platform Query Service.
-source-git-commit: f910deca43ac49d3a3452b8dbafda20ffdf3bf48
+source-git-commit: af37fe3be6b9645965b7477b9b85c5e11fe6fbae
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '611'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL Jupyter Notebo
 
 När du har öppnat en ny [!DNL Jupyter Notebook] webbprogram väljer du **[!DNL New]** listruta följt av **[!DNL Python 3]** för att skapa en ny anteckningsbok. The [!DNL Notebook] redigeraren visas.
 
-![The [!DNL Jupiter Notebook] Fliken Arkiv med [!DNL New dropdown] och [!DNL Python] 3 markerade.](../images/clients/jupyter-notebook/new-notebook.png)
+![The [!DNL Jupiter Notebook] Fliken Arkiv med [!DNL New] listruta och [!DNL Python] 3 markerade.](../images/clients/jupyter-notebook/new-notebook.png)
 
 På första raden i [!DNL Notebook] anger du följande värde: `pip install psycopg2-binary` och markera **[!DNL Run]** i kommandofältet. Ett meddelande om att åtgärden lyckades visas under inmatningsraden.
 

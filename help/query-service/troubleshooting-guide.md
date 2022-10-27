@@ -5,9 +5,9 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 722d7144639d7280ef85c9bfc285e616e7d7fcce
+source-git-commit: 08272f72c71f775bcd0cd7fffcd2e4da90af9ccb
 workflow-type: tm+mt
-source-wordcount: '3737'
+source-wordcount: '3763'
 ht-degree: 1%
 
 ---
@@ -86,15 +86,15 @@ SELECT * FROM customers LIMIT 0;
 - När du har loggat in i Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen i användargränssnittet för att navigera till [!UICONTROL Datasets] kontrollpanel.
 - Datamängderna [!UICONTROL Browse] -fliken öppnas. Du kan använda sökfältet för att förfina de tillgängliga alternativen. Välj en datauppsättning i den lista som visas.
 
-![En datauppsättning som är markerad i plattformsgränssnittet.](./images/troubleshooting/dataset-selection.png)
+![Kontrollpanelen Datamängder i plattformsgränssnittet med sökfältet och en datauppsättning markerad.](./images/troubleshooting/dataset-selection.png)
 
-- The [!UICONTROL Datasets activity] visas. Välj [!UICONTROL Preview dataset] om du vill öppna en dialogruta med XDM-schemat och en tabellvy med separerade data från den markerade datauppsättningen. Mer information finns i [förhandsgranska en datauppsättningsdokumentation](../catalog/datasets/user-guide.md#preview-a-dataset)
+- The [!UICONTROL Datasets activity] visas. Välj **[!UICONTROL Preview dataset]** om du vill öppna en dialogruta med XDM-schemat och en tabellvy med separerade data från den markerade datauppsättningen. Mer information finns i [förhandsgranska en datauppsättningsdokumentation](../catalog/datasets/user-guide.md#preview-a-dataset)
 
-![XDM-schemat och tabellvyn för de separerade data.](./images/troubleshooting/dataset-preview.png)
+![Fliken Datauppsättningsaktivitet på kontrollpanelen Datamängder med datamängden Preview markerad.](./images/troubleshooting/dataset-preview.png)
 
 - Markera ett fält i schemat om du vill visa innehållet i en förenklad kolumn. Kolumnens namn visas ovanför innehållet till höger på sidan. Du bör kopiera det här namnet om du vill använda det för att fråga om den här datauppsättningen.
 
-![Kolumnnamnet för en kapslad datauppsättning som är markerad i användargränssnittet.](./images/troubleshooting/column-name.png)
+![XDM-schemat och tabellvyn för de separerade data. Kolumnnamnet för en kapslad datauppsättning markeras i användargränssnittet.](./images/troubleshooting/column-name.png)
 
 Se dokumentationen för fullständig vägledning om [arbeta med kapslade datastrukturer](./best-practices/nested-data-structures.md) med frågeredigeraren eller en tredjepartsklient.
 +++
@@ -124,7 +124,7 @@ Det kan finnas många orsaker till att en fråga har fastnat under bearbetningen
 - Använd din Adobe ID och ditt lösenord som är registrerat med din Adobe-licens.
 - Välj **[!UICONTROL Help & Support]** i det övre navigeringsfältet.
 
-![Den övre listrutan med hjälp och stöd markerad.](./images/troubleshooting/help-and-support.png)
+![Den översta listrutan i navigeringsfältet med Hjälp och support, Enterprise Support och Kontakta oss är markerade.](./images/troubleshooting/help-and-support.png)
 
 En rullgardinsbanderoll visas med en [!UICONTROL Help and support] -avsnitt. Välj **[!UICONTROL Contact us]** om du vill öppna den virtuella kundtjänstassistenten för Adobe, eller välja **[!UICONTROL Enterprise support]** för dedikerad hjälp för stora organisationer.
 +++

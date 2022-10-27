@@ -3,9 +3,9 @@ keywords: Experience Platform;frågetjänst;frågetjänst;kapslade datastrukture
 title: Arbeta med kapslade datastrukturer i frågetjänsten
 description: Det här dokumentet innehåller ett fungerande exempel för bearbetning och omformning av kapslade datafält med hjälp av CTAS- och INSERT INTO-satser.
 exl-id: 593379fb-88ad-4b14-8d2e-aa6d18129974
-source-git-commit: b2b292dba0cf9ab9adbdff26aa61ef5a2cd5fe86
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '795'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 Adobe Experience Platform Query Service stöder användning av kapslade datafält. Komplexiteten i företagsdatastrukturerna kan göra det svårt att omforma eller bearbeta data. Det här dokumentet innehåller exempel på hur du skapar, bearbetar eller omformar datauppsättningar med komplexa datatyper, inklusive kapslade datastrukturer.
 
-Frågetjänsten tillhandahåller ett PostgreSQL-gränssnitt för att köra SQL-frågor på alla datauppsättningar som hanteras av Experience Platform. Platform stöder användning av antingen primitiva eller komplexa datatyper i tabellkolumner som struktur, arrayer, kartor och djupt inkapslade strukturer, arrayer och kartor. Datauppsättningar kan också innehålla kapslade strukturer där kolumndatatypen kan vara så komplex som en matris med kapslade strukturer, eller en karta med kartor där värdet för ett nyckelvärdepar kan vara en struktur med flera kapslingsnivåer.
+Frågetjänsten tillhandahåller en [!DNL PostgreSQL] för att köra SQL-frågor på alla datauppsättningar som hanteras av Experience Platform. Platform stöder användning av antingen primitiva eller komplexa datatyper i tabellkolumner som struktur, arrayer, kartor och djupt inkapslade strukturer, arrayer och kartor. Datauppsättningar kan också innehålla kapslade strukturer där kolumndatatypen kan vara så komplex som en matris med kapslade strukturer, eller en karta med kartor där värdet för ett nyckelvärdepar kan vara en struktur med flera kapslingsnivåer.
 
 ## Komma igång
 

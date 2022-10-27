@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: Med Adobe Experience Platform Query Service kan du skapa datauppsättningar från användargränssnittet. När en datauppsättning har skapats kan den nås som vilken annan datauppsättning som helst i datasjön och användas för en mängd olika användningsfall.
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 0c2cfe9b0bd839bdf662622283a7563c0417c9a9
+source-git-commit: 228ed51ea056d3593a59bc0eee8d9b767aa74489
 workflow-type: tm+mt
-source-wordcount: '468'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,8 @@ ht-degree: 0%
 
 ## Generera datauppsättningar från Adobe Experience Platform användargränssnitt
 
+<!-- Screenshot for #3 will need to be updated if schedule queries is moved. -->
+
 Så här skapar du datauppsättningar från Adobe Experience Platform användargränssnitt:
 
 1. Skapa en fråga med en ansluten klient och validera utdata. Så här skriver du frågor med [!DNL Query Editor], läsa [!DNL Query Editor] Användargränssnittsguide [om att skriva frågor](./user-guide.md#writing-queries).
@@ -27,13 +29,13 @@ Så här skapar du datauppsättningar från Adobe Experience Platform användarg
 
 3. På panelen Frågeinformation väljer du **[!UICONTROL Output dataset]**.
 
-   ![Välj datauppsättning för utdata](../images/ui/create-datasets/output-dataset.png)
+   ![Fliken Mallar för arbetsytan Frågor med Markera utdata markerad.](../images/ui/create-datasets/output-dataset.png)
 
 4. I dialogrutan som visas anger du ett datauppsättningsnamn som föregås av ditt LDAP-ID. Datauppsättningsnamnet behöver inte vara unikt eller SQL-säkert. Observera att tabellnamnet för datauppsättningen genereras baserat på det datauppsättningsnamn som du skapar här.
 
 5. Ange sedan en beskrivning av datauppsättningen i dialogrutan [!UICONTROL Description] fält och markera **[!UICONTROL Run query]**.
 
-   ![Kör fråga](../images/ui/create-datasets/run-query.png)
+   ![Dialogrutan Utdatauppsättning med datauppsättningsinformation och frågan som körs markerad](../images/ui/create-datasets/run-query.png)
 
 6. När frågan har körts går du till **[!UICONTROL Datasets]** för att visa den datauppsättning du har skapat. Mer information om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i plattformsgränssnittet finns i [Användargränssnittshandbok för datauppsättningar](../../catalog/datasets/user-guide.md).
 

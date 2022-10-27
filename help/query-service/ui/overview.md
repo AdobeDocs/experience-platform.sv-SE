@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: a887c502213e96d6af90af0859da78c2984f89a7
+source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
 workflow-type: tm+mt
-source-wordcount: '634'
+source-wordcount: '687'
 ht-degree: 0%
 
 ---
@@ -26,15 +26,15 @@ The [!DNL Query Editor] gör att du kan skriva och köra frågor utan att använ
 
 ![En zoomad vy med [!DNL Query Editor].](../images/ui/overview/query-editor.png)
 
-## Bläddra {#browse}
+## Mallar {#browse}
 
-The **[!UICONTROL Browse]** -fliken visar frågor som sparats av användare i din organisation. Det är praktiskt att tänka på dessa som frågeprojekt, eftersom frågor som sparas här fortfarande kan vara under uppbyggnad. Frågor som visas på **[!UICONTROL Browse]** -fliken visas även som körningsfrågor i **[!UICONTROL Log]** om de har körts av [!DNL Query Service].
+The **[!UICONTROL Templates]** -fliken visar frågor som sparats av användare i din organisation. Det är praktiskt att tänka på dessa som frågeprojekt, eftersom frågor som sparas här fortfarande kan vara under uppbyggnad. Frågor som visas på **[!UICONTROL Templates]** -fliken visas även som körningsfrågor i **[!UICONTROL Log]** om de har körts av [!DNL Query Service].
 
-![En zoomad vy med fliken Bläddra på kontrollpanelen för frågor som visar flera sparade frågor.](../images/ui/overview/browse.png)
+![En zoomad vy med fliken Mallar på kontrollpanelen Frågor som visar flera sparade frågor.](../images/ui/overview/templates.png)
 
 | Kolumn | Beskrivning |
 | --- | --- |
-| **[!UICONTROL Name]** | Frågenamnet som har skapats av användaren. Du kan välja ett namn för att öppna frågan i [!DNL Query Editor]. Du kan också använda sökfältet för att söka efter namnet på en fråga. Sökningar är skiftlägeskänsliga. |
+| **[!UICONTROL Name]** | Namnfältet är antingen frågenamnet som skapats av användaren eller de första tecknen i SQL-frågan. Alla frågor som skapas via gränssnittet med Frågeredigeraren får i början ett namn. Om frågan skapades via API är namnet på frågan ett fragment av det SQL-uttryck som användes för att skapa frågan. Du kan välja frågenamnet för att öppna frågan i [!DNL Query Editor]. Du kan också använda sökfältet för att söka efter [!UICONTROL Name] för en fråga. Sökningar är skiftlägeskänsliga. |
 | **[!UICONTROL SQL]** | De första tecknen i SQL-frågan. Om du placerar pekaren över koden visas hela frågan. |
 | **[!UICONTROL Modified by]** | Den sista användaren som ändrade frågan. Alla användare i organisationen som har tillgång till [!DNL Query Service] kan ändra frågor. |
 | **[!UICONTROL Last modified]** | Datum och tid för den senaste ändringen av frågan, i webbläsarens tidszon. |

@@ -1,7 +1,7 @@
 ---
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
-source-git-commit: 74175e5e2ce31427ef6ea8d93055d6ca3a8406f4
+source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
 workflow-type: tm+mt
 source-wordcount: '311'
 ht-degree: 0%
@@ -34,4 +34,4 @@ The [!UICONTROL Compute hours] widgeten använder ett linjediagram för att visu
 >
 >The [!UICONTROL Compute hours] widgeten gäller endast för kunder som har Data Distiller-licens för batchfrågor.
 
-![Kontrollpanelen för licensanvändning med widgeten Beräkna timmar markerad.](../images/data-distiller/compute-hours.png)
+![Kontrollpanelen för licensanvändning med widgeten för beräknade timmar markerad.](../images/data-distiller/compute-hours.png)

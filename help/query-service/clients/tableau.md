@@ -5,16 +5,16 @@ title: Anslut tabell till frågetjänst
 topic-legacy: connect
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: 0c20b19c4c34b29c46964d5d87a8646c61055b06
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '298'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Tableau] till frågetjänst
 
-Det här dokumentet beskriver hur du ansluter Tableau till Adobe Experience Platform [!DNL Query Service].
+Det här dokumentet innehåller stegen för anslutning [!DNL Tableau] med Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
@@ -22,17 +22,17 @@ Det här dokumentet beskriver hur du ansluter Tableau till Adobe Experience Plat
 
 Ansluta [!DNL Tableau] till [!DNL Query Service], öppna [!DNL Tableau]och i **[!DNL To a Server]** avsnittsmarkera **[!DNL More]** följt av **[!DNL PostgreSQL]**
 
-![](../images/clients/tableau/open-connection.png)
+![The [!DNL Tableau] kontrollpanel med mer och [!DNL PostgreSQL] markerad.](../images/clients/tableau/open-connection.png)
 
 Nu kan du ange värden som ska kopplas till Adobe Experience Platform. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md). Logga in på [!DNL Platform]väljer **[!UICONTROL Queries]**, följt av **[!UICONTROL Credentials]**.
 
-Kontrollera att du har markerat **[!UICONTROL SSL Required]** innan du försöker ansluta.
+Kontrollera att du har markerat **[!UICONTROL Require SSL]** innan du försöker ansluta.
 
 >[!IMPORTANT]
 >
 >Se [[!DNL Query Service] SSL-dokumentation](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter med `verify-full` SSL-läge.
 
-![](../images/clients/tableau/sign-in.png)
+![The [!DNL PostgreSQL] anslutningsdialogruta med slutförd anslutningsinformation.](../images/clients/tableau/sign-in.png)
 
 >[!IMPORTANT]
 >
@@ -42,7 +42,7 @@ När du har fyllt i alla dina uppgifter väljer du **[!DNL Sign In]** för att f
 
 Du har nu anslutit till Adobe Experience Platform, med en lista över tabellerna på sidan.
 
-![](../images/clients/tableau/connected.png)
+![En ny [!DNL Tableau] Kontrollpanel med frågetjänsttabeller markerade i den vänstra panelen.](../images/clients/tableau/connected.png)
 
 ## Nästa steg
 

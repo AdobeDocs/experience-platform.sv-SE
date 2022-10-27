@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1047'
 ht-degree: 2%
 
 ---
@@ -206,7 +206,7 @@ När du har anslutit till frågetjänsten kan du se alla tillgängliga tabeller 
 
 ### Standardtabellvy
 
-The `\d` -kommandot visar PostgreSQL-standardvyn för listtabeller. Ett exempel på det här kommandots utdata visas nedan:
+The `\d` -kommandot visar standarden [!DNL PostgreSQL] för att visa tabeller. Ett exempel på det här kommandots utdata visas nedan:
 
 ```sql
              List of relations

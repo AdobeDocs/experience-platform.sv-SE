@@ -2,9 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;ansluta;ansluta till frågetjänst;SSL;ssl;sslmode;
 title: SSL-alternativ för frågetjänst
 description: Lär dig mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter i SSL-läge för verifiering.
-source-git-commit: 92dac8e75e1ddda860d255ce1b7d278041c89325
+exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '905'
+source-wordcount: '903'
 ht-degree: 1%
 
 ---
@@ -32,8 +33,8 @@ Skillnaden `sslmode` parametervärden ger olika skyddsnivåer. Genom att krypter
 | `allow` | Delvis | Nej | Säkerhet är inte en prioritet, snabbhet och låga bearbetningskostnader är viktigare. Det här läget väljer bara kryptering om servern har tillgång till det. |
 | `prefer` | Delvis | Nej | Kryptering krävs inte, men kommunikationen krypteras om servern stöder den. |
 | `require` | Ja | Nej | Kryptering krävs för all kommunikation. Nätverket är betrott för att ansluta till rätt server. Server SSL-certifikatvalidering krävs inte. |
-| `verify-ca` | Ja | Beroende på CA-princip | Kryptering krävs för all kommunikation. Servervalidering krävs innan data delas. Detta kräver att du skapar ett rotcertifikat i PostgreSQL-arbetskatalogen. [Mer information finns nedan](#instructions) |
-| `verify-full` | Ja | Ja | Kryptering krävs för all kommunikation. Servervalidering krävs innan data delas. Detta kräver att du skapar ett rotcertifikat i PostgreSQL-arbetskatalogen. [Mer information finns nedan](#instructions). |
+| `verify-ca` | Ja | Beroende på CA-princip | Kryptering krävs för all kommunikation. Servervalidering krävs innan data delas. Detta kräver att du konfigurerar ett rotcertifikat i [!DNL PostgreSQL] arbetskatalog. [Mer information finns nedan](#instructions) |
+| `verify-full` | Ja | Ja | Kryptering krävs för all kommunikation. Servervalidering krävs innan data delas. Detta kräver att du konfigurerar ett rotcertifikat i [!DNL PostgreSQL] arbetskatalog. [Mer information finns nedan](#instructions). |
 
 >[!NOTE]
 >

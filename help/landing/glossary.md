@@ -5,9 +5,9 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b9b33a6c1df0810db32f3253205221fed8957dd5
 workflow-type: tm+mt
-source-wordcount: '7430'
+source-wordcount: '7429'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 **Klass**: I Experience Data Model (XDM) definierar en klass den minsta uppsättning fält som används för att skapa ett schema och definierar basbeteendet för det affärsobjekt som schemat representerar.
 
-**Klient**: En klient är ett externt verktyg eller program som ansluter till [!DNL Query Service] via PostgreSQL-protokoll eller HTTP API.
+**Klient**: En klient är ett externt verktyg eller program som ansluter till [!DNL Query Service] via [!DNL PostgreSQL] eller HTTP API.
 
 **Samling**: I [!DNL Offer Decisioning], är samlingar delmängder av erbjudanden som baseras på fördefinierade villkor som definieras av en marknadsförare, t.ex. erbjudandets kategori.
 

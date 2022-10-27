@@ -5,9 +5,9 @@ title: Koppla DbVisualizer till frågetjänsten
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta DbVisualizer till Adobe Experience Platform Query Service.
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 760b04499edd0374f1aae71600bef074a6f17531
+source-git-commit: 910522cc981bddba86f0a47ded48125c28712032
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Använd sökfältet eller markera [!DNL PostgreSQL] i listrutan med drivrutinsna
 
 På arbetsytan för databasanslutning väljer du **[!DNL Properties]** följt av **[!DNL Driver Properties]** från navigeringssidlisten.
 
-![Arbetsytan Databasanslutning med egenskapsfliken markerad.](../images/clients/dbvisualizer/driver-properties.png)
+![Arbetsytan Databasanslutning med Egenskaper och Drivrutinsegenskaper markerade.](../images/clients/dbvisualizer/driver-properties.png)
 
 Drivrutinsegenskaperna som visas i tabellen nedan rekommenderas för att SSL ska kunna användas med DBVisualizer.
 
@@ -57,7 +57,7 @@ Drivrutinsegenskaperna som visas i tabellen nedan rekommenderas för att SSL ska
 
 The `PGHOST` och `user` värden hämtas från dina Adobe Experience Platform-uppgifter. Logga in på användargränssnittet för plattformen och välj **[!UICONTROL Queries]** från vänster navigering, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md).
 
-![Instrumentpanelen för inloggningsuppgifter med autentiseringsuppgifter är markerad i Experience Platform.](../images/clients/dbvisualizer/query-service-credentials-page.png)
+![Sidan Autentiseringsuppgifter på arbetsytan Experience Platform Frågor med Autentiseringsuppgifter och Utgångsuppgifter markerade.](../images/clients/dbvisualizer/query-service-credentials-page.png)
 
 [!DNL Query Service] erbjuder även icke-utgångsdatum för att möjliggöra en engångskonfiguration med tredjepartsklienter. Läs dokumentationen för [fullständiga anvisningar om hur du genererar och använder ej utgångsdatum](../ui/credentials.md#non-expiring-credentials).
 
@@ -75,7 +75,7 @@ Om du vill kräva ett användar-ID och lösenordsbaserad autentisering varje gå
 
 På panelen Anslutningsautentisering kontrollerar du båda **[!DNL Require Userid]** och **[!DNL Require Password]** kryssrutor markera **[!DNL Apply]**.
 
-![Panelen Anslutningsautentisering med kryssrutorna Userid och Password markerade.](../images/clients/dbvisualizer/connection-authentication.png)
+![Autentiseringspanelen för [!DNL PostgreSQL] Databasanslutning med kryssrutorna Kräv seriell och Lösenord markerade.](../images/clients/dbvisualizer/connection-authentication.png)
 
 ## Anslut till plattform
 
@@ -90,11 +90,11 @@ Om du vill skapa en anslutning väljer du **[!DNL Connection]** på arbetsytan D
 
 När du har angett alla relevanta autentiseringsuppgifter väljer du **[!DNL Connect]**.
 
-![Arbetsytan Databasanslutning med fliken Anslutning och anslutningsknappen markerad.](../images/clients/dbvisualizer/connect.png)
+![The [!DNL PostgreSQL] Arbetsytan Databasanslutning med fliken Anslutning och anslutningsknappen markerad.](../images/clients/dbvisualizer/connect.png)
 
 The [!DNL Connect] visas vid det första tillfället av sessionen.
 
-![Dialogrutan Anslut med databasanvändar- och databaslösenordsfälten är markerade.](../images/clients/dbvisualizer/connect-dialog.png)
+![Connect: [!DNL PostgreSQL] med textfälten Databas-ID och Databaslösenord markerade.](../images/clients/dbvisualizer/connect-dialog.png)
 
 Ange ditt serienummer och lösenord och välj **[!DNL Connect]**. Ett meddelande visas i loggen som bekräftar att anslutningen lyckades.
 

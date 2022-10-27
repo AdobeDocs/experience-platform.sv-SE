@@ -5,9 +5,9 @@ title: Handbok för autentiseringsuppgifter för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: f3052745105df603e547535a12285b6c1d771fa6
+source-git-commit: e4526b515dc6f480136615f3aa78f38f3e43a60f
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1158'
 ht-degree: 0%
 
 ---
@@ -82,9 +82,9 @@ JSON-konfigurationsfilen innehåller information som namn på tekniskt konto, ID
 
 När du har sparat dina genererade inloggningsuppgifter väljer du **[!UICONTROL Close]**. Nu kan du se en lista över alla dina ej förfallna autentiseringsuppgifter.
 
-![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Ej förfallande autentiseringsuppgifter utökat.](../images/ui/credentials/list-credentials.png)
+![Fliken Autentiseringsuppgifter för kontrollpanelen Frågor med avsnittet Ej förfallande autentiseringsuppgifter markerat.](../images/ui/credentials/list-credentials.png)
 
-Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte förfaller väljer du pennikonen (![](../images/ui/credentials/edit-icon.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du ikonen Ta bort (![](../images/ui/credentials/delete-icon.png)).
+Du kan antingen redigera eller ta bort dina uppgifter som inte förfaller. Om du vill redigera en referens som inte förfaller väljer du pennikonen (![En pennikon.](../images/ui/credentials/edit-icon.png)). Om du vill ta bort en autentiseringsuppgift som inte upphör att gälla väljer du ikonen Ta bort (![En papperskorgsikon.](../images/ui/credentials/delete-icon.png)).
 
 När du redigerar en referens som inte förfaller visas ett modalt värde. Du kan uppdatera följande information:
 
@@ -102,7 +102,7 @@ Du kan använda autentiseringsuppgifterna som förfaller eller inte förfaller f
 
 Bilden anger platsen för varje parameter som hittas i användargränssnittet, med undantag för lösenordet för de autentiseringsuppgifter som inte förfaller. Även om inloggningsuppgifterna som inte förfaller anges i JSON-konfigurationsfilerna kan du visa dina förfallande inloggningsuppgifter under **Autentiseringsuppgifter** i användargränssnittet.
 
-![](../images/ui/credentials/expiring-credentials.png)
+![Fliken Autentiseringsuppgifter för arbetsytan Frågor med avsnittet Utgångsuppgifter markerat.](../images/ui/credentials/expiring-credentials.png)
 
 Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till externa klienter.
 

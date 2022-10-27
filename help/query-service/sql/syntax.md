@@ -5,9 +5,9 @@ title: SQL-syntax i frågetjänst
 topic-legacy: syntax
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 5ec37ee797ec297b2e5c275dc0e6091e4ee8ecae
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '3160'
+source-wordcount: '3156'
 ht-degree: 2%
 
 ---
@@ -449,7 +449,7 @@ Exemplet returnerar följande:
 
 I det andra exemplet demonstreras konceptet och tillämpningen av `inline` funktion. Datamodellen för exemplet illustreras i bilden nedan.
 
-![Ett schemadiagram för productListItems](../images/sql/productListItems.png)
+![Ett schemadiagram för productListItems.](../images/sql/productListItems.png)
 
 **Exempel**
 
@@ -485,9 +485,9 @@ SET property_key = property_value
 
 Om du vill returnera värdet för en inställning använder du `SET [property key]` utan `property_value`.
 
-## PostgreSQL-kommandon
+## [!DNL PostgreSQL] kommandon
 
-Underavsnitten nedan täcker de PostgreSQL-kommandon som stöds av Query Service.
+Underavsnitten nedan täcker [!DNL PostgreSQL] kommandon som stöds av frågetjänsten.
 
 ### ANALYSERA TABELL
 
@@ -677,7 +677,7 @@ Mer information om SELECT-standardfrågeparametrarna finns i [SELECT-frågesekti
 | Parametrar | Beskrivning |
 | ------ | ------ |
 | `TEMPORARY` eller `TEMP` | En valfri parameter. Om det anges blir det register som skapas ett temporärt register. |
-| `UNLOGGED` | En valfri parameter. Om det anges kommer tabellen som skapas att vara en ologgad tabell. Mer information om ologgade tabeller finns i [PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/sql-createtable.html). |
+| `UNLOGGED` | En valfri parameter. Om det anges kommer tabellen som skapas att vara en ologgad tabell. Mer information om ologgade tabeller finns i [[!DNL PostgreSQL] dokumentation](https://www.postgresql.org/docs/current/sql-createtable.html). |
 | `new_table` | Namnet på tabellen som ska skapas. |
 
 **Exempel**

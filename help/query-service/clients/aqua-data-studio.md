@@ -5,9 +5,9 @@ title: Anslut Aqua Data Studio till Query Service
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Aqua Data Studio med Adobe Experience Platform Query Service.
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '483'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ The **[!DNL Register Server]** visas. Under **[!DNL General]** flik, välja **[!
 - **[!DNL Host and Port]**: Värdslutpunkten och dess port för [!DNL Query Service]. Du måste använda port 80 för att ansluta till [!DNL Query Service].
 - **[!DNL Database]:** Databasen som ska användas. Använd värdet för plattformsgränssnittets autentiseringsuppgifter `dbname`: `prod:all`.
 
-![Fliken Allmänt i Aqua Data Studio med de inmatningsfält som krävs markerade.](../images/clients/aqua-data-studio/register-server-general-tab.png)
+![The [!DNL Aqua Data Studio] Fliken Allmänt med obligatoriska inmatningsfält markerade.](../images/clients/aqua-data-studio/register-server-general-tab.png)
 
 ### [!DNL Query Service] autentiseringsuppgifter
 
@@ -56,7 +56,7 @@ Välj sedan **[!DNL Driver]** -fliken. Under **[!DNL Parameters]**, ange värdet
 >
 >Se [[!DNL Query Service] SSL-dokumentation](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter med `verify-full` SSL-läge.
 
-![Drivrutinsfliken för Aqua Data Studio med fältet Parametrar markerat.](../images/clients/aqua-data-studio/register-server-driver-tab.png)
+![The [!DNL Aqua Data Studio] Fliken Drivrutin med fältet Parametrar markerat.](../images/clients/aqua-data-studio/register-server-driver-tab.png)
 
 När du har angett anslutningsinformationen väljer du **[!DNL Test Connection]** för att säkerställa att dina uppgifter fungerar som de ska. Om ditt anslutningstest lyckas väljer du **[!DNL Save]** för att registrera servern. En bekräftelsedialogruta visas som bekräftar anslutningen och anslutningen visas på instrumentpanelen. Nu kan du ansluta till servern och visa dess schemaobjekt.
 

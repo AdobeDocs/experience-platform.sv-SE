@@ -5,9 +5,9 @@ title: Experience Platform - översikt
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '1752'
+source-wordcount: '1751'
 ht-degree: 0%
 
 ---
@@ -154,7 +154,7 @@ The **[!UICONTROL Schemas]** kan du skapa och hantera XDM-scheman (Experience Da
 
 The **[!UICONTROL Datasets]** kan du skapa och hantera datauppsättningar. Mer information om datauppsättningar finns i [användarhandbok för datauppsättningar](../catalog/datasets/user-guide.md).
 
-The **[!UICONTROL Queries]** I kan du skapa och hantera frågor, logga SQL-frågor som har gjorts av Adobe Experience Platform Query Service och visa dina PostgreSQL-autentiseringsuppgifter. Mer information om frågor finns i [Användarhandbok för frågetjänsten](../query-service/ui/overview.md).
+The **[!UICONTROL Queries]** kan du skapa och hantera frågor, logga SQL-frågor som har gjorts av Adobe Experience Platform Query Service och visa [!DNL PostgreSQL] autentiseringsuppgifter. Mer information om frågor finns i [Användarhandbok för frågetjänsten](../query-service/ui/overview.md).
 
 The **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper och direktuppspelning. Mer information om övervakning finns i [användarhandbok för övervakning av datainmatning](../ingestion/quality/monitor-data-ingestion.md).
 

@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: cc855d46d594d8a55d26873b25060367cf726926
+source-git-commit: 910522cc981bddba86f0a47ded48125c28712032
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '223'
 ht-degree: 5%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 5%
    - [Översikt över klientanslutningar](clients/overview.md)
    - [SSL-lägen](./clients/ssl-modes.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
-   - [Databasvisualisering](./clients/dbvisulaizer.md)
+   - [DbVisualizer](./clients/dbvisulaizer.md)
    - [Jupyter Notebook](clients//jupyter-notebook.md)
    - [Looker](clients/looker.md)
    - [Postico](clients/postico.md)
