@@ -3,15 +3,21 @@ keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Seg
 title: Målgrupps-API-slutpunkt
 topic-legacy: developer guide
 description: Målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API gör att ni kan hantera målgrupper för er organisation programmatiskt.
-source-git-commit: 2a0c1f55115c541962f7bd3b7b11d367da50ff3b
+exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
+hide: true
+hidefromtoc: true
+source-git-commit: f4ec5b82a14579de5bf228011d14a849898be9f5
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1515'
 ht-degree: 0%
 
 ---
 
-
 # Målgruppsslutpunkt
+
+>[!IMPORTANT]
+>
+>Målgruppens slutpunkt är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 En publik är en samling personer som har liknande beteenden och/eller egenskaper. Dessa samlingar med personer kan genereras antingen med Adobe Experience Platform eller från externa källor. Du kan använda `/audiences` -slutpunkten i segmenterings-API, som gör att du kan hämta, skapa, uppdatera och ta bort målgrupper med programkod.
 

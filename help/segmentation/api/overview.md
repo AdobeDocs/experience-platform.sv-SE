@@ -4,9 +4,9 @@ title: API-guide för segmenteringstjänst
 topic-legacy: guide
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: b48ead4255d50585cd315436ccb9727d86142d4c
+source-git-commit: 6133c3127aaf10243d5472540c29125155c99d7b
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ The [!DNL Segmentation Service] API har flera slutpunkter som gör att du kan ha
 
 Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder, se [API-referens för segmenteringstjänst](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
-## Målgrupper
+<!-- ## Audiences
 
-Målgrupper är en samling personer som delar liknande beteenden och/eller egenskaper. Dessa kan genereras antingen med Platform eller från externa källor. Du kan använda `/audiences` slutpunkt för att hämta alla målgrupper, skapa en ny målgrupp, hämta information om en viss målgrupp, uppdatera en viss målgrupp eller ta bort en viss målgrupp.
+Audiences are a collection of people who share similar behaviors and/or characteristics. These can be generated either by using Platform or from external sources. You can use the `/audiences` endpoint to retrieve all audiences, create a new audience, retrieve details of a specific audience, update a specific audience, or delete a specific audience.
 
-Mer information om hur du använder den här slutpunkten finns i [slutpunktsguide för målgrupper](./audiences.md).
+For more information on using this endpoint, please read the [audiences endpoint guide](./audiences.md). -->
 
 ## Exportera jobb
 
