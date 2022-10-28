@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättig
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 9a8e247784dc51d7dc667b7467042399df700b3c
 workflow-type: tm+mt
-source-wordcount: '2529'
+source-wordcount: '2134'
 ht-degree: 0%
 
 ---
@@ -88,12 +88,12 @@ Data kan inhämtas till ett eller flera system i plattformen, nämligen [!DNL Da
 
 ### Vilka data ska sparas?
 
-Du kan använda både dataöverföringsfilter och förfalloregler (kallas även Tid till live-TTL) för att ta bort data som har blivit föråldrade för dina användningsfall. Vanligtvis förbrukar beteendedata (till exempel analysdata) betydligt mer lagringsutrymme än postdata (till exempel CRM-data). Många plattformsanvändare har till exempel upp till 90 % av de profiler som enbart fylls i av beteendedata, jämfört med postdata. Därför är det viktigt att du hanterar dina beteendedata för att säkerställa att licenserna efterlevs.
+Du kan använda både dataöverföringsfilter och förfalloregler för att ta bort data som har blivit föråldrade för dina användningsfall. Vanligtvis förbrukar beteendedata (till exempel analysdata) betydligt mer lagringsutrymme än postdata (till exempel CRM-data). Många plattformsanvändare har till exempel upp till 90 % av de profiler som enbart fylls i av beteendedata, jämfört med postdata. Därför är det viktigt att du hanterar dina beteendedata för att säkerställa att licenserna efterlevs.
 
 Det finns ett antal verktyg som du kan använda för att hålla dig inom dina licensanvändningsrättigheter:
 
 * [Intag](#ingestion-filters)
-* [Profiltjänst-TTL](#profile-service)
+* [Profilarkiv](#profile-service)
 
 ### Intag {#ingestion-filters}
 
@@ -109,9 +109,7 @@ Injektionsfilter gör att du bara kan hämta in de data som behövs för dina an
 
 {style=&quot;table-layout:auto&quot;}
 
-### Profiltjänst {#profile-service}
-
-Med hjälp av TTL-funktionen (time-to-live) för profiltjänsten kan du tillämpa TTL-värde på data i profilarkivet. På så sätt kan systemet automatiskt ta bort data som har minskat värde över tiden.
+### Profilarkiv {#profile-service}
 
 Profilarkivet består av följande komponenter:
 
@@ -124,53 +122,20 @@ Profilarkivet består av följande komponenter:
 
 {style=&quot;table-layout:auto&quot;}
 
+
+
 #### Dispositionsrapporter för profilarkiv
 
-Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet är uppbyggt. Med hjälp av de här rapporterna kan du fatta välgrundade beslut om hur och var du ska ställa in dina TTL-listor för att optimera din licensanvändning bättre:
+Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet är uppbyggt. Dessa rapporter hjälper er att fatta välgrundade beslut om hur och var era Experience Event-utgångsdatum ska anges för att optimera er licensanvändning:
 
-* **Rapport-API för datasammanslagning**: Visar de datauppsättningar som bidrar mest till er adresserbara publik. Du kan använda den här rapporten för att identifiera vilka [!DNL ExperienceEvent] datauppsättningar att ange en TTL för. Se självstudiekursen om [generera överlappningsrapport för datauppsättning](../../profile/tutorials/dataset-overlap-report.md) för mer information.
+* **Rapport-API för datasammanslagning**: Visar de datauppsättningar som bidrar mest till er adresserbara publik. Du kan använda den här rapporten för att identifiera vilka [!DNL ExperienceEvent] datauppsättningar för att ange en förfallotid för. Se självstudiekursen om [generera överlappningsrapport för datauppsättning](../../profile/tutorials/dataset-overlap-report.md) för mer information.
 * **API för identitetsöverlappningsrapport**: Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik. Se självstudiekursen om [generera rapporten om identitetsöverlappning](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) för mer information.
-<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous TTL for different time thresholds. You can use this report to identify which pseudonymous TTL threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
+<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
 
-#### [!DNL ExperienceEvent] Datamängd TTL {#dataset-ttl}
+#### Förfallodatum för upplevelsehändelser {#event-expirations}
 
-Du kan tillämpa TTL på profilaktiverade datauppsättningar för att ta bort beteendedata från profilarkivet som inte längre är värdefulla för dina användningsfall. När TTL-värdet har tillämpats på en profilaktiverad datauppsättning tar Platform automatiskt bort data som inte längre behövs via en tvåstegsprocess:
-
-* Alla nya data som flyttas framåt kommer att ha ett utgångsvärde för TTL vid tidpunkten för intag.
-* TTL-utgångsvärdet kommer att användas som en del av ett engångsjobb i ett system för återfyllnad.
-
-Du kan förvänta dig att TTL-värdet för varje händelse kommer från händelsens tidsstämpel. Alla händelser som är äldre än TTL-utgångsvärdet släpps omedelbart när systemjobbet körs. Alla andra händelser avbryts när de närmar sig TTL-utgångsvärdet som anges i händelsens tidsstämpel.
-
-Se följande exempel för att få en bättre förståelse för [!DNL ExperienceEvent] Datamängd TTL.
-
-Om du tillämpar ett TTL-värde på 30 dagar den 15 maj ska du:
-
-* Alla nya händelser får en TTL på 30 dagar som tillämpas när de kommer in.
-* Alla befintliga händelser som har en tidsstämpel som är äldre än 15 april tas omedelbart bort av ett systemjobb.;
-* Händelser som har en tidsstämpel efter 15 april får en förfallotid för sin händelsetidsstämpel + TTL-dagar. Ett event med tidsstämpeln 18 april kommer att upphöra tre dagar efter 15 maj.
-
->[!IMPORTANT]
->
->När en TTL används kommer alla data som är äldre än det valda TTL-antalet dagar att **permanent** borttagen och kan inte återställas.
-
-Innan du använder TTL måste du se till att ha ett uppslagsfönster för alla segment inom TTL-gränsen. Annars kan segmentresultaten bli felaktiga efter att TTL har tillämpats. Om du till exempel har tillämpat en TTL på 30 dagar för Adobe Analytics-data och en TTL på 365 dagar för In-Store-transaktionsdata, kommer följande segment att ge felaktiga resultat:
-
-* Visad produktsida de senaste 60 dagarna följt av ett köp i butik;
-* Lägg i kundvagnen följt av inget köp de senaste 60 dagarna.
-
-Omvänt ger följande fortfarande korrekta resultat:
-
-* Den visade produktsidan de senaste 14 dagarna följt av ett köp i butik;
-* De senaste 30 dagarna har visat en specifik hjälpsida online;
-* Köpt en produkt offline de senaste 120 dagarna.
-* Tillagd i kundvagnen följt av köp de senaste 14 dagarna.
-
->[!TIP]
->
->För enkelhetens skull kan du behålla samma TTL-värde för alla datauppsättningar, så att du inte behöver bekymra dig om TTL-effekten för alla datauppsättningar i segmenteringslogiken.
-
-Mer information om hur du tillämpar TTL på profildata finns i dokumentationen om [Profiltjänst-TTL](../../profile/apply-ttl.md).
+Med den här funktionen kan du automatiskt ta bort beteendedata från en profilaktiverad datauppsättning som inte längre är värdefull för dina användningsfall. Se översikten på [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) om du vill ha mer information om hur den här processen fungerar när den har aktiverats för en datauppsättning.
 
 ## Sammanfattning av de bästa sätten att uppfylla licensanvändningsvillkoren {#best-practices}
 
@@ -179,7 +144,7 @@ Nedan följer en lista över rekommenderade metoder som du kan följa för att s
 * Använd [kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md) för att följa upp och övervaka trender för kundanvändning. På så sätt kan du ligga steget före eventuella överbelastningar som kan uppstå.
 * Konfigurera [filter för förtäring](#ingestion-filters) genom att identifiera de händelser som krävs för er segmentering och personalisering. Detta gör att du bara kan skicka viktiga händelser som krävs för dina användningsfall.
 * Se till att du bara har [aktiverade datauppsättningar för profil](#ingestion-filters) som krävs för er segmenterings- och personaliseringsanvändning.
-* Konfigurera en [[!DNL ExperienceEvent] Datamängd TTL](#dataset-ttl) för högfrekventa data som webbdata.
+* Konfigurera en [Förfallotid för upplevelsehändelse](#event-expirations) för högfrekventa data som webbdata.
 * Kontrollera regelbundet [Kompositionsrapporter för profil](#profile-store-composition-reports) för att förstå din profilarkivkomposition. På så sätt kan ni förstå vilka datakällor som bidrar mest till er licensanvändning.
 
 ## Sammanfattning av funktioner och tillgänglighet {#feature-summary}
@@ -191,7 +156,7 @@ I följande tabell visas en lista över tillgängliga funktioner för att bättr
 | Funktion | Beskrivning |
 | --- | --- |
 | [Aktivera/inaktivera datauppsättningar för profil](../../catalog/datasets/user-guide.md) | Aktivera eller inaktivera datamängdsmatning i profiltjänsten |
-| [!DNL ExperienceEvent] Datamängd TTL | Använd ett TTL-förfallodatum för beteendedatauppsättningar i profilarkivet. Kontakta Adobe supportrepresentant. |
+| [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) | Använd en förfallotid för alla händelser som är inkapslade i en profilaktiverad datauppsättning. Kontakta Adobe supportrepresentant för att aktivera den här funktionen. |
 | [Adobe Analytics Data Prep-filter](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | Använd [!DNL Kafka] filter för att utesluta onödiga data från inmatning |
 | [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd anslutningsfilter för Audience Manager-källa för att exkludera onödiga data från intag |
 | [Tillåt SDK-datafilter](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) | Använd Tillåt-filter för att exkludera onödiga data från intag |

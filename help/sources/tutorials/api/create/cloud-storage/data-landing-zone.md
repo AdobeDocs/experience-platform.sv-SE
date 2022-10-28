@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: b98afad74ef45cf3fabb9fa1ced283b2c768cef8
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '1222'
+source-wordcount: '1224'
 ht-degree: 1%
 
 ---
@@ -72,7 +72,7 @@ Följande svar returnerar information om en landningszon, inklusive dess motsvar
 | Egenskap | Beskrivning |
 | --- | --- |
 | `containerName` | Namnet på den landningszon som du har hämtat. |
-| `containerTTL` | Tidsinställningen som tillämpas på dina data inom landningszonen. Alla inom en viss landningszon ska strykas efter sju dagar. |
+| `containerTTL` | Förfallotid (i dagar) som gäller för dina data inom landningszonen. Alla inom en viss landningszon ska strykas efter sju dagar. |
 
 ## Hämta [!DNL Data Landing Zone] autentiseringsuppgifter
 

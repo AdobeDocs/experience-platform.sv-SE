@@ -4,9 +4,9 @@ description: Lär dig hur Adobe Experience Platform Edge Network hanterar klient
 seo-description: Learn how the Adobe Experience Platform Edge Network  manages client state
 keywords: klient;tillstånd;hantering;edge;network;gateway;api
 exl-id: 798ecc52-1af1-4480-a2a3-3198a83538f8
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
@@ -70,7 +70,7 @@ Det tillstånd som returneras av [!DNL Edge Network] i svarsbrödtexten är en `
 | --- | --- | --- |
 | `key` | Sträng | **Obligatoriskt**. Postens namn. |
 | `value` | Sträng | *Valfritt*. Postvärdet. |
-| `maxAge` | Heltal | *Valfritt* TTL (time-to-live) för posten, i sekunder. Om det saknas bör poster endast lagras för den aktuella sessionen. |
+| `maxAge` | Heltal | *Valfritt* Tid (i sekunder) tills inmatningen förfaller. Om det saknas bör poster endast lagras för den aktuella sessionen. |
 | `attrs` | `Map<String, String>` | *Valfritt*. En valfri lista med postattribut. För alla säkra anslutningar med en säker referens-HTTP-rubrik finns följande `SameSite` attribute is set to `None`. |
 
 

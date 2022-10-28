@@ -5,9 +5,9 @@ title: Bästa praxis för datamodellering
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: c5ab8c12c4c5bd14d3504d60c654105ad36effe6
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '2694'
+source-wordcount: '2695'
 ht-degree: 1%
 
 ---
@@ -46,7 +46,7 @@ Exemplet nedan representerar en förenklad ERD för ett företag som vill föra 
 
 ## Sortera entiteter i profil-, uppslags- och händelsekategorier
 
-När du har skapat en ERD för att identifiera de enheter du vill ta med [!DNL Platform]måste de här entiteterna sorteras i kategorierna profil, sökning och händelse:
+När du har skapat en ERD för att identifiera de enheter du vill ta med [!DNL Platform]måste dessa entiteter sorteras i profil-, uppslags- och händelsekategorier:
 
 | Kategori | Beskrivning |
 | --- | --- |
@@ -114,7 +114,7 @@ Ett företag vill till exempel skapa ett segment baserat på antalet kundvagnsk�
 
 >[!CAUTION]
 >
->Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta planeras för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till [!DNL Platform].
+>Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta är planerat för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till [!DNL Platform].
 
 #### Kardinalitet
 
@@ -175,7 +175,7 @@ Det andra sättet är att använda händelsescheman för att representera prenum
 **Kon**
 
 * Segmenteringen blir mer komplicerad för det ursprungliga användningsfallet (som identifierar statusen för kundens senaste prenumerationer). Segmentet behöver nu ytterligare logik för att flagga den senaste prenumerationshändelsen för en kund för att kunna kontrollera dess status.
-* Det finns en större risk för att händelser automatiskt förfaller och rensas från profilarkivet. Se guiden [Profil-TTL](../../profile/apply-ttl.md) för mer information.
+* Det finns en större risk för att händelser automatiskt förfaller och rensas från profilarkivet. Se guiden [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) för mer information.
 
 ## Skapa scheman baserat på dina kategoriserade entiteter
 
@@ -193,13 +193,13 @@ Kategorin som en entitet har sorterats under bör avgöra vilken XDM-klass du ba
 >
 >Händelseentiteter representeras nästan alltid av separata scheman, men entiteter i profilen eller uppslagskategorierna kan kombineras i ett enda XDM-schema, beroende på deras kardinalitet.
 >
->Eftersom kundentiteten till exempel har en 1:1-relation med LoyaltyAccounts-entiteten, kan schemat för kundentiteten även innehålla en `LoyaltyAccount` objekt som ska innehålla rätt lojalitetsfält för varje kund. Om relationen är en till många kan den entitet som representerar&quot;många&quot; däremot representeras av ett separat schema eller en array med profilattribut, beroende på hur komplex den är.
+>Eftersom kundentiteten till exempel har en 1:1-relation med LoyaltyAccounts-entiteten, kan schemat för kundentiteten även innehålla en `LoyaltyAccount` objekt som ska innehålla rätt lojalitetsfält för varje kund. Om relationen är en till många kan den entitet som representerar&quot;många&quot; däremot representeras av ett separat schema eller en array med profilattribut, beroende på dess komplexitet.
 
 Avsnitten nedan innehåller allmän vägledning om hur du konstruerar scheman baserade på din ERD.
 
 ### Anta en iterativ modelleringsmetod
 
-The [regler för schemautveckling](./composition.md#evolution) diktera att endast icke-förstörande ändringar kan göras i scheman när de har implementerats. När du har lagt till ett fält i ett schema och data har importerats till det fältet kan fältet alltså inte längre tas bort. Därför är det viktigt att du använder en iterativ modelleringsmetod när du först skapar dina scheman, och börjar med en förenklad implementering som successivt blir mer komplicerad över tiden.
+The [regler för schemautveckling](./composition.md#evolution) diktera att endast icke-förstörande ändringar kan göras i scheman när de har implementerats. När du har lagt till ett fält i ett schema och data har importerats till det fältet kan fältet alltså inte längre tas bort. Därför är det viktigt att du använder en iterativ modelleringsmetod när du först skapar dina scheman, och börjar med en förenklad implementering som successivt blir mer komplicerad över tid.
 
 Om du är osäker på om ett visst fält är nödvändigt för att inkluderas i ett schema är det bästa sättet att utelämna det. Om det senare fastställs att fältet är nödvändigt kan det alltid läggas till i nästa iteration i schemat.
 

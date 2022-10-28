@@ -2,7 +2,7 @@
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
 source-wordcount: '1290'
 ht-degree: 1%
@@ -156,7 +156,7 @@ _satellite.cookie.set(name: string, value: string[, attributes: Object])
 
 >[!NOTE]
 >
->I gamla [`setCookie`](#setCookie) metoden för att ställa in cookies, var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade att cookien är TTL (time-to-live) i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument i stället. Om du vill ange en TTL för en cookie med den nya metoden måste du ange en `expires` -egenskapen i attributobjektet och ange det till det önskade värdet. Detta visas i exemplet nedan.
+>I gamla [`setCookie`](#setCookie) metoden för att ange cookies, var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade cookiens förfallotid i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument i stället. Om du vill ange en förfallotid för en cookie med den nya metoden måste du ange en `expires` -egenskapen i attributobjektet och ange det till det önskade värdet. Detta visas i exemplet nedan.
 
 **Exempel**
 

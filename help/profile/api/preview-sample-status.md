@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förha
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med förhandsgranskningsexemplets statusslutpunkt i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution efter datauppsättning och identitet, och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 8a17648757b342bd8026382918ca41c469210b51
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '2870'
+source-wordcount: '2869'
 ht-degree: 0%
 
 ---
@@ -303,7 +303,7 @@ Svaret innehåller en `data` array, med enskilda objekt som innehåller informat
 
 ## Generera överlappningsrapport för datauppsättning
 
-Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, till exempel att ställa in en TTL för vissa datauppsättningar.
+Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, som att ange förfallodatum för vissa datauppsättningar.
 
 Du kan generera en överlappningsrapport för datauppsättningen genom att utföra en GET-förfrågan till `/previewsamplestatus/report/dataset/overlap` slutpunkt.
 

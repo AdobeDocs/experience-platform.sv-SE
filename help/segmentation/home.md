@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 52197a6c009fb5b0b6037a4fef3c98ad7c327e2e
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '1632'
+source-wordcount: '1635'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 >
 >Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM), gå till [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-ui.md).
 >
->Om TTL (time-to-live) är aktiverat för datauppsättningen kan det dessutom påverka medlemskapet i det skapade segmentet. Mer information om TTL och hur det kan påverka segmenteringen finns i [TTL-guide för profiltjänst](../profile/apply-ttl.md).
+>Om dessutom ett förfallovärde för Experience Event är aktiverat för datauppsättningen kan det påverka medlemskapet för det skapade segmentet. Läs guiden på [Förfallodatum för upplevelsehändelser](../profile/event-expirations.md) om du vill ha mer information om hur den här funktionen kan påverka segmenteringen.
 
 ## Utvärdera segment {#evaluate-segments}
 

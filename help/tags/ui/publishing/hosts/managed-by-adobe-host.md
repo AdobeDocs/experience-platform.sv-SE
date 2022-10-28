@@ -2,7 +2,7 @@
 title: Adobe-hanterade värdar - översikt
 description: Läs mer om standardvärdalternativet för distribution av kodbiblioteksbyggen i Adobe Experience Platform.
 exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
 source-wordcount: '1166'
 ht-degree: 0%
@@ -54,7 +54,7 @@ När ditt bygge har distribuerats till värddatorn som hanteras av Adobe distrib
 >
 >För värdar som hanteras av Adobe kan det ta upp till fem minuter innan det allra första publicerade biblioteket kan sprida sig till det globala nätverket för CDN.
 
-När en edge-nod tar emot en begäran om en viss fil (till exempel biblioteksbygget) kontrollerar noden först TTL-värdet (time-to-live) för filen. Om TTL-värdet inte har upphört att gälla används den cachelagrade versionen som edge-nod. Om TTL-värdet har gått ut begär edge-noden en ny kopia från närmaste ursprung, visar den uppdaterade kopian och cachelagrar sedan den uppdaterade kopian med en ny TTL.
+När en edge-nod tar emot en begäran om en viss fil (till exempel ditt bibliotek) kontrollerar noden först filens förfallotid. Om tiden inte har gått ut fungerar edge-noden som den cachelagrade versionen. Om tiden har gått ut begär edge-noden en ny kopia från närmaste ursprung, visar den uppdaterade kopian och cachelagrar sedan den uppdaterade kopian med en ny förfallotid.
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ Dessa inaktiva cacheminnen gör att de ursprungliga servergrupperna får tid att
 
 Biblioteksbyggen cachelagras också i webbläsaren med `cache-control` HTTP-huvud. När du använder värdar som hanteras med Adobe har du inte kontroll över de rubriker som returneras i API-svar, så Adobe används som standard för cachning. Du kan alltså inte använda anpassade rubriker för värdar som hanteras av Adobe. Om du behöver en anpassad `cache-control` header, du kanske vill överväga [värdtjänster](self-hosting-libraries.md) i stället.
 
-TTL-värde (time-to-live) för webbläsarens cachelagrade bibliotek (bestäms av `cache-control` ) varierar beroende på vilken taggmiljö du använder:
+Förfallotiden för ditt webbläsarcachelagrade bibliotek (bestäms av `cache-control` ) varierar beroende på vilken taggmiljö du använder:
 
 | Miljö | `cache-control` value |
 | --- | --- |
