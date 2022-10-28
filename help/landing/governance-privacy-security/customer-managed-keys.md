@@ -1,9 +1,9 @@
 ---
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
-source-git-commit: b778d5c81512e538f08989952f8727d1d694f66c
+source-git-commit: 02898f5143a7f4f48c64b22fb3c59a072f1e957d
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
@@ -24,14 +24,14 @@ CMK ingår i hälso- och sjukvårdsskölden och i skölden för skydd av privatl
 
 Processen är följande:
 
-1. [Skapa en [!DNL Microsoft Azure] Nyckelvalv](#create-key-vault)sedan [generera en krypteringsnyckel](#generate-a-key) (baserat på din organisations policyer) som slutligen kommer att delas med Adobe.
-1. Använd API-anrop till [registrera CMK-appen](#register-app) med [!DNL Azure] tenant.
-1. [Tilldela tjänstens huvudnamn för CMK-appen](#assign-to-role) till en lämplig roll för nyckelvalvet.
-1. Använd API-anrop till [skicka ditt krypteringsnyckel-ID till Adobe](#send-to-adobe).
+1. [Konfigurera en [!DNL Microsoft Azure] Nyckelvalv](#create-key-vault) baserat på organisationens policyer, och sedan [generera en krypteringsnyckel](#generate-a-key) som till slut kommer att delas med Adobe.
+1. Använd API-anrop till [konfigurera CMK-appen](#register-app) med [!DNL Azure] tenant.
+1. Använd API-anrop till [skicka ditt krypteringsnyckel-ID till Adobe](#send-to-adobe) och starta aktiveringsprocessen för funktionen.
+1. [Kontrollera konfigurationsstatus](#check-status) för att kontrollera om CMK har aktiverats.
 
-När konfigurationen är klar krypteras alla data som är inbyggda i Platform i alla sandlådor med hjälp av [!DNL Azure] nyckelkonfiguration, specifik för [[!DNL Cosmos DB]](https://docs.microsoft.com/en-us/azure/cosmos-db/) och [[!DNL Data Lake Storage]](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) resurser. Om du vill använda CMK använder du [!DNL Microsoft Azure] funktioner som kan vara en del av deras [förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
+När konfigurationen är klar krypteras alla data som är inbyggda i Platform i alla sandlådor med hjälp av [!DNL Azure] nyckelinställningar. Om du vill använda CMK använder du [!DNL Microsoft Azure] funktioner som kan vara en del av deras [förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 
-## Skapa en [!DNL Azure] Nyckelvalv {#create-key-vault}
+## Konfigurera en [!DNL Azure] Nyckelvalv {#create-key-vault}
 
 CMK stöder bara tangenter från en [!DNL Microsoft Azure] Nyckelvalv. För att komma igång måste du arbeta med [!DNL Azure] om du vill skapa ett nytt Enterprise-konto eller använda ett befintligt Enterprise-konto och följa stegen nedan för att skapa nyckelvalvet.
 
@@ -65,7 +65,7 @@ När du har kommit till **[!DNL Review + create]** kan du granska informationen 
 
 ![Grundkonfiguration för nyckelvalvet](../images/governance-privacy-security/customer-managed-keys/finish-creation.png)
 
-## Konfigurera nätverksalternativ
+### Konfigurera nätverksalternativ
 
 Om ditt nyckelvalv är konfigurerat för att begränsa offentlig åtkomst till vissa virtuella nätverk eller inaktivera allmän åtkomst helt måste du bevilja Microsoft ett brandväggsundantag.
 
@@ -73,7 +73,7 @@ Välj **[!DNL Networking]** i den vänstra navigeringen. Under **[!DNL Firewalls
 
 ![Grundkonfiguration för nyckelvalvet](../images/governance-privacy-security/customer-managed-keys/networking.png)
 
-## Generera en nyckel {#generate-a-key}
+### Generera en nyckel {#generate-a-key}
 
 När du har skapat ett nyckelvalv kan du generera en ny nyckel. Navigera till **[!DNL Keys]** och markera **[!DNL Generate/Import]**.
 
@@ -93,7 +93,7 @@ Den konfigurerade nyckeln visas i listan med nycklar för valvet.
 
 ![Nyckel tillagd](../images/governance-privacy-security/customer-managed-keys/key-added.png)
 
-## Registrera CMK-appen {#register-app}
+## Konfigurera CMK-appen {#register-app}
 
 När du har konfigurerat nyckelvalvet är nästa steg att registrera dig för CMK-programmet som ska länka till [!DNL Azure] tenant.
 
@@ -135,7 +135,7 @@ Kopiera och klistra in `applicationRedirectUrl` till en webbläsare för att öp
 
 ![Godkänn behörighetsbegäran](../images/governance-privacy-security/customer-managed-keys/app-permission.png)
 
-## Tilldela CMK-appen till en roll {#assign-to-role}
+### Tilldela CMK-appen till en roll {#assign-to-role}
 
 När du är klar med autentiseringsprocessen går du tillbaka till [!DNL Azure] Nyckelvalv och välj **[!DNL Access control]** i den vänstra navigeringen. Här väljer du **[!DNL Add]** följt av **[!DNL Add role assignment]**.
 
@@ -151,7 +151,7 @@ På nästa skärm väljer du **[!DNL Select members]** för att öppna en dialog
 >
 >Om du inte kan hitta ditt program i listan har ditt huvudnamn inte godkänts i din klientorganisation. Var vänlig och arbeta med [!DNL Azure] administratör eller representant för att säkerställa att du har rätt behörigheter.
 
-## Skicka nyckel-URI till Adobe {#send-to-adobe}
+## Aktivera krypteringsnyckelkonfigurationen i Experience Platform {#send-to-adobe}
 
 När du har installerat CMK-appen på [!DNL Azure]kan du skicka krypteringsnyckelns identifierare till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på den tangent som du vill skicka.
 
@@ -221,7 +221,7 @@ Ett lyckat svar returnerar information om konfigurationsjobbet.
 
 Jobbet bör slutföras inom några minuter.
 
-### Kontrollera konfigurationens status {#check-status}
+## Verifiera konfigurationens status {#check-status}
 
 Om du vill kontrollera statusen för konfigurationsbegäran kan du göra en GET-förfrågan.
 
