@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 5bd3e43e6b307cc1527e8734936c051fb4fc89c4
+source-git-commit: 1e83bc3eb2a2cc10ab945aebeef66d5108b568ea
 workflow-type: tm+mt
-source-wordcount: '1015'
+source-wordcount: '1050'
 ht-degree: 0%
 
 ---
@@ -75,6 +75,8 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
+        "name": "Sample dataset",
+        "description: "A sample dataset with a sample description.",
         "fields": [],
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
@@ -249,6 +251,10 @@ En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som inneh�
 ### Aktivera datauppsättningen för profil och upsert {#enable-the-dataset}
 
 En befintlig datauppsättning kan aktiveras för profiluppdateringar och attributuppdateringar med en enda begäran från PATCH.
+
+>[!IMPORTANT]
+>
+>När du aktiverar din datauppsättning för profil bör du kontrollera att schemat som datauppsättningen är associerad med är **även** Profilaktiverad. Om schemat inte är profilaktiverat kommer datauppsättningen att **not** visas som profilaktiverat i plattformsgränssnittet.
 
 **API-format**
 
