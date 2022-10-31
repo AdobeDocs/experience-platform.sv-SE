@@ -4,9 +4,9 @@ title: Varningar - översikt
 description: Läs mer om varningar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras.
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: d82487f34c0879ed27ac55e42d70346f45806131
+source-git-commit: b1c82169056e66b9cdcf99f73daa7d37a3a01600
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '755'
 ht-degree: 1%
 
 ---
@@ -82,6 +82,10 @@ Om du vill arbeta med aviseringar i plattformsgränssnittet måste du ha följan
 Med behörigheten Visa aviseringar kan du visa mottagna aviseringar genom att välja klockikonen (![Bellikon](../images/alerts/overview/icon.png)) i det övre högra hörnet.
 
 ![](../images/alerts/overview/ui.png)
+
+>[!NOTE]
+>
+> Välj en avisering om du vill navigera till en relaterad kontrollpanel för mer detaljerad information om varför aviseringen har utlösts.
 
 Dessutom är [!UICONTROL Alerts] i användargränssnittet tillåter enskilda användare att prenumerera på särskilda larmtyper och tillåter administratörer att aktivera eller inaktivera varningsregler helt och hållet. Se [Användargränssnittsguide](./ui.md) om du vill ha mer information om hur du hanterar varningar.
 
