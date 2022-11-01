@@ -1,9 +1,9 @@
 ---
 title: (Beta) Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbplatsinnehåll och kampanjer, anpassade till kundsegment som skapats och hanteras inom Real-Time CDP.
-source-git-commit: 566f26ec0f13bfaceb0ee59f3e4c72e767bc8cc9
+source-git-commit: 0a6100f2aa98f5c40f2492dcfab79a991eded94b
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '667'
 ht-degree: 1%
 
 ---
@@ -92,7 +92,7 @@ Läs [Aktivera profiler och segment för att profilera mål för begäran](../..
 
 Nu när du har konfigurerat [!DNL Commerce] mål inom Experience Platform måste du konfigurera [!DNL Commerce Admin] för att importera de Real-Time CDP-segment du har skapat. Se [[!DNL Commerce] dokumentation](https://experienceleague.adobe.com/docs/commerce-admin/marketing/promotions/cart-rules/customer-segment-rtcdp.html) om du vill veta mer.
 
-## Validera dataexport {#exported-data}
+## Validera målgruppsaktivering i Commerce {#exported-data}
 
 När du har aktiverat Real-Time CDP-segment för [!DNL Adobe Commerce] kommer du att se vilka segment som är tillgängliga i [!DNL Admin] när du skapar en kundprisregel:
 
