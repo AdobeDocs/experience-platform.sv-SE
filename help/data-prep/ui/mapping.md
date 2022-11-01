@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv 
 title: Användargränssnittshandbok för dataprep
 description: Det här dokumentet innehåller anvisningar om hur du använder förinställningsfunktioner för data i plattformsgränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '1737'
 ht-degree: 0%
@@ -79,7 +79,7 @@ The **[!UICONTROL mapping]** I finns ett omfattande verktyg för att mappa käll
 
 ![map-csv-to-xdm](../images/ui/mapping/map-csv-to-xdm.png)
 
-### Mappningsgränssnittet
+### Mappningsgränssnittet {#mapping-interface}
 
 Mappningsgränssnittet innehåller en kontrollpanel som ger information om hälsotillståndet för mappningsfälten i det aktuella inmatningsarbetsflödet. På kontrollpanelen visas följande information om mappningsfälten:
 

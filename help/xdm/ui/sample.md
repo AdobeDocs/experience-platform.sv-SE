@@ -4,8 +4,7 @@ title: Generera exempeldata för ett XDM-schema i användargränssnittet
 description: Lär dig hur du genererar JSON-exempeldata baserat på ett befintligt schema i Adobe Experience Platform användargränssnitt.
 topic-legacy: user guide
 exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '329'
 ht-degree: 0%
@@ -18,7 +17,7 @@ För att kunna importera data till Adobe Experience Platform måste dataformatet
 
 För alla scheman som du definierar i användargränssnittet för Experience Platform kan du generera ett JSON-exempelobjekt som följer schemats struktur. Det här objektet kan fungera som en mall för alla data som hämtas till datauppsättningar som använder det aktuella schemat.
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. Under fliken **[!UICONTROL Browse]** letar du reda på schemat som du vill generera exempeldata för. Välj det i listan och den högra uppdateringen av fältet för att visa information om schemat. Välj **[!UICONTROL Download sample file]** härifrån.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. Under **[!UICONTROL Browse]** söker du efter det schema som du vill generera exempeldata för. Välj det i listan och den högra uppdateringen av fältet för att visa information om schemat. Här väljer du **[!UICONTROL Download sample file]**.
 
 ![](../images/ui/sample/sample-data.png)
 
@@ -26,8 +25,8 @@ En JSON-exempelfil hämtas av webbläsaren. Du kan nu använda den här filen so
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du genererar en JSON-exempelfil från ett XDM-schema i plattformens användargränssnitt. Om du vill lära dig hur du genererar exempeldata med API:t för schemaregister läser du i [exempeldataslutpunktshandboken](../api/sample-data.md).
+I den här guiden beskrivs hur du genererar en JSON-exempelfil från ett XDM-schema i plattformens användargränssnitt. Om du vill veta hur du genererar exempeldata med API:t för schemaregister kan du läsa [exempeldatas slutpunktsguide](../api/sample-data.md).
 
-När du är redo att börja inhämta data kan du läsa självstudiekursen om [mappning av en CSV-fil till XDM](../../ingestion/tutorials/map-a-csv-file.md) för att lära dig hur du mappar en platt datafil (t.ex. en CSV) till ett XDM-schema och importerar den till Platform. Du kan också upprätta en [källanslutning](../../sources/home.md) för att hämta data från en extern källa och mappa dem till XDM.
+När du är redo att börja inhämta data kan du titta i självstudiekursen om [mappa en CSV-fil till XDM](../../ingestion/tutorials/map-csv/overview.md) om du vill lära dig att mappa en platt datafil (t.ex. en CSV-fil) till ett XDM-schema och importera den till plattformen. Du kan också skapa en [källanslutning](../../sources/home.md) för att hämta data från en extern källa och mappa dem till XDM.
 
-Mer information om funktionerna för arbetsytan [!UICONTROL Schemas] i gränssnittet finns i översikten för arbetsytan [[!UICONTROL Schemas]](./overview.md).
+Mer information om funktionerna i [!UICONTROL Schemas] arbetsytan i användargränssnittet finns i [[!UICONTROL Schemas] arbetsyta - översikt](./overview.md).

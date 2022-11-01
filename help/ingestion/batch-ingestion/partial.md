@@ -5,7 +5,7 @@ title: Översikt över partiell gruppinmatning
 topic-legacy: overview
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -110,7 +110,7 @@ Nu kan du överföra data med **Lägg till data** och kommer att förtäras med 
 
 ### Använd &quot;[!UICONTROL Map CSV to XDM schema]&quot; flöde {#map-flow}
 
-Så här använder du[!UICONTROL Map CSV to XDM schema]&quot;, följ stegen i listan i [Mappa en CSV-fil, genomgång](../tutorials/map-a-csv-file.md). När du har nått **[!UICONTROL Add data]** notera **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]** fält.
+Så här använder du[!UICONTROL Map CSV to XDM schema]&quot;, följ stegen i listan i [Mappa en CSV-fil, genomgång](../tutorials/map-csv/overview.md). När du har nått **[!UICONTROL Add data]** notera **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]** fält.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 

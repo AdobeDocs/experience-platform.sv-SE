@@ -5,7 +5,7 @@ title: Samtyckesbearbetning i Adobe Experience Platform
 topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -100,7 +100,7 @@ I Mobile SDK-dokumentationen finns mer information om [konfigurera mobiltillägg
 
 Du kan importera XDM-kompatibla medgivandedata från en CSV-fil genom att använda gruppinmatning. Detta kan vara användbart om ni har en eftersläpning av tidigare insamlade data om samtycke som ännu inte har integrerats i era kundprofiler.
 
-Följ självstudiekursen på [mappa en CSV-fil till XDM](../../../../ingestion/tutorials/map-a-csv-file.md) om du vill lära dig hur du konverterar dina datafält till XDM och importerar dem till Platform. När du väljer [!UICONTROL Destination] för mappningen kontrollerar du att du väljer **[!UICONTROL Use existing dataset]** och väljer [!DNL Profile]-aktiverade medgivandedatauppsättningar som du skapade tidigare.
+Följ självstudiekursen på [mappa en CSV-fil till XDM](../../../../ingestion/tutorials/map-csv/overview.md) om du vill lära dig hur du konverterar dina datafält till XDM och importerar dem till Platform. När du väljer [!UICONTROL Destination] för mappningen kontrollerar du att du väljer **[!UICONTROL Use existing dataset]** och väljer [!DNL Profile]-aktiverade medgivandedatauppsättningar som du skapade tidigare.
 
 ## Testa implementeringen {#test-implementation}
 

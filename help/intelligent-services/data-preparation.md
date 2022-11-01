@@ -5,7 +5,7 @@ title: Förbered data för användning i intelligenta tjänster
 topic-legacy: Intelligent Services
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '2923'
 ht-degree: 0%
@@ -356,7 +356,7 @@ Om du hämtar data från en lokal CSV-fil kan du gå vidare till nästa avsnitt 
 
 #### Mappa och importera data {#ingest}
 
-När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till plattformen. Se självstudiekursen om [mappa en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md) för steg om hur du utför detta i användargränssnittet. Du kan använda följande [exempel-JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att testa intag innan du använder dina egna data.
+När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till plattformen. Se självstudiekursen om [mappa en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-csv/overview.md) för steg om hur du utför detta i användargränssnittet. Du kan använda följande [exempel-JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att testa intag innan du använder dina egna data.
 
 När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
 
