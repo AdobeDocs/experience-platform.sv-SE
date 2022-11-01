@@ -1,9 +1,9 @@
 ---
 title: Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererad Recommendations (beta)
 description: I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer.
-source-git-commit: a8a7523c5b7f696ecc0ae89cb4e0474b44a222e7
+source-git-commit: d6f858af8bc44be74b1aaf12b973fb6818c1b2a5
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '976'
 ht-degree: 0%
 
 ---
@@ -35,13 +35,13 @@ I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sourc
 
 The **[!UICONTROL Map CSV XDM schema]** arbetsflödet visas, med början på **[!UICONTROL Dataflow detail]** steg.
 
-Välj **[!UICONTROL Create a new schema using ML recommendations]**, vilket medför att nya kontroller visas. Välj lämplig klass för CSV-data som du vill mappa ([!UICONTROL Profile] eller [!UICONTROL ExperienceEvent]) och använd listrutan för att välja rätt bransch. Om din organisation är verksam under [business-to-business (B2B)](../../../xdm/tutorials/relationship-b2b.md) modell, välj **[!UICONTROL B2B data]** kryssrutan.
+Välj **[!UICONTROL Create a new schema using ML recommendations]**, vilket medför att nya kontroller visas. Välj lämplig klass för de CSV-data som du vill mappa ([!UICONTROL Profile] eller [!UICONTROL ExperienceEvent]). Du kan också använda listrutan för att välja den bransch som är relevant för ditt företag, eller lämna den tom om de angivna kategorierna inte gäller för dig. Om din organisation är verksam under [business-to-business (B2B)](../../../xdm/tutorials/relationship-b2b.md) modell, välj **[!UICONTROL B2B data]** kryssrutan.
 
 ![The [!UICONTROL Dataflow detail] med alternativet för ML-rekommendation markerat. [!UICONTROL Profile] är markerat för klassen och [!UICONTROL Telecommunications] väljs för branschen](../../images/tutorials/map-csv-recommendations/select-class-and-industry.png)
 
 Här anger du ett namn för schemat som ska skapas från CSV-data och ett namn för den utdatauppsättning som ska innehålla data som hämtas under det schemat.
 
-Du kan även konfigurera följande ytterligare funktioner för dataflödet:
+Du kan även konfigurera följande ytterligare funktioner för dataflödet innan du fortsätter:
 
 | Indatanamn | Beskrivning |
 | --- | --- |
@@ -50,6 +50,8 @@ Du kan även konfigurera följande ytterligare funktioner för dataflödet:
 | [!UICONTROL Partial ingestion] | När det här alternativet är aktiverat importeras giltiga poster för nya batchdata inom ett angivet feltröskelvärde. Med det här tröskelvärdet kan du konfigurera procentandelen godtagbara fel innan hela gruppen misslyckas. |
 | [!UICONTROL Dataflow details] | Ange ett namn och en valfri beskrivning av dataflödet som hämtar CSV-data till plattformen. Dataflödet tilldelas automatiskt ett standardnamn när arbetsflödet startas. Det är valfritt att ändra namnet. |
 | [!UICONTROL Alerts] | Välj i en lista över [varningar i produkten](../../../observability/alerts/overview.md) som du vill få information om dataflödets status när det har initierats. |
+
+{style=&quot;table-layout:auto&quot;}
 
 När du har konfigurerat dataflödet väljer du **[!UICONTROL Next]**.
 
@@ -81,7 +83,7 @@ Använd förhandsgranskningen av fältmappningen för att redigera befintliga ma
 
 ### Redigera fältgrupper {#edit-field-groups}
 
-CSV-fälten mappas automatiskt till befintliga fältgrupper med hjälp av ML-modeller. Om du vill ändra fältgruppen för ett visst CSV-fält väljer du **[!UICONTROL Edit]** bredvid schematrädet.
+CSV-fälten mappas automatiskt till befintliga XDM-fältgrupper med hjälp av ML-modeller. Om du vill ändra fältgruppen för ett visst CSV-fält väljer du **[!UICONTROL Edit]** bredvid schematrädet.
 
 ![The [!UICONTROL Edit] knapp som markeras bredvid schematrädet](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
 
