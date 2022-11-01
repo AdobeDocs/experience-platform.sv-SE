@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågeredigeraren
 topic-legacy: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 6cb28f8afa528849662fb416d81d155384a3de6c
+source-git-commit: 283c6ba323a327b0c525343a96a45a2412baa67b
 workflow-type: tm+mt
-source-wordcount: '2003'
+source-wordcount: '2020'
 ht-degree: 0%
 
 ---
@@ -176,7 +176,7 @@ The [!DNL Query Editor] innehåller en funktion för att spara som gör att du k
 
 Alla frågor som körs från [!DNL Query Editor] finns i loggtabellen. Du kan använda sökfunktionerna i **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor listas i **[!UICONTROL Templates]** -fliken.
 
-Se [Översikt över användargränssnittet i frågetjänsten](./overview.md) för mer information.
+Om en fråga har schemalagts [!UICONTROL Scheduled Queries] -fliken ger förbättrad synlighet via användargränssnittet för dessa frågefunktioner. Se [frågeövervakningsdokumentation](../monitor-queries.md) för mer information.
 
 >[!NOTE]
 >
