@@ -3,18 +3,36 @@ keywords: Amazon S3;S3-mål;s3;amazon s3
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 1dd87ce19c3d9f4eb07c49968754ab979b4dee5c
+source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
 workflow-type: tm+mt
-source-wordcount: '747'
+source-wordcount: '884'
 ht-degree: 0%
 
 ---
 
 # [!DNL Amazon S3] anslutning {#s3-connection}
 
+## Destinationsändringslogg {#changelog}
+
+>[!IMPORTANT]
+>
+>Med betaversionen av exportdataset och de förbättrade funktionerna för filexport kan du nu se två [!DNL Amazon S3] i målkatalogen.
+>* Om du redan exporterar filer till **[!UICONTROL Amazon S3]** mål: Skapa nya dataflöden för nya **[!UICONTROL Amazon S3 beta]** mål.
+>* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Amazon S3]** mål, använd den nya **[!UICONTROL Amazon S3 beta]** exportera filer till **[!UICONTROL Amazon S3]**.
+
+
+![Bild av de två Amazon S3-målkorten sida vid sida.](/help/destinations/assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
+
+Förbättringar i nya [!DNL Amazon S3] omfattar följande destinationskort:
+
+* [Stöd för dataexport](/help/destinations/ui/export-datasets.md).
+* Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
+* Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* [Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+
 ## Översikt {#overview}
 
-Skapa en utgående liveanslutning till din [!DNL Amazon Web Services] (AWS) S3-lagring för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-bucket.
+Skapa en utgående liveanslutning till din [!DNL Amazon S3] för att med jämna mellanrum exportera datafiler från Adobe Experience Platform till dina egna S3-butiker.
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -110,6 +128,10 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
+## (Beta) Exportera datauppsättningar {#export-datasets}
+
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
+
 ## Exporterade data {#exported-data}
 
-För [!DNL Amazon S3] destinationer, [!DNL Platform] skapar en `.csv` filen på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i segmentaktiveringssjälvstudiekursen.
+För [!DNL Amazon S3] destinationer, [!DNL Platform] skapar en datafil på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i segmentaktiveringssjälvstudiekursen.

@@ -1,0 +1,119 @@
+---
+title: Data Landing Zone-mål
+description: Lär dig hur du ansluter till Data Landing Zone för att aktivera segment och exportera datauppsättningar.
+source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
+workflow-type: tm+mt
+source-wordcount: '927'
+ht-degree: 0%
+
+---
+
+# (Beta) Data Landing Zone-mål
+
+>[!IMPORTANT]
+>
+>Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Data Landing Zone] kontakta din Adobe-representant och uppge [!DNL Organization ID].
+
+
+## Översikt {#overview}
+
+[!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform och ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformar. Du har tillgång till en [!DNL Data Landing Zone] behållare per sandlåda och den totala datavolymen för alla behållare begränsas till den totala datamängd som ingår i din licens för plattformsprodukter och -tjänster. Alla kunder med Platform och dess programtjänster som [!DNL Customer Journey Analytics], [!DNL Journey Orchestration], [!DNL Intelligent Services]och [!DNL Real-time Customer Data Platform] har etablerats med en [!DNL Data Landing Zone] behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
+
+[!DNL Data Landing Zone] stöder SAS-baserad autentisering och dess data skyddas med standard [!DNL Azure Blob] Mekanismer för förvaringssäkerhet i vila och under transitering. SAS-baserad autentisering ger säker åtkomst till [!DNL Data Landing Zone] behållaren via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar [!DNL Data Landing Zone] container, vilket betyder att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk.
+
+Plattformen har en strikt TTL-regel (time-to-live) på sju dagar för alla filer som överförs till en [!DNL Data Landing Zone] behållare. Alla filer tas bort efter sju dagar.
+
+## Exportera typ och frekvens {#export-type-frequency}
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med tillämpliga schemafält (till exempel ditt PPID), som du väljer på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
+
+## Hantera innehållet i [!DNL Data Landing Zone]
+
+Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone] behållare.
+
+I [!DNL Azure Storage Explorer] Välj anslutningsikonen i det vänstra navigeringsfältet. The **Välj resurs** visas så att du kan ansluta till dem. Välj **[!DNL Blob container]** för att ansluta till [!DNL Data Landing Zone] lagring.
+
+![select-resource](/help/sources/images/tutorials/create/dlz/select-resource.png)
+
+Nästa, välj **URL för delad åtkomstsignatur (SAS)** som anslutningsmetod och välj **Nästa**.
+
+![select-connection-method](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
+
+När du har valt anslutningsmetod måste du ange en **visningsnamn** och **[!DNL Blob]container SAS-URL** som motsvarar dina [!DNL Data Landing Zone] behållare.
+
+>[!IMPORTANT]
+>
+>Du måste använda plattforms-API:erna för att hämta dina autentiseringsuppgifter för Data Landing Zone. Fullständig information finns i [Hämta autentiseringsuppgifter för Data Landing Zone](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/create/cloud-storage/data-landing-zone.html?lang=en#retrieve-data-landing-zone-credentials).
+>
+> Om du vill hämta inloggningsuppgifterna och få åtkomst till de exporterade filerna måste du ersätta frågeparametern `type=user_drop_zone` med `type=dlz_destination` i alla HTTP-anrop som beskrivs på sidan ovan.
+
+Ange [!DNL Data Landing Zone] SAS-URL och välj sedan **Nästa**.
+
+![enter-connection-info](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
+
+The **Sammanfattning** visas så att du får en översikt över dina inställningar, inklusive information om [!DNL Blob] slutpunkt och behörigheter. Välj **Anslut**.
+
+![sammanfattning](/help/sources/images/tutorials/create/dlz/summary.png)
+
+Anslutningen uppdaterar [!DNL Azure Storage Explorer] Gränssnitt med [!DNL Data Landing Zone] behållare.
+
+![dlz-user-container](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
+
+Med [!DNL Data Landing Zone] behållare ansluten till [!DNL Azure Storage Explorer]kan du nu börja exportera filer från Experience Platform till [!DNL Data Landing Zone] behållare. Om du vill exportera filer måste du skapa en anslutning till [!DNL Data Landing Zone] mål i användargränssnittet i Experience Platform, enligt beskrivningen i avsnittet nedan.
+
+## Anslut till målet {#connect}
+
+>[!IMPORTANT]
+> 
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+
+### Autentisera till mål {#authenticate}
+
+För [!DNL Data Landing Zone] är ett lagringsutrymme som tillhandahålls av Adobe behöver du inte utföra några åtgärder för att autentisera mot målet.
+
+### Fyll i målinformation {#destination-details}
+
+Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
+
+* **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
+* **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
+* **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
+
+### Aktivera aviseringar {#enable-alerts}
+
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+
+När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
+
+## Aktivera segment till den här destinationen {#activate}
+
+>[!IMPORTANT]
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+
+Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+
+### Schemaläggning
+
+I **[!UICONTROL Scheduling]** kan du [konfigurera exportschemat](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) för [!DNL Data Landing Zone] mål och du kan också [konfigurera namnet på de exporterade filerna](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
+
+### Mappa attribut och identiteter {#map}
+
+I **[!UICONTROL Mapping]** kan du välja vilka attribut- och identitetsfält som ska exporteras för dina profiler. Du kan också välja att ändra rubrikerna i den exporterade filen till ett valfritt användarvänligt namn. Mer information finns i [mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) i självstudiekursen om att aktivera gruppdestinationer.
+
+## (Beta) Exportera datauppsättningar {#export-datasets}
+
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
+
+## Validera slutförd dataexport {#exported-data}
+
+Kontrollera dina [!DNL Data Landing Zone] och se till att de exporterade filerna innehåller de förväntade profilpopulationerna.

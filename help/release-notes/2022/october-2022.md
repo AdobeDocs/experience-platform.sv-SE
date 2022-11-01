@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
-source-git-commit: cf8f630360c2cdbba1082913b179e719156183f4
+source-git-commit: d046c17a7b376f5c2e2f25c38fac0916ed2dba73
 workflow-type: tm+mt
-source-wordcount: '1042'
+source-wordcount: '1376'
 ht-degree: 1%
 
 ---
@@ -46,6 +46,15 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| (Beta) Datauppsättningsexport | The [Datauppsättningen exporterar betafunktioner](/help/destinations/ui/export-datasets.md) gör att du kan exportera första generationens data (enligt definitionen i [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)) från Adobe Experience Platform till era egna externa kundsystem via användargränssnittet. På så sätt kan du få ut data från Experience Platform med ett kodfritt/lågkodsarbetsflöde till sex molnlagringsmål (som anges i tabellen nedan) för analyser och efterlevnadsfall. |
+| (Beta) Förbättrade funktioner för filexport | Nu kan du dra nytta av förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform: <br><ul><li>Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).</li><li>Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> Den här funktionaliteten stöds av de sex nya betolymminneskorten i tabellen nedan. |
+
+{style=&quot;table-layout:auto&quot;}
+
 **Nya eller uppdaterade destinationer**
 
 | Destination | Beskrivning |
@@ -53,6 +62,12 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | [[!DNL Line]](../../destinations/catalog/mobile-engagement/line.md) | Line är en populär kommunikationsplattform som knyter samman människor, tjänster och information och har växt från en chattapp till ett nav för underhållning, sociala aktiviteter och dagliga aktiviteter. |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365 är en molnbaserad plattform för affärsapplikationer som kombinerar ERP (Enterprise Resource Planning) och CRM (Customer Relationship Management) med produktivitetsapplikationer och AI-verktyg, vilket ger smidigare och mer kontrollerad drift, bättre tillväxtpotential och minskade kostnader. |
 | [[!DNL (Beta) Adobe Commerce]](../../destinations/catalog/personalization/adobe-commerce.md) | The [!DNL (Beta) Adobe Commerce] med målanslutningen kan du välja ett eller flera Real-Time CDP-segment som ska aktiveras för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan du sedan välja de Real-Time CDP-segmenten för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;köp 2 få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna med hjälp av kampanjerbjudanden som alla är anpassade efter Adobe Real-Time CDP segment. |
+| [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | Skapa en utgående liveanslutning till [!DNL Azure Data Lake Storage Gen2] att regelbundet exportera datafiler från Adobe Experience Platform till din egen lagringsplats. Det nya betaversionen ger bättre filexportfunktioner och stöder datauppsättningsexport. |
+| [[!DNL (Beta) Azure Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | [!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform och ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformar. Det nya betaversionen ger bättre filexportfunktioner och stöder datauppsättningsexport. |
+| [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | Skapa en utgående liveanslutning till [!DNL Google Cloud Storage] att regelbundet exportera datafiler från Adobe Experience Platform till era egna fickor. Det nya betaversionen ger bättre filexportfunktioner och stöder datauppsättningsexport. |
+| [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) | Betatestare ser nu två [!DNL Amazon S3] destinationskort sida vid sida i målkatalogen. Det nya betaversionen ger utökade funktioner för filexport och stöder export av datauppsättningar. |
+| [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | Betatestare ser nu två [!DNL Azure Blob] destinationskort sida vid sida i målkatalogen. Det nya betaversionen ger utökade funktioner för filexport och stöder export av datauppsättningar. |
+| [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog) | Betatestare ser nu två [!DNL SFTP] destinationskort sida vid sida i målkatalogen. Det nya betaversionen ger utökade funktioner för filexport och stöder export av datauppsättningar. |
 
 {style=&quot;table-layout:auto&quot;}
 

@@ -4,9 +4,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och mycket annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 5c938f8158cfd16b8904ee1e7f67b6ce66b2e45c
+source-git-commit: d046c17a7b376f5c2e2f25c38fac0916ed2dba73
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '985'
 ht-degree: 1%
 
 ---
@@ -35,6 +35,7 @@ ht-degree: 1%
       * [Aktivera målgruppsdata för att profilera mål för begäran](./ui/activate-profile-request-destinations.md)
       * [Konfigurera personaliseringsmål för personalisering på samma sida och nästa sida](./ui/configure-personalization-destinations.md)
       * [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
+      * [(Beta) Exportera datauppsättningar med användargränssnittet i Experience Platform](./ui/export-datasets.md)
    * [Visa målinformation](./ui/destination-details-page.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
    * [Ta bort destinationskonton](./ui/delete-destination-account.md)
@@ -103,7 +104,10 @@ ht-degree: 1%
       * [Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-anslutning](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob-anslutning](./catalog/cloud-storage/azure-blob.md)
+      * [(Beta) Azure Data Lake Storage Gen2](./catalog/cloud-storage/adls-gen2.md)
       * [Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
+      * [(Beta) Data Landing Zone](./catalog/cloud-storage/data-landing-zone.md)
+      * [(Beta) Google Cloud-lagring](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
       * [IP-adress tillåtelselista för molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
    * CRM-mål {#crm}

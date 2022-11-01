@@ -3,9 +3,9 @@ keywords: molnlagringsmål;molnlagring
 title: Översikt över destinationer för molnlagring
 description: Adobe Experience Platform kan leverera dina segment som datafiler till dina Amazon S3-, AWS Kinesis-, Azure Event Hubs- eller SFTP-molnlagringsplatser.
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 818c9a6f5cd39db1405827b657872b99254ad1e5
+source-git-commit: 4a4c82cc4528fe07bbdb75ae9f795bdbab48c089
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Experience Platform kan leverera dina segment som datafiler till dina molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV-filer för [!DNL Amazon S3], [!DNL Azure Blob] och SFTP. För [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] mål, data direktuppspelas från Experience Platform in [!DNL JSON] format.
+Adobe Experience Platform kan leverera dina segment som datafiler till dina molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV-filer för [!DNL Amazon S3], [!DNL Azure Blob], [!DNL Azure Data Lake Storage Gen2], [!DNL Data Landing Zone], [!DNL Google Cloud Storage]och SFTP. För [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] mål, data direktuppspelas från Experience Platform in [!DNL JSON] format.
 
 ![Adobe molnlagringsdestinationer](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
@@ -25,7 +25,10 @@ Adobe Experience Platform stöder följande molnlagringsmål:
 * [Amazon Kinesis-anslutning](amazon-kinesis.md)
 * [Amazon S3-anslutning](amazon-s3.md)
 * [Azure Blob-anslutning](azure-blob.md)
+* [(Beta) Azure Data Lake Storage Gen2](adls-gen2.md)
 * [Azure Event Hubs-anslutning](azure-event-hubs.md)
+* [(Beta) Data Landing Zone](data-landing-zone.md)
+* [(Beta) Google Cloud-lagring](google-cloud-storage.md)
 * [SFTP-anslutning](sftp.md)
 
 ## Ansluta till ett nytt molnlagringsmål {#connect-destination}

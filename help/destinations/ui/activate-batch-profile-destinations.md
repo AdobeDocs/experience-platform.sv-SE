@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: c096720d9b7a645475d3a3f63f900e81c212d121
+source-git-commit: 04ccf5c44e24f281171e5dd753a8431c24e0e0cf
 workflow-type: tm+mt
-source-wordcount: '2544'
+source-wordcount: '3353'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>
+>Vissa kunder som deltar i betaprogrammet för förbättrad filexport ser de nya **[!UICONTROL Mapping]** som en del av aktiveringsarbetsflödet till [nya lagringsplatser för betmoln](/help/release-notes/2022/october-2022.md#destinations). Observera också [kända begränsningar](#known-limitations) som en del av releasen.
 
 ## Översikt {#overview}
 
@@ -162,13 +164,13 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 >title="Konfigurera filnamn"
 >abstract="För filbaserade mål genereras ett unikt filnamn per segment. Använd filnamnsredigeraren för att skapa och redigera ett unikt filnamn eller behåll standardnamnet."
 
-Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
+För de flesta mål består standardfilnamnen av målnamn, segment-ID och en datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna. Observera att vissa målutvecklare kan välja att visa olika alternativ för standardfilnamnstillägg för sina mål.
 
 Välj pennikonen för att öppna ett modalt fönster och redigera filnamnen. Filnamn får innehålla högst 255 tecken.
 
 >[!NOTE]
 >
->Bilden nedan visar hur filnamn kan redigeras för Amazon S3-mål, men processen är identisk för alla gruppmål (till exempel SFTP eller Azure Blob Storage).
+>Bilden nedan visar hur filnamn kan redigeras för [!DNL Amazon S3] mål men processen är identisk för alla batchdestinationer (till exempel SFTP, [!DNL Azure Blob Storage], eller [!DNL Google Cloud Storage]).
 
 ![Bild som markerar pennikonen, som används för att konfigurera filnamn.](../assets/ui/activate-batch-profile-destinations/configure-name.png)
 
@@ -178,9 +180,17 @@ I filnamnsredigeraren kan du välja olika komponenter att lägga till i filnamne
 
 Målnamnet och segment-ID kan inte tas bort från filnamn. Utöver dessa kan du lägga till följande:
 
-* **[!UICONTROL Segment name]**: Du kan lägga till segmentnamnet till filnamnet.
-* **[!UICONTROL Date and time]**: Välj mellan att lägga till en `MMDDYYYY_HHMMSS` format eller en Unix 10-siffrig tidsstämpel för den tid då filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export.
-* **[!UICONTROL Custom text]**: Lägg till egen text i filnamnen.
+| Filnamnsalternativ | Beskrivning |
+|---------|----------|
+| **[!UICONTROL Segment name]** | Namnet på det exporterade segmentet. |
+| **[!UICONTROL Date and time]** | Välj mellan att lägga till en `MMDDYYYY_HHMMSS` format eller en Unix 10-siffrig tidsstämpel för den tid då filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export. |
+| **[!UICONTROL Custom text]** | All egen text som du vill lägga till i filnamnen. |
+| **[!UICONTROL Destination ID]** | ID:t för måldataflödet som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Destination name]** | Namnet på måldataflödet som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Organization name]** | Organisationens namn i Experience Platform. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
@@ -193,7 +203,6 @@ När du har konfigurerat alla segment väljer du **[!UICONTROL Next]** för att 
 ## Välj profilattribut {#select-attributes}
 
 För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
-
 
 1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
 
@@ -386,6 +395,75 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 >
 > Om fältet `person.name.firstName` har vissa dataanvändningsetiketter som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
+## (Beta) Mappning {#mapping}
+
+>[!IMPORTANT]
+> 
+>Vissa betakunder kan se en förbättrad **[!UICONTROL Mapping]** som ersätter [Välj profilattribut](#select-attributes) vidare beskrivning ovan. Den här nya **[!UICONTROL Mapping]** kan du redigera rubrikerna för exporterade filer till valfritt eget namn.
+> 
+> Funktionen och dokumentationen kan komma att ändras. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet.
+
+I det här steget måste du välja de profilattribut som du vill lägga till i filerna som exporteras till målmålet. Så här väljer du profilattribut och identiteter för export:
+
+1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new field]**.
+
+   ![Lägg till ny fältkontroll som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
+
+1. Markera pilen till höger om **[!UICONTROL Source field]** post.
+
+   ![Välj källfältskontrollen som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
+
+1. I **[!UICONTROL Select source field]** väljer du de profilattribut och identiteter som du vill inkludera i de exporterade filerna till målet och väljer sedan **[!UICONTROL Select]**.
+
+   >[!TIP]
+   > 
+   >Du kan använda sökfältet för att begränsa urvalet, vilket visas i bilden nedan.
+
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
+
+
+1. Fältet som du valde för export visas nu i mappningsvyn. Om du vill kan du redigera namnet på rubriken i den exporterade filen. Det gör du genom att markera ikonen i målfältet.
+
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/mapping-step-select-target-field.png)
+
+1. I **[!UICONTROL Select target field]** skriver du in det önskade namnet på sidhuvudet i den exporterade filen och väljer **[!UICONTROL Select]**.
+
+   ![Modalt fönster med ett inskrivet eget namn för ett sidhuvud.](../assets/ui/activate-batch-profile-destinations/select-target-field-mapping.png)
+
+1. Fältet som du har valt för export visas nu i mappningsvyn och det redigerade huvudet i den exporterade filen visas.
+
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
+
+1. (Valfritt) Du kan välja att det exporterade fältet ska vara en [obligatorisk nyckel](#mandatory-keys) eller en [dedupliceringsnyckel](#deduplication-keys).
+
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-mandatory-deduplication-key.png)
+
+1. Om du vill lägga till fler fält för export upprepar du stegen ovan.
+
+### Kända begränsningar {#known-limitations}
+
+Den nya **[!UICONTROL Mapping]** sidan har följande kända begränsningar:
+
+#### Det går inte att välja segmentmedlemskapsattribut via mappningsarbetsflödet
+
+På grund av en känd begränsning kan du för närvarande inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+
+![Skärminspelning som visar segmentmedlemskapets tillfälliga lösning i aktiveringsarbetsflödets mappningssteg.](/help/destinations/assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
+
+Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
+* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
+* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+
+#### Identitetsnamnutrymmen kan för närvarande inte väljas för export
+
+Det går inte att markera identitetsnamnutrymmen för export, vilket visas i bilden nedan. Om du väljer ett identitetsnamnutrymme för export visas ett fel i **[!UICONTROL Review]** steg.
+
+![Mappning som inte stöds visar identitetsexporter](/help/destinations/assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
+
+Som en tillfällig lösning kan du antingen:
+* Använd de gamla molnlagringsmålen för dataflödena där du vill inkludera identitetsnamnutrymmen i exporter
+* Överför identiteter som attribut till Experience Platform och exportera dem sedan till dina molnlagringsplatser.
+
 ## Granska {#review}
 
 På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
@@ -402,11 +480,10 @@ Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish
 
 ## Verifiera segmentaktivering {#verify}
 
-
-För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Experience Platform en `.csv` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska skapas på din lagringsplats varje dag. Standardfilformatet är:
+För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Experience Platform en `.csv` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet är:
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
-De filer du får tre dagar i följd kan se ut så här:
+Om du till exempel har valt en daglig exportfrekvens kan filerna som du får tre dagar i följd se ut så här:
 
 ```console
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv

@@ -3,14 +3,32 @@ keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 1dd87ce19c3d9f4eb07c49968754ab979b4dee5c
+source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
 workflow-type: tm+mt
-source-wordcount: '714'
-ht-degree: 1%
+source-wordcount: '853'
+ht-degree: 0%
 
 ---
 
 # [!DNL Azure Blob] anslutning
+
+## Destinationsändringslogg {#changelog}
+
+>[!IMPORTANT]
+>
+>Med betaversionen av exportdataset och de förbättrade funktionerna för filexport kan du nu se två [!DNL Azure Blob] i målkatalogen.
+>* Om du redan exporterar filer till **[!UICONTROL Azure Blob]** mål: Skapa nya dataflöden för nya **[!UICONTROL Azure Blob beta]** mål.
+>* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Azure Blob]** mål, använd den nya **[!UICONTROL Azure Blob beta]** exportera filer till **[!UICONTROL Azure Blob]**.
+
+
+![Bild av de två Azure Blob-målkorten i en sida vid sida-vy.](/help/destinations/assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
+
+Förbättringar i nya [!DNL Azure Blob] omfattar följande destinationskort:
+
+* [Stöd för dataexport](/help/destinations/ui/export-datasets.md).
+* Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
+* Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* [Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ## Översikt {#overview}
 
@@ -89,6 +107,10 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+
+## (Beta) Exportera datauppsättningar {#export-datasets}
+
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
 
 ## Exporterade data {#exported-data}
 
