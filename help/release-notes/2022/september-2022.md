@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
 workflow-type: tm+mt
-source-wordcount: '2875'
+source-wordcount: '2883'
 ht-degree: 1%
 
 ---
@@ -220,7 +220,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).
 
-<!-- See the [query alerts documentation](../../query-service/api/alert-subscriptions.md) to learn more. -->
+Se [frågeaviseringsdokumentation](../../query-service/api/alert-subscriptions.md) om du vill veta mer.
 
 ## Källor {#sources}
 

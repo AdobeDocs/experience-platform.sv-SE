@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: d6858ab1389a0b5cfadc9f79b20b80c1c36a114e
+source-git-commit: cf8f630360c2cdbba1082913b179e719156183f4
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -90,7 +90,8 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Se [frågerapport för rapporter i butiker - dokument](https://experienceleague.adobe.com/docs/experience-platform/query/query-accelerated-store/reporting-insights-data-model.html) om du vill veta mer om den här funktionen. |
+| Övervaka frågor via plattformsgränssnittet | Frågetjänsten [!UICONTROL Scheduled Queries] -fliken ger förbättrad synlighet för statusen för alla frågejobb via gränssnittet. Du kan nu hitta viktig information om status för dina frågekörningar, inklusive felmeddelanden och koder om de misslyckas, från [!UICONTROL Scheduled Queries] -fliken. Du kan även prenumerera på aviseringar via användargränssnittet för dessa frågor baserat på deras status. Se [Övervaka frågedokument](../../query-service/monitor-queries.md) om du vill veta mer om den här funktionen. |
+| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Se [frågerapport för rapporter i butiker - dokument](../../query-service/query-accelerated-store/reporting-insights-data-model.md) om du vill veta mer om den här funktionen. |
 
 {style=&quot;table-layout:auto&quot;}
 

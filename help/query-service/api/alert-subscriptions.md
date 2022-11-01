@@ -2,9 +2,7 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;alert;
 title: API-slutpunkt för aviseringsprenumerationer
 description: Den här handboken innehåller exempel på HTTP-begäranden och svar för de olika API-anrop som du kan göra till slutpunkten för aviseringsprenumerationer med hjälp av API:t för frågetjänsten.
-hide: true
-hidefromtoc: true
-source-git-commit: df894d8b52aff3708aa06e73d4c5ba3e1e501f10
+source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
 workflow-type: tm+mt
 source-wordcount: '2289'
 ht-degree: 0%
