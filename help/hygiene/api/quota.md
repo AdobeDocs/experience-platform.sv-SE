@@ -1,9 +1,9 @@
 ---
 title: API-slutpunkt för kvot
 description: Med slutpunkten /quota i Data Hygiene API kan du övervaka din datahygien mot organisationens månatliga kvotgränser för varje jobbtyp.
-source-git-commit: 364ada0c354ddba8a855945f4f806f5600f21416
+source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '352'
 ht-degree: 1%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt skölden.
+>Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
 The `/quota` -slutpunkten i Data Hygiene API gör att du kan övervaka din datahygien mot organisationens kvotgränser för varje jobbtyp.
 
