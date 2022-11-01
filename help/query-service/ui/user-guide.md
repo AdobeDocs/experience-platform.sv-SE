@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågeredigeraren
 topic-legacy: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 9c7068b4209a7c85c444b1cc83415747b93bacb2
+source-git-commit: 6cb28f8afa528849662fb416d81d155384a3de6c
 workflow-type: tm+mt
-source-wordcount: '1941'
+source-wordcount: '2003'
 ht-degree: 0%
 
 ---
@@ -116,13 +116,19 @@ På den här panelen visas även användbara metadata som den senaste gången fr
 >
 >Nedan följer en lista över begränsningar för schemalagda frågor när du använder Frågeredigeraren. De gäller inte för [!DNL Query Service] API:<br/>Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts.<br/>Du **inte** lägga till ett schema i en parametriserad fråga.<br/>Schemalagda frågor **inte** innehåller ett anonymt block.
 
-Om du vill lägga till ett schema i en fråga väljer du **[!UICONTROL Add schedule]**.
+Scheman ställs in från frågeredigeraren. Det går dock bara att schemalägga frågor som redan har sparats som en mall. Om du vill lägga till ett schema i en fråga väljer du en frågemall i [!UICONTROL Templates] -fliken eller [!UICONTROL Scheduled Queries] för att gå till Frågeredigeraren.
 
-<!-- Cannot update this image below yet. Believe schedules tab is being added to the Query Editor -->
+Läs mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
 
-![Frågeredigeraren med Lägg till schema markerat.](../images/ui/query-editor/add-schedule.png)
+När en sparad fråga öppnas från Frågeredigeraren [!UICONTROL Schedules] -fliken visas under frågenamnet. Välj **[!UICONTROL Schedules]**.
 
-The **[!UICONTROL Schedule details]** visas. På den här sidan kan du välja frekvens för den schemalagda frågan, datum som den schemalagda frågan ska köras samt vilken datamängd som frågan ska exporteras till.
+![Frågeredigeraren med fliken Scheman markerad.](../images/ui/query-editor/schedules-tab.png)
+
+Arbetsytan för scheman visas. Välj **[!UICONTROL Add Schedule]** för att skapa ett schema.
+
+![Arbetsytan Schemaläggning i frågeredigeraren med Lägg till schema markerat.](../images/ui/query-editor/add-schedule.png)
+
+Sidan med schemainformation visas. På den här sidan kan du välja frekvens för den schemalagda frågan, start- och slutdatum, veckodag som den schemalagda frågan ska köras samt vilken datamängd som frågan ska exporteras till.
 
 ![Panelen Schemainformation är markerad.](../images/ui/query-editor/schedule-details.png)
 
@@ -140,39 +146,35 @@ För datauppsättningen kan du välja att antingen använda en befintlig dataupp
 >
 > Eftersom du använder en befintlig eller skapar en ny datauppsättning gör du det **not** måste innehålla antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av frågan, eftersom datauppsättningarna redan har angetts. Inklusive antingen `INSERT INTO` eller `CREATE TABLE AS SELECT` som en del av dina schemalagda frågor resulterar i ett fel.
 
-När du har bekräftat alla dessa uppgifter väljer du **[!UICONTROL Save]** för att skapa ett schema.
+När du har bekräftat alla dessa uppgifter väljer du **[!UICONTROL Save]** för att skapa ett schema. Du återgår till arbetsytan för scheman som innehåller information om det nya schemat, inklusive schema-ID, själva schemat och schemats utdatamängd. Du kan använda schema-ID för att söka efter mer information om körningarna av själva den schemalagda frågan. Läs mer i [guide för körningsslutpunkter för schemalagda frågor](../api/runs-scheduled-queries.md).
 
-Sidan med frågeinformation visas igen och visar nu information om det nyligen skapade schemat, inklusive schema-ID, själva schemat och schemats utdatamängd. Du kan använda schema-ID för att söka efter mer information om körningarna av själva den schemalagda frågan. Läs mer i [guide för körningsslutpunkter för schemalagda frågor](../api/runs-scheduled-queries.md).
+![Arbetsytan för scheman med det nya schemat markerat.](../images/ui/query-editor/schedules-workspace.png)
 
->[!NOTE]
->
-> Du kan bara schemalägga **en** frågemall med hjälp av användargränssnittet. Om du vill lägga till fler scheman i en frågemall måste du använda API:t. Om ett schema redan har lagts till med API:t kommer du att **not** kan lägga till fler scheman med hjälp av användargränssnittet. Om flera scheman redan är kopplade till en frågemall visas endast det äldsta schemat. Läs mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
->
-> Du bör dessutom uppdatera sidan om du vill vara säker på att du har det senaste läget för det schema som du visar.
+#### Ta bort eller inaktivera ett schema {#delete-schedule}
 
-#### Ta bort ett schema {#delete-schedule}
+Du kan ta bort eller inaktivera ett schema från arbetsytan för scheman. Du måste välja en frågemall i [!UICONTROL Templates] -fliken eller [!UICONTROL Scheduled Queries] för att gå till Frågeredigeraren och välja **[!UICONTROL Schedule]** för att komma åt arbetsytan för scheman.
 
-Du kan ta bort ett schema genom att välja **[!UICONTROL Delete a schedule]**.
-
-<!-- Cannot update this image below yet. Believe schedules tab is being added to the Query Editor -->
-
-![Frågeredigeraren med Inaktivera schema och Ta bort schema markerat.](../images/ui/query-editor/delete-schedule.png)
+Välj ett schema bland raderna i tillgängliga scheman. Du kan använda växlingsknappen för att inaktivera eller aktivera den schemalagda frågan.
 
 >[!IMPORTANT]
 >
-> Om du vill ta bort ett schema för en fråga måste du först inaktivera schemat.
+>Du måste inaktivera schemat innan du kan ta bort ett schema för en fråga.
+
+Välj **[!UICONTROL Delete a schedule]** om du vill ta bort det inaktiverade schemat.
+
+![Arbetsytan för scheman med Inaktivera schema och Ta bort schema markerat.](../images/ui/query-editor/delete-schedule.png)
 
 ### Sparar frågor {#saving-queries}
 
-[!DNL Query Editor] innehåller en funktion för att spara som gör att du kan spara en fråga och arbeta med den senare. Om du vill spara en fråga väljer du **[!UICONTROL Save]** i det övre högra hörnet av [!DNL Query Editor]. Innan en fråga kan sparas måste ett namn anges för frågan med hjälp av **[!UICONTROL Query Details]** -panelen.
+The [!DNL Query Editor] innehåller en funktion för att spara som gör att du kan spara en fråga och arbeta med den senare. Om du vill spara en fråga väljer du **[!UICONTROL Save]** i det övre högra hörnet av [!DNL Query Editor]. Innan en fråga kan sparas måste ett namn anges för frågan med hjälp av **[!UICONTROL Query Details]** -panelen.
 
 >[!NOTE]
 >
->Frågor som namngivits och sparats i med Frågeredigeraren är tillgängliga som mallar på kontrollpanelen Fråga [!UICONTROL Browse] -fliken. Se [malldokumentation](./query-templates.md) för mer information.
+>Frågor som namngivits och sparats i med Frågeredigeraren är tillgängliga som mallar på kontrollpanelen Fråga [!UICONTROL Templates] -fliken. Se [malldokumentation](./query-templates.md) för mer information.
 
 ### Söka efter tidigare frågor {#previous-queries}
 
-Alla frågor som körs från [!DNL Query Editor] finns i loggtabellen. Du kan använda sökfunktionerna i **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor listas i **[!UICONTROL Browse]** -fliken.
+Alla frågor som körs från [!DNL Query Editor] finns i loggtabellen. Du kan använda sökfunktionerna i **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor listas i **[!UICONTROL Templates]** -fliken.
 
 Se [Översikt över användargränssnittet i frågetjänsten](./overview.md) för mer information.
 
@@ -182,7 +184,7 @@ Se [Översikt över användargränssnittet i frågetjänsten](./overview.md) fö
 
 ## Köra frågor med Frågeredigeraren {#executing-queries}
 
-Så här kör du en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren eller läsa in en tidigare fråga från **[!UICONTROL Log]** eller **[!UICONTROL Browse]** och markera **Spela upp**. Status för frågekörning visas i **[!UICONTROL Console]** nedan och utdata visas i **[!UICONTROL Results]** -fliken.
+Så här kör du en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren eller läsa in en tidigare fråga från **[!UICONTROL Log]** eller **[!UICONTROL Templates]** och markera **Spela upp**. Status för frågekörning visas i **[!UICONTROL Console]** nedan och utdata visas i **[!UICONTROL Results]** -fliken.
 
 ### Konsol {#console}
 

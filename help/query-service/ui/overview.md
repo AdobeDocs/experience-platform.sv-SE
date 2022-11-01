@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
+source-git-commit: a085bac6b4ee825d534710ae91d6690fa076e873
 workflow-type: tm+mt
 source-wordcount: '687'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Query Service] innehåller ett användargränssn
 
 ## [!DNL Query Editor]
 
-The [!DNL Query Editor] gör att du kan skriva och köra frågor utan att använda en extern klient. Välj **[!UICONTROL Create Query]** för att öppna [!DNL Query Editor] och skapa en ny fråga. Du kan även komma åt [!DNL Query Editor] genom att välja en fråga från **[!UICONTROL Log]** eller **[!UICONTROL Browse]** -tabbar. Om du väljer en fråga som har körts eller sparats tidigare öppnas [!DNL Query Editor] och visa SQL för den valda frågan.
+The [!DNL Query Editor] gör att du kan skriva och köra frågor utan att använda en extern klient. Välj **[!UICONTROL Create Query]** för att öppna [!DNL Query Editor] och skapa en ny fråga. Du kan även komma åt [!DNL Query Editor] genom att välja en fråga från **[!UICONTROL Log]** eller **[!UICONTROL Templates]** -tabbar. Om du väljer en fråga som har körts eller sparats tidigare öppnas [!DNL Query Editor] och visa SQL för den valda frågan.
 
 ![Kontrollpanelen Frågor med Skapa fråga markerad.](../images/ui/overview/overview.png)
 
