@@ -4,9 +4,9 @@ title: Stödlinje för instrumentpanel för segment
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 18288130b98e13d824273426a860d97722c434de
+source-git-commit: 23df35d7d90b6674b089a842818dba83283a1646
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '1979'
 ht-degree: 0%
 
 ---
@@ -99,7 +99,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 
 The **[!UICONTROL Audience size]** visar det totala antalet sammanfogade profiler i det markerade segmentet när ögonblicksbilden togs. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
 
-Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
+Mer information om fragment och sammanfogade profiler finns i [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ![Översikt över kontrollpanelen Segment med widgeten Målgruppsstorlek markerad.](../images/segments/audience-size.png)
 

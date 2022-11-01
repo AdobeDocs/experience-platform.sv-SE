@@ -4,9 +4,9 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
+source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
 workflow-type: tm+mt
-source-wordcount: '2648'
+source-wordcount: '2649'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ En översikt över destinationer samt en katalog över alla tillgängliga destin
 
 ## [!UICONTROL Destinations] instrumentpanelsdata {#destinations-dashboard-data}
 
-The [!UICONTROL Destinations] På kontrollpanelen visas en ögonblicksbild av de mål som din organisation har aktiverat i Experience Platform. Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för destinationer uppdateras inte i realtid.
+På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer som din organisation har aktiverat i Experience Platform. Data i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för destinationer uppdateras inte i realtid.
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL 
 
 >[!NOTE]
 >
->Om din organisation är ny i Experience Platform och ännu inte har några aktiva destinationer är [!UICONTROL Destinations] kontrollpanel och [!UICONTROL Overview] -fliken visas inte. Välj i stället [!UICONTROL Destinations] från vänster navigering visas [!UICONTROL Catalog] -fliken. Läs mer om [!UICONTROL Catalog] -fliken, se [[!UICONTROL Destinations] arbetsytans guide](../../destinations/ui/destinations-workspace.md).
+>Om din organisation är ny för Experience Platform och ännu inte har några aktiva destinationer visas kontrollpanelen Destinationer och [!UICONTROL Overview] -fliken visas inte. Välj i stället [!UICONTROL Destinations] från vänster navigering visas [!UICONTROL Catalog] -fliken. Läs mer om [!UICONTROL Catalog] -fliken, se [[!UICONTROL Destinations] arbetsytans guide](../../destinations/ui/destinations-workspace.md).
 
 ![Översikt över plattformsgränssnittets destinationer med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
 
