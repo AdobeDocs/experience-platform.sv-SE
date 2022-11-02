@@ -4,7 +4,7 @@ title: Aktivera en datauppsättning för profil- och identitetstjänsten med API
 type: Tutorial
 description: I den här självstudiekursen visas hur du aktiverar en datauppsättning för användning med kundprofil och identitetstjänst i realtid med Adobe Experience Platform API:er.
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 132407af947b97a1925799a1fb5e12caa2b0410c
 workflow-type: tm+mt
 source-wordcount: '1073'
 ht-degree: 0%
@@ -175,8 +175,7 @@ curl -X GET \
         "schemaMetadata": {
             "primaryKey": [],
             "delta": [],
-            "dule": [],
-            "gdpr": []
+            "dule": []
         },
         "schemaRef": {
             "id": "https://ns.adobe.com/xdm/context/experienceevent",
