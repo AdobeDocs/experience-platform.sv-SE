@@ -1,7 +1,7 @@
 ---
 title: (Beta) Anslutning till Google Cloud-lagring
 description: Lär dig hur du ansluter till Google Cloud-lagring och aktiverar segment eller exporterar datauppsättningar.
-source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
+source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
 workflow-type: tm+mt
 source-wordcount: '843'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
 * **[!UICONTROL Access key ID]**: En 61-siffrig alfanumerisk sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
-* **[!UICONTROL Secret access key]**: En 40-siffrig, base-64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
+* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64-encoded] sträng. Visa ett exempel på en korrekt formaterad, base64-kodad nyckel i dokumentationslänken nedan. Mittdelen förkortas av utrymmesskäl.
 
    ![Bild som visar ett exempel på en korrekt formaterad och base64-krypterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)

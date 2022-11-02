@@ -2,7 +2,7 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: f163b1e3c60953192b2ddf543eb4f3e8df88799b
+source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
 workflow-type: tm+mt
 source-wordcount: '876'
 ht-degree: 0%
@@ -62,8 +62,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >
 >Google har förenklat processen att ansluta externa målgruppshanteringsplattformar till Google Ad Manager 360. Nu kan du gå igenom processen för att länka till Google Ad Manager 360 på ett självbetjäningssätt. Läs [Segment från datahanteringsplattformar](https://support.google.com/admanager/answer/3289669?hl=en) i Google-dokumentationen. Du bör ha ID:n listade nedan till hands.
 
-* **Konto-ID**: Adobe konto-ID hos Google. Konto-ID: 87933855.
-* **Kund-ID**: Adobe kundkonto-ID hos Google. Kund-ID: 89690775.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
+* **Kund-ID**: Adobe kund-ID med Google. Kund-ID: 89690775.
 * **Nätverkskod**: Det här är din [!DNL Google Ad Manager] nätverksidentifierare, hittades under **[!UICONTROL Admin > Global settings]** i Google-gränssnittet och i URL-adressen.
 * **Målgruppslänks-ID**: Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]), som också finns under **[!UICONTROL Admin > Global settings]** i Google gränssnitt.
 * Din kontotyp. DFP av Google eller AdX-köpare.
@@ -81,7 +81,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
 * **[!UICONTROL Access key ID]**: En 61-siffrig alfanumerisk sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform.
-* **[!UICONTROL Secret access key]**: En 40-siffrig, base-64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform.
+* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform.
 
 Mer information om dessa värden finns i [Google Cloud Storage HMAC-nycklar](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) guide. Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] källöversikt](/help/sources/connectors/cloud-storage/google-cloud-storage.md).
 
