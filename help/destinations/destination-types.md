@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: c140e68467065d17f143850bfb8eefb3ac46443a
 workflow-type: tm+mt
-source-wordcount: '637'
+source-wordcount: '670'
 ht-degree: 0%
 
 ---
@@ -66,6 +66,12 @@ Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida
 I videon nedan beskrivs de två typerna av destinationer:
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
+
+## (Beta) Exportmål för datauppsättning {#dataset-export-destinations}
+
+Vissa molnlagringsmål i målkatalogen stöder datauppsättningsexporter. Använd dessa mål för att exportera rådatauppsättningar till molnlagringsplatser.
+
+Läs mer om hur [exportera datamängder](/help/destinations/ui/export-datasets.md).
 
 ## Tillägg {#extensions}
 

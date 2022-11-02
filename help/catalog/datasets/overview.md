@@ -5,9 +5,9 @@ title: Datauppsättningar - översikt
 topic-legacy: datasets
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 02002c9530074b8b05664ff9eab5bc2fe4b7d5d4
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,7 @@ Nedan följer en lista över tjänster längre fram i kedjan som använder datau
 * [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Gör att ni kan skapa segment och generera målgrupper utifrån era [!DNL Real-time Customer Profile] data. Dessa målgrupper kan sedan exporteras till sina egna datauppsättningar i [!DNL Data Lake].
 * [Adobe Experience Platform Data Science Workspace](../../data-science-workspace/home.md): Använder maskininlärning och artificiell intelligens för att identifiera insikter i stora datamängder.
 * [Adobe Experience Platform Query Service](../../query-service/home.md): Gör att du kan använda standard-SQL för att fråga data i [!DNL Experience Platform], koppla alla datauppsättningar i [!DNL Data Lake] och hämta frågeresultat som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace], eller [!DNL Real-time Customer Profile].
+* [Adobe Experience Platform Destinationstjänst](../../destinations/home.md): Gör att du kan [exportera datamängder](/help/destinations/ui/export-datasets.md) till det molnlagringsutrymme eller e-postmarknadsföringsmål du vill ha för rapporter och datavetenskapliga aktiviteter.
 
 ## Nästa steg
 

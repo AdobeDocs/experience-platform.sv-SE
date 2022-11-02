@@ -3,9 +3,9 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 802a15212f51db2c616860ed0fd2c3f1cf2d3777
+source-git-commit: 69e1f065cb3b302c4b144f39c84179075379f648
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1108'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ I Adobe Experience Platform väljer du **[!UICONTROL Destinations]** från det v
 
 The [!UICONTROL Destinations] arbetsytan består av fem avsnitt, [!UICONTROL Overview], [!UICONTROL Catalog], [!UICONTROL Browse], [!UICONTROL Accounts]och [!UICONTROL System View]som beskrivs i avsnitten nedan.
 
-![Destinationer - översikt](../assets/ui/workspace/destinations-overview.png)
+![Målöversiktspanelen med tre widgetar.](../assets/ui/workspace/destinations-overview.png)
 
 ## [!UICONTROL Overview] {#overview}
 
@@ -37,16 +37,18 @@ The [!DNL Platform] I användargränssnittet finns flera sök- och filteralterna
 * Använd sökfunktionen på sidan för att hitta ett specifikt mål.
 * Filtrera mål med [!UICONTROL Categories] kontroll.
 * Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När du väljer **[!UICONTROL All destinations]**, alla tillgängliga [!DNL Platform] mål visas. När du väljer **[!UICONTROL My destinations]** kan du bara se de mål som du har upprättat en anslutning till.
-* Välj att visa **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]**. Mer information om skillnaden mellan de två kategorierna finns i [Måltyper och -kategorier](../destination-types.md).
+* Markera för att visa **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]** typer. Om du vill förstå skillnaden mellan de två kategorierna läser du [Måltyper och -kategorier](../destination-types.md).
 
-![Katalog](../assets/ui/workspace/catalog.png)
+![Destinationskatalogen med ett fåtal annons- och molnlagringsdestinationer.](../assets/ui/workspace/catalog.png)
 
-Målkorten innehåller antingen en **[!UICONTROL Set up]** eller en **[!UICONTROL Activate segments]** och en sekundär kontroll som ger fler alternativ. Dessa kontroller beskrivs nedan:
+Målkorten innehåller alternativ för primär och sekundär kontroll. De primära kontrollerna är [!UICONTROL Set up], [!UICONTROL Activate], [!UICONTROL Activate segments], eller [!UICONTROL Export datasets]. De sekundära kontrollerna tillåter visningsalternativ. Dessa kontroller beskrivs nedan:
 
 | Kontroll | Beskrivning |
 |---------|----------|
 | [!UICONTROL Set up] | Gör att du kan skapa en anslutning till målet. |
-| [!UICONTROL Activate segments] | När du har upprättat en anslutning till målet kan du aktivera segment. |
+| [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera segment eller exportera datauppsättningar till det här målet. |
+| [!UICONTROL Activate segments] | När du har upprättat en anslutning till målet kan du aktivera segment till det här målet. |
+| [!UICONTROL Export datasets] | När du har upprättat en anslutning till målet kan du exportera datauppsättningar till det här målet. |
 | [!UICONTROL View account] | Visa konton som du har anslutit för ett mål. |
 | [!UICONTROL View dataflows] | Visa dataaktiveringsflödena som finns för ett mål. |
 | [!UICONTROL View documentation] | Öppnar en länk till dokumentationssidan för det specifika målet, för mer information och för att hjälpa dig att konfigurera det. |
@@ -67,9 +69,9 @@ The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som 
 
 >[!TIP]
 >
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Platform] kolumn och använd ![Knappen Aktivera segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate segments]**om du vill skicka segment till det målet.
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Platform] kolumn och använd ![Knappen Redigera information ](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL Edit details]**knapp till [uppdatera](update-accounts.md) Information om ett befintligt destinationskonto.
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Platform] kolumn och använd ![Knappen Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**knapp till [delete](delete-destination-account.md) ett befintligt destinationskonto.
+> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Aktivera kontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate segments]**/**[!UICONTROL Export datasets]**kontroll för att exportera segment eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Redigera informationskontroll ](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL Edit details]**styra till [uppdatera](update-accounts.md) Information om ett befintligt destinationskonto.
+> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [delete](delete-destination-account.md) ett befintligt destinationskonto.
 
 
 ![Fliken Konton](../assets/ui/workspace/destination-account-options.png)
@@ -90,10 +92,10 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 
 >[!TIP]
 >
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Knappen Aktivera segment ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate segments]**om du vill skicka segment till det målet.
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Knappen Ta bort ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**knapp till [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Visa i övervakningsknapp ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**om du vill visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
-> * Markera de tre punkterna i dialogrutan [!UICONTROL Name] kolumn och använd ![Prenumerera på aviseringar ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på aviseringar om destinationer i sitt sammanhang](alerts.md) om du vill ha detaljerad information om aviseringar om måldataflöde.
+> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Aktivera segmentkontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**kontroll för att exportera segment eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
+> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Visa i övervakningskontroll ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**för att visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Prenumerera på aviseringar ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på aviseringar om destinationer i sitt sammanhang](alerts.md) om du vill ha detaljerad information om aviseringar om måldataflöde.
 
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
