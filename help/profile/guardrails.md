@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: d6100f58b8ffd6251c3a58576a41dbfb75c3bb0c
+source-git-commit: 67ed3e5a71231d9c243ca31693d2db70492bdb43
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '1905'
 ht-degree: 1%
 
 ---
@@ -136,7 +136,7 @@ The [!DNL Profile] lagringsdatamodellen består av två huvudenhetstyper:
 
 ### Profilfragment
 
-I det här dokumentet finns det flera skyddsutkast som refererar till&quot;profilfragment&quot;. I Experience Platform sammanfogas flera profilfragment till kundprofilen i realtid. Varje fragment representerar en unik primär identitet och motsvarande post- eller händelsedata för det ID:t inom en given datauppsättning. Mer information om profilfragment finns i [Profilöversikt](home.md#profile-fragments-vs-merged-profiles).
+I det här dokumentet finns det flera skyddsutkast som refererar till&quot;profilfragment&quot;. I Experience Platform sammanfogas flera profilfragment till kundprofilen i realtid. Varje fragment representerar en unik primär identitet och motsvarande post eller fullständiga händelsedata för det ID:t inom en given datamängd. Mer information om profilfragment finns i [Profilöversikt](home.md#profile-fragments-vs-merged-profiles).
 
 ### Sammanfoga profiler {#merge-policies}
 
