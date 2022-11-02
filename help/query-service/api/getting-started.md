@@ -5,9 +5,9 @@ title: API-guide för frågetjänst
 topic-legacy: query templates
 description: Med API:t för frågetjänsten kan utvecklare fråga sina Adobe Experience Platform-data med hjälp av standard-SQL. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 2f4a156b-5623-419a-a9b2-72310f755708
-source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
+source-git-commit: 9f458a327c0b72a5984161f13f02d09b7a2e610e
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '399'
 ht-degree: 1%
 
 ---
@@ -55,6 +55,7 @@ Nu när du förstår vilka rubriker du ska använda kan du börja ringa till [!D
 - [Schemalagda frågor](scheduled-queries.md)
 - [Körs för schemalagda frågor](runs-scheduled-queries.md)
 - [Frågemallar](query-templates.md)
+- [Snabbare frågor](./accelerated-queries.md)
 - [Aviseringsprenumerationer](./alert-subscriptions.md)
 
 ## Nästa steg
