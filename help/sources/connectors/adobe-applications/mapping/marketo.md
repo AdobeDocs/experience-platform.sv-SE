@@ -5,9 +5,9 @@ title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: a0ca9cff43b6f8276268467fecf944c664992950
+source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,8 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 ## Aktiviteter {#activities}
 
 The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med [program för automatisk generering av schema](../marketo/marketo-namespaces.md) därför att om du skapar nya `activities` utan att uppdatera schemat, kommer mappningsmallarna att misslyckas eftersom de nya målfälten inte kommer att finnas i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att hämtas till Platform.
+
+Läs dokumentationen om [Klassen XDM Experience Event](../../../../xdm/classes/experienceevent.md) för mer information om XDM-klassen och XDM-fältgrupper.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -136,6 +138,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 
 ## Program {#programs}
 
+Läs [Översikt över XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för information om företagskampanj](../../../../xdm/field-groups/b2b-campaign/details.md) guide.
+
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `campaignKey.sourceType` |
@@ -164,6 +168,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 {style=&quot;table-layout:auto&quot;}
 
 ## Programmedlemskap {#program-memberships}
+
+Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Campaign-medlemsinformation](../../../../xdm/field-groups/b2b-campaign-members/details.md) guide.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -196,6 +202,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 
 ## Företag {#companies}
 
+Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-account.md) för mer information om klassen XDM.
+
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `accountKey.sourceType` |
@@ -226,6 +234,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 
 ## Statiska listor {#static-lists}
 
+Läs [Översikt över XDM Business Marketing List](../../../../xdm/classes/b2b/business-marketing-list.md) för mer information om klassen XDM.
+
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `marketingListKey.sourceType` |
@@ -241,6 +251,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 {style=&quot;table-layout:auto&quot;}
 
 ## Statiska listmedlemskap {#static-list-memberships}
+
+Läs [Översikt över medlemmar i XDM Business Marketing List](../../../../xdm/classes/b2b/business-marketing-list-members.md) för mer information om klassen XDM.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -260,6 +272,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 >[!IMPORTANT]
 >
 >Datauppsättningen med namngivna konton är bara nödvändig med funktionen Marketo kontobaserad marknadsföring (ABM). Om du inte använder ABM behöver du inte konfigurera mappningar för namngivna konton.
+
+Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-account.md) för mer information om klassen XDM.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -286,6 +300,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 {style=&quot;table-layout:auto&quot;}
 
 ## Möjligheter {#opportunities}
+
+Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/business-opportunity.md) för mer information om klassen XDM.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -322,6 +338,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 
 ## Kontaktroller för affärsmöjlighet {#opportunity-contact-roles}
 
+Läs [Översikt över XDM Business Opportunity Person Relation](../../../../xdm/classes/b2b/business-account-person-relation.md) för mer information om klassen XDM.
+
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `opportunityPersonKey.sourceType` |
@@ -340,6 +358,8 @@ The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vi
 {style=&quot;table-layout:auto&quot;}
 
 ## Personer {#persons}
+
+Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-profile.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Person Details](../../../../xdm/field-groups/profile/business-person-details.md) stödlinje och [Schemafältgrupp för XDM Business Person Components](../../../../xdm/field-groups/profile/business-person-components.md) guide.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |

@@ -3,10 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;Salesforce;salesforce;fältma
 title: Salesforce-mappningsfält
 description: Tabellerna nedan innehåller mappningarna mellan Salesforce-källfält och deras motsvarande XDM-fält.
 exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
-source-git-commit: 948247c1ffbe10fa07ba1d03f1715fd707c6d836
+source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
 workflow-type: tm+mt
-source-wordcount: '291'
-ht-degree: 1%
+source-wordcount: '494'
+ht-degree: 0%
 
 ---
 
@@ -15,6 +15,8 @@ ht-degree: 1%
 Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält och deras motsvarande XDM-fält (Experience Data Model).
 
 ## Kontakt {#contact}
+
+Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-profile.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Person Details](../../../../xdm/field-groups/profile/business-person-details.md) stödlinje och [Schemafältgrupp för XDM Business Person Components](../../../../xdm/field-groups/profile/business-person-components.md) guide.
 
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
@@ -74,6 +76,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 
 ## Lead {#lead}
 
+Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-profile.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Person Details](../../../../xdm/field-groups/profile/business-person-details.md) stödlinje och [Schemafältgrupp för XDM Business Person Components](../../../../xdm/field-groups/profile/business-person-components.md) guide.
+
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `City` | `workAddress.city` |
@@ -122,6 +126,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 {style=&quot;table-layout:auto&quot;}
 
 ## Konto {#account}
+
+Läs [Översikt över XDM Business Account-detaljer](../../../../xdm/classes/b2b/business-account.md) för mer information om klassen XDM.
 
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
@@ -177,6 +183,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 
 ## Möjligheter {#opportunity}
 
+Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/business-opportunity.md) för mer information om klassen XDM.
+
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Salesforce"` | `opportunityKey.sourceType` |
@@ -216,6 +224,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 
 ## Kontaktroll för affärsmöjlighet {#opportunity-contact-role}
 
+Läs [Översikt över klassen XDM Business Opportunity Person Relation](../../../../xdm/classes/b2b/business-opportunity-person-relation.md) för mer information om klassen XDM.
+
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Salesforce"` | `opportunityPersonKey.sourceType` |
@@ -239,6 +249,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 {style=&quot;table-layout:auto&quot;}
 
 ## Campaign {#campaign}
+
+Läs [Översikt över klassen XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Campaign-information](../../../../xdm/field-groups/b2b-campaign/details.md) guide.
 
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
@@ -269,6 +281,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 
 ## Kampanjmedlem {#campaign-member}
 
+Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för XDM Business Campaign-medlemsinformation](../../../../xdm/field-groups/b2b-campaign/details.md) -dokument.
+
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
 | `"Salesforce"` | `campaignMemberKey.sourceType` |
@@ -292,6 +306,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Salesforce] källfält oc
 | `Type` | `b2b.personType` |
 
 ## Kontaktrelation för konto {#account-contact-relation}
+
+Läs [XDM Business Account Person Relation-klass](../../../../xdm/classes/b2b/business-account-person-relation.md) för mer information om klassen XDM.
 
 | Källfält | Sökväg till mål-XDM-fält | Anteckningar |
 | --- | --- | --- |
