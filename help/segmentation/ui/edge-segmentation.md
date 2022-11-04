@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 75583d9688f0c5ee0fe4627ce64b5436ca621aa1
+source-git-commit: d2196d4d9cae4bdec160ce0c028d354a0db21cb5
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '895'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 >
 >Om frågan matchar någon av frågetyperna i följande tabell utvärderas den automatiskt med kantsegmentering. Den här funktionen bestäms automatiskt av systemet utifrån frågeuttrycket.
 
-| Frågetyp | Detaljer | Exempel | PQL-exempel |
+| Frågetyp | Information | Exempel | PQL-exempel |
 | ---------- | ------- | ------- | ----------- |
 | En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | Personer som har lagt till ett objekt i kundvagnen. | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart")])` |
 | En profil | Alla segmentdefinitioner som refererar till ett enskilt profilattribut | Folk som bor i USA. | `homeAddress.countryCode = "US"` |
@@ -58,3 +58,11 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 ## Nästa steg
 
 Den här guiden förklarar hur du utvärderar segment med kantsegmentering på Adobe Experience Platform. Mer information om hur du använder användargränssnittet i Experience Platform finns i [Användarhandbok för segmentering](./overview.md). Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Experience Platform API:er kan du gå till [API-guide för kantsegmentering](../api/edge-segmentation.md).
+
+## Bilaga
+
+I följande avsnitt visas vanliga frågor om kantsegmentering:
+
+### Hur lång tid tar det innan ett segment blir tillgängligt i Edge Network?
+
+Det tar upp till en timme för ett segment att vara tillgängligt på Edge Network.

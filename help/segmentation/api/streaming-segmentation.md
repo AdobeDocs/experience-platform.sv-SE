@@ -5,9 +5,9 @@ title: Utvärdera händelser i nära realtid med strömmande segmentering
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 5a4a8a8b77d06890f212a457e599b66aa46d8b7e
+source-git-commit: 30a12fee487609b4c85ba342963bb915e8152195
 workflow-type: tm+mt
-source-wordcount: '1915'
+source-wordcount: '1938'
 ht-degree: 0%
 
 ---
@@ -439,3 +439,7 @@ Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som o
 Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Detta värde är **endast** visas för direktuppspelningssegment. Detta resulterar i att detta värde **kan** visas som 0 för gruppsegment.
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för det segmentet.
+
+### Hur lång tid tar det innan ett segment blir tillgängligt?
+
+Det tar upp till en timme innan ett segment är tillgängligt.

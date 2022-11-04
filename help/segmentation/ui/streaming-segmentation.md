@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: e6b5ea1878631fa88f907fd4aec64cf040e76e95
+source-git-commit: 39e3b4df3e44200fd800b501ea7b7e06bf828054
 workflow-type: tm+mt
-source-wordcount: '1308'
+source-wordcount: '1331'
 ht-degree: 0%
 
 ---
@@ -116,3 +116,7 @@ Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som o
 Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Detta värde är **endast** visas för direktuppspelningssegment. Detta resulterar i att detta värde **kan** visas som 0 för gruppsegment.
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för det segmentet.
+
+### Hur lång tid tar det innan ett segment blir tillgängligt?
+
+Det tar upp till en timme innan ett segment är tillgängligt.
