@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: a94cf02a57bd91d2342b53ced7da98836343aa2b
 workflow-type: tm+mt
-source-wordcount: '846'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -147,9 +147,21 @@ Om du vill ta bort en användargrupp från en roll väljer du **X** -ikonen bred
 
 The **[!UICONTROL Remove user group]** visas och du uppmanas att bekräfta borttagningen.
 
-![flash-confirm-user-groups -delete](../../images/flac-ui/flac-confirm-user-groups-delete.png)
+![flash-confirm-user-groups-delete](../../images/flac-ui/flac-confirm-user-groups-delete.png)
 
 Du kommer tillbaka till **[!UICONTROL User groups]** -fliken.
+
+## Lägga till användare i Experience Platform via en produktprofil
+
+Om du vill lägga till en användare i en produktprofil loggar du in på Admin Console och väljer **[!UICONTROL Add users]**
+
+![product-profile-add-users](../../images/flac-ui/product-profile-add-users.png)
+
+The **[!UICONTROL Add users to your team]** visas. Ange användarens e-postadress, förnamn (valfritt) och efternamn (valfritt).
+
+Välj pennikonen för att välja produkter och användargrupper och välj **[!UICONTROL Adobe Exoerience Platform]** väljer **[!UICONTROL AEP-Default-All-Users]** väljer  **[!UICONTROL Save]**.
+
+![product-profile](../../images/flac-ui/product-profile.png)
 
 ## Nästa steg
 

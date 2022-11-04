@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: a94cf02a57bd91d2342b53ced7da98836343aa2b
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '1777'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,18 @@ I följande avsnitt finns information om hur attributbaserad åtkomstkontroll ä
 ### Åtkomstkontroll
 
 Plattformsanvändning [Adobe Admin Console](https://adminconsole.adobe.com) produktprofiler för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för produktprofiler i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
+
+Tillgången till attributbaserad åtkomstkontroll är begränsad för kunder som köper hälso- och sjukvård och/eller sekretessrutiner. Funktionerna är följande:
+
+* Gränssnitt för behörigheter: Tillhandahåller ett gränssnitt där du kan definiera användarroller, behörigheter och profiler för attributbaserad åtkomstkontroll.
+
+* Märkning: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper.
+
+Administrationsarbetsflödena för alla Experience Platform-baserade program från Admin Console till det nya behörighetsgränssnittet håller på att ändras.
+
+>[!IMPORTANT]
+>
+>Dina produktprofiler migreras automatiskt till behörighetsgränssnittet när din organisation är aktiverad. Produktprofilerna i Admin Console kommer att vara som tidigare. Please **inte** ändra dina produktprofiler när din organisation har aktiverats.
 
 Mer information om åtkomstkontroll finns i [åtkomstkontroll - översikt](../home.md).
 
