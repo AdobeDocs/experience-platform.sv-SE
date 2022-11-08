@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
 feature: Sources
-source-git-commit: cf9390076e027ba746c3bc83df8a18e3751b84a8
+source-git-commit: 46c9ec0c561f7ed3e38f05ef7b1e3ffec0eaed57
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '860'
 ht-degree: 5%
 
 ---
@@ -94,6 +94,7 @@ ht-degree: 5%
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
       - [Mailchimp-anslutning](connectors/marketing-automation/mailchimp.md)
       - [Oraclena Eloqua-koppling](connectors/marketing-automation/oracle-eloqua.md)
+      - [Oraclena svarssystemskontakt](connectors/marketing-automation/oracle-responsys.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
@@ -162,6 +163,7 @@ ht-degree: 5%
          - [MailChimp-kampanj](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp-medlemmar](tutorials/api/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
+         - [Oraclets svar](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
@@ -271,6 +273,7 @@ ht-degree: 5%
          - [Mailchimp-kampanjer](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
          - [Mailchimp-medlemmar](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
+         - [Oraclets svar](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
