@@ -1,18 +1,15 @@
 ---
 title: Övervaka frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
-source-git-commit: 283c6ba323a327b0c525343a96a45a2412baa67b
+exl-id: 4640afdd-b012-4768-8586-32f1b8232879
+source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
-source-wordcount: '1011'
+source-wordcount: '993'
 ht-degree: 0%
 
 ---
 
-# Övervaka frågor (begränsad version)
-
->[!IMPORTANT]
->
->Den här funktionen är för närvarande en begränsad version och endast tillgänglig för ett litet antal kunder.
+# Övervaka frågor
 
 Adobe Experience Platform ger bättre synlighet för status för alla frågefunktioner via användargränssnittet. Från [!UICONTROL Scheduled Queries] kan du nu hitta viktig information om frågekörningar som innehåller status, schemainformation och felmeddelanden/koder om de skulle misslyckas. Du kan även prenumerera på aviseringar för frågor baserat på deras status via användargränssnittet för någon av dessa frågor via [!UICONTROL Scheduled Queries] -fliken.
 
@@ -126,4 +123,3 @@ Du kan kopiera frågans SQL till Urklipp från den här vyn. Kopiera frågan gen
 Välj **[!UICONTROL Query]** för att återgå till skärmen med schemainformation, eller **[!UICONTROL Scheduled Queries]** för att gå tillbaka till [!UICONTROL Scheduled Queries] -fliken.
 
 ![Skärmen med körningsinformation och frågan markerad.](./images/monitor-queries/return-navigation.png)
-

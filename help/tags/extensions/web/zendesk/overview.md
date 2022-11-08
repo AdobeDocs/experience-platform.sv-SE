@@ -1,7 +1,8 @@
 ---
 title: Tillägg för vidarebefordran av Zendesk-händelse
 description: Zendesk-tillägg för händelsevidarebefordran för Adobe Experience Platform.
-source-git-commit: ae585660bbf057f25e6f0dfc2520e6bb0af9d8d0
+exl-id: 22e94699-5b84-4a73-b007-557221d3e223
+source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
 source-wordcount: '1278'
 ht-degree: 4%
@@ -53,7 +54,7 @@ Under **[!UICONTROL Zendesk Domain]**, anger du värdet för din Zendesk-underdo
 
 ## Konfigurera en regel för vidarebefordran av händelser
 
-Börja skapa en ny regel för vidarebefordran av händelse [regel](../../../ui/managing-resources/rules.md) och konfigurera villkoren efter behov. När du väljer åtgärder för regeln väljer du [!UICONTROL Splunk] och välj sedan [!UICONTROL Create Event] åtgärdstyp.
+Börja skapa en ny regel för vidarebefordran av händelse [regel](../../../ui/managing-resources/rules.md) och konfigurera villkoren efter behov. När du väljer åtgärder för regeln väljer du [!UICONTROL Zendesk] och välj sedan [!UICONTROL Create Event] åtgärdstyp.
 
 ![Definiera regel](../../../images/extensions/zendesk/rule.png)
 
