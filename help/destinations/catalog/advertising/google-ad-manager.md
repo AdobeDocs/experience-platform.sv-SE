@@ -3,10 +3,10 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
+source-git-commit: 94cd05ca8b5c8331b1b49e5172daf499918d2320
 workflow-type: tm+mt
-source-wordcount: '877'
-ht-degree: 1%
+source-wordcount: '929'
+ht-degree: 0%
 
 ---
 
@@ -22,6 +22,8 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] m
 
 * Aktiverade målgrupper skapas programmatiskt i [!DNL Google] plattform.
 * [!DNL Platform] innehåller för närvarande inga mätvärden som validerar den lyckade aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+* Efter mappning av ett segment till ett [!DNL Google Ad Manager] mål visas segmentnamnet omedelbart i [!DNL Google Ad Manager] användargränssnitt.
+* Segmentpopulationen behöver 24-48 timmar att vara [!DNL Google Ad Manager]. Dessutom måste segment ha en målgruppsstorlek på minst 50 profiler för att kunna visas i [!DNL Google Ad Manager]. Segment som är mindre än 50 profiler fylls inte i i [!DNL Google Ad Manager].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -63,8 +65,8 @@ Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och har inte akt
 
 Innan du skapar [!DNL Google Ad Manager] mål i plattform måste du kontakta [!DNL Google] för att Adobe ska föras upp på listan över tillåtna dataleverantörer och för att ditt konto ska läggas till tillåtelselista. Kontakt [!DNL Google] och lämna följande information:
 
-* **Konto-ID**: Adobe konto-ID hos Google. Konto-ID: 87933855.
-* **Kund-ID**: Adobe kundkonto-ID hos Google. Kund-ID: 89690775.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
+* **Kund-ID**: Adobe kund-ID med Google. Kund-ID: 89690775.
 * **Nätverkskod**: Det här är din [!DNL Google Ad Manager] nätverksidentifierare, hittades under **[!UICONTROL Admin > Global settings]** i Google-gränssnittet och i URL-adressen.
 * **Målgruppslänks-ID**: Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]), som också finns under **[!UICONTROL Admin > Global settings]** i Google gränssnitt.
 * Din kontotyp. DFP av Google eller AdX-köpare.
