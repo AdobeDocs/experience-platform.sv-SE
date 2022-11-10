@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Skapa en profil
 description: Det här dokumentet innehåller information om hur du hanterar profiler via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 1a755fa5480e036bde50617f01440cfabbaf64c2
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ I listrutan väljer du **Matchar**.
 
 ![flac-policy-match-dropdown](../../images/flac-ui/flac-policy-matches-dropdown.png)
 
-I listrutan väljer du **Användare**.
+Välj sedan typ av etikett (**[!UICONTROL Core label]** eller **[!UICONTROL Custom label]**) för att matcha etiketten som tilldelats användaren i roller.
 
 ![flash-policy-user-dropdown](../../images/flac-ui/flac-policy-user-dropdown.png)
 
