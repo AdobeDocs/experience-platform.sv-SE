@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Debugger
 breadcrumb-title: Adobe Experience Platform Debugger Guide
 user-guide-description: Kontrollera om dina webbsidor innehåller problem med Experience Platform-implementeringarna.
 feature: Debugger
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: 6362cef0dc33f4b1f9cf8560dae50e602ce6ad80
 workflow-type: tm+mt
-source-wordcount: '58'
-ht-degree: 5%
+source-wordcount: '62'
+ht-degree: 9%
 
 ---
 
@@ -18,11 +18,13 @@ ht-degree: 5%
 * [Installera tillägget](./install-debugger.md)
 * [Konfigurera tillägget](./configure-debugger.md)
 * [Fliken Sammanfattning](./summary.md)
-* [Fliken Lösningar](./solutions.md)
+* Fliken Lösningar {#solutions}
+   * [Översikt](./solutions/overview.md)
+   * [Adobe Target](./solutions/target.md)
 * [Fliken Loggar](./logs.md)
 * [Fliken Nätverk](./network.md)
 * [Fliken Händelser](./events.md)
-* Revisor {#auditor}
+* Fliken Granskare {#auditor}
    * [Översikt](./auditor/overview.md)
    * [Konsekvenskontroll för taggar](./auditor/tag-consistency.md)
    * [Tagga närvarotester](./auditor/tag-presence.md)
