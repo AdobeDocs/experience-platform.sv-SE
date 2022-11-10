@@ -5,10 +5,10 @@ title: Felsökningsguide för sandlådor
 topic-legacy: troubleshooting guide
 description: Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform.
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
-source-git-commit: 2a7b2040c221ff039f17f78d9ca712032d9fc02c
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '815'
-ht-degree: 0%
+source-wordcount: '857'
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,13 @@ Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för at
 
 Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Se [översikt över sandlådor](home.md) för mer information.
 
-## Vilka typer av sandlådor är tillgängliga och vilka är skillnaderna?
+## Vilka typer av sandlådor är tillgängliga och vilka är skillnaderna? {#sandbox-types}
+
+>[!CONTEXTUALHELP]
+>id="platform_sandboxes_sandboxtypes"
+>title="Sandlådetyp"
+>abstract="Sandlådetypen anger om det här är en produktions- eller utvecklingssandlåda. Produktionssandlådor innehåller livedata och utvecklingssandlådor som används för testning och utveckling."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="Skapa en sandlåda i användargränssnittet"
 
 Det finns två typer av sandlådor i Experience Platform:
 
@@ -48,7 +54,7 @@ En Experience Platform-instans har stöd för flera produktions- och utvecklings
 
 En standardlicens för Experience Platform ger dig totalt fem sandlådor, som du kan klassificera som  eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor.
 
-Produktionssandlådor kan återställas eller tas bort, förutom för produktionssandlådor som också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) -funktion.
+Produktionssandlådor kan återställas eller tas bort, förutom för produktionssandlådor som också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) -funktion.
 
 Du kan uppdatera titeln för en produktionssandlåda. Det går dock inte att byta namn på en produktionssandlåda.
 

@@ -1,26 +1,32 @@
 ---
 title: Asynkron distribution
 description: Lär dig hur du distribuerar taggbibliotek från Adobe Experience Platform asynkront på din webbplats.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1010'
+source-wordcount: '1079'
 ht-degree: 0%
 
 ---
 
-# Asynkron distribution
+# Asynkron distribution {#asynchronous-deployment}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_asynchronous_deployment"
+>title="Asynkron distribution"
+>abstract="Om det här alternativet är aktiverat börjar webbläsaren att läsa in JavaScript-filen när den här skripttaggen tolkas, men i stället för att vänta på att biblioteket ska läsas in och köras fortsätter den att analysera och återge resten av dokumentet. Detta kan förbättra webbsidans prestanda men har viktiga konsekvenser när det gäller hur vissa regler körs. Mer information finns i dokumentationen."
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Prestanda och icke-blockerande driftsättning av JavaScript-bibliotek som krävs av våra produkter blir allt viktigare för Adobe Experience Cloud-användare. Verktyg som [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) rekommenderar användare att ändra sitt sätt att distribuera Adobe-bibliotek på sin plats. I den här artikeln beskrivs hur du använder JavaScript-bibliotek i Adobe på ett asynkront sätt.
+Prestanda och icke-blockerande driftsättning av JavaScript-bibliotek som krävs av våra produkter blir allt viktigare för Adobe Experience Cloud-användare. verktyg som [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) rekommenderar användare att ändra sitt sätt att distribuera Adobe-bibliotek på sin webbplats. I den här artikeln beskrivs hur du använder JavaScript-bibliotek i Adobe på ett asynkront sätt.
 
 ## Synkron jämfört med asynkron
 
 ### Synkron distribution
 
-Bibliotek läses ofta in synkront i `<head>`-taggen för en sida. Exempel:
+Biblioteken läses ofta in synkront i `<head>` -tagg för en sida. Exempel:
 
 ```markup
 <script src="example.js"></script>
@@ -28,13 +34,13 @@ Bibliotek läses ofta in synkront i `<head>`-taggen för en sida. Exempel:
 
 Som standard tolkar webbläsaren dokumentet och når den här raden. Sedan börjar webbläsaren hämta JavaScript-filen från servern. Webbläsaren väntar tills filen returneras, tolkar och kör sedan JavaScript-filen. Slutligen fortsätter den att analysera resten av HTML-dokumentet.
 
-Om tolken träffar på `<script>`-taggen innan det synliga innehållet återges, fördröjs visningen av innehållet. Om JavaScript-filen som läses in inte är absolut nödvändig för att visa innehåll för dina användare, behöver du inte nödvändigtvis vänta på innehållet. Ju större bibliotek, desto längre fördröjning.  Därför flaggar prestandatestverktyg för webbplatser som [!DNL Google PageSpeed] eller [!DNL Lighthouse] ofta synkront inlästa skript.
+Om tolken visas över `<script>` -taggen innan synligt innehåll återges, kommer visningen av innehållet att fördröjas. Om JavaScript-filen som läses in inte är absolut nödvändig för att visa innehåll för dina användare, behöver du inte nödvändigtvis vänta på innehållet. Ju större bibliotek, desto längre fördröjning.  Därför är prestandatestverktyg som [!DNL Google PageSpeed] eller [!DNL Lighthouse] flagga ofta synkront inlästa skript.
 
 Tagghanteringsbibliotek kan snabbt bli stora om du har många taggar att hantera.
 
 ### Asynkron distribution
 
-Du kan läsa in alla bibliotek asynkront genom att lägga till ett `async`-attribut till `<script>`-taggen. Exempel:
+Du kan läsa in alla bibliotek asynkront genom att lägga till en `async` attributet till `<script>` -tagg. Exempel:
 
 ```markup
 <script src="example.js" async></script>
@@ -46,11 +52,11 @@ Detta anger för webbläsaren att när skripttaggen tolkas ska webbläsaren bör
 
 I synkrona distributioner pausar webbläsaren parsning och återgivning av sidan medan taggbiblioteket i Adobe Experience Platform läses in och körs, vilket beskrivs ovan. I asynkrona distributioner fortsätter webbläsaren däremot att analysera och återge sidan medan biblioteket läses in. Variabiliteten i när taggbiblioteket kan slutföra inläsningen i relation till sidtolkning och återgivning måste beaktas.
 
-För det första, eftersom taggbiblioteket kan slutföra inläsningen före eller efter sidans nederkant har tolkats och körts, bör du inte längre anropa `_satellite.pageBottom()` från sidkoden (`_satellite` är inte tillgängligt förrän biblioteket har lästs in). Detta förklaras i [Inläsning av taggarna bäddar in kod asynkront](#loading-the-tags-embed-code-asynchronously).
+För det första, eftersom taggbiblioteket kan slutföra inläsningen före eller efter sidans nederkant har tolkats och körts, bör du inte längre anropa `_satellite.pageBottom()` från sidkoden (`_satellite` är inte tillgängligt förrän biblioteket har lästs in). Detta förklaras i [Inläsning av taggar bäddar in kod asynkront](#loading-the-tags-embed-code-asynchronously).
 
-För det andra kan taggbiblioteket slutföra inläsningen före eller efter att webbläsarhändelsen [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) (DOM Ready) har inträffat.
+För det andra kan taggbiblioteket slutföra inläsningen före eller efter [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) webbläsarhändelse (DOM Ready) har inträffat.
 
-På grund av dessa två punkter är det värt att visa hur [biblioteket har lästs in](../../extensions/web/core/overview.md#library-loaded-page-top), [Page Bottom](../../extensions/web/core/overview.md#page-bottom), [DOM Ready](../../extensions/web/core/overview.md#page-bottom) och [Windows har lästs in](../../extensions/web/core/overview.md#window-loaded) händelsetyper från Core-tilläggsfunktionen när ett taggbibliotek läses in asynkront.
+På grund av dessa två punkter är det värt att visa hur [Bibliotek inläst](../../extensions/web/core/overview.md#library-loaded-page-top), [Sidan nederst](../../extensions/web/core/overview.md#page-bottom), [DOM-klart](../../extensions/web/core/overview.md#page-bottom)och [Fönster inläst](../../extensions/web/core/overview.md#window-loaded) händelsetyper från Core-tilläggsfunktionen när du läser in ett taggbibliotek asynkront.
 
 Om taggegenskapen innehåller följande fyra regler:
 
@@ -66,8 +72,8 @@ Regel A → Regel B → Regel C → Regel D
 Även om ordningen alltid används, kan vissa regler köras direkt när taggbiblioteket har lästs in, medan andra kan köras senare. Följande inträffar när taggbiblioteket har lästs in:
 
 1. Regel A verkställs omedelbart.
-1. Om webbläsarhändelsen `DOMContentLoaded` (DOM Ready) redan har inträffat körs regel B och regel C omedelbart. Annars körs regel B och regel C senare när webbläsarhändelsen [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) inträffar.
-1. Om webbläsarhändelsen [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) (Windows Loaded) redan har inträffat körs regel D omedelbart. Annars körs regel D senare när webbläsarhändelsen [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) inträffar. Observera, att om du har installerat taggbiblioteket enligt instruktionerna så avslutas alltid *taggbiblioteket* innan webbläsarhändelsen [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) inträffar.
+1. Om `DOMContentLoaded` webbläsarhändelse (DOM Ready) har redan inträffat, regel B och regel C körs omedelbart. Annars körs regel B och regel C senare när [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) webbläsarhändelse inträffar.
+1. Om [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) webbläsarhändelse (Window Loaded) har redan inträffat. Regel D körs omedelbart. Annars kommer regel D att köras senare när [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) webbläsarhändelse inträffar. Observera, att om du har installerat taggbiblioteket enligt instruktionerna, är taggbiblioteket *alltid* slutar läsa in före [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) webbläsarhändelse inträffar.
 
 När du tillämpar dessa principer på din egen webbplats bör du tänka på följande:
 
@@ -80,7 +86,7 @@ Om du ser saker som inte fungerar som de ska är det troligt att du har timingpr
 
 Med taggar kan du aktivera asynkron inläsning när du skapar en inbäddningskod när du konfigurerar en [miljö](../publishing/environments.md). Du kan också konfigurera asynkron inläsning själv:
 
-1. Lägg till ett asynkront attribut i taggen `<script>` för att läsa in skriptet asynkront.
+1. Lägg till ett asynkront attribut i `<script>` -tagg för att läsa in skriptet asynkront.
 
    För taggarnas inbäddningskod innebär det att du ändrar detta:
 
@@ -100,4 +106,4 @@ Med taggar kan du aktivera asynkron inläsning när du skapar en inbäddningskod
    <script type="text/javascript">_satellite.pageBottom();</script>
    ```
 
-   Den här koden anger för plattformen att webbläsarparsern har nått sidans nederkant. Det är troligt att taggar inte har lästs in och körts tidigare. Därför genereras ett fel om du anropar `_satellite.pageBottom()` och händelsetypen för sidnederkant kanske inte fungerar som förväntat.
+   Den här koden anger för plattformen att webbläsarparsern har nått sidans nederkant. Det är troligt att taggar inte har lästs in och körts tidigare och därför anropas `_satellite.pageBottom()` resulterar i ett fel och händelsetypen Sidslut kanske inte fungerar som förväntat.

@@ -5,9 +5,9 @@ title: Hantera dataanvändningsprinciper i användargränssnittet
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1345'
 ht-degree: 0%
 
 ---
@@ -96,7 +96,12 @@ Samtyckesprinciper består av två logiska komponenter:
 * **[!UICONTROL If]**: Villkoret som utlöser principkontrollen. Detta kan baseras på en viss marknadsföringsåtgärd som utförs, förekomsten av vissa dataanvändningsetiketter eller en kombination av de två.
 * **[!UICONTROL Then]**: Medgivandeattributen som måste finnas för en profil som ska inkluderas i åtgärden som utlöste policyn.
 
-#### Konfigurera villkor
+#### Konfigurera villkor {#consent-conditions}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_consentif"
+>title="Om villkor"
+>abstract="Börja med att definiera villkoren som utlöser principkontrollen. Villkoren kan omfatta vissa marknadsföringsåtgärder som vidtas, vissa datastyrningsetiketter finns eller en kombination av båda."
 
 Under **[!UICONTROL If]** väljer du de marknadsföringsåtgärder och/eller dataanvändningsetiketter som ska utlösa den här principen. Välj **[!UICONTROL View all]** och **[!UICONTROL Select labels]** för att få en fullständig lista över tillgängliga marknadsföringsåtgärder och etiketter.
 
@@ -108,7 +113,12 @@ Om du markerar mer än ett villkor kan du använda ikonen som visas mellan dem f
 
 ![](../images/policies/and-or-selection.png)
 
-#### Välj medgivandeattribut
+#### Välj medgivandeattribut {#consent-attributes}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_consentthen"
+>title="Villkor"
+>abstract="När ditt If-villkor har definierats kan du använda sektionen &#39;then&#39; för att välja minst ett medgivandeattribut från unionsschemat. Det här är attributet som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen."
 
 Under **[!UICONTROL Then]** väljer du minst ett medgivandeattribut från unionsschemat. Det här är attributet som måste finnas för att profiler ska kunna inkluderas i åtgärden som styrs av den här principen. Du kan välja något av alternativen i listan eller välja **[!UICONTROL View all]** för att välja attributet direkt från unionsschemat.
 

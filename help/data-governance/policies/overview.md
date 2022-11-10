@@ -5,14 +5,19 @@ title: Översikt över dataanvändningsprinciper
 topic-legacy: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1174'
 ht-degree: 0%
 
 ---
 
-# Översikt över policyer för dataanvändning
+# Översikt över policyer för dataanvändning {#policies-overview}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_restrictusage"
+>title="Begränsa dataanvändning"
+>abstract="Typen av dataanvändningspolicy utvärderar specifika marknadsföringsåtgärder som tillämpas på datastyrningsetiketter för att begränsa dataanvändningen för marknadsföringsaktiviteter."
 
 För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
@@ -20,6 +25,10 @@ Det finns två typer av principer:
 
 * **[!UICONTROL Data governance policy]**: Begränsa aktiveringen av data baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
 * **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras för [mål](../../destinations/home.md) baserat på kundernas samtycke eller önskemål
+
+>[!NOTE]
+>
+>Dataanvändningsprinciper ska inte förväxlas med [åtkomstkontrollprinciper](../../access-control/abac/end-to-end-guide.md#policy), som avgör om vissa plattformsanvändare i organisationen kan få åtkomst till vissa datafält och konfigureras via [!UICONTROL Permissions] -fliken.
 
 Det här dokumentet innehåller en översikt över dataanvändningsprinciper på hög nivå och länkar till ytterligare dokumentation om hur du arbetar med principer i gränssnittet eller API:t.
 
