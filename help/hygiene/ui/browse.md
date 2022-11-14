@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: 4a6532bbd7a378e44e7c6139330420c0363a54af
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '837'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
 >title="Antal identiteter"
->abstract="Antalet identiteter som begärdes att tas bort som en del av den här arbetsordern. De identiteter som ingår i antalet kanske inte finns i de datauppsättningar som påverkas. Mer information finns i användargränssnittshandboken för datahygien."
+>abstract="Antalet identiteter vars poster har begärts att uppdateras eller tas bort som en del av den här arbetsordern. De identiteter som ingår i antalet kanske inte finns i de datauppsättningar som påverkas. Mer information finns i användargränssnittshandboken för datahygien."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
