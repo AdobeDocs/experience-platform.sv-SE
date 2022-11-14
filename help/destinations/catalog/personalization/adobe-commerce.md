@@ -1,7 +1,8 @@
 ---
 title: (Beta) Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbplatsinnehåll och kampanjer, anpassade till kundsegment som skapats och hanteras inom Real-Time CDP.
-source-git-commit: 0a6100f2aa98f5c40f2492dcfab79a991eded94b
+exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
+source-git-commit: 638a778d1d999ab6a1726333f9cde0a0b4fad57b
 workflow-type: tm+mt
 source-wordcount: '667'
 ht-degree: 1%
@@ -42,7 +43,7 @@ Beta-kunder bör ha tillgång till:
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
 - [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)
-- [Adobe Commerce Cloud version 2.4.3 eller senare](https://business.adobe.com/products/magento/magento-commerce.html)
+- [Adobe Commerce Cloud version 2.4.4 eller senare](https://business.adobe.com/products/magento/magento-commerce.html)
 
 I Experience Platform skapar du följande:
 
