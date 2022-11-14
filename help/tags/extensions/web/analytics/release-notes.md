@@ -2,18 +2,29 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: 6bb452285ea98380617afd13462b4a2b9a8e8b68
+source-git-commit: cc04a40b2fb649511950ed80af7028a19154dcdd
 workflow-type: tm+mt
-source-wordcount: '1284'
+source-wordcount: '1333'
 ht-degree: 5%
 
 ---
 
 # Versionsinformation om Adobe Analytics-tillägg
 
+Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillägget.
+
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+>Tillägget Analytics-taggen uppdateras ofta som svar på uppdateringar av [AppMeasurement JavaScript-bibliotek](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Se [Versionsinformation om AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html) för närmare information om de specifika versioner som nämns nedan.
+
+## 23 september 2022
+
+**Adobe Analytics Extension 1.9.1**
+
+**Funktioner**:
+
+* Uppgraderat till AppMeasurement v2.23.0.
+* Tillägget kan nu samla in hög entropi [klienttips för användaragent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) som stöds av den senaste versionen av AppMeasurement.
 
 ## 28 februari 2022
 
