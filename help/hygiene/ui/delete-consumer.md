@@ -2,9 +2,9 @@
 title: Ta bort konsumentposter
 description: Lär dig hur du tar bort konsumentposter i Adobe Experience Platform användargränssnitt.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: b76e1bc6d5b346c32ea09612e24b68c6636f7deb
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
+>Förfrågningar om borttagning av kund är bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield**.
 
 The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Platform UI kan du ta bort konsumentposter som ingår i identitetstjänsten och kundprofilen i realtid.
 

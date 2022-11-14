@@ -2,9 +2,9 @@
 title: Översikt över datahygien
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 850ab3c98fb27d1dcf98b02dfbef0c8ae3b2ad62
+source-git-commit: b76e1bc6d5b346c32ea09612e24b68c6636f7deb
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '820'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,10 @@ Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-ex
 {style=&quot;table-layout:auto&quot;}
 
 ### Konsumentborttagningar {#consumer-delete-transparency}
+
+>[!IMPORTANT]
+>
+>Konsumentborttagningar är bara tillgängliga för organisationer som har köpt Adobe Healthcare Shield.
 
 Följande sker när en [begäran om borttagning av kund](./ui/delete-consumer.md) skapas:
 
