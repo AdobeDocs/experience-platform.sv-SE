@@ -2,9 +2,9 @@
 title: API-guide för datahygien
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: b76e1bc6d5b346c32ea09612e24b68c6636f7deb
+source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,10 @@ En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en da
 
 >[!IMPORTANT]
 >
->Begäranden om borttagning av kunder är endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield.
+>Förfrågningar om borttagning av kund är bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield**.
+>
+>
+>Konsumentborttagningar är avsedda att användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
 
 Med API:t för datahygien kan du ta bort alla poster som är kopplade till en konsumentidentitet i en eller alla datauppsättningar. Alla datahygienåtgärder som tar bort konsumentidentiteter representeras av en konstruktion som kallas arbetsorder. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med konsumentborttagningar i API:t.
 
