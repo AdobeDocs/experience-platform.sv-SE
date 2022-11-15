@@ -5,9 +5,9 @@ title: Mappningsfunktioner för dataförinställningar
 topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 66c3f4fc6da987f731f7b7e54f416c60fcc670d8
+source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
 workflow-type: tm+mt
-source-wordcount: '4286'
+source-wordcount: '4337'
 ht-degree: 2%
 
 ---
@@ -234,6 +234,11 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 {style=&quot;table-layout:auto&quot;}
 
 ### Användaragentfunktioner {#user-agent}
+
+Alla användaragentfunktioner i tabellen nedan kan returnera något av följande värden:
+
+* Telefon - En mobil enhet med liten skärm (vanligen &lt; 7 tum)
+* Mobil - En mobil enhet som ännu inte har identifierats. Den här mobila enheten kan vara en eReader, en surfplatta, en telefon, en klocka osv.
 
 >[!NOTE]
 >

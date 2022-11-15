@@ -5,9 +5,9 @@ title: API-slutpunkt för mappningsuppsättningar
 topic-legacy: mapping sets
 description: Du kan använda slutpunkten "/mappingSets" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '854'
 ht-degree: 0%
 
 ---
@@ -219,7 +219,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
 | -------- | ----------- |
 | `outputSchema.schemaRef.id` | ID:t för XDM-schemat som du refererar till. |
 | `outputSchema.schemaRef.contentType` | Bestämmer svarsformatet för det refererade schemat. Mer information om det här fältet finns i [Utvecklarhandbok för schemaregister](../../xdm/api/schemas.md#lookup). |
-| `mappings.sourceType` | Källtypen beskriver hur värdet extraheras från källan till målet. |
+| `mappings.sourceType` | Källtypen beskriver hur värdet extraheras från källan till målet. Källtypen stöder två möjliga värden: <ul><li>`ATTRIBUTE`: Källtypen `ATTRIBUTE` används när indataattributet kommer från ett källschema.</li><li>`EXPRESSION`: Källtypen `EXPRESSION` används när mappningen slutförs med ett beräkningsfält.</li></ul> **VARNING**: Om du anger källtypsvärden felaktigt kan mappningsuppsättningarna inte redigeras. |
 | `mappings.source` | Den plats där du vill att data ska mappas från. |
 | `mappings.destination` | Platsen där du vill att data ska mappas. |
 
