@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 49281d6ef959c84c3da964f0a9e19859fd8901a5
 workflow-type: tm+mt
-source-wordcount: '2373'
+source-wordcount: '2413'
 ht-degree: 1%
 
 ---
@@ -109,7 +109,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Se till att du använder ett unikt filnamn så att det inte hamnar i konflikt med en annan fil för gruppen med filer som skickas. |
 
 **Begäran**
 
@@ -129,7 +129,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `acme/customers/campaigns/summer.json`. |
 
 **Svar**
 
@@ -244,7 +244,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Se till att du använder ett unikt filnamn så att det inte hamnar i konflikt med en annan fil för gruppen med filer som skickas. |
 
 **Begäran**
 
@@ -264,7 +264,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `acme/customers/campaigns/summer.parquet`. |
 
 **Svar**
 
@@ -417,7 +417,7 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Se till att du använder ett unikt filnamn så att det inte hamnar i konflikt med en annan fil för gruppen med filer som skickas. |
 
 **Begäran**
 
@@ -439,7 +439,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{CONTENT_RANGE}` | I heltal börjar och slutar det begärda intervallet. |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `acme/customers/campaigns/summer.json`. |
 
 
 **Svar**
@@ -633,7 +633,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Se till att du använder ett unikt filnamn så att det inte hamnar i konflikt med en annan fil för gruppen med filer som skickas. |
 
 **Begäran**
 
@@ -653,7 +653,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `acme/customers/campaigns/summer.csv`. |
 
 
 **Svar**
@@ -855,7 +855,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Se till att du använder ett unikt filnamn så att det inte hamnar i konflikt med en annan fil för gruppen med filer som skickas. |
 
 **Begäran**
 
@@ -875,7 +875,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `acme/customers/campaigns/summer.json`. |
 
 **Svar**
 
