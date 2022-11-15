@@ -1,9 +1,10 @@
 ---
 title: Google Ads Enhanced Conversions Extension
 description: Läs mer om tillägget Google Ads Enhanced Conversions för vidarebefordran av händelser i Adobe Experience Platform.
-source-git-commit: a279c44ef9df3aa9bfc7763b153b87bde0015d57
+exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
+source-git-commit: 670e59a6111b7e4b7febca197d7e462ce5c14596
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1207'
 ht-degree: 0%
 
 ---
@@ -35,6 +36,10 @@ Förbättrade konverteringar utnyttjar [!DNL Google Ads] API för att lägga til
 >Om du vill associera konverteringshändelsen på klientsidan med förstahandsdata som skickas från händelsevidarebefordring kan du `transaction_ID` måste vara detsamma i båda samtalen. Mer information om var det här värdet måste anges för varje tjänst finns i avsnitten om konfigurering av konverteringsåtgärder för [taggar](#conversion-action-tags) och [händelsevidarebefordran](#conversion-action-event-forwarding), respektive.
 
 Eftersom sändning av konverteringshändelser innefattar både en implementering på klientsidan och på serversidan, innehåller det här dokumentet de nödvändiga stegen för att konfigurera klientsidan [[!DNL Google Global Site Tag] (gtag)-tillägg](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) utöver [!DNL Enhanced Conversions] tillägg för händelsevidarebefordran.
+
+I följande video ges en introduktion till [!DNL Enhanced Conversions] och går igenom implementeringsstegen på hög nivå:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3411365?quality=12&learn=on)
 
 ## Skicka en konvertering med hjälp av taggar
 
