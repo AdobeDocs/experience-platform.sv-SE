@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: a085bac6b4ee825d534710ae91d6690fa076e873
+source-git-commit: 3b6862dd3bb770df4a1549275f911dd81a178002
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '1050'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,29 @@ The [!DNL Query Editor] gör att du kan skriva och köra frågor utan att använ
 [!DNL Query Editor] innehåller redigeringsutrymme där du kan börja skriva en fråga. När du skriver slutför redigeraren automatiskt reserverade ord, tabeller och fältnamn från SQL i tabeller. När du är klar med din fråga väljer du **Spela upp** för att köra frågan. The **[!UICONTROL Console]** under redigeraren visas [!DNL Query Service] gör för närvarande, vilket anger när en fråga har returnerats. The **[!UICONTROL Result]** bredvid konsolen visar frågeresultat. Se [Frågeredigeringsguide](./user-guide.md) för mer information om hur du använder [!DNL Query Editor].
 
 ![En zoomad vy med [!DNL Query Editor].](../images/ui/overview/query-editor.png)
+
+## Schemalagda frågor {#scheduled-queries}
+
+Frågor som redan har sparats som en mall kan schemaläggas för att köras med en vanlig stängsel. När du schemalägger en fråga kan du välja körningsfrekvens, start- och slutdatum, veckodag som den schemalagda frågan körs samt vilken datamängd som frågan ska exporteras till. Frågescheman ställs in med Frågeredigeraren.
+
+Om du vill veta hur du schemalägger en fråga via användargränssnittet kan du läsa [guide för schemalagda frågor](./user-guide.md#scheduled-queries). Läs mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
+
+När en fråga har schemalagts visas den i listan över schemalagda frågor på [!UICONTROL Scheduled Queries] -fliken. Du hittar fullständig information om frågan, körningar, skapare och tidsinställningar genom att välja en schemalagd fråga i listan.
+
+![Arbetsytan Frågor med fliken Schemalagda frågor markerad och visar rader med frågescheman.](../images/ui/overview/scheduled-queries.png)
+
+| Kolumn | Beskrivning |
+| --- | --- |
+| **[!UICONTROL Name]** | Namnfältet är antingen mallnamnet eller de första tecknen i SQL-frågan. Alla frågor som skapas via gränssnittet med Frågeredigeraren får i början ett namn. Om frågan skapades via API är namnet på frågan ett fragment av det SQL-uttryck som användes för att skapa frågan. |
+| **[!UICONTROL Template]** | Frågans mallnamn. Välj ett mallnamn för att gå till Frågeredigeraren. Frågemallen visas i Frågeredigeraren. Om det inte finns något mallnamn markeras raden med ett bindestreck och det går inte att omdirigera till Frågeredigeraren för att visa frågan. |
+| **[!UICONTROL SQL]** | Ett fragment av SQL-frågan. |
+| **[!UICONTROL Run frequency]** | Det här är den avslutning som frågan är inställd på att köras. De tillgängliga värdena är `Run once` och `Scheduled`. Frågor kan filtreras utifrån deras körningsfrekvens. |
+| **[!UICONTROL Created by]** | Namnet på den användare som skapade frågan. |
+| **[!UICONTROL Created]** | Tidsstämpeln när frågan skapades, i UTC-format. |
+| **[!UICONTROL Last run timestamp]** | Den senaste tidsstämpeln när frågan kördes. Den här kolumnen visar om en fråga har körts enligt det aktuella schemat. |
+| **[!UICONTROL Last run status]** | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
+
+Mer information om hur du gör det finns i dokumentationen [övervaka frågor via användargränssnittet för frågetjänsten](../monitor-queries.md).
 
 ## Mallar {#browse}
 
