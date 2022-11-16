@@ -3,9 +3,9 @@ title: Datakryptering i Adobe Experience Platform
 topic-legacy: data protection
 description: Läs om hur data krypteras under överföring och i vila i Adobe Experience Platform.
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: d99a9081edc483831d56af3d838b67d9aba25bea
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ När data har hämtats in i systemet och [krypterad i vila](#at-rest)kan den sed
 
 Data som importeras och används av Platform lagras i datasjön, ett mycket detaljerat datalager som innehåller alla data som hanteras av systemet, oavsett ursprung eller filformat. Alla data som lagras i datasjön krypteras, lagras och hanteras i en isolerad [[!DNL Microsoft Azure Data Lake] Lagring](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) instans som är unik för din organisation.
 
-Mer information om hur vilande data krypteras i Azure Data Lake Storage och Cosmos DB finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption).
 
 ## Nästa steg
 
