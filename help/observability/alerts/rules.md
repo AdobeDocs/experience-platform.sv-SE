@@ -4,9 +4,9 @@ title: Standardvarningsregler
 description: Detta dokument innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: f707a6338ad72578328b363792010fa50ea9ce88
+source-git-commit: 44e337778bbfe901687383418981dbae83b356a7
 workflow-type: tm+mt
-source-wordcount: '966'
+source-wordcount: '922'
 ht-degree: 0%
 
 ---
@@ -99,8 +99,6 @@ Följande varningsregler gäller [Frågetjänst](../../query-service/home.md):
 
 | Prenumeration på I/O-händelse | Varningsregel | Beskrivning |
 | --- | --- | --- |
-| Frågetjänstens ad hoc-information | Frågetjänstens ad hoc-process har slutförts | Den här varningen utlöses när ett ad hoc-schemajobb slutförs. |
-| Tillfälliga fördröjningar, fel och fel i frågetjänsten | Frågetjänstens ad hoc-fel | Den här varningen utlöses när ett ad hoc-schemajobb misslyckas. |
 | Information om schemalagd fråga för frågetjänst | Start av schemalagd fråga för frågetjänst | Den här varningen utlöses när en schemalagd fråga börjar köras. |
 | Information om schemalagd fråga för frågetjänst | Frågan har planerats för frågetjänsten | Den här varningen utlöses när ett schemalagt frågejobb slutförs. |
 | Schemalagda frågefördröjningar, fel och fel för frågetjänsten | schemalagd frågefel för frågetjänsten | Den här varningen utlöses när ett schemalagt frågejobb misslyckas. |
