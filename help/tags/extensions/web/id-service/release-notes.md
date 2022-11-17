@@ -2,10 +2,10 @@
 title: Versionsinformation för Adobe Experience Cloud Identity Service Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Experience Cloud Identity Service i Adobe Experience Platform.
 exl-id: f9bfbed7-1eec-4916-9235-a75b5e2efcf8
-source-git-commit: 04dfe55fec06d08a0caef7aee5bf8d85c6056149
+source-git-commit: 3ce913bea3beaaa365205dfd6724da61874de904
 workflow-type: tm+mt
-source-wordcount: '614'
-ht-degree: 4%
+source-wordcount: '634'
+ht-degree: 1%
 
 ---
 
@@ -15,13 +15,17 @@ ht-degree: 4%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Versionsinformation om själva identitetstjänsten för Experience Cloud och inte bara Adobe Experience Platform-taggtillägget finns här: [https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)
+Det här dokumentet innehåller versionsinformation för tillägget Adobe Experience Cloud Identity Service. Versionsinformation om själva identitetstjänsten för Experience Cloud finns i [Identitetstjänstens dokumentation](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html).
+
+## 17 okt 2022
+
+### Experience Cloud ID Extension 5.5.0
+
+* Tillägget har nu stöd för version 5.5.0 av [JS-klient för besökare](https://github.com/Adobe-Marketing-Cloud/id-service). Se [Versionsinformation för besökare](https://github.com/Adobe-Marketing-Cloud/id-service/releases/tag/5.5.0) för specifika uppdateringar.
 
 ## 9 mars 2022
 
 ### Experience Cloud ID Extension 5.4.0
-
-#### **Funktioner**
 
 * Den här versionen innehåller den senaste versionen av Visitor 5.4.0 som har följande uppdateringar:
 
@@ -31,8 +35,6 @@ Versionsinformation om själva identitetstjänsten för Experience Cloud och int
 ## 10 okt 2021
 
 ### Experience Cloud ID-tillägg 5.3.1
-
-#### **Funktioner**
 
 * Den här versionen innehåller den senaste versionen av Visitor 5.3.0, som har följande nya uppdateringar:
 
@@ -44,23 +46,17 @@ Versionsinformation om själva identitetstjänsten för Experience Cloud och int
 
 ### Experience Cloud ID Extension 5.2.0
 
-#### **Funktioner**
-
 * Det gick inte att uppdatera uppdateringen till VisitorJS 5.2.0 med en korrigering för ECID DataElement när du fick godkännande.
 
 ## 3 nov 2020
 
 ### Experience Cloud ID-tillägg 5.2.1
 
-#### **Funktioner**
-
 * Den här korrigeringen innehåller en korrigering för att skriva cookies från en iFrame med attribut `SameSite=None` i webbläsaren Google Chrome.
 
 ## 27 okt 2020
 
 ### Experience Cloud ID Extension 5.1.0
-
-#### **Funktioner**
 
 * Lägger till `sameSiteCookie` konfigurera för att ange `SameSite` attributet för `AMCV` cookie.
 Denna konfiguration stöder följande värden för `SameSite` attribute:
@@ -76,23 +72,17 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ### Experience Cloud ID-tillägg 5.0.1
 
-#### **Funktioner**
-
 * Uppdaterar till korrigeringsfilen VisitorJS 5.0.1 med en korrigering för att lägga till d_cf-flaggan när IAB-medgivandesträngen har ändrats.
 
 ## 15 juni 2020
 
 ### Experience Cloud ID Extension 5.0.0
 
-#### **Funktioner**
-
 * Stöd för `IAB TCF` - Genomskinlighet och samtycke - `Version 2.0`.
 
 ## 13 april 2020
 
 ### Experience Cloud ID Extension 4.6.0
-
-#### **Funktioner**
 
 * Gjord `loadSSL` flagga som standard. Alla anrop till identitetstjänsten är aktiverade `https` som standard. Kunderna kan ställa in det på false om de vill anropa Identity Services på http från sina icke-ssl-sidor.
 * Funktionen som används för att identifiera Internet-Explorer-versionen (IE) har uppdaterats för att åtgärda ett problem som rapporterats av ESLint.
@@ -102,8 +92,6 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ### Experience Cloud ID-tillägg 4.5.2
 
-#### **Funktioner**
-
 * Besökare.js har uppdaterats till 4.5.2
 * Besökaren 4.5.1 innehåller en felkorrigering för IAB-plugin för Option
 * Uppdaterat `setCustomerIDs` metod för att avvisa tomma ID:n som skickas.
@@ -112,8 +100,6 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ### Experience Cloud ID-tillägg 4.4.2
 
-#### **Funktioner**
-
 * Besökare.js har uppdaterats till 4.4.2
 * Förbättringar för `getVisitorValues` metod för att hämta värden snabbare
 
@@ -121,8 +107,6 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 ## 19 september 2019
 
 ### Experience Cloud ID-tillägg 4.4.1
-
-#### **Funktioner**
 
 * Besökare.js har uppdaterats till 4.4.1
 * Korrigerat ett fel för hämtning av förauktoriserade indata för godkännande
@@ -134,8 +118,6 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ### Experience Cloud ID Extension 4.4.0
 
-#### **Funktioner**
-
 * Besökare.js har uppdaterats till 4.4.0
 * Stöd för SHA256-hashing för setCustomerID:n har lagts till
 
@@ -144,8 +126,6 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 ## 13 maj 2019
 
 ### Experience Cloud ID-tillägg 4.3.1
-
-#### **Funktioner**
 
 * Besökare.js har uppdaterats till 4.3
 * Lagt till dataelementtyp för ECID som en del av taggtillägget
@@ -156,23 +136,17 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 
 ### Experience Cloud ID Extension 4.2.0
 
-#### **Funktioner**
-
 * Besökare.js har uppdaterats till 4.2, vilket inkluderade stöd för plugin-programmet Audience Manager IAB TCF
 
 ## 25 februari 2019
 
 ### Experience Cloud ID Extension 4.1.0
 
-#### **Funktioner**
-
 * visitor.js har uppdaterats till 4.1 som uppdaterade publishDestinations per ny API-ändring. Med den här uppdateringen kan sidans referensinformation visas under ID - synkronisera om så önskas.
 
 ## 15 februari 2019
 
 ### Experience Cloud ID Extension 4.0.0
-
-#### **Funktioner**
 
 * Besökare.js har uppdaterats till 4.0
 * Ett konfigurationsalternativ för det nya inbyggda Opt-In-objektet har lagts till. Inställningarna kan användas för att undertrycka cookie- och beacon-anrop från Adobe Solutions för att bättre stödja bestämmelser som GDPR
@@ -182,8 +156,6 @@ Information om dessa attributvärden finns på [web.dev](https://web.dev/samesit
 ## 20 mars 2018
 
 ### Experience Cloud ID-tillägg 3.1.0
-
-#### **Funktioner**
 
 * Besökare.js har uppdaterats till 3.1
 * Lägger till två konfigurationsegenskaper: `resetBeforeVersion` och `serverState`
