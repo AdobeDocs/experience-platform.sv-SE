@@ -1,9 +1,10 @@
 ---
 title: Adobe Campaign Managed Cloud Services-anslutning
 description: Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring.
-source-git-commit: 81c17a6ea07efbbea91e0d918d52ec96e0335152
+exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
+source-git-commit: ef49bebb96afb9b25430fcc69f8ba91305ad6697
 workflow-type: tm+mt
-source-wordcount: '1445'
+source-wordcount: '1332'
 ht-degree: 0%
 
 ---
@@ -46,29 +47,6 @@ När meddelandena har skickats vill de förbättra kundprofilen i Adobe Experien
 Resultatet är flerkanalskampanjer som är mer enhetliga över hela Adobe Experience Cloud-ekosystemet och en rik kundprofil som snabbt anpassar sig och lär sig.
 
 [Läs mer om Adobe Campaign integrering med Adobe Experience Platform](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
-
-
-## Förutsättningar {#prerequisites}
-
-För att Campaign ska kunna hämta data från Adobe Experience Platform måste ni skapa ett Campaign API-projekt och be kundtjänst att lägga till det associerade klient-ID:t i en tillåtelselista.
-
->[!NOTE]
->
->Global information om hur du skapar ett API-projekt finns i [den här dokumentationen](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman.html)
-
-1. Logga in på [Adobe Developer Console](https://console.adobe.io/) och skapa ett nytt projekt.
-
-1. Välj **[!UICONTROL Add API]** och välja **[!UICONTROL Adobe Campaign]**.
-
-   ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/create-api.png)
-
-1. Skapa ett nyckelpar.
-
-1. Välj `<Instance Name> - admin` produktprofil och välj **[!UICONTROL Save configured API]**.
-
-1. Ditt API-projekt skapas. Anteckning nedåt **[!UICONTROL Client ID]** visas i ditt projekt. Kontakta Adobe kundtjänst och be dem lägga till ditt klient-ID i en tillåtelselista.
-
-   ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/client-id.png)
 
 ## Identiteter som stöds {#supported-identities}
 
