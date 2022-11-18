@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 67f3d27ebb17e1b1dc77dcd32246f407753c20df
+source-git-commit: a03ab5086f8f3935425da147f721dec42ced9d00
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '417'
 ht-degree: 25%
 
 ---
@@ -119,16 +119,18 @@ ht-degree: 25%
          * [Översikt](./extensions/web/core/overview.md)
          * [Vidarebefordran av händelser](./extensions/web/core/event-forwarding.md)
          * [Versionsinformation](./extensions/web/core/release-notes.md)
-      * [!DNL Mailchimp] Edge {#mailchimp-edge}
-         * [Översikt](./extensions/web/mailchimp/overview.md)
-      * [!DNL Marketo Munchkin] {#marketo}
-         * [Översikt](./extensions/web/marketo/overview.md)
-         * [Versionsinformation](./extensions/web/marketo/release-notes.md)
       * Google Ads Enhanced Conversions {#google-ads-enhanced-conversions}
          * [Översikt](./extensions/web/google-ads-enhanced-conversions/overview.md)
       * Google datalager {#google-data-layer}
          * [Översikt](./extensions/web/google-data-layer/overview.md)
          * [Versionsinformation](./extensions/web/google-data-layer/release-notes.md)
+      * [!DNL Mailchimp] Edge {#mailchimp-edge}
+         * [Översikt](./extensions/web/mailchimp/overview.md)
+      * [!DNL Marketo Munchkin] {#marketo}
+         * [Översikt](./extensions/web/marketo/overview.md)
+         * [Versionsinformation](./extensions/web/marketo/release-notes.md)
+      * [!UICONTROL Microsoft Azure] {#azure}
+         * [Översikt](./extensions/web/azure/overview.md)
       * [!DNL Splunk] {#splunk}
          * [Översikt](./extensions/web/splunk/overview.md)
       * [!DNL YouTube] videouppföljning {#youtube}
