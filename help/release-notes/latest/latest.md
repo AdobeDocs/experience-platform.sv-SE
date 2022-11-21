@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
-source-git-commit: 38eadb3a03577fde9651842e3aecc0291b14f0a0
+exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
+source-git-commit: 184ead059533d2706a5d3fca96dc082248955afe
 workflow-type: tm+mt
-source-wordcount: '1381'
+source-wordcount: '1344'
 ht-degree: 1%
 
 ---
@@ -124,6 +125,5 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- | 
 | Tillgänglighet för betaversion av Adobe Workfront-källa | Använd [Adobe Workfront-källa](../../sources/connectors/adobe-applications/workfront.md) för att ta med dina Workfront-data till Experience Platform och utföra användningsexempel som att kombinera dina arbetsdata med data från tredje part, använda historik- och tidsserieanalyser på arbetsregistreringar och fråga arbetsdata med standard-SQL. Mer information finns i guiden [skapa en Workfront-källanslutning i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/workfront.md). |
-| Betaversion av Oraclets Service Cloud-källa | Använd Oraclets Service Cloud-källa för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen för [Oracle Service Cloud-källa](../../sources/connectors/customer-success/oracle-service-cloud.md). |
 
 Läs mer om källor i [källöversikt](../../sources/home.md).
