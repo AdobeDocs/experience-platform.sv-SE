@@ -2,7 +2,10 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;oracle;oraclen;svar
 title: (Beta) Oraclena Responsys Source Overview
 description: Lär dig hur du ansluter Oraclena till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
-source-git-commit: 071157110ef255bf0692c7b9e1db9fb86d930c2c
+hide: true
+hidefromtoc: true
+exl-id: 806ae7e2-d4af-47d5-a3aa-561b69acc836
+source-git-commit: 784ec5f799c591185620e8376a6980b4930d914a
 workflow-type: tm+mt
 source-wordcount: '274'
 ht-degree: 0%
