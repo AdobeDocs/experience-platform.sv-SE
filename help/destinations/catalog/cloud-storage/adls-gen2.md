@@ -1,9 +1,10 @@
 ---
 title: (Beta) Azure Data Lake Storage Gen2-anslutning
 description: Lär dig hur du ansluter till Azure Data Lake Storage Gen2 för att aktivera segment och exportera datauppsättningar.
-source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
+exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
+source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
@@ -47,9 +48,9 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 * **[!UICONTROL Tenant]**: Klientinformationen som innehåller ditt program.
 * **[!UICONTROL Service principal ID]**: Programmets klient-ID.
 * **[!UICONTROL Service principal key]**: Programmets nyckel.
-* **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64-encoded] sträng. Visa ett exempel på en korrekt formaterad, base64-kodad nyckel i dokumentationslänken nedan. Mittdelen förkortas av utrymmesskäl.
+* **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
-   ![Bild som visar ett exempel på en korrekt formaterad och base64-krypterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### Fyll i målinformation {#destination-details}
 

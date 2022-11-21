@@ -1,9 +1,10 @@
 ---
 title: (Beta) Anslutning till Google Cloud-lagring
 description: Lär dig hur du ansluter till Google Cloud-lagring och aktiverar segment eller exporterar datauppsättningar.
-source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
+exl-id: ab274270-ae8c-4264-ba64-700b118e6435
+source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '822'
 ht-degree: 0%
 
 ---
@@ -59,9 +60,9 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 * **[!UICONTROL Access key ID]**: En 61-siffrig alfanumerisk sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
 * **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
-* **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64-encoded] sträng. Visa ett exempel på en korrekt formaterad, base64-kodad nyckel i dokumentationslänken nedan. Mittdelen förkortas av utrymmesskäl.
+* **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
-   ![Bild som visar ett exempel på en korrekt formaterad och base64-krypterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 Mer information om dessa värden finns i [Google Cloud Storage HMAC-nycklar](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) guide. Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] källöversikt](/help/sources/connectors/cloud-storage/google-cloud-storage.md).
 
