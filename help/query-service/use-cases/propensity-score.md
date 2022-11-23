@@ -1,16 +1,19 @@
 ---
 title: Bestäm en benägenhetsgrad med hjälp av en maskininlärningsgenererad prediktiv modell
 description: Lär dig hur du använder frågetjänsten för att tillämpa den prediktiva modellen på plattformsdata. Det här dokumentet visar hur du använder plattformsdata för att förutsäga kundens benägenhet att köpa vid varje besök.
-source-git-commit: af1c8f94d1758b3a4e7ea00c46b0f9a71a01c6be
+exl-id: 29587541-50dd-405c-bc18-17947b8a5942
+source-git-commit: 40c27a52fdae2c7d38c5e244a6d1d6ae3f80f496
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
 
 # Bestäm en benägenhetspoäng med hjälp av en maskininlärningsgenererad prediktiv modell
 
-Med Query Service kan ni utnyttja data från Experience Platform på maskininlärningsplattformarna för att generera prediktiva modeller som benägenhetspoäng. Den här guiden förklarar hur du använder frågetjänsten för att skicka data till din maskininlärningsplattform för att utbilda en modell i en bärbar dator. Den utbildade modellen kan tillämpas på data med SQL för att förutsäga kundens benägenhet att köpa för varje besök.
+Med hjälp av frågetjänsten kan du utnyttja prediktiva modeller, som benägenhetspoäng, som bygger på maskininlärningsplattformen för att analysera data från Experience Platform.
+
+Den här guiden förklarar hur du använder frågetjänsten för att skicka data till din maskininlärningsplattform för att utbilda en modell i en bärbar dator. Den utbildade modellen kan tillämpas på data med SQL för att förutsäga kundens benägenhet att köpa för varje besök.
 
 ## Komma igång
 
@@ -322,5 +325,3 @@ Den startstrukturerade modellens noggrannhet sorteras sedan. Därefter blir den 
 ![Skriv ut-kommandot för att visa konfidensintervallet för benägenhetspoängen.](../images/use-cases/confidence-interval.png)
 
 I figuren ovan anges att om du bara tar 1 000 rader för att utbilda dina modeller kan du förvänta dig att noggrannheten ska ligga mellan cirka 84 % och 88 %. Du kan justera `LIMIT` -sats i frågor om frågetjänsten baserat på dina behov för att säkerställa modellernas prestanda.
-
-
