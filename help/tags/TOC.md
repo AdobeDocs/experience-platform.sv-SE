@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: a03ab5086f8f3935425da147f721dec42ced9d00
+source-git-commit: de09106f4446981176ca001f607d540b490de8d1
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '418'
 ht-degree: 25%
 
 ---
@@ -106,6 +106,8 @@ ht-degree: 25%
       * Adobe Target v2 {#target-v2}
          * [Översikt](./extensions/web/target-v2/overview.md)
          * [Versionsinformation](./extensions/web/target-v2/release-notes.md)
+      * [!DNL AWS] {#aws}
+         * [Översikt](./extensions/web/aws/overview.md)
       * [!DNL BrightCove] videouppföljning {#brightcove}
          * [Översikt](./extensions/web/brightcove/overview.md)
          * [Versionsinformation](./extensions/web/brightcove/release-notes.md)
