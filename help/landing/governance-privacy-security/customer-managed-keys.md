@@ -1,9 +1,10 @@
 ---
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
-source-git-commit: 02898f5143a7f4f48c64b22fb3c59a072f1e957d
+exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
+source-git-commit: 82a29cedfd12e0bc3edddeb26abaf36b0edea6df
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1611'
 ht-degree: 0%
 
 ---
@@ -13,6 +14,14 @@ ht-degree: 0%
 Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av systemnivånycklar. Om du använder ett program som är byggt på plattformen kan du välja att använda dina egna krypteringsnycklar istället, vilket ger dig större kontroll över datasäkerheten.
 
 Det här dokumentet beskriver processen för att aktivera funktionen för kundhanterade nycklar (CMK) i Platform.
+
+## Förutsättningar
+
+Om du vill aktivera CMK måste du ha tillgång till **alla** av följande funktioner i [!DNL Microsoft Azure]:
+
+* [Rollbaserade principer för åtkomstkontroll](https://learn.microsoft.com/en-us/azure/role-based-access-control/) (ska inte blandas ihop med samma funktion i Experience Platform)
+* [Valvvalv - mjuk borttagning](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
+* [Töm skydd](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection)
 
 ## Processsammanfattning
 
@@ -24,7 +33,7 @@ CMK ingår i hälso- och sjukvårdsskölden och i skölden för skydd av privatl
 
 Processen är följande:
 
-1. [Konfigurera en [!DNL Microsoft Azure] Nyckelvalv](#create-key-vault) baserat på organisationens policyer, och sedan [generera en krypteringsnyckel](#generate-a-key) som till slut kommer att delas med Adobe.
+1. [Konfigurera en [!DNL Azure] Nyckelvalv](#create-key-vault) baserat på organisationens policyer, och sedan [generera en krypteringsnyckel](#generate-a-key) som till slut kommer att delas med Adobe.
 1. Använd API-anrop till [konfigurera CMK-appen](#register-app) med [!DNL Azure] tenant.
 1. Använd API-anrop till [skicka ditt krypteringsnyckel-ID till Adobe](#send-to-adobe) och starta aktiveringsprocessen för funktionen.
 1. [Kontrollera konfigurationsstatus](#check-status) för att kontrollera om CMK har aktiverats.
@@ -97,11 +106,13 @@ Den konfigurerade nyckeln visas i listan med nycklar för valvet.
 
 När du har konfigurerat nyckelvalvet är nästa steg att registrera dig för CMK-programmet som ska länka till [!DNL Azure] tenant.
 
->[!NOTE]
->
->Om du registrerar CMK-appen måste du anropa API:er för plattformen. Mer information om hur du samlar in de autentiseringsrubriker som krävs för att ringa dessa samtal finns i [Autentiseringsguide för plattforms-API](../../landing/api-authentication.md).
->
->Autentiseringsguiden innehåller instruktioner om hur du genererar ett eget unikt värde för den `x-api-key` begäranhuvud, alla API-åtgärder i den här handboken använder det statiska värdet `acp_provisioning` i stället. Du måste fortfarande ange dina egna värden för `{ACCESS_TOKEN}` och `{ORG_ID}`, dock.
+### Komma igång
+
+Om du registrerar CMK-appen måste du anropa API:er för plattformen. Mer information om hur du samlar in de autentiseringsrubriker som krävs för att ringa dessa samtal finns i [Autentiseringsguide för plattforms-API](../../landing/api-authentication.md).
+
+Autentiseringsguiden innehåller instruktioner om hur du genererar ett eget unikt värde för den `x-api-key` begäranhuvud, alla API-åtgärder i den här handboken använder det statiska värdet `acp_provisioning` i stället. Du måste fortfarande ange dina egna värden för `{ACCESS_TOKEN}` och `{ORG_ID}`, dock.
+
+I alla API-anrop som visas i den här handboken `platform.adobe.io` används som rotsökväg, som är standard för VA7-regionen. Om din organisation använder en annan region, `platform` måste följas av ett bindestreck och regionkoden som tilldelats din organisation: `nld2` för NLD2 eller `aus5` för AUS5 (till exempel: `platform-aus5.adobe.io`). Kontakta systemadministratören om du inte känner till din organisations region.
 
 ### Hämta en autentiserings-URL
 
@@ -183,7 +194,7 @@ curl -X POST \
         "imsOrgId": "{ORG_ID}",
         "configData": {
           "providerType": "AZURE_KEYVAULT",
-          "keyVaultIdentifier": "https://adobecmkexample.vault.azure.net/keys/adobeCMK-key/7c1d50lo28234cc895534c00d7eb4eb4"
+          "keyVaultKeyIdentifier": "https://adobecmkexample.vault.azure.net/keys/adobeCMK-key/7c1d50lo28234cc895534c00d7eb4eb4"
         }
       }'
 ```
@@ -193,7 +204,7 @@ curl -X POST \
 | `name` | Ett namn för konfigurationen. Se till att du kommer ihåg det här värdet eftersom det kommer att behövas för att kontrollera konfigurationens status på en [senare steg](#check-status). Värdet är skiftlägeskänsligt. |
 | `type` | Konfigurationstypen. Måste anges till `BYOK_CONFIG`. |
 | `imsOrgId` | Ditt IMS-organisations-ID. Detta måste vara samma värde som anges i `x-gw-ims-org-id` header. |
-| `configData` | Innehåller följande information om konfigurationen:<ul><li>`providerType`: Måste anges till `AZURE_KEYVAULT`.</li><li>`keyVaultIdentifier`: Det nyckelvalv-URI som du kopierade [tidigare](#send-to-adobe).</li></ul> |
+| `configData` | Innehåller följande information om konfigurationen:<ul><li>`providerType`: Måste anges till `AZURE_KEYVAULT`.</li><li>`keyVaultKeyIdentifier`: Det nyckelvalv-URI som du kopierade [tidigare](#send-to-adobe).</li></ul> |
 
 **Svar**
 
