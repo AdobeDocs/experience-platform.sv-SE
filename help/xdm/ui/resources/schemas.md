@@ -5,9 +5,9 @@ title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: 3fc498de60256006d27ada72a7b5f4fff71c4472
 workflow-type: tm+mt
-source-wordcount: '2823'
+source-wordcount: '3071'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,7 @@ Med Schemaredigeraren kan du lägga till enskilda fält direkt i ett schema om d
 
 >[!IMPORTANT]
 >
->Även om schemaredigeraren tillåter att du lägger till enskilda fält direkt i ett schema, ändrar detta inte det faktum att alla fält i ett XDM-schema måste anges av dess klass eller en fältgrupp som är kompatibel med den klassen. Som framgår av avsnitten nedan är alla enskilda fält fortfarande kopplade till en fältgrupp som ett nyckelsteg när de läggs till i ett schema.
+>Även om schemaredigeraren tillåter att du lägger till enskilda fält direkt i ett schema, ändrar detta inte det faktum att alla fält i ett XDM-schema måste anges av dess klass eller en fältgrupp som är kompatibel med den klassen. Som framgår av avsnitten nedan är alla enskilda fält fortfarande kopplade till en klass eller fältgrupp som ett nyckelsteg när de läggs till i ett schema.
 
 ### Lägg till standardfält {#add-standard-fields}
 
@@ -172,7 +172,17 @@ Börja skriva in namnet på det fält som du vill lägga till så börjar system
 
 ![Nytt fält](../../images/ui/resources/schemas/custom-field-search.png)
 
-Här anger du ett visningsnamn och en datatyp för fältet. Under **[!UICONTROL Assign field group]** måste du välja en fältgrupp för det nya fältet som ska associeras med. Börja skriva in namnet på fältgruppen och om du tidigare har [skapade anpassade fältgrupper](./field-groups.md#create) visas i listrutan. Du kan också skriva ett unikt namn i fältet för att skapa en ny fältgrupp i stället.
+När du har angett ett visningsnamn och en datatyp för fältet är nästa steg att tilldela fältet till en överordnad XDM-resurs. Om schemat använder en anpassad klass kan du välja att [lägg till fältet i den tilldelade klassen](#add-to-class) eller en [fältgrupp](#add-to-field-group) i stället. Om schemat använder en standardklass kan du bara tilldela ett anpassat fält till en fältgrupp.
+
+#### Tilldela fältet till en anpassad fältgrupp {#add-to-field-group}
+
+>[!NOTE]
+>
+>I det här avsnittet beskrivs bara hur du tilldelar fältet till en anpassad fältgrupp. Om du i stället vill utöka en standardfältgrupp med det nya anpassade fältet läser du avsnittet om [lägga till anpassade fält i standardfältgrupper](#custom-fields-for-standard-groups).
+
+Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]**. Om schemat använder en standardklass är detta det enda tillgängliga alternativet och markeras som standard.
+
+Sedan måste du välja en fältgrupp för det nya fältet som ska associeras med. Börja skriva in namnet på fältgruppen i den angivna textinmatningen. Om du har befintliga anpassade fältgrupper som matchar indata visas de i listrutan. Du kan också skriva ett unikt namn för att skapa en ny fältgrupp i stället.
 
 ![Välj fältgrupp](../../images/ui/resources/schemas/select-field-group.png)
 
@@ -180,7 +190,7 @@ Här anger du ett visningsnamn och en datatyp för fältet. Under **[!UICONTROL 
 >
 >Om du väljer en befintlig anpassad fältgrupp kommer alla andra scheman som använder den fältgruppen också att ärva det nya fältet när du har sparat ändringarna. Därför bör du bara markera en befintlig fältgrupp om du vill använda den här typen av spridning. Annars bör du välja att skapa en ny anpassad fältgrupp i stället.
 
-När du är klar väljer du **[!UICONTROL Apply]**.
+När du har valt fältgruppen i listan väljer du **[!UICONTROL Apply]**.
 
 ![Använd fält](../../images/ui/resources/schemas/apply-field.png)
 
@@ -192,7 +202,21 @@ Det nya fältet läggs till på arbetsytan och får ett namn under [klient-ID](.
 >
 >Resten av fälten i den valda anpassade fältgruppen tas som standard bort från schemat. Om du vill lägga till några av dessa fält i schemat markerar du ett fält som tillhör gruppen och väljer sedan **[!UICONTROL Manage related fields]** i rätt spår.
 
-#### Lägga till anpassade fält i strukturen för standardfältgrupper {#custom-fields-for-standard-groups}
+#### Tilldela fältet till en anpassad klass {#add-to-class}
+
+Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Class]**. Indatafältet nedan ersätts med namnet på det aktuella schemats anpassade klass, vilket anger att det nya fältet kommer att tilldelas den här klassen.
+
+![The [!UICONTROL Class] som väljs för den nya fälttilldelningen.](../../images/ui/resources/schemas/assign-field-to-class.png)
+
+Fortsätt konfigurera fältet efter behov och välj **[!UICONTROL Apply]** när du är klar.
+
+![[!UICONTROL Apply] väljs för det nya fältet.](../../images/ui/resources/schemas/assign-field-to-class-apply.png)
+
+Det nya fältet läggs till på arbetsytan och får ett namn under [klient-ID](../../api/getting-started.md#know-your-tenant_id) för att undvika konflikter med XDM-standardfält. Om du väljer klassnamnet i den vänstra listen visas det nya fältet som en del av klassens struktur.
+
+![Det nya fältet som används på den anpassade klassens struktur, som visas på arbetsytan.](../../images/ui/resources/schemas/assign-field-to-class-applied.png)
+
+### Lägga till anpassade fält i strukturen för standardfältgrupper {#custom-fields-for-standard-groups}
 
 Om schemat du arbetar med har ett objekttypsfält från en standardfältgrupp, kan du lägga till egna anpassade fält till det standardobjektet.
 
