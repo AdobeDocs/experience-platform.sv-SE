@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform november 2022
 description: Versionsinformation november 2022 för Adobe Experience Platform.
-source-git-commit: 9d5511697d3d4de2926c8862fdd413e2a9f1d1a2
+source-git-commit: 3c78fc1cbfcd00f0fd5facfdf07bbc2757f492fa
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 2%
+source-wordcount: '454'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +14,37 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Datainsamling](#data-collection)
+- [Experience Data Model (XDM)](#xdm)
 - [Källor](#sources)
+
+## Datainsamling {#data-collection}
+
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [!DNL AWS] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL AWS] tilläggsöversikt](../../tags/extensions/web/aws/overview.md) för mer information. |
+| [!DNL Google Ads Enhanced Conversions] tillägg för händelsevidarebefordran | Nu kan du skicka konverteringsdata till [!DNL Google Ads] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Google Ads Enhanced Conversions] tilläggsöversikt](../../tags/extensions/web/google-ads-enhanced-conversions/overview.md) för mer information. |
+| [!DNL Microsoft Azure] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Microsoft Azure] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Microsoft Azure] tilläggsöversikt](../../tags/extensions/web/azure/overview.md) för mer information. |
+
+Mer information om plattformens datainsamlingsfunktioner finns i [datainsamling - översikt](../../collection/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Tilldela fält till anpassade klasser när du lägger till direkt i ett schema | När [lägga till ett enskilt fält direkt i ett schema](../../xdm/ui/resources/schemas.md#add-individual-fields)tidigare kunde du bara tilldela fältet till en fältgrupp som överordnad resurs. Förutom fältgrupper kan du nu [tilldela fältet till en anpassad klass](../../xdm/ui/resources/schemas.md.md#add-to-class) som dess överordnade resurs i stället. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
 ## Källor {#sources}
 
