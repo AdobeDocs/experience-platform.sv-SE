@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform november 2022
 description: Versionsinformation november 2022 för Adobe Experience Platform.
-source-git-commit: 3c78fc1cbfcd00f0fd5facfdf07bbc2757f492fa
+source-git-commit: 9100597c94c21beb9d967f67061e18a9421c6674
 workflow-type: tm+mt
 source-wordcount: '454'
 ht-degree: 1%
@@ -40,7 +40,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Tilldela fält till anpassade klasser när du lägger till direkt i ett schema | När [lägga till ett enskilt fält direkt i ett schema](../../xdm/ui/resources/schemas.md#add-individual-fields)tidigare kunde du bara tilldela fältet till en fältgrupp som överordnad resurs. Förutom fältgrupper kan du nu [tilldela fältet till en anpassad klass](../../xdm/ui/resources/schemas.md.md#add-to-class) som dess överordnade resurs i stället. |
+| Tilldela fält till anpassade klasser när du lägger till direkt i ett schema | När [lägga till ett enskilt fält direkt i ett schema](../../xdm/ui/resources/schemas.md#add-individual-fields)tidigare kunde du bara tilldela fältet till en fältgrupp som överordnad resurs. Förutom fältgrupper kan du nu [tilldela fältet till en anpassad klass](../../xdm/ui/resources/schemas.md#add-to-class) som dess överordnade resurs i stället. |
 
 {style=&quot;table-layout:auto&quot;}
 
