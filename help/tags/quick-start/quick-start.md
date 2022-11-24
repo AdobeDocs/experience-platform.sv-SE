@@ -2,7 +2,7 @@
 title: Quickstart Guide
 description: Lär dig hur du snabbt kommer igång med taggar i Adobe Experience Platform.
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1523'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Mer information om hur du skapar egenskaper finns i [Skapa en egenskap](../ui/ad
 
 Ett tillägg är en integrering som byggts av Adobe eller en Adobe-partner som lägger till nya och oändliga alternativ för taggarna som du kan distribuera till dina webbplatser. Om du tänker på en tagg som ett operativsystem är tillägg de program som du installerar för att göra det du behöver.
 
-Alla nya egenskaper levereras med [Kärntillägg](../extensions/web/core/overview.md) installerade. Mobila egenskaper har ytterligare tillägg. Core-tillägget har byggts av Adobe för att ge en robust standarduppsättning med dataelementtyper för datalagret och händelsetyperna för dina regler. De flesta åtgärder du vill utföra (skaffa ett ECID, skicka [!DNL Adobe Analytics] beacons, ladda [!DNL Target] global mbox osv) kommer från tillägg som du installerar från katalogen.
+Alla nya egenskaper levereras med [Kärntillägg](../extensions/client/core/overview.md) installerade. Mobila egenskaper har ytterligare tillägg. Core-tillägget har byggts av Adobe för att ge en robust standarduppsättning med dataelementtyper för datalagret och händelsetyperna för dina regler. De flesta åtgärder du vill utföra (skaffa ett ECID, skicka [!DNL Adobe Analytics] beacons, ladda [!DNL Target] global mbox osv) kommer från tillägg som du installerar från katalogen.
 
 Det som gör taggar i Platform verkligt unika är att dessa tillägg kan byggas av vem som helst. Behöver ni släppa en Facebook-pixel för återmarknadsföring på er webbplats? Ta en titt på det tillägg som Facebook har byggt. Vill du ha samma sak för Twitter eller Linked In? Använd dessa tillägg. Behöver du göra en undersökning? Titta på Query Pro eller Foresee. Behöver ni hantera sekretess och samtycke från era slutanvändare för att få hjälp med [!DNL GDPR]? Ta en titt på Evidon och Trust Arc. Vill du se detaljerad information om hur enskilda användare på din webbplats beter sig? Ta en titt på Clicktale. Mer information finns i avsnittet om [lägga till ett nytt tillägg](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

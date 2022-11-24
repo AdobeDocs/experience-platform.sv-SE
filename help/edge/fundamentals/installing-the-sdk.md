@@ -3,7 +3,7 @@ title: Installera Adobe Experience Platform Web SDK
 description: Lär dig hur du installerar Experience Platform Web SDK.
 keywords: web sdk-installation;installera web sdk;Internet Explorer;promise;npm-paket
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '924'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Det finns tre sätt att använda Adobe Experience Platform Web SDK som stöds:
 
 ## Alternativ 1: Installera taggtillägget
 
-Dokumentation om taggtillägget finns i [startdokumentation](../../tags/extensions/web/sdk/overview.md)
+Dokumentation om taggtillägget finns i [startdokumentation](../../tags/extensions/client/sdk/overview.md)
 
 ## Alternativ 2: Installera den fördefinierade fristående versionen
 

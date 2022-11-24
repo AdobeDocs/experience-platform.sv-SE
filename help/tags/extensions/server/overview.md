@@ -1,0 +1,32 @@
+---
+title: Referens för tillägg för händelsevidarebefordran
+description: Hitta dokumentation för tillägg för vidarebefordran av händelser i Adobe Experience Platform.
+source-git-commit: ccfc46714069e8c29f1777dea5ba73e318c0a4a6
+workflow-type: tm+mt
+source-wordcount: '149'
+ht-degree: 0%
+
+---
+
+# Referens för tillägg för händelsevidarebefordran
+
+>[!NOTE]
+>
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+Här följer en lista med dokumentation för tillägg för vidarebefordran av händelser på servern. En lista över tillgängliga klienttillägg finns i [tagg extensions reference](../client/overview.md) i stället.
+
+>[!NOTE]
+>
+>Alla tilläggsnamn följt av en asterisk (*) länkar till tilläggets lista på Adobe Exchange, som innehåller installations- och användningsinstruktioner. Alla andra länkar pekar på tilläggets dokumentation på Adobe Experience League.
+
+* [Adobe Experience Platform Cloud Connector](./cloud-connector/overview.md)
+* [[!DNL AWS]](./aws/overview.md)
+* [Core](./core/overview.md)
+* [Google Ads Enhanced Conversions](./google-ads-enhanced-conversions/overview.md)
+* [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
+* [[!UICONTROL Microsoft Azure]](./azure/overview.md)
+* [Pega Customer Decision Hub](https://exchange.adobe.com/apps/ec/107597)*
+* [API för fäst konvertering](https://exchange.adobe.com/apps/ec/108550)*
+* [[!DNL Splunk]](./splunk/overview.md)
+* [[!DNL Zendesk] Händelse-API](./zendesk/overview.md)

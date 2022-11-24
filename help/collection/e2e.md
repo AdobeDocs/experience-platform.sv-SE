@@ -2,7 +2,7 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '2537'
 ht-degree: 0%
@@ -212,7 +212,7 @@ Händelsekonfigurationssidan visas. Om du vill konfigurera en händelse måste d
 
 >[!NOTE]
 >
->Mer information om de olika händelsetyperna i webbtilläggen för Adobe, inklusive hur du konfigurerar dem, finns i [Adobe extensions reference](../tags/extensions/web/overview.md) i taggdokumentationen.
+>Mer information om de olika händelsetyperna i webbtilläggen för Adobe, inklusive hur du konfigurerar dem, finns i [Adobe extensions reference](../tags/extensions/client/overview.md) i taggdokumentationen.
 
 Med händelsen skicka formulär kan du använda en [CSS-väljare](https://www.w3schools.com/css/css_selectors.asp) för att referera till ett specifikt element som regeln ska starta på. I exemplet nedan är ID:t `add-to-cart-form` används så att den här regeln bara aktiveras för formuläret&quot;Lägg till i kundvagnen&quot;. Välj **[!UICONTROL Keep Changes]** för att lägga till händelsen i regeln.
 

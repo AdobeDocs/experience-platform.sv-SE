@@ -2,7 +2,7 @@
 title: Versionsinformation för Adobe Experience Platform
 description: Den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 9100597c94c21beb9d967f67061e18a9421c6674
+source-git-commit: f8e8ec0fb13fc988d47bb3bbe85f953e66b33f13
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 1%
@@ -27,9 +27,9 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL AWS] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL AWS] tilläggsöversikt](../../tags/extensions/web/aws/overview.md) för mer information. |
-| [!DNL Google Ads Enhanced Conversions] tillägg för händelsevidarebefordran | Nu kan du skicka konverteringsdata till [!DNL Google Ads] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Google Ads Enhanced Conversions] tilläggsöversikt](../../tags/extensions/web/google-ads-enhanced-conversions/overview.md) för mer information. |
-| [!DNL Microsoft Azure] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Microsoft Azure] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Microsoft Azure] tilläggsöversikt](../../tags/extensions/web/azure/overview.md) för mer information. |
+| [!DNL AWS] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL AWS] tilläggsöversikt](../../tags/extensions/server/aws/overview.md) för mer information. |
+| [!DNL Google Ads Enhanced Conversions] tillägg för händelsevidarebefordran | Nu kan du skicka konverteringsdata till [!DNL Google Ads] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Google Ads Enhanced Conversions] tilläggsöversikt](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för mer information. |
+| [!DNL Microsoft Azure] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Microsoft Azure] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Microsoft Azure] tilläggsöversikt](../../tags/extensions/server/azure/overview.md) för mer information. |
 
 Mer information om plattformens datainsamlingsfunktioner finns i [datainsamling - översikt](../../collection/home.md).
 

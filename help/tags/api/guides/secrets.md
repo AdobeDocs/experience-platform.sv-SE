@@ -2,7 +2,7 @@
 title: Hemligheter i reaktors-API
 description: Lär dig grunderna i hur du konfigurerar hemligheter i Reaktors API för användning vid vidarebefordran av händelser.
 exl-id: 0298c0cd-9fba-4b54-86db-5d2d8f9ade54
-source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1237'
 ht-degree: 1%
@@ -131,7 +131,7 @@ När växlingsartefakten har sparats i miljön är hemligheten `activated_at` ä
 
 ## Referera hemligheter {#referencing-secrets}
 
-Om du vill referera till en hemlighet måste du skapa ett dataelement av typen[!UICONTROL Secret]&quot; (tillhandahålls av [[!UICONTROL Core] extension](../../extensions/web/core/overview.md)) på en händelsevidarebefordringsegenskap. När du konfigurerar det här dataelementet uppmanas du att ange vilken hemlighet som ska användas för varje miljö. Sedan kan du skapa regler som refererar till ett hemligt dataelement, till exempel i huvudet för ett HTTP-anrop.
+Om du vill referera till en hemlighet måste du skapa ett dataelement av typen[!UICONTROL Secret]&quot; (tillhandahålls av [[!UICONTROL Core] extension](../../extensions/client/core/overview.md)) på en händelsevidarebefordringsegenskap. När du konfigurerar det här dataelementet uppmanas du att ange vilken hemlighet som ska användas för varje miljö. Sedan kan du skapa regler som refererar till ett hemligt dataelement, till exempel i huvudet för ett HTTP-anrop.
 
 ![Hemligt dataelement](../../images/api/guides/secrets/data-element.png)
 

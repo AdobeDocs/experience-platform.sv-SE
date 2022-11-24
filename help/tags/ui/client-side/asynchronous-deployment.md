@@ -2,7 +2,7 @@
 title: Asynkron distribution
 description: Lär dig hur du distribuerar taggbibliotek från Adobe Experience Platform asynkront på din webbplats.
 exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
-source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1079'
 ht-degree: 0%
@@ -56,7 +56,7 @@ För det första, eftersom taggbiblioteket kan slutföra inläsningen före elle
 
 För det andra kan taggbiblioteket slutföra inläsningen före eller efter [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) webbläsarhändelse (DOM Ready) har inträffat.
 
-På grund av dessa två punkter är det värt att visa hur [Bibliotek inläst](../../extensions/web/core/overview.md#library-loaded-page-top), [Sidan nederst](../../extensions/web/core/overview.md#page-bottom), [DOM-klart](../../extensions/web/core/overview.md#page-bottom)och [Fönster inläst](../../extensions/web/core/overview.md#window-loaded) händelsetyper från Core-tilläggsfunktionen när du läser in ett taggbibliotek asynkront.
+På grund av dessa två punkter är det värt att visa hur [Bibliotek inläst](../../extensions/client/core/overview.md#library-loaded-page-top), [Sidan nederst](../../extensions/client/core/overview.md#page-bottom), [DOM-klart](../../extensions/client/core/overview.md#page-bottom)och [Fönster inläst](../../extensions/client/core/overview.md#window-loaded) händelsetyper från Core-tilläggsfunktionen när du läser in ett taggbibliotek asynkront.
 
 Om taggegenskapen innehåller följande fyra regler:
 

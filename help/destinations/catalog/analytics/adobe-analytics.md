@@ -3,7 +3,7 @@ keywords: Analystillägg;analystillägg;målanalys
 title: Adobe Analytics-tillägg
 description: Adobe Analytics-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 95b6e079-09a6-4262-bd01-11f155286aa9
-source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Adobe Analytics är en branschledande lösning som ger er möjlighet att förstå era kunder som människor och styra verksamheten med kundanalys.
 
-Adobe Analytics är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns i [Översikt över Adobe Analytics-tillägg](/help/tags/extensions/web/analytics/overview.md) i taggdokumentationen.
+Adobe Analytics är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns i [Översikt över Adobe Analytics-tillägg](/help/tags/extensions/client/analytics/overview.md) i taggdokumentationen.
 
 Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [taggtillägg - översikt](../launch-extensions/overview.md).
 

@@ -2,7 +2,7 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 12648469a1e06e316597fa46fb877f947c8ddb92
+source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
 workflow-type: tm+mt
 source-wordcount: '348'
 ht-degree: 0%
@@ -14,8 +14,8 @@ ht-degree: 0%
 ## 26 oktober 2022
 
 * **Känslig datahantering för datastreams**: Datastreams utnyttjar nu flera plattformstekniker för att hantera känsliga data på ett lämpligt sätt, i enlighet med bestämmelser som HIPAA (Health Insurance Portability and Accounability Act). Se avsnittet om [hantera känsliga data i dataströmmar](../../edge/datastreams/overview.md#sensitive) för mer information.
-* **[!DNL Splunk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Splunk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Splunk] tilläggsöversikt](../extensions/web/splunk/overview.md) för mer information.
-* **[!DNL Zendesk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Zendesk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Zendesk] tilläggsöversikt](../extensions/web/zendesk/overview.md) för mer information.
+* **[!DNL Splunk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Splunk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Splunk] tilläggsöversikt](../extensions/server/splunk/overview.md) för mer information.
+* **[!DNL Zendesk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Zendesk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Zendesk] tilläggsöversikt](../extensions/server/zendesk/overview.md) för mer information.
 
 ## 28 september 2022
 
@@ -32,6 +32,6 @@ ht-degree: 0%
 
 Nya tillägg har släppts:
 
-* [Google Data Layer-taggtillägg](../extensions/web/google-data-layer/overview.md): Gör att du kan använda ett Google-datalager i taggimplementeringen.
+* [Google Data Layer-taggtillägg](../extensions/client/google-data-layer/overview.md): Gör att du kan använda ett Google-datalager i taggimplementeringen.
 * [Google Ads Enhanced Conversions event forward extension](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html): Gör att du kan förbättra dina Google Ads-konverteringar i realtid.
-* [Vidarekoppling av händelse för Mailchimp](../extensions/web/mailchimp/overview.md): Skickar händelser till Mailchimp Marketing API som kan utlösa e-postmeddelanden för marknadsföringskampanjer, resor eller transaktioner för Mailchimp.
+* [Vidarekoppling av händelse för Mailchimp](../extensions/server/mailchimp/overview.md): Skickar händelser till Mailchimp Marketing API som kan utlösa e-postmeddelanden för marknadsföringskampanjer, resor eller transaktioner för Mailchimp.
