@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;api guide;självstudiekurs;skapa en direktuppspelningsanslutning;direktuppspelningsproblem;intag;
-title: Skapa en HTTP API Streaming Connection med API
-description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
+title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
+description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: d4889a302edbcdbe3f4a969a616c2fbc52f6c556
+source-git-commit: 26c967418e983322cc39aa799a681d258638d769
 workflow-type: tm+mt
-source-wordcount: '1415'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -259,10 +259,10 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
       "createdBy": "acme@AdobeID",
       "updatedBy": "acme@AdobeID",
       "createdClient": "{CREATED_CLIENT}",
-      "updatedClient": "{UPDATEDD_CLIENT}",
+      "updatedClient": "{UPDATED_CLIENT}",
       "sandboxId": "{SANDBOX_ID}",
       "sandboxName": "{SANDBOX_NAME}",
-      "imsOrgId": "{ORG_ID}}",
+      "imsOrgId": "{ORG_ID}",
       "name": "ACME Streaming Connection XDM Data",
       "description": "ACME streaming connection for customer data",
       "connectionSpec": {
