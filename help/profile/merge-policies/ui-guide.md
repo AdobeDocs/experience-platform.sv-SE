@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kopplingsprofiler
 type: Documentation
 description: När data från flera källor samlas i Experience Platform är sammanslagningsprinciper de regler som används i plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. I den här handboken finns stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i Adobe Experience Platform användargränssnitt.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: e94756254a24ecadd7359589cd14cfb0745c789c
 workflow-type: tm+mt
-source-wordcount: '2193'
+source-wordcount: '2195'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ I det första steget i arbetsflödet kan du konfigurera sammanfogningsprincipen 
    * **[!UICONTROL Private Graph]**: Utför identitetssammanfogning baserat på ditt privata identitetsdiagram.
 * **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad visas en varning om att du vill ändra organisationens standardpolicy för sammanslagning. Se [sammanfogningsprinciper - översikt](overview.md) om du vill veta mer om standardprinciper för sammanfogning.
    ![](../images/merge-policies/create-make-default.png)
-* **[!UICONTROL Active-On-Edge Merge Policy]**: En växlingsknapp som gör att du kan välja om den här sammanfogningsprincipen ska vara aktiv i kant eller inte. För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att ett segment ska kunna aktiveras på kanten (markeras som ett kantsegment) måste det vara kopplat till en sammanfogningspolicy som är markerad som aktiv på kanten. Om ett segment **not** som är knutna till en sammanfogningsprincip som är markerad som aktiv på kanten markeras segmentet inte som aktivt på kanten och markeras som ett direktuppspelningssegment. Dessutom kan varje IMS-organisation bara ha **en** sammanfogningsprincip som är aktiv vid sidan.
+* **[!UICONTROL Active-On-Edge Merge Policy]**: En växlingsknapp som gör att du kan välja om den här sammanfogningsprincipen ska vara aktiv i kant eller inte. För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att ett segment ska kunna aktiveras på kanten (markeras som ett kantsegment) måste det vara kopplat till en sammanfogningspolicy som är markerad som aktiv på kanten. Om ett segment **not** som är knutna till en sammanfogningsprincip som är markerad som aktiv på kanten markeras segmentet inte som aktivt på kanten och markeras som ett direktuppspelningssegment. Dessutom kan varje sandlåda i en organisation bara ha **en** sammanfogningsprincip som är aktiv vid sidan.
 
 När de obligatoriska fälten är ifyllda kan du välja **[!UICONTROL Next]** för att fortsätta med arbetsflödet.
 
