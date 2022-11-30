@@ -2,9 +2,9 @@
 title: Felsökningsguide för taggar
 description: Få svar på vanliga frågor om taggar i Adobe Experience Platform.
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: 6109e44ff4b20cadbd3a5016517e954c10c68931
+source-git-commit: b0cc02478273c0b6035488a5d21191ce5cc0e268
 workflow-type: tm+mt
-source-wordcount: '1044'
+source-wordcount: '1051'
 ht-degree: 0%
 
 ---
@@ -106,4 +106,4 @@ Se guiden [hantera behörigheter](../collection/permissions.md) om du vill lära
 
 ## Vad händer om jag har andra frågor?
 
-Om du har andra frågor kan du ställa på [Adobe Experience Platform Data Collection - communitysida](https://adobe.com/go/launchme) på Experience League eller gå med [community Slack arbetsyta](http://join.connectionsdevs.chat) för utvecklare och teknisk implementering.
+Om du har andra frågor kan du ställa på [Adobe Experience Platform Data Collection - communitysida](https://adobe.com/go/launchme) på Experience League eller gå med [community Slack arbetsyta](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform) för utvecklare och teknisk implementering.
