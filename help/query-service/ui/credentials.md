@@ -5,9 +5,9 @@ title: Handbok för autentiseringsuppgifter för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: e4526b515dc6f480136615f3aa78f38f3e43a60f
+source-git-commit: 344602a0e828d140ea386daf30a25b8f595f8d04
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1179'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,12 @@ ht-degree: 0%
 
 Med Adobe Experience Platform Query Service kan du ansluta till externa klienter. Du kan ansluta till dessa externa klienter genom att använda antingen utgångsdatum eller ej utgångsdatum.
 
-## Utgående autentiseringsuppgifter
+## Utgående autentiseringsuppgifter {#expiring-credentials}
+
+>[!CONTEXTUALHELP]
+>id="platform_queryservice_credentials_expiringcredentials"
+>title="Klientens SSL-läge"
+>abstract="SSL måste vara aktiverat i klienter som är anslutna till Query Service. Kontrollera att SSL-läget är inställt på &quot;require&quot;."
 
 Du kan använda utgångsuppgifter för att snabbt konfigurera en anslutning till en extern klient.
 
@@ -96,7 +101,7 @@ När du redigerar en referens som inte förfaller visas ett modalt värde. Du ka
 
 När du har angett all nödvändig information väljer du **[!UICONTROL Update account]** för att slutföra uppdateringen av dina autentiseringsuppgifter.
 
-## Använda autentiseringsuppgifter för att ansluta till externa klienter
+## Använd autentiseringsuppgifter för att ansluta till externa klienter {#use-credential-to-connect}
 
 Du kan använda autentiseringsuppgifterna som förfaller eller inte förfaller för att ansluta till externa klienter, som Aqua Data Studio, Looker eller Power BI. Indatametoden för dessa autentiseringsuppgifter varierar beroende på den externa klienten. Mer information om hur du använder dessa autentiseringsuppgifter finns i den externa klientens dokumentation.
 
