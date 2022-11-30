@@ -2,7 +2,7 @@
 title: Översikt över datahygien
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
+source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
 source-wordcount: '872'
 ht-degree: 0%
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
-Plattformens datahygifunktioner gör att du kan hantera dina lagrade konsumentdata genom följande:
+Plattformens datahygifunktioner gör att du kan hantera dina lagrade data genom följande:
 
 * Schemalägga förfallodatum för automatiska datauppsättningar
-* Ta bort enskilda konsumentdata från dina register
+* Ta bort enskilda poster från en eller alla datauppsättningar
 
 >[!IMPORTANT]
 >
->Konsumentborttagningar är avsedda att användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../privacy-service/home.md) i stället.
+>Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../privacy-service/home.md) i stället.
 
 Dessa aktiviteter kan utföras med [[!UICONTROL Data Hygiene] Arbetsyta i användargränssnittet](#ui) eller [API för datahygien](#api). När ett datahygijobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Se avsnittet om [tidslinjer och genomskinlighet](#timelines-and-transparency) om du vill ha mer information om hur varje jobbtyp visas i systemet.
 
@@ -40,7 +40,7 @@ The [!UICONTROL Data Hygiene] Gränssnittet är byggt ovanpå API:t för datahyg
 
 ## Tidslinjer och genomskinlighet
 
-Förfrågningar om borttagning och förfallodatum för konsumentdatauppsättningar har sina egna bearbetningstider och tillhandahåller genomskinlighetsuppdateringar vid viktiga punkter i sina respektive arbetsflöden. Mer information om varje jobbtyp finns i avsnitten nedan.
+Förfrågningar om radering och förfallodatum för datauppsättningar har sina egna bearbetningstidslinjer och tillhandahåller genomskinlighetsuppdateringar vid viktiga punkter i sina respektive arbetsflöden. Mer information om varje jobbtyp finns i avsnitten nedan.
 
 ### Utgångsdatum för datauppsättning {#dataset-expiration-transparency}
 
@@ -57,17 +57,17 @@ Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-ex
 
 {style=&quot;table-layout:auto&quot;}
 
-### Konsumentborttagningar {#consumer-delete-transparency}
+### Posten tas bort {#record-delete-transparency}
 
 >[!IMPORTANT]
 >
->Konsumentborttagningar är bara tillgängliga för organisationer som har köpt Adobe Healthcare Shield.
+>Borttagning av arkivhandlingar är endast tillgängligt för organisationer som har köpt Adobe Healthcare Shield.
 
-Följande sker när en [begäran om borttagning av kund](./ui/delete-consumer.md) skapas:
+Följande sker när en [postborttagningsbegäran](./ui/record-delete.md) skapas:
 
 | Stadie | Tid efter att begäran har skickats | Beskrivning |
 | --- | --- | --- |
-| Begäran har skickats | 0 timmar | En dataförvaltare eller integritetsanalytiker skickar en begäran om att ta bort en kund. Förfrågan visas i [!UICONTROL Data Hygiene UI] efter det att den har skickats in. |
+| Begäran har skickats | 0 timmar | En datahanterare eller integritetsanalytiker skickar en begäran om radering av poster. Förfrågan visas i [!UICONTROL Data Hygiene UI] efter det att den har skickats in. |
 | Profilsökningar har uppdaterats | 3 timmar | Ändringen av antalet profiler som orsakas av den borttagna identiteten återspeglas i [widgetar för instrumentpanel](../dashboards/guides/profiles.md#profile-count-trend) och andra rapporter. |
 | Uppdaterade segment | 24 timmar | När profilerna har tagits bort är alla relaterade [segment](../segmentation/home.md) uppdateras för att återspegla deras nya storlek. |
 | Uppdaterade resor och destinationer | 26 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)och [mål](../destinations/home.md) uppdateras enligt förändringar i relaterade segment. |

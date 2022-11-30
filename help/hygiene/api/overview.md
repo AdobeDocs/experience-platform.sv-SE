@@ -2,9 +2,9 @@
 title: API-guide för datahygien
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
+source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '469'
 ht-degree: 0%
 
 ---
@@ -43,16 +43,16 @@ Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formatera
 
 En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för datauppsättningen anger du en framtida tidpunkt då datauppsättningen ska tas bort. Se [Slutpunktshandbok för datauppsättningens förfallodatum](./dataset-expiration.md) om du vill ha mer information om schemaläggning av datauppsättningens förfallodatum i API:t.
 
-## Konsumentborttagningar
+## Posten tas bort
 
 >[!IMPORTANT]
 >
->Förfrågningar om borttagning av kund är bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield**.
+>Begäran om att radera poster är bara tillgänglig för organisationer som har köpt **Adobe Healthcare Shield**.
 >
 >
->Konsumentborttagningar är avsedda att användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
+>Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
 
-Med API:t för datahygien kan du ta bort alla poster som är kopplade till en konsumentidentitet i en eller alla datauppsättningar. Alla datahygienåtgärder som tar bort konsumentidentiteter representeras av en konstruktion som kallas arbetsorder. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med konsumentborttagningar i API:t.
+Med Data Hygiene API kan du ta bort alla poster som är associerade med en identitet i en eller alla datauppsättningar. Alla datahygienåtgärder som tar bort identiteter representeras av en konstruktion som kallas arbetsordning. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med postborttagningar i API:t.
 
 ## Kvot
 

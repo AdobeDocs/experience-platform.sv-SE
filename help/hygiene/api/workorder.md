@@ -1,32 +1,32 @@
 ---
 title: API-slutpunkt för arbetsorder
-description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för konsumentidentiteter.
+description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
+source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1029'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för arbetsorder
 
-The `/workorder` -slutpunkten i API:t för datahygien gör att du kan hantera konsumentborttagningsbegäranden i Adobe Experience Platform programmatiskt.
+The `/workorder` -slutpunkten i Data Hygiene API gör att du kan hantera begäranden om postborttagning i Adobe Experience Platform programmässigt.
 
 >[!IMPORTANT]
 >
->Förfrågningar om borttagning av kund är bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield**.
+>Begäran om att radera poster är bara tillgänglig för organisationer som har köpt **Adobe Healthcare Shield**.
 >
 >
->Konsumentborttagningar är avsedda att användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
+>Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
 
 ## Komma igång
 
 Slutpunkten som används i den här guiden är en del av API:t för datahygien. Läs igenom [översikt](./overview.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
-## Skapa en begäran om att ta bort en kund {#delete-consumers}
+## Skapa en begäran om postborttagning {#create}
 
-Du kan ta bort en eller flera konsumentidentiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-förfrågan till `/workorder` slutpunkt.
+Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-förfrågan till `/workorder` slutpunkt.
 
 **API-format**
 
@@ -36,7 +36,7 @@ POST /workorder
 
 **Begäran**
 
-Beroende på värdet på `datasetId` som anges i nyttolasten för begäran tar API-anropet bort konsumentidentiteter från alla datauppsättningar eller en enda datauppsättning som du anger. Följande begäran tar bort tre konsumentidentiteter från en specifik datauppsättning.
+Beroende på värdet på `datasetId` som anges i nyttolasten för begäran tar API-anropet bort identiteter från alla datauppsättningar eller en enskild datauppsättning som du anger. Följande begäran tar bort tre identiteter från en specifik datauppsättning.
 
 ```shell
 curl -X POST \
@@ -49,7 +49,7 @@ curl -X POST \
   -d '{
         "action": "delete_identity",
         "datasetId": "c48b51623ec641a2949d339bad69cb15",
-        "displayName": "Example Consumer Delete Request",
+        "displayName": "Example Record Delete Request",
         "description": "Cleanup identities required by Jira request 12345.",
         "identities": [
           {
@@ -76,17 +76,17 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `action` | Den åtgärd som ska utföras. Värdet måste anges till `delete_identity` för konsumentborttagningar. |
+| `action` | Den åtgärd som ska utföras. Värdet måste anges till `delete_identity` för radering av poster. |
 | `datasetId` | Om du tar bort från en enskild datauppsättning måste det här värdet vara ID:t för datauppsättningen i fråga. Om du tar bort från alla datauppsättningar anger du värdet till `ALL`.<br><br>Om du anger en enskild datauppsättning måste datamängdens associerade XDM-schema (Experience Data Model) ha en primär identitet definierad. |
-| `displayName` | Visningsnamnet för konsumentborttagningsbegäran. |
-| `description` | En beskrivning av konsumentborttagningsbegäran. |
+| `displayName` | Visningsnamnet för postborttagningsbegäran. |
+| `description` | En beskrivning av postborttagningsbegäran. |
 | `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av en [identity namespace](../../identity-service/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>If `datasetId` anger en enda datauppsättning, varje enhet under `identities` måste använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>If `datasetId` är inställd på `ALL`, `identities` arrayen är inte begränsad till ett enda namnutrymme eftersom varje datamängd kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, enligt rapporter från [Identitetstjänst](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
-Ett godkänt svar returnerar information om konsumentborttagningen.
+Ett godkänt svar returnerar informationen om postborttagningen.
 
 ```json
 {
@@ -99,7 +99,7 @@ Ett godkänt svar returnerar information om konsumentborttagningen.
   "status": "received",
   "createdBy": "{USER_ID}",
   "datasetId": "c48b51623ec641a2949d339bad69cb15",
-  "displayName": "Example Consumer Delete Request",
+  "displayName": "Example Record Delete Request",
   "description": "Cleanup identities required by Jira request 12345."
 }
 ```
@@ -109,7 +109,7 @@ Ett godkänt svar returnerar information om konsumentborttagningen.
 | `workorderId` | ID:t för raderingsordern. Detta kan användas för att senare slå upp borttagningsstatus. |
 | `orgId` | Ditt organisations-ID. |
 | `bundleId` | ID:t för paketet som den här borttagningsordern är kopplad till, används för felsökning. Flera raderingsorder paketeras ihop för att behandlas av tjänster i senare led. |
-| `action` | Den åtgärd som utförs av arbetsordern. För konsumentborttagningar är värdet `identity-delete`. |
+| `action` | Den åtgärd som utförs av arbetsordern. För postborttagningar är värdet `identity-delete`. |
 | `createdAt` | En tidsstämpel som anger när raderingsordningen skapades. |
 | `updatedAt` | En tidsstämpel som anger när raderingsordningen senast uppdaterades. |
 | `status` | Den aktuella statusen för borttagningsordern. |
@@ -118,9 +118,9 @@ Ett godkänt svar returnerar information om konsumentborttagningen.
 
 {style=&quot;table-layout:auto&quot;}
 
-## Hämta status för en konsumentborttagning (#lookup)
+## Hämta status för en postborttagning (#lookup)
 
-Efter [skapa en begäran om att ta bort en kund](#delete-consumers)kan du kontrollera status med hjälp av en GET-förfrågan.
+Efter [skapa en postborttagningsbegäran](#create)kan du kontrollera status med hjälp av en GET-förfrågan.
 
 **API-format**
 
@@ -130,7 +130,7 @@ GET /workorder/{WORK_ORDER_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{WORK_ORDER_ID}` | The `workorderId` av den kund som du letar upp. |
+| `{WORK_ORDER_ID}` | The `workorderId` av den post som du letar upp. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -160,7 +160,7 @@ Ett godkänt svar returnerar information om borttagningsåtgärden, inklusive de
   "status": "received",
   "createdBy": "{USER_ID}",
   "datasetId": "c48b51623ec641a2949d339bad69cb15",
-  "displayName": "Example Consumer Delete Request",
+  "displayName": "Example Record Delete Request",
   "description": "Cleanup identities required by Jira request 12345.",
   "productStatusDetails": [
     {
@@ -187,7 +187,7 @@ Ett godkänt svar returnerar information om borttagningsåtgärden, inklusive de
 | `workorderId` | ID:t för raderingsordern. Detta kan användas för att senare slå upp borttagningsstatus. |
 | `orgId` | Ditt organisations-ID. |
 | `bundleId` | ID:t för paketet som den här borttagningsordern är kopplad till, används för felsökning. Flera raderingsorder paketeras ihop för att behandlas av tjänster i senare led. |
-| `action` | Den åtgärd som utförs av arbetsordern. För konsumentborttagningar är värdet `identity-delete`. |
+| `action` | Den åtgärd som utförs av arbetsordern. För postborttagningar är värdet `identity-delete`. |
 | `createdAt` | En tidsstämpel som anger när raderingsordningen skapades. |
 | `updatedAt` | En tidsstämpel som anger när raderingsordningen senast uppdaterades. |
 | `status` | Den aktuella statusen för borttagningsordern. |
@@ -195,9 +195,9 @@ Ett godkänt svar returnerar information om borttagningsåtgärden, inklusive de
 | `datasetId` | ID:t för den datauppsättning som är föremål för begäran. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
 | `productStatusDetails` | En array som visar den aktuella statusen för processer som är relaterade till begäran. Varje arrayobjekt innehåller följande egenskaper:<ul><li>`productName`: Namnet på den underordnade tjänsten.</li><li>`productStatus`: Aktuell bearbetningsstatus för begäran från den underordnade tjänsten.</li><li>`createdAt`: En tidsstämpel som anger när den senaste statusen bokfördes av tjänsten.</li></ul> |
 
-## Uppdatera en begäran om att ta bort en kund
+## Uppdatera en begäran om radering av post
 
-Du kan uppdatera `displayName` och `description` för en konsument ta bort genom att göra en PUT-förfrågan.
+Du kan uppdatera `displayName` och `description` om du vill ta bort en post genom att göra en PUT-begäran.
 
 **API-format**
 
@@ -207,7 +207,7 @@ PUT /workorder{WORK_ORDER_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{WORK_ORDER_ID}` | The `workorderId` av den kund som du letar upp. |
+| `{WORK_ORDER_ID}` | The `workorderId` av den post som du letar upp. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -228,14 +228,14 @@ curl -X GET \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `displayName` | Ett uppdaterat visningsnamn för konsumentborttagningsbegäran. |
-| `description` | En uppdaterad beskrivning av konsumentborttagningsbegäran. |
+| `displayName` | Ett uppdaterat visningsnamn för postborttagningsbegäran. |
+| `description` | En uppdaterad beskrivning av postborttagningsbegäran. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Svar**
 
-Ett godkänt svar returnerar information om konsumentborttagningen.
+Ett godkänt svar returnerar informationen om postborttagningen.
 
 ```json
 {
@@ -275,7 +275,7 @@ Ett godkänt svar returnerar information om konsumentborttagningen.
 | `workorderId` | ID:t för raderingsordern. Detta kan användas för att senare slå upp borttagningsstatus. |
 | `orgId` | Ditt organisations-ID. |
 | `bundleId` | ID:t för paketet som den här borttagningsordern är kopplad till, används för felsökning. Flera raderingsorder paketeras ihop för att behandlas av tjänster i senare led. |
-| `action` | Den åtgärd som utförs av arbetsordern. För konsumentborttagningar är värdet `identity-delete`. |
+| `action` | Den åtgärd som utförs av arbetsordern. För postborttagningar är värdet `identity-delete`. |
 | `createdAt` | En tidsstämpel som anger när raderingsordningen skapades. |
 | `updatedAt` | En tidsstämpel som anger när raderingsordningen senast uppdaterades. |
 | `status` | Den aktuella statusen för borttagningsordern. |

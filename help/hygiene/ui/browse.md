@@ -2,7 +2,7 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 4a6532bbd7a378e44e7c6139330420c0363a54af
+source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
 source-wordcount: '837'
 ht-degree: 0%
@@ -31,7 +31,7 @@ När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet vi
 
 ![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
-I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** för att visa en lista över konsumentborttagningsåtgärder, och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
+I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsuppgifter och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
 
 ![Bilden visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
 
@@ -41,9 +41,9 @@ Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.pn
 
 Beroende på vilken typ av arbetsordning du visar finns det olika filteralternativ.
 
-### Filter för konsumentborttagning
+### Filter för postborttagning
 
-Följande filter gäller för begäranden om konsumentborttagning:
+Följande filter gäller för postborttagningsbegäranden:
 
 | Filter | Beskrivning |
 | --- | --- |
@@ -78,8 +78,8 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
->title="Ta bort svar från kund"
->abstract="När en konsumentborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som hjälper dig att felsöka problemet. Mer information finns i användargränssnittsguiden för datahygien."
+>title="Spela in borttagningssvar"
+>abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som hjälper dig att felsöka problemet. Mer information finns i användargränssnittsguiden för datahygien."
 
 Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
@@ -87,11 +87,11 @@ Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
 Beroende på vilken typ av arbetsordning du har valt visas olika information och kontroller. Dessa beskrivs i avsnitten nedan.
 
-### Information om borttagning av kund {#consumer-delete}
+### Information om radering av post {#record-delete}
 
-Informationen om en konsumentborttagningsbegäran omfattar dess aktuella status och den tid som gått sedan begäran gjordes. Varje begäran innehåller även **[!UICONTROL Status by service]** som ger information om status för varje tjänst längre fram i kedjan som ingår i borttagningen. På den högra listen kan du använda kontroller för att uppdatera arbetsorderns namn och beskrivning.
+Information om en begäran om radering av post inkluderar dess aktuella status och den tid som gått sedan begäran gjordes. Varje begäran innehåller även **[!UICONTROL Status by service]** som ger information om status för varje tjänst längre fram i kedjan som ingår i borttagningen. På den högra listen kan du använda kontroller för att uppdatera arbetsorderns namn och beskrivning.
 
-![Bild som visar informationssidan för en arbetsorder som ska tas bort av en kund](../images/ui/browse/consumer-delete-details.png)
+![Bild som visar informationssidan för en postborttagning av arbetsorder](../images/ui/browse/record-delete-details.png)
 
 ### Information om förfallodatum för datauppsättning {#dataset-expiration}
 
@@ -104,4 +104,4 @@ Detaljsidan för en datauppsättnings förfallodatum innehåller information om 
 I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
 
 * [Hantera förfallodatum för datauppsättning](./dataset-expiration.md)
-* [Hantera konsumentborttagningar](./delete-consumer.md)
+* [Hantera postborttagningar](./record-delete.md)

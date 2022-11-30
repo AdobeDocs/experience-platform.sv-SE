@@ -1,7 +1,7 @@
 ---
 title: Översikt över Integritetskonsolen
 description: Lär dig övervaka dina sekretessrelaterade arbetsflöden i Adobe Experience Platform användargränssnitt.
-source-git-commit: 4fa1b826d033ace6536af920b070e8eebbbf401c
+source-git-commit: 1fac36a0fd767add92283cd256d8bcea783ecf3b
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 1%
@@ -32,7 +32,7 @@ Funktionen för varje widget beskrivs nedan:
 
 | Widget-namn | Beskrivning |
 | --- | --- |
-| Orderstatus för datahygien | Visar status för konsumentborttagningsprocesser under [Datahygien](../../hygiene/home.md) för den markerade tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
+| Orderstatus för datahygien | Visar status för postborttagningsprocesser under [Datahygien](../../hygiene/home.md) för den markerade tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
 | Senaste arbetsorder för datahygien | Visar de senaste [Datahygien](../../hygiene/home.md) arbetsorder som bearbetas av systemet. Använd listrutan för att växla mellan nyligen skapade arbetsorder och nyligen uppdaterade arbetsorder. |
 | De vanligaste åtgärderna | Visar de vanligaste åtgärderna på plattformen enligt [granskningsloggar](./audit-logs/overview.md) för den markerade tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
 | De flesta aktiva användarna | Visar de mest aktiva plattformsanvändarna i organisationen enligt [granskningsloggar](./audit-logs/overview.md) för den markerade tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |

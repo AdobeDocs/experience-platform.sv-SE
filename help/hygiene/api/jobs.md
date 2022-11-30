@@ -1,21 +1,21 @@
 ---
-title: Ta bort konsumentposter med hjälp av API:t för datahygien
+title: Ta bort poster med hjälp av API:t för datahygien
 description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: c2ff0d5806e57f230b937e8754d40031fb4b2305
+source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
 
-# Ta bort konsumentposter med hjälp av API:t för datahygien
+# Ta bort poster med hjälp av API:t för datahygien
 
 >[!IMPORTANT]
 >
->Den här slutpunkten representerar betafunktionen för konsumentborttagningar. Använd [`/workorder` slutpunkt](./workorder.md) i stället.
+>Den här slutpunkten representerar betafunktionen för postborttagningar. Använd [`/workorder` slutpunkt](./workorder.md) i stället.
 
 Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 

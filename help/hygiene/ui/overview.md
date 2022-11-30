@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för datahygien
 description: Lär dig hur du hanterar datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 762cd5eb33706a942f5df91005e4ae9157bb6af8
+source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -14,14 +14,14 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_consumer"
 >title="Datahjul"
->abstract="Den här widgeten visar status för Data Hygiene-konsumentborttagningsjobb för den valda tidsramen. Mer information om datahygienprocesserna finns i **Datahygien** i den vänstra navigeringen."
+>abstract="Den här widgeten visar status för borttagningsjobb för datahygien-post för den valda tidsramen. Mer information om datahygienprocesserna finns i **Datahygien** i den vänstra navigeringen."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_recents"
 >title="Senaste arbetsorder för datahygien"
 >abstract="Den här widgeten visar de fem senast skapade eller uppdaterade arbetsordningarna för datahygien, beroende på vilket alternativ du väljer högst upp till höger. Mer information om datahygienprocesserna finns i **Datahygien** i den vänstra navigeringen."
 
-The **[!UICONTROL Data Hygiene]** i Adobe Experience Platform UI kan du skapa och övervaka olika datahygien-uppgifter, som att ta bort konsumentidentiteter och schemalägga förfallodatum för datauppsättningar.
+The **[!UICONTROL Data Hygiene]** i Adobe Experience Platform UI kan du skapa och övervaka olika datahygien-uppgifter, som att ta bort poster och schemalägga förfallodatum för datauppsättningar.
 
 I den här guiden beskrivs hur du hanterar datahygien i användargränssnittet för plattformen. Information om hur du utför dessa åtgärder med API-anrop finns i [API-guide för datahygien](../api/overview.md).
 
@@ -33,4 +33,4 @@ Härifrån kan du bläddra bland befintliga arbetsorder och konfigurera nya data
 
 * [Bläddra bland befintliga arbetsorder](./browse.md)
 * [Skapa en förfallobegäran för datauppsättning](./dataset-expiration.md)
-* [Skapa en begäran om att ta bort en kund](./delete-consumer.md)
+* [Skapa en begäran om postborttagning](./record-delete.md)

@@ -1,9 +1,10 @@
 ---
 title: API-slutpunkt för kvot
 description: Med slutpunkten /quota i Data Hygiene API kan du övervaka din datahygien mot organisationens månatliga kvotgränser för varje jobbtyp.
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
+source-git-commit: 1c6a5df6473e572cae88a5980fe0db9dfcf9944e
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '350'
 ht-degree: 1%
 
 ---
@@ -18,7 +19,7 @@ The `/quota` -slutpunkten i Data Hygiene API gör att du kan övervaka din datah
 
 För varje jobbtyp för datahygien används kvoter på följande sätt:
 
-* Konsumentborttagningar och fältuppdateringar begränsas till ett visst antal förfrågningar varje månad.
+* Borttagningar och uppdateringar av poster begränsas till ett visst antal förfrågningar varje månad.
 * Datauppsättningens förfallodatum har en fast gräns för antalet samtidigt aktiva jobb, oavsett när förfallotiderna kommer att köras.
 
 ## Komma igång
@@ -42,7 +43,7 @@ GET /quota?quotaType={QUOTA_TYPE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUOTA_TYPE}` | En valfri frågeparameter som anger vilken typ av kvot som ska hämtas. Om nej `quotaType` parametern anges, alla kvotvärden returneras i API-svaret. Godkända typvärden är:<ul><li>`expirationDatasetQuota`: Utgångsdatum för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Borttagningar av kunder</li><li>`fieldUpdateWorkOrderDatasetQuota`: Fältuppdateringar</li></ul> |
+| `{QUOTA_TYPE}` | En valfri frågeparameter som anger vilken typ av kvot som ska hämtas. Om nej `quotaType` parametern anges, alla kvotvärden returneras i API-svaret. Godkända typvärden är:<ul><li>`expirationDatasetQuota`: Utgångsdatum för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li><li>`fieldUpdateWorkOrderDatasetQuota`: Spela in uppdateringar</li></ul> |
 
 **Begäran**
 
@@ -70,7 +71,7 @@ Ett lyckat svar returnerar detaljerna om dina datahygien.
     },
     {
       "name": "deleteIdentityWorkOrderQuota",
-      "description": "The number of Consumer Delete Work Order requests for the organization for this month.",
+      "description": "The number of Record Delete Work Order requests for the organization for this month.",
       "consumed": 390,
       "quota": 10000
     }
@@ -80,6 +81,6 @@ Ett lyckat svar returnerar detaljerna om dina datahygien.
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `quotas` | Visar kvotinformation för varje datahygien-jobbtyp. Varje kvotobjekt innehåller följande egenskaper:<ul><li>`name`: Typ av datahygien:<ul><li>`expirationDatasetQuota`: Utgångsdatum för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Borttagningar av kunder</li></ul></li><li>`description`: En beskrivning av jobbtypen för datahygien.</li><li>`consumed`: Antalet jobb av den här typen som körs under den aktuella månadsperioden.</li><li>`quota`: Kvotgränsen för den här jobbtypen. För konsumentborttagningar och fältuppdateringar representerar detta antalet jobb som kan köras för varje månadsperiod. För datauppsättningens förfallodatum representerar detta antalet jobb som kan vara aktiva samtidigt vid en given tidpunkt.</li></ul> |
+| `quotas` | Visar kvotinformation för varje datahygien-jobbtyp. Varje kvotobjekt innehåller följande egenskaper:<ul><li>`name`: Typ av datahygien:<ul><li>`expirationDatasetQuota`: Utgångsdatum för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li></ul></li><li>`description`: En beskrivning av jobbtypen för datahygien.</li><li>`consumed`: Antalet jobb av den här typen som körs under den aktuella månadsperioden.</li><li>`quota`: Kvotgränsen för den här jobbtypen. För postborttagningar och uppdateringar representerar detta antalet jobb som kan köras för varje månadsperiod. För datauppsättningens förfallodatum representerar detta antalet jobb som kan vara aktiva samtidigt vid en given tidpunkt.</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
