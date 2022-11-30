@@ -4,9 +4,9 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
+source-git-commit: 66e8d3c594280d4b40cb2b6170544d4411220a6a
 workflow-type: tm+mt
-source-wordcount: '2649'
+source-wordcount: '2852'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,16 @@ I widgetbiblioteket kan du bläddra genom urvalet av standardwidgetar och anpass
 ## Standardwidgetar {#standard-widgets}
 
 Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera om segmenten som är tillgängliga för din dataanalys är fullständiga. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
+
+### Förutsättningar {#prerequisites}
+
+Innan du fortsätter med beskrivningarna av standardwidgetar bör du kontrollera att du känner till definitionerna av följande nyckeltermer som används i hela dokumentationen:
+
+* **Segment:** Ett segment är **regeluppsättningen** som innehåller attribut och händelsedata som kvalificerar ett antal profiler som målgrupp.
+* **Målgrupp**: En publik är **profiluppsättningen** som uppfyller villkoren för en segmentdefinition.
+* **Mappade/mappade**: Datamappning är processen att mappa källdatafält till relaterade målfält i ett mål.
+* **Identitet**: En identitet är en identifierare som unikt representerar en enskild kund, till exempel ett cookie-ID, ett enhets-ID eller ett e-post-ID.
+* **Aktivera**: Aktivera är den åtgärd som en användare vidtar för att mappa ett segment eller profiler till ett mål som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
@@ -139,6 +149,8 @@ Du kan visa information om ett segment genom att välja namnet på ett segment i
 
 ![De senast aktiverade segmenten efter målwidget.](../images/destinations/recently-activated-segments-by-destination.png)
 
+Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
+
 ### [!UICONTROL Audience size trend] {#audience-size-trend}
 
 >[!CONTEXTUALHELP]
@@ -172,6 +184,8 @@ De tillgängliga segmenten filtreras i listrutan Mål-ID. Filtrerings-ID:n som v
 Kolumnen Identiteter räknar antalet käll-ID:n i segmentet som kan mappas till det ID som valts i listrutan för widget-ID.
 
 ![De omappade segmenten efter identitetswidget.](../images/destinations/unmapped-segments-by-identity.png)
+
+Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 
 ### [!UICONTROL Mapped segments by identity] {#mapped-segments-by-identity}
 
@@ -259,11 +273,13 @@ Widgeten innehåller en tabell med två kolumner som visar en lista över aktiva
 
 ### [!UICONTROL Activated audiences across all destinations] {#activated-audiences-across-all-destinations}
 
-The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. Den här siffran motsvarar den senaste ögonblicksbilden.
+The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. Den här widgeten visar antalet målgrupper och inte antalet segment. Den här siffran motsvarar den senaste ögonblicksbilden.
 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
-Välj **[!UICONTROL Audiences]** för att navigera till destinationerna [!UICONTROL Browse] -fliken. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Läs dokumentationen för [mer information om [!UICONTROL Browse] tab](../../destinations/ui/destinations-workspace.md#browse).
+Välj **[!UICONTROL Audiences]** för att navigera till destinationerna [!UICONTROL Browse] -fliken. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om [[!UICONTROL Browse] tab](../../destinations/ui/destinations-workspace.md#browse).
+
+Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 
 ### [!UICONTROL Activated audiences] {#activated-audiences}
 
@@ -276,6 +292,8 @@ Välj **[!UICONTROL Audiences]** för att navigera till informationssidan på ko
 ![Sidan med information om kontrollpanelen för mål med fliken Aktiveringsdata markerad.](../images/destinations/activation-data-tab.png)
 
 Den här widgeten hjälper dig att förstå värdet av dina destinationer baserat på det antal målgrupper som har aktiverats snabbt. Den ger också enkel tillgång till mer detaljerad information för ytterligare analys.
+
+Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 
 ## Nästa steg
 
