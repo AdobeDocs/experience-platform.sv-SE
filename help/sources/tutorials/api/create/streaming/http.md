@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 26c967418e983322cc39aa799a681d258638d769
+source-git-commit: 2b3f8b7b0a19214a95a2ad76c9fecd70ffd91743
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1472'
 ht-degree: 0%
 
 ---
@@ -132,7 +132,7 @@ Ett godkänt svar returnerar HTTP-status 201 med information om den nya anslutni
 
 Autentiserade anslutningar bör användas när du behöver skilja mellan poster som kommer från betrodda och ej betrodda källor. Användare som vill skicka information med personligt identifierbar information (PII) bör skapa en autentiserad anslutning vid direktuppspelning av information till plattformen.
 
-Om du vill skapa en autentiserad basanslutning måste du ange ditt käll-ID och om autentisering krävs när du gör en POST-förfrågan till `/connections` slutpunkt.
+Om du vill skapa en autentiserad basanslutning måste du inkludera `authenticationRequired` parametern i din begäran och ange dess värde som `true`. Under det här steget kan du även ange ett käll-ID för din autentiserade basanslutning. Den här parametern är valfri och använder samma värde som `name` om det inte anges.
 
 
 **API-format**
@@ -166,9 +166,9 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
      "auth": {
          "specName": "Streaming Connection",
          "params": {
-             "sourceId": "{SOURCE_ID}",
+             "sourceId": "Authenticated XDM streaming connection",
              "dataType": "xdm",
-             "name": "Sample connection",
+             "name": "Authenticated XDM streaming connection",
              "authenticationRequired": true
          }
      }
@@ -194,9 +194,9 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
      "auth": {
          "specName": "Streaming Connection",
          "params": {
-             "sourceId": "Sample connection",
+             "sourceId": "Authenticated raw streaming connection",
              "dataType": "raw",
-             "name": "Sample connection",
+             "name": "Authenticated raw streaming connection",
              "authenticationRequired": true
          }
      }
@@ -207,7 +207,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.sourceId` | ID:t för den direktuppspelningsanslutning som du vill skapa. |
+| `auth.params.sourceId` | En ytterligare identifierare som kan användas när en autentiserad basanslutning skapas. Den här parametern är valfri och använder samma värde som `name` om det inte anges. |
 | `auth.params.authenticationRequired` | Parametern som anger att den skapade direktuppspelningsanslutningen |
 
 **Svar**
