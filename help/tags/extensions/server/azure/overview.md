@@ -2,9 +2,9 @@
 title: Microsoft Azure-tilläggsöversikt
 description: Läs mer om Microsoft Azure-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2337d99d-861e-44e7-94ed-ba21ef28d815
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: 8b972841c8412d510fce4c970a09d9c1eecd401e
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Eftersom tillägget inte har några konfigurationsegenskaper läggs det omedelba
 
 ## Konfigurera en regel för vidarebefordran av händelser {#rule}
 
-Börja skapa en ny regel för vidarebefordring av händelser och konfigurera villkoren efter behov. När du väljer åtgärder för regeln väljer du **[!UICONTROL Microsoft Azure]** för tillägget väljer du **[!UICONTROL Send Data to Event Hubs]** för åtgärdstyp.
+Börja skapa en ny regel för vidarebefordring av händelser och konfigurera villkoren efter behov. När du väljer åtgärder för regeln väljer du **[!UICONTROL Microsoft Azure]** för tillägget väljer du **[!UICONTROL Send Data to Event Hubs]** för åtgärdstypen.
 
 ![The [!UICONTROL Send Data to Event Hubs] åtgärdstypen som väljs för en regel i användargränssnittet för datainsamling.](../../../images/extensions/server/azure/select-action-type.png)
 
