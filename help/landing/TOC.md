@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
-source-git-commit: 24efebb89ba36f5047558acd368638f456356a9e
+source-git-commit: 695675aed5a1de4bb6869b733769f8e7e86a0d5b
 workflow-type: tm+mt
-source-wordcount: '248'
-ht-degree: 7%
+source-wordcount: '256'
+ht-degree: 8%
 
 ---
 
@@ -58,6 +58,11 @@ ht-degree: 7%
       * [Integrera Platform Web SDK för att bearbeta samtycke och inställningsdata](./governance-privacy-security/consent/sdk.md)
    * Granskningsloggar {#audit-logs}
       * [Översikt](./governance-privacy-security/audit-logs/overview.md)
+      * API för granskningsfråga {#audit-api}
+         * [Översikt](./governance-privacy-security/audit-logs/api/overview.md)
+         * [Komma igång](./governance-privacy-security/audit-logs/api/getting-started.md)
+         * [Händelser](./governance-privacy-security/audit-logs/api/events.md)
+         * [Exportera](./governance-privacy-security/audit-logs/api/export.md)
    * [Datakryptering](./governance-privacy-security/encryption.md)
    * [Kundhanterade nycklar](./governance-privacy-security/customer-managed-keys.md)
 * Licensanvändning och skyddsräcken {#license}
