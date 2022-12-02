@@ -4,9 +4,9 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som används på kontrollpaneler för profiler, segment och mål i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 62e282138de8cf2d74b4a62f4ced39e3fb78001a
+source-git-commit: 4826731682bcaf5a43c7ce047220c1805d97243a
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Namnkonventionen för dessa datauppsättningar är **Profile-Snapshot-Export** f
 
 Om du vill förstå det fullständiga schemat för varje ögonblicksbildsexportdatauppsättning kan du förhandsgranska och utforska datauppsättningarna [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
 
-![](images/query/profile-attribute.png)
+![En förhandsgranskning av datamängden Profile-Snapshot-Export.](images/query/profile-attribute.png)
 
 #### Kopplar profilattributsdatauppsättningar till sammanfogade princip-ID:n
 
@@ -72,7 +72,7 @@ Namnkonventionen för den här datauppsättningen är **Segmentdefinition-Snapsh
 
 Om du vill förstå det fullständiga schemat för varje segmentdefinitionsögonblicksbilds exportdatauppsättning kan du förhandsgranska och utforska datauppsättningarna [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
 
-![](images/query/segment-metadata.png)
+![En förhandsgranskning av datauppsättningen Segmentdefinition-Snapshot-Export.](images/query/segment-metadata.png)
 
 ### Metadatadatamängd för mål
 
@@ -82,7 +82,7 @@ Namnkonventionen för den här datauppsättningen är **DIM_Destination**.
 
 Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen kan du förhandsgranska och utforska datauppsättningen [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
 
-![](images/query/destinations-metadata.png)
+![En förhandsgranskning av DIM_Destination-datauppsättningen.](images/query/destinations-metadata.png)
 
 ## (Beta) Insiktsrapporter för kunddataplattformen (CDP)
 

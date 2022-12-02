@@ -2,9 +2,9 @@
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5d9428c4323e65c2605fd116160e160af7d9086d
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '917'
 ht-degree: 0%
 
 ---
@@ -118,8 +118,12 @@ Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj
 
 För att säkerställa att varje fråga för en Adobe Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
 
-## Nästa steg
+## Nästa steg och ytterligare resurser
 
 Genom att läsa det här dokumentet får du en bättre förståelse för hur du skapar en anpassad kontrollpanel och hur du skapar, redigerar och uppdaterar anpassade widgetar för den instrumentpanelen.
 
 Identifiera tillgängliga förkonfigurerade mått och visualiseringar för [profiler](./guides/profiles.md#standard-widgets), [segment](./guides/segments.md#standard-widgets)och [mål](./guides/destinations.md#standard-widgets) på kontrollpaneler, se listan över standardwidgetar i deras respektive dokumentation.
+
+Titta på följande video för att få en bättre förståelse för användardefinierade instrumentpaneler i Experience Platform:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

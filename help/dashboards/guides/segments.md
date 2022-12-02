@@ -4,9 +4,9 @@ title: Stödlinje för instrumentpanel för segment
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 23df35d7d90b6674b089a842818dba83283a1646
+source-git-commit: e5a4fddbd7f5b14280e283871d8b66a2e2f2407d
 workflow-type: tm+mt
-source-wordcount: '1979'
+source-wordcount: '1992'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Navigera till [!UICONTROL Segments] kontrollpanelen i plattformsgränssnittet v�
 >
 >Om din organisation inte har använt Platform tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanfogningsprinciper har skapats kan [!UICONTROL Segments] Kontrollpanelen visas inte. I stället [!UICONTROL Overview] På -fliken visas länkar och dokumentation som hjälper dig att komma igång med segmentering.
 
-![Fliken Översikt över kontrollpanelen Segment.](../images/segments/dashboard-overview.png)
+![Fliken Översikt för kontrollpanelen Segment med markerat segment och översikt.](../images/segments/dashboard-overview.png)
 
 ### Ändra [!UICONTROL Segments] kontrollpanel {#modify}
 
@@ -204,7 +204,7 @@ The **[!UICONTROL Profiles by identity]** widgeten visar uppdelningen av identit
 
 Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
 
-![Dialogrutan Profiler efter identitetsteckningar.](../images/segments/profiles-by-identity.png)
+![Översikt över kontrollpanelen Segment med alternativet Profiler efter identitetswidget och Bildtexter markerat.](../images/segments/profiles-by-identity.png)
 
 En maskininlärningsmodell genererar automatiskt datainsikter genom att analysera den övergripande fördelningen och de viktigaste dimensionerna av data.
 

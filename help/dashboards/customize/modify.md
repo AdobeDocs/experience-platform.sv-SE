@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Ändra plattformsinstrumentpaneler i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur du anpassar hur organisationens Adobe Experience Platform-data visas på kontrollpaneler.
 exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
-source-git-commit: d5acc317a48aef94dd4d6e3ccea89d0d674c8b34
+source-git-commit: 338aa6849f58b3c0fd6c871f1e199ebf6a73d115
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,13 @@ Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur i
 
 Från en kontrollpanel (till exempel [!UICONTROL Profiles] kontrollpanel) kan du välja **[!UICONTROL Modify dashboard]** för att ändra storlek på och ordna om befintliga widgetar.
 
-![](../images/customization/modify-dashboard.png)
+![Kontrollpanelen Profiler med kontrollpanelen Ändra markerad.](../images/customization/modify-dashboard.png)
 
 ## Ordna om widgetar
 
 När du har valt att ändra kontrollpanelen kan du ändra ordningen på widgetarna genom att markera widgetens rubrik och dra och släppa widgetarna i önskad ordning. I det här exemplet **[!UICONTROL Profiles count trend]** widgeten flyttas till den översta raden och **[!UICONTROL Profile count]** visas nu på den andra raden.
 
-![](../images/customization/move-widget.png)
+![Kontrollpanelen Profiler med två omsorterade widgetar markerade.](../images/customization/move-widget.png)
 
 ## Ändra storlek på widgetar
 
@@ -40,13 +40,13 @@ Du kan också ändra storlek på en widget genom att markera vinkelsymbolen i de
 >
 >När widgetarna anpassas i storlek flyttas de omgivande widgetarna dynamiskt. Detta kan medföra att vissa widgetar flyttas till ytterligare rader, vilket kräver att du rullar för att se alla widgetar.
 
-![](../images/customization/resize-widget.png)
+![Kontrollpanelen Profiler med en widget med ändrad storlek markerad.](../images/customization/resize-widget.png)
 
 ## Spara uppdateringar av instrumentpanelen
 
 När du har flyttat och ändrat storlek på widgetar väljer du **[!UICONTROL Save & exit]** om du vill spara ändringarna och återgå till huvudvyn på kontrollpanelen. Om du inte vill behålla ändringarna väljer du **[!UICONTROL Cancel]** om du vill återställa kontrollpanelen och återgå till den huvudsakliga instrumentpanelsvyn.
 
-![](../images/customization/save-changes.png)
+![Kontrollpanelen Profiler med både Avbryt och Spara och Avsluta markerat.](../images/customization/save-changes.png)
 
 ## Widget-bibliotek
 
@@ -54,7 +54,7 @@ Förutom att ändra storlek på och ordna om widgetar, väljer du **[!UICONTROL 
 
 Stegvisa instruktioner om hur du får tillgång till och arbetar med [!UICONTROL Widget library], se [widgetbibliotekshandbok](widget-library.md).
 
-![](../images/customization/widget-library.png)
+![Widgetbibliotekets arbetsyta med Standard och Egen markerat.](../images/customization/widget-library.png)
 
 ## Nästa steg
 

@@ -4,9 +4,9 @@ title: Handbok för kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 255de9b9e83c11aeed747a3c0cdb7bd7a7949bd2
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Om du vill navigera till kontrollpanelen för licensanvändning i användargrän
 >
 >Kontrollpanelen för licensanvändning är inte aktiverad som standard. Användarna måste beviljas behörigheten &quot;Visa kontrollpanel för licensanvändning&quot; för att kunna visa kontrollpanelen. Anvisningar om hur du beviljar åtkomstbehörigheter för att visa kontrollpanelen för licensanvändning finns i [behörighetsguide för instrumentpanel](../permissions.md).
 
-![](../images/license-usage/dashboard-overview.png)
+![Fliken Översikt över kontrollpanelen för licensanvändning.](../images/license-usage/dashboard-overview.png)
 
 ### Markera en sandlåda
 
@@ -41,7 +41,7 @@ Om du vill välja en sandlåda att visa på kontrollpanelen väljer du antingen 
 
 Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. med andra ord, markera [!UICONTROL Production] eller [!UICONTROL Development] innehåller förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
 
-![](../images/license-usage/select-sandbox.png)
+![Kontrollpanelens översiktsflik för licensanvändning med sandlådeväljaren markerad.](../images/license-usage/select-sandbox.png)
 
 >[!WARNING]
 >
@@ -56,11 +56,11 @@ Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av sa
 
 När du har valt en sandlåda kan du använda listrutan för datumintervall för att välja vilken tidsperiod som ska visas på instrumentpanelen. Det finns flera tillgängliga alternativ, bland annat standardvärdet för de senaste 30 dagarna.
 
-![](../images/license-usage/select-date-range.png)
+![Kontrollpanelens översiktsflik för licensanvändning med listrutan för datumintervall markerad.](../images/license-usage/select-date-range.png)
 
 Du kan också välja **[!UICONTROL Custom date]** för att välja den tidsperiod som visas.
 
-![](../images/license-usage/select-custom-date.png)
+![Kontrollpanelens översiktsflik för licensanvändning med anpassade datumintervallalternativ markerade.](../images/license-usage/select-custom-date.png)
 
 ## Widgetar
 
@@ -68,7 +68,7 @@ Kontrollpanelen för licensanvändning består av widgetar som visar skrivskydda
 
 Varje widget visar en graf som jämför det faktiska antalet för din organisation med det totala antalet som är tillgängligt med din organisations licensiering och som anger en procentandel av den totala användningen.
 
-![](../images/license-usage/widgets.png)
+![På kontrollpanelen för licensanvändning visas fliken Översikt med linjediagrammet för widgeten Sample license use metric.](../images/license-usage/widgets.png)
 
 ## Tillgängliga mått
 

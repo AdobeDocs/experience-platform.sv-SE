@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
+source-git-commit: c4457d82c66be382ebb8619ce248f282fb45ed3a
 workflow-type: tm+mt
-source-wordcount: '3165'
+source-wordcount: '3196'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Om du vill navigera till profilkontrollpanelen i plattformsgränssnittet väljer
 >
 >Om din organisation inte har använt plattformen tidigare och ännu inte har några aktiva profildatauppsättningar eller sammanslagningsprinciper skapade, visas inte instrumentpanelen för profiler. I stället [!UICONTROL Overview] På fliken visas länkar och dokumentation som hjälper dig att komma igång med kundprofilen i realtid.
 
-![](../images/profiles/dashboard-overview.png)
+![Kontrollpanelen för profiler i Experience Platform med profiler och översikt markerad.](../images/profiles/dashboard-overview.png)
 
 ### Ändra kontrollpanelen för profiler
 
@@ -142,7 +142,7 @@ Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-
 >
 >En annan vanlig orsak är att det finns skillnader mellan tidpunkten då instrumentpanelsögonblicksbilden tas och tidpunkten då exempeljobbet körs för [!UICONTROL Browse] -fliken. Du kan se när [!UICONTROL Profile count] widgeten uppdaterades senast genom att titta på tidsstämpeln i widgeten. Om du vill veta mer om hur exempeljobbet aktiveras på [!UICONTROL Browse] -fliken finns i [profilräknaren i användargränssnittsguiden för kundprofiler i realtid](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
 
-![](../images/profiles/profile-count.png)
+![Kontrollpanelen för profiler i Experience Platform med widgeten Profilantal markerad.](../images/profiles/profile-count.png)
 
 ### [!UICONTROL Profile count trend] {#profile-count-trend}
 
@@ -230,7 +230,7 @@ Mer information om profilfragment finns i avsnittet om [profilfragment jämfört
 
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
-![](../images/profiles/identity-overlap.png)
+![Översikt över kontrollpanelen Profiler med widgeten Identitetsöverlappning markerad.](../images/profiles/identity-overlap.png)
 
 ### [!UICONTROL Single identity profiles] {#single-identity-profiles}
 

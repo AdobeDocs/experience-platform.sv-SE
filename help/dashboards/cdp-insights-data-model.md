@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform Insights-datamodell
 description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights-datamodeller för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
+source-git-commit: 9f33ad0146b72f820530233b651370c43fafe713
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
@@ -81,10 +81,10 @@ GROUP BY adwh_dim_merge_policies.merge_policy_name;
 
 Namnområdesmodellen består av följande datamängder:
 
-- `adwh_fact_profile_by_namespace`
 - `adwh_dim_date`
-- `adwh_dim_namespaces`
+- `adwh_fact_profile_by_namespace`
 - `adwh_dim_merge_policies`
+- `adwh_dim_namespaces`
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
@@ -149,9 +149,9 @@ GROUP BY
 Segmentmodellen består av följande datamängder:
 
 - `adwh_dim_date`
+- `adwh_fact_profile_by_segment`
 - `adwh_dim_merge_policies`
 - `adwh_dim_segments`
-- `adwh_fact_profile_by_segment`
 - `adwh_dim_br_segment_destinations`
 - `adwh_dim_destination`
 - `adwh_dim_destination_platform`
@@ -260,9 +260,9 @@ ORDER BY create_time desc, segment LIMIT 5;
 Namnutrymmessegmentmodellen består av följande datamängder:
 
 - `adwh_dim_date`
-- `adwh_dim_merge_policies`
 - `adwh_dim_namespaces`
 - `adwh_fact_profile_by_segment_and_namespace`
+- `adwh_dim_merge_policies`
 - `adwh_dim_segments`
 - `adwh_dim_br_segment_destinations`
 - `adwh_dim_destination`
@@ -270,7 +270,7 @@ Namnutrymmessegmentmodellen består av följande datamängder:
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
-![En ERD för segmentmodellen.](./images/cdp-insights/namespace-segment-model.png)
+![En ERD för namnutrymmessegmentsmodellen.](./images/cdp-insights/namespace-segment-model.png)
 
 #### Profiler per identitet för ett segmentanvändningsfall
 
@@ -300,13 +300,13 @@ GROUP BY adwh_dim_namespaces.namespace_description;
 Den överlappande namnområdesmodellen består av följande datamängder:
 
 - `adwh_dim_date`
-- `adwh_dim_namespaces`
+- `adwh_dim_overlap_namespaces`
 - `adwh_fact_profile_overlap_of_namespace`
 - `adwh_dim_merge_policies`
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
-![En ERD för segmentmodellen.](./images/cdp-insights/overlap-namespace-model.png)
+![En ERD för den överlappande namnutrymmesmodellen.](./images/cdp-insights/overlap-namespace-model.png)
 
 #### Användningsfall för identitetsöverlappning (profiler)
 
@@ -364,7 +364,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 Namnutrymmet för överlappning efter segmentmodell består av följande datamängder:
 
 - `adwh_dim_date`
-- `adwh_dim_namespaces`
+- `adwh_dim_overlap_namespaces`
 - `adwh_fact_profile_overlap_of_namespace_by_segment`
 - `adwh_dim_merge_policies`
 - `adwh_dim_segments`
@@ -374,7 +374,7 @@ Namnutrymmet för överlappning efter segmentmodell består av följande datamä
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
-![En ERD för segmentmodellen.](./images/cdp-insights/overlap-namespace-by-segment-model.png)
+![En ERD för det överlappande namnutrymmet efter segmentmodell.](./images/cdp-insights/overlap-namespace-by-segment-model.png)
 
 #### Användningsfall för identitetsöverlappning (segment)
 
