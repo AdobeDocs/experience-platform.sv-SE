@@ -4,7 +4,7 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 66e8d3c594280d4b40cb2b6170544d4411220a6a
+source-git-commit: d9e10271db52f61cdc3e4adc546fe05adadb5a46
 workflow-type: tm+mt
 source-wordcount: '2852'
 ht-degree: 0%
@@ -273,7 +273,13 @@ Widgeten innehåller en tabell med två kolumner som visar en lista över aktiva
 
 ### [!UICONTROL Activated audiences across all destinations] {#activated-audiences-across-all-destinations}
 
-The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. Den här widgeten visar antalet målgrupper och inte antalet segment. Den här siffran motsvarar den senaste ögonblicksbilden.
+The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat.
+
+>[!NOTE]
+>
+>Den här widgeten visar antalet målgrupper och inte antalet segment.
+
+Den här siffran motsvarar den senaste ögonblicksbilden.
 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
