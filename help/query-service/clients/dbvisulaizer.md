@@ -5,9 +5,9 @@ title: Koppla DbVisualizer till frågetjänsten
 topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta DbVisualizer till Adobe Experience Platform Query Service.
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 910522cc981bddba86f0a47ded48125c28712032
+source-git-commit: 640a89231abf96a966f55dce2e3a7242c739538f
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '801'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Drivrutinsegenskaperna som visas i tabellen nedan rekommenderas för att SSL ska
 | ------ | ------ |
 | `PGHOST` | Värdnamnet för [!DNL PostgreSQL] server. Det här värdet är din Experience Platform [!UICONTROL Host] autentiseringsuppgifter. |
 | `ssl` | Definiera SSL-värdet `1` för att möjliggöra användning av SSL. |
-| `sslmode` | Detta styr användningen av SSL-krav. Du **måste** använd värdet `require` för att aktivera detta krav. |
+| `sslmode` | Detta styr nivån på SSL-skyddet. Du rekommenderas att använda `require` SSL-läge vid anslutning av tredjepartsklienter till Adobe Experience Platform. The `require` läge garanterar att kryptering krävs för all kommunikation och att nätverket är betrott för att ansluta till rätt server. Server SSL-certifikatvalidering krävs inte. Mer information finns i dokumentationen om [SSL-alternativ för anslutning av tredjepartsklienter](./ssl-modes.md) till [!DNL Query Service]. |
 | `user` | Användarnamnet som är kopplat till databasen är ditt företags-ID. Det är en alfanumerisk sträng som slutar i `@adobe.org` |
 
 >[!IMPORTANT]
