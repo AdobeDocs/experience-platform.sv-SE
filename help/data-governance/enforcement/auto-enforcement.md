@@ -5,7 +5,7 @@ title: Automatisk policytillämpning
 topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: 5776c691b7f3ec4cb544de59cf6beef162285399
 workflow-type: tm+mt
 source-wordcount: '1686'
 ht-degree: 0%
@@ -13,6 +13,10 @@ ht-degree: 0%
 ---
 
 # Automatisk policytillämpning
+
+>[!IMPORTANT]
+>
+>Automatiserad policytillämpning är endast tillgängligt för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
 När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras för destinationer tillämpar Adobe Experience Platform automatiskt användarprofiler om något inträffar.
 
@@ -107,10 +111,6 @@ Välj **[!UICONTROL List view]** för att visa datalinjen som en lista. Om du vi
 ![](../images/enforcement/list-view.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
-
->[!IMPORTANT]
->
->Samtyckesprofiler är för närvarande bara tillgängliga för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
 Om du har [policyer för skapat samtycke](../policies/user-guide.md#consent-policy) och som aktiverar ett segment till en destination kan du se hur dina medgivandeprinciper påverkar procentandelen profiler som ingår i aktiveringen.
 
