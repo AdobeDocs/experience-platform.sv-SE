@@ -3,7 +3,7 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: b189f1b0fe29ebefb3cba9c4f820022a772ce297
 workflow-type: tm+mt
 source-wordcount: '1745'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [Google kundmatchning](https://support.google.com/google-ads/answer/6379332?hl=en) Med kan ni använda era online- och offlinedata för att nå ut till och återinteragera med era kunder via Google egna och driftsatta egendomar, som: [!DNL Search], [!DNL Shopping], [!DNL Gmail]och [!DNL YouTube].
 
-![Google kundmatchningsmål i Adobe Experience Platform användargränssnitt](../../assets/catalog/advertising/google-customer-match/catalog.png)
+![Google kundmatchningsmål i Adobe Experience Platform användargränssnitt.](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
 ## Användningsfall {#use-cases}
 

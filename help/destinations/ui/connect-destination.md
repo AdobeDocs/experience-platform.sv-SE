@@ -4,9 +4,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 434b9ed4f64320b5fd73b752716cb34a8e48aec9
+source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1073'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Beroende på vilket mål du ansluter till kan du behöva ange olika typer av ans
 
 ![Bild som visar obligatoriska och valfria indataparametrar vid anslutning till en Trade Desk-destination.](../assets/ui/connect-destinations/connect-destination-trade-desk-example.png)
 
-### Ange formateringsalternativ för exporterade filer {#file-formatting-and-compression-options}
+### (Beta) Ställa in filformateringsalternativ för exporterade filer {#file-formatting-and-compression-options}
 
 För filbaserade mål kan du konfigurera olika inställningar för hur de exporterade filerna formateras och komprimeras. Mer information om alla tillgängliga formaterings- och komprimeringsalternativ finns i [Konfigurera filformateringsalternativ för filbaserade mål, genomgång](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 

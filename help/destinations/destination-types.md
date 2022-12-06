@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: c140e68467065d17f143850bfb8eefb3ac46443a
+source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
@@ -97,4 +97,4 @@ Tillägg är användbara när händelsedata används för att utlösa en åtgär
 
 Anslutningarna och tilläggen i [målkatalog](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Reklam**, **molnlagring**, **Undersökningsplattformar**, **E-postmarknadsföring**, osv.), beroende på vilka marknadsföringsåtgärder de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka destinationer som ingår i varje kategori, finns i [Dokumentation för målkatalog](./catalog/overview.md).
 
-![Målkategorier](./assets/destination-types/destination-categories-menu.png)
+![Målkategorier markerade på katalogsidan.](./assets/destination-types/destination-categories-menu.png)
