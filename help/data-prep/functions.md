@@ -5,9 +5,9 @@ title: Mappningsfunktioner för dataförinställningar
 topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
+source-git-commit: 714ce6eb1a77559a7bd1691afeac4a96e0877717
 workflow-type: tm+mt
-source-wordcount: '4337'
+source-wordcount: '4367'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,11 @@ Dataprep-funktioner kan användas för att beräkna och beräkna värden baserat
 
 Ett fältnamn kan vara vilken giltig identifierare som helst - en sekvens med obegränsad längd av Unicode-bokstäver och -siffror, med början med en bokstav, dollartecknet (`$`) eller understrecket (`_`). Variabelnamn är också skiftlägeskänsliga.
 
-Om ett fältnamn inte följer den här regeln måste fältnamnet omslutas med `${}`. Om fältnamnet till exempel är &quot;Förnamn&quot; eller &quot;Förnamn&quot; måste namnet radbrytas på samma sätt `${First Name}` eller `${First.Name}` respektive.
+Om ett fältnamn inte följer den här regeln måste fältnamnet omslutas med `${}`. Om fältnamnet till exempel är &quot;Förnamn&quot; eller &quot;Förnamn&quot; måste namnet radbrytas på samma sätt `${First Name}` eller `${First\.Name}` respektive.
+
+>[!TIP]
+>
+>Vid interaktion med hierarkier, om ett underordnat attribut har en punkt (`.`) måste du använda ett omvänt snedstreck (`\`) för att undvika specialtecken. Mer information finns i guiden [ta bort specialtecken](home.md#escape-special-characters).
 
 Om ett fältnamn dessutom är **alla** av följande reserverade nyckelord måste omslutas med `${}`:
 
