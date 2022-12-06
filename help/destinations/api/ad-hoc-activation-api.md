@@ -6,9 +6,9 @@ description: I den här artikeln beskrivs hela arbetsflödet för aktivering av 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 8d67d89db6a8c179935b4fe709f91279860d464e
+source-git-commit: cdf96088be27cba1fb92f1348f002123614285fe
 workflow-type: tm+mt
-source-wordcount: '1525'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,13 @@ ht-degree: 0%
 
 Med API:t för ad hoc-aktivering kan marknadsförare programmässigt aktivera målgruppssegment till destinationer på ett snabbt och effektivt sätt i situationer där omedelbar aktivering krävs.
 
+Använd ad hoc-aktiverings-API:t för att exportera hela filer till det önskade filmottagningssystemet. Ad hoc-målgruppsaktivering stöds endast av [gruppfilsbaserade mål](../destination-types.md#file-based).
+
 Bilden nedan visar det kompletta arbetsflödet för aktivering av segment via API:t för ad hoc-aktivering, inklusive segmenteringsjobben som äger rum i Platform var 24:e timme.
 
 ![ad hoc-aktivering](../assets/api/ad-hoc-activation/ad-hoc-activation-overview.png)
 
->[!NOTE]
->
->Ad hoc-målgruppsaktivering stöds endast av [gruppfilsbaserade mål](../destination-types.md#file-based).
+
 
 ## Användningsfall {#use-cases}
 
@@ -129,7 +129,7 @@ Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e t
 >
 >Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb bör du kontrollera att det har gått minst 20 minuter från det att segmentet först aktiverades enligt det schema du angav i [Steg 3 - Skapa aktiveringsflöde i plattformsgränssnittet](#activation-flow).
 
-Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda segmentexportjobbet för dina segment har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet.
+Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda segmentexportjobbet för dina segment har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet för att exportera en fullständig fil.
 
 När segmentexportjobbet är klart kan du aktivera det.
 
@@ -250,3 +250,4 @@ När du använder API:t för ad hoc-aktivering kan du få felmeddelanden som är
 ## Relaterad information {#related-information}
 
 * [Anslut till gruppmål och aktivera data med API:t för Flow Service](/help/destinations/api/connect-activate-batch-destinations.md)
+* [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](/help/destinations/ui/export-file-now.md)
