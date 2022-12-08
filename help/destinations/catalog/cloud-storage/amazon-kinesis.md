@@ -3,7 +3,7 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: cb0b80f79a849d81216c5500c54b62ac5d85e2f6
 workflow-type: tm+mt
 source-wordcount: '1859'
 ht-degree: 0%
@@ -125,7 +125,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ange ett namn för anslutningen till [!DNL Amazon Kinesis]
 * **[!UICONTROL Description]**: Ange en beskrivning för din anslutning till [!DNL Amazon Kinesis].
-* **[!UICONTROL stream]**: Ange namnet på en befintlig dataström i din [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
+* **[!UICONTROL Stream]**: Ange namnet på en befintlig dataström i din [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
 * **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
 * **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
 
@@ -175,7 +175,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 Tänk dig till exempel det här dataflödet som en [!DNL Amazon Kinesis] mål där tre segment är markerade i dataflödet och fyra attribut är mappade till målet.
 
-![Amazon Kinesis måldataflöde](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
+![Amazon Kinesis måldataflöde](../../assets/catalog/http/profile-export-example-dataflow.png)
 
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem i dem. Om en profil kvalificerar sig för kunden med DeLorean Cars-segmentet men även är medlem i &quot;Tillbaka till framtiden&quot;-segmentet för film- och science fiction-fans, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet.
 

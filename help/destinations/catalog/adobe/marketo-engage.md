@@ -2,7 +2,7 @@
 title: Marketo Engage destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 9f305ee7824bd8790dec57ccbd2d9462ccfa8b49
+source-git-commit: e68bbc07f7d2e4e05b725cbef37a1810a5825742
 workflow-type: tm+mt
 source-wordcount: '833'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 >* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Marketo V1]** mål, använd den nya **[!UICONTROL Marketo V2]** för att ansluta till och exportera data till Marketo.
 
 
-![Bild av de två Marketo-målkorten i en sida vid sida-vy.](/help/destinations/assets/catalog/adobe/marketo-side-by-side-view.png)
+![Bild av de två Marketo-målkorten i en sida vid sida-vy.](../..//assets/catalog/adobe/marketo-side-by-side-view.png)
 
 Förbättringar av Marketo V2-målet omfattar:
 

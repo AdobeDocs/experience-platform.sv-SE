@@ -2,9 +2,9 @@
 title: (Beta) Anslutning till Google Cloud-lagring
 description: Lär dig hur du ansluter till Google Cloud-lagring och aktiverar segment eller exporterar datauppsättningar.
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
+source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '858'
 ht-degree: 0%
 
 ---
@@ -34,15 +34,15 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 För att kunna ansluta plattformen till [!DNL Google Cloud Storage]måste du först aktivera interoperabilitet för [!DNL Google Cloud Storage] konto. Öppna för att få åtkomst till inställningen för interoperabilitet [!DNL Google Cloud Platform] och markera **[!UICONTROL Settings]** från **[!UICONTROL Cloud Storage]** i navigeringspanelen.
 
-![Kontrollpanelen för Google Cloud-plattformen med molnlagring och inställningar markerade.](/help/sources/images/tutorials/create/google-cloud-storage/nav.png)
+![Kontrollpanelen för Google Cloud-plattformen med molnlagring och inställningar markerade.](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
 
 The **[!UICONTROL Settings]** visas. Här kan du se information om [!DNL Google] projekt-ID och information om [!DNL Google Cloud Storage] konto. Välj **[!UICONTROL Interoperability]** i det övre sidhuvudet.
 
-![Fliken Interoperabilitet visas på kontrollpanelen för Google Cloud-plattformen.](/help/sources/images/tutorials/create/google-cloud-storage/project-access.png)
+![Fliken Interoperabilitet visas på kontrollpanelen för Google Cloud-plattformen.](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
 The **[!UICONTROL Interoperability]** sidan innehåller information om autentisering, åtkomstnycklar och standardprojektet som är kopplat till ditt tjänstkonto. Om du vill generera ett nytt åtkomstnyckel-ID och en hemlig åtkomstnyckel för ditt tjänstkonto väljer du **[!UICONTROL Create a Key for a Service Account]**.
 
-![Create a key for a service account control selected in the Google Cloud Platform dashboard.](/help/sources/images/tutorials/create/google-cloud-storage/interoperability.png)
+![Create a key for a service account control selected in the Google Cloud Platform dashboard.](../../../sources/images/tutorials/create/google-cloud-storage/interoperability.png)
 
 Du kan använda ditt nyligen genererade ID för åtkomstnyckel och hemlig åtkomstnyckel för att ansluta din [!DNL Google Cloud Storage] konto till plattform.
 
@@ -74,6 +74,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Bucket name]**: Ange namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
+* **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna.
 
 ### Aktivera aviseringar {#enable-alerts}
 

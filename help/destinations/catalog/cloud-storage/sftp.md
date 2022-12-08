@@ -3,9 +3,9 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
+source-git-commit: cb0b80f79a849d81216c5500c54b62ac5d85e2f6
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '823'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 >* Om du ännu inte har skapat några dataflöden till **[!UICONTROL SFTP]** mål, använd den nya **[!UICONTROL SFTP beta]** exportera filer till **[!UICONTROL SFTP]**.
 
 
-![Bild av de två SFTP-målkorten i en sida vid sida-vy.](/help/destinations/assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
+![Bild av de två SFTP-målkorten i en sida vid sida-vy.](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
 
 Förbättringar i nya [!DNL SFTP] omfattar följande destinationskort:
 
@@ -104,6 +104,8 @@ När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du fö
 * **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera destinationen i användargränssnittet i Experience Platform.
 * **[!UICONTROL Description]**: Ange en beskrivning av destinationen.
 * **[!UICONTROL Folder path]**: Ange sökvägen till mappen på SFTP-platsen dit filerna ska exporteras.
+* **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål.
 
 ## Aktivera segment till den här destinationen {#activate}
 

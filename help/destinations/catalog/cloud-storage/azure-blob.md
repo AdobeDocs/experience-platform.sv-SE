@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
+source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 >* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Azure Blob]** mål, använd den nya **[!UICONTROL Azure Blob beta]** exportera filer till **[!UICONTROL Azure Blob]**.
 
 
-![Bild av de två Azure Blob-målkorten i en sida vid sida-vy.](/help/destinations/assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
+![Bild av de två Azure Blob-målkorten i en sida vid sida-vy.](../../assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
 
 Förbättringar i nya [!DNL Azure Blob] omfattar följande destinationskort:
 
@@ -93,6 +93,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Description]**: Ange en beskrivning av destinationen.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
 * **[!UICONTROL Container]**: ange namnet på [!DNL Azure Blob Storage] behållare som ska användas av det här målet.
+* **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Azure Blob beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Azure Blob beta]** mål.
 
 ### Aktivera aviseringar {#enable-alerts}
 
