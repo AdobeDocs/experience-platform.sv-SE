@@ -5,10 +5,10 @@ title: Översikt över användargränssnittet i Privacy Service
 topic-legacy: UI guide
 description: Kom igång med att använda Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 3a98275b4b2969e2c7d8c1ec6ada14d1dd52b9b8
+source-git-commit: 8814c8a7e8feac4901917663d5cbeb5dddb8c288
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '203'
+ht-degree: 1%
 
 ---
 
@@ -19,7 +19,11 @@ ht-degree: 0%
 >title="Förfrågningar om registrerade"
 >abstract="Den här widgeten visar antalet inskickade och slutförda förfrågningar från registrerade personer som bearbetats per Privacy Service för en viss dag. Mer information om Privacy Servicen finns i **Begäranden** i den vänstra navigeringen."
 
-Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful-API och användargränssnitt som gör att du kan koordinera sekretess- och kompatibilitetsbegäranden över olika lösningar. Det här dokumentet utforskar [!DNL Privacy Service] Gränssnitt. Information om hur du använder API finns i [API-guide för Privacy Service](../api/overview.md).
+Privacy Servicens gränssnitt [!DNL Privacy Service] gör att ni kan samordna förfrågningar om sekretess och efterlevnad mellan olika Adobe Experience Cloud-program.
+
+>[!NOTE]
+>
+>Information om hur du hanterar kompatibilitetsbegäranden med hjälp av Privacy Services-API:t finns i [API-guide för Privacy Service](../api/overview.md).
 
 ## Logga in på [!DNL Privacy Service] UI
 
@@ -27,7 +31,7 @@ Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful-API och
 >
 >Du måste ha en Adobe ID för att kunna autentisera [!DNL Privacy Service] Gränssnitt. Dessutom måste du ha systemadministratörsbehörighet inom IMS-organisationen.
 
-Välj **[!UICONTROL Sign In with an Adobe ID]** och ange dina Adobe ID-uppgifter när du uppmanas till detta.
+Logga in på [Adobe Experience Cloud](https://experience.adobe.com/)
 
 När du är inloggad väljer du **[!UICONTROL Privacy UI]**.
 
