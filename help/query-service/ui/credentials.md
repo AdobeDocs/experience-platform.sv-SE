@@ -5,9 +5,9 @@ title: Handbok för autentiseringsuppgifter för frågetjänst
 topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 344602a0e828d140ea386daf30a25b8f595f8d04
+source-git-commit: f52e1d49fd090c398d34a3d9c2b5d1746c319eb4
 workflow-type: tm+mt
-source-wordcount: '1179'
+source-wordcount: '1271'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,15 @@ The **[!UICONTROL Expiring credentials]** innehåller följande information:
 - **[!UICONTROL Username]**: Användarnamnet som du använder för att ansluta till frågetjänsten.
 - **[!UICONTROL Password]**: Lösenordet som du ska använda för att ansluta till frågetjänsten.
 - **[!UICONTROL PSQL command]**: Ett kommando som automatiskt har infogat all relevant information för att ansluta till frågetjänsten med PSQL på kommandoraden.
-- **[!UICONTROL Expires]**: Utgångsdatumet för inloggningsuppgifterna. Autentiseringsuppgifterna går ut 24 timmar efter att de har skapats.
+- **[!UICONTROL Expires]**: Utgångsdatum och förfallotid för autentiseringsuppgifterna. Standardlängden för token är 24 timmar, men den kan ändras i de avancerade inställningarna för Admin Console.
+
+>[!TIP]
+>
+>Om du vill ändra sessionstiden för dina utgående inloggningsuppgifter som är kopplade till frågetjänsten går du till [Admin Console](https://adminconsole.adobe.com/) och välj följande på skärmen: **Inställningar** > **Integritet och säkerhet** > **Autentiseringsinställningar** > **Avancerade inställningar** > **Maximal sessionstid**.
+>
+>![Inställningsfliken på Admin Console med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
+>
+>Mer information om Adobe finns i hjälpdokumentationen [Avancerade inställningar](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som finns i Admin Console.
 
 ## Giltiga autentiseringsuppgifter {#non-expiring-credentials}
 
