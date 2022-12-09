@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: e6d0f0d0bc3de2f6da4e4269811d254db4fa3303
+source-git-commit: 672d98135492350ab6e12eec51649e6e5a7e4923
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '490'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
-| Antal identiteter i ett diagram | 150 | Gränsen tillämpas på sandlådenivå. Identitetsdiagrammet uppdateras inte när gränsen har nåtts. |
+| Antal identiteter i ett diagram | 150 | Gränsen tillämpas på sandlådenivå. Identitetsdiagrammet uppdateras inte när gränsen har nåtts. **Anteckning**: Det maximala antalet identiteter i ett identitetsdiagram **för en enskild sammanfogad profil** är 50. Sammanfogade profiler som är baserade på identitetsdiagram med fler än 50 identiteter undantas från kundprofilen i realtid. Mer information finns i guiden [skyddsutkast för profildata](../profile/guardrails.md). |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
 | Antal diagram | Ingen | Det finns inga gränser för hur många identitetsdiagram du kan skapa. |
