@@ -5,10 +5,10 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: bf5346214fad66b3f470c74620b608d71639b85a
+source-git-commit: f2106d1e5bc0442df4d0ba84323821f6f2d9b1c7
 workflow-type: tm+mt
-source-wordcount: '969'
-ht-degree: 11%
+source-wordcount: '963'
+ht-degree: 12%
 
 ---
 
@@ -213,11 +213,12 @@ ht-degree: 11%
       * [Cloud Connector för Google Analytics](https://exchange.adobe.com/apps/ec/106542)
       * Core {#core}
          * [Översikt](./extensions/server/core/overview.md)
-      * [Facebook Conversion API](https://exchange.adobe.com/apps/ec/105509)
       * Google Ads Enhanced Conversions {#google-ads-enhanced-conversions}
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
       * [!DNL Mailchimp] Edge {#mailchimp}
          * [Översikt](./extensions/server/mailchimp/overview.md)
+      * [!DNL Meta Conversions API] {#meta}
+         * [Översikt](./extensions/server/meta/overview.md)
       * [!UICONTROL Microsoft Azure] {#azure}
          * [Översikt](./extensions/server/azure/overview.md)
       * [Pega Customer Decision Hub](https://exchange.adobe.com/apps/ec/107597)
