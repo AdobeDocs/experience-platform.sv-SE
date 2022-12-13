@@ -2,14 +2,20 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: 892d22a88546ff270af4f5b253a013015349898b
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '416'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om taggar och vidarebefordran av händelser
+
+## 23 november 2022
+
+* **[!DNL AWS]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL AWS] tilläggsöversikt](../../tags/extensions/server/aws/overview.md) för mer information.
+* **[!DNL Google Ads Enhanced Conversions]tillägg för händelsevidarebefordran**: Nu kan du skicka konverteringsdata till [!DNL Google Ads] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Google Ads Enhanced Conversions] tilläggsöversikt](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för mer information.
+* **[!DNL Microsoft Azure]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Microsoft Azure] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Microsoft Azure] tilläggsöversikt](../../tags/extensions/server/azure/overview.md) för mer information.
 
 ## 26 oktober 2022
 
