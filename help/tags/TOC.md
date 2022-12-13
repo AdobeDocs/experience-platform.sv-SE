@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: f6c11fadc0d8019044fbdd2923af00ce18ce39e1
+source-git-commit: bf5346214fad66b3f470c74620b608d71639b85a
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '969'
 ht-degree: 11%
 
 ---
@@ -155,7 +155,6 @@ ht-degree: 11%
       * [Differentiell sekretess](https://exchange.adobe.com/apps/ec/104535)
       * [Dynamic Media Viewers](https://exchange.adobe.com/apps/ec/103048)
       * [EDDL-hjälp](https://exchange.adobe.com/apps/ec/107691)
-      * [Facebook Pixel](https://exchange.adobe.com/apps/ec/102804)
       * [Flashtalk OneTag](https://exchange.adobe.com/apps/ec/101392)
       * [ForeSee](https://exchange.adobe.com/apps/ec/100164)
       * [Gainsight PX](https://exchange.adobe.com/apps/ec/103343)
@@ -173,6 +172,8 @@ ht-degree: 11%
          * [Översikt](./extensions/client/marketo/overview.md)
          * [Versionsinformation](./extensions/client/marketo/release-notes.md)
       * [Överordnad Property Manager](https://exchange.adobe.com/apps/ec/102992)
+      * [!DNL Meta Pixel] {#meta}
+         * [Översikt](./extensions/client/meta/overview.md)
       * [Monita](https://exchange.adobe.com/apps/ec/106544)
       * [Nielsen Digital SDK](https://exchange.adobe.com/apps/ec/101361)
       * [OneTrust-hantering för cookies](https://exchange.adobe.com/apps/ec/100340)
@@ -300,3 +301,4 @@ ht-degree: 11%
    * [Versionsinformation 2020](./release-notes/2020.md)
    * [Versionsinformation 2019](./release-notes/2019.md)
    * [Versionsinformation 2018](./release-notes/2018.md)
+
