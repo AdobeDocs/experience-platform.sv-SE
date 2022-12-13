@@ -1,23 +1,27 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datastyrning;dataanvändningspolicy
 solution: Experience Platform
-title: Skapa en dataanvändningsprincip i API:t
+title: Skapa en datahanteringsprincip i API:t
 topic-legacy: policies
 type: Tutorial
-description: Med API:t för principtjänsten kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter. Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en profil med hjälp av API:t för principtjänsten.
+description: Lär dig hur du skapar en datahanteringsprincip med hjälp av API:t för principtjänsten.
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1217'
-ht-degree: 0%
+source-wordcount: '1200'
+ht-degree: 1%
 
 ---
 
-# Skapa en dataanvändningsprincip i API:t
+# Skapa en datastyrningsprincip i API:t
 
-The [API för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) Med kan ni skapa och hantera dataanvändningspolicyer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
+The [API för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) Med kan ni skapa och hantera datastyrningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
 
-Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en profil med [!DNL Policy Service] API. En mer utförlig guide till de olika funktionerna i API:t finns i [Utvecklarhandbok för principtjänst](../api/getting-started.md).
+I det här dokumentet finns en stegvis självstudiekurs för att skapa en styrningspolicy med [!DNL Policy Service] API.
+
+>[!NOTE]
+>
+>Anvisningar om hur du skapar en åtkomstkontrollprincip finns i `/policies` slutpunktsguide för [API för åtkomstkontroll](../../access-control/abac/api/policies.md). Mer information om hur du skapar en policy för samtycke finns i [guide för användargränssnittet](./user-guide.md#consent-policy).
 
 ## Komma igång
 

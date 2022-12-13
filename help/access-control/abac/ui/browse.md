@@ -3,22 +3,22 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontrollbläddring
 description: Det här dokumentet innehåller information om hur du använder gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '343'
+source-wordcount: '342'
 ht-degree: 3%
 
 ---
 
 # Behörighetsguide
 
-Behörigheter är det område i Adobe Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
+[!UICONTROL Permissions] är det område i Adobe Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
 
-Med behörigheter kan du konfigurera:
+Med [!UICONTROL Permissions]kan du konfigurera:
 
+* [Åtkomstprinciper](./policies.md)
 * [Etiketter](./labels.md)
 * [Behörigheter](./permissions.md)
-* [Profiler](./permissions.md)
 * [Roller](./roles.md)
 * [Sandlådor](./sandboxes.md)
 * [Användare](./users.md)

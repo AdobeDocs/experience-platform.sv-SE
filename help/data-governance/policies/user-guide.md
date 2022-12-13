@@ -5,16 +5,20 @@ title: Hantera dataanvändningsprinciper i användargränssnittet
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 5776c691b7f3ec4cb544de59cf6beef162285399
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1344'
+source-wordcount: '1347'
 ht-degree: 0%
 
 ---
 
 # Hantera dataanvändningsprinciper i användargränssnittet
 
-Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra i **Profiler** arbetsytan i [!DNL Experience Platform] användargränssnitt.
+Det här dokumentet innehåller information om hur du använder **[!UICONTROL Policies]** i Adobe Experience Platform användargränssnitt för att skapa och hantera dataanvändningsprinciper.
+
+>[!NOTE]
+>
+>Information om hur du hanterar åtkomstkontrollprinciper i användargränssnittet finns i [användargränssnittshandbok för attributbaserad åtkomstkontroll](../../access-control/abac/ui/policies.md) i stället.
 
 >[!IMPORTANT]
 >

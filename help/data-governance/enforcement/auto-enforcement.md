@@ -5,9 +5,9 @@ title: Automatisk policytillämpning
 topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 5776c691b7f3ec4cb544de59cf6beef162285399
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1686'
+source-wordcount: '1713'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Automatiserad policytillämpning är endast tillgängligt för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
+>Automatisk policystyrning är bara tillgängligt för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
-När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras för destinationer tillämpar Adobe Experience Platform automatiskt användarprofiler om något inträffar.
+När data har märkts och dataanvändningsprinciper har definierats, kan ni se till att dataanvändningsprinciperna följs. När målgruppssegment aktiveras för destinationer tillämpar Adobe Experience Platform automatiskt användarprofiler om något inträffar.
+
+>[!NOTE]
+>
+>I det här dokumentet fokuseras på att genomföra regler för datastyrning och samtycke. Mer information om åtkomstkontrollprinciper finns i dokumentationen om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
 
 ## Förutsättningar
 

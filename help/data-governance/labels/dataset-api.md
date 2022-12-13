@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datauppsättning api;hantera dataanvändning;dataanvändning api
 solution: Experience Platform
-title: 'Hantera dataanvändningsetiketter för datauppsättningar med API:er '
+title: Hantera dataanvändningsetiketter för datauppsättningar med API:er
 topic-legacy: developer guide
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 0%
 # Hantera dataanvändningsetiketter för datauppsättningar med API:er
 
 The [[!DNL Dataset Service API]](https://www.adobe.io/experience-platform-apis/references/dataset-service/) gör att du kan använda och redigera användningsetiketter för datauppsättningar. Den är en del av Adobe Experience Platform funktioner för datakatalog, men skiljer sig från [!DNL Catalog Service] API som hanterar datauppsättningsmetadata.
+
+>[!IMPORTANT]
+>
+>Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
 
 Det här dokumentet beskriver hur du hanterar etiketter för datauppsättningar och fält med hjälp av [!DNL Dataset Service API]. Anvisningar om hur du hanterar etiketter för dataanvändning i sig med API-anrop finns i [slutpunktshandbok för etiketter](../api/labels.md) för [!DNL Policy Service API].
 
@@ -155,10 +159,6 @@ Ett lyckat svar returnerar den uppdaterade uppsättningen etiketter för dataupp
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att hantera dataanvändningsetiketter för datauppsättningar och fält med [!DNL Dataset Service] API.
-
-När du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till [!DNL Experience Platform]. Om du vill veta mer kan du börja med att läsa [dokumentation om dataöverföring](../../ingestion/home.md).
-
-Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i [dataanvändningsprinciper - översikt](../policies/overview.md).
+Genom att läsa det här dokumentet har du lärt dig att hantera dataanvändningsetiketter för datauppsättningar och fält med [!DNL Dataset Service] API. Nu kan du definiera [dataanvändningsprinciper](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/ui/policies.md) baserat på de etiketter du har använt.
 
 Mer information om hur du hanterar datauppsättningar i [!DNL Experience Platform], se [datauppsättningar, översikt](../../catalog/datasets/overview.md).

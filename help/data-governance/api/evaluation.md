@@ -5,16 +5,16 @@ title: API-slutpunkter för principutvärdering
 topic-legacy: developer guide
 description: När marknadsföringsåtgärder har skapats och principer har definierats kan du använda API:t för principtjänsten för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1540'
+source-wordcount: '1542'
 ht-degree: 0%
 
 ---
 
 # Slutpunkter för principutvärdering
 
-När marknadsföringsåtgärder har skapats och policyer har definierats kan du använda [!DNL Policy Service] API för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
+När marknadsföringsåtgärder har skapats och dataanvändningspolicyer har definierats kan du använda [!DNL Policy Service] API för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 
 Som standard är det bara profiler vars status är inställd på `ENABLED` delta i utvärderingen. Du kan dock använda frågeparametern `?includeDraft=true` inkludera `DRAFT` Utvärderingsstrategier.
 

@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera etiketter
 description: Det här dokumentet innehåller information om hur du hanterar etiketter via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '163'
+source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
 # Hantera etiketter
 
-Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de har importerats till Platform, eller så snart data blir tillgängliga för användning i Platform.
+Med etiketter kan du kategorisera datauppsättningar och fält utifrån de användnings- och åtkomstprinciper som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de har importerats till Platform, eller så snart data blir tillgängliga för användning i Platform.
 
 ## Skapa en ny etikett {#create-new-label}
 

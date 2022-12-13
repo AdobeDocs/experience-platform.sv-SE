@@ -3,27 +3,31 @@ keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;Automati
 solution: Experience Platform
 title: Översikt över tvingande av policy
 topic-legacy: guide
-description: När dataanvändningsetiketter har tillämpats på Adobe Experience Platform datauppsättningar, och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med datastyrningsfunktionerna tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser. Det finns två metoder för policytillämpning som tillhandahålls av datastyrningsfunktioner på plattformen, API-baserad tillämpning och automatisk tillämpning.
+description: Läs om hur dataanvändningsprinciper tillämpas på Adobe Experience Platform.
 exl-id: d19d8060-85a1-405c-856d-f59041947a33
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 6f79b1a03a75558d1a25f0375e8393ad56756d80
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '196'
 ht-degree: 0%
 
 ---
 
 # Översikt över policytillämpning
 
-När dataanvändningsetiketter har tillämpats på datauppsättningar, och dataanvändningsprinciper har definierats för marknadsföringsåtgärder mot dessa etiketter, kan du med Adobe Experience Platform Data Governance tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser.
+En gång [etiketter för dataanvändning](../labels/overview.md) har tillämpats och [dataanvändningsprinciper](../policies/overview.md) har definierats kan du tillämpa dessa policyer för att förhindra dataåtgärder som utgör policyöverträdelser.
 
-Det finns två metoder för policystyrning som tillhandahålls av datastyrningsfunktioner för [!DNL Platform]: API-baserad tillämpning och automatisk tillämpning.
+>[!NOTE]
+>
+>Det här dokumentet fokuserar på efterlevnaden av dataanvändningsprinciper. Mer information om åtkomstkontrollprinciper finns i handboken om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
 
-## API-baserad tillämpning
-
-The [!DNL Policy Service] API innehåller slutpunkter som gör att du kan testa marknadsföringsåtgärder mot datauppsättningar eller godtyckliga kombinationer av dataanvändningsetiketter för att kontrollera om några policyöverträdelser inträffar. Baserat på API-svaret kan du sedan skapa protokoll i ditt upplevelseprogram för att säkerställa regelefterlevnad för dataanvändning.
-
-Se självstudiekursen om [API-baserad tillämpning](./api-enforcement.md) för steg om hur du utvärderar principer med API:t.
+Det finns två metoder för policytillämpning i Adobe Experience Platform: automatisk tillämpning och API-baserad tillämpning.
 
 ## Automatisk kontroll
 
 Experience Platform utnyttjar funktioner för datalinje, dataklassificering och policyhantering för att automatiskt utvärdera och upptäcka överträdelser av policyer. Se översikten på [automatisk policytillämpning](./auto-enforcement.md) för mer information.
+
+## API-baserad tillämpning
+
+The [!DNL Policy Service] API innehåller slutpunkter som gör att du kan testa marknadsföringsåtgärder mot datauppsättningar eller godtyckliga kombinationer av dataanvändningsetiketter för att kontrollera om några policyöverträdelser inträffar. Baserat på API-svaret kan ni sedan skapa protokoll i ert upplevelseprogram för att på ett lämpligt sätt följa regelefterlevnaden för datastyrning.
+
+Se självstudiekursen om [API-baserad tillämpning](./api-enforcement.md) för steg om hur du utvärderar principer med API:t.

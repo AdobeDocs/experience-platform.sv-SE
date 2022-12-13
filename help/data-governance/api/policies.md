@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;Politik;API-baserad tillämpning;datastyrning
 solution: Experience Platform
-title: API-slutpunkt för dataanvändningsprinciper
+title: API-slutpunkt för datahanteringsprinciper
 topic-legacy: developer guide
-description: Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
+description: Datastyrningsprinciper är regler som organisationen antar som beskriver den typ av marknadsföringsåtgärder som ni tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av datastyrningsprinciper.
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1840'
+source-wordcount: '1865'
 ht-degree: 0%
 
 ---
 
-# Slutpunkt för policyer för dataanvändning
+# Slutpunkt för datastyrningspolicyer
 
-Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform]. The `/policies` slutpunkt i [!DNL Policy Service API] kan ni programmässigt hantera dataanvändningsprinciper för organisationen.
+Datastyrningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform]. The `/policies` slutpunkt i [!DNL Policy Service API] kan ni programmässigt hantera policyer för datastyrning för er organisation.
 
 >[!IMPORTANT]
 >
->Den här slutpunkten ska inte blandas ihop med `/policies` slutpunkt i [API för åtkomstkontroll](../../access-control/abac/api/policies.md), som används för att hantera åtkomstkontrollprinciper.
+>Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som bestämmer vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se `/policies` slutpunktsguide för [API för åtkomstkontroll](../../access-control/abac/api/policies.md) om du vill ha information om hur du programmässigt hanterar åtkomstkontrollprinciper.
 
 ## Komma igång
 
@@ -396,7 +396,7 @@ PUT /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip du skapade för att neka den här marknadsföringsåtgärden om `C1 AND C5` dataetiketter finns.
+I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip som du skapade för att neka den här marknadsföringsåtgärden om `C1 AND C5` dataetiketter finns.
 
 Följande begäran uppdaterar den befintliga principen så att den inkluderar det nya principuttrycket. Observera att eftersom denna begäran i princip skriver om principen måste alla fält inkluderas i nyttolasten, även om vissa av deras värden inte uppdateras.
 
@@ -611,7 +611,7 @@ Du kan bekräfta borttagningen genom att försöka söka efter (GET) profilen ig
 
 ## Hämta en lista över aktiverade kärnprinciper {#list-enabled-core}
 
-Som standard deltar endast aktiverade dataanvändningsprinciper i utvärderingen. Du kan hämta en lista över viktiga principer som är aktiverade av din organisation genom att göra en GET-förfrågan till `/enabledCorePolicies` slutpunkt.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över viktiga principer som är aktiverade av din organisation genom att göra en GET-förfrågan till `/enabledCorePolicies` slutpunkt.
 
 **API-format**
 
@@ -663,7 +663,7 @@ Ett lyckat svar returnerar listan över aktiverade kärnprinciper under en `poli
 
 ## Uppdatera listan över aktiverade kärnprinciper {#update-enabled-core}
 
-Som standard deltar endast aktiverade dataanvändningsprinciper i utvärderingen. Genom att göra en begäran från PUT till `/enabledCorePolicies` -slutpunkten kan du uppdatera listan med aktiverade kärnprinciper för din organisation med ett enda samtal.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Genom att göra en begäran från PUT till `/enabledCorePolicies` -slutpunkten kan du uppdatera listan med aktiverade kärnprinciper för din organisation med ett enda samtal.
 
 >[!NOTE]
 >

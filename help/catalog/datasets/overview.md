@@ -5,9 +5,9 @@ title: Datauppsättningar - översikt
 topic-legacy: datasets
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 02002c9530074b8b05664ff9eab5bc2fe4b7d5d4
+source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '784'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,10 @@ Se [Översikt över datainmatning](../../ingestion/home.md) för mer information
 ## Använda användningsetiketter på datauppsättningar
 
 Med Adobe Experience Platform Data Governance kan ni hantera kunddata för att säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Med ramverket för datastyrning kan du använda användningsetiketter för att kategorisera data enligt de användningsprinciper som gäller för dessa data.
+
+>[!IMPORTANT]
+>
+>Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
 
 Dataanvändningsetiketter kan användas på hela datauppsättningar eller enskilda datauppsättningsfält. Etiketter som läggs till på datauppsättningsnivå ärvs av alla fält i den datauppsättningen.
 

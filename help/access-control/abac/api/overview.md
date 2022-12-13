@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;api;attributbaserad åtkomstkontroll;Attributbaserad åtkomstkontroll
 solution: Experience Platform
 title: Attributbaserad API-guide för åtkomstkontroll
-description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och profiler inom Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och åtkomstprinciper i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '393'
-ht-degree: 1%
+source-wordcount: '450'
+ht-degree: 0%
 
 ---
 
@@ -16,6 +16,10 @@ ht-degree: 1%
 Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
 Det attributbaserade API:t för åtkomstkontroll används för att komma åt roller, produkter, behörighetskategorier och behörighetsgrupper i Adobe Experience Platform, vilket ger ett användargränssnitt och RESTful API som ger åtkomst till alla tillgängliga biblioteksresurser.
+
+>[!IMPORTANT]
+>
+>Attributbaserad åtkomstkontroll ska inte blandas ihop med Experience Platform datastyrningsfunktioner, som gör att du kan använda etiketter och policyer för att styra hur data används i plattformar i stället för vilka användare i organisationen har tillgång till dem. Se [API-guide för principtjänst](../../../data-governance/api/overview.md) för steg om hur du programmässigt utnyttjar dessa funktioner.
 
 Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunktshandböckerna och i [komma igång-guide](./getting-started.md) om du vill ha viktig information om obligatoriska rubriker, läsa exempel-API-anrop med mera.
 

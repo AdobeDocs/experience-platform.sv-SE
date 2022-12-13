@@ -1,18 +1,22 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;ABAC
-title: Attributbaserad åtkomstkontroll Skapa en profil
-description: Det här dokumentet innehåller information om hur du hanterar profiler via gränssnittet Behörigheter i Adobe Experience Cloud
+title: Hantera åtkomstkontrollprinciper
+description: Det här dokumentet innehåller information om hur du hanterar åtkomstkontrollprinciper via gränssnittet Behörigheter i Adobe Experience Cloud.
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 1a755fa5480e036bde50617f01440cfabbaf64c2
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '691'
 ht-degree: 0%
 
 ---
 
-# Hantera profiler
+# Hantera åtkomstkontrollprinciper
 
-Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler.
+Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Åtkomstprinciper kan antingen vara lokala eller globala och kan åsidosätta andra principer.
+
+>[!IMPORTANT]
+>
+>Åtkomstprinciper får inte blandas ihop med dataanvändningsprinciper, som styr hur data används i Adobe Experience Platform i stället för vilka användare i organisationen har tillgång till dem. Se guiden om hur du skapar [dataanvändningsprinciper](../../../data-governance/policies/create.md) för mer information.
 
 ## Skapa en ny princip
 

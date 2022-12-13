@@ -1,13 +1,13 @@
 ---
 title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
-source-git-commit: b186a1a4b7417503ffa08a66136411ccff495510
+exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '1018'
 ht-degree: 1%
 
 ---
-
 
 # (Beta) [!DNL Trade Desk] - CRM-anslutning
 

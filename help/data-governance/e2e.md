@@ -1,14 +1,15 @@
 ---
 title: Handbok för hela datastyrningen
 description: Följ hela processen för att tillämpa begränsningar för användning av data för fält och datauppsättningar i Adobe Experience Platform.
-source-git-commit: c8b2dba9b1e305f826830b8341bf1a6dde4e2da2
+exl-id: f18ae032-027a-4c97-868b-e04753237c81
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
 
-# Handbok för hela datastyrningen
+# Handbok för datastyrning från början till slut
 
 För att kunna styra vilka marknadsföringsåtgärder som kan utföras på vissa datauppsättningar och fält i Adobe Experience Platform måste du ställa in följande:
 
@@ -16,7 +17,7 @@ För att kunna styra vilka marknadsföringsåtgärder som kan utföras på vissa
 1. [Konfigurera och aktivera policyer för datastyrning](#policy) som avgör vilka typer av märkta data som kan användas för vissa marknadsföringsåtgärder.
 1. [Använd marknadsföringsåtgärder på era destinationer](#destinations) ange vilka policyer som gäller för data som skickas till dessa destinationer.
 
-När du är klar med att konfigurera etiketter, profiler och marknadsföringsåtgärder kan du [testa din policytillämpning](#test) för att säkerställa att den fungerar som förväntat.
+När du är klar med att konfigurera etiketter, styrningsprinciper och marknadsföringsåtgärder kan du [testa din policytillämpning](#test) för att säkerställa att den fungerar som förväntat.
 
 Den här guiden går igenom hela processen med att konfigurera och verkställa en datastyrningspolicy i användargränssnittet för plattformen. Mer detaljerad information om funktionerna som används i den här handboken finns i översiktsdokumentationen för följande ämnen:
 
@@ -24,6 +25,10 @@ Den här guiden går igenom hela processen med att konfigurera och verkställa e
 * [Dataanvändningsetiketter](./labels/overview.md)
 * [Dataanvändningspolicyer](./policies/overview.md)
 * [Politiska åtgärder](./enforcement/overview.md)
+
+>[!NOTE]
+>
+>Den här guiden fokuserar på hur du ställer in och tillämpar regler för hur data används eller aktiveras i Experience Platform. Om du försöker begränsa **åtkomst** för vissa plattformsanvändare inom organisationen, se handboken från början till slut på [attributbaserad åtkomstkontroll](../access-control/abac/end-to-end-guide.md) i stället. Attributbaserad åtkomstkontroll använder också etiketter och principer, men för ett annat användningssätt än för datastyrning.
 
 ## Använd etiketter {#labels}
 

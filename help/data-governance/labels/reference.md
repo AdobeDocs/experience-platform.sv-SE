@@ -5,9 +5,9 @@ title: Ordlista för dataanvändningsetiketter
 topic-legacy: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: c29b6c7dc061ea910ebedcae1fa4beaa6def10b1
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '2117'
+source-wordcount: '2108'
 ht-degree: 1%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 1%
 >abstract="Det finns flera kategorier för dataanvändningsetiketter. De Adobe-definierade etiketterna innehåller kontraktsetiketter, identitetsetiketter och känsliga etiketter. Etiketter som definieras av din organisation kategoriseras som anpassade etiketter."
 >text="See the data usage labels glossary for more information on these label types."
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance innehåller flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
+Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt [styrningspolicy](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/overview.md) som är tillämpliga på dessa uppgifter. Adobe Experience Platform har flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
-I det här dokumentet finns en översikt över de etiketter för grundläggande dataanvändning som för närvarande finns i [!DNL Experience Platform]. Mer information om datastyrning finns i [Datastyrning - översikt](../home.md).
+I det här dokumentet beskrivs de etiketter för användning av kärndata som Experience Platform för närvarande tillhandahåller.
 
 ## Kontraktsetiketter
 
@@ -135,7 +135,7 @@ Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetensk
 
 #### C10 {#c10}
 
-Vissa dataanvändningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
+Vissa datastyrningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
 
 #### C11 {#c11}
 

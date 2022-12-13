@@ -2,9 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbaserad åtkomstkontroll;
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
-source-git-commit: 0035f4611f2c269bb36f045c3c57e6e7bad7c013
+exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '2260'
+source-wordcount: '2305'
 ht-degree: 0%
 
 ---
@@ -13,8 +14,11 @@ ht-degree: 0%
 
 Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger kunder med flera varumärken och integritet större flexibilitet när det gäller att hantera användaråtkomst. Åtkomst till enskilda objekt, t.ex. schemafält och segment, kan beviljas/nekas med profiler som baseras på objektets attribut och roll. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
 
-Med den här funktionen kan du kategorisera schemafält, segment och så vidare med etiketter som definierar användningsområde för organisation eller data. Du kan använda samma etiketter på resor, erbjudanden och andra objekt i Adobe Journey Optimizer. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält och bättre hantera vilka användare eller grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
+Med den här funktionen kan du kategorisera schemafält, segment och så vidare med etiketter som definierar användningsområde för organisation eller data. Du kan använda samma etiketter på resor, erbjudanden och andra objekt i Adobe Journey Optimizer. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält (Experience Data Model) och bättre hantera vilka användare och grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
 
+>[!NOTE]
+>
+>Det här dokumentet fokuserar på användningen av åtkomstkontrollprinciper. Om du försöker konfigurera profiler som styr **use** mer information än vilka plattformsanvändare som har åtkomst till den finns i handboken från början till slut på [datastyrning](../../data-governance/e2e.md) i stället.
 
 ## Komma igång
 

@@ -5,9 +5,9 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: b9b33a6c1df0810db32f3253205221fed8957dd5
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '7429'
+source-wordcount: '7427'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ ht-degree: 0%
 
 **Konsol**: I [!DNL Query Service]ger konsolen information om status och funktion för en fråga. Konsolen visar anslutningsstatus för [!DNL Query Service], frågeåtgärder som körs och felmeddelanden som är ett resultat av dessa frågor.
 
-**Kontraktsetiketter (&quot;C&quot;)**: Dataanvändningsetiketter för kontrakt (&quot;C&quot;) används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds datastyrningspolicy.
+**Kontraktsetiketter (&quot;C&quot;)**: Dataanvändningsetiketter för kontrakt (&quot;C&quot;) används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till organisationens policyer för datastyrning.
 
 **C1-kontraktsetikett**: A `C1` Användningsetiketten för avtalsdata anger att data endast kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
@@ -502,7 +502,7 @@ ht-degree: 0%
 
 **Källkoppling**: Källkopplingar (kallas även källor) hjälper användarna att enkelt importera data från flera källor, vilket möjliggör strukturering, märkning och förbättring av data med hjälp av Experience Platform-tjänster. Data kan hämtas från en mängd olika källor som molnbaserad lagring, tredjepartsprogramvara och CRM-system.
 
-**Strömmande anslutning**: En direktuppspelningsanslutning är en unik slutpunkt som tillhandahålls av Adobe och som är knuten till en kunds IMS-organisation för att strömma data till Experience Platform.
+**Strömmande anslutning**: En direktuppspelningsanslutning är en unik slutpunkt som tillhandahålls av Adobe och som är knuten till din organisation för att strömma data till Experience Platform.
 
 **Standardnamnutrymme för identitet**: Standardnamnutrymmen för identiteter är fördefinierade namnutrymmen för identiteter från Adobe, som representerar branschstandardlösningar som är vanliga för att identifiera kunder.
 

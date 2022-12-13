@@ -5,9 +5,9 @@ title: API-guide för principtjänst
 topic-legacy: developer guide
 description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '545'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,13 @@ Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) 
 
 ## Profiler
 
-Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform]. En profil definieras av följande:
+Datastyrningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
+
+>[!NOTE]
+>
+>Datastyrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som avgör vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se guiden [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
+
+En datastyrningspolicy definieras enligt följande:
 
 1. En specifik marknadsföringsåtgärd
 1. Etiketter för dataanvändning som åtgärden är begränsad från att utföras mot

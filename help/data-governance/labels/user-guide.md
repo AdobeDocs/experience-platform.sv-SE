@@ -5,18 +5,22 @@ title: Hantera dataanvändningsetiketter i användargränssnittet
 topic-legacy: labels
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
+source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '1239'
 ht-degree: 0%
 
 ---
 
 # Hantera etiketter för dataanvändning i användargränssnittet
 
-Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnitt. Innan du använder guiden bör du läsa [Datastyrning - översikt](../home.md) för en mer robust introduktion till ramverket för datastyrning.
+Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnitt.
 
 ## Hantera etiketter på datauppsättningsnivå
+
+>[!IMPORTANT]
+>
+>Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
 
 För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** till vänster för att öppna **[!UICONTROL Datasets]** arbetsyta. På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
 
@@ -75,6 +79,10 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 ![Dölj ärvda etiketter](../images/labels/inherited-labels.png)
 
 ## Hantera etiketter på datamängdsfältnivå
+
+>[!IMPORTANT]
+>
+>Användning av etiketter på datamängdsfältnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
 
 Fortsätta arbetsflödet för [lägga till och redigera etiketter för dataanvändning på datauppsättningsnivå](#add-labels)kan du också hantera fältetiketter i **[!UICONTROL Data Governance]** arbetsyta för den datauppsättningen.
 

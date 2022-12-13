@@ -3,18 +3,18 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontrollbehörigheter
 solution: Experience Platform
 title: Referens-API-slutpunkt
 topic-legacy: developer guide
-description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till /acl/reference-slutpunkten i åtkomstkontrolls-API:t. Dessa namn kan sedan användas i API-anrop för att visa gällande principer för den aktuella användaren.
+description: Med referensslutpunkten i API:t för åtkomstkontroll kan du visa namnen på tillgängliga behörigheter och resurstyper, som sedan kan användas för att visa effektiva åtkomstkontrollprinciper för den aktuella användaren.
 exl-id: 18d84d54-9258-4451-9aa8-7c647b45a8da
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
 # Referensslutpunkt
 
-Du kan visa namnen på alla behörigheter och resurstyper genom att göra en GET-förfrågan till `/acl/reference` slutpunkt. Dessa namn kan sedan användas i API-anrop till [visa effektiva policyer](./effective-policies.md) för den aktuella användaren.
+Du kan visa namnen på alla behörigheter och resurstyper genom att göra en GET-förfrågan till `/acl/reference` slutpunkt. Dessa namn kan sedan användas i API-anrop till [visa effektiva åtkomstkontrollprinciper](./effective-policies.md) för den aktuella användaren.
 
 En behörighet är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En resurstyp är en princip som möjliggör läsning, skrivning och/eller borttagning av funktioner för en viss typ av [!DNL Platform] resurs (t.ex. datauppsättningar eller scheman).
 

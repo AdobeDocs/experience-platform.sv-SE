@@ -3,18 +3,18 @@ keywords: Experience Platform;hem;populära ämnen;effektiva profiler;åtkomstko
 solution: Experience Platform
 title: API-slutpunkt för gällande principer
 topic-legacy: developer guide
-description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du visar effektiva profiler med hjälp av API:t för åtkomstkontroll för Adobe Experience Platform.
+description: Lär dig hur du visar effektiva åtkomstprinciper med åtkomstkontrolls-API:t för Adobe Experience Platform.
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
-source-wordcount: '317'
-ht-degree: 0%
+source-wordcount: '292'
+ht-degree: 1%
 
 ---
 
 # Slutpunkt för gällande principer
 
-Om du vill visa gällande principer för den aktuella användaren skickar du en POST till `/acl/effective-policies` slutpunkt i [!DNL Access Control] API. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
+Om du vill visa effektiva åtkomstkontrollprinciper för den aktuella användaren skickar du en POST till `/acl/effective-policies` slutpunkt i [!DNL Access Control] API. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
 
 **API-format**
 
@@ -65,7 +65,7 @@ Ett godkänt svar returnerar information om behörigheter och resurstyper som an
 
 ## Nästa steg
 
-Det här dokumentet beskriver hur du ringer till [!DNL Access Control] API som returnerar information om aktiva behörigheter och relaterade principer för resurstyper. Mer information om åtkomstkontroll för [!DNL Experience Platform], se [åtkomstkontroll - översikt](../home.md).
+Det här dokumentet beskriver hur du ringer till [!DNL Access Control] API som returnerar information om aktiva behörigheter och relaterade åtkomstprinciper för resurstyper. Mer information om åtkomstkontroll för [!DNL Experience Platform], se [åtkomstkontroll - översikt](../home.md).
 
 ## Bilaga
 
