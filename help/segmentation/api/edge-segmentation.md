@@ -5,9 +5,9 @@ title: Kantsegmentering med API
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: d2196d4d9cae4bdec160ce0c028d354a0db21cb5
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1187'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,11 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 | Fråga som refererar till en karta | En segmentdefinition som refererar till en egenskapskarta. | Personer som har lagt till i kundvagnen baserat på externa segmentdata. | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
 
 Dessutom kan segmentet **måste** vara knuten till en kopplingsregel som är aktiv vid sidan. Mer information om kopplingsprofiler finns i [guide för sammanslagningsprinciper](../../profile/api/merge-policies.md).
+
+En segmentdefinition **not** aktiveras för kantsegmentering i följande scenarier:
+
+- Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
+   - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
 
 ## Hämta alla segment som är aktiverade för kantsegmentering
 

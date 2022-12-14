@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 39e3b4df3e44200fd800b501ea7b7e06bf828054
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1364'
 ht-degree: 0%
 
 ---
@@ -49,6 +49,8 @@ En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i fö
 
 - Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
+- Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
+   - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för direktuppspelningssegmentering.
 
 Observera att följande riktlinjer gäller vid direktuppspelningssegmentering:
 

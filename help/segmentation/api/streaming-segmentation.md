@@ -5,9 +5,9 @@ title: Utvärdera händelser i nära realtid med strömmande segmentering
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 30a12fee487609b4c85ba342963bb915e8152195
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '1938'
+source-wordcount: '1971'
 ht-degree: 0%
 
 ---
@@ -87,6 +87,8 @@ En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i fö
 
 - Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
+- Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
+   - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för direktuppspelningssegmentering.
 
 Observera att följande riktlinjer gäller vid direktuppspelningssegmentering:
 

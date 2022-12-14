@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för kantsegmentering
 topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 95ffd09b81b49c8c7d65695a2fbc0fcd97b12c9e
+source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '939'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,9 @@ Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Expe
 >
 > Dessutom kommer kantsegmenteringsmotorn endast att efterleva begäranden på kanten där det finns **en** primär markerad identitet, vilket är förenligt med icke-kantbaserade primära identiteter.
 
-## Frågetyper för kantsegmentering
+## Frågetyper för kantsegmentering {#query-types}
 
 För närvarande kan endast utvalda frågetyper utvärderas med kantsegmentering. I följande avsnitt finns en lista med frågetyper som kan utvärderas med kantsegmentering och de som för närvarande inte stöds.
-
-### Frågetyper som stöds {#query-types}
 
 En fråga kan utvärderas med kantsegmentering om den uppfyller något av villkoren i följande tabell.
 
@@ -54,6 +52,11 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 | Flera händelser med en profil inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och flera händelser som inträffar inom ett tidsfönster på 24 timmar. | Personer från USA som besökte hemsidan **och** har besökt utcheckningssidan inom de senaste 24 timmarna. | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]) and chain(xEvent, timestamp, [X: WHAT(eventType = "checkoutPageView") WHEN(< 24 hours before now)])` |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. | Personer som bor i USA och som är i segmentet &quot;befintligt&quot;. | `homeAddress.countryCode = "US" and inSegment("existing segment")` |
 | Fråga som refererar till en karta | En segmentdefinition som refererar till en egenskapskarta. | Personer som har lagt till i kundvagnen baserat på externa segmentdata. | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
+
+En segmentdefinition **not** aktiveras för kantsegmentering i följande scenarier:
+
+- Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
+   - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
 
 ## Nästa steg
 
