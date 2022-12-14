@@ -3,9 +3,9 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: d48b746b477ffa6977ce04b72fe77e8ddb95d691
 workflow-type: tm+mt
-source-wordcount: '950'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ I taggregler tokeniseras dataelement med en `%` i början och slutet av dataelem
 
 #### Regelåtgärdssekvens {#action-sequencing}
 
-The [!UICONTROL Actions] -avsnittet i en regel för vidarebefordran av händelser körs alltid sekventiellt. Kontrollera att åtgärdsordningen är korrekt när du sparar en regel. Den här körningssekvensen kan inte köras asynkront på samma sätt som med taggar.
+The [!UICONTROL Actions] -avsnittet i en regel för vidarebefordran av händelser körs alltid sekventiellt. Om en regel till exempel har två åtgärder kommer den andra åtgärden inte att starta körningen förrän den föregående åtgärden är slutförd (och i de fall där ett svar förväntas från en slutpunkt, har den slutpunkten svarat). Kontrollera att åtgärdsordningen är korrekt när du sparar en regel. Den här körningssekvensen kan inte köras asynkront på samma sätt som den kan med taggregler.
 
 ## Hemligheter {#secrets}
 
