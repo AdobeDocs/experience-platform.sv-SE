@@ -5,10 +5,10 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 08272f72c71f775bcd0cd7fffcd2e4da90af9ccb
+source-git-commit: deb9f314d5eaadebe2f3866340629bad5f39c60d
 workflow-type: tm+mt
-source-wordcount: '3763'
-ht-degree: 1%
+source-wordcount: '4344'
+ht-degree: 0%
 
 ---
 
@@ -38,14 +38,19 @@ Det här avsnittet innehåller information om prestanda, begränsningar och proc
 +++Svar En möjlig orsak är funktionen för automatisk komplettering. Funktionen bearbetar vissa metadatakommandon som ibland kan göra redigeraren långsammare vid redigering av frågor.
 +++
 
-### Kan jag använda Postman för API:t för frågetjänsten?
+### Kan jag använda [!DNL Postman] för API:t för frågetjänsten?
 
-+++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med Postman (ett kostnadsfritt program från tredje part). Titta på [Postman installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner om hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för Postman. Läs den officiella dokumentationen för [vägledning om hur du startar, kör och delar Postman-samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
++++Besvara Ja, du kan visualisera och interagera med alla Adobe API-tjänster med [!DNL Postman] (kostnadsfritt program från tredje part). Titta på [[!DNL Postman] installationsguide](https://video.tv.adobe.com/v/28832) steg-för-steg-instruktioner för hur du konfigurerar ett projekt i Adobe Developer Console och hämtar alla nödvändiga inloggningsuppgifter för användning med [!DNL Postman]. Läs den officiella dokumentationen för [riktlinjer för att starta, köra och dela [!DNL Postman] samlingar](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
 +++
 
 ### Finns det någon gräns för hur många rader som får returneras från en fråga via användargränssnittet?
 
 +++Besvara Ja, frågetjänsten tillämpar internt en gräns på 50 000 rader om inte en explicit gräns anges externt. Se vägledningen på [interaktiv frågekörning](./best-practices/writing-queries.md#interactive-query-execution) för mer information.
++++
+
+### Kan jag använda frågor för att uppdatera rader?
+
++++Svara i gruppfrågor, det går inte att uppdatera en rad i datauppsättningen.
 +++
 
 ### Finns det någon gräns för datastorlek för resultatet från en fråga?
@@ -77,6 +82,11 @@ SELECT * FROM customers LIMIT 0;
 ### Finns det något problem eller någon inverkan på frågetjänstens prestanda om flera frågor körs samtidigt?
 
 +++Svarsnummer Frågetjänsten har en autoskalningsfunktion som säkerställer att samtidiga frågor inte har någon märkbar påverkan på tjänstens prestanda.
++++
+
+### Kan jag använda reserverade nyckelord som kolumnnamn?
+
++++Svar Det finns vissa reserverade nyckelord som inte kan användas som kolumnnamn, till exempel `ORDER`, `GROUP BY`, `WHERE`, `DISTINCT`. Om du vill använda dessa nyckelord måste du undvika dessa kolumner.
 +++
 
 ### Hur hittar jag ett kolumnnamn från en hierarkisk datauppsättning?
@@ -451,6 +461,76 @@ WHERE T2.ID IS NULL
 ### Kan jag skapa en datauppsättning med en CTAS-fråga med ett namn med dubbla understreck som de som visas i gränssnittet? Exempel: `test_table_001`.
 
 +++Svarsnr. Detta är en avsiktlig begränsning i Experience Platform som gäller för alla Adobe-tjänster, inklusive frågetjänsten. Ett namn med två understreck accepteras som ett schema- och datauppsättningsnamn, men tabellnamnet för datauppsättningen får bara innehålla ett understreck.
++++
+
+### Hur många samtidiga frågor kan du köra samtidigt?
+
++++Svar Det finns ingen gräns för samtidighet för frågor eftersom batchfrågor körs som backend-jobb. Det finns dock en timeout för frågor som är inställd på 24 timmar.
++++
+
+### Finns det en aktivitetspanel där du kan se frågeaktiviteter och status?
+
++++Svar Det finns övervaknings- och varningsfunktioner för att kontrollera frågeaktiviteter och status. Se [Integrering av granskningslogg för frågetjänsten](./data-governance/audit-log-guide.md) och [frågeloggar](./ui/overview.md#log) dokument för mer information.
++++
+
+### Finns det något sätt att återställa uppdateringar? Om det till exempel finns ett fel eller om vissa beräkningar behöver konfigureras om när data skrivs tillbaka till plattformen, hur ska detta scenario hanteras?
+
++++Svar För närvarande stöder vi inte återställningar eller uppdateringar på det sättet.
++++
+
+### Hur kan du optimera frågor i Adobe Experience Platform?
+
++++Svar Systemet har inga index eftersom det inte är en databas, men har andra optimeringar som är kopplade till datalagret. Följande alternativ är tillgängliga för att justera dina frågor:
+
+- Ett tidsbaserat filter som bygger på tidsseriedata.
+- Optimerad nedtryckning för strukturdatatypen.
+- Optimerad kostnad och minneshantering för matriser och kartdatatyper.
+- Inkrementell bearbetning med ögonblicksbilder.
+- Ett beständigt dataformat.
++++
+
+### Kan inloggningar begränsas till vissa aspekter av frågetjänsten eller är det en&quot;allt eller ingenting&quot;-lösning?
+
++++Svarsfrågetjänsten är en&quot;all eller ingenting&quot;-lösning. Det går inte att ge partiell åtkomst.
++++
+
+### Kan jag begränsa vilka data Query Service kan använda, eller har den bara tillgång till hela Adobe Experience Platform datasjön?
+
++++Besvara Ja, du kan begränsa frågan till datauppsättningar med skrivskyddad åtkomst.
++++
+
+### Vilka andra alternativ finns det för att begränsa vilka data som kan nås via frågetjänsten?
+
++++Svar Det finns tre sätt att begränsa åtkomst. De är följande:
+
+- Använd bara SELECT-programsatser och ge datauppsättningar skrivskyddad åtkomst. Tilldela även behörigheten Hantera fråga.
+- Använd SELECT/INSERT/CREATE-programsatser och ge datauppsättningar skrivbehörighet. Tilldela även behörigheten för frågehantering.
+- Använd ett integrationskonto med föregående förslag ovan och tilldela frågeintegrationsbehörigheten.
+
++++
+
+### När data har returnerats av Query Service, finns det några kontroller som kan köras av Platform för att säkerställa att inga skyddade data har returnerats?
+
+- Frågetjänsten stöder attributbaserad åtkomstkontroll. Du kan begränsa åtkomsten till data på kolumn-/lövnivå och/eller strukturnivå. Mer information om attributbaserad åtkomstkontroll finns i dokumentationen.
+
+### Kan jag ange ett SSL-läge för anslutningen till en tredjepartsklient? Kan jag till exempel använda verify-full med Power BI?
+
++++Svara Ja, SSL-lägen stöds. Se [Dokumentation för SSL-lägen](./clients/ssl-modes.md) för en uppdelning av de olika SSL-lägena som är tillgängliga och den skyddsnivå de erbjuder.
++++
+
+### Använder vi TLS 1.2 för alla anslutningar från Power BI-klienter för att fråga tjänsten?
+
++++Besvara Ja. Data-in-Transition är alltid HTTPS-kompatibel. Den version som stöds för närvarande är TLS1.2.
++++
+
+### Använder en anslutning som görs på port 80 fortfarande https?
+
++++Svar Ja, en anslutning som görs på port 80 använder fortfarande SSL. Du kan också använda port 5432.
++++
+
+### Kan jag styra åtkomsten till specifika datauppsättningar och kolumner för en viss anslutning? Hur är detta konfigurerat?
+
++++Svara Ja, attributbaserad åtkomstkontroll används om den har konfigurerats. Se [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md) för mer information.
 +++
 
 ## Exportera data {#exporting-data}
