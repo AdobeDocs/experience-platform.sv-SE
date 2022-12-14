@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: c4457d82c66be382ebb8619ce248f282fb45ed3a
+source-git-commit: af01ac288a8afe59105be5859b2d40de5e346963
 workflow-type: tm+mt
-source-wordcount: '3196'
+source-wordcount: '3165'
 ht-degree: 0%
 
 ---
@@ -275,14 +275,19 @@ The [!UICONTROL Unsegmented Profiles Trend] innehåller en illustration av linje
 
 ### [!UICONTROL Unsegmented profiles by identity] {#unsegmented-profiles-by-identity}
 
+>!![NOTE]
+De osegmenterade profilerna efter identitetswidget har tagits bort från oktober 2022 och är inte längre tillgängliga.
+
+<!-- 
+
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilesbyidentity"
->title="Osegmenterade profiler efter identitet"
->abstract="Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare."
+>title="Unsegmented profiles by identity"
+>abstract="This widget categorizes the total number of unsegmented profiles by their unique identifier."
 
-The [!UICONTROL Unsegmented Profiles by Identity] widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram för att underlätta jämförelse.
+The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total number of unsegmented profiles by their unique identifier. The data is visualized in a bar chart for ease of comparison. 
 
-![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png)
+![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png) -->
 
 ### [!UICONTROL Audiences] {#audiences}
 
@@ -318,8 +323,7 @@ The [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehå
 ![Dialogrutan för publiköverlappande rapporter.](../images/profiles/profiles-audience-overlap-report-dialog.png)
 
 >[!NOTE]
->
->Välj **[!UICONTROL Overlapping]** kolumnrubrik om du vill ändra resultatens rangordning mellan högsta och lägsta respektive högsta.
+Välj **[!UICONTROL Overlapping]** kolumnrubrik om du vill ändra resultatens rangordning mellan högsta och lägsta respektive högsta.
 
 Om du vill hämta hela rapporten i PDF-format väljer du Alternativ-menyn (**`...`**) följt av **[!UICONTROL Download]**.
 
