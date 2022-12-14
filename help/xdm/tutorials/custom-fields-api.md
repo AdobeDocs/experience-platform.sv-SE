@@ -2,9 +2,9 @@
 title: Definiera XDM-fält i API:t för schemaregister
 description: Lär dig hur du definierar olika fält när du skapar anpassade XDM-resurser (Experience Data Model) i API:t för schemaregister.
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 0947eb38bdb18cb3783723cb11be79d3d32a3b76
+source-git-commit: 6277725cd69bc94325d3584177742df1a7fd4f95
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Du kan också begränsa vilka typer av värden som kan infogas för strängen ge
 }
 ```
 
-Du kan välja att sätta etiketter som vänder sig till kunderna för varje värde som kan anges under en `meta:enum` egenskap, där varje etikett är nedtryckt till en motsvarande `enum` värde.
+Du kan också ange kundadressetiketter för varje värde under en `meta:enum` egenskap, där varje etikett är nedtryckt till ett motsvarande värde under `enum`.
 
 ```json
 "sampleField": {
