@@ -3,9 +3,9 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: d48b746b477ffa6977ce04b72fe77e8ddb95d691
+source-git-commit: eb9d2f9a233f4214057db5136f32fc1290ece63c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1034'
 ht-degree: 0%
 
 ---
@@ -78,6 +78,8 @@ The **[!UICONTROL Path]** värdet för dataelementet måste följa mönstret `ar
 ### Regler {#rules}
 
 Att skapa regler i egenskaper för händelsevidarebefordran fungerar på ungefär samma sätt som taggar, med den största skillnaden är att du inte kan välja händelser som regelkomponenter. I stället bearbetar en regel för vidarebefordran av händelser alla händelser som tas emot från [datastream](../../../edge/datastreams/overview.md) och vidarebefordrar dessa händelser till destinationer om vissa villkor är uppfyllda.
+
+Dessutom finns det en 30-sekunderstimeout som gäller för en enskild händelse när den bearbetas över alla regler (och därmed alla åtgärder) i en händelsevidarebefordringsegenskap. Det innebär att alla regler och alla åtgärder för en enskild händelse måste slutföras i den här tidsramen.
 
 ![Regler för vidarebefordran av händelser i användargränssnittet för datainsamling](../../images/ui/event-forwarding/overview/rules.png)
 
