@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: d2790ddab74f989ebb5ca522ce44323033c53911
 workflow-type: tm+mt
-source-wordcount: '2294'
+source-wordcount: '2316'
 ht-degree: 0%
 
 ---
@@ -66,11 +66,11 @@ Välj **[!UICONTROL Browse]** om du vill visa en lista med alla segmentdefinitio
 
 ![](../images/ui/overview/segment-browse-all.png)
 
-I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
+I den här vyn visas information om segmentdefinitionen, inklusive antal profiler, datum när de skapades och senaste ändringsdatum.
 
-Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
+Du kan lägga till fler fält till den här visningen genom att välja BILD. Dessa ytterligare fält innehåller information om fördelning, urn, utvärderingsmetod och jobb-ID.
 
-![](../images/ui/overview/segment-browse-breakdown.png)
+Om du väljer nedbrytning visas ett stolpdiagram som visar procentandelen profiler som tillhör följande lägen: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
 
 | Status | Beskrivning |
 | ------ | ----------- |
