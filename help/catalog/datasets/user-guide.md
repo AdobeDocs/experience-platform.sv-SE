@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för datauppsättningar
 topic-legacy: datasets
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 28b6944a14c07f14d8177e3f8ae1c1a83c4c9c86
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1149'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -37,26 +37,26 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna **[!UICONTROL Datasets]** kontrollpanel. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
-![](../images/datasets/user-guide/browse-datasets.png)
+![En bild som markerar datauppsättningsobjektet i det vänstra navigeringsfältet.](../images/datasets/user-guide/browse-datasets.png)
 
 Som standard visas bara de datauppsättningar som du har kapslat in i. Om du vill se de systemgenererade datauppsättningarna aktiverar du **[!UICONTROL Show system datasets]** växla. Systemgenererade datauppsättningar används bara för att bearbeta andra komponenter. Den systemgenererade exportdatamängden för profiler används till exempel för att bearbeta kontrollpanelen för profiler.
 
-![](../images/datasets/user-guide/system-datasets.png)
+![Den växlingsknapp som låter dig välja om systemdatauppsättningar ska visas eller inte markeras.](../images/datasets/user-guide/system-datasets.png)
 
 Markera namnet på en datauppsättning för att komma åt dess **[!UICONTROL Dataset activity]** och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
 
-![](../images/datasets/user-guide/dataset-activity-1.png)
-![](../images/datasets/user-guide/dataset-activity-2.png)
+![Information om den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-1.png)
+![Exempelgrupper som tillhör den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-2.png)
 
 ## Förhandsgranska en datauppsättning
 
 Från **[!UICONTROL Dataset activity]** skärm, välja **[!UICONTROL Preview dataset]** i skärmens övre högra hörn om du vill förhandsgranska upp till 100 rader med data. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället att förhandsvisningen inte är tillgänglig.
 
-![](../images/datasets/user-guide/select-preview.png)
+![Knappen Förhandsgranska datauppsättning är markerad.](../images/datasets/user-guide/select-preview.png)
 
 I förhandsgranskningsfönstret visas den hierarkiska vyn av datasetens schema till höger.
 
-![](../images/datasets/user-guide/preview-dataset.png)
+![En förhandsgranskning av datauppsättningen visas. Information om strukturen samt exempelvärden visas.](../images/datasets/user-guide/preview-dataset.png)
 
 För mer robusta metoder att få tillgång till dina data [!DNL Experience Platform] tillhandahåller tjänster längre fram i kedjan som [!DNL Query Service] och [!DNL JupyterLab] att utforska och analysera data. Mer information finns i följande dokument:
 
@@ -67,7 +67,7 @@ För mer robusta metoder att få tillgång till dina data [!DNL Experience Platf
 
 Om du vill skapa en ny datauppsättning börjar du med att välja **[!UICONTROL Create dataset]** i **[!UICONTROL Datasets]** kontrollpanel.
 
-![](../images/datasets/user-guide/select-create.png)
+![Knappen Skapa datauppsättning är markerad.](../images/datasets/user-guide/select-create.png)
 
 På nästa skärm visas följande två alternativ för att skapa en ny datauppsättning:
 
@@ -78,25 +78,25 @@ På nästa skärm visas följande två alternativ för att skapa en ny dataupps�
 
 I **[!UICONTROL Create dataset]** skärm, välja **[!UICONTROL Create dataset from schema]** för att skapa en ny tom datauppsättning.
 
-![](../images/datasets/user-guide/create-dataset-schema.png)
+![Knappen Skapa datauppsättning från schema är markerad.](../images/datasets/user-guide/create-dataset-schema.png)
 
 The **[!UICONTROL Select schema]** visas. Bläddra i schemalistan och välj det schema som datauppsättningen ska följa innan du väljer **[!UICONTROL Next]**.
 
-![](../images/datasets/user-guide/select-schema.png)
+![En lista med scheman visas. Schemat som ska användas för att skapa datauppsättningen markeras.](../images/datasets/user-guide/select-schema.png)
 
 The **[!UICONTROL Configure dataset]** visas. Ange ett namn och en valfri beskrivning för datauppsättningen och välj sedan **[!UICONTROL Finish]** för att skapa datauppsättningen.
 
-![](../images/datasets/user-guide/configure-dataset-schema.png)
+![Konfigurationsinformation för datauppsättningen infogas. Detta innehåller information som datauppsättningens namn och beskrivning.](../images/datasets/user-guide/configure-dataset-schema.png)
 
 ### Skapa en datauppsättning med en CSV-fil {#csv}
 
 När en datauppsättning skapas med en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. I **[!UICONTROL Create dataset]** skärm, välja **[!UICONTROL Create dataset from CSV file]**.
 
-![](../images/datasets/user-guide/create-dataset-csv.png)
+![Knappen Skapa datauppsättning från CSV-fil är markerad.](../images/datasets/user-guide/create-dataset-csv.png)
 
 The **[!UICONTROL Configure]** visas. Ange ett namn och en valfri beskrivning för datauppsättningen och välj sedan **[!UICONTROL Next]**.
 
-![](../images/datasets/user-guide/configure-dataset-csv.png)
+![Konfigurationsinformation för datauppsättningen infogas. Detta innehåller information som datauppsättningens namn och beskrivning.](../images/datasets/user-guide/configure-dataset-csv.png)
 
 The **[!UICONTROL Add data]** visas. Överför CSV-filen genom att antingen dra och släppa den mitt på skärmen eller välja **[!UICONTROL Browse]** för att utforska din filkatalog. Filen kan vara upp till tio gigabyte stor. När CSV-filen har överförts väljer du **[!UICONTROL Save]** för att skapa datauppsättningen.
 
@@ -104,7 +104,7 @@ The **[!UICONTROL Add data]** visas. Överför CSV-filen genom att antingen dra 
 >
 >CSV-kolumnnamn måste börja med alfanumeriska tecken och får bara innehålla bokstäver, siffror och understreck.
 
-![](../images/datasets/user-guide/add-csv-data.png)
+![Skärmen Lägg till data visas. Platsen där du kan överföra CSV-filen för datauppsättningen markeras.](../images/datasets/user-guide/add-csv-data.png)
 
 ## Aktivera en datauppsättning för kundprofil i realtid {#enable-profile}
 
@@ -121,7 +121,7 @@ Om du vill aktivera en datauppsättning för profilen har du åtkomst till dess 
 >
 >Om en datauppsättning redan innehåller data och sedan aktiveras för [!DNL Profile], används befintliga data inte automatiskt av [!DNL Profile]. När en datauppsättning har aktiverats för [!DNL Profile]rekommenderar vi att du återimporterar befintliga data så att de bidrar till kundprofilerna.
 
-![](../images/datasets/user-guide/enable-dataset-profiles.png)
+![Profilväxlingen är markerad på sidan med datauppsättningsinformation.](../images/datasets/user-guide/enable-dataset-profiles.png)
 
 ## Hantera och tillämpa datastyrning på en datauppsättning
 
@@ -135,11 +135,11 @@ Du kan ta bort en datauppsättning genom att först komma åt den **[!UICONTROL 
 >
 >Datauppsättningar som skapas och används av program och tjänster från Adobe (t.ex. Adobe Analytics, Adobe Audience Manager eller [!DNL Offer Decisioning]) kan inte tas bort.
 
-![](../images/datasets/user-guide/delete-dataset.png)
+![Knappen Ta bort datauppsättning markeras på sidan med datauppsättningsinformation.](../images/datasets/user-guide/delete-dataset.png)
 
 En bekräftelseruta visas. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av datauppsättningen.
 
-![](../images/datasets/user-guide/confirm-delete.png)
+![Bekräftelsetalet för borttagning visas med knappen Ta bort markerad.](../images/datasets/user-guide/confirm-delete.png)
 
 ## Ta bort en profilaktiverad datauppsättning
 
@@ -151,15 +151,15 @@ Du kan ta bort en datauppsättning från [!DNL Profile] lagra endast (data lämn
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Monitoring]** i den vänstra navigeringen. The **[!UICONTROL Monitoring]** Med kontrollpanelen kan du visa status för inkommande data från antingen batch- eller direktuppspelningsinmatning. Om du vill visa status för enskilda grupper väljer du antingen **[!UICONTROL Batch end-to-end]** eller **[!UICONTROL Streaming end-to-end]**. På kontrollpanelerna visas alla grupper- eller direktuppspelningsöppningar, inklusive de som har slutförts, misslyckats eller fortfarande pågår. Varje lista innehåller information om batchen, inklusive batch-ID:t, namnet på måldatauppsättningen och antalet poster som har importerats. Om måldatauppsättningen är aktiverad för [!DNL Profile]visas även antalet inkapslade identitets- och profilposter.
 
-![](../images/datasets/user-guide/batch-listing.png)
+![Övervakningen av hela gruppen visas. Både övervakning och batch-till-batch markeras.](../images/datasets/user-guide/batch-listing.png)
 
 Du kan välja en individ **[!UICONTROL Batch ID]** för att komma åt **[!UICONTROL Batch overview]** kontrollpanelen och se information om gruppen, inklusive felloggar om gruppen inte kan importera.
 
-![](../images/datasets/user-guide/batch-overview.png)
+![Information om den valda gruppen visas. Detta inkluderar antalet poster som importerats, antalet poster som misslyckats, batchstatus, filstorlek, start- och sluttider för importen, data- och batch-ID:n, organisations-ID:n, datauppsättningens namn och åtkomstinformation.](../images/datasets/user-guide/batch-overview.png)
 
 Om du vill ta bort gruppen kan du göra det genom att markera **[!UICONTROL Delete batch]** som finns uppe till höger på kontrollpanelen. Om du gör det tas även posterna bort från den datauppsättning som batchen ursprungligen skapades i.
 
-![](../images/datasets/user-guide/delete-batch.png)
+![Knappen Ta bort grupp markeras på sidan med datauppsättningsinformation.](../images/datasets/user-guide/delete-batch.png)
 
 ## Nästa steg
 

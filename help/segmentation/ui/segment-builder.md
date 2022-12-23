@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Segment Builder
 topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 1d70aee1bd225268b8f2a2d1dc24d446bb4ce633
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '3019'
+source-wordcount: '3038'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och &quot;[!UICONTRO
 
 Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om[!UICONTROL Event Types]&quot; visas inte eller så kan du bara välja &quot;[!UICONTROL Any]&quot; som &quot;[!UICONTROL Event Type]&quot;, välj **kugghjulsikon** nästa **[!UICONTROL Fields]** väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikon** igen för att gå tillbaka till **[!UICONTROL Fields]** och du bör nu kunna visa flera[!UICONTROL Event Types]&quot; och schemafält, oavsett om de innehåller data eller inte.
 
-![](../images/ui/segment-builder/show-populated.png)
+![Alternativknappar som du kan välja mellan att bara visa fält med data eller att visa alla XDM-fält markeras.](../images/ui/segment-builder/show-populated.png)
 
 #### Adobe Analytics rapportuppsättningar
 

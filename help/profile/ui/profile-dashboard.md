@@ -4,19 +4,19 @@ title: Kontrollpanel för profil
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid.
 type: Documentation
 exl-id: 2c99cbb3-515f-4982-9f2a-84e1ab14542e
-source-git-commit: 998332007465c1f8457b5d8cf0e153d513505d39
+source-git-commit: f7d204442c8bc2355671ba2adffff4c40ce08784
 workflow-type: tm+mt
-source-wordcount: '119'
+source-wordcount: '124'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Profiles] kontrollpanel  {#profile-dashboard}
+# [!UICONTROL Profiles] kontrollpanel {#profile-dashboard}
 
-I Adobe Experience Platform användargränssnitt (UI) finns en kontrollpanel där du kan visa viktig information om dina [!DNL Real-time Customer Profile]-data, som de fångats in under en daglig ögonblicksbild.
+I Adobe Experience Platform användargränssnitt finns en kontrollpanel där du kan visa viktig information om ditt [!DNL Real-time Customer Profile] data, enligt vad som tagits under en daglig ögonblicksbild.
 
-Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontrollpanelen [!UICONTROL Profiles] i användargränssnittet, samt hur du får veta mer om tillgängliga mått som visas på kontrollpanelen, finns i handboken [[!UICONTROL Profiles] för kontrollpanelen](../../dashboards/guides/profiles.md).
+Detaljerade anvisningar om hur du får tillgång till och interagerar med [!UICONTROL Profiles] på kontrollpanelen i användargränssnittet, samt om du vill veta mer om tillgängliga mätvärden som visas på kontrollpanelen, kan du besöka [[!UICONTROL Profiles] instrumentpanelsguide](../../dashboards/guides/profiles.md).
 
-Om du vill få en översikt över alla instrumentpanelsfunktioner i användargränssnittet i Experience Platform börjar du med att läsa översikten [instrumentpaneler](../../dashboards/home.md).
+Om du vill ha en översikt över alla kontrollpanelsfunktioner i användargränssnittet i Experience Platform börjar du med att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
 
-![](../images/profile-dashboard/dashboard-overview.png)
+![Kontrollpanelen Profil visas.](../images/profile-dashboard/dashboard-overview.png)

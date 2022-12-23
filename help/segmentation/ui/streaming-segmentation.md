@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic-legacy: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1364'
+source-wordcount: '1488'
 ht-degree: 0%
 
 ---
@@ -36,14 +36,14 @@ En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppf
 
 | Frågetyp | Information | Exempel |
 | ---------- | ------- | ------- |
-| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
-| En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
-| En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. | ![](../images/ui/streaming-segmentation/historic-time-window.png) |
+| En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![Ett exempel på en enstaka händelse visas.](../images/ui/streaming-segmentation/incoming-hit.png) |
+| En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![Ett exempel på en enstaka händelse i ett relativt tidsfönster visas.](../images/ui/streaming-segmentation/relative-hit-success.png) |
+| En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. | ![Ett exempel på en enstaka händelse med ett tidsfönster visas.](../images/ui/streaming-segmentation/historic-time-window.png) |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |  |
-| En händelse med ett profilattribut | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. **Obs!** Frågan utvärderas omedelbart när händelsen kommer. Om en profilhändelse inträffar måste den dock vänta i 24 timmar för att införlivas. | ![](../images/ui/streaming-segmentation/profile-hit.png) |
-| En händelse med ett profilattribut i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen **var 24:e timme**. | ![](../images/ui/streaming-segmentation/two-batches.png) |
-| Flera händelser med ett profilattribut | En segmentdefinition som refererar till flera händelser **inom de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/event-history-success.png) |
+| En händelse med ett profilattribut | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. **Obs!** Frågan utvärderas omedelbart när händelsen kommer. Om en profilhändelse inträffar måste den dock vänta i 24 timmar för att införlivas. | ![Ett exempel på en enstaka händelse med ett profilattribut visas.](../images/ui/streaming-segmentation/profile-hit.png) |
+| En händelse med ett profilattribut i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![Ett exempel på en enstaka händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/ui/streaming-segmentation/profile-relative-success.png) |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen **var 24:e timme**. | ![Ett exempel på ett segment visas.](../images/ui/streaming-segmentation/two-batches.png) |
+| Flera händelser med ett profilattribut | En segmentdefinition som refererar till flera händelser **inom de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![Ett exempel på flera händelser med ett profilattribut visas.](../images/ui/streaming-segmentation/event-history-success.png) |
 
 En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i följande scenarier:
 
@@ -67,7 +67,7 @@ Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i
 
 När du har skapat ett direktuppspelningsaktiverat segment kan du visa information om det segmentet.
 
-![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
+![Sidan med segmentinformation visas.](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
 I synnerhet **[!UICONTROL Total qualified]** Mätvärdet visas, vilket visar det totala antalet kvalificerade målgrupper baserat på utvärdering av grupper och direktuppspelning för det här segmentet.
 
@@ -79,11 +79,11 @@ Underliggande är ett linjediagram som visar antalet nya målgrupper som uppdate
 >
 >Mer information om de här statusvärdena finns i statustabellen i [segmenteringsöversikt](./overview.md#browse).
 
-![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
+![Profilerna över tidskortet markeras och visar ett linjediagram över profilerna över tiden.](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 
 Mer information om den senaste utvärderingen av segment finns i informationsbubblan bredvid **[!UICONTROL Total qualified]**.
 
-![](../images/ui/streaming-segmentation/info-bubble.png)
+![Informationsbubblan för de totala kvalificerade profilerna har valts. Här visas information om den senaste tiden för segmentutvärdering.](../images/ui/streaming-segmentation/info-bubble.png)
 
 Mer information om segmentdefinitioner finns i föregående avsnitt om [segmentdefinitionsinformation](#segment-details).
 

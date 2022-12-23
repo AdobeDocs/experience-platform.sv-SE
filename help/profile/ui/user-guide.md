@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: d2790ddab74f989ebb5ca522ce44323033c53911
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1700'
+source-wordcount: '1875'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ På profilkontrollpanelen visas viktiga mätvärden för din organisations profi
 
 Mer information finns på [guide för profilkontrollpanel](../../dashboards/guides/profiles.md).
 
-![](../../dashboards/images/profiles/dashboard-overview.png)
+![Kontrollpanelen Profil visas.](../../dashboards/images/profiles/dashboard-overview.png)
 
 ## [!UICONTROL Browse] tabbvärden
 
@@ -51,7 +51,7 @@ Till höger på sidan **[!UICONTROL Browse]** -fliken är [antal profiler](#prof
 
 Förutom dessa mått innehåller det här avsnittet ett senaste uppdaterat datum och tid som visar när mätvärdena senast utvärderades.
 
-![](../images/user-guide/browse-metrics.png)
+![Profilmåtten visas och markeras.](../images/user-guide/browse-metrics.png)
 
 ### Profilantal {#profile-count}
 
@@ -75,7 +75,7 @@ Liknar [antal profiler](#profile-count) mätvärden, när man får in data i [!D
 
 På **[!UICONTROL Browse]** kan du visa exempelprofiler med hjälp av en sammanfogningsprincip eller leta upp specifika profiler med hjälp av ett identitetsnamnutrymme och värde.
 
-![](../images/user-guide/none-selected.png)
+![Profilerna som tillhör organisationen visas.](../images/user-guide/none-selected.png)
 
 ### Bläddra efter [!UICONTROL Merge policy]
 
@@ -85,36 +85,35 @@ The **[!UICONTROL Browse]** är som standard inställd på standardprincipen fö
 >
 >Om ingen sammanfogningsprincip är vald använder du väljarknappen bredvid **[!UICONTROL Merge policy]** för att öppna urvalsdialogrutan.
 
-![](../images/user-guide/browse-by-merge-policy.png)
+![Väljaren för sammanfogningsprincipen är markerad.](../images/user-guide/browse-by-merge-policy.png)
 
 Välj en sammanfogningsprincip på **[!UICONTROL Select merge policy]** markerar du alternativknappen bredvid principnamnet och använder sedan **[!UICONTROL Select]** för att gå tillbaka till [!UICONTROL Browse] -fliken. Du kan sedan välja **[!UICONTROL View]** om du vill uppdatera exempelprofilerna och se ett exempel på profiler med den nya sammanfogningsprincipen.
 
-![](../images/user-guide/select-merge-policy.png)
+![En dialogruta där du kan välja vilken sammanfogningsprincip som ska filtreras visas.](../images/user-guide/select-merge-policy.png)
 
 Profilerna som visas representerar ett urval på upp till 20 profiler från din organisations profilbutik efter att den valda sammanfogningsprincipen har tillämpats. Exempelprofilerna för den valda sammanfogningsprincipen uppdateras när nya data läggs till i din organisations profilarkiv.
 
 Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL Profile ID]**. Mer information finns i avsnittet senare i den här guiden på [visa profilinformation](#profile-detail).
 
-![](../images/user-guide/sample-profiles.png)
+![Exempelprofiler som matchar sammanfogningsprincipen visas.](../images/user-guide/sample-profiles.png)
 
 Mer information om kopplingsprofiler och deras roll inom plattformen finns i [sammanfogningsprinciper - översikt](../merge-policies/overview.md).
-
 
 ### Bläddra efter [!UICONTROL Identity] {#browse-identity}
 
 På **[!UICONTROL Browse]** kan du använda ett ID-namnutrymme för att leta upp en viss profil med hjälp av ett identitetsvärde. Om du bläddrar efter en identitet måste du ange en sammanfogningsprincip, ett identitetsnamnutrymme och ett identitetsvärde.
 
-![](../images/user-guide/browse-by-merge-policy.png)
+![Väljaren för sammanfogningsprincip är markerad.](../images/user-guide/browse-by-merge-policy.png)
 
 Om det behövs använder du **[!UICONTROL Merge policy]** för att öppna **[!UICONTROL Select merge policy]** och välj den sammanfogningsprincip som du vill använda.
 
-![](../images/user-guide/select-merge-policy.png)
+![En dialogruta där du kan välja vilken sammanfogningsprincip som ska filtreras visas.](../images/user-guide/select-merge-policy.png)
 
 Använd sedan **[!UICONTROL Identity namespace]** för att öppna **[!UICONTROL Select identity namespace]** och välj det namnutrymme som du vill söka efter. Om din organisation har många namnutrymmen kan du använda sökfältet i dialogrutan för att börja skriva namnet på ett namnutrymme.
 
 Du kan markera ett namnutrymme om du vill visa mer information eller välja ett namnutrymme genom att markera alternativknappen. Du kan sedan använda **[!UICONTROL Select]** för att fortsätta.
 
-![](../images/user-guide/select-identity-namespace.png)
+![En dialogruta där du kan välja det identitetsnamnutrymme som ska filtreras visas.](../images/user-guide/select-identity-namespace.png)
 
 När du har valt en [!UICONTROL Identity namespace] och återgå till [!UICONTROL Browse] kan du ange en **[!UICONTROL Identity value]** relaterat till det namnutrymme som du valde.
 
@@ -122,11 +121,11 @@ När du har valt en [!UICONTROL Identity namespace] och återgå till [!UICONTRO
 >
 >Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du t.ex. väljer identitetsnamnet&quot;E-post&quot; krävs ett identitetsvärde i form av en giltig e-postadress.
 
-![](../images/user-guide/filter-identity-value.png)
+![Det identitetsvärde som du vill filtrera efter markeras.](../images/user-guide/filter-identity-value.png)
 
 När ett värde har angetts väljer du **[!UICONTROL View]** och en enda profil som matchar värdet returneras. Välj **[!UICONTROL Profile ID]** om du vill visa profilinformationen.
 
-![](../images/user-guide/filtered-identity-value.png)
+![Profilen som matchar identitetsvärdet markeras.](../images/user-guide/filtered-identity-value.png)
 
 ## Visa profilinformation {#profile-detail}
 
@@ -134,7 +133,7 @@ När du har valt en **[!UICONTROL Profile ID]**, **[!UICONTROL Detail]** -fliken
 
 Standardfälten som visas kan också ändras på organisationsnivå för att visa de önskade profilattributen. Läs mer om hur du anpassar dessa fält, inklusive steg-för-steg-instruktioner om hur du lägger till och tar bort attribut och ändrar storlek på kontrollpaneler i [guide för anpassning av profildetaljer](profile-customization.md).
 
-![](../images/user-guide/profile-detail.png)
+![Fliken Detaljer är markerad. Profilinformationen visas.](../images/user-guide/profile-detail.png)
 
 Du kan visa ytterligare information om den enskilda kundprofilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för segmentmedlemskap som visar de segment som profilen är kvalificerad för just nu.
 
@@ -144,7 +143,7 @@ The **[!UICONTROL Attributes]** I finns en listvy där du kan sammanfatta alla a
 
 Dessa attribut kan också visas som ett JSON-objekt genom att välja **[!UICONTROL View JSON]**. Detta är praktiskt för alla användare som bättre vill förstå hur profilattributen hämtas till Platform.
 
-![](../images/user-guide/attributes.png)
+![Fliken Attribut markeras. Profilattributen visas.](../images/user-guide/attributes.png)
 
 ### Fliken Händelser
 
@@ -152,7 +151,7 @@ The **[!UICONTROL Events]** -fliken innehåller data från de 100 senaste Experi
 
 Händelser kan också visas som ett JSON-objekt genom att välja att **[!UICONTROL View JSON]**. Detta är praktiskt när du vill veta hur händelser hämtas i Platform.
 
-![](../images/user-guide/events.png)
+![Fliken Händelser är markerad. Profilhändelserna visas.](../images/user-guide/events.png)
 
 ### Fliken Segmentmedlemskap
 
@@ -160,7 +159,7 @@ The **[!UICONTROL Segment membership]** I visas en lista med namn och beskrivnin
 
 Mer information om segmentering i Experience Platform finns i [Adobe Experience Platform segmenteringstjänstens dokumentation](../../segmentation/home.md).
 
-![](../images/user-guide/segment-membership.png)
+![Fliken Segmentmedlemskap är markerad. Information om profilsegmentmedlemskap visas.](../images/user-guide/segment-membership.png)
 
 ## Sammanfoga profiler
 
@@ -168,7 +167,7 @@ Från huvudsidan **[!UICONTROL Profiles]** väljer du **[!UICONTROL Merge Polici
 
 Mer information om sammanfogningsprinciper finns i [sammanfogningsprinciper - översikt](../merge-policies/overview.md).
 
-![](../images/user-guide/merge-policies.png)
+![Fliken Sammanfogningsprofiler är markerad. Sammanslagningsprinciper som tillhör organisationen visas.](../images/user-guide/merge-policies.png)
 
 ## Unionsschema {#union-schema}
 
@@ -176,7 +175,7 @@ Från huvudsidan **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema
 
 Mer information om fackliga scheman finns på [gränssnittshandbok för union av schema](union-schema.md).
 
-![](../images/user-guide/union-schema.png)
+![Fliken Unionens schema är markerad. Unionsscheman som tillhör organisationen visas.](../images/user-guide/union-schema.png)
 
 ## Nästa steg
 

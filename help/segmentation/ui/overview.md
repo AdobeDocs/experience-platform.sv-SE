@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: d2790ddab74f989ebb5ca522ce44323033c53911
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '2316'
+source-wordcount: '2566'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ The **[!UICONTROL Segments]** Instrumentpanelen sammanfattar nyckeltal relaterad
 
 Mer information finns på [instrumentpanelsguide för segment](../../dashboards/guides/segments.md).
 
-![](../../dashboards/images/segments/dashboard-overview.png)
+![Segmentkontrollpanelen visas. Den visar olika widgetar, inklusive målgruppsstorlek, profiler efter identitet, identitetsövertäckning och trenden för storleksändring för målgrupper.](../../dashboards/images/segments/dashboard-overview.png)
 
 ## Bläddra {#browse}
 
@@ -60,15 +60,15 @@ Mer information finns på [instrumentpanelsguide för segment](../../dashboards/
 >[!CONTEXTUALHELP]
 >id="platform_segments_browse_addallsegmentstoschedule"
 >title="Lägg till alla segment i schemat"
->abstract="Gör det möjligt att inkludera alla grupputvärderingssegment i den dagliga schemalagda uppdateringen kl. 3:30 UTC. Inaktivera borttagning av alla segment från den schemalagda uppdateringen."
+>abstract="Aktivera det här alternativet om du vill inkludera alla grupputvärderingssegment i den dagliga schemalagda uppdateringen. Inaktivera borttagning av alla segment från den schemalagda uppdateringen."
 
 Välj **[!UICONTROL Browse]** om du vill visa en lista med alla segmentdefinitioner för din organisation.
 
-![](../images/ui/overview/segment-browse-all.png)
+![Skärmen för att bläddra bland segment visas. En lista över alla segment som tillhör organisationen visas.](../images/ui/overview/segment-browse-all.png)
 
 I den här vyn visas information om segmentdefinitionen, inklusive antal profiler, datum när de skapades och senaste ändringsdatum.
 
-Du kan lägga till fler fält till den här visningen genom att välja BILD. Dessa ytterligare fält innehåller information om fördelning, urn, utvärderingsmetod och jobb-ID.
+Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/overview/filter-attribute.png). Dessa ytterligare fält innehåller information om fördelning, urn, utvärderingsmetod och jobb-ID.
 
 Om du väljer nedbrytning visas ett stolpdiagram som visar procentandelen profiler som tillhör följande lägen: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
 
@@ -82,7 +82,7 @@ Kurvan anger hur många procent av profilerna som ändras inom en segmentdefinit
 
 Utvärderingsmetoden kan antingen vara direktuppspelning, batch eller kant. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema. Kantsegment utvärderas i realtid, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
-![](../images/ui/overview/segment-browse-segments.png)
+![Segmenten på segmentets bläddringssida markeras.](../images/ui/overview/segment-browse-segments.png)
 
 Överst på sidan finns alternativ för att lägga till alla segment i ett schema och för att skapa ett nytt segment.
 
@@ -90,11 +90,11 @@ Växlar **[!UICONTROL Add all segments to schedule]** möjliggör schemalagd seg
 
 Markera **[!UICONTROL Create segment]** tar dig till segmentbyggaren. Läs mer om hur du skapar segment i avsnittet om [skapa ett segment i användarhandboken](#create-segment).
 
-![](../images/ui/overview/segment-browse-top.png)
+![Det övre navigeringsfältet på segmentets bläddringssida är markerat. Det här fältet innehåller en växlingsknapp för att lägga till alla segment i ett schema och en knapp för att skapa ett segment.](../images/ui/overview/segment-browse-top.png)
 
 Den högra sidopanelen innehåller information om alla segment i organisationen, med en lista över det totala antalet segment, det sista utvärderingsdatumet, nästa utvärderingsdatum samt en uppdelning av segmenten efter värderingsmetod.
 
-![](../images/ui/overview/segment-browse-segment-info.png)
+![Den högra sidofältet på segmentets bläddringssida är markerat. Information om segmenten i organisationen visas. Detta inkluderar information som totalt antal segment, senaste utvärderade tid, nästa utvärderade tid samt en uppdelning av de olika segmenttyperna.](../images/ui/overview/segment-browse-segment-info.png)
 
 Om du markerar segmentdefinitionens rad får du en sammanfattning av segmentdefinitionen, inklusive alternativ för att antingen redigera eller ta bort segmentet, aktivera segmentet till ett mål, kvalificerad målgrupp för segmentet, total målgruppsstorlek, utöver segmentets namn, beskrivning, bedömningsmetod, skapad den och senaste ändringsdatum.
 
@@ -102,7 +102,7 @@ Om du markerar segmentdefinitionens rad får du en sammanfattning av segmentdefi
 >
 > Du kommer att **not** kan ta bort ett segment som används i en målaktivering.
 
-![](../images/ui/overview/segment-browse-details.png)
+![Information om det valda segmentet visas. Detta innehåller uppgifter om antalet kvalificerade profiler, den procentuella fördelningen av kvalificerade jämfört med totala profiler, senaste utvärderingsdatum.](../images/ui/overview/segment-browse-details.png)
 
 ## Segmentdefinitionsinformation {#segment-details}
 
@@ -110,7 +110,7 @@ Om du vill visa mer information om en viss segmentdefinition markerar du ett seg
 
 Sidan med segmentinformation visas. Överst finns en sammanfattning av segmentdefinitionen, information om den kvalificerade målgruppsstorleken samt vilka mål som segmentet är aktiverat för.
 
-![](../images/ui/overview/segment-details-summary.png)
+![Sidan med segmentdefinitionsinformation visas. Segmentsammanfattningen, den totala målgruppen i segmentet och aktiverade destinationskort markeras.](../images/ui/overview/segment-details-summary.png)
 
 ### Segmentsammanfattning {#segment-summary}
 
@@ -118,7 +118,7 @@ The **[!UICONTROL Segment summary]** -avsnittet innehåller information om attri
 
 Dessutom kan du antingen aktivera segmentet till ett mål eller redigera segmentet. Markera **[!UICONTROL Activate to destination]** Med kan du aktivera segmentet till ett mål. Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
 
-![](../images/ui/overview/segment-details-activate.png)
+![Knappen Aktivera till mål är markerad.](../images/ui/overview/segment-details-activate.png)
 
 Markera **[!UICONTROL Edit segment]** kommer att ta dig till [!DNL Segment Builder]. Mer detaljerad information om hur du använder [!DNL Segment Builder] arbetsytan, läs [[!DNL Segment Builder] användarhandbok](./segment-builder.md).
 
@@ -158,13 +158,13 @@ Exempelstorleken för genomsökningen beror på det totala antalet enheter i din
 
 Mer detaljerad information om varje [!DNL Profile] kan du se genom att välja [!DNL Profile] ID. Mer information om en profils detaljer finns i [[!DNL Real-time Customer Profile] användarhandbok](../../profile/ui/user-guide.md#profile-detail).
 
-![](../images/ui/overview/segment-details-profiles.png)
+![Exempelprofilerna för segmentdefinitionen markeras. Exempelprofilinformationen innehåller profil-ID, förnamn, efternamn och personens e-postadress.](../images/ui/overview/segment-details-profiles.png)
 
 ## Skapa ett segment {#create-segment}
 
 Markera **[!UICONTROL Create segment]** i det övre högra hörnet öppnas [!DNL Segment Builder] arbetsyta där du kan börja skapa en segmentdefinition.
 
-![](../images/ui/overview/segment-browse-create.png)
+![Knappen Skapa segment är markerad på sidan Segmentbläddring.](../images/ui/overview/segment-browse-create.png)
 
 ### [!DNL Segment Builder] arbetsyta
 
@@ -172,7 +172,7 @@ Markera **[!UICONTROL Create segment]** i det övre högra hörnet öppnas [!DNL
 
 Mer detaljerad information om hur du använder [!DNL Segment Builder] arbetsytan, läs [[!DNL Segment Builder] användarhandbok](./segment-builder.md).
 
-![](../images/ui/overview/segment-builder.png)
+![Arbetsytan Segment Builder visas.](../images/ui/overview/segment-builder.png)
 
 ## Schemalagd segmentering {#scheduled-segmentation}
 
@@ -190,7 +190,7 @@ Du kan aktivera dina segmentdefinitioner för schemalagd utvärdering med hjälp
 
 Scheman kan för närvarande bara skapas med API:t. Följ självstudiekursen för att utvärdera och komma åt segmentresultaten, särskilt avsnittet om hur du skapar, redigerar och arbetar med scheman med API:t. [schemalagd utvärdering med API](../tutorials/evaluate-a-segment.md#scheduled-evaluation).
 
-![](../images/ui/overview/segment-browse-scheduled.png)
+![Alternativet för att lägga till alla segment i ett schema är markerat på sidan Bläddra efter segment.](../images/ui/overview/segment-browse-scheduled.png)
 
 ## Målgrupper {#audiences}
 
@@ -290,7 +290,7 @@ Mer information om kantsegmentering finns i [gränssnittsguide för kantsegmente
 
 När du är klar med segmentet analyseras segmentet av Adobe Experience Platform Data Governance för att säkerställa att det inte förekommer några överträdelser av policyer inom segmentet. Se [Datastyrning - översikt](../../data-governance/home.md) för mer information.
 
-![](../images/ui/overview/segment-dule-policy-violations.png)
+![Policyöverträdelser för segmentet visas.](../images/ui/overview/segment-dule-policy-violations.png)
 
 ## Nästa steg och ytterligare resurser {#next-steps}
 

@@ -5,9 +5,9 @@ title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 13fd1e372a63b55c41893f41d1590d9dab9f7903
+source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
 workflow-type: tm+mt
-source-wordcount: '1406'
+source-wordcount: '1582'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Det första steget för att använda externa målgrupper är att skapa ett ident
 
 Följ instruktionerna i [guide för identitetsnamnutrymme](../../identity-service/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
 
-![](../images/tutorials/external-audiences/identity-namespace-info.png)
+![Identifieraren för icke-människa markeras på spärrformen för identitetsnamnutrymmet.](../images/tutorials/external-audiences/identity-namespace-info.png)
 
 ## Skapa ett schema för segmentmetadata
 
@@ -52,19 +52,19 @@ När du har skapat ett identitetsnamnutrymme måste du skapa ett nytt schema fö
 
 Börja med att välja **[!UICONTROL Schemas]** i det vänstra navigeringsfältet, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Här väljer du **[!UICONTROL Browse]** om du vill se ett fullständigt urval av tillgängliga schematyper.
 
-![](../images/tutorials/external-audiences/create-schema-browse.png)
+![Både Skapa schema och Bläddra är markerade.](../images/tutorials/external-audiences/create-schema-browse.png)
 
 Eftersom du skapar en segmentdefinition, som är en fördefinierad klass, väljer du **[!UICONTROL Use existing class]**. Nu väljer du **[!UICONTROL Segment definition]** klass, följt av **[!UICONTROL Assign class]**.
 
-![](../images/tutorials/external-audiences/assign-class.png)
+![Segmentdefinitionsklassen är markerad.](../images/tutorials/external-audiences/assign-class.png)
 
 Nu när schemat har skapats måste du ange vilket fält som ska innehålla segment-ID:t. Det här fältet bör markeras som primär identitet och tilldelas de namnutrymmen som du skapade tidigare.
 
-![](../images/tutorials/external-audiences/mark-primary-identifier.png)
+![Kryssrutorna för att markera det markerade fältet som primär identitet markeras i Schemaredigeraren.](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
 När du har markerat `_id` som primär identitet väljer du schemats titel, följt av växlingens etikett **[!UICONTROL Profile]**. Välj **[!UICONTROL Enable]** för att aktivera schemat för [!DNL Real-time Customer Profile].
 
-![](../images/tutorials/external-audiences/schema-profile.png)
+![Växlingen för att aktivera schemat för profilen är markerad i Schemaredigeraren.](../images/tutorials/external-audiences/schema-profile.png)
 
 Det här schemat är nu aktiverat för profilen, med den primära identifieringen tilldelad till det icke-personliga ID-namnområdet som du skapade. Detta innebär att segmentmetadata som importeras till plattformen med det här schemat kommer att importeras till profilen utan att sammanfogas med andra personrelaterade profildata.
 
@@ -74,11 +74,11 @@ När du har konfigurerat schemat måste du skapa en datauppsättning för segmen
 
 Om du vill skapa en datauppsättning följer du instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#create). Du bör följa **[!UICONTROL Create dataset from schema]** med det schema som du skapade tidigare.
 
-![](../images/tutorials/external-audiences/select-schema.png)
+![Schemat som du vill basera din datauppsättning på markeras.](../images/tutorials/external-audiences/select-schema.png)
 
 När du har skapat datauppsättningen fortsätter du att följa instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#enable-profile) för att aktivera den här datauppsättningen för kundprofil i realtid.
 
-![](../images/tutorials/external-audiences/dataset-profile.png)
+![Växlingen för att aktivera schemat för profilen är markerad på aktivitetssidan för datauppsättning.](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## Konfigurera och importera målgruppsdata
 
@@ -94,7 +94,7 @@ Om du vill skapa en direktuppspelningsanslutning följer du instruktionerna i [A
 
 När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om att direktuppspela postdata](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
-![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![Slutpunkten för direktuppspelning för direktuppspelningsanslutningen markeras på sidan med källinformation.](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
 ## Struktur för målgruppsmetadata
 
@@ -151,7 +151,7 @@ Ett exempel på den externa målgruppens nyttolastmetadata visas nedan:
 
 När de importerade målgrupperna har konfigurerats kan de användas som en del av segmenteringsprocessen. Om du vill hitta externa målgrupper går du till segmentbyggaren och väljer **[!UICONTROL Audiences]** i **[!UICONTROL Fields]** -avsnitt.
 
-![](../images/tutorials/external-audiences/external-audiences.png)
+![Den externa målgruppsväljaren i segmentbyggaren markeras.](../images/tutorials/external-audiences/external-audiences.png)
 
 ## Nästa steg
 
@@ -165,15 +165,15 @@ Förutom att använda importerade externa målgruppsmetadata och använda dem f�
 
 Börja med att välja **[!UICONTROL Schemas]** i det vänstra navigeringsfältet, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Här väljer du **[!UICONTROL XDM Individual Profile]**.
 
-![](../images/tutorials/external-audiences/create-schema-profile.png)
+![Området XDM Individual Profile är markerat.](../images/tutorials/external-audiences/create-schema-profile.png)
 
 Nu när schemat har skapats måste du lägga till fältgruppen för segmentmedlemskap som en del av schemat. Välj [!UICONTROL Segment Membership Details], följt av [!UICONTROL Add field groups].
 
-![](../images/tutorials/external-audiences/segment-membership-details.png)
+![Fältgruppen Information om segmentmedlemskap är markerad.](../images/tutorials/external-audiences/segment-membership-details.png)
 
 Kontrollera dessutom att schemat är markerat för **[!UICONTROL Profile]**. För att kunna göra detta måste du markera ett fält som primär identitet.
 
-![](../images/tutorials/external-audiences/external-segment-profile.png)
+![Växlingen för att aktivera schemat för profilen är markerad i Schemaredigeraren.](../images/tutorials/external-audiences/external-segment-profile.png)
 
 ### Konfigurera datauppsättningen
 
@@ -181,11 +181,11 @@ När du har skapat schemat måste du skapa en datauppsättning.
 
 Om du vill skapa en datauppsättning följer du instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#create). Du bör följa **[!UICONTROL Create dataset from schema]** med det schema som du skapade tidigare.
 
-![](../images/tutorials/external-audiences/select-schema.png)
+![Schemat som du använder för att skapa databasen markeras.](../images/tutorials/external-audiences/select-schema.png)
 
 När du har skapat datauppsättningen fortsätter du att följa instruktionerna i [användarhandbok för datauppsättning](../../catalog/datasets/user-guide.md#enable-profile) för att aktivera den här datauppsättningen för kundprofil i realtid.
 
-![](../images/tutorials/external-audiences/dataset-profile.png)
+![Växlingen för att aktivera schemat för profilen är markerad i arbetsflödet för att skapa datauppsättningar.](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## Ställ in och importera externa data för målgruppsmedlemskap
 
@@ -201,7 +201,7 @@ Om du vill skapa en direktuppspelningsanslutning följer du instruktionerna i [A
 
 När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om att direktuppspela postdata](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
-![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+![Slutpunkten för direktuppspelning för direktuppspelningsanslutningen markeras på sidan med källinformation.](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
 ## Segmentmedlemsstruktur
 
