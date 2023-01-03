@@ -2,9 +2,9 @@
 title: AWS Extension - översikt
 description: Läs mer om AWS-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: b4ff3dbc9c62dceefdf2b842cafa65132dde41fc
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '797'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-[[!DNL Amazon Web Services] ([!DNL AWS])](https://aws.amazon.com/) är en plattform för cloud computing som erbjuder en mängd tjänster som distribuerad datoranvändning, databaslagring, innehållsleverans och CRM (customer relationship management).
+[[!DNL Amazon Web Services] ([!DNL AWS])](https://aws.amazon.com/) är en plattform för cloud computing som erbjuder ett brett utbud av tjänster som distribuerad datorhantering, databaslagring, innehållsleverans och SaaS-integrationstjänster (Software-as-a-service) för kundrelationshantering (CRM) och resursplanering (ERP) för företag.
 
 The [!DNL AWS] [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) utbyggnadsutfall [[!DNL Amazon Kinesis Data Streams]](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) för att skicka händelser från Adobe Experience Platform Edge Network till [!DNL AWS] för vidare bearbetning. Den här guiden beskriver hur du installerar tillägget och använder dess funktioner i en regel för vidarebefordran av händelser.
 
