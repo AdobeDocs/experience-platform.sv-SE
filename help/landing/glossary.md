@@ -5,9 +5,9 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '7427'
+source-wordcount: '7913'
 ht-degree: 0%
 
 ---
@@ -45,6 +45,8 @@ ht-degree: 0%
 **Amazon S3-bucket**: [!DNL Amazon S3] -luckor är de grundläggande behållarna för data som lagras i [!DNL Amazon] ekosystem. Bucket innehåller objekt. Varje objekt lagras och hämtas med en unik utvecklartilldelad nyckel.
 
 **Amazon S3-anslutning**: The [!DNL Amazon] Med S3-kontakten kan Experience Platform-kunder ansluta och få tillgång till sina [!DNL Amazon] S3-data.
+
+**APA**: The [[!DNL Australia Privacy Act (Privacy Act)]](https://www.oaic.gov.au/privacy/the-privacy-act) främjar och skyddar enskilda personers integritet och reglerar hur australiska myndigheter och organisationer hanterar personuppgifter. The [!DNL Privacy Act] omfattar principer som gäller för organisationer i den privata sektorn. Enskilda personer får till exempel rätt att förstå varför personuppgifterna samlas in och hur de kommer att användas, möjlighet att få tillgång till, radera sina uppgifter och rätta personuppgifter.
 
 **Lägg till sparstrategi**: Spara-strategin&quot;append&quot; är ett alternativ som används när du anger data från tredje part som ska importeras via en anslutning och lägger till nya data eller rader i slutet av datauppsättningen. De tidigare infogade raderna förblir orörda och endast rader som skapats sedan den senaste schemalagda körningen importeras till Experience Platform. Eventuella rader som har ändrats i källsystemet ändras inte i Experience Platform.
 
@@ -90,6 +92,8 @@ ht-degree: 0%
 
 **[!DNL Catalog Service]**: [!DNL Catalog Service] (kallas ibland [!DNL Catalog]) är registersystemet för dataplatser och datalinje inom Adobe Experience Platform. Alla data som hämtas in till Experience Platform lagras i datasjön som filer och kataloger. [!DNL Catalog] innehåller metadata och beskrivning av dessa filer och kataloger för sökning, övervakning och datastyrning.
 
+**CCPA**: The [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) förbättrar sekretessen och konsumentskyddet för personer bosatta i Kalifornien, USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part.
+
 **Klass**: I Experience Data Model (XDM) definierar en klass den minsta uppsättning fält som används för att skapa ett schema och definierar basbeteendet för det affärsobjekt som schemat representerar.
 
 **Klient**: En klient är ett externt verktyg eller program som ansluter till [!DNL Query Service] via [!DNL PostgreSQL] eller HTTP API.
@@ -107,6 +111,8 @@ ht-degree: 0%
 **Konsol**: I [!DNL Query Service]ger konsolen information om status och funktion för en fråga. Konsolen visar anslutningsstatus för [!DNL Query Service], frågeåtgärder som körs och felmeddelanden som är ett resultat av dessa frågor.
 
 **Kontraktsetiketter (&quot;C&quot;)**: Dataanvändningsetiketter för kontrakt (&quot;C&quot;) används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till organisationens policyer för datastyrning.
+
+**CPRA**: The [[!DNL California Consumer Privacy Rights Act (CPRA)]](https://cppa.ca.gov/regulations/consumer_privacy_act.html) expanderar och ändrar delar av [!DNL California Consumer Privacy Act (CCPA)]. The [!DNL CPRA] skapar en ny grund för integriteten i konsumentdata i Kalifornien genom att öka konsumenternas rättigheter och utöka den typ av uppgifter som omfattas genom en bredare definition av känslig personlig information. Dessutom är [!DNL CPRA] har inrättat California Privacy Protection Agency, en ny byrå som arbetar med att genomföra och genomföra regler för datasekretess.
 
 **C1-kontraktsetikett**: A `C1` Användningsetiketten för avtalsdata anger att data endast kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
@@ -262,6 +268,8 @@ ht-degree: 0%
 
 ## H
 
+**HIPAA**: The [[!DNL Health Insurance Portability and Accountability Act (HIPAA)]](https://www.hhs.gov/hipaa/index.html) är en amerikansk federal lag som har skapats för att förbättra hälso- och sjukvårdens effektivitet, förbättra sjukförsäkringens bärbarhet och skydda patienternas integritet och sjukförsäkringsplanens medlemmar. Inom ramen för HIPAA har enskilda rätt att få tillgång till och ändra sina uppgifter och få kopior av sin patientjournal eller hälsoinformation. Enheter som omfattas och affärskoncernföretag i de enheter som omfattas måste följa HIPAA-reglerna.
+
 **Värd**: När det gäller taggar anger en värd den plats, domän och de inloggningsuppgifter som krävs för att systemet ska kunna leverera ett bygge.
 
 **Varje timme**: I samband med schemalagd filexport schemaläggs den inkrementella filexporten var 3, 6, 8 eller 12 timme.
@@ -316,6 +324,8 @@ ht-degree: 0%
 
 ## L
 
+**LGPD**: The [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) syftar till att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.
+
 **Bibliotek**: När det gäller taggar är ett bibliotek en uppsättning affärslogik som innehåller instruktioner för hur taggbiblioteket ska fungera på klientenheten.
 
 **Sök enheter**: I samband med datamodellering representerar sökenheter koncept som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som tillhör den här kategorin ska representeras av scheman som baseras på anpassade XDM-klasser (Experience Data Model).
@@ -342,6 +352,8 @@ ht-degree: 0%
 
 ## N
 
+**[!DNL New Zealand Privacy Act]**: The [[!DNL New Zealand Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) kontrollerar hur myndigheter kan samla in, använda, offentliggöra, lagra och ge tillgång till nyzeeländska medborgares och organisationers personuppgifter. Under 2020 infördes i den senaste versionen av lagen avsevärda uppdateringar av dessa integritetslagar, bland annat nya brott, höjda böter, obligatoriska anmälningar om dataintrång och ökade befogenheter för sekretesschefen.
+
 **Icke-produktionssandlåda**: Sandlådor som inte är produktionssandlådor är sandlådor som vanligtvis används för utvecklingsexperiment, testning och testning. Till skillnad från produktionssandlådor kan icke-produktionssandlådor återställas och tas bort.
 
 **[!DNL Notebooks]**: [!DNL Notebooks] har skapats med [!DNL Jupyter Notebook] och kan köras för att utföra dataanalys.
@@ -367,6 +379,8 @@ ht-degree: 0%
 **Delvis intag**: Delvis förtäring möjliggör förtäring av giltiga poster med batchdata inom ett angivet feltröskelvärde. Feldiagnostik för misslyckade poster kan hämtas eller nås i [!UICONTROL Monitoring] eller [!UICONTROL Sources] översikt över dataflödeskörning.
 
 **Parquet-filer**: En Parquet-fil är ett kolumnlagringsfilformat med komplexa kapslade datastrukturer. Parquet-filer krävs för att lägga till data för att fylla i en schemadatauppsättning.
+
+**PDPA**: The [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
 
 **Personaliserade erbjudanden**: Ett personaliserat erbjudande är ett anpassningsbart marknadsföringsmeddelande som baseras på regler och begränsningar för behörighet.
 
@@ -529,6 +543,8 @@ ht-degree: 0%
 **Unionsschema**: Ett unionsschema är en konsolidering av scheman som delar samma klass och har aktiverats för [!DNL Real-time Customer Profile]. Det kan finnas flera unionsscheman för en organisation, men det kan bara finnas ett unionsschema per klass.
 
 ## V
+
+**VCDPA**: The [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) ger Virginias invånare nya rättigheter till dataintegritet (&quot;konsumenter&quot;), inklusive rätten att få tillgång till, radera och rätta personuppgifter. Konsumenterna har också rätt att välja bort försäljning av personuppgifter, välja bort profilering baserad på personuppgifter och behandling av personliga reklamändamål.
 
 ## W
 

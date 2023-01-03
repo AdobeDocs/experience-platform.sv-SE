@@ -5,9 +5,9 @@ title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 topic-legacy: UI guide
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '1061'
+source-wordcount: '1104'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,25 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 
 ### Regeltyp
 
-[!DNL Privacy Service] stöder jobbförfrågningar för flera sekretessregler:
+[!DNL Privacy Service] stöder jobbförfrågningar för flera sekretessregler. I följande tabell visas vilka regler som stöds och deras motsvarande etikett som representeras i användargränssnittet:
 
-* The [!DNL California Consumer Privacy Act] ([!UICONTROL CCPA])
-* Europeiska unionens [!DNL General Data Protection Regulation] ([!UICONTROL GDPR])
-* Thailand [!DNL Personal Data Protection Act] ([!UICONTROL PDPA_THA])
-* Brasilien [!DNL Lei Geral de Proteção de Dados] ([!UICONTROL LGPD_BRA])
-* Nya Zeeland [!DNL Privacy Act] ([!UICONTROL NZPA_NZL])
+| Gränssnittsetikett | Förordning |
+| --- | --- |
+| [!UICONTROL CCPA] | The [!DNL California Consumer Privacy Act] |
+| [!UICONTROL GDPR] | Europeiska unionens [!DNL General Data Protection Regulation] |
+| [!UICONTROL PDPA_THA] | Thailand [!DNL Personal Data Protection Act] |
+| [!UICONTROL LGPD_BRA] | Brasilien [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL NZPA_NZL] | Nya Zeeland [!DNL Privacy Act] |
+| [!UICONTROL VCDPA_USA] | The [!DNL Virginia Consumer Data Protection Act] |
+| [!UICONTROL CPRA_USA] | The [!DNL California Consumer Privacy Rights Act (CPRA)] |
+| [!UICONTROL APA_AUS] | The [!DNL Australia Privacy Act (Privacy Act)] |
+| [!UICONTROL HIPAA_AUS] | The [!DNL Health Insurance Portability and Accountability Act] |
+
+{style=&quot;table-layout:auto&quot;}
+
+>[!NOTE]
+>
+>Se översikten på [sekretessbestämmelser](../regulations/overview.md) Mer information om den rättsliga ramen för varje förordning.
 
 Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper väljer du **[!UICONTROL Regulation Type]** och välj önskad regel i listan.
 

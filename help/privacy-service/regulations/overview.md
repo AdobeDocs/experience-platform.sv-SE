@@ -5,9 +5,9 @@ title: Översikt över sekretessbestämmelser
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller en översikt över de olika sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: 74624291b77e586c6adeb3e08b12a1dae92d419a
+source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '724'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller en översikt över de olika sekretessregler som stöds av Adobe Experience Cloud.
 
-Genom att använda Adobe Experience Platform Privacy Service stöder Experience Cloud begäran om åtkomst och radering enligt följande regler:
+Genom att använda [Adobe Experience Platform Privacy Service](../home.md)stöder Experience Cloud åtkomst- och borttagningsbegäranden enligt följande regler:
 
 | Förordning | Beskrivning |
 | --- | --- |
@@ -29,6 +29,8 @@ Genom att använda Adobe Experience Platform Privacy Service stöder Experience 
 | Nya Zeeland [!DNL Privacy Act] | The [Nya Zeeland [!DNL Privacy Act]](https://www.privacy.org.nz/privacy-act-2020/privacy-principles/) kontrollerar hur myndigheter kan samla in, använda, offentliggöra, lagra och ge tillgång till nyzeeländska medborgares och organisationers personuppgifter. Under 2020 infördes i den senaste versionen av lagen avsevärda uppdateringar av dessa integritetslagar, bland annat nya brott, höjda böter, obligatoriska anmälningar om dataintrång och ökade befogenheter för sekretesschefen. |
 | PDPA (Thailand) | The [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter. |
 | VCDPA (Virginia) | The [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) ger Virginias invånare nya rättigheter till dataintegritet (&quot;konsumenter&quot;), inklusive rätten att få tillgång till, radera och rätta personuppgifter. Konsumenterna har också rätt att välja bort försäljning av personuppgifter, välja bort profilering baserad på personuppgifter och behandling av personliga reklamändamål. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Nästa steg
 
