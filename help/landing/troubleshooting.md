@@ -7,7 +7,7 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: da3e93f6c10c89c173fff786604ef844f56081be
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1851'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform samt en guide på hög nivå om vanliga fel som kan uppstå i [!DNL Experience Platform] API. Felsökningsguider för enskilda användare [!DNL Platform] tjänster, se [tjänstfelsökningskatalog](#service-troubleshooting-directory) nedan.
 
-## Vanliga frågor och svar  {#faq}
+## Vanliga frågor och svar {#faq}
 
 Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform.
 
@@ -218,5 +218,5 @@ Här följer en lista med felsökningsguider och API-referensdokumentation för 
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] Vanliga frågor och felsökningsguide](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] och [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/) |  |
-| [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
+| [!DNL Real-Time Customer Profile] | [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
 | Sandlådor | [Sandbox-API](https://www.adobe.io/experience-platform-apis/references/sandbox) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |

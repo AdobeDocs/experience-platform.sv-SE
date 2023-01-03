@@ -5,7 +5,7 @@ title: Översikt över namnområde för identitet
 topic-legacy: overview
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1620'
 ht-degree: 0%
@@ -20,13 +20,13 @@ Identitetsnamnutrymmen är en komponent i [[!DNL Identity Service]](./home.md) s
 
 Att arbeta med identitetsnamnutrymmen kräver förståelse för de olika Adobe Experience Platform-tjänsterna. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
 - [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
 
 ## Identitetsnamnutrymmen
 
-En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. När postdata matchas mellan profilfragment, som när [!DNL Real-time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
+En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
 
 Två profilfragment kan till exempel innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;, vilket innebär att [!DNL Platform] kan se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för den individens identitet.
 

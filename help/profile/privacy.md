@@ -5,18 +5,18 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
 
 ---
 
-# Behandling av sekretessförfrågningar i [!DNL Real-time Customer Profile]
+# Behandling av sekretessförfrågningar i [!DNL Real-Time Customer Profile]
 
 Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om tillgång, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom den allmänna dataskyddsförordningen (GDPR), och [!DNL California Consumer Privacy Act] (CCPA).
 
-Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för [!DNL Real-time Customer Profile] inom Adobe Experience Platform.
+Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för [!DNL Real-Time Customer Profile] inom Adobe Experience Platform.
 
 >[!NOTE]
 >
@@ -30,7 +30,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 * [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [[!DNL Real-time Customer Profile]](home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Identitetsnamnutrymmen {#namespaces}
 
@@ -42,7 +42,7 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Öve
 
 ## Skicka begäranden {#submit}
 
-Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-time Customer Profile] med [!DNL Privacy Service] API eller gränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med [!DNL Privacy Service] API eller gränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
 
 >[!IMPORTANT]
 >
@@ -111,7 +111,7 @@ curl -X POST \
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön eller [!DNL Real-time Customer Profile], respektive.
+När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön eller [!DNL Real-Time Customer Profile], respektive.
 
 ![En begäran om åtkomstjobb skapas i användargränssnittet med alternativet Profil markerat under Produkter](./images/privacy/product-value.png)
 

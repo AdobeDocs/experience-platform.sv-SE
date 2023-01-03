@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Skapa en Adobe Campaign Managed Cloud Services-källanslutning med hjälp av plattformsgränssnittet
 description: Lär dig hur du ansluter Adobe Experience Platform till Adobe Campaign Managed Cloud Services med hjälp av plattformsgränssnittet.
 exl-id: 067ed558-b239-4845-8c85-3bf9b1d4caed
-source-git-commit: b9f032c903da2bdb9f37179b1693119bf7b0029d
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1105'
 ht-degree: 0%
@@ -137,7 +137,7 @@ På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabe
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde för att överföra leveransloggar för Campaign v8 och spårningsloggdata till Platform. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+I den här självstudiekursen har du skapat ett dataflöde för att överföra leveransloggar för Campaign v8 och spårningsloggdata till Platform. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)

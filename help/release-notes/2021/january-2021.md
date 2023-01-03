@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 exl-id: 6fb92e35-922c-47ba-8cf4-44edd92acfa1
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '717'
 ht-degree: 2%
@@ -20,7 +20,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Destinations]](#destinations)
-- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
 ## [!DNL Data Prep] {#data-prep}

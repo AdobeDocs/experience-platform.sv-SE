@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1519'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Slutpunkt för profilexportjobb
 
-[!DNL Real-time Customer Profile] Med kan ni skapa en enda vy över enskilda kunder genom att sammanföra data från flera källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning. Till exempel målgruppssegment från [!DNL Profile] data kan exporteras för aktivering och profilattribut kan exporteras för rapportering.
+[!DNL Real-Time Customer Profile] Med kan ni skapa en enda vy över enskilda kunder genom att sammanföra data från flera källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning. Till exempel målgruppssegment från [!DNL Profile] data kan exporteras för aktivering och profilattribut kan exporteras för rapportering.
 
 Det här dokumentet innehåller stegvisa instruktioner för att skapa och hantera exportjobb med [Profil-API](https://www.adobe.com/go/profile-apis-en).
 
@@ -26,11 +26,11 @@ Förutom att skapa ett exportjobb kan du även använda [!DNL Profile] data med 
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [!DNL Real-time Customer Profile] API. Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkterna som används i den här handboken är en del av [!DNL Real-Time Customer Profile] API. Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Skapa ett exportjobb
 
-Exporterar [!DNL Profile] data måste först skapa en datauppsättning som data exporteras till och sedan starta ett nytt exportjobb. Båda dessa steg kan uppnås med Experience Platform API:er, där den första använder Catalog Service API och den senare med hjälp av Real-time Customer Profile API. Detaljerade instruktioner för hur du slutför varje steg finns i följande avsnitt.
+Exporterar [!DNL Profile] data måste först skapa en datauppsättning som data exporteras till och sedan starta ett nytt exportjobb. Båda dessa steg kan uppnås med Experience Platform API:er, där den första använder Catalog Service API och den senare med hjälp av Real-Time Customer Profile API. Detaljerade instruktioner för hur du slutför varje steg finns i följande avsnitt.
 
 ### Skapa en måldatauppsättning
 
@@ -86,7 +86,7 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Initiera exportjobb {#initiate}
 
-När du har en datauppsättning som består av en union kan du skapa ett exportjobb som behåller profildata i datauppsättningen genom att göra en POST till `/export/jobs` slutpunkten i kundprofils-API:t i realtid och med information om de data som du vill exportera i förfrågningens innehåll.
+När du har en datauppsättning som består av en union kan du skapa ett exportjobb som behåller profildata i datauppsättningen genom att göra en POST till `/export/jobs` slutpunkten i Real-Time Customer Profile API och ger information om de data som du vill exportera i själva förfrågningen.
 
 **API-format**
 

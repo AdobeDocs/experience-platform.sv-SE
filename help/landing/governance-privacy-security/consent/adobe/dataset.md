@@ -5,7 +5,7 @@ title: Konfigurera en datauppsättning för att samla in samtycke- och inställn
 topic-legacy: getting started
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata
 
-För att Adobe Experience Platform ska kunna behandla dina data om kundens samtycke/preferens måste dessa data skickas till en datauppsättning vars schema innehåller fält som rör samtycke och andra behörigheter. Den här datauppsättningen måste baseras på [!DNL XDM Individual Profile] och har aktiverats för användning i [!DNL Real-time Customer Profile].
+För att Adobe Experience Platform ska kunna behandla dina data om kundens samtycke/preferens måste dessa data skickas till en datauppsättning vars schema innehåller fält som rör samtycke och andra behörigheter. Den här datauppsättningen måste baseras på [!DNL XDM Individual Profile] och har aktiverats för användning i [!DNL Real-Time Customer Profile].
 
 Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättning för att bearbeta medgivandedata i Experience Platform. En översikt över det fullständiga arbetsflödet för behandling av samtycke/inställningsdata i Platform finns i [översikt över godkännandehantering](./overview.md).
 
@@ -133,7 +133,7 @@ Om det schema du redigerade används av [!UICONTROL Profile Dataset] som anges i
 
 ## Skapa en datauppsättning baserat på ditt medgivandeschema {#dataset}
 
-När du har skapat ett schema med medgivandefält måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas medgivandedata. Den här datauppsättningen måste aktiveras för [!DNL Real-time Customer Profile].
+När du har skapat ett schema med medgivandefält måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas medgivandedata. Den här datauppsättningen måste aktiveras för [!DNL Real-Time Customer Profile].
 
 Börja genom att välja **[!UICONTROL Datasets]** i den vänstra navigeringen väljer du **[!UICONTROL Create dataset]** i det övre högra hörnet.
 
@@ -151,7 +151,7 @@ The **[!UICONTROL Configure dataset]** visas. Ange ett unikt, enkelt identifierb
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/dataset-details.png)
 
-Informationssidan för den nya datauppsättningen visas. Om datauppsättningen baseras på ditt tidsserieschema är processen slutförd. Om datauppsättningen baseras på ditt postschema är det sista steget i processen att aktivera datauppsättningen för användning i [!DNL Real-time Customer Profile].
+Informationssidan för den nya datauppsättningen visas. Om datauppsättningen baseras på ditt tidsserieschema är processen slutförd. Om datauppsättningen baseras på ditt postschema är det sista steget i processen att aktivera datauppsättningen för användning i [!DNL Real-Time Customer Profile].
 
 I den högra listen väljer du **[!UICONTROL Profile]** växla.
 

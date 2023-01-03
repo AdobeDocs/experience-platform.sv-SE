@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 exl-id: 98d50b90-38ed-4cc2-ad48-78b712b453f7
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '655'
 ht-degree: 3%
@@ -25,7 +25,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från din [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
+Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från din [!DNL Real-Time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 

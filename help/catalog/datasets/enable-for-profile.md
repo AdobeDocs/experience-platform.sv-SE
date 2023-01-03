@@ -4,7 +4,7 @@ title: Aktivera en datauppsättning för profil- och identitetstjänsten med API
 type: Tutorial
 description: I den här självstudiekursen visas hur du aktiverar en datauppsättning för användning med kundprofil och identitetstjänst i realtid med Adobe Experience Platform API:er.
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: 132407af947b97a1925799a1fb5e12caa2b0410c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1073'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Aktivera en datauppsättning för [!DNL Profile] och [!DNL Identity Service] använda API:er
 
-I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för användning i [!DNL Real-time Customer Profile] och [!DNL Identity Service], indelat i följande steg:
+I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för användning i [!DNL Real-Time Customer Profile] och [!DNL Identity Service], indelat i följande steg:
 
-1. Aktivera en datauppsättning för användning i [!DNL Real-time Customer Profile], med ett av två alternativ:
+1. Aktivera en datauppsättning för användning i [!DNL Real-Time Customer Profile], med ett av två alternativ:
    - [Skapa en ny datauppsättning](#create-a-dataset-enabled-for-profile-and-identity)
    - [Konfigurera en befintlig datauppsättning](#configure-an-existing-dataset)
 1. [Infoga data i datauppsättningen](#ingest-data-into-the-dataset)
@@ -26,9 +26,9 @@ I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för
 
 Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för dessa relaterade [!DNL Platform] tjänster:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
-- [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
+- [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-Time Customer Profile] och [!DNL Identity Service].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
@@ -107,11 +107,11 @@ Ett lyckat svar visar en array som innehåller ID:t för den nya datauppsättnin
 
 ## Konfigurera en befintlig datauppsättning {#configure-an-existing-dataset}
 
-Följande steg beskriver hur du aktiverar en tidigare skapad datauppsättning för [!DNL Real-time Customer Profile] och [!DNL Identity Service]. Om du redan har skapat en profilaktiverad datauppsättning går du vidare till stegen för [inhämta data](#ingest-data-into-the-dataset).
+Följande steg beskriver hur du aktiverar en tidigare skapad datauppsättning för [!DNL Real-Time Customer Profile] och [!DNL Identity Service]. Om du redan har skapat en profilaktiverad datauppsättning går du vidare till stegen för [inhämta data](#ingest-data-into-the-dataset).
 
 ### Kontrollera om datauppsättningen är aktiverad {#check-if-the-dataset-is-enabled}
 
-Använda [!DNL Catalog] API, du kan undersöka en befintlig datamängd för att avgöra om den är aktiverad för användning i [!DNL Real-time Customer Profile] och [!DNL Identity Service]. Följande anrop hämtar information om en datauppsättning per ID.
+Använda [!DNL Catalog] API, du kan undersöka en befintlig datamängd för att avgöra om den är aktiverad för användning i [!DNL Real-Time Customer Profile] och [!DNL Identity Service]. Följande anrop hämtar information om en datauppsättning per ID.
 
 **API-format**
 
@@ -185,7 +185,7 @@ curl -X GET \
 }
 ```
 
-Under `tags` -egenskapen ser du att `unifiedProfile` och `unifiedIdentity` finns båda med värdet `enabled:true`. Därför [!DNL Real-time Customer Profile] och [!DNL Identity Service] är aktiverade för den här datauppsättningen.
+Under `tags` -egenskapen ser du att `unifiedProfile` och `unifiedIdentity` finns båda med värdet `enabled:true`. Därför [!DNL Real-Time Customer Profile] och [!DNL Identity Service] är aktiverade för den här datauppsättningen.
 
 ### Aktivera datauppsättningen {#enable-the-dataset}
 
@@ -230,14 +230,14 @@ En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som inneh�
 
 ## Infoga data i datauppsättningen {#ingest-data-into-the-dataset}
 
-Båda [!DNL Real-time Customer Profile] och [!DNL Identity Service] förbruka XDM-data när de hämtas in till en datauppsättning. Instruktioner om hur du överför data till en datauppsättning finns i självstudiekursen om [skapa en datauppsättning med API:er](../../catalog/datasets/create.md). När du planerar vilka data som ska skickas till [!DNL Profile]-aktiverad datauppsättning, använd följande metodtips:
+Båda [!DNL Real-Time Customer Profile] och [!DNL Identity Service] förbruka XDM-data när de hämtas in till en datauppsättning. Instruktioner om hur du överför data till en datauppsättning finns i självstudiekursen om [skapa en datauppsättning med API:er](../../catalog/datasets/create.md). När du planerar vilka data som ska skickas till [!DNL Profile]-aktiverad datauppsättning, använd följande metodtips:
 
 - Inkludera alla data som du vill använda som segmenteringskriterier.
 - Ta med så många identifierare du kan identifiera från dina profildata för att maximera identitetsdiagrammet. Detta gör att [!DNL Identity Service] att knyta samman identiteter i olika datauppsättningar effektivare.
 
-## Bekräfta datainhämtning med [!DNL Real-time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
+## Bekräfta datainhämtning med [!DNL Real-Time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
 
-När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts som förväntat. Använda [!DNL Real-time Customer Profile] Med åtkomst-API kan du hämta batchdata när de läses in i en datauppsättning. Om du inte kan hämta någon av de enheter som du förväntar dig kanske din datauppsättning inte är aktiverad för [!DNL Real-time Customer Profile]. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar. Detaljerade anvisningar om hur du använder [!DNL Real-time Customer Profile] API för åtkomst [!DNL Profile] data, se [slutpunktsguide för enheter](../../profile/api/entities.md), som också kallas[!DNL Profile Access]&quot; API.
+När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts som förväntat. Använda [!DNL Real-Time Customer Profile] Med åtkomst-API kan du hämta batchdata när de läses in i en datauppsättning. Om du inte kan hämta någon av de enheter som du förväntar dig kanske din datauppsättning inte är aktiverad för [!DNL Real-Time Customer Profile]. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar. Detaljerade anvisningar om hur du använder [!DNL Real-Time Customer Profile] API för åtkomst [!DNL Profile] data, se [slutpunktsguide för enheter](../../profile/api/entities.md), som också kallas[!DNL Profile Access]&quot; API.
 
 ## Bekräfta datainhämtning via identitetstjänsten {#confirm-data-ingest-by-identity-service}
 

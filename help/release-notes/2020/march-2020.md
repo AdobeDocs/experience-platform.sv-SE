@@ -6,7 +6,7 @@ last-update: March 10, 2020
 author: ens71067
 keywords: Versionsinformation.
 exl-id: 407c2bac-4c8a-4939-b3dd-788250f15650
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 3%
@@ -111,7 +111,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | ------- | ----------- |
 | Undertryckta signaler för Adobe Audience Manager Connector | Signalnivådata från Audience Manager kommer inte längre att skickas. Observera att segmentmedlemskap för Traits and Segments fortfarande inkluderas. Till följd av den här ändringen kommer inkommande datauppsättningar inte längre att genereras. |
 | Ändrade namn på datauppsättningar | Datauppsättningar som genereras av Audience Manager-kopplingen har uppdaterade namn och beskrivningar. |
-| Aktivera [!DNL Profile] växla i Audience Manger | [!DNL Profile] växlingsknappen kan aktiveras eller inaktiveras för att höja upp datauppsättningen till [!DNL Real-time Customer Profile]. Växla aktiveras som standard. |
+| Aktivera [!DNL Profile] växla i Audience Manger | [!DNL Profile] växlingsknappen kan aktiveras eller inaktiveras för att höja upp datauppsättningen till [!DNL Real-Time Customer Profile]. Växla aktiveras som standard. |
 | Användargränssnittsstöd för molnlagringssystem | Ny källkoppling för [!DNL Azure Data Lake Storage Gen2] i användargränssnittet. |
 | Gränssnittsstöd för CRM-system | Ny källkoppling för [!DNL HubSpot], [!DNL Salesforce Service Cloud]och [!DNL ServiceNow] i användargränssnittet. |
 | Användargränssnittsstöd för databassystem | Ny källkoppling för [!DNL AWS Redshift], [!DNL Google BigQuery], [!DNL MariaDB], [!DNL Microsoft SQL Server]och [!DNL MySQL] i användargränssnittet. |

@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för profilsystemjobb
 topic-legacy: guide
 type: Documentation
-description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller en batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
+description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1316'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Slutpunkt för profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data insamlade i [!DNL Platform] lagras i [!DNL Data Lake]och om datauppsättningarna har aktiverats för profilen lagras dessa data i [!DNL Real-time Customer Profile] även datalagring. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-time Customer Profile] API för att skapa en [!DNL Profile] systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data insamlade i [!DNL Platform] lagras i [!DNL Data Lake]och om datauppsättningarna har aktiverats för profilen lagras dessa data i [!DNL Real-Time Customer Profile] även datalagring. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-Time Customer Profile] API för att skapa en [!DNL Profile] systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ Med Adobe Experience Platform kan ni importera data från flera olika källor oc
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Visa borttagningsbegäranden
 

@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till profiltjänsten med dataprep
 description: Det här dokumentet innehåller information om hur du skickar uppdateringar (del av rad) till profiltjänsten med hjälp av Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: 4e24552c441c9096ef1139df66ad07d89f08a5d6
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%

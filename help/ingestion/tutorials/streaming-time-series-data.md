@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: cedc53b78ea8eb8f3e93178b60ebe49b90c11650
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1204'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Den här självstudiekursen hjälper dig att börja använda API:er för direktu
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md): En omfattande guide som täcker alla tillgängliga slutpunkter i [!DNL Schema Registry] API och hur du anropar dem. Detta innefattar att känna till `{TENANT_ID}`, som visas i anrop genom den här självstudiekursen, samt hur du skapar scheman, som används för att skapa en datauppsättning för inhämtning.
 
 Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i [skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
@@ -78,7 +78,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | Namnet som du vill använda för ditt schema. Namnet måste vara unikt. |
 | `description` | En meningsfull beskrivning av schemat som du skapar. |
-| `meta:immutableTags` | I det här exemplet `union` -taggen används för att lagra data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
+| `meta:immutableTags` | I det här exemplet `union` -taggen används för att lagra data i [[!DNL Real-Time Customer Profile]](../../profile/home.md). |
 
 **Svar**
 
@@ -166,7 +166,7 @@ Lägg sedan till en [identitetsbeskrivare](../../xdm/api/descriptors.md) till sc
 
 1. E-postadressen till arbetet blir ett obligatoriskt fält. Det innebär att meddelanden som skickas utan det här fältet inte kan valideras och inte kan importeras.
 
-2. [!DNL Real-time Customer Profile] kommer att använda e-postadressen till arbetet som en identifierare för att sammanfoga mer information om den personen.
+2. [!DNL Real-Time Customer Profile] kommer att använda e-postadressen till arbetet som en identifierare för att sammanfoga mer information om den personen.
 
 ### Begäran
 
@@ -226,7 +226,7 @@ När du har skapat schemat måste du skapa en datauppsättning för att kunna im
 
 >[!NOTE]
 >
->Den här datauppsättningen kommer att aktiveras för **[!DNL Real-time Customer Profile]** och **[!DNL Identity]** genom att ange lämpliga taggar.
+>Den här datauppsättningen kommer att aktiveras för **[!DNL Real-Time Customer Profile]** och **[!DNL Identity]** genom att ange lämpliga taggar.
 
 **API-format**
 

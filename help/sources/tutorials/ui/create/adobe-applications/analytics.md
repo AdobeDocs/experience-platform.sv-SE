@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 28e7f10529daa8df56534e6ada129a52d3f7604d
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2210'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Flera ingående anslutningar kan göras för att överföra flera rapportsviter 
 
 >[!NOTE]
 >
->Data från flera rapportsviter kan bara aktiveras för kundprofiler i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd.
+>Data från flera rapportsviter kan bara aktiveras för kundprofilen i realtid om det inte finns några datakonflikter, till exempel två anpassade egenskaper (eVars, lists och props) som har olika innebörd.
 
 Skapa en [!DNL Analytics] källanslutning, välj en rapportserie och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
@@ -290,9 +290,9 @@ Om du vill ta bort ett dataflöde går du till [!UICONTROL Dataflows] och sedan 
 
 ## Nästa steg och ytterligare resurser
 
-När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är klart, [!DNL Analytics] data och användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-time Customer Profile] och segmenteringstjänst. Mer information finns i följande dokument:
+När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är klart, [!DNL Analytics] data och användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-Time Customer Profile] och segmenteringstjänst. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)
 * [[!DNL Query Service] översikt](../../../../../query-service/home.md)

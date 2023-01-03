@@ -4,7 +4,7 @@ title: Användargränssnittshandbok för kopplingsprofiler
 type: Documentation
 description: När data från flera källor samlas i Experience Platform är sammanslagningsprinciper de regler som används i plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. I den här handboken finns stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i Adobe Experience Platform användargränssnitt.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: e94756254a24ecadd7359589cd14cfb0745c789c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2195'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Om du vill veta mer om kopplingsregler och vilken roll de spelar i Experience Pl
 Handboken kräver en fungerande förståelse för flera viktiga [!DNL Experience Platform] funktioner. Innan du följer den här handboken bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil i realtid](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in i [!DNL Platform].
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
 * [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Visa kopplingsprinciper {#view-merge-policies}

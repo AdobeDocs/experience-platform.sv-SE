@@ -4,7 +4,7 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: af01ac288a8afe59105be5859b2d40de5e346963
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3165'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # [!UICONTROL Profiles] kontrollpanel
 
-I Adobe Experience Platform användargränssnitt finns en kontrollpanel där du kan visa viktig information om ditt [!DNL Real-time Customer Profile] data, enligt vad som tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med profilkontrollpanelen i användargränssnittet, och den innehåller information om de mått som visas på kontrollpanelen.
+I Adobe Experience Platform användargränssnitt finns en kontrollpanel där du kan visa viktig information om ditt [!DNL Real-Time Customer Profile] data, enligt vad som tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med profilkontrollpanelen i användargränssnittet, och den innehåller information om de mått som visas på kontrollpanelen.
 
-En översikt över alla profilfunktioner i användargränssnittet i Experience Platform finns i [Användargränssnittsguide för kundprofiler i realtid](../../profile/ui/user-guide.md).
+En översikt över alla profilfunktioner i användargränssnittet i Experience Platform finns i [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md).
 
 ## Data för kontrollpanel för profil
 
@@ -73,7 +73,7 @@ Mer information om profilvisningsfunktionerna i plattformsgränssnittet finns i 
 
 ## Sammanfoga profiler {#merge-policies}
 
-De mätvärden som visas på profilpanelen baseras på sammanslagningsprinciper som tillämpas på kundprofildata i realtid. När data samlas in från flera källor för att skapa kundprofilen kan data innehålla värden som är i konflikt. En datauppsättning kan till exempel visa en kund som&quot;enkel&quot; medan en annan datauppsättning kan visa kunden som&quot;gift&quot;. Det är huvudsyftet med sammanfogningsprincipen att avgöra vilka data som ska prioriteras och visas som en del av profilen.
+De mätvärden som visas på profilpanelen baseras på sammanslagningsprinciper som tillämpas på dina kundprofildata i realtid. När data samlas in från flera källor för att skapa kundprofilen kan data innehålla värden som är i konflikt. En datauppsättning kan till exempel visa en kund som&quot;enkel&quot; medan en annan datauppsättning kan visa kunden som&quot;gift&quot;. Det är huvudsyftet med sammanfogningsprincipen att avgöra vilka data som ska prioriteras och visas som en del av profilen.
 
 Mer information om kopplingsprofiler, inklusive hur du skapar, redigerar och deklarerar en standardkopplingsprofil för din organisation, finns i [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md).
 
@@ -226,7 +226,7 @@ The **[!UICONTROL Identity overlap]** widgeten använder ett Venndiagram, eller 
 
 Använd widgetens listrutor för att välja de identiteter som du vill jämföra. Cirklar visar det relativa totala antalet profiler som innehåller varje identitet. Antalet profiler som innehåller båda identiteterna representeras av storleken på överlappningen mellan cirklarna. Om en kund interagerar med ert varumärke i mer än en kanal kopplas flera identiteter till den enskilda kunden, och därför är det troligt att organisationen har flera profiler som innehåller fragment från mer än en identitet.
 
-Mer information om profilfragment finns i avsnittet om [profilfragment jämfört med sammanslagna profiler](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) i realtidsöversikten över kundprofiler.
+Mer information om profilfragment finns i avsnittet om [profilfragment jämfört med sammanslagna profiler](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) i realtidsöversikten över kundprofilen.
 
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
@@ -434,4 +434,4 @@ The three levels of completeness are:
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna hitta profilkontrollpanelen och förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om att arbeta med [!DNL Profile] data i användargränssnittet för Experience Platform, se [Användargränssnittsguide för kundprofiler i realtid](../../profile/ui/user-guide.md).
+Genom att följa det här dokumentet bör du nu kunna hitta profilkontrollpanelen och förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om att arbeta med [!DNL Profile] data i användargränssnittet för Experience Platform, se [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md).

@@ -5,7 +5,7 @@ title: Grundläggande om schemakomposition
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: bd40388d710f8b135c0d36716b0ec59c8c9b78ee
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '4062'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Scheman för både post- och tidsserier innehåller en karta över identiteter (
 
 Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data kan användas för flera tjänster för att skapa en enda, enhetlig vy av en enskild enhet. Därför är det viktigt att tänka på scheman när det gäller kundidentiteter och vilka fält som kan användas för att identifiera ett ämne oavsett varifrån data kommer.
 
-Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data har matats in infogas uppgifterna i dessa fält i[!UICONTROL Identity Graph]&quot; för den där individen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] för att ge en sammanslagen bild av varje enskild kund.
+Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data har matats in infogas uppgifterna i dessa fält i[!UICONTROL Identity Graph]&quot; för den där individen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] för att ge en sammanslagen bild av varje enskild kund.
 
 Fält som vanligen markeras som &quot;[!UICONTROL Identity]&quot; inkluderar: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de kan vara bra &quot;[!UICONTROL Identity]även fält.
 
@@ -114,7 +114,7 @@ Som visas i exemplet ovan finns varje tangent i `identityMap` -objektet represen
 
 >[!NOTE]
 >
->Ett booleskt värde för om värdet är en primär identitet (`primary`) kan också anges för varje identitetsvärde. Primära identiteter behöver bara anges för scheman som är avsedda att användas i [!DNL Real-time Customer Profile]. Se avsnittet om [unionsscheman](#union) för mer information.
+>Ett booleskt värde för om värdet är en primär identitet (`primary`) kan också anges för varje identitetsvärde. Primära identiteter behöver bara anges för scheman som är avsedda att användas i [!DNL Real-Time Customer Profile]. Se avsnittet om [unionsscheman](#union) för mer information.
 
 ### Principer för schemautveckling {#evolution}
 
@@ -273,7 +273,7 @@ while [!DNL Experience Platform] gör att du kan skapa scheman för särskilda a
 
 ![](../images/schema-composition/union.png)
 
-Genom att aktivera ett schema för användning med [!DNL Real-time Customer Profile], kommer den att inkluderas i unionen för den typen av klass. [!DNL Profile] ger robusta, centraliserade profiler av kundattribut samt ett tidsstämplat konto för varje händelse som kunden har haft i alla system som är integrerade med [!DNL Platform]. [!DNL Profile] använder unionsvyn för att representera dessa data och ge en helhetsbild av varje enskild kund.
+Genom att aktivera ett schema för användning med [!DNL Real-Time Customer Profile], kommer den att inkluderas i unionen för den typen av klass. [!DNL Profile] ger robusta, centraliserade profiler av kundattribut samt ett tidsstämplat konto för varje händelse som kunden har haft i alla system som är integrerade med [!DNL Platform]. [!DNL Profile] använder unionsvyn för att representera dessa data och ge en helhetsbild av varje enskild kund.
 
 Mer information om hur du arbetar med [!DNL Profile], se [Översikt över kundprofiler i realtid](../../profile/home.md).
 

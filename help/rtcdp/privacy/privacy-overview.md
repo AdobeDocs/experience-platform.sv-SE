@@ -3,7 +3,7 @@ keywords: datastyrning rtcdp;rtcdp datastyrning;kunddataprofildatastyrning i rea
 title: Integritet i Real-time Customer Data Platform
 description: Med Adobe Real-time Customer Data Platform kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Lagliga sekretessregler som [!DNL General Data Protection Regulation] (GDPR) och
 
 ## Avanmälningsfunktioner
 
-[!DNL Real-Time CDP] ger kunderna möjlighet att välja bort att deras personuppgifter ska ingå i användningsfall för segmentering. Kundernas avanmälningsinställningar hämtas och lagras av [!DNL Real-time Customer Profile]och kan framtvingas genom att man utesluter användare som har avanmält sig från ett segment med hjälp av boolesk logik (&quot;AND NOT&quot;) i segmentpredikatet.
+[!DNL Real-Time CDP] ger kunderna möjlighet att välja bort att deras personuppgifter ska ingå i användningsfall för segmentering. Kundernas avanmälningsinställningar hämtas och lagras av [!DNL Real-Time Customer Profile]och kan framtvingas genom att man utesluter användare som har avanmält sig från ett segment med hjälp av boolesk logik (&quot;AND NOT&quot;) i segmentpredikatet.
 
 Visa dokumentet på [uppfylla avanmälningsbegäranden](../../segmentation/consents.md) mer information finns i dokumentationen till Adobe Experience Platform Segmentation Service.
 

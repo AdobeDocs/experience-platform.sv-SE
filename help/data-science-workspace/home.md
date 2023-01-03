@@ -5,7 +5,7 @@ title: Översikt över arbetsytan Datavetenskap
 topic-legacy: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen för Data Science Workspace i Adobe Experience Platform.
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: 4119242fef46d916e90e1dfb95f7e8fb9e8902f0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Med [!DNL Data Science Workspace]kan era datavetare effektivisera den krångliga
 
 Data är hörnstenen i AI och maskininlärning.
 
-[!DNL Data Science Workspace] är helt integrerat med Adobe Experience Platform, inklusive Data Lake, [!DNL Real-time Customer Profile]och [!DNL Unified Edge]. Utforska alla era organisationsdata som lagras i Adobe Experience Platform samtidigt, tillsammans med gemensamma big data- och deep learning-bibliotek, som [!DNL Spark] ML och [!DNL TensorFlow]. Om du inte hittar det du behöver kan du importera egna datauppsättningar med XDM:s standardiserade schema.
+[!DNL Data Science Workspace] är helt integrerat med Adobe Experience Platform, inklusive Data Lake, [!DNL Real-Time Customer Profile]och [!DNL Unified Edge]. Utforska alla era organisationsdata som lagras i Adobe Experience Platform samtidigt, tillsammans med gemensamma big data- och deep learning-bibliotek, som [!DNL Spark] ML och [!DNL TensorFlow]. Om du inte hittar det du behöver kan du importera egna datauppsättningar med XDM:s standardiserade schema.
 
 ### Fördefinierade maskininlärningsrecept
 

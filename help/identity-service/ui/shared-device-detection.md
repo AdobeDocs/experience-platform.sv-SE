@@ -5,7 +5,7 @@ description: Delad enhetsidentifiering identifierar olika autentiserade använda
 hide: true
 hidefromtoc: true
 exl-id: 36318163-ba07-4209-b1be-dc193ab7ba41
-source-git-commit: 75362c67e1a8a31a449cb4c9dd618515325d36f0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1331'
 ht-degree: 0%
@@ -92,7 +92,7 @@ När [!DNL Shared Device Detection] är aktiverat, [!DNL Profile] definierar den
 
 An **händelse för autentiserad upplevelse** är en åtgärd som utförs av en användare när han/hon är inloggad på en enhet. För händelser för autentiserade upplevelser är den primära identiteten **Namnområde för användaridentitet** (Inloggnings-ID). An **oautentiserad upplevelsehändelse** är en åtgärd som utförs av en användare som inte är inloggad på en enhet. För oautentiserade upplevelsehändelser är den primära identiteten **Namnområde för delad identitet** (ECID).
 
-Mer information finns i  [[!DNL Real-time Customer Profile] översikt](../../profile/home.md).
+Mer information finns i  [[!DNL Real-Time Customer Profile] översikt](../../profile/home.md).
 
 ## Gränssnitt för delade enheter
 

@@ -5,7 +5,7 @@ title: Översikt över segmentmatchning
 topic-legacy: overview
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 2329065b938d97f48a23be5250fec535355db770
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1919'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Det första steget till att komma igång med [!DNL Segment Match] är att kontro
 
 Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../../identity-service/home.md). Varje kundidentitet innehåller ett associerat namnutrymme som anger identitetsens kontext. Ett namnutrymme kan till exempel skilja på värdet &quot;name&quot;<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID.
 
-En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. Vid matchning av postdata mellan profilfragment (till exempel när [!DNL Real-time Customer Profile] sammanfogar profildata), måste både identitetsvärdet och namnutrymmet matcha.
+En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. Vid matchning av postdata mellan profilfragment (till exempel när [!DNL Real-Time Customer Profile] sammanfogar profildata), måste både identitetsvärdet och namnutrymmet matcha.
 
 I samband med [!DNL Segment Match]används namnutrymmen i överlappningsprocessen när data delas.
 
@@ -204,4 +204,4 @@ Genom att läsa det här dokumentet har du fått en förståelse för [!DNL Segm
 
 * [[!DNL Segmentation Service]](../../home.md)
 * [[!DNL Identity Service]](../../../identity-service/home.md)
-* [[!DNL Real-time Customer Profile] översikt](../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](../../../profile/home.md)

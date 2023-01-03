@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2161'
 ht-degree: 2%
@@ -29,7 +29,7 @@ Uppdateringar av befintliga funktioner:
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations] Tjänst](#destinations)
 - [[!DNL Intelligent Services]](#intelligent-services)
-- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
 ## Adobe Experience Platform Data Lake-migrering {#migration}
@@ -60,7 +60,7 @@ Mer information finns i [åtkomstkontroll - översikt](../../access-control/home
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Centraliserat erbjudandebibliotek | Gränssnittet där du skapar och hanterar de olika elementen som utgör erbjudandena och definierar deras regler och begränsningar. |
-| Beslutsmotor för erbjudande | Beslutsmotorn för erbjudandet utnyttjar [!DNL Platform] data och [!DNL Real-time Customer Profiles], tillsammans med erbjudandebiblioteket, för att välja rätt tidpunkt, kunder och kanaler som erbjudandena ska levereras till. |
+| Beslutsmotor för erbjudande | Beslutsmotorn för erbjudandet utnyttjar [!DNL Platform] data och [!DNL Real-Time Customer Profiles], tillsammans med erbjudandebiblioteket, för att välja rätt tidpunkt, kunder och kanaler som erbjudandena ska levereras till. |
 
 Mer information finns i [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en) dokumentation.
 

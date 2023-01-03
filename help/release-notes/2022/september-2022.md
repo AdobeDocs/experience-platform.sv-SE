@@ -1,7 +1,8 @@
 ---
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
-source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
+exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 1%

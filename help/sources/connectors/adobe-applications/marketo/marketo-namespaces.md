@@ -5,7 +5,7 @@ title: B2B-namnutrymmen och scheman
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1707'
 ht-degree: 1%

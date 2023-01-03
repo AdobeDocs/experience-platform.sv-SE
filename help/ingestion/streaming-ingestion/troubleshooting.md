@@ -5,7 +5,7 @@ title: Felsökningsguide för direktuppspelning av inmatningsproblem
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform.
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1019'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning p�
 
 Adobe Experience Platform [!DNL Data Ingestion] innehåller RESTful-API:er som du kan använda för att importera data till [!DNL Experience Platform]. Inkapslade data används för att uppdatera enskilda kundprofiler i nära realtid, så att ni kan leverera personaliserade, relevanta upplevelser över flera kanaler. Läs [Översikt över datainmatning](../home.md) om du vill ha mer information om tjänsten och de olika intagsmetoderna. Anvisningar om hur du använder API:er för direktuppspelning finns i [översikt över direktuppspelning](../streaming-ingestion/overview.md).
 
-## Vanliga frågor och svar 
+## Vanliga frågor och svar
 
 Nedan följer en lista med svar på vanliga frågor om direktuppspelning.
 
@@ -46,9 +46,9 @@ Om synkron validering inte stöds för den begärda platsen returneras ett 501-f
 
 [!DNL Experience Platform] har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras IMS Organization ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till [!DNL Platform], se guiden på [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
 
-### Vad är fördröjningen för direktuppspelning av data till? [!DNL Real-time Customer Profile]?
+### Vad är fördröjningen för direktuppspelning av data till? [!DNL Real-Time Customer Profile]?
 
-Strömmade händelser återspeglas i allmänhet i [!DNL Real-time Customer Profile] på under 60 sekunder. Faktiska latenser kan variera beroende på datavolym, meddelandestorlek och bandbreddsbegränsningar.
+Strömmade händelser återspeglas i allmänhet i [!DNL Real-Time Customer Profile] på under 60 sekunder. Faktiska latenser kan variera beroende på datavolym, meddelandestorlek och bandbreddsbegränsningar.
 
 ### Kan jag inkludera flera meddelanden i samma API-begäran?
 
@@ -94,9 +94,9 @@ Följande JSON är ett exempelsvarsobjekt för en API-begäran med två meddelan
 }
 ```
 
-### Varför tas mina skickade meddelanden inte emot av [!DNL Real-time Customer Profile]?
+### Varför tas mina skickade meddelanden inte emot av [!DNL Real-Time Customer Profile]?
 
-If [!DNL Real-time Customer Profile] avvisar ett meddelande. Det beror troligtvis på felaktig identitetsinformation. Detta kan bero på att ett ogiltigt värde eller namnutrymme har angetts för en identitet.
+If [!DNL Real-Time Customer Profile] avvisar ett meddelande. Det beror troligtvis på felaktig identitetsinformation. Detta kan bero på att ett ogiltigt värde eller namnutrymme har angetts för en identitet.
 
 Det finns två typer av identitetsnamnutrymmen: standard och anpassad. Kontrollera att namnutrymmet har registrerats i [!DNL Identity Service]. Se [Översikt över namnutrymmet identity](../../identity-service/namespaces.md) om du vill ha mer information om hur du använder standardnamnutrymmen och anpassade namnutrymmen.
 

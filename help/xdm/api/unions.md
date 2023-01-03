@@ -5,7 +5,7 @@ title: Unisions API-slutpunkt
 description: Med slutpunkten /union i API:t för schemaregister kan du programmässigt hantera XDM-föreningsscheman i ditt upplevelseprogram.
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '911'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Unions slutpunkt
 
-Unioner (eller unionsvyer) är systemgenererade, skrivskyddade scheman som sammanställer fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] eller [!DNL XDM Individual Profile]) och aktiveras för [[!DNL Real-time Customer Profile]](../../profile/home.md).
+Unioner (eller unionsvyer) är systemgenererade, skrivskyddade scheman som sammanställer fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] eller [!DNL XDM Individual Profile]) och aktiveras för [[!DNL Real-Time Customer Profile]](../../profile/home.md).
 
 Det här dokumentet innehåller viktiga koncept för att arbeta med fackföreningar i API:t för schemaregister, inklusive exempelanrop för olika åtgärder. Mer allmän information om fackföreningar i XDM finns i avsnittet om fackföreningar i [grunderna för schemakomposition](../schema/composition.md#union).
 

@@ -4,7 +4,7 @@ title: Fältgrupp för innehåll och inställningar
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '896'
 ht-degree: 0%
@@ -182,7 +182,7 @@ Se självstudiekursen om [skapa ett schema i användargränssnittet](https://www
 
 >[!IMPORTANT]
 >
->Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile]måste du skapa en [!DNL Profile]-aktiverat schema baserat på [!DNL XDM Individual Profile] klassen som innehåller [!UICONTROL Consents and Preferences] fältgrupp. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile] krav för scheman och datauppsättningar.
+>Om du vill skicka medgivandedata till [!DNL Real-Time Customer Profile]måste du skapa en [!DNL Profile]-aktiverat schema baserat på [!DNL XDM Individual Profile] klassen som innehåller [!UICONTROL Consents and Preferences] fältgrupp. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-Time Customer Profile] krav för scheman och datauppsättningar.
 >
 >Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Se översikten på [sammanfogningsprinciper](../../../rtcdp/profile/merge-policies.md) för mer information.
 

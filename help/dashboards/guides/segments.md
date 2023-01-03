@@ -4,7 +4,7 @@ title: Stödlinje för instrumentpanel för segment
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om segment som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: e5a4fddbd7f5b14280e283871d8b66a2e2f2407d
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1992'
 ht-degree: 0%

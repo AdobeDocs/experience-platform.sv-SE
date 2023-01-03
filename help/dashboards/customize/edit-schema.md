@@ -3,7 +3,7 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Redigera schema för att skapa anpassade instrumentpanelswidgetar
 description: Den här guiden innehåller stegvisa instruktioner för att välja attribut och konfigurera organisationens schema för att skapa anpassade widgetar för Adobe Experience Platform-instrumentpaneler.
 exl-id: a744eb24-5ba7-4971-9183-3f891e807863
-source-git-commit: 9b89effa6f90fb513fac9d0b826722ab05020036
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Redigera schema för att skapa anpassade widgetar
 
-Om du vill skapa anpassade widgetar för Adobe Experience Platform-instrumentpaneler måste du först identifiera de kundprofilattribut i realtid som widgetarna ska baseras på.
+Om du vill skapa anpassade widgetar för Adobe Experience Platform-instrumentpaneler måste du först identifiera de attribut för kundprofil i realtid som widgetarna ska baseras på.
 
 Den här guiden innehåller stegvisa instruktioner för hur du redigerar organisationens schema genom att välja attribut för att skapa anpassade instrumentpanelswidgetar.
 

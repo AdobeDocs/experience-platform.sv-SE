@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2566'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 Att arbeta med segmentdefinitioner kräver en förståelse för de olika [!DNL Experience Platform] tjänster som rör segmentering. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] kan du dela upp data som lagras i [!DNL Experience Platform] som rör individer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper.
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att överbrygga identiteter från olika datakällor som hämtas in i [!DNL Platform].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
@@ -156,7 +156,7 @@ Exempelstorleken för genomsökningen beror på det totala antalet enheter i din
 | 1 till 20 miljoner | 1 miljon |
 | Över 20 miljoner | 5 % av det totala |
 
-Mer detaljerad information om varje [!DNL Profile] kan du se genom att välja [!DNL Profile] ID. Mer information om en profils detaljer finns i [[!DNL Real-time Customer Profile] användarhandbok](../../profile/ui/user-guide.md#profile-detail).
+Mer detaljerad information om varje [!DNL Profile] kan du se genom att välja [!DNL Profile] ID. Mer information om en profils detaljer finns i [[!DNL Real-Time Customer Profile] användarhandbok](../../profile/ui/user-guide.md#profile-detail).
 
 ![Exempelprofilerna för segmentdefinitionen markeras. Exempelprofilinformationen innehåller profil-ID, förnamn, efternamn och personens e-postadress.](../images/ui/overview/segment-details-profiles.png)
 
@@ -176,7 +176,7 @@ Mer detaljerad information om hur du använder [!DNL Segment Builder] arbetsytan
 
 ## Schemalagd segmentering {#scheduled-segmentation}
 
-När segmentdefinitionerna har skapats kan du utvärdera dem vid behov eller genom en schemalagd (kontinuerlig) utvärdering. Utvärdering innebär att flytta [!DNL Real-time Customer Profile] data genom segmentdefinitioner för att producera motsvarande målgrupper. När målgrupperna har skapats sparas och lagras de så att de kan exporteras med [!DNL Experience Platform] API:er.
+När segmentdefinitionerna har skapats kan du utvärdera dem vid behov eller genom en schemalagd (kontinuerlig) utvärdering. Utvärdering innebär att flytta [!DNL Real-Time Customer Profile] data genom segmentdefinitioner för att producera motsvarande målgrupper. När målgrupperna har skapats sparas och lagras de så att de kan exporteras med [!DNL Experience Platform] API:er.
 
 I On-demand-utvärderingen ingår att använda API:t för att utvärdera och bygga målgrupper efter behov, medan schemalagd utvärdering (även kallat schemalagd segmentering) gör att du kan skapa ett återkommande schema för att utvärdera segmentdefinitioner vid en viss tidpunkt (högst en gång om dagen).
 
@@ -294,6 +294,6 @@ När du är klar med segmentet analyseras segmentet av Adobe Experience Platform
 
 ## Nästa steg och ytterligare resurser {#next-steps}
 
-The [!DNL Segmentation Service] Gränssnittet innehåller ett omfattande arbetsflöde som gör det möjligt att isolera marknadsmässiga målgrupper från [!DNL Real-time Customer Profile] data.
+The [!DNL Segmentation Service] Gränssnittet innehåller ett omfattande arbetsflöde som gör det möjligt att isolera marknadsmässiga målgrupper från [!DNL Real-Time Customer Profile] data.
 
 Mer information om [!DNL Segmentation Service], fortsätt att läsa dokumentationen. Så här använder du [!DNL Segmentation Service] API, läs [[!DNL Segmentation Service] utvecklarhandbok](../api/overview.md).

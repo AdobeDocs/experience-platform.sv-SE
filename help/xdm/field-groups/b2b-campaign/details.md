@@ -1,7 +1,8 @@
 ---
 title: XDM Business Campaign Details Schema Field Group
 description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Campaign Details.
-source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
+exl-id: 3ef6c0b9-cba1-449e-8868-46446c00465f
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '332'
 ht-degree: 0%

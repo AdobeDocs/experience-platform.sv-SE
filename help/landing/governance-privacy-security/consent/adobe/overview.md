@@ -5,7 +5,7 @@ title: Samtyckesbearbetning i Adobe Experience Platform
 topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%

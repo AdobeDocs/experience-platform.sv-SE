@@ -5,7 +5,7 @@ title: API-slutpunkt för mått
 topic-legacy: developer guide
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: dc7deab2c9fe1a1fa151731fceeb3c239dd18878
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1409'
 ht-degree: 0%
@@ -230,9 +230,9 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Identi
 
 {style=&quot;table-layout:auto&quot;}
 
-#### [!DNL Real-time Customer Profile] {#profile}
+#### [!DNL Real-Time Customer Profile] {#profile}
 
-Följande tabell visar mätvärden för [!DNL Real-time Customer Profile].
+Följande tabell visar mätvärden för [!DNL Real-Time Customer Profile].
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |

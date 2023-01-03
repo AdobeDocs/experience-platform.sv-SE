@@ -5,7 +5,7 @@ title: Komma igång med segmenteringstjänstens API
 topic-legacy: developer guide
 description: Följande dokumentation innehåller ytterligare information som du behöver känna till för att kunna arbeta med segmenterings-API:t.
 exl-id: 41c0e50b-afed-45b8-85d7-a0c84ae090f5
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '353'
 ht-degree: 0%
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Komma igång med segmenteringstjänstens API {#getting-started}
 
-Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa segment och generera målgrupper i Adobe Experience Platform från era [!DNL Real-time Customer Profile] data.
+Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa segment och generera målgrupper i Adobe Experience Platform från era [!DNL Real-Time Customer Profile] data.
 
 Utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används [!DNL Segmentation Service].
 
-- [[!DNL Segmentation]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Segmentation]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna arbeta med [!DNL Segmentation] API.

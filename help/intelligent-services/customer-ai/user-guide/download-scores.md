@@ -6,7 +6,7 @@ title: Ladda ned bakgrundsmusik i kundens AI
 topic-legacy: Downloading scores
 description: Med kundens AI kan du hämta bakgrundsmusik i filformatet Parquet.
 exl-id: 08f05565-3fd4-4089-9c41-32467f0be751
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 0%
@@ -25,7 +25,7 @@ För att få tillgång till poäng för kunds-AI måste du dessutom ha en tjäns
 
 För närvarande finns det två sätt att hämta kundens AI-poäng:
 
-1. Om du vill ladda ned poängen på individuell nivå och/eller inte har kundprofilen aktiverad i realtid börjar du med att navigera till [hitta ditt datauppsättnings-ID](#dataset-id).
+1. Om du vill ladda ned poängen på individnivå och/eller inte har kundprofilen i realtid aktiverad börjar du med att navigera till [hitta ditt datauppsättnings-ID](#dataset-id).
 2. Om du har en profil aktiverad och vill hämta segment som du har konfigurerat med hjälp av kundens AI går du till [ladda ned ett segment som konfigurerats med kundens AI](#segment).
 
 ## Hitta ditt datauppsättnings-ID {#dataset-id}

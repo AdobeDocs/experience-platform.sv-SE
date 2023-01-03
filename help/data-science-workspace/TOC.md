@@ -5,7 +5,7 @@ breadcrumb-title: Handbok för datavetenskap
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
 feature: Data Science Workspace
 solution: Experience Platform
-source-git-commit: ec69c859a7b40f3d527c73405b358862ebdb92e7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 1%

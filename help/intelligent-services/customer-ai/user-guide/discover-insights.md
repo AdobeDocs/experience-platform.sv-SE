@@ -6,7 +6,7 @@ title: Identifiera insikter med kundens AI
 topic-legacy: Discovering insights
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: 417b3f885f75f107d2db06331053917a76c904c4
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '2016'
 ht-degree: 0%

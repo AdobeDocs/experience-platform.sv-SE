@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 72fb25a262d2ab76085f12e3ad0c6a8decba50ac
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1408'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
 * [Identitetsnamnutrymmen](../../../../../identity-service/namespaces.md): Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] som fungerar som indikatorer för det sammanhang som en identitet hör till. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme.
-* [[!DNL Real-time Customer Profile]](/help/profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](/help/profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Samla in nödvändiga inloggningsuppgifter
@@ -171,7 +171,7 @@ Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapa
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde som du kan använda [!DNL Marketo] data. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde som du kan använda [!DNL Marketo] data. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](/help/profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](/help/profile/home.md)
 * [[!DNL Data Science Workspace] översikt](/help/data-science-workspace/home.md)

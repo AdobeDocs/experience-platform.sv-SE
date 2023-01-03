@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Fyrkant;Fyrkant
 title: Skapa en anslutning med kvadratiska källor i användargränssnittet
 description: Lär dig hur du skapar en fast källanslutning med Adobe Experience Platform-gränssnittet.
-source-git-commit: e905b11040c8de33aa757bd5743605bb36a8009b
+exl-id: 7cdfeb36-c989-4875-bb94-e6594ddf30da
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '439'
 ht-degree: 1%
@@ -20,7 +21,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ### Samla in nödvändiga inloggningsuppgifter
 

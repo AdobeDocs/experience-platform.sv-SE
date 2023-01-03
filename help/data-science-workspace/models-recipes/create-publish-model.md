@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell.
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: ff8a3612f34d6547577564ba40261052cd78ef01
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1071'
 ht-degree: 0%

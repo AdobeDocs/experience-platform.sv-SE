@@ -5,7 +5,7 @@ title: Stöd för IAB TCF 2.0 i Experience Platform
 topic-legacy: privacy events
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2544'
 ht-degree: 0%
@@ -40,10 +40,10 @@ Handboken kräver även en fungerande förståelse av följande plattformstjäns
 
 * [Experience Data Model (XDM)](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [Adobe Experience Platform Identity Service](../../../../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [Kundprofil i realtid](../../../../profile/home.md): Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
+* [Kundprofil i realtid](../../../../profile/home.md): Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
 * [Adobe Experience Platform Web SDK](../../../../edge/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
    * [Kommandon för SDK-medgivande](../../../../edge/consent/supporting-consent.md): En översikt över de medgivande-relaterade SDK-kommandona som visas i den här handboken.
-* [Adobe Experience Platform segmenteringstjänst](../../../../segmentation/home.md): Dela upp [!DNL Real-time Customer Profile] data till grupper av individer som delar liknande egenskaper och kommer att reagera på liknande sätt som marknadsföringsstrategier.
+* [Adobe Experience Platform segmenteringstjänst](../../../../segmentation/home.md): Dela upp [!DNL Real-Time Customer Profile] data till grupper av individer som delar liknande egenskaper och kommer att reagera på liknande sätt som marknadsföringsstrategier.
 
 Utöver de plattformstjänster som anges ovan bör du även känna till [mål](../../../../data-governance/home.md) och deras roll i plattformens ekosystem.
 
@@ -68,7 +68,7 @@ Alla segment som delas med Platform av Adobe Audience Manager (via [!DNL Audienc
 
 När TCF-medgivandedata har importerats, utförs följande processer i efterföljande plattformstjänster:
 
-1. [!DNL Real-time Customer Profile] uppdaterar lagrade medgivandedata för kundens profil.
+1. [!DNL Real-Time Customer Profile] uppdaterar lagrade medgivandedata för kundens profil.
 1. Plattformen behandlar endast kund-ID:n om leverantörsbehörigheten för Platform (565) anges för varje ID i ett kluster.
 1. När du exporterar segment till mål som tillhör medlemmar i leverantörslistan för TCF 2.0, innehåller Platform endast profiler om leverantörsbehörigheterna för båda plattformarna (565) *och* de enskilda målen anges för varje ID i ett kluster.
 

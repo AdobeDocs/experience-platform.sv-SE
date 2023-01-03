@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 exl-id: 89f5e2bd-8892-4d3f-a3fe-5433bb5ece7a
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1016'
 ht-degree: 1%
@@ -37,18 +37,18 @@ Mer information finns i [Översikt över datapreflight](../../data-prep/home.md)
 
 ## Kundprofil i realtid {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-time Customer Profile]kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-Time Customer Profile]kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | API-tillägg för förhandsgranskning av profil | API för förhandsgranskning av profil (`/previewsamplestatus`) kan nu visa en uppdelning av det totala antalet profilfragment i hela IMS-organisationen samt visa distributionen av profilfragment över identitetsnamnutrymmen. |
 | Uppdateringar av unionens schemavy | I användargränssnittet i Experience Platform är det enklare att hitta information om alla scheman och datauppsättningar som bidrar till unionsschemat samt attribut för ytnycklar som identitets- och relationsfält. Dessa uppdateringar förbättrar möjligheten att felsöka och verifiera att profiler är korrekt konfigurerade, identiteterna är korrekt sammanfogade och data har importerats. |
 
-Mer information om [!DNL Real-time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Översikt över kundprofiler i realtid](../../profile/home.md).
+Mer information om [!DNL Real-Time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
-Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från din [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
+Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från din [!DNL Real-Time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
@@ -85,7 +85,7 @@ Med Adobe Experience Platform kan marknadsföringsteamen skapa en helhetsbild av
 
 #### Schema
 
-Uppgraderar användbarhet och arbetsflöde och ger körklara insikter, standardisering och genomskinlighet för nyckelfält i schemakompositioner. Exponerar datalinje för kombinationen av enskilda datamodeller, som representeras av det&quot;fackliga schemat&quot;, vilket ger insikt i strukturen och ingredienserna i kundprofilen i realtid.
+Uppgraderar användbarhet och arbetsflöde och ger körklara insikter, standardisering och genomskinlighet för nyckelfält i schemakompositioner. Exponerar datalinje för kombinationen av enskilda datamodeller, som representeras av fackschemat, och ger insikt i strukturen och ingredienserna till kundprofilen i realtid.
 
 - Uppgradering av schemaarbetsflöde
    - Använd genvägar för den vanligaste typen av XDM-scheman, med automatiska inställningar i schemaredigeraren och rekommendationer för schemafältgrupper baserade på dina mål

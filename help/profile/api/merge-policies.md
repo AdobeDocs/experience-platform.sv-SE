@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2472'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnitt
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
@@ -194,7 +194,7 @@ Om du vill veta mer om XDM och arbeta med scheman i Experience Platform börjar 
 
 ## Åtkomst till sammanfogningsprinciper {#access-merge-policies}
 
-Använda [!DNL Real-time Customer Profile] API, `/config/mergePolicies` Med slutpunkten kan du utföra en uppslagsbegäran för att visa en specifik sammanfogningsprincip utifrån dess ID, eller få tillgång till alla sammanfogningsprinciper i din IMS-organisation, filtrerade efter specifika villkor. Du kan också använda `/config/mergePolicies/bulk-get` slutpunkt för att hämta flera sammanfogningsprinciper efter deras ID. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
+Använda [!DNL Real-Time Customer Profile] API, `/config/mergePolicies` Med slutpunkten kan du utföra en uppslagsbegäran för att visa en specifik sammanfogningsprincip utifrån dess ID, eller få tillgång till alla sammanfogningsprinciper i din IMS-organisation, filtrerade efter specifika villkor. Du kan också använda `/config/mergePolicies/bulk-get` slutpunkt för att hämta flera sammanfogningsprinciper efter deras ID. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
 
 ### Åtkomst till en sammanfogningsprincip via ID
 
@@ -762,6 +762,6 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när ni vet hur ni skapar och konfigurerar sammanfogningspolicyer för er organisation kan ni använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data.
+Nu när ni vet hur ni skapar och konfigurerar sammanfogningspolicyer för er organisation kan ni använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån era [!DNL Real-Time Customer Profile] data.
 
 Se [Dokumentation för Adobe Experience Platform Segmenteringstjänst](../../segmentation/home.md) för att börja definiera och arbeta med segment.

@@ -5,7 +5,7 @@ title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1356'
 ht-degree: 0%
@@ -22,7 +22,7 @@ För att du ska kunna använda utvecklarhandboken måste du ha en fungerande fö
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 XDM använder JSON-schemaformatering för att beskriva och validera strukturen för importerade kundupplevelsedata. Vi rekommenderar därför att du granskar [officiell dokumentation för JSON-schema](https://json-schema.org/) för en bättre förståelse av denna underliggande teknik.

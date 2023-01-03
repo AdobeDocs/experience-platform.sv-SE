@@ -5,8 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Beräknade attribut är funktioner för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 0%
@@ -27,9 +26,9 @@ Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribu
 
 ## Förstå beräknade attribut
 
-Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från flera källor för att generera [!DNL Real-time Customer Profiles]. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
+Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från flera källor för att generera [!DNL Real-Time Customer Profiles]. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
 
-En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du med [!DNL Platform] skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnera värdet i rätt fält.
+En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). För att göra dessa data enklare att förstå i en överblick [!DNL Platform] I kan du skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnerar värdet i lämpligt fält.
 
 Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut. Uttryck kan definieras på flera olika sätt, så att du kan ange att en regel endast utvärderar inkommande händelser, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser.
 
@@ -38,7 +37,7 @@ Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, so
 Användningsexempel för beräknade attribut kan omfatta allt från enkla beräkningar till mycket komplexa referenser. Här följer några exempel på hur du kan använda beräknade attribut:
 
 1. **[!UICONTROL Percentages]:** Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
-1. **[!UICONTROL Application use]:** Ett annat exempel inkluderar möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
+1. **[!UICONTROL Application use]:** Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
 1. **[!UICONTROL Lifetime values]:** Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
 
 ## Kända begränsningar

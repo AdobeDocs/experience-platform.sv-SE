@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform mars 2022
 description: Versionsinformation mars 2022 för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1193'
 ht-degree: 1%

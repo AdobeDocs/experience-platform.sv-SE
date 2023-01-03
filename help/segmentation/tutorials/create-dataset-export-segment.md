@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
 exl-id: 1cd16e43-b050-42ba-a894-d7ea477b65f3
-source-git-commit: f7d204442c8bc2355671ba2adffff4c40ce08784
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '730'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Välj **[!UICONTROL Datasets]** i den vänstra navigeringen för att komma åt a
 
 >[!NOTE]
 >
->Markera filterikonen bredvid sökfältet om du bara vill visa de datauppsättningar som är aktiverade för [!DNL Real-time Customer Profile].
+>Markera filterikonen bredvid sökfältet om du bara vill visa de datauppsättningar som är aktiverade för [!DNL Real-Time Customer Profile].
 
 ![Arbetsytan för datauppsättningar visas.](../images/tutorials/segment-export-dataset/browse.png)
 
@@ -57,7 +57,7 @@ Så här väljer du [!DNL XDM Individual Profile Union Schema] som du kan använ
 
 >[!NOTE]
 >
->Trots att fackliga scheman per definition deltar i kundprofiler i realtid, listas de som&quot;Inte aktiverade&quot; på grund av att de inte är aktiverade för profil på samma sätt som traditionella scheman.
+>Trots att fackliga scheman per definition ingår i kundprofilen i realtid anges de som&quot;Inte aktiverat&quot; på grund av att de inte är aktiverade för profilen på samma sätt som traditionella scheman.
 
 Markera alternativknappen bredvid **[!UICONTROL XDM Individual Profile]** väljer **[!UICONTROL Next]**.
 

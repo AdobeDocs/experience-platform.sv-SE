@@ -6,7 +6,7 @@ description: I det här dokumentet finns en självstudiekurs för att definiera 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1138'
 ht-degree: 0%
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
-När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
+När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
 I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i [!DNL Experience Platform] användargränssnitt. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om [definiera en relation med API:t för schemaregister](relationship-api.md).
 
@@ -54,7 +54,7 @@ Du förväntas redan ha skapat de två scheman som ska definieras i relationen. 
 
 >[!IMPORTANT]
 >
->För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-ui.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
+>För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-Time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-ui.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
 
 Schemarelationer representeras av ett dedikerat fält i en **källschema** som refererar till ett annat fält i en **målschema**. I följande steg: &quot;[!DNL Loyalty Members]&quot; blir källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
 
@@ -62,7 +62,7 @@ I följande avsnitt beskrivs strukturen för varje schema som används i den hä
 
 ### [!DNL Loyalty Members] schema
 
-Källschemat &quot;[!DNL Loyalty Members]&quot; baseras på [!DNL XDM Individual Profile] och är det schema som skapades i självstudiekursen för [skapa ett schema i användargränssnittet](create-schema-ui.md). Den innehåller `loyalty` objekt under dess `_tenantId` namespace, som innehåller flera lojalitetsspecifika fält. Ett av dessa fält, `loyaltyId`, fungerar som primär identitet för schemat under [!UICONTROL Email] namnutrymme. Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiverats för användning i [!DNL Real-time Customer Profile].
+Källschemat &quot;[!DNL Loyalty Members]&quot; baseras på [!DNL XDM Individual Profile] och är det schema som skapades i självstudiekursen för [skapa ett schema i användargränssnittet](create-schema-ui.md). Den innehåller `loyalty` objekt under dess `_tenantId` namespace, som innehåller flera lojalitetsspecifika fält. Ett av dessa fält, `loyaltyId`, fungerar som primär identitet för schemat under [!UICONTROL Email] namnutrymme. Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiverats för användning i [!DNL Real-Time Customer Profile].
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
@@ -80,7 +80,7 @@ För att kunna delta i en relation måste målschemat ha en primär identitet. I
 >
 >Mer information om hur du skapar anpassade identitetsnamnutrymmen finns i [Identitetstjänstens dokumentation](../../identity-service/namespaces.md#manage-namespaces).
 
-När den primära identiteten har angetts måste målschemat aktiveras för [!DNL Real-time Customer Profile].
+När den primära identiteten har angetts måste målschemat aktiveras för [!DNL Real-Time Customer Profile].
 
 ![Aktivera för profil](../images/tutorials/relationship/hotel-profile.png)
 

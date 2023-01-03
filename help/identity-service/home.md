@@ -5,7 +5,7 @@ title: Översikt över identitetstjänsten
 topic-legacy: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 3e073d2c45f88c56473ccc2e3d18a2bbedd4f254
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1839'
 ht-degree: 0%

@@ -5,7 +5,7 @@ title: Utvärdera händelser i nära realtid med strömmande segmentering
 topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 8c7c1273feb2033bf338f7669a9b30d9459509f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1971'
 ht-degree: 0%
@@ -32,8 +32,8 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 
 Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
+- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ringa [!DNL Platform] API:er.

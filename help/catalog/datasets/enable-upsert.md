@@ -4,7 +4,7 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 132407af947b97a1925799a1fb5e12caa2b0410c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1050'
 ht-degree: 0%
@@ -23,8 +23,8 @@ Den här självstudiekursen handlar om hur du aktiverar en datauppsättning med&
 
 Den här självstudiekursen kräver en fungerande förståelse av flera Adobe Experience Platform-tjänster som arbetar med att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för dessa relaterade [!DNL Platform] tjänster:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-Time Customer Profile] och [!DNL Identity Service].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 - [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
 
@@ -119,7 +119,7 @@ Följande steg beskriver hur du konfigurerar en befintlig profilaktiverad dataup
 
 ### Kontrollera om datauppsättningen är aktiverad för profilen
 
-Använda [!DNL Catalog] API, du kan undersöka en befintlig datamängd för att avgöra om den är aktiverad för användning i [!DNL Real-time Customer Profile]. Följande anrop hämtar information om en datauppsättning per ID.
+Använda [!DNL Catalog] API, du kan undersöka en befintlig datamängd för att avgöra om den är aktiverad för användning i [!DNL Real-Time Customer Profile]. Följande anrop hämtar information om en datauppsättning per ID.
 
 **API-format**
 
@@ -192,7 +192,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27
 }
 ```
 
-Under `tags` -egenskapen ser du att `unifiedProfile` finns med värdet `enabled:true`. Därför [!DNL Real-time Customer Profile] är aktiverat för den här datauppsättningen.
+Under `tags` -egenskapen ser du att `unifiedProfile` finns med värdet `enabled:true`. Därför [!DNL Real-Time Customer Profile] är aktiverat för den här datauppsättningen.
 
 ### Inaktivera datauppsättningen för profilen
 

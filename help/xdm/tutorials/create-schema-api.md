@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2422'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du gå igenom [utvecklarhandbok](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa [!DNL Schema Registry] API. Detta inkluderar `{TENANT_ID}`, begreppet&quot;behållare&quot; och de rubriker som krävs för att göra en begäran (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
@@ -955,7 +955,7 @@ När du utför en GET-begäran om att söka efter schemat visas nu referensen ti
 
 ### Definiera en identitetsbeskrivning
 
-Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data har matats in infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] för att ge en sammanslagen bild av varje enskild kund.
+Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data har matats in infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] för att ge en sammanslagen bild av varje enskild kund.
 
 Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält.
 
@@ -1016,9 +1016,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med en svarstext som innehå
 }
 ```
 
-## Aktivera schema för användning i [!DNL Real-time Customer Profile] {#profile}
+## Aktivera schema för användning i [!DNL Real-Time Customer Profile] {#profile}
 
-Genom att lägga till taggen &quot;union&quot; i `meta:immutableTags` kan du aktivera schemat för lojalitetsmedlemmar som kan användas av [!DNL Real-time Customer Profile].
+Genom att lägga till taggen &quot;union&quot; i `meta:immutableTags` kan du aktivera schemat för lojalitetsmedlemmar som kan användas av [!DNL Real-Time Customer Profile].
 
 Mer information om hur du arbetar med unionsvyer finns i avsnittet om [föreningar](../api/unions.md) i [!DNL Schema Registry] utvecklarhandbok.
 

@@ -5,7 +5,7 @@ title: Marketo Engage-kontakt
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '631'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Med [!DNL Marketo] källanslutning kan du hämta B2B-data från [!DNL Marketo] t
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B Edition kan ni fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdata till kundprofilen i realtid för segmentering.
+>Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B Edition kan du fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
 
 Dokumentet innehåller en översikt över [!DNL Marketo] källkoppling, inklusive information om hur anslutningen autentiseras, mappa [!DNL Marketo] fält till Experience Data Model (XDM) och anslutningsens datalatens.
 
@@ -71,7 +71,7 @@ I följande tabell visas den förväntade fördröjningen för hämtning [!DNL M
 
 | Destination | Förväntad svarstid |
 | ----------- | ---------------- |
-| [!DNL Real-time Customer Profile] | &lt; 1 minut |
+| [!DNL Real-Time Customer Profile] | &lt; 1 minut |
 | Data Lake | &lt; 60 minuter |
 
 ## Nästa steg och ytterligare resurser

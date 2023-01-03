@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;Analytics Source Connector;an
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: d94bbbd34b116f10098624d565c1ae285fc0461e
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
@@ -18,11 +18,11 @@ Dokumentet innehåller en översikt över [!DNL Analytics] och beskriver använd
 
 ## Adobe Analytics- och Analytics-data
 
-[!DNL Analytics] är en kraftfull motor som hjälper er att lära er mer om era kunder, hur de interagerar med era webbegenskaper, se var era utgifter för digital marknadsföring är effektiva och identifiera områden där det finns förbättringar. [!DNL Analytics] hanterar miljontals webbtransaktioner per år och [!DNL Analytics] Med källanslutaren kan du enkelt utnyttja dessa omfattande beteendedata och berika [!DNL Real-time Customer Profile] på bara några minuter.
+[!DNL Analytics] är en kraftfull motor som hjälper er att lära er mer om era kunder, hur de interagerar med era webbegenskaper, se var era utgifter för digital marknadsföring är effektiva och identifiera områden där det finns förbättringar. [!DNL Analytics] hanterar miljontals webbtransaktioner per år och [!DNL Analytics] Med källanslutaren kan du enkelt utnyttja dessa omfattande beteendedata och berika [!DNL Real-Time Customer Profile] på bara några minuter.
 
 ![](./images/analytics-data-experience-platform.png)
 
-På en hög nivå [!DNL Analytics] samlar in data från olika digitala kanaler och från flera datacenter över hela världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de vara klara att användas av [!DNL Real-time Customer Profile]. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion genom [!DNL Data Science Workspace], [!DNL Query Service]och andra program för dataidentifiering.
+På en hög nivå [!DNL Analytics] samlar in data från olika digitala kanaler och från flera datacenter över hela världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de vara klara att användas av [!DNL Real-Time Customer Profile]. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion genom [!DNL Data Science Workspace], [!DNL Query Service]och andra program för dataidentifiering.
 
 Se [översikt över bearbetningsregler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html) för mer information om bearbetningsregler.
 
@@ -36,7 +36,7 @@ Mer information om XDM finns i [XDM - systemöversikt](../../../xdm/home.md).
 
 ## Hur mappas fält från Adobe Analytics till XDM?
 
-När en källanslutning upprättas för att [!DNL Analytics] data till Experience Platform med hjälp av användargränssnittet för plattformen, mappas datafälten automatiskt och hämtas till [!DNL Real-time Customer Profile] inom några minuter. Instruktioner om hur du skapar en källanslutning med [!DNL Analytics] med hjälp av plattformsgränssnittet, se [Självstudiekurs om anslutning till analyskälla](../../tutorials/ui/create/adobe-applications/analytics.md).
+När en källanslutning upprättas för att [!DNL Analytics] data till Experience Platform med hjälp av användargränssnittet för plattformen, mappas datafälten automatiskt och hämtas till [!DNL Real-Time Customer Profile] inom några minuter. Instruktioner om hur du skapar en källanslutning med [!DNL Analytics] med hjälp av plattformsgränssnittet, se [Självstudiekurs om anslutning till analyskälla](../../tutorials/ui/create/adobe-applications/analytics.md).
 
 Detaljerad information om fältmappningen som finns mellan [!DNL Analytics] och Experience Platform, se [Adobe Analytics fältmappning](./mapping/analytics.md) guide.
 
@@ -46,8 +46,8 @@ Den förväntade fördröjningen för Analytics Data on Platform beskrivs i tabe
 
 | Analysdata | Förväntad svarstid |
 | -------------- | ---------------- |
-| Nya data till [!DNL Real-time Customer Profile] (A4T **not** aktiverad) | &lt; 2 minuter |
-| Nya data till [!DNL Real-time Customer Profile] (A4T **är** aktiverad) | &lt; 15 minuter |
+| Nya data till [!DNL Real-Time Customer Profile] (A4T **not** aktiverad) | &lt; 2 minuter |
+| Nya data till [!DNL Real-Time Customer Profile] (A4T **är** aktiverad) | &lt; 15 minuter |
 | Nya data till Data Lake | &lt; 90 minuter |
 | Bakgrundsfyllning av mindre än 10 miljarder händelser | &lt; 4 veckor |
 

@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle service cloud
 title: Skapa en Oraclena tjänste-molnanslutning i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till Oracle Service Cloud med hjälp av Adobe Experience Platform användargränssnitt.
-source-git-commit: 8e4f2170489d7e4e73bbc726e3253fac97c9f9f3
+exl-id: e5869c09-b61e-4d23-a594-5a07769da3c4
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '479'
 ht-degree: 1%
@@ -24,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig källanslutning till Oracle Service Cloud kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/customer-success.md)
 

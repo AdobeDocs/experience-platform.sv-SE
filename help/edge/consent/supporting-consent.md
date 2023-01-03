@@ -3,7 +3,7 @@ title: Supporting Customer Consent Preferences Using the Adobe Experience Platfo
 description: Lär dig hur du stöder medgivandeinställningar med Adobe Experience Platform Web SDK.
 keywords: medgivande;defaultConsent;standard medgivande;setConsent;Profile Privacy field group;Experience Event Privacy field group;Privacy field group;
 exl-id: 647e4a84-4a66-45d6-8b05-d78786bca63a
-source-git-commit: 16c8972333fa67fa2e308445f4ad6282510370d1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '947'
 ht-degree: 0%

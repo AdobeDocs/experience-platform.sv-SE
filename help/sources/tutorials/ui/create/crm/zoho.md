@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Zoho CRM-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: c648fc3e-beea-4030-8d36-dd8a7e2c281e
-source-git-commit: 46b2fd6bc715bf1d8ccfeed576a2a2d193f92edd
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '533'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL Zoho CRM] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/crm.md).
 

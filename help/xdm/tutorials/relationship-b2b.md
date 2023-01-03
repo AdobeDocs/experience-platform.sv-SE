@@ -2,7 +2,7 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1370'
 ht-degree: 0%
@@ -69,7 +69,7 @@ I följande avsnitt beskrivs strukturen för varje schema som används i den hä
 
 Källschemat &quot;[!DNL Opportunities]&quot; baseras på [!UICONTROL XDM Business Opportunity] klassen. Ett av fälten i klassen, `opportunityKey`, fungerar som identifierare för schemat. I synnerhet `sourceKey` fält under `opportunityKey` objektet anges som schemats primära identitet under ett anpassat namnområde som kallas [!DNL B2B Opportunity].
 
-Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiverats för användning i [!DNL Real-time Customer Profile].
+Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiverats för användning i [!DNL Real-Time Customer Profile].
 
 ![Schema för affärsmöjligheter](../images/tutorials/relationship-b2b/opportunities.png)
 

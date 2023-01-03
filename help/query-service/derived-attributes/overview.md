@@ -1,8 +1,8 @@
 ---
 title: Härledda attribut
-description: Härledda attribut är ett praktiskt sätt att generera attribut som kan uppdateras vid valfri tidpunkt och som kan publiceras i kundprofildata i realtid. Det här dokumentet innehåller en översikt över hur du använder frågetjänsten för att skapa härledda attribut som kan användas med dina profildata.
+description: Med härledda attribut kan du enkelt generera attribut som kan uppdateras vid valfri tidpunkt och publiceras i realtidsdata i kundprofilen. Det här dokumentet innehåller en översikt över hur du använder frågetjänsten för att skapa härledda attribut som kan användas med dina profildata.
 exl-id: 5d52b268-e2a3-411c-8242-3aa32e759937
-source-git-commit: 61e0895484b8005e2109056d51557f609fecaf97
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '752'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Härledda attribut
 
-Funktionen för härledda attribut är ett praktiskt sätt att generera attribut utifrån annan information som finns i sjön. Dessa attribut kan uppdateras när som helst med jämna mellanrum och eventuellt publiceras i kundprofildata i realtid. Härledda attribut åtgärdar behovet av att skapa komplexa attribut som decile, percentile och quartile över enklare attribut som max, count och means. Dessa attribut kan beräknas specifikt för en enskild användare eller för en affärsenhet. Detta gör att du kan härleda attribut som kan vara direkt ackrediterade för en identifierare, t.ex. e-postadresser, enhets-ID:n och telefonnummer, och även härleda attribut som är indirekt kopplade till den användar- eller affärsprofilen.
+Funktionen för härledda attribut är ett praktiskt sätt att generera attribut utifrån annan information som finns i sjön. Dessa attribut kan uppdateras med valfri regelbunden stängsel och eventuellt publiceras i kundprofildata i realtid. Härledda attribut åtgärdar behovet av att skapa komplexa attribut som decile, percentile och quartile över enklare attribut som max, count och means. Dessa attribut kan beräknas specifikt för en enskild användare eller för en affärsenhet. Detta gör att du kan härleda attribut som kan vara direkt ackrediterade för en identifierare, t.ex. e-postadresser, enhets-ID:n och telefonnummer, och även härleda attribut som är indirekt kopplade till den användar- eller affärsprofilen.
 
 Härledda attribut behövs för en rad olika användningsområden när data analyseras på sjön. Dessa data kan sedan markeras för användning i kundprofilen i realtid och användas i nedströmsfall som att skapa högt fokuserade målgrupper. Exempel på användningsområden för den här funktionen kan vara:
 

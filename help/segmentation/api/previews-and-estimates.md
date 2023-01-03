@@ -5,7 +5,7 @@ title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 topic-legacy: developer guide
 description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 1%
@@ -250,4 +250,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 ## Nästa steg
 
-När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får tillgång till statistik om kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, går du till [förhandsgranskning av profil (`/previewsamplestatus`) slutpunktsguide](../../profile/api/preview-sample-status.md).
+När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får tillgång till statistik om kundprofiler i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, går du till [förhandsgranskning av profil (`/previewsamplestatus`) slutpunktsguide](../../profile/api/preview-sample-status.md).

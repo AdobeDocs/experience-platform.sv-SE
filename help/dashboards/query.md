@@ -4,7 +4,7 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som används på kontrollpaneler för profiler, segment och mål i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 4826731682bcaf5a43c7ce047220c1805d97243a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '960'
 ht-degree: 0%
@@ -17,7 +17,7 @@ Adobe Experience Platform tillhandahåller viktig information om din organisatio
 
 ## Komma igång med [!DNL Query Service]
 
-Adobe Experience Platform [!DNL Query Service] stöder marknadsförare i att få insikter från sina data genom att aktivera användningen av standard-SQL för att fråga efter data i sjön. [!DNL Query Service] erbjuder ett användargränssnitt och ett API som kan användas för att ansluta till valfri datauppsättning i datasjön och samla in frågeresultaten som nya datauppsättningar som kan användas för rapportering, maskininlärning eller för att matas in i kundprofilen i realtid.
+Adobe Experience Platform [!DNL Query Service] stöder marknadsförare i att få insikter från sina data genom att aktivera användningen av standard-SQL för att fråga efter data i sjön. [!DNL Query Service] har ett användargränssnitt och ett API som kan användas för att ansluta till valfri datauppsättning i datasjön och samla in frågeresultaten som nya datauppsättningar som kan användas för rapportering, maskininlärning eller för att matas in i kundprofilen i realtid.
 
 Mer information om [!DNL Query Service] och dess roll i Experience Platform, vänligen väl börja med att läsa [[!DNL Query Service] översikt](../query-service/home.md).
 

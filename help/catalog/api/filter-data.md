@@ -5,7 +5,7 @@ title: Filtrera katalogdata med hjälp av frågeparametrar
 topic-legacy: developer guide
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2121'
 ht-degree: 0%
@@ -210,7 +210,7 @@ Det finns några begränsningar att tänka på när du använder taggar:
 * Taggnamnen är unika för din IMS-organisation.
 * Adobe kan använda taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
 * Följande taggnamn är reserverade för användning i [!DNL Experience Platform]och kan därför inte deklareras som ett taggnamn för din organisation:
-   * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Real-time Customer Profile]](../../profile/home.md).
+   * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Real-Time Customer Profile]](../../profile/home.md).
    * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Identity Service]](../../identity-service/home.md).
 
 Nedan visas ett exempel på en datauppsättning som innehåller en `tags` -egenskap. Taggarna i den egenskapen har formen av nyckelvärdepar, där varje taggvärde visas som en array som innehåller en enda sträng:

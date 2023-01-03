@@ -4,7 +4,7 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 65ad76bb4a5318b03d79d68d3c7e030d7878cf30
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2015'
 ht-degree: 0%
@@ -263,7 +263,7 @@ Se självstudiekursen om [skapa ett schema i användargränssnittet](https://www
 
 >[!IMPORTANT]
 >
->Om du vill skicka medgivandedata till [!DNL Real-time Customer Profile]måste du skapa en [!DNL Profile]-aktiverat schema baserat på [!DNL XDM Individual Profile] klassen som innehåller [!UICONTROL Consents and Preferences] datatyp. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-time Customer Profile] krav för scheman och datauppsättningar.
+>Om du vill skicka medgivandedata till [!DNL Real-Time Customer Profile]måste du skapa en [!DNL Profile]-aktiverat schema baserat på [!DNL XDM Individual Profile] klassen som innehåller [!UICONTROL Consents and Preferences] datatyp. Den datauppsättning som du skapar baserat på det schemat måste också aktiveras för [!DNL Profile]. Se självstudiekurserna som är länkade ovan för specifika steg som rör [!DNL Real-Time Customer Profile] krav för scheman och datauppsättningar.
 >
 >Dessutom måste du se till att dina sammanfogningsprinciper är konfigurerade för att prioritera de datauppsättningar som innehåller de senaste samtycke- och inställningsdata, så att kundprofilerna uppdateras korrekt. Se översikten på [sammanfogningsprinciper](../../rtcdp/profile/merge-policies.md) för mer information.
 

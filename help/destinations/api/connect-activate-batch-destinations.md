@@ -6,7 +6,7 @@ description: Stegvisa instruktioner om hur du använder API:t för Flow Service 
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 183830318a3dd5012f27a73a8dd2753638aff83f
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3410'
 ht-degree: 0%
@@ -36,7 +36,7 @@ Om du föredrar att använda användargränssnittet för plattformen för att an
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-time Customer Profile] data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till batchdestinationer i Platform.
@@ -926,7 +926,7 @@ curl -X POST \
 
 Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
 
-| Mål | Flödesspekt-ID |
+| Destination | Flödesspekt-ID |
 ---------|----------|
 | Alla molnlagringsmål ([!DNL Amazon S3], SFTP, [!DNL Azure Blob]) och [!DNL Oracle Eloqua] | `71471eba-b620-49e4-90fd-23f1fa0174d8` |
 | [!DNL Oracle Responsys] | `51d675ce-e270-408d-91fc-22717bdf2148` |

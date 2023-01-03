@@ -3,7 +3,7 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Adobe Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1554'
 ht-degree: 0%
@@ -126,7 +126,7 @@ The **[!UICONTROL People]** -fliken innehåller en lista med enskilda personer s
 >
 >The [!UICONTROL People] På -fliken visas en lista med upp till 25 personer som är associerade med kontot. För konton med fler än 25 associerade personer visas ett slumpmässigt urval på 25 poster.
 
-Förutom att visa dig en ögonblicksbild av information för kontakten, innehåller varje person i listan även en **[!UICONTROL Profile ID]**, som är en klickbar länk som gör att du kan utforska kundprofilen i realtid för den personen. Läs mer om hur du visar enskilda kundprofiler för dina konton i guiden [webbläsarprofiler i Real-Time CDP, B2B Edition](../profile/profile-browse.md).
+Förutom att visa dig en ögonblicksbild av information för kontakten, innehåller varje person i listan även en **[!UICONTROL Profile ID]**, som är en klickbar länk som gör att du kan utforska kundprofilen i realtid för den aktuella personen. Läs mer om hur du visar enskilda kundprofiler för dina konton i guiden [webbläsarprofiler i Real-Time CDP, B2B Edition](../profile/profile-browse.md).
 
 ![Fliken Personer](images/b2b-account-people.png)
 

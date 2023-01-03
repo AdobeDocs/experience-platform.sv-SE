@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 2%
@@ -27,7 +27,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Destinations]](#destinations)
 - [[!DNL Experience Data Model (XDM) System]](#xdm)
 - [[!DNL Identity Service]](#identity)
-- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Real-Time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
 ## (Beta) Kontrollpaneler {#dashboards}
@@ -56,7 +56,7 @@ Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arb
 
 I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
-Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-time Customer Profile] innan den aktiveras [!DNL Destinations].
+Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan den aktiveras [!DNL Destinations].
 
 **Nya funktioner**
 

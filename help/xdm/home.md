@@ -5,7 +5,7 @@ title: XDM - systemöversikt
 topic-legacy: overview
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2050'
 ht-degree: 0%
@@ -110,21 +110,21 @@ Mer information om Katalog finns i [Katalogtjänst - översikt](../catalog/home.
 
 Med Adobe Experience Platform Query Service kan du använda standard-SQL för att fråga efter Experience Platform-data som stöder många olika användningsfall.
 
-När ett schema har disponerats och en datauppsättning har skapats som refererar till det schemat, hämtas data och lagras i datasjön. Med hjälp av frågetjänsten kan du ansluta till alla datauppsättningar i datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i kundprofilen i realtid.
+När ett schema har disponerats och en datauppsättning har skapats som refererar till det schemat, hämtas data och lagras i datasjön. Med hjälp av frågetjänsten kan du ansluta till alla datauppsättningar i datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i realtidskundprofil.
 
 Se [Översikt över frågetjänsten](../query-service/home.md) för mer information om tjänsten.
 
 ### Kundprofil i realtid
 
-Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform.
+Kundprofilen i realtid är en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform.
 
 Kundprofilen i realtid förbrukar schemaformaterade data baserat på [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] och svarar på frågor som baseras på dessa data. Profilen stöder inte användning av scheman baserade på andra klasser.
 
 Systemet upprätthåller en instans av varje kundprofil och sammanfogar data till en&quot;enda källa till sanning&quot; för den enskilda personen. Dessa enhetliga data representeras med hjälp av ett så kallat fackschema (kallas ibland för en fackvy). Ett unionsschema samlar fälten för alla scheman som implementerar samma klass i ett enda schema.  När du komponerar ett schema med användargränssnittet eller API kan du aktivera schemat för användning med kundprofilen i realtid och tagga det för inkludering i unionen. Det taggade schemat kommer sedan att ingå i den schemadefinition som matas in i profilen.
 
-Som [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] data hämtas in i datasjön, och kundprofilen i realtid innehåller alla data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
+Som [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] data hämtas in i datasjön, medan kundprofilen i realtid innehåller data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 
-[!UICONTROL XDM Individual Profile] data hjälper till att informera och underlätta åtgärder över alla kanaler och Adobe-produktintegreringar. När dessa data kombineras med en lång historik med beteendedata och interaktionsdata kan de användas för att underlätta maskininlärning. Real-time Customer Profile API kan också användas för att berika funktionaliteten hos tredjepartslösningar, CRM och företagslösningar.
+[!UICONTROL XDM Individual Profile] data hjälper till att informera och underlätta åtgärder över alla kanaler och Adobe-produktintegreringar. När dessa data kombineras med en lång historik med beteendedata och interaktionsdata kan de användas för att underlätta maskininlärning. Real-Time Customer Profile API kan också användas för att utöka funktionaliteten hos tredjepartslösningar, CRM och företagslösningar.
 
 Se [Översikt över kundprofiler i realtid](../profile/home.md) för mer information.
 

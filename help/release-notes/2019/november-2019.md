@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1887'
 ht-degree: 1%
@@ -24,7 +24,7 @@ Nya funktioner i Adobe Experience Platform:
 Uppdateringar av befintliga funktioner:
 * [[!DNL Data Science Workspace]](#dsw)
 * [[!DNL Experience Data Model (XDM) System]](#xdm)
-* [[!DNL Real-time Customer Profile]](#profile)
+* [[!DNL Real-Time Customer Profile]](#profile)
 * [[!DNL Segmentation Service]](#segmentation)
 
 ## [!DNL Real-Time Customer Data Platform] {#rtcdp}
@@ -104,7 +104,7 @@ Mer information om källor finns i [Översikt över källor](../../sources/home.
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i olika Adobe-program och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver datavetenskapens hela livscykel, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
+Adobe Experience Platform [!DNL Data Science Workspace] gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i olika Adobe-program och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver datavetenskapens hela livscykel, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika [!DNL Real-Time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
@@ -128,7 +128,7 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 | Meddelandeschema | Nytt schema som representerar meddelandedata som skickas under dataöverföringsprocessen. |
 | Adobe AdCloud-DSP | Fem nya scheman har lagts till för att representera metadata för Adobe Advertising Cloud DSP (Demand-Side Platform) (DSP): Placement, Campaign, Package, Advertiser, Account. |
 | Schemafältgrupper för implementeringsinformation för ExperienceEvent | Nya ExperienceEvent-fältgrupper som lägger till ett standardfält för att lagra information om programmet som används för att samla in händelsen. |
-| [!DNL Profile Privacy] fältgrupper | Nya profilfältgrupper som lägger till fält som accepterar allmänna avanmälnings- och avanmälningssignaler för försäljning/delning för [!DNL Real-time Customer Profile]. |
+| [!DNL Profile Privacy] fältgrupper | Nya profilfältgrupper som lägger till fält som accepterar allmänna avanmälnings- och avanmälningssignaler för försäljning/delning för [!DNL Real-Time Customer Profile]. |
 | Formatbegränsningar för `xdm:alternateDisplayInfo` | Fälten Titel och Beskrivning för `xdm:alternateDisplayInfo` måste båda vara strängar för att validera. |
 | Namnändring: XDM [!DNL Individual Profile] | &quot;XDM-filens titel&quot; [!DNL Profile]&quot; har uppdaterats till &quot;XDM [!DNL Individual Profile]&quot;. Formellt `$id` för klassen har inte ändrats. |
 
@@ -138,9 +138,9 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 Mer information om hur du arbetar med XDM med [!DNL Schema Registry] API och [!DNL Schema Editor] användargränssnittet, läs [XDM-systemdokumentation](../../xdm/home.md).
 
-## [!DNL Real-time Customer Profile] {#profile}
+## [!DNL Real-Time Customer Profile] {#profile}
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-time Customer Profile]kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-Time Customer Profile]kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 | Funktion | Beskrivning |
 | -----------| ---------- |
@@ -158,11 +158,11 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 * Ingen.
 
-Mer information om [!DNL Real-time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Kundprofilöversikt i realtid](../../profile/home.md).
+Mer information om [!DNL Real-Time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Kundprofilöversikt i realtid](../../profile/home.md).
 
 ## [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från [!DNL Real-Time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform], så att de är lättillgängliga i alla Adobe-program.
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 

@@ -6,7 +6,7 @@ title: Konfigurera en AI-instans för kund
 topic-legacy: Instance creation
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '3227'
 ht-degree: 0%

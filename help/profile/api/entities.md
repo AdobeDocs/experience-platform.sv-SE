@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 0%
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Entitetens slutpunkt (profilåtkomst)
 
-Adobe Experience Platform ger dig åtkomst [!DNL Real-time Customer Profile] data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
+Adobe Experience Platform ger dig åtkomst [!DNL Real-Time Customer Profile] data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Åtkomst till profildata via identitet
 
@@ -888,7 +888,7 @@ Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterfölj
 
 ## Nästa steg
 
-Genom att följa den här guiden har du fått åtkomst till [!DNL Real-time Customer Profile] datafält, profiler och tidsseriedata. Så här får du lära dig att komma åt andra dataresurser som lagras i [!DNL Platform], se [Dataåtkomstöversikt](../../data-access/home.md).
+Genom att följa den här guiden har du fått åtkomst till [!DNL Real-Time Customer Profile] datafält, profiler och tidsseriedata. Så här får du lära dig att komma åt andra dataresurser som lagras i [!DNL Platform], se [Dataåtkomstöversikt](../../data-access/home.md).
 
 ## Bilaga {#appendix}
 

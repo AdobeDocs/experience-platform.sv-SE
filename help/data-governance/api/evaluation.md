@@ -5,7 +5,7 @@ title: API-slutpunkter för principutvärdering
 topic-legacy: developer guide
 description: När marknadsföringsåtgärder har skapats och principer har definierats kan du använda API:t för principtjänsten för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1542'
 ht-degree: 0%
@@ -682,6 +682,6 @@ Ett lyckat svar returnerar en rad utvärderingsresultat. en för varje principut
 ]
 ```
 
-## Policyutvärdering för [!DNL Real-time Customer Profile]
+## Policyutvärdering för [!DNL Real-Time Customer Profile]
 
-The [!DNL Policy Service] API kan också användas för att kontrollera om det finns policyöverträdelser där [!DNL Real-time Customer Profile] segment. Se självstudiekursen om [se till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md) för mer information.
+The [!DNL Policy Service] API kan också användas för att kontrollera om det finns policyöverträdelser där [!DNL Real-Time Customer Profile] segment. Se självstudiekursen om [se till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md) för mer information.

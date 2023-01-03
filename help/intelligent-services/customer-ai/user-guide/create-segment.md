@@ -6,7 +6,7 @@ title: Skapa kundsegment med prediktiva poäng
 topic-legacy: Create a segment
 description: När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget.
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%

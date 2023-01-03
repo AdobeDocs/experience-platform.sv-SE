@@ -3,7 +3,7 @@ keywords: Översikt över mätvärden. Översikt över rtcdp-mått
 title: Real-time Customer Data Platform hemsida och Dashboards
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '600'
 ht-degree: 1%
@@ -47,7 +47,7 @@ Mer information om datauppsättningar finns i [datauppsättningar, översikt](..
 
 ### Profiler
 
-The **[!UICONTROL Profiles]** antal visar det totala antalet personer med profiler i [!DNL Real-time Customer Profile]. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
+The **[!UICONTROL Profiles]** antal visar det totala antalet personer med profiler i [!DNL Real-Time Customer Profile]. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
 
 Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) enligt konfigurationen för sammanfogningsprincipen i Unified Profile.
 

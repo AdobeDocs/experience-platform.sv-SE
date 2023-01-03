@@ -2,7 +2,7 @@
 title: Personalisering via Offer decisioning
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser via Offer decisioning.
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 0%

@@ -6,14 +6,14 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1929'
 ht-degree: 1%
 
 ---
 
-# Standardstödlinjer för [!DNL Real-time Customer Profile] data
+# Standardstödlinjer för [!DNL Real-Time Customer Profile] data
 
 Med Adobe Experience Platform kan ni leverera personaliserade flerkanalsupplevelser baserat på beteendeinsikter och kundattribut i form av kundprofiler i realtid. För att stödja den nya metoden för profiler använder Experience Platform en högdenormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen.
 
@@ -27,7 +27,7 @@ Det här dokumentet innehåller standardbegränsningar för användning och frek
 
 Följande Experience Platform-tjänster är involverade i modellering av kundprofildata i realtid:
 
-* [[!DNL Real-time Customer Profile]](home.md): Skapa enhetliga kundprofiler med hjälp av data från flera källor.
+* [[!DNL Real-Time Customer Profile]](home.md): Skapa enhetliga kundprofiler med hjälp av data från flera källor.
 * [Identiteter](../identity-service/home.md): Överbrygga identiteter från olika datakällor när de hämtas till Platform.
 * [Scheman](../xdm/home.md): XDM-scheman (Experience Data Model) är det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 * [Segment](../segmentation/home.md): Segmenteringsmotorn i Platform används för att skapa segment utifrån era kundprofiler baserat på kundbeteenden och attribut.
@@ -46,7 +46,7 @@ Det finns två typer av standardgränser i det här dokumentet:
 
 ## Begränsningar för datamodell
 
-Följande skyddsritningar ger rekommenderade gränser vid modellering av kundprofildata i realtid. Mer information om primära enheter och dimensionsenheter finns i avsnittet om [enhetstyper](#entity-types) i tillägget.
+Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprofildata i realtid. Mer information om primära enheter och dimensionsenheter finns i avsnittet om [enhetstyper](#entity-types) i tillägget.
 
 ### Garantier för primära enheter
 
@@ -124,9 +124,9 @@ I det här avsnittet finns mer information om begränsningarna i det här dokume
 
 The [!DNL Profile] lagringsdatamodellen består av två huvudenhetstyper:
 
-* **Primär entitet:** En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionsschemat för [!DNL Real-time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
+* **Primär entitet:** En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionsschemat för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
 
-   Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!DNL XDM Individual Profile], medan tidsseriedata, som också kallas&quot;händelsedata&quot;, modelleras med [!DNL XDM ExperienceEvent]. När data från register och tidsserier hämtas i Adobe Experience Platform utlöses de [!DNL Real-time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
+   Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!DNL XDM Individual Profile], medan tidsseriedata, som också kallas&quot;händelsedata&quot;, modelleras med [!DNL XDM ExperienceEvent]. När data från register och tidsserier hämtas i Adobe Experience Platform utlöses de [!DNL Real-Time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 
    ![En infografik som visar skillnaderna mellan postdata och tidsseriedata.](images/guardrails/profile-entity.png)
 

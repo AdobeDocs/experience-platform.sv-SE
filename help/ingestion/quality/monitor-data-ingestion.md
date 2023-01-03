@@ -5,7 +5,7 @@ title: Övervaka datainmatning
 topic-legacy: overview
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
-source-git-commit: dce7faa7fc680e37b537bf623c3a33e6c6e37169
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Den här användarhandboken innehåller anvisningar om hur du övervakar data i 
 
 I [Experience Platform UI](https://platform.adobe.com), markera **[!UICONTROL Monitoring]** till vänster navigeringsmeny, följt av **[!UICONTROL Streaming end-to-end]**.
 
-The **[!UICONTROL Streaming end-to-end]** övervakningssidan visas. Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform], ett diagram som visar hur många direktuppspelade händelser som bearbetades av [[!DNL Real-time Customer Profile]](../../profile/home.md)samt en detaljerad lista över inkommande data.
+The **[!UICONTROL Streaming end-to-end]** övervakningssidan visas. Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform], ett diagram som visar hur många direktuppspelade händelser som bearbetades av [[!DNL Real-Time Customer Profile]](../../profile/home.md)samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 

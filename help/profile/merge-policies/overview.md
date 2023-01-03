@@ -4,7 +4,7 @@ title: Översikt över kopplingsprofiler
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en helhetsbild av era enskilda kunder. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: a8ef527a-cfee-4129-9973-e8a212a3ad1e
-source-git-commit: 965993bece32eeb0db6e7a9eab3131816a9de5cd
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1250'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofil
 Handboken kräver en fungerande förståelse för flera viktiga [!DNL Experience Platform] funktioner. Innan du följer den här guiden och arbetar med sammanfogningsprinciper bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil i realtid](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in i [!DNL Platform].
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
 * [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Förstå kopplingsprofiler

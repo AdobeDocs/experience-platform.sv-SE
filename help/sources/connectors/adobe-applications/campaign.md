@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Adobe Campaign Managed Cloud Services;kampanj;kampanjhanterade tjänster
 title: Adobe Campaign Managed Cloud Services
 description: Lär dig hur du ansluter Campaign-hanterade Cloud Services till plattformen med användargränssnittet
-source-git-commit: 99f65889aecf8c045dbb72053ebaca9429c3ebe1
+exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
@@ -61,7 +62,7 @@ Skapa sedan ett XDM ExperienceEvent-schema för både leveransloggar och spårni
 
 >[!NOTE]
 >
->Ditt XDM ExperienceEvent-schema måste vara profilaktiverat för att dina Campaign-data ska kunna importeras till [!DNL Real-time Customer Profile].
+>Ditt XDM ExperienceEvent-schema måste vara profilaktiverat för att dina Campaign-data ska kunna importeras till [!DNL Real-Time Customer Profile].
 
 Detaljerade instruktioner om hur du skapar ett schema finns i guiden [skapa ett XDM-schema i användargränssnittet](../../../xdm/tutorials/create-schema-ui.md).
 

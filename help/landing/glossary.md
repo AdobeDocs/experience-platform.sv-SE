@@ -5,7 +5,7 @@ title: Adobe Experience Platform-ordlista
 topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '7913'
 ht-degree: 0%
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 **Attribut**: Attribut är angivna egenskaper som representerar en profil.
 
-**Koppla attribut**: När du definierar en sammanfogningsprincip med hjälp av kundprofils-API:t i realtid `attributeMerge` anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. Det motsvarar att välja en [!UICONTROL Merge method] när du definierar en sammanfogningsprincip i användargränssnittet för plattformen.
+**Koppla attribut**: När du definierar en sammanfogningsprincip med hjälp av Real-Time Customer Profile API, `attributeMerge` anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. Det motsvarar att välja en [!UICONTROL Merge method] när du definierar en sammanfogningsprincip i användargränssnittet för plattformen.
 
 **Attribution AI**: [!DNL Attribution AI] är en intelligent tjänst från Adobe Sensei som levererar algoritmiska flerkanalsattribueringsfunktioner under hela kundlivscykeln.
 
@@ -286,7 +286,7 @@ ht-degree: 0%
 
 **Namnutrymme för identitet**: Ett identitetsnamnutrymme definierar kontexten för en identifierare, till exempel en e-postadress eller ett CRM-ID.
 
-**Identitetstjänst**: [!DNL Experience Platform Identity Service] gör det möjligt att skapa och hantera identitetstyper, så att ni kan länka samman kundidentiteter mellan olika enheter och kanaler. Tjänstens förmåga att länka samman identiteter gör det möjligt för kundprofiler i realtid att tillhandahålla en fullständig representation av varje enskild kund.
+**Identitetstjänst**: [!DNL Experience Platform Identity Service] gör det möjligt att skapa och hantera identitetstyper, så att ni kan länka samman kundidentiteter mellan olika enheter och kanaler. Tjänstens förmåga att länka samman identiteter gör det möjligt för kundprofilen i realtid att tillhandahålla en fullständig representation av varje enskild kund.
 
 **Identitetssammanfogning**: Identitetssammanfogning är processen att identifiera databragment och sammanfoga dem till en fullständig profilpost.
 
@@ -342,7 +342,7 @@ ht-degree: 0%
 
 **Marknadsföringsåtgärd**: I datastyrningsramverket är en marknadsföringsåtgärd (även kallat marknadsföringsfall) en åtgärd som en datakonsument utför på Experience Platform, och där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer.
 
-**Kopplingsmetod**: När du definierar en sammanfogningsprincip med hjälp av plattformsgränssnittet anger sammanfogningsmetoden hur datafel ska prioriteras när en konflikt uppstår. När du använder kundprofils-API:t i realtid för att definiera en sammanfogningsprincip, bestäms sammanfogningsmetoden med hjälp av `attributeMerge` -objekt.
+**Kopplingsmetod**: När du definierar en sammanfogningsprincip med hjälp av plattformsgränssnittet anger sammanfogningsmetoden hur datafel ska prioriteras när en konflikt uppstår. När du använder Real-Time Customer Profile API för att definiera en sammanfogningsprincip, bestäms sammanfogningsmetoden med hjälp av `attributeMerge` -objekt.
 
 **Kopplingsprincip**: Sammanslagningsprinciper är regler som Experience Platform använder för att avgöra hur kunddatafragment från flera källor kombineras för att skapa en enskild profil. När en datakonflikt inträffar avgör sammanfogningsprincipen vilka data som ska prioriteras för att inkluderas i profilen.
 
@@ -402,9 +402,9 @@ ht-degree: 0%
 
 **Produktionssandlåda**: En produktionssandlåda är en sandlåda som är avsedd att användas i din produktionsmiljö. Till skillnad från icke-produktionssandlådor kan produktionssandlådor inte återställas eller tas bort.
 
-**Profil**: En profil är en fullständig representation av en enskild kund, som bygger på sammanfogade data från olika källor och tidsseriedata, och ska inte blandas ihop med kundprofilen i realtid som en tjänst.
+**Profil**: En profil är en komplett representation av en enskild kund, som bygger på data från sammanfogade register- och tidsserier från flera källor, och ska inte blandas ihop med kundprofilen i realtid som en tjänst.
 
-**Profilåtkomst**: The `/entities` -slutpunkten i kundprofils-API:t i realtid gör att du kan komma åt postdata och händelser i tidsserier i profildatalagret. Se även: Profilenheter
+**Profilåtkomst**: The `/entities` -slutpunkten i Real-Time Customer Profile API ger dig åtkomst till postdata och tidsseriehändelser i profildatalagret. Se även: Profilenheter
 
 **Profildata**: Profildata avser alla data som finns i profildatalagret.
 
@@ -522,9 +522,9 @@ ht-degree: 0%
 
 **Direktinmatning**: Med direktuppspelad inmatning kan ni skicka data från klient- och serverenheter till Experience Platform i realtid.
 
-**Direktuppspelningssegmentering**: Direktuppspelningssegmentering är en kontinuerlig process för urval av data som uppdaterar segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
+**Direktuppspelningssegmentering**: Direktuppspelningssegmentering är en kontinuerlig process för urval av data som uppdaterar segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-Time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
-**Systemvy**: Systemvyn är en visuell representation av källdatauppsättningar som flödar igenom [!DNL Real-time Customer Profile] till destinationer.
+**Systemvy**: Systemvyn är en visuell representation av källdatauppsättningar som flödar igenom [!DNL Real-Time Customer Profile] till destinationer.
 
 ## T
 
@@ -540,7 +540,7 @@ ht-degree: 0%
 
 ## U
 
-**Unionsschema**: Ett unionsschema är en konsolidering av scheman som delar samma klass och har aktiverats för [!DNL Real-time Customer Profile]. Det kan finnas flera unionsscheman för en organisation, men det kan bara finnas ett unionsschema per klass.
+**Unionsschema**: Ett unionsschema är en konsolidering av scheman som delar samma klass och har aktiverats för [!DNL Real-Time Customer Profile]. Det kan finnas flera unionsscheman för en organisation, men det kan bara finnas ett unionsschema per klass.
 
 ## V
 

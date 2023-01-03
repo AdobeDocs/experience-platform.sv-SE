@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1368'
 ht-degree: 0%
@@ -15,15 +15,15 @@ ht-degree: 0%
 
 # Använd API:er för att säkerställa att data används korrekt för ett målgruppssegment
 
-Den här självstudiekursen handlar om hur du kontrollerar att dataanvändningen följs för [!DNL Real-time Customer Profile] målgruppssegment med API:er.
+Den här självstudiekursen handlar om hur du kontrollerar att dataanvändningen följs för [!DNL Real-Time Customer Profile] målgruppssegment med API:er.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt sökentitetsarkiv och används för att hantera [!DNL Experience Data Model (XDM)] data inom [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
-   - [Sammanfoga profiler](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att fastställa vilka data som kan sammanfogas i en enhetlig vy under vissa förhållanden. Sammanslagningsprinciper kan konfigureras för datastyrning.
-- [[!DNL Segmentation]](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som delar liknande egenskaper och kommer att svara på liknande sätt som marknadsföringsstrategier.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): [!DNL Real-Time Customer Profile] är ett generiskt sökentitetsarkiv och används för att hantera [!DNL Experience Data Model (XDM)] data inom [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
+   - [Sammanfoga profiler](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-Time Customer Profile] för att fastställa vilka data som kan sammanfogas i en enhetlig vy under vissa förhållanden. Sammanslagningsprinciper kan konfigureras för datastyrning.
+- [[!DNL Segmentation]](../home.md): Hur [!DNL Real-Time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som delar liknande egenskaper och kommer att svara på liknande sätt som marknadsföringsstrategier.
 - [Datastyrning](../../data-governance/home.md): Datastyrning tillhandahåller infrastruktur för märkning och verkställighet av dataanvändning med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningspolicyer](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
@@ -58,7 +58,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter en sammanfogningsprincip för en segmentdefinition {#merge-policy}
 
-Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som är aktiverade för användning i [!DNL Real-time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
+Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som är aktiverade för användning i [!DNL Real-Time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
 Använda [!DNL Segmentation] API kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
 

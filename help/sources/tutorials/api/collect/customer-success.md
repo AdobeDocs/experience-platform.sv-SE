@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1237'
 ht-degree: 0%
@@ -623,7 +623,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett system för kundframgångar på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett system för kundframgångar på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

@@ -5,7 +5,7 @@ title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1582'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Nu när schemat har skapats måste du ange vilket fält som ska innehålla segme
 
 ![Kryssrutorna för att markera det markerade fältet som primär identitet markeras i Schemaredigeraren.](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-När du har markerat `_id` som primär identitet väljer du schemats titel, följt av växlingens etikett **[!UICONTROL Profile]**. Välj **[!UICONTROL Enable]** för att aktivera schemat för [!DNL Real-time Customer Profile].
+När du har markerat `_id` som primär identitet väljer du schemats titel, följt av växlingens etikett **[!UICONTROL Profile]**. Välj **[!UICONTROL Enable]** för att aktivera schemat för [!DNL Real-Time Customer Profile].
 
 ![Växlingen för att aktivera schemat för profilen är markerad i Schemaredigeraren.](../images/tutorials/external-audiences/schema-profile.png)
 

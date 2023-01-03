@@ -6,7 +6,7 @@ topic-legacy: policies
 type: Tutorial
 description: Lär dig hur du skapar en datahanteringsprincip med hjälp av API:t för principtjänsten.
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1200'
 ht-degree: 1%
@@ -423,6 +423,6 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och information om den uppdatera
 
 Genom att följa den här självstudiekursen har du skapat en dataanvändningspolicy för en marknadsföringsåtgärd. Nu kan du fortsätta med självstudiekursen på [tillämpa dataanvändningsprinciper](../enforcement/api-enforcement.md) om du vill lära dig hur du söker efter policyöverträdelser och hur du hanterar dem i ditt upplevelseprogram.
 
-Mer information om olika tillgängliga åtgärder finns i [!DNL Policy Service] API, se [Utvecklarhandbok för principtjänst](../api/getting-started.md). Mer information om hur du tillämpar regler för [!DNL Real-time Customer Profile] data, se självstudiekursen om [se till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md).
+Mer information om olika tillgängliga åtgärder finns i [!DNL Policy Service] API, se [Utvecklarhandbok för principtjänst](../api/getting-started.md). Mer information om hur du tillämpar regler för [!DNL Real-Time Customer Profile] data, se självstudiekursen om [se till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md).
 
 Så här hanterar du användarprofiler i [!DNL Experience Platform] -användargränssnittet finns i [principanvändarhandbok](user-guide.md).

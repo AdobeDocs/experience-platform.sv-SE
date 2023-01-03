@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning i användargränssnittet för att överföra kundattributprofildata till Adobe Experience Platform.
 exl-id: 66bdab8f-c00e-4ebe-8b8e-f9e12cf86bbe
-source-git-commit: b1b820c93ff1731b797f2b5e3ace7d2d6995b98b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '593'
 ht-degree: 0%
@@ -76,7 +76,7 @@ The [!UICONTROL Review] visas så att du kan granska det nya dataflödet innan d
 
 ## Nästa steg
 
-När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. När det inledande intaget är klart kan kundattributprofildata användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-time Customer Profile] och [!DNL Segmentation Service]. Mer information finns i följande dokument:
+När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. När det inledande intaget är klart kan kundattributprofildata användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-Time Customer Profile] och [!DNL Segmentation Service]. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)

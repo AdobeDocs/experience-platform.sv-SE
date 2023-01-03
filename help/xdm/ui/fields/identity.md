@@ -5,8 +5,7 @@ title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '567'
 ht-degree: 0%
@@ -23,36 +22,36 @@ Identitetsfält är en viktig komponent i hur kundidentitetsdiagram skapas i Pla
 
 * [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Överbryggar identiteter mellan enheter och system och länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
    * [Identitetsnamnutrymmen](../../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en person, och är en obligatorisk komponent för varje identitetsfält.
-* [Kundprofil](../../../profile/home.md) i realtid: Använder kundidentitetsdiagram för att skapa en enhetlig konsumentprofil som bygger på aggregerade data från flera källor, som uppdateras i nära realtid.
+* [Kundprofil i realtid](../../../profile/home.md): Använder kundidentitetsdiagram för att skapa en enhetlig konsumentprofil som bygger på aggregerade data från flera källor, som uppdateras i nära realtid.
 
 ## Definiera ett identitetsfält
 
-När [du definierar ett nytt fält](./overview.md#define) i användargränssnittet kan du ange det som ett identitetsfält genom att markera kryssrutan **[!UICONTROL Identity]** i den högra listen.
+När [definiera ett nytt fält](./overview.md#define) i användargränssnittet kan du ange det som ett identitetsfält genom att välja **[!UICONTROL Identity]** i den högra listen.
 
 ![](../../images/ui/fields/special/identity.png)
 
-Ytterligare kontroller visas när du har markerat kryssrutan. Om du vill att det här fältet ska vara den primära identiteten för schemat markerar du kryssrutan **[!UICONTROL Primary identity]**.
+Ytterligare kontroller visas när du har markerat kryssrutan. Om du vill att det här fältet ska vara schemats primära identitet väljer du **[!UICONTROL Primary identity]** kryssrutan.
 
 >[!NOTE]
 >
->Ett enskilt schema kan ha många definierade identitetsfält, men kan bara ha en primär identitet. Alla identitetsfält (primära eller på annat sätt) bidrar till identitetsdiagrammet för en enskild kund, men kundprofilen i realtid använder bara den primära identiteten som källa för sanningen när du sammanfogar datafragment. Om du vill aktivera ett schema för användning i profilen måste schemat ha en primär identitet definierad.
+>Ett enskilt schema kan ha många definierade identitetsfält, men kan bara ha en primär identitet. Alla identitetsfält (primära eller på annat sätt) bidrar till identitetsdiagrammet för en enskild kund, men i realtidskundprofilen används endast den primära identiteten som källa för sanningen när du sammanfogar datafragment. Om du vill aktivera ett schema för användning i profilen måste schemat ha en primär identitet definierad.
 
-Under **[!UICONTROL Identity namespace]** använder du listrutemenyn för att välja lämpligt namnutrymme för identitetsfältet. Standardnamnutrymmen som tillhandahålls av Adobe visas tillsammans med anpassade namnutrymmen som definieras av din organisation.
+Under **[!UICONTROL Identity namespace]** använder du listrutan för att välja lämpligt namnutrymme för identitetsfältet. Standardnamnutrymmen som tillhandahålls av Adobe visas tillsammans med anpassade namnutrymmen som definieras av din organisation.
 
 När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
 
 ![](../../images/ui/fields/special/identity-config.png)
 
-Arbetsytan uppdateras för att återspegla ändringarna, och det valda fältet får en fingeravtryckssymbol (![](../../images/ui/fields/special/identity-symbol.png)) för att ange den som en identitet. I den vänstra listen visas nu identitetsfältet under namnet på den klass eller schemafältgrupp som tillhandahåller fältet till schemat.
+Arbetsytan uppdateras med ändringarna och det valda fältet får en fingeravtryckssymbol (![](../../images/ui/fields/special/identity-symbol.png)) för att ange den som en identitet. I den vänstra listen visas nu identitetsfältet under namnet på den klass eller schemafältgrupp som tillhandahåller fältet till schemat.
 
-Eftersom alla identitetsfält är obligatoriska som standard visas fältet nu under **[!UICONTROL Required fields]** i den vänstra listen. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
+Eftersom alla identitetsfält är obligatoriska som standard visas fältet nu under **[!UICONTROL Required fields]** till vänster. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
 
 ![](../../images/ui/fields/special/identity-applied.png)
 
-Om du har definierat en primär identitet för schemat kan du nu gå vidare till [aktivera schemat för användning i kundprofilen ](../resources/schemas.md#profile) i realtid.
+Om du har definierat en primär identitet för schemat kan du nu fortsätta till [aktivera schemat för användning i kundprofilen i realtid](../resources/schemas.md#profile).
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden för [identitetsdiagramvisningsprogrammet](../../../identity-service/ui/identity-graph-viewer.md) för att lära dig hur du utforskar organisationens privata diagram i användargränssnittet.
+I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden på [visningsprogram för identitetsdiagram](../../../identity-service/ui/identity-graph-viewer.md) om du vill lära dig hur du utforskar organisationens privata diagram i användargränssnittet.
 
-I översikten [definierar fält i användargränssnittet](./overview.md#special) finns mer information om hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].
+Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].

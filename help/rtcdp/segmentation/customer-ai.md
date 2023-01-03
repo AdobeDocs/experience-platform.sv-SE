@@ -3,7 +3,7 @@ keywords: rtcdp segment;segment builder rtcdp;rtcdp segment;customer ai rtcdp
 title: Kund-AI i Real-time Customer Data Platform
 description: En översikt över kundens AI och hur den kan bidra till att generera poäng för specifika resultat som konverteringar eller bortfall.
 exl-id: 40210196-3c02-4d82-8692-628f2a46b3b5
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '302'
 ht-degree: 0%

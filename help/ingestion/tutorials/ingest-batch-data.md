@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform kan du enkelt importera data som gruppfiler i form av Parquet-filer eller data som följer ett känt Experience Data Model-schema (XDM).
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: e7fc8a168a48cc6fadda62efda9ee9eb3025ab51
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1261'
 ht-degree: 0%
@@ -75,27 +75,27 @@ En tom datauppsättning har skapats och du har returnerats till **[!UICONTROL Da
 
 Till höger på arbetsytan Datauppsättningar ser du **[!UICONTROL Info]** som innehåller information om din nya datauppsättning, t.ex. datauppsättnings-ID, namn, beskrivning, tabellnamn, schema, direktuppspelning och källa. Fliken Info innehåller även information om när datauppsättningen skapades och om dess senaste ändringsdatum.
 
-På fliken Info finns även en  **[!UICONTROL Profile]** växla som används för att aktivera datauppsättningen för användning med [!DNL Real-time Customer Profile]. Användning av den här växlingsknappen och [!DNL Real-time Customer Profile], förklaras mer ingående i det följande avsnittet.
+På fliken Info finns även en  **[!UICONTROL Profile]** växla som används för att aktivera datauppsättningen för användning med [!DNL Real-Time Customer Profile]. Användning av den här växlingsknappen och [!DNL Real-Time Customer Profile], förklaras mer ingående i det följande avsnittet.
 
 ![Datauppsättningsaktivitet](../images/tutorials/ingest-batch-data/sample-dataset.png)
 
-## Aktivera datauppsättning för [!DNL Real-time Customer Profile]
+## Aktivera datauppsättning för [!DNL Real-Time Customer Profile]
 
 Datauppsättningar används för inmatning av data i [!DNL Experience Platform], och dessa data används i slutändan för att identifiera individer och sammanfoga information som kommer från olika källor. Den sammanfogade informationen kallas en [!DNL Real-Time Customer Profile]. För att [!DNL Platform] för att ta reda på vilken information som ska ingå i [!DNL Real-Time Profile]kan datauppsättningar markeras för inkludering med **[!UICONTROL Profile]** växla.
 
 Den här växlingen är som standard inaktiverad. Om du väljer att aktivera [!DNL Profile]används alla data som matas in i datauppsättningen för att identifiera en individ och sammanfoga dem [!DNL Real-Time Profile].
 
-Mer information om [!DNL Real-time Customer Profile] och arbeta med identiteter kan du läsa [Identitetstjänst](../../identity-service/home.md) dokumentation.
+Mer information om [!DNL Real-Time Customer Profile] och arbeta med identiteter kan du läsa [Identitetstjänst](../../identity-service/home.md) dokumentation.
 
-Aktivera datauppsättningen för [!DNL Real-time Customer Profile]klickar du på **[!UICONTROL Profile]** växla i **[!UICONTROL Info]** -fliken.
+Aktivera datauppsättningen för [!DNL Real-Time Customer Profile]klickar du på **[!UICONTROL Profile]** växla i **[!UICONTROL Info]** -fliken.
 
 ![Växla profil](../images/tutorials/ingest-batch-data/dataset-profile-toggle.png)
 
-En dialogruta visas där du ombeds bekräfta att du vill aktivera datauppsättningen för [!DNL Real-time Customer Profile].
+En dialogruta visas där du ombeds bekräfta att du vill aktivera datauppsättningen för [!DNL Real-Time Customer Profile].
 
 ![Dialogrutan Aktivera profil](../images/tutorials/ingest-batch-data/enable-dataset-for-profile.png)
 
-Klicka **[!UICONTROL Enable]** och växeln blir blå, vilket anger att den är aktiverad.
+Klicka **[!UICONTROL Enable]** och växlingsknappen blir blå, vilket anger att den är aktiverad.
 
 ![Aktiverad för profil](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)
 

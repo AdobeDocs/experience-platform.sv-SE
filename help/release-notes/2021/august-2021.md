@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
 exl-id: 0513b9dc-b16c-43b3-8e17-4be4499308d4
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 3%
@@ -65,9 +65,9 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i [Användargränssnittsguide för kundprofiler i realtid](../../profile/ui/user-guide.md). |
+| Bläddra bland profiler efter sammanfogningsprincip eller identitet | När du bläddrar bland profiler i Experience Platform kan du nu bläddra genom en sammanfogningsprincip och förhandsgranska 20 exempelprofiler baserat på den valda sammanfogningsprincipen. Du kan också bläddra efter identitet för att söka efter en viss profil med hjälp av ett identitetsnamnutrymme och relaterat identitetsvärde. Mer information finns i [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md). |
 
-Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
+Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ## Källor {#sources}
 

@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 0%
@@ -485,7 +485,7 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

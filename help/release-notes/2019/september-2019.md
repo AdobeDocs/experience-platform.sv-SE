@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 exl-id: 7f503046-a3b4-4fdb-833c-4205b6e9fa04
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 2%
@@ -36,7 +36,7 @@ Mer information finns på [Dokumentation för datainmatning](../../ingestion/hom
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst inom [!DNL Experience Platform] som gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i olika Adobe-lösningar och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver datavetenskapens hela livscykel, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
+Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst inom [!DNL Experience Platform] som gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i olika Adobe-lösningar och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver datavetenskapens hela livscykel, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika [!DNL Real-Time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
@@ -56,7 +56,7 @@ Mer information finns på [Översikt över arbetsytan Datavetenskap](../../data-
 
 ## [!DNL Query Service] {#query}
 
-[!DNL Query Service] ger möjlighet att använda standard-SQL för att fråga data i Adobe Experience Platform för att stödja en rad olika användningsfall för analys och datahantering. Det är ett serverlöst verktyg som gör att du kan koppla samman datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace]eller för förtäring i [!DNL Real-time Customer Profile].
+[!DNL Query Service] ger möjlighet att använda standard-SQL för att fråga data i Adobe Experience Platform för att stödja en rad olika användningsfall för analys och datahantering. Det är ett serverlöst verktyg som gör att du kan koppla samman datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace]eller för förtäring i [!DNL Real-Time Customer Profile].
 
 Du kan använda [!DNL Query Service] att bygga upp ekosystem för dataanalys och skapa en bild av kunderna över deras olika interaktionskanaler. Dessa kanaler kan omfatta försäljningssystem, webb-, mobil- eller CRM-system.
 

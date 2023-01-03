@@ -4,7 +4,7 @@ title: API-guide för segmenteringstjänst
 topic-legacy: guide
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: 6133c3127aaf10243d5472540c29125155c99d7b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # API-guide för segmenteringstjänst
 
-[!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-time Customer Profile] data.
+[!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
 
 The [!DNL Segmentation Service] API har flera slutpunkter som gör att du kan hantera din segmentering programmatiskt i [!DNL Experience Platform]. I det här översiktsdokumentet finns introduktioner på hög nivå för var och en av dessa slutpunkter samt länkar till tillhörande slutpunktsguider för mer information. Innan du läser de enskilda slutpunktsstödlinjerna, se [komma igång-guide](./getting-started.md) om du vill ha viktig information om obligatoriska rubriker, läsa exempel-API-anrop med mera.
 

@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;Google Ads;Google Ads source
 title: Skapa en Google Ads Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Google Ads-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: 56419f41188c9bfdbeda7dde680f269b980a37f0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig Google Ads-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/advertising.md)
 

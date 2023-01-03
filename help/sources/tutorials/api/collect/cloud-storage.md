@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: e4853c61848bec20eb8a6902365b97c3a9d0b3b3
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1736'
 ht-degree: 0%
@@ -681,7 +681,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från din molnlagring på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från din molnlagring på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

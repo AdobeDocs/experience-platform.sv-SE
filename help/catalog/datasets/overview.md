@@ -5,7 +5,7 @@ title: Datauppsättningar - översikt
 topic-legacy: datasets
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 7e4c2ef8089276829604c9d8a8dd20a122b18c7a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '784'
 ht-degree: 0%
@@ -61,10 +61,10 @@ Nedan följer en lista över tjänster längre fram i kedjan som använder datau
 
 * [[!DNL Data Access API]](../../data-access/home.md): Gör att du kan komma åt och hämta innehållet i filer som lagras i datauppsättningar.
 * [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system och länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-time Customer Profile] hämtar data från [!DNL Data Lake] och behåller kundprofiler i sitt eget separata datalager.
-* [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Gör att ni kan skapa segment och generera målgrupper utifrån era [!DNL Real-time Customer Profile] data. Dessa målgrupper kan sedan exporteras till sina egna datauppsättningar i [!DNL Data Lake].
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från [!DNL Data Lake] och behåller kundprofiler i sitt eget separata datalager.
+* [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Gör att ni kan skapa segment och generera målgrupper utifrån era [!DNL Real-Time Customer Profile] data. Dessa målgrupper kan sedan exporteras till sina egna datauppsättningar i [!DNL Data Lake].
 * [Adobe Experience Platform Data Science Workspace](../../data-science-workspace/home.md): Använder maskininlärning och artificiell intelligens för att identifiera insikter i stora datamängder.
-* [Adobe Experience Platform Query Service](../../query-service/home.md): Gör att du kan använda standard-SQL för att fråga data i [!DNL Experience Platform], koppla alla datauppsättningar i [!DNL Data Lake] och hämta frågeresultat som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace], eller [!DNL Real-time Customer Profile].
+* [Adobe Experience Platform Query Service](../../query-service/home.md): Gör att du kan använda standard-SQL för att fråga data i [!DNL Experience Platform], koppla alla datauppsättningar i [!DNL Data Lake] och hämta frågeresultat som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace], eller [!DNL Real-Time Customer Profile].
 * [Adobe Experience Platform Destinationstjänst](../../destinations/home.md): Gör att du kan [exportera datamängder](/help/destinations/ui/export-datasets.md) till det molnlagringsutrymme eller e-postmarknadsföringsmål du vill ha för rapporter och datavetenskapliga aktiviteter.
 
 ## Nästa steg

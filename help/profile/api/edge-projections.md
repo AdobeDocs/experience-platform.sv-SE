@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid genom att göra rätt data lättillgänglig och kontinuerligt uppdaterad när förändringar inträffar. Detta görs genom användning av kanter, en geografiskt placerad server som lagrar data och gör dem tillgängliga för program.
 exl-id: ce429164-8e87-412d-9a9d-e0d4738c7815
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1959'
 ht-degree: 0%
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder [!DNL Real-time Customer Profile] API för att arbeta med kantprognoser, inklusive mål och konfigurationer.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder [!DNL Real-Time Customer Profile] API för att arbeta med kantprognoser, inklusive mål och konfigurationer.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 >[!NOTE]
 >

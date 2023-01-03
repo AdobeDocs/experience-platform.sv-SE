@@ -5,7 +5,7 @@ title: API-slutpunkt för segmentdefinitioner
 topic-legacy: developer guide
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Slutpunkt för segmentdefinitioner
 
-Med Adobe Experience Platform kan du skapa segment som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
+Med Adobe Experience Platform kan du skapa segment som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentdefinitioner bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 

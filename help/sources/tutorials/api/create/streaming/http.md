@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 2b3f8b7b0a19214a95a2ad76c9fecd70ffd91743
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -22,7 +22,7 @@ I den här självstudiekursen används [[!DNL Flow Service] API](https://www.ado
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill veta hur du skapar dessa kan du läsa självstudiekursen om [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen på [data i tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 

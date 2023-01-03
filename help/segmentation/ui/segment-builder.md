@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för Segment Builder
 topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3038'
 ht-degree: 0%
@@ -139,7 +139,7 @@ För [!DNL Platform] målgrupper skapade med [!DNL Segment Builder]kan du konver
 
 ![Den här bilden visar hur du konverterar ett målgruppsattribut till regler.](../images/ui/segment-builder/add-audience-to-segment.png)
 
-Om det uppstår några konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
+Om det uppstår konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
 
 ### kodvyn
 
@@ -254,7 +254,7 @@ Mer information om olika metoder för utvärdering av segmentdefinitioner finns 
 
 ## Nästa steg {#next-steps}
 
-Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isolera marknadsföringsbara målgrupper från [!DNL Real-time Customer Profile] data. När du har läst den här guiden bör du nu kunna:
+Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isolera marknadsföringsbara målgrupper från [!DNL Real-Time Customer Profile] data. När du har läst den här guiden bör du nu kunna:
 
 - Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
 - Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmentreglerna körs.

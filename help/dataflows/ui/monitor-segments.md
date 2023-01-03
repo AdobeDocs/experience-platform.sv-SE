@@ -1,10 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;övervakningssegment;övervaka dataflöden;dataflöden;segmentering
-description: Med segmentering kan ni skapa segment och målgrupper utifrån kundprofildata i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden under segmentering med användargränssnittet i Experience Platform.
+description: Med segmentering kan ni skapa segment och målgrupper utifrån era kundprofildata i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden under segmentering med användargränssnittet i Experience Platform.
 title: Övervaka dataflöden för segment i användargränssnittet
 topic-legacy: overview
 type: Tutorial
-source-git-commit: cec27197d47d2dd979bdf29f16fef77e8ff855e3
+exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1783'
 ht-degree: 0%
@@ -23,7 +24,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 - [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden konfigureras över olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar till [!DNL Identity] och [!DNL Profile]och till [!DNL Destinations].
    - [Dataflödeskörningar](../../sources/notifications.md): Dataflödeskörningar är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
-- [Segmentering](../../segmentation/home.md): Med segmentering kan ni skapa segment och målgrupper utifrån kundprofildata i realtid.
+- [Segmentering](../../segmentation/home.md): Med segmentering kan ni skapa segment och målgrupper utifrån era kundprofildata i realtid.
    - [Aktiveringsjobb](../../destinations/ui/activation-overview.md): Ett aktiveringsjobb används för att aktivera ditt segment till en angiven destination.
    - [Utvärderingsjobb](../../segmentation/tutorials/evaluate-a-segment.md#evaluate-a-segment): Ett utvärderingsjobb är en asynkron process som kör skapar ett målgruppssegment baserat på det angivna segmentet.
    - [Exportera jobb](../../segmentation/api/export-jobs.md): Ett exportjobb är en asynkron process som används för att behålla målgruppsmedlemmar i datauppsättningar.

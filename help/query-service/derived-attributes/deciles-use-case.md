@@ -2,7 +2,7 @@
 title: Använd skiftläge för dekorbaserade härledda attribut
 description: Den här guiden visar de steg som krävs för att använda frågetjänsten för att skapa decimalbaserade härledda attribut som kan användas med dina profildata.
 exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
-source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1508'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 Härledda attribut underlättar komplicerade användningsfall för att analysera data från datasjön som kan användas tillsammans med andra plattformstjänster längre fram i kedjan eller publiceras i kundprofildata i realtid.
 
-I det här exemplet visas hur du skapar dekorbaserade härledda attribut som kan användas med kundprofildata i realtid. Om du använder ett lojalitetsscenario för ett flygbolag som exempel får du information i den här guiden om hur du skapar en datauppsättning som använder kategoriserade deciler för att segmentera och skapa målgrupper baserat på rankade attribut.
+I det här exemplet visas hur du skapar dekorbaserade härledda attribut som kan användas med dina kundprofildata i realtid. Om du använder ett lojalitetsscenario för ett flygbolag som exempel får du information i den här guiden om hur du skapar en datauppsättning som använder kategoriserade deciler för att segmentera och skapa målgrupper baserat på rankade attribut.
 
 Följande viktiga begrepp visas:
 

@@ -2,7 +2,7 @@
 title: Schemafältgrupp för XDM-affärspersonsinformation
 description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Person Details.
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '584'
 ht-degree: 2%

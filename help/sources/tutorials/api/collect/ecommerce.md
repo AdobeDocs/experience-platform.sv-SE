@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1284'
 ht-degree: 0%
@@ -647,7 +647,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data för e-handel på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data för e-handel på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

@@ -3,7 +3,7 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Det här dokumentet innehåller riktlinjer för hur man skyddar mot dataintrång i Adobe Experience Platform
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: fa0ddc4c0053018d013c14c568ebb2fd231f4bd2
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '546'
 ht-degree: 0%
@@ -40,5 +40,5 @@ I följande tabell visas skyddsutkast som du bör tänka på när du använder [
 
 Se följande dokumentation för mer information om data och bearbetning av skyddsutkast i Experience Platform:
 
-* [Guardrails for Real-time Customer Profile data](../profile/guardrails.md)
+* [Guardrails for Real-Time Customer Profile data](../profile/guardrails.md)
 * [Garantier för identitetstjänstens data](../identity-service/guardrails.md)

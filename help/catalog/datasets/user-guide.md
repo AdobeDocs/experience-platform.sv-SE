@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för datauppsättningar
 topic-legacy: datasets
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1416'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigerare](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med [!DNL Schema Editor] inom [!DNL Platform] användargränssnitt.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
 
 ## Visa datauppsättningar {#view-datasets}
@@ -108,7 +108,7 @@ The **[!UICONTROL Add data]** visas. Överför CSV-filen genom att antingen dra 
 
 ## Aktivera en datauppsättning för kundprofil i realtid {#enable-profile}
 
-Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapslade data. Det gör du genom att schemat som datauppsättningen följer måste vara kompatibelt för användning i [!DNL Real-time Customer Profile]. Ett kompatibelt schema uppfyller följande krav:
+Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapslade data. Det gör du genom att schemat som datauppsättningen följer måste vara kompatibelt för användning i [!DNL Real-Time Customer Profile]. Ett kompatibelt schema uppfyller följande krav:
 
 * Schemat har minst ett attribut angivet som en identitetsegenskap.
 * Schemat har en identitetsegenskap definierad som primär identitet.
@@ -145,7 +145,7 @@ En bekräftelseruta visas. Välj **[!UICONTROL Delete]** för att bekräfta bort
 
 Om en datauppsättning är aktiverad för profil tas den bort från datasjön, identitetstjänsten och profilarkivet inom plattformen om den tas bort via användargränssnittet.
 
-Du kan ta bort en datauppsättning från [!DNL Profile] lagra endast (data lämnas kvar i datasjön) med hjälp av kundprofils-API:t i realtid. Mer information finns i [API-slutpunktsguide för profilsystemjobb](../../profile/api/profile-system-jobs.md).
+Du kan ta bort en datauppsättning från [!DNL Profile] lagra endast (data lämnas kvar i Data Lake) med hjälp av kundprofils-API:t i realtid. Mer information finns i [API-slutpunktsguide för profilsystemjobb](../../profile/api/profile-system-jobs.md).
 
 ## Övervaka datainmatning
 

@@ -5,7 +5,7 @@ title: Bästa praxis för datamodellering
 topic-legacy: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2695'
 ht-degree: 1%
@@ -205,7 +205,7 @@ Om du är osäker på om ett visst fält är nödvändigt för att inkluderas i 
 
 ### Identitetsfält
 
-I Experience Platform används XDM-fält som markerats som identiteter för att sammanfoga information om enskilda kunder som kommer från flera datakällor. Även om ett schema kan ha flera fält markerade som identiteter måste en enda primär identitet definieras för att schemat ska kunna aktiveras för användning i [!DNL Real-time Customer Profile]. Se avsnittet om [identitetsfält](./composition.md#identity) i grunderna för schemakomposition för mer detaljerad information om hur dessa fält används.
+I Experience Platform används XDM-fält som markerats som identiteter för att sammanfoga information om enskilda kunder som kommer från flera datakällor. Även om ett schema kan ha flera fält markerade som identiteter måste en enda primär identitet definieras för att schemat ska kunna aktiveras för användning i [!DNL Real-Time Customer Profile]. Se avsnittet om [identitetsfält](./composition.md#identity) i grunderna för schemakomposition för mer detaljerad information om hur dessa fält används.
 
 När du utformar dina scheman kommer eventuella primärnycklar i relationsdatabastabeller troligtvis att vara lämpliga för primära identiteter. Andra exempel på tillämpliga identitetsfält är kundens e-postadresser, telefonnummer, konto-ID:n och [ECID](../../identity-service/ecid.md).
 

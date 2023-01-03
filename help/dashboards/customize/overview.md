@@ -3,7 +3,7 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Anpassning av instrumentpanel - översikt
 description: Läs mer om hur du kan anpassa de data som visas på dina Adobe Experience Platform-kontrollpaneler.
 exl-id: efabdb61-4148-4b0e-b7a1-6e788b5e43a8
-source-git-commit: 27252d547afd30acc7b334d5054f1350dc0031b7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Fullständiga steg för att skapa egna widgetar finns i [anpassade widgetar för
 
 #### Redigera schema {#edit-schema}
 
-För att skapa en [anpassad widget](#custom-widgets) för dina instrumentpaneler måste du först identifiera det attribut för kundprofil i realtid som widgeten ska baseras på.
+För att skapa en [anpassad widget](#custom-widgets) för dina instrumentpaneler måste du först identifiera attributet för kundprofil i realtid som widgeten ska baseras på.
 
 Stegvisa instruktioner för hur du redigerar organisationens schema för att skapa anpassade widgetar för kontrollpaneler finns i guiden. [redigera ditt instrumentpanelsschema](edit-schema.md).
 

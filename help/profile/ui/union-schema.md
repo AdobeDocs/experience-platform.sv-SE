@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket unionsschema som helst i organisationen och förhandsgranska fält, identiteter, relationer och bidragande scheman för en viss klass. Den här guiden ger detaljerad information om hur du visar och utforskar unionens scheman med hjälp av plattformsgränssnittet.
 exl-id: 52af0d77-e37d-4ed8-9dee-71a50b337b4e
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1183'
 ht-degree: 0%
@@ -20,8 +20,8 @@ I Adobe Experience Platform användargränssnitt kan du enkelt visa vilket union
 
 Användargränssnittshandboken kräver förståelse för de olika [!DNL Experience Platform] tjänster som används för att hantera kundprofildata i realtid. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
 
-* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas in till [!DNL Platform].
+* [[!DNL Real-Time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas in till [!DNL Platform].
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Förstå fackscheman

@@ -3,7 +3,7 @@ keywords: segmentering, segmentering rtcdp;realtidssegmentering av kunddataplatt
 title: Segmenteringstjänst i Real-time Customer Data Platform
 description: Adobe Real-Time Customer Dat Platformå bygger på Adobe Experience Platform och utnyttjar många av Experience Platform tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '537'
 ht-degree: 0%

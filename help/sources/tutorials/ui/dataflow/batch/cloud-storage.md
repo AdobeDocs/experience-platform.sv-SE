@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 title: Konfigurera ett dataflöde för att hämta gruppdata från en molnlagringskälla i användargränssnittet
 description: I den här självstudien beskrivs hur du konfigurerar ett nytt dataflöde för att importera batchdata från en molnlagringskälla i användargränssnittet
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 0910de76d817eea7c7c3cb2b988d81268b3e5812
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1743'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ### Filformat som stöds
 
@@ -183,9 +183,9 @@ När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** så att 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern molnlagring och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Dessutom kan inkommande data nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern molnlagring och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Dessutom kan inkommande data nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)
 
 >[!WARNING]

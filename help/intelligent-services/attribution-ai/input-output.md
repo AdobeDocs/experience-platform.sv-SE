@@ -5,7 +5,7 @@ title: Indata och utdata i Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%
@@ -238,7 +238,7 @@ Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om d
 >[!IMPORTANT]
 >
 > - Attribution AI använder endast uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.
-> - Attribution AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in förfrågningar från konsumenter om åtkomst och radering för att ta bort sina data över datasjön, identitetstjänst och kundprofil i realtid.
+> - Attribution AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in konsumentförfrågningar om åtkomst och ta bort sina data i datasjön, identitetstjänst och kundprofil i realtid.
 > - Alla datauppsättningar som vi använder för in-/utdata av modeller följer riktlinjerna för plattformen. Plattformsdatakryptering gäller för data i vila och under överföring. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md)
 
 

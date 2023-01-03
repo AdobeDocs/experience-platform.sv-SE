@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv 
 title: Användargränssnittshandbok för dataprep
 description: Det här dokumentet innehåller anvisningar om hur du använder förinställningsfunktioner för data i plattformsgränssnittet för att mappa CSV-filer till ett XDM-schema.
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1737'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande plat
    * [Grunderna för schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Källor](../../sources/home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 
 ## Dataflödesdetaljer

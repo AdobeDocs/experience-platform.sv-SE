@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen med hjälp av källanslutningar och API:t för Flow Service.
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1320'
 ht-degree: 0%
@@ -690,7 +690,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett annonseringssystem på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett annonseringssystem på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

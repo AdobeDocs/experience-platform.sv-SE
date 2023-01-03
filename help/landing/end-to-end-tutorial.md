@@ -3,7 +3,8 @@ keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundrese
 title: Adobe Experience Platform kompletta exempelarbetsflöde
 topic-legacy: getting started
 description: Lär dig det grundläggande arbetsflödet från början till slut för Adobe Experience Platform på en hög nivå.
-source-git-commit: 9ed521c4e2ebcd20da662e93b9591ef690f51c5e
+exl-id: 0a4d3b68-05a5-43ef-bf0d-5738a148aa77
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1835'
 ht-degree: 0%
@@ -26,7 +27,7 @@ Detta kompletta arbetsflöde använder flera Adobe Experience Platform-tjänster
 - [[!DNL Identity Service]](../identity-service/home.md): Förser er med en heltäckande bild av era kunder och deras beteende genom att överbrygga identiteter mellan olika enheter och system.
 - [Källor](../sources/home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
 - [[!DNL Segmentation Service]](../segmentation/home.md): [!DNL Segmentation Service] kan du dela upp data som lagras i [!DNL Experience Platform] som rör individer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper.
-- [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Datauppsättningar](../catalog/datasets/overview.md): Konstruktionen för lagring och hantering av databeständighet i [!DNL Experience Platform].
 - [Destinationer](../destinations/home.md): Destinationer är färdiga integreringar med vanliga applikationer som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 
@@ -42,7 +43,7 @@ Du måste aktivera ditt schema för användning i kundprofilen i realtid så att
 
 När du har skapat ett XDM-schema kan du börja föra in data i systemet.
 
-Alla data som hämtas till Platform lagras på enskilda datauppsättningar vid intag. En datauppsättning är en samling dataposter som mappar till ett specifikt XDM-schema. Innan dina data kan användas av [!DNL Real-time Customer Profile]måste den aktuella datauppsättningen konfigureras specifikt. Fullständiga anvisningar om hur du aktiverar en datauppsättning för profilen finns i [Användargränssnittshandbok för datauppsättningar](../catalog/datasets/user-guide.md#enable-profile) och [API-självstudiekurs för konfiguration av datauppsättning](../profile/tutorials/dataset-configuration.md). När datauppsättningen har konfigurerats kan du börja inhämta data i den.
+Alla data som hämtas till Platform lagras på enskilda datauppsättningar vid intag. En datauppsättning är en samling dataposter som mappar till ett specifikt XDM-schema. Innan dina data kan användas av [!DNL Real-Time Customer Profile]måste den aktuella datauppsättningen konfigureras specifikt. Fullständiga anvisningar om hur du aktiverar en datauppsättning för profilen finns i [Användargränssnittshandbok för datauppsättningar](../catalog/datasets/user-guide.md#enable-profile) och [API-självstudiekurs för konfiguration av datauppsättning](../profile/tutorials/dataset-configuration.md). När datauppsättningen har konfigurerats kan du börja inhämta data i den.
 
 Plattformen gör det möjligt att importera data från externa källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserade lager, databaser och många andra. Du kan till exempel importera data med [Amazon S3](../sources/tutorials/api/create/cloud-storage/s3.md). En fullständig lista över tillgängliga källor finns i [översikt över källanslutningar](../sources/home.md).
 
@@ -52,7 +53,7 @@ Mer detaljerad information om källanslutningar finns i [översikt över källan
 
 När data hämtas till Platform via källkopplingen och lagras i din profilaktiverade datauppsättning skapas kundprofiler automatiskt baserat på de identitetsdata som du konfigurerade i XDM-schemat.
 
-När du överför data till en ny datauppsättning för första gången, eller när du konfigurerar en ny ETL-process eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts korrekt och att de genererade profilerna innehåller de data du förväntar dig. Mer information om hur du får åtkomst till kundprofiler i plattformsgränssnittet finns i [Användargränssnittsguide för kundprofiler i realtid](../profile/ui/user-guide.md). Mer information om hur du får åtkomst till profiler med hjälp av kundprofils-API:t i realtid finns i handboken [använda enheternas slutpunkt](../profile/api/entities.md).
+När du överför data till en ny datauppsättning för första gången, eller när du konfigurerar en ny ETL-process eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts korrekt och att de genererade profilerna innehåller de data du förväntar dig. Mer information om hur du får åtkomst till kundprofiler i plattformsgränssnittet finns i [Användargränssnittsguide för kundprofil i realtid](../profile/ui/user-guide.md). Mer information om hur du får åtkomst till profiler med hjälp av kundprofils-API:t i realtid finns i handboken [använda enheternas slutpunkt](../profile/api/entities.md).
 
 ## Utvärdera era data
 
@@ -92,7 +93,7 @@ Instruktioner om hur du aktiverar data till marknadsföring via batch eller e-po
 
 ## Övervaka plattformsdataaktiviteter
 
-Med Platform kan ni spåra hur data bearbetas med hjälp av dataflöden, vilket är en representation av jobb som flyttar data mellan plattformens olika komponenter. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-time Customer Profile] innan de aktiveras till destinationer. Kontrollpanelen ger dig en visuell representation av resan för ett dataflöde. Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet kan du läsa självstudiekurserna på [övervaka dataflöden för källor](../dataflows/ui/monitor-sources.md) och [övervaka dataflöden för destinationer](../dataflows/ui/monitor-destinations.md).
+Med Platform kan ni spåra hur data bearbetas med hjälp av dataflöden, vilket är en representation av jobb som flyttar data mellan plattformens olika komponenter. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan de aktiveras till destinationer. Kontrollpanelen ger dig en visuell representation av resan för ett dataflöde. Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet kan du läsa självstudiekurserna på [övervaka dataflöden för källor](../dataflows/ui/monitor-sources.md) och [övervaka dataflöden för destinationer](../dataflows/ui/monitor-destinations.md).
 
 Du kan också övervaka plattformsaktiviteter genom att använda statistiska värden och händelsemeddelanden med [!DNL Observability Insights]. Du kan prenumerera på varningsmeddelanden via plattformsgränssnittet eller skicka dem till en konfigurerad webkrok. Mer information om hur du visar, aktiverar, inaktiverar och prenumererar på tillgängliga aviseringar från användargränssnittet i Experience Platform finns i [[!UICONTROL Alerts] Användargränssnittsguide](../observability/alerts/ui.md). Mer information om hur du tar emot varningar via webbhookar finns i handboken [prenumerera på händelsemeddelanden från Adobe I/O](../observability/alerts/subscribe.md).
 

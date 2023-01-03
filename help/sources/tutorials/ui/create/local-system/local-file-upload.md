@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning för det lokala systemet för att överföra lokala filer till plattformen
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
-source-git-commit: 08805ed0d89d3d6908ddccdafda55d2f862e727e
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande plat
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Överför lokala filer till plattformen
 
@@ -92,4 +92,4 @@ När CSV-filen har mappats och skapats kan du övervaka de data som importeras v
 
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Platform. Dessa data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile]. Se översikten för [[!DNL Real-time Customer Profile]](../../../../../profile/home.md) för mer information.
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Platform. Dessa data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile]. Se översikten för [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md) för mer information.

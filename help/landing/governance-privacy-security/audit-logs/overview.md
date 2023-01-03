@@ -2,7 +2,7 @@
 title: Översikt över granskningsloggar
 description: Läs om hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: fdc61c920ee9ae2c66344e781334844d38b44806
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '923'
 ht-degree: 2%

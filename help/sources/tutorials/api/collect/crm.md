@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1347'
 ht-degree: 0%
@@ -680,7 +680,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett CRM-system på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett CRM-system på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)

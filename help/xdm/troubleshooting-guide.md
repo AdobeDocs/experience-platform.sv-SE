@@ -5,7 +5,7 @@ title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 5ffc93c8715d1184b2a239c1d631b117a531e5c1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2050'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Dat
 
 **[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Den metod som [!DNL Experience Platform] är byggd, **XDM-system**, operaliserar [!DNL Experience Data Model] scheman för användning av [!DNL Platform] tjänster. The **[!DNL Schema Registry]** har ett användargränssnitt och ett RESTful API för att få åtkomst till **[!DNL Schema Library]** inom [!DNL Experience Platform]. Se [XDM-dokumentation](home.md) för mer information.
 
-## Vanliga frågor och svar 
+## Vanliga frågor och svar
 
 Nedan följer en lista med svar på vanliga frågor om XDM-systemet och användning av [!DNL Schema Registry] API.
 
@@ -42,7 +42,7 @@ Mer information finns i [resursidentifiering](api/getting-started.md#resource-id
 
 ### När börjar ett schema förhindra att ändringar bryts?
 
-Du kan göra ändringar i ett schema så länge det aldrig har använts för att skapa en datauppsättning eller aktiverats för användning i [[!DNL Real-time Customer Profile]](../profile/home.md). När ett schema har använts när datauppsättningen skapades eller aktiverats för användning med [!DNL Real-time Customer Profile], reglerna i [Schemautveckling](schema/composition.md#evolution) blir strikt införd av systemet.
+Du kan göra ändringar i ett schema så länge det aldrig har använts för att skapa en datauppsättning eller aktiverats för användning i [[!DNL Real-Time Customer Profile]](../profile/home.md). När ett schema har använts när datauppsättningen skapades eller aktiverats för användning med [!DNL Real-Time Customer Profile], reglerna i [Schemautveckling](schema/composition.md#evolution) blir strikt införd av systemet.
 
 ### Vilken är den maximala storleken för en lång fälttyp?
 
@@ -72,17 +72,17 @@ Mer information om hur du hanterar identiteter i användargränssnittet finns i 
 
 ### Behöver mitt schema en primär identitet?
 
-Primära identiteter är valfria eftersom scheman kan ha antingen noll eller en av dem. Ett schema måste dock ha en primär identitet för att schemat ska kunna aktiveras för användning i [!DNL Real-time Customer Profile]. Se [identity](./tutorials/create-schema-ui.md#identity-field) för mer information.
+Primära identiteter är valfria eftersom scheman kan ha antingen noll eller en av dem. Ett schema måste dock ha en primär identitet för att schemat ska kunna aktiveras för användning i [!DNL Real-Time Customer Profile]. Se [identity](./tutorials/create-schema-ui.md#identity-field) för mer information.
 
-### Hur aktiverar jag ett schema i [!DNL Real-time Customer Profile]?
+### Hur aktiverar jag ett schema i [!DNL Real-Time Customer Profile]?
 
-Scheman är aktiverade för användning i [[!DNL Real-time Customer Profile]](../profile/home.md) genom att lägga till en&quot;union&quot;-tagg i `meta:immutableTags` schemats attribut. Aktivera ett schema för användning med [!DNL Profile] kan göras med API:t eller användargränssnittet.
+Scheman är aktiverade för användning i [[!DNL Real-Time Customer Profile]](../profile/home.md) genom att lägga till en&quot;union&quot;-tagg i `meta:immutableTags` schemats attribut. Aktivera ett schema för användning med [!DNL Profile] kan göras med API:t eller användargränssnittet.
 
 #### Aktivera ett befintligt schema för [!DNL Profile] med API
 
 Begär att PATCH ska uppdatera schemat och lägga till `meta:immutableTags` som en array som innehåller värdet &quot;union&quot;. Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
 
-Mer information om hur du använder API för att aktivera ett schema för användning i [!DNL Real-time Customer Profile], se [föreningar](./api/unions.md) dokumentet [!DNL Schema Registry] utvecklarhandbok.
+Mer information om hur du använder API för att aktivera ett schema för användning i [!DNL Real-Time Customer Profile], se [föreningar](./api/unions.md) dokumentet [!DNL Schema Registry] utvecklarhandbok.
 
 #### Aktivera ett befintligt schema för [!DNL Profile] med användargränssnittet
 
@@ -230,9 +230,9 @@ Beroende på vilken slutpunkt du använder visas `detailed-message` egenskapen a
 
 En lista över kompatibla Acceptera rubriker för olika API-begäranden finns i motsvarande avsnitt i [Utvecklarhandbok för schemaregister](./api/overview.md).
 
-### [!DNL Real-time Customer Profile] fel
+### [!DNL Real-Time Customer Profile] fel
 
-Följande felmeddelanden är associerade med åtgärder som används för att aktivera scheman för [!DNL Real-time Customer Profile]. Se [föreningar](./api/unions.md) i [!DNL Schema Registry] API-guide för mer information.
+Följande felmeddelanden är associerade med åtgärder som används för att aktivera scheman för [!DNL Real-Time Customer Profile]. Se [föreningar](./api/unions.md) i [!DNL Schema Registry] API-guide för mer information.
 
 #### Det måste finnas en beskrivning av en referensidentitet
 

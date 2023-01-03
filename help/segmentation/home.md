@@ -5,7 +5,7 @@ title: Översikt över segmenteringstjänsten
 topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Segmentation Service] översikt
 
-Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från [!DNL Real-Time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
 
 Dokumentet innehåller en översikt över [!DNL Segmentation Service] och den roll den spelar i Adobe Experience Platform.
 
@@ -63,7 +63,7 @@ Plattformen har för närvarande stöd för tre metoder för att utvärdera segm
 
 ### Direktuppspelningssegmentering {#streaming}
 
-Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
+Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data på [!DNL Real-Time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
 Läs mer om direktuppspelningssegmentering i [dokumentation om direktuppspelningssegmentering](./api/streaming-segmentation.md).
 
@@ -160,7 +160,7 @@ Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska 
 
 ## Segmentering för flera enheter {#multi-entity}
 
-Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile] data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Som en följd av detta [!DNL Segmentation Service] kan få åtkomst till ytterligare fält under segmentdefinitionen som om de var inbyggda i [!DNL Profile] datalager. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringshandbok för flera enheter](multi-entity-segmentation.md).
+Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-Time Customer Profile] data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Som en följd av detta [!DNL Segmentation Service] kan få åtkomst till ytterligare fält under segmentdefinitionen som om de var inbyggda i [!DNL Profile] datalager. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringshandbok för flera enheter](multi-entity-segmentation.md).
 
 ## [!DNL Segmentation Service] datatyper
 
@@ -168,7 +168,7 @@ Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DN
 
 ## Nästa steg
 
-[!DNL Segmentation Service] ger ett konsoliderat arbetsflöde för att skapa segment utifrån [!DNL Real-time Customer Profile] data. Sammanfattning:
+[!DNL Segmentation Service] ger ett konsoliderat arbetsflöde för att skapa segment utifrån [!DNL Real-Time Customer Profile] data. Sammanfattning:
 
 - [!DNL Segmentation] är processen att definiera en deluppsättning av profiler från din profilbutik, vilket gör att du kan karakterisera beteenden eller attribut för en önskad marknadsföringsbar grupp. [!DNL Segmentation Service] gör processen möjlig.
 - När du planerar ett segment bör du tänka på att det går att referera till ett segment från och kombinera det med andra segment.

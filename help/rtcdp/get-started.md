@@ -3,7 +3,7 @@ keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;
 title: Komma igång med Real-time Customer Data Platform
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-time Customer Data Platform.
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '2328'
 ht-degree: 0%
@@ -96,7 +96,7 @@ Två identiteter slås samman:
 
 Båda identiteterna kombineras till en enda profil i [!DNL Experience Platform]. Luma har nu en enhetlig bild av den här konsumenten.
 
-Baserat på den anonyma besökarens surfbeteende i Men&#39;s-delen av webbplatsen, kan det ha förutsatts att kunden var en man. Nu när hon är inloggad känner Luma igen Sarah Rose. Luma använder kraften i [!DNL Real-time Customer Profile] för att förfina de meddelanden hon får via olika kanaler.
+Baserat på den anonyma besökarens surfbeteende i Men&#39;s-delen av webbplatsen, kan det ha förutsatts att kunden var en man. Nu när hon är inloggad känner Luma igen Sarah Rose. Luma använder kraften i [!DNL Real-Time Customer Profile] för att förfina de meddelanden hon får via olika kanaler.
 
 ## Anpassa användarupplevelsen
 
@@ -106,7 +106,7 @@ Hon navigerar till hemsidan och bläddrar bland fler.
 
 ![bild](assets/luma-personal.png)
 
-Sarah får en dynamisk upplevelse av en personaliserad hemsida som baseras på hennes [!DNL Real-time Customer Profile] i Adobe Experience Platform.
+Sarah får en dynamisk upplevelse av en personaliserad hemsida som baseras på hennes [!DNL Real-Time Customer Profile] i Adobe Experience Platform.
 
 Hon ser relevant innehåll, tack vare Adobe Sensei-driven personalisering i Adobe Target, som tar hänsyn till hennes tidigare inköp och tillhörighet till löpande kläder och utrustning. Luma skräddarsyr även männens kataloginnehåll mot löpverk för män baserat på hennes senaste surfning.
 
@@ -195,11 +195,11 @@ All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personupp
 
 Real-Time CDP-profilen minskar arbetsflödet för Lumas marknadsföringsteam från veckor till minuter och frigör möjligheter till personalisering baserat på denna helhetsbild av kunden. Profilen sammanfogar beteendedata från när hon surfar på webbplatsen innan hon loggade in, med sin befintliga kundprofil, vilket skapar en heltäckande bild av Sarah.
 
-Marknadsföringsteamet kan använda den här förbättrade [!DNL Real-time Customer Profile] för att personalisera Sarah bättre och öka varumärkeslojaliteten med Luma.
+Marknadsföringsteamet kan använda den här förbättrade [!DNL Real-Time Customer Profile] för att personalisera Sarah bättre och öka varumärkeslojaliteten med Luma.
 
 ## Segment
 
-Med de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan marknadsförarna kombinera attribut, händelser och befintliga segment baserat på data som samlats in i [!DNL Real-time Customer Profile].
+Med de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan marknadsförarna kombinera attribut, händelser och befintliga segment baserat på data som samlats in i [!DNL Real-Time Customer Profile].
 
 <!-- ![image](assets/luma-segments.png) -->
 

@@ -2,25 +2,25 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;Enhetlig profil;Enhetlig;Profil;rtcp;aktivera profil;Aktivera profil;Unionsschema;UNIONSPROFIL;unionsprofil
 title: Användargränssnittshandbok för kundprofil i realtid
 topic-legacy: guide
-description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
+description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1875'
 ht-degree: 0%
 
 ---
 
-# [!DNL Real-time Customer Profile] Användargränssnittsguide
+# [!DNL Real-Time Customer Profile] Användargränssnittsguide
 
-[!DNL Real-time Customer Profile] skapar en helhetsbild av var och en av era enskilda kunder och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide till interaktion med [!DNL Real-time Customer Profile] data i Adobe Experience Platform användargränssnitt.
+[!DNL Real-Time Customer Profile] skapar en helhetsbild av var och en av era enskilda kunder och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide till interaktion med [!DNL Real-Time Customer Profile] data i Adobe Experience Platform användargränssnitt.
 
 ## Komma igång
 
-Användargränssnittshandboken kräver förståelse för de olika [!DNL Experience Platform] tjänster som ingår i hantering av [!DNL Real-time Customer Profiles]. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
+Användargränssnittshandboken kräver förståelse för de olika [!DNL Experience Platform] tjänster som ingår i hantering av [!DNL Real-Time Customer Profiles]. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
 
-* [[!DNL Real-time Customer Profile] översikt](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas in till [!DNL Platform].
+* [[!DNL Real-Time Customer Profile] översikt](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Identity Service]](../../identity-service/home.md): Aktiverar [!DNL Real-Time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas in till [!DNL Platform].
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## [!UICONTROL Overview]
@@ -171,7 +171,7 @@ Mer information om sammanfogningsprinciper finns i [sammanfogningsprinciper - ö
 
 ## Unionsschema {#union-schema}
 
-Från huvudsidan **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema]** om du vill visa tillgängliga unionsscheman för dina inkapslade data. Ett unionsschema är en kombination av alla [!DNL Experience Data Model] (XDM) fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-time Customer Profile].
+Från huvudsidan **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema]** om du vill visa tillgängliga unionsscheman för dina inkapslade data. Ett unionsschema är en kombination av alla [!DNL Experience Data Model] (XDM) fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-Time Customer Profile].
 
 Mer information om fackliga scheman finns på [gränssnittshandbok för union av schema](union-schema.md).
 

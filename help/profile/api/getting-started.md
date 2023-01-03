@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
-title: Komma igång med kundprofils-API:t i realtid
+title: Komma igång med Real-Time Customer Profile API
 topic-legacy: guide
 type: Documentation
 description: Komma igång-guiden för profil-API:t visar de nyckelbegrepp och grundläggande funktioner som du behöver känna till för att kunna använda API-slutpunkter för kundprofil i realtid för att utföra grundläggande CRUD-åtgärder mot profildata.
 exl-id: 7e30610a-a7e7-43ab-a45d-fd84ef6e36ef
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%
 
 ---
 
-# Komma igång med [!DNL Real-time Customer Profile] API {#getting-started}
+# Komma igång med [!DNL Real-Time Customer Profile] API {#getting-started}
 
-Med hjälp av API-slutpunkter för kundprofil i realtid kan du utföra grundläggande CRUD-åtgärder mot profildata, som att konfigurera beräknade attribut, komma åt enheter, exportera profildata och ta bort onödiga datauppsättningar eller batchar.
+Med API-slutpunkter för kundprofil i realtid kan du utföra grundläggande CRUD-åtgärder mot profildata, som att konfigurera beräknade attribut, komma åt enheter, exportera profildata och ta bort onödiga datauppsättningar eller batchar.
 
-Att använda utvecklarhandboken kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som arbetar med [!DNL Profile] data. Innan du börjar arbeta med [!DNL Real-time Customer Profile] API, läs dokumentationen för följande tjänster:
+Att använda utvecklarhandboken kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som arbetar med [!DNL Profile] data. Innan du börjar arbeta med [!DNL Real-Time Customer Profile] API, läs dokumentationen för följande tjänster:
 
-* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Få en bättre bild av kunden och deras beteende genom att överbrygga identiteter mellan olika enheter och system.
 * [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
@@ -28,7 +28,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ## Läser exempel-API-anrop
 
-The [!DNL Real-time Customer Profile] API-dokumentationen innehåller exempel på API-anrop som visar hur begäranden formateras korrekt. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
+The [!DNL Real-Time Customer Profile] API-dokumentationen innehåller exempel på API-anrop som visar hur begäranden formateras korrekt. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om konventionerna som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguide.
 
 ## Obligatoriska rubriker
 
@@ -48,4 +48,4 @@ Alla förfrågningar med en nyttolast i begärandetexten (t.ex. samtal av typen 
 
 ## Nästa steg
 
-Börja ringa samtal med [!DNL Real-time Customer Profile] API: välj en av de tillgängliga slutpunktsguiderna.
+Börja ringa samtal med [!DNL Real-Time Customer Profile] API: välj en av de tillgängliga slutpunktsguiderna.

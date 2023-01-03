@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1367'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
-När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
+När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
 Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experien
 
 * [XDM-system i Experience Platform](../home.md): En översikt över XDM och dess implementering i [!DNL Experience Platform].
    * [Grunderna för schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du gå igenom [utvecklarhandbok](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa [!DNL Schema Registry] API. Detta inkluderar `{TENANT_ID}`, begreppet &quot;behållare&quot; och de rubriker som krävs för att göra en förfrågan (med särskild uppmärksamhet på [!DNL Accept] header och dess möjliga värden).
@@ -39,7 +39,7 @@ Schemarelationer representeras av en **källschema** ha ett fält som refererar 
 
 >[!IMPORTANT]
 >
->För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-api.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
+>För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-Time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-api.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
 
 Om du vill definiera en relation mellan två scheman måste du först skaffa `$id` värden för båda scheman. Om du känner till visningsnamnen (`title`) av scheman kan du hitta deras `$id` genom att göra en GET-förfrågan till `/tenant/schemas` slutpunkt i [!DNL Schema Registry] API.
 

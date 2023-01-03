@@ -5,7 +5,7 @@ title: Komma igång med API:t för principtjänsten
 topic-legacy: developer guide
 description: Med hjälp av API:t för principtjänst kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för principtjänsten.
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Att använda utvecklarhandboken kräver en fungerande förståelse av de olika [
 
 * [Datastyrning](../home.md): Den ram som [!DNL Experience Platform] regelefterlevnad för dataanvändning.
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 ## Läser exempel-API-anrop

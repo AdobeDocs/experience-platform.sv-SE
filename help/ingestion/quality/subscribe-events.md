@@ -5,7 +5,7 @@ title: Meddelanden om dataöverföring
 topic-legacy: overview
 description: För att underlätta övervakningen av intagsprocessen kan Adobe Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 1%
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Processen att samla in data till Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till [!DNL Platform]Intag påbörjas och varje steg sker i följd tills data antingen har importerats eller misslyckats. Intag kan påbörjas med [Adobe Experience Platform Data Ingtion API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) eller med [!DNL Experience Platform] användargränssnitt.
 
-Data läses in i [!DNL Platform] måste gå igenom flera steg för att nå sin destination, [!DNL Data Lake] eller [!DNL Real-time Customer Profile] datalager. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
+Data läses in i [!DNL Platform] måste gå igenom flera steg för att nå sin destination, [!DNL Data Lake] eller [!DNL Real-Time Customer Profile] datalager. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
 
 För att underlätta övervakningen av intagsprocessen ska [!DNL Experience Platform] gör det möjligt att prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inkapslade data och eventuella fel.
 
@@ -86,9 +86,9 @@ Följande tabell visar vilka statusmeddelanden för dataöverföring som du kan 
 | --- | ---------------- | ------ | ----------------- |
 | `ing_load_success` | [!DNL Data Ingestion] | success | En batch har importerats till en datauppsättning i [!DNL Data Lake]. |
 | `ing_load_failure` | [!DNL Data Ingestion] | fel | Det gick inte att importera en batch till en datauppsättning i [!DNL Data Lake]. |
-| `ps_load_success` | [!DNL Real-time Customer Profile] | framgång | En batch har importerats till [!DNL Profile] datalager. |
-| `ps_load_failure` | [!DNL Real-time Customer Profile] | fel | Det gick inte att hämta en batch till [!DNL Profile] datalager. |
-| `ig_load_success` | [!DNL Identity Service] | framgång | Data lästes in i identitetsdiagrammet. |
+| `ps_load_success` | [!DNL Real-Time Customer Profile] | success | En batch har importerats till [!DNL Profile] datalager. |
+| `ps_load_failure` | [!DNL Real-Time Customer Profile] | fel | Det gick inte att hämta en batch till [!DNL Profile] datalager. |
+| `ig_load_success` | [!DNL Identity Service] | success | Data lästes in i identitetsdiagrammet. |
 | `ig_load_failure` | [!DNL Identity Service] | fel | Det gick inte att läsa in data i identitetsdiagrammet. |
 
 >[!NOTE]

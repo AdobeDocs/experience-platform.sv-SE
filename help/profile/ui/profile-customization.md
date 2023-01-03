@@ -4,16 +4,16 @@ title: Anpassning av profildetaljer i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt.
 topic-legacy: guide
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: 681418b4198c2b1303fda937c3ffc60dad21b672
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1277'
 ht-degree: 0%
 
 ---
 
-# [!DNL Real-time Customer Profile] anpassning av detaljer {#profile-detail-customization}
+# [!DNL Real-Time Customer Profile] anpassning av detaljer {#profile-detail-customization}
 
-I Adobe Experience Platform användargränssnitt kan du visa och interagera med [!DNL Real-time Customer Profile] data i form av kundprofiler. Profilinformationen som visas i användargränssnittet har sammanfogats från flera profilfragment till en enda vy över varje enskild kund. Detta inkluderar information som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas i profiler kan också ändras på organisationsnivå för att visa de som du föredrar [!DNL Profile] attribut. Den här handboken innehåller stegvisa instruktioner för hur du anpassar det sätt på vilket [!DNL Profile] data visas i plattformens användargränssnitt.
+I Adobe Experience Platform användargränssnitt kan du visa och interagera med [!DNL Real-Time Customer Profile] data i form av kundprofiler. Profilinformationen som visas i användargränssnittet har sammanfogats från flera profilfragment till en enda vy över varje enskild kund. Detta inkluderar information som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas i profiler kan också ändras på organisationsnivå för att visa de som du föredrar [!DNL Profile] attribut. Den här handboken innehåller stegvisa instruktioner för hur du anpassar det sätt på vilket [!DNL Profile] data visas i plattformens användargränssnitt.
 
 En fullständig guide till användargränssnittet för profiler finns på [Användargränssnittshandbok för profil](user-guide.md).
 

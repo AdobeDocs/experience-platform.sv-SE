@@ -2,7 +2,7 @@
 title: Hantera förfallodatum för datauppsättning
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '508'
 ht-degree: 0%

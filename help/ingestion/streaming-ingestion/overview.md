@@ -5,7 +5,7 @@ title: Direktuppspelning - översikt
 topic-legacy: overview
 description: Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '348'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Direktuppspelning för Adobe Experience Platform ger användarna en metod för a
 
 ## Vad kan du göra med direktuppspelning?
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att skapa en [!DNL Real-time Customer Profile] för var och en av era enskilda kunder. Direktinmatning spelar en viktig roll när det gäller att skapa dessa profiler genom att göra det möjligt att leverera [!DNL Profile] data till [!DNL Data Lake] med så lite fördröjning som möjligt.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att skapa en [!DNL Real-Time Customer Profile] för var och en av era enskilda kunder. Direktinmatning spelar en viktig roll när det gäller att skapa dessa profiler genom att göra det möjligt att leverera [!DNL Profile] data till [!DNL Data Lake] med så lite fördröjning som möjligt.
 
 Följande video är utformad för att hjälpa dig förstå hur man får in strömmande material och beskriver koncepten ovan.
 
@@ -32,7 +32,7 @@ Läs [skapa en anslutningsguide för direktuppspelning](../tutorials/create-stre
 
 ### Strömma till datauppsättningar
 
-När du är säker på att dina data är rena kan du aktivera dina datauppsättningar för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
+När du är säker på att dina data är rena kan du aktivera dina datauppsättningar för [!DNL Real-Time Customer Profile] och [!DNL Identity Service].
 
 Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service], kan du läsa [konfigurera en datauppsättningsguide](../../profile/tutorials/dataset-configuration.md).
 

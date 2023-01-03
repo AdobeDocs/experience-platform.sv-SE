@@ -4,9 +4,9 @@ solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Indata och utdata i kundens AI
 topic-legacy: Getting started
-description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
+description: Läs mer om de händelser, inmatningar och utmatningar som Kundens AI använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: e0e96a52e30f5c34e0695c3e291bed9b6c085e00
+source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
 workflow-type: tm+mt
 source-wordcount: '3183'
 ht-degree: 0%
@@ -44,7 +44,7 @@ I följande tabell beskrivs några vanliga termer som används i det här dokume
 | [Fältgrupper](../../xdm/schema/composition.md) | En komponent som definierar ett eller flera fält i ett schema. Fältgrupper styr hur deras fält visas i schemats hierarki och visar därför samma struktur i varje schema som de ingår i. Fältgrupper är bara kompatibla med specifika klasser, vilket identifieras av deras `meta:intendedToExtend` -attribut. |
 | [Datatyp](../../xdm/schema/composition.md) | En komponent som också kan tillhandahålla ett eller flera fält för ett schema. Till skillnad från fältgrupper är datatyperna dock inte begränsade till en viss klass. Detta gör datatyper till ett mer flexibelt alternativ för att beskriva vanliga datastrukturer som kan återanvändas i flera scheman med potentiellt olika klasser. Datatyperna som beskrivs i det här dokumentet stöds av både CEE- och Adobe Analytics-scheman. |
 | Churn | Ett mått på procentandelen konton som avbryter eller väljer att inte förnya sina prenumerationer. Ett högt bortfall kan ha en negativ inverkan på den månatliga återkommande intäkten och kan också visa på missnöje med en produkt eller tjänst. |
-| [Kundprofil i realtid](../../profile/home.md) | Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform. |
+| [Kundprofil i realtid](../../profile/home.md) | Kundprofilen i realtid är en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som aggregeras över alla system, samt användbara tidsstämplade konton med händelser som involverar den person som har inträffat i något av de system som du använder med Experience Platform. |
 
 ## AI-indata för kund
 
@@ -287,7 +287,7 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 >[!NOTE]
 >
 > - Kunds-AI använder endast uppdaterade data för vidare utbildning och poängsättning. När du begär att få ta bort data avstår kundens AI från att använda de borttagna data.
-> - Kund-AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in förfrågningar från konsumenter om åtkomst och radering för att ta bort sina data över datasjön, identitetstjänst och kundprofil i realtid.
+> - Kund-AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in konsumentförfrågningar om åtkomst och ta bort sina data i datasjön, identitetstjänst och kundprofil i realtid.
 > - Alla datauppsättningar som vi använder för in-/utdata av modeller följer riktlinjerna för plattformen. Plattformsdatakryptering gäller för data i vila och under överföring. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md)
 
 

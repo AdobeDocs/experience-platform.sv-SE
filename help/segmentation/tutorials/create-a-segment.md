@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Mer information om hur du skapar segment med användargränssnittet finns i [Seg
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
@@ -55,7 +55,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utveckla en segmentdefinition
 
-Det första steget i segmenteringen är att definiera ett segment, som representeras i en konstruktion som kallas segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
+Det första steget i segmenteringen är att definiera ett segment, som representeras i en konstruktion som kallas segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
 
@@ -63,7 +63,7 @@ Mer information om hur du definierar ett segment finns i [Utvecklarhandbok för 
 
 ## Beräkna och förhandsgranska en målgrupp {#estimate-and-preview-an-audience}
 
-När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Real-time Customer Profile] för att se information på sammanfattningsnivå för att säkerställa att ni isolerar den förväntade målgruppen. Uppskattningar ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek och konfidensintervall. Förhandsvisningar innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
+När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Real-Time Customer Profile] för att se information på sammanfattningsnivå för att säkerställa att ni isolerar den förväntade målgruppen. Uppskattningar ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek och konfidensintervall. Förhandsvisningar innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
 
 Genom att uppskatta och förhandsgranska målgruppen kan ni testa och optimera PQL-predikaten tills de ger önskat resultat, där de sedan kan användas i en uppdaterad segmentdefinition.
 

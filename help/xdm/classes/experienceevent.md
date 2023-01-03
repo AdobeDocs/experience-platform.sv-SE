@@ -5,7 +5,7 @@ title: Klassen XDM ExperienceEvent
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 39e4ed1ff872de241bc07271cfb44310d41a2401
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1785'
 ht-degree: 0%

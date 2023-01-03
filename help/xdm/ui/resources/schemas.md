@@ -5,7 +5,7 @@ title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 3fc498de60256006d27ada72a7b5f4fff71c4472
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '3071'
 ht-degree: 0%

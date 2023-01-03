@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera Apache Parquet-data från ett molnlagringssystem från en annan leverantör.
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1095'
 ht-degree: 1%
@@ -428,7 +428,7 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in Parquet-data från ditt molnlagringssystem från tredje part på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in Parquet-data från ditt molnlagringssystem från tredje part på schemalagd basis. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../data-science-workspace/home.md)

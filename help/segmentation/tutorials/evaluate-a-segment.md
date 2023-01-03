@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -21,8 +21,8 @@ I det här dokumentet finns en självstudiekurs för att utvärdera segment och 
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
@@ -86,9 +86,9 @@ Med On-demand-utvärdering kan ni skapa ett segmentjobb för att generera ett m�
 
 ### Skapa ett segmentjobb
 
-Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek. Ett segmentjobb måste köras varje gång du vill uppdatera den målgrupp som för närvarande är kvalificerad för segmentdefinitionen.
+Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-Time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek. Ett segmentjobb måste köras varje gång du vill uppdatera den målgrupp som för närvarande är kvalificerad för segmentdefinitionen.
 
-Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs` slutpunkt i [!DNL Real-time Customer Profile] API.
+Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/segment/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för segmentjobb](../api/segment-jobs.md#create)
 
@@ -140,7 +140,7 @@ I följande avsnitt beskrivs dessa alternativ mer ingående.
 
 ## Söka efter en profil
 
-Om du vet vilken profil du vill använda kan du göra det med [!DNL Real-time Customer Profile] API. De fullständiga stegen för att komma åt enskilda profiler finns i [Få åtkomst till kundprofildata i realtid med profilens API](../../profile/api/entities.md) självstudiekurs.
+Om du vet vilken profil du vill använda kan du göra det med [!DNL Real-Time Customer Profile] API. De fullständiga stegen för att komma åt enskilda profiler finns i [Få åtkomst till kundprofildata i realtid med profils-API](../../profile/api/entities.md) självstudiekurs.
 
 ## Exportera ett segment {#export}
 
@@ -157,7 +157,7 @@ Följande steg krävs för att exportera målgruppen:
 
 När du exporterar en målgrupp måste du först skapa en måldatauppsättning. Det är viktigt att datauppsättningen är korrekt konfigurerad för att exporten ska lyckas.
 
-Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionens vyscheman finns i [Kundprofilavsnittet i realtid i Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md).
+Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionens vyscheman finns i [Avsnittet Kundprofil i realtid i utvecklarhandboken för schemaregistret](../../xdm/api/getting-started.md).
 
 Det finns två sätt att skapa den nödvändiga datauppsättningen:
 
@@ -210,7 +210,7 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Generera profiler för målgruppsmedlemmar {#generate-profiles}
 
-När du har en enhetlig datauppsättning som är beständig kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en begäran om POST till `/export/jobs` slutpunkt i [!DNL Real-time Customer Profile] API och ange datauppsättnings-ID och segmentinformation för de segment som du vill exportera.
+När du har en enhetlig datauppsättning som är beständig kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en begäran om POST till `/export/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API och ange datauppsättnings-ID och segmentinformation för de segment som du vill exportera.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för exportjobb](../api/export-jobs.md#create)
 

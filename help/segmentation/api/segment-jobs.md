@@ -5,7 +5,7 @@ title: API-slutpunkt för segmentjobb
 topic-legacy: developer guide
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: cb28f52029ac63e4d2c7c210c6199adcd855cf5a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1511'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Slutpunkt för segmentjobb
 
-Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Den refererar till en [segmentdefinition](./segment-definitions.md), samt [sammanfogningsprinciper](../../profile/api/merge-policies.md) styra hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
+Ett segmentjobb är en asynkron process som skapar ett målgruppssegment på begäran. Den refererar till en [segmentdefinition](./segment-definitions.md), samt [sammanfogningsprinciper](../../profile/api/merge-policies.md) styra hur [!DNL Real-Time Customer Profile] sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentjobben bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 

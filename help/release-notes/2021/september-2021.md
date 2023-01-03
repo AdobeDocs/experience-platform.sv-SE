@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Release Notes september 2021
 description: Versionsinformation för september 2021 för Adobe Experience Platform.
 exl-id: 96375409-803f-45af-805e-900207d972e4
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '377'
 ht-degree: 3%
@@ -27,7 +27,7 @@ Adobe Experience Platform datainmatning representerar de olika metoder som anvä
 
 | Funktion | Beskrivning |
 |------- | -----------|
-| Uppgradera eller korrigera profilposter med hjälp av gruppinmatning | Realtidskundprofil tillåter nu uppdateringar av profilattribut i enskilda profilpostdata via batchinmatning. Mer information finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md). |
+| Uppgradera eller korrigera profilposter med hjälp av gruppinmatning | Real-Time Customer Profile tillåter nu uppdateringar av profilattribut i enskilda profilpostdata via batchinmatning. Mer information finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md). |
 
 Läs mer om hur du hämtar in data till Platform på [Dokumentation för datainmatning](../../ingestion/home.md).
 

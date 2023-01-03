@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1036'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 >[!NOTE]
 >
->Den här handboken beskriver bara hur du gör sekretessförfrågningar för identitetsdatalagret i Experience Platform. Om du även planerar att göra sekretessförfrågningar för plattformens datalinje eller [!DNL Real-time Customer Profile], se guiden på [behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md) och i guiden [sekretessförfrågningsbehandling för profil](../profile/privacy.md) förutom den här självstudiekursen.
+>Den här handboken beskriver bara hur du gör sekretessförfrågningar för identitetsdatalagret i Experience Platform. Om du även planerar att göra sekretessförfrågningar för plattformens datalinje eller [!DNL Real-Time Customer Profile], se guiden på [behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md) och i guiden [sekretessförfrågningsbehandling för profil](../profile/privacy.md) förutom den här självstudiekursen.
 >
 >Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service](../privacy-service/experience-cloud-apps.md).
 
@@ -28,7 +28,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 * [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [[!DNL Real-time Customer Profile]](home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Identitetsnamnutrymmen {#namespaces}
 

@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett befintligt XDM-schema med Adobe Experience Platform användargränssnitt.
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
-source-git-commit: 160a75a1811afa002717e167887550715eee5471
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '891'
 ht-degree: 1%
@@ -121,4 +121,4 @@ När CSV-filen har mappats och skapats kan du övervaka de data som hämtas geno
 
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i [!DNL Platform]. Dessa data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile]. Se översikten för [[!DNL Real-time Customer Profile]](../../../profile/home.md) för mer information.
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i [!DNL Platform]. Dessa data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile]. Se översikten för [[!DNL Real-Time Customer Profile]](../../../profile/home.md) för mer information.

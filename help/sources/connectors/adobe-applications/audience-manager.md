@@ -5,7 +5,7 @@ title: Översikt över Audience Manager-källa
 topic-legacy: overview
 description: Adobe Audience Manager-källan strömmar förstahandsdata som samlats in i Audience Manager till Adobe Experience Platform.
 exl-id: be90db33-69e1-4f42-9d1a-4f8f26405f0f
-source-git-commit: 37e810ce6faf40f9980841b2c9d6eb29e8b0e82a
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1052'
 ht-degree: 0%
@@ -84,4 +84,4 @@ Du kan även kontrollera profilanvändningen som ditt konto har tillgängligt vi
 | --- | --- | --- | --- |
 | Realtidsdata | Händelser | &lt;25 minuter | Tiden från att samlas in på noden Audience Manager Edge till att visas i datarjön. |
 | Realtidsdata | Profiluppdateringar | &lt;10 minuter | Det är dags att lägga in kundprofilen i realtid. |
-| Realtid och onboarddata | Profiluppdateringar | 24 till 36 timmar | Tid från att hämtas via DCS/PCS Edge-data och onboarddata, bearbetas till en användarprofil, till att sedan visas i kundprofilen i realtid. För närvarande landar dessa data inte direkt i datasjön. Profilväxling kan aktiveras för datauppsättningar i Audience Manager-profiler för att importera dessa data direkt till kundprofilen i realtid. |
+| Realtid och onboarddata | Profiluppdateringar | 24 till 36 timmar | Tiden från att hämtas via DCS/PCS Edge-data och onboarddata, som bearbetas till en användarprofil, till att sedan visas i kundprofilen i realtid. För närvarande landar dessa data inte direkt i datasjön. Profilväxling kan aktiveras för datauppsättningar i Audience Manager-profiler för att importera dessa data direkt till kundprofilen i realtid. |

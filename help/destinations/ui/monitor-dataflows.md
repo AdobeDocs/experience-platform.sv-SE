@@ -6,8 +6,7 @@ title: Bildskärmsdataflöden
 topic-legacy: overview
 type: Tutorial
 exl-id: fbe35ee1-4ee8-4d67-976b-0c45f0168da4
-translation-type: tm+mt
-source-git-commit: 63158e7322ae91d5b36a7b2aa22fd93512f9bebb
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '131'
 ht-degree: 0%
@@ -18,6 +17,6 @@ ht-degree: 0%
 
 [!UICONTROL Destinations] kan ni aktivera data från Adobe Experience Platform för ett oändligt antal externa partner.
 
-Dataflöden är en representation av datajobb som flyttar data över [!DNL Platform]. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och[!DNL Real-time Customer Profile] innan de aktiveras till mål.
+Dataflöden är en representation av datajobb som flyttar data över [!DNL Platform]. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och[!DNL Real-Time Customer Profile] innan de aktiveras till destinationer.
 
-Läs [Övervaka dataflöden för mål i självstudiekursen för användargränssnitt](../../dataflows/ui/monitor-destinations.md) om du vill veta mer om att övervaka dataflöden för mål.
+Läs mer om övervakning av dataflöden för destinationer i [Övervaka dataflöden för mål i användargränssnittet](../../dataflows/ui/monitor-destinations.md) självstudiekurs.

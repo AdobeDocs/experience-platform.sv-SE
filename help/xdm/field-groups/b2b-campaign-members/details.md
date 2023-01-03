@@ -1,7 +1,8 @@
 ---
 title: XDM Business Campaign-medlemsinformationsschemagrupp
 description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Campaign Member Details.
-source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
+exl-id: 597629c8-7f41-4c1c-95b6-aed5e16cee72
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '328'
 ht-degree: 0%

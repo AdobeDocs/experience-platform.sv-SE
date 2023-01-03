@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en CRM-källa med hjälp av plattformsgränssnittet.
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1384'
 ht-degree: 0%
@@ -29,7 +29,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande plat
 * [[!DNL Experience Data Model (XDM)] System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Data Prep]](../../../../data-prep/home.md): Gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 ## Lägg till data
@@ -143,9 +143,9 @@ Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapa
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde som hämtar data från CRM-källan till plattformen. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+I den här självstudiekursen har du skapat ett dataflöde som hämtar data från CRM-källan till plattformen. Inkommande data kan nu användas av underordnade [!DNL Platform] tjänster som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
-* [[!DNL Real-time Customer Profile] översikt](../../../../profile/home.md)
+* [[!DNL Real-Time Customer Profile] översikt](../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../data-science-workspace/home.md)
 
 

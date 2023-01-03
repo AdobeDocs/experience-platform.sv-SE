@@ -4,7 +4,7 @@ title: Komma igång med API:t för datainmatning
 type: Documentation
 description: Komma igång-guiden för API:t för datainmatning visar de viktigaste koncept och grundläggande funktioner som du behöver känna till innan du kan börja importera data till Experience Platform med API:er.
 exl-id: 0653de2b-3268-478b-a23f-c458b6d3df7c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '367'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Med API-slutpunkter för datainmatning kan du utföra grundläggande CRUD-åtgä
 API-guiderna kräver en fungerande förståelse för flera Adobe Experience Platform-tjänster som arbetar med data. Innan du använder API:t för datainmatning bör du läsa dokumentationen för följande tjänster:
 
 * [Batchförtäring](./overview.md): Gör att du kan importera data till Adobe Experience Platform som gruppfiler.
-* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 

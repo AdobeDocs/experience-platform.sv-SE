@@ -3,7 +3,7 @@ keywords: identiteter rtcdp;rtcdp identiteter;cdp-identiteter i realtid
 title: Identiteter i Real-time Customer Data Platform
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system.
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -28,4 +28,4 @@ Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnu
 
 ## Nästa steg
 
-Identiteter och relationerna mellan dem definieras och upprätthålls av [!DNL Identity Service] och utnyttjas av [!DNL Real-time Customer Profile] för att skapa en fullständig bild av varje enskild kund och deras interaktioner. Läs mer här: [Identitetstjänstens dokumentation](../../identity-service/home.md).
+Identiteter och relationerna mellan dem definieras och upprätthålls av [!DNL Identity Service] och utnyttjas av [!DNL Real-Time Customer Profile] för att skapa en fullständig bild av varje enskild kund och deras interaktioner. Läs mer här: [Identitetstjänstens dokumentation](../../identity-service/home.md).

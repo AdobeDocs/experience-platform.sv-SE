@@ -2,7 +2,7 @@
 title: Scheman i Real-time Customer Data Platform
 description: En översikt över XDM-schemats (Experience Data Model) roll i Adobe Real-time Customer Data Platform.
 exl-id: e56873d2-825d-4c0f-a0fe-1ae6e83438f0
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
@@ -15,4 +15,4 @@ Alla data som hämtas in till Adobe Real-time Customer Data Platform måste öve
 
 När du har skapat scheman kan du mappa datastrukturen till XDM så att den kan hämtas in i systemet.
 
-Mer information om XDM och hur du hanterar scheman i användargränssnittet finns i [XDM-dokumentation](../../xdm/home.md). Om du använder Real-time Customer Platform B2B Edition läser du dokumentet på [scheman i Real-Time CDP B2B Edition](./b2b.md) för information om B2B-specifika program för XDM.
+Mer information om XDM och hur du hanterar scheman i användargränssnittet finns i [XDM-dokumentation](../../xdm/home.md). Om du använder Real-Time Customer Platform B2B Edition läser du dokumentet på [scheman i Real-Time CDP B2B Edition](./b2b.md) för information om B2B-specifika program för XDM.

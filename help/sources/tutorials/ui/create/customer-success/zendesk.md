@@ -3,7 +3,7 @@ keywords: Experience Platform;Zendesk;sources;connectors;source connectors;sourc
 title: Skapa en anslutning till Zendesk-källa i användargränssnittet
 description: Lär dig hur du skapar en Zendesk-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: 795c98fb555f79afd7a7035a23a9989cc734a1e1
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 3%
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ### Samla in nödvändiga inloggningsuppgifter
 

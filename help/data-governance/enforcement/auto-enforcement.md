@@ -5,7 +5,7 @@ title: Automatisk policytillämpning
 topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1713'
 ht-degree: 0%

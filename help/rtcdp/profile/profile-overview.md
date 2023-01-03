@@ -3,7 +3,7 @@ keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningspri
 title: Förstå kundprofil i realtid i Real-Time CDP
 description: Läs om hur Adobe Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med hjälp av kundprofilen i realtid.
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
