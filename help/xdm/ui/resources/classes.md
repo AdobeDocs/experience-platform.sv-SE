@@ -5,9 +5,9 @@ title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: c83b5616f46f6f7d752979fa66a66fad16f16102
+source-git-commit: 7b642744f12ec33ff45a4b41cdb57bfe37396a56
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '871'
 ht-degree: 0%
 
 ---
@@ -50,10 +50,6 @@ Nu kan du börja [lägga till fält i klassen](#add-fields), som delas av alla s
 
 ## Redigera en befintlig klass {#edit}
 
->[!IMPORTANT]
->
->Anpassade klasser som skapats efter den 30 april 2022 kan inte redigeras direkt, och en korrigering håller på att tas fram. Som tillfällig lösning kan du [skapa en anpassad fältgrupp](./field-groups.md) och återanvända den för varje schema som använder den anpassade klass som du vill utöka. Anpassade klasser som skapats före den 30 april 2022 påverkas inte av den här begränsningen.
-
 >[!NOTE]
 >
 >Endast anpassade klasser som definierats av din organisation kan redigeras och anpassas helt. För huvudklasser som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom kontexten för enskilda scheman. Se avsnittet om [redigera visningsnamn för schemafält](./schemas.md#display-names) för mer information.
@@ -73,10 +69,6 @@ The [!DNL Schema Editor] visas med schemats struktur på arbetsytan. Nu kan du b
 ![](../../images/ui/resources/classes/edit.png)
 
 ## Lägga till fält i en klass {#add-fields}
-
->[!IMPORTANT]
->
->Anpassade klasser som skapats efter den 30 april 2022 kan inte redigeras direkt, och en korrigering håller på att tas fram. Som tillfällig lösning kan du [skapa en anpassad fältgrupp](./field-groups.md) och återanvända den för varje schema som använder den anpassade klass som du vill utöka. Anpassade klasser som skapats före den 30 april 2022 påverkas inte av den här begränsningen.
 
 När du har ett schema som använder en anpassad klass öppen i [!UICONTROL Schema Editor]kan du börja lägga till fält i klassen. Om du vill lägga till ett nytt fält väljer du **plus (+)** -ikon bredvid schemats namn.
 
