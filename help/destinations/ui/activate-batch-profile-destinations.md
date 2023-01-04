@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 79fc200f4e56699013b1ba3f91f5e383cea77e2a
+source-git-commit: e2318509236fad5054ce82b384f399dd6cbbdc34
 workflow-type: tm+mt
-source-wordcount: '3296'
+source-wordcount: '3299'
 ht-degree: 0%
 
 ---
@@ -207,7 +207,7 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
    ![Bildmarkering som visar hur du väljer ett källfält.](../assets/ui/activate-batch-profile-destinations/select-target-field.png)
 
-1. I **[!UICONTROL Select field]** väljer du de XDM-attribut som du vill skicka till målet och väljer **[!UICONTROL Select]**.
+1. I **[!UICONTROL Select field]** markerar du de XDM-attribut eller identitetsnamnutrymmen som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
 
    ![Bild som visar de olika fälten som är tillgängliga som källfält.](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
 
