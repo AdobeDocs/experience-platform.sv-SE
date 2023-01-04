@@ -2,7 +2,7 @@
 title: Datatyp för B2B-källa
 description: Det här dokumentet innehåller en översikt över datatypen B2B Source Experience Data Model (XDM).
 exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
 source-wordcount: '264'
 ht-degree: 1%
@@ -23,7 +23,7 @@ The [!UICONTROL B2B Source] Med datatypen kan du använda ett enhets ursprunglig
 | --- | --- | --- |
 | `sourceID` | Sträng | Ett unikt ID för källposten. |
 | `sourceInstanceID` | Sträng | Instans- eller organisations-ID för källdata. |
-| `sourceKey` | Sträng | En unik identifierare som består av `sourceId`, `sourceInstanceId`och `sourceType` sammanfogade i följande format: `[sourceID]@$[sourceInstanceID].[sourceType]`.<br><br>Vissa källkopplingar som Marketo sammanfogar det här värdet automatiskt för vissa identifierare. Andra måste sammanfogas manuellt med [Dataprep `concat` function](../../data-prep/functions.md#string), till exempel: `concat(id,"@${ORG_ID}.Marketo")` |
+| `sourceKey` | Sträng | En unik identifierare som består av `sourceId`, `sourceInstanceId`och `sourceType` sammanfogade i följande format: `[sourceID]@[sourceInstanceID].[sourceType]`.<br><br>Vissa källkopplingar som Marketo sammanfogar det här värdet automatiskt för vissa identifierare. Andra måste sammanfogas manuellt med [Dataprep `concat` function](../../data-prep/functions.md#string), till exempel: `concat(id,"@${ORG_ID}.Marketo")` |
 | `sourceType` | Sträng | Namnet på plattformen som innehåller källdata. |
 
 {style=&quot;table-layout:auto&quot;}

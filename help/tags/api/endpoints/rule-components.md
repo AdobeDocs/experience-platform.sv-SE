@@ -2,9 +2,9 @@
 title: Slutpunkt för regelkomponenter
 description: Lär dig hur du anropar /rule_components-slutpunkten i Reactor API.
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1185'
 ht-degree: 1%
 
 ---
@@ -305,22 +305,22 @@ Du kan skapa en ny regelkomponent genom att göra en POST.
 **API-format**
 
 ```http
-POST /rules/{RULE_ID}/rule_components
+POST /properties/{PROPERTY_ID}/rule_components
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `RULE_ID` | The `id` för regeln som du definierar en regelkomponent för. |
+| `PROPERTY_ID` | The `id` för egenskapen som du definierar regelkomponenten under. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
-Följande begäran skapar en ny regelkomponent för den angivna regeln. Anropet associerar även regelkomponenten med ett befintligt tillägg via `relationships` -egenskap. Se guiden [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar en ny regelkomponent. I nyttolasten `relationships` -egenskapen associerar komponenten med specifika regler och ett befintligt tillägg. Se guiden [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
-  https://reactor.adobe.io/rules/RLf7b4f416b2e04ae1ba857ae681fee5bc/rule_components \
+  https://reactor.adobe.io/properties/PR97596432a82549ceb8e2a5d9df05c0e1/rule_components \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -366,7 +366,7 @@ curl -X POST \
 | `attributes.rule_order` | Ett heltal som anger prioriteten för den associerade regeln som ska utlösas. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 | `attributes.timeout` | Ett heltal som anger timeout för åtgärden som körs i sekvens. |
-| `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Regeln som den här komponenten definieras under. Måste vara samma regel-ID som anges i sökvägen till begäran.</li></ol>Mer allmän information om relationer finns i [relationshandbok](../guides/relationships.md). |
+| `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Regeln som den här komponenten definieras under.</li></ol>Mer allmän information om relationer finns i [relationshandbok](../guides/relationships.md). |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rule_components`. |
 
 {style=&quot;table-layout:auto&quot;}
