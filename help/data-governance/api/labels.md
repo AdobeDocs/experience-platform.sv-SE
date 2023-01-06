@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för etiketter
-topic-legacy: developer guide
 description: Lär dig hur du hanterar dataanvändningsetiketter i Experience Platform med hjälp av API:t för principtjänsten.
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '506'
 ht-degree: 1%

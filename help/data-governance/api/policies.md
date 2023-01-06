@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Politik;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkt för datahanteringsprinciper
-topic-legacy: developer guide
 description: Datastyrningsprinciper är regler som organisationen antar som beskriver den typ av marknadsföringsåtgärder som ni tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av datastyrningsprinciper.
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1865'
 ht-degree: 0%
@@ -396,7 +395,7 @@ PUT /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip som du skapade för att neka den här marknadsföringsåtgärden om `C1 AND C5` dataetiketter finns.
+I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip du skapade för att neka den här marknadsföringsåtgärden om `C1 AND C5` dataetiketter finns.
 
 Följande begäran uppdaterar den befintliga principen så att den inkluderar det nya principuttrycket. Observera att eftersom denna begäran i princip skriver om principen måste alla fält inkluderas i nyttolasten, även om vissa av deras värden inte uppdateras.
 

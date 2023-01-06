@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;Automatisk tillsyn;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkter för principutvärdering
-topic-legacy: developer guide
 description: När marknadsföringsåtgärder har skapats och principer har definierats kan du använda API:t för principtjänsten för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 exl-id: f9903939-268b-492c-aca7-63200bfe4179
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '1542'
 ht-degree: 0%

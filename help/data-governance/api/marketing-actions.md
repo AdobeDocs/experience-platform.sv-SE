@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Politiska åtgärder;marknadsföringsåtgärder api;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkt för marknadsföringsåtgärder
-topic-legacy: developer guide
 description: En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en datakonsument i Experience Platform vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 exl-id: bc16b318-d89c-4fe6-bf5a-1a4255312f54
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '732'
 ht-degree: 0%
