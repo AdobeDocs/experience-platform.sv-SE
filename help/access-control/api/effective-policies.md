@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;effektiva profiler;åtkomstkontrolls-API
 solution: Experience Platform
 title: API-slutpunkt för gällande principer
-topic-legacy: developer guide
 description: Lär dig hur du visar effektiva åtkomstprinciper med åtkomstkontrolls-API:t för Adobe Experience Platform.
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '292'
 ht-degree: 1%

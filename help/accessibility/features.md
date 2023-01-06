@@ -1,16 +1,15 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;enhetlig profil;enhetlig;profil;rtcp;XDM-diagram
 title: Allmänna tillgänglighetsfunktioner i plattformen
-topic-legacy: guide
 type: Documentation
 description: Läs mer om de allmänna tillgänglighetsfunktionerna i Adobe Experience Platform, inklusive tangentbordsnavigering, färgpaletter och kontrast samt stöd för hjälpmedelstekniker.
-source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
+exl-id: 4b7e2f2b-af51-4376-8a63-16c921cc7135
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '484'
 ht-degree: 1%
 
 ---
-
 
 # Tillgänglighetsfunktioner i Experience Platform
 
@@ -36,7 +35,7 @@ Följande navigeringselement underlättar tillgängligheten:
 
 ## Färgpaletter och kontrast
 
-Experience Platform strävar efter att följa [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/), inklusive krav på färgkontrast. Användargränssnittet i Experience Platform ger tillräckligt med kontrast i programmet för att du ska få en lättillgänglig visningsupplevelse för användare med nedsatt syn eller färgbrister.
+Experience Platform strävar efter [WCAG 2.1 AA](https://www.w3.org/TR/WCAG/) överensstämmelse, inklusive krav på färgkontrast. Användargränssnittet i Experience Platform ger tillräckligt med kontrast i programmet för att du ska få en lättillgänglig visningsupplevelse för användare med nedsatt syn eller färgbrister.
 
 ![Färgpaletten och kontrasten på Experience Platform-gränssnittets hemsida.](images/homepage.png)
 

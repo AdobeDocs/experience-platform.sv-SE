@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontrollbehörigheter;åtkomstkontrollsresurstyper;åtkomstkontrolls-API
 solution: Experience Platform
 title: Referens-API-slutpunkt
-topic-legacy: developer guide
 description: Med referensslutpunkten i API:t för åtkomstkontroll kan du visa namnen på tillgängliga behörigheter och resurstyper, som sedan kan användas för att visa effektiva åtkomstkontrollprinciper för den aktuella användaren.
 exl-id: 18d84d54-9258-4451-9aa8-7c647b45a8da
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
