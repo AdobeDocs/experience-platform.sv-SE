@@ -2,15 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;övervaka identiteter;övervaka dataflöden;dataflöden;identiteter;
 description: Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden med identiteter med hjälp av användargränssnittet i Experience Platform.
 title: Övervaka dataflöden för identiteter i användargränssnittet
-topic-legacy: overview
 type: Tutorial
-source-git-commit: 3018ee005c96e3905ae8dab24cca901cf48847ea
+exl-id: 735b0e52-74f6-47fe-98c6-e12a633b6f57
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1069'
 ht-degree: 0%
 
 ---
-
 
 # Övervaka dataflöden för identiteter i användargränssnittet
 

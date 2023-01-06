@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl workflow;ETL workflow
 solution: Experience Platform
 title: ETL-arbetsflöde
-topic-legacy: overview
 description: Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika format, men de flesta exponerar liknande funktioner för att underlätta kombinationen av flera datakällor.
 exl-id: 09de6c50-ad04-4d7c-99e6-33784fb0dd58
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '213'
 ht-degree: 0%
@@ -21,13 +19,13 @@ Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika form
 
 I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän användarupplevelse baserad på standardinteraktioner. Dessa bilder kan enkelt anpassas för en specifik ETL-användarupplevelse.
 
-Åtgärderna som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
+De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
 
 ### Bild 1 - Konfigurera nya Adobe Experience Platform Connector:
 
 ![](images/image2.png)
 
-### Bild 2 - [!DNL Experience Platform] Anslutningen aktiverad:
+### Figur 2 - [!DNL Experience Platform] Koppling aktiverad:
 
 ![](images/image3.png)
 
@@ -35,11 +33,11 @@ I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän anv�
 
 ![](images/image4.png)
 
-### Bild 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform]-anslutning:
+### Figur 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform] Anslutning:
 
 ![](images/image5.png)
 
-### Bild 5 - Bläddrar efter datakällan [!DNL Experience Platform] Datamängder:
+### Figur 5 - Sök efter källa [!DNL Experience Platform] Datauppsättningar:
 
 ![](images/image6.png)
 
@@ -59,7 +57,7 @@ I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän anv�
 
 ![](images/image10.png)
 
-### Bild 10 - Definiera måldatauppsättningen [!DNL Experience Data Model] (XDM):
+### Figur 10 - Definiera [!DNL Experience Data Model] (XDM) måldatauppsättning:
 
 ![](images/image11.png)
 

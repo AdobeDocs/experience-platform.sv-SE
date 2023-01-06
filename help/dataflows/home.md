@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabas;populära ämnen;dataflöden;dataflöden;data;övervakning;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;flöde;flödestjänst;
 solution: Experience Platform
 title: Översikt över dataflöden
-topic-legacy: overview
 description: I det här dokumentet introduceras dataflöden som visar hur de används i Adobe Experience Platform.
 exl-id: 8fe08ffa-f095-4e9f-8bab-d060985f0236
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '238'
 ht-degree: 0%

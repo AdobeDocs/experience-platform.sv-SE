@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;övervakningssegment;övervaka dataflöden;dataflöden;segmentering
 description: Med segmentering kan ni skapa segment och målgrupper utifrån era kundprofildata i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden under segmentering med användargränssnittet i Experience Platform.
 title: Övervaka dataflöden för segment i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1783'
 ht-degree: 0%

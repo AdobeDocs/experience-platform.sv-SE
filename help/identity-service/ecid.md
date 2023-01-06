@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;ECID;ecid
 solution: Experience Platform
 title: ECID - översikt
-topic-legacy: overview
 description: ECID (Experience Cloud Identifier) är en modul på klientsidan som ger tillgång till identitetshantering och som tillhandahåller tre primära funktioner.
 exl-id: da7717d2-da2e-414b-978d-2eab8ff2c5a0
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
 workflow-type: tm+mt
 source-wordcount: '275'
 ht-degree: 0%
@@ -16,7 +15,7 @@ ht-degree: 0%
 
 Experience Cloud ID (ECID) är ett delat ID-namnutrymme som används i Adobe Experience Platform- och Adobe Experience Cloud-program.
 
-ECID utgör grunden för kundidentiteten. Med kontexten [[!DNL Identity Service]](./home.md) används ECID som primärt ID för enheter och som basnod för identitetsdiagram.
+ECID utgör grunden för kundidentiteten. Med tanke på [[!DNL Identity Service]](./home.md)används ECID som primärt ID för enheter och som basnod för identitetsdiagram.
 
 Med ECID kan man
 
@@ -30,8 +29,8 @@ För att kunna identifiera dina onlineanvändare måste du ha ECID som identifie
 
 Följande dokumentation ger ytterligare resurser för att förstå ECID mellan olika plattformar och Experience Cloud-program:
 
-* Information om hur du använder ECID med webbplatsimplementering finns i dokumentationen för [Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
-* Om du vill se hur ECID används med program och mobilt webbinnehåll läser du dokumentationen för [besöksspårning mellan en app och en mobilwebb](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html?lang=en#sdk-reference-ios).
-* Det kan vara enkelt och enkelt att distribuera dessa verktyg om du använder [taggar](../tags/home.md).
-* Se [Privacy Servicens dokumentation](../privacy-service/identity-data.md) för information om hur du använder ECID för att underlätta efterlevnad av sekretessbestämmelser som GDPR.
-* Mer information om ECID med plattformskontext finns i [Översikt över identitetstjänsten](./home.md) och översikten över [identitetsnamnutrymmen](./namespaces.md).
+* Information om hur du använder ECID för webbplatsimplementering finns i dokumentationen för [Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+* För att se hur ECID används med program och mobilt webbinnehåll, se dokumentationen för [besöksspårning mellan en app och en mobil webbsajt](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html?lang=en#sdk-reference-ios).
+* Det kan vara enkelt och enkelt att driftsätta dessa verktyg om du använder [taggar](../tags/home.md).
+* Se [Privacy Service](../privacy-service/identity-data.md) för information om hur man använder ECID för att underlätta efterlevnaden av sekretessbestämmelser som GDPR.
+* Mer information om ECID med avseende på plattform finns i [Översikt över identitetstjänsten](./home.md) och [Översikt över identitetsnamnutrymmen](./namespaces.md).

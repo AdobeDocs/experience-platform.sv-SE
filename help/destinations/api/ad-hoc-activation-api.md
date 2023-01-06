@@ -3,10 +3,9 @@ keywords: Experience Platform;mål-API;ad hoc-aktivering;aktivera segment ad hoc
 solution: Experience Platform
 title: Aktivera målgruppssegment för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln beskrivs hela arbetsflödet för aktivering av målgruppssegment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
-topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: cdf96088be27cba1fb92f1348f002123614285fe
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '1557'
 ht-degree: 0%

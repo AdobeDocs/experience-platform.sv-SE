@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl integrations;ETL integrations
 solution: Experience Platform
 title: Utveckla ETL-integreringar för Adobe Experience Platform
-topic-legacy: overview
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '4075'
 ht-degree: 0%

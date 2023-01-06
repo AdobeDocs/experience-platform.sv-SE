@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;id namespace;Identity namespace
 solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 3d308d18c926cabdf0bd4b52c0623d8ec9428ee8
+source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
 workflow-type: tm+mt
 source-wordcount: '2180'
 ht-degree: 0%
@@ -18,7 +17,7 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 
 Data som identifierar en enskild kund fragmenteras ofta över olika enheter och system som de använder för att interagera med ert varumärke. [!DNL Identity Service] samlar ihop dessa fragmenterade identiteter och ger en fullständig förståelse för kundbeteenden så att ni kan leverera slagkraftiga digitala upplevelser i realtid. Mer information finns i [Översikt över identitetstjänsten](./home.md).
 
-## Vanliga frågor och svar 
+## Vanliga frågor och svar
 
 Här följer en lista med svar på vanliga frågor om [!DNL Identity Service].
 

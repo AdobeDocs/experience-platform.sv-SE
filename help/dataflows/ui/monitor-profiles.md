@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabas;populära ämnen;övervakningsprofiler;övervaka dataflöden;dataflöden;profil;kundprofil i realtid;
 description: Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden med profiler med användargränssnittet i Experience Platform.
 title: Övervaka dataflöden för profiler i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
 source-wordcount: '997'
 ht-degree: 0%
