@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för datauppsättningar
 topic-legacy: datasets
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1509d14c0acbf7136d5869d6de2ee2cf9fad450a
 workflow-type: tm+mt
 source-wordcount: '1416'
 ht-degree: 0%
@@ -127,7 +127,7 @@ Om du vill aktivera en datauppsättning för profilen har du åtkomst till dess 
 
 Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på datauppsättningar.
 
-## Ta bort en datauppsättning
+## Ta bort en datauppsättning {#delete}
 
 Du kan ta bort en datauppsättning genom att först komma åt den **[!UICONTROL Dataset activity]** skärm. Välj sedan **[!UICONTROL Delete dataset]** för att ta bort den.
 

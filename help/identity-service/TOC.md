@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Handbok för Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personaliserade digitala upplevelser.
 feature: Identities
-source-git-commit: 75362c67e1a8a31a449cb4c9dd618515325d36f0
+source-git-commit: ed091c95952b731ce1f7567b99a1072a8be2b4a5
 workflow-type: tm+mt
-source-wordcount: '108'
-ht-degree: 11%
+source-wordcount: '112'
+ht-degree: 10%
 
 ---
 
@@ -31,6 +31,7 @@ ht-degree: 11%
    - [Delad enhetsidentifiering](ui/shared-device-detection.md)
    - [Definiera identitetsfält i användargränssnittet](ui/label-identities.md)
 - [ECID - översikt](ecid.md)
+- [Borttagningar i identitetstjänsten](deletion.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/identity-service)
