@@ -2,10 +2,9 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real time Machine Learning;node reference;
 solution: Experience Platform
 title: Hantera anteckningsböcker för maskininlärning i realtid
-topic-legacy: Training and scoring a ML model
 description: Följande guide beskriver de steg som krävs för att skapa ett Machine Learning-program i realtid i Adobe Experience Platform JupyterLab.
 exl-id: 604c4739-5a07-4b5a-b3b4-a46fd69e3aeb
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1650'
 ht-degree: 0%

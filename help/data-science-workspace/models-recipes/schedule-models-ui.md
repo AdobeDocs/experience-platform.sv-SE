@@ -2,12 +2,10 @@
 keywords: Experience Platform;schemalägg en modell;Datavetenskap, arbetsyta;populära ämnen;schemaläggning;schemalägga utbildning
 solution: Experience Platform
 title: Schemalägg en modell i gränssnittet för datavetenskapen
-topic-legacy: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du skapa schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 exl-id: 51f6f328-7c63-4de1-9184-2ba526bb82e2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '537'
 ht-degree: 0%
@@ -16,7 +14,7 @@ ht-degree: 0%
 
 # Schemalägg en modell i gränssnittet för datavetenskapen
 
-Med Adobe Experience Platform [!DNL Data Science Workspace] kan du konfigurera schemalagda poängsättnings- och utbildningar för en maskininlärningstjänst. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
+Adobe Experience Platform [!DNL Data Science Workspace] gör att du kan konfigurera schemalagda poängsättnings- och utbildningskörningar på en maskininlärningstjänst. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 
 Den här självstudiekursen går igenom stegen för att konfigurera utbildnings- och poängsättningsscheman för en befintlig tjänst via [!UICONTROL Service Gallery]. Den delas in i följande huvudavsnitt:
 
@@ -25,27 +23,27 @@ Den här självstudiekursen går igenom stegen för att konfigurera utbildnings-
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform] för att kunna slutföra den här självstudiekursen. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
-Den här självstudiekursen kräver en befintlig tjänst. Om du inte har någon tillgänglig tjänst att arbeta med kan du skapa en genom att följa självstudiekursen för [publicering av en modell som en tjänst](./publish-model-service-ui.md).
+Den här självstudiekursen kräver en befintlig tjänst. Om du inte har någon hjälpmedelstjänst att arbeta med kan du skapa en genom att följa självstudiekursen för [publicera en modell som en tjänst](./publish-model-service-ui.md).
 
 ## Konfigurera schemalagd poängsättning {#configure-scheduled-scoring}
 
 Modellpoäng kan konfigureras till en automatiserad process på schemalagd basis. När en tjänst har skapats följer du stegen nedan för att konfigurera och tillämpa ett poängschema:
 
-I Adobe Experience Platform väljer du fliken **[!UICONTROL Services]** i den vänstra navigeringskolumnen för att komma åt **[!DNL Service Gallery]**. Hitta den tjänst som du vill schemalägga poängsättningen för och välj **[!UICONTROL Open]** för att visa sidan **[!UICONTROL Overview]**.
+I Adobe Experience Platform väljer du **[!UICONTROL Services]** -fliken som finns i den vänstra navigeringskolumnen för att komma åt **[!DNL Service Gallery]**. Hitta den tjänst som du vill schemalägga poängsättningen för och välj **[!UICONTROL Open]** för att visa **[!UICONTROL Overview]** sida.
 
 ![](../images/models-recipes/schedule/select_service.png)
 
-På sidan Översikt visas tjänstens poänginformation. Klicka på länken **[!UICONTROL Update Schedule]** för att konfigurera ett poängschema.
+På sidan Översikt visas tjänstens poänginformation. Välj **[!UICONTROL Update Schedule]** för att konfigurera ett poängschema.
 
 ![](../images/models-recipes/schedule/update_scoring.png)
 
-Konfigurera frekvens, startdatum, slutdatum, indatamängd och utdatamängd för poängsättningsschemat. När du är nöjd med konfigurationerna väljer du **[!UICONTROL Create]** för att uppdatera tjänstens poängschema.
+Konfigurera frekvens, startdatum, slutdatum, indatamängd och utdatamängd för poängsättningsschemat. När du är nöjd med konfigurationerna väljer du **[!UICONTROL Create]** för att uppdatera tjänstens poängplan.
 
 ![](../images/models-recipes/schedule/set_scoring_schedule.png)
 
-Ditt uppdaterade poängschema visas på tjänstens **[!UICONTROL Overview]**-sida.
+Det uppdaterade poängschemat visas i tjänstens **[!UICONTROL Overview]** sida.
 
 ![](../images/models-recipes/schedule/scoring_set.png)
 
@@ -55,11 +53,11 @@ Om du konfigurerar schemalagd utbildning för en tjänst uppdateras maskininlär
 
 När en tjänst har skapats följer du stegen nedan för att konfigurera och tillämpa ett utbildningsschema:
 
-I Adobe Experience Platform väljer du fliken **[!UICONTROL Services]** i den vänstra navigeringskolumnen för att komma åt **[!UICONTROL Service Gallery]**. Hitta den tjänst som du vill schemalägga kurser för och välj **[!UICONTROL Open]** för att visa sidan **[!UICONTROL Overview]**.
+I Adobe Experience Platform väljer du **[!UICONTROL Services]** -fliken som finns i den vänstra navigeringskolumnen för att komma åt **[!UICONTROL Service Gallery]**. Hitta den tjänst du vill boka utbildning för och välj **[!UICONTROL Open]** för att visa **[!UICONTROL Overview]** sida.
 
 ![](../images/models-recipes/schedule/select_service.png)
 
-På sidan Översikt visas tjänstens utbildningsinformation. Klicka på länken **[!UICONTROL Update Schedule]** för att konfigurera ett utbildningsschema.
+På sidan Översikt visas tjänstens utbildningsinformation. Välj **[!UICONTROL Update Schedule]** länk för att konfigurera ett utbildningsplan.
 
 ![](../images/models-recipes/schedule/update_training.png)
 
@@ -67,10 +65,10 @@ Konfigurera frekvens, startdatum, slutdatum och indatamängd som används för u
 
 ![](../images/models-recipes/schedule/set_training_schedule.png)
 
-Det uppdaterade utbildningsschemat visas på tjänstens **[!UICONTROL Overview]**-sida.
+Det uppdaterade utbildningsschemat visas i tjänstens **[!UICONTROL Overview]** sida.
 
 ![](../images/models-recipes/schedule/training_set.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du schemalagt automatiserad utbildning och poängsättning för en tjänst och slutfört arbetsflödet för självstudiekursen [!DNL Data Science Workspace]. Om du inte redan har gjort det kan du överväga att starta om självstudiekursen](./create-retails-sales-dataset.md) och följa API-arbetsflödet för att skapa, utbilda, poängsätta och publicera en modell.[
+Genom att följa den här självstudiekursen har du schemalagt automatiserad utbildning och poängsättning för en tjänst och slutfört [!DNL Data Science Workspace] självstudiekursens arbetsflöde. Om du inte redan har gjort det bör du överväga [starta om självstudiekursen](./create-retails-sales-dataset.md) och följa API-arbetsflödet för att skapa, utbilda, poängsätta och publicera en modell.

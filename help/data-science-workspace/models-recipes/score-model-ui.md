@@ -2,12 +2,10 @@
 keywords: Experience Platform;göra poäng i en modell;Data Science Workspace;populära topics;ui;poäng run;scoring results
 solution: Experience Platform
 title: Posta en modell i användargränssnittet för datavetenskapen
-topic-legacy: tutorial
 type: Tutorial
 description: Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 0%
@@ -16,15 +14,15 @@ ht-degree: 0%
 
 # Visa en modell i gränssnittet för datavetenskapen
 
-Du kan göra poängsättningen i Adobe Experience Platform [!DNL Data Science Workspace] genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
+Poäng i Adobe Experience Platform [!DNL Data Science Workspace] kan uppnås genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 
-I den här självstudiekursen visas de steg som krävs för att göra en modell i [!DNL Data Science Workspace]-användargränssnittet.
+I den här självstudiekursen visas de steg som krävs för att göra en modell i [!DNL Data Science Workspace] användargränssnitt.
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform] för att kunna slutföra den här självstudiekursen. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
-Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell ska du följa självstudiekursen [och utvärdera en modell i användargränssnittet](./train-evaluate-model-ui.md) innan du fortsätter.
+Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [utbilda och utvärdera en modell i användargränssnittet](./train-evaluate-model-ui.md) självstudiekurs innan du fortsätter.
 
 ## Skapa en ny poängkörning
 
@@ -34,15 +32,15 @@ Hitta den bästa kursen för att använda dess konfigurationer för poängsättn
 
 ![Välj utbildningskurs](../images/models-recipes/score/select-run.png)
 
-På fliken **[!UICONTROL Evaluation]** väljer du **[!UICONTROL Score]** längst upp till höger på skärmen. Ett nytt bedömningsarbetsflöde börjar.
+Från kursen **[!UICONTROL Evaluation]** flik, välja **[!UICONTROL Score]** som finns längst upp till höger på skärmen. Ett nytt bedömningsarbetsflöde börjar.
 
 ![](../images/models-recipes/score/training_run_overview.png)
 
-Markera datamängden för indataskal och välj **[!UICONTROL Next]**.
+Välj datamängden för indataskalförändring och välj **[!UICONTROL Next]**.
 
 ![](../images/models-recipes/score/scoring_input.png)
 
-Välj datauppsättningen för resultaträkning, det här är den dedikerade utdatamängden där poängsättningsresultaten lagras. Bekräfta ditt val och välj **[!UICONTROL Next]**.
+Välj datauppsättningen för resultaträkning, det här är den dedikerade utdatamängden där poängsättningsresultaten lagras. Bekräfta markeringen och välj **[!UICONTROL Next]**.
 
 ![](../images/models-recipes/score/scoring_results.png)
 
@@ -51,7 +49,7 @@ Observera att du inte kan ta bort ärvda parametrar som angavs när modellerna s
 
 ![konfiguration](../images/models-recipes/score/configuration.png)
 
-Granska och bekräfta poängkonfigurationerna och välj **[!UICONTROL Finish]** för att skapa och köra poängkörningen. Du dirigeras till fliken **[!UICONTROL Scoring Runs]** och den nya poängkörningen med statusen **[!UICONTROL Pending]** visas.
+Granska och bekräfta poängkonfigurationerna och välj **[!UICONTROL Finish]**  för att skapa och köra poängkörningen. Du dirigeras till **[!UICONTROL Scoring Runs]** och den nya poängsättningen körs med **[!UICONTROL Pending]** visas.
 
 ![resultatfliken](../images/models-recipes/score/scoring_runs_tab.png)
 
@@ -69,7 +67,7 @@ Om du vill visa poängresultat börjar du med att välja en utbildningskurs.
 
 ![Välj utbildningskurs](../images/models-recipes/score/select-run.png)
 
-Du omdirigeras till sidan **[!UICONTROL Evaluation]** för kurserna. Långt upp på sidan för utvärdering av utbildningskörning väljer du fliken **[!UICONTROL Scoring Runs]** för att visa en lista över befintliga poängsättningar.
+Du omdirigeras till utbildningskörningarna **[!UICONTROL Evaluation]** sida. I närheten av den övre delen av sidan för utvärdering av utbildningskörning väljer du **[!UICONTROL Scoring Runs]** om du vill visa en lista med befintliga poängserier.
 
 ![utvärderingssida](../images/models-recipes/score/view_scoring_runs.png)
 
@@ -77,15 +75,15 @@ Välj sedan en poängkörning för att visa körningsinformationen.
 
 ![körningsinformation](../images/models-recipes/score/view_details.png)
 
-Om den valda poängkörningen har statusen Slutförd eller Misslyckad är länken **[!UICONTROL View Activity Logs]** tillgänglig. Om en poängkörning misslyckas kan körningsloggarna ge användbar information för att fastställa orsaken till felet. Om du vill hämta körningsloggarna väljer du **[!UICONTROL View Activity Logs]**.
+Om den valda betygskörningen har statusen antingen Slutförd eller Misslyckad, visas **[!UICONTROL View Activity Logs]** länken är tillgänglig. Om en poängkörning misslyckas kan körningsloggarna ge användbar information för att fastställa orsaken till felet. Om du vill hämta körningsloggarna väljer du **[!UICONTROL View Activity Logs]**.
 
 ![Välj visningsloggar](../images/models-recipes/score/view_logs.png)
 
-**[!UICONTROL View activity logs]**-drivrutinen visas. Välj en URL för att automatiskt hämta de associerade loggarna.
+The **[!UICONTROL View activity logs]** popover visas. Välj en URL för att automatiskt hämta de associerade loggarna.
 
 ![](../images/models-recipes/score/activity_logs.png)
 
-Du kan också visa dina poängresultat genom att välja **[!UICONTROL Preview scoring results dataset]**.
+Du kan också visa dina poängresultat genom att välja  **[!UICONTROL Preview scoring results dataset]**.
 
 ![Välj förhandsgranskningsresultat](../images/models-recipes/score/view_results.png)
 
@@ -93,8 +91,8 @@ En förhandsgranskning av utdatamängden tillhandahålls.
 
 ![förhandsgranskningsresultat](../images/models-recipes/score/preview_results.png)
 
-För den fullständiga uppsättningen poängresultat väljer du länken **[!UICONTROL Scoring Results Dataset]** som finns i den högra kolumnen.
+För alla poängresultat väljer du **[!UICONTROL Scoring Results Dataset]** -länk hittades i den högra kolumnen.
 
 ## Nästa steg
 
-I den här självstudiekursen gick du igenom stegen för att få fram data med hjälp av en tränad modell i [!DNL Data Science Workspace]. Följ självstudiekursen om att [publicera en modell som en tjänst i användargränssnittet](./publish-model-service-ui.md) så att användare i organisationen kan få poäng på data genom att ge enkel åtkomst till en maskininlärningstjänst.
+Den här självstudiekursen gick dig igenom stegen för att få fram data med hjälp av en utbildad modell i [!DNL Data Science Workspace]. Följ självstudiekursen på [publicera en modell som en tjänst i användargränssnittet](./publish-model-service-ui.md) för att ge användare i organisationen möjlighet att få poäng på data genom att ge enkel åtkomst till en maskininlärningstjänst.

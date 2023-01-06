@@ -2,10 +2,9 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;experiment;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för experiment
-topic-legacy: Developer guide
 description: Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '783'
 ht-degree: 1%

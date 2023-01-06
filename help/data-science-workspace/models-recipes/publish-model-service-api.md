@@ -2,11 +2,10 @@
 keywords: Experience Platform;publicera en modell;Data Science Workspace;populära topics;sensei machine learning api
 solution: Experience Platform
 title: Publicera en modell som en tjänst Använda inlärnings-API:t för Sensei Machine
-topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med Sensei Machine Learning API.
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1516'
 ht-degree: 0%

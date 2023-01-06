@@ -2,12 +2,10 @@
 keywords: Experience Platform;utbilda och utvärdera;Data Science Workspace;populära ämnen;skapa en modell;skapa en utbildningskurs
 solution: Experience Platform
 title: Utbildning och utvärdering av en modell i användargränssnittet för datavetenskap
-topic-legacy: tutorial
 type: Tutorial
 description: I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
-translation-type: tm+mt
-source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1078'
 ht-degree: 1%
@@ -22,17 +20,17 @@ Den här självstudiekursen går igenom stegen för att skapa, utbilda och utvä
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform] för att kunna slutföra den här självstudiekursen. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform], ska du tala med systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
-Den här självstudiekursen kräver en befintlig recept. Om du inte har någon recept följer du [Importera en paketerad recept i självstudiekursen för användargränssnittet](./import-packaged-recipe-ui.md) innan du fortsätter.
+Den här självstudiekursen kräver en befintlig recept. Om du inte har någon recept följer du [Importera en paketerad mottagare i användargränssnittet](./import-packaged-recipe-ui.md) självstudiekurs innan du fortsätter.
 
 ## Skapa en modell
 
-I Experience Platform väljer du fliken **[!UICONTROL Models]** i den vänstra navigeringen och väljer sedan fliken Bläddra för att visa dina befintliga modeller. Välj **[!UICONTROL Create Model]** uppe till höger på sidan för att påbörja en modellskapandeprocess.
+I Experience Platform väljer du **[!UICONTROL Models]** i den vänstra navigeringsrutan och välj sedan fliken Bläddra för att visa dina befintliga modeller. Välj **[!UICONTROL Create Model]** i det övre högra hörnet på sidan för att påbörja en modellskapandeprocess.
 
 ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-Bläddra igenom listan med befintliga recept, sök efter och välj den mottagare som ska användas för att skapa modellen och välj **[!UICONTROL Next]**.
+Bläddra igenom listan med befintliga mottagare, sök efter och välj den mottagare som ska användas för att skapa modellen och välj **[!UICONTROL Next]**.
 ![](../images/models-recipes/train-evaluate-ui/select_recipe.png)
 
 Välj en lämplig indatauppsättning och välj **[!UICONTROL Next]**. Detta anger standarddatauppsättningen för inmatningsutbildning för modellen.
@@ -40,42 +38,42 @@ Välj en lämplig indatauppsättning och välj **[!UICONTROL Next]**. Detta ange
 
 Ange ett namn för modellen och granska standardmodellkonfigurationerna. Standardkonfigurationer tillämpades när Recept skapades, granska och ändra konfigurationsvärdena genom att dubbelklicka på värdena.
 
-Om du vill skapa en ny uppsättning konfigurationer väljer du **[!UICONTROL Upload New Config]** och drar en JSON-fil som innehåller modellkonfigurationer till webbläsarfönstret. Välj **[!UICONTROL Finish]** för att skapa modellen.
+Välj **[!UICONTROL Upload New Config]** och dra en JSON-fil som innehåller modellkonfigurationer till webbläsarfönstret. Välj **[!UICONTROL Finish]** för att skapa modellen.
 
 >[!NOTE]
 >
->Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för Retail Sales Recipe.
+>Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. Se [referens](#reference) för en lista över butiksförsäljningsmottagarkonfigurationer.
 
 ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
 ## Skapa en utbildningskörning
 
-I Experience Platform väljer du fliken **[!UICONTROL Models]** i den vänstra navigeringen och väljer sedan fliken Bläddra för att visa dina befintliga modeller. Sök efter och välj den hyperlänk som är kopplad till namnet på den modell som du vill utbilda.
+I Experience Platform väljer du **[!UICONTROL Models]** i den vänstra navigeringsrutan och välj sedan fliken Bläddra för att visa dina befintliga modeller. Sök efter och välj den hyperlänk som är kopplad till namnet på den modell som du vill utbilda.
 
 ![](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
 
-Alla befintliga kurser med deras aktuella utbildningsstatus listas. För modeller som skapats med användargränssnittet [!DNL Data Science Workspace] skapas och körs en utbildningskörning automatiskt med standardkonfigurationer och datauppsättningen för inmatningsutbildning.
+Alla befintliga kurser med deras aktuella utbildningsstatus listas. För modeller som skapats med [!DNL Data Science Workspace] -användargränssnittet genereras och körs en utbildningskörning automatiskt med standardkonfigurationer och datauppsättningen för inmatningsutbildning.
 
-Skapa en ny utbildningskurs genom att välja **[!UICONTROL Train]** uppe till höger på sidan Modellöversikt.
+Skapa en ny kurs genom att välja **[!UICONTROL Train]** nära överst till höger på sidan Modellöversikt.
 
 ![](../images/models-recipes/train-evaluate-ui/model_overview.png)
 
-Välj indatauppsättning för utbildning för utbildningskörningen och välj sedan **[!UICONTROL Next]**.
+Välj indatauppsättning för utbildning för kursen och välj sedan **[!UICONTROL Next]**.
 
 ![](../images/models-recipes/train-evaluate-ui/training_input.png)
 
-Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra och ändra dem därefter genom att dubbelklicka på värdena. Välj **[!UICONTROL Finish]** för att skapa och köra kursen.
+Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra och ändra dem därefter genom att dubbelklicka på värdena. Välj **[!UICONTROL Finish]** för att skapa och genomföra kursen.
 
 >[!NOTE]
 >
->Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för Retail Sales Recipe.
+>Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. Se [referens](#reference) för en lista över butiksförsäljningsmottagarkonfigurationer.
 
 ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 
 ## Utvärdera modellen
 
-I Experience Platform väljer du fliken **[!UICONTROL Models]** i den vänstra navigeringen och väljer sedan fliken Bläddra för att visa dina befintliga modeller. Sök efter och markera hyperlänken som är kopplad till namnet på den modell som du vill utvärdera.
+I Experience Platform väljer du **[!UICONTROL Models]** i den vänstra navigeringsrutan och välj sedan fliken Bläddra för att visa dina befintliga modeller. Sök efter och markera hyperlänken som är kopplad till namnet på den modell som du vill utvärdera.
 
 ![välj modell](../images/models-recipes/train-evaluate-ui/model-hyperlink.png)
 
@@ -85,7 +83,7 @@ MAPE-mätvärdet (Meean Absolute Percent Error) anger noggrannheten som en proce
 
 ![översikt över utbildningar](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
 
-Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med det totala antalet *hämtade*-instanser. Precision kan ses som sannolikheten att ett slumpmässigt valt resultat blir korrekt.
+Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med totalvärdet *hämtad* Instanser. Precision kan ses som sannolikheten att ett slumpmässigt valt resultat blir korrekt.
 
 ![köra flera körningar](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
@@ -101,9 +99,9 @@ Hyperparametrar kan inte tränas och en modell måste optimeras genom att olika 
 
 ## Nästa steg
 
-I den här självstudiekursen steg du igenom när du skapade, utbildade och utvärderade en modell i [!DNL Data Science Workspace]. När du har nått fram till en optimerad modell kan du använda den utbildade modellen för att generera insikter genom att följa självstudiekursen [Score a Model i användargränssnittet](./score-model-ui.md).
+Den här självstudiekursen gick igenom hur du skapar, utbildar och utvärderar en modell i [!DNL Data Science Workspace]. När ni har kommit fram till en optimerad modell kan ni använda den tränade modellen för att generera insikter genom att följa följande [Posta en modell i användargränssnittet](./score-model-ui.md) självstudiekurs.
 
-## Referens {#reference}
+## Referens  {#reference}
 
 ### Detaljhandelsförsäljningens mottagarkonfigurationer
 
@@ -122,7 +120,7 @@ Ytterligare parametrar bestämmer modellens tekniska egenskaper:
 | `ACP_DSW_INPUT_FEATURES` | Sträng | Lista med kommaavgränsade inmatningsschemaattribut. |
 | `ACP_DSW_TARGET_FEATURES` | Sträng | Lista med kommaseparerade utdataschemaattribut. |
 | `ACP_DSW_FEATURE_UPDATE_SUPPORT` | Boolean | Avgör om in- och utdatafunktionerna kan ändras |
-| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i IMS-organisationen. [Följ stegen ](../../xdm/api/getting-started.md#know-your-tenant_id) här för att hitta ditt klient-ID. |
+| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i IMS-organisationen. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant_id) för att hitta ditt klientorganisations-ID. |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | Sträng | Det indatarema som används för utbildning av en modell. |
 | `evaluation.labelColumn` | Sträng | Kolumnetikett för utvärderingsvisualiseringar. |
 | `evaluation.metrics` | Sträng | Kommaavgränsad lista med mätvärden som ska användas för att utvärdera en modell. |

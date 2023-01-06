@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;arbetsyta för datavetenskap;populära ämnen;arbetsyta för datavetenskap;datavetenskap
 solution: Experience Platform
 title: Översikt över arbetsytan Datavetenskap
-topic-legacy: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen för Data Science Workspace i Adobe Experience Platform.
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
@@ -63,7 +62,7 @@ I följande diagram visas det hierarkiska förhållandet mellan Recept, Models, 
 
 ## Förstå [!DNL Data Science Workspace]
 
-Med [!DNL Data Science Workspace]kan era datavetare effektivisera den krångliga processen att hitta insikter i stora datamängder. Bygger på ett gemensamt ramverk för maskininlärning och en gemensam körningsmiljö, [!DNL Data Science Workspace] ger avancerad arbetsflödeshantering, modellhantering och skalbarhet. Intelligenta tjänster stöder återanvändning av maskininlärningsrecept för att driva en rad olika tillämpningar som skapats med Adobe-produkter och -lösningar.
+Med [!DNL Data Science Workspace]kan era datavetare effektivisera den krångliga processen att hitta insikter i stora datamängder. Bygger på ett gemensamt ramverk för maskininlärning och en gemensam körningsmiljö, [!DNL Data Science Workspace] ger avancerad arbetsflödeshantering, modellhantering och skalbarhet. Intelligenta tjänster stöder återanvändning av maskininlärningsrecept för att driva ett antal tillämpningar som skapats med Adobe-produkter och -lösningar.
 
 ### Åtkomst till data i ett steg
 

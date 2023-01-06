@@ -2,10 +2,9 @@
 keywords: Experience Platform;felsökning;Data Science Workspace;populära ämnen
 solution: Experience Platform
 title: Felsökningsguide för arbetsytan Data Science
-topic-legacy: Troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 exl-id: fbc5efdc-f166-4000-bde2-4aa4b0318b38
-source-git-commit: ec42d80e695ccf57c10c539ae1b5104c7948c473
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real-time Machine Learning;node reference;
 solution: Experience Platform
 title: Referens för Machine Learning-nod i realtid
-topic-legacy: Nodes reference
 description: En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, till exempel en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden matar ut det omformade eller härledda värdet till nästa nod(er).
 exl-id: 67fe26b5-ce03-4a9a-ad45-783b2acf8d92
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '678'
 ht-degree: 0%
@@ -132,7 +131,7 @@ msg6 = model_train.process(msg5)
 
 ### Dela
 
-Använd följande nod för att dela upp din databildruta i tåg och testa genom att passera `train_size` eller `test_size`. Detta returnerar en databildruta med ett multiindex. Du kan komma åt tågs- och testdatabildrutor med hjälp av följande exempel: `msg5.data.xs(“train”)`.
+Använd följande nod för att dela upp din databildruta i tåg och testa genom att passera `train_size` eller `test_size`. Detta returnerar en databildruta med ett multiindex. Du kan komma åt tågs- och testdatabildrutor med hjälp av följande exempel: `msg5.data.xs("train")`.
 
 ```python
 splitter = Split(params={"train_size": 0.7})

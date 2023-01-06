@@ -2,10 +2,9 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;insights;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för insikter
-topic-legacy: Developer guide
 description: Insikter innehåller mätvärden som används för att ge datavetare möjlighet att utvärdera och välja optimala ML-modeller genom att visa relevanta utvärderingsvärden.
 exl-id: 603546d6-5686-4b59-99a7-90ecc0db8de3
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%

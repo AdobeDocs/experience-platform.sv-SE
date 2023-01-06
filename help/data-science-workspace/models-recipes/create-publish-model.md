@@ -2,11 +2,10 @@
 keywords: Experience Platform;maskininlärningsmodell;Data Science Workspace;populära ämnen;skapa och publicera en modell
 solution: Experience Platform
 title: Skapa och publicera en maskininlärningsmodell
-topic-legacy: tutorial
 type: Tutorial
 description: I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell.
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1071'
 ht-degree: 0%

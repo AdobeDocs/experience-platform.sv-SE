@@ -2,10 +2,9 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;engines;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för motorer
-topic-legacy: Developer guide
 description: Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetenskap. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 exl-id: 7c670abd-636c-47d8-bd8c-5ce0965ce82f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
 workflow-type: tm+mt
 source-wordcount: '1165'
 ht-degree: 0%
