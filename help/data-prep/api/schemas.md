@@ -2,9 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;dataförberedelse;api guide;scheman;
 solution: Experience Platform
 title: API-slutpunkt för scheman
-topic-legacy: schemas
-description: 'Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper in Platform. '
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+description: Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper in Platform.
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 0%

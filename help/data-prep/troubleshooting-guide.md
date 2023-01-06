@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;
 title: Felsökningsguide för dataprep
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Prep.
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
-source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '342'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Data Prep]samt en felsökningsguide för vanliga fel. Om du har frågor och felsökningsinformation om plattforms-API:er i allmänhet kan du läsa [Felsökningsguide för Adobe Experience Platform API](../landing/troubleshooting.md).
 
-## Vanliga frågor och svar 
+## Vanliga frågor och svar
 
 Nedan följer en lista med vanliga frågor och svar om [!DNL Data Prep] och deras svar.
 

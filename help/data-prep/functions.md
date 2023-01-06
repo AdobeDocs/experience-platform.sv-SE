@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;mappningsfält;mappningsfunktioner;
 solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
-topic-legacy: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 714ce6eb1a77559a7bd1691afeac4a96e0877717
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '4367'
 ht-degree: 2%
@@ -206,7 +205,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| to_bigint | Konverterar en sträng till ett BigInteger. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett BigInteger.</li></ul> | to_bigint(STRING) | to_bigint &#x200B;(&quot;100000.34&quot;) | 1000000,34 |
+| to_bigint | Konverterar en sträng till ett BigInteger. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett BigInteger.</li></ul> | to_bigint(STRING) | to_bigint &#x200B;(&quot;100000.34&quot;) | 1000000.34 |
 | to_decimal | Konverterar en sträng till en dubbel sträng. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till Double.</li></ul> | to_decimal(STRING) | to_decimal(&quot;20.5&quot;) | 20.5 |
 | to_float | Konverterar en sträng till en flyttal. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett flyttal.</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
 | to_integer | Konverterar en sträng till ett heltal. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett heltal.</li></ul> | to_integer(STRING) | to_integer(&quot;12&quot;) | 12 |

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 solution: Experience Platform
 title: Hantera dataformat med Data Prep
-topic-legacy: overview
 description: Det här dokumentet ger en översikt över hur olika datatyper hanteras i Data Prep.
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: 15afb221a3576b7a37ea02195549f246833b800d
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '575'
 ht-degree: 12%
@@ -82,8 +81,8 @@ Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatstr
 | Symbol | Betydelse | Presentation | Exempel |
 | ------ | ------- | ------------ | ------- |
 | G | The era | Text | AD; Anno Domini A |
-| Y | År, baserat på ISO-veckan | Siffra | 1996, 96 |
-| y | År | Siffra | 2004, 04 |
+| Y | År, baserat på ISO-veckan | Siffra | 1996; 96 |
+| y | År | Siffra | 2004; 04 |
 | M/L | Månad på året | Tal/text | 7. 07; juli Juli. J |
 | w | Vecka under året | Siffra | 27 |
 | W | Vecka i månaden | Siffra | 3 |

@@ -2,15 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 solution: Experience Platform
 title: Dataförhandsgranskning
-topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
-source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
+exl-id: 9bef5c3b-368d-4492-bdef-64e67fc25bfd
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '233'
 ht-degree: 1%
 
 ---
-
 
 # Beräknade fält
 
@@ -20,13 +19,13 @@ Om du vill skapa ett beräkningsfält väljer du **[!UICONTROL Add calculated fi
 
 ![](./images/calculated-fields/add-calculated-field.png)
 
-Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
+The **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
 
 ![](./images/calculated-fields/create-calculated-field.png)
 
 | Tabb | Beskrivning |
 | --- | ----------- |
-|  -funktion | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om de funktioner du kan använda i beräkningsfält kan du läsa guiden på [med hjälp av datapersonfunktioner (Mapper)](./functions.md). |
+|  -funktion | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om funktionerna som du kan använda i beräkningsfält kan du läsa guiden på [använda funktioner för dataförberedelse (Mapper)](./functions.md). |
 | Fält | Fliken Fält visar de fält och attribut som är tillgängliga i källschemat. |
 | Operatör | På fliken Operatorer visas de operatorer som är tillgängliga för att omforma data. |
 

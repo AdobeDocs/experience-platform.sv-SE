@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;data prep;api guide;mappningar;
 solution: Experience Platform
 title: API-slutpunkt för mappningsuppsättningar
-topic-legacy: mapping sets
 description: Du kan använda slutpunkten "/mappingSets" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
-source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
+source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
 workflow-type: tm+mt
 source-wordcount: '854'
 ht-degree: 0%
