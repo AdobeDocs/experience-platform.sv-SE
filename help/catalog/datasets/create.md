@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;skapa en datauppsättning;skapa datauppsättning
 solution: Experience Platform
 title: Skapa en datauppsättning med API:er
-topic-legacy: datasets
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '1304'
 ht-degree: 0%

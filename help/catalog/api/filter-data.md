@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;filter;filter;filterdata;Filterdata;datumintervall
 solution: Experience Platform
 title: Filtrera katalogdata med hjälp av frågeparametrar
-topic-legacy: developer guide
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '2121'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;katalog;api;uppdatera ett objekt
 solution: Experience Platform
 title: Uppdatera ett katalogobjekt
-topic-legacy: developer guide
 description: Du kan uppdatera en del av ett Catalog-objekt genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller information om hur du använder fält och JSON Patch-notation för att utföra PATCH-åtgärder på katalogobjekt.
 exl-id: 315de212-bf4d-40d5-a54f-9602a26d6852
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '361'
 ht-degree: 1%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;dataåtkomst api;frågedataåtkomst
 solution: Experience Platform
 title: Visa datauppsättningsdata med API:t för dataåtkomst
-topic-legacy: tutorial
 type: Tutorial
 description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '1390'
 ht-degree: 0%
