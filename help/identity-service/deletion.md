@@ -1,9 +1,9 @@
 ---
 title: Borttagningar i identitetstjänsten
 description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform och för att skapa klarhet om hur identitetsdiagram kan påverkas.
-source-git-commit: 506d47035622e45f72a8d92aeff6c5ec4e3d0856
+source-git-commit: 17e39f6e9d6e62e22f867de91d571593ba945c71
 workflow-type: tm+mt
-source-wordcount: '1323'
+source-wordcount: '1308'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Tabellen nedan innehåller en beskrivning av skillnaderna mellan borttagning av 
 | Godkända användningsfall | Endast förfrågningar om dataintegritet (GDPR, CCPA). | Hantering av data som lagras i Experience Platform. |
 | Beräknad fördröjning | Dagar till veckor | Dagar |
 | Tjänster som påverkas | Genom att ta bort en identitet i Privacy Service kan du välja om data ska tas bort från identitetstjänsten, kundprofilen i realtid eller datavjön. | Borttagning av en identitet i Datahygien tar bort markerade data i identitetstjänsten, kundprofilen i realtid och datasjön. |
-| Borttagningsmönster | Ta bort en identitet från identitetstjänsten. | Ta bort en identitet och alla tillhörande länkar helt från identitetstjänsten, i alla datauppsättningar eller för en enskild datauppsättning. |
+| Borttagningsmönster | Ta bort en identitet från identitetstjänsten. | Ta bort en identitet från identitetstjänsten. |
 
 {style=&quot;table-layout:auto&quot;}
 
