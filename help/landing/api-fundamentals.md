@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Grundläggande om Experience Platform API
-topic-legacy: getting started
 description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '519'
 ht-degree: 1%

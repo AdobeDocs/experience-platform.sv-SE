@@ -2,10 +2,9 @@
 keywords: Experience Platform;home;populära topics;Adobe Experience Platform;user guide;ui guide;workflows ui guide;workflows;workflows;user guide;
 solution: Experience Platform
 title: Användargränssnittshandbok för arbetsflöden
-topic-legacy: ui guide
 description: Lär dig följa flerstegsarbetsflöden för att utföra vanliga åtgärder i Adobe Experience Platform användargränssnitt.
 exl-id: f1a3ea83-09c9-48df-9493-62f03b403a95
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '278'
 ht-degree: 0%

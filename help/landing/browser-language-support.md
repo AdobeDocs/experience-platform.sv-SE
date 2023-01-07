@@ -2,11 +2,9 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
 title: Webbläsare och språkstöd för användargränssnittet i Experience Platform
-topic-legacy: getting started
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '246'
 ht-degree: 0%
@@ -19,7 +17,7 @@ Adobe Experience Platform användargränssnitt (UI) har stöd för flera webblä
 
 ## Webbläsarstöd
 
-Plattformsgränssnittet är utformat för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
+Plattformsgränssnittet är utformat för att fungera optimalt i **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
 
 | Operativsystem | Webbläsare som stöds |
 |---|---|
@@ -48,8 +46,8 @@ Standardspråket för användargränssnittet avgörs av den region som anges i d
 
 Så här byter du språk:
 
-1. Välj det aktuella språket i sidfoten i användargränssnittet för [!DNL Experience Platform].
-2. Välj **[!UICONTROL Change Region]** i dina profilinställningar.
+1. Välj det aktuella språket i sidfoten på [!DNL Experience Platform] användargränssnitt.
+2. Välj **[!UICONTROL Change Region]**.
 3. Välj region.
 
 >[!NOTE]

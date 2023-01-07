@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Autentisera;åtkomst
 solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
-topic-legacy: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '1230'
 ht-degree: 0%
