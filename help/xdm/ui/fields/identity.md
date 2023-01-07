@@ -5,9 +5,9 @@ title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fe3d9a3fc473e7ca13f0e0c2f222bcc1b1a991c4
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringen
 
 Arbetsytan uppdateras med ändringarna och det valda fältet får en fingeravtryckssymbol (![](../../images/ui/fields/special/identity-symbol.png)) för att ange den som en identitet. I den vänstra listen visas nu identitetsfältet under namnet på den klass eller schemafältgrupp som tillhandahåller fältet till schemat.
 
-Eftersom alla identitetsfält är obligatoriska som standard visas fältet nu under **[!UICONTROL Required fields]** till vänster. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
+Om fältet också har angetts som primär identitet visas den även under **[!UICONTROL Required fields]** till vänster. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
 
 ![](../../images/ui/fields/special/identity-applied.png)
 

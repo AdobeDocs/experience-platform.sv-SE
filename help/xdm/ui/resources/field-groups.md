@@ -5,9 +5,9 @@ title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
+source-git-commit: 57e7386ad631f2ce3d9b28d2532655a2668bdcaa
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -34,11 +34,13 @@ När du har öppnat schemat i [!DNL Schema Editor], markera **[!UICONTROL Add]**
 
 ![](../../images/ui/resources/field-groups/add-field-group.png)
 
-En dialogruta visas med en lista över fältgrupper som finns för din organisation. I dialogrutans övre del väljer du **[!UICONTROL Create new field group]**. Här kan du ange en **[!UICONTROL Display name]** och **[!UICONTROL Description]** för fältgruppen. När du är klar väljer du **[!UICONTROL Add field group]**.
+I dialogrutan som visas väljer du **[!UICONTROL Create new field group]**. Här kan du ange en **[!UICONTROL Display name]** och **[!UICONTROL Description]** för fältgruppen. När du är klar väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../images/ui/resources/field-groups/create-field-group.png)
 
 The [!DNL Schema Editor] visas igen med den nya fältgruppen i den vänstra listen. Eftersom det här är en helt ny fältgrupp innehåller den för närvarande inga fält till schemat och arbetsytan ändras därför inte. Nu kan du börja [lägga till fält i fältgruppen](#add-fields).
+
+![](../../images/ui/resources/field-groups/field-group-added.png)
 
 ## Redigera en befintlig fältgrupp {#edit}
 
@@ -58,13 +60,17 @@ När du har öppnat schemat i redigeraren kan du börja [lägga till fält i fä
 >
 >Det här avsnittet fokuserar på att lägga till fält i anpassade fältgrupper. Mer information om hur du lägger till anpassade fält i standardfältgrupper finns i [gränssnittshandbok för scheman](./schemas.md#custom-fields-for-standard-groups).
 
-Lägga till fält i en anpassad fältgrupp i [!DNL Schema Editor], börja med att markera fältgruppens namn i den vänstra listen och sedan välja **plus (+)** -ikonen bredvid schemats namn på arbetsytan.
+Om du vill lägga till fält i en anpassad fältgrupp börjar du med att välja **plus (+)** -ikonen bredvid schemats namn på arbetsytan.
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i fältgruppen.
+A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar olika fälttyper.
 
-Fortsätt att lägga till så många fält som behövs i fältgruppen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och fältgruppen.
+Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]** väljer du sedan den önskade fältgruppen i listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
+
+![](../../images/ui/resources/field-groups/select-field-group.png)
+
+När fältet har lagts till i schemat tilldelas det till den valda fältgruppen. Fortsätt att lägga till så många fält som behövs i fältgruppen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och fältgruppen.
 
 ![](../../images/ui/resources/field-groups/complete-field-group.png)
 

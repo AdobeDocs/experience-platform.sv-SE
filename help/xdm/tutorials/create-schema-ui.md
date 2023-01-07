@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 84a1b9df30da06edee093824c19f3bea338e5970
 workflow-type: tm+mt
-source-wordcount: '3591'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -45,23 +45,19 @@ Välj **[!UICONTROL Create schema]** i det övre högra hörnet av **[!UICONTROL
 
 I den här självstudiekursen väljer du **[!UICONTROL XDM Individual Profile]**.
 
-![](../images/tutorials/create-schema/create_schema_button.png)
-
-Eftersom du valde en standard-XDM-klass att basera schemat på, kan **[!UICONTROL Add field group]** visas så att du kan börja lägga till fält direkt i schemat. För tillfället väljer du **[!UICONTROL Cancel]** för att stänga dialogrutan.
-
-![](../images/tutorials/create-schema/cancel-field-group.png)
+![](../images/tutorials/create-schema/create-schema-button.png)
 
 The [!DNL Schema Editor] visas. Det här är arbetsytan som du kommer att komponera ditt schema på. Ett namnlöst schema skapas automatiskt i **[!UICONTROL Structure]** -delen av arbetsytan när du kommer till redigeraren, tillsammans med standardfälten som ingår i alla scheman baserade på den klassen. Den tilldelade klassen för schemat listas också under **[!UICONTROL Class]** in **[!UICONTROL Composition]** -avsnitt.
 
-![](../images/tutorials/create-schema/schema_editor.png)
+![](../images/tutorials/create-schema/schema-editor.png)
 
 >[!NOTE]
 >
 >Du kan [ändra klassen för ett schema](#change-class) när som helst under den inledande dispositionsprocessen innan schemat har sparats, men detta bör göras med yttersta försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
-Använd fälten till höger om redigeraren för att ange ett visningsnamn och en valfri beskrivning av schemat. När ett namn har angetts uppdateras arbetsytan med det nya namnet på schemat.
+Under **[!UICONTROL Schema properties]**, innehåller ett visningsnamn och en valfri beskrivning av schemat. När ett namn har angetts uppdateras arbetsytan med det nya namnet på schemat.
 
-![](../images/tutorials/create-schema/name_schema.png)
+![](../images/tutorials/create-schema/name-schema.png)
 
 Det finns flera viktiga saker att tänka på när du ska bestämma ett namn för schemat:
 
@@ -69,7 +65,7 @@ Det finns flera viktiga saker att tänka på när du ska bestämma ett namn för
 * Schemanamn måste vara unika, vilket innebär att de också måste vara tillräckligt specifika för att de inte ska återanvändas i framtiden. Om din organisation till exempel har separata lojalitetsprogram för olika varumärken är det klokt att kalla ditt schema&quot;Varumärke A lojalitetsmedlemmar&quot; för att göra det enkelt att skilja på dem från andra lojalitetsrelaterade scheman som du kan definiera senare.
 * Du kan också använda schemabeskrivningen för att tillhandahålla ytterligare sammanhangsberoende information om schemat.
 
-I den här självstudiekursen skapas ett schema för att importera data som är relaterade till medlemmarna i ett lojalitetsprogram, och därför heter schemat&quot;Förmånsmedlemmar&quot;.
+I den här självstudiekursen skapas ett schema för att importera data som är relaterade till medlemmarna i ett lojalitetsprogram, och schemat får därför namnet &quot;[!DNL Loyalty Members]&quot;.
 
 ## Lägg till en fältgrupp {#field-group}
 
@@ -83,7 +79,11 @@ En ny dialogruta visas med en lista över tillgängliga fältgrupper. Varje fäl
 
 ![](../images/tutorials/create-schema/field-group-popularity.png)
 
-Om du väljer en fältgrupp i listan visas den i den högra listen. Om du vill kan du markera flera fältgrupper och lägga till var och en i listan i den högra listen innan du bekräftar. Dessutom visas en ikon till höger om den markerade fältgruppen där du kan förhandsgranska strukturen för de fält som den innehåller.
+Du kan välja ett av filtren i den vänstra listen för att begränsa listan med standardfältgrupper till specifika [branscher](../schema/industries/overview.md) som detaljhandel, finansiella tjänster och hälsovård.
+
+![](../images/tutorials/create-schema/industry-field-groups.png)
+
+Om du väljer en fältgrupp i listan visas den i den högra listen. Om du vill kan du markera flera fältgrupper och lägga till var och en i listan i den högra listen innan du bekräftar. Dessutom visas en ikon till höger om den markerade fältgruppen där du kan förhandsgranska strukturen för de fält som gruppen innehåller.
 
 ![](../images/tutorials/create-schema/preview-field-group-button.png)
 
@@ -105,91 +105,103 @@ Den här fältgruppen bidrar med flera fält under namnet på den översta nivå
 >
 >Kom ihåg att fälten kan använda skalära typer (till exempel sträng, heltal, matris eller datum), liksom alla datatyper (en grupp fält som representerar ett gemensamt koncept) som definieras i [!DNL Schema Registry].
 
-Observera att `name` fältet har datatypen &quot;[!UICONTROL Person name]&quot;, vilket innebär att det också beskriver ett vanligt koncept och innehåller namnrelaterade underfält som förnamn, efternamn, titel och suffix.
+Observera att `name` fältet har datatypen &quot;[!UICONTROL Full name]&quot;, vilket innebär att det också beskriver ett vanligt koncept och innehåller namnrelaterade underfält som förnamn, efternamn, titel och suffix.
 
 Markera de olika fälten på arbetsytan för att visa eventuella ytterligare fält som de bidrar till schemastrukturen.
 
-## Lägg till en annan fältgrupp {#field-group-2}
+## Lägg till fler fältgrupper {#field-group-2}
 
 Nu kan du upprepa samma steg för att lägga till en annan fältgrupp. När du visar **[!UICONTROL Add field group]** lägg märke till att[!UICONTROL Demographic Details]&quot;fältgruppen är nedtonad och det går inte att markera kryssrutan intill den. Detta förhindrar att du av misstag duplicerar fältgrupper som du redan har inkluderat i det aktuella schemat.
 
-För den här självstudiekursen väljer du &quot;[!DNL Personal Contact Details]&quot; fältgrupp från dialogrutan och välj **[!UICONTROL Add field group]** för att lägga till den i schemat.
+Välj standardfältgrupper för den här självstudiekursen **[!UICONTROL Personal Contact Details]** och **[!UICONTROL Loyalty Details]** i listan och välj **[!UICONTROL Add field groups]** för att lägga till dem i schemat.
 
-![](../images/tutorials/create-schema/personal-contact-details.png)
+![](../images/tutorials/create-schema/more-field-groups.png)
 
-När arbetsytan har lagts till visas den igen. &quot;[!UICONTROL Personal Contact Details]&quot; finns nu listad under **[!UICONTROL Field groups]** i **[!UICONTROL Composition]** och fält för hemadress, mobiltelefon med mera har lagts till under **[!UICONTROL Structure]**.
+Arbetsytan visas igen med de nya fältgrupperna som listas under **[!UICONTROL Field groups]** i **[!UICONTROL Composition]** och deras sammansatta fält läggs till i schemastrukturen.
 
-Liknar `name` de fält du just lade till representerar koncept för flera fält. Till exempel: `homeAddress` har datatypen &quot;[!UICONTROL Postal address]&quot; och `mobilePhone` har datatypen &quot;[!UICONTROL Phone number]&quot;. Du kan markera vart och ett av dessa fält för att expandera dem och visa de ytterligare fält som ingår i datatypen.
-
-![](../images/tutorials/create-schema/personal-contact-details-structure.png)
+![](../images/tutorials/create-schema/updated-structure.png)
 
 ## Definiera en anpassad fältgrupp {#define-field-group}
 
-The &quot;[!UICONTROL Loyalty Members]schemat är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kommer att kräva vissa specifika lojalitetsrelaterade fält.
+The [!UICONTROL Loyalty Members] schemat är avsett att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram och till standardprogrammet [!UICONTROL Loyalty Details] fältgrupp som du har lagt till i schemat innehåller de flesta av dessa, inklusive programtyp, punkter, kopplingsdatum med mera.
 
-Det finns en standard [!UICONTROL Loyalty Details] fältgrupp som du kan lägga till i schemat för att fånga vanliga fält som är relaterade till ett bonusprogram. Vi rekommenderar att du använder standardfältgrupper för att representera koncept som hämtats in av dina scheman, men strukturen i standardfältgruppen för lojalitet kanske inte kan samla in alla relevanta data för ditt specifika lojalitetsprogram. I det här scenariot kan du välja att definiera en ny anpassad fältgrupp för att hämta fälten i stället.
+Det kan dock finnas ett scenario där du vill inkludera ytterligare anpassade fält som inte täcks av standardfältgrupper för att uppnå dina användningsfall. Om du vill lägga till anpassade bonusfält har du två alternativ:
 
-Öppna **[!UICONTROL Add Field group]** igen, men den här gången väljer **[!UICONTROL Create New Field group]** nära toppen. Du ombeds sedan ange ett visningsnamn och en beskrivning för fältgruppen.
+1. Skapa en ny anpassad fältgrupp för att hämta dessa fält. Det här är den metod som kommer att beskrivas i den här självstudiekursen.
+1. Utöka standarden [!UICONTROL Loyalty Details] fältgrupp med anpassade fält. Detta orsakar [!UICONTROL Loyalty Details] som ska konverteras till en anpassad fältgrupp och den ursprungliga standardfältgruppen kommer inte längre att vara tillgänglig. Se [!UICONTROL Schemas] Användargränssnittsguiden för mer information om [lägga till anpassade fält i strukturen för standardfältgrupper](../ui/resources/schemas.md#custom-fields-for-standard-groups).
+
+Om du vill skapa en ny fältgrupp väljer du **[!UICONTROL Add]** i **[!UICONTROL Field groups]** underavsnitt som tidigare, men den här gången väljer **[!UICONTROL Create New Field group]** i den övre delen av dialogrutan som visas. Du ombeds sedan ange ett visningsnamn och en beskrivning för den nya fältgruppen. I den här självstudiekursen ger du den nya fältgruppen namnet &quot;[!DNL Custom Loyalty Details]&quot;, välj **[!UICONTROL Add field groups]**.
 
 ![](../images/tutorials/create-schema/create-new-field-group.png)
 
-Precis som med klassnamn ska fältgruppsnamnet vara kort och enkelt och beskriva vad fältgruppen kommer att bidra till schemat. Även dessa är unika, så du kommer inte att kunna återanvända namnet och måste därför se till att det är tillräckligt specifikt.
+>[!NOTE]
+>
+>Precis som med klassnamn ska fältgruppsnamnet vara kort och enkelt och beskriva vad fältgruppen kommer att bidra till schemat. Även dessa är unika, så du kommer inte att kunna återanvända namnet och måste därför se till att det är tillräckligt specifikt.
 
-I den här självstudiekursen ger du den nya fältgruppen namnet&quot;Lojalitetsinformation&quot;.
-
-Välj **[!UICONTROL Add field group]** för att gå tillbaka till [!DNL Schema Editor]. &quot;[!UICONTROL Loyalty Details]&quot; ska nu visas under **[!UICONTROL Field groups]** till vänster på arbetsytan, men det finns inga fält som är kopplade till den ännu och därför visas inga nya fält under **[!UICONTROL Structure]**.
+&quot;[!DNL Custom Loyalty Details]&quot; ska nu visas under **[!UICONTROL Field groups]** till vänster på arbetsytan, men det finns inga fält som är kopplade till den ännu och därför visas inga nya fält under **[!UICONTROL Structure]**.
 
 ## Lägg till fält i fältgruppen {#field-group-fields}
 
-Nu när du har skapat fältgruppen&quot;Förmånsinformation&quot; är det dags att definiera fälten som fältgruppen ska bidra till schemat.
+Nu när du har skapat[!DNL Custom Loyalty Details]fältgruppen är det dags att definiera de fält som fältgruppen ska bidra till schemat.
 
-Börja med att markera fältgruppsnamnet i dialogrutan **[!UICONTROL Field groups]** -avsnitt. När du gör det visas fältgruppens egenskaper till höger om redigeraren och en **plus (+)** visas bredvid namnet på schemat under **[!UICONTROL Structure]**.
+Börja med att välja **plus (+)** -ikonen bredvid namnet på schemat på arbetsytan.
 
-![](../images/tutorials/create-schema/loyalty_details_structure.png)
+![](../images/tutorials/create-schema/add-field.png)
 
-Välj **plus (+)** ikon bredvid &quot;[!DNL Loyalty Members]&quot; för att skapa en ny nod i strukturen. Den här noden (anropad) `_tenantId` i det här exemplet) representerar din IMS-organisations klient-ID, föregånget av ett understreck. Närvaron av innehavar-ID anger att fälten som du lägger till finns i organisationens namnutrymme.
+An &quot;[!UICONTROL Untitled Field]&quot; visas som platshållare på arbetsytan, och den högra listen uppdateras för att visa konfigurationsalternativen för fältet.
 
-Fälten som du lägger till är alltså unika för din organisation och kommer att sparas i [!DNL Schema Registry] inom ett specifikt område som är tillgängligt endast för din organisation. Fält som du definierar måste alltid läggas till i klientnamnutrymmet för att förhindra konflikter med namn från andra standardklasser, fältgrupper, datatyper och fält.
+![](../images/tutorials/create-schema/untitled-field.png)
 
-I den namngivna noden finns en[!UICONTROL New Field]&quot;. Detta är början på[!UICONTROL Loyalty Details]fältgrupp.
+I det här scenariot måste schemat ha ett objekttypsfält som beskriver personens aktuella lojalitetsnivå i detalj. Börja skapa en `loyaltyTier` fält med typen &quot;[!UICONTROL Object]&quot; som kommer att användas för dina relaterade fält.
 
-![](../images/tutorials/create-schema/new_field_loyalty.png)
+Under **[!UICONTROL Assign to]** måste du välja en fältgrupp som fältet ska tilldelas. Kom ihåg att alla schemafält tillhör antingen en klass eller en fältgrupp, och eftersom schemat använder en standardklass är det enda alternativet att välja en fältgrupp. Börja skriva in namnet[!DNL Custom Loyalty Details]&quot; och välj sedan fältgruppen i listan.
 
-Börja med att skapa en `loyalty` fält med typen &quot;[!UICONTROL Object]&quot; som kommer att användas för dina lojalitetsrelaterade fält. När du är klar väljer du **[!UICONTROL Apply]**.
+När du är klar väljer du **[!UICONTROL Apply]**.
 
-![](../images/tutorials/create-schema/loyalty_object.png)
+![](../images/tutorials/create-schema/loyalty-tier-object.png)
 
-Ändringarna används och de nyskapade `loyalty` visas. Välj **plus (+)** -ikonen bredvid objektet om du vill lägga till fler lojalitetsrelaterade fält. A &quot;[!UICONTROL New Field]&quot; visas och **[!UICONTROL Field properties]** -avsnittet visas till höger på arbetsytan.
+Ändringarna används och de nyskapade `loyaltyTier` visas. Eftersom detta är ett anpassat fält kapslas det automatiskt in i ett objekt som namnges efter organisationens klientorganisations-ID, föregånget av ett understreck (`_tenantId` i det här exemplet).
 
-![](../images/tutorials/create-schema/new_field_in_loyalty_object.png)
+![](../images/tutorials/create-schema/tenant-id.png)
+
+>[!NOTE]
+>
+>Närvaron av klient-ID-objektet anger att fälten som du lägger till finns i organisationens namnutrymme.
+>
+>Fälten som du lägger till är alltså unika för din organisation och kommer att sparas i [!DNL Schema Registry] inom ett specifikt område som är tillgängligt endast för din organisation. Fält som du definierar måste alltid läggas till i klientnamnutrymmet för att förhindra konflikter med namn från andra standardklasser, fältgrupper, datatyper och fält.
+
+Välj **plus (+)** -ikonen bredvid `loyaltyTier` -objekt som ska börja läggas till underfält. En ny fältplatshållare visas och **[!UICONTROL Field properties]** -avsnittet visas till höger på arbetsytan.
+
+![](../images/tutorials/create-schema/new-field-in-loyalty-tier-object.png)
 
 Varje fält kräver följande information:
 
 * **[!UICONTROL Field Name]:** Fältets namn, skrivet i kameraläge. Exempel: loyaltyLevel
 * **[!UICONTROL Display Name]:** Fältets namn, skrivet i versaler. Exempel: Lojalitetsnivå
 * **[!UICONTROL Type]:** Fältets datatyp. Detta inkluderar grundläggande skalärtyper och alla datatyper som definieras i [!DNL Schema Registry]. Exempel: [!UICONTROL String], [!UICONTROL Integer], [!UICONTROL Boolean], [!UICONTROL Person], [!UICONTROL Address], [!UICONTROL Phone number], osv.
-* **[!UICONTROL Description]:** En valfri beskrivning av fältet ska inkluderas, skriven med inledande versal, med högst 200 tecken.
+* **[!UICONTROL Description]:** En valfri beskrivning av fältet får innehålla högst 200 tecken.
 
-Det första fältet för `Loyalty` objektet kommer att vara en sträng som anropas `loyaltyId`. När det nya fältets typ anges till[!UICONTROL String]&quot;, **[!UICONTROL Field properties]** -avsnittet fylls i med flera alternativ för att tillämpa begränsningar, inklusive standardvärde, format och maximal längd.
+Det första fältet för `loyaltyTier` objektet kommer att vara en sträng som anropas `id`, som representerar ID:t för förmånsmedlemmens aktuella nivå. Nivå-ID är unikt för varje lojalitetsmedlem, eftersom det här företaget anger olika tröskelvärden för lojalitetsskikt för varje kund baserat på olika faktorer. Ställ in det nya fältets typ till[!UICONTROL String]&quot;, och **[!UICONTROL Field properties]** -avsnittet fylls i med flera alternativ för att tillämpa begränsningar, inklusive standardvärde, format och maximal längd.
 
-![](../images/tutorials/create-schema/string_constraints.png)
+![](../images/tutorials/create-schema/string-constraints.png)
 
-Olika begränsningsalternativ är tillgängliga beroende på vilken datatyp som har valts. Sedan `loyaltyId` blir en e-postadress, välj &quot;[!UICONTROL email]&quot; från **[!UICONTROL Format]** nedrullningsbar meny. Välj **[!UICONTROL Apply]** för att tillämpa ändringarna.
+Sedan `id` kommer att vara en slumpmässigt genererad friformssträng, inga ytterligare begränsningar krävs. Välj **[!UICONTROL Apply]** för att tillämpa ändringarna.
 
-![](../images/tutorials/create-schema/loyaltyId_field.png)
+![](../images/tutorials/create-schema/id-field-added.png)
 
 ## Lägg till fler fält i fältgruppen {#field-group-fields-2}
 
-Nu när du har lagt till `loyaltyId` kan du lägga till ytterligare fält för att hämta lojalitetsrelaterad information som:
+Nu när du har lagt till `id` kan du lägga till ytterligare fält för att hämta information om lojalitetsnivån, till exempel:
 
-* Punkter (heltal)
-* Medlem sedan (datum)
+* Aktuellt tröskelvärde för punkt (heltal): Det minsta antalet förmånspoäng som medlemmen måste behålla för att kunna vara kvar i den aktuella nivån.
+* Tröskelvärde för nästa skiktpunkt (heltal): Antalet förmånspoäng som medlemmen måste ådra sig för att kunna ta examen till nästa nivå.
+* Datum för ikraftträdande (datum-tid): Datumet då lojalitetsmedlemmen anslöt till den här nivån.
 
 Om du vill lägga till varje fält i schemat väljer du **plus (+)** -ikonen bredvid `loyalty` och fylla i den information som krävs.
 
-När det är klart innehåller Loyalty-objektet fält för lojalitets-ID, poäng och medlemssedan.
+När det är klart `loyaltyTier` objektet kommer att innehålla fält för `id`, `currentThreshold`, `nextThreshold`och `effectiveDate`.
 
-![](../images/tutorials/create-schema/loyalty_object_fields.png)
+![](../images/tutorials/create-schema/loyalty-tier-object-fields.png)
 
 ## Lägg till ett uppräkningsfält i fältgruppen {#enum}
 
@@ -199,7 +211,7 @@ När du definierar fält i [!DNL Schema Editor]Det finns dock ytterligare altern
 | --- | --- |
 | [!UICONTROL Required] | Anger att fältet är obligatoriskt för datainmatning. Alla data som överförs till en datauppsättning som baseras på det här schemat och som inte innehåller det här fältet kommer att misslyckas vid inmatning. |
 | [!UICONTROL Array] | Anger att fältet innehåller en array med värden, var och en med den angivna datatypen. Om du till exempel använder den här begränsningen för ett fält med datatypen &quot;[!UICONTROL String]&quot; anger att fältet kommer att innehålla en array med strängar. |
-| [!UICONTROL Enum] | Anger att det här fältet måste innehålla ett av värdena från en numrerad lista med möjliga värden. |
+| [!UICONTROL Enum & Suggested Values] | En uppräkning anger att det här fältet måste innehålla ett av värdena från en uppräknad lista med möjliga värden. Du kan också använda det här alternativet om du bara vill visa en lista med föreslagna värden för ett strängfält utan att begränsa fältet till dessa värden. |
 | [!UICONTROL Identity] | Anger att det här fältet är ett identitetsfält. Mer information om identitetsfält finns [senare i den här självstudiekursen](#identity-field). |
 | [!UICONTROL Relationship] | När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. The [!UICONTROL Relationship] -begränsning anger att det här fältet refererar till den primära identiteten för ett schema baserat på en annan klass, vilket innebär en relation mellan de två schemana. Se självstudiekursen om [definiera en relation](./relationship-ui.md) för mer information. |
 
@@ -207,37 +219,35 @@ När du definierar fält i [!DNL Schema Editor]Det finns dock ytterligare altern
 
 >[!NOTE]
 >
->Alla obligatoriska, identitets- eller relationsfält visas i den vänstra listen, vilket gör att du enkelt kan hitta fälten oavsett hur komplexa schemat är.
->
->![](../images/tutorials/create-schema/left-rail-special.png)
+>Alla obligatoriska, identitets- eller relationsfält visas i respektive avsnitt i den vänstra listen, vilket gör att du enkelt kan hitta fälten oavsett hur komplexa schemat är.
 
-För den här självstudiekursen [!DNL "loyalty"] -objektet i schemat kräver ett nytt uppräkningsfält som beskriver kundens&quot;lojalitetsnivå&quot;, där värdet bara kan vara ett av fyra möjliga alternativ. Om du vill lägga till det här fältet i schemat väljer du **plus (+)** -ikonen bredvid `loyalty` objekt och fylla i obligatoriska fält för **[!UICONTROL Field name]** och **[!UICONTROL Display name]**. För **[!UICONTROL Type]**, välj &quot;[!UICONTROL String]&quot;.
+För den här självstudiekursen `loyaltyTier` -objektet i schemat kräver ett nytt uppräkningsfält som beskriver skiktklassen, där värdet bara kan vara ett av fyra möjliga alternativ. Om du vill lägga till det här fältet i schemat väljer du **plus (+)** -ikonen bredvid `loyaltyTier` objekt och fylla i obligatoriska fält för **[!UICONTROL Field name]** och **[!UICONTROL Display name]**. För **[!UICONTROL Type]**, välj &quot;[!UICONTROL String]&quot;.
 
-![](../images/tutorials/create-schema/loyalty-level-type.png)
+![](../images/tutorials/create-schema/tier-class-type.png)
 
-Ytterligare kryssrutor visas för fältet när dess typ har valts, inklusive kryssrutor för **[!UICONTROL Array]**, **[!UICONTROL Enum]** och **[!UICONTROL Identity]**.
+Ytterligare kryssrutor visas för fältet när dess typ har valts, inklusive kryssrutor för **[!UICONTROL Array]**, **[!UICONTROL Enum & Suggested Values]**, **[!UICONTROL Identity]** och **[!UICONTROL Relationship]**.
 
-Välj **[!UICONTROL Enum]** kryssruta för att öppna **[!UICONTROL Enum values]** nedan. Här kan du ange **[!UICONTROL Value]** (i camelCase) och **[!UICONTROL Label]** (ett valfritt, läsvänligt namn i Title Case) för varje godtagbar lojalitetsnivå.
+Välj **[!UICONTROL Enum & Suggested Values]** kryssruta och sedan markera **[!UICONTROL Enum]**. Här kan du ange **[!UICONTROL Value]** (i camelCase) och **[!UICONTROL Display Name]** (ett valfritt, läsarvänligt namn i Title Case) för varje godtagbar lojalitetsklass.
 
-När du har slutfört alla fältegenskaper väljer du **[!UICONTROL Apply]** för att lägga till &quot;[!DNL loyaltyLevel]&quot; till `loyalty` -objekt.
+När du har slutfört alla fältegenskaper väljer du **[!UICONTROL Apply]** för att lägga till `tierClass` fält till `loyaltyTier` -objekt.
 
-![](../images/tutorials/create-schema/loyalty_level_enum.png)
+![](../images/tutorials/create-schema/tier-class-enum.png)
 
 ## Konvertera ett flerfältsobjekt till en datatyp {#datatype}
 
-The `loyalty` objektet innehåller nu flera lojalitetsspecifika fält och representerar en gemensam datastruktur som kan vara användbar i andra scheman. The [!DNL Schema Editor] Med kan du enkelt tillämpa återanvändbara flerfältsobjekt genom att konvertera strukturen för dessa objekt till datatyper.
+The `loyaltyTier` objektet innehåller nu flera fält och representerar en gemensam datastruktur som kan vara användbar i andra scheman. The [!DNL Schema Editor] Med kan du enkelt tillämpa återanvändbara flerfältsobjekt genom att konvertera strukturen för dessa objekt till datatyper.
 
 Datatyper möjliggör konsekvent användning av flerfältsstrukturer och ger större flexibilitet än en fältgrupp eftersom de kan användas var som helst inom ett schema. Detta görs genom att ställa in fältets **[!UICONTROL Type]** värdet på alla datatyper som definieras i [!DNL Schema Registry].
 
-Konvertera `loyalty` till en datatyp, markera `loyalty` fält under **[!UICONTROL Structure]** väljer **[!UICONTROL Convert to new data type]** till höger om redigeraren under **[!UICONTROL Field properties]**. En grön pover visas som bekräftar att objektet har konverterats.
+Konvertera `loyaltyTier` till en datatyp, markera `loyaltyTier` på arbetsytan och sedan markera **[!UICONTROL Convert to new data type]** till höger om redigeraren under **[!UICONTROL Field properties]**.
 
 ![](../images/tutorials/create-schema/convert-data-type.png)
 
-Nu när du tittar under **[!UICONTROL Structure]** ser du att `loyalty` fältet har datatypen &quot;[!DNL Loyalty]&quot; och fälten har små låsikoner bredvid sig, vilket anger att de inte längre är enskilda fält utan snarare är en del av datatypen för flera fält.
+Ett meddelande visas som bekräftar att objektet har konverterats. På arbetsytan ser du nu att `loyaltyTier` fältet har nu en länkikon och den högra listen anger att det har datatypen &quot;[!DNL Loyalty Tier]&quot;.
 
-![](../images/tutorials/create-schema/loyalty_data_type.png)
+![](../images/tutorials/create-schema/loyalty-tier-data-type.png)
 
-I ett framtida schema kan du nu tilldela ett fält som[!DNL Loyalty]&quot; och det skulle automatiskt inkludera fält för ID, lojalitetsnivå, medlem sedan och poäng.
+I ett framtida schema kan du nu tilldela ett fält som[!DNL Loyalty Tier]&quot; och det skulle automatiskt inkludera fält för ID, skiktklass, poängtrösklar och giltighetsdatum.
 
 >[!NOTE]
 >
@@ -263,7 +273,7 @@ Den standarddatastruktur som scheman ger kan utnyttjas för att identifiera data
 
 [!DNL Experience Platform] gör det enkelt att ange ett identitetsfält med hjälp av en **[!UICONTROL Identity]** kryssrutan i [!DNL Schema Editor]. Du måste dock bestämma vilket fält som är det bästa alternativet att använda som identitet, baserat på vilken typ av data du har.
 
-Det kan till exempel finnas tusentals lojalitetsprogrammedlemmar som tillhör samma &quot;lojalitetsnivå&quot;, men varje medlem i lojalitetsprogrammet har ett unikt `loyaltyId` (som i det här fallet är den enskilda medlemmens e-postadress). Det faktum att `loyaltyId` är en unik identifierare för varje medlem vilket gör det till en bra kandidat för ett identitetsfält, medan `loyaltyLevel` inte.
+Det kan till exempel finnas tusentals lojalitetsprogrammedlemmar som tillhör samma lojalitetsnivå och flera som delar samma fysiska adress. I det här scenariot anger dock varje medlem i lojalitetsprogrammet sin personliga e-postadress vid registreringen. Eftersom personliga e-postadresser vanligtvis hanteras av en person är fältet `personalEmail.address` (tillhandahålls av [!UICONTROL Personal Contact Details] fältgrupp) är en bra kandidat för ett identitetsfält.
 
 >[!IMPORTANT]
 >
@@ -271,25 +281,25 @@ Det kan till exempel finnas tusentals lojalitetsprogrammedlemmar som tillhör sa
 >
 >Om du tänker använda `identityMap`bör du tänka på att den åsidosätter alla primära identiteter som du lägger till direkt i schemat. Se avsnittet om `identityMap` i [grunderna i guiden för schemakomposition](../schema/composition.md#identityMap) för mer information.
 
-I **[!UICONTROL Structure]** väljer du `loyaltyId` fält och **[!UICONTROL Identity]** kryssrutan visas under **[!UICONTROL Field properties]**. Markera kryssrutan och alternativet för att ange den som **[!UICONTROL Primary identity]** visas. Markera även den här rutan.
+Välj `personalEmail.address` på arbetsytan och **[!UICONTROL Identity]** kryssrutan visas under **[!UICONTROL Field properties]**. Markera kryssrutan och alternativet för att ange den som **[!UICONTROL Primary identity]** visas. Markera även den här rutan.
 
 >[!NOTE]
 >
 >Varje schema får endast innehålla ett primärt identitetsfält. När ett schemafält har angetts som primär identitet får du ett felmeddelande om du senare försöker ange ett annat identitetsfält i schemat som primärt.
 
-Sedan måste du ange en **[!UICONTROL Identity namespace]** i listan med fördefinierade namnutrymmen i listrutan. Sedan `loyaltyId` är kundens e-postadress, välj &quot;[!UICONTROL Email]&quot; i listrutan. Välj **[!UICONTROL Apply]** för att bekräfta uppdateringarna av `loyaltyId` fält.
+Sedan måste du ange en **[!UICONTROL Identity namespace]** i listan med fördefinierade namnutrymmen i listrutan. Eftersom det här fältet är kundens e-postadress väljer du &quot;[!UICONTROL Email]&quot; i listrutan. Välj **[!UICONTROL Apply]** för att bekräfta uppdateringarna av `personalEmail.address` fält.
 
-![](../images/tutorials/create-schema/loyaltyId_primary_identity.png)
+![](../images/tutorials/create-schema/primary-identity.png)
 
 >[!NOTE]
 >
 >En lista med standardnamnutrymmen och definitioner av dessa finns i [[!DNL Identity Service] dokumentation](../../identity-service/troubleshooting-guide.md#standard-namespaces).
 
-När du har tillämpat ändringen visas ikonen för `loyaltyId` visar en fingeravtryckssymbol som anger att det nu är ett identitetsfält.
+När du har tillämpat ändringen visas ikonen för `personalEmail.address` visar en fingeravtryckssymbol som anger att det nu är ett identitetsfält. Fältet visas även i den vänstra listen under **[!UICONTROL Identities]**.
 
 ![](../images/tutorials/create-schema/identity-applied.png)
 
-Nu kan alla data hämtas till `loyaltyId` ska användas för att identifiera den enskilda personen och sammanfoga en enda bild av kunden. Mer information om att arbeta med identiteter i [!DNL Experience Platform]kan du läsa [[!DNL Identity Service]](../../identity-service/home.md) dokumentation.
+Nu kan alla data hämtas till `personalEmail.address` ska användas för att identifiera den enskilda personen och sammanfoga en enda bild av kunden. Mer information om att arbeta med identiteter i [!DNL Experience Platform]kan du läsa [[!DNL Identity Service]](../../identity-service/home.md) dokumentation.
 
 ## Aktivera schemat för användning i [!DNL Real-Time Customer Profile] {#profile}
 
@@ -297,17 +307,17 @@ Nu kan alla data hämtas till `loyaltyId` ska användas för att identifiera den
 
 För att ett schema ska kunna aktiveras för användning med [!DNL Real-Time Customer Profile]måste den ha en primär identitet definierad. Du får ett felmeddelande om du försöker aktivera ett schema utan att först definiera en primär identitet.
 
-<img src="../images/tutorials/create-schema/missing_primary_identity.png" width="600" /><br>
+![](../images/tutorials/create-schema/missing-primary-identity.png)
 
-Så här aktiverar du schemat &quot;Bonusmedlemmar&quot; för användning i [!DNL Profile], börja med att välja &quot;[!DNL Loyalty Members]&quot; i **[!UICONTROL Structure]** i redigeraren.
+Så här aktiverar du schemat &quot;Bonusmedlemmar&quot; för användning i [!DNL Profile]börjar du med att välja schemanamnet på arbetsytan.
 
-Till höger om redigeraren visas information om schemat inklusive visningsnamn, beskrivning och typ. Förutom denna information finns det **[!UICONTROL Profile]** växlingsknapp.
+Till höger om redigeraren visas information om schemat, inklusive visningsnamn, beskrivning och typ. Förutom denna information finns det **[!UICONTROL Profile]** växlingsknapp.
 
 ![](../images/tutorials/create-schema/profile-toggle.png)
 
 Välj **[!UICONTROL Profile]** och en pover visas, där du ombeds bekräfta att du vill aktivera schemat för [!DNL Profile].
 
-<img src="../images/tutorials/create-schema/enable-profile.png" width="700" /><br>
+![](../images/tutorials/create-schema/enable-profile.png)
 
 >[!WARNING]
 >
@@ -355,4 +365,4 @@ Du kan ändra schemaklassen när som helst under den inledande dispositionsproce
 >
 >Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Fältgrupper är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
-Om du vill lära dig hur du ändrar klassen för ett schema kan du läsa guiden på [hantera scheman i användargränssnittet](../ui/resources/schemas.md).
+Om du vill lära dig hur du ändrar klassen för ett schema kan du läsa guiden på [hantera scheman i användargränssnittet](../ui/resources/schemas.md#change-class).

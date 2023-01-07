@@ -5,20 +5,20 @@ title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 7b642744f12ec33ff45a4b41cdb57bfe37396a56
+source-git-commit: a854a40034666159fabca550227efe9f3a47fb53
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
 # Skapa och redigera klasser i användargränssnittet
 
-I Experience Data Model (XDM) definierar klasser de beteendeaspekter av data som ett schema ska innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
+I Adobe Experience Platform definierar en schemaklass beteendeaspekterna för de data som schemat ska innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
 
-Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för XDM, inklusive [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent]. Förutom dessa huvudklasser kan du även skapa egna anpassade klasser som beskriver mer specifika användningsfall för organisationen.
+Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för Experience Data Model (XDM), inklusive [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent]. Förutom dessa huvudklasser kan du även skapa egna anpassade klasser som beskriver mer specifika användningsfall för organisationen.
 
-Det här dokumentet innehåller en översikt över hur du skapar, redigerar och hanterar anpassade klasser i Adobe Experience Platform-gränssnittet.
+Det här dokumentet innehåller en översikt över hur du skapar, redigerar och hanterar anpassade klasser i användargränssnittet i Experience Platform.
 
 ## Förutsättningar
 
@@ -32,7 +32,7 @@ I **[!UICONTROL Schemas]** arbetsyta, välja **[!UICONTROL Create schema]** väl
 
 ![](../../images/ui/resources/classes/browse-classes.png)
 
-En dialogruta visas där du kan välja från en lista med tillgängliga klasser. Välj **[!UICONTROL Create new class]**. Du kan sedan ge den nya klassen ett visningsnamn (ett kort, beskrivande, unikt och användarvänligt namn för klassen), en beskrivning och ett beteende för de data som ska definieras av schemat (&quot;[!UICONTROL Record]&quot; eller &quot;[!UICONTROL Time-series]&quot;).
+En dialogruta visas där du kan välja från en lista med tillgängliga klasser. Välj **[!UICONTROL Create new class]**. Du kan sedan ge den nya klassen ett visningsnamn (ett kort, beskrivande, unikt och användarvänligt namn för klassen), en beskrivning och ett beteende för de data som schemat ska definiera (**[!UICONTROL Record]** eller **[!UICONTROL Time-series]**).
 
 När du är klar väljer du **[!UICONTROL Assign class]**.
 
@@ -78,9 +78,11 @@ När du har ett schema som använder en anpassad klass öppen i [!UICONTROL Sche
 >
 >Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan se användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
 
-A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen.
+A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Class]**.
 
-Fortsätt att lägga till så många fält som behövs för klassen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och klassen.
+![](../../images/ui/resources/classes/assign-to-class.png)
+
+Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen. Fortsätt att lägga till så många fält som behövs för klassen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och klassen.
 
 ![](../../images/ui/resources/classes/save.png)
 

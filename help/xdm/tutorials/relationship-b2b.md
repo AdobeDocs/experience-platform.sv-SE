@@ -2,9 +2,9 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1c2aabaaeadb41631fc75783db739bb34a3f53cc
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -123,4 +123,4 @@ Om du visar strukturen för målschemat visas relationsmarkören bredvid schemat
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en många-till-ett-relation mellan två scheman med hjälp av [!DNL Schema Editor]. När data har importerats med datauppsättningar som baseras på dessa scheman och data har aktiverats i datalagret för profilen, kan du använda attribut från båda scheman för användning av segmentering i flera klasser. Mer information finns i dokumentationen om Real-Time CDP B2B Edition.
+I den här självstudiekursen har du skapat en många-till-ett-relation mellan två scheman med hjälp av [!DNL Schema Editor]. När data har importerats med datauppsättningar baserade på dessa scheman och data har aktiverats i datalagret kan du använda attribut från båda scheman för [användning av segmentering i flera klasser](../../rtcdp/segmentation/b2b.md).

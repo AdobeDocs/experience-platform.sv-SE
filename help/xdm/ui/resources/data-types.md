@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f700f7c68ba9ff2fc0a99bf62031bf3fe0c95f
 workflow-type: tm+mt
-source-wordcount: '1131'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -88,11 +88,11 @@ Detta visar hur flexibla datatyper kan vara när det gäller att beskriva dina d
 
 När du är klar med att lägga till fält till datatypen väljer du **[!UICONTROL Save]** för att spara ändringarna och lägga till datatypen i [!DNL Schema Library].
 
-## Lägga till datatypen i en klass eller fältgrupp
+## Lägg till datatypen i ett schema
 
 När du har skapat en datatyp kan du börja använda den i dina scheman. Eftersom XDM-scheman består av en klass och noll eller flera fältgrupper, kan fält som tillhandahålls av en datatyp inte läggas till direkt i ett schema. De måste i stället inkluderas i en klass eller en fältgrupp.
 
-Börja med att följa de steg som ingår i [lägga till ett fält i en klass](./classes.md#add-fields) eller [lägga till ett fält i en fältgrupp](./field-groups.md#add-fields). När du väljer **[!UICONTROL Type]** för det nya fältet väljer du namnet på datatypen i listrutan.
+Börja med att följa de steg som ingår i [lägga till ett fält i en klass](./classes.md#add-fields) eller [lägga till ett fält i en fältgrupp](./field-groups.md#add-fields). Du kan också börja [lägga till ett fält direkt i ett schema](./schemas.md#add-individual-fields) och välj den överordnade klassen eller fältgruppen där. När du väljer **[!UICONTROL Type]** för det nya fältet väljer du namnet på datatypen i listrutan.
 
 ## Konvertera ett flerfältsobjekt till en datatyp {#convert}
 
@@ -102,7 +102,7 @@ Om du vill konvertera ett fält av objekttyp till en datatyp, markerar du fälte
 
 ![](../../images/ui/resources/data-types/convert-object.png)
 
-Arbetsytan uppdaterar fältets datatyp från[!UICONTROL Object]till den nya datatypen. Underfälten har också små låsikoner bredvid sig, vilket anger att de inte längre är enskilda fält utan snarare är en del av datatypen för flera fält. Den här strukturen kan nu återanvändas i andra klasser och fältgrupper genom att välja den här datatypen i **[!UICONTROL Type]** när du definierar ett nytt fält.
+Arbetsytan uppdaterar fältets datatyp från[!UICONTROL Object]till den nya datatypen. Den här strukturen kan nu återanvändas i andra klasser och fältgrupper genom att välja den här datatypen i **[!UICONTROL Type]** när du definierar ett nytt fält.
 
 ![](../../images/ui/resources/data-types/converted.png)
 

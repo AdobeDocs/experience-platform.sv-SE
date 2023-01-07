@@ -1,31 +1,31 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;data model;explore;class;field group;data type;schema;
 solution: Experience Platform
-title: Utforska XDM-resurser i användargränssnittet
+title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 topic-legacy: tutorial
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 744d87c82b7e7e06782c6c1b9db2ec46a5444d28
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# Utforska XDM-resurser i användargränssnittet
+# Utforska schemaresurser i användargränssnittet
 
-I Adobe Experience Platform lagras alla XDM-resurser (Experience Data Model) i [!DNL Schema Library], inklusive standardresurser från Adobe och anpassade resurser som definierats av din organisation. I användargränssnittet i Experience Platform kan du visa strukturen och fälten för befintliga scheman, klasser, schemafältgrupper eller datatyper i [!DNL Schema Library]. Detta är särskilt användbart när du planerar och förbereder för dataöverföring, eftersom användargränssnittet ger information om de förväntade datatyperna och användningsexemplen för varje fält som tillhandahålls av dessa XDM-resurser.
+I Adobe Experience Platform lagras alla XDM-schemaresurser (Experience Data Model) i [!DNL Schema Library], inklusive standardresurser från Adobe och anpassade resurser som definierats av din organisation. I användargränssnittet i Experience Platform kan du visa strukturen och fälten för befintliga scheman, klasser, fältgrupper eller datatyper i [!DNL Schema Library]. Detta är särskilt användbart när du planerar och förbereder för dataöverföring, eftersom användargränssnittet ger information om de förväntade datatyperna och användningsexemplen för varje fält som tillhandahålls av dessa XDM-resurser.
 
 Den här självstudiekursen beskriver stegen för att utforska befintliga scheman, klasser, fältgrupper och datatyper i användargränssnittet för Experience Platform.
 
-## Söka efter en XDM-resurs {#lookup}
+## Söka efter en schemaresurs {#lookup}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. The [!UICONTROL Schemas] arbetsytan innehåller **[!UICONTROL Browse]** för att utforska alla befintliga XDM-resurser i organisationen, tillsammans med ytterligare dedikerade flikar för utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]** specifikt.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. The [!UICONTROL Schemas] arbetsytan innehåller **[!UICONTROL Browse]** för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för att utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]** respektive.
 
 ![](../images/ui/explore/tabs.png)
 
-På [!UICONTROL Browse] kan du använda filterikonen (![Filterikonbild](../images/ui/explore/icon.png)) för att visa kontroller i den vänstra listen för att begränsa listade resultat.
+Filterikonen (![Filterikonbild](../images/ui/explore/icon.png)) visar kontroller i den vänstra listen för att begränsa listade resultat. Vilka kontroller som visas varierar beroende på vilken typ av resurs som visas.
 
 Om du till exempel vill filtrera listan så att endast standarddatatyper som tillhandahålls av Adobe visas väljer du **[!UICONTROL Datatype]** och **[!UICONTROL Adobe]** under **[!UICONTROL Type]** och **[!UICONTROL Owner]** -avsnitt.
 
@@ -33,15 +33,15 @@ The **[!UICONTROL Included in Profile]** kan du filtrera resultaten så att enda
 
 ![](../images/ui/explore/filter.png)
 
-Du kan även använda sökfältet för att begränsa resultaten ytterligare. När du söker efter en term representerar de översta objekten resurser vars namn matchar sökfrågan. Under dessa objekt, under **[!UICONTROL Standard Fields]**, visas alla resurser som innehåller fält som matchar frågan. På så sätt kan du söka efter XDM-resurser baserat på vilken typ av data de innehåller, utan att först behöva veta namnet på resursen.
+När resurser listas på **[!UICONTROL Classes]**, **[!UICONTROL Field groups]**, eller **[!UICONTROL Data types]** -flikar kan du välja **[!UICONTROL Adobe]** för att endast visa standardresurser eller **[!UICONTROL Customer]** om du bara vill visa resurser som har skapats av din organisation.
+
+![](../images/ui/explore/filter-data-type.png)
+
+Du kan även använda sökfältet för att begränsa resultaten ytterligare.
 
 ![](../images/ui/explore/search.png)
 
 Resurserna som visas i sökresultaten ordnas först efter matchningar av titel och sedan efter matchningar av beskrivning. Ju fler ord som matchar i någon av dessa kategorier, desto högre visas resursen i listan.
-
->[!NOTE]
->
->För standard-XDM-resurser returnerar sökfunktionen endast enskilda fält som innehåller en `xdm` namnutrymme. Fält som finns under ett annat namnutrymme (till exempel ditt klientorganisations-ID) returneras bara om de finns i en anpassad resurs.
 
 När du har hittat resursen som du vill utforska väljer du resursens namn i listan för att visa dess struktur på arbetsytan.
 
