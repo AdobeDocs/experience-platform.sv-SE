@@ -5,9 +5,9 @@ title: Felsökningsguide för frågetjänst
 topic-legacy: troubleshooting
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: deb9f314d5eaadebe2f3866340629bad5f39c60d
+source-git-commit: 491aadf161bd822cb40a5ef5dd107831bca1d2c4
 workflow-type: tm+mt
-source-wordcount: '4344'
+source-wordcount: '4365'
 ht-degree: 0%
 
 ---
@@ -531,6 +531,11 @@ WHERE T2.ID IS NULL
 ### Kan jag styra åtkomsten till specifika datauppsättningar och kolumner för en viss anslutning? Hur är detta konfigurerat?
 
 +++Svara Ja, attributbaserad åtkomstkontroll används om den har konfigurerats. Se [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md) för mer information.
++++
+
+### Stöder frågetjänsten kommandot INSERT OVERWRITE INTO?
+
++++Svarsnr, frågetjänsten stöder inte kommandot INSERT OVERWRITE INTO.
 +++
 
 ## Exportera data {#exporting-data}
