@@ -2,10 +2,9 @@
 keywords: Experience Platform;komma igång;content ai;commerce ai;content and commerce ai;keyword extraction;Keyword extraction
 solution: Experience Platform
 title: Extrahering av nyckelord i API:t för innehåll och handel
-topic-legacy: Developer guide
 description: Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '1082'
 ht-degree: 2%
@@ -123,7 +122,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 | `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
 | `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. Se [appendix](#appendix) om du vill ha mer information om anpassade parametrar. | Nej |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
-| `content` | Innehållet som används av nyckelordsextraheringstjänsten. Innehållet kan vara rå text (&quot;textbunden&quot; innehållstyp). <br> Om innehållet är en fil på S3 (&#39;s3-bucket&#39; content-type) skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
+| `content` | Innehållet som används av nyckelordsextraheringstjänsten. Innehållet kan vara rå text (&#39;inline&#39; content-type). <br> Om innehållet är en fil på S3 (&#39;s3-bucket&#39; content-type) skickar du den signerade URL:en. När innehållet är en del av begärandetexten bör listan med dataelement bara ha ett objekt. Om fler än ett objekt skickas bearbetas bara det första objektet. | Ja |
 
 **Svar**
 

@@ -2,10 +2,9 @@
 keywords: OCR;text presence;optical character recognition
 solution: Experience Platform
 title: Textnärvaro och optisk teckenigenkänning
-topic-legacy: Developer guide
 description: I API:t för innehåll och handel kan OCR-tjänsten (Text Presence/Optical Character Recognition) visa om det finns text i en viss bild. Om det finns text kan OCR returnera texten.
 exl-id: 85b976a7-0229-43e9-b166-cdbd213b867f
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 2%
@@ -83,7 +82,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 | `top-N` | Antalet resultat som ska returneras (får inte vara ett negativt heltal). Använd värdet `0` för att returnera alla resultat. Vid användning tillsammans med `threshold`, är antalet returnerade resultat det mindre av någon av begränsningsuppsättningarna. Standardvärdet för den här egenskapen är `0`. | Nej |
 | `custom` | Alla anpassade parametrar som ska skickas. Den här egenskapen kräver ett giltigt JSON-objekt för att fungera. | Nej |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
-| `content` | Innehållet kan vara en Raw-bild (&quot;textbunden&quot; innehållstyp). <br> Om innehållet är en fil på S3 (innehållstypen S3-bucket) skickar du den signerade URL:en. | Ja |
+| `content` | Innehållet kan vara en Raw-bild (&#39;inline&#39;-innehållstyp). <br> Om innehållet är en fil på S3 (innehållstypen S3-bucket) skickar du den signerade URL:en. | Ja |
 
 **Svar**
 

@@ -3,10 +3,9 @@ keywords: Experience Platform;komma igång;kundai;populära ämnen;kundindata;ku
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Indata och utdata i kundens AI
-topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som Kundens AI använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '3183'
 ht-degree: 0%

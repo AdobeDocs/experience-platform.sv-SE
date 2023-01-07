@@ -3,11 +3,10 @@ keywords: Experience Platform;översikt;customer ai;populära topics;customer ai
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Översikt över AI för kunder
-topic-legacy: Customer AI Overview
 description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 landing-page-description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala.
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 0%

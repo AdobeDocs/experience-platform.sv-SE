@@ -2,10 +2,9 @@
 keywords: Experience Cloud;komma igång;content and commerce ai;populära topics;Intelligent Services;ccai
 solution: Experience Platform
 title: Översikt över innehåll och handel med AI
-topic-legacy: Content and Commerce AI
 description: Innehåll och Commerce AI är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%

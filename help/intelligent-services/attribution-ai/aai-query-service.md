@@ -2,10 +2,9 @@
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
 feature: Attribution AI
 title: Analyserar attribueringsresultat med hjälp av frågetjänsten
-topic-legacy: Attribution AI queries
 description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera Attribution AI.
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 # Analyserar attribueringspoäng med hjälp av frågetjänsten
 
-Varje rad i data representerar en konvertering där information för relaterade kontaktytor lagras som en array med strukturer under kolumnen `touchpointsDetail`.
+Varje rad i data representerar en konvertering där information för relaterade kontaktytor lagras som en array med strukturer under `touchpointsDetail` kolumn.
 
 | Kontaktpunktsinformation | Kolumn |
 | ---------------------- | ------ |
@@ -24,7 +23,7 @@ Varje rad i data representerar en konvertering där information för relaterade 
 
 ## Söka efter datasökvägar
 
-I användargränssnittet för Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. Sidan **[!UICONTROL Datasets]** visas. Välj sedan fliken **[!UICONTROL Browse]** och leta reda på utdatamängden för dina Attribution AI.
+I användargränssnittet för Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. The **[!UICONTROL Datasets]** visas. Välj sedan **[!UICONTROL Browse]** och hitta utdata för dina Attribution AI.
 
 ![Åtkomst till din instans](./images/aai-query/datasets_browse.png)
 
@@ -32,7 +31,7 @@ Välj din utdatamängd. Sidan för datauppsättningsaktivitet visas.
 
 ![aktivitetssida för datauppsättning](./images/aai-query/select_preview.png)
 
-På aktivitetssidan för datauppsättningen väljer du **[!UICONTROL Preview dataset]** i det övre högra hörnet för att förhandsgranska dina data och kontrollera att de har importerats som förväntat.
+På sidan för datauppsättningsaktivitet väljer du **[!UICONTROL Preview dataset]** i det övre högra hörnet om du vill förhandsgranska dina data och se till att de har importerats som förväntat.
 
 ![förhandsgranska datauppsättning](./images/aai-query/preview_dataset.JPG)
 
@@ -40,21 +39,21 @@ När du har förhandsgranskat dina data väljer du schemat i den högra listen. 
 
 ![välj schema](./images/aai-query/select_schema.png)
 
-Med hjälp av poängschemat kan du välja eller söka efter ett värde. När du har valt alternativet **[!UICONTROL Field properties]** öppnas sidospåret så att du kan kopiera sökvägen och använda den för att skapa frågor.
+Med hjälp av poängschemat kan du välja eller söka efter ett värde. När du har valt **[!UICONTROL Field properties]** sida vid sida-rail öppnas så att du kan kopiera sökvägen för användning när du skapar frågor.
 
 ![kopiera sökvägen](./images/aai-query/copy_path.png)
 
 ## Access Query Service
 
-Om du vill få åtkomst till frågetjänsten inifrån plattformsgränssnittet börjar du med att välja **[!UICONTROL Queries]** i den vänstra navigeringen och sedan väljer du fliken **[!UICONTROL Browse]**. En lista över tidigare sparade frågor läses in.
+Om du vill få åtkomst till frågetjänsten inifrån plattformsgränssnittet börjar du med att välja **[!UICONTROL Queries]** i den vänstra navigeringen väljer du **[!UICONTROL Browse]** -fliken. En lista över tidigare sparade frågor läses in.
 
 ![frågetjänstens bläddring](./images/aai-query/query_tab.png)
 
-Välj sedan **[!UICONTROL Create query]** i det övre högra hörnet. Frågeredigeraren läses in. Med frågeredigeraren kan du börja skapa frågor med dina poängdata.
+Nästa, välj **[!UICONTROL Create query]** i det övre högra hörnet. Frågeredigeraren läses in. Med frågeredigeraren kan du börja skapa frågor med dina poängdata.
 
 ![frågeredigerare](./images/aai-query/query_example.png)
 
-Mer information om Frågeredigeraren finns i [användarhandboken för Frågeredigeraren](../../query-service/ui/user-guide.md).
+Mer information om Frågeredigeraren finns på [Användarhandbok för Frågeredigeraren](../../query-service/ui/user-guide.md).
 
 ## Frågemallar för attribueringspoänganalys
 
@@ -62,7 +61,7 @@ Frågorna nedan kan användas som mall för olika poänganalysscenarier. Du mås
 
 >[!NOTE]
 >
-> Beroende på hur data har importerats kan värdena som används nedan, t.ex. `timestamp`, ha ett annat format.
+> Beroende på hur dina data har importerats, används värdena nedan, till exempel `timestamp` kan ha ett annat format.
 
 ### Exempel på validering
 
@@ -306,7 +305,7 @@ Den här frågan förenklar strukturkolumnen i flera enskilda kolumner och utlö
 
 >[!TIP]
 >
-> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. Variabeln `COLUMN_NAME` kan anta värden för valfria skicka genom kolumnnamn (rapportkolumner) som lades till när Attribution AI konfigurerades. Granska ditt resultatschema för att hitta de `{COLUMN_NAME}` värden som behövs för att slutföra frågan.
+> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. The `COLUMN_NAME` variabeln kan hämta värden för valfria skicka genom kolumnnamn (rapportkolumner) som lades till under konfigureringen av din Attribution AI-instans. Granska ditt resultatschema för att hitta `{COLUMN_NAME}` värden som behövs för att slutföra den här frågan.
 
 ```sql
 SELECT 

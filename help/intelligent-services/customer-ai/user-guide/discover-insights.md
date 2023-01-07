@@ -3,10 +3,9 @@ keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundinsi
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Identifiera insikter med kundens AI
-topic-legacy: Discovering insights
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '2016'
 ht-degree: 0%

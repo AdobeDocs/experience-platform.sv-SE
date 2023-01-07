@@ -2,10 +2,9 @@
 keywords: Experience Platform;komma igång;Attribution ai;populära topics;Attribution ai input;Attribution ai output;
 feature: Attribution AI
 title: Indata och utdata i Attribution AI
-topic-legacy: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%

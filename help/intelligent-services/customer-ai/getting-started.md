@@ -3,10 +3,9 @@ keywords: Experience Platform;komma igång;kundinformation;populära ämnen
 solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: Komma igång med AI
-topic-legacy: Getting started
 description: Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster.
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
-source-git-commit: 165e5ccae5ca78b3912fef1ba0b3fd4567e231fb
+source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '652'
 ht-degree: 0%
