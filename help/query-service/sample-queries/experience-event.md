@@ -2,11 +2,10 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 solution: Experience Platform
 title: Exempelfrågor för Experience Events
-topic-legacy: queries
 type: Tutorial
 description: Följande dokument innehåller exempel på frågor som innehåller Experience Events i Adobe Experience Platform Query Service.
 exl-id: e6793a03-e474-4ae4-acb2-a052ff1c6d68
-source-git-commit: d79d466602d77f8a3eb1162ee67572973b3e08c7
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 0%

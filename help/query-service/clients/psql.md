@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;PSQL;psqlconnect to query service;Query service;query service;
 solution: Experience Platform
 title: Anslut PSQL till frågetjänst
-topic-legacy: connect
 description: PSQL är ett kommandoradsgränssnitt som medföljer när du installerar PostgreSQL på datorn. Du kan installera det genom att följa dessa anvisningar.
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: 4d9e6ce81809c6e6ee1188177a937ac8fc609996
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '287'
 ht-degree: 0%

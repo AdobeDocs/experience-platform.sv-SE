@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;förberedda satser;förberedd;sql;
 solution: Experience Platform
 title: Förförberedda satser i frågetjänsten
-topic-legacy: prepared statements
 description: I SQL används förberedda satser för att malla liknande frågor eller uppdateringar. Adobe Experience Platform Query Service stöder förberedda satser med hjälp av en parametriserad fråga.
 exl-id: 7ee4a10e-2bfe-487f-a8c5-f03b5b1d77e3
-source-git-commit: 9f4e34edc47a333aa88153529d0af6a10f189a15
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 6%

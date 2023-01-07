@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;PSQL;psql;Query service;query service;metadata;commands;metadata commands;metadata commands;
 solution: Experience Platform
 title: Metadata PostgreSQL-kommandon i frågetjänsten
-topic-legacy: metadata
 description: En lista med PostgreSQL-kommandon som för närvarande stöds för att hämta metadata i Adobe Experience Platform Query Service.
 exl-id: bfcbad55-3086-44c9-9938-6ba0504e747b
-source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '335'
 ht-degree: 0%

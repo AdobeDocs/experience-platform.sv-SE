@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Exempel på användningsfall för Adobe Experience Platform Query Service
-topic-legacy: tutorial
 description: Ett heltäckande exempel som demonstrerar mångsidigheten och fördelarna med Adobe Experience Platform Query Service.
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 6f6256b5601ce5c230ef334a9ce71325b43fda45
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 0%

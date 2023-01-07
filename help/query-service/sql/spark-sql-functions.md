@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;spark sql;Spark sql;spark;spark sql functions;functions;
 solution: Experience Platform
 title: Spark SQL-funktioner i frågetjänsten
-topic-legacy: spark sql functions
 description: Den här dokumentationen innehåller information om Spark SQL-funktioner som utökar SQL-funktioner.
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-source-git-commit: f291c0db5b751227e979e70ea8f91a0c133ecf34
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '3866'
 ht-degree: 0%

@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Komma igång med Adobe Experience Platform Query Service
-topic-legacy: tutorial
 description: En beskrivning av de nödvändiga stegen för att fullt ut utnyttja Adobe Experience Platform Query Service
 exl-id: 36ab9354-23f9-4cb8-bcd4-00fe076386ab
-source-git-commit: c09a7a6198bf1ef3f94e53bdbdf3b0b93f6b2bd1
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '212'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;skriva frågor;skriva fråga;
 solution: Experience Platform
 title: Allmänna riktlinjer för frågekörning i frågetjänsten
-topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '1047'
 ht-degree: 2%
@@ -32,7 +31,7 @@ Interaktiv frågekörning har följande begränsningar:
 | Parameter | Begränsning |
 | --------- | ---------- |
 | Timeout för fråga | 10 minuter |
-| Maximalt antal rader har returnerats | 50 000 |
+| Maximalt antal rader har returnerats | 50,000 |
 | Maximalt antal samtidiga frågor | 5 |
 
 >[!NOTE]

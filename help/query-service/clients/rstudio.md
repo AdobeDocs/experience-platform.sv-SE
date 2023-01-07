@@ -2,10 +2,9 @@
 keywords: Experience Platform;home;populära topics;Query service;query service;RStudio;rstudio;connect to query service;
 solution: Experience Platform
 title: Anslut RStudio till frågetjänsten
-topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '403'
 ht-degree: 0%

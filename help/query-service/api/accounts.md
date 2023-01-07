@@ -2,10 +2,9 @@
 keywords: Experience Platform;home;populära topics;query service;api guide;Query service;query service accounts;accounts;
 solution: Experience Platform
 title: API-slutpunkt för konton
-topic-legacy: connection parameters
 description: Du kan skapa ett frågetjänstkonto för beständig .
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 1%
