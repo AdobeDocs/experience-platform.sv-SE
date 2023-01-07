@@ -2,11 +2,9 @@
 keywords: Experience Platform;hemmabas;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;faq;FAQ;Regulation;Regulation;Regulations;Regulations;privacy;Privacy;Privacy;
 solution: Experience Platform
 title: Frågor och svar om sekretessregler
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregler som stöds och hur de implementeras i Adobe Experience Cloud.
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1599'
 ht-degree: 0%
@@ -19,7 +17,7 @@ Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregle
 
 >[!NOTE]
 >
->Definitioner för de olika termer som används i det här dokumentet finns i [sekretesskontrollens terminologi](terminology.md) guide.
+>Definitioner för de olika termer som används i det här dokumentet finns i [sekretessreglerande terminologi](terminology.md) guide.
 
 ## Allmänna frågor
 
@@ -27,7 +25,7 @@ Följande frågor rör alla sekretessbestämmelser som stöds av Experience Clou
 
 ### Vilka påverkar de sekretessbestämmelser som stöds?
 
-De [integritetsregler som stöds av Experience Cloud](./overview.md) gäller alla organisationer som lagrar och bearbetar personuppgifter för medborgare inom respektive jurisdiktion, oavsett var organisationen befinner sig.
+The [sekretessbestämmelser som stöds av Experience Cloud](./overview.md) gäller för alla organisationer som lagrar och behandlar personuppgifter för medborgare inom de olika jurisdiktionerna, oavsett var organisationen befinner sig.
 
 ### Vad är personuppgifter?
 
@@ -49,19 +47,19 @@ Personlig information kan också omfatta information om internetaktiviteter elle
 * Sökhistorik
 * Information om en kunds interaktion med en webbplats, tillämpning eller annons
 
-Även om sekretessbestämmelserna omfattar en mängd personuppgifter innebär Adobe:s standardavtalsvillkor att känslig personlig information (som SSN, körkortsinformation, ekonomisk kontoinformation och biometriska data) i allmänhet inte får importeras och användas i Experience Cloud-tillämpningar.
+Även om sekretessbestämmelserna omfattar en mängd personuppgifter, innebär Adobe standardavtalsvillkor att känslig personlig information (som SSN, körkortsinformation, ekonomisk kontoinformation och biometriska data) i allmänhet inte får importeras och användas i Experience Cloud-tillämpningar.
 
 ### Vad är skillnaden mellan en personuppgiftsansvarig och en personuppgiftsbiträde?
 
-En **personuppgiftsansvarig** är den enhet som bestämmer syften, villkor och sätt att behandla personuppgifter, medan **personuppgiftsbiträdet** är en enhet som behandlar personuppgifter för den personuppgiftsansvariges räkning.
+A **datastyrenhet** är den enhet som fastställer syften, villkor och sätt att behandla personuppgifter, medan **dataprocessor** är en enhet som behandlar personuppgifter för den personuppgiftsansvariges räkning.
 
-En **personuppgiftsansvarig** är den person eller organisation som har befogenhet och ansvar att fatta beslut om insamling, användning eller utlämnande av personuppgifter. En **personuppgiftsbiträde** är den person eller organisation som är verksam i samband med insamling, användning eller utlämnande av personuppgifter och den personuppgiftsansvariges riktning.
+A **datastyrenhet** är den person eller organisation som har befogenhet och ansvar att fatta beslut om insamling, användning eller utlämnande av personuppgifter. A **dataprocessor** är den person eller organisation som är verksam i samband med insamling, användning eller utlämnande av personuppgifter och den registeransvariges riktning.
 
 ### Vad är skillnaden mellan uttryckligt och otvetydigt samtycke från registrerade?
 
-**Uttryckligt** samtycke avser en standard för samtycke som inbegriper en specifik, informerad och otvetydig indikation om den registrerades önskemål i muneller skriftlig form. Enkelt uttryckt måste den registrerade bokstavligen och uttryckligen säga&quot;Jag godkänner&quot; eller&quot;Jag godkänner&quot; för att samtycke ska kunna anses vara explicit. Dessutom måste det vara lika enkelt att dra tillbaka sitt samtycke som att ge det.
+**Explicit samtycke** hänvisar till en standard för samtycke som inbegriper en specifik, informerad och otvetydig indikation om den registrerades önskemål i oral eller skriftlig form. Enkelt uttryckt måste den registrerade bokstavligen och uttryckligen säga&quot;Jag godkänner&quot; eller&quot;Jag godkänner&quot; för att samtycke ska kunna anses vara explicit. Dessutom måste det vara lika enkelt att dra tillbaka sitt samtycke som att ge det.
 
-**Tvetydigt (underförstått)** samtycke avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet är den positiva åtgärden att ange sin e-postadress tillräckligt för att betraktas som otvetydigt samtycke.
+**Tvetydigt (underförstått) samtycke** avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt till sin natur. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet är den positiva åtgärden att ange sin e-postadress tillräckligt för att betraktas som otvetydigt samtycke.
 
 För många förordningar som GDPR krävs explicit samtycke för att behandla känsliga personuppgifter, där det inte räcker med&quot;deltagande&quot;. För icke-känsliga uppgifter kan dock entydigt (underförstått) samtycke användas.
 
@@ -105,7 +103,7 @@ Om din organisations dataåtgärder faller under jurisdiktionerna för GDPR, LGP
 
 ### Hur kan jag stödja konsumentförfrågningar om jag upprätthåller data som omfattas av sekretesslagstiftningen?
 
-När ni har vidtagit de åtgärder som krävs för att autentisera konsumenter som omfattas av lämplig juridisk behörighet, kan ni med Adobe Experience Platform Privacy Service skicka in förfrågningar om konsumentintegritet till kompatibla Experience Cloud-program. Mer information finns i [[!DNL Privacy Service] översikten](../home.md). Mer information om hur dina Experience Cloud-program kan hantera sekretessförfrågningar finns i guiden [Privacy Service- och Experience Cloud-program](../experience-cloud-apps.md).
+När ni har vidtagit de åtgärder som krävs för att autentisera konsumenter som omfattas av lämplig juridisk behörighet, kan ni med Adobe Experience Platform Privacy Service skicka in förfrågningar om konsumentintegritet till kompatibla Experience Cloud-program. Se [[!DNL Privacy Service] översikt](../home.md) för mer information. Mer information om hur dina Experience Cloud-program kan uppfylla sekretesskrav finns i handboken om [Privacy Service och Experience Cloud](../experience-cloud-apps.md).
 
 >[!NOTE]
 >
@@ -119,14 +117,14 @@ Följande frågor gäller specifikt CCPA.
 
 Enligt CCPA gäller följande roller Adobe och dess kunder:
 
-* Kunder i Adobe (den part som begär att få samla in och använda personuppgifter från personer bosatta i Kalifornien) betraktas som **företag**.
-* Adobe, som tillhandahåller tjänsten, betraktas som **tjänsteleverantör**.
+* Kunder i Adobe (den part som begär insamling och användning av personuppgifter från personer bosatta i Kalifornien) skulle anses vara en **Företag**.
+* Adobe, i sin roll att tillhandahålla tjänsten, skulle anses vara **Tjänsteleverantör**.
 
 Som tjänsteleverantör samlar Adobe in och behandlar personuppgifter för företagets räkning och är enligt avtal bundet att använda dessa uppgifter endast för de särskilda ändamål som anges i avtalet.
 
 Med tanke på detta förhållande och Adobe avtalsspråk skulle utlämnande av information till Adobe sannolikt inte betraktas som en&quot;försäljning&quot; som företag skulle behöva lämna besked om och begära samtycke till.
 
-Adobe tjänster kan dock användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver rättsligt utlämnande och samtycke. Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
+Adobes tjänster kan dock användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver rättsligt utlämnande och samtycke. Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
 
 ### Erbjuder Adobe andra verktyg som kan vara till hjälp för att tillgodose CCPA-kraven?
 
@@ -140,13 +138,13 @@ Följande frågor gäller specifikt den allmänna dataskyddsförordningen.
 
 ### Vad är skillnaden mellan en förordning och ett direktiv?
 
-En **förordning** är en bindande rättsakt och måste tillämpas i sin helhet i hela EU. Ett **direktiv** är en rättsakt som fastställer ett mål som alla EU-länder måste uppnå, men det är de enskilda länderna som bestämmer hur.
+A **reglering** är en bindande lagstiftningsakt och måste tillämpas i sin helhet i hela EU. A **direktiv** är en lagstiftningsakt som fastställer ett mål som alla EU-länder måste uppnå, men det är de enskilda länderna som bestämmer hur.
 
 Det är viktigt att notera att den allmänna dataskyddsförordningen är en förordning, i motsats till den tidigare lagstiftningen (dataskyddsdirektivet), som är ett direktiv.
 
 ### Hur påverkar GDPR policyn kring dataintrång?
 
-Föreslagna bestämmelser om dataintrång rör i första hand anmälningspolicyer för företag som har överträtts. Dataintrång som kan utgöra en risk för enskilda personer måste anmälas till dataskyddsmyndigheten inom 72 timmar och till berörda personer utan onödigt dröjsmål.
+Föreslagna förordningar om dataintrång gäller i första hand de delgivningspolicyer som tillämpas av företag som har överträtts. Dataintrång som kan utgöra en risk för enskilda personer måste anmälas till dataskyddsmyndigheten inom 72 timmar och till berörda personer utan onödigt dröjsmål.
 
 ## PDPA-frågor
 

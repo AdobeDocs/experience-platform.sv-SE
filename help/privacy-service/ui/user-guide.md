@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;export;Exportera
 solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
-topic-legacy: UI guide
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 3bb0fc7b2807889d0a759e81c8ff728de3c0cbde
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%

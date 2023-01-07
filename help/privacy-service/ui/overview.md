@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Översikt över användargränssnittet i Privacy Service
-topic-legacy: UI guide
 description: Kom igång med att använda Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 76e431301f961484436fe47d28079ee47dbcc8ed
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '204'
 ht-degree: 1%

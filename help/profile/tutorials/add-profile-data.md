@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;aktivera profil;Aktivera profil
 title: Lägg till data i kundprofilen i realtid
-topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%

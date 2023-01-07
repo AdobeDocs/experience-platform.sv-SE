@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för sammanslagningsprinciper
-topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '2472'
 ht-degree: 0%

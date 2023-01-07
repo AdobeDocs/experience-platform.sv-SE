@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Introduktion till beräknade attribut
-topic-legacy: guide
 type: Documentation
 description: Beräknade attribut är funktioner för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 0%

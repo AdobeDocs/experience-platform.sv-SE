@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;overview;overview;Regulation;Regulations;Regulations;Regulations;privacy;Privacy;Privacy;
 solution: Experience Platform
 title: Sekretessregler - terminologi
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 65ff39c99eee98654daee89c86d6047dc055c196
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1513'
 ht-degree: 7%

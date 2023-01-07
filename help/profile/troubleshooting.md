@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Felsökningsguide för kundprofiler i realtid
-topic-legacy: guide
 type: Documentation
 description: Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel när du arbetar med profildata med Adobe Experience Platform.
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%

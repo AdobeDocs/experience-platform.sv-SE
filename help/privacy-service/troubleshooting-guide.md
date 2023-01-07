@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Felsökningsguide för Privacy Service
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Privacy Service samt information om vanliga fel i API:t.
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '881'
 ht-degree: 0%

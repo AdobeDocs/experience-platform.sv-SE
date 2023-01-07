@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Konfigurera ett beräknat attributfält
-topic-legacy: guide
 type: Documentation
 description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med API:t för schemaregister för att definiera ett schema och en anpassad fältgrupp som innehåller det beräknade attributfältet.
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '736'
 ht-degree: 0%

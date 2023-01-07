@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-handbok för Privacy Service
-topic-legacy: developer guide
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 3%
