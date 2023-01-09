@@ -1,9 +1,10 @@
 ---
 title: Översikt över tillägget Meta Pixel
 description: Läs om tillägget Meta Pixel i Adobe Experience Platform.
-source-git-commit: a47e35a1b8c7ce2b0fa4ffe30fcdc7d22fc0f4c5
+exl-id: c5127bbc-6fe7-438f-99f1-6efdbe7d092e
+source-git-commit: 24001da61306a00d295bf9441c55041e20f488c0
 workflow-type: tm+mt
-source-wordcount: '731'
+source-wordcount: '805'
 ht-degree: 0%
 
 ---
@@ -14,13 +15,11 @@ ht-degree: 0%
 
 The [!DNL Meta Pixel] taggtillägg gör att du kan använda [!DNL Pixel] funktioner i klientens taggbibliotek. Det här dokumentet beskriver hur du installerar tillägget och använder dess funktioner i en [regel](../../../ui/managing-resources/rules.md).
 
->[!NOTE]
->
->Om du försöker skicka händelser på serversidan till [!DNL Meta] i stället för från klientsidan använder du [[!DNL Meta Conversions API] extension](../../server/meta/overview.md) i stället.
-
 ## Förutsättningar
 
 För att kunna använda tillägget måste du ha ett giltigt [!DNL Meta] konto med tillgång till [!DNL Ads Manager]. Du måste [skapa en ny [!DNL Meta Pixel]](https://www.facebook.com/business/help/952192354843755) och kopiera [!DNL Pixel ID] så att tillägget kan konfigureras för ditt konto. Om du redan har en befintlig [!DNL Meta Pixel]kan du använda dess ID i stället.
+
+Vi rekommenderar starkt att du använder [!DNL Meta Pixel] i kombination med [!DNL Meta Conversions API] för att dela och skicka samma händelser från klienten respektive serversidan, eftersom detta kan hjälpa till att återställa händelser som inte plockats upp av [!DNL Meta Pixel]. Se guiden på [[!DNL Meta Conversions API] tillägg för händelsevidarebefordran](../../client/meta/overview.md) för steg om hur du integrerar det i implementeringar på serversidan. Observera att din organisation måste ha tillgång till [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) för att kunna använda tillägget på serversidan.
 
 ## Installera tillägget
 
@@ -36,7 +35,7 @@ I konfigurationsvyn som visas måste du ange [!DNL Pixel] ID som du kopierade ti
 >
 >Om du använder ett dataelement kan du ändra [!DNL Pixel] ID som används beroende på andra faktorer som byggmiljön. Se avsnittet om bilagan [använda olika [!DNL Pixel] ID för olika miljöer](#id-data-element) för mer information.
 
-Du kan också ange ett händelse-ID att koppla till tillägget med. Detta används för att ta bort identiska händelser mellan [!DNL Meta Pixel] och [!DNL Meta Conversions API]. Se [!DNL Meta] dokumentation om [hantering av dubblett [!DNL Pixel] och [!DNL Conversions API] händelser](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/) för mer information.
+Du kan också ange ett händelse-ID att koppla till tillägget med. Detta används för att ta bort identiska händelser mellan [!DNL Meta Pixel] och [!DNL Meta Conversions API]. Mer information finns i avsnittet om [deduplicering av händelser](../../server/meta/overview.md#event-deduplication) i översikt för [!DNL Conversions API] tillägg.
 
 När du är klar väljer du **[!UICONTROL Save]**
 
@@ -64,7 +63,9 @@ När den uppdaterade versionen har distribuerats till webbplatsen kan du bekräf
 
 ## Nästa steg
 
-Den här guiden beskriver hur du skickar data till [!DNL Meta] med [!DNL Meta Pixel] taggtillägg. Mer information om taggar i Experience Platform finns i [taggöversikt](../../../home.md).
+Den här guiden beskriver hur du skickar data till [!DNL Meta] med [!DNL Meta Pixel] taggtillägg. Om du planerar att även skicka händelser på serversidan till [!DNL Meta]kan du nu installera och konfigurera [[!DNL Conversions API] tillägg för händelsevidarebefordran](../../server/meta/overview.md).
+
+Mer information om taggar i Experience Platform finns i [taggöversikt](../../../home.md).
 
 ## Bilaga: Använd olika [!DNL Pixel] ID för olika miljöer {#id-data-element}
 
@@ -77,4 +78,3 @@ I följande exempel returneras ett falskt produktions-ID `exampleProductionKey` 
 ```js
 return (turbine.environment.stage === "production" ? 'exampleProductionKey' : 'exampleTestKey');
 ```
-
