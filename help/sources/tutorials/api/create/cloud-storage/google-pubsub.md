@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Google PubSub;google pubsub
 solution: Experience Platform
 title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '724'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;xdm;Experience data model;namespace;namespaces;compatibility mode;xed;
 solution: Experience Platform
 title: Namnavstånd i Experience Data Model (XDM)
-topic-legacy: overviews
 description: Lär dig hur namnavstånd i Experience Data Model (XDM) gör att du kan utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs.
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: bcffd3d38cecba38e1e57a44ce0febfd2cf0f8fb
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '627'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;salesforce marketing cloud;Salesforce Marketing Cloud
 solution: Experience Platform
 title: Skapa en Salesforce Marketing Cloud Base-anslutning med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Marketing Cloud med API:t för Flow Service.
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '520'
 ht-degree: 1%

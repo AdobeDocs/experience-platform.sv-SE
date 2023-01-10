@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;crm schema;crm;CRM;dataflöd;Dataflöd
 solution: Experience Platform
 title: Skapa ett dataflöde med hjälp av en CRM-källa i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en CRM-källa med hjälp av plattformsgränssnittet.
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1384'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;mailchimp;mailchimp-kampanjer;mailchimp-medlemmar
 solution: Experience Platform
 title: Översikt över Mailchimp Connector
-topic-legacy: overview
 description: Lär dig hur du ansluter Mailchimp till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: eedb4fe0-3aae-4e93-bf13-c095171e2d11
-source-git-commit: ed185d0957c3cd84c33a6ff60c5ded2b17fbfe74
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '221'
 ht-degree: 0%

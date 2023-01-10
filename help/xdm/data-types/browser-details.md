@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;schemas;scheman;webbläsare;webbläsarinformation;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Datatypen Webbläsarinformation
-topic-legacy: overview
 description: Dokumentet innehåller en översikt över XDM-datatypen Browser Details.
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 4%
@@ -27,7 +26,7 @@ ht-degree: 4%
 | `javaScriptVersion` | Sträng | Den version av JavaScript som stöds under observationen. |
 | `javaVersion` | Sträng | Den version av Java som stöds under observationen. |
 | `name` | Sträng | Program- eller webbläsarnamnet. |
-| `quicktimeVersion` | Sträng | Den version av Apple QuickTime som stöds under observationen. |
+| `quicktimeVersion` | Sträng | Den version av Apple Quicktime som stöds under observationen. |
 | `thirdPartyCookiesEnabled` | Boolean | Anger om cookies från tredje part aktiverades i enheten som observationen gjordes från. |
 | `userAgent` | Sträng | HTTP-användaragentsträngen från klientbegäran. |
 | `vendor` | Sträng | Programmet eller webbläsarleverantören. |

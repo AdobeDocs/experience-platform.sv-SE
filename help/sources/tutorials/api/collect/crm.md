@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;crm;CRM
 solution: Experience Platform
 title: Skapa ett dataflöde för CRM-källor med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1347'
 ht-degree: 0%

@@ -2,15 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;device;data type;data type;
 solution: Experience Platform
 title: Marknadsföringsdatatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Marketing XDM.
-source-git-commit: cb4afb0979bd65a9a82a6018323fa7beacdbf605
+exl-id: b5ac0127-15fe-42b6-b7fc-2fbcda7e7e27
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '138'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Marketing] datatyp
 
@@ -20,7 +19,7 @@ ht-degree: 2%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `campaignGroup` | Sträng | Namnet på kampanjgruppen (om flera kampanjer grupperas tillsammans, till exempel `50%_DISCOUNT`). |
+| `campaignGroup` | Sträng | Namnet på kampanjgruppen (om flera kampanjer grupperas tillsammans, som `50%_DISCOUNT`). |
 | `campaignName` | Sträng | Namnet på marknadsföringskampanjen, till exempel `50%_DISCOUNT_USA` eller `50%_DISCOUNT_ASIA`. |
 | `trackingCode` | Sträng | Den spårningskod som kan användas för att identifiera marknadsföringskampanjen som händelsen är kopplad till. |
 

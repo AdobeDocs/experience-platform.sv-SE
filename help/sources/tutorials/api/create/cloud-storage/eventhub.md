@@ -2,11 +2,10 @@
 keywords: Experience Platform;home;populära topics;event hub;Azure event hub;Event hub
 solution: Experience Platform
 title: Skapa en källanslutning för Azure Event Hubs med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '737'
 ht-degree: 0%

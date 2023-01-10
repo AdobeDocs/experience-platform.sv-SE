@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabas;populära ämnen;kuchbase;Kuchbase
 solution: Experience Platform
 title: Översikt över källkoppling för Couchbase
-topic-legacy: overview
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 4b1cc352-3b1a-4015-baee-b1d42c15a400
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 0%

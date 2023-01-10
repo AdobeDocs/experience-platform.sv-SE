@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;direktuppspelning;molnlagringskontakt;molnlagring
 solution: Experience Platform
 title: Skapa ett direktuppspelat dataflöde för en molnlagringskälla i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med molnlagringsbasen.
 exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%

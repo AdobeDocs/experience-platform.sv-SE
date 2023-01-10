@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Salesforce;salesforce
 solution: Experience Platform
 title: Skapa en Salesforce-basanslutning med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 1%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Marketo-källanslutning;Marketo-kontakt;Marketo-källa;Marketo
 solution: Experience Platform
 title: Skapa en Marketo Engage-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1408'
 ht-degree: 0%

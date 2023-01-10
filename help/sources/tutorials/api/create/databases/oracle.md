@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle;oracle
 solution: Experience Platform
 title: Skapa en Oraclena basanslutning med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Oracle till Experience Platform med API:t för Flow Service.
 exl-id: b1cea714-93ff-425f-8e12-6061da97d094
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '428'
 ht-degree: 1%

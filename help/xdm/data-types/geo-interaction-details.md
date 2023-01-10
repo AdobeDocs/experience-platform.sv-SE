@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;beacon;interaktionsinformation;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Datatyp för info om geo-interaktion
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen Geo Interaction Details.
 exl-id: c05b098b-3f12-4283-a6d5-5ebf96b9828d
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 0%

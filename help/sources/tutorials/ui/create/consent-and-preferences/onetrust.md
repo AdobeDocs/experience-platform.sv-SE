@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;ontrust;OneTrust
 solution: Experience Platform
 title: (Beta) Skapa en OneTrust-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en OneTrust-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 6af0604d-cbb6-4c8e-b017-3eb82ec6ee1c
-source-git-commit: cfc6e7cb3877f3b5f716b7f82e7c2d308ef5ed10
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 0%

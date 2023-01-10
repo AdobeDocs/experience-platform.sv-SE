@@ -2,11 +2,10 @@
 keywords: Experience Platform;hemanvändare;populära ämnen;Amazon Redshift;amazon redshift;Redshift;redshift
 solution: Experience Platform
 title: Skapa en Amazon Redshift-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Amazon Redshift-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 4faf3200-673b-4a20-8f94-d049e800444b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '456'
 ht-degree: 1%

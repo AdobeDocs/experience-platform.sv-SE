@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Kuchbase;couchbase
 solution: Experience Platform
 title: Skapa en källanslutning till Couchbase i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Couchbase med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 4270a48a-843c-4f1e-b280-35b620581d68
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '450'
 ht-degree: 1%

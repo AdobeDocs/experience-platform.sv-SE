@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in betalningsdata;betalningsdata
 solution: Experience Platform
 title: Skapa ett dataflöde för betalningskällor med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1343'
 ht-degree: 0%

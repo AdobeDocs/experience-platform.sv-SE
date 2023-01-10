@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;betalningskoppling
 solution: Experience Platform
 title: Skapa ett dataflöde med en betalningskälla i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en betalningskälla med hjälp av plattformsgränssnittet.
 exl-id: 7355435b-c038-4310-b04a-8ac6b6723b9b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1344'
 ht-degree: 0%

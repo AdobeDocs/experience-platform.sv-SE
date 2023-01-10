@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individuell profil;fält;scheman;scheman;telecom;prenumeration;telekom;telekom;schemadesign;fältgrupp;fältgrupp;
 solution: Experience Platform
 title: Fältgrupp för telekom-prenumerationsschema
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Telecom Subscription.
 exl-id: 00c20081-09d0-425c-9894-0f957558bd43
-source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '713'
 ht-degree: 1%

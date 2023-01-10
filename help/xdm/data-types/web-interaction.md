@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;webbinaktion;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Webbinteraktionsdatatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Experience Data Model (XDM) för webbinteraktion.
 exl-id: 772d96c5-9fa3-4fed-8b38-16b8e7101743
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '185'
 ht-degree: 2%

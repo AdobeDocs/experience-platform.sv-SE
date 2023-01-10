@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;MySQL;mysql;My sql;My SQL
 solution: Experience Platform
 title: Översikt över MySQL Source Connector
-topic-legacy: overview
 description: Lär dig hur du ansluter MySQL till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: a18e8e69-880f-4bee-b339-726091d6f858
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '235'
 ht-degree: 0%

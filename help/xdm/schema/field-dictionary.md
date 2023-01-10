@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;fält;fält;standardfält;standardfält;ordlista;ordlista;karta;karta
 solution: Experience Platform
 title: XDM-fältordlista (Experience Data Model)
-topic-legacy: overviews
 description: Experience Data Model (XDM) definierar en uppsättning standardfält som kan användas när Adobe Experience Platform-scheman disponeras. Användning av dessa fält resulterar i ett konsekvent beteende för alla plattformstjänster, eftersom alla tjänster som använder XDM uttryckligen kommer att förstå de specifika definitioner som finns i dessa fält.
 exl-id: 9e183305-cd6c-444d-bd0b-f0cba3bcbe4d
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
 source-wordcount: '25236'
 ht-degree: 0%

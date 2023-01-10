@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;enduserids;end user;ids;
 solution: Experience Platform
 title: Schemafältgrupp för detaljer för slutanvändar-ID
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för information om slutanvändar-ID.
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '218'
 ht-degree: 0%

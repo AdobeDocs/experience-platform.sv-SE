@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;matrisfunktioner;matris;
 solution: Experience Platform
 title: Array-, List- och Set PQL-funktioner
-topic-legacy: developer guide
 description: PQL (Profile Query Language) har funktioner som underlättar interaktion med arrayer, listor och strängar.
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '767'
 ht-degree: 2%
@@ -15,11 +13,11 @@ ht-degree: 2%
 
 # Array-, list- och set-funktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## I
 
-Funktionen `in` används för att avgöra om ett objekt är medlem i en array eller lista.
+The `in` används för att avgöra om ett objekt är medlem i en array eller lista.
 
 **Format**
 
@@ -37,11 +35,11 @@ person.birthMonth in [3, 6, 9]
 
 ## Inte i
 
-Funktionen `notIn` används för att avgöra om ett objekt inte är medlem i en array eller lista.
+The `notIn` används för att avgöra om ett objekt inte är medlem i en array eller lista.
 
 >[!NOTE]
 >
->Funktionen `notIn` *säkerställer också* att inget av värdena är lika med null. Resultatet är därför inte en exakt negation av funktionen `in`.
+>The `notIn` function *även* säkerställer att inget av värdena är lika med null. Resultatet är därför inte en exakt negation av `in` funktion.
 
 **Format**
 
@@ -59,7 +57,7 @@ person.birthMonth notIn [3, 6, 9]
 
 ## Överlappningar
 
-Funktionen `intersects` används för att avgöra om två arrayer eller listor har minst en gemensam medlem.
+The `intersects` används för att avgöra om två arrayer eller listor har minst en gemensam medlem.
 
 **Format**
 
@@ -77,7 +75,7 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 
 ## Skärningspunkt
 
-Funktionen `intersection` används för att bestämma de gemensamma medlemmarna i två arrayer eller listor.
+The `intersection` används för att bestämma de gemensamma medlemmarna i två arrayer eller listor.
 
 **Format**
 
@@ -95,7 +93,7 @@ person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "g
 
 ## Delmängd av
 
-Funktionen `subsetOf` används för att avgöra om en viss array (array A) är en delmängd av en annan array (array B). Det vill säga att alla element i array A är element i array B.
+The `subsetOf` används för att avgöra om en viss array (array A) är en delmängd av en annan array (array B). Det vill säga att alla element i array A är element i array B.
 
 **Format**
 
@@ -113,7 +111,7 @@ person.favoriteCities.subsetOf(person.visitedCities)
 
 ## Supermängd till
 
-Funktionen `supersetOf` används för att avgöra om en viss array (array A) är en supermängd till en annan array (array B). Arrayen A innehåller alltså alla element i array B.
+The `supersetOf` används för att avgöra om en viss array (array A) är en överordnad mängd till en annan array (array B). Arrayen A innehåller alltså alla element i array B.
 
 **Format**
 
@@ -131,7 +129,7 @@ person.eatenFoods.supersetOf(["sushi", "pizza"])
 
 ## Inkluderar
 
-Funktionen `includes` används för att avgöra om en array eller lista innehåller ett visst objekt.
+The `includes` används för att avgöra om en array eller lista innehåller ett visst objekt.
 
 **Format**
 
@@ -149,7 +147,7 @@ person.favoriteColors.includes("red")
 
 ## Distinkt
 
-Funktionen `distinct` används för att ta bort dubblettvärden från en array eller lista.
+The `distinct` används för att ta bort dubblettvärden från en array eller lista.
 
 **Format**
 
@@ -167,7 +165,7 @@ person.orders.storeId.distinct().count() > 1
 
 ## Gruppera efter
 
-Funktionen `groupBy` används för att partitionera värden för en array eller lista i en grupp baserat på uttryckets värde.
+The `groupBy` används för att partitionera värden för en array eller lista i en grupp baserat på värdet för uttrycket.
 
 **Format**
 
@@ -190,7 +188,7 @@ orders.groupBy(storeId)
 
 ## Filter
 
-Funktionen `filter` används för att filtrera en array eller lista baserat på ett uttryck.
+The `filter` används för att filtrera en array eller lista baserat på ett uttryck.
 
 **Format**
 
@@ -213,7 +211,7 @@ person.filter(age >= 21)
 
 ## Mappa
 
-Funktionen `map` används för att skapa en ny array genom att tillämpa ett uttryck på varje objekt i en given array.
+The `map` används för att skapa en ny array genom att tillämpa ett uttryck på varje objekt i en given array.
 
 **Format**
 
@@ -229,9 +227,9 @@ I följande PQL-fråga skapas en ny array med siffror och värdet för de urspru
 numbers.map(square)
 ```
 
-## Första `n` i matrisen {#first-n}
+## Första `n` i array {#first-n}
 
-Funktionen `topN` används för att returnera de första `N` objekten i en array, när den sorteras i stigande ordning baserat på det angivna numeriska uttrycket.
+The `topN` -funktionen används för att returnera den första `N` objekt i en array, när de sorteras i stigande ordning baserat på det givna numeriska uttrycket.
 
 **Format**
 
@@ -253,9 +251,9 @@ Följande PQL-fråga returnerar de fem översta beställningarna med det högsta
 orders.topN(price, 5)
 ```
 
-## Senaste `n` i matris
+## Sista `n` i array
 
-Funktionen `bottomN` används för att returnera de sista `N` objekten i en array, när den sorteras i stigande ordning baserat på det angivna numeriska uttrycket.
+The `bottomN` -funktionen används för att returnera den sista `N` objekt i en array, när de sorteras i stigande ordning baserat på det givna numeriska uttrycket.
 
 **Format**
 
@@ -279,7 +277,7 @@ orders.bottomN(price, 5)
 
 ## Första objektet
 
-Funktionen `head` används för att returnera det första objektet i arrayen eller listan.
+The `head` -funktionen används för att returnera det första objektet i arrayen eller listan.
 
 **Format**
 
@@ -289,7 +287,7 @@ Funktionen `head` används för att returnera det första objektet i arrayen ell
 
 **Exempel**
 
-Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om funktionen `topN` finns i avsnittet [first `n` i array](#first-n).
+Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om `topN` finns i [först `n` i array](#first-n) -avsnitt.
 
 ```sql
 orders.topN(price, 5).head()
@@ -297,4 +295,4 @@ orders.topN(price, 5).head()
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om arrayer, listor och inställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig mer om arrayer, listor och inställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).

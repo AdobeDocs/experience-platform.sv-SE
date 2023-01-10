@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;användarhandbok för sandlådan;sandlådeguide
 solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
-topic-legacy: user guide
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: df0f543b18f008b656c5e411305c5243efa744ad
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '796'
 ht-degree: 2%

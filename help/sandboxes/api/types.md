@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;lissandlådor
 solution: Experience Platform
 title: API-slutpunkt för sandlådetyper
-topic-legacy: developer guide
 description: Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-begäran till slutpunkten /sandboxTypes.
 exl-id: eb5e1b44-37f5-4ed5-98f5-ac8db8792c7d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '162'
 ht-degree: 1%

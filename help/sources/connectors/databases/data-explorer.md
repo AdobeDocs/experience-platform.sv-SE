@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;azure data explorer
 solution: Experience Platform
 title: Översikt över Azure Data Explorer Source
-topic-legacy: overview
 description: Lär dig hur du ansluter Azure-Data Explorer till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 869bd8bb-51e6-4e0c-a3ec-ff083dda5789
-source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%

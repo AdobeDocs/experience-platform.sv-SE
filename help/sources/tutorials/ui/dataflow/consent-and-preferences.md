@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;samtycke och inställningar;samtycke;förtroende;OneTrust
 solution: Experience Platform
 title: Skapa ett dataflöde med hjälp av en innehålls- och inställningskälla i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för samtycke och inställningar med hjälp av plattformsgränssnittet.
 exl-id: 340b5945-baa1-4f79-88fa-2572606f6083
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1384'
 ht-degree: 0%

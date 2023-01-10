@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Phoenix;phoenix
 solution: Experience Platform
 title: Skapa en Phoenix-basanslutning med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter en Phoenix-databas till Adobe Experience Platform med API:t för Flow Service.
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 1%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;Webbsidesinformation;datatyp;datatyp;webbsida
 solution: Experience Platform
 title: Datatyp för webbsidesinformation
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över webbsidans information om datatypen Experience Data Model (XDM).
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '404'
 ht-degree: 2%
@@ -16,14 +15,14 @@ ht-degree: 2%
 
 [!UICONTROL Web page details] är en XDM-datatyp (Standard Experience Data Model) som beskriver information om en webbsida som just har lästs in och visats, vilket registreras av en ExperienceEvent.
 
-Datatypen är avsedd för fullständig sidinformation och inledande sidinläsning av webbprogram med en sida (SPA). Information om interaktioner som sker på en inläst sida som inte utlöser en ny sidinläsning finns i datatypen [webbinteraktion](./web-interaction.md).
+Datatypen är avsedd för fullständig sidinformation och inledande sidinläsning av webbprogram med en sida (SPA). Information om interaktioner som sker på en inläst sida och som inte aktiverar en ny sidinläsning finns i [webbinteraktion](./web-interaction.md) datatyp.
 
 <img src="../images/data-types/web-page-details.PNG" width="500" /><br />
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `pageViews` | [[!UICONTROL Measure]](./measure.md) | Antalet vyer på en webbsida. |
-| `URL` | Sträng | Webbsidans normativa eller vanliga URL. Detta kan vara den faktiska URL-adress som används för att nå sidan. Om du vill registrera URL:en som används för att nå sidan använder du `webLink`. URI-formatet ska följa standarden [RFC 3986](https://tools.ietf.org/html/rfc3986). |
+| `URL` | Sträng | Webbsidans normativa eller vanliga URL. Detta kan vara den faktiska URL-adress som används för att nå sidan. Om du vill registrera URL:en som används för att nå sidan använder du `webLink`. URI-formatet ska följa [RFC 3986](https://tools.ietf.org/html/rfc3986) standard. |
 | `isErrorPage` | Boolean | Den här egenskapen använder en flagga som anger om sidan är en felsida eller inte. Den här flaggan används för att kategorisera webbinteraktioner i stort. Felet definieras av programmet och kan motsvara en sida som hanteras med en HTTP-felkod. |
 | `isHomePage` | Boolean | Den här egenskapen använder en flagga som anger om sidan är en hemsida eller inte. Den här flaggan används för att kategorisera webbinteraktioner i stort. Definitionen av hemsida bestäms av programmet. |
 | `name` | Sträng | Webbsidans normativa namn. Det här namnet är inte nödvändigtvis sidrubriken eller direkt kopplat till sidinnehållet, utan används för att ordna en webbplats sidor i klassificeringssyfte. |

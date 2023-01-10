@@ -2,11 +2,10 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;automatiserat marknadsföringssystem;Samla in automatiserade marknadsföringsdata
 solution: Experience Platform
 title: Skapa ett dataflöde för marknadsföringsautomatiseringskällor med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%

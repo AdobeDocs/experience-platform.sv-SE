@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;segmentering;segmenteringstjänst;pql;PQL;profilfrågespråk;filterfunktioner;filter;
 solution: Experience Platform
 title: PQL-filterfunktioner
-topic-legacy: developer guide
 description: Filterfunktioner används för att filtrera data inom arrayer i PQL (Profile Query Language).
 exl-id: 09d66be3-30dc-4488-84a1-cfd09c44470d
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 2%
@@ -15,11 +13,11 @@ ht-degree: 2%
 
 # Filterfunktioner
 
-Filterfunktioner används för att filtrera data inom arrayer i [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+Filterfunktioner som används för att filtrera data i arrayer i [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## Filter
 
-Med funktionen `[]` (filter) kan filter tillämpas på en array och returnera en delmängd av arrayen som matchar det angivna villkoret.
+The `[]` (filter) gör att filter kan tillämpas på en array och returnera en delmängd av arrayen som matchar det angivna villkoret.
 
 **Format**
 
@@ -37,7 +35,7 @@ xEvent[productListItems[SKU="PS"]]
 
 ## Upp, operator
 
-Med `^`-operatorn (upp) kan du referera till egenskaper i de övre filternivåerna.
+The `^` (upp) kan du referera till egenskaper på den övre filternivån.
 
 **Format**
 
@@ -50,7 +48,7 @@ Med `^`-operatorn (upp) kan du referera till egenskaper i de övre filternivåer
 | `{ARRAY}` | Arrayen som filtreras. |
 | `{FILTER_1}` | Filtreringens yttre lager. |
 | `{FILTER_2}` | Filtreringens inre lager |
-| `^{PROPERTY}` | Den egenskap som också filtreras. På grund av `^` kontrollerar den en egenskap som är baserad på filter1. |
+| `^{PROPERTY}` | Den egenskap som också filtreras. På grund av `^`kontrollerar den en egenskap som baseras på filter1. |
 
 **Exempel**
 
@@ -62,4 +60,4 @@ xEvent[productListItems[SKU="PS" or ^^.person.gender="female"]]
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om filterfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig mer om filterfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).

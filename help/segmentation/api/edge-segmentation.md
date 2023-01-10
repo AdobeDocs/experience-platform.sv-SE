@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemindelning;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;kantsegmentering;Kantsegmentering;Strömningskant;
 solution: Experience Platform
 title: Kantsegmentering med API
-topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1187'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Apache Hadoop Distributed File System;Apache-hadoop;hdfs;HDFS
 solution: Experience Platform
 title: Skapa en Apache HDFS-basanslutning med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter ett Apache Hadoop Distributed File System till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 04fa65db-073c-48e1-b981-425185ae08aa
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '461'
 ht-degree: 1%

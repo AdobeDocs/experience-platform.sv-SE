@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Greenplum;Greenplum
 solution: Experience Platform
 title: Skapa en anslutning till en källa för GreenPlum i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en GreenPlum-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: e6c6a495-25ce-4497-b20e-91374c7bb548
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 1%

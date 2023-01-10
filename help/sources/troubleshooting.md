@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;källor;problem;felsökning;felsökning av källor felsökning;källor faq;faq;source connectors;source connector;source connectors faqs;source connectors troubleshooting;
 solution: Experience Platform
 title: Felsökning av källor
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform källor.
 exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
-source-git-commit: b55097b6e7cd49166f68d0c86b788cd36ebdebab
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '748'
 ht-degree: 0%

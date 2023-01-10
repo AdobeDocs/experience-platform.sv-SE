@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;automatiserad marknadsföring
 solution: Experience Platform
 title: Utforska ett marknadsföringsautomatiseringssystem med API:t för Flow Service
-topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska automatiserade marknadsföringssystem.
 exl-id: 250c1ba0-1baa-444f-ab2b-58b3a025561e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 0%

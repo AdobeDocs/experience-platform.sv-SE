@@ -2,9 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;device;trade in;trade in;trade in;
 solution: Experience Platform
 title: Schemafältgrupp för detaljer för enhetshandel
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Device Trade-In Details.
-source-git-commit: 2592d4f494d4d3dcfba63eb539498416fbdf6707
+exl-id: 744557be-0297-453f-9134-9d0f4ef2df4d
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '172'
 ht-degree: 1%
@@ -15,9 +15,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
 
-[!UICONTROL Device Trade-In Details] är en standardgrupp för schemafält för  [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md). Det innehåller ett enda fält (`deviceTradeInDetails`) som beskriver en enhets inbytestransaktion, inklusive inbytesvärde, ursprungligt enhets-ID och nytt enhets-ID.
+[!UICONTROL Device Trade-In Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Det innehåller ett enda fält (`deviceTradeInDetails`) som beskriver en enhets inbytestransaktion, inklusive inbytesvärde, ursprungligt enhets-ID och nytt enhets-ID.
 
 ![Struktur för detaljer för enhetshandel](../../images/field-groups/device-trade-in-details.png)
 

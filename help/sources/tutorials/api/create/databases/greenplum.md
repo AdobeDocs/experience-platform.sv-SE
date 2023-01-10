@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;grönplum;Greenplum
 solution: Experience Platform
 title: Skapa en anslutning till en grönPlum-bas med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter GreenPlum till Adobe Experience Platform med API:t för Flow Service.
 exl-id: c4ce452a-b4c5-46ab-83ab-61b296c271d0
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '434'
 ht-degree: 1%

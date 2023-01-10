@@ -2,11 +2,10 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;koppling för automatiserad marknadsföring
 solution: Experience Platform
 title: Skapa ett dataflöde med hjälp av en källa för marknadsföringsautomatisering i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för automatiserad marknadsföring med hjälp av plattformsgränssnittet.
 exl-id: 8d31fc2d-b952-44f7-98e7-f51b0acc19ed
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1354'
 ht-degree: 0%

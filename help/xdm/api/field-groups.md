@@ -3,9 +3,8 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: API-slutpunkt för fältgrupper
 description: Med slutpunkten /fieldGroups i API:t för schemaregister kan du programmässigt hantera XDM-schemafältgrupper i ditt upplevelseprogram.
-topic-legacy: developer guide
 exl-id: d26257e4-c7d5-4bff-b555-7a2997c88c74
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1216'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;API;api;delete;delete dataflod
 solution: Experience Platform
 title: Ta bort ett dataflöde med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du tar bort batch- och direktuppspelade dataflöden med API:t för Flow Service.
 exl-id: ea9040b1-3a40-493d-86f0-27deef09df07
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '324'
 ht-degree: 1%

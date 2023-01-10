@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Synkronisera;synapse;Azure synapse Analytics
 solution: Experience Platform
 title: Skapa en Azure synapse Analytics-basanslutning med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Azure synapse Analytics till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 8944ac3f-366d-49c8-882f-11cd0ea766e4
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 1%

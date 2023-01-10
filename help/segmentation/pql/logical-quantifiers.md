@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;logiska kvantifierare;logisk kvantifierare;
 solution: Experience Platform
 title: PQL logiska kvantifierare
-topic-legacy: developer guide
 description: Logiska kvantifierare kan användas för att bekräfta villkor med arrayer i PQL (Profile Query Language).
 exl-id: 8b1c9560-02e2-46e0-9646-c64dd4a15df1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '219'
 ht-degree: 2%
@@ -15,11 +13,11 @@ ht-degree: 2%
 
 # Funktioner för logisk kvantifierare
 
-Logiska kvantifierare kan användas för att bekräfta villkor med arrayer i [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+Logiska kvantifierare kan användas för att bekräfta villkor med arrayer i [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## Finns
 
-Funktionen `exists` avgör om det finns ett objekt i en array, förutsatt att den uppfyller det angivna villkoret.
+The `exists` funktionen avgör om ett objekt finns i en array, förutsatt att det uppfyller det angivna villkoret.
 
 **Format**
 
@@ -44,7 +42,7 @@ exists E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## För alla
 
-Funktionen `forall` avgör alla objekt i en array som uppfyller alla angivna villkor.
+The `forall` funktionen bestämmer alla objekt i en array som uppfyller alla angivna villkor.
 
 **Format**
 
@@ -69,4 +67,4 @@ forall E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om logiska kvantifierare kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig mer om logiska kvantifierare kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).

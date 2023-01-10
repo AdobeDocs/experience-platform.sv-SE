@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;handbok för sandlådeutvecklare
 solution: Experience Platform
 title: Komma igång med sandbox-API
-topic-legacy: developer guide
 description: Med sandbox API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '376'
 ht-degree: 0%

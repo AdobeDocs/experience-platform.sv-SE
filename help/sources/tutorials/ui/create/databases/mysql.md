@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;mysql;MySQL
 solution: Experience Platform
 title: Skapa en MySQL-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en MySQL-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75e74bde-6199-4970-93d2-f95ec3a59aa5
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '402'
 ht-degree: 1%

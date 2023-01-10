@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Apache Hive;Azure HDInsights;azure hdinsights
 solution: Experience Platform
 title: Skapa en Apache Hive på Azure HDInsights-källanslutning i gränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Apache Hive på Azure HDInsights-källanslutningen med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 3eb3cb02-9867-451a-b847-ab895310eedf
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 1%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;application;datatype;data type;data type;
 solution: Experience Platform
 title: Programdatatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Application Experience Data Model).
 exl-id: ac7d6761-7b58-4e0d-85e7-6f157fb2eea5
-source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 1%

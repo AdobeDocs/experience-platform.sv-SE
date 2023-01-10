@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Apache Cassandra;apache cassandra;Cassandra;cassandra
 solution: Experience Platform
 title: Skapa en källanslutning till Apache Cassandra med API:t för flödestjänst
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Apache Cassandra till Adobe Experience Platform med API:t för Flow Service.
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 0%

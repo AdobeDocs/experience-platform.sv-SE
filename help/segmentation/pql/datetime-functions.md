@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profilfrågespråk;datum- och tidsfunktioner;datetime-funktioner;datum;tid;tid;datum;tid;data;segment;segment;segment;segment;segment;segmentering;segmentering;segmenteringstjänst;pql;pql;pql;pql;profile Query Language;language;function;
 solution: Experience Platform
 title: Datum- och tidsfunktioner för PQL
-topic-legacy: developer guide
 description: Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom PQL (Profile Query Language).
 exl-id: 8cbffcb6-1c25-454f-8f02-eca602318e5e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '508'
 ht-degree: 2%
@@ -15,11 +13,11 @@ ht-degree: 2%
 
 # Datum- och tidsfunktioner
 
-Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+Datum- och tidsfunktioner används för att utföra datum- och tidsåtgärder på värden inom [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## Aktuell månad
 
-Funktionen `currentMonth` returnerar den aktuella månaden som ett heltal.
+The `currentMonth` funktionen returnerar den aktuella månaden som ett heltal.
 
 **Format**
 
@@ -37,7 +35,7 @@ person.birthMonth = currentMonth()
 
 ## Få månad
 
-Funktionen `getMonth` returnerar månaden, som ett heltal, baserat på en given tidsstämpel.
+The `getMonth` returnerar månaden som ett heltal baserat på en viss tidsstämpel.
 
 **Format**
 
@@ -55,7 +53,7 @@ person.birthdate.getMonth() = 6
 
 ## Aktuellt år
 
-Funktionen `currentYear` returnerar det aktuella året som ett heltal.
+The `currentYear` funktionen returnerar det aktuella året som ett heltal.
 
 **Format**
 
@@ -73,7 +71,7 @@ product.saleYear = currentYear()
 
 ## Skaffa år
 
-Funktionen `getYear` returnerar året som ett heltal baserat på en given tidsstämpel.
+The `getYear` funktionen returnerar året som ett heltal baserat på en viss tidsstämpel.
 
 **Format**
 
@@ -91,7 +89,7 @@ person.birthday.getYear() in [1991, 1992, 1993, 1994, 1995]
 
 ## Aktuell dag i månaden
 
-Funktionen `currentDayOfMonth` returnerar den aktuella dagen i månaden som ett heltal.
+The `currentDayOfMonth` funktionen returnerar den aktuella dagen i månaden som ett heltal.
 
 **Format**
 
@@ -109,7 +107,7 @@ person.birthDay = currentDayOfMonth()
 
 ## Hämta dag i månaden
 
-Funktionen `getDayOfMonth` returnerar dagen som ett heltal baserat på en given tidsstämpel.
+The `getDayOfMonth` funktionen returnerar dagen som ett heltal baserat på en given tidsstämpel.
 
 **Format**
 
@@ -127,11 +125,11 @@ product.sale.getDayOfMonth() <= 15
 
 ## Inträffar
 
-Funktionen `occurs` jämför den angivna tidsstämpelfunktionen med en fast tidsperiod.
+The `occurs` funktionen jämför den angivna tidsstämpelfunktionen med en fast tidsperiod.
 
 **Format**
 
-Funktionen `occurs` kan skrivas med något av följande format:
+The `occurs` kan skrivas med något av följande format:
 
 ```sql
 {TIMESTAMP} occurs {COMPARISON} {INTEGER} {TIME_UNIT} {DIRECTION} {TIME}
@@ -142,15 +140,15 @@ Funktionen `occurs` kan skrivas med något av följande format:
 
 | Argument | Beskrivning |
 | --------- | ----------- |
-| `{COMPARISON}` | En jämförelseoperator. Kan vara någon av följande operatorer: `>`, `>=`, `<`, `<=`, `=`, `!=`. Mer information om jämförelsefunktionerna finns i [dokumentet med jämförelsefunktioner](./comparison-functions.md). |
+| `{COMPARISON}` | En jämförelseoperator. Kan vara någon av följande operatorer: `>`, `>=`, `<`, `<=`, `=`, `!=`. Mer information om jämförelsefunktionerna finns i [jämförelsefunktionsdokument](./comparison-functions.md). |
 | `{INTEGER}` | Ett positivt heltal. |
 | `{TIME_UNIT}` | En tidsenhet. Kan vara något av följande ord: `millisecond(s)`, `second(s)`, `minute(s)`, `hour(s)`, `day(s)`, `week(s)`, `month(s)`, `year(s)`, `decade(s)`, `century`, `centuries`, `millennium`, `millennia`. |
 | `{DIRECTION}` | En preposition som beskriver när datumet ska jämföras med. Kan vara något av följande ord: `before`, `after`, `from`. |
-| `{TIME}` | Kan vara en tidsstämpellitteral (`today`, `now`, `yesterday`, `tomorrow`), en relativ tidsenhet (en av `this`, `last` eller `next` följt av en tidsenhet) eller ett tidsstämpelattribut. |
+| `{TIME}` | Kan vara en tidsstämpellitteral (`today`, `now`, `yesterday`, `tomorrow`), en relativ tidsenhet (en av `this`, `last`, eller `next` följt av en tidsenhet) eller ett tidsstämpelattribut. |
 
 >[!NOTE]
 >
->Det är valfritt att använda ordet `on`. Det finns för att förbättra läsbarheten för vissa kombinationer, som `timestamp occurs on date(2019,12,31)`.
+>Användning av ordet `on` är valfritt. Det finns för att förbättra läsbarheten för vissa kombinationer, som `timestamp occurs on date(2019,12,31)`.
 
 **Exempel**
 
@@ -192,4 +190,4 @@ person.birthday occurs = 3 days before today
 
 ## Nästa steg
 
-Nu när du har lärt dig om datum- och tidsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig om datum- och tidsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).

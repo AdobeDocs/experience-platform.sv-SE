@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Audience Manager-koppling;Målgruppshanterare;målgruppshanterare
 solution: Experience Platform
 title: Översikt över Audience Manager-källa
-topic-legacy: overview
 description: Adobe Audience Manager-källan strömmar förstahandsdata som samlats in i Audience Manager till Adobe Experience Platform.
 exl-id: be90db33-69e1-4f42-9d1a-4f8f26405f0f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1052'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Oraclena objektlagring;oraclena objektlagring
 solution: Experience Platform
 title: Skapa en Oracle Object Storage-basanslutning med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Object Storage med API:t för Flow Service.
 exl-id: a85faa44-7d5a-42a2-9052-af01744e13c9
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '555'
 ht-degree: 1%

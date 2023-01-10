@@ -1,34 +1,33 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;field group;field group;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;
 solution: Experience Platform
 title: Fältgrupp för kampanjmarknadsföringsinformation
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Campaign Marketing Details.
-source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
+exl-id: be08b38b-68a0-4a74-9b8f-0344a0637395
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '144'
 ht-degree: 0%
 
 ---
 
-
 # [!UICONTROL Campaign Marketing Details] schemafältgrupp
 
 >[!NOTE]
 >
->The names of several schema field groups have changed. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
 
-[!UICONTROL Campaign Marketing Details] is a standard schema field group for the [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), used to describe marketing campaign information such as campaign group, name, and tracking code.
+[!UICONTROL Campaign Marketing Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), som används för att beskriva marknadsföringskampanjinformation som kampanjgrupp, namn och spårningskod.
 
 ![](../../images/field-groups/campaign-marketing-details.png)
 
-| Property | Datatyp | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `marketing` | [Marketing](../../data-types/marketing.md) | Ett objekt som beskriver information om marknadsföringskampanjer, till exempel kampanjgrupp, namn och spårningskod. |
+| `marketing` | [Marknadsföring](../../data-types/marketing.md) | Ett objekt som beskriver information om marknadsföringskampanjer, till exempel kampanjgrupp, namn och spårningskod. |
 
 {style=&quot;table-layout:auto&quot;}
 
-For more details on the field group, refer to the public XDM repository:
+Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-marketing.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-marketing.schema.json)

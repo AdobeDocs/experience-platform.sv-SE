@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;målmappning;Målmappning
 solution: Experience Platform
 title: Mappa Adobe Target-händelsedata till XDM
-topic-legacy: overview
 description: Lär dig hur du mappar Adobe Target-händelsefält till ett XDM-schema (Experience Data Model) som kan användas i Adobe Experience Platform.
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '482'
 ht-degree: 0%

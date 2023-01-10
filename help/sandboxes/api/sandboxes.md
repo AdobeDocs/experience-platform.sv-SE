@@ -2,13 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;handbok för sandlådeutvecklare
 solution: Experience Platform
 title: API-slutpunkt för sandlådehantering
-topic-legacy: developer guide
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1489'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -405,7 +404,7 @@ Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket
 }
 ```
 
-Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html) -funktion.
+Standardproduktionssandlådan och alla användarskapade produktionssandlådor kan inte återställas om identitetsdiagrammet som finns i den också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) eller om identitetsdiagrammet som finns i det också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) -funktion.
 
 Nedan följer en lista över möjliga undantag som kan förhindra att en sandlåda återställs:
 

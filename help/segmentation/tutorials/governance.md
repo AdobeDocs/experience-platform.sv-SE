@@ -2,11 +2,10 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;efterlevnad av dataanvändning;framtvinga efterlevnad av dataanvändning;Segmenteringstjänst;segmentering;Segmentering;
 solution: Experience Platform
 title: Tvinga regelefterlevnad för dataanvändning för ett målgruppssegment med API:er
-topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1368'
 ht-degree: 0%

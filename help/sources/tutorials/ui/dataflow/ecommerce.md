@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;e-handelskontakt;e-handel
 solution: Experience Platform
 title: Skapa ett dataflöde med en e-handelskälla i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en e-handelskälla med hjälp av plattformsgränssnittet.
 exl-id: ee1382c5-78ac-4765-8883-0a922772bb20
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
 source-wordcount: '1345'
 ht-degree: 0%

@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;lokalt system;filöverföring;mappa csv;mappa csv-fil;mappa csv-fil till xdm;mappa csv till xdm;ui guide;
 solution: Experience Platform
 title: Skapa en lokal filuppladdningskällsanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning för det lokala systemet för att överföra lokala filer till plattformen
 exl-id: 9ce15362-c30d-40cc-9d9c-caa650579390
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 0%

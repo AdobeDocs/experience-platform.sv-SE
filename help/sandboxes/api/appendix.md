@@ -3,8 +3,8 @@ keywords: Experience Platform;hem;populära ämnen;api;API;sandlåda;sandlåda;s
 solution: Experience Platform
 title: Tillägg till API-handbok för sandlådor
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med sandbox-API:t.
-topic-legacy: developer guide
-source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
+exl-id: 48ffea01-f1b4-48c6-a6f5-c321074023d3
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '124'
 ht-degree: 0%
@@ -13,15 +13,15 @@ ht-degree: 0%
 
 # Sandbox API guide appendix
 
-Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t [!DNL Sandbox].
+Det här dokumentet innehåller ytterligare information om hur du arbetar med [!DNL Sandbox] API.
 
 ## Använda frågeparametrar {#query}
 
-[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) har stöd för användning av frågeparametrar för att sidvisa och filtrera resultat när sandlådor listas.
+The [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox) har stöd för användning av frågeparametrar för att sidan och filtrera resultat när sandlådor listas.
 
 >[!NOTE]
 >
->Frågeparametrarna `limit` och `offset` måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
+>The `limit` och `offset` frågeparametrar måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
 
 | Parameter | Beskrivning |
 | --- | --- |

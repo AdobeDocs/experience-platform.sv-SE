@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Segmenteringstjänst;segmenteringstjänst;segmenteringstjänst;användarguide;ui guide;segmenteringsguide;segmentbyggare;segmentbyggare;realiserad;befintlig;avslutar;
 solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
-topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '2566'
 ht-degree: 0%

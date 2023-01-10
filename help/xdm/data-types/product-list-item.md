@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fält;scheman;scheman;scheman;adress;xdm:address;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Artikeldatatyp för produktlista
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för produktlistobjektet.
 exl-id: 056fdb5b-6782-4e29-9d62-90b270c05795
-source-git-commit: 43157ed2b633561213e67f011835449d70ead4fc
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '353'
 ht-degree: 0%

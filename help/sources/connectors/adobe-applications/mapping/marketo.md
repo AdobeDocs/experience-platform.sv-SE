@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Marketo Engage;markering för att engagera;Marketo;mappning
 solution: Experience Platform
 title: Mappningsfält för Marketo Engage-källan
-topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '949'
 ht-degree: 0%

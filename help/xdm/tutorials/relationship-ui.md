@@ -3,12 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;Experien
 solution: Experience Platform
 title: Definiera en relation mellan två scheman med Schemaredigeraren
 description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
-topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 3b16c0766c7d54b18ceea4c9f40ccb370b9f9685
+source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---

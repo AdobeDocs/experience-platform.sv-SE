@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;lista över tillgängliga sandlådor;lissandlådor
 solution: Experience Platform
 title: API-slutpunkt för tillgängliga sandlådor
-topic-legacy: developer guide
 description: Du kan lista de sandlådor som är tillgängliga för den aktuella användaren genom att göra en GET-begäran till den tillgängliga sandlådeslutpunkten.
 exl-id: 9b0719af-c1ca-439a-9c8b-86c7fa26a3b8
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%

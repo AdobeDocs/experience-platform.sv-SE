@@ -2,11 +2,10 @@
 keywords: Experience Platform;hemmabas;populära ämnen;databasdatabas;tredjepartsdatabas
 solution: Experience Platform
 title: Skapa ett dataflöde för datakällor med API:t för Flow Service
-topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en databas och hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1386'
 ht-degree: 0%

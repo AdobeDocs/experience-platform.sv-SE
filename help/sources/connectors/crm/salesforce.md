@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;crm schema;crm;CRM;salesforce;Salesforce
 solution: Experience Platform
 title: Salesforce Source Connector - översikt
-topic-legacy: overview
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: e178e0df2653b8cb0d4176734be7cb421098e225
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '900'
 ht-degree: 0%

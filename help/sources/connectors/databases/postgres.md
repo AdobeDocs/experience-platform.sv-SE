@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;PostgreSQL;postgresql
 solution: Experience Platform
 title: PostgreSQL Source Connector - översikt
-topic-legacy: overview
 description: Lär dig hur du ansluter PostgreSQL till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 27b891c5-5fc5-4539-8f98-e3a53e2eefe3
-source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 0%

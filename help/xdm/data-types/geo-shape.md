@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;geo;geo shape;datatype;data type;data type;
 solution: Experience Platform
 title: Geo, formdatatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen Geo Shape.
 exl-id: 50b9d783-a555-45eb-b154-7dc71389e224
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '240'
 ht-degree: 1%

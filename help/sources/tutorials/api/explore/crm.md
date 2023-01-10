@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;CRM;crm;crm flow service
 solution: Experience Platform
 title: Utforska ett CRM-system med API:t för flödestjänsten
-topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska CRM-system.
 exl-id: 9a8c553a-a93d-4539-a9d2-5f76a3927d92
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 1%

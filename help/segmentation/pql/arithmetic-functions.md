@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;aritmetiska funktioner;aritmetisk;
 solution: Experience Platform
 title: PAL - aritmetiska funktioner
-topic-legacy: developer guide
 description: Aritmetiska funktioner används för att utföra grundläggande beräkningar på värden i PQL (Profile Query Language).
 exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '260'
 ht-degree: 2%
@@ -15,11 +13,11 @@ ht-degree: 2%
 
 # Aritmetiska funktioner
 
-Aritmetiska funktioner används för att utföra grundläggande beräkningar på värden i [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+Aritmetiska funktioner används för att utföra grundläggande beräkningar av värden i [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## Lägg till
 
-Funktionen `+` (addition) används för att hitta summan av två argumentuttryck.
+The `+` Funktionen (addition) används för att hitta summan av två argumentuttryck.
 
 **Format**
 
@@ -37,7 +35,7 @@ product1.price + product2.price
 
 ## Multiplicera
 
-Funktionen `*` (multiplikation) används för att hitta produkten av två argumentuttryck.
+The `*` (multiplikation) används för att hitta produkten av två argumentuttryck.
 
 **Format**
 
@@ -55,7 +53,7 @@ product.inventory * product.price
 
 ## Subtrahera
 
-Funktionen `-` (subtraktion) används för att hitta skillnaden mellan två argumentuttryck.
+The `-` (subtraktion) används för att hitta skillnaden mellan två argumentuttryck.
 
 **Format**
 
@@ -73,7 +71,7 @@ product1.price - product2.price
 
 ## Dela
 
-Funktionen `/` (division) används för att hitta kvoten mellan två argumentuttryck.
+The `/` Funktionen (division) används för att hitta kvoten mellan två argumentuttryck.
 
 **Format**
 
@@ -91,7 +89,7 @@ totalProduct.price / totalProduct.sold
 
 ## Återstående
 
-Funktionen `%` (modulo/rest) används för att hitta resten efter att de två argumentuttrycken har delats.
+The `%` Funktionen (modulo/rest) används för att hitta resten efter att de två argumentuttrycken har delats.
 
 **Format**
 
@@ -109,4 +107,4 @@ person.age % 5 = 0
 
 ## Nästa steg
 
-Nu när du har lärt dig om aritmetiska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig om aritmetiska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).

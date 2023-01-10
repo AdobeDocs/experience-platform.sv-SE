@@ -2,15 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;oracle;oracle eloqua;eloqua
 solution: Experience Platform
 title: Skapa en Oraclena Eloqua-källanslutning med hjälp av plattformsgränssnittet
-topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Eloqua med hjälp av plattformsgränssnittet.
-source-git-commit: a40a1b8fae41c495afd9cdfc3c8d68148e90f2cd
+exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Oracle Eloqua] källanslutning med plattformsgränssnitt
 
@@ -66,4 +65,3 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 ## Nästa steg
 
 I den här självstudiekursen har du autentiserat och skapat en källanslutning mellan [!DNL Oracle Eloqua] konto och plattform. Du kan nu fortsätta med nästa självstudiekurs och [skapa ett dataflöde för att ta fram automatiserade marknadsföringsdata för plattformen](../../dataflow/marketing-automation.md).
-

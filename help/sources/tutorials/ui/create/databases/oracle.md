@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle DB;oracle db
 solution: Experience Platform
 title: Skapa en Oraclena DB-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Oracle DB-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 4ca6ecc6-0382-4cee-acc5-1dec7eeb9443
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '448'
 ht-degree: 1%

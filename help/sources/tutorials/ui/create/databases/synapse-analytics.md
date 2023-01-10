@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Azure synapse Analytics;Synapse;synapse;azure synapse analytics
 solution: Experience Platform
 title: Skapa en Azure synapse Analytics-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning för Azure synapse Analytics (nedan kallad Synapse) med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 1f1ce317-eaaf-4ad2-a5fb-236983220bd7
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '443'
 ht-degree: 1%

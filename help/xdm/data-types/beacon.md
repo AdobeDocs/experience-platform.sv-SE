@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;beacon;interaktionsinformation;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Beacon-datatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
 exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 2%
@@ -22,7 +21,7 @@ ht-degree: 2%
 | --- | --- | --- |
 | `beaconMajor` | Dubbel | Huvudvärden identifierar och särskiljer en grupp och heltalsvärden utan tecken mellan 1 och 65 535. |
 | `beaconMinor` | Dubbel | Mindre värden identifierar och särskiljer enskilda och osignerade heltalsvärden mellan 1 och 65 535. |
-| `proximity` | Sträng | Beräknat avstånd från beacon. Se [bilagan](#proximity) för godkända värden och definitioner. |
+| `proximity` | Sträng | Beräknat avstånd från beacon. Se [appendix](#proximity) för godkända värden och definitioner. |
 | `proximityUUID` | Sträng | En UUID för närhet (Universally Unique Identifier) är en speciell typ av identifierare som används för att skilja beacons i nätverket från alla andra beacons i nätverk utanför din kontroll. UUID för närhet konfigureras till en fyr som ska överföras till mobila enheter inom räckhåll för att identifiera en organisations fyrar. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -34,11 +33,11 @@ Mer information om datatypen finns i den offentliga XDM-databasen:
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om datatypen [!UICONTROL Beacon].
+Följande avsnitt innehåller ytterligare information om [!UICONTROL Beacon] datatyp.
 
 ## Godkända värden för närhet {#proximity}
 
-I följande tabell visas godkända värden för `proximity` och deras associerade betydelse:
+I följande tabell visas godkända värden för `proximity` och deras betydelse:
 
 | Värde | Beskrivning |
 | --- | --- |

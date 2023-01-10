@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Apache Spark;apache spark;Azure HDInsights
 solution: Experience Platform
 title: Skapa en Apache Spark på Azure HDInsights-basanslutning med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Apache Spark på Azure HDInsights till Adobe Experience Platform med API:t för Flow Service.
 exl-id: 1f7ca86e-32f4-45f7-92c2-f87c5c0c4ea4
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 1%

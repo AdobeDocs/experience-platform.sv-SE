@@ -2,9 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;lokal;lokal filöverföring;lokalt system
 solution: Experience Platform
 title: Översikt över källanslutning för lokal filöverföring
-topic-legacy: overview
 description: Lär dig hur du ansluter ditt lokala system till Adobe Experience Platform via användargränssnittet
-source-git-commit: 6fcfc134350a639d758c47d07c370f46cb97e63a
+exl-id: 4b3cf486-7aff-4ffb-920c-10af04000083
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Anslutning för lokal filöverföring
 
-Med Adobe Experience Platform kan data hämtas från externa källor och lokala system samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor och lokala system samtidigt som du kan strukturera, märka och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från det lokala systemet, vilket gör att du kan överföra lokala filer till Experience Platform via källanslutningar.
 

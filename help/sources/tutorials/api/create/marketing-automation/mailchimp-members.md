@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
 title: Skapa ett dataflöde för Mailchimp-medlemmar med API:t för flödestjänsten
-topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-medlemmar med API:t för Flow Service.
 exl-id: 900d4073-129c-47ba-b7df-5294d25a7219
-source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '2123'
 ht-degree: 0%

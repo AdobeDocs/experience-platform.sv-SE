@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;konfigurera dataflöde;annonskontakt
 solution: Experience Platform
 title: Skapa ett dataflöde med hjälp av en annonskälla i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en annonskälla med hjälp av plattformsgränssnittet.
 exl-id: 8dd1d809-e812-4a13-8831-189726b2430e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '1346'
 ht-degree: 0%

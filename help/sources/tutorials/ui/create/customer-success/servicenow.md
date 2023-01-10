@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;ServiceNow;servicenow
 solution: Experience Platform
 title: Skapa en ServiceNow-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en ServiceNow-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 66c12f4d-8b0c-4bb2-910d-9e09fa364c94
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '441'
 ht-degree: 1%

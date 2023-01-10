@@ -2,11 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profilfrågespråk;objektfunktioner;objekt;
 solution: Experience Platform
 title: PQL-objektfunktioner
-topic-legacy: developer guide
 description: PQL (Profile Query Language) har funktioner som underlättar interaktion med objekt.
 exl-id: e65257d8-5bc8-46c8-8487-33bc7ce4059b
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '138'
 ht-degree: 2%
@@ -15,11 +13,11 @@ ht-degree: 2%
 
 # Objektfunktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med objekt. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med objekt. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## Är null
 
-Funktionen `isNull` avgör om en objektreferens inte finns.
+The `isNull` funktionen avgör om en objektreferens inte finns.
 
 **Format**
 
@@ -37,7 +35,7 @@ person.homeAddress.isNull()
 
 ## Är inte null
 
-Funktionen `isNotNull` avgör om det finns en objektreferens.
+The `isNotNull` funktionen avgör om det finns en objektreferens.
 
 **Format**
 
@@ -55,4 +53,4 @@ person.homeAddress.isNotNull()
 
 ## Nästa steg
 
-Nu när du har lärt dig om objektfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
+Nu när du har lärt dig om objektfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [Profilfrågespråk - översikt](./overview.md).

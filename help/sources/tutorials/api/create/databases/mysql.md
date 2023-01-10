@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;MySQL;mysql
 solution: Experience Platform
 title: Skapa en [!DNL MySQL] Basanslutning med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MySQL med API:t för Flow Service.
 exl-id: 273da568-84ed-4a3d-bfea-0f5b33f1551a
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '450'
 ht-degree: 1%

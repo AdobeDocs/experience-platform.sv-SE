@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;veeva crm;Veeva CRM;Veeva;
 solution: Experience Platform
 title: Skapa en Vector CRM-basanslutning med API:t för flödestjänsten
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Veeva CRM med API:t för Flow Service.
 exl-id: e1aea5a2-a247-43eb-8252-2e2ed96b82a1
-source-git-commit: ea20a850a5d83f648c699119913aa31e2ea16233
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 1%

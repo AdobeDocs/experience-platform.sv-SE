@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;person;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Persondatatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Person Experience Data Model).
 exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '337'
 ht-degree: 3%
@@ -21,7 +20,7 @@ ht-degree: 3%
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `name` | [[!UICONTROL Person name]](./person-name.md) | Beskriver information om personens fullständiga namn. |
-| `birthDate` | Datum | Det fullständiga datumet en person föddes. Datumformatet (utan tid) ska följa standarden [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). |
+| `birthDate` | Datum | Det fullständiga datumet en person föddes. Datumformatet (utan tid) ska följa [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6) standard. |
 | `birthDayAndMonth` | Sträng | Den dag och månad en person föddes, i formatet MM-DD. Detta fält ska användas när dagen och månaden för en persons födelse är känd, men inte året. Egenskapens format måste överensstämma med det här reguljära uttrycket `[0-1][0-9]-[0-9][0-9]`. |
 | `birthYear` | Heltal | Det år en person föddes, inklusive århundradet (till exempel `1983`). Detta fält ska användas när endast personens ålder är känd och inte det fullständiga födelsedatumet. Värdet måste vara mellan 1 och 32767. |
 | `gender` | Sträng | Personens könsidentitet. Värdet för den här egenskapen måste vara lika med ett av följande kända enum-värden. <li> `female` </li> <li> `male` </li> <li> `not_specified` </li> <li> `non_specific` </li> Standardvärdet för det här värdet är `not_specified`. |

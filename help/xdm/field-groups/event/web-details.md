@@ -2,23 +2,22 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;
 solution: Experience Platform
 title: Fältgrupp för webbinformationsschema
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Webbinformation.
-source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
+exl-id: eb42606b-ade4-4d72-b601-c560009c98e8
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
 
 ---
 
-
 # [!UICONTROL Web Details] schemafältgrupp
 
 >[!NOTE]
 >
->Namnen på flera schemafältgrupper har ändrats. Mer information finns i dokumentet om [uppdatering av fältgruppnamn](../name-updates.md).
+>Namnen på flera schemafältgrupper har ändrats. Visa dokumentet på [uppdaterar fältgruppnamn](../name-updates.md) för mer information.
 
-[!UICONTROL Web Details] är en standardgrupp för schemafält för  [[!DNL XDM ExperienceEvent] klassen](../../classes/experienceevent.md), som används för att beskriva information om webbinformationshändelser som interaktion, sidinformation och referent.
+[!UICONTROL Web Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md), som används för att beskriva information om händelser i webbinformation, som interaktion, sidinformation och referent.
 
 ![](../../images/field-groups/web-details.png)
 

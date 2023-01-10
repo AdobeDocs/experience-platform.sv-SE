@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;tredje parts databas;databasflödestjänst
 solution: Experience Platform
 title: Utforska en databas med API:t för Flow Service
-topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska innehållet och filstrukturen i en tredjepartsdatabas.
 exl-id: 94935492-a7be-48dc-8089-18476590bf98
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
 workflow-type: tm+mt
 source-wordcount: '563'
 ht-degree: 1%

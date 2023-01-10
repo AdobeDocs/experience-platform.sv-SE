@@ -3,9 +3,8 @@ keywords: Experience Platform;hem;populära ämnen;ip address;ip address;ip addr
 description: IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar.
 solution: Experience Platform
 title: IP-adress Tillåtelselista för källanslutningar
-topic-legacy: overview
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: 40a6a6888fe075d653c565e5925874d737aa5c59
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%

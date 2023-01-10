@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
 title: Skapa en källanslutning för MailChimp-kampanjer med hjälp av plattformsgränssnittet
-topic-legacy: tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp-kampanjer med hjälp av plattformsgränssnittet.
 exl-id: e8e1ed32-4277-44c9-aafc-6bb9e0a1fe0d
-source-git-commit: 430b544835956ec0b212fb44d48beaae46afdd2e
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '649'
 ht-degree: 1%

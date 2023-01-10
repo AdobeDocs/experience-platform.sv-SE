@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemanvändare;populära ämnen;Amazon Redshift;Amazon redshift;redshift;Redshift
 solution: Experience Platform
 title: Amazon Redshift Source Connector - översikt
-topic-legacy: overview
 description: Lär dig hur du ansluter Amazon Redshift till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 75e577dd-a0b0-4f82-a371-5ec9255544f8
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '241'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;Analysmappningsfält;analysmappning
 solution: Experience Platform
 title: Mappningsfält för Adobe Analytics Source Connector
-topic-legacy: overview
 description: Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics-källan. Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '3431'
 ht-degree: 0%

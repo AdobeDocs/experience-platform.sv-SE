@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;device;data type;data type;
 solution: Experience Platform
 title: Enhetsdatatyp
-topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Device XDM.
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
 source-wordcount: '326'
 ht-degree: 3%
@@ -29,7 +28,7 @@ ht-degree: 3%
 | `screenWidth` | Sträng | Antalet vågräta pixlar för enhetens aktiva visning i standardorienteringen. |
 | `type` | Sträng | Den typ av enhet som spåras. Godkända värden är: <ul><li>`mobile`</li><li>`tablet`</li><li>`desktop`</li><li>`ereader`</li><li>`gaming`</li><li>`television`</li><li>`settop`</li><li>`mediaplayer`</li><li>`computers`</li><li>`tv screens`</li></ul> |
 | `typeID` | Sträng | En identifierare för enheten. Detta kan vara en identifierare från DeviceAtlas eller en annan tjänst som identifierar den maskinvara som används. |
-| `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Mer information om godkända värden finns i [bilagan](#typeIDService). |
+| `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Se [appendix](#typeIDService) om du vill ha information om godkända värden. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -40,11 +39,11 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om datatypen [!UICONTROL Device].
+Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] datatyp.
 
 ## Godkända värden för typeIDService {#typeIDService}
 
-I följande tabell visas godkända värden för `typeIDService` och deras associerade betydelse:
+I följande tabell visas godkända värden för `typeIDService` och deras betydelse:
 
 | Värde | Beskrivning |
 | --- | --- |

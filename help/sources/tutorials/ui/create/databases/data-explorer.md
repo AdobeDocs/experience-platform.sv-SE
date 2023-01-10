@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;azure data explorer;data explorer;Data Explorer
 solution: Experience Platform
 title: Skapa en Azure Data Explorer Source-anslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Azure Data Explorer-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 561bf948-fc92-4401-8631-e2a408667507
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%

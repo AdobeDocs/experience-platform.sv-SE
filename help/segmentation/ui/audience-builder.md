@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;Segmenteringstjänst;segmenteringstjänst;segmenteringstjänst;användarguide;ui guide;målgrupper ui guide;målgruppsbyggare;målgrupper;målgrupper ui guide;
 solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
-topic-legacy: ui guide
 description: Audience Builder i Adobe Experience Platform UI har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 hide: true
 hidefromtoc: true
-source-git-commit: f71d49b576059e687c337cbacd6dd3d525e97834
+exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '1265'
 ht-degree: 0%

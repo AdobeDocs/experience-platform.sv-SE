@@ -2,10 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;grönplum;GreenPlum
 solution: Experience Platform
 title: Översikt över källkopplingen för GreenPlum
-topic-legacy: overview
 description: Lär dig hur du ansluter GreenPlum till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 41757062-9ac8-42d3-91f6-a00866195882
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%

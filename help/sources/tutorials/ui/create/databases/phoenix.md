@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;Phoenix;phoenix
 solution: Experience Platform
 title: Skapa en Phoenix-källanslutning i användargränssnittet
-topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Phoenix-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 2ed469bc-1c72-4f04-a5f0-6a0bb519a6c2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 0%
