@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: b67349baa909cc59f3ff1d7aac22f7926f2b36ff
 workflow-type: tm+mt
-source-wordcount: '4062'
+source-wordcount: '4070'
 ht-degree: 0%
 
 ---
@@ -87,7 +87,7 @@ Ett exempel på en enkel identitetskarta skulle se ut så här:
   "email": [
     {
       "id": "jsmith@example.com",
-      "primary": false
+      "primary": true
     }
   ],
   "ECID": [
@@ -100,10 +100,10 @@ Ett exempel på en enkel identitetskarta skulle se ut så här:
       "primary": false
     }
   ],
-  "loyaltyId": [
+  "CRMID": [
     {
       "id": "2e33192000007456-0365c00000000000",
-      "primary": true
+      "primary": false
     }
   ]
 }
@@ -197,7 +197,7 @@ Fältgrupper definierar vilka klasser de är kompatibla med baserat på beteende
 
 [!DNL Experience Platform] innehåller många standardfältgrupper för Adobe, samtidigt som leverantörer kan definiera fältgrupper för sina användare, och enskilda användare kan definiera fältgrupper för sina egna specifika koncept.
 
-Om du till exempel vill hämta information som &quot;[!UICONTROL First Name]&quot; och &quot;[!UICONTROL Home Address]&quot; för dina &quot;[!UICONTROL Loyalty Members]&quot;schema, du skulle kunna använda standardfältgrupper som definierar dessa vanliga begrepp. Begrepp som är specifika för mindre vanliga användningsområden (t.ex.[!UICONTROL Loyalty Program Level]&quot;) har ofta ingen fördefinierad fältgrupp. I det här fallet måste du definiera en egen fältgrupp för att kunna hämta informationen.
+Om du till exempel vill hämta information som &quot;[!UICONTROL First Name]&quot; och &quot;[!UICONTROL Home Address]&quot; för dina &quot;[!UICONTROL Loyalty Members]&quot;schema, du skulle kunna använda standardfältgrupper som definierar dessa vanliga begrepp. Koncept som är mer specifika för din organisation (t.ex. kundens lojalitetsprogram eller produktattribut) som kanske inte omfattas av standardfältgrupper. I det här fallet måste du definiera en egen fältgrupp för att kunna hämta informationen.
 
 >[!NOTE]
 >
