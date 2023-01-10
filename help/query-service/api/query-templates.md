@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Frågemallar för API-slutpunkt
 description: Den här guiden beskriver de olika API-anrop för frågemallar som du kan göra med hjälp av API:t för frågetjänsten.
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: e0287076cc9f1a843d6e3f107359263cd98651e6
 workflow-type: tm+mt
-source-wordcount: '668'
-ht-degree: 1%
+source-wordcount: '894'
+ht-degree: 0%
 
 ---
 
@@ -129,15 +129,19 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{
-        "sql": "SELECT * FROM accounts;",
-        "name": "Sample query template"
+        "sql": "SELECT account_balance FROM user_data WHERE user_id='$user_id';",
+        "name": "Sample query template",
+        "queryParameters": {
+            user_id : {USER_ID}
+            }
     }'
 ```
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `sql` | Den SQL-fråga som du vill skapa. |
+| `sql` | Den SQL-fråga som du vill skapa. Du kan antingen använda standard-SQL eller en parameterersättning. Om du vill använda en parameterersättning i SQL måste parameternyckeln föregås av en `$`. Till exempel: `$key`och ange parametrarna som används i SQL som JSON-nyckelvärdepar i `queryParameters` fält. De värden som skickas här är standardparametrarna som används i mallen. Om du vill åsidosätta de här parametrarna måste du åsidosätta dem i POSTEN. |
 | `name` | Namnet på frågemallen. |
+| `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Endast obligatoriskt **if** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
 
 **Svar**
 
@@ -145,7 +149,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om den n
 
 ```json
 {
-    "sql": "SELECT * FROM accounts;",
+    "sql": "SELECT account_balance FROM user_data WHERE user_id='$user_id';",
     "name": "Sample query template",
     "id": "0094d000-9062-4e6a-8fdb-05606805f08f",
     "updated": "2020-01-09T00:20:09.670Z",
@@ -265,8 +269,9 @@ curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `sql` | Den SQL-fråga som du vill uppdatera. |
-| `name` | Namnet på den schemalagda frågan. |
+| `sql` | Den SQL-fråga som du vill skapa. Du kan antingen använda standard-SQL eller en parameterersättning. Om du vill använda en parameterersättning i SQL måste parameternyckeln föregås av en `$`. Till exempel: `$key`och ange parametrarna som används i SQL som JSON-nyckelvärdepar i `queryParameters` fält. De värden som skickas här är standardparametrarna som används i mallen. Om du vill åsidosätta de här parametrarna måste du åsidosätta dem i POSTEN. |
+| `name` | Namnet på frågemallen. |
+| `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Endast obligatoriskt **if** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
 
 **Svar**
 

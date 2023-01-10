@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågar API-slutpunkt
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: e0287076cc9f1a843d6e3f107359263cd98651e6
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '825'
 ht-degree: 0%
 
 ---
@@ -42,6 +42,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 | `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state`och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med), och `~` (innehåller). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar alla frågor med det angivna ID:t. |
 | `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. Till exempel: `excludeSoftDeleted=false` kommer **include** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
 | `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Värdet false kommer att anges **include** icke-användardrivna frågor, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
+| `isPrevLink` | The `isPrevLink` frågeparametern används för sidnumrering. Resultaten av API-anropet sorteras med hjälp av deras `created` tidsstämpel och `orderby` -egenskap. När du navigerar på resultatsidorna `isPrevLink` är inställt på true vid växling bakåt. Den ändrar ordningen på frågan. Se länkarna &quot;next&quot; och &quot;prev&quot; som exempel. |
 
 **Begäran**
 
@@ -128,7 +129,7 @@ POST /queries
 
 **Begäran**
 
-I följande begäran skapas en ny fråga som konfigurerats med värdena som anges i nyttolasten:
+I följande begäran skapas en ny fråga med en SQL-sats i nyttolasten:
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/query/queries \
@@ -139,7 +140,27 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
         "dbName": "prod:all",
-        "sql": "SELECT * FROM accounts;",
+        "sql": "SELECT account_balance FROM user_data WHERE $user_id;",
+        "queryParameters": {
+            $user_id : {USER_ID}
+            }
+        "name": "Sample Query",
+        "description": "Sample Description"
+    }  
+```
+
+I exemplet nedan skapas en ny fråga med hjälp av ett befintligt frågemall-ID.
+
+```shell
+curl -X POST https://platform.adobe.io/data/foundation/query/queries \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '{
+        "dbName": "prod:all",
+        "templateID": "f7cb5155-29da-4b95-8131-8c5deadfbe7f",
         "name": "Sample Query",
         "description": "Sample Description"
     }  
@@ -151,6 +172,10 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 | `sql` | Den SQL-fråga som du vill skapa. |
 | `name` | Namnet på SQL-frågan. |
 | `description` | Beskrivningen av SQL-frågan. |
+| `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Endast obligatoriskt **if** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
+| `templateId` | Den unika identifieraren för en befintlig fråga. Du kan ange detta i stället för en SQL-sats. |
+| `insertIntoParameters` | (Valfritt) Om den här egenskapen är definierad konverteras frågan till en INSERT INTO-fråga. |
+| `ctasParameters` | (Valfritt) Om den här egenskapen är definierad konverteras frågan till en CTAS-fråga. |
 
 **Svar**
 
