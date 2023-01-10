@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;batchförbrukning;batchintag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt batchintag;intag;Inmatning;
 solution: Experience Platform
 title: Översikt över partiell gruppinmatning
-topic-legacy: overview
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%

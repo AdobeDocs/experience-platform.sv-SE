@@ -2,11 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;autentiserad direktuppspelningsanslutning;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;skapa autentiserad direktuppspelningsanslutning;direktuppspelningsproblem;
 solution: Experience Platform
 title: Skapa en autentiserad direktuppspelningsanslutning
-topic-legacy: tutorial
 type: Tutorial
 description: Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, att skilja mellan poster som kommer från betrodda källor och otillförlitliga källor.
 exl-id: 14228cd9-4508-4605-8f50-04a74f1c6236
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 0%

@@ -2,10 +2,9 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelning;direktuppspelningsuppläsning;felsökning;direktuppspelningsuppläsning, frågor och svar;frågor;
 solution: Experience Platform
 title: Felsökningsguide för direktuppspelning av inmatningsproblem
-topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform.
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
 workflow-type: tm+mt
 source-wordcount: '1019'
 ht-degree: 0%
