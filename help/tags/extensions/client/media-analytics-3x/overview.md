@@ -2,9 +2,9 @@
 title: Adobe Media Analytics (3.x SDK) for Audio and Video Extension Overview
 description: Läs mer om taggtillägget Adobe Media Analytics (3.x SDK) för ljud och video i Adobe Experience Platform.
 exl-id: 7289d57d-7e7f-4832-9469-3b5a62183a32
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: e21ed1e9fd0c2678551cfc664b611076c198a157
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Tillägget Media Analytics (MA) lägger till JavaScript Media SDK (Media 3.x SDK
 
 >[!IMPORTANT]
 >
->Det här tillägget distribueras med Media 3.x SDK, som inte är bakåtkompatibelt med Media 2.x SDK. Om sidan redan använder Media 2.x SDK använder du [Adobe Media Analytics for Audio and Video Extension](../media-analytics/overview.md) i stället för det här tillägget.
+>Det här tillägget distribueras med Media 3.x SDK, som inte är bakåtkompatibelt med Media 2.x SDK. Eftersom 2.x har tagits bort bör du uppdatera till 3.x.
 
 När du har inkluderat alla tre av de tillägg som nämns ovan i det tagghanterade projektet kan du fortsätta på ett av två sätt:
 
