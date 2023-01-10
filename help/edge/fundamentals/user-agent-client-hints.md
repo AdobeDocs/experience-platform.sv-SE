@@ -2,13 +2,13 @@
 title: Klienttips för användaragent
 description: Lär dig hur användaragentens klienttips fungerar i Web SDK
 keywords: användaragent;klienttips; sträng; användaragentsträng; Låg entropi. hög entropi
-source-git-commit: 6c974d1a646ff1f3a8f7ad9d67a6840391fc739e
+exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
+source-git-commit: 4a2ae40fc64c4340ddb05db881c2176bb2aedc46
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1065'
 ht-degree: 2%
 
 ---
-
 
 # Klienttips för användaragent
 
@@ -116,13 +116,7 @@ Om du inte aktiverar klienttips för hög entropi i din miljö fungerar inte rap
 
 ### Adobe Analytics rapporterar beroende av klienttips för hög entropi {#analytics}
 
-Följande Adobe Analytics-rapporter fungerar inte när tips för hög entropi-klient är inaktiverade.
-
-* [Webbläsare](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser.html)
-* [Typ av webbläsare](https://experienceleague.adobe.com/docs/analytics/components/dimensions/browser-type.html)
-* [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html)
-* [Operativsystemstyper](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-system-types.html)
-* [Mobila dimensioner](https://experienceleague.adobe.com/docs/analytics/components/dimensions/mobile-dimensions.html)
+The [Operativsystem](https://experienceleague.adobe.com/docs/analytics/components/dimensions/operating-systems.html) -dimensionen inkluderar operativsystemsversion som lagras som ett högt entropi-klienttips. Om tips för klienter med hög entropi inte är aktiverat kan det bero på att operativsystemets version inte stämmer för träffar som samlats in från Chromium-webbläsare.
 
 ### Audience Manager förlitar sig på klienttips med hög entropi {#aam}
 
