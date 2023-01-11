@@ -5,7 +5,7 @@ title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Fl
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: 249f2076dd55a589c638648eb25214036a47c05a
+source-git-commit: b1021f985626157895d7350e941238c3197db0b6
 workflow-type: tm+mt
 source-wordcount: '1224'
 ht-degree: 1%
@@ -36,7 +36,7 @@ Det första steget i att använda API:er för att komma åt [!DNL Data Landing Z
 **API-format**
 
 ```http
-GET /connectors/landingzone?type=user_drop_zone
+GET /data/foundation/connectors/landingzone?type=user_drop_zone
 ```
 
 | Sidhuvuden | Beskrivning |
