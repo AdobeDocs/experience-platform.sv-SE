@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '2695'
+source-wordcount: '2718'
 ht-degree: 1%
 
 ---
@@ -50,7 +50,7 @@ När du har skapat en ERD för att identifiera de enheter du vill ta med [!DNL P
 | Kategori | Beskrivning |
 | --- | --- |
 | Profilenheter | Profilenheter representerar attribut som relaterar till en enskild person, vanligtvis en kund. Enheter som omfattas av denna kategori bör representeras av scheman baserade på **[!DNL XDM Individual Profile]class**. |
-| Sök enheter | Sökentiteter representerar begrepp som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som omfattas av denna kategori bör representeras av scheman baserade på **egna klasser**. |
+| Sök enheter | Sökentiteter representerar begrepp som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som omfattas av denna kategori bör representeras av scheman baserade på **egna klasser** och är länkade till profiler och händelser via [schemarelationer](../tutorials/relationship-ui.md). |
 | Händelseentiteter | Händelseenheter representerar koncept som relaterar till åtgärder som en kund kan vidta, systemhändelser eller andra koncept där du kan vilja spåra ändringar över tid. Enheter som omfattas av denna kategori bör representeras av scheman baserade på **[!DNL XDM ExperienceEvent]class**. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -186,7 +186,7 @@ Kategorin som en entitet har sorterats under bör avgöra vilken XDM-klass du ba
 
 * Profilentiteter bör använda [!DNL XDM Individual Profile] klassen.
 * Händelseenheter bör använda [!DNL XDM ExperienceEvent] klassen.
-* Sökentiteter bör använda anpassade XDM-klasser som definieras av organisationen.
+* Sökentiteter bör använda anpassade XDM-klasser som definieras av organisationen. Profil- och händelseentiteter kan sedan referera till dessa sökentiteter via schemarelationer.
 
 >[!NOTE]
 >

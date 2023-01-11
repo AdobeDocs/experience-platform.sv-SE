@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 737a67b7e30f770d65751b1a924d8378af8bde52
 workflow-type: tm+mt
-source-wordcount: '2046'
+source-wordcount: '2098'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Förhållandet mellan kundprofilen i realtid och andra tjänster inom Experience
 
 ### Profilens enhetskomposition
 
-En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. Den primära enheten består av egenskaper, beteenden och segmentmedlemskap i en profil. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
+En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. När det gäller Experience Platform är den primära enheten vanligtvis en **profilentitet**, som består av egenskaper, beteenden och segmentmedlemskap för en enskild person. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
 
 - **Dimensionell enhet**: Den entitet som används för att förenkla datamodelleringsprocessen för information som delas mellan händelser eller profilposter. Detta kallas även sökentitet eller klassificeringsenhet.
 - **B2B-enhet**: Enheter som beskriver profilens relation till konton och affärsmöjligheter för företag.
@@ -36,6 +36,11 @@ En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** 
 >[!IMPORTANT]
 >
 >Eftersom dimensionella företag och B2B-företag bara finns utanför den primära enheten används dessa endast för gruppsegmentering.
+
+Dimensionerings- och B2B-enheter länkas till den primära enheten via **schemarelationer**. Mer information finns i följande dokumentation:
+
+- [Skapa en 1:1-schemarelation för sökentiteter](../xdm/tutorials/relationship-ui.md)
+- [Skapa en många-till-ett-schemarelation för B2B-entiteter](../xdm/tutorials/relationship-b2b.md)
 
 ### Profildatalager
 

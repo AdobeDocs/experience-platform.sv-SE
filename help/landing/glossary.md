@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '7913'
+source-wordcount: '7923'
 ht-degree: 0%
 
 ---
@@ -327,7 +327,7 @@ ht-degree: 0%
 
 **Bibliotek**: När det gäller taggar är ett bibliotek en uppsättning affärslogik som innehåller instruktioner för hur taggbiblioteket ska fungera på klientenheten.
 
-**Sök enheter**: I samband med datamodellering representerar sökenheter koncept som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som tillhör den här kategorin ska representeras av scheman som baseras på anpassade XDM-klasser (Experience Data Model).
+**Sök enheter**: I samband med datamodellering representerar sökenheter koncept som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som tillhör den här kategorin ska representeras av scheman som baseras på anpassade XDM-klasser (Experience Data Model) och länkas till en profilenhet via en [schemarelation](../xdm/tutorials/relationship-ui.md).
 
 ## M
 

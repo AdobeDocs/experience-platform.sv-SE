@@ -4,9 +4,9 @@ title: StandardguarDRAG för Real-time Customer Data Platform B2B Edition
 type: Documentation
 description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardgränser för användning och frekvens som hjälper dig att modellera data för optimala systemprestanda med Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '1602'
+source-wordcount: '1651'
 ht-degree: 1%
 
 ---
@@ -117,14 +117,22 @@ I det här avsnittet finns mer information om begränsningarna i det här dokume
 
 ### Enhetstyper
 
-The [!DNL Profile] lagringsdatamodellen består av två huvudenhetstyper:
+The [!DNL Profile] lagringsdatamodellen består av två huvudenhetstyper: [primära enheter](#primary-entity) och [dimensionsenheter](#dimension-entity).
 
-* **Primär entitet:** En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionsschemat för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
+#### Primär entitet
 
-   Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!DNL XDM Individual Profile], medan tidsseriedata, som också kallas&quot;händelsedata&quot;, modelleras med [!DNL XDM ExperienceEvent]. När data från register och tidsserier hämtas i Adobe Experience Platform utlöses de [!DNL Real-Time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
+En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionsschemat för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
 
-   ![](../profile/images/guardrails/profile-entity.png)
+Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!DNL XDM Individual Profile], medan tidsseriedata, som också kallas&quot;händelsedata&quot;, modelleras med [!DNL XDM ExperienceEvent]. När data från register och tidsserier hämtas i Adobe Experience Platform utlöses de [!DNL Real-Time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 
-* **Dimension:** Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa segment på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering av flera enheter](../segmentation/multi-entity-segmentation.md). Din organisation kan också definiera XDM-klasser för att beskriva andra saker än enskilda, t.ex. butiker, produkter eller egenskaper. Dessa[!DNL XDM Individual Profile] scheman kallas&quot;dimensionsenheter&quot; och innehåller inte tidsseriedata. Dimensioner tillhandahåller sökdata som underlättar och förenklar definitioner av flerenhetssegment och måste vara tillräckligt små för att segmenteringsmotorn ska kunna läsa in hela datauppsättningen i minnet för optimal bearbetning (snabbpunktssökning).
+![En infografik som visar skillnaderna mellan postdata och tidsseriedata.](../profile/images/guardrails/profile-entity.png)
 
-   ![](../profile/images/guardrails/profile-and-dimension-entities.png)
+#### Dimension
+
+Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa segment på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering av flera enheter](../segmentation/multi-entity-segmentation.md).
+
+Din organisation kan också definiera XDM-klasser för att beskriva andra saker än enskilda, t.ex. butiker, produkter eller egenskaper. Dessa[!DNL XDM Individual Profile] scheman kallas&quot;dimensionsenheter&quot; (kallas även&quot;uppslagsenheter&quot;) och innehåller inte tidsseriedata. Scheman som representerar dimensionsenheter är länkade till profilentiteter genom användning av [schemarelationer](../xdm/tutorials/relationship-ui.md).
+
+Dimensioner tillhandahåller sökdata som underlättar och förenklar definitioner av flerenhetssegment och måste vara tillräckligt små för att segmenteringsmotorn ska kunna läsa in hela datauppsättningen i minnet för optimal bearbetning (snabbpunktssökning).
+
+![En infografik som visar att en profilentitet består av dimensionsenheter.](../profile/images/guardrails/profile-and-dimension-entities.png)
