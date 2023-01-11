@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för schemalagda frågor
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 2ad86b0cf3cdc89825501b94bd609df751026420
 workflow-type: tm+mt
-source-wordcount: '1113'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -311,7 +311,7 @@ Begäran från PATCH stöder två olika sökvägar: `/state` och `/schedule/sche
 
 ### Uppdatera status för schemalagd fråga
 
-Du kan använda `/state` för att uppdatera tillståndet för den valda schemalagda frågan - AKTIVERAD eller INAKTIVERAD. Om du vill uppdatera läget måste du ange värdet som `enable` eller `disable`.
+Du kan uppdatera tillståndet för den valda schemalagda frågan genom att ställa in `path` egenskap till `/state` och `value` egenskap som antingen `enable` eller `disable`.
 
 **API-format**
 
@@ -347,6 +347,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
+| `op` | Åtgärden som ska utföras i frågeschemat. Godkänt värde är `replace`. |
 | `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till `/state`. |
 | `value` | Det uppdaterade värdet för `/state`. Värdet kan antingen anges som `enable` eller `disable` för att aktivera eller inaktivera den schemalagda frågan. |
 
@@ -363,7 +364,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Uppdatera schemalagt frågeschema
 
-Du kan använda `/schedule/schedule` för att uppdatera schemat för cron för den schemalagda frågan. Mer information om kundscheman finns i [cron, uttrycksformat](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) dokumentation.
+Du kan uppdatera cron-schemat för den schemalagda frågan genom att ange `path` egenskap till `/schedule/schedule` i begärandetexten. Mer information om kundscheman finns i [cron, uttrycksformat](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) dokumentation.
 
 **API-format**
 
@@ -398,6 +399,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
+| `op` | Åtgärden som ska utföras i frågeschemat. Godkänt värde är `replace`. |
 | `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till `/schedule/schedule`. |
 | `value` | Det uppdaterade värdet för `/schedule`. Värdet måste anges i form av ett kronschema. I det här exemplet körs den schemalagda frågan varje timme med 45 minuters markering. |
 

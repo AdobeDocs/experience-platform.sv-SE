@@ -2,9 +2,10 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;alert;
 title: API-slutpunkt för aviseringsprenumerationer
 description: Den här handboken innehåller exempel på HTTP-begäranden och svar för de olika API-anrop som du kan göra till slutpunkten för aviseringsprenumerationer med hjälp av API:t för frågetjänsten.
-source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
+exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
+source-git-commit: 8673b6ceb9386677171334ce99d39c93e5e8159c
 workflow-type: tm+mt
-source-wordcount: '2289'
+source-wordcount: '2668'
 ht-degree: 0%
 
 ---
@@ -49,7 +50,23 @@ Hämta en lista över alla aviseringar för en organisationssandlåda genom att 
 
 ```http
 GET /alert-subscriptions
+GET /alert-subscriptions?{QUERY_PARAMETERS}
 ```
+
+| Egenskap | Beskrivning |
+| --------- | ----------- |
+| `{QUERY_PARAMETERS}` | (Valfritt) Parametrar har lagts till i den begärda sökvägen som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). De tillgängliga parametrarna visas nedan. |
+
+**Frågeparametrar**
+
+Här följer en lista med tillgängliga frågeparametrar för att lista frågor. Alla dessa parametrar är valfria. Om du anropar den här slutpunkten utan parametrar hämtas alla frågor som är tillgängliga för din organisation.
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `orderby` | Fältet som anger resultatordningen. De fält som stöds är `created` och `updated`. Lägg till egenskapsnamnet med `+` för stigande och `-` för fallande ordning. Standardvärdet är `-created`. Observera att plustecknet (`+`) måste rymmas med `%2B`. Till exempel `%2Bcreated` är värdet för en stigande skapad order. |
+| `pagesize` | Använd den här parametern för att styra antalet poster som du vill hämta från API-anropet per sida. Standardgränsen är den maximala mängden på 50 poster per sida. |
+| `page` | Ange sidnumret för de returnerade resultat som du vill se posterna för. |
+| `property` | Filtrera resultaten baserat på valda fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. Följande egenskaper tillåter filtrering: <ul><li>id</li><li>assetId</li><li>status</li><li>alertType</li></ul> Operatorer som stöds är `==` (lika med). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` kommer att returnera varningen med ett matchande ID. |
 
 **Begäran**
 
@@ -283,7 +300,7 @@ GET /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | Parametrar | Beskrivning |
 | -------- | ----------- |
-| `ALERT_TYPE` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
+| `ALERT_TYPE` | This property describes the state of query execution that trigger an alert. Svaret innehåller endast prenumerationsinformation för aviseringar av den här typen. Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `QUERY_ID` | Den unika identifieraren för frågan som ska uppdateras. |
 | `SCHEDULE_ID` | Den unika identifieraren för den schemalagda frågan som ska uppdateras. |
 
@@ -370,6 +387,10 @@ GET /alert-subscriptions/user-subscriptions/{EMAIL_ID}
 | Parametrar | Beskrivning |
 | -------- | ----------- |
 | `{EMAIL_ID}` | En e-postadress som är registrerad för ett Adobe-konto används för att identifiera de användare som prenumererar på aviseringar. |
+| `orderby` | Fältet som anger resultatordningen. De fält som stöds är `created` och `updated`. Lägg till egenskapsnamnet med `+` för stigande och `-` för fallande ordning. Standardvärdet är `-created`. Observera att plustecknet (`+`) måste rymmas med `%2B`. Till exempel `%2Bcreated` är värdet för en stigande skapad order. |
+| `pagesize` | Använd den här parametern för att styra antalet poster som du vill hämta från API-anropet per sida. Standardgränsen är den maximala mängden på 50 poster per sida. |
+| `page` | Ange sidnumret för de returnerade resultat som du vill se posterna för. |
+| `property` | Filtrera resultaten baserat på valda fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. Följande egenskaper tillåter filtrering: <ul><li>id</li><li>assetId</li><li>status</li><li>alertType</li></ul> Operatorer som stöds är `==` (lika med). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` kommer att returnera varningen med ett matchande ID. |
 
 **Begäran**
 

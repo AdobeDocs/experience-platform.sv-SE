@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågar API-slutpunkt
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: e0287076cc9f1a843d6e3f107359263cd98651e6
+source-git-commit: 08e19149a84273231c6261d2a4e09584dfb6e38d
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '868'
 ht-degree: 0%
 
 ---
@@ -140,9 +140,9 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
         "dbName": "prod:all",
-        "sql": "SELECT account_balance FROM user_data WHERE $user_id;",
+        "sql": "SELECT account_balance FROM user_data WHERE user_id='$user_id';",
         "queryParameters": {
-            $user_id : {USER_ID}
+            user_id : {USER_ID}
             }
         "name": "Sample Query",
         "description": "Sample Description"
@@ -295,9 +295,9 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 >
 >Du kan använda värdet för `_links.cancel` till [avbryt din skapade fråga](#cancel-a-query).
 
-### Avbryt en fråga
+### Avbryt eller mjuka borttagningar av en fråga
 
-Du kan begära att få ta bort en viss fråga genom att göra en PATCH-förfrågan till `/queries` slutpunkt och som tillhandahåller frågans `id` värdet i begärandesökvägen.
+Du kan begära att en viss fråga avbryts eller tas bort på skärmen genom att göra en PATCH-förfrågan till `/queries` slutpunkt och som tillhandahåller frågans `id` värdet i begärandesökvägen.
 
 **API-format**
 
@@ -305,9 +305,9 @@ Du kan begära att få ta bort en viss fråga genom att göra en PATCH-förfråg
 PATCH /queries/{QUERY_ID}
 ```
 
-| Egenskap | Beskrivning |
+| Parameter | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | The `id` värdet på frågan som du vill avbryta. |
+| `{QUERY_ID}` | The `id` värdet för frågan som du vill utföra åtgärden på. |
 
 
 **Begäran**
@@ -328,7 +328,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `op` | Om du vill avbryta frågan måste du ange parametern op med värdet `cancel `. |
+| `op` | Den typ av åtgärd som ska utföras på resursen. Godkända värden är `cancel` och `soft_delete`. Om du vill avbryta frågan måste du ange parametern op med värdet `cancel `. Observera att en mjuk borttagningsåtgärd hindrar frågan från att returneras vid GET-begäranden, men tar inte bort den från systemet. |
 
 **Svar**
 
