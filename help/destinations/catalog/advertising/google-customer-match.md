@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: b189f1b0fe29ebefb3cba9c4f820022a772ce297
+source-git-commit: d6b34f3bd3a432e1cf7d3dcce242934391b65d78
 workflow-type: tm+mt
-source-wordcount: '1745'
+source-wordcount: '1736'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[Google kundmatchning](https://support.google.com/google-ads/answer/6379332?hl=en) Med kan ni använda era online- och offlinedata för att nå ut till och återinteragera med era kunder via Google egna och driftsatta egendomar, som: [!DNL Search], [!DNL Shopping], [!DNL Gmail]och [!DNL YouTube].
+[[!DNL Google Customer Match]](https://support.google.com/google-ads/answer/6379332?hl=en) Med kan ni använda era online- och offlinedata för att nå ut till och återinteragera med era kunder via Google egna och driftsatta egendomar, som: [!DNL Search], [!DNL Shopping], [!DNL Gmail]och [!DNL YouTube].
 
 ![Google kundmatchningsmål i Adobe Experience Platform användargränssnitt.](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
@@ -69,7 +69,7 @@ Kontrollera sedan att [!DNL Google] kontot har konfigurerats för [!DNL Standard
 
 ### Tillåtelselista {#allowlist}
 
-Innan du skapar [!DNL Google Customer Match] mål i Experience Platform, se till att [!DNL Google Ads] kontot följer [Google kundmatchningspolicy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+Innan du skapar [!DNL Google Customer Match] mål i Experience Platform, se till att [!DNL Google Ads] kontot följer [[!DNL Google Customer Match] policy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
 Kunder med kompatibla konton tillåts automatiskt listade av Google.
 
@@ -96,10 +96,10 @@ Du kan hash-koda e-postadresser innan du hämtar dem till Adobe Experience Platf
 
 Mer information om Google hashkrav och andra begränsningar för aktivering finns i följande avsnitt i Google dokumentation:
 
-* [[!DNL Customer Match] med e-postadress, adress eller användar-ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id)
-* [[!DNL Customer Match] överväganden](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_considerations)
-* [Kundmatchning med telefonnummer](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_phone_number)
-* [Kundmatchning med mobila enhets-ID:n](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_mobile_device_ids)
+* [[!DNL Customer Match] med e-postadress, adress eller användar-ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_email_address_address_or_user_id)
+* [[!DNL Customer Match] överväganden](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_considerations)
+* [[!DNL Customer Match] med telefonnummer](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_phone_number)
+* [[!DNL Customer Match] med mobilenhets-ID](https://developers.google.com/google-ads/api/docs/remarketing/audience-types/customer-match#customer_match_with_mobile_device_ids)
 
 
 Om du vill veta mer om hur du importerar e-postadresser i Experience Platform kan du läsa [batchvis hantering - översikt](../../../ingestion/batch-ingestion/overview.md) och [översikt över direktuppspelning](../../../ingestion/streaming-ingestion/overview.md).
@@ -209,5 +209,5 @@ Det här felet inträffar när kundkonton inte uppfyller [krav](#google-account-
 
 ## Ytterligare resurser {#additional-resources}
 
-* [Integrera Google kundmatchning - videosjälvstudiekurs](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
+* [Integrera [!DNL Google Customer Match] - Videosjälvstudiekurs](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
 
