@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Namnavstånd i Experience Data Model (XDM)
 description: Lär dig hur namnavstånd i Experience Data Model (XDM) gör att du kan utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs.
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '627'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ I följande avsnitt visas hur namnutrymmen tilldelas i XDM-syntax.
 
 Standardsyntaxen för XDM ger insikt i hur namnutrymmen representeras i scheman (inklusive [hur de översätts i Adobe Experience Platform](#compatibility)).
 
-Standard-XDM använder [JSON-LD](https://json-ld.org/) syntax för att tilldela namnutrymmen till fält. Det här namnutrymmet kommer i form av en URI (som `https://ns.adobe.com/xdm` för `xdm` namnutrymme), eller som ett kortskriftsprefix som har konfigurerats i `@context` för ett schema.
+Standard-XDM använder [JSON-LD](https://www.w3.org/TR/json-ld11/#basic-concepts) syntax för att tilldela namnutrymmen till fält. Det här namnutrymmet kommer i form av en URI (som `https://ns.adobe.com/xdm` för `xdm` namnutrymme), eller som ett kortskriftsprefix som har konfigurerats i `@context` för ett schema.
 
 Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undantag av `@id` (den unika identifieraren enligt JSON-LD-specifikationen), varje fält under `properties` börjar med ett namnutrymme och slutar med fältnamnet. Om du använder ett kortskriftsprefix som definieras under `@context`avgränsas namnutrymmet och fältnamnet med ett kolon (`:`). Om du inte använder ett prefix avgränsas namnutrymmet och fältnamnet med ett snedstreck (`/`).
 
@@ -75,7 +75,7 @@ Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undan
 | Egenskap | Beskrivning |
 | --- | --- |
 | `@context` | Ett objekt som definierar kortskriftsprefixen som kan användas i stället för ett fullständigt namnområdes-URI under `properties`. |
-| `@id` | En unik identifierare för posten som den definieras av [JSON-LD spec](https://json-ld.org/spec/latest/json-ld/#node-identifiers). |
+| `@id` | En unik identifierare för posten som den definieras av [JSON-LD spec](https://www.w3.org/TR/json-ld11/#node-identifiers). |
 | `xdm:sku` | Ett exempel på ett fält där ett kortskriftsprefix används för att ange ett namnutrymme. I detta fall `xdm` är namnutrymmet (`https://ns.adobe.com/xdm`), och `sku` är fältnamnet. |
 | `https://ns.adobe.com/xdm/channels/application` | Ett exempel på ett fält som använder den fullständiga namnområdes-URI:n. I detta fall `https://ns.adobe.com/xdm/channels` är namnutrymmet, och `application` är fältnamnet. |
 | `https://ns.adobe.com/vendorA/product/stockNumber` | Fält som tillhandahålls av leverantörsresurser använder sina egna unika namnutrymmen. I det här exemplet `https://ns.adobe.com/vendorA/product` är leverantörens namnutrymme, och `stockNumber` är fältnamnet. |

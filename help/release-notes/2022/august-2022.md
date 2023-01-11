@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '2081'
+source-wordcount: '2062'
 ht-degree: 1%
 
 ---
@@ -116,8 +116,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
-| Globalt schema | [[!UICONTROL AJO Entity Schema]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | Beskriver normaliserade enheter för Adobe Journey Optimizer. |
-| Klass | [[!UICONTROL AJO Execution Entities]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-execution-entity.schema.json) | Beskriver Adobe Journey Optimizer exekveringsenheter som kan användas i segmentering. |
+| Klass | [[!UICONTROL AJO Entity Class]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | En postbaserad klass för att skapa uppslagsscheman för Adobe Journey Optimizer. |
 | Fältgrupp | [[!UICONTROL Workfront Work Objects]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | En omslutningsfältgrupp som refererar till alla objektspecifika fältgrupper på den lägre nivån för Adobe Workfront. |
 
 {style=&quot;table-layout:auto&quot;}

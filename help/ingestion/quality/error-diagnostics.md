@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Diagnostik för dataöverföringsfel hämtas
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '981'
 ht-degree: 1%
 
 ---
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **Svar**
 
-Ett lyckat svar returnerar JSON-objekt som innehåller `path` objekt som anger var diagnostikerna sparades. Svaret returnerar `path` objekt i [JSON-rader](https://jsonlines.org/) format.
+Ett lyckat svar returnerar JSON-objekt som innehåller `path` objekt som anger var diagnostikerna sparades. Svaret returnerar `path` objekt i [JSON-rader](https://jsonlines.readthedocs.io/en/latest/) format.
 
 ```json
 {"path": "F1.json"}
