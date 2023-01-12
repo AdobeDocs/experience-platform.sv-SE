@@ -4,9 +4,9 @@ title: Standardvarningsregler
 description: Detta dokument innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 6650894c145fd1f42731fd5ed8aeb6e38062aa61
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '961'
 ht-degree: 0%
 
 ---
@@ -73,7 +73,7 @@ Följande varningsregler gäller [Segmenteringstjänst](../../segmentation/home.
 | --- | --- | --- |
 | Information om utvärderingsjobb för segment | Start för segmentjobb | Den här varningen utlöses när ett segmentutvärderingsjobb börjar bearbeta data. |
 | Information om utvärderingsjobb för segment | Segmentjobb lyckades | Den här varningen utlöses när ett segmentutvärderingsjobb har slutförts. |
-| Förseningar, fel och fel i segmentutvärderingsjobb | Fördröjning för segmentjobb | Den här varningen utlöses när det tar längre tid än 150 minuter att slutföra ett segmentutvärderingsjobb. |
+| Förseningar, fel och fel i segmentutvärderingsjobb | Fördröjning för segmentjobb | Den här varningen utlöses när det tar längre tid än 150 minuter att slutföra ett segmentutvärderingsjobb. <br> En av följande statusar visas: <br>- FIRING - Villkoret för fel eller fördröjning har uppfyllts (Tänk på det i ett AKTIVT läge). <br>- INAKTIVT - Villkoret har inte uppfyllts eller inte lösts (Överväg det i ett RESLVERAT tillstånd). |
 | Förseningar, fel och fel i segmentutvärderingsjobb | Fel i segmentjobb | Den här varningen utlöses när ett segmentutvärderingsjobb resulterar i ett fel. |
 | Förseningar, fel och fel i segmentutvärderingsjobb | Segmentdefinition inaktiverad | Den här varningen utlöses när en segmentdefinition inaktiveras på grund av ett internt fel. Detta ger automatiskt ett krigsrum för en Adobe-tekniker att undersöka problemet. Denna varning är endast avsedd att vara informativ och kräver inga åtgärder från dig. |
 
