@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: b67349baa909cc59f3ff1d7aac22f7926f2b36ff
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '4070'
 ht-degree: 0%
@@ -76,7 +76,7 @@ Den största nackdelen med att använda `identityMap` är att identiteter blir i
 
 >[!NOTE]
 >
->Ett schema som använder `identityMap` kan användas som ett källschema i en relation, men kan inte användas som ett målschema. Detta beror på att alla målscheman måste ha en synlig identitet som kan mappas i ett referensfält i källschemat. Se användargränssnittets guide på [relationer](../tutorials/relationship-ui.md) för mer information om kraven för käll- och målscheman.
+>Ett schema som använder `identityMap` kan användas som ett källschema i en relation, men kan inte användas som ett referensschema. Detta beror på att alla referensscheman måste ha en synlig identitet som kan mappas i ett referensfält i källschemat. Se användargränssnittets guide på [relationer](../tutorials/relationship-ui.md) Mer information om kraven för käll- och referensscheman.
 
 Men identitetskartor kan vara särskilt användbara om du samlar in data från källor som lagrar identiteter tillsammans (till exempel [!DNL Airship] eller Adobe Audience Manager) eller när det finns ett varierande antal identiteter för ett schema. Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 

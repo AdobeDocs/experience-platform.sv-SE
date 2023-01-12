@@ -2,7 +2,7 @@
 title: Användningsexempel för segmentering för Real-time Customer Data Platform B2B Edition
 description: En översikt över de olika användningsområdena för Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '1191'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Bilden nedan visar förhållandet mellan de B2B-klasser som finns i Real-Time CD
 
 Eftersom din datamodell kan vara komplicerad kan du använda användargränssnittet för plattformen för att visa en mer detaljerad visuell representation av din datamodell för att hitta relevanta attribut för ditt användningsfall. Börja med att gå till användargränssnittet för plattformen och välj Scheman i den vänstra navigeringen.
 
-Välj lämpligt schema i listan och välj lämplig relation i listan [!UICONTROL Composition] sidospår. I exemplet nedan visar valet av &quot;Person&quot;-relation vilket attribut i det aktuella schemat som refererar till det relaterade &quot;Person&quot;-schemat (om det är källschemat i relationen) eller refereras av &quot;Person&quot;-schemat (om det är målschemat i relationen).
+Välj lämpligt schema i listan och välj lämplig relation i listan [!UICONTROL Composition] sidospår. I exemplet nedan visar valet av &quot;Person&quot;-relation vilket attribut i det aktuella schemat som refererar till det relaterade &quot;Person&quot;-schemat (om det är källschemat i relationen) eller refereras av &quot;Person&quot;-schemat (om det är referensschemat i relationen).
 
 ![källnyckelsexempel med personrelationen på arbetsytan för schemat](../assets/segmentation/source-key-schema-relationship-example.png)
 

@@ -5,9 +5,9 @@ title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtry
 
 Om du inspekterar ett schema som innehåller ett relationsfält visas fältet i den vänstra listen under **[!UICONTROL Relationships]**. Markera relationsfältets namn i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
 
-Relationsfält markeras också unikt på arbetsytan och visar namnet på målschemat som fältet refererar till. Om du väljer relationsfältets namn kan du visa identitetsnamnområdet för målschemats primära identitet i den högra listen.
+Relationsfält markeras också unikt på arbetsytan och visar namnet på referensschemat som fältet länkar till. Om du väljer relationsfältets namn kan du visa identitetsnamnområdet för referensschemats primära identitet i den högra listen.
 
 ![](../images/ui/explore/relationship-field.png)
 

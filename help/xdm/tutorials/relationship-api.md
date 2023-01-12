@@ -4,9 +4,9 @@ title: Definiera en relation mellan två scheman med API:t för schemaregister
 description: Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med API:t för schemaregistret.
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1398'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,11 @@ ht-degree: 0%
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Definiera dessa relationer inom strukturen för din [!DNL Experience Data Model] (XDM)-scheman gör att ni kan få komplexa insikter om era kunddata.
 
-När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
+När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. För att upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i en **källschema**, som anger identiteten för en separat **referensschema**.
+
+>[!NOTE]
+>
+>API:t för schemaregister refererar till referensscheman som&quot;målscheman&quot;. Dessa ska inte blandas ihop med målscheman i [Uppsättningar för datapunktsmappning](../../data-prep/mapping-set.md) eller scheman för [målanslutningar](../../destinations/home.md).
 
 Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
@@ -30,11 +34,11 @@ Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experien
 
 Innan du startar den här självstudiekursen bör du gå igenom [utvecklarhandbok](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa [!DNL Schema Registry] API. Detta inkluderar `{TENANT_ID}`, begreppet &quot;behållare&quot; och de rubriker som krävs för att göra en förfrågan (med särskild uppmärksamhet på [!DNL Accept] header och dess möjliga värden).
 
-## Definiera en källa och ett målschema {#define-schemas}
+## Definiera en källa och ett referensschema {#define-schemas}
 
 Du förväntas redan ha skapat de två scheman som ska definieras i relationen. Den här självstudien skapar en relation mellan medlemmar i en organisations aktuella lojalitetsprogram (definieras i en[!DNL Loyalty Members]&quot; schema) och deras favorithotell (definieras i en[!DNL Hotels]&quot; schema).
 
-Schemarelationer representeras av en **källschema** ha ett fält som refererar till ett annat fält i ett **målschema**. I följande steg: &quot;[!DNL Loyalty Members]&quot; blir källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
+Schemarelationer representeras av en **källschema** ha ett fält som refererar till ett annat fält i ett **referensschema**. I följande steg: &quot;[!DNL Loyalty Members]&quot; blir källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som referensschema.
 
 >[!IMPORTANT]
 >
@@ -108,13 +112,13 @@ Spela in `$id` värden för de två scheman som du vill definiera en relation me
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry]fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha en `type` värde för `string`.
+I [!DNL Schema Registry]fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett referensschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en schemafältgrupp med det nya fältet och lägga till den i schemat. Det nya fältet måste ha en `type` värde för `string`.
 
 >[!IMPORTANT]
 >
 >Källschemat kan inte använda sin primära identitet som referensfält.
 
-I den här självstudiekursen är målschemat &quot;[!DNL Hotels]&quot; innehåller `hotelId` fält som fungerar som schemats primära identitet. Källschemat[!DNL Loyalty Members]&quot; har inget dedikerat fält att använda som referens till `hotelId`och därför måste en anpassad fältgrupp skapas för att ett nytt fält ska kunna läggas till i schemat: `favoriteHotel`.
+I den här självstudiekursen finns referensschemat &quot;[!DNL Hotels]&quot; innehåller `hotelId` fält som fungerar som schemats primära identitet. Källschemat[!DNL Loyalty Members]&quot; har inget dedikerat fält att använda som referens till `hotelId`och därför måste en anpassad fältgrupp skapas för att ett nytt fält ska kunna läggas till i schemat: `favoriteHotel`.
 
 >[!NOTE]
 >
@@ -378,8 +382,8 @@ curl -X POST \
 | `@type` | Den typ av beskrivning som definieras. För referensbeskrivare måste värdet vara `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | The `$id` Källschemats URL. |
 | `xdm:sourceVersion` | Källschemats versionsnummer. |
-| `sourceProperty` | Sökvägen till fältet i källschemat som ska användas för att referera till målschemats primära identitet. |
-| `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnområde som målschemats primära identitet. Se [Översikt över namnutrymmet identity](../../identity-service/home.md) för mer information. |
+| `sourceProperty` | Sökvägen till fältet i källschemat som ska användas för att referera till referensschemats primära identitet. |
+| `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnutrymme som referensschemats primära identitet. Se [Översikt över namnutrymmet identity](../../identity-service/home.md) för mer information. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -401,7 +405,7 @@ Ett lyckat svar returnerar information om den nya referensbeskrivningen för kä
 
 ## Skapa en relationsbeskrivning {#create-descriptor}
 
-Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensidentitetsbeskrivning för rätt fält i källschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
+Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett referensschema. När du har definierat en referensidentitetsbeskrivning för rätt fält i källschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkt.
 
 **API-format**
 
@@ -411,7 +415,7 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran skapar en ny relationsbeskrivning med &quot;[!DNL Loyalty Members]&quot; som källschema och &quot;[!DNL Hotels]&quot; som målschema.
+Följande begäran skapar en ny relationsbeskrivning med &quot;[!DNL Loyalty Members]&quot; som källschema och &quot;[!DNL Hotels]&quot; som referensschema.
 
 ```shell
 curl -X POST \
@@ -438,9 +442,9 @@ curl -X POST \
 | `xdm:sourceSchema` | The `$id` Källschemats URL. |
 | `xdm:sourceVersion` | Källschemats versionsnummer. |
 | `xdm:sourceProperty` | Sökvägen till referensfältet i källschemat. |
-| `xdm:destinationSchema` | The `$id` Målschemats URL. |
-| `xdm:destinationVersion` | Målschemats versionsnummer. |
-| `xdm:destinationProperty` | Sökvägen till det primära identitetsfältet i målschemat. |
+| `xdm:destinationSchema` | The `$id` URL för referensschemat. |
+| `xdm:destinationVersion` | Referensschemats versionsnummer. |
+| `xdm:destinationProperty` | Sökvägen till det primära identitetsfältet i referensschemat. |
 
 {style=&quot;table-layout:auto&quot;}
 

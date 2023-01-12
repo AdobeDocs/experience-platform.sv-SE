@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
 source-wordcount: '1898'
 ht-degree: 0%
@@ -385,15 +385,15 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade 
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat där relationen definieras. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med&quot;egenskaper&quot; i sökvägen (till exempel&quot;/personalEmail/address&quot; istället för&quot;/properties/personalEmail/properties/address&quot;). |
-| `xdm:destinationSchema` | The `$id` URI för målschemat som den här beskrivningen definierar en relation med. |
-| `xdm:destinationVersion` | Huvudversionen av målschemat. |
-| `xdm:destinationProperty` | Valfri sökväg till ett målfält i målschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
+| `xdm:destinationSchema` | The `$id` URI för referensschemat som den här beskrivningen definierar en relation med. |
+| `xdm:destinationVersion` | Huvudversionen av referensschemat. |
+| `xdm:destinationProperty` | Valfri sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
 
 {style=&quot;table-layout:auto&quot;}
 
 #### Referens för identitetsbeskrivning
 
-Referensidentitetsbeskrivningar ger en referenskontext till den primära identiteten för ett schemafält, vilket gör att det kan refereras till av fält i andra scheman. Målschemat måste redan ha ett primärt identitetsfält definierat innan det kan refereras till av andra scheman via den här beskrivningen.
+Referensidentitetsbeskrivningar ger en referenskontext till den primära identiteten för ett schemafält, vilket gör att det kan refereras till av fält i andra scheman. Referensschemat måste redan ha ett primärt identitetsfält definierat innan det kan refereras till av andra scheman via den här beskrivningen.
 
 ```json
 {
@@ -410,7 +410,7 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 | `@type` | Den typ av beskrivning som definieras. För en referensidentitetsbeskrivning måste det här värdet anges till `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökväg till fältet i källschemat som ska användas för att referera till målschemat. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
+| `xdm:sourceProperty` | Sökväg till fältet i källschemat som ska användas för att referera till referensschemat. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
 | `xdm:identityNamespace` | Identitetsnamnområdeskoden för egenskapen source. |
 
 {style=&quot;table-layout:auto&quot;}

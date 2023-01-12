@@ -2,9 +2,9 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 1c2aabaaeadb41631fc75783db739bb34a3f53cc
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1358'
 ht-degree: 0%
 
 ---
@@ -40,11 +40,11 @@ Den här självstudiekursen kräver en fungerande förståelse av [!DNL XDM Syst
 * [Grunderna för schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
 * [Skapa ett schema med [!DNL Schema Editor]](create-schema-ui.md): En självstudiekurs som beskriver grunderna i hur du skapar och redigerar scheman i användargränssnittet.
 
-## Definiera en källa och ett målschema
+## Definiera en källa och ett referensschema
 
 Du förväntas redan ha skapat de två scheman som ska definieras i relationen. I den här självstudiekursen skapas en relation mellan affärsmöjligheter (definieras i en[!DNL Opportunities]&quot; schema) och deras associerade företagskonto (definieras i en[!DNL Accounts]&quot; schema).
 
-Schemarelationer representeras av ett dedikerat fält i en **källschema** som refererar till det primära identitetsfältet för en **målschema**. I följande steg: &quot;[!DNL Opportunities]&quot; fungerar som källschema, medan &quot;[!DNL Accounts]&quot; fungerar som målschema.
+Schemarelationer representeras av ett dedikerat fält i en **källschema** som refererar till det primära identitetsfältet för en **referensschema**. I följande steg: &quot;[!DNL Opportunities]&quot; fungerar som källschema, medan &quot;[!DNL Accounts]&quot; fungerar som referensschema.
 
 ### Identiteter i B2B-relationer
 
@@ -53,7 +53,7 @@ Schemarelationer representeras av ett dedikerat fält i en **källschema** som r
 >title="Namnutrymme för referensidentitet"
 >abstract="Namnutrymmet (typen) för referensschemats primära identitetsfält. Referensschemat måste ha ett etablerat primärt identitetsfält för att kunna delta i en relation. Mer information om identiteter i B2B-relationer finns i dokumentationen."
 
-För att en relation ska kunna skapas måste målschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Platform.
+För att en relation ska kunna upprättas måste referensschemat ha en definierad primär identitet. När du anger en primär identitet för en B2B-enhet bör du tänka på att strängbaserade enhets-ID:n kan överlappa om du samlar in dem över olika system eller platser, vilket kan leda till datakonflikter i Platform.
 
 För att ta hänsyn till detta innehåller alla standardklasser för B2B&quot;nyckelfält&quot; som följer [[!UICONTROL B2B Source] datatyp](../data-types/b2b-source.md). Den här datatypen innehåller fält för en strängidentifierare för B2B-enheten tillsammans med annan sammanhangsberoende information om identifierarens källa. Ett av dessa fält, `sourceKey`, sammanfogar värdena för de andra fälten i datatypen så att en helt unik identifierare skapas för entiteten. Det här fältet ska alltid användas som primär identitet för B2B-entitetsscheman.
 
@@ -75,7 +75,7 @@ Som framgår av **[!UICONTROL Schema Properties]**, har det här schemat aktiver
 
 ### [!DNL Accounts] schema
 
-Målschemat &quot;[!DNL Accounts]&quot; baseras på [!UICONTROL XDM Account] klassen. Rotnivån `accountKey` fältet innehåller `sourceKey` som fungerar som sin primära identitet under ett anpassat namnutrymme som kallas [!DNL B2B Account]. Det här schemat har också aktiverats för användning i profilen.
+Referensschemat &quot;[!DNL Accounts]&quot; baseras på [!UICONTROL XDM Account] klassen. Rotnivån `accountKey` fältet innehåller `sourceKey` som fungerar som sin primära identitet under ett anpassat namnutrymme som kallas [!DNL B2B Account]. Det här schemat har också aktiverats för användning i profilen.
 
 ![Kontoschema](../images/tutorials/relationship-b2b/accounts.png)
 
@@ -91,11 +91,11 @@ Målschemat &quot;[!DNL Accounts]&quot; baseras på [!UICONTROL XDM Account] kla
 >title="Relationsnamn från referensschema"
 >abstract="En etikett som beskriver relationen från referensschemat till det aktuella schemat (till exempel Relaterade affärsmöjligheter). Den här etiketten används i profil och segmentering för att ge kontext till data från relaterade B2B-enheter. Mer information om hur du skapar B2B-schemarelationer finns i dokumentationen."
 
-För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som refererar till målschemats primära identitet. StandardB2B-klasser innehåller dedikerade källnyckelfält för vanliga affärsföretag. Till exempel [!UICONTROL XDM Business Opportunity] klassen innehåller källnyckelfält för ett relaterat konto (`accountKey`) och en relaterad kampanj (`campaignKey`). Du kan dock även lägga till andra [!UICONTROL B2B Source] fält till schemat genom att använda anpassade fältgrupper om du behöver fler än standardkomponenterna.
+För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som anger den primära identiteten för referensschemat. StandardB2B-klasser innehåller dedikerade källnyckelfält för vanliga affärsföretag. Till exempel [!UICONTROL XDM Business Opportunity] klassen innehåller källnyckelfält för ett relaterat konto (`accountKey`) och en relaterad kampanj (`campaignKey`). Du kan dock även lägga till andra [!UICONTROL B2B Source] fält till schemat genom att använda anpassade fältgrupper om du behöver fler än standardkomponenterna.
 
 >[!NOTE]
 >
->För närvarande kan endast många-till-ett- och en-till-en-relationer definieras från ett källschema till ett målschema. För en-till-många-relationer måste du definiera relationsfältet i schemat som representerar&quot;många&quot;.
+>För närvarande kan endast många-till-ett- och en-till-en-relationer definieras från ett källschema till ett referensschema. För en-till-många-relationer måste du definiera relationsfältet i schemat som representerar&quot;många&quot;.
 
 Om du vill ange ett relationsfält väljer du pilen (![Pilikon](../images/tutorials/relationship-b2b/arrow.png)) bredvid fältet i fråga på arbetsytan. När det gäller [!DNL Opportunities] schema, det här är `accountKey.sourceKey` eftersom målet är att skapa en många-till-en-relation med ett konto.
 
@@ -105,11 +105,11 @@ En dialogruta visas där du kan ange information om relationen. Relationstypen s
 
 ![Dialogrutan Relation](../images/tutorials/relationship-b2b/relationship-dialog.png)
 
-Under **[!UICONTROL Reference Schema]** använder du sökfältet för att hitta namnet på målschemat. När du markerar målschemats namn visas **[!UICONTROL Reference Identity Namespace]** fältet uppdateras automatiskt till namnområdet för schemats primära identitet.
+Under **[!UICONTROL Reference Schema]** använder du sökfältet för att hitta namnet på referensschemat. När du markerar referensschemats namn visas **[!UICONTROL Reference Identity Namespace]** fältet uppdateras automatiskt till namnområdet för schemats primära identitet.
 
 ![Referensschema](../images/tutorials/relationship-b2b/reference-schema.png)
 
-Under **[!UICONTROL Relationship Name From Current Schema]** och **[!UICONTROL Relationship Name From Reference Schema]**, anger egna namn för relationen i samband med käll- respektive målscheman. När du är klar väljer du **[!UICONTROL Save]** för att tillämpa ändringarna och spara schemat.
+Under **[!UICONTROL Relationship Name From Current Schema]** och **[!UICONTROL Relationship Name From Reference Schema]**, anger egna namn för relationen i samband med käll- respektive referensscheman. När du är klar väljer du **[!UICONTROL Save]** för att tillämpa ändringarna och spara schemat.
 
 ![Relationsnamn](../images/tutorials/relationship-b2b/relationship-name.png)
 
@@ -117,7 +117,7 @@ Arbetsytan visas igen med relationsfältet markerat med det egna namn du angav t
 
 ![Relation används](../images/tutorials/relationship-b2b/relationship-applied.png)
 
-Om du visar strukturen för målschemat visas relationsmarkören bredvid schemats primära identitetsfält och i den vänstra listen.
+Om du visar referensschemats struktur visas relationsmarkören bredvid schemats primära identitetsfält och i den vänstra listen.
 
 ![Markör för målschemarelation](../images/tutorials/relationship-b2b/destination-relationship.png)
 

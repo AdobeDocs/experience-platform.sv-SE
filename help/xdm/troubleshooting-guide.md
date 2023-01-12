@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '2050'
+source-wordcount: '2064'
 ht-degree: 0%
 
 ---
@@ -269,7 +269,13 @@ Det här felmeddelandet visas när du försöker aktivera ett schema för [!DNL 
 }
 ```
 
-För att aktivera scheman som innehåller relationsbeskrivare för användning i [!DNL Profile]måste namnutrymmet för källfältet och det primära namnutrymmet för målfältet vara detsamma. Det här felmeddelandet visas när du försöker aktivera ett schema som innehåller ett omatchat namnutrymme för dess referensidentitetsbeskrivning. Se till att `xdm:namespace` värdet för målschemats identitetsfält matchar identitetsfältet för `xdm:identityNamespace` -egenskapen i källfältets referensidentitetsbeskrivning för att lösa problemet.
+>[!NOTE]
+>
+>För det här felet refererar &quot;målschema&quot; till referensschemat i relationen.
+
+För att aktivera scheman som innehåller relationsbeskrivare för användning i [!DNL Profile]måste namnutrymmet för källfältet och det primära namnutrymmet för referensfältet vara detsamma. Det här felmeddelandet visas när du försöker aktivera ett schema som innehåller ett omatchat namnutrymme för dess referensidentitetsbeskrivning.
+
+Se till att `xdm:namespace` värdet för referensschemats identitetsfält matchar det för `xdm:identityNamespace` -egenskapen i källfältets referensidentitetsbeskrivning för att lösa problemet.
 
 En lista med standardkoder för identitetsnamn finns i avsnittet om [standardnamnutrymmen](../identity-service/namespaces.md) i översikten över namnutrymmet identity.
 
