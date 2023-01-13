@@ -2,9 +2,9 @@
 title: Slutpunkt för tilläggspaket
 description: Lär dig hur du anropar slutpunkten /extension_packages i Reactor API.
 exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 8862a911f09d47c3a2260faba045f3c79826b52c
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '954'
 ht-degree: 1%
 
 ---
@@ -944,7 +944,7 @@ Ett godkänt svar returnerar information om det uppdaterade tilläggspaketet.
 
 När du har testat tilläggspaketet kan du frigöra det privat. Detta gör den tillgänglig för alla ägor i företaget.
 
-När du har släppt programmet privat kan du påbörja den offentliga releaseprocessen genom att fylla i [blankett för begäran om offentliggörande](https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=7DRB5U).
+När du har släppt programmet privat kan du påbörja den offentliga releaseprocessen genom att fylla i [blankett för begäran om offentliggörande](https://experiencecloudpanel.adobe.com/c/r/DCExtensionReleaseRequest).
 
 **API-format**
 
