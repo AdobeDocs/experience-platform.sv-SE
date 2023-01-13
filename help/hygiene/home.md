@@ -2,9 +2,9 @@
 title: Översikt över datahygien
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
-Plattformens datahygifunktioner gör att du kan hantera dina lagrade data genom följande:
+<!-- Platform's data hygiene capabilities allow you to manage your stored data through the following:
 
-* Schemalägga förfallodatum för automatiska datauppsättningar
-* Ta bort enskilda poster från en eller alla datauppsättningar
+* Scheduling automated dataset expirations
+* Deleting individual records from one or all datasets
 
 >[!IMPORTANT]
 >
->Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../privacy-service/home.md) i stället.
+>Record deletes are meant to be used for data cleansing, removing anonymous data, or data minimization. They are **not** to be used for data subject rights requests (compliance) as pertaining to privacy regulations like the General Data Protection Regulation (GDPR). For all compliance use cases, use [Adobe Experience Platform Privacy Service](../privacy-service/home.md) instead. -->
 
 Dessa aktiviteter kan utföras med [[!UICONTROL Data Hygiene] Arbetsyta i användargränssnittet](#ui) eller [API för datahygien](#api). När ett datahygijobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Se avsnittet om [tidslinjer och genomskinlighet](#timelines-and-transparency) om du vill ha mer information om hur varje jobbtyp visas i systemet.
 
@@ -40,9 +40,9 @@ The [!UICONTROL Data Hygiene] Gränssnittet är byggt ovanpå API:t för datahyg
 
 ## Tidslinjer och genomskinlighet
 
-Förfrågningar om radering och förfallodatum för datauppsättningar har sina egna bearbetningstidslinjer och tillhandahåller genomskinlighetsuppdateringar vid viktiga punkter i sina respektive arbetsflöden. Mer information om varje jobbtyp finns i avsnitten nedan.
+Förfrågningar om radering och förfallodatum för datauppsättningar har sina egna bearbetningstidslinjer och tillhandahåller genomskinlighetsuppdateringar vid viktiga punkter i sina respektive arbetsflöden.
 
-### Utgångsdatum för datauppsättning {#dataset-expiration-transparency}
+<!-- ### Dataset expirations {#dataset-expiration-transparency} -->
 
 Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-expiration.md) skapas:
 
@@ -57,24 +57,24 @@ Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-ex
 
 {style=&quot;table-layout:auto&quot;}
 
-### Posten tas bort {#record-delete-transparency}
+<!-- ### Record deletes {#record-delete-transparency}
 
 >[!IMPORTANT]
 >
->Borttagning av arkivhandlingar är endast tillgängligt för organisationer som har köpt Adobe Healthcare Shield.
+>Record deletes are only available for organizations that have purchased Adobe Healthcare Shield.
 
-Följande sker när en [postborttagningsbegäran](./ui/record-delete.md) skapas:
+The following takes place when a [record delete request](./ui/record-delete.md) is created:
 
-| Stadie | Tid efter att begäran har skickats | Beskrivning |
+| Stage | Time after request submission | Description |
 | --- | --- | --- |
-| Begäran har skickats | 0 timmar | En datahanterare eller integritetsanalytiker skickar en begäran om radering av poster. Förfrågan visas i [!UICONTROL Data Hygiene UI] efter det att den har skickats in. |
-| Profilsökningar har uppdaterats | 3 timmar | Ändringen av antalet profiler som orsakas av den borttagna identiteten återspeglas i [widgetar för instrumentpanel](../dashboards/guides/profiles.md#profile-count-trend) och andra rapporter. |
-| Uppdaterade segment | 24 timmar | När profilerna har tagits bort är alla relaterade [segment](../segmentation/home.md) uppdateras för att återspegla deras nya storlek. |
-| Uppdaterade resor och destinationer | 26 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)och [mål](../destinations/home.md) uppdateras enligt förändringar i relaterade segment. |
-| Poster som är mjuka och har tagits bort i datasjön | 7 dagar | Data tas bort på ett mjukt sätt från datasjön. |
-| Datautvinning slutförd | 14 dagar | The [hygienarbetsplatsens status](./ui/browse.md#view-details) Uppdateringar som anger att jobbet har slutförts, vilket innebär att datautbyte har slutförts på sjön och att de relevanta posterna har tagits bort. |
+| Request is submitted | 0 hours | A data steward or privacy analyist submits a record delete request. The request is visible in the [!UICONTROL Data Hygiene UI] after it has been submitted. |
+| Profile lookups updated | 3 hours | The change in profile counts caused by the deleted identity are reflected in [dashboard widgets](../dashboards/guides/profiles.md#profile-count-trend) and other reports. |
+| Segments updated | 24 hours | Once profiles are removed, all related [segments](../segmentation/home.md) are updated to reflect their new size. |
+| Journeys and destinations updated | 26 hours | [Journeys](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [campaigns](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html), and [destinations](../destinations/home.md) are updated according to changes in related segments. |
+| Records soft deleted in data lake | 7 days | The data is soft deleted from the data lake. |
+| Data vacuuming completed | 14 days | The [status of the hygiene job](./ui/browse.md#view-details) updates to indicate that the job has completed, meaning that data vacuuming has been completed on the data lake and the relevant records have been hard deleted. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"} -->
 
 ## Nästa steg
 

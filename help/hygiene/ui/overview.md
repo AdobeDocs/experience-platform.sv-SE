@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för datahygien
 description: Lär dig hur du hanterar datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: d4073f18844de65b9181667d0332c0315ee1cc09
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '207'
 ht-degree: 0%
 
 ---
@@ -33,4 +33,4 @@ Härifrån kan du bläddra bland befintliga arbetsorder och konfigurera nya data
 
 * [Bläddra bland befintliga arbetsorder](./browse.md)
 * [Skapa en förfallobegäran för datauppsättning](./dataset-expiration.md)
-* [Skapa en begäran om postborttagning](./record-delete.md)
+<!-- * [Create a record delete request](./record-delete.md) -->

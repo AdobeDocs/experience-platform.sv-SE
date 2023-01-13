@@ -4,18 +4,18 @@ description: Lär dig hur du programmässigt korrigerar eller tar bort dina kund
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
 
 # Ta bort poster med hjälp av API:t för datahygien
 
->[!IMPORTANT]
+<!-- >[!IMPORTANT]
 >
->Den här slutpunkten representerar betafunktionen för postborttagningar. Använd [`/workorder` slutpunkt](./workorder.md) i stället.
+>This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. -->
 
 Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 

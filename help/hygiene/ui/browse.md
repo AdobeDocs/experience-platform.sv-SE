@@ -2,9 +2,9 @@
 title: Bläddra bland arbetsorder för datahygien
 description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
+source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
@@ -104,4 +104,4 @@ Detaljsidan för en datauppsättnings förfallodatum innehåller information om 
 I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
 
 * [Hantera förfallodatum för datauppsättning](./dataset-expiration.md)
-* [Hantera postborttagningar](./record-delete.md)
+<!-- * [Manage record deletes](./record-delete.md) -->
