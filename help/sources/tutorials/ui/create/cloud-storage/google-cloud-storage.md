@@ -5,9 +5,9 @@ title: Skapa en Google Cloud-anslutning för lagringskälla i användargränssni
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning till en lagringskälla i Google Cloud med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 3258ccd7-757c-4c4a-b7bb-0e8c9de3b50a
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 648dcd04de1f88318e3e771d5f044ac5b5ddaf2d
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '548'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Om du redan har en giltig GCS-anslutning kan du hoppa över resten av det här d
 
 [!DNL Experience Platform] har stöd för följande filformat som ska importeras från externa lagringsplatser:
 
-* Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaavgränsade värden. Värdet för fältrubriker i DSV-formaterade filer får endast bestå av alfanumeriska tecken och understreck. Stöd för allmänna DSV-filer kommer att ges i framtiden.
+* Avgränsaravgränsade värden (DSV): Alla värden med ett tecken kan användas som avgränsare för DSV-formaterade datafiler.
 * JavaScript-objektnotation (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
 * Apache Parquet: Parquet-formaterade datafiler måste vara XDM-kompatibla.
 

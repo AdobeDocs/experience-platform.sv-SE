@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Google Cloud Storage Source Connector - översikt
 description: Lär dig hur du ansluter Google Cloud-lagring till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: f7ebd213-f914-4c49-aebd-1df4514ffec0
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 648dcd04de1f88318e3e771d5f044ac5b5ddaf2d
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -25,15 +25,15 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 För att kunna ansluta till plattformen måste du först aktivera interoperabilitet för [!DNL Google Cloud Storage] konto. Öppna för att få åtkomst till inställningen för interoperabilitet [!DNL Google Cloud Platform] och markera **[!UICONTROL Settings]** från **[!UICONTROL Cloud Storage]** i navigeringspanelen.
 
-![](../../images/tutorials/create/google-cloud-storage/nav.png)
+<!-- ![](../../images/tutorials/create/google-cloud-storage/nav.png) -->
 
 The **[!UICONTROL Settings]** visas. Här kan du se information om [!DNL Google] projekt-ID och information om [!DNL Google Cloud Storage] konto. Välj **[!UICONTROL Interoperability]** i det övre sidhuvudet.
 
-![](../../images/tutorials/create/google-cloud-storage/project-access.png)
+<!-- ![](../../images/tutorials/create/google-cloud-storage/project-access.png) -->
 
 The **[!UICONTROL Interoperability]** sidan innehåller information om autentisering, åtkomstnycklar och standardprojektet som är kopplat till ditt tjänstkonto. Om du vill generera ett nytt åtkomstnyckel-ID och en hemlig åtkomstnyckel för ditt tjänstkonto väljer du **[!UICONTROL Create a Key for a Service Account]**.
 
-![](../../images/tutorials/create/google-cloud-storage/interoperability.png)
+<!-- ![](../../images/tutorials/create/google-cloud-storage/interoperability.png) -->
 
 Du kan använda ditt nyligen genererade ID för åtkomstnyckel och hemlig åtkomstnyckel för att ansluta din [!DNL Google Cloud Storage] konto till plattform.
 
