@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla DbVisualizer till frågetjänsten
 description: Det här dokumentet går igenom stegen för att ansluta DbVisualizer till Adobe Experience Platform Query Service.
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 106a2e4606e94f71d6359cf947e05f193c19c660
 workflow-type: tm+mt
-source-wordcount: '932'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,27 +19,17 @@ Det här dokumentet innehåller stegen för att ansluta [!DNL DbVisualizer] data
 
 Den här guiden kräver att du redan har tillgång till [!DNL DbVisualizer] och känner till hur man navigerar i gränssnittet. Ladda ned [!DNL DbVisualizer] eller för mer information, se [officiell [!DNL DbVisualizer] dokumentation](https://www.dbvis.com/download/).
 
->[!NOTE]
->
->Det finns [!DNL Windows], [!DNL macOS]och [!DNL Linux] versioner av [!DNL DbVisualizer]. Skärmbilder i den här guiden har tagits med [!DNL macOS] datorprogram. Det kan finnas små skillnader i användargränssnittet mellan versionerna.
-
 Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL  DbVisualizer] för Experience Platform måste du ha tillgång till arbetsytan Frågor i användargränssnittet för plattformen. Kontakta IMS-organisationens administratör om du inte har tillgång till arbetsytan Frågor.
 
 ## Skapa en databasanslutning {#connect-database}
 
-När du har installerat datorprogrammet på din lokala dator startar du programmet och väljer **[!DNL Create a Database Connection]** från början [!DNL DbVisualizer] -menyn. Välj sedan **[!DNL Create a Connection]** i panelen till höger.
+När du har installerat datorprogrammet på din lokala dator följer du BDVisualizer-instruktionerna för att [skapa en ny databasanslutning](https://confluence.dbvis.com/display/UG130/Create+a+New+Database+Connection).
 
-![The [!DNL DbVisualizer] huvudmenyn med &quot;Skapa en databasanslutning&quot; markerad.](../images/clients/dbvisualizer/create-db-connection.png)
+När du har valt **[!DNL PostgreSQL]** från [!DNL Connections] lista, en [!DNL Object View] för den nya [!DNL PostgreSQL] anslutningen visas.
 
-Använd sökfältet eller markera [!DNL PostgreSQL] i listrutan med drivrutinsnamn. Arbetsytan Databasanslutning visas.
+### Ange drivrutinsegenskaper för anslutningen {#properties}
 
-![Drivrutinens namn-listruta med [!DNL PostgreSQL] markerad.](../images/clients/dbvisualizer/driver-name.png)
-
-### Ange egenskaper för anslutningen {#properties}
-
-På arbetsytan för databasanslutning väljer du **[!DNL Properties]** följt av **[!DNL Driver Properties]** från navigeringssidlisten.
-
-![Arbetsytan Databasanslutning med Egenskaper och Drivrutinsegenskaper markerade.](../images/clients/dbvisualizer/driver-properties.png)
+Från [!DNL PostgreSQL] objektvy väljer du **[!DNL Properties]** följt av **[!DNL Driver Properties]** från navigeringssidlisten. Mer information om [drivrutinsegenskaper](https://confluence.dbvis.com/display/UG130/Configuring+Connection+Properties#ConfiguringConnectionProperties-DriverProperties) finns i den officiella dokumentationen.
 
 Ange sedan drivrutinsegenskaperna som beskrivs i tabellen nedan.
 
@@ -56,15 +46,13 @@ Ange sedan drivrutinsegenskaperna som beskrivs i tabellen nedan.
 
 Använd sökfältet för att hitta varje egenskap och markera sedan motsvarande cell för parameterns värde. Cellen markeras med blått. Ange dina autentiseringsuppgifter för plattformen i värdefältet och välj **[!DNL Apply]** för att lägga till drivrutinsegenskapen.
 
-![Fliken Drivrutinsegenskaper för DBVisulator med ett värde angivet och Använd markerat.](../images/clients/dbvisualizer/apply-parameter-value.png)
-
 >[!NOTE]
 >
 >Lägga till en sekund `user` profil, välja `user` i parameterkolumnen väljer du den blå + (plus)-ikonen för att lägga till inloggningsuppgifter för varje användare. Välj **[!DNL Apply]** för att lägga till drivrutinsegenskapen.
 
 The [!DNL Edited] kolumnen visar en bockmarkering som anger att parametervärdet har uppdaterats.
 
-### Indata[!DNL Query Service] autentiseringsuppgifter
+### Autentiseringsuppgifter för Input Query Service {#query-service-credentials}
 
 Om du vill hitta de autentiseringsuppgifter som krävs för att ansluta BBVisualizer till frågetjänsten loggar du in på plattformsgränssnittet och väljer **[!UICONTROL Queries]** från vänster navigering, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar **värd**, **port**, **databas**, **användarnamn** och **lösenord** autentiseringsuppgifter, läs [inloggningsguide](../ui/credentials.md).
 
@@ -74,17 +62,15 @@ Om du vill hitta de autentiseringsuppgifter som krävs för att ansluta BBVisual
 >
 >[!DNL Query Service] erbjuder även icke-utgångsdatum för att möjliggöra en engångskonfiguration med tredjepartsklienter. Läs dokumentationen för [fullständiga anvisningar om hur du genererar och använder ej utgångsdatum](../ui/credentials.md#non-expiring-credentials). Du måste slutföra den här processen om du vill ansluta BDVisualizer som en engångsinstallation. The `credential` och `technicalAccountId` förvärvade värden utgör värdet för DBVisualizer `password` parameter.
 
-## Autentisering
+## Autentisering {#authentication}
 
-Om du vill kräva ett användar-ID och lösenordsbaserad autentisering varje gång en anslutning upprättas väljer du **[!DNL Authentication]** från navigeringssidlisten under [!DNL PostgreSQL].
+Om du vill kräva ett användar-ID och lösenordsbaserad autentisering varje gång en anslutning upprättas går du till [!DNL Properties] och markera **[!DNL Authentication]** från navigeringssidlisten under [!DNL PostgreSQL].
 
-På panelen Anslutningsautentisering kontrollerar du båda **[!DNL Require Userid]** och **[!DNL Require Password]** kryssrutor markera **[!DNL Apply]**.
-
-![Autentiseringspanelen för [!DNL PostgreSQL] Databasanslutning med kryssrutorna Kräv seriell och Lösenord markerade.](../images/clients/dbvisualizer/connection-authentication.png)
+På panelen Anslutningsautentisering kontrollerar du båda **[!DNL Require Userid]** och **[!DNL Require Password]** kryssrutor markera **[!DNL Apply]**. Mer information om [ange autentiseringsalternativ](https://confluence.dbvis.com/display/UG140/Setting+Common+Authentication+Options) finns i den officiella dokumentationen.
 
 ## Anslut till plattform
 
-Du kan upprätta en anslutning med hjälp av autentiseringsuppgifter som förfaller eller inte förfaller. Om du vill skapa en anslutning väljer du **[!DNL Connection]** på arbetsytan Databasanslutning och ange dina inloggningsuppgifter för Experience Platform för följande inställningar.
+Du kan upprätta en anslutning med hjälp av autentiseringsuppgifter som förfaller eller inte förfaller. Om du vill skapa en anslutning väljer du **[!DNL Connection]** från [!DNL PostgreSQL] objektvy och ange dina inloggningsuppgifter för Experience Platform för följande inställningar. Kompletterande anvisningar till [konfigurera en manuell anslutning](https://confluence.dbvis.com/display/UG100/Setting+Up+a+Connection+Manually) finns på DBVisualizers officiella webbplats.
 
 >[!NOTE]
 >
@@ -94,20 +80,14 @@ Du kan upprätta en anslutning med hjälp av autentiseringsuppgifter som förfal
 |---|---|
 | **[!UICONTROL Name]** | Skapa ett namn för anslutningen. Du bör ange ett användarvänligt namn för att känna igen anslutningen. |
 | **[!UICONTROL Database Server]** | Det här är din Experience Platform **[!UICONTROL Host]** autentiseringsuppgifter. |
-| **[!UICONTROL Database Port]** | Porten för [!DNL Query Service]. Du måste använda port **80** att ansluta till [!DNL Query Service]. |
+| **[!UICONTROL Database Port]** | Porten för [!DNL Query Service]. Du måste använda port **80** eller **5432** att ansluta till [!DNL Query Service]. |
 | **[!UICONTROL Database]** | Använd Experience Platform **[!UICONTROL Database]** autentiseringsvärde: `prod:all`. |
 | **[!UICONTROL Database Userid]** | Detta är ditt organisations-ID för plattformen. Använd Experience Platform **[!UICONTROL Username]** autentiseringsvärde. ID:t kommer att ha formatet `ORG_ID@AdobeOrg`. |
-| **[!UICONTROL Database Password]** | Den här alfanumeriska strängen är din Experience Platform **[!UICONTROL Password]** credential.Om du vill använda icke-förfallande autentiseringsuppgifter är det här värdet det sammanfogade argumentet från `technicalAccountID` och `credential` hämtas i JSON-konfigurationsfilen. Lösenordsvärdet har följande format: {technicalAccountId}:{credential}. Konfigurations-JSON-filen för icke-förfallande autentiseringsuppgifter är en engångshämtning under initieringen som Adobe inte har någon kopia av. |
+| **[!UICONTROL Database Password]** | Den här alfanumeriska strängen är din Experience Platform **[!UICONTROL Password]** autentiseringsuppgifter. Om du vill använda icke-förfallande autentiseringsuppgifter är det här värdet det sammanfogade argumentet från `technicalAccountID` och `credential` hämtas i JSON-konfigurationsfilen. Lösenordsvärdet har följande format: {technicalAccountId}:{credential}. Konfigurations-JSON-filen för icke-förfallande autentiseringsuppgifter är en engångshämtning under initieringen som Adobe inte har någon kopia av. |
 
 När du har angett alla relevanta autentiseringsuppgifter väljer du **[!DNL Connect]**.
 
-![The [!DNL PostgreSQL] Arbetsytan Databasanslutning med fliken Anslutning och anslutningsknappen markerad.](../images/clients/dbvisualizer/connect.png)
-
-The [!DNL Connect] visas vid det första tillfället av sessionen.
-
-![Connect: [!DNL PostgreSQL] med textfälten Databas-ID och Databaslösenord markerade.](../images/clients/dbvisualizer/connect-dialog.png)
-
-Ange ditt serienummer och lösenord och välj **[!DNL Connect]**. Ett meddelande visas i loggen som bekräftar att anslutningen lyckades.
+The [!DNL Connect] visas vid det första tillfället av sessionen. Ange ditt serienummer och lösenord och välj **[!DNL Connect]**. Ett meddelande visas i loggen som bekräftar att anslutningen lyckades.
 
 ## Nästa steg
 

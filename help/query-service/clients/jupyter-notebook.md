@@ -1,9 +1,10 @@
 ---
 title: Anslut Jupyter-anteckningsbok till frågetjänst
 description: Lär dig hur du ansluter Jupyter-anteckningsbok med Adobe Experience Platform Query Service.
-source-git-commit: af37fe3be6b9645965b7477b9b85c5e11fe6fbae
+exl-id: 358eab67-538f-4ada-931f-783b92db4a1c
+source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '571'
 ht-degree: 0%
 
 ---
@@ -21,16 +22,15 @@ Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL Jupyter Notebo
 >[!TIP]
 >
 >[!DNL Anaconda Navigator] är ett grafiskt användargränssnitt som gör det enklare att installera och starta vanliga [!DNL Python] program som [!DNL Jupyter Notebook]. Det hjälper även till att hantera paket, miljöer och kanaler utan att använda kommandoradskommandon.
->Du kan [installera den version av programmet som du föredrar](https://docs.anaconda.com/anaconda/install/) från sin webbplats.
->Följ den guidade installationsprocessen. På startskärmen för Anaconda Navigator väljer du **[!DNL Jupyter Notebook]** i listan över program som stöds för att starta programmet.
->![The [!DNL Anaconda Navigator] hemskärm med [!DNL Jupyter Notebook] markerad.](../images/clients/jupyter-notebook/anaconda-navigator-home.png)
->Mer information finns i deras [officiell dokumentation](https://docs.anaconda.com/anaconda/navigator/).
+>Följ den guidade installationsprocessen på deras webbplats för att [installera den version av programmet som du föredrar](https://docs.anaconda.com/anaconda/install/).
+>På startskärmen för Anaconda Navigator väljer du **[!DNL Jupyter Notebook]** i listan över program som stöds för att starta programmet.
+>Mer information finns i [officiell dokumentation för Anaconda](https://docs.anaconda.com/anaconda/navigator/).
+
+I den officiella Jupyter-dokumentationen finns instruktioner för att [köra anteckningsboken från kommandoradsgränssnittet](https://docs.jupyter.org/en/latest/running.html#how-do-i-open-a-specific-notebook) (CLI).
 
 ## Starta [!DNL Jupyter Notebook]
 
-När du har öppnat en ny [!DNL Jupyter Notebook] webbprogram väljer du **[!DNL New]** listruta följt av **[!DNL Python 3]** för att skapa en ny anteckningsbok. The [!DNL Notebook] redigeraren visas.
-
-![The [!DNL Jupiter Notebook] Fliken Arkiv med [!DNL New] listruta och [!DNL Python] 3 markerade.](../images/clients/jupyter-notebook/new-notebook.png)
+När du har öppnat en ny [!DNL Jupyter Notebook] webbprogram väljer du **[!DNL New]** listruta från användargränssnittet, följt av **[!DNL Python 3]** för att skapa en ny anteckningsbok. The [!DNL Notebook] redigeraren visas.
 
 På första raden i [!DNL Notebook] anger du följande värde: `pip install psycopg2-binary` och markera **[!DNL Run]** i kommandofältet. Ett meddelande om att åtgärden lyckades visas under inmatningsraden.
 
@@ -38,11 +38,7 @@ På första raden i [!DNL Notebook] anger du följande värde: `pip install psyc
 >
 >Som en del av den här processen för att skapa en anslutning måste du välja **[!DNL Run]** för att köra varje kodrad.
 
-![The [!DNL Notebook] Användargränssnitt med kommandot Installera bibliotek markerat.](../images/clients/jupyter-notebook/install-library.png)
-
 Importera sedan en [!DNL PostgreSQL] databasadapter för [!DNL Python]. Ange värdet: `import psycopg2`och markera **[!DNL Run]**. Det finns inget meddelande om att processen lyckades. Om det inte finns något felmeddelande fortsätter du till nästa steg.
-
-![The [!DNL Notebook] Gränssnitt med drivrutinskoden för importdatabasen markerad.](../images/clients/jupyter-notebook/import-dbdriver.png)
 
 Du måste nu ange dina Adobe Experience Platform-uppgifter genom att ange värdet: `conn = psycopg2.connect("{YOUR_CREDENTIALS}")`. Dina anslutningsreferenser finns i [!UICONTROL Queries] -avsnittet, under [!UICONTROL Credentials] -fliken i plattformsgränssnittet. Läs dokumentationen om hur du [hitta organisationens autentiseringsuppgifter](../ui/credentials.md) för detaljerade anvisningar.
 
@@ -50,9 +46,11 @@ Vi rekommenderar att du använder inloggningsuppgifter som inte upphör att gäl
 
 >[!IMPORTANT]
 >
->När du kopierar inloggningsuppgifter från plattformsanvändargränssnittet ska du kontrollera att det inte finns någon ytterligare formatering av inloggningsuppgifterna. De ska alla ligga på en rad, med ett enda mellanrum mellan egenskaperna och värdena. Autentiseringsuppgifterna omges av citattecken och **not** kommaavgränsade.
+>När du kopierar inloggningsuppgifter från plattformsgränssnittet behövs ingen ytterligare formatering av inloggningsuppgifterna. De kan anges på en rad med ett enda mellanrum mellan egenskaperna och värdena. Autentiseringsuppgifterna omges av citattecken och **not** kommaavgränsade.
 
-![The [!DNL Notebook] Gränssnitt med anslutningsautentiseringsuppgifterna markerade.](../images/clients/jupyter-notebook/provide-credentials.png)
+```python
+conn = psycopg2.connect('''sslmode=require host=<YOUR_HOST_CREDENTIAL> port=80 dbname=prod:all user=<YOUR_ORGANIZATION_ID> password=<YOUR_PASSWORD>''')"
+```
 
 Dina [!DNL Jupyter Notebook] -instansen är nu ansluten till frågetjänsten.
 
@@ -62,29 +60,25 @@ Nu när du är ansluten [!DNL Jupyter Notebook] för att fråga tjänsten kan du
 
 Ange följande värden:
 
-```console
+```python
 cur = conn.cursor()
-cur.execute('''{YOUR_QUERY_HERE}''')
+cur.execute('''<YOUR_QUERY_HERE>''')
 data = [r for r in cur]
 ```
 
 Anropa sedan parametern (`data` i exemplet ovan) om du vill visa frågeresultatet i ett oformaterat svar.
-
-![The [!DNL Notebook] Gränssnitt med kommandon som returnerar och visar SQL-resultat i anteckningsboken.](../images/clients/jupyter-notebook/example-query.png)
 
 Använd följande kommandon om du vill formatera resultatet på ett mer läsbart sätt:
 
 - `colnames = [desc[0] for desc in cur.description]`
 - `import pandas as pd`
 - `import numpy as np`
+- `df = pd.DataFrame(samples,columns=colnames)`
+- `df.fillna(0,inplace=True)`
 
 Dessa kommandon genererar inget meddelande om att åtgärden lyckades. Om det inte finns något felmeddelande kan du sedan använda en funktion för att skriva ut resultatet av SQL-frågan i ett tabellformat.
 
-![De kommandon som krävs för att formatera SQL-resultaten.](../images/clients/jupyter-notebook/format-results-commands.png)
-
 Ange och kör `df.head()` -funktion för att se sökresultaten i tabellform.
-
-![Tabellresultat av SQL-frågan i [!DNL Jupyter Notebook].](../images/clients/jupyter-notebook/format-results-output.png)
 
 ## Nästa steg
 

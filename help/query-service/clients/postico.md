@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Anslut position till frågetjänst
 description: Det här dokumentet innehåller länken för installation av klienten Postico för Adobe Experience Platform Query Service.
 exl-id: a19abfc8-b431-4e57-b44d-c6130041af4a
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 9fe7e618d251867c90c88f8bee6ef5863ae78f60
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
@@ -21,35 +21,27 @@ Det här dokumentet innehåller stegen för anslutning [!DNL Postico] med Adobe 
 > 
 > Dessutom [!DNL Postico] är **endast** som finns på macOS-enheter.
 
-Ansluta [!DNL Postico] till frågetjänst, öppna [!DNL Postico] och markera **[!DNL New Favorite]**.
+Ansluta [!DNL Postico] till frågetjänst, öppna [!DNL Postico] och markera **[!DNL New Favorite]**. Dialogrutan för anslutningsinställningar visas. Härifrån kan du ange parametervärden som ska kopplas till Adobe Experience Platform. Ange anslutningsinställningarna som anges nedan. Instruktioner om hur du [ansluta till en PostgreSQL-server med Postico](https://eggerapps.at/postico/docs/v1.5.21/favorite-window.html) finns också på den officiella Postico-webbplatsen.
 
-![The [!DNL Postico] Gränssnitt med Ny favorit markerat.](../images/clients/postico/open-postico.png)
-
-Nu kan du ange värden som ska kopplas till Adobe Experience Platform.
+| Anslutningsparameter | Beskrivning |
+|---|---|
+| **[!DNL Host]:** | Värdnamnet för PostgreSQL-servern. |
+| **[!DNL Port]:** | Porten för [!DNL Query Service]. Du måste använda port **80** eller **5432** att ansluta till [!DNL Query Service]. |
+| **[!DNL User]** | Skapa ett namn för den specifika anslutningen. Lämna fältet tomt om du vill använda ditt inloggningsnamn för Mac. |
+| **[!DNL Password]** | Den här alfanumeriska strängen är din Experience Platform **[!UICONTROL Password]** autentiseringsuppgifter. Om du vill använda icke-förfallande autentiseringsuppgifter är det här värdet det sammanfogade argumentet från `technicalAccountID` och `credential` hämtas i JSON-konfigurationsfilen. Lösenordsvärdet har följande format: {technicalAccountId}:{credential}. Konfigurations-JSON-filen för icke-förfallande autentiseringsuppgifter är en engångshämtning under initieringen som Adobe inte har någon kopia av. |
+| **[!DNL Database]** | Använd Experience Platform **[!UICONTROL Database]** autentiseringsvärde: `prod:all`. |
 
 Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md). Logga in på [!DNL Platform]väljer **[!UICONTROL Queries]**, följt av **[!UICONTROL Credentials]**.
 
 När du har infogat dina inloggningsuppgifter väljer du **[!DNL Connect]** för att ansluta till frågetjänsten.
 
-![Dialogrutan Ny favorit med anslutning markerad.](../images/clients/postico/authentication-details.png)
-
 När du har anslutit till plattformen kan du se en lista över alla relationer som tidigare gjorts med Query Service.
-
-![En lista över anslutningar i [!DNL Postico] Gränssnitt.](../images/clients/postico/show-queries.png)
 
 ## Skapa SQL-satser
 
-Om du vill skapa en ny SQL-fråga markerar du och öppnar SQL-frågan.
+Om du vill skapa en ny SQL-fråga väljer du **[!DNL SQL Query]** från sidlisten. Du kan också använda kortkommandot ( ⇧ T) för att navigera till frågevyn och ange den fråga som du vill köra. När du är klar väljer du **[!DNL Execute Statement]** för att köra frågan. En tabell visas med resultatet av den slutförda frågekörningen.
 
-![The [!DNL Postico] Gränssnitt med kortkommandot SQL Query markerat.](../images/clients/postico/create-query.png)
-
-En ruta visas och härifrån kan du skriva in frågan som du vill köra. När du är klar väljer du **[!DNL Execute Statement]** för att köra frågan.
-
-![SQL-redigeraren med Execute Statement markerat.](../images/clients/postico/run-statement.png)
-
-En tabell visas med resultatet av den slutförda frågekörningen.
-
-![En resultattabell från exempelfrågan.](../images/clients/postico/query-results.png)
+Mer information om [använda frågevyn](https://eggerapps.at/postico/docs/v1.3.1/sql-query-view.html).
 
 ## Nästa steg
 

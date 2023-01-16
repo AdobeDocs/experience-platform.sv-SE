@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Anslut Aqua Data Studio till Query Service
 description: Det här dokumentet går igenom stegen för att ansluta Aqua Data Studio med Adobe Experience Platform Query Service.
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 3ffb535e9a6648f037678acebba0de5f2088e79e
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '561'
 ht-degree: 0%
 
 ---
@@ -27,19 +27,15 @@ Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL Aqua Data Stud
 
 ## Registrera servern {#register-server}
 
-Efter installation [!DNL Aqua Data Studio]måste du först registrera servern. Välj **[!DNL Server]**, följt av **[!DNL Register Server]**.
+Efter installation [!DNL Aqua Data Studio]måste du först registrera servern. I den officiella dokumentationen för Aqua Data Studio finns instruktioner om hur man gör [starta [!DNL Register Server] dialog](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation18/page/81/Registering-a-Database-Server#launching_the_register_server_dialog) och [registrera servern](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation18/page/81/Registering-a-Database-Server#steps_to_register_a_server_in_aqua_data_studio).
 
-![Listrutan Server med Register Server markerad.](../images/clients/aqua-data-studio/register-server.png)
-
-The **[!DNL Register Server]** visas. Under **[!DNL General]** flik, välja **[!DNL PostgreSQL]** från listan till vänster. Ange följande information för serverinställningarna i dialogrutan som visas.
+När **[!DNL Register Server]** visas för en PostgresSQL-server. Ange följande information för serverinställningarna.
 
 - **[!DNL Name]**: Namnet på anslutningen. Du bör ange ett eget namn för att känna igen anslutningen.
 - **[!DNL Login Name]**: Inloggningsnamnet är ditt organisations-ID. Det tar formen av `ORG_ID@AdobeOrg`.
 - **[!DNL Password]**: Det här är en alfanumerisk sträng som finns på [!DNL Query Service] Instrumentpanel för autentiseringsuppgifter.
 - **[!DNL Host and Port]**: Värdslutpunkten och dess port för [!DNL Query Service]. Du måste använda port 80 för att ansluta till [!DNL Query Service].
 - **[!DNL Database]:** Databasen som ska användas. Använd värdet för plattformsgränssnittets autentiseringsuppgifter `dbname`: `prod:all`.
-
-![The [!DNL Aqua Data Studio] Fliken Allmänt med obligatoriska inmatningsfält markerade.](../images/clients/aqua-data-studio/register-server-general-tab.png)
 
 ### [!DNL Query Service] autentiseringsuppgifter
 
@@ -49,15 +45,13 @@ Logga in på [!DNL Platform] Användargränssnitt och markera **[!UICONTROL Quer
 
 ### Ställa in SSL-läge
 
-Välj sedan **[!DNL Driver]** -fliken. Under **[!DNL Parameters]**, ange värdet som `?sslmode=require`
+Därefter måste du ange SSL-lägesvärdet som `?sslmode=require`. Detta görs från [!DNL Driver] -fliken i [!DNL Edit Server Properties] -dialogrutan. I den officiella dokumentationen för Aqua Data Studio finns instruktioner om hur man gör [redigera drivrutinsegenskaper](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation13/page/116/PostgreSQL#drivers) och [konfigurera SSL för [!DNL PostgreSQL]](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation20/page/SSL-Configuration/SSL-Configuration). Använd sökfältet för att hitta `sslmode` -egenskap.
 
 >[!IMPORTANT]
 >
 >Se [[!DNL Query Service] SSL-dokumentation](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter med `verify-full` SSL-läge.
 
-![The [!DNL Aqua Data Studio] Fliken Drivrutin med fältet Parametrar markerat.](../images/clients/aqua-data-studio/register-server-driver-tab.png)
-
-När du har angett anslutningsinformationen väljer du **[!DNL Test Connection]** för att säkerställa att dina uppgifter fungerar som de ska. Om ditt anslutningstest lyckas väljer du **[!DNL Save]** för att registrera servern. En bekräftelsedialogruta visas som bekräftar anslutningen och anslutningen visas på instrumentpanelen. Nu kan du ansluta till servern och visa dess schemaobjekt.
+När du har angett anslutningsinformationen väljer du **[!DNL Test Connection]** för att säkerställa att dina uppgifter fungerar som de ska. Om ditt anslutningstest lyckas väljer du **[!DNL Save]** för att registrera servern. En bekräftelsedialogruta visas som bekräftar anslutningen och anslutningsikonen visas på kontrollpanelen. Nu kan du ansluta till servern och visa dess schemaobjekt.
 
 ## Nästa steg
 
