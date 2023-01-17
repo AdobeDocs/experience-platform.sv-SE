@@ -5,14 +5,18 @@ title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Fl
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: b1021f985626157895d7350e941238c3197db0b6
+source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1249'
 ht-degree: 1%
 
 ---
 
 # Anslut [!DNL Data Landing Zone] till Adobe Experience Platform med API:t för Flow Service
+
+>[!IMPORTANT]
+>
+>Den här sidan är specifik för [!DNL Data Landing Zone] *källa* i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *mål* koppling, se [[!DNL Data Landing Zone] måldokumentationssida](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
 [!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion för att överföra filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 

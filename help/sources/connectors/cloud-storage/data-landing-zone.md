@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Källa för datallandningszon
 description: Lär dig hur du ansluter Data Landing Zone till Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
 workflow-type: tm+mt
-source-wordcount: '817'
+source-wordcount: '842'
 ht-degree: 0%
 
 ---
 
 # [!DNL Data Landing Zone]
+
+>[!IMPORTANT]
+>
+>Den här sidan är specifik för [!DNL Data Landing Zone] *källa* i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *mål* koppling, se [[!DNL Data Landing Zone] måldokumentationssida](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
 [!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till plattformen. Du har tillgång till en [!DNL Data Landing Zone] behållare per sandlåda och den totala datavolymen för alla behållare begränsas till den totala datamängd som ingår i din licens för plattformsprodukter och -tjänster. Alla kunder med Platform och dess programtjänster som [!DNL Customer Journey Analytics], [!DNL Journey Orchestration], [!DNL Intelligent Services]och [!DNL Adobe Real-Time Customer Data Platform] har etablerats med en [!DNL Data Landing Zone] behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
 

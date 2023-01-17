@@ -3,14 +3,18 @@ keywords: Experience Platform;hem;populära ämnen;Data Landing Zone;datalandnin
 title: Anslut datalandningszonen till plattformen med användargränssnittet
 description: Lär dig hur du skapar en källanslutning för en Data Landing Zone med hjälp av användargränssnittet för plattformen.
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: fb16ea940ef394a15dd24fe703239b4487fafb18
+source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '608'
 ht-degree: 0%
 
 ---
 
 # Anslut [!DNL Data Landing Zone] till plattform med användargränssnittet
+
+>[!IMPORTANT]
+>
+>Den här sidan är specifik för [!DNL Data Landing Zone] *källa* i Experience Platform. Information om hur du ansluter till [!DNL Data Landing Zone] *mål* koppling, se [[!DNL Data Landing Zone] måldokumentationssida](/help/destinations/catalog/cloud-storage/data-landing-zone.md).
 
 [!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion för att överföra filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
