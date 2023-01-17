@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett direktuppspelningsmål
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: abc9b9857e4a93a334440e855ca0ae562c695df1
+source-git-commit: 0d58d949ff24b9059d6afe81de354da0783ec8a4
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '825'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i för
 
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
 
-* [Skapa en dokumentationssida för segment](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=en#create-segment)
+* [Skapa en dokumentationssida för segment](/help/segmentation/ui/overview.md#create-segment)
 * [Skapa en segmentvideogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
@@ -187,3 +187,11 @@ När du har konfigurerat och testat destinationen använder du [målpublicerings
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
 Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md).
+
+## Steg 9: Skicka mål för Adobe granskning {#submit-for-review}
+
+>[!NOTE]
+>
+>Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
+
+Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur [skicka för granskning en produkterad destination som skapats i Destination SDK](/help/destinations/destination-sdk/submit-destination.md).

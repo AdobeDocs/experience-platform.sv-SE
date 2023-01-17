@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
+source-git-commit: 0d58d949ff24b9059d6afe81de354da0783ec8a4
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '694'
 ht-degree: 0%
 
 ---
@@ -261,16 +261,16 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 * Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"`, se [Autentiseringskonfiguration](./authentication-configuration.md#when-to-use).
 
 
-<!-- ## Step 5: Test your destination {#test-destination}
+## Steg 5: Testa destinationen {#test-destination}
 
-After setting up your destination using the configuration endpoints in the previous steps, you can use the [destination testing tool](./create-template.md) to test the integration between Adobe Experience Platform and your destination.
+När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](./file-based-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
-As part of the process to test your destination, you must use the Experience Platform UI to create segments, which you will activate to your destination. Refer to the two resources below for instructions how to create segments in Experience Platform:
+Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
 
-* [Create a segment documentation page](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=en#create-segment)
-* [Create a segment video walkthrough](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) -->
+* [Skapa en dokumentationssida för segment](/help/segmentation/ui/overview.md#create-segment)
+* [Skapa en segmentvideogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
-## Steg 5: Publicera destinationen {#publish-destination}
+## Steg 6: Publicera destinationen {#publish-destination}
 
 >[!NOTE]
 >
@@ -278,10 +278,18 @@ As part of the process to test your destination, you must use the Experience Pla
 
 När du har konfigurerat och testat destinationen använder du [målpublicerings-API](./destination-publish-api.md) för att skicka in din konfiguration till Adobe för granskning.
 
-## Steg 6: Dokumentera destinationen {#document-destination}
+## Steg 7: Dokumentera destinationen {#document-destination}
 
 >[!NOTE]
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
 Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md).
+
+## Steg 8: Skicka mål för Adobe granskning {#submit-for-review}
+
+>[!NOTE]
+>
+>Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
+
+Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur [skicka för granskning en produkterad destination som skapats i Destination SDK](/help/destinations/destination-sdk/submit-destination.md).
