@@ -2,9 +2,9 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: e68ae7d1cb87d078d9fce5a5df501cc6ce944403
+source-git-commit: 1eab40687c599d37c71b919bc3a4aeae274b0a49
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '928'
 ht-degree: 0%
 
 ---
@@ -29,23 +29,25 @@ Innan destinationen kan publiceras på [Experience Platform destinationskatalog]
 På den här sidan visas all information du behöver ange när du skickar eller uppdaterar ett mål som du har skapat med Adobe Experience Platform Destination SDK. Om du vill skicka ett mål i Adobe Experience Platform skickar du ett e-postmeddelande till <aepdestsdk@adobe.com> som innehåller
 
 * En beskrivning av de användningsfall som målet löser. Detta är inte nödvändigt om du uppdaterar en befintlig målkonfiguration.
-* Testa resultaten efter att du har använt API-slutpunkten för testmålet för att utföra ett HTTP-anrop till målet. Dela med Adobe:
-   * Ett API-anrop har gjorts till målslutpunkten.
-   * API-svaret som togs emot från målslutpunkten.
+* Testa resultaten efter att du har använt API-slutpunkten för testmålet för att utföra ett HTTP-anrop till målet. Dela ett API-anrop till målslutpunkten med Adobe och det API-svar som tas emot från målslutpunkten.
+* Ytterligare krav för filbaserade mål:
+   * Dela en begäran och ett svarsexempel efter att du har använt testnings-API för att [testa din filbaserade destination med exempelprofiler](/help/destinations/destination-sdk/file-based-destination-testing-api.md).
+   * Bifoga en exempelfil som har genererats av ditt mål och exporterats till din lagringsplats.
+   * Skicka in någon form av bevis på att du har importerat den exporterade filen från lagringsplatsen till systemet.
 * Bevis på att du har skickat in en begäran om målpublicering för destinationen med [målpublicerings-API](./destination-publish-api.md).
 * A documentation PR (pull request), following the instructions descriin the [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md).
 * En bildfil som visas som logotyp för målkortet i Experience Platform-katalogen.
 
 Du hittar detaljerad information om varje objekt i avsnitten nedan:
 
-## Använd fallbeskrivning
+## Använd fallbeskrivning {#use-case-description}
 
 Ange en beskrivning av de användningsfall som din destination löser för Experience Platform-kunder. Dina beskrivningar kan likna användningsexempel från befintliga partners:
 
 * [Pinterest](/help/destinations/catalog/advertising/pinterest.md): Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 * [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases): DataX-API:er är tillgängliga för annonsörer som vill rikta sig till en viss målgruppsgrupp som är avstämd från e-postadresser i Verizon Media (VMG) kan snabbt skapa ett nytt segment och skicka den önskade målgruppsgruppen med hjälp av VMG:s API i nära realtid.
 
-## Testresultat efter användning av testmåls-API
+## Testresultat efter användning av testmåls-API {#testing-api-response}
 
 Tillhandahåll testresultat efter användning av [API för testmål](./test-destination.md) slutpunkt för att utföra ett HTTP-anrop till målet. Det inkluderar:
 
@@ -215,15 +217,35 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 }
 ```
 
-## Bevis på att du har skickat in en begäran om målpublicering
+## Ytterligare krav för filbaserade mål {#additional-file-based-destination-requirements}
+
+För filbaserade mål måste du lägga in ytterligare bevis för att du har konfigurerat destinationen korrekt. Se till att du tar med objekten nedan:
+
+### Testa API-svar {#testing-api-response-file-based}
+
+Inkludera en begäran och ett svarsexempel efter att du har använt testnings-API:t för att [testa din filbaserade destination med exempelprofiler](/help/destinations/destination-sdk/file-based-destination-testing-api.md).
+
+### Bifoga exporterad fil {#attach-exported-file}
+
+I [skicka e-post](#download-sample-email)bifogar du en CSV-fil som exporterades till din lagringsplats av det mål som du konfigurerade.
+
+### Bevis på godkänt intag {#proof-of-successful-ingestion}
+
+Slutligen måste du tillhandahålla någon form av bevis för att data har importerats till systemet efter att de exporterats till den angivna lagringsplatsen. Ange något av följande:
+
+* Skärmbilder eller en kort skärmdumpsvideo där du tar filen manuellt från lagringsplatsen och importerar den till datorn.
+* Skärmbilder eller en kort skärmdumpsvideo där användargränssnittet i systemet bekräftar att filnamnet som genererats av Experience Platform har importerats till systemet.
+* Logga rader från ditt system som Adobe kan korrelera med filnamnet eller med data som genereras från Experience Platform.
+
+## Bevis på att du har skickat in en begäran om målpublicering {#destination-publishing-request-proof}
 
 När du har testat destinationen måste du använda [målpublicerings-API](./destination-publish-api.md) skicka in destinationen till Adobe för granskning och publicering.
 
 Ange ID:t för publiceringsbegäran för ditt mål. Mer information om hur du hämtar ID för publiceringsbegäran finns i [Lista målpubliceringsbegäranden](./destination-publish-api.md#retrieve-list).
 
-## Måldokumentation PR (pull-begäran) för producerade integreringar
+## Måldokumentation PR (pull-begäran) för producerade integreringar {#documentation-pr}
 
-Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen. Som en del av inlämningsprocessen anger du pull-begäran (PR) för destinationsdokumentationen.
+Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](./overview.md#productized-custom-integrations)måste du använda [självbetjäningsdokumentationsprocess](./docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen. Som en del av inlämningsprocessen anger du pull-begäran (PR) för destinationsdokumentationen.
 
 ## Logotyp för ditt mål {#logo}
 
@@ -233,6 +255,6 @@ Bildkraven är:
 * **Format**: `SVG`
 * **Storlek**: mindre än 2 MB
 
-## Ladda ned exempelmejl
+## Ladda ned exempelmejl {#download-sample-email}
 
 [Hämta](./assets/sample-email-submit-destination.rtf) ett exempelmejl med all information du behöver ge Adobe.
