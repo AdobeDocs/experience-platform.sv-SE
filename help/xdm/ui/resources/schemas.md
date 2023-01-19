@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
-source-wordcount: '3071'
+source-wordcount: '3118'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ Den här guiden ger en översikt över hur du skapar, redigerar och hanterar XDM
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översikt](../../home.md) en introduktion till XDM:s roll i Experience Platform-ekosystemet, och [grunderna för schemakomposition](../../schema/composition.md) för en översikt över hur scheman är uppbyggda.
 
 ## Skapa ett nytt schema {#create}
+
+>[!NOTE]
+>
+>I det här avsnittet beskrivs hur du manuellt skapar ett nytt schema i användargränssnittet. Om du importerar CSV-data till plattformen kan du välja att [mappa dessa data till ett XDM-schema som skapats av AI-genererade rekommendationer](../../../ingestion/tutorials/map-csv/recommendations.md) (för närvarande i beta) utan att behöva skapa schemat manuellt själv.
 
 I [!UICONTROL Schemas] arbetsyta, välja **[!UICONTROL Create schema]** i det övre högra hörnet. I listrutan som visas kan du välja mellan **[!UICONTROL XDM Individual Profile]** och **[!UICONTROL XDM ExperienceEvent]** som basklass för schemat. Du kan också välja **[!UICONTROL Browse]** att välja i den fullständiga listan över tillgängliga klasser, eller [skapa en ny anpassad klass](./classes.md#create) i stället.
 

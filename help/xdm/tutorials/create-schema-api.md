@@ -5,9 +5,9 @@ title: Skapa ett schema med API:t för schemaregister
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: 030874e91b88b18f7de0cc2d12200243b7ed1d31
+source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
-source-wordcount: '2542'
+source-wordcount: '2574'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 0%
 The [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] inom Adobe Experience Platform. The [!DNL Schema Library] innehåller resurser som Adobe ställt till ditt förfogande, [!DNL Experience Platform] partners och leverantörer vars program ni använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
 I den här självstudiekursen används [!DNL Schema Registry] API för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i [!DNL Experience Platform], [Schemaredigeraren, genomgång](create-schema-ui.md) innehåller stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
+
+>[!NOTE]
+>
+>Om du importerar CSV-data till plattformen kan du [mappa dessa data till ett XDM-schema som skapats av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (för närvarande i beta) utan att behöva skapa schemat manuellt själv.
 
 ## Komma igång
 

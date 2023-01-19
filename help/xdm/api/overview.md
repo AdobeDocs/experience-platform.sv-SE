@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för schemaregister
 description: Med API:t för schemaregister kan utvecklare programmässigt hantera alla scheman och relaterade XDM-resurser (Experience Data Model) inom Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1118'
 ht-degree: 0%
 
 ---
@@ -30,6 +30,8 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 XDM-scheman representerar och validerar strukturen och formatet för data som hämtas till Platform. Ett schema består av en klass och noll eller flera schemafältgrupper. Du kan skapa, visa, redigera och ta bort scheman med `/schemas` slutpunkt. Om du vill lära dig hur du använder den här slutpunkten kan du läsa [slutpunktshandbok för scheman](./schemas.md).
 
 En steg-för-steg-guide om hur du skapar ett fullständigt schema i API:t för schemaregister, inklusive hur du skapar och lägger till fältgrupper och datatyper, finns i [Skapa API-schema, genomgång](../tutorials/create-schema-api.md).
+
+Om du importerar CSV-data, se avsnittet om [CSV till schemakonvertering](#csv-to-schema).
 
 ## Beteenden
 
@@ -62,6 +64,10 @@ Mer information om hur du visar föreningar i API:t för schematabellen finns i 
 Du kan automatiskt generera ett XDM-schema med en CSV-fil som mall, vilket gör att du kan skapa mallar för att importera schemafält gruppvis och skära ned på manuellt API- eller gränssnittsarbete.
 
 Se [Slutpunktshandbok för CSV-konvertering till schema](./export.md) för mer information.
+
+>[!NOTE]
+>
+>Du kan också använda användargränssnittet för att [mappa en CSV-fil till ett schema med hjälp av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (för närvarande i betaversion).
 
 ## Exportera {#export}
 
