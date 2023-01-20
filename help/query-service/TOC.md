@@ -4,10 +4,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: b8c2a9ab44274e2719e7178119a58f14d0442955
+source-git-commit: 3d549b14571be7ec3455da0e23181951cb991a9d
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 5%
+source-wordcount: '264'
+ht-degree: 6%
 
 ---
 
@@ -17,58 +17,30 @@ ht-degree: 5%
 - [Översikt över frågetjänsten](home.md)
 - [Paket för frågetjänst](packages.md)
 - [Skyddsutkast för frågetjänst](guardrails.md)
-- Data Distiller {#data-distiller}
-   - [Licensanvändning](data-distiller/licence-usage.md)
 - Kom igång {#get-started}
    - [Förutsättningar](get-started/prerequisites.md)
+- Data Distiller {#data-distiller}
+   - [Licensanvändning](data-distiller/licence-usage.md)
+   - Query Accelerated Store {#query-accelerated-store}
+      - [Skicka accelererade frågor](data-distiller/query-accelerated-store/send-accelerated-queries.md)
+      - [Datamodellguide för rapportinsikter](data-distiller/query-accelerated-store/reporting-insights-data-model.md)
+   - Härledda attribut {#derived-attributes}
+      - [Översikt](data-distiller/derived-attributes/overview.md)
+      - [Skapa decimalbaserade härledda attribut](data-distiller/derived-attributes/decile-based-derived-attributes.md)
 - Användningsfall {#use-cases}
    - [Övergiven surfning](use-cases/abandoned-browse.md)
    - [Aktivitetsanalys med Adobe Target](use-cases/activity-analysis-with-adobe-target.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
    - [Punktfiltrering](use-cases/bot-filtering.md)
-   - [Insikter om webb- och mobilanalys](use-cases/analytics-insights.md)
+   - [Skapa en trendrapport över händelser](use-cases/trended-report-of-events.md)
+   - [Lövbaserade härledda attribut](use-cases/deciles-use-case.md)
+   - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)
+   - [Visa besökarna en lista över deras sidvyer](use-cases/visitors-by-number-of-page-views.md)
    - [Propensionstest](use-cases/propensity-score.md)
    - [SQLAlchemy](use-cases/sqlalchemy.md)
-- API för frågetjänst {#api}
-   - [Komma igång](api/getting-started.md)
-   - [Frågor](api/queries.md)
-   - [Anslutningsparametrar](api/connection-parameters.md)
-   - [Schemalagda frågor](api/scheduled-queries.md)
-   - [Körs för schemalagda frågor](api/runs-scheduled-queries.md)
-   - [Frågemallar](api/query-templates.md)
-   - [Snabbare frågor](api/accelerated-queries.md)
-   - [Aviseringsprenumerationer](api/alert-subscriptions.md)
-- Användargränssnitt för frågetjänst {#ui}
-   - [Översikt över användargränssnittet](ui/overview.md)
-   - [Användarhandbok för Frågeredigeraren](ui/user-guide.md)
-   - [Frågemallar](ui/query-templates.md)
-   - [Använda autentiseringsuppgifter för frågetjänsten](ui/credentials.md)
-   - [Genererar datauppsättningar från frågeresultat](ui/create-datasets.md)
-- [Övervaka frågor](monitor-queries.md)
-- Query Accelerated Store{#query-accelerated-store}
-   - [Datamodell för rapportinsikter](query-accelerated-store/reporting-insights-data-model.md)
-- God praxis {#best-practices}
-   - [Allmän vägledning för frågekörning](best-practices/writing-queries.md)
-   - [Vägledning för organisationen av datatillgångar](./best-practices/organize-data-assets.md)
-   - [Arbeta med kapslade datastrukturer](best-practices/nested-data-structures.md)
-   - [Förenkla kapslade datastrukturer](best-practices/flatten-nested-data.md)
-   - [Anonymt block](best-practices/anonymous-block.md)
-   - [Inkrementell inläsning](best-practices/incremental-load.md)
-   - [Datadeduplicering](best-practices/deduplication.md)
-- Härledda attribut {#derived-attributes}
-   - [Översikt](derived-attributes/overview.md)
-   - [Användningsfall för decimaler](derived-attributes/deciles-use-case.md)
-- Exempelfrågor {#sample-queries}
-   - [Exempelfrågor om Experience Event](sample-queries/experience-event.md)
-   - [Exempel på Adobe Analytics-frågor](sample-queries/adobe-analytics.md)
-- SQL-referens {#sql}
-   - [SQL-översikt](sql/overview.md)
-   - [SQL-syntax](sql/syntax.md)
-   - [Adobe-definierade funktioner](sql/adobe-defined-functions.md)
-   - [Spark SQL-funktioner](sql/spark-sql-functions.md)
-   - [Metadata-kommandon](sql/metadata.md)
-   - [Förberedda programsatser](sql/prepared-statements.md)
-   - [Datauppsättningsexempel](sql/dataset-samples.md)
+   - [Returnera och använda försäljningsvariabler från analysdata](use-cases/merchandising-variables.md)
+   - [Visa sammanslagningsrapporten för en besökare](use-cases/roll-up-report-of-a-visitor.md)
+   - [Insikter om webb- och mobilanalys](use-cases/analytics-insights.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
    - [SSL-lägen](./clients/ssl-modes.md)
@@ -81,11 +53,45 @@ ht-degree: 5%
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
    - [Tableau](clients/tableau.md)
+- Användargränssnitt för frågetjänst {#ui}
+   - [Översikt över användargränssnittet](ui/overview.md)
+   - [Användarhandbok för Frågeredigeraren](ui/user-guide.md)
+   - [Frågemallar](ui/query-templates.md)
+   - [Frågescheman](ui/query-schedules.md)
+   - [Övervaka schemalagda frågor](ui/monitor-queries.md)
+   - [Handbok för autentiseringsuppgifter](ui/credentials.md)
+   - [Generera utdatamängder från frågeresultat](ui/create-datasets.md)
+- API-slutpunkter för frågetjänst {#api}
+   - [Komma igång](api/getting-started.md)
+   - [Frågor](api/queries.md)
+   - [Anslutningsparametrar](api/connection-parameters.md)
+   - [Scheman](api/scheduled-queries.md)
+   - [Körs för schemalagda frågor](api/runs-scheduled-queries.md)
+   - [Frågemallar](api/query-templates.md)
+   - [Snabbare frågor](api/accelerated-queries.md)
+   - [Aviseringsprenumerationer](api/alert-subscriptions.md)
 - Datastyrning {#data-governance}
    - [Översikt](data-governance/overview.md)
    - [Granskningsloggguide](data-governance/audit-log-guide.md)
    - [Identiteter i ad hoc-schemadatauppsättningar](data-governance/ad-hoc-schema-identities.md)
    - [Attributbaserad åtkomstkontroll för ad hoc-scheman](./data-governance/ad-hoc-schema-labels.md)
-- [Felsökningsguide](troubleshooting-guide.md)
+- God praxis {#best-practices}
+   - [Frågekörning](best-practices/writing-queries.md)
+   - [Dataresursorganisation](./best-practices/organize-data-assets.md)
+- Grundläggande begrepp {#essential-concepts}
+   - [Arbeta med kapslade datastrukturer](essential-concepts/nested-data-structures.md)
+   - [Förenkla kapslade datastrukturer](essential-concepts/flatten-nested-data.md)
+   - [Anonymt block](essential-concepts/anonymous-block.md)
+   - [Inkrementell inläsning](essential-concepts/incremental-load.md)
+   - [Datadeduplicering](essential-concepts/deduplication.md)
+   - [Datauppsättningsexempel](essential-concepts/dataset-samples.md)
+- SQL-referens {#sql}
+   - [SQL-översikt](sql/overview.md)
+   - [SQL-syntax](sql/syntax.md)
+   - [Adobe-definierade funktioner](sql/adobe-defined-functions.md)
+   - [Spark SQL-funktioner](sql/spark-sql-functions.md)
+   - [Metadata-kommandon](sql/metadata.md)
+   - [Förberedda programsatser](sql/prepared-statements.md)
+- [Frågor och svar](troubleshooting-guide.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

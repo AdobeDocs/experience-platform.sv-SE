@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;schemalagda frågor;schemalagd fråga;
 solution: Experience Platform
-title: API-slutpunkt för schemalagda frågor
+title: Slutpunkt för scheman
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 2ad86b0cf3cdc89825501b94bd609df751026420
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1136'
 ht-degree: 0%
 
 ---
 
-# Slutpunkt för schemalagda frågor
+# Slutpunkt för scheman
 
 ## Exempel på API-anrop
 

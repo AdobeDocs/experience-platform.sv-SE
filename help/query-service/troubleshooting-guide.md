@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;felsökningsguide;faq;felsökning;
 solution: Experience Platform
-title: Felsökningsguide för frågetjänst
+title: Vanliga frågor
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '4365'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-# [!DNL Query Service] felsökningsguide
+# Frågor och svar
 
 Det här dokumentet innehåller svar på vanliga frågor om frågetjänsten och en lista med vanliga felkoder när frågetjänsten används. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
 
@@ -105,7 +105,7 @@ SELECT * FROM customers LIMIT 0;
 
 ![XDM-schemat och tabellvyn för de separerade data. Kolumnnamnet för en kapslad datauppsättning markeras i användargränssnittet.](./images/troubleshooting/column-name.png)
 
-Se dokumentationen för fullständig vägledning om [arbeta med kapslade datastrukturer](./best-practices/nested-data-structures.md) med frågeredigeraren eller en tredjepartsklient.
+Se dokumentationen för fullständig vägledning om [arbeta med kapslade datastrukturer](./essential-concepts/nested-data-structures.md) med frågeredigeraren eller en tredjepartsklient.
 +++
 
 ### Hur snabbar jag upp en fråga i en datauppsättning som innehåller arrayer?
@@ -142,7 +142,7 @@ En rullgardinsbanderoll visas med en [!UICONTROL Help and support] -avsnitt. Vä
 
 +++Svar Med den anonyma blockfunktionen kan du kedja en eller flera SQL-satser som körs i följd. De gör det även möjligt att hantera undantag.
 
-Se [anonym blockdokumentation](./best-practices/anonymous-block.md) för mer information.
+Se [anonym blockdokumentation](./essential-concepts/anonymous-block.md) för mer information.
 +++
 
 ### Hur implementerar jag anpassad attribuering i Query Service?
@@ -226,7 +226,7 @@ AS SELECT '1' as _id,
 
 ### Hur behandlar jag snabbt nya data som kommer in i systemet varje dag?
 
-+++Besvara [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) -satsen kan användas för att stegvis läsa data i en tabell baserat på ett ögonblicksbild-ID. Detta är idealiskt för [inkrementell belastning](./best-practices/incremental-load.md) designmönster som endast bearbetar information i datauppsättningen som har skapats eller ändrats sedan den senaste inläsningen. Resultatet blir effektivare bearbetning och kan användas med både direktuppspelning och batchdatabearbetning.
++++Besvara [`SNAPSHOT`](./sql/syntax.md#snapshot-clause) -satsen kan användas för att stegvis läsa data i en tabell baserat på ett ögonblicksbild-ID. Detta är idealiskt för [inkrementell belastning](./essential-concepts/incremental-load.md) designmönster som endast bearbetar information i datauppsättningen som har skapats eller ändrats sedan den senaste inläsningen. Resultatet blir effektivare bearbetning och kan användas med både direktuppspelning och batchdatabearbetning.
 +++
 
 ### Varför är det en skillnad mellan siffrorna som visas i profilgränssnittet och siffrorna som beräknas från datauppsättningen för profilexport?

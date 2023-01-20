@@ -1,0 +1,223 @@
+---
+title: Returnera och använd Merchandising-variabler från analysdata
+description: Lär dig hur du tillhandahåller XDM-fält och exempelfrågor för att få tillgång till försäljningsvariablerna i era Analytics-datauppsättningar.
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+workflow-type: tm+mt
+source-wordcount: '1112'
+ht-degree: 1%
+
+---
+
+# Returnera och använda försäljningsvariabler från analysdata
+
+Använd frågetjänsten för att hantera data som hämtas från Adobe Analytics till Adobe Experience Platform som datauppsättningar. I följande avsnitt finns exempelfrågor som du kan använda för att få tillgång till försäljningsvariablerna i dina Analytics-datauppsättningar. Mer information om [importera och mappa Adobe Analytics-data](https://experienceleague.adobe.com/docs/experience-platform/sources/connectors/adobe-applications/mapping/analytics.html) via Analytics-källan
+
+## Marknadsföringsvariabler {#merchandising-variables}
+
+Merchandising-variabler kan följa på en av två syntaxer:
+
+* **Produktsyntax**: Associerar eVar med en produkt. 
+* **Konverteringsvariabelsyntax**: Associerar eVar med en produkt endast om en bindningshändelse inträffar. Du kan välja händelser som fungerar som bindningshändelser.
+
+## Produktsyntax {#product-syntax}
+
+I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt konfigurerade variabler som kallas marknadsföringsvariabler. Dessa baseras antingen på en eVar eller anpassade händelser. Skillnaden mellan de här variablerna och deras typiska användning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen.
+
+Dessa variabler kallas för säljvariabler för produktsyntax. Detta gör det möjligt att samla in information, t.ex. ett&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
+
+Mer information om hur du använder produktsyntaxen finns i Adobe Analytics-dokumentationen på [implementera eVars med produktsyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html#implement-using-product-syntax).
+
+Avsnitten nedan beskriver de XDM-fält som behövs för att få tillgång till varuvariablerna i [!DNL Analytics] datauppsättning:
+
+### eVars
+
+```console
+productListItems[#]._experience.analytics.customDimensions.evars.evar#
+```
+
+* `#`: Indexvärdet för den array som du försöker komma åt.
+* `evar#`: Den specifika eVar-variabel som du använder.
+
+### Anpassade händelser
+
+```console
+productListItems[#]._experience.analytics.event1to100.event#.value
+```
+
+* `#`: Indexvärdet för den array som du försöker komma åt.
+* `event#`: Den specifika anpassade händelsevariabel som du använder.
+
+## Användningsexempel för produktsyntax {#product-use-cases}
+
+Följande användningsexempel fokuserar på att returnera en eVar från `productListItems` array med SQL.
+
+### Returnera en eVar och händelse för försäljning
+
+Frågan nedan returnerar en eVar och händelse för marknadsföring av den första produkten som finns i `productListItems` array.
+
+```sql
+SELECT
+  productListItems[0]._experience.analytics.customDimensions.evars.eVar1,
+  productListItems[0]._experience.analytics.event1to100.event1.value
+FROM adobe_analytics_midvalues
+WHERE timestamp = to_timestamp('2019-07-23')
+  AND productListItems[0].SKU IS NOT NULL
+  AND productListItems[0]._experience.analytics.customDimensions.evars.eVar1 IS NOT NULL
+  AND productListItems[0]._experience.analytics.event1to100.event1.value IS NOT NULL
+LIMIT 10
+```
+
+### Utvidga arrayen productListItems och returnera eVar och händelsen för varje produkt.
+
+Nästa fråga tar bort `productListItems` och returnerar varje eVar och händelse per produkt. The `_id` fältet inkluderas för att visa relationen till den ursprungliga träffen. The `_id` värdet är en unik primärnyckel för datauppsättningen.
+
+>[!NOTE]
+>
+>Funktionen explodera delar upp elementen i en array i flera rader. Det exkluderar null-värden.
+
+```sql
+SELECT
+  _id,
+  productItem._experience.analytics.customDimensions.evars.eVar1,
+  productItem._experience.analytics.event1to100.event1.value
+FROM (
+  SELECT
+    _id,
+    explode(productListItems) as productItem
+  FROM adobe_analytics_midvalues
+  WHERE TIMESTAMP = to_timestamp('2019-07-23')
+  AND productListItems[0].SKU IS NOT NULL
+  AND productListItems[0]._experience.analytics.customDimensions.evars.eVar1 IS NOT NULL
+  AND productListItems[0]._experience.analytics.event1to100.event1.value IS NOT NULL
+)
+LIMIT 20
+```
+
+>[!NOTE]
+>
+> Om du försöker hämta ett fält som inte finns i den aktuella datauppsättningen inträffar felet&quot;Inget sådant strukturfält&quot;. Utvärdera orsaken i felmeddelandet för att identifiera ett tillgängligt fält, uppdatera frågan och kör den igen.
+>
+>
+```console
+>ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered. Reason: [No such struct field evar1 in eVar10, eVar13, eVar62, eVar88, eVar2;]
+>```
+
+### Syntax för konverteringsvariabel {#conversion-variable-syntax}
+
+En annan typ av försäljningsvariabel som finns i Adobe Analytics är konverteringsvariabelsyntax. Syntaxen för konverteringsvariabler används när eVar inte är tillgängligt för att anges i variabeln products. Det här scenariot innebär vanligtvis att sidan inte har något sammanhang för försäljningskanalen eller sökmetoden. I dessa fall bör du ange variabeln för försäljning innan användaren kommer till produktsidan, och värdet kvarstår tills bindningshändelsen inträffar.
+
+Scenariot nedan visar till exempel hur de data som krävs kan finnas på en sida innan konverteringen eller händelsen som är relaterad till produkten inträffar.
+
+1. En användare gör en intern sökning efter &quot;vinterhatt&quot; som anger att konverteringssyntaxen aktiverat för varuexponering av eVar6 ska vara &quot;intern sökning:vinterhatt&quot;.
+2. Användaren klickar på&quot;våffelsbeanie&quot; och hamnar på produktinformationssidan.\
+   a. Landing here utlöser en `Product View` event för &quot;waffle beanie&quot; för 12,99 USD.\
+   b. Sedan `Product View` är konfigurerad som en bindningshändelse, är produkten &quot;waffle beanie&quot; nu bunden till eVar6-värdet &quot;internal search:vinterhat&quot;. När en produkt med&quot;våfflbeanie&quot; samlas in är den kopplad till&quot;intern sökning:vinterhatt&quot;. Detta inträffar antingen tills eVar förfalloinställning har nåtts eller tills ett nytt eVar6-värde har angetts och bindningshändelsen inträffar med produkten igen.
+3. Användaren lägger till produkten i sin kundvagn, vilket ger `Cart Add` -händelse.
+4. Användaren gör en annan intern sökning efter&quot;sommarskjorta&quot; som ställer in konverteringssyntaxen som möjliggör försäljning av eVar6 till&quot;intern sökning:sommarskjorta&quot;.
+5. Användaren väljer &quot;sportskjorta&quot; och hamnar på produktinformationssidan.\
+   a. Landing here utlöser en `Product View` för &quot;sportskjorta för 19,99 dollar.\
+   b. Som `Product View` -händelsen är den bindande händelsen, produkten &quot;sportskjorta&quot; är nu bunden till eVar 6-värdet &quot;intern sökning:sommarskjorta&quot;. Den tidigare produkten &quot;waffle beanie&quot; är fortfarande bunden till eVar6-värdet &quot;internal search:waffle beanie&quot;.
+6. Användaren lägger till produkten i sin kundvagn, vilket ger `Cart Add` -händelse.
+7. Användaren checkar ut med båda produkterna.
+
+Vid rapportering kan order, intäkter, produktvisningar och kundvagnstillägg rapporteras mot eVar 6 och anpassas till den bundna produktens aktivitet.
+
+| eVar6 (produktsökningsmetod) | intäkt | order | produktvyer | kundvagn lägger till |
+| ------------------------------ | ------- | ------ | ------------- | ----- |
+| intern sökning:sommarskjorta | 19.99 | 1 | 1 | 1 |
+| intern sökning:vintertid | 12.99 | 1 | 1 | 1 |
+
+Mer information om hur du använder syntaxen för konverteringsvariabler finns i Adobe Analytics-dokumentationen på [implementera eVars med konverteringsvariabelsyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html#implement-using-conversion-variable-syntax).
+
+Nedan visas XDM-fälten som skapar konverteringsvariabelsyntaxen i [!DNL Analytics] datauppsättning:
+
+#### eVars
+
+```console
+_experience.analytics.customDimensions.evars.evar#
+```
+
+* `evar#`: Den specifika eVar-variabel som du använder.
+
+#### Produkt
+
+```console
+productListItems[#].sku
+```
+
+* `#`: Indexvärdet för den array som du försöker komma åt.
+
+## Konverteringsvariabeln använder fall {#conversion-variable-use-cases}
+
+Användningsexemplen nedan återspeglar scenarier som kräver syntax för konverteringsvariabel.
+
+### Bind värdet till det specifika produkt- och händelseparet
+
+Frågan nedan binder värdet till det specifika produkt- och händelseparet. I det här exemplet är värdet bundet till produktvyhändelsen.
+
+```sql
+SELECT
+  endUserIds._experience.aaid.id AS AAID,
+  timestamp,
+  CASE WHEN commerce.productViews.value = 1 THEN ATTRIBUTION_LAST_TOUCH(timestamp, 'bindConversionSyntaxMerchVariable_eVar1', _experience.analytics.customDimensions.eVars.eVar1)
+  OVER(PARTITION BY endUserIds._experience.aaid.id
+       ORDER BY timestamp
+       ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).value
+  END AS eVar1Bind,
+  EXPLODE(productListItems) AS Product_List,
+  commerce.productViews.value AS prodView,
+  commerce.purchases.value AS purchase
+FROM adobe_analytics_midvalues
+WHERE commerce.productViews.value = 1 OR commerce.purchases.value = 1 OR _experience.analytics.customDimensions.eVars.eVar1 IS NOT NULL
+LIMIT 100
+```
+
+### Behåll det bundna värdet för efterföljande förekomster av respektive produkt
+
+Exempelfrågan nedan består av det bundna värdet till efterföljande förekomster av respektive produkt. Den lägsta underfrågan fastställer värdets relation till produkten i den deklarerade bindningshändelsen. Nästa underfråga utför attribueringen av det bundna värdet i efterföljande interaktioner med respektive produkt. SELECT på den översta nivån aggregerar resultaten för att skapa rapporteringen.
+
+```sql
+SELECT
+  Product_List.SKU,
+  eVar1101ConversionSyntax,
+  SUM(prodView) AS Product_Views,
+  SUM(purchase) AS Purchases
+FROM
+(
+  SELECT
+    Product_List,
+    ATTRIBUTION_LAST_TOUCH(timestamp, 'ConversionSyntax_eVar1', eVar1Bind)
+      OVER(PARTITION BY AAID, Product_List.SKU
+           ORDER BY timestamp
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).value
+    AS eVar1ConversionSyntax,
+    prodView,
+    purchase
+  FROM
+  (
+    SELECT
+      endUserIds._experience.aaid.id AS AAID,
+      timestamp,
+      CASE WHEN commerce.productViews.value = 1 THEN ATTRIBUTION_LAST_TOUCH(timestamp, 'bindConversionSyntaxMerchVariable_eVar1', _experience.analytics.customDimensions.eVars.eVar1)
+      OVER(PARTITION BY endUserIds._experience.aaid.id
+           ORDER BY timestamp
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).value
+      END AS eVar1Bind,
+      EXPLODE(productListItems) AS Product_List,
+      commerce.productViews.value AS prodView,
+      commerce.purchases.value AS purchase
+    FROM adobe_analytics_midvalues
+    WHERE commerce.productViews.value = 1 OR commerce.purchases.value = 1 OR _experience.analytics.customDimensions.eVars.eVar1 IS NOT NULL
+  )
+)
+WHERE eVar1ConversionSyntax IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 3 DESC
+LIMIT 100
+```
+
+## Nästa steg
+
+Genom att läsa det här dokumentet bör du få en bättre förståelse för hur du returnerar en eVar med produktsyntax och binder ett värde till en viss produkt med syntaxen för konverteringsvariabler.
+
+Om du inte redan har gjort det bör du läsa [Analysinsikter för interaktionsdokumentation för webb och mobiler](./analytics-insights.md) nästa. Här finns exempel på vanliga användningsområden och visar hur man använder frågetjänsten för att skapa åtgärdbara insikter från Adobe Analytics-data för webben och mobiler.

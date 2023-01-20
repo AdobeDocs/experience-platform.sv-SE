@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '1050'
 ht-degree: 0%
@@ -46,7 +46,7 @@ När en fråga har schemalagts visas den i listan över schemalagda frågor på 
 | **[!UICONTROL Last run timestamp]** | Den senaste tidsstämpeln när frågan kördes. Den här kolumnen visar om en fråga har körts enligt det aktuella schemat. |
 | **[!UICONTROL Last run status]** | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
 
-Mer information om hur du gör det finns i dokumentationen [övervaka frågor via användargränssnittet för frågetjänsten](../monitor-queries.md).
+Mer information om hur du gör det finns i dokumentationen [övervaka frågor via användargränssnittet för frågetjänsten](./monitor-queries.md).
 
 ## Mallar {#browse}
 

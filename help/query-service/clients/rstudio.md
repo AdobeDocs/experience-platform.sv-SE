@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut RStudio till frågetjänsten
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: d40aa52240ab8f15feea62ec5fb8de073dd6a053
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Ett meddelande i konsolutdata bekräftar anslutningen till frågetjänsten.
 
 Nu när du har anslutit till [!DNL Query Service]kan du skriva frågor för att köra och redigera SQL-satser. Du kan till exempel använda `dbGetQuery(con, sql)` för att köra frågor, där `sql` är den SQL-fråga som du vill köra.
 
-I följande fråga används en datauppsättning som innehåller [Experience Events](../sample-queries/experience-event.md) och skapar ett histogram med sidvyer av en webbplats utifrån enhetens skärmhöjd.
+I följande fråga används en datauppsättning som innehåller [Experience Events](../../xdm/classes/experienceevent.md) och skapar ett histogram med sidvyer av en webbplats utifrån enhetens skärmhöjd.
 
 ```sql
 df_pageviews <- dbGetQuery(con,

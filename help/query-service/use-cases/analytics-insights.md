@@ -1,16 +1,17 @@
 ---
-title: 'Analysinsikter för webb- och mobilinteraktioner '
+title: Analysinsikter för webb- och mobilinteraktioner
 description: I det här dokumentet beskrivs hur du använder frågetjänsten för att skapa åtgärdbara insikter från inkapslade Adobe Analytics-data.
-source-git-commit: cdceba9caf035831f4c376edf34356f666b79aa8
+exl-id: f64e61ef-0157-4f0a-88f8-bbe4f9aa83f0
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
 
 # Analysinsikter för interaktion via webben och mobiler
 
-Med Adobe Experience Platform kan ni importera data från Adobe Analytics rapporteringsprogram med hjälp av XDM-fält (Experience Data Model) för att fylla i datauppsättningar. Frågetjänsten kan sedan använda dessa analysdata genom att köra SQL-frågor för att generera värdefulla insikter från en användares beteende över de digitala plattformarna.
+Med Adobe Experience Platform kan ni importera data från Adobe Analytics rapporteringsprogram med hjälp av XDM-fält (Experience Data Model) för att fylla i datauppsättningar. Dessa analysdata ändras för att anpassas till [!DNL XDM ExperienceEvent] klassen. Frågetjänsten kan sedan använda dessa data genom att köra SQL-frågor för att generera värdefulla insikter från användarens beteende över de digitala plattformarna.
 
 Det här dokumentet innehåller ett antal exempel på SQL-frågor som visar vanliga användningsfall när du skapar insikter från webb- och mobilanalysdata.
 

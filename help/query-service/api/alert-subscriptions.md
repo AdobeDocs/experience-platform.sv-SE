@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;alert;
-title: API-slutpunkt för aviseringsprenumerationer
+title: Slutpunkt för aviseringsprenumerationer
 description: Den här handboken innehåller exempel på HTTP-begäranden och svar för de olika API-anrop som du kan göra till slutpunkten för aviseringsprenumerationer med hjälp av API:t för frågetjänsten.
 exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
-source-git-commit: 8673b6ceb9386677171334ce99d39c93e5e8159c
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '2668'
+source-wordcount: '2667'
 ht-degree: 0%
 
 ---
 
-# API-slutpunkt för aviseringsprenumerationer
+# Slutpunkt för aviseringsprenumerationer
 
-Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Meddelandeinnehållet är detsamma för varningar på plattformen och e-postvarningar. Frågevarningar kan för närvarande bara prenumereras på med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/).
+Med Adobe Experience Platform Query Service kan du prenumerera på aviseringar för både ad hoc-frågor och schemalagda frågor. Varningar kan tas emot via e-post, i användargränssnittet för plattformen eller båda. Meddelandeinnehållet är detsamma för varningar på plattformen och e-postvarningar. Frågevarningar kan för närvarande endast prenumereras med [API för frågetjänst](https://developer.adobe.com/experience-platform-apis/references/query-service/).
 
 >[!IMPORTANT]
 >

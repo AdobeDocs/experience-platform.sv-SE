@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;generera datauppsättningar;generera datauppsättning;skapa datauppsättning;
 solution: Experience Platform
-title: Generera datauppsättningar från resultat i frågetjänsten
+title: Generera utdatauppsättningar från frågeresultat
 type: Tutorial
 description: Med Adobe Experience Platform Query Service kan du skapa datauppsättningar från användargränssnittet. När en datauppsättning har skapats kan den nås som vilken annan datauppsättning som helst i datasjön och användas för en mängd olika användningsfall.
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 0%
 
 ---
 
-# Generera datauppsättningar från resultat i [!DNL Query Service]
+# Generera utdatamängder från frågeresultat
 
 [!DNL Query Service] låter dig använda frågor för att generera datauppsättningar i [!DNL Data Lake]. Dessa datauppsättningar kan sedan användas som indata för fler frågor eller i andra tjänster som [!DNL Data Science Workspace], kundprofil i realtid, eller [!DNL Analysis Workspace].
 

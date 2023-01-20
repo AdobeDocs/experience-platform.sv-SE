@@ -3,7 +3,7 @@ keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Exempel på användningsfall för Adobe Experience Platform Query Service
 description: Ett heltäckande exempel som demonstrerar mångsidigheten och fördelarna med Adobe Experience Platform Query Service.
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 0%
@@ -73,11 +73,11 @@ Adobe Experience Platform tillhandahåller ett datalager och de verktyg som krä
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur [!DNL Query Service] påverkar inte bara kvaliteten på era data och hur lätt det är att segmentera, utan även dess betydelse inom dataarkitekturen för hela hela arbetsflödet från början till slut. Fler exempel på SQL som använder Adobe Analytics med [!DNL Query Service], se [Adobe Analytics exempelfrågedokumentation](../sample-queries/adobe-analytics.md).
+Genom att läsa det här dokumentet bör du nu förstå hur [!DNL Query Service] påverkar inte bara kvaliteten på era data och hur lätt det är att segmentera, utan även dess betydelse inom dataarkitekturen för hela hela arbetsflödet från början till slut. Fler exempel på SQL som använder Adobe Analytics med [!DNL Query Service], se [Användningsexempel för Adobe Analytics marknadsföringsvariabler](./merchandising-variables.md).
 
 Andra dokument som demonstrerar fördelarna med [!DNL Query Service] till er organisations strategiska affärsinsikter är [använda versaler för robotfiltrering](./bot-filtering.md) exempel.
 
-Alternativt kan dessa dokument hjälpa dig att förstå [!DNL Query Service] funktioner:
+Dessa dokument kan även hjälpa dig att förstå [!DNL Query Service] funktioner:
 
 * [Vägledning för frågekörning](../best-practices/writing-queries.md)
 * [Vägledning för organisationen av datatillgångar](../best-practices/organize-data-assets.md).

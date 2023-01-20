@@ -3,7 +3,7 @@ keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;
 title: Exempel på användningsfall för Real-time Customer Data Platform B2B Edition
 description: Det här exempelscenariot är ett exempel på hur du konfigurerar din implementering av Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '1135'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Under den senaste månaden `p2@townsend.com` besökte den nya produktsidan och w
 
 ## Problemet
 
-Rad 1 har just släppt en ny programprodukt och vill sälja in den till Bodeas befintliga toppskiktskundbas. Bodea lanserar en marknadsföringskampanj med den specifika målgruppen i åtanke.
+Rad 1 har just släppt en ny programprodukt och vill sälja in den i Bodeas befintliga toppskiktskundbas. Bodea lanserar en marknadsföringskampanj med den specifika målgruppen i åtanke.
 
 Eftersom relevant Townsend-information registreras som Konto 1 i Marketo 1 och Konto 2 i Marketo 2 kan Bodeas marknadsföringsteam inte utnyttja den isolerade informationen effektivt.
 
@@ -87,7 +87,7 @@ Genom att använda destinationerna Marketo Engage och LinkedIn har Bodea en tota
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du nu fått en introduktion till olika mål och problem som kan lösas med Real-Time CDP B2B Edition.
+Genom att läsa det här dokumentet har du nu introducerats till de typer av mål och problem som kan lösas med Real-Time CDP B2B Edition.
 
 Följande dokumentation rekommenderas för att förbättra din förståelse av B2B-specifika funktioner:
 

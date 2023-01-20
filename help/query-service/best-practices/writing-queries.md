@@ -5,9 +5,9 @@ title: Allmänna riktlinjer för frågekörning i frågetjänsten
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1072'
 ht-degree: 2%
 
 ---
@@ -311,7 +311,7 @@ LIMIT 50;
 
 ## Deduplicering
 
-Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader från data. Mer information om borttagning av dubbletter finns i [Handbok för borttagning av dubbletter i frågetjänsten](./deduplication.md).
+Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader från data. Mer information om borttagning av dubbletter finns i [Handbok för borttagning av dubbletter i frågetjänsten](../essential-concepts/deduplication.md).
 
 ## Tidszonsberäkningar i frågetjänsten
 
@@ -325,4 +325,7 @@ Fler exempel på frågor som kan användas i Query Service finns i följande dok
 
 - [Analysinsikter](../use-cases/analytics-insights.md)
 - [Aktivitetsanalys med Adobe Target](../use-cases/activity-analysis-with-adobe-target.md)
-- [Exempelfrågor för ExperienceEvent](../sample-queries/experience-event.md).
+- [Skapa en trendrapport över händelser](../use-cases/trended-report-of-events.md)
+- [Visa en sammanslagningsrapport för en besökare](../use-cases/roll-up-report-of-a-visitor.md)
+- [Visa en användares sidvyer](../use-cases/list-visitor-sessions.md)
+- [Visa besökarna efter deras antal sidvisningar](../use-cases/visitors-by-number-of-page-views.md)

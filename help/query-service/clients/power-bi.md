@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut Power BI till frågetjänst
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 1af89160cbf5b689396921869fec6c30a5bcfff0
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '1064'
 ht-degree: 1%
@@ -51,7 +51,7 @@ The **[!DNL Database]** -fältet kan vara antingen&quot;all&quot; eller ett data
 
 >[!IMPORTANT]
 >
->Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../best-practices/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
+>Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../essential-concepts/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
 
 ### Dataanslutningsläge {#data-connectivity-mode}
 

@@ -1,7 +1,8 @@
 ---
 title: Frågetjänstpaket
 description: I följande dokument beskrivs vilka funktioner och produkter som är tillgängliga för frågetjänsten och skillnaderna mellan ad hoc- och batchfrågor är markerade.
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
+source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
 source-wordcount: '720'
 ht-degree: 2%
@@ -61,7 +62,7 @@ Följande tabell visar effekterna av [!DNL Manage Queries] behörighet:
 
 ## Stöd för sandlådor
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje Platform-instans har stöd för flera produktions- och icke-produktionssandlådor, och varje instans har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i [översikt över sandlådor](../sandboxes/home.md). Alla frågetjänstberättiganden delas över alla sandlådor
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje Platform-instans har stöd för flera produktions- och icke-produktionssandlådor, och alla har sitt eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka dina produktionssandlådor. Mer information om sandlådor finns i [översikt över sandlådor](../sandboxes/home.md). Alla frågetjänstberättiganden delas över alla sandlådor
 
 ## Nästa steg
 

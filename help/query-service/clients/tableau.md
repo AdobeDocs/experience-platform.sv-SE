@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut tabell till frågetjänst
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: 1d71cc4336747eb258ec2d8dcdc545cb2233692d
+source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
 source-wordcount: '439'
 ht-degree: 0%
@@ -36,7 +36,7 @@ Kontrollera att du har markerat **[!UICONTROL Require SSL]** innan du försöker
 
 >[!IMPORTANT]
 >
->Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../best-practices/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
+>Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../essential-concepts/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
 
 När du har fyllt i alla dina inloggningsuppgifter bekräftar du dina inställningar för att fortsätta. Du har nu en koppling till Adobe Experience Platform.
 
