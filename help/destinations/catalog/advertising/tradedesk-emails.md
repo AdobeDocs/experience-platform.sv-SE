@@ -2,10 +2,10 @@
 title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 271a9ad9848db855372a4ce5346f97cf48400901
 workflow-type: tm+mt
-source-wordcount: '1018'
-ht-degree: 1%
+source-wordcount: '1061'
+ht-degree: 0%
 
 ---
 
@@ -13,21 +13,23 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> [!DNL The Trade Desk - CRM] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+>[!DNL The Trade Desk - CRM] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+>
+>I och med lanseringen av EUID (European Unified ID) ser du nu två [!DNL The Trade Desk - CRM] destinationer i [målkatalog](/help/destinations/catalog/overview.md).
+>* Om du hämtar data i EU ska du använda **[!DNL The Trade Desk - CRM (EU)]** mål.
+>* Om du hämtar data i APAC- eller NAMER-regionerna använder du **[!DNL The Trade Desk - CRM (NAMER & APAC)]** mål.
+>
+>Båda destinationerna i Experience Platform är för närvarande betaversioner. Dokumentationssidan skapades av *[!DNL Trade Desk]* team. Om du har frågor eller uppdateringsfrågor kontaktar du [!DNL Trade Desk] kan dokumentationen och funktionaliteten ändras.
 
 ## Översikt {#overview}
 
->[!IMPORTANT]
->
-> Dokumentationssidan skapades av *[!DNL Trade Desk]* team. Om du har frågor eller uppdateringsfrågor kontaktar du [!DNL Trade Desk] -representant.
-
 Det här dokumentet är utformat för att hjälpa dig att aktivera profiler för [!DNL Trade Desk] för målgruppsanpassning och undertryckande baserat på CRM-data.
+
+[!DNL The Trade Desk(TTD)] hanterar inte direkt den överförda filen med e-postadresser och inte heller [!DNL The Trade Desk] lagra e-postmeddelanden i Raw-format.
 
 >[!TIP]
 >
 >Använd [!DNL The Trade Desk] CRM-mål för CRM-datamappning, t.ex. e-postadress eller hashad e-postadress. Använd [Annan destination för Trade Desk](/help/destinations/catalog/advertising/tradedesk.md) i Adobe Experience Platform-katalogen för cookies och mappningar av enhets-ID.
-
-[!DNL The Trade Desk] (TTD) hanterar inte alltid den överförda filen med e-postadresser och inte heller [!DNL The Trade Desk] lagra e-postmeddelanden i Raw-format.
 
 ## Förutsättningar {#prerequisites}
 
@@ -35,7 +37,7 @@ Innan du kan aktivera segment till [!DNL The Trade Desk]måste du kontakta [!DNL
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
-Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav. Läs [Översikt över namnområde för identitet](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv) för mer information.
+Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav. Läs [Översikt över namnområde för identitet](/help/identity-service/namespaces.md) för mer information.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -45,8 +47,8 @@ Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experie
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| E-post | E-postadresser (klartext) | Välj `Email` mål-ID när din källidentitet är ett e-postnamnutrymme eller attribut. |
-| Email_LC_SHA256 | E-postadresser måste hash-kodas med SHA256 och nedsänkt. Var noga med att följa [e-postnormalisering](https://github.com/UnifiedID2/uid2docs/tree/main/api#email-address-normalization) regler krävs. Du kan inte ändra den här inställningen senare. | Välj `Email_LC_SHA256` target-identitet när din källidentitet är ett Email_LC_SHA256-namnutrymme eller -attribut. |
+| E-post | E-postadresser (klartext) | Indata `email` som målidentitet när din källidentitet är ett e-postnamnutrymme eller attribut. |
+| Email_LC_SHA256 | E-postadresser måste hash-kodas med SHA256 och nedsänkt. Var noga med att följa [e-postnormalisering](https://github.com/UnifiedID2/uid2docs/tree/main/api#email-address-normalization) regler krävs. Du kan inte ändra den här inställningen senare. | Indata `hashed_email` som målidentitet när källidentiteten är ett Email_LC_SHA256-namnutrymme eller -attribut. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -54,7 +56,7 @@ Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experie
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform eller använda obearbetade e-postadresser.
 
-Om du vill veta mer om hur du importerar e-postadresser i Experience Platform kan du läsa [batchvis hantering - översikt](https://experienceleague.adobe.com/docs/experience-platform/ingestion/batch/overview.html?lang=en).
+Om du vill veta mer om att importera e-postadresser i Experience Platform läser du [batchvis hantering - översikt](/help/ingestion/batch-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -71,7 +73,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (målgrupp) med de identifierare (e-post eller hashade e-post) som används i Trade Desk-målet. |
-| Exportfrekvens | **[!UICONTROL Daily Batch]** | När en profil uppdateras i Experience Platform baserat på segmentutvärdering uppdateras profilen (identiteterna) en gång om dagen nedströms till målplattformen. Läs mer om [batchöverföringar](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html?lang=en#file-based). |
+| Exportfrekvens | **[!UICONTROL Daily Batch]** | När en profil uppdateras i Experience Platform baserat på segmentutvärdering uppdateras profilen (identiteterna) en gång om dagen nedströms till målplattformen. Läs mer om [batchexport](/help/destinations/destination-types.md#file-based). |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -90,19 +92,27 @@ Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skap
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Advertiser ID]**: din [!DNL Trade Desk Advertiser ID], som antingen kan delas av dina [!DNL Trade Desk] Kontohanteraren eller finns under [!DNL Advertiser Preferences] i [!DNL Trade Desk] Gränssnitt.
 
-När du ansluter till målet är det helt valfritt att ange en datastyrningsprincip. Granska Experience Platform [datastyrningsöversikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=en) för mer information.
+![Skärmbild av användargränssnittet för plattformen som visar hur du fyller i målinformation.](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
+
+När du ansluter till målet är det helt valfritt att ange en datastyrningsprincip. Granska Experience Platform [datastyrningsöversikt](/help/data-governance/policies/overview.md) för mer information.
 
 ## Aktivera segment till den här destinationen {#activate}
 
-Se [aktivera målgruppsdata till exportmål för batchprofiler](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en) för instruktioner om hur du aktiverar målgruppssegment till ett mål.
+Läs [aktivera målgruppsdata till exportmål för batchprofiler](/help/destinations/ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till ett mål.
 
 I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+
+![Skärmbild för plattformsgränssnitt för att schemalägga segmentaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
 >[!NOTE]
 >
 >Alla segment aktiverade för [!DNL The Trade Desk] CRM-målet ställs automatiskt in på en daglig frekvens och fullständig filexport.
 
+![Skärmbild för plattformsgränssnitt för att schemalägga segmentaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
+
 I **[!UICONTROL Mapping]** måste du välja attribut eller identitetsnamnutrymmen i källkolumnen och mappa till målkolumnen.
+
+![Skärmbild av användargränssnittet för plattformen för att kartlägga segmentaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
 Nedan visas ett exempel på korrekt identitetsmappning när segment aktiveras för [!DNL The Trade Desk] CRM-mål.
 
@@ -117,8 +127,8 @@ Välja källfält:
 
 Markera målfält:
 
-* Välj `Email` namnutrymme som målidentitet när källnamnutrymmet eller attributet är `Email`.
-* Välj `Email_LC_SHA256` namnutrymme som målidentitet när källnamnutrymmet eller attributet är `Email_LC_SHA256`.
+* Indata  `email` som målidentitet när källnamnutrymmet eller attributet är `Email`.
+* Indata  `hashed_email` som målidentitet när källnamnutrymmet eller attributet är `Email_LC_SHA256`.
 
 ## Validera dataexport {#validate}
 
