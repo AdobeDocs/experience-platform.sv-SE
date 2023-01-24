@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;SFTP;sftp
-solution: Experience Platform
 title: Skapa en SFTP-källanslutning i användargränssnittet
-type: Tutorial
 description: Lär dig hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 1a00ed27-3c95-4e57-9f94-45ff256bf75c
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -44,12 +41,13 @@ För att ansluta till [!DNL SFTP]måste du ange värden för följande anslutnin
 | `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 | `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för hur många samtidiga anslutningar som plattformen skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Anteckning**: När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
+| Mappsökväg | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP] kan du ange mappsökvägen för att ange användaråtkomst till den undermapp du väljer. |
 
 När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa en ny [!DNL SFTP] konto för att ansluta till plattformen.
 
 ## Anslut till [!DNL SFTP] server
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett inkommande konto för.
+Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -67,31 +65,31 @@ Om du vill ansluta ett befintligt konto markerar du det FTP- eller SFTP-konto so
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn och en valfri beskrivning av ditt nya [!DNL SFTP] konto.
-
-![Den nya kontoskärmen för SFTP](../../../../images/tutorials/create/sftp/new.png)
-
-#### Autentisera med lösenord
-
-[!DNL SFTP] stöder olika autentiseringstyper för åtkomst. Under **[!UICONTROL Account authentication]** välj **[!UICONTROL Password]** och ange värden för värd och port att ansluta till, tillsammans med ditt användarnamn och lösenord.
-
-![Den nya kontoskärmen för SFTP-källan med grundläggande autentisering](../../../../images/tutorials/create/sftp/password.png)
-
-#### Autentisera med den offentliga SSH-nyckeln
-
-Om du vill använda SSH-autentiseringsuppgifter för offentlig nyckel väljer du **[!UICONTROL SSH public key]**  och ange värden för värd och port, samt din privata nyckelkombination och lösenfras.
-
 >[!IMPORTANT]
 >
 >SFTP stöder en RSA- eller DSA-typ av OpenSSH-nyckel. Se till att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
 
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn och en valfri beskrivning av ditt nya [!DNL SFTP] konto.
+
+![Den nya kontoskärmen för SFTP](../../../../images/tutorials/create/sftp/new.png)
+
+The [!DNL SFTP] Källan stöder både grundläggande autentisering och autentisering via den offentliga nyckeln för SSH.
+
+>[!BEGINTABS]
+
+>[!TAB Grundläggande autentisering]
+
+Om du vill använda grundläggande autentisering väljer du **[!UICONTROL Password]** och ange värden för värd och port att ansluta till, tillsammans med ditt användarnamn och lösenord. Under det här steget kan du även ange sökvägen till den undermapp som du vill ge åtkomst till. När du är klar väljer du **[!UICONTROL Connect to source]**.
+
+![Den nya kontoskärmen för SFTP-källan med grundläggande autentisering](../../../../images/tutorials/create/sftp/password.png)
+
+>[!TAB SSH-autentisering av offentlig nyckel]
+
+Om du vill använda SSH-autentiseringsuppgifter för offentlig nyckel väljer du **[!UICONTROL SSH public key]**  och ange värden för värd och port, samt din privata nyckelkombination och lösenfras. Under det här steget kan du även ange sökvägen till den undermapp som du vill ge åtkomst till. När du är klar väljer du **[!UICONTROL Connect to source]**.
+
 ![Den nya kontoskärmen för SFTP-källan med den offentliga SSH-nyckeln.](../../../../images/tutorials/create/sftp/ssh.png)
 
-| Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| Innehåll för privat nyckel | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
-| Lösenfras | Anger lösenordsfrasen eller lösenordet som den privata nyckeln ska dekrypteras om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som dess värde. |
-
+>[!ENDTABS]
 
 ## Nästa steg
 

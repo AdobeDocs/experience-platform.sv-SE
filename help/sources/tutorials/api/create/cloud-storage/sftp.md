@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;SFTP;sftp;Secure File Transfer Protocol;secure file transfer protocol
-solution: Experience Platform
 title: Skapa en SFTP-basanslutning med API:t för Flow Service
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '895'
 ht-degree: 0%
 
 ---
@@ -44,6 +41,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL SFTP]måste du ange vä
 | `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om `privateKeyContent` är lösenordsskyddad, måste den här parametern användas med den privata nyckelinnehållets lösenfras som värde. |
 | `maxConcurrentConnections` | Med den här parametern kan du ange en maxgräns för hur många samtidiga anslutningar som plattformen skapar vid anslutning till SFTP-servern. Du måste ange att det här värdet ska vara mindre än gränsen som anges av SFTP. **Anteckning**: När den här inställningen är aktiverad för ett befintligt SFTP-konto påverkas bara framtida dataflöden och inte befintliga dataflöden. |
+| `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. [!DNL SFTP] kan du ange mappsökvägen för att ange användaråtkomst till en undermapp som du väljer. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL SFTP] är: `b7bf2577-4520-42c9-bae9-cad01560f7bc`. |
 
 ### Använda plattforms-API:er
@@ -54,7 +52,7 @@ Mer information om hur du kan anropa API:er för plattformar finns i handboken [
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-The [!DNL SFTP] Källan stöder både grundläggande autentisering och autentisering via den offentliga nyckeln för SSH.
+The [!DNL SFTP] Källan stöder både grundläggande autentisering och autentisering via den offentliga nyckeln för SSH. Under det här steget kan du även ange sökvägen till den undermapp som du vill ge åtkomst till.
 
 Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL SFTP] autentiseringsuppgifter som en del av parametrarna för begäran.
 
@@ -94,7 +92,8 @@ curl -X POST \
               "port": 22,
               "userName": "{USERNAME}",
               "password": "{PASSWORD}",
-              "maxConcurrentConnections": 1
+              "maxConcurrentConnections": 5,
+              "folderPath": "acme/business/customers/holidaySales"
           }
       },
       "connectionSpec": {
@@ -111,6 +110,7 @@ curl -X POST \
 | `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
 | `auth.params.password` | Lösenordet som är kopplat till SFTP-servern. |
 | `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av plattformen till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
+| `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 | `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 >[!TAB SSH-autentisering av offentlig nyckel]
@@ -134,8 +134,8 @@ curl -X POST \
               "userName": "{USERNAME}",
               "privateKeyContent": "{PRIVATE_KEY_CONTENT}",
               "passPhrase": "{PASSPHRASE}",
-              "maxConcurrentConnections": 1
-
+              "maxConcurrentConnections": 5,
+              "folderPath": "acme/business/customers/holidaySales"
           }
       },
       "connectionSpec": {
@@ -153,6 +153,7 @@ curl -X POST \
 | `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 | `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av plattformen till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
+| `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 | `connectionSpec.id` | The [!DNL SFTP] serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 >[!ENDTABS]
