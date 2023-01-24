@@ -1,7 +1,8 @@
 ---
 title: Slutpunkt för accelererade frågor
 description: Lär dig hur du får åtkomst till frågeflödat arkiv på ett tillståndslöst sätt för att snabbt returnera resultat baserat på aggregerade data. Det här dokumentet innehåller ett exempel på HTTP-begäran och svar för frågetjänstens accelererade frågeslutpunkt.
-source-git-commit: 2a9d40fc783feb78a1d5ad7eb615ceb40097eb89
+exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '567'
 ht-degree: 0%
@@ -16,7 +17,7 @@ Innan du fortsätter med den här handboken bör du kontrollera att du har läst
 
 ## Komma igång
 
-Data Distiller SKU krävs för att använda det frågeaccelererade arkivet. Se [packning](../packages.md), [skyddsräcken](../guardrails.md#query-accelerated-store)och [licensiering](../data-distiller/licence-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att använda det frågeaccelererade arkivet. Se [packning](../packages.md), [skyddsräcken](../guardrails.md#query-accelerated-store)och [licensiering](../data-distiller/license-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
 
 I följande avsnitt beskrivs de API-anrop som krävs för att komma åt det frågeaccelererade arkivet på ett tillståndslöst sätt via API:t för frågetjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
@@ -210,4 +211,3 @@ Ett lyckat svar returnerar HTTP-status 200 med ad hoc-schemat som skapats av fr�
 | `resultsMeta._adhoc.meta:xdmType` | Detta är ett systemgenererat värde för XDM-fälttypen. Mer information om tillgängliga typer finns i dokumentationen om [tillgängliga XDM-typer](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/custom-fields-api.html). |
 | `resultsMeta._adhoc.properties` | Detta är kolumnnamnen för den efterfrågade datauppsättningen. |
 | `resultsMeta._adhoc.results` | Detta är radnamnen för den efterfrågade datauppsättningen. De återspeglar var och en av de returnerade kolumnerna. |
-

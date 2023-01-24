@@ -4,7 +4,7 @@ title: Så här får du och beviljar behörigheter för Experience Platform-kont
 type: Documentation
 description: Ge användare möjlighet att visa, redigera och uppdatera kontrollpaneler i Experience Platform med Adobe Admin Console.
 exl-id: 2e50790f-b3ab-4851-a9a5-7cb98bf98ce3
-source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 6%
@@ -23,7 +23,7 @@ För att konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du h
 
 ## Tillgängliga kontrollpanelsbehörigheter {#available-permissions}
 
-The [!DNL Dashboards] tjänsten ger tre behörigheter som tillsammans ger fullständig åtkomst till [!UICONTROL Profiles], [!UICONTROL Segments], [!UICONTROL Destinations]och [!UICONTROL Licence Usage] paneler i Adobe Experience Platform. Dessa behörigheter är:
+The [!DNL Dashboards] tjänsten ger tre behörigheter som tillsammans ger fullständig åtkomst till [!UICONTROL Profiles], [!UICONTROL Segments], [!UICONTROL Destinations]och [!UICONTROL License Usage] paneler i Adobe Experience Platform. Dessa behörigheter är:
 
 | Behörighet | Beskrivning |
 |---|---|

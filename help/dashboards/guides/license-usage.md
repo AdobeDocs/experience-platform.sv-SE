@@ -4,7 +4,7 @@ title: Handbok för kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 255de9b9e83c11aeed747a3c0cdb7bd7a7949bd2
+source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
 source-wordcount: '913'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Kontrollpanelen för licensanvändning består av widgetar som visar skrivskydda
 
 Varje widget visar en graf som jämför det faktiska antalet för din organisation med det totala antalet som är tillgängligt med din organisations licensiering och som anger en procentandel av den totala användningen.
 
-![På kontrollpanelen för licensanvändning visas fliken Översikt med linjediagrammet för widgeten Sample license use metric.](../images/license-usage/widgets.png)
+![Kontrollpanelens översiktsflik för licensanvändning med linjediagrammet för widgeten Sample License-användningsmått markerat.](../images/license-usage/widgets.png)
 
 ## Tillgängliga mått
 
