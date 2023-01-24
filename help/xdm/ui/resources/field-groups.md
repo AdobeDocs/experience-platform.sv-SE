@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 542ad49f475ac9586da506a8afa5408e83262121
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,11 @@ Om du vill lägga till fält i en anpassad fältgrupp börjar du med att välja 
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar olika fälttyper.
+An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar olika fälttyper.
+
+Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]** väljer du sedan den önskade fältgruppen i listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
+
+![](../../images/ui/resources/field-groups/select-field-group.png)
 
 Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]** väljer du sedan den önskade fältgruppen i listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
 

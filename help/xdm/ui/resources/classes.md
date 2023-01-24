@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 3a9b97b25980d88e0fff3d71e43407b641e6454d
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,9 @@ När du har ett schema som använder en anpassad klass öppen i [!UICONTROL Sche
 >
 >Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan se användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
 
-A **[!UICONTROL New field]** visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Class]**.
+An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Class]**.
+
+![](../../images/ui/resources/classes/assign-to-class.png)
 
 ![](../../images/ui/resources/classes/assign-to-class.png)
 

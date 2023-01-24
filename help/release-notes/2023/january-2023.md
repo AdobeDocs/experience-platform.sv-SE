@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 01c220147312108649e036d93288823df5389235
+source-git-commit: 3fd3e96d5db6b1e63df338efe383d209690eb1f6
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,64 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Datainsamling](#data-collection)
+- [Experience Data Model (XDM)](#xdm)
 - [Källor](#sources)
+
+## Datainsamling {#data-collection}
+
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Ny hemskärm | Startsidan för användargränssnittet för datainsamling har uppdaterats med information om introduktion och länkar som effektiviserar produktiviteten. Det inkluderar:<ol><li>Dokumentation och rekommenderade arbetsflöden för att komma igång</li><li>Senaste egenskaper, regler och dataelement</li><li>Populära tillägg</li><li>Nya tilläggsuppdateringar med en snabbinstallationsfunktion</li></ol> |
+| Skicka data till [!DNL Google Ads] använda händelsevidarebefordran | Nu kan du använda [[!DNL Google Ads Enhanced Conversions] API-tillägg](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för vidarebefordran av händelser, i kombination med [Google Oauth 2 - hemligheter](../../tags/ui/event-forwarding/secrets.md#google-oauth2)för att på ett säkert sätt skicka data på serversidan till [!DNL Google Ads] i realtid. |
+
+{style=&quot;table-layout:auto&quot;}
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Inaktivera föreslagna värden för strängfält | Nu kan du [inaktivera enskilda föreslagna värden för strängfält](../../xdm/ui/fields/enum.md) i [!UICONTROL Schemas] arbetsyta, inklusive sådana från standardkomponenter. Den här funktionen är bara tillgänglig för fält med föreslagna värden och stöds inte för uppräkningsbegränsningar. |
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Klass | [[!UICONTROL Conversion]](https://github.com/adobe/xdm/blob/master/components/classes/conversion.schema.json) | En klass för att spåra konverteringsdata, t.ex. valutakonverteringar. |
+| Fältgrupp | [[!UICONTROL Currency Conversion Rate Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/conversion/currency-conversion-details.schema.json) | En fältgrupp för [!UICONTROL Conversion] klass, hämta ytterligare information om valutakonvertering. |
+| Fältgrupp | [[!UICONTROL Consent policies evaluation results map with metadata]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResultsv2.schema.jsonn) | Fångar information om utvärderingsresultatet av flera olika medgivandeprinciper, inklusive metadatainformation om medgivandeprincipingångar och finns. |
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Datatyp | [[!UICONTROL Advertising details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | The `ID` fältet har bytt namn till `name`och föregående `name` fältet är nu `friendlyName`. |
+| Datatyp | [[!UICONTROL Decision Proposition Details]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-detail.schema.json) | Lagt till en `selectionStrategy` fält som hämtar information om en urvalsstrategi. |
+| Fältgrupp | [[!UICONTROL Experience Event - Proposition Interactions]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/experienceevent-proposition-interaction.schema.json) | Fältgruppen är nu kompatibel med [!UICONTROL Journey Step Event] klassen. |
+| Datatyp | [[!UICONTROL Error details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | The `ID` fältet har bytt namn till `name`. |
+| Datatyp | [[!UICONTROL Media information]](https://github.com/adobe/xdm/blob/master/components/datatypes/media.schema.json) | Återställde en mönsterändring till videosegmentegenskapen. |
+| Datatyp | [[!UICONTROL Qoe Data details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | Borttagen `droppedFrameCount` fält. |
+| Datatyp | [[!UICONTROL Session details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | Bytt namn på `isAuthorized` fält till `authorized`och uppdaterade `type` till en sträng när den tidigare var en boolesk. |
+| Datatyp | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | Flera nya fält har lagts till: `shipDate`, `trackingNumber`och `trackingURL`. |
+| Fältgrupp | [[!UICONTROL AJO Entity Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity-mixins.schema.json) | Flera nya fält har lagts till: `journeyNodeID`, `journeyNodeName`och `journeyModeType`. |
+| Fältgrupp | [[!UICONTROL Consumer Experience Event]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/experienceevent-consumer.schema.json) | Fältgruppen är nu också kompatibel med [!UICONTROL Summary Metrics] klassen. |
+| Fältgrupp | [[!UICONTROL Product Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/product-triggers.schema.json) | The `productTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL Relative Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/relative-triggers.schema.json) | The `relativeTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL Severe Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/severe-triggers.schema.json) | The `severeTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL Weather Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/severe-triggers.schema.json) | The `weatherTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL XDM Related Business Accounts]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account/related-accounts.schema.json) | Fältgruppen är nu stabil. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
 ## Källor {#sources}
 
