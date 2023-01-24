@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
 feature: Sources
-source-git-commit: 46c9ec0c561f7ed3e38f05ef7b1e3ffec0eaed57
+source-git-commit: 79773c35cf70bc967b29a8bcca729106bd7dd4f0
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '872'
 ht-degree: 5%
 
 ---
@@ -59,6 +59,7 @@ ht-degree: 5%
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
+      - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
       - [Zoho CRM-koppling](connectors/crm/zoho.md)
    - Nöjda kunder {#customer-success}
@@ -129,6 +130,8 @@ ht-degree: 5%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
+         - [SugarCRM-konton och kontakter](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
+         - [SugarCRM-händelser](tutorials/api/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
       - Nöjda kunder {#customer-success}
@@ -237,6 +240,8 @@ ht-degree: 5%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
+         - [SugarCRM-konton och kontakter](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
+         - [SugarCRM-händelser](tutorials/ui/create/crm/sugarcrm-events.md)
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
       - Nöjda kunder {#customer-success}
