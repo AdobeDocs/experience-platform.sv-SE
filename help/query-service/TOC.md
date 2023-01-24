@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: a43947f87337e235eb059db6f497999bc4ede74d
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '265'
 ht-degree: 6%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 6%
 - Kom igång {#get-started}
    - [Förutsättningar](get-started/prerequisites.md)
 - Data Distiller {#data-distiller}
+   - [Översikt](data-distiller/overview.md)
    - [Licensanvändning](data-distiller/license-usage.md)
    - Query Accelerated Store {#query-accelerated-store}
       - [Skicka accelererade frågor](data-distiller/query-accelerated-store/send-accelerated-queries.md)
