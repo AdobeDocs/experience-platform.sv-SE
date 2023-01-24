@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
+source-git-commit: 1c092cd66a8a96623359a0e56de76e2a3d077c8d
 workflow-type: tm+mt
-source-wordcount: '1954'
+source-wordcount: '1982'
 ht-degree: 1%
 
 ---
@@ -90,6 +90,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 | Största profilfragmentstorlek | 50MB | Hård | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla [profilfragment](#profile-fragments) som är större än 50 MB. |
 | Maximal storlek för fillagring | 50MB | Mjuk | **Den maximala storleken för en lagrad profil är 50 MB.** Lägger till nytt [profilfragment](#profile-fragments) till en profil som är större än 50 MB kommer att påverka systemets prestanda. En profil kan till exempel innehålla ett enskilt fragment som är 50 MB eller innehålla flera fragment över flera datauppsättningar med en sammanlagd storlek på 50 MB. Om du försöker lagra en profil med ett enskilt fragment som är större än 50 MB, eller med flera fragment som är större än 50 MB i kombination, påverkas systemets prestanda. |
 | Antal inkapslade Profile- eller ExperienceEvent-batchar per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om du samlar in ytterligare batchar påverkas systemets prestanda. |
+| Antal ExperienceEvents per profilpost | 5000 | Mjuk | **Det högsta antalet ExperienceEvents per profilpost är 5 000.** Profiler med fler än 5 000 ExperienceEvents kommer att **not** beaktas för segmentering. |
 
 {style=&quot;table-layout:auto&quot;}
 
