@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: d41606e4df297d11b4e0e755363d362e075e862c
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1562'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 ## Komma igång
 
-Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform] innan du läser den här guiden:
+Handboken kräver en fungerande förståelse av följande [!DNL Platform] komponenter:
 
 * [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
@@ -48,7 +48,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-T
 >
 >Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Se avsnittet om [begränsningar för sammanslagningsprincip](#merge-policy-limitations) för mer information.
 >
->Det är också viktigt att notera att det inte går att garantera hur lång tid en sekretessbegäran kan ta att slutföra. Om ändringar inträffar i [!DNL Profile] data medan en begäran fortfarande bearbetas, oavsett om dessa poster bearbetas eller inte kan också garanteras.
+>Observera att den tid det tar att slutföra en sekretessbegäran **inte** garanteras. Om ändringar inträffar i [!DNL Profile] data medan en begäran fortfarande bearbetas, oavsett om dessa poster bearbetas eller inte kan också garanteras.
 
 ### Använda API:et
 
@@ -65,6 +65,8 @@ Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla p
 >Se avsnittet om [profilförfrågningar och identitetsförfrågningar](#profile-v-identity) senare i det här dokumentet för mer detaljerad information om effekterna av att använda `ProfileService` och `identity` inom `include` array.
 
 Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` id namespace, and the other using a custom `Customer_ID` namnutrymme. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i `include` array:
+
+**Begäran**
 
 ```shell
 curl -X POST \
@@ -108,6 +110,56 @@ curl -X POST \
 >[!IMPORTANT]
 >
 >Plattformsprocessernas sekretessförfrågningar för alla [sandlådor](../sandboxes/home.md) som tillhör din organisation. Detta resulterar i att `x-sandbox-name` huvud som ingår i begäran ignoreras av systemet.
+
+**Produktsvar**
+
+När sekretessjobbet har slutförts för profiltjänsten returneras ett svar i JSON-format med information om de användar-ID som efterfrågas.
+
+```json
+{
+    "privacyResponse": {
+        "jobId": "7467850f-9698-11ed-8635-355435552164",
+        "response": [
+            {
+                "sandbox": "prod",
+                "mergePolicyId": "none",
+                "result": {
+                    "person": {
+                        "gender": "female"           
+                    },
+                    "personalEmail": {
+                        "address": "ajones@acme.com",
+                    },
+                    "identityMap": {
+                        "crmid": [
+                            {
+                                "id": "5b7db37a-bc7a-46a2-a63e-2cfe7e1cc068"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "sandbox": "prod",
+                "mergePolicyId": "none",
+                "result": {
+                    "person": {
+                        "gender": "male"
+                    },
+                    "id": 12345678,
+                    "identityMap": {
+                        "crmid": [
+                            {
+                                "id": "e9d439f2-f5e4-4790-ad67-b13dbd89d52e"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+```
 
 ### Använda gränssnittet
 
@@ -161,6 +213,6 @@ Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprin
 >
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Experience Platform]. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
+Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Experience Platform]. Om du vill få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb kan du fortsätta att läsa dokumentationen som finns i den här handboken.
 
 För information om behandling av sekretessförfrågningar för [!DNL Platform] resurser som inte används av [!DNL Profile], se dokumentet på [behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md).
