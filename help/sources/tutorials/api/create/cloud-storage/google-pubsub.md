@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google PubSub;google pubsub
-solution: Experience Platform
 title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f56cdc2dc67f2d4820d80d8e5bdec8306d852891
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -33,6 +30,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL PubSub]måste du ange v
 | ---------- | ----------- |
 | `projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
 | `credentials` | Autentiseringsuppgifter eller nyckel som krävs för autentisering [!DNL PubSub]. |
+| `topicId` | ID för [!DNL PubSub] en resurs som representerar en feed med meddelanden. Du måste ange ett ämne-ID om du vill ge åtkomst till en viss dataström i ditt [!DNL Google PubSub] källa. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som är kopplade till att skapa bas- och källmålanslutningarna. The [!DNL PubSub] anslutningsspecifikation-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
 Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du vill använda tjänstkontobaserad autentisering läser du följande [[!DNL PubSub] guide om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
@@ -51,6 +49,12 @@ Det första steget i att skapa en källanslutning är att autentisera [!DNL PubS
 
 Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL PubSub] autentiseringsuppgifter som en del av parametrarna för begäran.
 
+Under det här steget kan du definiera de data som ditt konto har åtkomst till genom att ange ett ämne-ID. Det är bara prenumerationer som är kopplade till detta ämne-ID som är tillgängliga.
+
+>[!NOTE]
+>
+>Principal (roller) som tilldelats ett underordnat projekt ärvs i alla ämnen och prenumerationer som skapas i ett [!DNL PubSub] projekt. Om du vill lägga till ett huvudämne (roll) för att få tillgång till ett visst ämne, måste det huvudämnet (rollen) också läggas till i ämnets motsvarande prenumeration. Mer information finns i [[!DNL PubSub] dokumentation om åtkomstkontroll](https://cloud.google.com/pubsub/docs/access-control).
+
 **API-format**
 
 ```http
@@ -61,33 +65,35 @@ POST /connections
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Google PubSub connection",
-        "description": "Google PubSub connection",
-        "auth": {
-            "specName": "Google PubSub authentication credentials",
-            "params": {
-                "projectId": "{PROJECT_ID}",
-                "credentials": "{CREDENTIALS}"
-            }
-        },
-        "connectionSpec": {
-            "id": "70116022-a743-464a-bbfe-e226a7f8210c",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Google PubSub connection",
+      "description": "Google PubSub connection",
+      "auth": {
+          "specName": "Google PubSub authentication credentials",
+          "params": {
+              "projectId": "acme-project",
+              "credentials": "{CREDENTIALS}",
+              "topicID": "acmeProjectAPI"
+          }
+      },
+      "connectionSpec": {
+          "id": "70116022-a743-464a-bbfe-e226a7f8210c",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
 | `auth.params.credentials` | Autentiseringsuppgifter eller nyckel som krävs för autentisering [!DNL PubSub]. |
+| `auth.params.topicID` | Ämnes-ID för din [!DNL PubSub] källa som du vill ge åtkomst till. |
 | `connectionSpec.id` | The [!DNL PubSub] anslutningsspec-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
 **Svar**
@@ -103,7 +109,7 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Skapa en källanslutning {#source}
 
-En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
+En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
 Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
 
@@ -117,29 +123,29 @@ POST /sourceConnections
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
-    -H 'authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'content-type: application/json' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -d '{
-        "name": "Google PubSub source connection",
-        "description": "A source connection for Google PubSub",
-        "baseConnectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
-        "connectionSpec": {
-            "id": "70116022-a743-464a-bbfe-e226a7f8210c",
-            "version": "1.0"
-        },
-        "data": {
-            "format": "json"
-        },
-        "params": {
-            "topicId": "{TOPIC_ID}",
-            "subscriptionId": "{SUBSCRIPTION_ID}",
-            "dataType": "raw"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'content-type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+      "name": "Google PubSub source connection",
+      "description": "A source connection for Google PubSub",
+      "baseConnectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
+      "connectionSpec": {
+          "id": "70116022-a743-464a-bbfe-e226a7f8210c",
+          "version": "1.0"
+      },
+      "data": {
+          "format": "json"
+      },
+      "params": {
+          "topicId": "acme-project",
+          "subscriptionId": "{SUBSCRIPTION_ID}",
+          "dataType": "raw"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
@@ -149,8 +155,8 @@ curl -X POST \
 | `baseConnectionId` | Basanslutnings-ID för din [!DNL PubSub] källa som skapades i föregående steg. |
 | `connectionSpec.id` | ID för fast anslutningsspecifikation för [!DNL PubSub]. Detta ID är: `70116022-a743-464a-bbfe-e226a7f8210c` |
 | `data.format` | Formatet på [!DNL PubSub] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
-| `params.topicId` | Ämne-ID definierar den specifika namngivna resursen som meddelanden skickas av utgivare |
-| `params.subscriptionId` | Prenumerations-ID:t definierar den specifika namngivna resursen som representerar flödet av meddelanden från ett specifikt ämne som ska levereras till prenumerationsprogrammet. |
+| `params.topicId` | Ditt namn eller ID [!DNL PubSub] ämne. I [!DNL PubSub]är ett ämne en namngiven resurs som representerar en feed med meddelanden. |
+| `params.subscriptionId` | Det prenumerations-ID som motsvarar ett visst ämne. I [!DNL PubSub]kan du läsa meddelanden från ett ämne. En eller flera prenumerationer kan tilldelas till ett enskilt ämne. |
 | `params.dataType` | Den här parametern definierar vilken typ av data som importeras. Datatyper som stöds är: `raw` och `xdm`. |
 
 **Svar**

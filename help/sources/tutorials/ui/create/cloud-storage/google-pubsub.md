@@ -1,14 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google PubSub;google pubsub
-solution: Experience Platform
 title: Skapa en Google PubSub Source-anslutning i användargränssnittet
-type: Tutorial
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f56cdc2dc67f2d4820d80d8e5bdec8306d852891
 workflow-type: tm+mt
-source-wordcount: '474'
-ht-degree: 1%
+source-wordcount: '593'
+ht-degree: 0%
 
 ---
 
@@ -31,8 +28,9 @@ För att kunna ansluta [!DNL PubSub] till Platform måste du ange ett giltigt v�
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
-| `credentials` | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för autentisering [!DNL PubSub]. |
+| Projekt-ID | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
+| Autentiseringsuppgifter | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för autentisering [!DNL PubSub]. |
+| Ämne-ID | ID för [!DNL PubSub] en resurs som representerar en feed med meddelanden. Du måste ange ett ämne-ID om du vill ge åtkomst till en viss dataström i ditt [!DNL Google PubSub] källa. |
 
 Mer information om dessa värden finns i följande [PubSub-autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du använder kontobaserad autentisering för tjänster, se följande [PubSub Guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
@@ -44,9 +42,9 @@ När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för 
 
 ## Koppla samman [!DNL PubSub] konto
 
-I [Plattformsgränssnitt](https://platform.adobe.com), markera **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
+Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
 Under [!UICONTROL Cloud storage] kategori, välj **[!UICONTROL Google PubSub]** och sedan markera **[!UICONTROL Add data]**.
 
@@ -62,7 +60,13 @@ Om du vill använda ett befintligt konto väljer du [!DNL PubSub] konto som du v
 
 ### Nytt konto
 
-Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och [!DNL PubSub] autentiseringsuppgifter för indataformuläret. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
+Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och [!DNL PubSub] autentiseringsuppgifter för indataformuläret. Under det här steget kan du definiera de data som ditt konto har åtkomst till genom att ange ett ämne-ID. Det är bara prenumerationer som är kopplade till detta ämne-ID som är tillgängliga.
+
+>[!NOTE]
+>
+>Principal (roller) som tilldelats ett underordnat projekt ärvs i alla ämnen och prenumerationer som skapas i ett [!DNL PubSub] projekt. Om du vill lägga till ett huvudämne (roll) för att få tillgång till ett visst ämne, måste det huvudämnet (rollen) också läggas till i ämnets motsvarande prenumeration. Mer information finns i [[!DNL PubSub] dokumentation om åtkomstkontroll](https://cloud.google.com/pubsub/docs/access-control).
+
+När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![new](../../../../images/tutorials/create/google-pubsub/new.png)
 

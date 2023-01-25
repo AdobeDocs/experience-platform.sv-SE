@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google Cloud Storage;Google cloud storage;google;Google
-solution: Experience Platform
 title: Skapa en Google Cloud-lagringsbasanslutning med API:t för flödestjänsten
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google Cloud-lagringskonto med API:t för flödestjänst.
 exl-id: 321d15eb-82c0-45a7-b257-1096c6db6b18
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 3636b785d82fa2e49f76825650e6159be119f8b4
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '560'
 ht-degree: 1%
 
 ---
@@ -35,6 +32,8 @@ För att [!DNL Flow Service] för att få kontakt med [!DNL Google Cloud Storage
 | ---------- | ----------- |
 | `accessKeyId` | En 61-siffrig alfanumerisk sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. |
 | `secretAccessKey` | En 40-siffrig, base-64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. |
+| `bucketName` | Namnet på [!DNL Google Cloud Storage] bucket. Du måste ange ett bucketnamn om du vill ge åtkomst till en viss undermapp i molnlagringen. |
+| `folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 
 Mer information om dessa värden finns i [Google Cloud Storage HMAC-nycklar](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) guide. Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] översikt](../../../../connectors/cloud-storage/google-cloud-storage.md).
 
@@ -48,6 +47,10 @@ En basanslutning bevarar information mellan källan och plattformen, inklusive k
 
 Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Google Cloud Storage] autentiseringsuppgifter som en del av parametrarna för begäran.
 
+>[!TIP]
+>
+>Under det här steget kan du även ange vilka undermappar ditt konto ska ha åtkomst till genom att definiera namnet på bucket och sökvägen till undermappen.
+
 **API-format**
 
 ```http
@@ -60,33 +63,37 @@ Följande begäran skapar en basanslutning för [!DNL Google Cloud Storage]:
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Google Cloud Storage connection",
-        "description": "Connector for Google Cloud Storage",
-        "auth": {
-            "specName": "Basic Authentication for google-cloud",
-            "params": {
-                "accessKeyId": "accessKeyId",
-                "secretAccessKey": "secretAccessKey"
-            }
-        },
-        "connectionSpec": {
-            "id": "32e8f412-cdf7-464c-9885-78184cb113fd",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Google Cloud Storage connection",
+      "description": "Connector for Google Cloud Storage",
+      "auth": {
+          "specName": "Basic Authentication for google-cloud",
+          "params": {
+              "accessKeyId": "accessKeyId",
+              "secretAccessKey": "secretAccessKey",
+              "bucketName": "acme-google-cloud-bucket",
+              "folderPath": "/acme/customers/sales"
+          }
+      },
+      "connectionSpec": {
+          "id": "32e8f412-cdf7-464c-9885-78184cb113fd",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.accessKeyId` | Det ID för åtkomstnyckel som är kopplat till din [!DNL Google Cloud Storage] konto. |
 | `auth.params.secretAccessKey` | Den hemliga åtkomstnyckel som är kopplad till din [!DNL Google Cloud Storage] konto. |
+| `auth.params.bucketName` | Namnet på [!DNL Google Cloud Storage] bucket. Du måste ange ett bucketnamn om du vill ge åtkomst till en viss undermapp i molnlagringen. |
+| `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 | `connectionSpec.id` | The [!DNL Google Cloud Storage] anslutningsspecifikation-ID: `32e8f412-cdf7-464c-9885-78184cb113fd` |
 
 **Svar**
