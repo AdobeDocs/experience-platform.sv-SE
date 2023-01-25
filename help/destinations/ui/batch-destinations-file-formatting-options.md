@@ -1,9 +1,10 @@
 ---
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
-source-git-commit: 23a7a1997e05d2bde26de5b73a23ea051bf2b3bb
+exl-id: f59b1952-e317-40ba-81d1-35535e132a72
+source-git-commit: 14ce4a11f53ef24b3008b3f775cc926d05ea8f8e
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '591'
 ht-degree: 0%
 
 ---
@@ -28,17 +29,25 @@ Du kan konfigurera olika filformateringsalternativ för exporterade filer med hj
 
 ## Filformateringskonfiguration {#file-configuration}
 
+Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help/destinations/ui/connect-destination.md) arbetsflöde. Välj **Datatyp: Segment** och **Filtyp: CSV** för att visa de filformateringsinställningar som är tillgängliga för den exporterade filen `CSV` filer.
+
 >[!IMPORTANT]
 >
 >Målet som du ansluter till kanske inte har alla dessa alternativ tillgängliga. Det är upp till målutvecklaren att avgöra vilka filformateringsalternativ som stöds i målet. Målutvecklaren kan avgöra vilka alternativ som är tillgängliga vid anslutning till målet. Obligatoriska alternativ är markerade med en asterisk i användargränssnittet för Experience Platform.
-
-Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help/destinations/ui/connect-destination.md) arbetsflöde och markera segment som **Filtyp**. I det här avsnittet beskrivs de filformateringsinställningar som är tillgängliga för den exporterade filen `CSV` filer.
+> 
+>De nya molnlagringsmålen - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativen som markeras nedan.
 
 ![Bild som visar några av de tillgängliga filformateringsalternativen.](/help/destinations/assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
-### Avgränsare
+### Avgränsare {#delimiter}
 
-Anger en avgränsare för varje fält och värde. Till exempel: `,` för kommaavgränsade värden eller `/t` för tabbseparerade värden.
+Anger en avgränsare för varje fält och värde. Tillgängliga alternativ är:
+
+* Colon `(:)`
+* Komma `(,)`
+* Pipe `(|)`
+* Semikolon `(;)`
+* Tabb `(\\t)`
 
 ### Citattecken
 
