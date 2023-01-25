@@ -2,9 +2,9 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 7b5a22d849f0f46a9ff14843c594b743bbd01c9d
+source-git-commit: d4966eea90884cea8fbb4b72be8d9625d5745d57
 workflow-type: tm+mt
-source-wordcount: '1004'
+source-wordcount: '1129'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Adobe Experience Platform ger bättre synlighet för status för alla frågefunk
 
 ## [!UICONTROL Scheduled Queries]
 
-The [!UICONTROL Scheduled Queries] ger en översikt över körda och schemalagda frågor. Arbetsytan innehåller alla dina CTAS- och ITAS-frågor som antingen är schemalagda att köras eller har körts minst en gång. Det går att hitta körningsinformation för alla schemalagda frågor samt felkoder och meddelanden för misslyckade frågor.
+The [!UICONTROL Scheduled Queries] ger en översikt över alla dina schemalagda CTAS- och ITAS-frågor. Det går att hitta körningsinformation för alla schemalagda frågor samt felkoder och meddelanden för eventuella misslyckade frågor.
 
 Navigera till [!UICONTROL Scheduled Queries] flik, välja **[!UICONTROL Queries]** från vänster navigeringsfält följt av **[!UICONTROL Scheduled Queries]**
 
@@ -29,14 +29,14 @@ Tabellen nedan beskriver varje tillgänglig kolumn.
 
 | Kolumn | Beskrivning |
 |---|---|
-| Namn | Namnfältet är antingen mallnamnet eller de första tecknen i SQL-frågan. Alla frågor som skapas via gränssnittet med Frågeredigeraren får i början ett namn. Om frågan skapades via API är namnet på frågan ett fragment av det SQL-uttryck som användes för att skapa frågan. |
-| Mall | Frågans mallnamn. Välj ett mallnamn för att gå till Frågeredigeraren. Frågemallen visas i Frågeredigeraren. Om det inte finns något mallnamn markeras raden med ett bindestreck och det går inte att omdirigera till Frågeredigeraren för att visa frågan. |
-| SQL | Ett fragment av SQL-frågan. |
-| Körningsfrekvens | Det här är den avslutning som frågan är inställd på att köras. De tillgängliga värdena är `Run once` och `Scheduled`. Frågor kan filtreras utifrån deras körningsfrekvens. |
-| Skapad av | Namnet på den användare som skapade frågan. |
-| Skapad | Tidsstämpeln när frågan skapades, i UTC-format. |
-| Tidsstämpel för senaste körning | Den senaste tidsstämpeln när frågan kördes. Den här kolumnen visar om en fråga har körts enligt det aktuella schemat. |
-| Senaste körningsstatus | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
+| **[!UICONTROL Name]** | Namnfältet är antingen mallnamnet eller de första tecknen i SQL-frågan. Alla frågor som skapas via gränssnittet med Frågeredigeraren får i början ett namn. Om frågan skapades med API blir dess namn ett fragment av den ursprungliga SQL som användes för att skapa frågan. Välj ett objekt från [!UICONTROL Name] om du vill visa en lista över alla körningar som är associerade med frågan. Mer information finns i [fråga kör schemadetaljer](#query-runs) -avsnitt. |
+| **[!UICONTROL Template]** | Frågans mallnamn. Välj ett mallnamn för att gå till Frågeredigeraren. Frågemallen visas i Frågeredigeraren. Om det inte finns något mallnamn markeras raden med ett bindestreck och det går inte att omdirigera till Frågeredigeraren för att visa frågan. |
+| **[!UICONTROL SQL]** | Ett fragment av SQL-frågan. |
+| **[!UICONTROL Run frequency]** | Det här är den avslutning som frågan är inställd på att köras. De tillgängliga värdena är `Run once` och `Scheduled`. Frågor kan filtreras utifrån deras körningsfrekvens. |
+| **[!UICONTROL Created by]** | Namnet på den användare som skapade frågan. |
+| **[!UICONTROL Created]** | Tidsstämpeln när frågan skapades, i UTC-format. |
+| **[!UICONTROL Last run timestamp]** | Den senaste tidsstämpeln när frågan kördes. Den här kolumnen visar om en fråga har körts enligt det aktuella schemat. |
+| **[!UICONTROL Last run status]** | Status för den senaste frågekörningen. Statusvärdena är: `Success`, `Failed`, `In progress`och `No runs`. |
 
 >[!TIP]
 >
@@ -64,7 +64,7 @@ Du kan prenumerera på aviseringar från [!UICONTROL Scheduled Queries] -fliken.
 
 Se [API-dokumentation för aviseringsprenumerationer](../api/alert-subscriptions.md) för mer information.
 
-### Filtrera frågor
+### Filtrera frågor {#filter}
 
 Du kan filtrera frågor baserat på körningsfrekvens. Från [!UICONTROL Scheduled Queries] väljer du filterikonen (![En filterikon](../images/ui/monitor-queries/filter-icon.png)) för att öppna filtersidofältet.
 
@@ -80,7 +80,7 @@ Välj antingen **[!UICONTROL Scheduled]** eller **[!UICONTROL Run once]** kör k
 
 När du har aktiverat filtervillkoren väljer du **[!UICONTROL Hide Filters]** för att stänga filterpanelen.
 
-## Schemaläggningsdetaljer för frågekörningar
+## Information om schemaläggning av frågekörningar {#query-runs}
 
 Välj ett frågenamn för att navigera till sidan med schemainformation. Den här vyn innehåller en lista över alla körningar som har utförts som en del av den schemalagda frågan. Informationen omfattar start- och sluttid, status och datauppsättning som används.
 
@@ -90,23 +90,23 @@ Den här informationen finns i en tabell med fem kolumner. Varje rad betecknar e
 
 | Kolumnnamn | Beskrivning |
 |---|---|
-| Frågekörnings-ID | Frågekörnings-ID för daglig körning. |
-| Körningsstart av fråga | Tidsstämpeln när frågan kördes. Detta är i UTC-format. |
-| Frågekörningen har slutförts | Tidsstämpeln när frågan slutfördes. Detta är i UTC-format. |
-| Status | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
-| Datauppsättning | Den datauppsättning som ingår i körningen. |
+| **[!UICONTROL Query run ID]** | Frågekörnings-ID för daglig körning. Välj **[!UICONTROL Query run ID]** för att navigera till [!UICONTROL Query run overview]. |
+| **[!UICONTROL Query run start]** | Tidsstämpeln när frågan kördes. Detta är i UTC-format. |
+| **[!UICONTROL Query run complete]** | Tidsstämpeln när frågan slutfördes. Detta är i UTC-format. |
+| **[!UICONTROL Status]** | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
+| **[!UICONTROL Dataset]** | Den datauppsättning som ingår i körningen. |
 
 Information om frågan som schemaläggs finns i [!UICONTROL Properties] -panelen. Panelen innehåller det inledande fråge-ID:t, klienttyp, mallnamn, frågans SQL-kod och schemats avslutning.
 
 ![Sidan med information om schemat med egenskapspanelen markerad.](../images/ui/monitor-queries/properties-panel.png)
 
-### Körningsinformation
-
 Välj ett ID för frågekörning för att navigera till sidan med körningsinformation och visa frågeinformation.
 
 ![Skärmen med schemainformation och ett körnings-ID markerat.](../images/ui/monitor-queries/navigate-to-run-details.png)
 
-Den här vyn innehåller information om enskilda körningar för den schemalagda frågan och en mer detaljerad beskrivning av körningsstatusen. Den här sidan innehåller även klientinformation och information om eventuella fel som orsakade att frågan misslyckades.
+## Översikt över frågekörning {#query-run-overview}
+
+The [!UICONTROL Query run overview] ger information om enskilda körningar för den här schemalagda frågan och en mer detaljerad beskrivning av körningsstatusen. Den här sidan innehåller även klientinformation och information om eventuella fel som kan ha gjort att frågan misslyckades.
 
 ![Skärmen med körningsinformation med översiktsavsnittet markerat.](../images/ui/monitor-queries/query-run-details.png)
 
@@ -117,6 +117,20 @@ Avsnittet med frågans status innehåller felkoden och felmeddelandet om frågan
 Du kan kopiera frågans SQL till Urklipp från den här vyn. Kopiera frågan genom att markera kopieringsikonen i det övre högra hörnet av SQL-fragmentet. Ett popup-meddelande bekräftar att koden har kopierats.
 
 ![Skärmen med körningsinformation där SQL-kopieringsikonen är markerad.](../images/ui/monitor-queries/copy-sql.png)
+
+### Kör information för frågor med anonymt block {#anonymous-block-queries}
+
+Frågor som använder anonyma block för att bilda SQL-satser separeras till sina individuella frågor. På så sätt kan du inspektera körningsinformationen för varje frågeblock individuellt.
+
+Anonyma block markeras med en `$$` prefix före frågan. Se [anonymt blockdokument](../essential-concepts/anonymous-block.md) om du vill veta mer om anonyma block i frågetjänsten.
+
+Anonyma blockfrågor har tabbar till vänster om körningsstatusen. Välj en flik för att visa körningsinformation.
+
+![Översikt över frågekörningen som visar en anonym blockfråga. Flerfrågeflikarna markeras.](../images/ui/monitor-queries/anonymous-block-overview.png)
+
+Om en anonym blockfråga misslyckas, kan du hitta felkoden för just det blocket via det här användargränssnittet.
+
+![Översikt över frågekörningen som visar en anonym blockfråga med felkoden för ett enskilt block markerat.](../images/ui/monitor-queries/anonymous-block-failed-query.png)
 
 Välj **[!UICONTROL Query]** för att återgå till skärmen med schemainformation, eller **[!UICONTROL Scheduled Queries]** för att gå tillbaka till [!UICONTROL Scheduled Queries] -fliken.
 

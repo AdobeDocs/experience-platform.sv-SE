@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
 workflow-type: tm+mt
-source-wordcount: '1271'
+source-wordcount: '1284'
 ht-degree: 0%
 
 ---
@@ -28,11 +28,11 @@ Du kan använda utgångsuppgifter för att snabbt konfigurera en anslutning till
 
 The **[!UICONTROL Expiring credentials]** innehåller följande information:
 
-- **[!UICONTROL Host]**: Namnet på värden som du ansluter till. Vid anslutning till frågetjänsten innehåller detta namnet på den IMS-organisation som du för närvarande använder.
-- **[!UICONTROL Port]**: Portnumret för värddatorn som du ansluter till.
-- **[!UICONTROL Database]**: Namnet på den databas som du ansluter till.
-- **[!UICONTROL Username]**: Användarnamnet som du använder för att ansluta till frågetjänsten.
-- **[!UICONTROL Password]**: Lösenordet som du ska använda för att ansluta till frågetjänsten.
+- **[!UICONTROL Host]**: Namnet på den värd som klienten ska anslutas till. Det innehåller namnet på din organisation så som det visas på den översta menyfliken i användargränssnittet för plattformen.
+- **[!UICONTROL Port]**: Portnumret för den värd som anslutningen ska göras till.
+- **[!UICONTROL Database]**: Namnet på den databas som en klient ska anslutas till.
+- **[!UICONTROL Username]**: Användarnamnet som används för att ansluta till frågetjänsten.
+- **[!UICONTROL Password]**: Lösenordet som används för att ansluta till frågetjänsten. Lösenord i användargränssnittet har hashats av säkerhetsskäl. Markera kopieringsikonen (![Kopieringsikonen.](../images/ui/credentials/copy-icon.png)) för att kopiera dina fullständiga, ohashad inloggningsuppgifter till Urklipp.
 - **[!UICONTROL PSQL command]**: Ett kommando som automatiskt har infogat all relevant information för att ansluta till frågetjänsten med PSQL på kommandoraden.
 - **[!UICONTROL Expires]**: Utgångsdatum och förfallotid för autentiseringsuppgifterna. Standardlängden för token är 24 timmar, men den kan ändras i de avancerade inställningarna för Admin Console.
 

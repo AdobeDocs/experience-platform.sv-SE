@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 8a5f741b8992bc61cb25864a6695e55768e7aac2
 workflow-type: tm+mt
-source-wordcount: '1050'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,8 @@ The **[!UICONTROL Templates]** -fliken visar frågor som sparats av användare i
 | **[!UICONTROL Modified by]** | Den sista användaren som ändrade frågan. Alla användare i organisationen som har tillgång till [!DNL Query Service] kan ändra frågor. |
 | **[!UICONTROL Last modified]** | Datum och tid för den senaste ändringen av frågan, i webbläsarens tidszon. |
 
+Se [frågemallar](./query-templates.md) dokumentation för mer information om mallar i plattformsgränssnittet.
+
 ## Logg
 
 The **[!UICONTROL Log]** -fliken innehåller en lista med frågor som tidigare har körts. Som standard listas frågorna i loggen i omvänd kronologi.
@@ -69,13 +71,16 @@ The **[!UICONTROL Log]** -fliken innehåller en lista med frågor som tidigare h
 
 | Kolumn | Beskrivning |
 | --- | --- |
-| **[!UICONTROL Name]** | Frågenamnet som består av de första tecknen i SQL-frågan. Om du väljer ett namn öppnas [!DNL Query Editor]så att du kan redigera frågan. Du kan använda sökfältet för att söka efter namnet på en fråga. Sökningar är skiftlägeskänsliga. |
-| **[!UICONTROL Created by]** | Namnet på den person som skapade frågan. |
-| **[!UICONTROL Client]** | Klienten som används för frågan. |
-| **[!UICONTROL Dataset]** | Den indatamängd som används av frågan. Välj den datauppsättning som du vill gå till informationsskärmen för indatauppsättningar. |
+| **[!UICONTROL Name]** | Frågenamnet som består av de första tecknen i SQL-frågan. Välj mallnamnet för att öppna [!UICONTROL Query log details] för den körningen. Du kan använda sökfältet för att söka efter namnet på en fråga. Sökningar är skiftlägeskänsliga. |
+| **[!UICONTROL Start time]** | Tiden då frågan kördes. |
+| **[!UICONTROL Complete time]** | Den tidpunkt då frågan kördes. |
 | **[!UICONTROL Status]** | Frågans aktuella status. |
-| **[!UICONTROL Last run]** | När frågan kördes senast. Du kan sortera listan i stigande eller fallande ordning genom att markera pilen över den här kolumnen. |
-| **[!UICONTROL Run time]** | Hur lång tid det tog att köra frågan. |
+| **[!UICONTROL Dataset]** | Den indatamängd som används av frågan. Välj den datauppsättning som du vill gå till informationsskärmen för indatauppsättningar. |
+| **[!UICONTROL Client]** | Klienten som används för frågan. |
+| **[!UICONTROL Created by]** | Namnet på den person som skapade frågan. |
+
+>!![Note]
+Välj pennikonen (![En pennikon.](../images/ui/overview/edit-icon.png)) från valfri rad i frågeloggen för att navigera till [!DNL Query Editor]. Frågan är ifylld i förväg för smidig redigering.
 
 ## Autentiseringsuppgifter
 
