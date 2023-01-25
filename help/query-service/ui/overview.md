@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 8a5f741b8992bc61cb25864a6695e55768e7aac2
+source-git-commit: 5a027200efc22051cca6d4c041e857b2abc7d96f
 workflow-type: tm+mt
-source-wordcount: '1069'
+source-wordcount: '1087'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ The **[!UICONTROL Templates]** -fliken visar frågor som sparats av användare i
 
 Se [frågemallar](./query-templates.md) dokumentation för mer information om mallar i plattformsgränssnittet.
 
-## Logg
+## Logg {#log}
 
 The **[!UICONTROL Log]** -fliken innehåller en lista med frågor som tidigare har körts. Som standard listas frågorna i loggen i omvänd kronologi.
 
@@ -81,6 +81,8 @@ The **[!UICONTROL Log]** -fliken innehåller en lista med frågor som tidigare h
 
 >!![Note]
 Välj pennikonen (![En pennikon.](../images/ui/overview/edit-icon.png)) från valfri rad i frågeloggen för att navigera till [!DNL Query Editor]. Frågan är ifylld i förväg för smidig redigering.
+
+Se [dokumentation för frågeloggar](./query-logs.md) om du vill ha mer information om de loggfiler som genereras automatiskt av en frågetändelse.
 
 ## Autentiseringsuppgifter
 
