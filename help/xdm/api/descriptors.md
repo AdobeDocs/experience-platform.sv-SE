@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: f7a6f53c0993348c9a0fc0f935a9d02d54389311
 workflow-type: tm+mt
-source-wordcount: '1898'
+source-wordcount: '1954'
 ht-degree: 0%
 
 ---
@@ -357,7 +357,7 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
 | `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
 | `meta:enum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` kan användas för att lägga till föreslagna värden för fältet i segmenteringsgränssnittet. Det är viktigt att notera att `meta:enum` deklarerar inte en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` direkt via en PATCH-begäran till fältets överordnade resurs. |
-| `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
+| `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas.<br><br>Observera att du bara kan exkludera värden för strängfält som innehåller **endast föreslagna värden**. Om strängfältet innehåller faktisk `enum` begränsningar kan deras associerade föreslagna värden inte inaktiveras. `enum` fält från anpassade resurser som definierats av din organisation kan redigeras via PATCH, men `enum` fält från Adobe-definierade standardresurser kan inte tas bort. |
 
 {style=&quot;table-layout:auto&quot;}
 

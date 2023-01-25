@@ -2,9 +2,9 @@
 title: Definiera XDM-fält i API:t för schemaregister
 description: Lär dig hur du definierar olika fält när du skapar anpassade XDM-resurser (Experience Data Model) i API:t för schemaregister.
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 6277725cd69bc94325d3584177742df1a7fd4f95
+source-git-commit: f7a6f53c0993348c9a0fc0f935a9d02d54389311
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1171'
 ht-degree: 0%
 
 ---
@@ -101,7 +101,7 @@ Du kan också ange kundadressetiketter för varje värde under en `meta:enum` eg
 
 >[!NOTE]
 >
->The `meta:enum` värdet gör **not** deklarera en uppräkning eller kör en datavalidering på egen hand. I de flesta fall anges strängar i `meta:enum` tillhandahålls också enligt `enum` för att säkerställa att data begränsas. Det finns dock vissa användningsområden där `meta:enum` tillhandahålls utan motsvarande `enum` array. Se självstudiekursen om [definiera föreslagna värden](../tutorials/suggested-values.md) för mer information.
+>The `meta:enum` värdet gör **not** deklarera en uppräkning eller kör en datavalidering på egen hand. I de flesta fall anges strängar i `meta:enum` tillhandahålls också enligt `enum` för att säkerställa att data begränsas. Det finns dock vissa användningsområden där `meta:enum` tillhandahålls utan motsvarande `enum` array. Se självstudiekursen om [definiera föreslagna värden i API](../tutorials/suggested-values.md) för mer information.
 
 Du kan också ange en `default` egenskap som anger standardvärdet `enum` värdet som fältet ska använda om inget värde anges.
 
