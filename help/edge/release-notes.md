@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: f406ad74da00a7f4bf7ef1b52bee59cd91435d8f
+source-git-commit: 6009592d47cf8f3d0d31e919aff0552e370b2063
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1470'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,19 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](extension/web-sdk-ext-release-notes.md).
+
+## Version 2.14.0 - 25 januari 2023
+
+**Nya funktioner**
+
+* (Beta) Stöd för AJO-ytor och -erbjudanden har lagts till.
+
+**Korrigeringar och förbättringar**
+
+* Ett problem med anpassade kodåtgärder för Adobe Target VEC där koden infogades på en alternativ plats har korrigerats [!DNL at.js].
+* Ett problem har korrigerats där refererhuvudet i vissa kantfall inte var korrekt inställt på begäranden till Edge-nätverket.
+* Ett problem där [klienttips för användaragent](fundamentals/user-agent-client-hints.md) kan anges till en felaktig typ.
+* Ett problem där `placeContext.localTime` matchade inte schemat.
 
 ## Version 2.13.1 - 13 oktober 2022
 
