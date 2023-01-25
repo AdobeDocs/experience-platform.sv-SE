@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Schemafältgrupp för information om segmentmedlemskap
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: fda47171cde3f58f48ee721357923017918a7d4e
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '464'
 ht-degree: 0%
 
 ---
@@ -75,11 +75,15 @@ Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i 
 | --- | --- |
 | `xdm:version` | Den version av segmentet som profilen är kvalificerad för. |
 | `xdm:lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. |
+| `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. Om det här fältet inte är inställt för externa målgrupper behålls segmentmedlemskapet endast i 30 dagar från `lastQualificationTime`. |
 | `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
 | `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger typ av nyttolast (`boolean`, `number`, `propensity`, eller `string`), medan dess jämställda egenskap tillhandahåller värdet för nyttolasttypen. |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!NOTE]
+>
+>Alla segmentmedlemskap som finns i `exited` status i mer än 30 dagar, baserat på `lastQualificationTime`, kan tas bort.
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

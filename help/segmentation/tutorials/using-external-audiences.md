@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 57586104f1119f5cda926faf286c1663fbb0b240
 workflow-type: tm+mt
-source-wordcount: '1582'
+source-wordcount: '1625'
 ht-degree: 0%
 
 ---
@@ -257,3 +257,7 @@ Ett exempel på nyttolasten för det externa målgruppsmedlemskapet visas nedan:
 | `xdmEntity._id` | Ett lämpligt ID som används för att unikt identifiera posten i datauppsättningen. |
 | `{TENANT_NAME}.identities` | Det här avsnittet används för att koppla fältgruppen för anpassade identiteter till de användare som du tidigare importerat. |
 | `segmentMembership.{IDENTITY_NAMESPACE}` | Detta är etiketten för det anpassade identitetsnamnutrymmet som skapades tidigare. Om du till exempel anropar ditt identitetsnamnutrymme &quot;externalAudience&quot;, använder du det som nyckel för arrayen. |
+
+>[!NOTE]
+>
+>Som standard behålls medlemskap för externa målgrupper endast i 30 dagar. Om du vill behålla dem längre än 30 dagar använder du `validUntil` när ni hämtar in målgruppsdata. Mer information finns i guiden [Schemafältgrupper för detaljer om segmentmedlemskap](../../xdm/field-groups/profile/segmentation.md).

@@ -5,9 +5,9 @@ title: Utvärdera och få åtkomst till segmentresultat
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 378f9260703d388976054431a76ac285724a9ae3
 workflow-type: tm+mt
-source-wordcount: '1595'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -130,6 +130,10 @@ I följande exempel visas vad `segmentMembership` för varje enskild profilpost 
 | -------- | ----------- |
 | `lastQualificationTime` | Tidsstämpeln när kontrollen av segmentmedlemskapet gjordes och profilen angavs eller avslutades. |
 | `status` | Status för segmentdeltagande som en del av den aktuella begäran. Måste vara lika med ett av följande kända värden: <ul><li>`existing`: Enheten fortsätter att vara i segmentet.</li><li>`realized`: Enheten går in i segmentet.</li><li>`exited`: Enheten avslutar segmentet.</li></ul> |
+
+>[!NOTE]
+>
+>Alla segmentmedlemskap som finns i `exited` status i mer än 30 dagar, baserat på `lastQualificationTime`, kan tas bort.
 
 ## Åtkomst till segmentresultat
 
