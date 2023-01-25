@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 3fd3e96d5db6b1e63df338efe383d209690eb1f6
+source-git-commit: 0f2ddad37db87d8818281067e3a30cc1b2fb6418
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '1256'
 ht-degree: 1%
 
 ---
@@ -14,9 +14,25 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Säkerhet](#assurance)
 - [Datainsamling](#data-collection)
 - [Experience Data Model (XDM)](#xdm)
+- [Kundprofil i realtid](#profile)
 - [Källor](#sources)
+
+## Säkerhet {#assurance}
+
+Med Adobe Assurance kan ni inspektera, bevisa, simulera och validera hur ni samlar in data eller levererar upplevelser i er mobilapp.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Valideringsredigerare | Nya förbättringar av valideringsredigeraren har lagts till. Dessa förbättringar omfattar valideringskolumner, nya kodbyggningsverktyg och förbättrade vyer. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om Assurance finns i [Assurance-dokumentation](https://developer.adobe.com/client-sdks/documentation/platform-assurance/).
 
 ## Datainsamling {#data-collection}
 
@@ -72,6 +88,29 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+
+## Kundprofil i realtid {#profile}
+
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Utgångsdatum för plattformsgenererat segmentmedlemskap | Alla segmentmedlemskap som finns i `Exited` i mer än 30 dagar, baserat på `lastQualificationTime` kan tas bort. |
+| Utgångsdatum för externt medlemskap | Som standard behålls medlemskap för externa målgrupper i 30 dagar. Om du vill behålla dem längre använder du `validUntil` när målgruppsdata hämtas. |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Kommande borttagning** {#deprecation}
+
+För att ta bort redundans i segmentmedlemskapets livscykel `Existing` status kommer att bli inaktuell från [segmentmedlemskarta](../../xdm/field-groups/profile/segmentation.md) i slutet av mars 2023. Ett uppföljningsmeddelande kommer att innehålla det exakta datumet för borttagningen.
+
+Efterborttagning representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Detta kommer att skapa paritet med filbaserade mål med `Active` och `Expired` segmentstatus.
+
+Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och har automatiserade processer längre fram i kedjan baserade på `Existing` status. Granska dina integreringar längre fram i kedjan om så är fallet. Om du är intresserad av att identifiera nyligen kvalificerade profiler längre än en viss tid, vänligen väl använda en kombination av `Realized` status och `lastQualificationTime` i din medlemskarta. Mer information får du av Adobe.
+
+Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
 ## Källor {#sources}
 
