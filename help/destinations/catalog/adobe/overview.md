@@ -3,9 +3,9 @@ keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, m�
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 4ac73a83188a11900f38307ca8d743de4c186fdb
 workflow-type: tm+mt
-source-wordcount: '218'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,14 @@ Hantera er kundupplevelse genom att koppla era data i Adobe Experience Platform 
 
 För närvarande stöder Platform de Adobe-destinationer som anges nedan.
 
-Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
+Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och -kategorier.
 
 ### Anslutningar
 
+* [Adobe Advertising Cloud DSP-anslutning](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
 * [Adobe Campaign-anslutning](../email-marketing/adobe-campaign.md)
+* [Adobe Target-anslutning](/help/destinations/catalog/personalization/adobe-target-connection.md)
+* [(Beta) Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
 * [Marketo Engage](/help/destinations/catalog/adobe/marketo-engage.md)
 
 ### Tillägg
