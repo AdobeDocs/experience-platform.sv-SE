@@ -2,13 +2,14 @@
 keywords: mobil;mål för mobilengagemang;LINE;LINE mobile engagement destination
 title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler i ert plattformssegment och leverera personaliserade upplevelser till anslutna användare.
-source-git-commit: b15ad6339cb342d754e3a78e0d68b232a94a835e
+last-substantial-update: 2022-11-08T00:00:00Z
+exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
+source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
 source-wordcount: '1137'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL LINE] anslutning
 

@@ -1,7 +1,8 @@
 ---
 title: (Beta) Experience Cloud Publiker
 description: Lär dig hur du delar segment från Experience Platform till olika Experience Platform-lösningar.
-source-git-commit: 75eb72a8325c92961d9fe26f7e86d15fecf97043
+last-substantial-update: 2023-01-25T00:00:00Z
+source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
 source-wordcount: '1488'
 ht-degree: 0%
