@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 5657473ad10880b907a5b010fa99e08a5e45e174
+source-git-commit: fbdd3a3270e8aad95cb12281bcd4623a88b13f47
 workflow-type: tm+mt
-source-wordcount: '1925'
+source-wordcount: '1926'
 ht-degree: 1%
 
 ---
@@ -65,19 +65,10 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Nya avgränsningsalternativ för målanslutningar för betmolnlagring | Tre nya avgränsningsalternativ (Kolon `:`, rör `|`, Semikolon `;`) finns nu för de nya lagringsplatserna i betmolnet - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> Läs om vilka funktioner som stöds [filformateringsalternativ](/help/destinations/ui/batch-destinations-file-formatting-options.md) för filbaserade mål. |
-| Ny valfri parameter finns i [kunddatafält](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd detta när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. <br> Till exempel **[!UICONTROL Integration alias]** i [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
+| Nya avgränsningsalternativ för målanslutningar för betmolnlagring | Tre nya avgränsningsalternativ (Kolon `:`, rörform, semikolon `;`) finns nu för de nya lagringsplatserna i betmolnet - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> Läs om vilka funktioner som stöds [filformateringsalternativ](/help/destinations/ui/batch-destinations-file-formatting-options.md) för filbaserade mål. |
+| Ny valfri parameter finns i [kunddatafält](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. <br> Till exempel **[!UICONTROL Integration alias]** i [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
 
-**Korrigeringar och förbättringar** {#fixes-and-enhancements}
-
-<!--
-
-| Fix or enhancement | Description |
-| ----------- | ----------- |
-| UI and API validation for required mappings and duplicate mappings (PLAT-123316) | Validation is now enforced as follows in the UI and API when [mapping fields](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) in the activate destinations workflow:<ul><li>**Required mappings**: If the destination has been set up by the destination developer with required mappings (for example, the [Google Ad Manager 360](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#activate) destination), then these required mappings need to be added by the user when activating data to the destination. </li><li>**Duplicate mappings**: expand on allowed and forbidden source-to-target mappings.</li></ul> |
-| Updated profile export behavior to cloud storage destinations (PLAT-123316) | We fixed an issue in the behavior of [mandatory attributes](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) when exporting data files to batch destinations. <br> Previously, every record in the output files was verified to contain both: <ol><li>A non-null value of the `mandatoryField` column and</li><li>also contain a non-null value on at least one of the other non-mandatory fields.</li></ol> The second condition has been removed. As a result, you might be seeing more output rows in your exported data files. |
-
--->
+**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
 <table>
     <tr>
