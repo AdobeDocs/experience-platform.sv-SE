@@ -2,14 +2,23 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 892d22a88546ff270af4f5b253a013015349898b
+source-git-commit: 18599d223733cb151c7517abb77b1745d2e634b7
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation om taggar och vidarebefordran av händelser
+
+## 25 januari 2022
+
+* **Ny hemskärm**: Startsidan för användargränssnittet för datainsamling har uppdaterats med information om introduktion och länkar som effektiviserar produktiviteten. Det inkluderar:
+   1. Dokumentation och rekommenderade arbetsflöden för att komma igång
+   1. Senaste egenskaper, regler och dataelement
+   1. Populära tillägg
+   1. Nya tilläggsuppdateringar med en snabbinstallationsfunktion
+* **Skicka data till [!DNL Google Ads] använda händelsevidarebefordran**: Nu kan du använda [[!DNL Google Ads Enhanced Conversions] API-tillägg](../extensions/server/google-ads-enhanced-conversions/overview.md) för vidarebefordran av händelser, i kombination med [Google Oauth 2 - hemligheter](../ui/event-forwarding/secrets.md#google-oauth2)för att på ett säkert sätt skicka data på serversidan till [!DNL Google Ads] i realtid.
 
 ## 23 november 2022
 
