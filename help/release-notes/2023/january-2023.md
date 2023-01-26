@@ -1,7 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 08ad27303b88826fd7e0fcc0a8b3d498de58c260
+hide: true
+hidefromtoc: true
+source-git-commit: f419856a0b75b04463ff020163bc292833fd02fd
 workflow-type: tm+mt
 source-wordcount: '1779'
 ht-degree: 1%
