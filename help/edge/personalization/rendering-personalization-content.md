@@ -3,20 +3,20 @@ title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
 description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
 keywords: personalisering;renderDecision;sendEvent;DecisionScopes;propositions;
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 0d8e19d8428191cc0c6c56e629e8c5528a96115c
+source-git-commit: c75a8bdeaba67259b5f4b4ce025d5e128d763040
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '962'
 ht-degree: 0%
 
 ---
 
 # Återge personaliserat innehåll
 
-Adobe Experience Platform Web SDK stöder hämtning av personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) och [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv).
+Adobe Experience Platform Web SDK stöder hämtning av personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html).
 
 Dessutom hanterar Web SDK personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../../destinations/ui/configure-personalization-destinations.md).
 
-Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK. Innehåll som skapats i Adobe Target [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
+Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) och Adobe Journey Optimizer [WebbCampaign-användargränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) kan hämtas och återges automatiskt av SDK. Innehåll som skapats i Adobe Target [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
 
 ## Återge innehåll automatiskt
 
@@ -107,7 +107,7 @@ I exemplet `renderDecisions` option was inte set to `true` när `sendEvent` SDK-
 
 Om du istället hade ställt in `renderDecisions` alternativ till `true` när händelsen skulle skickas, skulle SDK ha försökt att återge alla förslag som är berättigade till automatisk återgivning (enligt beskrivningen ovan). Därför får vart och ett av de föreslagna objekten sin `renderAttempted` egenskap inställd på `true`. Du behöver inte återge dessa förslag manuellt i det här fallet.
 
-Hittills har vi bara diskuterat personaliserat innehåll som är berättigat till automatisk återgivning (det vill säga allt innehåll som har skapats i Adobe Target Visual Experience Composer). Så här hämtar du anpassat innehåll _not_ som kan återge automatiskt måste du begära innehållet genom att fylla i `decisionScopes` när händelsen skickas. Ett omfång är en sträng som identifierar ett visst förslag som du vill hämta från servern.
+Än så länge har vi bara diskuterat personaliseringsinnehåll som kan återges automatiskt (dvs. innehåll som har skapats i Adobe Target Visual Experience Composer eller Adobe Journey Optimizer Web Campaign-gränssnitt). Så här hämtar du anpassat innehåll _not_ som kan återge automatiskt måste du begära innehållet genom att fylla i `decisionScopes` när händelsen skickas. Ett omfång är en sträng som identifierar ett visst förslag som du vill hämta från servern.
 
 Här är ett exempel:
 
@@ -303,7 +303,7 @@ The `applyPropositions` kan du återge eller köra en array med förslag från [
 
 >[!IMPORTANT]
 >
->Om föreslår för `__view__` omfånget återges vid sidinläsning, deras `renderAttempted` flaggan ställs in på `true`. The `applyPropositions` kommer inte att återge `__view__` omfångsförslag som har `renderAttempted: true` flagga.
+>Om föreslår för `__view__` omfånget (eller en webbyta) återges vid sidinläsning, deras `renderAttempted` flaggan ställs in på `true`. The `applyPropositions` kommer inte att återge `__view__` förslag på omfång (eller webbyta) som har `renderAttempted: true` flagga.
 
 ### Användningsfall 1: Återge förslag på en enkelsidig programvy
 
