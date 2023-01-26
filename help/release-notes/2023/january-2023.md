@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: fbdd3a3270e8aad95cb12281bcd4623a88b13f47
+source-git-commit: 08ad27303b88826fd7e0fcc0a8b3d498de58c260
 workflow-type: tm+mt
-source-wordcount: '1926'
+source-wordcount: '1779'
 ht-degree: 1%
 
 ---
@@ -74,10 +74,6 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
     <tr>
         <td><b>Korrigera eller förbättra</b></td>
         <td><b>Beskrivning</b></td>
-    </tr>
-    <tr>
-        <td>Verifiering av gränssnitt och API för obligatoriska mappningar och dubblettmappningar (PLAT-123316)</td>
-        <td>Valideringen genomförs nu på följande sätt i gränssnittet och API när <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mapping">mappningsfält</a> i arbetsflödet för aktivering av mål:<ul><li><b>Nödvändiga mappningar</b>: Om målet har konfigurerats av målutvecklaren med obligatoriska mappningar (till exempel <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html?lang=en">Google Ad Manager 360</a> måste dessa obligatoriska mappningar läggas till av användaren när data aktiveras till målet. </li><li><b>Duplicera mappningar</b>: I mappningssteget i aktiveringsarbetsflödet kan du lägga till dubblettvärden i källfälten, men inte i målfälten. I tabellen nedan finns ett exempel på tillåtna och förbjudna mappningskombinationer. <br><table><thead><tr><th>Tillåtet/förbjudet</th><th>Källfält</th><th>Målfält</th></tr></thead><tbody><tr><td>Tillåtet</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>e-postalias2</li></ul></td></tr><tr><td>Förbjuden</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
     </tr>
     <tr>
         <td>Uppdaterat exportbeteende till filbaserade mål (PLAT-123316)</td>
