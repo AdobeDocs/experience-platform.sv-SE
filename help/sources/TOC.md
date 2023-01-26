@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
 feature: Sources
-source-git-commit: 79773c35cf70bc967b29a8bcca729106bd7dd4f0
+source-git-commit: 2d9cd6ed1db7bcbbe9b35c154e09a6b03f9a132d
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '875'
 ht-degree: 5%
 
 ---
@@ -206,6 +206,7 @@ ht-degree: 5%
    - [Försök igen med misslyckade dataflödeskörningar](tutorials/api/retry-flows.md)
    - [Ta bort konton](tutorials/api/delete.md)
    - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
+   - [Importera krypterade data](tutorials/api/encrypt-data.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källanslutning {#create}
       - Adobe-program {#adobe-applications}
