@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 944f307ecb4cf174c9f9818ded17546057f445e4
 workflow-type: tm+mt
 source-wordcount: '437'
 ht-degree: 1%
@@ -16,6 +16,13 @@ ht-degree: 1%
 Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. [!DNL Experience Platform] gör det möjligt för organisationer att centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 
 Bygger på RESTful API:er, [!DNL Experience Platform] ger utvecklarna tillgång till systemets alla funktioner och stöder enkel integrering av företagslösningar med välbekanta verktyg. [!DNL Experience Platform] stöder också partners att bygga och integrera sina egna produkter och tekniker efter behov. Den här kraften och flexibiliteten gör [!DNL Experience Platform] unika på marknaden. Det ger partners, kunder och en community med utvecklare en grund att bygga innovationer som driver Experience Business: överträffa kundernas förväntningar genom att leverera en ständigt förbättrad, helpersonaliserad upplevelse som bygger på en helhetsbild av kunden och deras individuella preferenser.
+
+<div id="recs-overview-body-1"></div>
+<div id="recs-overview-body-2"></div>
+<div id="recs-overview-body-3"></div>
+<div id="recs-overview-body-4"></div>
+<div id="recs-overview-body-5"></div>
+<div id="recs-overview-body-6"></div>
 
 ## [!DNL Experience Platform] dokumentation
 
