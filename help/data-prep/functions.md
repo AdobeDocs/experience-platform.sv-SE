@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 4a033d782c2cc4a42edacf0abc146bd128fdb07c
 workflow-type: tm+mt
-source-wordcount: '4367'
+source-wordcount: '4398'
 ht-degree: 2%
 
 ---
@@ -138,10 +138,10 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | falskt |
-| arrayer_to_object | Skapar en lista med objekt. | <ul><li>INMATNING: **Obligatoriskt** En gruppering av nyckel- och matrispar.</li></ul> | arrayer_to_object(INPUT) | need sample | need sample |
+| is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | falskt |
+| arrayer_to_object | Skapar en lista med objekt. | <ul><li>INMATNING: **Obligatoriskt** En gruppering av nyckel- och matrispar.</li></ul> | arrayer_to_object(INPUT) | `arrays_to_objects('sku', explode("id1\|id2", '\\|'), 'price', [22.5,14.35])` | [{ &quot;sku&quot;: &quot;id1&quot;, &quot;price&quot;: 22.5 }, { &quot;sku&quot;: &quot;id2&quot;, &quot;price&quot;: 14.35 }] |
 | to_object | Skapar ett objekt baserat på de platta nyckel-/värdepar som anges. | <ul><li>INMATNING: **Obligatoriskt** En platt lista med nyckel/värde-par.</li></ul> | to_object(INPUT) | to_object &#x200B;(&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
-| str_to_object | Skapar ett objekt från indatasträngen. | <ul><li>STRING: **Obligatoriskt** Strängen som tolkas för att skapa ett objekt.</li><li>VALUE_DELIMITER: *Valfritt* Avgränsaren som skiljer ett fält från värdet. Standardavgränsaren är `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fältvärdepar. Standardavgränsaren är `,`.</li></ul> | str_to_object &#x200B;(STRING, VALUE_DELIMITER, FIELD_DELIMITER) | str_to_object(&quot;firstName=John,lastName=Doe,phone=123 456 7890&quot;, &quot;=&quot;, &quot;,&quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
+| str_to_object | Skapar ett objekt från indatasträngen. | <ul><li>STRING: **Obligatoriskt** Strängen som tolkas för att skapa ett objekt.</li><li>VALUE_DELIMITER: *Valfritt* Avgränsaren som skiljer ett fält från värdet. Standardavgränsaren är `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fältvärdepar. Standardavgränsaren är `,`.</li></ul> | str_to_object &#x200B;(STRING, VALUE_DELIMITER, FIELD_DELIMITER) **Anteckning**: Du kan använda `get()` fungerar tillsammans med `str_to_object()` om du vill hämta värden för nycklarna i strängen. | <ul><li>Exempel 1: str_to_object(&quot;firstName - John ; lastName - ; - 123 345 7890&quot;, &quot;-&quot;, &quot;;&quot;)</li><li>Exempel 2: str_to_object(&quot;firstName - John ; lastName - ; phone - 123 456 7890&quot;, &quot;-&quot;, &quot;;&quot;).get(&quot;firstName&quot;)</li></ul> | <ul><li>Exempel 1:`{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}`</li><li>Exempel 2: &quot;John&quot;</li></ul> |
 | contains_key | Kontrollerar om objektet finns i källdata. **Obs!** Den här funktionen ersätter den borttagna `is_set()` funktion. | <ul><li>INMATNING: **Obligatoriskt** Sökvägen som ska kontrolleras om den finns i källdata.</li></ul> | contains_key(INPUT) | contains_key(&quot;evar.evar.field1&quot;) | sant |
 | null | Anger värdet för attributet till `null`. Detta bör användas när du inte vill kopiera fältet till målschemat. |  | nullify() | nullify() | `null` |
 | get_keys | Tolkar nyckel/värde-paren och returnerar alla nycklar. | <ul><li>OBJEKT: **Obligatoriskt** Det objekt som nycklarna ska extraheras från.</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;: &quot;Pride and Prekurce&quot;, &quot;book2&quot;: &quot;1984&quot;}) | `["book1", "book2"]` |
