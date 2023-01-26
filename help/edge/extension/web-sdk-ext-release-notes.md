@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 47e92e4e7475a23c5c65085db57dfc7a2822b8b6
+source-git-commit: 5ec1ede39489ce48fc20739030884ec3811a8426
 workflow-type: tm+mt
 source-wordcount: '1525'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
-## Version 2.15.0 - 25 januari 2023
+## Version 2.15.1 - 26 januari 2023
 
 * Ett problem har korrigerats där användare utan åtkomst till datastreams inte kunde redigera tilläggskonfigurationen.
 * Stöd för ytor i `sendEvent` åtgärd.
