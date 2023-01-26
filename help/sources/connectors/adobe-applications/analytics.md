@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Analytics Source Connector;analytics;Analytics;AAID;
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 486f5bdd834808c6262f41c0b0187721fc9b0799
 workflow-type: tm+mt
-source-wordcount: '1014'
+source-wordcount: '1040'
 ht-degree: 0%
 
 ---
@@ -20,7 +19,7 @@ Dokumentet innehåller en översikt över [!DNL Analytics] och beskriver använd
 
 [!DNL Analytics] är en kraftfull motor som hjälper er att lära er mer om era kunder, hur de interagerar med era webbegenskaper, se var era utgifter för digital marknadsföring är effektiva och identifiera områden där det finns förbättringar. [!DNL Analytics] hanterar miljontals webbtransaktioner per år och [!DNL Analytics] Med källanslutaren kan du enkelt utnyttja dessa omfattande beteendedata och berika [!DNL Real-Time Customer Profile] på bara några minuter.
 
-![](./images/analytics-data-experience-platform.png)
+![En bild som visar hur data från olika Adobe-program, inklusive Adobe Analytics, överförs.](./images/analytics-data-experience-platform.png)
 
 På en hög nivå [!DNL Analytics] samlar in data från olika digitala kanaler och från flera datacenter över hela världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de vara klara att användas av [!DNL Real-Time Customer Profile]. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion genom [!DNL Data Science Workspace], [!DNL Query Service]och andra program för dataidentifiering.
 
@@ -35,6 +34,10 @@ Genom att följa XDM-standarder kan data integreras på ett enhetligt sätt, vil
 Mer information om XDM finns i [XDM - systemöversikt](../../../xdm/home.md).
 
 ## Hur mappas fält från Adobe Analytics till XDM?
+
+>[!IMPORTANT]
+>
+>Omformningar av dataförberedelser kan öka fördröjningen i det övergripande dataflödet. Den extra fördröjning som läggs till varierar beroende på komplexiteten i omvandlingslogiken.
 
 När en källanslutning upprättas för att [!DNL Analytics] data till Experience Platform med hjälp av användargränssnittet för plattformen, mappas datafälten automatiskt och hämtas till [!DNL Real-Time Customer Profile] inom några minuter. Instruktioner om hur du skapar en källanslutning med [!DNL Analytics] med hjälp av plattformsgränssnittet, se [Självstudiekurs om anslutning till analyskälla](../../tutorials/ui/create/adobe-applications/analytics.md).
 
@@ -77,10 +80,10 @@ The [!DNL Analytics] source skickar dessa identiteter till Experience Platform i
 * `endUserIDs._experience.mcid.id`
 * `endUserIDs._experience.aacustomid.id`
 
-Dessa fält är inte markerade som identiteter. I stället kopieras samma identiteter till XDM:s `identityMap` som nyckelvärdepar:
+Dessa fält är inte markerade som identiteter. I stället kopieras samma identiteter till XDM:er `identityMap` som nyckelvärdepar:
 
-* `{ “key”: “AAID”, “value”: [ { “id”: “<identity>”, “primary”: <true or false> } ] }`
-* `{ “key”: “ECID”, “value”: [ { “id”: “<identity>”, “primary”: <true or false> } ] }`
-* `{ “key”: “AACUSTOMID”, “value”: [ { “id”: “<identity>”, “primary”: false } ] }`
+* `{ "key": "AAID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
+* `{ "key": "ECID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
+* `{ "key": "AACUSTOMID", "value": [ { "id": "<identity>", "primary": false } ] }`
 
 Om det finns ECID på identitetskartan markeras den som händelsens primära identitet. I detta fall kan stödet baseras på ECID på grund av [Giltighetsperiod för identitetstjänst](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). I annat fall markeras AID som händelsens primära identitet. AACUSTOMID markeras aldrig som händelsens primära ID. Om det finns ett AACUSTOMID, baseras emellertid AAID på AACUSTOMID på grund av att åtgärderna utförs i Experience Cloud.
