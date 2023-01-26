@@ -2,9 +2,9 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: d4966eea90884cea8fbb4b72be8d9625d5745d57
+source-git-commit: 95d3604a9589a4d0db7e426dd000ddec9cd4f2ce
 workflow-type: tm+mt
-source-wordcount: '1129'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,11 @@ Du kan kopiera frågans SQL till Urklipp från den här vyn. Kopiera frågan gen
 
 ![Skärmen med körningsinformation där SQL-kopieringsikonen är markerad.](../images/ui/monitor-queries/copy-sql.png)
 
-### Kör information för frågor med anonymt block {#anonymous-block-queries}
+### (Begränsad version) Kör information för frågor med anonymt block {#anonymous-block-queries}
+
+>[!IMPORTANT]
+>
+>Frågeövervakningsfunktionen som visar körningsinformation för anonyma blockfrågor är för närvarande i en begränsad version och inte tillgänglig för alla kunder.
 
 Frågor som använder anonyma block för att bilda SQL-satser separeras till sina individuella frågor. På så sätt kan du inspektera körningsinformationen för varje frågeblock individuellt.
 

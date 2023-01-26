@@ -1,14 +1,18 @@
 ---
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
-source-git-commit: 22deca5f9bcf6bcf97cca01b97fce9d22800b767
+source-git-commit: 95d3604a9589a4d0db7e426dd000ddec9cd4f2ce
 workflow-type: tm+mt
-source-wordcount: '512'
+source-wordcount: '573'
 ht-degree: 0%
 
 ---
 
 # Frågeloggar
+
+>[!IMPORTANT]
+>
+>Vissa frågeloggfunktioner är för närvarande i en begränsad version och inte tillgängliga för alla kunder. Gränssnittet kan se lite annorlunda ut utan en redigeringsikon. Processen att välja ett frågenamn kan även gå till Frågeredigeraren i stället för till [!UICONTROL Query log details] vy.
 
 Adobe Experience Platform har en logg över alla frågehändelser som inträffar via både API och gränssnittet. Den här informationen är tillgänglig i användargränssnittet för frågetjänsten från [!UICONTROL Logs] -fliken.
 
@@ -39,6 +43,10 @@ Varje rad representerar loggdata för en frågekörning som är associerad med e
 På panelen med logginformation kan du välja en ny utdatamängd och se eller kopiera hela SQL-frågan som användes i körningen.
 
 ![Arbetsytan för frågeloggen med en rad markerad och utdatamängden och SQL-frågan markerad.](../images/ui/query-log/edit-output-dataset.png)
+
+>[!IMPORTANT]
+>
+>Vissa frågeloggfunktioner är för närvarande i en begränsad version och inte tillgängliga för alla kunder.
 
 Du kan också välja ett frågemallsnamn i dialogrutan [!UICONTROL Name] för att navigera direkt till [!UICONTROL Query log details] vy.
 
