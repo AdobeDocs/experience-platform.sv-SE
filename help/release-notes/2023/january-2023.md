@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 4d69d0dbb1dd72279a6999cf2cda94e9fb380572
+source-git-commit: 3ea2ac1b048adb14aa93b42e5b23ea70bb995414
 workflow-type: tm+mt
-source-wordcount: '1779'
+source-wordcount: '1830'
 ht-degree: 1%
 
 ---
@@ -65,6 +65,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
+| Förbättrat betald mediematerial för integrering med direktuppspelningsdestinationer | En förbättring av [efterlevnadsprincip](/help/data-governance/enforcement/auto-enforcement.md) på [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations) för aktivering av betalmedia. Profiler som har dragit tillbaka sitt samtycke från en viss upplevelse tas nu aktivt bort från dessa mål. <br> <b>Anteckning</b>: Den här funktionen är endast tillgänglig för kunder som har **[!UICONTROL Privacy and Security Shield]** och **[!UICONTROL Healthcare Shield]**. |
 | Nya avgränsningsalternativ för målanslutningar för betmolnlagring | Tre nya avgränsningsalternativ (Kolon `:`, rörform, semikolon `;`) finns nu för de nya lagringsplatserna i betmolnet - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> Läs om vilka funktioner som stöds [filformateringsalternativ](/help/destinations/ui/batch-destinations-file-formatting-options.md) för filbaserade mål. |
 | Ny valfri parameter finns i [kunddatafält](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. <br> Till exempel **[!UICONTROL Integration alias]** i [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
 
