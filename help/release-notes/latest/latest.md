@@ -1,23 +1,40 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
-description: Den senaste versionsinformationen för Adobe Experience Platform.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: aabf715475b3634ef134226f67b722f84e830556
+title: Adobe Experience Platform Release Notes januari 2023
+description: Versionsinformation januari 2023 för Adobe Experience Platform.
+source-git-commit: 4d69d0dbb1dd72279a6999cf2cda94e9fb380572
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '1779'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 23 november 2022**
+**Releasedatum: 25 januari 2023**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Säkerhet](#assurance)
 - [Datainsamling](#data-collection)
+- [[!DNL Destinations]](#destinations)
 - [Experience Data Model (XDM)](#xdm)
+- [Kundprofil i realtid](#profile)
+- [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## Säkerhet {#assurance}
+
+Med Adobe Assurance kan ni inspektera, bevisa, simulera och validera hur ni samlar in data eller levererar upplevelser i er mobilapp.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Valideringsredigerare | Nya förbättringar av valideringsredigeraren har lagts till. Dessa förbättringar omfattar valideringskolumner, nya kodbyggningsverktyg och förbättrade vyer. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om Assurance finns i [Assurance-dokumentation](https://developer.adobe.com/client-sdks/documentation/platform-assurance/).
 
 ## Datainsamling {#data-collection}
 
@@ -27,11 +44,44 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!DNL AWS] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Amazon Web Services] ([!DNL AWS]) med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL AWS] tilläggsöversikt](../../tags/extensions/server/aws/overview.md) för mer information. |
-| [!DNL Google Ads Enhanced Conversions] tillägg för händelsevidarebefordran | Nu kan du skicka konverteringsdata till [!DNL Google Ads] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Google Ads Enhanced Conversions] tilläggsöversikt](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för mer information. |
-| [!DNL Microsoft Azure] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Microsoft Azure] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Microsoft Azure] tilläggsöversikt](../../tags/extensions/server/azure/overview.md) för mer information. |
+| Ny hemskärm | Startsidan för användargränssnittet för datainsamling har uppdaterats med information om introduktion och länkar som effektiviserar produktiviteten. Det inkluderar:<ol><li>Dokumentation och rekommenderade arbetsflöden för att komma igång</li><li>Senaste egenskaper, regler och dataelement</li><li>Populära tillägg</li><li>Nya tilläggsuppdateringar med en snabbinstallationsfunktion</li></ol> |
+| Skicka data till [!DNL Google Ads] använda händelsevidarebefordran | Nu kan du använda [[!DNL Google Ads Enhanced Conversions] API-tillägg](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för vidarebefordran av händelser, i kombination med [Google Oauth 2 - hemligheter](../../tags/ui/event-forwarding/secrets.md#google-oauth2)för att på ett säkert sätt skicka data på serversidan till [!DNL Google Ads] i realtid. |
 
-Mer information om plattformens datainsamlingsfunktioner finns i [datainsamling - översikt](../../collection/home.md).
+{style=&quot;table-layout:auto&quot;}
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya destinationer**
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [(Beta) Adobe Experience Cloud Audiences-anslutning](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Använd [!UICONTROL (Beta) Adobe Experience Cloud Audiences] anslutning för att dela segment från Experience Platform till olika Experience Platform-lösningar, som Audience Manager, Analytics, Advertising Cloud, Adobe Campaign, Target eller Marketo. |
+| [Pega-profilanslutning](../../destinations/catalog/personalization/pega-profile.md) | Använd [!DNL Pega Profile Connector] i Adobe Experience Platform för att skapa en utgående liveanslutning till [!DNL Amazon] S3-lagring för att regelbundet exportera profildata till CSV-filer från Adobe Experience Platform till dina egna S3-butiker. I [!DNL Pega Customer Decision Hub]kan du schemalägga datajobb att importera profildata från S3-lagringsutrymmet för att uppdatera [!DNL Pega Customer Decision Hub] profil. |
+| [(Beta) The Trade Desk CRM EU connection](../../destinations/catalog/advertising/tradedesk-emails.md) | I och med lanseringen av EUID (European Unified ID) ser du nu två [!DNL The Trade Desk - CRM] destinationer i [målkatalog](/help/destinations/catalog/overview.md). <ul><li> Om du hämtar data i EU ska du använda **[!DNL The Trade Desk - CRM (EU)]** mål.</li><li> Om du hämtar data i APAC- eller NAMER-regionerna använder du **[!DNL The Trade Desk - CRM (NAMER & APAC)]** mål. </li></ul> |
+
+**Ny eller uppdaterad funktionalitet**
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Nya avgränsningsalternativ för målanslutningar för betmolnlagring | Tre nya avgränsningsalternativ (Kolon `:`, rörform, semikolon `;`) finns nu för de nya lagringsplatserna i betmolnet - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> Läs om vilka funktioner som stöds [filformateringsalternativ](/help/destinations/ui/batch-destinations-file-formatting-options.md) för filbaserade mål. |
+| Ny valfri parameter finns i [kunddatafält](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. <br> Till exempel **[!UICONTROL Integration alias]** i [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
+
+**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
+
+<table>
+    <tr>
+        <td><b>Korrigera eller förbättra</b></td>
+        <td><b>Beskrivning</b></td>
+    </tr>
+    <tr>
+        <td>Uppdaterat exportbeteende till filbaserade mål (PLAT-123316)</td>
+        <td>Vi har åtgärdat ett problem med beteendet hos <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mandatory-attributes">obligatoriska attribut</a> när datafiler exporteras till gruppmål. <br> Tidigare kontrollerades alla poster i utdatafilerna att innehålla båda: <ol><li>Ett värde som inte är null för <code>mandatoryField</code> kolumn och</li><li>Ett värde som inte är null i minst ett av de andra icke-obligatoriska fälten.</li></ol> Det andra villkoret har tagits bort. Det kan leda till att fler utdatarader visas i dina exporterade datafiler, vilket visas i exemplet nedan:<br> <b> Exempelbeteende före januari 2023-versionen </b> <br> Obligatoriskt fält: <code>emailAddress</code> <br> <b>Indata som ska aktiveras</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> <br> <b>Aktiveringsutdata</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr></tbody></table> <br> <b> Exempelbeteende efter januari 2023-versionen </b> <br> <b>Aktiveringsutdata</b> <br> <table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> </td>
+    </tr>
+</table>
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
@@ -41,22 +91,76 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Tilldela fält till anpassade klasser när du lägger till direkt i ett schema | När [lägga till ett enskilt fält direkt i ett schema](../../xdm/ui/resources/schemas.md#add-individual-fields)tidigare kunde du bara tilldela fältet till en fältgrupp som överordnad resurs. Förutom fältgrupper kan du nu [tilldela fältet till en anpassad klass](../../xdm/ui/resources/schemas.md#add-to-class) som dess överordnade resurs i stället. |
+| Inaktivera föreslagna värden för strängfält | Nu kan du [inaktivera enskilda föreslagna värden för strängfält](../../xdm/ui/fields/enum.md) i [!UICONTROL Schemas] arbetsyta, inklusive sådana från standardkomponenter. Den här funktionen är bara tillgänglig för fält med föreslagna värden och stöds inte för uppräkningsbegränsningar. |
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Klass | [[!UICONTROL Conversion]](https://github.com/adobe/xdm/blob/master/components/classes/conversion.schema.json) | En klass för att spåra konverteringsdata, t.ex. valutakonverteringar. |
+| Fältgrupp | [[!UICONTROL Currency Conversion Rate Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/conversion/currency-conversion-details.schema.json) | En fältgrupp för [!UICONTROL Conversion] klass, hämta ytterligare information om valutakonvertering. |
+| Fältgrupp | [[!UICONTROL Consent policies evaluation results map with metadata]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResultsv2.schema.jsonn) | Fångar information om utvärderingsresultatet av flera olika medgivandeprinciper, inklusive metadatainformation om medgivandeprincipingångar och finns. |
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Datatyp | [[!UICONTROL Advertising details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | The `ID` fältet har bytt namn till `name`och föregående `name` fältet är nu `friendlyName`. |
+| Datatyp | [[!UICONTROL Decision Proposition Details]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-detail.schema.json) | Lagt till en `selectionStrategy` fält som hämtar information om en urvalsstrategi. |
+| Fältgrupp | [[!UICONTROL Experience Event - Proposition Interactions]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/experienceevent-proposition-interaction.schema.json) | Fältgruppen är nu kompatibel med [!UICONTROL Journey Step Event] klassen. |
+| Datatyp | [[!UICONTROL Error details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | The `ID` fältet har bytt namn till `name`. |
+| Datatyp | [[!UICONTROL Media information]](https://github.com/adobe/xdm/blob/master/components/datatypes/media.schema.json) | Återställde en mönsterändring till videosegmentegenskapen. |
+| Datatyp | [[!UICONTROL Qoe Data details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | Borttagen `droppedFrameCount` fält. |
+| Datatyp | [[!UICONTROL Session details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | Bytt namn på `isAuthorized` fält till `authorized`och uppdaterade `type` till en sträng när den tidigare var en boolesk. |
+| Datatyp | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | Flera nya fält har lagts till: `shipDate`, `trackingNumber`och `trackingURL`. |
+| Fältgrupp | [[!UICONTROL AJO Entity Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity-mixins.schema.json) | Flera nya fält har lagts till: `journeyNodeID`, `journeyNodeName`och `journeyModeType`. |
+| Fältgrupp | [[!UICONTROL Consumer Experience Event]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/experienceevent-consumer.schema.json) | Fältgruppen är nu också kompatibel med [!UICONTROL Summary Metrics] klassen. |
+| Fältgrupp | [[!UICONTROL Product Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/product-triggers.schema.json) | The `productTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL Relative Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/relative-triggers.schema.json) | The `relativeTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL Severe Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/severe-triggers.schema.json) | The `severeTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL Weather Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/severe-triggers.schema.json) | The `weatherTriggers` fältet är nu kapslat under `weather` -objekt. |
+| Fältgrupp | [[!UICONTROL XDM Related Business Accounts]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account/related-accounts.schema.json) | Fältgruppen är nu stabil. |
 
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
+## Kundprofil i realtid {#profile}
+
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+
+**Kommande borttagning** {#deprecation}
+
+För att ta bort redundans i segmentmedlemskapets livscykel `Existing` status kommer att bli inaktuell från [segmentmedlemskarta](../../xdm/field-groups/profile/segmentation.md) i slutet av mars 2023. Ett uppföljningsmeddelande kommer att innehålla det exakta datumet för borttagningen.
+
+Efterborttagning representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Detta kommer att skapa paritet med filbaserade mål med `Active` och `Expired` segmentstatus.
+
+Den här ändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och har automatiserade processer längre fram i kedjan baserade på `Existing` status. Granska dina integreringar längre fram i kedjan om så är fallet. Om du är intresserad av att identifiera nyligen kvalificerade profiler längre än en viss tid, vänligen väl använda en kombination av `Realized` status och `lastQualificationTime` i din medlemskarta. Mer information får du av Adobe.
+
+Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
+
+## Segmenteringstjänst {#segmentation}
+
+[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Utgångsdatum för plattformsgenererat segmentmedlemskap | Alla segmentmedlemskap som finns i `Exited` i mer än 30 dagar, baserat på `lastQualificationTime` kan tas bort. |
+| Utgångsdatum för externt medlemskap | Som standard behålls medlemskap för externa målgrupper i 30 dagar. Om du vill behålla dem längre använder du `validUntil` när målgruppsdata hämtas. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
+
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
-**Uppdaterade funktioner**
-
 | Funktion | Beskrivning |
-| --- | --- | 
-| Betaversion av Oraclets Service Cloud-källa | Använd Oraclets Service Cloud-källa för att importera data från ditt Oracle Service Cloud-konto till Experience Platform. Mer information finns i dokumentationen för [Oracle Service Cloud-källa](../../sources/connectors/customer-success/oracle-service-cloud.md). |
-
-Läs mer om källor i [källöversikt](../../sources/home.md).
+| --- | --- |
+| Tillåt användaråtkomst till undermappar för molnlagringskällor | Nu kan du definiera åtkomst till en viss undermapp i molnlagringskällan när du skapar ett nytt konto. När de har skapats kan användarna bara komma åt data från den tillåtna undermappen. Den här funktionen är tillgänglig för följande molnlagringskällor: [Azure Blob Storage](../../sources/connectors/cloud-storage/blob.md), [Google Cloud-lagring](../../sources/connectors/cloud-storage/google-cloud-storage.md), [Google PubSub](../../sources/connectors/cloud-storage/google-pubsub.md)och [SFTP](../../sources/connectors/cloud-storage/sftp.md). |
+| Tillgänglighet för betaversion av [!DNL SugarCRM] | [!DNL SugarCRM] Nu finns källor i betaversionen. Använd [!DNL SugarCRM Accounts & Contacts] och [!DNL SugarCRM Events] källor som hämtar data från [!DNL SugarCRM] konto till Experience Platform. Mer information finns i [[!DNL SugarCRM] översikt](../../sources/connectors/crm/sugarcrm.md). |
