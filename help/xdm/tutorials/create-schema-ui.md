@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 9f39130c8d470b236764993f7ebca9c1cdc748bb
+source-git-commit: ecf757e98c3da568173d161aa5d4701881ec2337
 workflow-type: tm+mt
-source-wordcount: '3786'
+source-wordcount: '3824'
 ht-degree: 0%
 
 ---
@@ -177,8 +177,10 @@ Välj **plus (+)** -ikonen bredvid `loyaltyTier` -objekt som ska börja läggas 
 
 Varje fält kräver följande information:
 
-* **[!UICONTROL Field Name]:** Fältets namn, skrivet i kameraläge. Exempel: loyaltyLevel
-* **[!UICONTROL Display Name]:** Fältets namn, skrivet i versaler. Exempel: Lojalitetsnivå
+* **[!UICONTROL Field Name]:** Fältets namn, helst skrivet i camelCase. Inga blankstegstecken tillåts. Det här namnet används som referens för fältet i koden och i andra program längre fram i kedjan.
+   * Exempel: loyaltyLevel
+* **[!UICONTROL Display Name]:** Fältets namn, skrivet i versaler. Det här namnet visas på arbetsytan när du visar eller redigerar schemat.
+   * Exempel: Lojalitetsnivå
 * **[!UICONTROL Type]:** Fältets datatyp. Detta inkluderar grundläggande skalärtyper och alla datatyper som definieras i [!DNL Schema Registry]. Exempel: [!UICONTROL String], [!UICONTROL Integer], [!UICONTROL Boolean], [!UICONTROL Person], [!UICONTROL Address], [!UICONTROL Phone number], osv.
 * **[!UICONTROL Description]:** En valfri beskrivning av fältet får innehålla högst 200 tecken.
 

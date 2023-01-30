@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: f1a8bcc7c1ba33d74e1f687b4cfd83bddce2fadc
 workflow-type: tm+mt
-source-wordcount: '1299'
+source-wordcount: '1332'
 ht-degree: 2%
 
 ---
@@ -44,7 +44,7 @@ Beroende på om du lägger till ett fält direkt i ett schema eller dess klass o
 
 ## Definiera egenskaperna för ett fält {#define}
 
-När du har valt **plus (+)** ikon, en **[!UICONTROL New field]** visas i arbetsytan, som finns i ett objekt som har ett namn som är kopplat till ditt unika klientorganisations-ID (visas som `_tenantId` i exemplet nedan). Alla anpassade fält som läggs till i ett schema placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och fältgrupper som tillhandahålls av Adobe.
+När du har valt **plus (+)** ikon, en **[!UICONTROL Untitled field]** platshållaren visas på arbetsytan.
 
 ![](../../images/ui/fields/overview/new-field.png)
 
@@ -52,8 +52,8 @@ I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera i
 
 | Fältegenskap | Beskrivning |
 | --- | --- |
-| [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats.<br><br>Namnet ska helst skrivas i camelCase. Den kan innehålla alfanumeriska tecken, bindestreck eller understreck, men den **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktig**: `_fieldName`</li></ul> |
-| [!UICONTROL Display name] | Ett användarvänligt fältnamn. |
+| [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra program längre fram i kedjan<br><br>Namnet ska helst skrivas i camelCase. Den kan innehålla alfanumeriska tecken, bindestreck eller understreck, men den **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktig**: `_fieldName`</li></ul> |
+| [!UICONTROL Display name] | Ett visningsnamn för fältet. Det här namnet kommer att användas för att representera fältet på arbetsytan i Schemaredigeraren. |
 | [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja något av [standardtyper av skalärbilder](../../schema/field-constraints.md) stöds av XDM, eller ett av flera fält [datatyper](../resources/data-types.md) som tidigare har definierats i [!DNL Schema Registry].<br><br>Du kan också välja **[!UICONTROL Advanced type search]** om du vill söka efter och filtrera befintliga datatyper och hitta den önskade typen enklare. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -70,7 +70,7 @@ När du har konfigurerat fältet väljer du **[!UICONTROL Apply]**.
 
 ![](../../images/ui/fields/overview/field-details.png)
 
-Arbetsytan uppdateras för att visa fältets namn och typ, och den högra listen visar nu fältets sökväg förutom dess andra egenskaper.
+Arbetsytan uppdateras för att visa det nya fältet, som finns i ett objekt som har ett namn som är kopplat till ditt unika innehavar-ID (visas som `_tenantId` i exemplet nedan). Alla anpassade fält som läggs till i ett schema placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och fältgrupper som tillhandahålls av Adobe. Den högra listen visar nu fältets sökväg förutom dess andra egenskaper.
 
 ![](../../images/ui/fields/overview/field-added.png)
 
