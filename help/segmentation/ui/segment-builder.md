@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 28b9458d29ce69bcbfdff53c0cb6bd7f427e4a2e
 workflow-type: tm+mt
-source-wordcount: '3038'
+source-wordcount: '3187'
 ht-degree: 0%
 
 ---
@@ -126,6 +126,22 @@ Om du väljer ett värde i den här listan med enum, visas värdet med en heldra
 
 ![En varning som visas om du infogar ett värde som inte ingår i uppräkningslistan.](../images/ui/segment-builder/enum-warning.png)
 
+Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Välj ![plustecken](../images/ui/segment-builder/plus-icon.png) för att visa **[!UICONTROL Add values in bulk]** pover.
+
+![Plustecknet markeras och visar den knapp som du kan välja för att få åtkomst till bulköverföringen.](../images/ui/segment-builder/add-bulk-values.png)
+
+På **[!UICONTROL Add values in bulk]** pover kan du överföra en CSV- eller TSV-fil.
+
+![Alternativet Lägg till värden i bulkposition visas. Dialogrutan som du kan välja för att överföra en CSV- eller TSV-fil är markerad.](../images/ui/segment-builder/bulk-values-popover.png)
+
+Du kan också lägga till kommaavgränsade värden manuellt.
+
+![Alternativet Lägg till värden i bulkposition visas. Både dialogrutan som du kan använda för att infoga värden och de tillagda värdena markeras.](../images/ui/segment-builder/bulk-values-comma-separated.png)
+
+Observera att högst 250 värden tillåts. Om du överskrider detta värde måste du ta bort vissa värden innan du lägger till fler.
+
+![En varning som visar att du har nått det maximala antalet värden visas.](../images/ui/segment-builder/maximum-values.png)
+
 ### Lägga till målgrupper
 
 Du kan dra och släppa en målgrupp från **[!UICONTROL Audience]** på regelbyggarens arbetsyta för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i den nya segmentregeln.
@@ -138,7 +154,7 @@ För [!DNL Platform] målgrupper skapade med [!DNL Segment Builder]kan du konver
 
 ![Den här bilden visar hur du konverterar ett målgruppsattribut till regler.](../images/ui/segment-builder/add-audience-to-segment.png)
 
-Om det uppstår konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
+Om det uppstår några konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
 
 ### kodvyn
 

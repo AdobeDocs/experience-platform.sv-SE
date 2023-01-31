@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 855ce02dc371621cd8a4b02348e1e74a573123f3
+source-git-commit: b3b496cb6c7ab82455efcbea2b08089ce8ea3184
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1874'
 ht-degree: 1%
 
 ---
@@ -148,8 +148,9 @@ Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och 
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Utgångsdatum för plattformsgenererat segmentmedlemskap | Alla segmentmedlemskap som finns i `Exited` i mer än 30 dagar, baserat på `lastQualificationTime` kan tas bort. |
+| Import av massvärde i Segment Builder | Segment Builder har nu stöd för import av flera värden, antingen genom att en CSV- eller TSV-fil överförs eller genom att kommaavgränsade värden infogas manuellt. Mer information finns i [Segment Builder Guide](../../segmentation/ui/segment-builder.md#rule-builder-canvas). |
 | Utgångsdatum för externt medlemskap | Som standard behålls medlemskap för externa målgrupper i 30 dagar. Om du vill behålla dem längre använder du `validUntil` när målgruppsdata hämtas. |
+| Utgångsdatum för plattformsgenererat segmentmedlemskap | Alla segmentmedlemskap som finns i `Exited` i mer än 30 dagar, baserat på `lastQualificationTime` kan tas bort. |
 
 {style=&quot;table-layout:auto&quot;}
 
