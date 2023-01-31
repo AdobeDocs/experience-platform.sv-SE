@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 39d00824a17fd0b72de84425e5753945ad454b20
+source-git-commit: f7bcd009882d9753638ba2ce692df9fe80287641
 workflow-type: tm+mt
-source-wordcount: '1873'
+source-wordcount: '2218'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,7 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai/ml-services)
 - [Säkerhet](#assurance)
 - [Datainsamling](#data-collection)
 - [[!DNL Destinations]](#destinations)
@@ -21,6 +22,39 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Kundprofil i realtid](#profile)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## Artificiell intelligens/maskininlärning {#ai-ml}
+
+Artificiell intelligens och maskininlärningstjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja kraften i AI/ML i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prognoser, utan behov av datavetenskap, som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå.
+
+### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Attribution AI och vissa andra Experience Platform-baserade tillämpningar. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
+| Redigera kolumner för extra poängdatauppsättning | Nu kan du lägga till eller ta bort ytterligare spaltdatakolumner (rapportkolumner) när du redigerar befintliga modeller. Detta utökar flexibiliteten i attribueringspoängen för att ge dig insikter om ytterligare dimensioner efter att en modell redan har skapats. Se [Användargränssnittshandbok för attribuering](../../intelligent-services/attribution-ai/user-guide.md) om du vill veta mer. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Se [AI-/ML-tjänster](../../intelligent-services/attribution-ai/overview.md) för mer information.
+
+### Kund-AI
+
+Kundens AI för Real-time Customer Data Platform används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Customer AI för Real-time Customer Data Platform och vissa andra Experience Platform-baserade tillämpningar. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
+
+{style=&quot;table-layout:auto&quot;}
+
+Se [AI-/ML-tjänster](../../intelligent-services/customer-ai/overview.md) för mer information.
 
 ## Säkerhet {#assurance}
 
