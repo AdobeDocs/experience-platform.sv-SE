@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till direktuppspelade profilbaserade mål.
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: af761155bc510d96cea2b0bd475ee4a3bc4abe16
+source-git-commit: 9bde403338187409892d76de68805535de03d59f
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -80,15 +80,25 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 
 På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
->[!IMPORTANT]
->
->I det här steget söker Adobe Experience Platform efter brott mot dataanvändningspolicyn. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [Politiska åtgärder](../../rtcdp/privacy/data-governance-overview.md#enforcement) i dokumentationsavsnittet för datastyrning.
+![Markeringssammanfattning i granskningssteget.](/help/destinations/assets/ui/activate-streaming-profile-destinations/review.png)
 
-![Bild som visar en dataprincipöverträdelse i granskningssteget.](../assets/common/data-policy-violation.png)
+### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-Om inga principöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**, markera **[!UICONTROL View applicable consent policies]** för att se vilka regler för samtycke som tillämpas och hur många profiler som inkluderas i aktiveringen till följd av dessa. Läs om [utvärdering av godkännandepolicy](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för mer information.
 
-![Bild som visar granskningssteget i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/review.png)
+### Kontroller av policyer för dataanvändning {#data-usage-policy-checks}
+
+I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
+
+![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
+
+### Filtrera segment {#filter-segments}
+
+I det här steget kan du även använda de tillgängliga filtren på sidan för att endast visa segment vars schema eller mappning har uppdaterats som en del av det här arbetsflödet.
+
+![Skärminspelning som visar tillgängliga segmentfilter i granskningssteget.](/help/destinations/assets/ui/activate-streaming-profile-destinations/filter-segments-review-step.gif)
+
+Om du är nöjd med ditt val och inga policyöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
 ## Verifiera segmentaktivering {#verify}
 
