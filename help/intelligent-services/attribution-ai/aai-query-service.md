@@ -4,7 +4,7 @@ feature: Attribution AI
 title: Analyserar attribueringsresultat med hjälp av frågetjänsten
 description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera Attribution AI.
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Varje rad i data representerar en konvertering där information för relaterade 
 
 I användargränssnittet för Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen. The **[!UICONTROL Datasets]** visas. Välj sedan **[!UICONTROL Browse]** och hitta utdata för dina Attribution AI.
 
-![Åtkomst till din instans](./images/aai-query/datasets_browse.png)
+![Åtkomst till din modell](./images/aai-query/datasets_browse.png)
 
 Välj din utdatamängd. Sidan för datauppsättningsaktivitet visas.
 
@@ -305,7 +305,7 @@ Den här frågan förenklar strukturkolumnen i flera enskilda kolumner och utlö
 
 >[!TIP]
 >
-> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. The `COLUMN_NAME` variabeln kan hämta värden för valfria skicka genom kolumnnamn (rapportkolumner) som lades till under konfigureringen av din Attribution AI-instans. Granska ditt resultatschema för att hitta `{COLUMN_NAME}` värden som behövs för att slutföra den här frågan.
+> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. The `COLUMN_NAME` variabeln kan anta värden för valfria skicka genom kolumnnamn (rapportkolumner) som lades till när din Attribution AI konfigurerades. Granska ditt resultatschema för att hitta `{COLUMN_NAME}` värden som behövs för att slutföra den här frågan.
 
 ```sql
 SELECT 

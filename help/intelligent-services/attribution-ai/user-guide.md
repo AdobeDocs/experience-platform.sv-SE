@@ -4,9 +4,9 @@ feature: Attribution AI
 title: Användargränssnittshandbok för Attribution AI
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
 workflow-type: tm+mt
-source-wordcount: '2867'
+source-wordcount: '2385'
 ht-degree: 0%
 
 ---
@@ -17,41 +17,41 @@ Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmis
 
 Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 
-## Skapa en instans
+## Skapa en modell
 
 I [!DNL Adobe Experience Platform] Gränssnitt, välj **[!UICONTROL Services]** i den vänstra navigeringen. The **[!UICONTROL Services]** webbläsaren visas och tillgängliga intelligenta Adobe-tjänster visas. I behållaren för Attribution AI väljer du **[!UICONTROL Open]**.
 
-![Åtkomst till din instans](./images/user-guide/open_Attribution_ai.png)
+![Åtkomst till din modell](./images/user-guide/open_Attribution_ai.png)
 
-Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen.
+Attribution AI tjänstsida visas. På den här sidan visas tjänstmodeller med Attribution AI och information om dem, inklusive modellens namn, konverteringshändelser, hur ofta modellen körs och status för den senaste uppdateringen.
 
-Du hittar **[!UICONTROL Total conversion events scored]** mätvärdena finns längst ned till höger på sidan **[!UICONTROL Create instance]** behållare. Det här måttet spårar det totala antalet konverteringshändelser som har bedömts av Attribution AI för det aktuella kalenderåret, inklusive alla sandlådemiljöer och eventuella borttagna tjänstinstanser.
+Du hittar **[!UICONTROL Total conversion events scored]** mätvärdena finns längst ned till höger på sidan **[!UICONTROL Create model]** behållare. Det här måttet spårar det totala antalet konverteringshändelser som har bedömts av Attribution AI för det aktuella kalenderåret, inklusive alla sandlådemiljöer och borttagna servicemodeller.
 
 ![totala konverteringar](./images/user-guide/total_conversions.png)
 
-Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger i användargränssnittet. Om du vill visa dessa kontroller väljer du en instans från din befintliga **[!UICONTROL Service instances]**. Kontrollerna innehåller följande information:
+Tjänstmodeller kan redigeras, klonas och tas bort med kontrollerna till höger i användargränssnittet. Om du vill visa dessa kontroller väljer du en modell från din befintliga **[!UICONTROL Service models]**. Kontrollerna innehåller följande information:
 
-- **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera namn, beskrivning, status och bedömningsfrekvens för instansen.
-- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den markerade tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
-- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
+- **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstmodell. Du kan redigera namn, beskrivning, status, bedömningsfrekvens för modellen och ytterligare spalter för spaltdata.
+- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den valda servicemodellen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny modell.
+- **[!UICONTROL Delete]**: Du kan ta bort en servicemodell, inklusive eventuella historiska körningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
 - **[!UICONTROL Data source]**: En länk till den datauppsättning som används. Om mer än en datauppsättning används av Attribution AI visas&quot;Flera&quot; följt av antalet datauppsättningar. När du väljer hyperlänken visas förhandsvisningsdrivrutinen för datauppsättningar.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
 
 ![Sidruta](./images/user-guide/multiple-datasets-pane.png)
 
-- **[!UICONTROL Conversion events]**: En snabb översikt över konverteringshändelserna som konfigurerats för den här instansen.
+- **[!UICONTROL Conversion events]**: En snabb översikt över konverteringshändelserna som konfigurerats för den här modellen.
 - **[!UICONTROL Lookback window]**: Den tidsram som du definierade visar hur många dagar före kontaktytorna för konverteringshändelsen som ingår.
-- **[!UICONTROL Touchpoints]**: En lista med alla kontaktytor som du definierade när du skapade den här instansen.
+- **[!UICONTROL Touchpoints]**: En lista med alla kontaktytor som du definierade när du skapade den här modellen.
 
 ![](./images/user-guide/side_panel_2.png)
 
-Välj **[!UICONTROL Create instance]** till att börja.
+Välj **[!UICONTROL Create model]** till att börja.
 
-![Skapa instans](./images/user-guide/landing_page.png)
+![Skapa modell](./images/user-guide/landing_page.png)
 
-Därefter visas konfigurationssidan för Attribution AI där du kan ange ett namn och en valfri beskrivning för tjänstinstansen.
+Därefter visas konfigurationssidan för Attribution AI där du kan ange ett namn och en valfri beskrivning för din tjänstmodell.
 
-![namnge en instans](./images/user-guide/naming_instance.png)
+![namnge en modell](./images/user-guide/naming_instance.png)
 
 ## Markera data {#select-data}
 
@@ -227,7 +227,7 @@ Om du vill ändra tiden på dagen som du vill att poängsättningen ska göras v
 
 ### Kolumner för extra poängdatauppsättning (valfritt)
 
-Som standard skapas en poängdatauppsättning för varje tjänstinstans i ett standardschema. Du kan välja att lägga till ytterligare kolumner baserat på dina Conversion Event- och Touchpoint-konfigurationer i resultatmängden. Börja med att välja kolumner från indatauppsättningen. Du kan sedan dra och släppa dem för att ändra ordningen genom att hålla ned vänster musknapp över hamburgikonen.
+Som standard skapas en poängdatauppsättning för varje tjänstmodell i ett standardschema. Du kan välja att lägga till ytterligare kolumner baserat på dina Conversion Event- och Touchpoint-konfigurationer i resultatmängden. Börja med att välja kolumner från indatauppsättningen. Du kan sedan dra och släppa dem för att ändra ordningen genom att hålla ned vänster musknapp över hamburgikonen.
 
 ![kolumntillägg för stackdata](./images/user-guide/Add-score-dataset.png)
 
@@ -264,44 +264,6 @@ För att säkerställa att ni får den mest korrekta modellen är det viktigt at
 När du har valt kursfönster väljer du **[!UICONTROL Finish]** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Välj **[!UICONTROL Ok]** omdirigeras till **[!UICONTROL Service instances]** sida där du kan se tjänstinstansen.
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
-
-## Styrningspolitik
-
-När du har gått igenom arbetsflödet för att skapa en instans och skicka in modellens konfiguration kan du [policytillämpning](/help/data-governance/enforcement/auto-enforcement.md) kontrollerar om det finns några överträdelser. Om en principöverträdelse inträffar visas en portfölj som anger att en eller flera profiler har överträtts. Detta för att säkerställa att era dataåtgärder och marknadsföringsåtgärder inom plattformen är kompatibla med dataanvändningsprinciper.
-
-![potypografering som visar policyöverträdelse](./images/user-guide/policy-violation-popover-aai.png)
-
-Leverantören ger specifik information om överträdelsen. Du kan lösa dessa överträdelser med hjälp av principinställningar och andra åtgärder som inte är direkt relaterade till konfigurationsarbetsflödet. Du kan till exempel ändra etiketterna så att vissa fält kan användas i datavetenskapliga syften. Du kan också ändra själva modellkonfigurationen så att den inte använder något med en etikett på den. Läs dokumentationen om du vill veta mer om hur du konfigurerar [policyer](/help/data-governance/policies/overview.md).
-
-## Attributbaserad åtkomstkontroll
-
->[!IMPORTANT]
->
->Attributbaserad åtkomstkontroll är för närvarande endast tillgänglig i en begränsad version.
-
-[Attributbaserad åtkomstkontroll](../../../help/access-control/abac/overview.md) är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
-
-Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
-
-Genom attributbaserad åtkomstkontroll kan administratörer styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och -resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
-
-På grund av den attributbaserade åtkomstkontrollen kan vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa Attribution AI-tjänstinstanser. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
-
-Överst på arbetsytan Attribution AI **insikter**, har den information som visas i sidofältet begränsad åtkomst.
-
-![Arbetsytan i Attribution AI med de begränsade schemafälten markerade.](./images/user-guide/access-restricted.png)
-
-Om du väljer datauppsättningar med begränsade scheman på **[!UICONTROL Create instance workflow]** visas ett varningstecken bredvid datauppsättningsnamnet med meddelandet: [!UICONTROL Restricted information is excluded].
-
-![Attribution AI arbetsyta med begränsade datamängdsfält markerade.](./images/user-guide/restricted-info-excluded.png)
-
-När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICONTROL Create instance workflow]** visas en varning om att [!UICONTROL Due to access restrictions, certain information isn't displayed in the dataset preview.]
-
-![Attribution AI arbetsyta med de begränsade förhandsvisade schemafälten som resultat markerade.](./images/user-guide/restricted-dataset-preview.png)
-
-När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
-
-![Attribution AI arbetsyta med de begränsade fälten för instansresultaten markerade.](./images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## Nästa steg
 

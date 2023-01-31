@@ -5,9 +5,9 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 6aff88c0bc5cd15b8b3ffb32458402e1edc873c8
 workflow-type: tm+mt
-source-wordcount: '3227'
+source-wordcount: '2741'
 ht-degree: 0%
 
 ---
@@ -250,46 +250,6 @@ Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och e
 >Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
 
 Genom att följa det här avsnittet har du konfigurerat en instans av Customer AI och utfört en förutsägelsekörning. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poängvärden om profilväxlingen är aktiverad. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
-
-## Styrningspolitik
-
-När du har gått igenom arbetsflödet för att skapa en instans och skicka in modellens konfiguration kan du [policytillämpning](/help/data-governance/enforcement/auto-enforcement.md) kontrollerar om det finns några överträdelser. Om en principöverträdelse inträffar visas en portfölj som anger att en eller flera profiler har överträtts. Detta för att säkerställa att era dataåtgärder och marknadsföringsåtgärder inom plattformen är kompatibla med dataanvändningsprinciper.
-
-![potypografering som visar policyöverträdelse](../images/user-guide/policy-violation-popover-cai.png)
-
-Leverantören ger specifik information om överträdelsen. Du kan lösa dessa överträdelser med hjälp av principinställningar och andra åtgärder som inte är direkt relaterade till konfigurationsarbetsflödet. Du kan till exempel ändra etiketterna så att vissa fält kan användas i datavetenskapliga syften. Du kan också ändra själva modellkonfigurationen så att den inte använder något med en etikett på den. Läs dokumentationen om du vill veta mer om hur du konfigurerar [policyer](/help/data-governance/policies/overview.md).
-
-## Attributbaserad åtkomstkontroll
-
->[!IMPORTANT]
->
->Attributbaserad åtkomstkontroll är för närvarande endast tillgänglig i en begränsad version.
-
-[Attributbaserad åtkomstkontroll](../../../access-control/abac/overview.md) är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
-
-Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
-
-Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
-
-På grund av den attributbaserade åtkomstkontrollen skulle vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa instanser av kundens AI-tjänst. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
-
-![Kundens AI-arbetsyta med de begränsade fälten i tjänstinstansresultaten markerade.](../images/user-guide/unavailable-functionalities.png)
-
-Överst på kundens AI-arbetsyta **insikter** Lägg märke till att informationen i sidofältet, poängdefinitionen, identiteten och profilattributen visar &quot;Åtkomst begränsad&quot;.
-
-![Kundens AI-arbetsyta med de begränsade fälten i schemat markerade.](../images/user-guide/access-restricted.png)
-
-<!-- If you select datasets with restricted schemas on the **[!UICONTROL Create instance workflow]** page, a warning sign appears next to the dataset name with the message: [!UICONTROL Restricted information is excluded].
-
-![The Customer AI workspace with the restricted fields of the selected datasets results highlighted.](../images/user-guide/restricted-info-excluded.png) -->
-
-När du förhandsgranskar datauppsättningar med begränsat schema på **[!UICONTROL Create instance workflow]** visas en varning om att [!UICONTROL Due to access restrictions, certain information isn't displayed in the dataset preview.]
-
-![Kundens AI-arbetsyta med begränsade fält för förhandsgranskningsdatauppsättningar med begränsade schemaresultat markerade.](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
-
-När du har skapat en instans med begränsad information och fortsätter till **[!UICONTROL Define goal]** visas en varning högst upp: [!UICONTROL Due to access restrictions, certain information isn't displayed in the configuration.]
-
-![Kundens AI-arbetsyta med de begränsade fälten i tjänstinstansresultaten markerade.](../images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## Nästa steg {#next-steps}
 
