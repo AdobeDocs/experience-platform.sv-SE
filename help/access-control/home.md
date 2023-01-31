@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 56f1cbc622450b154e6e29a8116789b316901f66
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1330'
 ht-degree: 1%
 
 ---
@@ -79,6 +79,12 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 
 | Kategori | Behörighet | Beskrivning |
 | --- | --- | --- |
+| [!DNL Alerts] | [!UICONTROL View Alerts History] | Skrivskyddad åtkomst för aviseringshistorik. |
+| [!DNL Alerts] | [!UICONTROL Resolve Alerts] | Tillgång till att läsa, redigera och ta bort aviseringar. |
+| [!DNL Alerts] | [!UICONTROL View Alerts] | Skrivskyddad åtkomst för aviseringar. |
+| [!DNL Alerts] | [!UICONTROL Manage Alerts] | Åtkomst för att läsa, skapa, redigera och ta bort varningshistorik. |
+| [!DNL Data Hygiene] | [!UICONTROL View Data Hygiene] | Skrivskyddad åtkomst för datahygien. |
+| [!DNL Data Hygiene] | [!UICONTROL Manage Data Hygiene] | Åtkomst att läsa, skapa, redigera och ta bort datahygien. |
 | [!DNL Data Modeling] | [!UICONTROL Manage Schemas] | Åtkomst för att läsa, skapa, redigera och ta bort scheman och relaterade resurser. |
 | [!DNL Data Modeling] | [!UICONTROL View Schemas] | Skrivskyddad åtkomst till scheman och relaterade resurser. |
 | [!DNL Data Modeling] | [!UICONTROL Manage Relationships] | Åtkomst för att läsa, skapa, redigera och ta bort schemarelationer. |
@@ -94,9 +100,9 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 | [!DNL Profile Management] | [!UICONTROL View Merge Policies] | Skrivskyddad åtkomst till tillgängliga kopplingsprofiler. |
 | [!DNL Profile Management] | [!UICONTROL Export Audience for Segment] | Möjlighet att exportera ett utvärderat målgruppssegment till en datauppsättning. |
 | [!DNL Profile Management] | [!UICONTROL Evaluate a Segment to an Audience] | Möjlighet att generera profiler för en viss målgrupp genom att utvärdera en segmentdefinition. |
-| [!DNL Identities] | [!UICONTROL Manage Identity Namespaces] | Åtkomst för att läsa, skapa, redigera och ta bort identitetsnamnutrymmen. |
-| [!DNL Identities] | [!UICONTROL View Identity Namespaces] | Skrivskyddad åtkomst för identitetsnamnutrymmen. |
-| [!DNL Identities] | [!UICONTROL View Identity Graph] | Skrivskyddad åtkomst för identitetsdiagram. |
+| [!DNL Identity Management] | [!UICONTROL Manage Identity Namespaces] | Åtkomst för att läsa, skapa, redigera och ta bort identitetsnamnutrymmen. |
+| [!DNL Identity Management] | [!UICONTROL View Identity Namespaces] | Skrivskyddad åtkomst för identitetsnamnutrymmen. |
+| [!DNL Identity Management] | [!UICONTROL View Identity Graph] | Skrivskyddad åtkomst för identitetsdiagram. |
 | [!DNL Sandbox Administration] | [!UICONTROL Manage Sandboxes] | Åtkomst för att läsa, skapa, redigera och ta bort sandlådor. |
 | [!DNL Sandbox Administration] | [!UICONTROL View Sandboxes] | Skrivskyddad åtkomst för sandlådor som tillhör din organisation. |
 | [!DNL Sandbox Administration] | [!UICONTROL Reset a Sandbox] | Möjlighet att återställa en sandlåda. |
