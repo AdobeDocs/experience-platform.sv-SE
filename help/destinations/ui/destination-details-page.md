@@ -1,11 +1,11 @@
 ---
 keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
+description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 165d8719cbf5d4b0555d5b9ef84252e3cbd82d42
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
@@ -78,11 +78,17 @@ The [!UICONTROL Dataflow runs] -fliken innehåller mätdata om dataflödet som k
 
 >[!NOTE]
 >
->* Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) destinationer.
+>* Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md) destinationer.
 >* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) utelämnade mål, identiteter visas inte för närvarande.
 
 
 ![Vy för körning av dataflöde](../assets/ui/details-page/dataflow-runs.png)
+
+### Varaktighet för dataflöde {#dataflow-runs-duration}
+
+Det finns ett känt fel i hur länge dataflödet körs. Med **[!UICONTROL Processing duration]** som anges för de flesta dataflödeskörningar är ungefär fyra timmar, vilket visas i bilden nedan, är den faktiska bearbetningstiden för dataflödeskörningar mycket kortare. Dataflödets körningsfönster är inte längre öppna om Experience Platform behöver göra om anrop till målet.
+
+![Bild av dataflödet kör sidan med kolumnen Bearbetningstid markerad.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run.png)
 
 ## [!UICONTROL Activation data] {#activation-data}
 
