@@ -4,7 +4,7 @@ solution: Experience Platform
 feature: Customer AI
 title: Åtkomstkontroll för kundens AI
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll för kundens AI.
-source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
+source-git-commit: 6f386d859b8553050ead266fad0e473c7cf7095e
 workflow-type: tm+mt
 source-wordcount: '488'
 ht-degree: 0%
@@ -42,8 +42,8 @@ När du har skapat en modell med begränsad information och fortsätter till **[
 
 När du använder åtkomstkontroll **Visa kund-AI** och **Hantera kund-AI** ger åtkomst till olika funktioner i Customer AI. The **Hantera kund-AI** behörighet ger dig **skapa**,**uppdatera**, **delete**, **enable**, eller **disable** en modell **Visa kund-AI** gör att du kan läsa eller visa den. The **skapa**, **uppdatera** och **delete** åtgärder registreras av granskningsloggar.
 
-Läs dokumentationen för att lära dig mer [tilldela behörigheter för åtkomstkontroll](../../../help/access-control/home.md) eller hur [använda granskningsloggar för att övervaka åtkomst och aktivitet](../../../help/landing/governance-privacy-security/audit-logs/overview.md).
+Läs dokumentationen för att lära dig mer [tilldela behörigheter för åtkomstkontroll](../../../access-control/home.md) eller hur [använda granskningsloggar för att övervaka åtkomst och aktivitet](../../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta till [användarhandbok för åtkomstkontroll](./ui/overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Platform].
+Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta till [användarhandbok för åtkomstkontroll](../overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Platform].

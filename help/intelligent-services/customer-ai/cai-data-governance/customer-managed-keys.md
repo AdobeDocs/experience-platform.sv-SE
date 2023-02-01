@@ -1,11 +1,10 @@
 ---
 keywords: insikter;customer ai;customer ai insights;AAI query service;customer ai queries;customer ai scores; kundhanterade nycklar i CAI
-feature: Customer-Managed Keys in Customer AI
-title: Kundhanterade nycklar
+title: Kundhanterade nycklar i kundens AI.
 description: Lär dig hur du ställer in kundhanterade nycklar för kundens AI.
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: f80cdd553c36ee10cfbf07c5cbbb14e9a4ae6757
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---

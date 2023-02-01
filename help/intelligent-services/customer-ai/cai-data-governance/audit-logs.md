@@ -1,11 +1,10 @@
 ---
 keywords: insikter;customer ai;customer ai insights;CAI query service;customer ai queries;customer ai scores
-feature: Customer AI audit logs
-title: Översikt över granskningsloggar
+title: Granskningsloggsöversikt i kundens AI
 description: Lär dig hur du visar och hanterar granskningsloggar i kundens AI.
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: 6f386d859b8553050ead266fad0e473c7cf7095e
 workflow-type: tm+mt
-source-wordcount: '276'
+source-wordcount: '279'
 ht-degree: 0%
 
 ---
@@ -22,4 +21,4 @@ I grundläggande bemärkelse anger en granskningslogg vem som utförde vilken å
 
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
-För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Läs mer om hur du hanterar individuella behörigheter för AI-funktioner för kunder i [dokumentation om åtkomstkontroll](../../customer-ai/user-guide/access-controls.md).
+För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Läs mer om hur du hanterar individuella behörigheter för AI-funktioner för kunder i [dokumentation om åtkomstkontroll](../cai-data-governance/access-controls.md).

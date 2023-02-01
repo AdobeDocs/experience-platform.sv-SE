@@ -1,11 +1,10 @@
 ---
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
-feature: Attribution AI audit logs
-title: Översikt över granskningsloggar
+title: Granskningsloggar i Attribution AI Översikt
 description: Lär dig hur du visar och hanterar granskningsloggar i Attribution AI.
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: a68d4634c6341f27673fdd70d96f7e214032b5a9
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
@@ -16,11 +15,11 @@ För att öka insynen i och synligheten för aktiviteter som utförs i systemet,
 
 I grundläggande bemärkelse anger en granskningslogg vem som utförde vilken åtgärd och när. Varje åtgärd som registreras i en logg innehåller metadata som anger åtgärdstyp, datum och tid, e-post-ID för användaren som utförde åtgärden samt ytterligare attribut som är relevanta för åtgärdstypen. Den spårar de åtgärder som användare i Attribution AI utför för att skapa, uppdatera och ta bort.
 
-[Granskningsloggarna som har valts på arbetsytan Attribution AI](../../attribution-ai/images/data-governance/audit-logs-cai.png)
+<!-- [The audit logs selected in the Attribution AI workspace](../../../attribution-ai/aai-data-governance/images/data-governance/audit-logs-cai.png) -->
 
 ## Åtkomst till granskningsloggar
 
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
-För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Läs mer om hur du hanterar enskilda behörigheter för Attribution AI i [dokumentation om åtkomstkontroll](../../attribution-ai/access-controls.md).
+För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Läs mer om hur du hanterar enskilda behörigheter för Attribution AI i [dokumentation om åtkomstkontroll](../aai-data-governance/access-controls.md).
 

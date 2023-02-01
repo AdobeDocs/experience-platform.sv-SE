@@ -1,9 +1,8 @@
 ---
 keywords: insikter;attribution;attribution ai insights;AAI query service;attribution queries;attribution scores; kundhanterade nycklar i AAI
-feature: Customer-Managed Keys in Attribution AI
 title: Kundhanterade nycklar
 description: Lär dig hur du ställer in kundhanterade nycklar för Attribution AI.
-source-git-commit: 3b1cc7ca710071df9de06428f7eed2993219ae1a
+source-git-commit: f80cdd553c36ee10cfbf07c5cbbb14e9a4ae6757
 workflow-type: tm+mt
 source-wordcount: '168'
 ht-degree: 0%

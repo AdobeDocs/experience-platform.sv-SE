@@ -4,10 +4,10 @@ audience: user
 user-guide-title: Hjälp om intelligenta tjänster
 breadcrumb-title: Guide för intelligenta tjänster
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, identifiera insikter och skapa segment utifrån era marknadsföringshändelsedata.
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: 5448333a68560aeb83e8f31a36c75c539fc4bf1b
 workflow-type: tm+mt
-source-wordcount: '123'
-ht-degree: 4%
+source-wordcount: '149'
+ht-degree: 6%
 
 ---
 
@@ -23,6 +23,12 @@ ht-degree: 4%
    - [Användargränssnittshandbok](attribution-ai/user-guide.md)
    - [Upptäck insikter](attribution-ai/discover-insights.md)
    - [Hämta bakgrundsmusik](attribution-ai/download-scores.md)
+   - Datastyrning {#aai-data-governance}
+      - [Åtkomstkontroller](attribution-ai/aai-data-governance/access-controls.md)
+      - [Granskningsloggar](attribution-ai/aai-data-governance/audit-logs.md)
+      - [Kundhanterade nycklar](attribution-ai/aai-data-governance/customer-managed-keys.md)
+      - [Datastyrning](attribution-ai/aai-data-governance/data-governance.md)
+      - [Styrningspolitik](attribution-ai/aai-data-governance/governance-policies.md)
    - [Analysera bakgrundsmusik med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
    - [Fel vid felsökning](attribution-ai/troubleshooting.md)
 - Innehåll och handel, AI (beta) {#content-commerce-ai}
@@ -44,4 +50,10 @@ ht-degree: 4%
       - [Skapa segment med hjälp av AI-poäng för kunder](customer-ai/user-guide/create-segment.md)
       - [Hämta bakgrundsmusik](customer-ai/user-guide/download-scores.md)
    - [Fel vid felsökning](customer-ai/troubleshooting.md)
+   - Datastyrning {#cai-data-governance}
+      - [Åtkomstkontroller](customer-ai/cai-data-governance/access-controls.md)
+      - [Granskningsloggar](customer-ai/cai-data-governance/audit-logs.md)
+      - [Kundhanterade nycklar](customer-ai/cai-data-governance/customer-managed-keys.md)
+      - [Datastyrning](customer-ai/cai-data-governance/data-governance.md)
+      - [Styrningspolitik](customer-ai/cai-data-governance/governance-policies.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
