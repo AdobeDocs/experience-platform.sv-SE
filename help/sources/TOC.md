@@ -4,9 +4,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
 feature: Sources
-source-git-commit: 2d9cd6ed1db7bcbbe9b35c154e09a6b03f9a132d
+source-git-commit: 33aeeb58e5bfa2c1553a5c49fee07dc5020f4efb
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '928'
 ht-degree: 5%
 
 ---
@@ -329,6 +329,15 @@ ht-degree: 5%
       - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
       - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
       - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
+   - Strömmande SDK {#streaming-sdk}
+      - [Kom igång med självbetjäningskällor (Streaming SDK)](sources-sdk/streaming/getting-started.md)
+      - [Skapa en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/create.md)
+      - [Uppdatera en anslutningsspecifikation för en direktuppspelningskälla](sources-sdk/streaming/update-connection-specs.md)
+      - [Uppdatera specifikationen för direktuppspelningsflödet](sources-sdk/streaming/update-flow-specs.md)
+      - [Testa och skicka anslutningsspecifikationen för verifiering](sources-sdk/streaming/submit.md)
+      - [Dokumentera källan (Streaming SDK)](sources-sdk/streaming/document-streaming.md)
+      - [Mall för självbetjäning-API-direktuppspelning för dokumentation](sources-sdk/streaming/streaming-template-api.md)
+      - [Mall för självbetjäningsströmning av dokumentation](sources-sdk/streaming/streaming-template-ui.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)
