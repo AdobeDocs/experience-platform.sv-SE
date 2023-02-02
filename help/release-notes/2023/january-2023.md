@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: f7bcd009882d9753638ba2ce692df9fe80287641
+source-git-commit: 667e868f2faba3ac3f241a2e2cd04d6de67f48c7
 workflow-type: tm+mt
-source-wordcount: '2219'
+source-wordcount: '2369'
 ht-degree: 1%
 
 ---
@@ -83,7 +83,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 {style=&quot;table-layout:auto&quot;}
 
-## Mål  {#destinations}
+## Destinationer (uppdaterad 2 februari) {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
@@ -114,6 +114,10 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
         <td>Uppdaterat exportbeteende till filbaserade mål (PLAT-123316)</td>
         <td>Vi har åtgärdat ett problem med beteendet hos <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mandatory-attributes">obligatoriska attribut</a> när datafiler exporteras till gruppmål. <br> Tidigare kontrollerades alla poster i utdatafilerna att innehålla båda: <ol><li>Ett värde som inte är null för <code>mandatoryField</code> kolumn och</li><li>Ett värde som inte är null i minst ett av de andra icke-obligatoriska fälten.</li></ol> Det andra villkoret har tagits bort. Det kan leda till att fler utdatarader visas i dina exporterade datafiler, vilket visas i exemplet nedan:<br> <b> Exempelbeteende före januari 2023-versionen </b> <br> Obligatoriskt fält: <code>emailAddress</code> <br> <b>Indata som ska aktiveras</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> <br> <b>Aktiveringsutdata</b> <br><table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr></tbody></table> <br> <b> Exempelbeteende efter januari 2023-versionen </b> <br> <b>Aktiveringsutdata</b> <br> <table><thead><tr><th>firstName</th><th>emailAddress</th></tr></thead><tbody><tr><td>John</td><td>john@acme.com</td></tr><tr><td>null</td><td>peter@acme.com</td></tr><tr><td>Jenifer</td><td>jennifer@acme.com</td></tr><tr><td>null</td><td>diana@acme.com</td></tr></tbody></table> </td>
     </tr>
+    <tr>
+        <td>Verifiering av gränssnitt och API för obligatoriska mappningar och dubblettmappningar (PLAT-123316)</td>
+        <td>Valideringen genomförs nu på följande sätt i gränssnittet och API när <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#mapping">mappningsfält</a> i arbetsflödet för aktivering av mål:<ul><li><b>Nödvändiga mappningar</b>: Om målet har konfigurerats av målutvecklaren med obligatoriska mappningar (till exempel <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html?lang=en">Google Ad Manager 360</a> måste dessa obligatoriska mappningar läggas till av användaren när data aktiveras till målet. </li><li><b>Duplicera mappningar</b>: I mappningssteget i aktiveringsarbetsflödet kan du lägga till dubblettvärden i källfälten, men inte i målfälten. I tabellen nedan finns ett exempel på tillåtna och förbjudna mappningskombinationer. <br><table><thead><tr><th>Tillåtet/förbjudet</th><th>Källfält</th><th>Målfält</th></tr></thead><tbody><tr><td>Tillåtet</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>e-postalias2</li></ul></td></tr><tr><td>Förbjuden</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
+    </tr>    
 </table>
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
