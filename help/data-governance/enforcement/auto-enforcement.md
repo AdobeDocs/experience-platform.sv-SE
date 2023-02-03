@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: c0f077d685c688f96d1778a02b24c0959a5dd822
 workflow-type: tm+mt
-source-wordcount: '1713'
+source-wordcount: '1869'
 ht-degree: 0%
 
 ---
@@ -116,6 +116,16 @@ Välj **[!UICONTROL List view]** för att visa datalinjen som en lista. Om du vi
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
 Om du har [policyer för skapat samtycke](../policies/user-guide.md#consent-policy) och som aktiverar ett segment till en destination kan du se hur dina medgivandeprinciper påverkar procentandelen profiler som ingår i aktiveringen.
+
+#### Policyförbättringar för samtycke för betalmedia {#consent-policy-enhancement}
+
+En förbättring har gjorts för att genomdriva samtyckesregler för direktuppspelningsdestinationer inklusive aktiveringar av betalda medier. Den här förbättringen är tillgänglig för kunder som har skölden för skydd av privatlivet och säkerheten och hälso- och sjukvårdsskölden och tar aktivt bort profiler från direktuppspelningsdestinationer när medgivandestatusen ändras. Det garanterar också att ändringar av samtycke sprids omedelbart så att rätt målgrupp alltid målgruppsanpassas.
+
+Dessa förbättringar ger större förtroende för er marknadsföringsstrategi eftersom det eliminerar behovet av att marknadsförare manuellt lägger till medgivandeattribut i sina segmentuttryck. Detta garanterar att inga profiler oavsiktligt riktas mot marknadsföringsupplevelser när samtycke har återkallats eller inte längre är kvalificerade för en samtyckespolicy. De policyer för godkännande av marknadsföring som anger regler för hur samtycke eller inställningsdata ska hanteras i olika arbetsflöden för marknadsföring, tillämpas nu automatiskt i aktiveringsarbetsflöden i lösningar längre fram i kedjan.
+
+>[!NOTE]
+>
+>Den här förbättringen resulterar inte i några gränssnittsändringar.
 
 #### Utvärdering före aktivering
 
