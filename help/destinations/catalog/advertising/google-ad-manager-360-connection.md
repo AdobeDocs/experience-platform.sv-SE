@@ -2,10 +2,10 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
+source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
 workflow-type: tm+mt
-source-wordcount: '876'
-ht-degree: 0%
+source-wordcount: '882'
+ht-degree: 1%
 
 ---
 
@@ -54,19 +54,15 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ### Tillåt listning {#allow-listing}
 
+Du måste ange Tillåt innan du konfigurerar din första [!DNL Google Ad Manager 360] mål i Platform. Se till att du slutför processen för att tillåta listning som beskrivs nedan innan du skapar ditt mål.
+
 >[!NOTE]
 >
->Tillåtelselista är obligatoriskt innan du konfigurerar din första [!DNL Google Ad Manager] mål i Platform. Se till att tillåtelselista-processen som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
+>Undantaget till den här regeln gäller för befintlig [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
 
->[!IMPORTANT]
->
->Google har förenklat processen att ansluta externa målgruppshanteringsplattformar till Google Ad Manager 360. Nu kan du gå igenom processen för att länka till Google Ad Manager 360 på ett självbetjäningssätt. Läs [Segment från datahanteringsplattformar](https://support.google.com/admanager/answer/3289669?hl=en) i Google-dokumentationen. Du bör ha ID:n listade nedan till hands.
+1. Följ stegen som beskrivs i [Dokumentation för Google Ad Manager](https://support.google.com/admanager/answer/3289669?hl=en) att lägga till Adobe som en länkad datahanteringsplattform (DMP).
+2. I [!DNL Google Ad Manager] gränssnitt, gå till **[!UICONTROL Admin]** > **[!UICONTROL Global Settings]** > **[!UICONTROL Network Settings]** och aktivera **[!UICONTROL API Access]** skjutreglage.
 
-* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
-* **Kund-ID**: Adobe kund-ID med Google. Kund-ID: 89690775.
-* **Nätverkskod**: Det här är din [!DNL Google Ad Manager] nätverksidentifierare, hittades under **[!UICONTROL Admin > Global settings]** i Google-gränssnittet och i URL-adressen.
-* **Målgruppslänks-ID**: Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]), som också finns under **[!UICONTROL Admin > Global settings]** i Google gränssnitt.
-* Din kontotyp. DFP av Google eller AdX-köpare.
 
 ## Anslut till målet {#connect}
 
@@ -91,12 +87,12 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
-* **[!UICONTROL Bucket name]**: Ange namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
-* **[!UICONTROL Account ID]**: Fyll i ditt Audience Link ID med [!DNL Google].
-* **[!UICONTROL Account Type]**: Välj ett alternativ beroende på ditt konto hos Google:
-   * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
+* **[!UICONTROL Bucket name]**: Ange namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål.
+* **[!UICONTROL Account ID]**: Ange [!DNL Audience Link ID] från [!DNL Google] konto. Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]). Du hittar den här under **[!UICONTROL Admin > Global settings]** i [!DNL Google Ad Manager] gränssnitt.
+* **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på [!DNL Google] konto:
    * Använd `AdX buyer` for [!DNL Google AdX]
+   * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -127,3 +123,12 @@ Dessa mappningar krävs av [!DNL Google Ad Manager 360] och skapas automatiskt a
 ## Exporterade data {#exported-data}
 
 Kontrollera dina [!DNL Google Cloud Storage] och se till att de exporterade filerna innehåller de förväntade profilpopulationerna.
+
+## Felsökning {#troubleshooting}
+
+Om du råkar ut för några fel när du använder det här målet och behöver kontakta antingen Adobe eller Google, ska du ha följande ID:n till hands.
+
+Följande är Adobe Google konto-ID:
+
+* **[!UICONTROL Account ID]**: 87933855
+* **[!UICONTROL Customer ID]**: 89690775

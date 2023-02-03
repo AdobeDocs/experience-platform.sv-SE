@@ -3,10 +3,10 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 94cd05ca8b5c8331b1b49e5172daf499918d2320
+source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
 workflow-type: tm+mt
-source-wordcount: '929'
-ht-degree: 0%
+source-wordcount: '858'
+ht-degree: 1%
 
 ---
 
@@ -58,18 +58,10 @@ Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och har inte akt
 
 ### Tillåt listning {#allow-listing}
 
->[!NOTE]
->
->Du måste ange Tillåt innan du konfigurerar din första [!DNL Google Ad Manager] mål i Platform. Se till att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
->Undantaget till den här regeln är för [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
+Du måste ange Tillåt innan du konfigurerar din första [!DNL Google Ad Manager] mål i Platform. Se till att du slutför processen för att tillåta listning som beskrivs nedan innan du skapar ditt mål.
 
-Innan du skapar [!DNL Google Ad Manager] mål i plattform måste du kontakta [!DNL Google] för att Adobe ska föras upp på listan över tillåtna dataleverantörer och för att ditt konto ska läggas till tillåtelselista. Kontakt [!DNL Google] och lämna följande information:
-
-* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
-* **Kund-ID**: Adobe kund-ID med Google. Kund-ID: 89690775.
-* **Nätverkskod**: Det här är din [!DNL Google Ad Manager] nätverksidentifierare, hittades under **[!UICONTROL Admin > Global settings]** i Google-gränssnittet och i URL-adressen.
-* **Målgruppslänks-ID**: Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]), som också finns under **[!UICONTROL Admin > Global settings]** i Google gränssnitt.
-* Din kontotyp. DFP av Google eller AdX-köpare.
+1. Följ stegen som beskrivs i [Dokumentation för Google Ad Manager](https://support.google.com/admanager/answer/3289669?hl=en) att lägga till Adobe som en länkad datahanteringsplattform (DMP).
+2. I [!DNL Google Ad Manager] gränssnitt, gå till **[!UICONTROL Admin]** > **[!UICONTROL Global Settings]** > **[!UICONTROL Network Settings]** och aktivera **[!UICONTROL API Access]** skjutreglage.
 
 ## Anslut till målet {#connect}
 
@@ -85,10 +77,11 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
+* **[!UICONTROL Account ID]**: Ange [!DNL Audience Link ID] från [!DNL Google] konto. Detta är en specifik identifierare som är associerad med din [!DNL Google Ad Manager] nätverk (inte ditt [!DNL Network code]). Du hittar den här under **[!UICONTROL Admin > Global settings]** i [!DNL Google Ad Manager] gränssnitt.
 * **[!UICONTROL Account Type]**: Välj ett alternativ beroende på ditt konto hos Google:
    * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
    * Använd `AdX buyer` for [!DNL Google AdX]
-* **[!UICONTROL Account ID]**: Fyll i ditt Audience Link ID med [!DNL Google].
+
 
 >[!NOTE]
 >
@@ -111,3 +104,12 @@ Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/
 ## Exporterade data {#exported-data}
 
 Verifiera om data har exporterats till [!DNL Google Ad Manager] mål, kontrollera [!DNL Google Ad Manager] konto. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+
+## Felsökning {#troubleshooting}
+
+Om du råkar ut för några fel när du använder det här målet och behöver kontakta antingen Adobe eller Google, ska du ha följande ID:n till hands.
+
+Följande är Adobe Google konto-ID:
+
+* **[!UICONTROL Account ID]**: 87933855
+* **[!UICONTROL Customer ID]**: 89690775
