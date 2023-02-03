@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f7a6f53c0993348c9a0fc0f935a9d02d54389311
+source-git-commit: e4e87fdb5f6dfbca882f924d38397a904d8b0cff
 workflow-type: tm+mt
-source-wordcount: '1808'
+source-wordcount: '1820'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Roten `timestamp` fältet för ett händelseschema kan **endast** representerar 
 
 Om ett företag inom rese- och turismbranschen till exempel utformar en flygbokningshändelse, ska klassnivån `timestamp` -fältet representerar tiden då reservationshändelsen observerades. Andra tidsstämplar som är relaterade till händelsen, t.ex. startdatumet för resereservationen, ska hämtas i separata fält som tillhandahålls av standardfältgrupper eller anpassade fältgrupper.
 
-![](../images/classes/experienceevent/timestamps.png)
+![Ett exempel på Experience Event-schema med flygreservation och startdatum markerat.](../images/classes/experienceevent/timestamps.png)
 
 Genom att hålla tidsstämpeln på klassnivå åtskild från andra relaterade datetime-värden i dina händelsescheman kan du implementera flexibla användningsfall för segmentering samtidigt som du bevarar en tidsstämplad redovisning av kundresor i ditt upplevelseprogram.
 
