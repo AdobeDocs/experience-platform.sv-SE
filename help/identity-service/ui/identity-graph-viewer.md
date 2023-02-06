@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över Identity Graph Viewer
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
 workflow-type: tm+mt
 source-wordcount: '995'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Att arbeta med identitetsdiagramvisningsprogrammet kräver förståelse för de 
 - **Länk (kant):** En länk eller kant representerar kopplingen mellan identiteter.
 - **Diagram (kluster):** Ett diagram eller kluster är en grupp identiteter och länkar som representerar en person.
 
-## Åtkomst till identitetsdiagramvisningsprogrammet
+## Åtkomst till identitetsdiagramvisningsprogrammet {#access-identity-graph-viewer}
 
 Om du vill använda identitetsdiagramvisningsprogrammet i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och välj sedan **[!UICONTROL Identity graph]** -fliken. Från **[!UICONTROL Identity Namespace]** klickar du på **[!UICONTROL Select identity namespace]** om du vill söka efter det namnutrymme som du tänker använda.
 

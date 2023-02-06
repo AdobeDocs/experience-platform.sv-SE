@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Destinationshandbok
-user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och mycket annat.
+user-guide-title: Användarhandbok om destinationer
+user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: f89c6a11199bff2d91414e8370c1fd9693308fc6
+source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
 workflow-type: tm+mt
-source-wordcount: '992'
-ht-degree: 1%
+source-wordcount: '1016'
+ht-degree: 3%
 
 ---
 
@@ -17,6 +17,10 @@ ht-degree: 1%
 * [Översikt över mål](./home.md)
 * [Måltyper och -kategorier](./destination-types.md)
 * [Destinationsskydd (aktivering)](./guardrails.md)
+* Så fungerar destinationer {#how-destinations-work}
+   * [Konfigurerbara och gemensamma exportinställningar för destinationer](./how-destinations-work/destinations-configurations.md)
+   * [Profilexportbeteende för olika måltyper](./how-destinations-work/profile-export-behavior.md)
+   * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
 * API-självstudiekurser {#api}
    * [Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Anslut till gruppmolnlagring och e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
@@ -214,7 +218,7 @@ ht-degree: 1%
             * [Testa ditt filbaserade mål med exempelprofiler](./destination-sdk/file-based-destination-testing-api.md)
             * [Visa detaljerade aktiveringsresultat](./destination-sdk/file-based-destination-results-api.md)
             * [Validera mallsidiga kundfält](./destination-sdk/file-based-render-template-api.md)
-   * Stödlinjer {#guides}
+   * Användarhandböcker {#guides}
       * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
       * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
       * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)

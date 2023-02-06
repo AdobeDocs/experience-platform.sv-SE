@@ -3,9 +3,9 @@ keywords: destinationer;adobe experience platform;platform;mål overview;activat
 title: Översikt över mål
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 944f307ecb4cf174c9f9818ded17546057f445e4
+source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '734'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ En av de viktigaste funktionerna i Platform är att inhämta era egna data och a
 
 ## Kontroller {#controls}
 
-Kontrollerna i [Arbetsytan Destinationer](./ui/destinations-workspace.md) kan du:
+Kontrollerna i [målarbetsyta](./ui/destinations-workspace.md) kan du:
 
 * Bläddra i katalogen med destinationsplattformar där du kan aktivera dina data;
 * Skapa, redigera, aktivera och inaktivera dataflöden till destinationerna i katalogen,
@@ -45,7 +45,7 @@ Kontrollerna i [Arbetsytan Destinationer](./ui/destinations-workspace.md) kan du
 
 ## Måltyper och -kategorier {#types-and-categories}
 
-Mer information finns i [måltyper och kategorier - översikt](./destination-types.md).
+Med Experience Platform kan ni aktivera data till olika typer av destinationer för att tillgodose era användningsbehov. Målen kan vara allt från API-baserade integreringar till integreringar med mottagningssystem för filer, sökmål för profiler och mycket annat. Mer information om alla tillgängliga destinationer finns i [måltyper och kategorier - översikt](./destination-types.md).
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 
@@ -69,6 +69,12 @@ Med attributbaserad åtkomstkontroll i Adobe Experience Platform kan administrat
 Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer på fält som du har behörighet till. Dessutom kan du inte exportera data till ett mål om du inte har tillgång till alla fält i datauppsättningen.
 
 Mer information om hur destinationer fungerar med attributbaserade åtkomstkontroller finns i [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md#destinations).
+
+## Målövervakning {#destinations-monitoring}
+
+När du har upprättat en anslutning till ett mål och slutfört aktiveringsarbetsflödet kan du övervaka dataexporten till mottagningssystemet. Läs [guide om övervakning av dataflöden till destinationer i användargränssnittet](/help/dataflows/ui/monitor-destinations.md) för mer information.
+
+Du kan också validera om data kommer fram till målet. De flesta måldokumentationssidor i katalogen har en *Avsnittet Validera dataexport*, vilket visar hur du kan kontrollera på målplattformen att data har hämtats in från Experience Platform.
 
 ## Begränsningar för datastyrning vid aktivering av data till destinationer {#data-governance}
 

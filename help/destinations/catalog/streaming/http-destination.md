@@ -3,9 +3,9 @@ keywords: strömning, HTTP-mål
 title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c65e8b4a4b3a3f9e546126258d3b9ca58de07081
+source-git-commit: 1c844d86834ef78d1206a8698dbcbfe2fae49661
 workflow-type: tm+mt
-source-wordcount: '2295'
+source-wordcount: '2362'
 ht-degree: 0%
 
 ---
@@ -213,7 +213,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om ett mappat segment ändrar lägen (från null till realiserad eller från realiserad/befintlig till befintlig) eller om mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till HTTP API-mål, bestämmer ändringar i en viss profil även målexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>Alla segment (med den senaste medlemskapsstatusen), oavsett om de är mappade i dataflödet eller inte, ingår i `segmentMembership` -objekt.</li><li>Alla identiteter i `identityMap` -objekt ingår också (Experience Platform stöder för närvarande inte identitetsmappning i HTTP API-målet).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om ett mappat segment ändrar lägen (från null till realiserad eller från realiserad/befintlig till befintlig) eller om mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till HTTP API-mål, bestämmer ändringar i en viss profil även målexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>The `segmentMembership` -objektet innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som mappas i aktiveringsdataflödet. </li><li>Alla identiteter i `identityMap` -objekt ingår också (Experience Platform stöder för närvarande inte identitetsmappning i HTTP API-målet).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
 
 {style=&quot;table-layout:fixed&quot;}
 
@@ -221,7 +221,7 @@ Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre segment 
 
 ![Måldataflöde för HTTP API](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem i dem. Om en profil kvalificerar sig för kunden med DeLorean Cars-segmentet men även är medlem i &quot;Tillbaka till framtiden&quot;-segmentet för film- och science fiction-fans, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet.
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som det segment som utlöste exporten. Om en profil kvalificerar sig för **Kund med DeLorean Cars** men är även medlem i **Tittat på &quot;Tillbaka till framtiden&quot;** film och **Science fiction fans** segment, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet, om dessa delar samma sammanfogningsprincip med **Kund med DeLorean Cars** segment.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
