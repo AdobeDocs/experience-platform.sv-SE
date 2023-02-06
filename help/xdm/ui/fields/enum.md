@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera uppräkningsfält och föreslagna värden i användargränssnittet
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: f770ba8668c5154b2cf5a57ba61d771ca34ab2d8
+source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '1318'
+source-wordcount: '1222'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ I motsats till vad som anges i **[!UICONTROL Suggested values]** kan ange en upp
 
 När [definiera ett nytt fält](./overview.md#define) i Adobe Experience Platform användargränssnitt och ange typen till [!UICONTROL String]kan du definiera [enum](#enum) eller [föreslagna värden](#suggested-values) för det fältet.
 
-![Alternativet Uppräkning och föreslagna värden är aktiverat för ett strängfält i användargränssnittet.](../../images/ui/fields/enum/enum-options-selected.png)
+![Bild som visar alternativet Uppräkning och föreslagna värden aktiverat för ett strängfält i användargränssnittet](../../images/ui/fields/enum/enum-options-selected.png)
 
 Det här dokumentet innehåller information om hur du definierar enum och föreslagna värden i [!UICONTROL Schemas] Arbetsytan i användargränssnittet. Titta på följande video om du vill få en snabb översikt över uppräkningar och föreslagna värden, inklusive hur du konfigurerar dem i användargränssnittet och deras underordnade effekter:
 
@@ -36,13 +36,13 @@ Det här dokumentet innehåller information om hur du definierar enum och föres
 
 Välj **[!UICONTROL Enums and Suggested Values]** väljer **[!UICONTROL Enums]**. Ytterligare kontroller visas, så att du kan ange värdebegränsningar för uppräkningen. Om du vill lägga till en begränsning väljer du **[!UICONTROL Add row]**.
 
-![Uppräkningsalternativet som är markerat i användargränssnittet.](../../images/ui/fields/enum/enum-add-row.png)
+![Bild som visar alternativet Numrera som valts i användargränssnittet](../../images/ui/fields/enum/enum-add-row.png)
 
 Under **[!UICONTROL Value]** måste du ange det exakta värdet som du vill begränsa fältet till. Du kan även ange en användarvänlig **[!UICONTROL Display Name]** för begränsningen, vilket påverkar hur värdet kommer att representeras i segmenteringen.
 
 Fortsätt använda **[!UICONTROL Add row]** om du vill lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort](../../images/ui/fields/enum/remove-icon.png)) bredvid en rad som lagts till tidigare för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna i schemat.
 
-![Uppräkningsvärdena och visningsnamnen som fylls i för strängfältet i användargränssnittet.](../../images/ui/fields/enum/enum-confirm.png)
+![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/enum-confirm.png)
 
 Arbetsytan uppdateras för att återspegla ändringarna. När du utforskar det här schemat i framtiden kan du visa och redigera begränsningarna för uppräkningsfältet i den högra listen.
 
@@ -50,35 +50,39 @@ Arbetsytan uppdateras för att återspegla ändringarna. När du utforskar det h
 
 Välj **[!UICONTROL Enums and Suggested Values]** väljer **[!UICONTROL Suggested Values]** om du vill att fler kontroller ska visas. Här väljer du **[!UICONTROL Add row]** om du vill lägga till föreslagna värden.
 
-![Alternativet Föreslagna värden är markerat i användargränssnittet.](../../images/ui/fields/enum/suggested-add-row.png)
+![Bild som visar alternativet Föreslagna värden som valts i användargränssnittet](../../images/ui/fields/enum/suggested-add-row.png)
 
 Under **[!UICONTROL Display Name]** -kolumnen anger du ett användarvänligt namn för värdet som du vill att det ska visas i segmenteringsgränssnittet. Om du vill lägga till fler föreslagna värden väljer du **[!UICONTROL Add row]** och upprepa processen efter behov. Om du vill ta bort en rad som lagts till tidigare väljer du ![ikonen Ta bort](../../images/ui/fields/enum/remove-icon.png) bredvid raden i fråga.
 
 När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna i schemat.
 
-![Uppräkningsvärdena och visningsnamnen som fylls i för strängfältet i användargränssnittet.](../../images/ui/fields/enum/suggested-confirm.png)
+![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-confirm.png)
 
 >[!NOTE]
 >
 >Det finns en fördröjning på ungefär fem minuter för ett fälts uppdaterade föreslagna värden som ska återspeglas i segmenteringsgränssnittet.
 
-### Hantera föreslagna värden för standardfält {#standard-fields}
+### Hantera föreslagna värden för standardfält
 
-Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class](../../classes/experienceevent.md) och du kan skapa ytterligare föreslagna värden för dessa standardfält på samma sätt som för anpassade fält. Du kan även inaktivera standardvärden som föreslås passar inte dina användningsfall, men de kan inte tas bort direkt från fältdefinitionen.
+Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class](../../classes/experienceevent.md). Du kan skapa ytterligare föreslagna värden för ett standardfält, men du kan inte ändra eller ta bort föreslagna värden som inte har definierats av organisationen. När du visar ett standardfält i användargränssnittet visas de föreslagna värdena, men de är skrivskyddade.
 
->[!IMPORTANT]
->
->Du kan bara inaktivera föreslagna värden för standardfält som inte har någon motsvarande enum-begränsning. Med andra ord, om **[!UICONTROL Enums]** alternativet är aktiverat i stället för **[!UICONTROL Suggested Values]**, begränsas fältet som en uppräkning och dessa begränsningar kan inte inaktiveras.
->
->Se [avsnitt nedan](#evolution) om du vill ha mer information om reglerna för uppdatering av uppräkningar och föreslagna värden för befintliga schemafält.
-
-Om du vill inaktivera ett föreslaget standardvärde väljer du växlingsknappen bredvid värdet i fråga. Du kan inaktivera valfri kombination av föreslagna värden, inklusive alla.
-
-![Vissa standardvärden för förslag på [!UICONTROL Event Type] fältet är inaktiverat i användargränssnittet.](../../images/ui/fields/enum/suggested-standard.png)
+![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard.png)
 
 Om du vill lägga till nya föreslagna värden för ett standardfält väljer du **[!UICONTROL Add row]**. Om du vill ta bort ett föreslaget värde som tidigare lagts till av organisationen väljer du ![ikonen Ta bort](../../images/ui/fields/enum/remove-icon.png) bredvid raden i fråga.
 
-![Anpassade föreslagna värden som lagts till i ett standardsträngfält i användargränssnittet.](../../images/ui/fields/enum/suggested-standard-add.png)
+![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard-add.png)
+
+<!-- ### Removing suggested values for standard fields
+
+Only suggested values that you define can be removed from a standard field. Existing suggested values can be disabled so that they no longer appear in the segmentation dropdown, but they cannot be removed outright.
+
+For example, consider a profile schema where the a suggested value for the standard `person.gender` field is disabled:
+
+![Image showing the enum values and display names filled out for the string field in the UI](../../images/ui/fields/enum/standard-enum-disabled.png)
+
+In this example, the display name "[!UICONTROL Non-specific]" is now disabled from being shown in the segmentation dropdown list. However, the value `non_specific` is still part of the list of enumerated fields and is therefore still allowed on ingestion. In other words, you cannot disable the actual enum value for the standard field as it would go against the principle of only allowing changes that make a field less restrictive.
+
+See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. -->
 
 ## Utvecklingsregler för enum och föreslagna värden {#evolution}
 
@@ -86,15 +90,13 @@ När ett schema med ett uppräkningsfält har använts för att importera data t
 
 När det gäller enum och föreslagna värden gäller följande regler för postinmatning:
 
-* Du **KAN** lägga till föreslagna värden i alla fält med befintliga föreslagna värden.
-* Du **KAN** ta bort anpassade föreslagna värden från fält med befintliga föreslagna värden.
-* Du **KAN** inaktivera standardföreslagna värden från fält med endast föreslagna värden och inga uppräkningsbegränsningar.
+* Du **KAN** lägga till föreslagna värden för standardfält och anpassade fält med befintliga föreslagna värden.
+* Du **KAN** ta bort föreslagna värden från anpassade fält med befintliga föreslagna värden.
 * Du **KAN** lägga till nya uppräkningsvärden för ett befintligt anpassat uppräkningsfält.
 * Du **KAN** ändra uppräkningsvärdena för ett anpassat fält till endast föreslagna värden eller konvertera det till en sträng utan uppräkning eller föreslagna värden. **Det går inte att ångra den här växeln när den har använts.**
-* Du **KAN INTE** lägga till eller ta bort uppräkningsbegränsningar från standardfält.
-* Du **KAN INTE** ta bort föreslagna värden från standardfält (endast inaktiverat).
-* Du **KAN INTE** lägg till uppräkningsbegränsningar i fält utan befintlig uppräkning.
-* Du **KAN INTE** tar bort färre än alla befintliga uppräkningsbegränsningar för ett anpassat fält.
+* Du **KAN INTE** ta bort uppräkningar eller föreslagna värden från standardfält.
+* Du **KAN INTE** lägg till uppräkningsvärden i ett fält utan befintlig uppräkning.
+* Du **KAN INTE** tar bort färre än alla befintliga uppräkningsvärden för ett anpassat fält.
 * Du **KAN INTE** växla från föreslagna värden till en uppräkning.
 
 ## Sammanfoga regler för uppräkningar och föreslagna värden {#merging}
@@ -122,4 +124,4 @@ På grund av nuvarande systembegränsningar finns det två fall där en uppräkn
 
 I den här handboken beskrivs hur du definierar enum och föreslagna värden för strängfält i användargränssnittet. Mer information om hur du hanterar uppräkningar och föreslagna värden med API:t för schemaregister finns i följande [självstudiekurs](../../tutorials/suggested-values.md).
 
-Så här definierar du andra XDM-fälttyper i [!DNL Schema Editor], se översikten på [definiera fält i användargränssnittet.](./overview.md#special).
+Så här definierar du andra XDM-fälttyper i [!DNL Schema Editor], se översikten på [definiera fält i användargränssnittet](./overview.md#special).

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent och metodtips för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: e4e87fdb5f6dfbca882f924d38397a904d8b0cff
+source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '1820'
+source-wordcount: '1797'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ The [!DNL XDM ExperienceEvent] klassen innehåller flera tidsserierelaterade fä
 | --- | --- |
 | `_id`<br>**(Obligatoriskt)** | En unik strängidentifierare för händelsen. Det här fältet används för att spåra en enskild händelses unika karaktär, för att förhindra datadubblering och för att slå upp händelsen i underordnade tjänster. I vissa fall `_id` kan vara en [Universally Unique Identifier (UUID)](https://tools.ietf.org/html/rfc4122) eller [GUID (Global Unique Identifier)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>Om du direktuppspelar data från en källanslutning eller direkt inmatning från en Parquet-fil, bör du generera det här värdet genom att sammanfoga en viss kombination av fält som gör händelsen unik, till exempel ett primärt ID, en tidsstämpel, händelsetyp. Det sammanfogade värdet måste vara ett `uri-reference` formaterad sträng, vilket innebär att alla kolontecken måste tas bort. Efteråt bör det sammanfogade värdet hashas med SHA-256 eller någon annan algoritm som du väljer.<br><br>Det är viktigt att särskilja **detta fält inte representerar en identitet som relateras till en enskild person**, utan själva dataposten. Identitetsuppgifter som rör en person bör begränsas till [identitetsfält](../schema/composition.md#identity) tillhandahålls av kompatibla fältgrupper i stället. |
 | `eventMergeId` | Om du använder [Adobe Experience Platform Web SDK](../../edge/home.md) för att importera data representerar detta ID för den inkapslade batchen som gjorde att posten skapades. Det här fältet fylls i automatiskt av systemet när data hämtas. Det går inte att använda det här fältet utanför kontexten för en Web SDK-implementering. |
-| `eventType` | En sträng som anger händelsens typ eller kategori. Det här fältet kan användas om du vill skilja mellan olika händelsetyper inom samma schema och datauppsättning, till exempel att skilja en produkthändelse från en tilläggshändelse i kundvagnen för ett detaljhandelsföretag.<br><br>Standardvärden för den här egenskapen finns i [appendix-avsnitt](#eventType), inklusive beskrivningar av användningsfallet. Det här fältet är en utökningsbar uppräkning, vilket innebär att du även kan använda egna händelsetypsträngar för att kategorisera de händelser som du spårar. Du kan också [inaktivera något av de föreslagna standardvärdena](../ui/fields/enum.md#standard-fields) för det här fältet om de inte passar dina användningsexempel.<br><br>`eventType` begränsar dig till att endast använda en enda händelse per träff i programmet, och därför måste du använda beräkningsfält för att tala om för systemet vilken händelse som är viktigast. Mer information finns i avsnittet om [bästa praxis för beräknade fält](#calculated). |
+| `eventType` | En sträng som anger händelsens typ eller kategori. Det här fältet kan användas om du vill skilja mellan olika händelsetyper inom samma schema och datauppsättning, till exempel att skilja en produkthändelse från en tilläggshändelse i kundvagnen för ett detaljhandelsföretag.<br><br>Standardvärden för den här egenskapen finns i [appendix-avsnitt](#eventType), inklusive beskrivningar av användningsfallet. Det här fältet är en utökningsbar uppräkning, vilket innebär att du även kan använda egna händelsetypsträngar för att kategorisera de händelser som du spårar.<br><br>`eventType` begränsar dig till att endast använda en enda händelse per träff i programmet, och därför måste du använda beräkningsfält för att tala om för systemet vilken händelse som är viktigast. Mer information finns i avsnittet om [bästa praxis för beräknade fält](#calculated). |
 | `producedBy` | Ett strängvärde som beskriver producenten eller händelsens ursprung. Detta fält kan användas för att filtrera bort vissa händelseproducenter om det behövs för segmenteringsändamål.<br><br>Vissa föreslagna värden för den här egenskapen finns i [appendix-avsnitt](#producedBy). Det här fältet är en utökningsbar uppräkning, vilket innebär att du kan använda dina egna strängar för att representera olika händelseproducenter. |
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas på rätt sätt [Kundprofil i realtid](../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
 | `timestamp`<br>**(Obligatoriskt)** | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Den här tidsstämpeln måste finnas tidigare. Se avsnittet nedan [tidsstämplar](#timestamps) för bästa praxis för användning av detta fält. |
@@ -86,9 +86,9 @@ Adobe har flera standardfältgrupper som kan användas med [!DNL XDM ExperienceE
 
 Följande avsnitt innehåller ytterligare information om [!UICONTROL XDM ExperienceEvent] klassen.
 
-### Föreslagna värden för `eventType` {#eventType}
+### Godkända värden för `eventType` {#eventType}
 
-I följande tabell visas de föreslagna standardvärdena för `eventType`och deras definitioner:
+I följande tabell visas godkända värden för `eventType`och deras definitioner:
 
 | Värde | Definition |
 | --- | --- |
@@ -148,7 +148,7 @@ I följande tabell visas de föreslagna standardvärdena för `eventType`och der
 
 ### Föreslagna värden för `producedBy` {#producedBy}
 
-I följande tabell visas de föreslagna standardvärdena för `producedBy`:
+I följande tabell beskrivs några godkända värden för `producedBy`:
 
 | Värde | Definition |
 | --- | --- |
