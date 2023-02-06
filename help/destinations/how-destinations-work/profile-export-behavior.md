@@ -1,7 +1,7 @@
 ---
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
-source-git-commit: 1c844d86834ef78d1206a8698dbcbfe2fae49661
+source-git-commit: 07b92bc06f28bc37673ae71a45ff0e76de9bce9b
 workflow-type: tm+mt
 source-wordcount: '2926'
 ht-degree: 0%
@@ -126,7 +126,7 @@ En profilexport till målet kan bestämmas av en profil som kvalificerar för el
 
 Om du ändrar något av de tre attribut som är mappade ovan för ett profilattribut bestäms en målexport.
 
->[!BEGINSHADEBOX]
+>[!ENDSHADEBOX]
 
 ## Batchmål (filbaserade) {#file-based-destinations}
 
