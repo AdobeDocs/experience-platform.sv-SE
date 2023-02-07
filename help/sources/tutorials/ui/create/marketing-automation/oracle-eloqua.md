@@ -1,12 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;oracle;oracle eloqua;eloqua
-solution: Experience Platform
 title: Skapa en Oraclena Eloqua-källanslutning med hjälp av plattformsgränssnittet
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Eloqua med hjälp av plattformsgränssnittet.
 exl-id: c4431d85-5948-4122-9a99-dbacdde5a09f
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: e8f54f06ad3431227e140219a9960e8e04f83ccc
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '502'
 ht-degree: 1%
 
 ---
@@ -30,8 +28,8 @@ För att kunna ansluta [!DNL Oracle Eloqua] På plattformen måste du ange värd
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Slutpunkt | Slutpunkten för [!DNL Oracle Eloqua]. |
-| Användarnamn | Användarnamnet för [!DNL Oracle Eloqua] konto. Användarnamnet måste vara formaterat som `siteName + \\ + username`, där `siteName` är företagsnamnet som du använde för att logga in på [!DNL Oracle Eloqua] och `username` är ditt användarnamn. Användarnamnet för inloggning kan till exempel vara: `adobe\\emily`. |
+| Slutpunkt | Slutpunkten för [!DNL Oracle Eloqua] server. [!DNL Oracle Eloqua] har stöd för flera datacenter. Logga in på [[!DNL Oracle Eloqua] gränssnitt](https://login.eloqua.com) med dina inloggningsuppgifter och sedan kopiera bas-URL-delen från omdirigerings-URL:en. Formatet för URL-mönstret är `xxx.xx.eloqua.com` och ska anges utan `http` eller `https`. |
+| Användarnamn | Användarnamnet för [!DNL Oracle Eloqua] server. Användarnamnet måste vara formaterat som `siteName + \\ + username`, där `siteName` är företagsnamnet som du använde för att logga in på [!DNL Oracle Eloqua] och `username` är ditt användarnamn. Användarnamnet för inloggning kan till exempel vara: `Eloqua\Andy`. **Anteckning**: Du måste använda ett enda omvänt snedstreck (`\`) när användargränssnittet används eftersom Experience Platform-gränssnittet automatiskt lägger till ytterligare ett omvänt snedstreck (`\`) när du anger ett användarnamn. |
 | Lösenord | Lösenordet som motsvarar [!DNL Oracle Eloqua] användarnamn. |
 
 Mer information om autentiseringsuppgifter för [!DNL Oracle Eloqua], se [[!DNL Oracle Eloqua] guide om autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html).
