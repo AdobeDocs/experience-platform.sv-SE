@@ -1,9 +1,9 @@
 ---
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
-source-git-commit: 6ccf26cbdbbe675d0d731f59cee589d63ca6f8ad
+source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1157'
 ht-degree: 0%
 
 ---
@@ -107,3 +107,5 @@ När du konfigurerar ett datastream enligt beskrivningen i den länkade dokument
 När du har läst det här dokumentet vet du nu hur du tar reda på vilka identiteter som stöds eller krävs för enskilda mål. Nu vet du också hur identitetsmarkering fungerar för varje måltyp.
 
 Sedan kan du läsa om [exportinställningar](/help/destinations/how-destinations-work/destinations-configurations.md) för destinationer är vanliga mellan olika måltyper, som kan konfigureras på en enskild målnivå av utvecklare, och vilka inställningar som kan redigeras av användare i aktiveringsarbetsflödet.
+
+Du kan även checka ut alla tillgängliga mål i dialogrutan [katalog](/help/destinations/catalog/overview.md).

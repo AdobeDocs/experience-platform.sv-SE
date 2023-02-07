@@ -1,9 +1,9 @@
 ---
 title: Konfigurerbara och gemensamma exportinställningar för destinationer
 description: Lär dig vilka exportinställningar i destinationer som kan konfigureras på en målnivå och som är fasta och inte kan redigeras.
-source-git-commit: 04322d10a88b27d5641ab9474c8387945aab9982
+source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '845'
 ht-degree: 0%
 
 ---
@@ -63,5 +63,7 @@ Läs mer om de olika alternativen och stegen i aktiveringsarbetsflödet:
 ## Nästa steg {#next-steps}
 
 När du har läst det här dokumentet vet du nu vilka exportinställningar för mål som är gemensamma för olika måltyper, som kan konfigureras på en enskild målnivå av utvecklare, och vilka inställningar som kan redigeras av användare i aktiveringsarbetsflödet.
+
+Nu kan du läsa mer om [mönster för vanliga exportbeteenden per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md).
 
 För målutvecklare kan du [komma igång](/help/destinations/destination-sdk/getting-started.md) med Destination SDK. För användare som vill aktivera data kan du ta en titt på alla tillgängliga mål i [katalog](/help/destinations/catalog/overview.md).

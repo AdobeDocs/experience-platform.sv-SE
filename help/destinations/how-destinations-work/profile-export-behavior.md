@@ -1,9 +1,9 @@
 ---
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
-source-git-commit: 07b92bc06f28bc37673ae71a45ff0e76de9bce9b
+source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
 workflow-type: tm+mt
-source-wordcount: '2926'
+source-wordcount: '2944'
 ht-degree: 0%
 
 ---
@@ -87,9 +87,9 @@ När det gäller profilattribut kommer alla ändringar av de fyra attribut som m
 
 ## API-baserade mål för direktuppspelning {#streaming-api-based-destinations}
 
-Profilexportbeteendet för direktuppspelningsmål som Facebook, Trade Desk och andra API-baserade integreringar är identiskt med ovanstående.
+Profilexportbeteendet för direktuppspelningsmål som Facebook, Trade Desk och andra API-baserade integreringar liknar beteendet som beskrivs ovan för företagsmål.
 
-Exempel på destinationer: reklam, sociala medier osv.
+Exempel på direktuppspelningsdestinationer är de destinationer som tillhör [kategorier för sociala medier och reklam](/help/destinations/destination-types.md#categories) i katalogen.
 
 Experience Platform optimerar exportbeteendet för profiler till ditt mål för direktuppspelning, så att endast data exporteras till API-baserade mål för direktuppspelning när relevanta uppdateringar av en profil har gjorts efter segmentkvalificering eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
 
