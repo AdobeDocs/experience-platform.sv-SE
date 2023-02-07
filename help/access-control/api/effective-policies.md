@@ -4,14 +4,18 @@ solution: Experience Platform
 title: API-slutpunkt för gällande principer
 description: Lär dig hur du visar effektiva åtkomstprinciper med åtkomstkontrolls-API:t för Adobe Experience Platform.
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
-source-wordcount: '292'
-ht-degree: 1%
+source-wordcount: '315'
+ht-degree: 0%
 
 ---
 
 # Slutpunkt för gällande principer
+
+>[!NOTE]
+>
+>Om en användartoken skickas måste användaren av token ha rollen&quot;org admin&quot; för den begärda organisationen.
 
 Om du vill visa effektiva åtkomstkontrollprinciper för den aktuella användaren skickar du en POST till `/acl/effective-policies` slutpunkt i [!DNL Access Control] API. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
 

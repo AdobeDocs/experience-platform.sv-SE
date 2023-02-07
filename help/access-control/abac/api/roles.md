@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Roller API-slutpunkt
 description: Med slutpunkten /roles i det attributbaserade åtkomstkontrolls-API:t kan du programmässigt hantera roller i Adobe Experience Platform.
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
 workflow-type: tm+mt
-source-wordcount: '1583'
+source-wordcount: '1606'
 ht-degree: 1%
 
 ---
 
 # Rollslutpunkt
+
+>[!NOTE]
+>
+>Om en användartoken skickas måste användaren av token ha rollen&quot;org admin&quot; för den begärda organisationen.
 
 Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver.
 
