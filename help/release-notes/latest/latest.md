@@ -1,10 +1,10 @@
 ---
-title: Versionsinformation för Adobe Experience Platform
+title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: c60c58e563a324c4f8f90eac04686f2190e8448d
+source-git-commit: 6388c72aa0be8f5f91efaaa6a0edd22f3eb99de8
 workflow-type: tm+mt
-source-wordcount: '2368'
-ht-degree: 1%
+source-wordcount: '2357'
+ht-degree: 3%
 
 ---
 
@@ -29,7 +29,7 @@ Artificiell intelligens och maskininlärningstjänster ger marknadsföringsanaly
 
 ### Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 
 **Uppdaterade funktioner**
 
@@ -44,7 +44,7 @@ Se [AI-/ML-tjänster](../../intelligent-services/attribution-ai/overview.md) fö
 
 ### Kund-AI
 
-Kundens AI för Real-time Customer Data Platform används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+Kundens AI för Real-time Customer Data Platform används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 **Uppdaterade funktioner**
 
@@ -130,7 +130,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Inaktivera föreslagna värden för strängfält | Nu kan du [inaktivera enskilda föreslagna värden för strängfält](../../xdm/ui/fields/enum.md) i [!UICONTROL Schemas] arbetsyta, inklusive sådana från standardkomponenter. Den här funktionen är bara tillgänglig för fält med föreslagna värden och stöds inte för uppräkningsbegränsningar. |
+| Förbättrat visningsnamn för schematräd | Tidigare visades fältnamn i användargränssnittet, men nu är visningsnamnen för schemafält på arbetsytan för schemat mer användarvänliga att läsa. |
 
 **Nya XDM-komponenter**
 
