@@ -4,7 +4,7 @@ title: IP-adress tillåtelselista för direktuppspelningsmål
 type: Documentation
 description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till HTTP REST API-slutpunkten, Amazon Kinesis eller Azure Event Hubs-instansen.
 exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
-source-git-commit: 8ea871d3ba66b9ee1a864a6319cde21f518f4534
+source-git-commit: 4d71e246c8ce92cbdae4d248568cf32ab44ac82a
 workflow-type: tm+mt
 source-wordcount: '268'
 ht-degree: 0%
@@ -68,6 +68,7 @@ Adobe rekommenderar att du lägger till följande IP-intervall till en tillåtel
 `40.74.7.208/28`
 `52.142.236.87`
 `20.50.23.153`
+`20.101.246.9`
 `40.74.4.144/28`
 `40.74.7.160/28`
 `40.74.3.176/28`
