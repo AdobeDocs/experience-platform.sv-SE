@@ -2,9 +2,9 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 1eab40687c599d37c71b919bc3a4aeae274b0a49
+source-git-commit: 73f1faaffd4a77c9c09eccf00d5a0ff98580b232
 workflow-type: tm+mt
-source-wordcount: '928'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,8 @@ Innan destinationen kan publiceras på [Experience Platform destinationskatalog]
 
 På den här sidan visas all information du behöver ange när du skickar eller uppdaterar ett mål som du har skapat med Adobe Experience Platform Destination SDK. Om du vill skicka ett mål i Adobe Experience Platform skickar du ett e-postmeddelande till <aepdestsdk@adobe.com> som innehåller
 
-* En beskrivning av de användningsfall som målet löser. Detta är inte nödvändigt om du uppdaterar en befintlig målkonfiguration.
+* En beskrivning av de användningsfall som målet löser. Detta är endast nödvändigt om du skickar in en ny målkonfiguration.
+* En beskrivning av anledningen till att du skickat in destinationen. Detta är endast nödvändigt om du uppdaterar en befintlig målkonfiguration.
 * Testa resultaten efter att du har använt API-slutpunkten för testmålet för att utföra ett HTTP-anrop till målet. Dela ett API-anrop till målslutpunkten med Adobe och det API-svar som tas emot från målslutpunkten.
 * Ytterligare krav för filbaserade mål:
    * Dela en begäran och ett svarsexempel efter att du har använt testnings-API för att [testa din filbaserade destination med exempelprofiler](/help/destinations/destination-sdk/file-based-destination-testing-api.md).
@@ -46,6 +47,14 @@ Ange en beskrivning av de användningsfall som din destination löser för Exper
 
 * [Pinterest](/help/destinations/catalog/advertising/pinterest.md): Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 * [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases): DataX-API:er är tillgängliga för annonsörer som vill rikta sig till en viss målgruppsgrupp som är avstämd från e-postadresser i Verizon Media (VMG) kan snabbt skapa ett nytt segment och skicka den önskade målgruppsgruppen med hjälp av VMG:s API i nära realtid.
+
+## Orsak till uppdatering {#reason-for-update}
+
+>[!NOTE]
+>
+>Det här avsnittet behövs bara när du uppdaterar en befintlig konfiguration.
+
+Ge en kort beskrivning av problemet som ditt bidrag löser för det befintliga målet. Ditt tävlingsbidrag kan till exempel uppdatera namnet, beskrivningen och logotypen för ditt mål när du går från betaversion till allmän tillgänglighet. Du kan också åtgärda ett fel som upptäckts i målkonfigurationen.
 
 ## Testresultat efter användning av testmåls-API {#testing-api-response}
 
