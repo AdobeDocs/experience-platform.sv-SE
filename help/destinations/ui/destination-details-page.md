@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 165d8719cbf5d4b0555d5b9ef84252e3cbd82d42
+source-git-commit: a84d67e433d70cc6194ca20abc656e4b141d42a6
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '760'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ The [!UICONTROL Dataflow runs] -fliken innehåller mätdata om dataflödet som k
 >[!NOTE]
 >
 >* Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md) destinationer.
->* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) utelämnade mål, identiteter visas inte för närvarande.
+>* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) mål, utelämnade identiteter, misslyckade och aktiverade visas för närvarande inte.
 
 
 ![Vy för körning av dataflöde](../assets/ui/details-page/dataflow-runs.png)
