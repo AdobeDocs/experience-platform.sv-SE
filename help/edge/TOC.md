@@ -1,14 +1,14 @@
 ---
 solution: Data Collection
 audience: user
-user-guide-title: Hjälp för Adobe Experience Platform Web SDK
-breadcrumb-title: Web SDK Guide
-user-guide-description: Interagera med Experience Cloud via Edge-nätverket.
+user-guide-title: Hjälp med webb-SDk för Adobe Experience Platform
+breadcrumb-title: Användarhandbok om webb-SDK
+user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: 1b0f1e2e1625f6994a6e09bd086e4b63a3e8d4ab
+source-git-commit: b53be9f2f2d55d5f9e8081fb0ca6732dcc2a8c11
 workflow-type: tm+mt
-source-wordcount: '197'
-ht-degree: 12%
+source-wordcount: '209'
+ht-degree: 21%
 
 ---
 
@@ -27,10 +27,13 @@ ht-degree: 12%
    * [Konfigurera en CSP](fundamentals/configuring-a-csp.md)
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)
    * [Klienttips för användaragent](fundamentals/user-agent-client-hints.md)
-* Datastreams {#datastreams}
+* Dataströmmar {#datastreams}
    * [Översikt](./datastreams/overview.md)
    * [Konfigurera ett datastream](./datastreams/configure.md)
    * [Dataförberedelse för datainsamling](./datastreams/data-prep.md)
+   * Databerikning {#data-enrichment}
+      * [Väderdata av väderkanalen](./datastreams/data-enrichment/weather.md)
+      * [Mappningar av väderdatafält](./datastreams/data-enrichment/weather-reference.md)
 * Identitet {#identity}
    * [Översikt](identity/overview.md)
    * [Enhets-ID:n från första part](identity/first-party-device-ids.md)
