@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Händelseförfallodatum för upplevelser
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallotider för enskilda Experience Events i en Adobe Experience Platform-datauppsättning.
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0fce883528abc62075914abc4a8f81d2bff8f2e6
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '488'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Händelseförfallotider för upplevelser kan inte konfigureras via plattformens 
 När Experience Event-förfallotider har aktiverats för en profilaktiverad datauppsättning tillämpar Platform automatiskt utgångsvärdena för varje hämtad händelse i en tvåstegsprocess:
 
 1. För alla nya data som hämtas in till datauppsättningen tillämpas utgångsvärdet vid inmatningstiden baserat på händelsens tidsstämpel.
-1. Alla befintliga data i datauppsättningen har förfallovärdet retroaktivt tillämpat som en engångsåtgärd i systemet för efterfyllnad. När utgångsvärdet har placerats i datauppsättningen kommer händelser som är äldre än utgångsvärdet att omedelbart tas bort så fort som systemjobbet körs. Alla andra händelser avbryts så snart de når sina förfallovärden från händelsens tidsstämpel.
+1. Alla befintliga data i datauppsättningen har förfallovärdet retroaktivt tillämpat som en engångsåtgärd i systemet för efterfyllnad. När utgångsvärdet har placerats i datauppsättningen kommer händelser som är äldre än utgångsvärdet att omedelbart tas bort så fort som systemjobbet körs. Alla andra händelser avbryts så snart de når sina förfallovärden från händelsens tidsstämpel. När alla Experience Events har tagits bort och profilen inte längre har några profilattribut finns den inte längre.
 
 >[!WARNING]
 >
