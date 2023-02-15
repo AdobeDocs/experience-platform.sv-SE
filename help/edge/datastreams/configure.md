@@ -1,7 +1,8 @@
 ---
 title: Konfigurera ett datastream
-description: Koppla samman er integrering med Experience Platform SDK på klientsidan med Adobe-produkter och tredjepartsmål.
-source-git-commit: 82703fae72e8637bb7d5e08a6699d9e1466afd8b
+description: Koppla samman integreringen av SDK för Experience Platform på klientsidan med Adobe-produkter och tredjepartsdestinationer.
+exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
+source-git-commit: aa271fed242d03ecac6025721c2566a3b550b6bb
 workflow-type: tm+mt
 source-wordcount: '1564'
 ht-degree: 1%
@@ -38,11 +39,11 @@ Om du konfigurerar det här dataflödet för användning i Experience Platform o
 
 Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller för att konfigurera datastream.
 
-![Avancerade konfigurationsalternativ](../assets/datastreams/configure/advanced-options.png)
+![Avancerade konfigurationsalternativ](../assets/datastreams/configure/advanced-options.png) {#advanced-options}
 
 | Inställning | Beskrivning |
 | --- | --- |
-| [!UICONTROL Geo Location] | Avgör om GPS-sökningar utförs baserat på användarens IP-adress. Standardinställningen **[!UICONTROL None]** inaktiverar GPS-sökningar, medan **[!UICONTROL City]** -inställningen ger GPS-koordinater två decimaler. |
+| [!UICONTROL Geo Location] | Avgör om Geo-sökningar utförs baserat på användarens IP-adress. Standardinställningen **[!UICONTROL None]** inaktiverar alla Geo-sökningar, medan **[!UICONTROL City]** -inställningen ger GPS-koordinater två decimaler. |
 | [!UICONTROL First Party ID Cookie] | När det här alternativet är aktiverat anger den här inställningen att Edge Network ska referera till en angiven cookie när en [enhets-ID för första part](../identity/first-party-device-ids.md)i stället för att leta upp det här värdet i identitetskartan.<br><br>När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras. |
 | [!UICONTROL Third Party ID Sync] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. När den här inställningen är aktiverad kan du ange vilken ID-synkroniseringsbehållare som ska köras för den här datastream-filen. |
 | [!UICONTROL Access Type] | Definierar autentiseringstypen som Edge Network accepterar för datastream. <ul><li>**[!UICONTROL Mixed Authentication]**: När det här alternativet är markerat godkänns både autentiserade och oautentiserade begäranden i Edge Network. Välj det här alternativet när du tänker använda Web SDK eller [Mobile SDK](https://aep-sdks.gitbook.io/docs/), tillsammans med [Server-API](../../server-api/overview.md). </li><li>**[!UICONTROL Authenticated Only]**: När det här alternativet är markerat accepterar Edge Network endast autentiserade begäranden. Välj det här alternativet när du bara vill använda server-API:t och vill förhindra att oautentiserade begäranden behandlas av Edge Network.</li></ul> |
