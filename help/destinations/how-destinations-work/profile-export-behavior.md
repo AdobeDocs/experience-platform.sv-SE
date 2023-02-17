@@ -1,9 +1,9 @@
 ---
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
-source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
+source-git-commit: 5d404d723ea0b7cc72c5188dcff1f59a1874cfe2
 workflow-type: tm+mt
-source-wordcount: '2944'
+source-wordcount: '2979'
 ht-degree: 0%
 
 ---
@@ -169,11 +169,11 @@ Baserat på informationen i avsnittet ovan kan du sammanfatta beteendet för exp
 
 **Fullständig filexport**
 
-Hela segmentpopulationen exporteras varje dag.
+Den fullständiga aktiva populationen av segmentet exporteras varje dag.
 
 | Vad avgör en målexport | Vad som ingår i den exporterade filen |
 |---------|----------|
-| <ul><li>Det exportschema som anges i gränssnittet eller API:t och användaråtgärden (välja [Exportera filen nu](/help/destinations/ui/export-file-now.md) i användargränssnittet eller med [ad hoc-aktiverings-API](/help/destinations/api/ad-hoc-activation-api.md)) bestämmer början på en målexport.</li><li>Alla ändringar i en profils segmentmedlemskap, oavsett om det kvalificerar eller inte kvalificerar sig för segmentet, kvalificerar en profil som ska inkluderas i den stegvisa exporten.</li></ul> | Vid fullständig filexport inkluderas hela profilpopulationen i ett segment, baserat på den senaste segmentutvärderingen, i varje filexport. De senaste värdena för varje XDM-attribut som valts för export inkluderas också som kolumner i varje fil. |
+| <ul><li>Det exportschema som anges i gränssnittet eller API:t och användaråtgärden (välja [Exportera filen nu](/help/destinations/ui/export-file-now.md) i användargränssnittet eller med [ad hoc-aktiverings-API](/help/destinations/api/ad-hoc-activation-api.md)) bestämmer början på en målexport.</li><li>Alla ändringar i en profils segmentmedlemskap, oavsett om det kvalificerar eller inte kvalificerar sig för segmentet, kvalificerar en profil som ska inkluderas i den stegvisa exporten.</li></ul> | Vid fullständig filexport ingår hela den aktiva profilpopulationen i ett segment, baserat på den senaste segmentutvärderingen, i varje filexport. De senaste värdena för varje XDM-attribut som valts för export inkluderas också som kolumner i varje fil. Observera att profiler med statusen Avslutad inte inkluderas i filexporten. |
 
 {style=&quot;table-layout:fixed&quot;}
 
@@ -183,7 +183,7 @@ När du har konfigurerat aktiveringsarbetsflödet vid den första filexporten ex
 
 | Vad avgör en målexport | Vad som ingår i den exporterade filen |
 |---------|----------|
-| <ul><li>Det exportschema som anges i gränssnittet eller API avgör början på en målexport.</li><li>Alla ändringar i en profils segmentmedlemskap, oavsett om det kvalificerar eller inte kvalificerar sig för segmentet, kvalificerar en profil som ska inkluderas i den stegvisa exporten. Ändringar i attribut eller i identitetskartor för en profil *inte* kvalificera en profil som ska inkluderas i stegvis export.</li></ul> | Profilerna som segmentmedlemskapet har ändrats för, tillsammans med den senaste informationen för varje XDM-attribut som har valts för export. |
+| <ul><li>Det exportschema som anges i gränssnittet eller API avgör början på en målexport.</li><li>Alla ändringar i en profils segmentmedlemskap, oavsett om det kvalificerar eller inte kvalificerar sig för segmentet, kvalificerar en profil som ska inkluderas i den stegvisa exporten. Ändringar i attribut eller i identitetskartor för en profil *inte* kvalificera en profil som ska inkluderas i stegvis export.</li></ul> | <p>Profilerna som segmentmedlemskapet har ändrats för, tillsammans med den senaste informationen för varje XDM-attribut som har valts för export.</p><p>Profiler med statusen Avslutad inkluderas i målexporter, om `segmentMembership.status` XDM-fältet väljs i mappningssteget.</p> |
 
 {style=&quot;table-layout:fixed&quot;}
 
