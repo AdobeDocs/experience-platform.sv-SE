@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 21278b39a2dc12771449b9a471ea4182c6b999a3
+source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
 workflow-type: tm+mt
 source-wordcount: '2545'
 ht-degree: 1%
@@ -140,7 +140,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `description` | Sträng | Ange en beskrivning som Adobe ska använda i Experience Platform-destinationskatalogen för ditt destinationskort. Rikta dig för högst 4-5 meningar. |
 | `status` | Sträng | Anger målkortets livscykelstatus. Godkända värden är `TEST`, `PUBLISHED`och `DELETED`. Använd `TEST` när du först konfigurerar målet. |
 | `customerAuthenticationConfigurations` | Sträng | Anger den konfiguration som används för att autentisera Experience Platform-kunder mot servern. Se `authType` nedan för godkända värden. |
-| `customerAuthenticationConfigurations.authType` | Sträng | Värden som stöds för direktuppspelningsmål är: <ul><li>`OAUTH2`</li><li>`BEARER`</li></ul> Värden som stöds för filbaserade mål är: <ul><li>`S3`</li><li>`AZURE_CONNECTION_STRING`</li><li>`AZURE_SERVICE_PRINCIPAL`</li><li>`SFTP_WITH_SSH_KEY`</li><li>`SFTP_WITH_PASSWORD`</li></ul> |
+| `customerAuthenticationConfigurations.authType` | Sträng | Värden som stöds för direktuppspelningsmål är: <ul><li>`BASIC`</li><li>`BEARER`</li><li>`OAUTH2`</li></ul> Värden som stöds för filbaserade mål är: <ul><li>`S3`</li><li>`AZURE_CONNECTION_STRING`</li><li>`AZURE_SERVICE_PRINCIPAL`</li><li>`SFTP_WITH_SSH_KEY`</li><li>`SFTP_WITH_PASSWORD`</li></ul> |
 | `customerDataFields.name` | Sträng | Ange ett namn för det anpassade fält som du introducerar. |
 | `customerDataFields.type` | Sträng | Anger vilken typ av anpassat fält du introducerar. Godkända värden är `string`, `object`, `integer` |
 | `customerDataFields.title` | Sträng | Anger fältets namn, så som det visas av kunderna i användargränssnittet i Experience Platform |

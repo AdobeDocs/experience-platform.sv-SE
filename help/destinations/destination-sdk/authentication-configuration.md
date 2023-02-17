@@ -2,9 +2,9 @@
 description: Använd autentiseringskonfigurationerna som stöds i Adobe Experience Platform Destination SDK för att autentisera användare och aktivera data till målslutpunkten.
 title: Autentiseringskonfiguration
 exl-id: 33eaab24-f867-4744-b424-4ba71727373c
-source-git-commit: 9b4c7da5aa02ae27608c2841b1d825445ac3015e
+source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,7 @@ Den autentiseringskonfiguration som du väljer avgör hur Experience Platform sk
 Adobe Experience Platform Destination SDK stöder flera autentiseringstyper:
 
 * [Bärarautentisering](#bearer)
+* [Grundläggande autentisering](#basic)
 * [[!DNL Amazon S3] autentisering](#s3)
 * [[!DNL Azure Blob] Lagring](#blob)
 * [[!DNL Azure Data Lake Storage]](#adls)
@@ -34,6 +35,22 @@ I följande avsnitt finns information om autentiseringskonfigurationen för varj
 
 * [Autentiseringskonfigurationer för direktuppspelningsmål](destination-configuration.md#customer-authentication-configurations)
 * [Autentiseringskonfigurationer för filbaserade mål](file-based-destination-configuration.md#customer-authentication-configurations)
+
+## Grundläggande autentisering {#basic}
+
+Grundläggande autentisering stöds för direktuppspelningsmål i Experience Platform.
+
+När du konfigurerar den grundläggande autentiseringstypen måste användarna ange ett användarnamn och lösenord för att kunna ansluta till målet.
+
+Konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt enligt nedan:
+
+```json
+"customerAuthenticationConfigurations":[
+   {
+      "authType":"BASIC"
+   }
+]
+```
 
 ## Bärarautentisering {#bearer}
 

@@ -2,9 +2,9 @@
 description: Med den här konfigurationen kan du ange grundläggande information som målnamn, kategori, beskrivning, logotyp och annat. Inställningarna i den här konfigurationen avgör också hur Experience Platform-användare autentiserar till ditt mål, hur det visas i användargränssnittet i Experience Platform och vilka identiteter som kan exporteras till ditt mål.
 title: Konfigurationsalternativ för direktuppspelning för Destination SDK
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: f0f2ed2059cbbb017dbbbdc0d1f215abee17f514
+source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
 workflow-type: tm+mt
-source-wordcount: '1891'
+source-wordcount: '1904'
 ht-degree: 1%
 
 ---
@@ -152,7 +152,7 @@ Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAu
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
 | `customerAuthenticationConfigurations` | Sträng | Anger den konfiguration som används för att autentisera Experience Platform-kunder mot servern. Se `authType` nedan för godkända värden. |
-| `authType` | Sträng | Följande värden accepteras för direktuppspelningsmål:<ul><li>`BEARER`. Om målet har stöd för innehavarautentisering anger du `"authType":"Bearer"` och  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li><li>`OAUTH2`. Om målet har stöd för OAuth 2-autentisering anger du `"authType":"OAUTH2"` och lägg till de obligatoriska fälten för OAuth 2, som visas i [Destination SDK OAuth 2-autentiseringssida](./oauth2-authentication.md). Dessutom, ange `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li> |
+| `authType` | Sträng | Följande värden accepteras för direktuppspelningsmål:<ul><li>`BASIC`. Om målet stöder grundläggande autentisering anger du `"authType":"Basic"` och  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li><li>`BEARER`. Om målet har stöd för innehavarautentisering anger du `"authType":"Bearer"` och  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li><li>`OAUTH2`. Om målet har stöd för OAuth 2-autentisering anger du `"authType":"OAUTH2"` och lägg till de obligatoriska fälten för OAuth 2, som visas i [Destination SDK OAuth 2-autentiseringssida](./oauth2-authentication.md). Dessutom, ange `"authenticationRule":"CUSTOMER_AUTHENTICATION"` i [målleveransavsnitt](./destination-configuration.md).</li> |
 
 {style=&quot;table-layout:auto&quot;}
 
