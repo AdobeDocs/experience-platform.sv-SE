@@ -3,10 +3,10 @@ title: Relaterade konton i Real-Time CDP B2B Edition
 type: Documentation
 description: En översikt och mer information om kontofunktionen i Experience Platform Real-Time CDP B2B.
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5d1488b26391d8ac758a2968194a6d070ad5b561
 workflow-type: tm+mt
-source-wordcount: '386'
-ht-degree: 4%
+source-wordcount: '427'
+ht-degree: 3%
 
 ---
 
@@ -31,6 +31,16 @@ Med relaterade konton [!DNL Real-Time CDP B2B] visar nu en lista över konton so
 ![Skärm som visar relaterade konton i användargränssnittet för Experience Platform.](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
 Använd den här funktionen om du vill visa relaterade kontoprofiler för en kontoprofil i användargränssnittet för Experience Platform och sedan inkludera de relaterade kontona i segmentdefinitionerna för att bredda din räckvidd eller tillämpa bredare kriterier i dina segment.
+
+## Aktivera tjänsten för relaterade konton {#enable}
+
+Aktivera tjänsten genom att välja **[!UICONTROL Profiles]** i sidlisten följt av **[!UICONTROL Settings]**.
+
+![Markeringsprofiler och inställningar för användargränssnittet i Experience Platform.](../assets/../b2b-ai-ml-services/assets/related-account-settings.png)
+
+Markera växlingsknappen bredvid [!UICONTROL Enable related accounts] för att aktivera tjänsten och sedan välja **[!UICONTROL Save]**.
+
+![Skärmmarkeringen för kontoinställningar visar hur du växlar och sparar.](../assets/../b2b-ai-ml-services/assets/related-account-toggle.png)
 
 ## Så fungerar det {#how-it-works}
 
