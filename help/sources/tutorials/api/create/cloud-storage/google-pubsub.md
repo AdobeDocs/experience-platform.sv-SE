@@ -2,9 +2,9 @@
 title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: f56cdc2dc67f2d4820d80d8e5bdec8306d852891
+source-git-commit: 2b72d384e8edd91c662364dfac31ce4edff79172
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL PubSub]måste du ange v
 | `projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
 | `credentials` | Autentiseringsuppgifter eller nyckel som krävs för autentisering [!DNL PubSub]. |
 | `topicId` | ID för [!DNL PubSub] en resurs som representerar en feed med meddelanden. Du måste ange ett ämne-ID om du vill ge åtkomst till en viss dataström i ditt [!DNL Google PubSub] källa. |
+| `subscriptionId` | Ditt ID [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som är kopplade till att skapa bas- och källmålanslutningarna. The [!DNL PubSub] anslutningsspecifikation-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
 Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du vill använda tjänstkontobaserad autentisering läser du följande [[!DNL PubSub] guide om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
@@ -79,7 +80,8 @@ curl -X POST \
           "params": {
               "projectId": "acme-project",
               "credentials": "{CREDENTIALS}",
-              "topicID": "acmeProjectAPI"
+              "topicId": "acmeProjectAPI",
+              "subscriptionId": "acme-project-api-new"
           }
       },
       "connectionSpec": {
@@ -93,7 +95,8 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
 | `auth.params.credentials` | Autentiseringsuppgifter eller nyckel som krävs för autentisering [!DNL PubSub]. |
-| `auth.params.topicID` | Ämnes-ID för din [!DNL PubSub] källa som du vill ge åtkomst till. |
+| `auth.params.topicId` | Ämnes-ID för din [!DNL PubSub] källa som du vill ge åtkomst till. |
+| `auth.params.subscriptionId` | ID:t för prenumerationen mot din [!DNL PubSub] ämne. |
 | `connectionSpec.id` | The [!DNL PubSub] anslutningsspec-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
 **Svar**

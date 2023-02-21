@@ -2,9 +2,9 @@
 title: Skapa en Google PubSub Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: f56cdc2dc67f2d4820d80d8e5bdec8306d852891
+source-git-commit: 2b72d384e8edd91c662364dfac31ce4edff79172
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '639'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,7 @@ För att kunna ansluta [!DNL PubSub] till Platform måste du ange ett giltigt v�
 | Projekt-ID | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
 | Autentiseringsuppgifter | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för autentisering [!DNL PubSub]. |
 | Ämne-ID | ID för [!DNL PubSub] en resurs som representerar en feed med meddelanden. Du måste ange ett ämne-ID om du vill ge åtkomst till en viss dataström i ditt [!DNL Google PubSub] källa. |
+| Prenumerations-ID | Ditt ID [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. |
 
 Mer information om dessa värden finns i följande [PubSub-autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du använder kontobaserad autentisering för tjänster, se följande [PubSub Guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
@@ -48,7 +49,7 @@ Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan o
 
 Under [!UICONTROL Cloud storage] kategori, välj **[!UICONTROL Google PubSub]** och sedan markera **[!UICONTROL Add data]**.
 
-![katalog](../../../../images/tutorials/create/google-pubsub/catalog.png)
+![Källkatalogen i användargränssnittet i Experience Platform.](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
 The **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -56,7 +57,7 @@ The **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du a
 
 Om du vill använda ett befintligt konto väljer du [!DNL PubSub] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
-![befintlig](../../../../images/tutorials/create/google-pubsub/existing.png)
+![Det befintliga kontovalet i källarbetsflödet.](../../../../images/tutorials/create/google-pubsub/existing.png)
 
 ### Nytt konto
 
@@ -68,7 +69,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 
 När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![new](../../../../images/tutorials/create/google-pubsub/new.png)
+![Det nya kontogränssnittet i källarbetsflödet.](../../../../images/tutorials/create/google-pubsub/new.png)
 
 ## Nästa steg
 

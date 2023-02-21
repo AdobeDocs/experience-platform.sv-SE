@@ -1,17 +1,15 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google PubSub;google pubsub
-solution: Experience Platform
-title: Google PubSub Source Connector - översikt
+title: Google PubSub Source Overview
 description: Lär dig hur du ansluter Google PubSub till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 2b72d384e8edd91c662364dfac31ce4edff79172
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
-# [!DNL Google PubSub] koppling
+# [!DNL Google PubSub]
 
 Adobe Experience Platform erbjuder anslutningsmöjligheter för molnleverantörer som [!DNL AWS], [!DNL Google Cloud Platform]och [!DNL Azure], vilket gör att ni kan överföra data från dessa system till Platform för användning i tjänster och destinationer längre fram i kedjan.
 
