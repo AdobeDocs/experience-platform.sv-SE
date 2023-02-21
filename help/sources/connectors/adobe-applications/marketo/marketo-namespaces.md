@@ -1,17 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Marketo källanslutning;namnutrymmen;scheman;b2b;B2B
-solution: Experience Platform
 title: B2B-namnutrymmen och scheman
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fa3f937862dd8b6078f73b2a172b3fb5db652dc7
 workflow-type: tm+mt
-source-wordcount: '1707'
+source-wordcount: '1727'
 ht-degree: 1%
 
 ---
 
 # B2B-namnutrymmen och scheman
+
+>[!NOTE]
+>
+>Du kan använda mallar i Adobe Experience Platform användargränssnitt för att göra det enklare att skapa resurser för B2B- och B2C-data. Mer information finns i guiden [använda mallar i plattformsgränssnittet](../../../tutorials/ui/templates.md).
 
 Det här dokumentet innehåller information om den underliggande inställningen för de namnutrymmen och scheman som ska användas med B2B-källor. Det här dokumentet innehåller även information om hur du konfigurerar det automatiseringsverktyg för Postman som krävs för att skapa B2B-namnutrymmen och scheman.
 

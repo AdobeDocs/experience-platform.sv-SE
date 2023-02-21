@@ -1,21 +1,28 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;
 description: Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, mappningsregler, identiteter, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
-title: (Alfa) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+title: (Beta) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+badge1: "Beta"
 hide: true
 hidefromtoc: true
-source-git-commit: d6d8281d1be1468b0c2b7474b80be96949dc7d4c
+exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
+source-git-commit: c4cb3783cbbab6f9bf25ffaa5b27a200c555b181
 workflow-type: tm+mt
-source-wordcount: '1153'
-ht-degree: 1%
+source-wordcount: '1307'
+ht-degree: 0%
 
 ---
 
-# (Alfa) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+# (Beta) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
 
 >[!IMPORTANT]
 >
->Mallarna är i Alfa och stöds för närvarande bara av [[!DNL Marketo Engage] källa](../../connectors/adobe-applications/marketo/marketo.md). Dokumentationen och funktionerna kan komma att ändras.
+>Mallarna är i betaversion och stöds av följande källor:
+>
+>* [[!DNL Marketo Engage]](../../connectors/adobe-applications/marketo/marketo.md)
+>* [[!DNL Microsoft Dynamics]](../../connectors/crm/ms-dynamics.md)
+>* [[!DNL Salesforce]](../../connectors/crm/salesforce.md)
+>
+>Dokumentationen och funktionerna kan komma att ändras.
 
 Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
 
@@ -25,7 +32,7 @@ Med mallar kan man
 * Minimera antalet fel som kan uppstå under den manuella dataöverföringsprocessen.
 * Uppdatera automatiskt genererade resurser när som helst för att passa dina användningsexempel.
 
-I följande självstudie beskrivs hur du använder mallar i användargränssnittet för plattformen med hjälp av [[!DNL Marketo Engage] källa](../../connectors/adobe-applications/marketo/marketo.md).
+I följande självstudie beskrivs hur du använder mallar i användargränssnittet för plattformen.
 
 ## Komma igång
 
@@ -43,11 +50,11 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-time Customer Data Platform-prenumerationskonto."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv" text="Real-Time CDP - översikt"
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som kan användas för att skapa ett konto.
+Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] och se en katalog med källor i Experience Platform.
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
+Använd *[!UICONTROL Categories]* meny för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
-Under [!UICONTROL Adobe applications] kategori, välj **[!UICONTROL Marketo Engage]** och sedan markera **[!UICONTROL Add data]**.
+Gå till [!UICONTROL Adobe applications] för att se [!DNL Marketo Engage] källkort och välj [!UICONTROL Add data] till att börja.
 
 ![En katalog över källarbetsytan med Marketo Engage-källan markerad.](../../images/tutorials/templates/catalog.png)
 
@@ -64,21 +71,25 @@ Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Bro
 
 Autentiseringssteget visas och du uppmanas att antingen skapa ett nytt konto eller använda ett befintligt konto.
 
-#### Befintligt konto
+>[!BEGINTABS]
+
+>[!TAB Använd ett befintligt konto]
 
 Om du vill använda ett befintligt konto väljer du [!UICONTROL Existing account] och välj sedan det konto som du vill använda i listan som visas.
 
 ![Urvalssidan för ett befintligt konto med en lista över befintliga konton som du kan komma åt.](../../images/tutorials/templates/existing-account.png)
 
-#### Nytt konto
+>[!TAB Skapa ett nytt konto]
 
 Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan din källanslutningsinformation och autentiseringsuppgifter för kontot. När du är klar väljer du **[!UICONTROL Connect to source]** så att den nya anslutningen kan upprättas.
 
 ![Autentiseringssidan för ett nytt konto med källanslutningsinformation och autentiseringsuppgifter för kontot.](../../images/tutorials/templates/new-account.png)
 
+>[!ENDTABS]
+
 ### Välj mallar
 
-När du har autentiserat och valt ditt konto visas en lista med mallar. Välj förhandsgranskningsikonen bredvid ett mallnamn om du vill förhandsgranska exempeldata från mallen.
+Beroende på vilken affärstyp du har valt visas en lista med mallar. Välj förhandsvisningsikonen ![förhandsgranskningsikon](../../images/tutorials/templates/preview-icon.png) bredvid ett mallnamn om du vill förhandsgranska exempeldata från mallen.
 
 ![En lista med mallar med förhandsgranskningsikonen markerad.](../../images/tutorials/templates/templates.png)
 
@@ -95,6 +106,22 @@ Om du väljer ett eller flera objekt i listan med tillgängliga mallar kommer al
 >Mallar som redan har använts inaktiveras.
 
 ![Listan med mallar med mallen för säljprojektskontaktroll vald.](../../images/tutorials/templates/select-template.png)
+
+### Ange ett schema
+
+The [!DNL Microsoft Dynamics] och [!DNL Salesforce] båda källorna har stöd för schemaläggning av dataflöden.
+
+Använd schemaläggningsgränssnittet för att konfigurera ett matningsschema för dataflödena. Ställ in din matningsfrekvens på **En gång** för att skapa ett engångsintag.
+
+![Planeringsgränssnittet för Dynamics- och Salesforce-mallar.](../../images/tutorials/templates/schedule.png)
+
+Du kan också ange att din matningsfrekvens ska vara **Minut**, **Timme**, **Dag**, eller **Vecka**. Om du schemalägger dataflödet för flera frågor måste du ange ett intervall för att skapa en tidsram mellan varje intag. Till exempel en matningsfrekvens som är inställd på **Timme** och ett intervall anges till **15** innebär att ditt dataflöde är schemalagt att importera data var **15 timmar**.
+
+Under det här steget kan du även aktivera **bakfyllning** och definiera en kolumn för stegvis inmatning av data. Backfill används för att importera historiska data, medan kolumnen som du definierar för inkrementellt intag gör att nya data kan skiljas från befintliga data.
+
+När du är klar med att konfigurera ditt intag väljer du **[!UICONTROL Finish]**.
+
+![Schemaläggningsgränssnittet för Dynamics- och Salesforce-mallar med bakåtfyllning aktiverat.](../../images/tutorials/templates/backfill.png)
 
 ### Granska resurser {#review-assets}
 
