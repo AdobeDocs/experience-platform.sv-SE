@@ -3,9 +3,9 @@ title: Klienttips för användaragent
 description: Lär dig hur användaragentens klienttips fungerar i Web SDK
 keywords: användaragent;klienttips; sträng; användaragentsträng; Låg entropi. hög entropi
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: 4a2ae40fc64c4340ddb05db881c2176bb2aedc46
+source-git-commit: faeec4288948012fabeb25d0a0ce5a3b45f563ec
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1132'
 ht-degree: 2%
 
 ---
@@ -120,12 +120,9 @@ The [Operativsystem](https://experienceleague.adobe.com/docs/analytics/component
 
 ### Audience Manager förlitar sig på klienttips med hög entropi {#aam}
 
-Om dina Audience Manager-egenskaper använder någon av följande egenskaper måste du aktivera klienttips för hög entropi. Annars slutar egenskaperna att fungera.
+[!DNL Google] har uppdaterat [!DNL Chrome] webbläsarfunktioner för att minimera den information som samlas in via `User-Agent` header. Detta innebär att Audience Manager-kunder använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) inte längre får tillförlitlig information om egenskaper baserat på [tangenter på plattformsnivå](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=en).
 
-* Operativsystemversion
-* Enhetsmodell
-* Enhetstillverkare
-* Enhetsleverantör
+Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste gå över till [Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) att fortsätta att ta emot tillförlitliga uppgifter om egenskaper.
 
 ## Aktivera tips för hög entropi-klient {#enabling-high-entropy-client-hints}
 
