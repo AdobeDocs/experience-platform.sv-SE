@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cl
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: d75c272b3c86e25d3f162c630963c10e8206bd9d
+source-git-commit: 5a9b7af3b009f8529f2e473b17f77c54de35003e
 workflow-type: tm+mt
-source-wordcount: '2342'
+source-wordcount: '2372'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,9 @@ Observera följande krav för att kunna exportera data från Platform till [!DNL
 
 #### Du måste ha en [!DNL Salesforce Marketing Cloud] konto {#prerequisites-account}
 
-Nå ut till [!DNL Salesforce Account Executive] prenumerera på [!DNL Salesforce Marketing Cloud Account Engagement] om du inte redan har det.
+A [!DNL Salesforce Marketing Cloud] konto med en prenumeration på [Marketing Cloud-kontoengagemang](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) produkten är obligatorisk för att fortsätta.
+
+Nå ut till [[!DNL Salesforce] Support](https://www.salesforce.com/company/contact-us/?d=cta-glob-footer-10) om du inte har en [!DNL Salesforce Marketing Cloud] eller så saknas kontot [!DNL Marketing Cloud Account Engagement] produktprenumeration.
 
 #### Skapa attribut i [!DNL Salesforce Marketing Cloud] {#prerequisites-attribute}
 
