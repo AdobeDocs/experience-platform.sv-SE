@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 90829713e85e930e4fd6a32b0dbd38aeb837b84e
 workflow-type: tm+mt
-source-wordcount: '1671'
+source-wordcount: '1652'
 ht-degree: 0%
 
 ---
@@ -63,11 +63,7 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågo
 
 ![Indata från Frågeredigeraren med förslag på listtabellnamn.](../images/ui/query-editor/tables-auto.png)
 
-### (Begränsad version) Växla mellan olika användargränssnittskonfigurationer automatiskt {#auto-complete}
-
->[!IMPORTANT]
->
->Den automatiska gränssnittskonfigurationen är för närvarande i en begränsad version och inte tillgänglig för alla kunder.
+### Växla mellan automatisk komplettering av användargränssnittskonfigurationen {#auto-complete}
 
 The [!DNL Query Editor] föreslår automatiskt potentiella SQL-nyckelord tillsammans med tabell- eller kolumninformation för frågan när du skriver den. Funktionen för automatisk komplettering är aktiverad som standard och kan när som helst inaktiveras eller aktiveras genom att du väljer [!UICONTROL Syntax auto-complete] till höger i Frågeredigeraren.
 
