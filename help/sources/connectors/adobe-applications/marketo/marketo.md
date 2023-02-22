@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage-kontakt
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: d8cd69524d984fdb828447287f3f4a4fe5913d61
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
@@ -77,8 +77,9 @@ I följande tabell visas den förväntade fördröjningen för hämtning [!DNL M
 
 I följande dokumentation finns mer information om hur du skapar en [!DNL Marketo] källanslutning:
 
-* Mer information om hur du ansluter [!DNL Marketo] data till plattformen, se självstudiekursen om [skapa en Marketo-källanslutning i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).
-* Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo]finns i dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
-* Mer information om hur du hittar [!DNL Marketo] munchkin-ID och generera dina inloggningsuppgifter finns i [[!DNL Marketo] autentiseringsguide](./marketo-auth.md).
-* Mer information om mappningsregler som gäller för [!DNL Marketo] datauppsättningar, se dokumentationen om [[!DNL Marketo] fältkopplingar](../mapping/marketo.md).
-* Allmän information om [!DNL Real-Time Customer Data Platform B2B Edition] och dess funktioner finns i dokumentationen om [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
+* Mer information om hur du ansluter [!DNL Marketo] data till plattformen, läs självstudiekursen om [skapa [!DNL Marketo] källanslutning i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).
+   * Mer information om hur du ställer in scheman och importerar anpassade aktivitetsdata finns i självstudiekursen om [skapa en källanslutning och ett dataflöde för [!DNL Marketo] anpassade aktivitetsdata](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
+* Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo], läs dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
+* Mer information om hur du hittar [!DNL Marketo] munchkin-ID och generera dina inloggningsuppgifter, läs [[!DNL Marketo] autentiseringsguide](./marketo-auth.md).
+* Mer information om mappningsregler som gäller för [!DNL Marketo] datauppsättningar, läsa dokumentationen om [[!DNL Marketo] fältkopplingar](../mapping/marketo.md).
+* Allmän information om [!DNL Real-Time Customer Data Platform B2B Edition] och dess funktioner kan du läsa dokumentationen om [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).

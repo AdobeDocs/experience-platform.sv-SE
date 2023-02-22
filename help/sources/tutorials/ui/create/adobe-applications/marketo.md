@@ -1,22 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Marketo-källanslutning;Marketo-kontakt;Marketo-källa;Marketo
-solution: Experience Platform
-title: Skapa en Marketo Engage-källanslutning i användargränssnittet
-type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
+title: Skapa en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet
+description: I den här självstudiekursen beskrivs hur du skapar en källanslutning och ett dataflöde i Marketo Engage i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: d049a29d4c39fa41917e8da1dde530966f4cbaf4
 workflow-type: tm+mt
-source-wordcount: '1408'
+source-wordcount: '1486'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Marketo Engage] källkoppling i användargränssnittet
+# Skapa en [!DNL Marketo Engage] källanslutning och dataflöde i användargränssnittet
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Marketo Engage] källanslutning och ett dataflöde måste du först se till att du har [mappade ditt Adobe IMS-organisations-ID](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) in [!DNL Marketo]. Dessutom måste du se till att du har slutfört [automatiskt fylla i [!DNL Marketo] B2B-namnutrymmen och scheman](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) innan du skapar en källanslutning och ett dataflöde.
+>Innan du skapar en [!DNL Marketo Engage] källanslutning och ett dataflöde måste du först se till att du har [mappade ditt organisations-ID i Adobe](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) in [!DNL Marketo]. Dessutom måste du se till att du har slutfört [automatiskt fylla i [!DNL Marketo] B2B-namnutrymmen och scheman](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) innan du skapar en källanslutning och ett dataflöde.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Marketo Engage] (nedan kallad[!DNL Marketo]&quot;) källanslutning i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 
@@ -48,7 +45,7 @@ När du har samlat in dina inloggningsuppgifter kan du följa stegen i nästa av
 
 ## Koppla samman [!DNL Marketo] konto
 
-Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
+Välj **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
@@ -84,23 +81,27 @@ Markera den datauppsättning du vill importera först och välj sedan **[!UICONT
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
-## Ange information om dataflöde
+## Ange information om dataflöde {#provide-dataflow-details}
 
 The [!UICONTROL Dataflow detail] kan du välja om du vill använda en befintlig datamängd eller en ny datamängd. Under den här processen kan du även konfigurera inställningar för [!UICONTROL Profile dataset], [!UICONTROL Error diagnostics], [!UICONTROL Partial ingestion]och [!UICONTROL Alerts].
 
 ![dataflödesinformation](../../../../images/tutorials/create/marketo/dataflow-details.png)
 
-### Använd en befintlig datauppsättning
+>[!BEGINTABS]
+
+>[!TAB Använd en befintlig datauppsättning]
 
 Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan. När du har valt en datauppsättning anger du ett namn och en beskrivning för dataflödet.
 
 ![befintlig datamängd](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
-### Använd en ny datauppsättning
+>[!TAB Använd en ny datauppsättning]
 
 Om du vill importera till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och ange sedan ett namn och en valfri beskrivning för utdatauppsättningen. Välj sedan ett schema att mappa till med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan. När du har valt ett schema anger du ett namn och en beskrivning för dataflödet.
 
 ![new-dataset](../../../../images/tutorials/create/marketo/new-dataset.png)
+
+>[!ENDTABS]
 
 ### Aktivera [!DNL Profile] och feldiagnostik
 
@@ -110,7 +111,7 @@ Välj sedan **[!UICONTROL Profile dataset]** växla för att aktivera datauppsä
 
 >[!IMPORTANT]
 >
->The [!DNL Marketo] I koppling används batchinmatning för att importera alla historikposter och direktuppspelning används för realtidsuppdateringar. Detta gör att anslutaren kan fortsätta direktuppspelningen samtidigt som felaktiga poster hämtas. Aktivera **[!UICONTROL Partial ingestion]** växla och ange sedan [!UICONTROL Error threshold %] till maximum för att förhindra att dataflödet misslyckas.
+>The [!DNL Marketo] I källan används batchinmatning för att importera alla historikposter och direktuppspelning används för realtidsuppdateringar. Detta gör att källan kan fortsätta direktuppspelningen samtidigt som felaktiga poster hämtas. Aktivera **[!UICONTROL Partial ingestion]** växla och ange sedan [!UICONTROL Error threshold %] till maximum för att förhindra att dataflödet misslyckas.
 
 ![profil-och-fel](../../../../images/tutorials/create/marketo/profile-and-errors.png)
 
@@ -121,6 +122,14 @@ Du kan aktivera varningar för att få meddelanden om status för ditt dataflöd
 När du är klar med informationen om dataflödet väljer du **[!UICONTROL Next]**.
 
 ![varningar](../../../../images/tutorials/create/marketo/alerts.png)
+
+### Hoppa över ej ianspråktagna konton när företagsdata importeras
+
+När du skapar ett dataflöde för att importera data från företagsdatauppsättningen kan du konfigurera [!UICONTROL Exclude unclaimed accounts] att antingen utesluta eller ta med ej ianspråktagna konton från intagandet.
+
+När enskilda fyller i ett formulär, [!DNL Marketo] skapar en post för ett skenkonto baserat på företagsnamnet som inte innehåller några andra data. För nya dataflöden är alternativet för att exkludera ej ianspråktagna konton aktiverat som standard. För befintliga dataflöden kan du aktivera eller inaktivera funktionen, med ändringar som gäller för nyinmatade data och inte befintliga data.
+
+![konton som inte tagits i anspråk](../../../../images/tutorials/create/marketo/unclaimed-accounts.png)
 
 ## Kartlägg [!DNL Marketo] datakällfält för mål-XDM-fält
 

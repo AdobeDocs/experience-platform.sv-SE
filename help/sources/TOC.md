@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
-breadcrumb-title: Source Connectors Guide
-user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
+user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
+breadcrumb-title: Användarhandbok om Source Connectors
+user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 33aeeb58e5bfa2c1553a5c49fee07dc5020f4efb
+source-git-commit: d8cd69524d984fdb828447287f3f4a4fe5913d61
 workflow-type: tm+mt
-source-wordcount: '928'
-ht-degree: 5%
+source-wordcount: '931'
+ht-degree: 8%
 
 ---
 
@@ -35,9 +35,9 @@ ht-degree: 5%
          - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
-   - Reklam {#advertising}
+   - Advertising {#advertising}
       - [Google Ads Connector](connectors/advertising/ads.md)
-   - Analytics{#analytics} 
+   - Analytics {#analytics}
       - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
    - molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
@@ -107,9 +107,9 @@ ht-degree: 5%
       - [HTTP API-anslutning](connectors/streaming/http.md)
 - API-självstudiekurser {#api-tutorials}
    - Skapa en basanslutning {#create}
-      - Reklam {#advertising}
+      - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
-      - Analytics{#analytics} 
+      - Analytics {#analytics}
          - [Blandpanel](tutorials/api/create/analytics/mixpanel.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
@@ -216,10 +216,11 @@ ht-degree: 5%
          - [Adobe Campaign Managed Cloud Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
+         - [Marketo anpassade aktiviteter](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
          - [Workfront](tutorials/ui/create/adobe-applications/workfront.md)
-      - Reklam {#advertising}
+      - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
-      - Analytics{#analytics} 
+      - Analytics {#analytics}
          - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
