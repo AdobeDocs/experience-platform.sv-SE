@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 6b78ed695bca5912c9af4371a8423fdcd7471bde
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1496'
 ht-degree: 0%
 
 ---
@@ -208,7 +208,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.sourceId` | En ytterligare identifierare som kan användas när en autentiserad basanslutning skapas. Den här parametern är valfri och använder samma värde som `name` om det inte anges. |
-| `auth.params.authenticationRequired` | Parametern som anger att den skapade direktuppspelningsanslutningen |
+| `auth.params.authenticationRequired` | Den här parametern anger om direktuppspelningsanslutningen kräver autentisering eller inte. If `authenticationRequired` är inställd på `true` måste autentisering anges för direktuppspelningsanslutningen. If `authenticationRequired` är inställd på `false` behöver du inte autentisera. |
 
 **Svar**
 
