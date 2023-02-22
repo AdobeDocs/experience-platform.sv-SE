@@ -4,7 +4,7 @@ description: Lär dig hur du lägger till fält från befintliga fältgrupper in
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
+source-git-commit: 07faf4dd749219a955df720a8c740427113a5de2
 workflow-type: tm+mt
 source-wordcount: '1176'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Den här guiden beskriver olika metoder för att lägga till enskilda fält i et
 
 I den här självstudiekursen förutsätts det att du är bekant med [XDM-schemats sammansättning](../schema/composition.md) och hur du använder schemaredigeraren i plattformsgränssnittet. För att följa med i utvecklingen bör du påbörja [skapa ett nytt schema](./resources/schemas.md) och tilldela den till en standardklass innan du fortsätter med den här guiden.
 
-## Ta bort fält som lagts till från standardfältgrupper
+## Ta bort fält som lagts till från standardfältgrupper {#remove-field-group}
 
 När du har lagt till en standardfältgrupp i ett schema kan du ta bort alla standardfält som du inte behöver.
 

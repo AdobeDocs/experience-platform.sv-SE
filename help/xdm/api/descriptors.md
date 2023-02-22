@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: 81b53d2bd84eacb32999b957bee9b5e9aa77d5f7
 workflow-type: tm+mt
 source-wordcount: '1898'
 ht-degree: 0%
@@ -417,7 +417,7 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 
 #### Borttagen fältbeskrivning
 
-Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecation.md#custom) genom att lägga till en `meta:status` attribut inställt på `deprecated` till fältet i fråga. Om du vill ta bort fält från standard-XDM-resurser i dina scheman kan du tilldela schemat en inaktuell fältbeskrivning för att uppnå samma effekt. Använda [korrigera `Accept` header](../tutorials/field-deprecation.md#verify-deprecation)kan du sedan visa vilka standardfält som är inaktuella för ett schema när du söker efter det i API:t.
+Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecation-api.md#custom) genom att lägga till en `meta:status` attribut inställt på `deprecated` till fältet i fråga. Om du vill ta bort fält från standard-XDM-resurser i dina scheman kan du tilldela schemat en inaktuell fältbeskrivning för att uppnå samma effekt. Använda [korrigera `Accept` header](../tutorials/field-deprecation-api.md#verify-deprecation)kan du sedan visa vilka standardfält som är inaktuella för ett schema när du söker efter det i API:t.
 
 ```json
 {
