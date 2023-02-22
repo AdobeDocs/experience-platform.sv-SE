@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, februari 2023
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
-source-git-commit: 1c2b7f291d0f8c0845a76ba4c863a9558da1bb4f
+source-git-commit: ff276de35ca2aaeec168f4c4386d849f3352ad57
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '982'
 ht-degree: 1%
 
 ---
@@ -14,10 +14,31 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [[!DNL Destinations]](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Frågetjänst](#query-service)
 - [Relaterade konton i Real-Time CDP B2B Edition](#related-accounts)
 - [Källor](#sources)
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya eller uppdaterade funktioner** {#destinations-new-updated-features}
+
+| Funktion | Beskrivning |
+| ----------- | ----------- |
+| [Förbättrad profil för samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) för integrering med [filbaserade (batch) mål](/help/destinations/destination-types.md#file-based) | <p> När profiler inte längre är kvalificerade för en samtyckespolicy meddelar Experience Platform nu aktivt sin policy att avsluta sina filbaserade destinationer. Detta följer [från februari 2023](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality) av samma funktionalitet för direktuppspelningsdestinationer. </p> <p> <b>Anteckning</b>: Den här funktionen är endast tillgänglig för kunder som har **[!UICONTROL Privacy and Security Shield]** och **[!UICONTROL Healthcare Shield]**. </p> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Ny eller uppdaterad dokumentation** {#destinations-new-updated-documentation}
+
+| Dokumentation | Beskrivning |
+| ----------- | ----------- |
+| Dokumentation om hur destinationer fungerar | <p>Vi har publicerat tre nya artiklar om hur destinationer fungerar, baserat på vanliga frågor från användarna:</p> <p><ul><li>[Konfigurerbara och gemensamma exportinställningar för destinationer](/help/destinations/how-destinations-work/destinations-configurations.md)</li><li>[Profilexportbeteende för olika måltyper](/help/destinations/how-destinations-work/profile-export-behavior.md)</li><li>[Identitetshantering i arbetsflödet för målaktivering](/help/destinations/how-destinations-work/identity-handling.md)</li></p> |
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
