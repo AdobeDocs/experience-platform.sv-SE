@@ -3,7 +3,7 @@ title: Använd den senaste kvalificeringstiden för XDM-attributet i det nya bet
 description: Lär dig hur du använder XDM-attributet för senaste kvalificeringstid i de nya betmolnlagringsmålen
 hidefromtoc: y
 hide: y
-source-git-commit: 7dd525d8c71cdfb9fb2393181faa3270ad1dc4cc
+source-git-commit: 03031dcaad82932f92e76177adf3b55447c3c153
 workflow-type: tm+mt
 source-wordcount: '332'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Använda den senaste kvalificeringstiden (`lastQualificationTime`) XDM-attribut 
 
 ## Så här använder du XDM-attributet för senaste kvalificeringstid {#how-to-use}
 
-Om du använder en av de sex nya betatjänsterna för molnlagring kan du använda det senaste XDM-attributet för kvalificeringstid i [mappningssteg](//help/destinations/ui/activate-batch-profile-destinations.md#mapping) av aktiveringsarbetsflödet för att skapa en kolumn i den exporterade filen med den senaste tidsstämpeln när en profil kvalificerar sig för ett segment. Detta kan hjälpa er med vissa mätnings- eller analysexempel och ge er en bättre uppfattning om när ni ska aktivera vissa målgrupper.
+Om du använder en av de sex nya betatjänsterna för molnlagring kan du använda det senaste XDM-attributet för kvalificeringstid i [mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) av aktiveringsarbetsflödet för att skapa en kolumn i den exporterade filen med den senaste tidsstämpeln när en profil kvalificerar sig för ett segment. Detta kan hjälpa er med vissa mätnings- eller analysexempel och ge er en bättre uppfattning om när ni ska aktivera vissa målgrupper.
 
 Observera att du ska lägga till `lastQualificationTime` vid export av filer måste du för närvarande infoga värdet manuellt `xdm: segmentMembership.ups.seg_id.lastQualificationTime` till källfältet, som visas nedan. Du kan även redigera målfältet till `lastQualificationTime` eller något annat värde som du vill namnge den här kolumnen. Observera att eftersom det här är en betafunktion är syntaxen för `xdm: segmentMembership.ups.seg_id.lastQualificationTime` värdet kan komma att ändras i framtiden.
 
