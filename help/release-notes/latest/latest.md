@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
-source-git-commit: 2084583823acb5d5d16ea5bfdbfff98a7c5ac490
+source-git-commit: 66ca8d3972045cffe4a1614f638546f4e7838680
 workflow-type: tm+mt
-source-wordcount: '946'
+source-wordcount: '1096'
 ht-degree: 3%
 
 ---
@@ -45,10 +45,31 @@ Mer allmän information om destinationer finns i [destinationer, översikt](../.
 XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
 
 **Uppdaterade funktioner**
-&#x200B; | Funktion | Beskrivning | | — | — | | Borttagning av fält via användargränssnittet | Du kan nu ersätta fält från dina scheman efter att data har importerats. Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
+&#x200B; | Funktion | Beskrivning | | — | — | | Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
 
-{style=&quot;table-layout:auto&quot;} &#x200B; Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md). &#x200B;
-<!-- Field deprecation: https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/field-deprecation.html -->
+{style=&quot;table-layout:auto&quot;}
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Klass | [[!UICONTROL XDM Individual Prospect Profile]](https://github.com/adobe/xdm/pull/1669/files) | Klassen XDM Individual Prospect Profile innehåller ID:n som tillhandahålls av partner. |
+
+{style=&quot;table-layout:auto&quot;}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Fältgrupp | [!UICONTROL Frequency Capping Constraints] | The [!UICONTROL Frequency Capping Constraints] fältgruppen har [uppdaterat för att stödja upprepningar och anpassade händelser](https://github.com/adobe/xdm/pull/1641/files). |
+| Datatyp | [!UICONTROL Web referrer] | Egenskaper för webbreferenten har [uppdaterat för att inkludera `xdm:linkName` och `xdm:linkRegion`](https://github.com/adobe/xdm/pull/1666/files). Det här är namnet och regionen för det HTML-element som markerades på föregående sida. |
+| Fältgrupp | [!UICONTROL Adobe CJM ExperienceEvent - Message interaction details] | [The [!UICONTROL Tracker URL] fältet lades till](https://github.com/adobe/xdm/pull/1665/files) till [!UICONTROL Adobe CJM ExperienceEvent]. Denna spårare tillhandahåller den URL som användaren har valt. |
+| Fältgrupp | [!UICONTROL Adobe CJM ExperienceEvent - Message interaction detail] | [De tomma `meta:enum` egenskapen togs bort](https://github.com/adobe/xdm/pull/1668/files) från URL:en [!UICONTROL Tracking Type] fält. |
+| Datatyp | [!UICONTROL Media information] | [Regex-mönstret från `videoSegment` egenskap i [!UICONTROL Media information] datatypen har tagits bort](https://github.com/adobe/xdm/pull/1667/files). |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
 ## Frågetjänst {#query-service}
 
