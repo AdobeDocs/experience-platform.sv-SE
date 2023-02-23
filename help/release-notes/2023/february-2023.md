@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, februari 2023
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
-source-git-commit: ff276de35ca2aaeec168f4c4386d849f3352ad57
+source-git-commit: 2084583823acb5d5d16ea5bfdbfff98a7c5ac490
 workflow-type: tm+mt
-source-wordcount: '982'
-ht-degree: 1%
+source-wordcount: '947'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Destinations]](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Frågetjänst](#query-service)
-- [Relaterade konton i Real-Time CDP B2B Edition](#related-accounts)
+- [Real-Time Customer Data Platform B2B-utgåva](#b2b)
 - [Källor](#sources)
 
 ## [!DNL Destinations] {#destinations}
@@ -47,7 +47,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 **Uppdaterade funktioner**
 &#x200B; | Funktion | Beskrivning | | — | — | | Borttagning av fält via användargränssnittet | Du kan nu ersätta fält från dina scheman efter att data har importerats. Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
 
-&#x200B; Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md). &#x200B;
+{style=&quot;table-layout:auto&quot;} &#x200B; Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md). &#x200B;
 <!-- Field deprecation: https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/field-deprecation.html -->
 
 ## Frågetjänst {#query-service}
@@ -57,20 +57,16 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 **Uppdaterade funktioner**
 &#x200B; | Funktion | Beskrivning | | — | — | | Aktivera datauppsättningar för profil med SQL | Använd LABEL i CTAS-frågor för att göra en datauppsättning &quot;profile enabled&quot;, eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. | | Övervaka schemalagda frågor | Använd fliken Schemalagda frågor för att hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas.  | | Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden genom att växla funktionen för automatisk komplettering av frågeredigeraren. Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. | | Datauppsättningsexempel | Ange en samplingsfrekvens i frågan och använd datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval, eller skapa villkorsstyrda exempel baserat på specifika kriterier. |
 
-&#x200B; Mer information om Query Services finns i [Översikt över frågetjänsten](../../query-service/home.md). &#x200B;
+{style=&quot;table-layout:auto&quot;} &#x200B; Mer information om Query Services finns i [Översikt över frågetjänsten](../../query-service/home.md). &#x200B;
 <!-- Links for QS feature docs after release day: -->
 <!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
 <!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
 <!-- Toggle auto-complete feature link: https://experienceleague.adobe.com/docs/experience-platform/query/ui/user-guide.html#auto-complete -->
 <!-- dataset samples: https://experienceleague.adobe.com/docs/experience-platform/query/essential-concepts/dataset-samples.html -->
 
-## Relaterade konton i Real-Time CDP B2B Edition {#related-accounts}
+## Real-Time Customer Data Platform B2B-utgåva {#b2b}
 
->[!NOTE]
->
->Funktionen för relaterade konton är endast tillgänglig för kunder som har Real-Time CDP B2B Edition.
-
-Närliggande konton, [!DNL Real-Time CDP B2B] gör att du kan visa en lista med konton som liknar det konto du bläddrar i. Du kan inkludera de relaterade kontona i dina segmentdefinitioner för att bredda din räckvidd eller tillämpa fler kriterier i dina segment.
+Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 
 **Uppdaterade funktioner**
 
@@ -79,12 +75,6 @@ Närliggande konton, [!DNL Real-Time CDP B2B] gör att du kan visa en lista med 
 | Aktivera tjänsten för relaterade konton | Med den nya växlingsfunktionen kan du aktivera den relaterade kontotjänsten på ditt konto. Mer information finns i guiden [aktivera tjänsten för relaterade konton](../../rtcdp/b2b-ai-ml-services/related-accounts.md#enable). |
 
 {style=&quot;table-layout:auto&quot;}
-
-Läs mer om funktionerna för relaterade konton på följande dokumentationssidor:
-
-- [Samhörande konton i Real-Time CDP B2B Edition - översikt](../../rtcdp/b2b-ai-ml-services/related-accounts.md)
-- [Fliken Relaterade konton i gränssnittsguiden för kontoprofiler](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
-- [Så här använder du relaterade konton i segmentdefinitioner](../../rtcdp/segmentation/b2b.md#related-accounts)
 
 Läs mer om Real-Time CDP B2B Edition i [Real-Time CDP B2B Edition - översikt](../../rtcdp/overview.md).
 
