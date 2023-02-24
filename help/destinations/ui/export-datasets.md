@@ -2,9 +2,10 @@
 title: (Beta) Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
-source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
+exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
+source-git-commit: aebb1494a6ed667730997048d30a2ca3e00f9452
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1276'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,9 @@ ht-degree: 0%
 >* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime och Ultimate. Kontakta din Adobe-representant om du vill ha mer information.
 
 
-I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, till exempel [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage].
+I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, till exempel [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage] genom att använda användargränssnittet för Experience Platform.
+
+Du kan också använda API:erna för Experience Platform för att exportera datauppsättningar. Läs [API-självstudiekurs för exportdatamängder](/help/destinations/api/export-datasets.md) för mer information.
 
 ## När ska segment aktiveras eller datauppsättningar exporteras {#when-to-activate-segments-or-activate-datasets}
 
