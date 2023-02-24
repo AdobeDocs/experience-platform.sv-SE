@@ -2,9 +2,9 @@
 title: Skapa en Customer.io Source Connection och ett dataflöde i användargränssnittet
 description: Lär dig hur du skapar en Customer.io-källanslutning med Adobe Experience Platform UI.
 badge: "Beta"
-source-git-commit: 7ec7900f8a2fe3d7ad63ac061f286657c4a6b4d8
+source-git-commit: f2f3279b5c68cd636ca7da0fe2221e1b0a94fbad
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1187'
 ht-degree: 0%
 
 ---
@@ -64,13 +64,13 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Använd *[!UICONTROL Categories]* meny för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
-Gå till [!UICONTROL Marketing automation] för att se [!DNL Customer.io] källkort. Börja genom att välja [!UICONTROL Add data].
+Gå till [!UICONTROL Marketing automation] för att se [!DNL Customer.io] källkort. Börja genom att välja **[!UICONTROL Add data]**.
 
 ![Skärmbild för plattformsgränssnitt för katalog med Customer.io-kortet](../../../../images/tutorials/create/marketing-automation/customerio-webhook/catalog.png)
 
 ## Markera data {#select-data}
 
-The **[!UICONTROL Select data]** visas, där du får ett gränssnitt där du kan välja de data som ska hämtas till plattformen.
+The **[!UICONTROL Select data]** visas, där du får ett gränssnitt där du kan välja vilka data du vill hämta till plattformen.
 
 * Den vänstra delen av gränssnittet är en webbläsare som gör att du kan visa tillgängliga dataströmmar på ditt konto;
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en JSON-fil.

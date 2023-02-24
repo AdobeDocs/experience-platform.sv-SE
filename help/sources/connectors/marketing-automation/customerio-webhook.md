@@ -2,7 +2,7 @@
 title: Customer.io Source Overview
 description: Lär dig hur du ansluter Customer.io till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att utnyttja webbhooks
 badge: "Beta"
-source-git-commit: cb4b92f4d71d42d57363e16d4764217b6de7f8ee
+source-git-commit: 516ec2cbfb954764f1a6fb2007e20acac425607d
 workflow-type: tm+mt
 source-wordcount: '389'
 ht-degree: 0%
@@ -21,9 +21,9 @@ Experience Platform har stöd för inmatning av data från direktuppspelningspro
 
 [[!DNL Customer.io]](https://customer.io/) är en plattform för automatiserade meddelanden för marknadsförare som vill ha större kontroll och flexibilitet att skapa och skicka datadrivna e-postmeddelanden, push-meddelanden, meddelanden i appen och SMS.
 
-The [!DNL Customer.io] Med -källa kan du importera Webkrock-händelsescheman som stöds och tillhörande händelsedata från [!DNL Customer.io] med [[!DNL Customer.io] Rapportera webbhotell](https://customer.io/docs/api/webhooks/).
+The [!DNL Customer.io] Med -källa kan du importera webbhoaktiviteter som stöds och tillhörande händelsedata från [!DNL Customer.io] med [[!DNL Customer.io] Rapportera webbhotell](https://customer.io/docs/api/webhooks/).
 
-Webkroks händelseschema som stöds är:
+De webbholls-händelsescheman som stöds är:
 
 * Kundevent
 * E-posthändelser
