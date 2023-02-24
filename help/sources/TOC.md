@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: d8cd69524d984fdb828447287f3f4a4fe5913d61
+source-git-commit: 11fa9ca8d7044843c295126f8416e5a36600d244
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '934'
 ht-degree: 8%
 
 ---
@@ -92,6 +92,7 @@ ht-degree: 8%
    - Lokalt system {#local-system}
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
    - Automatisering av marknadsföring {#marketing-automation}
+      - [Customer.io](connectors/marketing-automation/customerio-webhook.md)
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
       - [Mailchimp-anslutning](connectors/marketing-automation/mailchimp.md)
       - [Oraclena Eloqua-koppling](connectors/marketing-automation/oracle-eloqua.md)
@@ -162,6 +163,7 @@ ht-degree: 8%
       - eCommerce {#ecommerce}
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
       - Automatisering av marknadsföring {#marketing-automation}
+         - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
          - [MailChimp-kampanj](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp-medlemmar](tutorials/api/create/marketing-automation/mailchimp-members.md)
@@ -276,6 +278,7 @@ ht-degree: 8%
       - Lokalt system {#local-system}
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Automatisering av marknadsföring {#marketing-automation}
+         - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
          - [Mailchimp-kampanjer](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
          - [Mailchimp-medlemmar](tutorials/ui/create/marketing-automation/mailchimp-members.md)
