@@ -2,7 +2,7 @@
 title: Skapa en Chatlio-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Chatlio-källanslutning med Adobe Experience Platform-gränssnittet.
 badge: "Beta"
-source-git-commit: 4a2ed14a55736a9dde1adbb8c7996a5659216ec8
+source-git-commit: c35daa60db315f1ed04ed6424464f1ae7bfb4243
 workflow-type: tm+mt
 source-wordcount: '1121'
 ht-degree: 0%
@@ -111,7 +111,7 @@ The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet inn
 * **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
-När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** så att dataflödet kan skapas.
+När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
 
 ![Granskningssteget för källarbetsflödet.](../../../../images/tutorials/create/marketing-automation/chatlio-webhook/review.png)
 
