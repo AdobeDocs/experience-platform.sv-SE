@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, februari 2023
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
-source-git-commit: 66ca8d3972045cffe4a1614f638546f4e7838680
+source-git-commit: deb8512d3c585512520dae04e555c6497d74ba4c
 workflow-type: tm+mt
 source-wordcount: '1097'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -45,9 +45,12 @@ Mer allmän information om destinationer finns i [destinationer, översikt](../.
 XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
 
 **Uppdaterade funktioner**
-&#x200B; | Funktion | Beskrivning | | — | — | | Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
 
+| Funktion | Beskrivning |
+| --- | --- |
+| Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
 
+{style=&quot;table-layout:auto&quot;}
 
 **Nya XDM-komponenter**
 
@@ -76,9 +79,18 @@ Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/hom
 Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan ansluta alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att matas in i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
-&#x200B; | Funktion | Beskrivning | | — | — | | Aktivera datauppsättningar för profil med SQL | Använd LABEL i CTAS-frågor för att göra en datauppsättning &quot;profile enabled&quot;, eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. | | Övervaka schemalagda frågor | Använd fliken Schemalagda frågor för att hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas.  | | Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden genom att växla funktionen för automatisk komplettering av frågeredigeraren. Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. | | Datauppsättningsexempel | Ange en samplingsfrekvens i frågan och använd datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval, eller skapa villkorsstyrda exempel baserat på specifika kriterier. |
 
-&#x200B; Mer information om Query Services finns i [Översikt över frågetjänsten](../../query-service/home.md). &#x200B;
+| Funktion | Beskrivning |
+| --- | --- |
+| Aktivera datauppsättningar för profil med SQL | Använd ETIKETTER i CTAS-frågor för att göra en datauppsättning med profilen aktiverad, eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. |
+| Övervaka schemalagda frågor | Använd fliken Schemalagda frågor för att hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas. |
+| Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden genom att växla funktionen för automatisk komplettering av frågeredigeraren. Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. |
+| Datauppsättningsexempel | Ange en samplingsfrekvens i frågan och använd datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval, eller skapa villkorsstyrda exempel baserat på specifika kriterier. |
+
+{style=&quot;table-layout:auto&quot;}
+
+Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
+
 <!-- Links for QS feature docs after release day: -->
 <!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
 <!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
