@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
-source-git-commit: deb8512d3c585512520dae04e555c6497d74ba4c
+source-git-commit: 72ae96f72bfffe376fec5c0e1dcf79406cb86a26
 workflow-type: tm+mt
-source-wordcount: '1096'
+source-wordcount: '1130'
 ht-degree: 3%
 
 ---
@@ -82,20 +82,14 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Aktivera datauppsättningar för profil med SQL | Använd ETIKETTER i CTAS-frågor för att göra en datauppsättning med profilen aktiverad, eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. |
-| Övervaka schemalagda frågor | Använd fliken Schemalagda frågor för att hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas. |
-| Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden genom att växla funktionen för automatisk komplettering av frågeredigeraren. Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. |
-| Datauppsättningsexempel | Ange en samplingsfrekvens i frågan och använd datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval, eller skapa villkorsstyrda exempel baserat på specifika kriterier. |
+| Aktivera datauppsättningar för profil med SQL | [Använd ETIKETTER i CTAS-frågor för att göra datauppsättningen &#39;profile enabled&#39;](../../query-service/sql/syntax.md#create-table-as-select)eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. Du kan använda den här utökade SQL-konstruktionen för att tillhandahålla sömlöst stöd för härledda attribut för dina affärssituationer med kundprofiler i realtid. Se [Sömlöst SQL-flöde för härledda attributdokument](../../query-service/data-distiller/derived-attributes/seamless-sql-flow.md) för mer information. |
+| Övervaka schemalagda frågor | Använd [Fliken Schemalagda frågor](../../query-service/ui/monitor-queries.md) om du vill hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas. |
+| Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden med [växla funktionen för automatisk komplettering av frågeredigeraren](../../query-service/ui/user-guide.md#auto-complete). Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. |
+| Datauppsättningsexempel | Ange en samplingsfrekvens i din fråga och [använda datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval](../../query-service/essential-concepts/dataset-samples.md)eller skapa villkorliga exempel baserat på specifika villkor. |
 
 {style=&quot;table-layout:auto&quot;}
 
 Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
-
-<!-- Links for QS feature docs after release day: -->
-<!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
-<!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
-<!-- Toggle auto-complete feature link: https://experienceleague.adobe.com/docs/experience-platform/query/ui/user-guide.html#auto-complete -->
-<!-- dataset samples: https://experienceleague.adobe.com/docs/experience-platform/query/essential-concepts/dataset-samples.html -->
 
 ## Real-Time Customer Data Platform B2B-utgåva {#b2b}
 
