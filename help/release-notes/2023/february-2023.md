@@ -47,7 +47,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 **Uppdaterade funktioner**
 &#x200B; | Funktion | Beskrivning | | — | — | | Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
 
-{style=&quot;table-layout:auto&quot;}
+
 
 **Nya XDM-komponenter**
 
@@ -78,7 +78,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 **Uppdaterade funktioner**
 &#x200B; | Funktion | Beskrivning | | — | — | | Aktivera datauppsättningar för profil med SQL | Använd LABEL i CTAS-frågor för att göra en datauppsättning &quot;profile enabled&quot;, eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. | | Övervaka schemalagda frågor | Använd fliken Schemalagda frågor för att hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas.  | | Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden genom att växla funktionen för automatisk komplettering av frågeredigeraren. Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. | | Datauppsättningsexempel | Ange en samplingsfrekvens i frågan och använd datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval, eller skapa villkorsstyrda exempel baserat på specifika kriterier. |
 
-{style=&quot;table-layout:auto&quot;} &#x200B; Mer information om Query Services finns i [Översikt över frågetjänsten](../../query-service/home.md). &#x200B;
+&#x200B; Mer information om Query Services finns i [Översikt över frågetjänsten](../../query-service/home.md). &#x200B;
 <!-- Links for QS feature docs after release day: -->
 <!-- Enable datasets for profile with SQL link: https://experienceleague.adobe.com/docs/experience-platform/query/sql/syntax.html#create-table-as-select -->
 <!-- Monitor scheduled queries link: https://experienceleague.adobe.com/docs/experience-platform/query/monitor-queries.html  -->
