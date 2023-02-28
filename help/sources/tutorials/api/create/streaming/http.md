@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 6b78ed695bca5912c9af4371a8423fdcd7471bde
+source-git-commit: 7ff297973f951d7bfd940983bf4fa39dcc9f1542
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1544'
 ht-degree: 0%
 
 ---
@@ -475,6 +475,8 @@ POST /flows
 
 >[!TAB Utan omformningar]
 
+Följande begäran skapar ett direktuppspelat dataflöde för HTTP API utan dataomvandlingar.
+
 ```shell
 curl -X POST \
   'https://platform.adobe.io/data/foundation/flowservice/flows' \
@@ -500,6 +502,10 @@ curl -X POST \
 ```
 
 >[!TAB Med omformningar]
+
+Följande begäranden skapar ett dataflöde för direktuppspelning för HTTP API med mappningsomformningar tillämpade på dina data.
+
+När du skapar ett dataflöde med omformningar `name` -parametern kan inte ändras. Värdet måste alltid anges till `Mapping`.
 
 ```shell
 curl -X POST \
