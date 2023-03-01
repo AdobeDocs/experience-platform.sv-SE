@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvärdera händelser i nära realtid med strömmande segmentering
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 1c4da50b2c211aae06d6702d75e5650447fae0eb
 workflow-type: tm+mt
 source-wordcount: '1971'
 ht-degree: 0%
@@ -244,6 +244,17 @@ curl -X POST \
         "type": "PQL",
         "format": "pql/text",
         "value": "select var1 from xEvent where var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = true"
+    },
+    "evaluationInfo": {
+        "batch": {
+            "enabled": false
+        },
+        "continuous": {
+            "enabled": true
+        },
+        "synchronous": {
+            "enabled": false
+        }
     }
 }'
 ```

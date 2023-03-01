@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9aa86b8d541836504be6b8667a2e069116c6002c
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1261'
 ht-degree: 1%
 
 ---
@@ -178,6 +178,17 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
             "format": "pql/text",
             "value": "workAddress.country = \"US\""
         },
+        "evaluationInfo": {
+            "batch": {
+                "enabled": true
+            },
+            "continuous": {
+                "enabled": false
+            },
+            "synchronous": {
+                "enabled": false
+            }
+        },
         "schema": {
             "name": "_xdm.context.profile"
         },
@@ -189,6 +200,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `name` | **Obligatoriskt.** Ett unikt namn som ska referera till segmentet. |
+| `description` | En beskrivning av segmentdefinitionen som du skapar. |
+| `evaluationInfo` | Den typ av segment som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` att vara sant. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` att vara sant. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` att vara sant. Om det lämnas tomt skapas segmentet som **batch** segment. |
 | `schema` | **Obligatoriskt.** Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | **Obligatoriskt.** En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
@@ -251,7 +264,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | Ett systemgenererat ID för den segmentdefinition du nyss skapade. |
-| `evaluationInfo` | Ett systemgenererat objekt som anger vilken typ av utvärdering som segmentdefinitionen ska genomgå. Den kan vara en grupp, kontinuerlig (kallas även direktuppspelning) eller synkron segmentering. |
+| `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering som segmentdefinitionen ska genomgå. Det kan vara gruppsegmentering, direktuppspelning (kallas även kontinuerlig) eller kantsegmentering (kallas även synkron). |
 
 ## Hämta en specifik segmentdefinition {#get}
 
@@ -333,7 +346,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
-| `evaluationInfo` | Ett systemgenererat objekt som anger vilken typ av utvärdering, batch, kontinuerlig (kallas även direktuppspelning) eller synkron, segmentdefinitionen ska genomgå. |
+| `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
 
 ## Hämta segmentdefinitioner gruppvis {#bulk-get}
 
@@ -466,7 +479,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
-| `evaluationInfo` | Ett systemgenererat objekt som anger vilken typ av utvärdering, batch, kontinuerlig (kallas även direktuppspelning) eller synkron, segmentdefinitionen ska genomgå. |
+| `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
 
 ## Ta bort en specifik segmentdefinition {#delete}
 

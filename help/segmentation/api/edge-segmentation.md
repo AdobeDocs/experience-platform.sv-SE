@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Kantsegmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 1c4da50b2c211aae06d6702d75e5650447fae0eb
 workflow-type: tm+mt
 source-wordcount: '1187'
 ht-degree: 0%
@@ -212,6 +212,17 @@ curl -X POST \
         "type": "PQL",
         "format": "pql/text",
         "value": "select var1 from xEvent where var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = true"
+    },
+    "evaluationInfo": {
+        "batch": {
+            "enabled": false
+        },
+        "continuous": {
+            "enabled": false
+        },
+        "synchronous": {
+            "enabled": true
+        }
     }
 }'
 ```
