@@ -1,7 +1,7 @@
 ---
 solution: Data Collection
 audience: user
-user-guide-title: Hjälp med webb-SDk för Adobe Experience Platform
+user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK

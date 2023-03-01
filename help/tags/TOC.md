@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Hjälp om taggar
+user-guide-title: Hjälp med taggar
 breadcrumb-title: Taggar
-user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
+user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
 source-git-commit: e34661f70a3550e579afe5133d85f76b1125e004
 workflow-type: tm+mt
 source-wordcount: '959'
-ht-degree: 12%
+ht-degree: 14%
 
 ---
 
@@ -262,7 +262,7 @@ ht-degree: 12%
    * [Värdar för bibliotek från tredje part](./extension-dev/third-party-libraries.md)
    * [Turbinfri variabel](./extension-dev/turbine.md)
    * [Bakåtkompatibilitetsstandard](./extension-dev/backwards-compatibility.md)
-* Reaktors-API {#api}
+* Reactor API {#api}
    * [Översikt](./api/overview.md)
    * [Komma igång](./api/getting-started.md)
    * Slutpunkter {#endpoints}
@@ -284,7 +284,7 @@ ht-degree: 12%
       * [Profil](./api/endpoints/profile.md)
       * [Sökning](./api/endpoints/search.md)
       * [Hemligheter](./api/endpoints/secrets.md)
-   * Stödlinjer {#guides}
+   * Användarhandböcker {#guides}
       * [Delegera beskrivnings-ID](./api/guides/delegate-descriptor-ids.md)
       * [Krypteringsvärden](./api/guides/encrypting-values.md)
       * [Felhantering](./api/guides/error-handling.md)

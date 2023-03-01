@@ -1,11 +1,11 @@
 ---
 title: Adobe Audience Manager Extension - översikt
-description: Läs om Adobe Audience Manager-taggtillägget i Adobe Experience Platform.
+description: Lär dig om Adobe Audience Manager-taggtillägget i Adobe Experience Platform.
 exl-id: d345e145-fdb9-4ca3-88c2-9c2a247ea59a
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '485'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: Versionsinformation för Adobe Experience Platform Web SDK
-description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
+description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
 source-git-commit: 6009592d47cf8f3d0d31e919aff0552e370b2063
 workflow-type: tm+mt
 source-wordcount: '1470'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 

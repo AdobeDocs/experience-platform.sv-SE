@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datumintervall
 title: Varningar - översikt
-description: Läs mer om varningar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras.
+description: Lär dig om varningar i Adobe Experience Platform, även hur strukturen för varningsregler definieras.
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
 source-git-commit: b1c82169056e66b9cdcf99f73daa7d37a3a01600
 workflow-type: tm+mt
 source-wordcount: '755'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 

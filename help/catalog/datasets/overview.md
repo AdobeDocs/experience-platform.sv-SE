@@ -7,7 +7,7 @@ exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
 source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
 workflow-type: tm+mt
 source-wordcount: '784'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Alla data som har importerats till Adobe Experience Platform lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
 
-Det här dokumentet ger en översikt på hög nivå över datauppsättningar i [!DNL Experience Platform].
+Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i [!DNL Experience Platform].
 
 ## Skapa datauppsättningar och spåra metadata
 

@@ -1,11 +1,11 @@
 ---
 title: API-guide för reaktor
-description: Med Reactor API kan utvecklare programmässigt hantera alla resurser för taggar i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med Reactor API kan utvecklare programmässigt hantera alla resurser för taggar i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 153eab11-db08-499e-80d1-c56f254372ce
 source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
 source-wordcount: '1082'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 

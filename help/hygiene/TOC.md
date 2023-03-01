@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Hjälp om datahygien
-breadcrumb-title: Handbok för datahygien
+user-guide-title: Hjälp med datahygien
+breadcrumb-title: Användarhandbok om datahygien
 user-guide-description: Ta bort enskilda poster och schemalägg förfallodatum för datauppsättningar i Experience Platform för datarensning, borttagning av anonyma data och datamängdsminimering.
 feature: Data Hygiene
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
 source-wordcount: '54'
-ht-degree: 3%
+ht-degree: 50%
 
 ---
 

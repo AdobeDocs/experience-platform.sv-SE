@@ -1,19 +1,19 @@
 ---
 audience: user
-user-guide-title: Hjälp om Adobe Experience Platform Data Science Workspace
-breadcrumb-title: Handbok för datavetenskap
+user-guide-title: Hjälp med Adobe Experience Platform Data Science Workspace
+breadcrumb-title: Användarhandbok om Data Science Workspace
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
 feature: Data Science Workspace
 solution: Experience Platform
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '236'
-ht-degree: 1%
+ht-degree: 14%
 
 ---
 
 
-# Datavetenskapens arbetsyta {#data-science-workspace}
+# Arbetsyta för datavetenskap {#data-science-workspace}
 
 * [Översikt över arbetsytan Datavetenskap](home.md)
 * [Åtkomst och funktioner till arbetsytan Data Science](access-features-dsw.md)

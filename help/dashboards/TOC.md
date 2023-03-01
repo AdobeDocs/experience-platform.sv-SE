@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Hjälp om Adobe Experience Platform Dashboards
-breadcrumb-title: Handbok för instrumentpaneler
-user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara paneler.
+user-guide-title: Hjälp med kontrollpaneler i Adobe Experience Platform
+breadcrumb-title: Användarhandbok om instrumentpaneler
+user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
 source-wordcount: '80'
-ht-degree: 6%
+ht-degree: 28%
 
 ---
 

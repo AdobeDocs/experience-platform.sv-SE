@@ -1,12 +1,12 @@
 ---
 keywords: Översikt över mätvärden. Översikt över rtcdp-mått
 title: Real-time Customer Data Platform hemsida och Dashboards
-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
+description: Kontrollpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '600'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 

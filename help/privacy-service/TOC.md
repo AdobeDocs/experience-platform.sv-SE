@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Hjälp om Adobe Experience Platform Privacy Service
-breadcrumb-title: Privacy Service Guide
-user-guide-description: Hantera förfrågningar om kunddata för att följa juridiska sekretessregler som GDPR och CCPA.
+user-guide-title: Hjälp med Adobe Experience Platform Privacy Service
+breadcrumb-title: Användarhandbok om Privacy Service
+user-guide-description: Hantera förfrågningar om kunddata för att följa juridiska integritetsregler som GDPR och CCPA.
 feature: Privacy
 source-git-commit: 5cb229b4b7609a566298d4ed8bf630447ff62700
 workflow-type: tm+mt
 source-wordcount: '88'
-ht-degree: 18%
+ht-degree: 44%
 
 ---
 

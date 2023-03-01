@@ -1,12 +1,12 @@
 ---
 audience: user
-user-guide-title: Kundprofilguide i realtid
+user-guide-title: Användarhandbok om Real-Time Customer Profile
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiles
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '135'
-ht-degree: 5%
+ht-degree: 18%
 
 ---
 

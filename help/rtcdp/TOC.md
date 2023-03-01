@@ -2,12 +2,12 @@
 product: adobe experience platform
 solution: Real-time Customer Data Platform
 audience: user
-user-guide-title: Real-time Customer Data Platform Guide
+user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
 source-wordcount: '205'
-ht-degree: 6%
+ht-degree: 28%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 6%
    * Real-Time CDP {#rtcdp-intro}
       * [Kom igång med Real-Time CDP](get-started.md)
       * [Översikt över mätvärden](home-page-dashboards.md)
-   * Real-Time CDP B2B Edition {#rtcdpb2b-intro}
+   * Real-Time CDP B2B-utgåva {#rtcdpb2b-intro}
       * [Exempel](./b2b-use-case.md)
       * [Heltäckande självstudiekurs](./b2b-tutorial.md)
       * [Real-Time CDP B2B Edition - skyddsräcken](b2b-guardrails.md)
@@ -63,4 +63,4 @@ ht-degree: 6%
    * [Översikt över källor](sources/sources-overview.md)
    * [Källor i Real-Time CDP B2B Edition](sources/b2b.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
-* [Experience Platform - ordlista](https://www.adobe.com/go/platform-glossary-en)
+* [Ordlista för Experience Platform](https://www.adobe.com/go/platform-glossary-en)

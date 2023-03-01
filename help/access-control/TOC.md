@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Åtkomstkontroll i hjälpen för Adobe Experience Platform
-breadcrumb-title: Handbok för åtkomstkontroll
+user-guide-title: Hjälp med åtkomstkontroll i Adobe Experience Platform
+breadcrumb-title: Användarhandbok om åtkomstkontroll
 user-guide-description: Använd produktprofiler i Adobe Admin Console för att hantera användarbehörigheter. Lär dig hur du tilldelar användare till produkter och sandlådor.
 feature: Access Control
 source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
 source-wordcount: '124'
-ht-degree: 11%
+ht-degree: 37%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 11%
       * [Bläddra](abac/ui/browse.md)
       * [Etiketter](abac/ui/labels.md)
       * [Behörigheter](abac/ui/permissions.md)
-      * [Profiler](abac/ui/policies.md)
+      * [Policyer](abac/ui/policies.md)
       * [Roller](abac/ui/roles.md)
       * [Sandlådor](abac/ui/sandboxes.md)
       * [Användare](abac/ui/users.md)
@@ -30,7 +30,7 @@ ht-degree: 11%
       * [Översikt](abac/api/overview.md)
       * [Komma igång](abac/api/getting-started.md)
       * [Roller](abac/api/roles.md)
-      * [Profiler](abac/api/policies.md)
+      * [Policyer](abac/api/policies.md)
       * [Produkter](abac/api/products.md)
 * Gränssnitt för åtkomstkontroll {#ui}
    * [Översikt](ui/overview.md)

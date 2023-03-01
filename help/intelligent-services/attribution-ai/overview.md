@@ -2,23 +2,23 @@
 keywords: Experience Platform;attribuering - översikt;populära ämnen;attribuering ai;Attribution ai
 feature: Attribution AI
 title: Översikt över Attribution AI
-description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
-landing-page-description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+description: Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor. Exempel på kontaktpunkter inkluderar visningar av visningsannonser, e-postsändningar, e-postöppningar och betalda sökklick.
+landing-page-description: Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
 workflow-type: tm+mt
 source-wordcount: '499'
-ht-degree: 0%
+ht-degree: 26%
 
 ---
 
-# Översikt över Attribution AI
+# Översikt över AI för attribuering
 
 Attribution AI, som en del av Intelligent Services, är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner mot angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan.
 
 ## Förstå Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
+Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor. Exempel på kontaktpunkter inkluderar visningar av visningsannonser, e-postsändningar, e-postöppningar och betalda sökklick.
 
 Utdata från Attribution AI kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
 

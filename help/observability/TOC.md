@@ -1,12 +1,12 @@
 ---
 audience: user
-user-guide-title: Insikter - guide
-user-guide-description: Använd statistik och händelsemeddelanden för att övervaka Experience Platform aktiviteter.
+user-guide-title: Användarhandbok om Observability Insights
+user-guide-description: Använd statistik och händelsemeddelanden för att övervaka Experience Platform-aktiviteter.
 feature: Observability
 source-git-commit: 5aa2be236d35f761a1e4d34fbe0bb28fd9087935
 workflow-type: tm+mt
 source-wordcount: '53'
-ht-degree: 11%
+ht-degree: 37%
 
 ---
 

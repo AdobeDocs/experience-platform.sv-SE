@@ -1,19 +1,19 @@
 ---
 audience: user
 solution: Data Collection
-user-guide-title: API-dokumentation för Edge Network Server
-breadcrumb-title: API-dokumentation för Edge Network Server
-user-guide-description: Använd Edge Network Server-API:t för datainsamling, personalisering, annonsering och marknadsföring med Experience Cloud eller Experience Platform Edge-tjänster.
+user-guide-title: Dokumentation om Edge Network Server-API
+breadcrumb-title: Dokumentation om Edge Network Server-API
+user-guide-description: Använd Edge Network Server-API:t för datainsamling, personanpassning, annonsering och marknadsföring med Experience Cloud eller Experience Platform Edge-tjänster.
 feature: Data Collection
 source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '85'
-ht-degree: 3%
+ht-degree: 48%
 
 ---
 
 
-# API-dokumentation för Edge Network Server {#edge-network-server-api}
+# Dokumentation om Edge Network Server-API {#edge-network-server-api}
 
 
 * [API-översikt för Edge Network Server](overview.md)

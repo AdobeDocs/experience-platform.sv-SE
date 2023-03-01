@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform Data Governance - hjälp
-breadcrumb-title: Handbok för datastyrning
+user-guide-title: Hjälp med datastyrning i Adobe Experience Platform
+breadcrumb-title: Användarhandbok om datastyrning
 user-guide-description: Tvinga dataanvändningsbegränsningar genom användning av etiketter, marknadsföringsåtgärder och styrningspolicyer.
 feature: Data Governance
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '97'
-ht-degree: 7%
+ht-degree: 31%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 7%
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Etiketter](api/labels.md)
-   * [Profiler](api/policies.md)
+   * [Policyer](api/policies.md)
    * [Marknadsföringsåtgärder](api/marketing-actions.md)
    * [Utvärdering](api/evaluation.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/policy-service/)
