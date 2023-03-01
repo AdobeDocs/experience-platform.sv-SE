@@ -3,9 +3,9 @@ title: Krypterad datainmatning
 description: Med Adobe Experience Platform kan du importera krypterade filer via batchkällor i molnet.
 hide: true
 hidefromtoc: true
-source-git-commit: f0bbefcd9b4595f02c400ea0c5bb76bfa6c5e33e
+source-git-commit: a1babf70a7a4e20f3e535741c95ac927597c9f48
 workflow-type: tm+mt
-source-wordcount: '914'
+source-wordcount: '967'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,15 @@ Med Adobe Experience Platform kan du importera krypterade filer via batchkällor
 
 Processen för krypterad datainmatning är följande:
 
-1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv.
+1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **OBS!** Den offentliga nyckeln i svaret är Base64-kodad och måste dekrypteras innan den används.
 2. Använd den offentliga nyckeln för att kryptera datafilen som du vill importera.
 3. Placera den krypterade filen i molnlagringen.
 4. När den krypterade filen är klar [skapa en källanslutning och ett dataflöde för molnlagringskällan](#create-a-dataflow-for-encrypted-data). När du skapar flödet måste du ange en `encryption` och inkludera ditt offentliga nyckel-ID.
 5. Experience Platform hämtar den privata nyckeln från det säkra valvet för att dekryptera data vid tidpunkten för inmatningen.
+
+>[!IMPORTANT]
+>
+>Den största tillåtna storleken för en krypterad fil är 100 MB. Du kan t.ex. mata in data som är 2 GB i ett enda dataflöde, men en enskild fil i dessa data får inte överskrida 100 MB.
 
 Det här dokumentet innehåller anvisningar om hur du genererar ett krypteringsnyckelpar för att kryptera dina data och importerar krypterade data till Experience Platform med hjälp av molnlagringskällor.
 
@@ -73,7 +77,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar din offentliga nyckel, ditt offentliga nyckel-ID och nycklarnas förfallotid. Utgångsdatumet är automatiskt 180 dagar efter datumet för nyckelgenereringen. Förfallotid kan för närvarande inte konfigureras.
+Ett lyckat svar returnerar din Base64-kodade offentliga nyckel, ditt offentliga nyckel-ID och nycklarnas förfallotid. Utgångsdatumet är automatiskt 180 dagar efter datumet för nyckelgenereringen. Förfallotid kan för närvarande inte konfigureras.
 
 ```json
 {
