@@ -3,9 +3,9 @@ title: Självbetjäningsmall för direktuppspelning av SDK API
 description: Lär dig hur du hämtar strömmande data från en källa till Adobe Experience Platform med API:t för Flow Service.
 hide: true
 hidefromtoc: true
-source-git-commit: 7744fef9751212a40f8f20df52812d38130c42fc
+source-git-commit: eb317f38499a32b1a6eb072ec74e68cdfebf994f
 workflow-type: tm+mt
-source-wordcount: '1775'
+source-wordcount: '1699'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ I följande självstudiekurs får du hjälp med att skapa en *DIN KÄLLA* källa
 
 ### Skapa en källanslutning {#source-connection}
 
-Om du vill skapa en källanslutning för strömningskällan skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API när du anger ett namn för anslutningen, anslutningsspecifikations-ID för källan och dataformatet.
+Skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API, som innehåller källans anslutningsspec-ID, information som namn och beskrivning samt dataformatet.
 
 **API-format**
 
@@ -259,9 +259,6 @@ Det sista steget mot att hämta in data från *DIN KÄLLA* till Platform är att
 * [Mappnings-ID](#mapping)
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
-
-Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`, eller `week`. Intervallvärdet anger emellertid perioden mellan två på varandra följande frågor, och om du skapar en engångsinmatning behöver du inte ange något intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
-
 
 **API-format**
 
