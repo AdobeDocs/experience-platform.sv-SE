@@ -3,137 +3,138 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Hantera åtkomstkontrollprinciper
 description: Det här dokumentet innehåller information om hur du hanterar åtkomstkontrollprinciper via gränssnittet Behörigheter i Adobe Experience Cloud.
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 504c73fc73ce41f2c1b3159478fc7fe9b4d20a9d
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
 
 # Hantera åtkomstkontrollprinciper
 
-Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Åtkomstprinciper kan antingen vara lokala eller globala och kan åsidosätta andra principer.
+Åtkomstkontrollprinciper är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Åtkomstprinciper kan antingen vara lokala eller globala och kan åsidosätta andra principer. Adobe tillhandahåller en standardprincip som kan aktiveras omedelbart eller när din organisation är redo att börja styra åtkomsten till specifika objekt baserat på etiketter. Standardprincipen använder etiketter som används på resurser för att neka åtkomst, såvida inte användarna har en roll med en matchande etikett.
 
 >[!IMPORTANT]
 >
 >Åtkomstprinciper får inte blandas ihop med dataanvändningsprinciper, som styr hur data används i Adobe Experience Platform i stället för vilka användare i organisationen har tillgång till dem. Se guiden om hur du skapar [dataanvändningsprinciper](../../../data-governance/policies/create.md) för mer information.
 
-## Skapa en ny princip
+<!-- ## Create a new policy
 
-Om du vill skapa en ny profil väljer du **[!UICONTROL Policies]** i sidlisten och välj **[!UICONTROL Create Policy]**.
+To create a new policy, select the **[!UICONTROL Policies]** tab in the sidebar and select **[!UICONTROL Create Policy]**.
 
 ![flac-new-policy](../../images/flac-ui/flac-new-policy.png)
 
-The **[!UICONTROL Create a new policy]** visas där du uppmanas att ange ett namn och en valfri beskrivning. När du är klar väljer du **[!UICONTROL Confirm]**.
+The **[!UICONTROL Create a new policy]** dialog appears, prompting you to enter a name, and an optional description. When finished, select **[!UICONTROL Confirm]**.
 
 ![flac-create-new-policy](../../images/flac-ui/flac-create-new-policy.png)
 
-Använd listrutepilen för att välja om du vill **Tillåt åtkomst till** (![flac-allow-access-to](../../images/flac-ui/flac-permit-access-to.png)) en resurs eller **Neka åtkomst till** (![flac-deny-access-to](../../images/flac-ui/flac-deny-access-to.png)) en resurs.
+Using the dropdown arrow select if you would like to **Permit access to** (![flac-permit-access-to](../../images/flac-ui/flac-permit-access-to.png)) a resource or **Deny access to** (![flac-deny-access-to](../../images/flac-ui/flac-deny-access-to.png)) a resource.
 
-Välj sedan den resurs som du vill inkludera i principen med listrutan och sökåtkomsttypen, läs eller skriv.
+Next, select the resource that you would like to include in the policy using the dropdown menu and search access type, read or write.
 
 ![flac-flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown.png)
 
-Använd sedan listrutepilen för att välja det villkor som du vill tillämpa på profilen, **Följande är sant** (![flac-policy-true](../../images/flac-ui/flac-policy-true.png)) eller **Följande är false** (![flac-policy-false](../../images/flac-ui/flac-policy-false.png)).
+Next, using the dropdown arrow select the condition you would like to apply to this policy, **The following being true** (![flac-policy-true](../../images/flac-ui/flac-policy-true.png)) or **The following being false** (![flac-policy-false](../../images/flac-ui/flac-policy-false.png)).
 
-Markera plusikonen för att **Lägg till matchningsuttryck** eller **Lägg till uttrycksgrupp** för resursen.
+Select the plus icon to **Add matches expression** or **Add expression group** for the resource. 
 
 ![flac-policy-expression](../../images/flac-ui/flac-policy-expression.png)
 
-Använd listrutan för att välja **Resurs**.
+Using the dropdown, select the **Resource**.
 
-![flash-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown-1.png)
+![flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown-1.png)
 
-I listrutan väljer du **Matchar**.
+Next, using the dropdown select the **Matches**.
 
-![flac-policy-match-dropdown](../../images/flac-ui/flac-policy-matches-dropdown.png)
+![flac-policy-matches-dropdown](../../images/flac-ui/flac-policy-matches-dropdown.png)
 
-Välj sedan typ av etikett (**[!UICONTROL Core label]** eller **[!UICONTROL Custom label]**) för att matcha etiketten som tilldelats användaren i roller.
+Next, using the dropdown, select the type of label (**[!UICONTROL Core label]** or **[!UICONTROL Custom label]**) to match the label assigned to the User in roles.
 
-![flash-policy-user-dropdown](../../images/flac-ui/flac-policy-user-dropdown.png)
+![flac-policy-user-dropdown](../../images/flac-ui/flac-policy-user-dropdown.png)
 
-Slutligen väljer du **Sandbox** som du vill att principvillkoren ska gälla för med hjälp av listrutan.
+Finally, select the **Sandbox** that you would like the policy conditions to apply to, using the dropdown menu.
 
-![flash-policy-sandboxes-dropdown](../../images/flac-ui/flac-policy-sandboxes-dropdown.png)
+![flac-policy-sandboxes-dropdown](../../images/flac-ui/flac-policy-sandboxes-dropdown.png)
 
-Välj **Lägg till resurs** för att lägga till fler resurser. När du är klar väljer du **[!UICONTROL Save and exit]**.
+Select **Add resource** to add more resources. Once finished, select **[!UICONTROL Save and exit]**.
 
 ![flac-policy-save-and-exit](../../images/flac-ui/flac-policy-save-and-exit.png)
 
-Den nya principen har skapats och du omdirigeras till **[!UICONTROL Policies]** där du ser den nya profilen i listan.
+The new policy is successfully created, and you are redirected to the **[!UICONTROL Policies]** tab, where you will see the newly created policy appear in the list. 
 
-![sparad med flac-policy](../../images/flac-ui/flac-policy-saved.png)
+![flac-policy-saved](../../images/flac-ui/flac-policy-saved.png)
 
-## Redigera en profil
+## Edit a policy
 
-Om du vill redigera en befintlig profil väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken. Du kan också använda filteralternativet för att filtrera resultatet och hitta profilen som du vill redigera.
+To edit an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to edit.
 
 ![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
 
-Välj sedan ellipsen (`…`) bredvid profilnamnet och en listruta med kontroller för att redigera, inaktivera, ta bort eller duplicera rollen. Välj Redigera i listrutan.
+Next, select the ellipsis (`…`) next to the policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select edit from the dropdown.
 
 ![flac-policy-edit](../../images/flac-ui/flac-policy-edit.png)
 
-Skärmen för principbehörigheter visas. Gör uppdateringarna och välj sedan **[!UICONTROL Save and exit]**.
+The policy permissions screen appears. Make the updates then select **[!UICONTROL Save and exit]**.
 
 ![flac-policy-save-and-exit](../../images/flac-ui/flac-policy-save-and-exit.png)
 
-Principen har uppdaterats och du omdirigeras till **[!UICONTROL Policies]** -fliken.
+The policy is successfully updated, and you are redirected to the **[!UICONTROL Policies]** tab.
 
-## Duplicera en princip
+## Duplicate a policy
 
-Om du vill duplicera en befintlig princip väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken. Du kan också använda filteralternativet för att filtrera resultatet och hitta profilen som du vill redigera.
+To duplicate an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to edit.
 
 ![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
 
-Välj sedan ellipsen (`…`) bredvid ett profilnamn och en listruta innehåller kontroller för att redigera, inaktivera, ta bort eller duplicera rollen. Välj Duplicera i listrutan.
+Next, select the ellipsis (`…`) next to a policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select duplicate from the dropdown.
 
 ![flac-policy-duplicate](../../images/flac-ui/flac-policy-duplicate.png)
 
-The **[!UICONTROL Duplicate policy]** visas och du uppmanas att bekräfta dupliceringen.
+The **[!UICONTROL Duplicate policy]** dialog appears, prompting you to confirm the duplication. 
 
 ![flac-policy-duplicate-confirm](../../images/flac-ui/flac-duplicate-confirm.png)
 
-Den nya profilen visas i listan som en kopia av originalet på **[!UICONTROL Policies]** -fliken.
+The new policy appears in the list as a copy of the original on the **[!UICONTROL Policies]** tab.
 
 ![flac-role-duplicate-saved](../../images/flac-ui/flac-role-duplicate-saved.png)
 
-## Ta bort en profil
+## Delete a policy
 
-Om du vill ta bort en befintlig princip väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken. Du kan också använda filteralternativet för att filtrera resultatet och hitta profilen som du vill ta bort.
+To delete an existing policy, select the policy from the **[!UICONTROL Policies]** tab. Alternatively, use the filter option to filter the results to find the policy you want to delete.
 
 ![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
 
-Välj sedan ellipsen (`…`) bredvid ett profilnamn och en listruta innehåller kontroller för att redigera, inaktivera, ta bort eller duplicera rollen. Välj Ta bort i listrutan.
+Next, select the ellipsis (`…`) next to a policies name, and a dropdown displays controls to edit, deactivate, delete, or duplicate the role. Select delete from the dropdown.
 
 ![flac-policy-delete](../../images/flac-ui/flac-policy-delete.png)
 
-The **[!UICONTROL Delete user policy]** visas och du uppmanas att bekräfta borttagningen.
+The **[!UICONTROL Delete user policy]** dialog appears, prompting you to confirm the deletion. 
 
 ![flac-policy-delete-confirm](../../images/flac-ui/flac-policy-delete-confirm.png)
 
-Du kommer tillbaka till **[!UICONTROL policies]** och en bekräftelse på borttagningen visas.
+You are returned to the **[!UICONTROL policies]** tab and a confirmation of deletion pop over appears.
 
-![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png)
+![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png) -->
 
 ## Aktivera en profil
 
-Om du vill aktivera en befintlig princip väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken. Du kan också använda filteralternativet för att filtrera resultatet och hitta profilen som du vill ta bort.
+Om du vill aktivera en befintlig princip väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken.
 
-![flac-policy-select](../../images/flac-ui/flac-policy-select.png)
+![flac-policy-select](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
 Välj sedan ellipsen (`…`) bredvid ett profilnamn och en listruta med kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj Aktivera i listrutan.
 
-![flac-policy-activate](../../images/flac-ui/flac-policy-delete.png)
+![flac-policy-activate](../../images/abac-end-to-end-user-guide/abac-policies-activate.png)
 
-The **[!UICONTROL Activate user policy]** visas och du uppmanas att bekräfta aktiveringen.
+The **[!UICONTROL Activate policy]** visas och du uppmanas att bekräfta aktiveringen.
 
-![flac-policy-activate-confirm](../../images/flac-ui/flac-policy-activate-confirm.png)
+![flac-policy-activate-confirm](../../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
+
 
 Du kommer tillbaka till **[!UICONTROL policies]** och en bekräftelse på aktiveringen visas. Policystatusen visas som aktiv.
 
-![flash-policy-activated](../../images/flac-ui/flac-policy-activated.png)
+![flash-policy-activated](../../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
 
 ## Nästa steg
 
-När du har skapat en ny profil kan du fortsätta till nästa steg i [hantera behörigheter för en roll](permissions.md).
+När en profil är aktiverad kan du fortsätta till nästa steg i [hantera behörigheter för en roll](permissions.md).

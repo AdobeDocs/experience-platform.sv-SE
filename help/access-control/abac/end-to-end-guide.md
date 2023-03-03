@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: bf6fd07404ac6d937aa8660a0de024173f24f5c9
+source-git-commit: 004f6183f597132629481e3792b5523317b7fb2f
 workflow-type: tm+mt
-source-wordcount: '2303'
+source-wordcount: '1656'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,8 @@ Du kommer att:
 
 * [Ange en etikett för rollerna för användarna](#label-roles): Använd exemplet med en vårdleverantör (ACME Business Group) vars marknadsföringsgrupp arbetar med externa byråer.
 * [Märk upp dina resurser (schemafält och segment)](#label-resources): Tilldela **[!UICONTROL PHI/ Regulated Health Data]** för att schemalägga resurser och segment.
-* [Skapa en profil som länkar ihop dem](#policy): Skapa en profil för att länka etiketterna på dina resurser till etiketterna i din roll och neka åtkomst till schemafält och segment. Detta ger åtkomst till schemafältet och segmentet i alla sandlådor för användare som har matchande etiketter.
+* 
+   * [Aktivera profilen som ska länka ihop dem: ](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och segment genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
 
 ## Behörigheter
 
@@ -152,82 +153,102 @@ The **[!UICONTROL Edit labels]** visas så att du kan välja de etiketter som du
 
 Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 
-## Skapa en åtkomstkontrollprincip {#policy}
+## Aktivera åtkomstkontrollprincipen {#policy}
+
+Standardprincipen för åtkomstkontroll använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. I det här exemplet nekas åtkomst till schemafält och segment i alla sandlådor för användare som inte är i en roll som har motsvarande etiketter i schemafältet.
+
+Om du vill aktivera åtkomstkontrollprincipen väljer du [!UICONTROL Permissions] i den vänstra navigeringen och välj **[!UICONTROL Policies]**.
+
+![Lista över profiler som visas](../images/abac-end-to-end-user-guide/abac-policies-page.png)
+
+Välj sedan ellipsen (`...`) bredvid profilnamnet och en listruta med kontroller för att redigera, aktivera, ta bort eller duplicera rollen. Välj **[!UICONTROL Activate]** i listrutan.
+
+![Listruta för att aktivera princip](../images/abac-end-to-end-user-guide/abac-policies-activate.png)
+
+Dialogrutan för aktiveringspolicy visas. Där uppmanas du att bekräfta aktiveringen. Välj **[!UICONTROL Confirm]**.
+
+![Dialogrutan Aktivera princip](../images/abac-end-to-end-user-guide/abac-activate-policies-dialog.png)
+
+Bekräftelse på att profilen har aktiverats har tagits emot och du återgår till [!UICONTROL Policies] sida.
+
+![Aktivera principbekräftelse](../images/abac-end-to-end-user-guide/abac-policies-confirm-activate.png)
+
+<!-- ## Create an access control policy {#policy}
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about"
->title="Vad är policyer?"
->abstract="Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Alla organisationer har en standardprofil som du måste aktivera för att definiera regler för resurser som segment och schemafält. Standardprofiler kan varken redigeras eller tas bort. Standardprofiler kan dock aktiveras eller inaktiveras."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en" text="Hantera profiler"
+>title="What are policies?"
+>abstract="Policies are statements that bring attributes together to establish permissible and impermissible actions. Every organization comes with a default policy that you must activate to define rules for resources like segments and schema fields. Default policies can neither be edited nor deleted. However, default policies can be activated or deactivated."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en" text="Manage policies"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_about_create"
->title="Skapa en profil"
->abstract="Skapa en profil för att definiera de åtgärder som dina användare kan och inte kan vidta mot dina segment och schemafält."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#create-a-new-policy" text="Skapa en profil"
+>title="Create a policy"
+>abstract="Create a policy to define the actions that your users can and cannot take against your segments and schema fields."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#create-a-new-policy" text="Create a policy"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
->title="Konfigurera tillåtna och otillåtna åtgärder för en princip"
->abstract="A <b>neka åtkomst till</b> principen nekar användare åtkomst när villkoren är uppfyllda. Kombinerat med <b>Följande är false</b> - alla användare nekas åtkomst såvida de inte uppfyller de angivna kriterierna. Med den här typen av profil kan du skydda en känslig resurs och bara tillåta åtkomst till användare med matchande etiketter. <br>A <b>ge tillträde till</b> principen ger användarna åtkomst när villkoren är uppfyllda. Vid kombination med <b>Följande är sant</b> - användarna får åtkomst om de uppfyller de villkor som angetts. Detta nekar inte explicit åtkomst till användare, men lägger till en åtkomstbehörighet. Med den här typen av profil kan du ge ytterligare åtkomst till resurser och utöver de användare som redan har åtkomst via rollbehörigheter.&quot;</br>
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Redigera en profil"
+>title="Configure permissible and impermissible actions for a policy"
+>abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."</br>
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Edit a policy"
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_resource"
->title="Konfigurera behörigheter för en resurs"
->abstract="En resurs är den resurs eller det objekt som en användare kan eller inte kan komma åt. Resurser kan vara segment eller schemafält. Du kan konfigurera skriv-, läs- och borttagningsbehörigheter för segment och schemafält."
+>title="Configure permissions for a resource"
+>abstract="A resource is the asset or object that a user can or cannot access. Resources can be segments or schemas fields. You can configure write, read, or delete permissions for segments and schema fields."
 
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_condition"
->title="Redigera villkor"
->abstract="Använd villkorssatser i din profil för att konfigurera användaråtkomst till vissa resurser. Välj Matcha alla om du vill att användare ska ha roller med samma etiketter som en resurs för att få åtkomst. Välj Matcha alla om du vill att användare ska ha en roll med bara en etikett som matchar en etikett på en resurs. Etiketter kan antingen definieras som kärnetiketter eller egna etiketter, med etiketter som representerar etiketter som skapats och tillhandahållits av Adobe och anpassade etiketter som representerar etiketter som du har skapat för din organisation."
+>title="Edit conditions"
+>abstract="Apply conditional statements to your policy to configure user access to certain resources. Select match all to require users to have roles with the same labels as a resource to be permitted access. Select match any to require users to have a role with just one label matching a label on a resource. Labels can either be defined as core or custom labels, with core labels representing labels created and provided by Adobe and custom labels representing labels that you created for your organization."
 
-Åtkomstkontrollprinciper använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. I det här exemplet nekas åtkomst till schemafält och segment i alla sandlådor för användare som inte har motsvarande etiketter i schemafältet.
+Access control policies leverage labels to define which user roles have access to specific Platform resources. Policies can either be local or global and can override other policies. In this example, access to schema fields and segments will be denied in all sandboxes for users who don't have the corresponding labels in the schema field.
 
 >[!NOTE]
 >
->En&quot;nekandeprincip&quot; skapas för att ge åtkomst till känsliga resurser eftersom rollen ger behörighet till personerna. Den skrivna principen i det här exemplet **förnedrande** om du saknar de nödvändiga etiketterna.
+>A "deny policy" is created to grant access to sensitive resources because the role grants permission to the subjects. The written policy in this example **denies** you access if you are missing the required labels.
 
-Om du vill skapa en åtkomstkontrollprincip väljer du **[!UICONTROL Permissions]** i den vänstra navigeringen och välj **[!UICONTROL Policies]**. Nästa, välj **[!UICONTROL Create policy]**.
+To create an access control policy, select **[!UICONTROL Permissions]** from the left navigation and then select **[!UICONTROL Policies]**. Next, select **[!UICONTROL Create policy]**.
 
-![Bild som visar principen Skapa som väljs i Behörigheter](../images/abac-end-to-end-user-guide/abac-create-policy.png)
+![Image showing Create policy being selected in the Permissions](../images/abac-end-to-end-user-guide/abac-create-policy.png)
 
-The **[!UICONTROL Create new policy]** visas och du uppmanas att ange ett namn och en valfri beskrivning. Välj **[!UICONTROL Confirm]** när du är klar.
+The **[!UICONTROL Create new policy]** dialog appears, prompting you to enter a name and an optional description. Select **[!UICONTROL Confirm]** when finished.
 
-![Bild som visar dialogrutan Skapa ny profil och väljer Bekräfta](../images/abac-end-to-end-user-guide/abac-create-policy-details.png)
+![Image showing the Create new policy dialog and selecting Confirm](../images/abac-end-to-end-user-guide/abac-create-policy-details.png)
 
-Om du vill neka åtkomst till schemafälten använder du listrutepilen och väljer **[!UICONTROL Deny access to]** och sedan markera **[!UICONTROL No resource selected]**. Nästa, välj **[!UICONTROL Schema Field]** och sedan markera **[!UICONTROL All]**.
+To deny access to the schema fields, use the dropdown arrow and select **[!UICONTROL Deny access to]** and then select **[!UICONTROL No resource selected]**. Next, select **[!UICONTROL Schema Field]** and then select **[!UICONTROL All]**.
 
-![Bild som visar Neka-åtkomst och valda resurser](../images/abac-end-to-end-user-guide/abac-create-policy-deny-access-schema.png)
+![Image showing Deny access and resources selected](../images/abac-end-to-end-user-guide/abac-create-policy-deny-access-schema.png)
 
-Tabellen nedan visar de villkor som är tillgängliga när du skapar en profil:
+The table below shows the conditions available when creating a policy:
 
-| Villkor | Beskrivning |
+| Conditions | Description |
 | --- | --- |
-| Följande är false | När Neka åtkomst till är inställt begränsas åtkomsten om användaren inte uppfyller de valda villkoren. |
-| Följande är sant | När Tillåten åtkomst till har angetts tillåts åtkomst om användaren uppfyller de valda villkoren. |
-| Matchar alla | Användaren har en etikett som matchar alla etiketter som används på en resurs. |
-| Matchar alla | Användaren har alla etiketter som matchar alla etiketter som används på en resurs. |
-| Kärnetikett | En kärnetikett är en Adobe-definierad etikett som är tillgänglig i alla plattformsinstanser. |
-| Egen etikett | En anpassad etikett är en etikett som har skapats av din organisation. |
+| The following being false| When 'Deny access to' is set, access will be restricted if the user does not meet the criteria selected. |
+| The following being true| When 'Permit access to' is set, access will be permitted if the user meets the selected criteria. |
+| Matches any| The user has a label that matches any label applied to a resource. |
+| Matches all| The user has all labels that matches all labels applied to a resource. |
+| Core label| A core label is an Adobe-defined label that is available in all Platform instances.|
+| Custom label| A custom label is a label that has been created by your organization.|
 
-Välj **[!UICONTROL The following being false]** och sedan markera **[!UICONTROL No attribute selected]**. Välj sedan användaren **[!UICONTROL Core label]** väljer **[!UICONTROL Matches all]**. Välj resurs **[!UICONTROL Core label]** och slutligen markera **[!UICONTROL Add resource]**.
+Select **[!UICONTROL The following being false]** and then select **[!UICONTROL No attribute selected]**. Next, select the user **[!UICONTROL Core label]**, then select **[!UICONTROL Matches all]**. Select the resource **[!UICONTROL Core label]** and finally select **[!UICONTROL Add resource]**.
 
-![Bild som visar villkoren som väljs och Lägg till resurs som väljs](../images/abac-end-to-end-user-guide/abac-create-policy-deny-access-schema-expression.png)
+![Image showing the conditions being selected and Add resource being selected](../images/abac-end-to-end-user-guide/abac-create-policy-deny-access-schema-expression.png)
 
 >[!TIP]
 >
->En resurs är den resurs eller det objekt som ett ämne kan eller inte kan komma åt. Resurser kan vara segment eller scheman.
+>A resource is the asset or object that a subject can or cannot access. Resources can be segments or schemas.
 
-Om du vill neka åtkomst till segmenten använder du listrutepilen och väljer **[!UICONTROL Deny access to]** och sedan markera **[!UICONTROL No resource selected]**. Nästa, välj **[!UICONTROL Segment]** och sedan markera **[!UICONTROL All]**.
+To deny access to the segments, use the dropdown arrow and select **[!UICONTROL Deny access to]** and then select **[!UICONTROL No resource selected]**. Next, select **[!UICONTROL Segment]** and then select **[!UICONTROL All]**.
 
-Välj **[!UICONTROL The following being false]** och sedan markera **[!UICONTROL No attribute selected]**. Välj sedan användaren **[!UICONTROL Core label]** väljer **[!UICONTROL Matches all]**. Välj resurs **[!UICONTROL Core label]** och slutligen markera **[!UICONTROL Save]**.
+Select **[!UICONTROL The following being false]** and then select **[!UICONTROL No attribute selected]**. Next, select the user **[!UICONTROL Core label]**, then select **[!UICONTROL Matches all]**. Select the resource **[!UICONTROL Core label]** and finally select **[!UICONTROL Save]**.
 
-![Bild som visar markerade villkor och Spara markeras](../images/abac-end-to-end-user-guide/abac-create-policy-deny-access-segment.png)
+![Image showing conditions selected and Save being selected](../images/abac-end-to-end-user-guide/abac-create-policy-deny-access-segment.png)
 
-Välj **[!UICONTROL Activate]** om du vill aktivera profilen visas en dialogruta där du uppmanas att bekräfta aktiveringen. Välj **[!UICONTROL Confirm]** och sedan markera **[!UICONTROL Close]**.
+Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears which prompts you to confirm activation. Select **[!UICONTROL Confirm]** and then select **[!UICONTROL Close]**.
 
-![Bild som visar principen som aktiveras ](../images/abac-end-to-end-user-guide/abac-create-policy-activation.png)
+![Image showing the Policy being activated ](../images/abac-end-to-end-user-guide/abac-create-policy-activation.png) -->
 
 ## Nästa steg
 
