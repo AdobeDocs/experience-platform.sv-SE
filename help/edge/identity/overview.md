@@ -3,9 +3,9 @@ title: Identitetsdata i Platform Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: d6aed404828d06bf223f348dd97960652b05933a
+source-git-commit: 0edd9422d6ea1b8e3aeaba1b24bc38b42ca809d8
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1403'
 ht-degree: 0%
 
 ---
@@ -113,6 +113,8 @@ Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 | `id` | Sträng | **(Obligatoriskt)** Det ID som du vill ange för det angivna namnutrymmet. |
 | `authenticationState` | Sträng | **(Obligatoriskt)** Autentiseringstillståndet för ID:t. Möjliga värden är `ambiguous`, `authenticated`och `loggedOut`. |
 | `primary` | Boolean | Avgör om den här identiteten ska användas som ett primärt fragment i profilen. Som standard anges ECID som användarens primära identifierare. Om det utelämnas blir det här värdet som standard `false`. |
+
+Använda `identityMap` fält för att identifiera enheter eller användare leder till samma resultat som om du använder [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=en) metoden från [!DNL ID Service API]. Se [API-dokumentation för ID-tjänst](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=en) för mer information.
 
 ## Migrera från Visitor API till ECID
 
