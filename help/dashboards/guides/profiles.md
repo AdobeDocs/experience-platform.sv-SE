@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: a28c1c00fd0b33af3b797ecf2b4d45154dedc823
 workflow-type: tm+mt
-source-wordcount: '3165'
+source-wordcount: '3166'
 ht-degree: 0%
 
 ---
@@ -117,7 +117,7 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [[!UICONTROL Single identity profiles]](#single-identity-profiles)
 * [[!UICONTROL Single identity profiles by identity]](#single-identity-profiles-by-identity)
 * [[!UICONTROL Unsegmented profiles]](#unsegmented-profiles)
-* [[!UICONTROL Unsegmented profiles trend]](#unsegmented-profiles-trend)
+* [[!UICONTROL Unsegmented profiles change trend]](#unsegmented-profiles-change-trend)
 * [[!UICONTROL Unsegmented profiles by identity]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL Audiences]](#audiences)
 * [[!UICONTROL Audiences mapped to destination status]](#audiences-mapped-to-destination-status)
@@ -262,21 +262,22 @@ The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler so
 
 ![Widgeten Osegmenterade profiler.](../images/profiles/unsegmented-profiles.png)
 
-### [!UICONTROL Unsegmented profiles trend] {#unsegmented-profiles-trend}
+### [!UICONTROL Unsegmented profiles change trend] {#unsegmented-profiles-change-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"
 >title="Trend för osegmenterade profiler"
 >abstract="Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden för profiler som inte är kopplade till något segment kan visas under perioderna 30 dagar, 90 dagar och 12 månader."
 
-The [!UICONTROL Unsegmented Profiles Trend] innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden för profiler som inte är kopplade till något segment kan visas under perioderna 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
+The [!UICONTROL Unsegmented profiles change trend] i en widget används ett linjediagram för att illustrera antalet profiler som har lagts till sedan den senaste ögonblicksbilden som inte är kopplade till något segment. Ändringstrenden för profiler som inte är kopplade till något segment kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
 
-![Widgeten Trend för osegmenterade profiler.](../images/profiles/unsegmented-profiles-trend.png)
+![De osegmenterade profilerna ändrar trendwidgeten.](../images/profiles/unsegmented-profiles-change-trend.png)
 
 ### [!UICONTROL Unsegmented profiles by identity] {#unsegmented-profiles-by-identity}
 
->!![NOTE]
-De osegmenterade profilerna efter identitetswidget har tagits bort från oktober 2022 och är inte längre tillgängliga.
+>[!NOTE]
+>
+>De osegmenterade profilerna efter identitetswidget har tagits bort från oktober 2022 och är inte längre tillgängliga.
 
 <!-- 
 
@@ -323,7 +324,8 @@ The [!UICONTROL Audience overlap report] visas. Den här dialogrutan kan innehå
 ![Dialogrutan för publiköverlappande rapporter.](../images/profiles/profiles-audience-overlap-report-dialog.png)
 
 >[!NOTE]
-Välj **[!UICONTROL Overlapping]** kolumnrubrik om du vill ändra resultatens rangordning mellan högsta och lägsta respektive högsta.
+>
+>Välj **[!UICONTROL Overlapping]** kolumnrubrik om du vill ändra resultatens rangordning mellan högsta och lägsta respektive högsta.
 
 Om du vill hämta hela rapporten i PDF-format väljer du Alternativ-menyn (**`...`**) följt av **[!UICONTROL Download]**.
 
