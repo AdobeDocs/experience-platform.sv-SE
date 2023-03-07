@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: a84d67e433d70cc6194ca20abc656e4b141d42a6
+source-git-commit: 0a300660ce0fc53c403d2ceeb3d4d7d2c32ac117
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '868'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 | [!UICONTROL Created by] | Anger den användare som skapade det här målet. |
 | [!UICONTROL Created] | Anger UTC-datum/tid när det här målet skapades. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## [!UICONTROL Enabled]/[!UICONTROL Disabled] växla {#enabled-disabled-toggle}
 
@@ -86,9 +86,23 @@ The [!UICONTROL Dataflow runs] -fliken innehåller mätdata om dataflödet som k
 
 ### Varaktighet för dataflöde {#dataflow-runs-duration}
 
-Det finns ett känt fel i hur länge dataflödet körs. Med **[!UICONTROL Processing duration]** som anges för de flesta dataflödeskörningar är ungefär fyra timmar, vilket visas i bilden nedan, är den faktiska bearbetningstiden för dataflödeskörningar mycket kortare. Dataflödets körningsfönster är inte längre öppna om Experience Platform behöver göra om anrop till målet.
+Det finns en skillnad i hur länge dataflödet visas mellan direktuppspelning och filbaserade mål.
 
-![Bild av dataflödet kör sidan med kolumnen Bearbetningstid markerad.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run.png)
+### Målgrupper för direktuppspelning {#streaming}
+
+Med **[!UICONTROL Processing duration]** som anges för de flesta direktuppspelade dataflöden är ungefär fyra timmar, vilket visas i bilden nedan, så är den faktiska bearbetningstiden för dataflödeskörningar mycket kortare. Dataflödeskörningsfönstren är öppna längre om Experience Platform behöver göra nya anrop till målet och även se till att det inte missar några senare data för samma tidsfönster.
+
+![Bild av dataflödet kör sidan med kolumnen Bearbetningstid markerad för ett direktuppspelningsmål.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-streaming.png)
+
+Mer information finns i [dataflödet körs till direktuppspelningsmål](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) i övervakningsdokumentationen.
+
+### Filbaserade mål {#file-based}
+
+För dataflöden som går till filbaserade mål gäller att **[!UICONTROL Processing duration]** beror på storleken på de data som exporteras och systeminläsningen. Observera också att dataflödet går till filbaserade mål delas upp per segment.
+
+![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
+
+Mer information finns i [dataflödet körs till batchbaserade (filbaserade) mål](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) i övervakningsdokumentationen.
 
 ## [!UICONTROL Activation data] {#activation-data}
 
