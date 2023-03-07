@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 2584e804674cc54f9cdd0b3a28ee6fb1600b6216
+source-git-commit: da7eff7966679635efa71cbbd33768ef4f412241
 workflow-type: tm+mt
-source-wordcount: '4392'
+source-wordcount: '4557'
 ht-degree: 2%
 
 ---
@@ -64,7 +64,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | är lika med | Jämför två strängar för att bekräfta om de är lika. Den här funktionen är skiftlägeskänslig. | <ul><li>STRING1: **Obligatoriskt** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatoriskt** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equals( &#x200B; STRING2) | &quot;string1&quot;. &#x200B;equals &#x200B;(&quot;STRING1&quot;) | falskt |
 | equalsIgnoreCase | Jämför två strängar för att bekräfta om de är lika. Funktionen är **not** skiftlägeskänslig. | <ul><li>STRING1: **Obligatoriskt** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatoriskt** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equalsIgnoreCase &#x200B;(STRING2) | &quot;string1&quot;. &#x200B;equalsIgnoreCase &#x200B;(&quot;STRING1) | sant |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Funktioner för reguljära uttryck
 
@@ -73,7 +73,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | extract_regex | Extraherar grupper från indatasträngen baserat på ett reguljärt uttryck. | <ul><li>STRING: **Obligatoriskt** Strängen som du extraherar grupperna från.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du vill att gruppen ska matcha.</li></ul> | extract_regex(STRING, REGEX) | extract_regex &#x200B;(&quot;E259,E259B_009,1_1&quot; &#x200B;, &quot;([^,]+),[^,]*,([^,]+)&quot; | [&quot;E259,E259B_009,1_1&quot;, &quot;E259&quot;, &quot;1_1&quot;] |
 | match_regex | Kontrollerar om strängen matchar det inmatade reguljära uttrycket. | <ul><li>STRING: **Obligatoriskt** Strängen som du kontrollerar matchar det reguljära uttrycket.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du jämför med.</li></ul> | match_regex(STRING, REGEX) | match_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot; | sant |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Hash-funktioner {#hashing}
 
@@ -89,7 +89,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | md5 | Tar en inmatning och skapar ett hash-värde med MD5. | <ul><li>INMATNING: **Obligatoriskt** Den oformaterade text som ska hashas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII. </li></ul> | md5(INPUT, CHARSET) | md5(&quot;min text&quot;, &quot;UTF-8&quot;) | d3b96ce8c9fb4 &#x200B; e9bd0198d03ba6852c7 |
 | crc32 | Tar en inmatning använder en algoritm för cyklisk redundanskontroll (CRC) för att skapa en 32-bitars cyklisk kod. | <ul><li>INMATNING: **Obligatoriskt** Den oformaterade text som ska hashas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | crc32(INPUT, CHARSET) | crc32(&quot;min text&quot;, &quot;UTF-8&quot;) | 8df92e80 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### URL-funktioner {#url}
 
@@ -104,8 +104,10 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | get_url_port | Returnerar porten för angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Obligatoriskt** Den URL som porten måste extraheras från.</li></ul> | get_url_port(URL) | get_url_port &#x200B;(&quot;sftp://example.com//home/ &#x200B; joe/employee.csv&quot;) | 22 |
 | get_url_path | Returnerar sökvägen till angiven URL. Som standard returneras den fullständiga sökvägen. | <ul><li>URL: **Obligatoriskt** Den URL som sökvägen måste extraheras från.</li><li>FULL_PATH: *Valfritt* Ett booleskt värde som avgör om den fullständiga sökvägen returneras. Om värdet är false returneras bara slutet av sökvägen.</li></ul> | get_url_path &#x200B;(URL, FULL_PATH) | get_url_path &#x200B;(&quot;sftp://example.com// &#x200B; home/joe/employee.csv&quot;) | &quot;//home/joe/&#x200B; employee.csv&quot; |
 | get_url_query_str | Returnerar frågesträngen för en angiven URL som en mappning av frågesträngsnamnet och frågesträngsvärdet. | <ul><li>URL: **Obligatoriskt** Den URL som du försöker hämta frågesträngen från.</li><li>ANKARE: **Obligatoriskt** Anger vad som ska göras med ankarpunkten i frågesträngen. Kan vara ett av tre värden: &quot;keep&quot;, &quot;remove&quot; eller &quot;append&quot;.<br><br>Om värdet är &quot;behåll&quot; kopplas ankarpunkten till det returnerade värdet.<br>Om värdet är &quot;remove&quot; tas ankarpunkten bort från det returnerade värdet.<br>Om värdet är &quot;append&quot; returneras ankarpunkten som ett separat värde.</li></ul> | get_url_query_str &#x200B;(URL, ANCHOR) | get_url_query_str &#x200B;(&quot;foo://example.com:8042 &#x200B;/over/here?name= &#x200B; ferret#nos&quot;, &quot;keep&quot;)<br>get_url_query_str &#x200B;(&quot;foo://example.com:8042 &#x200B;/over/here?name= &#x200B; ferret#nos&quot;, &quot;remove&quot;)<br>get_url_query_str &#x200B;(&quot;foo://example.com &#x200B;:8042/over/there &#x200B;?name=ferret#nos&quot;, &quot;append&quot;) | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
+| get_url_encoded | Den här funktionen tar en URL som indata och ersätter eller kodar specialtecknen med ASCII-tecken. Mer information om specialtecken finns i [lista med specialtecken](#special-characters) i bilagan till det här dokumentet. | <ul><li>URL: **Obligatoriskt** Indata-URL:en med specialtecken som du vill ersätta eller koda med ASCII-tecken.</li></ul> | get_url_encoded(URL) | get_url_encoded(&quot;https</span>://example.com/partneralliance_asia-pacific_2022&quot;) | https%3A%2F%2Fexample.com%2Fpartneralliance_asia-pacific_2022 |
+| get_url_decoded | Den här funktionen tar en URL som indata och avkodar ASCII-tecken till specialtecken.  Mer information om specialtecken finns i [lista med specialtecken](#special-characters) i bilagan till det här dokumentet. | <ul><li>URL: **Obligatoriskt** Indata-URL:en med ASCII-tecken som du vill avkoda till specialtecken.</li></ul> | get_url_decoded(URL) | get_url_decoded(&quot;https%3A%2F%2Fexample.com%2Fpartneralliance_asia-pacific_2022&quot;) | https</span>/example.com/partneralliance_asia-pacific_2022 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Datum- och tidsfunktioner {#date-and-time}
 
@@ -128,7 +130,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | zone_date_to_utc | Konverterar ett datum i en tidszon till ett datum i UTC. | <ul><li>DATUM: **Obligatoriskt** Det datum som du försöker konvertera.</li></ul> | zone_date_to_utc &#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
 | zone_date_to_zone | Konverterar ett datum från en tidszon till en annan tidszon. | <ul><li>DATUM: **Obligatoriskt** Det datum som du försöker konvertera.</li><li>ZON: **Obligatoriskt** Tidszonen som du försöker konvertera datumet till.</li></ul> | zone_date_to_zone &#x200B;(DATE, ZONE) | `zone_date_to_utc&#x200B;(now(), "Europe/Paris")` | `2021-10-26T15:43:59Z` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Hierarkier - objekt {#objects}
 
@@ -147,7 +149,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | get_keys | Tolkar nyckel/värde-paren och returnerar alla nycklar. | <ul><li>OBJEKT: **Obligatoriskt** Det objekt som nycklarna ska extraheras från.</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;: &quot;Pride and Prekurce&quot;, &quot;book2&quot;: &quot;1984&quot;}) | `["book1", "book2"]` |
 | get_values | Tolkar nyckel/värde-paren och returnerar värdet för strängen baserat på den angivna nyckeln. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill tolka.</li><li>NYCKEL: **Obligatoriskt** Nyckeln som värdet ska extraheras för.</li><li>VALUE_DELIMITER: **Obligatoriskt** Avgränsaren som avgränsar fältet och värdet. Om någon av `null` eller en tom sträng anges, är värdet `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fält- och värdepar. Om någon av `null` eller en tom sträng anges, är värdet `,`.</li></ul> | get_values(STRING, KEY, VALUE_DELIMITER, FIELD_DELIMITER) | get_values(\&quot;firstName - John, lastName - Cena, phone - 555 420 8692\&quot;, \&quot;firstName\&quot;, \&quot;-\&quot;, \&quot;,\&quot;) | John |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-copy).
 
@@ -169,7 +171,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | upsert_array_append | Den här funktionen används för att lägga till alla element i hela inmatningsarrayen i slutet av arrayen i profilen. Funktionen är **endast** som kan användas under uppdateringar. Om den används i infogningskontexten returneras indata i befintligt skick. | <ul><li>ARRAY: **Obligatoriskt** Arrayen som ska läggas till arrayen i profilen.</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
 | upsert_array_replace | Den här funktionen används för att ersätta element i en array. Funktionen är **endast** som kan användas under uppdateringar. Om den används i infogningskontexten returneras indata i befintligt skick. | <ul><li>ARRAY: **Obligatoriskt** Arrayen som ska ersätta arrayen i profilen.</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Logiska operatorer {#logical-operators}
 
@@ -182,7 +184,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | decode | Om en nyckel och en lista med nyckelvärdepar förenklas som en array, returnerar funktionen värdet om nyckeln hittas eller returnerar ett standardvärde om det finns i arrayen. | <ul><li>NYCKEL: **Obligatoriskt** Nyckeln som ska matchas.</li><li>OPTIONS: **Obligatoriskt** En förenklad array med nyckel/värde-par. Ett standardvärde kan också placeras i slutet.</li></ul> | decode(KEY, OPTIONS) | decode(stateCode, &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennsylvania&quot;, &quot;N/A&quot;) | Om given stateCode är &quot;ca&quot;, &quot;California&quot;.<br>Om den angivna statskoden är &quot;pa&quot;, &quot;Pennsylvania&quot;.<br>Om stateCode inte matchar följande, &quot;N/A&quot;. |
 | iif | Utvärderar ett givet booleskt uttryck och returnerar det angivna värdet baserat på resultatet. | <ul><li>UTTRYCK: **Obligatoriskt** Det booleska uttryck som utvärderas.</li><li>TRUE_VALUE: **Obligatoriskt** Värdet som returneras om uttrycket utvärderas till true.</li><li>FALSE_VALUE: **Obligatoriskt** Värdet som returneras om uttrycket utvärderas till false.</li></ul> | iif(EXPRESSION, TRUE_VALUE, FALSE_VALUE) | iif(&quot;s&quot;.equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;Sant&quot; |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Aggregera {#aggregation}
 
@@ -195,7 +197,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | min | Returnerar det minsta av de angivna argumenten. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** Ett eller flera objekt som kan jämföras med varandra.</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | Returnerar det maximala antalet angivna argument. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** Ett eller flera objekt som kan jämföras med varandra.</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Typkonverteringar {#type-conversions}
 
@@ -210,7 +212,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | to_float | Konverterar en sträng till en flyttal. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett flyttal.</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
 | to_integer | Konverterar en sträng till ett heltal. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett heltal.</li></ul> | to_integer(STRING) | to_integer(&quot;12&quot;) | 12 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### JSON-funktioner {#json}
 
@@ -222,7 +224,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | json_to_object | Deserialisera JSON-innehåll från den angivna strängen. | <ul><li>STRING: **Obligatoriskt** JSON-strängen som ska avserialiseras.</li></ul> | json_to_object &#x200B;(STRING) | json_to_object &#x200B;({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;: &quot;Doe&quot;}) | Ett objekt som representerar JSON. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Särskilda åtgärder {#special-operations}
 
@@ -234,7 +236,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Användaragentfunktioner {#user-agent}
 
@@ -258,7 +260,7 @@ Alla användaragentfunktioner i tabellen nedan kan returnera något av följande
 | ua_agent_name | Extraherar agentnamnet från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_agent_name &#x200B;(USER_AGENT) | ua_agent_name &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, som Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
 | ua_device_class | Extraherar enhetsklassen från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_device_class &#x200B;(USER_AGENT) | ua_device_class &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, som Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Telefon |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Objektkopia {#object-copy}
 
@@ -302,3 +304,43 @@ För att automatisk mappning ska fungera måste följande krav vara uppfyllda:
 * Nya attribut ska ha matchande namn i källschemat och XDM-schemat.
 
 Om något av villkoren inte uppfylls måste du manuellt mappa källschemat till XDM-schemat med hjälp av dataprep.
+
+## Bilaga
+
+Nedan finns ytterligare information om hur du använder funktioner för dataprep
+
+### Specialtecken {#special-characters}
+
+Tabellen nedan visar en lista med reserverade tecken och motsvarande kodade tecken.
+
+| Reserverat tecken | Kodat tecken |
+| --- | --- |
+| space | %20 |
+| ! | %21 |
+| &quot; | %22 |
+| # | %23 |
+| $ | %24 |
+| % | %25 |
+| &amp; | %26 |
+| &#39; | %27 |
+| ( | %28 |
+| ) | %29 |
+| * | %2A |
+| + | %2B |
+| , | %2C |
+| / | %2F |
+| : | %3A |
+| ; | %3B |
+| &lt; | %3C |
+| = | %3D |
+| > | %3E |
+| ? | %3F |
+| @ | %40 |
+| [ | %5B |
+| | | %5C |
+| ] | %5D |
+| ^ | %5E |
+| ` | %60 |
+| ~ | %7E |
+
+{style="table-layout:auto"}
