@@ -2,9 +2,9 @@
 title: Användningsexempel för segmentering för Real-time Customer Data Platform B2B Edition
 description: En översikt över de olika användningsområdena för Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: b436aeb8a8628d9b481041be518c1113fb54c342
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1335'
 ht-degree: 0%
 
 ---
@@ -84,13 +84,13 @@ Hitta alla personer som är en&quot;beslutsfattare&quot; för alla möjligheter 
 
 ### Exempel 5: Hitta B2B-profiler för affärsmöjligheter efter avdelningens namn och affärsmöjlighetsbelopp {#find-department-opportunity-amount}
 
-Hitta alla personer som arbetar på en HR-avdelning och som är kopplade till ett konto som har minst en öppen möjlighet till ett visst belopp ($1 miljon) eller mer. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM Business Opportunity] klassen.
+Hitta alla personer som arbetar på en HR-avdelning och har ett konto som har minst en öppen möjlighet till ett visst belopp ($1 miljon) eller mer. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM Business Opportunity] klassen.
 
 ![Gränssnitt som visar exempelinställningar för 5](../assets/segmentation/example-5.png)
 
 ### Exempel 6: Hitta B2B-profiler efter befattning och årsomsättning {#find-by-job-title-and-revenue}
 
-Hitta alla personer vars befattning är Vice President och som är kopplade till ett konto med en årsomsättning på ett visst belopp ($100 miljoner) eller mer, och som har besökt prissidan minst tre gånger den senaste månaden. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM ExperienceEvent] klassen.
+Hitta alla personer vars befattning är Vice President och som har ett konto med en årsomsättning på ett visst belopp ($100 miljoner) eller mer, och som har besökt prissidan minst tre gånger den senaste månaden. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM ExperienceEvent] klassen.
 
 ![Gränssnitt som visar exempel 6 inställningar](../assets/segmentation/example-6.png)
 
@@ -104,13 +104,37 @@ Hitta alla personer som är en &quot;beslutsfattare&quot; för alla stängda aff
 
 Hitta alla personer som arbetar på en HR-avdelning och som är kopplade till något konto *eller något av kontots relaterade konton* som har minst en öppen möjlighet till ett värde av minst 1 miljon USD. Det här segmentet kräver en länk mellan [!UICONTROL XDM Individual Profile] klass, [!UICONTROL XDM Business Account] och [!UICONTROL XDM Business Opportunity] klassen.
 
-![Gränssnitt som visar segmentering för relaterade konton](../assets/segmentation/segmentation-related-accounts.png)
+![Gränssnitt som visar segmentering för relaterade konton](../assets/segmentation/example-8.png)
 
 ### Exempel 9: Använd lead scores och/eller account scores för att kvalificera profil {#account-scoring}
 
 Hitta alla profiler med lead score över 80.
 
-![Användargränssnitt som visar segmentering för prediktiv lead- och kontobedömning](../assets/segmentation/segmentation-predictive-lead-and-account-scoring.png)
+![Användargränssnitt som visar segmentering för prediktiv lead- och kontobedömning](../assets/segmentation/example-9.png)
+
+### Exempel 10: Hitta B2B-profiler som är kopplade till konton vars överordnade organisation har intäkter över ett visst belopp {#find-parent-org-amount}
+
+Hitta alla personer som är kopplade till konton vars överordnade organisation har en intäkt som är större än det angivna beloppet (100 000 000 USD).
+
+![Användargränssnitt som visar överordnad organisation för segmentering](../assets/segmentation/example-10.png)
+
+### Exempel 11: Sök efter B2B-profiler efter jobbtitel och kontonamn med en aktiv relation {#find-by-job-title-and-account-name}
+
+Hitta alla personer som är &quot;chef&quot; för kontot &quot;Acme&quot;, där kontorelationen är &quot;Active&quot;.
+
+![Användargränssnitt som visar överordnad organisation för segmentering](../assets/segmentation/example-11.png)
+
+### Exempel 12: Sök efter B2B-profiler som är avsedda för kampanjer där actualCost överskrider budgetedCost {#find-actualcost-exceed-budgetcost}
+
+Hitta alla personer som är målinriktade för kampanjer där actualCost överskred budgetedCost.
+
+![Användargränssnitt som visar överordnad organisation för segmentering](../assets/segmentation/example-12.png)
+
+### Exempel 13: Sök efter B2B-profiler som tillhör en statisk Marketo-lista och isDeleted=false {#find-marketo-static-list}
+
+Hitta alla personer som tillhör Marketo statiska lista &quot;Förnyelseanvändare&quot; där isDeleted=false.
+
+![Användargränssnitt som visar överordnad organisation för segmentering](../assets/segmentation/example-13.png)
 
 ## Nästa steg {#next-steps}
 
