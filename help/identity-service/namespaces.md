@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över namnområde för identitet
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: 482de6a50d14b9de095014b070ce400a2fd273cc
 workflow-type: tm+mt
-source-wordcount: '1620'
+source-wordcount: '1659'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,12 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 | TNTID | Ett namnutrymme som representerar Adobe Target. Se följande dokument på [Mål](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en) för mer information. |
 | Windows AID | Ett namnutrymme som representerar ett Windows Advertising ID. Se följande dokument på [Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041) för mer information. |
 
-### Visa ID-namnutrymmen
+### Visa ID-namnutrymmen {#view-identity-namespaces}
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_view_integration_identities"
+>title="Visa integreringsidentiteter"
+>abstract="Integreringsidentiteter är namnutrymmen som används för att ansluta till andra system och som inte används i identitetsupplösning eller för att sätta ihop identiteter. <br> Dessa identiteter är dolda som standard. Använd växlingsknappen för att visa integreringsnamnutrymmen."
 
 Om du vill visa identitetsnamnutrymmen i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan väljer **[!UICONTROL Browse]**.
 
