@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: a84d67e433d70cc6194ca20abc656e4b141d42a6
+source-git-commit: 133b3e6b8074bab52f23330ac8d3efc468f29d55
 workflow-type: tm+mt
-source-wordcount: '3065'
+source-wordcount: '3079'
 ht-degree: 0%
 
 ---
@@ -170,7 +170,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 >[!NOTE]
 >
 >- Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) destinationer.
->- För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) mål, utelämnade identiteter, misslyckade och aktiverade visas för närvarande inte.
+>- För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) destinationer uppskattas de värden som är relaterade till identiteter som har uteslutits, misslyckats och aktiverats. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
 
 
 >[!CONTEXTUALHELP]
