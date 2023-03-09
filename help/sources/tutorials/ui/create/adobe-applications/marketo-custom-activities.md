@@ -1,9 +1,9 @@
 ---
 title: Skapa en Marketo Engage-källanslutning och ett dataflöde för anpassade aktivitetsdata i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet för att överföra anpassade aktivitetsdata till Adobe Experience Platform.
-source-git-commit: d049a29d4c39fa41917e8da1dde530966f4cbaf4
+source-git-commit: e584fbdfa64516a0dad1e7b99eb347f18e59d6d5
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1427'
 ht-degree: 0%
 
 ---
@@ -145,9 +145,30 @@ När du har granskat dataflödet väljer du **[!UICONTROL Save & ingest]** så a
 
 ![Det sista granskningssteget som sammanfattar information om anslutnings-, datauppsättnings- och mappningsfälten.](../../../../images/tutorials/create/marketo-custom-activities/review.png)
 
->[!NOTE]
->
->När åtkomsten är klar innehåller den inmatade datauppsättningen alla aktiviteter, inklusive både standarduppsättningen och anpassade aktiviteter från din [!DNL Marketo] -instans. Om du vill välja anpassade aktivitetsposter på Platform måste du använda [Frågetjänst](../../../../../query-service/home.md) och tillhandahålla lämpliga predikat.
+### Lägg till anpassade aktiviteter i ett befintligt aktivitetsdataflöde {#add-to-existing-dataflows}
+
+Om du vill lägga till anpassade aktivitetsdata i ett befintligt dataflöde ändrar du mappningarna för ett befintligt aktivitetsdataflöde med anpassade aktivitetsdata som du vill importera. Detta gör att du kan importera anpassad aktivitet till samma befintliga aktivitetsdatauppsättning. Mer information om hur du uppdaterar mappningarna för ett befintligt dataflöde finns i guiden [uppdatera dataflöden i användargränssnittet](../../update-dataflows.md).
+
+### Använd [!DNL Query Service] filtrera aktiviteter för anpassade aktiviteter {#query-service-filter}
+
+När dataflödet är klart kan du använda [Frågetjänst](../../../../../query-service/home.md) för att filtrera aktiviteter efter anpassade aktivitetsdata.
+
+När anpassade aktiviteter hämtas till Platform blir API-namnet för den anpassade aktiviteten automatiskt dess `eventType`. Använd `eventType={API_NAME}` för att filtrera efter anpassade aktivitetsdata.
+
+```sql
+SELECT * FROM with_custom_activities_ds_today WHERE eventType='aepCustomActivityDemo1' 
+```
+
+Använd `IN` -sats för att filtrera flera anpassade aktiviteter:
+
+```sql
+SELECT * FROM $datasetName WHERE eventType='{API_NAME}'
+SELECT * FROM $datasetName WHERE eventType IN ('aepCustomActivityDemo1', 'aepCustomActivityDemo2')
+```
+
+Bilden nedan visar ett exempel på en SQL-sats i [Frågeredigeraren](../../../../../query-service/ui/user-guide.md) som filtrerar efter anpassade aktivitetsdata.
+
+![Plattformsgränssnitt som visar ett frågeexempel för anpassade aktiviteter.](../../../../images/tutorials/create/marketo-custom-activities/queries.png)
 
 ## Nästa steg
 
