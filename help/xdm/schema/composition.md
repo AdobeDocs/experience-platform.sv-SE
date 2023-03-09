@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: f1a8bcc7c1ba33d74e1f687b4cfd83bddce2fadc
+source-git-commit: a3f38a18693e0ef4bc93765c090eafd56dcd15d3
 workflow-type: tm+mt
-source-wordcount: '4082'
+source-wordcount: '4103'
 ht-degree: 0%
 
 ---
@@ -191,6 +191,11 @@ Den senaste listan över tillgängliga standard-XDM-klasser finns i [officiell X
 >title="Fältgrupp"
 >abstract="Fältgrupper är återanvändbara komponenter som gör att du kan utöka scheman med ytterligare attribut. De flesta fältgrupper är bara kompatibla med vissa klasser. Du kan använda standardfältgrupper som definieras av Adobe eller definiera egna fältgrupper manuellt. Läs dokumentationen om du vill veta mer om hur fältgrupper är inblandade i schemakomposition."
 
+>[!CONTEXTUALHELP]
+>id="platform_schemas_fieldgroup_requiredFieldgroup"
+>title="Obligatorisk fältgrupp"
+>abstract="Den här fältgruppen krävs av källan som du använder. Du kan därför inte ta bort den från ditt schema."
+
 En fältgrupp är en återanvändbar komponent som definierar ett eller flera fält som implementerar vissa funktioner, som personlig information, hotellinställningar eller adress. Fältgrupper är avsedda att ingå i ett schema som implementerar en kompatibel klass.
 
 Fältgrupper definierar vilka klasser de är kompatibla med baserat på beteendet hos de data de representerar (post- eller tidsserie). Det innebär att inte alla fältgrupper är tillgängliga för användning med alla klasser.
@@ -327,7 +332,7 @@ Det finns några viktiga faktorer att tänka på när du väljer objekt framför
 | Ökar kapsling | Mindre eller ingen kapsling |
 | Skapar logiska fältgrupperingar | Fält placeras på ad hoc-platser |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Objekt
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 857c1d4f74b6352e90f9c97ef22d686a883e3563
 workflow-type: tm+mt
-source-wordcount: '569'
+source-wordcount: '602'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,12 @@ Identitetsfält är en viktig komponent i hur kundidentitetsdiagram skapas i Pla
    * [Identitetsnamnutrymmen](../../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en person, och är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../../profile/home.md): Använder kundidentitetsdiagram för att skapa en enhetlig konsumentprofil som bygger på aggregerade data från flera källor, som uppdateras i nära realtid.
 
-## Definiera ett identitetsfält
+## Definiera ett identitetsfält {#define-a-identity-field}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_identityField_primaryIdentityRestriction"
+>title="Begränsningar för primär identitet"
+>abstract="Det här schemat använder en fältgrupp som är avsedd att användas i en specifik källanslutning. Anslutningen kräver identityMap som primär identitet och har ställt in den automatiskt."
 
 När [definiera ett nytt fält](./overview.md#define) i användargränssnittet kan du ange det som ett identitetsfält genom att välja **[!UICONTROL Identity]** i den högra listen.
 
