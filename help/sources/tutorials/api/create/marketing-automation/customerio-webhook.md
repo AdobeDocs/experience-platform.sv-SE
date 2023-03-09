@@ -1,8 +1,10 @@
 ---
 title: Skapa en källanslutning och ett dataflöde för Customer.io med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Customer.io med API:t för Flow Service.
+hide: true
+hidefromtoc: true
 badge: "Beta"
-source-git-commit: cb4b92f4d71d42d57363e16d4764217b6de7f8ee
+source-git-commit: f92a42a5d53121cc3338432a3cd975f0aa29b9a8
 workflow-type: tm+mt
 source-wordcount: '1457'
 ht-degree: 0%

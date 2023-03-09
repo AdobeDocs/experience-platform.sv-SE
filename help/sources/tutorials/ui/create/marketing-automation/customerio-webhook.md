@@ -1,8 +1,10 @@
 ---
 title: Skapa en Customer.io Source Connection och ett dataflöde i användargränssnittet
 description: Lär dig hur du skapar en Customer.io-källanslutning med Adobe Experience Platform UI.
+hide: true
+hidefromtoc: true
 badge: "Beta"
-source-git-commit: f2f3279b5c68cd636ca7da0fe2221e1b0a94fbad
+source-git-commit: f92a42a5d53121cc3338432a3cd975f0aa29b9a8
 workflow-type: tm+mt
 source-wordcount: '1187'
 ht-degree: 0%
