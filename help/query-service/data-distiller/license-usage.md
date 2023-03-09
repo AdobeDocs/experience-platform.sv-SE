@@ -2,18 +2,18 @@
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: a1c5b687108a9fc8729008e2b0e39ec6b1842f54
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '345'
 ht-degree: 0%
 
 ---
 
-# (Beta) Övervaka användningen av batchfrågelicenser {#monitor-license-usage}
+# (Alfa) Övervaka användningen av batchfrågelicenser {#monitor-license-usage}
 
 >[!IMPORTANT]
 >
->Möjligheten att övervaka användningen av batchfrågelicenser via användargränssnittet är i betaversionen. Dess funktioner och dokumentation kan komma att ändras.
+>Möjligheten att övervaka användningen av batchfrågelicenser via användargränssnittet är inte tillgänglig för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om användningen av frågetjänstens licens.
 
