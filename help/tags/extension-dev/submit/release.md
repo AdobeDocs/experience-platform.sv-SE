@@ -2,7 +2,7 @@
 title: Frigöra ett tillägg
 description: Lär dig hur du frigör ett taggtillägg privat eller offentligt i Adobe Experience Platform.
 exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
-source-git-commit: 8862a911f09d47c3a2260faba045f3c79826b52c
+source-git-commit: 3e349c5d78d964c8c2a5b635ef1866d4f41ef6bb
 workflow-type: tm+mt
 source-wordcount: '319'
 ht-degree: 0%
@@ -36,4 +36,4 @@ Om du vill frigöra tillägget med privat tillgänglighet via API:t direkt, se e
 
 När du har slutfört den privata versionen kan du be Adobe att publicera den offentligt.  Tillägget blir då tillgängligt i den offentliga katalogen. Alla användare av datainsamlingen kan installera tillägget på vilken egenskap som helst.
 
-Fyll i [blankett för begäran om offentliggörande](https://experiencecloudpanel.adobe.com/c/r/DCExtensionReleaseRequest) för att starta releaseprocessen.
+Fyll i [blankett för begäran om offentliggörande](https://www.feedbackprogram.adobe.com/c/r/DCExtensionReleaseRequest) för att starta releaseprocessen.
