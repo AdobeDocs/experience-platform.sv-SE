@@ -2,9 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;administrativa taggar;taggar;
 title: Administrativa taggar - översikt
 description: Det här dokumentet innehåller information om administrativa taggar i Adobe Experience Platform
-hide: true
-hidefromtoc: true
-source-git-commit: 7f0572af2d582353a0dde12bdb6692f342463312
+source-git-commit: f184e94350a79936cbbd9072791650af99fa945f
 workflow-type: tm+mt
 source-wordcount: '577'
 ht-degree: 1%
