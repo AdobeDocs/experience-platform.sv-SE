@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f92a42a5d53121cc3338432a3cd975f0aa29b9a8
+source-git-commit: fd82f109b8af665540e2ff30e92c6546ef9f3d2c
 workflow-type: tm+mt
-source-wordcount: '1103'
+source-wordcount: '1292'
 ht-degree: 0%
 
 ---
@@ -184,11 +184,21 @@ Följande tabell visar hur användargränssnittet beter sig baserat på olika ko
 
 Mer information om vilka behörigheter som ges via behörigheter i Adobe finns i [åtkomstkontroll - översikt](../access-control/home.md).
 
-### Attributbaserad åtkomstkontroll för källor
+### Attributbaserad åtkomstkontroll
 
 Med attributbaserad åtkomstkontroll i Adobe Experience Platform kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut.
 
 Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer på fält som du har behörighet till. Dessutom kan du inte importera data till en datauppsättning om du inte har tillgång till alla fält i datauppsättningen.
+
+#### Stöd för attributbaserad åtkomstkontroll i källor [!BADGE Ny funktion]
+
+>[!TIP]
+>
+>Attributbaserad åtkomstkontroll fungerar så här: **roller** skapas för att kategorisera de typer av användare som interagerar med din plattformsinstans. **Etiketter** används på **roller** för att utse åtkomsten till den angivna rollen. **Etiketter** används även för resurser som schemafält och segment. För att en användare ska ha tillgång till vissa schemafält och segment måste de läggas till i *en roll med samma etikett som tilldelas den efterfrågade resursen*. Mer information finns i [attribueringsbaserad åtkomstkontroll från början till slut](../access-control/abac/end-to-end-guide.md).
+
+- Använd etiketter på schemafält för att definiera åtkomst till specifika schemafält i organisationen. När åtkomsten till specifika schemafält har upprättats kan användare bara skapa mappningar för de fält som de har åtkomst till.
+- Användare utan rätt roller kan inte skapa eller uppdatera dataflöden med mappningar som innehåller otillgängliga schemafält. Dessutom kan obehöriga användare inte uppdatera, ta bort, aktivera eller inaktivera befintliga dataflöden med otillgängliga schemafält.
+- Dessutom måste ett dataflöde ha exakt samma schema-ID och version i mappningen, måldatauppsättningen och målanslutningen.
 
 Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md).
 
