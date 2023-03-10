@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Översikt över dataanvändningsetiketter
 description: Läs om hur dataanvändningsetiketter används för att säkerställa regelefterlevnad för datastyrning i Adobe Experience Platform.
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
 
-# Översikt över etiketter för dataanvändning
+# Översikt över etiketter för dataanvändning {#overview}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_dataUsageLabels_description"
+>title="Beskrivning"
+>abstract=""
 
 Med Adobe Experience Platform kan du använda dataanvändningsetiketter på datauppsättningar och fält och kategorisera dem efter relaterade [datastyrningsprinciper](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/ui/policies.md).
 
@@ -42,6 +47,11 @@ Mer information om hur automatisk verkställighet fungerar i Platform finns i ö
 Om du vill ha en referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i [!DNL Platform], se [Audience Manager dokumentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep).
 
 ## Hantera dataanvändningsetiketter i [!DNL Experience Platform] {#manage-labels}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_dataUsageLabels_instructions"
+>title="Instruktioner"
+>abstract=""
 
 Du kan hantera dataanvändningsetiketter med [!DNL Experience Platform] API:er eller användargränssnittet. Mer information om respektive avsnitt finns i underavsnitten nedan.
 

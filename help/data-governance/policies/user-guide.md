@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
 workflow-type: tm+mt
-source-wordcount: '1347'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
 
-# Hantera dataanvändningsprinciper i användargränssnittet
+# Hantera dataanvändningsprinciper i användargränssnittet {#user-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_dataUsagePolicies_description"
+>title="Beskrivning"
+>abstract=""
 
 Det här dokumentet innehåller information om hur du använder **[!UICONTROL Policies]** i Adobe Experience Platform användargränssnitt för att skapa och hantera dataanvändningsprinciper.
 
@@ -83,6 +88,11 @@ The **[!UICONTROL Browse]** -fliken visas igen, där den nya principen nu visas 
 ![](../images/policies/created-policy.png)
 
 ### Skapa en medgivandeprincip {#consent-policy}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_dataUsagePolicies_instructions"
+>title="Instruktioner"
+>abstract=""
 
 >[!IMPORTANT]
 >

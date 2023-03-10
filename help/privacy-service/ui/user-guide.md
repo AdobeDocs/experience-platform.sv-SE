@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1103'
 ht-degree: 0%
 
 ---
 
-# Hantera sekretessjobb i Privacy Servicens användargränssnitt
+# Hantera sekretessjobb i Privacy Servicens användargränssnitt {#user-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_requests_description"
+>title="Beskrivning"
+>abstract=""
 
 Det här dokumentet innehåller steg för att skapa och hantera sekretessförfrågningar med [!DNL Privacy Service] användargränssnitt.
 
@@ -37,7 +42,7 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 | [!UICONTROL APA_AUS] | The [!DNL Australia Privacy Act (Privacy Act)] |
 | [!UICONTROL HIPAA_AUS] | The [!DNL Health Insurance Portability and Accountability Act] |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -93,7 +98,12 @@ Om en lösning har tillhandahållit ytterligare data kan den visas i den här di
 
 Om du vill hämta alla jobbdata som en CSV-fil väljer du **[!UICONTROL Export to CSV]** längst upp till höger i dialogrutan.
 
-## Skapa en ny begäran om sekretessjobb
+## Skapa en ny begäran om sekretessjobb {#create-a-new-privacy-job-request}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_requests_instructions"
+>title="Instruktioner"
+>abstract=""
 
 >[!NOTE]
 >

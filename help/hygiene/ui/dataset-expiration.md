@@ -2,14 +2,19 @@
 title: Hantera förfallodatum för datauppsättning
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
 
-# Hantera förfallodatum för datauppsättning
+# Hantera förfallodatum för datauppsättning {#dataset-expiration}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_scheduleDatasetExpiration_description"
+>title="Beskrivning"
+>abstract=""
 
 >[!IMPORTANT]
 >
@@ -23,7 +28,12 @@ The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Plat
 
 Det här dokumentet beskriver hur du schemalägger och hanterar förfallodatum för datauppsättningar i plattformsgränssnittet.
 
-## Schemalägg ett förfallodatum för datauppsättning
+## Schemalägg ett förfallodatum för datauppsättning {#schedule-dataset-expiration}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_scheduleDatasetExpiration_instructions"
+>title="Instruktioner"
+>abstract=""
 
 Om du vill skapa en ny begäran väljer du **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
 

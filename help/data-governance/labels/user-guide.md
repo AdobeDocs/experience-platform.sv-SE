@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
 workflow-type: tm+mt
-source-wordcount: '1239'
+source-wordcount: '1241'
 ht-degree: 0%
 
 ---
 
-# Hantera etiketter för dataanvändning i användargränssnittet
+# Hantera etiketter för dataanvändning i användargränssnittet {#user-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_dataGovernance_description"
+>title="Beskrivning"
+>abstract=""
 
 Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnitt.
 
@@ -77,7 +82,12 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 
 ![Dölj ärvda etiketter](../images/labels/inherited-labels.png)
 
-## Hantera etiketter på datamängdsfältnivå
+## Hantera etiketter på datamängdsfältnivå {#manage-labels-at-dataset-field-level}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_dataGovernance_instructions"
+>title="Instruktioner"
+>abstract=""
 
 >[!IMPORTANT]
 >

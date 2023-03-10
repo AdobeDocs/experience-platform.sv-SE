@@ -2,9 +2,9 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: cf6ff8bcd3dfebe551ac3d7289fa8d5fb2a78079
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '925'
 ht-degree: 4%
 
 ---
@@ -20,6 +20,11 @@ ht-degree: 4%
 >id="platform_audits_privacyconsole_users"
 >title="De vanligaste användarna"
 >abstract="Den här widgeten visar de användare som har utfört de flesta åtgärderna i Experience Platform inom den valda tidsramen. Om du vill se en fullständig lista över registrerade åtgärder i Platform väljer du **Granskningar** i den vänstra navigeringen."
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_audits_description"
+>title="Beskrivning"
+>abstract=""
 
 För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem på plattformen och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
 
@@ -65,7 +70,12 @@ När funktionen är aktiverad för din organisation samlas granskningsloggarna a
 
 För att kunna visa och exportera granskningsloggar måste du ha **[!UICONTROL View User Activity Log]** behörighet för åtkomstkontroll (finns under [!UICONTROL Data Governance] kategori). Läs mer om hur du hanterar individuella behörigheter för plattformsfunktioner i [dokumentation om åtkomstkontroll](../../../access-control/home.md).
 
-## Hantera granskningsloggar i användargränssnittet
+## Hantera granskningsloggar i användargränssnittet {#managing-audit-logs-in-the-ui}
+
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_audits_instructions"
+>title="Instruktioner"
+>abstract=""
 
 Du kan visa granskningsloggar för olika Experience Platform-funktioner i **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
 
