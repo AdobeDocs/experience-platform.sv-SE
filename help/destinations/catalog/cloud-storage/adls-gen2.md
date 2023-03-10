@@ -2,9 +2,9 @@
 title: (Beta) Azure Data Lake Storage Gen2-anslutning
 description: Lär dig hur du ansluter till Azure Data Lake Storage Gen2 för att aktivera segment och exportera datauppsättningar.
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
+source-git-commit: 010818b56154067402a7cd66f489dd2080142e53
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med tillämpliga schemafält (till exempel ditt PPID), som du väljer på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 
@@ -44,7 +44,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-* **[!UICONTROL URL]**: Slutpunkten för [!DNL Azure Data Lake Storage Gen2]. Slutpunktsmönstret är: `https://<accountname>.dfs.core.windows.net`.
+* **[!UICONTROL URL]**: Slutpunkten för [!DNL Azure Data Lake Storage Gen2]. Slutpunktsmönstret är: `abfss://<container>@<accountname>.dfs.core.windows.net`.
 * **[!UICONTROL Tenant]**: Klientinformationen som innehåller ditt program.
 * **[!UICONTROL Service principal ID]**: Programmets klient-ID.
 * **[!UICONTROL Service principal key]**: Programmets nyckel.
