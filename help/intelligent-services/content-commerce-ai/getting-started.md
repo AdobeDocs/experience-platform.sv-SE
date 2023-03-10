@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;komma igång;content ai;commerce ai;content tagging
+keywords: Experience Platform;komma igång;innehåll;innehållstaggning
 solution: Experience Platform
 title: Komma igång med innehållstaggning
 description: Innehållstaggning använder Adobe I/O API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
 exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '561'
 ht-degree: 0%
 
 ---

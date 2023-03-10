@@ -1,12 +1,12 @@
 ---
-keywords: Experience Cloud;komma igång;content and commerce ai;populära topics;Intelligent Services;ccai
+keywords: Experience Cloud;komma igång;innehållstaggning;populära ämnen;Intelligenta tjänster
 solution: Experience Platform
 title: Översikt över innehållstaggning
-description: Innehåll och Commerce AI är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
+description: Innehållstaggning är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '319'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Innehållstaggning är en uppsättning AI-tjänster som gör att ni kan extraher
 
 Alla varumärken strävar efter att leverera en perfekt kundupplevelse. Ni försöker ständigt hitta bättre svar på alla aspekter av era kontaktytor.
 
-Innehåll är en viktig del av dessa upplevelser. För att ni bättre ska kunna besvara marknadsföringsfrågor måste ni förstå innehållet och kundernas interaktioner med det. Med Content Tagging kan du lära dig vilka funktioner i innehållet som du tillhandahåller som intresserar dina kunder. Med dessa insikter kan ni personalisera upplevelser och öka nyckeltal.
+Innehåll är en viktig del av dessa upplevelser. För att ni bättre ska kunna besvara marknadsföringsfrågor måste ni förstå innehållet och kundernas interaktioner med det. Med Innehållstaggning kan du lära dig vilka funktioner i innehållet som du tillhandahåller som intresserar dina kunder. Med dessa insikter kan ni personalisera upplevelser och öka nyckeltal.
 
 ## Funktioner i tjänsten Innehållstagning
 

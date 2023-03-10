@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;komma igång;content ai;commerce ai;content tagging;color tagging;color extraction;
+keywords: Experience Platform;komma igång;content;content tagging;color tagging;color extraction;
 solution: Experience Platform
-title: Färgtaggning i innehållstaggnings-API
-description: Färgtaggningstjänsten kan, när den har en bild, beräkna histogrammet för pixelfärger och sortera dem efter dominerande färger i grupper.
+title: Färgtaggning i API:t för innehållstaggar
+description: När en bild anges kan du med tjänsten Färgtaggning beräkna histogrammet för pixelfärger och sortera dem efter dominerande färger i grupper.
 exl-id: 6b3b6314-cb67-404f-888c-4832d041f5ed
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '497'
 ht-degree: 2%
 
 ---

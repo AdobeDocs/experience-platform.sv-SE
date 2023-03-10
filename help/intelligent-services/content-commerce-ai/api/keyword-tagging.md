@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;komma igång;content ai;commerce ai;content tagging ai;keyword tagging;Keyword tagging
+keywords: Experience Platform;komma igång;content;content tagging ai;keyword tagging;Keyword tagging
 solution: Experience Platform
 title: Nyckelordstaggning i API:t för innehållstaggar
-description: Nyckelordstaggningstjänsten extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när den anges i ett textdokument. För att kunna extrahera nyckelord används en kombination av nyckelordsigenkänning (NER) och nyckelordstaggalgoritmer som inte övervakas.
+description: När tjänsten Nyckelordstaggar anges i ett textdokument extraheras automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne. För att kunna extrahera nyckelord används en kombination av nyckelordsigenkänning (NER) och nyckelordstaggalgoritmer som inte övervakas.
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '450'
 ht-degree: 3%
 
 ---
