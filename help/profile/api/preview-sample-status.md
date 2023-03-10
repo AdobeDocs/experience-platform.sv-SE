@@ -3,7 +3,7 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förha
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: a6173860adda4bd71c94750e5cce6dd4cbe820c6
 workflow-type: tm+mt
 source-wordcount: '2869'
 ht-degree: 0%
@@ -369,7 +369,7 @@ Den här rapporten innehåller följande information:
 * Det finns 107 profiler som endast består av data från datauppsättningen `5eeda0032af7bb19162172a7`.
 * Det finns totalt 454 642 profiler i organisationen.
 
-## Generera rapport över namnutrymmesöverlappning
+## Generera rapport över namnutrymmesöverlappning {#identity-overlap-report}
 
 Rapporten om överlappning av identitetsnamn ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de identitetsnamnutrymmen som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Detta omfattar både de vanliga identitetsnamnutrymmena från Adobe och de anpassade identitetsnamnutrymmen som definieras av din organisation.
 

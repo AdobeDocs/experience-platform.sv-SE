@@ -5,9 +5,9 @@ title: Förfallodatum för pseudonyma profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: 3f776255ca858a86f501fd587c44fe176c45e103
+source-git-commit: a6173860adda4bd71c94750e5cce6dd4cbe820c6
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Det går inte att konfigurera förfallodatum för pseudonyma profildata via plat
 
 - De identitetstyper som ska beaktas för pseudonym profil tas bort.
    - Till exempel: `ECID` endast, `AAID` eller en kombination av `ECID` och `AAID`.
-- Hur lång tid det tar att vänta innan en pseudonym profil tas bort. Standardrekommendationen för kunder är 30 dagar. Det här värdet kan dock variera beroende på ditt användningssätt.
+- Hur lång tid det tar att vänta innan en pseudonym profil tas bort. Standardrekommendationen för kunder är 14 dagar. Det här värdet kan dock variera beroende på ditt användningssätt.
 - Det aktuella profilantalet jämfört med antalet licensprofiler.
 
 ## Frågor och svar {#faq}
@@ -37,10 +37,10 @@ I följande avsnitt visas vanliga frågor om förfallodatum för pseudonyma prof
 
 ### Vilka användare bör använda pseudonyma profiler när data förfaller?
 
-- Om du använder en anslutning som skickar data direkt från källan till plattformen.
+- Om du använder en direktuppspelningskälla som skickar data direkt till plattformen.
 - Om du har en webbplats som skickar oautentiserade kunder i stor skala.
 - Om du har ett stort antal profiler i datauppsättningarna och har bekräftat att det här stora antalet profiler beror på anonym cookie-baserad identitetstyp.
-   - Du bör använda överlappningsrapporten för identitetstyp för att avgöra detta. Mer information om den här rapporten finns i LINK
+   - Du bör använda överlappningsrapporten för identitetstyp för att avgöra detta. Mer information om den här rapporten finns i [rapportavsnitt om identitetsöverlappning](./api/preview-sample-status.md#identity-overlap-report) av API-handboken för förhandsgranskning av exempelstatus.
 
 ### Vad är några kavattar du bör vara medveten om innan du använder pseudonyma profildata?
 
