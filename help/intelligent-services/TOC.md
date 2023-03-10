@@ -4,10 +4,10 @@ audience: user
 user-guide-title: Hjälp med intelligenta tjänster
 breadcrumb-title: Användarhandbok om Intelligent Services
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, upptäcka insikter och skapa segment utifrån data över marknadsföringshändelser.
-source-git-commit: 5448333a68560aeb83e8f31a36c75c539fc4bf1b
+source-git-commit: a98639851e7245b9cbd6fe42b35b4730dd19c3f8
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 21%
+source-wordcount: '141'
+ht-degree: 22%
 
 ---
 
@@ -31,15 +31,13 @@ ht-degree: 21%
       - [Styrningspolitik](attribution-ai/aai-data-governance/governance-policies.md)
    - [Analysera bakgrundsmusik med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
    - [Fel vid felsökning](attribution-ai/troubleshooting.md)
-- Innehåll och handel, AI (beta) {#content-commerce-ai}
-   - [Översikt](content-commerce-ai/overview.md)
-   - [Komma igång](content-commerce-ai/getting-started.md)
-   - API för innehåll och handel med AI{#api}
-      - [Färgextrahering](content-commerce-ai/api/color-extraction.md)
-      - [Extrahering av nyckelord](content-commerce-ai/api/keyword-extraction.md)
-      - [Textklassificering](content-commerce-ai/api/text-classification.md)
-      - [Visuell likhet](content-commerce-ai/api/visual-similarity.md)
-      - [Textnärvaro och optisk teckenigenkänning](content-commerce-ai/api/optical-character-recognition.md)
+- Innehållstaggning {#content-tagging-ai}
+   - [Översikt](content-tagging/overview.md)
+   - [Komma igång](content-tagging/getting-started.md)
+   - API för innehållstaggning{#api}
+      - [Färgtaggning](content-tagging/api/color-tagging.md)
+      - [Nyckelordstaggning](content-tagging/api/keyword-tagging.md)
+      - [Textnärvaro och optisk teckenigenkänning](content-tagging/api/optical-character-recognition.md)
 - Kund-AI {#customer-ai}
    - [Översikt](customer-ai/overview.md)
    - [Komma igång med kundens AI](customer-ai/getting-started.md)
