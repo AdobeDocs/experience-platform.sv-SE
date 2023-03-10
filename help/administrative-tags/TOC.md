@@ -1,19 +1,19 @@
 ---
 audience: user
-user-guide-title: Administrativa taggar i hjälpen för Adobe Experience Platform
-breadcrumb-title: Användarhandbok om administrativa taggar
-user-guide-description: Använd administrativa taggar för att hantera metadata-taxonomier. Lär dig hur du skapar taggkategorier och taggar.
-source-git-commit: c72b2244e7905c3823fd60212c071614222d0c4f
+user-guide-title: Enhetliga taggar i hjälpen för Adobe Experience Platform
+breadcrumb-title: Guide för enhetliga taggar
+user-guide-description: Använd enhetliga taggar för att hantera metadata-taxonomier. Lär dig hur du skapar taggkategorier och taggar.
+source-git-commit: de258d0e9fe8304b239633c6901a62e3d7b9e214
 workflow-type: tm+mt
-source-wordcount: '37'
-ht-degree: 8%
+source-wordcount: '39'
+ht-degree: 0%
 
 ---
 
 
-# Administrativa taggar {#administrative-tags}
+# Enhetliga taggar (beta){#administrative-tags}
 
-* [Översikt över administrativa taggar](overview.md)
-* Användargränssnitt för administrativa taggar {#ui}
+* [Översikt över enhetliga taggar (beta)](overview.md)
+* Gränssnitt för enhetliga taggar {#ui}
    * [Hantera taggar](ui/managing-tags.md)
    * [Märkordskategorier](ui/tags-categories.md)

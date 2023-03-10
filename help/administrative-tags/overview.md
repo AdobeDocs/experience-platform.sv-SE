@@ -1,15 +1,15 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;enhetliga taggar;taggar;
-title: (Beta) Översikt över enhetliga taggar
+title: Översikt över enhetliga taggar (beta)
 description: Det här dokumentet innehåller information om enhetliga taggar i Adobe Experience Platform
-source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
+source-git-commit: de258d0e9fe8304b239633c6901a62e3d7b9e214
 workflow-type: tm+mt
 source-wordcount: '607'
 ht-degree: 1%
 
 ---
 
-# (Beta) Översikt över enhetliga taggar
+# Översikt över enhetliga taggar (beta)
 
 >[!IMPORTANT]
 >
