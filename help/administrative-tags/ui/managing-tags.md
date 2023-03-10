@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform;hantera taggar;taggar;
-title: Hantera administrativa taggar
-description: Det här dokumentet innehåller information om hur du hanterar administrativa taggar i Adobe Experience Cloud
-source-git-commit: f184e94350a79936cbbd9072791650af99fa945f
+title: Hantera enhetliga taggar
+description: Det här dokumentet innehåller information om hur du hanterar enhetliga taggar i Adobe Experience Cloud
+source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
 workflow-type: tm+mt
 source-wordcount: '1042'
 ht-degree: 1%

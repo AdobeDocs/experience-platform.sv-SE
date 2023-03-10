@@ -1,15 +1,19 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;administrativa taggar;taggar;
-title: Administrativa taggar - översikt
-description: Det här dokumentet innehåller information om administrativa taggar i Adobe Experience Platform
-source-git-commit: f184e94350a79936cbbd9072791650af99fa945f
+keywords: Experience Platform;hem;populära ämnen;enhetliga taggar;taggar;
+title: (Beta) Översikt över enhetliga taggar
+description: Det här dokumentet innehåller information om enhetliga taggar i Adobe Experience Platform
+source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '607'
 ht-degree: 1%
 
 ---
 
-# Översikt över taggar
+# (Beta) Översikt över enhetliga taggar
+
+>[!IMPORTANT]
+>
+>Enhetliga taggar finns i betaversionen. Om du vill lämna feedback markerar du knappen längst upp på sidan Taggar och admin.
 
 Taggar är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att hantera taxonomier för att klassificera affärsobjekt för enklare identifiering och kategorisering. Taggar är metadata som kan tolkas som nyckelord som kan bifogas till ett segment, en datauppsättning, en resa eller andra objekt för att göra det möjligt att söka efter det objektet och relaterade objekt. Taggar delas in i två typer: kategoriserad och okategoriserad.
 
