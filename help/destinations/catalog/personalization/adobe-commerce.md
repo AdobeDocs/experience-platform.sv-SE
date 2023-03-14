@@ -1,54 +1,34 @@
 ---
-title: (Beta) Adobe Commerce Destination Connector
-description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbplatsinnehåll och kampanjer, anpassade till kundsegment som skapats och hanteras inom Real-Time CDP.
+title: Adobe Commerce Destination Connector
+description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: 638a778d1d999ab6a1726333f9cde0a0b4fad57b
+source-git-commit: 813a564eb02a5366945468ee689b2744e31baaa8
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '694'
 ht-degree: 1%
 
 ---
 
-# (Beta) Adobe Commerce-anslutning {#adobe-commerce}
+# Adobe Commerce Connection {#adobe-commerce}
 
 ## Översikt {#overview}
 
->[!IMPORTANT]
-> 
->The **[!UICONTROL Adobe Commerce]** anslutningsprogrammet är i betaversion och endast tillgängligt för ett visst antal kunder.
-
-The [!DNL Adobe Commerce] med målanslutningen kan du välja ett eller flera Real-Time CDP-segment som ska aktiveras för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan du sedan välja de Real-Time CDP-segmenten för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;köp 2 få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna med hjälp av kampanjerbjudanden som alla är anpassade efter Adobe Real-Time CDP segment.
-
-<!--## Use cases {#use-cases}
-
-To help you better understand how and when you should use the *YourDestination* destination, here are sample use cases that Adobe Experience Platform customers can solve by using this destination.
-
-### Use case #1 {#use-case-1}
-
-*For mobile messaging platforms:*
-
-*A home rental and sales platform wants to push mobile notifications to customers' Android and iOS devices to let them know that there are 100 updated listings in the area where they previously searched for a rental.*
-
-### Use case #2 {#use-case-2}
-
-*For social network platforms:*
-
-*An athletic apparel brand wants to reach existing customers through their social media accounts. The apparel brand can ingest email addresses from their own CRM to Adobe Experience Platform, build segments from their own offline data, and send these segments to YourDestination, to display ads in their customers' social media feeds.*-->
+The [!DNL Adobe Commerce] med målanslutning kan du välja en eller flera Real-Time CDP-målgrupper att aktivera för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan ni sedan välja de Real-Time CDP-målgrupperna för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;köp 2 få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna genom kampanjerbjudanden som alla är anpassade för Adobe Real-Time CDP målgrupper.
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för utvalda betakunder som har köpt Real-Time CDP Prime eller Ultimate och Adobe Commerce.
+Den här kontakten är tillgänglig i målkatalogen för kunder som har köpt Real-Time CDP Prime eller Ultimate och Adobe Commerce.
 
-Beta-kunder bör ha tillgång till:
+Om du vill använda den här målanslutningen måste du ha åtkomst till:
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
-- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)
+- [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/). Med tillgång till utvecklarkonsolen kan du visa tjänstkonto- och autentiseringsuppgifter som behövs för att [slutföra konfigurationen](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html#configure-the-extension) av tillägget i Adobe Commerce.
 - [Adobe Commerce Cloud version 2.4.4 eller senare](https://business.adobe.com/products/magento/magento-commerce.html)
 
 I Experience Platform skapar du följande:
 
 - [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) om hur du skapar ett schema som innehåller handelsspecifika fältgrupper.
-- [Datauppsättning](../../../catalog/datasets/user-guide.md#create). En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling. Du måste skapa den här datauppsättningen från schemat som du skapade ovan.
+- [Datauppsättning](../../../catalog/datasets/user-guide.md#create). En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling. Du skapar den här datauppsättningen från schemat som du skapade ovan.
 - [Datastream](../../../edge/datastreams/overview.md#create). ID som gör att data kan flöda från Adobe Experience Platform till andra Adobe DX-produkter. Detta ID måste kopplas till en specifik webbplats i din specifika Adobe Commerce-instans. När du skapar den här dataströmmen anger du XDM-schemat som du skapade ovan.
 
 När du är klar med kraven ansluter du till [!DNL Commerce] mål.
@@ -73,7 +53,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 - **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 - **[!UICONTROL Description]**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
 - **[!UICONTROL Integration alias]**: Värdet skickas till Experience Platform Web SDK som ett JSON-objektnamn.
-- **[!UICONTROL Datastream ID]**: Detta anger i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/datastreams/overview.md) för mer information.
+- **[!UICONTROL Datastream ID]**: Detta avgör vilken datainsamling som innehåller de målgrupper som ingår i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/datastreams/overview.md) för mer information.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -81,23 +61,23 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment för [!DNL Commerce] mål {#activate}
+## Aktivera målgrupper för [!DNL Commerce] mål {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-profile-request-destinations.md) för instruktioner om hur målgruppssegment aktiveras för [!DNL Commerce] mål.
+Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-profile-request-destinations.md) för instruktioner om att aktivera målgrupper för [!DNL Commerce] mål.
 
 ## Nästa steg i [!DNL Adobe Commerce]
 
-Nu när du har konfigurerat [!DNL Commerce] mål inom Experience Platform måste du konfigurera [!DNL Commerce Admin] för att importera de Real-Time CDP-segment du har skapat. Se [[!DNL Commerce] dokumentation](https://experienceleague.adobe.com/docs/commerce-admin/marketing/promotions/cart-rules/customer-segment-rtcdp.html) om du vill veta mer.
+Nu när du har konfigurerat [!DNL Commerce] i Experience Platform måste du installera [!DNL Audience Activation] tillägg i [!DNL Commerce] och konfigurera [!DNL Commerce Admin] för att importera de Real-Time CDP-målgrupper du har skapat. Se [[!DNL Commerce] dokumentation](https://experienceleague.adobe.com/docs/commerce-admin/customers/customers-menu/audience-activation.html) om du vill veta mer.
 
 ## Validera målgruppsaktivering i Commerce {#exported-data}
 
-När du har aktiverat Real-Time CDP-segment för [!DNL Adobe Commerce] kommer du att se vilka segment som är tillgängliga i [!DNL Admin] när du skapar en kundprisregel:
+När du har aktiverat Real-Time CDP-målgrupper för [!DNL Adobe Commerce] kommer du att se vilka målgrupper som är tillgängliga när du går till _Administratör_ sidebar, gå sedan till **[!UICONTROL Customers]** > **[!UICONTROL Real-time CDP Audience]**.
 
-![Adobe Commerce Admin](../../assets/catalog/personalization/adobe-commerce/rtcdp-in-admin.png)
+![Real-Time CDP Auditions Dashboard](../../assets/catalog/personalization/adobe-commerce/audience-library.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
