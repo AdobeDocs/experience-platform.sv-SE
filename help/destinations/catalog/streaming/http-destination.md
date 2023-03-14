@@ -3,9 +3,9 @@ keywords: strömning, HTTP-mål
 title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 01e4a32222bb94ab87751b2375ad616e5b5c0738
+source-git-commit: b6d7ae987bbc97b3f58bd10ef181145ae89aa63e
 workflow-type: tm+mt
-source-wordcount: '2455'
+source-wordcount: '2356'
 ht-degree: 0%
 
 ---
@@ -158,7 +158,7 @@ Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="Inkludera tidsstämplar för segment"
->abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat.<p>innehåll från den första punkten</p><p>innehåll från den andra punkten</p><ul><li>Listobjekt ett.</li><li>Listobjekt två.</li></ul> - Fler textrader. - Ännu fler textrader. Formateringstest för att se om vi kan: <br>Använd HTML</p><p>Eller använd stycketaggar.Det här är rad ett.</p><p>Och fler stycketaggar, för rad två.</p><p>Alla stycketaggar. För linje tre.</p>Äntligen ett test som innehåller länkar med markering [https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html](absolut länk) och HTML <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/home.htmll?lang=sv">länktext</a> syntax.Äntligen ett test som innehåller länkar med kod [../overview.md](relativa länkar) och HTML <a href="../overview.md">relativ länktext</a> syntax."
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_queryparameters"
