@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 0dbd050a9057f491537777ab539bfc687f8c89cb
+source-git-commit: 09f7a3f4c1fde5d12f91308342f2c44f67ff961b
 workflow-type: tm+mt
-source-wordcount: '1037'
+source-wordcount: '1039'
 ht-degree: 3%
 
 ---
@@ -122,6 +122,7 @@ ht-degree: 3%
       * [Salesforce CRM-anslutning](./catalog/crm/salesforce.md)
       * [Microsoft Dynamics 365-anslutning](./catalog/crm/microsoft-dynamics-365.md)
       * [Utdataanslutning](catalog/crm/outreach.md)
+      * [Zendesk-anslutning](catalog/crm/zendesk.md)
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
