@@ -3,9 +3,9 @@ keywords: strömning, HTTP-mål
 title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 1c844d86834ef78d1206a8698dbcbfe2fae49661
+source-git-commit: 01e4a32222bb94ab87751b2375ad616e5b5c0738
 workflow-type: tm+mt
-source-wordcount: '2362'
+source-wordcount: '2455'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på mappningsskärmen på [arbetsflöde för målaktivering](../../ui/activate-segment-streaming-destinations.md#mapping). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 
@@ -158,7 +158,7 @@ Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="Inkludera tidsstämplar för segment"
->abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat.<p>innehåll från den första punkten</p><p>innehåll från den andra punkten</p><ul><li>Listobjekt ett.</li><li>Listobjekt två.</li></ul> - Fler textrader. - Ännu fler textrader. Formateringstest för att se om vi kan: <br>Använd HTML</p><p>Eller använd stycketaggar.Det här är rad ett.</p><p>Och fler stycketaggar, för rad två.</p><p>Alla stycketaggar. För linje tre.</p>Äntligen ett test som innehåller länkar med markering [https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html](absolut länk) och HTML <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/home.htmll?lang=sv">länktext</a> syntax.Äntligen ett test som innehåller länkar med kod [../overview.md](relativa länkar) och HTML <a href="../overview.md">relativ länktext</a> syntax."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_queryparameters"
@@ -215,7 +215,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 |---------|----------|
 | <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om ett mappat segment ändrar lägen (från null till realiserad eller från realiserad/befintlig till befintlig) eller om mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter för närvarande inte kan mappas till HTTP API-mål, bestämmer ändringar i en viss profil även målexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>The `segmentMembership` -objektet innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som mappas i aktiveringsdataflödet. </li><li>Alla identiteter i `identityMap` -objekt ingår också (Experience Platform stöder för närvarande inte identitetsmappning i HTTP API-målet).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
 
-{style=&quot;table-layout:fixed&quot;}
+{style="table-layout:fixed"}
 
 Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre segment är markerade i dataflödet och fyra attribut är mappade till målet.
 
