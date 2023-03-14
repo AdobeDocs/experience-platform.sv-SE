@@ -1,7 +1,8 @@
 ---
 title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
-source-git-commit: 6a54926e47fb2364475dbf71593de97b642163d5
+last-substantial-update: 2023-03-14T00:00:00Z
+source-git-commit: 3197eddcf9fef2870589fdf9f09276a333f30cd1
 workflow-type: tm+mt
 source-wordcount: '1273'
 ht-degree: 0%
