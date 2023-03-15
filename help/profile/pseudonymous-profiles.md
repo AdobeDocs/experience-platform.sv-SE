@@ -5,9 +5,9 @@ title: Förfallodatum för pseudonyma profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: ab5eb1e7a3f2c20efcb44b1699a5938f6d54fa04
+source-git-commit: 6ba219162f6fde37d8bd258c43ed1bdbbbcdf569
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,6 @@ Det går inte att konfigurera förfallodatum för pseudonyma profildata via plat
 - De identitetsnamnutrymmen som ska användas för pseudonyma profiler tas bort.
    - Till exempel: `ECID` endast, `AAID` eller en kombination av `ECID` och `AAID`.
 - Hur lång tid det tar att vänta innan en pseudonym profil tas bort. Standardrekommendationen för kunder är 14 dagar. Det här värdet kan dock variera beroende på ditt användningssätt.
-- Det aktuella profilantalet jämfört med antalet licensprofiler.
 
 ## Frågor och svar {#faq}
 
