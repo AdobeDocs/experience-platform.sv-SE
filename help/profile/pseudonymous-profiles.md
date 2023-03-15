@@ -5,9 +5,9 @@ title: Förfallodatum för pseudonyma profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: a6173860adda4bd71c94750e5cce6dd4cbe820c6
+source-git-commit: ab5eb1e7a3f2c20efcb44b1699a5938f6d54fa04
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '885'
 ht-degree: 0%
 
 ---
@@ -17,8 +17,8 @@ ht-degree: 0%
 
 I Adobe Experience Platform beaktas en profil för pseudonyma data som förfaller om den uppfyller följande villkor:
 
-- Identitetstyperna för den sammanfogade profilen matchar det kunden har angett som en pseudonym eller okänd identitetstyp.
-   - Om till exempel profilens identitetstyp är `ECID`, `GAID`, eller `AAID`. Den sammanfogade profilen har inga ID:n från någon annan identitetstyp. I det här exemplet gör en sammanfogad profil **not** har antingen en e-postadress eller en CRM-identitet.
+- Identitetsnamnutrymmena för den sammanfogade profilen matchar det som kunden har angett som ett pseudonymt eller okänt ID-namnutrymme.
+   - Om till exempel profilens ID-namnutrymme är `ECID`, `GAID`, eller `AAID`. Den sammanfogade profilen har inga ID:n från något annat identitetsnamnutrymme. I det här exemplet gör en sammanfogad profil **not** har antingen en e-postadress eller en CRM-identitet.
 - Ingen aktivitet har ägt rum inom en användardefinierad tidsperiod. Aktiviteten definieras antingen av de Experience Events-händelser som importeras eller av kundinitierade uppdateringar av profilattributen.
    - En ny sidvyhändelse eller uppdatering av åldersattribut betraktas till exempel som en aktivitet. En uppdatering av segmentmedlemskapet som inte initierats av användaren är **not** betraktas som en verksamhet. För närvarande baseras spårningen på en profilnivå på tidpunkten för intag för att beräkna när data förfaller.
 
@@ -26,7 +26,7 @@ I Adobe Experience Platform beaktas en profil för pseudonyma data som förfalle
 
 Det går inte att konfigurera förfallodatum för pseudonyma profildata via plattformens gränssnitt eller API:er. Om du vill aktivera den här funktionen måste du kontakta supporten. När du kontaktar supporten, inkludera följande information:
 
-- De identitetstyper som ska beaktas för pseudonym profil tas bort.
+- De identitetsnamnutrymmen som ska användas för pseudonyma profiler tas bort.
    - Till exempel: `ECID` endast, `AAID` eller en kombination av `ECID` och `AAID`.
 - Hur lång tid det tar att vänta innan en pseudonym profil tas bort. Standardrekommendationen för kunder är 14 dagar. Det här värdet kan dock variera beroende på ditt användningssätt.
 - Det aktuella profilantalet jämfört med antalet licensprofiler.
@@ -37,10 +37,10 @@ I följande avsnitt visas vanliga frågor om förfallodatum för pseudonyma prof
 
 ### Vilka användare bör använda pseudonyma profiler när data förfaller?
 
-- Om du använder en direktuppspelningskälla som skickar data direkt till plattformen.
+- Om du använder Web SDK för att skicka data direkt till plattformen.
 - Om du har en webbplats som skickar oautentiserade kunder i stor skala.
-- Om du har ett stort antal profiler i datauppsättningarna och har bekräftat att det här stora antalet profiler beror på anonym cookie-baserad identitetstyp.
-   - Du bör använda överlappningsrapporten för identitetstyp för att avgöra detta. Mer information om den här rapporten finns i [rapportavsnitt om identitetsöverlappning](./api/preview-sample-status.md#identity-overlap-report) av API-handboken för förhandsgranskning av exempelstatus.
+- Om du har ett stort antal profiler i datauppsättningarna och har bekräftat att det här stora antalet profiler beror på anonym cookie-baserad ID-namnrymd.
+   - För att avgöra detta bör du använda överlappningsrapporten för identitetsnamnutrymme. Mer information om den här rapporten finns i [rapportavsnitt om identitetsöverlappning](./api/preview-sample-status.md#identity-overlap-report) av API-handboken för förhandsgranskning av exempelstatus.
 
 ### Vad är några kavattar du bör vara medveten om innan du använder pseudonyma profildata?
 
@@ -62,9 +62,9 @@ Förfallodatum för pseudonyma profildata fungerar på en **sandlåda** nivå. D
 
 #### Identitetstyper
 
-Utgångsdatum för Experience Event-data tar bort händelser **endast** baserat på händelsepostens tidsstämpel. De identitetstyper som ingår är **ignorerad** för utgångsändamål.
+Utgångsdatum för Experience Event-data tar bort händelser **endast** baserat på händelsepostens tidsstämpel. De identitetsnamnutrymmen som ingår är **ignorerad** för utgångsändamål.
 
-Förfallodatum för pseudonyma profildata **endast** hanterar profiler som har identitetsdiagram som innehåller identitetstyper som valts av kunden, t.ex. `ECID`, `AAID`eller andra typer av cookies. Om profilen innehåller **alla** ytterligare identitetstyp som **not** i kundens lista kommer profilen att **not** tas bort.
+Förfallodatum för pseudonyma profildata **endast** hanterar profiler som har identitetsdiagram som innehåller identitetsnamnutrymmen som valts av kunden, t.ex. `ECID`, `AAID`eller andra typer av cookies. Om profilen innehåller **alla** ytterligare ID-namnutrymme som **not** i kundens lista kommer profilen att **not** tas bort.
 
 #### Borttagna objekt
 
