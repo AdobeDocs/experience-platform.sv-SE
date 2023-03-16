@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 30d8cc73128cff444ce06a8ab913aeb8fa816ed1
+source-git-commit: d0113390f49ba7ba7ecbbc40bdcd750a26040006
 workflow-type: tm+mt
 source-wordcount: '1873'
 ht-degree: 0%
@@ -119,7 +119,7 @@ Om du har [policyer för skapat samtycke](../policies/user-guide.md#consent-poli
 
 #### Policyförbättringar för samtycke för betalmedia {#consent-policy-enhancement}
 
-En förbättring har gjorts för att tillämpa samtyckesregler på batchmål och direktuppspelningsmål, inklusive aktiveringar av betalda medier. Den här förbättringen är tillgänglig för kunder som har skölden för skydd av privatlivet och säkerheten och hälso- och sjukvården, och tar aktivt bort profiler från batch- och strömningsdestinationer när medgivandestatusen ändras. Det garanterar också att ändringar av samtycke sprids omedelbart så att rätt målgrupp alltid målgruppsanpassas.
+Förbättrad tillämpning av samtyckespolicy på [batch](../../destinations/destination-types.md#file-based) och [direktuppspelning](../../destinations/destination-types.md#streaming-destinations) destinationer inklusive betalmediaaktiveringar har gjorts. Den här förbättringen är tillgänglig för kunder som har skölden för skydd av privatlivet och säkerheten och hälso- och sjukvården, och tar aktivt bort profiler från batch- och strömningsdestinationer när medgivandestatusen ändras. Det garanterar också att ändringar av samtycke sprids omedelbart så att rätt målgrupp alltid målgruppsanpassas.
 
 Dessa förbättringar ger större förtroende för er marknadsföringsstrategi eftersom det eliminerar behovet av att marknadsförare manuellt lägger till medgivandeattribut i sina segmentuttryck. Detta garanterar att inga profiler oavsiktligt riktas mot marknadsföringsupplevelser när samtycke har återkallats eller inte längre är kvalificerade för en samtyckespolicy. De policyer för godkännande av marknadsföring som anger regler för hur samtycke eller inställningsdata ska hanteras i olika arbetsflöden för marknadsföring, tillämpas nu automatiskt i aktiveringsarbetsflöden i lösningar längre fram i kedjan.
 
