@@ -2,9 +2,9 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 486f5bdd834808c6262f41c0b0187721fc9b0799
+source-git-commit: 35298fc6b3e272c1b7b14cfa17713d18427ba2ce
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1042'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ Den förväntade fördröjningen för Analytics Data on Platform beskrivs i tabe
 | Analysdata | Förväntad svarstid |
 | -------------- | ---------------- |
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **not** aktiverad) | &lt; 2 minuter |
-| Nya data till [!DNL Real-Time Customer Profile] (A4T **är** aktiverad) | &lt; 15 minuter |
+| Nya data till [!DNL Real-Time Customer Profile] (A4T **är** aktiverad) | upp till 30 minuter |
 | Nya data till Data Lake | &lt; 90 minuter |
 | Bakgrundsfyllning av mindre än 10 miljarder händelser | &lt; 4 veckor |
 
