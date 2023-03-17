@@ -2,9 +2,9 @@
 title: Översikt över datahygien
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
+source-git-commit: 2913e9e687843e566db4ebf2031e610d1891d4c9
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '627'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Datahygien är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
+>Datahygien är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**. De här funktionerna kommer att lanseras inom en snar framtid. Om du vill ha mer information om hur de kommer att bli tillgängliga kontaktar du Adobes servicerepresentant. Du kan dock göra det omedelbart [ta bort datauppsättningar via [!UICONTROL Datasets] UI](../catalog/datasets/user-guide.md#delete).
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
@@ -55,7 +55,7 @@ Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-ex
 | Uppdaterade resor och destinationer | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)och [mål](../destinations/home.md) uppdateras enligt förändringar i relaterade segment. |
 | Hård borttagning slutförd | 14 dagar | Alla data som rör datauppsättningen tas bort från datasjön. The [hygienarbetsplatsens status](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 <!-- ### Record deletes {#record-delete-transparency}
 
