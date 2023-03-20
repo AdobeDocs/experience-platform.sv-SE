@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 9fd11ecbd2d9747088a31b0f25fc8be9990292e3
+source-git-commit: 5095ba2a2c40194aac3b9b0c985d36fd9fca864b
 workflow-type: tm+mt
-source-wordcount: '1044'
+source-wordcount: '1046'
 ht-degree: 3%
 
 ---
@@ -169,6 +169,7 @@ ht-degree: 3%
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
       * [linkedIn Matched Auditions connection](./catalog/social/linkedin.md)
+      * [TikTok-anslutning](./catalog/social/tiktok.md)
       * [[!DNL Twitter Custom Audiences] anslutning](./catalog/social/twitter.md)
    * Målgrupper för direktuppspelning {#streaming}
       * [HTTP API-anslutning](./catalog/streaming/http-destination.md)
