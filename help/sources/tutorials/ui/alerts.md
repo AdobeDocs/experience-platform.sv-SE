@@ -3,14 +3,18 @@ keywords: Experience Platform;hemmabruk;populära ämnen; varningar
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på varningar i sitt sammanhang i användargränssnittet
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: d450dc7b0dc0303c9d33c3e8e003659e3140cf5b
+source-git-commit: 3f7f66c0d58d127299ad12027869ca0e9837f5cd
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '852'
 ht-degree: 0%
 
 ---
 
 # Prenumerera på aviseringar om källdataflöden i användargränssnittet
+
+>[!NOTE]
+>
+>Varningar stöds inte i icke-produktionssandlådor. För att kunna prenumerera på varningar måste du se till att du använder en produktionssandlåda.
 
 Med Adobe Experience Platform kan du prenumerera på händelsebaserade aviseringar om Adobe Experience Platform-aktiviteter. Varningar minskar eller eliminerar behovet av att ringa [[!DNL Observability Insights] API](../../../observability/api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om några fel har uppstått.
 
@@ -57,7 +61,7 @@ Välj de aviseringar du vill prenumerera på och välj sedan **[!UICONTROL Next]
 
 Mer information om hur du skapar ett källdataflöde i användargränssnittet finns i följande handböcker:
 
-* [Reklam](./dataflow/advertising.md)
+* [Advertising](./dataflow/advertising.md)
 * [molnlagring](./dataflow/batch/cloud-storage.md)
 * [CRM](./dataflow/crm.md)
 * [Databas](./dataflow/databases.md)

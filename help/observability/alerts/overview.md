@@ -4,14 +4,18 @@ title: Varningar - översikt
 description: Lär dig om varningar i Adobe Experience Platform, även hur strukturen för varningsregler definieras.
 feature: Alerts
 exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
-source-git-commit: b1c82169056e66b9cdcf99f73daa7d37a3a01600
+source-git-commit: 37700c3b3b728b59083fd51cabf1d8e4b8213580
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '769'
 ht-degree: 3%
 
 ---
 
 # Översikt över aviseringar
+
+>[!NOTE]
+>
+>Varningar stöds inte i icke-produktionssandlådor. För att kunna prenumerera på varningar måste du se till att du använder en produktionssandlåda.
 
 Med Adobe Experience Platform kan du prenumerera på händelsebaserade aviseringar om Adobe Experience Platform-aktiviteter. Varningar minskar eller eliminerar behovet av att ringa [[!DNL Observability Insights] API](../api/overview.md) för att kontrollera om ett jobb har slutförts, om en viss milstolpe i ett arbetsflöde har nåtts eller om några fel har uppstått.
 
@@ -29,7 +33,7 @@ Plattformsaviseringar kan skickas en gång eller upprepas under ett fördefinier
 | Upprepa inte. | Kan upprepas om det avvikande tillståndet kvarstår. |
 | Exempel:<ul><li>Inmatningen av data har slutförts.</li><li>En frågekörning har slutförts.</li><li>Data har tagits bort.</li></ul> | Exempel:<ul><li>Inmatningstiden är längre än serviceavtalet (SLA).</li><li>Dagligt intag har inte skett under de senaste 24 timmarna.</li><li>Strömprocessorns felfrekvens är över det konfigurerade tröskelvärdet.</li><li>Det totala antalet profiler överskrider berättigandet.</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anatomi för en avisering
 
@@ -43,7 +47,7 @@ En varning kan delas upp i följande komponenter:
 | **Åtgärd** | När en varning aktiveras utförs en åtgärd. I synnerhet skickas meddelanden till tillämpliga mottagare via en leveranskanal, till exempel en förkonfigurerad webkrok eller användargränssnittet i Experience Platform. |
 | **Frekvens** | (Valfritt) En varning kan konfigureras för att upprepa sin åtgärd vid ett angivet intervall om dess villkor är sant eller på annat sätt är olöst. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Ta emot och hantera aviseringar
 
@@ -71,7 +75,7 @@ Om du vill arbeta med aviseringar i plattformsgränssnittet måste du ha följan
 | Hantera aviseringar* | Gör att du kan aktivera och inaktivera varningsregler via [!UICONTROL Alerts] -fliken. |
 | Lös aviseringar* | Gör att du kan lösa utlösta varningar via [!UICONTROL Alerts] -fliken. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **För att få tillgång till [!UICONTROL Alerts] måste du även beviljas behörigheten Visa aviseringar i kombination med någon av de andra behörigheterna.*
 
