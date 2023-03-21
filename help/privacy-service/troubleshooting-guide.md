@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för Privacy Service
 description: Det här dokumentet innehåller svar på vanliga frågor om Privacy Service samt information om vanliga fel i API:t.
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fc115801ac8e75cd58356060ad98f1e340d2494a
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '914'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,9 @@ Mer information om att tillhandahålla information om användaridentitet finns i
 
 ## Kan jag använda [!DNL Privacy Service] för att rensa data som av misstag har skickats till [!DNL Platform]?
 
-Adobe stöder inte användning av [!DNL Privacy Service] för att radera data som av misstag har skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort uppgifter. Dessa förfrågningar är tidskänsliga och har slutförts med avseende på tillämplig integritetslagstiftning. Inlämning av ansökningar som inte är registrerade personer/konsumenter eller förfrågningar om tillgång eller radering påverkar alla [!DNL Privacy Service] kunder och möjlighet att [!DNL Privacy Service] stödja lämpliga rättsliga tidslinjer.
+Adobe stöder inte användning av [!DNL Privacy Service] för att radera data som av misstag har skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort uppgifter. All annan användning av Privacy Service för datarensning eller underhåll stöds inte eller tillåts inte.
+
+Begäran om sekretess är tidskänslig och har fyllts i med avseende på tillämplig integritetslagstiftning. inlämning av ansökningar som inte är registrerade eller behandlade som ger tillgång till eller tar bort uppgifter påverkar alla [!DNL Privacy Service] kunder och möjlighet att [!DNL Privacy Service] stödja lämpliga rättsliga tidslinjer. Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten.
 
 Kontakta din kontoansvarige (CDM) för att koordinera och göra en insats för att ta bort eventuella PII- eller dataproblem.
 
