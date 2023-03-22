@@ -1,14 +1,21 @@
 ---
 title: Hantera behörigheter för Privacy Service
 description: Lär dig hur du hanterar användarbehörigheter för Adobe Experience Platform Privacy Service med Adobe Admin Console.
-source-git-commit: 59dc28a84971dc8c21d633741cfe2dc1b44ea1a6
+exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
+source-git-commit: 37a67b19fa0cb38e9e34066c869dd9dc49edefd6
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '992'
 ht-degree: 1%
 
 ---
 
 # Hantera behörigheter för Privacy Service
+
+>[!IMPORTANT]
+>
+>Behörigheterna för Adobe Experience Platform Privacy Service har förbättrats för att öka deras granularitet. Med dessa ändringar kan organisationsadministratörer ge fler användare åtkomst med önskad roll och behörighetsnivå. Användare av tekniska konton måste uppdatera sina behörigheter för Privacy Service eftersom den här kommande uppdateringen utgör en viktig förändring för dem. Den här behörighetsändringen verkställs på **28 mars 2023**.
+>
+>Tekniska konton är tillgängliga för företagskunder och skapas via Adobe Developers Console. En teknisk kontoinnehavares Adobe ID avslutas med `@techacct.adobe.com`. Om du är osäker på om du har ett tekniskt konto kontaktar du din organisations administratör.
 
 Åtkomst till [Adobe Experience Platform Privacy Service](./home.md) styrs av rollbaserade behörigheter i Adobe Admin Console. Genom att skapa produktprofiler som tilldelar behörigheter till användargrupper kan du bestämma vem som har åtkomst till vilka funktioner i Privacy Servicen [UI](./ui/overview.md) och [API](./api/overview.md).
 
@@ -22,7 +29,7 @@ I den här handboken visas hur du hanterar behörigheter för Privacy Service.
 
 För att kunna konfigurera åtkomstkontroll för Privacy Service måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Adobe Experience Platform Privacy Service. Minimirollen som kan bevilja eller återkalla behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (inga begränsningar). Läs artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) i administrationshandboken för Adobe Enterprise om du vill ha mer information.
 
-I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i [Användarhandbok för Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
+I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i [Användarhandbok för Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
 ## Tillgängliga behörigheter
 
@@ -36,7 +43,7 @@ I följande tabell visas de tillgängliga behörigheterna för Privacy Service m
 | [!UICONTROL Opt Out of Sale Permissions] | [!UICONTROL Read Permission - Opt Out of Sale] | Avgör om användaren kan visa befintliga begäranden om avanmälan och deras information. |
 | [!UICONTROL Opt Out of Sale Permissions] | [!UICONTROL Write Permission - Opt Out of Sale] | Avgör om en användare kan skapa nya begäranden om avanmälan från försäljning. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Hantera behörigheter {#manage}
 
