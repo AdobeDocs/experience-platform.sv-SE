@@ -2,9 +2,9 @@
 title: Felsökningsguide för taggar
 description: Få svar på vanliga frågor om taggar i Adobe Experience Platform.
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: b0cc02478273c0b6035488a5d21191ce5cc0e268
+source-git-commit: 9701a14dc2915e0d6dcc6051c15d5113f305487f
 workflow-type: tm+mt
-source-wordcount: '1051'
+source-wordcount: '1044'
 ht-degree: 0%
 
 ---
@@ -45,6 +45,8 @@ Taggar har öppnat sin i stort sett självbetjäningsportal, som utvecklare kan 
 
 Vi har många kunder som också väljer att bygga egna privata tillägg som bara ska användas i de egna företagen med samma utvecklingsmetoder.
 
+Om du vill utveckla ett tillägg går du till [Översikt över tilläggsutveckling](./extension-dev/overview.md) sida.
+
 ## Uppfyller taggarna mitt företags säkerhetsstandarder?
 
 Taggar är klara för SOC-2 och Gramm-Leach-Bliley Act. Taggar kan också användas som värdtjänst. JavaScript-bibliotek och mobila konfigurationer kan hanteras från dina egna servrar eller det CDN som du väljer. För I.T. och säkerhetsteam ger er möjlighet att köra automatiserad testning, checka in filerna i ert eget versionskontrollsystem och helt följa alla interna produktionsmigreringsprocesser, säkerhetsrelaterade eller andra.
@@ -71,22 +73,7 @@ Taggar är utformade för att leverera och köra marknadsförings- och annonstek
 
 ## Vilka webbläsare stöder taggarna?
 
-Webbläsarstöd för taggar:
-
-- [!DNL Chrome] (senaste)
-- [!DNL Safari] (senaste)
-- [!DNL Firefox] (senaste)
-- [!DNL Microsoft Edge] (senaste)
-- [!DNL Internet Explorer] (10 och senare)
-- [!DNL iOS Safari] (senaste)
-- [!DNL Android Chrome] (senaste)
-
-Webbläsarstöd för taggprogrammets gränssnitt:
-
-- [!DNL Chrome] (senaste)
-- [!DNL Safari] (senaste)
-- [!DNL Firefox] (senaste)
-- [!DNL Microsoft Edge] (senaste)
+Se vilka webbläsare som stöds [här](./extension-dev/browsers.md).
 
 De flesta Adobe-kunder använder moderna webbplattformsfunktioner i sina webbläsare för att skapa bättre användarupplevelser, inklusive ensidiga applikationer och interaktiva Ajax-tunga webbplatser och sidor. När de flesta kunder övergår till mer moderna metoder med sina webbplatser kräver de en lösning som liknar taggar som möjliggör dessa strategier.
 

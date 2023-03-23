@@ -2,9 +2,9 @@
 title: Frigöra ett tillägg
 description: Lär dig hur du frigör ett taggtillägg privat eller offentligt i Adobe Experience Platform.
 exl-id: a5eb6902-4b0f-4717-a431-a290c50fb5a6
-source-git-commit: 3e349c5d78d964c8c2a5b635ef1866d4f41ef6bb
+source-git-commit: 60d88be5d710314cdc6900f4b63643c740b91fa6
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Du måste frigöra tillägget som ett privat tillägg innan du kan frigöra det 
 
 Det enklaste sättet att släppa tillägget med privat tillgänglighet är att använda [frisläppa taggtillägg](https://www.npmjs.com/package/@adobe/reactor-releaser). Fler instruktioner finns i dokumentationen.
 
-Om du vill frigöra tillägget med privat tillgänglighet via API:t direkt, se exempelanropet för [frigöra ett tilläggspaket privat](https://developer.adobelaunch.com/api/reference/1.0/extension_packages/release_private/) i API-dokumenten för mer information.
+Om du vill frigöra tillägget med privat tillgänglighet via API:t direkt, se exempelanropet för [frigöra ett tilläggspaket privat](../../api/endpoints/extension-packages.md/#private-release) i API-dokumenten för mer information.
 
 ## Offentlig release
 

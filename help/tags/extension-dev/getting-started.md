@@ -1,9 +1,10 @@
 ---
 title: Komma igång med tilläggsutveckling
 description: Kom igång med att utveckla egna taggtillägg i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 3925b928-0180-4a4f-aaa6-42f342089560
+source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 För att du ska komma igång och bygga tillägg kommer vi att använda verktyget för öppen källkod, som tillhandahålls av Adobe ingenjörer för att skapa de filer och den filstruktur som behövs för ditt tilläggspaket, så allt du har kvar att göra är den värdefulla delen: skriva koden.
 
@@ -45,7 +46,7 @@ Ställningsverktyget frågar efter några initiala konfigurationsalternativ enli
 
 Verktyget kommer sedan att innehålla alternativ för att skapa tilläggsstrukturen:
 
-* [Vy](./configuration.md) för tilläggskonfiguration: Vyn, HTML-fil, genom vilken ett tillägg samlar in globala inställningar från en användare.
+* [Vy för tilläggskonfiguration](./configuration.md): Vyn, HTML-fil, genom vilken ett tillägg samlar in globala inställningar från en användare.
 * [Händelsetyper](./web/event-types.md): Definierar en aktivitet för observation. Du kan till exempel veta när en användare rullar snabbt eller när en användare interagerat med ett sidelement. Händelser kan sedan användas i regler för att utföra åtgärder.
 * [Villkorstyper](./web/condition-types.md): Villkorstyperna utvärderar om något är sant eller falskt.
 Detta kan till exempel returneras om användarens webbläsare är Chrome, om användaren använder en iPad eller om användaren finns på en viss domän.
@@ -60,3 +61,7 @@ Detta kan till exempel returneras om användarens webbläsare är Chrome, om anv
 >* Mer än en av varje händelse, villkor, åtgärd, kan läggas till.
 >* Det får bara finnas en konfigurationsvy.
 
+
+## Nästa steg
+
+* Följ [Översikt över överföringsprocessen](./submit/overview.md) och förbereda [validera](./submit/upload-and-test.md#validate) och [ladda upp](./submit/upload-and-test.md#integration) tillägget för testning i taggens ekosystem.

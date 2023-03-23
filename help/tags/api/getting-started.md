@@ -2,9 +2,9 @@
 title: Komma igång med Reactor API
 description: Lär dig hur du kommer igång med Reaktors-API, inklusive steg för att generera nödvändiga inloggningsuppgifter.
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1050'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Den här guiden beskriver hur du använder Adobe Developer Console för att saml
 
 ## Få utvecklare tillgång till Adobe Experience Platform
 
-Innan du kan generera autentiseringsvärden för Reactor API måste du ha utvecklaråtkomst till Experience Platform. Följ de inledande stegen i dialogrutan för att få utvecklaråtkomst [Självstudiekurs om autentisering av Experience Platform](https://www.adobe.com/go/platform-api-authentication-en). När du kommit till steget&quot;Generera inloggningsuppgifter i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera de inloggningsuppgifter som är specifika för Reactor API.
+Innan du kan generera autentiseringsvärden för Reactor API måste du ha utvecklaråtkomst till Experience Platform. Följ de inledande stegen i dialogrutan för att få utvecklaråtkomst [Självstudiekurs om autentisering av Experience Platform](https://www.adobe.com/go/platform-api-authentication-en). När du är klar med steget &quot;Get User Access&quot; går du tillbaka till den här självstudiekursen för att generera de specifika autentiseringsuppgifterna för Reactor API.
 
 ## Generera autentiseringsuppgifter för åtkomst
 
@@ -37,7 +37,7 @@ Stegen för att generera dessa värden beskrivs närmare nedan.
 
 ### Engångskonfiguration
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan instruktionerna i självstudiekursen på [skapa ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i Developer Console-dokumentationen.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan instruktionerna i självstudiekursen på [skapa ett tomt projekt](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) i Developer Console-dokumentationen.
 
 När du har skapat ett projekt väljer du **Lägg till API** på **Projektöversikt** skärm.
 
@@ -149,7 +149,7 @@ Ett lyckat svar returnerar en ny åtkomsttoken samt antalet sekunder som återst
 | `access_token` | Det nyligen genererade åtkomsttokenvärdet. Det här värdet används för det obligatoriska `Authorization` och måste anges i formatet `Bearer {ACCESS_TOKEN}`. |
 | `expires_in` | Återstående tid tills token upphör att gälla, i millisekunder. När en token upphör att gälla måste en ny genereras. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

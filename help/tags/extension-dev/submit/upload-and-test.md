@@ -2,9 +2,9 @@
 title: Ladda upp och implementera kompletta tester för ett tillägg
 description: Lär dig hur du validerar, överför och testar tillägg i Adobe Experience Platform.
 exl-id: 6176a9e1-fa06-447e-a080-42a67826ed9e
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 9b99ec5e526fcbe34a41d3ce397b34a9b4105819
 workflow-type: tm+mt
-source-wordcount: '2391'
+source-wordcount: '2379'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Ett specifikt exempel är din logotypfil: Lägg till en `"iconPath": "example.sv
 
 Om du vill använda API- eller kommandoradsverktygen behöver du ett tekniskt konto hos Adobe I/O. Du måste skapa det tekniska kontot i I/O-konsolen och sedan använda verktyget Överför för att överföra tilläggspaketet.
 
-Mer information om hur du skapar ett tekniskt konto som kan användas med taggar i Adobe Experience Platform finns i [Åtkomsttoken](https://developer.adobelaunch.com/api/guides/access_tokens/) guide.
+Mer information om hur du skapar ett tekniskt konto som kan användas med taggar i Adobe Experience Platform finns i [Reaktor-API - komma igång](../../api/getting-started.md) guide.
 
 >[!IMPORTANT]
 >
@@ -112,7 +112,7 @@ Om du vill lägga till tillägget väljer du **Katalog** -fliken.
 
 Katalogen visar kortikoner för varje tillgängligt tillägg. Om tillägget inte visas i katalogen kontrollerar du att du har slutfört stegen ovan i Adobe Administration Console Konfigurera och Skapa tilläggspaket. Tilläggspaketet kan också visas som Väntande om plattformen inte har slutfört den inledande bearbetningen.
 
-Om du har följt de föregående stegen och fortfarande inte ser något väntande eller misslyckat tilläggspaket i katalogen, bör du kontrollera status för tilläggspaketet direkt med API:t. Information om hur du gör rätt API-anrop finns i [Hämta ett ExtensionPackage](https://developer.adobelaunch.com/api/reference/1.0/extension_packages/fetch/) i API-dokumentationen.
+Om du har följt de föregående stegen och fortfarande inte ser något väntande eller misslyckat tilläggspaket i katalogen, bör du kontrollera status för tilläggspaketet direkt med API:t. Information om hur du gör rätt API-anrop finns i [Hämta ett ExtensionPackage](../../api/endpoints/extension-packages.md#lookup) i API-dokumentationen.
 
 När tilläggspaketet har bearbetats väljer du **Installera** längst ned på kortet.
 
