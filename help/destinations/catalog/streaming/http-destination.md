@@ -3,9 +3,9 @@ keywords: strömning, HTTP-mål
 title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: e22472443eef8aa053aeb0eb35488de581e4b2bd
+source-git-commit: 658cd7ec2d88d4b3633412f5c6d571351904e70b
 workflow-type: tm+mt
-source-wordcount: '2568'
+source-wordcount: '2356'
 ht-degree: 0%
 
 ---
@@ -158,12 +158,12 @@ Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="Inkludera tidsstämplar för segment"
->abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat.**Övervaka användaraktiviteter på plattformen**<h2>Beskrivning</h2><p>Du kan övervaka användaraktivitet för olika plattformstjänster och funktioner i form av granskningsloggar. Dessa loggar utgör ett granskningsspår som registrerar <b>som</b> utförd <b>vad</b> åtgärd och <b>när</b>. Granskningsloggar kan hjälpa till med felsökningsproblem på plattformen och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.</p><h2>Instruktioner</h2><ul><li>Välj <b>Granskningar</b> i den vänstra navigeringen. På arbetsytan Granskningar visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.</li>   <li> OBS! Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver titta tillbaka på data som är äldre än 365 dagar bör du exportera loggar med en regelbunden gräns för att uppfylla dina interna policykrav. </li><li>Välj en händelse i listan om du vill visa information om händelsen i den högra listen. </li><li>Markera trattsymbolen om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1 000 sista posterna visas, oavsett vilket filter du har valt. </li><li>Om du vill exportera den aktuella listan med granskningsloggar väljer du **Hämtningslogg**.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html">granskningsloggar - översikt</a> på Experience League.</li></ul>"
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
-[!CONTEXTUALHELP]
-id="platform_destinations_connect_http_queryparameters"
-title="Frågeparametrar"
-abstract="Du kan också lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`."
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_queryparameters"
+>title="Frågeparametrar"
+>abstract="Du kan också lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`."
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -186,7 +186,8 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 ## Aktivera segment till den här destinationen {#activate}
 
 >[!IMPORTANT]
-Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+> 
+>Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
