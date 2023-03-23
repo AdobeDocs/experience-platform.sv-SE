@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 14ce4a11f53ef24b3008b3f775cc926d05ea8f8e
+source-git-commit: 379a3769965bb425ca2c8df195b99a98f0b5398d
 workflow-type: tm+mt
 source-wordcount: '591'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Anger en avgränsare för varje fält och värde. Tillgängliga alternativ är:
 * Komma `(,)`
 * Pipe `(|)`
 * Semikolon `(;)`
-* Tabb `(\\t)`
+* Tabb `(\t)`
 
 ### Citattecken
 
