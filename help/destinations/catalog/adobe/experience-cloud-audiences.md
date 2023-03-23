@@ -2,9 +2,9 @@
 title: (Beta) Experience Cloud Publiker
 description: Lär dig hur du delar segment från Experience Platform till olika Experience Platform-lösningar.
 last-substantial-update: 2023-01-25T00:00:00Z
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+source-git-commit: 32222aa1c96537b51cd0db35d9cdabce9210f64a
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1479'
 ht-degree: 0%
 
 ---
@@ -61,8 +61,8 @@ Note: briefly talk about when to share segments to these destinations using the 
 >[!IMPORTANT]
 >
 > * Det här målet är tillgängligt för [Adobe Real-time Customer Data Platform Prime och Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
-> * Du behöver en Audience Manager-licens för att kunna aktivera de datahanteringsplattformar som nämns i avsnittet ovan.
-> * Du *behöver inte* en Audience Manager-licens för att dela Experience Platform-segment med Adobe Advertising Cloud, Adobe Target, Marketo och andra Experience Cloud, via integreringen med Experience Cloud Audiences.
+> * Du behöver en Audience Manager-licens för att kunna aktivera [Användningsexempel för datahanteringsplattform](#dmp-use-cases) som nämns ovan.
+> * Du *behöver inte* en Audience Manager-licens för att dela Experience Platform-segment med Adobe Advertising Cloud, Adobe Target, Marketo och andra Experience Cloud-lösningar som nämns i [avsnitt ovan](#share-segments-with-other-solutions).
 
 
 ### För kunder som använder den gamla segmentdelningslösningen
@@ -96,7 +96,7 @@ De profiler som exporteras till [!UICONTROL Experience Cloud Audiences] målet m
 | IDFA | Apple ID för annonsörer | Profiler som inhämtas till Experience Platform med den primära identiteten Apple ID for Advertisers (IDFA) kan exporteras till den här destinationen. |
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Profiler som inhämtas till Experience Platform med en primär identitet för hash-e-postadresser kan exporteras till det här målet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -107,7 +107,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) som är märkta med identiteterna som listas i avsnittet ovan. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 
