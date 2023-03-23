@@ -6,7 +6,7 @@ description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo 
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '949'
+source-wordcount: '919'
 ht-degree: 0%
 
 ---
@@ -133,7 +133,7 @@ Läs dokumentationen om [Klassen XDM Experience Event](../../../../xdm/classes/e
 | `directMarketing.emailSent.testVariantName` | `directMarketing.emailSent.testVariantName` |
 | `directMarketing.emailSent.automationRunID` | `directMarketing.emailSent.automationRunID` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Program {#programs}
 
@@ -164,7 +164,7 @@ Läs [Översikt över XDM Business Campaign](../../../../xdm/classes/b2b/busines
 | `endDate` | `campaignEndDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Programmedlemskap {#program-memberships}
 
@@ -197,7 +197,7 @@ Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Företag {#companies}
 
@@ -229,7 +229,7 @@ Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-a
 | `iif(mktoCdpParentOrgId != null && mktoCdpParentOrgId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", concat(mktoCdpParentOrgId, ".mkto_org"), "sourceKey", concat(mktoCdpParentOrgId, ".mkto_org@${MUNCHKIN_ID}.Marketo")), null)` | `accountParentKey` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Statiska listor {#static-lists}
 
@@ -247,7 +247,7 @@ Läs [Översikt över XDM Business Marketing List](../../../../xdm/classes/b2b/b
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Statiska listmedlemskap {#static-list-memberships}
 
@@ -264,7 +264,7 @@ Läs [Översikt över medlemmar i XDM Business Marketing List](../../../../xdm/c
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Namngivna konton {#named-accounts}
 
@@ -296,7 +296,7 @@ Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-a
 | `sourceType` | `accountSourceType` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Möjligheter {#opportunities}
 
@@ -333,7 +333,7 @@ Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/bus
 | `nextStep` | `nextStep` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kontaktroller för affärsmöjlighet {#opportunity-contact-roles}
 
@@ -354,7 +354,7 @@ Läs [Översikt över XDM Business Opportunity Person Relation](../../../../xdm/
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `marketoIsDeleted` | `isDeleted` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Personer {#persons}
 
@@ -412,7 +412,7 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | Detta är ett beräkningsfält. |
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | Detta är ett beräkningsfält. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

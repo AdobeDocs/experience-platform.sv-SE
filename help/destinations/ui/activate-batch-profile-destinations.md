@@ -6,7 +6,7 @@ description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experie
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
 source-git-commit: 7d680567cee8b47532bb66434e2f0582cde68532
 workflow-type: tm+mt
-source-wordcount: '3471'
+source-wordcount: '3468'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ Målnamnet och segment-ID kan inte tas bort från filnamn. Utöver dessa kan du 
 | **[!UICONTROL Organization name]** | Organisationens namn i Experience Platform. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
 | **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 

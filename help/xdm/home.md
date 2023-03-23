@@ -127,7 +127,7 @@ Som [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] dat
 
 Se [Översikt över kundprofiler i realtid](../profile/home.md) för mer information.
 
-### Datavetenskapens arbetsyta
+### Arbetsyta för datavetenskap
 
 Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Med Data Science Workspace kan datavetare skapa recept som bygger på [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] data om kunder och deras aktiviteter, vilket underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis kommer att uppskatta och använda.
 

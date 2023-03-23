@@ -2,7 +2,8 @@
 keywords: Experience Platform;hemmabruk;populära ämnen; varningar;mål
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
-source-git-commit: 56f1d5a6a1e90910cedb21fafb6b2ecf16d5b6d7
+exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
+source-git-commit: 3bb9858c236c91e1567fd8e78988f4049537ffe3
 workflow-type: tm+mt
 source-wordcount: '932'
 ht-degree: 0%

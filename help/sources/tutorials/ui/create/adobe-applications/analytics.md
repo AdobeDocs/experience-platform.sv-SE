@@ -7,7 +7,7 @@ description: Lär dig hur du skapar en Adobe Analytics-källanslutning i använd
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
-source-wordcount: '2210'
+source-wordcount: '2249'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,7 @@ Skapa en [!DNL Analytics] källanslutning, välj en rapportserie och välj sedan
 
 ![](../../../../images/tutorials/create/analytics/add-data.png)
 
-<!---Analytics Report Suites can be configured for one sandbox at a time. To import the same Report Suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
+&lt;!—Rapportsviter för analyser kan konfigureras för en sandlåda i taget. Om du vill importera samma Report Suite till en annan sandlåda måste datauppsättningsflödet tas bort och instansieras igen via konfiguration för en annan sandlåda.—>
 
 ### Mappning
 

@@ -4,7 +4,7 @@ description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar 
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '831'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 | [!UICONTROL Expiration date] | Förfrågningar om förfallodatum för filterdatauppsättningen baserat på det schemalagda raderingsdatumet för den aktuella datauppsättningen. |
 | [!UICONTROL Date updated] | Filtrera baserat på när arbetsordern senast uppdaterades. Skapanden och förfallodatum räknas som uppdateringar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Visa information om en arbetsorder {#view-details}
 
