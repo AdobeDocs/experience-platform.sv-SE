@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
 source-wordcount: '2180'
 ht-degree: 0%
@@ -282,7 +282,7 @@ Det här felet visas när ett oväntat undantag inträffar vid körning av ett [
 
 [!DNL Identity Service] importerar identitetsdata från post- och tidsseriedata som överförs till [!DNL Platform] med gruppinmatning. Eftersom gruppinmatning är en asynkron process måste du visa information för en grupp för att kunna se fel. Fel ackumuleras allt eftersom batchen fortskrider tills batchen är klar.
 
-Här följer en lista med felmeddelanden som rör [!DNL Identity Service] du kan stöta på när du använder [API för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).
+Här följer en lista med felmeddelanden som rör [!DNL Identity Service] du kan stöta på när du använder [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).
 
 ### Okänt XDM-schema
 

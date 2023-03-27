@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utveckla ETL-integreringar för Adobe Experience Platform
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '4075'
+source-wordcount: '4081'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Integreringsguiden för ETL innehåller allmänna steg för att skapa säkra ans
 
 - [[!DNL Catalog]](https://www.adobe.io/experience-platform-apis/references/catalog/)
 - [[!DNL Data Access]](https://www.adobe.io/experience-platform-apis/references/data-access/)
-- [[!DNL Data Ingestion]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
+- [[!DNL Batch Ingestion]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
+- [[!DNL Streaming Ingestion]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
 - [Autentisering och auktorisering för Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en)
 - [[!DNL Schema Registry]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 
@@ -490,7 +491,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 }
 ```
 
-Data skrivs till [!DNL Experience Platform] använda [API för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).  Att skriva data är en asynkron process. När data skrivs till Adobe Experience Platform skapas en batch som markeras som lyckad först när alla data är skrivna.
+Data skrivs till [!DNL Experience Platform] med [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/).  Att skriva data är en asynkron process. När data skrivs till Adobe Experience Platform skapas en batch som markeras som lyckad först när alla data är skrivna.
 
 Data in [!DNL Experience Platform] ska skrivas i form av Parquet-filer.
 
@@ -579,7 +580,7 @@ Validering kan utföras för logiska XDM-typer med attribut som `minLength` och 
 
 ### Skapa en batch
 
-När data har bearbetats skriver ETL-verktyget tillbaka data till [!DNL Experience Platform] med [API för gruppinmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Innan data kan läggas till i en datauppsättning måste de länkas till en batch som senare överförs till en specifik datauppsättning.
+När data har bearbetats skriver ETL-verktyget tillbaka data till [!DNL Experience Platform] med [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Innan data kan läggas till i en datauppsättning måste de länkas till en batch som senare överförs till en specifik datauppsättning.
 
 **Begäran**
 

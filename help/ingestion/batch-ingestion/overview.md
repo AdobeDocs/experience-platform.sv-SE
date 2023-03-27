@@ -2,9 +2,9 @@
 keywords: Experience Platform;hem;populära ämnen;dataöverföring;batch;batchvis;aktivera datauppsättning;batchöverföring översikt;översikt;batchöverföring översikt;
 solution: Experience Platform
 title: Översikt över API för gruppinmatning
-description: Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
+description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
 source-wordcount: '1387'
 ht-degree: 4%
@@ -13,9 +13,9 @@ ht-degree: 4%
 
 # API-översikt för gruppinmatning
 
-Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil (t.ex. en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM) register.
+Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil (t.ex. en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM) register.
 
-The [API-referens för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) innehåller ytterligare information om dessa API-anrop.
+The [API-referens för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) innehåller ytterligare information om dessa API-anrop.
 
 I följande diagram visas batchintagsprocessen:
 
@@ -23,7 +23,7 @@ I följande diagram visas batchintagsprocessen:
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [API för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ### [!DNL Data Ingestion] krav
 

@@ -4,22 +4,22 @@ solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 49281d6ef959c84c3da964f0a9e19859fd8901a5
+source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '2413'
+source-wordcount: '2412'
 ht-degree: 1%
 
 ---
 
 # Utvecklarhandbok för batchintag
 
-Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för batchimport](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du om du börjar med att läsa [API-översikt över batchimport](overview.md).
+Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för batchimport](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du om du börjar med att läsa [API-översikt över batchimport](overview.md).
 
 I bilagan till det här dokumentet finns information om [formatera data som ska användas för förtäring](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [API för datainmatning](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). Inläsning av data ger en RESTful API genom vilken du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
+API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Gruppinmatning tillhandahålls via en RESTful API där du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
 
 Läs igenom [API-översikt över batchimport](overview.md) och [komma igång-guide](getting-started.md).
 
