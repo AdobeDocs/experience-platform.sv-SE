@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 5095ba2a2c40194aac3b9b0c985d36fd9fca864b
+source-git-commit: 80864c67bc80f3c2ef12e9571adc2c065512e61f
 workflow-type: tm+mt
-source-wordcount: '1046'
+source-wordcount: '1065'
 ht-degree: 3%
 
 ---
@@ -22,12 +22,14 @@ ht-degree: 3%
    * [Profilexportbeteende för olika måltyper](./how-destinations-work/profile-export-behavior.md)
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
 * API-självstudiekurser {#api}
+   * [API-migreringsguide för molnlagringsmål](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md)
    * [Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Anslut till gruppmolnlagring och e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
    * [(Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
    * [Uppdatera måldataflöden](./api/update-destination-dataflows.md)
    * [Ta bort destinationskonton](./api/delete-destination-account.md)
    * [Ta bort måldataflöden](./api/delete-destination-dataflow.md)
+   * [(Beta) Aktivera data till filbaserade mål med API:t för Flow Service](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [(Beta) Exportera datauppsättningar](/help/destinations/api/export-datasets.md)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)

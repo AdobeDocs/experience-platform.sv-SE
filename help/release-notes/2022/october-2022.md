@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: cd99ccb7b026565814dd6f268b2a92dda34bc7f0
 workflow-type: tm+mt
-source-wordcount: '1339'
+source-wordcount: '1330'
 ht-degree: 1%
 
 ---
@@ -17,11 +17,13 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Datainsamling](#data-collection)
-- [Mål ](#destinations)
-- [Experience Data Model (XDM)](#xdm)
-- [Frågetjänst](#query-service)
-- [Källor](#sources)
+- [Versionsinformation för Adobe Experience Platform](#adobe-experience-platform-release-notes)
+   - [Kundhanterade nycklar {#cmk}](#customer-managed-keys-cmk)
+   - [Datainsamling {#data-collection}](#data-collection-data-collection)
+   - [\[!DNL Destinations\] {#destinations}](#dnl-destinations-destinations)
+   - [Experience Data Model (XDM) {#xdm}](#experience-data-model-xdm-xdm)
+   - [Frågetjänst {#query-service}](#query-service-query-service)
+   - [Källor {#sources}](#sources-sources)
 
 ## Kundhanterade nycklar {#cmk}
 
@@ -41,7 +43,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | [!DNL Splunk] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Splunk] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Splunk] tilläggsöversikt](../../tags/extensions/server/splunk/overview.md) för mer information. |
 | [!DNL Zendesk] tillägg för händelsevidarebefordran | Nu kan du skicka data till [!DNL Zendesk] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Se [[!DNL Zendesk] tilläggsöversikt](../../tags/extensions/server/zendesk/overview.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## [!DNL Destinations] {#destinations}
 
@@ -54,9 +56,9 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | (Beta) Datauppsättningsexport | The [Datauppsättningen exporterar betafunktioner](/help/destinations/ui/export-datasets.md) gör att du kan exportera första generationens data (enligt definitionen i [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)) från Adobe Experience Platform till era egna externa kundsystem via användargränssnittet. På så sätt kan du få ut data från Experience Platform med ett kodfritt/lågkodsarbetsflöde till sex molnlagringsmål (som anges i tabellen nedan) för analyser och efterlevnadsfall. |
 | (Beta) Förbättrade funktioner för filexport | Nu kan du dra nytta av förbättrade anpassningsfunktioner när du exporterar filer från Experience Platform: <br><ul><li>Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).</li><li>Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> Den här funktionaliteten stöds av de sex nya betolymminneskorten i tabellen nedan. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-**Nya eller uppdaterade destinationer**
+**Nya eller uppdaterade destinationer** {#new-or-updated-destinations}
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
@@ -70,7 +72,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | Betatestare ser nu två [!DNL Azure Blob] destinationskort sida vid sida i målkatalogen. Det nya betaversionen ger utökade funktioner för filexport och stöder export av datauppsättningar. |
 | [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog) | Betatestare ser nu två [!DNL SFTP] destinationskort sida vid sida i målkatalogen. Det nya betaversionen ger utökade funktioner för filexport och stöder export av datauppsättningar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Ny eller uppdaterad dokumentation**
 
@@ -92,7 +94,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Datatyp | [[!UICONTROL Advertising details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/advertisingdetails.schema.json) | `name` har bytt namn till `friendlyName`och `ID` har bytt namn till `name`. |
 | Datatyp | [[!UICONTROL Error details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | `ID` har bytt namn till `name`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
@@ -107,7 +109,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | Övervaka frågor via plattformsgränssnittet | Frågetjänsten [!UICONTROL Scheduled Queries] -fliken ger förbättrad synlighet för statusen för alla frågejobb via gränssnittet. Du kan nu hitta viktig information om status för dina frågekörningar, inklusive felmeddelanden och koder om de misslyckas, från [!UICONTROL Scheduled Queries] -fliken. Du kan även prenumerera på aviseringar via användargränssnittet för dessa frågor baserat på deras status. Se [Övervaka frågedokument](../../query-service/ui/monitor-queries.md) om du vill veta mer om den här funktionen. |
 | Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Se [frågerapport för rapporter i butiker - dokument](../../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md) om du vill veta mer om den här funktionen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
 Nya funktioner i Adobe Experience Platform:
