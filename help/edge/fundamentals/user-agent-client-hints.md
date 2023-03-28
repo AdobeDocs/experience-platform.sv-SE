@@ -1,11 +1,11 @@
 ---
 title: Klienttips för användaragent
-description: Lär dig hur användaragentens klienttips fungerar i Web SDK
+description: Lär dig hur klienttips för användaragenter fungerar i Web SDK. Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i strängen User-Agent, men på ett mer sekretessbeständigt sätt.
 keywords: användaragent;klienttips; sträng; användaragentsträng; Låg entropi. hög entropi
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: faeec4288948012fabeb25d0a0ce5a3b45f563ec
+source-git-commit: 29679e85943f16bcb02064cc60a249a3de61e022
 workflow-type: tm+mt
-source-wordcount: '1132'
+source-wordcount: '1155'
 ht-degree: 2%
 
 ---
