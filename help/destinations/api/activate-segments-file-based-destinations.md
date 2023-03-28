@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Aktivera segment till filbaserade mål med hjälp av API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
-source-git-commit: 6ed78a96f099fb4552716ac4a598c43f4d65cf37
+source-git-commit: d925802489d5da006cd9cfacb89b3e880663edaf
 workflow-type: tm+mt
 source-wordcount: '4331'
 ht-degree: 0%
@@ -3645,6 +3645,8 @@ ID:t i svaret representerar den unika identifieraren för det indatabchema som d
 
 Sedan måste du konfigurera utdataschemat för din export. Först måste du hitta och kontrollera ditt befintliga partnerschema.
 
+>[!BEGINSHADEBOX]
+
 **Begäran**
 
 +++Begäran om att hämta partnerschema för utdatabchemat
@@ -3957,7 +3959,7 @@ Därefter måste du skapa ett utdataschema. Kopiera det JSON-svar du fick ovan o
 
 **Begäran**
 
-+++ Skapa ett utdataschema - begäran
++++Skapa ett utdataschema - begäran
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/schemas' \
@@ -3977,7 +3979,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 **Svar**
 
-+++ Skapa utdataschema - svar
++++Skapa utdataschema - svar
 
 ```json
 {
@@ -4287,7 +4289,7 @@ ID:t i svaret representerar den unika identifieraren för det indatabchema som d
 
 >[!ENDSHADEBOX]
 
-### Skapa mappningsuppsättningar
+### Skapa mappningsuppsättning {#create-mapping-set}
 
 Använd sedan [API för dataförberedelse](https://developer.adobe.com/experience-platform-apis/references/data-prep/#tag/Mapping-sets/operation/createMappingSet) om du vill skapa mappningsuppsättningen med hjälp av indatabchema-ID, ID för utdatans schema och önskade fältmappningar.
 
@@ -4295,7 +4297,7 @@ Använd sedan [API för dataförberedelse](https://developer.adobe.com/experienc
 
 **Begäran**
 
-+++ Skapa mappningsuppsättning - begäran
++++Skapa mappningsuppsättning - begäran
 
 >[!IMPORTANT]
 >
@@ -4304,7 +4306,7 @@ Använd sedan [API för dataförberedelse](https://developer.adobe.com/experienc
 >* Observera även att även om exempelkonfigurationen nedan innehåller `Email` och `Phone_E.164`kan du bara exportera ett identitetsattribut per dataflöde.
 
 
-```shell{line-numbers="true" start-line="1" highlight="16-38"}
+```shell {line-numbers="true" start-line="1" highlight="16-38"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/mappingSets' \
 --header 'x-api-key: {API_KEY}' \
 --header 'x-gw-ims-org-id: {ORG_ID}' \
