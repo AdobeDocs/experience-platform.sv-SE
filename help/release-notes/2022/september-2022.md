@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 3d829018b527aacb81c16db5e889b2e50f625e28
 workflow-type: tm+mt
-source-wordcount: '2883'
-ht-degree: 1%
+source-wordcount: '2889'
+ht-degree: 2%
 
 ---
 
@@ -52,7 +52,7 @@ AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att
 
 ### Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 
 | Funktion | Beskrivning |
 | --- | --- |
@@ -82,7 +82,7 @@ Med Experience Platform kan du granska användaraktivitet för olika tjänster o
 | --- | --- | --- |
 | Tillagda resurser | <ul><li>Attribution AI instans</li><li>AI-instans för kund</li><li>Datastream</li></ul> | Granskningsloggresurser registreras automatiskt när aktiviteten utförs. Om funktionen är aktiverad behöver du inte aktivera loggsamling manuellt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om de olika resursspecifika händelsetyperna som spåras av granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
 
@@ -112,11 +112,9 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | [[!DNL Snap Conversions API] extension](https://exchange.adobe.com/apps/ec/108550) för vidarebefordran av händelser | Nu kan du skicka data till [!DNL Snapchat Conversions API] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Mer information om hur du autentiserar och använder API:t finns i [[!DNL Snapchat Marketing API] dokumentation](https://marketingapi.snapchat.com/docs/conversion.html). |
 | [[!DNL User-Agent Client Hints] i Web SDK](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK har nu stöd för [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i [!DNL User-Agent] på ett mer sekretessbelagt sätt. |
 | [Migrering av sida vid sida för Web SDK](../../edge/home.md#migrating-to-web-sdk) | Nu kan du migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, till exempel [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av Web SDK-migrering, utan att du behöver migrera alla sidor samtidigt. |
+| [[!DNL Adobe Journey Optimizer] stöd för datastreams](../../edge/datastreams/overview.md#aep) | Adobe Experience Platform-tjänsten för datastreams har nu stöd för [!DNL Adobe Journey Optimizer]. Med det här alternativet kan du använda webb- och appbaserade inkommande kanaler i [!DNL Adobe Journey Optimizer]. |
 
-{style=&quot;table-layout:auto&quot;}
-
-<!-- | [[!DNL Adobe Journey Optimizer] support for datastreams](../../edge/datastreams/overview.md#aep)| The Adobe Experience Platform service for datastreams now supports [!DNL Adobe Journey Optimizer]. This option allows you to use web and app-based inbound channels in [!DNL Adobe Journey Optimizer].|
--->
+{style="table-layout:auto"}
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 
@@ -130,7 +128,7 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 | ----------- | ----------- |
 | Destination SDK | Destination SDK ger nu fullt stöd för partners och kunder som skapar batchvis (eller filbaserat) producerade eller privata destinationer. Mer information finns på följande dokumentationssidor: <ul><li>[Översikt över Destination SDK](/help/destinations/destination-sdk/overview.md)</li><li>[Konfigurera ett filbaserat mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Konfigurera filformateringsalternativ för filbaserade mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Testa dina filbaserade mål](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Nya eller uppdaterade destinationer**
 
@@ -139,7 +137,7 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 | [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med Campaign](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). Observera att den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=en#release-8-4-1). |
 | [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | The [!DNL Salesforce CRM] målet har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Ny eller uppdaterad dokumentation**
 
@@ -168,7 +166,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Fältgrupp | [[!UICONTROL Media details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | Information om medieinformation spåras. |
 | Fältgrupp | [[!UICONTROL Adobe CJM ExperienceEvent - Surfaces]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | Beskriver ytor för Experience Events i Adobe Journey Optimizer. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Uppdaterade XDM-komponenter**
 
@@ -190,7 +188,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | (Flera) | (Flera) | Adobe Journey Optimizer enheter har [stabiliserad](https://github.com/adobe/xdm/pull/1625/files). |
 | (Flera) | (Flera) | Namnutrymmen för vissa fält i flera experimentella komponenter har [uppdaterat för enhetlighet](https://github.com/adobe/xdm/pull/1626/files). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
