@@ -4,9 +4,9 @@ title: Aktivera målgruppsdata för att profilera mål för begäran
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform genom att mappa segment till profilförfrågningar.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 9bde403338187409892d76de68805535de03d59f
+source-git-commit: 811aba50fb4509e77910499f8d01c4bc13d06841
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform-profilförfrågningar. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md)kan de här målen användas för att anpassa webbsidor efter sida och nästa sida i era webbegenskaper. Läs mer om [aktivera personalisering på samma sida och nästa sida](/help/destinations/ui/configure-personalization-destinations.md).
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform-profilförfrågningar. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md)kan dessa mål användas för personalisering på samma sida och nästa sida på era webb- och mobilsajter. Läs mer om [aktivera personalisering på samma sida och nästa sida](/help/destinations/ui/configure-personalization-destinations.md).
 
 Exempel på mål för profilbegäran är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) anslutningar.
 
