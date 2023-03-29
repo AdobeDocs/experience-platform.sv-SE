@@ -1,15 +1,15 @@
 ---
-title: (Beta) Snap Inc-anslutning
+title: Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar målgruppssegment från Experience Platform.
-source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
+exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
+source-git-commit: 988ecbed3084ef162453c9f1124998c6e9ae2e45
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '969'
 ht-degree: 1%
 
 ---
 
-
-# (Beta) Snap Inc
+# Snap Inc-anslutning
 
 ## Översikt {#overview}
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av *Snap Inc* team. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *dev-support@snap.com*
+>Dokumentationssidan skapades av *Snap Inc* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *dev-support@snap.com*
 
 ## Användningsfall {#use-cases}
 
@@ -57,7 +57,7 @@ Alla identifierare som skickats till *Snap Inc* målet måste hash-kodas i SHA-2
 | GAID | SHA-256 hashas Google Advertising ID | Mappa Google Advertising ID:n till målidentitetsfältet *gala*. |
 | IDFA | SHA-256 hashas Apple Advertising ID | Mappa Apple Advertising ID:n till målidentitetsfältet *idfa*. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -68,7 +68,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i *YOURDESTINATION* mål. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Ansluta till Snap Inc {#connect}
 
