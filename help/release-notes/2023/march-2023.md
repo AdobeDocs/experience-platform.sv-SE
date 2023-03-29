@@ -1,7 +1,7 @@
 ---
-title: Versionsinformation om Adobe Experience Platform, februari 2023
+title: Versionsinformation om Adobe Experience Platform mars 2023
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: 44075e38664c01c64e7d09f5856353bff64becb5
+source-git-commit: 2a7ff5d56ccc1a0b4c86018936d139f2e6d46cd6
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 2%
