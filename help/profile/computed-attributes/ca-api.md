@@ -4,7 +4,9 @@ title: API-slutpunkt för beräknade attribut
 type: Documentation
 description: I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden visar hur du skapar, visar, uppdaterar och tar bort beräknade attribut med hjälp av kundprofils-API:t i realtid.
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 1c4da50b2c211aae06d6702d75e5650447fae0eb
+hide: true
+hidefromtoc: true
+source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
 workflow-type: tm+mt
 source-wordcount: '2275'
 ht-degree: 0%

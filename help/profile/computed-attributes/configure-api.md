@@ -4,7 +4,9 @@ title: Konfigurera ett beräknat attributfält
 type: Documentation
 description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med API:t för schemaregister för att definiera ett schema och en anpassad fältgrupp som innehåller det beräknade attributfältet.
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+hide: true
+hidefromtoc: true
+source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
 workflow-type: tm+mt
 source-wordcount: '736'
 ht-degree: 0%
