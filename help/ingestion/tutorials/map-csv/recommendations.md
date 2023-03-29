@@ -1,18 +1,17 @@
 ---
-title: Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererad Recommendations (beta)
+title: Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererade Recommendations
 description: I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer.
-source-git-commit: d6f858af8bc44be74b1aaf12b973fb6818c1b2a5
+exl-id: 1daedf0b-5a25-4ca5-ae5d-e9ee1eae9e4d
+source-git-commit: df6f76be6beba962b1795bd33dc753ef04267734
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer (beta)
+# Mappa en CSV-fil till ett XDM-schema med hjälp av AI-genererade rekommendationer
 
->[!IMPORTANT]
->
->Den här funktionen är för närvarande i betaversion och din organisation kanske inte har tillgång till den än. Dokumentationen och funktionerna kan komma att ändras.
+>[!NOTE]
 >
 >Mer information om allmänt tillgängliga CSV-mappningsfunktioner i Platform finns i dokumentet om [mappa en CSV-fil till ett befintligt schema](./existing-schema.md).
 
@@ -31,7 +30,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen. På **[!UICONTROL Catalog]** visa, navigera till **[!UICONTROL Local system]** kategori. Under **[!UICONTROL Local file upload]** väljer du **[!UICONTROL Add data]**.
 
-![The [!UICONTROL Sources] katalog i plattformens användargränssnitt, med [!UICONTROL Add data] under [!UICONTROL Local file upload] markeras](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
+![The [!UICONTROL Sources] katalog i plattformens användargränssnitt, med [!UICONTROL Add data] under [!UICONTROL Local file upload] markeras.](../../images/tutorials/map-csv-recommendations/local-file-upload.png)
 
 The **[!UICONTROL Map CSV XDM schema]** arbetsflödet visas, med början på **[!UICONTROL Dataflow detail]** steg.
 
@@ -51,17 +50,17 @@ Du kan även konfigurera följande ytterligare funktioner för dataflödet innan
 | [!UICONTROL Dataflow details] | Ange ett namn och en valfri beskrivning av dataflödet som hämtar CSV-data till plattformen. Dataflödet tilldelas automatiskt ett standardnamn när arbetsflödet startas. Det är valfritt att ändra namnet. |
 | [!UICONTROL Alerts] | Välj i en lista över [varningar i produkten](../../../observability/alerts/overview.md) som du vill få information om dataflödets status när det har initierats. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 När du har konfigurerat dataflödet väljer du **[!UICONTROL Next]**.
 
-![The [!UICONTROL Dataflow detail] avsnittet är slutfört](../../images/tutorials/map-csv-recommendations/dataflow-detail-complete.png)
+![The [!UICONTROL Dataflow detail] -avsnittet har slutförts.](../../images/tutorials/map-csv-recommendations/dataflow-detail-complete.png)
 
 ## Markera data
 
 På **[!UICONTROL Select data]** använder du den vänstra kolumnen för att överföra din CSV-fil. Du kan välja **[!UICONTROL Choose files]** om du vill öppna en dialogruta för filutforskaren där du kan välja filen från, eller så kan du dra och släppa filen direkt i kolumnen.
 
-![The [!UICONTROL Choose files] och dra-och-släpp-områden som är markerade i [!UICONTROL Select data] steg](../../images/tutorials/map-csv-recommendations/upload-files.png)
+![The [!UICONTROL Choose files] och dra-och-släpp-områden som är markerade i [!UICONTROL Select data] steg.](../../images/tutorials/map-csv-recommendations/upload-files.png)
 
 När du har överfört filen visas ett exempeldataavsnitt som visar de första tio raderna i de mottagna data så att du kan kontrollera att de har överförts korrekt. Välj **[!UICONTROL Next]** för att fortsätta.
 
@@ -71,11 +70,11 @@ När du har överfört filen visas ett exempeldataavsnitt som visar de första t
 
 ML-modellerna körs för att generera ett nytt schema baserat på dataflödeskonfigurationen och den överförda CSV-filen. När processen är klar [!UICONTROL Mapping] fylls i för att visa mappningarna för varje enskilt fält tillsammans med den fullt navigerbara vyn av den genererade schemastrukturen.
 
-![The [!UICONTROL Mapping] i användargränssnittet, visa alla mappade CSV-fält och den resulterande schemastrukturen](../../images/tutorials/map-csv-recommendations/schema-generated.png)
+![The [!UICONTROL Mapping] i användargränssnittet, där alla mappade CSV-fält och den resulterande schemastrukturen visas.](../../images/tutorials/map-csv-recommendations/schema-generated.png)
 
 Här kan du välja att [redigera fältkopplingar](#edit-mappings) eller [ändra de fältgrupper som de är kopplade till](#edit-schema) efter era behov. När du är nöjd väljer du **[!UICONTROL Finish]** för att slutföra mappningen och initiera dataflödet som du konfigurerade tidigare. CSV-data hämtas in till systemet och fyller i en datauppsättning som baseras på den genererade schemastrukturen, klar att användas av plattformstjänster längre fram i kedjan.
 
-![The [!UICONTROL Finish] knapp väljs, CSV-mappningsprocessen slutförs](../../images/tutorials/map-csv-recommendations/finish-mapping.png)
+![The [!UICONTROL Finish] när du markerar knappen, slutför CSV-mappningsprocessen.](../../images/tutorials/map-csv-recommendations/finish-mapping.png)
 
 ### Redigera fältkopplingar {#edit-mappings}
 
@@ -85,11 +84,11 @@ Använd förhandsgranskningen av fältmappningen för att redigera befintliga ma
 
 CSV-fälten mappas automatiskt till befintliga XDM-fältgrupper med hjälp av ML-modeller. Om du vill ändra fältgruppen för ett visst CSV-fält väljer du **[!UICONTROL Edit]** bredvid schematrädet.
 
-![The [!UICONTROL Edit] knapp som markeras bredvid schematrädet](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
+![The [!UICONTROL Edit] knappen markeras bredvid schematrädet.](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
 
 En dialogruta visas där du kan redigera visningsnamn, datatyp och fältgrupp för alla fält i mappningen. Markera redigeringsikonen (![Ikonen Redigera](../../images/tutorials/map-csv-recommendations/edit-icon.png)) bredvid ett källfält för att redigera informationen i den högra kolumnen innan du väljer **[!UICONTROL Apply]**.
 
-![Rekommenderad fältgrupp för ett källfält som ändras](../../images/tutorials/map-csv-recommendations/select-schema-field.png)
+![Den rekommenderade fältgruppen för ett källfält som ändras.](../../images/tutorials/map-csv-recommendations/select-schema-field.png)
 
 När du är klar med justeringen av schemarekommendationerna för källfälten väljer du **[!UICONTROL Save]** för att tillämpa ändringarna.
 
