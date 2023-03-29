@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform mars 2023
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: c5061a759f1098ce1dcc7e3f00c52e064239d7c5
+source-git-commit: 38c3461f1d84fca83fd04eef57aae28de4744e17
 workflow-type: tm+mt
-source-wordcount: '716'
-ht-degree: 3%
+source-wordcount: '1065'
+ht-degree: 2%
 
 ---
 
@@ -16,6 +16,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Datainsamling](#data-collection)
 - [Dataförberedelse](#data-prep)
+- [Mål ](#destinations)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
@@ -45,6 +46,41 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 | Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>The `get_url_encoded` funktionen tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>The `get_url_decoded` funktionen tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i [Handbok för dataprefixfunktioner](../../data-prep/functions.md). En omfattande lista över reserverade tecken och motsvarande kodade tecken finns i guiden [specialtecken](../../data-prep/functions.md#special-characters). |
 
 Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya destinationer** {#new-destinations}
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [[!DNL Adobe Commerce] anslutning GA](../../destinations/catalog/personalization/adobe-commerce.md) | The [!DNL Adobe Commerce] målanslutning (nu allmänt tillgänglig) låter dig välja en eller flera Real-Time CDP-målgrupper att aktivera för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. |
+| [[!DNL Snap Inc] anslutning GA](../../destinations/catalog/advertising/snap-inc.md) | The [!DNL Snap Inc] destinationsanslutning (nu allmänt tillgänglig) tillåter marknadsförare att importera användarsegment som skapats i Experience Platform till [!DNL Snapchat Ads] och använda dem för att rikta in sina annonser. |
+| [(API) Oraclena Eloqua-anslutning](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) | Använd den API-baserade anslutningen för att [!DNL Oracle Eloqua] att planera och genomföra kampanjer samtidigt som ni levererar en personaliserad kundupplevelse för sina presumtiva kunder i [!DNL Oracle Eloqua]. |
+| [(Beta) [!DNL Amazon Ads] anslutning](../../destinations/catalog/advertising/amazon-ads.md) | The [!DNL Amazon Ads] integrering med Adobe Experience Platform ger nyckelfärdig integrering med [!DNL Amazon Ads] produkter, inklusive [!DNL Amazon DSP (ADSP)]. Använda [!DNL Amazon Ads] i Adobe Experience Platform kan man definiera målgrupper för annonser för målinriktning och aktivering på [!DNL Amazon DSP]. |
+| [[!DNL Marketo Measure Ultimate] anslutning](../../destinations/catalog/adobe/marketo-measure-ultimate.md) | [!DNL Marketo Measure] (tidigare Bizible) ger marknadsförarna insikt i vilka marknadsföringssatsningar som är mest effektiva när det gäller att öka intäkterna och maximera avkastningen på investeringen för deras företag. Målet möjliggör dataflöden från företag till företag (B2B) från Adobe Experience Platform till [!DNL Marketo Measure]. Kortet är bara tillgängligt för [!DNL Marketo Measure Ultimate] kunder. |
+| [TikTok-anslutning](../../destinations/catalog/social/tiktok.md) | Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. |
+| [Zendesk-anslutning](../../destinations/catalog/crm/zendesk.md) | Använd det här målet för att skapa och uppdatera identiteter inom ett segment som kontakter inom [!DNL Zendesk]. |
+
+{style="table-layout:auto"}
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Ny åtkomstkontrollbehörighet för mål: [[!DNL Activate Segments without Mapping]](../../access-control/home.md#permissions) | Den nya behörigheten ger användarna möjlighet att aktivera segment för befintliga destinationer, utan att visa [mappningssteg](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Användare kan lägga till och ta bort segment i aktiveringsarbetsflöden, men kan inte lägga till eller ta bort mappade attribut eller identiteter. |
+
+{style="table-layout:auto"}
+
+**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
+
+Vi släpper en felkorrigering för PGP/GPG-kryptering i filbaserade mål för CDP i realtid. Den här ändringen innebär att befintliga filbaserade mål som använder kryptering genererar ett filnamn med ett annat filtillägg än tidigare.
+
+- Aktuellt tillägg när kryptering används: `filename.csv`
+- Framtida tillägg när kryptering används: `filename.csv.gpg`
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
