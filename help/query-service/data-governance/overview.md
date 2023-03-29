@@ -2,9 +2,9 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
+source-git-commit: 54a6f508818016df1a4ab2a217bc0765b91df9e9
 workflow-type: tm+mt
-source-wordcount: '2659'
+source-wordcount: '2832'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ Med den här funktionen kan du ge åtkomsträttigheter för konfidentiella kolum
 
 När rätt åtkomstnivå har tillämpats med etiketter och roller inträffar följande systembeteende när en användare försöker få åtkomst till data som inte är tillgängliga:
 
-1. Om en användare har nekats åtkomst till en av kolumnerna i ett schema, nekas användaren även behörighet att läsa eller skriva i den begränsade kolumnen. Detta gäller följande vanliga scenarier:
+1. Om en användare har nekats åtkomst till en av kolumnerna i ett schema nekas användaren även behörighet att läsa eller skriva i den begränsade kolumnen. Detta gäller följande vanliga scenarier:
 
    * **Fall 1**: När en användare försöker köra en fråga som bara påverkar en begränsad kolumn, genereras ett fel om att kolumnen inte finns.
    * **Fall 2**: När en användare försöker köra en fråga med flera kolumner, inklusive en begränsad kolumn, returnerar systemet endast utdata för alla kolumner som inte är begränsade.
@@ -92,6 +92,16 @@ När rätt åtkomstnivå har tillämpats med etiketter och roller inträffar fö
 Med frågetjänsten kan du använda ANSI SQL av standardtyp för [`CREATE VIEW`](../sql/syntax.md#create-view) -programsatser. För mycket känsliga arbetsflöden med data måste du använda lämpliga kontroller när du skapar vyer.
 
 The `CREATE VIEW` nyckelordet definierar en vy av en fråga, men vyn materialiseras inte fysiskt. I stället körs frågan varje gång vyn refereras i en fråga. När en användare skapar en vy från en datauppsättning är de rollbaserade och attributbaserade åtkomstkontrollreglerna för den överordnade datauppsättningen **not** hierarkiskt tillämpad. Därför måste du uttryckligen ange behörigheter för var och en av kolumnerna när en vy skapas.
+
+#### Skapa fältbaserade åtkomstbegränsningar för accelererade datauppsättningar {#create-field-based-access-restrictions-on-accelerated-datasets}
+
+Med [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) kan du definiera användningsomfång för organisation eller data om fakta- och dimensionsdatauppsättningar i [accelererad butik](../data-distiller/query-accelerated-store/send-accelerated-queries.md). På så sätt kan administratörer hantera åtkomsten till specifika segment och bättre hantera åtkomsten för användare eller grupper av användare.
+
+Om du vill skapa fältbaserade åtkomstbegränsningar för accelererade datauppsättningar kan du använda Query Service CTAS-frågor för att skapa accelererade datauppsättningar och strukturera dessa datauppsättningar baserat på befintliga XDM-scheman eller ad hoc-scheman. Administratörer kan sedan [lägga till och redigera etiketter för dataanvändning för schemat](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) eller [ad hoc-schema](./ad-hoc-schema-labels.md#edit-governance-labels). Du kan använda, skapa och redigera etiketter i dina scheman från [!UICONTROL Labels] arbetsytan i [!UICONTROL Schemas] Gränssnitt.
+
+Dataanvändningsetiketter kan också [tillämpas eller redigeras direkt på datauppsättningen](../../data-governance/labels/user-guide.md#add-labels) via datauppsättningsgränssnittet, eller som skapats från åtkomstkontrollen [!UICONTROL Labels] arbetsyta. Se guiden om hur man [skapa en ny etikett](../../access-control/abac/ui/labels.md) för mer information.
+
+Användaråtkomst till enskilda kolumner kan sedan styras av de bifogade dataanvändningsetiketterna och de behörighetsgrupper som används för rollerna som är tilldelade användare.
 
 ### Anslutningar {#connectivity}
 
@@ -131,7 +141,7 @@ Se guiden för [SSL-alternativ för klientanslutningar från tredje part till fr
 
 Kryptering är användning av en algoritmisk process för att omvandla data till kodad och oläslig text för att säkerställa att informationen skyddas och inte är tillgänglig utan en dekrypteringsnyckel.
 
-Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med nycklar på systemnivå. Läs dokumentationen om [hur data krypteras i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/encryption.html) för mer information. Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med nycklar på systemnivå. Läs dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md) för mer information. Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
 <!-- Data-in-transit is always HTTPS compliant and similarly when the data is at rest in the data lake, the encryption is done with Customer Management Key (CMK), which is already supported by Data Lake Management. The currently supported version is TLS1.2. -->
 
@@ -195,7 +205,7 @@ Mer information om Privacy Service finns i dokumentationen [identitetsdata för 
 
 Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processen för kategorisering av data och efterlevnad av regler för dataanvändning. När data har identifierats kan du med Query Service tilldela den primära identiteten till alla utdatamängder. Du **måste** lägga till identiteter i datauppsättningen för att underlätta förfrågningar om datasekretess och arbeta för att uppfylla datakraven.
 
-Schemadatafält kan anges som ett identitetsfält via användargränssnittet för plattformen och frågetjänsten gör det även möjligt att [markera de primära identiteterna med SQL-kommandot&quot;ALTER TABLE&quot;](../sql/syntax.md#alter-table). Ställa in en identitet med `ALTER TABLE` Kommandot är särskilt användbart när datauppsättningar skapas med SQL i stället för direkt från ett schema via plattformsgränssnittet. I dokumentationen finns instruktioner om hur du [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
+Schemadatafält kan anges som ett identitetsfält via användargränssnittet för plattformen och frågetjänsten gör det även möjligt att [markera de primära identiteterna med SQL-kommandot ALTER TABLE](../sql/syntax.md#alter-table). Ställa in en identitet med `ALTER TABLE` Kommandot är särskilt användbart när datauppsättningar skapas med SQL i stället för direkt från ett schema via plattformsgränssnittet. I dokumentationen finns instruktioner om hur du [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
 <!-- COMMENTING OUT DATA HYGEINE SECTION TEMPORARILY UNTIL IT IS GA. currently it is in Beta only.
 
