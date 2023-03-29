@@ -2,14 +2,27 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 2b11fb87523c777d5c2d855e97a4af78a8483abe
+source-git-commit: f2f2f9abc50f2016e41fd23bfbb66553fadf6fce
 workflow-type: tm+mt
-source-wordcount: '495'
-ht-degree: 3%
+source-wordcount: '677'
+ht-degree: 2%
 
 ---
 
 # Versionsinformation om taggar och vidarebefordran av händelser
+
+## 29 mars 2023
+
+**Arbetsflöden för snabbstart (beta)**
+
+Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! Följande arbetsflöden är nu tillgängliga för kunder som betaversion.
+* **[Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start)**: Med Event Forwarding kan man snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar i några enkla steg.
+* **[Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)**: Kunderna kan snabbt implementera Mobile SDK och validera grundläggande mobilevent med bara några få enkla steg.
+
+Nya tillägg har släppts:
+
+* **[!DNL Braze]tillägg för händelsevidarebefordran**: The [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [!DNL Braze] API:er för användarspårning.
+* **[!DNL Mixpanel]tillägg för händelsevidarebefordran**: The [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårhändelser.
 
 ## 25 januari 2023
 
