@@ -2,10 +2,10 @@
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 0955646164269d868be5161a117c6e12dbd9a4cb
 workflow-type: tm+mt
-source-wordcount: '1565'
-ht-degree: 1%
+source-wordcount: '1654'
+ht-degree: 2%
 
 ---
 
@@ -14,6 +14,26 @@ ht-degree: 1%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## 29 mars 2023
+
+v3.4.1
+
+* Lägger till nya inbyggda delegathändelser för webben:
+   * Tangentnedtryckning
+   * KeyUp
+* Lägger till möjligheten att testa mot många värden (&quot;Lägg till ett annat&quot;-alternativ) mot följande delegater:
+   * Händelser
+      * Ändra
+   * Villkor
+      * Cookie
+      * Landningssida
+      * Frågesträngsparameter
+      * Trafikkälla
+      * Variabel
+* Ändrar events/EntersViewport-delegaten till att använda [API för observatör för skärningspunkt](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) i stället för att manuellt identifiera element som kommer in i visningsrutan.
+* Tar bort kod som migrerade DTM-cookies till LocalStorage.
+* Loggar en varning till konsolen när API:erna LocalStorage och SessionStorage inte är tillgängliga.
 
 ## 4 januari 2022
 
