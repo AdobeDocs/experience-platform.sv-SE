@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: 38c3461f1d84fca83fd04eef57aae28de4744e17
+source-git-commit: 74b609572b6e5e9b5e641fe497f53f3463b900c4
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1057'
 ht-degree: 2%
 
 ---
@@ -42,6 +42,7 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 | Funktion | Beskrivning |
 | --- | --- |
+| Allmän tillgång till filtrering av Adobe Analytics-data | Ni kan nu använda funktionerna för dataförberedelser för att tillämpa regler och villkor för att filtrera era era analysdata innan ni hämtar dem till kundprofilen i realtid. Mer information finns i guiden [filtrera analysdata för profilinmatning](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile). |
 | Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>The `get_url_encoded` funktionen tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>The `get_url_decoded` funktionen tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i [Handbok för dataprefixfunktioner](../../data-prep/functions.md). En omfattande lista över reserverade tecken och motsvarande kodade tecken finns i guiden [specialtecken](../../data-prep/functions.md#special-characters). |
 
 Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).

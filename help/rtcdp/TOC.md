@@ -4,7 +4,7 @@ solution: Real-time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: a36ec71cbec2316eaa08daf5f1edb36509271e7c
 workflow-type: tm+mt
 source-wordcount: '205'
 ht-degree: 28%
@@ -19,7 +19,7 @@ ht-degree: 28%
 * Komma igång {#intro}
    * Real-Time CDP {#rtcdp-intro}
       * [Kom igång med Real-Time CDP](get-started.md)
-      * [Översikt över mätvärden](home-page-dashboards.md)
+      * [Startsida](home-page-dashboards.md)
    * Real-Time CDP B2B-utgåva {#rtcdpb2b-intro}
       * [Exempel](./b2b-use-case.md)
       * [Heltäckande självstudiekurs](./b2b-tutorial.md)
