@@ -2,70 +2,77 @@
 keywords: Översikt över mätvärden. Översikt över rtcdp-mått
 title: Real-time Customer Data Platform hemsida och Dashboards
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
+badge: "Beta"
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: cc6d962e1c4a9afe1b608dfa06e9812b33dc7e6d
 workflow-type: tm+mt
-source-wordcount: '600'
-ht-degree: 3%
+source-wordcount: '795'
+ht-degree: 1%
 
 ---
 
-# [!DNL Real-Time Customer Data Platform] hemsida och kontrollpaneler
+# [!DNL Real-Time Customer Data Platform] hemsida
 
-Hemsidan för Adobe Real-time Customer Data Platform (Real-Time CDP), som innehåller en mätinstrumentpanel, visas när du loggar in på Real-Time CDP.
+>[!NOTE]
+>
+>The [!DNL Real-Time Customer Data Platform] startsidan är i betaversion. Dess funktioner och dokumentation kan komma att ändras.
 
-Hemsidan är bara en av platserna där metriska kort visas. Real-Time CDP tillhandahåller mätkort genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
+Hemsidan för Adobe Real-time Customer Data Platform (Real-Time CDP) är den första sida som visas när du har loggat in på Real-Time CDP.
 
-![bild](assets/home.png)
+Real-Time CDP hemsida innehåller en widget för att komma igång som gör att du snabbt kan komma åt flera olika funktioner och ett mätavsnitt som visar uppdaterad information om data i din organisation.
 
-Om det inte finns några data i systemet när du loggar in på Real-Time CDP visas inte instrumentpanelen på startsidan. I det här fallet innehåller startsidan utbildningsmaterial för en förstagångsupplevelse. Som data samlas in, med andra ord som <!--sources-->datauppsättningar, profiler, segment och mål skapas och dataflöden in i systemet - instrumentpanelen uppdateras automatiskt för att visa information om dessa data<!-- in metric cards-->.
+Det här dokumentet innehåller en översikt över Real-Time CDP hemsida och instrumentpanel för mätvärden.
 
-## Instrumentpanelsvy för hemsidan
+![Plattformsgränssnittets startsida.](assets/platform-home/home.png)
 
-<!--The dashboard shows information in several areas. Each category of information displays for the time range shown beneath the data.-->
+## Komma igång-widget
 
-Kontrollpanelen är uppdelad i<!-- two areas.-->:
+The [!UICONTROL Getting started with Real-Time Customer Profile] widgeten är uppdelad i fyra avsnitt:
 
-* **The leaderboard** visas längst upp på kontrollpanelen. I resultatlistan visas antalet datauppsättningar, profiler, segment och mål i systemet.
+* **Importera data till plattformen**: Den här widgeten dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Mer information finns i [källöversikt](../sources/home.md)
+* **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för scheman för att bläddra efter befintliga scheman eller skapa byggstenar som beskriver datastrukturen. Mer information finns i [scheman, översikt](../xdm/home.md).
+* **Segmentera målgrupper**: Den här widgeten dirigerar dig till [!DNL Segment Builder] i användargränssnittet. Använd [!DNL Segment Builder] för att interagera med profildataelement och definiera regler för era segment. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka segment till. Mer information finns i [destinationer, översikt](../destinations/home.md)
 
-   ![bild](assets/leaderboard.png)
+![Plattformsgränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
 
-<!-- * **Metric cards** display beneath the leaderboard. Metric cards show additional information, such as percentages or trends. Metric cards appear as data is collected.
-    ![image](assets/home-metrics.jpg)
-Some information is shown in different ways on both the leaderboard and metric cards. -->
-* **Senaste objekt** innehåller de fem senaste datauppsättningarna, källorna, segmenten och destinationerna som lagts till i systemet.
+## Kontrollpanel för mått
 
-   ![bild](assets/recent.png)
+Kontrollpanelen för mätvärden visar aktuell information om dina Experience Platform-data. Kontrollpanelen är uppdelad i två avsnitt:
 
-Ytterligare mätvärden - till exempel för profiler och segment - finns i andra delar av Real-time Customer Data Platform.
+### The leaderboard
 
-### Datauppsättningar
+På resultatlistan visas det aktuella totala antalet scheman, datamängder, profiler och segment i organisationen samt deras senaste uppdateringsdatum.
 
-The **[!UICONTROL Datasets]** räknaren visar antalet datauppsättningar i systemet och mängden data i [!DNL Platform]. Den här räknaren uppdateras när en datauppsättning skapas.
+![Ledpanelens avsnitt på startsidan för plattformsgränssnittet.](assets/platform-home/leaderboard.png)
 
-Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
+* **Totalt antal scheman**: The **Totalt antal scheman** räknaren visar antalet scheman i systemet. Räknaren uppdateras när ett schema skapas. Mer information finns i [scheman, översikt](../xdm/home.md).
+* **Totalt antal datauppsättningar**: The **Totalt antal datauppsättningar** räknaren visar antalet datauppsättningar i systemet och mängden data i [!DNL Platform]. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
+* **Totalt antal profiler**: The **Profiler** antal visar det totala antalet personer med profiler i [!DNL Real-Time Customer Profile]. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) enligt konfigurationen för sammanfogningsprincipen i Unified Profile. Antalet profiler uppdateras en gång var 24:e timme. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
+* **Totalt antal segment**: **Segment** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-### Profiler
+### Senaste objekt
 
-The **[!UICONTROL Profiles]** antal visar det totala antalet personer med profiler i [!DNL Real-Time Customer Profile]. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
+Senaste objekt listar de senaste ändringarna i organisationen. I exemplet nedan gäller de senaste ändringarna datamängder, källor, segment och mål.
 
-Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) enligt konfigurationen för sammanfogningsprincipen i Unified Profile.
+![Avsnittet med de senaste objekten på startsidan för plattformsgränssnittet.](assets/platform-home/recent-items.png)
 
-Antalet profiler uppdateras en gång var 24:e timme.
+* **Senaste datauppsättningar**: The **[!UICONTROL Recent datasets]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas. Välj en datauppsättning om du vill visa information om objektet eller markera **[!UICONTROL View all]** för en lista med datauppsättningar. Därifrån kan du välja en specifik källa för information. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
+* **Senaste källor**: The **[!UICONTROL Recent sources]** med ett metriskt kort visas de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas. Välj en källa för att visa information om objektet eller välj **[!UICONTROL View all]** för en lista över källor. Därifrån kan du välja en specifik källa för information. Mer information om källor finns i [Översikt över källor](../sources/home.md).
+* **Senaste segment**: The **[!UICONTROL Recent segments]** med ett metriskt kort visas de fem senaste segmenten som har skapats inom organisationen. Listan uppdateras när ett nytt segment skapas. Välj ett segment om du vill visa information om objektet eller markera **[!UICONTROL View all]** för en lista med segment. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Senaste destinationer**: The **[!UICONTROL Recent destinations]** med ett metriskt kort visas de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas. Välj ett mål om du vill visa information om det objektet eller välj **[!UICONTROL View all]** för en lista över destinationer. Mer information finns i [destinationer, översikt](../destinations/home.md).
 
-Mer information om profiler finns i [En enhetlig bild av era kunder i Real-Time CDP](profile/profile-overview.md).
+## Resurser
 
-### Segment
+Resurswidgeten innehåller ytterligare dokumentationsresurser som du kan referera till. Bland dessa finns:
 
-**[!UICONTROL Segments]** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas.
+![Resursavsnittet på startsidan för användargränssnittet för plattformen.](assets/platform-home/resources.png)
 
-Mer information om segment finns i [Översikt över segmenteringstjänsten](segmentation/segmentation-overview.md).
-
-### Mål 
-
-**[!UICONTROL Destinations]** visar det totala antalet destinationer som skapats för organisationen. Numret uppdateras när nya mål skapas.
-
-Mer information om destinationer finns i [Översikt över destinationer](destinations/overview.md).
+* [Scheman](../xdm/schema/composition.md)
+* [Koppla samman källor](../sources/home.md)
+* [Så här fyller du i kundprofilen i realtid](../profile/home.md)
+* [Koppla mål](../destinations/home.md)
+* [Hantera åtkomst](../access-control/abac/overview.md)
 
 <!-- ### Successful profile records
 
@@ -100,35 +107,3 @@ In the leaderboard, **[!UICONTROL Failed profile records]** counts the number of
 The **[!UICONTROL Failed profile records]** metric card shows this count, and includes a graphical representation that helps you see how failures have trended during the time shown below the graphic. This chart is updated hourly. Select **[!UICONTROL View datasets]** to see more details about the profile records.
 
 The number of failed profile records is updated hourly. -->
-
-### Senaste datauppsättningar
-
-The **[!UICONTROL Recent datasets]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas.
-
-Välj en datauppsättning för att visa information om objektet, eller **[!UICONTROL View all]** för att se en lista över datauppsättningar. Därifrån kan du välja en specifik källa för information.
-
-Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
-
-### Senaste källor
-
-The **[!UICONTROL Recent sources]** med ett metriskt kort visas de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas.
-
-Välj en källa för att visa information om objektet, eller **[!UICONTROL View all]** för att se en lista över källor. Därifrån kan du välja en specifik källa för information.
-
-Mer information om källor finns i [Översikt över källor](sources/sources-overview.md).
-
-### Senaste segment
-
-The **[!UICONTROL Recent segments]** med ett metriskt kort visas de fem senaste segmenten som har skapats inom organisationen. Listan uppdateras när ett nytt segment skapas.
-
-Markera ett segment om du vill visa information om det objektet, eller **[!UICONTROL View all]** om du vill ha information om fler segment.
-
-Mer information om segment finns i [Översikt över segmenteringstjänsten](segmentation/segmentation-overview.md).
-
-### Senaste destinationer
-
-The **[!UICONTROL Recent destinations]** med ett metriskt kort visas de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas.
-
-Välj ett mål om du vill visa information om det objektet, eller **[!UICONTROL View all]** för att se information om fler destinationer.
-
-Mer information om destinationer finns i [Översikt över destinationer](destinations/overview.md).

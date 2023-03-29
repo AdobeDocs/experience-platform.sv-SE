@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: fd82f109b8af665540e2ff30e92c6546ef9f3d2c
+source-git-commit: 9d6a4b5f60f7895e2c1833493926db147064f3f1
 workflow-type: tm+mt
 source-wordcount: '1292'
 ht-degree: 0%
@@ -140,13 +140,12 @@ Experience Platform har stöd för inmatning av data från ditt lokala system. M
 Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md)
+- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md)
 - [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md)
 - [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
 - [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md)
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
-
 <!-- 
-- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md)
 - [[!DNL Oracle Responsys]](connectors/marketing-automation/oracle-responsys.md)
 -->
 
