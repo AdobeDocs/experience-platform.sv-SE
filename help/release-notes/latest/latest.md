@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: 2a7ff5d56ccc1a0b4c86018936d139f2e6d46cd6
+source-git-commit: c5061a759f1098ce1dcc7e3f00c52e064239d7c5
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '663'
 ht-degree: 3%
 
 ---
@@ -53,7 +53,7 @@ Mer information om Data Prep finns i [Översikt över datapreflight](../../data-
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Profilmått | För att ni ska få en mer korrekt återgivning av profilmätvärden kombineras uppdelning efter medlemskap och omsättningsstatistik och beräknas nu över en 24-timmarsperiod. Mer information finns i [Användargränssnittsguide för segmentering](../../segmentation/ui/overview.md) |
+| Profilmått | För att ni ska få en mer korrekt återgivning av profilmätvärden kombineras uppdelning efter medlemskap och omsättningsstatistik och beräknas nu över en 24-timmarsperiod. Mer information finns i [Användargränssnittsguide för segmentering](../../segmentation/ui/overview.md#browse) |
 
 {style="table-layout:auto"}
 

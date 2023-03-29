@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 11a4bb90b5d88f86ac14d702a213f56432a30c24
 workflow-type: tm+mt
-source-wordcount: '2566'
+source-wordcount: '2605'
 ht-degree: 0%
 
 ---
@@ -67,17 +67,15 @@ Välj **[!UICONTROL Browse]** om du vill visa en lista med alla segmentdefinitio
 
 I den här vyn visas information om segmentdefinitionen, inklusive antal profiler, datum när de skapades och senaste ändringsdatum.
 
-Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/overview/filter-attribute.png). Dessa ytterligare fält innehåller information om fördelning, urn, utvärderingsmetod och jobb-ID.
+Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/overview/filter-attribute.png). Dessa ytterligare fält innehåller information om fördelning, utvärderingsmetod och jobb-ID.
 
-Om du väljer nedbrytning visas ett stolpdiagram som visar procentandelen profiler som tillhör följande lägen: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
+Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande beräknade profilstatusar: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
 
 | Status | Beskrivning |
 | ------ | ----------- |
-| Realiserad | En ny profil inom segmentet. |
-| Befintlig | En befintlig profil som finns kvar inom segmentet. |
-| Avslutar | En befintlig profil som lämnar segmentet. |
-
-Kurvan anger hur många procent av profilerna som ändras inom en segmentdefinition jämfört med den senaste gången segmentjobbet kördes, medan antalet profiler representerar det totala antalet profiler som kvalificerar sig för segmentet.
+| Realiserad | Antal profiler som är kvalificerade för segmentet de senaste 24 timmarna. Det innebär antalet profiler som är kvalificerade för segmentet sedan det senaste jobbet för gruppsegmentering kördes. |
+| Befintlig | Antal profiler som har varit kvalificerade för segmentet de senaste 24 timmarna. Det innebär att antalet profiler som har varit kvalificerade för segmentet sedan den senaste gången batchsegmentjobbet kördes. |
+| Avslutar | Antalet profiler som har avslutat segmentet de senaste 24 timmarna. Så antalet profiler som inte längre är kvalificerade för segmentet sedan den senaste gången batchsegmentjobbet kördes. |
 
 Utvärderingsmetoden kan antingen vara direktuppspelning, batch eller kant. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema. Kantsegment utvärderas i realtid, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
