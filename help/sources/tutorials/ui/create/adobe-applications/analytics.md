@@ -5,9 +5,9 @@ title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 3530c91cd36e9e2729515827978e6115857f2405
+source-git-commit: 9c2ede973aa4348f15362ba80fdcd7a231577909
 workflow-type: tm+mt
-source-wordcount: '2255'
+source-wordcount: '2230'
 ht-degree: 0%
 
 ---
@@ -159,16 +159,12 @@ I följande dokumentation finns mer information om dataprep, beräkningsfält oc
 * [Funktioner för datapersonmappning](../../../../../data-prep/functions.md)
 * [Lägg till beräknade fält](../../../../../data-prep/ui/mapping.md#calculated-fields)
 
-### Filtrera efter kundprofil i realtid (beta) {#filtering-for-profile}
+### Filtrera efter kundprofil i realtid {#filtering-for-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_data_prep_analytics_filtering"
 >title="Skapa filterregler"
 >abstract="Definiera filtreringsregler på rad- och kolumnnivå när du skickar data till kundprofilen i realtid. Använd filtrering på radnivå för att tillämpa villkor och ange vilka data som ska **inkludera för profilinmatning**. Använd filtrering på kolumnnivå för att markera de datakolumner som du vill använda **exkludera för profilinmatning**. Filtreringsreglerna gäller inte för data som skickas till datasjön."
-
->[!IMPORTANT]
->
->Stöd för filtrering [!DNL Analytics] data finns för närvarande i betaversion och är inte tillgängliga för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 När du är klar med mappningarna för [!DNL Analytics] kan ni använda filtreringsregler och filtreringsvillkor för att selektivt inkludera eller exkludera data från konsumtion i realtidskundprofilen. Stöd för filtrering finns endast för [!DNL Analytics] data och data filtreras endast innan de anges [!DNL Profile.] Alla data hämtas in i sjön.
 
