@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 840ad16b3762afee0b36bdd93c5be566c5a29b18
+source-git-commit: 10edb5dfd9ce99b69cf5bb014f4903942c9bff3e
 workflow-type: tm+mt
-source-wordcount: '952'
+source-wordcount: '963'
 ht-degree: 8%
 
 ---
@@ -352,6 +352,9 @@ ht-degree: 8%
       - [Dokumentera källan (Streaming SDK)](sources-sdk/streaming/document-streaming.md)
       - [Mall för självbetjäning-API-direktuppspelning för dokumentation](sources-sdk/streaming/streaming-template-api.md)
       - [Mall för självbetjäningsströmning av dokumentation](sources-sdk/streaming/streaming-template-ui.md)
+- Felmeddelanden {#errors}
+   - [Felmeddelanden i källor](./errors/sources-errors.md)
+   - [Felmeddelanden i Flow Service](./errors/flow-service-errors.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Frågor och svar](./troubleshooting.md)
