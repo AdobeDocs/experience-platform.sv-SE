@@ -4,9 +4,9 @@ description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Learn how to configure the Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: ed39d782ba6991a00a31b48abb9d143e15e6d89e
+source-git-commit: a192a746fa227b658fcdb8caa07ea6fb4ac1a944
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1128'
 ht-degree: 3%
 
 ---
@@ -36,21 +36,21 @@ Det finns många alternativ som kan anges under konfigurationen. Alla alternativ
 >
 >**Edge Configurations har omprofilerats till Datastreams. Ett datastream-ID är samma som ett konfigurations-ID.**
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | Ingen |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration. När du konfigurerar flera instanser på en sida måste du konfigurera ett `edgeConfigId` för varje instans.
 
 ### `context` {#context}
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| **Typ** | Obligatoriskt | **Standardvärde** |
 | ---------------- | ------------ | -------------------------------------------------- |
 | Array med strängar | Nej | `["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivningen i [Automatisk information](../data-collection/automatic-information.md). Om den här konfigurationen inte anges används alla kategorier som standard.
 
@@ -67,11 +67,11 @@ Om du till exempel vill hämta klienttips för hög entropi från webbegenskaper
 
 ### `debugEnabled`
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `false` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Anger om felsökning är aktiverat. Konfigurationen anges till `true` har följande funktioner:
 
@@ -79,7 +79,7 @@ Anger om felsökning är aktiverat. Konfigurationen anges till `true` har följa
 | ---------------------- | ------------------ |
 | Konsolloggning | Gör att felsökningsmeddelanden kan visas i webbläsarens JavaScript-konsol |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `edgeDomain` {#edge-domain}
 
@@ -91,19 +91,19 @@ Domänen liknar `data.{customerdomain.com}` på www.{customerdomain.com}.
 
 Sökväg efter den edgeDomain som används för att kommunicera och interagera med Adobes tjänster.  Detta ändras ofta bara om du inte använder standardproduktionsmiljön.
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Sträng | Nej | ee |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `orgId`
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | Ingen |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Ditt uppdrag [!DNL Experience Cloud] organisations-ID. När du konfigurerar flera instanser på en sida måste du konfigurera en annan `orgId` för varje instans.
 
@@ -111,33 +111,52 @@ Ditt uppdrag [!DNL Experience Cloud] organisations-ID. När du konfigurerar fler
 
 ### `clickCollectionEnabled` {#clickCollectionEnabled}
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Anger om data som är associerade med länkklick samlas in automatiskt. Se [Automatisk länkspårning](../data-collection/track-links.md#automaticLinkTracking) för mer information. Länkarna kallas också för nedladdningslänkar om de innehåller ett nedladdningsattribut eller om länken avslutas med ett filtillägg. Hämtningslänkkvalificerare kan konfigureras med ett reguljärt uttryck. Standardvärdet är `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
 
 ### `onBeforeEventSend`
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 |  -funktion | Nej | () => odefinierad |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Konfigurera ett återanrop som anropas för varje händelse precis innan den skickas. Ett objekt med fältet `xdm` skickas in till återanropet. Om du vill ändra vad som skickas ändrar du `xdm` -objekt. Inuti återanropet finns `xdm` -objektet har redan data som skickas i händelsekommandot och den automatiskt insamlade informationen. Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
+
+### `onBeforeLinkClickSend` {#onBeforeLinkClickSend}
+
+| Typ | Obligatoriskt | Standardvärde |
+| -------- | ------------ | ----------------- |
+|  -funktion | Nej | () => odefinierad |
+
+{style="table-layout:auto"}
+
+Konfigurera ett återanrop som anropas för varje länkklickningshändelse precis innan det skickas. Callback-funktionen skickar ett objekt med `xdm`, `clickedElement`och `data` fält.
+
+När du filtrerar länkspårningen med hjälp av DOM-elementstrukturen kan du använda `clickElement` -kommando. `clickedElement` är DOM-elementnoden som du klickade på och som har kapslat in det överordnade nodträdet.
+
+Om du vill ändra vilka data som skickas ändrar du `xdm` och/eller `data` objekt. Inuti återanropet finns `xdm` -objektet har redan data som skickas i händelsekommandot och den automatiskt insamlade informationen.
+
+* Alla andra värden än `false` gör att händelsen kan bearbetas och att återanropet kan skickas.
+* Om återanropet returnerar `false` värde, händelsebearbetning stoppas, utan fel och händelsen skickas inte. Den här funktionen gör att vissa händelser kan filtreras bort genom att händelsedata undersöks och returneras `false` om händelsen inte ska skickas.
+* Om återanropet genererar ett undantag stoppas bearbetningen för händelsen och händelsen skickas inte.
+
 
 ## Sekretessalternativ
 
 ### `defaultConsent` {#default-consent}
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Objekt | Nej | `"in"` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Anger användarens standardsamtycke. Använd den här inställningen när ingen inställning för samtycke redan har sparats för användaren. De andra giltiga värdena är `"pending"` och `"out"`. Det här standardvärdet sparas inte i användarens profil. Användarprofilen uppdateras bara när `setConsent` anropas.
 * `"in"`: När den här inställningen är inställd eller inget värde anges fortsätter arbetet utan användarens samtycke.
@@ -149,11 +168,11 @@ När användarens inställningar har angetts fortsätter arbetet eller avbryts b
 
 ### `prehidingStyle` {#prehidingStyle}
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Sträng | Nej | Ingen |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Används för att skapa en CSS-formatdefinition som döljer innehållsområden på webbsidan när anpassat innehåll läses in från servern. Om det här alternativet inte anges försöker SDK inte dölja några innehållsområden när anpassat innehåll läses in, vilket kan leda till&quot;flimmer&quot;.
 
@@ -169,7 +188,7 @@ Det här alternativet bör användas när du migrerar enskilda sidor från [!DNL
 
 Använd det här alternativet om du vill att Web SDK ska kunna läsa och skriva det äldre `mbox` och `mboxEdgeCluster` cookies som används av [!DNL at.js]. Detta hjälper dig att behålla besökarprofilen när du flyttar från en sida där Web SDK används till en sida där [!DNL at.js] bibliotek och vice versa.
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `false` |
 
@@ -177,21 +196,21 @@ Använd det här alternativet om du vill att Web SDK ska kunna läsa och skriva 
 
 ### `cookieDestinationsEnabled`
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Aktiverar [!DNL Audience Manager] cookie-destinationer, som gör det möjligt att ställa in cookies baserat på segmentkvalificering.
 
 ### `urlDestinationsEnabled`
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Aktiverar [!DNL Audience Manager] URL-destinationer, som gör det möjligt att bränna URL:er baserat på segmentkvalificering.
 
@@ -199,11 +218,11 @@ Aktiverar [!DNL Audience Manager] URL-destinationer, som gör det möjligt att b
 
 ### `idMigrationEnabled` {#id-migration-enabled}
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Om true läser SDK in gamla AMCV-cookies. Med det här alternativet kan du gå över till Adobe Experience Platform Web SDK medan Visitor.js fortfarande används i vissa delar av webbplatsen.
 
@@ -211,10 +230,10 @@ Om Visitor API är definierat på sidan frågar SDK om Visitor API för ECID. Me
 
 ### `thirdPartyCookiesEnabled`
 
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Aktiverar inställningen av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på olika platser. Använd det här alternativet om du har flera webbplatser eller om du vill dela data med partners. Men ibland är det här alternativet inte önskvärt av sekretesskäl.

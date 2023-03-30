@@ -3,9 +3,9 @@ title: Spåra länkar med Adobe Experience Platform Web SDK
 description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 exl-id: d5a1804c-8f91-4083-a46e-ea8f7edf36b6
-source-git-commit: dac14cd358922b577c71f8d9b7f7c9b7e1b4f87d
+source-git-commit: 04078a53bc6bdc01d8bfe0f2e262a28bbaf542da
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,8 @@ alloy("sendEvent", {
   }
 });
 ```
+
+Från och med version 2.15.0 hämtar Web SDK `region` för det klickade elementet HTML. Detta aktiverar [Activity Map](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) rapportfunktioner i Adobe Analytics.
 
 Länktypen kan vara ett av tre värden:
 
@@ -90,3 +92,23 @@ alloy("configure", {
 });
 ```
 
+Från och med Web SDK version 2.15.0 kan data som samlas in med automatisk länkspårning inspekteras, utökas eller filtreras genom att en [callback-funktionen onBeforeLinkClickSend](../fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend).
+
+Den här återanropsfunktionen körs bara när en automatisk länkklickningshändelse inträffar.
+
+```javascript
+alloy("configure", {
+  onBeforeLinkClickSend: function(options) {
+    if (options.xdm.web.webInteraction.type === "download") {
+      options.xdm.web.webInteraction.name = undefined;
+    }
+  }
+});
+```
+
+När länkspårningshändelser filtreras med `onBeforeLinkClickSend` kommando, Adobe rekommenderar att du returnerar `false` för länkklickningar som inte ska spåras. Alla andra svar får Web SDK att skicka data till Edge Network.
+
+
+>[!NOTE]
+>
+>** När båda `onBeforeEventSend` och `onBeforeLinkClickSend` återanropsfunktionerna är inställda, så kör Web SDK `onBeforeLinkClickSend` callback-funktionen för att filtrera och utöka interaktionshändelsen för länkklickning, följt av `onBeforeEventSend` callback-funktion.
