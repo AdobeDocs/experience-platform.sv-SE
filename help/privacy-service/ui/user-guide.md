@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 21347074ed6160511888d4b543133dfd1ec4d35c
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -15,8 +15,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_description"
->title="Beskrivning"
->abstract=""
+>title="Följa förfrågningar om integritetsskydd för registrerade"
+>abstract="<h2>Beskrivning</h2><p>Med Adobe Experience Platform Privacy Service kan ni skapa och hantera sekretessförfrågningar för kunder som vill få tillgång till eller ta bort sina personuppgifter i enlighet med juridiska sekretessbestämmelser.</p>"
 
 Det här dokumentet innehåller steg för att skapa och hantera sekretessförfrågningar med [!DNL Privacy Service] användargränssnitt.
 
@@ -109,7 +109,7 @@ Om du vill hämta alla jobbdata som en CSV-fil väljer du **[!UICONTROL Export t
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="Instruktioner"
->abstract=""
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Begäranden</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. Välj <b>Överför JSON</b> och ladda upp filen. Om du inte har någon JSON-fil att överföra väljer du <b>Ladda ned Adobe-GDPR-Request.json</b> om du vill hämta en mall som du kan fylla i. Överför JSON och välj <b>Skapa</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html">Användarhandbok för Privacy Service</a> på Experience League.</li></ul>"
 
 >[!NOTE]
 >

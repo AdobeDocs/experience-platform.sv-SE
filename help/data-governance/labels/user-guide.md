@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1462'
 ht-degree: 0%
 
 ---
@@ -15,8 +15,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_description"
->title="Beskrivning"
->abstract=""
+>title="Styrd dataanvändning i plattformen"
+>abstract="<h2>Beskrivning</h2><p>Med ramverket för datastyrning i Experience Platform kan ni märka attribut och datauppsättningar enligt dataanvändningsbegränsningar och skapa policyer som identifierar och följer dessa begränsningar för specifika marknadsföringsåtgärder.</p>"
 
 Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnitt.
 
@@ -87,7 +87,7 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"
 >title="Instruktioner"
->abstract=""
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html">Datauppsättningar</a> i den vänstra navigeringen markerar du den datauppsättning vars data du vill begränsa.</li><li>I vyn med datauppsättningsinformation väljer du <b>Datastyrning</b> -fliken.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att märka data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen väljer du <b>Skapa princip</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Datastyrningspolicy</a>markerar du de dataanvändningsetiketter som profilen ska använda för profilen.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ul>"
 
 >[!IMPORTANT]
 >

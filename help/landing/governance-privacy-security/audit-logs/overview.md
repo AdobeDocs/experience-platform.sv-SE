@@ -2,9 +2,9 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 658cd7ec2d88d4b3633412f5c6d571351904e70b
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1135'
 ht-degree: 3%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 3%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_audits_description"
 >title="Övervaka användaraktiviteter på plattformen"
->abstract="<h2>Beskrivning</h2><p>Du kan övervaka användaraktivitet för olika plattformstjänster och funktioner i form av granskningsloggar. Dessa loggar utgör ett granskningsspår som registrerar <b>som</b> utförd <b>vad</b> åtgärd och <b>när</b>. Granskningsloggar kan hjälpa till med felsökningsproblem på plattformen och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.</p><h2>Instruktioner</h2><ul><li>Välj <b>Granskningar</b> i den vänstra navigeringen. På arbetsytan Granskningar visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.</li>   <li> OBS! Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver titta tillbaka på data som är äldre än 365 dagar bör du exportera loggar med en regelbunden gräns för att uppfylla dina interna policykrav. </li><li>Välj en händelse i listan om du vill visa information om händelsen i den högra listen. </li><li>Markera trattsymbolen om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1 000 sista posterna visas, oavsett vilket filter du har valt. </li><li>Om du vill exportera den aktuella listan med granskningsloggar väljer du **Hämtningslogg**.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html">granskningsloggar - översikt</a> på Experience League.</li></ul>"
+>abstract="<h2>Beskrivning</h2><p>Du kan övervaka användaraktivitet för olika plattformstjänster och funktioner i form av granskningsloggar. Dessa loggar utgör ett granskningsspår som registrerar <b>som</b> utförd <b>vad</b> åtgärd och <b>när</b>. Granskningsloggar kan hjälpa till med felsökningsproblem på plattformen och hjälpa ert företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.</p>"
 
 För att öka insynen i och synligheten i de aktiviteter som utförs i systemet kan du med Adobe Experience Platform granska användaraktiviteter för olika tjänster och funktioner i form av &quot;granskningsloggar&quot;. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem på plattformen och hjälpa ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.
 
@@ -72,10 +72,10 @@ För att kunna visa och exportera granskningsloggar måste du ha **[!UICONTROL V
 
 ## Hantera granskningsloggar i användargränssnittet {#managing-audit-logs-in-the-ui}
 
-[!CONTEXTUALHELP]
-id="platform_privacyConsole_audits_instructions"
-title="Instruktioner"
-abstract=""
+>[!CONTEXTUALHELP]
+>id="platform_privacyConsole_audits_instructions"
+>title="Instruktioner"
+>abstract="<ul><li>Välj <b>Granskningar</b> i den vänstra navigeringen. På arbetsytan Granskningar visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.</li>   <li> OBS! Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver titta tillbaka på data som är äldre än 365 dagar bör du exportera loggar med en regelbunden gräns för att uppfylla dina interna policykrav. </li><li>Välj en händelse i listan om du vill visa information om händelsen i den högra listen. </li><li>Markera trattsymbolen om du vill visa en lista med filterkontroller för att begränsa resultatet. Endast de 1 000 sista posterna visas, oavsett vilket filter du har valt. </li><li>Om du vill exportera den aktuella listan med granskningsloggar väljer du **Hämtningslogg**.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/audit-logs/overview.html">granskningsloggar - översikt</a> på Experience League.</li></ul>"
 
 Du kan visa granskningsloggar för olika Experience Platform-funktioner i **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
 

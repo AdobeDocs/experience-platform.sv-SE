@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över dataanvändningsetiketter
 description: Läs om hur dataanvändningsetiketter används för att säkerställa regelefterlevnad för datastyrning i Adobe Experience Platform.
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-source-git-commit: e539b1e165227d9a888bfe12d8205e285b3ce259
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
@@ -15,8 +15,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_description"
->title="Beskrivning"
->abstract=""
+>title="Styr åtkomsten till känsliga och skyddade data"
+>abstract="<h2>Beskrivning</h2><p>Styr åtkomsten till specifika dataattribut och/eller segment, så att ni kan utforma flexibla arbetsflöden för de olika personer och team som arbetar med Experience Platform.</p>"
 
 Med Adobe Experience Platform kan du använda dataanvändningsetiketter på datauppsättningar och fält och kategorisera dem efter relaterade [datastyrningsprinciper](../policies/overview.md) och [åtkomstkontrollprinciper](../../access-control/abac/ui/policies.md).
 
@@ -51,7 +51,7 @@ Om du vill ha en referens om hur specifika dataexportkontroller mappas till data
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsageLabels_instructions"
 >title="Instruktioner"
->abstract=""
+>abstract="<ul><li>Ge XDM-fält och -segment etiketter för att klassificera de fält och/eller segment som du vill begränsa åtkomsten till.</li><li>Etikettroller: om du lägger till etiketter i en roll kan du definiera etiketterna som medlemmar i den här rollen ska ha begränsningar för.</li><li>Skapa profiler, en profil skapar en relation mellan etiketterna för etiketterade objekt som XDM-fält och segment och etiketterna för roller. Om etiketterna matchar varandra kan antingen ett tillstånd eller en begränsad åtkomst definieras.</li></ul>"
 
 Du kan hantera dataanvändningsetiketter med [!DNL Experience Platform] API:er eller användargränssnittet. Mer information om respektive avsnitt finns i underavsnitten nedan.
 

@@ -2,9 +2,9 @@
 title: Hantera förfallodatum för datauppsättning
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 2913e9e687843e566db4ebf2031e610d1891d4c9
+source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -13,8 +13,8 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_description"
->title="Beskrivning"
->abstract=""
+>title="Ta bort oönskade eller utgångna kundposter och datauppsättningar"
+>abstract="<h2>Beskrivning</h2><p>Om du vill hantera livscykeln för dina Experience Platform-data som inte har att göra med efterlevnad av gällande bestämmelser, kan du ta bort konsumentposter och schemalägga förfallodatum för datauppsättningar. Om du vill skapa eller hantera förfrågningar från registrerade personer kan du läsa fallblocket&quot;Hedra in data subject privacy requests&quot;.</p>"
 
 >[!IMPORTANT]
 >
@@ -33,7 +33,7 @@ Det här dokumentet beskriver hur du schemalägger och hanterar förfallodatum f
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_instructions"
 >title="Instruktioner"
->abstract=""
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/overview.html">Datahygien</a> i den vänstra navigeringen väljer du <b>Skapa förfrågan</b>.</li><li>Om du vill ta bort poster:</li>   <li>Välj <b>Post</b>.</li>   <li>Välj en specifik datauppsättning att ta bort poster från eller välj alternativet att ta bort dem från alla datauppsättningar.</li>   <li>Ange identiteten på de konsumenter vars register ska raderas. Välj <b>Lägg till identitet</b> för att tillhandahålla identiteterna en i taget eller välja <b>Välj filer</b> för att i stället överföra en JSON-fil med identiteter.</li>   <li>Välj <b>Mall</b> för att visa det förväntade formatet för JSON-filen.</li><li>Instruktioner finns i dokumentationen om du vill <a href="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/dataset-expiration.html#schedule-dataset-expiration">schemats förfallodatum för datauppsättningar</a>.</li></ul>"
 
 Om du vill skapa en ny begäran väljer du **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
 
@@ -54,8 +54,7 @@ Nästa, under **[!UICONTROL Dataset Details]**, markerar du databasikonen (![Bil
 ![Bild som visar vilken datauppsättning som väljs](../images/ui/ttl/select-dataset.png)
 
 >[!NOTE]
->
->Endast datauppsättningar som tillhör den aktuella sandlådan visas.
+Endast datauppsättningar som tillhör den aktuella sandlådan visas.
 
 ### Skicka begäran
 
@@ -68,8 +67,7 @@ Du ombeds bekräfta datumet då datauppsättningen ska tas bort senast. Välj **
 När begäran har skickats skapas en arbetsorder och visas på huvudfliken i [!UICONTROL Data Hygiene] arbetsyta. Härifrån kan du övervaka arbetsorderns status medan den bearbetar begäran.
 
 >[!NOTE]
->
->Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#dataset-expiration-transparency) om du vill ha information om hur datauppsättningens förfallodatum behandlas när de har körts.
+Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#dataset-expiration-transparency) om du vill ha information om hur datauppsättningens förfallodatum behandlas när de har körts.
 
 ## Redigera eller avbryta en förfallotid för en datauppsättning
 
