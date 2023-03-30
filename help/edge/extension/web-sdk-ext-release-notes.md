@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5ec1ede39489ce48fc20739030884ec3811a8426
+source-git-commit: 2b8307422e4f073451c23ae9b35061d845f0893c
 workflow-type: tm+mt
-source-wordcount: '1525'
+source-wordcount: '1588'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,20 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.16.0 - 30 mars 2023
+
+**Nya funktioner**
+
+* (Beta) Tillagd **[!UICONTROL Update variable]** åtgärd och **[!UICONTROL Variable]** dataelement.
+* Tillagd konfiguration för [`onBeforeLinkClickSend`](../fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) callback-funktion.
+
+**Korrigeringar och förbättringar**
+
+* Korrigerat ett problem som medförde att klickning på element i en ankartagg inte fungerade när **[!UICONTROL Redirect with identity]** åtgärden användes.
+* Korrigerade ett problem där XDM-objektdataelement inte fungerade när det bara fanns ett schema.
+* Innehåller version 2.15.0 av Adobe Experience Platform Web SDK.
+
 
 ## Version 2.15.1 - 26 januari 2023
 
