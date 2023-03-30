@@ -1,10 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform mars 2023
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: 74b609572b6e5e9b5e641fe497f53f3463b900c4
+source-git-commit: 582305583aa5869d8cc29f871aeb3fa0ef0b6ab1
 workflow-type: tm+mt
-source-wordcount: '1110'
-ht-degree: 2%
+source-wordcount: '1723'
+ht-degree: 3%
 
 ---
 
@@ -14,11 +14,29 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
 - [Dataförberedelse](#data-prep)
 - [Mål ](#destinations)
+- [Experience Data Model](#xdm)
+- [Frågetjänst](#query-service)
+- [Real-Time Customer Data Platform B2B-utgåva](#b2b)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## Kontrollpaneler {#dashboards}
+
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+
+**Nya eller uppdaterade funktioner** {#dashboards-new-updated-features}
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Användardefinierade kontrollpaneler | Nu kan du **samplingsattributvärden** innan du lägger till ett attribut i en widget i den användardefinierade widgetdispositionen för instrumentpaneler. Ett fåtal exempelvärden från den attributkolumnen är tillgängliga för enskilda attribut när du skapar en widget.<br>Nu kan du **byta X- och Y-axel** på widgeten med utbytesaxelknappen. Detta sparar tid och ger en mer ergonomisk upplevelse när du lägger till attribut i widgetar. Den här sparningen måste hitta båda attributen igen från attributpanelen.<br> Nu kan du **ändra förklaringens placering och rubrik** i widgetarna. När det finns en teckenförklaring på en widget kan du flytta den var som helst runt diagrammet och även ge den ett nytt namn, som du kan med axeletiketter och widgetens rubrik. |
+
+{style="table-layout:auto"}
+
+Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
@@ -82,6 +100,48 @@ Vi släpper en felkorrigering för PGP/GPG-kryptering i filbaserade mål för CD
 - Framtida tillägg när kryptering används: `filename.csv.gpg`
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| CSV till schemarapport | Du kan nu överföra dina lokala filer för att skapa scheman som genereras av maskininlärning och som eliminerar behovet av att skapa ett schema manuellt. Från [!UICONTROL Sources] arbetsyta, ladda upp en CSV-exempelfil och Adobe maskininlärningsalgoritmer föreslår ett schema åt dig baserat på målfälten. Se [dokumentation](../../ingestion/tutorials/map-csv/recommendations.md) för mer information.&quot; |
+
+{style="table-layout:auto"}
+
+Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+
+## Frågetjänst {#query-service}
+
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan ansluta alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att matas in i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Attributbaserad åtkomstkontroll i det accelererade arkivet | Använd attributbaserad åtkomstkontroll med Data Distiller för att definiera åtkomstkontroll för alla datauppsättningar i det accelererade arkivet. Detta styr åtkomsten till anpassade datamodeller som skapats av användare och lagrats på en accelererad butik för att styra anpassade instrumentpaneler. |
+
+{style="table-layout:auto"}
+
+Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
+
+## Real-Time Customer Data Platform B2B-utgåva {#b2b}
+
+Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Bugfix | För att profilerna ska återges mer korrekt i systemet, inkluderar systemet inte längre interna profiler i det totala antalet profiler eller adresserbara målgruppsmått för Real-time Customer Data Platform B2B Edition. Från och med idag kan du se en engångsminskning av det totala antalet profiler/adresserbara målgruppsmått. Inga data har raderats, det här är bara en ändring av antalet. Kontakta din Adobe-chef om du har några frågor |
+
+{style="table-layout:auto"}
+
+Läs mer om Real-Time CDP B2B Edition i [Real-Time CDP B2B Edition - översikt](../../rtcdp/overview.md).
 
 ## Segmenteringstjänst {#segmentation}
 
