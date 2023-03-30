@@ -1,18 +1,18 @@
 ---
 title: Fuzzy Match in Query Service
 description: Lär dig hur du utför en matchning av plattformsdata som kombinerar resultat från flera datauppsättningar genom att i princip matcha en valfri sträng.
-source-git-commit: a3a4ca4179610348eba73cf1239861265d2bf887
+source-git-commit: 633210fe5e824d8686a23b877a406db3780ebdd4
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# Fuzzy match
+# Fuzzy match i Query Service
 
-Använd en &#39;luddig&#39; matchning på plattformsdata för att returnera de mest troliga, ungefärliga matchningarna utan att behöva söka efter strängar med identiska tecken. Detta gör att du kan söka efter data på ett mycket flexiblare sätt och gör dina data mer tillgängliga genom att spara tid och arbete.
+Använd en &#39;luddig&#39; matchning på dina Adobe Experience Platform-data för att returnera de mest troliga, ungefärliga matchningarna utan att behöva söka efter strängar med identiska tecken. Detta gör att du kan söka efter data på ett mycket flexiblare sätt och gör dina data mer tillgängliga genom att spara tid och arbete.
 
-I stället för att försöka formatera om söksträngarna för att matcha dem analyserar den oskarpa matchningen förhållandet mellan två sekvenser och returnerar procentandelen likhet. [!DNL FuzzyWuzzy] rekommenderas för den här processen eftersom dess funktioner passar bättre för att matcha strängar i mer komplexa situationer jämfört med [!DNL regex] eller [!DNL difflib].
+I stället för att försöka formatera om söksträngarna för att matcha dem analyserar den oskarpa matchningen förhållandet mellan två sekvenser och returnerar procentandelen likhet. [[!DNL FuzzyWuzzy]](https://pypi.org/project/fuzzywuzzy/) rekommenderas för den här processen eftersom dess funktioner passar bättre för att matcha strängar i mer komplexa situationer jämfört med [!DNL regex] eller [!DNL difflib].
 
 Exemplet i det här fallet fokuserar på matchning av liknande attribut från en hotellrumssökning mellan två olika data från resebyråer. Dokumentet visar hur strängar ska matchas genom deras likhet från stora separata datakällor. I det här exemplet jämförs sökresultaten med ett rum från resebyråerna Luma och Acme.
 
@@ -20,7 +20,7 @@ Exemplet i det här fallet fokuserar på matchning av liknande attribut från en
 
 Som en del av den här processen kräver att du utbildar en maskininlärningsmodell, vilket krävs i det här dokumentet för att du ska kunna lära dig en eller flera maskininlärningsmiljöer.
 
-Det här exemplet använder [!DNL Python] och [!DNL Jupyter Notebook] utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Det kan vara [hämtat från den officiella Jupyter-webbplatsen](https://jupyter.org/).
+Det här exemplet använder [!DNL Python] och [!DNL Jupyter Notebook] utvecklingsmiljö. Det finns många alternativ, men [!DNL Jupyter Notebook] rekommenderas eftersom det är ett webbprogram med öppen källkod som har låga datorkrav. Den kan hämtas från [den officiella Jupyter-webbplatsen](https://jupyter.org/).
 
 Innan du börjar måste du importera de nödvändiga biblioteken. [!DNL FuzzyWuzzy] är en öppen källkod [!DNL Python] bibliotek som är byggt ovanpå [!DNL difflib] bibliotek och används för att matcha strängar. Den använder [!DNL Levenshtein Distance] för att beräkna skillnaderna mellan sekvenser och mönster. [!DNL FuzzyWuzzy] har följande krav:
 
@@ -43,7 +43,7 @@ Mer teknisk information om [!DNL Fuzzywuzzy] finns i deras [officiell dokumentat
 
 ### Anslut till frågetjänst
 
-Du måste ansluta din maskininlärningsmodell till frågetjänsten genom att ange dina anslutningsreferenser. Du kan ange både utgångsdatum och icke-utgångsdatum. Se [inloggningsguide](../ui/credentials.md) om du vill ha mer information om hur du hämtar nödvändiga inloggningsuppgifter. Om du använder [!DNL Jupyter Notebook], se hela guiden för [hur du ansluter till frågetjänsten](../clients/jupyter-notebook.md).
+Du måste ansluta din maskininlärningsmodell till frågetjänsten genom att ange dina anslutningsreferenser. Du kan ange både utgångsdatum och icke-utgångsdatum. Se [inloggningsguide](../ui/credentials.md) om du vill ha mer information om hur du hämtar nödvändiga inloggningsuppgifter. Om du använder [!DNL Jupyter Notebook], läs hela guiden på [hur du ansluter till frågetjänsten](../clients/jupyter-notebook.md).
 
 Se även till att importera [!DNL numpy] i [!DNL Python] miljö för linjär algebra.
 
