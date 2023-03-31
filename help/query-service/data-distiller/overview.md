@@ -1,7 +1,7 @@
 ---
 title: Data Distiller Overview
 description: En sammanfattning av användningsgränserna för Data Distiller för Query Service-data i relation till ditt licensieringsberättigande.
-source-git-commit: ae4ecd43071a198592193a1a598a064cdc6be2f6
+source-git-commit: c7e753e54f087ee45daabb9094edeb51e54271fc
 workflow-type: tm+mt
 source-wordcount: '154'
 ht-degree: 0%
@@ -14,7 +14,7 @@ Data Distiller är ett paket som innehåller en deluppsättning av funktionerna 
 
 ## Licensanvändning {#license-usage}
 
-The  [Kontrollpanel för användning av Distiller-licenser](./license-usage.md) är tillgängligt när du har köpt databearbetningstimmar för Distiller. Kontrollpanelen för licensanvändning hjälper dig att övervaka förbrukningen av berättigade beräkningstimmar. Se [Användningsdokument för Distiller-licenser](./license-usage.md) om du vill visa viktig information om hur din organisations Query Service-licens används.
+The [Kontrollpanel för användning av Distiller-licenser](./license-usage.md) är tillgängligt när du har köpt databearbetningstimmar för Distiller. Kontrollpanelen för licensanvändning hjälper dig att övervaka förbrukningen av berättigade beräkningstimmar. Se [Användningsdokument för Distiller-licenser](./license-usage.md) om du vill visa viktig information om hur din organisations Query Service-licens används.
 
 <!-- Update these descriptions post 23.3 release
 ## Scoping parameters {#scoping-parameters}
