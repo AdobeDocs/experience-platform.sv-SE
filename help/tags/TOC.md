@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 83ac7ba5bcdb0b0f728b42c709eef11b25fb3cef
+source-git-commit: 95a56982d38bd1e2c72dd84e2fa48b9de659741f
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '968'
 ht-degree: 14%
 
 ---
@@ -216,6 +216,7 @@ ht-degree: 14%
       * [Cloud Connector för Google Analytics](https://exchange.adobe.com/apps/ec/106542)
       * Core {#core}
          * [Översikt](./extensions/server/core/overview.md)
+      * [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)
       * Google Ads Enhanced Conversions {#google-ads-enhanced-conversions}
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
       * [!DNL Mailchimp] Edge {#mailchimp}

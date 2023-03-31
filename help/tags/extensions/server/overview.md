@@ -2,9 +2,9 @@
 title: Referens för tillägg för händelsevidarebefordran
 description: Hitta dokumentation för tillägg för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: fbdfbe4be6e3b1e5ad212a4e5ebd3551cec3a89a
+source-git-commit: 30ac89d9af3e1d69c464650879d239a8c3edb525
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '163'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,14 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 
 * [Adobe Experience Platform Cloud Connector](./cloud-connector/overview.md)
 * [[!DNL AWS]](./aws/overview.md)
+* [[!DNL Braze]](./braze/overview.md)
 * [Core](./core/overview.md)
+* [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)*
 * [Facebook Conversion API](https://exchange.adobe.com/apps/ec/105509)
 * [Google Ads Enhanced Conversions](./google-ads-enhanced-conversions/overview.md)
 * [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
+* [[!DNL Mixpanel]](./mixpanel/overview.md)
 * [Pega Customer Decision Hub](https://exchange.adobe.com/apps/ec/107597)*
 * [API för fäst konvertering](https://exchange.adobe.com/apps/ec/108550)*
 * [[!DNL Splunk]](./splunk/overview.md)
