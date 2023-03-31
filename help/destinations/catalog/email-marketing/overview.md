@@ -2,12 +2,12 @@
 keywords: e-post;E-post;e-post;e-postadresser
 title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
+description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer. Lär dig vilka ESP:er som stöds som Experience Platform-mål.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: ccbc633bfce8f4f66577b50064c28cfc26cb6dca
+source-git-commit: d6ea94b275ab0ed7c0638200188fe7ada7bacf5c
 workflow-type: tm+mt
-source-wordcount: '388'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -17,16 +17,17 @@ ht-degree: 2%
 
 Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföring.
 
-Plattformen exporterar era segment som `.csv` och levererar dem till den plats du önskar. Schemalägg dataimporten i e-postmarknadsföringsplattformen från lagringsplatsen som är aktiverad i [!DNL Platform]. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
-
 ## E-postmarknadsföringsmål som stöds {#supported-destinations}
 
 Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
 
 * [Adobe Campaign](adobe-campaign.md)
-* [Oracle Eloqua](oracle-eloqua.md)
+* [Adobe Campaign Managed Cloud Services](adobe-campaign-managed-services.md)
+* [(API) Oracle Eloqua](oracle-eloqua-api.md)
+* [(API) Salesforce Marketing Cloud](salesforce-marketing-cloud-exact-target.md)
+* [(Filer) Oraclet Eloqua](oracle-eloqua.md)
+* [(Filer) Salesforce Marketing Cloud](salesforce-marketing-cloud.md)
 * [Oraclets svar](oracle-responsys.md)
-* [Salesforce Marketing Cloud](salesforce-marketing-cloud.md)
 * [SendGrid](sendgrid.md)
 
 ## Anslut till ett nytt mål för e-postmarknadsföring {#connect-destination}
@@ -45,7 +46,9 @@ Adobe rekommenderar att du väljer en unik identifierare från [union](../../../
 | Telefon | `mobilePhone.number` |
 | Förmånsprogram-ID | `Customer-defined XDM field` |
 
-### Andra målattribut
+{style="table-layout:auto"}
+
+### Andra målattribut {#other-destination-attributes}
 
 Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. Några rekommenderade alternativ är:
 
@@ -60,20 +63,17 @@ Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. N�
 | Födelsedag | `person.birthDayAndMonth` |
 | Segmentmedlemskap | `segmentMembership.status` |
 
-## Importera data från lagringsplatsen till målet {#import-data-into-destination}
-
-Läs de enskilda målartiklarna för e-postmarknadsföring och lär dig hur du importerar data från din lagringsplats till destinationer:
-
-* [Adobe Campaign](adobe-campaign.md)
-* [Oracle Eloqua](oracle-eloqua.md)
-* [Oraclets svar](oracle-responsys.md)
-* [Salesforce Marketing Cloud](salesforce-marketing-cloud.md)
+{style="table-layout:auto"}
 
 ## Aktivera segment för e-postmarknadsföringsmål {#activate}
 
-Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md).
+Vissa e-postmarknadsföringsmål i katalogexportprofilerna på ett direktuppspelat sätt, via en API-integrering med målet.
 
-## Ytterligare resurser
+Andra mål exporterar filer till en molnlagringsplats. När exporten är klar måste du importera data från molnlagringsplatsen till ditt e-postmarknadsföringsmål.
+
+Följ länkarna i [e-postmarknadsföringsmål som stöds](#supported-destinations) om du vill veta hur du aktiverar segment för varje e-postmarknadsföringsmål.
+
+## Ytterligare resurser {#additional-resources}
 
 * [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md)
 * [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](../../api/connect-activate-batch-destinations.md)
