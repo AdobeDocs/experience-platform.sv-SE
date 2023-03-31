@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: d5d69134627b1a162691bda95732d989bd6e3469
+source-git-commit: 879f3eb1f6856470e8e2d87537ca12438ca25d22
 workflow-type: tm+mt
-source-wordcount: '1284'
+source-wordcount: '1292'
 ht-degree: 0%
 
 ---
@@ -123,13 +123,15 @@ Tabellen nedan visar de parametrar som vanligtvis krävs för att ansluta till e
 >När du ansluter till en värd med autentiseringsuppgifter som inte upphör att gälla, är det fortfarande nödvändigt att använda alla parametrar som anges i [!UICONTROL EXPIRING CREDENTIALS] utom för lösenordet och användarnamnet.
 >Formatet för att ange ditt användarnamn och lösenord använder kolonavgränsade värden som visas i det här exemplet `username:{your_username}` och `password:{password_string}`.
 
-| Parameter | Beskrivning |
-|---|---|
-| **Server/värd** | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och har formen av `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> |
-| **Port** | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och finns under **[!UICONTROL Port]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. Ett exempelvärde för porten skulle vara `80`.</ul></li> |
-| **Databas** | Databasen som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum för inloggningsuppgifter och finns under **[!UICONTROL Database]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. Ett exempelvärde för databasen skulle vara `prod:all`.</ul></li> |
-| **Användarnamn** | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum. Det tar formen av en alfanumerisk sträng före `@AdobeOrg`. Detta värde finns under **[!UICONTROL Username]**.</li></ul> |
-| **Lösenord** | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** inom [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> |
+| Parameter | Beskrivning | Exempel |
+|---|---|---|
+| **Server/värd** | Namnet på den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och har formen av `server.adobe.io`. Värdet finns under **[!UICONTROL Host]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> | `acme.platform.adobe.io` |
+| **Port** | Porten för den server/värd som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum och finns under **[!UICONTROL Port]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</ul></li> | `80` |
+| **Databas** | Databasen som du ansluter till. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum för inloggningsuppgifter och finns under **[!UICONTROL Database]** i [!UICONTROL EXPIRING CREDENTIALS] -avsnitt. </ul></li> | `prod:all` |
+| **Användarnamn** | Användarnamnet för användaren som ansluter till den externa klienten. <ul><li>Det här värdet används både för utgångsdatum och icke-utgångsdatum. Det tar formen av en alfanumerisk sträng före `@AdobeOrg`. Detta värde finns under **[!UICONTROL Username]**.</li></ul> | `ECBB80245ECFC73E8A095EC9@AdobeOrg` |
+| **Lösenord** | Lösenordet för den användare som ansluter till den externa klienten. <ul><li>Om du använder inloggningsuppgifter som förfaller finns dessa under **[!UICONTROL Password]** inom [!UICONTROL EXPIRING CREDENTIALS] -avsnitt.</li><li>Om du använder inloggningsuppgifter som inte upphör att gälla är det här värdet de sammanfogade argumenten från technicalAccountID och inloggningsuppgifterna från JSON-konfigurationsfilen. Lösenordsvärdet har följande format: `{technicalAccountId}:{credential}`.</li></ul> | <ul><li>Ett lösenord för att ange förfallodatum är längre än tusen alfanumeriska tecken. Inget exempel kommer att ges.</li><li>Ett lösenord som inte förfaller är följande:`4F2611B8613DK3670V495N55:3d182fa9e0b54f33a7881305c06203ee`</li></ul> |
+
+{style="table-layout:auto"}
 
 ## Nästa steg
 
