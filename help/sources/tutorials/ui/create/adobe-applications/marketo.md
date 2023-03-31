@@ -2,9 +2,9 @@
 title: Skapa en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en källanslutning och ett dataflöde i Marketo Engage i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: d049a29d4c39fa41917e8da1dde530966f4cbaf4
+source-git-commit: b271d28677543f773fe1ba471fc08574e7c5542b
 workflow-type: tm+mt
-source-wordcount: '1486'
+source-wordcount: '1625'
 ht-degree: 0%
 
 ---
@@ -183,3 +183,24 @@ Genom att följa den här självstudiekursen har du skapat ett dataflöde som du
 
 * [[!DNL Real-Time Customer Profile] översikt](/help/profile/home.md)
 * [[!DNL Data Science Workspace] översikt](/help/data-science-workspace/home.md)
+
+## Bilaga {#appendix}
+
+Följande avsnitt innehåller ytterligare riktlinjer som du kan följa när du använder [!DNL Marketo] källa.
+
+### Felmeddelanden i användargränssnittet {#error-messages}
+
+Följande felmeddelanden visas i användargränssnittet när Platform upptäcker problem med konfigurationen:
+
+#### [!DNL Munchkin ID] är inte mappad till rätt organisation
+
+Autentisering nekas om din [!DNL Munchkin ID] är inte mappad till den plattformsorganisation som du använder. Konfigurera mappningen mellan [!DNL Munchkin ID] och din organisation med [[!DNL Marketo] gränssnitt](https://app-sjint.marketo.com/#MM0A1).
+
+![Ett felmeddelande som visar att Marketo-instansen inte är korrekt mappad till organisationen Adobe.](../../../../images/tutorials/create/marketo/munchkin-not-mapped.png)
+
+#### Primär identitet saknas
+
+Ett dataflöde kan inte sparas och importeras om en primär identitet saknas. Se till att [en primär identitet finns i XDM-schemat](../../../../../xdm/tutorials/create-schema-ui.md)innan du försöker konfigurera ett dataflöde.
+
+![Ett felmeddelande som visar att den primära identiteten saknas i XDM-schemat.](../../../../images/tutorials/create/marketo/no-primary-identity.png)
+
