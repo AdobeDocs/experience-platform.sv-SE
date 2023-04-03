@@ -1,0 +1,79 @@
+---
+title: Vyn Valideringsredigerare
+description: Den här vägledningen innehåller information om valideringsredigeringsvyn i Adobe Experience Platform Assurance.
+source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
+workflow-type: tm+mt
+source-wordcount: '519'
+ht-degree: 3%
+
+---
+
+
+# Vyn Valideringsredigerare
+
+Med valideringsredigeraren kan du snabbt och enkelt hantera JavaScript-funktioner för att validera händelser i en Adobe Experience Platform Assurance-session. Varje funktion tar emot händelserna i en Assurance-session. Du kan skriva funktioner för att validera klientens konfiguration, händelseförhållanden, tester och användningsfall.
+
+## Kom igång med valideringsredigeraren
+
+Efter [ställa in Assurance](../tutorials/implement-assurance.md), på **[!UICONTROL Home]** visa, välja **[!UICONTROL Validation Editor]**.
+
+![Validation-Editor-Screen-Shot](https://user-images.githubusercontent.com/6597105/198680074-f548a646-6f2f-4a65-82fd-0f1687d869bf.png)
+
+## Skriva en valideringsfunktion
+
+Med den här funktionen kan du skapa, redigera eller ta bort valideringsfunktioner för dina Adobe Experience Platform Assurance-sessioner.
+
+1. Välj **[!UICONTROL Create a New Validation]**.
+2. Ange **name** för att identifiera valideringen, och sedan tillhandahålla en **kategori** och **description**.
+3. Redigera koden i redigeraren för att validera händelserna för din Assurance-session.
+
+När funktionstesterna är klara väljer du **[!UICONTROL Publish]** för att spara valideringen.
+
+### Händelsedefinition
+
+| Nyckel | Typ | Beskrivning |
+| :--- | :--- | :--- |
+| `uuid` | Sträng | Universellt unik identifierare för händelsen. |
+| `timestamp` | Siffra | Tidsstämpel från klienten när händelsen skickades till Assurance. |
+| `eventNumber` | Siffra | Används för att beställa när händelsen skickades. Den här nyckeln är användbar när händelser har samma tidsstämpel. |
+| `vendor` | Sträng | Sträng för leverantörsidentifiering i det omvända domännamnsformatet (t.ex. com.adobe.assertill). |
+| `type` | Sträng | Används för att ange händelsetyp. |
+| `payload` | Objekt | Definierar data för händelsen och innehåller unika och gemensamma egenskaper. Vissa vanliga egenskaper innehåller `ACPExtensionEventSource` och `ACPExtensionEventType`. |
+| `annotations` | Array | En array med anteckningsobjekt. |
+
+### Anteckningsdefinition
+
+| Nyckel | Typ | Beskrivning |
+| :--- | :--- | :--- |
+| `uuid` | Sträng | Universellt unik identifierare för anteckningen. |
+| `type` | Sträng | Används för att ange anteckningstypen och är vanligtvis namnet på plugin-programmet (till exempel analytics). |
+| `payload` | Objekt | Definierar de data som ska komplettera händelsen. För Adobe Analytics är det här de efterbearbetade träffdata finns. |
+
+### Valideringsresultat
+
+Valideringsfunktionen förväntas returnera ett objekt som innehåller följande:
+
+| Nyckel | Typ | Beskrivning |
+| :--- | :--- | :--- |
+| `message` | Sträng | Valideringsmeddelandet som ska visas i sammanfattningsresultatet. |
+| `events` | Array | En array med händelsehjälpmedel som ska rapporteras som matchade eller inte matchade. |
+| `links` | Array | En array med `ValidationResultLink` objekt till referensdokumentation och andra resurser `{( type: 'doc'|'product', url: String )}` |
+| `result` | Sträng | Detta är valideringsresultatet och förväntas vara en av de uppräknade strängarna: &quot;matched&quot;, &quot;not matched&quot;, &quot;unknown&quot; |
+
+## Visa valideringsresultat
+
+Resultatet av funktionen visas i resultatavsnittet nedanför kodredigeraren. Om valideringsresultatet är `unknown` eller `not matched` och `events` arrayen har en eller flera `uuids`, markeras händelserna på tidslinjen med följande färger:
+
+* Grön - matchad
+* Orange - okänd
+* Röd - inte matchad
+
+![Timeling-Validation-Highlights-Screen-Shot](https://user-images.githubusercontent.com/6597105/198681412-93d10a5a-3212-4e85-850a-aeaf5caf0521.png)
+
+## Felsökning
+
+Du kan lägga till `console.log()` i din funktion för att skriva ut objekt till utvecklarkonsolen. Du kan också använda egenskapen message för resultatobjektet för att felsöka meddelanden på resultatpanelen.
+
+Om ett fel inträffar i JavaScript-kodredigeraren visas felstatus tillsammans med orsaken.
+
+Mer information om valideringar finns på [Adobe Experience Platform Assurance-valideringar](https://github.com/adobe/griffon-validation-plugins) GitHub. Här finns exempel på valideringar som ägs av Adobe. Se [wiki](https://github.com/adobe/griffon-validation-plugins/wiki) om du vill ha mer detaljerade beskrivningar av valideringar.
