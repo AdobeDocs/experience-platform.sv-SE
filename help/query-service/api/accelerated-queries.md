@@ -2,9 +2,9 @@
 title: Slutpunkt för accelererade frågor
 description: Lär dig hur du får åtkomst till frågeflödat arkiv på ett tillståndslöst sätt för att snabbt returnera resultat baserat på aggregerade data. Det här dokumentet innehåller ett exempel på HTTP-begäran och svar för frågetjänstens accelererade frågeslutpunkt.
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '566'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,11 @@ Innan du fortsätter med den här handboken bör du kontrollera att du har läst
 
 ## Komma igång
 
-Data Distiller SKU krävs för att använda det frågeaccelererade arkivet. Se [packning](../packages.md), [skyddsräcken](../guardrails.md#query-accelerated-store)och [licensiering](../data-distiller/license-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att använda det frågeaccelererade arkivet. Se [packning](../packages.md) och [skyddsräcken](../guardrails.md#query-accelerated-store) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+
+<!-- Document is hidden temporarily
+Please see the [packaging](../packages.md), [guardrails](../guardrails.md#query-accelerated-store), and [licensing](../data-distiller/license-usage.md) documentation that relates to the Data Distiller SKU. 
+-->
 
 I följande avsnitt beskrivs de API-anrop som krävs för att komma åt det frågeaccelererade arkivet på ett tillståndslöst sätt via API:t för frågetjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
