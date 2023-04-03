@@ -2,9 +2,9 @@
 title: Hantera behörigheter för Privacy Service
 description: Lär dig hur du hanterar användarbehörigheter för Adobe Experience Platform Privacy Service med Adobe Admin Console.
 exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
-source-git-commit: 37a67b19fa0cb38e9e34066c869dd9dc49edefd6
+source-git-commit: fc6c22ab1185b9692ece86de75149102ce020474
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '1019'
 ht-degree: 1%
 
 ---
@@ -34,6 +34,10 @@ I den här handboken förutsätts det att du är bekant med grundläggande produ
 ## Tillgängliga behörigheter
 
 I följande tabell visas de tillgängliga behörigheterna för Privacy Service med beskrivningar av de specifika funktioner som de ger åtkomst till:
+
+>[!NOTE]
+>
+>All Privacy Service och [!UICONTROL Opt Out of Sale] behörigheter är åtskilda och åtskilda från varandra utan funktionell överlappning. Detta är möjligt eftersom Privacy Service-API:t betraktas som ideellt.
 
 | Kategori | Behörighet | Beskrivning |
 | --- | --- | --- |
