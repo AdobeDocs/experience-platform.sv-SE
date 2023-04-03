@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättig
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 9a8e247784dc51d7dc667b7467042399df700b3c
+source-git-commit: 252ca6c62b6b95e3a01211c15d7361146dee5116
 workflow-type: tm+mt
-source-wordcount: '2134'
+source-wordcount: '2130'
 ht-degree: 1%
 
 ---
@@ -20,9 +20,9 @@ I det här dokumentet beskrivs de bästa sätten att följa och de verktyg du ka
 
 ## Förstå Adobe Experience Platform datalagring
 
-Experience Platform består huvudsakligen av två datalager: den [!DNL Data Lake] och profilarkivet.
+Experience Platform består huvudsakligen av två datalager: den [!DNL data lake] och profilarkivet.
 
-The **[!DNL Data Lake]** främst har följande syften:
+The **[!DNL data lake]** främst har följande syften:
 
 * fungerar som mellanlagringsområde för information om introduktion på Experience Platform,
 * fungerar som långsiktig datalagring för alla data från Experience Platform,
@@ -35,7 +35,7 @@ The **Profilarkiv** är där kundprofiler skapas och i första hand har följand
 
 >[!NOTE]
 >
->Din åtkomst till [!DNL Data Lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er finns hos Adobe.
+>Din åtkomst till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er finns hos Adobe.
 
 ## Licensanvändning {#license-usage}
 
@@ -47,8 +47,8 @@ När du licensierar Experience Platform får du licensanvändningsrättigheter s
 
 The [!DNL Profile Richness] mätvärdena varierar beroende på vilken licens du har köpt. Det finns två beräkningar för [!DNL Profile Richness] tillgänglig:
 
-* Summan av alla produktionsdata som lagras i Adobe Real-time Customer Data Platform (dvs. profiltjänsten och identitetstjänsten) vid valfri tidpunkt, dividerat med [!DNL Addressable Audience];
-* Summan av alla data som lagras inom plattformen (inklusive, men inte begränsat till, [!DNL Data Lake], profiltjänst och identitetstjänst) när som helst och alla data som du direktuppspelar via (i stället för att lagra inom) plattformen under de senaste 12 månaderna, dividerat med [!DNL Addressable Audience].
+* Summan av alla produktionsdata som lagras i Adobe Real-time Customer Data Platform (dvs. kundprofil och identitetstjänst i realtid) vid varje tidpunkt, dividerat med [!DNL Addressable Audience];
+* Summan av alla data som lagras inom plattformen (inklusive, men inte begränsat till, [!DNL data lake], kundprofil i realtid och identitetstjänst) när som helst och alla data som du direktuppspelar via (i stället för att lagra i) Platform under de senaste 12 månaderna, dividerat med [!DNL Addressable Audience].
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt.
 
@@ -80,11 +80,11 @@ Det finns två centrala scenarier att tänka på när du ser till att din dataan
 
 ### Vilka data ska tas med i plattformen?
 
-Data kan inhämtas till ett eller flera system i plattformen, nämligen [!DNL Data Lake] och/eller profilarkivet. Det innebär att det kan finnas olika data i båda systemen för olika användningsområden. Du kanske vill lagra historiska data i [!DNL Data Lake], men inte i profilarkivet. Du kan välja vilka data som ska skickas till profilarkivet genom att aktivera en datauppsättning för profilinmatning.
+Data kan inhämtas till ett eller flera system i plattformen, nämligen [!DNL data lake] och/eller profilarkivet. Det innebär att det kan finnas olika data i båda systemen för olika användningsområden. Du kanske vill lagra historiska data i [!DNL data lake], men inte i profilarkivet. Du kan välja vilka data som ska skickas till profilarkivet genom att aktivera en datauppsättning för profilinmatning.
 
 >[!NOTE]
 >
->Din åtkomst till [!DNL Data Lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er finns hos Adobe.
+>Din åtkomst till [!DNL data lake] kan bero på vilken produkt-SKU du har köpt. Mer information om SKU:er finns hos Adobe.
 
 ### Vilka data ska sparas?
 
@@ -101,26 +101,26 @@ Injektionsfilter gör att du bara kan hämta in de data som behövs för dina an
 
 | Intag, filter | Beskrivning |
 | --- | --- |
-| Adobe Audience Manager källfiltrering | När du skapar en Adobe Audience Manager-källanslutning kan du välja vilka segment och egenskaper som ska ingå i [!DNL Data Lake] och Profile Service, i stället för att bara importera Audience Manager data i sin helhet. Se guiden [skapa en Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) för mer information. |
-| Adobe Analytics Data Prep | Du kan använda [!DNL Data Prep] funktioner när du skapar en anslutning till en Analytics-källa för att filtrera bort data som inte behövs för dina användningsfall. Via [!DNL Data Prep]kan du definiera vilka attribut/kolumner som ska publiceras till Profil. Du kan också ange villkorssatser för att informera plattformen om data förväntas publiceras till Profil, eller bara till [!DNL Data Lake]. Se guiden [skapa en anslutning till en Analytics-källa](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för mer information. |
-| Stöd för att aktivera/inaktivera datauppsättningar för profil | Om du vill importera data till profiltjänsten måste du aktivera en datauppsättning för användning i profilarkivet. Om du gör det läggs till [!DNL Addressable Audience] och [!DNL Profile Richness] rättigheter. När en datauppsättning inte längre behövs för att använda kundprofiler kan du inaktivera datauppsättningens integrering till Profil för att säkerställa att dina data fortfarande är licenskompatibla. Se guiden [aktivera och inaktivera datauppsättningar för profil](../../catalog/datasets/enable-for-profile.md) för mer information. |
+| Adobe Audience Manager källfiltrering | När du skapar en Adobe Audience Manager-källanslutning kan du välja vilka segment och egenskaper som ska ingå i [!DNL data lake] och Kundprofil i realtid, i stället för att hämta in alla data från Audience Manager. Se guiden [skapa en Audience Manager-källanslutning](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) för mer information. |
+| Adobe Analytics Data Prep | Du kan använda [!DNL Data Prep] funktioner när du skapar en anslutning till en Analytics-källa för att filtrera bort data som inte behövs för dina användningsfall. Via [!DNL Data Prep]kan du definiera vilka attribut/kolumner som ska publiceras till Profil. Du kan också ange villkorssatser för att informera plattformen om data förväntas publiceras till Profil, eller bara till [!DNL data lake]. Se guiden [skapa en anslutning till en Analytics-källa](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för mer information. |
+| Stöd för att aktivera/inaktivera datauppsättningar för profil | Om du vill importera data till kundprofilen i realtid måste du aktivera en datauppsättning för användning i profilarkivet. Om du gör det läggs till [!DNL Addressable Audience] och [!DNL Profile Richness] rättigheter. När en datauppsättning inte längre behövs för att använda kundprofiler kan du inaktivera datauppsättningens integrering till Profil för att säkerställa att dina data fortfarande är licenskompatibla. Se guiden [aktivera och inaktivera datauppsättningar för profil](../../catalog/datasets/enable-for-profile.md) för mer information. |
 | SDK för webb och SDK för mobiler | Det finns två typer av data som samlas in via webb och Mobile SDK: data som samlas in automatiskt och data som uttryckligen samlas in av din utvecklare. Om du vill hantera licenskompatibiliteten bättre kan du inaktivera automatisk datainsamling i SDK-konfigurationen via kontextinställningen. Anpassade data kan också tas bort eller inte ställas in av utvecklaren. Se guiden [konfigurera SDK-grunder](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) för mer information. |
 | Undantag för vidarebefordrande data på serversidan | Om du skickar data till plattformen med hjälp av vidarebefordran på serversidan kan du utesluta vilka data som skickas genom att antingen ta bort mappningen i en regelåtgärd för att exkludera den i alla händelser, eller genom att lägga till villkor i regeln så att endast data aktiveras för vissa händelser. Läs dokumentationen om [händelser och villkor](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Profilarkiv {#profile-service}
 
 Profilarkivet består av följande komponenter:
 
-| Profilarkivkomponent | Beskrivning |
+| Profillagringskomponent | Beskrivning |
 | --- | --- |
 | Profilfragment | Varje kundprofil består av flera **profilfragment** som har sammanfogats till en enda bild av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler har organisationen flera **profilfragment** som är relaterade till den enskilda kunden och förekommer i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de med hjälp av identitetsdiagrammet för att skapa en profil för den kunden. **Profilfragment** består av ett identitetsnamnutrymme som identifierare, med tillhörande postdata och/eller tidsseriedata. |
 | Postdata (attribut) | En profil är en representation av ett ämne, en organisation eller en individ som består av många **Attribut** (kallas även **postdata**). Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. **Registrera data** är vanligtvis låg/måttlig i volym, men värdefull under långa perioder. |
 | Tidsseriedata (beteende) | **Tidsseriedata** innehåller information om ett användarbeteende. Representeras av standardschemaklassen Experience Data Model (XDM) [!DNL ExperienceEvent]kan tidsseriedata beskriva händelser som objekt som läggs till i en kundvagn, länkar som klickas och videofilmer visas. Beteendevärdet kan minska med tiden. |
 | Identitetsnamnutrymme (identiteter) | När kunddata sammanställs sammanfogas de i en enda profil med hjälp av **identitetsnamnutrymmen** och möjligheten att knyta samman dessa identiteter när mer information blir känd om användaren. Se [Översikt över identitetsnamnutrymmen](../../identity-service/namespaces.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 
 
@@ -145,7 +145,7 @@ Nedan följer en lista över rekommenderade metoder som du kan följa för att s
 * Konfigurera [filter för förtäring](#ingestion-filters) genom att identifiera de händelser som krävs för er segmentering och personalisering. Detta gör att du bara kan skicka viktiga händelser som krävs för dina användningsfall.
 * Se till att du bara har [aktiverade datauppsättningar för profil](#ingestion-filters) som krävs för er segmenterings- och personaliseringsanvändning.
 * Konfigurera en [Förfallotid för upplevelsehändelse](#event-expirations) för högfrekventa data som webbdata.
-* Kontrollera regelbundet [Kompositionsrapporter för profil](#profile-store-composition-reports) för att förstå din profilarkivkomposition. På så sätt kan ni förstå vilka datakällor som bidrar mest till er licensanvändning.
+* Kontrollera regelbundet [Kompositionsrapporter för profil](#profile-store-composition-reports) för att förstå din profilbutikskomposition. På så sätt kan ni förstå vilka datakällor som bidrar mest till er licensanvändning.
 
 ## Sammanfattning av funktioner och tillgänglighet {#feature-summary}
 
@@ -155,7 +155,7 @@ I följande tabell visas en lista över tillgängliga funktioner för att bättr
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Aktivera/inaktivera datauppsättningar för profil](../../catalog/datasets/user-guide.md) | Aktivera eller inaktivera datamängdsmatning i profiltjänsten |
+| [Aktivera/inaktivera datauppsättningar för profil](../../catalog/datasets/user-guide.md) | Aktivera eller inaktivera datamängdsmatning i kundprofilen i realtid. |
 | [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) | Använd en förfallotid för alla händelser som är inkapslade i en profilaktiverad datauppsättning. Kontakta Adobe supportrepresentant för att aktivera den här funktionen. |
 | [Adobe Analytics Data Prep-filter](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | Använd [!DNL Kafka] filter för att utesluta onödiga data från inmatning |
 | [Adobe Audience Manager källanslutningsfilter](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | Använd anslutningsfilter för Audience Manager-källa för att exkludera onödiga data från intag |
@@ -165,4 +165,4 @@ I följande tabell visas en lista över tillgängliga funktioner för att bättr
 | [Rapport-API för datasammanslagning](../../profile/tutorials/dataset-overlap-report.md) | Visar de datauppsättningar som ger mest för er adresserbara publik |
 | [API för identitetsöverlappningsrapport](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) | Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
