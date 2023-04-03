@@ -2,9 +2,9 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: f2f2f9abc50f2016e41fd23bfbb66553fadf6fce
+source-git-commit: 3ebf8df16f88660eab481bd0a0ba88816b470255
 workflow-type: tm+mt
-source-wordcount: '677'
+source-wordcount: '718'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,8 @@ Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskär
 Nya tillägg har släppts:
 
 * **[!DNL Braze]tillägg för händelsevidarebefordran**: The [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [!DNL Braze] API:er för användarspårning.
-* **[!DNL Mixpanel]tillägg för händelsevidarebefordran**: The [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårhändelser.
+* **[API för Epsilon-händelser] tillägg för händelsevidarebefordran**: The [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja händelsevidarebefordran för att samla in händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med [!DNL Epsilon] Händelse-API.
+* **[!DNL Mixpanel]tillägg för händelsevidarebefordran**: The [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) kan du utnyttja händelsevidarebefordran för att samla in händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Mixpanel] med API:t för spårningshändelser.
 
 ## 25 januari 2023
 

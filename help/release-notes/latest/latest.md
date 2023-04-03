@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: 582305583aa5869d8cc29f871aeb3fa0ef0b6ab1
+source-git-commit: 1ead97aa9b197cd1c046175bdcd06c03fd35ac17
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1708'
 ht-degree: 3%
 
 ---
@@ -48,6 +48,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | --- | --- |
 | Nytt snabbstartarbetsflöde för Meta Conversions API (beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! The [snabbstartsarbetsflöde för Meta Conversion API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start) gör det möjligt för kunderna att snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
 | [!DNL Braze] tillägg för händelsevidarebefordran | The [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [!DNL Braze] API:er för användarspårning. |
+| [!DNL Epsilon] tillägg för händelsevidarebefordran | The [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att samla in händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med [!DNL Epsilon] Händelse-API. |
 | [!DNL Mixpanel] tillägg för händelsevidarebefordran | The [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) Med hjälp av tillägget kan kunder utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
 
 {style="table-layout:auto"}
