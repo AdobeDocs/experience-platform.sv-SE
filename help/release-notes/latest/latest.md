@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
-source-git-commit: 1ead97aa9b197cd1c046175bdcd06c03fd35ac17
+source-git-commit: e597656949ba81b4a07c2962a02ddd94c6dc23e3
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '2092'
 ht-degree: 3%
 
 ---
@@ -110,6 +110,38 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Funktion | Beskrivning |
 | --- | --- |
 | CSV till schemarapport | Du kan nu överföra dina lokala filer för att skapa scheman som genereras av maskininlärning och som eliminerar behovet av att skapa ett schema manuellt. Från [!UICONTROL Sources] arbetsyta, ladda upp en CSV-exempelfil och Adobe maskininlärningsalgoritmer föreslår ett schema åt dig baserat på målfälten. Se [dokumentation](../../ingestion/tutorials/map-csv/recommendations.md) för mer information.&quot; |
+
+{style="table-layout:auto"}
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Klass | [[!UICONTROL Offer Item]](https://github.com/adobe/xdm/pull/1678/files) | En klass som representerar ett erbjudande. |
+| Klass | [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1678/files) | En artikel som kan bli föremål för beslut. Resultatet av en beslutsprocess är en eller flera beslutsposter. |
+| Klass | [[!UICONTROL Media Session Server Timeout]](https://github.com/adobe/xdm/pull/1676/files) | Detta anger hur lång tid (i sekunder) som har gått mellan användarens senaste kända interaktion och tidpunkten då sessionen stängdes. |
+| Fältgrupp | [[!UICONTROL XDM Profile Computed Attributes]](https://github.com/adobe/xdm/pull/1686/files) | Detta lägger till beräknade attribut från interna Adobe-tjänster till inkommande kunddata. Detta bör inte användas av kunder för att importera data. |
+| Datatyper | [[!UICONTROL Refund Item]](https://github.com/adobe/xdm/pull/1685/files) | Anger om en återbetalning är kopplad till en order och definierar typ av återbetalning, belopp och associerad valuta. |
+| Datatyper | [[!UICONTROL Category data]](https://github.com/adobe/xdm/pull/1677/files) | Den här nya datatypen representerar kategorin för en produkt. |
+| Schema | [[!UICONTROL Adobe Target Classification Fields]](https://github.com/adobe/xdm/pull/1682/files) | Ett nytt XDM-schema skapades för målklassificeringsdatamängder. Det innehåller en uppsättning metadatafält som klassificerar Target-aktiviteter och -upplevelser. |
+
+{style="table-layout:auto"}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Fältgrupp | [[!UICONTROL Content Component Details]](https://github.com/adobe/xdm/pull/1674/files) | `uri-reference` togs bort från [!UICONTROL Content Component Details] |
+| Fältgrupp | [[!UICONTROL AJO Entity tags]](https://github.com/adobe/xdm/pull/1672/files) | Lagt till AJO-enhetstaggar i [!UICONTROL AJO Entity Fields], som motsvarar en resa eller kampanj |
+| Fältgrupp | (Flera) | Flera fält har lagts till för [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/pull/1671/files) |
+| Fältgrupp | (Flera) | [Flera XDM-händelsetyper har lagts till för [!UICONTROL Media Reporting]](https://github.com/adobe/xdm/pull/1670/files). |
+| Fältgrupp | [!UICONTROL Workfront Change Event] | The `Full Record` och `Accessor Employee Ids` fältgrupper lades till. |
+| Datatyper | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/pull/1685/files) | The [!UICONTROL Refund Amount] har lagts till för att ange det belopp som återbetalats för posten, om ett sådant finns. |
+| Datatyper | [[!UICONTROL Order ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
+| Datatyper | [[!UICONTROL Product List Item ]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
+| Datatyp | [!UICONTROL Session details information] | Lagt till `pev3` strängfält som [anger vilken typ av medieström som används för rapportering](https://github.com/adobe/xdm/pull/1676/files). Dessutom lades `pccr` anger om en omdirigering har gjorts. |
+| Datatyp | [!UICONTROL Requisition List] | Tillhandahåller [egenskaper för rekvisitionslista](https://github.com/adobe/xdm/pull/1675/files). De innehåller namn, ID och beskrivning. |
+| Datatyp | [!UICONTROL Commerce] | The [Commerce-datatypen har uppdaterats](https://github.com/adobe/xdm/pull/1675/files) inkludera `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals`och `requisitionList`. |
 
 {style="table-layout:auto"}
 
