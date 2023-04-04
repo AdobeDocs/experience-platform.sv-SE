@@ -1,9 +1,9 @@
 ---
 title: Data Distiller Overview
 description: En sammanfattning av användningsgränserna för Data Distiller för Query Service-data i relation till ditt licensieringsberättigande.
-source-git-commit: e4337dcebaf313365ed9e403a5891f49decb29e9
+source-git-commit: 5958a9764ebe749a6c945c984a6e9979c444d4dc
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '104'
 ht-degree: 0%
 
 ---
@@ -12,13 +12,14 @@ ht-degree: 0%
 
 Data Distiller är ett paket som innehåller en deluppsättning av funktionerna från Adobe Experience Platform. Med Data Distiller kan du färdigställa data efter intag (t.ex. rengöring, formning och manipulering) för kundprofiler i realtid eller för analytiska syften genom att köra batchfrågor i Query Service. Din användning av Data Distiller är beroende av din behörighet för plattformsbaserade program.
 
-## Licensanvändning {#license-usage}
-
 <!-- Commented out references to licence usage dashboard. It is temporarily hidden:
-The [Data Distiller license usage dashboard](./license-usage.md) is available once you have purchased Data Distiller compute hours. The license usage dashboard helps you to monitor the consumption of entitled compute hours. See the [Data Distiller license usage document](./license-usage.md) to view important information about your organization's Query Service license usage. 
--->
+## License usage {#license-usage}
 
-Kontrollpanelen för användning av Data Distiller-licenser är tillgänglig när du har köpt Data Distiller-datortimmar. Kontrollpanelen för licensanvändning hjälper dig att övervaka förbrukningen av berättigade beräkningstimmar.
+
+The [Data Distiller license usage dashboard](./license-usage.md) is available once you have purchased Data Distiller compute hours. The license usage dashboard helps you to monitor the consumption of entitled compute hours. See the [Data Distiller license usage document](./license-usage.md) to view important information about your organization's Query Service license usage. 
+
+The Data Distiller license usage dashboard is available once you have purchased Data Distiller compute hours. The license usage dashboard helps you to monitor the consumption of entitled compute hours.
+-->
 
 <!-- Update these descriptions post 23.3 release
 ## Scoping parameters {#scoping-parameters}
