@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågor och svar om sekretessregler
 description: Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregler som stöds och hur de implementeras i Adobe Experience Cloud.
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 7e86721f6dd6fd280ae7e7e67aca21b4258ffb66
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1619'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,11 @@ Många integritetsbestämmelser föreskriver att om en registrerad är under en 
 
 Om man utgår ifrån att företaget har samlat in personuppgifter och att det kan autentisera eller verifiera en viss kunds identitet, kan sekretessreglerna medge ett visst tidsintervall för när en konsumentförfrågan kan utföras. I följande tabell visas de tillämpliga tidsintervallen för varje regel, med anmärkningar om några undantag:
 
-| Förordning | Efterlevnadsfönster | Anteckningar |
+>[!NOTE]
+>
+>Tidsramen för att svara inom&quot;dagar&quot; är en följd av varje lags föreskrivna tidsramar för att slutföra en konsumentförfrågan.
+
+| Förordning | Tidsram för svar | Anteckningar |
 | --- | --- | --- |
 | CCPA (Kalifornien) | 45 dagar |  |
 | GDPR (Europeiska unionen) | 30 dagar | Om begäran är komplex, eller om flera förfrågningar har gjorts av samma registrerade, kan begäran förlängas till 60 dagar. |
