@@ -3,9 +3,9 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Det här dokumentet innehåller riktlinjer för hur man skyddar mot dataintrång i Adobe Experience Platform
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 96ab28f9f909cedd1148d6b27610aebb7cf61b29
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ I följande tabell visas skyddsutkast som du bör tänka på när du använder [
 | --- | --- | --- |
 | Intag av data i sjön med hjälp av API för gruppinmatning | <ul><li>Du kan importera upp till 20 GB data per timme till en datasjön med hjälp av API:t för gruppinhämtning.</li><li>Det högsta antalet filer per grupp är 1500.</li><li>Den maximala batchstorleken är 100 GB.</li><li>Det maximala antalet egenskaper eller fält per rad är 10000.</li><li>Det högsta antalet batchar per minut, per användare, är 138.</li></ul> |
 | Intag av data i sjön med hjälp av batchkällor | <ul><li>Du kan inhämta upp till 200 GB data per timme till datasjön med hjälp av batchkällor som [!DNL Azure Blob], [!DNL Amazon S3]och [!DNL SFTP].</li><li>Batchstorleken bör vara mellan 256 MB och 100 GB.</li><li>Det högsta antalet filer per grupp är 1500.</li></ul> | Se [källöversikt](../sources/home.md) om du vill ha en katalog med källor som du kan använda för datainmatning. |
-| Gruppinmatning till profil | <ul><li>Du kan importera upp till 120 GB data per timme.</li><li>Den största tillåtna storleken för en postklass är 100 kB (mjuk).</li><li>Den största tillåtna storleken för en ExperienceEvent-klass är 10 kB (mjuk).</li><li>Den största tillåtna storleken för en enstaka post är 1 MB.</li></ul> |
+| Gruppinmatning till profil | <ul><li>Den största tillåtna storleken för en postklass är 100 kB (mjuk).</li><li>Den största tillåtna storleken för en ExperienceEvent-klass är 10 kB (mjuk).</li><li>Den största tillåtna storleken för en enstaka post är 1 MB.</li></ul> |
 | Antal inkapslade Profile- eller ExperienceEvent-batchar per dag | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om du samlar in ytterligare batchar påverkas systemets prestanda. | Det här är en mjuk gräns. Det går att gå längre än en mjuk gräns, men mjuka gränser ger en rekommenderad vägledning för systemprestanda. |
 
 ## Gardrutor för direktuppspelning
