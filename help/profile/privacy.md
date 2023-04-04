@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 4cb6280ea646f813a064eb08fef4ab29126ec3ea
+source-git-commit: e5ea0672ba8e9b5951464396a75decc5d8508ff4
 workflow-type: tm+mt
-source-wordcount: '1601'
+source-wordcount: '1562'
 ht-degree: 0%
 
 ---
@@ -186,10 +186,6 @@ För att säkerställa att dina sekretessförfrågningar behandlar alla relevant
 ## Ta bort bearbetning av begäran {#delete}
 
 När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort när sekretessjobbet har slutförts.
-
->[!IMPORTANT]
->
->Begäran om borttagning av sekretess är inte omedelbar och kan variera beroende på vilka tjänster som används och andra faktorer som påverkar t.ex. geografisk placering. Tidsramen för slutförande av sekretessjobb kan vara mellan 15 och 45 dagar, men är inte garanterad.
 
 Beroende på om du även har inkluderat identitetstjänsten (`identity`) och datasjön (`aepDataLake`) som produkter i din sekretesspolicy för profil (`ProfileService`) tas olika datauppsättningar som är relaterade till profilen bort från systemet vid potentiellt olika tidpunkter:
 
