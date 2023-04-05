@@ -5,7 +5,7 @@ description: Målgruppsslutpunkten i Adobe Experience Platform Segmentation Serv
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
 hide: true
 hidefromtoc: true
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
 workflow-type: tm+mt
 source-wordcount: '1515'
 ht-degree: 0%
@@ -254,7 +254,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper, med m
                         "crmid": 11400769
                     },
                     "totalProfilesByStatus": {
-                        "existing": 11400769
+                        "realized": 11400769
                     }
                 },
                 "createEpoch": 1653583927,

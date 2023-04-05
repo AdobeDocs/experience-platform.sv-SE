@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: ce20c273cb6a87264363c03611ccfdfb783e595f
+source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
 workflow-type: tm+mt
-source-wordcount: '1926'
+source-wordcount: '1912'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## IP-adress tillåtelselista {#ip-address-allowlist}
 
@@ -86,7 +86,7 @@ I exemplet nedan visas den lägsta åtkomstbehörighet som krävs för att expor
 | `kinesis:PutRecord` | En åtgärd som skriver en enskild datapost till en dataström från Kinesis. |
 | `kinesis:PutRecords` | En åtgärd som skriver flera dataposter till en dataström från Kinesis i ett enda anrop. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om hur du styr åtkomst för [!DNL Kinesis] dataströmmar, läs följande [[!DNL Kinesis] dokument](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
@@ -169,9 +169,9 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om ett mappat segment ändrar lägen (från null till realiserad eller från realiserad/befintlig till befintlig) eller om mappade attribut uppdateras, kommer en målexport att startas om.</li><li>Eftersom identiteter inte kan mappas till [!DNL Amazon Kinesis] destinationer, ändringar av en identitet i en viss profil avgör också destinationsexporten.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>The `segmentMembership` -objektet innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som mappas i aktiveringsdataflödet. </li><li>Alla identiteter i `identityMap` -objektet ingår också (Experience Platform stöder för närvarande inte identitetsmappning i [!DNL Amazon Kinesis] mål).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om något mappat segment ändras, ändras läget (från `null` till `realized` eller från `realized` till `exiting`) eller om mappade attribut uppdateras, kommer en målexport att startas.</li><li>Eftersom identiteter inte kan mappas till [!DNL Amazon Kinesis] destinationer, ändringar av en identitet i en viss profil avgör också destinationsexporten.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>The `segmentMembership` -objektet innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som mappas i aktiveringsdataflödet. </li><li>Alla identiteter i `identityMap` -objektet ingår också (Experience Platform stöder för närvarande inte identitetsmappning i [!DNL Amazon Kinesis] mål).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
 
-{style=&quot;table-layout:fixed&quot;}
+{style="table-layout:fixed"}
 
 Tänk dig till exempel det här dataflödet som en [!DNL Amazon Kinesis] mål där tre segment är markerade i dataflödet och fyra attribut är mappade till målet.
 
@@ -209,11 +209,11 @@ Dina exporterade [!DNL Experience Platform] data får plats i [!DNL Amazon Kines
       },
       "59bd2fkd-3c48-4b18-bf56-4f5c5e6967ae":{
          "lastQualificationTime":"2022-01-02T23:37:33Z",
-         "status":"existing"
+         "status":"realized"
       },
       "947c1c46-008d-40b0-92ec-3af86eaf41c1":{
          "lastQualificationTime":"2021-08-25T23:37:33Z",
-         "status":"existing"
+         "status":"realized"
       },
       "5114d758-ce71-43ba-b53e-e2a91d67b67f":{
          "lastQualificationTime":"2022-01-11T23:37:33Z",
@@ -251,7 +251,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka använd
         "ups": {
           "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
             "lastQualificationTime": "2019-04-15T02:41:50+0000",
-            "status": "existing",
+            "status": "realized",
             "createdAt": 1648553325000,
             "updatedAt": 1648553330000,
             "mappingCreatedAt": 1649856570000,
@@ -271,7 +271,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka använd
         "ups": {
           "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
             "lastQualificationTime": "2019-04-15T02:41:50+0000",
-            "status": "existing",
+            "status": "realized",
             "createdAt": 1648553325000,
             "updatedAt": 1648553330000,
             "mappingCreatedAt": 1649856570000,

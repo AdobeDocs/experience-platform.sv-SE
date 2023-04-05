@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för segmentexportjobb
 description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation Service API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: d28cebaf4b9fe5c35240e28653e99424db08d9d2
 workflow-type: tm+mt
-source-wordcount: '1682'
+source-wordcount: '1631'
 ht-degree: 1%
 
 ---
@@ -144,7 +144,7 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
                     {
                         "segmentId": "52c26d0d-45f2-47a2-ab30-ed06abc981ff",
                         "segmentNs": "AAM",
-                        "status": ["realized", "existing"]
+                        "status": ["realized"]
                     }
                 ]
             },
@@ -200,7 +200,7 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
 | `destination` | Målinformation för exporterade data:<ul><li>`datasetId`: ID:t för datauppsättningen där data exporterades.</li><li>`segmentPerBatch`: Ett booleskt värde som visar om segment-ID är konsoliderade eller inte. Värdet &quot;false&quot; innebär att alla segment-ID:n exporteras till ett enda batch-ID. Värdet &quot;true&quot; innebär att ett segment-ID exporteras till ett batch-ID. **Obs!** Om värdet är true kan batchexportens prestanda påverkas.</li></ul> |
 | `fields` | En lista med de exporterade fälten, avgränsade med kommatecken. |
 | `schema.name` | Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
-| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Det segment-ID som profiler ska exporteras till.</li><li>`segmentNs`: Segmentnamnutrymme för angiven `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har värdet `["realized", "existing"]` som representerar alla profiler som hamnar i segmentet vid den aktuella tidpunkten. Möjliga värden är: &quot;real&quot;, &quot;existing&quot; och &quot;exited&quot;. Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
+| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Det segment-ID som profiler ska exporteras till.</li><li>`segmentNs`: Segmentnamnutrymme för angiven `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har värdet `["realized"]` som representerar alla profiler som hamnar i segmentet vid den aktuella tidpunkten. Möjliga värden är: `realized` och `exited`. Värdet för `realized` betyder att profilen kvalificerar för segmentet. Värdet för `exiting` innebär att profilen avslutar segmentet.</li></ul> |
 | `mergePolicy` | Sammanfoga principinformation för exporterade data. |
 | `metrics.totalTime` | Ett fält som anger den totala tiden det tog att köra exportjobbet. |
 | `metrics.profileExportTime` | Ett fält som anger den tid det tog för profilerna att exportera. |
@@ -279,7 +279,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `fields` | En lista med de exporterade fälten, avgränsade med kommatecken. Om inget anges exporteras alla fält. |
 | `mergePolicy` | Anger den sammanfogningsprincip som ska användas för att styra exporterade data. Inkludera den här parametern när det finns flera segment som exporteras. Om inget anges används samma sammanfogningspolicy som för det angivna segmentet. |
 | `filter` | Ett objekt som anger de segment som ska inkluderas i exportjobbet efter ID, kvalificeringstid eller inmatningstid, beroende på de underegenskaper som anges nedan. Om inget anges exporteras alla data. |
-| `filter.segments` | Anger de segment som ska exporteras. Om du utelämnar det här värdet exporteras alla data från alla profiler. Accepterar en array med segmentobjekt, där vart och ett innehåller följande fält:<ul><li>`segmentId`: **(Krävs om du använder `segments`)** Segment-ID för profiler som ska exporteras.</li><li>`segmentNs` *(Valfritt)* Segmentnamnutrymme för angiven `segmentID`.</li><li>`status` *(Valfritt)* En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har värdet `["realized", "existing"]` som representerar alla profiler som hamnar i segmentet vid den aktuella tidpunkten. Möjliga värden är: `"realized"`, `"existing"`och `"exited"`.  Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
+| `filter.segments` | Anger de segment som ska exporteras. Om du utelämnar det här värdet exporteras alla data från alla profiler. Accepterar en array med segmentobjekt, där vart och ett innehåller följande fält:<ul><li>`segmentId`: **(Krävs om du använder `segments`)** Segment-ID för profiler som ska exporteras.</li><li>`segmentNs` *(Valfritt)* Segmentnamnutrymme för angiven `segmentID`.</li><li>`status` *(Valfritt)* En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har värdet `["realized"]` som representerar alla profiler som hamnar i segmentet vid den aktuella tidpunkten. Möjliga värden är: `realized` och `exited`.  Värdet för `realized` betyder att profilen kvalificerar för segmentet. Värdet för `exiting` innebär att profilen avslutar segmentet.</li></ul> |
 | `filter.segmentQualificationTime` | Filtrera baserat på segmentets kvalificeringstid. Starttid och/eller sluttid kan anges. |
 | `filter.segmentQualificationTime.startTime` | Starttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på starttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i [RFC 3339](https://tools.ietf.org/html/rfc3339) format. |
 | `filter.segmentQualificationTime.endTime` | Sluttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på sluttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i [RFC 3339](https://tools.ietf.org/html/rfc3339) format. |
@@ -470,7 +470,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `destination` | Målinformation för exporterade data:<ul><li>`datasetId`: ID:t för datauppsättningen där data exporterades.</li><li>`segmentPerBatch`: Ett booleskt värde som visar om segment-ID är konsoliderade eller inte. Värdet för `false` betyder att alla segment-ID:n var i ett enda batch-ID. Värdet för `true` innebär att ett segment-ID exporteras till ett batch-ID.</li></ul> |
 | `fields` | En lista med de exporterade fälten, avgränsade med kommatecken. |
 | `schema.name` | Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
-| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Segment-ID för profiler som ska exporteras.</li><li>`segmentNs`: Segmentnamnutrymme för angiven `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har värdet `["realized", "existing"]` som representerar alla profiler som hamnar i segmentet vid den aktuella tidpunkten. Möjliga värden är: &quot;real&quot;, &quot;existing&quot; och &quot;exited&quot;.  Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
+| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Segment-ID för profiler som ska exporteras.</li><li>`segmentNs`: Segmentnamnutrymme för angiven `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har värdet `["realized"]` som representerar alla profiler som hamnar i segmentet vid den aktuella tidpunkten. Möjliga värden är: `realized` och `exited`.  Värdet för `realized` betyder att profilen kvalificerar för segmentet. Värdet för `exiting` innebär att profilen avslutar segmentet.</li></ul> |
 | `mergePolicy` | Sammanfoga principinformation för exporterade data. |
 | `metrics.totalTime` | Ett fält som anger den totala tiden det tog att köra exportjobbet. |
 | `metrics.profileExportTime` | Ett fält som anger den tid det tog för profilerna att exportera. |

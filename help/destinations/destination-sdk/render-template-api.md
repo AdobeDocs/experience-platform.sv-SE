@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/testing/template/render` för att återge exporterade data för ditt mål, baserat på din meddelandeomvandlingsmall.
 title: API-åtgärder för återgivningsmall
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '803'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ POST authoring/testing/template/render
 | `template` | Den teckenescape-version av mallen som du återger exporterade profiler utifrån. |
 | `profiles` | *Valfritt*. Du kan lägga till profiler i begärandetexten. Om du inte lägger till några profiler genereras och läggs profiler till i begäran automatiskt i Experience Platform. <br> Om du vill lägga till profiler i samtalets brödtext kan du generera några med hjälp av [API för generering av exempelprofiler](./sample-profile-generation-api.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Observera att svaret som returneras av återgivningsmallens API-slutpunkt skiljer sig åt baserat på målaggregeringsprincipen. Om målet har en konfigurerbar aggregeringsprincip returneras också aggregeringsnyckeln som bestämmer hur profiler aggregeras i svaret. Läs mer om [aggregeringspolicyer](./destination-configuration.md#aggregation) i målkonfigurationsdokumentet.
 
@@ -84,7 +84,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
                 "ups": {
                     "segmentid1": {
                         "lastQualificationTime": "2021-10-26T16:59:00.828461Z",
-                        "status": "existing"
+                        "status": "realized"
                     },
                     "segmentid3": {
                         "lastQualificationTime": "2021-10-26T16:59:00.828469Z",
@@ -139,7 +139,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T16:59:00.828461Z",
-                                "status": "existing"
+                                "status": "realized"
                             },
                             "segmentid3": {
                                 "lastQualificationTime": "2021-10-26T16:59:00.828469Z",
@@ -205,7 +205,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
                 "ups": {
                     "segmentid1": {
                         "lastQualificationTime": "2021-10-26T17:41:55.947859Z",
-                        "status": "existing"
+                        "status": "realized"
                     },
                     "segmentid3": {
                         "lastQualificationTime": "2021-10-26T17:41:55.947860Z",
@@ -255,7 +255,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
                 "ups": {
                     "segmentid1": {
                         "lastQualificationTime": "2021-10-26T17:41:55.948187Z",
-                        "status": "existing"
+                        "status": "realized"
                     },
                     "segmentid3": {
                         "lastQualificationTime": "2021-10-26T17:41:55.948188Z",
@@ -509,7 +509,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
             "aggregationKey": {
                 "destinationInstanceId": "49966037-32cd-4457-a105-2cbf9c01826a",
                 "segmentId": "segmentid1",
-                "segmentStatus": "existing",
+                "segmentStatus": "realized",
                 "identityNamespaces": [
                     "android_channel",
                     "amazon_channel",
@@ -523,7 +523,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.947+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -545,7 +545,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.947+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -567,7 +567,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.947+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -589,7 +589,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.947+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -611,7 +611,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.948+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -633,7 +633,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.948+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -655,7 +655,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.948+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -677,7 +677,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.948+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -950,7 +950,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
             "aggregationKey": {
                 "destinationInstanceId": "49966037-32cd-4457-a105-2cbf9c01826a",
                 "segmentId": "segmentid1",
-                "segmentStatus": "existing",
+                "segmentStatus": "realized",
                 "identityNamespaces": [
                     "named_user_id"
                 ]
@@ -961,7 +961,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.947+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },
@@ -983,7 +983,7 @@ Ett misslyckat svar returnerar HTTP-status 400 tillsammans med beskrivningar av 
                         "ups": {
                             "segmentid1": {
                                 "lastQualificationTime": "2021-10-26T17:41:55.948+0000",
-                                "status": "existing"
+                                "status": "realized"
                             }
                         }
                     },

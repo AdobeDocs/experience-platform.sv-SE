@@ -4,10 +4,10 @@ solution: Experience Platform
 title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '1511'
-ht-degree: 0%
+source-wordcount: '1498'
+ht-degree: 1%
 
 ---
 
@@ -130,7 +130,6 @@ Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständ
                 "segmentedProfileByStatusCounter":{
                     "94509dba-7387-452f-addc-5d8d979f6ae8":{
                         "exited":144646,
-                        "existing":10,
                         "realized":2056
                     }
                 },
@@ -226,7 +225,6 @@ Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segm
                 "segmentedProfileByStatusCounter":{
                     "94509dba-7387-452f-addc-5d8d979f6ae8":{
                         "exited":144646,
-                        "existing":10,
                         "realized":2056
                     }
                 },
@@ -275,7 +273,7 @@ Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segm
 | `metrics.profileSegmentationTime` | Ett objekt som innehåller information om de tidpunkter då segmenteringsutvärderingen påbörjades och avslutades samt den totala tiden. |
 | `metrics.segmentProfileCounter` | Antalet profiler som kvalificerats per segment. |
 | `metrics.segmentedProfileByNamespaceCounter` | Antalet profiler som är kvalificerade för varje identitetsnamnutrymme per segment. |
-| `metrics.segmentProfileByStatusCounter` | Antalet profiler för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet nya profiler som har lagts till i segmentet.</li><li>&quot;existing&quot; - antalet profiler som fortfarande finns i segmentet.</li><li>&quot;exited&quot; - antalet profilsegment som inte längre finns i segmentet.</li></ul> |
+| `metrics.segmentProfileByStatusCounter` | Antalet profiler för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet profiler som kvalificerar sig för segmentet.</li><li>&quot;exited&quot; - antalet profilsegment som inte längre finns i segmentet.</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | Det totala antalet sammanfogade profiler per sammanfogningspolicy. |
 
 ## Skapa ett nytt segmentjobb {#create}
@@ -373,7 +371,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
         "segmentedProfileByStatusCounter":{
             "7863c010-e092-41c8-ae5e-9e533186752e":{
                 "exited":144646,
-                "existing":10,
                 "realized":2056
             }
         },
@@ -494,7 +491,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
         "segmentedProfileByStatusCounter":{
             "7863c010-e092-41c8-ae5e-9e533186752e":{
                 "exited":144646,
-                "existing":10,
                 "realized":2056
             }
         },
@@ -674,7 +670,6 @@ Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segm
         "segmentedProfileByStatusCounter":{
             "7863c010-e092-41c8-ae5e-9e533186752e":{
                 "exited":144646,
-                "existing":10,
                 "realized":2056
             }
         },

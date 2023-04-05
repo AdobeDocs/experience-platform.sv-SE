@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/sample-profiles` för att generera exempelprofiler som ska användas vid måltestning.
 title: API-åtgärder för generering av exempelprofiler
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 789a3928379d200af292c722806f7ca72441d9f3
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ GET authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&co
 | `{DESTINATION_INSTANCE_ID}` | ID:t för målinstansen som du genererar exempelprofiler utifrån. |
 | `{COUNT}` | *Valfritt*. Antalet exempelprofiler som du genererar. Parametern kan ha värden mellan `1 - 1000`. <br> Om parametern count inte anges bestäms standardantalet genererade profiler av `maxUsersPerRequest` värdet i [målserverkonfiguration](./destination-server-api.md#create). Om den här egenskapen inte är definierad genereras en exempelprofil i Adobe. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 
 **Begäran**
@@ -183,10 +183,10 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 | -------- | ----------- |
 | `segmentMembership` | Ett kartobjekt som beskriver personens segmentmedlemskap. Mer information om `segmentMembership`, läsa [Information om segmentmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
+| `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen är en del av segmentet.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
 | `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, läsa [Grund för schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Generera exempelprofiler baserade på målschemat som ska användas när en meddelandeomformningsmall skapas {#generate-sample-profiles-target-schema}
 
@@ -213,7 +213,7 @@ GET authoring/sample-profiles?destinationId={DESTINATION_ID}&count={COUNT}
 | `{DESTINATION_ID}` | ID:t för målkonfigurationen baserat på vilket du genererar exempelprofiler. |
 | `{COUNT}` | *Valfritt*. Antalet exempelprofiler som du genererar. Parametern kan ha värden mellan `1 - 1000`. <br> Om parametern count inte anges bestäms standardantalet genererade profiler av `maxUsersPerRequest` värdet i [målserverkonfiguration](./destination-server-api.md#create). Om den här egenskapen inte är definierad genereras en exempelprofil i Adobe. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -240,7 +240,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
             "ups": {
                 "segmentid1": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609326Z",
-                    "status": "existing"
+                    "status": "realized"
                 },
                 "segmentid3": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609328Z",
@@ -285,7 +285,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
             "ups": {
                 "segmentid1": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609626Z",
-                    "status": "existing"
+                    "status": "realized"
                 },
                 "segmentid3": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609627Z",
@@ -330,7 +330,7 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
             "ups": {
                 "segmentid1": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609823Z",
-                    "status": "existing"
+                    "status": "realized"
                 },
                 "segmentid3": {
                     "lastQualificationTime": "2021-06-30T18:42:27.609824Z",

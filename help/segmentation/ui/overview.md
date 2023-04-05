@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 11a4bb90b5d88f86ac14d702a213f56432a30c24
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '2605'
+source-wordcount: '2570'
 ht-degree: 0%
 
 ---
@@ -69,12 +69,11 @@ I den här vyn visas information om segmentdefinitionen, inklusive antal profile
 
 Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/overview/filter-attribute.png). Dessa ytterligare fält innehåller information om fördelning, utvärderingsmetod och jobb-ID.
 
-Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande beräknade profilstatusar: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
+Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande beräknade profilstatusar: [!UICONTROL Realized] och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] är den mest exakta uppdelningen av segmentets status. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
 
 | Status | Beskrivning |
 | ------ | ----------- |
 | Realiserad | Antal profiler som är kvalificerade för segmentet de senaste 24 timmarna. Det innebär antalet profiler som är kvalificerade för segmentet sedan det senaste jobbet för gruppsegmentering kördes. |
-| Befintlig | Antal profiler som har varit kvalificerade för segmentet de senaste 24 timmarna. Det innebär att antalet profiler som har varit kvalificerade för segmentet sedan den senaste gången batchsegmentjobbet kördes. |
 | Avslutar | Antalet profiler som har avslutat segmentet de senaste 24 timmarna. Så antalet profiler som inte längre är kvalificerade för segmentet sedan den senaste gången batchsegmentjobbet kördes. |
 
 Utvärderingsmetoden kan antingen vara direktuppspelning, batch eller kant. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema. Kantsegment utvärderas i realtid, vilket möjliggör användning av samma sida och nästa sida vid personalisering.

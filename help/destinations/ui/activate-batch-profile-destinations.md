@@ -4,7 +4,7 @@ title: Aktivera målgruppsdata för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
+source-git-commit: 5bb2981b8187fcd3de46f80ca6c892421b3590f6
 workflow-type: tm+mt
 source-wordcount: '3495'
 ht-degree: 0%
@@ -293,7 +293,7 @@ Låt oss titta på följande två profiler.
   "segmentMembership": {
     "ups": {
       "fa5c4622-6847-4199-8dd4-8b7c7c7ed1d6": {
-        "status": "existing",
+        "status": "realized",
         "lastQualificationTime": "2021-03-10 10:03:08"
       }
     }
@@ -327,7 +327,7 @@ Låt oss titta på följande två profiler.
   "segmentMembership": {
     "ups": {
       "fa5c4622-6847-4199-8dd4-8b7c7c7ed1d6": {
-        "status": "existing",
+        "status": "realized",
         "lastQualificationTime": "2021-04-10 11:33:28"
       }
     }

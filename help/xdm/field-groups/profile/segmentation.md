@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Schemafältgrupp för information om segmentmedlemskap
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: fda47171cde3f58f48ee721357923017918a7d4e
+source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '434'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `segmentMembership` | Mappa | Ett kartobjekt som beskriver personens segmentmedlemskap. Objektets struktur beskrivs närmare nedan. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i för en viss profil. Segmentmedlemskap sorteras efter namnutrymme, vilket anges av objektets rotnivånycklar. De enskilda nycklarna under varje namnutrymme representerar i sin tur ID:n för de segment som profilen är medlem i. Varje segmentobjekt innehåller flera underfält med mer information om medlemskapet:
 
@@ -42,7 +42,7 @@ Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i 
         "xdm:version": "15",
         "xdm:lastQualificationTime": "2018-04-26T15:52:25+00:00",
         "xdm:validUntil": "2019-04-26T15:52:25+00:00",
-        "xdm:status": "existing",
+        "xdm:status": "realized",
         "xdm:payload": {
           "xdm:payloadBooleanValue": true,
           "xdm:payloadType": "boolean"
@@ -76,10 +76,10 @@ Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i 
 | `xdm:version` | Den version av segmentet som profilen är kvalificerad för. |
 | `xdm:lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
 | `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. Om det här fältet inte är inställt för externa målgrupper behålls segmentmedlemskapet endast i 30 dagar från `lastQualificationTime`. |
-| `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`existing`: Profilen var redan en del av segmentet innan begäran gjordes och fortsätter att behålla medlemskapet.</li><li>`realized`: Profilen går in i segmentet som en del av den aktuella begäran.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
+| `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen kvalificerar för segmentet.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
 | `xdm:payload` | Vissa segmentmedlemskap innehåller en nyttolast som beskriver ytterligare värden som är direkt relaterade till medlemskapet. Endast en nyttolast av en viss typ kan anges för varje medlemskap. `xdm:payloadType` anger typ av nyttolast (`boolean`, `number`, `propensity`, eller `string`), medan dess jämställda egenskap tillhandahåller värdet för nyttolasttypen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

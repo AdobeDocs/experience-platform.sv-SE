@@ -2,9 +2,9 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
+source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
 workflow-type: tm+mt
-source-wordcount: '2272'
+source-wordcount: '2267'
 ht-degree: 1%
 
 ---
@@ -84,7 +84,7 @@ Med tanke på meddelandeformatet är motsvarande omformningar följande:
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Profilstruktur i Experience Platform {#profile-structure}
 
@@ -93,7 +93,7 @@ För att förstå exemplen längre ned på sidan är det viktigt att du känner 
 Profiler har tre avsnitt:
 
 * `segmentMembership` (finns alltid i en profil)
-   * det här avsnittet innehåller alla segment som finns i profilen. Segmenten kan ha en av tre statusvärden: `realized`, `existing`, `exited`.
+   * det här avsnittet innehåller alla segment som finns i profilen. Segmenten kan ha en av två statusar: `realized` eller `exited`.
 * `identityMap` (finns alltid i en profil)
    * det här avsnittet innehåller alla identiteter som finns i profilen (e-post, Google GAID, Apple IDFA och så vidare) och som användaren har mappat för export i aktiveringsarbetsflödet.
 * attribut (beroende på målkonfigurationen kan dessa finnas i profilen). Det finns också en liten skillnad mellan fördefinierade attribut och frihandsattribut:
@@ -110,7 +110,7 @@ Se två exempel på profiler i Experience Platform:
     "ups": {
       "11111111-1111-1111-1111-111111111111": {
         "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
-        "status": "existing"
+        "status": "realized"
       }
     }
   },
@@ -139,7 +139,7 @@ Se två exempel på profiler i Experience Platform:
     "ups": {
       "11111111-1111-1111-1111-111111111111": {
         "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
-        "status": "existing"
+        "status": "realized"
       }
     }
   },
@@ -268,7 +268,7 @@ Profil 1:
       },
       "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
         "lastQualificationTime": "2019-11-20T13:15:49Z",
-        "status": "existing"
+        "status": "realized"
       },
       "8f812592-3f06-416b-bd50-e7831848a31a": {
         "lastQualificationTime": "2019-11-20T13:15:49Z",
@@ -291,7 +291,7 @@ Profil 2:
       },
       "af854278-894a-4192-a96b-320fbf2623fd": {
         "lastQualificationTime": "2021-08-20T16:44:37Z",
-        "status": "existing"
+        "status": "realized"
       },
       "66505bf9-bc08-4bac-afbc-8b6706650ea4": {
         "lastQualificationTime": "2019-08-20T17:23:04Z",
@@ -511,7 +511,7 @@ Profil 1:
             },
             "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
               "lastQualificationTime": "2019-11-20T13:15:49Z",
-              "status": "existing"
+              "status": "realized"
             },
             "8f812592-3f06-416b-bd50-e7831848a31a": {
                 "lastQualificationTime": "2019-11-20T13:15:49Z",
@@ -685,7 +685,7 @@ Profil 1:
             },
             "788d8874-8007-4253-92b7-ee6b6c20c6f3": {
               "lastQualificationTime": "2019-11-20T13:15:49Z",
-              "status": "existing"
+              "status": "realized"
             },
             "8f812592-3f06-416b-bd50-e7831848a31a": {
                 "lastQualificationTime": "2019-11-20T13:15:49Z",
@@ -874,7 +874,7 @@ Profil 1:
       "ups":{
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -894,7 +894,7 @@ Profil 2:
       "ups":{
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -914,7 +914,7 @@ Profil 3:
       "ups":{
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -934,11 +934,11 @@ Profil 4:
       "ups":{
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
-            "status":"existing"
+            "status":"realized"
          },
          "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
             "lastQualificationTime":"2020-11-20T13:15:49Z",
-            "status":"existing"
+            "status":"realized"
          }
       }
    }
@@ -1194,10 +1194,10 @@ Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 | `input.profile` | Profilen, representerad som [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |
 | `destination.segmentAliases` | Mappa från segment-ID:n i Adobe Experience Platform-namnutrymmet till segmentalias i partnersystemet. |
 | `destination.segmentNames` | Mappa från segmentnamn i Adobe Experience Platform-namnutrymmet till segmentnamn i partnersystemet. |
-| `addedSegments(listOfSegments)` | Returnerar endast de segment som har status `realized` eller `existing`. |
+| `addedSegments(listOfSegments)` | Returnerar endast de segment som har status `realized`. |
 | `removedSegments(listOfSegments)` | Returnerar endast de segment som har status `exited`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg {#next-steps}
 
