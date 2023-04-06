@@ -2,24 +2,25 @@
 title: (API) Oraclena Eloqua-anslutning
 description: Med API-Oraclet Eloqua kan du exportera dina kontouppgifter och aktivera dem i Oracle Eloqua efter dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: 3197eddcf9fef2870589fdf9f09276a333f30cd1
+source-git-commit: e8aa09545c95595e98b4730188bd8a528ca299a9
 workflow-type: tm+mt
-source-wordcount: '1431'
+source-wordcount: '1575'
 ht-degree: 0%
 
 ---
+
 
 # [!DNL (API) Oracle Eloqua] anslutning
 
 [[!DNL Oracle Eloqua]](https://www.oracle.com/cx/marketing/automation/) gör det möjligt för marknadsförare att planera och genomföra kampanjer samtidigt som de levererar en personaliserad kundupplevelse till sina presumtiva kunder. Tack vare integrerad hantering av leads och enkel kampanjframtagning kan marknadsförarna engagera rätt målgrupp vid rätt tidpunkt i köparens resa och på ett elegant sätt skala nå målgrupper över olika kanaler, inklusive e-post, webbannonsering, video och mobiler. Säljarna kan sluta fler avtal snabbare och öka avkastningen på marknadsföringen genom realtidsinsikter.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [Uppdatera en kontakt](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) åtgärd från [!DNL Oracle Eloqua] REST API, som gör att du kan uppdatera identiteter inom ett segment till [!DNL Oracle Eloqua].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [Uppdatera en kontakt](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-id-put.html) åtgärd från [!DNL Oracle Eloqua] REST API, som gör att du kan **uppdatera identiteter** inom ett segment till [!DNL Oracle Eloqua].
 
 [!DNL Oracle Eloqua] använder [Grundläggande autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html) att kommunicera med [!DNL Oracle Eloqua] REST API. Instruktioner för hur du autentiserar [!DNL Oracle Eloqua] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Du kan skapa segment utifrån offlinedata och skicka dessa segment till [!DNL Oracle Eloqua], som visas i användarnas flöden så snart segment och profiler uppdateras i Adobe Experience Platform.
+Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad marknadsföringskampanj till en välstrukturerad publik med leads. Plattformens marknadsföringsteam kan uppdatera befintlig huvudinformation via Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till [!DNL Oracle Eloqua]som sedan kan användas för att skicka marknadsföringskampanjens e-post.
 
 ## Förutsättningar {#prerequisites}
 
@@ -54,15 +55,26 @@ Anteckna vad som står nedan innan du autentiserar dig för [!DNL Oracle Eloqua]
 * Om denna gräns överskrids kommer ett fel att uppstå i Experience Platform. Det beror på att [!DNL Oracle Eloqua] API:t kan inte validera begäran och svarar med en - *400: Ett valideringsfel uppstod* - felmeddelande som beskriver problemet.
 * Om du har nått gränsen ovan måste du ta bort befintliga mappningar från målet och ta bort motsvarande anpassade kontaktfält i [!DNL Oracle Eloqua] innan du kan exportera fler segment.
 
-* Se [Oraclet Eloqua skapar kontaktfält](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/ContactFields/Tasks/CreatingContactFields.htm) sida för information om ytterligare begränsningar.
+* Se [[!DNL Oracle Eloqua] Skapa kontaktfält](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/ContactFields/Tasks/CreatingContactFields.htm) sida för information om ytterligare begränsningar.
 
 ## Identiteter som stöds {#supported-identities}
 
 [!DNL Oracle Eloqua] har stöd för uppdatering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
 
-| Målidentitet | Exempel | Beskrivning | Obligatoriskt |
-|---|---|---|---|
-| `EloquaId` | `111111` | Unik identifierare för kontakten. | Ja |
+| Målidentitet | Beskrivning | Obligatoriskt |
+|---|---|---|
+| `EloquaId` | Unik identifierare för kontakten. | Ja |
+
+## Exportera typ och frekvens {#export-type-frequency}
+
+Se tabellen nedan för information om exporttyp och frekvens för destinationen.
+
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje markerat segment i plattformen visas motsvarande [!DNL Oracle Eloqua] segmentets status uppdateras med dess segmentstatus från Platform.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 
@@ -111,42 +123,37 @@ Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/
 
 Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL Oracle Eloqua] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
 
-`EloquaID` måste uppdatera attribut som motsvarar identiteten. The `emailAddress` är också nödvändigt eftersom API utan detta orsakar ett fel enligt nedan:
-
-```json
-{
-   "type":"ObjectValidationError",
-   "container":{
-      "type":"ObjectKey",
-      "objectType":"Contact"
-   },
-   "property":"emailAddress",
-   "requirement":{
-      "type":"EmailAddressRequirement"
-   },
-   "value":"<null>"
-}
-```
-
-Attribut som anges i **[!UICONTROL Target field]** ska namnges exakt så som beskrivs i tabellen för attributmappningar eftersom dessa attribut kommer att bilda begärandetexten.
-
-Attribut som anges i **[!UICONTROL Source field]** inte följer någon sådan begränsning. Du kan mappa den baserat på dina behov, men om dataformatet inte är korrekt när det skickas till [!DNL Oracle Eloqua] det resulterar i ett fel.
-
-Du kan till exempel mappa **[!UICONTROL Source field]** identity namespace `contact key`, `ABC ID` osv. till **[!UICONTROL Target field]** : `EloquaID` efter att ha säkerställt att ID-värdena överensstämmer med det format som accepteras av [!DNL Oracle Eloqua].
-
-Koppla XDM-fälten till [!DNL Oracle Eloqua] målfält, följ dessa steg:
+Så här mappar du XDM-fält till [!DNL Oracle Eloqua] målfält, följ dessa steg:
 
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
 1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select attributes]** och välj XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
-1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet eller välj **[!UICONTROL Select custom attributes]** och välj ett attribut efter behov.
-   * Upprepa dessa steg för att lägga till följande mappningar mellan XDM-profilschemat och ditt [!DNL Oracle Eloqua] instans: |Källfält|Målfält| Obligatoriskt| |—|—|—| |`xdm: personalEmail.address`|`Attribute: emailAddress`| Ja | |`IdentityMap: Eid`|`Identity: EloquaId`| Ja |
+1. I **[!UICONTROL Select target field]** fönster, välja **[!UICONTROL Select identity namespace]** och välja en identitet, eller välja **[!UICONTROL Select custom attributes]** och skriv attributnamnet i **[!UICONTROL Attribute name]** fält. Attributnamnet som du anger ska matcha ett befintligt kontaktattribut i [!DNL Oracle Eloqua]. Se [[!DNL create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) för de exakta attributnamnen som du kan använda i [!DNL Oracle Eloqua].
+   * Upprepa dessa steg för att lägga till både nödvändiga och önskade attributkopplingar mellan XDM-profilschemat och [!DNL Oracle Eloqua]: | Källfält | Målfält | Obligatoriskt | |—|—|—| |`IdentityMap: Eid`|`Identity: EloquaId`| Ja | |`xdm: personalEmail.address`|`Attribute: emailAddress`| Ja | |`xdm: personName.firstName`|`Attribute: firstName`| | |`xdm: personName.lastName`|`Attribute: lastName`| | |`xdm: workAddress.street1`|`Attribute: address1`| | |`xdm: workAddress.street2`|`Attribute: address2`| | |`xdm: workAddress.street3`|`Attribute: address3`| | |`xdm: workAddress.postalCode`|`Attribute: postalCode`| | |`xdm: workAddress.country`|`Attribute: country`| | |`xdm: workAddress.city`|`Attribute: city`| |
 
-   * Ett exempel på hur du använder dessa mappningar visas nedan:
+   * Ett exempel med mappningarna ovan visas nedan:
       ![Skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/email-marketing/oracle-eloqua-api/mappings.png)
 
-      >[!IMPORTANT]
-      >
-      >Båda `emailAddress` och `EloquaId` Målattributsmappningar är obligatoriska.
+>[!IMPORTANT]
+>
+>* Attribut som anges i **[!UICONTROL Target field]** ska ha exakt det namn som anges i [[!DNL Create a contact]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/op-api-rest-1.0-data-contact-post.html) eftersom dessa attribut utgör begärandetexten.
+>* Attribut som anges i **[!UICONTROL Source field]** inte följer någon sådan begränsning. Du kan mappa den baserat på dina behov, men om dataformatet inte är korrekt när det skickas till [!DNL Oracle Eloqua] det resulterar i ett fel. Du kan till exempel mappa **[!UICONTROL Source field]** identity namespace `contact key`, `ABC ID` osv. till **[!UICONTROL Target field]** : `EloquaId` efter att du kontrollerat att ID-värdena matchar det format som accepteras av [!DNL Oracle Eloqua].
+>* The `EloquaID` mappning är obligatoriskt för att uppdatera attribut som motsvarar identiteten.
+>* The `emailAddress` mappning krävs. Utan det genererar API:t ett fel enligt nedan:
+>
+>```json
+>{
+>     "type":"ObjectValidationError",
+>     "container":{
+>           "type":"ObjectKey",
+>           "objectType":"Contact"
+>     },
+>     "property":"emailAddress",
+>     "requirement":{
+>           "type":"EmailAddressRequirement"
+>     },
+>     "value":"<null>"
+>}
+>```
 
 När du är klar med mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -182,6 +189,7 @@ Se [[!DNL Oracle Eloqua] HTTP-statuskoder](https://docs.oracle.com/en/cloud/saas
 
 ## Ytterligare resurser {#additional-resources}
 
-Ytterligare användbar information från [!DNL Oracle ELoqua] dokumentationen nedan:
+Mer information finns i [!DNL Oracle Eloqua] dokumentation:
+
 * [Oracle Eloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
 * [REST API för tjänsten Oracle Eloqua Marketing Cloud](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
